@@ -90,6 +90,17 @@ def build_md(current: dict, previous: dict, today: str) -> str:
         lines.append("_No exits today_")
     lines.append("")
 
+    # ── Full current list ──────────────────────────────────────────────────────
+    all_stocks = sorted(current, key=lambda s: current[s], reverse=True)
+    lines.append(f"## 📋 Full List ({len(all_stocks)})")
+    if all_stocks:
+        lines += ["| # | Symbol | Day Change % |", "|---|--------|:------------:|"]
+        for i, s in enumerate(all_stocks, 1):
+            lines.append(f"| {i} | {s} | {pct_str(current[s])} |")
+    else:
+        lines.append("_No stocks currently in list_")
+    lines.append("")
+
     lines += ["---", f"_Updated: {today} 16:00 IST by GitHub Actions_"]
     return "\n".join(lines) + "\n"
 
