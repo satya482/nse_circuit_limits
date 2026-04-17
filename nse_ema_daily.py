@@ -56,8 +56,8 @@ def pct_str(v: float) -> str:
 def build_md(current: dict, previous: dict, today: str) -> str:
     curr_set = set(current)
     prev_set = set(previous)
-    additions = sorted(curr_set - prev_set)
-    deletions = sorted(prev_set - curr_set)
+    additions = sorted(curr_set - prev_set, key=lambda s: current[s],  reverse=True)
+    deletions = sorted(prev_set - curr_set, key=lambda s: previous[s], reverse=True)
 
     lines = [
         f"# NSE EMA Screener — {today}",
