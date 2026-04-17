@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Limits Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+            max-width: 800px;
+        }
+        .header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(#fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .header p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        .symbol {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 5px 0;
+        }
+        .name {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0 0 15px 0;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .limits {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .limit-box {
+            text-align: center;
+        }
+        .limit-val {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        .limit-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+        .arrow {
+            color: var(--accent);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .date {
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-align: right;
+        }
+        .empty-state {
+            text-align: center;
+            color: var(--text-muted);
+            padding: 40px;
+            grid-column: 1 / -1;
+            background: var(--card-bg);
+            border-radius: 12px;
+        }
+        @media (max-width: 600px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Circuit Limits Dashboard</h1>
+        <p>Tracking Watchlist Limit Changes • Last updated: 2026-04-17 11:08:38</p>
+    </div>
+    
+    <div class="grid">
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">GALLANTT</h2>
+            <p class="name" title="GALLANTT ISPAT LIMITED">GALLANTT ISPAT LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">17-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #e74c3c;">
+            <h2 class="symbol">DEEDEV</h2>
+            <p class="name" title="DEE DEVELOPMENT ENGINEERS LIMITED">DEE DEVELOPMENT ENGINEERS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #e74c3c">5%</div>
+                </div>
+            </div>
+            <div class="date">16-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">THANGAMAYL</h2>
+            <p class="name" title="THANGAMAYIL JEWELLERY LIMITED">THANGAMAYIL JEWELLERY LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #2ecc71;">
+            <h2 class="symbol">SMLMAH</h2>
+            <p class="name" title="SML MAHINDRA LIMITED">SML MAHINDRA LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">5%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #2ecc71">10%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">RACLGEAR</h2>
+            <p class="name" title="RACL GEARTECH LIMITED">RACL GEARTECH LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">LINCOLN</h2>
+            <p class="name" title="LINCOLN PHARMACEUTICALS LIMITED">LINCOLN PHARMACEUTICALS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">GRWRHITECH</h2>
+            <p class="name" title="GARWARE HI-TECH FILMS LIMITED">GARWARE HI-TECH FILMS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">AVANTIFEED</h2>
+            <p class="name" title="AVANTI FEEDS LIMITED">AVANTI FEEDS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">APEX</h2>
+            <p class="name" title="APEX FROZEN FOODS LIMITED">APEX FROZEN FOODS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #2ecc71;">
+            <h2 class="symbol">AIMTRON</h2>
+            <p class="name" title="AIMTRON ELECTRONICS LIMITED">AIMTRON ELECTRONICS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">5%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #2ecc71">10%</div>
+                </div>
+            </div>
+            <div class="date">08-APR-2026</div>
+        </div>
+        <div class="card" style="--accent: #e74c3c;">
+            <h2 class="symbol">MAHASTEEL</h2>
+            <p class="name" title="MAHAMAYA STEEL INDUSTRIES LIMITED">MAHAMAYA STEEL INDUSTRIES LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #e74c3c">5%</div>
+                </div>
+            </div>
+            <div class="date">18-MAR-2026</div>
+        </div>
+        <div class="card" style="--accent: #e74c3c;">
+            <h2 class="symbol">VENUSREM</h2>
+            <p class="name" title="VENUS REMEDIES LIMITED">VENUS REMEDIES LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #e74c3c">5%</div>
+                </div>
+            </div>
+            <div class="date">13-MAR-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">MAHASTEEL</h2>
+            <p class="name" title="MAHAMAYA STEEL INDUSTRIES LIMITED">MAHAMAYA STEEL INDUSTRIES LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">13-MAR-2026</div>
+        </div>
+        <div class="card" style="--accent: #2ecc71;">
+            <h2 class="symbol">VENUSREM</h2>
+            <p class="name" title="VENUS REMEDIES LIMITED">VENUS REMEDIES LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">5%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #2ecc71">10%</div>
+                </div>
+            </div>
+            <div class="date">09-MAR-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">DEEDEV</h2>
+            <p class="name" title="DEE DEVELOPMENT ENGINEERS LIMITED">DEE DEVELOPMENT ENGINEERS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">26-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #e74c3c;">
+            <h2 class="symbol">GVPIL</h2>
+            <p class="name" title="GE POWER INDIA LIMITED">GE POWER INDIA LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #e74c3c">5%</div>
+                </div>
+            </div>
+            <div class="date">24-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">RACLGEAR</h2>
+            <p class="name" title="RACL GEARTECH LIMITED">RACL GEARTECH LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">18-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">LINCOLN</h2>
+            <p class="name" title="LINCOLN PHARMACEUTICALS LIMITED">LINCOLN PHARMACEUTICALS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">16-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">GVPIL</h2>
+            <p class="name" title="GE POWER INDIA LIMITED">GE POWER INDIA LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">16-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #e74c3c;">
+            <h2 class="symbol">SMLMAH</h2>
+            <p class="name" title="SML MAHINDRA LIMITED">SML MAHINDRA LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #e74c3c">5%</div>
+                </div>
+            </div>
+            <div class="date">13-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">AVANTIFEED</h2>
+            <p class="name" title="AVANTI FEEDS LIMITED">AVANTI FEEDS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">13-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">APEX</h2>
+            <p class="name" title="APEX FROZEN FOODS LIMITED">APEX FROZEN FOODS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">13-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #2ecc71;">
+            <h2 class="symbol">SMLMAH</h2>
+            <p class="name" title="SML MAHINDRA LIMITED">SML MAHINDRA LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">5%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #2ecc71">10%</div>
+                </div>
+            </div>
+            <div class="date">05-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">KINGFA</h2>
+            <p class="name" title="KINGFA SCIENCE & TECHNOLOGY (INDIA) LIMITED">KINGFA SCIENCE & TECHNOLOGY (INDIA) LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">05-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">HIRECT</h2>
+            <p class="name" title="HIND RECTIFIERS LIMITED">HIND RECTIFIERS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">05-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #f1c40f;">
+            <h2 class="symbol">GRWRHITECH</h2>
+            <p class="name" title="GARWARE HI-TECH FILMS LIMITED">GARWARE HI-TECH FILMS LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">20%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #f1c40f">10%</div>
+                </div>
+            </div>
+            <div class="date">05-FEB-2026</div>
+        </div>
+        <div class="card" style="--accent: #3498db;">
+            <h2 class="symbol">GMBREW</h2>
+            <p class="name" title="GM BREWERIES LIMITED">GM BREWERIES LIMITED</p>
+            <div class="limits">
+                <div class="limit-box">
+                    <div class="limit-label">From</div>
+                    <div class="limit-val">10%</div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="limit-box">
+                    <div class="limit-label">To</div>
+                    <div class="limit-val" style="color: #3498db">20%</div>
+                </div>
+            </div>
+            <div class="date">05-FEB-2026</div>
+        </div>
+    </div>
+</body>
+</html>
