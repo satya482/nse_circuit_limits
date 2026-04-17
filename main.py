@@ -262,6 +262,24 @@ def main():
                 grid-template-columns: 1fr;
             }}
         }}
+        .controls {{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 10px;
+            width: 100%;
+            max-width: 1000px;
+        }}
+        .controls select {{
+            padding: 8px 12px;
+            border-radius: 8px;
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            font-family: inherit;
+            cursor: pointer;
+        }}
     </style>
 </head>
 <body>
@@ -270,7 +288,21 @@ def main():
         <p>Tracking Watchlist Limit Changes • Last updated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}</p>
     </div>
     
-    <div class="grid">
+    <div class="controls">
+        <label for="sortSelect">Sort By: </label>
+        <select id="sortSelect" onchange="sortCards()">
+            <option value="date-desc">Date (Newest)</option>
+            <option value="date-asc">Date (Oldest)</option>
+            <option value="symbol-asc">Symbol (A-Z)</option>
+            <option value="symbol-desc">Symbol (Z-A)</option>
+            <option value="from-desc">From % (High-Low)</option>
+            <option value="from-asc">From % (Low-High)</option>
+            <option value="to-desc">To % (High-Low)</option>
+            <option value="to-asc">To % (Low-High)</option>
+        </select>
+    </div>
+
+    <div class="grid" id="cardGrid">
 """
         if not matches:
             html_content += f"""        <div class="empty-state">
@@ -279,7 +311,7 @@ def main():
         </div>"""
         else:
             for m in matches:
-                html_content += f"""        <div class="card" style="--accent: {m['color']};">
+                html_content += f"""        <div class="card" style="--accent: {m['color']};" data-date="{m['date']}" data-symbol="{m['symbol']}" data-from="{m['from']}" data-to="{m['to']}">
             <h2 class="symbol">{m['symbol']}</h2>
             <p class="name" title="{m['name']}">{m['name']}</p>
             <div class="limits">
@@ -297,6 +329,40 @@ def main():
         </div>
 """
         html_content += """    </div>
+
+    <script>
+        function sortCards() {
+            const grid = document.getElementById('cardGrid');
+            if (!grid) return;
+            const cards = Array.from(grid.querySelectorAll('.card'));
+            const sortVal = document.getElementById('sortSelect').value;
+            
+            cards.sort((a, b) => {
+                if (sortVal === 'date-desc') {
+                    return new Date(b.dataset.date) - new Date(a.dataset.date);
+                } else if (sortVal === 'date-asc') {
+                    return new Date(a.dataset.date) - new Date(b.dataset.date);
+                } else if (sortVal === 'symbol-asc') {
+                    return a.dataset.symbol.localeCompare(b.dataset.symbol);
+                } else if (sortVal === 'symbol-desc') {
+                    return b.dataset.symbol.localeCompare(a.dataset.symbol);
+                } else if (sortVal === 'from-desc') {
+                    return parseFloat(b.dataset.from) - parseFloat(a.dataset.from);
+                } else if (sortVal === 'from-asc') {
+                    return parseFloat(a.dataset.from) - parseFloat(b.dataset.from);
+                } else if (sortVal === 'to-desc') {
+                    return parseFloat(b.dataset.to) - parseFloat(a.dataset.to);
+                } else if (sortVal === 'to-asc') {
+                    return parseFloat(a.dataset.to) - parseFloat(b.dataset.to);
+                }
+            });
+
+            cards.forEach(card => grid.appendChild(card));
+        }
+        
+        // Initial sort
+        sortCards();
+    </script>
 </body>
 </html>"""
         
