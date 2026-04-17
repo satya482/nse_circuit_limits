@@ -1,0 +1,36 @@
+name: NSE EMA Screener — Daily 4PM IST
+
+on:
+  schedule:
+    - cron: "30 10 * * 1-5"   # 10:30 UTC = 16:00 IST, Mon–Fri
+  workflow_dispatch:            # allow manual trigger from GitHub UI
+
+jobs:
+  screen-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install tradingview-screener pandas
+
+      - name: Run screener
+        run: python nse_ema_daily.py
+
+      - name: Commit and push results
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ema_screener_changes.md nse_ema_results.json
+          git diff --staged --quiet \
+            || git commit -m "screener: $(date +'%Y-%m-%d') 16:00 IST update"
+          git push
