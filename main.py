@@ -129,7 +129,7 @@ def main():
             
             md_content += f"| {m['date']} | **{m['symbol']}** | {m['name']} | {m['from']}% | {m['to']}% {color_name} |\n"
             
-        with open("README.md", "w", encoding='utf-8') as f:
+        with open("NSE_Circuit_Limits.md", "w", encoding='utf-8') as f:
             f.write(md_content)
             
         # Generate HTML Dashboard
