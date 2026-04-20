@@ -32,7 +32,7 @@ REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR   = os.path.join(REPO_DIR, "swing_scans")
 INDEX_CACHE = os.path.join(REPO_DIR, ".niftymidsml400_cache.csv")
 TODAY       = datetime.now().strftime("%Y-%m-%d")
-MD_FILE     = os.path.join(SCANS_DIR, f"{TODAY}.md")
+MD_FILE     = os.path.join(SCANS_DIR, "swing_scans.md")
 
 MC_LOW      = 800     * 1_00_00_000
 MC_HIGH     = 1_00_000 * 1_00_00_000
@@ -233,24 +233,17 @@ def build_markdown(findings: list[dict]) -> str:
         f"# NSE Swing Scan — {TODAY}",
         f"\n**Entry Opportunities: {len(findings)}**",
         f"*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*\n",
-        "| Symbol | Signal | Level (Rs.) | Level vs Close | Day Change | RS | RS EMA9 | RS EMA21 |",
-        "|--------|--------|------------:|:--------------:|-----------:|---:|--------:|---------:|",
+        "| Symbol | Signal | Day Change |",
+        "|--------|--------|----------:|",
     ]
 
     for f in findings:
-        for tag, label, level in f["entries"]:
-            vs   = (f["close"] - level) / level * 100
-            ds   = "+" if f["day_chg"] >= 0 else ""
-            vs_s = "+" if vs >= 0 else ""
+        for tag, label, _ in f["entries"]:
+            ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| {f['symbol']} "
                 f"| **{tag}** — {label} "
-                f"| {level:.2f} "
-                f"| {vs_s}{vs:.1f}% "
-                f"| {ds}{f['day_chg']:.2f}% "
-                f"| {f['rs']:.1f} "
-                f"| {f['rs_e9']:.1f} "
-                f"| {f['rs_e21']:.1f} |"
+                f"| {ds}{f['day_chg']:.2f}% |"
             )
 
     lines += [
@@ -298,8 +291,9 @@ def print_results(findings: list[dict]) -> None:
 # ── Git push ──────────────────────────────────────────────────────────────────
 def git_commit_push(md_path: str) -> None:
     rel = os.path.relpath(md_path, REPO_DIR)
+    cache_rel = os.path.relpath(INDEX_CACHE, REPO_DIR)
     cmds = [
-        ["git", "-C", REPO_DIR, "add", rel],
+        ["git", "-C", REPO_DIR, "add", rel, cache_rel],
         ["git", "-C", REPO_DIR, "commit", "-m", f"swing scan {TODAY}"],
         ["git", "-C", REPO_DIR, "push"],
     ]
@@ -329,9 +323,13 @@ def main():
     print_results(findings)
 
     os.makedirs(SCANS_DIR, exist_ok=True)
+    existing = ""
+    if os.path.exists(MD_FILE):
+        with open(MD_FILE, "r", encoding="utf-8") as fh:
+            existing = fh.read()
     md = build_markdown(findings)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
-        fh.write(md)
+        fh.write(md + ("\n\n---\n\n" + existing if existing else ""))
     print(f"\n  Saved -> {MD_FILE}")
 
     print("  Committing and pushing to GitHub...")
