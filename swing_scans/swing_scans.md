@@ -1,4 +1,5 @@
 # NSE Swing Scan — 2026-04-21
+*Generated 2026-04-21 16:06 IST*
 
 **Entry Opportunities: 9**
 *(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*
@@ -18,6 +19,7 @@
 ---
 
 # NSE Swing Scan — 2026-04-20
+*Generated 2026-04-20 17:55 IST*
 
 **Entry Opportunities: 7**
 *(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*

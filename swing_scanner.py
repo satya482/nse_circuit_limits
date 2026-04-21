@@ -231,6 +231,7 @@ def build_markdown(findings: list[dict]) -> str:
 
     lines = [
         f"# NSE Swing Scan — {TODAY}",
+        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
         f"*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*\n",
         "| Symbol | Signal | Day Change |",
