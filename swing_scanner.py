@@ -246,24 +246,6 @@ def build_markdown(findings: list[dict]) -> str:
                 f"| {ds}{f['day_chg']:.2f}% |"
             )
 
-    lines += [
-        "",
-        "---",
-        "",
-        "### Signal definitions",
-        "| Signal | Condition |",
-        "|--------|-----------|",
-        "| **STRONG** | ZLEMA25 rising · price touched ZLEMA25 · EMA20 rising |",
-        "| **PRIMARY** | ZLEMA25 rising · price touched ZLEMA25 |",
-        "| **DEEP PULLBACK** | ZLEMA25 rising · low touched EMA50/100/200 · closed green above it |",
-        "",
-        "### RS filter (all 3 required)",
-        "- RS Line (stock / Nifty MidSmallcap 400 × 1000) above its 9 EMA and 21 EMA (daily)",
-        "- Weekly RS EMA9 is rising",
-        "",
-        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
-    ]
-
     return "\n".join(lines)
 
 
@@ -322,6 +304,22 @@ def main():
 
     print_results(findings)
 
+    STATIC_FOOTER = "\n".join([
+        "",
+        "---",
+        "",
+        "### Signal definitions",
+        "| Signal | Condition |",
+        "|--------|-----------|",
+        "| **STRONG** | ZLEMA25 rising · price touched ZLEMA25 · EMA20 rising |",
+        "| **PRIMARY** | ZLEMA25 rising · price touched ZLEMA25 |",
+        "| **DEEP PULLBACK** | ZLEMA25 rising · low touched EMA50/100/200 · closed green above it |",
+        "",
+        "### RS filter (all 3 required)",
+        "- RS Line (stock / Nifty MidSmallcap 400 × 1000) above its 9 EMA and 21 EMA (daily)",
+        "- Weekly RS EMA9 is rising",
+    ])
+
     os.makedirs(SCANS_DIR, exist_ok=True)
     existing = ""
     if os.path.exists(MD_FILE):
@@ -329,7 +327,10 @@ def main():
             existing = fh.read()
     md = build_markdown(findings)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
-        fh.write(md + ("\n\n---\n\n" + existing if existing else ""))
+        if existing:
+            fh.write(md + "\n\n---\n\n" + existing)
+        else:
+            fh.write(md + "\n" + STATIC_FOOTER)
     print(f"\n  Saved -> {MD_FILE}")
 
     print("  Committing and pushing to GitHub...")
