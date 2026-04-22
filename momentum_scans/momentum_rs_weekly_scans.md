@@ -1,4 +1,26 @@
 # NSE Momentum Scan (Weekly RS) — 2026-04-22
+*Generated 2026-04-22 13:58 IST*
+
+**Entry Signals: 7** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 0**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
+
+### Entry Signals
+| Symbol | Signal | Day Change | Circuit |
+|--------|--------|----------:|:-------:|
+| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.64% | 20%  |
+| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +15.43% | 20%  |
+| GRANULES | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.33% | 20%  |
+| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.42% | 10% 🟩 |
+| INGERRAND | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.84% | 20%  |
+| ASHIANA | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.71% | 20%  |
+
+### ZLEMA25 Turning Up *(low-risk early entries)*
+*No ZLEMA25 turns today.*
+
+---
+
+# NSE Momentum Scan (Weekly RS) — 2026-04-22
 *Generated 2026-04-22 12:15 IST*
 
 **Entry Opportunities: 6**
