@@ -36,7 +36,8 @@ MD_FILE     = os.path.join(SCANS_DIR, "swing_scans.md")
 
 MC_LOW      = 800     * 1_00_00_000
 MC_HIGH     = 1_00_000 * 1_00_00_000
-TOUCH_PCT   = 0.015
+TOUCH_PCT    = 0.015
+ZL_TURN_CAP  = 60
 INDEX_NAME  = "Nifty MidSmallcap 400"
 NSE_ARCH    = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
 
@@ -48,6 +49,19 @@ def ema(s: pd.Series, n: int) -> pd.Series:
 def zlema(s: pd.Series, n: int) -> pd.Series:
     e = ema(s, n)
     return 2 * e - ema(e, n)
+
+def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
+    """Return (bars_since_turn, pct_since_turn) for the most recent ZLEMA25 turning point.
+    A turning point is where slope flipped from non-rising to rising.
+    Capped at ZL_TURN_CAP bars; falls back to cap-bar reference if none found."""
+    n     = len(zl25)
+    limit = max(2, n - ZL_TURN_CAP)
+    for i in range(n - 1, limit - 1, -1):
+        if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
+            bars = (n - 1) - i
+            pct  = (closes.iloc[-1] / closes.iloc[i] - 1) * 100
+            return bars, round(pct, 2)
+    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[-(ZL_TURN_CAP + 1)] - 1) * 100, 2)
 
 
 # ── Nifty MidSmallcap 400 index cache ────────────────────────────────────────
@@ -240,10 +254,13 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not entries:
             return None
 
+        zl_days, zl_pct = zl25_turn_stats(zl25, c)
         return {
             "symbol":  symbol,
             "close":   curr_close,
             "day_chg": (curr_close - prev_close) / prev_close * 100,
+            "zl_days": zl_days,
+            "zl_pct":  zl_pct,
             "zlema25": zl_now,
             "ema20":   e20_now,
             "ema50":   e50.iloc[-1],
@@ -270,19 +287,23 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
         f"*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*\n",
-        "| Symbol | Signal | Day Change | Circuit |",
-        "|--------|--------|----------:|:-------:|",
+        "| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |",
+        "|--------|--------|----------:|--------:|--------:|:-------:|",
     ]
 
     for f in findings:
         cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        tv      = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        zl_d    = f"{f['zl_days']}d+" if f['zl_days'] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        zl_p    = f"+{f['zl_pct']:.1f}%" if f['zl_pct'] >= 0 else f"{f['zl_pct']:.1f}%"
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| [{f['symbol']}]({tv}) "
                 f"| **{tag}** — {label} "
                 f"| {ds}{f['day_chg']:.2f}% "
+                f"| {zl_d} "
+                f"| {zl_p} "
                 f"| {cl} {em} |"
             )
 

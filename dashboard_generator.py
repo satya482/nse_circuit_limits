@@ -36,14 +36,23 @@ def extract_today_block(content: str, today: str) -> str:
     return ""
 
 
-def parse_signal_table(text: str) -> list:
-    """Parse rows from a table with columns: Symbol | Signal | Day Change | Circuit."""
+_ZL_DAY_RE = re.compile(r'^\d+d\+?$')
+
+def _strip_md_link(s: str) -> str:
+    """[TEXT](url) → TEXT, else return as-is."""
+    m = re.match(r'\[([^\]]+)\]\([^)]+\)', s)
+    return m.group(1) if m else s
+
+def _parse_table_rows(text: str, has_signal: bool) -> list:
+    """Generic row parser. has_signal=True for entry tables (6-col new / 4-col old),
+    has_signal=False for turning-up tables (5-col new / 3-col old)."""
     results = []
     lines = text.split('\n')
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        if '| Symbol' in line and '| Signal' in line:
+        header_match = ('| Signal' in line) if has_signal else ('| Day Change' in line and '| Signal' not in line)
+        if '| Symbol' in line and header_match:
             i += 1
             if i < len(lines) and lines[i].strip().startswith('|---'):
                 i += 1
@@ -53,48 +62,48 @@ def parse_signal_table(text: str) -> list:
                     break
                 parts = [p.strip() for p in row.split('|')]
                 parts = [p for p in parts if p != '']
-                if len(parts) >= 1:
-                    sym = parts[0]
-                    sig_raw = parts[1] if len(parts) > 1 else ""
-                    day_chg = parts[2] if len(parts) > 2 else ""
-                    circuit = parts[3] if len(parts) > 3 else ""
-                    sig = ("STRONG" if "STRONG" in sig_raw
-                           else "PRIMARY" if "PRIMARY" in sig_raw
-                           else "DEEP PULLBACK" if "DEEP" in sig_raw
-                           else sig_raw)
-                    results.append({"symbol": sym, "signal": sig, "day_chg": day_chg, "circuit": circuit})
+                if parts:
+                    sym = _strip_md_link(parts[0])
+                    if has_signal:
+                        sig_raw = parts[1] if len(parts) > 1 else ""
+                        day_chg = parts[2] if len(parts) > 2 else ""
+                        # Detect new format: parts[3] looks like "5d" or "5d+"
+                        if len(parts) >= 5 and _ZL_DAY_RE.match(parts[3]):
+                            zl_days = parts[3]
+                            zl_pct  = parts[4] if len(parts) > 4 else ""
+                            circuit = parts[5] if len(parts) > 5 else ""
+                        else:
+                            zl_days = ""
+                            zl_pct  = ""
+                            circuit = parts[3] if len(parts) > 3 else ""
+                        sig = ("STRONG" if "STRONG" in sig_raw
+                               else "PRIMARY" if "PRIMARY" in sig_raw
+                               else "DEEP PULLBACK" if "DEEP" in sig_raw
+                               else sig_raw)
+                        results.append({"symbol": sym, "signal": sig, "day_chg": day_chg,
+                                        "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
+                    else:
+                        day_chg = parts[1] if len(parts) > 1 else ""
+                        if len(parts) >= 3 and _ZL_DAY_RE.match(parts[2]):
+                            zl_days = parts[2]
+                            zl_pct  = parts[3] if len(parts) > 3 else ""
+                            circuit = parts[4] if len(parts) > 4 else ""
+                        else:
+                            zl_days = ""
+                            zl_pct  = ""
+                            circuit = parts[2] if len(parts) > 2 else ""
+                        results.append({"symbol": sym, "day_chg": day_chg,
+                                        "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
                 i += 1
             return results
         i += 1
     return results
 
+def parse_signal_table(text: str) -> list:
+    return _parse_table_rows(text, has_signal=True)
 
 def parse_turning_table(text: str) -> list:
-    """Parse rows from a table with columns: Symbol | Day Change | Circuit (no Signal)."""
-    results = []
-    lines = text.split('\n')
-    i = 0
-    while i < len(lines):
-        line = lines[i].strip()
-        if '| Symbol' in line and '| Day Change' in line and '| Signal' not in line:
-            i += 1
-            if i < len(lines) and lines[i].strip().startswith('|---'):
-                i += 1
-            while i < len(lines):
-                row = lines[i].strip()
-                if not row.startswith('|'):
-                    break
-                parts = [p.strip() for p in row.split('|')]
-                parts = [p for p in parts if p != '']
-                if len(parts) >= 1:
-                    sym = parts[0]
-                    day_chg = parts[1] if len(parts) > 1 else ""
-                    circuit = parts[2] if len(parts) > 2 else ""
-                    results.append({"symbol": sym, "day_chg": day_chg, "circuit": circuit})
-                i += 1
-            return results
-        i += 1
-    return results
+    return _parse_table_rows(text, has_signal=False)
 
 
 def parse_weekly_rs_block(block: str) -> tuple:
@@ -211,6 +220,8 @@ def build_html(today: str, now_str: str,
     signal_map:  dict = {}
     day_chg_map: dict = {}
     circuit_map: dict = {}
+    zl_days_map: dict = {}
+    zl_pct_map:  dict = {}
 
     def register(rows, tag):
         for r in rows:
@@ -221,6 +232,9 @@ def build_html(today: str, now_str: str,
                 day_chg_map[s] = r.get("day_chg", "")
             if not circuit_map.get(s):
                 circuit_map[s] = r.get("circuit", "")
+            if not zl_days_map.get(s) and r.get("zl_days"):
+                zl_days_map[s] = r.get("zl_days", "")
+                zl_pct_map[s]  = r.get("zl_pct", "")
 
     register(swing,        "Swing")
     register(momentum,     "Momentum")
@@ -259,6 +273,8 @@ def build_html(today: str, now_str: str,
         circ = circuit_map.get(sym, "")
         sig_cls = "ss" if sig == "STRONG" else ("sp" if sig == "PRIMARY" else "sd")
 
+        zld  = zl_days_map.get(sym, "")
+        zlp  = zl_pct_map.get(sym, "")
         u_rows.append(
             f'<tr{rcls}>'
             f'<td>{stars}</td>'
@@ -266,14 +282,19 @@ def build_html(today: str, now_str: str,
             f'<td>{badges}</td>'
             f'<td class="{sig_cls}">{sig}</td>'
             f'<td class="{chg_cls(chg)}">{chg}</td>'
+            f'<td class="zld">{zld}</td>'
+            f'<td class="{chg_cls(zlp)}">{zlp}</td>'
             f'{td_circ(circ)}'
             f'</tr>'
         )
 
     # Turning table rows
     t_rows = [
-        f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
+        f'<tr>'
+        f'<td class="sym">{tv_link(r["symbol"])}</td>'
         f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
+        f'<td class="zld">{r.get("zl_days","")}</td>'
+        f'<td class="{chg_cls(r.get("zl_pct",""))}">{r.get("zl_pct","")}</td>'
         f'{td_circ(r["circuit"])}</tr>'
         for r in weekly_turning
     ]
@@ -315,8 +336,8 @@ def build_html(today: str, now_str: str,
 <div class="section">
   <div class="stitle">ZLEMA25 Turning Up — early entries ({len(weekly_turning)})</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Day Chg</th><th>Circuit</th></tr></thead>
-    <tbody>{table_or_empty(t_rows, 3, "No ZLEMA25 turns today")}</tbody>
+    <thead><tr><th>Symbol</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(t_rows, 5, "No ZLEMA25 turns today")}</tbody>
   </table>
 </div>"""
 
@@ -360,6 +381,7 @@ tr:hover td{{background:var(--bg3)}}
 
 .sym{{font-weight:600;font-family:monospace;font-size:12px}}
 .sym a{{color:inherit;text-decoration:none}}.sym a:hover{{text-decoration:underline;color:var(--blu)}}
+.zld{{color:var(--mu);font-size:11px}}
 .nm{{font-size:11px;color:var(--mu)}}
 .pos{{color:var(--grn)}}.neg{{color:var(--red)}}
 
@@ -395,8 +417,8 @@ tr:hover td{{background:var(--bg3)}}
 <div class="section">
   <div class="stitle">Unified Entry Signals — sorted by confluence ({len(all_syms)} stocks)</div>
   <table>
-    <thead><tr><th width="60">Conf</th><th>Symbol</th><th>Scanners</th><th>Signal</th><th>Day Chg</th><th>Circuit</th></tr></thead>
-    <tbody>{table_or_empty(u_rows, 6, "No signals today")}</tbody>
+    <thead><tr><th width="60">Conf</th><th>Symbol</th><th>Scanners</th><th>Signal</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(u_rows, 8, "No signals today")}</tbody>
   </table>
 </div>
 
