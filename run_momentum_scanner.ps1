@@ -18,3 +18,9 @@ try {
     Log "=== ERROR: $_ ==="
     exit 1
 }
+
+Log "--- Git commit+push ---"
+& git -C C:\Users\satya\nse_circuit_limits add momentum_scans/momentum_scans.md .niftymidsml400_cache.csv 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits commit -m "momentum scan $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+Log "--- Done ---"
