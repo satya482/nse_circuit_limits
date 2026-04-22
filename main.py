@@ -1,4 +1,4 @@
-import requests
+﻿import requests
 import datetime
 from dateutil.relativedelta import relativedelta
 import csv
@@ -127,7 +127,8 @@ def main():
             elif m['color'] == '#3498db': color_name = "🟦 Blue"
             else: color_name = ""
             
-            md_content += f"| {m['date']} | **{m['symbol']}** | {m['name']} | {m['from']}% | {m['to']}% {color_name} |\n"
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{m['symbol']}"
+            md_content += f"| {m['date']} | [**{m['symbol']}**]({tv}) | {m['name']} | {m['from']}% | {m['to']}% {color_name} |\n"
             
         with open("NSE_Circuit_Limits.md", "w", encoding='utf-8') as f:
             f.write(md_content)
