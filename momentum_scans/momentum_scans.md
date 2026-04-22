@@ -1,4 +1,19 @@
 # NSE Momentum Scan — 2026-04-22
+*Generated 2026-04-22 16:18 IST*
+
+**Entry Opportunities: 4**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | Circuit |
+|--------|--------|----------:|:-------:|
+| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
+| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
+| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
+| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+
+---
+
+# NSE Momentum Scan — 2026-04-22
 *Generated 2026-04-22 11:57 IST*
 
 **Entry Opportunities: 5**
