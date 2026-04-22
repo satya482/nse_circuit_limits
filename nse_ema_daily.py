@@ -75,7 +75,8 @@ def build_md(current: dict, previous: dict, today: str) -> str:
     if additions:
         lines += ["| Symbol | Day Change % |", "|--------|:------------:|"]
         for s in additions:
-            lines.append(f"| {s} | {pct_str(current[s])} |")
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{s}"
+            lines.append(f"| [{s}]({tv}) | {pct_str(current[s])} |")
     else:
         lines.append("_No new entries today_")
     lines.append("")
@@ -85,7 +86,8 @@ def build_md(current: dict, previous: dict, today: str) -> str:
     if deletions:
         lines += ["| Symbol | Last Day Change % |", "|--------|:----------------:|"]
         for s in deletions:
-            lines.append(f"| {s} | {pct_str(previous.get(s, 0.0))} |")
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{s}"
+            lines.append(f"| [{s}]({tv}) | {pct_str(previous.get(s, 0.0))} |")
     else:
         lines.append("_No exits today_")
     lines.append("")
@@ -96,7 +98,8 @@ def build_md(current: dict, previous: dict, today: str) -> str:
     if all_stocks:
         lines += ["| # | Symbol | Day Change % |", "|---|--------|:------------:|"]
         for i, s in enumerate(all_stocks, 1):
-            lines.append(f"| {i} | {s} | {pct_str(current[s])} |")
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{s}"
+            lines.append(f"| {i} | [{s}]({tv}) | {pct_str(current[s])} |")
     else:
         lines.append("_No stocks currently in list_")
     lines.append("")

@@ -296,10 +296,11 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         ]
         for f in entry_findings:
             cl, em = circuit.get(f["symbol"], ("20%", ""))
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
             for tag, label, _ in f["entries"]:
                 ds = "+" if f["day_chg"] >= 0 else ""
                 lines.append(
-                    f"| {f['symbol']} "
+                    f"| [{f['symbol']}]({tv}) "
                     f"| **{tag}** — {label} "
                     f"| {ds}{f['day_chg']:.2f}% "
                     f"| {cl} {em} |"
@@ -316,9 +317,10 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         ]
         for f in turning_findings:
             cl, em = circuit.get(f["symbol"], ("20%", ""))
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
-                f"| {f['symbol']} "
+                f"| [{f['symbol']}]({tv}) "
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| {cl} {em} |"
             )

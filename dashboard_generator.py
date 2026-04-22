@@ -169,6 +169,11 @@ def parse_circuit_changes(content: str, limit: int = 12) -> list:
 
 # ── HTML helpers ──────────────────────────────────────────────────────────────
 
+def tv_link(symbol: str) -> str:
+    url = f"https://in.tradingview.com/chart/?symbol=NSE:{symbol}"
+    return f'<a href="{url}" target="_blank" rel="noopener">{symbol}</a>'
+
+
 def chg_cls(v: str) -> str:
     return "pos" if v.startswith('+') else ("neg" if v.startswith('-') else "")
 
@@ -257,7 +262,7 @@ def build_html(today: str, now_str: str,
         u_rows.append(
             f'<tr{rcls}>'
             f'<td>{stars}</td>'
-            f'<td class="sym">{sym}</td>'
+            f'<td class="sym">{tv_link(sym)}</td>'
             f'<td>{badges}</td>'
             f'<td class="{sig_cls}">{sig}</td>'
             f'<td class="{chg_cls(chg)}">{chg}</td>'
@@ -267,7 +272,7 @@ def build_html(today: str, now_str: str,
 
     # Turning table rows
     t_rows = [
-        f'<tr><td class="sym">{r["symbol"]}</td>'
+        f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
         f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'{td_circ(r["circuit"])}</tr>'
         for r in weekly_turning
@@ -275,12 +280,12 @@ def build_html(today: str, now_str: str,
 
     # EMA adds / dels
     ea_rows = [
-        f'<tr><td class="sym">{r["symbol"]}</td>'
+        f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
         f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td></tr>'
         for r in ema_adds[:12]
     ]
     ed_rows = [
-        f'<tr><td class="sym">{r["symbol"]}</td>'
+        f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
         f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td></tr>'
         for r in ema_dels[:12]
     ]
@@ -291,7 +296,7 @@ def build_html(today: str, now_str: str,
         cls = circuit_cls(r["to_"])
         cc_rows.append(
             f'<tr><td>{r["date"]}</td>'
-            f'<td class="sym">{r["symbol"]}</td>'
+            f'<td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="nm">{r["name"]}</td>'
             f'<td>{r["from_"]}</td>'
             f'<td class="{cls}">{r["to_"]}</td></tr>'
@@ -354,6 +359,7 @@ tr:hover td{{background:var(--bg3)}}
 .s3{{color:var(--gld);font-size:13px}}.s2{{color:var(--blu)}}.s1{{color:var(--mu)}}
 
 .sym{{font-weight:600;font-family:monospace;font-size:12px}}
+.sym a{{color:inherit;text-decoration:none}}.sym a:hover{{text-decoration:underline;color:var(--blu)}}
 .nm{{font-size:11px;color:var(--mu)}}
 .pos{{color:var(--grn)}}.neg{{color:var(--red)}}
 
