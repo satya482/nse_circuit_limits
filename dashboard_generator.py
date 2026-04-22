@@ -166,7 +166,7 @@ def parse_circuit_changes(content: str, limit: int = 12) -> list:
             if len(parts) >= 5:
                 changes.append({
                     "date":   parts[0],
-                    "symbol": parts[1].replace('**', ''),
+                    "symbol": _strip_md_link(parts[1]).replace('**', ''),
                     "name":   parts[2],
                     "from_":  parts[3],
                     "to_":    parts[4],
