@@ -17,7 +17,7 @@ Additional RS filter (all 3 must pass):
 Output: swing_scans/YYYY-MM-DD.md  — auto-committed and pushed to GitHub
 """
 
-import sys, os, subprocess, csv, io
+import sys, os, subprocess, csv
 from datetime import datetime, date, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -114,39 +114,36 @@ def get_watchlist() -> list[str]:
 # ── Circuit limits ────────────────────────────────────────────────────────────
 _CIRCUIT_EMOJI = {("20","10"): "🟨", ("10","5"): "🟥", ("5","10"): "🟩", ("10","20"): "🟦"}
 
+_NSE_CSV = r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv"
+
 def get_circuit_limits() -> dict[str, tuple[str, str]]:
-    """Return {symbol: (current_pct, emoji)} from NSE circuit-limit change history."""
-    today   = date.today()
-    from_dt = (today - timedelta(days=180)).strftime("%d-%m-%Y")
-    to_dt   = today.strftime("%d-%m-%Y")
-    url = (f"https://www.nseindia.com/api/eqsurvactions"
-           f"?from_date={from_dt}&to_date={to_dt}&csv=true")
+    """Return {symbol: (current_pct, emoji)} from yesterday's circuit dashboard nse.csv."""
+    if not os.path.exists(_NSE_CSV):
+        print(f"  [circuit] nse.csv not found at {_NSE_CSV}, skipping.")
+        return {}
     try:
-        sess = requests.Session()
-        sess.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"})
-        r = sess.get(url, timeout=15)
-        if not r.ok:
-            return {}
         latest: dict[str, dict] = {}
-        for raw in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))):
-            row = {k.strip(): v.strip() for k, v in raw.items()}
-            sym = row.get("SYMBOL", "")
-            dte = row.get("EFFECTIVE DATE", "")
-            frm = row.get("FROM", "")
-            to  = row.get("TO",   "")
-            if not sym or not dte:
-                continue
-            try:
-                parsed = datetime.strptime(dte, "%d-%b-%Y")
-            except ValueError:
-                continue
-            if sym not in latest or parsed > latest[sym]["parsed"]:
-                latest[sym] = {"parsed": parsed, "from": frm, "to": to}
+        with open(_NSE_CSV, encoding="utf-8-sig") as fh:
+            for raw in csv.DictReader(fh):
+                row = {k.strip(): v.strip() for k, v in raw.items()}
+                sym = row.get("SYMBOL", "")
+                dte = row.get("EFFECTIVE DATE", "")
+                frm = row.get("FROM", "")
+                to  = row.get("TO",   "")
+                if not sym or not dte:
+                    continue
+                try:
+                    parsed = datetime.strptime(dte, "%d-%b-%Y")
+                except ValueError:
+                    continue
+                if sym not in latest or parsed > latest[sym]["parsed"]:
+                    latest[sym] = {"parsed": parsed, "from": frm, "to": to}
         return {
             sym: (d["to"] + "%", _CIRCUIT_EMOJI.get((d["from"], d["to"]), ""))
             for sym, d in latest.items()
         }
-    except Exception:
+    except Exception as e:
+        print(f"  [circuit] Error reading nse.csv: {e}")
         return {}
 
 
