@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 NSE EMA Screener — daily change tracker.
-Criteria : EMA50 > EMA200  AND  EMA100 > EMA200
+Criteria : EMA50 > EMA100  AND  EMA100 > EMA200  (full bullish stack)
 MCap     : ₹800 Cr – ₹1 Lakh Cr (NSE common equity only)
 Output   : ema_screener_changes.md  +  nse_ema_results.json  (state file)
 """
@@ -27,7 +27,7 @@ def fetch() -> dict[str, float]:
             col("exchange") == "NSE",
             col("type") == "stock",
             col("typespecs").has(["common"]),
-            col("EMA50")  > col("EMA200"),
+            col("EMA50")  > col("EMA100"),
             col("EMA100") > col("EMA200"),
             col("market_cap_basic").between(MC_LOW, MC_HIGH),
         )
@@ -62,7 +62,7 @@ def build_md(current: dict, previous: dict, today: str) -> str:
     lines = [
         f"# NSE EMA Screener — {today}",
         "",
-        "_Criteria: EMA50 > EMA200 & EMA100 > EMA200 | MCap ₹800 Cr – ₹1 Lakh Cr_",
+        "_Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_",
         "",
         f"**Total stocks in list: {len(current)}** &nbsp;|&nbsp; "
         f"**Additions: {len(additions)}** &nbsp;|&nbsp; "
