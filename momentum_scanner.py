@@ -24,7 +24,7 @@ RS filter (all 3 must pass):
 Output: momentum_scans/momentum_scans.md — auto-committed and pushed to GitHub
 """
 
-import sys, os
+import sys, os, csv, io
 from datetime import datetime, date, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -117,6 +117,45 @@ def get_watchlist() -> list[str]:
         .get_scanner_data()
     )
     return df["name"].tolist()
+
+
+# ── Circuit limits ────────────────────────────────────────────────────────────
+_CIRCUIT_EMOJI = {("20","10"): "🟨", ("10","5"): "🟥", ("5","10"): "🟩", ("10","20"): "🟦"}
+
+def get_circuit_limits() -> dict[str, tuple[str, str]]:
+    """Return {symbol: (current_pct, emoji)} from NSE circuit-limit change history."""
+    today   = date.today()
+    from_dt = (today - timedelta(days=180)).strftime("%d-%m-%Y")
+    to_dt   = today.strftime("%d-%m-%Y")
+    url = (f"https://www.nseindia.com/api/eqsurvactions"
+           f"?from_date={from_dt}&to_date={to_dt}&csv=true")
+    try:
+        sess = requests.Session()
+        sess.headers.update({"User-Agent": "Mozilla/5.0"})
+        sess.get("https://www.nseindia.com", timeout=10)
+        r = sess.get(url, timeout=15)
+        if not r.ok:
+            return {}
+        latest: dict[str, dict] = {}
+        for row in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))):
+            sym = row.get("SYMBOL", "").strip()
+            dte = row.get("EFFECTIVE DATE", "").strip()
+            frm = row.get("FROM", "").strip()
+            to  = row.get("TO",   "").strip()
+            if not sym or not dte:
+                continue
+            try:
+                parsed = datetime.strptime(dte, "%d-%b-%Y")
+            except ValueError:
+                continue
+            if sym not in latest or parsed > latest[sym]["parsed"]:
+                latest[sym] = {"parsed": parsed, "from": frm, "to": to}
+        return {
+            sym: (d["to"] + "%", _CIRCUIT_EMOJI.get((d["from"], d["to"]), ""))
+            for sym, d in latest.items()
+        }
+    except Exception:
+        return {}
 
 
 # ── Stock analysis ────────────────────────────────────────────────────────────
@@ -241,7 +280,7 @@ STATIC_FOOTER = """
 - RS Line (stock / Nifty MidSmallcap 400 × 1000) above its 9 EMA and 21 EMA (daily)
 - Weekly RS EMA9 is rising"""
 
-def build_markdown(findings: list[dict]) -> str:
+def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
 
     lines = [
@@ -249,17 +288,19 @@ def build_markdown(findings: list[dict]) -> str:
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
         f"*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*\n",
-        "| Symbol | Signal | Day Change |",
-        "|--------|--------|----------:|",
+        "| Symbol | Signal | Day Change | Circuit |",
+        "|--------|--------|----------:|:-------:|",
     ]
 
     for f in findings:
+        cl, em = circuit.get(f["symbol"], ("20%", ""))
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| {f['symbol']} "
                 f"| **{tag}** — {label} "
-                f"| {ds}{f['day_chg']:.2f}% |"
+                f"| {ds}{f['day_chg']:.2f}% "
+                f"| {cl} {em} |"
             )
 
     return "\n".join(lines)
@@ -291,6 +332,10 @@ def main():
     index_s = get_index_history(months=6)
     print(f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})")
 
+    print("\nFetching NSE circuit limits...")
+    circuit = get_circuit_limits()
+    print(f"  Circuit data: {len(circuit)} stocks with recent limit changes")
+
     print("\nFetching live watchlist from TradingView screener...")
     watchlist = get_watchlist()
     print(f"  Watchlist: {len(watchlist)} stocks  |  Scanning...\n")
@@ -309,7 +354,7 @@ def main():
     if os.path.exists(MD_FILE):
         with open(MD_FILE, "r", encoding="utf-8") as fh:
             existing = fh.read()
-    md = build_markdown(findings)
+    md = build_markdown(findings, circuit)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         if existing:
             fh.write(md + "\n\n---\n\n" + existing)
