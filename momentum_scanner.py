@@ -131,17 +131,17 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
            f"?from_date={from_dt}&to_date={to_dt}&csv=true")
     try:
         sess = requests.Session()
-        sess.headers.update({"User-Agent": "Mozilla/5.0"})
-        sess.get("https://www.nseindia.com", timeout=10)
+        sess.headers.update({"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120.0.0.0 Safari/537.36"})
         r = sess.get(url, timeout=15)
         if not r.ok:
             return {}
         latest: dict[str, dict] = {}
-        for row in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))):
-            sym = row.get("SYMBOL", "").strip()
-            dte = row.get("EFFECTIVE DATE", "").strip()
-            frm = row.get("FROM", "").strip()
-            to  = row.get("TO",   "").strip()
+        for raw in csv.DictReader(io.StringIO(r.content.decode("utf-8-sig"))):
+            row = {k.strip(): v.strip() for k, v in raw.items()}
+            sym = row.get("SYMBOL", "")
+            dte = row.get("EFFECTIVE DATE", "")
+            frm = row.get("FROM", "")
+            to  = row.get("TO",   "")
             if not sym or not dte:
                 continue
             try:
