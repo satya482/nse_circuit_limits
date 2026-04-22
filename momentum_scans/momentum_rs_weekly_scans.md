@@ -7,15 +7,15 @@
 ### Entry Signals
 | Symbol | Signal | Day Change | Circuit |
 |--------|--------|----------:|:-------:|
-| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
-| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
-| AUROPHARMA | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.12% | 20%  |
-| SANSERA | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.26% | 20%  |
-| GRANULES | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.75% | 20%  |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
-| MUKANDLTD | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.59% | 20%  |
-| INGERRAND | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.79% | 20%  |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
+| [AUROPHARMA](https://in.tradingview.com/chart/?symbol=NSE:AUROPHARMA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.12% | 20%  |
+| [SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.26% | 20%  |
+| [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.75% | 20%  |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| [MUKANDLTD](https://in.tradingview.com/chart/?symbol=NSE:MUKANDLTD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.59% | 20%  |
+| [INGERRAND](https://in.tradingview.com/chart/?symbol=NSE:INGERRAND) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.79% | 20%  |
 
 ### ZLEMA25 Turning Up *(low-risk early entries)*
 *No ZLEMA25 turns today.*
@@ -31,13 +31,13 @@
 ### Entry Signals
 | Symbol | Signal | Day Change | Circuit |
 |--------|--------|----------:|:-------:|
-| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.64% | 20%  |
-| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +15.43% | 20%  |
-| GRANULES | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.33% | 20%  |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.42% | 10% 🟩 |
-| INGERRAND | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.84% | 20%  |
-| ASHIANA | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.71% | 20%  |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.64% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +15.43% | 20%  |
+| [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.33% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.42% | 10% 🟩 |
+| [INGERRAND](https://in.tradingview.com/chart/?symbol=NSE:INGERRAND) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.84% | 20%  |
+| [ASHIANA](https://in.tradingview.com/chart/?symbol=NSE:ASHIANA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.71% | 20%  |
 
 ### ZLEMA25 Turning Up *(low-risk early entries)*
 *No ZLEMA25 turns today.*
@@ -52,12 +52,12 @@
 
 | Symbol | Signal | Day Change | Circuit |
 |--------|--------|----------:|:-------:|
-| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.49% | 20%  |
-| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +12.76% | 20%  |
-| GRANULES | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.15% | 20%  |
-| ACMESOLAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.29% | 20%  |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.80% | 10% 🟩 |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.49% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +12.76% | 20%  |
+| [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.15% | 20%  |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.29% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.80% | 10% 🟩 |
 
 ---
 

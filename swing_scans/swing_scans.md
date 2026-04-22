@@ -6,18 +6,18 @@
 
 | Symbol | Signal | Day Change | Circuit |
 |--------|--------|----------:|:-------:|
-| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
-| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
-| WAAREEENER | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.30% | 20%  |
-| AVANTIFEED | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.39% | 20% 🟦 |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
-| ACMESOLAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.46% | 20%  |
-| HONASA | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.38% | 20%  |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
-| MANGLMCEM | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.45% | 20%  |
-| ROSSTECH | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.38% | 20%  |
-| SAKAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.92% | 20%  |
-| STEELCAS | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.23% | 20%  |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
+| [WAAREEENER](https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.30% | 20%  |
+| [AVANTIFEED](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.39% | 20% 🟦 |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.46% | 20%  |
+| [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.38% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| [MANGLMCEM](https://in.tradingview.com/chart/?symbol=NSE:MANGLMCEM) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.45% | 20%  |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.38% | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.92% | 20%  |
+| [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.23% | 20%  |
 
 ---
 
@@ -29,15 +29,15 @@
 
 | Symbol | Signal | Day Change | Circuit |
 |--------|--------|----------:|:-------:|
-| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.61% | 20%  |
-| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +10.20% | 20%  |
-| AVANTIFEED | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.48% | 20% 🟦 |
-| ACMESOLAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.09% | 20%  |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.62% | 10% 🟩 |
-| ROSSTECH | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.32% | 20%  |
-| SAKAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.41% | 20%  |
-| STEELCAS | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.12% | 20%  |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.61% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +10.20% | 20%  |
+| [AVANTIFEED](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.48% | 20% 🟦 |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.09% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.62% | 10% 🟩 |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.32% | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.41% | 20%  |
+| [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.12% | 20%  |
 
 ---
 
@@ -49,15 +49,15 @@
 
 | Symbol | Signal | Day Change |
 |--------|--------|----------:|
-| ATHERENERG | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.75% |
-| AGIIL | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.64% |
-| ABSLAMC | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.70% |
-| ACMESOLAR | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.94% |
-| SHRIPISTON | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.12% |
-| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.70% |
-| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.67% |
-| PVP | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.14% |
-| WHEELS | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.65% |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.75% |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.64% |
+| [ABSLAMC](https://in.tradingview.com/chart/?symbol=NSE:ABSLAMC) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.70% |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.94% |
+| [SHRIPISTON](https://in.tradingview.com/chart/?symbol=NSE:SHRIPISTON) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.12% |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.70% |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.67% |
+| [PVP](https://in.tradingview.com/chart/?symbol=NSE:PVP) | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.14% |
+| [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.65% |
 
 ---
 
@@ -69,13 +69,13 @@
 
 | Symbol | Signal | Day Change |
 |--------|--------|----------:|
-| NATIONALUM | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.76% |
-| CHENNPETRO | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.29% |
-| TMB | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.91% |
-| ROSSTECH | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.77% |
-| WHEELS | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.68% |
-| VENUSREM | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.63% |
-| RACLGEAR | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.56% |
+| [NATIONALUM](https://in.tradingview.com/chart/?symbol=NSE:NATIONALUM) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.76% |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.29% |
+| [TMB](https://in.tradingview.com/chart/?symbol=NSE:TMB) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.91% |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.77% |
+| [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.68% |
+| [VENUSREM](https://in.tradingview.com/chart/?symbol=NSE:VENUSREM) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.63% |
+| [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.56% |
 
 ---
 
