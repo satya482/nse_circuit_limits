@@ -24,7 +24,7 @@ RS filter (all 3 must pass):
 Output: momentum_scans/momentum_scans.md — auto-committed and pushed to GitHub
 """
 
-import sys, os, subprocess
+import sys, os
 from datetime import datetime, date, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -285,21 +285,6 @@ def print_results(findings: list[dict]) -> None:
         print("    " + "─" * 60)
 
 
-# ── Git push ──────────────────────────────────────────────────────────────────
-def git_commit_push(md_path: str) -> None:
-    rel       = os.path.relpath(md_path, REPO_DIR)
-    cache_rel = os.path.relpath(INDEX_CACHE, REPO_DIR)
-    cmds = [
-        ["git", "-C", REPO_DIR, "add", rel, cache_rel],
-        ["git", "-C", REPO_DIR, "commit", "-m", f"momentum scan {TODAY}"],
-        ["git", "-C", REPO_DIR, "push"],
-    ]
-    for cmd in cmds:
-        result = subprocess.run(cmd, capture_output=True, text=True)
-        if result.returncode != 0 and "nothing to commit" not in result.stdout:
-            print(f"  git: {result.stderr.strip()}")
-
-
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main():
     print("\nFetching NIFTY MidSmallcap 400 index history...")
@@ -331,10 +316,6 @@ def main():
         else:
             fh.write(md + "\n" + STATIC_FOOTER)
     print(f"\n  Saved -> {MD_FILE}")
-
-    print("  Committing and pushing to GitHub...")
-    git_commit_push(MD_FILE)
-    print("  Done.")
 
 
 if __name__ == "__main__":
