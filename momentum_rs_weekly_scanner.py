@@ -172,15 +172,16 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not (e50.iloc[-1] > e200.iloc[-1] and e100.iloc[-1] > e200.iloc[-1]):
             return None
 
-        zl_now, zl_prev   = zl25.iloc[-1], zl25.iloc[-2]
-        e20_now, e20_prev = e20.iloc[-1],  e20.iloc[-2]
+        zl_now, zl_prev, zl_prev2 = zl25.iloc[-1], zl25.iloc[-2], zl25.iloc[-3]
+        e20_now, e20_prev         = e20.iloc[-1],  e20.iloc[-2]
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
         curr_low   = lo.iloc[-1]
         curr_open  = op.iloc[-1]
 
-        zl_rising  = zl_now > zl_prev
-        e20_rising = e20_now > e20_prev
+        zl_rising     = zl_now > zl_prev
+        zl_turning_up = zl_rising and (zl_prev <= zl_prev2)  # slope just flipped up today
+        e20_rising    = e20_now > e20_prev
 
         if not zl_rising:
             return None
@@ -236,14 +237,15 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             if touched and bounced:
                 entries.append(("DEEP PULLBACK", f"Bounce from {name}", level))
 
-        if not entries:
+        if not entries and not zl_turning_up:
             return None
 
         return {
-            "symbol":  symbol,
-            "close":   curr_close,
-            "day_chg": (curr_close - prev_close) / prev_close * 100,
-            "entries": entries,
+            "symbol":       symbol,
+            "close":        curr_close,
+            "day_chg":      (curr_close - prev_close) / prev_close * 100,
+            "entries":      entries,
+            "zl_turning_up": zl_turning_up,
         }
 
     except Exception:
@@ -272,49 +274,86 @@ STATIC_FOOTER = """
 - Weekly RS EMA9 is rising"""
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
+    entry_findings   = [f for f in findings if f["entries"]]
+    turning_findings = [f for f in findings if f["zl_turning_up"]]
+    entry_findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
+    turning_findings.sort(key=lambda x: x["day_chg"], reverse=True)
 
     lines = [
         f"# NSE Momentum Scan (Weekly RS) — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
-        f"\n**Entry Opportunities: {len(findings)}**",
-        f"*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*\n",
-        "| Symbol | Signal | Day Change | Circuit |",
-        "|--------|--------|----------:|:-------:|",
+        "",
+        f"**Entry Signals: {len(entry_findings)}** &nbsp;|&nbsp; **ZLEMA25 Turning Up: {len(turning_findings)}**",
+        f"*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*",
+        "",
+        "### Entry Signals",
     ]
 
-    for f in findings:
-        cl, em = circuit.get(f["symbol"], ("20%", ""))
-        for tag, label, _ in f["entries"]:
+    if entry_findings:
+        lines += [
+            "| Symbol | Signal | Day Change | Circuit |",
+            "|--------|--------|----------:|:-------:|",
+        ]
+        for f in entry_findings:
+            cl, em = circuit.get(f["symbol"], ("20%", ""))
+            for tag, label, _ in f["entries"]:
+                ds = "+" if f["day_chg"] >= 0 else ""
+                lines.append(
+                    f"| {f['symbol']} "
+                    f"| **{tag}** — {label} "
+                    f"| {ds}{f['day_chg']:.2f}% "
+                    f"| {cl} {em} |"
+                )
+    else:
+        lines.append("*No entry signals today.*")
+
+    lines += ["", "### ZLEMA25 Turning Up *(low-risk early entries)*"]
+
+    if turning_findings:
+        lines += [
+            "| Symbol | Day Change | Circuit |",
+            "|--------|----------:|:-------:|",
+        ]
+        for f in turning_findings:
+            cl, em = circuit.get(f["symbol"], ("20%", ""))
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| {f['symbol']} "
-                f"| **{tag}** — {label} "
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| {cl} {em} |"
             )
+    else:
+        lines.append("*No ZLEMA25 turns today.*")
 
     return "\n".join(lines)
 
 
 # ── Console ───────────────────────────────────────────────────────────────────
 def print_results(findings: list[dict]) -> None:
+    entry_findings   = [f for f in findings if f["entries"]]
+    turning_findings = [f for f in findings if f["zl_turning_up"]]
+
     print(f"\n{'='*70}")
     print(f"  NSE Momentum Scanner (Weekly RS)  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  Entry Opportunities: {len(findings)}")
+    print(f"  Entry Signals: {len(entry_findings)}   ZLEMA25 Turning Up: {len(turning_findings)}")
     print(f"{'='*70}")
 
-    if not findings:
-        print("  No entry setups found today.")
-        return
+    if entry_findings:
+        print("\n  ── Entry Signals ──")
+        for f in entry_findings:
+            ds = "+" if f["day_chg"] >= 0 else ""
+            print(f"\n  {f['symbol']:<15}  Close: {f['close']:>8.2f}  ({ds}{f['day_chg']:.2f}% day)")
+            for tag, label, level in f["entries"]:
+                vs = (f["close"] - level) / level * 100
+                print(f"    [{tag}]  {label}  Level={level:.2f}  ({vs:+.1f}%)")
+            print("    " + "─" * 60)
 
-    for f in findings:
-        ds = "+" if f["day_chg"] >= 0 else ""
-        print(f"\n  {f['symbol']:<15}  Close: {f['close']:>8.2f}  ({ds}{f['day_chg']:.2f}% day)")
-        for tag, label, level in f["entries"]:
-            vs = (f["close"] - level) / level * 100
-            print(f"    [{tag}]  {label}  Level={level:.2f}  ({vs:+.1f}%)")
-        print("    " + "─" * 60)
+    if turning_findings:
+        print("\n  ── ZLEMA25 Turning Up (low-risk early entries) ──")
+        for f in turning_findings:
+            ds = "+" if f["day_chg"] >= 0 else ""
+            print(f"  {f['symbol']:<15}  Close: {f['close']:>8.2f}  ({ds}{f['day_chg']:.2f}% day)")
+        print()
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
