@@ -132,7 +132,7 @@ def parse_ema_changes(content: str) -> tuple:
             if line.startswith('|') and not line.startswith('| Symbol') and not line.startswith('|---'):
                 parts = [p.strip() for p in line.split('|') if p.strip()]
                 if len(parts) >= 2:
-                    additions.append({"symbol": parts[0], "day_chg": parts[1]})
+                    additions.append({"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]})
 
     del_m = re.search(r'## ❌ Deletions.*?\n(.*?)(?=^##|\Z)', content, re.DOTALL | re.MULTILINE)
     if del_m:
@@ -141,7 +141,7 @@ def parse_ema_changes(content: str) -> tuple:
             if line.startswith('|') and not line.startswith('| Symbol') and not line.startswith('|---'):
                 parts = [p.strip() for p in line.split('|') if p.strip()]
                 if len(parts) >= 2:
-                    deletions.append({"symbol": parts[0], "day_chg": parts[1]})
+                    deletions.append({"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]})
 
     return additions, deletions
 
