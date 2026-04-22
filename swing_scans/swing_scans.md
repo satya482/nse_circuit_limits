@@ -1,4 +1,27 @@
 # NSE Swing Scan — 2026-04-22
+*Generated 2026-04-22 16:07 IST*
+
+**Entry Opportunities: 12**
+*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*
+
+| Symbol | Signal | Day Change | Circuit |
+|--------|--------|----------:|:-------:|
+| DATAPATTNS | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.56% | 20%  |
+| GOKULAGRO | **STRONG** — ZLEMA25 touch + EMA20 rising | +11.99% | 20%  |
+| WAAREEENER | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.30% | 20%  |
+| AVANTIFEED | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.39% | 20% 🟦 |
+| INDOTHAI | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.08% | 10% 🟩 |
+| ACMESOLAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.46% | 20%  |
+| HONASA | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.38% | 20%  |
+| SCHNEIDER | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.00% | 5%  |
+| MANGLMCEM | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.45% | 20%  |
+| ROSSTECH | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.38% | 20%  |
+| SAKAR | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.92% | 20%  |
+| STEELCAS | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.23% | 20%  |
+
+---
+
+# NSE Swing Scan — 2026-04-22
 *Generated 2026-04-22 11:54 IST*
 
 **Entry Opportunities: 9**
