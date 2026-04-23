@@ -15,6 +15,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 SWING_MD       = os.path.join(BASE, "swing_scans", "swing_scans.md")
 MOMENTUM_MD    = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
 WEEKLY_RS_MD   = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
+EMA25_ZL_MD    = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
 EMA_MD         = os.path.join(BASE, "ema_screener_changes.md")
 CIRCUIT_MD     = os.path.join(BASE, "NSE_Circuit_Limits.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
@@ -151,6 +152,39 @@ def parse_ema_date(content: str) -> str:
     return m.group(1) if m else ""
 
 
+def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
+    """Parse ema25_zl_scans.md → (rising, watch) for today's block."""
+    block = extract_today_block(content, today)
+    if not block:
+        return [], []
+
+    def _parse_section(section_text: str) -> list:
+        rows = []
+        for line in section_text.splitlines():
+            line = line.strip()
+            if not line.startswith('|') or line.startswith('| Symbol') or line.startswith('|---'):
+                continue
+            parts = [p.strip() for p in line.split('|') if p.strip()]
+            if len(parts) < 5:
+                continue
+            rows.append({
+                "symbol":  _strip_md_link(parts[0]),
+                "close":   parts[1],
+                "day_chg": parts[2],
+                "zl_days": parts[3],
+                "zl_pct":  parts[4],
+                "circuit": parts[5] if len(parts) > 5 else "",
+            })
+        return rows
+
+    rising_m = re.search(r'### ZLEMA25 Rising\n(.*?)(?=###|\Z)', block, re.DOTALL)
+    watch_m  = re.search(r'### ZLEMA25 Watch[^\n]*\n(.*?)(?=###|\Z)', block, re.DOTALL)
+
+    rising = _parse_section(rising_m.group(1)) if rising_m else []
+    watch  = _parse_section(watch_m.group(1))  if watch_m  else []
+    return rising, watch
+
+
 def parse_circuit_changes(content: str, limit: int = 12) -> list:
     changes = []
     in_table = False
@@ -212,6 +246,7 @@ def chg_float(s: str) -> float:
 def build_html(today: str, now_str: str,
                swing: list, momentum: list,
                weekly_entry: list, weekly_turning: list,
+               zl25_rising: list, zl25_watch: list,
                ema_adds: list, ema_dels: list, ema_date: str,
                circuit_changes: list) -> str:
 
@@ -299,6 +334,19 @@ def build_html(today: str, now_str: str,
         for r in weekly_turning
     ]
 
+    # EMA25 ZL rows
+    def _zl_row(r):
+        return (
+            f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="num">{r["close"]}</td>'
+            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
+            f'<td class="zld">{r["zl_days"]}</td>'
+            f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'{td_circ(r["circuit"])}</tr>'
+        )
+    zr_rows = [_zl_row(r) for r in zl25_rising[:20]]
+    zw_rows = [_zl_row(r) for r in zl25_watch[:15]]
+
     # EMA adds / dels
     ea_rows = [
         f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
@@ -339,6 +387,26 @@ def build_html(today: str, now_str: str,
     <thead><tr><th>Symbol</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
     <tbody>{table_or_empty(t_rows, 5, "No ZLEMA25 turns today")}</tbody>
   </table>
+</div>"""
+
+    zl25_section = ""
+    if zl25_rising or zl25_watch:
+        zl25_section = f"""
+<div class="two">
+  <div class="section">
+    <div class="stitle">EMA25 ZL Rising — RS-filtered ({len(zl25_rising)} stocks, top 20)</div>
+    <table>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zr_rows, 6, "No ZL rising stocks")}</tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="stitle">EMA25 ZL Watch — RS-filtered ({len(zl25_watch)} stocks, top 15)</div>
+    <table>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zw_rows, 6, "No ZL watch stocks")}</tbody>
+    </table>
+  </div>
 </div>"""
 
     return f"""<!DOCTYPE html>
@@ -383,6 +451,7 @@ tr:hover td{{background:var(--bg3)}}
 .sym a{{color:inherit;text-decoration:none}}.sym a:hover{{text-decoration:underline;color:var(--blu)}}
 .zld{{color:var(--mu);font-size:11px}}
 .nm{{font-size:11px;color:var(--mu)}}
+.num{{font-family:monospace;font-size:12px;color:var(--mu)}}
 .pos{{color:var(--grn)}}.neg{{color:var(--red)}}
 
 .b{{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}}
@@ -410,6 +479,8 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv grn">{len(momentum)}</div><div class="sl">Momentum</div></div>
   <div class="stat"><div class="sv grn">{len(weekly_entry)}</div><div class="sl">Weekly RS</div></div>
   <div class="stat"><div class="sv blu">{len(weekly_turning)}</div><div class="sl">ZL Turning</div></div>
+  <div class="stat"><div class="sv grn">{len(zl25_rising)}</div><div class="sl">ZL25 Rising</div></div>
+  <div class="stat"><div class="sv pur">{len(zl25_watch)}</div><div class="sl">ZL25 Watch</div></div>
   <div class="stat"><div class="sv grn">{len(ema_adds)}</div><div class="sl">EMA Adds</div></div>
   <div class="stat"><div class="sv red">{len(ema_dels)}</div><div class="sl">EMA Exits</div></div>
 </div>
@@ -423,6 +494,8 @@ tr:hover td{{background:var(--bg3)}}
 </div>
 
 {turning_section}
+
+{zl25_section}
 
 <div class="two">
   <div class="section">
@@ -464,6 +537,7 @@ def main():
     swing_content    = read_file(SWING_MD)
     momentum_content = read_file(MOMENTUM_MD)
     weekly_content   = read_file(WEEKLY_RS_MD)
+    zl25_content     = read_file(EMA25_ZL_MD)
     ema_content      = read_file(EMA_MD)
     circuit_content  = read_file(CIRCUIT_MD)
 
@@ -475,6 +549,7 @@ def main():
     momentum_signals = parse_signal_table(momentum_block)
     weekly_entry, weekly_turning = parse_weekly_rs_block(weekly_block)
 
+    zl25_rising, zl25_watch = parse_ema25_zl(zl25_content, today)
     ema_adds, ema_dels = parse_ema_changes(ema_content)
     ema_date = parse_ema_date(ema_content)
     circuit_changes = parse_circuit_changes(circuit_content)
@@ -483,6 +558,7 @@ def main():
         today=today, now_str=now_str,
         swing=swing_signals, momentum=momentum_signals,
         weekly_entry=weekly_entry, weekly_turning=weekly_turning,
+        zl25_rising=zl25_rising, zl25_watch=zl25_watch,
         ema_adds=ema_adds, ema_dels=ema_dels, ema_date=ema_date,
         circuit_changes=circuit_changes,
     )
@@ -492,6 +568,7 @@ def main():
 
     print(f"Written: {DASHBOARD_HTML}")
     print(f"  Swing:{len(swing_signals)} Momentum:{len(momentum_signals)} WeeklyRS:{len(weekly_entry)} Turning:{len(weekly_turning)}")
+    print(f"  ZL25 Rising:{len(zl25_rising)} Watch:{len(zl25_watch)}")
     print(f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}")
     triple = sum(1 for s in {r['symbol'] for r in swing_signals} &
                               {r['symbol'] for r in momentum_signals} &
