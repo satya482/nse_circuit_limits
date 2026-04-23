@@ -1,3 +1,24 @@
+# NSE Momentum Scan (Weekly RS) — 2026-04-23
+*Generated 2026-04-23 16:20 IST*
+
+**Entry Signals: 6** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 0**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
+
+### Entry Signals
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [GMDCLTD](https://in.tradingview.com/chart/?symbol=NSE:GMDCLTD) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.23% | 20d | +18.6% | 20%  |
+| [NLCINDIA](https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.41% | 7d | +9.2% | 20%  |
+| [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.47% | 16d | +36.5% | 20%  |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.86% | 18d | +24.1% | 20%  |
+| [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.73% | 19d | +17.9% | 10% 🟩 |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.05% | 11d | +19.8% | 20%  |
+
+### ZLEMA25 Turning Up *(low-risk early entries)*
+*No ZLEMA25 turns today.*
+
+---
+
 # NSE Momentum Scan (Weekly RS) — 2026-04-22
 *Generated 2026-04-22 16:23 IST*
 
