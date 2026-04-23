@@ -2,26 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 233** &nbsp;|&nbsp; **Additions: 10** &nbsp;|&nbsp; **Deletions: 1**
+**Total stocks in list: 233** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (10)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [OBSCP](https://in.tradingview.com/chart/?symbol=NSE:OBSCP) | +11.86% |
-| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL) | +2.50% |
-| [PRICOLLTD](https://in.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | +1.11% |
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | +0.55% |
-| [ALIVUS](https://in.tradingview.com/chart/?symbol=NSE:ALIVUS) | +0.44% |
-| [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | -0.02% |
-| [LTF](https://in.tradingview.com/chart/?symbol=NSE:LTF) | -0.65% |
-| [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) | -1.71% |
-| [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK) | -2.04% |
-| [UEL](https://in.tradingview.com/chart/?symbol=NSE:UEL) | -2.91% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (1)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [MARICO](https://in.tradingview.com/chart/?symbol=NSE:MARICO) | +1.31% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (233)
 | # | Symbol | Day Change % |
