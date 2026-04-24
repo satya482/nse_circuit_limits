@@ -301,8 +301,8 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
 
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    rising = sorted([f for f in findings if     f["zl_rising"]], key=lambda x: x["zl_pct"], reverse=True)
-    watch  = sorted([f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_pct"], reverse=True)
+    rising = sorted([f for f in findings if     f["zl_rising"]], key=lambda x: x["zl_days"])
+    watch  = sorted([f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"])
 
     hdr = [
         "| Symbol | Close | Day Chg | ZL Days | ZL Chg% | Circuit |",
