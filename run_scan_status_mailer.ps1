@@ -20,4 +20,4 @@ try {
 }
 
 # To register scheduled task at 7:00 PM Mon-Fri (after all scans are done):
-# schtasks /create /tn "NSE_ScanStatusMailer" /tr "powershell -NonInteractive -WindowStyle Hidden -File C:\Users\satya\nse_circuit_limits\run_scan_status_mailer.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 19:00 /f
+# schtasks /create /tn "NSE_ScanStatusMailer" /tr "powershell -NonInteractive -WindowStyle Hidden -File C:\Users\satya\nse_circuit_limits\run_scan_status_mailer.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:40 /f
