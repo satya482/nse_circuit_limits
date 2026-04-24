@@ -1,3 +1,21 @@
+# NSE Momentum Scan — 2026-04-24
+*Generated 2026-04-24 18:49 IST*
+
+**Entry Opportunities: 7**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.26% | 19d | +22.6% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.71% | 14d | +30.2% | 5%  |
+| [APEX](https://in.tradingview.com/chart/?symbol=NSE:APEX) | **STRONG** — ZLEMA25 touch + EMA20 rising | -4.89% | 15d | +19.8% | 20% 🟦 |
+| [ZFCVINDIA](https://in.tradingview.com/chart/?symbol=NSE:ZFCVINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.30% | 11d | +3.9% | 20%  |
+| [CANFINHOME](https://in.tradingview.com/chart/?symbol=NSE:CANFINHOME) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.09% | 11d | +8.9% | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.72% | 12d | +19.0% | 20%  |
+| [SIGNPOST](https://in.tradingview.com/chart/?symbol=NSE:SIGNPOST) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.64% | 11d | +10.5% | 20%  |
+
+---
+
 # NSE Momentum Scan — 2026-04-23
 *Generated 2026-04-23 16:16 IST*
 
