@@ -1,0 +1,16 @@
+universe_csv: "C:/Users/satya/nse_circuit_limits/NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
+cache_dir: ".ema_compression_cache"
+output_dir: "ema_compression_scans"
+lookback_days: 400   # ~16 months for stable EMA200
+
+gate:
+  ema_spread_atr_ratio: 1.5   # max(EMA50,100,200) - min() < 1.5 × ATR50
+  ema_spread_pct: 3.0         # same spread < 3% of EMA200
+  min_compression_bars: 10    # consecutive bars both gates must pass
+
+scoring:
+  tightness: 0.30        # lower spread/ATR = better
+  duration: 0.25         # longer compression = more coiled
+  volume_contraction: 0.20  # volume drying up = institutional patience
+  trend: 0.15            # EMA50 > EMA100 > EMA200 = uptrend aligned
+  proximity: 0.10        # price near EMA cluster midpoint
