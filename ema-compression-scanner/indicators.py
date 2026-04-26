@@ -38,3 +38,36 @@ def compute(df: pd.DataFrame) -> pd.DataFrame:
     df["spread_pct"] = df["ema_spread"] / df["ema200"].replace(0, float("nan")) * 100
 
     return df
+
+
+ZL_TURN_CAP = 60
+
+
+def zl25_stats(df: pd.DataFrame) -> tuple[bool, int, float]:
+    """
+    Returns (zl_rising, zl_days, zl_chg_pct).
+    zl_rising: True if ZLEMA25 slope is currently up (last bar > second-to-last).
+    zl_days:   Bars since last ZLEMA25 turn-up (capped at ZL_TURN_CAP).
+    zl_chg_pct: % price change from the turn-up bar to today.
+    """
+    close = df["close"].astype(float)
+    e25 = close.ewm(span=25, adjust=False).mean()
+    zl = 2 * e25 - e25.ewm(span=25, adjust=False).mean()
+
+    n = len(zl)
+    if n < 3:
+        return False, ZL_TURN_CAP, 0.0
+
+    zl_rising = bool(zl.iloc[-1] > zl.iloc[-2])
+
+    # Walk back to find last turn-up: slope flipped from flat/down → up
+    limit = max(2, n - ZL_TURN_CAP)
+    for i in range(n - 1, limit - 1, -1):
+        if zl.iloc[i] > zl.iloc[i - 1] and zl.iloc[i - 1] <= zl.iloc[i - 2]:
+            bars_ago = (n - 1) - i
+            chg = round((close.iloc[-1] / close.iloc[i] - 1) * 100, 2)
+            return zl_rising, bars_ago, chg
+
+    cap_idx = max(0, n - ZL_TURN_CAP - 1)
+    chg = round((close.iloc[-1] / close.iloc[cap_idx] - 1) * 100, 2)
+    return zl_rising, ZL_TURN_CAP, chg
