@@ -42,7 +42,7 @@ def _zl_dir(zl_rising: bool) -> str:
 
 
 def build_markdown(findings: list[dict], scanned: int, elapsed: float, today: str) -> str:
-    rising = [f for f in findings if f["zl_rising"]]
+    rising = sorted([f for f in findings if f["zl_rising"]], key=lambda x: x["zl_days"])
     watch  = [f for f in findings if not f["zl_rising"]]
 
     lines = [

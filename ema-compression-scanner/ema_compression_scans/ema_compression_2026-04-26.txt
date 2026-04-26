@@ -1,6 +1,6 @@
 # EMA Compression Scan — 2026-04-26
 
-**Scanned:** 845 &nbsp;|&nbsp; **Compressed (≥10d):** 101 &nbsp;|&nbsp; **ZL Rising:** 74 &nbsp;|&nbsp; **Run time:** 386s
+**Scanned:** 845 &nbsp;|&nbsp; **Compressed (≥10d):** 101 &nbsp;|&nbsp; **ZL Rising:** 74 &nbsp;|&nbsp; **Run time:** 393s
 
 ## Compression + ZL Rising
 
@@ -8,80 +8,80 @@ _Stocks that are compressed AND have ZLEMA25 turning up — coil + momentum flip
 
 | # | Symbol | Close | EMA200 | Sprd/ATR | Sprd% | Comp Days | Score | ZL Days | ZL Chg% | VolRatio |
 |---|--------|-------|--------|----------|-------|-----------|-------|---------|---------|---------|
-| 1 | [DRREDDY](https://www.tradingview.com/chart/?symbol=NSE:DRREDDY) | ₹1,317.1 | ₹1,251.6 | 0.12 | 0.33% | 180d | **78.5** | 1d | -1.0% | 0.84 |
-| 2 | [HSCL](https://www.tradingview.com/chart/?symbol=NSE:HSCL) | ₹566.1 | ₹466.0 | 0.37 | 1.60% | 174d | **71.9** | 13d | +25.4% | 0.54 |
-| 3 | [SCHAEFFLER](https://www.tradingview.com/chart/?symbol=NSE:SCHAEFFLER) | ₹4,286.6 | ₹3,916.1 | 0.47 | 1.73% | 98d | **71.9** | 7d | +8.7% | 0.73 |
-| 4 | [CESC](https://www.tradingview.com/chart/?symbol=NSE:CESC) | ₹180.6 | ₹160.3 | 0.15 | 0.47% | 67d | **70.8** | 15d | +17.9% | 1.02 |
-| 5 | [TRIVENI](https://www.tradingview.com/chart/?symbol=NSE:TRIVENI) | ₹417.6 | ₹374.5 | 0.51 | 2.15% | 83d | **69.9** | 19d | +12.8% | 0.74 |
-| 6 | [KPIL](https://www.tradingview.com/chart/?symbol=NSE:KPIL) | ₹1,240.8 | ₹1,152.0 | 0.11 | 0.38% | 71d | **68.0** | 12d | +13.6% | 0.93 |
-| 7 | [MANORAMA](https://www.tradingview.com/chart/?symbol=NSE:MANORAMA) | ₹1,411.1 | ₹1,332.4 | 0.12 | 0.52% | 92d | **67.2** | 11d | +7.8% | 1.11 |
-| 8 | [PARAS](https://www.tradingview.com/chart/?symbol=NSE:PARAS) | ₹800.5 | ₹676.7 | 0.52 | 2.70% | 82d | **66.6** | 13d | +24.4% | 0.73 |
-| 9 | [ATUL](https://www.tradingview.com/chart/?symbol=NSE:ATUL) | ₹6,680.5 | ₹6,283.8 | 0.51 | 1.63% | 57d | **66.2** | 7d | +2.0% | 0.98 |
-| 10 | [GRSE](https://www.tradingview.com/chart/?symbol=NSE:GRSE) | ₹2,878.7 | ₹2,444.8 | 0.30 | 1.50% | 61d | **65.6** | 15d | +22.0% | 1.07 |
-| 11 | [FINEORG](https://www.tradingview.com/chart/?symbol=NSE:FINEORG) | ₹4,851.5 | ₹4,455.7 | 0.37 | 1.33% | 49d | **63.9** | 14d | +11.2% | 1.01 |
-| 12 | [THELEELA](https://www.tradingview.com/chart/?symbol=NSE:THELEELA) | ₹429.1 | ₹426.5 | 0.05 | 0.19% | 223d | **63.5** | 11d | +0.1% | 2.35 |
-| 13 | [AADHARHFC](https://www.tradingview.com/chart/?symbol=NSE:AADHARHFC) | ₹488.1 | ₹475.5 | 0.17 | 0.60% | 82d | **62.0** | 11d | +3.6% | 0.91 |
-| 14 | [GRASIM](https://www.tradingview.com/chart/?symbol=NSE:GRASIM) | ₹2,739.3 | ₹2,746.2 | 0.35 | 0.85% | 103d | **61.9** | 11d | -0.6% | 0.80 |
-| 15 | [APOLLOHOSP](https://www.tradingview.com/chart/?symbol=NSE:APOLLOHOSP) | ₹7,732.5 | ₹7,357.4 | 0.87 | 2.01% | 91d | **61.8** | 10d | +3.4% | 0.94 |
-| 16 | [PTC](https://www.tradingview.com/chart/?symbol=NSE:PTC) | ₹183.7 | ₹168.6 | 0.31 | 1.06% | 56d | **60.6** | 15d | +9.8% | 0.99 |
-| 17 | [SOLARINDS](https://www.tradingview.com/chart/?symbol=NSE:SOLARINDS) | ₹15,056.0 | ₹13,558.1 | 0.71 | 2.70% | 59d | **60.6** | 13d | +13.2% | 1.06 |
-| 18 | [ELGIEQUIP](https://www.tradingview.com/chart/?symbol=NSE:ELGIEQUIP) | ₹547.3 | ₹495.0 | 0.60 | 2.18% | 44d | **59.8** | 11d | +9.7% | 0.83 |
-| 19 | [KRYSTAL](https://www.tradingview.com/chart/?symbol=NSE:KRYSTAL) | ₹600.6 | ₹576.2 | 0.23 | 1.01% | 66d | **59.5** | 7d | +9.7% | 0.93 |
-| 20 | [GICRE](https://www.tradingview.com/chart/?symbol=NSE:GICRE) | ₹397.9 | ₹382.6 | 0.24 | 0.73% | 109d | **58.3** | 15d | +4.7% | 0.98 |
-| 21 | [METROPOLIS](https://www.tradingview.com/chart/?symbol=NSE:METROPOLIS) | ₹467.1 | ₹468.6 | 0.33 | 1.22% | 77d | **58.3** | 11d | +2.4% | 1.03 |
-| 22 | [MEDPLUS](https://www.tradingview.com/chart/?symbol=NSE:MEDPLUS) | ₹903.6 | ₹824.5 | 0.92 | 2.98% | 142d | **57.7** | 14d | +8.1% | 1.25 |
-| 23 | [AMBER](https://www.tradingview.com/chart/?symbol=NSE:AMBER) | ₹7,753.5 | ₹7,105.7 | 0.21 | 0.83% | 41d | **57.6** | 11d | +11.7% | 0.92 |
-| 24 | [DIACABS](https://www.tradingview.com/chart/?symbol=NSE:DIACABS) | ₹161.7 | ₹134.6 | 0.49 | 2.65% | 51d | **57.5** | 13d | +25.3% | 0.99 |
-| 25 | [AVL](https://www.tradingview.com/chart/?symbol=NSE:AVL) | ₹495.8 | ₹483.1 | 0.31 | 1.23% | 40d | **57.1** | 11d | +3.6% | 0.99 |
-| 26 | [PETRONET](https://www.tradingview.com/chart/?symbol=NSE:PETRONET) | ₹273.4 | ₹281.4 | 0.58 | 1.95% | 77d | **55.6** | 11d | +1.1% | 0.84 |
-| 27 | [DIVISLAB](https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB) | ₹6,361.5 | ₹6,240.0 | 0.44 | 1.06% | 166d | **55.0** | 9d | +4.0% | 1.13 |
-| 28 | [PHOENIXLTD](https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD) | ₹1,775.9 | ₹1,678.3 | 0.22 | 0.72% | 34d | **54.5** | 13d | +14.2% | 1.18 |
-| 29 | [RADICO](https://www.tradingview.com/chart/?symbol=NSE:RADICO) | ₹3,187.2 | ₹2,854.4 | 0.29 | 1.18% | 41d | **53.3** | 11d | +15.4% | 1.07 |
-| 30 | [HDFCAMC](https://www.tradingview.com/chart/?symbol=NSE:HDFCAMC) | ₹2,735.0 | ₹2,571.1 | 0.26 | 0.90% | 33d | **53.0** | 11d | +7.7% | 1.20 |
-| 31 | [LTFOODS](https://www.tradingview.com/chart/?symbol=NSE:LTFOODS) | ₹420.1 | ₹403.9 | 0.31 | 1.17% | 10d | **52.8** | 15d | +9.4% | 0.14 |
-| 32 | [VOLTAS](https://www.tradingview.com/chart/?symbol=NSE:VOLTAS) | ₹1,464.0 | ₹1,391.7 | 0.10 | 0.37% | 23d | **52.6** | 9d | +11.3% | 1.28 |
-| 33 | [EQUITASBNK](https://www.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | ₹65.2 | ₹61.4 | 0.18 | 0.71% | 27d | **52.3** | 12d | +16.8% | 1.03 |
-| 34 | [TATAPOWER](https://www.tradingview.com/chart/?symbol=NSE:TATAPOWER) | ₹435.0 | ₹387.6 | 0.87 | 2.50% | 48d | **52.0** | 12d | +12.2% | 1.03 |
-| 35 | [CARYSIL](https://www.tradingview.com/chart/?symbol=NSE:CARYSIL) | ₹899.1 | ₹856.2 | 0.26 | 1.18% | 28d | **51.7** | 13d | +11.3% | 1.26 |
-| 36 | [ENTERO](https://www.tradingview.com/chart/?symbol=NSE:ENTERO) | ₹1,250.1 | ₹1,141.8 | 0.54 | 2.27% | 20d | **51.2** | 10d | +5.9% | 0.85 |
-| 37 | [STYLEBAAZA](https://www.tradingview.com/chart/?symbol=NSE:STYLEBAAZA) | ₹387.8 | ₹299.0 | 0.37 | 2.43% | 30d | **50.1** | 19d | +38.4% | 1.19 |
-| 38 | [BANDHANBNK](https://www.tradingview.com/chart/?symbol=NSE:BANDHANBNK) | ₹174.7 | ₹160.8 | 0.65 | 2.57% | 21d | **49.2** | 11d | +6.0% | 0.89 |
-| 39 | [MASFIN](https://www.tradingview.com/chart/?symbol=NSE:MASFIN) | ₹320.4 | ₹307.3 | 0.42 | 1.52% | 25d | **49.0** | 13d | +5.7% | 0.94 |
-| 40 | [CREDITACC](https://www.tradingview.com/chart/?symbol=NSE:CREDITACC) | ₹1,236.5 | ₹1,250.3 | 0.48 | 1.72% | 44d | **48.3** | 15d | +3.7% | 1.07 |
-| 41 | [RAJRATAN](https://www.tradingview.com/chart/?symbol=NSE:RAJRATAN) | ₹419.1 | ₹405.9 | 0.36 | 1.92% | 18d | **46.7** | 14d | +12.8% | 1.38 |
-| 42 | [GOODLUCK](https://www.tradingview.com/chart/?symbol=NSE:GOODLUCK) | ₹1,189.3 | ₹1,080.6 | 0.67 | 2.92% | 21d | **46.6** | 15d | +14.7% | 0.98 |
-| 43 | [V2RETAIL](https://www.tradingview.com/chart/?symbol=NSE:V2RETAIL) | ₹203.1 | ₹200.6 | 0.41 | 1.89% | 36d | **46.0** | 3d | +2.8% | 1.10 |
-| 44 | [BBOX](https://www.tradingview.com/chart/?symbol=NSE:BBOX) | ₹550.1 | ₹503.7 | 0.50 | 2.30% | 19d | **45.9** | 11d | +10.1% | 0.78 |
-| 45 | [PNGJL](https://www.tradingview.com/chart/?symbol=NSE:PNGJL) | ₹666.0 | ₹590.7 | 0.41 | 1.55% | 12d | **45.8** | 15d | +18.6% | 1.16 |
-| 46 | [FORTIS](https://www.tradingview.com/chart/?symbol=NSE:FORTIS) | ₹929.3 | ₹868.7 | 0.48 | 1.47% | 26d | **45.6** | 12d | +10.6% | 1.05 |
-| 47 | [TATACONSUM](https://www.tradingview.com/chart/?symbol=NSE:TATACONSUM) | ₹1,174.0 | ₹1,115.3 | 0.37 | 0.95% | 37d | **45.3** | 12d | +10.6% | 1.17 |
-| 48 | [LT](https://www.tradingview.com/chart/?symbol=NSE:LT) | ₹4,014.3 | ₹3,839.9 | 0.55 | 1.66% | 23d | **44.5** | 13d | +7.7% | 1.07 |
-| 49 | [INDUSINDBK](https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK) | ₹848.0 | ₹832.3 | 0.81 | 2.59% | 11d | **44.3** | 11d | +1.4% | 0.58 |
-| 50 | [EPL](https://www.tradingview.com/chart/?symbol=NSE:EPL) | ₹225.8 | ₹212.4 | 0.29 | 1.17% | 13d | **44.0** | 0d | +0.0% | 1.29 |
-| 51 | [ADANIPORTS](https://www.tradingview.com/chart/?symbol=NSE:ADANIPORTS) | ₹1,585.1 | ₹1,430.0 | 0.88 | 2.85% | 24d | **42.9** | 15d | +14.4% | 1.21 |
-| 52 | [3MINDIA](https://www.tradingview.com/chart/?symbol=NSE:3MINDIA) | ₹32,635.0 | ₹32,581.7 | 0.53 | 1.76% | 15d | **42.8** | 9d | +3.7% | 1.17 |
-| 53 | [DMART](https://www.tradingview.com/chart/?symbol=NSE:DMART) | ₹4,443.5 | ₹4,064.2 | 0.71 | 2.15% | 15d | **42.8** | 18d | +13.6% | 1.25 |
-| 54 | [JSL](https://www.tradingview.com/chart/?symbol=NSE:JSL) | ₹766.3 | ₹743.8 | 0.67 | 2.34% | 20d | **42.7** | 13d | +5.7% | 0.95 |
-| 55 | [FINCABLES](https://www.tradingview.com/chart/?symbol=NSE:FINCABLES) | ₹972.7 | ₹838.6 | 0.68 | 2.86% | 32d | **42.4** | 11d | +14.7% | 0.86 |
-| 56 | [ULTRACEMCO](https://www.tradingview.com/chart/?symbol=NSE:ULTRACEMCO) | ₹11,998.0 | ₹11,891.4 | 0.49 | 1.28% | 31d | **42.4** | 11d | +3.4% | 1.22 |
-| 57 | [BRITANNIA](https://www.tradingview.com/chart/?symbol=NSE:BRITANNIA) | ₹5,730.5 | ₹5,751.4 | 0.41 | 1.02% | 26d | **42.3** | 8d | +2.5% | 1.09 |
-| 58 | [MANAPPURAM](https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ₹289.4 | ₹275.9 | 0.38 | 1.36% | 27d | **42.2** | 11d | +7.4% | 0.96 |
-| 59 | [NESTLEIND](https://www.tradingview.com/chart/?symbol=NSE:NESTLEIND) | ₹1,421.3 | ₹1,240.8 | 0.87 | 2.18% | 26d | **41.9** | 13d | +16.9% | 1.35 |
-| 60 | [PNB](https://www.tradingview.com/chart/?symbol=NSE:PNB) | ₹113.1 | ₹114.3 | 0.62 | 1.87% | 16d | **41.9** | 11d | +1.8% | 0.95 |
-| 61 | [ACI](https://www.tradingview.com/chart/?symbol=NSE:ACI) | ₹603.3 | ₹587.2 | 0.26 | 0.94% | 20d | **41.5** | 0d | +0.0% | 1.02 |
-| 62 | [INDIAGLYCO](https://www.tradingview.com/chart/?symbol=NSE:INDIAGLYCO) | ₹963.2 | ₹903.2 | 0.68 | 2.63% | 18d | **38.9** | 15d | +9.1% | 1.05 |
-| 63 | [MINDACORP](https://www.tradingview.com/chart/?symbol=NSE:MINDACORP) | ₹527.6 | ₹546.4 | 0.73 | 2.61% | 35d | **38.8** | 5d | -1.0% | 1.16 |
-| 64 | [NORTHARC](https://www.tradingview.com/chart/?symbol=NSE:NORTHARC) | ₹256.9 | ₹242.1 | 0.48 | 1.95% | 25d | **37.9** | 13d | +14.1% | 1.11 |
-| 65 | [CHOLAFIN](https://www.tradingview.com/chart/?symbol=NSE:CHOLAFIN) | ₹1,568.2 | ₹1,604.7 | 0.77 | 2.56% | 30d | **36.5** | 11d | +0.9% | 1.11 |
-| 66 | [CANFINHOME](https://www.tradingview.com/chart/?symbol=NSE:CANFINHOME) | ₹909.6 | ₹840.7 | 0.71 | 2.70% | 14d | **36.0** | 11d | +8.9% | 1.20 |
-| 67 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | ₹1,768.3 | ₹1,792.7 | 0.72 | 2.03% | 10d | **35.3** | 13d | +4.9% | 0.71 |
-| 68 | [JSWENERGY](https://www.tradingview.com/chart/?symbol=NSE:JSWENERGY) | ₹545.0 | ₹506.5 | 0.34 | 1.20% | 14d | **35.0** | 8d | +6.9% | 1.20 |
-| 69 | [NTPCGREEN](https://www.tradingview.com/chart/?symbol=NSE:NTPCGREEN) | ₹110.3 | ₹97.7 | 0.55 | 2.11% | 10d | **34.2** | 15d | +12.3% | 1.26 |
-| 70 | [SHAILY](https://www.tradingview.com/chart/?symbol=NSE:SHAILY) | ₹2,503.1 | ₹2,085.5 | 0.29 | 1.83% | 24d | **34.2** | 1d | +14.5% | 1.39 |
-| 71 | [SPLPETRO](https://www.tradingview.com/chart/?symbol=NSE:SPLPETRO) | ₹812.0 | ₹689.6 | 0.58 | 2.82% | 16d | **34.1** | 19d | +17.3% | 1.63 |
-| 72 | [IOC](https://www.tradingview.com/chart/?symbol=NSE:IOC) | ₹143.5 | ₹151.8 | 0.71 | 2.06% | 12d | **32.0** | 7d | -1.2% | 0.79 |
-| 73 | [ZYDUSLIFE](https://www.tradingview.com/chart/?symbol=NSE:ZYDUSLIFE) | ₹927.4 | ₹926.1 | 0.77 | 1.83% | 10d | **30.8** | 11d | +4.0% | 0.87 |
-| 74 | [GPPL](https://www.tradingview.com/chart/?symbol=NSE:GPPL) | ₹154.6 | ₹161.0 | 0.74 | 2.42% | 18d | **30.6** | 7d | +0.4% | 1.13 |
+| 1 | [EPL](https://www.tradingview.com/chart/?symbol=NSE:EPL) | ₹225.8 | ₹212.4 | 0.29 | 1.17% | 13d | **44.0** | 0d | +0.0% | 1.29 |
+| 2 | [ACI](https://www.tradingview.com/chart/?symbol=NSE:ACI) | ₹603.3 | ₹587.2 | 0.26 | 0.94% | 20d | **41.5** | 0d | +0.0% | 1.02 |
+| 3 | [DRREDDY](https://www.tradingview.com/chart/?symbol=NSE:DRREDDY) | ₹1,317.1 | ₹1,251.6 | 0.12 | 0.33% | 180d | **78.5** | 1d | -1.0% | 0.84 |
+| 4 | [SHAILY](https://www.tradingview.com/chart/?symbol=NSE:SHAILY) | ₹2,503.1 | ₹2,085.5 | 0.29 | 1.83% | 24d | **34.2** | 1d | +14.5% | 1.39 |
+| 5 | [V2RETAIL](https://www.tradingview.com/chart/?symbol=NSE:V2RETAIL) | ₹203.1 | ₹200.6 | 0.41 | 1.89% | 36d | **46.0** | 3d | +2.8% | 1.10 |
+| 6 | [MINDACORP](https://www.tradingview.com/chart/?symbol=NSE:MINDACORP) | ₹527.6 | ₹546.4 | 0.73 | 2.61% | 35d | **38.8** | 5d | -1.0% | 1.16 |
+| 7 | [SCHAEFFLER](https://www.tradingview.com/chart/?symbol=NSE:SCHAEFFLER) | ₹4,286.6 | ₹3,916.1 | 0.47 | 1.73% | 98d | **71.9** | 7d | +8.7% | 0.73 |
+| 8 | [ATUL](https://www.tradingview.com/chart/?symbol=NSE:ATUL) | ₹6,680.5 | ₹6,283.8 | 0.51 | 1.63% | 57d | **66.2** | 7d | +2.0% | 0.98 |
+| 9 | [KRYSTAL](https://www.tradingview.com/chart/?symbol=NSE:KRYSTAL) | ₹600.6 | ₹576.2 | 0.23 | 1.01% | 66d | **59.5** | 7d | +9.7% | 0.93 |
+| 10 | [IOC](https://www.tradingview.com/chart/?symbol=NSE:IOC) | ₹143.5 | ₹151.8 | 0.71 | 2.06% | 12d | **32.0** | 7d | -1.2% | 0.79 |
+| 11 | [GPPL](https://www.tradingview.com/chart/?symbol=NSE:GPPL) | ₹154.6 | ₹161.0 | 0.74 | 2.42% | 18d | **30.6** | 7d | +0.4% | 1.13 |
+| 12 | [BRITANNIA](https://www.tradingview.com/chart/?symbol=NSE:BRITANNIA) | ₹5,730.5 | ₹5,751.4 | 0.41 | 1.02% | 26d | **42.3** | 8d | +2.5% | 1.09 |
+| 13 | [JSWENERGY](https://www.tradingview.com/chart/?symbol=NSE:JSWENERGY) | ₹545.0 | ₹506.5 | 0.34 | 1.20% | 14d | **35.0** | 8d | +6.9% | 1.20 |
+| 14 | [DIVISLAB](https://www.tradingview.com/chart/?symbol=NSE:DIVISLAB) | ₹6,361.5 | ₹6,240.0 | 0.44 | 1.06% | 166d | **55.0** | 9d | +4.0% | 1.13 |
+| 15 | [VOLTAS](https://www.tradingview.com/chart/?symbol=NSE:VOLTAS) | ₹1,464.0 | ₹1,391.7 | 0.10 | 0.37% | 23d | **52.6** | 9d | +11.3% | 1.28 |
+| 16 | [3MINDIA](https://www.tradingview.com/chart/?symbol=NSE:3MINDIA) | ₹32,635.0 | ₹32,581.7 | 0.53 | 1.76% | 15d | **42.8** | 9d | +3.7% | 1.17 |
+| 17 | [APOLLOHOSP](https://www.tradingview.com/chart/?symbol=NSE:APOLLOHOSP) | ₹7,732.5 | ₹7,357.4 | 0.87 | 2.01% | 91d | **61.8** | 10d | +3.4% | 0.94 |
+| 18 | [ENTERO](https://www.tradingview.com/chart/?symbol=NSE:ENTERO) | ₹1,250.1 | ₹1,141.8 | 0.54 | 2.27% | 20d | **51.2** | 10d | +5.9% | 0.85 |
+| 19 | [MANORAMA](https://www.tradingview.com/chart/?symbol=NSE:MANORAMA) | ₹1,411.1 | ₹1,332.4 | 0.12 | 0.52% | 92d | **67.2** | 11d | +7.8% | 1.11 |
+| 20 | [THELEELA](https://www.tradingview.com/chart/?symbol=NSE:THELEELA) | ₹429.1 | ₹426.5 | 0.05 | 0.19% | 223d | **63.5** | 11d | +0.1% | 2.35 |
+| 21 | [AADHARHFC](https://www.tradingview.com/chart/?symbol=NSE:AADHARHFC) | ₹488.1 | ₹475.5 | 0.17 | 0.60% | 82d | **62.0** | 11d | +3.6% | 0.91 |
+| 22 | [GRASIM](https://www.tradingview.com/chart/?symbol=NSE:GRASIM) | ₹2,739.3 | ₹2,746.2 | 0.35 | 0.85% | 103d | **61.9** | 11d | -0.6% | 0.80 |
+| 23 | [ELGIEQUIP](https://www.tradingview.com/chart/?symbol=NSE:ELGIEQUIP) | ₹547.3 | ₹495.0 | 0.60 | 2.18% | 44d | **59.8** | 11d | +9.7% | 0.83 |
+| 24 | [METROPOLIS](https://www.tradingview.com/chart/?symbol=NSE:METROPOLIS) | ₹467.1 | ₹468.6 | 0.33 | 1.22% | 77d | **58.3** | 11d | +2.4% | 1.03 |
+| 25 | [AMBER](https://www.tradingview.com/chart/?symbol=NSE:AMBER) | ₹7,753.5 | ₹7,105.7 | 0.21 | 0.83% | 41d | **57.6** | 11d | +11.7% | 0.92 |
+| 26 | [AVL](https://www.tradingview.com/chart/?symbol=NSE:AVL) | ₹495.8 | ₹483.1 | 0.31 | 1.23% | 40d | **57.1** | 11d | +3.6% | 0.99 |
+| 27 | [PETRONET](https://www.tradingview.com/chart/?symbol=NSE:PETRONET) | ₹273.4 | ₹281.4 | 0.58 | 1.95% | 77d | **55.6** | 11d | +1.1% | 0.84 |
+| 28 | [RADICO](https://www.tradingview.com/chart/?symbol=NSE:RADICO) | ₹3,187.2 | ₹2,854.4 | 0.29 | 1.18% | 41d | **53.3** | 11d | +15.4% | 1.07 |
+| 29 | [HDFCAMC](https://www.tradingview.com/chart/?symbol=NSE:HDFCAMC) | ₹2,735.0 | ₹2,571.1 | 0.26 | 0.90% | 33d | **53.0** | 11d | +7.7% | 1.20 |
+| 30 | [BANDHANBNK](https://www.tradingview.com/chart/?symbol=NSE:BANDHANBNK) | ₹174.7 | ₹160.8 | 0.65 | 2.57% | 21d | **49.2** | 11d | +6.0% | 0.89 |
+| 31 | [BBOX](https://www.tradingview.com/chart/?symbol=NSE:BBOX) | ₹550.1 | ₹503.7 | 0.50 | 2.30% | 19d | **45.9** | 11d | +10.1% | 0.78 |
+| 32 | [INDUSINDBK](https://www.tradingview.com/chart/?symbol=NSE:INDUSINDBK) | ₹848.0 | ₹832.3 | 0.81 | 2.59% | 11d | **44.3** | 11d | +1.4% | 0.58 |
+| 33 | [FINCABLES](https://www.tradingview.com/chart/?symbol=NSE:FINCABLES) | ₹972.7 | ₹838.6 | 0.68 | 2.86% | 32d | **42.4** | 11d | +14.7% | 0.86 |
+| 34 | [ULTRACEMCO](https://www.tradingview.com/chart/?symbol=NSE:ULTRACEMCO) | ₹11,998.0 | ₹11,891.4 | 0.49 | 1.28% | 31d | **42.4** | 11d | +3.4% | 1.22 |
+| 35 | [MANAPPURAM](https://www.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ₹289.4 | ₹275.9 | 0.38 | 1.36% | 27d | **42.2** | 11d | +7.4% | 0.96 |
+| 36 | [PNB](https://www.tradingview.com/chart/?symbol=NSE:PNB) | ₹113.1 | ₹114.3 | 0.62 | 1.87% | 16d | **41.9** | 11d | +1.8% | 0.95 |
+| 37 | [CHOLAFIN](https://www.tradingview.com/chart/?symbol=NSE:CHOLAFIN) | ₹1,568.2 | ₹1,604.7 | 0.77 | 2.56% | 30d | **36.5** | 11d | +0.9% | 1.11 |
+| 38 | [CANFINHOME](https://www.tradingview.com/chart/?symbol=NSE:CANFINHOME) | ₹909.6 | ₹840.7 | 0.71 | 2.70% | 14d | **36.0** | 11d | +8.9% | 1.20 |
+| 39 | [ZYDUSLIFE](https://www.tradingview.com/chart/?symbol=NSE:ZYDUSLIFE) | ₹927.4 | ₹926.1 | 0.77 | 1.83% | 10d | **30.8** | 11d | +4.0% | 0.87 |
+| 40 | [KPIL](https://www.tradingview.com/chart/?symbol=NSE:KPIL) | ₹1,240.8 | ₹1,152.0 | 0.11 | 0.38% | 71d | **68.0** | 12d | +13.6% | 0.93 |
+| 41 | [EQUITASBNK](https://www.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | ₹65.2 | ₹61.4 | 0.18 | 0.71% | 27d | **52.3** | 12d | +16.8% | 1.03 |
+| 42 | [TATAPOWER](https://www.tradingview.com/chart/?symbol=NSE:TATAPOWER) | ₹435.0 | ₹387.6 | 0.87 | 2.50% | 48d | **52.0** | 12d | +12.2% | 1.03 |
+| 43 | [FORTIS](https://www.tradingview.com/chart/?symbol=NSE:FORTIS) | ₹929.3 | ₹868.7 | 0.48 | 1.47% | 26d | **45.6** | 12d | +10.6% | 1.05 |
+| 44 | [TATACONSUM](https://www.tradingview.com/chart/?symbol=NSE:TATACONSUM) | ₹1,174.0 | ₹1,115.3 | 0.37 | 0.95% | 37d | **45.3** | 12d | +10.6% | 1.17 |
+| 45 | [HSCL](https://www.tradingview.com/chart/?symbol=NSE:HSCL) | ₹566.1 | ₹466.0 | 0.37 | 1.60% | 174d | **71.9** | 13d | +25.4% | 0.54 |
+| 46 | [PARAS](https://www.tradingview.com/chart/?symbol=NSE:PARAS) | ₹800.5 | ₹676.7 | 0.52 | 2.70% | 82d | **66.6** | 13d | +24.4% | 0.73 |
+| 47 | [SOLARINDS](https://www.tradingview.com/chart/?symbol=NSE:SOLARINDS) | ₹15,056.0 | ₹13,558.1 | 0.71 | 2.70% | 59d | **60.6** | 13d | +13.2% | 1.06 |
+| 48 | [DIACABS](https://www.tradingview.com/chart/?symbol=NSE:DIACABS) | ₹161.7 | ₹134.6 | 0.49 | 2.65% | 51d | **57.5** | 13d | +25.3% | 0.99 |
+| 49 | [PHOENIXLTD](https://www.tradingview.com/chart/?symbol=NSE:PHOENIXLTD) | ₹1,775.9 | ₹1,678.3 | 0.22 | 0.72% | 34d | **54.5** | 13d | +14.2% | 1.18 |
+| 50 | [CARYSIL](https://www.tradingview.com/chart/?symbol=NSE:CARYSIL) | ₹899.1 | ₹856.2 | 0.26 | 1.18% | 28d | **51.7** | 13d | +11.3% | 1.26 |
+| 51 | [MASFIN](https://www.tradingview.com/chart/?symbol=NSE:MASFIN) | ₹320.4 | ₹307.3 | 0.42 | 1.52% | 25d | **49.0** | 13d | +5.7% | 0.94 |
+| 52 | [LT](https://www.tradingview.com/chart/?symbol=NSE:LT) | ₹4,014.3 | ₹3,839.9 | 0.55 | 1.66% | 23d | **44.5** | 13d | +7.7% | 1.07 |
+| 53 | [JSL](https://www.tradingview.com/chart/?symbol=NSE:JSL) | ₹766.3 | ₹743.8 | 0.67 | 2.34% | 20d | **42.7** | 13d | +5.7% | 0.95 |
+| 54 | [NESTLEIND](https://www.tradingview.com/chart/?symbol=NSE:NESTLEIND) | ₹1,421.3 | ₹1,240.8 | 0.87 | 2.18% | 26d | **41.9** | 13d | +16.9% | 1.35 |
+| 55 | [NORTHARC](https://www.tradingview.com/chart/?symbol=NSE:NORTHARC) | ₹256.9 | ₹242.1 | 0.48 | 1.95% | 25d | **37.9** | 13d | +14.1% | 1.11 |
+| 56 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | ₹1,768.3 | ₹1,792.7 | 0.72 | 2.03% | 10d | **35.3** | 13d | +4.9% | 0.71 |
+| 57 | [FINEORG](https://www.tradingview.com/chart/?symbol=NSE:FINEORG) | ₹4,851.5 | ₹4,455.7 | 0.37 | 1.33% | 49d | **63.9** | 14d | +11.2% | 1.01 |
+| 58 | [MEDPLUS](https://www.tradingview.com/chart/?symbol=NSE:MEDPLUS) | ₹903.6 | ₹824.5 | 0.92 | 2.98% | 142d | **57.7** | 14d | +8.1% | 1.25 |
+| 59 | [RAJRATAN](https://www.tradingview.com/chart/?symbol=NSE:RAJRATAN) | ₹419.1 | ₹405.9 | 0.36 | 1.92% | 18d | **46.7** | 14d | +12.8% | 1.38 |
+| 60 | [CESC](https://www.tradingview.com/chart/?symbol=NSE:CESC) | ₹180.6 | ₹160.3 | 0.15 | 0.47% | 67d | **70.8** | 15d | +17.9% | 1.02 |
+| 61 | [GRSE](https://www.tradingview.com/chart/?symbol=NSE:GRSE) | ₹2,878.7 | ₹2,444.8 | 0.30 | 1.50% | 61d | **65.6** | 15d | +22.0% | 1.07 |
+| 62 | [PTC](https://www.tradingview.com/chart/?symbol=NSE:PTC) | ₹183.7 | ₹168.6 | 0.31 | 1.06% | 56d | **60.6** | 15d | +9.8% | 0.99 |
+| 63 | [GICRE](https://www.tradingview.com/chart/?symbol=NSE:GICRE) | ₹397.9 | ₹382.6 | 0.24 | 0.73% | 109d | **58.3** | 15d | +4.7% | 0.98 |
+| 64 | [LTFOODS](https://www.tradingview.com/chart/?symbol=NSE:LTFOODS) | ₹420.1 | ₹403.9 | 0.31 | 1.17% | 10d | **52.8** | 15d | +9.4% | 0.14 |
+| 65 | [CREDITACC](https://www.tradingview.com/chart/?symbol=NSE:CREDITACC) | ₹1,236.5 | ₹1,250.3 | 0.48 | 1.72% | 44d | **48.3** | 15d | +3.7% | 1.07 |
+| 66 | [GOODLUCK](https://www.tradingview.com/chart/?symbol=NSE:GOODLUCK) | ₹1,189.3 | ₹1,080.6 | 0.67 | 2.92% | 21d | **46.6** | 15d | +14.7% | 0.98 |
+| 67 | [PNGJL](https://www.tradingview.com/chart/?symbol=NSE:PNGJL) | ₹666.0 | ₹590.7 | 0.41 | 1.55% | 12d | **45.8** | 15d | +18.6% | 1.16 |
+| 68 | [ADANIPORTS](https://www.tradingview.com/chart/?symbol=NSE:ADANIPORTS) | ₹1,585.1 | ₹1,430.0 | 0.88 | 2.85% | 24d | **42.9** | 15d | +14.4% | 1.21 |
+| 69 | [INDIAGLYCO](https://www.tradingview.com/chart/?symbol=NSE:INDIAGLYCO) | ₹963.2 | ₹903.2 | 0.68 | 2.63% | 18d | **38.9** | 15d | +9.1% | 1.05 |
+| 70 | [NTPCGREEN](https://www.tradingview.com/chart/?symbol=NSE:NTPCGREEN) | ₹110.3 | ₹97.7 | 0.55 | 2.11% | 10d | **34.2** | 15d | +12.3% | 1.26 |
+| 71 | [DMART](https://www.tradingview.com/chart/?symbol=NSE:DMART) | ₹4,443.5 | ₹4,064.2 | 0.71 | 2.15% | 15d | **42.8** | 18d | +13.6% | 1.25 |
+| 72 | [TRIVENI](https://www.tradingview.com/chart/?symbol=NSE:TRIVENI) | ₹417.6 | ₹374.5 | 0.51 | 2.15% | 83d | **69.9** | 19d | +12.8% | 0.74 |
+| 73 | [STYLEBAAZA](https://www.tradingview.com/chart/?symbol=NSE:STYLEBAAZA) | ₹387.8 | ₹299.0 | 0.37 | 2.43% | 30d | **50.1** | 19d | +38.4% | 1.19 |
+| 74 | [SPLPETRO](https://www.tradingview.com/chart/?symbol=NSE:SPLPETRO) | ₹812.0 | ₹689.6 | 0.58 | 2.82% | 16d | **34.1** | 19d | +17.3% | 1.63 |
 
 ---
 
@@ -299,4 +299,4 @@ _Stocks that are compressed AND have ZLEMA25 turning up — coil + momentum flip
 | [BHARTIARTL](https://www.tradingview.com/chart/?symbol=NSE:BHARTIARTL) | 15.6 | 68.3 | 0.0 | 0.0 | 74.9 |
 | [TECHM](https://www.tradingview.com/chart/?symbol=NSE:TECHM) | 43.8 | 18.3 | 0.0 | 0.0 | 59.9 |
 
-_Generated 2026-04-26 22:46:53 IST_
+_Generated 2026-04-26 22:56:59 IST_
