@@ -18,6 +18,8 @@ WEEKLY_RS_MD   = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.
 EMA25_ZL_MD    = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
 EMA_MD         = os.path.join(BASE, "ema_screener_changes.md")
 CIRCUIT_MD     = os.path.join(BASE, "NSE_Circuit_Limits.md")
+COMPRESSION_MD = os.path.join(BASE, "ema-compression-scanner",
+                               "ema_compression_scans", "ema_compression_latest.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
 
 
@@ -210,6 +212,49 @@ def parse_circuit_changes(content: str, limit: int = 12) -> list:
     return changes[:limit]
 
 
+def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
+    """Parse ema_compression_latest.md → (zl_rising_rows, total_compressed, total_zl_rising)."""
+    if today not in content[:150]:
+        return [], 0, 0
+
+    total_m  = re.search(r'\*\*Compressed[^:]*:\*\* (\d+)', content)
+    rising_m = re.search(r'\*\*ZL Rising:\*\* (\d+)', content)
+    total_compressed = int(total_m.group(1))  if total_m  else 0
+    total_zl_rising  = int(rising_m.group(1)) if rising_m else 0
+
+    rows = []
+    in_section = in_table = False
+    for line in content.splitlines():
+        ls = line.strip()
+        if ls.startswith('## Compression + ZL Rising'):
+            in_section = True
+            continue
+        if in_section and ls.startswith('## '):
+            break
+        if not in_section:
+            continue
+        if ls.startswith('|') and 'Symbol' in ls:
+            in_table = True
+            continue
+        if in_table and ls.startswith('|---'):
+            continue
+        if in_table and ls.startswith('|'):
+            parts = [p.strip() for p in ls.split('|') if p.strip()]
+            if len(parts) >= 10 and parts[0].isdigit():
+                rows.append({
+                    "symbol":    _strip_md_link(parts[1]),
+                    "close":     parts[2],
+                    "comp_days": parts[6],
+                    "score":     parts[7].replace('**', ''),
+                    "zl_days":   parts[8],
+                    "zl_chg":    parts[9],
+                })
+        elif in_table and not ls.startswith('|'):
+            in_table = False
+
+    return rows, total_compressed, total_zl_rising
+
+
 # ── HTML helpers ──────────────────────────────────────────────────────────────
 
 def tv_link(symbol: str) -> str:
@@ -248,7 +293,8 @@ def build_html(today: str, now_str: str,
                weekly_entry: list, weekly_turning: list,
                zl25_rising: list, zl25_watch: list,
                ema_adds: list, ema_dels: list, ema_date: str,
-               circuit_changes: list) -> str:
+               circuit_changes: list,
+               compression_rows: list, total_compressed: int, total_zl_rising: int) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
@@ -376,6 +422,33 @@ def build_html(today: str, now_str: str,
             return "\n".join(rows)
         return f'<tr><td colspan="{cols}" class="empty">{empty_msg}</td></tr>'
 
+    # EMA Compression rows
+    comp_rows_html = []
+    for r in compression_rows[:20]:
+        zld = r["zl_days"]
+        zlc = r["zl_chg"]
+        comp_rows_html.append(
+            f'<tr>'
+            f'<td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="num">{r["close"]}</td>'
+            f'<td class="zld">{r["comp_days"]}</td>'
+            f'<td class="num">{r["score"]}</td>'
+            f'<td class="zld">{zld}</td>'
+            f'<td class="{chg_cls(zlc)}">{zlc}</td>'
+            f'</tr>'
+        )
+
+    compression_section = ""
+    if compression_rows or total_compressed:
+        compression_section = f"""
+<div class="section">
+  <div class="stitle">EMA Compression + ZL Rising — top {len(compression_rows[:20])} of {total_zl_rising} &nbsp;|&nbsp; {total_compressed} compressed total</div>
+  <table>
+    <thead><tr><th>Symbol</th><th>Close</th><th>Comp Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
+    <tbody>{table_or_empty(comp_rows_html, 6, "No compressed stocks today")}</tbody>
+  </table>
+</div>"""
+
     ema_label = f"EMA Screener ({ema_date})" if ema_date and ema_date != today else "EMA Screener — Today"
 
     turning_section = ""
@@ -483,6 +556,8 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv pur">{len(zl25_watch)}</div><div class="sl">ZL25 Watch</div></div>
   <div class="stat"><div class="sv grn">{len(ema_adds)}</div><div class="sl">EMA Adds</div></div>
   <div class="stat"><div class="sv red">{len(ema_dels)}</div><div class="sl">EMA Exits</div></div>
+  <div class="stat"><div class="sv pur">{total_compressed}</div><div class="sl">Compressed</div></div>
+  <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Coil+ZL↑</div></div>
 </div>
 
 <div class="section">
@@ -496,6 +571,8 @@ tr:hover td{{background:var(--bg3)}}
 {turning_section}
 
 {zl25_section}
+
+{compression_section}
 
 <div class="two">
   <div class="section">
@@ -534,12 +611,13 @@ def main():
 
     print(f"[{now_str}] Building dashboard for {today}…")
 
-    swing_content    = read_file(SWING_MD)
-    momentum_content = read_file(MOMENTUM_MD)
-    weekly_content   = read_file(WEEKLY_RS_MD)
-    zl25_content     = read_file(EMA25_ZL_MD)
-    ema_content      = read_file(EMA_MD)
-    circuit_content  = read_file(CIRCUIT_MD)
+    swing_content       = read_file(SWING_MD)
+    momentum_content    = read_file(MOMENTUM_MD)
+    weekly_content      = read_file(WEEKLY_RS_MD)
+    zl25_content        = read_file(EMA25_ZL_MD)
+    ema_content         = read_file(EMA_MD)
+    circuit_content     = read_file(CIRCUIT_MD)
+    compression_content = read_file(COMPRESSION_MD)
 
     swing_block    = extract_today_block(swing_content,    today)
     momentum_block = extract_today_block(momentum_content, today)
@@ -553,6 +631,7 @@ def main():
     ema_adds, ema_dels = parse_ema_changes(ema_content)
     ema_date = parse_ema_date(ema_content)
     circuit_changes = parse_circuit_changes(circuit_content)
+    compression_rows, total_compressed, total_zl_rising = parse_ema_compression(compression_content, today)
 
     html = build_html(
         today=today, now_str=now_str,
@@ -561,6 +640,9 @@ def main():
         zl25_rising=zl25_rising, zl25_watch=zl25_watch,
         ema_adds=ema_adds, ema_dels=ema_dels, ema_date=ema_date,
         circuit_changes=circuit_changes,
+        compression_rows=compression_rows,
+        total_compressed=total_compressed,
+        total_zl_rising=total_zl_rising,
     )
 
     with open(DASHBOARD_HTML, "w", encoding="utf-8") as f:
@@ -569,6 +651,7 @@ def main():
     print(f"Written: {DASHBOARD_HTML}")
     print(f"  Swing:{len(swing_signals)} Momentum:{len(momentum_signals)} WeeklyRS:{len(weekly_entry)} Turning:{len(weekly_turning)}")
     print(f"  ZL25 Rising:{len(zl25_rising)} Watch:{len(zl25_watch)}")
+    print(f"  EMA Compression: {total_compressed} compressed, {total_zl_rising} ZL rising")
     print(f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}")
     triple = sum(1 for s in {r['symbol'] for r in swing_signals} &
                               {r['symbol'] for r in momentum_signals} &
