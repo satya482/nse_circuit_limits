@@ -1,3 +1,21 @@
+# NSE Momentum Scan — 2026-04-27
+*Generated 2026-04-27 16:15 IST*
+
+**Entry Opportunities: 7**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [JSWENERGY](https://in.tradingview.com/chart/?symbol=NSE:JSWENERGY) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.29% | 9d | +12.6% | 20%  |
+| [PTC](https://in.tradingview.com/chart/?symbol=NSE:PTC) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.29% | 16d | +16.7% | 20%  |
+| [SENORES](https://in.tradingview.com/chart/?symbol=NSE:SENORES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.45% | 19d | +20.4% | 20%  |
+| [KRISHANA](https://in.tradingview.com/chart/?symbol=NSE:KRISHANA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.63% | 16d | +37.8% | 20%  |
+| [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.03% | 24d | +21.1% | 20%  |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.22% | 16d | +20.3% | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.45% | 13d | +18.4% | 20%  |
+
+---
+
 # NSE Momentum Scan — 2026-04-24
 *Generated 2026-04-24 18:49 IST*
 
