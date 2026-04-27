@@ -20,13 +20,27 @@ BASE      = os.path.dirname(os.path.abspath(__file__))
 TO_EMAIL  = "satya482@gmail.com"
 FROM_EMAIL= os.environ.get("GMAIL_USER", "satya482@gmail.com")
 
+REPO      = "https://github.com/satya482/nse_circuit_limits"
+BLOB      = f"{REPO}/blob/main"
+
 SCANNER_KEYWORDS = {
-    "Swing Scanner":        "swing scan",
-    "Momentum Scanner":     "momentum scan",
-    "Weekly RS Scanner":    "momentum rs-weekly scan",
-    "EMA25 ZL Scanner":     "ema25-zl scan",
-    "EMA Screener":         "screener:",
-    "Dashboard":            "dashboard",
+    "Swing Scanner":         "swing scan",
+    "Momentum Scanner":      "momentum scan",
+    "Weekly RS Scanner":     "momentum rs-weekly scan",
+    "EMA25 ZL Scanner":      "ema25-zl scan",
+    "EMA Screener":          "screener:",
+    "EMA Compression":       "ema-compression scan",
+    "Dashboard":             "dashboard",
+}
+
+SCANNER_MD_LINKS = {
+    "Swing Scanner":         f"{BLOB}/swing_scans/swing_scans.md",
+    "Momentum Scanner":      f"{BLOB}/momentum_scans/momentum_scans.md",
+    "Weekly RS Scanner":     f"{BLOB}/momentum_scans/momentum_rs_weekly_scans.md",
+    "EMA25 ZL Scanner":      f"{BLOB}/ema25_zl_scans/ema25_zl_scans.md",
+    "EMA Screener":          f"{BLOB}/ema_screener_changes.md",
+    "EMA Compression":       f"{BLOB}/ema-compression-scanner/ema_compression_scans/ema_compression_latest.md",
+    "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
 }
 
 
@@ -76,23 +90,35 @@ def parse_screener_counts(md: str, today: str) -> tuple[str, str]:
     return (adds.group(1) if adds else "0"), (dels.group(1) if dels else "0")
 
 
+def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
+    if today not in md[:100]:
+        return "—", "—"
+    compressed = re.search(r'\*\*Compressed.*?:\*\* (\d+)', md)
+    rising     = re.search(r'\*\*ZL Rising:\*\* (\d+)', md)
+    return (compressed.group(1) if compressed else "—"), (rising.group(1) if rising else "—")
+
+
 def get_scan_details(today: str) -> dict:
     swing_md    = read_file(os.path.join(BASE, "swing_scans", "swing_scans.md"))
     mom_md      = read_file(os.path.join(BASE, "momentum_scans", "momentum_scans.md"))
     weekly_md   = read_file(os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md"))
     zl25_md     = read_file(os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md"))
     screener_md = read_file(os.path.join(BASE, "ema_screener_changes.md"))
+    comp_md     = read_file(os.path.join(BASE, "ema-compression-scanner",
+                                         "ema_compression_scans", "ema_compression_latest.md"))
 
-    zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
-    ema_adds, ema_dels  = parse_screener_counts(screener_md, today)
+    zl_rising, zl_watch       = parse_ema25_zl_counts(zl25_md, today)
+    ema_adds, ema_dels         = parse_screener_counts(screener_md, today)
+    comp_total, comp_zl_rising = parse_compression_counts(comp_md, today)
 
     return {
-        "Swing Scanner":     parse_signal_count(swing_md,  today) + " signals",
-        "Momentum Scanner":  parse_signal_count(mom_md,    today) + " signals",
-        "Weekly RS Scanner": parse_signal_count(weekly_md, today) + " signals",
-        "EMA25 ZL Scanner":  f"Rising {zl_rising} / Watch {zl_watch}",
-        "EMA Screener":      f"+{ema_adds} adds / -{ema_dels} exits",
-        "Dashboard":         "generated",
+        "Swing Scanner":    parse_signal_count(swing_md,  today) + " signals",
+        "Momentum Scanner": parse_signal_count(mom_md,    today) + " signals",
+        "Weekly RS Scanner":parse_signal_count(weekly_md, today) + " signals",
+        "EMA25 ZL Scanner": f"Rising {zl_rising} / Watch {zl_watch}",
+        "EMA Screener":     f"+{ema_adds} adds / -{ema_dels} exits",
+        "EMA Compression":  f"{comp_total} compressed / {comp_zl_rising} ZL rising",
+        "Dashboard":        "generated",
     }
 
 
@@ -105,9 +131,12 @@ def build_html_email(today: str, status: dict, details: dict, all_ok: bool) -> s
         icon   = "✅" if ok else "❌"
         detail = details.get(name, "—")
         bg     = "#f6fff8" if ok else "#fff6f6"
+        link   = SCANNER_MD_LINKS.get(name)
+        label  = (f'<a href="{link}" style="color:#0366d6;text-decoration:none">{name}</a>'
+                  if link else name)
         rows += f"""
         <tr style="background:{bg}">
-          <td style="padding:8px 12px;border-bottom:1px solid #e1e4e8">{icon} {name}</td>
+          <td style="padding:8px 12px;border-bottom:1px solid #e1e4e8">{icon} {label}</td>
           <td style="padding:8px 12px;border-bottom:1px solid #e1e4e8;color:#586069">{detail}</td>
         </tr>"""
 
@@ -130,7 +159,9 @@ def build_html_email(today: str, status: dict, details: dict, all_ok: bool) -> s
     <tbody>{rows}</tbody>
   </table>
   {failed_note}
-  <p style="color:#959da5;font-size:11px;margin-top:16px">NSE Circuit Limits Dashboard · satya482/nse_circuit_limits</p>
+  <p style="color:#959da5;font-size:11px;margin-top:16px">
+    <a href="{REPO}" style="color:#959da5">{REPO}</a>
+  </p>
 </body></html>"""
 
 
@@ -166,12 +197,12 @@ def main():
     all_ok  = all(status.values())
 
     print(f"\nNSE Scanner Status — {today}")
-    print("=" * 45)
+    print("=" * 50)
     for name, ok in status.items():
         icon   = "OK  " if ok else "MISS"
         detail = details.get(name, "")
         print(f"  [{icon}] {name:<22}  {detail}")
-    print("=" * 45)
+    print("=" * 50)
     if all_ok:
         print("  All scanners completed.\n")
     else:

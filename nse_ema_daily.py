@@ -104,7 +104,7 @@ def build_md(current: dict, previous: dict, today: str) -> str:
         lines.append("_No stocks currently in list_")
     lines.append("")
 
-    lines += ["---", f"_Updated: {today} 16:00 IST by GitHub Actions_"]
+    lines += ["---", f"_Updated: {today} 16:00 IST_"]
     return "\n".join(lines) + "\n"
 
 
