@@ -1,3 +1,56 @@
+# NSE Swing Scan — 2026-04-27
+*Generated 2026-04-27 16:06 IST*
+
+**Entry Opportunities: 42**
+*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [NLCINDIA](https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.93% | 9d | +15.5% | 20%  |
+| [BANDHANBNK](https://in.tradingview.com/chart/?symbol=NSE:BANDHANBNK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.12% | 12d | +10.4% | 20%  |
+| [NATIONALUM](https://in.tradingview.com/chart/?symbol=NSE:NATIONALUM) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.90% | 17d | +14.2% | 20%  |
+| [USHAMART](https://in.tradingview.com/chart/?symbol=NSE:USHAMART) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.68% | 16d | +13.2% | 20%  |
+| [AUROPHARMA](https://in.tradingview.com/chart/?symbol=NSE:AUROPHARMA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.21% | 22d | +9.7% | 20%  |
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.11% | 12d | +7.0% | 20%  |
+| [DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.27% | 14d | +11.9% | 20%  |
+| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.29% | 17d | +59.0% | 10% 🟨 |
+| [EDELWEISS](https://in.tradingview.com/chart/?symbol=NSE:EDELWEISS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.36% | 14d | +14.7% | 20%  |
+| [SENORES](https://in.tradingview.com/chart/?symbol=NSE:SENORES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.45% | 19d | +20.4% | 20%  |
+| [ABSLAMC](https://in.tradingview.com/chart/?symbol=NSE:ABSLAMC) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.21% | 14d | +12.5% | 20%  |
+| [KRISHANA](https://in.tradingview.com/chart/?symbol=NSE:KRISHANA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.63% | 16d | +37.8% | 20%  |
+| [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.03% | 24d | +21.1% | 20%  |
+| [ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.48% | 12d | +5.8% | 20%  |
+| [MAANALU](https://in.tradingview.com/chart/?symbol=NSE:MAANALU) | **STRONG** — ZLEMA25 touch + EMA20 rising | +13.30% | 14d | +27.3% | 20%  |
+| [IMFA](https://in.tradingview.com/chart/?symbol=NSE:IMFA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.15% | 16d | +23.6% | 20%  |
+| [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.28% | 20d | +24.1% | 20%  |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.39% | 16d | +25.1% | 20%  |
+| [KSB](https://in.tradingview.com/chart/?symbol=NSE:KSB) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.94% | 38d | +39.5% | 20%  |
+| [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.11% | 16d | +24.0% | 20%  |
+| [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.01% | 18d | +30.2% | 20%  |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.05% | 10d | +8.2% | 20% 🟦 |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.22% | 16d | +20.3% | 20%  |
+| [INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.23% | 16d | +21.4% | 20%  |
+| [ZFCVINDIA](https://in.tradingview.com/chart/?symbol=NSE:ZFCVINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.76% | 12d | +3.1% | 20%  |
+| [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.36% | 20d | +20.6% | 20%  |
+| [SHARDACROP](https://in.tradingview.com/chart/?symbol=NSE:SHARDACROP) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.36% | 13d | +15.0% | 20%  |
+| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.58% | 13d | +11.9% | 20%  |
+| [GODAVARIB](https://in.tradingview.com/chart/?symbol=NSE:GODAVARIB) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.56% | 3d | +2.0% | 20%  |
+| [UNIVCABLES](https://in.tradingview.com/chart/?symbol=NSE:UNIVCABLES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.81% | 17d | +32.2% | 20%  |
+| [KINGFA](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.34% | 17d | +14.8% | 20% 🟦 |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.45% | 13d | +18.4% | 20%  |
+| [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.53% | 16d | +33.1% | 20%  |
+| [INDIAGLYCO](https://in.tradingview.com/chart/?symbol=NSE:INDIAGLYCO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.71% | 16d | +9.8% | 20%  |
+| [AIMTRON](https://in.tradingview.com/chart/?symbol=NSE:AIMTRON) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.29% | 19d | +26.5% | 10% 🟩 |
+| [MEDPLUS](https://in.tradingview.com/chart/?symbol=NSE:MEDPLUS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.41% | 15d | +7.6% | 20%  |
+| [MWL](https://in.tradingview.com/chart/?symbol=NSE:MWL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.43% | 13d | +14.2% | 20%  |
+| [MANGLMCEM](https://in.tradingview.com/chart/?symbol=NSE:MANGLMCEM) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.07% | 14d | +10.7% | 20%  |
+| [VISHNU](https://in.tradingview.com/chart/?symbol=NSE:VISHNU) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.57% | 15d | +16.4% | 20%  |
+| [ASHIANA](https://in.tradingview.com/chart/?symbol=NSE:ASHIANA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.25% | 15d | +9.7% | 20%  |
+| [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.97% | 32d | +28.2% | 20%  |
+| [DIVGIITTS](https://in.tradingview.com/chart/?symbol=NSE:DIVGIITTS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.16% | 12d | +10.5% | 20%  |
+
+---
+
 # NSE Swing Scan — 2026-04-26
 *Generated 2026-04-26 16:05 IST*
 
