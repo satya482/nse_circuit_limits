@@ -73,6 +73,7 @@ def fetch_ohlc(
     cache_file = cache_dir / f"{symbol}.csv"
     to_date = datetime.now().date()
 
+    df_existing = pd.DataFrame()
     if cache_file.exists():
         try:
             df_existing = pd.read_csv(cache_file)
@@ -93,7 +94,9 @@ def fetch_ohlc(
                     return df_combined
                 return df_existing
         except Exception:
-            pass
+            # API error (e.g. expired token) — return cached data if sufficient
+            if len(df_existing) >= 210:
+                return df_existing
 
     from_date = to_date - timedelta(days=lookback_days)
     try:
