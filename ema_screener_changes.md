@@ -2,25 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 239** &nbsp;|&nbsp; **Additions: 6** &nbsp;|&nbsp; **Deletions: 4**
+**Total stocks in list: 239** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (6)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [MAANALU](https://in.tradingview.com/chart/?symbol=NSE:MAANALU) | +13.30% |
-| [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | +4.51% |
-| [BANDHANBNK](https://in.tradingview.com/chart/?symbol=NSE:BANDHANBNK) | +4.12% |
-| [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS) | +3.48% |
-| [INGERRAND](https://in.tradingview.com/chart/?symbol=NSE:INGERRAND) | +0.43% |
-| [ASHOKLEY](https://in.tradingview.com/chart/?symbol=NSE:ASHOKLEY) | -0.35% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (4)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [SAMMAANCAP](https://in.tradingview.com/chart/?symbol=NSE:SAMMAANCAP) | -0.50% |
-| [STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL) | -1.55% |
-| [INDOBORAX](https://in.tradingview.com/chart/?symbol=NSE:INDOBORAX) | -3.45% |
-| [BGRENERGY](https://in.tradingview.com/chart/?symbol=NSE:BGRENERGY) | -5.00% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (239)
 | # | Symbol | Day Change % |
@@ -266,4 +254,4 @@ _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹
 | 239 | [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | -7.66% |
 
 ---
-_Updated: 2026-04-27 16:00 IST by GitHub Actions_
+_Updated: 2026-04-27 16:00 IST_
