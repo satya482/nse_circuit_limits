@@ -44,7 +44,7 @@ MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
 ZL_TURN_CAP = 60
-CACHE_MAX   = 150   # rows kept per symbol
+CACHE_MAX   = 280   # rows kept per symbol (280 needed for BB width pct rank over 52w)
 INDEX_NAME  = "Nifty MidSmallcap 400"
 NSE_ARCH    = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
 
@@ -56,6 +56,34 @@ def ema(s: pd.Series, n: int) -> pd.Series:
 def zlema(s: pd.Series, n: int) -> pd.Series:
     e = ema(s, n)
     return 2 * e - ema(e, n)
+
+def _atr_wilder(high: pd.Series, low: pd.Series, close: pd.Series, period: int) -> pd.Series:
+    tr = pd.concat([
+        high - low,
+        (high - close.shift(1)).abs(),
+        (low  - close.shift(1)).abs(),
+    ], axis=1).max(axis=1)
+    return tr.ewm(span=period, adjust=False).mean()
+
+def bb_kc_squeeze(df: pd.DataFrame) -> bool:
+    """True if BB(20,2.0,SMA) is fully inside KC(20,1.5,SMA+WilderATR) on the last bar."""
+    if len(df) < 21:
+        return False
+    c = df["Close"].astype(float)
+    h = df["High"].astype(float)
+    l = df["Low"].astype(float)
+
+    bb_basis = c.rolling(20).mean()
+    bb_std   = c.rolling(20).std()
+    bb_upper = bb_basis + 2.0 * bb_std
+    bb_lower = bb_basis - 2.0 * bb_std
+
+    kc_basis = c.rolling(20).mean()
+    kc_atr   = _atr_wilder(h, l, c, 20)
+    kc_upper = kc_basis + 1.5 * kc_atr
+    kc_lower = kc_basis - 1.5 * kc_atr
+
+    return bool(bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1])
 
 def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     n     = len(zl25)
@@ -259,6 +287,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_rising": zl_rising,
             "zl_days":   zl_days,
             "zl_pct":    zl_pct,
+            "squeeze":   bb_kc_squeeze(df),
         }
     except Exception:
         return None
@@ -278,6 +307,7 @@ STATIC_FOOTER = """
 | Price vs EMA25 | Price > EMA25 |
 | RS filter | Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |
+| Squeeze | ✓ = BB(20,2.0,SMA) fully inside KC(20,1.5,SMA) on last bar |
 """.format(cap=ZL_TURN_CAP)
 
 
@@ -289,12 +319,14 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         zl_d   = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds     = "+" if f["day_chg"] >= 0 else ""
+        sqz    = "✓" if f.get("squeeze") else "—"
         rows.append(
             f"| [{f['symbol']}]({tv}) "
             f"| {f['close']:.2f} "
             f"| {ds}{f['day_chg']:.2f}% "
             f"| {zl_d} "
             f"| {zl_p} "
+            f"| {sqz} "
             f"| {cl} {em} |"
         )
     return rows
@@ -305,8 +337,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     watch  = sorted([f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"])
 
     hdr = [
-        "| Symbol | Close | Day Chg | ZL Days | ZL Chg% | Circuit |",
-        "|--------|------:|--------:|--------:|--------:|:-------:|",
+        "| Symbol | Close | Day Chg | ZL Days | ZL Chg% | Squeeze | Circuit |",
+        "|--------|------:|--------:|--------:|--------:|:-------:|:-------:|",
     ]
 
     lines = [
