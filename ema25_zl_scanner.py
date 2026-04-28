@@ -6,7 +6,6 @@ Run after 4:20 PM IST on trading days.
 Watchlist filters (TradingView):
   - NSE common equity
   - Price > 100 INR
-  - 1-week change > 5%
   - Market cap 10B – 1T INR  (≈ 1,000 Cr – 1 Lakh Cr)
   - Price > EMA25
 
@@ -19,25 +18,26 @@ For each RS-passing stock:
   - Compute ZLEMA25 direction (rising / flat-down)
   - Compute zl25_turn_stats(): days since last ZLEMA25 turn-up, % gain since
 
-OHLC cache: .ema25_ohlc_cache/{SYMBOL}.csv  (committed to git, 120-day delta)
+OHLC cache: .ema25_ohlc_cache/{SYMBOL}.parquet  (Kite delta cache)
 Output:     ema25_zl_scans/ema25_zl_scans.md
 """
 
-import sys, os, csv
+import sys, os, csv, time
 from datetime import datetime, date, timedelta
-from concurrent.futures import ThreadPoolExecutor
+from pathlib import Path
 
-import requests
-import yfinance as yf
 import pandas as pd
 from tradingview_screener import Query, col
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ema-compression-scanner"))
+from data_loader import load_env, get_kite, load_instruments, fetch_ohlc, fetch_benchmark
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR   = os.path.join(REPO_DIR, "ema25_zl_scans")
 CACHE_DIR   = os.path.join(REPO_DIR, ".ema25_ohlc_cache")
-INDEX_CACHE = os.path.join(REPO_DIR, ".niftymidsml400_cache.csv")
+ENV_PATH    = Path(REPO_DIR) / "ema-compression-scanner" / ".env"
 TODAY       = datetime.now().strftime("%Y-%m-%d")
 MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
@@ -45,9 +45,8 @@ MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
 ZL_TURN_CAP = 60
 FILTER_1W_CHANGE = False   # True = require 1-week price change > 5%; False = no filter
-CACHE_MAX   = 280   # rows kept per symbol (280 needed for BB width pct rank over 52w)
-INDEX_NAME  = "Nifty MidSmallcap 400"
-NSE_ARCH    = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
+CACHE_MAX   = 280   # lookback in calendar days (~400 → ~280 trading bars)
+KITE_RATE   = 0.35  # seconds between Kite historical API calls
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -101,88 +100,21 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
 
 
-# ── OHLC cache (per-symbol CSV, delta-updated) ─────────────────────────────────
-def _raw_history(symbol: str, period: str = None, start: str = None) -> pd.DataFrame:
-    t = yf.Ticker(f"{symbol}.NS")
-    raw = t.history(start=start) if start else t.history(period=period or "6mo")
-    if raw.empty:
-        return raw
-    raw = raw[["Open", "High", "Low", "Close", "Volume"]].copy()
-    raw.index = pd.DatetimeIndex([d.date() for d in raw.index])
-    raw.index.name = "Date"
-    return raw
-
-def get_ohlc(symbol: str) -> pd.DataFrame | None:
-    """Return cached + updated OHLC (≥60 bars) or None."""
-    os.makedirs(CACHE_DIR, exist_ok=True)
-    path = os.path.join(CACHE_DIR, f"{symbol}.csv")
-
-    existing = pd.DataFrame()
-    if os.path.exists(path):
-        try:
-            existing = pd.read_csv(path, index_col=0, parse_dates=True)
-        except Exception:
-            existing = pd.DataFrame()
-
-    today = date.today()
-    if existing.empty:
-        df = _raw_history(symbol, period="6mo")
-    else:
-        last = existing.index[-1].date()
-        if last >= today - timedelta(days=1):
-            return existing if len(existing) >= 60 else None
-        df = _raw_history(symbol, start=(last + timedelta(days=1)).strftime("%Y-%m-%d"))
-
-    if not df.empty:
-        combined = pd.concat([existing, df]) if not existing.empty else df
-        combined = combined[~combined.index.duplicated(keep="last")].sort_index()
-        if len(combined) > CACHE_MAX:
-            combined = combined.iloc[-CACHE_MAX:]
-        combined.to_csv(path)
-        return combined if len(combined) >= 60 else None
-
-    return existing if len(existing) >= 60 else None
-
-
-# ── Nifty MidSmallcap 400 index cache ─────────────────────────────────────────
-def _fetch_index_day(d: date) -> tuple | None:
-    url = NSE_ARCH.format(d.strftime("%d%m%Y"))
-    try:
-        r = requests.get(url, timeout=10, headers={"User-Agent": "Mozilla/5.0"})
-        if not r.ok:
-            return None
-        for line in r.text.strip().split("\n"):
-            if line.startswith(INDEX_NAME):
-                parts = line.split(",")
-                return (d, float(parts[5]))
-    except Exception:
+# ── OHLC via Kite ─────────────────────────────────────────────────────────────
+def _kite_ohlc(symbol: str, kite, instruments: dict) -> pd.DataFrame | None:
+    """Fetch OHLC via Kite parquet delta cache. Returns df with Title Case columns, Date index."""
+    token = instruments.get(symbol)
+    if token is None:
         return None
-
-def get_index_history(months: int = 6) -> pd.Series:
-    if os.path.exists(INDEX_CACHE):
-        cached = pd.read_csv(INDEX_CACHE, index_col=0, parse_dates=True).squeeze("columns")
-    else:
-        cached = pd.Series(dtype=float)
-
-    start        = date.today() - timedelta(days=months * 31)
-    all_weekdays = pd.bdate_range(start, date.today() - timedelta(1))
-    cached_dates = set(cached.index.date) if not cached.empty else set()
-    missing      = [d.date() for d in all_weekdays if d.date() not in cached_dates]
-
-    if missing:
-        print(f"  Fetching {len(missing)} days of NIFTY MidSmallcap 400 data...")
-        with ThreadPoolExecutor(max_workers=15) as ex:
-            results = list(ex.map(_fetch_index_day, missing))
-        new_data = {d: c for d, c in (r for r in results if r)}
-        if new_data:
-            new_s = pd.Series(new_data)
-            new_s.index = pd.to_datetime(new_s.index)
-            new_s.name  = "close"
-            cached = pd.concat([cached, new_s]).sort_index().drop_duplicates()
-            cached.name = "close"
-            cached.to_csv(INDEX_CACHE, header=True)
-
-    return cached.dropna()
+    raw = fetch_ohlc(kite, token, symbol, Path(CACHE_DIR), lookback_days=400)
+    if raw is None or len(raw) < 60:
+        return None
+    df = raw.copy()
+    if "date" in df.columns:
+        df = df.set_index("date")
+    df.index = pd.to_datetime(df.index).tz_localize(None)
+    df.index.name = "Date"
+    return df.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"})
 
 
 # ── Watchlist ──────────────────────────────────────────────────────────────────
@@ -247,9 +179,9 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
-def analyse(symbol: str, index_s: pd.Series) -> dict | None:
+def analyse(symbol: str, kite, instruments: dict, index_s: pd.Series) -> dict | None:
     try:
-        df = get_ohlc(symbol)
+        df = _kite_ohlc(symbol, kite, instruments)
         if df is None:
             return None
 
@@ -403,8 +335,20 @@ def main():
     os.makedirs(CACHE_DIR, exist_ok=True)
     os.makedirs(SCANS_DIR, exist_ok=True)
 
+    env         = load_env(ENV_PATH)
+    kite        = get_kite(env)
+    instruments = load_instruments(kite, Path(CACHE_DIR))
+
     print("\nFetching NIFTY MidSmallcap 400 index history...")
-    index_s = get_index_history(months=6)
+    bm_raw = fetch_benchmark(kite, Path(CACHE_DIR), lookback_days=400)
+    if bm_raw is None or bm_raw.empty:
+        print("  ERROR: Could not fetch benchmark data.")
+        return
+    bm_raw = bm_raw.copy()
+    if "date" in bm_raw.columns:
+        bm_raw = bm_raw.set_index("date")
+    bm_raw.index = pd.to_datetime(bm_raw.index).tz_localize(None)
+    index_s = bm_raw["close"]
     print(f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})")
 
     print("\nFetching NSE circuit limits...")
@@ -415,15 +359,13 @@ def main():
     watchlist = get_watchlist()
     print(f"  Watchlist: {len(watchlist)} stocks  |  Scanning...\n")
 
-    def _worker(sym):
-        return analyse(sym, index_s)
-
     findings = []
     for i, sym in enumerate(watchlist, 1):
         print(f"  {sym:<20} ({i}/{len(watchlist)})   ", end="\r")
-        result = _worker(sym)
+        result = analyse(sym, kite, instruments, index_s)
         if result:
             findings.append(result)
+        time.sleep(KITE_RATE)
 
     print_results(findings)
 
