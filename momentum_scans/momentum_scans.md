@@ -1,3 +1,23 @@
+# NSE Momentum Scan — 2026-04-28
+*Generated 2026-04-28 16:15 IST*
+
+**Entry Opportunities: 9**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.38% | 13d | +10.6% | 20%  |
+| [TMB](https://in.tradingview.com/chart/?symbol=NSE:TMB) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.92% | 1d | +5.9% | 20%  |
+| [IMFA](https://in.tradingview.com/chart/?symbol=NSE:IMFA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.23% | 17d | +32.5% | 20%  |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.66% | 1d | +3.7% | 20%  |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.33% | 17d | +29.2% | 20%  |
+| [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | -4.24% | 25d | +16.0% | 20%  |
+| [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.64% | 20d | +20.2% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.40% | 26d | +17.9% | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.13% | 14d | +23.3% | 20%  |
+
+---
+
 # NSE Momentum Scan — 2026-04-27
 *Generated 2026-04-27 16:15 IST*
 
