@@ -44,6 +44,7 @@ MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
 ZL_TURN_CAP = 60
+FILTER_1W_CHANGE = False   # True = require 1-week price change > 5%; False = no filter
 CACHE_MAX   = 280   # rows kept per symbol (280 needed for BB width pct rank over 52w)
 INDEX_NAME  = "Nifty MidSmallcap 400"
 NSE_ARCH    = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
@@ -183,19 +184,22 @@ def get_index_history(months: int = 6) -> pd.Series:
 
 # ── Watchlist ──────────────────────────────────────────────────────────────────
 def get_watchlist() -> list[str]:
+    filters = [
+        col("exchange") == "NSE",
+        col("type") == "stock",
+        col("typespecs").has(["common"]),
+        col("close") > 100,
+        col("close") > col("EMA25"),
+        col("market_cap_basic").between(MC_LOW, MC_HIGH),
+    ]
+    if FILTER_1W_CHANGE:
+        filters.append(col("Perf.W") > 5)
+
     _, df = (
         Query()
         .set_markets("india")
         .select("name", "close", "EMA25", "Perf.W")
-        .where(
-            col("exchange") == "NSE",
-            col("type") == "stock",
-            col("typespecs").has(["common"]),
-            col("close") > 100,
-            col("Perf.W") > 5,
-            col("close") > col("EMA25"),
-            col("market_cap_basic").between(MC_LOW, MC_HIGH),
-        )
+        .where(*filters)
         .limit(500)
         .get_scanner_data()
     )
