@@ -169,13 +169,22 @@ def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
             parts = [p.strip() for p in line.split('|') if p.strip()]
             if len(parts) < 5:
                 continue
+            # New format (7 cols): Symbol Close DayChg ZLDays ZLChg% Squeeze Circuit
+            # Old format (6 cols): Symbol Close DayChg ZLDays ZLChg% Circuit
+            if len(parts) >= 7:
+                squeeze, circuit = parts[5], parts[6]
+            elif len(parts) >= 6:
+                squeeze, circuit = "", parts[5]
+            else:
+                squeeze, circuit = "", ""
             rows.append({
                 "symbol":  _strip_md_link(parts[0]),
                 "close":   parts[1],
                 "day_chg": parts[2],
                 "zl_days": parts[3],
                 "zl_pct":  parts[4],
-                "circuit": parts[5] if len(parts) > 5 else "",
+                "squeeze": squeeze,
+                "circuit": circuit,
             })
         return rows
 
@@ -383,12 +392,15 @@ def build_html(today: str, now_str: str,
 
     # EMA25 ZL rows
     def _zl_row(r):
+        sqz = r.get("squeeze", "")
+        sqz_cls = "sqz-on" if sqz == "✓" else "sqz-off"
         return (
             f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="num">{r["close"]}</td>'
             f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
             f'<td class="zld">{r["zl_days"]}</td>'
             f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'<td class="{sqz_cls}">{sqz if sqz else "—"}</td>'
             f'{td_circ(r["circuit"])}</tr>'
         )
     zr_rows = [_zl_row(r) for r in zl25_rising[:20]]
@@ -471,15 +483,15 @@ def build_html(today: str, now_str: str,
   <div class="section">
     <div class="stitle">EMA25 ZL Rising — RS-filtered ({len(zl25_rising)} stocks, top 20)</div>
     <table>
-      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
-      <tbody>{table_or_empty(zr_rows, 6, "No ZL rising stocks")}</tbody>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zr_rows, 7, "No ZL rising stocks")}</tbody>
     </table>
   </div>
   <div class="section">
     <div class="stitle">EMA25 ZL Watch — RS-filtered ({len(zl25_watch)} stocks, top 15)</div>
     <table>
-      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
-      <tbody>{table_or_empty(zw_rows, 6, "No ZL watch stocks")}</tbody>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zw_rows, 7, "No ZL watch stocks")}</tbody>
     </table>
   </div>
 </div>"""
@@ -527,7 +539,7 @@ tr:hover td{{background:var(--bg3)}}
 .zld{{color:var(--mu);font-size:11px}}
 .nm{{font-size:11px;color:var(--mu)}}
 .num{{font-family:monospace;font-size:12px;color:var(--mu)}}
-.pos{{color:var(--grn)}}.neg{{color:var(--red)}}
+.pos{{color:var(--grn)}}.neg{{color:var(--red)}}.sqz-on{{color:var(--grn);font-weight:600;text-align:center}}.sqz-off{{color:var(--mu);text-align:center;font-size:11px}}
 
 .b{{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}}
 .b-swing{{background:#1f6feb}}.b-momentum{{background:#388bfd}}.b-weeklyrs{{background:#7c3aed}}
