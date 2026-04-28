@@ -8,13 +8,15 @@ def _ema(series: pd.Series, period: int) -> pd.Series:
     return series.ewm(span=period, adjust=False).mean()
 
 
-def _atr(high: pd.Series, low: pd.Series, close: pd.Series, period: int) -> pd.Series:
+def _atr(high: pd.Series, low: pd.Series, close: pd.Series, period: int, wilder: bool = False) -> pd.Series:
     tr = pd.concat([
         high - low,
         (high - close.shift(1)).abs(),
         (low - close.shift(1)).abs(),
     ], axis=1).max(axis=1)
-    return tr.ewm(span=period, adjust=False).mean()
+    if wilder:
+        return tr.ewm(span=period, adjust=False).mean()
+    return tr.rolling(period).mean()
 
 
 def compute(df: pd.DataFrame) -> pd.DataFrame:
@@ -46,6 +48,7 @@ def bollinger_keltner(
     bb_std_dev: float,
     kc_period: int,
     kc_atr_mult: float,
+    kc_atr_wilder: bool = False,
 ) -> pd.DataFrame:
     """
     Add BB and KC columns plus squeeze signal.
@@ -75,9 +78,9 @@ def bollinger_keltner(
     width_range = (bb_max - bb_min).replace(0, float("nan"))
     df["bb_width_pct_rank"] = (df["bb_width"] - bb_min) / width_range * 100
 
-    # Keltner Channels: SMA basis, Wilder ATR
+    # Keltner Channels: SMA basis, SMA ATR by default (wilder=True for Wilder EWM)
     kc_basis = close.rolling(kc_period).mean()
-    kc_atr   = _atr(high, low, close, kc_period)
+    kc_atr   = _atr(high, low, close, kc_period, wilder=kc_atr_wilder)
     df["kc_upper"] = kc_basis + kc_atr_mult * kc_atr
     df["kc_lower"] = kc_basis - kc_atr_mult * kc_atr
 

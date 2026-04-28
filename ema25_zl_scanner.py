@@ -66,8 +66,9 @@ def _atr_wilder(high: pd.Series, low: pd.Series, close: pd.Series, period: int) 
     ], axis=1).max(axis=1)
     return tr.ewm(span=period, adjust=False).mean()
 
-def bb_kc_squeeze(df: pd.DataFrame) -> bool:
-    """True if BB(20,2.0,SMA) is fully inside KC(20,1.5,SMA+WilderATR) on the last bar."""
+def bb_kc_squeeze(df: pd.DataFrame, kc_atr_wilder: bool = False) -> bool:
+    """True if BB(20,2.0,SMA) is fully inside KC(20,1.5,SMA ATR) on the last bar.
+    Set kc_atr_wilder=True to use Wilder EWM ATR instead of SMA ATR."""
     if len(df) < 21:
         return False
     c = df["Close"].astype(float)
@@ -80,7 +81,9 @@ def bb_kc_squeeze(df: pd.DataFrame) -> bool:
     bb_lower = bb_basis - 2.0 * bb_std
 
     kc_basis = c.rolling(20).mean()
-    kc_atr   = _atr_wilder(h, l, c, 20)
+    kc_atr   = _atr_wilder(h, l, c, 20) if kc_atr_wilder else (
+        pd.concat([h-l, (h-c.shift(1)).abs(), (l-c.shift(1)).abs()], axis=1).max(axis=1).rolling(20).mean()
+    )
     kc_upper = kc_basis + 1.5 * kc_atr
     kc_lower = kc_basis - 1.5 * kc_atr
 
