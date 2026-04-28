@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 NSE EMA25 ZL Scanner
-Run after 4:20 PM IST on trading days.
+Run after 4:20 PM IST on trading days (after run_fetch_data.ps1 completes).
 
 Watchlist filters (TradingView):
   - NSE common equity
@@ -18,26 +18,22 @@ For each RS-passing stock:
   - Compute ZLEMA25 direction (rising / flat-down)
   - Compute zl25_turn_stats(): days since last ZLEMA25 turn-up, % gain since
 
-OHLC cache: .ema25_ohlc_cache/{SYMBOL}.parquet  (Kite delta cache)
-Output:     ema25_zl_scans/ema25_zl_scans.md
+Data source: .ohlc_data/market.db  (populated by fetch_data.py)
+Output:      ema25_zl_scans/ema25_zl_scans.md
 """
 
-import sys, os, csv, time
-from datetime import datetime, date, timedelta
-from pathlib import Path
+import sys, os, csv
+from datetime import datetime
 
 import pandas as pd
 from tradingview_screener import Query, col
 
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "ema-compression-scanner"))
-from data_loader import load_env, get_kite, load_instruments, fetch_ohlc, fetch_benchmark
+from ohlc_db import load_ohlc, DB_PATH
 
 sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR   = os.path.join(REPO_DIR, "ema25_zl_scans")
-CACHE_DIR   = os.path.join(REPO_DIR, ".ema25_ohlc_cache")
-ENV_PATH    = Path(REPO_DIR) / "ema-compression-scanner" / ".env"
 TODAY       = datetime.now().strftime("%Y-%m-%d")
 MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
@@ -45,8 +41,6 @@ MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
 ZL_TURN_CAP = 60
 FILTER_1W_CHANGE = False   # True = require 1-week price change > 5%; False = no filter
-CACHE_MAX   = 280   # lookback in calendar days (~400 → ~280 trading bars)
-KITE_RATE   = 0.35  # seconds between Kite historical API calls
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -70,9 +64,9 @@ def bb_kc_squeeze(df: pd.DataFrame, kc_atr_wilder: bool = False) -> bool:
     Set kc_atr_wilder=True to use Wilder EWM ATR instead of SMA ATR."""
     if len(df) < 21:
         return False
-    c = df["Close"].astype(float)
-    h = df["High"].astype(float)
-    l = df["Low"].astype(float)
+    c = df["close"].astype(float)
+    h = df["high"].astype(float)
+    l = df["low"].astype(float)
 
     bb_basis = c.rolling(20).mean()
     bb_std   = c.rolling(20).std()
@@ -98,23 +92,6 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP - 1)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
-
-
-# ── OHLC via Kite ─────────────────────────────────────────────────────────────
-def _kite_ohlc(symbol: str, kite, instruments: dict) -> pd.DataFrame | None:
-    """Fetch OHLC via Kite parquet delta cache. Returns df with Title Case columns, Date index."""
-    token = instruments.get(symbol)
-    if token is None:
-        return None
-    raw = fetch_ohlc(kite, token, symbol, Path(CACHE_DIR), lookback_days=400)
-    if raw is None or len(raw) < 60:
-        return None
-    df = raw.copy()
-    if "date" in df.columns:
-        df = df.set_index("date")
-    df.index = pd.to_datetime(df.index).tz_localize(None)
-    df.index.name = "Date"
-    return df.rename(columns={"open": "Open", "high": "High", "low": "Low", "close": "Close", "volume": "Volume"})
 
 
 # ── Watchlist ──────────────────────────────────────────────────────────────────
@@ -179,13 +156,15 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
-def analyse(symbol: str, kite, instruments: dict, index_s: pd.Series) -> dict | None:
+def analyse(symbol: str, index_s: pd.Series) -> dict | None:
     try:
-        df = _kite_ohlc(symbol, kite, instruments)
-        if df is None:
+        raw = load_ohlc(symbol)
+        if raw is None or len(raw) < 60:
             return None
+        df = raw.set_index("date")
+        df.index = pd.to_datetime(df.index)
 
-        c = df["Close"]
+        c = df["close"].astype(float)
 
         # Align with index (common trading dates)
         common = c.index.intersection(index_s.index)
@@ -226,7 +205,7 @@ def analyse(symbol: str, kite, instruments: dict, index_s: pd.Series) -> dict | 
             "zl_rising": zl_rising,
             "zl_days":   zl_days,
             "zl_pct":    zl_pct,
-            "squeeze":   bb_kc_squeeze(df),
+            "squeeze":   bb_kc_squeeze(raw),
         }
     except Exception:
         return None
@@ -332,23 +311,16 @@ def print_results(findings: list[dict]) -> None:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main():
-    os.makedirs(CACHE_DIR, exist_ok=True)
     os.makedirs(SCANS_DIR, exist_ok=True)
 
-    env         = load_env(ENV_PATH)
-    kite        = get_kite(env)
-    instruments = load_instruments(kite, Path(CACHE_DIR))
-
-    print("\nFetching NIFTY MidSmallcap 400 index history...")
-    bm_raw = fetch_benchmark(kite, Path(CACHE_DIR), lookback_days=400)
+    print("\nLoading NIFTY MidSmallcap 400 from DB...")
+    bm_raw = load_ohlc("NIFTY MIDSML 400")
     if bm_raw is None or bm_raw.empty:
-        print("  ERROR: Could not fetch benchmark data.")
+        print("  ERROR: Benchmark not in DB. Run fetch_data.py first.")
         return
-    bm_raw = bm_raw.copy()
-    if "date" in bm_raw.columns:
-        bm_raw = bm_raw.set_index("date")
-    bm_raw.index = pd.to_datetime(bm_raw.index).tz_localize(None)
-    index_s = bm_raw["close"]
+    bm_raw = bm_raw.set_index("date")
+    bm_raw.index = pd.to_datetime(bm_raw.index)
+    index_s = bm_raw["close"].astype(float)
     print(f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})")
 
     print("\nFetching NSE circuit limits...")
@@ -362,10 +334,9 @@ def main():
     findings = []
     for i, sym in enumerate(watchlist, 1):
         print(f"  {sym:<20} ({i}/{len(watchlist)})   ", end="\r")
-        result = analyse(sym, kite, instruments, index_s)
+        result = analyse(sym, index_s)
         if result:
             findings.append(result)
-        time.sleep(KITE_RATE)
 
     print_results(findings)
 

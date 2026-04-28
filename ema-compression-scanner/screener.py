@@ -20,13 +20,12 @@ from pathlib import Path
 import indicators
 import gate
 import scorer
-from data_loader import (
-    load_env, get_kite, load_instruments, load_universe,
-    fetch_all, fetch_benchmark,
-)
+from data_loader import load_universe
+
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from ohlc_db import load_ohlc, load_ohlc_many
 
 BASE_DIR      = Path(__file__).parent
-ENV_FILE      = BASE_DIR / ".env"
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
 
 
@@ -136,34 +135,23 @@ def run():
     with open(SETTINGS_FILE, encoding="utf-8") as f:
         settings = yaml.safe_load(f)
 
-    cache_dir  = BASE_DIR / settings["cache_dir"]
     output_dir = BASE_DIR / settings["output_dir"]
-    cache_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
-
-    env  = load_env(ENV_FILE)
-    kite = get_kite(env)
-    print("  Kite connected.")
-
-    print("  Loading instruments...")
-    instruments_map = load_instruments(kite, cache_dir)
 
     universe = load_universe(settings["universe_csv"])
     print(f"  Universe: {len(universe)} symbols")
     universe_dict = {s["symbol"]: s for s in universe}
 
-    print("  Fetching benchmark (NiftyMidSml400)...")
-    benchmark_df = fetch_benchmark(kite, cache_dir, settings["lookback_days"])
+    print("  Loading benchmark (NIFTY MIDSML 400) from DB...")
+    benchmark_df = load_ohlc("NIFTY MIDSML 400")
     if benchmark_df is None or len(benchmark_df) < 50:
-        print("ERROR: Could not load NiftyMidSml400 benchmark data.", file=sys.stderr)
+        print("ERROR: Benchmark not in DB. Run fetch_data.py first.", file=sys.stderr)
         sys.exit(1)
     print(f"  Benchmark: {len(benchmark_df)} bars")
 
-    print("  Fetching OHLCV (delta cache)...")
-    all_data = fetch_all(
-        kite, universe, instruments_map, cache_dir,
-        lookback_days=settings["lookback_days"],
-    )
+    print("  Loading OHLCV from DB...")
+    symbols  = [s["symbol"] for s in universe]
+    all_data = load_ohlc_many(symbols, lookback=settings["lookback_days"])
 
     # ── Phase 1: Compute RS line for all stocks (needed for cross-universe rating) ──
     print(f"  Computing RS ratings for {len(all_data)} stocks...")
