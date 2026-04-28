@@ -213,46 +213,47 @@ def parse_circuit_changes(content: str, limit: int = 12) -> list:
 
 
 def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
-    """Parse ema_compression_latest.md → (zl_rising_rows, total_compressed, total_zl_rising)."""
+    """Parse ema_compression_latest.md → (signal_rows, total_compressed, total_signals).
+
+    New format (single flat table):
+        cols: # | Symbol | Sector | Close | Comp Days | Sqz Days | ZL | ZL Days | ZL Chg% | Score
+    """
     if today not in content[:150]:
         return [], 0, 0
 
-    total_m  = re.search(r'\*\*Compressed[^:]*:\*\* (\d+)', content)
-    rising_m = re.search(r'\*\*ZL Rising:\*\* (\d+)', content)
-    total_compressed = int(total_m.group(1))  if total_m  else 0
-    total_zl_rising  = int(rising_m.group(1)) if rising_m else 0
+    total_m   = re.search(r'\*\*Compressed[^:]*:\*\* (\d+)', content)
+    signals_m = re.search(r'\*\*Signals:\*\* (\d+)', content)
+    total_compressed = int(total_m.group(1))   if total_m   else 0
+    total_signals    = int(signals_m.group(1)) if signals_m else 0
 
     rows = []
-    in_section = in_table = False
+    in_table = False
     for line in content.splitlines():
         ls = line.strip()
-        if ls.startswith('## Compression + ZL Rising'):
-            in_section = True
-            continue
-        if in_section and ls.startswith('## '):
-            break
-        if not in_section:
-            continue
-        if ls.startswith('|') and 'Symbol' in ls:
+        if ls.startswith('|') and 'Symbol' in ls and 'Comp Days' in ls:
             in_table = True
             continue
         if in_table and ls.startswith('|---'):
             continue
         if in_table and ls.startswith('|'):
             parts = [p.strip() for p in ls.split('|') if p.strip()]
+            # cols: 0=# 1=Symbol 2=Sector 3=Close 4=Comp Days 5=Sqz Days 6=ZL 7=ZL Days 8=ZL Chg% 9=Score
             if len(parts) >= 10 and parts[0].isdigit():
                 rows.append({
                     "symbol":    _strip_md_link(parts[1]),
-                    "close":     parts[2],
-                    "comp_days": parts[6],
-                    "score":     parts[7].replace('**', ''),
-                    "zl_days":   parts[8],
-                    "zl_chg":    parts[9],
+                    "sector":    parts[2],
+                    "close":     parts[3],
+                    "comp_days": parts[4],
+                    "sqz_days":  parts[5],
+                    "zl_dir":    parts[6],
+                    "zl_days":   parts[7],
+                    "zl_chg":    parts[8],
+                    "score":     parts[9].replace('**', ''),
                 })
         elif in_table and not ls.startswith('|'):
-            in_table = False
+            break
 
-    return rows, total_compressed, total_zl_rising
+    return rows, total_compressed, total_signals
 
 
 # ── HTML helpers ──────────────────────────────────────────────────────────────
@@ -432,6 +433,7 @@ def build_html(today: str, now_str: str,
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="num">{r["close"]}</td>'
             f'<td class="zld">{r["comp_days"]}</td>'
+            f'<td class="zld">{r.get("sqz_days", "—")}</td>'
             f'<td class="num">{r["score"]}</td>'
             f'<td class="zld">{zld}</td>'
             f'<td class="{chg_cls(zlc)}">{zlc}</td>'
@@ -442,10 +444,10 @@ def build_html(today: str, now_str: str,
     if compression_rows or total_compressed:
         compression_section = f"""
 <div class="section">
-  <div class="stitle">EMA Compression + ZL Rising — top {len(compression_rows[:20])} of {total_zl_rising} &nbsp;|&nbsp; {total_compressed} compressed total</div>
+  <div class="stitle">EMA Compression + BB Squeeze — top {len(compression_rows[:20])} signals &nbsp;|&nbsp; {total_compressed} compressed &nbsp;|&nbsp; {total_zl_rising} passed all gates</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Close</th><th>Comp Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
-    <tbody>{table_or_empty(comp_rows_html, 6, "No compressed stocks today")}</tbody>
+    <thead><tr><th>Symbol</th><th>Close</th><th>Comp Days</th><th>Sqz Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
+    <tbody>{table_or_empty(comp_rows_html, 7, "No signals today")}</tbody>
   </table>
 </div>"""
 
@@ -557,7 +559,7 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv grn">{len(ema_adds)}</div><div class="sl">EMA Adds</div></div>
   <div class="stat"><div class="sv red">{len(ema_dels)}</div><div class="sl">EMA Exits</div></div>
   <div class="stat"><div class="sv pur">{total_compressed}</div><div class="sl">Compressed</div></div>
-  <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Coil+ZL↑</div></div>
+  <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Squeeze+RS</div></div>
 </div>
 
 <div class="section">

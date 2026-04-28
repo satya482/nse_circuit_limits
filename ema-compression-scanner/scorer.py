@@ -1,60 +1,109 @@
 #!/usr/bin/env python3
-"""Composite 0-100 compression quality scorer."""
+"""
+Composite 0-100 scorer — 5 components scored across the candidate set.
+All normalization is min-max across today's candidates (not historical).
+"""
 
 import pandas as pd
 
 
-def score(df: pd.DataFrame, duration: int, settings: dict) -> tuple[float, dict]:
+def _normalize(values: list[float]) -> list[float]:
+    """Min-max normalize. Returns list of 0.0-1.0 values."""
+    if not values:
+        return []
+    lo, hi = min(values), max(values)
+    if hi == lo:
+        return [1.0] * len(values)
+    return [(v - lo) / (hi - lo) for v in values]
+
+
+def score_all(candidates: list[dict], settings: dict) -> list[float]:
     """
-    Returns (total_score, component_scores).
-    Higher = tighter + longer + drier volume + cleaner uptrend + price near cluster.
+    Score all candidates together using cross-candidate min-max normalization.
+
+    Each candidate dict must have:
+        df           — DataFrame with compute() + bollinger_keltner() already applied
+        duration     — int, EMA compression bars
+        squeeze_days — int, consecutive BB squeeze bars
+        rs_gap       — float, normalized RS gap above EMA9
+        rs_slope     — float, RS 4-week diff
+        rs_rating    — float 0-1, percentile rank vs all 962 stocks
+
+    Returns list of scores (0-100) in same order as candidates.
     """
-    last = df.iloc[-1]
-    w = settings["scoring"]
-    g = settings["gate"]
+    if not candidates:
+        return []
 
-    # Tightness: 100 when spread/ATR → 0, 0 at threshold
-    tightness = max(0.0, 1.0 - last["spread_atr_ratio"] / g["ema_spread_atr_ratio"]) * 100
+    w  = settings["scoring"]
+    rw = settings["rs_weights"]
+    g  = settings["gate"]
 
-    # Duration: 100 at 60 bars, linear below
-    duration_score = min(duration / 60, 1.0) * 100
+    tightness_raw    = []
+    duration_raw     = []
+    vol_trend_raw    = []
+    bb_intensity_raw = []
+    rs_gap_raw       = []
+    rs_slope_raw     = []
+    rs_rating_raw    = []
 
-    # Volume contraction during compression vs long-run average
-    comp_start = max(0, len(df) - duration)
-    recent_vol = df["volume"].iloc[comp_start:].mean()
-    long_vol = last["vol_ma50"]
-    if pd.notna(long_vol) and long_vol > 0:
-        vol_contraction = max(0.0, 1.0 - recent_vol / long_vol) * 100
-    else:
-        vol_contraction = 50.0
+    for c in candidates:
+        df       = c["df"]
+        duration = c["duration"]
+        last     = df.iloc[-1]
 
-    # Trend: EMA50 > EMA100 > EMA200 = full uptrend (100), partial (50), none (0)
-    e50, e100, e200 = last["ema50"], last["ema100"], last["ema200"]
-    if e50 > e100 > e200:
-        trend_score = 100.0
-    elif e50 > e200:
-        trend_score = 50.0
-    else:
-        trend_score = 0.0
+        # 1. EMA tightness: invert spread/ATR so higher = tighter
+        spread_atr = float(last.get("spread_atr_ratio", g["ema_spread_atr_ratio"]))
+        tightness_raw.append(1.0 / max(spread_atr, 0.01))
 
-    # Price proximity to EMA cluster midpoint
-    ema_mid = (e50 + e100 + e200) / 3
-    price_dist_pct = abs(last["close"] - ema_mid) / ema_mid * 100 if ema_mid > 0 else 0
-    proximity_score = max(0.0, 100.0 - price_dist_pct * 5)
+        # 2. Duration: capped at 60 bars
+        duration_raw.append(min(duration, 60))
 
-    total = (
-        tightness      * w["tightness"] +
-        duration_score * w["duration"] +
-        vol_contraction * w["volume_contraction"] +
-        trend_score    * w["trend"] +
-        proximity_score * w["proximity"]
-    )
+        # 3. Volume trend: contraction during compression vs long-run average
+        comp_start = max(0, len(df) - duration)
+        recent_vol = float(df["volume"].iloc[comp_start:].mean())
+        long_vol   = float(last.get("vol_ma50", 0) or 0)
+        if long_vol > 0:
+            contraction = max(0.0, 1.0 - recent_vol / long_vol)
+        else:
+            contraction = 0.5
+        vol_trend_raw.append(contraction)
 
-    components = {
-        "tightness":        round(tightness, 1),
-        "duration":         round(duration_score, 1),
-        "vol_contraction":  round(vol_contraction, 1),
-        "trend":            round(trend_score, 1),
-        "proximity":        round(proximity_score, 1),
-    }
-    return round(total, 1), components
+        # 4. BB intensity: squeeze depth + width tightness (both 0-1, equal weight)
+        squeeze_days  = c["squeeze_days"]
+        bb_pct_rank   = float(last.get("bb_width_pct_rank", 50.0) or 50.0)
+        depth_score   = min(squeeze_days, 20) / 20          # more days = deeper
+        width_score   = 1.0 - bb_pct_rank / 100             # lower rank = tighter
+        bb_intensity_raw.append(depth_score * 0.5 + width_score * 0.5)
+
+        # 5. RS strength sub-components (normalized separately below)
+        rs_gap_raw.append(c["rs_gap"])
+        rs_slope_raw.append(c["rs_slope"])
+        rs_rating_raw.append(c["rs_rating"])  # already 0-1 percentile
+
+    # Cross-candidate normalization
+    t_norm  = _normalize(tightness_raw)
+    d_norm  = _normalize(duration_raw)
+    v_norm  = _normalize(vol_trend_raw)
+    b_norm  = _normalize(bb_intensity_raw)
+    rg_norm = _normalize(rs_gap_raw)
+    rs_norm = _normalize(rs_slope_raw)
+    # rs_rating is already 0-1; still normalize across candidates for consistency
+    rr_norm = _normalize(rs_rating_raw)
+
+    scores = []
+    for i in range(len(candidates)):
+        rs_score = (
+            rw["gap"]    * rg_norm[i] +
+            rw["slope"]  * rs_norm[i] +
+            rw["rating"] * rr_norm[i]
+        )
+        total = (
+            w["ema_tightness"] * t_norm[i] +
+            w["duration"]      * d_norm[i] +
+            w["volume_trend"]  * v_norm[i] +
+            w["bb_intensity"]  * b_norm[i] +
+            w["rs_strength"]   * rs_score
+        )
+        scores.append(round(total * 100, 1))
+
+    return scores

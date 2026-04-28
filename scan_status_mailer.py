@@ -94,8 +94,8 @@ def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
     if today not in md[:100]:
         return "—", "—"
     compressed = re.search(r'\*\*Compressed.*?:\*\* (\d+)', md)
-    rising     = re.search(r'\*\*ZL Rising:\*\* (\d+)', md)
-    return (compressed.group(1) if compressed else "—"), (rising.group(1) if rising else "—")
+    signals    = re.search(r'\*\*Signals:\*\* (\d+)', md)
+    return (compressed.group(1) if compressed else "—"), (signals.group(1) if signals else "—")
 
 
 def get_scan_details(today: str) -> dict:
@@ -117,7 +117,7 @@ def get_scan_details(today: str) -> dict:
         "Weekly RS Scanner":parse_signal_count(weekly_md, today) + " signals",
         "EMA25 ZL Scanner": f"Rising {zl_rising} / Watch {zl_watch}",
         "EMA Screener":     f"+{ema_adds} adds / -{ema_dels} exits",
-        "EMA Compression":  f"{comp_total} compressed / {comp_zl_rising} ZL rising",
+        "EMA Compression":  f"{comp_total} compressed / {comp_zl_rising} signals",
         "Dashboard":        "generated",
     }
 

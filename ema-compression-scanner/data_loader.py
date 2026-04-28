@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Kite OHLCV fetcher with per-symbol CSV delta cache."""
+"""Kite OHLCV fetcher with per-symbol parquet delta cache (CSV fallback for legacy files)."""
 
 import csv
 import time
@@ -45,6 +45,17 @@ def load_instruments(kite: KiteConnect, cache_dir: Path) -> dict:
     return {row["tradingsymbol"]: int(row["instrument_token"]) for _, row in eq.iterrows()}
 
 
+def load_benchmark_token(cache_dir: Path) -> int:
+    """Return instrument_token for NIFTY MIDSML 400 from today's instruments cache."""
+    today = datetime.now().strftime("%Y-%m-%d")
+    cache_file = cache_dir / f"instruments_{today}.csv"
+    df = pd.read_csv(cache_file)
+    row = df[df["tradingsymbol"] == "NIFTY MIDSML 400"]
+    if row.empty:
+        raise RuntimeError("NIFTY MIDSML 400 not found in instruments cache — check instruments CSV")
+    return int(row.iloc[0]["instrument_token"])
+
+
 def load_universe(csv_path: str) -> list[dict]:
     """Return list of {symbol, name, sector, industry} from universe CSV."""
     rows = []
@@ -62,6 +73,26 @@ def load_universe(csv_path: str) -> list[dict]:
     return rows
 
 
+def _load_cached(parquet_file: Path, csv_file: Path) -> pd.DataFrame | None:
+    """Try parquet first (primary), fall back to CSV (legacy)."""
+    if parquet_file.exists():
+        try:
+            df = pd.read_parquet(parquet_file)
+            if "date" in df.columns:
+                df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
+            return df
+        except Exception:
+            pass
+    if csv_file.exists():
+        try:
+            df = pd.read_csv(csv_file)
+            df["date"] = pd.to_datetime(df["date"], utc=True).dt.tz_localize(None)
+            return df
+        except Exception:
+            pass
+    return None
+
+
 def fetch_ohlc(
     kite: KiteConnect,
     instrument_token: int,
@@ -69,30 +100,29 @@ def fetch_ohlc(
     cache_dir: Path,
     lookback_days: int = 400,
 ) -> pd.DataFrame | None:
-    """Fetch OHLCV with delta cache. Returns DataFrame or None on failure."""
-    cache_file = cache_dir / f"{symbol}.csv"
-    to_date = datetime.now().date()
+    """Fetch OHLCV with parquet/CSV dual-read delta cache. Returns DataFrame or None on failure."""
+    parquet_file = cache_dir / f"{symbol}.parquet"
+    csv_file     = cache_dir / f"{symbol}.csv"
+    to_date      = datetime.now().date()
 
-    df_existing = pd.DataFrame()
-    if cache_file.exists():
+    df_existing = _load_cached(parquet_file, csv_file)
+
+    if df_existing is not None and not df_existing.empty:
         try:
-            df_existing = pd.read_csv(cache_file)
-            df_existing["date"] = pd.to_datetime(df_existing["date"], utc=True).dt.tz_localize(None)
-            if not df_existing.empty:
-                last_date = df_existing["date"].max().date()
-                from_date = last_date + timedelta(days=1)
-                if from_date > to_date:
-                    return df_existing
-                new_data = kite.historical_data(instrument_token, from_date, to_date, "day")
-                if new_data:
-                    df_new = pd.DataFrame(new_data)
-                    df_new["date"] = pd.to_datetime(df_new["date"]).dt.tz_localize(None)
-                    df_combined = pd.concat([df_existing, df_new], ignore_index=True)
-                    df_combined.drop_duplicates(subset=["date"], keep="last", inplace=True)
-                    df_combined.sort_values("date", inplace=True, ignore_index=True)
-                    df_combined.to_csv(cache_file, index=False)
-                    return df_combined
+            last_date = df_existing["date"].max().date()
+            from_date = last_date + timedelta(days=1)
+            if from_date > to_date:
                 return df_existing
+            new_data = kite.historical_data(instrument_token, from_date, to_date, "day")
+            if new_data:
+                df_new = pd.DataFrame(new_data)
+                df_new["date"] = pd.to_datetime(df_new["date"]).dt.tz_localize(None)
+                df_combined = pd.concat([df_existing, df_new], ignore_index=True)
+                df_combined.drop_duplicates(subset=["date"], keep="last", inplace=True)
+                df_combined.sort_values("date", inplace=True, ignore_index=True)
+                df_combined.to_parquet(parquet_file, index=False)
+                return df_combined
+            return df_existing
         except Exception:
             # API error (e.g. expired token) — return cached data if sufficient
             if len(df_existing) >= 210:
@@ -108,8 +138,18 @@ def fetch_ohlc(
     df = pd.DataFrame(data)
     df["date"] = pd.to_datetime(df["date"]).dt.tz_localize(None)
     df.sort_values("date", inplace=True, ignore_index=True)
-    df.to_csv(cache_file, index=False)
+    df.to_parquet(parquet_file, index=False)
     return df
+
+
+def fetch_benchmark(
+    kite: KiteConnect,
+    cache_dir: Path,
+    lookback_days: int = 400,
+) -> pd.DataFrame | None:
+    """Fetch NiftyMidSml400 OHLCV for RS line calculation."""
+    token = load_benchmark_token(cache_dir)
+    return fetch_ohlc(kite, token, "NIFTYMIDSML400", cache_dir, lookback_days)
 
 
 def fetch_all(

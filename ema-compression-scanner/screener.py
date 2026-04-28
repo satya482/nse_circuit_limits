@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
 """
-EMA Compression Scanner — main entry point.
-Scans NSE universe for stocks where EMA50/100/200 are tightly coiled
-(spread < 1.5×ATR50 AND spread < 3% of EMA200) for ≥10 consecutive days.
-Enriches each result with ZLEMA25 stats (direction, days since turn, chg%).
+EMA Compression + BB Squeeze Scanner.
+
+Gates (all must pass):
+  1. EMA dual gate  — spread < 1.5×ATR50 AND < 3% EMA200 for >=10 consecutive bars
+  2. BB squeeze gate — BB(34,2.5) inside KC(34,1.5) for >=5 bars + width bottom 20%
+  3. RS hard gate   — weekly RS vs NiftyMidSml400 above EMA9 AND 4-week slope positive
+
+Scoring: 5-component cross-candidate min-max (EMA tightness/duration/vol trend/BB intensity/RS strength).
+Output: single merged table sorted by score desc, ZL days asc.
 """
 
 import sys
@@ -15,10 +20,13 @@ from pathlib import Path
 import indicators
 import gate
 import scorer
-from data_loader import load_env, get_kite, load_instruments, load_universe, fetch_all
+from data_loader import (
+    load_env, get_kite, load_instruments, load_universe,
+    fetch_all, fetch_benchmark,
+)
 
-BASE_DIR = Path(__file__).parent
-ENV_FILE = BASE_DIR / ".env"
+BASE_DIR      = Path(__file__).parent
+ENV_FILE      = BASE_DIR / ".env"
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
 
 
@@ -30,192 +38,275 @@ def fmt_price(p) -> str:
     return f"₹{p:,.1f}"
 
 
-def _vol_ratio(f: dict) -> str:
-    vol_ma50 = f["last"]["vol_ma50"]
-    if vol_ma50 > 0:
-        return f"{f['recent_vol'] / vol_ma50:.2f}"
-    return "—"
-
-
 def _zl_dir(zl_rising: bool) -> str:
-    return "↑" if zl_rising else "↓"
+    return "up" if zl_rising else "dn"
 
 
-def build_markdown(findings: list[dict], scanned: int, elapsed: float, today: str) -> str:
-    rising = sorted([f for f in findings if f["zl_rising"]], key=lambda x: x["zl_days"])
-    watch  = [f for f in findings if not f["zl_rising"]]
+def _zl_days_str(zl_days: int) -> str:
+    return f"{zl_days}d+" if zl_days >= 60 else f"{zl_days}d"
+
+
+def _chg_str(chg: float) -> str:
+    return f"+{chg:.1f}%" if chg >= 0 else f"{chg:.1f}%"
+
+
+def build_markdown(
+    candidates: list[dict],
+    n_scanned: int,
+    n_ema_compressed: int,
+    n_bb_squeeze: int,
+    elapsed: float,
+    today: str,
+) -> str:
+    n_signals = len(candidates)
 
     lines = [
-        f"# EMA Compression Scan — {today}",
+        f"# EMA Compression + BB Squeeze — {today}",
         "",
-        f"**Scanned:** {scanned} &nbsp;|&nbsp; "
-        f"**Compressed (≥10d):** {len(findings)} &nbsp;|&nbsp; "
-        f"**ZL Rising:** {len(rising)} &nbsp;|&nbsp; "
+        f"**Scanned:** {n_scanned} &nbsp;|&nbsp; "
+        f"**Compressed (>=10d):** {n_ema_compressed} &nbsp;|&nbsp; "
+        f"**BB Squeeze:** {n_bb_squeeze} &nbsp;|&nbsp; "
+        f"**Signals:** {n_signals} &nbsp;|&nbsp; "
         f"**Run time:** {elapsed:.0f}s",
         "",
     ]
 
-    if not findings:
-        lines.append("_No compressed stocks found today._")
+    if not candidates:
+        lines.append("_No stocks passed all gates today._")
+        lines += ["", f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_"]
         return "\n".join(lines)
 
-    # ── Section 1: Compression + ZL Rising (highest conviction) ──────────────────
-    lines += [
-        "## Compression + ZL Rising",
-        "",
-        "_Stocks that are compressed AND have ZLEMA25 turning up — coil + momentum flip._",
-        "",
-    ]
+    hdr = "| # | Symbol | Sector | Close | Comp Days | Sqz Days | ZL | ZL Days | ZL Chg% | Score |"
+    sep = "|---|--------|--------|-------|-----------|----------|----|---------|---------|-------|"
+    lines += [hdr, sep]
 
-    if rising:
-        hdr = "| # | Symbol | Close | EMA200 | Sprd/ATR | Sprd% | Comp Days | Score | ZL Days | ZL Chg% | VolRatio |"
-        sep = "|---|--------|-------|--------|----------|-------|-----------|-------|---------|---------|---------|"
-        lines += [hdr, sep]
-        for i, f in enumerate(rising, 1):
-            last = f["last"]
-            zl_days_str = f"{f['zl_days']}d+" if f["zl_days"] >= 60 else f"{f['zl_days']}d"
-            chg_str = f"+{f['zl_chg']:.1f}%" if f["zl_chg"] >= 0 else f"{f['zl_chg']:.1f}%"
-            lines.append(
-                f"| {i} | {tv_link(f['symbol'])} "
-                f"| {fmt_price(last['close'])} "
-                f"| {fmt_price(last['ema200'])} "
-                f"| {last['spread_atr_ratio']:.2f} "
-                f"| {last['spread_pct']:.2f}% "
-                f"| {f['duration']}d "
-                f"| **{f['score']}** "
-                f"| {zl_days_str} "
-                f"| {chg_str} "
-                f"| {_vol_ratio(f)} |"
-            )
-    else:
-        lines.append("_None today._")
-
-    # ── Section 2: Full compression table ────────────────────────────────────────
-    lines += [
-        "",
-        "---",
-        "",
-        "## All Compressed Stocks",
-        "",
-        "| # | Symbol | Close | EMA50 | EMA100 | EMA200 | Sprd/ATR | Sprd% | Comp Days | Score | ZL | ZL Days | ZL Chg% | VolRatio |",
-        "|---|--------|-------|-------|--------|--------|----------|-------|-----------|-------|----|---------|---------|---------|",
-    ]
-
-    for i, f in enumerate(findings, 1):
-        last = f["last"]
-        zl_days_str = f"{f['zl_days']}d+" if f["zl_days"] >= 60 else f"{f['zl_days']}d"
-        chg_str = f"+{f['zl_chg']:.1f}%" if f["zl_chg"] >= 0 else f"{f['zl_chg']:.1f}%"
+    for i, c in enumerate(candidates, 1):
+        last = c["last"]
         lines.append(
-            f"| {i} | {tv_link(f['symbol'])} "
+            f"| {i} "
+            f"| {tv_link(c['symbol'])} "
+            f"| {c['sector']} "
             f"| {fmt_price(last['close'])} "
-            f"| {fmt_price(last['ema50'])} "
-            f"| {fmt_price(last['ema100'])} "
-            f"| {fmt_price(last['ema200'])} "
-            f"| {last['spread_atr_ratio']:.2f} "
-            f"| {last['spread_pct']:.2f}% "
-            f"| {f['duration']}d "
-            f"| **{f['score']}** "
-            f"| {_zl_dir(f['zl_rising'])} "
-            f"| {zl_days_str} "
-            f"| {chg_str} "
-            f"| {_vol_ratio(f)} |"
+            f"| {c['duration']}d "
+            f"| {c['squeeze_days']}d "
+            f"| {_zl_dir(c['zl_rising'])} "
+            f"| {_zl_days_str(c['zl_days'])} "
+            f"| {_chg_str(c['zl_chg'])} "
+            f"| **{c['score']}** |"
         )
 
-    # ── Section 3: Score components ───────────────────────────────────────────────
     lines += [
         "",
         "---",
         "",
-        "### Score components (tightness / duration / vol-contraction / trend / proximity)",
+        "### Score components (tightness / duration / vol trend / BB intensity / RS strength)",
         "",
-        "| Symbol | Tight | Dur | VolCtx | Trend | Prox |",
-        "|--------|-------|-----|--------|-------|------|",
+        "| Symbol | EMA Tight | Duration | Vol Trend | BB Intens | RS Strength | RS Gap | RS Slope |",
+        "|--------|-----------|----------|-----------|-----------|-------------|--------|---------|",
     ]
-    for f in findings:
-        c = f["components"]
+    for c in candidates:
+        comp = c["components"]
         lines.append(
-            f"| {tv_link(f['symbol'])} "
-            f"| {c['tightness']} "
-            f"| {c['duration']} "
-            f"| {c['vol_contraction']} "
-            f"| {c['trend']} "
-            f"| {c['proximity']} |"
+            f"| {tv_link(c['symbol'])} "
+            f"| {comp['ema_tightness']} "
+            f"| {comp['duration']} "
+            f"| {comp['volume_trend']} "
+            f"| {comp['bb_intensity']} "
+            f"| {comp['rs_strength']} "
+            f"| {c['rs_gap']:.4f} "
+            f"| {c['rs_slope']:.4f} |"
         )
 
-    lines += ["", f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_"]
+    lines += [
+        "",
+        "_Gates: EMA spread < 1.5xATR50 + < 3% EMA200 (>=10 bars) "
+        "+ BB(34,2.5) inside KC(34,1.5) (>=5 bars, width bottom 20%) "
+        "+ weekly RS vs NiftyMidSml400 above EMA9 + 4-week slope positive_",
+        "",
+        f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_",
+    ]
     return "\n".join(lines)
 
 
 def run():
-    t0 = time.time()
+    t0    = time.time()
     today = datetime.now().strftime("%Y-%m-%d")
-    print(f"[{datetime.now().strftime('%H:%M:%S')}] EMA Compression Scanner starting...")
+    print(f"[{datetime.now().strftime('%H:%M:%S')}] EMA Compression + BB Squeeze Scanner starting...")
 
     with open(SETTINGS_FILE, encoding="utf-8") as f:
         settings = yaml.safe_load(f)
 
-    cache_dir = BASE_DIR / settings["cache_dir"]
+    cache_dir  = BASE_DIR / settings["cache_dir"]
     output_dir = BASE_DIR / settings["output_dir"]
     cache_dir.mkdir(parents=True, exist_ok=True)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    env = load_env(ENV_FILE)
+    env  = load_env(ENV_FILE)
     kite = get_kite(env)
-    print(f"  Kite connected.")
+    print("  Kite connected.")
 
-    print(f"  Loading instruments...")
-    instruments = load_instruments(kite, cache_dir)
+    print("  Loading instruments...")
+    instruments_map = load_instruments(kite, cache_dir)
 
     universe = load_universe(settings["universe_csv"])
     print(f"  Universe: {len(universe)} symbols")
+    universe_dict = {s["symbol"]: s for s in universe}
 
-    print(f"  Fetching OHLCV (delta cache)...")
+    print("  Fetching benchmark (NiftyMidSml400)...")
+    benchmark_df = fetch_benchmark(kite, cache_dir, settings["lookback_days"])
+    if benchmark_df is None or len(benchmark_df) < 50:
+        print("ERROR: Could not load NiftyMidSml400 benchmark data.", file=sys.stderr)
+        sys.exit(1)
+    print(f"  Benchmark: {len(benchmark_df)} bars")
+
+    print("  Fetching OHLCV (delta cache)...")
     all_data = fetch_all(
-        kite, universe, instruments, cache_dir,
-        lookback_days=settings["lookback_days"]
+        kite, universe, instruments_map, cache_dir,
+        lookback_days=settings["lookback_days"],
     )
 
-    print(f"  Scanning {len(all_data)} stocks...")
-    findings = []
+    # ── Phase 1: Compute RS line for all stocks (needed for cross-universe rating) ──
+    print(f"  Computing RS ratings for {len(all_data)} stocks...")
+    rs_data   = {}   # sym -> (above, slope_ok, rs_gap, rs_slope)
+    rs_gaps   = {}   # sym -> rs_gap float (for percentile rank)
+
+    rs_cfg = settings["rs"]
+    for sym, df_raw in all_data.items():
+        try:
+            above, slope_ok, rs_gap, rs_slope = indicators.rs_line(
+                df_raw, benchmark_df,
+                rs_cfg["ema_period"],
+                rs_cfg["slope_lookback_weeks"],
+            )
+            rs_data[sym]  = (above, slope_ok, rs_gap, rs_slope)
+            rs_gaps[sym]  = rs_gap
+        except Exception:
+            rs_data[sym]  = (False, False, 0.0, 0.0)
+            rs_gaps[sym]  = 0.0
+
+    # Percentile rank: fraction of all fetched stocks with rs_gap <= this stock's gap
+    all_gap_values = list(rs_gaps.values())
+    n_total        = len(all_gap_values)
+    rs_ratings     = {
+        sym: sum(1 for g in all_gap_values if g <= gap) / n_total
+        for sym, gap in rs_gaps.items()
+    }
+
+    # ── Phase 2: Apply gates in sequence, collect candidates ─────────────────────
+    print(f"  Scanning {len(all_data)} stocks through gates...")
+
+    bb_cfg  = settings["bollinger"]
+    kc_cfg  = settings["keltner"]
+
+    n_ema_compressed = 0
+    n_bb_squeeze     = 0
+    raw_candidates   = []
+
     for sym, df_raw in all_data.items():
         try:
             df = indicators.compute(df_raw)
-            qualifies, duration = gate.passes(df, settings)
-            if not qualifies:
+
+            # Gate 1: EMA dual gate
+            ema_ok, duration = gate.passes(df, settings)
+            if not ema_ok:
                 continue
-            total_score, components = scorer.score(df, duration, settings)
+            n_ema_compressed += 1
+
+            # Add BB/KC indicators
+            df = indicators.bollinger_keltner(
+                df,
+                bb_cfg["period"], bb_cfg["std_dev"],
+                kc_cfg["period"], kc_cfg["atr_mult"],
+            )
+
+            # Gate 2: BB squeeze gate
+            squeeze_ok, squeeze_days = gate.bb_squeeze_passes(df, settings)
+            if not squeeze_ok:
+                continue
+            n_bb_squeeze += 1
+
+            # Gate 3: RS hard gate (pre-computed)
+            above, slope_ok, rs_gap, rs_slope = rs_data[sym]
+            if not (above and slope_ok):
+                continue
+
             zl_rising, zl_days, zl_chg = indicators.zl25_stats(df_raw)
-            last = df.iloc[-1]
+            last       = df.iloc[-1]
             comp_start = max(0, len(df) - duration)
-            recent_vol = df["volume"].iloc[comp_start:].mean()
-            findings.append({
-                "symbol":     sym,
-                "score":      total_score,
-                "duration":   duration,
-                "last":       last,
-                "components": components,
-                "recent_vol": recent_vol,
-                "zl_rising":  zl_rising,
-                "zl_days":    zl_days,
-                "zl_chg":     zl_chg,
+
+            raw_candidates.append({
+                "symbol":       sym,
+                "sector":       universe_dict.get(sym, {}).get("sector", ""),
+                "df":           df,
+                "duration":     duration,
+                "squeeze_days": squeeze_days,
+                "rs_gap":       rs_gap,
+                "rs_slope":     rs_slope,
+                "rs_rating":    rs_ratings.get(sym, 0.5),
+                "zl_rising":    zl_rising,
+                "zl_days":      zl_days,
+                "zl_chg":       zl_chg,
+                "last":         last,
+                "recent_vol":   float(df["volume"].iloc[comp_start:].mean()),
             })
+
         except Exception as e:
             print(f"    WARN {sym}: {e}", file=sys.stderr)
 
-    findings.sort(key=lambda x: x["score"], reverse=True)
+    # ── Phase 3: Score all candidates together ───────────────────────────────────
+    scores = scorer.score_all(raw_candidates, settings)
+
+    # Build score components for display (re-derive from scorer internals via ratio)
+    w  = settings["scoring"]
+    rw = settings["rs_weights"]
+    g  = settings["gate"]
+
+    candidates = []
+    for c, total_score in zip(raw_candidates, scores):
+        df       = c["df"]
+        duration = c["duration"]
+        last     = df.iloc[-1]
+
+        spread_atr = float(last.get("spread_atr_ratio", g["ema_spread_atr_ratio"]))
+        comp_start = max(0, len(df) - duration)
+        recent_vol = float(df["volume"].iloc[comp_start:].mean())
+        long_vol   = float(last.get("vol_ma50", 0) or 0)
+        vol_ctxt   = round(max(0.0, 1.0 - recent_vol / long_vol) * 100, 1) if long_vol > 0 else 50.0
+
+        bb_pct_rank   = float(last.get("bb_width_pct_rank", 50.0) or 50.0)
+        depth_score   = round(min(c["squeeze_days"], 20) / 20 * 100, 1)
+        width_score   = round((1.0 - bb_pct_rank / 100) * 100, 1)
+
+        components = {
+            "ema_tightness": round(100 / max(spread_atr, 0.01) / (100 / max(g["ema_spread_atr_ratio"], 0.01)) * 100, 1),
+            "duration":      round(min(duration, 60) / 60 * 100, 1),
+            "volume_trend":  vol_ctxt,
+            "bb_intensity":  round((depth_score + width_score) / 2, 1),
+            "rs_strength":   round((rw["gap"] * c["rs_gap"] + rw["slope"] * c["rs_slope"]) * 100, 2),
+        }
+
+        candidates.append({**c, "score": total_score, "components": components})
+
+    # Sort: score descending, ZL days ascending as tiebreak
+    candidates.sort(key=lambda x: (-x["score"], x["zl_days"]))
 
     elapsed = time.time() - t0
-    md = build_markdown(findings, len(all_data), elapsed, today)
+    md = build_markdown(
+        candidates, len(all_data),
+        n_ema_compressed, n_bb_squeeze,
+        elapsed, today,
+    )
 
     out_file = output_dir / f"ema_compression_{today}.txt"
     out_file.write_text(md, encoding="utf-8")
 
-    rising_count = sum(1 for f in findings if f["zl_rising"])
-    print(f"  [{len(findings)} compressed, {rising_count} ZL rising] -> {out_file}")
-
     latest = output_dir / "ema_compression_latest.md"
     latest.write_text(md, encoding="utf-8")
 
+    print(
+        f"  [{n_ema_compressed} EMA compressed -> {n_bb_squeeze} BB squeeze -> "
+        f"{len(candidates)} signals] -> {out_file}"
+    )
     print(f"[{datetime.now().strftime('%H:%M:%S')}] Done in {elapsed:.0f}s.")
 
 

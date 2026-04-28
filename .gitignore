@@ -4,3 +4,8 @@ __pycache__/
 .env
 venv/
 nse.csv
+ema-compression-scanner/.ema_compression_cache/*.parquet
+ema-compression-scanner/.ema_compression_cache/*.csv
+logs/
+.claude/
+NSE_500cr_15CrNotional10D_50rs_sector_industry.csv

@@ -8,9 +8,31 @@ gate:
   ema_spread_pct: 3.0         # same spread < 3% of EMA200
   min_compression_bars: 10    # consecutive bars both gates must pass
 
+bollinger:
+  period: 20
+  std_dev: 2.0
+
+keltner:
+  period: 20
+  atr_mult: 1.5
+
+squeeze:
+  min_bars: 5
+  bb_width_pct_max: 20      # bottom 20% of 52-week BB width range
+
+rs:
+  benchmark_symbol: "NIFTY MIDSML 400"   # Kite tradingsymbol
+  ema_period: 9
+  slope_lookback_weeks: 4
+
 scoring:
-  tightness: 0.30        # lower spread/ATR = better
-  duration: 0.25         # longer compression = more coiled
-  volume_contraction: 0.20  # volume drying up = institutional patience
-  trend: 0.15            # EMA50 > EMA100 > EMA200 = uptrend aligned
-  proximity: 0.10        # price near EMA cluster midpoint
+  ema_tightness: 0.25
+  duration: 0.20
+  volume_trend: 0.20
+  bb_intensity: 0.15
+  rs_strength: 0.20
+
+rs_weights:
+  gap: 0.40
+  slope: 0.30
+  rating: 0.30
