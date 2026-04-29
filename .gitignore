@@ -8,6 +8,7 @@ ema-compression-scanner/.ema_compression_cache/*.parquet
 ema-compression-scanner/.ema_compression_cache/*.csv
 ema-compression-scanner/.kite_token_stamp
 .ohlc_data/market.db
+.us_ohlc_data/us_market.db
 .ema25_ohlc_cache/
 .niftymidsml400_cache.csv
 logs/
