@@ -39,9 +39,10 @@ MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
 MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
-ZL_TURN_CAP = 60
-FILTER_1W_CHANGE = False   # True = require 1-week price change > 5%; False = no filter
-RS_MODE      = "daily_ema21"  # "daily_ema21" | "weekly_ema9"
+ZL_TURN_CAP          = 60
+FILTER_1W_CHANGE     = False   # True = require 1-week price change > 5%
+FILTER_PRICE_EMA25   = False   # True = require price > EMA25 (off by default: squeeze builds before reclaim)
+RS_MODE              = "daily_ema21"  # "daily_ema21" | "weekly_ema9"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -102,9 +103,10 @@ def get_watchlist() -> list[str]:
         col("type") == "stock",
         col("typespecs").has(["common"]),
         col("close") > 100,
-        col("close") > col("EMA25"),
         col("market_cap_basic").between(MC_LOW, MC_HIGH),
     ]
+    if FILTER_PRICE_EMA25:
+        filters.append(col("close") > col("EMA25"))
     if FILTER_1W_CHANGE:
         filters.append(col("Perf.W") > 5)
 
@@ -232,15 +234,20 @@ STATIC_HEADER = """### Scan definition
 |--------|-------|
 | Exchange | NSE common equity |
 | Price | > ₹100 |
-| 1-week change | > 5% |
+| 1-week change | {w1} |
 | Market cap | ₹1,000 Cr – ₹1 Lakh Cr |
-| Price vs EMA25 | Price > EMA25 |
+| Price vs EMA25 | {ema25} |
 | RS filter | {rs_label} |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |
 | Squeeze | ✓ = BB(20,2.0,SMA) fully inside KC(20,1.5,SMA) on last bar |
 
 ---
-""".format(cap=ZL_TURN_CAP, rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE))
+""".format(
+    cap=ZL_TURN_CAP,
+    rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE),
+    w1="> 5%" if FILTER_1W_CHANGE else "off",
+    ema25="Price > EMA25" if FILTER_PRICE_EMA25 else "off",
+)
 
 
 def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
