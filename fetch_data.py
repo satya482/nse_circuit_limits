@@ -35,7 +35,9 @@ ENV_PATH      = REPO_DIR / "ema-compression-scanner" / ".env"
 
 LOOKBACK_DAYS  = 400        # calendar days for historical backfill (~280 trading bars)
 MIN_ROWS       = 200        # symbols below this trigger a backfill
-BATCH_SIZE     = 500        # max instruments per quote() call
+BATCH_SIZE     = 50         # max instruments per quote() call (larger batches trigger Cloudflare rate-limit)
+BATCH_SLEEP    = 3          # seconds between batches
+BATCH_RETRY_WAIT = 30      # seconds to wait before retrying a failed batch
 HIST_RATE      = 0.35       # seconds between historical_data() calls
 
 MC_LOW         = 800     * 1_00_00_000   # ₹800 Cr
@@ -203,36 +205,45 @@ def delta_update(kite, instruments_df: pd.DataFrame,
     # Build "NSE:SYMBOL" strings; keep mapping back to plain symbol
     ex_syms = [f"NSE:{s}" for s in symbols]
 
+    total_batches = -(-len(ex_syms) // BATCH_SIZE)
     inserted = 0
     for i in range(0, len(ex_syms), BATCH_SIZE):
-        batch = ex_syms[i : i + BATCH_SIZE]
-        try:
-            quotes = kite.quote(batch)
-            rows = []
-            for ex_sym, q in quotes.items():
-                sym  = ex_sym.split(":", 1)[1]            # "NSE:SBIN" → "SBIN"
-                ltp  = q.get("last_price", 0)
-                if not ltp:                                # market closed / no data
-                    continue
-                ohlc = q.get("ohlc", {})
-                rows.append((
-                    sym, today,
-                    ohlc.get("open"),
-                    ohlc.get("high"),
-                    ohlc.get("low"),
-                    ltp,                                   # close = LTP, NOT ohlc.close
-                    q.get("volume", 0),
-                ))
-            con.executemany(
-                "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
-            )
-            con.commit()
-            inserted += len(rows)
-            print(f"    Batch {i // BATCH_SIZE + 1}/{-(-len(ex_syms)//BATCH_SIZE)}: "
-                  f"{len(rows)} quotes inserted")
-        except Exception as e:
-            print(f"    WARN batch {i // BATCH_SIZE + 1}: {e}", file=sys.stderr)
-        time.sleep(0.1)
+        batch     = ex_syms[i : i + BATCH_SIZE]
+        batch_num = i // BATCH_SIZE + 1
+        for attempt in (1, 2):
+            try:
+                quotes = kite.quote(batch)
+                rows = []
+                for ex_sym, q in quotes.items():
+                    sym  = ex_sym.split(":", 1)[1]        # "NSE:SBIN" -> "SBIN"
+                    ltp  = q.get("last_price", 0)
+                    if not ltp:                            # market closed / no data
+                        continue
+                    ohlc = q.get("ohlc", {})
+                    rows.append((
+                        sym, today,
+                        ohlc.get("open"),
+                        ohlc.get("high"),
+                        ohlc.get("low"),
+                        ltp,                               # close = LTP, NOT ohlc.close
+                        q.get("volume", 0),
+                    ))
+                con.executemany(
+                    "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
+                )
+                con.commit()
+                inserted += len(rows)
+                print(f"    Batch {batch_num}/{total_batches}: {len(rows)} quotes inserted")
+                break
+            except Exception as e:
+                if attempt == 1:
+                    print(f"    WARN batch {batch_num} (attempt 1): {e} — retrying in {BATCH_RETRY_WAIT}s...",
+                          file=sys.stderr)
+                    time.sleep(BATCH_RETRY_WAIT)
+                else:
+                    print(f"    WARN batch {batch_num} (attempt 2): {e} — skipping",
+                          file=sys.stderr)
+        time.sleep(BATCH_SLEEP)
 
     print(f"  Phase 2 complete: {inserted} symbols updated for {today}")
 
