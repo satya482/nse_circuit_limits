@@ -33,7 +33,7 @@ Finds stocks where ZLEMA25 has just turned up AND a BB Squeeze is active simulta
 - **RS gate**: Daily RS > Daily RS EMA21 AND EMA21 rising
 - **Signal**: ZLEMA25 rising on last bar AND BB(20,2.0,SMA) fully inside KC(20,1.5,SMA ATR)
 - **Squeeze Days**: Consecutive bars the squeeze has been active (longer = more coiled)
-- **Sort**: Longest squeeze first (most compressed), then by ZL Days ascending
+- **Sort**: ZL Days ascending (freshest turn-up first), then squeeze days descending as tiebreaker
 - **Output**: `zl_squeeze_scans/zl_squeeze_scans.md`
 
 ### 4. Momentum Scanner (`momentum_scanner.py`)

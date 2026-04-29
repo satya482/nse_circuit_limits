@@ -202,8 +202,8 @@ STATIC_HEADER = f"""### Scan definition
 """
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    # Sort: longest squeeze first (most coiled), then by zl_days ascending
-    sorted_f = sorted(findings, key=lambda x: (-x["squeeze_days"], x["zl_days"]))
+    # Sort: freshest ZL turn first (fewest days since turn-up), then by squeeze_days descending
+    sorted_f = sorted(findings, key=lambda x: (x["zl_days"], -x["squeeze_days"]))
 
     hdr = [
         "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | Circuit |",
@@ -242,7 +242,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
 
 def print_results(findings: list[dict]) -> None:
-    sorted_f = sorted(findings, key=lambda x: (-x["squeeze_days"], x["zl_days"]))
+    sorted_f = sorted(findings, key=lambda x: (x["zl_days"], -x["squeeze_days"]))
     print(f"\n{'='*70}")
     print(f"  NSE ZL Squeeze Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  ZLEMA25 Rising + Squeeze ON: {len(findings)}")
