@@ -155,14 +155,24 @@ def _rs_gate_ema9(rs: pd.Series) -> bool:
     return bool(rs.iloc[-1] > e.iloc[-1] and e.iloc[-1] > e.iloc[-2])
 
 def _rs_gate_weekly_ema9(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
-    """Daily RS line > Weekly RS EMA9 AND Weekly RS EMA9 rising."""
+    """Daily RS line > Weekly RS EMA9 AND Weekly RS EMA9 rising.
+    Uses only completed weekly bars (drops the current partial week if its
+    resample label is beyond the last daily bar date)."""
     wk_c   = c_rs.resample("W").last().dropna()
     wk_idx = idx_rs.resample("W").last().dropna()
     common = wk_c.index.intersection(wk_idx.index)
     if len(common) < 12:
         return False
     wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
-    e9    = ema(wk_rs, 9)
+    # Drop incomplete current week: resample("W") labels the week by its
+    # ending Sunday, so the last bar's label is always > last daily date
+    # when the week is not yet finished.
+    last_daily = rs.index[-1]
+    if wk_rs.index[-1] > last_daily:
+        wk_rs = wk_rs.iloc[:-1]
+    if len(wk_rs) < 11:   # need at least 11 bars to get a stable EMA9 with [-2]
+        return False
+    e9 = ema(wk_rs, 9)
     return bool(rs.iloc[-1] > e9.iloc[-1] and e9.iloc[-1] > e9.iloc[-2])
 
 
