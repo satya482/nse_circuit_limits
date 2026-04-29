@@ -267,8 +267,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
     T, F = "✓", "—"
     hdr = [
-        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | EMA9 | EMA21 | W-EMA9 | Circuit |",
-        "|--------|------:|--------:|---------:|--------:|--------:|:----:|:-----:|:------:|:-------:|",
+        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |",
+        "|--------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|",
     ]
     rows = []
     for f in sorted_f:
@@ -320,7 +320,7 @@ def print_results(findings: list[dict]) -> None:
         we9 = T if f["g_weekly9"] else F
         print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  "
               f"day:{ds}{f['day_chg']:.1f}%  sqz:{f['squeeze_days']}d  zl:{f['zl_days']}d {zp}"
-              f"  EMA9:{e9} EMA21:{e21} W-EMA9:{we9}")
+              f"  RS_EMA9:{e9} RS_EMA21:{e21} Weekly-RS_EMA9:{we9}")
     print()
 
 

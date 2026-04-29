@@ -1,4 +1,49 @@
 # NSE ZL Squeeze Scan — 2026-04-29
+*Generated 2026-04-29 23:22 IST*
+
+### Scan definition
+| Filter | Value |
+|--------|-------|
+| Exchange | NSE common equity |
+| Price | > ₹100 |
+| Market cap | ₹800 Cr – ₹1 Lakh Cr |
+| RS filter | Daily RS > EMA9 · EMA9 rising OR Weekly RS > W-EMA9 · W-EMA9 rising |
+| Signal | ZLEMA25 rising AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) on last bar |
+| Squeeze Days | Consecutive bars the squeeze has been active |
+| ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since (capped 60d) |
+
+---
+
+**22 stocks: ZLEMA25 Rising + Squeeze ON**
+
+| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |
+|--------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|
+| [EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE) | 1726.00 | +7.20% | 5d | 0d | +0.0% | ✓ | ✓ | ✓ | 20%  |
+| [SASTASUNDR](https://in.tradingview.com/chart/?symbol=NSE:SASTASUNDR) | 293.50 | +6.71% | 31d | 2d | +8.4% | ✓ | ✓ | ✓ | 20%  |
+| [OIL](https://in.tradingview.com/chart/?symbol=NSE:OIL) | 499.80 | +0.50% | 36d | 4d | +5.5% | ✓ | ✓ | ✓ | 20%  |
+| [SANOFICONR](https://in.tradingview.com/chart/?symbol=NSE:SANOFICONR) | 4807.50 | +2.55% | 1d | 19d | +11.8% | ✓ | ✓ | ✓ | 20%  |
+| [SEAMECLTD](https://in.tradingview.com/chart/?symbol=NSE:SEAMECLTD) | 1571.90 | +1.58% | 2d | 22d | +14.2% | ✓ | ✓ | ✓ | 20%  |
+| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR) | 258.60 | +2.21% | 6d | 26d | +27.2% | ✓ | ✓ | ✓ | 20%  |
+| [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE) | 145.77 | +6.97% | 67d | 0d | +0.0% | ✓ | — | — | 20%  |
+| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL) | 350.50 | +3.00% | 14d | 0d | +0.0% | ✓ | — | — | 10% 🟩 |
+| [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG) | 144.08 | +2.94% | 2d | 0d | +0.0% | — | — | ✓ | 20%  |
+| [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU) | 292.20 | +1.11% | 43d | 1d | +1.1% | ✓ | — | — | 20%  |
+| [VINCOFE](https://in.tradingview.com/chart/?symbol=NSE:VINCOFE) | 137.49 | +1.10% | 8d | 1d | +1.1% | ✓ | — | — | 20%  |
+| [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | 1168.10 | -0.33% | 8d | 1d | -0.3% | — | — | ✓ | 20%  |
+| [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE) | 231.38 | +2.79% | 18d | 2d | +3.8% | ✓ | ✓ | — | 20%  |
+| [CONCORDBIO](https://in.tradingview.com/chart/?symbol=NSE:CONCORDBIO) | 1126.70 | +3.84% | 9d | 2d | +6.5% | ✓ | ✓ | — | 20%  |
+| [ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD) | 450.15 | +0.14% | 5d | 2d | +3.4% | ✓ | — | — | 20% 🟦 |
+| [BIOCON](https://in.tradingview.com/chart/?symbol=NSE:BIOCON) | 366.20 | +0.73% | 2d | 2d | +1.2% | ✓ | — | — | 20%  |
+| [ARROWGREEN](https://in.tradingview.com/chart/?symbol=NSE:ARROWGREEN) | 545.30 | +0.70% | 1d | 2d | -1.3% | — | ✓ | ✓ | 20%  |
+| [ACI](https://in.tradingview.com/chart/?symbol=NSE:ACI) | 614.70 | +1.02% | 12d | 3d | +1.9% | ✓ | — | — | 20%  |
+| [JBCHEPHARM](https://in.tradingview.com/chart/?symbol=NSE:JBCHEPHARM) | 2061.20 | +0.51% | 3d | 4d | +2.5% | ✓ | — | — | 20%  |
+| [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN) | 419.00 | +0.83% | 14d | 7d | +4.1% | ✓ | — | — | 20%  |
+| [SRF](https://in.tradingview.com/chart/?symbol=NSE:SRF) | 2543.60 | +0.42% | 21d | 10d | +1.7% | ✓ | — | — | 20%  |
+| [GREENLAM](https://in.tradingview.com/chart/?symbol=NSE:GREENLAM) | 227.49 | +2.01% | 1d | 10d | +3.2% | ✓ | — | — | 20%  |
+
+---
+
+# NSE ZL Squeeze Scan — 2026-04-29
 *Generated 2026-04-29 23:16 IST*
 
 ### Scan definition
