@@ -29,9 +29,13 @@ MD_FILE    = os.path.join(SCANS_DIR, "zl_squeeze_scans.md")
 
 MC_LOW      = 800    * 1_00_00_000   # ₹800 Cr
 MC_HIGH     = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
-ZL_TURN_CAP = 60
-RS_GATE     = False  # True = require Daily RS > EMA21 AND EMA21 rising
-RS_EMA9_GATE = True  # True = require Daily RS > EMA9 AND EMA9 rising
+ZL_TURN_CAP       = 60
+RS_EMA21_GATE     = False  # Daily RS > EMA21 AND EMA21 rising
+RS_EMA9_GATE      = True   # Daily RS > EMA9  AND EMA9  rising
+RS_WEEKLY_EMA9_GATE = True   # Weekly RS > Weekly RS EMA9 AND EMA9 rising
+
+# A stock must pass AT LEAST ONE enabled gate to appear in results.
+# If all gates are False, no RS filter is applied.
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -141,14 +145,24 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 def _rs_gate_ema21(rs: pd.Series) -> bool:
     if len(rs) < 22:
         return False
-    rs_e21 = ema(rs, 21)
-    return bool(rs.iloc[-1] > rs_e21.iloc[-1] and rs_e21.iloc[-1] > rs_e21.iloc[-2])
+    e = ema(rs, 21)
+    return bool(rs.iloc[-1] > e.iloc[-1] and e.iloc[-1] > e.iloc[-2])
 
 def _rs_gate_ema9(rs: pd.Series) -> bool:
     if len(rs) < 10:
         return False
-    rs_e9 = ema(rs, 9)
-    return bool(rs.iloc[-1] > rs_e9.iloc[-1] and rs_e9.iloc[-1] > rs_e9.iloc[-2])
+    e = ema(rs, 9)
+    return bool(rs.iloc[-1] > e.iloc[-1] and e.iloc[-1] > e.iloc[-2])
+
+def _rs_gate_weekly_ema9(c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+    wk_c   = c_rs.resample("W").last().dropna()
+    wk_idx = idx_rs.resample("W").last().dropna()
+    common = wk_c.index.intersection(wk_idx.index)
+    if len(common) < 12:
+        return False
+    wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
+    e9    = ema(wk_rs, 9)
+    return bool(wk_rs.iloc[-1] > e9.iloc[-1] and e9.iloc[-1] > e9.iloc[-2])
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
@@ -166,11 +180,19 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        if RS_GATE or RS_EMA9_GATE:
-            rs = (c.loc[common] / index_s.loc[common]) * 1000
-            if RS_GATE and not _rs_gate_ema21(rs):
-                return None
-            if RS_EMA9_GATE and not _rs_gate_ema9(rs):
+        any_gate   = RS_EMA21_GATE or RS_EMA9_GATE or RS_WEEKLY_EMA9_GATE
+        rs_passed: list[str] = []
+        if any_gate:
+            c_rs   = c.loc[common]
+            idx_rs = index_s.loc[common]
+            rs     = (c_rs / idx_rs) * 1000
+            if RS_EMA21_GATE and _rs_gate_ema21(rs):
+                rs_passed.append("EMA21")
+            if RS_EMA9_GATE and _rs_gate_ema9(rs):
+                rs_passed.append("EMA9")
+            if RS_WEEKLY_EMA9_GATE and _rs_gate_weekly_ema9(c_rs, idx_rs):
+                rs_passed.append("W-EMA9")
+            if not rs_passed:  # none of the enabled gates passed
                 return None
 
         zl25       = zlema(c, 25)
@@ -192,19 +214,26 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_days":      zl_days,
             "zl_pct":       zl_pct,
             "squeeze_days": squeeze_days,
+            "rs_gates":     rs_passed,  # which RS gates this stock passed
         }
     except Exception:
         return None
 
 
 # ── Output ─────────────────────────────────────────────────────────────────────
+def _sort_key(f: dict):
+    # More RS gates passed → higher priority; then freshest ZL turn; then longest squeeze
+    return (-len(f["rs_gates"]), f["zl_days"], -f["squeeze_days"])
+
 def _static_header() -> str:
     parts = []
-    if RS_GATE:
+    if RS_EMA21_GATE:
         parts.append("Daily RS > EMA21 · EMA21 rising")
     if RS_EMA9_GATE:
         parts.append("Daily RS > EMA9 · EMA9 rising")
-    rs_label = " AND ".join(parts) if parts else "off"
+    if RS_WEEKLY_EMA9_GATE:
+        parts.append("Weekly RS > W-EMA9 · W-EMA9 rising")
+    rs_label = " OR ".join(parts) if parts else "off (no RS filter)"
     return f"""### Scan definition
 | Filter | Value |
 |--------|-------|
@@ -220,20 +249,20 @@ def _static_header() -> str:
 """
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    # Sort: freshest ZL turn first (fewest days since turn-up), then by squeeze_days descending
-    sorted_f = sorted(findings, key=lambda x: (x["zl_days"], -x["squeeze_days"]))
+    sorted_f = sorted(findings, key=_sort_key)
 
     hdr = [
-        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | Circuit |",
-        "|--------|------:|--------:|---------:|--------:|--------:|:-------:|",
+        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS Gates | Circuit |",
+        "|--------|------:|--------:|---------:|--------:|--------:|:--------:|:-------:|",
     ]
     rows = []
     for f in sorted_f:
-        cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv     = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
-        zl_d   = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-        zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        ds     = "+" if f["day_chg"] >= 0 else ""
+        cl, em  = circuit.get(f["symbol"], ("20%", ""))
+        tv      = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        zl_d    = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        zl_p    = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        ds      = "+" if f["day_chg"] >= 0 else ""
+        gates   = " · ".join(f["rs_gates"]) if f["rs_gates"] else "—"
         rows.append(
             f"| [{f['symbol']}]({tv}) "
             f"| {f['close']:.2f} "
@@ -241,6 +270,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             f"| {f['squeeze_days']}d "
             f"| {zl_d} "
             f"| {zl_p} "
+            f"| {gates} "
             f"| {cl} {em} |"
         )
 
@@ -260,16 +290,17 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
 
 def print_results(findings: list[dict]) -> None:
-    sorted_f = sorted(findings, key=lambda x: (x["zl_days"], -x["squeeze_days"]))
-    print(f"\n{'='*70}")
+    sorted_f = sorted(findings, key=_sort_key)
+    print(f"\n{'='*75}")
     print(f"  NSE ZL Squeeze Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  ZLEMA25 Rising + Squeeze ON: {len(findings)}")
-    print(f"{'='*70}")
+    print(f"{'='*75}")
     for f in sorted_f:
-        ds = "+" if f["day_chg"] >= 0 else ""
-        zp = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        ds    = "+" if f["day_chg"] >= 0 else ""
+        zp    = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        gates = " · ".join(f["rs_gates"]) if f["rs_gates"] else "—"
         print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  "
-              f"day:{ds}{f['day_chg']:.1f}%  sqz:{f['squeeze_days']}d  zl:{f['zl_days']}d {zp}")
+              f"day:{ds}{f['day_chg']:.1f}%  sqz:{f['squeeze_days']}d  zl:{f['zl_days']}d {zp}  [{gates}]")
     print()
 
 
