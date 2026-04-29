@@ -41,7 +41,7 @@ tr:hover td{background:var(--bg3)}
 .zld{color:var(--mu);font-size:11px}
 .nm{font-size:11px;color:var(--mu)}
 .num{font-family:monospace;font-size:12px;color:var(--mu)}
-.pos{color:var(--grn)}.neg{color:var(--red)}.sqz-on{color:var(--grn);font-weight:600;text-align:center}.sqz-off{color:var(--mu);text-align:center;font-size:11px}
+.pos{color:var(--grn)}.neg{color:var(--red)}.sqz-hi{color:var(--gld);font-weight:700;text-align:center}.sqz-on{color:var(--grn);font-weight:600;text-align:center}.sqz-off{color:var(--mu);text-align:center;font-size:11px}
 
 .b{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}
 .b-swing{background:#1f6feb}.b-momentum{background:#388bfd}.b-weeklyrs{background:#7c3aed}
@@ -59,7 +59,7 @@ tr:hover td{background:var(--bg3)}
 <body>
 
 <h1>NSE Daily Dashboard — 2026-04-29</h1>
-<div class="sub">Generated 2026-04-29 16:35 IST</div>
+<div class="sub">Generated 2026-04-29 22:45 IST</div>
 
 <div class="bar">
   <div class="stat"><div class="sv gld">15</div><div class="sl">★★★ Triple</div></div>
@@ -68,11 +68,12 @@ tr:hover td{background:var(--bg3)}
   <div class="stat"><div class="sv grn">16</div><div class="sl">Momentum</div></div>
   <div class="stat"><div class="sv grn">17</div><div class="sl">Weekly RS</div></div>
   <div class="stat"><div class="sv blu">0</div><div class="sl">ZL Turning</div></div>
-  <div class="stat"><div class="sv grn">0</div><div class="sl">ZL25 Rising</div></div>
+  <div class="stat"><div class="sv grn">304</div><div class="sl">ZL25 Rising</div></div>
   <div class="stat"><div class="sv pur">0</div><div class="sl">ZL25 Watch</div></div>
-  <div class="stat"><div class="sv grn">19</div><div class="sl">EMA Adds</div></div>
+  <div class="stat"><div class="sv grn">0</div><div class="sl">EMA Adds</div></div>
   <div class="stat"><div class="sv red">0</div><div class="sl">EMA Exits</div></div>
-  <div class="stat"><div class="sv pur">0</div><div class="sl">Compressed</div></div>
+  <div class="stat"><div class="sv pur">54</div><div class="sl">ZL Squeeze</div></div>
+  <div class="stat"><div class="sv pur">109</div><div class="sl">Compressed</div></div>
   <div class="stat"><div class="sv gld">0</div><div class="sl">Squeeze+RS</div></div>
 </div>
 
@@ -134,30 +135,99 @@ tr:hover td{background:var(--bg3)}
 
 
 
-
-
-
 <div class="two">
   <div class="section">
-    <div class="stitle">EMA Screener (2026-04-28) — Additions (19)</div>
+    <div class="stitle">EMA25 ZL Rising — RS-filtered (304 stocks, top 20)</div>
     <table>
-      <thead><tr><th>Symbol</th><th>Day Chg</th></tr></thead>
-      <tbody><tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:BBOX" target="_blank" rel="noopener">BBOX</a></td><td class="pos">+10.39%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:PTC" target="_blank" rel="noopener">PTC</a></td><td class="pos">+5.38%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RADICO" target="_blank" rel="noopener">RADICO</a></td><td class="pos">+2.53%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTMF" target="_blank" rel="noopener">MUTHOOTMF</a></td><td class="pos">+2.19%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:APOLLO" target="_blank" rel="noopener">APOLLO</a></td><td class="pos">+1.56%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:NRAIL" target="_blank" rel="noopener">NRAIL</a></td><td class="pos">+1.48%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:KIOCL" target="_blank" rel="noopener">KIOCL</a></td><td class="pos">+1.45%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:VIYASH" target="_blank" rel="noopener">VIYASH</a></td><td class="pos">+0.69%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:PAISALO" target="_blank" rel="noopener">PAISALO</a></td><td class="pos">+0.34%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:MANORAMA" target="_blank" rel="noopener">MANORAMA</a></td><td class="pos">+0.31%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:WANBURY" target="_blank" rel="noopener">WANBURY</a></td><td class="pos">+0.24%</td></tr>
-<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:STYLEBAAZA" target="_blank" rel="noopener">STYLEBAAZA</a></td><td class="neg">-0.35%</td></tr></tbody>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody><tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CEATLTD" target="_blank" rel="noopener">CEATLTD</a></td><td class="num">3752.40</td><td class="pos">+6.30%</td><td class="zld">0d</td><td class="pos">+0.0%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:EMCURE" target="_blank" rel="noopener">EMCURE</a></td><td class="num">1726.00</td><td class="pos">+7.20%</td><td class="zld">0d</td><td class="pos">+0.0%</td><td class="sqz-on">✓</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO" target="_blank" rel="noopener">CHENNPETRO</a></td><td class="num">1139.50</td><td class="pos">+6.67%</td><td class="zld">1d</td><td class="pos">+6.7%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RBLBANK" target="_blank" rel="noopener">RBLBANK</a></td><td class="num">335.70</td><td class="pos">+4.53%</td><td class="zld">1d</td><td class="pos">+4.5%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:JAINREC" target="_blank" rel="noopener">JAINREC</a></td><td class="num">469.05</td><td class="pos">+4.35%</td><td class="zld">1d</td><td class="pos">+4.3%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:SAPPHIRE" target="_blank" rel="noopener">SAPPHIRE</a></td><td class="num">207.42</td><td class="pos">+19.21%</td><td class="zld">2d</td><td class="pos">+17.9%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER" target="_blank" rel="noopener">WAAREEENER</a></td><td class="num">3498.00</td><td class="pos">+1.04%</td><td class="zld">2d</td><td class="pos">+4.2%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:GESHIP" target="_blank" rel="noopener">GESHIP</a></td><td class="num">1539.30</td><td class="pos">+4.43%</td><td class="zld">2d</td><td class="pos">+8.1%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:EPACK" target="_blank" rel="noopener">EPACK</a></td><td class="num">291.45</td><td class="pos">+0.69%</td><td class="zld">2d</td><td class="pos">+8.1%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:SWANCORP" target="_blank" rel="noopener">SWANCORP</a></td><td class="num">357.05</td><td class="pos">+5.32%</td><td class="zld">2d</td><td class="pos">+5.8%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER" target="_blank" rel="noopener">RATNAVEER</a></td><td class="num">175.21</td><td class="pos">+9.24%</td><td class="zld">2d</td><td class="pos">+11.5%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:KTKBANK" target="_blank" rel="noopener">KTKBANK</a></td><td class="num">268.33</td><td class="pos">+2.03%</td><td class="zld">2d</td><td class="pos">+5.5%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:J&KBANK" target="_blank" rel="noopener">J&KBANK</a></td><td class="num">134.64</td><td class="pos">+4.87%</td><td class="zld">2d</td><td class="pos">+4.2%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:AEROFLEX" target="_blank" rel="noopener">AEROFLEX</a></td><td class="num">298.35</td><td class="pos">+1.92%</td><td class="zld">2d</td><td class="pos">+1.2%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CONCORDBIO" target="_blank" rel="noopener">CONCORDBIO</a></td><td class="num">1126.70</td><td class="pos">+3.84%</td><td class="zld">2d</td><td class="pos">+6.5%</td><td class="sqz-on">✓</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:TMB" target="_blank" rel="noopener">TMB</a></td><td class="num">749.95</td><td class="pos">+2.07%</td><td class="zld">2d</td><td class="pos">+7.5%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:BALUFORGE" target="_blank" rel="noopener">BALUFORGE</a></td><td class="num">524.60</td><td class="pos">+5.50%</td><td class="zld">2d</td><td class="pos">+8.6%</td><td class="sqz-off">—</td><td class="ccb">20% 🟦</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:SHYAMMETL" target="_blank" rel="noopener">SHYAMMETL</a></td><td class="num">883.70</td><td class="pos">+1.03%</td><td class="zld">2d</td><td class="neg">-0.3%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:GPIL" target="_blank" rel="noopener">GPIL</a></td><td class="num">306.25</td><td class="pos">+0.05%</td><td class="zld">2d</td><td class="pos">+3.0%</td><td class="sqz-off">—</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RELIGARE" target="_blank" rel="noopener">RELIGARE</a></td><td class="num">231.38</td><td class="pos">+2.79%</td><td class="zld">2d</td><td class="pos">+3.8%</td><td class="sqz-on">✓</td><td>20%</td></tr></tbody>
     </table>
   </div>
   <div class="section">
-    <div class="stitle">EMA Screener (2026-04-28) — Exits (0)</div>
+    <div class="stitle">EMA25 ZL Watch — RS-filtered (0 stocks, top 15)</div>
+    <table>
+      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody><tr><td colspan="7" class="empty">No ZL watch stocks</td></tr></tbody>
+    </table>
+  </div>
+</div>
+
+
+<div class="section">
+  <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON (54 stocks, top 30 by ZL Days asc)</div>
+  <table>
+    <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody><tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:BANARISUG" target="_blank" rel="noopener">BANARISUG</a></td><td class="num">3639.70</td><td class="pos">+1.09%</td><td class="sqz-hi">108d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE" target="_blank" rel="noopener">CANHLIFE</a></td><td class="num">145.77</td><td class="pos">+6.97%</td><td class="sqz-hi">67d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:NGLFINE" target="_blank" rel="noopener">NGLFINE</a></td><td class="num">2281.80</td><td class="pos">+0.92%</td><td class="sqz-hi">38d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:GODAVARIB" target="_blank" rel="noopener">GODAVARIB</a></td><td class="num">325.70</td><td class="pos">+2.81%</td><td class="sqz-hi">22d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:GCSL" target="_blank" rel="noopener">GCSL</a></td><td class="num">350.50</td><td class="pos">+3.00%</td><td class="sqz-on">14d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td class="ccg">10% 🟩</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:PATANJALI" target="_blank" rel="noopener">PATANJALI</a></td><td class="num">467.05</td><td class="pos">+0.79%</td><td class="sqz-on">12d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:AFSL" target="_blank" rel="noopener">AFSL</a></td><td class="num">203.39</td><td class="pos">+0.69%</td><td class="sqz-on">8d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM" target="_blank" rel="noopener">AJANTPHARM</a></td><td class="num">2804.20</td><td class="pos">+1.74%</td><td class="sqz-on">7d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:EMCURE" target="_blank" rel="noopener">EMCURE</a></td><td class="num">1726.00</td><td class="pos">+7.20%</td><td class="sqz-on">5d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:THELEELA" target="_blank" rel="noopener">THELEELA</a></td><td class="num">431.30</td><td class="pos">+2.69%</td><td class="sqz-off">4d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG" target="_blank" rel="noopener">DHAMPURSUG</a></td><td class="num">144.08</td><td class="pos">+2.94%</td><td class="sqz-off">2d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CIEINDIA" target="_blank" rel="noopener">CIEINDIA</a></td><td class="num">477.85</td><td class="pos">+1.56%</td><td class="sqz-off">1d</td><td class="zld">0d</td><td class="pos">+0.0%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU" target="_blank" rel="noopener">PRIMESECU</a></td><td class="num">292.20</td><td class="pos">+1.11%</td><td class="sqz-hi">43d</td><td class="zld">1d</td><td class="pos">+1.1%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:MATRIMONY" target="_blank" rel="noopener">MATRIMONY</a></td><td class="num">429.45</td><td class="neg">-0.82%</td><td class="sqz-on">11d</td><td class="zld">1d</td><td class="neg">-0.8%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:VINCOFE" target="_blank" rel="noopener">VINCOFE</a></td><td class="num">137.49</td><td class="pos">+1.10%</td><td class="sqz-on">8d</td><td class="zld">1d</td><td class="pos">+1.1%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:AETHER" target="_blank" rel="noopener">AETHER</a></td><td class="num">1168.10</td><td class="neg">-0.33%</td><td class="sqz-on">8d</td><td class="zld">1d</td><td class="neg">-0.3%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CHAMBLFERT" target="_blank" rel="noopener">CHAMBLFERT</a></td><td class="num">450.55</td><td class="pos">+0.38%</td><td class="sqz-off">1d</td><td class="zld">1d</td><td class="pos">+0.4%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR" target="_blank" rel="noopener">ASIANHOTNR</a></td><td class="num">301.70</td><td class="pos">+0.57%</td><td class="sqz-hi">57d</td><td class="zld">2d</td><td class="pos">+0.7%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:SASTASUNDR" target="_blank" rel="noopener">SASTASUNDR</a></td><td class="num">293.50</td><td class="pos">+6.71%</td><td class="sqz-hi">31d</td><td class="zld">2d</td><td class="pos">+8.4%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CENTUM" target="_blank" rel="noopener">CENTUM</a></td><td class="num">2903.00</td><td class="pos">+0.10%</td><td class="sqz-hi">26d</td><td class="zld">2d</td><td class="pos">+1.2%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RELIGARE" target="_blank" rel="noopener">RELIGARE</a></td><td class="num">231.38</td><td class="pos">+2.79%</td><td class="sqz-on">18d</td><td class="zld">2d</td><td class="pos">+3.8%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RAYMONDLSL" target="_blank" rel="noopener">RAYMONDLSL</a></td><td class="num">814.25</td><td class="pos">+0.44%</td><td class="sqz-on">18d</td><td class="zld">2d</td><td class="pos">+0.3%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:RUSTOMJEE" target="_blank" rel="noopener">RUSTOMJEE</a></td><td class="num">399.00</td><td class="neg">-0.15%</td><td class="sqz-on">18d</td><td class="zld">2d</td><td class="pos">+0.8%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:CONCORDBIO" target="_blank" rel="noopener">CONCORDBIO</a></td><td class="num">1126.70</td><td class="pos">+3.84%</td><td class="sqz-on">9d</td><td class="zld">2d</td><td class="pos">+6.5%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE" target="_blank" rel="noopener">WESTLIFE</a></td><td class="num">477.60</td><td class="pos">+0.72%</td><td class="sqz-on">8d</td><td class="zld">2d</td><td class="pos">+1.8%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:LAOPALA" target="_blank" rel="noopener">LAOPALA</a></td><td class="num">179.19</td><td class="pos">+0.47%</td><td class="sqz-on">8d</td><td class="zld">2d</td><td class="neg">-0.6%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD" target="_blank" rel="noopener">ASKAUTOLTD</a></td><td class="num">450.15</td><td class="pos">+0.14%</td><td class="sqz-on">5d</td><td class="zld">2d</td><td class="pos">+3.4%</td><td class="ccb">20% 🟦</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:AFFLE" target="_blank" rel="noopener">AFFLE</a></td><td class="num">1431.90</td><td class="pos">+0.04%</td><td class="sqz-off">4d</td><td class="zld">2d</td><td class="neg">-1.4%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:BIOCON" target="_blank" rel="noopener">BIOCON</a></td><td class="num">366.20</td><td class="pos">+0.73%</td><td class="sqz-off">2d</td><td class="zld">2d</td><td class="pos">+1.2%</td><td>20%</td></tr>
+<tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:ARROWGREEN" target="_blank" rel="noopener">ARROWGREEN</a></td><td class="num">545.30</td><td class="pos">+0.70%</td><td class="sqz-off">1d</td><td class="zld">2d</td><td class="neg">-1.3%</td><td>20%</td></tr></tbody>
+  </table>
+</div>
+
+
+<div class="section">
+  <div class="stitle">EMA Compression + BB Squeeze — top 0 signals &nbsp;|&nbsp; 109 compressed &nbsp;|&nbsp; 0 passed all gates</div>
+  <table>
+    <thead><tr><th>Symbol</th><th>Close</th><th>Comp Days</th><th>Sqz Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
+    <tbody><tr><td colspan="7" class="empty">No signals today</td></tr></tbody>
+  </table>
+</div>
+
+<div class="two">
+  <div class="section">
+    <div class="stitle">EMA Screener — Today — Additions (0)</div>
+    <table>
+      <thead><tr><th>Symbol</th><th>Day Chg</th></tr></thead>
+      <tbody><tr><td colspan="2" class="empty">No additions</td></tr></tbody>
+    </table>
+  </div>
+  <div class="section">
+    <div class="stitle">EMA Screener — Today — Exits (0)</div>
     <table>
       <thead><tr><th>Symbol</th><th>Day Chg</th></tr></thead>
       <tbody><tr><td colspan="2" class="empty">No exits</td></tr></tbody>

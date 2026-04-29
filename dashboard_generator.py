@@ -20,6 +20,7 @@ EMA_MD         = os.path.join(BASE, "ema_screener_changes.md")
 CIRCUIT_MD     = os.path.join(BASE, "NSE_Circuit_Limits.md")
 COMPRESSION_MD = os.path.join(BASE, "ema-compression-scanner",
                                "ema_compression_scans", "ema_compression_latest.md")
+ZL_SQUEEZE_MD  = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
 
 
@@ -37,6 +38,18 @@ def extract_today_block(content: str, today: str) -> str:
         if re.search(rf'^# .+{re.escape(today)}', block, re.MULTILINE):
             return block
     return ""
+
+
+def extract_today_section(content: str, today: str) -> str:
+    """Return the full today section including content past any internal --- dividers.
+    Stops at the next day-level heading or end of file.
+    Use this instead of extract_today_block for files whose headers contain ---."""
+    m = re.search(rf'^# .+{re.escape(today)}', content, re.MULTILINE)
+    if not m:
+        return ""
+    rest = content[m.end():]
+    next_m = re.search(r'\n# .+\d{4}-\d{2}-\d{2}', rest)
+    return content[m.start() : m.end() + next_m.start()] if next_m else content[m.start():]
 
 
 _ZL_DAY_RE = re.compile(r'^\d+d\+?$')
@@ -156,7 +169,7 @@ def parse_ema_date(content: str) -> str:
 
 def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
     """Parse ema25_zl_scans.md → (rising, watch) for today's block."""
-    block = extract_today_block(content, today)
+    block = extract_today_section(content, today)
     if not block:
         return [], []
 
@@ -265,6 +278,34 @@ def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
     return rows, total_compressed, total_signals
 
 
+def parse_zl_squeeze(content: str, today: str) -> list:
+    """Parse zl_squeeze_scans.md → list of signal rows for today.
+
+    Table cols: Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | Circuit
+    """
+    block = extract_today_section(content, today)
+    if not block:
+        return []
+    rows = []
+    for line in block.splitlines():
+        ls = line.strip()
+        if not ls.startswith('|') or ls.startswith('| Symbol') or ls.startswith('|---'):
+            continue
+        parts = [p.strip() for p in ls.split('|') if p.strip()]
+        if len(parts) < 6:
+            continue
+        rows.append({
+            "symbol":    _strip_md_link(parts[0]),
+            "close":     parts[1],
+            "day_chg":   parts[2],
+            "sqz_days":  parts[3],
+            "zl_days":   parts[4],
+            "zl_pct":    parts[5],
+            "circuit":   parts[6] if len(parts) > 6 else "",
+        })
+    return rows
+
+
 # ── HTML helpers ──────────────────────────────────────────────────────────────
 
 def tv_link(symbol: str) -> str:
@@ -304,7 +345,8 @@ def build_html(today: str, now_str: str,
                zl25_rising: list, zl25_watch: list,
                ema_adds: list, ema_dels: list, ema_date: str,
                circuit_changes: list,
-               compression_rows: list, total_compressed: int, total_zl_rising: int) -> str:
+               compression_rows: list, total_compressed: int, total_zl_rising: int,
+               zl_squeeze: list) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
@@ -452,6 +494,37 @@ def build_html(today: str, now_str: str,
             f'</tr>'
         )
 
+    # ZL Squeeze rows
+    sqz_rows_html = []
+    for r in zl_squeeze[:30]:
+        sqz_d = r["sqz_days"]  # e.g. "36d"
+        try:
+            sqz_n = int(sqz_d.rstrip('d'))
+        except ValueError:
+            sqz_n = 0
+        sqz_cls = "sqz-hi" if sqz_n >= 20 else ("sqz-on" if sqz_n >= 5 else "sqz-off")
+        sqz_rows_html.append(
+            f'<tr>'
+            f'<td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="num">{r["close"]}</td>'
+            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
+            f'<td class="{sqz_cls}">{sqz_d}</td>'
+            f'<td class="zld">{r["zl_days"]}</td>'
+            f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'{td_circ(r["circuit"])}</tr>'
+        )
+
+    zl_squeeze_section = ""
+    if zl_squeeze:
+        zl_squeeze_section = f"""
+<div class="section">
+  <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON ({len(zl_squeeze)} stocks, top 30 by ZL Days asc)</div>
+  <table>
+    <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(sqz_rows_html, 7, "No signals today")}</tbody>
+  </table>
+</div>"""
+
     compression_section = ""
     if compression_rows or total_compressed:
         compression_section = f"""
@@ -539,7 +612,7 @@ tr:hover td{{background:var(--bg3)}}
 .zld{{color:var(--mu);font-size:11px}}
 .nm{{font-size:11px;color:var(--mu)}}
 .num{{font-family:monospace;font-size:12px;color:var(--mu)}}
-.pos{{color:var(--grn)}}.neg{{color:var(--red)}}.sqz-on{{color:var(--grn);font-weight:600;text-align:center}}.sqz-off{{color:var(--mu);text-align:center;font-size:11px}}
+.pos{{color:var(--grn)}}.neg{{color:var(--red)}}.sqz-hi{{color:var(--gld);font-weight:700;text-align:center}}.sqz-on{{color:var(--grn);font-weight:600;text-align:center}}.sqz-off{{color:var(--mu);text-align:center;font-size:11px}}
 
 .b{{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}}
 .b-swing{{background:#1f6feb}}.b-momentum{{background:#388bfd}}.b-weeklyrs{{background:#7c3aed}}
@@ -570,6 +643,7 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv pur">{len(zl25_watch)}</div><div class="sl">ZL25 Watch</div></div>
   <div class="stat"><div class="sv grn">{len(ema_adds)}</div><div class="sl">EMA Adds</div></div>
   <div class="stat"><div class="sv red">{len(ema_dels)}</div><div class="sl">EMA Exits</div></div>
+  <div class="stat"><div class="sv pur">{len(zl_squeeze)}</div><div class="sl">ZL Squeeze</div></div>
   <div class="stat"><div class="sv pur">{total_compressed}</div><div class="sl">Compressed</div></div>
   <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Squeeze+RS</div></div>
 </div>
@@ -585,6 +659,8 @@ tr:hover td{{background:var(--bg3)}}
 {turning_section}
 
 {zl25_section}
+
+{zl_squeeze_section}
 
 {compression_section}
 
@@ -632,6 +708,7 @@ def main():
     ema_content         = read_file(EMA_MD)
     circuit_content     = read_file(CIRCUIT_MD)
     compression_content = read_file(COMPRESSION_MD)
+    zl_squeeze_content  = read_file(ZL_SQUEEZE_MD)
 
     swing_block    = extract_today_block(swing_content,    today)
     momentum_block = extract_today_block(momentum_content, today)
@@ -646,6 +723,7 @@ def main():
     ema_date = parse_ema_date(ema_content)
     circuit_changes = parse_circuit_changes(circuit_content)
     compression_rows, total_compressed, total_zl_rising = parse_ema_compression(compression_content, today)
+    zl_squeeze_rows = parse_zl_squeeze(zl_squeeze_content, today)
 
     html = build_html(
         today=today, now_str=now_str,
@@ -657,6 +735,7 @@ def main():
         compression_rows=compression_rows,
         total_compressed=total_compressed,
         total_zl_rising=total_zl_rising,
+        zl_squeeze=zl_squeeze_rows,
     )
 
     with open(DASHBOARD_HTML, "w", encoding="utf-8") as f:
@@ -665,6 +744,7 @@ def main():
     print(f"Written: {DASHBOARD_HTML}")
     print(f"  Swing:{len(swing_signals)} Momentum:{len(momentum_signals)} WeeklyRS:{len(weekly_entry)} Turning:{len(weekly_turning)}")
     print(f"  ZL25 Rising:{len(zl25_rising)} Watch:{len(zl25_watch)}")
+    print(f"  ZL Squeeze: {len(zl_squeeze_rows)}")
     print(f"  EMA Compression: {total_compressed} compressed, {total_zl_rising} ZL rising")
     print(f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}")
     triple = sum(1 for s in {r['symbol'] for r in swing_signals} &

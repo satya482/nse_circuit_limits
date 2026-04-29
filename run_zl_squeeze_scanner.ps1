@@ -1,11 +1,29 @@
-$logDir = Join-Path $PSScriptRoot "logs"
-if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir | Out-Null }
-$logFile = Join-Path $logDir ("zl_squeeze_scanner_" + (Get-Date -Format "yyyy-MM-dd") + ".log")
+$logDir  = "C:\Users\satya\nse_circuit_limits\logs"
+$date    = Get-Date -Format "yyyy-MM-dd"
+$logFile = "$logDir\zl_squeeze_scanner_$date.log"
+New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 
-Set-Location $PSScriptRoot
+function Log($msg) {
+    $line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $msg"
+    $line | Tee-Object -FilePath $logFile -Append
+}
 
-Write-Host "Running ZL Squeeze Scanner..." -ForegroundColor Cyan
-python zl_squeeze_scanner.py 2>&1 | Tee-Object -FilePath $logFile
+Log "=== NSE_ZL_SQUEEZE START ==="
 
-git add zl_squeeze_scans/
-git commit -m "scan: zl-squeeze $(Get-Date -Format 'yyyy-MM-dd')"
+try {
+    & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\zl_squeeze_scanner.py 2>&1 |
+        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    Log "=== FINISHED exit=0 ==="
+} catch {
+    Log "=== ERROR: $_ ==="
+    exit 1
+}
+
+Log "--- Git commit+push ---"
+& git -C C:\Users\satya\nse_circuit_limits add zl_squeeze_scans/ 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits commit -m "scan: zl-squeeze $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+Log "--- Done ---"
+
+# To register the scheduled task (run once as admin):
+# schtasks /create /tn "NSE_ZL_SQUEEZE" /tr "powershell -NonInteractive -File C:\Users\satya\nse_circuit_limits\run_zl_squeeze_scanner.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:30 /f
