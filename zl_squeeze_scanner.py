@@ -181,20 +181,30 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        any_gate   = RS_EMA21_GATE or RS_EMA9_GATE or RS_WEEKLY_EMA9_GATE
-        rs_passed: list[str] = []
+        # Always compute all three RS gate results (for display columns)
+        c_rs   = c.loc[common]
+        idx_rs = index_s.loc[common]
+        rs     = (c_rs / idx_rs) * 1000
+        g_ema9    = _rs_gate_ema9(rs)
+        g_ema21   = _rs_gate_ema21(rs)
+        g_weekly9 = _rs_gate_weekly_ema9(rs, c_rs, idx_rs)
+
+        # Filtering: at least one ENABLED gate must pass
+        any_gate = RS_EMA21_GATE or RS_EMA9_GATE or RS_WEEKLY_EMA9_GATE
         if any_gate:
-            c_rs   = c.loc[common]
-            idx_rs = index_s.loc[common]
-            rs     = (c_rs / idx_rs) * 1000
-            if RS_EMA21_GATE and _rs_gate_ema21(rs):
-                rs_passed.append("EMA21")
-            if RS_EMA9_GATE and _rs_gate_ema9(rs):
-                rs_passed.append("EMA9")
-            if RS_WEEKLY_EMA9_GATE and _rs_gate_weekly_ema9(rs, c_rs, idx_rs):
-                rs_passed.append("W-EMA9")
-            if not rs_passed:  # none of the enabled gates passed
+            enabled_passed = (
+                (RS_EMA9_GATE    and g_ema9)    or
+                (RS_EMA21_GATE   and g_ema21)   or
+                (RS_WEEKLY_EMA9_GATE and g_weekly9)
+            )
+            if not enabled_passed:
                 return None
+
+        # Track which enabled gates passed (for sort priority)
+        rs_passed = []
+        if RS_EMA9_GATE    and g_ema9:    rs_passed.append("EMA9")
+        if RS_EMA21_GATE   and g_ema21:   rs_passed.append("EMA21")
+        if RS_WEEKLY_EMA9_GATE and g_weekly9: rs_passed.append("W-EMA9")
 
         zl25       = zlema(c, 25)
         zl_rising  = bool(zl25.iloc[-1] > zl25.iloc[-2])
@@ -215,7 +225,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_days":      zl_days,
             "zl_pct":       zl_pct,
             "squeeze_days": squeeze_days,
-            "rs_gates":     rs_passed,  # which RS gates this stock passed
+            "rs_gates":     rs_passed,   # enabled gates passed (for sort priority)
+            "g_ema9":       g_ema9,
+            "g_ema21":      g_ema21,
+            "g_weekly9":    g_weekly9,
         }
     except Exception:
         return None
@@ -252,18 +265,18 @@ def _static_header() -> str:
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     sorted_f = sorted(findings, key=_sort_key)
 
+    T, F = "✓", "—"
     hdr = [
-        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS Gates | Circuit |",
-        "|--------|------:|--------:|---------:|--------:|--------:|:--------:|:-------:|",
+        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | EMA9 | EMA21 | W-EMA9 | Circuit |",
+        "|--------|------:|--------:|---------:|--------:|--------:|:----:|:-----:|:------:|:-------:|",
     ]
     rows = []
     for f in sorted_f:
-        cl, em  = circuit.get(f["symbol"], ("20%", ""))
-        tv      = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
-        zl_d    = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-        zl_p    = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        ds      = "+" if f["day_chg"] >= 0 else ""
-        gates   = " · ".join(f["rs_gates"]) if f["rs_gates"] else "—"
+        cl, em = circuit.get(f["symbol"], ("20%", ""))
+        tv     = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        zl_d   = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        ds     = "+" if f["day_chg"] >= 0 else ""
         rows.append(
             f"| [{f['symbol']}]({tv}) "
             f"| {f['close']:.2f} "
@@ -271,7 +284,9 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             f"| {f['squeeze_days']}d "
             f"| {zl_d} "
             f"| {zl_p} "
-            f"| {gates} "
+            f"| {T if f['g_ema9'] else F} "
+            f"| {T if f['g_ema21'] else F} "
+            f"| {T if f['g_weekly9'] else F} "
             f"| {cl} {em} |"
         )
 
@@ -296,12 +311,16 @@ def print_results(findings: list[dict]) -> None:
     print(f"  NSE ZL Squeeze Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  ZLEMA25 Rising + Squeeze ON: {len(findings)}")
     print(f"{'='*75}")
+    T, F = "✓", "—"
     for f in sorted_f:
-        ds    = "+" if f["day_chg"] >= 0 else ""
-        zp    = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        gates = " · ".join(f["rs_gates"]) if f["rs_gates"] else "—"
+        ds  = "+" if f["day_chg"] >= 0 else ""
+        zp  = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        e9  = T if f["g_ema9"]    else F
+        e21 = T if f["g_ema21"]   else F
+        we9 = T if f["g_weekly9"] else F
         print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  "
-              f"day:{ds}{f['day_chg']:.1f}%  sqz:{f['squeeze_days']}d  zl:{f['zl_days']}d {zp}  [{gates}]")
+              f"day:{ds}{f['day_chg']:.1f}%  sqz:{f['squeeze_days']}d  zl:{f['zl_days']}d {zp}"
+              f"  EMA9:{e9} EMA21:{e21} W-EMA9:{we9}")
     print()
 
 
