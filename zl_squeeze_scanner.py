@@ -31,6 +31,7 @@ MC_LOW      = 800    * 1_00_00_000   # ₹800 Cr
 MC_HIGH     = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
 ZL_TURN_CAP = 60
 RS_GATE     = False  # True = require Daily RS > EMA21 AND EMA21 rising
+RS_EMA9_GATE = True  # True = require Daily RS > EMA9 AND EMA9 rising
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -136,12 +137,18 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
         return {}
 
 
-# ── RS gate (daily EMA21) ─────────────────────────────────────────────────────
-def _rs_gate(rs: pd.Series) -> bool:
+# ── RS gates ─────────────────────────────────────────────────────────────────
+def _rs_gate_ema21(rs: pd.Series) -> bool:
     if len(rs) < 22:
         return False
     rs_e21 = ema(rs, 21)
     return bool(rs.iloc[-1] > rs_e21.iloc[-1] and rs_e21.iloc[-1] > rs_e21.iloc[-2])
+
+def _rs_gate_ema9(rs: pd.Series) -> bool:
+    if len(rs) < 10:
+        return False
+    rs_e9 = ema(rs, 9)
+    return bool(rs.iloc[-1] > rs_e9.iloc[-1] and rs_e9.iloc[-1] > rs_e9.iloc[-2])
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
@@ -159,9 +166,11 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        if RS_GATE:
+        if RS_GATE or RS_EMA9_GATE:
             rs = (c.loc[common] / index_s.loc[common]) * 1000
-            if not _rs_gate(rs):
+            if RS_GATE and not _rs_gate_ema21(rs):
+                return None
+            if RS_EMA9_GATE and not _rs_gate_ema9(rs):
                 return None
 
         zl25       = zlema(c, 25)
@@ -190,7 +199,12 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
 
 # ── Output ─────────────────────────────────────────────────────────────────────
 def _static_header() -> str:
-    rs_label = "Daily RS > Daily RS EMA21 · EMA21 rising" if RS_GATE else "off"
+    parts = []
+    if RS_GATE:
+        parts.append("Daily RS > EMA21 · EMA21 rising")
+    if RS_EMA9_GATE:
+        parts.append("Daily RS > EMA9 · EMA9 rising")
+    rs_label = " AND ".join(parts) if parts else "off"
     return f"""### Scan definition
 | Filter | Value |
 |--------|-------|
