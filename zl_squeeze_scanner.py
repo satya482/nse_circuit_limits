@@ -154,7 +154,8 @@ def _rs_gate_ema9(rs: pd.Series) -> bool:
     e = ema(rs, 9)
     return bool(rs.iloc[-1] > e.iloc[-1] and e.iloc[-1] > e.iloc[-2])
 
-def _rs_gate_weekly_ema9(c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+def _rs_gate_weekly_ema9(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+    """Daily RS line > Weekly RS EMA9 AND Weekly RS EMA9 rising."""
     wk_c   = c_rs.resample("W").last().dropna()
     wk_idx = idx_rs.resample("W").last().dropna()
     common = wk_c.index.intersection(wk_idx.index)
@@ -162,7 +163,7 @@ def _rs_gate_weekly_ema9(c_rs: pd.Series, idx_rs: pd.Series) -> bool:
         return False
     wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
     e9    = ema(wk_rs, 9)
-    return bool(wk_rs.iloc[-1] > e9.iloc[-1] and e9.iloc[-1] > e9.iloc[-2])
+    return bool(rs.iloc[-1] > e9.iloc[-1] and e9.iloc[-1] > e9.iloc[-2])
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
@@ -190,7 +191,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
                 rs_passed.append("EMA21")
             if RS_EMA9_GATE and _rs_gate_ema9(rs):
                 rs_passed.append("EMA9")
-            if RS_WEEKLY_EMA9_GATE and _rs_gate_weekly_ema9(c_rs, idx_rs):
+            if RS_WEEKLY_EMA9_GATE and _rs_gate_weekly_ema9(rs, c_rs, idx_rs):
                 rs_passed.append("W-EMA9")
             if not rs_passed:  # none of the enabled gates passed
                 return None
