@@ -1,3 +1,30 @@
+# NSE Momentum Scan — 2026-04-29
+*Generated 2026-04-29 16:15 IST*
+
+**Entry Opportunities: 16**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.27% | 1d | +6.3% | 20%  |
+| [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.59% | 16d | +58.3% | 5% 🟥 |
+| [SAIL](https://in.tradingview.com/chart/?symbol=NSE:SAIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.29% | 18d | +19.5% | 20%  |
+| [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.89% | 18d | +57.0% | 20%  |
+| [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.09% | 26d | +20.0% | 20%  |
+| [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.43% | 16d | +24.7% | 20%  |
+| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.02% | 16d | +43.2% | 20%  |
+| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.40% | 9d | +6.9% | 20%  |
+| [INGERRAND](https://in.tradingview.com/chart/?symbol=NSE:INGERRAND) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.55% | 16d | +16.8% | 20%  |
+| [DYNAMATECH](https://in.tradingview.com/chart/?symbol=NSE:DYNAMATECH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.28% | 14d | +18.9% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.12% | 17d | +31.5% | 5%  |
+| [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.07% | 18d | +21.7% | 20%  |
+| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.35% | 2d | +1.9% | 20%  |
+| [SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.91% | 15d | +23.6% | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.49% | 27d | +19.6% | 20%  |
+| [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.14% | 2d | +10.1% | 20%  |
+
+---
+
 # NSE Momentum Scan — 2026-04-28
 *Generated 2026-04-28 16:15 IST*
 
