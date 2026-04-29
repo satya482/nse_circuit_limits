@@ -9,9 +9,9 @@ Watchlist filters (TradingView):
   - Market cap 10B – 1T INR  (≈ 1,000 Cr – 1 Lakh Cr)
   - Price > EMA25
 
-RS filter (both required):
-  - Daily RS Line > Weekly RS EMA9
-  - Weekly RS EMA9 is rising
+RS filter — controlled by RS_MODE:
+  "daily_ema21" (default): Daily RS Line > Daily RS EMA21 AND Daily RS EMA21 rising
+  "weekly_ema9" (optional): Daily RS Line > Weekly RS EMA9 AND Weekly RS EMA9 rising
   RS Line = (stock_close / Nifty MidSmallcap 400) * 1000
 
 For each RS-passing stock:
@@ -41,6 +41,7 @@ MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
 MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
 ZL_TURN_CAP = 60
 FILTER_1W_CHANGE = False   # True = require 1-week price change > 5%; False = no filter
+RS_MODE      = "daily_ema21"  # "daily_ema21" | "weekly_ema9"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -155,6 +156,25 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
         return {}
 
 
+# ── RS gate ────────────────────────────────────────────────────────────────────
+def _rs_gate(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+    """Return True if the stock passes the active RS filter (RS_MODE)."""
+    if RS_MODE == "weekly_ema9":
+        weekly_c   = c_rs.resample("W").last().dropna()
+        weekly_idx = idx_rs.resample("W").last().dropna()
+        wk_common  = weekly_c.index.intersection(weekly_idx.index)
+        if len(wk_common) < 12:
+            return False
+        wk_rs    = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
+        wk_rs_e9 = ema(wk_rs, 9)
+        return bool(rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2])
+    else:  # daily_ema21
+        if len(rs) < 22:
+            return False
+        rs_e21 = ema(rs, 21)
+        return bool(rs.iloc[-1] > rs_e21.iloc[-1] and rs_e21.iloc[-1] > rs_e21.iloc[-2])
+
+
 # ── Stock analysis ─────────────────────────────────────────────────────────────
 def analyse(symbol: str, index_s: pd.Series) -> dict | None:
     try:
@@ -175,17 +195,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         idx_rs = index_s.loc[common]
         rs     = (c_rs / idx_rs) * 1000
 
-        # Weekly RS EMA9
-        weekly_c   = c_rs.resample("W").last().dropna()
-        weekly_idx = idx_rs.resample("W").last().dropna()
-        wk_common  = weekly_c.index.intersection(weekly_idx.index)
-        if len(wk_common) < 12:
-            return None
-
-        wk_rs    = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
-        wk_rs_e9 = ema(wk_rs, 9)
-
-        if not (rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]):
+        if not _rs_gate(rs, c_rs, idx_rs):
             return None
 
         # ZLEMA25
@@ -212,10 +222,12 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
 
 
 # ── Markdown ───────────────────────────────────────────────────────────────────
-STATIC_FOOTER = """
----
+_RS_FILTER_LABEL = {
+    "daily_ema21": "Daily RS > Daily RS EMA21 · Daily RS EMA21 rising",
+    "weekly_ema9": "Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising",
+}
 
-### Scan definition
+STATIC_HEADER = """### Scan definition
 | Filter | Value |
 |--------|-------|
 | Exchange | NSE common equity |
@@ -223,10 +235,12 @@ STATIC_FOOTER = """
 | 1-week change | > 5% |
 | Market cap | ₹1,000 Cr – ₹1 Lakh Cr |
 | Price vs EMA25 | Price > EMA25 |
-| RS filter | Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising |
+| RS filter | {rs_label} |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |
 | Squeeze | ✓ = BB(20,2.0,SMA) fully inside KC(20,1.5,SMA) on last bar |
-""".format(cap=ZL_TURN_CAP)
+
+---
+""".format(cap=ZL_TURN_CAP, rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE))
 
 
 def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
@@ -263,8 +277,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"# NSE EMA25 ZL Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
+        STATIC_HEADER,
         f"**ZLEMA25 Rising: {len(rising)}** &nbsp;|&nbsp; **ZLEMA25 Watch: {len(watch)}**",
-        "*(Price > ₹100 · 1W > 5% · MCap 10B–1T INR · NSE · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*",
         "",
         "### ZLEMA25 Rising",
     ]
@@ -349,7 +363,7 @@ def main():
         if existing:
             fh.write(md + "\n\n---\n\n" + existing)
         else:
-            fh.write(md + "\n" + STATIC_FOOTER)
+            fh.write(md)
     print(f"\n  Saved -> {MD_FILE}")
 
 

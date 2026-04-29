@@ -85,11 +85,17 @@ def fetch_access_token(api_key, api_secret, user_id, password, totp_secret) -> s
 
 
 def _token_is_fresh() -> bool:
-    """Return True if the token was written less than TOKEN_MAX_AGE ago."""
+    """Return True if token was written today AND less than TOKEN_MAX_AGE ago.
+
+    Kite tokens expire at midnight IST regardless of when they were issued,
+    so a stamp from a previous calendar day is always stale.
+    """
     if not TOKEN_STAMP.exists():
         return False
     try:
         stamped = datetime.fromisoformat(TOKEN_STAMP.read_text().strip())
+        if stamped.date() < datetime.now().date():
+            return False
         return datetime.now() - stamped < TOKEN_MAX_AGE
     except Exception:
         return False
