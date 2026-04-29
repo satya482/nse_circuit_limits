@@ -2,24 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 265** &nbsp;|&nbsp; **Additions: 8** &nbsp;|&nbsp; **Deletions: 1**
+**Total stocks in list: 265** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (8)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN) | +5.91% |
-| [PVP](https://in.tradingview.com/chart/?symbol=NSE:PVP) | +2.50% |
-| [AYMSYNTEX](https://in.tradingview.com/chart/?symbol=NSE:AYMSYNTEX) | +0.61% |
-| [KERNEX](https://in.tradingview.com/chart/?symbol=NSE:KERNEX) | -0.18% |
-| [SANDUMA](https://in.tradingview.com/chart/?symbol=NSE:SANDUMA) | -1.00% |
-| [AVL](https://in.tradingview.com/chart/?symbol=NSE:AVL) | -1.43% |
-| [BHAGYANGR](https://in.tradingview.com/chart/?symbol=NSE:BHAGYANGR) | -2.92% |
-| [UNIVCABLES](https://in.tradingview.com/chart/?symbol=NSE:UNIVCABLES) | -4.21% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (1)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [KIRLFER](https://in.tradingview.com/chart/?symbol=NSE:KIRLFER) | -1.17% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (265)
 | # | Symbol | Day Change % |
