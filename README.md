@@ -26,7 +26,17 @@ Bollinger Bands are inside Keltner Channels (timing coil). Historically precedes
 - **Score**: 0–100 composite (EMA tightness 25% · duration 20% · volume contraction 20% · BB intensity 15% · RS strength 20%)
 - **Output**: `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md`
 
-### 3. Momentum Scanner (`momentum_scanner.py`)
+### 3. ZL Squeeze Scanner (`zl_squeeze_scanner.py`)
+Finds stocks where ZLEMA25 has just turned up AND a BB Squeeze is active simultaneously — the tightest, most actionable setups.
+
+- **Watchlist**: TradingView screener — NSE common equity, price > ₹100, MCap ₹800 Cr – ₹1 Lakh Cr
+- **RS gate**: Daily RS > Daily RS EMA21 AND EMA21 rising
+- **Signal**: ZLEMA25 rising on last bar AND BB(20,2.0,SMA) fully inside KC(20,1.5,SMA ATR)
+- **Squeeze Days**: Consecutive bars the squeeze has been active (longer = more coiled)
+- **Sort**: Longest squeeze first (most compressed), then by ZL Days ascending
+- **Output**: `zl_squeeze_scans/zl_squeeze_scans.md`
+
+### 4. Momentum Scanner (`momentum_scanner.py`)
 Swing entry scanner — stocks pulling back to ZLEMA25 or deep EMAs.
 
 - **Watchlist**: TradingView screener — 1-week change > 5%, MCap ₹1,000–1,00,000 Cr
