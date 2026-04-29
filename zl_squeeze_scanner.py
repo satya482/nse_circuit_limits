@@ -27,9 +27,10 @@ SCANS_DIR  = os.path.join(REPO_DIR, "zl_squeeze_scans")
 TODAY      = datetime.now().strftime("%Y-%m-%d")
 MD_FILE    = os.path.join(SCANS_DIR, "zl_squeeze_scans.md")
 
-MC_LOW     = 800    * 1_00_00_000   # ₹800 Cr
-MC_HIGH    = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
+MC_LOW      = 800    * 1_00_00_000   # ₹800 Cr
+MC_HIGH     = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
 ZL_TURN_CAP = 60
+RS_GATE     = False  # True = require Daily RS > EMA21 AND EMA21 rising
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -158,9 +159,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        rs = (c.loc[common] / index_s.loc[common]) * 1000
-        if not _rs_gate(rs):
-            return None
+        if RS_GATE:
+            rs = (c.loc[common] / index_s.loc[common]) * 1000
+            if not _rs_gate(rs):
+                return None
 
         zl25       = zlema(c, 25)
         zl_rising  = bool(zl25.iloc[-1] > zl25.iloc[-2])
@@ -187,13 +189,15 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
 
 
 # ── Output ─────────────────────────────────────────────────────────────────────
-STATIC_HEADER = f"""### Scan definition
+def _static_header() -> str:
+    rs_label = "Daily RS > Daily RS EMA21 · EMA21 rising" if RS_GATE else "off"
+    return f"""### Scan definition
 | Filter | Value |
 |--------|-------|
 | Exchange | NSE common equity |
 | Price | > ₹100 |
 | Market cap | ₹800 Cr – ₹1 Lakh Cr |
-| RS filter | Daily RS > Daily RS EMA21 · EMA21 rising |
+| RS filter | {rs_label} |
 | Signal | ZLEMA25 rising AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) on last bar |
 | Squeeze Days | Consecutive bars the squeeze has been active |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since (capped {ZL_TURN_CAP}d) |
@@ -230,7 +234,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"# NSE ZL Squeeze Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
-        STATIC_HEADER,
+        _static_header(),
         f"**{len(findings)} stocks: ZLEMA25 Rising + Squeeze ON**",
         "",
     ]
