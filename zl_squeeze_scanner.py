@@ -78,16 +78,16 @@ def bb_kc_squeeze_info(df: pd.DataFrame) -> tuple[bool, int]:
             break
     return True, count
 
-def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
+def zl25_turn_stats(zl25: pd.Series, opens: pd.Series, closes: pd.Series) -> tuple[int, float]:
     n     = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i
-            pct  = (closes.iloc[-1] / closes.iloc[i] - 1) * 100
+            pct  = (closes.iloc[-1] / opens.iloc[i] - 1) * 100
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP - 1)
-    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
+    return ZL_TURN_CAP, round((closes.iloc[-1] / opens.iloc[cap_idx] - 1) * 100, 2)
 
 
 # ── Watchlist ──────────────────────────────────────────────────────────────────
@@ -186,6 +186,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         df = raw.set_index("date")
         df.index = pd.to_datetime(df.index)
         c  = df["close"].astype(float)
+        o  = df["open"].astype(float)
 
         common = c.index.intersection(index_s.index)
         if len(common) < 30:
@@ -225,7 +226,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not squeeze_on:
             return None
 
-        zl_days, zl_pct = zl25_turn_stats(zl25, c)
+        zl_days, zl_pct = zl25_turn_stats(zl25, o, c)
         day_chg = (c.iloc[-1] - c.iloc[-2]) / c.iloc[-2] * 100
 
         return {
