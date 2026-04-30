@@ -1,5 +1,5 @@
 # US ZL Squeeze Scan — 2026-04-30
-*Generated 2026-04-30 00:08 IST*
+*Generated 2026-04-30 10:44 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -21,6 +21,6 @@
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [FVRR](https://www.tradingview.com/chart/?symbol=FVRR) | 11.93 | +15.15% | 4.9x | 17d | 0d | +0.0% | ✓ | ✓ | — |
-| [FSS](https://www.tradingview.com/chart/?symbol=FSS) | 120.26 | +7.62% | 1.6x | 1d | 0d | +0.0% | ✓ | ✓ | — |
+| [FVRR](https://www.tradingview.com/chart/?symbol=FVRR) | 11.93 | +15.15% | 4.9x | 17d | 0d | +15.2% | ✓ | ✓ | — |
+| [FSS](https://www.tradingview.com/chart/?symbol=FSS) | 120.26 | +7.62% | 1.6x | 1d | 0d | +7.6% | ✓ | ✓ | — |
 | [CEPT](https://www.tradingview.com/chart/?symbol=CEPT) | 11.58 | +4.70% | 2.8x | 42d | 12d | +6.1% | ✓ | ✓ | — |
