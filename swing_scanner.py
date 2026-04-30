@@ -50,7 +50,7 @@ def zlema(s: pd.Series, n: int) -> pd.Series:
     e = ema(s, n)
     return 2 * e - ema(e, n)
 
-def zl25_turn_stats(zl25: pd.Series, opens: pd.Series, closes: pd.Series) -> tuple[int, float]:
+def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     """Return (bars_since_turn, pct_since_turn) for the most recent ZLEMA25 turning point.
     A turning point is where slope flipped from non-rising to rising.
     Capped at ZL_TURN_CAP bars; falls back to cap-bar reference if none found."""
@@ -59,9 +59,9 @@ def zl25_turn_stats(zl25: pd.Series, opens: pd.Series, closes: pd.Series) -> tup
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i
-            pct  = (closes.iloc[-1] / opens.iloc[i] - 1) * 100
+            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
-    return ZL_TURN_CAP, round((closes.iloc[-1] / opens.iloc[-(ZL_TURN_CAP + 1)] - 1) * 100, 2)
+    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[-(ZL_TURN_CAP + 2)] - 1) * 100, 2)
 
 
 # ── Nifty MidSmallcap 400 index cache ────────────────────────────────────────
@@ -254,7 +254,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not entries:
             return None
 
-        zl_days, zl_pct = zl25_turn_stats(zl25, op, c)
+        zl_days, zl_pct = zl25_turn_stats(zl25, c)
         return {
             "symbol":  symbol,
             "close":   curr_close,
