@@ -31,7 +31,6 @@ SCANNER_KEYWORDS = {
     "NSE ZL Squeeze":        "scan: zl-squeeze",
     "US ZL Squeeze":         "us-zl-squeeze",
     "EMA Screener":          "screener:",
-    "EMA Compression":       "ema-compression scan",
     "Dashboard":             "dashboard",
 }
 
@@ -43,7 +42,6 @@ SCANNER_MD_LINKS = {
     "NSE ZL Squeeze":        f"{BLOB}/zl_squeeze_scans/zl_squeeze_scans.md",
     "US ZL Squeeze":         f"{BLOB}/us_zl_squeeze_scans/us_zl_squeeze_scans.md",
     "EMA Screener":          f"{BLOB}/ema_screener_changes.md",
-    "EMA Compression":       f"{BLOB}/ema-compression-scanner/ema_compression_scans/ema_compression_latest.md",
     "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
 }
 
@@ -117,12 +115,8 @@ def get_scan_details(today: str) -> dict:
     nse_zl_md   = read_file(os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md"))
     us_zl_md    = read_file(os.path.join(BASE, "us_zl_squeeze_scans", "us_zl_squeeze_scans.md"))
     screener_md = read_file(os.path.join(BASE, "ema_screener_changes.md"))
-    comp_md     = read_file(os.path.join(BASE, "ema-compression-scanner",
-                                         "ema_compression_scans", "ema_compression_latest.md"))
-
-    zl_rising, zl_watch       = parse_ema25_zl_counts(zl25_md, today)
-    ema_adds, ema_dels         = parse_screener_counts(screener_md, today)
-    comp_total, comp_zl_rising = parse_compression_counts(comp_md, today)
+    zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
+    ema_adds, ema_dels  = parse_screener_counts(screener_md, today)
 
     return {
         "Swing Scanner":    parse_signal_count(swing_md,  today) + " signals",
@@ -132,7 +126,6 @@ def get_scan_details(today: str) -> dict:
         "NSE ZL Squeeze":   parse_zl_squeeze_count(nse_zl_md, today),
         "US ZL Squeeze":    parse_zl_squeeze_count(us_zl_md,  today),
         "EMA Screener":     f"+{ema_adds} adds / -{ema_dels} exits",
-        "EMA Compression":  f"{comp_total} compressed / {comp_zl_rising} signals",
         "Dashboard":        "generated",
     }
 
