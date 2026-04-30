@@ -28,6 +28,8 @@ SCANNER_KEYWORDS = {
     "Momentum Scanner":      "momentum scan",
     "Weekly RS Scanner":     "momentum rs-weekly scan",
     "EMA25 ZL Scanner":      "ema25-zl scan",
+    "NSE ZL Squeeze":        "scan: zl-squeeze",
+    "US ZL Squeeze":         "us-zl-squeeze",
     "EMA Screener":          "screener:",
     "EMA Compression":       "ema-compression scan",
     "Dashboard":             "dashboard",
@@ -38,6 +40,8 @@ SCANNER_MD_LINKS = {
     "Momentum Scanner":      f"{BLOB}/momentum_scans/momentum_scans.md",
     "Weekly RS Scanner":     f"{BLOB}/momentum_scans/momentum_rs_weekly_scans.md",
     "EMA25 ZL Scanner":      f"{BLOB}/ema25_zl_scans/ema25_zl_scans.md",
+    "NSE ZL Squeeze":        f"{BLOB}/zl_squeeze_scans/zl_squeeze_scans.md",
+    "US ZL Squeeze":         f"{BLOB}/us_zl_squeeze_scans/us_zl_squeeze_scans.md",
     "EMA Screener":          f"{BLOB}/ema_screener_changes.md",
     "EMA Compression":       f"{BLOB}/ema-compression-scanner/ema_compression_scans/ema_compression_latest.md",
     "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
@@ -90,6 +94,13 @@ def parse_screener_counts(md: str, today: str) -> tuple[str, str]:
     return (adds.group(1) if adds else "0"), (dels.group(1) if dels else "0")
 
 
+def parse_zl_squeeze_count(md: str, today: str) -> str:
+    if today not in md[:80]:
+        return "—"
+    m = re.search(r'\*\*(\d+) stocks: ZLEMA25 Rising \+ Squeeze ON\*\*', md)
+    return (m.group(1) + " signals") if m else "—"
+
+
 def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
     if today not in md[:100]:
         return "—", "—"
@@ -103,6 +114,8 @@ def get_scan_details(today: str) -> dict:
     mom_md      = read_file(os.path.join(BASE, "momentum_scans", "momentum_scans.md"))
     weekly_md   = read_file(os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md"))
     zl25_md     = read_file(os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md"))
+    nse_zl_md   = read_file(os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md"))
+    us_zl_md    = read_file(os.path.join(BASE, "us_zl_squeeze_scans", "us_zl_squeeze_scans.md"))
     screener_md = read_file(os.path.join(BASE, "ema_screener_changes.md"))
     comp_md     = read_file(os.path.join(BASE, "ema-compression-scanner",
                                          "ema_compression_scans", "ema_compression_latest.md"))
@@ -116,6 +129,8 @@ def get_scan_details(today: str) -> dict:
         "Momentum Scanner": parse_signal_count(mom_md,    today) + " signals",
         "Weekly RS Scanner":parse_signal_count(weekly_md, today) + " signals",
         "EMA25 ZL Scanner": f"Rising {zl_rising} / Watch {zl_watch}",
+        "NSE ZL Squeeze":   parse_zl_squeeze_count(nse_zl_md, today),
+        "US ZL Squeeze":    parse_zl_squeeze_count(us_zl_md,  today),
         "EMA Screener":     f"+{ema_adds} adds / -{ema_dels} exits",
         "EMA Compression":  f"{comp_total} compressed / {comp_zl_rising} signals",
         "Dashboard":        "generated",
@@ -147,7 +162,7 @@ def build_html_email(today: str, status: dict, details: dict, all_ok: bool) -> s
 
     return f"""
 <html><body style="font-family:Segoe UI,sans-serif;font-size:14px;color:#24292e;max-width:600px;margin:0 auto;padding:20px">
-  <h2 style="color:{color};margin-bottom:4px">NSE Scanners — {header}</h2>
+  <h2 style="color:{color};margin-bottom:4px">NSE + US Scanners — {header}</h2>
   <p style="color:#586069;margin-top:0">{today} · Generated {datetime.now(IST).strftime('%H:%M IST')}</p>
   <table style="width:100%;border-collapse:collapse;border:1px solid #e1e4e8;border-radius:6px;overflow:hidden">
     <thead>
@@ -210,7 +225,7 @@ def main():
         print(f"  Missing: {', '.join(failed)}\n")
 
     icon    = "OK" if all_ok else "ALERT"
-    subject = f"[NSE {icon}] Scanners {today} — {'All OK' if all_ok else 'Issues'}"
+    subject = f"[NSE+US {icon}] Scanners {today} — {'All OK' if all_ok else 'Issues'}"
     html    = build_html_email(today, status, details, all_ok)
 
     if send_email(subject, html):
