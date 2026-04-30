@@ -48,5 +48,5 @@ Log "--- Git commit manifest ---"
 
 Log "=== FETCH_DATA DONE ==="
 
-# Scheduled task (run once as admin — runs before all scanners at 4:05 PM):
-# schtasks /create /tn "NSE_FetchData" /tr "powershell.exe -NonInteractive -WindowStyle Hidden -File C:\Users\satya\nse_circuit_limits\run_fetch_data.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:05 /f
+# Scheduled task (run once as admin — runs before all scanners at 3:35 PM):
+# schtasks /create /tn "NSE_FetchData" /tr "powershell.exe -NonInteractive -WindowStyle Hidden -File C:\Users\satya\nse_circuit_limits\run_fetch_data.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 15:35 /f

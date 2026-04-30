@@ -114,14 +114,18 @@ fetch_us_data.py (4:40 PM IST daily)
 
 | Time (IST) | Script | Action |
 |---|---|---|
-| 4:05 PM | `run_fetch_data.ps1` | Kite auth + NSE SQLite backfill/delta |
-| 4:10 PM | `run_dashboard.ps1` | Circuit limits dashboard |
-| 4:25 PM | `run_ema25_zl_scanner.ps1` | EMA25 ZL scan |
-| 4:30 PM | `run_zl_squeeze_scanner.ps1` | NSE ZL Squeeze scan |
-| 4:35 PM | `ema-compression-scanner\run_scanner.ps1` | EMA compression scan |
-| 4:40 PM | `run_us_fetch_data.ps1` | US yfinance SQLite backfill/delta |
-| 4:50 PM | `run_us_zl_squeeze_scanner.ps1` | US ZL Squeeze scan |
-| — | `run_momentum_scanner.ps1` | Momentum scan |
+| 3:30 PM | `run_ema_screener.ps1` | EMA screener daily diff |
+| 3:35 PM | `run_fetch_data.ps1` | Kite auth + NSE SQLite backfill/delta |
+| 3:35 PM | `run_swing_scanner.ps1` | Swing scan (yfinance, parallel with fetch) |
+| 3:45 PM | `run_momentum_scanner.ps1` | Momentum scan |
+| 3:50 PM | `run_momentum_rs_weekly_scanner.ps1` | Momentum RS Weekly scan |
+| 3:55 PM | `run_ema25_zl_scanner.ps1` | EMA25 ZL scan |
+| 4:00 PM | `run_zl_squeeze_scanner.ps1` | NSE ZL Squeeze scan |
+| 4:05 PM | `run_dashboard_generator.ps1` | Dashboard aggregator |
+| 4:05 PM | `ema-compression-scanner\run_scanner.ps1` | EMA compression scan |
+| 4:10 PM | `run_us_fetch_data.ps1` | US yfinance SQLite backfill/delta |
+| 4:20 PM | `run_us_zl_squeeze_scanner.ps1` | US ZL Squeeze scan |
+| 4:30 PM | `run_scan_status_mailer.ps1` | Scanner status email |
 
 ---
 
