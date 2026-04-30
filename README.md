@@ -121,11 +121,12 @@ fetch_us_data.py (4:40 PM IST daily)
 | 3:50 PM | `run_momentum_rs_weekly_scanner.ps1` | Momentum RS Weekly scan |
 | 3:55 PM | `run_ema25_zl_scanner.ps1` | EMA25 ZL scan |
 | 4:00 PM | `run_zl_squeeze_scanner.ps1` | NSE ZL Squeeze scan |
-| 4:05 PM | `run_dashboard_generator.ps1` | Dashboard aggregator |
 | 4:05 PM | `ema-compression-scanner\run_scanner.ps1` | EMA compression scan |
 | 4:10 PM | `run_us_fetch_data.ps1` | US yfinance SQLite backfill/delta |
+| 4:15 PM | `run_dashboard_generator.ps1` | Dashboard aggregator (after all NSE scans) |
 | 4:20 PM | `run_us_zl_squeeze_scanner.ps1` | US ZL Squeeze scan |
 | 4:30 PM | `run_scan_status_mailer.ps1` | Scanner status email |
+| 5:05 PM | `run_dashboard.ps1` | NSE circuit limits dashboard (exchange publishes at 5 PM) |
 
 ---
 
