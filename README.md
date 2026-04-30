@@ -116,7 +116,7 @@ fetch_us_data.py (4:40 PM IST daily)
 |---|---|---|
 | 3:30 PM | `run_ema_screener.ps1` | EMA screener daily diff |
 | 3:35 PM | `run_fetch_data.ps1` | Kite auth + NSE SQLite backfill/delta |
-| 3:35 PM | `run_swing_scanner.ps1` | Swing scan (yfinance, parallel with fetch) |
+| 3:40 PM | `run_swing_scanner.ps1` | Swing scan (yfinance) |
 | 3:45 PM | `run_momentum_scanner.ps1` | Momentum scan |
 | 3:50 PM | `run_momentum_rs_weekly_scanner.ps1` | Momentum RS Weekly scan |
 | 3:55 PM | `run_ema25_zl_scanner.ps1` | EMA25 ZL scan |
