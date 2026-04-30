@@ -1,3 +1,39 @@
+# NSE Momentum Scan (Weekly RS) — 2026-04-30
+*Generated 2026-04-30 16:20 IST*
+
+**Entry Signals: 20** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 0**
+*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
+
+### Entry Signals
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.11% | 17d | +21.6% | 20%  |
+| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.66% | 10d | +13.2% | 20%  |
+| [SAIL](https://in.tradingview.com/chart/?symbol=NSE:SAIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.83% | 19d | +21.9% | 20%  |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.41% | 17d | +33.0% | 20%  |
+| [NLCINDIA](https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.50% | 12d | +18.5% | 20%  |
+| [RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.02% | 15d | +30.2% | 20%  |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.36% | 6d | +11.6% | 20%  |
+| [TORNTPOWER](https://in.tradingview.com/chart/?symbol=NSE:TORNTPOWER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.02% | 16d | +25.9% | 20%  |
+| [GUJALKALI](https://in.tradingview.com/chart/?symbol=NSE:GUJALKALI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.86% | 26d | +85.4% | 10% 🟨 |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.10% | 3d | +11.0% | 20%  |
+| [YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.12% | 3d | +14.2% | 20%  |
+| [LLOYDSME](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSME) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.44% | 25d | +48.8% | 20%  |
+| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.89% | 19d | +71.3% | 10% 🟨 |
+| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.97% | 17d | +49.3% | 20%  |
+| [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.40% | 18d | +42.0% | 5%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.28% | 10d | +14.7% | 20%  |
+| [SEAMECLTD](https://in.tradingview.com/chart/?symbol=NSE:SEAMECLTD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.30% | 23d | +20.6% | 20%  |
+| [BHARATSE](https://in.tradingview.com/chart/?symbol=NSE:BHARATSE) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.06% | 1d | +8.1% | 20% 🟦 |
+| [BHARATSE](https://in.tradingview.com/chart/?symbol=NSE:BHARATSE) | **DEEP PULLBACK** — Bounce from EMA50 | +4.06% | 1d | +8.1% | 20% 🟦 |
+| [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.26% | 4d | +9.0% | 20%  |
+| [SHREEPUSHK](https://in.tradingview.com/chart/?symbol=NSE:SHREEPUSHK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.35% | 19d | +31.1% | 20%  |
+
+### ZLEMA25 Turning Up *(low-risk early entries)*
+*No ZLEMA25 turns today.*
+
+---
+
 # NSE Momentum Scan (Weekly RS) — 2026-04-29
 *Generated 2026-04-29 16:20 IST*
 
