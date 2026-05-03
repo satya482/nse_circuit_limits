@@ -5,7 +5,7 @@ Run after 4:20 PM IST on trading days.
 
 Watchlist filters (TradingView):
   - NSE common equity
-  - Price > 100 INR
+  - Price > 50 INR
   - 1-week change > 5%
   - Market cap 10B – 1T INR  (≈ 1,000 Cr – 1 Lakh Cr)
   - Price > EMA25
@@ -118,7 +118,7 @@ def get_watchlist() -> list[str]:
             col("exchange") == "NSE",
             col("type") == "stock",
             col("typespecs").has(["common"]),
-            col("close") > 100,
+            col("close") > 50,
             col("Perf.W") > 5,
             col("close") > col("EMA25"),
             col("market_cap_basic").between(MC_LOW, MC_HIGH),
@@ -280,7 +280,7 @@ STATIC_FOOTER = """
 | **DEEP PULLBACK** | ZLEMA25 rising · low touched EMA50/100/200 · closed green above it |
 
 ### Watchlist filters
-- Price > ₹100 · 1-week change > 5% · Price > EMA25
+- Price > ₹50 · 1-week change > 5% · Price > EMA25
 - Market cap ₹1,000 Cr – ₹1 Lakh Cr · NSE common equity
 
 ### RS filter (both required)
@@ -298,7 +298,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
         f"**Entry Signals: {len(entry_findings)}** &nbsp;|&nbsp; **ZLEMA25 Turning Up: {len(turning_findings)}**",
-        f"*(Price > ₹100 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*",
+        f"*(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*",
         "",
         "### Entry Signals",
     ]

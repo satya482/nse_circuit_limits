@@ -9,7 +9,7 @@ Runs automatically via Windows Task Scheduler.
 Identifies stocks where ZLEMA25 (Zero-Lag EMA 25) has recently turned up,
 filtered by RS strength vs Nifty MidSmallcap 400.
 
-- **Watchlist**: TradingView screener — NSE common equity, price > ₹100, MCap ₹1,000–1,00,000 Cr, price > EMA25
+- **Watchlist**: TradingView screener — NSE common equity, price > ₹50, MCap ₹1,000–1,00,000 Cr, price > EMA25
 - **RS gate**: Daily RS line > Weekly RS EMA9 AND weekly RS EMA9 rising
 - **Signals**: ZLEMA25 Rising / Watch (pullback)
 - **Extras**: BB(20,2.0,SMA) inside KC(20,1.5,SMA) squeeze flag, days since last ZL turn-up, % gain since
@@ -29,7 +29,7 @@ Bollinger Bands are inside Keltner Channels (timing coil). Historically precedes
 ### 3. ZL Squeeze Scanner (`zl_squeeze_scanner.py`)
 Finds stocks where ZLEMA25 has just turned up AND a BB Squeeze is active simultaneously — the tightest, most actionable setups.
 
-- **Watchlist**: TradingView screener — NSE common equity, price > ₹100, MCap ₹800 Cr – ₹1 Lakh Cr
+- **Watchlist**: TradingView screener — NSE common equity, price > ₹50, MCap ₹800 Cr – ₹1 Lakh Cr
 - **RS gate**: Daily RS > Daily RS EMA21 AND EMA21 rising
 - **Signal**: ZLEMA25 rising on last bar AND BB(20,2.0,SMA) fully inside KC(20,1.5,SMA ATR)
 - **Squeeze Days**: Consecutive bars the squeeze has been active (longer = more coiled)

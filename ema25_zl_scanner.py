@@ -5,7 +5,7 @@ Run after 4:20 PM IST on trading days (after run_fetch_data.ps1 completes).
 
 Watchlist filters (TradingView):
   - NSE common equity
-  - Price > 100 INR
+  - Price > 50 INR
   - Market cap 10B – 1T INR  (≈ 1,000 Cr – 1 Lakh Cr)
   - Price > EMA25
 
@@ -102,7 +102,7 @@ def get_watchlist() -> list[str]:
         col("exchange") == "NSE",
         col("type") == "stock",
         col("typespecs").has(["common"]),
-        col("close") > 100,
+        col("close") > 50,
         col("market_cap_basic").between(MC_LOW, MC_HIGH),
     ]
     if FILTER_PRICE_EMA25:
@@ -233,7 +233,7 @@ STATIC_HEADER = """### Scan definition
 | Filter | Value |
 |--------|-------|
 | Exchange | NSE common equity |
-| Price | > ₹100 |
+| Price | > ₹50 |
 | 1-week change | {w1} |
 | Market cap | ₹1,000 Cr – ₹1 Lakh Cr |
 | Price vs EMA25 | {ema25} |

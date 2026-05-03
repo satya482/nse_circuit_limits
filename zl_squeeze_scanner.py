@@ -4,7 +4,7 @@ NSE ZL Squeeze Scanner
 Stocks where ZLEMA25 is Rising AND BB Squeeze is ON simultaneously.
 Run after fetch_data.py completes (shares same SQLite data source).
 
-Watchlist: NSE common equity, price > ₹100, MCap ₹800 Cr – ₹1 Lakh Cr
+Watchlist: NSE common equity, price > ₹50, MCap ₹800 Cr – ₹1 Lakh Cr
 RS gate:   Daily RS > Daily RS EMA21 AND EMA21 rising
 Signal:    ZLEMA25 rising on last bar AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR)
 Extra:     Squeeze duration — consecutive bars the squeeze has been active
@@ -100,7 +100,7 @@ def get_watchlist() -> list[str]:
             col("exchange") == "NSE",
             col("type") == "stock",
             col("typespecs").has(["common"]),
-            col("close") > 100,
+            col("close") > 50,
             col("market_cap_basic").between(MC_LOW, MC_HIGH),
         )
         .limit(2000)
@@ -262,7 +262,7 @@ def _static_header() -> str:
 | Filter | Value |
 |--------|-------|
 | Exchange | NSE common equity |
-| Price | > ₹100 |
+| Price | > ₹50 |
 | Market cap | ₹800 Cr – ₹1 Lakh Cr |
 | RS filter | {rs_label} |
 | Signal | ZLEMA25 rising AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) on last bar |
