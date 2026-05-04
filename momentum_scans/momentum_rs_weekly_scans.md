@@ -1,3 +1,47 @@
+# NSE Momentum Scan (Weekly RS) — 2026-05-04
+*Generated 2026-05-04 15:50 IST*
+
+**Entry Signals: 26** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 2**
+*(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
+
+### Entry Signals
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [SCI](https://in.tradingview.com/chart/?symbol=NSE:SCI) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.62% | 16d | +36.5% | 20%  |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.09% | 33d | +34.2% | 20%  |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.96% | 18d | +36.9% | 20%  |
+| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.17% | 11d | +16.8% | 20%  |
+| [ENGINERSIN](https://in.tradingview.com/chart/?symbol=NSE:ENGINERSIN) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.87% | 20d | +43.7% | 20%  |
+| [GMDCLTD](https://in.tradingview.com/chart/?symbol=NSE:GMDCLTD) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.16% | 26d | +36.2% | 20%  |
+| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW) | **STRONG** — ZLEMA25 touch + EMA20 rising | +15.08% | 4d | +21.5% | 20%  |
+| [LLOYDSME](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSME) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.88% | 26d | +51.6% | 20%  |
+| [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.90% | 18d | +26.6% | 20%  |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.16% | 4d | +13.4% | 20%  |
+| [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.30% | 20d | +24.5% | 20%  |
+| [UNIVCABLES](https://in.tradingview.com/chart/?symbol=NSE:UNIVCABLES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +15.62% | 21d | +50.7% | 20%  |
+| [EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.73% | 2d | +11.5% | 20%  |
+| [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.10% | 5d | +7.2% | 20%  |
+| [KIRLOSENG](https://in.tradingview.com/chart/?symbol=NSE:KIRLOSENG) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.50% | 18d | +24.6% | 20%  |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.59% | 20d | +43.5% | 20%  |
+| [MUTHOOTMF](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTMF) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.79% | 18d | +33.1% | 20%  |
+| [AKUMS](https://in.tradingview.com/chart/?symbol=NSE:AKUMS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.17% | 4d | +8.7% | 20%  |
+| [AVL](https://in.tradingview.com/chart/?symbol=NSE:AVL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.35% | 16d | +17.2% | 20%  |
+| [VISHNU](https://in.tradingview.com/chart/?symbol=NSE:VISHNU) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.90% | 19d | +24.2% | 20%  |
+| [SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN) | **STRONG** — ZLEMA25 touch + EMA20 rising | +7.03% | 17d | +30.0% | 20%  |
+| [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.91% | 5d | +11.1% | 20%  |
+| [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.46% | 18d | +42.2% | 20%  |
+| [UNIPARTS](https://in.tradingview.com/chart/?symbol=NSE:UNIPARTS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.14% | 20d | +22.0% | 20%  |
+| [LINCOLN](https://in.tradingview.com/chart/?symbol=NSE:LINCOLN) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.59% | 12d | +11.6% | 20% 🟦 |
+| [AYMSYNTEX](https://in.tradingview.com/chart/?symbol=NSE:AYMSYNTEX) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.88% | 10d | +29.8% | 20%  |
+
+### ZLEMA25 Turning Up *(low-risk early entries)*
+| Symbol | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|----------:|--------:|--------:|:-------:|
+| [SIGNPOST](https://in.tradingview.com/chart/?symbol=NSE:SIGNPOST) | +7.74% | 0d | +7.7% | 20%  |
+| [VENUSREM](https://in.tradingview.com/chart/?symbol=NSE:VENUSREM) | +1.72% | 0d | +1.7% | 5% 🟥 |
+
+---
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-03
 *Generated 2026-05-03 16:45 IST*
 
