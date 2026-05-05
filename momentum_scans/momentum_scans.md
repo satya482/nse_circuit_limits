@@ -1,3 +1,31 @@
+# NSE Momentum Scan — 2026-05-05
+*Generated 2026-05-05 15:45 IST*
+
+**Entry Opportunities: 17**
+*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*
+
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.10% | 19d | +34.5% | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.69% | 18d | +20.0% | 20%  |
+| [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.16% | 21d | +30.9% | 20%  |
+| [MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.45% | 20d | +27.2% | 20%  |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.56% | 5d | +8.5% | 20%  |
+| [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -2.44% | 5d | +5.8% | 20%  |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.85% | 6d | +8.5% | 20%  |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.75% | 6d | +11.4% | 20%  |
+| [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.63% | 23d | +52.4% | 20%  |
+| [TMB](https://in.tradingview.com/chart/?symbol=NSE:TMB) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.86% | 6d | +13.8% | 20%  |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.05% | 21d | +43.4% | 20%  |
+| [INDIAGLYCO](https://in.tradingview.com/chart/?symbol=NSE:INDIAGLYCO) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.42% | 22d | +21.7% | 20%  |
+| [LINCOLN](https://in.tradingview.com/chart/?symbol=NSE:LINCOLN) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.92% | 13d | +18.2% | 20% 🟦 |
+| [SURYODAY](https://in.tradingview.com/chart/?symbol=NSE:SURYODAY) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.21% | 19d | +26.6% | 20%  |
+| [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.36% | 6d | +9.6% | 20%  |
+| [AVL](https://in.tradingview.com/chart/?symbol=NSE:AVL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.53% | 17d | +20.2% | 20%  |
+| [DPEL](https://in.tradingview.com/chart/?symbol=NSE:DPEL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.75% | 33d | +78.0% | 5% 🟥 |
+
+---
+
 # NSE Momentum Scan — 2026-05-04
 *Generated 2026-05-04 15:45 IST*
 
