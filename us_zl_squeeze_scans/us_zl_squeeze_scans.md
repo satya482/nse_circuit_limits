@@ -1,5 +1,5 @@
-# US ZL Squeeze Scan — 2026-05-04
-*Generated 2026-05-04 16:20 IST*
+# US ZL Squeeze Scan — 2026-05-05
+*Generated 2026-05-05 16:20 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,17 +17,25 @@
 
 ---
 
-**10 stocks: ZLEMA25 Rising + Squeeze ON**
+**18 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [ACHC](https://www.tradingview.com/chart/?symbol=ACHC) | 27.85 | +7.53% | 1.7x | 1d | 0d | +7.5% | ✓ | ✓ | ✓ |
-| [HUN](https://www.tradingview.com/chart/?symbol=HUN) | 14.63 | +1.81% | 2.1x | 8d | 1d | +9.8% | ✓ | ✓ | ✓ |
-| [CELC](https://www.tradingview.com/chart/?symbol=CELC) | 125.65 | +3.54% | 2.8x | 4d | 1d | +6.5% | ✓ | ✓ | ✓ |
-| [EMN](https://www.tradingview.com/chart/?symbol=EMN) | 77.53 | +6.07% | 2.2x | 9d | 1d | +10.6% | ✓ | ✓ | — |
-| [DRVN](https://www.tradingview.com/chart/?symbol=DRVN) | 14.03 | +3.39% | 2.1x | 10d | 2d | +11.6% | ✓ | ✓ | — |
-| [AN](https://www.tradingview.com/chart/?symbol=AN) | 210.00 | -1.12% | 3.1x | 4d | 2d | +4.5% | ✓ | ✓ | — |
-| [PATH](https://www.tradingview.com/chart/?symbol=PATH) | 10.67 | +3.59% | 1.7x | 3d | 0d | +3.6% | ✓ | — | — |
-| [IVR](https://www.tradingview.com/chart/?symbol=IVR) | 8.33 | +2.46% | 1.6x | 3d | 0d | +2.5% | ✓ | — | — |
-| [GDYN](https://www.tradingview.com/chart/?symbol=GDYN) | 5.81 | +2.11% | 2.3x | 13d | 1d | +3.8% | ✓ | — | — |
-| [EBS](https://www.tradingview.com/chart/?symbol=EBS) | 8.47 | +2.92% | 2.4x | 1d | 1d | +7.5% | ✓ | — | — |
+| [GLNG](https://www.tradingview.com/chart/?symbol=GLNG) | 56.40 | +1.26% | 1.9x | 13d | 3d | +6.7% | ✓ | ✓ | ✓ |
+| [PHVS](https://www.tradingview.com/chart/?symbol=PHVS) | 30.02 | +1.97% | 2.3x | 9d | 3d | +6.4% | ✓ | ✓ | ✓ |
+| [XNCR](https://www.tradingview.com/chart/?symbol=XNCR) | 13.36 | +5.28% | 1.8x | 50d | 1d | +12.0% | ✓ | ✓ | — |
+| [VNDA](https://www.tradingview.com/chart/?symbol=VNDA) | 7.56 | +8.00% | 1.8x | 12d | 2d | +8.9% | ✓ | ✓ | — |
+| [MIRM](https://www.tradingview.com/chart/?symbol=MIRM) | 105.79 | +9.59% | 3.6x | 6d | 2d | +14.2% | ✓ | ✓ | — |
+| [AGCO](https://www.tradingview.com/chart/?symbol=AGCO) | 121.28 | +2.34% | 2.7x | 6d | 2d | +7.0% | ✓ | ✓ | — |
+| [TARA](https://www.tradingview.com/chart/?symbol=TARA) | 5.45 | +2.44% | 2.5x | 21d | 3d | +7.7% | ✓ | ✓ | — |
+| [RYTM](https://www.tradingview.com/chart/?symbol=RYTM) | 85.58 | +4.61% | 2.3x | 6d | 0d | +4.6% | ✓ | — | — |
+| [ALKS](https://www.tradingview.com/chart/?symbol=ALKS) | 34.17 | +2.37% | 1.6x | 5d | 0d | +2.4% | ✓ | — | — |
+| [PRTA](https://www.tradingview.com/chart/?symbol=PRTA) | 10.79 | +1.41% | 1.5x | 2d | 0d | +1.4% | — | — | ✓ |
+| [GLBE](https://www.tradingview.com/chart/?symbol=GLBE) | 32.40 | +2.99% | 1.9x | 1d | 0d | +3.0% | ✓ | — | — |
+| [ATRC](https://www.tradingview.com/chart/?symbol=ATRC) | 28.78 | -0.83% | 1.8x | 31d | 1d | +2.4% | ✓ | — | — |
+| [PDYN](https://www.tradingview.com/chart/?symbol=PDYN) | 6.52 | +2.84% | 2.0x | 18d | 1d | +7.1% | ✓ | — | — |
+| [WVE](https://www.tradingview.com/chart/?symbol=WVE) | 7.47 | +2.05% | 1.5x | 8d | 1d | +5.8% | ✓ | — | — |
+| [WGS](https://www.tradingview.com/chart/?symbol=WGS) | 67.93 | +3.90% | 4.9x | 6d | 1d | +8.0% | ✓ | — | — |
+| [WK](https://www.tradingview.com/chart/?symbol=WK) | 56.58 | +3.32% | 1.9x | 1d | 1d | +5.8% | ✓ | — | — |
+| [IPGP](https://www.tradingview.com/chart/?symbol=IPGP) | 122.33 | -0.44% | 1.9x | 1d | 1d | +2.9% | ✓ | — | — |
+| [ARVN](https://www.tradingview.com/chart/?symbol=ARVN) | 10.78 | +2.57% | 2.0x | 1d | 1d | +8.9% | ✓ | — | — |
