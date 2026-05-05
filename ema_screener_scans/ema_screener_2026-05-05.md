@@ -2,15 +2,10 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 297** &nbsp;|&nbsp; **Additions: 4** &nbsp;|&nbsp; **Deletions: 0**
+**Total stocks in list: 297** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (4)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [MMWL](https://in.tradingview.com/chart/?symbol=NSE:MMWL) | +19.94% |
-| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | +1.89% |
-| [ARIHANT](https://in.tradingview.com/chart/?symbol=NSE:ARIHANT) | -0.56% |
-| [SPLPETRO](https://in.tradingview.com/chart/?symbol=NSE:SPLPETRO) | -1.42% |
+## ✅ Additions (0)
+_No new entries today_
 
 ## ❌ Deletions (0)
 _No exits today_
