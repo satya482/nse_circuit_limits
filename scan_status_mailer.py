@@ -34,16 +34,20 @@ SCANNER_KEYWORDS = {
     "Dashboard":             "dashboard",
 }
 
-SCANNER_MD_LINKS = {
+SCANNER_MD_LINKS_STATIC = {
     "Swing Scanner":         f"{BLOB}/swing_scans/swing_scans.md",
     "Momentum Scanner":      f"{BLOB}/momentum_scans/momentum_scans.md",
     "Weekly RS Scanner":     f"{BLOB}/momentum_scans/momentum_rs_weekly_scans.md",
     "EMA25 ZL Scanner":      f"{BLOB}/ema25_zl_scans/ema25_zl_scans.md",
     "NSE ZL Squeeze":        f"{BLOB}/zl_squeeze_scans/zl_squeeze_scans.md",
     "US ZL Squeeze":         f"{BLOB}/us_zl_squeeze_scans/us_zl_squeeze_scans.md",
-    "EMA Screener":          f"{BLOB}/ema_screener_changes.md",
     "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
 }
+
+
+def get_scanner_md_links(today: str) -> dict:
+    return {**SCANNER_MD_LINKS_STATIC,
+            "EMA Screener": f"{BLOB}/ema_screener_scans/ema_screener_{today}.md"}
 
 
 def today_ist() -> str:
@@ -114,7 +118,7 @@ def get_scan_details(today: str) -> dict:
     zl25_md     = read_file(os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md"))
     nse_zl_md   = read_file(os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md"))
     us_zl_md    = read_file(os.path.join(BASE, "us_zl_squeeze_scans", "us_zl_squeeze_scans.md"))
-    screener_md = read_file(os.path.join(BASE, "ema_screener_changes.md"))
+    screener_md = read_file(os.path.join(BASE, "ema_screener_scans", f"ema_screener_{today}.md"))
     zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
     ema_adds, ema_dels  = parse_screener_counts(screener_md, today)
 
@@ -130,7 +134,8 @@ def get_scan_details(today: str) -> dict:
     }
 
 
-def build_html_email(today: str, status: dict, details: dict, all_ok: bool) -> str:
+def build_html_email(today: str, status: dict, details: dict, all_ok: bool,
+                     scanner_links: dict) -> str:
     color  = "#2ea44f" if all_ok else "#d73a49"
     header = "All scanners OK" if all_ok else "Scanner issues detected"
 
@@ -139,7 +144,7 @@ def build_html_email(today: str, status: dict, details: dict, all_ok: bool) -> s
         icon   = "✅" if ok else "❌"
         detail = details.get(name, "—")
         bg     = "#f6fff8" if ok else "#fff6f6"
-        link   = SCANNER_MD_LINKS.get(name)
+        link   = scanner_links.get(name)
         label  = (f'<a href="{link}" style="color:#0366d6;text-decoration:none">{name}</a>'
                   if link else name)
         rows += f"""
@@ -219,7 +224,7 @@ def main():
 
     icon    = "OK" if all_ok else "ALERT"
     subject = f"[NSE+US {icon}] Scanners {today} — {'All OK' if all_ok else 'Issues'}"
-    html    = build_html_email(today, status, details, all_ok)
+    html    = build_html_email(today, status, details, all_ok, get_scanner_md_links(today))
 
     if send_email(subject, html):
         print(f"  Email sent to {TO_EMAIL}")

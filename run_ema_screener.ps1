@@ -20,7 +20,8 @@ try {
 }
 
 Log "--- Git commit+push ---"
-& git -C C:\Users\satya\nse_circuit_limits add ema_screener_changes.md nse_ema_results.json 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-& git -C C:\Users\satya\nse_circuit_limits commit -m "screener: $date 16:00 IST update" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits add "ema_screener_scans/ema_screener_$date.md" nse_ema_results.json 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits commit -m "screener: $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits pull --rebase 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "--- Done ---"

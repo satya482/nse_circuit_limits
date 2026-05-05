@@ -5,19 +5,19 @@ Reads 5 markdown files, builds confluence-ranked HTML dashboard.
 Output: dashboard.html
 """
 
-import re, os
+import re, os, glob
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 
 IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-SWING_MD       = os.path.join(BASE, "swing_scans", "swing_scans.md")
-MOMENTUM_MD    = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
-WEEKLY_RS_MD   = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
-EMA25_ZL_MD    = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
-EMA_MD         = os.path.join(BASE, "ema_screener_changes.md")
-CIRCUIT_MD     = os.path.join(BASE, "NSE_Circuit_Limits.md")
+SWING_MD        = os.path.join(BASE, "swing_scans", "swing_scans.md")
+MOMENTUM_MD     = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
+WEEKLY_RS_MD    = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
+EMA25_ZL_MD     = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
+EMA_SCANS_DIR   = os.path.join(BASE, "ema_screener_scans")
+CIRCUIT_MD      = os.path.join(BASE, "NSE_Circuit_Limits.md")
 COMPRESSION_MD = os.path.join(BASE, "ema-compression-scanner",
                                "ema_compression_scans", "ema_compression_latest.md")
 ZL_SQUEEZE_MD  = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
@@ -29,6 +29,15 @@ def read_file(path: str) -> str:
         return ""
     with open(path, encoding="utf-8") as f:
         return f.read()
+
+
+def find_latest_screener(scans_dir: str, today: str) -> str:
+    """Return content of today's screener file, or most recent available."""
+    today_file = os.path.join(scans_dir, f"ema_screener_{today}.md")
+    if os.path.exists(today_file):
+        return read_file(today_file)
+    files = sorted(glob.glob(os.path.join(scans_dir, "ema_screener_*.md")), reverse=True)
+    return read_file(files[0]) if files else ""
 
 
 def extract_today_block(content: str, today: str) -> str:
@@ -705,7 +714,7 @@ def main():
     momentum_content    = read_file(MOMENTUM_MD)
     weekly_content      = read_file(WEEKLY_RS_MD)
     zl25_content        = read_file(EMA25_ZL_MD)
-    ema_content         = read_file(EMA_MD)
+    ema_content         = find_latest_screener(EMA_SCANS_DIR, today)
     circuit_content     = read_file(CIRCUIT_MD)
     compression_content = read_file(COMPRESSION_MD)
     zl_squeeze_content  = read_file(ZL_SQUEEZE_MD)

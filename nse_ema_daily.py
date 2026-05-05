@@ -3,7 +3,8 @@
 NSE EMA Screener — daily change tracker.
 Criteria : EMA50 > EMA100  AND  EMA100 > EMA200  (full bullish stack)
 MCap     : ₹800 Cr – ₹1 Lakh Cr (NSE common equity only)
-Output   : ema_screener_changes.md  +  nse_ema_results.json  (state file)
+Output   : ema_screener_scans/ema_screener_YYYY-MM-DD.md  +  nse_ema_results.json
+Run locally only — not via GitHub Actions.
 """
 
 from tradingview_screener import Query, col
@@ -11,8 +12,9 @@ from datetime import datetime, timezone, timedelta
 import json, os
 
 IST        = timezone(timedelta(hours=5, minutes=30))
-DATA_FILE  = "nse_ema_results.json"
-MD_FILE    = "ema_screener_changes.md"
+BASE       = os.path.dirname(os.path.abspath(__file__))
+SCANS_DIR  = os.path.join(BASE, "ema_screener_scans")
+DATA_FILE  = os.path.join(BASE, "nse_ema_results.json")
 MC_LOW     = 800     * 1_00_00_000   # ₹800 Crore  in INR
 MC_HIGH    = 1_00_000 * 1_00_00_000  # ₹1 Lakh Crore in INR
 
@@ -39,7 +41,7 @@ def fetch() -> dict[str, float]:
 
 def load_previous() -> dict[str, float]:
     if os.path.exists(DATA_FILE):
-        with open(DATA_FILE) as f:
+        with open(DATA_FILE, encoding="utf-8") as f:
             return json.load(f)
     return {}
 
@@ -116,8 +118,10 @@ def main():
     current  = fetch()
     previous = load_previous()
 
+    os.makedirs(SCANS_DIR, exist_ok=True)
+    md_file = os.path.join(SCANS_DIR, f"ema_screener_{today}.md")
     md = build_md(current, previous, today)
-    with open(MD_FILE, "w", encoding="utf-8") as f:
+    with open(md_file, "w", encoding="utf-8") as f:
         f.write(md)
 
     save_current(current)
@@ -125,7 +129,7 @@ def main():
     additions = len(set(current) - set(previous))
     deletions = len(set(previous) - set(current))
     print(f"Done — {len(current)} stocks total | +{additions} additions | -{deletions} deletions")
-    print(f"Written: {MD_FILE}, {DATA_FILE}")
+    print(f"Written: {md_file}")
 
 
 if __name__ == "__main__":
