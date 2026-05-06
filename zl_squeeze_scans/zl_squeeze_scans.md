@@ -1,3 +1,75 @@
+# NSE ZL Squeeze Scan — 2026-05-06
+*Generated 2026-05-06 16:00 IST*
+
+### Scan definition
+| Filter | Value |
+|--------|-------|
+| Exchange | NSE common equity |
+| Price | > ₹50 |
+| Market cap | ₹800 Cr – ₹1 Lakh Cr |
+| RS filter | Daily RS > EMA9 · EMA9 rising OR Weekly RS > W-EMA9 · W-EMA9 rising |
+| Signal | ZLEMA25 rising AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) on last bar |
+| Squeeze Days | Consecutive bars the squeeze has been active |
+| ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since (capped 60d) |
+
+---
+
+**49 stocks: ZLEMA25 Rising + Squeeze ON**
+
+| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |
+|--------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|
+| [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 69.12 | +2.75% | 1d | 1d | +4.4% | ✓ | ✓ | ✓ | 20%  |
+| [BLUSPRING](https://in.tradingview.com/chart/?symbol=NSE:BLUSPRING) | 66.86 | -0.18% | 2d | 3d | +7.3% | ✓ | ✓ | ✓ | 20%  |
+| [RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK) | 335.85 | +0.87% | 3d | 4d | +7.4% | ✓ | ✓ | ✓ | 20%  |
+| [NATCOPHARM](https://in.tradingview.com/chart/?symbol=NSE:NATCOPHARM) | 1150.10 | +2.23% | 2d | 8d | +8.9% | ✓ | ✓ | ✓ | 20%  |
+| [VMART](https://in.tradingview.com/chart/?symbol=NSE:VMART) | 650.50 | +4.29% | 2d | 20d | +34.6% | ✓ | ✓ | ✓ | 20%  |
+| [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED) | 441.90 | +4.12% | 3d | 25d | +41.5% | ✓ | ✓ | ✓ | 20%  |
+| [RAYMONDLSL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDLSL) | 828.40 | +4.71% | 21d | 0d | +4.7% | ✓ | — | — | 20%  |
+| [XPROINDIA](https://in.tradingview.com/chart/?symbol=NSE:XPROINDIA) | 1113.80 | +7.58% | 11d | 0d | +7.6% | ✓ | ✓ | — | 20%  |
+| [ABBOTINDIA](https://in.tradingview.com/chart/?symbol=NSE:ABBOTINDIA) | 26300.00 | +3.93% | 6d | 0d | +3.9% | ✓ | — | — | 20%  |
+| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD) | 1319.80 | +6.69% | 4d | 0d | +6.7% | ✓ | — | — | 20%  |
+| [LATENTVIEW](https://in.tradingview.com/chart/?symbol=NSE:LATENTVIEW) | 303.90 | +4.81% | 3d | 0d | +4.8% | ✓ | — | — | 20%  |
+| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS) | 288.45 | +8.01% | 3d | 0d | +8.0% | ✓ | ✓ | — | 20%  |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | 548.00 | +2.33% | 3d | 0d | +2.3% | — | — | ✓ | 20%  |
+| [BIRLANU](https://in.tradingview.com/chart/?symbol=NSE:BIRLANU) | 1593.60 | +16.02% | 3d | 0d | +16.0% | ✓ | ✓ | — | 20%  |
+| [NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO) | 307.80 | +4.16% | 2d | 0d | +4.2% | ✓ | — | — | 20%  |
+| [KKCL](https://in.tradingview.com/chart/?symbol=NSE:KKCL) | 500.60 | +7.06% | 2d | 0d | +7.1% | ✓ | ✓ | — | 20%  |
+| [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH) | 219.65 | +9.51% | 1d | 0d | +9.5% | ✓ | ✓ | — | 20%  |
+| [AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA) | 128.87 | +6.31% | 1d | 0d | +6.3% | ✓ | ✓ | — | 20%  |
+| [NGLFINE](https://in.tradingview.com/chart/?symbol=NSE:NGLFINE) | 2640.80 | +8.23% | 41d | 1d | +16.9% | ✓ | ✓ | — | 20%  |
+| [INDSWFTLAB](https://in.tradingview.com/chart/?symbol=NSE:INDSWFTLAB) | 144.20 | +0.60% | 38d | 1d | +6.0% | ✓ | — | — | 20%  |
+| [TEXINFRA](https://in.tradingview.com/chart/?symbol=NSE:TEXINFRA) | 102.27 | -1.76% | 7d | 1d | +5.0% | ✓ | — | — | 20%  |
+| [BOROLTD](https://in.tradingview.com/chart/?symbol=NSE:BOROLTD) | 260.73 | +2.78% | 3d | 1d | +4.5% | ✓ | — | — | 20%  |
+| [RAMCOIND](https://in.tradingview.com/chart/?symbol=NSE:RAMCOIND) | 282.25 | +5.18% | 2d | 1d | +6.1% | ✓ | ✓ | — | 20%  |
+| [SHOPERSTOP](https://in.tradingview.com/chart/?symbol=NSE:SHOPERSTOP) | 339.15 | +14.67% | 26d | 2d | +17.0% | ✓ | ✓ | — | 20%  |
+| [HAPPSTMNDS](https://in.tradingview.com/chart/?symbol=NSE:HAPPSTMNDS) | 387.75 | +3.04% | 18d | 2d | +4.4% | ✓ | — | — | 20%  |
+| [DALMIASUG](https://in.tradingview.com/chart/?symbol=NSE:DALMIASUG) | 385.60 | -4.25% | 6d | 2d | +2.0% | — | — | ✓ | 20%  |
+| [ALIVUS](https://in.tradingview.com/chart/?symbol=NSE:ALIVUS) | 1125.00 | +4.50% | 3d | 2d | +11.9% | ✓ | ✓ | — | 20%  |
+| [TASTYBITE](https://in.tradingview.com/chart/?symbol=NSE:TASTYBITE) | 7384.50 | +1.30% | 3d | 2d | +6.9% | ✓ | — | — | 20%  |
+| [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL) | 508.05 | +0.84% | 2d | 2d | +4.2% | — | — | ✓ | 20%  |
+| [SOLARA](https://in.tradingview.com/chart/?symbol=NSE:SOLARA) | 512.80 | +2.31% | 3d | 3d | +6.9% | ✓ | ✓ | — | 20%  |
+| [INDIANHUME](https://in.tradingview.com/chart/?symbol=NSE:INDIANHUME) | 342.70 | +0.76% | 3d | 3d | +8.1% | ✓ | — | — | 20%  |
+| [SENCO](https://in.tradingview.com/chart/?symbol=NSE:SENCO) | 344.50 | -0.35% | 1d | 3d | +8.2% | ✓ | ✓ | — | 20%  |
+| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL) | 381.00 | +2.04% | 19d | 5d | +12.0% | ✓ | ✓ | — | 10% 🟩 |
+| [WESTLIFE](https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE) | 494.45 | +1.51% | 11d | 5d | +6.8% | ✓ | ✓ | — | 20%  |
+| [SANDHAR](https://in.tradingview.com/chart/?symbol=NSE:SANDHAR) | 509.35 | +2.12% | 3d | 5d | +8.1% | ✓ | — | — | 20%  |
+| [HEALTHX](https://in.tradingview.com/chart/?symbol=NSE:HEALTHX) | 284.25 | +3.84% | 35d | 6d | +5.9% | ✓ | — | — | 20%  |
+| [GANESHCP](https://in.tradingview.com/chart/?symbol=NSE:GANESHCP) | 206.00 | +1.67% | 4d | 6d | +10.1% | ✓ | ✓ | — | 20%  |
+| [LINDEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LINDEINDIA) | 7574.50 | +1.07% | 19d | 8d | +7.2% | ✓ | — | — | 20%  |
+| [V2RETAIL](https://in.tradingview.com/chart/?symbol=NSE:V2RETAIL) | 208.26 | +3.72% | 47d | 9d | +8.7% | ✓ | — | — | 20% 🟦 |
+| [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN) | 428.65 | -0.97% | 17d | 10d | +8.1% | ✓ | — | — | 20%  |
+| [PANAMAPET](https://in.tradingview.com/chart/?symbol=NSE:PANAMAPET) | 293.85 | +4.93% | 3d | 13d | +12.1% | ✓ | ✓ | — | 20%  |
+| [ALGOQUANT](https://in.tradingview.com/chart/?symbol=NSE:ALGOQUANT) | 59.30 | +3.49% | 18d | 16d | +13.4% | ✓ | ✓ | — | 20%  |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | 372.60 | +1.32% | 1d | 19d | +25.3% | — | ✓ | ✓ | 20%  |
+| [BECTORFOOD](https://in.tradingview.com/chart/?symbol=NSE:BECTORFOOD) | 203.79 | +2.06% | 4d | 21d | +13.8% | ✓ | — | — | 20%  |
+| [BOROSCI](https://in.tradingview.com/chart/?symbol=NSE:BOROSCI) | 121.79 | +3.95% | 3d | 21d | +18.1% | ✓ | ✓ | — | 20%  |
+| [MAXIND](https://in.tradingview.com/chart/?symbol=NSE:MAXIND) | 162.52 | +0.14% | 3d | 21d | +32.3% | ✓ | ✓ | — | 20%  |
+| [MONARCH](https://in.tradingview.com/chart/?symbol=NSE:MONARCH) | 310.25 | +3.26% | 1d | 21d | +24.2% | ✓ | ✓ | — | 20%  |
+| [GAEL](https://in.tradingview.com/chart/?symbol=NSE:GAEL) | 156.63 | -0.78% | 2d | 23d | +18.9% | — | — | ✓ | 20%  |
+| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR) | 258.40 | -4.05% | 9d | 29d | +32.6% | — | — | ✓ | 20%  |
+
+---
+
 # NSE ZL Squeeze Scan — 2026-05-05
 *Generated 2026-05-05 17:26 IST*
 
