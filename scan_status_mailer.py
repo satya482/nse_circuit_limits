@@ -191,8 +191,8 @@ def send_discord(today: str, status: dict, details: dict, all_ok: bool,
         icon   = "✅" if ok else "❌"
         detail = details.get(name, "—")
         link   = scanner_links.get(name)
-        label  = f"[{name}]({link})" if link else name
-        fields.append({"name": f"{icon} {label}", "value": detail, "inline": True})
+        value  = f"[{detail}]({link})" if link else detail
+        fields.append({"name": f"{icon} {name}", "value": value, "inline": True})
 
     embed = {
         "title":     f"NSE + US Scanners — {'All OK' if all_ok else 'Issues Detected'}",
