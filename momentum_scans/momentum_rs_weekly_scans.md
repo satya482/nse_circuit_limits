@@ -1,3 +1,44 @@
+# NSE Momentum Scan (Weekly RS) — 2026-05-06
+*Generated 2026-05-06 15:50 IST*
+
+**Entry Signals: 26** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 0**
+*(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
+
+### Entry Signals
+| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |
+|--------|--------|----------:|--------:|--------:|:-------:|
+| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.33% | 21d | +41.7% | 20%  |
+| [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.58% | 19d | +34.6% | 20%  |
+| [HBLENGINE](https://in.tradingview.com/chart/?symbol=NSE:HBLENGINE) | **STRONG** — ZLEMA25 touch + EMA20 rising | +6.78% | 22d | +39.0% | 20%  |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID) | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.34% | 25d | +56.8% | 20%  |
+| [AEROFLEX](https://in.tradingview.com/chart/?symbol=NSE:AEROFLEX) | **STRONG** — ZLEMA25 touch + EMA20 rising | +8.38% | 7d | +24.1% | 20%  |
+| [J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.59% | 7d | +8.6% | 20%  |
+| [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.86% | 21d | +41.2% | 20%  |
+| [SYRMA](https://in.tradingview.com/chart/?symbol=NSE:SYRMA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.09% | 23d | +37.0% | 20%  |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.37% | 7d | +12.2% | 20%  |
+| [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.30% | 23d | +31.3% | 20%  |
+| [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.87% | 19d | +24.1% | 20%  |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.96% | 23d | +50.5% | 20%  |
+| [INDIAGLYCO](https://in.tradingview.com/chart/?symbol=NSE:INDIAGLYCO) | **STRONG** — ZLEMA25 touch + EMA20 rising | +5.75% | 23d | +28.7% | 20%  |
+| [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.12% | 2d | +8.7% | 20%  |
+| [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.92% | 6d | +6.8% | 20%  |
+| [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.15% | 8d | +8.0% | 20%  |
+| [ALIVUS](https://in.tradingview.com/chart/?symbol=NSE:ALIVUS) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.50% | 2d | +8.4% | 20%  |
+| [GUJALKALI](https://in.tradingview.com/chart/?symbol=NSE:GUJALKALI) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.85% | 29d | +82.1% | 10% 🟨 |
+| [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.49% | 23d | +32.0% | 20%  |
+| [BHARATWIRE](https://in.tradingview.com/chart/?symbol=NSE:BHARATWIRE) | **STRONG** — ZLEMA25 touch + EMA20 rising | -3.62% | 21d | +45.9% | 20%  |
+| [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING) | **STRONG** — ZLEMA25 touch + EMA20 rising | +4.70% | 7d | +14.7% | 20%  |
+| [MASFIN](https://in.tradingview.com/chart/?symbol=NSE:MASFIN) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.82% | 21d | +16.0% | 20%  |
+| [APCOTEXIND](https://in.tradingview.com/chart/?symbol=NSE:APCOTEXIND) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.80% | 21d | +23.2% | 20%  |
+| [KINGFA](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.11% | 23d | +24.2% | 20% 🟦 |
+| [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | **STRONG** — ZLEMA25 touch + EMA20 rising | +2.28% | 38d | +35.0% | 20%  |
+| [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.20% | 7d | +12.6% | 20%  |
+
+### ZLEMA25 Turning Up *(low-risk early entries)*
+*No ZLEMA25 turns today.*
+
+---
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-05
 *Generated 2026-05-05 17:25 IST*
 
