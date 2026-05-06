@@ -10,6 +10,14 @@ function Log($msg) {
 
 Log "=== NSE_ScanStatusMailer START ==="
 
+# Ensure user-level env vars are available to child processes
+if (-not $env:DISCORD_WEBHOOK_URL) {
+    $env:DISCORD_WEBHOOK_URL = [System.Environment]::GetEnvironmentVariable("DISCORD_WEBHOOK_URL", "User")
+}
+if (-not $env:GMAIL_APP_PASSWORD) {
+    $env:GMAIL_APP_PASSWORD = [System.Environment]::GetEnvironmentVariable("GMAIL_APP_PASSWORD", "User")
+}
+
 try {
     & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\scan_status_mailer.py 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }

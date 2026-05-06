@@ -8,7 +8,7 @@ Setup: set GMAIL_APP_PASSWORD as a Windows env variable (run once as admin):
 Get an app password at: myaccount.google.com/apppasswords
 """
 
-import subprocess, smtplib, os, re, sys
+import subprocess, smtplib, os, re, sys, requests
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime, timezone, timedelta
@@ -178,6 +178,37 @@ def build_html_email(today: str, status: dict, details: dict, all_ok: bool,
 </body></html>"""
 
 
+def send_discord(today: str, status: dict, details: dict, all_ok: bool,
+                 scanner_links: dict) -> bool:
+    webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "")
+    if not webhook_url:
+        return False
+
+    color = 0x2ea44f if all_ok else 0xd73a49
+
+    fields = []
+    for name, ok in status.items():
+        icon   = "✅" if ok else "❌"
+        detail = details.get(name, "—")
+        link   = scanner_links.get(name)
+        label  = f"[{name}]({link})" if link else name
+        fields.append({"name": f"{icon} {label}", "value": detail, "inline": True})
+
+    embed = {
+        "title":     f"NSE + US Scanners — {'All OK' if all_ok else 'Issues Detected'}",
+        "color":     color,
+        "fields":    fields,
+        "footer":    {"text": f"satya482@gmail.com · {today}"},
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    if not all_ok:
+        failed = [n for n, ok in status.items() if not ok]
+        embed["description"] = f"⚠️ Missing: {', '.join(failed)}"
+
+    resp = requests.post(webhook_url, json={"embeds": [embed]}, timeout=10)
+    return resp.status_code in (200, 204)
+
+
 def send_email(subject: str, html: str) -> bool:
     app_pass = os.environ.get("GMAIL_APP_PASSWORD", "")
     if not app_pass:
@@ -230,6 +261,12 @@ def main():
         print(f"  Email sent to {TO_EMAIL}")
     else:
         print("  Email skipped — set GMAIL_APP_PASSWORD to enable.")
+
+    links = get_scanner_md_links(today)
+    if send_discord(today, status, details, all_ok, links):
+        print("  Discord notification sent.")
+    else:
+        print("  Discord skipped — set DISCORD_WEBHOOK_URL to enable.")
 
 
 if __name__ == "__main__":
