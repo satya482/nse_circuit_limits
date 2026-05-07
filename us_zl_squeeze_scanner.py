@@ -340,10 +340,14 @@ def main():
 
     print_results(findings)
 
+    dated_file = os.path.join(SCANS_DIR, f"us_zl_squeeze_scans_{TODAY}.md")
     md = build_markdown(findings)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
+    with open(dated_file, "w", encoding="utf-8") as fh:
+        fh.write(md)
     print(f"  Saved -> {MD_FILE}")
+    print(f"  Saved -> {dated_file}")
 
 
 if __name__ == "__main__":

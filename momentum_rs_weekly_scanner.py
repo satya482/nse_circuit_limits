@@ -404,17 +404,14 @@ def main():
     print_results(findings)
 
     os.makedirs(SCANS_DIR, exist_ok=True)
-    existing = ""
-    if os.path.exists(MD_FILE):
-        with open(MD_FILE, "r", encoding="utf-8") as fh:
-            existing = fh.read()
+    dated_file = os.path.join(SCANS_DIR, f"momentum_rs_weekly_scans_{TODAY}.md")
     md = build_markdown(findings, circuit)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
-        if existing:
-            fh.write(md + "\n\n---\n\n" + existing)
-        else:
-            fh.write(md + "\n" + STATIC_FOOTER)
+        fh.write(md)
+    with open(dated_file, "w", encoding="utf-8") as fh:
+        fh.write(md)
     print(f"\n  Saved -> {MD_FILE}")
+    print(f"  Saved -> {dated_file}")
 
 
 if __name__ == "__main__":

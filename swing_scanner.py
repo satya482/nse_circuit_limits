@@ -332,11 +332,11 @@ def print_results(findings: list[dict]) -> None:
 
 
 # ── Git push ──────────────────────────────────────────────────────────────────
-def git_commit_push(md_path: str) -> None:
-    rel = os.path.relpath(md_path, REPO_DIR)
+def git_commit_push(*md_paths: str) -> None:
+    rels = [os.path.relpath(p, REPO_DIR) for p in md_paths]
     cache_rel = os.path.relpath(INDEX_CACHE, REPO_DIR)
     cmds = [
-        ["git", "-C", REPO_DIR, "add", rel, cache_rel],
+        ["git", "-C", REPO_DIR, "add"] + rels + [cache_rel],
         ["git", "-C", REPO_DIR, "commit", "-m", f"swing scan {TODAY}"],
         ["git", "-C", REPO_DIR, "push"],
     ]
@@ -386,20 +386,17 @@ def main():
     ])
 
     os.makedirs(SCANS_DIR, exist_ok=True)
-    existing = ""
-    if os.path.exists(MD_FILE):
-        with open(MD_FILE, "r", encoding="utf-8") as fh:
-            existing = fh.read()
+    dated_file = os.path.join(SCANS_DIR, f"swing_scans_{TODAY}.md")
     md = build_markdown(findings, circuit)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
-        if existing:
-            fh.write(md + "\n\n---\n\n" + existing)
-        else:
-            fh.write(md + "\n" + STATIC_FOOTER)
+        fh.write(md)
+    with open(dated_file, "w", encoding="utf-8") as fh:
+        fh.write(md)
     print(f"\n  Saved -> {MD_FILE}")
+    print(f"  Saved -> {dated_file}")
 
     print("  Committing and pushing to GitHub...")
-    git_commit_push(MD_FILE)
+    git_commit_push(MD_FILE, dated_file)
     print("  Done.")
 
 

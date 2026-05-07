@@ -89,11 +89,11 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
-            bars = (n - 1) - i
-            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            bars = (n - 1) - i + 1          # turn day counts as day 1
+            pct  = (closes.iloc[-1] / closes.iloc[i] - 1) * 100   # base = close on turn day
             return bars, round(pct, 2)
-    cap_idx = max(0, n - ZL_TURN_CAP - 1)
-    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[max(0, cap_idx - 1)] - 1) * 100, 2)
+    cap_idx = max(0, n - ZL_TURN_CAP)
+    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
 
 
 # ── Watchlist ──────────────────────────────────────────────────────────────────
@@ -361,17 +361,14 @@ def main():
 
     print_results(findings)
 
-    existing = ""
-    if os.path.exists(MD_FILE):
-        with open(MD_FILE, "r", encoding="utf-8") as fh:
-            existing = fh.read()
+    dated_file = os.path.join(SCANS_DIR, f"ema25_zl_scans_{TODAY}.md")
     md = build_markdown(findings, circuit)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
-        if existing:
-            fh.write(md + "\n\n---\n\n" + existing)
-        else:
-            fh.write(md)
+        fh.write(md)
+    with open(dated_file, "w", encoding="utf-8") as fh:
+        fh.write(md)
     print(f"\n  Saved -> {MD_FILE}")
+    print(f"  Saved -> {dated_file}")
 
 
 if __name__ == "__main__":
