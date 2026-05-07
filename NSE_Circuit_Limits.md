@@ -1,6 +1,6 @@
 # NSE Circuit Limit Dashboard
 
-_Last updated: 2026-05-05 17:27:17_
+_Last updated: 2026-05-07 16:51:55_
 
 Changes in your TradingView watchlist:
 
@@ -28,8 +28,3 @@ Changes in your TradingView watchlist:
 | 13-FEB-2026 | [**SMLMAH**](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH) | SML MAHINDRA LIMITED | 10% | 5% 🟥 Red |
 | 13-FEB-2026 | [**AVANTIFEED**](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | AVANTI FEEDS LIMITED | 20% | 10% 🟨 Yellow |
 | 13-FEB-2026 | [**APEX**](https://in.tradingview.com/chart/?symbol=NSE:APEX) | APEX FROZEN FOODS LIMITED | 20% | 10% 🟨 Yellow |
-| 05-FEB-2026 | [**SMLMAH**](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH) | SML MAHINDRA LIMITED | 5% | 10% 🟩 Green |
-| 05-FEB-2026 | [**KINGFA**](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | KINGFA SCIENCE & TECHNOLOGY (INDIA) LIMITED | 10% | 20% 🟦 Blue |
-| 05-FEB-2026 | [**HIRECT**](https://in.tradingview.com/chart/?symbol=NSE:HIRECT) | HIND RECTIFIERS LIMITED | 10% | 20% 🟦 Blue |
-| 05-FEB-2026 | [**GRWRHITECH**](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | GARWARE HI-TECH FILMS LIMITED | 20% | 10% 🟨 Yellow |
-| 05-FEB-2026 | [**GMBREW**](https://in.tradingview.com/chart/?symbol=NSE:GMBREW) | GM BREWERIES LIMITED | 10% | 20% 🟦 Blue |
