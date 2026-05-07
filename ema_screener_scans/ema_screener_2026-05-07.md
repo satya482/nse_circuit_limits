@@ -2,31 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 322** &nbsp;|&nbsp; **Additions: 15** &nbsp;|&nbsp; **Deletions: 1**
+**Total stocks in list: 322** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (15)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [APCOTEXIND](https://in.tradingview.com/chart/?symbol=NSE:APCOTEXIND) | +19.99% |
-| [E2E](https://in.tradingview.com/chart/?symbol=NSE:E2E) | +5.00% |
-| [STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL) | +4.94% |
-| [FINCABLES](https://in.tradingview.com/chart/?symbol=NSE:FINCABLES) | +4.06% |
-| [POCL](https://in.tradingview.com/chart/?symbol=NSE:POCL) | +3.39% |
-| [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN) | +3.06% |
-| [SBCL](https://in.tradingview.com/chart/?symbol=NSE:SBCL) | +2.97% |
-| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | +2.05% |
-| [PNGJL](https://in.tradingview.com/chart/?symbol=NSE:PNGJL) | +1.99% |
-| [BHARATWIRE](https://in.tradingview.com/chart/?symbol=NSE:BHARATWIRE) | +1.25% |
-| [KIMS](https://in.tradingview.com/chart/?symbol=NSE:KIMS) | +0.94% |
-| [SWARAJENG](https://in.tradingview.com/chart/?symbol=NSE:SWARAJENG) | +0.48% |
-| [SIGNPOST](https://in.tradingview.com/chart/?symbol=NSE:SIGNPOST) | +0.44% |
-| [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | -0.29% |
-| [SHREEPUSHK](https://in.tradingview.com/chart/?symbol=NSE:SHREEPUSHK) | -0.56% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (1)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [VIESL](https://in.tradingview.com/chart/?symbol=NSE:VIESL) | -1.92% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (322)
 | # | Symbol | Day Change % |
