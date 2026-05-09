@@ -89,8 +89,8 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
-            bars = (n - 1) - i + 1          # turn day counts as day 1
-            pct  = (closes.iloc[-1] / closes.iloc[i] - 1) * 100   # base = close on turn day
+            bars = (n - 1) - i + 1
+            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
