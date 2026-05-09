@@ -31,6 +31,7 @@ SCANNER_KEYWORDS = {
     "NSE ZL Squeeze":        "scan: zl-squeeze",
     "US ZL Squeeze":         "us-zl-squeeze",
     "Inside Bar Scanner":    "inside-bar:",
+    "Weekly ZL Scanner":     "weekly-zl:",
     "EMA Screener":          "screener:",
     "Dashboard":             "dashboard",
 }
@@ -43,6 +44,7 @@ SCANNER_MD_LINKS_STATIC = {
     "NSE ZL Squeeze":        f"{BLOB}/zl_squeeze_scans/zl_squeeze_scans.md",
     "US ZL Squeeze":         f"{BLOB}/us_zl_squeeze_scans/us_zl_squeeze_scans.md",
     "Inside Bar Scanner":    f"{BLOB}/inside_bar_scans/inside_bar_scans.md",
+    "Weekly ZL Scanner":     f"{BLOB}/weekly_zl_scans/weekly_zl_scans.md",
     "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
 }
 
@@ -112,6 +114,13 @@ def parse_inside_bar_count(md: str, today: str) -> str:
     return (m.group(1) + " signals") if m else "—"
 
 
+def parse_weekly_zl_count(md: str, today: str) -> str:
+    if today not in md[:80]:
+        return "—"
+    m = re.search(r'\*\*(\d+) stocks: Weekly ZLEMA25 Rising \+ Squeeze ON\*\*', md)
+    return (m.group(1) + " signals") if m else "—"
+
+
 def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
     if today not in md[:100]:
         return "—", "—"
@@ -128,6 +137,7 @@ def get_scan_details(today: str) -> dict:
     nse_zl_md      = read_file(os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md"))
     us_zl_md       = read_file(os.path.join(BASE, "us_zl_squeeze_scans", "us_zl_squeeze_scans.md"))
     inside_bar_md  = read_file(os.path.join(BASE, "inside_bar_scans", "inside_bar_scans.md"))
+    weekly_zl_md   = read_file(os.path.join(BASE, "weekly_zl_scans", "weekly_zl_scans.md"))
     screener_md    = read_file(os.path.join(BASE, "ema_screener_scans", f"ema_screener_{today}.md"))
     zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
     ema_adds, ema_dels  = parse_screener_counts(screener_md, today)
@@ -140,6 +150,7 @@ def get_scan_details(today: str) -> dict:
         "NSE ZL Squeeze":    parse_zl_squeeze_count(nse_zl_md, today),
         "US ZL Squeeze":     parse_zl_squeeze_count(us_zl_md,  today),
         "Inside Bar Scanner":parse_inside_bar_count(inside_bar_md, today),
+        "Weekly ZL Scanner": parse_weekly_zl_count(weekly_zl_md, today),
         "EMA Screener":      f"+{ema_adds} adds / -{ema_dels} exits",
         "Dashboard":         "generated",
     }

@@ -40,6 +40,7 @@ Run-Scanner "MomentumRSWeekly"     "$ROOT\run_momentum_rs_weekly_scanner.ps1"
 Run-Scanner "EMA25_ZL"             "$ROOT\run_ema25_zl_scanner.ps1"
 Run-Scanner "ZL_Squeeze"           "$ROOT\run_zl_squeeze_scanner.ps1"
 Run-Scanner "InsideBarScanner"     "$ROOT\run_inside_bar_scanner.ps1"
+Run-Scanner "WeeklyZL"             "$ROOT\run_weekly_zl_scanner.ps1"
 
 $comp = "$ROOT\ema-compression-scanner\run_scanner.ps1"
 if (Test-Path $comp) { Run-Scanner "EMA_Compression" $comp }
