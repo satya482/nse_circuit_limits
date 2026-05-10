@@ -12,7 +12,7 @@ Extra:     Squeeze duration — consecutive bars the squeeze has been active
 Output: zl_squeeze_scans/zl_squeeze_scans.md
 """
 
-import sys, os, csv
+import sys, os, csv, json
 from datetime import datetime
 
 import pandas as pd
@@ -24,6 +24,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR   = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR  = os.path.join(REPO_DIR, "zl_squeeze_scans")
+_LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
+_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
 TODAY      = datetime.now().strftime("%Y-%m-%d")
 MD_FILE    = os.path.join(SCANS_DIR, "zl_squeeze_scans.md")
 
@@ -277,8 +279,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
     T, F = "✓", "—"
     hdr = [
-        "| Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |",
-        "|--------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|",
+        "| Symbol | Label | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |",
+        "|--------|-------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|",
     ]
     rows = []
     for f in sorted_f:
@@ -287,8 +289,10 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         zl_d   = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds     = "+" if f["day_chg"] >= 0 else ""
+        lbl    = _LABELS.get(f["symbol"], "")
         rows.append(
             f"| [{f['symbol']}]({tv}) "
+            f"| {lbl} "
             f"| {f['close']:.2f} "
             f"| {ds}{f['day_chg']:.2f}% "
             f"| {f['squeeze_days']}d "

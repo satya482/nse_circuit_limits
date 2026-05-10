@@ -340,7 +340,9 @@ def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
 def parse_zl_squeeze(content: str, today: str) -> list:
     """Parse zl_squeeze_scans.md → list of signal rows for today.
 
-    Table cols: Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | Circuit
+    New cols (11): Symbol | Label | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit
+    Old cols (10): Symbol | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | ...
+    Detect new format by checking if parts[1] looks like a label (not a number).
     """
     block = extract_today_section(content, today)
     if not block:
@@ -348,20 +350,36 @@ def parse_zl_squeeze(content: str, today: str) -> list:
     rows = []
     for line in block.splitlines():
         ls = line.strip()
-        if not ls.startswith('|') or ls.startswith('| Symbol') or ls.startswith('|---'):
+        if not ls.startswith('|') or ls.startswith('| Symbol') or ls.startswith('|---') or ls.startswith('| ---'):
             continue
         parts = [p.strip() for p in ls.split('|') if p.strip()]
         if len(parts) < 6:
             continue
-        rows.append({
-            "symbol":    _strip_md_link(parts[0]),
-            "close":     parts[1],
-            "day_chg":   parts[2],
-            "sqz_days":  parts[3],
-            "zl_days":   parts[4],
-            "zl_pct":    parts[5],
-            "circuit":   parts[6] if len(parts) > 6 else "",
-        })
+        try:
+            float(parts[1].replace(',', '').replace('₹', ''))
+            new_fmt = False  # parts[1] is numeric → old format (Close)
+        except ValueError:
+            new_fmt = True   # parts[1] is text → new format (Label)
+        if new_fmt and len(parts) >= 7:
+            rows.append({
+                "symbol":   _strip_md_link(parts[0]),
+                "close":    parts[2],
+                "day_chg":  parts[3],
+                "sqz_days": parts[4],
+                "zl_days":  parts[5],
+                "zl_pct":   parts[6],
+                "circuit":  parts[10] if len(parts) > 10 else (parts[7] if len(parts) > 7 else ""),
+            })
+        else:
+            rows.append({
+                "symbol":   _strip_md_link(parts[0]),
+                "close":    parts[1],
+                "day_chg":  parts[2],
+                "sqz_days": parts[3],
+                "zl_days":  parts[4],
+                "zl_pct":   parts[5],
+                "circuit":  parts[6] if len(parts) > 6 else "",
+            })
     return rows
 
 
@@ -653,6 +671,7 @@ def build_html(today: str, now_str: str,
         sqz_rows_html.append(
             f'<tr>'
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="lbl">{_lbl(r["symbol"])}</td>'
             f'<td class="num">{r["close"]}</td>'
             f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
             f'<td class="{sqz_cls}">{sqz_d}</td>'
@@ -667,8 +686,8 @@ def build_html(today: str, now_str: str,
 <div class="section">
   <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON ({len(zl_squeeze)} stocks, top 30 by ZL Days asc)</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
-    <tbody>{table_or_empty(sqz_rows_html, 7, "No signals today")}</tbody>
+    <thead><tr><th>Symbol</th><th>Label</th><th>Close</th><th>Day Chg</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(sqz_rows_html, 8, "No signals today")}</tbody>
   </table>
 </div>"""
 
