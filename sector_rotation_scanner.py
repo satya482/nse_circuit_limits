@@ -373,12 +373,14 @@ def main():
             rising_str   = ", ".join(z["rising_syms"][:6])
             if len(z["rising_syms"]) > 6:
                 rising_str += f" +{len(z['rising_syms']) - 6}"
-            avg_days_str = f"{z['avg_zl_days']:.0f}d" if z["avg_zl_days"] is not None else "—"
-            avg_pct_str  = f"{z['avg_zl_pct']:+.1f}%" if z["avg_zl_pct"] is not None else "—"
+            avg_days_str  = f"{z['avg_zl_days']:.0f}d" if z["avg_zl_days"] is not None else "—"
+            avg_pct_str   = f"{z['avg_zl_pct']:+.1f}%" if z["avg_zl_pct"] is not None else "—"
+            breadth_arrow = "▲" if z["breadth_pct"] >= 0.6 else ("↑" if z["breadth_pct"] >= 0.4 else "")
+            breadth_str   = f"{breadth_arrow} {z['breadth_pct'] * 100:.0f}%"
             lines.append(
                 f"| {z['label']} "
                 f"| {z['zl_count']}/{z['zl_total']} "
-                f"| {z['breadth_pct'] * 100:.0f}% "
+                f"| {breadth_str} "
                 f"| {avg_days_str} "
                 f"| {avg_pct_str} "
                 f"| {cluster_flag} "

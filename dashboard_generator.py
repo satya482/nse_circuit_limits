@@ -706,14 +706,16 @@ def build_html(today: str, now_str: str,
         zlb_rows_html = []
         for z in zl_breadth[:20]:
             has_cluster = z["cluster"] and z["cluster"] != "—"
-            pct_val = int(z["breadth"].rstrip("%")) if z["breadth"].rstrip("%").isdigit() else 0
-            pct_cls = "chg-g" if pct_val >= 70 else ("chg-g" if pct_val >= 50 else "")
+            # breadth string now may have arrow prefix like "▲ 92%" or "↑ 55%"
+            pct_raw = z["breadth"].replace("▲", "").replace("↑", "").replace("%", "").strip()
+            pct_val = int(pct_raw) if pct_raw.isdigit() else 0
+            pct_cls = "chg-g" if pct_val >= 60 else ""
             cluster_cell = f'<td style="color:var(--gld)">{z["cluster"]}</td>' if has_cluster else f'<td class="nm">—</td>'
             zlb_rows_html.append(
                 f'<tr>'
                 f'<td>{z["label"]}</td>'
                 f'<td class="num">{z["zl_rising"]}</td>'
-                f'<td class="{pct_cls}" style="font-weight:600">{z["breadth"]}</td>'
+                f'<td class="{pct_cls}" style="font-weight:600;color:var(--grn)">{z["breadth"]}</td>'
                 f'<td class="num">{z["avg_days"]}</td>'
                 f'<td class="num">{z["avg_pct"]}</td>'
                 f'{cluster_cell}'
