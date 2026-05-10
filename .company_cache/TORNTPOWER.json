@@ -1,0 +1,14 @@
+{
+  "symbol": "TORNTPOWER",
+  "name": "Torrent Power Limited",
+  "trendlyne_description": "Torrent Power Limited is a leading integrated power utility company in India, operating across the entire power value chain including generation, transmission, and distribution. Headquartered in Ahmedabad, Gujarat, it is part of the Torrent Group, wh... Read More",
+  "screener_description": "Torrent Power Ltd is a leading integrated power utility company in India with presence across generation, transmission and distribution of power. Its operations are spread across the states of Gujarat, Maharashtra, Uttar Pradesh and Karnataka. [1]",
+  "combined_description": "Torrent Power Limited is a leading integrated power utility company in India, operating across the entire power value chain including generation, transmission, and distribution. Headquartered in Ahmedabad, Gujarat, it is part of the Torrent Group, wh... Read More Torrent Power Ltd is a leading integrated power utility company in India with presence across generation, transmission and distribution of power. Its operations are spread across the states of Gujarat, Maharashtra, Uttar Pradesh and Karnataka. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:00:29.162693+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Power generation transmission distribution utility Gujarat Maharashtra"
+}

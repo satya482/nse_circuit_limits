@@ -1,0 +1,14 @@
+{
+  "symbol": "TAC",
+  "name": "TAC Infosec Limited",
+  "trendlyne_description": "TAC Infosec Ltd. (TAC Security) is a global cybersecurity company specializing in vulnerability management. The company provides a software-as-a-service (SaaS) platform that helps enterprises and government organizations identify, prioritize, and rem... Read More",
+  "screener_description": "Incorporated in 2016, TAC Infosec Ltd is a global cybersecurity company specializing in vulnerability management [1]",
+  "combined_description": "TAC Infosec Ltd. (TAC Security) is a global cybersecurity company specializing in vulnerability management. The company provides a software-as-a-service (SaaS) platform that helps enterprises and government organizations identify, prioritize, and rem... Read More Incorporated in 2016, TAC Infosec Ltd is a global cybersecurity company specializing in vulnerability management [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:04:32.918320+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Cloud vulnerability scanning platform for enterprises"
+}

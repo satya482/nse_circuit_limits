@@ -1,0 +1,14 @@
+{
+  "symbol": "GPPL",
+  "name": "Gujarat Pipavav Port Limited",
+  "trendlyne_description": "Gujarat Pipavav Port Ltd. (GPPL) operates as a significant gateway port on the west coast of India, located in the Saurashtra region of Gujarat. As the first private sector port in the country, it functions under a 30-year concession agreement with t... Read More",
+  "screener_description": "Gujarat Pipavav Port is India's first private sector port located on the south west coast of Gujarat near Bhavnagar. The port is strategically placed to on International Maritime Trade route which connects India with US, Europe, Africa, Middle East on one side and Far east on the other side.",
+  "combined_description": "Gujarat Pipavav Port Ltd. (GPPL) operates as a significant gateway port on the west coast of India, located in the Saurashtra region of Gujarat. As the first private sector port in the country, it functions under a 30-year concession agreement with t... Read More Gujarat Pipavav Port is India's first private sector port located on the south west coast of Gujarat near Bhavnagar. The port is strategically placed to on International Maritime Trade route which connects India with US, Europe, Africa, Middle East on one side and Far east on the other side.",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:31:23.534735+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Container cargo handling, west coast gateway port"
+}

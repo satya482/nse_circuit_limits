@@ -1,0 +1,14 @@
+{
+  "symbol": "GODREJIND",
+  "name": "Godrej Industries Limited",
+  "trendlyne_description": "Godrej Industries Ltd. (GIL) is a prominent holding company of the Godrej Industries Group (GIG), serving as a central entity for diverse business interests spanning chemicals, real estate, agriculture, and financial services. Established in 1897 and... Read More",
+  "screener_description": "Godrej Industries is one of the holding companies of Godrej Group. It is one of the leading manufacturers of oleochemicals on a standalone basis.",
+  "combined_description": "Godrej Industries Ltd. (GIL) is a prominent holding company of the Godrej Industries Group (GIG), serving as a central entity for diverse business interests spanning chemicals, real estate, agriculture, and financial services. Established in 1897 and... Read More Godrej Industries is one of the holding companies of Godrej Group. It is one of the leading manufacturers of oleochemicals on a standalone basis.",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:21:48.308716+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Oleochemicals, real estate, agribusiness conglomerate holding company"
+}

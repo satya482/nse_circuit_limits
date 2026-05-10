@@ -1,0 +1,14 @@
+{
+  "symbol": "INA",
+  "name": "Insolation Energy Ltd.",
+  "trendlyne_description": "Insolation Energy Limited (INA) is a prominent Indian renewable energy company specializing in the manufacturing of high-efficiency solar photovoltaic (PV) modules. Founded in 2017 and headquartered in Jaipur, Rajasthan, the company has established i... Read More",
+  "screener_description": "Incorporated in 2015, Insolation Energy Ltd is engaged in the business of manufacturing solar panels and modules of high efficiency of various sizes. The company's 200 MW SPV Module manufacturing unit is located in Jaipur, spread over more than 60,000 Sq. ft area with the latest machinery. [1]",
+  "combined_description": "Insolation Energy Limited (INA) is a prominent Indian renewable energy company specializing in the manufacturing of high-efficiency solar photovoltaic (PV) modules. Founded in 2017 and headquartered in Jaipur, Rajasthan, the company has established i... Read More Incorporated in 2015, Insolation Energy Ltd is engaged in the business of manufacturing solar panels and modules of high efficiency of various sizes. The company's 200 MW SPV Module manufacturing unit is located in Jaipur, spread over more than 60,000 Sq. ft area with the latest machinery. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:37:24.678576+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Solar PV module manufacturing for grid and residential"
+}

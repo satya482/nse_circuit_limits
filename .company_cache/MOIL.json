@@ -1,0 +1,14 @@
+{
+  "symbol": "MOIL",
+  "name": "Moil Limited",
+  "trendlyne_description": "MOIL Ltd. is a Schedule-A, Miniratna Category-I Central Public Sector Enterprise (CPSE) under the Ministry of Steel, Government of India. It is the largest producer of manganese ore in India, operating with a substantial market share and catering pri... Read More",
+  "screener_description": "MOIL Ltd is primarily engaged in mining of manganese ore and is the largest manganese ore producer in the country. [1] It is a miniratna state-owned company owned by Govt. of India. [2]",
+  "combined_description": "MOIL Ltd. is a Schedule-A, Miniratna Category-I Central Public Sector Enterprise (CPSE) under the Ministry of Steel, Government of India. It is the largest producer of manganese ore in India, operating with a substantial market share and catering pri... Read More MOIL Ltd is primarily engaged in mining of manganese ore and is the largest manganese ore producer in the country. [1] It is a miniratna state-owned company owned by Govt. of India. [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:08:17.501073+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Manganese ore mining and production for steel industry"
+}

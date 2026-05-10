@@ -1,0 +1,14 @@
+{
+  "symbol": "TFCILTD",
+  "name": "Tourism Finance Corporation of India Limited",
+  "trendlyne_description": "Tourism Finance Corporation of India Ltd. (TFCI) is a specialized financial institution in India dedicated to the development of the tourism industry. Established to cater to the specific needs of the tourism sector, it provides financial assista... Read More",
+  "screener_description": "Tourism Finance Corporation of India Ltd provides financial assistance to the tourism sector comprising hotels, resorts, restaurants, food courts, amusement parks, ropeways, multiplexes, etc. [1]",
+  "combined_description": "Tourism Finance Corporation of India Ltd. (TFCI) is a specialized financial institution in India dedicated to the development of the tourism industry. Established to cater to the specific needs of the tourism sector, it provides financial assista... Read More Tourism Finance Corporation of India Ltd provides financial assistance to the tourism sector comprising hotels, resorts, restaurants, food courts, amusement parks, ropeways, multiplexes, etc. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:46:41.833373+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Tourism sector financing for hotels resorts restaurants amusement parks"
+}

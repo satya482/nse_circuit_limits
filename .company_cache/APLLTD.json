@@ -1,0 +1,14 @@
+{
+  "symbol": "APLLTD",
+  "name": "Alembic Pharmaceuticals Limited",
+  "trendlyne_description": "Alembic Pharmaceuticals Ltd. (Alembic) is an integrated pharmaceutical company engaged in the development, manufacturing, and marketing of generic pharmaceutical products and Active Pharmaceutical Ingredients (APIs) worldwide. With a legacy spanning ... Read More",
+  "screener_description": "Alembic Pharmaceuticals is in the business of development, manufacturing, and marketing of Pharmaceuticals products i.e. Formulations and Active Pharmaceutical Ingredients. The company has 3 R&D and 5 manufacturing facilities.",
+  "combined_description": "Alembic Pharmaceuticals Ltd. (Alembic) is an integrated pharmaceutical company engaged in the development, manufacturing, and marketing of generic pharmaceutical products and Active Pharmaceutical Ingredients (APIs) worldwide. With a legacy spanning ... Read More Alembic Pharmaceuticals is in the business of development, manufacturing, and marketing of Pharmaceuticals products i.e. Formulations and Active Pharmaceutical Ingredients. The company has 3 R&D and 5 manufacturing facilities.",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:04:25.748266+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Generic drugs and APIs for global markets"
+}

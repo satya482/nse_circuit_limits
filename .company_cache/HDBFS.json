@@ -1,0 +1,14 @@
+{
+  "symbol": "HDBFS",
+  "name": "HDB Financial Services Limited",
+  "trendlyne_description": "HDB Financial Services Limited (HDBFS) is a leading non-deposit-taking Non-Banking Financial Company (NBFC) in India, catering primarily to the underserved and underbanked segments. As a subsidiary of HDFC Bank, it operates as an **Upper ... Read More",
+  "screener_description": "Incorporated in 2007, HDB Financial Services Ltd is in the business of lending and providing BPO services [1] One of the largest retail-focused non-banking financial company, its [2] lending products are offered throughour three business verticals: Enterprise Lending, Asset Finance and Consumer Finance",
+  "combined_description": "HDB Financial Services Limited (HDBFS) is a leading non-deposit-taking Non-Banking Financial Company (NBFC) in India, catering primarily to the underserved and underbanked segments. As a subsidiary of HDFC Bank, it operates as an **Upper ... Read More Incorporated in 2007, HDB Financial Services Ltd is in the business of lending and providing BPO services [1] One of the largest retail-focused non-banking financial company, its [2] lending products are offered throughour three business verticals: Enterprise Lending, Asset Finance and Consumer Finance",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:12:39.297297+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "NBFC auto loans two-wheeler finance underbanked retail lending"
+}

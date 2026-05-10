@@ -1,0 +1,14 @@
+{
+  "symbol": "KIOCL",
+  "name": "KIOCL Ltd",
+  "trendlyne_description": "KIOCL Limited is a Government of India enterprise under the Ministry of Steel, specializing in the manufacturing of high-quality iron ore pellets and pig iron. As a pioneer in the iron ore mining and pelletization industry in India, the company opera... Read More",
+  "screener_description": "KIOCL is a flagship company under the Ministry of Steel, GoI, with Miniratna status. It is an export-oriented unit with expertise in iron ore mining, filtration technology, and the production of high-quality pellets. [1]",
+  "combined_description": "KIOCL Limited is a Government of India enterprise under the Ministry of Steel, specializing in the manufacturing of high-quality iron ore pellets and pig iron. As a pioneer in the iron ore mining and pelletization industry in India, the company opera... Read More KIOCL is a flagship company under the Ministry of Steel, GoI, with Miniratna status. It is an export-oriented unit with expertise in iron ore mining, filtration technology, and the production of high-quality pellets. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:37:01.851335+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Iron ore pellets and pig iron manufacturing for steelmakers"
+}

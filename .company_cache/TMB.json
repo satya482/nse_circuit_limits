@@ -1,0 +1,14 @@
+{
+  "symbol": "TMB",
+  "name": "Tamilnad Mercantile Bank Limited",
+  "trendlyne_description": "Tamilnad Mercantile Bank Ltd. (TMB) is a long-standing private sector bank in India, primarily serving the Retail, Agriculture, and MSME (RAM) segments. Established in 1921, the bank has built a strong regional presence, particularly in South Ind... Read More",
+  "screener_description": "Incorporated in 1921, Tamilnad Mercantile Bank (TMB) is one of the oldest private sector banks in India. It offers an array of banking and financial services to retail customers, micro, small, and medium enterprises (MSMEs). [1]",
+  "combined_description": "Tamilnad Mercantile Bank Ltd. (TMB) is a long-standing private sector bank in India, primarily serving the Retail, Agriculture, and MSME (RAM) segments. Established in 1921, the bank has built a strong regional presence, particularly in South Ind... Read More Incorporated in 1921, Tamilnad Mercantile Bank (TMB) is one of the oldest private sector banks in India. It offers an array of banking and financial services to retail customers, micro, small, and medium enterprises (MSMEs). [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:18:52.105621+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Private bank serving retail agriculture MSME segments South India"
+}

@@ -1,0 +1,14 @@
+{
+  "symbol": "NIBE",
+  "name": "Nibe Ltd.",
+  "trendlyne_description": "Nibe Ltd. (NIBE) is a specialized engineering firm primarily engaged in the defense, aerospace, and renewable energy sectors. The company serves as a strategic partner to major defense organizations, specializing in the manufacturing of critical comp... Read More",
+  "screener_description": "Incorporated in 2005. Nibe Ltd is in the business of manufacturing critical components for Defence, E-Vehicles and Software Development.",
+  "combined_description": "Nibe Ltd. (NIBE) is a specialized engineering firm primarily engaged in the defense, aerospace, and renewable energy sectors. The company serves as a strategic partner to major defense organizations, specializing in the manufacturing of critical comp... Read More Incorporated in 2005. Nibe Ltd is in the business of manufacturing critical components for Defence, E-Vehicles and Software Development.",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:12:32.551214+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Defense aerospace components manufacturing renewable energy"
+}

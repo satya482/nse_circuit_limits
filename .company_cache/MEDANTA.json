@@ -1,0 +1,14 @@
+{
+  "symbol": "MEDANTA",
+  "name": "Global Health Limited",
+  "trendlyne_description": "Global Health Limited (Medanta) is a prominent private multi-specialty tertiary care provider in North and East India. Founded by cardiac surgeon Dr. Naresh Trehan, the company operates under the Medanta brand, delivering complex quaternary care ... Read More",
+  "screener_description": "Global Health Limited is one of the largest private multi-specialty tertiary care providers operating in the North and East regions of India. The company has key specialties in cardiology and cardiac science, neurosciences, oncology, digestive and hepatobiliary sciences, orthopedics, liver transplant, and kidney and urology. [1]",
+  "combined_description": "Global Health Limited (Medanta) is a prominent private multi-specialty tertiary care provider in North and East India. Founded by cardiac surgeon Dr. Naresh Trehan, the company operates under the Medanta brand, delivering complex quaternary care ... Read More Global Health Limited is one of the largest private multi-specialty tertiary care providers operating in the North and East regions of India. The company has key specialties in cardiology and cardiac science, neurosciences, oncology, digestive and hepatobiliary sciences, orthopedics, liver transplant, and kidney and urology. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:09:35.932927+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Private tertiary hospital chain cardiology oncology neuroscience"
+}

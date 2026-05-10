@@ -1,0 +1,14 @@
+{
+  "symbol": "BANKINDIA",
+  "name": "Bank of India",
+  "trendlyne_description": "Bank of India (BOI) is a prominent public sector bank in India with a significant global presence. Established in 1906, the bank has evolved into a full-service financial institution, catering to retail, MSME, and corporate segments. As of late 2025,... Read More",
+  "screener_description": "Bank of India is an India-based bank. The Bank's segments include Treasury Operations, Wholesale Banking and Retail Banking. The Treasury operations segment includes the entire investment portfolio, which is dealing in government and other securities, money market operations and foreign exchange operations.(Source : Company Web-site )",
+  "combined_description": "Bank of India (BOI) is a prominent public sector bank in India with a significant global presence. Established in 1906, the bank has evolved into a full-service financial institution, catering to retail, MSME, and corporate segments. As of late 2025,... Read More Bank of India is an India-based bank. The Bank's segments include Treasury Operations, Wholesale Banking and Retail Banking. The Treasury operations segment includes the entire investment portfolio, which is dealing in government and other securities, money market operations and foreign exchange operations.(Source : Company Web-site )",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:26:59.279930+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Public sector bank serving retail MSME corporate segments"
+}

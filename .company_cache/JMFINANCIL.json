@@ -1,0 +1,14 @@
+{
+  "symbol": "JMFINANCIL",
+  "name": "JM Financial Limited",
+  "trendlyne_description": "JM Financial Ltd. (JMFINANCIL) is an integrated financial services group in India, offering a wide range of services across investment banking, mortgage lending, distressed credit, and asset management. The company operates through a hub-and-spoke mo... Read More",
+  "screener_description": "JM Financial Ltd is an integrated and diversified financial services group. Its primary businesses include mortgage lending, distressed credit, asset management. It is also engaged in investment banking and the management of private equity funds. [1]",
+  "combined_description": "JM Financial Ltd. (JMFINANCIL) is an integrated financial services group in India, offering a wide range of services across investment banking, mortgage lending, distressed credit, and asset management. The company operates through a hub-and-spoke mo... Read More JM Financial Ltd is an integrated and diversified financial services group. Its primary businesses include mortgage lending, distressed credit, asset management. It is also engaged in investment banking and the management of private equity funds. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:54:15.524829+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Investment banking, mortgages, distressed assets, asset management"
+}

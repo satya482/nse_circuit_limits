@@ -1,0 +1,14 @@
+{
+  "symbol": "ICICIBANK",
+  "name": "ICICIBANK",
+  "trendlyne_description": "ICICI Bank Limited is a leading private sector bank in India, offering a comprehensive suite of banking and financial services across retail, small and medium enterprises (SME), and corporate segments. The bank maintains a significant market position... Read More",
+  "screener_description": "ICICI Bank is the second-largest private sector bank in India offering a diversified portfolio of financial products and services to retail, SME and corporate customers. The Bank has an extensive network of branches, ATMs and other touch-points.The ICICI group has presence in businesses like life and general insurance, housing finance, primary dealership, etc, through its subsidiaries and associates. [1]",
+  "combined_description": "ICICI Bank Limited is a leading private sector bank in India, offering a comprehensive suite of banking and financial services across retail, small and medium enterprises (SME), and corporate segments. The bank maintains a significant market position... Read More ICICI Bank is the second-largest private sector bank in India offering a diversified portfolio of financial products and services to retail, SME and corporate customers. The Bank has an extensive network of branches, ATMs and other touch-points.The ICICI group has presence in businesses like life and general insurance, housing finance, primary dealership, etc, through its subsidiaries and associates. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T05:44:13.584600+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Retail corporate SME banking loans deposits investments"
+}

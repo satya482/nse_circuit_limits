@@ -1,0 +1,14 @@
+{
+  "symbol": "AAVAS",
+  "name": "Aavas Financiers Ltd.",
+  "trendlyne_description": "Aavas Financiers Ltd. is a retail-focused housing finance company primarily serving the low and middle-income segments in semi-urban and rural areas of India. The company specializes in providing home loans to customers who are often excluded from fo... Read More",
+  "screener_description": "Incorporated in 2011, Aavas Financiers Ltd provides housing loans & advances [1]",
+  "combined_description": "Aavas Financiers Ltd. is a retail-focused housing finance company primarily serving the low and middle-income segments in semi-urban and rural areas of India. The company specializes in providing home loans to customers who are often excluded from fo... Read More Incorporated in 2011, Aavas Financiers Ltd provides housing loans & advances [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:34:50.196685+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Housing finance for low-income semi-urban rural borrowers"
+}

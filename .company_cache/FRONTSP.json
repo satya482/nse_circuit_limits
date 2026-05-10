@@ -1,0 +1,14 @@
+{
+  "symbol": "FRONTSP",
+  "name": "Frontier Springs Limited.",
+  "trendlyne_description": "Frontier Springs Ltd., established in 1981, is a key manufacturer of critical components for the railway sector, specialising in the production of high-performance springs and forgings. The company's portfolio includes hot coiled compression springs,... Read More",
+  "screener_description": "Incorporated in 1981, Frontier Springs Ltd is mainly engaged in the production of L.H.B. Springs and Hot Coiled Compression Springs and Forging items for Wagon, Locomotives and Carriage [1]",
+  "combined_description": "Frontier Springs Ltd., established in 1981, is a key manufacturer of critical components for the railway sector, specialising in the production of high-performance springs and forgings. The company's portfolio includes hot coiled compression springs,... Read More Incorporated in 1981, Frontier Springs Ltd is mainly engaged in the production of L.H.B. Springs and Hot Coiled Compression Springs and Forging items for Wagon, Locomotives and Carriage [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:16:10.021270+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Railway springs and forgings for locomotives wagons carriages"
+}

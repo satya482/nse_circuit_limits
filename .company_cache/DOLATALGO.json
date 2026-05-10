@@ -1,0 +1,14 @@
+{
+  "symbol": "DOLATALGO",
+  "name": "Dolat Algotech Limited",
+  "trendlyne_description": "Dolat Algotech Ltd. (formerly Dolat Investments Ltd.) is a financial services provider primarily focused on automated trading in shares and securities. The company operates as a prominent liquidity provider and market maker across various asset class... Read More",
+  "screener_description": "Dolat Algotech Ltd is a trading cum clearing member of NSE India and carries on the business of securities broking and securities trading. [1]",
+  "combined_description": "Dolat Algotech Ltd. (formerly Dolat Investments Ltd.) is a financial services provider primarily focused on automated trading in shares and securities. The company operates as a prominent liquidity provider and market maker across various asset class... Read More Dolat Algotech Ltd is a trading cum clearing member of NSE India and carries on the business of securities broking and securities trading. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:03:24.765994+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Algorithmic trading platform and liquidity provision NSE member"
+}

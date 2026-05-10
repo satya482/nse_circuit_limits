@@ -1,0 +1,14 @@
+{
+  "symbol": "CREDITACC",
+  "name": "CreditAccess Grameen Ltd.",
+  "trendlyne_description": "CreditAccess Grameen Ltd. is a specialized microfinance institution focused on providing financial services to women in rural households. As of FY2025, the company operates as a leading player in the Indian microfinance sector, maintaining a signific... Read More",
+  "screener_description": "CreditAccess Grameen Limited is registered as a non-deposit accepting NBFC - Microfinance Institution with the RBI. It is engaged in providing microfinance services to women who are enrolled as members and organized as Joint Liability Groups. It also uses its distribution channel to provide certain other financial products and services to the members. [1]",
+  "combined_description": "CreditAccess Grameen Ltd. is a specialized microfinance institution focused on providing financial services to women in rural households. As of FY2025, the company operates as a leading player in the Indian microfinance sector, maintaining a signific... Read More CreditAccess Grameen Limited is registered as a non-deposit accepting NBFC - Microfinance Institution with the RBI. It is engaged in providing microfinance services to women who are enrolled as members and organized as Joint Liability Groups. It also uses its distribution channel to provide certain other financial products and services to the members. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:55:40.344922+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Women microfinance, rural lending, NBFC sector"
+}

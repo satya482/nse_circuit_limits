@@ -1,0 +1,14 @@
+{
+  "symbol": "MARSONS",
+  "name": "Marsons Limited",
+  "trendlyne_description": "Marsons Ltd. is an Indian electrical equipment manufacturer specializing in the production of power and distribution transformers. The company operates within the capital-intensive electrical infrastructure industry, serving diverse sectors including... Read More",
+  "screener_description": "Incorporated in 1976, Marsons Ltd is engaged in manufacturing of transformers in the capacity range of 100 MVA 132KV class [1]",
+  "combined_description": "Marsons Ltd. is an Indian electrical equipment manufacturer specializing in the production of power and distribution transformers. The company operates within the capital-intensive electrical infrastructure industry, serving diverse sectors including... Read More Incorporated in 1976, Marsons Ltd is engaged in manufacturing of transformers in the capacity range of 100 MVA 132KV class [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:46:27.075672+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Power distribution transformers manufacturer for electrical infrastructure"
+}

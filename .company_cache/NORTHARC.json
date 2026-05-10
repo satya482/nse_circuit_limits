@@ -1,0 +1,14 @@
+{
+  "symbol": "NORTHARC",
+  "name": "Northern Arc Capital Ltd.",
+  "trendlyne_description": "Northern Arc Capital Limited is a diversified financial services platform primarily focused on addressing the credit requirements of underserved households and businesses in India. Operating since 2009, the company functions as a bridge between high-... Read More",
+  "screener_description": "Founded in 2009, Northern Arc Capital Limited offers retail loans to underserved households and businesses in India. [1]",
+  "combined_description": "Northern Arc Capital Limited is a diversified financial services platform primarily focused on addressing the credit requirements of underserved households and businesses in India. Operating since 2009, the company functions as a bridge between high-... Read More Founded in 2009, Northern Arc Capital Limited offers retail loans to underserved households and businesses in India. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:21:41.184361+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Non-bank lender serving underserved households and small businesses"
+}

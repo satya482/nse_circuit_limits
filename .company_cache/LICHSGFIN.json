@@ -1,0 +1,14 @@
+{
+  "symbol": "LICHSGFIN",
+  "name": "LIC Housing Finance Ltd",
+  "trendlyne_description": "LIC Housing Finance Ltd. (LICHFL) is a major Indian housing finance company, primarily promoted by the Life Insurance Corporation of India (LIC). The company focuses on providing long-term financing for the purchase, construction, and renovation of r... Read More",
+  "screener_description": "LIC Housing Finance Limited is a housing finance company registered with National Housing Bank (NHB) and is mainly engaged in financing purchase / construction of residential flats / houses to individuals and project finance to developers, Loan against Property (LAP), Lease Rental Discounting (LRD)for commercial properties as well as purchase of commercial shops/showrooms. etc.(Source : 201903 Annual Report Page No: 36 and 50)",
+  "combined_description": "LIC Housing Finance Ltd. (LICHFL) is a major Indian housing finance company, primarily promoted by the Life Insurance Corporation of India (LIC). The company focuses on providing long-term financing for the purchase, construction, and renovation of r... Read More LIC Housing Finance Limited is a housing finance company registered with National Housing Bank (NHB) and is mainly engaged in financing purchase / construction of residential flats / houses to individuals and project finance to developers, Loan against Property (LAP), Lease Rental Discounting (LRD)for commercial properties as well as purchase of commercial shops/showrooms. etc.(Source : 201903 Annual Report Page No: 36 and 50)",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:59:18.480076+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Home loans and residential project financing for individuals"
+}

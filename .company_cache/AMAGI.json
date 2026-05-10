@@ -1,0 +1,14 @@
+{
+  "symbol": "AMAGI",
+  "name": "Amagi Media Labs Limited",
+  "trendlyne_description": "Amagi Media Labs Ltd. is a media technology company that provides a cloud-native SaaS platform for broadcast and streaming TV. The company offers solutions for content production, preparation, distribution, and monetization, specifically targeting th... Read More",
+  "screener_description": "Founded in 2008, Amagi Media Labs Ltd. is engaged in cloud-based broadcast and connected TV technology. [1]",
+  "combined_description": "Amagi Media Labs Ltd. is a media technology company that provides a cloud-native SaaS platform for broadcast and streaming TV. The company offers solutions for content production, preparation, distribution, and monetization, specifically targeting th... Read More Founded in 2008, Amagi Media Labs Ltd. is engaged in cloud-based broadcast and connected TV technology. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:00:59.682819+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Cloud broadcast software for TV streaming monetization"
+}

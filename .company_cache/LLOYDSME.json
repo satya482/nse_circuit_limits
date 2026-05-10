@@ -1,0 +1,14 @@
+{
+  "symbol": "LLOYDSME",
+  "name": "Lloyds Metals & Energy Ltd.",
+  "trendlyne_description": "Lloyds Metals & Energy Ltd. (LMEL) is an India-based metals and mining company primarily engaged in iron ore mining, the manufacturing of sponge iron (DRI), and power generation. The company operates the Surjagarh Iron Ore Mine in the Gadchiroli dist... Read More",
+  "screener_description": "Lloyds Metals & Energy is into the business of manufacturing of Sponge Iron, Power generation and mining activities. [1]",
+  "combined_description": "Lloyds Metals & Energy Ltd. (LMEL) is an India-based metals and mining company primarily engaged in iron ore mining, the manufacturing of sponge iron (DRI), and power generation. The company operates the Surjagarh Iron Ore Mine in the Gadchiroli dist... Read More Lloyds Metals & Energy is into the business of manufacturing of Sponge Iron, Power generation and mining activities. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:35:21.898024+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Iron ore mining, sponge iron production, power generation"
+}

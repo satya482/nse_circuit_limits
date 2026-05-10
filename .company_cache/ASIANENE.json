@@ -1,0 +1,14 @@
+{
+  "symbol": "ASIANENE",
+  "name": "Asian Energy Services Limited",
+  "trendlyne_description": "Asian Energy Services Limited (AESL) is an Indian energy service provider specializing in seismic data acquisition, production facility operations, and energy infrastructure. Following its acquisition by the Oilmax Group in 2016, the company transiti... Read More",
+  "screener_description": "Asian Energy Services Ltd is an oilfield service and reservoir imaging company, offering a suite of geophysical services specializing in land and well seismic services and operation and maintenance services for oilfields. [1] It is one of the few companies providing end-to-end services in the upstream oil segment. [2]",
+  "combined_description": "Asian Energy Services Limited (AESL) is an Indian energy service provider specializing in seismic data acquisition, production facility operations, and energy infrastructure. Following its acquisition by the Oilmax Group in 2016, the company transiti... Read More Asian Energy Services Ltd is an oilfield service and reservoir imaging company, offering a suite of geophysical services specializing in land and well seismic services and operation and maintenance services for oilfields. [1] It is one of the few companies providing end-to-end services in the upstream oil segment. [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:56:10.056893+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Seismic data acquisition and oilfield operations services provider"
+}

@@ -1,0 +1,14 @@
+{
+  "symbol": "GLENMARK",
+  "name": "Glenmark Pharmaceuticals Limited",
+  "trendlyne_description": "Glenmark Pharmaceuticals Ltd. is a global research-led pharmaceutical company based in India. It maintains a strong commercial presence across more than 80 countries, with significant operations in India, North America, Europe, and emerging markets. ... Read More",
+  "screener_description": "Glenmark Pharmaceuticals Ltd is a global research-led pharmaceutical company with presence across generics, Specialty and OTC business with operations in over 80 countries. [1]",
+  "combined_description": "Glenmark Pharmaceuticals Ltd. is a global research-led pharmaceutical company based in India. It maintains a strong commercial presence across more than 80 countries, with significant operations in India, North America, Europe, and emerging markets. ... Read More Glenmark Pharmaceuticals Ltd is a global research-led pharmaceutical company with presence across generics, Specialty and OTC business with operations in over 80 countries. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:23:57.946669+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Pharmaceutical generics, specialty drugs, OTC medicines globally"
+}

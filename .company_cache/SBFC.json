@@ -1,0 +1,14 @@
+{
+  "symbol": "SBFC",
+  "name": "SBFC Finance Limited",
+  "trendlyne_description": "SBFC Finance Ltd. is a non-banking financial company (NBFC) specializing in secured loans for the underserved Micro, Small, and Medium Enterprises (MSME) segment in India. The company focuses on the ₹25 - ₹30 lakh MSME financing segment, which is... Read More",
+  "screener_description": "Incorporated in 2008, SBFC Finance Limited is a systemically important, NBFC (NBFC-ND-SI) offering Secured MSME Loans and Loans against Gold [1]",
+  "combined_description": "SBFC Finance Ltd. is a non-banking financial company (NBFC) specializing in secured loans for the underserved Micro, Small, and Medium Enterprises (MSME) segment in India. The company focuses on the ₹25 - ₹30 lakh MSME financing segment, which is... Read More Incorporated in 2008, SBFC Finance Limited is a systemically important, NBFC (NBFC-ND-SI) offering Secured MSME Loans and Loans against Gold [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:45:59.153418+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "MSME secured lending NBFC targeting underserved small businesses"
+}

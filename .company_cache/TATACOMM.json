@@ -1,0 +1,14 @@
+{
+  "symbol": "TATACOMM",
+  "name": "Tata Communications Limited",
+  "trendlyne_description": "Tata Communications Ltd. is a global digital ecosystem enabler that provides a wide range of services including international and national voice and data transmission, internet connectivity, and managed services. As a key player in the global telecom... Read More",
+  "screener_description": "Tata Communications was incorporated on March 19, 1986 as VSNL. In February 2002, the Government of India, as per their disinvestments plan, sold 25% of their holding in the company to the strategic partner. Consequently, the company was taken over under the administrative control of TATA. [1] It is the leading global digital ecosystem enabler. It has a leadership position in emerging markets, and an infrastructure that spans the globe. It delivers managed solutions to multinational companies and service providers. It partners with 300 of the Fortune 500 companies with their state-of the-art solutions, including a wide range of communication, collaboration, cloud, mobility, connected solutions, network and data center services. [2]",
+  "combined_description": "Tata Communications Ltd. is a global digital ecosystem enabler that provides a wide range of services including international and national voice and data transmission, internet connectivity, and managed services. As a key player in the global telecom... Read More Tata Communications was incorporated on March 19, 1986 as VSNL. In February 2002, the Government of India, as per their disinvestments plan, sold 25% of their holding in the company to the strategic partner. Consequently, the company was taken over under the administrative control of TATA. [1] It is the leading global digital ecosystem enabler. It has a leadership position in emerging markets, and an infrastructure that spans the globe. It delivers managed solutions to multinational companies and service providers. It partners with 300 of the Fortune 500 companies with their state-of the-art solutions, including a wide range of communication, collaboration, cloud, mobility, connected solutions, network and data center services. [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:44:47.195316+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Global telecom carrier, voice data internet managed services"
+}

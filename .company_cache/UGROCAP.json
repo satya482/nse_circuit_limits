@@ -1,0 +1,14 @@
+{
+  "symbol": "UGROCAP",
+  "name": "Ugro Capital Limited",
+  "trendlyne_description": "Ugro Capital Ltd. is a specialized Non-Banking Financial Company (NBFC) focused on MSME lending in India. The company leverages a data-driven underwriting model, GRO Score, and a multi-channel distribution strategy to provide credit to small busi... Read More",
+  "screener_description": "U GRO Capital limited is a technology-focused (data-centric & technology-enabled approach), small business lending platform. The company is focused on addressing the capital needs of small businesses operating in select eight sectors by providing customized loan solutions. [1]",
+  "combined_description": "Ugro Capital Ltd. is a specialized Non-Banking Financial Company (NBFC) focused on MSME lending in India. The company leverages a data-driven underwriting model, GRO Score, and a multi-channel distribution strategy to provide credit to small busi... Read More U GRO Capital limited is a technology-focused (data-centric & technology-enabled approach), small business lending platform. The company is focused on addressing the capital needs of small businesses operating in select eight sectors by providing customized loan solutions. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:04:01.999921+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "MSME lending platform, technology-driven credit scoring"
+}

@@ -1,0 +1,14 @@
+{
+  "symbol": "FUSION",
+  "name": "Fusion Finance Ltd",
+  "trendlyne_description": "Fusion Finance Limited (formerly Fusion Micro Finance) is a non-banking financial company-microfinance institution (NBFC-MFI) that provides financial services to underprivileged women in rural and semi-urban areas. The company operates across 22 stat... Read More",
+  "screener_description": "Incorporated in 1994, Fusion Finance Ltd is primarily engaged in microfinance lending activities [1]",
+  "combined_description": "Fusion Finance Limited (formerly Fusion Micro Finance) is a non-banking financial company-microfinance institution (NBFC-MFI) that provides financial services to underprivileged women in rural and semi-urban areas. The company operates across 22 stat... Read More Incorporated in 1994, Fusion Finance Ltd is primarily engaged in microfinance lending activities [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:33:11.542490+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Microfinance loans to rural women entrepreneurs across India"
+}

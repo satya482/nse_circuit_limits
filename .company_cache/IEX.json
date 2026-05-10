@@ -1,0 +1,14 @@
+{
+  "symbol": "IEX",
+  "name": "Indian Energy Exchange Ltd.",
+  "trendlyne_description": "Indian Energy Exchange Limited (IEX) is the premier energy exchange in India, providing a nationwide automated trading platform for the physical delivery of electricity, renewable energy, and certificates. As the first and largest energy exchange in ... Read More",
+  "screener_description": "Incorporated in 2007, Indian Energy Exchange Ltd provides an automated platform and infrastructure for carrying out trading in electricity units for physical delivery of electricity [1]",
+  "combined_description": "Indian Energy Exchange Limited (IEX) is the premier energy exchange in India, providing a nationwide automated trading platform for the physical delivery of electricity, renewable energy, and certificates. As the first and largest energy exchange in ... Read More Incorporated in 2007, Indian Energy Exchange Ltd provides an automated platform and infrastructure for carrying out trading in electricity units for physical delivery of electricity [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:39:22.018019+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Electricity trading platform certificates renewables physical delivery"
+}

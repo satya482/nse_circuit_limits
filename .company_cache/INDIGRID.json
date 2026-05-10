@@ -1,0 +1,14 @@
+{
+  "symbol": "INDIGRID",
+  "name": "IndiGrid Infrastructure Trust",
+  "trendlyne_description": "IndiGrid Infrastructure Trust (IndiGrid) is a leading infrastructure investment trust (InvIT) in India, primarily focused on the power transmission and renewable energy sectors. As a yield-generating vehicle, it acquires and operates stabilized power... Read More",
+  "screener_description": "India Grid Trust (IndiGrid) is the India's first listed power sector infrastructure investment trust, sponsored by KKR and Sterlite Power. It was established in 2016 to own and operate power transmission and renewable energy assets in India. [1] The Trust primarily acquires operational transmission SPVs (Special Purpose Vehicles) from a Sponsor or from a third party. [2]",
+  "combined_description": "IndiGrid Infrastructure Trust (IndiGrid) is a leading infrastructure investment trust (InvIT) in India, primarily focused on the power transmission and renewable energy sectors. As a yield-generating vehicle, it acquires and operates stabilized power... Read More India Grid Trust (IndiGrid) is the India's first listed power sector infrastructure investment trust, sponsored by KKR and Sterlite Power. It was established in 2016 to own and operate power transmission and renewable energy assets in India. [1] The Trust primarily acquires operational transmission SPVs (Special Purpose Vehicles) from a Sponsor or from a third party. [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:55:42.067188+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Power transmission renewable energy assets InvIT yield generator"
+}

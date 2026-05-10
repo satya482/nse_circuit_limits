@@ -1,0 +1,14 @@
+{
+  "symbol": "MOSCHIP",
+  "name": "Moschip Technologies Ltd",
+  "trendlyne_description": "MosChip Technologies Ltd. is a semiconductor and embedded design services provider specializing in Application-Specific Integrated Circuits (ASICs), Mixed-Signal IP, and end-to-end product engineering. As India’s first publicly traded fabless semicon... Read More",
+  "screener_description": "Moschip Technologies Ltd is a semiconductor and system design company with a focus on Turnkey ASICs, Mixed Signal IP, semiconductor & product engineering, and IoT solutions catering to aerospace & defence, consumer electronics, automotive, medical and networking & telecommunications. [1]",
+  "combined_description": "MosChip Technologies Ltd. is a semiconductor and embedded design services provider specializing in Application-Specific Integrated Circuits (ASICs), Mixed-Signal IP, and end-to-end product engineering. As India’s first publicly traded fabless semicon... Read More Moschip Technologies Ltd is a semiconductor and system design company with a focus on Turnkey ASICs, Mixed Signal IP, semiconductor & product engineering, and IoT solutions catering to aerospace & defence, consumer electronics, automotive, medical and networking & telecommunications. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:27:06.234239+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Fabless semiconductor ASIC design aerospace defence consumer"
+}

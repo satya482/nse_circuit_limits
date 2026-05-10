@@ -1,0 +1,14 @@
+{
+  "symbol": "ARTEMISMED",
+  "name": "Artemis Medicare Services Ltd.",
+  "trendlyne_description": "Artemis Medicare Services Ltd. (Artemis) is a tertiary care healthcare provider established in 2007 by the promoters of the Apollo Tyres Group. The company operates its flagship facility, Artemis Hospital, in Gurugram, India, which is a multi-special... Read More",
+  "screener_description": "Artemis Medicare Services Ltd (AMSL) was incorporated in 2004, operates a 541-bedded multi-specialty tertiary care hospital in Gurgaon. [1] [2]",
+  "combined_description": "Artemis Medicare Services Ltd. (Artemis) is a tertiary care healthcare provider established in 2007 by the promoters of the Apollo Tyres Group. The company operates its flagship facility, Artemis Hospital, in Gurugram, India, which is a multi-special... Read More Artemis Medicare Services Ltd (AMSL) was incorporated in 2004, operates a 541-bedded multi-specialty tertiary care hospital in Gurgaon. [1] [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T08:00:31.026492+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Tertiary care hospital operator, multi-specialty, urban healthcare delivery"
+}

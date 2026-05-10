@@ -1,0 +1,14 @@
+{
+  "symbol": "IGL",
+  "name": "Indraprastha Gas Limited",
+  "trendlyne_description": "Indraprastha Gas Ltd. (IGL) is a leading Indian city gas distribution (CGD) company that primarily supplies natural gas to the transport, domestic, commercial, and industrial sectors. Established as a joint venture between Bharat Petroleum Corporatio... Read More",
+  "screener_description": "Incorporated in the year 1998, Indraprastha Gas Limited (IGL) is in the business of city gas distribution in the National Capital Territory of Delhi. IGL also supplies the gas to the near by regions of Noida, Greater Noida, Ghaziabad, Hapur, Gurugram, Meerut, Shamli, Kanpur, Muzaffarnagar, Karnal and Rewari, Hamirpur, Fatehpur, Ajmer, Pali, Rajasmand.",
+  "combined_description": "Indraprastha Gas Ltd. (IGL) is a leading Indian city gas distribution (CGD) company that primarily supplies natural gas to the transport, domestic, commercial, and industrial sectors. Established as a joint venture between Bharat Petroleum Corporatio... Read More Incorporated in the year 1998, Indraprastha Gas Limited (IGL) is in the business of city gas distribution in the National Capital Territory of Delhi. IGL also supplies the gas to the near by regions of Noida, Greater Noida, Ghaziabad, Hapur, Gurugram, Meerut, Shamli, Kanpur, Muzaffarnagar, Karnal and Rewari, Hamirpur, Fatehpur, Ajmer, Pali, Rajasmand.",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:47:52.531867+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Natural gas distribution Delhi NCR transport domestic industrial"
+}

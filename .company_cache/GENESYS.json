@@ -1,0 +1,14 @@
+{
+  "symbol": "GENESYS",
+  "name": "Genesys International Corporation Limited",
+  "trendlyne_description": "Genesys International Corporation Ltd. is a provider of advanced geospatial content and digital twin solutions. The company operates in the geospatial information systems (GIS) industry, specializing in the creation of comprehensive 3D city data and ... Read More",
+  "screener_description": "Genesys International Corporation Ltd is engaged in providing Geographical Information Services comprising of photogrammetry, remote sensing, cartography, data conversion, terrestrial and 3D geo-content including location navigation mapping and other computer based related services. [1]",
+  "combined_description": "Genesys International Corporation Ltd. is a provider of advanced geospatial content and digital twin solutions. The company operates in the geospatial information systems (GIS) industry, specializing in the creation of comprehensive 3D city data and ... Read More Genesys International Corporation Ltd is engaged in providing Geographical Information Services comprising of photogrammetry, remote sensing, cartography, data conversion, terrestrial and 3D geo-content including location navigation mapping and other computer based related services. [1]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:57:14.857652+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "3D mapping and geospatial data for urban infrastructure"
+}

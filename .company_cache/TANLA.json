@@ -1,0 +1,14 @@
+{
+  "symbol": "TANLA",
+  "name": "Tanla Platforms Ltd",
+  "trendlyne_description": "Tanla Platforms Ltd. (Tanla) is a leading provider of Communication Platform as a Service (CPaaS) solutions, specializing in transforming digital interactions between enterprises and their customers. Founded in 1999 and headquartered in Hyderabad, In... Read More",
+  "screener_description": "Tanla Platforms Ltd (formerly Tanla Solutions Ltd) is a cloud communications provider enabling businesses to communicate with their customers and intended recipients. It is headquartered in Hyderabad, India. It is a global A2P(application to person) messaging platform provider. [1] [2]",
+  "combined_description": "Tanla Platforms Ltd. (Tanla) is a leading provider of Communication Platform as a Service (CPaaS) solutions, specializing in transforming digital interactions between enterprises and their customers. Founded in 1999 and headquartered in Hyderabad, In... Read More Tanla Platforms Ltd (formerly Tanla Solutions Ltd) is a cloud communications provider enabling businesses to communicate with their customers and intended recipients. It is headquartered in Hyderabad, India. It is a global A2P(application to person) messaging platform provider. [1] [2]",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T07:07:20.405408+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "SMS messaging platform for enterprise customer communication"
+}

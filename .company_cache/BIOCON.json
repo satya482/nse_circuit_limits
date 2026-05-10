@@ -1,0 +1,14 @@
+{
+  "symbol": "BIOCON",
+  "name": "Biocon Limited",
+  "trendlyne_description": "Biocon Ltd. is a global biopharmaceutical company based in India, specializing in the development and manufacturing of affordable therapies for chronic diseases such as diabetes, oncology, and immunology. The company operates through four key busines... Read More",
+  "screener_description": "Biocon is engaged in the business of manufacture of biotechnology products and research services.(Source : 202003-01 Annual Report Page No:195)",
+  "combined_description": "Biocon Ltd. is a global biopharmaceutical company based in India, specializing in the development and manufacturing of affordable therapies for chronic diseases such as diabetes, oncology, and immunology. The company operates through four key busines... Read More Biocon is engaged in the business of manufacture of biotechnology products and research services.(Source : 202003-01 Annual Report Page No:195)",
+  "screener_peers": [],
+  "fetched_at": "2026-05-10T06:20:34.060132+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Insulin, cancer drugs, biosimilars for chronic diseases"
+}
