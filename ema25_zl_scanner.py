@@ -22,7 +22,7 @@ Data source: .ohlc_data/market.db  (populated by fetch_data.py)
 Output:      ema25_zl_scans/ema25_zl_scans.md
 """
 
-import sys, os, csv
+import sys, os, csv, json
 from datetime import datetime
 
 import pandas as pd
@@ -34,6 +34,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR   = os.path.join(REPO_DIR, "ema25_zl_scans")
+_LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
+_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
 TODAY       = datetime.now().strftime("%Y-%m-%d")
 MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
@@ -259,12 +261,14 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds     = "+" if f["day_chg"] >= 0 else ""
         sqz    = "✓" if f.get("squeeze") else "—"
+        lbl = _LABELS.get(f["symbol"], "")
         rows.append(
             f"| [{f['symbol']}]({tv}) "
-            f"| {f['close']:.2f} "
-            f"| {ds}{f['day_chg']:.2f}% "
             f"| {zl_d} "
             f"| {zl_p} "
+            f"| {lbl} "
+            f"| {ds}{f['day_chg']:.2f}% "
+            f"| {f['close']:.2f} "
             f"| {sqz} "
             f"| {cl} {em} |"
         )
@@ -276,8 +280,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     watch  = sorted([f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"])
 
     hdr = [
-        "| Symbol | Close | Day Chg | ZL Days | ZL Chg% | Squeeze | Circuit |",
-        "|--------|------:|--------:|--------:|--------:|:-------:|:-------:|",
+        "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |",
+        "|--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|",
     ]
 
     lines = [

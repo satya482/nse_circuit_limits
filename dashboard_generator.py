@@ -5,7 +5,7 @@ Reads 5 markdown files, builds confluence-ranked HTML dashboard.
 Output: dashboard.html
 """
 
-import re, os, glob
+import re, os, glob, json
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 
@@ -23,6 +23,15 @@ COMPRESSION_MD     = os.path.join(BASE, "ema-compression-scanner",
 ZL_SQUEEZE_MD      = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
 SECTOR_ROTATION_MD = os.path.join(BASE, "sector_rotation_scans", "sector_rotation_latest.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
+
+_LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
+_LABELS: dict = {}
+if os.path.exists(_LABELS_FILE):
+    with open(_LABELS_FILE, encoding="utf-8") as _f:
+        _LABELS = json.load(_f)
+
+def _lbl(sym: str) -> str:
+    return _LABELS.get(sym, "")
 
 
 def read_file(path: str) -> str:
@@ -70,14 +79,14 @@ def _strip_md_link(s: str) -> str:
     return m.group(1) if m else s
 
 def _parse_table_rows(text: str, has_signal: bool) -> list:
-    """Generic row parser. has_signal=True for entry tables (6-col new / 4-col old),
-    has_signal=False for turning-up tables (5-col new / 3-col old)."""
+    """Generic row parser. has_signal=True for entry tables, has_signal=False for turning-up.
+    Detects new format (ZL Days at parts[1]) vs old format (Signal or Day Change at parts[1])."""
     results = []
     lines = text.split('\n')
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        header_match = ('| Signal' in line) if has_signal else ('| Day Change' in line and '| Signal' not in line)
+        header_match = ('| Signal' in line) if has_signal else ('| ZL Days' in line and '| Signal' not in line)
         if '| Symbol' in line and header_match:
             i += 1
             if i < len(lines) and lines[i].strip().startswith('|---'):
@@ -91,17 +100,25 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                 if parts:
                     sym = _strip_md_link(parts[0])
                     if has_signal:
-                        sig_raw = parts[1] if len(parts) > 1 else ""
-                        day_chg = parts[2] if len(parts) > 2 else ""
-                        # Detect new format: parts[3] looks like "5d" or "5d+"
-                        if len(parts) >= 5 and _ZL_DAY_RE.match(parts[3]):
-                            zl_days = parts[3]
-                            zl_pct  = parts[4] if len(parts) > 4 else ""
-                            circuit = parts[5] if len(parts) > 5 else ""
+                        if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
+                            # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
+                            zl_days = parts[1]
+                            zl_pct  = parts[2] if len(parts) > 2 else ""
+                            day_chg = parts[4] if len(parts) > 4 else ""
+                            sig_raw = parts[5] if len(parts) > 5 else ""
+                            circuit = parts[6] if len(parts) > 6 else ""
                         else:
-                            zl_days = ""
-                            zl_pct  = ""
-                            circuit = parts[3] if len(parts) > 3 else ""
+                            # Old format: Symbol | Signal | Day Chg | ZL Days | ZL Chg% | Circuit
+                            sig_raw = parts[1] if len(parts) > 1 else ""
+                            day_chg = parts[2] if len(parts) > 2 else ""
+                            if len(parts) >= 5 and _ZL_DAY_RE.match(parts[3]):
+                                zl_days = parts[3]
+                                zl_pct  = parts[4] if len(parts) > 4 else ""
+                                circuit = parts[5] if len(parts) > 5 else ""
+                            else:
+                                zl_days = ""
+                                zl_pct  = ""
+                                circuit = parts[3] if len(parts) > 3 else ""
                         sig = ("STRONG" if "STRONG" in sig_raw
                                else "PRIMARY" if "PRIMARY" in sig_raw
                                else "DEEP PULLBACK" if "DEEP" in sig_raw
@@ -109,15 +126,23 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                         results.append({"symbol": sym, "signal": sig, "day_chg": day_chg,
                                         "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
                     else:
-                        day_chg = parts[1] if len(parts) > 1 else ""
-                        if len(parts) >= 3 and _ZL_DAY_RE.match(parts[2]):
-                            zl_days = parts[2]
-                            zl_pct  = parts[3] if len(parts) > 3 else ""
-                            circuit = parts[4] if len(parts) > 4 else ""
+                        if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
+                            # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit
+                            zl_days = parts[1]
+                            zl_pct  = parts[2] if len(parts) > 2 else ""
+                            day_chg = parts[4] if len(parts) > 4 else ""
+                            circuit = parts[5] if len(parts) > 5 else ""
                         else:
-                            zl_days = ""
-                            zl_pct  = ""
-                            circuit = parts[2] if len(parts) > 2 else ""
+                            # Old format: Symbol | Day Change | ZL Days | ZL Chg% | Circuit
+                            day_chg = parts[1] if len(parts) > 1 else ""
+                            if len(parts) >= 3 and _ZL_DAY_RE.match(parts[2]):
+                                zl_days = parts[2]
+                                zl_pct  = parts[3] if len(parts) > 3 else ""
+                                circuit = parts[4] if len(parts) > 4 else ""
+                            else:
+                                zl_days = ""
+                                zl_pct  = ""
+                                circuit = parts[2] if len(parts) > 2 else ""
                         results.append({"symbol": sym, "day_chg": day_chg,
                                         "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
                 i += 1
@@ -192,20 +217,27 @@ def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
             parts = [p.strip() for p in line.split('|') if p.strip()]
             if len(parts) < 5:
                 continue
-            # New format (7 cols): Symbol Close DayChg ZLDays ZLChg% Squeeze Circuit
-            # Old format (6 cols): Symbol Close DayChg ZLDays ZLChg% Circuit
-            if len(parts) >= 7:
+            if len(parts) >= 8 and _ZL_DAY_RE.match(parts[1]):
+                # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit
+                zl_days, zl_pct = parts[1], parts[2]
+                day_chg, close  = parts[4], parts[5]
+                squeeze, circuit = parts[6], parts[7]
+            elif len(parts) >= 7:
+                # Old 7-col: Symbol | Close | Day Chg | ZL Days | ZL Chg% | Squeeze | Circuit
+                close, day_chg, zl_days, zl_pct = parts[1], parts[2], parts[3], parts[4]
                 squeeze, circuit = parts[5], parts[6]
             elif len(parts) >= 6:
+                # Old 6-col: Symbol | Close | Day Chg | ZL Days | ZL Chg% | Circuit
+                close, day_chg, zl_days, zl_pct = parts[1], parts[2], parts[3], parts[4]
                 squeeze, circuit = "", parts[5]
             else:
-                squeeze, circuit = "", ""
+                continue
             rows.append({
                 "symbol":  _strip_md_link(parts[0]),
-                "close":   parts[1],
-                "day_chg": parts[2],
-                "zl_days": parts[3],
-                "zl_pct":  parts[4],
+                "close":   close,
+                "day_chg": day_chg,
+                "zl_days": zl_days,
+                "zl_pct":  zl_pct,
                 "squeeze": squeeze,
                 "circuit": circuit,
             })
@@ -269,8 +301,24 @@ def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
             continue
         if in_table and ls.startswith('|'):
             parts = [p.strip() for p in ls.split('|') if p.strip()]
-            # cols: 0=# 1=Symbol 2=Sector 3=Close 4=Comp Days 5=Sqz Days 6=ZL 7=ZL Days 8=ZL Chg% 9=Score
-            if len(parts) >= 10 and parts[0].isdigit():
+            if not parts or not parts[0].isdigit():
+                pass
+            elif len(parts) >= 12 and _ZL_DAY_RE.match(parts[2]):
+                # New format: # Symbol ZLDays ZLChg% Label DayChg Sector Close CompDays SqzDays ZL Score
+                rows.append({
+                    "symbol":    _strip_md_link(parts[1]),
+                    "zl_days":   parts[2],
+                    "zl_chg":    parts[3],
+                    "day_chg":   parts[5],
+                    "sector":    parts[6],
+                    "close":     parts[7],
+                    "comp_days": parts[8],
+                    "sqz_days":  parts[9],
+                    "zl_dir":    parts[10],
+                    "score":     parts[11].replace('**', ''),
+                })
+            elif len(parts) >= 10:
+                # Old format: # Symbol Sector Close CompDays SqzDays ZL ZLDays ZLChg% Score
                 rows.append({
                     "symbol":    _strip_md_link(parts[1]),
                     "sector":    parts[2],
@@ -281,6 +329,7 @@ def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
                     "zl_days":   parts[7],
                     "zl_chg":    parts[8],
                     "score":     parts[9].replace('**', ''),
+                    "day_chg":   "",
                 })
         elif in_table and not ls.startswith('|'):
             break
@@ -376,7 +425,12 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list]:
             continue
 
         cols = [c.strip() for c in line.split("|")[1:-1]]
-        if section == "hc" and len(cols) >= 4:
+        if section == "hc" and len(cols) >= 5:
+            # New format: Symbol | Label | Peer Group | RS Rank | Group RS 4W
+            sym = cols[0].replace("**", "").strip()
+            high_conv.append({"symbol": sym, "group": cols[2], "rank": cols[3], "rs_chg": cols[4]})
+        elif section == "hc" and len(cols) >= 4:
+            # Old format: Symbol | Peer Group | RS Rank | Group RS 4W
             sym = cols[0].replace("**", "").strip()
             high_conv.append({"symbol": sym, "group": cols[1], "rank": cols[2], "rs_chg": cols[3]})
         elif section == "in" and len(cols) >= 4:
@@ -464,6 +518,7 @@ def build_html(today: str, now_str: str,
             f'<tr{rcls}>'
             f'<td>{stars}</td>'
             f'<td class="sym">{tv_link(sym)}</td>'
+            f'<td class="lbl">{_lbl(sym)}</td>'
             f'<td>{badges}</td>'
             f'<td class="{sig_cls}">{sig}</td>'
             f'<td class="{chg_cls(chg)}">{chg}</td>'
@@ -477,9 +532,10 @@ def build_html(today: str, now_str: str,
     t_rows = [
         f'<tr>'
         f'<td class="sym">{tv_link(r["symbol"])}</td>'
-        f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'<td class="zld">{r.get("zl_days","")}</td>'
         f'<td class="{chg_cls(r.get("zl_pct",""))}">{r.get("zl_pct","")}</td>'
+        f'<td class="lbl">{_lbl(r["symbol"])}</td>'
+        f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'{td_circ(r["circuit"])}</tr>'
         for r in weekly_turning
     ]
@@ -490,10 +546,11 @@ def build_html(today: str, now_str: str,
         sqz_cls = "sqz-on" if sqz == "✓" else "sqz-off"
         return (
             f'<tr><td class="sym">{tv_link(r["symbol"])}</td>'
-            f'<td class="num">{r["close"]}</td>'
-            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
             f'<td class="zld">{r["zl_days"]}</td>'
             f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'<td class="lbl">{_lbl(r["symbol"])}</td>'
+            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
+            f'<td class="num">{r["close"]}</td>'
             f'<td class="{sqz_cls}">{sqz if sqz else "—"}</td>'
             f'{td_circ(r["circuit"])}</tr>'
         )
@@ -537,6 +594,7 @@ def build_html(today: str, now_str: str,
         comp_rows_html.append(
             f'<tr>'
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="lbl">{_lbl(r["symbol"])}</td>'
             f'<td class="num">{r["close"]}</td>'
             f'<td class="zld">{r["comp_days"]}</td>'
             f'<td class="zld">{r.get("sqz_days", "—")}</td>'
@@ -583,8 +641,8 @@ def build_html(today: str, now_str: str,
 <div class="section">
   <div class="stitle">EMA Compression + BB Squeeze — top {len(compression_rows[:20])} signals &nbsp;|&nbsp; {total_compressed} compressed &nbsp;|&nbsp; {total_zl_rising} passed all gates</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Close</th><th>Comp Days</th><th>Sqz Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
-    <tbody>{table_or_empty(comp_rows_html, 7, "No signals today")}</tbody>
+    <thead><tr><th>Symbol</th><th>Label</th><th>Close</th><th>Comp Days</th><th>Sqz Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
+    <tbody>{table_or_empty(comp_rows_html, 8, "No signals today")}</tbody>
   </table>
 </div>"""
 
@@ -593,6 +651,7 @@ def build_html(today: str, now_str: str,
     if rot_high_conv or rot_in:
         hc_rows_html = [
             f'<tr><td class="sym">{tv_link(h["symbol"])}</td>'
+            f'<td class="lbl">{_lbl(h["symbol"])}</td>'
             f'<td>{h["group"]}</td><td>{h["rank"]}</td>'
             f'<td class="{"chg-g" if h["rs_chg"].startswith("+") else "chg-r"}">{h["rs_chg"]}</td></tr>'
             for h in rot_high_conv
@@ -608,9 +667,9 @@ def build_html(today: str, now_str: str,
             for g in rot_out[:5]
         ]
         hc_table = (
-            '<table><thead><tr><th>Symbol</th><th>Peer Group</th>'
+            '<table><thead><tr><th>Symbol</th><th>Label</th><th>Peer Group</th>'
             '<th>RS Rank (now/4W)</th><th>Group RS 4W</th></tr></thead>'
-            f'<tbody>{"".join(hc_rows_html) or "<tr><td colspan=4>No high-conviction today</td></tr>"}</tbody></table>'
+            f'<tbody>{"".join(hc_rows_html) or "<tr><td colspan=5>No high-conviction today</td></tr>"}</tbody></table>'
         ) if rot_high_conv else ""
         ri_table = (
             '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Leaders</th></tr></thead>'
@@ -637,8 +696,8 @@ def build_html(today: str, now_str: str,
 <div class="section">
   <div class="stitle">ZLEMA25 Turning Up — early entries ({len(weekly_turning)})</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
-    <tbody>{table_or_empty(t_rows, 5, "No ZLEMA25 turns today")}</tbody>
+    <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(t_rows, 6, "No ZLEMA25 turns today")}</tbody>
   </table>
 </div>"""
 
@@ -649,15 +708,15 @@ def build_html(today: str, now_str: str,
   <div class="section">
     <div class="stitle">EMA25 ZL Rising — RS-filtered ({len(zl25_rising)} stocks, top 20)</div>
     <table>
-      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
-      <tbody>{table_or_empty(zr_rows, 7, "No ZL rising stocks")}</tbody>
+      <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Close</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zr_rows, 8, "No ZL rising stocks")}</tbody>
     </table>
   </div>
   <div class="section">
     <div class="stitle">EMA25 ZL Watch — RS-filtered ({len(zl25_watch)} stocks, top 15)</div>
     <table>
-      <thead><tr><th>Symbol</th><th>Close</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Squeeze</th><th>Circuit</th></tr></thead>
-      <tbody>{table_or_empty(zw_rows, 7, "No ZL watch stocks")}</tbody>
+      <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Close</th><th>Squeeze</th><th>Circuit</th></tr></thead>
+      <tbody>{table_or_empty(zw_rows, 8, "No ZL watch stocks")}</tbody>
     </table>
   </div>
 </div>"""
@@ -703,6 +762,7 @@ tr:hover td{{background:var(--bg3)}}
 .sym{{font-weight:600;font-family:monospace;font-size:12px}}
 .sym a{{color:inherit;text-decoration:none}}.sym a:hover{{text-decoration:underline;color:var(--blu)}}
 .zld{{color:var(--mu);font-size:11px}}
+.lbl{{font-size:11px;color:var(--mu);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 .nm{{font-size:11px;color:var(--mu)}}
 .num{{font-family:monospace;font-size:12px;color:var(--mu)}}
 .pos{{color:var(--grn)}}.neg{{color:var(--red)}}.sqz-hi{{color:var(--gld);font-weight:700;text-align:center}}.sqz-on{{color:var(--grn);font-weight:600;text-align:center}}.sqz-off{{color:var(--mu);text-align:center;font-size:11px}}
@@ -746,8 +806,8 @@ tr:hover td{{background:var(--bg3)}}
 <div class="section">
   <div class="stitle">Unified Entry Signals — sorted by confluence ({len(all_syms)} stocks)</div>
   <table>
-    <thead><tr><th width="60">Conf</th><th>Symbol</th><th>Scanners</th><th>Signal</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
-    <tbody>{table_or_empty(u_rows, 8, "No signals today")}</tbody>
+    <thead><tr><th width="60">Conf</th><th>Symbol</th><th>Label</th><th>Scanners</th><th>Signal</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(u_rows, 9, "No signals today")}</tbody>
   </table>
 </div>
 

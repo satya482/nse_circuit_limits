@@ -20,6 +20,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+_LABELS_FILE = Path(__file__).parent / "tools" / "stock_labels.json"
+_LABELS: dict = json.loads(_LABELS_FILE.read_text(encoding="utf-8")) if _LABELS_FILE.exists() else {}
+
 import pandas as pd
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -215,12 +218,13 @@ def main():
         lines += [
             "## High-Conviction (Rotating Group + Rising Leader)",
             "",
-            "| Symbol | Peer Group | RS Rank (now / 4w ago) | Group RS 4W |",
-            "|--------|-----------|------------------------|-------------|",
+            "| Symbol | Label | Peer Group | RS Rank (now / 4w ago) | Group RS 4W |",
+            "|--------|-------|-----------|------------------------|-------------|",
         ]
         for h in high_conv:
+            lbl = _LABELS.get(h["symbol"], "")
             lines.append(
-                f"| **{h['symbol']}** | {h['group']} "
+                f"| **{h['symbol']}** | {lbl} | {h['group']} "
                 f"| {h['rank_now']} / {h['rank_past']} of {h['group_size']} "
                 f"| {h['rs_chg']} |"
             )

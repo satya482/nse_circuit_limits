@@ -13,6 +13,7 @@ Output: single merged table sorted by score desc, ZL days asc.
 
 import sys
 import time
+import json
 import yaml
 from datetime import datetime
 from pathlib import Path
@@ -27,6 +28,8 @@ from ohlc_db import load_ohlc, load_ohlc_many
 
 BASE_DIR      = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
+_LABELS_FILE  = BASE_DIR.parent / "tools" / "stock_labels.json"
+_LABELS: dict = json.loads(_LABELS_FILE.read_text(encoding="utf-8")) if _LABELS_FILE.exists() else {}
 
 
 def tv_link(symbol: str) -> str:
@@ -75,22 +78,29 @@ def build_markdown(
         lines += ["", f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_"]
         return "\n".join(lines)
 
-    hdr = "| # | Symbol | Sector | Close | Comp Days | Sqz Days | ZL | ZL Days | ZL Chg% | Score |"
-    sep = "|---|--------|--------|-------|-----------|----------|----|---------|---------|-------|"
+    hdr = "| # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |"
+    sep = "|---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|"
     lines += [hdr, sep]
 
     for i, c in enumerate(candidates, 1):
         last = c["last"]
+        df   = c["df"]
+        prev_close   = float(df.iloc[-2]["close"]) if len(df) >= 2 else float(last["close"])
+        day_chg_pct  = (float(last["close"]) - prev_close) / prev_close * 100 if prev_close else 0.0
+        day_chg_str  = f"+{day_chg_pct:.2f}%" if day_chg_pct >= 0 else f"{day_chg_pct:.2f}%"
+        lbl = _LABELS.get(c["symbol"], "")
         lines.append(
             f"| {i} "
             f"| {tv_link(c['symbol'])} "
+            f"| {_zl_days_str(c['zl_days'])} "
+            f"| {_chg_str(c['zl_chg'])} "
+            f"| {lbl} "
+            f"| {day_chg_str} "
             f"| {c['sector']} "
             f"| {fmt_price(last['close'])} "
             f"| {c['duration']}d "
             f"| {c['squeeze_days']}d "
             f"| {_zl_dir(c['zl_rising'])} "
-            f"| {_zl_days_str(c['zl_days'])} "
-            f"| {_chg_str(c['zl_chg'])} "
             f"| **{c['score']}** |"
         )
 

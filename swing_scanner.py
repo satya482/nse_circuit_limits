@@ -17,7 +17,7 @@ Additional RS filter (all 3 must pass):
 Output: swing_scans/YYYY-MM-DD.md  — auto-committed and pushed to GitHub
 """
 
-import sys, os, subprocess, csv
+import sys, os, subprocess, csv, json
 from datetime import datetime, date, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -30,6 +30,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR   = os.path.join(REPO_DIR, "swing_scans")
+_LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
+_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
 INDEX_CACHE = os.path.join(REPO_DIR, ".niftymidsml400_cache.csv")
 TODAY       = datetime.now().strftime("%Y-%m-%d")
 MD_FILE     = os.path.join(SCANS_DIR, "swing_scans.md")
@@ -287,8 +289,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
         f"*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*\n",
-        "| Symbol | Signal | Day Change | ZL Days | ZL Chg% | Circuit |",
-        "|--------|--------|----------:|--------:|--------:|:-------:|",
+        "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |",
+        "|--------|--------:|--------:|-------|--------:|--------|:-------:|",
     ]
 
     for f in findings:
@@ -296,14 +298,16 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         tv      = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
         zl_d    = f"{f['zl_days']}d+" if f['zl_days'] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         zl_p    = f"+{f['zl_pct']:.1f}%" if f['zl_pct'] >= 0 else f"{f['zl_pct']:.1f}%"
+        lbl     = _LABELS.get(f["symbol"], "")
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| [{f['symbol']}]({tv}) "
-                f"| **{tag}** — {label} "
-                f"| {ds}{f['day_chg']:.2f}% "
                 f"| {zl_d} "
                 f"| {zl_p} "
+                f"| {lbl} "
+                f"| {ds}{f['day_chg']:.2f}% "
+                f"| **{tag}** — {label} "
                 f"| {cl} {em} |"
             )
 
