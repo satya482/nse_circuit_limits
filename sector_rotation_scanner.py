@@ -390,7 +390,9 @@ def main():
 
     md = "\n".join(lines)
     MD_FILE.write_text(md, encoding="utf-8")
-    print(f"Written: {MD_FILE}")
+    dated_file = SCANS_DIR / f"sector_rotation_{TODAY}.md"
+    dated_file.write_text(md, encoding="utf-8")
+    print(f"Written: {MD_FILE}  +  {dated_file.name}")
     print(f"  Rotating In:  {len(rot_in)} groups")
     print(f"  Rotating Out: {len(rot_out)} groups")
     print(f"  High-conviction: {len(high_conv)} stocks")
