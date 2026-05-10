@@ -1,26 +1,6446 @@
 {
   "version": "2026-05-10",
-  "n_stocks": 2,
-  "n_groups": 2,
-  "n_singletons": 2,
+  "n_stocks": 995,
+  "n_groups": 741,
+  "n_singletons": 636,
   "groups": {
+    "group_0000": {
+      "label": "Wealth Management",
+      "members": [
+        "360ONE",
+        "ANANDRATHI",
+        "NUVAMA"
+      ],
+      "size": 3
+    },
     "singleton_0000": {
+      "label": "3M India Limited",
+      "members": [
+        "3MINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0001": {
+      "label": "63 Moons Technologies Ltd.",
+      "members": [
+        "63MOONS"
+      ],
+      "size": 1
+    },
+    "group_0001": {
+      "label": "Housing Finance",
+      "members": [
+        "AADHARHFC",
+        "AAVAS",
+        "APTUS",
+        "INDIASHLTR"
+      ],
+      "size": 4
+    },
+    "group_0002": {
+      "label": "Active Pharmaceutical",
+      "members": [
+        "AARTIDRUGS",
+        "AARTIPHARM"
+      ],
+      "size": 2
+    },
+    "singleton_0002": {
+      "label": "AARTI Industries Ltd",
+      "members": [
+        "AARTIIND"
+      ],
+      "size": 1
+    },
+    "singleton_0003": {
+      "label": "Abbott India Limited",
+      "members": [
+        "ABBOTINDIA"
+      ],
+      "size": 1
+    },
+    "group_0003": {
+      "label": "Banking Financial",
+      "members": [
+        "ABCAPITAL",
+        "ARMANFIN",
+        "AYE",
+        "CGCL",
+        "CHOLAHLDNG",
+        "FEDFINA",
+        "FIVESTAR",
+        "HDBFS",
+        "IFCI",
+        "IIFL",
+        "IIFLCAPS",
+        "INDOSTAR",
+        "LTF",
+        "MANAPPURAM",
+        "MUFIN",
+        "POONAWALLA",
+        "SAMMAANCAP",
+        "SBFC",
+        "SUNDARMFIN"
+      ],
+      "size": 19
+    },
+    "group_0004": {
+      "label": "Made Foreign",
+      "members": [
+        "ABDL",
+        "GLOBUSSPR",
+        "GMBREW",
+        "RADICO",
+        "SDBL",
+        "TI",
+        "UBL"
+      ],
+      "size": 7
+    },
+    "group_0005": {
+      "label": "Aditya Birla",
+      "members": [
+        "ABFRL",
+        "ABLBL",
+        "ABREL"
+      ],
+      "size": 3
+    },
+    "singleton_0004": {
+      "label": "Aditya Birla Sun Life Amc Limited",
+      "members": [
+        "ABSLAMC"
+      ],
+      "size": 1
+    },
+    "singleton_0005": {
+      "label": "ACC Limited",
+      "members": [
+        "ACC"
+      ],
+      "size": 1
+    },
+    "singleton_0006": {
+      "label": "Action Construction Equipment Limited",
+      "members": [
+        "ACE"
+      ],
+      "size": 1
+    },
+    "singleton_0007": {
+      "label": "Archean Chemical Industries Ltd.",
+      "members": [
+        "ACI"
+      ],
+      "size": 1
+    },
+    "group_0006": {
+      "label": "Renewable Energy",
+      "members": [
+        "ACMESOLAR",
+        "KPEL",
+        "KPIGREEN"
+      ],
+      "size": 3
+    },
+    "singleton_0008": {
+      "label": "Acutaas Chemicals Ltd",
+      "members": [
+        "ACUTAAS"
+      ],
+      "size": 1
+    },
+    "singleton_0009": {
+      "label": "ADF Foods Limited",
+      "members": [
+        "ADFFOODS"
+      ],
+      "size": 1
+    },
+    "singleton_0010": {
+      "label": "Advait Energy Transitions Ltd",
+      "members": [
+        "ADVAIT"
+      ],
+      "size": 1
+    },
+    "singleton_0011": {
+      "label": "Advanced Enzyme Technologies Ltd",
+      "members": [
+        "ADVENZYMES"
+      ],
+      "size": 1
+    },
+    "group_0007": {
+      "label": "Aegis Logistics",
+      "members": [
+        "AEGISLOG",
+        "AEGISVOPAK"
+      ],
+      "size": 2
+    },
+    "singleton_0012": {
+      "label": "Aequs Ltd.",
+      "members": [
+        "AEQUS"
+      ],
+      "size": 1
+    },
+    "singleton_0013": {
+      "label": "Aeroflex Enterprises Ltd",
+      "members": [
+        "AEROENTER"
+      ],
+      "size": 1
+    },
+    "singleton_0014": {
+      "label": "Aeroflex Industries Ltd.",
+      "members": [
+        "AEROFLEX"
+      ],
+      "size": 1
+    },
+    "singleton_0015": {
+      "label": "Aether Industries Ltd.",
+      "members": [
+        "AETHER"
+      ],
+      "size": 1
+    },
+    "group_0008": {
+      "label": "Engineering Procurement",
+      "members": [
+        "AFCONS",
+        "ASHOKA",
+        "CEIGALL",
+        "CEMPRO",
+        "DBL",
+        "HGINFRA",
+        "JKIL",
+        "KPIL",
+        "MANINFRA",
+        "POWERMECH",
+        "TECHNOE",
+        "TRANSRAILL",
+        "VIKRAN"
+      ],
+      "size": 13
+    },
+    "singleton_0016": {
+      "label": "Affle 3i Limited",
+      "members": [
+        "AFFLE"
+      ],
+      "size": 1
+    },
+    "singleton_0017": {
+      "label": "AGI Greenpac Limited",
+      "members": [
+        "AGI"
+      ],
+      "size": 1
+    },
+    "singleton_0018": {
+      "label": "Agi Infra Ltd.",
+      "members": [
+        "AGIIL"
+      ],
+      "size": 1
+    },
+    "singleton_0019": {
+      "label": "AIA Engineering Limited",
+      "members": [
+        "AIAENG"
+      ],
+      "size": 1
+    },
+    "group_0009": {
+      "label": "Banking Financial",
+      "members": [
+        "AIIL",
+        "TATAINVEST"
+      ],
+      "size": 2
+    },
+    "group_0010": {
+      "label": "Manufacturing Specializing",
+      "members": [
+        "AIMTRON",
+        "AVALON"
+      ],
+      "size": 2
+    },
+    "singleton_0020": {
+      "label": "Ajanta Pharma Limited",
+      "members": [
+        "AJANTPHARM"
+      ],
+      "size": 1
+    },
+    "group_0011": {
+      "label": "Real Estate",
+      "members": [
+        "AJMERA",
+        "HUBTOWN",
+        "KALPATARU",
+        "LODHA",
+        "LOTUSDEV",
+        "MARATHON",
+        "RAYMONDREL",
+        "SUNTECK"
+      ],
+      "size": 8
+    },
+    "group_0012": {
+      "label": "Active Pharmaceutical",
+      "members": [
+        "AKUMS",
+        "APLLTD",
+        "AUROPHARMA",
+        "BAJAJHCARE",
+        "BLUEJET",
+        "COHANCE",
+        "CONCORDBIO",
+        "DCAL",
+        "FDC",
+        "GRANULES",
+        "GUFICBIO",
+        "GUJTHEM",
+        "IPCALAB",
+        "IPL",
+        "JBCHEPHARM",
+        "LAURUSLABS",
+        "NEULANDLAB",
+        "NGLFINE",
+        "ONESOURCE",
+        "SMSPHARMA",
+        "SUPRIYA",
+        "VIYASH",
+        "WINDLAS"
+      ],
+      "size": 23
+    },
+    "group_0013": {
+      "label": "Technology Driven",
+      "members": [
+        "ALGOQUANT",
+        "SHAREINDIA"
+      ],
+      "size": 2
+    },
+    "singleton_0021": {
+      "label": "Alivus Life Sciences Ltd",
+      "members": [
+        "ALIVUS"
+      ],
+      "size": 1
+    },
+    "group_0014": {
+      "label": "Value Chain",
+      "members": [
+        "ALKEM",
+        "INNOVACAP",
+        "ORCHPHARMA"
+      ],
+      "size": 3
+    },
+    "singleton_0022": {
+      "label": "Alkyl Amines Chemicals Limited",
+      "members": [
+        "ALKYLAMINE"
+      ],
+      "size": 1
+    },
+    "singleton_0023": {
+      "label": "Amagi Media Labs Limited",
+      "members": [
+        "AMAGI"
+      ],
+      "size": 1
+    },
+    "singleton_0024": {
+      "label": "Amber Enterprises India Ltd.",
+      "members": [
+        "AMBER"
+      ],
+      "size": 1
+    },
+    "group_0015": {
+      "label": "Basmati Rice",
+      "members": [
+        "AMIRCHAND",
+        "CPPLUS",
+        "KRBL"
+      ],
+      "size": 3
+    },
+    "singleton_0025": {
+      "label": "Anant Raj Ltd.",
+      "members": [
+        "ANANTRAJ"
+      ],
+      "size": 1
+    },
+    "singleton_0026": {
+      "label": "Angel One Limited",
+      "members": [
+        "ANGELONE"
+      ],
+      "size": 1
+    },
+    "group_0016": {
+      "label": "Exploration Development",
+      "members": [
+        "ANTELOPUS",
+        "BALMLAWRIE",
+        "HINDOILEXP",
+        "OIL"
+      ],
+      "size": 4
+    },
+    "group_0017": {
+      "label": "Contract Research",
+      "members": [
+        "ANTHEM",
+        "SAILIFE",
+        "SYNGENE"
+      ],
+      "size": 3
+    },
+    "singleton_0027": {
+      "label": "Anup Engineering Ltd.",
+      "members": [
+        "ANUP"
+      ],
+      "size": 1
+    },
+    "singleton_0028": {
+      "label": "Anupam Rasayan India Ltd.",
+      "members": [
+        "ANURAS"
+      ],
+      "size": 1
+    },
+    "singleton_0029": {
+      "label": "APAR Industries Limited",
+      "members": [
+        "APARINDS"
+      ],
+      "size": 1
+    },
+    "singleton_0030": {
+      "label": "Apcotex Industries Ltd",
+      "members": [
+        "APCOTEXIND"
+      ],
+      "size": 1
+    },
+    "singleton_0031": {
+      "label": "Apex Frozen Foods Ltd.",
+      "members": [
+        "APEX"
+      ],
+      "size": 1
+    },
+    "singleton_0032": {
+      "label": "APL Apollo Tubes Limited",
+      "members": [
+        "APLAPOLLO"
+      ],
+      "size": 1
+    },
+    "singleton_0033": {
+      "label": "Apollo Micro Systems Ltd.",
+      "members": [
+        "APOLLO"
+      ],
+      "size": 1
+    },
+    "singleton_0034": {
+      "label": "Apollo Pipes Ltd.",
+      "members": [
+        "APOLLOPIPE"
+      ],
+      "size": 1
+    },
+    "singleton_0035": {
+      "label": "Apollo Tyres Limited.",
+      "members": [
+        "APOLLOTYRE"
+      ],
+      "size": 1
+    },
+    "singleton_0036": {
+      "label": "Aqylon Nexus Limited",
+      "members": [
+        "AQYLON"
+      ],
+      "size": 1
+    },
+    "group_0018": {
+      "label": "Amara Raja",
+      "members": [
+        "ARE&M",
+        "EXIDEIND"
+      ],
+      "size": 2
+    },
+    "singleton_0037": {
+      "label": "Arfin India Ltd",
+      "members": [
+        "ARFIN"
+      ],
+      "size": 1
+    },
+    "singleton_0038": {
+      "label": "ArisInfra Solutions Limited",
+      "members": [
+        "ARIS"
+      ],
+      "size": 1
+    },
+    "singleton_0039": {
+      "label": "Arrow Greentech Limited",
+      "members": [
+        "ARROWGREEN"
+      ],
+      "size": 1
+    },
+    "singleton_0040": {
+      "label": "Anand Rathi Share and Stock Brokers Limited",
+      "members": [
+        "ARSSBL"
+      ],
+      "size": 1
+    },
+    "singleton_0041": {
+      "label": "Artemis Medicare Services Ltd.",
+      "members": [
+        "ARTEMISMED"
+      ],
+      "size": 1
+    },
+    "singleton_0042": {
+      "label": "Arvind Limited",
+      "members": [
+        "ARVIND"
+      ],
+      "size": 1
+    },
+    "group_0019": {
+      "label": "Diverse Portfolio",
+      "members": [
+        "ARVINDFASN",
+        "METROBRAND"
+      ],
+      "size": 2
+    },
+    "singleton_0043": {
+      "label": "Asahi India Glass Limited",
+      "members": [
+        "ASAHIINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0044": {
+      "label": "Automotive Stampings & Assemblies Ltd.",
+      "members": [
+        "ASAL"
+      ],
+      "size": 1
+    },
+    "singleton_0045": {
+      "label": "Ashapura Minechem Ltd",
+      "members": [
+        "ASHAPURMIN"
+      ],
+      "size": 1
+    },
+    "singleton_0046": {
+      "label": "Ashiana Housing Limited",
+      "members": [
+        "ASHIANA"
+      ],
+      "size": 1
+    },
+    "group_0020": {
+      "label": "Commercial Vehicle",
+      "members": [
+        "ASHOKLEY",
+        "SMLMAH"
+      ],
+      "size": 2
+    },
+    "singleton_0047": {
+      "label": "Asian Energy Services Limited",
+      "members": [
+        "ASIANENE"
+      ],
+      "size": 1
+    },
+    "singleton_0048": {
+      "label": "Asian Granito India Limited",
+      "members": [
+        "ASIANTILES"
+      ],
+      "size": 1
+    },
+    "singleton_0049": {
+      "label": "ASK Automotive Limited",
+      "members": [
+        "ASKAUTOLTD"
+      ],
+      "size": 1
+    },
+    "group_0021": {
+      "label": "Gulf Cooperation",
+      "members": [
+        "ASTERDM",
+        "GEOJITFSL"
+      ],
+      "size": 2
+    },
+    "singleton_0050": {
+      "label": "Astral Limited",
+      "members": [
+        "ASTRAL"
+      ],
+      "size": 1
+    },
+    "singleton_0051": {
+      "label": "Astra Microwave Products Ltd.",
+      "members": [
+        "ASTRAMICRO"
+      ],
+      "size": 1
+    },
+    "singleton_0052": {
+      "label": "AstraZeneca Pharma India Limited",
+      "members": [
+        "ASTRAZEN"
+      ],
+      "size": 1
+    },
+    "group_0022": {
+      "label": "City Distribution",
+      "members": [
+        "ATGL",
+        "GUJGASLTD",
+        "IGL",
+        "IRMENERGY",
+        "MGL"
+      ],
+      "size": 5
+    },
+    "singleton_0053": {
+      "label": "Ather Energy Limited",
+      "members": [
+        "ATHERENERG"
+      ],
+      "size": 1
+    },
+    "group_0023": {
+      "label": "Specializing Design",
+      "members": [
+        "ATLANTAELE",
+        "TARIL"
+      ],
+      "size": 2
+    },
+    "group_0024": {
+      "label": "Atul Atul",
+      "members": [
+        "ATUL",
+        "ATULAUTO"
+      ],
+      "size": 2
+    },
+    "group_0025": {
+      "label": "Small Finance",
+      "members": [
+        "AUBANK",
+        "BANDHANBNK",
+        "CAPITALSFB",
+        "EQUITASBNK",
+        "JSFB",
+        "SURYODAY",
+        "UJJIVANSFB"
+      ],
+      "size": 7
+    },
+    "singleton_0054": {
+      "label": "Aurionpro Solutions Limited",
+      "members": [
+        "AURIONPRO"
+      ],
+      "size": 1
+    },
+    "singleton_0055": {
+      "label": "Avantel Limited",
+      "members": [
+        "AVANTEL"
+      ],
+      "size": 1
+    },
+    "singleton_0056": {
+      "label": "Avanti Feeds Limited",
+      "members": [
+        "AVANTIFEED"
+      ],
+      "size": 1
+    },
+    "singleton_0057": {
+      "label": "Aditya Vision Ltd.",
+      "members": [
+        "AVL"
+      ],
+      "size": 1
+    },
+    "singleton_0058": {
+      "label": "Awfis Space Solutions Limited",
+      "members": [
+        "AWFIS"
+      ],
+      "size": 1
+    },
+    "singleton_0059": {
+      "label": "Antony Waste Handling Cell Ltd.",
+      "members": [
+        "AWHCL"
+      ],
+      "size": 1
+    },
+    "singleton_0060": {
+      "label": "AWL Agri Business Ltd",
+      "members": [
+        "AWL"
+      ],
+      "size": 1
+    },
+    "group_0026": {
+      "label": "Original Equipment",
+      "members": [
+        "AXISCADES",
+        "AZAD",
+        "DYNAMATECH",
+        "ENDURANCE",
+        "HAPPYFORGE",
+        "RACLGEAR",
+        "SANSERA",
+        "UNIMECH",
+        "UNOMINDA"
+      ],
+      "size": 9
+    },
+    "group_0027": {
+      "label": "Consumer Goods",
+      "members": [
+        "BAJAJCON",
+        "BECTORFOOD",
+        "COLPAL",
+        "DABUR",
+        "EMAMILTD",
+        "EPL",
+        "GILLETTE",
+        "GODFRYPHLP",
+        "GOPAL",
+        "JYOTHYLAB",
+        "PATANJALI"
+      ],
+      "size": 11
+    },
+    "group_0028": {
+      "label": "Fast Moving",
+      "members": [
+        "BAJAJELEC",
+        "HAVELLS"
+      ],
+      "size": 2
+    },
+    "group_0029": {
+      "label": "Housing Finance",
+      "members": [
+        "BAJAJHFL",
+        "CANFINHOME",
+        "HOMEFIRST",
+        "LICHSGFIN",
+        "PNBHOUSING",
+        "REPCOHOME"
+      ],
+      "size": 6
+    },
+    "singleton_0061": {
+      "label": "Balaji Telefilms Limited",
+      "members": [
+        "BALAJITELE"
+      ],
+      "size": 1
+    },
+    "singleton_0062": {
+      "label": "Balaji Amines Limited",
+      "members": [
+        "BALAMINES"
+      ],
+      "size": 1
+    },
+    "singleton_0063": {
+      "label": "Balkrishna Industries Limited",
+      "members": [
+        "BALKRISIND"
+      ],
+      "size": 1
+    },
+    "singleton_0064": {
+      "label": "Balrampur Chini Mills Ltd",
+      "members": [
+        "BALRAMCHIN"
+      ],
+      "size": 1
+    },
+    "singleton_0065": {
+      "label": "Balu Forge Industries Ltd",
+      "members": [
+        "BALUFORGE"
+      ],
+      "size": 1
+    },
+    "singleton_0066": {
+      "label": "Banco Products (India) Limited",
+      "members": [
+        "BANCOINDIA"
+      ],
+      "size": 1
+    },
+    "group_0030": {
+      "label": "Private Bank",
+      "members": [
+        "BANKINDIA",
+        "CSBBANK",
+        "CUB",
+        "DCBBANK",
+        "KARURVYSYA",
+        "KTKBANK"
+      ],
+      "size": 6
+    },
+    "singleton_0067": {
+      "label": "BASF India Limited",
+      "members": [
+        "BASF"
+      ],
+      "size": 1
+    },
+    "singleton_0068": {
+      "label": "Bata India Ltd",
+      "members": [
+        "BATAINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0069": {
+      "label": "Bayer Cropscience India Limited",
+      "members": [
+        "BAYERCROP"
+      ],
+      "size": 1
+    },
+    "singleton_0070": {
+      "label": "Bharat Bijlee Limited",
+      "members": [
+        "BBL"
+      ],
+      "size": 1
+    },
+    "singleton_0071": {
+      "label": "Black Box Limited",
+      "members": [
+        "BBOX"
+      ],
+      "size": 1
+    },
+    "singleton_0072": {
+      "label": "Bombay Burmah Trading Corp. Ltd.",
+      "members": [
+        "BBTC"
+      ],
+      "size": 1
+    },
+    "singleton_0073": {
+      "label": "Bharat Dynamics Ltd.",
+      "members": [
+        "BDL"
+      ],
+      "size": 1
+    },
+    "singleton_0074": {
+      "label": "Belrise Industries Limited",
+      "members": [
+        "BELRISE"
+      ],
+      "size": 1
+    },
+    "group_0031": {
+      "label": "Ministry Defence",
+      "members": [
+        "BEML",
+        "GRSE"
+      ],
+      "size": 2
+    },
+    "group_0032": {
+      "label": "Player Paint",
+      "members": [
+        "BERGEPAINT",
+        "KANSAINER"
+      ],
+      "size": 2
+    },
+    "singleton_0075": {
+      "label": "Bhagyanagar India Limited",
+      "members": [
+        "BHAGYANGR"
+      ],
+      "size": 1
+    },
+    "singleton_0076": {
+      "label": "Bharat Forge Ltd",
+      "members": [
+        "BHARATFORG"
+      ],
+      "size": 1
+    },
+    "singleton_0077": {
+      "label": "Bharat Seats Limited",
+      "members": [
+        "BHARATSE"
+      ],
+      "size": 1
+    },
+    "singleton_0078": {
+      "label": "Bharat Wire Ropes Ltd.",
+      "members": [
+        "BHARATWIRE"
+      ],
+      "size": 1
+    },
+    "singleton_0079": {
+      "label": "Bharti Hexacom Limited",
+      "members": [
+        "BHARTIHEXA"
+      ],
+      "size": 1
+    },
+    "singleton_0080": {
+      "label": "BIGBLOC Construction Ltd",
+      "members": [
+        "BIGBLOC"
+      ],
+      "size": 1
+    },
+    "singleton_0081": {
+      "label": "Biocon Limited",
+      "members": [
+        "BIOCON"
+      ],
+      "size": 1
+    },
+    "singleton_0082": {
+      "label": "Birla Corporation Limited",
+      "members": [
+        "BIRLACORPN"
+      ],
+      "size": 1
+    },
+    "singleton_0083": {
+      "label": "Blackbuck Ltd",
+      "members": [
+        "BLACKBUCK"
+      ],
+      "size": 1
+    },
+    "singleton_0084": {
+      "label": "Bliss GVS Pharma Limited",
+      "members": [
+        "BLISSGVS"
+      ],
+      "size": 1
+    },
+    "group_0033": {
+      "label": "Engineering Procurement",
+      "members": [
+        "BLKASHYAP",
+        "CAPACITE",
+        "GARUDA"
+      ],
+      "size": 3
+    },
+    "group_0034": {
+      "label": "Technology Enabled",
+      "members": [
+        "BLS",
+        "BLSE"
+      ],
+      "size": 2
+    },
+    "singleton_0085": {
+      "label": "Blue Dart Express Limited",
+      "members": [
+        "BLUEDART"
+      ],
+      "size": 1
+    },
+    "singleton_0086": {
+      "label": "Blue Star Limited",
+      "members": [
+        "BLUESTARCO"
+      ],
+      "size": 1
+    },
+    "singleton_0087": {
+      "label": "Bluestone Jewellery and Lifestyle Limited",
+      "members": [
+        "BLUESTONE"
+      ],
+      "size": 1
+    },
+    "group_0035": {
+      "label": "Specializing Production",
+      "members": [
+        "BODALCHEM",
+        "KIRIINDUS"
+      ],
+      "size": 2
+    },
+    "singleton_0088": {
+      "label": "Bombay Dyeing & Manufacturing Co. Ltd.",
+      "members": [
+        "BOMDYEING"
+      ],
+      "size": 1
+    },
+    "group_0036": {
+      "label": "Solar Photovoltaic",
+      "members": [
+        "BORORENEW",
+        "EMMVEE",
+        "GKENERGY",
+        "INA",
+        "ORIANA",
+        "PREMIERENE",
+        "SAATVIKGL",
+        "SOLEX",
+        "SWSOLAR",
+        "VIKRAMSOLR",
+        "WAAREEENER",
+        "WAAREERTL",
+        "WEBELSOLAR"
+      ],
+      "size": 13
+    },
+    "group_0037": {
+      "label": "Real Estate",
+      "members": [
+        "BRIGADE",
+        "SHRIRAMPPS"
+      ],
+      "size": 2
+    },
+    "singleton_0089": {
+      "label": "Birlasoft Limited",
+      "members": [
+        "BSOFT"
+      ],
+      "size": 1
+    },
+    "singleton_0090": {
+      "label": "Shankara Buildpro Limited",
+      "members": [
+        "BUILDPRO"
+      ],
+      "size": 1
+    },
+    "singleton_0091": {
+      "label": "Camlin Fine Sciences Limited",
+      "members": [
+        "CAMLINFINE"
+      ],
+      "size": 1
+    },
+    "singleton_0092": {
+      "label": "Campus Activewear Ltd.",
+      "members": [
+        "CAMPUS"
+      ],
+      "size": 1
+    },
+    "group_0038": {
+      "label": "Technology Driven",
+      "members": [
+        "CAMS",
+        "KFINTECH"
+      ],
+      "size": 2
+    },
+    "group_0039": {
+      "label": "Life Insurance",
+      "members": [
+        "CANHLIFE",
+        "ICICIGI",
+        "ICICIPRULI"
+      ],
+      "size": 3
+    },
+    "singleton_0093": {
+      "label": "Capillary Technologies India Ltd.",
+      "members": [
+        "CAPILLARY"
+      ],
+      "size": 1
+    },
+    "singleton_0094": {
+      "label": "Caplin Point Laboratories Limited",
+      "members": [
+        "CAPLIPOINT"
+      ],
+      "size": 1
+    },
+    "singleton_0095": {
+      "label": "Carborundum Universal Limited",
+      "members": [
+        "CARBORUNIV"
+      ],
+      "size": 1
+    },
+    "singleton_0096": {
+      "label": "CARE Ratings Ltd",
+      "members": [
+        "CARERATING"
+      ],
+      "size": 1
+    },
+    "singleton_0097": {
+      "label": "Carraro India Ltd.",
+      "members": [
+        "CARRARO"
+      ],
+      "size": 1
+    },
+    "singleton_0098": {
+      "label": "CarTrade Tech Ltd.",
+      "members": [
+        "CARTRADE"
+      ],
+      "size": 1
+    },
+    "singleton_0099": {
+      "label": "Carysil Limited",
+      "members": [
+        "CARYSIL"
+      ],
+      "size": 1
+    },
+    "group_0040": {
+      "label": "Player Lubricant",
+      "members": [
+        "CASTROLIND",
+        "VEEDOL"
+      ],
+      "size": 2
+    },
+    "singleton_0100": {
+      "label": "CCL Products (India) Limited",
+      "members": [
+        "CCL"
+      ],
+      "size": 1
+    },
+    "singleton_0101": {
+      "label": "Central Depository Services (India) Limited",
+      "members": [
+        "CDSL"
+      ],
+      "size": 1
+    },
+    "group_0041": {
+      "label": "Tyre Manufacturer",
+      "members": [
+        "CEATLTD",
+        "MRF"
+      ],
+      "size": 2
+    },
+    "singleton_0102": {
+      "label": "Ceinsys Tech Ltd",
+      "members": [
+        "CEINSYS"
+      ],
+      "size": 1
+    },
+    "group_0042": {
+      "label": "Writing Instruments",
+      "members": [
+        "CELLO",
+        "FLAIR"
+      ],
+      "size": 2
+    },
+    "singleton_0103": {
+      "label": "Centum Electronics Limited",
+      "members": [
+        "CENTUM"
+      ],
+      "size": 1
+    },
+    "singleton_0104": {
+      "label": "Cera Sanitaryware Limited",
+      "members": [
+        "CERA"
+      ],
+      "size": 1
+    },
+    "singleton_0105": {
+      "label": "CESC Ltd",
+      "members": [
+        "CESC"
+      ],
+      "size": 1
+    },
+    "singleton_0106": {
+      "label": "Chalet Hotels Ltd.",
+      "members": [
+        "CHALET"
+      ],
+      "size": 1
+    },
+    "singleton_0107": {
+      "label": "Chambal Fertilisers & Chemicals Ltd.",
+      "members": [
+        "CHAMBLFERT"
+      ],
+      "size": 1
+    },
+    "singleton_0108": {
+      "label": "Chemplast Sanmar Limited",
+      "members": [
+        "CHEMPLASTS"
+      ],
+      "size": 1
+    },
+    "group_0043": {
+      "label": "Public Enterprise",
+      "members": [
+        "CHENNPETRO",
+        "HINDPETRO",
+        "MRPL"
+      ],
+      "size": 3
+    },
+    "singleton_0109": {
+      "label": "Choice International Limited",
+      "members": [
+        "CHOICEIN"
+      ],
+      "size": 1
+    },
+    "singleton_0110": {
+      "label": "CIE Automotive India Ltd",
+      "members": [
+        "CIEINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0111": {
+      "label": "Cigniti Technologies Limited",
+      "members": [
+        "CIGNITITEC"
+      ],
+      "size": 1
+    },
+    "singleton_0112": {
+      "label": "Clean Science & Technology Ltd.",
+      "members": [
+        "CLEAN"
+      ],
+      "size": 1
+    },
+    "singleton_0113": {
+      "label": "Clean Max Enviro Energy Solutions Limited",
+      "members": [
+        "CLEANMAX"
+      ],
+      "size": 1
+    },
+    "singleton_0114": {
+      "label": "Central Mine Planning & Design Institute Limited",
+      "members": [
+        "CMPDI"
+      ],
+      "size": 1
+    },
+    "group_0044": {
+      "label": "Leading Integrated",
+      "members": [
+        "CMSINFO",
+        "UDS"
+      ],
+      "size": 2
+    },
+    "group_0045": {
+      "label": "Public Enterprise",
+      "members": [
+        "COCHINSHIP",
+        "CONCOR",
+        "HEMIPROP",
+        "HINDCOPPER",
+        "HUDCO",
+        "IRCON",
+        "IRCTC",
+        "IREDA",
+        "MOIL",
+        "NATIONALUM",
+        "NBCC",
+        "RAILTEL",
+        "RECLTD",
+        "SJVN"
+      ],
+      "size": 14
+    },
+    "singleton_0115": {
+      "label": "Coforge Limited",
+      "members": [
+        "COFORGE"
+      ],
+      "size": 1
+    },
+    "singleton_0116": {
+      "label": "Confidence Petroleum India Limited",
+      "members": [
+        "CONFIPET"
+      ],
+      "size": 1
+    },
+    "singleton_0117": {
+      "label": "Coromandel International Limited",
+      "members": [
+        "COROMANDEL"
+      ],
+      "size": 1
+    },
+    "singleton_0118": {
+      "label": "Cosmo First Limited",
+      "members": [
+        "COSMOFIRST"
+      ],
+      "size": 1
+    },
+    "singleton_0119": {
+      "label": "Craftsman Automation Ltd.",
+      "members": [
+        "CRAFTSMAN"
+      ],
+      "size": 1
+    },
+    "singleton_0120": {
+      "label": "Canara Robeco Asset Management Co. Ltd.",
+      "members": [
+        "CRAMC"
+      ],
+      "size": 1
+    },
+    "group_0046": {
+      "label": "Microfinance Institution",
+      "members": [
+        "CREDITACC",
+        "FUSION",
+        "M&MFIN",
+        "MUTHOOTMF",
+        "SATIN",
+        "SPANDANA"
+      ],
+      "size": 6
+    },
+    "singleton_0121": {
+      "label": "CRISIL Limited",
+      "members": [
+        "CRISIL"
+      ],
+      "size": 1
+    },
+    "singleton_0122": {
+      "label": "Crizac Limited",
+      "members": [
+        "CRIZAC"
+      ],
+      "size": 1
+    },
+    "singleton_0123": {
+      "label": "Crompton Greaves Consumer Electricals Ltd.",
+      "members": [
+        "CROMPTON"
+      ],
+      "size": 1
+    },
+    "group_0047": {
+      "label": "Infrastructure Investment",
+      "members": [
+        "CUBEINVIT",
+        "INDIGRID"
+      ],
+      "size": 2
+    },
+    "singleton_0124": {
+      "label": "Cupid Limited",
+      "members": [
+        "CUPID"
+      ],
+      "size": 1
+    },
+    "singleton_0125": {
+      "label": "Cyient Limited",
+      "members": [
+        "CYIENT"
+      ],
+      "size": 1
+    },
+    "singleton_0126": {
+      "label": "Cyient DLM Limited",
+      "members": [
+        "CYIENTDLM"
+      ],
+      "size": 1
+    },
+    "singleton_0127": {
+      "label": "Dalmia Bharat Ltd.",
+      "members": [
+        "DALBHARAT"
+      ],
+      "size": 1
+    },
+    "singleton_0128": {
+      "label": "Dalmia Bharat Sugar & Industries Ltd.",
+      "members": [
+        "DALMIASUG"
+      ],
+      "size": 1
+    },
+    "singleton_0129": {
+      "label": "DAM Capital Advisors Ltd.",
+      "members": [
+        "DAMCAPITAL"
+      ],
+      "size": 1
+    },
+    "singleton_0130": {
+      "label": "Datamatics Global Services Limited",
+      "members": [
+        "DATAMATICS"
+      ],
+      "size": 1
+    },
+    "singleton_0131": {
+      "label": "Data Patterns (India) Limited",
+      "members": [
+        "DATAPATTNS"
+      ],
+      "size": 1
+    },
+    "group_0048": {
+      "label": "Real Estate",
+      "members": [
+        "DBREALTY",
+        "OBEROIRLTY",
+        "PRESTIGE"
+      ],
+      "size": 3
+    },
+    "singleton_0132": {
+      "label": "DCM Shriram Limited",
+      "members": [
+        "DCMSHRIRAM"
+      ],
+      "size": 1
+    },
+    "singleton_0133": {
+      "label": "DCW Ltd.",
+      "members": [
+        "DCW"
+      ],
+      "size": 1
+    },
+    "singleton_0134": {
+      "label": "DCX Systems Limited",
+      "members": [
+        "DCXINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0135": {
+      "label": "Deccan Gold Mines Limited",
+      "members": [
+        "DECNGOLD"
+      ],
+      "size": 1
+    },
+    "singleton_0136": {
+      "label": "DEE Development Engineers Limited",
+      "members": [
+        "DEEDEV"
+      ],
+      "size": 1
+    },
+    "singleton_0137": {
+      "label": "Deepak Fertilisers and Petrochemicals Corporation Ltd.",
+      "members": [
+        "DEEPAKFERT"
+      ],
+      "size": 1
+    },
+    "singleton_0138": {
+      "label": "Deepak Nitrite Limited",
+      "members": [
+        "DEEPAKNTR"
+      ],
+      "size": 1
+    },
+    "singleton_0139": {
+      "label": "Deep Industries Limited",
+      "members": [
+        "DEEPINDS"
+      ],
+      "size": 1
+    },
+    "singleton_0140": {
+      "label": "Delhivery Limited",
+      "members": [
+        "DELHIVERY"
+      ],
+      "size": 1
+    },
+    "group_0049": {
+      "label": "Entertainment Industry",
+      "members": [
+        "DELTACORP",
+        "PFOCUS"
+      ],
+      "size": 2
+    },
+    "group_0050": {
+      "label": "Quick Service",
+      "members": [
+        "DEVYANI",
+        "RBA",
+        "WESTLIFE"
+      ],
+      "size": 3
+    },
+    "group_0051": {
+      "label": "Utilizes Sugarcane",
+      "members": [
+        "DHAMPURSUG",
+        "GODAVARIB"
+      ],
+      "size": 2
+    },
+    "singleton_0141": {
+      "label": "Diamond Power Infrastructure Limited",
+      "members": [
+        "DIACABS"
+      ],
+      "size": 1
+    },
+    "singleton_0142": {
+      "label": "Dixon Technologies (India) Ltd.",
+      "members": [
+        "DIXON"
+      ],
+      "size": 1
+    },
+    "singleton_0143": {
+      "label": "D-Link (India) Ltd.",
+      "members": [
+        "DLINKINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0144": {
+      "label": "Dolat Algotech Limited",
+      "members": [
+        "DOLATALGO"
+      ],
+      "size": 1
+    },
+    "singleton_0145": {
+      "label": "DOMS Industries Limited",
+      "members": [
+        "DOMS"
+      ],
+      "size": 1
+    },
+    "singleton_0146": {
+      "label": "Dredging Corporation of India Limited",
+      "members": [
+        "DREDGECORP"
+      ],
+      "size": 1
+    },
+    "singleton_0147": {
+      "label": "Dynacons Systems & Solutions Ltd.",
+      "members": [
+        "DSSL"
+      ],
+      "size": 1
+    },
+    "singleton_0148": {
+      "label": "Dynamic Cables Ltd.",
+      "members": [
+        "DYCL"
+      ],
+      "size": 1
+    },
+    "group_0052": {
+      "label": "High Computing",
+      "members": [
+        "E2E",
+        "NETWEB"
+      ],
+      "size": 2
+    },
+    "group_0053": {
+      "label": "Operating Primarily",
+      "members": [
+        "EBGNG",
+        "EMIL"
+      ],
+      "size": 2
+    },
+    "singleton_0149": {
+      "label": "eClerx Services Limited",
+      "members": [
+        "ECLERX"
+      ],
+      "size": 1
+    },
+    "singleton_0150": {
+      "label": "ECOS (India) Mobility & Hospitality Limited",
+      "members": [
+        "ECOSMOBLTY"
+      ],
+      "size": 1
+    },
+    "singleton_0151": {
+      "label": "Edelweiss Financial Services Limited",
+      "members": [
+        "EDELWEISS"
+      ],
+      "size": 1
+    },
+    "singleton_0152": {
+      "label": "EFC (I) Ltd.",
+      "members": [
+        "EFCIL"
+      ],
+      "size": 1
+    },
+    "singleton_0153": {
+      "label": "E.I.D.-Parry (India) Limited",
+      "members": [
+        "EIDPARRY"
+      ],
+      "size": 1
+    },
+    "group_0054": {
+      "label": "Design Construction",
+      "members": [
+        "EIEL",
+        "EMSLIMITED"
+      ],
+      "size": 2
+    },
+    "singleton_0154": {
+      "label": "Everest Kanto Cylinder Limited",
+      "members": [
+        "EKC"
+      ],
+      "size": 1
+    },
+    "singleton_0155": {
+      "label": "Elecon Engineering Co. Ltd.",
+      "members": [
+        "ELECON"
+      ],
+      "size": 1
+    },
+    "singleton_0156": {
+      "label": "Electrosteel Castings Ltd.",
+      "members": [
+        "ELECTCAST"
+      ],
+      "size": 1
+    },
+    "singleton_0157": {
+      "label": "ELGI Equipments Limited",
+      "members": [
+        "ELGIEQUIP"
+      ],
+      "size": 1
+    },
+    "singleton_0158": {
+      "label": "Ellenbarrie Industrial Gases Limited",
+      "members": [
+        "ELLEN"
+      ],
+      "size": 1
+    },
+    "singleton_0159": {
+      "label": "Elpro International Ltd",
+      "members": [
+        "ELPROINTL"
+      ],
+      "size": 1
+    },
+    "singleton_0160": {
+      "label": "Embassy Developments Limited",
+      "members": [
+        "EMBDL"
+      ],
+      "size": 1
+    },
+    "singleton_0161": {
+      "label": "Emcure Pharmaceuticals Limited",
+      "members": [
+        "EMCURE"
+      ],
+      "size": 1
+    },
+    "singleton_0162": {
+      "label": "eMudhra Limited",
+      "members": [
+        "EMUDHRA"
+      ],
+      "size": 1
+    },
+    "singleton_0163": {
+      "label": "Engineers India Limited",
+      "members": [
+        "ENGINERSIN"
+      ],
+      "size": 1
+    },
+    "singleton_0164": {
+      "label": "Entero Healthcare Solutions Limited",
+      "members": [
+        "ENTERO"
+      ],
+      "size": 1
+    },
+    "singleton_0165": {
+      "label": "Epack Durable Limited",
+      "members": [
+        "EPACK"
+      ],
+      "size": 1
+    },
+    "group_0055": {
+      "label": "Provider Turnkey",
+      "members": [
+        "EPACKPEB",
+        "INTERARCH"
+      ],
+      "size": 2
+    },
+    "singleton_0166": {
+      "label": "Epigral Ltd",
+      "members": [
+        "EPIGRAL"
+      ],
+      "size": 1
+    },
+    "singleton_0167": {
+      "label": "Eris Lifesciences Ltd",
+      "members": [
+        "ERIS"
+      ],
+      "size": 1
+    },
+    "singleton_0168": {
+      "label": "Esab India Limited",
+      "members": [
+        "ESABINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0169": {
+      "label": "Escorts Kubota Limited",
+      "members": [
+        "ESCORTS"
+      ],
+      "size": 1
+    },
+    "singleton_0170": {
+      "label": "Ester Industries Limited",
+      "members": [
+        "ESTER"
+      ],
+      "size": 1
+    },
+    "singleton_0171": {
+      "label": "Ethos Ltd.",
+      "members": [
+        "ETHOSLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0172": {
+      "label": "Eureka Forbes Limited",
+      "members": [
+        "EUREKAFORB"
+      ],
+      "size": 1
+    },
+    "singleton_0173": {
+      "label": "Euro Pratik Sales Limited",
+      "members": [
+        "EUROPRATIK"
+      ],
+      "size": 1
+    },
+    "singleton_0174": {
+      "label": "Excelsoft Technologies Limited",
+      "members": [
+        "EXCELSOFT"
+      ],
+      "size": 1
+    },
+    "singleton_0175": {
+      "label": "Fertilizers & Chemicals Travancore Ltd.",
+      "members": [
+        "FACT"
+      ],
+      "size": 1
+    },
+    "singleton_0176": {
+      "label": "Federal Bank Ltd. (India)",
+      "members": [
+        "FEDERALBNK"
+      ],
+      "size": 1
+    },
+    "singleton_0177": {
+      "label": "Fiem Industries Limited",
+      "members": [
+        "FIEMIND"
+      ],
+      "size": 1
+    },
+    "singleton_0178": {
+      "label": "Finolex Cables Limited",
+      "members": [
+        "FINCABLES"
+      ],
+      "size": 1
+    },
+    "singleton_0179": {
+      "label": "Fine Organic Industries Ltd.",
+      "members": [
+        "FINEORG"
+      ],
+      "size": 1
+    },
+    "singleton_0180": {
+      "label": "Finolex Industries Limited",
+      "members": [
+        "FINPIPE"
+      ],
+      "size": 1
+    },
+    "singleton_0181": {
+      "label": "Brainbees Solutions Limited",
+      "members": [
+        "FIRSTCRY"
+      ],
+      "size": 1
+    },
+    "singleton_0182": {
+      "label": "Gujarat Fluorochemicals Ltd.",
+      "members": [
+        "FLUOROCHEM"
+      ],
+      "size": 1
+    },
+    "singleton_0183": {
+      "label": "Force Motors Limited",
+      "members": [
+        "FORCEMOT"
+      ],
+      "size": 1
+    },
+    "group_0056": {
+      "label": "Healthcare Provider",
+      "members": [
+        "FORTIS",
+        "MAXHEALTH",
+        "YATHARTH"
+      ],
+      "size": 3
+    },
+    "singleton_0184": {
+      "label": "Fractal Analytics Limited",
+      "members": [
+        "FRACTAL"
+      ],
+      "size": 1
+    },
+    "singleton_0185": {
+      "label": "Frontier Springs Limited.",
+      "members": [
+        "FRONTSP"
+      ],
+      "size": 1
+    },
+    "singleton_0186": {
+      "label": "Firstsource Solutions Limited",
+      "members": [
+        "FSL"
+      ],
+      "size": 1
+    },
+    "singleton_0187": {
+      "label": "Gabriel India Limited",
+      "members": [
+        "GABRIEL"
+      ],
+      "size": 1
+    },
+    "singleton_0188": {
+      "label": "Gujarat Ambuja Exports Limited",
+      "members": [
+        "GAEL"
+      ],
+      "size": 1
+    },
+    "singleton_0189": {
+      "label": "Gala Precision Engineering Limited",
+      "members": [
+        "GALAPREC"
+      ],
+      "size": 1
+    },
+    "singleton_0190": {
+      "label": "Gallantt Ispat Limited",
+      "members": [
+        "GALLANTT"
+      ],
+      "size": 1
+    },
+    "singleton_0191": {
+      "label": "Gandhar Oil Refinery (India) Limited",
+      "members": [
+        "GANDHAR"
+      ],
+      "size": 1
+    },
+    "group_0057": {
+      "label": "Value Added",
+      "members": [
+        "GANECOS",
+        "TINNARUBR"
+      ],
+      "size": 2
+    },
+    "singleton_0192": {
+      "label": "Ganesh Consumer Products Limited",
+      "members": [
+        "GANESHCP"
+      ],
+      "size": 1
+    },
+    "singleton_0193": {
+      "label": "Ganesh Housing Limited",
+      "members": [
+        "GANESHHOU"
+      ],
+      "size": 1
+    },
+    "singleton_0194": {
+      "label": "Garware Technical Fibres Limited",
+      "members": [
+        "GARFIBRES"
+      ],
+      "size": 1
+    },
+    "group_0058": {
+      "label": "Logistics Service",
+      "members": [
+        "GATEWAY",
+        "NAVKARCORP"
+      ],
+      "size": 2
+    },
+    "singleton_0195": {
+      "label": "Gretex Corporate Services Ltd",
+      "members": [
+        "GCSL"
+      ],
+      "size": 1
+    },
+    "singleton_0196": {
+      "label": "Genesys International Corporation Limited",
+      "members": [
+        "GENESYS"
+      ],
+      "size": 1
+    },
+    "singleton_0197": {
+      "label": "Genus Power Infrastructures Limited",
+      "members": [
+        "GENUSPOWER"
+      ],
+      "size": 1
+    },
+    "singleton_0198": {
+      "label": "Great Eastern Shipping Co. Ltd.",
+      "members": [
+        "GESHIP"
+      ],
+      "size": 1
+    },
+    "singleton_0199": {
+      "label": "GHCL Limited",
+      "members": [
+        "GHCL"
+      ],
+      "size": 1
+    },
+    "singleton_0200": {
+      "label": "General Insurance Corporation of India",
+      "members": [
+        "GICRE"
+      ],
+      "size": 1
+    },
+    "singleton_0201": {
+      "label": "Gujarat Industries Power Co. Ltd.",
+      "members": [
+        "GIPCL"
+      ],
+      "size": 1
+    },
+    "singleton_0202": {
+      "label": "Gujarat Kidney & Super Speciality Ltd.",
+      "members": [
+        "GKSL"
+      ],
+      "size": 1
+    },
+    "group_0059": {
+      "label": "Gland Pharma",
+      "members": [
+        "GLAND",
+        "MARKSANS"
+      ],
+      "size": 2
+    },
+    "singleton_0203": {
+      "label": "GlaxoSmithKline Pharmaceuticals Limited",
+      "members": [
+        "GLAXO"
+      ],
+      "size": 1
+    },
+    "group_0060": {
+      "label": "Presence Across",
+      "members": [
+        "GLENMARK",
+        "NAZARA"
+      ],
+      "size": 2
+    },
+    "singleton_0204": {
+      "label": "Gujarat Mineral Development Corporation Limited",
+      "members": [
+        "GMDCLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0205": {
+      "label": "GMM Pfaudler Limited",
+      "members": [
+        "GMMPFAUDLR"
+      ],
+      "size": 1
+    },
+    "singleton_0206": {
+      "label": "GMR Power and Urban Infra Ltd",
+      "members": [
+        "GMRP&UI"
+      ],
+      "size": 1
+    },
+    "singleton_0207": {
+      "label": "GNA Axles Ltd",
+      "members": [
+        "GNA"
+      ],
+      "size": 1
+    },
+    "group_0061": {
+      "label": "Fertilizers Chemicals",
+      "members": [
+        "GNFC",
+        "GSFC"
+      ],
+      "size": 2
+    },
+    "singleton_0208": {
+      "label": "Go Fashion (India) Limited",
+      "members": [
+        "GOCOLORS"
+      ],
+      "size": 1
+    },
+    "group_0062": {
+      "label": "General Insurance",
+      "members": [
+        "GODIGIT",
+        "NIACL"
+      ],
+      "size": 2
+    },
+    "singleton_0209": {
+      "label": "Godrej Agrovet Limited",
+      "members": [
+        "GODREJAGRO"
+      ],
+      "size": 1
+    },
+    "group_0063": {
+      "label": "Godrej Industries",
+      "members": [
+        "GODREJIND",
+        "GODREJPROP"
+      ],
+      "size": 2
+    },
+    "singleton_0210": {
+      "label": "Gokaldas Exports Limited",
+      "members": [
+        "GOKEX"
+      ],
+      "size": 1
+    },
+    "singleton_0211": {
+      "label": "Gokul Agro Resources Ltd.",
+      "members": [
+        "GOKULAGRO"
+      ],
+      "size": 1
+    },
+    "singleton_0212": {
+      "label": "Goldiam International Limited",
+      "members": [
+        "GOLDIAM"
+      ],
+      "size": 1
+    },
+    "singleton_0213": {
+      "label": "Goodluck India Ltd.",
+      "members": [
+        "GOODLUCK"
+      ],
+      "size": 1
+    },
+    "group_0064": {
+      "label": "Iron Mining",
+      "members": [
+        "GPIL",
+        "KIOCL",
+        "LLOYDSME",
+        "ORISSAMINE"
+      ],
+      "size": 4
+    },
+    "singleton_0214": {
+      "label": "Gujarat Pipavav Port Limited",
+      "members": [
+        "GPPL"
+      ],
+      "size": 1
+    },
+    "group_0065": {
+      "label": "Manufacturer Graphite",
+      "members": [
+        "GRAPHITE",
+        "HEG"
+      ],
+      "size": 2
+    },
+    "group_0066": {
+      "label": "Ferrous Metals",
+      "members": [
+        "GRAVITA",
+        "JAINREC",
+        "POCL"
+      ],
+      "size": 3
+    },
+    "singleton_0215": {
+      "label": "Greaves Cotton Limited",
+      "members": [
+        "GREAVESCOT"
+      ],
+      "size": 1
+    },
+    "singleton_0216": {
+      "label": "Greenlam Industries Ltd",
+      "members": [
+        "GREENLAM"
+      ],
+      "size": 1
+    },
+    "group_0067": {
+      "label": "Medium Density",
+      "members": [
+        "GREENPANEL",
+        "GREENPLY"
+      ],
+      "size": 2
+    },
+    "singleton_0217": {
+      "label": "Grindwell Norton Limited",
+      "members": [
+        "GRINDWELL"
+      ],
+      "size": 1
+    },
+    "singleton_0218": {
+      "label": "G R Infraprojects Ltd.",
+      "members": [
+        "GRINFRA"
+      ],
+      "size": 1
+    },
+    "singleton_0219": {
+      "label": "GRM Overseas Ltd.",
+      "members": [
+        "GRMOVER"
+      ],
+      "size": 1
+    },
+    "singleton_0220": {
+      "label": "Garware Hi-Tech Films Limited",
+      "members": [
+        "GRWRHITECH"
+      ],
+      "size": 1
+    },
+    "singleton_0221": {
+      "label": "GSP Crop Science Limited",
+      "members": [
+        "GSPCROP"
+      ],
+      "size": 1
+    },
+    "singleton_0222": {
+      "label": "Gujarat State Petronet Limited",
+      "members": [
+        "GSPL"
+      ],
+      "size": 1
+    },
+    "singleton_0223": {
+      "label": "Gujarat Alkalies & Chemicals Ltd.",
+      "members": [
+        "GUJALKALI"
+      ],
+      "size": 1
+    },
+    "singleton_0224": {
+      "label": "Gulf Oil Lubricants India Ltd",
+      "members": [
+        "GULFOILLUB"
+      ],
+      "size": 1
+    },
+    "singleton_0225": {
+      "label": "Gulshan Polyols Limited",
+      "members": [
+        "GULPOLY"
+      ],
+      "size": 1
+    },
+    "singleton_0226": {
+      "label": "GE Power India Ltd.",
+      "members": [
+        "GVPIL"
+      ],
+      "size": 1
+    },
+    "singleton_0227": {
+      "label": "Happiest Minds Technologies Ltd.",
+      "members": [
+        "HAPPSTMNDS"
+      ],
+      "size": 1
+    },
+    "singleton_0228": {
+      "label": "Hariom Pipe Industries Ltd.",
+      "members": [
+        "HARIOMPIPE"
+      ],
+      "size": 1
+    },
+    "singleton_0229": {
+      "label": "Harsha Engineers International Ltd.",
+      "members": [
+        "HARSHA"
+      ],
+      "size": 1
+    },
+    "singleton_0230": {
+      "label": "HBL Engineering Limited",
+      "members": [
+        "HBLENGINE"
+      ],
+      "size": 1
+    },
+    "singleton_0231": {
+      "label": "HealthCare Global Enterprises Ltd.",
+      "members": [
+        "HCG"
+      ],
+      "size": 1
+    },
+    "group_0068": {
+      "label": "Heritage Foods",
+      "members": [
+        "HERITGFOOD",
+        "PARAGMILK"
+      ],
+      "size": 2
+    },
+    "singleton_0232": {
+      "label": "Hexaware Technologies Limited",
+      "members": [
+        "HEXT"
+      ],
+      "size": 1
+    },
+    "group_0069": {
+      "label": "Optical Fiber",
+      "members": [
+        "HFCL",
+        "STLTECH"
+      ],
+      "size": 2
+    },
+    "singleton_0233": {
+      "label": "Hinduja Global Solutions Limited",
+      "members": [
+        "HGS"
+      ],
+      "size": 1
+    },
+    "singleton_0234": {
+      "label": "Hikal Limited",
+      "members": [
+        "HIKAL"
+      ],
+      "size": 1
+    },
+    "singleton_0235": {
+      "label": "Himatsingka Seide Limited.",
+      "members": [
+        "HIMATSEIDE"
+      ],
+      "size": 1
+    },
+    "singleton_0236": {
+      "label": "Hind Rectifiers Limited",
+      "members": [
+        "HIRECT"
+      ],
+      "size": 1
+    },
+    "group_0070": {
+      "label": "Steel Pipes",
+      "members": [
+        "HITECH",
+        "JTLIND",
+        "RATNAMANI",
+        "SAMBHV",
+        "SCODATUBES",
+        "VENUSPIPES"
+      ],
+      "size": 6
+    },
+    "singleton_0237": {
+      "label": "Honasa Consumer Limited",
+      "members": [
+        "HONASA"
+      ],
+      "size": 1
+    },
+    "singleton_0238": {
+      "label": "Honeywell Automation India Limited",
+      "members": [
+        "HONAUT"
+      ],
+      "size": 1
+    },
+    "singleton_0239": {
+      "label": "HPL Electric & Power Limited",
+      "members": [
+        "HPL"
+      ],
+      "size": 1
+    },
+    "singleton_0240": {
+      "label": "Himadri Speciality Chemical Ltd.",
+      "members": [
+        "HSCL"
+      ],
+      "size": 1
+    },
+    "singleton_0241": {
+      "label": "Huhtamaki India Limited",
+      "members": [
+        "HUHTAMAKI"
+      ],
+      "size": 1
+    },
+    "singleton_0242": {
       "label": "ICICIBANK",
       "members": [
         "ICICIBANK"
       ],
       "size": 1
     },
-    "singleton_0001": {
+    "singleton_0243": {
+      "label": "Indo Count Industries Limited",
+      "members": [
+        "ICIL"
+      ],
+      "size": 1
+    },
+    "singleton_0244": {
+      "label": "IDBI Bank Limited",
+      "members": [
+        "IDBI"
+      ],
+      "size": 1
+    },
+    "singleton_0245": {
+      "label": "Ideaforge Technology Limited",
+      "members": [
+        "IDEAFORGE"
+      ],
+      "size": 1
+    },
+    "singleton_0246": {
+      "label": "IDFC First Bank Ltd.",
+      "members": [
+        "IDFCFIRSTB"
+      ],
+      "size": 1
+    },
+    "singleton_0247": {
+      "label": "Indian Energy Exchange Ltd.",
+      "members": [
+        "IEX"
+      ],
+      "size": 1
+    },
+    "singleton_0248": {
+      "label": "IFB Agro Industries Ltd.",
+      "members": [
+        "IFBAGRO"
+      ],
+      "size": 1
+    },
+    "singleton_0249": {
+      "label": "IFB Industries Ltd",
+      "members": [
+        "IFBIND"
+      ],
+      "size": 1
+    },
+    "singleton_0250": {
+      "label": "Igarashi Motors India Limited",
+      "members": [
+        "IGARASHI"
+      ],
+      "size": 1
+    },
+    "singleton_0251": {
+      "label": "International Gemological Institute Ltd",
+      "members": [
+        "IGIL"
+      ],
+      "size": 1
+    },
+    "singleton_0252": {
+      "label": "IKIO Technologies Ltd",
+      "members": [
+        "IKIO"
+      ],
+      "size": 1
+    },
+    "singleton_0253": {
+      "label": "Inventurus Knowledge Solutions Limited",
+      "members": [
+        "IKS"
+      ],
+      "size": 1
+    },
+    "singleton_0254": {
+      "label": "Indian Metals & Ferro Alloys Ltd.",
+      "members": [
+        "IMFA"
+      ],
+      "size": 1
+    },
+    "singleton_0255": {
+      "label": "Indegene Limited",
+      "members": [
+        "INDGN"
+      ],
+      "size": 1
+    },
+    "group_0071": {
+      "label": "Hotels Ihcl",
+      "members": [
+        "INDHOTEL",
+        "TAJGVK"
+      ],
+      "size": 2
+    },
+    "group_0072": {
+      "label": "Cements Prominent",
+      "members": [
+        "INDIACEM",
+        "SAGCEM"
+      ],
+      "size": 2
+    },
+    "singleton_0256": {
+      "label": "India Glycols Limited",
+      "members": [
+        "INDIAGLYCO"
+      ],
+      "size": 1
+    },
+    "singleton_0257": {
+      "label": "IndiaMART InterMESH Ltd.",
+      "members": [
+        "INDIAMART"
+      ],
+      "size": 1
+    },
+    "singleton_0258": {
+      "label": "Indigo Paints Ltd",
+      "members": [
+        "INDIGOPNTS"
+      ],
+      "size": 1
+    },
+    "singleton_0259": {
+      "label": "Indoco Remedies Limited",
+      "members": [
+        "INDOCO"
+      ],
+      "size": 1
+    },
+    "group_0073": {
+      "label": "Serving Diverse",
+      "members": [
+        "INDOTECH",
+        "MARSONS",
+        "SANSTAR",
+        "SHILCTECH"
+      ],
+      "size": 4
+    },
+    "singleton_0260": {
+      "label": "Indo Thai Securities Limited",
+      "members": [
+        "INDOTHAI"
+      ],
+      "size": 1
+    },
+    "singleton_0261": {
+      "label": "Indraprastha Medical Corporation Limited",
+      "members": [
+        "INDRAMEDCO"
+      ],
+      "size": 1
+    },
+    "singleton_0262": {
+      "label": "Ind-Swift Laboratories Ltd.",
+      "members": [
+        "INDSWFTLAB"
+      ],
+      "size": 1
+    },
+    "singleton_0263": {
+      "label": "IndusInd Bank Ltd.",
+      "members": [
+        "INDUSINDBK"
+      ],
+      "size": 1
+    },
+    "singleton_0264": {
+      "label": "InfoBeans Technologies Ltd.",
+      "members": [
+        "INFOBEAN"
+      ],
+      "size": 1
+    },
+    "singleton_0265": {
+      "label": "Ingersoll-Rand (India) Limited",
+      "members": [
+        "INGERRAND"
+      ],
+      "size": 1
+    },
+    "group_0074": {
+      "label": "Wind Energy",
+      "members": [
+        "INOXGREEN",
+        "INOXWIND",
+        "SUZLON"
+      ],
+      "size": 3
+    },
+    "singleton_0266": {
+      "label": "INOX India Limited",
+      "members": [
+        "INOXINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0267": {
+      "label": "Intellect Design Arena Ltd",
+      "members": [
+        "INTELLECT"
+      ],
+      "size": 1
+    },
+    "singleton_0268": {
+      "label": "IOL Chemicals & Pharmaceuticals Ltd.",
+      "members": [
+        "IOLCP"
+      ],
+      "size": 1
+    },
+    "singleton_0269": {
+      "label": "Ion Exchange (India) Ltd.",
+      "members": [
+        "IONEXCHANG"
+      ],
+      "size": 1
+    },
+    "singleton_0270": {
+      "label": "ISGEC Heavy Engineering Ltd.",
+      "members": [
+        "ISGEC"
+      ],
+      "size": 1
+    },
+    "singleton_0271": {
+      "label": "ITC Hotels Ltd",
+      "members": [
+        "ITCHOTELS"
+      ],
+      "size": 1
+    },
+    "singleton_0272": {
+      "label": "India Tourism Development Corp. Ltd.",
+      "members": [
+        "ITDC"
+      ],
+      "size": 1
+    },
+    "singleton_0273": {
+      "label": "ITI Limited",
+      "members": [
+        "ITI"
+      ],
+      "size": 1
+    },
+    "singleton_0274": {
+      "label": "Le Travenues Technology Limited",
+      "members": [
+        "IXIGO"
+      ],
+      "size": 1
+    },
+    "group_0075": {
+      "label": "Jammu Kashmir",
+      "members": [
+        "J&KBANK",
+        "SRM"
+      ],
+      "size": 2
+    },
+    "singleton_0275": {
+      "label": "Jagsonpal Pharmaceuticals Ltd.",
+      "members": [
+        "JAGSNPHARM"
+      ],
+      "size": 1
+    },
+    "group_0076": {
+      "label": "Plastic Processing",
+      "members": [
+        "JAIBALAJI",
+        "JAICORPLTD"
+      ],
+      "size": 2
+    },
+    "singleton_0276": {
+      "label": "Jamna Auto Industries Limited",
+      "members": [
+        "JAMNAAUTO"
+      ],
+      "size": 1
+    },
+    "singleton_0277": {
+      "label": "Jaro Institute of Technology Management and Research Limited",
+      "members": [
+        "JARO"
+      ],
+      "size": 1
+    },
+    "singleton_0278": {
+      "label": "Jash Engineering Ltd.",
+      "members": [
+        "JASH"
+      ],
+      "size": 1
+    },
+    "singleton_0279": {
+      "label": "Jayaswal Neco Industries Limited",
+      "members": [
+        "JAYNECOIND"
+      ],
+      "size": 1
+    },
+    "singleton_0280": {
+      "label": "JBM Auto Limited",
+      "members": [
+        "JBMA"
+      ],
+      "size": 1
+    },
+    "group_0077": {
+      "label": "Submerged Welded",
+      "members": [
+        "JINDALSAW",
+        "MANINDS"
+      ],
+      "size": 2
+    },
+    "singleton_0281": {
+      "label": "Jindal Drilling & Industries Ltd.",
+      "members": [
+        "JINDRILL"
+      ],
+      "size": 1
+    },
+    "group_0078": {
+      "label": "Manufacturer Significant",
+      "members": [
+        "JKCEMENT",
+        "JKTYRE",
+        "JSWCEMENT"
+      ],
+      "size": 3
+    },
+    "singleton_0282": {
+      "label": "JK Paper Limited",
+      "members": [
+        "JKPAPER"
+      ],
+      "size": 1
+    },
+    "singleton_0283": {
+      "label": "JM Financial Limited",
+      "members": [
+        "JMFINANCIL"
+      ],
+      "size": 1
+    },
+    "singleton_0284": {
+      "label": "Jnk India Limited",
+      "members": [
+        "JNKINDIA"
+      ],
+      "size": 1
+    },
+    "group_0079": {
+      "label": "Manufacturer Stainless",
+      "members": [
+        "JSL",
+        "RATNAVEER"
+      ],
+      "size": 2
+    },
+    "singleton_0285": {
+      "label": "Jeena Sikho Lifecare Limited",
+      "members": [
+        "JSLL"
+      ],
+      "size": 1
+    },
+    "singleton_0286": {
+      "label": "JSW Dulux Ltd",
+      "members": [
+        "JSWDULUX"
+      ],
+      "size": 1
+    },
+    "singleton_0287": {
+      "label": "JSW Infrastructure Limited",
+      "members": [
+        "JSWINFRA"
+      ],
+      "size": 1
+    },
+    "singleton_0288": {
+      "label": "Jubilant Foodworks Limited",
+      "members": [
+        "JUBLFOOD"
+      ],
+      "size": 1
+    },
+    "singleton_0289": {
+      "label": "Jubilant Ingrevia Ltd.",
+      "members": [
+        "JUBLINGREA"
+      ],
+      "size": 1
+    },
+    "singleton_0290": {
+      "label": "Jubilant Pharmova Limited",
+      "members": [
+        "JUBLPHARMA"
+      ],
+      "size": 1
+    },
+    "singleton_0291": {
+      "label": "Just Dial Ltd.",
+      "members": [
+        "JUSTDIAL"
+      ],
+      "size": 1
+    },
+    "singleton_0292": {
+      "label": "Jupiter Wagons Limited",
+      "members": [
+        "JWL"
+      ],
+      "size": 1
+    },
+    "singleton_0293": {
+      "label": "Jyoti Cnc Automation Limited",
+      "members": [
+        "JYOTICNC"
+      ],
+      "size": 1
+    },
+    "singleton_0294": {
+      "label": "Kajaria Ceramics Limited",
+      "members": [
+        "KAJARIACER"
+      ],
+      "size": 1
+    },
+    "group_0080": {
+      "label": "Operates Omni",
+      "members": [
+        "KALAMANDIR",
+        "NYKAA"
+      ],
+      "size": 2
+    },
+    "singleton_0295": {
+      "label": "Kalyan Jewellers India Ltd.",
+      "members": [
+        "KALYANKJIL"
+      ],
+      "size": 1
+    },
+    "singleton_0296": {
+      "label": "Kaynes Technology India Ltd.",
+      "members": [
+        "KAYNES"
+      ],
+      "size": 1
+    },
+    "singleton_0297": {
+      "label": "KDDL Limited",
+      "members": [
+        "KDDL"
+      ],
+      "size": 1
+    },
+    "singleton_0298": {
+      "label": "KEC International Ltd.",
+      "members": [
+        "KEC"
+      ],
+      "size": 1
+    },
+    "singleton_0299": {
+      "label": "KEI Industries Limited",
+      "members": [
+        "KEI"
+      ],
+      "size": 1
+    },
+    "singleton_0300": {
+      "label": "Kennametal India Limited",
+      "members": [
+        "KENNAMET"
+      ],
+      "size": 1
+    },
+    "singleton_0301": {
+      "label": "Kernex Microsystems India Ltd.",
+      "members": [
+        "KERNEX"
+      ],
+      "size": 1
+    },
+    "singleton_0302": {
+      "label": "Krishna Institute of Medical Sciences Limited",
+      "members": [
+        "KIMS"
+      ],
+      "size": 1
+    },
+    "singleton_0303": {
+      "label": "Kingfa Science & Technology (India) Limited",
+      "members": [
+        "KINGFA"
+      ],
+      "size": 1
+    },
+    "group_0081": {
+      "label": "Kirloskar Group",
+      "members": [
+        "KIRLFER",
+        "KIRLOSBROS",
+        "KIRLOSENG",
+        "KIRLPNU"
+      ],
+      "size": 4
+    },
+    "singleton_0304": {
+      "label": "Onemi Technology Solutions Limited",
+      "members": [
+        "KISSHT"
+      ],
+      "size": 1
+    },
+    "singleton_0305": {
+      "label": "Kitex Garments Limited",
+      "members": [
+        "KITEX"
+      ],
+      "size": 1
+    },
+    "singleton_0306": {
+      "label": "Knowledge Marine & Engineering Works Limited",
+      "members": [
+        "KMEW"
+      ],
+      "size": 1
+    },
+    "singleton_0307": {
+      "label": "KNR Constructions Limited",
+      "members": [
+        "KNRCON"
+      ],
+      "size": 1
+    },
+    "singleton_0308": {
+      "label": "KPIT Technologies Limited",
+      "members": [
+        "KPITTECH"
+      ],
+      "size": 1
+    },
+    "singleton_0309": {
+      "label": "K.P.R. Mill Limited",
+      "members": [
+        "KPRMILL"
+      ],
+      "size": 1
+    },
+    "singleton_0310": {
+      "label": "Krishana Phoschem Ltd.",
+      "members": [
+        "KRISHANA"
+      ],
+      "size": 1
+    },
+    "singleton_0311": {
+      "label": "Krishna Defence and Allied Industries Limited",
+      "members": [
+        "KRISHNADEF"
+      ],
+      "size": 1
+    },
+    "singleton_0312": {
       "label": "KRN",
       "members": [
         "KRN"
       ],
       "size": 1
+    },
+    "singleton_0313": {
+      "label": "Kross Limited",
+      "members": [
+        "KROSS"
+      ],
+      "size": 1
+    },
+    "singleton_0314": {
+      "label": "Krsnaa Diagnostics Limited",
+      "members": [
+        "KRSNAA"
+      ],
+      "size": 1
+    },
+    "singleton_0315": {
+      "label": "KSB Ltd.",
+      "members": [
+        "KSB"
+      ],
+      "size": 1
+    },
+    "singleton_0316": {
+      "label": "Kaveri Seed Co. Ltd.",
+      "members": [
+        "KSCL"
+      ],
+      "size": 1
+    },
+    "singleton_0317": {
+      "label": "KSH International Ltd.",
+      "members": [
+        "KSHINTL"
+      ],
+      "size": 1
+    },
+    "singleton_0318": {
+      "label": "Kalyani Steels Ltd",
+      "members": [
+        "KSL"
+      ],
+      "size": 1
+    },
+    "singleton_0319": {
+      "label": "Dr. Lal PathLabs Limited",
+      "members": [
+        "LALPATHLAB"
+      ],
+      "size": 1
+    },
+    "singleton_0320": {
+      "label": "Latent View Analytics Limited",
+      "members": [
+        "LATENTVIEW"
+      ],
+      "size": 1
+    },
+    "singleton_0321": {
+      "label": "Le Merite Exports Ltd.",
+      "members": [
+        "LEMERITE"
+      ],
+      "size": 1
+    },
+    "singleton_0322": {
+      "label": "Lemon Tree Hotels Ltd.",
+      "members": [
+        "LEMONTREE"
+      ],
+      "size": 1
+    },
+    "singleton_0323": {
+      "label": "Lenskart Solutions Limited",
+      "members": [
+        "LENSKART"
+      ],
+      "size": 1
+    },
+    "singleton_0324": {
+      "label": "L.G. Balakrishnan & Bros Ltd.",
+      "members": [
+        "LGBBROSLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0325": {
+      "label": "Linde India Ltd.",
+      "members": [
+        "LINDEINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0326": {
+      "label": "Lloyds Engineering Works Ltd",
+      "members": [
+        "LLOYDSENGG"
+      ],
+      "size": 1
+    },
+    "singleton_0327": {
+      "label": "Lloyds Enterprises Limited",
+      "members": [
+        "LLOYDSENT"
+      ],
+      "size": 1
+    },
+    "singleton_0328": {
+      "label": "LMW Limited",
+      "members": [
+        "LMW"
+      ],
+      "size": 1
+    },
+    "singleton_0329": {
+      "label": "LT Foods Limited",
+      "members": [
+        "LTFOODS"
+      ],
+      "size": 1
+    },
+    "singleton_0330": {
+      "label": "L&T Technology Services Ltd.",
+      "members": [
+        "LTTS"
+      ],
+      "size": 1
+    },
+    "group_0082": {
+      "label": "Automotive Lighting",
+      "members": [
+        "LUMAXIND",
+        "LUMAXTECH"
+      ],
+      "size": 2
+    },
+    "singleton_0331": {
+      "label": "Lux Industries Ltd.",
+      "members": [
+        "LUXIND"
+      ],
+      "size": 1
+    },
+    "group_0083": {
+      "label": "Laxmi Organic",
+      "members": [
+        "LXCHEM",
+        "VINATIORGA"
+      ],
+      "size": 2
+    },
+    "singleton_0332": {
+      "label": "Bank of Maharashtra",
+      "members": [
+        "MAHABANK"
+      ],
+      "size": 1
+    },
+    "singleton_0333": {
+      "label": "Mahindra Lifespace Developers Limited",
+      "members": [
+        "MAHLIFE"
+      ],
+      "size": 1
+    },
+    "singleton_0334": {
+      "label": "Maharashtra Scooters Ltd",
+      "members": [
+        "MAHSCOOTER"
+      ],
+      "size": 1
+    },
+    "singleton_0335": {
+      "label": "Maharashtra Seamless Limited",
+      "members": [
+        "MAHSEAMLES"
+      ],
+      "size": 1
+    },
+    "singleton_0336": {
+      "label": "Maithan Alloys Ltd.",
+      "members": [
+        "MAITHANALL"
+      ],
+      "size": 1
+    },
+    "singleton_0337": {
+      "label": "Manaksia Coated Metals & Industries Ltd",
+      "members": [
+        "MANAKCOAT"
+      ],
+      "size": 1
+    },
+    "singleton_0338": {
+      "label": "Mangalam Cement Ltd",
+      "members": [
+        "MANGLMCEM"
+      ],
+      "size": 1
+    },
+    "singleton_0339": {
+      "label": "Manorama Industries Ltd.",
+      "members": [
+        "MANORAMA"
+      ],
+      "size": 1
+    },
+    "singleton_0340": {
+      "label": "Vedant Fashions Limited",
+      "members": [
+        "MANYAVAR"
+      ],
+      "size": 1
+    },
+    "singleton_0341": {
+      "label": "C.E. Info Systems Ltd.",
+      "members": [
+        "MAPMYINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0342": {
+      "label": "Marine Electricals (India) Limited",
+      "members": [
+        "MARINE"
+      ],
+      "size": 1
+    },
+    "singleton_0343": {
+      "label": "Mastek Limited",
+      "members": [
+        "MASTEK"
+      ],
+      "size": 1
+    },
+    "singleton_0344": {
+      "label": "Mayur Uniquoters Limited",
+      "members": [
+        "MAYURUNIQ"
+      ],
+      "size": 1
+    },
+    "singleton_0345": {
+      "label": "Madhya Bharat Agro Products Ltd.",
+      "members": [
+        "MBAPL"
+      ],
+      "size": 1
+    },
+    "singleton_0346": {
+      "label": "Multi Commodity Exchange of India Limited",
+      "members": [
+        "MCX"
+      ],
+      "size": 1
+    },
+    "singleton_0347": {
+      "label": "Global Health Limited",
+      "members": [
+        "MEDANTA"
+      ],
+      "size": 1
+    },
+    "singleton_0348": {
+      "label": "Medi Assist Healthcare Services Limited",
+      "members": [
+        "MEDIASSIST"
+      ],
+      "size": 1
+    },
+    "singleton_0349": {
+      "label": "MedPlus Health Services Ltd.",
+      "members": [
+        "MEDPLUS"
+      ],
+      "size": 1
+    },
+    "singleton_0350": {
+      "label": "Meesho Limited",
+      "members": [
+        "MEESHO"
+      ],
+      "size": 1
+    },
+    "group_0084": {
+      "label": "Industry Legacy",
+      "members": [
+        "METROPOLIS",
+        "SOTL"
+      ],
+      "size": 2
+    },
+    "singleton_0351": {
+      "label": "Max Financial Services Limited",
+      "members": [
+        "MFSL"
+      ],
+      "size": 1
+    },
+    "singleton_0352": {
+      "label": "Mahindra Holidays & Resorts India Limited",
+      "members": [
+        "MHRIL"
+      ],
+      "size": 1
+    },
+    "singleton_0353": {
+      "label": "MIC Electronics Limited",
+      "members": [
+        "MICEL"
+      ],
+      "size": 1
+    },
+    "singleton_0354": {
+      "label": "Mishra Dhatu Nigam Ltd.",
+      "members": [
+        "MIDHANI"
+      ],
+      "size": 1
+    },
+    "singleton_0355": {
+      "label": "Midwest Limited",
+      "members": [
+        "MIDWESTLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0356": {
+      "label": "Minda Corp. Ltd.",
+      "members": [
+        "MINDACORP"
+      ],
+      "size": 1
+    },
+    "singleton_0357": {
+      "label": "MMTC Limited",
+      "members": [
+        "MMTC"
+      ],
+      "size": 1
+    },
+    "group_0085": {
+      "label": "Digital Payments",
+      "members": [
+        "MOBIKWIK",
+        "PAYTM"
+      ],
+      "size": 2
+    },
+    "singleton_0358": {
+      "label": "Meghmani Organics Limited",
+      "members": [
+        "MOL"
+      ],
+      "size": 1
+    },
+    "singleton_0359": {
+      "label": "Mold Tek Packaging Ltd",
+      "members": [
+        "MOLDTKPAC"
+      ],
+      "size": 1
+    },
+    "singleton_0360": {
+      "label": "Moschip Technologies Ltd",
+      "members": [
+        "MOSCHIP"
+      ],
+      "size": 1
+    },
+    "singleton_0361": {
+      "label": "Motilal Oswal Financial Services Limited",
+      "members": [
+        "MOTILALOFS"
+      ],
+      "size": 1
+    },
+    "singleton_0362": {
+      "label": "Mphasis Limited",
+      "members": [
+        "MPHASIS"
+      ],
+      "size": 1
+    },
+    "singleton_0363": {
+      "label": "MSTC Ltd.",
+      "members": [
+        "MSTCLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0364": {
+      "label": "MTAR Technologies Ltd.",
+      "members": [
+        "MTARTECH"
+      ],
+      "size": 1
+    },
+    "singleton_0365": {
+      "label": "NACL Industries Ltd",
+      "members": [
+        "NACLIND"
+      ],
+      "size": 1
+    },
+    "singleton_0366": {
+      "label": "NATCO Pharma Limited",
+      "members": [
+        "NATCOPHARM"
+      ],
+      "size": 1
+    },
+    "singleton_0367": {
+      "label": "Info Edge India Ltd.",
+      "members": [
+        "NAUKRI"
+      ],
+      "size": 1
+    },
+    "singleton_0368": {
+      "label": "Nava Limited",
+      "members": [
+        "NAVA"
+      ],
+      "size": 1
+    },
+    "singleton_0369": {
+      "label": "Navin Fluorine International Limited",
+      "members": [
+        "NAVINFLUOR"
+      ],
+      "size": 1
+    },
+    "singleton_0370": {
+      "label": "NCC Limited",
+      "members": [
+        "NCC"
+      ],
+      "size": 1
+    },
+    "singleton_0371": {
+      "label": "Nelcast Limited",
+      "members": [
+        "NELCAST"
+      ],
+      "size": 1
+    },
+    "singleton_0372": {
+      "label": "Nelco Limited",
+      "members": [
+        "NELCO"
+      ],
+      "size": 1
+    },
+    "singleton_0373": {
+      "label": "Neogen Chemicals Ltd.",
+      "members": [
+        "NEOGEN"
+      ],
+      "size": 1
+    },
+    "singleton_0374": {
+      "label": "Nephrocare Health Services Limited",
+      "members": [
+        "NEPHROPLUS"
+      ],
+      "size": 1
+    },
+    "singleton_0375": {
+      "label": "NESCO Limited",
+      "members": [
+        "NESCO"
+      ],
+      "size": 1
+    },
+    "singleton_0376": {
+      "label": "Newgen Software Technologies Limited",
+      "members": [
+        "NEWGEN"
+      ],
+      "size": 1
+    },
+    "group_0086": {
+      "label": "Fertilizers Prominent",
+      "members": [
+        "NFL",
+        "RCF"
+      ],
+      "size": 2
+    },
+    "singleton_0377": {
+      "label": "Narayana Hrudayalaya Ltd.",
+      "members": [
+        "NH"
+      ],
+      "size": 1
+    },
+    "singleton_0378": {
+      "label": "NHPC Limited",
+      "members": [
+        "NHPC"
+      ],
+      "size": 1
+    },
+    "singleton_0379": {
+      "label": "Nibe Ltd.",
+      "members": [
+        "NIBE"
+      ],
+      "size": 1
+    },
+    "singleton_0380": {
+      "label": "NIIT Limited",
+      "members": [
+        "NIITLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0381": {
+      "label": "Nitco Limited",
+      "members": [
+        "NITCO"
+      ],
+      "size": 1
+    },
+    "singleton_0382": {
+      "label": "Nitin Spinners Limited",
+      "members": [
+        "NITINSPIN"
+      ],
+      "size": 1
+    },
+    "group_0087": {
+      "label": "Health Insurance",
+      "members": [
+        "NIVABUPA",
+        "STARHEALTH"
+      ],
+      "size": 2
+    },
+    "singleton_0383": {
+      "label": "NLC India Limited",
+      "members": [
+        "NLCINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0384": {
+      "label": "NMDC Limited",
+      "members": [
+        "NMDC"
+      ],
+      "size": 1
+    },
+    "singleton_0385": {
+      "label": "NOCIL Limited",
+      "members": [
+        "NOCIL"
+      ],
+      "size": 1
+    },
+    "singleton_0386": {
+      "label": "Northern Arc Capital Ltd.",
+      "members": [
+        "NORTHARC"
+      ],
+      "size": 1
+    },
+    "singleton_0387": {
+      "label": "NRB Bearings Ltd.",
+      "members": [
+        "NRBBEARING"
+      ],
+      "size": 1
+    },
+    "singleton_0388": {
+      "label": "NTPC Green Energy Limited",
+      "members": [
+        "NTPCGREEN"
+      ],
+      "size": 1
+    },
+    "singleton_0389": {
+      "label": "Nuvoco Vistas Corporation Limited",
+      "members": [
+        "NUVOCO"
+      ],
+      "size": 1
+    },
+    "singleton_0390": {
+      "label": "Oracle Financial Services Software Limited",
+      "members": [
+        "OFSS"
+      ],
+      "size": 1
+    },
+    "singleton_0391": {
+      "label": "Olectra Greentech Limited",
+      "members": [
+        "OLECTRA"
+      ],
+      "size": 1
+    },
+    "singleton_0392": {
+      "label": "Omaxe Limited",
+      "members": [
+        "OMAXE"
+      ],
+      "size": 1
+    },
+    "singleton_0393": {
+      "label": "Omnitech Engineering Limited",
+      "members": [
+        "OMNI"
+      ],
+      "size": 1
+    },
+    "singleton_0394": {
+      "label": "One Point One Solutions Ltd.",
+      "members": [
+        "ONEPOINT"
+      ],
+      "size": 1
+    },
+    "singleton_0395": {
+      "label": "Optiemus Infracom Limited",
+      "members": [
+        "OPTIEMUS"
+      ],
+      "size": 1
+    },
+    "singleton_0396": {
+      "label": "Orient Cement Ltd.",
+      "members": [
+        "ORIENTCEM"
+      ],
+      "size": 1
+    },
+    "singleton_0397": {
+      "label": "Orient Electric Ltd.",
+      "members": [
+        "ORIENTELEC"
+      ],
+      "size": 1
+    },
+    "singleton_0398": {
+      "label": "Orient Technologies Limited",
+      "members": [
+        "ORIENTTECH"
+      ],
+      "size": 1
+    },
+    "group_0088": {
+      "label": "Oswal Pumps",
+      "members": [
+        "OSWALPUMPS",
+        "SHAKTIPUMP"
+      ],
+      "size": 2
+    },
+    "singleton_0399": {
+      "label": "Pace Digitek Limited",
+      "members": [
+        "PACEDIGITK"
+      ],
+      "size": 1
+    },
+    "singleton_0400": {
+      "label": "Page Industries Limited",
+      "members": [
+        "PAGEIND"
+      ],
+      "size": 1
+    },
+    "singleton_0401": {
+      "label": "Panacea Biotec Limited",
+      "members": [
+        "PANACEABIO"
+      ],
+      "size": 1
+    },
+    "singleton_0402": {
+      "label": "Paramount Communications Limited",
+      "members": [
+        "PARACABLES"
+      ],
+      "size": 1
+    },
+    "singleton_0403": {
+      "label": "Paradeep Phosphates Ltd.",
+      "members": [
+        "PARADEEP"
+      ],
+      "size": 1
+    },
+    "singleton_0404": {
+      "label": "Paras Defence & Space Technologies Ltd.",
+      "members": [
+        "PARAS"
+      ],
+      "size": 1
+    },
+    "singleton_0405": {
+      "label": "Park Medi World Limited",
+      "members": [
+        "PARKHOSPS"
+      ],
+      "size": 1
+    },
+    "singleton_0406": {
+      "label": "PCBL Chemical Limited",
+      "members": [
+        "PCBL"
+      ],
+      "size": 1
+    },
+    "singleton_0407": {
+      "label": "Pennar Industries Limited",
+      "members": [
+        "PENIND"
+      ],
+      "size": 1
+    },
+    "singleton_0408": {
+      "label": "Persistent Systems Limited",
+      "members": [
+        "PERSISTENT"
+      ],
+      "size": 1
+    },
+    "singleton_0409": {
+      "label": "Petronet Lng Limited",
+      "members": [
+        "PETRONET"
+      ],
+      "size": 1
+    },
+    "singleton_0410": {
+      "label": "PFIZER LIMITED",
+      "members": [
+        "PFIZER"
+      ],
+      "size": 1
+    },
+    "singleton_0411": {
+      "label": "PG Electroplast Limited",
+      "members": [
+        "PGEL"
+      ],
+      "size": 1
+    },
+    "group_0089": {
+      "label": "Procter Gamble",
+      "members": [
+        "PGHH",
+        "PGHL"
+      ],
+      "size": 2
+    },
+    "singleton_0412": {
+      "label": "Pearl Global Industries Limited",
+      "members": [
+        "PGIL"
+      ],
+      "size": 1
+    },
+    "singleton_0413": {
+      "label": "Phoenix Mills Ltd.",
+      "members": [
+        "PHOENIXLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0414": {
+      "label": "Piccadily Agro Industries Limited",
+      "members": [
+        "PICCADIL"
+      ],
+      "size": 1
+    },
+    "singleton_0415": {
+      "label": "PI Industries Limited",
+      "members": [
+        "PIIND"
+      ],
+      "size": 1
+    },
+    "singleton_0416": {
+      "label": "Pine Labs Limited",
+      "members": [
+        "PINELABS"
+      ],
+      "size": 1
+    },
+    "singleton_0417": {
+      "label": "Piramal Finance Limited",
+      "members": [
+        "PIRAMALFIN"
+      ],
+      "size": 1
+    },
+    "singleton_0418": {
+      "label": "Pitti Engineering Ltd.",
+      "members": [
+        "PITTIENG"
+      ],
+      "size": 1
+    },
+    "singleton_0419": {
+      "label": "Platinum Industries Limited",
+      "members": [
+        "PLATIND"
+      ],
+      "size": 1
+    },
+    "singleton_0420": {
+      "label": "PNC Infratech Ltd",
+      "members": [
+        "PNCINFRA"
+      ],
+      "size": 1
+    },
+    "singleton_0421": {
+      "label": "P N Gadgil Jewellers Limited",
+      "members": [
+        "PNGJL"
+      ],
+      "size": 1
+    },
+    "singleton_0422": {
+      "label": "PNGS Reva Diamond Jewellery Limited",
+      "members": [
+        "PNGSREVA"
+      ],
+      "size": 1
+    },
+    "singleton_0423": {
+      "label": "PB Fintech Limited",
+      "members": [
+        "POLICYBZR"
+      ],
+      "size": 1
+    },
+    "singleton_0424": {
+      "label": "Poly Medicure Limited",
+      "members": [
+        "POLYMED"
+      ],
+      "size": 1
+    },
+    "singleton_0425": {
+      "label": "Polyplex Corporation Limited",
+      "members": [
+        "POLYPLEX"
+      ],
+      "size": 1
+    },
+    "singleton_0426": {
+      "label": "Powerica Limited",
+      "members": [
+        "POWERICA"
+      ],
+      "size": 1
+    },
+    "singleton_0427": {
+      "label": "Piramal Pharma Limited",
+      "members": [
+        "PPLPHARMA"
+      ],
+      "size": 1
+    },
+    "singleton_0428": {
+      "label": "PRAJ Industries Limited",
+      "members": [
+        "PRAJIND"
+      ],
+      "size": 1
+    },
+    "singleton_0429": {
+      "label": "Prakash Industries Limited",
+      "members": [
+        "PRAKASH"
+      ],
+      "size": 1
+    },
+    "singleton_0430": {
+      "label": "Precision Camshafts Ltd.",
+      "members": [
+        "PRECAM"
+      ],
+      "size": 1
+    },
+    "singleton_0431": {
+      "label": "Precision Wires India Limited",
+      "members": [
+        "PRECWIRE"
+      ],
+      "size": 1
+    },
+    "singleton_0432": {
+      "label": "Premier Explosives Limited",
+      "members": [
+        "PREMEXPLN"
+      ],
+      "size": 1
+    },
+    "singleton_0433": {
+      "label": "Pricol Ltd.",
+      "members": [
+        "PRICOLLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0434": {
+      "label": "Prince Pipes And Fittings Ltd",
+      "members": [
+        "PRINCEPIPE"
+      ],
+      "size": 1
+    },
+    "singleton_0435": {
+      "label": "Privi Speciality Chemicals Limited",
+      "members": [
+        "PRIVISCL"
+      ],
+      "size": 1
+    },
+    "singleton_0436": {
+      "label": "Prostarm Info Systems Limited",
+      "members": [
+        "PROSTARM"
+      ],
+      "size": 1
+    },
+    "singleton_0437": {
+      "label": "Protean eGov Technologies Limited",
+      "members": [
+        "PROTEAN"
+      ],
+      "size": 1
+    },
+    "singleton_0438": {
+      "label": "Prism Johnson Limited",
+      "members": [
+        "PRSMJOHNSN"
+      ],
+      "size": 1
+    },
+    "singleton_0439": {
+      "label": "Prudent Corporate Advisory Services Limited",
+      "members": [
+        "PRUDENT"
+      ],
+      "size": 1
+    },
+    "singleton_0440": {
+      "label": "PSP Projects Ltd",
+      "members": [
+        "PSPPROJECT"
+      ],
+      "size": 1
+    },
+    "singleton_0441": {
+      "label": "PTC India Limited",
+      "members": [
+        "PTC"
+      ],
+      "size": 1
+    },
+    "singleton_0442": {
+      "label": "PTC Industries Ltd",
+      "members": [
+        "PTCIL"
+      ],
+      "size": 1
+    },
+    "singleton_0443": {
+      "label": "PVR Inox Limited",
+      "members": [
+        "PVRINOX"
+      ],
+      "size": 1
+    },
+    "singleton_0444": {
+      "label": "PhysicsWallah Ltd.",
+      "members": [
+        "PWL"
+      ],
+      "size": 1
+    },
+    "singleton_0445": {
+      "label": "Quality Power Electrical Equipments Ltd.",
+      "members": [
+        "QPOWER"
+      ],
+      "size": 1
+    },
+    "singleton_0446": {
+      "label": "Quadrant Future Tek Limited",
+      "members": [
+        "QUADFUTURE"
+      ],
+      "size": 1
+    },
+    "singleton_0447": {
+      "label": "Quess Corp. Ltd.",
+      "members": [
+        "QUESS"
+      ],
+      "size": 1
+    },
+    "singleton_0448": {
+      "label": "Quick Heal Technologies Ltd.",
+      "members": [
+        "QUICKHEAL"
+      ],
+      "size": 1
+    },
+    "singleton_0449": {
+      "label": "Radhika Jeweltech Ltd",
+      "members": [
+        "RADHIKAJWE"
+      ],
+      "size": 1
+    },
+    "singleton_0450": {
+      "label": "Rain Industries Limited",
+      "members": [
+        "RAIN"
+      ],
+      "size": 1
+    },
+    "singleton_0451": {
+      "label": "Rainbow Childrens Medicare Limited",
+      "members": [
+        "RAINBOW"
+      ],
+      "size": 1
+    },
+    "singleton_0452": {
+      "label": "Rajoo Engineers Limited",
+      "members": [
+        "RAJOOENG"
+      ],
+      "size": 1
+    },
+    "singleton_0453": {
+      "label": "Rallis India Limited",
+      "members": [
+        "RALLIS"
+      ],
+      "size": 1
+    },
+    "singleton_0454": {
+      "label": "Ramco Cements Limited",
+      "members": [
+        "RAMCOCEM"
+      ],
+      "size": 1
+    },
+    "singleton_0455": {
+      "label": "Ram Ratna Wires Limited",
+      "members": [
+        "RAMRAT"
+      ],
+      "size": 1
+    },
+    "singleton_0456": {
+      "label": "RateGain Travel Technologies Ltd.",
+      "members": [
+        "RATEGAIN"
+      ],
+      "size": 1
+    },
+    "group_0090": {
+      "label": "Textile Apparel",
+      "members": [
+        "RAYMOND",
+        "RAYMONDLSL"
+      ],
+      "size": 2
+    },
+    "singleton_0457": {
+      "label": "RBL Bank Ltd.",
+      "members": [
+        "RBLBANK"
+      ],
+      "size": 1
+    },
+    "group_0091": {
+      "label": "Supply Chain",
+      "members": [
+        "REDINGTON",
+        "TVSSCS"
+      ],
+      "size": 2
+    },
+    "singleton_0458": {
+      "label": "Redtape Limited",
+      "members": [
+        "REDTAPE"
+      ],
+      "size": 1
+    },
+    "singleton_0459": {
+      "label": "Refex Industries Limited",
+      "members": [
+        "REFEX"
+      ],
+      "size": 1
+    },
+    "singleton_0460": {
+      "label": "Regaal Resources Limited",
+      "members": [
+        "REGAAL"
+      ],
+      "size": 1
+    },
+    "singleton_0461": {
+      "label": "Relaxo Footwears Limited",
+      "members": [
+        "RELAXO"
+      ],
+      "size": 1
+    },
+    "singleton_0462": {
+      "label": "Religare Enterprises Limited",
+      "members": [
+        "RELIGARE"
+      ],
+      "size": 1
+    },
+    "singleton_0463": {
+      "label": "Reliance Infrastructure Limited",
+      "members": [
+        "RELINFRA"
+      ],
+      "size": 1
+    },
+    "singleton_0464": {
+      "label": "Renaissance Global Limited",
+      "members": [
+        "RGL"
+      ],
+      "size": 1
+    },
+    "singleton_0465": {
+      "label": "Rico Auto Industries Limited",
+      "members": [
+        "RICOAUTO"
+      ],
+      "size": 1
+    },
+    "singleton_0466": {
+      "label": "Reliance Industrial Infrastructure Limited",
+      "members": [
+        "RIIL"
+      ],
+      "size": 1
+    },
+    "singleton_0467": {
+      "label": "Rishabh Instruments Limited",
+      "members": [
+        "RISHABH"
+      ],
+      "size": 1
+    },
+    "singleton_0468": {
+      "label": "RITES Ltd.",
+      "members": [
+        "RITES"
+      ],
+      "size": 1
+    },
+    "singleton_0469": {
+      "label": "Ramkrishna Forgings Ltd",
+      "members": [
+        "RKFORGE"
+      ],
+      "size": 1
+    },
+    "singleton_0470": {
+      "label": "Rane (Madras) Limited",
+      "members": [
+        "RML"
+      ],
+      "size": 1
+    },
+    "singleton_0471": {
+      "label": "Rolex Rings Limited",
+      "members": [
+        "ROLEXRINGS"
+      ],
+      "size": 1
+    },
+    "singleton_0472": {
+      "label": "Rossari Biotech Ltd",
+      "members": [
+        "ROSSARI"
+      ],
+      "size": 1
+    },
+    "singleton_0473": {
+      "label": "Rossell Techsys Limited",
+      "members": [
+        "ROSSTECH"
+      ],
+      "size": 1
+    },
+    "group_0092": {
+      "label": "Platform Service",
+      "members": [
+        "ROUTE",
+        "TANLA"
+      ],
+      "size": 2
+    },
+    "singleton_0474": {
+      "label": "Raghav Productivity Enhancers Ltd.",
+      "members": [
+        "RPEL"
+      ],
+      "size": 1
+    },
+    "singleton_0475": {
+      "label": "RPG Life Sciences Limited",
+      "members": [
+        "RPGLIFE"
+      ],
+      "size": 1
+    },
+    "singleton_0476": {
+      "label": "RPSG Ventures Limited",
+      "members": [
+        "RPSGVENT"
+      ],
+      "size": 1
+    },
+    "singleton_0477": {
+      "label": "Rashi Peripherals Limited",
+      "members": [
+        "RPTECH"
+      ],
+      "size": 1
+    },
+    "singleton_0478": {
+      "label": "RR Kabel Ltd.",
+      "members": [
+        "RRKABEL"
+      ],
+      "size": 1
+    },
+    "singleton_0479": {
+      "label": "R Systems International Limited",
+      "members": [
+        "RSYSTEMS"
+      ],
+      "size": 1
+    },
+    "singleton_0480": {
+      "label": "Rubicon Research Limited",
+      "members": [
+        "RUBICON"
+      ],
+      "size": 1
+    },
+    "singleton_0481": {
+      "label": "Rail Vikas Nigam Ltd.",
+      "members": [
+        "RVNL"
+      ],
+      "size": 1
+    },
+    "group_0093": {
+      "label": "Safari Industries",
+      "members": [
+        "SAFARI",
+        "VIPIND"
+      ],
+      "size": 2
+    },
+    "singleton_0482": {
+      "label": "Steel Authority of India Limited",
+      "members": [
+        "SAIL"
+      ],
+      "size": 1
+    },
+    "singleton_0483": {
+      "label": "Sai Parenterals Limited",
+      "members": [
+        "SAIPARENT"
+      ],
+      "size": 1
+    },
+    "singleton_0484": {
+      "label": "Sakar Healthcare Ltd",
+      "members": [
+        "SAKAR"
+      ],
+      "size": 1
+    },
+    "singleton_0485": {
+      "label": "Saksoft Limited",
+      "members": [
+        "SAKSOFT"
+      ],
+      "size": 1
+    },
+    "singleton_0486": {
+      "label": "Salzer Electronics Limited",
+      "members": [
+        "SALZERELEC"
+      ],
+      "size": 1
+    },
+    "singleton_0487": {
+      "label": "Samhi Hotels Limited",
+      "members": [
+        "SAMHI"
+      ],
+      "size": 1
+    },
+    "singleton_0488": {
+      "label": "Sandhar Technologies Ltd.",
+      "members": [
+        "SANDHAR"
+      ],
+      "size": 1
+    },
+    "singleton_0489": {
+      "label": "Sandur Manganese & Iron Ores Ltd",
+      "members": [
+        "SANDUMA"
+      ],
+      "size": 1
+    },
+    "singleton_0490": {
+      "label": "Sanghvi Movers Limited",
+      "members": [
+        "SANGHVIMOV"
+      ],
+      "size": 1
+    },
+    "singleton_0491": {
+      "label": "Sanofi India Limited",
+      "members": [
+        "SANOFI"
+      ],
+      "size": 1
+    },
+    "singleton_0492": {
+      "label": "Sapphire Foods India Ltd.",
+      "members": [
+        "SAPPHIRE"
+      ],
+      "size": 1
+    },
+    "singleton_0493": {
+      "label": "Sarda Energy & Minerals Limited",
+      "members": [
+        "SARDAEN"
+      ],
+      "size": 1
+    },
+    "group_0094": {
+      "label": "Prominent Player",
+      "members": [
+        "SAREGAMA",
+        "TIPSMUSIC"
+      ],
+      "size": 2
+    },
+    "singleton_0494": {
+      "label": "Shivalik Bimetal Controls Ltd",
+      "members": [
+        "SBCL"
+      ],
+      "size": 1
+    },
+    "singleton_0495": {
+      "label": "SBI Cards & Payment Services Ltd",
+      "members": [
+        "SBICARD"
+      ],
+      "size": 1
+    },
+    "singleton_0496": {
+      "label": "Schaeffler India Ltd",
+      "members": [
+        "SCHAEFFLER"
+      ],
+      "size": 1
+    },
+    "singleton_0497": {
+      "label": "Schneider Electric Infrastructure Limited",
+      "members": [
+        "SCHNEIDER"
+      ],
+      "size": 1
+    },
+    "group_0095": {
+      "label": "Shipping Corporation",
+      "members": [
+        "SCI",
+        "SCILAL"
+      ],
+      "size": 2
+    },
+    "singleton_0498": {
+      "label": "SEAMEC Limited",
+      "members": [
+        "SEAMECLTD"
+      ],
+      "size": 1
+    },
+    "singleton_0499": {
+      "label": "SEDEMAC Mechatronics Ltd.",
+      "members": [
+        "SEDEMAC"
+      ],
+      "size": 1
+    },
+    "singleton_0500": {
+      "label": "Shanti Educational Initiatives Ltd.",
+      "members": [
+        "SEIL"
+      ],
+      "size": 1
+    },
+    "singleton_0501": {
+      "label": "Senco Gold Limited",
+      "members": [
+        "SENCO"
+      ],
+      "size": 1
+    },
+    "singleton_0502": {
+      "label": "Senores Pharmaceuticals Ltd.",
+      "members": [
+        "SENORES"
+      ],
+      "size": 1
+    },
+    "singleton_0503": {
+      "label": "Servotech Renewable Power System Ltd",
+      "members": [
+        "SERVOTECH"
+      ],
+      "size": 1
+    },
+    "singleton_0504": {
+      "label": "Sheela Foam Ltd.",
+      "members": [
+        "SFL"
+      ],
+      "size": 1
+    },
+    "singleton_0505": {
+      "label": "SG Finserve Limited",
+      "members": [
+        "SGFIN"
+      ],
+      "size": 1
+    },
+    "singleton_0506": {
+      "label": "SG Mart Ltd",
+      "members": [
+        "SGMART"
+      ],
+      "size": 1
+    },
+    "singleton_0507": {
+      "label": "Shadowfax Technologies Limited",
+      "members": [
+        "SHADOWFAX"
+      ],
+      "size": 1
+    },
+    "singleton_0508": {
+      "label": "Shaily Engineering Plastics Limited",
+      "members": [
+        "SHAILY"
+      ],
+      "size": 1
+    },
+    "group_0096": {
+      "label": "Carat Gold",
+      "members": [
+        "SHANTIGOLD",
+        "SKYGOLD"
+      ],
+      "size": 2
+    },
+    "singleton_0509": {
+      "label": "Sharda Cropchem Ltd.",
+      "members": [
+        "SHARDACROP"
+      ],
+      "size": 1
+    },
+    "singleton_0510": {
+      "label": "Sharda Motor Industries Ltd.",
+      "members": [
+        "SHARDAMOTR"
+      ],
+      "size": 1
+    },
+    "singleton_0511": {
+      "label": "Shilpa Medicare Limited",
+      "members": [
+        "SHILPAMED"
+      ],
+      "size": 1
+    },
+    "singleton_0512": {
+      "label": "S H Kelkar and Company Ltd",
+      "members": [
+        "SHK"
+      ],
+      "size": 1
+    },
+    "singleton_0513": {
+      "label": "Shoppers Stop Limited",
+      "members": [
+        "SHOPERSTOP"
+      ],
+      "size": 1
+    },
+    "group_0097": {
+      "label": "Operates Player",
+      "members": [
+        "SHREECEM",
+        "STARCEMENT"
+      ],
+      "size": 2
+    },
+    "singleton_0514": {
+      "label": "Shreeji Shipping Global Limited",
+      "members": [
+        "SHREEJISPG"
+      ],
+      "size": 1
+    },
+    "singleton_0515": {
+      "label": "Shree Pushkar Chemicals & Fertilisers Ltd.",
+      "members": [
+        "SHREEPUSHK"
+      ],
+      "size": 1
+    },
+    "singleton_0516": {
+      "label": "Shringar House Of Mangalsutra Limited",
+      "members": [
+        "SHRINGARMS"
+      ],
+      "size": 1
+    },
+    "singleton_0517": {
+      "label": "SPR Auto Technologies Ltd",
+      "members": [
+        "SHRIPISTON"
+      ],
+      "size": 1
+    },
+    "singleton_0518": {
+      "label": "Shyam Metalics & Energy Ltd.",
+      "members": [
+        "SHYAMMETL"
+      ],
+      "size": 1
+    },
+    "singleton_0519": {
+      "label": "Sigma Advanced Systems Limited",
+      "members": [
+        "SIGMAADV"
+      ],
+      "size": 1
+    },
+    "singleton_0520": {
+      "label": "Signatureglobal (India) Limited",
+      "members": [
+        "SIGNATURE"
+      ],
+      "size": 1
+    },
+    "singleton_0521": {
+      "label": "Sika Interplant Systems Limited",
+      "members": [
+        "SIKA"
+      ],
+      "size": 1
+    },
+    "singleton_0522": {
+      "label": "Silver Touch Technologies Ltd.",
+      "members": [
+        "SILVERTUC"
+      ],
+      "size": 1
+    },
+    "singleton_0523": {
+      "label": "Sirca Paints India Ltd.",
+      "members": [
+        "SIRCA"
+      ],
+      "size": 1
+    },
+    "singleton_0524": {
+      "label": "SIS Limited",
+      "members": [
+        "SIS"
+      ],
+      "size": 1
+    },
+    "singleton_0525": {
+      "label": "Siyaram Silk Mills Limited",
+      "members": [
+        "SIYSIL"
+      ],
+      "size": 1
+    },
+    "singleton_0526": {
+      "label": "S.J.S. Enterprises Limited",
+      "members": [
+        "SJS"
+      ],
+      "size": 1
+    },
+    "group_0098": {
+      "label": "Prominent Player",
+      "members": [
+        "SKFINDIA",
+        "SKFINDUS"
+      ],
+      "size": 2
+    },
+    "singleton_0527": {
+      "label": "Skipper Ltd",
+      "members": [
+        "SKIPPER"
+      ],
+      "size": 1
+    },
+    "group_0099": {
+      "label": "Enterprises Global",
+      "members": [
+        "SMARTWORKS",
+        "WEWORK"
+      ],
+      "size": 2
+    },
+    "singleton_0528": {
+      "label": "Sobha Limited",
+      "members": [
+        "SOBHA"
+      ],
+      "size": 1
+    },
+    "singleton_0529": {
+      "label": "Solara Active Pharma Sciences Ltd.",
+      "members": [
+        "SOLARA"
+      ],
+      "size": 1
+    },
+    "singleton_0530": {
+      "label": "Sona BLW Precision Forgings Ltd.",
+      "members": [
+        "SONACOMS"
+      ],
+      "size": 1
+    },
+    "singleton_0531": {
+      "label": "Sonata Software Limited",
+      "members": [
+        "SONATSOFTW"
+      ],
+      "size": 1
+    },
+    "group_0100": {
+      "label": "Clinical Stage",
+      "members": [
+        "SPARC",
+        "SUVEN"
+      ],
+      "size": 2
+    },
+    "singleton_0532": {
+      "label": "Supreme Petrochem Limited",
+      "members": [
+        "SPLPETRO"
+      ],
+      "size": 1
+    },
+    "singleton_0533": {
+      "label": "SPML Infra Limited",
+      "members": [
+        "SPMLINFRA"
+      ],
+      "size": 1
+    },
+    "singleton_0534": {
+      "label": "Sportking India Ltd.",
+      "members": [
+        "SPORTKING"
+      ],
+      "size": 1
+    },
+    "singleton_0535": {
+      "label": "Srf Limited",
+      "members": [
+        "SRF"
+      ],
+      "size": 1
+    },
+    "singleton_0536": {
+      "label": "Stallion India Fluorochemicals Limited",
+      "members": [
+        "STALLION"
+      ],
+      "size": 1
+    },
+    "singleton_0537": {
+      "label": "Strides Pharma Science Ltd",
+      "members": [
+        "STAR"
+      ],
+      "size": 1
+    },
+    "singleton_0538": {
+      "label": "Seshaasai Technologies Limited",
+      "members": [
+        "STYL"
+      ],
+      "size": 1
+    },
+    "singleton_0539": {
+      "label": "Stylam Industries Limited",
+      "members": [
+        "STYLAMIND"
+      ],
+      "size": 1
+    },
+    "singleton_0540": {
+      "label": "Baazar Style Retail Limited",
+      "members": [
+        "STYLEBAAZA"
+      ],
+      "size": 1
+    },
+    "singleton_0541": {
+      "label": "Styrenix Performance Materials Ltd",
+      "members": [
+        "STYRENIX"
+      ],
+      "size": 1
+    },
+    "singleton_0542": {
+      "label": "Subros Limited",
+      "members": [
+        "SUBROS"
+      ],
+      "size": 1
+    },
+    "singleton_0543": {
+      "label": "Sudarshan Chemical Industries Limited",
+      "members": [
+        "SUDARSCHEM"
+      ],
+      "size": 1
+    },
+    "singleton_0544": {
+      "label": "Sudeep Pharma Limited",
+      "members": [
+        "SUDEEPPHRM"
+      ],
+      "size": 1
+    },
+    "singleton_0545": {
+      "label": "Sula Vineyards Ltd.",
+      "members": [
+        "SULA"
+      ],
+      "size": 1
+    },
+    "singleton_0546": {
+      "label": "Sumitomo Chemical India Ltd.",
+      "members": [
+        "SUMICHEM"
+      ],
+      "size": 1
+    },
+    "singleton_0547": {
+      "label": "Sundram Fasteners Limited",
+      "members": [
+        "SUNDRMFAST"
+      ],
+      "size": 1
+    },
+    "singleton_0548": {
+      "label": "Sunflag Iron & Steel Co. Ltd.",
+      "members": [
+        "SUNFLAG"
+      ],
+      "size": 1
+    },
+    "singleton_0549": {
+      "label": "Sun TV Network Limited",
+      "members": [
+        "SUNTV"
+      ],
+      "size": 1
+    },
+    "singleton_0550": {
+      "label": "Suprajit Engineering Limited",
+      "members": [
+        "SUPRAJIT"
+      ],
+      "size": 1
+    },
+    "singleton_0551": {
+      "label": "Supreme Industries Limited",
+      "members": [
+        "SUPREMEIND"
+      ],
+      "size": 1
+    },
+    "singleton_0552": {
+      "label": "Surya Roshni Limited",
+      "members": [
+        "SURYAROSNI"
+      ],
+      "size": 1
+    },
+    "singleton_0553": {
+      "label": "Suyog Telematics Ltd.",
+      "members": [
+        "SUYOG"
+      ],
+      "size": 1
+    },
+    "singleton_0554": {
+      "label": "Swan Corp Limited",
+      "members": [
+        "SWANCORP"
+      ],
+      "size": 1
+    },
+    "singleton_0555": {
+      "label": "Swaraj Engines Ltd",
+      "members": [
+        "SWARAJENG"
+      ],
+      "size": 1
+    },
+    "singleton_0556": {
+      "label": "Swiggy Limited",
+      "members": [
+        "SWIGGY"
+      ],
+      "size": 1
+    },
+    "singleton_0557": {
+      "label": "Symphony Limited",
+      "members": [
+        "SYMPHONY"
+      ],
+      "size": 1
+    },
+    "singleton_0558": {
+      "label": "Syrma SGS Technology Limited",
+      "members": [
+        "SYRMA"
+      ],
+      "size": 1
+    },
+    "group_0101": {
+      "label": "Software Service",
+      "members": [
+        "TAC",
+        "UNIECOM"
+      ],
+      "size": 2
+    },
+    "singleton_0559": {
+      "label": "TARC Limited",
+      "members": [
+        "TARC"
+      ],
+      "size": 1
+    },
+    "singleton_0560": {
+      "label": "Tasty Bite Eatables Ltd",
+      "members": [
+        "TASTYBITE"
+      ],
+      "size": 1
+    },
+    "singleton_0561": {
+      "label": "Tata Chemicals Limited",
+      "members": [
+        "TATACHEM"
+      ],
+      "size": 1
+    },
+    "group_0102": {
+      "label": "Tata Communications",
+      "members": [
+        "TATACOMM",
+        "TATATECH"
+      ],
+      "size": 2
+    },
+    "singleton_0562": {
+      "label": "Tata Elxsi Limited",
+      "members": [
+        "TATAELXSI"
+      ],
+      "size": 1
+    },
+    "singleton_0563": {
+      "label": "Tatva Chintan Pharma Chem Limited",
+      "members": [
+        "TATVA"
+      ],
+      "size": 1
+    },
+    "singleton_0564": {
+      "label": "TBO Tek Ltd.",
+      "members": [
+        "TBOTEK"
+      ],
+      "size": 1
+    },
+    "singleton_0565": {
+      "label": "Tribhovandas Bhimji Zaveri Limited",
+      "members": [
+        "TBZ"
+      ],
+      "size": 1
+    },
+    "singleton_0566": {
+      "label": "TD Power Systems Limited",
+      "members": [
+        "TDPOWERSYS"
+      ],
+      "size": 1
+    },
+    "singleton_0567": {
+      "label": "Tega Industries Ltd.",
+      "members": [
+        "TEGA"
+      ],
+      "size": 1
+    },
+    "singleton_0568": {
+      "label": "Tejas Networks Ltd.",
+      "members": [
+        "TEJASNET"
+      ],
+      "size": 1
+    },
+    "singleton_0569": {
+      "label": "Tenneco Clean Air India Limited",
+      "members": [
+        "TENNIND"
+      ],
+      "size": 1
+    },
+    "group_0103": {
+      "label": "Significant Player",
+      "members": [
+        "TEXRAIL",
+        "TITAGARH"
+      ],
+      "size": 2
+    },
+    "singleton_0570": {
+      "label": "Tourism Finance Corporation of India Limited",
+      "members": [
+        "TFCILTD"
+      ],
+      "size": 1
+    },
+    "singleton_0571": {
+      "label": "Thangamayil Jewellery Ltd.",
+      "members": [
+        "THANGAMAYL"
+      ],
+      "size": 1
+    },
+    "singleton_0572": {
+      "label": "Leela Palaces Hotels & Resorts Limited",
+      "members": [
+        "THELEELA"
+      ],
+      "size": 1
+    },
+    "singleton_0573": {
+      "label": "Thermax Limited.",
+      "members": [
+        "THERMAX"
+      ],
+      "size": 1
+    },
+    "singleton_0574": {
+      "label": "Thomas Cook (India) Limited",
+      "members": [
+        "THOMASCOOK"
+      ],
+      "size": 1
+    },
+    "singleton_0575": {
+      "label": "Thyrocare Technologies Ltd",
+      "members": [
+        "THYROCARE"
+      ],
+      "size": 1
+    },
+    "singleton_0576": {
+      "label": "Tube Investments of India Limited",
+      "members": [
+        "TIINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0577": {
+      "label": "Time Technoplast Limited",
+      "members": [
+        "TIMETECHNO"
+      ],
+      "size": 1
+    },
+    "singleton_0578": {
+      "label": "Timken India Limited",
+      "members": [
+        "TIMKEN"
+      ],
+      "size": 1
+    },
+    "singleton_0579": {
+      "label": "Thirumalai Chemicals Limited",
+      "members": [
+        "TIRUMALCHM"
+      ],
+      "size": 1
+    },
+    "singleton_0580": {
+      "label": "Tamilnad Mercantile Bank Limited",
+      "members": [
+        "TMB"
+      ],
+      "size": 1
+    },
+    "singleton_0581": {
+      "label": "Torrent Power Limited",
+      "members": [
+        "TORNTPOWER"
+      ],
+      "size": 1
+    },
+    "singleton_0582": {
+      "label": "Triveni Turbine Limited",
+      "members": [
+        "TRITURBINE"
+      ],
+      "size": 1
+    },
+    "singleton_0583": {
+      "label": "Triveni Engineering and Industries Limited",
+      "members": [
+        "TRIVENI"
+      ],
+      "size": 1
+    },
+    "singleton_0584": {
+      "label": "Trualt Bioenergy Limited",
+      "members": [
+        "TRUALT"
+      ],
+      "size": 1
+    },
+    "singleton_0585": {
+      "label": "United Foodbrands Limited",
+      "members": [
+        "UFBL"
+      ],
+      "size": 1
+    },
+    "singleton_0586": {
+      "label": "Ugro Capital Limited",
+      "members": [
+        "UGROCAP"
+      ],
+      "size": 1
+    },
+    "singleton_0587": {
+      "label": "Uniparts India Ltd.",
+      "members": [
+        "UNIPARTS"
+      ],
+      "size": 1
+    },
+    "singleton_0588": {
+      "label": "United Spirits Limited",
+      "members": [
+        "UNITDSPR"
+      ],
+      "size": 1
+    },
+    "singleton_0589": {
+      "label": "Universal Cables Limited",
+      "members": [
+        "UNIVCABLES"
+      ],
+      "size": 1
+    },
+    "singleton_0590": {
+      "label": "UPL Limited",
+      "members": [
+        "UPL"
+      ],
+      "size": 1
+    },
+    "singleton_0591": {
+      "label": "Urban Company Limited",
+      "members": [
+        "URBANCO"
+      ],
+      "size": 1
+    },
+    "singleton_0592": {
+      "label": "Usha Martin Limited",
+      "members": [
+        "USHAMART"
+      ],
+      "size": 1
+    },
+    "singleton_0593": {
+      "label": "UTI Asset Management Co. Ltd.",
+      "members": [
+        "UTIAMC"
+      ],
+      "size": 1
+    },
+    "singleton_0594": {
+      "label": "Fujiyama Power Systems Limited",
+      "members": [
+        "UTLSOLAR"
+      ],
+      "size": 1
+    },
+    "singleton_0595": {
+      "label": "V2 Retail Limited",
+      "members": [
+        "V2RETAIL"
+      ],
+      "size": 1
+    },
+    "singleton_0596": {
+      "label": "Vaibhav Global Ltd.",
+      "members": [
+        "VAIBHAVGBL"
+      ],
+      "size": 1
+    },
+    "singleton_0597": {
+      "label": "Varroc Engineering Limited",
+      "members": [
+        "VARROC"
+      ],
+      "size": 1
+    },
+    "singleton_0598": {
+      "label": "Venky's (India) Limited",
+      "members": [
+        "VENKEYS"
+      ],
+      "size": 1
+    },
+    "singleton_0599": {
+      "label": "Ventive Hospitality Limited",
+      "members": [
+        "VENTIVE"
+      ],
+      "size": 1
+    },
+    "singleton_0600": {
+      "label": "Venus Remedies Limited",
+      "members": [
+        "VENUSREM"
+      ],
+      "size": 1
+    },
+    "singleton_0601": {
+      "label": "Vertis Infrastructure Trust Units",
+      "members": [
+        "VERTIS"
+      ],
+      "size": 1
+    },
+    "singleton_0602": {
+      "label": "Vesuvius India Ltd",
+      "members": [
+        "VESUVIUS"
+      ],
+      "size": 1
+    },
+    "singleton_0603": {
+      "label": "V-Guard Industries Limited",
+      "members": [
+        "VGUARD"
+      ],
+      "size": 1
+    },
+    "singleton_0604": {
+      "label": "Vidya Wires Limited",
+      "members": [
+        "VIDYAWIRES"
+      ],
+      "size": 1
+    },
+    "singleton_0605": {
+      "label": "Vision Infra Equipment Solutions Limited",
+      "members": [
+        "VIESL"
+      ],
+      "size": 1
+    },
+    "singleton_0606": {
+      "label": "Vijaya Diagnostic Centre Ltd.",
+      "members": [
+        "VIJAYA"
+      ],
+      "size": 1
+    },
+    "singleton_0607": {
+      "label": "Vimta Labs Limited",
+      "members": [
+        "VIMTALABS"
+      ],
+      "size": 1
+    },
+    "singleton_0608": {
+      "label": "Vintage Coffee and Beverages Limited",
+      "members": [
+        "VINCOFE"
+      ],
+      "size": 1
+    },
+    "singleton_0609": {
+      "label": "Vindhya Telelinks Limited",
+      "members": [
+        "VINDHYATEL"
+      ],
+      "size": 1
+    },
+    "singleton_0610": {
+      "label": "Vishnu Chemicals Limited",
+      "members": [
+        "VISHNU"
+      ],
+      "size": 1
+    },
+    "singleton_0611": {
+      "label": "V-Mart Retail Ltd",
+      "members": [
+        "VMART"
+      ],
+      "size": 1
+    },
+    "singleton_0612": {
+      "label": "Vishal Mega Mart Ltd.",
+      "members": [
+        "VMM"
+      ],
+      "size": 1
+    },
+    "singleton_0613": {
+      "label": "Voltamp Transformers Limited",
+      "members": [
+        "VOLTAMP"
+      ],
+      "size": 1
+    },
+    "singleton_0614": {
+      "label": "Voltas Limited",
+      "members": [
+        "VOLTAS"
+      ],
+      "size": 1
+    },
+    "singleton_0615": {
+      "label": "VST Industries Limited",
+      "members": [
+        "VSTIND"
+      ],
+      "size": 1
+    },
+    "singleton_0616": {
+      "label": "VST Tillers Tractors Limited",
+      "members": [
+        "VSTTILLERS"
+      ],
+      "size": 1
+    },
+    "singleton_0617": {
+      "label": "Vardhman Textiles Limited",
+      "members": [
+        "VTL"
+      ],
+      "size": 1
+    },
+    "singleton_0618": {
+      "label": "VA Tech Wabag Limited",
+      "members": [
+        "WABAG"
+      ],
+      "size": 1
+    },
+    "singleton_0619": {
+      "label": "Wakefit Innovations Limited",
+      "members": [
+        "WAKEFIT"
+      ],
+      "size": 1
+    },
+    "singleton_0620": {
+      "label": "Walchandnagar Industries Limited",
+      "members": [
+        "WALCHANNAG"
+      ],
+      "size": 1
+    },
+    "group_0104": {
+      "label": "Welspun World",
+      "members": [
+        "WELCORP",
+        "WELENT",
+        "WELSPUNLIV"
+      ],
+      "size": 3
+    },
+    "singleton_0621": {
+      "label": "WENDT India Limited",
+      "members": [
+        "WENDT"
+      ],
+      "size": 1
+    },
+    "singleton_0622": {
+      "label": "Wheels India Limited",
+      "members": [
+        "WHEELS"
+      ],
+      "size": 1
+    },
+    "singleton_0623": {
+      "label": "Whirlpool Of India Limited",
+      "members": [
+        "WHIRLPOOL"
+      ],
+      "size": 1
+    },
+    "singleton_0624": {
+      "label": "Windsor Machines Limited",
+      "members": [
+        "WINDMACHIN"
+      ],
+      "size": 1
+    },
+    "singleton_0625": {
+      "label": "Wockhardt Limited",
+      "members": [
+        "WOCKPHARMA"
+      ],
+      "size": 1
+    },
+    "singleton_0626": {
+      "label": "Wonderla Holidays Ltd.",
+      "members": [
+        "WONDERLA"
+      ],
+      "size": 1
+    },
+    "singleton_0627": {
+      "label": "West Coast Paper Mills Limited",
+      "members": [
+        "WSTCSTPAPR"
+      ],
+      "size": 1
+    },
+    "singleton_0628": {
+      "label": "Yatra Online Limited",
+      "members": [
+        "YATRA"
+      ],
+      "size": 1
+    },
+    "singleton_0629": {
+      "label": "Zaggle Prepaid Ocean Services Limited",
+      "members": [
+        "ZAGGLE"
+      ],
+      "size": 1
+    },
+    "singleton_0630": {
+      "label": "Zee Entertainment Enterprises Limited",
+      "members": [
+        "ZEEL"
+      ],
+      "size": 1
+    },
+    "singleton_0631": {
+      "label": "Zensar Technologies Limited",
+      "members": [
+        "ZENSARTECH"
+      ],
+      "size": 1
+    },
+    "singleton_0632": {
+      "label": "Zen Technologies Limited",
+      "members": [
+        "ZENTEC"
+      ],
+      "size": 1
+    },
+    "singleton_0633": {
+      "label": "ZF Commercial Vehicle Control Systems India Limited",
+      "members": [
+        "ZFCVINDIA"
+      ],
+      "size": 1
+    },
+    "singleton_0634": {
+      "label": "Zydus Lifesciences Limited",
+      "members": [
+        "ZYDUSLIFE"
+      ],
+      "size": 1
+    },
+    "singleton_0635": {
+      "label": "Zydus Wellness Limited",
+      "members": [
+        "ZYDUSWELL"
+      ],
+      "size": 1
     }
   },
   "stock_to_group": {
-    "ICICIBANK": "singleton_0000",
-    "KRN": "singleton_0001"
+    "360ONE": "group_0000",
+    "3MINDIA": "singleton_0000",
+    "63MOONS": "singleton_0001",
+    "AADHARHFC": "group_0001",
+    "AARTIDRUGS": "group_0002",
+    "AARTIIND": "singleton_0002",
+    "AARTIPHARM": "group_0002",
+    "AAVAS": "group_0001",
+    "ABBOTINDIA": "singleton_0003",
+    "ABCAPITAL": "group_0003",
+    "ABDL": "group_0004",
+    "ABFRL": "group_0005",
+    "ABLBL": "group_0005",
+    "ABREL": "group_0005",
+    "ABSLAMC": "singleton_0004",
+    "ACC": "singleton_0005",
+    "ACE": "singleton_0006",
+    "ACI": "singleton_0007",
+    "ACMESOLAR": "group_0006",
+    "ACUTAAS": "singleton_0008",
+    "ADFFOODS": "singleton_0009",
+    "ADVAIT": "singleton_0010",
+    "ADVENZYMES": "singleton_0011",
+    "AEGISLOG": "group_0007",
+    "AEGISVOPAK": "group_0007",
+    "AEQUS": "singleton_0012",
+    "AEROENTER": "singleton_0013",
+    "AEROFLEX": "singleton_0014",
+    "AETHER": "singleton_0015",
+    "AFCONS": "group_0008",
+    "AFFLE": "singleton_0016",
+    "AGI": "singleton_0017",
+    "AGIIL": "singleton_0018",
+    "AIAENG": "singleton_0019",
+    "AIIL": "group_0009",
+    "AIMTRON": "group_0010",
+    "AJANTPHARM": "singleton_0020",
+    "AJMERA": "group_0011",
+    "AKUMS": "group_0012",
+    "ALGOQUANT": "group_0013",
+    "ALIVUS": "singleton_0021",
+    "ALKEM": "group_0014",
+    "ALKYLAMINE": "singleton_0022",
+    "AMAGI": "singleton_0023",
+    "AMBER": "singleton_0024",
+    "AMIRCHAND": "group_0015",
+    "ANANDRATHI": "group_0000",
+    "ANANTRAJ": "singleton_0025",
+    "ANGELONE": "singleton_0026",
+    "ANTELOPUS": "group_0016",
+    "ANTHEM": "group_0017",
+    "ANUP": "singleton_0027",
+    "ANURAS": "singleton_0028",
+    "APARINDS": "singleton_0029",
+    "APCOTEXIND": "singleton_0030",
+    "APEX": "singleton_0031",
+    "APLAPOLLO": "singleton_0032",
+    "APLLTD": "group_0012",
+    "APOLLO": "singleton_0033",
+    "APOLLOPIPE": "singleton_0034",
+    "APOLLOTYRE": "singleton_0035",
+    "APTUS": "group_0001",
+    "AQYLON": "singleton_0036",
+    "ARE&M": "group_0018",
+    "ARFIN": "singleton_0037",
+    "ARIS": "singleton_0038",
+    "ARMANFIN": "group_0003",
+    "ARROWGREEN": "singleton_0039",
+    "ARSSBL": "singleton_0040",
+    "ARTEMISMED": "singleton_0041",
+    "ARVIND": "singleton_0042",
+    "ARVINDFASN": "group_0019",
+    "ASAHIINDIA": "singleton_0043",
+    "ASAL": "singleton_0044",
+    "ASHAPURMIN": "singleton_0045",
+    "ASHIANA": "singleton_0046",
+    "ASHOKA": "group_0008",
+    "ASHOKLEY": "group_0020",
+    "ASIANENE": "singleton_0047",
+    "ASIANTILES": "singleton_0048",
+    "ASKAUTOLTD": "singleton_0049",
+    "ASTERDM": "group_0021",
+    "ASTRAL": "singleton_0050",
+    "ASTRAMICRO": "singleton_0051",
+    "ASTRAZEN": "singleton_0052",
+    "ATGL": "group_0022",
+    "ATHERENERG": "singleton_0053",
+    "ATLANTAELE": "group_0023",
+    "ATUL": "group_0024",
+    "ATULAUTO": "group_0024",
+    "AUBANK": "group_0025",
+    "AURIONPRO": "singleton_0054",
+    "AUROPHARMA": "group_0012",
+    "AVALON": "group_0010",
+    "AVANTEL": "singleton_0055",
+    "AVANTIFEED": "singleton_0056",
+    "AVL": "singleton_0057",
+    "AWFIS": "singleton_0058",
+    "AWHCL": "singleton_0059",
+    "AWL": "singleton_0060",
+    "AXISCADES": "group_0026",
+    "AYE": "group_0003",
+    "AZAD": "group_0026",
+    "BAJAJCON": "group_0027",
+    "BAJAJELEC": "group_0028",
+    "BAJAJHCARE": "group_0012",
+    "BAJAJHFL": "group_0029",
+    "BALAJITELE": "singleton_0061",
+    "BALAMINES": "singleton_0062",
+    "BALKRISIND": "singleton_0063",
+    "BALMLAWRIE": "group_0016",
+    "BALRAMCHIN": "singleton_0064",
+    "BALUFORGE": "singleton_0065",
+    "BANCOINDIA": "singleton_0066",
+    "BANDHANBNK": "group_0025",
+    "BANKINDIA": "group_0030",
+    "BASF": "singleton_0067",
+    "BATAINDIA": "singleton_0068",
+    "BAYERCROP": "singleton_0069",
+    "BBL": "singleton_0070",
+    "BBOX": "singleton_0071",
+    "BBTC": "singleton_0072",
+    "BDL": "singleton_0073",
+    "BECTORFOOD": "group_0027",
+    "BELRISE": "singleton_0074",
+    "BEML": "group_0031",
+    "BERGEPAINT": "group_0032",
+    "BHAGYANGR": "singleton_0075",
+    "BHARATFORG": "singleton_0076",
+    "BHARATSE": "singleton_0077",
+    "BHARATWIRE": "singleton_0078",
+    "BHARTIHEXA": "singleton_0079",
+    "BIGBLOC": "singleton_0080",
+    "BIOCON": "singleton_0081",
+    "BIRLACORPN": "singleton_0082",
+    "BLACKBUCK": "singleton_0083",
+    "BLISSGVS": "singleton_0084",
+    "BLKASHYAP": "group_0033",
+    "BLS": "group_0034",
+    "BLSE": "group_0034",
+    "BLUEDART": "singleton_0085",
+    "BLUEJET": "group_0012",
+    "BLUESTARCO": "singleton_0086",
+    "BLUESTONE": "singleton_0087",
+    "BODALCHEM": "group_0035",
+    "BOMDYEING": "singleton_0088",
+    "BORORENEW": "group_0036",
+    "BRIGADE": "group_0037",
+    "BSOFT": "singleton_0089",
+    "BUILDPRO": "singleton_0090",
+    "CAMLINFINE": "singleton_0091",
+    "CAMPUS": "singleton_0092",
+    "CAMS": "group_0038",
+    "CANFINHOME": "group_0029",
+    "CANHLIFE": "group_0039",
+    "CAPACITE": "group_0033",
+    "CAPILLARY": "singleton_0093",
+    "CAPITALSFB": "group_0025",
+    "CAPLIPOINT": "singleton_0094",
+    "CARBORUNIV": "singleton_0095",
+    "CARERATING": "singleton_0096",
+    "CARRARO": "singleton_0097",
+    "CARTRADE": "singleton_0098",
+    "CARYSIL": "singleton_0099",
+    "CASTROLIND": "group_0040",
+    "CCL": "singleton_0100",
+    "CDSL": "singleton_0101",
+    "CEATLTD": "group_0041",
+    "CEIGALL": "group_0008",
+    "CEINSYS": "singleton_0102",
+    "CELLO": "group_0042",
+    "CEMPRO": "group_0008",
+    "CENTUM": "singleton_0103",
+    "CERA": "singleton_0104",
+    "CESC": "singleton_0105",
+    "CGCL": "group_0003",
+    "CHALET": "singleton_0106",
+    "CHAMBLFERT": "singleton_0107",
+    "CHEMPLASTS": "singleton_0108",
+    "CHENNPETRO": "group_0043",
+    "CHOICEIN": "singleton_0109",
+    "CHOLAHLDNG": "group_0003",
+    "CIEINDIA": "singleton_0110",
+    "CIGNITITEC": "singleton_0111",
+    "CLEAN": "singleton_0112",
+    "CLEANMAX": "singleton_0113",
+    "CMPDI": "singleton_0114",
+    "CMSINFO": "group_0044",
+    "COCHINSHIP": "group_0045",
+    "COFORGE": "singleton_0115",
+    "COHANCE": "group_0012",
+    "COLPAL": "group_0027",
+    "CONCOR": "group_0045",
+    "CONCORDBIO": "group_0012",
+    "CONFIPET": "singleton_0116",
+    "COROMANDEL": "singleton_0117",
+    "COSMOFIRST": "singleton_0118",
+    "CPPLUS": "group_0015",
+    "CRAFTSMAN": "singleton_0119",
+    "CRAMC": "singleton_0120",
+    "CREDITACC": "group_0046",
+    "CRISIL": "singleton_0121",
+    "CRIZAC": "singleton_0122",
+    "CROMPTON": "singleton_0123",
+    "CSBBANK": "group_0030",
+    "CUB": "group_0030",
+    "CUBEINVIT": "group_0047",
+    "CUPID": "singleton_0124",
+    "CYIENT": "singleton_0125",
+    "CYIENTDLM": "singleton_0126",
+    "DABUR": "group_0027",
+    "DALBHARAT": "singleton_0127",
+    "DALMIASUG": "singleton_0128",
+    "DAMCAPITAL": "singleton_0129",
+    "DATAMATICS": "singleton_0130",
+    "DATAPATTNS": "singleton_0131",
+    "DBL": "group_0008",
+    "DBREALTY": "group_0048",
+    "DCAL": "group_0012",
+    "DCBBANK": "group_0030",
+    "DCMSHRIRAM": "singleton_0132",
+    "DCW": "singleton_0133",
+    "DCXINDIA": "singleton_0134",
+    "DECNGOLD": "singleton_0135",
+    "DEEDEV": "singleton_0136",
+    "DEEPAKFERT": "singleton_0137",
+    "DEEPAKNTR": "singleton_0138",
+    "DEEPINDS": "singleton_0139",
+    "DELHIVERY": "singleton_0140",
+    "DELTACORP": "group_0049",
+    "DEVYANI": "group_0050",
+    "DHAMPURSUG": "group_0051",
+    "DIACABS": "singleton_0141",
+    "DIXON": "singleton_0142",
+    "DLINKINDIA": "singleton_0143",
+    "DOLATALGO": "singleton_0144",
+    "DOMS": "singleton_0145",
+    "DREDGECORP": "singleton_0146",
+    "DSSL": "singleton_0147",
+    "DYCL": "singleton_0148",
+    "DYNAMATECH": "group_0026",
+    "E2E": "group_0052",
+    "EBGNG": "group_0053",
+    "ECLERX": "singleton_0149",
+    "ECOSMOBLTY": "singleton_0150",
+    "EDELWEISS": "singleton_0151",
+    "EFCIL": "singleton_0152",
+    "EIDPARRY": "singleton_0153",
+    "EIEL": "group_0054",
+    "EKC": "singleton_0154",
+    "ELECON": "singleton_0155",
+    "ELECTCAST": "singleton_0156",
+    "ELGIEQUIP": "singleton_0157",
+    "ELLEN": "singleton_0158",
+    "ELPROINTL": "singleton_0159",
+    "EMAMILTD": "group_0027",
+    "EMBDL": "singleton_0160",
+    "EMCURE": "singleton_0161",
+    "EMIL": "group_0053",
+    "EMMVEE": "group_0036",
+    "EMSLIMITED": "group_0054",
+    "EMUDHRA": "singleton_0162",
+    "ENDURANCE": "group_0026",
+    "ENGINERSIN": "singleton_0163",
+    "ENTERO": "singleton_0164",
+    "EPACK": "singleton_0165",
+    "EPACKPEB": "group_0055",
+    "EPIGRAL": "singleton_0166",
+    "EPL": "group_0027",
+    "EQUITASBNK": "group_0025",
+    "ERIS": "singleton_0167",
+    "ESABINDIA": "singleton_0168",
+    "ESCORTS": "singleton_0169",
+    "ESTER": "singleton_0170",
+    "ETHOSLTD": "singleton_0171",
+    "EUREKAFORB": "singleton_0172",
+    "EUROPRATIK": "singleton_0173",
+    "EXCELSOFT": "singleton_0174",
+    "EXIDEIND": "group_0018",
+    "FACT": "singleton_0175",
+    "FDC": "group_0012",
+    "FEDERALBNK": "singleton_0176",
+    "FEDFINA": "group_0003",
+    "FIEMIND": "singleton_0177",
+    "FINCABLES": "singleton_0178",
+    "FINEORG": "singleton_0179",
+    "FINPIPE": "singleton_0180",
+    "FIRSTCRY": "singleton_0181",
+    "FIVESTAR": "group_0003",
+    "FLAIR": "group_0042",
+    "FLUOROCHEM": "singleton_0182",
+    "FORCEMOT": "singleton_0183",
+    "FORTIS": "group_0056",
+    "FRACTAL": "singleton_0184",
+    "FRONTSP": "singleton_0185",
+    "FSL": "singleton_0186",
+    "FUSION": "group_0046",
+    "GABRIEL": "singleton_0187",
+    "GAEL": "singleton_0188",
+    "GALAPREC": "singleton_0189",
+    "GALLANTT": "singleton_0190",
+    "GANDHAR": "singleton_0191",
+    "GANECOS": "group_0057",
+    "GANESHCP": "singleton_0192",
+    "GANESHHOU": "singleton_0193",
+    "GARFIBRES": "singleton_0194",
+    "GARUDA": "group_0033",
+    "GATEWAY": "group_0058",
+    "GCSL": "singleton_0195",
+    "GENESYS": "singleton_0196",
+    "GENUSPOWER": "singleton_0197",
+    "GEOJITFSL": "group_0021",
+    "GESHIP": "singleton_0198",
+    "GHCL": "singleton_0199",
+    "GICRE": "singleton_0200",
+    "GILLETTE": "group_0027",
+    "GIPCL": "singleton_0201",
+    "GKENERGY": "group_0036",
+    "GKSL": "singleton_0202",
+    "GLAND": "group_0059",
+    "GLAXO": "singleton_0203",
+    "GLENMARK": "group_0060",
+    "GLOBUSSPR": "group_0004",
+    "GMBREW": "group_0004",
+    "GMDCLTD": "singleton_0204",
+    "GMMPFAUDLR": "singleton_0205",
+    "GMRP&UI": "singleton_0206",
+    "GNA": "singleton_0207",
+    "GNFC": "group_0061",
+    "GOCOLORS": "singleton_0208",
+    "GODAVARIB": "group_0051",
+    "GODFRYPHLP": "group_0027",
+    "GODIGIT": "group_0062",
+    "GODREJAGRO": "singleton_0209",
+    "GODREJIND": "group_0063",
+    "GODREJPROP": "group_0063",
+    "GOKEX": "singleton_0210",
+    "GOKULAGRO": "singleton_0211",
+    "GOLDIAM": "singleton_0212",
+    "GOODLUCK": "singleton_0213",
+    "GOPAL": "group_0027",
+    "GPIL": "group_0064",
+    "GPPL": "singleton_0214",
+    "GRANULES": "group_0012",
+    "GRAPHITE": "group_0065",
+    "GRAVITA": "group_0066",
+    "GREAVESCOT": "singleton_0215",
+    "GREENLAM": "singleton_0216",
+    "GREENPANEL": "group_0067",
+    "GREENPLY": "group_0067",
+    "GRINDWELL": "singleton_0217",
+    "GRINFRA": "singleton_0218",
+    "GRMOVER": "singleton_0219",
+    "GRSE": "group_0031",
+    "GRWRHITECH": "singleton_0220",
+    "GSFC": "group_0061",
+    "GSPCROP": "singleton_0221",
+    "GSPL": "singleton_0222",
+    "GUFICBIO": "group_0012",
+    "GUJALKALI": "singleton_0223",
+    "GUJGASLTD": "group_0022",
+    "GUJTHEM": "group_0012",
+    "GULFOILLUB": "singleton_0224",
+    "GULPOLY": "singleton_0225",
+    "GVPIL": "singleton_0226",
+    "HAPPSTMNDS": "singleton_0227",
+    "HAPPYFORGE": "group_0026",
+    "HARIOMPIPE": "singleton_0228",
+    "HARSHA": "singleton_0229",
+    "HAVELLS": "group_0028",
+    "HBLENGINE": "singleton_0230",
+    "HCG": "singleton_0231",
+    "HDBFS": "group_0003",
+    "HEG": "group_0065",
+    "HEMIPROP": "group_0045",
+    "HERITGFOOD": "group_0068",
+    "HEXT": "singleton_0232",
+    "HFCL": "group_0069",
+    "HGINFRA": "group_0008",
+    "HGS": "singleton_0233",
+    "HIKAL": "singleton_0234",
+    "HIMATSEIDE": "singleton_0235",
+    "HINDCOPPER": "group_0045",
+    "HINDOILEXP": "group_0016",
+    "HINDPETRO": "group_0043",
+    "HIRECT": "singleton_0236",
+    "HITECH": "group_0070",
+    "HOMEFIRST": "group_0029",
+    "HONASA": "singleton_0237",
+    "HONAUT": "singleton_0238",
+    "HPL": "singleton_0239",
+    "HSCL": "singleton_0240",
+    "HUBTOWN": "group_0011",
+    "HUDCO": "group_0045",
+    "HUHTAMAKI": "singleton_0241",
+    "ICICIBANK": "singleton_0242",
+    "ICICIGI": "group_0039",
+    "ICICIPRULI": "group_0039",
+    "ICIL": "singleton_0243",
+    "IDBI": "singleton_0244",
+    "IDEAFORGE": "singleton_0245",
+    "IDFCFIRSTB": "singleton_0246",
+    "IEX": "singleton_0247",
+    "IFBAGRO": "singleton_0248",
+    "IFBIND": "singleton_0249",
+    "IFCI": "group_0003",
+    "IGARASHI": "singleton_0250",
+    "IGIL": "singleton_0251",
+    "IGL": "group_0022",
+    "IIFL": "group_0003",
+    "IIFLCAPS": "group_0003",
+    "IKIO": "singleton_0252",
+    "IKS": "singleton_0253",
+    "IMFA": "singleton_0254",
+    "INA": "group_0036",
+    "INDGN": "singleton_0255",
+    "INDHOTEL": "group_0071",
+    "INDIACEM": "group_0072",
+    "INDIAGLYCO": "singleton_0256",
+    "INDIAMART": "singleton_0257",
+    "INDIASHLTR": "group_0001",
+    "INDIGOPNTS": "singleton_0258",
+    "INDIGRID": "group_0047",
+    "INDOCO": "singleton_0259",
+    "INDOSTAR": "group_0003",
+    "INDOTECH": "group_0073",
+    "INDOTHAI": "singleton_0260",
+    "INDRAMEDCO": "singleton_0261",
+    "INDSWFTLAB": "singleton_0262",
+    "INDUSINDBK": "singleton_0263",
+    "INFOBEAN": "singleton_0264",
+    "INGERRAND": "singleton_0265",
+    "INNOVACAP": "group_0014",
+    "INOXGREEN": "group_0074",
+    "INOXINDIA": "singleton_0266",
+    "INOXWIND": "group_0074",
+    "INTELLECT": "singleton_0267",
+    "INTERARCH": "group_0055",
+    "IOLCP": "singleton_0268",
+    "IONEXCHANG": "singleton_0269",
+    "IPCALAB": "group_0012",
+    "IPL": "group_0012",
+    "IRCON": "group_0045",
+    "IRCTC": "group_0045",
+    "IREDA": "group_0045",
+    "IRMENERGY": "group_0022",
+    "ISGEC": "singleton_0270",
+    "ITCHOTELS": "singleton_0271",
+    "ITDC": "singleton_0272",
+    "ITI": "singleton_0273",
+    "IXIGO": "singleton_0274",
+    "J&KBANK": "group_0075",
+    "JAGSNPHARM": "singleton_0275",
+    "JAIBALAJI": "group_0076",
+    "JAICORPLTD": "group_0076",
+    "JAINREC": "group_0066",
+    "JAMNAAUTO": "singleton_0276",
+    "JARO": "singleton_0277",
+    "JASH": "singleton_0278",
+    "JAYNECOIND": "singleton_0279",
+    "JBCHEPHARM": "group_0012",
+    "JBMA": "singleton_0280",
+    "JINDALSAW": "group_0077",
+    "JINDRILL": "singleton_0281",
+    "JKCEMENT": "group_0078",
+    "JKIL": "group_0008",
+    "JKPAPER": "singleton_0282",
+    "JKTYRE": "group_0078",
+    "JMFINANCIL": "singleton_0283",
+    "JNKINDIA": "singleton_0284",
+    "JSFB": "group_0025",
+    "JSL": "group_0079",
+    "JSLL": "singleton_0285",
+    "JSWCEMENT": "group_0078",
+    "JSWDULUX": "singleton_0286",
+    "JSWINFRA": "singleton_0287",
+    "JTLIND": "group_0070",
+    "JUBLFOOD": "singleton_0288",
+    "JUBLINGREA": "singleton_0289",
+    "JUBLPHARMA": "singleton_0290",
+    "JUSTDIAL": "singleton_0291",
+    "JWL": "singleton_0292",
+    "JYOTHYLAB": "group_0027",
+    "JYOTICNC": "singleton_0293",
+    "KAJARIACER": "singleton_0294",
+    "KALAMANDIR": "group_0080",
+    "KALPATARU": "group_0011",
+    "KALYANKJIL": "singleton_0295",
+    "KANSAINER": "group_0032",
+    "KARURVYSYA": "group_0030",
+    "KAYNES": "singleton_0296",
+    "KDDL": "singleton_0297",
+    "KEC": "singleton_0298",
+    "KEI": "singleton_0299",
+    "KENNAMET": "singleton_0300",
+    "KERNEX": "singleton_0301",
+    "KFINTECH": "group_0038",
+    "KIMS": "singleton_0302",
+    "KINGFA": "singleton_0303",
+    "KIOCL": "group_0064",
+    "KIRIINDUS": "group_0035",
+    "KIRLFER": "group_0081",
+    "KIRLOSBROS": "group_0081",
+    "KIRLOSENG": "group_0081",
+    "KIRLPNU": "group_0081",
+    "KISSHT": "singleton_0304",
+    "KITEX": "singleton_0305",
+    "KMEW": "singleton_0306",
+    "KNRCON": "singleton_0307",
+    "KPEL": "group_0006",
+    "KPIGREEN": "group_0006",
+    "KPIL": "group_0008",
+    "KPITTECH": "singleton_0308",
+    "KPRMILL": "singleton_0309",
+    "KRBL": "group_0015",
+    "KRISHANA": "singleton_0310",
+    "KRISHNADEF": "singleton_0311",
+    "KRN": "singleton_0312",
+    "KROSS": "singleton_0313",
+    "KRSNAA": "singleton_0314",
+    "KSB": "singleton_0315",
+    "KSCL": "singleton_0316",
+    "KSHINTL": "singleton_0317",
+    "KSL": "singleton_0318",
+    "KTKBANK": "group_0030",
+    "LALPATHLAB": "singleton_0319",
+    "LATENTVIEW": "singleton_0320",
+    "LAURUSLABS": "group_0012",
+    "LEMERITE": "singleton_0321",
+    "LEMONTREE": "singleton_0322",
+    "LENSKART": "singleton_0323",
+    "LGBBROSLTD": "singleton_0324",
+    "LICHSGFIN": "group_0029",
+    "LINDEINDIA": "singleton_0325",
+    "LLOYDSENGG": "singleton_0326",
+    "LLOYDSENT": "singleton_0327",
+    "LLOYDSME": "group_0064",
+    "LMW": "singleton_0328",
+    "LODHA": "group_0011",
+    "LOTUSDEV": "group_0011",
+    "LTF": "group_0003",
+    "LTFOODS": "singleton_0329",
+    "LTTS": "singleton_0330",
+    "LUMAXIND": "group_0082",
+    "LUMAXTECH": "group_0082",
+    "LUXIND": "singleton_0331",
+    "LXCHEM": "group_0083",
+    "M&MFIN": "group_0046",
+    "MAHABANK": "singleton_0332",
+    "MAHLIFE": "singleton_0333",
+    "MAHSCOOTER": "singleton_0334",
+    "MAHSEAMLES": "singleton_0335",
+    "MAITHANALL": "singleton_0336",
+    "MANAKCOAT": "singleton_0337",
+    "MANAPPURAM": "group_0003",
+    "MANGLMCEM": "singleton_0338",
+    "MANINDS": "group_0077",
+    "MANINFRA": "group_0008",
+    "MANORAMA": "singleton_0339",
+    "MANYAVAR": "singleton_0340",
+    "MAPMYINDIA": "singleton_0341",
+    "MARATHON": "group_0011",
+    "MARINE": "singleton_0342",
+    "MARKSANS": "group_0059",
+    "MARSONS": "group_0073",
+    "MASTEK": "singleton_0343",
+    "MAXHEALTH": "group_0056",
+    "MAYURUNIQ": "singleton_0344",
+    "MBAPL": "singleton_0345",
+    "MCX": "singleton_0346",
+    "MEDANTA": "singleton_0347",
+    "MEDIASSIST": "singleton_0348",
+    "MEDPLUS": "singleton_0349",
+    "MEESHO": "singleton_0350",
+    "METROBRAND": "group_0019",
+    "METROPOLIS": "group_0084",
+    "MFSL": "singleton_0351",
+    "MGL": "group_0022",
+    "MHRIL": "singleton_0352",
+    "MICEL": "singleton_0353",
+    "MIDHANI": "singleton_0354",
+    "MIDWESTLTD": "singleton_0355",
+    "MINDACORP": "singleton_0356",
+    "MMTC": "singleton_0357",
+    "MOBIKWIK": "group_0085",
+    "MOIL": "group_0045",
+    "MOL": "singleton_0358",
+    "MOLDTKPAC": "singleton_0359",
+    "MOSCHIP": "singleton_0360",
+    "MOTILALOFS": "singleton_0361",
+    "MPHASIS": "singleton_0362",
+    "MRF": "group_0041",
+    "MRPL": "group_0043",
+    "MSTCLTD": "singleton_0363",
+    "MTARTECH": "singleton_0364",
+    "MUFIN": "group_0003",
+    "MUTHOOTMF": "group_0046",
+    "NACLIND": "singleton_0365",
+    "NATCOPHARM": "singleton_0366",
+    "NATIONALUM": "group_0045",
+    "NAUKRI": "singleton_0367",
+    "NAVA": "singleton_0368",
+    "NAVINFLUOR": "singleton_0369",
+    "NAVKARCORP": "group_0058",
+    "NAZARA": "group_0060",
+    "NBCC": "group_0045",
+    "NCC": "singleton_0370",
+    "NELCAST": "singleton_0371",
+    "NELCO": "singleton_0372",
+    "NEOGEN": "singleton_0373",
+    "NEPHROPLUS": "singleton_0374",
+    "NESCO": "singleton_0375",
+    "NETWEB": "group_0052",
+    "NEULANDLAB": "group_0012",
+    "NEWGEN": "singleton_0376",
+    "NFL": "group_0086",
+    "NGLFINE": "group_0012",
+    "NH": "singleton_0377",
+    "NHPC": "singleton_0378",
+    "NIACL": "group_0062",
+    "NIBE": "singleton_0379",
+    "NIITLTD": "singleton_0380",
+    "NITCO": "singleton_0381",
+    "NITINSPIN": "singleton_0382",
+    "NIVABUPA": "group_0087",
+    "NLCINDIA": "singleton_0383",
+    "NMDC": "singleton_0384",
+    "NOCIL": "singleton_0385",
+    "NORTHARC": "singleton_0386",
+    "NRBBEARING": "singleton_0387",
+    "NTPCGREEN": "singleton_0388",
+    "NUVAMA": "group_0000",
+    "NUVOCO": "singleton_0389",
+    "NYKAA": "group_0080",
+    "OBEROIRLTY": "group_0048",
+    "OFSS": "singleton_0390",
+    "OIL": "group_0016",
+    "OLECTRA": "singleton_0391",
+    "OMAXE": "singleton_0392",
+    "OMNI": "singleton_0393",
+    "ONEPOINT": "singleton_0394",
+    "ONESOURCE": "group_0012",
+    "OPTIEMUS": "singleton_0395",
+    "ORCHPHARMA": "group_0014",
+    "ORIANA": "group_0036",
+    "ORIENTCEM": "singleton_0396",
+    "ORIENTELEC": "singleton_0397",
+    "ORIENTTECH": "singleton_0398",
+    "ORISSAMINE": "group_0064",
+    "OSWALPUMPS": "group_0088",
+    "PACEDIGITK": "singleton_0399",
+    "PAGEIND": "singleton_0400",
+    "PANACEABIO": "singleton_0401",
+    "PARACABLES": "singleton_0402",
+    "PARADEEP": "singleton_0403",
+    "PARAGMILK": "group_0068",
+    "PARAS": "singleton_0404",
+    "PARKHOSPS": "singleton_0405",
+    "PATANJALI": "group_0027",
+    "PAYTM": "group_0085",
+    "PCBL": "singleton_0406",
+    "PENIND": "singleton_0407",
+    "PERSISTENT": "singleton_0408",
+    "PETRONET": "singleton_0409",
+    "PFIZER": "singleton_0410",
+    "PFOCUS": "group_0049",
+    "PGEL": "singleton_0411",
+    "PGHH": "group_0089",
+    "PGHL": "group_0089",
+    "PGIL": "singleton_0412",
+    "PHOENIXLTD": "singleton_0413",
+    "PICCADIL": "singleton_0414",
+    "PIIND": "singleton_0415",
+    "PINELABS": "singleton_0416",
+    "PIRAMALFIN": "singleton_0417",
+    "PITTIENG": "singleton_0418",
+    "PLATIND": "singleton_0419",
+    "PNBHOUSING": "group_0029",
+    "PNCINFRA": "singleton_0420",
+    "PNGJL": "singleton_0421",
+    "PNGSREVA": "singleton_0422",
+    "POCL": "group_0066",
+    "POLICYBZR": "singleton_0423",
+    "POLYMED": "singleton_0424",
+    "POLYPLEX": "singleton_0425",
+    "POONAWALLA": "group_0003",
+    "POWERICA": "singleton_0426",
+    "POWERMECH": "group_0008",
+    "PPLPHARMA": "singleton_0427",
+    "PRAJIND": "singleton_0428",
+    "PRAKASH": "singleton_0429",
+    "PRECAM": "singleton_0430",
+    "PRECWIRE": "singleton_0431",
+    "PREMEXPLN": "singleton_0432",
+    "PREMIERENE": "group_0036",
+    "PRESTIGE": "group_0048",
+    "PRICOLLTD": "singleton_0433",
+    "PRINCEPIPE": "singleton_0434",
+    "PRIVISCL": "singleton_0435",
+    "PROSTARM": "singleton_0436",
+    "PROTEAN": "singleton_0437",
+    "PRSMJOHNSN": "singleton_0438",
+    "PRUDENT": "singleton_0439",
+    "PSPPROJECT": "singleton_0440",
+    "PTC": "singleton_0441",
+    "PTCIL": "singleton_0442",
+    "PVRINOX": "singleton_0443",
+    "PWL": "singleton_0444",
+    "QPOWER": "singleton_0445",
+    "QUADFUTURE": "singleton_0446",
+    "QUESS": "singleton_0447",
+    "QUICKHEAL": "singleton_0448",
+    "RACLGEAR": "group_0026",
+    "RADHIKAJWE": "singleton_0449",
+    "RADICO": "group_0004",
+    "RAILTEL": "group_0045",
+    "RAIN": "singleton_0450",
+    "RAINBOW": "singleton_0451",
+    "RAJOOENG": "singleton_0452",
+    "RALLIS": "singleton_0453",
+    "RAMCOCEM": "singleton_0454",
+    "RAMRAT": "singleton_0455",
+    "RATEGAIN": "singleton_0456",
+    "RATNAMANI": "group_0070",
+    "RATNAVEER": "group_0079",
+    "RAYMOND": "group_0090",
+    "RAYMONDLSL": "group_0090",
+    "RAYMONDREL": "group_0011",
+    "RBA": "group_0050",
+    "RBLBANK": "singleton_0457",
+    "RCF": "group_0086",
+    "RECLTD": "group_0045",
+    "REDINGTON": "group_0091",
+    "REDTAPE": "singleton_0458",
+    "REFEX": "singleton_0459",
+    "REGAAL": "singleton_0460",
+    "RELAXO": "singleton_0461",
+    "RELIGARE": "singleton_0462",
+    "RELINFRA": "singleton_0463",
+    "REPCOHOME": "group_0029",
+    "RGL": "singleton_0464",
+    "RICOAUTO": "singleton_0465",
+    "RIIL": "singleton_0466",
+    "RISHABH": "singleton_0467",
+    "RITES": "singleton_0468",
+    "RKFORGE": "singleton_0469",
+    "RML": "singleton_0470",
+    "ROLEXRINGS": "singleton_0471",
+    "ROSSARI": "singleton_0472",
+    "ROSSTECH": "singleton_0473",
+    "ROUTE": "group_0092",
+    "RPEL": "singleton_0474",
+    "RPGLIFE": "singleton_0475",
+    "RPSGVENT": "singleton_0476",
+    "RPTECH": "singleton_0477",
+    "RRKABEL": "singleton_0478",
+    "RSYSTEMS": "singleton_0479",
+    "RUBICON": "singleton_0480",
+    "RVNL": "singleton_0481",
+    "SAATVIKGL": "group_0036",
+    "SAFARI": "group_0093",
+    "SAGCEM": "group_0072",
+    "SAIL": "singleton_0482",
+    "SAILIFE": "group_0017",
+    "SAIPARENT": "singleton_0483",
+    "SAKAR": "singleton_0484",
+    "SAKSOFT": "singleton_0485",
+    "SALZERELEC": "singleton_0486",
+    "SAMBHV": "group_0070",
+    "SAMHI": "singleton_0487",
+    "SAMMAANCAP": "group_0003",
+    "SANDHAR": "singleton_0488",
+    "SANDUMA": "singleton_0489",
+    "SANGHVIMOV": "singleton_0490",
+    "SANOFI": "singleton_0491",
+    "SANSERA": "group_0026",
+    "SANSTAR": "group_0073",
+    "SAPPHIRE": "singleton_0492",
+    "SARDAEN": "singleton_0493",
+    "SAREGAMA": "group_0094",
+    "SATIN": "group_0046",
+    "SBCL": "singleton_0494",
+    "SBFC": "group_0003",
+    "SBICARD": "singleton_0495",
+    "SCHAEFFLER": "singleton_0496",
+    "SCHNEIDER": "singleton_0497",
+    "SCI": "group_0095",
+    "SCILAL": "group_0095",
+    "SCODATUBES": "group_0070",
+    "SDBL": "group_0004",
+    "SEAMECLTD": "singleton_0498",
+    "SEDEMAC": "singleton_0499",
+    "SEIL": "singleton_0500",
+    "SENCO": "singleton_0501",
+    "SENORES": "singleton_0502",
+    "SERVOTECH": "singleton_0503",
+    "SFL": "singleton_0504",
+    "SGFIN": "singleton_0505",
+    "SGMART": "singleton_0506",
+    "SHADOWFAX": "singleton_0507",
+    "SHAILY": "singleton_0508",
+    "SHAKTIPUMP": "group_0088",
+    "SHANTIGOLD": "group_0096",
+    "SHARDACROP": "singleton_0509",
+    "SHARDAMOTR": "singleton_0510",
+    "SHAREINDIA": "group_0013",
+    "SHILCTECH": "group_0073",
+    "SHILPAMED": "singleton_0511",
+    "SHK": "singleton_0512",
+    "SHOPERSTOP": "singleton_0513",
+    "SHREECEM": "group_0097",
+    "SHREEJISPG": "singleton_0514",
+    "SHREEPUSHK": "singleton_0515",
+    "SHRINGARMS": "singleton_0516",
+    "SHRIPISTON": "singleton_0517",
+    "SHRIRAMPPS": "group_0037",
+    "SHYAMMETL": "singleton_0518",
+    "SIGMAADV": "singleton_0519",
+    "SIGNATURE": "singleton_0520",
+    "SIKA": "singleton_0521",
+    "SILVERTUC": "singleton_0522",
+    "SIRCA": "singleton_0523",
+    "SIS": "singleton_0524",
+    "SIYSIL": "singleton_0525",
+    "SJS": "singleton_0526",
+    "SJVN": "group_0045",
+    "SKFINDIA": "group_0098",
+    "SKFINDUS": "group_0098",
+    "SKIPPER": "singleton_0527",
+    "SKYGOLD": "group_0096",
+    "SMARTWORKS": "group_0099",
+    "SMLMAH": "group_0020",
+    "SMSPHARMA": "group_0012",
+    "SOBHA": "singleton_0528",
+    "SOLARA": "singleton_0529",
+    "SOLEX": "group_0036",
+    "SONACOMS": "singleton_0530",
+    "SONATSOFTW": "singleton_0531",
+    "SOTL": "group_0084",
+    "SPANDANA": "group_0046",
+    "SPARC": "group_0100",
+    "SPLPETRO": "singleton_0532",
+    "SPMLINFRA": "singleton_0533",
+    "SPORTKING": "singleton_0534",
+    "SRF": "singleton_0535",
+    "SRM": "group_0075",
+    "STALLION": "singleton_0536",
+    "STAR": "singleton_0537",
+    "STARCEMENT": "group_0097",
+    "STARHEALTH": "group_0087",
+    "STLTECH": "group_0069",
+    "STYL": "singleton_0538",
+    "STYLAMIND": "singleton_0539",
+    "STYLEBAAZA": "singleton_0540",
+    "STYRENIX": "singleton_0541",
+    "SUBROS": "singleton_0542",
+    "SUDARSCHEM": "singleton_0543",
+    "SUDEEPPHRM": "singleton_0544",
+    "SULA": "singleton_0545",
+    "SUMICHEM": "singleton_0546",
+    "SUNDARMFIN": "group_0003",
+    "SUNDRMFAST": "singleton_0547",
+    "SUNFLAG": "singleton_0548",
+    "SUNTECK": "group_0011",
+    "SUNTV": "singleton_0549",
+    "SUPRAJIT": "singleton_0550",
+    "SUPREMEIND": "singleton_0551",
+    "SUPRIYA": "group_0012",
+    "SURYAROSNI": "singleton_0552",
+    "SURYODAY": "group_0025",
+    "SUVEN": "group_0100",
+    "SUYOG": "singleton_0553",
+    "SUZLON": "group_0074",
+    "SWANCORP": "singleton_0554",
+    "SWARAJENG": "singleton_0555",
+    "SWIGGY": "singleton_0556",
+    "SWSOLAR": "group_0036",
+    "SYMPHONY": "singleton_0557",
+    "SYNGENE": "group_0017",
+    "SYRMA": "singleton_0558",
+    "TAC": "group_0101",
+    "TAJGVK": "group_0071",
+    "TANLA": "group_0092",
+    "TARC": "singleton_0559",
+    "TARIL": "group_0023",
+    "TASTYBITE": "singleton_0560",
+    "TATACHEM": "singleton_0561",
+    "TATACOMM": "group_0102",
+    "TATAELXSI": "singleton_0562",
+    "TATAINVEST": "group_0009",
+    "TATATECH": "group_0102",
+    "TATVA": "singleton_0563",
+    "TBOTEK": "singleton_0564",
+    "TBZ": "singleton_0565",
+    "TDPOWERSYS": "singleton_0566",
+    "TECHNOE": "group_0008",
+    "TEGA": "singleton_0567",
+    "TEJASNET": "singleton_0568",
+    "TENNIND": "singleton_0569",
+    "TEXRAIL": "group_0103",
+    "TFCILTD": "singleton_0570",
+    "THANGAMAYL": "singleton_0571",
+    "THELEELA": "singleton_0572",
+    "THERMAX": "singleton_0573",
+    "THOMASCOOK": "singleton_0574",
+    "THYROCARE": "singleton_0575",
+    "TI": "group_0004",
+    "TIINDIA": "singleton_0576",
+    "TIMETECHNO": "singleton_0577",
+    "TIMKEN": "singleton_0578",
+    "TINNARUBR": "group_0057",
+    "TIPSMUSIC": "group_0094",
+    "TIRUMALCHM": "singleton_0579",
+    "TITAGARH": "group_0103",
+    "TMB": "singleton_0580",
+    "TORNTPOWER": "singleton_0581",
+    "TRANSRAILL": "group_0008",
+    "TRITURBINE": "singleton_0582",
+    "TRIVENI": "singleton_0583",
+    "TRUALT": "singleton_0584",
+    "TVSSCS": "group_0091",
+    "UBL": "group_0004",
+    "UDS": "group_0044",
+    "UFBL": "singleton_0585",
+    "UGROCAP": "singleton_0586",
+    "UJJIVANSFB": "group_0025",
+    "UNIECOM": "group_0101",
+    "UNIMECH": "group_0026",
+    "UNIPARTS": "singleton_0587",
+    "UNITDSPR": "singleton_0588",
+    "UNIVCABLES": "singleton_0589",
+    "UNOMINDA": "group_0026",
+    "UPL": "singleton_0590",
+    "URBANCO": "singleton_0591",
+    "USHAMART": "singleton_0592",
+    "UTIAMC": "singleton_0593",
+    "UTLSOLAR": "singleton_0594",
+    "V2RETAIL": "singleton_0595",
+    "VAIBHAVGBL": "singleton_0596",
+    "VARROC": "singleton_0597",
+    "VEEDOL": "group_0040",
+    "VENKEYS": "singleton_0598",
+    "VENTIVE": "singleton_0599",
+    "VENUSPIPES": "group_0070",
+    "VENUSREM": "singleton_0600",
+    "VERTIS": "singleton_0601",
+    "VESUVIUS": "singleton_0602",
+    "VGUARD": "singleton_0603",
+    "VIDYAWIRES": "singleton_0604",
+    "VIESL": "singleton_0605",
+    "VIJAYA": "singleton_0606",
+    "VIKRAMSOLR": "group_0036",
+    "VIKRAN": "group_0008",
+    "VIMTALABS": "singleton_0607",
+    "VINATIORGA": "group_0083",
+    "VINCOFE": "singleton_0608",
+    "VINDHYATEL": "singleton_0609",
+    "VIPIND": "group_0093",
+    "VISHNU": "singleton_0610",
+    "VIYASH": "group_0012",
+    "VMART": "singleton_0611",
+    "VMM": "singleton_0612",
+    "VOLTAMP": "singleton_0613",
+    "VOLTAS": "singleton_0614",
+    "VSTIND": "singleton_0615",
+    "VSTTILLERS": "singleton_0616",
+    "VTL": "singleton_0617",
+    "WAAREEENER": "group_0036",
+    "WAAREERTL": "group_0036",
+    "WABAG": "singleton_0618",
+    "WAKEFIT": "singleton_0619",
+    "WALCHANNAG": "singleton_0620",
+    "WEBELSOLAR": "group_0036",
+    "WELCORP": "group_0104",
+    "WELENT": "group_0104",
+    "WELSPUNLIV": "group_0104",
+    "WENDT": "singleton_0621",
+    "WESTLIFE": "group_0050",
+    "WEWORK": "group_0099",
+    "WHEELS": "singleton_0622",
+    "WHIRLPOOL": "singleton_0623",
+    "WINDLAS": "group_0012",
+    "WINDMACHIN": "singleton_0624",
+    "WOCKPHARMA": "singleton_0625",
+    "WONDERLA": "singleton_0626",
+    "WSTCSTPAPR": "singleton_0627",
+    "YATHARTH": "group_0056",
+    "YATRA": "singleton_0628",
+    "ZAGGLE": "singleton_0629",
+    "ZEEL": "singleton_0630",
+    "ZENSARTECH": "singleton_0631",
+    "ZENTEC": "singleton_0632",
+    "ZFCVINDIA": "singleton_0633",
+    "ZYDUSLIFE": "singleton_0634",
+    "ZYDUSWELL": "singleton_0635"
   }
 }
