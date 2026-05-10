@@ -398,16 +398,18 @@ def chg_float(s: str) -> float:
 
 # ── Sector rotation parser ────────────────────────────────────────────────────
 
-def parse_sector_rotation(content: str) -> tuple[list, list, list]:
+def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
     """
     Parse sector_rotation_latest.md.
-    Returns (high_conv, rot_in_groups, rot_out_groups).
-    high_conv: list of {symbol, group, rs_chg}
+    Returns (high_conv, rot_in_groups, rot_out_groups, zl_breadth).
+    high_conv:  list of {symbol, group, rs_chg}
     rot_in/out: list of {label, size, rs_chg, leaders/laggards}
+    zl_breadth: list of {label, zl_rising, breadth, avg_days, avg_pct, cluster, members}
     """
-    high_conv = []
-    rot_in    = []
-    rot_out   = []
+    high_conv  = []
+    rot_in     = []
+    rot_out    = []
+    zl_breadth = []
 
     section = None
     for line in content.splitlines():
@@ -418,27 +420,38 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list]:
             section = "in"
         elif line.startswith("## Rotating Out"):
             section = "out"
+        elif line.startswith("## ZL Breadth"):
+            section = "zlb"
         elif line.startswith("##"):
             section = None
 
-        if not line.startswith("|") or line.startswith("| ---") or line.startswith("| Symbol") or line.startswith("| Group"):
+        if not line.startswith("|") or line.startswith("|---") or line.startswith("| ---") or line.startswith("| Symbol") or line.startswith("| Group"):
             continue
 
         cols = [c.strip() for c in line.split("|")[1:-1]]
         if section == "hc" and len(cols) >= 5:
-            # New format: Symbol | Label | Peer Group | RS Rank | Group RS 4W
             sym = cols[0].replace("**", "").strip()
             high_conv.append({"symbol": sym, "group": cols[2], "rank": cols[3], "rs_chg": cols[4]})
         elif section == "hc" and len(cols) >= 4:
-            # Old format: Symbol | Peer Group | RS Rank | Group RS 4W
             sym = cols[0].replace("**", "").strip()
             high_conv.append({"symbol": sym, "group": cols[1], "rank": cols[2], "rs_chg": cols[3]})
         elif section == "in" and len(cols) >= 4:
             rot_in.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "leaders": cols[3]})
         elif section == "out" and len(cols) >= 4:
             rot_out.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "laggards": cols[3]})
+        elif section == "zlb" and len(cols) >= 7:
+            # Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members
+            zl_breadth.append({
+                "label":      cols[0],
+                "zl_rising":  cols[1],
+                "breadth":    cols[2],
+                "avg_days":   cols[3],
+                "avg_pct":    cols[4],
+                "cluster":    cols[5],
+                "members":    cols[6],
+            })
 
-    return high_conv, rot_in, rot_out
+    return high_conv, rot_in, rot_out, zl_breadth
 
 
 # ── Company fetch staleness check ────────────────────────────────────────────
@@ -474,7 +487,8 @@ def build_html(today: str, now_str: str,
                circuit_changes: list,
                compression_rows: list, total_compressed: int, total_zl_rising: int,
                zl_squeeze: list,
-               rot_high_conv: list, rot_in: list, rot_out: list) -> str:
+               rot_high_conv: list, rot_in: list, rot_out: list,
+               zl_breadth: list) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
@@ -671,7 +685,7 @@ def build_html(today: str, now_str: str,
 
     # ── Sector rotation section ──────────────────────────────────────────────
     sector_rotation_section = ""
-    if rot_high_conv or rot_in:
+    if rot_high_conv or rot_in or zl_breadth:
         hc_rows_html = [
             f'<tr><td class="sym">{tv_link(h["symbol"])}</td>'
             f'<td class="lbl">{_lbl(h["symbol"])}</td>'
@@ -689,6 +703,24 @@ def build_html(today: str, now_str: str,
             f'<td class="chg-r">{g["rs_chg"]}</td><td>{g["laggards"]}</td></tr>'
             for g in rot_out[:5]
         ]
+        zlb_rows_html = []
+        for z in zl_breadth[:20]:
+            has_cluster = z["cluster"] and z["cluster"] != "—"
+            pct_val = int(z["breadth"].rstrip("%")) if z["breadth"].rstrip("%").isdigit() else 0
+            pct_cls = "chg-g" if pct_val >= 70 else ("chg-g" if pct_val >= 50 else "")
+            cluster_cell = f'<td style="color:var(--gld)">{z["cluster"]}</td>' if has_cluster else f'<td class="nm">—</td>'
+            zlb_rows_html.append(
+                f'<tr>'
+                f'<td>{z["label"]}</td>'
+                f'<td class="num">{z["zl_rising"]}</td>'
+                f'<td class="{pct_cls}" style="font-weight:600">{z["breadth"]}</td>'
+                f'<td class="num">{z["avg_days"]}</td>'
+                f'<td class="num">{z["avg_pct"]}</td>'
+                f'{cluster_cell}'
+                f'<td class="nm" style="font-size:11px">{z["members"]}</td>'
+                f'</tr>'
+            )
+
         hc_table = (
             '<table><thead><tr><th>Symbol</th><th>Label</th><th>Peer Group</th>'
             '<th>RS Rank (now/4W)</th><th>Group RS 4W</th></tr></thead>'
@@ -702,12 +734,18 @@ def build_html(today: str, now_str: str,
             '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Laggards</th></tr></thead>'
             f'<tbody>{"".join(rot_out_rows)}</tbody></table>'
         ) if rot_out else ""
+        zlb_table = (
+            '<table><thead><tr><th>Group</th><th>ZL Rising</th><th>Breadth</th>'
+            '<th>Avg ZL Days</th><th>Avg ZL Chg%</th><th>⚡ Cluster</th><th>Members</th></tr></thead>'
+            f'<tbody>{"".join(zlb_rows_html) or "<tr><td colspan=7>No breadth data</td></tr>"}</tbody></table>'
+        )
 
         sector_rotation_section = f"""
 <div class="section">
-  <div class="stitle">Sector Rotation — High-Conviction ({len(rot_high_conv)}) &nbsp;|&nbsp; Rotating In: {len(rot_in)} groups &nbsp;|&nbsp; Rotating Out: {len(rot_out)} groups</div>
+  <div class="stitle">Sector Rotation — High-Conviction ({len(rot_high_conv)}) &nbsp;|&nbsp; Rotating In: {len(rot_in)} groups &nbsp;|&nbsp; Rotating Out: {len(rot_out)} groups &nbsp;|&nbsp; ZL Breadth: {len(zl_breadth)} groups</div>
   {hc_table}
-  <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:600">Rotating In ({len(rot_in)} groups)</summary>{ri_table}</details>
+  <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:600">ZL Breadth per Group ({len(zl_breadth)} groups ≥40% rising) ⚡ = coordinated cluster</summary>{zlb_table}</details>
+  <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating In ({len(rot_in)} groups)</summary>{ri_table}</details>
   <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating Out ({len(rot_out)} groups)</summary>{ro_table}</details>
 </div>"""
 
@@ -907,7 +945,7 @@ def main():
     circuit_changes = parse_circuit_changes(circuit_content)
     compression_rows, total_compressed, total_zl_rising = parse_ema_compression(compression_content, today)
     zl_squeeze_rows = parse_zl_squeeze(zl_squeeze_content, today)
-    rot_high_conv, rot_in_groups, rot_out_groups = parse_sector_rotation(sector_rotation_content)
+    rot_high_conv, rot_in_groups, rot_out_groups, zl_breadth_groups = parse_sector_rotation(sector_rotation_content)
 
     html = build_html(
         today=today, now_str=now_str,
@@ -923,6 +961,7 @@ def main():
         rot_high_conv=rot_high_conv,
         rot_in=rot_in_groups,
         rot_out=rot_out_groups,
+        zl_breadth=zl_breadth_groups,
     )
 
     with open(DASHBOARD_HTML, "w", encoding="utf-8") as f:

@@ -42,9 +42,35 @@ ROT_OUT_PCT  = 0.08  # group avg RS down ≥ 8% → Rotating Out
 RANK_RISE    = 1     # rank improved by ≥ N places → Rising Leader
 RANK_FALL    = 1     # rank dropped by ≥ N places → Falling Laggard
 MIN_GROUP    = 3     # skip groups smaller than this (too few to rank)
+ZL_TURN_CAP  = 60   # cap ZL days lookback
+ZL_CLUSTER_WINDOW = 2   # bars — turns within ±N bars = "cluster"
+ZL_CLUSTER_MIN    = 2   # min members turning together to flag a cluster
+ZL_BREADTH_MIN    = 0.40  # only show groups with ≥40% ZL rising in breadth table
 
 sys.path.insert(0, str(REPO_DIR))
 from ohlc_db import load_ohlc, load_ohlc_many
+
+
+# ── ZL helpers ─────────────────────────────────────────────────────────────────
+
+def _ema(s: pd.Series, n: int) -> pd.Series:
+    return s.ewm(span=n, adjust=False).mean()
+
+def _zlema25(s: pd.Series) -> pd.Series:
+    e = _ema(s, 25)
+    return 2 * e - _ema(e, 25)
+
+def _zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
+    """Return (bars_since_last_turn_up, pct_gain_since_turn)."""
+    n     = len(zl25)
+    limit = max(2, n - ZL_TURN_CAP)
+    for i in range(n - 1, limit - 1, -1):
+        if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
+            bars = (n - 1) - i + 1
+            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            return bars, round(pct, 2)
+    cap_idx = max(0, n - ZL_TURN_CAP)
+    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
 
 
 # ── RS helpers ─────────────────────────────────────────────────────────────────
@@ -110,11 +136,36 @@ def main():
             except Exception:
                 pass
 
+    # Compute ZL stats for each stock
+    print("Computing ZL stats...")
+    zl_map: dict[str, dict] = {}   # sym -> {rising, days, pct, turn_bar_idx}
+    for sym in all_symbols:
+        df = ohlc.get(sym)
+        if df is None or len(df) < 30:
+            continue
+        try:
+            c     = df["close"].astype(float)
+            zl25  = _zlema25(c)
+            rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
+            days, pct = _zl25_turn_stats(zl25, c)
+            # find the bar index (from series end) of the last turn-up
+            n = len(zl25)
+            turn_bar = None
+            limit = max(2, n - ZL_TURN_CAP)
+            for i in range(n - 1, limit - 1, -1):
+                if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
+                    turn_bar = (n - 1) - i   # bars ago
+                    break
+            zl_map[sym] = {"rising": rising, "days": days, "pct": pct, "turn_bar": turn_bar}
+        except Exception:
+            pass
+
     # ── Signals ────────────────────────────────────────────────────────────────
 
-    rot_in:  list[dict] = []
-    rot_out: list[dict] = []
-    high_conv: list[dict] = []
+    rot_in:     list[dict] = []
+    rot_out:    list[dict] = []
+    high_conv:  list[dict] = []
+    zl_breadth: list[dict] = []
 
     for gid, group in active_groups.items():
         members    = group["members"]
@@ -172,6 +223,45 @@ def main():
         leaders.sort(key=lambda x: x[1])    # best rank first
         laggards.sort(key=lambda x: x[1], reverse=True)
 
+        # ── ZL Breadth + Cluster ─────────────────────────────────────────────
+        zl_members   = [s for s in valid_syms if s in zl_map]
+        zl_rising_syms = [s for s in zl_members if zl_map[s]["rising"]]
+        breadth_pct  = len(zl_rising_syms) / len(zl_members) if zl_members else 0.0
+        avg_zl_days  = (sum(zl_map[s]["days"] for s in zl_rising_syms) / len(zl_rising_syms)
+                        if zl_rising_syms else None)
+        avg_zl_pct   = (sum(zl_map[s]["pct"]  for s in zl_rising_syms) / len(zl_rising_syms)
+                        if zl_rising_syms else None)
+
+        # Cluster: find turn_bar values for rising members that just turned (turn_bar < ZL_TURN_CAP)
+        recent_turns = [(s, zl_map[s]["turn_bar"]) for s in zl_rising_syms
+                        if zl_map[s]["turn_bar"] is not None and zl_map[s]["turn_bar"] < ZL_TURN_CAP]
+        cluster_syms: list[str] = []
+        if len(recent_turns) >= ZL_CLUSTER_MIN:
+            # group by proximity: any two turns within ZL_CLUSTER_WINDOW bars of each other
+            recent_turns.sort(key=lambda x: x[1])
+            best_cluster: list[str] = []
+            for j in range(len(recent_turns)):
+                anchor = recent_turns[j][1]
+                group_j = [s for s, tb in recent_turns if abs(tb - anchor) <= ZL_CLUSTER_WINDOW]
+                if len(group_j) > len(best_cluster):
+                    best_cluster = group_j
+            if len(best_cluster) >= ZL_CLUSTER_MIN:
+                cluster_syms = best_cluster
+
+        if breadth_pct >= ZL_BREADTH_MIN and zl_members:
+            zl_breadth.append({
+                "gid":          gid,
+                "label":        label,
+                "size":         len(valid_syms),
+                "zl_count":     len(zl_rising_syms),
+                "zl_total":     len(zl_members),
+                "breadth_pct":  breadth_pct,
+                "avg_zl_days":  avg_zl_days,
+                "avg_zl_pct":   avg_zl_pct,
+                "cluster_syms": cluster_syms,
+                "rising_syms":  zl_rising_syms,
+            })
+
         chg_str = f"{rs_chg_pct * 100:+.1f}%" if rs_chg_pct is not None else "n/a"
         grp_entry = {
             "gid":        gid,
@@ -202,6 +292,8 @@ def main():
     rot_in.sort(key=lambda x: x["rs_chg_pct"] or 0, reverse=True)
     rot_out.sort(key=lambda x: x["rs_chg_pct"] or 0)
     high_conv.sort(key=lambda x: x["rank_now"])
+    # ZL breadth: cluster groups first, then by breadth % desc
+    zl_breadth.sort(key=lambda x: (-len(x["cluster_syms"]), -x["breadth_pct"]))
 
     # ── Markdown output ────────────────────────────────────────────────────────
     lines = [
@@ -264,12 +356,45 @@ def main():
     if not rot_in and not rot_out:
         lines += ["*No strong rotation signals today.*", ""]
 
+    # ZL Breadth per group
+    if zl_breadth:
+        lines += [
+            "## ZL Breadth per Group",
+            "",
+            "_Groups where ≥40% of members have ZLEMA25 rising. "
+            "⚡ = coordinated cluster (≥2 members turned ZL within ±2 bars)._",
+            "",
+            "| Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members |",
+            "|-------|-----------|---------|------------|-------------|---------|---------|",
+        ]
+        for z in zl_breadth:
+            cluster_str = ", ".join(z["cluster_syms"]) if z["cluster_syms"] else "—"
+            cluster_flag = "⚡ " + cluster_str if z["cluster_syms"] else "—"
+            rising_str   = ", ".join(z["rising_syms"][:6])
+            if len(z["rising_syms"]) > 6:
+                rising_str += f" +{len(z['rising_syms']) - 6}"
+            avg_days_str = f"{z['avg_zl_days']:.0f}d" if z["avg_zl_days"] is not None else "—"
+            avg_pct_str  = f"{z['avg_zl_pct']:+.1f}%" if z["avg_zl_pct"] is not None else "—"
+            lines.append(
+                f"| {z['label']} "
+                f"| {z['zl_count']}/{z['zl_total']} "
+                f"| {z['breadth_pct'] * 100:.0f}% "
+                f"| {avg_days_str} "
+                f"| {avg_pct_str} "
+                f"| {cluster_flag} "
+                f"| {rising_str} |"
+            )
+        lines.append("")
+    else:
+        lines += ["## ZL Breadth per Group", "", "*No groups with ≥40% ZL rising today.*", ""]
+
     md = "\n".join(lines)
     MD_FILE.write_text(md, encoding="utf-8")
     print(f"Written: {MD_FILE}")
     print(f"  Rotating In:  {len(rot_in)} groups")
     print(f"  Rotating Out: {len(rot_out)} groups")
     print(f"  High-conviction: {len(high_conv)} stocks")
+    print(f"  ZL breadth groups: {len(zl_breadth)}")
 
     return 0
 
