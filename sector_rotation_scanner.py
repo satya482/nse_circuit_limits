@@ -36,8 +36,8 @@ WINDOW       = 20   # 4 calendar weeks ≈ 20 trading days
 
 ROT_IN_PCT   = 0.08  # group avg RS up ≥ 8% over WINDOW bars → Rotating In
 ROT_OUT_PCT  = 0.08  # group avg RS down ≥ 8% → Rotating Out
-RANK_RISE    = 3     # rank improved by ≥ N places → Rising Leader
-RANK_FALL    = 3     # rank dropped by ≥ N places → Falling Laggard
+RANK_RISE    = 1     # rank improved by ≥ N places → Rising Leader
+RANK_FALL    = 1     # rank dropped by ≥ N places → Falling Laggard
 MIN_GROUP    = 3     # skip groups smaller than this (too few to rank)
 
 sys.path.insert(0, str(REPO_DIR))
