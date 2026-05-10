@@ -441,6 +441,29 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list]:
     return high_conv, rot_in, rot_out
 
 
+# ── Company fetch staleness check ────────────────────────────────────────────
+
+def _company_fetch_warning() -> str:
+    """Return a warning HTML banner if stock_labels.json is from a prior month, else ''."""
+    labels_path = os.path.join(BASE, "tools", "stock_labels.json")
+    if not os.path.exists(labels_path):
+        return (
+            '<div class="warn">⚠️ Company data missing — '
+            '<code>tools/stock_labels.json</code> not found. '
+            'Run <code>tools/run_company_fetch.ps1</code> to bootstrap.</div>'
+        )
+    mtime = datetime.fromtimestamp(os.path.getmtime(labels_path), tz=IST)
+    now   = datetime.now(tz=IST)
+    if mtime.year == now.year and mtime.month == now.month:
+        return ""
+    days_old = (now - mtime).days
+    return (
+        f'<div class="warn">⚠️ Company data is stale — last refreshed '
+        f'{mtime.strftime("%Y-%m-%d")} ({days_old}d ago). '
+        f'Scheduled task <b>NSE_COMPANY_FETCH</b> runs on the 1st of each month at 10:00 AM.</div>'
+    )
+
+
 # ── Main HTML builder ─────────────────────────────────────────────────────────
 
 def build_html(today: str, now_str: str,
@@ -776,6 +799,7 @@ tr:hover td{{background:var(--bg3)}}
 
 .two{{display:grid;grid-template-columns:1fr 1fr;gap:16px}}
 .empty{{color:var(--mu);font-style:italic;text-align:center;padding:8px}}
+.warn{{background:rgba(248,81,73,.12);border:1px solid #f85149;border-radius:6px;padding:8px 14px;margin-bottom:14px;font-size:12px;color:#f85149}}
 
 @media(max-width:800px){{.two{{grid-template-columns:1fr}}}}
 </style>
@@ -785,6 +809,7 @@ tr:hover td{{background:var(--bg3)}}
 <h1>NSE Daily Dashboard — {today}</h1>
 <div class="sub">Generated {now_str}</div>
 
+{_company_fetch_warning()}
 <div class="bar">
   <div class="stat"><div class="sv gld">{triple}</div><div class="sl">★★★ Triple</div></div>
   <div class="stat"><div class="sv blu">{double}</div><div class="sl">★★ Double</div></div>
