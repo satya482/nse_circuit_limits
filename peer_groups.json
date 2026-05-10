@@ -1,0 +1,26 @@
+{
+  "version": "2026-05-10",
+  "n_stocks": 2,
+  "n_groups": 2,
+  "n_singletons": 2,
+  "groups": {
+    "singleton_0000": {
+      "label": "ICICIBANK",
+      "members": [
+        "ICICIBANK"
+      ],
+      "size": 1
+    },
+    "singleton_0001": {
+      "label": "KRN",
+      "members": [
+        "KRN"
+      ],
+      "size": 1
+    }
+  },
+  "stock_to_group": {
+    "ICICIBANK": "singleton_0000",
+    "KRN": "singleton_0001"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "Map NSE symbol to a group_id to force membership. Use group IDs from peer_groups.json.",
+  "_example": {
+    "IRCTC": "group_0042",
+    "ZOMATO": "group_0017"
+  }
+}

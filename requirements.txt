@@ -3,3 +3,5 @@ bs4
 python-dateutil
 yfinance
 tradingview-screener
+scikit-learn
+sentence-transformers

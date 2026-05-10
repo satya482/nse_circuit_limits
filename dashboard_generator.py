@@ -12,15 +12,16 @@ from collections import defaultdict
 IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-SWING_MD        = os.path.join(BASE, "swing_scans", "swing_scans.md")
-MOMENTUM_MD     = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
-WEEKLY_RS_MD    = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
-EMA25_ZL_MD     = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
-EMA_SCANS_DIR   = os.path.join(BASE, "ema_screener_scans")
-CIRCUIT_MD      = os.path.join(BASE, "NSE_Circuit_Limits.md")
-COMPRESSION_MD = os.path.join(BASE, "ema-compression-scanner",
-                               "ema_compression_scans", "ema_compression_latest.md")
-ZL_SQUEEZE_MD  = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
+SWING_MD           = os.path.join(BASE, "swing_scans", "swing_scans.md")
+MOMENTUM_MD        = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
+WEEKLY_RS_MD       = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
+EMA25_ZL_MD        = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
+EMA_SCANS_DIR      = os.path.join(BASE, "ema_screener_scans")
+CIRCUIT_MD         = os.path.join(BASE, "NSE_Circuit_Limits.md")
+COMPRESSION_MD     = os.path.join(BASE, "ema-compression-scanner",
+                                   "ema_compression_scans", "ema_compression_latest.md")
+ZL_SQUEEZE_MD      = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
+SECTOR_ROTATION_MD = os.path.join(BASE, "sector_rotation_scans", "sector_rotation_latest.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
 
 
@@ -346,6 +347,46 @@ def chg_float(s: str) -> float:
         return 0.0
 
 
+# ── Sector rotation parser ────────────────────────────────────────────────────
+
+def parse_sector_rotation(content: str) -> tuple[list, list, list]:
+    """
+    Parse sector_rotation_latest.md.
+    Returns (high_conv, rot_in_groups, rot_out_groups).
+    high_conv: list of {symbol, group, rs_chg}
+    rot_in/out: list of {label, size, rs_chg, leaders/laggards}
+    """
+    high_conv = []
+    rot_in    = []
+    rot_out   = []
+
+    section = None
+    for line in content.splitlines():
+        line = line.strip()
+        if line.startswith("## High-Conviction"):
+            section = "hc"
+        elif line.startswith("## Rotating In"):
+            section = "in"
+        elif line.startswith("## Rotating Out"):
+            section = "out"
+        elif line.startswith("##"):
+            section = None
+
+        if not line.startswith("|") or line.startswith("| ---") or line.startswith("| Symbol") or line.startswith("| Group"):
+            continue
+
+        cols = [c.strip() for c in line.split("|")[1:-1]]
+        if section == "hc" and len(cols) >= 4:
+            sym = cols[0].replace("**", "").strip()
+            high_conv.append({"symbol": sym, "group": cols[1], "rank": cols[2], "rs_chg": cols[3]})
+        elif section == "in" and len(cols) >= 4:
+            rot_in.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "leaders": cols[3]})
+        elif section == "out" and len(cols) >= 4:
+            rot_out.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "laggards": cols[3]})
+
+    return high_conv, rot_in, rot_out
+
+
 # ── Main HTML builder ─────────────────────────────────────────────────────────
 
 def build_html(today: str, now_str: str,
@@ -355,7 +396,8 @@ def build_html(today: str, now_str: str,
                ema_adds: list, ema_dels: list, ema_date: str,
                circuit_changes: list,
                compression_rows: list, total_compressed: int, total_zl_rising: int,
-               zl_squeeze: list) -> str:
+               zl_squeeze: list,
+               rot_high_conv: list, rot_in: list, rot_out: list) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
@@ -381,6 +423,7 @@ def build_html(today: str, now_str: str,
     register(swing,        "Swing")
     register(momentum,     "Momentum")
     register(weekly_entry, "WeeklyRS")
+    register(rot_high_conv, "Rotation")
 
     all_syms = sorted(
         scanner_map.keys(),
@@ -545,6 +588,47 @@ def build_html(today: str, now_str: str,
   </table>
 </div>"""
 
+    # ── Sector rotation section ──────────────────────────────────────────────
+    sector_rotation_section = ""
+    if rot_high_conv or rot_in:
+        hc_rows_html = [
+            f'<tr><td class="sym">{tv_link(h["symbol"])}</td>'
+            f'<td>{h["group"]}</td><td>{h["rank"]}</td>'
+            f'<td class="{"chg-g" if h["rs_chg"].startswith("+") else "chg-r"}">{h["rs_chg"]}</td></tr>'
+            for h in rot_high_conv
+        ]
+        rot_in_rows = [
+            f'<tr><td>{g["label"]}</td><td>{g["size"]}</td>'
+            f'<td class="chg-g">{g["rs_chg"]}</td><td>{g["leaders"]}</td></tr>'
+            for g in rot_in[:10]
+        ]
+        rot_out_rows = [
+            f'<tr><td>{g["label"]}</td><td>{g["size"]}</td>'
+            f'<td class="chg-r">{g["rs_chg"]}</td><td>{g["laggards"]}</td></tr>'
+            for g in rot_out[:5]
+        ]
+        hc_table = (
+            '<table><thead><tr><th>Symbol</th><th>Peer Group</th>'
+            '<th>RS Rank (now/4W)</th><th>Group RS 4W</th></tr></thead>'
+            f'<tbody>{"".join(hc_rows_html) or "<tr><td colspan=4>No high-conviction today</td></tr>"}</tbody></table>'
+        ) if rot_high_conv else ""
+        ri_table = (
+            '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Leaders</th></tr></thead>'
+            f'<tbody>{"".join(rot_in_rows)}</tbody></table>'
+        ) if rot_in else ""
+        ro_table = (
+            '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Laggards</th></tr></thead>'
+            f'<tbody>{"".join(rot_out_rows)}</tbody></table>'
+        ) if rot_out else ""
+
+        sector_rotation_section = f"""
+<div class="section">
+  <div class="stitle">Sector Rotation — High-Conviction ({len(rot_high_conv)}) &nbsp;|&nbsp; Rotating In: {len(rot_in)} groups &nbsp;|&nbsp; Rotating Out: {len(rot_out)} groups</div>
+  {hc_table}
+  <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:600">Rotating In ({len(rot_in)} groups)</summary>{ri_table}</details>
+  <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating Out ({len(rot_out)} groups)</summary>{ro_table}</details>
+</div>"""
+
     ema_label = f"EMA Screener ({ema_date})" if ema_date and ema_date != today else "EMA Screener — Today"
 
     turning_section = ""
@@ -655,6 +739,8 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv pur">{len(zl_squeeze)}</div><div class="sl">ZL Squeeze</div></div>
   <div class="stat"><div class="sv pur">{total_compressed}</div><div class="sl">Compressed</div></div>
   <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Squeeze+RS</div></div>
+  <div class="stat"><div class="sv grn">{len(rot_high_conv)}</div><div class="sl">Rot Leaders</div></div>
+  <div class="stat"><div class="sv blu">{len(rot_in)}</div><div class="sl">Rot Groups In</div></div>
 </div>
 
 <div class="section">
@@ -672,6 +758,8 @@ tr:hover td{{background:var(--bg3)}}
 {zl_squeeze_section}
 
 {compression_section}
+
+{sector_rotation_section}
 
 <div class="two">
   <div class="section">
@@ -716,8 +804,9 @@ def main():
     zl25_content        = read_file(EMA25_ZL_MD)
     ema_content         = find_latest_screener(EMA_SCANS_DIR, today)
     circuit_content     = read_file(CIRCUIT_MD)
-    compression_content = read_file(COMPRESSION_MD)
-    zl_squeeze_content  = read_file(ZL_SQUEEZE_MD)
+    compression_content    = read_file(COMPRESSION_MD)
+    zl_squeeze_content     = read_file(ZL_SQUEEZE_MD)
+    sector_rotation_content = read_file(SECTOR_ROTATION_MD)
 
     swing_block    = extract_today_block(swing_content,    today)
     momentum_block = extract_today_block(momentum_content, today)
@@ -733,6 +822,7 @@ def main():
     circuit_changes = parse_circuit_changes(circuit_content)
     compression_rows, total_compressed, total_zl_rising = parse_ema_compression(compression_content, today)
     zl_squeeze_rows = parse_zl_squeeze(zl_squeeze_content, today)
+    rot_high_conv, rot_in_groups, rot_out_groups = parse_sector_rotation(sector_rotation_content)
 
     html = build_html(
         today=today, now_str=now_str,
@@ -745,6 +835,9 @@ def main():
         total_compressed=total_compressed,
         total_zl_rising=total_zl_rising,
         zl_squeeze=zl_squeeze_rows,
+        rot_high_conv=rot_high_conv,
+        rot_in=rot_in_groups,
+        rot_out=rot_out_groups,
     )
 
     with open(DASHBOARD_HTML, "w", encoding="utf-8") as f:
@@ -756,6 +849,7 @@ def main():
     print(f"  ZL Squeeze: {len(zl_squeeze_rows)}")
     print(f"  EMA Compression: {total_compressed} compressed, {total_zl_rising} ZL rising")
     print(f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}")
+    print(f"  Sector Rotation: High-conv={len(rot_high_conv)} Rot-In={len(rot_in_groups)} Rot-Out={len(rot_out_groups)}")
     triple = sum(1 for s in {r['symbol'] for r in swing_signals} &
                               {r['symbol'] for r in momentum_signals} &
                               {r['symbol'] for r in weekly_entry})
