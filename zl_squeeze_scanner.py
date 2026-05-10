@@ -279,8 +279,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
     T, F = "✓", "—"
     hdr = [
-        "| Symbol | Label | Close | Day Chg | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |",
-        "|--------|-------|------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|:-------:|",
+        "| Symbol | Label | Sqz Days | ZL Days | ZL Chg% | Close | Day Chg | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |",
+        "|--------|-------|---------:|--------:|--------:|------:|--------:|:-------:|:--------:|:--------------:|:-------:|",
     ]
     rows = []
     for f in sorted_f:
@@ -293,11 +293,11 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         rows.append(
             f"| [{f['symbol']}]({tv}) "
             f"| {lbl} "
-            f"| {f['close']:.2f} "
-            f"| {ds}{f['day_chg']:.2f}% "
             f"| {f['squeeze_days']}d "
             f"| {zl_d} "
             f"| {zl_p} "
+            f"| {f['close']:.2f} "
+            f"| {ds}{f['day_chg']:.2f}% "
             f"| {T if f['g_ema9'] else F} "
             f"| {T if f['g_ema21'] else F} "
             f"| {T if f['g_weekly9'] else F} "

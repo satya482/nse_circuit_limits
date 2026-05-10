@@ -361,13 +361,14 @@ def parse_zl_squeeze(content: str, today: str) -> list:
         except ValueError:
             new_fmt = True   # parts[1] is text → new format (Label)
         if new_fmt and len(parts) >= 7:
+            # New col order: Symbol | Label | Sqz Days | ZL Days | ZL Chg% | Close | Day Chg | ... | Circuit
             rows.append({
                 "symbol":   _strip_md_link(parts[0]),
-                "close":    parts[2],
-                "day_chg":  parts[3],
-                "sqz_days": parts[4],
-                "zl_days":  parts[5],
-                "zl_pct":   parts[6],
+                "sqz_days": parts[2],
+                "zl_days":  parts[3],
+                "zl_pct":   parts[4],
+                "close":    parts[5],
+                "day_chg":  parts[6],
                 "circuit":  parts[10] if len(parts) > 10 else (parts[7] if len(parts) > 7 else ""),
             })
         else:
@@ -672,11 +673,11 @@ def build_html(today: str, now_str: str,
             f'<tr>'
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="lbl">{_lbl(r["symbol"])}</td>'
-            f'<td class="num">{r["close"]}</td>'
-            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
             f'<td class="{sqz_cls}">{sqz_d}</td>'
             f'<td class="zld">{r["zl_days"]}</td>'
             f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'<td class="num">{r["close"]}</td>'
+            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
             f'{td_circ(r["circuit"])}</tr>'
         )
 
@@ -686,7 +687,7 @@ def build_html(today: str, now_str: str,
 <div class="section">
   <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON ({len(zl_squeeze)} stocks, top 30 by ZL Days asc)</div>
   <table>
-    <thead><tr><th>Symbol</th><th>Label</th><th>Close</th><th>Day Chg</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
+    <thead><tr><th>Symbol</th><th>Label</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Close</th><th>Day Chg</th><th>Circuit</th></tr></thead>
     <tbody>{table_or_empty(sqz_rows_html, 8, "No signals today")}</tbody>
   </table>
 </div>"""
