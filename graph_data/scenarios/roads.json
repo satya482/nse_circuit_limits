@@ -2,14 +2,147 @@
   "theme": "Roads",
   "tier1": [
     {
+      "symbol": "ACE",
+      "name": "Action Construction Equipment Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "NUVOCO",
+      "name": "Nuvoco Vistas Corporation Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "BIRLACORPN",
+      "name": "Birla Corporation Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "conviction": 30,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "MANINFRA",
+      "name": "Man Infraconstruction Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "SAMBHV",
+      "name": "Sambhv Steel Tubes Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "NBCC",
+      "name": "NBCC (India) Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "IFCI",
+      "name": "IFCI Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "RECLTD",
+      "name": "REC Ltd.",
+      "conviction": 23,
+      "quality": 5,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "CEATLTD",
+      "name": "Ceat Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "USHAMART",
+      "name": "Usha Martin Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "name": "APL Apollo Tubes Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "POWERMECH",
+      "name": "Power Mech Projects Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "SAIL",
+      "name": "Steel Authority of India (SAIL) Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "ACC",
+      "name": "ACC Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
       "symbol": "IRCON",
       "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "DALBHARAT",
+      "name": "Dalmia Bharat Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "JKTYRE",
+      "name": "JK Tyre & Industries Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "GOODLUCK",
+      "name": "Goodluck India Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Roads"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**IRCON — Direct highway construction exposure with immediate order book acceleration from roads stimulus — Watch FY25 revenue growth target of 25%+ and order inflows crossing ₹5,000 crore.**",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**ACE — Clear conviction leader with structural tailwind from Roads capex cycle** — Watch OCF conversion and order book growth trajectory at 40%+ CAGR.\n\n**NUVOCO as hedge — Cement demand from infrastructure spending offers defensive play if construction acceleration sustains** — Monitor blended realization and volume growth >15% YoY.",
+  "generated_date": "2026-05-12"
 }

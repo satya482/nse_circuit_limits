@@ -2,14 +2,147 @@
   "theme": "PowerT&D",
   "tier1": [
     {
-      "symbol": "KEI",
-      "name": "KEI Industries Ltd.",
-      "conviction": 16,
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "VIKRAN",
+      "name": "Vikran Engineering Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Ltd.",
+      "conviction": 33,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SBCL",
+      "name": "Shivalik Bimetal Controls Ltd.",
+      "conviction": 32,
+      "quality": 6,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "IEX",
+      "name": "Indian Energy Exchange Ltd.",
+      "conviction": 32,
+      "quality": 6,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "conviction": 30,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "PTC",
+      "name": "PTC India Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "DANISH",
+      "name": "Danish Power Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "APARINDS",
+      "name": "Apar Industries Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TECHNOE",
+      "name": "Techno Electric & Engineering Company Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "PRECWIRE",
+      "name": "Precision Wires India Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "DYCL",
+      "name": "Dynamic Cables Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TORNTPOWER",
+      "name": "Torrent Power Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "HINDCOPPER",
+      "name": "Hindustan Copper Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SKIPPER",
+      "name": "Skipper Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "KEC",
+      "name": "KEC International Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Ltd.",
+      "conviction": 24,
       "quality": 2,
       "via_theme": "PowerT&D"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "KEI Industries — PowerT&D tailwinds will drive 30-40% revenue growth in transmission cable segment over next 2 years, with operating leverage pushing margins 300-400 bps higher. — Watch FY25-26 EBITDA margin expansion to 18-20% and order book growth >₹5,000 crore.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**SCHNEIDER — Global scale + India's power infrastructure capex boom creates structural tailwinds; domestic competitor lacks balance sheet heft.** — Watch 18-24% revenue CAGR in India operations and 200bps EBIT margin expansion over next 3 years.",
+  "generated_date": "2026-05-12"
 }

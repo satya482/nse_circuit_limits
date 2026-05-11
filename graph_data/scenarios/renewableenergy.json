@@ -2,6 +2,118 @@
   "theme": "RenewableEnergy",
   "tier1": [
     {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SHAKTIPUMP",
+      "name": "Shakti Pumps (India) Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "INOXINDIA",
+      "name": "Inox India Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "OSWALPUMPS",
+      "name": "Oswal Pumps Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "WHEELS",
+      "name": "Wheels India Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "EMMVEE",
+      "name": "Emmvee Photovoltaic Power Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Ltd.",
+      "conviction": 33,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "NAVA",
+      "name": "NAVA Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "PREMIERENE",
+      "name": "Premier Energies Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "IEX",
+      "name": "Indian Energy Exchange Ltd.",
+      "conviction": 32,
+      "quality": 6,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "PTC",
+      "name": "PTC India Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "GKENERGY",
+      "name": "GK Energy Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
       "symbol": "WAAREEENER",
       "name": "Waaree Energies Ltd.",
       "conviction": 28,
@@ -9,14 +121,28 @@
       "via_theme": "RenewableEnergy"
     },
     {
-      "symbol": "INOXWIND",
-      "name": "Inox Wind Ltd.",
-      "conviction": 6,
-      "quality": 0,
+      "symbol": "DANISH",
+      "name": "Danish Power Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "ELECON",
+      "name": "Elecon Engineering Company Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "UTLSOLAR",
+      "name": "Fujiyama Power Systems Ltd.",
+      "conviction": 28,
+      "quality": 3,
       "via_theme": "RenewableEnergy"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "WAAREEENER — conviction score of 28 is 4.7x higher, signaling genuine structural tailwinds versus noise; this is where serious money compounds. — Watch capacity additions trajectory and blended realization prices above ₹4.50/watt.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "TRITURBINE — highest conviction play with cleanest renewable energy exposure and most direct operational leverage to macro tailwinds. — Watch blade utilization rates and order book growth; target 40%+ YoY revenue expansion.",
+  "generated_date": "2026-05-12"
 }

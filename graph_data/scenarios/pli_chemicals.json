@@ -2,21 +2,147 @@
   "theme": "PLI_Chemicals",
   "tier1": [
     {
-      "symbol": "TATACHEM",
-      "name": "Tata Chemicals Ltd.",
-      "conviction": 16,
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "FACT",
+      "name": "The Fertilisers and Chemicals Travancore Ltd.",
+      "conviction": 39,
+      "quality": 7,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "RCF",
+      "name": "Rashtriya Chemicals & Fertilizers Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "RALLIS",
+      "name": "Rallis India Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "PCBL",
+      "name": "PCBL Chemical Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "KANSAINER",
+      "name": "Kansai Nerolac Paints Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SYNGENE",
+      "name": "Syngene International Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "KRISHANA",
+      "name": "Krishana Phoschem Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "CLEAN",
+      "name": "Clean Science & Technology Ltd.",
+      "conviction": 26,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SUPRIYA",
+      "name": "Supriya Lifescience Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "VIYASH",
+      "name": "Viyash Scientific Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "CHENNPETRO",
+      "name": "Chennai Petroleum Corporation Ltd.",
+      "conviction": 25,
+      "quality": 5,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "AKUMS",
+      "name": "Akums Drugs & Pharmaceuticals Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "IPL",
+      "name": "India Pesticides Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SRF",
+      "name": "SRF Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "VINATIORGA",
+      "name": "Vinati Organics Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SHARDACROP",
+      "name": "Sharda Cropchem Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "UPL",
+      "name": "UPL Ltd.",
+      "conviction": 24,
       "quality": 2,
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "AARTIIND",
-      "name": "Aarti Industries Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "IPCALAB",
+      "name": "Ipca Laboratories Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "name": "Navin Fluorine International Ltd.",
+      "conviction": 21,
+      "quality": 2,
       "via_theme": "PLI_Chemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**TATACHEM — 16x higher conviction score reflects institutional confidence in execution capability and scale advantages under PLI; AARTIIND is a speculative lottery ticket.** — Watch TATACHEM's Q3 capex deployment rate and PLI subsidy realization timeline; target ₹3,500+ within 12 months if capex accelerates.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**BLUEJET — highest conviction score (41) signals strongest structural positioning in PLI chemicals ecosystem with proven execution capability — watch 25-30% earnings CAGR over next 2 years as PLI capex materializes.**",
+  "generated_date": "2026-05-12"
 }

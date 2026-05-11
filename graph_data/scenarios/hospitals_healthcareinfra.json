@@ -2,6 +2,69 @@
   "theme": "Hospitals_HealthcareInfra",
   "tier1": [
     {
+      "symbol": "SANOFI",
+      "name": "Sanofi India Ltd.",
+      "conviction": 49,
+      "quality": 7,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "INDRAMEDCO",
+      "name": "Indraprastha Medical Corporation Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "IKS",
+      "name": "Inventurus Knowledge Solutions Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "JSLL",
+      "name": "Jeena Sikho Lifecare Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "GKSL",
+      "name": "Gujarat Kidney and Super Speciality Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "NH",
+      "name": "Narayana Hrudayalaya Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "NIVABUPA",
+      "name": "Niva Bupa Health Insurance Company Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "STARHEALTH",
+      "name": "Star Health and Allied Insurance Company Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
       "symbol": "LALPATHLAB",
       "name": "Dr. Lal Pathlabs Ltd.",
       "conviction": 28,
@@ -9,14 +72,77 @@
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
-      "symbol": "YATHARTH",
-      "name": "Yatharth Hospital & Trauma Care Services Ltd.",
-      "conviction": 5,
+      "symbol": "PARKHOSPS",
+      "name": "Park Medi World Ltd.",
+      "conviction": 25,
       "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "ARTEMISMED",
+      "name": "Artemis Medicare Services Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "PFIZER",
+      "name": "Pfizer Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "ALKEM",
+      "name": "Alkem Laboratories Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "NEPHROPLUS",
+      "name": "Nephrocare Health Services Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "AKUMS",
+      "name": "Akums Drugs & Pharmaceuticals Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "RELIGARE",
+      "name": "Religare Enterprises Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "BIOCON",
+      "name": "Biocon Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "FORTIS",
+      "name": "Fortis Healthcare Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "MEDANTA",
+      "name": "Global Health Ltd.",
+      "conviction": 21,
+      "quality": 2,
       "via_theme": "Hospitals_HealthcareInfra"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "LALPATHLAB — 28x conviction differential signals overwhelming institutional positioning; conviction scores this asymmetric rarely occur without fundamental catalyst validation. — Watch quarterly revenue growth trajectory; anything below 18-20% YoY suggests the macro tailwind is already priced in.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**SANOFI — Highest conviction score (49) with pharmaceutical pricing power in expanding healthcare infrastructure; cleanest beneficiary thesis.** — Watch gross margin expansion trajectory and hospital procurement volumes month-on-month.",
+  "generated_date": "2026-05-12"
 }

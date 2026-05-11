@@ -2,42 +2,147 @@
   "theme": "FutureEconomy",
   "tier1": [
     {
-      "symbol": "APARINDS",
-      "name": "Apar Industries Ltd.",
-      "conviction": 28,
+      "symbol": "CASTROLIND",
+      "name": "Castrol India Ltd.",
+      "conviction": 49,
+      "quality": 7,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "SANOFI",
+      "name": "Sanofi India Ltd.",
+      "conviction": 49,
+      "quality": 7,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
+      "symbol": "CASTROLIND",
+      "name": "Castrol India Ltd.",
+      "conviction": 49,
+      "quality": 7,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "TIPSMUSIC",
+      "name": "Tips Music Ltd.",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "TENNIND",
+      "name": "Tenneco Clean Air India Ltd.",
+      "conviction": 41,
       "quality": 5,
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "LALPATHLAB",
-      "name": "Dr. Lal Pathlabs Ltd.",
-      "conviction": 28,
-      "quality": 3,
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
-      "symbol": "DEEPAKFERT",
-      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
-      "conviction": 6,
-      "quality": 0,
-      "via_theme": "SpecialtyChemicals"
+      "symbol": "CIGNITITEC",
+      "name": "Cigniti Technologies Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
     },
     {
-      "symbol": "YATHARTH",
-      "name": "Yatharth Hospital & Trauma Care Services Ltd.",
-      "conviction": 5,
-      "quality": 3,
+      "symbol": "CIGNITITEC",
+      "name": "Cigniti Technologies Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "INDRAMEDCO",
+      "name": "Indraprastha Medical Corporation Ltd.",
+      "conviction": 41,
+      "quality": 5,
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
-      "symbol": "AARTIIND",
-      "name": "Aarti Industries Ltd.",
-      "conviction": 1,
-      "quality": 0,
-      "via_theme": "SpecialtyChemicals"
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 40,
+      "quality": 4,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Ltd.",
+      "conviction": 40,
+      "quality": 6,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Ltd.",
+      "conviction": 40,
+      "quality": 6,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Ltd.",
+      "conviction": 40,
+      "quality": 6,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 40,
+      "quality": 4,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "TANLA",
+      "name": "Tanla Platforms Ltd.",
+      "conviction": 37,
+      "quality": 4,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "SONATSOFTW",
+      "name": "Sonata Software Ltd.",
+      "conviction": 37,
+      "quality": 6,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "SONATSOFTW",
+      "name": "Sonata Software Ltd.",
+      "conviction": 37,
+      "quality": 6,
+      "via_theme": "DataCentre"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**APARINDS — Clear conviction leader with structural tailwinds in EV electrification; conviction score of 28 is non-negotiable — Watch 28% upside target and EV component order flow.**\n\n**LALPATHLAB — Matching conviction but healthcare infrastructure plays are cyclical; only add if conviction holds above 25 — Track hospital bed utilization rates and capex announcements.**",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**CASTROLIND — Double conviction hit (EV + DataCentre) in secular growth tailwinds; structural demand secular, not event-dependent.** Watch 49% conviction score holding above 45 on next macro reset.",
+  "generated_date": "2026-05-12"
 }

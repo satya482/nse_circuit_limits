@@ -2,35 +2,147 @@
   "theme": "PowerCapex",
   "tier1": [
     {
-      "symbol": "WAAREEENER",
-      "name": "Waaree Energies Ltd.",
-      "conviction": 28,
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
       "quality": 5,
       "via_theme": "RenewableEnergy"
     },
     {
-      "symbol": "CESC",
-      "name": "CESC Ltd.",
-      "conviction": 20,
-      "quality": 3,
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
+      "quality": 5,
       "via_theme": "PowerCapex"
     },
     {
-      "symbol": "KEI",
-      "name": "KEI Industries Ltd.",
-      "conviction": 16,
-      "quality": 2,
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "INOXWIND",
-      "name": "Inox Wind Ltd.",
-      "conviction": 6,
-      "quality": 0,
+      "symbol": "INOXINDIA",
+      "name": "Inox India Ltd.",
+      "conviction": 36,
+      "quality": 7,
       "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "VIKRAN",
+      "name": "Vikran Engineering Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "OSWALPUMPS",
+      "name": "Oswal Pumps Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "SHAKTIPUMP",
+      "name": "Shakti Pumps (India) Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "VIKRAN",
+      "name": "Vikran Engineering Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "PowerT&D"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**WAAREEENER — Renewable energy tailwind from PowerCapex has highest conviction multiplier; structural demand secular, not cyclical — Watch: capacity additions trajectory (target 500MW+ FY25, currently tracking 400MW).**\n\n**CESC — Direct PowerCapex beneficiary with established T&D infrastructure moat; lower conviction suggests market underpricing the regulatory tailwind — Watch: tariff revision timing and distribution loss reduction (target <6%, now ~7.2%).**",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**TRITURBINE — dual exposure to both PowerCapex and RenewableEnergy thrusts; cleanest play on India's capex cycle** — **Order book growth >25% YoY.**\n\n**SCHNEIDER (secondary position) — defensive diversification across PowerT&D and PowerCapex with global hedges** — **Operating margin expansion to 18%+.**",
+  "generated_date": "2026-05-12"
 }

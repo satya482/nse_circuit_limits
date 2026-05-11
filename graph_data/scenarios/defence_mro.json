@@ -1,0 +1,57 @@
+{
+  "theme": "Defence_MRO",
+  "tier1": [
+    {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Ltd.",
+      "conviction": 31,
+      "quality": 5,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "COCHINSHIP",
+      "name": "Cochin Shipyard Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "AZAD",
+      "name": "Azad Engineering Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "SIKA",
+      "name": null,
+      "conviction": 16,
+      "quality": null,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "AEQUS",
+      "name": "Aequs Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "AXISCADES",
+      "name": "AXISCADES Technologies Ltd.",
+      "conviction": 10,
+      "quality": 1,
+      "via_theme": "Defence_MRO"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**OMNI — Highest conviction with meaningful operational leverage in MRO cycles; track order inflows and margin expansion.** **Secondary play: BEML — Similar conviction but larger cap, lower volatility; watch capex utilization rates and order book growth.**",
+  "generated_date": "2026-05-12"
+}

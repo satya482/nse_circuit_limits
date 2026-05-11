@@ -9,6 +9,20 @@
       "via_theme": "Defence_Platforms"
     },
     {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Ltd.",
+      "conviction": 31,
+      "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
       "symbol": "BEML",
       "name": "BEML Ltd.",
       "conviction": 28,
@@ -23,14 +37,70 @@
       "via_theme": "Defence_Platforms"
     },
     {
+      "symbol": "BHARATFORG",
+      "name": "Bharat Forge Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Defence_Platforms"
+    },
+    {
       "symbol": "COCHINSHIP",
       "name": "Cochin Shipyard Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "AZAD",
+      "name": "Azad Engineering Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "PTCIL",
+      "name": "PTC Industries Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "AEQUS",
+      "name": "Aequs Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BALUFORGE",
+      "name": "Balu Forge Industries Ltd.",
+      "conviction": 5,
+      "quality": 1,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "MTARTECH",
+      "name": "MTAR Technologies Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "RKFORGE",
+      "name": "Ramkrishna Forgings Ltd.",
+      "conviction": 0,
+      "quality": 0,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "IDEAFORGE",
+      "name": "ideaForge Technology Ltd.",
+      "conviction": 0,
+      "quality": 0,
+      "via_theme": "Defence_Platforms"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GRSE — Highest conviction score (41) signals strongest structural positioning in defence platforms with proven execution track record; conviction delta of 13+ points over BEML validates differentiated upside.** — **Watch order book growth trajectory and FY25 revenue CAGR; break above ₹650 signals institutional accumulation.**",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**GRSE — Only pure-play defence shipbuilder with 41% conviction and genuine order visibility from new platform allocations — Watch INR 600+ order book guidance within Q4 results.**\n\n**BEML as secondary bet — Diversified defence exposure with lower volatility than GRSE, but conviction is weaker; use any dip below INR 3,200 as entry point.**",
+  "generated_date": "2026-05-12"
 }

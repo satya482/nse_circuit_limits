@@ -2,21 +2,147 @@
   "theme": "SpecialtyChemicals",
   "tier1": [
     {
-      "symbol": "DEEPAKFERT",
-      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
-      "conviction": 6,
-      "quality": 0,
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
       "via_theme": "SpecialtyChemicals"
     },
     {
-      "symbol": "AARTIIND",
-      "name": "Aarti Industries Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "RALLIS",
+      "name": "Rallis India Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "RAIN",
+      "name": "Rain Industries Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SYNGENE",
+      "name": "Syngene International Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "KANSAINER",
+      "name": "Kansai Nerolac Paints Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "PCBL",
+      "name": "PCBL Chemical Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "CLEAN",
+      "name": "Clean Science & Technology Ltd.",
+      "conviction": 26,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "GULPOLY",
+      "name": "Gulshan Polyols Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "IPL",
+      "name": "India Pesticides Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SRF",
+      "name": "SRF Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "ANTHEM",
+      "name": "Anthem Biosciences Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "CHENNPETRO",
+      "name": "Chennai Petroleum Corporation Ltd.",
+      "conviction": 25,
+      "quality": 5,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "AEGISVOPAK",
+      "name": "Aegis Vopak Terminals Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SUPRIYA",
+      "name": "Supriya Lifescience Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "VIYASH",
+      "name": "Viyash Scientific Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SHARDACROP",
+      "name": "Sharda Cropchem Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "PRIVISCL",
+      "name": "Privi Speciality Chemicals Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "VINATIORGA",
+      "name": "Vinati Organics Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "UPL",
+      "name": "UPL Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "name": "Navin Fluorine International Ltd.",
+      "conviction": 21,
+      "quality": 2,
       "via_theme": "SpecialtyChemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**DEEPAKFERT — 6x higher conviction edge with structural tailwinds in specialty chemicals; AARTIIND is diluted exposure.** — Watch EBITDA margin expansion above 28% and specialty chemical revenue mix crossing 40% of total sales.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**BLUEJET — highest conviction score with cleanest SpecialtyChemicals exposure and strongest operational leverage to sector tailwinds — key metric: gross margins expansion trajectory (target: 200bps+ YoY).**",
+  "generated_date": "2026-05-12"
 }

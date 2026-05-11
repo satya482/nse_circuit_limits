@@ -2,35 +2,147 @@
   "theme": "ManufacturingTailwind",
   "tier1": [
     {
-      "symbol": "DIXON",
-      "name": "Dixon Technologies (India) Ltd.",
-      "conviction": 29,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
+      "symbol": "CASTROLIND",
+      "name": "Castrol India Ltd.",
+      "conviction": 49,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
+      "symbol": "RSL",
+      "name": "Rajputana Stainless Ltd.",
+      "conviction": 46,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "TATACHEM",
-      "name": "Tata Chemicals Ltd.",
-      "conviction": 16,
-      "quality": 2,
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 41,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "SMLMAH",
+      "name": "SML Mahindra Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "TENNIND",
+      "name": "Tenneco Clean Air India Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Ltd",
+      "conviction": 41,
+      "quality": 7,
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "AARTIIND",
-      "name": "Aarti Industries Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 41,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 40,
+      "quality": 4,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Ltd.",
+      "conviction": 40,
+      "quality": 6,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "FACT",
+      "name": "The Fertilisers and Chemicals Travancore Ltd.",
+      "conviction": 39,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "FACT",
+      "name": "The Fertilisers and Chemicals Travancore Ltd.",
+      "conviction": 39,
+      "quality": 7,
       "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "OSWALPUMPS",
+      "name": "Oswal Pumps Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "ACE",
+      "name": "Action Construction Equipment Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "CMPDI",
+      "name": "Central Mine Planning & Design Institute Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "PACEDIGITK",
+      "name": "Pace Digitek Ltd.",
+      "conviction": 36,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**DIXON — PLI Electronics tailwind with highest conviction score and proven execution track record in phone/component manufacturing — watch 25% YoY revenue growth and operating margin expansion to 8%+.**\n\n**KAYNES as tactical add — credible second play on same PLI theme but conviction gap suggests execution risk; monitor quarterly capex deployment and customer concentration metrics.**",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**CASTROLIND — highest conviction score (49) with clearest ManufacturingTailwind exposure through industrial lubricants demand surge; cleanest earnings leverage vs peers.** — **Watch FY25 volume growth >15% and gross margin expansion to 42%+ as the key validators of tailwind translation.**",
+  "generated_date": "2026-05-12"
 }

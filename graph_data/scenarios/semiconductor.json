@@ -1,0 +1,127 @@
+{
+  "theme": "Semiconductor",
+  "tier1": [
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 40,
+      "quality": 4,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Ltd.",
+      "conviction": 40,
+      "quality": 6,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 36,
+      "quality": 7,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "PERSISTENT",
+      "name": "Persistent Systems Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "HEXT",
+      "name": "Hexaware Technologies Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "LTTS",
+      "name": "L&T Technology Services Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "EXPLEOSOL",
+      "name": "Expleo Solutions Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "CYIENT",
+      "name": "Cyient Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "MOSCHIP",
+      "name": "MosChip Technologies Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "QUICKHEAL",
+      "name": "Quick Heal Technologies Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "SASKEN",
+      "name": "Sasken Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "REDINGTON",
+      "name": "Redington Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "STALLION",
+      "name": "Stallion India Fluorochemicals Ltd.",
+      "conviction": 16,
+      "quality": 4,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "TEJASNET",
+      "name": "Tejas Networks Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "E2E",
+      "name": "E2E Networks Ltd.",
+      "conviction": 11,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "HAPPSTMNDS",
+      "name": "Happiest Minds Technologies Ltd.",
+      "conviction": 1,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**KPITTECH — Clear leadership in semiconductor design services with highest conviction and direct exposure; momentum will compound.** — Watch 60% YoY revenue growth in semiconductor segment and 45%+ gross margins.",
+  "generated_date": "2026-05-12"
+}

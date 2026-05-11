@@ -2,10 +2,24 @@
   "theme": "Defence_Electronics",
   "tier1": [
     {
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
       "symbol": "PARAS",
       "name": "Paras Defence and Space Technologies Ltd.",
       "conviction": 25,
       "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "CYIENT",
+      "name": "Cyient Ltd.",
+      "conviction": 24,
+      "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
@@ -16,10 +30,73 @@
       "via_theme": "Defence_Electronics"
     },
     {
+      "symbol": "CENTUM",
+      "name": "Centum Electronics Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "SYRMA",
+      "name": "Syrma SGS Technology Ltd.",
+      "conviction": 21,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "CYIENTDLM",
+      "name": "Cyient DLM Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "DCXINDIA",
+      "name": "DCX Systems Ltd.",
+      "conviction": 20,
+      "quality": 5,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "HBLENGINE",
+      "name": "HBL Engineering Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
       "symbol": "KAYNES",
       "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
       "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "KRISHNADEF",
+      "name": "Krishna Defence and Allied Industries Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "SIGMAADV",
+      "name": "Sigma Advanced Systems Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "SIKA",
+      "name": null,
+      "conviction": 16,
+      "quality": null,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "ASTRAMICRO",
+      "name": "Astra Microwave Products Ltd.",
+      "conviction": 16,
+      "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
@@ -30,21 +107,42 @@
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "HFCL",
-      "name": "HFCL Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "ZENTEC",
+      "name": "Zen Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "IDEAFORGE",
-      "name": "ideaForge Technology Ltd.",
-      "conviction": 0,
+      "symbol": "AVANTEL",
+      "name": "Avantel Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "AEQUS",
+      "name": "Aequs Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "AXISCADES",
+      "name": "AXISCADES Technologies Ltd.",
+      "conviction": 10,
+      "quality": 1,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "KERNEX",
+      "name": "Kernex Microsystems (India) Ltd.",
+      "conviction": 6,
       "quality": 0,
       "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "PARAS — highest conviction score (25) with direct Defence_Electronics exposure and sharpest macro sensitivity; STLTECH as secondary play (conviction 24) if PARAS sees resistance. Key metric: Order book growth trajectory and defence contract announcements in next 2-3 quarters.",
-  "generated_date": "2026-05-11"
+  "vikram_verdict": "**BDL — Highest conviction score (28) with direct Defence_Electronics exposure and strongest macro tailwinds from government capex push — watch PSU allocation ratio and order book growth trajectory.**",
+  "generated_date": "2026-05-12"
 }
