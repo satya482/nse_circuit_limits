@@ -1,0 +1,306 @@
+[
+  {
+    "name": "GovernmentCapex",
+    "maturity": "Growing",
+    "thesis": "India's infrastructure push — multi-decade capex cycle across roads, railways, defence, and power. Government remains the primary demand driver.",
+    "children": [
+      "InfraCapex",
+      "Defence",
+      "PowerCapex"
+    ],
+    "companies": []
+  },
+  {
+    "name": "ManufacturingTailwind",
+    "maturity": "Growing",
+    "thesis": "PLI schemes + China+1 supply chain diversification driving domestic manufacturing across electronics, chemicals, and textiles.",
+    "children": [
+      "PLI_Electronics",
+      "PLI_Chemicals",
+      "China+1_Textiles",
+      "Semiconductor"
+    ],
+    "companies": []
+  },
+  {
+    "name": "FutureEconomy",
+    "maturity": "Emerging",
+    "thesis": "Digital infrastructure, EV transition, speciality materials, and healthcare infrastructure — long runway, early innings.",
+    "children": [
+      "DataCentre",
+      "EV_Components",
+      "SpecialtyChemicals",
+      "Hospitals_HealthcareInfra"
+    ],
+    "companies": []
+  },
+  {
+    "name": "InfraCapex",
+    "maturity": "Growing",
+    "thesis": "Road, rail, port, and urban infra build-out. Order books visible 2–3 years ahead. Execution risk is the key variable.",
+    "children": [
+      "Railways",
+      "Roads",
+      "Ports"
+    ],
+    "companies": [
+      {
+        "conviction": 28,
+        "id": "GPIL",
+        "name": "Godawari Power & Ispat Ltd.",
+        "quality": 5
+      },
+      {
+        "conviction": 16,
+        "id": "WELCORP",
+        "name": "Welspun Corp Ltd.",
+        "quality": 2
+      }
+    ]
+  },
+  {
+    "name": "Defence",
+    "maturity": "Growing",
+    "thesis": "Atmanirbhar Bharat defence indigenisation. DPP + export ambitions. Long order visibility. DRDO transfers to private sector accelerating.",
+    "children": [
+      "Defence_Electronics",
+      "Defence_Platforms",
+      "Defence_MRO"
+    ],
+    "companies": []
+  },
+  {
+    "name": "PowerCapex",
+    "maturity": "Growing",
+    "thesis": "Transmission + renewable addition target 500 GW by 2030. T&D capex and generation build-out running in parallel.",
+    "children": [
+      "PowerT&D",
+      "RenewableEnergy"
+    ],
+    "companies": []
+  },
+  {
+    "name": "Railways",
+    "maturity": "Growing",
+    "thesis": "₹2.5L Cr annual railway budget. Dedicated freight corridors, Vande Bharat, metro rail. Multi-year order pipeline for rolling stock, signalling, and infra.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "RVNL",
+        "name": "Rail Vikas Nigam Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 20,
+        "id": "BEML",
+        "name": "BEML Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 16,
+        "id": "WELCORP",
+        "name": "Welspun Corp Ltd.",
+        "quality": 2
+      },
+      {
+        "conviction": 16,
+        "id": "STLTECH",
+        "name": "Sterlite Technologies Ltd.",
+        "quality": 2
+      },
+      {
+        "conviction": 1,
+        "id": "HFCL",
+        "name": "HFCL Ltd.",
+        "quality": 0
+      }
+    ]
+  },
+  {
+    "name": "Roads",
+    "maturity": "Mature",
+    "thesis": "NHAI + state road capex. High execution risk, competitive tendering. Prefer EPC players with strong balance sheets.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "Ports",
+    "maturity": "Growing",
+    "thesis": "Sagarmala programme + export-led growth. Mechanisation and capacity expansion driving equipment demand.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "Defence_Electronics",
+    "maturity": "Emerging",
+    "thesis": "Radars, avionics, electronic warfare, C4ISR systems. High-margin, long-cycle. Preferred route for indigenisation.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "KAYNES",
+        "name": "Kaynes Technology India Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 16,
+        "id": "STLTECH",
+        "name": "Sterlite Technologies Ltd.",
+        "quality": 2
+      },
+      {
+        "conviction": 1,
+        "id": "HFCL",
+        "name": "HFCL Ltd.",
+        "quality": 0
+      }
+    ]
+  },
+  {
+    "name": "Defence_Platforms",
+    "maturity": "Growing",
+    "thesis": "Aircraft, ships, submarines, armoured vehicles. DPSU + private JVs. Long lead times but transformative order sizes.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "BEML",
+        "name": "BEML Ltd.",
+        "quality": 3
+      }
+    ]
+  },
+  {
+    "name": "Defence_MRO",
+    "maturity": "Emerging",
+    "thesis": "Maintenance, repair, overhaul for ageing fleet. Annuity-like recurring revenue once qualified. Under-tracked opportunity.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "PowerT&D",
+    "maturity": "Growing",
+    "thesis": "Transmission lines, substations, smart meters, cables. Demand driven by both new generation capacity and grid modernisation.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 16,
+        "id": "KEI",
+        "name": "KEI Industries Ltd.",
+        "quality": 2
+      }
+    ]
+  },
+  {
+    "name": "RenewableEnergy",
+    "maturity": "Growing",
+    "thesis": "Solar + wind + green hydrogen. Equipment manufacturers, EPC players, and balance-of-plant suppliers all benefit.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 1,
+        "id": "INOXWIND",
+        "name": "Inox Wind Ltd.",
+        "quality": 0
+      }
+    ]
+  },
+  {
+    "name": "PLI_Electronics",
+    "maturity": "Growing",
+    "thesis": "Mobile + components + IT hardware PLI. Apple supply chain anchor. EMS players scaling to global standards.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "KAYNES",
+        "name": "Kaynes Technology India Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 16,
+        "id": "DIXON",
+        "name": "Dixon Technologies (India) Ltd.",
+        "quality": 2
+      }
+    ]
+  },
+  {
+    "name": "PLI_Chemicals",
+    "maturity": "Emerging",
+    "thesis": "Pharma + specialty chemical PLI. China+1 demand pull. API, CRAMS, agrochemicals benefiting from capacity addition.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 1,
+        "id": "AARTIIND",
+        "name": "Aarti Industries Ltd.",
+        "quality": 0
+      }
+    ]
+  },
+  {
+    "name": "China+1_Textiles",
+    "maturity": "Emerging",
+    "thesis": "Global sourcing shift from China for garments + technical textiles. Requires scale and compliance infrastructure.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "Semiconductor",
+    "maturity": "Emerging",
+    "thesis": "India Semiconductor Mission. Early-stage but strategic. Packaging + ATMP first; fab longer-term. High geopolitical tailwind.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "DataCentre",
+    "maturity": "Growing",
+    "thesis": "AI + cloud + digital India driving 30%+ CAGR in data centre capacity. Power, cooling, UPS, and cable suppliers benefit.",
+    "children": [],
+    "companies": []
+  },
+  {
+    "name": "EV_Components",
+    "maturity": "Emerging",
+    "thesis": "EV penetration accelerating in 2W, 3W, and buses first. Battery management, motors, and charging infra supply chain.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 28,
+        "id": "APARINDS",
+        "name": "Apar Industries Ltd.",
+        "quality": 5
+      }
+    ]
+  },
+  {
+    "name": "SpecialtyChemicals",
+    "maturity": "Growing",
+    "thesis": "High-complexity, low-volume chemicals with pricing power. Agrochemicals, dyes, CRAMS, fluorochemicals. China+1 + CDMO model.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 1,
+        "id": "AARTIIND",
+        "name": "Aarti Industries Ltd.",
+        "quality": 0
+      }
+    ]
+  },
+  {
+    "name": "Hospitals_HealthcareInfra",
+    "maturity": "Growing",
+    "thesis": "Under-bedded India building 1M+ hospital beds. Medical devices, diagnostics, and hospital chains all in multi-year capex.",
+    "children": [],
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "LALPATHLAB",
+        "name": "Dr. Lal Pathlabs Ltd.",
+        "quality": 3
+      }
+    ]
+  }
+]

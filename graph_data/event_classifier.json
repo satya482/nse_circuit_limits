@@ -1,0 +1,213 @@
+{
+  "railway": [
+    "Railways"
+  ],
+  "railways": [
+    "Railways"
+  ],
+  "train": [
+    "Railways"
+  ],
+  "rvnl": [
+    "Railways"
+  ],
+  "irfc": [
+    "Railways"
+  ],
+  "dedicated freight": [
+    "Railways"
+  ],
+  "vande bharat": [
+    "Railways"
+  ],
+  "nhai": [
+    "Roads"
+  ],
+  "highway": [
+    "Roads"
+  ],
+  "road": [
+    "Roads"
+  ],
+  "port": [
+    "Ports"
+  ],
+  "sagarmala": [
+    "Ports"
+  ],
+  "defence": [
+    "Defence"
+  ],
+  "defense": [
+    "Defence"
+  ],
+  "drdo": [
+    "Defence",
+    "Defence_Electronics"
+  ],
+  "dpp": [
+    "Defence"
+  ],
+  "dac": [
+    "Defence"
+  ],
+  "atmanirbhar": [
+    "Defence",
+    "ManufacturingTailwind"
+  ],
+  "missile": [
+    "Defence_Platforms"
+  ],
+  "aircraft": [
+    "Defence_Platforms"
+  ],
+  "warship": [
+    "Defence_Platforms"
+  ],
+  "radar": [
+    "Defence_Electronics"
+  ],
+  "avionics": [
+    "Defence_Electronics"
+  ],
+  "mro": [
+    "Defence_MRO"
+  ],
+  "maintenance repair": [
+    "Defence_MRO"
+  ],
+  "power": [
+    "PowerT&D",
+    "RenewableEnergy"
+  ],
+  "transmission": [
+    "PowerT&D"
+  ],
+  "substation": [
+    "PowerT&D"
+  ],
+  "smart meter": [
+    "PowerT&D"
+  ],
+  "cable": [
+    "PowerT&D"
+  ],
+  "solar": [
+    "RenewableEnergy"
+  ],
+  "wind": [
+    "RenewableEnergy"
+  ],
+  "green hydrogen": [
+    "RenewableEnergy"
+  ],
+  "renewable": [
+    "RenewableEnergy"
+  ],
+  "nuclear": [
+    "PowerCapex"
+  ],
+  "pli": [
+    "PLI_Electronics",
+    "PLI_Chemicals"
+  ],
+  "production linked": [
+    "PLI_Electronics",
+    "PLI_Chemicals"
+  ],
+  "semiconductor": [
+    "Semiconductor"
+  ],
+  "chip": [
+    "Semiconductor"
+  ],
+  "fab": [
+    "Semiconductor"
+  ],
+  "atmp": [
+    "Semiconductor"
+  ],
+  "data centre": [
+    "DataCentre"
+  ],
+  "data center": [
+    "DataCentre"
+  ],
+  "ai": [
+    "DataCentre"
+  ],
+  "cloud": [
+    "DataCentre"
+  ],
+  "ev": [
+    "EV_Components"
+  ],
+  "electric vehicle": [
+    "EV_Components"
+  ],
+  "battery": [
+    "EV_Components"
+  ],
+  "charging": [
+    "EV_Components"
+  ],
+  "specialty chemical": [
+    "SpecialtyChemicals"
+  ],
+  "speciality chemical": [
+    "SpecialtyChemicals"
+  ],
+  "agrochemical": [
+    "SpecialtyChemicals",
+    "PLI_Chemicals"
+  ],
+  "pharma": [
+    "PLI_Chemicals"
+  ],
+  "crams": [
+    "PLI_Chemicals",
+    "SpecialtyChemicals"
+  ],
+  "china+1": [
+    "China+1_Textiles",
+    "PLI_Chemicals"
+  ],
+  "china plus": [
+    "China+1_Textiles",
+    "ManufacturingTailwind"
+  ],
+  "textile": [
+    "China+1_Textiles"
+  ],
+  "hospital": [
+    "Hospitals_HealthcareInfra"
+  ],
+  "healthcare": [
+    "Hospitals_HealthcareInfra"
+  ],
+  "medical": [
+    "Hospitals_HealthcareInfra"
+  ],
+  "ems": [
+    "PLI_Electronics"
+  ],
+  "electronics": [
+    "PLI_Electronics"
+  ],
+  "capex": [
+    "InfraCapex",
+    "GovernmentCapex"
+  ],
+  "infrastructure": [
+    "InfraCapex"
+  ],
+  "infra": [
+    "InfraCapex"
+  ],
+  "budget": [
+    "GovernmentCapex"
+  ],
+  "government": [
+    "GovernmentCapex"
+  ]
+}

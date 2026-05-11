@@ -1,0 +1,29 @@
+{
+  "theme": "Defence_Electronics",
+  "tier1": [
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Defence_Electronics"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**KAYNES — Only conviction score that justifies sector timing risk; Defence_Electronics tailwinds need structural orders, not sentiment.** — Watch 20% revenue CAGR over next 4 quarters; anything below 15% means the macro event was noise.",
+  "generated_date": "2026-05-11"
+}

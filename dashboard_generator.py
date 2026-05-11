@@ -507,7 +507,9 @@ def build_html(today: str, now_str: str,
                compression_rows: list, total_compressed: int, total_zl_rising: int,
                zl_squeeze: list,
                rot_high_conv: list, rot_in: list, rot_out: list,
-               zl_breadth: list) -> str:
+               zl_breadth: list,
+               ep_candidates: list | None = None,
+               kg_catalysts: list | None = None) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
@@ -804,6 +806,78 @@ def build_html(today: str, now_str: str,
   </div>
 </div>"""
 
+    # ── EP Watchlist section (from KG pipeline) ───────────────────────────────
+    _ep_section = ""
+    ep_data = ep_candidates or []
+    if ep_data:
+        ep_rows = []
+        for r in ep_data[:20]:
+            sym   = r.get("symbol", "")
+            tv    = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+            conv  = r.get("conviction", "—")
+            cat   = r.get("catalyst_type", "")
+            stat  = r.get("ep_status", "")
+            stat_cls = "b-ep-watch" if stat == "EP_WATCH" else "b-ep-filter"
+            ep_rows.append(
+                f'<tr><td><a href="{tv}" target="_blank" style="color:var(--blu)">{sym}</a></td>'
+                f'<td style="color:var(--mu);font-size:11px">{r.get("name","")[:30]}</td>'
+                f'<td>{conv}</td>'
+                f'<td style="font-size:10px">{cat}</td>'
+                f'<td style="font-size:10px">{r.get("catalyst_date","")}</td>'
+                f'<td style="font-size:10px;color:var(--mu)">{(r.get("themes","") or "").replace("|",", ")[:40]}</td>'
+                f'<td><span class="b {stat_cls}">{stat}</span></td></tr>'
+            )
+        _ep_section = (
+            '<div class="section">'
+            f'<div class="stitle">EP Watchlist — Knowledge Graph ({len(ep_data)} candidates)</div>'
+            '<table><thead><tr>'
+            '<th>Symbol</th><th>Name</th><th>Conviction</th>'
+            '<th>Catalyst</th><th>Date</th><th>Themes</th><th>Status</th>'
+            '</tr></thead>'
+            f'<tbody>{"".join(ep_rows)}</tbody></table>'
+            '<div style="margin-top:4px;font-size:10px;color:var(--mu)">'
+            '<a href="graph_dashboard.html" style="color:var(--pur)">Open Knowledge Graph Explorer →</a>'
+            '</div></div>'
+        )
+
+    # ── Recent Catalysts section (from KG pipeline) ───────────────────────────
+    _kg_catalysts_section = ""
+    cat_data = kg_catalysts or []
+    recent_cats = [c for c in cat_data if c.get("date", "") >= today[:7]]  # this month
+    if recent_cats:
+        _cat_type_cls = {
+            "OrderWin": "b-orderwin", "CapacityExpansion": "b-cap",
+            "GovtApproval": "b-gov",  "PLIInclusion": "b-gov",
+            "PromotorBuy": "b-momentum", "M&A": "b-momentum",
+            "GovernanceFlag": "b-neg",
+        }
+        cat_rows = []
+        for c in recent_cats[:20]:
+            sym  = c.get("symbol", "")
+            tv   = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+            ctype = c.get("type", "")
+            cls  = _cat_type_cls.get(ctype, "b-weeklyrs")
+            ep   = c.get("ep_prob", "")
+            ep_cls = "b-swing" if ep == "High" else "b-momentum" if ep == "Medium" else ""
+            cat_rows.append(
+                f'<tr><td>{c.get("date","")}</td>'
+                f'<td><a href="{tv}" target="_blank" style="color:var(--blu)">{sym}</a></td>'
+                f'<td><span class="b {cls}">{ctype}</span></td>'
+                f'<td>{f"<span class=\"b {ep_cls}\">{ep}</span>" if ep and ep_cls else ep}</td>'
+                f'<td>{c.get("conviction","—")}</td>'
+                f'<td style="color:var(--mu);font-size:10px;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'
+                f'{(c.get("description","") or "")[:80]}</td></tr>'
+            )
+        _kg_catalysts_section = (
+            '<div class="section">'
+            f'<div class="stitle">Recent Catalysts — Knowledge Graph (this month, {len(recent_cats)} events)</div>'
+            '<table><thead><tr>'
+            '<th>Date</th><th>Symbol</th><th>Type</th>'
+            '<th>EP Prob</th><th>Conviction</th><th>Description</th>'
+            '</tr></thead>'
+            f'<tbody>{"".join(cat_rows)}</tbody></table></div>'
+        )
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -852,6 +926,9 @@ tr:hover td{{background:var(--bg3)}}
 
 .b{{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}}
 .b-swing{{background:#1f6feb}}.b-momentum{{background:#388bfd}}.b-weeklyrs{{background:#7c3aed}}
+.b-ep-watch{{background:#3fb950}}.b-ep-filter{{background:#6e7681}}
+.b-orderwin{{background:#58a6ff}}.b-cap{{background:#a371f7}}.b-gov{{background:#d29922}}
+.b-neg{{background:#f85149}}
 
 .ss{{color:var(--grn)}}.sp{{color:var(--blu)}}.sd{{color:var(--ylw)}}
 
@@ -931,6 +1008,10 @@ tr:hover td{{background:var(--bg3)}}
   </table>
 </div>
 
+{_ep_section}
+
+{_kg_catalysts_section}
+
 </body>
 </html>
 """
@@ -952,6 +1033,25 @@ def main():
     compression_content    = read_file(COMPRESSION_MD)
     zl_squeeze_content     = read_file(ZL_SQUEEZE_MD)
     sector_rotation_content = read_file(SECTOR_ROTATION_MD)
+
+    # Knowledge Graph JSON (optional — graceful fallback if KG not yet built)
+    _kg_data_dir = os.path.join(BASE, "graph_data")
+    ep_candidates_data: list = []
+    kg_catalysts_data:  list = []
+    _ep_path  = os.path.join(_kg_data_dir, "ep_watchlist.json")
+    _cat_path = os.path.join(_kg_data_dir, "catalysts.json")
+    if os.path.exists(_ep_path):
+        try:
+            with open(_ep_path, encoding="utf-8") as _f:
+                ep_candidates_data = json.load(_f)
+        except Exception:
+            pass
+    if os.path.exists(_cat_path):
+        try:
+            with open(_cat_path, encoding="utf-8") as _f:
+                kg_catalysts_data = json.load(_f)
+        except Exception:
+            pass
 
     swing_block    = extract_today_block(swing_content,    today)
     momentum_block = extract_today_block(momentum_content, today)
@@ -984,6 +1084,8 @@ def main():
         rot_in=rot_in_groups,
         rot_out=rot_out_groups,
         zl_breadth=zl_breadth_groups,
+        ep_candidates=ep_candidates_data,
+        kg_catalysts=kg_catalysts_data,
     )
 
     with open(DASHBOARD_HTML, "w", encoding="utf-8") as f:

@@ -1,0 +1,15 @@
+{
+  "theme": "SpecialtyChemicals",
+  "tier1": [
+    {
+      "symbol": "AARTIIND",
+      "name": "Aarti Industries Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "SpecialtyChemicals"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "AARTIIND — Pure-play specialty chemicals exposure with pricing power in intermediates; macro tailwinds will flow directly to margins and FCF. — Watch gross margins expanding 300-400 bps YoY; anything below that suggests event isn't translating.",
+  "generated_date": "2026-05-11"
+}

@@ -1,0 +1,15 @@
+{
+  "theme": "Hospitals_HealthcareInfra",
+  "tier1": [
+    {
+      "symbol": "LALPATHLAB",
+      "name": "Dr. Lal Pathlabs Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "LALPATHLAB — Diagnostic consolidation play benefiting from healthcare infrastructure expansion; structural tailwinds offset valuation premium. — Watch 80%+ organic growth in volume/pricing and sub-20% CAGR in capex intensity over next 3 years.",
+  "generated_date": "2026-05-11"
+}

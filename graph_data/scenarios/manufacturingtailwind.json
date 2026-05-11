@@ -1,0 +1,29 @@
+{
+  "theme": "ManufacturingTailwind",
+  "tier1": [
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies (India) Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "AARTIIND",
+      "name": "Aarti Industries Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "PLI_Chemicals"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**KAYNES — PLI Electronics tailwind + strongest conviction edge; DIXON is cheaper but execution risk higher — watch 20% revenue CAGR over next 3 years.**",
+  "generated_date": "2026-05-11"
+}

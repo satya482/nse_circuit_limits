@@ -1,0 +1,15 @@
+{
+  "theme": "RenewableEnergy",
+  "tier1": [
+    {
+      "symbol": "INOXWIND",
+      "name": "Inox Wind Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "RenewableEnergy"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "INOXWIND — structural tailwinds from policy acceleration in renewables will drive margin expansion and order book visibility higher — watch capacity additions (MW) and blended realisation per unit hitting ₹45+ crore/MW.",
+  "generated_date": "2026-05-11"
+}

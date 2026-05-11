@@ -1,0 +1,22 @@
+{
+  "theme": "PLI_Electronics",
+  "tier1": [
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies (India) Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**KAYNES — Higher conviction score (20 vs 16) signals stronger PLI tailwinds and management positioning; DIXON faces execution risks despite similar sector exposure — Watch KAYNES's FY25 revenue growth trajectory (target: 25%+ YoY) against PLI subsidy realization timelines.**",
+  "generated_date": "2026-05-11"
+}

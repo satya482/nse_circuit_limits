@@ -1,0 +1,36 @@
+{
+  "theme": "Defence",
+  "tier1": [
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Defence_Electronics"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "KAYNES — highest conviction play with purest defence electronics exposure, minimal cross-sector noise — track quarterly revenue growth from defence segment (target: 25%+ CAGR). BEML as secondary hedge — platforms thesis more cyclical, but PSU backing provides downside protection.",
+  "generated_date": "2026-05-11"
+}

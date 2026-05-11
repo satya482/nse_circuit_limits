@@ -1,0 +1,99 @@
+{
+  "theme": "GovernmentCapex",
+  "tier1": [
+    {
+      "symbol": "GPIL",
+      "name": "Godawari Power & Ispat Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "WELCORP",
+      "name": "Welspun Corp Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "WELCORP",
+      "name": "Welspun Corp Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "KEI",
+      "name": "KEI Industries Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "INOXWIND",
+      "name": "Inox Wind Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "RenewableEnergy"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**GPIL — Highest conviction (28) with broadest infrastructure exposure; peers trading at 2-3x EV/EBITDA while GPIL offers value** — **Track order inflow run-rate and FY25E EBITDA margin expansion to 18%+.**",
+  "generated_date": "2026-05-11"
+}

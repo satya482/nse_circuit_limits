@@ -1,0 +1,43 @@
+{
+  "theme": "Railways",
+  "tier1": [
+    {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "WELCORP",
+      "name": "Welspun Corp Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Railways"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**RVNL — Pure-play railway capex leverage with zero dilution from other segments; track execution on FY25 order book conversion.** **BEML — Diversified but railways now >40% EBITDA; watch freight wagon order pipeline and quarterly margin sustainability above 18%.**",
+  "generated_date": "2026-05-11"
+}

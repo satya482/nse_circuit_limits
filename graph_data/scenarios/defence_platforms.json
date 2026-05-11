@@ -1,0 +1,15 @@
+{
+  "theme": "Defence_Platforms",
+  "tier1": [
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    }
+  ],
+  "tier2": [],
+  "vikram_verdict": "**BEML — Defence_Platforms macro catalyst with 20/20 conviction play, structural tailwinds from domestic military modernization** — **Watch FY25 order book growth and defence revenue mix expansion above 35%.**",
+  "generated_date": "2026-05-11"
+}
