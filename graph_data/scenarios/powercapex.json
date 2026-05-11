@@ -9,6 +9,13 @@
       "via_theme": "RenewableEnergy"
     },
     {
+      "symbol": "CESC",
+      "name": "CESC Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "PowerCapex"
+    },
+    {
       "symbol": "KEI",
       "name": "KEI Industries Ltd.",
       "conviction": 16,
@@ -16,21 +23,14 @@
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "CESC",
-      "name": "CESC Ltd.",
-      "conviction": 15,
-      "quality": 3,
-      "via_theme": "PowerCapex"
-    },
-    {
       "symbol": "INOXWIND",
       "name": "Inox Wind Ltd.",
-      "conviction": 1,
+      "conviction": 6,
       "quality": 0,
       "via_theme": "RenewableEnergy"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**WAAREEENER — Only play with real convictions; 28 is a screaming buy signal in macro dislocations, renewable capex will compound for a decade.** — Watch capacity additions trajectory and module ASP trends; target 40%+ CAGR in earnings through FY27.",
+  "vikram_verdict": "**WAAREEENER — Renewable energy tailwind from PowerCapex has highest conviction multiplier; structural demand secular, not cyclical — Watch: capacity additions trajectory (target 500MW+ FY25, currently tracking 400MW).**\n\n**CESC — Direct PowerCapex beneficiary with established T&D infrastructure moat; lower conviction suggests market underpricing the regulatory tailwind — Watch: tariff revision timing and distribution loss reduction (target <6%, now ~7.2%).**",
   "generated_date": "2026-05-11"
 }

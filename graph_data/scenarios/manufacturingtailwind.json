@@ -2,17 +2,17 @@
   "theme": "ManufacturingTailwind",
   "tier1": [
     {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies (India) Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
       "symbol": "KAYNES",
       "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
       "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "DIXON",
-      "name": "Dixon Technologies (India) Ltd.",
-      "conviction": 16,
-      "quality": 2,
       "via_theme": "PLI_Electronics"
     },
     {
@@ -31,6 +31,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "KAYNES — Only stock with genuine PLI tailwind + execution track record in electronics manufacturing; conviction 20 isn't noise. — Watch 30% revenue CAGR and FY25 capex conversion to avoid another promise-miss cycle.",
+  "vikram_verdict": "**DIXON — PLI Electronics tailwind with highest conviction score and proven execution track record in phone/component manufacturing — watch 25% YoY revenue growth and operating margin expansion to 8%+.**\n\n**KAYNES as tactical add — credible second play on same PLI theme but conviction gap suggests execution risk; monitor quarterly capex deployment and customer concentration metrics.**",
   "generated_date": "2026-05-11"
 }

@@ -44,7 +44,10 @@ RETURN
   c.order_book_to_revenue_ratio AS ob_ratio,
   c.cash_conversion_ratio      AS cash_conv,
   c.debt_to_equity             AS debt_eq,
-  c.working_capital_days       AS wc_days
+  c.working_capital_days       AS wc_days,
+  c.piotroski_score            AS piotroski,
+  c.interest_coverage          AS int_cov,
+  c.current_ratio              AS curr_ratio
 """
 
 _FETCH_COMPANIES_SINGLE = """
@@ -58,7 +61,10 @@ RETURN
   c.order_book_to_revenue_ratio AS ob_ratio,
   c.cash_conversion_ratio      AS cash_conv,
   c.debt_to_equity             AS debt_eq,
-  c.working_capital_days       AS wc_days
+  c.working_capital_days       AS wc_days,
+  c.piotroski_score            AS piotroski,
+  c.interest_coverage          AS int_cov,
+  c.current_ratio              AS curr_ratio
 """
 
 _FETCH_GRAPH_CONTEXT = """
@@ -118,39 +124,44 @@ def _f(v) -> float:
 def compute_conviction(company: dict, ctx: dict) -> int:
     score = 0.0
 
-    roe      = _f(company.get("roe"))
-    roce     = _f(company.get("roce"))
-    ob_ratio = company.get("ob_ratio")
-    pledge   = company.get("pledge")
-    promoter = _f(company.get("promoter"))
-    cash_conv= _f(company.get("cash_conv"))
-    debt_eq  = _f(company.get("debt_eq"))
-    wc_days  = company.get("wc_days")
+    roe       = _f(company.get("roe"))
+    roce      = _f(company.get("roce"))
+    ob_ratio  = company.get("ob_ratio")
+    pledge    = company.get("pledge")
+    promoter  = _f(company.get("promoter"))
+    cash_conv = _f(company.get("cash_conv"))
+    debt_eq   = _f(company.get("debt_eq"))
+    wc_days   = company.get("wc_days")
+    piotroski = company.get("piotroski")
+    int_cov   = company.get("int_cov")
+    curr_ratio= company.get("curr_ratio")
 
     # ── Business Quality (max 35) ──────────────────────────────────────────
-    if roe  > 25:               score += 8
-    if roce > 30:               score += 8
-    if ob_ratio and ob_ratio > 2: score += 10
+    if roe  > 25:                  score += 8
+    if roce > 30:                  score += 8
+    if ob_ratio and ob_ratio > 2:  score += 10
     if pledge is not None and pledge == 0: score += 5
-    if promoter > 50:           score += 4
+    if promoter > 50:              score += 4
 
-    # ── Earnings Quality (max 20) ──────────────────────────────────────────
-    if cash_conv > 0.85:        score += 8
+    # ── Earnings Quality (max 25) ──────────────────────────────────────────
+    # cash_conv now populated from screener.in (FCF/PAT)
+    if cash_conv > 0.85:           score += 8
     if _f(ctx.get("beat_streak")) >= 3: score += 7
     if wc_days is not None and wc_days < 90: score += 5
+    # Piotroski score > 7 = strong balance sheet health across 9 criteria
+    if piotroski is not None and _f(piotroski) >= 7: score += 5
 
     # ── Thematic Alignment (max 20) ────────────────────────────────────────
-    if _f(ctx.get("theme_count")) > 0:     score += 8
-    if ctx.get("scheme_approved"):         score += 7
+    if _f(ctx.get("theme_count")) > 0:      score += 8
+    if ctx.get("scheme_approved"):          score += 7
     if _f(ctx.get("industry_growth")) > 15: score += 5
 
     # ── Catalyst Layer (max 25, decayed 20%/quarter) ───────────────────────
     catalyst_score = 0.0
     for cat in ctx.get("recent_catalysts") or []:
-        delta           = _f(cat.get("conviction_delta"))
-        age_quarters    = max(0.0, _f(cat.get("age_quarters")))
-        decayed         = delta * (0.8 ** age_quarters)
-        catalyst_score += decayed
+        delta        = _f(cat.get("conviction_delta"))
+        age_quarters = max(0.0, _f(cat.get("age_quarters")))
+        catalyst_score += delta * (0.8 ** age_quarters)
     score += min(25, catalyst_score)
 
     # ── Negative adjustments ──────────────────────────────────────────────
@@ -158,6 +169,8 @@ def compute_conviction(company: dict, ctx: dict) -> int:
     if ctx.get("governance_flag"):             score -= 20
     if ob_ratio is not None and ob_ratio < 1:  score -= 8
     if debt_eq  > 1.5:                         score -= 5
+    # Poor debt serviceability (interest coverage < 1.5x = danger zone)
+    if int_cov is not None and _f(int_cov) < 1.5: score -= 5
 
     return max(0, min(100, round(score)))
 

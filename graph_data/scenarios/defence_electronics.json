@@ -2,6 +2,20 @@
   "theme": "Defence_Electronics",
   "tier1": [
     {
+      "symbol": "PARAS",
+      "name": "Paras Defence and Space Technologies Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
       "symbol": "KAYNES",
       "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
@@ -9,22 +23,8 @@
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "PARAS",
-      "name": "Paras Defence and Space Technologies Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
       "symbol": "DATAPATTNS",
       "name": "Data Patterns (India) Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
       "conviction": 16,
       "quality": 2,
       "via_theme": "Defence_Electronics"
@@ -39,12 +39,12 @@
     {
       "symbol": "IDEAFORGE",
       "name": "ideaForge Technology Ltd.",
-      "conviction": 1,
+      "conviction": 0,
       "quality": 0,
       "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KAYNES — highest conviction play with direct Defence_Electronics exposure and proven execution track record in this cyclical upcycle** — watch 20% revenue CAGR from defence contracts over next 2-3 quarters.\n\n**PARAS as secondary hedge — equal conviction but smaller base gives more upside optionality if defence budgets accelerate** — track order book-to-revenue ratio above 2.5x for sustainability.",
+  "vikram_verdict": "PARAS — highest conviction score (25) with direct Defence_Electronics exposure and sharpest macro sensitivity; STLTECH as secondary play (conviction 24) if PARAS sees resistance. Key metric: Order book growth trajectory and defence contract announcements in next 2-3 quarters.",
   "generated_date": "2026-05-11"
 }

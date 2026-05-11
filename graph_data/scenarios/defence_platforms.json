@@ -4,8 +4,22 @@
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 28,
+      "conviction": 41,
       "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 25,
+      "quality": 3,
       "via_theme": "Defence_Platforms"
     },
     {
@@ -14,23 +28,9 @@
       "conviction": 20,
       "quality": 3,
       "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "MIDHANI",
-      "name": "Mishra Dhatu Nigam Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "GRSE — highest conviction score reflects strongest fundamental positioning in defence platforms with best execution track record among shipbuilders — watch order book growth and delivery timelines for FY25-26.",
+  "vikram_verdict": "**GRSE — Highest conviction score (41) signals strongest structural positioning in defence platforms with proven execution track record; conviction delta of 13+ points over BEML validates differentiated upside.** — **Watch order book growth trajectory and FY25 revenue CAGR; break above ₹650 signals institutional accumulation.**",
   "generated_date": "2026-05-11"
 }

@@ -2,29 +2,36 @@
   "theme": "InfraCapex",
   "tier1": [
     {
-      "symbol": "GPIL",
-      "name": "Godawari Power & Ispat Ltd.",
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
       "conviction": 28,
-      "quality": 5,
-      "via_theme": "InfraCapex"
+      "quality": 3,
+      "via_theme": "Railways"
     },
     {
       "symbol": "NBCC",
       "name": "NBCC (India) Ltd.",
-      "conviction": 20,
+      "conviction": 25,
       "quality": 3,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "GPIL",
+      "name": "Godawari Power & Ispat Ltd.",
+      "conviction": 20,
+      "quality": 5,
       "via_theme": "InfraCapex"
     },
     {
       "symbol": "RVNL",
       "name": "Rail Vikas Nigam Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Railways"
@@ -58,13 +65,6 @@
       "via_theme": "Railways"
     },
     {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
       "symbol": "HFCL",
       "name": "HFCL Ltd.",
       "conviction": 1,
@@ -73,6 +73,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GPIL — Highest conviction (28) with purest InfraCapex leverage; cleanest play on the macro event.** Watch order book growth trajectory and execution run-rate; target 25%+ YoY revenue CAGR over next 2-3 quarters.",
+  "vikram_verdict": "**BEML — Only pure-play with execution track record in rail modernization; highest conviction justifies concentration.** Watch capex deployment run-rate; target ₹15,000+ Cr FY25 order inflow.",
   "generated_date": "2026-05-11"
 }

@@ -2,21 +2,21 @@
   "theme": "SpecialtyChemicals",
   "tier1": [
     {
-      "symbol": "AARTIIND",
-      "name": "Aarti Industries Ltd.",
-      "conviction": 1,
+      "symbol": "DEEPAKFERT",
+      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+      "conviction": 6,
       "quality": 0,
       "via_theme": "SpecialtyChemicals"
     },
     {
-      "symbol": "DEEPAKFERT",
-      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+      "symbol": "AARTIIND",
+      "name": "Aarti Industries Ltd.",
       "conviction": 1,
       "quality": 0,
       "via_theme": "SpecialtyChemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "AARTIIND — pure-play specialty chemicals with superior margin expansion potential and global customer diversification, vs Deepak's fertilizer cyclicality headwind. — Watch 70%+ EBITDA margin trajectory and $500M+ revenue run-rate.",
+  "vikram_verdict": "**DEEPAKFERT — 6x higher conviction edge with structural tailwinds in specialty chemicals; AARTIIND is diluted exposure.** — Watch EBITDA margin expansion above 28% and specialty chemical revenue mix crossing 40% of total sales.",
   "generated_date": "2026-05-11"
 }

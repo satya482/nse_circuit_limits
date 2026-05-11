@@ -2,21 +2,21 @@
   "theme": "PLI_Electronics",
   "tier1": [
     {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies (India) Ltd.",
+      "conviction": 29,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
       "symbol": "KAYNES",
       "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "DIXON",
-      "name": "Dixon Technologies (India) Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KAYNES — 25% higher conviction score signals stronger PLI tailwinds and execution capability; DIXON's lower conviction suggests market hasn't fully priced the opportunity.** — **Watch KAYNES revenue CAGR from electronics segment: need >40% over next 2 fiscals to justify the conviction premium.**",
+  "vikram_verdict": "**DIXON — Market leader with proven execution on PLI incentives and stronger operational leverage; conviction 29 justifies the premium.** — Watch gross margins: need to see 18%+ sustained levels to validate pricing power despite commodities volatility.",
   "generated_date": "2026-05-11"
 }

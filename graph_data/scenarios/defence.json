@@ -4,20 +4,41 @@
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 28,
+      "conviction": 41,
       "quality": 5,
       "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
       "quality": 3,
-      "via_theme": "Defence_Electronics"
+      "via_theme": "Defence_Platforms"
     },
     {
       "symbol": "PARAS",
       "name": "Paras Defence and Space Technologies Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Defence_Electronics"
@@ -30,29 +51,8 @@
       "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "MIDHANI",
-      "name": "Mishra Dhatu Nigam Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
       "symbol": "DATAPATTNS",
       "name": "Data Patterns (India) Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
       "conviction": 16,
       "quality": 2,
       "via_theme": "Defence_Electronics"
@@ -67,12 +67,12 @@
     {
       "symbol": "IDEAFORGE",
       "name": "ideaForge Technology Ltd.",
-      "conviction": 1,
+      "conviction": 0,
       "quality": 0,
       "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GRSE — Only pure-play defence platform with highest conviction score and cleanest earnings visibility from order book execution — Track quarterly revenue growth and order inflows (target: 25%+ YoY).**",
+  "vikram_verdict": "GRSE — largest conviction score (41) with structural tailwinds from Defence_Platforms mega-cycle; order book conversion and margin expansion are non-negotiable. — Watch FY25 order inflows and EBITDA margin trajectory above 12%.",
   "generated_date": "2026-05-11"
 }

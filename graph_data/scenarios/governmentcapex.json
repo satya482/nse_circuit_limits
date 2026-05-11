@@ -4,8 +4,15 @@
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 28,
+      "conviction": 41,
       "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
+      "quality": 3,
       "via_theme": "Defence_Platforms"
     },
     {
@@ -16,25 +23,46 @@
       "via_theme": "RenewableEnergy"
     },
     {
-      "symbol": "GPIL",
-      "name": "Godawari Power & Ispat Ltd.",
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
       "conviction": 28,
-      "quality": 5,
-      "via_theme": "InfraCapex"
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 25,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
     },
     {
       "symbol": "PARAS",
       "name": "Paras Defence and Space Technologies Ltd.",
-      "conviction": 20,
+      "conviction": 25,
       "quality": 3,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
+      "symbol": "NBCC",
+      "name": "NBCC (India) Ltd.",
+      "conviction": 25,
       "quality": 3,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 24,
+      "quality": 2,
       "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Railways"
     },
     {
       "symbol": "RVNL",
@@ -44,25 +72,18 @@
       "via_theme": "Railways"
     },
     {
-      "symbol": "NBCC",
-      "name": "NBCC (India) Ltd.",
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
       "conviction": 20,
       "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "GPIL",
+      "name": "Godawari Power & Ispat Ltd.",
+      "conviction": 20,
+      "quality": 5,
       "via_theme": "InfraCapex"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "IRCON",
-      "name": "Ircon International Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Railways"
     },
     {
       "symbol": "IRCON",
@@ -72,18 +93,11 @@
       "via_theme": "Roads"
     },
     {
-      "symbol": "MIDHANI",
-      "name": "Mishra Dhatu Nigam Ltd.",
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
       "conviction": 20,
       "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
+      "via_theme": "Railways"
     },
     {
       "symbol": "COCHINSHIP",
@@ -91,6 +105,13 @@
       "conviction": 20,
       "quality": 3,
       "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "CESC",
+      "name": "CESC Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "PowerCapex"
     },
     {
       "symbol": "DATAPATTNS",
@@ -114,35 +135,14 @@
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Defence_Electronics"
-    },
-    {
       "symbol": "WELCORP",
       "name": "Welspun Corp Ltd.",
       "conviction": 16,
       "quality": 2,
       "via_theme": "InfraCapex"
-    },
-    {
-      "symbol": "CESC",
-      "name": "CESC Ltd.",
-      "conviction": 15,
-      "quality": 3,
-      "via_theme": "PowerCapex"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GRSE — Defence capex is structural, not cyclical; GovernmentCapex tailwinds persist for 5-7 years — Order book growth (target: 40% CAGR next 24 months).**\n\n**WAAREEENER — Renewable energy capex is non-negotiable policy; de-risked by PSU anchor clients — Capacity additions (target: 500MW+ FY25-26).**",
+  "vikram_verdict": "**GRSE — Only pure-play defence capex leverage with 41% conviction and minimal execution risk on government orders — Order book conversion rate and FY25 revenue growth trajectory.**\n\n**WAAREEENER — Renewable energy capex has secular tailwinds beyond cyclical government spend; better risk-reward at 28 conviction with structural demand — Capacity additions (MW) and margin expansion on scale.**",
   "generated_date": "2026-05-11"
 }

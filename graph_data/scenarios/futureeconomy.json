@@ -11,14 +11,21 @@
     {
       "symbol": "LALPATHLAB",
       "name": "Dr. Lal Pathlabs Ltd.",
-      "conviction": 20,
+      "conviction": 28,
       "quality": 3,
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
+      "symbol": "DEEPAKFERT",
+      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+      "conviction": 6,
+      "quality": 0,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
       "symbol": "YATHARTH",
       "name": "Yatharth Hospital & Trauma Care Services Ltd.",
-      "conviction": 13,
+      "conviction": 5,
       "quality": 3,
       "via_theme": "Hospitals_HealthcareInfra"
     },
@@ -28,16 +35,9 @@
       "conviction": 1,
       "quality": 0,
       "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "DEEPAKFERT",
-      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
-      "conviction": 1,
-      "quality": 0,
-      "via_theme": "SpecialtyChemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "APARINDS — dominant conviction score and structural FutureEconomy tailwind in EV components with secular growth runway — watch 60%+ revenue CAGR sustainability over next 8 quarters.\n\nLALPATHLAB — conviction still meaningful at 20, healthcare infrastructure plays outperform in macro pivots, but demands margin expansion discipline — track EBITDA margin maintenance above 18% as scale grows.",
+  "vikram_verdict": "**APARINDS — Clear conviction leader with structural tailwinds in EV electrification; conviction score of 28 is non-negotiable — Watch 28% upside target and EV component order flow.**\n\n**LALPATHLAB — Matching conviction but healthcare infrastructure plays are cyclical; only add if conviction holds above 25 — Track hospital bed utilization rates and capex announcements.**",
   "generated_date": "2026-05-11"
 }

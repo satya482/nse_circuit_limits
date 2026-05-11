@@ -45,16 +45,16 @@
     ],
     "companies": [
       {
-        "conviction": 28,
-        "id": "GPIL",
-        "name": "Godawari Power & Ispat Ltd.",
-        "quality": 5
-      },
-      {
-        "conviction": 20,
+        "conviction": 25,
         "id": "NBCC",
         "name": "NBCC (India) Ltd.",
         "quality": 3
+      },
+      {
+        "conviction": 20,
+        "id": "GPIL",
+        "name": "Godawari Power & Ispat Ltd.",
+        "quality": 5
       },
       {
         "conviction": 16,
@@ -85,7 +85,7 @@
     ],
     "companies": [
       {
-        "conviction": 15,
+        "conviction": 20,
         "id": "CESC",
         "name": "CESC Ltd.",
         "quality": 3
@@ -99,15 +99,21 @@
     "children": [],
     "companies": [
       {
-        "conviction": 20,
-        "id": "RVNL",
-        "name": "Rail Vikas Nigam Ltd.",
+        "conviction": 28,
+        "id": "BEML",
+        "name": "BEML Ltd.",
         "quality": 3
       },
       {
+        "conviction": 24,
+        "id": "STLTECH",
+        "name": "Sterlite Technologies Ltd.",
+        "quality": 2
+      },
+      {
         "conviction": 20,
-        "id": "BEML",
-        "name": "BEML Ltd.",
+        "id": "RVNL",
+        "name": "Rail Vikas Nigam Ltd.",
         "quality": 3
       },
       {
@@ -120,12 +126,6 @@
         "conviction": 16,
         "id": "WELCORP",
         "name": "Welspun Corp Ltd.",
-        "quality": 2
-      },
-      {
-        "conviction": 16,
-        "id": "STLTECH",
-        "name": "Sterlite Technologies Ltd.",
         "quality": 2
       },
       {
@@ -164,15 +164,21 @@
     "children": [],
     "companies": [
       {
-        "conviction": 20,
-        "id": "KAYNES",
-        "name": "Kaynes Technology India Ltd.",
+        "conviction": 25,
+        "id": "PARAS",
+        "name": "Paras Defence and Space Technologies Ltd.",
         "quality": 3
       },
       {
+        "conviction": 24,
+        "id": "STLTECH",
+        "name": "Sterlite Technologies Ltd.",
+        "quality": 2
+      },
+      {
         "conviction": 20,
-        "id": "PARAS",
-        "name": "Paras Defence and Space Technologies Ltd.",
+        "id": "KAYNES",
+        "name": "Kaynes Technology India Ltd.",
         "quality": 3
       },
       {
@@ -182,19 +188,13 @@
         "quality": 2
       },
       {
-        "conviction": 16,
-        "id": "STLTECH",
-        "name": "Sterlite Technologies Ltd.",
-        "quality": 2
-      },
-      {
         "conviction": 1,
         "id": "HFCL",
         "name": "HFCL Ltd.",
         "quality": 0
       },
       {
-        "conviction": 1,
+        "conviction": 0,
         "id": "IDEAFORGE",
         "name": "ideaForge Technology Ltd.",
         "quality": 0
@@ -208,27 +208,27 @@
     "children": [],
     "companies": [
       {
-        "conviction": 28,
+        "conviction": 41,
         "id": "GRSE",
         "name": "Garden Reach Shipbuilders & Engineers Ltd.",
         "quality": 5
       },
       {
-        "conviction": 20,
-        "id": "COCHINSHIP",
-        "name": "Cochin Shipyard Ltd.",
-        "quality": 3
-      },
-      {
-        "conviction": 20,
+        "conviction": 28,
         "id": "BEML",
         "name": "BEML Ltd.",
         "quality": 3
       },
       {
-        "conviction": 20,
+        "conviction": 25,
         "id": "MIDHANI",
         "name": "Mishra Dhatu Nigam Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 20,
+        "id": "COCHINSHIP",
+        "name": "Cochin Shipyard Ltd.",
         "quality": 3
       }
     ]
@@ -267,7 +267,7 @@
         "quality": 5
       },
       {
-        "conviction": 1,
+        "conviction": 6,
         "id": "INOXWIND",
         "name": "Inox Wind Ltd.",
         "quality": 0
@@ -281,16 +281,16 @@
     "children": [],
     "companies": [
       {
+        "conviction": 29,
+        "id": "DIXON",
+        "name": "Dixon Technologies (India) Ltd.",
+        "quality": 2
+      },
+      {
         "conviction": 20,
         "id": "KAYNES",
         "name": "Kaynes Technology India Ltd.",
         "quality": 3
-      },
-      {
-        "conviction": 16,
-        "id": "DIXON",
-        "name": "Dixon Technologies (India) Ltd.",
-        "quality": 2
       }
     ]
   },
@@ -356,15 +356,15 @@
     "children": [],
     "companies": [
       {
-        "conviction": 1,
-        "id": "AARTIIND",
-        "name": "Aarti Industries Ltd.",
+        "conviction": 6,
+        "id": "DEEPAKFERT",
+        "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
         "quality": 0
       },
       {
         "conviction": 1,
-        "id": "DEEPAKFERT",
-        "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+        "id": "AARTIIND",
+        "name": "Aarti Industries Ltd.",
         "quality": 0
       }
     ]
@@ -376,13 +376,13 @@
     "children": [],
     "companies": [
       {
-        "conviction": 20,
+        "conviction": 28,
         "id": "LALPATHLAB",
         "name": "Dr. Lal Pathlabs Ltd.",
         "quality": 3
       },
       {
-        "conviction": 13,
+        "conviction": 5,
         "id": "YATHARTH",
         "name": "Yatharth Hospital & Trauma Care Services Ltd.",
         "quality": 3
