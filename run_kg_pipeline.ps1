@@ -43,6 +43,19 @@ try {
     exit 1
 }
 
+# Step 3b — Weekly: refresh screener.in Key Points + concall insights (Sundays only)
+$dayOfWeek = (Get-Date).DayOfWeek
+if ($dayOfWeek -eq 'Sunday') {
+    Log "--- Step 3b: weekly screener insights refresh (Sunday) ---"
+    try {
+        & C:\Python313\python.exe "$workDir\fundamental_context\graph\loaders\load_screener_insights.py" --limit 100 2>&1 |
+            ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+        Log "--- Step 3b done (load_screener_insights) ---"
+    } catch {
+        Log "WARN step 3b skipped: $_"
+    }
+}
+
 # Step 4 — Re-generate main dashboard (with EP + catalyst sections)
 try {
     & C:\Python313\python.exe "$workDir\dashboard_generator.py" 2>&1 |
