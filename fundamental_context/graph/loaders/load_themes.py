@@ -161,26 +161,49 @@ THEMES: dict[str, dict] = {
 # Map NSE code -> list of most-specific themes they benefit from
 # Add more as needed; graph traversal handles upward (Railways -> InfraCapex -> GovernmentCapex)
 SEED_BENEFITS: dict[str, list[str]] = {
+    # Infrastructure / Railways
     "WELCORP":   ["Railways", "InfraCapex"],
-    "STLTECH":   ["Defence_Electronics", "Railways"],
-    "HBLPOWER":  ["PowerT&D", "DataCentre"],
-    "KALPATPOWR":["PowerT&D", "RenewableEnergy"],
     "RVNL":      ["Railways"],
     "IRFC":      ["Railways"],
     "BEML":      ["Railways", "Defence_Platforms"],
-    "HAL":       ["Defence_Platforms"],
-    "BEL":       ["Defence_Electronics"],
-    "DIXON":     ["PLI_Electronics"],
+    "IRCON":     ["Railways", "Roads"],
+    "NBCC":      ["InfraCapex"],
+    "GPIL":      ["InfraCapex"],
+    # Defence — platforms & systems (mid-cap; BEL/HAL exceed MCap ceiling)
+    "GRSE":      ["Defence_Platforms"],        # frigates, patrol vessels
+    "COCHINSHIP":["Defence_Platforms"],        # naval shipbuilding
+    "MIDHANI":   ["Defence_Platforms"],        # superalloys for aero/defence
+    "MTARTECH":  ["Defence_Platforms", "Defence_Electronics"],  # precision for ISRO/DRDO
+    "PARAS":     ["Defence_Electronics"],      # optics, night vision
+    "DATAPATTNS":["Defence_Electronics"],      # defence electronics subsystems
+    "IDEAFORGE": ["Defence_Electronics"],      # tactical drones
+    "ASTRALDTX": ["Defence_Electronics"],      # radars, EW
+    # Defence — electronics & cables
+    "STLTECH":   ["Defence_Electronics", "Railways"],
+    "HFCL":      ["Defence_Electronics", "Railways"],
     "KAYNES":    ["Defence_Electronics", "PLI_Electronics"],
-    "APARINDS":  ["EV_Components"],
+    # Power
+    "HBLPOWER":  ["PowerT&D", "DataCentre"],
+    "KALPATPOWR":["PowerT&D", "RenewableEnergy"],
     "POLYCAB":   ["PowerT&D", "DataCentre"],
     "KEI":       ["PowerT&D"],
     "TATAPOWER": ["RenewableEnergy", "PowerCapex"],
     "INOXWIND":  ["RenewableEnergy"],
-    "LALPATHLAB":["Hospitals_HealthcareInfra"],
+    "WAAREEENER":["RenewableEnergy"],
+    "CESC":      ["PowerCapex"],
+    # Manufacturing / PLI
+    "DIXON":     ["PLI_Electronics"],
+    "KAYNESTECH":["PLI_Electronics"],
+    "APARINDS":  ["EV_Components"],
+    "MOTHERSON": ["EV_Components"],
+    "MNRE":      ["EV_Components"],
     "AARTIIND":  ["SpecialtyChemicals", "PLI_Chemicals"],
-    "GPIL":      ["InfraCapex"],
-    "HFCL":      ["Defence_Electronics", "Railways"],
+    "DEEPAKFERT":["SpecialtyChemicals"],
+    "TATACHEM":  ["PLI_Chemicals"],
+    # Future economy
+    "LALPATHLAB":["Hospitals_HealthcareInfra"],
+    "APOLLOHOSP":["Hospitals_HealthcareInfra"],
+    "YATHARTH":  ["Hospitals_HealthcareInfra"],
 }
 
 

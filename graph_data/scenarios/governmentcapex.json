@@ -2,6 +2,20 @@
   "theme": "GovernmentCapex",
   "tier1": [
     {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "WAAREEENER",
+      "name": "Waaree Energies Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
       "symbol": "GPIL",
       "name": "Godawari Power & Ispat Ltd.",
       "conviction": 28,
@@ -9,18 +23,11 @@
       "via_theme": "InfraCapex"
     },
     {
-      "symbol": "RVNL",
-      "name": "Rail Vikas Nigam Ltd.",
+      "symbol": "PARAS",
+      "name": "Paras Defence and Space Technologies Ltd.",
       "conviction": 20,
       "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Railways"
+      "via_theme": "Defence_Electronics"
     },
     {
       "symbol": "KAYNES",
@@ -30,6 +37,48 @@
       "via_theme": "Defence_Electronics"
     },
     {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "NBCC",
+      "name": "NBCC (India) Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
       "symbol": "BEML",
       "name": "BEML Ltd.",
       "conviction": 20,
@@ -37,32 +86,25 @@
       "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "WELCORP",
-      "name": "Welspun Corp Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "InfraCapex"
+      "symbol": "COCHINSHIP",
+      "name": "Cochin Shipyard Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "WELCORP",
-      "name": "Welspun Corp Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
+      "symbol": "DATAPATTNS",
+      "name": "Data Patterns (India) Ltd.",
       "conviction": 16,
       "quality": 2,
       "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "WELCORP",
+      "name": "Welspun Corp Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Railways"
     },
     {
       "symbol": "KEI",
@@ -72,28 +114,35 @@
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "HFCL",
-      "name": "HFCL Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
       "via_theme": "Railways"
     },
     {
-      "symbol": "HFCL",
-      "name": "HFCL Ltd.",
-      "conviction": 1,
-      "quality": 0,
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 16,
+      "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "INOXWIND",
-      "name": "Inox Wind Ltd.",
-      "conviction": 1,
-      "quality": 0,
-      "via_theme": "RenewableEnergy"
+      "symbol": "WELCORP",
+      "name": "Welspun Corp Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "CESC",
+      "name": "CESC Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "PowerCapex"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GPIL — Highest conviction (28) with broadest infrastructure exposure; peers trading at 2-3x EV/EBITDA while GPIL offers value** — **Track order inflow run-rate and FY25E EBITDA margin expansion to 18%+.**",
+  "vikram_verdict": "**GRSE — Defence capex is structural, not cyclical; GovernmentCapex tailwinds persist for 5-7 years — Order book growth (target: 40% CAGR next 24 months).**\n\n**WAAREEENER — Renewable energy capex is non-negotiable policy; de-risked by PSU anchor clients — Capacity additions (target: 500MW+ FY25-26).**",
   "generated_date": "2026-05-11"
 }

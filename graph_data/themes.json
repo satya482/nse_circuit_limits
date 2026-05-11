@@ -51,6 +51,12 @@
         "quality": 5
       },
       {
+        "conviction": 20,
+        "id": "NBCC",
+        "name": "NBCC (India) Ltd.",
+        "quality": 3
+      },
+      {
         "conviction": 16,
         "id": "WELCORP",
         "name": "Welspun Corp Ltd.",
@@ -77,7 +83,14 @@
       "PowerT&D",
       "RenewableEnergy"
     ],
-    "companies": []
+    "companies": [
+      {
+        "conviction": 15,
+        "id": "CESC",
+        "name": "CESC Ltd.",
+        "quality": 3
+      }
+    ]
   },
   {
     "name": "Railways",
@@ -95,6 +108,12 @@
         "conviction": 20,
         "id": "BEML",
         "name": "BEML Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 20,
+        "id": "IRCON",
+        "name": "Ircon International Ltd.",
         "quality": 3
       },
       {
@@ -122,7 +141,14 @@
     "maturity": "Mature",
     "thesis": "NHAI + state road capex. High execution risk, competitive tendering. Prefer EPC players with strong balance sheets.",
     "children": [],
-    "companies": []
+    "companies": [
+      {
+        "conviction": 20,
+        "id": "IRCON",
+        "name": "Ircon International Ltd.",
+        "quality": 3
+      }
+    ]
   },
   {
     "name": "Ports",
@@ -144,6 +170,18 @@
         "quality": 3
       },
       {
+        "conviction": 20,
+        "id": "PARAS",
+        "name": "Paras Defence and Space Technologies Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 16,
+        "id": "DATAPATTNS",
+        "name": "Data Patterns (India) Ltd.",
+        "quality": 2
+      },
+      {
         "conviction": 16,
         "id": "STLTECH",
         "name": "Sterlite Technologies Ltd.",
@@ -153,6 +191,12 @@
         "conviction": 1,
         "id": "HFCL",
         "name": "HFCL Ltd.",
+        "quality": 0
+      },
+      {
+        "conviction": 1,
+        "id": "IDEAFORGE",
+        "name": "ideaForge Technology Ltd.",
         "quality": 0
       }
     ]
@@ -164,9 +208,27 @@
     "children": [],
     "companies": [
       {
+        "conviction": 28,
+        "id": "GRSE",
+        "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+        "quality": 5
+      },
+      {
+        "conviction": 20,
+        "id": "COCHINSHIP",
+        "name": "Cochin Shipyard Ltd.",
+        "quality": 3
+      },
+      {
         "conviction": 20,
         "id": "BEML",
         "name": "BEML Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 20,
+        "id": "MIDHANI",
+        "name": "Mishra Dhatu Nigam Ltd.",
         "quality": 3
       }
     ]
@@ -198,6 +260,12 @@
     "thesis": "Solar + wind + green hydrogen. Equipment manufacturers, EPC players, and balance-of-plant suppliers all benefit.",
     "children": [],
     "companies": [
+      {
+        "conviction": 28,
+        "id": "WAAREEENER",
+        "name": "Waaree Energies Ltd.",
+        "quality": 5
+      },
       {
         "conviction": 1,
         "id": "INOXWIND",
@@ -232,6 +300,12 @@
     "thesis": "Pharma + specialty chemical PLI. China+1 demand pull. API, CRAMS, agrochemicals benefiting from capacity addition.",
     "children": [],
     "companies": [
+      {
+        "conviction": 16,
+        "id": "TATACHEM",
+        "name": "Tata Chemicals Ltd.",
+        "quality": 2
+      },
       {
         "conviction": 1,
         "id": "AARTIIND",
@@ -286,6 +360,12 @@
         "id": "AARTIIND",
         "name": "Aarti Industries Ltd.",
         "quality": 0
+      },
+      {
+        "conviction": 1,
+        "id": "DEEPAKFERT",
+        "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+        "quality": 0
       }
     ]
   },
@@ -299,6 +379,12 @@
         "conviction": 20,
         "id": "LALPATHLAB",
         "name": "Dr. Lal Pathlabs Ltd.",
+        "quality": 3
+      },
+      {
+        "conviction": 13,
+        "id": "YATHARTH",
+        "name": "Yatharth Hospital & Trauma Care Services Ltd.",
         "quality": 3
       }
     ]

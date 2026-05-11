@@ -16,6 +16,13 @@
       "via_theme": "Railways"
     },
     {
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
       "symbol": "WELCORP",
       "name": "Welspun Corp Ltd.",
       "conviction": 16,
@@ -38,6 +45,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**RVNL — Pure-play railway capex leverage with zero dilution from other segments; track execution on FY25 order book conversion.** **BEML — Diversified but railways now >40% EBITDA; watch freight wagon order pipeline and quarterly margin sustainability above 18%.**",
+  "vikram_verdict": "**RVNL — Pure-play execution leverage on capex acceleration with zero diversification drag — Revenue CAGR & order book conversion rate.**\n\n**BEML — Capital goods multiplier effect but watch margin compression risk from input costs — EBITDA margin sustainability above 18%.**",
   "generated_date": "2026-05-11"
 }

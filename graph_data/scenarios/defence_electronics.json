@@ -9,6 +9,20 @@
       "via_theme": "Defence_Electronics"
     },
     {
+      "symbol": "PARAS",
+      "name": "Paras Defence and Space Technologies Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "DATAPATTNS",
+      "name": "Data Patterns (India) Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
       "symbol": "STLTECH",
       "name": "Sterlite Technologies Ltd.",
       "conviction": 16,
@@ -21,9 +35,16 @@
       "conviction": 1,
       "quality": 0,
       "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "IDEAFORGE",
+      "name": "ideaForge Technology Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KAYNES — Only conviction score that justifies sector timing risk; Defence_Electronics tailwinds need structural orders, not sentiment.** — Watch 20% revenue CAGR over next 4 quarters; anything below 15% means the macro event was noise.",
+  "vikram_verdict": "**KAYNES — highest conviction play with direct Defence_Electronics exposure and proven execution track record in this cyclical upcycle** — watch 20% revenue CAGR from defence contracts over next 2-3 quarters.\n\n**PARAS as secondary hedge — equal conviction but smaller base gives more upside optionality if defence budgets accelerate** — track order book-to-revenue ratio above 2.5x for sustainability.",
   "generated_date": "2026-05-11"
 }

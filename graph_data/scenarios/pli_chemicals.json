@@ -2,6 +2,13 @@
   "theme": "PLI_Chemicals",
   "tier1": [
     {
+      "symbol": "TATACHEM",
+      "name": "Tata Chemicals Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
       "symbol": "AARTIIND",
       "name": "Aarti Industries Ltd.",
       "conviction": 1,
@@ -10,6 +17,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "AARTIIND — PLI scheme tailwinds will drive margin expansion and capex returns; specialty chemicals demand accelerating across pharma intermediates and agrochemicals where India gains cost competitiveness. — Watch 20%+ EBITDA margin improvement and Rs 500cr+ incremental capex deployment over next 18 months.",
+  "vikram_verdict": "**TATACHEM — 16x conviction edge with proven scale-up execution across specialty chemicals; AARTIIND is a lottery ticket by comparison — Revenue CAGR target of 25%+ over next 3 years under PLI incentive structure.**",
   "generated_date": "2026-05-11"
 }

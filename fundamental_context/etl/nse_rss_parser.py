@@ -1,12 +1,15 @@
 """
-NSE RSS Catalyst Parser
+NSE Corporate Announcements Catalyst Parser
 
-Fetches NSE corporate announcements RSS feed, classifies each announcement
-into a CatalystType, and MERGEs Catalyst nodes + TRIGGERED edges into Neo4j.
+Fetches the NSE corporate-announcements JSON API (returns ~20 most recent
+across all equities), classifies each announcement into a CatalystType, and
+MERGEs Catalyst nodes + TRIGGERED edges into Neo4j.
 
-Requires: feedparser, requests, neo4j, python-dotenv
+Run daily after market close (5:00–5:15 PM IST); run multiple times safely —
+MERGE on catalyst_id deduplicates.
+
+Requires: requests, neo4j, python-dotenv
 Run     : python nse_rss_parser.py
-Re-run  : safe — MERGE on catalyst_id deduplicates
 """
 from __future__ import annotations
 
@@ -15,9 +18,7 @@ import os
 import re
 from datetime import date, datetime
 from pathlib import Path
-from email.utils import parsedate_to_datetime
 
-import feedparser
 import requests
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
@@ -32,83 +33,92 @@ NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 NSE_HOMEPAGE = "https://www.nseindia.com"
-NSE_RSS_URL  = "https://www.nseindia.com/static/rss-feed"
+NSE_API_URL  = "https://www.nseindia.com/api/corporate-announcements?index=equities"
 
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
         "Chrome/120.0.0.0 Safari/537.36"
     ),
-    "Accept": "application/rss+xml, application/xml, text/xml, */*",
+    "Accept": "application/json, text/plain, */*",
+    "Referer": "https://www.nseindia.com/",
 }
 
 
-# ── Keyword classifier (from 02_daily_pipeline.md) ───────────────────────────
+# ── Keyword classifier ────────────────────────────────────────────────────────
+# Matches against: desc (category) + attchmntText (summary sentence)
 KEYWORD_MAP: dict[str, list[str]] = {
     "OrderWin": [
         "order", "contract", "loa", "letter of award",
         "purchase order", "work order", "awarded", "secured order",
+        "bagged", "new orders", "order win",
     ],
     "CapacityExpansion": [
         "capacity expansion", "greenfield", "brownfield",
         "new plant", "capex", "capital expenditure", "capacity addition",
+        "new facility", "manufacturing unit",
     ],
     "GovtApproval": [
-        "approval", "pli", "government", "ministry",
+        "pli", "production linked incentive", "ministry",
         "license", "clearance", "dpiit", "regulatory approval",
+        "government approval", "govt approval", "noc",
     ],
     "PromotorBuy": [
-        "acquisition of shares", "inter-se transfer",
-        "promoter purchase", "creeping acquisition",
+        "acquisition of shares by promoter",
+        "inter-se transfer", "promoter purchase",
+        "creeping acquisition", "insider buying",
     ],
     "M&A": [
         "merger", "acquisition", "amalgamation",
-        "takeover", "stake acquisition",
+        "takeover", "stake acquisition", "demerger",
+        "business transfer", "slump sale",
     ],
     "GovernanceFlag": [
-        "investigation", "bse query", "show cause",
+        "investigation", "show cause",
         "sebi notice", "auditor resignation", "qualified opinion",
-        "fraud", "default",
+        "fraud", "default", "non-payment", "bse query",
+        "promoter pledge",
     ],
 }
 
 
-def classify(title: str, description: str) -> str | None:
+def classify(desc: str, text: str) -> str | None:
     """Return catalyst type name or None if no match."""
-    text = (title + " " + description).lower()
+    combined = (desc + " " + text).lower()
     for cat_type, keywords in KEYWORD_MAP.items():
-        if any(kw in text for kw in keywords):
+        if any(kw in combined for kw in keywords):
             return cat_type
     return None
 
 
-# ── RSS fetch (NSE requires homepage-first cookie pattern) ────────────────────
-def fetch_rss() -> list[feedparser.FeedParserDict]:
-    """Fetch NSE RSS entries using session cookies from homepage."""
+# ── NSE API fetch ─────────────────────────────────────────────────────────────
+def fetch_announcements() -> list[dict]:
+    """Fetch NSE corporate announcements via JSON API."""
     session = requests.Session()
     session.headers.update(HEADERS)
     try:
         session.get(NSE_HOMEPAGE, timeout=10)  # seed cookies
-        response = session.get(NSE_RSS_URL, timeout=15)
+        response = session.get(NSE_API_URL, timeout=15)
         response.raise_for_status()
-    except requests.RequestException as exc:
-        print(f"[RSS] ERROR fetching NSE RSS: {exc}")
+        data = response.json()
+        print(f"[NSE] Fetched {len(data)} announcements")
+        return data if isinstance(data, list) else []
+    except Exception as exc:
+        print(f"[NSE] ERROR fetching announcements: {exc}")
         return []
 
-    feed = feedparser.parse(response.content)
-    entries = feed.get("entries", [])
-    print(f"[RSS] Fetched {len(entries)} NSE announcements")
-    return entries
 
-
-def _parse_date(entry) -> date:
-    """Extract published date from RSS entry; fall back to today."""
-    pub = entry.get("published", "")
-    if pub:
-        try:
-            return parsedate_to_datetime(pub).date()
-        except Exception:
-            pass
+def _parse_date(entry: dict) -> date:
+    """Parse sort_date or an_dt field; fall back to today."""
+    for field in ("sort_date", "an_dt"):
+        val = entry.get(field, "")
+        if val:
+            for fmt in ("%Y-%m-%d %H:%M:%S", "%d-%b-%Y %H:%M:%S"):
+                try:
+                    return datetime.strptime(val[:19], fmt).date()
+                except ValueError:
+                    continue
     return date.today()
 
 
@@ -130,44 +140,42 @@ RETURN ct.ep_probability AS ep_prob, ct.base_delta AS base_delta
 _MERGE_CATALYST = """
 MERGE (cat:Catalyst {catalyst_id: $catalyst_id})
   ON CREATE SET
-    cat.type            = $cat_type,
-    cat.date            = date($pub_date),
-    cat.description     = $description,
-    cat.source          = 'NSE RSS',
-    cat.ep_probability  = $ep_probability,
+    cat.type             = $cat_type,
+    cat.date             = date($pub_date),
+    cat.description      = $description,
+    cat.source           = 'NSE API',
+    cat.ep_probability   = $ep_probability,
     cat.conviction_delta = $conviction_delta,
-    cat.magnitude       = 'Unknown'
+    cat.magnitude        = 'Unknown'
   ON MATCH SET
-    cat.description     = $description
+    cat.description      = $description
 WITH cat
 MATCH (c:Company {nse_code: $nse_code})
 MERGE (c)-[:TRIGGERED]->(cat)
 """
 
 
-def process_entries(entries: list, session) -> tuple[int, int]:
-    """Classify, match universe, and MERGE catalysts. Returns (matched, skipped)."""
+def process_announcements(entries: list[dict], session) -> tuple[int, int]:
+    """Classify, match universe, MERGE catalysts. Returns (matched, skipped)."""
     matched = 0
     skipped = 0
 
     for entry in entries:
-        title       = entry.get("title", "")
-        description = entry.get("summary", entry.get("description", ""))
-        pub_date    = _parse_date(entry)
-
-        # NSE RSS titles often start with the symbol, e.g. "WELCORP | Order win..."
-        symbol_match = re.match(r"^([A-Z0-9&]+)\s*[|\-]", title)
-        if not symbol_match:
+        nse_code = (entry.get("symbol") or "").strip().upper()
+        if not nse_code:
             skipped += 1
             continue
-        nse_code = symbol_match.group(1).strip()
 
         # Must be in graph universe
         if not session.run(_CHECK_COMPANY, nse_code=nse_code).single():
             skipped += 1
             continue
 
-        cat_type = classify(title, description)
+        desc   = entry.get("desc", "")
+        text   = entry.get("attchmntText", "")
+        pub_date = _parse_date(entry)
+
+        cat_type = classify(desc, text)
         if not cat_type:
             skipped += 1
             continue
@@ -181,40 +189,41 @@ def process_entries(entries: list, session) -> tuple[int, int]:
             ep_prob          = "Low"
             conviction_delta = 3
 
+        # Combine desc + first 200 chars of text for description field
+        description = f"{desc}: {text[:180]}" if text else desc
+
         catalyst_id = _make_catalyst_id(nse_code, cat_type, pub_date)
         result = session.run(
             _MERGE_CATALYST,
-            catalyst_id     = catalyst_id,
-            nse_code        = nse_code,
-            cat_type        = cat_type,
-            pub_date        = pub_date.isoformat(),
-            description     = (title[:200] if title else description[:200]),
-            ep_probability  = ep_prob,
-            conviction_delta= conviction_delta,
+            catalyst_id      = catalyst_id,
+            nse_code         = nse_code,
+            cat_type         = cat_type,
+            pub_date         = pub_date.isoformat(),
+            description      = description[:300],
+            ep_probability   = ep_prob,
+            conviction_delta = conviction_delta,
         )
         counters = result.consume().counters
-        action = "created" if counters.nodes_created > 0 else "updated"
-        print(
-            f"[GRAPH] Catalyst MERGE | {nse_code} | {cat_type} | {pub_date} | {action}"
-        )
+        action   = "created" if counters.nodes_created > 0 else "exists"
+        print(f"[GRAPH] Catalyst MERGE | {nse_code} | {cat_type} | {pub_date} | {action}")
         matched += 1
 
     return matched, skipped
 
 
 def main() -> None:
-    entries = fetch_rss()
+    entries = fetch_announcements()
     if not entries:
-        print("[RSS] No entries to process — check connectivity")
+        print("[NSE] No entries to process — check connectivity")
         return
 
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
     with driver.session() as session:
-        matched, skipped = process_entries(entries, session)
+        matched, skipped = process_announcements(entries, session)
     driver.close()
 
     print(
-        f"[RSS] Summary | {matched} catalysts created/updated | "
+        f"[NSE] Summary | {matched} catalysts created/updated | "
         f"{skipped} entries skipped (not in universe or unclassified)"
     )
 

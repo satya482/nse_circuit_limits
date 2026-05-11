@@ -16,6 +16,13 @@
       "via_theme": "PLI_Electronics"
     },
     {
+      "symbol": "TATACHEM",
+      "name": "Tata Chemicals Ltd.",
+      "conviction": 16,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
       "symbol": "AARTIIND",
       "name": "Aarti Industries Ltd.",
       "conviction": 1,
@@ -24,6 +31,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KAYNES — PLI Electronics tailwind + strongest conviction edge; DIXON is cheaper but execution risk higher — watch 20% revenue CAGR over next 3 years.**",
+  "vikram_verdict": "KAYNES — Only stock with genuine PLI tailwind + execution track record in electronics manufacturing; conviction 20 isn't noise. — Watch 30% revenue CAGR and FY25 capex conversion to avoid another promise-miss cycle.",
   "generated_date": "2026-05-11"
 }

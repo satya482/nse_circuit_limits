@@ -9,6 +9,13 @@
       "via_theme": "InfraCapex"
     },
     {
+      "symbol": "NBCC",
+      "name": "NBCC (India) Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "InfraCapex"
+    },
+    {
       "symbol": "RVNL",
       "name": "Rail Vikas Nigam Ltd.",
       "conviction": 20,
@@ -21,6 +28,20 @@
       "conviction": 20,
       "quality": 3,
       "via_theme": "Railways"
+    },
+    {
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "IRCON",
+      "name": "Ircon International Ltd.",
+      "conviction": 20,
+      "quality": 3,
+      "via_theme": "Roads"
     },
     {
       "symbol": "WELCORP",
@@ -52,6 +73,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GPIL — Highest conviction score (28) with direct InfraCapex exposure and cleanest play on the macro event** — Watch order book growth quarter-on-quarter and debt-to-equity ratio for execution risk.",
+  "vikram_verdict": "**GPIL — Highest conviction (28) with purest InfraCapex leverage; cleanest play on the macro event.** Watch order book growth trajectory and execution run-rate; target 25%+ YoY revenue CAGR over next 2-3 quarters.",
   "generated_date": "2026-05-11"
 }

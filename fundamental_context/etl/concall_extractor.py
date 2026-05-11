@@ -82,8 +82,13 @@ def fetch_sitemap() -> dict[str, str]:
                 return json.load(fh)
 
     print("[SITEMAP] Fetching Trendlyne equity sitemap...")
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-IN,en;q=0.9",
+    }
     try:
-        resp = requests.get(TRENDLYNE_SITEMAP, timeout=30)
+        resp = requests.get(TRENDLYNE_SITEMAP, headers=headers, timeout=30)
         resp.raise_for_status()
     except requests.RequestException as exc:
         print(f"[SITEMAP] ERROR: {exc}")
@@ -104,10 +109,45 @@ def fetch_sitemap() -> dict[str, str]:
     return slug_to_symbol
 
 
-def resolve_symbol(company_name: str, slug_to_symbol: dict[str, str]) -> str | None:
+# Common legal suffixes Trendlyne appends to sitemap slugs
+_LEGAL_SUFFIXES = re.compile(
+    r"-(?:ltd|limited|pvt-ltd|private-limited|india|industries|company|"
+    r"enterprises|solutions|services|technologies|international|holdings|"
+    r"finance|financial|capital|bank|insurance|pharma|chemicals|energy|"
+    r"motors|automotive|engineering|infrastructure|developers|realty|"
+    r"ventures|projects|foods|consumer|products)$"
+)
+
+
+def _strip_suffixes(slug: str) -> str:
+    """Iteratively strip legal/generic suffixes to get the core slug."""
+    prev = None
+    while prev != slug:
+        prev = slug
+        slug = _LEGAL_SUFFIXES.sub("", slug)
+    return slug
+
+
+def build_core_index(slug_to_symbol: dict[str, str]) -> dict[str, str]:
+    """Pre-build {core_slug: symbol} for fast suffix-stripped lookup."""
+    index: dict[str, str] = {}
+    for slug, symbol in slug_to_symbol.items():
+        core = _strip_suffixes(slug)
+        index.setdefault(core, symbol)  # first match wins (avoids duplicates)
+    return index
+
+
+def resolve_symbol(
+    company_name: str,
+    slug_to_symbol: dict[str, str],
+    core_index: dict[str, str] | None = None,
+) -> str | None:
     """Map Trendlyne company name to NSE symbol via sitemap slug."""
     slug = _slugify(company_name)
-    return slug_to_symbol.get(slug)
+    if slug in slug_to_symbol:
+        return slug_to_symbol[slug]
+    if core_index:
+        return core_index.get(_strip_suffixes(slug))
 
 
 # ── YouTube transcript fetch ──────────────────────────────────────────────────
@@ -130,8 +170,12 @@ def fetch_transcript(video_id: str) -> str | None:
     if not YT_AVAILABLE:
         return None
     try:
-        segments = YouTubeTranscriptApi.get_transcript(video_id, languages=["en", "en-IN"])
-        return " ".join(s["text"] for s in segments)
+        # youtube-transcript-api v1.x uses instance-based API
+        api = YouTubeTranscriptApi()
+        transcript_list = api.list(video_id)
+        transcript = transcript_list.find_transcript(["en", "en-IN", "en-US"])
+        segments = transcript.fetch()
+        return " ".join(s.text for s in segments)
     except Exception as exc:
         print(f"[YT] ERROR fetching transcript {video_id}: {exc}")
         return None
@@ -309,7 +353,7 @@ def write_to_neo4j(nse_code: str, concall_date: date, extracted: dict, session) 
             size_crore = ob_size,
             ratio      = ratio,
         )
-        print(f"[GRAPH] OrderBook MERGE | OrderBook | {ob_id} | ₹{ob_size:.0f} Cr")
+        print(f"[GRAPH] OrderBook MERGE | OrderBook | {ob_id} | Rs.{ob_size:.0f} Cr")
 
     # Risk nodes
     for i, risk_desc in enumerate(extracted.get("risk_flags") or []):
@@ -325,15 +369,19 @@ def write_to_neo4j(nse_code: str, concall_date: date, extracted: dict, session) 
 
 
 # ── Auto mode ─────────────────────────────────────────────────────────────────
-def run_auto(driver) -> None:
+def run_auto(driver, auto_confirm: bool = False) -> None:
     slug_to_symbol = fetch_sitemap()
     if not slug_to_symbol:
         print("[CONCALL] Sitemap unavailable — aborting auto mode")
         return
+    core_index = build_core_index(slug_to_symbol)
 
     print("[CONCALL] Fetching Trendlyne concall RSS...")
     try:
-        feed = feedparser.parse(TRENDLYNE_RSS)
+        feed = feedparser.parse(
+            TRENDLYNE_RSS,
+            agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+        )
     except Exception as exc:
         print(f"[CONCALL] RSS error: {exc}")
         return
@@ -342,9 +390,11 @@ def run_auto(driver) -> None:
     print(f"[CONCALL] {len(entries)} entries in Trendlyne RSS")
 
     for entry in entries:
-        creator     = entry.get("author", entry.get("dc_creator", ""))
         title       = entry.get("title", "")
         description = entry.get("summary", entry.get("description", ""))
+        # Extract company name from title: "{Company} Results Earnings Call for ..."
+        m = re.match(r"^(.+?)\s+Results?\s+Earnings?\s+Call", title, re.IGNORECASE)
+        creator = m.group(1).strip() if m else entry.get("author", "")
         pub_date    = date.today()
 
         if entry.get("published"):
@@ -354,7 +404,7 @@ def run_auto(driver) -> None:
             except Exception:
                 pass
 
-        nse_code = resolve_symbol(creator, slug_to_symbol)
+        nse_code = resolve_symbol(creator, slug_to_symbol, core_index)
         if not nse_code:
             print(f"[CONCALL] Skip — unresolved: '{creator}'")
             continue
@@ -383,8 +433,11 @@ def run_auto(driver) -> None:
         if not extracted:
             continue
 
-        print(json.dumps(extracted, indent=2))
-        confirm = input(f"Write to Neo4j? [y/N]: ").strip().lower()
+        print(json.dumps(extracted, indent=2, ensure_ascii=True))
+        if auto_confirm:
+            confirm = "y"
+        else:
+            confirm = input(f"Write to Neo4j? [y/N]: ").strip().lower()
         if confirm != "y":
             print("[CONCALL] Skipped by user")
             continue
@@ -392,7 +445,8 @@ def run_auto(driver) -> None:
         with driver.session() as session:
             write_to_neo4j(nse_code, pub_date, extracted, session)
 
-        print(f"\n*** Vikram's Verdict: {extracted.get('vikram_verdict', 'N/A')} ***\n")
+        verdict = (extracted.get('vikram_verdict') or 'N/A').encode('ascii', 'replace').decode()
+        print(f"\n*** Vikram's Verdict: {verdict} ***\n")
 
         # Recompute score for this company only
         from recompute_scores import run as scores_run  # type: ignore[import]
@@ -435,12 +489,13 @@ def main() -> None:
     parser.add_argument("--mode", choices=["auto", "manual"], default="auto")
     parser.add_argument("--company", help="NSE code (manual mode only)")
     parser.add_argument("--file",    help="Transcript .txt file (manual mode only)")
+    parser.add_argument("--yes", "-y", action="store_true", help="Auto-confirm all writes (non-interactive)")
     args = parser.parse_args()
 
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
 
     if args.mode == "auto":
-        run_auto(driver)
+        run_auto(driver, auto_confirm=args.yes)
     else:
         if not args.company or not args.file:
             print("ERROR: --company and --file required for manual mode")

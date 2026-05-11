@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "symbol": "THOMASCOOK",
+    "company": "Thomas Cook (India) Ltd.",
+    "conviction": 19,
+    "type": "OrderWin",
+    "date": "2026-05-11",
+    "magnitude": "Unknown",
+    "ep_prob": "High",
+    "description": "Action(s) initiated or orders passed: Thomas Cook  (India)  Limited has informed the Exchange about Action(s) initiated or orders passed"
+  }
+]

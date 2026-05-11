@@ -2,11 +2,25 @@
   "theme": "PowerCapex",
   "tier1": [
     {
+      "symbol": "WAAREEENER",
+      "name": "Waaree Energies Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
       "symbol": "KEI",
       "name": "KEI Industries Ltd.",
       "conviction": 16,
       "quality": 2,
       "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "CESC",
+      "name": "CESC Ltd.",
+      "conviction": 15,
+      "quality": 3,
+      "via_theme": "PowerCapex"
     },
     {
       "symbol": "INOXWIND",
@@ -17,6 +31,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KEI — PowerCapex tailwinds directly flow through transmission infrastructure capex cycle; conviction differential is massive — track order inflows and T&D margin expansion to 18%+ levels.**\n\n**Skip INOXWIND — renewable energy is a secondary beneficiary with minimal conviction; capital allocation discipline demands focus on the primary play.**",
+  "vikram_verdict": "**WAAREEENER — Only play with real convictions; 28 is a screaming buy signal in macro dislocations, renewable capex will compound for a decade.** — Watch capacity additions trajectory and module ASP trends; target 40%+ CAGR in earnings through FY27.",
   "generated_date": "2026-05-11"
 }

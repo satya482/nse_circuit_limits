@@ -16,14 +16,28 @@
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
+      "symbol": "YATHARTH",
+      "name": "Yatharth Hospital & Trauma Care Services Ltd.",
+      "conviction": 13,
+      "quality": 3,
+      "via_theme": "Hospitals_HealthcareInfra"
+    },
+    {
       "symbol": "AARTIIND",
       "name": "Aarti Industries Ltd.",
+      "conviction": 1,
+      "quality": 0,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "DEEPAKFERT",
+      "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
       "conviction": 1,
       "quality": 0,
       "via_theme": "SpecialtyChemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**APARINDS — FutureEconomy tailwind directly flows through EV supply chain; highest conviction reflects deepest structural thesis — watch EV_Components revenue CAGR target.**\n\n**LALPATHLAB — Healthcare infrastructure plays longer, messier cycle; skip the 20-conviction middle ground when 28-conviction purity exists elsewhere.**",
+  "vikram_verdict": "APARINDS — dominant conviction score and structural FutureEconomy tailwind in EV components with secular growth runway — watch 60%+ revenue CAGR sustainability over next 8 quarters.\n\nLALPATHLAB — conviction still meaningful at 20, healthcare infrastructure plays outperform in macro pivots, but demands margin expansion discipline — track EBITDA margin maintenance above 18% as scale grows.",
   "generated_date": "2026-05-11"
 }

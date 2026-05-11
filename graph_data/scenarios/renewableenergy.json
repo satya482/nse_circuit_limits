@@ -2,6 +2,13 @@
   "theme": "RenewableEnergy",
   "tier1": [
     {
+      "symbol": "WAAREEENER",
+      "name": "Waaree Energies Ltd.",
+      "conviction": 28,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
       "symbol": "INOXWIND",
       "name": "Inox Wind Ltd.",
       "conviction": 1,
@@ -10,6 +17,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "INOXWIND — structural tailwinds from policy acceleration in renewables will drive margin expansion and order book visibility higher — watch capacity additions (MW) and blended realisation per unit hitting ₹45+ crore/MW.",
+  "vikram_verdict": "WAAREEENER — conviction score of 28 indicates institutional confidence and structural positioning; INOXWIND's conviction 1 suggests weak conviction that won't sustain post-event euphoria. — Watch WAAREEENER's order book growth trajectory and capacity utilization rates above 85%.",
   "generated_date": "2026-05-11"
 }

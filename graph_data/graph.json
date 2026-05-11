@@ -436,20 +436,6 @@
     },
     {
       "data": {
-        "id": "IDEAFORGE",
-        "label": "IDEAFORGE",
-        "name": "ideaForge Technology Ltd.",
-        "type": "Company",
-        "conviction": 0,
-        "quality": 0,
-        "mcap": 3454.09,
-        "ob_ratio": null,
-        "sector": "Electronic Technology",
-        "industry": "Aerospace & Defense"
-      }
-    },
-    {
-      "data": {
         "id": "NAZARA",
         "label": "NAZARA",
         "name": "Nazara Technologies Ltd.",
@@ -548,7 +534,7 @@
         "conviction": 0,
         "quality": 1,
         "mcap": 3222.68,
-        "ob_ratio": null,
+        "ob_ratio": 0.15,
         "sector": "Producer Manufacturing",
         "industry": "Auto Parts: OEM"
       }
@@ -782,20 +768,6 @@
         "ob_ratio": null,
         "sector": "Finance",
         "industry": "Real Estate Development"
-      }
-    },
-    {
-      "data": {
-        "id": "DEEPAKFERT",
-        "label": "DEEPAKFERT",
-        "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
-        "type": "Company",
-        "conviction": 0,
-        "quality": 0,
-        "mcap": 16388.19,
-        "ob_ratio": null,
-        "sector": "Process Industries",
-        "industry": "Chemicals: Agricultural"
       }
     },
     {
@@ -1801,6 +1773,20 @@
     },
     {
       "data": {
+        "id": "IDEAFORGE",
+        "label": "IDEAFORGE",
+        "name": "ideaForge Technology Ltd.",
+        "type": "Company",
+        "conviction": 1,
+        "quality": 0,
+        "mcap": 3454.09,
+        "ob_ratio": null,
+        "sector": "Electronic Technology",
+        "industry": "Aerospace & Defense"
+      }
+    },
+    {
+      "data": {
         "id": "ANANDRATHI",
         "label": "ANANDRATHI",
         "name": "Anand Rathi Wealth Ltd.",
@@ -1839,6 +1825,20 @@
         "ob_ratio": null,
         "sector": "Utilities",
         "industry": "Alternative Power Generation"
+      }
+    },
+    {
+      "data": {
+        "id": "DEEPAKFERT",
+        "label": "DEEPAKFERT",
+        "name": "Deepak Fertilisers & Petrochemicals Corporation Ltd.",
+        "type": "Company",
+        "conviction": 1,
+        "quality": 0,
+        "mcap": 16388.19,
+        "ob_ratio": null,
+        "sector": "Process Industries",
+        "industry": "Chemicals: Agricultural"
       }
     },
     {
@@ -2007,20 +2007,6 @@
         "ob_ratio": null,
         "sector": "Non-Energy Minerals",
         "industry": "Steel"
-      }
-    },
-    {
-      "data": {
-        "id": "YATHARTH",
-        "label": "YATHARTH",
-        "name": "Yatharth Hospital & Trauma Care Services Ltd.",
-        "type": "Company",
-        "conviction": 5,
-        "quality": 3,
-        "mcap": 8307.19,
-        "ob_ratio": null,
-        "sector": "Health Services",
-        "industry": "Hospital/Nursing Management"
       }
     },
     {
@@ -2245,20 +2231,6 @@
         "ob_ratio": null,
         "sector": "Finance",
         "industry": "Finance/Rental/Leasing"
-      }
-    },
-    {
-      "data": {
-        "id": "CESC",
-        "label": "CESC",
-        "name": "CESC Ltd.",
-        "type": "Company",
-        "conviction": 7,
-        "quality": 3,
-        "mcap": 24211.54,
-        "ob_ratio": null,
-        "sector": "Utilities",
-        "industry": "Electric Utilities"
       }
     },
     {
@@ -2602,20 +2574,6 @@
         "ob_ratio": null,
         "sector": "Consumer Non-Durables",
         "industry": "Food: Specialty/Candy"
-      }
-    },
-    {
-      "data": {
-        "id": "DATAPATTNS",
-        "label": "DATAPATTNS",
-        "name": "Data Patterns (India) Ltd.",
-        "type": "Company",
-        "conviction": 8,
-        "quality": 2,
-        "mcap": 23171.22,
-        "ob_ratio": null,
-        "sector": "Electronic Technology",
-        "industry": "Electronic Production Equipment"
       }
     },
     {
@@ -3358,20 +3316,6 @@
         "ob_ratio": null,
         "sector": "Producer Manufacturing",
         "industry": "Building Products"
-      }
-    },
-    {
-      "data": {
-        "id": "TATACHEM",
-        "label": "TATACHEM",
-        "name": "Tata Chemicals Ltd.",
-        "type": "Company",
-        "conviction": 8,
-        "quality": 2,
-        "mcap": 19332.18,
-        "ob_ratio": null,
-        "sector": "Process Industries",
-        "industry": "Chemicals: Agricultural"
       }
     },
     {
@@ -4405,7 +4349,7 @@
         "conviction": 8,
         "quality": 2,
         "mcap": 2904.03,
-        "ob_ratio": null,
+        "ob_ratio": 1.24,
         "sector": "Finance",
         "industry": "Investment Managers"
       }
@@ -5098,20 +5042,6 @@
     },
     {
       "data": {
-        "id": "COCHINSHIP",
-        "label": "COCHINSHIP",
-        "name": "Cochin Shipyard Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 45326.19,
-        "ob_ratio": null,
-        "sector": "Producer Manufacturing",
-        "industry": "Trucks/Construction/Farm Machinery"
-      }
-    },
-    {
-      "data": {
         "id": "ANANTRAJ",
         "label": "ANANTRAJ",
         "name": "Anant Raj Ltd.",
@@ -5150,20 +5080,6 @@
         "ob_ratio": null,
         "sector": "Energy Minerals",
         "industry": "Oil Refining/Marketing"
-      }
-    },
-    {
-      "data": {
-        "id": "NBCC",
-        "label": "NBCC",
-        "name": "NBCC (India) Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 26076.6,
-        "ob_ratio": null,
-        "sector": "Commercial Services",
-        "industry": "Miscellaneous Commercial Services"
       }
     },
     {
@@ -5318,20 +5234,6 @@
         "ob_ratio": null,
         "sector": "Finance",
         "industry": "Real Estate Development"
-      }
-    },
-    {
-      "data": {
-        "id": "PARAS",
-        "label": "PARAS",
-        "name": "Paras Defence and Space Technologies Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 6994.57,
-        "ob_ratio": null,
-        "sector": "Electronic Technology",
-        "industry": "Aerospace & Defense"
       }
     },
     {
@@ -6288,20 +6190,6 @@
     },
     {
       "data": {
-        "id": "IRCON",
-        "label": "IRCON",
-        "name": "Ircon International Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 14380.49,
-        "ob_ratio": null,
-        "sector": "Industrial Services",
-        "industry": "Engineering & Construction"
-      }
-    },
-    {
-      "data": {
         "id": "TORNTPOWER",
         "label": "TORNTPOWER",
         "name": "Torrent Power Ltd.",
@@ -6466,20 +6354,6 @@
         "ob_ratio": null,
         "sector": "Producer Manufacturing",
         "industry": "Auto Parts: OEM"
-      }
-    },
-    {
-      "data": {
-        "id": "MIDHANI",
-        "label": "MIDHANI",
-        "name": "Mishra Dhatu Nigam Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 7654.71,
-        "ob_ratio": null,
-        "sector": "Non-Energy Minerals",
-        "industry": "Other Metals/Minerals"
       }
     },
     {
@@ -7667,20 +7541,6 @@
     },
     {
       "data": {
-        "id": "THOMASCOOK",
-        "label": "THOMASCOOK",
-        "name": "Thomas Cook (India) Ltd.",
-        "type": "Company",
-        "conviction": 12,
-        "quality": 3,
-        "mcap": 4412.16,
-        "ob_ratio": null,
-        "sector": "Consumer Services",
-        "industry": "Other Consumer Services"
-      }
-    },
-    {
-      "data": {
         "id": "GLOBUSSPR",
         "label": "GLOBUSSPR",
         "name": "Globus Spirits Ltd.",
@@ -8087,6 +7947,20 @@
     },
     {
       "data": {
+        "id": "YATHARTH",
+        "label": "YATHARTH",
+        "name": "Yatharth Hospital & Trauma Care Services Ltd.",
+        "type": "Company",
+        "conviction": 13,
+        "quality": 3,
+        "mcap": 8307.19,
+        "ob_ratio": null,
+        "sector": "Health Services",
+        "industry": "Hospital/Nursing Management"
+      }
+    },
+    {
+      "data": {
         "id": "EMAMILTD",
         "label": "EMAMILTD",
         "name": "Emami Ltd.",
@@ -8153,6 +8027,20 @@
         "ob_ratio": null,
         "sector": "Finance",
         "industry": "Finance/Rental/Leasing"
+      }
+    },
+    {
+      "data": {
+        "id": "CESC",
+        "label": "CESC",
+        "name": "CESC Ltd.",
+        "type": "Company",
+        "conviction": 15,
+        "quality": 3,
+        "mcap": 24211.54,
+        "ob_ratio": null,
+        "sector": "Utilities",
+        "industry": "Electric Utilities"
       }
     },
     {
@@ -8311,6 +8199,20 @@
     },
     {
       "data": {
+        "id": "DATAPATTNS",
+        "label": "DATAPATTNS",
+        "name": "Data Patterns (India) Ltd.",
+        "type": "Company",
+        "conviction": 16,
+        "quality": 2,
+        "mcap": 23171.22,
+        "ob_ratio": null,
+        "sector": "Electronic Technology",
+        "industry": "Electronic Production Equipment"
+      }
+    },
+    {
+      "data": {
         "id": "UJJIVANSFB",
         "label": "UJJIVANSFB",
         "name": "Ujjivan Small Finance Bank Ltd.",
@@ -8405,6 +8307,20 @@
         "ob_ratio": null,
         "sector": "Technology Services",
         "industry": "Information Technology Services"
+      }
+    },
+    {
+      "data": {
+        "id": "TATACHEM",
+        "label": "TATACHEM",
+        "name": "Tata Chemicals Ltd.",
+        "type": "Company",
+        "conviction": 16,
+        "quality": 2,
+        "mcap": 19332.18,
+        "ob_ratio": null,
+        "sector": "Process Industries",
+        "industry": "Chemicals: Agricultural"
       }
     },
     {
@@ -8563,6 +8479,20 @@
     },
     {
       "data": {
+        "id": "THOMASCOOK",
+        "label": "THOMASCOOK",
+        "name": "Thomas Cook (India) Ltd.",
+        "type": "Company",
+        "conviction": 19,
+        "quality": 3,
+        "mcap": 4412.16,
+        "ob_ratio": null,
+        "sector": "Consumer Services",
+        "industry": "Other Consumer Services"
+      }
+    },
+    {
+      "data": {
         "id": "KAYNES",
         "label": "KAYNES",
         "name": "Kaynes Technology India Ltd.",
@@ -8573,34 +8503,6 @@
         "ob_ratio": null,
         "sector": "Electronic Technology",
         "industry": "Electronic Production Equipment"
-      }
-    },
-    {
-      "data": {
-        "id": "GRSE",
-        "label": "GRSE",
-        "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-        "type": "Company",
-        "conviction": 20,
-        "quality": 5,
-        "mcap": 33701.2,
-        "ob_ratio": null,
-        "sector": "Producer Manufacturing",
-        "industry": "Trucks/Construction/Farm Machinery"
-      }
-    },
-    {
-      "data": {
-        "id": "WAAREEENER",
-        "label": "WAAREEENER",
-        "name": "Waaree Energies Ltd.",
-        "type": "Company",
-        "conviction": 20,
-        "quality": 5,
-        "mcap": 92882.6,
-        "ob_ratio": null,
-        "sector": "Electronic Technology",
-        "industry": "Semiconductors"
       }
     },
     {
@@ -8629,6 +8531,34 @@
         "ob_ratio": null,
         "sector": "Non-Energy Minerals",
         "industry": "Other Metals/Minerals"
+      }
+    },
+    {
+      "data": {
+        "id": "COCHINSHIP",
+        "label": "COCHINSHIP",
+        "name": "Cochin Shipyard Ltd.",
+        "type": "Company",
+        "conviction": 20,
+        "quality": 3,
+        "mcap": 45326.19,
+        "ob_ratio": null,
+        "sector": "Producer Manufacturing",
+        "industry": "Trucks/Construction/Farm Machinery"
+      }
+    },
+    {
+      "data": {
+        "id": "NBCC",
+        "label": "NBCC",
+        "name": "NBCC (India) Ltd.",
+        "type": "Company",
+        "conviction": 20,
+        "quality": 3,
+        "mcap": 26076.6,
+        "ob_ratio": null,
+        "sector": "Commercial Services",
+        "industry": "Miscellaneous Commercial Services"
       }
     },
     {
@@ -8671,6 +8601,20 @@
         "ob_ratio": null,
         "sector": "Health Services",
         "industry": "Medical/Nursing Services"
+      }
+    },
+    {
+      "data": {
+        "id": "PARAS",
+        "label": "PARAS",
+        "name": "Paras Defence and Space Technologies Ltd.",
+        "type": "Company",
+        "conviction": 20,
+        "quality": 3,
+        "mcap": 6994.57,
+        "ob_ratio": null,
+        "sector": "Electronic Technology",
+        "industry": "Aerospace & Defense"
       }
     },
     {
@@ -8955,6 +8899,20 @@
     },
     {
       "data": {
+        "id": "IRCON",
+        "label": "IRCON",
+        "name": "Ircon International Ltd.",
+        "type": "Company",
+        "conviction": 20,
+        "quality": 3,
+        "mcap": 14380.49,
+        "ob_ratio": null,
+        "sector": "Industrial Services",
+        "industry": "Engineering & Construction"
+      }
+    },
+    {
+      "data": {
         "id": "ABSLAMC",
         "label": "ABSLAMC",
         "name": "Aditya Birla Sun Life AMC Ltd.",
@@ -8993,6 +8951,20 @@
         "ob_ratio": null,
         "sector": "Industrial Services",
         "industry": "Engineering & Construction"
+      }
+    },
+    {
+      "data": {
+        "id": "MIDHANI",
+        "label": "MIDHANI",
+        "name": "Mishra Dhatu Nigam Ltd.",
+        "type": "Company",
+        "conviction": 20,
+        "quality": 3,
+        "mcap": 7654.71,
+        "ob_ratio": null,
+        "sector": "Non-Energy Minerals",
+        "industry": "Other Metals/Minerals"
       }
     },
     {
@@ -9455,6 +9427,34 @@
         "ob_ratio": null,
         "sector": "Electronic Technology",
         "industry": "Computer Peripherals"
+      }
+    },
+    {
+      "data": {
+        "id": "GRSE",
+        "label": "GRSE",
+        "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+        "type": "Company",
+        "conviction": 28,
+        "quality": 5,
+        "mcap": 33701.2,
+        "ob_ratio": null,
+        "sector": "Producer Manufacturing",
+        "industry": "Trucks/Construction/Farm Machinery"
+      }
+    },
+    {
+      "data": {
+        "id": "WAAREEENER",
+        "label": "WAAREEENER",
+        "name": "Waaree Energies Ltd.",
+        "type": "Company",
+        "conviction": 28,
+        "quality": 5,
+        "mcap": 92882.6,
+        "ob_ratio": null,
+        "sector": "Electronic Technology",
+        "industry": "Semiconductors"
       }
     },
     {
@@ -10231,14 +10231,6 @@
     },
     {
       "data": {
-        "id": "IDEAFORGE_Electronic Technology",
-        "source": "IDEAFORGE",
-        "target": "Electronic Technology",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
         "id": "NAZARA_Technology Services",
         "source": "NAZARA",
         "target": "Technology Services",
@@ -10410,14 +10402,6 @@
         "id": "EMBDL_Finance",
         "source": "EMBDL",
         "target": "Finance",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "DEEPAKFERT_Process Industries",
-        "source": "DEEPAKFERT",
-        "target": "Process Industries",
         "rel": "BELONGS_TO"
       }
     },
@@ -10983,6 +10967,14 @@
     },
     {
       "data": {
+        "id": "IDEAFORGE_Electronic Technology",
+        "source": "IDEAFORGE",
+        "target": "Electronic Technology",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "ANANDRATHI_Finance",
         "source": "ANANDRATHI",
         "target": "Finance",
@@ -11002,6 +10994,14 @@
         "id": "KPIGREEN_Utilities",
         "source": "KPIGREEN",
         "target": "Utilities",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "DEEPAKFERT_Process Industries",
+        "source": "DEEPAKFERT",
+        "target": "Process Industries",
         "rel": "BELONGS_TO"
       }
     },
@@ -11098,14 +11098,6 @@
         "id": "LLOYDSME_Non-Energy Minerals",
         "source": "LLOYDSME",
         "target": "Non-Energy Minerals",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "YATHARTH_Health Services",
-        "source": "YATHARTH",
-        "target": "Health Services",
         "rel": "BELONGS_TO"
       }
     },
@@ -11234,14 +11226,6 @@
         "id": "POONAWALLA_Finance",
         "source": "POONAWALLA",
         "target": "Finance",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "CESC_Utilities",
-        "source": "CESC",
-        "target": "Utilities",
         "rel": "BELONGS_TO"
       }
     },
@@ -11434,14 +11418,6 @@
         "id": "ADVENZYMES_Consumer Non-Durables",
         "source": "ADVENZYMES",
         "target": "Consumer Non-Durables",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "DATAPATTNS_Electronic Technology",
-        "source": "DATAPATTNS",
-        "target": "Electronic Technology",
         "rel": "BELONGS_TO"
       }
     },
@@ -11866,14 +11842,6 @@
         "id": "KAJARIACER_Producer Manufacturing",
         "source": "KAJARIACER",
         "target": "Producer Manufacturing",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "TATACHEM_Process Industries",
-        "source": "TATACHEM",
-        "target": "Process Industries",
         "rel": "BELONGS_TO"
       }
     },
@@ -12863,14 +12831,6 @@
     },
     {
       "data": {
-        "id": "COCHINSHIP_Producer Manufacturing",
-        "source": "COCHINSHIP",
-        "target": "Producer Manufacturing",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
         "id": "ANANTRAJ_Consumer Durables",
         "source": "ANANTRAJ",
         "target": "Consumer Durables",
@@ -12890,14 +12850,6 @@
         "id": "HINDPETRO_Energy Minerals",
         "source": "HINDPETRO",
         "target": "Energy Minerals",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "NBCC_Commercial Services",
-        "source": "NBCC",
-        "target": "Commercial Services",
         "rel": "BELONGS_TO"
       }
     },
@@ -12986,14 +12938,6 @@
         "id": "GODREJPROP_Finance",
         "source": "GODREJPROP",
         "target": "Finance",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "PARAS_Electronic Technology",
-        "source": "PARAS",
-        "target": "Electronic Technology",
         "rel": "BELONGS_TO"
       }
     },
@@ -13543,14 +13487,6 @@
     },
     {
       "data": {
-        "id": "IRCON_Industrial Services",
-        "source": "IRCON",
-        "target": "Industrial Services",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
         "id": "TORNTPOWER_Utilities",
         "source": "TORNTPOWER",
         "target": "Utilities",
@@ -13642,14 +13578,6 @@
         "id": "MUNJALAU_Producer Manufacturing",
         "source": "MUNJALAU",
         "target": "Producer Manufacturing",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "MIDHANI_Non-Energy Minerals",
-        "source": "MIDHANI",
-        "target": "Non-Energy Minerals",
         "rel": "BELONGS_TO"
       }
     },
@@ -14327,14 +14255,6 @@
     },
     {
       "data": {
-        "id": "THOMASCOOK_Consumer Services",
-        "source": "THOMASCOOK",
-        "target": "Consumer Services",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
         "id": "GLOBUSSPR_Consumer Non-Durables",
         "source": "GLOBUSSPR",
         "target": "Consumer Non-Durables",
@@ -14567,6 +14487,14 @@
     },
     {
       "data": {
+        "id": "YATHARTH_Health Services",
+        "source": "YATHARTH",
+        "target": "Health Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "EMAMILTD_Consumer Non-Durables",
         "source": "EMAMILTD",
         "target": "Consumer Non-Durables",
@@ -14602,6 +14530,14 @@
         "id": "SBICARD_Finance",
         "source": "SBICARD",
         "target": "Finance",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "CESC_Utilities",
+        "source": "CESC",
+        "target": "Utilities",
         "rel": "BELONGS_TO"
       }
     },
@@ -14695,6 +14631,14 @@
     },
     {
       "data": {
+        "id": "DATAPATTNS_Electronic Technology",
+        "source": "DATAPATTNS",
+        "target": "Electronic Technology",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "UJJIVANSFB_Finance",
         "source": "UJJIVANSFB",
         "target": "Finance",
@@ -14746,6 +14690,14 @@
         "id": "STLTECH_Technology Services",
         "source": "STLTECH",
         "target": "Technology Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "TATACHEM_Process Industries",
+        "source": "TATACHEM",
+        "target": "Process Industries",
         "rel": "BELONGS_TO"
       }
     },
@@ -14839,24 +14791,16 @@
     },
     {
       "data": {
+        "id": "THOMASCOOK_Consumer Services",
+        "source": "THOMASCOOK",
+        "target": "Consumer Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "KAYNES_Electronic Technology",
         "source": "KAYNES",
-        "target": "Electronic Technology",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "GRSE_Producer Manufacturing",
-        "source": "GRSE",
-        "target": "Producer Manufacturing",
-        "rel": "BELONGS_TO"
-      }
-    },
-    {
-      "data": {
-        "id": "WAAREEENER_Electronic Technology",
-        "source": "WAAREEENER",
         "target": "Electronic Technology",
         "rel": "BELONGS_TO"
       }
@@ -14874,6 +14818,22 @@
         "id": "JAINREC_Non-Energy Minerals",
         "source": "JAINREC",
         "target": "Non-Energy Minerals",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "COCHINSHIP_Producer Manufacturing",
+        "source": "COCHINSHIP",
+        "target": "Producer Manufacturing",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "NBCC_Commercial Services",
+        "source": "NBCC",
+        "target": "Commercial Services",
         "rel": "BELONGS_TO"
       }
     },
@@ -14898,6 +14858,14 @@
         "id": "LALPATHLAB_Health Services",
         "source": "LALPATHLAB",
         "target": "Health Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "PARAS_Electronic Technology",
+        "source": "PARAS",
+        "target": "Electronic Technology",
         "rel": "BELONGS_TO"
       }
     },
@@ -15063,6 +15031,14 @@
     },
     {
       "data": {
+        "id": "IRCON_Industrial Services",
+        "source": "IRCON",
+        "target": "Industrial Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "ABSLAMC_Technology Services",
         "source": "ABSLAMC",
         "target": "Technology Services",
@@ -15082,6 +15058,14 @@
         "id": "TRANSRAILL_Industrial Services",
         "source": "TRANSRAILL",
         "target": "Industrial Services",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "MIDHANI_Non-Energy Minerals",
+        "source": "MIDHANI",
+        "target": "Non-Energy Minerals",
         "rel": "BELONGS_TO"
       }
     },
@@ -15351,6 +15335,22 @@
     },
     {
       "data": {
+        "id": "GRSE_Producer Manufacturing",
+        "source": "GRSE",
+        "target": "Producer Manufacturing",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
+        "id": "WAAREEENER_Electronic Technology",
+        "source": "WAAREEENER",
+        "target": "Electronic Technology",
+        "rel": "BELONGS_TO"
+      }
+    },
+    {
+      "data": {
         "id": "COLPAL_Consumer Non-Durables",
         "source": "COLPAL",
         "target": "Consumer Non-Durables",
@@ -15559,6 +15559,14 @@
     },
     {
       "data": {
+        "id": "NBCC_BF_InfraCapex",
+        "source": "NBCC",
+        "target": "InfraCapex",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "WELCORP_BF_InfraCapex",
         "source": "WELCORP",
         "target": "InfraCapex",
@@ -15570,6 +15578,14 @@
         "id": "GPIL_BF_InfraCapex",
         "source": "GPIL",
         "target": "InfraCapex",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "CESC_BF_PowerCapex",
+        "source": "CESC",
+        "target": "PowerCapex",
         "rel": "BENEFITS_FROM"
       }
     },
@@ -15615,6 +15631,22 @@
     },
     {
       "data": {
+        "id": "IRCON_BF_Railways",
+        "source": "IRCON",
+        "target": "Railways",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "IRCON_BF_Roads",
+        "source": "IRCON",
+        "target": "Roads",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "HFCL_BF_Defence_Electronics",
         "source": "HFCL",
         "target": "Defence_Electronics",
@@ -15631,9 +15663,49 @@
     },
     {
       "data": {
+        "id": "DATAPATTNS_BF_Defence_Electronics",
+        "source": "DATAPATTNS",
+        "target": "Defence_Electronics",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "PARAS_BF_Defence_Electronics",
+        "source": "PARAS",
+        "target": "Defence_Electronics",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "STLTECH_BF_Defence_Electronics",
         "source": "STLTECH",
         "target": "Defence_Electronics",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "IDEAFORGE_BF_Defence_Electronics",
+        "source": "IDEAFORGE",
+        "target": "Defence_Electronics",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "GRSE_BF_Defence_Platforms",
+        "source": "GRSE",
+        "target": "Defence_Platforms",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "COCHINSHIP_BF_Defence_Platforms",
+        "source": "COCHINSHIP",
+        "target": "Defence_Platforms",
         "rel": "BENEFITS_FROM"
       }
     },
@@ -15647,9 +15719,25 @@
     },
     {
       "data": {
+        "id": "MIDHANI_BF_Defence_Platforms",
+        "source": "MIDHANI",
+        "target": "Defence_Platforms",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "KEI_BF_PowerT&D",
         "source": "KEI",
         "target": "PowerT&D",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "WAAREEENER_BF_RenewableEnergy",
+        "source": "WAAREEENER",
+        "target": "RenewableEnergy",
         "rel": "BENEFITS_FROM"
       }
     },
@@ -15687,6 +15775,14 @@
     },
     {
       "data": {
+        "id": "TATACHEM_BF_PLI_Chemicals",
+        "source": "TATACHEM",
+        "target": "PLI_Chemicals",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "APARINDS_BF_EV_Components",
         "source": "APARINDS",
         "target": "EV_Components",
@@ -15703,8 +15799,24 @@
     },
     {
       "data": {
+        "id": "DEEPAKFERT_BF_SpecialtyChemicals",
+        "source": "DEEPAKFERT",
+        "target": "SpecialtyChemicals",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
         "id": "LALPATHLAB_BF_Hospitals_HealthcareInfra",
         "source": "LALPATHLAB",
+        "target": "Hospitals_HealthcareInfra",
+        "rel": "BENEFITS_FROM"
+      }
+    },
+    {
+      "data": {
+        "id": "YATHARTH_BF_Hospitals_HealthcareInfra",
+        "source": "YATHARTH",
         "target": "Hospitals_HealthcareInfra",
         "rel": "BENEFITS_FROM"
       }
