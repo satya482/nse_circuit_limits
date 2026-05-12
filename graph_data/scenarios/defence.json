@@ -4,145 +4,145 @@
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "Defence_Platforms"
     },
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "Defence"
-    },
-    {
-      "symbol": "OMNI",
-      "name": "Omnitech Engineering Ltd.",
-      "conviction": 31,
-      "quality": 5,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "OMNI",
-      "name": "Omnitech Engineering Ltd.",
-      "conviction": 31,
-      "quality": 5,
-      "via_theme": "Defence_MRO"
-    },
-    {
-      "symbol": "OMNI",
-      "name": "Omnitech Engineering Ltd.",
-      "conviction": 31,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "Defence"
     },
     {
       "symbol": "PREMEXPLN",
       "name": "Premier Explosives Ltd.",
-      "conviction": 29,
+      "conviction": 36,
       "quality": 2,
       "via_theme": "Defence"
     },
     {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "Defence_MRO"
-    },
-    {
       "symbol": "BDL",
       "name": "Bharat Dynamics Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "Defence"
-    },
-    {
-      "symbol": "BDL",
-      "name": "Bharat Dynamics Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "Defence"
-    },
-    {
-      "symbol": "BDL",
-      "name": "Bharat Dynamics Ltd.",
-      "conviction": 28,
+      "conviction": 35,
       "quality": 3,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "BEML",
-      "name": "BEML Ltd.",
-      "conviction": 28,
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "conviction": 35,
       "quality": 3,
       "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "Defence"
+    },
+    {
+      "symbol": "PARAS",
+      "name": "Paras Defence and Space Technologies Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Defence"
     },
     {
       "symbol": "SUNFLAG",
       "name": "Sunflag Iron & Steel Company Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
       "via_theme": "Defence"
     },
     {
       "symbol": "MIDHANI",
       "name": "Mishra Dhatu Nigam Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "PARAS",
-      "name": "Paras Defence and Space Technologies Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "PARAS",
-      "name": "Paras Defence and Space Technologies Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Defence"
-    },
-    {
-      "symbol": "MIDHANI",
-      "name": "Mishra Dhatu Nigam Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
       "via_theme": "Defence"
     },
     {
       "symbol": "NBCC",
       "name": "NBCC (India) Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
       "via_theme": "Defence"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
     },
     {
       "symbol": "ZFCVINDIA",
       "name": "ZF Commercial Vehicle Control Systems India Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
       "via_theme": "Defence"
     },
     {
-      "symbol": "CYIENT",
-      "name": "Cyient Ltd.",
-      "conviction": 24,
+      "symbol": "PARAS",
+      "name": "Paras Defence and Space Technologies Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Ltd.",
+      "conviction": 31,
+      "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Ltd.",
+      "conviction": 31,
+      "quality": 5,
+      "via_theme": "Defence"
+    },
+    {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Ltd.",
+      "conviction": 31,
+      "quality": 5,
+      "via_theme": "Defence_MRO"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Ltd.",
+      "conviction": 28,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "SYRMA",
+      "name": "Syrma SGS Technology Ltd.",
+      "conviction": 28,
       "quality": 2,
       "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GRSE — Dual conviction triggers (Defence_Platforms + Defence) with highest conviction score at 41; Navy modernization cycles typically drive 18-24 month order visibility.** **Watch: Order book-to-revenue ratio; target >2.5x for sustainable growth.**",
+  "vikram_verdict": "**GRSE — Dual conviction triggers on Defence_Platforms and Defence with highest conviction score (48); order book visibility and execution pace are non-negotiable.** **Key metric: FY25 order inflow target and Q3 revenue run-rate — anything below 15% YoY growth signals hype over fundamentals.**",
   "generated_date": "2026-05-12"
 }

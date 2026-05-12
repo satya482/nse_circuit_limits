@@ -4,8 +4,22 @@
     {
       "symbol": "GRSE",
       "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "conviction": 32,
+      "quality": 3,
       "via_theme": "Defence_Platforms"
     },
     {
@@ -16,13 +30,6 @@
       "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "BDL",
-      "name": "Bharat Dynamics Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
       "symbol": "BEML",
       "name": "BEML Ltd.",
       "conviction": 28,
@@ -30,9 +37,23 @@
       "via_theme": "Defence_Platforms"
     },
     {
-      "symbol": "MIDHANI",
-      "name": "Mishra Dhatu Nigam Ltd.",
-      "conviction": 25,
+      "symbol": "COCHINSHIP",
+      "name": "Cochin Shipyard Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "AZAD",
+      "name": "Azad Engineering Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "PTCIL",
+      "name": "PTC Industries Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "Defence_Platforms"
     },
@@ -41,27 +62,6 @@
       "name": "Bharat Forge Ltd.",
       "conviction": 21,
       "quality": 2,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "COCHINSHIP",
-      "name": "Cochin Shipyard Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "AZAD",
-      "name": "Azad Engineering Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "PTCIL",
-      "name": "PTC Industries Ltd.",
-      "conviction": 20,
-      "quality": 3,
       "via_theme": "Defence_Platforms"
     },
     {
@@ -74,14 +74,14 @@
     {
       "symbol": "BALUFORGE",
       "name": "Balu Forge Industries Ltd.",
-      "conviction": 5,
+      "conviction": 12,
       "quality": 1,
       "via_theme": "Defence_Platforms"
     },
     {
       "symbol": "MTARTECH",
       "name": "MTAR Technologies Ltd.",
-      "conviction": 1,
+      "conviction": 8,
       "quality": 0,
       "via_theme": "Defence_Platforms"
     },
@@ -101,6 +101,6 @@
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**GRSE — Only pure-play defence shipbuilder with 41% conviction and genuine order visibility from new platform allocations — Watch INR 600+ order book guidance within Q4 results.**\n\n**BEML as secondary bet — Diversified defence exposure with lower volatility than GRSE, but conviction is weaker; use any dip below INR 3,200 as entry point.**",
+  "vikram_verdict": "**GRSE — Highest conviction score with largest order book visibility in defence platforms; track quarterly revenue growth from defence segment.** Alternatively, **BDL — Superior margin profile and better execution track record; watch operating margin expansion above 18% as validation.**",
   "generated_date": "2026-05-12"
 }

@@ -4,9 +4,16 @@
     {
       "symbol": "CASTROLIND",
       "name": "Castrol India Ltd.",
-      "conviction": 49,
+      "conviction": 56,
       "quality": 7,
       "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "CASTROLIND",
+      "name": "Castrol India Ltd.",
+      "conviction": 56,
+      "quality": 7,
+      "via_theme": "DataCentre"
     },
     {
       "symbol": "SANOFI",
@@ -16,133 +23,126 @@
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
-      "symbol": "CASTROLIND",
-      "name": "Castrol India Ltd.",
-      "conviction": 49,
-      "quality": 7,
-      "via_theme": "DataCentre"
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
     },
     {
       "symbol": "TIPSMUSIC",
       "name": "Tips Music Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 7,
-      "via_theme": "FutureEconomy"
-    },
-    {
-      "symbol": "BLUEJET",
-      "name": "Blue Jet Healthcare Ltd",
-      "conviction": 41,
-      "quality": 7,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "TENNIND",
-      "name": "Tenneco Clean Air India Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "BLUEJET",
-      "name": "Blue Jet Healthcare Ltd",
-      "conviction": 41,
-      "quality": 7,
-      "via_theme": "Hospitals_HealthcareInfra"
-    },
-    {
-      "symbol": "CIGNITITEC",
-      "name": "Cigniti Technologies Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "FutureEconomy"
-    },
-    {
-      "symbol": "CIGNITITEC",
-      "name": "Cigniti Technologies Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
       "via_theme": "FutureEconomy"
     },
     {
       "symbol": "INDRAMEDCO",
       "name": "Indraprastha Medical Corporation Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "Hospitals_HealthcareInfra"
     },
     {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "CIGNITITEC",
+      "name": "Cigniti Technologies Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "CIGNITITEC",
+      "name": "Cigniti Technologies Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
+    },
+    {
       "symbol": "KPITTECH",
       "name": "KPIT Technologies Ltd.",
-      "conviction": 40,
+      "conviction": 47,
       "quality": 4,
       "via_theme": "FutureEconomy"
     },
     {
-      "symbol": "TATAELXSI",
-      "name": "Tata Elxsi Ltd.",
-      "conviction": 40,
-      "quality": 6,
-      "via_theme": "FutureEconomy"
-    },
-    {
-      "symbol": "TATAELXSI",
-      "name": "Tata Elxsi Ltd.",
-      "conviction": 40,
-      "quality": 6,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "TATAELXSI",
-      "name": "Tata Elxsi Ltd.",
-      "conviction": 40,
-      "quality": 6,
-      "via_theme": "DataCentre"
-    },
-    {
       "symbol": "KPITTECH",
       "name": "KPIT Technologies Ltd.",
-      "conviction": 40,
+      "conviction": 47,
       "quality": 4,
       "via_theme": "EV_Components"
     },
     {
       "symbol": "TANLA",
       "name": "Tanla Platforms Ltd.",
-      "conviction": 37,
+      "conviction": 44,
       "quality": 4,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "SONATSOFTW",
-      "name": "Sonata Software Ltd.",
-      "conviction": 37,
-      "quality": 6,
       "via_theme": "FutureEconomy"
     },
     {
       "symbol": "SONATSOFTW",
       "name": "Sonata Software Ltd.",
-      "conviction": 37,
+      "conviction": 44,
       "quality": 6,
       "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "MCX",
+      "name": "Multi Commodity Exchange of India Ltd.",
+      "conviction": 44,
+      "quality": 2,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "SONATSOFTW",
+      "name": "Sonata Software Ltd.",
+      "conviction": 44,
+      "quality": 6,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "TANLA",
+      "name": "Tanla Platforms Ltd.",
+      "conviction": 44,
+      "quality": 4,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "DSSL",
+      "name": "Dynacons Systems & Solutions Ltd.",
+      "conviction": 43,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "CPPLUS",
+      "name": "Aditya Infotech Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "ABSLAMC",
+      "name": "Aditya Birla Sun Life AMC Ltd.",
+      "conviction": 43,
+      "quality": 5,
+      "via_theme": "FutureEconomy"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "FutureEconomy"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**CASTROLIND — Double conviction hit (EV + DataCentre) in secular growth tailwinds; structural demand secular, not event-dependent.** Watch 49% conviction score holding above 45 on next macro reset.",
+  "vikram_verdict": "CASTROLIND — Double conviction hit (EV_Components + DataCentre) in a macro inflection; structural tailwinds across two growth vectors. — Watch FY25 EV lubes revenue growth (target: 25%+ YoY) and datacentre cooling fluid offtake.",
   "generated_date": "2026-05-12"
 }

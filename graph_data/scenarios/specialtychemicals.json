@@ -9,6 +9,20 @@
       "via_theme": "SpecialtyChemicals"
     },
     {
+      "symbol": "RAIN",
+      "name": "Rain Industries Ltd.",
+      "conviction": 36,
+      "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "KANSAINER",
+      "name": "Kansai Nerolac Paints Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
       "symbol": "RALLIS",
       "name": "Rallis India Ltd.",
       "conviction": 33,
@@ -16,24 +30,59 @@
       "via_theme": "SpecialtyChemicals"
     },
     {
-      "symbol": "RAIN",
-      "name": "Rain Industries Ltd.",
-      "conviction": 29,
+      "symbol": "VIYASH",
+      "name": "Viyash Scientific Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "AEGISVOPAK",
+      "name": "Aegis Vopak Terminals Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "VINATIORGA",
+      "name": "Vinati Organics Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SUPRIYA",
+      "name": "Supriya Lifescience Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "GULPOLY",
+      "name": "Gulshan Polyols Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "PRIVISCL",
+      "name": "Privi Speciality Chemicals Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SRF",
+      "name": "SRF Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "UPL",
+      "name": "UPL Ltd.",
+      "conviction": 31,
       "quality": 2,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "SYNGENE",
-      "name": "Syngene International Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "KANSAINER",
-      "name": "Kansai Nerolac Paints Ltd.",
-      "conviction": 28,
-      "quality": 3,
       "via_theme": "SpecialtyChemicals"
     },
     {
@@ -44,105 +93,56 @@
       "via_theme": "SpecialtyChemicals"
     },
     {
-      "symbol": "CLEAN",
-      "name": "Clean Science & Technology Ltd.",
-      "conviction": 26,
+      "symbol": "SYNGENE",
+      "name": "Syngene International Ltd.",
+      "conviction": 28,
       "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "GULPOLY",
-      "name": "Gulshan Polyols Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "IPL",
-      "name": "India Pesticides Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "SRF",
-      "name": "SRF Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "ANTHEM",
-      "name": "Anthem Biosciences Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "CHENNPETRO",
-      "name": "Chennai Petroleum Corporation Ltd.",
-      "conviction": 25,
-      "quality": 5,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "AEGISVOPAK",
-      "name": "Aegis Vopak Terminals Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "SUPRIYA",
-      "name": "Supriya Lifescience Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "VIYASH",
-      "name": "Viyash Scientific Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "SHARDACROP",
-      "name": "Sharda Cropchem Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "PRIVISCL",
-      "name": "Privi Speciality Chemicals Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "VINATIORGA",
-      "name": "Vinati Organics Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "SpecialtyChemicals"
-    },
-    {
-      "symbol": "UPL",
-      "name": "UPL Ltd.",
-      "conviction": 24,
-      "quality": 2,
       "via_theme": "SpecialtyChemicals"
     },
     {
       "symbol": "NAVINFLUOR",
       "name": "Navin Fluorine International Ltd.",
-      "conviction": 21,
+      "conviction": 28,
       "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "ACUTAAS",
+      "name": "Acutaas Chemicals Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "SAILIFE",
+      "name": "Sai Life Science Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "MANORAMA",
+      "name": "Manorama Industries Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "AETHER",
+      "name": "Aether Industries Ltd.",
+      "conviction": 27,
+      "quality": 5,
+      "via_theme": "SpecialtyChemicals"
+    },
+    {
+      "symbol": "HSCL",
+      "name": "Himadri Speciality Chemical Ltd.",
+      "conviction": 27,
+      "quality": 3,
       "via_theme": "SpecialtyChemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**BLUEJET — highest conviction score with cleanest SpecialtyChemicals exposure and strongest operational leverage to sector tailwinds — key metric: gross margins expansion trajectory (target: 200bps+ YoY).**",
+  "vikram_verdict": "**BLUEJET — Highest conviction score with cleanest specialty chemicals exposure; commanding 41-point lead suggests market hasn't fully priced the macro tailwind yet.** — **Watch EV/Sales compression below 2.5x as the key inflection point for re-rating.**",
   "generated_date": "2026-05-12"
 }

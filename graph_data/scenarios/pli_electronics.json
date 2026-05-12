@@ -2,30 +2,44 @@
   "theme": "PLI_Electronics",
   "tier1": [
     {
-      "symbol": "NETWEB",
-      "name": "Netweb Technologies India Ltd.",
-      "conviction": 36,
+      "symbol": "CPPLUS",
+      "name": "Aditya Infotech Ltd.",
+      "conviction": 43,
       "quality": 7,
       "via_theme": "PLI_Electronics"
     },
     {
-      "symbol": "CPPLUS",
-      "name": "Aditya Infotech Ltd.",
-      "conviction": 36,
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
       "quality": 7,
       "via_theme": "PLI_Electronics"
     },
     {
       "symbol": "EBGNG",
       "name": "GNG Electronics Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 7,
       "via_theme": "PLI_Electronics"
     },
     {
       "symbol": "PREMIERENE",
       "name": "Premier Energies Ltd.",
-      "conviction": 33,
+      "conviction": 40,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "WAAREEENER",
+      "name": "Waaree Energies Ltd.",
+      "conviction": 35,
+      "quality": 5,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "ENDURANCE",
+      "name": "Endurance Technologies Ltd.",
+      "conviction": 32,
       "quality": 3,
       "via_theme": "PLI_Electronics"
     },
@@ -37,13 +51,6 @@
       "via_theme": "PLI_Electronics"
     },
     {
-      "symbol": "WAAREEENER",
-      "name": "Waaree Energies Ltd.",
-      "conviction": 28,
-      "quality": 5,
-      "via_theme": "PLI_Electronics"
-    },
-    {
       "symbol": "BBOX",
       "name": "Black Box Ltd.",
       "conviction": 28,
@@ -51,9 +58,51 @@
       "via_theme": "PLI_Electronics"
     },
     {
-      "symbol": "ENDURANCE",
-      "name": "Endurance Technologies Ltd.",
-      "conviction": 25,
+      "symbol": "SYRMA",
+      "name": "Syrma SGS Technology Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "AMBER",
+      "name": "Amber Enterprises India Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "RPTECH",
+      "name": "Rashi Peripherals Ltd.",
+      "conviction": 27,
+      "quality": 5,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "DLINKINDIA",
+      "name": "D-Link (India) Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "UNOMINDA",
+      "name": "UNO Minda Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "RISHABH",
+      "name": "Rishabh Instruments Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "PLI_Electronics"
     },
@@ -65,84 +114,35 @@
       "via_theme": "PLI_Electronics"
     },
     {
-      "symbol": "AMBER",
-      "name": "Amber Enterprises India Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "MOSCHIP",
-      "name": "MosChip Technologies Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "SEDEMAC",
-      "name": "SEDEMAC Mechatronics Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "SYRMA",
-      "name": "Syrma SGS Technology Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "RISHABH",
-      "name": "Rishabh Instruments Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "RPTECH",
-      "name": "Rashi Peripherals Ltd.",
-      "conviction": 20,
-      "quality": 5,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "CYIENTDLM",
-      "name": "Cyient DLM Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "DLINKINDIA",
-      "name": "D-Link (India) Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
-      "symbol": "UNOMINDA",
-      "name": "UNO Minda Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "PLI_Electronics"
-    },
-    {
       "symbol": "VOLTAS",
       "name": "Voltas Ltd.",
-      "conviction": 16,
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "PGEL",
+      "name": "PG Electroplast Ltd.",
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "AVALON",
+      "name": "Avalon Technologies Ltd.",
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "REDINGTON",
+      "name": "Redington Ltd.",
+      "conviction": 23,
       "quality": 2,
       "via_theme": "PLI_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**NETWEB** — Highest conviction score (36) with cleanest PLI_Electronics exposure; smallest market cap = maximum upside leverage — **Track FY25 revenue growth and order book additions quarterly**.",
+  "vikram_verdict": "**CPPLUS — Highest conviction play with equal positioning to NETWEB/EBGNG but superior electronics manufacturing leverage and lower market cap optionality.** Watch gross margin expansion above 22% YoY as PLI subsidies flow through FY25-26.",
   "generated_date": "2026-05-12"
 }

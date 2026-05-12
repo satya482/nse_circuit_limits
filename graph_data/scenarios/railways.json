@@ -2,6 +2,20 @@
   "theme": "Railways",
   "tier1": [
     {
+      "symbol": "IRCTC",
+      "name": "Indian Railway Catering & Tourism Corporation Ltd.",
+      "conviction": 43,
+      "quality": 5,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "WHEELS",
+      "name": "Wheels India Ltd.",
+      "conviction": 40,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
       "symbol": "VIKRAN",
       "name": "Vikran Engineering Ltd.",
       "conviction": 36,
@@ -9,17 +23,73 @@
       "via_theme": "Railways"
     },
     {
-      "symbol": "IRCTC",
-      "name": "Indian Railway Catering & Tourism Corporation Ltd.",
-      "conviction": 36,
-      "quality": 5,
+      "symbol": "DYCL",
+      "name": "Dynamic Cables Ltd.",
+      "conviction": 32,
+      "quality": 3,
       "via_theme": "Railways"
     },
     {
-      "symbol": "WHEELS",
-      "name": "Wheels India Ltd.",
-      "conviction": 33,
+      "symbol": "GABRIEL",
+      "name": "Gabriel India Ltd.",
+      "conviction": 32,
       "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "CONCOR",
+      "name": "Container Corporation of India Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "ESCORTS",
+      "name": "Escorts Kubota Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "SCHAEFFLER",
+      "name": "Schaeffler India Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "SUNFLAG",
+      "name": "Sunflag Iron & Steel Company Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "KEC",
+      "name": "KEC International Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "ARE&M",
+      "name": "Amara Raja Energy & Mobility Ltd.",
+      "conviction": 31,
+      "quality": 2,
       "via_theme": "Railways"
     },
     {
@@ -30,6 +100,13 @@
       "via_theme": "Railways"
     },
     {
+      "symbol": "EXIDEIND",
+      "name": "Exide Industries Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "Railways"
+    },
+    {
       "symbol": "BEML",
       "name": "BEML Ltd.",
       "conviction": 28,
@@ -37,112 +114,35 @@
       "via_theme": "Railways"
     },
     {
-      "symbol": "SCHAEFFLER",
-      "name": "Schaeffler India Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "ESCORTS",
-      "name": "Escorts Kubota Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "DYCL",
-      "name": "Dynamic Cables Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "GABRIEL",
-      "name": "Gabriel India Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "KEC",
-      "name": "KEC International Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "SUNFLAG",
-      "name": "Sunflag Iron & Steel Company Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "CONCOR",
-      "name": "Container Corporation of India Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "NCC",
-      "name": "NCC Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "ARE&M",
-      "name": "Amara Raja Energy & Mobility Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "EXIDEIND",
-      "name": "Exide Industries Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "Railways"
-    },
-    {
       "symbol": "USHAMART",
       "name": "Usha Martin Ltd.",
-      "conviction": 21,
+      "conviction": 28,
       "quality": 2,
       "via_theme": "Railways"
     },
     {
       "symbol": "KAYNES",
       "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Railways"
-    },
-    {
-      "symbol": "JWL",
-      "name": "Jupiter Wagons Ltd.",
-      "conviction": 20,
+      "conviction": 27,
       "quality": 3,
       "via_theme": "Railways"
     },
     {
       "symbol": "RAILTEL",
       "name": "RailTel Corporation of India Ltd.",
-      "conviction": 20,
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Railways"
+    },
+    {
+      "symbol": "HBLENGINE",
+      "name": "HBL Engineering Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "Railways"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**VIKRAM** — Only play with genuine 36/100 conviction when Railways tailwinds are cyclical; IRCTC matches conviction but faces structural monetization caps. — Watch operating leverage: target 40%+ EBITDA margin expansion within 18 months or exit.",
+  "vikram_verdict": "**IRCTC — Monopoly ticketing moat expands with railway capex surge, highest conviction reflects lowest execution risk — 43% conviction score with Railways exposure.**\n\n**Watch WHEELS as contrarian pick — operational leverage on freight/wagon demand is underpriced versus IRCTC's already-inflated valuations — 40 conviction with better risk-reward asymmetry.**",
   "generated_date": "2026-05-12"
 }

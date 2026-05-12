@@ -4,21 +4,49 @@
     {
       "symbol": "CASTROLIND",
       "name": "Castrol India Ltd.",
-      "conviction": 49,
+      "conviction": 56,
       "quality": 7,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
       "via_theme": "DataCentre"
     },
     {
       "symbol": "CIGNITITEC",
       "name": "Cigniti Technologies Ltd.",
-      "conviction": 41,
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "SONATSOFTW",
+      "name": "Sonata Software Ltd.",
+      "conviction": 44,
+      "quality": 6,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "TANLA",
+      "name": "Tanla Platforms Ltd.",
+      "conviction": 44,
+      "quality": 4,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "DSSL",
+      "name": "Dynacons Systems & Solutions Ltd.",
+      "conviction": 43,
       "quality": 5,
       "via_theme": "DataCentre"
     },
@@ -30,17 +58,10 @@
       "via_theme": "DataCentre"
     },
     {
-      "symbol": "TANLA",
-      "name": "Tanla Platforms Ltd.",
-      "conviction": 37,
-      "quality": 4,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "SONATSOFTW",
-      "name": "Sonata Software Ltd.",
-      "conviction": 37,
-      "quality": 6,
+      "symbol": "TATACOMM",
+      "name": "Tata Communications Ltd.",
+      "conviction": 38,
+      "quality": 5,
       "via_theme": "DataCentre"
     },
     {
@@ -51,38 +72,66 @@
       "via_theme": "DataCentre"
     },
     {
-      "symbol": "NETWEB",
-      "name": "Netweb Technologies India Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "DSSL",
-      "name": "Dynacons Systems & Solutions Ltd.",
-      "conviction": 36,
-      "quality": 5,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "TATACOMM",
-      "name": "Tata Communications Ltd.",
-      "conviction": 31,
-      "quality": 5,
-      "via_theme": "DataCentre"
-    },
-    {
       "symbol": "PERSISTENT",
       "name": "Persistent Systems Ltd.",
-      "conviction": 29,
+      "conviction": 36,
       "quality": 2,
       "via_theme": "DataCentre"
     },
     {
-      "symbol": "LTTS",
-      "name": "L&T Technology Services Ltd.",
-      "conviction": 28,
+      "symbol": "RSYSTEMS",
+      "name": "R Systems International Ltd.",
+      "conviction": 35,
+      "quality": 5,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "ROUTE",
+      "name": "Route Mobile Ltd.",
+      "conviction": 35,
       "quality": 3,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "HEXT",
+      "name": "Hexaware Technologies Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "AFFLE",
+      "name": "Affle 3I Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "BSOFT",
+      "name": "Birlasoft Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "RATEGAIN",
+      "name": "RateGain Travel Technologies Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "DataCentre"
+    },
+    {
+      "symbol": "EXIDEIND",
+      "name": "Exide Industries Ltd.",
+      "conviction": 28,
+      "quality": 2,
       "via_theme": "DataCentre"
     },
     {
@@ -91,58 +140,9 @@
       "conviction": 28,
       "quality": 5,
       "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "ROUTE",
-      "name": "Route Mobile Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "HEXT",
-      "name": "Hexaware Technologies Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "RSYSTEMS",
-      "name": "R Systems International Ltd.",
-      "conviction": 28,
-      "quality": 5,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "EXPLEOSOL",
-      "name": "Expleo Solutions Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "AFFLE",
-      "name": "Affle 3I Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "BSOFT",
-      "name": "Birlasoft Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "DataCentre"
-    },
-    {
-      "symbol": "STLTECH",
-      "name": "Sterlite Technologies Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "DataCentre"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**CASTROLIND — Thermal management is the unglamorous chokepoint in datacenter buildouts; with 49 conviction and thermal fluid exposure, this scales hard as power density climbs — Watch PUE (Power Usage Effectiveness) trends across hyperscaler capex cycles.**\n\n**INGERRAND as hedge — Conviction 41 is respectable for semiconductor/infra plays riding the same wave, lower beta than CASTROL if datacenter CAPEX softens — Track semiconductor equipment order books (billings guidance).**",
+  "vikram_verdict": "**CASTROLIND** — Only 56% conviction across entire DataCentre thesis means structural moat in cooling/lubricants for server infrastructure; rest are riding hype. — Watch gross margins above 35% next quarter; if they compress, the DataCentre tailwind narrative collapses.",
   "generated_date": "2026-05-12"
 }

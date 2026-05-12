@@ -4,14 +4,49 @@
     {
       "symbol": "SCODATUBES",
       "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "PowerT&D"
     },
     {
       "symbol": "SCHNEIDER",
       "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Ltd.",
+      "conviction": 40,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SBCL",
+      "name": "Shivalik Bimetal Controls Ltd.",
+      "conviction": 39,
+      "quality": 6,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "IEX",
+      "name": "Indian Energy Exchange Ltd.",
+      "conviction": 39,
+      "quality": 6,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "VIKRAN",
+      "name": "Vikran Engineering Ltd.",
+      "conviction": 36,
       "quality": 5,
       "via_theme": "PowerT&D"
     },
@@ -23,38 +58,59 @@
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "VIKRAN",
-      "name": "Vikran Engineering Ltd.",
-      "conviction": 36,
+      "symbol": "APARINDS",
+      "name": "Apar Industries Ltd.",
+      "conviction": 35,
       "quality": 5,
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "SHILCTECH",
-      "name": "Shilchar Technologies Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "TRANSRAILL",
-      "name": "Transrail Lighting Ltd.",
-      "conviction": 33,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "SBCL",
-      "name": "Shivalik Bimetal Controls Ltd.",
+      "symbol": "DYCL",
+      "name": "Dynamic Cables Ltd.",
       "conviction": 32,
-      "quality": 6,
+      "quality": 3,
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "IEX",
-      "name": "Indian Energy Exchange Ltd.",
+      "symbol": "TECHNOE",
+      "name": "Techno Electric & Engineering Company Ltd.",
       "conviction": 32,
-      "quality": 6,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "TORNTPOWER",
+      "name": "Torrent Power Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "SKIPPER",
+      "name": "Skipper Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "PRECWIRE",
+      "name": "Precision Wires India Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "KEC",
+      "name": "KEC International Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Ltd.",
+      "conviction": 31,
+      "quality": 2,
       "via_theme": "PowerT&D"
     },
     {
@@ -62,6 +118,13 @@
       "name": "Rail Vikas Nigam Ltd.",
       "conviction": 30,
       "quality": 3,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "RECLTD",
+      "name": "REC Ltd.",
+      "conviction": 30,
+      "quality": 5,
       "via_theme": "PowerT&D"
     },
     {
@@ -77,72 +140,9 @@
       "conviction": 28,
       "quality": 3,
       "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "APARINDS",
-      "name": "Apar Industries Ltd.",
-      "conviction": 28,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "TECHNOE",
-      "name": "Techno Electric & Engineering Company Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "PRECWIRE",
-      "name": "Precision Wires India Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "DYCL",
-      "name": "Dynamic Cables Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "TORNTPOWER",
-      "name": "Torrent Power Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "HINDCOPPER",
-      "name": "Hindustan Copper Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "SKIPPER",
-      "name": "Skipper Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "KEC",
-      "name": "KEC International Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "NCC",
-      "name": "NCC Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "PowerT&D"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**SCHNEIDER — Global scale + India's power infrastructure capex boom creates structural tailwinds; domestic competitor lacks balance sheet heft.** — Watch 18-24% revenue CAGR in India operations and 200bps EBIT margin expansion over next 3 years.",
+  "vikram_verdict": "**SCHNEIDER — Global scale + India T&D tailwinds = compound growth; local competitor SCODATUBES lacks export moat.** — Watch PAT CAGR; need 18%+ over 24 months to justify conviction 48.",
   "generated_date": "2026-05-12"
 }

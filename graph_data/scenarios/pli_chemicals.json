@@ -16,9 +16,16 @@
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "RCF",
-      "name": "Rashtriya Chemicals & Fertilizers Ltd.",
-      "conviction": 33,
+      "symbol": "KANSAINER",
+      "name": "Kansai Nerolac Paints Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "KRISHANA",
+      "name": "Krishana Phoschem Ltd.",
+      "conviction": 35,
       "quality": 3,
       "via_theme": "PLI_Chemicals"
     },
@@ -30,6 +37,55 @@
       "via_theme": "PLI_Chemicals"
     },
     {
+      "symbol": "RCF",
+      "name": "Rashtriya Chemicals & Fertilizers Ltd.",
+      "conviction": 33,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "VIYASH",
+      "name": "Viyash Scientific Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SRF",
+      "name": "SRF Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "VINATIORGA",
+      "name": "Vinati Organics Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "SUPRIYA",
+      "name": "Supriya Lifescience Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "UPL",
+      "name": "UPL Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "IPCALAB",
+      "name": "Ipca Laboratories Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
       "symbol": "PCBL",
       "name": "PCBL Chemical Ltd.",
       "conviction": 28,
@@ -37,10 +93,17 @@
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "KANSAINER",
-      "name": "Kansai Nerolac Paints Ltd.",
+      "symbol": "TIMETECHNO",
+      "name": "Time Technoplast Ltd.",
       "conviction": 28,
-      "quality": 3,
+      "quality": 2,
+      "via_theme": "PLI_Chemicals"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "name": "Navin Fluorine International Ltd.",
+      "conviction": 28,
+      "quality": 2,
       "via_theme": "PLI_Chemicals"
     },
     {
@@ -51,98 +114,35 @@
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "KRISHANA",
-      "name": "Krishana Phoschem Ltd.",
+      "symbol": "ACUTAAS",
+      "name": "Acutaas Chemicals Ltd.",
       "conviction": 28,
-      "quality": 3,
+      "quality": 2,
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "CLEAN",
-      "name": "Clean Science & Technology Ltd.",
-      "conviction": 26,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "SUPRIYA",
-      "name": "Supriya Lifescience Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "VIYASH",
-      "name": "Viyash Scientific Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "CHENNPETRO",
-      "name": "Chennai Petroleum Corporation Ltd.",
-      "conviction": 25,
+      "symbol": "AETHER",
+      "name": "Aether Industries Ltd.",
+      "conviction": 27,
       "quality": 5,
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "AKUMS",
-      "name": "Akums Drugs & Pharmaceuticals Ltd.",
-      "conviction": 25,
+      "symbol": "HSCL",
+      "name": "Himadri Speciality Chemical Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "PLI_Chemicals"
     },
     {
-      "symbol": "IPL",
-      "name": "India Pesticides Ltd.",
-      "conviction": 25,
+      "symbol": "BAJAJHCARE",
+      "name": "Bajaj Healthcare Ltd.",
+      "conviction": 27,
       "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "SRF",
-      "name": "SRF Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "VINATIORGA",
-      "name": "Vinati Organics Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "SHARDACROP",
-      "name": "Sharda Cropchem Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "UPL",
-      "name": "UPL Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "IPCALAB",
-      "name": "Ipca Laboratories Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "NAVINFLUOR",
-      "name": "Navin Fluorine International Ltd.",
-      "conviction": 21,
-      "quality": 2,
       "via_theme": "PLI_Chemicals"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**BLUEJET — highest conviction score (41) signals strongest structural positioning in PLI chemicals ecosystem with proven execution capability — watch 25-30% earnings CAGR over next 2 years as PLI capex materializes.**",
+  "vikram_verdict": "**BLUEJET — Highest conviction score (41) with direct PLI_Chemicals exposure; management execution on capex timeline is make-or-break.** — **Watch: FY25 revenue growth rate vs. 35% PLI subsidy realization.**",
   "generated_date": "2026-05-12"
 }

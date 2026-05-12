@@ -4,14 +4,14 @@
     {
       "symbol": "ACE",
       "name": "Action Construction Equipment Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 5,
       "via_theme": "Ports"
     },
     {
       "symbol": "KMEW",
       "name": "Knowledge Marine & Engineering Works Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 7,
       "via_theme": "Ports"
     },
@@ -19,6 +19,27 @@
       "symbol": "SHREEJISPG",
       "name": "Shreeji Shipping Global Ltd.",
       "conviction": 36,
+      "quality": 5,
+      "via_theme": "Ports"
+    },
+    {
+      "symbol": "CONCOR",
+      "name": "Container Corporation of India Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Ports"
+    },
+    {
+      "symbol": "AEGISVOPAK",
+      "name": "Aegis Vopak Terminals Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Ports"
+    },
+    {
+      "symbol": "RECLTD",
+      "name": "REC Ltd.",
+      "conviction": 30,
       "quality": 5,
       "via_theme": "Ports"
     },
@@ -37,50 +58,36 @@
       "via_theme": "Ports"
     },
     {
-      "symbol": "CONCOR",
-      "name": "Container Corporation of India Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Ports"
-    },
-    {
-      "symbol": "AEGISVOPAK",
-      "name": "Aegis Vopak Terminals Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Ports"
-    },
-    {
-      "symbol": "RECLTD",
-      "name": "REC Ltd.",
-      "conviction": 23,
-      "quality": 5,
-      "via_theme": "Ports"
-    },
-    {
       "symbol": "USHAMART",
       "name": "Usha Martin Ltd.",
-      "conviction": 21,
+      "conviction": 28,
       "quality": 2,
       "via_theme": "Ports"
     },
     {
       "symbol": "GPPL",
       "name": "Gujarat Pipavav Port Ltd.",
-      "conviction": 21,
+      "conviction": 28,
       "quality": 2,
-      "via_theme": "Ports"
-    },
-    {
-      "symbol": "SCI",
-      "name": "Shipping Corporation of India Ltd.",
-      "conviction": 20,
-      "quality": 3,
       "via_theme": "Ports"
     },
     {
       "symbol": "COCHINSHIP",
       "name": "Cochin Shipyard Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Ports"
+    },
+    {
+      "symbol": "AEGISLOG",
+      "name": "Aegis Logistics Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Ports"
+    },
+    {
+      "symbol": "SCI",
+      "name": "Shipping Corporation of India Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Ports"
@@ -93,35 +100,28 @@
       "via_theme": "Ports"
     },
     {
-      "symbol": "AEGISLOG",
-      "name": "Aegis Logistics Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Ports"
-    },
-    {
       "symbol": "BHARATWIRE",
       "name": "Bharat Wire Ropes Ltd.",
-      "conviction": 9,
+      "conviction": 16,
       "quality": 0,
       "via_theme": "Ports"
     },
     {
       "symbol": "AFCONS",
       "name": "Afcons Infrastructure Ltd.",
-      "conviction": 5,
+      "conviction": 12,
       "quality": 1,
       "via_theme": "Ports"
     },
     {
       "symbol": "SWANCORP",
       "name": "Swan Corp Ltd.",
-      "conviction": 0,
+      "conviction": 7,
       "quality": 1,
       "via_theme": "Ports"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**ACE — Market leader in port infrastructure with proven execution track record; highest conviction score justifies concentration.** — Watch: Container throughput growth YoY and EBITDA margin expansion to 38%+.",
+  "vikram_verdict": "**ACE** — Best-in-class port infrastructure play with highest conviction; dominates container handling at major hubs. — **Watch FY25 EBITDA margin expansion to 45%+** as port volumes surge.",
   "generated_date": "2026-05-12"
 }

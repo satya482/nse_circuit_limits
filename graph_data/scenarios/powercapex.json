@@ -4,145 +4,145 @@
     {
       "symbol": "SCODATUBES",
       "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "TRITURBINE",
-      "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
-      "quality": 7,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "PowerCapex"
     },
     {
       "symbol": "TRITURBINE",
       "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 48,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
       "via_theme": "RenewableEnergy"
     },
     {
       "symbol": "SCHNEIDER",
       "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "PowerCapex"
     },
     {
       "symbol": "INGERRAND",
       "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "WAAREERTL",
-      "name": "Waaree Renewable Technologies Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "WAAREERTL",
-      "name": "Waaree Renewable Technologies Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "VIDYAWIRES",
-      "name": "Vidya Wires Ltd.",
-      "conviction": 36,
+      "conviction": 48,
       "quality": 5,
       "via_theme": "PowerCapex"
     },
     {
-      "symbol": "SHILCTECH",
-      "name": "Shilchar Technologies Ltd.",
-      "conviction": 36,
-      "quality": 7,
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "INOXINDIA",
-      "name": "Inox India Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "VIKRAN",
-      "name": "Vikran Engineering Ltd.",
-      "conviction": 36,
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
       "quality": 5,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "OSWALPUMPS",
-      "name": "Oswal Pumps Ltd.",
-      "conviction": 36,
-      "quality": 7,
       "via_theme": "RenewableEnergy"
     },
     {
-      "symbol": "SHILCTECH",
-      "name": "Shilchar Technologies Ltd.",
-      "conviction": 36,
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 43,
       "quality": 7,
       "via_theme": "PowerCapex"
     },
     {
       "symbol": "SHAKTIPUMP",
       "name": "Shakti Pumps (India) Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 5,
       "via_theme": "RenewableEnergy"
     },
     {
-      "symbol": "VIDYAWIRES",
-      "name": "Vidya Wires Ltd.",
-      "conviction": 36,
-      "quality": 5,
+      "symbol": "WAAREERTL",
+      "name": "Waaree Renewable Technologies Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 43,
+      "quality": 7,
       "via_theme": "PowerT&D"
     },
     {
-      "symbol": "VIKRAN",
-      "name": "Vikran Engineering Ltd.",
-      "conviction": 36,
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "OSWALPUMPS",
+      "name": "Oswal Pumps Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "INOXINDIA",
+      "name": "Inox India Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Ltd.",
+      "conviction": 40,
       "quality": 5,
-      "via_theme": "PowerT&D"
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "PREMIERENE",
+      "name": "Premier Energies Ltd.",
+      "conviction": 40,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Ltd.",
+      "conviction": 40,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "NAVA",
+      "name": "NAVA Ltd.",
+      "conviction": 40,
+      "quality": 3,
+      "via_theme": "RenewableEnergy"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**TRITURBINE — dual exposure to both PowerCapex and RenewableEnergy thrusts; cleanest play on India's capex cycle** — **Order book growth >25% YoY.**\n\n**SCHNEIDER (secondary position) — defensive diversification across PowerT&D and PowerCapex with global hedges** — **Operating margin expansion to 18%+.**",
+  "vikram_verdict": "**TRITURBINE — dual conviction pathways (PowerCapex + RenewableEnergy) with structural tailwinds vs single-theme plays — watch FY25 order book growth ≥25% YoY.**\n\n**SCODATUBES — similar dual-theme exposure but inferior execution history; SCHNEIDER too diversified to capture full PowerCapex upside.**",
   "generated_date": "2026-05-12"
 }

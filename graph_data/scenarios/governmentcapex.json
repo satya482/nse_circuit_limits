@@ -2,6 +2,118 @@
   "theme": "GovernmentCapex",
   "tier1": [
     {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 48,
+      "quality": 7,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 48,
+      "quality": 7,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "Defence"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerCapex"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "Defence_Platforms"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "PowerT&D"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "RenewableEnergy"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "GovernmentCapex"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 48,
+      "quality": 7,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "InfraCapex"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "GovernmentCapex"
+    },
+    {
       "symbol": "RSL",
       "name": "Rajputana Stainless Ltd.",
       "conviction": 46,
@@ -9,140 +121,28 @@
       "via_theme": "InfraCapex"
     },
     {
-      "symbol": "GRSE",
-      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "Defence"
-    },
-    {
-      "symbol": "TRITURBINE",
-      "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 43,
       "quality": 7,
       "via_theme": "InfraCapex"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "TRITURBINE",
-      "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
-      "quality": 7,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerCapex"
-    },
-    {
-      "symbol": "GRSE",
-      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "Defence_Platforms"
-    },
-    {
-      "symbol": "TRITURBINE",
-      "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
-      "quality": 7,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "RenewableEnergy"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "GovernmentCapex"
-    },
-    {
-      "symbol": "SCHNEIDER",
-      "name": "Schneider Electric Infrastructure Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "InfraCapex"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "PowerT&D"
-    },
-    {
-      "symbol": "GRSE",
-      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "GovernmentCapex"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "InfraCapex"
-    },
-    {
-      "symbol": "KMEW",
-      "name": "Knowledge Marine & Engineering Works Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "GovernmentCapex"
     },
     {
       "symbol": "NETWEB",
       "name": "Netweb Technologies India Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 7,
       "via_theme": "GovernmentCapex"
     },
     {
-      "symbol": "EIEL",
-      "name": "Enviro Infra Engineers Ltd.",
-      "conviction": 36,
-      "quality": 7,
+      "symbol": "DSSL",
+      "name": "Dynacons Systems & Solutions Ltd.",
+      "conviction": 43,
+      "quality": 5,
       "via_theme": "GovernmentCapex"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**RSL — Only pure-play InfraCapex lever with 46 conviction; others diluted across sectors — Watch order book growth trajectory (target 15-20% YoY acceleration).**\n\n**GRSE — Defence capex is stickier but cyclical; skip unless order visibility extends 3+ years — Monitor defence order pipeline updates quarterly.**",
+  "vikram_verdict": "**TRITURBINE — Only stock hitting convict-level 48 across TWO independent capex channels (Renewable + Power), signaling structural demand, not one-off policy noise.** — **Watch FY25 order book growth >25% YoY; anything below suggests GovernmentCapex cycle already priced in.**",
   "generated_date": "2026-05-12"
 }

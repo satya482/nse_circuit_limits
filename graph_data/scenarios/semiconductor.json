@@ -4,8 +4,15 @@
     {
       "symbol": "KPITTECH",
       "name": "KPIT Technologies Ltd.",
-      "conviction": 40,
+      "conviction": 47,
       "quality": 4,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
       "via_theme": "Semiconductor"
     },
     {
@@ -16,23 +23,16 @@
       "via_theme": "Semiconductor"
     },
     {
-      "symbol": "NETWEB",
-      "name": "Netweb Technologies India Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "Semiconductor"
-    },
-    {
       "symbol": "PERSISTENT",
       "name": "Persistent Systems Ltd.",
-      "conviction": 29,
+      "conviction": 36,
       "quality": 2,
       "via_theme": "Semiconductor"
     },
     {
       "symbol": "HEXT",
       "name": "Hexaware Technologies Ltd.",
-      "conviction": 28,
+      "conviction": 35,
       "quality": 3,
       "via_theme": "Semiconductor"
     },
@@ -40,6 +40,20 @@
       "symbol": "LTTS",
       "name": "L&T Technology Services Ltd.",
       "conviction": 28,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "QUICKHEAL",
+      "name": "Quick Heal Technologies Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "Semiconductor"
     },
@@ -58,6 +72,20 @@
       "via_theme": "Semiconductor"
     },
     {
+      "symbol": "REDINGTON",
+      "name": "Redington Ltd.",
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "Semiconductor"
+    },
+    {
+      "symbol": "STALLION",
+      "name": "Stallion India Fluorochemicals Ltd.",
+      "conviction": 23,
+      "quality": 4,
+      "via_theme": "Semiconductor"
+    },
+    {
       "symbol": "MOSCHIP",
       "name": "MosChip Technologies Ltd.",
       "conviction": 21,
@@ -65,17 +93,10 @@
       "via_theme": "Semiconductor"
     },
     {
-      "symbol": "QUICKHEAL",
-      "name": "Quick Heal Technologies Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Semiconductor"
-    },
-    {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
-      "quality": 3,
+      "symbol": "E2E",
+      "name": "E2E Networks Ltd.",
+      "conviction": 18,
+      "quality": 2,
       "via_theme": "Semiconductor"
     },
     {
@@ -86,20 +107,6 @@
       "via_theme": "Semiconductor"
     },
     {
-      "symbol": "REDINGTON",
-      "name": "Redington Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Semiconductor"
-    },
-    {
-      "symbol": "STALLION",
-      "name": "Stallion India Fluorochemicals Ltd.",
-      "conviction": 16,
-      "quality": 4,
-      "via_theme": "Semiconductor"
-    },
-    {
       "symbol": "TEJASNET",
       "name": "Tejas Networks Ltd.",
       "conviction": 15,
@@ -107,21 +114,14 @@
       "via_theme": "Semiconductor"
     },
     {
-      "symbol": "E2E",
-      "name": "E2E Networks Ltd.",
-      "conviction": 11,
-      "quality": 2,
-      "via_theme": "Semiconductor"
-    },
-    {
       "symbol": "HAPPSTMNDS",
       "name": "Happiest Minds Technologies Ltd.",
-      "conviction": 1,
+      "conviction": 8,
       "quality": 2,
       "via_theme": "Semiconductor"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**KPITTECH — Clear leadership in semiconductor design services with highest conviction and direct exposure; momentum will compound.** — Watch 60% YoY revenue growth in semiconductor segment and 45%+ gross margins.",
+  "vikram_verdict": "**KPITTECH — Highest conviction play with proven semiconductor design expertise and strongest operational leverage to chip cycle upcycle — Watch gross margins expansion to 40%+ as semiconductor revenue ramps.**",
   "generated_date": "2026-05-12"
 }

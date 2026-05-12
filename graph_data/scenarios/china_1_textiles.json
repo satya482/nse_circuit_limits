@@ -2,10 +2,10 @@
   "theme": "China+1_Textiles",
   "tier1": [
     {
-      "symbol": "WELSPUNLIV",
-      "name": "Welspun Living Ltd.",
-      "conviction": 33,
-      "quality": 3,
+      "symbol": "PAGEIND",
+      "name": "Page Industries Ltd.",
+      "conviction": 39,
+      "quality": 6,
       "via_theme": "China+1_Textiles"
     },
     {
@@ -16,17 +16,45 @@
       "via_theme": "China+1_Textiles"
     },
     {
-      "symbol": "PAGEIND",
-      "name": "Page Industries Ltd.",
-      "conviction": 32,
-      "quality": 6,
+      "symbol": "WELSPUNLIV",
+      "name": "Welspun Living Ltd.",
+      "conviction": 33,
+      "quality": 3,
       "via_theme": "China+1_Textiles"
     },
     {
-      "symbol": "UNIPARTS",
-      "name": "Uniparts India Ltd.",
-      "conviction": 28,
+      "symbol": "SRF",
+      "name": "SRF Ltd.",
+      "conviction": 32,
       "quality": 3,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "KPRMILL",
+      "name": "KPR Mill Ltd.",
+      "conviction": 32,
+      "quality": 5,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "PRIVISCL",
+      "name": "Privi Speciality Chemicals Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "VMART",
+      "name": "V-Mart Retail Ltd.",
+      "conviction": 31,
+      "quality": 2,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "SAILIFE",
+      "name": "Sai Life Science Ltd.",
+      "conviction": 28,
+      "quality": 2,
       "via_theme": "China+1_Textiles"
     },
     {
@@ -37,6 +65,20 @@
       "via_theme": "China+1_Textiles"
     },
     {
+      "symbol": "SHAILY",
+      "name": "Shaily Engineering Plastics Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "name": "Navin Fluorine International Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "China+1_Textiles"
+    },
+    {
       "symbol": "BOMDYEING",
       "name": "Bombay Dyeing & Manufacturing Company Ltd.",
       "conviction": 28,
@@ -44,105 +86,63 @@
       "via_theme": "China+1_Textiles"
     },
     {
-      "symbol": "SRF",
-      "name": "SRF Ltd.",
-      "conviction": 25,
+      "symbol": "UNIPARTS",
+      "name": "Uniparts India Ltd.",
+      "conviction": 28,
       "quality": 3,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "IPL",
-      "name": "India Pesticides Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "SHARDACROP",
-      "name": "Sharda Cropchem Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "PRIVISCL",
-      "name": "Privi Speciality Chemicals Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "KPRMILL",
-      "name": "KPR Mill Ltd.",
-      "conviction": 25,
-      "quality": 5,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "VMART",
-      "name": "V-Mart Retail Ltd.",
-      "conviction": 24,
-      "quality": 2,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "SAILIFE",
-      "name": "Sai Life Science Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "SHAILY",
-      "name": "Shaily Engineering Plastics Ltd.",
-      "conviction": 21,
-      "quality": 2,
       "via_theme": "China+1_Textiles"
     },
     {
       "symbol": "TIMETECHNO",
       "name": "Time Technoplast Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "NAVINFLUOR",
-      "name": "Navin Fluorine International Ltd.",
-      "conviction": 21,
+      "conviction": 28,
       "quality": 2,
       "via_theme": "China+1_Textiles"
     },
     {
       "symbol": "GRWRHITECH",
       "name": "Garware Hi-Tech Films Ltd.",
-      "conviction": 20,
+      "conviction": 27,
       "quality": 3,
       "via_theme": "China+1_Textiles"
     },
     {
       "symbol": "AETHER",
       "name": "Aether Industries Ltd.",
-      "conviction": 20,
+      "conviction": 27,
       "quality": 5,
-      "via_theme": "China+1_Textiles"
-    },
-    {
-      "symbol": "BALKRISIND",
-      "name": "Balkrishna Industries Ltd.",
-      "conviction": 20,
-      "quality": 3,
       "via_theme": "China+1_Textiles"
     },
     {
       "symbol": "VTL",
       "name": "Vardhman Textiles Ltd.",
-      "conviction": 20,
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "NITINSPIN",
+      "name": "Nitin Spinners Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "AEROFLEX",
+      "name": "Aeroflex Industries Ltd.",
+      "conviction": 27,
+      "quality": 5,
+      "via_theme": "China+1_Textiles"
+    },
+    {
+      "symbol": "STYLAMIND",
+      "name": "Stylam Industries Ltd.",
+      "conviction": 27,
       "quality": 3,
       "via_theme": "China+1_Textiles"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**WELSPUNLIV — Largest pure-play beneficiary with highest conviction; already has scale and export infrastructure to capture China+1 shift immediately — Watch FY25E Revenue CAGR (target 18%+) and export order book growth.** Alternatively, **PAGEIND — Best margin expansion play with lowest execution risk; smaller base means 33% conviction translates to outsized returns — Track EBITDA margin expansion to 16%+ and capacity utilization above 85%.**",
+  "vikram_verdict": "**PAGEIND — Highest conviction score (39) with strongest China+1 tailwinds; already positioned as the sector's primary beneficiary.** — **Watch capacity utilization rates above 85% and export order pipeline growth YoY.**",
   "generated_date": "2026-05-12"
 }

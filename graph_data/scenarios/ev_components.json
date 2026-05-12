@@ -4,8 +4,29 @@
     {
       "symbol": "CASTROLIND",
       "name": "Castrol India Ltd.",
-      "conviction": 49,
+      "conviction": 56,
       "quality": 7,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 47,
+      "quality": 4,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "SHAKTIPUMP",
+      "name": "Shakti Pumps (India) Ltd.",
+      "conviction": 43,
+      "quality": 5,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "JAINREC",
+      "name": "Jain Resource Recycling Ltd.",
+      "conviction": 43,
+      "quality": 5,
       "via_theme": "EV_Components"
     },
     {
@@ -16,16 +37,37 @@
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "KPITTECH",
-      "name": "KPIT Technologies Ltd.",
+      "symbol": "NATIONALUM",
+      "name": "National Aluminium Company Ltd.",
       "conviction": 40,
-      "quality": 4,
+      "quality": 3,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "WHEELS",
+      "name": "Wheels India Ltd.",
+      "conviction": 40,
+      "quality": 3,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "CARRARO",
+      "name": "Carraro India Ltd.",
+      "conviction": 40,
+      "quality": 3,
       "via_theme": "EV_Components"
     },
     {
       "symbol": "TATAELXSI",
       "name": "Tata Elxsi Ltd.",
       "conviction": 40,
+      "quality": 6,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "SBCL",
+      "name": "Shivalik Bimetal Controls Ltd.",
+      "conviction": 39,
       "quality": 6,
       "via_theme": "EV_Components"
     },
@@ -37,112 +79,70 @@
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "JAINREC",
-      "name": "Jain Resource Recycling Ltd.",
-      "conviction": 36,
+      "symbol": "KROSS",
+      "name": "Kross Ltd.",
+      "conviction": 35,
       "quality": 5,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "SHAKTIPUMP",
-      "name": "Shakti Pumps (India) Ltd.",
-      "conviction": 36,
-      "quality": 5,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "CARRARO",
-      "name": "Carraro India Ltd.",
-      "conviction": 33,
-      "quality": 3,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "WHEELS",
-      "name": "Wheels India Ltd.",
-      "conviction": 33,
-      "quality": 3,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "NATIONALUM",
-      "name": "National Aluminium Company Ltd.",
-      "conviction": 33,
-      "quality": 3,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "SBCL",
-      "name": "Shivalik Bimetal Controls Ltd.",
-      "conviction": 32,
-      "quality": 6,
       "via_theme": "EV_Components"
     },
     {
       "symbol": "PRECAM",
       "name": "Precision Camshafts Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "CIEINDIA",
-      "name": "CIE Automotive India Ltd.",
-      "conviction": 28,
-      "quality": 3,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "KROSS",
-      "name": "Kross Ltd.",
-      "conviction": 28,
-      "quality": 5,
-      "via_theme": "EV_Components"
-    },
-    {
-      "symbol": "TATATECH",
-      "name": "Tata Technologies Ltd.",
-      "conviction": 28,
+      "conviction": 35,
       "quality": 3,
       "via_theme": "EV_Components"
     },
     {
       "symbol": "APARINDS",
       "name": "Apar Industries Ltd.",
-      "conviction": 28,
+      "conviction": 35,
       "quality": 5,
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "SUNFLAG",
-      "name": "Sunflag Iron & Steel Company Ltd.",
-      "conviction": 25,
+      "symbol": "CIEINDIA",
+      "name": "CIE Automotive India Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "TATATECH",
+      "name": "Tata Technologies Ltd.",
+      "conviction": 35,
+      "quality": 3,
+      "via_theme": "EV_Components"
+    },
+    {
+      "symbol": "GABRIEL",
+      "name": "Gabriel India Ltd.",
+      "conviction": 32,
       "quality": 3,
       "via_theme": "EV_Components"
     },
     {
       "symbol": "OLECTRA",
       "name": "Olectra Greentech Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "LUMAXTECH",
-      "name": "Lumax Auto Technologies Ltd.",
-      "conviction": 25,
+      "symbol": "SUNFLAG",
+      "name": "Sunflag Iron & Steel Company Ltd.",
+      "conviction": 32,
       "quality": 3,
       "via_theme": "EV_Components"
     },
     {
-      "symbol": "HINDCOPPER",
-      "name": "Hindustan Copper Ltd.",
-      "conviction": 25,
+      "symbol": "FORCEMOT",
+      "name": "Force Motors Ltd.",
+      "conviction": 32,
       "quality": 3,
       "via_theme": "EV_Components"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**CASTROLIND — Only pure-play lubrication specialist positioned across EV powertrain cooling and thermal management; competitors diluted by broader exposures — Track gross margin expansion to 42%+ as EV component orders scale.**",
+  "vikram_verdict": "**CASTROLIND — Structural moat in EV lubricants with pricing power as OEM adoption accelerates; nearest defensible competitor is years behind.** — Watch gross margins: need to sustain 35%+ to justify 56 conviction; any dip below 32% signals competitive pressure.",
   "generated_date": "2026-05-12"
 }

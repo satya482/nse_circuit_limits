@@ -4,8 +4,15 @@
     {
       "symbol": "ACE",
       "name": "Action Construction Equipment Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 5,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "BIRLACORPN",
+      "name": "Birla Corporation Ltd.",
+      "conviction": 40,
+      "quality": 3,
       "via_theme": "Roads"
     },
     {
@@ -16,10 +23,31 @@
       "via_theme": "Roads"
     },
     {
-      "symbol": "BIRLACORPN",
-      "name": "Birla Corporation Ltd.",
-      "conviction": 33,
+      "symbol": "IFCI",
+      "name": "IFCI Ltd.",
+      "conviction": 32,
       "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "SAMBHV",
+      "name": "Sambhv Steel Tubes Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "NBCC",
+      "name": "NBCC (India) Ltd.",
+      "conviction": 32,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Ltd.",
+      "conviction": 31,
+      "quality": 2,
       "via_theme": "Roads"
     },
     {
@@ -30,6 +58,20 @@
       "via_theme": "Roads"
     },
     {
+      "symbol": "RECLTD",
+      "name": "REC Ltd.",
+      "conviction": 30,
+      "quality": 5,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "USHAMART",
+      "name": "Usha Martin Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "Roads"
+    },
+    {
       "symbol": "MANINFRA",
       "name": "Man Infraconstruction Ltd.",
       "conviction": 28,
@@ -37,38 +79,45 @@
       "via_theme": "Roads"
     },
     {
-      "symbol": "SAMBHV",
-      "name": "Sambhv Steel Tubes Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "NBCC",
-      "name": "NBCC (India) Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "IFCI",
-      "name": "IFCI Ltd.",
-      "conviction": 25,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "NCC",
-      "name": "NCC Ltd.",
-      "conviction": 24,
+      "symbol": "APLAPOLLO",
+      "name": "APL Apollo Tubes Ltd.",
+      "conviction": 28,
       "quality": 2,
       "via_theme": "Roads"
     },
     {
-      "symbol": "RECLTD",
-      "name": "REC Ltd.",
+      "symbol": "JKTYRE",
+      "name": "JK Tyre & Industries Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "GRINFRA",
+      "name": "G R Infraprojects Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "POWERMECH",
+      "name": "Power Mech Projects Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "GOODLUCK",
+      "name": "Goodluck India Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Roads"
+    },
+    {
+      "symbol": "JKCEMENT",
+      "name": "JK Cement Ltd.",
       "conviction": 23,
-      "quality": 5,
+      "quality": 2,
       "via_theme": "Roads"
     },
     {
@@ -76,27 +125,6 @@
       "name": "Ceat Ltd.",
       "conviction": 21,
       "quality": 2,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "USHAMART",
-      "name": "Usha Martin Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "APLAPOLLO",
-      "name": "APL Apollo Tubes Ltd.",
-      "conviction": 21,
-      "quality": 2,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "POWERMECH",
-      "name": "Power Mech Projects Ltd.",
-      "conviction": 20,
-      "quality": 3,
       "via_theme": "Roads"
     },
     {
@@ -112,37 +140,9 @@
       "conviction": 20,
       "quality": 3,
       "via_theme": "Roads"
-    },
-    {
-      "symbol": "IRCON",
-      "name": "Ircon International Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "DALBHARAT",
-      "name": "Dalmia Bharat Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "JKTYRE",
-      "name": "JK Tyre & Industries Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Roads"
-    },
-    {
-      "symbol": "GOODLUCK",
-      "name": "Goodluck India Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Roads"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**ACE — Clear conviction leader with structural tailwind from Roads capex cycle** — Watch OCF conversion and order book growth trajectory at 40%+ CAGR.\n\n**NUVOCO as hedge — Cement demand from infrastructure spending offers defensive play if construction acceleration sustains** — Monitor blended realization and volume growth >15% YoY.",
+  "vikram_verdict": "**ACE — Highest conviction score with direct Roads exposure and strongest fundamentals in construction logistics; cement demand multiplier from infrastructure push will drive volume growth.** — Key metric: Watch order book growth rate (target 25%+ YoY) and cement offtake volumes in next two quarters.",
   "generated_date": "2026-05-12"
 }

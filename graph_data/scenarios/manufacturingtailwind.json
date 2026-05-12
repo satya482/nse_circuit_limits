@@ -4,9 +4,51 @@
     {
       "symbol": "CASTROLIND",
       "name": "Castrol India Ltd.",
-      "conviction": 49,
+      "conviction": 56,
       "quality": 7,
       "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "SCODATUBES",
+      "name": "Scoda Tubes Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Ltd.",
+      "conviction": 48,
+      "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "SMLMAH",
+      "name": "SML Mahindra Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "conviction": 48,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Ltd.",
+      "conviction": 47,
+      "quality": 4,
+      "via_theme": "Semiconductor"
     },
     {
       "symbol": "RSL",
@@ -16,133 +58,91 @@
       "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "TRITURBINE",
-      "name": "Triveni Turbine Ltd.",
-      "conviction": 41,
+      "symbol": "CPPLUS",
+      "name": "Aditya Infotech Ltd.",
+      "conviction": 43,
       "quality": 7,
-      "via_theme": "ManufacturingTailwind"
+      "via_theme": "PLI_Electronics"
     },
     {
-      "symbol": "GRSE",
-      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
-      "conviction": 41,
+      "symbol": "ACE",
+      "name": "Action Construction Equipment Ltd.",
+      "conviction": 43,
       "quality": 5,
       "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "SMLMAH",
-      "name": "SML Mahindra Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "TENNIND",
-      "name": "Tenneco Clean Air India Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "INGERRAND",
-      "name": "Ingersoll-Rand (India) Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "BLUEJET",
-      "name": "Blue Jet Healthcare Ltd",
-      "conviction": 41,
+      "symbol": "INOXINDIA",
+      "name": "Inox India Ltd.",
+      "conviction": 43,
       "quality": 7,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "SCODATUBES",
-      "name": "Scoda Tubes Ltd.",
-      "conviction": 41,
-      "quality": 5,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "KPITTECH",
-      "name": "KPIT Technologies Ltd.",
-      "conviction": 40,
-      "quality": 4,
-      "via_theme": "Semiconductor"
-    },
-    {
-      "symbol": "TATAELXSI",
-      "name": "Tata Elxsi Ltd.",
-      "conviction": 40,
-      "quality": 6,
-      "via_theme": "Semiconductor"
-    },
-    {
-      "symbol": "FACT",
-      "name": "The Fertilisers and Chemicals Travancore Ltd.",
-      "conviction": 39,
-      "quality": 7,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "FACT",
-      "name": "The Fertilisers and Chemicals Travancore Ltd.",
-      "conviction": 39,
-      "quality": 7,
-      "via_theme": "PLI_Chemicals"
-    },
-    {
-      "symbol": "SHILCTECH",
-      "name": "Shilchar Technologies Ltd.",
-      "conviction": 36,
-      "quality": 7,
-      "via_theme": "ManufacturingTailwind"
-    },
-    {
-      "symbol": "VIDYAWIRES",
-      "name": "Vidya Wires Ltd.",
-      "conviction": 36,
-      "quality": 5,
       "via_theme": "ManufacturingTailwind"
     },
     {
       "symbol": "OSWALPUMPS",
       "name": "Oswal Pumps Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 7,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "SHAKTIPUMP",
+      "name": "Shakti Pumps (India) Ltd.",
+      "conviction": 43,
+      "quality": 5,
+      "via_theme": "ManufacturingTailwind"
+    },
+    {
+      "symbol": "EBGNG",
+      "name": "GNG Electronics Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "PLI_Electronics"
+    },
+    {
+      "symbol": "JAINREC",
+      "name": "Jain Resource Recycling Ltd.",
+      "conviction": 43,
+      "quality": 5,
       "via_theme": "ManufacturingTailwind"
     },
     {
       "symbol": "WAAREERTL",
       "name": "Waaree Renewable Technologies Ltd.",
-      "conviction": 36,
+      "conviction": 43,
       "quality": 7,
       "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "ACE",
-      "name": "Action Construction Equipment Ltd.",
-      "conviction": 36,
-      "quality": 5,
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
       "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "CMPDI",
-      "name": "Central Mine Planning & Design Institute Ltd.",
-      "conviction": 36,
-      "quality": 5,
+      "symbol": "SHILCTECH",
+      "name": "Shilchar Technologies Ltd.",
+      "conviction": 43,
+      "quality": 7,
       "via_theme": "ManufacturingTailwind"
     },
     {
-      "symbol": "PACEDIGITK",
-      "name": "Pace Digitek Ltd.",
-      "conviction": 36,
-      "quality": 5,
-      "via_theme": "ManufacturingTailwind"
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Ltd.",
+      "conviction": 43,
+      "quality": 7,
+      "via_theme": "Semiconductor"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**CASTROLIND — highest conviction score (49) with clearest ManufacturingTailwind exposure through industrial lubricants demand surge; cleanest earnings leverage vs peers.** — **Watch FY25 volume growth >15% and gross margin expansion to 42%+ as the key validators of tailwind translation.**",
+  "vikram_verdict": "**CASTROLIND — 56 conviction is highest-quality signal in a crowded ManufacturingTailwind play; lubes defensibility beats commodity exposure of peers — Watch gross margin expansion trajectory.**",
   "generated_date": "2026-05-12"
 }

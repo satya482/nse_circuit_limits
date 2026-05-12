@@ -4,29 +4,43 @@
     {
       "symbol": "BDL",
       "name": "Bharat Dynamics Ltd.",
-      "conviction": 28,
+      "conviction": 35,
       "quality": 3,
       "via_theme": "Defence_Electronics"
     },
     {
       "symbol": "PARAS",
       "name": "Paras Defence and Space Technologies Ltd.",
-      "conviction": 25,
+      "conviction": 32,
       "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "CYIENT",
-      "name": "Cyient Ltd.",
-      "conviction": 24,
-      "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
       "symbol": "STLTECH",
       "name": "Sterlite Technologies Ltd.",
-      "conviction": 24,
+      "conviction": 31,
       "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "SYRMA",
+      "name": "Syrma SGS Technology Ltd.",
+      "conviction": 28,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "HBLENGINE",
+      "name": "HBL Engineering Ltd.",
+      "conviction": 27,
+      "quality": 3,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "conviction": 27,
+      "quality": 3,
       "via_theme": "Defence_Electronics"
     },
     {
@@ -37,43 +51,43 @@
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "SYRMA",
-      "name": "Syrma SGS Technology Ltd.",
-      "conviction": 21,
+      "symbol": "CYIENT",
+      "name": "Cyient Ltd.",
+      "conviction": 24,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "SIKA",
+      "name": null,
+      "conviction": 23,
+      "quality": null,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "ASTRAMICRO",
+      "name": "Astra Microwave Products Ltd.",
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "DATAPATTNS",
+      "name": "Data Patterns (India) Ltd.",
+      "conviction": 23,
+      "quality": 2,
+      "via_theme": "Defence_Electronics"
+    },
+    {
+      "symbol": "ZENTEC",
+      "name": "Zen Technologies Ltd.",
+      "conviction": 23,
       "quality": 2,
       "via_theme": "Defence_Electronics"
     },
     {
       "symbol": "CYIENTDLM",
       "name": "Cyient DLM Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "DCXINDIA",
-      "name": "DCX Systems Ltd.",
-      "conviction": 20,
-      "quality": 5,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "HBLENGINE",
-      "name": "HBL Engineering Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "KAYNES",
-      "name": "Kaynes Technology India Ltd.",
-      "conviction": 20,
-      "quality": 3,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "KRISHNADEF",
-      "name": "Krishna Defence and Allied Industries Ltd.",
       "conviction": 20,
       "quality": 3,
       "via_theme": "Defence_Electronics"
@@ -86,31 +100,24 @@
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "SIKA",
-      "name": null,
-      "conviction": 16,
-      "quality": null,
+      "symbol": "KRISHNADEF",
+      "name": "Krishna Defence and Allied Industries Ltd.",
+      "conviction": 20,
+      "quality": 3,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "ASTRAMICRO",
-      "name": "Astra Microwave Products Ltd.",
-      "conviction": 16,
-      "quality": 2,
+      "symbol": "DCXINDIA",
+      "name": "DCX Systems Ltd.",
+      "conviction": 20,
+      "quality": 5,
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "DATAPATTNS",
-      "name": "Data Patterns (India) Ltd.",
-      "conviction": 16,
-      "quality": 2,
-      "via_theme": "Defence_Electronics"
-    },
-    {
-      "symbol": "ZENTEC",
-      "name": "Zen Technologies Ltd.",
-      "conviction": 16,
-      "quality": 2,
+      "symbol": "AXISCADES",
+      "name": "AXISCADES Technologies Ltd.",
+      "conviction": 17,
+      "quality": 1,
       "via_theme": "Defence_Electronics"
     },
     {
@@ -128,21 +135,14 @@
       "via_theme": "Defence_Electronics"
     },
     {
-      "symbol": "AXISCADES",
-      "name": "AXISCADES Technologies Ltd.",
-      "conviction": 10,
-      "quality": 1,
-      "via_theme": "Defence_Electronics"
-    },
-    {
       "symbol": "KERNEX",
       "name": "Kernex Microsystems (India) Ltd.",
-      "conviction": 6,
+      "conviction": 13,
       "quality": 0,
       "via_theme": "Defence_Electronics"
     }
   ],
   "tier2": [],
-  "vikram_verdict": "**BDL — Highest conviction score (28) with direct Defence_Electronics exposure and strongest macro tailwinds from government capex push — watch PSU allocation ratio and order book growth trajectory.**",
+  "vikram_verdict": "**BDL — Highest conviction score (35) with direct Defence_Electronics exposure and historical PSU credibility in defence contracts; conviction gap of 7+ points vs peers signals strongest institutional confidence.** | **Key metric: FY25 order book growth % and defence allocation % of total revenue.**",
   "generated_date": "2026-05-12"
 }
