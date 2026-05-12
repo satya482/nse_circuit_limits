@@ -92,8 +92,16 @@ def _save_cache(processed: set[str]) -> None:
         json.dump({"processed": sorted(processed)}, fh, indent=2)
 
 
-def _key(label: str) -> str:
-    return hashlib.md5(label.encode()).hexdigest()[:12]
+def _file_key(path: str) -> str:
+    """Content-based cache key: same bytes → same key regardless of path or filename."""
+    h = hashlib.md5()
+    with open(path, "rb") as fh:
+        for chunk in iter(lambda: fh.read(65536), b""):
+            h.update(chunk)
+    return "f:" + h.hexdigest()
+
+def _msg_key(msg_id: str) -> str:
+    return "m:" + hashlib.md5(str(msg_id).encode()).hexdigest()[:12]
 
 
 # ── Content extractors ────────────────────────────────────────────────────────
@@ -233,9 +241,13 @@ def _process_messages(
 
         if files:
             for fpath in files:
-                cache_key = _key(fpath)
+                try:
+                    cache_key = _file_key(fpath)
+                except OSError:
+                    print(f"[PARSER] Skip (unreadable): {Path(fpath).name}")
+                    continue
                 if cache_key in cache:
-                    print(f"[PARSER] Skip (cached): {Path(fpath).name}")
+                    print(f"[PARSER] Skip (already parsed): {Path(fpath).name}")
                     continue
 
                 ext = Path(fpath).suffix.lower()
@@ -264,7 +276,7 @@ def _process_messages(
                     print(f"[PARSER] Extraction failed: {Path(fpath).name}")
 
         elif text.strip():
-            cache_key = _key(f"msg_{msg['msg_id']}")
+            cache_key = _msg_key(msg['msg_id'])
             if cache_key in cache:
                 continue
             print(f"[PARSER] Extracting themes from text msg id={msg['msg_id']}")
