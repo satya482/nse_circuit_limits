@@ -179,9 +179,34 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
 
+/* ── Mobile back button (hidden on desktop) ── */
+#mob-back{display:none;align-items:center;gap:6px;padding:10px 0 14px;
+          color:var(--blu);cursor:pointer;font-size:13px;font-weight:600;
+          border:none;background:none;font-family:inherit;letter-spacing:.2px}
+#mob-back:active{opacity:.7}
+
 @media(max-width:700px){
-  #sidebar{display:none}
-  #detail{padding:12px}
+  body{overflow:hidden}
+  #topbar{flex-wrap:wrap;padding:8px 12px;gap:6px}
+  #topbar h1{font-size:14px}
+  .tagline{display:none}
+  .date-tabs{order:3;width:100%;margin-left:0;overflow-x:auto;padding-bottom:2px;
+             scrollbar-width:none}
+  .date-tabs::-webkit-scrollbar{display:none}
+  #gen-time{display:none}
+  #statsbar{overflow-x:auto;gap:12px;flex-wrap:nowrap;padding:5px 12px}
+  #statsbar::-webkit-scrollbar{display:none}
+  #main{flex-direction:column;overflow:hidden}
+  /* List view: sidebar fills screen */
+  #sidebar{width:100%;flex:1;border-right:none;border-bottom:1px solid var(--bd);overflow-y:auto}
+  #detail{display:none;flex:1;overflow-y:auto;padding:12px}
+  /* Detail view: sidebar hidden, detail shown */
+  #sidebar.mob-detail{display:none}
+  #detail.mob-detail{display:block}
+  #mob-back{display:flex}
+  /* Larger touch targets */
+  .theme-item{padding:12px 14px}
+  .date-tab{padding:6px 12px;font-size:12px}
 }
 """
 
@@ -348,6 +373,21 @@ function renderDateTabs() {{
   ).join('');
 }}
 
+function isMobile() {{ return window.innerWidth <= 700; }}
+
+function showList() {{
+  document.getElementById('sidebar').classList.remove('mob-detail');
+  document.getElementById('detail').classList.remove('mob-detail');
+}}
+
+function showDetail() {{
+  if(isMobile()) {{
+    document.getElementById('sidebar').classList.add('mob-detail');
+    document.getElementById('detail').classList.add('mob-detail');
+    document.getElementById('detail').scrollTop = 0;
+  }}
+}}
+
 function switchDate(date) {{
   currentDate = date;
   currentIdx  = 0;
@@ -355,6 +395,7 @@ function switchDate(date) {{
   renderSidebar(date);
   renderStats(date);
   renderDetail(date, 0);
+  showList();
 }}
 
 function selectTheme(idx) {{
@@ -362,6 +403,7 @@ function selectTheme(idx) {{
   renderSidebar(currentDate);
   renderDetail(currentDate, idx);
   document.getElementById('detail').scrollTop = 0;
+  showDetail();
 }}
 
 // Init
@@ -414,6 +456,7 @@ renderDetail(currentDate, 0);
 <div id="main">
   <nav id="sidebar"></nav>
   <div id="detail">
+    <button id="mob-back" onclick="showList()">&#8592; Themes</button>
     <div id="detail-inner"></div>
   </div>
 </div>
