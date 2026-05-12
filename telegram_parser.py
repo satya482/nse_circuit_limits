@@ -158,7 +158,7 @@ def _extract_themes(content: str, client: anthropic.Anthropic, today: str) -> di
     try:
         resp = client.messages.create(
             model=HAIKU_MODEL,
-            max_tokens=1024,
+            max_tokens=2048,
             system=_SYSTEM,
             messages=[{"role": "user", "content": user_msg}],
         )
