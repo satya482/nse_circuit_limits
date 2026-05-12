@@ -54,6 +54,14 @@ if ($dayOfWeek -eq 'Sunday') {
     } catch {
         Log "WARN step 3b skipped: $_"
     }
+    Log "--- Step 3c: weekly quarterly results refresh (Sunday) ---"
+    try {
+        & C:\Python313\python.exe "$workDir\fundamental_context\graph\loaders\load_quarterly.py" --limit 100 2>&1 |
+            ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+        Log "--- Step 3c done (load_quarterly) ---"
+    } catch {
+        Log "WARN step 3c skipped: $_"
+    }
 }
 
 # Step 4 — Re-generate main dashboard (with EP + catalyst sections)
