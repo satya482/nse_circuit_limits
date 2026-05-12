@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Telegram Equity Insights</title>
+<style>
+:root {
+  --bg:#0d1117; --bg2:#161b22; --bg3:#21262d; --bd:#30363d;
+  --tx:#e6edf3; --mu:#8b949e;
+  --grn:#3fb950; --red:#f85149; --blu:#58a6ff; --pur:#a371f7;
+  --ylw:#d29922; --gld:#ffd700;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
+     background:var(--bg);color:var(--tx);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+
+/* ── Top bar ── */
+#topbar{background:var(--bg2);border-bottom:1px solid var(--bd);
+        padding:10px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0}
+#topbar h1{font-size:15px;font-weight:700;color:var(--tx);letter-spacing:.3px}
+#topbar h1 span{color:var(--blu)}
+#topbar .tagline{color:var(--mu);font-size:11px;margin-left:4px}
+.date-tabs{display:flex;gap:6px;margin-left:auto}
+.date-tab{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);
+          background:transparent;color:var(--mu);cursor:pointer;font-size:11px;
+          font-family:inherit;transition:.15s}
+.date-tab:hover{border-color:var(--blu);color:var(--blu)}
+.date-tab.active{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+#gen-time{color:var(--mu);font-size:10px;white-space:nowrap}
+
+/* ── Stats bar ── */
+#statsbar{background:var(--bg2);border-bottom:1px solid var(--bd);
+          padding:6px 16px;display:flex;gap:20px;flex-shrink:0}
+.stat{display:flex;align-items:center;gap:5px}
+.stat-val{font-size:13px;font-weight:700;color:var(--tx)}
+.stat-lbl{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.4px}
+.stat-dot{width:6px;height:6px;border-radius:50%}
+
+/* ── Main layout ── */
+#main{display:flex;flex:1;overflow:hidden}
+
+/* ── Sidebar ── */
+#sidebar{width:240px;background:var(--bg2);border-right:1px solid var(--bd);
+         overflow-y:auto;flex-shrink:0;padding:8px 0}
+.sidebar-section{padding:4px 12px;font-size:10px;color:var(--mu);
+                 text-transform:uppercase;letter-spacing:.5px;margin-top:8px}
+.theme-item{padding:8px 14px;cursor:pointer;border-left:3px solid transparent;
+            transition:.12s;display:flex;align-items:flex-start;gap:8px}
+.theme-item:hover{background:var(--bg3)}
+.theme-item.active{background:var(--bg3)}
+.theme-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.theme-name{font-size:12px;color:var(--tx);line-height:1.4;font-weight:500}
+.theme-sub{font-size:10px;color:var(--mu);margin-top:1px}
+.theme-conv{font-size:9px;padding:1px 5px;border-radius:8px;
+            margin-left:auto;flex-shrink:0;font-weight:600}
+
+/* ── Detail panel ── */
+#detail{flex:1;overflow-y:auto;padding:20px 24px}
+#detail-inner{max-width:900px}
+
+.detail-header{margin-bottom:16px}
+.detail-title{font-size:20px;font-weight:700;color:var(--tx);line-height:1.3;margin-bottom:8px}
+.detail-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.badge{padding:3px 8px;border-radius:10px;font-size:10px;font-weight:600;letter-spacing:.2px}
+.conv-high{background:rgba(63,185,80,.15);border:1px solid rgba(63,185,80,.3);color:var(--grn)}
+.conv-med {background:rgba(210,153,34,.15);border:1px solid rgba(210,153,34,.3);color:var(--ylw)}
+.conv-low {background:rgba(139,148,158,.15);border:1px solid rgba(139,148,158,.3);color:var(--mu)}
+.badge-horizon{background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.25);color:var(--blu)}
+.badge-src{background:transparent;border:1px solid var(--bd);color:var(--mu);font-weight:400}
+
+.summary-box{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--blu);
+             border-radius:6px;padding:12px 14px;margin:16px 0;
+             font-size:13px;color:var(--tx);line-height:1.6}
+
+.section{margin:20px 0}
+.section-title{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;
+               font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+
+/* ── Companies table ── */
+.co-table{width:100%;border-collapse:collapse;border:1px solid var(--bd);border-radius:6px;overflow:hidden}
+.co-table th{background:var(--bg3);color:var(--mu);font-size:10px;text-transform:uppercase;
+             letter-spacing:.5px;padding:7px 10px;text-align:left;font-weight:600}
+.co-table td{padding:8px 10px;border-top:1px solid var(--bd);vertical-align:middle}
+.co-table tr:hover td{background:var(--bg3)}
+.sym-link{font-family:monospace;font-size:12px;font-weight:700;color:var(--blu);
+          text-decoration:none;letter-spacing:.3px}
+.sym-link:hover{text-decoration:underline}
+.co-name{font-size:12px;color:var(--tx)}
+.sent-bull{color:var(--grn);font-size:11px;font-weight:600}
+.sent-bear{color:var(--red);font-size:11px;font-weight:600}
+.sent-neu {color:var(--mu);font-size:11px}
+.res-badge{display:inline-block;margin-left:4px;padding:1px 5px;border-radius:6px;
+           font-size:9px;font-weight:700;vertical-align:middle;letter-spacing:.3px}
+.res-ok{background:rgba(63,185,80,.15);border:1px solid rgba(63,185,80,.3);color:var(--grn)}
+.res-fz{background:rgba(210,153,34,.12);border:1px solid rgba(210,153,34,.3);color:var(--ylw)}
+
+/* ── Key points ── */
+.kp-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.kp-list li{padding:7px 10px 7px 14px;background:var(--bg2);border:1px solid var(--bd);
+            border-radius:4px;border-left:3px solid var(--pur);
+            font-size:12px;color:var(--tx);line-height:1.5;position:relative}
+
+/* ── Catalysts ── */
+.catalysts{display:flex;flex-wrap:wrap;gap:6px}
+.catalyst{padding:4px 10px;background:rgba(163,113,247,.1);
+          border:1px solid rgba(163,113,247,.25);border-radius:10px;
+          font-size:11px;color:var(--pur)}
+
+/* ── Empty state ── */
+.empty{text-align:center;padding:60px 20px;color:var(--mu)}
+.empty-icon{font-size:40px;margin-bottom:12px}
+
+/* ── Scrollbars ── */
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+
+@media(max-width:700px){
+  #sidebar{display:none}
+  #detail{padding:12px}
+}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>📊 <span>Telegram</span> Equity Insights</h1>
+  <span class="tagline">— research themes & coverage</span>
+  <div class="date-tabs" id="date-tabs"></div>
+  <span id="gen-time">Updated 2026-05-12 12:18 IST</span>
+</div>
+
+<div id="statsbar">
+  <div class="stat">
+    <span class="stat-dot" style="background:var(--blu)"></span>
+    <span class="stat-val" id="stat-reports">—</span>
+    <span class="stat-lbl">Reports</span>
+  </div>
+  <div class="stat">
+    <span class="stat-dot" style="background:var(--pur)"></span>
+    <span class="stat-val" id="stat-themes">—</span>
+    <span class="stat-lbl">Themes</span>
+  </div>
+  <div class="stat">
+    <span class="stat-dot" style="background:var(--grn)"></span>
+    <span class="stat-val" id="stat-cos">—</span>
+    <span class="stat-lbl">Companies</span>
+  </div>
+  <div class="stat">
+    <span class="stat-dot" style="background:var(--gld)"></span>
+    <span class="stat-val" id="stat-high">—</span>
+    <span class="stat-lbl">High Conviction</span>
+  </div>
+</div>
+
+<div id="main">
+  <nav id="sidebar"></nav>
+  <div id="detail">
+    <div id="detail-inner"></div>
+  </div>
+</div>
+
+<script>
+const ALL_DATA = {"2026-05-12": [{"date": "2026-05-12", "source": "20260512_1500.pdf", "themes": ["AI-led SaaS", "Loyalty and Customer Engagement", "Land-and-expand Model", "Acquisition-led Growth", "Enterprise Software"], "companies": [{"symbol": "CAPILLAR", "name": "Capillary Technologies India", "sentiment": "bullish", "nse_code": "CAPILLARY", "res_conf": 0.97, "res_method": "name_exact"}], "key_points": ["Global leader in loyalty management with 410+ brands including 20 Fortune 500 clients across 47 countries", "Strong NRR of 115% with 130% NRR among top 10 customers indicating deep customer relationships", "Loyalty+ platform contributes 90% of revenue and enables scalable land-and-expand strategy across adjacent modules", "Estimated revenue/EBITDA/PAT CAGR of 25%/53%/132% over FY25-28E", "Proven acquisition playbook with 4-year payback period and 20%+ ROIC on acquired assets", "AI integration through aiRA (AI-powered Retail Analytics assistant) and AI co-pilots across platform", "Transaction-based pricing model reduces exposure to seat-based pricing disruption from AI", "Diversified revenue across retail (30%), BFSI, healthcare, CPG and travel verticals reducing concentration risk", "Elevated client concentration with top 5 customers contributing 40% of revenue", "NRR expected to stabilize in 115-116% range going forward"], "catalysts": ["Acquisition integration and synergy realization", "Expansion of Loyalty+ into adjacent geographies", "AI-driven monetization expansion from existing customer base", "Cross-selling of Engage+, Insights+ and Rewards+ modules", "Growth in emerging markets particularly Asia-Pacific", "Platform migration of acquired customers from on-premises to cloud"], "time_horizon": "2Y+", "conviction": "High", "summary": "Capillary Technologies is positioned as a global leader in loyalty and customer engagement SaaS with a proven acquisition playbook and strong land-and-expand model anchored by its Loyalty+ platform. The company demonstrates resilient growth with 115% NRR, 410+ enterprise clients including Fortune 500 companies, and is actively embedding AI across its platform to drive productivity and monetization. JM Financial initiates coverage with a BUY recommendation and INR 650 target price (20.4% upside), valuing the company at 19x FY28E EBITDA with expected 25%/53%/132% CAGR in revenue/EBITDA/PAT over FY25-28E."}, {"date": "2026-05-12", "source": "20260512_1501.pdf", "themes": ["Defence & Aerospace", "Ammunition Manufacturing", "Explosives", "Vertical Integration", "Export Expansion"], "companies": [{"symbol": "SOIL", "name": "Solar Industries India", "sentiment": "bullish", "nse_code": "SOLARINDS", "res_conf": 0.97, "res_method": "name_exact"}], "key_points": ["SOIL metamorphosing from commodity explosives player to India's only large vertically integrated private ammunition and warfare platform", "Defence revenues growing at 59% CAGR (FY25-28E) driven by Rs 180 bn order book with 13x book-to-bill ratio", "Rs 60.8 bn Pinaka order marks transition to system-level rocket ammunition manufacturing with multi-decade execution opportunity", "Three-engine growth model: domestic explosives (43% FY25 revenues), international explosives (38% FY25 revenues), defence (26% FY26E revenues)", "Overall revenue CAGR of 25% (FY25-28E) with EPS CAGR of 29% and margin expansion from 26.0% to 27.2%", "Export defence order book of Rs 110 bn demonstrates global credibility; presence in 90+ countries with manufacturing in 7+ countries", "Strong quality metrics: RoE/RoCE of 28.0%/30.9% projected in FY28E; net debt/equity near zero", "Pipeline includes Nagastra loitering munitions, Rudrastra and Vijayastra UAVs, Bhargavastra counter-drone systems, and medium-calibre ammunition"], "catalysts": ["Pinaka order execution ramp-up (deliveries commenced in 4QFY26)", "Export defence order book execution (Rs 110 bn with 2-6 year timelines)", "New product commercialisation: Nagastra-2, Rudrastra, Vijayastra, Bhargavastra", "Medium-calibre ammunition production scaling", "International customer wins for Pinaka variants (Armenia precedent; Europe and Southeast Asia interest)", "Defence export push by Indian government", "Global ammunition shortage dynamics"], "time_horizon": "2Y+", "conviction": "High", "summary": "Solar Industries India is undergoing a strategic transformation from a commodity explosives player into India's leading vertically integrated defence and ammunition platform. With a Rs 180 bn defence order book (13x FY25 revenues), landmark Rs 60.8 bn Pinaka contract, and Rs 110 bn export order book, SOIL is positioned for sustained 25% revenue CAGR and 29% EPS CAGR through FY28E. The company's three-engine growth model (domestic explosives, international explosives, defence) combined with strong execution visibility, margin expansion, and a rich product pipeline across loitering munitions, UAVs, and counter-drone systems justifies the 65x valuation multiple and Rs 18,812 target price (21.7% upside)."}, {"date": "2026-05-12", "source": "20260512_1502.pdf", "themes": ["India Electric Utilities", "Multi-vector Capex Upcycle", "Renewable Energy Integration", "Power Transmission & Grid Expansion", "Grid Storage & Flexibility", "Thermal Capacity Additions", "Electrification Deepening", "Data Centers Impact", "Policy-Supported Manufacturing"], "companies": [{"symbol": "NTPC.BO", "name": "NTPC", "sentiment": "bullish", "nse_code": "NTPC", "res_conf": 1.0, "res_method": "exact"}, {"symbol": "PGRD.BO", "name": "Power Grid Corporation of India", "sentiment": "bullish", "nse_code": "POWERGRID", "res_conf": 0.97, "res_method": "name_exact"}, {"symbol": "TTPW.BO", "name": "Tata Power", "sentiment": "bullish", "nse_code": "TATAPOWER", "res_conf": 0.704, "res_method": "token_name"}, {"symbol": "JSWE.BO", "name": "JSW Energy", "sentiment": "bullish", "nse_code": "JSWENERGY", "res_conf": 0.97, "res_method": "name_exact"}], "key_points": ["Broad-based capex upcycle driven by multiple load vectors: thermal, renewables, transmission, grid storage", "Medium-term power demand growth forecast at 5-6% CAGR supported by electrification, data centers, cooling load, policy-backed manufacturing", "GENCO capacity additions FY26E-32E will be 2.3-2.5x those of FY19-25, with 97 GW additional coal-based capacity under construction or planning", "System focus shifted from capacity deficits to reliability/flexibility; non-solar-hour adequacy now critical challenge", "CEA resource adequacy framework flags non-solar-hour power strain risks for next two years", "Draft National Electricity Policy 2026 proposes reforms supporting demand growth", "Stock preference order: NTPC > Tata Power > PGRD > JSWE; none materially exposed to merchant price volatility", "NTPC positioned well with regulated business duration, cost-of-funds advantage, multi-modal generation", "Tata Power in multi-year transition with growing lower-volatility T&D and renewables exposure", "PGRD direct beneficiary of transmission grid buildout; improved commissioning and capex trajectories", "JSWE well-placed for thermal and renewable buildout with contracted core business"], "catalysts": ["Stronger power demand pickup", "NTPC thermal and nuclear capacity additions", "PGCIL transmission project awards and grid expansion", "Tata Power discom privatization wins", "Tata Power pumped storage plant PPA tie-ups", "JSW Energy group captive renewable wins", "JSW Energy thermal commissioning timelines by FY30", "El Niño-linked demand tailwinds in 2026", "National Electricity Policy 2026 implementation"], "time_horizon": "2Y+", "conviction": "High", "summary": "India's power sector is entering a multi-year, multi-vector capex upcycle driven by thermal restart, renewable additions, transmission expansion, and grid storage deployment—addressing shifting challenges from capacity deficits to non-solar-hour flexibility. Medium-term demand growth of 5-6% CAGR is supported by electrification, data centers, cooling loads, and policy-backed manufacturing, with CEA resource adequacy guidelines providing policy anchors. Citi initiates NTPC, PGCIL, Tata Power, and JSW Energy at Buy, with NTPC preferred for its regulated business strength and cost-of-funds advantage."}]};
+const ALL_DATES = ["2026-05-12"];
+
+let currentDate = ALL_DATES[0] || '';
+let currentIdx  = 0;
+
+const PALETTE = ['#58a6ff','#3fb950','#a371f7','#d29922','#f85149',
+                 '#79c0ff','#56d364','#bc8cff','#e3b341','#ff7b72'];
+
+function tvLink(co) {
+  // Use resolver-verified nse_code when confidence >= 0.60; fall back to raw symbol
+  const conf = co.res_conf || 0;
+  const sym  = (conf >= 0.60 && co.nse_code && co.nse_code !== 'null')
+               ? co.nse_code
+               : (co.symbol || '');
+  if(!sym || sym === '—') return null;
+  const clean = sym.replace(/\.(BO|NS|NSE|BSE)$/i,'').toUpperCase();
+  if(!clean) return null;
+  return `https://www.tradingview.com/chart/?symbol=NSE%3A${clean}`;
+}
+
+function confBadge(co) {
+  const conf = co.res_conf || 0;
+  const method = co.res_method || '';
+  if(method === 'non_nse' || method === 'unresolved' || method === 'no_universe') return '';
+  if(conf >= 0.85) return '<span class="res-badge res-ok" title="Exact/high-confidence NSE match">NSE</span>';
+  if(conf >= 0.60) return '<span class="res-badge res-fz" title="Fuzzy NSE match">~NSE</span>';
+  return '';
+}
+
+function convClass(c) {
+  const l = (c||'').toLowerCase();
+  if(l.includes('high'))   return 'conv-high';
+  if(l.includes('medium')) return 'conv-med';
+  return 'conv-low';
+}
+
+function sentClass(s) {
+  const l = (s||'').toLowerCase();
+  if(l.includes('bull')) return 'sent-bull';
+  if(l.includes('bear')) return 'sent-bear';
+  return 'sent-neu';
+}
+
+function renderSidebar(date) {
+  const reports = ALL_DATA[date] || [];
+  const el = document.getElementById('sidebar');
+  if(!reports.length) { el.innerHTML='<div style="padding:20px;color:var(--mu);text-align:center">No reports</div>'; return; }
+
+  let html = '<div class="sidebar-section">Themes</div>';
+  reports.forEach((r, i) => {
+    const themes = (r.themes||[]).join(', ') || 'Unknown';
+    const shortTheme = themes.length > 32 ? themes.slice(0,30)+'…' : themes;
+    const cos = (r.companies||[]).map(c=>{
+      const conf = c.res_conf||0;
+      return (conf>=0.60 && c.nse_code && c.nse_code!=='null') ? c.nse_code : (c.symbol||'—');
+    }).join(', ') || '—';
+    const shortCo = cos.length > 28 ? cos.slice(0,26)+'…' : cos;
+    const color  = PALETTE[i % PALETTE.length];
+    const cc     = convClass(r.conviction);
+    const cls    = i === currentIdx ? 'theme-item active' : 'theme-item';
+    html += `<div class="${cls}" onclick="selectTheme(${i})" style="border-left-color:${i===currentIdx?color:'transparent'}">
+      <span class="theme-dot" style="background:${color}"></span>
+      <div>
+        <div class="theme-name">${shortTheme}</div>
+        <div class="theme-sub">${shortCo}</div>
+      </div>
+      <span class="badge theme-conv ${cc}">${r.conviction||'—'}</span>
+    </div>`;
+  });
+  el.innerHTML = html;
+}
+
+function renderDetail(date, idx) {
+  const reports = ALL_DATA[date] || [];
+  const el = document.getElementById('detail-inner');
+  if(!reports.length) {
+    el.innerHTML = '<div class="empty"><div class="empty-icon">📭</div><div>No reports for this date</div></div>';
+    return;
+  }
+  const r = reports[idx] || reports[0];
+  const color = PALETTE[idx % PALETTE.length];
+  const themes = (r.themes||[]).join(' · ') || 'Unknown Theme';
+  const cc = convClass(r.conviction);
+
+  // Companies
+  const cos = r.companies||[];
+  let coHtml = '';
+  if(cos.length) {
+    coHtml = `<table class="co-table">
+      <thead><tr><th>Symbol</th><th>Company</th><th>Sentiment</th></tr></thead><tbody>`;
+    cos.forEach(c => {
+      const sc   = sentClass(c.sentiment);
+      const sent = (c.sentiment||'—').charAt(0).toUpperCase()+(c.sentiment||'—').slice(1);
+      const conf = c.res_conf || 0;
+      const dispSym = (conf >= 0.60 && c.nse_code && c.nse_code !== 'null')
+                      ? c.nse_code : (c.symbol||'—');
+      const link = tvLink(c);
+      const symHtml = link
+        ? `<a class="sym-link" href="${link}" target="_blank">${dispSym}</a>${confBadge(c)}`
+        : `<span style="color:var(--mu)">${dispSym}</span>`;
+      coHtml += `<tr>
+        <td>${symHtml}</td>
+        <td><span class="co-name">${c.name||'—'}</span></td>
+        <td><span class="${sc}">${sent}</span></td>
+      </tr>`;
+    });
+    coHtml += '</tbody></table>';
+  }
+
+  // Key points
+  const kps = r.key_points||[];
+  let kpHtml = '';
+  if(kps.length) {
+    kpHtml = '<ul class="kp-list">' + kps.map(k=>`<li>${k}</li>`).join('') + '</ul>';
+  }
+
+  // Catalysts
+  const cats = r.catalysts||[];
+  let catHtml = '';
+  if(cats.length) {
+    catHtml = '<div class="catalysts">' + cats.map(c=>`<span class="catalyst">${c}</span>`).join('') + '</div>';
+  }
+
+  el.innerHTML = `
+    <div class="detail-header">
+      <div class="detail-title" style="border-left:3px solid ${color};padding-left:10px">${themes}</div>
+      <div class="detail-meta">
+        <span class="badge ${cc}">${r.conviction||'—'} Conviction</span>
+        <span class="badge badge-horizon">⏱ ${r.time_horizon||'—'}</span>
+        <span class="badge badge-src">📄 ${r.source||'—'}</span>
+        <span class="badge badge-src">📅 ${r.date||date}</span>
+      </div>
+    </div>
+    <div class="summary-box">${r.summary||'No summary available.'}</div>
+    ${cos.length ? `<div class="section"><div class="section-title">Companies</div>${coHtml}</div>` : ''}
+    ${kps.length ? `<div class="section"><div class="section-title">Key Points</div>${kpHtml}</div>` : ''}
+    ${cats.length ? `<div class="section"><div class="section-title">Catalysts</div>${catHtml}</div>` : ''}
+  `;
+}
+
+function renderStats(date) {
+  const reports = ALL_DATA[date] || [];
+  const themes  = new Set(reports.flatMap(r=>r.themes||[]));
+  const cos     = new Set(reports.flatMap(r=>(r.companies||[]).map(c=>{
+    const conf = c.res_conf||0;
+    return (conf>=0.60 && c.nse_code && c.nse_code!=='null') ? c.nse_code : c.symbol;
+  })));
+  const highs   = reports.filter(r=>(r.conviction||'').toLowerCase().includes('high')).length;
+  document.getElementById('stat-reports').textContent = reports.length;
+  document.getElementById('stat-themes').textContent  = themes.size;
+  document.getElementById('stat-cos').textContent     = cos.size;
+  document.getElementById('stat-high').textContent    = highs;
+}
+
+function renderDateTabs() {
+  const el = document.getElementById('date-tabs');
+  el.innerHTML = ALL_DATES.map(d =>
+    `<button class="date-tab${d===currentDate?' active':''}" onclick="switchDate('${d}')">${d}</button>`
+  ).join('');
+}
+
+function switchDate(date) {
+  currentDate = date;
+  currentIdx  = 0;
+  renderDateTabs();
+  renderSidebar(date);
+  renderStats(date);
+  renderDetail(date, 0);
+}
+
+function selectTheme(idx) {
+  currentIdx = idx;
+  renderSidebar(currentDate);
+  renderDetail(currentDate, idx);
+  document.getElementById('detail').scrollTop = 0;
+}
+
+// Init
+renderDateTabs();
+renderSidebar(currentDate);
+renderStats(currentDate);
+renderDetail(currentDate, 0);
+</script>
+</body>
+</html>

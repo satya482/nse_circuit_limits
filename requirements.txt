@@ -6,3 +6,5 @@ tradingview-screener
 scikit-learn
 sentence-transformers
 anthropic
+telethon
+pdfplumber

@@ -18,3 +18,9 @@ ema_screener_changes.md
 # Fundamental context — data files and caches (large CSVs, not for git)
 fundamental_context/data/
 fundamental_context/.claudeignore
+# Telegram ingestion — session, state, raw downloads
+.telegram_session*
+.telegram_state.json
+telegram_themes/raw/
+telegram_themes/.today_messages.json
+telegram_themes/.telegram_parsed_cache.json
