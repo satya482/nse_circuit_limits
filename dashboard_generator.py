@@ -50,20 +50,36 @@ def find_latest_screener(scans_dir: str, today: str) -> str:
     return read_file(files[0]) if files else ""
 
 
+_DATE_HEADING_RE = re.compile(r'^# .+(\d{4}-\d{2}-\d{2})', re.MULTILINE)
+
+def _most_recent_date(content: str) -> str:
+    """Return the most recent YYYY-MM-DD date found in a # heading, or ''."""
+    dates = _DATE_HEADING_RE.findall(content)
+    return max(dates) if dates else ""
+
+
 def extract_today_block(content: str, today: str) -> str:
-    """Return the first (newest) block whose heading contains today's date."""
+    """Return the block whose heading contains today's date, or the most recent block."""
     blocks = re.split(r'\n---\n', content)
     for block in blocks:
         if re.search(rf'^# .+{re.escape(today)}', block, re.MULTILINE):
+            return block
+    # Fallback: return first block that has a date heading (files are newest-first)
+    for block in blocks:
+        if _DATE_HEADING_RE.search(block):
             return block
     return ""
 
 
 def extract_today_section(content: str, today: str) -> str:
-    """Return the full today section including content past any internal --- dividers.
-    Stops at the next day-level heading or end of file.
-    Use this instead of extract_today_block for files whose headers contain ---."""
-    m = re.search(rf'^# .+{re.escape(today)}', content, re.MULTILINE)
+    """Return the full section for today's date, or the most recent date's section.
+    Stops at the next day-level heading or end of file."""
+    # Try exact date first, then fall back to most recent
+    date = today if re.search(rf'^# .+{re.escape(today)}', content, re.MULTILINE) \
+           else _most_recent_date(content)
+    if not date:
+        return ""
+    m = re.search(rf'^# .+{re.escape(date)}', content, re.MULTILINE)
     if not m:
         return ""
     rest = content[m.end():]
