@@ -1,6 +1,6 @@
 {
   "date": "2026-05-13",
-  "generated": "2026-05-13 09:55 IST",
+  "generated": "2026-05-13 16:03 IST",
   "reports": [
     {
       "date": "2026-05-13",
@@ -2229,6 +2229,156 @@
       "conviction": "High",
       "summary": "BLUESTON is initiating coverage with a BUY rating and Rs 644 target price (30x Mar 2028E pre-Ind AS EBITDA). The company is positioned at the structural intersection of India's jewellery market shift from investment-led gold to design-driven studded jewellery, with the studded segment growing 22-24% CAGR through 2029. BLUESTON's omnichannel model, vertical integration, and 300+ store network with significant expansion runway provide multiple levers for margin expansion and return ratio improvements as the business transitions from investment phase to scalable profitability.",
       "connection_narrative": "India's jewellery market is experiencing a decisive structural transformation driven by rising millennial and Gen Z aspirations for lifestyle-led, occasion-based accessories rather than investment-grade metal holdings. This shift is underpinned by increasing disposable incomes, urbanization, and a formalization wave wherein organized retail is expanding from 37% penetration today toward 44-47% by 2029. The studded jewellery segment, anchored in design-first differentiation rather than commodity gold pricing, is capturing this trend with a projected 22-24% CAGR through 2029—nearly double the broader 12-14% market growth—while daily-wear and occasion-led jewellery categories grow at 15-21% annually. Bluestone Jewellery and Lifestyle is structurally positioned as a primary beneficiary of this formalization and premiumization wave. The company derives nearly two-thirds of its revenue from diamond-studded jewellery—precisely the high-margin, fast-turning segment capturing consumer preference shifts—and has architected a proprietary omnichannel flywheel that seamlessly integrates 70-90% digitally-influenced discovery with rapid physical store expansion. With 300+ stores and a proprietary tech stack enabling pin-code-level inventory optimization, Bluestone combines data-led precision with experiential retail trust in a way that creates formidable barriers to entry against commodity-led competitors. The company's vertical integration—with 75% of manufacturing in-house and a largely company-owned store network—locks in margin expansion potential as store cohorts mature. Mature store cohorts already demonstrate ~24% EBITDA margins, signaling the inherent profitability of the model once it scales; Blueston forecasts EBITDA margin expansion toward 8.6% (pre-Ind AS basis) by FY28E and RoIC approaching 18% by FY30E as advertising intensity moderates and inventory turns improve. The company possesses a runway to add 70-75 stores annually through FY28E across both densified Tier-1 markets—where cities like Mumbai and Bengaluru still offer significant headroom—and underserved Tier-2/3 cities experiencing rising lifestyle aspirations. The single most critical catalyst to monitor is the realization of operating leverage and EBITDA margin expansion as mature store cohorts drive throughput improvements across fixed cost lines; evidence of this leverage unlocking should trigger a meaningful re-rating toward the 30x pre-Ind AS EBITDA target multiple. The primary risk is execution risk on store unit economics or slowdown in the studded jewellery adoption cycle if consumer preferences shift unexpectedly or macroeconomic headwinds compress discretionary spending faster than anticipated."
+    },
+    {
+      "date": "2026-05-13",
+      "source": "20260513_1503.pdf",
+      "themes": [
+        "E-commerce",
+        "Quick Commerce",
+        "B2B E-commerce",
+        "Food Delivery",
+        "Travel-tech",
+        "New-age Logistics",
+        "Ed-tech",
+        "Auto-tech",
+        "Mobility",
+        "Media",
+        "Prop-tech",
+        "Co-working Space",
+        "Ad-tech",
+        "Gaming",
+        "Online Classifieds",
+        "Enterprise Tech/SaaS",
+        "Agri-tech",
+        "Online Ticketing",
+        "Clean-tech",
+        "Digital Infrastructure",
+        "AI and Sovereign Platforms"
+      ],
+      "companies": [
+        {
+          "symbol": "FLIPKART",
+          "name": "Flipkart",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "AMAZON",
+          "name": "Amazon",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "MEESHO",
+          "name": "Meesho",
+          "sentiment": "bullish",
+          "nse_code": "MEESHO",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "NYKAA",
+          "name": "Nykaa",
+          "sentiment": "bullish",
+          "nse_code": "NYKAA",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "LENSKART",
+          "name": "Lenskart",
+          "sentiment": "bullish",
+          "nse_code": "LENSKART",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "FIRSTCRY",
+          "name": "FirstCry",
+          "sentiment": "bullish",
+          "nse_code": "FIRSTCRY",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "MAKEMYTRIP",
+          "name": "MakeMyTrip",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "OYO",
+          "name": "OYO",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "PORTER",
+          "name": "Porter",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "DELHIVERY",
+          "name": "Delhivery",
+          "sentiment": "bullish",
+          "nse_code": "DELHIVERY",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "PHYSICSWALLAH",
+          "name": "PhysicsWallah",
+          "sentiment": "bullish",
+          "nse_code": "PWL",
+          "res_conf": 0.97,
+          "res_method": "name_exact"
+        },
+        {
+          "symbol": "BLINKIT",
+          "name": "BlinkIt",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        }
+      ],
+      "key_points": [
+        "India's New-Age Tech sector narrowed gap with China from 20-year lag to ~10-year lag, with faster catch-up expected in AI era",
+        "India at structural inflection point analogous to China's 2006-12 discretionary boom with per capita income in same band",
+        "Digital public infrastructure (UPI, DigiLocker, ONDC) creates lower-friction environment compressing adoption curves",
+        "Government backing sovereign AI platform Sarvam AI; private sector pledged USD 200bn toward AI infrastructure over next decade",
+        "India has 970mn internet subscribers, highest mobile data consumption per user globally, and UPI powers 15-20bn transactions monthly",
+        "Report analyzes 20 sub-segments across ~170 prominent companies with SWOT analyses and market sizing",
+        "FTAs signed by government support trend as developed world diversifies supply chains away from China",
+        "Nasdaq Composite outpaced S&P 500 in every decade except 2000s dot-com collapse, supporting tech sector exposure thesis",
+        "Identification of generational outliers crucial for alpha generation in New-Age Tech ecosystem"
+      ],
+      "catalysts": [
+        "Government policy support for digital infrastructure expansion",
+        "AI infrastructure investments materializing",
+        "Supply chain diversification from developed nations",
+        "UPI transaction growth and ONDC adoption acceleration",
+        "FTA trade agreements implementation",
+        "Per capita income growth driving discretionary spending",
+        "Mobile data consumption expansion",
+        "Tech IPO listings of private companies"
+      ],
+      "time_horizon": "2Y+",
+      "conviction": "High",
+      "summary": "This comprehensive thematic report analyzes India's New-Age Tech sector across 20 sub-segments and ~170 companies, positioning India as a generational investment opportunity at an inflection point structurally similar to China's 2006-12 boom. The convergence of India's per capita income reaching discretionary spending thresholds, government-backed digital infrastructure (UPI, ONDC), AI platform investments, and favorable supply chain diversification creates a lower-friction environment for tech adoption. The report emphasizes identifying generational outliers within India's emerging digital ecosystem as the ultimate prize for long-term investors.",
+      "connection_narrative": "India stands at a critical juncture in its tech evolution, having narrowed its technology gap with China from a 20-year lag in the early 2010s to approximately 10 years today, with an even faster catch-up anticipated in the AI era. This acceleration is being driven by structural macro factors: India's per capita income has entered the same band that triggered China's discretionary spending boom from 2006 to 2012, when per capita income doubled and retail sales growth accelerated from 11 percent to 18 percent. Simultaneously, the government has constructed a sophisticated digital public infrastructure layer through UPI, DigiLocker, and ONDC that creates a fundamentally lower-friction environment for new entrants, compressing the historical adoption curves that plagued previous waves of technological disruption. The geopolitical environment further supports this narrative as developed nations actively diversify supply chains away from China and toward India through free trade agreements, while the government backs its sovereign AI platform Sarvam AI and private sector commitments exceed 200 billion US dollars for AI infrastructure over the next decade, though still trailing the 700 billion US dollar US investment scheduled for 2026. Companies like Flipkart and Amazon are positioned at the forefront of e-commerce expansion reaching 970 million internet subscribers with the world's highest mobile data consumption per user, while specialized platforms across travel-tech such as MakeMyTrip and OYO, quick commerce leaders like BlinkIt, logistics innovators like Porter and Delhivery, and ed-tech providers like PhysicsWallah each capture specific facets of this broader digital transformation, leveraging the lower-friction infrastructure and rising purchasing power across Indian consumers. The most critical catalyst to monitor is the materialization of private AI infrastructure investments and their translation into competitive advantages for Indian tech companies, while the primary risk remains execution challenges in converting India's favorable demographics and macro backdrop into profitable, scalable enterprises at the speed and magnitude that historical precedent would suggest."
     }
   ]
 }
