@@ -75,7 +75,8 @@ _SCHEMA = """{
   "catalysts": ["<catalyst name>"],
   "time_horizon": "<short-term|6-12M|2Y+|not mentioned>",
   "conviction": "<High|Medium|Low|not mentioned>",
-  "summary": "<2-3 sentence summary>"
+  "summary": "<2-3 sentence summary>",
+  "connection_narrative": "<5-7 sentence flowing prose narrative. For each theme: explain WHY it is structurally relevant right now — what policy, event, cycle, or macro driver is in play. Then for each company: explain specifically HOW it benefits from those themes and what its competitive edge or exposure is. End with the single most important catalyst to watch and one key risk. Write as continuous prose — no bullet points, no headers. This text will be read aloud by a text-to-speech service.>"
 }"""
 
 

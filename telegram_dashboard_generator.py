@@ -132,12 +132,19 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .badge-horizon{background:rgba(88,166,255,.1);border:1px solid rgba(88,166,255,.25);color:var(--blu)}
 .badge-src{background:transparent;border:1px solid var(--bd);color:var(--mu);font-weight:400}
 
-.summary-box{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--blu);
-             border-radius:6px;padding:12px 14px;margin:16px 0;
-             font-size:13px;color:var(--tx);line-height:1.6}
+/* Thesis / connection narrative — lead TTS block */
+.thesis-box{background:var(--bg2);border:1px solid var(--bd);border-left:4px solid var(--blu);
+            border-radius:6px;padding:16px 18px;margin:16px 0;
+            font-size:16px;color:var(--tx);line-height:1.8}
+.thesis-label{font-size:11px;color:var(--blu);text-transform:uppercase;letter-spacing:.6px;
+              font-weight:700;margin-bottom:8px}
 
-.section{margin:20px 0}
-.section-title{font-size:10px;color:var(--mu);text-transform:uppercase;letter-spacing:.5px;
+.summary-box{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--mu);
+             border-radius:6px;padding:12px 14px;margin:12px 0 0;
+             font-size:14px;color:var(--mu);line-height:1.7}
+
+.section{margin:22px 0}
+.section-title{font-size:13px;color:var(--tx);text-transform:uppercase;letter-spacing:.4px;
                font-weight:600;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
 
 /* ── Companies table ── */
@@ -159,16 +166,22 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .res-fz{background:rgba(210,153,34,.12);border:1px solid rgba(210,153,34,.3);color:var(--ylw)}
 
 /* ── Key points ── */
-.kp-list{list-style:none;display:flex;flex-direction:column;gap:6px}
-.kp-list li{padding:7px 10px 7px 14px;background:var(--bg2);border:1px solid var(--bd);
+.kp-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.kp-list li{padding:9px 12px 9px 16px;background:var(--bg2);border:1px solid var(--bd);
             border-radius:4px;border-left:3px solid var(--pur);
-            font-size:12px;color:var(--tx);line-height:1.5;position:relative}
+            font-size:14px;color:var(--tx);line-height:1.7;position:relative}
 
-/* ── Catalysts ── */
-.catalysts{display:flex;flex-wrap:wrap;gap:6px}
-.catalyst{padding:4px 10px;background:rgba(163,113,247,.1);
-          border:1px solid rgba(163,113,247,.25);border-radius:10px;
-          font-size:11px;color:var(--pur)}
+/* ── Catalysts — numbered prose list (TTS-friendly) ── */
+.catalyst-list{list-style:none;display:flex;flex-direction:column;gap:7px;padding:0}
+.catalyst-list li{counter-increment:cat-counter;display:flex;align-items:flex-start;gap:10px;
+                  padding:8px 12px;background:rgba(163,113,247,.08);
+                  border:1px solid rgba(163,113,247,.2);border-radius:4px;
+                  font-size:14px;color:var(--tx);line-height:1.6}
+.catalyst-list li::before{content:counter(cat-counter);min-width:20px;height:20px;
+                           border-radius:50%;background:rgba(163,113,247,.25);color:var(--pur);
+                           font-size:11px;font-weight:700;display:flex;align-items:center;
+                           justify-content:center;flex-shrink:0;margin-top:1px}
+.catalyst-list{counter-reset:cat-counter}
 
 /* ── Empty state ── */
 .empty{text-align:center;padding:60px 20px;color:var(--mu)}
@@ -178,6 +191,38 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 ::-webkit-scrollbar{width:5px}
 ::-webkit-scrollbar-track{background:var(--bg)}
 ::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
+
+/* ── Reader mode (TTS-friendly white layout) ── */
+#reader-btn{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);
+            background:transparent;color:var(--mu);cursor:pointer;font-size:11px;
+            font-family:inherit;transition:.15s;margin-left:8px}
+#reader-btn:hover{border-color:var(--blu);color:var(--blu)}
+#reader-btn.active{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
+
+body.reader-mode{overflow:auto;background:#f5f5f0;color:#1a1a1a}
+body.reader-mode #topbar,
+body.reader-mode #statsbar,
+body.reader-mode #sidebar{display:none}
+body.reader-mode #main{display:block;max-width:780px;margin:0 auto;padding:28px 20px;overflow:visible}
+body.reader-mode #detail{overflow:visible;padding:0;flex:none}
+body.reader-mode #detail-inner{max-width:none}
+body.reader-mode #mob-back{display:none}
+body.reader-mode h2.detail-title{font-size:22px;color:#111;border-left-color:#2563eb !important}
+body.reader-mode h3.section-title{color:#444;border-bottom-color:#ddd}
+body.reader-mode .thesis-box{background:#fff;border-color:#ddd;border-left-color:#2563eb;color:#1a1a1a}
+body.reader-mode .summary-box{background:#fff;border-color:#ddd;color:#555}
+body.reader-mode .kp-list li{background:#fff;border-color:#e0e0e0;border-left-color:#7c3aed;color:#1a1a1a}
+body.reader-mode .catalyst-list li{background:rgba(124,58,237,.06);border-color:rgba(124,58,237,.2);color:#1a1a1a}
+body.reader-mode .detail-meta{margin-bottom:8px}
+body.reader-mode .co-table{border-color:#ddd}
+body.reader-mode .co-table th{background:#f0f0f0;color:#666}
+body.reader-mode .co-table td{border-color:#e8e8e8}
+body.reader-mode .co-name{color:#1a1a1a}
+body.reader-mode article.reader-report{border-bottom:2px solid #ddd;padding-bottom:32px;margin-bottom:32px}
+#reader-back{display:none;align-items:center;gap:8px;padding:12px 0 20px;
+             color:#2563eb;cursor:pointer;font-size:14px;font-weight:600;
+             border:none;background:none;font-family:inherit}
+body.reader-mode #reader-back{display:flex}
 
 /* ── Mobile back button (hidden on desktop) ── */
 #mob-back{display:none;align-items:center;gap:6px;padding:10px 0 14px;
@@ -328,27 +373,33 @@ function renderDetail(date, idx) {{
     kpHtml = '<ul class="kp-list">' + kps.map(k=>`<li>${{k}}</li>`).join('') + '</ul>';
   }}
 
-  // Catalysts
+  // Catalysts — numbered prose list
   const cats = r.catalysts||[];
   let catHtml = '';
   if(cats.length) {{
-    catHtml = '<div class="catalysts">' + cats.map(c=>`<span class="catalyst">${{c}}</span>`).join('') + '</div>';
+    catHtml = '<ol class="catalyst-list">' + cats.map(c=>`<li>${{c}}</li>`).join('') + '</ol>';
   }}
 
+  // Thesis: connection_narrative if present, else summary
+  const thesis = r.connection_narrative || '';
+  const summary = r.summary || '';
+
   el.innerHTML = `
-    <div class="detail-header">
-      <div class="detail-title" style="border-left:3px solid ${{color}};padding-left:10px">${{themes}}</div>
+    <header class="detail-header">
+      <h2 class="detail-title" style="border-left:4px solid ${{color}};padding-left:12px">${{themes}}</h2>
       <div class="detail-meta">
         <span class="badge ${{cc}}">${{r.conviction||'—'}} Conviction</span>
         <span class="badge badge-horizon">⏱ ${{r.time_horizon||'—'}}</span>
         <span class="badge badge-src">📄 ${{r.source||'—'}}</span>
         <span class="badge badge-src">📅 ${{r.date||date}}</span>
       </div>
-    </div>
-    <div class="summary-box">${{r.summary||'No summary available.'}}</div>
-    ${{cos.length ? `<div class="section"><div class="section-title">Companies</div>${{coHtml}}</div>` : ''}}
-    ${{kps.length ? `<div class="section"><div class="section-title">Key Points</div>${{kpHtml}}</div>` : ''}}
-    ${{cats.length ? `<div class="section"><div class="section-title">Catalysts</div>${{catHtml}}</div>` : ''}}
+    </header>
+    ${{thesis ? `<div class="thesis-box"><div class="thesis-label">Investment Thesis</div>${{thesis}}</div>` : ''}}
+    ${{(!thesis && summary) ? `<div class="summary-box">${{summary}}</div>` : ''}}
+    ${{(thesis && summary) ? `<div class="summary-box">${{summary}}</div>` : ''}}
+    ${{cos.length ? `<section class="section"><h3 class="section-title">Companies</h3>${{coHtml}}</section>` : ''}}
+    ${{kps.length ? `<section class="section"><h3 class="section-title">Key Points</h3>${{kpHtml}}</section>` : ''}}
+    ${{cats.length ? `<section class="section"><h3 class="section-title">Catalysts</h3>${{catHtml}}</section>` : ''}}
   `;
 }}
 
@@ -406,6 +457,64 @@ function selectTheme(idx) {{
   showDetail();
 }}
 
+// ── Reader mode ──────────────────────────────────────────────────────────────
+function _renderReportArticle(r, idx, date) {{
+  const CONV = {{'high':'High Conviction','medium':'Medium Conviction','low':'Low Conviction'}};
+  const themes = (r.themes||[]).join(', ') || 'Unknown Theme';
+  const thesis = r.connection_narrative || r.summary || '';
+  const summary = r.connection_narrative ? (r.summary || '') : '';
+  const kps  = r.key_points  || [];
+  const cats = r.catalysts   || [];
+  const cos  = r.companies   || [];
+  const meta = [
+    r.conviction ? CONV[(r.conviction||'').toLowerCase()] || r.conviction+' Conviction' : '',
+    r.time_horizon ? 'Horizon: '+r.time_horizon : '',
+    r.date || date,
+  ].filter(Boolean).join(' | ');
+
+  let coRows = cos.map(c => {{
+    const sent = (c.sentiment||'—').charAt(0).toUpperCase()+(c.sentiment||'—').slice(1);
+    const sym  = (c.res_conf>=0.60 && c.nse_code && c.nse_code!=='null') ? c.nse_code : (c.symbol||'—');
+    return `<tr><td><strong>${{sym}}</strong></td><td>${{c.name||'—'}}</td><td>${{sent}}</td></tr>`;
+  }}).join('');
+  const coSection = cos.length ? `<section class="section"><h3 class="section-title">Companies</h3>
+    <table class="co-table"><thead><tr><th>Symbol</th><th>Company</th><th>Sentiment</th></tr></thead>
+    <tbody>${{coRows}}</tbody></table></section>` : '';
+
+  const kpSection = kps.length ? `<section class="section"><h3 class="section-title">Key Points</h3>
+    <ul class="kp-list">${{kps.map(k=>`<li>${{k}}</li>`).join('')}}</ul></section>` : '';
+
+  const catSection = cats.length ? `<section class="section"><h3 class="section-title">Catalysts</h3>
+    <ol class="catalyst-list">${{cats.map(c=>`<li>${{c}}</li>`).join('')}}</ol></section>` : '';
+
+  return `<article class="reader-report">
+    <header class="detail-header">
+      <h2 class="detail-title" style="padding-left:12px;border-left:4px solid #2563eb">${{themes}}</h2>
+      <p style="color:#666;font-size:13px;margin:4px 0 12px">${{meta}}</p>
+    </header>
+    ${{thesis ? `<div class="thesis-box"><div class="thesis-label">Investment Thesis</div>${{thesis}}</div>` : ''}}
+    ${{summary ? `<div class="summary-box">${{summary}}</div>` : ''}}
+    ${{coSection}}${{kpSection}}${{catSection}}
+  </article>`;
+}}
+
+function toggleReaderMode() {{
+  const body = document.body;
+  const btn  = document.getElementById('reader-btn');
+  const isReader = body.classList.toggle('reader-mode');
+  btn.classList.toggle('active', isReader);
+  if(isReader) {{
+    const reports = ALL_DATA[currentDate] || [];
+    const h1 = `<h1 style="font-size:24px;font-weight:700;margin-bottom:4px;color:#111">Telegram Equity Insights</h1>
+      <p style="color:#666;font-size:14px;margin-bottom:28px">${{currentDate}} — ${{reports.length}} report${{reports.length!==1?'s':''}}</p>`;
+    document.getElementById('detail-inner').innerHTML =
+      h1 + reports.map((r,i)=>_renderReportArticle(r,i,currentDate)).join('');
+    window.scrollTo(0,0);
+  }} else {{
+    renderDetail(currentDate, currentIdx);
+  }}
+}}
+
 // Init
 renderDateTabs();
 renderSidebar(currentDate);
@@ -427,6 +536,7 @@ renderDetail(currentDate, 0);
   <h1>📊 <span>Telegram</span> Equity Insights</h1>
   <span class="tagline">— research themes & coverage</span>
   <div class="date-tabs" id="date-tabs"></div>
+  <button id="reader-btn" onclick="toggleReaderMode()" title="Switch to reader / TTS mode">📖 Reader</button>
   <span id="gen-time">Updated {now}</span>
 </div>
 
@@ -453,13 +563,13 @@ renderDetail(currentDate, 0);
   </div>
 </div>
 
-<div id="main">
-  <nav id="sidebar"></nav>
-  <div id="detail">
+<main id="main">
+  <nav id="sidebar" aria-label="Report list"></nav>
+  <div id="detail" aria-label="Report detail">
     <button id="mob-back" onclick="showList()">&#8592; Themes</button>
     <div id="detail-inner"></div>
   </div>
-</div>
+</main>
 
 <script>{js}</script>
 </body>
