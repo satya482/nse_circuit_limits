@@ -68,18 +68,50 @@ def _build_html(data: dict[str, list[dict]]) -> str:
     # (used for non-JS fallback; JS overrides at runtime)
 
     css = """
+/* ── Light mode (default — daytime reading) ── */
 :root {
-  --bg:#ffffff; --bg2:#f6f8fa; --bg3:#eef0f2; --bd:#d0d7de;
-  --tx:#1a1a2e; --mu:#57606a;
-  --grn:#1a7f37; --red:#cf222e; --blu:#0969da; --pur:#7c3aed;
-  --ylw:#9a6700; --gld:#b08800;
+  --bg:#F5F2EB; --bg2:#EDEAE0; --bg3:#E3DFD4; --bd:#C8C3B5;
+  --tx:#222222; --mu:#666666;
+  --grn:#1a6b2e; --red:#b91c1c; --blu:#1A365D; --pur:#5b21b6;
+  --ylw:#854d0e; --gld:#92400e;
+  --acc:#0D5C75;
+  /* Component tints */
+  --thesis-bg:#EBF4F8; --thesis-bd:#A8D4E2;
+  --kp-bg:#F0EBF8;     --kp-bd:#D0BCE8;
+  --cat-bg:#F0EBF8;    --cat-bd:#C8B4E0; --cat-num:#DDD0F0;
+  --badge-hi-bg:#D4EED9; --badge-hi-bd:#8EC89A;
+  --badge-me-bg:#FEF3C7; --badge-me-bd:#D4A84B;
+  --badge-lo-bg:#EDEAE0; --badge-lo-bd:#C8C3B5;
+  --badge-hr-bg:#DBF0F5; --badge-hr-bd:#7AC8DC; --badge-hr-tx:#0D5C75;
+  --res-ok-bg:#D4EED9;  --res-ok-bd:#8EC89A;
+  --res-fz-bg:#FEF3C7;  --res-fz-bd:#D4A84B;
 }
+
+/* ── Dark mode (nighttime reading) ── */
+body.dark {
+  --bg:#1A1A1A; --bg2:#242424; --bg3:#2E2E2E; --bd:#3C3C3C;
+  --tx:#E8E8E8; --mu:#A0A0A0;
+  --grn:#4ade80; --red:#f87171; --blu:#8AB4F8; --pur:#C084FC;
+  --ylw:#FBD38D; --gld:#FBD38D;
+  --acc:#A8D5E3;
+  --thesis-bg:#1B2A3A; --thesis-bd:#2D4560;
+  --kp-bg:#231E2E;     --kp-bd:#3D3060;
+  --cat-bg:#231E2E;    --cat-bd:#3D3060; --cat-num:#3D3060;
+  --badge-hi-bg:rgba(74,222,128,.12);  --badge-hi-bd:rgba(74,222,128,.3);
+  --badge-me-bg:rgba(251,211,141,.1);  --badge-me-bd:rgba(251,211,141,.3);
+  --badge-lo-bg:rgba(160,160,160,.1);  --badge-lo-bd:#3C3C3C;
+  --badge-hr-bg:rgba(168,213,227,.1);  --badge-hr-bd:rgba(168,213,227,.3); --badge-hr-tx:#A8D5E3;
+  --res-ok-bg:rgba(74,222,128,.12);    --res-ok-bd:rgba(74,222,128,.3);
+  --res-fz-bg:rgba(251,211,141,.1);    --res-fz-bd:rgba(251,211,141,.3);
+}
+
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
-     background:var(--bg);color:var(--tx);height:100vh;display:flex;flex-direction:column;overflow:hidden}
+     background:var(--bg);color:var(--tx);height:100vh;display:flex;flex-direction:column;
+     overflow:hidden;transition:background .2s,color .2s}
 
 /* ── Top bar ── */
-#topbar{background:var(--bg);border-bottom:2px solid var(--bd);
+#topbar{background:var(--bg2);border-bottom:2px solid var(--bd);
         padding:10px 16px;display:flex;align-items:center;gap:12px;flex-shrink:0}
 #topbar h1{font-size:15px;font-weight:700;color:var(--tx);letter-spacing:.3px}
 #topbar h1 span{color:var(--blu)}
@@ -126,20 +158,20 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .detail-title{font-size:20px;font-weight:700;color:var(--tx);line-height:1.3;margin-bottom:10px}
 .detail-meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .badge{padding:3px 9px;border-radius:10px;font-size:11px;font-weight:600;letter-spacing:.2px}
-.conv-high{background:#dafbe1;border:1px solid #aceebb;color:var(--grn)}
-.conv-med {background:#fff8c5;border:1px solid #e3b341;color:var(--ylw)}
-.conv-low {background:#f6f8fa;border:1px solid var(--bd);color:var(--mu)}
-.badge-horizon{background:#ddf4ff;border:1px solid #80ccff;color:#0550ae}
+.conv-high{background:var(--badge-hi-bg);border:1px solid var(--badge-hi-bd);color:var(--grn)}
+.conv-med {background:var(--badge-me-bg);border:1px solid var(--badge-me-bd);color:var(--ylw)}
+.conv-low {background:var(--badge-lo-bg);border:1px solid var(--badge-lo-bd);color:var(--mu)}
+.badge-horizon{background:var(--badge-hr-bg);border:1px solid var(--badge-hr-bd);color:var(--badge-hr-tx)}
 .badge-src{background:transparent;border:1px solid var(--bd);color:var(--mu);font-weight:400}
 
 /* Thesis / connection narrative — lead TTS block */
-.thesis-box{background:#f0f6ff;border:1px solid #c8deff;border-left:4px solid var(--blu);
+.thesis-box{background:var(--thesis-bg);border:1px solid var(--thesis-bd);border-left:4px solid var(--blu);
             border-radius:6px;padding:16px 18px;margin:16px 0;
-            font-size:16px;color:#0d1117;line-height:1.8}
-.thesis-label{font-size:11px;color:var(--blu);text-transform:uppercase;letter-spacing:.6px;
+            font-size:16px;color:var(--tx);line-height:1.8}
+.thesis-label{font-size:11px;color:var(--acc);text-transform:uppercase;letter-spacing:.6px;
               font-weight:700;margin-bottom:8px}
 
-.summary-box{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid #b0bbc7;
+.summary-box{background:var(--bg2);border:1px solid var(--bd);border-left:3px solid var(--bd);
              border-radius:6px;padding:12px 14px;margin:12px 0 0;
              font-size:14px;color:var(--mu);line-height:1.7}
 
@@ -162,26 +194,24 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .sent-neu {color:var(--mu);font-size:11px}
 .res-badge{display:inline-block;margin-left:4px;padding:1px 5px;border-radius:6px;
            font-size:9px;font-weight:700;vertical-align:middle;letter-spacing:.3px}
-.res-ok{background:#dafbe1;border:1px solid #aceebb;color:var(--grn)}
-.res-fz{background:#fff8c5;border:1px solid #e3b341;color:var(--ylw)}
+.res-ok{background:var(--res-ok-bg);border:1px solid var(--res-ok-bd);color:var(--grn)}
+.res-fz{background:var(--res-fz-bg);border:1px solid var(--res-fz-bd);color:var(--ylw)}
 
 /* ── Key points ── */
 .kp-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-.kp-list li{padding:9px 12px 9px 16px;background:#faf5ff;border:1px solid #e2d9f3;
+.kp-list li{padding:9px 12px 9px 16px;background:var(--kp-bg);border:1px solid var(--kp-bd);
             border-radius:4px;border-left:3px solid var(--pur);
             font-size:14px;color:var(--tx);line-height:1.7;position:relative}
 
 /* ── Catalysts — numbered prose list (TTS-friendly) ── */
-.catalyst-list{list-style:none;display:flex;flex-direction:column;gap:7px;padding:0}
+.catalyst-list{list-style:none;display:flex;flex-direction:column;gap:7px;padding:0;counter-reset:cat-counter}
 .catalyst-list li{counter-increment:cat-counter;display:flex;align-items:flex-start;gap:10px;
-                  padding:8px 12px;background:#faf5ff;
-                  border:1px solid #ddd0f8;border-radius:4px;
-                  font-size:14px;color:var(--tx);line-height:1.6}
+                  padding:8px 12px;background:var(--cat-bg);border:1px solid var(--cat-bd);
+                  border-radius:4px;font-size:14px;color:var(--tx);line-height:1.6}
 .catalyst-list li::before{content:counter(cat-counter);min-width:20px;height:20px;
-                           border-radius:50%;background:#ede9fe;color:var(--pur);
+                           border-radius:50%;background:var(--cat-num);color:var(--pur);
                            font-size:11px;font-weight:700;display:flex;align-items:center;
                            justify-content:center;flex-shrink:0;margin-top:1px}
-.catalyst-list{counter-reset:cat-counter}
 
 /* ── Empty state ── */
 .empty{text-align:center;padding:60px 20px;color:var(--mu)}
@@ -192,14 +222,15 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 ::-webkit-scrollbar-track{background:var(--bg2)}
 ::-webkit-scrollbar-thumb{background:var(--bd);border-radius:3px}
 
-/* ── Reader mode (full-width single-column layout) ── */
-#reader-btn{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);
+/* ── Theme + Reader toolbar buttons ── */
+#theme-btn,#reader-btn{padding:4px 10px;border-radius:20px;border:1px solid var(--bd);
             background:transparent;color:var(--mu);cursor:pointer;font-size:11px;
-            font-family:inherit;transition:.15s;margin-left:8px}
-#reader-btn:hover{border-color:var(--blu);color:var(--blu)}
+            font-family:inherit;transition:.15s;margin-left:4px}
+#theme-btn:hover,#reader-btn:hover{border-color:var(--blu);color:var(--blu)}
 #reader-btn.active{background:var(--blu);border-color:var(--blu);color:#fff;font-weight:600}
 
-body.reader-mode{overflow:auto;background:#fafafa;color:var(--tx)}
+/* ── Reader mode (full-width single-column for TTS) ── */
+body.reader-mode{overflow:auto}
 body.reader-mode #topbar,
 body.reader-mode #statsbar,
 body.reader-mode #sidebar{display:none}
@@ -208,7 +239,6 @@ body.reader-mode #detail{overflow:visible;padding:0;flex:none;background:transpa
 body.reader-mode #detail-inner{max-width:none}
 body.reader-mode #mob-back{display:none}
 body.reader-mode h2.detail-title{font-size:22px}
-body.reader-mode .kp-list li{background:#faf5ff}
 body.reader-mode article.reader-report{border-bottom:2px solid var(--bd);padding-bottom:32px;margin-bottom:32px}
 #reader-back{display:none;align-items:center;gap:8px;padding:12px 0 20px;
              color:var(--blu);cursor:pointer;font-size:14px;font-weight:600;
@@ -448,6 +478,22 @@ function selectTheme(idx) {{
   showDetail();
 }}
 
+// ── Day / Night theme toggle ─────────────────────────────────────────────────
+(function() {{
+  const saved = localStorage.getItem('tg_theme');
+  if(saved === 'dark') {{
+    document.body.classList.add('dark');
+    const btn = document.getElementById('theme-btn');
+    if(btn) btn.textContent = '☀️ Day';
+  }}
+}})();
+
+function toggleTheme() {{
+  const isDark = document.body.classList.toggle('dark');
+  document.getElementById('theme-btn').textContent = isDark ? '☀️ Day' : '🌙 Night';
+  localStorage.setItem('tg_theme', isDark ? 'dark' : 'light');
+}}
+
 // ── Reader mode ──────────────────────────────────────────────────────────────
 function _renderReportArticle(r, idx, date) {{
   const CONV = {{'high':'High Conviction','medium':'Medium Conviction','low':'Low Conviction'}};
@@ -527,6 +573,7 @@ renderDetail(currentDate, 0);
   <h1>📊 <span>Telegram</span> Equity Insights</h1>
   <span class="tagline">— research themes & coverage</span>
   <div class="date-tabs" id="date-tabs"></div>
+  <button id="theme-btn" onclick="toggleTheme()" title="Switch day / night mode">🌙 Night</button>
   <button id="reader-btn" onclick="toggleReaderMode()" title="Switch to reader / TTS mode">📖 Reader</button>
   <span id="gen-time">Updated {now}</span>
 </div>
