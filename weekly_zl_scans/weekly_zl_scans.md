@@ -1,5 +1,5 @@
 # NSE Weekly ZL Scan — 2026-05-14
-*Generated 2026-05-14 12:17 IST*
+*Generated 2026-05-14 15:42 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,19 +17,23 @@
 
 ---
 
-## UPTREND START — 12 stocks
+## UPTREND START — 16 stocks
 
 | Symbol | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [BANARISUG](https://in.tradingview.com/chart/?symbol=NSE:BANARISUG) | 1w | TOUCH | 1w | +1.4% | +1.47% | 3658.60 | 23w | 20%  |
-| [DIXON](https://in.tradingview.com/chart/?symbol=NSE:DIXON) | 1w | ABOVE | 1w | +3.0% | +9.73% | 11124.00 | 2w | 20%  |
-| [OIL](https://in.tradingview.com/chart/?symbol=NSE:OIL) | 1w | ABOVE | 1w | +11.7% | +3.29% | 507.10 | 2w | 20%  |
-| [JARO](https://in.tradingview.com/chart/?symbol=NSE:JARO) | 1w | ABOVE | 1w | +23.2% | +19.30% | 491.45 | 3w | 20%  |
-| [PARADEEP](https://in.tradingview.com/chart/?symbol=NSE:PARADEEP) | 1w | ABOVE | 1w | +1.1% | -1.12% | 126.20 | — | 20%  |
-| [JLHL](https://in.tradingview.com/chart/?symbol=NSE:JLHL) | 1w | ABOVE | 1w | +1.7% | +2.92% | 1270.30 | 3w | 20%  |
-| [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE) | 1w | ABOVE | 1w | +2.0% | +2.31% | 227.44 | 7w | 20%  |
-| [PRABHA](https://in.tradingview.com/chart/?symbol=NSE:PRABHA) | 1w | ABOVE | 1w | +7.6% | +2.07% | 171.81 | 5w | 20%  |
-| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | 1w | ABOVE | 1w | +11.8% | -1.23% | 1400.30 | 1w | 20%  |
-| [JSWDULUX](https://in.tradingview.com/chart/?symbol=NSE:JSWDULUX) | 1w | ABOVE | 1w | +1.1% | +2.06% | 2983.00 | 3w | 20%  |
-| [AMRUTANJAN](https://in.tradingview.com/chart/?symbol=NSE:AMRUTANJAN) | 1w | ABOVE | 1w | +6.7% | +4.92% | 585.05 | — | 20%  |
-| [BIGBLOC](https://in.tradingview.com/chart/?symbol=NSE:BIGBLOC) | 1w | ABOVE | 1w | +21.3% | +3.25% | 58.48 | — | 20%  |
+| [BANARISUG](https://in.tradingview.com/chart/?symbol=NSE:BANARISUG) | 1w | TOUCH | 1w | +0.1% | -1.24% | 3613.20 | 23w | 20%  |
+| [DIXON](https://in.tradingview.com/chart/?symbol=NSE:DIXON) | 1w | ABOVE | 1w | +2.8% | -0.19% | 11103.00 | 2w | 20%  |
+| [OIL](https://in.tradingview.com/chart/?symbol=NSE:OIL) | 1w | ABOVE | 1w | +13.9% | +2.06% | 517.55 | 2w | 20%  |
+| [PNBGILTS](https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS) | 1w | ABOVE | 1w | +11.3% | +16.27% | 80.45 | — | 20%  |
+| [JARO](https://in.tradingview.com/chart/?symbol=NSE:JARO) | 1w | ABOVE | 1w | +25.3% | +1.74% | 500.00 | 3w | 20%  |
+| [ICICIGI](https://in.tradingview.com/chart/?symbol=NSE:ICICIGI) | 1w | ABOVE | 1w | +1.1% | +2.48% | 1848.90 | 1w | 20%  |
+| [GREENLAM](https://in.tradingview.com/chart/?symbol=NSE:GREENLAM) | 1w | ABOVE | 1w | +1.4% | +8.02% | 228.46 | — | 20%  |
+| [JLHL](https://in.tradingview.com/chart/?symbol=NSE:JLHL) | 1w | ABOVE | 1w | +6.0% | +4.23% | 1324.00 | 3w | 20%  |
+| [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | 1w | ABOVE | 1w | +4.6% | +2.26% | 303.00 | — | 20%  |
+| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | 1w | ABOVE | 1w | +8.9% | -2.59% | 1364.10 | 1w | 20%  |
+| [NILKAMAL](https://in.tradingview.com/chart/?symbol=NSE:NILKAMAL) | 1w | ABOVE | 1w | +3.4% | +2.45% | 1340.50 | — | 20%  |
+| [PRABHA](https://in.tradingview.com/chart/?symbol=NSE:PRABHA) | 1w | ABOVE | 1w | +11.9% | +3.99% | 178.66 | 5w | 20%  |
+| [JKLAKSHMI](https://in.tradingview.com/chart/?symbol=NSE:JKLAKSHMI) | 1w | ABOVE | 1w | +0.5% | +0.62% | 667.45 | — | 20%  |
+| [VIDHIING](https://in.tradingview.com/chart/?symbol=NSE:VIDHIING) | 1w | ABOVE | 1w | +2.6% | +6.69% | 306.95 | 6w | 20%  |
+| [AMRUTANJAN](https://in.tradingview.com/chart/?symbol=NSE:AMRUTANJAN) | 1w | ABOVE | 1w | +4.6% | -1.91% | 573.85 | — | 20%  |
+| [BIGBLOC](https://in.tradingview.com/chart/?symbol=NSE:BIGBLOC) | 1w | ABOVE | 1w | +16.7% | -3.78% | 56.27 | — | 20%  |
