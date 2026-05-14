@@ -9,6 +9,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 ```powershell
 .\run_fetch_data.ps1          # 4:05 PM — Kite auth + SQLite backfill/delta + manifest commit
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
+.\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
@@ -72,12 +73,21 @@ All thresholds live in `settings.yaml`. Pipeline:
 
 1. TradingView screener → watchlist (MCap ₹800 Cr – ₹1 Lakh Cr, no RS gate)
 2. `load_ohlc(symbol)` → `to_weekly()` resamples daily OHLC to weekly (partial current week included)
-3. Weekly ZLEMA25 (`2×EMA25 − EMA(EMA25)`) — only stocks with `zl25[-1] > zl25[-2]` pass
+3. Weekly ZLEMA25 (`2×EMA25 − EMA(EMA25)`) — uptrend start: `zl25[-1] > zl25[-2] AND zl25[-3] >= zl25[-2]` (rising this bar, flat/falling previous bar)
 4. `zl25_consecutive_rising()` → count consecutive weekly bars ZLEMA25 has been rising
-5. **Confirmed uptrend**: ≥4 consecutive rising weeks · **Fresh turn**: 1–3 weeks
-6. `price_vs_zl`: TOUCH (±1.5% of ZLEMA25 level) / ABOVE / ABOVE — flags pullback entry zone
-7. `bb_kc_squeeze_info()` → squeeze column (informational, not a gate)
-8. Writes `weekly_zl_scans/weekly_zl_scans.md`; sorted TOUCH-first within each section
+5. `price_vs_zl`: TOUCH (±1.5% of ZLEMA25 level) / ABOVE / BELOW — flags pullback entry zone
+6. `bb_kc_squeeze_info()` → squeeze column (informational, not a gate)
+7. Writes `weekly_zl_scans/weekly_zl_scans.md`; sorted TOUCH-first, then by `-consec_weeks`
+
+### Daily Gainers Brief (`daily_gainers_brief.py`)
+
+1. Fetches NSE gainers + positive-change value stocks from two NSE API endpoints
+2. Combines, deduplicates by symbol, takes top 20 by % change DESC
+3. For each stock: enriches via KG (Neo4j BENEFITS_FROM themes + TRIGGERED catalysts) → `.company_cache/` (30d TTL) → screener.in live scrape cascade
+4. Assembles `business_text` / `products_text` / `macro_text` directly from raw data (no LLM)
+5. Generates responsive HTML with day/night toggle, sortable summary table, per-stock cards with KG pills
+6. Writes `daily_brief.html` (root, always overwritten) + `daily_briefs/daily_brief_YYYY-MM-DD.html`
+7. `--dry-run` flag prints enriched context, skips HTML write
 
 ### Dashboard (`dashboard_generator.py`)
 
@@ -112,6 +122,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `swing_scans/swing_scans.md` | `swing_scanner.py` |
 | `ema_screener_changes.md` | `nse_ema_daily.py` |
 | `dashboard.html` | `dashboard_generator.py` |
+| `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)

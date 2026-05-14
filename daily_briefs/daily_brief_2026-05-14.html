@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NSE Daily Brief — 14 May 2026</title>
+<style>
+/* Light mode */
+:root{
+  --bg:#F8F6F2;--bg2:#EDEAE0;--bg3:#E3DFD4;--bd:#D0CBC0;
+  --tx:#1A1A1A;--mu:#666;
+  --grn:#1a6b2e;--red:#b91c1c;--blu:#1A365D;--acc:#0D5C75;
+  --tag-bg:#EBF4F8;--tag-tx:#0D5C75;--tag-bd:#A8D4E2;
+  --theme-bg:#F0EBF8;--theme-bd:#D0BCE8;--theme-tx:#5b21b6;
+  --cat-bg:#FEF3C7;--cat-bd:#D4A84B;--cat-tx:#854d0e;
+  --cv-bg:#D4EED9;--cv-bd:#8EC89A;--cv-tx:#1a6b2e;
+}
+/* Dark mode */
+body.dark{
+  --bg:#0d1117;--bg2:#161b22;--bg3:#21262d;--bd:#30363d;
+  --tx:#e6edf3;--mu:#8b949e;
+  --grn:#4ade80;--red:#f87171;--blu:#58a6ff;--acc:#A8D5E3;
+  --tag-bg:rgba(168,213,227,.1);--tag-tx:#A8D5E3;--tag-bd:rgba(168,213,227,.3);
+  --theme-bg:rgba(192,132,252,.1);--theme-bd:rgba(192,132,252,.25);--theme-tx:#c084fc;
+  --cat-bg:rgba(251,211,141,.1);--cat-bd:rgba(251,211,141,.3);--cat-tx:#FBD38D;
+  --cv-bg:rgba(74,222,128,.1);--cv-bd:rgba(74,222,128,.25);--cv-tx:#4ade80;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
+     background:var(--bg);color:var(--tx);transition:background .2s,color .2s;
+     min-height:100vh}
+
+/* Top bar */
+#topbar{background:var(--bg2);border-bottom:2px solid var(--bd);
+        padding:10px 16px;display:flex;align-items:center;gap:10px;
+        position:sticky;top:0;z-index:10}
+#topbar h1{font-size:15px;font-weight:700;letter-spacing:.3px}
+#topbar h1 span{color:var(--acc)}
+.tb-meta{color:var(--mu);font-size:11px;margin-left:4px}
+#toggle{margin-left:auto;background:transparent;border:1px solid var(--bd);
+        border-radius:20px;padding:4px 10px;cursor:pointer;font-size:12px;
+        color:var(--tx);font-family:inherit;transition:.15s}
+#toggle:hover{border-color:var(--acc);color:var(--acc)}
+
+/* Summary table */
+#summary{padding:12px 16px;background:var(--bg2);border-bottom:1px solid var(--bd);overflow-x:auto}
+.stbl{width:100%;border-collapse:collapse;font-size:12px}
+.stbl th{padding:5px 9px;text-align:left;color:var(--mu);text-transform:uppercase;
+         font-size:10px;letter-spacing:.4px;cursor:pointer;white-space:nowrap;user-select:none}
+.stbl th:hover{color:var(--acc)}
+.stbl td{padding:5px 9px;border-top:1px solid var(--bd);vertical-align:middle}
+.stbl tr:hover td{background:var(--bg3)}
+.sym-link{color:var(--acc);font-weight:700;text-decoration:none}
+.sym-link:hover{text-decoration:underline}
+.pos{color:var(--grn);font-weight:600}
+.neg{color:var(--red);font-weight:600}
+
+/* Cards grid */
+#cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+       gap:16px;padding:16px;max-width:1600px;margin:0 auto}
+@media(max-width:600px){
+  #cards{grid-template-columns:1fr;padding:10px}
+  #topbar{flex-wrap:wrap}
+  .tb-meta{display:none}
+}
+
+/* Individual card */
+.card{background:var(--bg2);border:1px solid var(--bd);border-radius:8px;
+      padding:14px 16px;display:flex;flex-direction:column;gap:10px;
+      border-left:3px solid var(--bd)}
+.card.kg-card{border-left-color:var(--grn)}
+
+.card-hdr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.c-sym{font-size:15px;font-weight:700;text-decoration:none;color:var(--acc)}
+.c-sym:hover{text-decoration:underline}
+.c-name{font-size:12px;color:var(--mu);flex:1;min-width:0;overflow:hidden;
+        text-overflow:ellipsis;white-space:nowrap}
+.c-chg{font-size:13px;font-weight:700;margin-left:auto;white-space:nowrap}
+
+.c-sector{font-size:10px;color:var(--mu);background:var(--bg3);
+          padding:2px 8px;border-radius:10px;width:fit-content}
+
+.sec-label{font-size:10px;color:var(--mu);text-transform:uppercase;
+           letter-spacing:.5px;font-weight:600;margin-bottom:2px}
+.sec-body{font-size:12px;line-height:1.6;color:var(--tx)}
+.sec-small{font-size:11px;color:var(--mu)}
+
+/* KG pills row */
+.kg-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:2px}
+.kp{padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600;
+    border:1px solid;white-space:nowrap}
+.kp-theme{background:var(--theme-bg);border-color:var(--theme-bd);color:var(--theme-tx)}
+.kp-cat{background:var(--cat-bg);border-color:var(--cat-bd);color:var(--cat-tx)}
+.kp-cv{background:var(--cv-bg);border-color:var(--cv-bd);color:var(--cv-tx)}
+</style>
+</head>
+<body>
+
+<div id="topbar">
+  <h1>NSE Daily Brief &nbsp;<span>14 May 2026</span></h1>
+  <span class="tb-meta">Top 20 movers · Gainers + Value</span>
+  <span class="tb-meta">· 17:15 IST</span>
+  
+  <button id="toggle">🌙 Dark</button>
+</div>
+
+<div id="summary">
+  <table class="stbl">
+    <thead>
+      <tr>
+        <th data-col="rank">#</th>
+        <th data-col="sym">Symbol</th>
+        <th data-col="name">Name</th>
+        <th data-col="chg" data-num="1">Chg%</th>
+        <th data-col="ltp" data-num="1">Close</th>
+        <th data-col="sector">Sector</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td data-col="rank">1</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:AMNPLST" target="_blank">AMNPLST</a></td><td data-col="name">AMNPLST</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">202.09</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">2</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BLACKROSE" target="_blank">BLACKROSE</a></td><td data-col="name">BLACKROSE</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">102.92</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">3</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BALAMINES" target="_blank">BALAMINES</a></td><td data-col="name">Balaji Amines Ltd.</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">1623.40</td><td data-col="sector">Chemicals &amp; Petrochemicals</td></tr>
+<tr><td data-col="rank">4</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MODINATUR" target="_blank">MODINATUR</a></td><td data-col="name">MODINATUR</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">447.40</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">5</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS" target="_blank">PNBGILTS</a></td><td data-col="name">PNBGILTS</td><td data-col="chg" class="pos">+17.20%</td><td data-col="ltp">81.09</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">6</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:GRAVISSHO" target="_blank">GRAVISSHO</a></td><td data-col="name">GRAVISSHO</td><td data-col="chg" class="pos">+15.69%</td><td data-col="ltp">32.22</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">7</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA" target="_blank">SAREGAMA</a></td><td data-col="name">Saregama India Ltd.</td><td data-col="chg" class="pos">+15.15%</td><td data-col="ltp">385.80</td><td data-col="sector">Media</td></tr>
+<tr><td data-col="rank">8</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA" target="_blank">NLCINDIA</a></td><td data-col="name">NLC India Ltd.</td><td data-col="chg" class="pos">+14.61%</td><td data-col="ltp">373.30</td><td data-col="sector">Utilities</td></tr>
+<tr><td data-col="rank">9</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:KEEPLEARN" target="_blank">KEEPLEARN</a></td><td data-col="name">KEEPLEARN</td><td data-col="chg" class="pos">+13.68%</td><td data-col="ltp">2.16</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">10</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MTARTECH" target="_blank">MTARTECH</a></td><td data-col="name">MTAR Technologies Ltd.</td><td data-col="chg" class="pos">+12.29%</td><td data-col="ltp">7595.00</td><td data-col="sector">General Industrials</td></tr>
+<tr><td data-col="rank">11</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:HECPROJECT" target="_blank">HECPROJECT</a></td><td data-col="name">HECPROJECT</td><td data-col="chg" class="pos">+11.06%</td><td data-col="ltp">128.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">12</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIAMINESQ" target="_blank">DIAMINESQ</a></td><td data-col="name">DIAMINESQ</td><td data-col="chg" class="pos">+10.60%</td><td data-col="ltp">288.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">13</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:ASHIMASYN" target="_blank">ASHIMASYN</a></td><td data-col="name">ASHIMASYN</td><td data-col="chg" class="pos">+10.10%</td><td data-col="ltp">17.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">14</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIACABS" target="_blank">DIACABS</a></td><td data-col="name">Diamond Power Infrastructure Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">191.99</td><td data-col="sector">Consumer Durables</td></tr>
+<tr><td data-col="rank">15</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE" target="_blank">IDEAFORGE</a></td><td data-col="name">ideaForge Technology Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">848.20</td><td data-col="sector">General Industrials</td></tr>
+<tr><td data-col="rank">16</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MMWL" target="_blank">MMWL</a></td><td data-col="name">MMWL</td><td data-col="chg" class="pos">+9.93%</td><td data-col="ltp">14.39</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">17</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:FMNL" target="_blank">FMNL</a></td><td data-col="name">FMNL</td><td data-col="chg" class="pos">+9.92%</td><td data-col="ltp">10.53</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">18</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:RPEL" target="_blank">RPEL</a></td><td data-col="name">RPEL</td><td data-col="chg" class="pos">+9.91%</td><td data-col="ltp">814.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">19</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT" target="_blank">CAPLIPOINT</a></td><td data-col="name">Caplin Point Laboratories Ltd.</td><td data-col="chg" class="pos">+9.89%</td><td data-col="ltp">2024.00</td><td data-col="sector">Pharmaceuticals &amp; Biotechnology</td></tr>
+<tr><td data-col="rank">20</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DMCC" target="_blank">DMCC</a></td><td data-col="name">DMCC</td><td data-col="chg" class="pos">+9.25%</td><td data-col="ltp">322.90</td><td data-col="sector"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<div id="cards">
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:AMNPLST" target="_blank">AMNPLST</a>
+        <span class="c-name">AMNPLST</span>
+        <span class="c-chg pos">+20.00%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1973, Amines &amp; Plasticizers Ltd manufactures over 60 different varieties of organic chemicals, amines, solvents, and fertilizers. [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:BLACKROSE" target="_blank">BLACKROSE</a>
+        <span class="c-name">BLACKROSE</span>
+        <span class="c-chg pos">+20.00%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1990, Black Rose Industries Ltd manufactures and distributes chemicals [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:BALAMINES" target="_blank">BALAMINES</a>
+        <span class="c-name">Balaji Amines Ltd.</span>
+        <span class="c-chg pos">+19.99%</span>
+      </div>
+      <div class="c-sector">Specialty Chemicals · Chemicals &amp; Petrochemicals</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Balaji Amines Ltd specialises in manufacturing Methylamines, Ethylamines, Derivatives of specialty chemicals and Pharma Excipients. These have been the main products, it also have facilities for the manufacturing of derivatives, which are down-stream products for various pharma/pesticide industries apart from user specific requirements. It is one of the largest manufacturers of aliphatic amines in India. [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">Balaji Amines Ltd. is a leading Indian manufacturer specializing in aliphatic amines, their derivatives, and specialty fine chemicals. Established in 1988 and headquartered in Solapur, Maharashtra, the company is a critical player in the chemical ind... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Specialty Chemicals · Chemicals &amp; Petrochemicals</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MODINATUR" target="_blank">MODINATUR</a>
+        <span class="c-name">MODINATUR</span>
+        <span class="c-chg pos">+19.99%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1974, Modi Naturals Ltd manufactures and markets oils and deoiled cakes [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS" target="_blank">PNBGILTS</a>
+        <span class="c-name">PNBGILTS</span>
+        <span class="c-chg pos">+17.20%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">The Co’s primary activities include supporting government borrowing program via underwriting of government securities issuances and trading in a gamut of fixed income instruments such as Government securities, Treasury Bills, State Development Loans, Corporate Bonds, Interest Rate Swaps and various money market instruments such as Certificates of Deposits, Commercial Papers etc. [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:GRAVISSHO" target="_blank">GRAVISSHO</a>
+        <span class="c-name">GRAVISSHO</span>
+        <span class="c-chg pos">+15.69%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1959, Graviss Hospitality Ltd is in the hospitality business [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA" target="_blank">SAREGAMA</a>
+        <span class="c-name">Saregama India Ltd.</span>
+        <span class="c-chg pos">+15.15%</span>
+      </div>
+      <div class="c-sector">Movies &amp; Entertainment · Media</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Saregama is the oldest music label company from India (established 1902, erstwhile &quot;Gramophone Company of India&quot; &amp; then &quot;HMV&quot;). The company is aiming to be a pure-play content company supported by the global consumption boom. [1] Since 2017, Saregama has been making headlines again owing to the launch of two unique initiatives, Saregama Carvaan and Yoodlee Films. [2]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">Saregama India Ltd. is a prominent player in the Indian media and entertainment sector, transitioning from a legacy music label to a diversified content powerhouse. The company operates as an intellectual property (IP) owner, focusing on the creation... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Movies &amp; Entertainment · Media</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA" target="_blank">NLCINDIA</a>
+        <span class="c-name">NLC India Ltd.</span>
+        <span class="c-chg pos">+14.61%</span>
+      </div>
+      <div class="c-sector">Power - Electric Utilities · Utilities</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">NLC India is engaged in the business of mining of lignite and generation of power by using lignite as well as Renewable Energy Sources.(Source : 202003 Annual Report Page No:89)</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">NLC India Ltd. (NLCIL) is a Navratna Government of India Enterprise under the Ministry of Coal. Established in 1956, it is a key player in India's energy sector, operating as an integrated fuel and power company. It holds a dominant position in l... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Power - Electric Utilities · Utilities</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:KEEPLEARN" target="_blank">KEEPLEARN</a>
+        <span class="c-name">KEEPLEARN</span>
+        <span class="c-chg pos">+13.68%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1989, DSJ Keep Learning Ltd provides support services and software solutions to educational institutions. [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MTARTECH" target="_blank">MTARTECH</a>
+        <span class="c-name">MTAR Technologies Ltd.</span>
+        <span class="c-chg pos">+12.29%</span>
+      </div>
+      <div class="c-sector">Aerospace &amp; Defence · General Industrials</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">MTAR develops and manufactures components and equipment for the defense, aerospace, nuclear and clean energy sectors. The company was incorporated in 1970 by the promoters, Mr PR Reddy, Mr KSN Reddy and Mr PJ Reddy, to cater to the technical and engineering needs of the Indian government in the post embargo regime. MTAR has manufacturing footprints in Hyderabad with seven units spread across a 4 km radius and a dedicated export facility as well. [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">MTAR Technologies Ltd. (MTAR) is a precision engineering company based in India, specializing in the manufacturing of mission-critical components and systems for high-growth strategic sectors. The company serves the Clean Energy, Nuclear, **S... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Aerospace &amp; Defence · General Industrials</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:HECPROJECT" target="_blank">HECPROJECT</a>
+        <span class="c-name">HECPROJECT</span>
+        <span class="c-chg pos">+11.06%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 2005, HEC Infra Projects Ltd is engaged in electrification services</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DIAMINESQ" target="_blank">DIAMINESQ</a>
+        <span class="c-name">DIAMINESQ</span>
+        <span class="c-chg pos">+10.60%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1976, Diamines and Chemicals Ltd is in the business of manufacturing and marketing of organic chemicals compounds [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:ASHIMASYN" target="_blank">ASHIMASYN</a>
+        <span class="c-name">ASHIMASYN</span>
+        <span class="c-chg pos">+10.10%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1982, Ashima Ltd is in the business of Textiles, Real Estate and Treasury business [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DIACABS" target="_blank">DIACABS</a>
+        <span class="c-name">Diamond Power Infrastructure Ltd.</span>
+        <span class="c-chg pos">+10.00%</span>
+      </div>
+      <div class="c-sector">Other Electrical Equipment/Products · Consumer Durables</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Diamond Power Infrastructure Limited is engaged in the business of manufacturing of Transmission &amp; distribution of power products &amp; services in India. [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">Diamond Power Infrastructure Ltd. (DICABS) is a vertically integrated player in India's power transmission and distribution (T&amp;D) sector. Founded in 1970, the company manufactures a wide range of products, including conductors, cables, and transmissi... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Other Electrical Equipment/Products · Consumer Durables</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE" target="_blank">IDEAFORGE</a>
+        <span class="c-name">ideaForge Technology Ltd.</span>
+        <span class="c-chg pos">+10.00%</span>
+      </div>
+      <div class="c-sector">Aerospace &amp; Defence · General Industrials</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 2007, ideaForge Technology Limited is engaged in the business of manufacturing Unmanned Aircraft Systems (UAS). [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">ideaForge Technology Ltd. is a prominent player in the Indian Unmanned Aerial Vehicle (UAV) market, specializing in the design, development, and manufacture of drone systems for defense and civil applications. With a legacy spanning over 18 years, th... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Aerospace &amp; Defence · General Industrials</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MMWL" target="_blank">MMWL</a>
+        <span class="c-name">MMWL</span>
+        <span class="c-chg pos">+9.93%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1985, Media Matrix Worldwide Ltd specializes in Value Added Services for mobile and digital platforms. [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:FMNL" target="_blank">FMNL</a>
+        <span class="c-name">FMNL</span>
+        <span class="c-chg pos">+9.92%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 2008, Future Market Networks Ltd is in the business of leasing out of commercial units / shops. [1]</p>
+      </div>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:RPEL" target="_blank">RPEL</a>
+        <span class="c-name">RPEL</span>
+        <span class="c-chg pos">+9.91%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">RPEL is engaged in manufacturing of quartz based ramming mass, quartz powder, and tundish board. It sells its products under the brand name of “Raghav” . [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">Raghav Productivity Enhancers Ltd. (RPEL) is the world’s largest producer of silica ramming mass and the only organized, publicly listed manufacturer in this sector in India. Primarily based in Rajasthan, the company serves as a critical supplier of ... Read More</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT" target="_blank">CAPLIPOINT</a>
+        <span class="c-name">Caplin Point Laboratories Ltd.</span>
+        <span class="c-chg pos">+9.89%</span>
+      </div>
+      <div class="c-sector">Pharmaceuticals · Pharmaceuticals &amp; Biotechnology</div>
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Caplin Point Laboratories Ltd is engaged in the manufacturing and sourcing of APIs, finished formulations, R&amp;D, clinical research with presence in Latin America, Africa, USA and other nations. [1]</p>
+      </div>
+      <div class="sec-label">Products &amp; Segments</div>
+      <p class="sec-body sec-small">Caplin Point Laboratories Ltd. (Caplin Point) is an Indian pharmaceutical company with a 100% export-oriented business model. Established in 1990, the company has evolved from a manufacturer of ointments and creams to a fully integrated pharmaceutica... Read More</p>
+      <div class="sec-label">Macro &amp; Sector</div>
+      <p class="sec-body">Pharmaceuticals · Pharmaceuticals &amp; Biotechnology</p>
+      
+    </div>
+
+    <div class="card">
+      <div class="card-hdr">
+        <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DMCC" target="_blank">DMCC</a>
+        <span class="c-name">DMCC</span>
+        <span class="c-chg pos">+9.25%</span>
+      </div>
+      
+      <div>
+        <div class="sec-label">Business</div>
+        <p class="sec-body">Incorporated in 1919,  DMCC Speciality Chemicals Ltd manufactures and sells Commodity and Speciality Chemicals [1]</p>
+      </div>
+      
+    </div>
+</div>
+
+<script>
+const t=document.getElementById('toggle');
+function applyTheme(d){
+  document.body.classList.toggle('dark',d);
+  t.textContent=d?'☀ Light':'🌙 Dark';
+}
+t.onclick=()=>{const d=!document.body.classList.contains('dark');applyTheme(d);localStorage.setItem('theme',d?'dark':'light')};
+applyTheme(localStorage.getItem('theme')==='dark');
+
+// Sortable summary table
+document.querySelectorAll('.stbl th[data-col]').forEach(th=>{
+  th.onclick=()=>{
+    const col=th.dataset.col,num=th.dataset.num==='1';
+    const tbody=th.closest('table').querySelector('tbody');
+    const rows=[...tbody.querySelectorAll('tr')];
+    const asc=th.dataset.asc!=='1';
+    rows.sort((a,b)=>{
+      const av=a.querySelector(`td[data-col="${col}"]`)?.textContent.replace(/[%,+₹]/g,'').trim()||'';
+      const bv=b.querySelector(`td[data-col="${col}"]`)?.textContent.replace(/[%,+₹]/g,'').trim()||'';
+      return num?(parseFloat(av)-parseFloat(bv))*(asc?1:-1):av.localeCompare(bv)*(asc?1:-1);
+    });
+    rows.forEach(r=>tbody.appendChild(r));
+    th.dataset.asc=asc?'1':'';
+  };
+});
+</script>
+</body>
+</html>
