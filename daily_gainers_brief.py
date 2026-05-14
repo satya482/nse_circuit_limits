@@ -435,6 +435,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .stbl tr:hover td{background:var(--bg3)}
 .sym-link{color:var(--acc);font-weight:700;text-decoration:none}
 .sym-link:hover{text-decoration:underline}
+.sc-link{margin-left:5px;font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;
+         text-decoration:none;background:var(--mu);color:var(--bg);opacity:.7;vertical-align:middle}
+.sc-link:hover{opacity:1}
 .pos{color:var(--grn);font-weight:600}
 .neg{color:var(--red);font-weight:600}
 
@@ -456,6 +459,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .card-hdr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .c-sym{font-size:15px;font-weight:700;text-decoration:none;color:var(--acc)}
 .c-sym:hover{text-decoration:underline}
+.c-sc{font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;
+      text-decoration:none;background:var(--mu);color:var(--bg);opacity:.7;vertical-align:middle}
+.c-sc:hover{opacity:1}
 .c-name{font-size:12px;color:var(--mu);flex:1;min-width:0;overflow:hidden;
         text-overflow:ellipsis;white-space:nowrap}
 .c-chg{font-size:13px;font-weight:700;margin-left:auto;white-space:nowrap}
@@ -508,6 +514,7 @@ document.querySelectorAll('.stbl th[data-col]').forEach(th=>{
 def _html_card(c: dict) -> str:
     sym     = c["symbol"]
     tv_url  = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sc_url  = f"https://www.screener.in/company/{sym}/"
     chg     = c["change_pct"]
     chg_cls = "pos" if chg >= 0 else "neg"
     chg_str = f"+{chg:.2f}%" if chg >= 0 else f"{chg:.2f}%"
@@ -550,6 +557,7 @@ def _html_card(c: dict) -> str:
     <div class="{kg_cls}">
       <div class="card-hdr">
         <a class="c-sym" href="{tv_url}" target="_blank">{sym}</a>
+        <a class="c-sc" href="{sc_url}" target="_blank">SC</a>
         <span class="c-name">{_esc(c['name'])}</span>
         <span class="c-chg {chg_cls}">{chg_str}</span>
       </div>
@@ -565,6 +573,7 @@ def _html_card(c: dict) -> str:
 def _html_table_row(i: int, c: dict) -> str:
     sym     = c["symbol"]
     tv_url  = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sc_url  = f"https://www.screener.in/company/{sym}/"
     chg     = c["change_pct"]
     chg_cls = "pos" if chg >= 0 else "neg"
     chg_str = f"+{chg:.2f}%" if chg >= 0 else f"{chg:.2f}%"
@@ -572,7 +581,8 @@ def _html_table_row(i: int, c: dict) -> str:
     return (
         f'<tr>'
         f'<td data-col="rank">{i}</td>'
-        f'<td data-col="sym"><a class="sym-link" href="{tv_url}" target="_blank">{sym}</a></td>'
+        f'<td data-col="sym"><a class="sym-link" href="{tv_url}" target="_blank">{sym}</a>'
+        f'<a class="sc-link" href="{sc_url}" target="_blank">SC</a></td>'
         f'<td data-col="name">{_esc(c["name"])}</td>'
         f'<td data-col="chg" class="{chg_cls}">{chg_str}</td>'
         f'<td data-col="ltp">{c["ltp"]:.2f}</td>'

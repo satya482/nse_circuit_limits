@@ -52,6 +52,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .stbl tr:hover td{background:var(--bg3)}
 .sym-link{color:var(--acc);font-weight:700;text-decoration:none}
 .sym-link:hover{text-decoration:underline}
+.sc-link{margin-left:5px;font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;
+         text-decoration:none;background:var(--mu);color:var(--bg);opacity:.7;vertical-align:middle}
+.sc-link:hover{opacity:1}
 .pos{color:var(--grn);font-weight:600}
 .neg{color:var(--red);font-weight:600}
 
@@ -73,6 +76,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 .card-hdr{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .c-sym{font-size:15px;font-weight:700;text-decoration:none;color:var(--acc)}
 .c-sym:hover{text-decoration:underline}
+.c-sc{font-size:10px;font-weight:600;padding:1px 5px;border-radius:3px;
+      text-decoration:none;background:var(--mu);color:var(--bg);opacity:.7;vertical-align:middle}
+.c-sc:hover{opacity:1}
 .c-name{font-size:12px;color:var(--mu);flex:1;min-width:0;overflow:hidden;
         text-overflow:ellipsis;white-space:nowrap}
 .c-chg{font-size:13px;font-weight:700;margin-left:auto;white-space:nowrap}
@@ -99,7 +105,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
 <div id="topbar">
   <h1>NSE Daily Brief &nbsp;<span>14 May 2026</span></h1>
   <span class="tb-meta">Top 20 movers · Gainers + Value</span>
-  <span class="tb-meta">· 17:15 IST</span>
+  <span class="tb-meta">· 18:15 IST</span>
   
   <button id="toggle">🌙 Dark</button>
 </div>
@@ -117,26 +123,26 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
       </tr>
     </thead>
     <tbody>
-<tr><td data-col="rank">1</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:AMNPLST" target="_blank">AMNPLST</a></td><td data-col="name">AMNPLST</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">202.09</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">2</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BLACKROSE" target="_blank">BLACKROSE</a></td><td data-col="name">BLACKROSE</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">102.92</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">3</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BALAMINES" target="_blank">BALAMINES</a></td><td data-col="name">Balaji Amines Ltd.</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">1623.40</td><td data-col="sector">Chemicals &amp; Petrochemicals</td></tr>
-<tr><td data-col="rank">4</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MODINATUR" target="_blank">MODINATUR</a></td><td data-col="name">MODINATUR</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">447.40</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">5</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS" target="_blank">PNBGILTS</a></td><td data-col="name">PNBGILTS</td><td data-col="chg" class="pos">+17.20%</td><td data-col="ltp">81.09</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">6</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:GRAVISSHO" target="_blank">GRAVISSHO</a></td><td data-col="name">GRAVISSHO</td><td data-col="chg" class="pos">+15.69%</td><td data-col="ltp">32.22</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">7</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA" target="_blank">SAREGAMA</a></td><td data-col="name">Saregama India Ltd.</td><td data-col="chg" class="pos">+15.15%</td><td data-col="ltp">385.80</td><td data-col="sector">Media</td></tr>
-<tr><td data-col="rank">8</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA" target="_blank">NLCINDIA</a></td><td data-col="name">NLC India Ltd.</td><td data-col="chg" class="pos">+14.61%</td><td data-col="ltp">373.30</td><td data-col="sector">Utilities</td></tr>
-<tr><td data-col="rank">9</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:KEEPLEARN" target="_blank">KEEPLEARN</a></td><td data-col="name">KEEPLEARN</td><td data-col="chg" class="pos">+13.68%</td><td data-col="ltp">2.16</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">10</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MTARTECH" target="_blank">MTARTECH</a></td><td data-col="name">MTAR Technologies Ltd.</td><td data-col="chg" class="pos">+12.29%</td><td data-col="ltp">7595.00</td><td data-col="sector">General Industrials</td></tr>
-<tr><td data-col="rank">11</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:HECPROJECT" target="_blank">HECPROJECT</a></td><td data-col="name">HECPROJECT</td><td data-col="chg" class="pos">+11.06%</td><td data-col="ltp">128.00</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">12</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIAMINESQ" target="_blank">DIAMINESQ</a></td><td data-col="name">DIAMINESQ</td><td data-col="chg" class="pos">+10.60%</td><td data-col="ltp">288.00</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">13</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:ASHIMASYN" target="_blank">ASHIMASYN</a></td><td data-col="name">ASHIMASYN</td><td data-col="chg" class="pos">+10.10%</td><td data-col="ltp">17.00</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">14</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIACABS" target="_blank">DIACABS</a></td><td data-col="name">Diamond Power Infrastructure Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">191.99</td><td data-col="sector">Consumer Durables</td></tr>
-<tr><td data-col="rank">15</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE" target="_blank">IDEAFORGE</a></td><td data-col="name">ideaForge Technology Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">848.20</td><td data-col="sector">General Industrials</td></tr>
-<tr><td data-col="rank">16</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MMWL" target="_blank">MMWL</a></td><td data-col="name">MMWL</td><td data-col="chg" class="pos">+9.93%</td><td data-col="ltp">14.39</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">17</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:FMNL" target="_blank">FMNL</a></td><td data-col="name">FMNL</td><td data-col="chg" class="pos">+9.92%</td><td data-col="ltp">10.53</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">18</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:RPEL" target="_blank">RPEL</a></td><td data-col="name">RPEL</td><td data-col="chg" class="pos">+9.91%</td><td data-col="ltp">814.00</td><td data-col="sector"></td></tr>
-<tr><td data-col="rank">19</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT" target="_blank">CAPLIPOINT</a></td><td data-col="name">Caplin Point Laboratories Ltd.</td><td data-col="chg" class="pos">+9.89%</td><td data-col="ltp">2024.00</td><td data-col="sector">Pharmaceuticals &amp; Biotechnology</td></tr>
-<tr><td data-col="rank">20</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DMCC" target="_blank">DMCC</a></td><td data-col="name">DMCC</td><td data-col="chg" class="pos">+9.25%</td><td data-col="ltp">322.90</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">1</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:AMNPLST" target="_blank">AMNPLST</a><a class="sc-link" href="https://www.screener.in/company/AMNPLST/" target="_blank">SC</a></td><td data-col="name">AMNPLST</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">202.09</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">2</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BLACKROSE" target="_blank">BLACKROSE</a><a class="sc-link" href="https://www.screener.in/company/BLACKROSE/" target="_blank">SC</a></td><td data-col="name">BLACKROSE</td><td data-col="chg" class="pos">+20.00%</td><td data-col="ltp">102.92</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">3</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:BALAMINES" target="_blank">BALAMINES</a><a class="sc-link" href="https://www.screener.in/company/BALAMINES/" target="_blank">SC</a></td><td data-col="name">Balaji Amines Ltd.</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">1623.40</td><td data-col="sector">Chemicals &amp; Petrochemicals</td></tr>
+<tr><td data-col="rank">4</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MODINATUR" target="_blank">MODINATUR</a><a class="sc-link" href="https://www.screener.in/company/MODINATUR/" target="_blank">SC</a></td><td data-col="name">MODINATUR</td><td data-col="chg" class="pos">+19.99%</td><td data-col="ltp">447.40</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">5</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS" target="_blank">PNBGILTS</a><a class="sc-link" href="https://www.screener.in/company/PNBGILTS/" target="_blank">SC</a></td><td data-col="name">PNBGILTS</td><td data-col="chg" class="pos">+17.20%</td><td data-col="ltp">81.09</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">6</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:GRAVISSHO" target="_blank">GRAVISSHO</a><a class="sc-link" href="https://www.screener.in/company/GRAVISSHO/" target="_blank">SC</a></td><td data-col="name">GRAVISSHO</td><td data-col="chg" class="pos">+15.69%</td><td data-col="ltp">32.22</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">7</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA" target="_blank">SAREGAMA</a><a class="sc-link" href="https://www.screener.in/company/SAREGAMA/" target="_blank">SC</a></td><td data-col="name">Saregama India Ltd.</td><td data-col="chg" class="pos">+15.15%</td><td data-col="ltp">385.80</td><td data-col="sector">Media</td></tr>
+<tr><td data-col="rank">8</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA" target="_blank">NLCINDIA</a><a class="sc-link" href="https://www.screener.in/company/NLCINDIA/" target="_blank">SC</a></td><td data-col="name">NLC India Ltd.</td><td data-col="chg" class="pos">+14.61%</td><td data-col="ltp">373.30</td><td data-col="sector">Utilities</td></tr>
+<tr><td data-col="rank">9</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:KEEPLEARN" target="_blank">KEEPLEARN</a><a class="sc-link" href="https://www.screener.in/company/KEEPLEARN/" target="_blank">SC</a></td><td data-col="name">KEEPLEARN</td><td data-col="chg" class="pos">+13.68%</td><td data-col="ltp">2.16</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">10</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MTARTECH" target="_blank">MTARTECH</a><a class="sc-link" href="https://www.screener.in/company/MTARTECH/" target="_blank">SC</a></td><td data-col="name">MTAR Technologies Ltd.</td><td data-col="chg" class="pos">+12.29%</td><td data-col="ltp">7595.00</td><td data-col="sector">General Industrials</td></tr>
+<tr><td data-col="rank">11</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:HECPROJECT" target="_blank">HECPROJECT</a><a class="sc-link" href="https://www.screener.in/company/HECPROJECT/" target="_blank">SC</a></td><td data-col="name">HECPROJECT</td><td data-col="chg" class="pos">+11.06%</td><td data-col="ltp">128.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">12</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIAMINESQ" target="_blank">DIAMINESQ</a><a class="sc-link" href="https://www.screener.in/company/DIAMINESQ/" target="_blank">SC</a></td><td data-col="name">DIAMINESQ</td><td data-col="chg" class="pos">+10.60%</td><td data-col="ltp">288.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">13</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:ASHIMASYN" target="_blank">ASHIMASYN</a><a class="sc-link" href="https://www.screener.in/company/ASHIMASYN/" target="_blank">SC</a></td><td data-col="name">ASHIMASYN</td><td data-col="chg" class="pos">+10.10%</td><td data-col="ltp">17.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">14</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DIACABS" target="_blank">DIACABS</a><a class="sc-link" href="https://www.screener.in/company/DIACABS/" target="_blank">SC</a></td><td data-col="name">Diamond Power Infrastructure Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">191.99</td><td data-col="sector">Consumer Durables</td></tr>
+<tr><td data-col="rank">15</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE" target="_blank">IDEAFORGE</a><a class="sc-link" href="https://www.screener.in/company/IDEAFORGE/" target="_blank">SC</a></td><td data-col="name">ideaForge Technology Ltd.</td><td data-col="chg" class="pos">+10.00%</td><td data-col="ltp">848.20</td><td data-col="sector">General Industrials</td></tr>
+<tr><td data-col="rank">16</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:MMWL" target="_blank">MMWL</a><a class="sc-link" href="https://www.screener.in/company/MMWL/" target="_blank">SC</a></td><td data-col="name">MMWL</td><td data-col="chg" class="pos">+9.93%</td><td data-col="ltp">14.39</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">17</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:FMNL" target="_blank">FMNL</a><a class="sc-link" href="https://www.screener.in/company/FMNL/" target="_blank">SC</a></td><td data-col="name">FMNL</td><td data-col="chg" class="pos">+9.92%</td><td data-col="ltp">10.53</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">18</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:RPEL" target="_blank">RPEL</a><a class="sc-link" href="https://www.screener.in/company/RPEL/" target="_blank">SC</a></td><td data-col="name">RPEL</td><td data-col="chg" class="pos">+9.91%</td><td data-col="ltp">814.00</td><td data-col="sector"></td></tr>
+<tr><td data-col="rank">19</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT" target="_blank">CAPLIPOINT</a><a class="sc-link" href="https://www.screener.in/company/CAPLIPOINT/" target="_blank">SC</a></td><td data-col="name">Caplin Point Laboratories Ltd.</td><td data-col="chg" class="pos">+9.89%</td><td data-col="ltp">2024.00</td><td data-col="sector">Pharmaceuticals &amp; Biotechnology</td></tr>
+<tr><td data-col="rank">20</td><td data-col="sym"><a class="sym-link" href="https://in.tradingview.com/chart/?symbol=NSE:DMCC" target="_blank">DMCC</a><a class="sc-link" href="https://www.screener.in/company/DMCC/" target="_blank">SC</a></td><td data-col="name">DMCC</td><td data-col="chg" class="pos">+9.25%</td><td data-col="ltp">322.90</td><td data-col="sector"></td></tr>
     </tbody>
   </table>
 </div>
@@ -146,6 +152,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:AMNPLST" target="_blank">AMNPLST</a>
+        <a class="c-sc" href="https://www.screener.in/company/AMNPLST/" target="_blank">SC</a>
         <span class="c-name">AMNPLST</span>
         <span class="c-chg pos">+20.00%</span>
       </div>
@@ -160,6 +167,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:BLACKROSE" target="_blank">BLACKROSE</a>
+        <a class="c-sc" href="https://www.screener.in/company/BLACKROSE/" target="_blank">SC</a>
         <span class="c-name">BLACKROSE</span>
         <span class="c-chg pos">+20.00%</span>
       </div>
@@ -174,6 +182,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:BALAMINES" target="_blank">BALAMINES</a>
+        <a class="c-sc" href="https://www.screener.in/company/BALAMINES/" target="_blank">SC</a>
         <span class="c-name">Balaji Amines Ltd.</span>
         <span class="c-chg pos">+19.99%</span>
       </div>
@@ -192,6 +201,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MODINATUR" target="_blank">MODINATUR</a>
+        <a class="c-sc" href="https://www.screener.in/company/MODINATUR/" target="_blank">SC</a>
         <span class="c-name">MODINATUR</span>
         <span class="c-chg pos">+19.99%</span>
       </div>
@@ -206,6 +216,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS" target="_blank">PNBGILTS</a>
+        <a class="c-sc" href="https://www.screener.in/company/PNBGILTS/" target="_blank">SC</a>
         <span class="c-name">PNBGILTS</span>
         <span class="c-chg pos">+17.20%</span>
       </div>
@@ -220,6 +231,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:GRAVISSHO" target="_blank">GRAVISSHO</a>
+        <a class="c-sc" href="https://www.screener.in/company/GRAVISSHO/" target="_blank">SC</a>
         <span class="c-name">GRAVISSHO</span>
         <span class="c-chg pos">+15.69%</span>
       </div>
@@ -234,6 +246,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA" target="_blank">SAREGAMA</a>
+        <a class="c-sc" href="https://www.screener.in/company/SAREGAMA/" target="_blank">SC</a>
         <span class="c-name">Saregama India Ltd.</span>
         <span class="c-chg pos">+15.15%</span>
       </div>
@@ -252,6 +265,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:NLCINDIA" target="_blank">NLCINDIA</a>
+        <a class="c-sc" href="https://www.screener.in/company/NLCINDIA/" target="_blank">SC</a>
         <span class="c-name">NLC India Ltd.</span>
         <span class="c-chg pos">+14.61%</span>
       </div>
@@ -270,6 +284,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:KEEPLEARN" target="_blank">KEEPLEARN</a>
+        <a class="c-sc" href="https://www.screener.in/company/KEEPLEARN/" target="_blank">SC</a>
         <span class="c-name">KEEPLEARN</span>
         <span class="c-chg pos">+13.68%</span>
       </div>
@@ -284,6 +299,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MTARTECH" target="_blank">MTARTECH</a>
+        <a class="c-sc" href="https://www.screener.in/company/MTARTECH/" target="_blank">SC</a>
         <span class="c-name">MTAR Technologies Ltd.</span>
         <span class="c-chg pos">+12.29%</span>
       </div>
@@ -302,6 +318,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:HECPROJECT" target="_blank">HECPROJECT</a>
+        <a class="c-sc" href="https://www.screener.in/company/HECPROJECT/" target="_blank">SC</a>
         <span class="c-name">HECPROJECT</span>
         <span class="c-chg pos">+11.06%</span>
       </div>
@@ -316,6 +333,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DIAMINESQ" target="_blank">DIAMINESQ</a>
+        <a class="c-sc" href="https://www.screener.in/company/DIAMINESQ/" target="_blank">SC</a>
         <span class="c-name">DIAMINESQ</span>
         <span class="c-chg pos">+10.60%</span>
       </div>
@@ -330,6 +348,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:ASHIMASYN" target="_blank">ASHIMASYN</a>
+        <a class="c-sc" href="https://www.screener.in/company/ASHIMASYN/" target="_blank">SC</a>
         <span class="c-name">ASHIMASYN</span>
         <span class="c-chg pos">+10.10%</span>
       </div>
@@ -344,6 +363,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DIACABS" target="_blank">DIACABS</a>
+        <a class="c-sc" href="https://www.screener.in/company/DIACABS/" target="_blank">SC</a>
         <span class="c-name">Diamond Power Infrastructure Ltd.</span>
         <span class="c-chg pos">+10.00%</span>
       </div>
@@ -362,6 +382,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE" target="_blank">IDEAFORGE</a>
+        <a class="c-sc" href="https://www.screener.in/company/IDEAFORGE/" target="_blank">SC</a>
         <span class="c-name">ideaForge Technology Ltd.</span>
         <span class="c-chg pos">+10.00%</span>
       </div>
@@ -380,6 +401,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:MMWL" target="_blank">MMWL</a>
+        <a class="c-sc" href="https://www.screener.in/company/MMWL/" target="_blank">SC</a>
         <span class="c-name">MMWL</span>
         <span class="c-chg pos">+9.93%</span>
       </div>
@@ -394,6 +416,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:FMNL" target="_blank">FMNL</a>
+        <a class="c-sc" href="https://www.screener.in/company/FMNL/" target="_blank">SC</a>
         <span class="c-name">FMNL</span>
         <span class="c-chg pos">+9.92%</span>
       </div>
@@ -408,6 +431,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:RPEL" target="_blank">RPEL</a>
+        <a class="c-sc" href="https://www.screener.in/company/RPEL/" target="_blank">SC</a>
         <span class="c-name">RPEL</span>
         <span class="c-chg pos">+9.91%</span>
       </div>
@@ -424,6 +448,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT" target="_blank">CAPLIPOINT</a>
+        <a class="c-sc" href="https://www.screener.in/company/CAPLIPOINT/" target="_blank">SC</a>
         <span class="c-name">Caplin Point Laboratories Ltd.</span>
         <span class="c-chg pos">+9.89%</span>
       </div>
@@ -442,6 +467,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;
     <div class="card">
       <div class="card-hdr">
         <a class="c-sym" href="https://in.tradingview.com/chart/?symbol=NSE:DMCC" target="_blank">DMCC</a>
+        <a class="c-sc" href="https://www.screener.in/company/DMCC/" target="_blank">SC</a>
         <span class="c-name">DMCC</span>
         <span class="c-chg pos">+9.25%</span>
       </div>
