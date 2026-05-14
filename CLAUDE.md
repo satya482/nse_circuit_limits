@@ -68,6 +68,17 @@ All thresholds live in `settings.yaml`. Pipeline:
 4. `bb_kc_squeeze()` → BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar
 5. Writes `ema25_zl_scans/ema25_zl_scans.md`
 
+### Scanner pipeline — Weekly ZL (`weekly_zl_scanner.py`)
+
+1. TradingView screener → watchlist (MCap ₹800 Cr – ₹1 Lakh Cr, no RS gate)
+2. `load_ohlc(symbol)` → `to_weekly()` resamples daily OHLC to weekly (partial current week included)
+3. Weekly ZLEMA25 (`2×EMA25 − EMA(EMA25)`) — only stocks with `zl25[-1] > zl25[-2]` pass
+4. `zl25_consecutive_rising()` → count consecutive weekly bars ZLEMA25 has been rising
+5. **Confirmed uptrend**: ≥4 consecutive rising weeks · **Fresh turn**: 1–3 weeks
+6. `price_vs_zl`: TOUCH (±1.5% of ZLEMA25 level) / ABOVE / ABOVE — flags pullback entry zone
+7. `bb_kc_squeeze_info()` → squeeze column (informational, not a gate)
+8. Writes `weekly_zl_scans/weekly_zl_scans.md`; sorted TOUCH-first within each section
+
 ### Dashboard (`dashboard_generator.py`)
 
 Reads today's block from 6 markdown files (swing, momentum, weekly-RS, EMA25-ZL, EMA compression, circuit limits), cross-references symbols, builds `dashboard.html` with confluence scoring.
@@ -94,6 +105,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 |------|-----------|
 | `NSE_Circuit_Limits.md`, `index.html` | `main.py` |
 | `ema25_zl_scans/ema25_zl_scans.md` | `ema25_zl_scanner.py` |
+| `weekly_zl_scans/weekly_zl_scans.md` | `weekly_zl_scanner.py` |
 | `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md` | `screener.py` |
 | `momentum_scans/momentum_scans.md` | `momentum_scanner.py` |
 | `momentum_scans/momentum_rs_weekly_scans.md` | `momentum_rs_weekly_scanner.py` |

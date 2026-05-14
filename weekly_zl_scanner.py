@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
-NSE Weekly ZL Squeeze Scanner
-Stocks where ZLEMA25 is Rising on WEEKLY bars, optionally with BB Squeeze active.
-Uses daily OHLC resampled to weekly; includes the current partial week.
+NSE Weekly ZL Scanner — ZLEMA25 Uptrend Start
+Stocks where the weekly ZLEMA25 has just started a new uptrend on the current bar.
+
+Uptrend start condition (both must be true on the current weekly bar):
+  ZLEMA25 > ZLEMA25[1]       — this week's ZLEMA25 is higher than last week's (rising now)
+  ZLEMA25[2] >= ZLEMA25[1]   — two weeks ago was >= last week (prev bar was flat or falling)
 
 Watchlist: NSE common equity, price > ₹50, MCap ₹800 Cr – ₹1 Lakh Cr
-No RS gate (weekly timeframe is already a higher-timeframe filter)
-Signal A: Weekly ZLEMA25 rising AND BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) on last weekly bar
-Signal B: Weekly ZLEMA25 rising (no squeeze required — Watch list)
+No RS gate (weekly timeframe is already a higher-order filter)
+
+price_vs_zl: TOUCH (±1.5% of weekly ZLEMA25) = pullback entry zone · ABOVE · BELOW
+Squeeze column: BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) — informational, not a gate
 
 Output: weekly_zl_scans/weekly_zl_scans.md  +  weekly_zl_scans/weekly_zl_scans_YYYY-MM-DD.md
 """
@@ -30,6 +34,7 @@ MD_FILE     = os.path.join(SCANS_DIR, "weekly_zl_scans.md")
 MC_LOW      = 800     * 1_00_00_000   # ₹800 Cr
 MC_HIGH     = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
 ZL_TURN_CAP = 52                      # weeks (~1 year)
+TOUCH_PCT   = 0.015                   # ±1.5% of ZLEMA25 = "touching" (pullback entry zone)
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -81,6 +86,16 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
+
+def zl25_consecutive_rising(zl25: pd.Series) -> int:
+    """Count consecutive weekly bars at the tail where ZLEMA25[i] > ZLEMA25[i-1]."""
+    count = 0
+    for i in range(len(zl25) - 1, 0, -1):
+        if zl25.iloc[i] > zl25.iloc[i - 1]:
+            count += 1
+        else:
+            break
+    return count
 
 
 # ── Weekly resampling ─────────────────────────────────────────────────────────
@@ -162,31 +177,47 @@ def analyse(symbol: str) -> dict | None:
 
         c    = wdf["close"].astype(float)
         zl25 = zlema(c, 25)
-        if not bool(zl25.iloc[-1] > zl25.iloc[-2]):
+        if len(zl25) < 3:
+            return None
+        # Uptrend start: current bar rising AND previous bar was flat/falling
+        if not (zl25.iloc[-1] > zl25.iloc[-2] and zl25.iloc[-3] >= zl25.iloc[-2]):
             return None
 
         sqz_on, sqz_weeks = bb_kc_squeeze_info(wdf)
         zl_weeks, zl_pct  = zl25_turn_stats(zl25, c)
+        consec_weeks      = zl25_consecutive_rising(zl25)
+        wk_zl25_val       = float(zl25.iloc[-1])
 
-        daily_c = daily["close"].astype(float)
-        day_chg = (daily_c.iloc[-1] / daily_c.iloc[-2] - 1) * 100 if len(daily_c) >= 2 else 0.0
+        daily_c    = daily["close"].astype(float)
+        curr_close = float(daily_c.iloc[-1])
+        day_chg    = (curr_close / daily_c.iloc[-2] - 1) * 100 if len(daily_c) >= 2 else 0.0
+
+        ratio = (curr_close - wk_zl25_val) / wk_zl25_val
+        if   abs(ratio) <= TOUCH_PCT: price_vs_zl = "TOUCH"
+        elif ratio > TOUCH_PCT:        price_vs_zl = "ABOVE"
+        else:                          price_vs_zl = "BELOW"
 
         return {
-            "symbol":    symbol,
-            "close":     float(daily_c.iloc[-1]),
-            "day_chg":   day_chg,
-            "sqz_on":    sqz_on,
-            "sqz_weeks": sqz_weeks,
-            "zl_weeks":  zl_weeks,
-            "zl_pct":    zl_pct,
+            "symbol":      symbol,
+            "close":       curr_close,
+            "day_chg":     day_chg,
+            "sqz_on":      sqz_on,
+            "sqz_weeks":   sqz_weeks,
+            "zl_weeks":    zl_weeks,
+            "zl_pct":      zl_pct,
+            "consec_weeks": consec_weeks,
+            "wk_zl25_val": wk_zl25_val,
+            "price_vs_zl": price_vs_zl,
         }
     except Exception:
         return None
 
 
 # ── Output ─────────────────────────────────────────────────────────────────────
+_PVZ_ORDER = {"TOUCH": 0, "ABOVE": 1, "BELOW": 2}
+
 def _sort_key(f: dict) -> tuple:
-    return (f["zl_weeks"], -f["sqz_weeks"])
+    return (_PVZ_ORDER.get(f["price_vs_zl"], 9), -f["consec_weeks"])
 
 def _static_header() -> str:
     return f"""### Scan definition
@@ -197,18 +228,19 @@ def _static_header() -> str:
 | Market cap | ₹800 Cr – ₹1 Lakh Cr |
 | Timeframe | Weekly (daily OHLC resampled; current partial week included) |
 | RS filter | None (weekly timeframe is already a higher-order filter) |
-| Signal A | Weekly ZLEMA25 rising + BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) |
-| Signal B | Weekly ZLEMA25 rising (Watch — no squeeze required) |
-| Sqz Weeks | Consecutive weekly bars the squeeze has been active |
-| ZL Weeks / ZL Chg% | Weeks since Weekly ZLEMA25 last turned up · % price change since (capped {ZL_TURN_CAP}w) |
+| Uptrend start | ZLEMA25 > ZLEMA25[1]  AND  ZLEMA25[2] ≥ ZLEMA25[1] — rising this bar after flat/falling prev bar |
+| Price vs ZL | TOUCH = within ±{TOUCH_PCT*100:.0f}% of weekly ZLEMA25 (pullback entry zone) · ABOVE · BELOW |
+| Consec | Consecutive weekly bars ZLEMA25 has been rising |
+| Sqz | Consecutive weekly bars BB(20,2.0,SMA) inside KC(20,1.5,SMA ATR) |
+| ZL Weeks / ZL Chg% | Weeks since weekly ZLEMA25 last turned up · % price change since (capped {ZL_TURN_CAP}w) |
 
 ---
 """
 
 def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
     hdr = [
-        "| Symbol | Close | Day Chg% | Sqz Weeks | ZL Weeks | ZL Chg% | Circuit |",
-        "|--------|------:|---------:|----------:|---------:|--------:|:-------:|",
+        "| Symbol | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |",
+        "|--------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|",
     ]
     rows = []
     for f in sorted(findings, key=_sort_key):
@@ -218,65 +250,51 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds     = "+" if f["day_chg"] >= 0 else ""
         sqz    = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
+        pvz    = f["price_vs_zl"]
         rows.append(
             f"| [{f['symbol']}]({tv}) "
-            f"| {f['close']:.2f} "
-            f"| {ds}{f['day_chg']:.2f}% "
-            f"| {sqz} "
+            f"| {f['consec_weeks']}w "
+            f"| {pvz} "
             f"| {zl_w} "
             f"| {zl_p} "
+            f"| {ds}{f['day_chg']:.2f}% "
+            f"| {f['close']:.2f} "
+            f"| {sqz} "
             f"| {cl} {em} |"
         )
     return hdr + rows
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    squeeze = [f for f in findings if f["sqz_on"]]
-    watch   = [f for f in findings if not f["sqz_on"]]
-
     lines = [
         f"# NSE Weekly ZL Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
         _static_header(),
-        f"**{len(squeeze)} stocks: Weekly ZLEMA25 Rising + Squeeze ON**",
+        f"## UPTREND START — {len(findings)} stocks",
         "",
     ]
-    if squeeze:
-        lines += _table_rows(squeeze, circuit)
+    if findings:
+        lines += _table_rows(findings, circuit)
     else:
-        lines.append("*No signals today.*")
-
-    lines += [
-        "",
-        f"**{len(watch)} stocks: Weekly ZLEMA25 Rising (Watch)**",
-        "",
-    ]
-    if watch:
-        lines += _table_rows(watch, circuit)
-    else:
-        lines.append("*No watch stocks today.*")
+        lines.append("*No uptrend start signals today.*")
 
     return "\n".join(lines)
 
 
 def print_results(findings: list[dict]) -> None:
-    squeeze = [f for f in findings if f["sqz_on"]]
-    watch   = [f for f in findings if not f["sqz_on"]]
     print(f"\n{'='*75}")
     print(f"  NSE Weekly ZL Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    print(f"  Weekly ZLEMA25 Rising + Squeeze ON: {len(squeeze)}")
-    print(f"  Weekly ZLEMA25 Rising (Watch):      {len(watch)}")
+    print(f"  Uptrend Start signals: {len(findings)}")
     print(f"{'='*75}")
-    for label, group in [("SQUEEZE ON", squeeze), ("WATCH", watch)]:
-        if group:
-            print(f"\n  --- {label} ---")
-            for f in sorted(group, key=_sort_key):
-                ds  = "+" if f["day_chg"] >= 0 else ""
-                zp  = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-                sqz = f"sqz:{f['sqz_weeks']}w" if f["sqz_on"] else "sqz:—"
-                print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  "
-                      f"day:{ds}{f['day_chg']:.1f}%  {sqz}  "
-                      f"zl:{f['zl_weeks']}w {zp}")
+    if findings:
+        print()
+        for f in sorted(findings, key=_sort_key):
+            ds  = "+" if f["day_chg"] >= 0 else ""
+            zp  = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+            sqz = f"sqz:{f['sqz_weeks']}w" if f["sqz_on"] else "sqz:—"
+            print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  "
+                  f"consec:{f['consec_weeks']}w  pvz:{f['price_vs_zl']:<5}  "
+                  f"day:{ds}{f['day_chg']:.1f}%  {sqz}  zl:{f['zl_weeks']}w {zp}")
     print()
 
 
