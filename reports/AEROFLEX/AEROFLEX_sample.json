@@ -1,0 +1,133 @@
+{
+  "symbol": "AEROFLEX",
+  "company_name": "Aeroflex Industries Limited",
+  "sector": "Industrial",
+  "date": "2026-05-17",
+  "cover": {
+    "tagline": "India's flexible hose play at the intersection of PLI, defence capex, and export substitution",
+    "sector_cagr": "18% CAGR to 2030 (flexible piping systems)",
+    "mcap": "₹3,927 Cr",
+    "pe": "42x TTM"
+  },
+  "chapters": {
+    "ch1_context": {
+      "title": "Why This Company, Why Now",
+      "body": "India's manufacturing renaissance is not a slogan — it is showing up in order books. The government's PLI scheme has committed ₹1.97 lakh crore across 14 sectors, and the defence capital procurement budget for FY26 stands at ₹1.72 lakh crore, 25% higher than two years ago. At the intersection of these two spending waves sits a niche product most investors overlook: flexible metal hose assemblies. These are the connectors that make industrial systems safe under vibration, thermal expansion, and pressure — the plumbing of India's capex cycle. The global flexible hose market is estimated at $5.2 billion in 2025 and growing at 7% annually, but the India-specific opportunity is compounding faster as import substitution accelerates. Aeroflex sits at an interesting inflection: it has spent five years building certification-depth that competitors cannot replicate in five quarters."
+    },
+    "ch2_business": {
+      "title": "What Aeroflex Actually Does",
+      "body": "Aeroflex makes flexible piping solutions — stainless steel corrugated hoses, metal expansion joints, and high-pressure assemblies — for industries where rigid pipes would fail. Think of a gas turbine that vibrates at 3,000 RPM, a refinery pipeline that expands 8mm in summer, or a warship's fuel system that must survive a missile impact. Each of these needs a flexible connector that can absorb movement without leaking. Aeroflex manufactures these across 1,500+ SKUs from its Palghar facility. The business is not commoditised — every hose assembly is application-engineered, which means Aeroflex's engineers sit with the customer's design team, understand the operating parameters, and specify a solution. This creates switching costs that are structural, not contractual.",
+      "flywheel": "Certifications unlock customers → customers generate application data → data improves product specs → specs unlock new certifications → new certifications open new sectors"
+    },
+    "ch3_verticals": [
+      {
+        "name": "Oil & Gas / Petrochemicals",
+        "color_key": "industrial",
+        "catalyst": "India's refining capacity expansion — HPCL Rajasthan refinery (9 MMTPA, ₹72,000 Cr), BPCL Bina expansion, IOC Panipat upgrade — collectively representing ₹1.5+ lakh crore in brownfield and greenfield capex through 2028.",
+        "body": "This is Aeroflex's largest vertical at ~40% of revenue. PSU refineries are mandated to use BIS-certified Indian suppliers under the Atmanirbhar procurement policy, and Aeroflex holds all relevant BIS and ASME certifications. Tender wins here are sticky — once a refinery specifies your hose in its piping design, the replacement cycle runs 7-10 years.",
+        "status": "running"
+      },
+      {
+        "name": "Defence & Aerospace",
+        "color_key": "defence",
+        "catalyst": "India's defence indigenisation mandate: 68% of the defence capital budget ring-fenced for domestic procurement. Naval shipbuilding alone has ₹80,000 Cr in active orders at Mazagon Dock and L&T Defence.",
+        "body": "Aeroflex received DRDO and CEMILAC certifications in FY24 — a 3-year qualification process. These certifications are the barrier to entry. The company is currently supplying to two naval programmes (details confidential) and management has guided for defence contributing 15% of revenue by FY27 vs ~5% today. The margin profile in defence is materially better — 35%+ gross margins vs 28% overall.",
+        "status": "ramping"
+      },
+      {
+        "name": "Industrial / Capital Goods",
+        "color_key": "power",
+        "catalyst": "India's power sector capex: ₹2.44 lakh crore budgeted for FY26 including 80 GW thermal addition and grid upgrades. Each thermal plant requires 200-400 hose assemblies.",
+        "body": "Power plants, steel mills, and cement plants form the bread-and-butter industrial vertical. Revenue here is lumpy — large project orders followed by AMC (annual maintenance contracts) that provide recurring revenue. Management estimates AMC revenue at 12% of total today, growing to 20% by FY27 as the installed base matures.",
+        "status": "running"
+      },
+      {
+        "name": "Exports / International",
+        "color_key": "industrial",
+        "catalyst": "China+1 supply chain diversification: global OEMs actively seeking non-China certified suppliers for hose assemblies. Aeroflex already exports to 35 countries; EU ATEX certification received in Q3 FY25 opens the European process industry.",
+        "body": "International revenue was 18% of FY25 revenue (₹81 Cr). Management has guided for 25%+ by FY27. The EU ATEX certification is a genuine inflection — it took 18 months to obtain and positions Aeroflex for the €800M European flexible hose market where most suppliers are Germany/Italy-based with higher cost structures.",
+        "status": "ramping"
+      }
+    ],
+    "ch4_insight": {
+      "title": "The Certification Moat Is the Business",
+      "insight": "Most investors look at Aeroflex as a manufacturing company and apply a manufacturing multiple. That is the wrong frame. The real asset is the certification stack — BIS, ASME, DRDO, CEMILAC, EU ATEX, and 12 others — accumulated over 15 years. A competitor cannot build a factory and start selling to DRDO in year one. They need the factory AND three years of qualification AND the application engineering track record AND the customer relationships. This certification stack is essentially a government-issued licence to participate in India's most protected spending streams. The manufacturing is just the vehicle that carries the certifications to market.",
+      "analogy": "Aeroflex is not a hose manufacturer that has certifications — it is a certification portfolio that happens to manufacture hoses"
+    },
+    "ch5_numbers": {
+      "title": "The Numbers in Context",
+      "body": "FY25 revenue of ₹452 Cr grew 28% YoY, ahead of the 20-25% guidance issued at the start of the year. EBITDA margins expanded 120bps to 21.3% as the defence and export mix improved. ROCE stands at 24% — healthy for a capex-light business (Aeroflex is largely asset-light; it outsources 40% of intermediate processing). The order book at end of FY25 was ₹380 Cr (0.84x TTM revenue), providing reasonable near-term visibility. The stock trades at 42x TTM earnings vs the sector median of 35x for industrial component manufacturers — a 20% premium the market is ascribing to the certification moat and defence ramp. Working capital has crept up to 95 days (from 78 days in FY23) driven by longer defence payment cycles — this is worth watching but not yet alarming.",
+      "stats": [
+        {"label": "Revenue FY25", "value": "₹452 Cr (+28% YoY)"},
+        {"label": "EBITDA Margin", "value": "21.3% (+120 bps)"},
+        {"label": "PAT FY25", "value": "₹93 Cr (+31% YoY)"},
+        {"label": "ROCE", "value": "24%"},
+        {"label": "Order Book", "value": "₹380 Cr (0.84x revenue)"},
+        {"label": "Working Capital", "value": "95 days (vs 78 days FY23)"},
+        {"label": "Market Cap", "value": "₹3,927 Cr"},
+        {"label": "P/E (TTM)", "value": "42x (sector: 35x)"},
+        {"label": "Export Share", "value": "18% of revenue"}
+      ]
+    },
+    "ch6_risks": [
+      {
+        "title": "Working Capital Stretch",
+        "detail": "Defence and PSU customers consistently pay in 120-150 days vs 60-75 days for private customers. As defence mix rises from 5% to 15% of revenue, working capital could expand another 10-15 days, pressuring free cash flow even as PAT grows.",
+        "magnitude": "Medium",
+        "signal": "Watch debtors days in each quarterly balance sheet. Above 110 days for two consecutive quarters = stress signal."
+      },
+      {
+        "title": "Certification Concentration Risk",
+        "detail": "The CEMILAC certification covers specific naval programmes. If a programme is cancelled, delayed, or redirected to a PSU (Bharat Forge, HAL), Aeroflex's defence ramp stalls. Defence is still early-stage for the company and management's 15% target is aspirational.",
+        "magnitude": "Medium",
+        "signal": "Any management commentary walking back the defence revenue target from 15% by FY27, or delays in new programme approvals."
+      },
+      {
+        "title": "Commodity Cost Pass-Through",
+        "detail": "Stainless steel (SS 316L grade) is 55-60% of raw material cost. A sustained 15%+ SS price increase compresses gross margins 200-250bps before pass-through mechanisms activate. The company has a 60-90 day lag on price revision with most customers.",
+        "magnitude": "Low",
+        "signal": "LME nickel price (a key SS input) sustained above $20,000/tonne for 6+ weeks = margin headwind incoming."
+      },
+      {
+        "title": "Execution Risk on Capacity Expansion",
+        "detail": "Aeroflex is adding 30% capacity at Palghar (completion expected Q2 FY27). Any delay pushes revenue recognition for large orders into FY28 and compresses the FY27 growth narrative the market is pricing.",
+        "magnitude": "Low",
+        "signal": "Management commentary on capex timeline in Q1 FY27 concall. Any 'operational by Q4' language instead of Q2 = delay."
+      },
+      {
+        "title": "Valuation Premium Vulnerability",
+        "detail": "At 42x TTM PE, the stock has priced in the defence ramp, export growth, and margin expansion simultaneously. If any one of the three disappoints, the de-rating could be sharp — the sector trades at 35x, implying 15-20% downside to fair value on a single-quarter miss.",
+        "magnitude": "High",
+        "signal": "Any quarter where revenue growth falls below 20% YoY or EBITDA margin falls below 20%."
+      }
+    ],
+    "ch7_watch": [
+      {
+        "metric": "Defence Revenue %",
+        "direction": "Rising towards 15% by FY27 is bullish",
+        "red_flag": "Falls below 8% in FY26 or management lowers the target — certification ramp is stalling"
+      },
+      {
+        "metric": "Export Revenue %",
+        "direction": "Rising towards 25% demonstrates EU ATEX certification is converting to orders",
+        "red_flag": "Export share stays flat at 18% for two quarters — EU market penetration is slower than expected"
+      },
+      {
+        "metric": "Debtor Days",
+        "direction": "Stable or improving (below 95 days) as AMC revenue grows",
+        "red_flag": "Above 110 days for two consecutive quarters — PSU/defence payment cycles are straining working capital"
+      },
+      {
+        "metric": "EBITDA Margin",
+        "direction": "Expanding from 21.3% towards 23%+ as defence and export mix improves",
+        "red_flag": "Below 19.5% in any quarter — commodity cost pressure or pricing power is eroding"
+      },
+      {
+        "metric": "Order Book Coverage",
+        "direction": "Healthy at 0.8x+ TTM revenue; rising above 1x signals demand acceleration",
+        "red_flag": "Falls below 0.6x — order intake is slowing, the growth narrative is under pressure"
+      }
+    ]
+  },
+  "verdict": "Aeroflex sits at the intersection of three durable spending waves: India's PSU refinery and power capex cycle, the defence indigenisation mandate, and the China+1 export opportunity. The financial quality is real — 24% ROCE, 28% revenue CAGR, and margin expansion despite commodity volatility — and the certification moat provides a structural advantage that cannot be replicated in under five years. The near-term catalyst is the defence revenue ramp: if management's 15% target for FY27 holds, it would trigger a re-rating as the market begins to value the company on a blended industrial-plus-defence multiple. At 42x TTM PE, the stock is pricing in the full bull case, leaving little margin of safety. The smarter entry point would be on a single-quarter miss that compresses the multiple to 35-38x — roughly ₹280-300/share — while the long-term thesis remains intact. We are in the middle chapters of this story: the certifications are built, the ramp has started, and the defence and export verticals are still early enough that the best of the revenue inflection is ahead."
+}

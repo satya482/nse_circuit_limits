@@ -1,0 +1,173 @@
+#!/usr/bin/env python3
+"""
+generate_index.py  —  Scan reports/ directory and rebuild reports/index.html
+Usage:
+    python scripts/generate_index.py
+"""
+
+import os, json, re
+from pathlib import Path
+from datetime import datetime
+from collections import defaultdict
+
+REPORTS_DIR = Path(__file__).parent.parent / "reports"
+INDEX_PATH  = REPORTS_DIR / "index.html"
+
+
+def scan_reports() -> dict[str, list[dict]]:
+    """Return {symbol: [{date, path, title}]} sorted newest-first."""
+    by_symbol = defaultdict(list)
+    if not REPORTS_DIR.exists():
+        return by_symbol
+
+    for sym_dir in sorted(REPORTS_DIR.iterdir()):
+        if not sym_dir.is_dir() or sym_dir.name.startswith("."):
+            continue
+        sym = sym_dir.name
+        for html_file in sorted(sym_dir.glob("*.html"), reverse=True):
+            # Extract date from filename: SYMBOL_YYYY-MM-DD.html
+            m = re.search(r"(\d{4}-\d{2}-\d{2})", html_file.stem)
+            date_str = m.group(1) if m else "Unknown"
+            rel_path = f"{sym}/{html_file.name}"
+            by_symbol[sym].append({"date": date_str, "path": rel_path, "name": html_file.name})
+
+    return by_symbol
+
+
+def build_index(by_symbol: dict) -> str:
+    now = datetime.now().strftime("%Y-%m-%d %H:%M")
+
+    symbol_cards = ""
+    for sym in sorted(by_symbol):
+        reports = by_symbol[sym]
+        latest  = reports[0]
+        archive_opts = "".join(
+            f'<option value="{r["path"]}">{r["date"]}</option>'
+            for r in reports
+        )
+        archive_block = (
+            f"""<select class="archive-sel" onchange="window.open(this.value,'_blank')">
+              <option value="">Archive ({len(reports)} reports)</option>
+              {archive_opts}
+            </select>"""
+            if len(reports) > 1 else ""
+        )
+        symbol_cards += f"""
+        <div class="sym-card">
+          <div class="sym-top">
+            <span class="sym-name">{sym}</span>
+            <span class="sym-date">{latest['date']}</span>
+          </div>
+          <div class="sym-actions">
+            <a href="{latest['path']}" class="btn-open" target="_blank">Open Latest</a>
+            {archive_block}
+          </div>
+        </div>"""
+
+    if not by_symbol:
+        symbol_cards = '<p class="empty">No reports generated yet.</p>'
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSE Investor Stories — Index</title>
+<style>
+*,*::before,*::after{{box-sizing:border-box;margin:0;padding:0}}
+:root{{
+  --bg:#F8F6F2;--tx:#1A1A1A;--card:#FFFFFF;--border:#E8E4DC;
+  --sub:#5A5A5A;--acc:#0D5C75;--inp:#f0ede7;
+}}
+body.dark{{
+  --bg:#0d1117;--tx:#e6edf3;--card:#161b22;--border:#30363d;
+  --sub:#8b949e;--acc:#58a6ff;--inp:#21262d;
+}}
+body{{
+  background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.6;
+}}
+.container{{max-width:800px;margin:0 auto;padding:1.5rem 1.25rem}}
+.topbar{{
+  display:flex;align-items:center;justify-content:space-between;
+  padding-bottom:1rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;
+}}
+h1{{font-size:1.4rem;font-weight:700}}
+.sub{{font-size:.8rem;color:var(--sub);margin-top:.2rem}}
+.btn{{
+  background:var(--inp);border:1px solid var(--border);color:var(--tx);
+  padding:.35rem .8rem;border-radius:6px;cursor:pointer;font-size:.8rem;
+}}
+.btn:hover{{background:var(--border)}}
+.grid{{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(240px,1fr));
+  gap:1rem;
+}}
+.sym-card{{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1rem;display:flex;flex-direction:column;gap:.75rem;
+}}
+.sym-top{{display:flex;justify-content:space-between;align-items:baseline}}
+.sym-name{{font-size:1.05rem;font-weight:700}}
+.sym-date{{font-size:.75rem;color:var(--sub)}}
+.sym-actions{{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}}
+.btn-open{{
+  background:var(--acc);color:#fff;border:none;
+  padding:.35rem .85rem;border-radius:6px;font-size:.8rem;cursor:pointer;
+  text-decoration:none;
+}}
+.btn-open:hover{{opacity:.85}}
+.archive-sel{{
+  background:var(--inp);border:1px solid var(--border);color:var(--tx);
+  padding:.3rem .5rem;border-radius:6px;font-size:.75rem;cursor:pointer;flex:1;
+}}
+.empty{{color:var(--sub);padding:2rem 0;text-align:center}}
+.footer{{margin-top:2rem;font-size:.75rem;color:var(--sub);text-align:center}}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="topbar">
+    <div>
+      <h1>NSE Investor Stories</h1>
+      <p class="sub">On-demand research briefs · Updated {now}</p>
+    </div>
+    <button class="btn" onclick="toggleTheme()" id="toggle">🌙 Dark</button>
+  </div>
+
+  <div class="grid">
+    {symbol_cards}
+  </div>
+
+  <p class="footer">Generated by NSE Investor Story pipeline · satya482/nse_circuit_limits</p>
+</div>
+<script>
+(function(){{
+  if(localStorage.getItem('theme')==='dark'){{
+    document.body.classList.add('dark');
+    document.getElementById('toggle').textContent='☀ Light';
+  }}
+}})();
+function toggleTheme(){{
+  var d=document.body.classList.toggle('dark');
+  localStorage.setItem('theme',d?'dark':'light');
+  document.getElementById('toggle').textContent=d?'☀ Light':'🌙 Dark';
+}}
+</script>
+</body>
+</html>"""
+
+
+def main():
+    by_symbol = scan_reports()
+    html = build_index(by_symbol)
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    INDEX_PATH.write_text(html, encoding="utf-8")
+    total = sum(len(v) for v in by_symbol.values())
+    print(f"Index rebuilt -> {INDEX_PATH}  ({len(by_symbol)} symbols, {total} reports)")
+
+
+if __name__ == "__main__":
+    main()

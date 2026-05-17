@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AEROFLEX — NSE Investor Story</title>
+<style>
+/* ── Reset & base ─────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F8F6F2;--tx:#1A1A1A;--card:#FFFFFF;--border:#E8E4DC;
+  --sub:#5A5A5A;--acc:#0D5C75;--inp:#f0ede7;
+  --teal:#1D9E75;--coral:#D85A30;--blue:#378ADD;
+  --green:#3B6D11;--purple:#534AB7;--amber:#BA7517;
+}
+body.dark{
+  --bg:#0d1117;--tx:#e6edf3;--card:#161b22;--border:#30363d;
+  --sub:#8b949e;--acc:#58a6ff;--inp:#21262d;
+  --teal:#2dce95;--coral:#ff7a59;--blue:#6bbfff;
+  --green:#6aad1e;--purple:#8b80f0;--amber:#e09a2a;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--tx);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  font-size:17px;line-height:1.65;transition:background .2s,color .2s;
+}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+p{margin-bottom:1rem}
+
+/* ── Layout ───────────────────────────────────── */
+.container{max-width:760px;margin:0 auto;padding:1rem 1.25rem 6rem}
+
+/* ── Top bar ──────────────────────────────────── */
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.5rem 0 1rem;border-bottom:1px solid var(--border);margin-bottom:1.5rem;
+}
+.topbar-left{font-size:.8rem;color:var(--sub)}
+.btn{
+  background:var(--inp);border:1px solid var(--border);color:var(--tx);
+  padding:.35rem .8rem;border-radius:6px;cursor:pointer;font-size:.8rem;
+}
+.btn:hover{background:var(--border)}
+
+/* ── Cover card ───────────────────────────────── */
+.cover{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1.5rem;margin-bottom:1.5rem;
+}
+.cover-eyebrow{font-size:.75rem;color:var(--sub);margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.06em}
+.cover-symbol{font-size:2rem;font-weight:700;line-height:1.1}
+.cover-name{font-size:1rem;color:var(--sub);margin:.2rem 0 .8rem}
+.cover-tagline{font-size:1.05rem;font-style:italic;color:var(--acc);margin-bottom:1rem}
+.cover-meta{display:flex;flex-wrap:wrap;gap:.5rem}
+.cover-chip{
+  background:var(--inp);border:1px solid var(--border);border-radius:20px;
+  padding:.2rem .7rem;font-size:.78rem;
+}
+
+/* ── Chapter nav ──────────────────────────────── */
+.chapter-nav{
+  display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem;
+}
+.nav-link{
+  background:var(--inp);border:1px solid var(--border);border-radius:5px;
+  padding:.25rem .6rem;font-size:.75rem;color:var(--tx);
+  white-space:nowrap;
+}
+.nav-link:hover{background:var(--border);text-decoration:none}
+
+/* ── Chapter articles ─────────────────────────── */
+article{
+  background:var(--card);border:1px solid var(--border);border-radius:10px;
+  padding:1.5rem;margin-bottom:1.25rem;
+}
+.ch-eyebrow{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:.3rem}
+.ch-title{font-size:1.2rem;font-weight:700;margin-bottom:1rem}
+
+/* ── Vertical cards ───────────────────────────── */
+.vertical-card{
+  background:var(--inp);border-radius:8px;padding:1rem;margin-bottom:.85rem;
+}
+.vertical-header{display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem}
+.vertical-name{font-weight:700;font-size:.95rem}
+.vertical-catalyst{font-size:.9rem;margin-bottom:.5rem}
+.badge{
+  font-size:.68rem;padding:.15rem .5rem;border-radius:20px;font-weight:600;
+}
+.badge-green{background:#d1fae5;color:#065f46}
+body.dark .badge-green{background:#064e3b;color:#6ee7b7}
+.badge-amber{background:#fef3c7;color:#92400e}
+body.dark .badge-amber{background:#451a03;color:#fcd34d}
+.badge-gray{background:var(--border);color:var(--sub)}
+
+/* ── Flywheel ─────────────────────────────────── */
+.flywheel{
+  background:var(--inp);border-left:3px solid var(--acc);border-radius:0 8px 8px 0;
+  padding:.75rem 1rem;margin:1rem 0;font-style:italic;font-size:.95rem;
+}
+
+/* ── Strategic insight ────────────────────────── */
+.insight-box{
+  background:var(--inp);border-left:4px solid var(--amber);border-radius:0 8px 8px 0;
+  padding:1rem 1.25rem;margin-bottom:1rem;font-size:1rem;line-height:1.6;
+}
+blockquote.analogy{
+  border-left:3px solid var(--border);padding:.5rem 1rem;
+  color:var(--sub);font-style:italic;margin:1rem 0;
+}
+
+/* ── Stats ────────────────────────────────────── */
+.stats-grid{display:grid;grid-template-columns:1fr;gap:0;margin:1rem 0}
+@media(min-width:520px){.stats-grid{grid-template-columns:1fr 1fr}}
+.stat-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:.55rem 0;border-bottom:1px solid var(--border);
+}
+.stat-row:last-child{border-bottom:none}
+.stat-label{font-size:.85rem;color:var(--sub)}
+.stat-value{font-weight:600;font-size:.95rem}
+
+/* ── Risks ────────────────────────────────────── */
+.risk-card{
+  border:1px solid var(--border);border-radius:8px;padding:1rem;margin-bottom:.85rem;
+}
+.risk-header{display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.risk-icon{font-size:1.1rem}
+.risk-title{font-weight:600;flex:1}
+.risk-mag{font-size:.78rem;font-weight:700}
+.risk-signal{font-size:.85rem;color:var(--sub)}
+
+/* ── Watch signals ────────────────────────────── */
+.watch-item{display:flex;gap:.75rem;margin-bottom:1rem;align-items:flex-start}
+.watch-dot{
+  width:10px;height:10px;border-radius:50%;background:var(--teal);
+  margin-top:.45rem;flex-shrink:0;
+}
+.watch-metric{margin-bottom:.2rem}
+.watch-redflag{font-size:.85rem;color:var(--sub)}
+
+/* ── Verdict ──────────────────────────────────── */
+#verdict{
+  background:var(--card);border:2px solid var(--acc);border-radius:10px;
+  padding:1.5rem;margin-bottom:1.25rem;
+}
+.verdict-label{
+  font-size:.7rem;text-transform:uppercase;letter-spacing:.1em;
+  color:var(--acc);font-weight:700;margin-bottom:.5rem;
+}
+.verdict-body{font-size:.98rem;line-height:1.7}
+
+/* ── TTS bar ──────────────────────────────────── */
+.tts-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--card);border-top:1px solid var(--border);
+  padding:.6rem 1rem;display:flex;align-items:center;gap:.5rem;
+  z-index:100;
+}
+.tts-bar .btn{padding:.4rem .9rem}
+.tts-progress{
+  flex:1;font-size:.75rem;color:var(--sub);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+
+/* ── Print ────────────────────────────────────── */
+@media print{
+  .topbar button,.chapter-nav,.tts-bar{display:none!important}
+  body{font-size:12pt;color:#000;background:#fff}
+  .cover,.container{max-width:100%!important}
+  article,#verdict{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Top bar -->
+  <div class="topbar">
+    <span class="topbar-left">NSE · Industrial · 2026-05-17</span>
+    <button class="btn" id="toggle" onclick="toggleTheme()">🌙 Dark</button>
+  </div>
+
+  <!-- Cover -->
+  <div class="cover" role="banner">
+    <p class="cover-eyebrow">NSE:AEROFLEX · Investor Story</p>
+    <div class="cover-symbol">AEROFLEX</div>
+    <div class="cover-name">Aeroflex Industries Limited</div>
+    <p class="cover-tagline">India's flexible hose play at the intersection of PLI, defence capex, and export substitution</p>
+    <div class="cover-meta">
+      <span class="cover-chip">Sector CAGR: 18% CAGR to 2030 (flexible piping systems)</span>
+      <span class="cover-chip">MCap: ₹3,927 Cr</span>
+      <span class="cover-chip">PE: 42x TTM</span>
+      <span class="cover-chip">2026-05-17</span>
+    </div>
+  </div>
+
+  <!-- Chapter nav -->
+  <nav class="chapter-nav" aria-label="Chapters">
+    <a href="#ch1" class="nav-link">1 Context</a><a href="#ch2" class="nav-link">2 Business</a><a href="#ch3" class="nav-link">3 Verticals</a><a href="#ch4" class="nav-link">4 Insight</a><a href="#ch5" class="nav-link">5 Numbers</a><a href="#ch6" class="nav-link">6 Risks</a><a href="#ch7" class="nav-link">7 Watch</a><a href="#verdict" class="nav-link">Verdict</a>
+  </nav>
+
+  <main id="report-content">
+
+    <!-- Chapter 1: Context -->
+    <article id="ch1" aria-labelledby="ch1-title">
+      <p class="ch-eyebrow">Chapter 1</p>
+      <h2 class="ch-title" id="ch1-title">Why This Company, Why Now</h2>
+      <p>India's manufacturing renaissance is not a slogan — it is showing up in order books. The government's PLI scheme has committed ₹1.97 lakh crore across 14 sectors, and the defence capital procurement budget for FY26 stands at ₹1.72 lakh crore, 25% higher than two years ago. At the intersection of these two spending waves sits a niche product most investors overlook: flexible metal hose assemblies. These are the connectors that make industrial systems safe under vibration, thermal expansion, and pressure — the plumbing of India's capex cycle. The global flexible hose market is estimated at $5.2 billion in 2025 and growing at 7% annually, but the India-specific opportunity is compounding faster as import substitution accelerates. Aeroflex sits at an interesting inflection: it has spent five years building certification-depth that competitors cannot replicate in five quarters.</p>
+    </article>
+
+    <!-- Chapter 2: Business Model -->
+    <article id="ch2" aria-labelledby="ch2-title">
+      <p class="ch-eyebrow">Chapter 2</p>
+      <h2 class="ch-title" id="ch2-title">What Aeroflex Actually Does</h2>
+      <p>Aeroflex makes flexible piping solutions — stainless steel corrugated hoses, metal expansion joints, and high-pressure assemblies — for industries where rigid pipes would fail. Think of a gas turbine that vibrates at 3,000 RPM, a refinery pipeline that expands 8mm in summer, or a warship's fuel system that must survive a missile impact. Each of these needs a flexible connector that can absorb movement without leaking. Aeroflex manufactures these across 1,500+ SKUs from its Palghar facility. The business is not commoditised — every hose assembly is application-engineered, which means Aeroflex's engineers sit with the customer's design team, understand the operating parameters, and specify a solution. This creates switching costs that are structural, not contractual.</p>
+      <div class="flywheel">Certifications unlock customers → customers generate application data → data improves product specs → specs unlock new certifications → new certifications open new sectors</div>
+    </article>
+
+    <!-- Chapter 3: Verticals -->
+    <article id="ch3" aria-labelledby="ch3-title">
+      <p class="ch-eyebrow">Chapter 3</p>
+      <h2 class="ch-title" id="ch3-title">The Vertical Stories</h2>
+      
+        <div class="vertical-card" style="border-left:3px solid #378ADD">
+          <div class="vertical-header">
+            <span class="vertical-name" style="color:#378ADD">Oil &amp; Gas / Petrochemicals</span>
+            <span class="badge badge-green">Running</span>
+          </div>
+          <p class="vertical-catalyst"><strong>Catalyst:</strong> India's refining capacity expansion — HPCL Rajasthan refinery (9 MMTPA, ₹72,000 Cr), BPCL Bina expansion, IOC Panipat upgrade — collectively representing ₹1.5+ lakh crore in brownfield and greenfield capex through 2028.</p>
+          <p>This is Aeroflex's largest vertical at ~40% of revenue. PSU refineries are mandated to use BIS-certified Indian suppliers under the Atmanirbhar procurement policy, and Aeroflex holds all relevant BIS and ASME certifications. Tender wins here are sticky — once a refinery specifies your hose in its piping design, the replacement cycle runs 7-10 years.</p>
+        </div>
+        <div class="vertical-card" style="border-left:3px solid #D85A30">
+          <div class="vertical-header">
+            <span class="vertical-name" style="color:#D85A30">Defence &amp; Aerospace</span>
+            <span class="badge badge-amber">Ramping</span>
+          </div>
+          <p class="vertical-catalyst"><strong>Catalyst:</strong> India's defence indigenisation mandate: 68% of the defence capital budget ring-fenced for domestic procurement. Naval shipbuilding alone has ₹80,000 Cr in active orders at Mazagon Dock and L&amp;T Defence.</p>
+          <p>Aeroflex received DRDO and CEMILAC certifications in FY24 — a 3-year qualification process. These certifications are the barrier to entry. The company is currently supplying to two naval programmes (details confidential) and management has guided for defence contributing 15% of revenue by FY27 vs ~5% today. The margin profile in defence is materially better — 35%+ gross margins vs 28% overall.</p>
+        </div>
+        <div class="vertical-card" style="border-left:3px solid #378ADD">
+          <div class="vertical-header">
+            <span class="vertical-name" style="color:#378ADD">Industrial / Capital Goods</span>
+            <span class="badge badge-green">Running</span>
+          </div>
+          <p class="vertical-catalyst"><strong>Catalyst:</strong> India's power sector capex: ₹2.44 lakh crore budgeted for FY26 including 80 GW thermal addition and grid upgrades. Each thermal plant requires 200-400 hose assemblies.</p>
+          <p>Power plants, steel mills, and cement plants form the bread-and-butter industrial vertical. Revenue here is lumpy — large project orders followed by AMC (annual maintenance contracts) that provide recurring revenue. Management estimates AMC revenue at 12% of total today, growing to 20% by FY27 as the installed base matures.</p>
+        </div>
+        <div class="vertical-card" style="border-left:3px solid #378ADD">
+          <div class="vertical-header">
+            <span class="vertical-name" style="color:#378ADD">Exports / International</span>
+            <span class="badge badge-amber">Ramping</span>
+          </div>
+          <p class="vertical-catalyst"><strong>Catalyst:</strong> China+1 supply chain diversification: global OEMs actively seeking non-China certified suppliers for hose assemblies. Aeroflex already exports to 35 countries; EU ATEX certification received in Q3 FY25 opens the European process industry.</p>
+          <p>International revenue was 18% of FY25 revenue (₹81 Cr). Management has guided for 25%+ by FY27. The EU ATEX certification is a genuine inflection — it took 18 months to obtain and positions Aeroflex for the €800M European flexible hose market where most suppliers are Germany/Italy-based with higher cost structures.</p>
+        </div>
+    </article>
+
+    <!-- Chapter 4: Strategic Insight -->
+    <article id="ch4" aria-labelledby="ch4-title">
+      <p class="ch-eyebrow">Chapter 4 · The One Thing to Understand</p>
+      <h2 class="ch-title" id="ch4-title">The Certification Moat Is the Business</h2>
+      <div class="insight-box">Most investors look at Aeroflex as a manufacturing company and apply a manufacturing multiple. That is the wrong frame. The real asset is the certification stack — BIS, ASME, DRDO, CEMILAC, EU ATEX, and 12 others — accumulated over 15 years. A competitor cannot build a factory and start selling to DRDO in year one. They need the factory AND three years of qualification AND the application engineering track record AND the customer relationships. This certification stack is essentially a government-issued licence to participate in India's most protected spending streams. The manufacturing is just the vehicle that carries the certifications to market.</div>
+      <blockquote class="analogy">"Aeroflex is not a hose manufacturer that has certifications — it is a certification portfolio that happens to manufacture hoses"</blockquote>
+    </article>
+
+    <!-- Chapter 5: Numbers -->
+    <article id="ch5" aria-labelledby="ch5-title">
+      <p class="ch-eyebrow">Chapter 5</p>
+      <h2 class="ch-title" id="ch5-title">The Numbers in Context</h2>
+      <p>FY25 revenue of ₹452 Cr grew 28% YoY, ahead of the 20-25% guidance issued at the start of the year. EBITDA margins expanded 120bps to 21.3% as the defence and export mix improved. ROCE stands at 24% — healthy for a capex-light business (Aeroflex is largely asset-light; it outsources 40% of intermediate processing). The order book at end of FY25 was ₹380 Cr (0.84x TTM revenue), providing reasonable near-term visibility. The stock trades at 42x TTM earnings vs the sector median of 35x for industrial component manufacturers — a 20% premium the market is ascribing to the certification moat and defence ramp. Working capital has crept up to 95 days (from 78 days in FY23) driven by longer defence payment cycles — this is worth watching but not yet alarming.</p>
+      <div class="stats-grid">
+          <div class="stat-row">
+            <span class="stat-label">Revenue FY25</span>
+            <span class="stat-value">₹452 Cr (+28% YoY)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">EBITDA Margin</span>
+            <span class="stat-value">21.3% (+120 bps)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">PAT FY25</span>
+            <span class="stat-value">₹93 Cr (+31% YoY)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">ROCE</span>
+            <span class="stat-value">24%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Order Book</span>
+            <span class="stat-value">₹380 Cr (0.84x revenue)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Working Capital</span>
+            <span class="stat-value">95 days (vs 78 days FY23)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Market Cap</span>
+            <span class="stat-value">₹3,927 Cr</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">P/E (TTM)</span>
+            <span class="stat-value">42x (sector: 35x)</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-label">Export Share</span>
+            <span class="stat-value">18% of revenue</span>
+          </div></div>
+    </article>
+
+    <!-- Chapter 6: Risks -->
+    <article id="ch6" aria-labelledby="ch6-title">
+      <p class="ch-eyebrow">Chapter 6 · Eyes Open</p>
+      <h2 class="ch-title" id="ch6-title">Risks</h2>
+      
+        <div class="risk-card">
+          <div class="risk-header">
+            <span class="risk-icon" style="color:#BA7517">⚠</span>
+            <span class="risk-title">Working Capital Stretch</span>
+            <span class="risk-mag" style="color:#BA7517">Medium</span>
+          </div>
+          <p>Defence and PSU customers consistently pay in 120-150 days vs 60-75 days for private customers. As defence mix rises from 5% to 15% of revenue, working capital could expand another 10-15 days, pressuring free cash flow even as PAT grows.</p>
+          <p class="risk-signal"><strong>Signal:</strong> Watch debtors days in each quarterly balance sheet. Above 110 days for two consecutive quarters = stress signal.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-header">
+            <span class="risk-icon" style="color:#BA7517">⚠</span>
+            <span class="risk-title">Certification Concentration Risk</span>
+            <span class="risk-mag" style="color:#BA7517">Medium</span>
+          </div>
+          <p>The CEMILAC certification covers specific naval programmes. If a programme is cancelled, delayed, or redirected to a PSU (Bharat Forge, HAL), Aeroflex's defence ramp stalls. Defence is still early-stage for the company and management's 15% target is aspirational.</p>
+          <p class="risk-signal"><strong>Signal:</strong> Any management commentary walking back the defence revenue target from 15% by FY27, or delays in new programme approvals.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-header">
+            <span class="risk-icon" style="color:#1D9E75">⚠</span>
+            <span class="risk-title">Commodity Cost Pass-Through</span>
+            <span class="risk-mag" style="color:#1D9E75">Low</span>
+          </div>
+          <p>Stainless steel (SS 316L grade) is 55-60% of raw material cost. A sustained 15%+ SS price increase compresses gross margins 200-250bps before pass-through mechanisms activate. The company has a 60-90 day lag on price revision with most customers.</p>
+          <p class="risk-signal"><strong>Signal:</strong> LME nickel price (a key SS input) sustained above $20,000/tonne for 6+ weeks = margin headwind incoming.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-header">
+            <span class="risk-icon" style="color:#1D9E75">⚠</span>
+            <span class="risk-title">Execution Risk on Capacity Expansion</span>
+            <span class="risk-mag" style="color:#1D9E75">Low</span>
+          </div>
+          <p>Aeroflex is adding 30% capacity at Palghar (completion expected Q2 FY27). Any delay pushes revenue recognition for large orders into FY28 and compresses the FY27 growth narrative the market is pricing.</p>
+          <p class="risk-signal"><strong>Signal:</strong> Management commentary on capex timeline in Q1 FY27 concall. Any 'operational by Q4' language instead of Q2 = delay.</p>
+        </div>
+        <div class="risk-card">
+          <div class="risk-header">
+            <span class="risk-icon" style="color:#D85A30">⚠</span>
+            <span class="risk-title">Valuation Premium Vulnerability</span>
+            <span class="risk-mag" style="color:#D85A30">High</span>
+          </div>
+          <p>At 42x TTM PE, the stock has priced in the defence ramp, export growth, and margin expansion simultaneously. If any one of the three disappoints, the de-rating could be sharp — the sector trades at 35x, implying 15-20% downside to fair value on a single-quarter miss.</p>
+          <p class="risk-signal"><strong>Signal:</strong> Any quarter where revenue growth falls below 20% YoY or EBITDA margin falls below 20%.</p>
+        </div>
+    </article>
+
+    <!-- Chapter 7: Watch Signals -->
+    <article id="ch7" aria-labelledby="ch7-title">
+      <p class="ch-eyebrow">Chapter 7</p>
+      <h2 class="ch-title" id="ch7-title">Watch Signals</h2>
+      
+        <div class="watch-item">
+          <div class="watch-dot"></div>
+          <div class="watch-content">
+            <p class="watch-metric"><strong>Defence Revenue %</strong> — Rising towards 15% by FY27 is bullish</p>
+            <p class="watch-redflag">Red flag: Falls below 8% in FY26 or management lowers the target — certification ramp is stalling</p>
+          </div>
+        </div>
+        <div class="watch-item">
+          <div class="watch-dot"></div>
+          <div class="watch-content">
+            <p class="watch-metric"><strong>Export Revenue %</strong> — Rising towards 25% demonstrates EU ATEX certification is converting to orders</p>
+            <p class="watch-redflag">Red flag: Export share stays flat at 18% for two quarters — EU market penetration is slower than expected</p>
+          </div>
+        </div>
+        <div class="watch-item">
+          <div class="watch-dot"></div>
+          <div class="watch-content">
+            <p class="watch-metric"><strong>Debtor Days</strong> — Stable or improving (below 95 days) as AMC revenue grows</p>
+            <p class="watch-redflag">Red flag: Above 110 days for two consecutive quarters — PSU/defence payment cycles are straining working capital</p>
+          </div>
+        </div>
+        <div class="watch-item">
+          <div class="watch-dot"></div>
+          <div class="watch-content">
+            <p class="watch-metric"><strong>EBITDA Margin</strong> — Expanding from 21.3% towards 23%+ as defence and export mix improves</p>
+            <p class="watch-redflag">Red flag: Below 19.5% in any quarter — commodity cost pressure or pricing power is eroding</p>
+          </div>
+        </div>
+        <div class="watch-item">
+          <div class="watch-dot"></div>
+          <div class="watch-content">
+            <p class="watch-metric"><strong>Order Book Coverage</strong> — Healthy at 0.8x+ TTM revenue; rising above 1x signals demand acceleration</p>
+            <p class="watch-redflag">Red flag: Falls below 0.6x — order intake is slowing, the growth narrative is under pressure</p>
+          </div>
+        </div>
+    </article>
+
+    <!-- Verdict -->
+    <section id="verdict" aria-label="Verdict">
+      <p class="verdict-label">Verdict</p>
+      <p class="verdict-body">Aeroflex sits at the intersection of three durable spending waves: India's PSU refinery and power capex cycle, the defence indigenisation mandate, and the China+1 export opportunity. The financial quality is real — 24% ROCE, 28% revenue CAGR, and margin expansion despite commodity volatility — and the certification moat provides a structural advantage that cannot be replicated in under five years. The near-term catalyst is the defence revenue ramp: if management's 15% target for FY27 holds, it would trigger a re-rating as the market begins to value the company on a blended industrial-plus-defence multiple. At 42x TTM PE, the stock is pricing in the full bull case, leaving little margin of safety. The smarter entry point would be on a single-quarter miss that compresses the multiple to 35-38x — roughly ₹280-300/share — while the long-term thesis remains intact. We are in the middle chapters of this story: the certifications are built, the ramp has started, and the defence and export verticals are still early enough that the best of the revenue inflection is ahead.</p>
+    </section>
+
+  </main>
+</div>
+
+<!-- TTS bar -->
+<div class="tts-bar" aria-label="Text to speech controls">
+  <button class="btn" id="tts-play" onclick="ttsPlay()">🔊 Read</button>
+  <button class="btn" id="tts-pause" onclick="ttsPause()" style="display:none">⏸ Pause</button>
+  <button class="btn" onclick="ttsStop()">⏹ Stop</button>
+  <span class="tts-progress" id="tts-progress">Ready to read aloud</span>
+</div>
+
+<script>
+// ── Theme ─────────────────────────────────────────────────────────────────────
+(function(){
+  var t=localStorage.getItem('theme');
+  if(t==='dark'){document.body.classList.add('dark');document.getElementById('toggle').textContent='☀ Light';}
+})();
+function toggleTheme(){
+  var d=document.body.classList.toggle('dark');
+  localStorage.setItem('theme',d?'dark':'light');
+  document.getElementById('toggle').textContent=d?'☀ Light':'🌙 Dark';
+}
+
+// ── TTS ───────────────────────────────────────────────────────────────────────
+var _utt=null,_paused=false,_paragraphs=[],_idx=0;
+function _buildParagraphs(){
+  var nodes=document.getElementById('report-content').querySelectorAll('p,h2');
+  _paragraphs=[];
+  nodes.forEach(function(n){
+    var t=n.innerText.trim();
+    if(t) _paragraphs.push(t);
+  });
+}
+function _speak(idx){
+  if(idx>=_paragraphs.length){ttsStop();return;}
+  _idx=idx;
+  var prog=document.getElementById('tts-progress');
+  prog.textContent=_paragraphs[idx].substring(0,60)+'…';
+  _utt=new SpeechSynthesisUtterance(_paragraphs[idx]);
+  _utt.rate=0.92;_utt.lang='en-IN';
+  _utt.onend=function(){_speak(idx+1);};
+  window.speechSynthesis.speak(_utt);
+}
+function ttsPlay(){
+  if(!('speechSynthesis' in window)){
+    document.getElementById('tts-progress').textContent='TTS not supported in this browser';return;
+  }
+  if(_paused){window.speechSynthesis.resume();_paused=false;}
+  else{
+    window.speechSynthesis.cancel();
+    _buildParagraphs();
+    _speak(0);
+  }
+  document.getElementById('tts-play').style.display='none';
+  document.getElementById('tts-pause').style.display='';
+}
+function ttsPause(){
+  window.speechSynthesis.pause();_paused=true;
+  document.getElementById('tts-play').style.display='';
+  document.getElementById('tts-pause').style.display='none';
+}
+function ttsStop(){
+  window.speechSynthesis.cancel();_paused=false;_idx=0;
+  document.getElementById('tts-play').style.display='';
+  document.getElementById('tts-pause').style.display='none';
+  document.getElementById('tts-progress').textContent='Ready to read aloud';
+}
+</script>
+</body>
+</html>
