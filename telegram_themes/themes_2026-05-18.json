@@ -1,0 +1,48 @@
+{
+  "date": "2026-05-18",
+  "generated": "2026-05-18 16:01 IST",
+  "reports": [
+    {
+      "date": "2026-05-16",
+      "source": "20260518_1504.pdf",
+      "themes": [
+        "AI-led SaaS platforms",
+        "Customer loyalty and engagement",
+        "Land-and-expand business models",
+        "Acquisition-led growth strategy",
+        "Enterprise digital transformation"
+      ],
+      "companies": [
+        {
+          "symbol": "CAPILLARY",
+          "name": "Capillary Technologies India",
+          "sentiment": "bullish",
+          "nse_code": "CAPILLARY",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        }
+      ],
+      "key_points": [
+        "Global leader in loyalty and customer engagement with presence in 47 countries serving 410+ brands including 20 Fortune 500 companies",
+        "Strong NRR of 115% with expansion revenue representing 75% of new ACV in FY25, demonstrating deep customer relationships",
+        "Loyalty+ platform drives ~90% of revenue with effective land-and-expand model across adjacent modules (Engage+, Insights+, Rewards+, CDP)",
+        "Proven acquisition playbook with ~4-year payback periods and 20%+ ROIC through CAC substitution and platform migration",
+        "AI integration across platform (aiRA, co-pilots for creatives/promotions) with transaction-based pricing model reducing AI disruption risk",
+        "Revenue/EBITDA/PAT projected to grow at 25%/53%/132% CAGR over FY25-28E with EBITDA margin expanding from 10.9% to 19.7%",
+        "Diversified revenue across retail (30%), BFSI, healthcare, travel with low churn rates of 5.6-6% indicating resilient enterprise relationships"
+      ],
+      "catalysts": [
+        "Acquisition integration and payback achievement",
+        "AI monetisation through expanded aiRA and co-pilot adoption",
+        "Geographic expansion in Asia-Pacific and emerging markets",
+        "Vertical diversification beyond retail into healthcare and BFSI",
+        "NRR sustainability and expansion within top 10 customers",
+        "Cloud migration of on-premises customers"
+      ],
+      "time_horizon": "6-12M",
+      "conviction": "High",
+      "summary": "Capillary Technologies is a global leader in AI-led loyalty and customer engagement SaaS with a proven land-and-expand model and disciplined acquisition strategy. The company demonstrates strong unit economics with 115% NRR, deep enterprise relationships, and diversified vertical exposure. We initiate coverage with a BUY rating and 12-month price target of INR 650 (20% upside), valuing the company at 19x FY28E EBITDA based on projected 25%/53% revenue/EBITDA CAGR through FY28E.",
+      "connection_narrative": "The enterprise software market is undergoing a fundamental shift as companies recognize customer loyalty and engagement as critical drivers of lifetime value amid rising customer acquisition costs and intensifying competition. The global loyalty management market is expanding at 10% CAGR from USD 16.6 billion in 2024 to USD 26.8 billion by 2029, with growth broad-based across geographies but particularly accelerating in Asia-Pacific driven by digital adoption and favourable demographics. Simultaneously, generative AI is reshaping enterprise software, with companies adopting AI-led platforms for productivity gains and monetisation improvements, though this has triggered a market repricing of traditional SaaS models. Capillary Technologies is exceptionally well-positioned at the intersection of these trends. As a global leader in loyalty management serving 410+ brands including 20 Fortune 500 companies across 47 countries, the company has built a defensible moat through its unified, cloud-native platform that integrates loyalty management, engagement, analytics, rewards and customer data into a single system-of-record architecture. The company's land-and-expand model, where enterprises initially adopt its Loyalty+ platform for ~90% of revenue and subsequently adopt adjacent modules, generates a healthy 115% NRR with even higher expansion rates among its top 10 customers, demonstrating stickiness and pricing power. Capillary's disciplined acquisition playbook—acquiring sub-scale assets and migrating them to its platform—has delivered approximately four-year payback periods and 20%+ return on invested capital, with past acquisitions showing both margin expansion through cost optimisation and revenue synergies. Critically, Capillary's transaction-linked pricing model and deep enterprise integrations insulate the company from disruption fears affecting seat-based SaaS models, while its proprietary loyalty data and aiRA AI-powered analytics enable continued monetisation as enterprises adopt AI-driven campaign execution and customer insights. The company's diversified revenue base across retail, BFSI, healthcare, travel and CPG verticals, with retail share moderating from 45% to 30% of revenue, provides resilience and demonstrates the horizontal applicability of its platform. With projected 25% revenue and 53% EBITDA growth over FY25-28E, EBITDA margins expanding from 11% to 20%, and profitability growing at 132% CAGR, Capillary trades at 19x FY28E EBITDA—a modest premium to Indian SaaS peers at 18x—reflecting superior growth visibility and execution. The most critical catalyst to monitor is successful monetisation of AI capabilities through expanded adoption of aiRA and co-pilots, which could accelerate both NRR expansion and new customer acquisition. The primary risk is elevated client concentration with 40% of revenue from top five customers, creating vulnerability to customer churn or reduced spending despite demonstrated long-term relationship tenures and the resilient nature of loyalty spending in enterprises facing margin pressures."
+    }
+  ]
+}
