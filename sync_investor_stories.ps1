@@ -1,7 +1,8 @@
 
-$source  = "C:\Users\satya\Downloads\NSE_Investor_Story"
-$repo    = "C:\Users\satya\nse_circuit_limits"
-$logFile = "$repo\logs\sync_investor_stories_$(Get-Date -Format 'yyyy-MM-dd').log"
+$source   = "C:\Users\satya\Downloads\NSE_Investor_Story"
+$repo     = "C:\Users\satya\nse_circuit_limits"
+$logFile  = "$repo\logs\sync_investor_stories_$(Get-Date -Format 'yyyy-MM-dd').log"
+$manifest = "$repo\logs\sync_manifest.json"
 
 function Log($msg) {
     $line = "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')  $msg"
@@ -10,6 +11,18 @@ function Log($msg) {
 }
 
 New-Item -ItemType Directory -Path "$repo\logs" -Force | Out-Null
+
+# ── Load manifest (tracks every file ever synced) ─────────────────────────────
+$syncedNames = @{}
+$allEntries  = @()
+if (Test-Path $manifest) {
+    $raw = Get-Content $manifest -Raw -Encoding UTF8 | ConvertFrom-Json
+    # ConvertFrom-Json returns PSObject (single item) or array — normalise to array
+    foreach ($e in @($raw)) {
+        $syncedNames[$e.file] = $true
+        $allEntries += $e
+    }
+}
 
 Log "=== Investor Story Sync started ==="
 
@@ -21,29 +34,48 @@ if (-not $files) {
     exit 0
 }
 
-$copied = 0
+$copied     = 0
+$newEntries = @()
+
 foreach ($f in $files) {
-    # Expect: SYMBOL_YYYY-MM-DD.html  (e.g. AEROFLEX_2026-05-17.html)
-    if ($f.Name -match '^([A-Z0-9&_]+?)_(\d{4}-\d{2}-\d{2})\.html$') {
-        $symbol  = $Matches[1]
-        $destDir = "$repo\reports\$symbol"
-        $dest    = "$destDir\$($f.Name)"
-
-        New-Item -ItemType Directory -Path $destDir -Force | Out-Null
-
-        if (-not (Test-Path $dest)) {
-            Copy-Item $f.FullName -Destination $dest -Force
-            Log "Copied  $($f.Name)  ->  reports\$symbol\"
-            $copied++
-        } else {
-            Log "Skip    $($f.Name)  (already exists)"
-        }
-    } else {
-        Log "Skip    $($f.Name)  (filename doesn't match SYMBOL_YYYY-MM-DD.html)"
+    # Skip if already recorded in manifest
+    if ($syncedNames.ContainsKey($f.Name)) {
+        Log "Skip    $($f.Name)  (already synced)"
+        continue
     }
+
+    # Derive symbol: everything before the first underscore, uppercased.
+    # If no underscore, use the full stem.  e.g. AEROFLEX_Q4.html -> AEROFLEX
+    $stem   = [System.IO.Path]::GetFileNameWithoutExtension($f.Name)
+    $symbol = ($stem -split '_')[0].ToUpper()
+
+    $destDir = "$repo\reports\$symbol"
+    $dest    = "$destDir\$($f.Name)"
+
+    New-Item -ItemType Directory -Path $destDir -Force | Out-Null
+    Copy-Item $f.FullName -Destination $dest -Force
+
+    $entry = [PSCustomObject]@{
+        file      = $f.Name
+        symbol    = $symbol
+        synced_at = (Get-Date -Format 'yyyy-MM-dd HH:mm:ss')
+        dest      = "reports/$symbol/$($f.Name)"
+    }
+    $newEntries   += $entry
+    $allEntries   += $entry
+    $syncedNames[$f.Name] = $true
+
+    Log "Copied  $($f.Name)  ->  reports\$symbol\"
+    $copied++
 }
 
 Log "Files copied: $copied"
+
+# ── Persist manifest ──────────────────────────────────────────────────────────
+if ($newEntries.Count -gt 0) {
+    $allEntries | ConvertTo-Json -Depth 3 | Set-Content $manifest -Encoding UTF8
+    Log "Manifest updated: $($allEntries.Count) total entries"
+}
 
 # ── Rebuild index ──────────────────────────────────────────────────────────────
 Log "Rebuilding index..."
@@ -51,7 +83,7 @@ python "$repo\scripts\generate_index.py" 2>&1 | ForEach-Object { Log $_ }
 
 # ── Git commit + push (only if something changed) ─────────────────────────────
 Set-Location $repo
-git add reports/ 2>&1 | Out-Null
+git add reports/ logs/sync_manifest.json 2>&1 | Out-Null
 $staged = git diff --staged --name-only
 
 if ($staged) {
