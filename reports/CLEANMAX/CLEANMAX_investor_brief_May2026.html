@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLEANMAX — NSE Investor Brief · May 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root{--bg:#f4f5f0;--bg2:#ffffff;--bg3:#eeeee9;--text:#181a14;--text2:#45473c;--text3:#78796f;--border:rgba(0,0,0,.09);--border2:rgba(0,0,0,.17);--teal:#1D9E75;--teal-light:#E1F5EE;--teal-dark:#0F6E56;--green:#639922;--green-light:#EAF3DE;--green-dark:#3B6D11;--blue:#378ADD;--blue-light:#E6F1FB;--blue-dark:#185FA5;--purple:#534AB7;--purple-light:#EEEDFE;--purple-dark:#3C3489;--amber:#BA7517;--amber-light:#FAEEDA;--amber-dark:#854F0B;--coral:#D85A30;--coral-light:#FAECE7;--coral-dark:#993C1D}
+[data-theme="dark"]{--bg:#181a14;--bg2:#22241e;--bg3:#2a2c26;--text:#edeee6;--text2:#b0b29e;--text3:#78796f;--border:rgba(255,255,255,.09);--border2:rgba(255,255,255,.17);--teal-light:#04342C;--teal-dark:#9FE1CB;--green-light:#173404;--green-dark:#C0DD97;--blue-light:#042C53;--blue-dark:#B5D4F4;--purple-light:#26215C;--purple-dark:#CECBF6;--amber-light:#412402;--amber-dark:#FAC775;--coral-light:#4A1B0C;--coral-dark:#F5C4B3}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#181a14;--bg2:#22241e;--bg3:#2a2c26;--text:#edeee6;--text2:#b0b29e;--text3:#78796f;--border:rgba(255,255,255,.09);--border2:rgba(255,255,255,.17);--teal-light:#04342C;--teal-dark:#9FE1CB;--green-light:#173404;--green-dark:#C0DD97;--blue-light:#042C53;--blue-dark:#B5D4F4;--purple-light:#26215C;--purple-dark:#CECBF6;--amber-light:#412402;--amber-dark:#FAC775;--coral-light:#4A1B0C;--coral-dark:#F5C4B3}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;max-width:700px;margin:0 auto;padding:0 1rem 4rem}
+.sans{font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.top-bar{display:flex;justify-content:space-between;align-items:center;padding:1rem 0 .5rem;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;color:var(--text3);border-bottom:.5px solid var(--border);margin-bottom:2rem}
+.nse-tag{background:var(--green);color:#fff;font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;letter-spacing:.05em}
+.theme-btn{background:none;border:.5px solid var(--border2);border-radius:6px;padding:4px 10px;font-size:12px;color:var(--text2);cursor:pointer;font-family:-apple-system,'Segoe UI',Arial,sans-serif;min-height:32px;min-width:64px}
+.theme-btn:hover{background:var(--bg3)}
+.cover{background:var(--bg2);border:.5px solid var(--border);border-radius:12px;padding:2rem 1.75rem;margin-bottom:2.5rem}
+.cover-eyebrow{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem;display:flex;align-items:center;gap:8px}
+.cover h1{font-size:clamp(26px,5vw,36px);font-weight:700;line-height:1.15;margin-bottom:.3rem}
+.cover-sub{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:14px;color:var(--text2);margin-bottom:1.5rem}
+.c-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.cs{background:var(--bg3);border-radius:8px;padding:.75rem 1rem;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.cs-l{font-size:11px;color:var(--text3);margin-bottom:2px}
+.cs-v{font-size:20px;font-weight:700;color:var(--text);line-height:1}
+.cs-s{font-size:11px;color:var(--green);margin-top:2px}
+.cs-s.warn{color:var(--amber)}
+.cs-s.danger{color:var(--coral)}
+.chapter{margin:2.5rem 0 1.25rem}
+.chapter-eyebrow{display:flex;align-items:center;gap:10px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;margin-bottom:.25rem}
+.chapter-num{width:26px;height:26px;border-radius:50%;background:var(--text);color:var(--bg);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.chapter-label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--text3)}
+.chapter h2{font-size:clamp(18px,3.5vw,22px);font-weight:700;line-height:1.25;color:var(--text);margin-left:36px}
+p{margin-bottom:1rem;color:var(--text2);font-size:15px}
+p:last-child{margin-bottom:0}
+.accent{border-left:3px solid var(--green);padding:.75rem 1rem;margin:1rem 0;background:var(--bg2);border-radius:0 8px 8px 0}
+.accent p{margin:0;font-size:14px;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.seg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin:1rem 0}
+.seg{border-radius:10px;padding:1rem 1.125rem;border:.5px solid var(--border);background:var(--bg2);font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.seg-hd{display:flex;align-items:center;gap:8px;margin-bottom:.5rem}
+.sdot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.sname{font-size:13px;font-weight:600;color:var(--text)}
+.sstatus{margin-left:auto;font-size:10px;padding:2px 8px;border-radius:20px;font-weight:600;letter-spacing:.04em}
+.sl{background:var(--teal-light);color:var(--teal-dark)}
+.sr{background:var(--amber-light);color:var(--amber-dark)}
+.sp{background:var(--purple-light);color:var(--purple-dark)}
+.scat{font-size:12px;color:var(--text3);margin-bottom:6px;font-style:italic}
+.sbody{font-size:13px;color:var(--text2);line-height:1.55}
+.sdata{margin-top:8px;font-size:12px;font-weight:600;color:var(--text)}
+.stat-block{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;overflow:hidden;margin:1rem 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.srow{display:flex;justify-content:space-between;align-items:baseline;padding:9px 1rem;border-bottom:.5px solid var(--border);font-size:14px}
+.srow:last-child{border-bottom:none}
+.slbl{color:var(--text2)}
+.sval{font-weight:600;color:var(--text);text-align:right}
+.sval.pos{color:var(--green)}
+.sval.warn{color:var(--amber)}
+.sval.danger{color:var(--coral)}
+.num-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:1rem 0}
+.nc{background:var(--bg3);border-radius:8px;padding:.75rem 1rem;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.nc-l{font-size:11px;color:var(--text3);margin-bottom:2px}
+.nc-v{font-size:21px;font-weight:700;color:var(--text);line-height:1}
+.nc-c{font-size:11px;font-weight:600;margin-top:2px}
+.cp{color:var(--green)}
+.cw{color:var(--amber)}
+.cd{color:var(--coral)}
+.chart-wrap{background:var(--bg2);border:.5px solid var(--border);border-radius:10px;padding:1rem;margin:1rem 0}
+.chart-title{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:12px;color:var(--text3);margin-bottom:.75rem;text-transform:uppercase;letter-spacing:.08em}
+.cleg{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:8px;font-size:12px;font-family:-apple-system,'Segoe UI',Arial,sans-serif;color:var(--text2)}
+.cleg span{display:flex;align-items:center;gap:5px}
+.ldot{width:10px;height:10px;border-radius:2px;flex-shrink:0}
+.risk-item{display:flex;gap:12px;padding:.875rem 0;border-bottom:.5px solid var(--border);font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.risk-item:last-child{border-bottom:none}
+.ri-icon{flex-shrink:0;width:28px;height:28px;border-radius:6px;background:var(--amber-light);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--amber);margin-top:2px}
+.ri-body{flex:1}
+.ri-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+.ri-desc{font-size:13px;color:var(--text2);line-height:1.5}
+.ri-sig{font-size:11px;color:var(--text3);margin-top:4px;font-style:italic}
+.watch-item{display:flex;gap:12px;padding:.75rem 0;border-bottom:.5px solid var(--border);font-family:-apple-system,'Segoe UI',Arial,sans-serif;align-items:flex-start}
+.watch-item:last-child{border-bottom:none}
+.wdot{width:10px;height:10px;border-radius:50%;margin-top:5px;flex-shrink:0}
+.wi-body{flex:1}
+.wi-title{font-size:14px;font-weight:600;color:var(--text)}
+.wi-desc{font-size:13px;color:var(--text2);margin-top:1px}
+.wi-flag{font-size:11px;color:var(--coral);margin-top:3px;font-weight:600}
+.verdict{background:var(--bg2);border:.5px solid var(--border2);border-radius:12px;padding:1.5rem 1.75rem;margin:2rem 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.v-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text3);margin-bottom:.5rem}
+.v-text{font-size:15px;line-height:1.7;color:var(--text2)}
+.v-text strong{color:var(--text);font-weight:600}
+.peer-table{width:100%;border-collapse:collapse;font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px;margin:.75rem 0}
+.peer-table th{text-align:left;padding:6px 8px;color:var(--text3);font-size:11px;font-weight:600;letter-spacing:.06em;border-bottom:.5px solid var(--border2)}
+.peer-table td{padding:7px 8px;border-bottom:.5px solid var(--border);color:var(--text2)}
+.peer-table tr.hl td{color:var(--text);font-weight:600;background:var(--bg3)}
+.peer-table td:not(:first-child){text-align:right}
+.peer-table th:not(:first-child){text-align:right}
+.capacity-bar{margin:1rem 0;font-family:-apple-system,'Segoe UI',Arial,sans-serif}
+.bar-row{display:flex;align-items:center;gap:10px;margin-bottom:8px;font-size:13px}
+.bar-label{width:120px;color:var(--text2);flex-shrink:0}
+.bar-track{flex:1;height:10px;background:var(--bg3);border-radius:6px;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px}
+.bar-val{width:70px;text-align:right;font-weight:600;color:var(--text)}
+hr{border:none;border-top:.5px solid var(--border);margin:2rem 0}
+footer{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:11px;color:var(--text3);margin-top:3rem;padding-top:1rem;border-top:.5px solid var(--border);line-height:1.6}
+@media(max-width:480px){body{padding:0 .75rem 3rem}.cover{padding:1.5rem 1.125rem}.verdict{padding:1.25rem 1.125rem}.seg-grid{grid-template-columns:1fr}.num-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+
+<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden">
+  CLEANMAX NSE Investor Brief May 2026. Clean Max Enviro Energy Solutions Limited, India's largest commercial and industrial renewable energy provider. FY26 revenue 1913 crore rupees, EBITDA 1295 crore rupees, PAT 85.6 crore rupees. Operational capacity 3.1 gigawatts.
+</h1>
+
+<div class="top-bar sans">
+  <div style="display:flex;align-items:center;gap:8px">
+    <span class="nse-tag">NSE: CLEANMAX</span>
+    <span>C&amp;I Renewable Energy</span>
+  </div>
+  <button class="theme-btn" id="themeToggle" aria-label="Toggle dark or light mode" onclick="toggleTheme()">🌙 Dark</button>
+</div>
+
+<!-- COVER -->
+<section class="cover" aria-labelledby="cover-title">
+  <div class="cover-eyebrow sans"><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--green);margin-right:4px" aria-hidden="true"></span>C&amp;I Renewable · Mumbai · Listed Feb 2026 · Brief: May 17, 2026</div>
+  <h1 id="cover-title">Clean Max Enviro Energy Solutions</h1>
+  <p class="cover-sub sans">India's largest C&amp;I renewable energy company — the infrastructure behind corporate India and Silicon Valley's green pledges</p>
+  <div class="c-stats" role="list" aria-label="Key financial metrics">
+    <div class="cs" role="listitem"><div class="cs-l">FY26 Revenue</div><div class="cs-v">₹1,913 Cr</div><div class="cs-s">+28% YoY</div></div>
+    <div class="cs" role="listitem"><div class="cs-l">FY26 EBITDA</div><div class="cs-v">₹1,295 Cr</div><div class="cs-s">+28% YoY · 67.7% margin</div></div>
+    <div class="cs" role="listitem"><div class="cs-l">Operational GW</div><div class="cs-v">3.1 GW</div><div class="cs-s">+80% YoY · 1.4 GW added</div></div>
+    <div class="cs" role="listitem"><div class="cs-l">Contracted Pipeline</div><div class="cs-v">5.7 GW</div><div class="cs-s">2.6 GW under execution</div></div>
+    <div class="cs" role="listitem"><div class="cs-l">Market Cap</div><div class="cs-v">₹15,103 Cr</div><div class="cs-s warn">Net Debt/EBITDA: 4.75×</div></div>
+    <div class="cs" role="listitem"><div class="cs-l">PAT FY26</div><div class="cs-v">₹85.6 Cr</div><div class="cs-s">4.4× from ₹19.4 Cr</div></div>
+  </div>
+</section>
+
+<!-- CH 1: CONTEXT -->
+<section aria-labelledby="ch1-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">1</div><span class="chapter-label sans">The big picture</span></div>
+    <h2 id="ch1-title">The AI electricity crisis is arriving — and CleanMax is the landlord</h2>
+  </div>
+
+  <p>India's commercial and industrial sector consumes roughly 40–45% of all electricity in the country — and it is the fastest-growing buyer of renewable energy. Grid tariffs for industrial consumers run ₹6–8 per unit across states. Renewable energy via open access or captive structures costs 20–40% less. The math writes itself: any CFO who can save 30% on electricity bills while ticking the ESG box will sign a long-term PPA.</p>
+
+  <p>Now add the AI layer. Global data centre electricity demand grew 17% in 2025 and is on course to nearly double to 945 terawatt-hours by 2030 (IEA). India's data centre capacity is projected to surge from 1.4 GW in 2024 to 9 GW by 2030 — a 15% annual growth rate, four times faster than total electricity consumption growth. Every major hyperscaler — Amazon, Google, Microsoft, Apple — has committed to 100% renewable energy. They need someone to build, own, and deliver that renewable energy reliably. That is CleanMax's business.</p>
+
+  <p>India's 500 GW renewable energy target by 2030 is the structural policy backdrop. The C&amp;I segment alone requires close to 80 GW of new renewable capacity to meet even 20% of its energy needs through renewables, per ICRA estimates. CleanMax, with 3.1 GW operational and 5.7 GW contracted, has barely scratched the surface of that opportunity.</p>
+
+  <div class="accent" style="border-left-color:var(--green)" role="note">
+    <p class="sans"><strong>Sector signal:</strong> India's data centre capacity is forecast to grow 6.4× by 2030. Global hyperscaler capex exceeded USD 400 billion in 2025 and is projected to jump another 75% in 2026 (IEA). CleanMax's Data &amp; AI portfolio grew 10× in two years — from 254 MW in FY24 to 2,380 MW in FY26.</p>
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 2: BUSINESS MODEL -->
+<section aria-labelledby="ch2-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">2</div><span class="chapter-label sans">The business</span></div>
+    <h2 id="ch2-title">The OPEX model: CleanMax takes the risk so corporates don't have to</h2>
+  </div>
+
+  <p>CleanMax pioneered the "energy sale" OPEX model for C&amp;I solar in India in 2012. The concept is simple but powerful: CleanMax builds, owns, and operates the renewable energy asset. The corporate customer signs a long-term Power Purchase Agreement (PPA) and pays only for the electricity consumed — zero upfront investment, no asset on their balance sheet, no performance risk. For a finance director, it reads like paying a utility bill, except the power is 20–40% cheaper and comes with zero carbon.</p>
+
+  <p>There are three delivery structures. Under <strong>Third-Party Open Access</strong>, CleanMax owns everything and sells power at PPA tariff. Under the <strong>Group Captive model</strong>, the corporate invests a minimum 26% equity in the project SPV, which qualifies it for exemption from cross-subsidy surcharges — delivering even lower effective tariffs and more regulatory stability. Under the <strong>CAPEX model</strong>, the customer owns the asset and CleanMax does engineering, procurement, and construction. The OPEX and Group Captive routes together account for the bulk of CleanMax's revenues and margins.</p>
+
+  <p>The customer quality is remarkable: <strong>approximately 85% of customers are AAA-rated or subsidiaries of multinational companies</strong>. This is not a portfolio of small businesses — it is Amazon, Apple, Adobe, Equinix, Tata Motors, Volvo, Shell. Counterparty credit risk is lower than most DISCOM-exposed utility IPPs. And 78% of contracted capacity in FY25 came from repeat customers — businesses that returned to expand their existing renewable commitment.</p>
+
+  <div class="stat-block" aria-label="Business metrics and portfolio highlights">
+    <div class="srow"><span class="slbl sans">Customers on books</span><span class="sval">555 corporate clients</span></div>
+    <div class="srow"><span class="slbl sans">AAA-rated or MNC customers</span><span class="sval">~85% of base</span></div>
+    <div class="srow"><span class="slbl sans">Repeat customer capacity share (FY25)</span><span class="sval pos">78%</span></div>
+    <div class="srow"><span class="slbl sans">Power savings for customers vs grid</span><span class="sval pos">20–40% cheaper</span></div>
+    <div class="srow"><span class="slbl sans">Average PPA duration</span><span class="sval">20–25 years</span></div>
+    <div class="srow"><span class="slbl sans">FY26 projects executed vs budget</span><span class="sval pos">97% of budgeted cost</span></div>
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 3: VERTICALS -->
+<section aria-labelledby="ch3-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">3</div><span class="chapter-label sans">Revenue verticals</span></div>
+    <h2 id="ch3-title">Five growth drivers — led by an AI-powered demand surge</h2>
+  </div>
+
+  <div class="seg-grid" role="list">
+
+    <div class="seg" style="border-top:3px solid var(--purple)" role="listitem">
+      <div class="seg-hd"><div class="sdot" style="background:var(--purple)"></div><span class="sname">Data &amp; AI (Hyperscalers)</span><span class="sstatus sp">Surging</span></div>
+      <p class="scat">Amazon, Apple, Equinix, Google — 100% RE commitments</p>
+      <p class="sbody">Now 42% of contracted portfolio — 2,380 MW — and grew tenfold in two years from 254 MW in FY24. Data centres require high-reliability, round-the-clock renewable supply. CleanMax commissioned its first 525 MW CTU-connected project in Bikaner, Rajasthan, specifically to serve this segment. Apple co-invested ₹104 Cr in a 150 MW portfolio. Equinix signed a 33 MW captive PPA for Mumbai data centres.</p>
+      <p class="sdata">~42% of contracted portfolio · Apple, Equinix, STT GDC India</p>
+    </div>
+
+    <div class="seg" style="border-top:3px solid var(--teal)" role="listitem">
+      <div class="seg-hd"><div class="sdot" style="background:var(--teal)"></div><span class="sname">Traditional C&amp;I Corporates</span><span class="sstatus sl">Live</span></div>
+      <p class="scat">Manufacturing, pharma, FMCG, textiles — ESG + cost savings</p>
+      <p class="sbody">CleanMax's original business — serving industrial customers chasing net-zero targets and lower energy bills simultaneously. Customers include Tata Motors, Volvo, Shell, Sangam India (30 MW solar + 20 MW wind in Rajasthan). This segment provides stable, diversified base revenue with lower concentration risk than the hyperscaler segment.</p>
+      <p class="sdata">~58% of existing operational capacity · ~350+ Cr repeat annual business</p>
+    </div>
+
+    <div class="seg" style="border-top:3px solid var(--blue)" role="listitem">
+      <div class="seg-hd"><div class="sdot" style="background:var(--blue)"></div><span class="sname">Group Captive Projects</span><span class="sstatus sl">Live</span></div>
+      <p class="scat">Co-invest model — equity stake unlocks lower cross-subsidy tariffs</p>
+      <p class="sbody">Clients invest at least 26% equity in the project SPV and consume at least 51% of output — qualifying for exemption from cross-subsidy surcharges in most states. The 185 MW Kalavad, Gujarat hybrid project serves 17 corporate customers under this model, including Apar Industries and Borosil Renewables. Adds ₹165 Cr annual revenue from FY27 alone.</p>
+      <p class="sdata">185 MW Gujarat hybrid commissioned · 17 clients · ₹165 Cr revenue add FY27</p>
+    </div>
+
+    <div class="seg" style="border-top:3px solid var(--amber)" role="listitem">
+      <div class="seg-hd"><div class="sdot" style="background:var(--amber)"></div><span class="sname">RE Services (EPC &amp; O&amp;M)</span><span class="sstatus sl">Live</span></div>
+      <p class="scat">Customer-owned assets — engineering, procurement, operations</p>
+      <p class="sbody">Client owns the renewable asset; CleanMax designs, builds, and manages it. Lower-margin than power sales (~6% gross margin contribution vs ~25% revenue share), but a natural extension of customer relationships. Total RE services capacity: 523 MW operational, 226 MW under execution. Tata Communications acquired a 26% stake in one of CleanMax's SPVs.</p>
+      <p class="sdata">523 MW operational RE services · 226 MW under execution</p>
+    </div>
+
+    <div class="seg" style="border-top:3px solid var(--coral)" role="listitem">
+      <div class="seg-hd"><div class="sdot" style="background:var(--coral)"></div><span class="sname">International (Middle East &amp; SEA)</span><span class="sstatus sr">Ramping</span></div>
+      <p class="scat">UAE, Bahrain, Thailand — same OPEX model, new geographies</p>
+      <p class="sbody">CleanMax operates in Thailand (subsidiary established), UAE (onsite solar in Bahrain, first plant commissioned), and is evaluating additional markets. International expansion is selective and measured — not a core growth driver today but a strategic optionality play as multinational customers want consistent renewable energy solutions across their Asian operations.</p>
+      <p class="sdata">Operations: Thailand, UAE, Bahrain · Osaka Gas JV (CORE, 51% CleanMax)</p>
+    </div>
+
+  </div>
+
+  <!-- Capacity progression -->
+  <div class="chart-wrap" role="figure" aria-labelledby="cap-title">
+    <div class="chart-title sans" id="cap-title">Operational capacity progression (GW)</div>
+    <div class="capacity-bar" aria-label="Capacity growth from FY24 to FY26 and FY27 target">
+      <div class="bar-row"><span class="bar-label sans" style="font-size:13px">FY24 actual</span><div class="bar-track"><div class="bar-fill" style="width:24%;background:var(--teal);opacity:.5"></div></div><span class="bar-val sans">1.7 GW</span></div>
+      <div class="bar-row"><span class="bar-label sans" style="font-size:13px">FY25 actual</span><div class="bar-track"><div class="bar-fill" style="width:39%;background:var(--teal);opacity:.65"></div></div><span class="bar-val sans">~1.7 GW</span></div>
+      <div class="bar-row"><span class="bar-label sans" style="font-size:13px">FY26 actual</span><div class="bar-track"><div class="bar-fill" style="width:60%;background:var(--teal)"></div></div><span class="bar-val sans">3.1 GW</span></div>
+      <div class="bar-row"><span class="bar-label sans" style="font-size:13px">FY27 guided</span><div class="bar-track"><div class="bar-fill" style="width:88%;background:var(--green);opacity:.7"></div></div><span class="bar-val sans" style="color:var(--text3)">4.6+ GW</span></div>
+      <div class="bar-row"><span class="bar-label sans" style="font-size:13px">Contracted total</span><div class="bar-track"><div class="bar-fill" style="width:100%;background:var(--purple);opacity:.55"></div></div><span class="bar-val sans" style="color:var(--purple)">5.7 GW</span></div>
+    </div>
+    <p style="font-size:11px;color:var(--text3);margin-top:4px;font-family:-apple-system,'Segoe UI',Arial,sans-serif">FY24 = start of FY26 actual; FY27 guided assumes 1.5+ GW commissioning on 3.1 GW base</p>
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 4: STRATEGIC INSIGHT -->
+<section aria-labelledby="ch4-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">4</div><span class="chapter-label sans">The non-obvious insight</span></div>
+    <h2 id="ch4-title">Don't read the P/E ratio — read the contracted capacity backlog</h2>
+  </div>
+
+  <p>The most common mistake investors make with CleanMax is looking at the P/E ratio — approximately 176× on FY26 trailing PAT of ₹85.6 Cr — and concluding the stock is absurd. That conclusion misunderstands how infrastructure companies work. PAT is depressed by depreciation and interest charges on a large and rapidly growing asset base. These costs are fixed and front-loaded; the revenues they generate extend for 20–25 years.</p>
+
+  <p>The right frame is <strong>EV/EBITDA</strong>. With a market cap of ~₹15,000 Cr and estimated net debt of ~₹9,500 Cr (after IPO debt repayment of ₹1,122 Cr from ~₹10,700 Cr), the enterprise value is roughly ₹24,500 Cr. FY26 EBITDA was ₹1,295 Cr. That gives EV/EBITDA of ~19× — not cheap, but not absurd for a platform growing operational capacity at 80% per year with a 5.7 GW contracted backlog.</p>
+
+  <p>Here is the arithmetic that matters: CleanMax's 3.1 GW operational portfolio generates ~₹1,295 Cr EBITDA. The 2.6 GW under construction will, when commissioned over the next 24 months, add roughly <strong>₹1,000+ Cr of incremental EBITDA</strong> — without winning a single new customer. The contracted backlog is effectively locked-in future EBITDA. This is why institutional investors — 29.8% FII ownership post-listing, including large funds — are comfortable holding at current prices. They are not buying today's PAT; they are buying the NPV of 25-year PPA cash flows from a 5.7 GW contracted pipeline.</p>
+
+  <div class="accent" style="border-left-color:var(--purple)" role="note">
+    <p class="sans"><strong>The one thing to remember:</strong> CleanMax's P/E is meaningless. The right question is: what is 5.7 GW of contracted, annuity-like renewable energy revenue from AAA-rated corporates worth? The 2.6 GW backlog represents ~₹1,000+ Cr of EBITDA not yet on the income statement.</p>
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 5: NUMBERS -->
+<section aria-labelledby="ch5-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">5</div><span class="chapter-label sans">Financials in context</span></div>
+    <h2 id="ch5-title">The numbers — infrastructure logic, not software logic</h2>
+  </div>
+
+  <p>FY26 was CleanMax's strongest year since founding. Revenue grew 28% to ₹1,913 Cr, EBITDA grew 28% to ₹1,295 Cr, and PAT surged 4.4× to ₹85.6 Cr — driven primarily by 1.4 GW of new capacity commissioned during the year. Power sales EBITDA margin improved from 81.9% to 83.5%, reflecting operational leverage as the asset base scales. One important note: part of the PAT jump was aided by FX adjustments — ₹70 Cr FX gain and ₹63 Cr FX loss, largely offsetting — related to a USD-denominated contract. The underlying EBITDA growth story is clean; PAT quality deserves scrutiny.</p>
+
+  <div class="num-grid" aria-label="FY26 financial metrics">
+    <div class="nc"><div class="nc-l">Revenue FY26</div><div class="nc-v">₹1,913 Cr</div><div class="nc-c cp">+28% YoY</div></div>
+    <div class="nc"><div class="nc-l">EBITDA FY26</div><div class="nc-v">₹1,295 Cr</div><div class="nc-c cp">+28% · 67.7% margin</div></div>
+    <div class="nc"><div class="nc-l">Power Sales EBITDA%</div><div class="nc-v">83.5%</div><div class="nc-c cp">↑ from 81.9% FY25</div></div>
+    <div class="nc"><div class="nc-l">PAT FY26</div><div class="nc-v">₹85.6 Cr</div><div class="nc-c cp">4.4× from ₹19.4 Cr</div></div>
+    <div class="nc"><div class="nc-l">Net Debt/EBITDA</div><div class="nc-v">4.75×</div><div class="nc-c cw">Elevated · watch</div></div>
+    <div class="nc"><div class="nc-l">EV/EBITDA (est.)</div><div class="nc-v">~19×</div><div class="nc-c" style="color:var(--text3)">More relevant metric</div></div>
+    <div class="nc"><div class="nc-l">Q4 FY26 Revenue</div><div class="nc-v">₹557 Cr</div><div class="nc-c cp">+25% YoY · +32% QoQ</div></div>
+    <div class="nc"><div class="nc-l">Q4 FY26 PAT</div><div class="nc-v">₹45.4 Cr</div><div class="nc-c cp">+165% YoY</div></div>
+  </div>
+
+  <!-- Revenue and EBITDA chart -->
+  <div class="chart-wrap" role="figure" aria-labelledby="chart1-title">
+    <div class="chart-title sans" id="chart1-title">Revenue and EBITDA trajectory (₹ Crore)</div>
+    <div class="cleg">
+      <span><span class="ldot" style="background:#1D9E75"></span>Revenue</span>
+      <span><span class="ldot" style="background:#639922"></span>EBITDA</span>
+    </div>
+    <div style="position:relative;width:100%;height:220px"><canvas id="revChart" role="img" aria-label="Grouped bar chart: FY25 revenue 1496 crore EBITDA 1015 crore; FY26 revenue 1913 crore EBITDA 1295 crore">FY25: Revenue 1496, EBITDA 1015. FY26: Revenue 1913, EBITDA 1295.</canvas></div>
+  </div>
+
+  <!-- Quarterly revenue -->
+  <div class="chart-wrap" role="figure" aria-labelledby="chart2-title">
+    <div class="chart-title sans" id="chart2-title">Quarterly revenue — FY26 (₹ Crore)</div>
+    <div style="position:relative;width:100%;height:200px"><canvas id="qChart" role="img" aria-label="Bar chart: Q1 FY26 approximately 363 crore, Q2 FY26 530 crore, Q3 FY26 422 crore, Q4 FY26 557 crore.">Q1 ~363, Q2 530, Q3 422, Q4 557 Cr. Note Q3 is seasonally weak for renewable energy.</canvas></div>
+  </div>
+  <p style="font-size:12px;color:var(--text3);font-family:-apple-system,'Segoe UI',Arial,sans-serif;margin-top:-4px">Note: Q3 is structurally weak for renewable energy companies — monsoon withdrawal reduces wind, winter reduces solar irradiance. Q2 and Q4 are typically stronger. Q1 FY26 derived from 9M minus Q2 and Q3.</p>
+
+  <p style="margin-top:1rem"><strong>Valuation: three lenses, not one</strong></p>
+  <p>The trailing P/E (~176×) is misleading for an infrastructure company. EV/EBITDA (~19×) is the operative metric. Compare with Adani Green at ~90–100× P/E with EV/EBITDA of ~25–30×, NTPC Green at ~15× P/E with lower growth. CleanMax's pure-play C&amp;I positioning — avoiding DISCOM credit risk, serving AAA counterparties — justifies a premium to utility-sector renewable peers.</p>
+
+  <table class="peer-table" aria-label="Peer comparison">
+    <thead><tr><th>Company</th><th>Mkt Cap</th><th>Model</th><th>Angle</th></tr></thead>
+    <tbody>
+      <tr class="hl"><td>CleanMax (CLEANMAX)</td><td>₹15,103 Cr</td><td>C&amp;I OPEX</td><td>Pure-play, AAA clients</td></tr>
+      <tr><td>Adani Green (ADANIGREEN)</td><td>₹2,27,146 Cr</td><td>Utility IPP</td><td>Scale, DISCOM contracts</td></tr>
+      <tr><td>NTPC Green (NTPCGREEN)</td><td>₹93,742 Cr</td><td>PSU + utility</td><td>Government-backed scale</td></tr>
+      <tr><td>ACME Solar (ACMESOLAR)</td><td>Mid-cap</td><td>Utility IPP</td><td>Large-scale solar</td></tr>
+    </tbody>
+  </table>
+
+  <div class="accent" style="border-left-color:var(--amber)" role="note">
+    <p class="sans"><strong>Valuation read:</strong> At ~19× EV/EBITDA, CleanMax is priced for sustained growth but not priced for perfection. The real question is whether 2.6 GW of backlog commissions on schedule. Each GW commissioned converts ~₹385 Cr of contracted but unrecognised EBITDA into actual earnings. Commissioning pace is the single biggest valuation driver.</p>
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 6: RISKS -->
+<section aria-labelledby="ch6-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">6</div><span class="chapter-label sans">Eyes open</span></div>
+    <h2 id="ch6-title">Five real risks — this is a highly leveraged infrastructure bet</h2>
+  </div>
+
+  <div role="list">
+
+    <div class="risk-item" role="listitem">
+      <div class="ri-icon">⚠</div>
+      <div class="ri-body">
+        <div class="ri-title">Leverage — Net Debt/EBITDA at 4.75× with interest coverage under pressure</div>
+        <div class="ri-desc">CleanMax carried total borrowings exceeding ₹10,000 Cr at IPO (September 2025), with net debt ~₹7,645 Cr. After IPO proceeds of ~₹1,122 Cr used for debt repayment, net debt/EBITDA is still ~4.75× at FY26 end. Interest costs are the primary reason PAT is only ₹85.6 Cr on ₹1,295 Cr EBITDA. Screener flags "low interest coverage ratio." Any rise in interest rates adds directly to interest costs without a corresponding revenue offset in the short term.</div>
+        <div class="ri-sig">Red flag: Net Debt/EBITDA rising above 5× or interest coverage dropping below 1.5×</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="ri-icon">⚠</div>
+      <div class="ri-body">
+        <div class="ri-title">Data and AI concentration — 42% of contracted portfolio in a single new segment</div>
+        <div class="ri-desc">The data centre and AI segment grew from 254 MW (FY24) to 2,380 MW (FY26) — a tenfold increase in two years. That is 42% of CleanMax's contracted portfolio in a segment that did not meaningfully exist in the company's portfolio three years ago. If data centre build-out slows (due to AI winter, hyperscaler capex pullback, or regulatory constraints on power-hungry data centres), a large chunk of CleanMax's projected future EBITDA is at risk of delay or cancellation before commissioning.</div>
+        <div class="ri-sig">Red flag: Data &amp; AI as a share of new signings dropping below 25% for two consecutive quarters; any hyperscaler PPA cancellation</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="ri-icon">⚠</div>
+      <div class="ri-body">
+        <div class="ri-title">Execution and grid connectivity — 2.6 GW under construction is ambitious</div>
+        <div class="ri-desc">FY27 guidance of commissioning over 1.5 GW implies executing more in one year than CleanMax's total operational base just two years ago. India's renewable sector suffers from transmission bottlenecks, land acquisition delays, and regulatory uncertainty. Projects during FY26 were executed at 97% of budgeted costs — a strong record — but maintaining this at 1.5+ GW per year is a different challenge. Grid connectivity for the 525 MW CTU Bikaner project required navigating central transmission utility approvals that many developers struggle with.</div>
+        <div class="ri-sig">Red flag: Commissioning guidance downgrade below 1.2 GW for FY27</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="ri-icon">⚠</div>
+      <div class="ri-body">
+        <div class="ri-title">PAT quality — "other income" contributed 58.6% of PBT in Q4 FY26</div>
+        <div class="ri-desc">In Q4 FY26, CleanMax's operating margin compressed sharply from 62.3% (Q3 FY26) to 48.0%. Simultaneously, "other income" contributed 58.6% of profit before tax — including FX gains and investment income. The EBITDA trajectory is structurally sound, but the PAT journey from ₹19.4 Cr to ₹85.6 Cr was partly aided by non-operating items. Watch for operating EBITDA conversion to PAT to improve organically as debt reduces, rather than relying on other income.</div>
+        <div class="ri-sig">Red flag: Other income contribution to PBT exceeding 50% for more than two quarters</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="ri-icon">⚠</div>
+      <div class="ri-body">
+        <div class="ri-title">Policy and regulatory risk — open access rules vary by state</div>
+        <div class="ri-desc">India's renewable open access framework is set at the central level, but cross-subsidy surcharges and additional surcharges are state-level decisions. Maharashtra and Andhra Pradesh have historically imposed high surcharges that make third-party open access uneconomical, forcing CleanMax to use the group captive route instead. Any state changing its surcharge structure can render existing or planned projects less competitive. Green Open Access rules notified in 2022 have not been uniformly implemented by all State Electricity Regulatory Commissions.</div>
+        <div class="ri-sig">Red flag: Key states (Gujarat, Karnataka, Rajasthan) imposing materially higher cross-subsidy surcharges</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- CH 7: WATCH SIGNALS -->
+<section aria-labelledby="ch7-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow"><div class="chapter-num">7</div><span class="chapter-label sans">Dashboard</span></div>
+    <h2 id="ch7-title">Five things to check every quarter — in five minutes</h2>
+  </div>
+
+  <div class="stat-block" role="list">
+
+    <div class="watch-item" role="listitem">
+      <div class="wdot" style="background:var(--green)"></div>
+      <div class="wi-body">
+        <div class="wi-title sans">GW commissioned vs guidance</div>
+        <div class="wi-desc sans">FY26: 1.4 GW commissioned. FY27 guidance: over 1.5 GW. Every GW commissioned converts ~₹385 Cr of contracted EBITDA into actual revenue. Watch the quarterly commissioning press releases — this is the single most value-creating operational metric for CleanMax.</div>
+        <div class="wi-flag sans">Green: Run-rate on track for 1.5+ GW by FY27 end · Red: Guidance downgrade below 1.2 GW</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="wdot" style="background:var(--amber)"></div>
+      <div class="wi-body">
+        <div class="wi-title sans">Net Debt/EBITDA trajectory</div>
+        <div class="wi-desc sans">Currently 4.75× — elevated but not unusual for renewable infrastructure. Target should be trending toward 3.5–4.0× as EBITDA grows faster than incremental debt. If EBITDA grows at 25–30% without matching debt growth, this ratio improves mechanically. Any large new debt raise without corresponding EBITDA commitment is a negative signal.</div>
+        <div class="wi-flag sans">Green: Below 4.0× by FY28 · Red: Rising above 5.0×</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="wdot" style="background:var(--purple)"></div>
+      <div class="wi-body">
+        <div class="wi-title sans">Data &amp; AI share of new contract signings</div>
+        <div class="wi-desc sans">Currently 42% of contracted portfolio. Watch whether this keeps growing (hyperscaler demand accelerating) or plateaus. New signings from repeat Data &amp; AI customers validate the thesis. If new signings from this segment start slowing, the future EBITDA pipeline may soften faster than the current backlog implies.</div>
+        <div class="wi-flag sans">Green: Sustained 35%+ of new signings · Red: Consecutive quarters of decline in AI/data contract volume</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="wdot" style="background:var(--teal)"></div>
+      <div class="wi-body">
+        <div class="wi-title sans">Power sales EBITDA margin</div>
+        <div class="wi-desc sans">Improved from 81.9% to 83.5% — close to structural ceiling. Q4 FY26 showed operating margin compression to 48% (total company, including RE services drag). Watch power-sales-segment EBITDA margin specifically — if this drops below 80%, it means either tariff pressure, mix shift to lower-margin projects, or rising operating costs.</div>
+        <div class="wi-flag sans">Green: Above 82% · Red: Below 78% for two consecutive quarters</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="wdot" style="background:var(--blue)"></div>
+      <div class="wi-body">
+        <div class="wi-title sans">PAT quality — operating vs other income</div>
+        <div class="wi-desc sans">Other income contributed 58.6% of PBT in Q4 FY26. Watch for this ratio to normalise downward as EBITDA grows and debt interest payments reduce relative to operating income. The true deleveraging story plays out when operating income — not FX gains — drives PAT growth. Monthly interest cost vs EBITDA per MW data is the cleanest signal.</div>
+        <div class="wi-flag sans">Green: Other income below 30% of PBT · Red: Other income above 60% consistently</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr aria-hidden="true">
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+  <div class="verdict">
+    <div class="v-label sans" id="verdict-title">Verdict · May 2026</div>
+    <p class="v-text">CleanMax is a structurally differentiated bet on two of the most powerful trends in India's economy: <strong>the corporate decarbonisation mandate</strong> (ESG pressure, net-zero commitments, cheaper green power vs grid) and <strong>the AI data centre electricity boom</strong> (India's data centre capacity expected to grow 6.4× by 2030, with hyperscalers committing to 100% renewable supply). The quality signal in the business is the customer base — 85% AAA-rated or MNC, 78% repeat customers, 25-year PPA contracts — which creates annuity revenues that put utilities to shame on counterparty quality. The financial narrative requires the right lens: ignore P/E (~176×), use EV/EBITDA (~19×) and focus on the backlog: 2.6 GW under construction represents ~₹1,000 Cr of EBITDA not yet on the income statement. That backlog commissions over 24 months, mechanically growing EBITDA without needing new customers. The key re-rating catalyst is sustained FY27 commissioning above 1.5 GW — each quarterly commissioning announcement is a cash flow milestone the market will reward. The risks are real: 4.75× net debt/EBITDA is elevated, Data &amp; AI at 42% of contracted portfolio is concentrated, and PAT quality needs to improve as other income dependency normalises. <strong>We are in the early-middle chapters</strong> — the operating model is proven over 14 years and 555 customers, but CleanMax only listed in February 2026 and has not yet demonstrated its execution capabilities at 1.5+ GW annual commissioning scale. Investors with a 3–5 year horizon and tolerance for leverage can hold confidently. Those expecting near-term PAT momentum should wait for the first full year of post-IPO commissioning data in FY28 before sizing up.</p>
+  </div>
+</section>
+
+<footer>
+  <p>Prepared May 17, 2026. Sources: CleanMax FY26 audited results and press release (May 12–13, 2026), 9M FY26 results (March 2026), IPO prospectus (February 2026), Arihant Plus IPO review, HSBC and JP Morgan initiation notes (via Zerodha/Groww). Sector data: IEA Electricity 2026, IEA Energy and AI (April 2026), IEEFA data centre report, ICRA C&amp;I renewable research. Peer valuations from Screener and Tickertape. This brief is for informational purposes only and does not constitute investment advice. All forward-looking statements are attributed to company management or third-party research; verify before relying on any figure.</p>
+</footer>
+
+<script>
+function initTheme(){var s=localStorage.getItem('cleanmax-brief-theme');var d=window.matchMedia('(prefers-color-scheme:dark)').matches;var isDark=s?s==='dark':d;document.documentElement.setAttribute('data-theme',isDark?'dark':'light');document.getElementById('themeToggle').textContent=isDark?'☀ Light':'🌙 Dark'}
+function toggleTheme(){var isDark=document.documentElement.getAttribute('data-theme')==='dark';var next=isDark?'light':'dark';document.documentElement.setAttribute('data-theme',next);localStorage.setItem('cleanmax-brief-theme',next);document.getElementById('themeToggle').textContent=next==='dark'?'☀ Light':'🌙 Dark';if(window._charts){window._charts.forEach(function(c){c.destroy()});buildCharts()}}
+initTheme();
+
+function tc(){return document.documentElement.getAttribute('data-theme')==='dark'?'#b0b29e':'#45473c'}
+function gc(){return document.documentElement.getAttribute('data-theme')==='dark'?'rgba(255,255,255,0.07)':'rgba(0,0,0,0.07)'}
+function bg(){return document.documentElement.getAttribute('data-theme')==='dark'?'#22241e':'#ffffff'}
+
+function buildCharts(){
+  var textColor=tc(),gridColor=gc();
+  var c1=new Chart(document.getElementById('revChart'),{type:'bar',data:{labels:['FY25','FY26'],datasets:[{label:'Revenue',data:[1496,1913],backgroundColor:'#1D9E7599',borderColor:'#1D9E75',borderWidth:1.5,borderRadius:4},{label:'EBITDA',data:[1015,1295],backgroundColor:'#63992299',borderColor:'#639922',borderWidth:1.5,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return c.dataset.label+': ₹'+c.raw+' Cr'}}}},scales:{x:{ticks:{color:textColor,font:{size:12,family:'-apple-system,Segoe UI,Arial,sans-serif'}},grid:{color:gridColor},border:{color:gridColor}},y:{ticks:{color:textColor,font:{size:12,family:'-apple-system,Segoe UI,Arial,sans-serif'},callback:function(v){return'₹'+v}},grid:{color:gridColor},border:{color:gridColor},min:0,max:2200}}}});
+  var c2=new Chart(document.getElementById('qChart'),{type:'bar',data:{labels:['Q1 FY26','Q2 FY26','Q3 FY26','Q4 FY26'],datasets:[{label:'Revenue (₹ Cr)',data:[363,531,422,557],backgroundColor:['#1D9E7555','#1D9E7577','#1D9E7544','#1D9E75'],borderColor:'#1D9E75',borderWidth:1.5,borderRadius:4}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:function(c){return'₹'+c.raw+' Cr'}}}},scales:{x:{ticks:{color:textColor,font:{size:11,family:'-apple-system,Segoe UI,Arial,sans-serif'}},grid:{color:gridColor},border:{color:gridColor}},y:{ticks:{color:textColor,font:{size:11,family:'-apple-system,Segoe UI,Arial,sans-serif'},callback:function(v){return'₹'+v}},grid:{color:gridColor},border:{color:gridColor},min:200,max:650}}}});
+  window._charts=[c1,c2];
+}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',buildCharts)}else{buildCharts()}
+</script>
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THERMAX — NSE Investor Brief — May 2026</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f5f5f3;
+    --bg3: #ebebeb;
+    --text: #1a1a1a;
+    --text2: #555;
+    --text3: #888;
+    --border: rgba(0,0,0,0.12);
+    --border2: rgba(0,0,0,0.2);
+    --blue: #2672c0;
+    --blue-bg: #e8f1fb;
+    --blue-text: #0c3f7a;
+    --green: #2f5a0e;
+    --green-bg: #e6f2d8;
+    --green-text: #1e3d08;
+    --amber: #8a520a;
+    --amber-bg: #fdf0d8;
+    --amber-text: #5a3405;
+    --teal: #0a5e47;
+    --teal-bg: #d8f0e9;
+    --teal-text: #063d2e;
+    --coral: #b04420;
+    --coral-bg: #faebe5;
+    --coral-text: #6b2710;
+    --up: #16a34a;
+    --warn: #b45309;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  [data-theme="dark"] {
+    --bg: #141414;
+    --bg2: #1e1e1e;
+    --bg3: #2a2a2a;
+    --text: #f0f0f0;
+    --text2: #aaa;
+    --text3: #666;
+    --border: rgba(255,255,255,0.1);
+    --border2: rgba(255,255,255,0.2);
+    --blue: #5ba3e8;
+    --blue-bg: #0d2440;
+    --blue-text: #8fc5f5;
+    --green: #7bc44d;
+    --green-bg: #1a2e0a;
+    --green-text: #a3d97a;
+    --amber: #e0a045;
+    --amber-bg: #2a1e08;
+    --amber-text: #f0c070;
+    --teal: #3fc49a;
+    --teal-bg: #0a2218;
+    --teal-text: #6ddcb8;
+    --coral: #e07050;
+    --coral-bg: #2a1008;
+    --coral-text: #f0a080;
+    --up: #4ade80;
+    --warn: #fbbf24;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141414; --bg2: #1e1e1e; --bg3: #2a2a2a;
+      --text: #f0f0f0; --text2: #aaa; --text3: #666;
+      --border: rgba(255,255,255,0.1); --border2: rgba(255,255,255,0.2);
+      --blue: #5ba3e8; --blue-bg: #0d2440; --blue-text: #8fc5f5;
+      --green: #7bc44d; --green-bg: #1a2e0a; --green-text: #a3d97a;
+      --amber: #e0a045; --amber-bg: #2a1e08; --amber-text: #f0c070;
+      --teal: #3fc49a; --teal-bg: #0a2218; --teal-text: #6ddcb8;
+      --coral: #e07050; --coral-bg: #2a1008; --coral-text: #f0a080;
+      --up: #4ade80; --warn: #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+    background: var(--bg);
+    padding: 0 0 3rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  .skip-link {
+    position: absolute; top: -100px; left: 0; background: var(--blue); color: #fff;
+    padding: 8px 16px; border-radius: 0 0 var(--radius-sm) 0; font-size: 14px; z-index: 9999;
+    text-decoration: none;
+  }
+  .skip-link:focus { top: 0; }
+  .top-bar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg); border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 20px; font-size: 13px; color: var(--text3);
+  }
+  .top-bar-title { font-weight: 500; color: var(--text); }
+  .toggle-btn {
+    background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+    border-radius: var(--radius-sm); padding: 6px 12px; font-size: 13px;
+    cursor: pointer; min-height: 36px; min-width: 80px;
+  }
+  .toggle-btn:focus { outline: 2px solid var(--blue); outline-offset: 2px; }
+  main { max-width: 700px; margin: 0 auto; padding: 0 16px; }
+  header {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 20px; margin: 20px 0 14px;
+  }
+  .eyebrow {
+    font-size: 11px; color: var(--text3); text-transform: uppercase;
+    letter-spacing: 0.06em; margin-bottom: 8px;
+  }
+  h1 { font-size: clamp(22px, 5vw, 28px); font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .cover-sub { font-size: 14px; color: var(--text2); margin-bottom: 16px; }
+  .chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-size: 12px; padding: 4px 10px; border-radius: var(--radius-sm);
+    border: 1px solid var(--border); color: var(--text2); background: var(--bg2);
+  }
+  .chip strong { color: var(--text); font-weight: 600; }
+  section {
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px;
+  }
+  .ch-label {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 12px;
+  }
+  .ch-num {
+    width: 26px; height: 26px; border-radius: 50%; display: flex;
+    align-items: center; justify-content: center; font-size: 12px;
+    font-weight: 600; flex-shrink: 0; background: var(--blue-bg); color: var(--blue-text);
+  }
+  .ch-num.amber { background: var(--amber-bg); color: var(--amber-text); }
+  .ch-num.green { background: var(--green-bg); color: var(--green-text); }
+  .ch-meta { display: flex; flex-direction: column; }
+  .ch-eyebrow { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
+  h2 { font-size: 16px; font-weight: 600; color: var(--text); }
+  h3 { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  p { font-size: 14px; color: var(--text2); margin-bottom: 10px; line-height: 1.7; }
+  p:last-child { margin-bottom: 0; }
+  .insight {
+    border-left: 3px solid var(--blue); background: var(--blue-bg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 10px 14px; margin: 10px 0; font-size: 14px;
+    color: var(--text); line-height: 1.65;
+  }
+  .insight.green { border-left-color: var(--green); background: var(--green-bg); }
+  .insight.amber { border-left-color: var(--amber); background: var(--amber-bg); }
+  .insight.teal { border-left-color: var(--teal); background: var(--teal-bg); }
+  .insight.coral { border-left-color: var(--coral); background: var(--coral-bg); }
+  .metric-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px; margin: 12px 0;
+  }
+  .metric-card {
+    background: var(--bg2); border-radius: var(--radius-sm);
+    padding: 10px 12px;
+  }
+  .metric-label { font-size: 11px; color: var(--text3); margin-bottom: 2px; }
+  .metric-value { font-size: 20px; font-weight: 600; color: var(--text); }
+  .metric-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
+  .stat-table { width: 100%; border-collapse: collapse; margin: 8px 0; }
+  .stat-table td { font-size: 13px; padding: 7px 0; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .stat-table tr:last-child td { border-bottom: none; }
+  .stat-table .label { color: var(--text2); width: 60%; }
+  .stat-table .value { color: var(--text); font-weight: 500; text-align: right; }
+  .value.up { color: var(--up); }
+  .value.warn { color: var(--warn); }
+  .seg-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 10px; margin: 12px 0;
+  }
+  .seg-card {
+    border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 14px;
+  }
+  .seg-header { display: flex; align-items: center; gap: 7px; margin-bottom: 6px; }
+  .seg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .seg-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .seg-badge {
+    margin-left: auto; font-size: 10px; padding: 2px 7px;
+    border-radius: var(--radius-sm);
+  }
+  .seg-body { font-size: 13px; color: var(--text2); line-height: 1.55; }
+  .peer-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+  .peer-table th { font-size: 11px; color: var(--text3); font-weight: 500; text-align: left; padding: 6px 0; border-bottom: 1px solid var(--border2); }
+  .peer-table td { padding: 7px 0; border-bottom: 1px solid var(--border); color: var(--text); }
+  .peer-table tr:last-child td { border-bottom: none; }
+  .peer-table .highlight { background: var(--blue-bg); border-radius: 4px; padding: 1px 6px; font-weight: 600; color: var(--blue-text); }
+  .risk-list { list-style: none; padding: 0; }
+  .risk-list li {
+    display: flex; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border);
+    align-items: flex-start; font-size: 14px;
+  }
+  .risk-list li:last-child { border-bottom: none; }
+  .risk-icon { color: var(--warn); font-size: 16px; flex-shrink: 0; margin-top: 2px; font-style: normal; }
+  .risk-content { flex: 1; }
+  .watch-list { list-style: none; padding: 0; }
+  .watch-list li {
+    display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border);
+    align-items: flex-start; font-size: 14px;
+  }
+  .watch-list li:last-child { border-bottom: none; }
+  .watch-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .watch-content { flex: 1; }
+  .verdict-box {
+    background: var(--bg2); border-radius: var(--radius); border: 1px solid var(--border);
+    padding: 16px 20px;
+  }
+  .verdict-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--text3); font-weight: 600; margin-bottom: 8px;
+  }
+  .verdict-text { font-size: 14px; color: var(--text); line-height: 1.75; }
+  footer {
+    max-width: 700px; margin: 0 auto 0; padding: 24px 16px 0;
+    font-size: 12px; color: var(--text3); text-align: center; border-top: 1px solid var(--border);
+  }
+  @media (max-width: 480px) {
+    main { padding: 0 12px; }
+    section { padding: 14px 14px; }
+    h1 { font-size: 20px; }
+    .metric-value { font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div class="top-bar" role="banner">
+  <span class="top-bar-title">NSE: THERMAX &mdash; Investor Brief</span>
+  <button class="toggle-btn" id="themeToggle" aria-label="Toggle day and night mode">&#9788; Day</button>
+</div>
+
+<main id="main-content">
+
+  <header>
+    <p class="eyebrow">NSE: THERMAX &nbsp;&bull;&nbsp; Capital Goods / Energy &amp; Environment &nbsp;&bull;&nbsp; May 17, 2026</p>
+    <h1>Thermax Limited</h1>
+    <p class="cover-sub">India&rsquo;s energy-transition engineering company &mdash; boilers, decarbonization, and 60 years of industrial trust</p>
+    <div class="chip-row" role="list" aria-label="Key metrics">
+      <div class="chip" role="listitem">Market cap <strong>&#8377;54,174 Cr</strong></div>
+      <div class="chip" role="listitem">CMP <strong>~&#8377;4,077</strong></div>
+      <div class="chip" role="listitem">TTM PE <strong>~75x</strong></div>
+      <div class="chip" role="listitem">Order book <strong>&#8377;13,604 Cr</strong></div>
+      <div class="chip" role="listitem">FY26 Revenue <strong>&#8377;10,694 Cr</strong></div>
+      <div class="chip" role="listitem">Founded <strong>1966</strong></div>
+    </div>
+  </header>
+
+  <article>
+
+  <section aria-labelledby="ch1">
+    <div class="ch-label">
+      <div class="ch-num" aria-hidden="true">1</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Context</span>
+        <h2 id="ch1">Why Thermax, and why now</h2>
+      </div>
+    </div>
+    <p>India&rsquo;s industrial capex cycle is in full swing, and the BSE Capital Goods index hit an all-time high in the same week Thermax reported its best quarterly order intake ever. Three structural forces are converging at Thermax&rsquo;s doorstep simultaneously.</p>
+    <div class="insight" role="note" aria-label="Power capacity tailwind">
+      <h3>Power capacity revival</h3>
+      India is building new thermal plants using ultra-supercritical (USC) technology &mdash; cleaner, more efficient, and requiring specialized boiler engineering that very few companies can deliver. The global industrial boiler market stands at USD 12.1 billion in 2025 and is projected to grow at a CAGR of 5.4% through 2035 to reach USD 20.7 billion. Thermax ranks among the top five players globally by market share.
+    </div>
+    <div class="insight green" role="note" aria-label="Industrial decarbonization tailwind">
+      <h3>Industrial decarbonization mandate</h3>
+      Budget 2026 allocated Rs 200 billion over five years for carbon capture technologies across power, steel, cement, and chemicals. The SIGHT scheme (Rs 4,440 crore, FY26 to FY30) incentivizes domestic electrolyser manufacturing. India&rsquo;s National Green Hydrogen Mission targets 5 million metric tonnes per year of production capacity by 2030, backed by Rs 19,744 crore in total government commitment.
+    </div>
+    <div class="insight teal" role="note" aria-label="India manufacturing tailwind">
+      <h3>India industrial manufacturing surge</h3>
+      Rising demand from metal, cement, food and beverage, refinery, and chemical sectors &mdash; all of which need Thermax&rsquo;s heat, cooling, water treatment, and pollution control solutions. International demand is growing too: the Dangote Nigeria refinery order (Rs 580 crore) is a visible example of how Thermax&rsquo;s brand travels.
+    </div>
+  </section>
+
+  <section aria-labelledby="ch2">
+    <div class="ch-label">
+      <div class="ch-num" aria-hidden="true">2</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Business model</span>
+        <h2 id="ch2">Engineering solutions across the industrial energy stack</h2>
+      </div>
+    </div>
+    <p>Thermax does two things in parallel: it sells products (small boilers, chillers, water treatment systems, chemicals) that generate recurring, shorter-cycle revenue; and it executes large infrastructure projects (power plants, industrial utility systems, EPC contracts) that are lumpy but high-value. The combination gives it both base revenue stability and upside from capital expenditure cycles.</p>
+    <p>What makes customers sticky: once a Thermax boiler or water treatment plant is commissioned at a facility, the company typically handles service and maintenance for years. Large EPC projects require proprietary technology, code compliance, and supply chain relationships that cannot easily be replicated by a new entrant. The relationship with Dangote Industries &mdash; spanning multiple decades and multiple contracts across refineries &mdash; is a template for how deep these ties run.</p>
+    <div class="insight" role="note" aria-label="Business flywheel">
+      <h3>The flywheel</h3>
+      Equipment sale leads to a service contract, which deepens into digital energy management via the ExactSpace acquisition (Thermax now holds 51%), which creates data that justifies expanded scope, which generates the next order. This loop compounds over time and makes each customer relationship stickier than the last.
+    </div>
+  </section>
+
+  <section aria-labelledby="ch3">
+    <div class="ch-label">
+      <div class="ch-num" aria-hidden="true">3</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Vertical stories</span>
+        <h2 id="ch3">Four businesses, each with a distinct external driver</h2>
+      </div>
+    </div>
+    <div class="seg-grid">
+      <div class="seg-card">
+        <div class="seg-header">
+          <div class="seg-dot" style="background:var(--blue)" aria-hidden="true"></div>
+          <span class="seg-name">Industrial Products</span>
+          <span class="seg-badge" style="background:var(--blue-bg);color:var(--blue-text);">Running</span>
+        </div>
+        <p class="seg-body">Approximately 40 percent of revenue. Small capacity boilers, absorption chillers, air pollution control systems, water and waste recycle, EPC services. Serves metal, cement, food and beverage sectors. Revenue grew 55 percent between FY22 and FY24 on India&rsquo;s manufacturing surge. Steady compounder with service revenue stickiness.</p>
+      </div>
+      <div class="seg-card">
+        <div class="seg-header">
+          <div class="seg-dot" style="background:var(--coral)" aria-hidden="true"></div>
+          <span class="seg-name">Industrial Infra (TBWES)</span>
+          <span class="seg-badge" style="background:var(--coral-bg);color:var(--coral-text);">Ramping</span>
+        </div>
+        <p class="seg-body">Largest segment by revenue. Large boilers, power plant EPC, fired heaters, waste heat recovery. TBWES (joint venture with Babcock and Wilcox) is the only credible domestic alternative to BHEL for ultra-supercritical boilers. Landmark Rs 1,600 crore order in Q4 FY26 for 800 MW USC plant is one of the largest in company history. Rs 580 crore Dangote Nigeria order is the international proof-point.</p>
+      </div>
+      <div class="seg-card">
+        <div class="seg-header">
+          <div class="seg-dot" style="background:var(--green)" aria-hidden="true"></div>
+          <span class="seg-name">Green Solutions</span>
+          <span class="seg-badge" style="background:var(--green-bg);color:var(--green-text);">Early stage</span>
+        </div>
+        <p class="seg-body">Renewable energy, bio-CNG, green hydrogen, solar captive power, decarbonization consulting. HydrogenPro exclusive partnership (August 2025) gives India-exclusive rights to alkaline electrolyser supply and EPC. SIGHT scheme creates direct demand pull. First wind-solar hybrid captive power plant commissioned in Gujarat. R&amp;D underway in carbon capture, coal gasification (with IIT Delhi), and waste-to-aviation fuel.</p>
+      </div>
+      <div class="seg-card">
+        <div class="seg-header">
+          <div class="seg-dot" style="background:#888" aria-hidden="true"></div>
+          <span class="seg-name">Chemicals</span>
+          <span class="seg-badge" style="background:var(--amber-bg);color:var(--amber-text);">Headwinds</span>
+        </div>
+        <p class="seg-body">Ion exchange resins, performance chemicals, construction chemicals including admixtures, waterproofing, and flooring. Revenue broadly flat in FY26. Profit before interest and tax dropped from Rs 30 crore to Rs 16 crore due to higher input costs and product mix shift. No clear near-term catalyst; margin stabilization is the watch item.</p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="ch4">
+    <div class="ch-label">
+      <div class="ch-num amber" aria-hidden="true">4</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Strategic insight</span>
+        <h2 id="ch4">The boiler is the bridge technology</h2>
+      </div>
+    </div>
+    <div class="insight amber" role="note" aria-label="Core strategic insight">
+      <p>Most investors see Thermax as a company caught between coal (old economy) and green hydrogen (new economy). The insight is the opposite: Thermax&rsquo;s ultra-supercritical boiler expertise is the exact same engineering knowledge-base that underpins industrial decarbonization &mdash; heat exchange at extreme pressures and temperatures, combustion chemistry, process integration for complex fuels.</p>
+      <p>The TBWES capability that won the Rs 1,600 crore USC coal boiler order is the same capability that makes Thermax credible in carbon capture heat exchangers, green hydrogen balance-of-plant systems, and waste-to-energy boilers. This is not a pivot; it is a translation of the same core skill into tomorrow&rsquo;s demand. No greenfield startup can replicate 60 years of high-pressure boiler engineering in five years.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="ch5">
+    <div class="ch-label">
+      <div class="ch-num" aria-hidden="true">5</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Numbers in context</span>
+        <h2 id="ch5">Strong trajectory, one cash flow flag</h2>
+      </div>
+    </div>
+    <div class="metric-grid" role="list" aria-label="Key financial metrics">
+      <div class="metric-card" role="listitem">
+        <div class="metric-label">FY26 revenue</div>
+        <div class="metric-value">&#8377;10,694 Cr</div>
+        <div class="metric-sub">5-year CAGR approximately 18 percent</div>
+      </div>
+      <div class="metric-card" role="listitem">
+        <div class="metric-label">FY26 PAT</div>
+        <div class="metric-value">&#8377;720 Cr</div>
+        <div class="metric-sub">Plus 15 percent year on year; 5-year EBIT CAGR 36 percent</div>
+      </div>
+      <div class="metric-card" role="listitem">
+        <div class="metric-label">Order book</div>
+        <div class="metric-value">&#8377;13,604 Cr</div>
+        <div class="metric-sub">Plus 27 percent year on year; approximately 1.3 times revenue</div>
+      </div>
+    </div>
+
+    <table class="stat-table" aria-label="Quarterly and annual financial details">
+      <tbody>
+        <tr><td class="label">Q4 FY26 revenue</td><td class="value up">&#8377;3,428 Cr (+13% YoY, +30% QoQ)</td></tr>
+        <tr><td class="label">Q4 FY26 PAT</td><td class="value up">&#8377;244 Cr (+18% YoY)</td></tr>
+        <tr><td class="label">Q4 FY26 EBITDA margin</td><td class="value up">10.92% — highest in recent quarters</td></tr>
+        <tr><td class="label">Q4 FY26 order intake</td><td class="value up">&#8377;4,490 Cr (+112% YoY) — record quarter</td></tr>
+        <tr><td class="label">ROCE (5-year average)</td><td class="value">18.8%</td></tr>
+        <tr><td class="label">ROE (3-year average)</td><td class="value">13.5% — below peer premium threshold</td></tr>
+        <tr><td class="label">Operating cash flow FY26</td><td class="value warn">&#8377;541 Cr (versus &#8377;1,080 Cr in FY25) — halved. Warning: watch this number.</td></tr>
+        <tr><td class="label">Interest cost growth (Q4 FY26)</td><td class="value warn">+35.5% YoY — leverage rising</td></tr>
+        <tr><td class="label">FY26 dividend</td><td class="value up">&#8377;20/share (&#8377;14 final + &#8377;6 special, 60th anniversary)</td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin:14px 0 8px;">Valuation versus peers</h3>
+    <table class="peer-table" aria-label="Thermax valuation compared to peers">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Market cap</th>
+          <th>TTM PE</th>
+          <th>Price to book</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="highlight">Thermax (THERMAX)</span></td>
+          <td>&#8377;54,174 Cr</td>
+          <td>~75x</td>
+          <td>~9.8x</td>
+        </tr>
+        <tr><td>Siemens India</td><td>Large cap</td><td>~69x</td><td>&mdash;</td></tr>
+        <tr><td>Cummins India</td><td>Large cap</td><td>~42x</td><td>&mdash;</td></tr>
+        <tr><td>Apar Industries</td><td>Mid cap</td><td>~63x</td><td>&mdash;</td></tr>
+        <tr><td>BHEL</td><td>Large cap</td><td>~100x+</td><td>&mdash;</td></tr>
+      </tbody>
+    </table>
+
+    <p style="margin-top:10px;">What the market is pricing in: Thermax&rsquo;s 75x PE is modestly in line with its own 3-year average of 72 to 75x, meaning the stock is not unusually stretched by its own history even after the post-results rally. The market is pricing roughly 15 to 18 percent PAT compounding over the next 3 years, with green solutions contributing incrementally from FY28. A re-rating beyond 80x would require demonstrated margin improvement in large projects and the first real hydrogen order.</p>
+  </section>
+
+  <section aria-labelledby="ch6">
+    <div class="ch-label">
+      <div class="ch-num amber" aria-hidden="true">6</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Risks — eyes open</span>
+        <h2 id="ch6">Five specific things that could go wrong</h2>
+      </div>
+    </div>
+    <ul class="risk-list" aria-label="Risk factors">
+      <li>
+        <span class="risk-icon" aria-label="Warning:">&#9651;</span>
+        <div class="risk-content">
+          <h3>Working capital squeeze on large project execution</h3>
+          <p>Operating cash flow halved to Rs 541 crore in FY26 from Rs 1,080 crore &mdash; a direct consequence of milestone-based cash collection on large EPC projects. The Rs 1,600 crore USC boiler contract will intensify this further. Red flag: OCF remaining below Rs 600 crore for two consecutive quarters in FY27.</p>
+        </div>
+      </li>
+      <li>
+        <span class="risk-icon" aria-label="Warning:">&#9651;</span>
+        <div class="risk-content">
+          <h3>Cost inflation eroding project margins</h3>
+          <p>Raw materials rose 7.68 percent year on year in Q4, employee costs 17.9 percent, and interest costs 35.5 percent. Large fixed-price EPC contracts signed today may face margin compression if commodity prices spike during the 24 to 36 month execution window. Signal: EBITDA margin falling below 9 percent.</p>
+        </div>
+      </li>
+      <li>
+        <span class="risk-icon" aria-label="Warning:">&#9651;</span>
+        <div class="risk-content">
+          <h3>Large project revenue lumpiness</h3>
+          <p>The Rs 1,600 crore TBWES boiler contract will contribute revenue only when project milestones are met. If commissioning delays occur due to customer readiness, site access, or regulatory approvals, revenue recognition could slip by quarters. Do not be alarmed by a weak Q1 FY27 alone.</p>
+        </div>
+      </li>
+      <li>
+        <span class="risk-icon" aria-label="Warning:">&#9651;</span>
+        <div class="risk-content">
+          <h3>Green hydrogen optionality may be overpriced in the stock</h3>
+          <p>India&rsquo;s green hydrogen market is still in early commercial stage &mdash; most announced projects are under feasibility or pilot phase. The HydrogenPro partnership is a positioning move, not yet an order pipeline. If green hydrogen scaling is delayed 3 to 5 years (likely), the high PE multiple has no near-term justification from this segment. Monitor actual electrolyser orders received, not memoranda of understanding signed.</p>
+        </div>
+      </li>
+      <li>
+        <span class="risk-icon" aria-label="Warning:">&#9651;</span>
+        <div class="risk-content">
+          <h3>Chemicals segment margin deterioration</h3>
+          <p>Profit before interest and tax dropped from Rs 30 crore to Rs 16 crore on a flat revenue base &mdash; margins nearly halved. If chemicals PBIT does not recover to Rs 25 crore or above by H2 FY27, it signals structural issues rather than a cyclical blip.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="ch7">
+    <div class="ch-label">
+      <div class="ch-num green" aria-hidden="true">7</div>
+      <div class="ch-meta">
+        <span class="ch-eyebrow">Watch signals</span>
+        <h2 id="ch7">Five metrics to check every quarter</h2>
+      </div>
+    </div>
+    <ul class="watch-list" aria-label="Watch signals">
+      <li>
+        <div class="watch-dot" style="background:var(--blue)" aria-hidden="true"></div>
+        <div class="watch-content">
+          <h3>Order intake quarterly run-rate</h3>
+          <p>Sustained Rs 3,000 crore or above per quarter is bullish and confirms the Q4 FY26 surge was not a one-off. Below Rs 2,500 crore for two consecutive quarters signals pipeline thinning. Watch for the next large-project anchor order in FY27.</p>
+        </div>
+      </li>
+      <li>
+        <div class="watch-dot" style="background:var(--coral)" aria-hidden="true"></div>
+        <div class="watch-content">
+          <h3>EBITDA margin: target 10 percent or above</h3>
+          <p>Q4 FY26 margin of 10.92 percent was the highest in recent quarters. Can this be sustained as the TBWES boiler contract ramps (which may carry tighter margins due to technology transfer costs)? Below 9 percent for a full quarter is a margin-compression signal.</p>
+        </div>
+      </li>
+      <li>
+        <div class="watch-dot" style="background:var(--amber)" aria-hidden="true"></div>
+        <div class="watch-content">
+          <h3>Operating cash flow recovery</h3>
+          <p>OCF should recover as large project milestones are billed and collected. Rs 700 crore or above in H1 FY27 is a healthy sign. Continuing below Rs 500 crore means working capital deterioration is structural, not just a project timing issue.</p>
+        </div>
+      </li>
+      <li>
+        <div class="watch-dot" style="background:var(--green)" aria-hidden="true"></div>
+        <div class="watch-content">
+          <h3>Green Solutions: first confirmed electrolyser order</h3>
+          <p>Any confirmed purchase order (not a memorandum of understanding) for green hydrogen production using HydrogenPro&rsquo;s alkaline electrolyser technology would be a genuine re-rating catalyst. Size above Rs 50 crore equals meaningful. Also watch for bio-CNG plant commissioning as a nearer-term proof-point.</p>
+        </div>
+      </li>
+      <li>
+        <div class="watch-dot" style="background:#888" aria-hidden="true"></div>
+        <div class="watch-content">
+          <h3>Chemicals PBIT stabilization</h3>
+          <p>Chemicals PBIT needs to recover to Rs 25 crore or above by H2 FY27. If it continues declining below Rs 12 crore, the segment may need a strategic review. Watch for any announcement around product mix, price hikes, or capacity rationalization.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="verdict">
+    <div class="verdict-box">
+      <div class="verdict-label" id="verdict">Verdict</div>
+      <p class="verdict-text">Thermax enters FY27 riding three structural tailwinds: India&rsquo;s thermal power capacity addition cycle, rising industrial capex demand across metal, cement, and refining, and the early innings of industrial decarbonization &mdash; all of which play directly to its unique boiler and process engineering capability. The quality signal in the financials is mixed but leaning positive: ROCE of 18.8 percent, a five-year EBIT CAGR of 36 percent, and a record Rs 13,604 crore order book all argue for a quality compounder; however, the halving of operating cash flow to Rs 541 crore in FY26 warrants close monitoring as large projects ramp. The near-term re-rating catalyst is clean execution of the Rs 1,600 crore ultra-supercritical boiler contract with visible margin delivery by Q2 or Q3 FY27; beyond that, the first confirmed green hydrogen order could open an entirely new valuation conversation. At approximately 75x TTM PE &mdash; in line with Thermax&rsquo;s own 3-year average &mdash; the stock is not cheap, but it is not unusually stretched either. This is a middle-chapter story: the structural thesis is established, the order book is fattening, but the most exciting chapter &mdash; green energy revenue &mdash; has not been written yet.</p>
+    </div>
+  </section>
+
+  </article>
+
+</main>
+
+<footer role="contentinfo">
+  <p>NSE: THERMAX &nbsp;&bull;&nbsp; Investor brief generated May 17, 2026 &nbsp;&bull;&nbsp; For informational purposes only &mdash; not investment advice &nbsp;&bull;&nbsp; Sources: Q4 FY26 earnings call, BSE/NSE filings, company investor relations, Global Market Insights, MNRE, Budget 2026</p>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById('themeToggle');
+    var root = document.documentElement;
+    var stored = localStorage.getItem('thermax-brief-theme');
+    var sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    var current = stored || sys;
+    function apply(theme) {
+      root.setAttribute('data-theme', theme);
+      btn.textContent = theme === 'dark' ? '\u2600 Day' : '\u263D Night';
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to day mode' : 'Switch to night mode');
+      current = theme;
+      localStorage.setItem('thermax-brief-theme', theme);
+    }
+    apply(current);
+    btn.addEventListener('click', function () {
+      apply(current === 'dark' ? 'light' : 'dark');
+    });
+  })();
+</script>
+</body>
+</html>

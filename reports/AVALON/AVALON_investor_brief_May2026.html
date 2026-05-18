@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AVALON — NSE Investor Brief · May 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --bg: #f5f4f0;
+  --bg2: #ffffff;
+  --bg3: #efefeb;
+  --text: #1a1916;
+  --text2: #4a4944;
+  --text3: #7a7972;
+  --border: rgba(0,0,0,0.10);
+  --border2: rgba(0,0,0,0.18);
+  --teal: #1D9E75;
+  --teal-light: #E1F5EE;
+  --teal-dark: #0F6E56;
+  --coral: #D85A30;
+  --coral-light: #FAECE7;
+  --coral-dark: #993C1D;
+  --blue: #378ADD;
+  --blue-light: #E6F1FB;
+  --blue-dark: #185FA5;
+  --green: #639922;
+  --green-light: #EAF3DE;
+  --green-dark: #3B6D11;
+  --purple: #534AB7;
+  --purple-light: #EEEDFE;
+  --purple-dark: #3C3489;
+  --amber: #BA7517;
+  --amber-light: #FAEEDA;
+  --amber-dark: #854F0B;
+  --gray: #888780;
+  --gray-light: #F1EFE8;
+}
+[data-theme="dark"] {
+  --bg: #1a1916;
+  --bg2: #242420;
+  --bg3: #2c2c28;
+  --text: #f0ede6;
+  --text2: #bbb89e;
+  --text3: #7a7972;
+  --border: rgba(255,255,255,0.10);
+  --border2: rgba(255,255,255,0.18);
+  --teal-light: #04342C;
+  --teal-dark: #9FE1CB;
+  --coral-light: #4A1B0C;
+  --coral-dark: #F5C4B3;
+  --blue-light: #042C53;
+  --blue-dark: #B5D4F4;
+  --green-light: #173404;
+  --green-dark: #C0DD97;
+  --purple-light: #26215C;
+  --purple-dark: #CECBF6;
+  --amber-light: #412402;
+  --amber-dark: #FAC775;
+  --gray-light: #2C2C2A;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+}
+
+.sans { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; }
+
+/* Header controls */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0.5rem;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--text3);
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 2rem;
+}
+.top-bar .nse-tag {
+  background: var(--teal);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.theme-btn {
+  background: none;
+  border: 0.5px solid var(--border2);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text2);
+  cursor: pointer;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  min-height: 32px;
+  min-width: 64px;
+}
+.theme-btn:hover { background: var(--bg3); }
+
+/* Cover */
+.cover {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.cover-eyebrow {
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.5rem;
+}
+.cover h1 {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+.cover-sub {
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 1.5rem;
+}
+.cover-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.c-stat {
+  background: var(--bg3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+}
+.c-stat-label { font-size: 11px; color: var(--text3); margin-bottom: 2px; }
+.c-stat-val { font-size: 20px; font-weight: 600; color: var(--text); line-height: 1; }
+.c-stat-sub { font-size: 11px; color: var(--teal); margin-top: 2px; }
+.c-stat-sub.warn { color: var(--amber); }
+
+/* Chapter header */
+.chapter {
+  margin: 2.5rem 0 1.25rem;
+}
+.chapter-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 0.25rem;
+}
+.chapter-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.chapter-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.chapter h2 {
+  font-size: clamp(18px, 3.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text);
+  margin-left: 36px;
+}
+
+/* Body text */
+p { margin-bottom: 1rem; color: var(--text2); font-size: 15px; }
+p:last-child { margin-bottom: 0; }
+
+/* Accent cards */
+.accent-card {
+  border-left: 3px solid var(--teal);
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  background: var(--bg2);
+  border-radius: 0 8px 8px 0;
+}
+.accent-card p { margin: 0; font-size: 14px; }
+
+/* Segment cards */
+.seg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 12px;
+  margin: 1rem 0;
+}
+.seg-card {
+  border-radius: 10px;
+  padding: 1rem 1.125rem;
+  border: 0.5px solid var(--border);
+  background: var(--bg2);
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.seg-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.5rem;
+}
+.seg-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.seg-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.seg-status {
+  margin-left: auto;
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.status-live { background: var(--teal-light); color: var(--teal-dark); }
+.status-ramp { background: var(--amber-light); color: var(--amber-dark); }
+.status-proto { background: var(--purple-light); color: var(--purple-dark); }
+.seg-catalyst { font-size: 12px; color: var(--text3); margin-bottom: 6px; font-style: italic; }
+.seg-body { font-size: 13px; color: var(--text2); line-height: 1.55; }
+.seg-data { margin-top: 8px; font-size: 12px; font-weight: 600; color: var(--text); }
+
+/* Stat rows */
+.stat-block {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 9px 1rem;
+  border-bottom: 0.5px solid var(--border);
+  font-size: 14px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--text2); }
+.stat-val { font-weight: 600; color: var(--text); text-align: right; }
+.stat-val.pos { color: var(--teal); }
+.stat-val.warn { color: var(--amber); }
+.stat-val.muted { color: var(--text3); }
+
+/* Numbers grid */
+.num-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 1rem 0;
+}
+.num-card {
+  background: var(--bg3);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.num-card-label { font-size: 11px; color: var(--text3); margin-bottom: 2px; }
+.num-card-val { font-size: 22px; font-weight: 700; color: var(--text); line-height: 1; }
+.num-card-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+.num-card-chg { font-size: 12px; font-weight: 600; margin-top: 2px; }
+.chg-pos { color: var(--teal); }
+.chg-warn { color: var(--amber); }
+
+/* Chart wrapper */
+.chart-wrap {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+.chart-title {
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--text3);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  color: var(--text2);
+}
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.legend-dot {
+  width: 10px; height: 10px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Risks */
+.risk-item {
+  display: flex;
+  gap: 12px;
+  padding: 0.875rem 0;
+  border-bottom: 0.5px solid var(--border);
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.risk-item:last-child { border-bottom: none; }
+.risk-icon {
+  flex-shrink: 0;
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  background: var(--amber-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--amber);
+  margin-top: 2px;
+}
+.risk-body { flex: 1; }
+.risk-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 2px; }
+.risk-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
+.risk-signal { font-size: 11px; color: var(--text3); margin-top: 4px; font-style: italic; }
+
+/* Watch signals */
+.watch-item {
+  display: flex;
+  gap: 12px;
+  padding: 0.75rem 0;
+  border-bottom: 0.5px solid var(--border);
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  align-items: flex-start;
+}
+.watch-item:last-child { border-bottom: none; }
+.watch-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.watch-body { flex: 1; }
+.watch-title { font-size: 14px; font-weight: 600; color: var(--text); }
+.watch-desc { font-size: 13px; color: var(--text2); margin-top: 1px; }
+.watch-flag { font-size: 11px; color: var(--coral); margin-top: 3px; font-weight: 600; }
+
+/* Verdict */
+.verdict {
+  background: var(--bg2);
+  border: 0.5px solid var(--border2);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  margin: 2rem 0;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+}
+.verdict-label {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 0.5rem;
+}
+.verdict-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text2);
+}
+.verdict-text strong { color: var(--text); font-weight: 600; }
+
+/* Peer table */
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 13px;
+  margin: 0.75rem 0;
+}
+.peer-table th {
+  text-align: left;
+  padding: 6px 8px;
+  color: var(--text3);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-bottom: 0.5px solid var(--border2);
+}
+.peer-table td {
+  padding: 7px 8px;
+  border-bottom: 0.5px solid var(--border);
+  color: var(--text2);
+}
+.peer-table tr.highlight td { color: var(--text); font-weight: 600; background: var(--bg3); }
+.peer-table td:not(:first-child) { text-align: right; }
+.peer-table th:not(:first-child) { text-align: right; }
+
+/* Inline highlight */
+.hl { color: var(--text); font-weight: 600; font-family: -apple-system, 'Segoe UI', Arial, sans-serif; }
+.hl-teal { color: var(--teal); font-weight: 600; }
+.hl-coral { color: var(--coral); font-weight: 600; }
+.hl-amber { color: var(--amber); font-weight: 600; }
+
+/* Divider */
+.divider { border: none; border-top: 0.5px solid var(--border); margin: 2rem 0; }
+
+/* Footer */
+footer {
+  font-family: -apple-system, 'Segoe UI', Arial, sans-serif;
+  font-size: 11px;
+  color: var(--text3);
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--border);
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  body { padding: 0 0.75rem 3rem; }
+  .cover { padding: 1.5rem 1.125rem; }
+  .verdict { padding: 1.25rem 1.125rem; }
+  .seg-grid { grid-template-columns: 1fr; }
+  .num-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1916;
+    --bg2: #242420;
+    --bg3: #2c2c28;
+    --text: #f0ede6;
+    --text2: #bbb89e;
+    --text3: #7a7972;
+    --border: rgba(255,255,255,0.10);
+    --border2: rgba(255,255,255,0.18);
+    --teal-light: #04342C;
+    --teal-dark: #9FE1CB;
+    --coral-light: #4A1B0C;
+    --coral-dark: #F5C4B3;
+    --blue-light: #042C53;
+    --blue-dark: #B5D4F4;
+    --green-light: #173404;
+    --green-dark: #C0DD97;
+    --purple-light: #26215C;
+    --purple-dark: #CECBF6;
+    --amber-light: #412402;
+    --amber-dark: #FAC775;
+    --gray-light: #2C2C2A;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 class="sr-only" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+  AVALON Technologies NSE Investor Brief, May 2026. Avalon Technologies Limited, an electronics manufacturing services company listed on NSE, FY26 revenue 1603 crore rupees, PAT 113 crore rupees, 46 percent year-on-year growth.
+</h1>
+
+<!-- Top bar -->
+<div class="top-bar sans" role="banner">
+  <div style="display:flex;align-items:center;gap:8px;">
+    <span class="nse-tag" aria-label="NSE symbol AVALON">NSE: AVALON</span>
+    <span>Electronics Manufacturing Services</span>
+  </div>
+  <button class="theme-btn" id="themeToggle" aria-label="Toggle dark or light mode" onclick="toggleTheme()">🌙 Dark</button>
+</div>
+
+<!-- COVER CARD -->
+<section class="cover" aria-labelledby="cover-title">
+  <p class="cover-eyebrow sans">EMS · Chennai + USA · May 17, 2026</p>
+  <h1 id="cover-title">Avalon Technologies</h1>
+  <p class="cover-sub sans">India's integrated dual-shore EMS — building the electronics inside India's infrastructure and America's clean-energy transition</p>
+  <div class="cover-stats" role="list" aria-label="Key financial metrics at a glance">
+    <div class="c-stat" role="listitem">
+      <div class="c-stat-label sans">FY26 Revenue</div>
+      <div class="c-stat-val">₹1,603 Cr</div>
+      <div class="c-stat-sub">+46% YoY</div>
+    </div>
+    <div class="c-stat" role="listitem">
+      <div class="c-stat-label sans">FY26 PAT</div>
+      <div class="c-stat-val">₹113 Cr</div>
+      <div class="c-stat-sub">+78% YoY</div>
+    </div>
+    <div class="c-stat" role="listitem">
+      <div class="c-stat-label sans">Order Book</div>
+      <div class="c-stat-val">₹2,196 Cr</div>
+      <div class="c-stat-sub">+25% YoY · 14 months</div>
+    </div>
+    <div class="c-stat" role="listitem">
+      <div class="c-stat-label sans">Market Cap</div>
+      <div class="c-stat-val">₹8,834 Cr</div>
+      <div class="c-stat-sub warn">~78× trailing P/E</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 1: CONTEXT -->
+<section aria-labelledby="ch1-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">1</div>
+      <span class="chapter-label sans">The big picture</span>
+    </div>
+    <h2 id="ch1-title">Why electronics manufacturing — and why now</h2>
+  </div>
+
+  <p>India's electronics sector has gone from a cottage industry to a geopolitical storyline in under a decade. Smartphones are now India's second-largest export in 2025-26, up from seventh in 2022. The shift isn't accidental — it's PLI schemes, tariff walls around China, and a global supply-chain reordering that nobody is unwinding.</p>
+
+  <p>The India EMS sector grew at a <span class="hl">27% CAGR over FY24–29E</span> (Macquarie, Frost &amp; Sullivan), against a global EMS CAGR of around 5–6%. Indian EMS firms had roughly 4–5% global market share as of 2024. That number has nowhere to go but up. Government tailwinds are substantial: Budget 2026 enhanced the PLI outlay for large-scale electronics manufacturing to <span class="hl">₹40,000 Cr</span>, and MEITY's Electronics Components Manufacturing Scheme approved ₹41,863 Cr in fresh investments in January 2026 alone, targeting production of ₹2.58 lakh crore.</p>
+
+  <p>Avalon sits in the high-value end of this — not mobile phones for mass market, but electronics for railways, aerospace, clean energy, and industrial automation. These sectors have long product lifecycles, zero tolerance for failure, and switching costs that make churn almost impossible once you're designed in. That's a different business from assembling consumer electronics.</p>
+
+  <div class="accent-card" style="border-left-color: var(--teal);" role="note">
+    <p class="sans" style="font-size:14px;"><strong>Sector signal:</strong> India's electronics exports grew 9× from FY15 to FY25 — a 24% CAGR — and advanced from 7th to 2nd largest export category. The China+1 rebalancing is still in early innings, with India holding only ~4–5% of global EMS share.</p>
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section aria-labelledby="ch2-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">2</div>
+      <span class="chapter-label sans">The business</span>
+    </div>
+    <h2 id="ch2-title">What Avalon actually does — and why it sticks</h2>
+  </div>
+
+  <p>Avalon started in Chennai in 1999 as a printed circuit board assembler. Over 25 years it added layer after layer: cable harnesses, magnetics, sheet metal fabrication, injection-molded plastics, and finally complete box-build solutions. Today it delivers an entire electronic system, not just a component. <span class="hl">Box-build revenue was 54% of FY26 sales</span> — meaning more than half its revenue comes from delivering an integrated product, not subcontracting a slice of one.</p>
+
+  <p>The flywheel works like this: Avalon gets involved at the <em>design stage</em> of a customer's product. Its engineers co-develop the electronics architecture, sign NDAs, and become embedded in the product's bill of materials. From that point, switching EMS vendors means re-qualifying components, re-certifying assemblies, and rebuilding relationships — a process that takes 18–24 months and costs real money. Customers simply don't do it. Key clients include Collins Aerospace, Meggitt, and Kyosan India — names that suggest this isn't low-margin commodity manufacturing.</p>
+
+  <p>The second structural advantage is the <strong>dual-shore model</strong>. Avalon has manufacturing in Chennai (India) and in the United States via its subsidiary, ABV Electronics (doing business as Sienna Corporation). This isn't just geographic diversification — it's a deliberate customer acquisition engine, especially relevant in the current tariff environment. When a US customer faces import uncertainty, Avalon can manufacture locally. Once tariffs stabilize, production transitions to the more cost-efficient India facility. The US facility is the front door; India is the profit engine.</p>
+
+  <div class="stat-block" aria-label="Manufacturing and revenue geography breakdown">
+    <div class="stat-row">
+      <span class="stat-label sans">Manufacturing in India</span>
+      <span class="stat-val">79% of total</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label sans">Revenue from Indian customers</span>
+      <span class="stat-val">54% of total</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label sans">US business growth FY26</span>
+      <span class="stat-val pos">+59% YoY</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label sans">India business growth FY26</span>
+      <span class="stat-val pos">+29% YoY</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label sans">Consecutive improving quarters</span>
+      <span class="stat-val">7 straight quarters</span>
+    </div>
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 3: VERTICALS -->
+<section aria-labelledby="ch3-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">3</div>
+      <span class="chapter-label sans">Revenue verticals</span>
+    </div>
+    <h2 id="ch3-title">Five growth stories, each with its own catalyst</h2>
+  </div>
+
+  <p>Avalon's revenue is spread across five distinct verticals, each with an independent external driver. This is not a single-thesis bet — it's five different tailwinds blowing at once, at different stages of maturity.</p>
+
+  <div class="seg-grid" role="list" aria-label="Revenue segment summaries">
+
+    <div class="seg-card" style="border-top: 3px solid var(--blue);" role="listitem">
+      <div class="seg-header">
+        <div class="seg-dot" style="background:var(--blue);" aria-hidden="true"></div>
+        <span class="seg-name">Industrial &amp; Power</span>
+        <span class="seg-status status-live" aria-label="Status: Live and running">Live</span>
+      </div>
+      <p class="seg-catalyst">Automation, data centres, power electronics</p>
+      <p class="seg-body">Largest vertical at ~34% of revenue. Includes industrial automation systems, power conversion, and semiconductor equipment manufacturing for a major global partner (undisclosed). Semiconductor equipment prototype completed H1 FY26; full production targeted FY27.</p>
+      <p class="seg-data">Revenue share: ~34% · ISM 2.0 orders active</p>
+    </div>
+
+    <div class="seg-card" style="border-top: 3px solid var(--coral);" role="listitem">
+      <div class="seg-header">
+        <div class="seg-dot" style="background:var(--coral);" aria-hidden="true"></div>
+        <span class="seg-name">Mobility &amp; Aerospace</span>
+        <span class="seg-status status-live" aria-label="Status: Live and running">Live</span>
+      </div>
+      <p class="seg-catalyst">US defence, aerospace cabin sub-assemblies, automotive</p>
+      <p class="seg-body">~27% of revenue. Collins Aerospace and Meggitt are anchor customers. US facility handles aerospace cabin subassemblies and defence-grade electronics. India's defence localisation push under Atmanirbhar Bharat adds domestic opportunity layered on top.</p>
+      <p class="seg-data">Revenue share: ~27% · Long-cycle, sticky programs</p>
+    </div>
+
+    <div class="seg-card" style="border-top: 3px solid var(--green);" role="listitem">
+      <div class="seg-header">
+        <div class="seg-dot" style="background:var(--green);" aria-hidden="true"></div>
+        <span class="seg-name">Clean Energy &amp; EV</span>
+        <span class="seg-status status-ramp" aria-label="Status: Ramping up">Ramping</span>
+      </div>
+      <p class="seg-catalyst">US energy storage boom + India drone motors (Zepco JV)</p>
+      <p class="seg-body">~20% of revenue. Management guided 60–70% growth in US energy storage demand. The Zepco collaboration handles drone motor design for India. As US IRA incentives phase out, Avalon's plan is to migrate manufacturing to the lower-cost India base — using the US facility to win and India to execute.</p>
+      <p class="seg-data">Revenue share: ~20% · IRA phase-out is risk + migration opportunity</p>
+    </div>
+
+    <div class="seg-card" style="border-top: 3px solid var(--teal);" role="listitem">
+      <div class="seg-header">
+        <div class="seg-dot" style="background:var(--teal);" aria-hidden="true"></div>
+        <span class="seg-name">Railways (Kavach)</span>
+        <span class="seg-status status-proto" aria-label="Status: Pre-production prototype stage">Pre-prod</span>
+      </div>
+      <p class="seg-catalyst">₹1.3 trillion FY27 railway safety budget · Kavach mandate</p>
+      <p class="seg-body">The next big revenue unlock. Kavach — India's indigenous automatic train protection system — has completed testing. Commercial production expected H2 FY27. India plans Kavach rollout across 40,000 km of high-density routes by 2030–32. Only 1,465 km equipped so far: barely 2% of the target. The market potential is ₹45,000–50,000 Cr.</p>
+      <p class="seg-data">Revenue contribution: FY27 onwards · ₹1.3T safety budget FY27</p>
+    </div>
+
+    <div class="seg-card" style="border-top: 3px solid var(--amber);" role="listitem">
+      <div class="seg-header">
+        <div class="seg-dot" style="background:var(--amber);" aria-hidden="true"></div>
+        <span class="seg-name">Communications</span>
+        <span class="seg-status status-ramp" aria-label="Status: Ramping up">Ramping</span>
+      </div>
+      <p class="seg-catalyst">5G radio rollout across India and global markets</p>
+      <p class="seg-body">Smallest but fastest-growing vertical — posted ~102% YoY growth in Q1 FY26 and is maintaining momentum. Focus is on 5G base station radios. Not a dominant revenue contributor yet, but the growth rate signals this is early innings for a long cycle.</p>
+      <p class="seg-data">Revenue share: ~7% · 5G radios, 100%+ YoY growth Q1 FY26</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section aria-labelledby="ch4-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">4</div>
+      <span class="chapter-label sans">The non-obvious insight</span>
+    </div>
+    <h2 id="ch4-title">The US subsidiary is the customer acquisition engine, not the profit centre</h2>
+  </div>
+
+  <p>Here is the thing most investors miss when they look at Avalon's consolidated numbers: <span class="hl">Sienna Corporation (ABV Electronics, USA) contributed approximately ₹758 Cr in FY26 revenue</span> — nearly half the consolidated total. India's standalone revenue was ₹821 Cr. On a pure revenue basis, this is almost equally an American EMS company as an Indian one.</p>
+
+  <p>But the economics are not symmetric. India's manufacturing EBITDA margin was running at <span class="hl">16.7% in Q3 FY26</span> (9M FY26: 14.8%). The US operation carries higher costs — labour, compliance, overheads — and serves primarily to win relationships with US customers and manage tariff exposure. Once customers are locked in and tariffs are manageable, Avalon transitions production to Chennai, where margins are structurally better.</p>
+
+  <p>This model has a beautiful logic: the US factory is the front door for Boeing-ecosystem customers who won't source from a pure India-based vendor. India is where the margin is made. The implication for investors is that as the India-to-US mix gradually tilts back toward India over FY27–29 (as clean energy and industrial programs migrate), consolidated margins should structurally expand — without needing to win a single new customer.</p>
+
+  <div class="accent-card" style="border-left-color: var(--purple);" role="note">
+    <p class="sans" style="font-size:14px;"><strong>The single thing to remember:</strong> Avalon's US subsidiary is a customer acquisition tool, not the profit centre. India manufacturing at 16–17% EBITDA drives the economics; the US facility at lower margins wins the customers. As US programs gradually migrate to India, margin expansion is almost mechanical.</p>
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 5: NUMBERS -->
+<section aria-labelledby="ch5-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">5</div>
+      <span class="chapter-label sans">Financials in context</span>
+    </div>
+    <h2 id="ch5-title">The numbers — and what they mean</h2>
+  </div>
+
+  <p>FY26 was Avalon's strongest year since listing. Revenue grew 46% to ₹1,603 Cr against guidance of 28–30% — a beat. PAT grew 78%, reflecting operating leverage as the company finally crosses the scale where fixed costs stop dominating. Q4 FY26 marked the seventh consecutive quarter of sequential improvement — not a one-quarter spike but a sustained trajectory.</p>
+
+  <div class="num-grid" aria-label="Full year FY26 financial metrics">
+    <div class="num-card">
+      <div class="num-card-label sans">Revenue FY26</div>
+      <div class="num-card-val">₹1,603 Cr</div>
+      <div class="num-card-chg chg-pos">+46% YoY</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">EBITDA FY26</div>
+      <div class="num-card-val">₹173 Cr</div>
+      <div class="num-card-chg chg-pos">+51% YoY · 10.8% margin</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">PAT FY26</div>
+      <div class="num-card-val">₹113 Cr</div>
+      <div class="num-card-chg chg-pos">+78% YoY · 6.9% margin</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">Gross Margin</div>
+      <div class="num-card-val">34.3%</div>
+      <div class="num-card-sub sans">FY26 · guided 33–35%</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">Order Book</div>
+      <div class="num-card-val">₹2,196 Cr</div>
+      <div class="num-card-chg chg-pos">+25% YoY · ~14 months</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">Net Working Capital</div>
+      <div class="num-card-val">112 days</div>
+      <div class="num-card-chg chg-pos">↓ from 124 days</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">ROCE</div>
+      <div class="num-card-val">12.8%</div>
+      <div class="num-card-sub sans">ROE: 10.4%</div>
+    </div>
+    <div class="num-card">
+      <div class="num-card-label sans">Debt/Equity</div>
+      <div class="num-card-val">0.25×</div>
+      <div class="num-card-sub sans">Conservative leverage</div>
+    </div>
+  </div>
+
+  <!-- Quarterly revenue chart -->
+  <div class="chart-wrap" role="figure" aria-labelledby="chart1-title">
+    <div class="chart-title sans" id="chart1-title">Quarterly revenue progression (FY26, ₹ Crore)</div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="revChart" role="img" aria-label="Bar chart showing quarterly revenue: Q1 FY26 323 crore, Q2 382 crore, Q3 418 crore, Q4 480 crore — steady sequential improvement each quarter.">Q1 323 Cr, Q2 382 Cr, Q3 418 Cr, Q4 480 Cr</canvas>
+    </div>
+  </div>
+
+  <!-- Revenue mix chart -->
+  <div class="chart-wrap" role="figure" aria-labelledby="chart2-title">
+    <div class="chart-title sans" id="chart2-title">Revenue mix by vertical — FY26 approximate</div>
+    <div class="chart-legend">
+      <span><span class="legend-dot" style="background:#378ADD;"></span> Industrial 34%</span>
+      <span><span class="legend-dot" style="background:#D85A30;"></span> Mobility 27%</span>
+      <span><span class="legend-dot" style="background:#639922;"></span> Clean Energy 20%</span>
+      <span><span class="legend-dot" style="background:#1D9E75;"></span> Railways/Comms 12%</span>
+      <span><span class="legend-dot" style="background:#BA7517;"></span> 5G/Other 7%</span>
+    </div>
+    <div style="position:relative;width:100%;height:220px;">
+      <canvas id="mixChart" role="img" aria-label="Donut chart of revenue mix: Industrial 34%, Mobility and Aerospace 27%, Clean Energy 20%, Railways and Communications 12%, Five-G and other 7%.">Industrial 34%, Mobility 27%, Clean Energy 20%, Railways+Comms 12%, 5G+Other 7%</canvas>
+    </div>
+  </div>
+
+  <p>Working capital at 112 days is improving but still capital-intensive — inventory of ₹463 Cr against cash of only ₹71 Cr is a balance sheet to watch. ROCE at 12.8% is recovering (it was 18.8% through 9M FY26, implying Q4 had some capital deployed). The company has guided for continued working capital improvement.</p>
+
+  <!-- Valuation / peer comparison -->
+  <p style="margin-top:1rem;"><strong>Valuation: what is the market pricing in?</strong></p>
+  <p>At ~₹8,834 Cr market cap and roughly ₹113 Cr FY26 PAT, the trailing P/E is approximately 78× — high by any absolute measure. The market is pricing in sustained 40%+ earnings growth for multiple years: essentially it's saying Kavach contribution, semiconductor equipment ramp, and US clean energy migration all execute on schedule. That is a lot of simultaneous execution risk baked into one multiple.</p>
+
+  <table class="peer-table" aria-label="Valuation comparison with EMS peers">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Market Cap</th>
+        <th>P/E (trailing)</th>
+        <th>Revenue CAGR ~3Y</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>Avalon Technologies</td>
+        <td>₹8,834 Cr</td>
+        <td>~78×</td>
+        <td>~40%+</td>
+      </tr>
+      <tr>
+        <td>Kaynes Technology</td>
+        <td>₹25,948 Cr</td>
+        <td>~66×</td>
+        <td>~35%+</td>
+      </tr>
+      <tr>
+        <td>Syrma SGS Technology</td>
+        <td>~₹16,000 Cr</td>
+        <td>~54–66×</td>
+        <td>~20–25%</td>
+      </tr>
+      <tr>
+        <td>Data Patterns</td>
+        <td>~₹16,700 Cr</td>
+        <td>~66–67×</td>
+        <td>~25–30%</td>
+      </tr>
+      <tr>
+        <td>Dixon Technologies</td>
+        <td>~₹68,000 Cr</td>
+        <td>~70×</td>
+        <td>Large scale, slower</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="accent-card" style="border-left-color: var(--amber);" role="note">
+    <p class="sans" style="font-size:14px;"><strong>Valuation read:</strong> Avalon trades at a premium to Kaynes despite lower scale and higher concentration risk. The premium is justified only if Kavach and semiconductor equipment ramp materialise in FY27 as guided. At ~66–70× peers median, there is roughly 10–15% valuation headroom if current execution sustains but new verticals slip.</p>
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 6: RISKS -->
+<section aria-labelledby="ch6-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">6</div>
+      <span class="chapter-label sans">Eyes open</span>
+    </div>
+    <h2 id="ch6-title">Five real risks — not disclaimers</h2>
+  </div>
+
+  <div role="list" aria-label="Specific investment risks">
+
+    <div class="risk-item" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Sienna concentration — the US growth engine is also the biggest single-point risk</div>
+        <div class="risk-desc">ABV Electronics (Sienna) contributed ~₹758 Cr of FY26 consolidated revenue — nearly 47% of the total. India standalone grew 30%, but Sienna drove the bulk of incremental growth. Any US demand softness — whether from end-market slowdown, IRA policy reversal, or tariff escalation in reverse — hits consolidated revenue hard. The "Indian EMS story" is actually deeply US-dependent right now.</div>
+        <div class="risk-signal">Red flag signal: US business growth rate dropping below 25% for two consecutive quarters.</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Working capital intensity — ₹463 Cr in inventory, only ₹71 Cr cash</div>
+        <div class="risk-desc">EMS is inherently capital-intensive in working capital (inventory + receivables). At 112 days, Avalon's cycle is improving but still heavy. ₹463 Cr inventory versus ₹71 Cr cash means the company is funding its supply chain on credit. Any demand disruption or customer payment delay can tighten liquidity quickly. The Kavach and semiconductor ramps will require additional inventory build before revenues materialise.</div>
+        <div class="risk-signal">Red flag signal: Working capital days reversing above 130 days or trade payable stretching above 90 days.</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Kavach timeline risk — commercial production is not yet confirmed</div>
+        <div class="risk-desc">The Kavach programme has been "expected in H2 FY27" for several quarters. India's national train protection system rollout has a history of delays — as of late FY26, only 1,465 km of the targeted 40,000 km network was equipped. Government programme execution risk is real. If Kavach commercial orders slip to FY28, a meaningful revenue line expected by the market simply isn't there.</div>
+        <div class="risk-signal">Red flag signal: No Kavach purchase order announcement by Q2 FY27.</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">IRA policy reversal — US clean energy incentives under political pressure</div>
+        <div class="risk-desc">Management itself guided "minimal impact from the Beautiful Bill" on clean energy, but acknowledged the risk. US energy storage demand has been driving Sienna's growth at 60–70% CAGR. If IRA-linked incentives erode — as political winds in Washington have suggested — demand for US-assembled energy storage systems could slow materially before the India manufacturing migration can absorb the volumes.</div>
+        <div class="risk-signal">Red flag signal: Clean energy revenue growth dropping below 20% for two consecutive quarters.</div>
+      </div>
+    </div>
+
+    <div class="risk-item" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Component import dependence — India still imports 88% of PCBs</div>
+        <div class="risk-desc">India's EMS sector remains structurally reliant on imported components. China and Hong Kong account for 54% of electronics component imports (FY25). Any tariff escalation, supply disruption, or yuan depreciation can squeeze gross margins by 100+ basis points — as seen in prior quarters. Avalon's 33–35% gross margin guidance is defensible in normal conditions, but a component supply shock could compress it rapidly.</div>
+        <div class="risk-signal">Red flag signal: Gross margin dipping below 31% for any quarter.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section aria-labelledby="ch7-title">
+  <div class="chapter">
+    <div class="chapter-eyebrow">
+      <div class="chapter-num" aria-hidden="true">7</div>
+      <span class="chapter-label sans">Dashboard</span>
+    </div>
+    <h2 id="ch7-title">Five things to check every quarter — in five minutes</h2>
+  </div>
+
+  <div class="stat-block" role="list" aria-label="Quarterly watch signals">
+
+    <div class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--teal);" aria-hidden="true"></div>
+      <div class="watch-body">
+        <div class="watch-title sans">India standalone revenue growth rate</div>
+        <div class="watch-desc sans">Currently running at 29–30% YoY. Watch for this to accelerate above 35% — that signals India business is genuinely gaining momentum, not just riding Sienna's coattails. If India growth lags consolidated growth for three consecutive quarters, the thesis has a problem.</div>
+        <div class="watch-flag sans">🟢 Good: India standalone growing above 35% · 🔴 Flag: Below 20% for two quarters</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--purple);" aria-hidden="true"></div>
+      <div class="watch-body">
+        <div class="watch-title sans">Kavach purchase order announcement</div>
+        <div class="watch-desc sans">The single biggest FY27 re-rating catalyst. Management expects commercial production H2 FY27. Watch for a specific customer PO or revenue line in concall — "Kavach prototyping" language continuing past Q2 FY27 would be a red flag for timeline slippage.</div>
+        <div class="watch-flag sans">🟢 Good: Confirmed PO by Q2 FY27 · 🔴 Flag: Prototype language continuing past Q2 FY27</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--blue);" aria-hidden="true"></div>
+      <div class="watch-body">
+        <div class="watch-title sans">Semiconductor equipment revenue contribution</div>
+        <div class="watch-desc sans">Full-scale production was targeted for FY27. This is a new, undisclosed global customer. Watch for management to break out or name-check semiconductor equipment as a meaningful revenue line. In Q1 FY25 concall it was described as "pilot"; it should be ramping by Q2 FY27.</div>
+        <div class="watch-flag sans">🟢 Good: Named in revenue mix by Q2 FY27 · 🔴 Flag: Still in "ramp-up" language by Q3 FY27</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--amber);" aria-hidden="true"></div>
+      <div class="watch-body">
+        <div class="watch-title sans">Net working capital days</div>
+        <div class="watch-desc sans">Improved from 131 days (Sep 2025) to 112 days (Mar 2026) — a meaningful 19-day improvement. Watch for this to continue toward the 90–100 day range. Any reversal above 130 days suggests inventory build ahead of programs that haven't materialised, which is an early warning sign.</div>
+        <div class="watch-flag sans">🟢 Good: Below 100 days by FY27 end · 🔴 Flag: Reversal above 130 days</div>
+      </div>
+    </div>
+
+    <div class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--coral);" aria-hidden="true"></div>
+      <div class="watch-body">
+        <div class="watch-title sans">India manufacturing EBITDA margin</div>
+        <div class="watch-desc sans">India operations ran at 16.7% EBITDA margin in Q3 FY26 and 14.8% for 9M FY26 — significantly better than consolidated (10.8%). The core thesis is that as US programs migrate to India, consolidated margins should expand structurally. If India margins compress below 13%, it means pricing pressure or cost creep is eating the structural advantage.</div>
+        <div class="watch-flag sans">🟢 Good: India EBITDA sustained above 15% · 🔴 Flag: India margin compression below 13%</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider" aria-hidden="true">
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+  <div class="verdict" role="note">
+    <div class="verdict-label sans" id="verdict-title">Verdict · May 2026</div>
+    <p class="verdict-text sans">
+      Avalon Technologies is a genuine structural play on three converging themes: <strong>India's electronics manufacturing buildout</strong> (27% sector CAGR with policy tailwinds through 2029), <strong>US-to-India manufacturing migration</strong> (the Sienna model converting US customers into India-manufactured volumes over time), and <strong>two emerging verticals</strong> in Kavach railways and semiconductor equipment that haven't contributed a rupee to FY26 revenue yet. The quality signal in the financials is directional — seven consecutive quarters of sequential improvement, PAT growing 78% on 46% revenue growth, and working capital tightening. ROCE at 12.8% is mediocre for the multiple being paid, but India-manufacturing-only ROCE (implied by the 16–17% India EBITDA) is far more attractive and should expand as the mix tilts. The near-term catalyst is a Kavach commercial production announcement in H2 FY27 — a single announcement that could re-rate the stock as a confirmed "railway electronics" play. On valuation, at ~78× trailing P/E versus peers at 54–70×, Avalon is pricing in near-perfect execution: Kavach, semiconductor, and clean energy migration all hitting on schedule. That's a lot of simultaneous moving parts. <strong>We are in the middle chapters of this story</strong> — the heavy lifting of establishing the model is done, but the biggest revenue catalysts (Kavach, semiconductor, US-to-India migration) are still over the horizon. For investors who believe in the structural thesis and management's execution track record, the price is demanding but the addressable opportunity is genuinely large. For those who need near-term earnings certainty to justify the multiple, the wait for Kavach confirmation is the right approach.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>Prepared May 17, 2026. Sources: Avalon Technologies FY26 audited results (May 6, 2026), Q4 FY26 investor presentation, Q2 FY26 earnings call transcript. Sector data from Macquarie, MEITY, Frost &amp; Sullivan. Railway safety budget from Mint/Swarajya December 2025. Peer valuations from whalesbook.com, valueresearchonline.com. This brief is for informational purposes only and does not constitute investment advice. All projections attributed to company management or third-party research; verify before relying on any figure.</p>
+</footer>
+
+<script>
+function initTheme() {
+  var stored = localStorage.getItem('avalon-brief-theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var isDark = stored ? stored === 'dark' : prefersDark;
+  document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+  document.getElementById('themeToggle').textContent = isDark ? '☀ Light' : '🌙 Dark';
+}
+function toggleTheme() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var next = isDark ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('avalon-brief-theme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '☀ Light' : '🌙 Dark';
+  if (window._chartsBuilt) { rebuildCharts(); }
+}
+initTheme();
+
+function getTextColor() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return isDark ? '#bbb89e' : '#4a4944';
+}
+function getGridColor() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+}
+function getBg() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return isDark ? '#242420' : '#ffffff';
+}
+
+var revChartInst, mixChartInst;
+
+function buildCharts() {
+  var tc = getTextColor(), gc = getGridColor();
+
+  var revCtx = document.getElementById('revChart').getContext('2d');
+  revChartInst = new Chart(revCtx, {
+    type: 'bar',
+    data: {
+      labels: ['Q1 FY26', 'Q2 FY26', 'Q3 FY26', 'Q4 FY26'],
+      datasets: [{
+        label: 'Revenue (₹ Cr)',
+        data: [323, 382, 418, 480],
+        backgroundColor: ['#1D9E7566','#1D9E7588','#1D9E75aa','#1D9E75'],
+        borderColor: '#1D9E75',
+        borderWidth: 1.5,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(c) { return '₹' + c.raw + ' Cr'; }
+          }
+        }
+      },
+      scales: {
+        x: {
+          ticks: { color: tc, font: { size: 12, family: '-apple-system,Segoe UI,Arial,sans-serif' } },
+          grid: { color: gc },
+          border: { color: gc }
+        },
+        y: {
+          ticks: {
+            color: tc,
+            font: { size: 12, family: '-apple-system,Segoe UI,Arial,sans-serif' },
+            callback: function(v) { return '₹' + v; }
+          },
+          grid: { color: gc },
+          border: { color: gc },
+          min: 200,
+          max: 550
+        }
+      }
+    }
+  });
+
+  var mixCtx = document.getElementById('mixChart').getContext('2d');
+  mixChartInst = new Chart(mixCtx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Industrial & Power', 'Mobility & Aerospace', 'Clean Energy & EV', 'Railways & Comms', '5G & Other'],
+      datasets: [{
+        data: [34, 27, 20, 12, 7],
+        backgroundColor: ['#378ADD', '#D85A30', '#639922', '#1D9E75', '#BA7517'],
+        borderColor: getBg(),
+        borderWidth: 3,
+        hoverOffset: 6
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: function(c) { return c.label + ': ' + c.raw + '%'; }
+          }
+        }
+      }
+    }
+  });
+
+  window._chartsBuilt = true;
+}
+
+function rebuildCharts() {
+  if (revChartInst) { revChartInst.destroy(); }
+  if (mixChartInst) { mixChartInst.destroy(); }
+  buildCharts();
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', buildCharts);
+} else {
+  buildCharts();
+}
+</script>
+</body>
+</html>

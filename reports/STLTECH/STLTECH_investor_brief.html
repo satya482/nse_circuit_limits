@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STLTECH — Sterlite Technologies Investor Brief | May 2026</title>
+  <style>
+    /* ─── CSS Custom Properties for Day / Night Mode ─── */
+    :root {
+      --bg:        #F7F8FA;
+      --surface:   #FFFFFF;
+      --surface2:  #F0F2F5;
+      --border:    #E2E5EB;
+      --text:      #1A1D23;
+      --text-sub:  #5A6175;
+      --text-muted:#8A93A8;
+      --shadow:    0 2px 12px rgba(0,0,0,0.07);
+      --shadow-lg: 0 6px 28px rgba(0,0,0,0.10);
+      /* Segment colours */
+      --amber:    #BA7517;
+      --amber-bg: #FFF8EC;
+      --purple:   #534AB7;
+      --purple-bg:#F0EFFF;
+      --teal:     #1D9E75;
+      --teal-bg:  #EBF8F3;
+      --blue:     #378ADD;
+      --blue-bg:  #EBF4FF;
+      --green:    #3B6D11;
+      --green-bg: #EDF5E4;
+      --gray:     #6B7280;
+      --gray-bg:  #F3F4F6;
+      --risk-bg:  #FFF7ED;
+      --risk-border: #F59E0B;
+      --positive: #16A34A;
+    }
+    [data-theme="dark"] {
+      --bg:        #0F1117;
+      --surface:   #1C1F28;
+      --surface2:  #252933;
+      --border:    #2E3242;
+      --text:      #E8EAF0;
+      --text-sub:  #9AA3BB;
+      --text-muted:#5C6480;
+      --shadow:    0 2px 12px rgba(0,0,0,0.40);
+      --shadow-lg: 0 6px 28px rgba(0,0,0,0.55);
+      --amber-bg:  #2A2010;
+      --purple-bg: #1A1840;
+      --teal-bg:   #0D2820;
+      --blue-bg:   #0D1E35;
+      --green-bg:  #0F1E06;
+      --gray-bg:   #1E2128;
+      --risk-bg:   #231A0D;
+      --risk-border:#D97706;
+    }
+
+    /* ─── Reset & Base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* ─── Top Nav Bar ─── */
+    .topbar {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 0.65rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      box-shadow: var(--shadow);
+    }
+    .topbar-brand { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-sub); text-transform: uppercase; }
+    .topbar-right { display: flex; align-items: center; gap: 0.75rem; }
+    .topbar-symbol { font-size: 0.88rem; font-weight: 700; color: var(--amber); background: var(--amber-bg); padding: 0.2rem 0.6rem; border-radius: 4px; }
+    .theme-btn {
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); border-radius: 6px;
+      padding: 0.35rem 0.8rem; cursor: pointer; font-size: 0.82rem;
+      font-weight: 600; transition: all 0.2s;
+    }
+    .theme-btn:hover { background: var(--border); }
+
+    /* ─── Page Wrapper ─── */
+    .page { max-width: 860px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+
+    /* ─── Cover Card ─── */
+    .cover {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-lg);
+      border-top: 4px solid var(--amber);
+      position: relative; overflow: hidden;
+    }
+    .cover::after {
+      content: '';
+      position: absolute; right: -40px; top: -40px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: var(--amber);
+      opacity: 0.04;
+    }
+    .cover-eyebrow {
+      font-size: 0.78rem; font-weight: 700; letter-spacing: 0.10em;
+      color: var(--amber); text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .cover-company { font-size: 2rem; font-weight: 800; line-height: 1.15; color: var(--text); margin-bottom: 0.25rem; }
+    .cover-tagline { font-size: 1.05rem; color: var(--text-sub); margin-bottom: 1.5rem; }
+    .cover-stats {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 1rem;
+    }
+    .cover-stat {
+      background: var(--surface2); border-radius: 10px; padding: 0.85rem 1rem;
+    }
+    .cover-stat-label { font-size: 0.70rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.2rem; }
+    .cover-stat-value { font-size: 1.25rem; font-weight: 800; color: var(--text); }
+    .cover-stat-sub { font-size: 0.72rem; color: var(--text-sub); margin-top: 0.1rem; }
+    .cover-stat-pos { color: var(--positive) !important; }
+    .cover-stat-warn { color: var(--amber) !important; }
+
+    /* ─── Chapter Header ─── */
+    .chapter-header {
+      display: flex; align-items: flex-start; gap: 1rem;
+      margin: 2.5rem 0 1.25rem;
+    }
+    .chapter-num {
+      flex-shrink: 0;
+      width: 44px; height: 44px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; font-weight: 800; color: #fff;
+    }
+    .chapter-header-text { flex: 1; }
+    .chapter-eyebrow { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.2rem; }
+    .chapter-title { font-size: 1.35rem; font-weight: 800; color: var(--text); line-height: 1.25; }
+
+    /* ─── Prose ─── */
+    .prose { color: var(--text); line-height: 1.75; margin-bottom: 1.25rem; }
+    .prose + .prose { margin-top: -0.5rem; }
+
+    /* ─── Insight Card ─── */
+    .insight-card {
+      background: var(--surface);
+      border-left: 3px solid var(--amber);
+      border-radius: 0 10px 10px 0;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      box-shadow: var(--shadow);
+    }
+    .insight-card.purple { border-left-color: var(--purple); background: var(--purple-bg); }
+    .insight-card.teal   { border-left-color: var(--teal);   background: var(--teal-bg);  }
+    .insight-card.blue   { border-left-color: var(--blue);   background: var(--blue-bg);  }
+    .insight-card.green  { border-left-color: var(--green);  background: var(--green-bg); }
+    .insight-card.amber  { border-left-color: var(--amber);  background: var(--amber-bg); }
+    .insight-label { font-size: 0.70rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.3rem; }
+    .insight-text { font-size: 0.95rem; color: var(--text); line-height: 1.6; }
+
+    /* ─── Vertical Cards ─── */
+    .vertical-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.25rem 0; }
+    .vertical-card {
+      background: var(--surface);
+      border-radius: 12px; padding: 1.1rem 1.2rem;
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--gray);
+    }
+    .vertical-card.amber  { border-top-color: var(--amber); }
+    .vertical-card.purple { border-top-color: var(--purple); }
+    .vertical-card.teal   { border-top-color: var(--teal); }
+    .vertical-card.blue   { border-top-color: var(--blue); }
+    .vertical-card-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.25rem; }
+    .vertical-card-title { font-size: 1.0rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; }
+    .vertical-card-body { font-size: 0.87rem; color: var(--text-sub); line-height: 1.6; }
+    .status-pill {
+      display: inline-block; font-size: 0.68rem; font-weight: 700;
+      padding: 0.2rem 0.55rem; border-radius: 20px; margin-top: 0.6rem;
+    }
+    .status-running { background: var(--green-bg); color: var(--green); }
+    .status-ramping { background: var(--amber-bg); color: var(--amber); }
+    .status-early   { background: var(--blue-bg);  color: var(--blue); }
+
+    /* ─── Stats Row ─── */
+    .stats-block { background: var(--surface); border-radius: 12px; padding: 0.25rem 1.25rem; box-shadow: var(--shadow); margin: 1.25rem 0; }
+    .stat-row {
+      display: flex; align-items: baseline; justify-content: space-between;
+      padding: 0.65rem 0; border-bottom: 1px solid var(--border); gap: 1rem;
+    }
+    .stat-row:last-child { border-bottom: none; }
+    .stat-label { font-size: 0.87rem; color: var(--text-sub); flex: 1; }
+    .stat-value { font-size: 0.92rem; font-weight: 700; color: var(--text); text-align: right; }
+    .stat-note  { font-size: 0.75rem; color: var(--text-muted); text-align: right; margin-top: 0.1rem; }
+    .stat-pos { color: var(--positive) !important; }
+    .stat-neg { color: #DC2626 !important; }
+    .stat-warn { color: var(--amber) !important; }
+
+    /* ─── Risk Row ─── */
+    .risk-list { display: flex; flex-direction: column; gap: 0.85rem; margin: 1.25rem 0; }
+    .risk-item {
+      display: flex; align-items: flex-start; gap: 0.85rem;
+      background: var(--risk-bg); border: 1px solid var(--risk-border);
+      border-radius: 10px; padding: 0.85rem 1rem;
+    }
+    .risk-icon { flex-shrink: 0; font-size: 1.1rem; margin-top: 0.1rem; }
+    .risk-content {}
+    .risk-title { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+    .risk-body { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; }
+    .risk-signal { font-size: 0.78rem; color: var(--amber); font-weight: 600; margin-top: 0.3rem; }
+
+    /* ─── Watch Signals ─── */
+    .watch-list { display: flex; flex-direction: column; gap: 0.75rem; margin: 1.25rem 0; }
+    .watch-item { display: flex; align-items: flex-start; gap: 0.85rem; }
+    .watch-dot { flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; margin-top: 0.45rem; }
+    .watch-dot.amber  { background: var(--amber); }
+    .watch-dot.purple { background: var(--purple); }
+    .watch-dot.teal   { background: var(--teal); }
+    .watch-dot.blue   { background: var(--blue); }
+    .watch-dot.green  { background: var(--green); }
+    .watch-content {}
+    .watch-title { font-size: 0.92rem; font-weight: 700; color: var(--text); margin-bottom: 0.15rem; }
+    .watch-body { font-size: 0.85rem; color: var(--text-sub); line-height: 1.6; }
+    .watch-flag { font-size: 0.78rem; color: #DC2626; font-weight: 600; margin-top: 0.25rem; }
+
+    /* ─── Data Table ─── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: 0.87rem; background: var(--surface); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); margin: 1.25rem 0; }
+    .data-table th { background: var(--surface2); color: var(--text-sub); font-weight: 700; text-align: left; padding: 0.6rem 0.9rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.07em; border-bottom: 1px solid var(--border); }
+    .data-table td { padding: 0.6rem 0.9rem; border-bottom: 1px solid var(--border); color: var(--text); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table tr:hover td { background: var(--surface2); }
+    .highlight-row td { font-weight: 700; color: var(--amber) !important; }
+
+    /* ─── Verdict Card ─── */
+    .verdict-card {
+      background: var(--surface);
+      border-radius: 14px; padding: 1.75rem 1.75rem;
+      margin: 2rem 0 1rem;
+      box-shadow: var(--shadow-lg);
+      border-top: 3px solid var(--amber);
+    }
+    .verdict-label { font-size: 0.70rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber); margin-bottom: 0.6rem; }
+    .verdict-text { font-size: 1.0rem; color: var(--text); line-height: 1.80; }
+
+    /* ─── Geo Map Bar ─── */
+    .geo-bar { display: flex; height: 10px; border-radius: 5px; overflow: hidden; margin: 0.5rem 0 0.75rem; }
+    .geo-segment { height: 100%; }
+
+    /* ─── Quote Block ─── */
+    .quote-block {
+      background: var(--surface2); border-radius: 10px;
+      border-left: 3px solid var(--purple);
+      padding: 0.9rem 1.2rem; margin: 1.25rem 0;
+      font-style: italic; font-size: 0.92rem; color: var(--text-sub); line-height: 1.7;
+    }
+    .quote-attr { font-style: normal; font-size: 0.78rem; color: var(--text-muted); margin-top: 0.4rem; }
+
+    /* ─── Divider ─── */
+    hr.chapter-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0 0; }
+
+    /* ─── Footer ─── */
+    footer { text-align: center; font-size: 0.75rem; color: var(--text-muted); padding: 2rem 0; margin-top: 2rem; border-top: 1px solid var(--border); }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 600px) {
+      .cover { padding: 1.5rem; }
+      .cover-company { font-size: 1.5rem; }
+      .chapter-header { flex-direction: column; gap: 0.5rem; }
+      .chapter-num { align-self: flex-start; }
+      .vertical-grid { grid-template-columns: 1fr; }
+      .cover-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body role="document" aria-label="STLTECH Investor Brief — Sterlite Technologies Limited">
+
+  <!-- ─── Sticky Topbar ─── -->
+  <nav class="topbar" role="navigation" aria-label="Report navigation">
+    <span class="topbar-brand">Investor Brief · May 2026</span>
+    <div class="topbar-right">
+      <span class="topbar-symbol" aria-label="NSE symbol STLTECH">NSE: STLTECH</span>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle day/night mode" onclick="toggleTheme()">🌙 Night</button>
+    </div>
+  </nav>
+
+  <main class="page" role="main">
+
+    <!-- ══════════════════════════════════════════════
+         COVER CARD
+    ══════════════════════════════════════════════ -->
+    <header class="cover" role="banner" aria-label="Company overview card">
+      <p class="cover-eyebrow" aria-label="Report metadata">NSE: STLTECH · Telecom Equipment &amp; Optical Networking · Brief date: 17 May 2026</p>
+      <h1 class="cover-company">Sterlite Technologies Limited (STL)</h1>
+      <p class="cover-tagline">India's glass-to-gigabit champion, now riding the AI data centre supercycle</p>
+
+      <div class="cover-stats" role="region" aria-label="Key financial metrics">
+        <div class="cover-stat">
+          <p class="cover-stat-label">Market Cap</p>
+          <p class="cover-stat-value">₹20,492 Cr</p>
+          <p class="cover-stat-sub">CMP ₹420 (15 May '26)</p>
+        </div>
+        <div class="cover-stat">
+          <p class="cover-stat-label">FY26 Revenue</p>
+          <p class="cover-stat-value cover-stat-pos">₹4,745 Cr</p>
+          <p class="cover-stat-sub">+18.8% YoY · Recovering</p>
+        </div>
+        <div class="cover-stat">
+          <p class="cover-stat-label">FY26 EBITDA</p>
+          <p class="cover-stat-value">₹628 Cr</p>
+          <p class="cover-stat-sub">13.2% margin · Q4 at 15.1%</p>
+        </div>
+        <div class="cover-stat">
+          <p class="cover-stat-label">Order Book</p>
+          <p class="cover-stat-value cover-stat-pos">₹7,309 Cr</p>
+          <p class="cover-stat-sub">+67% YoY · FY26 intake +110%</p>
+        </div>
+        <div class="cover-stat">
+          <p class="cover-stat-label">Net Debt</p>
+          <p class="cover-stat-value cover-stat-warn">₹1,128 Cr</p>
+          <p class="cover-stat-sub">Net D/EBITDA 1.30x · Target &lt;1.2x</p>
+        </div>
+        <div class="cover-stat">
+          <p class="cover-stat-label">1-Year Return</p>
+          <p class="cover-stat-value cover-stat-pos">+455%</p>
+          <p class="cover-stat-sub">₹67.6 → ₹420 (52-week)</p>
+        </div>
+      </div>
+    </header>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 1 — CONTEXT
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch1-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--amber);" aria-hidden="true">1</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">The Big Picture</p>
+          <h2 class="chapter-title" id="ch1-title">Context — Why Optical Fiber, Why Now</h2>
+        </div>
+      </div>
+
+      <p class="prose">The world is spending like it hasn't in a generation on digital infrastructure. Three separate, overlapping supercycles are converging simultaneously — and every single one of them runs on optical fiber. First, the <strong>global fiber broadband buildout</strong>: countries from the US to India are spending public money to connect homes and rural areas with fiber, with the US BEAD program alone allocating <strong>$42.45 billion</strong> in federal grants for broadband infrastructure, with first projects breaking ground in 2026. Second, the <strong>AI data centre boom</strong>: the global data centre optical interconnect market was $3.75 billion in 2025 and is projected to reach $18.36 billion by 2033 — a 21.9% CAGR — because AI-era GPU racks require up to <strong>36 times more fiber</strong> than a traditional CPU setup. Third, <strong>5G densification</strong>: 6.3 billion 5G subscriptions are expected globally by 2030, each requiring extensive fiber backhaul and fronthaul.</p>
+
+      <p class="prose">For India specifically, the structural story is even more compelling. The <strong>BharatNet Phase 3</strong> programme is connecting every gram panchayat in the country — over 215,000 already linked as of early 2026 — requiring millions of fiber-km of domestic cable procurement. India's optical fiber and accessories market is growing at an estimated <strong>14–17% CAGR</strong> through the decade.</p>
+
+      <div class="insight-card amber" role="note" aria-label="Key macro insight">
+        <p class="insight-label">Macro Signal</p>
+        <p class="insight-text">CRU Intelligence — the specialist research firm STL itself quotes — projects global data-centre-led optical fiber demand to grow at a <strong>76% CAGR from 2025</strong>, and North America specifically at <strong>13.7% CAGR through 2030</strong>. Supply in North America is consistently below demand, keeping lead times tight. This is not a cyclical uptick — it is a structural re-architecture of global computing infrastructure.</p>
+      </div>
+
+      <p class="prose">STL is studying this brief because the company has, in the last 18 months, completed what may be the most important turn in its history: it bottomed out from a brutal global inventory correction in FY24–25 (revenue fell from ₹6,925 Cr in FY23 to ₹3,996 Cr in FY25), restructured its balance sheet, and is now re-entering demand headwinds that are structural, not cyclical. The timing matters.</p>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 2 — BUSINESS MODEL
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch2-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--amber);" aria-hidden="true">2</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">What They Do</p>
+          <h2 class="chapter-title" id="ch2-title">The Business Model — Glass to Gigabit</h2>
+        </div>
+      </div>
+
+      <p class="prose">STL describes itself as a "glass to gigabit" company — and that phrase is worth unpacking because it captures the entire moat. Most fiber cable manufacturers buy the raw optical fiber from a supplier, then wind it into cable. STL makes the glass. It starts with ultra-pure silicon dioxide, processes it through chemical vapour deposition and precision sintering to form glass preforms, draws the preform into optical fiber, designs the high-density cables around that fiber, and then manufactures the connectivity products (transceivers, patch cords, splice closures, termination systems) that connect the cables into working networks. Very few companies in the world can do this entire chain in-house.</p>
+
+      <p class="prose">This vertical integration is the flywheel: lower-cost fiber enables cheaper cable, which enables more competitive connectivity solutions, which attracts larger customers who in turn fund R&amp;D into next-generation products that competitors cannot match. STL holds over <strong>780 patents</strong>, including technologies like multi-core fiber (4–7x higher capacity in the same physical diameter), Hollow Core fiber (light through air — 47% lower latency), and the world's slimmest 160-micron fiber for ultra-dense data centres.</p>
+
+      <p class="prose">Customers are sticky for a combination of certification, qualification, and relationship depth. Tier 1 telecom carriers — AT&amp;T, BT, Deutsche Telekom — go through multi-year qualification processes before accepting a new fiber supplier. Hyperscalers buying data centre cabling go through similar rigour. Once qualified, switching is costly and disruptive. STL has 100+ active digital customers globally and growing.</p>
+
+      <p class="prose">The company operates through two divisions. The <strong>Optical Networking Business (ONB)</strong> — fiber, cable, specialty cable, connectivity — contributes roughly 93% of revenue. <strong>STL Digital</strong> — IT services, cloud, cybersecurity, AI solutions — is a smaller, breakeven-and-growing segment at about 7%, providing a SaaS-style recurring revenue layer alongside the hardware business.</p>
+
+      <div class="insight-card teal" role="note">
+        <p class="insight-label">Revenue Geography (FY26)</p>
+        <div class="geo-bar" aria-label="Revenue mix: Europe 40 percent, North America 36 percent, India and others 24 percent">
+          <div class="geo-segment" style="width:40%; background:var(--amber);"></div>
+          <div class="geo-segment" style="width:36%; background:var(--purple);"></div>
+          <div class="geo-segment" style="width:24%; background:var(--teal);"></div>
+        </div>
+        <p class="insight-text" style="font-size:0.83rem;">
+          <span style="color:var(--amber);">■ Europe ~40%</span> &nbsp;|&nbsp;
+          <span style="color:var(--purple);">■ North America ~36%</span> (up from 25% in FY25) &nbsp;|&nbsp;
+          <span style="color:var(--teal);">■ India + Others ~24%</span>
+        </p>
+      </div>
+
+      <p class="prose">Manufacturing presence spans 10+ global facilities: Aurangabad &amp; Silvassa (India), Lugoff SC (USA), Alessandria (Italy, via Optotec spa acquisition), Brazil, and China (Jiangsu Sterlite). Over 80% of revenues come from outside India, making STL India's most internationally-oriented fiber manufacturer.</p>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 3 — VERTICAL STORIES
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch3-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--purple);" aria-hidden="true">3</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">Revenue Segments</p>
+          <h2 class="chapter-title" id="ch3-title">The Vertical Stories — Three Cycles, One Company</h2>
+        </div>
+      </div>
+
+      <div class="vertical-grid" role="list" aria-label="Business segment cards">
+
+        <article class="vertical-card purple" role="listitem" aria-label="AI Data Centre vertical">
+          <p class="vertical-card-label">Segment · Growing fastest</p>
+          <h3 class="vertical-card-title">AI Data Centre Connectivity</h3>
+          <p class="vertical-card-body">STL's "Neuralis" AI DC connectivity suite — high-density IBR cables up to 3,456 fibers, nano DC micro-cables, HCF, pre-terminated systems — targets hyperscalers and colocation players. External catalyst: global data centre capex approaching $600 billion by 2027; AI racks need 36x more fiber than CPU racks. STL won over ₹500 Cr in DC orders in Q3 FY26 alone. Revenue share: 20% YTD FY26, guided to 30% in 12–18 months (management, Q3 FY26 concall).</p>
+          <span class="status-pill status-ramping" aria-label="Status: Ramping">↑ Ramping Quickly</span>
+        </article>
+
+        <article class="vertical-card amber" role="listitem" aria-label="Telecom FTTx vertical">
+          <p class="vertical-card-label">Segment · Core Business</p>
+          <h3 class="vertical-card-title">Telecom FTTx (BEAD + BharatNet)</h3>
+          <p class="vertical-card-body">Fiber-to-the-home deployments globally, driven by the US <strong>BEAD program ($42.45 Bn)</strong> requiring Buy America-compliant cable supply (STL's SC factory is the key), and India's BharatNet Phase 3. Group company Invenia secured the Jammu &amp; Kashmir package; STL supplies cable on arm's-length basis. North America FTTx is expected to add 100M+ fiber-connected homes by 2030. North America 36% of revenues in FY26, up from 25% in FY25.</p>
+          <span class="status-pill status-running" aria-label="Status: Running">✓ Running at Scale</span>
+        </article>
+
+        <article class="vertical-card teal" role="listitem" aria-label="5G backhaul vertical">
+          <p class="vertical-card-label">Segment · Scaling</p>
+          <h3 class="vertical-card-title">5G Backhaul &amp; Fronthaul</h3>
+          <p class="vertical-card-body">5G subscriptions expected to hit 6.3 billion by 2030, carrying 80% of mobile data. Each 5G small cell requires dense fiber backhaul that 4G didn't need. STL supplies specialty cables and connectivity to European and Indian carriers. Europe contributes ~40% of revenues and includes major Tier 1 telcos across the UK, Germany, and France, many deep in 5G densification cycles.</p>
+          <span class="status-pill status-running" aria-label="Status: Running">✓ Running — Europe Core</span>
+        </article>
+
+        <article class="vertical-card blue" role="listitem" aria-label="Next-gen fiber technologies">
+          <p class="vertical-card-label">Segment · Emerging</p>
+          <h3 class="vertical-card-title">Next-Gen Fiber (HCF, G.654.E, MCF)</h3>
+          <p class="vertical-card-body">STL launched India's first <strong>Hollow Core Fiber cable</strong> (March 2026) — 47% lower latency, light through air. Microsoft and Amazon are actively exploring HCF deployment. Multi-core fiber (MCF) was successfully trialled with Colt on the London metro network at 800 Gbps in Jan 2026. G.654.E (30% lower signal loss) is gaining commercial traction. These command premium pricing and target hyperscalers and national backbone operators. <em>Standards are still being set globally — commercial scale in 2–3 years.</em></p>
+          <span class="status-pill status-early" aria-label="Status: Early commercial">◉ Early Commercial</span>
+        </article>
+
+        <article class="vertical-card blue" role="listitem" aria-label="STL Digital IT services">
+          <p class="vertical-card-label">Segment · Stabilising</p>
+          <h3 class="vertical-card-title">STL Digital — IT Services</h3>
+          <p class="vertical-card-body">Cloud, cybersecurity, AI and enterprise SaaS delivered by 1,120 consultants to 34 active enterprise customers globally. Closed a multi-million dollar SAP S/4HANA deal with a US healthcare major in Q3 FY26. Revenue: ₹215 Cr in 9M FY26, broadly flat YoY but now EBITDA-positive for multiple consecutive quarters. Open order book: ₹276 Cr. Small but provides recurring SaaS-like revenues alongside hardware cycles.</p>
+          <span class="status-pill status-ramping" aria-label="Status: Stabilising">→ Stabilising</span>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 4 — THE STRATEGIC INSIGHT
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch4-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--purple);" aria-hidden="true">4</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">The One Thing to Understand</p>
+          <h2 class="chapter-title" id="ch4-title">Strategic Insight — The South Carolina Factory is a Door, Not a Factory</h2>
+        </div>
+      </div>
+
+      <div class="insight-card purple" role="note" aria-label="Core strategic insight">
+        <p class="insight-label">Strategic Insight</p>
+        <p class="insight-text">STL's manufacturing facility in Lugoff, South Carolina — which cost over $50 million to build — currently runs at partial utilisation and drags group-level margins. The instinct is to view this as a misallocation. That reading misses the point entirely.</p>
+      </div>
+
+      <p class="prose">The US BEAD program requires all funded projects to use fiber cable manufactured under "Buy America, Build America" (BABA) provisions — essentially, the cable must be made in the United States. Without the Lugoff factory, STL cannot supply a single metre of BEAD-funded cable in the US market. With it, STL is one of the very few non-American manufacturers cleared to compete for a slice of $42.45 billion in federal broadband spending.</p>
+
+      <p class="prose">But the SC factory's value extends beyond BEAD alone. Tier 1 North American telecom customers — AT&amp;T, Comcast, the hyperscalers building data centres in the American heartland — run multi-year, long-term supply contracts. These customers increasingly want a US-based supplier relationship for supply-chain resilience reasons. STL's SC facility puts the company in the room for these conversations in a way no Indian-only manufacturer can match. This is exactly why North America's share of STL's revenues jumped from 25% to 36% in a single year.</p>
+
+      <p class="prose">The analogy: Avalon Technologies' US factory (Fremont, CA) was never meant to be the profit engine — it was the front door that gave the company access to US defence and aerospace OEMs who require domestic-qualified suppliers. STL's SC factory serves the same function: it costs money to run at sub-scale, but it earns the right to win contracts that India manufacturing alone could never capture. As BEAD-funded projects ramp from 2026–2028 and US plant utilisation climbs, the factory transitions from drag to driver.</p>
+
+      <div class="quote-block" role="blockquote" aria-label="Management quote from Q3 FY26 concall">
+        "In U.S., generally, the contracts are currently in the range of 12 to 15 months. We will start to see part of the impact from the next quarter onwards. And the full impact will take some time — it is going to be a matter of 2 to 3 quarters wherein old contracts will be fully settled in and all the new contracts will jump in."
+        <p class="quote-attr">— Ajay Jhanjhari, CFO, Sterlite Technologies Q3 FY26 Earnings Call, January 23, 2026</p>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 5 — THE NUMBERS IN CONTEXT
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch5-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--blue);" aria-hidden="true">5</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">Financials</p>
+          <h2 class="chapter-title" id="ch5-title">The Numbers in Context</h2>
+        </div>
+      </div>
+
+      <p class="prose">STL's financials tell a recovery story, not a steady compounder story — and that distinction is critical for how you read the valuation. Revenue peaked at ₹6,925 Cr in FY23, collapsed to ₹3,996 Cr by FY25 (a 42% decline driven by a global OFC inventory correction, where telecom operators globally burned through cable inventory rather than ordering new), and is now climbing back with FY26 at ₹4,745 Cr — up 18.8%. The company posted its first full-year profit since FY22 in FY26 at ₹56 Cr PAT.</p>
+
+      <h3 style="font-size:0.95rem; font-weight:700; color:var(--text-sub); text-transform:uppercase; letter-spacing:0.07em; margin:1.25rem 0 0.5rem;">P&amp;L Trajectory</h3>
+      <div class="stats-block" role="region" aria-label="Profit and loss highlights">
+        <div class="stat-row">
+          <span class="stat-label">Revenue — FY26</span>
+          <div>
+            <p class="stat-value stat-pos">₹4,745 Cr</p>
+            <p class="stat-note">+18.8% YoY | Q4 FY26: ₹1,441 Cr (+37% YoY)</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">EBITDA — FY26</span>
+          <div>
+            <p class="stat-value">₹628 Cr</p>
+            <p class="stat-note">13.2% margin | Q4 FY26: 15.1% | 6th consecutive quarterly expansion</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Underlying EBITDA margin (ex US tariff headwind)</span>
+          <div>
+            <p class="stat-value stat-pos">~19%</p>
+            <p class="stat-note">Guided to 20% at 70%+ capacity utilisation — management, Q3 FY26</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">PAT — FY26</span>
+          <div>
+            <p class="stat-value stat-pos">₹56 Cr</p>
+            <p class="stat-note">vs. –₹123 Cr in FY25 and –₹57 Cr in FY24 — return to profitability</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Free Cash Flow — FY26</span>
+          <div>
+            <p class="stat-value stat-pos">₹346 Cr</p>
+            <p class="stat-note">FY24: ₹544 Cr | FY25: ₹226 Cr | FCF consistently positive</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">ROCE — FY26</span>
+          <div>
+            <p class="stat-value stat-warn">7.75%</p>
+            <p class="stat-note">vs. 3% in FY24 &amp; FY25 — recovering but below cost of capital</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.95rem; font-weight:700; color:var(--text-sub); text-transform:uppercase; letter-spacing:0.07em; margin:1.25rem 0 0.5rem;">Balance Sheet &amp; Order Book</h3>
+      <div class="stats-block" role="region" aria-label="Balance sheet and order book">
+        <div class="stat-row">
+          <span class="stat-label">Net Debt — FY26 end</span>
+          <div>
+            <p class="stat-value stat-warn">₹1,128 Cr</p>
+            <p class="stat-note">Peak debt was ₹3,834 Cr in FY23 — significant deleveraging done</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Net Debt / EBITDA</span>
+          <div>
+            <p class="stat-value stat-warn">1.30x</p>
+            <p class="stat-note">Target &lt;1.2x by FY27 | FY23 peak was 4.3x</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Net Debt / Equity</span>
+          <div>
+            <p class="stat-value">0.5x</p>
+            <p class="stat-note">Manageable; promoter holding 44.44% (diluted 10pp via QIP in FY24)</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">Order Book — FY26 end</span>
+          <div>
+            <p class="stat-value stat-pos">₹7,309 Cr</p>
+            <p class="stat-note">+67% YoY vs ₹4,378 Cr in FY25 | FY24 peak: ₹10,290 Cr</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label">FY26 Order Intake</span>
+          <div>
+            <p class="stat-value stat-pos">+110% vs FY25</p>
+            <p class="stat-note">Largest single-year intake surge in company history</p>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size:0.95rem; font-weight:700; color:var(--text-sub); text-transform:uppercase; letter-spacing:0.07em; margin:1.25rem 0 0.5rem;">Valuation vs. Peers</h3>
+
+      <table class="data-table" role="table" aria-label="Peer comparison table">
+        <thead>
+          <tr>
+            <th scope="col">Company</th>
+            <th scope="col">Market Cap (Cr)</th>
+            <th scope="col">P/E</th>
+            <th scope="col">P/B</th>
+            <th scope="col">ROCE</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="highlight-row">
+            <td>Sterlite Tech (STLTECH)</td>
+            <td>₹20,492</td>
+            <td>430x</td>
+            <td>9.0x</td>
+            <td>7.8%</td>
+          </tr>
+          <tr>
+            <td>Tejas Networks</td>
+            <td>₹7,925</td>
+            <td>Loss</td>
+            <td>—</td>
+            <td>–14.6%</td>
+          </tr>
+          <tr>
+            <td>Valiant Communications</td>
+            <td>₹1,354</td>
+            <td>66.9x</td>
+            <td>—</td>
+            <td>21.1%</td>
+          </tr>
+          <tr>
+            <td>ADC India</td>
+            <td>₹1,098</td>
+            <td>59.8x</td>
+            <td>—</td>
+            <td>46.6%</td>
+          </tr>
+          <tr>
+            <td>Birla Cable</td>
+            <td>₹485</td>
+            <td>64.6x</td>
+            <td>—</td>
+            <td>5.1%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="insight-card amber" role="note" aria-label="Valuation context">
+        <p class="insight-label">What the Market is Pricing In</p>
+        <p class="insight-text">At 430x trailing PE and 9x book, the market is not valuing STL on today's earnings — it is valuing the inflection. The stock's 455% 1-year return from ₹67.6 reflects investors pricing in: (a) the FY25 trough was the bottom of the global OFC inventory cycle; (b) BEAD + AI data centre + BharatNet will compound revenue toward and beyond the ₹6,925 Cr FY23 peak; and (c) management guidance of 20% EBITDA margins at full utilisation implies ₹900–1,000 Cr EBITDA at peak — giving an EV/EBITDA of roughly 22x on normalised numbers, which is aggressive but not absurd for a company at this structural intersection. The key risk to this thesis is the US tariff situation — if a bilateral trade deal doesn't materialise, the path to 20% margins requires a meaningful US plant ramp, which takes time.</p>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 6 — RISKS
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch6-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--risk-border);" aria-hidden="true">6</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">Eyes Open</p>
+          <h2 class="chapter-title" id="ch6-title">Risks — What Could Go Wrong</h2>
+        </div>
+      </div>
+
+      <div class="risk-list" role="list" aria-label="Risk factors">
+
+        <article class="risk-item" role="listitem" aria-label="Risk 1: US tariff uncertainty">
+          <span class="risk-icon" aria-hidden="true">⚠️</span>
+          <div class="risk-content">
+            <p class="risk-title">US-India Tariff Standoff — Sustained Margin Ceiling</p>
+            <p class="risk-body">India currently faces 50% tariffs on optical cable exports to the US. This hit STL's Q3 FY26 EBITDA by ~760 basis points in a single quarter — equivalent to roughly ₹80–100 Cr per quarter in margin drag. Management is repricing contracts as they renew (12–15 month cycles) and ramping the SC plant. But if a US-India bilateral trade deal stalls indefinitely, full margin recovery requires a larger-than-planned US production ramp. A 20% EBITDA guide is credible with full US plant utilisation — without it, sustained margins above 14–15% are difficult.</p>
+            <p class="risk-signal">Signal: Watch tariff-adjusted EBITDA each quarter. Any guidance rollback on the 20% target is a red flag.</p>
+          </div>
+        </article>
+
+        <article class="risk-item" role="listitem" aria-label="Risk 2: Germanium supply risk">
+          <span class="risk-icon" aria-hidden="true">⚠️</span>
+          <div class="risk-content">
+            <p class="risk-title">Germanium Supply — China Controls the Raw Material</p>
+            <p class="risk-body">Germanium is a critical dopant in fiber-grade glass preforms. China controls the majority of global germanium supply and has begun regulating exports. STL acknowledged in the Q3 concall that "continued availability of germanium will be an important factor for manufacturing." The company is pursuing alternative global sources and using its China JV to access local germanium, but this remains a single-point-of-supply risk for the entire optical fiber industry — STL included. A hard Chinese export ban would affect every global fiber manufacturer, not just STL, but STL's exposure is real.</p>
+            <p class="risk-signal">Signal: Any announcement of further Chinese export restrictions on germanium or gallium.</p>
+          </div>
+        </article>
+
+        <article class="risk-item" role="listitem" aria-label="Risk 3: BSNL arbitration">
+          <span class="risk-icon" aria-hidden="true">⚠️</span>
+          <div class="risk-content">
+            <p class="risk-title">BSNL Arbitration — Contingent Liability Confirmed</p>
+            <p class="risk-body">In May 2026, the Delhi High Court dismissed STL's petition challenging a BSNL arbitral award. The contingent liability now rests with STL Networks Limited, a group entity. The exact quantum has not been publicly disclosed, but this is a live legal exposure. While structured to sit in a subsidiary (limiting direct STL P&amp;L impact), any large cash outflow from STL Networks could surface indirectly via intercompany obligations.</p>
+            <p class="risk-signal">Signal: Watch STL Networks-related disclosures in quarterly filings. Any provisioning announcement warrants investigation.</p>
+          </div>
+        </article>
+
+        <article class="risk-item" role="listitem" aria-label="Risk 4: US litigation">
+          <span class="risk-icon" aria-hidden="true">⚠️</span>
+          <div class="risk-content">
+            <p class="risk-title">US Litigation — STL's American Entity in Appeals</p>
+            <p class="risk-body">STL's US subsidiary is appealing a District Court judgement to the US Court of Appeals. A bond has been posted, and management says there is no immediate financial payout obligation. However, the appeal outcome is uncertain, and a court loss could result in a material cash outflow from the US entity — affecting the very operation that is meant to be the BEAD growth platform.</p>
+            <p class="risk-signal">Signal: Any US court ruling update on the appeals case.</p>
+          </div>
+        </article>
+
+        <article class="risk-item" role="listitem" aria-label="Risk 5: Order book conversion and execution delays">
+          <span class="risk-icon" aria-hidden="true">⚠️</span>
+          <div class="risk-content">
+            <p class="risk-title">Order Book Conversion Risk — BEAD and BharatNet Can Slip</p>
+            <p class="risk-body">STL's ₹7,309 Cr order book is the strongest forward signal in the investment case — but order books are promises, not revenues. BharatNet Phase 3 execution has been historically slower than announced. BEAD projects in the US are just now breaking ground; state-level procurement and execution could slip by a year or more. Hyperscaler data centre construction schedules can also shift. Any material delay in order book conversion would stretch the timeline for revenue recovery toward the FY23 peak.</p>
+            <p class="risk-signal">Signal: Watch quarterly order book execution rate. If open order book grows faster than revenues execute, check for delivery deferrals.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         CHAPTER 7 — WATCH SIGNALS
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <section aria-labelledby="ch7-title">
+      <div class="chapter-header">
+        <div class="chapter-num" style="background:var(--teal);" aria-hidden="true">7</div>
+        <div class="chapter-header-text">
+          <p class="chapter-eyebrow">Track Every Quarter</p>
+          <h2 class="chapter-title" id="ch7-title">Watch Signals — Five Numbers to Check in 5 Minutes</h2>
+        </div>
+      </div>
+
+      <div class="watch-list" role="list" aria-label="Quarterly watch signals">
+
+        <div class="watch-item" role="listitem" aria-label="Watch signal 1: EBITDA margin trajectory">
+          <div class="watch-dot amber" aria-hidden="true"></div>
+          <div class="watch-content">
+            <p class="watch-title">1. Reported EBITDA Margin (quarterly, after tariff impact)</p>
+            <p class="watch-body">Q4 FY26 came in at 15.1% — the sixth consecutive quarterly improvement. Management guidance is 20% at 70%+ capacity utilisation. The direction matters more than any single quarter's number. Check: is the tariff-adjusted margin improving as US contracts reprice? Is the US plant contributing more volume?</p>
+            <p class="watch-flag">Red flag: Reported margin falling below 12% for two consecutive quarters, or management rolling back the 20% guidance.</p>
+          </div>
+        </div>
+
+        <div class="watch-item" role="listitem" aria-label="Watch signal 2: Data centre revenue share">
+          <div class="watch-dot purple" aria-hidden="true"></div>
+          <div class="watch-content">
+            <p class="watch-title">2. Enterprise &amp; Data Centre Revenue as % of Total</p>
+            <p class="watch-body">Currently 20% (YTD FY26). Management guided 30% in 12–18 months (as of January 2026). This is the single clearest indicator of whether STL is successfully migrating up the value chain from commodity cable to premium AI-infrastructure connectivity. Data centre contracts carry better margins than standard telecom cable, so this metric drives both growth and margin expansion.</p>
+            <p class="watch-flag">Red flag: No progress toward 30% by Q2 FY27 — it would suggest hyperscaler wins are not converting to revenue.</p>
+          </div>
+        </div>
+
+        <div class="watch-item" role="listitem" aria-label="Watch signal 3: Order book size and composition">
+          <div class="watch-dot teal" aria-hidden="true"></div>
+          <div class="watch-content">
+            <p class="watch-title">3. Open Order Book Size and Geography Mix</p>
+            <p class="watch-body">FY26 ended at ₹7,309 Cr — 67% above FY25. Watch the absolute size but also the North America vs. India vs. Europe split. A rising North America share confirms BEAD is converting to real orders. A large BharatNet order in India would confirm Phase 3 execution is underway. The order book is roughly 1.5x annualised revenue — healthy coverage.</p>
+            <p class="watch-flag">Red flag: Order book shrinking for two consecutive quarters, especially if North America share falls.</p>
+          </div>
+        </div>
+
+        <div class="watch-item" role="listitem" aria-label="Watch signal 4: Net debt trajectory">
+          <div class="watch-dot blue" aria-hidden="true"></div>
+          <div class="watch-content">
+            <p class="watch-title">4. Net Debt-to-EBITDA Ratio</p>
+            <p class="watch-body">Currently 1.30x — down from 4.3x at the FY23 peak. Target is below 1.2x by FY27. Management also plans ₹2,000 Cr in capex for expansion while deleveraging — watch if they can genuinely do both. FCF has been positive for three consecutive years (₹544 Cr in FY24, ₹226 Cr in FY25, ₹346 Cr in FY26), which is the key enabler. Any large unexpected cash outflow (litigation, BharatNet penalty, intercompany) would strain the target.</p>
+            <p class="watch-flag">Red flag: Net Debt-to-EBITDA rising above 2.0x, or FCF turning negative for two consecutive quarters.</p>
+          </div>
+        </div>
+
+        <div class="watch-item" role="listitem" aria-label="Watch signal 5: US tariff and trade deal news">
+          <div class="watch-dot green" aria-hidden="true"></div>
+          <div class="watch-content">
+            <p class="watch-title">5. US-India Bilateral Trade Agreement News</p>
+            <p class="watch-body">This is the single biggest binary event on the horizon. An interim trade deal that reduces or eliminates tariffs on Indian optical cable exports to the US would unlock ~750–800 bps of EBITDA margin expansion almost immediately — potentially pushing STL to 18–19% reported EBITDA in a single quarter. Management described the deal as "imminent" in Q3 FY26. Watch trade negotiation headlines from both governments.</p>
+            <p class="watch-flag">Red flag: Official confirmation that negotiations have stalled or been formally suspended.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════════
+         VERDICT
+    ══════════════════════════════════════════════ -->
+    <hr class="chapter-divider" />
+    <article class="verdict-card" role="article" aria-labelledby="verdict-label">
+      <p class="verdict-label" id="verdict-label">Verdict — The One-Paragraph Summary</p>
+      <p class="verdict-text">STL sits at the intersection of three structural tailwinds — the $42.45 billion US BEAD broadband programme, an AI data centre buildout that demands 36x more fiber per rack than its predecessor, and India's BharatNet Phase 3 rural connectivity rollout — tailwinds that are not cyclical but policy-mandated and multi-year in nature. The quality signal in the financials is the debt story: borrowings collapsed from ₹3,834 Cr (FY23) to ₹1,942 Cr (FY26), free cash flow has been consistently positive through the trough, and FY26 marked the return to PAT profitability after two loss years. The near-term catalyst is a US-India bilateral trade deal, which management repeatedly described as "imminent" — resolution would add roughly 750 basis points of EBITDA margin near-instantly, likely triggering a sharp re-rating. At ₹420, the market already reflects a great deal of this optimism at 430x trailing earnings and 9x book; the stock is valued on normalised EBITDA that has not yet arrived. For investors with 2–3 year horizon, the thesis is sound — but the entry price demands execution on margin recovery and US plant ramp-up without further delays. This is early middle chapter: the worst is behind, but the proof-of-delivery lies ahead.</p>
+    </article>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>Brief generated: 17 May 2026 · Sources: Screener.in, STL Q3 FY26 Earnings Call Transcript (Jan 23, 2026), STL FY26 Results Press Release (Apr 29, 2026), BSE filings, CRU Intelligence, Allied Market Research, NTIA BEAD Program, SNS Insider Fiber Optics Market Report.</p>
+    <p style="margin-top:0.5rem;">This is a research brief for informational purposes only. Not investment advice. All financial data from public disclosures.</p>
+  </footer>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const btn  = document.getElementById('themeToggle');
+      if (html.getAttribute('data-theme') === 'dark') {
+        html.removeAttribute('data-theme');
+        btn.textContent = '🌙 Night';
+        btn.setAttribute('aria-pressed', 'false');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        btn.textContent = '☀️ Day';
+        btn.setAttribute('aria-pressed', 'true');
+      }
+    }
+    // Initialise aria state
+    document.getElementById('themeToggle').setAttribute('aria-pressed', 'false');
+  </script>
+</body>
+</html>

@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEE Development Engineers Ltd — Company Story</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root {
+    --navy: #0f2545;
+    --blue: #1a3c72;
+    --accent: #e8541a;
+    --gold: #f5a623;
+    --green: #22884a;
+    --red: #c0392b;
+    --light-bg: #f5f7fa;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --muted: #6b7280;
+    --border: #e2e8f0;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--light-bg); color: var(--text); line-height: 1.6; }
+
+  /* HERO */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 60%, #2a5298 100%);
+    color: white; padding: 48px 40px 40px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 20px; }
+  .company-label { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: rgba(255,255,255,0.6); margin-bottom: 6px; }
+  .company-name { font-size: 32px; font-weight: 700; letter-spacing: -0.5px; }
+  .company-sub { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 4px; }
+  .ticker-badge {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 8px; padding: 12px 20px; text-align: right; backdrop-filter: blur(4px);
+  }
+  .ticker-badge .ticker { font-size: 18px; font-weight: 700; letter-spacing: 1px; }
+  .ticker-badge .price { font-size: 28px; font-weight: 800; }
+  .ticker-badge .change { font-size: 12px; color: rgba(255,255,255,0.65); margin-top: 2px; }
+
+  .hero-metrics { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-top: 32px; }
+  @media (max-width: 900px) { .hero-metrics { grid-template-columns: repeat(3, 1fr); } }
+  .hero-metric { background: rgba(255,255,255,0.08); border-radius: 8px; padding: 12px 14px; border: 1px solid rgba(255,255,255,0.12); }
+  .hero-metric .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: rgba(255,255,255,0.55); margin-bottom: 4px; }
+  .hero-metric .value { font-size: 18px; font-weight: 700; }
+  .hero-metric .sub { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+
+  /* ALERT BANNER */
+  .alert-banner {
+    background: linear-gradient(90deg, #1a4731, #22884a);
+    color: white; padding: 12px 40px;
+    display: flex; align-items: center; gap: 12px; font-size: 13px;
+  }
+  .alert-banner .dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: pulse 2s infinite; flex-shrink: 0; }
+  @keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+  .alert-banner strong { font-weight: 700; }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+
+  /* SECTIONS */
+  .section-title {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--accent); font-weight: 700; margin-bottom: 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .h2 { font-size: 22px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .lead { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+
+  /* CARDS */
+  .card { background: var(--card-bg); border-radius: 12px; padding: 24px; border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 900px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+  /* STAT CARDS */
+  .stat-card { background: var(--card-bg); border-radius: 12px; padding: 20px 22px; border: 1px solid var(--border); }
+  .stat-card .s-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+  .stat-card .s-value { font-size: 26px; font-weight: 800; color: var(--navy); }
+  .stat-card .s-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .stat-card .s-delta { font-size: 12px; font-weight: 600; margin-top: 6px; padding: 3px 8px; border-radius: 20px; display: inline-block; }
+  .delta-up { background: #d1fae5; color: #065f46; }
+  .delta-down { background: #fee2e2; color: #991b1b; }
+
+  /* THESIS PILLARS */
+  .pillar {
+    background: var(--card-bg); border-radius: 12px; padding: 20px;
+    border: 1px solid var(--border); border-left: 4px solid var(--accent);
+  }
+  .pillar .p-icon { font-size: 24px; margin-bottom: 10px; }
+  .pillar .p-title { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .pillar .p-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* TABLES */
+  .table-wrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th {
+    background: var(--navy); color: white; padding: 10px 14px;
+    text-align: right; font-weight: 600; white-space: nowrap;
+  }
+  thead th:first-child { text-align: left; }
+  tbody tr:nth-child(even) { background: #f8fafc; }
+  tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border); text-align: right; }
+  tbody td:first-child { text-align: left; font-weight: 500; }
+  .highlight-row { background: #fffbeb !important; font-weight: 700; }
+  .highlight-row td { color: var(--navy); }
+
+  /* CONCALL QUOTES */
+  .quote-card {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    color: white; border-radius: 12px; padding: 24px 28px;
+    position: relative; margin-bottom: 16px;
+  }
+  .quote-card::before { content: '"'; font-size: 80px; opacity: 0.1; position: absolute; top: -10px; left: 16px; line-height: 1; }
+  .quote-card .q-text { font-size: 14px; line-height: 1.75; font-style: italic; position: relative; }
+  .quote-card .q-attr { margin-top: 14px; font-size: 12px; color: rgba(255,255,255,0.6); font-style: normal; }
+  .quote-card .q-quarter { display: inline-block; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 2px 10px; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-left: 8px; }
+
+  /* SEGMENT BAR */
+  .seg-bar { margin-bottom: 14px; }
+  .seg-bar .seg-label { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+  .seg-bar .seg-label span:first-child { color: var(--text); font-weight: 500; }
+  .seg-bar .seg-label span:last-child { color: var(--muted); }
+  .seg-track { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .seg-fill { height: 100%; border-radius: 4px; }
+
+  /* MILESTONES */
+  .timeline { position: relative; padding-left: 24px; }
+  .timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 20px; }
+  .tl-dot { position: absolute; left: -21px; top: 3px; width: 12px; height: 12px; border-radius: 50%; border: 2px solid white; }
+  .tl-dot.green { background: var(--green); }
+  .tl-dot.orange { background: var(--accent); }
+  .tl-dot.blue { background: var(--blue); }
+  .tl-dot.gold { background: var(--gold); }
+  .tl-date { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 3px; }
+  .tl-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .tl-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* RISK ITEMS */
+  .risk-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-badge { width: 8px; height: 8px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .risk-badge.high { background: var(--red); }
+  .risk-badge.med { background: var(--gold); }
+  .risk-badge.low { background: var(--green); }
+  .risk-title { font-size: 13px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+  .risk-body { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+  /* FOOTER */
+  .footer {
+    background: var(--navy); color: rgba(255,255,255,0.5);
+    text-align: center; padding: 24px 40px; font-size: 11px; line-height: 1.6; margin-top: 48px;
+  }
+
+  .mb8 { margin-bottom: 8px; }
+  .mb16 { margin-bottom: 16px; }
+  .mb24 { margin-bottom: 24px; }
+  .mb32 { margin-bottom: 32px; }
+  .mt8 { margin-top: 8px; }
+  .mt16 { margin-top: 16px; }
+  .mt24 { margin-top: 24px; }
+  .mt32 { margin-top: 32px; }
+
+  .tag { display: inline-block; background: #e0e7ff; color: #3730a3; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 8px; border-radius: 20px; margin: 2px; }
+  .tag.green { background: #d1fae5; color: #065f46; }
+  .tag.orange { background: #ffedd5; color: #9a3412; }
+
+  .guidance-box {
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 1px solid #f59e0b; border-radius: 12px; padding: 20px 24px;
+  }
+  .guidance-box .g-title { font-size: 13px; font-weight: 700; color: #92400e; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .guidance-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #fde68a; font-size: 13px; }
+  .guidance-row:last-child { border-bottom: none; }
+  .guidance-row .g-metric { color: #78350f; }
+  .guidance-row .g-val { font-weight: 700; color: var(--navy); }
+
+  .chart-container { position: relative; height: 260px; }
+  .chart-sm { position: relative; height: 200px; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-top">
+    <div>
+      <div class="company-label">Company Story · NSE:DEEDEV · BSE:544198</div>
+      <div class="company-name">DEE Development Engineers Ltd</div>
+      <div class="company-sub">India's largest process piping solutions manufacturer by installed capacity</div>
+      <div style="margin-top:14px;">
+        <span class="tag">Process Piping</span>
+        <span class="tag">Oil &amp; Gas</span>
+        <span class="tag">Power</span>
+        <span class="tag">Seamless Pipes</span>
+        <span class="tag">Exports</span>
+      </div>
+    </div>
+    <div class="ticker-badge">
+      <div class="ticker">NSE: DEEDEV</div>
+      <div class="price">₹321</div>
+      <div class="change">Market Cap: ₹2,226 Cr &nbsp;|&nbsp; As of Apr 2026</div>
+    </div>
+  </div>
+  <div class="hero-metrics">
+    <div class="hero-metric">
+      <div class="label">Revenue TTM</div>
+      <div class="value">₹1,067 Cr</div>
+      <div class="sub">+36% YoY growth</div>
+    </div>
+    <div class="hero-metric">
+      <div class="label">OPM (TTM)</div>
+      <div class="value">18%</div>
+      <div class="sub">vs 16% FY25</div>
+    </div>
+    <div class="hero-metric">
+      <div class="label">Order Book</div>
+      <div class="value">₹1,940 Cr</div>
+      <div class="sub">Mar 2026 (latest)</div>
+    </div>
+    <div class="hero-metric">
+      <div class="label">Stock P/E</div>
+      <div class="value">26.4x</div>
+      <div class="sub">P/BV: 2.66x</div>
+    </div>
+    <div class="hero-metric">
+      <div class="label">ROCE</div>
+      <div class="value">9.4%</div>
+      <div class="sub">ROE: 7.0%</div>
+    </div>
+    <div class="hero-metric">
+      <div class="label">Promoter Hold.</div>
+      <div class="value">70.2%</div>
+      <div class="sub">Stable; Dec 2025</div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE ALERT -->
+<div class="alert-banner">
+  <div class="dot"></div>
+  <div>
+    <strong>Latest (Apr 2026):</strong> Order book closed Mar 2026 at <strong>₹1,940 Cr</strong> — up 49% from ₹1,303 Cr in Sep 2025. Seamless pipe plant commenced commercial production <strong>19 Mar 2026</strong> (7,000 MT/yr; ₹89.74 Cr capex; ₹58 Cr first order in hand). PSERC biomass tariff resolved at ₹5.224/kWh — margin drag removed.
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- INVESTMENT THESIS -->
+  <div class="mb32">
+    <div class="section-title">Investment Thesis</div>
+    <div class="h2">Why DEE Now?</div>
+    <p class="lead">DEE is at an inflection point — new capacity is live, the order book is at an all-time high, and the multi-year drag from the biomass tariff dispute has been resolved. The company is executing against a capex supercycle in India's oil & gas and power sectors.</p>
+    <div class="grid-3 mb24">
+      <div class="pillar">
+        <div class="p-icon">🏗️</div>
+        <div class="p-title">Capacity Unlock — Right Now</div>
+        <div class="p-body">Anjar facility scaled 5x (6,000 → 30,000 MT); seamless pipe plant live Mar 2026. Peak revenue potential: <strong>₹2,500–3,000 Cr</strong> from current facilities vs ~₹1,067 Cr TTM.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">📋</div>
+        <div class="p-title">Order Book at All-Time High</div>
+        <div class="p-body">₹1,940 Cr as of March 2026 — 1.8x TTM revenue — providing 18+ months of revenue visibility. Oil & Gas (60%) and Power (40%) split offers diversification.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">🌍</div>
+        <div class="p-title">Global Leader, India-Listed</div>
+        <div class="p-body">Among the world's top process piping providers by technical capability (D&B report). Serves 27 countries including USA, Japan, Germany, Canada with export revenues at ~38% of total.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">📈</div>
+        <div class="p-title">Margin Expansion Underway</div>
+        <div class="p-body">OPM expanding: 12% (FY23) → 16% (FY25) → 18% (TTM). Anjar logistics savings, seamless pipe backward integration, and biomass drag removal should push margins to 19–20%.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">⚡</div>
+        <div class="p-title">Sector Tailwinds are Structural</div>
+        <div class="p-body">India's refinery capacity to reach 450 MTPA by FY30 (+76%); 80 GW coal power addition by 2031; chemical capex pipeline of ₹5+ lakh Cr. DEE is a critical vendor across all three.</div>
+      </div>
+      <div class="pillar">
+        <div class="p-icon">🔬</div>
+        <div class="p-title">New Verticals Building Optionality</div>
+        <div class="p-body">Entered green hydrogen (MoU with international partner); acquired Molsieve Designs for H₂ purification; expanding into pilot plants, nuclear, pharma, and semiconductor piping.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIAL PERFORMANCE -->
+  <div class="mb32">
+    <div class="section-title">Financial Performance</div>
+    <div class="h2">Consistent Growth, Accelerating Momentum</div>
+
+    <div class="grid-4 mb24">
+      <div class="stat-card">
+        <div class="s-label">Q3 FY26 Revenue</div>
+        <div class="s-value">₹287 Cr</div>
+        <div class="s-delta delta-up">+77% YoY</div>
+        <div class="s-sub">Dec 2025 quarter</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">Q3 FY26 Op. EBITDA</div>
+        <div class="s-value">₹48 Cr</div>
+        <div class="s-delta delta-up">Margin: 16.6%</div>
+        <div class="s-sub">vs 3.5% in Q3 FY25</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">9M FY26 Revenue</div>
+        <div class="s-value">₹780 Cr</div>
+        <div class="s-delta delta-up">+44% YoY</div>
+        <div class="s-sub">Apr–Dec 2025</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">9M FY26 PAT</div>
+        <div class="s-value">₹50 Cr</div>
+        <div class="s-delta delta-up">+308% YoY</div>
+        <div class="s-sub">Excl. one-time items</div>
+      </div>
+    </div>
+
+    <div class="grid-2 mb24">
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Quarterly Revenue (₹ Cr)</div>
+        <div class="chart-container">
+          <canvas id="revChart"></canvas>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Quarterly Operating Margin (%)</div>
+        <div class="chart-container">
+          <canvas id="marginChart"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANNUAL P&L TABLE -->
+    <div class="card mb24">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Annual Profit &amp; Loss Summary (₹ Cr, Consolidated)</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>FY20</th><th>FY21</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>TTM</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Revenue</td><td>723</td><td>495</td><td>461</td><td>596</td><td>789</td><td>827</td><td>1,067</td></tr>
+            <tr><td>Operating Profit</td><td>87</td><td>57</td><td>68</td><td>74</td><td>109</td><td>129</td><td>191</td></tr>
+            <tr class="highlight-row"><td>OPM %</td><td>12%</td><td>11%</td><td>15%</td><td>12%</td><td>14%</td><td>16%</td><td>18%</td></tr>
+            <tr><td>EBITDA (Op. Profit)</td><td>87</td><td>57</td><td>68</td><td>74</td><td>109</td><td>129</td><td>191</td></tr>
+            <tr><td>Interest</td><td>43</td><td>30</td><td>28</td><td>34</td><td>47</td><td>45</td><td>52</td></tr>
+            <tr><td>Depreciation</td><td>33</td><td>36</td><td>36</td><td>38</td><td>45</td><td>49</td><td>52</td></tr>
+            <tr><td>PAT</td><td>13</td><td>14</td><td>8</td><td>13</td><td>26</td><td>44</td><td>81</td></tr>
+            <tr class="highlight-row"><td>PAT Margin %</td><td>1.8%</td><td>2.8%</td><td>1.7%</td><td>2.1%</td><td>3.2%</td><td>5.1%</td><td>7.6%</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- QUARTERLY TABLE -->
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Quarterly Results — Last 12 Quarters (₹ Cr, Consolidated)</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>Mar'23</th><th>Jun'23</th><th>Sep'23</th><th>Dec'23</th>
+              <th>Mar'24</th><th>Jun'24</th><th>Sep'24</th><th>Dec'24</th>
+              <th>Mar'25</th><th>Jun'25</th><th>Sep'25</th><th>Dec'25</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Sales</td><td>165</td><td>157</td><td>179</td><td>210</td><td>243</td><td>185</td><td>194</td><td>162</td><td>286</td><td>224</td><td>270</td><td>287</td></tr>
+            <tr><td>Op. Profit</td><td>23</td><td>14</td><td>24</td><td>30</td><td>35</td><td>25</td><td>30</td><td>6</td><td>64</td><td>36</td><td>44</td><td>48</td></tr>
+            <tr class="highlight-row"><td>OPM %</td><td>14%</td><td>9%</td><td>13%</td><td>14%</td><td>14%</td><td>13%</td><td>15%</td><td>3%</td><td>22%</td><td>16%</td><td>16%</td><td>17%</td></tr>
+            <tr><td>Interest</td><td>—</td><td>8</td><td>10</td><td>10</td><td>12</td><td>11</td><td>7</td><td>10</td><td>12</td><td>11</td><td>14</td><td>15</td></tr>
+            <tr><td>PAT</td><td>12</td><td>-5</td><td>10</td><td>9</td><td>12</td><td>3</td><td>22</td><td>-13</td><td>32</td><td>13</td><td>18</td><td>19</td></tr>
+            <tr><td>EPS (₹)</td><td>11.36</td><td>-4.32</td><td>1.86</td><td>1.70</td><td>2.24</td><td>0.46</td><td>3.22</td><td>-1.93</td><td>4.56</td><td>1.91</td><td>2.58</td><td>2.64</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="font-size:11px;color:var(--muted);margin-top:10px;">* Dec'24 PAT negative due to one-time ₹42 Cr labour code charge. Excluding this, core business profitable.</p>
+    </div>
+  </div>
+
+  <!-- BALANCE SHEET & RATIOS -->
+  <div class="mb32">
+    <div class="section-title">Balance Sheet &amp; Key Ratios</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Balance Sheet Snapshot (₹ Cr, Consolidated)</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th><th>Sep'25</th></tr></thead>
+            <tbody>
+              <tr><td>Equity + Reserves</td><td>412</td><td>424</td><td>451</td><td>801</td><td>837</td></tr>
+              <tr><td>Borrowings</td><td>290</td><td>364</td><td>460</td><td>431</td><td>585</td></tr>
+              <tr><td>Fixed Assets</td><td>354</td><td>381</td><td>414</td><td>422</td><td>538</td></tr>
+              <tr><td>Total Assets</td><td>843</td><td>963</td><td>1,208</td><td>1,594</td><td>1,832</td></tr>
+              <tr class="highlight-row"><td>Net Debt/Equity</td><td>0.70x</td><td>0.85x</td><td>1.02x</td><td>0.53x</td><td>0.64x</td></tr>
+              <tr><td>Net Debt/EBITDA</td><td>4.49x</td><td>5.23x</td><td>4.47x</td><td>3.43x</td><td>3.36x</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Efficiency &amp; Return Ratios</div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Ratio</th><th>FY22</th><th>FY23</th><th>FY24</th><th>FY25</th></tr></thead>
+            <tbody>
+              <tr><td>ROCE %</td><td>6%</td><td>7%</td><td>10%</td><td>9%</td></tr>
+              <tr><td>ROE %</td><td>2%</td><td>3%</td><td>6%</td><td>7%</td></tr>
+              <tr><td>Debtor Days</td><td>122</td><td>106</td><td>90</td><td>109</td></tr>
+              <tr><td>Inventory Days</td><td>514</td><td>555</td><td>533</td><td>738</td></tr>
+              <tr class="highlight-row"><td>Working Capital Days</td><td>66</td><td>49</td><td>18</td><td>106</td></tr>
+              <tr><td>Cash Conv. Cycle</td><td>416</td><td>407</td><td>323</td><td>534</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:11px;color:var(--muted);margin-top:10px;">⚠ High inventory/CCC is structural for project-based EPC businesses. Inventory held against firm orders, not speculative.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER BOOK & CAPACITY -->
+  <div class="mb32">
+    <div class="section-title">Order Book &amp; Capacity Story</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Order Book Evolution</div>
+        <div class="chart-sm">
+          <canvas id="orderChart"></canvas>
+        </div>
+        <div style="margin-top:16px;">
+          <div class="seg-bar">
+            <div class="seg-label"><span>Oil &amp; Gas (Domestic + Export)</span><span>~60%</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:60%;background:#1a3c72;"></div></div>
+          </div>
+          <div class="seg-bar">
+            <div class="seg-label"><span>Power (incl. Nuclear)</span><span>~37%</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:37%;background:#e8541a;"></div></div>
+          </div>
+          <div class="seg-bar">
+            <div class="seg-label"><span>Process Industries</span><span>~3%</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:3%;background:#f5a623;"></div></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted);margin-top:8px;">Order book breakdown as of Sep 2025. Domestic: 40% | Overseas: 60%</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Manufacturing Capacity (MT/yr)</div>
+        <div class="chart-sm">
+          <canvas id="capChart"></canvas>
+        </div>
+        <div style="margin-top:12px;">
+          <div class="seg-bar">
+            <div class="seg-label"><span>Palwal (Power Sector Focus)</span><span>36,000 MT</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:28%;background:#1a3c72;"></div></div>
+          </div>
+          <div class="seg-bar">
+            <div class="seg-label"><span>Anjar (Oil &amp; Gas Focus)</span><span>63,000 MT</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:50%;background:#e8541a;"></div></div>
+          </div>
+          <div class="seg-bar">
+            <div class="seg-label"><span>Bangkok + Others</span><span>20,500 MT</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:16%;background:#f5a623;"></div></div>
+          </div>
+          <div class="seg-bar">
+            <div class="seg-label"><span>Seamless Pipe Plant (NEW)</span><span>7,000 MT</span></div>
+            <div class="seg-track"><div class="seg-fill" style="width:6%;background:#22884a;"></div></div>
+          </div>
+          <div style="font-size:11px;color:var(--muted);margin-top:4px;"><strong>Total: ~1,27,500 MT + 7,000 MT seamless.</strong> Peak revenue potential: ₹2,500–3,000 Cr.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MANAGEMENT GUIDANCE -->
+  <div class="mb32">
+    <div class="section-title">Management Guidance</div>
+    <div class="grid-2">
+      <div class="guidance-box">
+        <div class="g-title">📊 FY26 / FY27 Guidance</div>
+        <div class="guidance-row"><span class="g-metric">FY26 Revenue Target</span><span class="g-val">~₹1,300 Cr</span></div>
+        <div class="guidance-row"><span class="g-metric">Core EBITDA Margin (FY26)</span><span class="g-val">16–18%</span></div>
+        <div class="guidance-row"><span class="g-metric">Core EBITDA Margin (FY27)</span><span class="g-val">18–20%</span></div>
+        <div class="guidance-row"><span class="g-metric">FY26 Order Inflows Target</span><span class="g-val">₹1,200 Cr+</span></div>
+        <div class="guidance-row"><span class="g-metric">Mar'26 Order Book (Actual)</span><span class="g-val">₹1,940 Cr ✅</span></div>
+        <div class="guidance-row"><span class="g-metric">Peak Revenue Potential</span><span class="g-val">₹2,500–3,000 Cr</span></div>
+        <div class="guidance-row"><span class="g-metric">3–5 Year Revenue Vision</span><span class="g-val">3x Current (~₹3,000 Cr)</span></div>
+        <div class="guidance-row"><span class="g-metric">Seamless Pipe Plant Peak Revenue</span><span class="g-val">₹450 Cr/yr (at optm.)</span></div>
+        <div class="guidance-row"><span class="g-metric">Seamless Pipe Plant IRR</span><span class="g-val">~30–35%</span></div>
+        <div class="guidance-row"><span class="g-metric">FY26 Capex (Core)</span><span class="g-val">~₹100 Cr</span></div>
+      </div>
+      <div>
+        <div class="quote-card mb16">
+          <div class="q-text">"We are pleased to announce a very strong performance for the quarter and half year ended September 30, 2025. Operating Income for the quarter stood at ₹2,700 Million, reflecting a strong year-on-year growth of 39.2%. Operating EBITDA rose 47.9% with margins expanding by 96 bps to 16.3%."</div>
+          <div class="q-attr">— Krishan Lalit Bansal, CMD <span class="q-quarter">Q2 FY26</span></div>
+        </div>
+        <div class="quote-card">
+          <div class="q-text">"On a maximum utilization of our capacity, our Anjar unit can produce revenue of ₹800–1,000 Cr, whereas our Palwal facility can produce ₹1,300–1,500 Cr. So, overall, with our total capacities till date, we can produce overall revenue somewhere from ₹2,500 to ₹3,000 Cr."</div>
+          <div class="q-attr">— Sameer Agarwal, CFO <span class="q-quarter">Q1 FY26</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REVENUE SEGMENTATION -->
+  <div class="mb32">
+    <div class="section-title">Revenue Segmentation — H1 FY26</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">By Segment (H1 FY26, ₹ Mn)</div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Piping Division</span><span>₹4,385 Mn (88.8%)</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:88.8%;background:var(--navy);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Heavy Fabrication</span><span>₹294 Mn (5.9%)</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:5.9%;background:var(--accent);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Power Division (Biomass)</span><span>₹254 Mn (5.2%)</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:5.2%;background:var(--gold);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Gas Plants</span><span>₹5 Mn (0.1%)</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:0.1%;background:var(--green);"></div></div>
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">By Sector &amp; Geography (H1 FY26 Revenue)</div>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:10px;font-weight:600;">BY SECTOR</div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Oil &amp; Gas</span><span>49.8%</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:49.8%;background:var(--navy);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Power (incl. Nuclear)</span><span>38.9%</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:38.9%;background:var(--accent);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>Process &amp; Chemical</span><span>11.3%</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:11.3%;background:var(--gold);"></div></div>
+        </div>
+        <div style="font-size:12px;color:var(--muted);margin:14px 0 10px;font-weight:600;">BY GEOGRAPHY</div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>India (Domestic)</span><span>62.3%</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:62.3%;background:var(--green);"></div></div>
+        </div>
+        <div class="seg-bar">
+          <div class="seg-label"><span>International Exports</span><span>37.7%</span></div>
+          <div class="seg-track"><div class="seg-fill" style="width:37.7%;background:#7c3aed;"></div></div>
+        </div>
+        <div style="font-size:11px;color:var(--muted);margin-top:8px;">Exports to 27 countries: USA, Japan, Germany, Canada, Italy, Thailand, Malaysia…</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KEY MILESTONES -->
+  <div class="mb32">
+    <div class="section-title">Key Milestones &amp; Recent Developments</div>
+    <div class="grid-2">
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:20px;">Recent Developments (FY26)</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-dot green"></div>
+            <div class="tl-date">Mar 2026 (Latest)</div>
+            <div class="tl-title">Order Book hits ₹1,940 Cr all-time high</div>
+            <div class="tl-body">March close order book at ₹1,940.07 Cr — 49% higher than Sep 2025 level. Strong inflows from both oil &amp; gas and power sectors.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot green"></div>
+            <div class="tl-date">19 Mar 2026</div>
+            <div class="tl-title">Seamless Pipe Plant — Commercial Production Starts</div>
+            <div class="tl-body">7,000 MT/yr plant at Anjar, Gujarat operational. ₹89.74 Cr capex. ₹58 Cr first order already in hand. Peak revenue potential: ₹450 Cr/yr at 30–35% IRR. Key backward integration step.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot green"></div>
+            <div class="tl-date">Mar 2026</div>
+            <div class="tl-title">PSERC Biomass Tariff Resolved</div>
+            <div class="tl-body">PSERC fixed tariff at ₹5.224/kWh for 6MW Muktsar plant; ₹5.80 Cr retroactive recovery. FY27 annual revenue ~₹47.71 Cr. Removes persistent drag on consolidated EBITDA.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot orange"></div>
+            <div class="tl-date">Sep 2025</div>
+            <div class="tl-title">Anjar Facility II Commissioned</div>
+            <div class="tl-body">Added 15,000 MT to Anjar, taking total capacity (excl. heavy fab) from 6,000 to 30,000 MT. Dedicated to Oil &amp; Gas — frees Palwal for Power sector, reducing logistics costs significantly.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot blue"></div>
+            <div class="tl-date">Q1 FY26</div>
+            <div class="tl-title">Green Hydrogen MoU &amp; Molsieve Acquisition</div>
+            <div class="tl-body">Strategic MoU with international clean-tech partner for modular hydrogen production systems in India &amp; Thailand. Acquired majority stake in Molsieve Designs for ultra-pure H₂ purification (up to 99.9999% purity).</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-dot gold"></div>
+            <div class="tl-date">Jun 2024</div>
+            <div class="tl-title">IPO — Listed on BSE &amp; NSE</div>
+            <div class="tl-body">Successful listing on June 26, 2024. Capital raised used to fund Anjar expansion and reduce debt.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:20px;">Key Q&amp;A Insights from Concalls</div>
+        <div style="margin-bottom:16px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">On US Tariff Risk</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.6;">"Only ₹23 Cr of our ₹1,226 Cr order book is for USA shipment from India — just 2%. Our HSN codes are largely outside the tariff ambit. We do not foresee any material impact." <span style="font-size:11px;color:var(--muted);">— Mgmt, Q1 FY26</span></div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px;margin-bottom:16px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">On Working Capital / Inventory</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.6;">"Our inventory levels are aligned with our order book, not past sales. We maintain inventory based on current orders — which requires holding significant stock to meet project specifications." <span style="font-size:11px;color:var(--muted);">— CFO, Q3 FY26</span></div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px;margin-bottom:16px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">On Nuclear / New Sectors</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.6;">"We are in advanced discussions with NPCIL and private players to secure contracts in nuclear. We're also targeting semiconductor and pharma piping as new growth verticals." <span style="font-size:11px;color:var(--muted);">— Mgmt, Q3 FY26</span></div>
+        </div>
+        <div style="border-top:1px solid var(--border);padding-top:16px;">
+          <div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:6px;">On Funding Growth</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.6;">"We are presently looking to fulfill working capital needs from borrowings. Going forward, depending on revenue prospects, we may explore other options [equity] with Board approval." <span style="font-size:11px;color:var(--muted);">— CFO, Q1 FY26</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SHAREHOLDING -->
+  <div class="mb32">
+    <div class="section-title">Shareholding Pattern</div>
+    <div class="card">
+      <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:16px;">Shareholding Trend (%)</div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>Category</th><th>Jun'24</th><th>Sep'24</th><th>Dec'24</th><th>Mar'25</th><th>Jun'25</th><th>Sep'25</th><th>Dec'25</th></tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row"><td>Promoters</td><td>70.18%</td><td>70.17%</td><td>70.17%</td><td>70.29%</td><td>70.22%</td><td>70.22%</td><td>70.18%</td></tr>
+            <tr><td>FIIs</td><td>5.85%</td><td>2.23%</td><td>0.83%</td><td>0.65%</td><td>0.81%</td><td>0.79%</td><td>0.78%</td></tr>
+            <tr><td>DIIs (MFs + Others)</td><td>12.11%</td><td>16.16%</td><td>16.53%</td><td>17.43%</td><td>17.33%</td><td>16.60%</td><td>14.87%</td></tr>
+            <tr><td>Public</td><td>11.86%</td><td>11.43%</td><td>12.46%</td><td>11.63%</td><td>11.65%</td><td>12.39%</td><td>14.17%</td></tr>
+            <tr><td>No. of Shareholders</td><td>67,136</td><td>55,246</td><td>54,609</td><td>51,116</td><td>50,039</td><td>49,098</td><td>48,034</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:14px;font-size:12px;color:var(--muted);">
+        Key MF holders: Kotak MF, LIC MF, Tata MF, Aditya Birla MF, HDFC MF, Mavira AMC. DII holding declined from 17.4% (Mar'25) to 14.9% (Dec'25) — worth monitoring. Promoter stake stable. Retail investors reducing (shareholder count fell from 67K to 48K post-IPO).
+      </div>
+    </div>
+  </div>
+
+  <!-- RISKS -->
+  <div class="mb32">
+    <div class="section-title">Key Risks &amp; Mitigants</div>
+    <div class="card">
+      <div class="risk-item">
+        <div class="risk-badge med"></div>
+        <div>
+          <div class="risk-title">Working Capital Intensity &amp; Debt</div>
+          <div class="risk-body">Cash Conversion Cycle stretched to 534 days (FY25). Net Debt/Equity at 0.64x and rising (Sep'25). CARE A-rated. The business is inherently capital intensive due to project-based nature — inventory is held against firm orders, not speculative. Management has flagged possible equity raise if growth accelerates beyond borrowing capacity.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge med"></div>
+        <div>
+          <div class="risk-title">DII Selling Pressure</div>
+          <div class="risk-body">Domestic institutional holding declined from 17.4% to 14.9% in Dec 2025. If MF redemption pressure continues, near-term price could remain subdued despite strong fundamentals.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low"></div>
+        <div>
+          <div class="risk-title">Biomass Power Segment (Now Resolving)</div>
+          <div class="risk-body">PSERC tariff revision had suppressed consolidated EBITDA by ~2% for several quarters. Now resolved at ₹5.224/kWh — FY27 power revenue estimated at ₹47.71 Cr with positive EBITDA contribution.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low"></div>
+        <div>
+          <div class="risk-title">US Tariff &amp; Export Risk</div>
+          <div class="risk-body">Only 2% of order book is for USA shipment. HSN codes for piping largely outside tariff ambit (confirmed by management). Thailand facility exports to USA face 19% tariff (₹32 Cr exposure only). Overall impact assessed as minimal.</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge med"></div>
+        <div>
+          <div class="risk-title">Order Execution Concentration</div>
+          <div class="risk-body">Large orders from few key clients (Mitsubishi, Toshiba, JSW, ExxonMobil) mean lumpy revenue. Single project delays can meaningfully shift quarterly numbers — as seen in Dec'24 (revenue dipped to ₹162 Cr).</div>
+        </div>
+      </div>
+      <div class="risk-item">
+        <div class="risk-badge low"></div>
+        <div>
+          <div class="risk-title">New Capacity Ramp-up Risk</div>
+          <div class="risk-body">Both Anjar Facility II and the seamless pipe plant are newly operational. Ramp-up to optimal utilization takes time. Management guided seamless pipe plant at peak ₹450 Cr/yr revenue — this will take 2–3 years to fully achieve.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPOUNDED GROWTH -->
+  <div class="mb32">
+    <div class="section-title">Compounded Growth Rates</div>
+    <div class="grid-4">
+      <div class="stat-card">
+        <div class="s-label">Revenue CAGR (3yr)</div>
+        <div class="s-value">22%</div>
+        <div class="s-sub">FY22–FY25</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">Revenue CAGR (TTM)</div>
+        <div class="s-value">36%</div>
+        <div class="s-sub">Accelerating</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">Profit CAGR (3yr)</div>
+        <div class="s-value">74%</div>
+        <div class="s-sub">FY22–FY25</div>
+      </div>
+      <div class="stat-card">
+        <div class="s-label">Profit CAGR (TTM)</div>
+        <div class="s-value">251%</div>
+        <div class="s-sub">Sharp acceleration</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDIT RATING -->
+  <div class="mb32">
+    <div class="section-title">Credit Ratings</div>
+    <div class="card">
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+        <div style="text-align:center;">
+          <div style="font-size:36px;font-weight:900;color:var(--green);">CARE A-</div>
+          <div style="font-size:12px;color:var(--muted);">Long Term (Stable)</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-size:36px;font-weight:900;color:var(--blue);">CARE A2+</div>
+          <div style="font-size:12px;color:var(--muted);">Short Term</div>
+        </div>
+        <div style="flex:1;min-width:200px;font-size:13px;color:var(--muted);line-height:1.7;">
+          Rated by CARE Ratings (Oct 2025). Stable outlook reflects consistent revenue growth, improving profitability, and manageable leverage. Rating supported by long-standing customer relationships, diversified order book, and experienced promoter management.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>DEE Development Engineers Ltd — Company Story Report</div>
+  <div style="margin-top:4px;">Sources: Screener.in · deepiping.com (IR) · BSE India · NSE India · Yahoo Finance · GuruFocus · CARE Ratings</div>
+  <div style="margin-top:4px;">Data as of: April 2026. Latest fundamentals: Q3 FY26 (Dec 2025). Latest operational update: March 2026 order book &amp; seamless pipe commissioning.</div>
+  <div style="margin-top:6px;color:rgba(255,255,255,0.3);">This document is for informational purposes only and does not constitute investment advice. Please conduct your own due diligence.</div>
+</div>
+
+<script>
+const NAVY = '#0f2545', BLUE = '#1a3c72', ACCENT = '#e8541a', GOLD = '#f5a623', GREEN = '#22884a';
+
+// Revenue Chart
+new Chart(document.getElementById('revChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Mar\'23','Jun\'23','Sep\'23','Dec\'23','Mar\'24','Jun\'24','Sep\'24','Dec\'24','Mar\'25','Jun\'25','Sep\'25','Dec\'25'],
+    datasets: [{
+      label: 'Revenue (₹ Cr)',
+      data: [165,157,179,210,243,185,194,162,286,224,270,287],
+      backgroundColor: (ctx) => {
+        const i = ctx.dataIndex;
+        return i >= 9 ? ACCENT : (i >= 4 ? BLUE : NAVY);
+      },
+      borderRadius: 4,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      y: { beginAtZero: true, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+// Margin Chart
+new Chart(document.getElementById('marginChart'), {
+  type: 'line',
+  data: {
+    labels: ['Mar\'23','Jun\'23','Sep\'23','Dec\'23','Mar\'24','Jun\'24','Sep\'24','Dec\'24','Mar\'25','Jun\'25','Sep\'25','Dec\'25'],
+    datasets: [{
+      label: 'OPM %',
+      data: [14,9,13,14,14,13,15,3,22,16,16,17],
+      borderColor: ACCENT, backgroundColor: 'rgba(232,84,26,0.1)',
+      fill: true, tension: 0.4, pointRadius: 4, pointBackgroundColor: ACCENT,
+      borderWidth: 2.5
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      annotation: {}
+    },
+    scales: {
+      y: {
+        beginAtZero: true, max: 25,
+        grid: { color: '#f0f0f0' },
+        ticks: { font: { size: 11 }, callback: v => v + '%' }
+      },
+      x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+    }
+  }
+});
+
+// Order Book Chart
+new Chart(document.getElementById('orderChart'), {
+  type: 'bar',
+  data: {
+    labels: ['Jul\'25','Sep\'25','Dec\'25','Mar\'26'],
+    datasets: [{
+      label: 'Order Book (₹ Cr)',
+      data: [1227, 1303, 1303, 1940],
+      backgroundColor: [BLUE, BLUE, BLUE, GREEN],
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ' ₹' + ctx.raw + ' Cr' } }
+    },
+    scales: {
+      y: { beginAtZero: false, min: 1000, grid: { color: '#f0f0f0' }, ticks: { font: { size: 11 } } },
+      x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  }
+});
+
+// Capacity Chart
+new Chart(document.getElementById('capChart'), {
+  type: 'bar',
+  data: {
+    labels: ['FY22', 'FY24', 'FY25', 'Sep\'25', 'Mar\'26'],
+    datasets: [{
+      label: 'Installed Capacity (MT)',
+      data: [55000, 97500, 112500, 127500, 134500],
+      backgroundColor: [NAVY, NAVY, BLUE, ACCENT, GREEN],
+      borderRadius: 6,
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toLocaleString() + ' MT' } }
+    },
+    scales: {
+      y: { beginAtZero: false, min: 40000, grid: { color: '#f0f0f0' }, ticks: { font: { size: 10 }, callback: v => (v/1000)+'K' } },
+      x: { grid: { display: false }, ticks: { font: { size: 11 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AIMTRON Investor Story - May 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f8f5;
+      --paper: #ffffff;
+      --ink: #18201b;
+      --muted: #5f6963;
+      --line: #dce1dc;
+      --soft: #edf1ed;
+      --tech: #534AB7;
+      --industrial: #378ADD;
+      --green: #3B6D11;
+      --amber: #BA7517;
+      --coral: #D85A30;
+      --teal: #1D9E75;
+      --gray: #738076;
+      --shadow: 0 18px 40px rgba(24, 32, 27, 0.09);
+    }
+
+    [data-theme="night"] {
+      color-scheme: dark;
+      --bg: #111411;
+      --paper: #1b201d;
+      --ink: #edf2ec;
+      --muted: #aab5ad;
+      --line: #303932;
+      --soft: #252c27;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.32);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+      padding: 14px clamp(16px, 5vw, 60px);
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    article {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto 64px;
+    }
+
+    .cover {
+      min-height: 72vh;
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      max-width: 820px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.35rem);
+    }
+
+    .source-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .source-strip span {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 44px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter-head {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--bg);
+      font-weight: 900;
+    }
+
+    h2 {
+      margin: 2px 0 0;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      letter-spacing: 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card, .insight, .verdict {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .insight {
+      border-left: 3px solid var(--tech);
+    }
+
+    .accent-tech { border-left: 3px solid var(--tech); }
+    .accent-industrial { border-left: 3px solid var(--industrial); }
+    .accent-green { border-left: 3px solid var(--green); }
+    .accent-amber { border-left: 3px solid var(--amber); }
+    .accent-coral { border-left: 3px solid var(--coral); }
+    .accent-teal { border-left: 3px solid var(--teal); }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat-row:last-child { border-bottom: 0; }
+    .stat-row span:first-child { color: var(--muted); }
+    .stat-row strong { text-align: right; }
+
+    .risk-row, .signal-row {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .risk-row:last-child, .signal-row:last-child { border-bottom: 0; }
+    .warn { color: var(--amber); font-weight: 900; }
+    .dot {
+      width: 11px;
+      height: 11px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .dot.tech { background: var(--tech); }
+    .dot.industrial { background: var(--industrial); }
+    .dot.amber { background: var(--amber); }
+    .dot.teal { background: var(--teal); }
+    .dot.gray { background: var(--gray); }
+
+    .callout {
+      background: var(--soft);
+      border-left: 3px solid var(--gray);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .quote {
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin: 0;
+    }
+
+    .sources li { margin-bottom: 8px; }
+
+    @media (max-width: 820px) {
+      .grid, .grid.two { grid-template-columns: 1fr; }
+      .chapter-head { grid-template-columns: 44px 1fr; }
+      .source-strip { display: grid; }
+      .stat-row { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar" role="navigation" aria-label="Display controls">
+    <button type="button" id="themeToggle" aria-pressed="false">Night mode</button>
+  </div>
+
+  <article aria-label="AIMTRON investor story">
+    <header class="cover">
+      <div>
+        <p class="eyebrow">NSE: AIMTRON | Electronics Manufacturing Services | 17 May 2026</p>
+        <h1>Aimtron Electronics: the small EMS company trying to sell design confidence, not only assembly hours</h1>
+        <p class="dek">Aimtron sits inside India's electronics manufacturing build-out, but the investable question is narrower: can it convert a Vadodara factory, US customer relationships, and design-led programs into durable growth without working-capital strain?</p>
+        <div class="source-strip" aria-label="Primary source documents used">
+          <span>Screener financials</span>
+          <span>FY26 investor presentation</span>
+          <span>FY26 concall transcript</span>
+          <span>H1 FY26 transcript</span>
+          <span>US acquisition release</span>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="chapter-1">
+      <div class="chapter-head">
+        <div class="num">1</div>
+        <div>
+          <p class="eyebrow">Chapter 1</p>
+          <h2 id="chapter-1">Context: India wants the electronics stack at home</h2>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card accent-tech">
+          <h3>Why now</h3>
+          <p>India's EMS opportunity is no longer only phone assembly. It is moving into industrial electronics, automotive systems, medical devices, power electronics, aerospace, and embedded IoT. Mordor Intelligence estimates India's EMS market at <strong>USD 35.41 billion in 2026</strong>, rising to <strong>USD 52.46 billion by 2030</strong>, a <strong>10.32% CAGR</strong>.</p>
+        </div>
+        <div class="card accent-green">
+          <h3>Policy tailwind</h3>
+          <p>The electronics manufacturing push is supported by production-linked incentives and component localization. India's Union Budget 2026-27 raised the electronics and IT ministry's allocation to about <strong>&#8377;30,636 crore</strong>, with higher support for semiconductor and display manufacturing programs.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p class="quote">Industry framing: Avendus describes Indian EMS as moving from "low-value assembly to high-value design-led manufacturing."</p>
+      </div>
+      <p>That sentence matters for Aimtron. The company is too small to win by scale against Dixon, Kaynes, Syrma, or Avalon. Its route is specialization: high-mix printed circuit board assemblies, box-builds, engineering support, and overseas customer access. The macro helps, but stock selection depends on whether Aimtron can climb from vendor to design partner.</p>
+    </section>
+
+    <section aria-labelledby="chapter-2">
+      <div class="chapter-head">
+        <div class="num">2</div>
+        <div>
+          <p class="eyebrow">Chapter 2</p>
+          <h2 id="chapter-2">The Business Model: build the brain, then the box</h2>
+        </div>
+      </div>
+      <p>In plain English, Aimtron makes electronic control boards and finished electronic assemblies for other companies. A customer brings a product idea or design. Aimtron helps engineer it, procures components, assembles PCBAs, tests quality, and in some cases builds the complete box that goes into the customer's equipment.</p>
+      <div class="grid">
+        <div class="card accent-tech">
+          <h3>The flywheel</h3>
+          <p>Engineering touchpoints create trust. Trust wins prototype and low-volume programs. Programs that qualify move into repeat production. Repeat production improves utilization and purchasing efficiency, which can fund the next design-led customer win.</p>
+        </div>
+        <div class="card accent-industrial">
+          <h3>Why customers stay</h3>
+          <p>Switching a qualified electronics supplier is painful because the new supplier must revalidate components, tooling, firmware interfaces, test protocols, certifications, and failure-history assumptions. For industrial and medical customers, that friction is meaningful.</p>
+        </div>
+        <div class="card accent-coral">
+          <h3>What Aimtron claims it can do</h3>
+          <p>The FY26 presentation highlights PCB assembly, box-build, design engineering, testing, and end-to-end product support. The US acquisition adds a front-end sales and customer-support beachhead in the market where electronics outsourcing decisions often originate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-3">
+      <div class="chapter-head">
+        <div class="num">3</div>
+        <div>
+          <p class="eyebrow">Chapter 3</p>
+          <h2 id="chapter-3">Vertical Stories: four doors into the same EMS factory</h2>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card accent-industrial">
+          <h3>Industrial and IoT electronics</h3>
+          <p><strong>Catalyst:</strong> factory automation, telemetry, energy monitoring, and Indian industrial capex. <strong>Status:</strong> running and order-led. Aimtron announced orders worth about <strong>&#8377;57.66 crore</strong> for IIoT and AI-based surveillance solutions, indicating demand beyond commodity assembly.</p>
+        </div>
+        <div class="card accent-tech">
+          <h3>PCBA and box-build</h3>
+          <p><strong>Catalyst:</strong> OEM outsourcing and China-plus-one sourcing. <strong>Status:</strong> core engine. The segment benefits from the estimated <strong>USD 35.41 billion</strong> Indian EMS market in 2026, but execution quality will matter more than sector growth for a company of Aimtron's size.</p>
+        </div>
+        <div class="card accent-green">
+          <h3>Clean energy and EV electronics</h3>
+          <p><strong>Catalyst:</strong> EV chargers, battery systems, power electronics, and renewable monitoring. <strong>Status:</strong> opportunity/ramp. This is a natural adjacency for PCBAs and embedded controls, but investors should separate named customer programs from broad sector enthusiasm.</p>
+        </div>
+        <div class="card accent-coral">
+          <h3>Medical, defence, and regulated systems</h3>
+          <p><strong>Catalyst:</strong> higher reliability requirements and localization. <strong>Status:</strong> selective. These verticals can carry better customer stickiness, but qualification cycles are long and failure costs are high.</p>
+        </div>
+        <div class="card accent-teal">
+          <h3>Railways and infrastructure electronics</h3>
+          <p><strong>Catalyst:</strong> safety, signalling, surveillance, and networked public infrastructure. <strong>Status:</strong> watchlist. India continues to spend heavily on rail modernization, but Aimtron needs visible program references before this becomes a counted growth pillar.</p>
+        </div>
+        <div class="card accent-amber">
+          <h3>US exports and customer access</h3>
+          <p><strong>Catalyst:</strong> reshoring pressure plus customers seeking India manufacturing without losing US support. <strong>Status:</strong> strategic ramp. Aimtron's 60% acquisition of US-based Aimtron Corporation is best read as customer access and relationship infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-4">
+      <div class="chapter-head">
+        <div class="num">4</div>
+        <div>
+          <p class="eyebrow">Chapter 4</p>
+          <h2 id="chapter-4">Strategic Insight: the US arm is the sales machine, not the factory story</h2>
+        </div>
+      </div>
+      <div class="insight">
+        <p>The non-obvious point is that Aimtron is not trying to export only finished boards. It is trying to export trust. A US customer may hesitate to move a product to a small Indian EMS vendor if engineering support, time-zone responsiveness, and escalation paths feel distant. The US subsidiary reduces that psychological and operational distance. If it works, the American front end can originate, support, and retain customers while the Indian backend handles cost-effective manufacturing. In that model, the US entity is less a profit centre and more a customer-acquisition bridge.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-5">
+      <div class="chapter-head">
+        <div class="num">5</div>
+        <div>
+          <p class="eyebrow">Chapter 5</p>
+          <h2 id="chapter-5">The Numbers in Context: fast growth, small base, expensive expectations</h2>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <h3>Financial snapshot</h3>
+          <div class="stat-row"><span>Market cap</span><strong>About &#8377;1,725 crore</strong></div>
+          <div class="stat-row"><span>Current price</span><strong>About &#8377;825</strong></div>
+          <div class="stat-row"><span>Stock P/E</span><strong>About 70.8x</strong></div>
+          <div class="stat-row"><span>Book value / P/B</span><strong>&#8377;111 / 7.42x</strong></div>
+          <div class="stat-row"><span>ROCE / ROE</span><strong>14.6% / 13.5%</strong></div>
+          <div class="stat-row"><span>Debt to equity</span><strong>0.28x</strong></div>
+        </div>
+        <div class="card">
+          <h3>Trajectory</h3>
+          <div class="stat-row"><span>FY25 revenue</span><strong>&#8377;226 crore</strong></div>
+          <div class="stat-row"><span>FY25 operating profit</span><strong>&#8377;27 crore, 12% OPM</strong></div>
+          <div class="stat-row"><span>FY25 net profit</span><strong>&#8377;23 crore</strong></div>
+          <div class="stat-row"><span>Sales growth</span><strong>3-year CAGR about 45%</strong></div>
+          <div class="stat-row"><span>Profit growth</span><strong>3-year CAGR about 65%</strong></div>
+          <div class="stat-row"><span>Cash conversion</span><strong>Operating cash flow positive in FY25</strong></div>
+        </div>
+      </div>
+      <p>On valuation, Aimtron is being priced like a high-growth EMS compounder before it has the long public track record of larger listed peers. Its trailing P/E near <strong>71x</strong> sits above Dixon's roughly <strong>49-60x</strong> recent range, close to Kaynes at about <strong>72x</strong>, above Syrma's roughly <strong>59x</strong>, and in the same broad zone as Avalon at about <strong>75x</strong>. That means investors are already assuming strong order conversion, margin discipline, and successful US-led customer acquisition.</p>
+      <div class="callout">
+        <p><strong>What the market is pricing in:</strong> Aimtron must grow faster than the sector, protect mid-teens return ratios, and show that FY25 profit growth was not a one-off listing-period burst. At this valuation, "good company" is not enough; the market needs evidence of scale without margin dilution.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-6">
+      <div class="chapter-head">
+        <div class="num">6</div>
+        <div>
+          <p class="eyebrow">Chapter 6</p>
+          <h2 id="chapter-6">Risks: the things that can break the story</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Valuation risk:</strong> a P/E around 71x leaves little room for a slow quarter. The signal is revenue growth falling toward sector average while the multiple still prices a specialist compounder.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Working-capital risk:</strong> EMS companies can consume cash when inventory, receivables, and component lead times rise. The signal is sales growth without matching operating cash flow.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Customer concentration and order lumpiness:</strong> large program wins are useful, but a small revenue base can make quarterly results uneven. The signal is delayed dispatches or one customer dominating growth.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Execution risk in the US strategy:</strong> the US arm must generate qualified, repeatable orders rather than only add overhead. The signal is rising employee and selling cost without export/customer traction.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Component supply and pricing risk:</strong> imported semiconductors and electronic components can hurt delivery schedules or margins. The signal is inventory build-up, gross-margin compression, or management commentary on shortages.</div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-7">
+      <div class="chapter-head">
+        <div class="num">7</div>
+        <div>
+          <p class="eyebrow">Chapter 7</p>
+          <h2 id="chapter-7">Watch Signals: five checks after every result</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="signal-row"><div class="dot tech"></div><div><strong>Quarterly revenue growth:</strong> good is sustained growth above the EMS market CAGR; red flag is sub-15% growth for two quarters without clear capacity or dispatch explanation.</div></div>
+        <div class="signal-row"><div class="dot industrial"></div><div><strong>Operating margin:</strong> good is OPM holding near or above FY25's 12% while revenue scales; red flag is margin dropping below 10% because of pricing pressure or overhead.</div></div>
+        <div class="signal-row"><div class="dot green"></div><div><strong>Operating cash flow:</strong> good is cash conversion tracking profit over a full year; red flag is profit growth paired with rising receivables and inventory.</div></div>
+        <div class="signal-row"><div class="dot amber"></div><div><strong>US-led order conversion:</strong> good is named customer additions, exports, or repeat orders linked to the US subsidiary; red flag is vague "pipeline" language for multiple calls.</div></div>
+        <div class="signal-row"><div class="dot teal"></div><div><strong>Program mix:</strong> good is more box-build, design-led, regulated, or industrial programs; red flag is growth coming mainly from lower-value assembly with weaker stickiness.</div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="verdict">
+      <div class="verdict">
+        <p class="eyebrow">Verdict</p>
+        <h2 id="verdict">Early-middle chapter, but priced for execution</h2>
+        <p>Aimtron is backed by three structural tailwinds: India's EMS market moving toward an estimated USD 52.46 billion by 2030, government incentives for electronics and semiconductor localization, and global customers seeking China-plus-one manufacturing with local support. The quality signal is real but still young: FY25 showed strong revenue and profit growth, positive operating cash flow, low leverage, and ROCE in the mid-teens, but the company needs more listed-history evidence. The near-term re-rating catalyst would be visible US-led customer conversion, larger design-led or box-build programs, and operating margin holding near FY25 levels as scale improves. The valuation is demanding: a trailing P/E around 71x already prices Aimtron as a high-growth specialist rather than a small EMS supplier, so the stock needs continued execution to justify the premium. This is not a late-cycle cash-cow story; it is an early-middle chapter where the strategic bridge to US customers could matter, but every quarter must prove that growth is not being bought with working capital or margin sacrifice.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="sources">
+      <div class="chapter-head">
+        <div class="num">S</div>
+        <div>
+          <p class="eyebrow">Selected sources</p>
+          <h2 id="sources">Research trail</h2>
+        </div>
+      </div>
+      <ul class="sources">
+        <li><a href="https://www.screener.in/company/AIMTRON/consolidated/">Screener: Aimtron Electronics consolidated financials and valuation snapshot</a></li>
+        <li><a href="https://nsearchives.nseindia.com/corporate/AIMTRON_29042026180627_Intimation_Investor_Presentation_for_Concall_29-04-2026.pdf">NSE filing: FY26 investor presentation for concall, 29 April 2026</a></li>
+        <li><a href="https://nsearchives.nseindia.com/corporate/AIMTRON_11052026160418_Transcript_of_Con_Call_11052026.pdf">NSE filing: FY26 concall transcript, 11 May 2026</a></li>
+        <li><a href="https://nsearchives.nseindia.com/corporate/AIMTRON_10112025163029_Transcript_Of_Concall.pdf">NSE filing: H1 FY26 concall transcript, 10 November 2025</a></li>
+        <li><a href="https://nsearchives.nseindia.com/corporate/AIMTRON_15102025140239_Acquisition_USA_Subsidiary_Intimation.pdf">NSE filing: 60% acquisition of US-based Aimtron Corporation, 15 October 2025</a></li>
+        <li><a href="https://www.mordorintelligence.com/industry-reports/india-electronics-manufacturing-services-market">Mordor Intelligence: India electronics manufacturing services market size and CAGR</a></li>
+        <li><a href="https://www.indiabudget.gov.in/">Union Budget documents: Ministry of Electronics and Information Technology allocation context</a></li>
+        <li><a href="https://www.newsonprojects.com/news/aimtron-electronics-secures-5766-crore-orders-for-iiot-and-ai-based-surveillance-solutions">News on Projects: Aimtron IIoT and AI surveillance order announcement</a></li>
+        <li><a href="https://companiesmarketcap.com/dixon-technologies/pe-ratio/">CompaniesMarketCap: Dixon Technologies P/E ratio, May 2026</a></li>
+        <li><a href="https://dhan.co/stocks/kaynes-technology-ltd-eps/">Dhan: Kaynes Technology P/E ratio, May 2026</a></li>
+        <li><a href="https://blinkx.in/insights/pe/syrma-sgs-technology-ltd-pe-ratio">BlinkX: Syrma SGS Technology P/E ratio, February 2026</a></li>
+        <li><a href="https://scanx.trade/company/avalon-technologies-ltd">ScanX: Avalon Technologies P/E ratio, May 2026</a></li>
+      </ul>
+    </section>
+  </article>
+
+  <script>
+    const button = document.getElementById("themeToggle");
+    const storedTheme = localStorage.getItem("aimtron-theme");
+    if (storedTheme === "night") {
+      document.documentElement.dataset.theme = "night";
+      button.textContent = "Day mode";
+      button.setAttribute("aria-pressed", "true");
+    }
+
+    button.addEventListener("click", () => {
+      const night = document.documentElement.dataset.theme !== "night";
+      document.documentElement.dataset.theme = night ? "night" : "";
+      localStorage.setItem("aimtron-theme", night ? "night" : "day");
+      button.textContent = night ? "Day mode" : "Night mode";
+      button.setAttribute("aria-pressed", String(night));
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>NSE Investor Brief · BHAGYANGR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --copper: #B87333;
+    --copper-light: #D4935A;
+    --copper-glow: rgba(184,115,51,0.18);
+    --midnight: #0D1117;
+    --surface: #161C25;
+    --surface-2: #1E2733;
+    --surface-3: #243040;
+    --border: rgba(184,115,51,0.22);
+    --border-subtle: rgba(255,255,255,0.07);
+    --text-primary: #EEE8DD;
+    --text-secondary: #9BA5B4;
+    --text-muted: #5E6B7A;
+    --green: #3DBE7A;
+    --amber: #E8A83A;
+    --red: #E05A4E;
+    --blue: #4A9FE0;
+    --teal: #1D9E75;
+    --purple: #8B7FD4;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --radius: 10px;
+  }
+
+  @media (prefers-color-scheme: light) {
+    :root {
+      --midnight: #F5F0E8;
+      --surface: #FFFFFF;
+      --surface-2: #F7F2EA;
+      --surface-3: #EDE7D8;
+      --border: rgba(184,115,51,0.30);
+      --border-subtle: rgba(0,0,0,0.08);
+      --text-primary: #1A1208;
+      --text-secondary: #4A3F30;
+      --text-muted: #7A6E60;
+    }
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--midnight);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: clamp(14px, 3.5vw, 16px);
+    line-height: 1.65;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: clamp(12px, 4vw, 28px);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NIGHT MODE TOGGLE */
+  .mode-toggle {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--copper);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    z-index: 100;
+    transition: background 0.2s;
+  }
+  .mode-toggle:hover { background: var(--surface-3); }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 60%, rgba(184,115,51,0.08) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(20px, 5vw, 36px);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(184,115,51,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cover-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .cover-symbol {
+    font-family: var(--font-serif);
+    font-size: clamp(34px, 9vw, 54px);
+    font-weight: 900;
+    line-height: 1;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+  .cover-name {
+    font-size: clamp(13px, 3vw, 15px);
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-top: 4px;
+    margin-bottom: 20px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .cover-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: var(--surface-3);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-secondary);
+  }
+  .cover-tag.accent { background: var(--copper-glow); border-color: var(--border); color: var(--copper-light); }
+  .cover-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(16px, 4.5vw, 21px);
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.4;
+    margin-top: 16px;
+    border-left: 3px solid var(--copper);
+    padding-left: 14px;
+  }
+
+  /* KPI ROW */
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .kpi-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .kpi-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .kpi-value {
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 5vw, 24px);
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.1;
+  }
+  .kpi-sub {
+    font-size: 11px;
+    color: var(--green);
+    margin-top: 2px;
+  }
+  .kpi-sub.amber { color: var(--amber); }
+  .kpi-sub.red { color: var(--red); }
+  .kpi-sub.neutral { color: var(--text-muted); }
+
+  /* CHAPTER HEADER */
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 28px 0 16px;
+  }
+  .chapter-num {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    background: var(--copper-glow);
+    border: 1.5px solid var(--copper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-serif);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--copper);
+    margin-top: 2px;
+  }
+  .chapter-text {}
+  .chapter-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .chapter-title {
+    font-family: var(--font-serif);
+    font-size: clamp(18px, 4.5vw, 22px);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-primary);
+  }
+
+  /* CARD */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius);
+    padding: clamp(14px, 4vw, 20px);
+    margin-bottom: 12px;
+  }
+  .card.accent-left {
+    border-left: 3px solid var(--copper);
+    border-radius: 0 var(--radius) var(--radius) 0;
+  }
+  .card.accent-teal { border-left-color: var(--teal); }
+  .card.accent-blue { border-left-color: var(--blue); }
+  .card.accent-green { border-left-color: var(--green); }
+  .card.accent-amber { border-left-color: var(--amber); }
+  .card.accent-purple { border-left-color: var(--purple); }
+  .card.accent-red { border-left-color: var(--red); }
+
+  .card-title {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 8px;
+  }
+  .card-title.teal { color: var(--teal); }
+  .card-title.blue { color: var(--blue); }
+  .card-title.green { color: var(--green); }
+  .card-title.amber { color: var(--amber); }
+  .card-title.purple { color: var(--purple); }
+
+  p { margin-bottom: 10px; font-size: clamp(13px, 3.2vw, 15px); color: var(--text-secondary); }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--text-primary); font-weight: 600; }
+
+  /* STAT ROW */
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    gap: 12px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    flex: 1;
+  }
+  .stat-value {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-align: right;
+    white-space: nowrap;
+  }
+  .stat-value.green { color: var(--green); }
+  .stat-value.amber { color: var(--amber); }
+  .stat-value.red { color: var(--red); }
+  .stat-value.copper { color: var(--copper-light); }
+
+  /* RISK ROW */
+  .risk-row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+  }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-icon { font-size: 16px; min-width: 20px; margin-top: 1px; }
+  .risk-content {}
+  .risk-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+  .risk-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* WATCH SIGNAL */
+  .signal-row {
+    display: flex;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-subtle);
+    align-items: flex-start;
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--copper);
+    margin-top: 5px;
+    min-width: 10px;
+    flex-shrink: 0;
+  }
+  .signal-dot.green { background: var(--green); }
+  .signal-dot.blue { background: var(--blue); }
+  .signal-dot.teal { background: var(--teal); }
+  .signal-dot.amber { background: var(--amber); }
+  .signal-content {}
+  .signal-metric {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+  }
+  .signal-desc { font-size: 12.5px; color: var(--text-secondary); line-height: 1.55; }
+
+  /* VERDICT */
+  .verdict-card {
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(184,115,51,0.05) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(16px, 5vw, 24px);
+    margin-top: 20px;
+  }
+  .verdict-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 10px;
+  }
+  .verdict-text {
+    font-family: var(--font-serif);
+    font-size: clamp(14px, 3.8vw, 17px);
+    line-height: 1.75;
+    color: var(--text-primary);
+    font-style: italic;
+  }
+
+  /* INSIGHT CARD */
+  .insight-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: clamp(16px, 4vw, 22px);
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .insight-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    right: 14px;
+    font-family: var(--font-serif);
+    font-size: 100px;
+    color: var(--copper-glow);
+    line-height: 1;
+    pointer-events: none;
+  }
+  .insight-text {
+    font-family: var(--font-serif);
+    font-size: clamp(15px, 4vw, 18px);
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--text-primary);
+    position: relative;
+    z-index: 1;
+  }
+  .insight-attr {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-family: var(--font-mono);
+  }
+
+  /* CAPACITY BAR */
+  .bar-row { margin-bottom: 14px; }
+  .bar-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+  }
+  .bar-track {
+    height: 7px;
+    background: var(--surface-3);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--copper) 0%, var(--copper-light) 100%);
+    transition: width 1s ease;
+  }
+  .bar-fill.green { background: linear-gradient(90deg, var(--teal) 0%, var(--green) 100%); }
+  .bar-fill.blue { background: linear-gradient(90deg, var(--blue) 0%, #77BFFF 100%); }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border-subtle);
+    margin: 24px 0;
+  }
+
+  /* FOOTNOTE */
+  .footnote {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    text-align: center;
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-subtle);
+    line-height: 1.7;
+  }
+
+  /* QUOTE CALLOUT */
+  .quote-callout {
+    border-left: 3px solid var(--copper);
+    padding: 10px 16px;
+    margin: 14px 0;
+    background: var(--copper-glow);
+    border-radius: 0 6px 6px 0;
+  }
+  .quote-callout p {
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 13.5px;
+  }
+  .quote-callout .attr {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-style: normal;
+    font-family: var(--font-mono);
+    margin-top: 4px;
+    margin-bottom: 0;
+  }
+
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 420px) {
+    .two-col { grid-template-columns: 1fr; }
+  }
+
+  .mini-card {
+    background: var(--surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .mini-card-label { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+  .mini-card-value { font-family: var(--font-serif); font-size: 20px; font-weight: 700; color: var(--text-primary); margin: 4px 0; }
+  .mini-card-sub { font-size: 11px; }
+
+  /* SEGMENT BADGE */
+  .segment-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .seg-badge {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+  }
+  .seg-badge.copper { background: rgba(184,115,51,0.12); border-color: rgba(184,115,51,0.4); color: var(--copper-light); }
+  .seg-badge.green { background: rgba(61,190,122,0.10); border-color: rgba(61,190,122,0.3); color: var(--green); }
+  .seg-badge.blue { background: rgba(74,159,224,0.10); border-color: rgba(74,159,224,0.3); color: var(--blue); }
+  .seg-badge.teal { background: rgba(29,158,117,0.10); border-color: rgba(29,158,117,0.3); color: var(--teal); }
+  .seg-badge.purple { background: rgba(139,127,212,0.10); border-color: rgba(139,127,212,0.3); color: var(--purple); }
+
+  .profit-trajectory {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+    height: 60px;
+    margin: 14px 0;
+  }
+  .traj-bar {
+    flex: 1;
+    border-radius: 4px 4px 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .traj-bar span {
+    font-size: 10px;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-top: 4px;
+    position: absolute;
+    bottom: -18px;
+    white-space: nowrap;
+  }
+
+  .warning-box {
+    background: rgba(224,90,78,0.07);
+    border: 1px solid rgba(224,90,78,0.25);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+  }
+  .warning-box .wtitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--red);
+    margin-bottom: 4px;
+    font-family: var(--font-mono);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .warning-box p { font-size: 12.5px; }
+</style>
+</head>
+<body>
+
+<button class="mode-toggle" id="modeBtn" title="Toggle light/dark" aria-label="Toggle colour mode">☽</button>
+
+<!-- COVER -->
+<div class="cover" role="banner">
+  <div class="cover-eyebrow">NSE · BHAGYANGR · Non-Ferrous Metals · 18 May 2026</div>
+  <div class="cover-symbol" aria-label="BHAGYANGR">BHAGYANGR</div>
+  <div class="cover-name">Bhagyanagar India Limited · Hyderabad</div>
+  <div class="cover-meta">
+    <span class="cover-tag accent">₹1,000 Cr+ Market Cap</span>
+    <span class="cover-tag">Est. 1985</span>
+    <span class="cover-tag">Copper Products</span>
+    <span class="cover-tag">Demerger Pending</span>
+  </div>
+  <div class="cover-headline" role="doc-subtitle">Four decades making copper. Four tailwinds now converging. One restructuring that could change everything.</div>
+</div>
+
+<!-- SNAPSHOT KPIs -->
+<div class="kpi-row" role="region" aria-label="Key financial metrics">
+  <div class="kpi-card">
+    <div class="kpi-label">FY26 Revenue</div>
+    <div class="kpi-value">₹2,378 Cr</div>
+    <div class="kpi-sub">+46% YoY</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">FY26 PAT</div>
+    <div class="kpi-value">₹50 Cr</div>
+    <div class="kpi-sub">+258% YoY</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">EBITDA</div>
+    <div class="kpi-value">₹100+ Cr</div>
+    <div class="kpi-sub amber">~4.5% margin</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-label">Market Cap</div>
+    <div class="kpi-value">~₹750 Cr</div>
+    <div class="kpi-sub amber">52-wk: ₹65→₹285</div>
+  </div>
+</div>
+
+<!-- CHAPTER 1: CONTEXT -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">1</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter One</div>
+    <div class="chapter-title">Why Copper, Why Now</div>
+  </div>
+</div>
+
+<div class="card accent-left">
+  <p>Copper is the circulatory system of the energy transition. Every solar panel, wind turbine, electric vehicle, data centre, and grid upgrade runs on it — and the world is being rewired at a pace that supply cannot match. The global copper market, valued at <strong>USD 279 billion in 2026</strong>, is growing at a CAGR of 6.6% toward USD 467 billion by 2034, per Fortune Business Insights. More pressingly, the International Copper Study Group projects the market moved into a <strong>supply deficit of 150,000+ tonnes in 2026</strong>, the first in years.</p>
+  <p>In India specifically, copper demand surged <strong>16% in FY23</strong> — over five times the global average of 3% — driven by the government's infrastructure push, renewable energy mandates (500 GW non-fossil target by 2030), and early EV adoption. India's copper market is projected to grow from USD 25 billion to USD 39 billion by 2030 at 6.34% CAGR. And India's data centre capacity is expanding 30% year-on-year in 2026, with projected cumulative capex of over <strong>USD 30 billion this decade</strong>.</p>
+  <p>Bhagyanagar India has been making copper for 41 years. Today, the four demand vectors — EVs, renewables, AI data centres, and industrial electrification — are all hitting simultaneously. The company's timing, for once, is impeccable.</p>
+</div>
+
+<div class="two-col">
+  <div class="mini-card">
+    <div class="mini-card-label">Global Copper CAGR</div>
+    <div class="mini-card-value" style="color:var(--copper-light)">6.6%</div>
+    <div class="mini-card-sub" style="color:var(--text-muted)">to 2034 · USD 467 bn</div>
+  </div>
+  <div class="mini-card">
+    <div class="mini-card-label">EV Copper Demand Growth</div>
+    <div class="mini-card-value" style="color:var(--green)">10%/yr</div>
+    <div class="mini-card-sub" style="color:var(--text-muted)">to 4.3 Mtpa by 2035 (Wood Mac)</div>
+  </div>
+</div>
+
+<div class="quote-callout" role="note">
+  <p>"AI data centers could consume half a million metric tonnes of copper annually by 2030 — adding 2 million metric tonnes of demand from 2025 to 2040 for IT infrastructure alone."</p>
+  <p class="attr">— S&amp;P Global / USFunds, 2025–26</p>
+</div>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">2</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Two</div>
+    <div class="chapter-title">The Business Model</div>
+  </div>
+</div>
+
+<div class="card accent-left">
+  <div class="card-title">What They Actually Do</div>
+  <p>Bhagyanagar India takes copper — in raw or scrap form — and turns it into the precise shapes and grades that OEM manufacturers need. Think copper bus bars for switchgear, wires and rods for transformers, paper-insulated copper conductors (PICC) for motors, solenoid switches for auto-electrical systems, and now silver-plated and tin-plated bus bars for high-spec data centre cooling and power distribution racks.</p>
+  <p>The company operates <strong>two ISO-certified manufacturing plants on a 60-acre site</strong> with <strong>35,000 MT annual capacity</strong> as of March 2026, serving <strong>500+ clients</strong> pan-India. A subsidiary, Bhagyanagar Copper Private Limited (BCPL), is the operational engine where the bulk of manufacturing and revenue sits. It also operates a <strong>9 MW wind power project</strong> in Karnataka.</p>
+  <p>The model is one of <strong>precision fabrication for OEMs</strong>, not bulk commodity trading. Customers don't just buy copper — they buy specific geometries, certifications, tolerances, and supply reliability. That stickiness matters: once a motor manufacturer qualifies Bhagyanagar's PICC in their production line, switching has real costs.</p>
+</div>
+
+<div class="segment-grid" aria-label="Product segments">
+  <span class="seg-badge copper">Bus Bars &amp; Sheets</span>
+  <span class="seg-badge copper">Wires &amp; Rods</span>
+  <span class="seg-badge copper">PICC (Paper Insulated)</span>
+  <span class="seg-badge copper">Tubes &amp; Pipes</span>
+  <span class="seg-badge blue">Data Centre Bus Bars</span>
+  <span class="seg-badge green">Solar Collectors</span>
+  <span class="seg-badge teal">Wind Power (9 MW)</span>
+</div>
+
+<div class="card">
+  <div class="stat-row">
+    <span class="stat-label">Client base</span>
+    <span class="stat-value copper">500+ OEMs pan-India</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Value-added % of sales (FY26)</span>
+    <span class="stat-value green">59%</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Value-added % target (FY27)</span>
+    <span class="stat-value green">66%</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Manufacturing capacity</span>
+    <span class="stat-value copper">35,000 MT</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Volumes sold FY26</span>
+    <span class="stat-value copper">24,000 MT (+34% YoY)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Track record without loss quarter</span>
+    <span class="stat-value green">41 years (claimed)</span>
+  </div>
+</div>
+
+<!-- CHAPTER 3: VERTICALS -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">3</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Three</div>
+    <div class="chapter-title">The Four Demand Verticals</div>
+  </div>
+</div>
+
+<div class="card accent-left accent-blue">
+  <div class="card-title blue">AI Data Centres · Ramping</div>
+  <p>India's data centre IT load capacity has grown from 1.2 GW in 2024 to 1.53 GW in early 2026, with CBRE projecting a <strong>30% jump in 2026</strong> alone. Budget 2026–27 extended a <strong>20-year tax holiday</strong> for foreign cloud providers using Indian facilities. Cumulative capex projections: <strong>USD 30 billion+ this decade</strong>. Bhagyanagar is already supplying silver-plated and tin-plated bus bars for data centre power distribution — higher-margin products requiring tighter specifications than commodity copper. This vertical is moving from nascent to structural.</p>
+</div>
+
+<div class="card accent-left accent-green">
+  <div class="card-title green">Renewable Energy &amp; Grid · Running Hard</div>
+  <p>India's 500 GW non-fossil energy target by 2030 demands massive copper — solar wiring, wind turbine conductors, inverters, transformer windings. Each MW of installed solar/wind capacity uses up to 3.5 tonnes of copper (International Copper Association). With India adding record renewable capacity annually, demand for copper conductors and bus bars is directly tied to government capex. The <strong>National Infrastructure Pipeline</strong> and PM Surya Ghar (solar rooftop) scheme back this structurally. This is Bhagyanagar's largest existing vertical and is running at capacity.</p>
+</div>
+
+<div class="card accent-left accent-teal">
+  <div class="card-title teal">Industrial &amp; Auto Electrical · Stable Core</div>
+  <p>Bhagyanagar's roots: supplying copper wires, rods, PICC conductors, and solenoid switches to OEM manufacturers of motors, transformers, auto-electrical systems, and appliances. The EV transition is actually additive here — EVs use <strong>3–4x more copper than ICE vehicles</strong> (Wood Mackenzie), and the transition to electric motors in industrial machinery mirrors this. India's Make in India push is bringing more manufacturing onshore, increasing the addressable OEM base. This vertical provides the stable cash flow foundation that funds the higher-growth adjacencies.</p>
+</div>
+
+<div class="card accent-left accent-purple">
+  <div class="card-title purple">Telecom &amp; Real Estate · Supporting Cast</div>
+  <p>Bhagyanagar has diversified into telecom products and holds real estate assets — segments that, post-demerger into Tieramet, will likely be separated from the copper core. Currently these contribute a modest share of the consolidated revenue but add complexity to valuation. The strategic logic of the demerger is partly to remove this valuation drag from the clean copper story.</p>
+</div>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">4</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Four</div>
+    <div class="chapter-title">The Strategic Insight</div>
+  </div>
+</div>
+
+<div class="insight-card" role="note">
+  <div class="insight-text">
+    The Tieramet demerger is not just a restructuring — it's the market granting the copper business its own valuation passport. Right now, Bhagyanagar India trades as a blended, messy holding entity. The copper OEM business (the majority, sitting in BCPL at ₹2,378 Cr revenue) is priced alongside real estate and wind assets that muddy the story. Once Tieramet lists — 1:1 for every BIL share — the market will value a <em>pure-play copper fabricator</em> exposed to EVs, renewables, and AI data centres. The sum of the parts after demerger is almost certainly higher than the current blended multiple. BIL shareholders get the unlock for free.
+  </div>
+  <div class="insight-attr">— Strategic insight, NSE Investor Brief · BHAGYANGR · May 2026</div>
+</div>
+
+<div class="card">
+  <p>Think of it this way: HDFC Bank was always more valuable once separated from HDFC Ltd. Bhagyanagar's copper manufacturing business — seven consecutive quarters of profit growth, CRISIL BBB+/Stable rating, 35,000 MT capacity, 500+ OEM clients — deserves to be judged on its own terms, not discounted because the parent also owns a few acres of real estate in Hyderabad and a 9 MW wind farm.</p>
+  <p>The NCLT hearing is scheduled for <strong>June 9, 2026</strong>. This is the nearest-term binary event for the stock.</p>
+</div>
+
+<!-- CHAPTER 5: NUMBERS -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">5</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Five</div>
+    <div class="chapter-title">The Numbers in Context</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">FY26 Full-Year Financials (Consolidated)</div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue from Operations</span>
+    <span class="stat-value green">₹2,378 Cr (+46% YoY)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">EBITDA</span>
+    <span class="stat-value green">₹100+ Cr (crossed milestone)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">EBITDA Margin</span>
+    <span class="stat-value amber">~4.5% (up from ~2% in FY25)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Profit After Tax</span>
+    <span class="stat-value green">₹50 Cr (+258% YoY)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Copper Volume Sold</span>
+    <span class="stat-value green">24,000 MT (+34% YoY)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue Target (FY30)</span>
+    <span class="stat-value copper">₹5,000 Cr (management guided)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Capex Committed (2 yr)</span>
+    <span class="stat-value copper">₹40 Cr</span>
+  </div>
+</div>
+
+<p style="font-size:12px; color:var(--text-muted); margin-bottom:14px;">Quarterly PAT trajectory — seven consecutive quarters of growth:</p>
+<div class="card">
+  <div class="bar-row">
+    <div class="bar-label"><span>Q4 FY25 baseline</span><span style="color:var(--text-muted)">₹4.6 Cr</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label"><span>Q1 FY26</span><span style="color:var(--green)">₹7.6 Cr (+338% YoY)</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:41%"></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label"><span>Q2 FY26</span><span style="color:var(--green)">₹11.3 Cr (+202% YoY)</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:61%"></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label"><span>Q3 FY26 (OPM 4.95%)</span><span style="color:var(--green)">₹12.8 Cr (+222% YoY)</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:69%"></div></div>
+  </div>
+  <div class="bar-row">
+    <div class="bar-label"><span>Q4 FY26 (record quarter)</span><span style="color:var(--green)">₹18.5 Cr (+304% YoY)</span></div>
+    <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Valuation &amp; Context</div>
+  <div class="stat-row">
+    <span class="stat-label">Market Cap (approx.)</span>
+    <span class="stat-value copper">~₹750–1,000 Cr</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Trailing P/E</span>
+    <span class="stat-value amber">~14–20x (fluctuating with PAT ramp)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">EV / EBITDA</span>
+    <span class="stat-value copper">~13x</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Price / Book</span>
+    <span class="stat-value amber">~2.1–2.6x</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Price / Sales</span>
+    <span class="stat-value green">~0.24x (cheap on revenue)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">52-week range</span>
+    <span class="stat-value">₹65 → ₹285 (+338%)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">CRISIL rating (BCPL sub)</span>
+    <span class="stat-value green">BBB+/Stable (Apr 2026)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">ROE (3-year average)</span>
+    <span class="stat-value red">6.31% (below peers)</span>
+  </div>
+</div>
+
+<div class="card accent-left accent-amber">
+  <div class="card-title amber">What the Market Is Pricing In</div>
+  <p>At ~₹750–1,000 Cr market cap on ₹2,378 Cr revenue and ₹50 Cr PAT, the market is pricing in: (a) continued margin expansion from 4.5% toward 5–7% as value-added mix rises, (b) successful Tieramet demerger unlocking a pure-play copper valuation re-rate, and (c) capacity growth to 45,000 MT with volume approaching ₹3,500–4,000 Cr. The P/Sales of 0.24x is optically cheap, but the thin EBITDA margins mean a small input-cost headwind can hit PAT hard. The market is paying for the trajectory, not the current state — which means execution is everything.</p>
+</div>
+
+<!-- CHAPTER 6: RISKS -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">6</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Six</div>
+    <div class="chapter-title">Risks — Eyes Open</div>
+  </div>
+</div>
+
+<div class="warning-box" role="alert">
+  <div class="wtitle">⚠ Critical Flag: Promoter Pledge</div>
+  <p>Screener shows <strong>96.1% of promoter holding is pledged</strong> — an extreme reading. The company has clarified that most pledges are for hedging purposes with actual personal pledges under 5%. This discrepancy must be independently verified. Promoter holding has also declined by 9.82% over three years. Until there is clarity on pledge unwind or reclassification, this is the single largest governance overhang.</p>
+</div>
+
+<div class="card">
+  <div class="risk-row">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">Promoter Pledge &amp; Governance Uncertainty</div>
+      <div class="risk-desc">96.1% of promoter holding reportedly pledged. Even if clarified as hedging instruments, the optics create institutional resistance. Add the delayed disclosure of the Managing Director's resignation and high company secretary turnover — these are not individually fatal, but together they signal process risk that must be monitored closely.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon">📉</div>
+    <div class="risk-content">
+      <div class="risk-title">Thin Margins — PAT is Copper-Price Sensitive</div>
+      <div class="risk-desc">EBITDA margins of 4–5% mean a small move in copper input costs directly compresses PAT. The company operates in a pass-through model (copper is a commodity), but the timing lag between input price movements and customer billing can create earnings volatility. Interest expenses grew 22% in H2 FY26, which could pressure net margins even as operating profits improve.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon">⚖️</div>
+    <div class="risk-content">
+      <div class="risk-title">Demerger Execution Risk</div>
+      <div class="risk-desc">The Tieramet demerger is the key re-rating catalyst, but NCLT processes can be slow. The June 9, 2026 hearing is an admission, not a final order. If the scheme faces objections from creditors, regulatory queries, or SEBI observations, the timeline slips — and with it, the valuation unlock thesis.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon">🚢</div>
+    <div class="risk-content">
+      <div class="risk-title">Near-Term Volume Risk: Shipping Disruptions</div>
+      <div class="risk-desc">Management has flagged potential volume impact in Q1 FY27 from global shipping diversions and transshipment delays affecting copper scrap/feedstock supply chains. India's copper manufacturing is heavily import-dependent on concentrates. A prolonged disruption could create a quarter of flat or declining volumes.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon">📊</div>
+    <div class="risk-content">
+      <div class="risk-title">ROE Remains Low, Working Capital Intensive</div>
+      <div class="risk-desc">Three-year average ROE of 6.31% is below what a growth-premium multiple deserves. Copper fabrication is inherently working capital heavy — large inventories, long receivable cycles with industrial OEMs. As the company scales to ₹3,000–5,000 Cr revenue, working capital financing needs will grow proportionately, keeping leverage elevated and compressing returns on equity.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<div class="chapter-header" role="heading" aria-level="2">
+  <div class="chapter-num" aria-hidden="true">7</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow">Chapter Seven</div>
+    <div class="chapter-title">Five Watch Signals</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="signal-row">
+    <div class="signal-dot" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-metric">EBITDA Margin per Quarter</div>
+      <div class="signal-desc"><strong>Watch for:</strong> sustained march from 4.95% (Q3 FY26) toward 6–7%. This is the key operating leverage story — rising value-added mix (targeting 66% in FY27) should drive margin expansion even at flat volumes. <strong>Red flag:</strong> margin falling back below 4% for two consecutive quarters, signalling copper price squeeze or mix deterioration.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot" style="background:var(--amber)" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-metric">Tieramet Demerger Progress</div>
+      <div class="signal-desc"><strong>Watch for:</strong> Final NCLT order post June 9, 2026 hearing; SEBI no-objection letter; Tieramet listing timeline on NSE/BSE. <strong>Red flag:</strong> any NCLT adjournment beyond December 2026, or SEBI observation letters requiring scheme modifications — both delay the re-rating event significantly.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot green" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-metric">Promoter Pledge Reclassification</div>
+      <div class="signal-desc"><strong>Watch for:</strong> Any formal clarification or reduction in the reported 96.1% pledge figure — either through pledge release, reclassification per SEBI framework, or independent audit confirmation. <strong>Red flag:</strong> pledge invocation by lenders, even a small tranche, which would signal distress and trigger institutional selling.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot blue" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-metric">Value-Added Product Revenue Share</div>
+      <div class="signal-desc"><strong>Watch for:</strong> The 59%→66% shift in value-added product mix (data centre bus bars, specialty conductors) in FY27 concalls. Higher mix = higher realisation per tonne = margin expansion without necessarily needing volume growth. <strong>Red flag:</strong> mix stays flat or drops below 55%, suggesting the data centre/specialty opportunity is not materialising at scale.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot teal" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-metric">Volume &amp; Capacity Utilisation</div>
+      <div class="signal-desc"><strong>Watch for:</strong> Q1 FY27 volume guidance vs. the flagged shipping disruption risk — did it actually hit? Then track progress toward 45,000 MT capacity from 35,000 MT, with ₹40 Cr capex as the funding mechanism. <strong>Red flag:</strong> volume flat or declining for two quarters while capacity expansion delays push the FY30 revenue target out of reach.</div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-card" role="complementary" aria-label="Investment verdict">
+  <div class="verdict-label">▷ Verdict</div>
+  <div class="verdict-text">
+    Bhagyanagar India is a 41-year-old copper fabricator suddenly sitting at the intersection of four structural demand tailwinds — EV adoption, renewable energy build-out, AI data centre infrastructure, and India's industrial electrification — that happen to be peaking simultaneously. The FY26 numbers are real: revenue +46%, PAT +258%, seven consecutive quarters of profit growth, EBITDA crossing ₹100 Cr for the first time. Margin expansion from ~2% to ~4.5% in a single year reflects operating leverage kicking in as volumes and value-added mix both improved. The CRISIL BBB+/Stable rating on the subsidiary confirms the credit story is intact. Where it gets interesting is the Tieramet demerger: once the copper OEM business is a standalone listed entity, the blended holding-company discount disappears and the market gets to value a pure-play copper fabricator exposed to some of the strongest demand tailwinds in industrial history. We're in the middle chapters of this story — early in the value-added transformation, and very early in the demerger re-rating. The material risk that investors cannot ignore is the governance question around the 96.1% promoter pledge figure: until this is definitively resolved, the stock carries a significant uncertainty premium that is appropriate. For those comfortable with that overhang and the thin-margin nature of copper fabrication, the FY26 trajectory and the structural demand tailwinds make this one of the more interesting micro-cap copper stories in India right now.
+  </div>
+</div>
+
+<div class="footnote" role="contentinfo">
+  NSE: BHAGYANGR · Bhagyanagar India Limited · Brief dated 18 May 2026<br>
+  Sources: BSE/NSE filings, Screener, Groww, MarketsMojo, Business Standard, Wood Mackenzie, S&amp;P Global, Fortune Business Insights, IEA, BlueWeave Consulting<br>
+  This brief is for informational purposes only and does not constitute investment advice.<br>
+  All forward-looking statements are attributed to company management or analyst sources as indicated.
+</div>
+
+<script>
+  const btn = document.getElementById('modeBtn');
+  const root = document.documentElement;
+  const stored = localStorage.getItem('bhagyangr-mode');
+  if (stored === 'light') applyLight();
+
+  btn.addEventListener('click', () => {
+    if (root.classList.contains('light-forced')) {
+      root.classList.remove('light-forced');
+      btn.textContent = '☽';
+      localStorage.setItem('bhagyangr-mode', 'dark');
+      root.style.removeProperty('--midnight');
+      root.style.removeProperty('--surface');
+      root.style.removeProperty('--surface-2');
+      root.style.removeProperty('--surface-3');
+      root.style.removeProperty('--border-subtle');
+      root.style.removeProperty('--text-primary');
+      root.style.removeProperty('--text-secondary');
+      root.style.removeProperty('--text-muted');
+    } else {
+      applyLight();
+      localStorage.setItem('bhagyangr-mode', 'light');
+    }
+  });
+
+  function applyLight() {
+    root.classList.add('light-forced');
+    btn.textContent = '☀';
+    root.style.setProperty('--midnight', '#F5F0E8');
+    root.style.setProperty('--surface', '#FFFFFF');
+    root.style.setProperty('--surface-2', '#F7F2EA');
+    root.style.setProperty('--surface-3', '#EDE7D8');
+    root.style.setProperty('--border-subtle', 'rgba(0,0,0,0.08)');
+    root.style.setProperty('--text-primary', '#1A1208');
+    root.style.setProperty('--text-secondary', '#4A3F30');
+    root.style.setProperty('--text-muted', '#7A6E60');
+  }
+</script>
+</body>
+</html>

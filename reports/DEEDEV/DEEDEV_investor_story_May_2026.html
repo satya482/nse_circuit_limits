@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DEEDEV Investor Story - May 2026</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f7f4;
+      --paper: #ffffff;
+      --ink: #172019;
+      --muted: #617066;
+      --line: #dce2dc;
+      --soft: #edf2ec;
+      --teal: #1D9E75;
+      --coral: #D85A30;
+      --industrial: #378ADD;
+      --green: #3B6D11;
+      --tech: #534AB7;
+      --amber: #BA7517;
+      --gray: #738076;
+      --shadow: 0 18px 38px rgba(23, 32, 25, 0.08);
+    }
+
+    [data-theme="night"] {
+      color-scheme: dark;
+      --bg: #111512;
+      --paper: #1b211d;
+      --ink: #edf3ee;
+      --muted: #aeb8b0;
+      --line: #303a33;
+      --soft: #252d27;
+      --shadow: 0 18px 44px rgba(0, 0, 0, 0.34);
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.62;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      justify-content: flex-end;
+      padding: 14px clamp(16px, 5vw, 60px);
+      background: color-mix(in srgb, var(--bg) 90%, transparent);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    button {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    article {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto 64px;
+    }
+
+    .cover {
+      min-height: 72vh;
+      display: grid;
+      align-content: center;
+      gap: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    h1 {
+      max-width: 980px;
+      margin: 0;
+      font-size: clamp(2.35rem, 5.8vw, 5.15rem);
+      line-height: 1.03;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      margin: 2px 0 0;
+      font-size: clamp(1.55rem, 3vw, 2.25rem);
+      line-height: 1.14;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.04rem;
+      letter-spacing: 0;
+    }
+
+    .dek {
+      max-width: 820px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.34rem);
+    }
+
+    .source-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .source-strip span {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 8px 10px;
+      border-radius: 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 44px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter-head {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 16px;
+      align-items: start;
+      margin-bottom: 24px;
+    }
+
+    .num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--ink);
+      color: var(--bg);
+      font-weight: 900;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .two { grid-template-columns: repeat(2, 1fr); }
+
+    .card, .insight, .verdict {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-band {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      margin: 22px 0;
+      padding: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+
+    .visual-node {
+      min-height: 86px;
+      border-left: 3px solid var(--gray);
+      background: var(--soft);
+      border-radius: 8px;
+      padding: 10px;
+      display: grid;
+      align-content: center;
+    }
+
+    .visual-node strong { display: block; }
+    .visual-node span { color: var(--muted); font-size: 0.88rem; }
+
+    .insight { border-left: 3px solid var(--industrial); }
+    .accent-tech { border-left: 3px solid var(--tech); }
+    .accent-industrial { border-left: 3px solid var(--industrial); }
+    .accent-green { border-left: 3px solid var(--green); }
+    .accent-amber { border-left: 3px solid var(--amber); }
+    .accent-coral { border-left: 3px solid var(--coral); }
+    .accent-teal { border-left: 3px solid var(--teal); }
+    .accent-gray { border-left: 3px solid var(--gray); }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 11px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .stat-row:last-child { border-bottom: 0; }
+    .stat-row span:first-child { color: var(--muted); }
+    .stat-row strong { text-align: right; }
+
+    .risk-row, .signal-row {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 10px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .risk-row:last-child, .signal-row:last-child { border-bottom: 0; }
+    .warn { color: var(--amber); font-weight: 900; }
+    .dot {
+      width: 11px;
+      height: 11px;
+      margin-top: 8px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .dot.industrial { background: var(--industrial); }
+    .dot.amber { background: var(--amber); }
+    .dot.teal { background: var(--teal); }
+    .dot.coral { background: var(--coral); }
+    .dot.gray { background: var(--gray); }
+
+    .callout {
+      background: var(--soft);
+      border-left: 3px solid var(--gray);
+      padding: 16px;
+      border-radius: 8px;
+      margin: 18px 0;
+    }
+
+    .quote {
+      margin: 0;
+      font-size: 1.12rem;
+    }
+
+    .sources li { margin-bottom: 8px; }
+
+    @media (max-width: 860px) {
+      .grid, .grid.two, .visual-band { grid-template-columns: 1fr; }
+      .chapter-head { grid-template-columns: 44px 1fr; }
+      .source-strip { display: grid; }
+      .stat-row { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar" role="navigation" aria-label="Display controls">
+    <button type="button" id="themeToggle" aria-pressed="false">Night mode</button>
+  </div>
+
+  <article aria-label="DEEDEV investor story">
+    <header class="cover">
+      <div>
+        <p class="eyebrow">NSE: DEEDEV | Capital goods - process piping | 17 May 2026</p>
+        <h1>DEE Development Engineers: the pipework specialist riding India's heavy capex cycle</h1>
+        <p class="dek">DEE is not a commodity pipe seller. It is an engineered process-piping manufacturer for power, oil and gas, chemicals, nuclear, and industrial projects. The investor question is whether new capacity, a deeper order book, and backward integration can turn project execution into durable returns.</p>
+        <div class="source-strip" aria-label="Primary source documents used">
+          <span>Screener financials</span>
+          <span>Latest available: Q3 FY26 investor presentation</span>
+          <span>Latest available: Q3 FY26 transcript</span>
+          <span>Q2 FY26 call and press release</span>
+          <span>Q1 FY26 transcript</span>
+          <span>April 2026 order-book update</span>
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="chapter-1">
+      <div class="chapter-head">
+        <div class="num">1</div>
+        <div>
+          <p class="eyebrow">Chapter 1</p>
+          <h2 id="chapter-1">Context: India is rebuilding the industrial plumbing</h2>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card accent-industrial">
+          <h3>Why now</h3>
+          <p>DEE sits inside a capital-goods upcycle where large customers are spending on power plants, refineries, petrochemicals, gas infrastructure, chemicals, and nuclear-linked systems. ICRA's February 2026 capital-goods outlook stayed positive, citing median OPBDITA growth expectations above <strong>15%</strong> and order books at multi-year highs.</p>
+        </div>
+        <div class="card accent-teal">
+          <h3>Sector market size</h3>
+          <p>Grand View Research estimated India's process-piping market at <strong>USD 303.99 million in 2022</strong>, growing at a <strong>6.1% CAGR</strong> to <strong>USD 481.03 million by 2030</strong>. The market is not hypergrowth software; it is an execution-led industrial niche where qualification and delivery discipline matter.</p>
+        </div>
+      </div>
+      <div class="callout">
+        <p class="quote">Industry lens: ICRA says the capital-goods outlook is "Positive," helped by stable investment, especially in power.</p>
+      </div>
+      <p>The policy backdrop is unusually supportive. The FY27 Union Budget raised government capex to about <strong>&#8377;12.2 lakh crore</strong>, while oil PSUs had already spent <strong>&#8377;1.07 lakh crore</strong> of their FY26 <strong>&#8377;1.32 lakh crore</strong> target by January 2026. In oil and gas alone, IBEF cites planned investments of <strong>&#8377;30-35 lakh crore by 2035</strong> and a petrochemical capex push of about <strong>&#8377;3.28 lakh crore by 2030</strong>. For DEE, that means the order pool is real; the hard part is converting it without stretching working capital.</p>
+    </section>
+
+    <section aria-labelledby="chapter-2">
+      <div class="chapter-head">
+        <div class="num">2</div>
+        <div>
+          <p class="eyebrow">Chapter 2</p>
+          <h2 id="chapter-2">The Business Model: custom arteries for critical plants</h2>
+        </div>
+      </div>
+      <p>In plain English, DEE designs, engineers, fabricates, and supplies high-specification piping systems and fabricated assemblies that carry steam, gas, oil, chemicals, and other process fluids inside large industrial facilities. It also has a biomass power business and a heavy-fabrication arm, but the core story is process piping.</p>
+      <div class="visual-band" role="img" aria-label="DEE business flow from engineering to repeat orders">
+        <div class="visual-node" style="border-left-color: var(--industrial);"><strong>Design</strong><span>Engineering drawings and project specs</span></div>
+        <div class="visual-node" style="border-left-color: var(--teal);"><strong>Fabricate</strong><span>Spools, bends, fittings, skids, supports</span></div>
+        <div class="visual-node" style="border-left-color: var(--coral);"><strong>Qualify</strong><span>Testing, welding, quality approvals</span></div>
+        <div class="visual-node" style="border-left-color: var(--amber);"><strong>Deliver</strong><span>Project-linked dispatch and installation support</span></div>
+        <div class="visual-node" style="border-left-color: var(--green);"><strong>Repeat</strong><span>Approved-vendor status and new tenders</span></div>
+      </div>
+      <div class="grid">
+        <div class="card accent-industrial">
+          <h3>The compounding loop</h3>
+          <p>A project win improves plant utilization. Higher utilization improves absorption of fixed costs. Better delivery credentials help DEE qualify for larger and more critical scopes. Larger scopes feed the next order book.</p>
+        </div>
+        <div class="card accent-coral">
+          <h3>Why customers stay</h3>
+          <p>Switching suppliers is uncomfortable in critical piping because the customer must revalidate welding quality, metallurgy, drawings, testing records, tolerances, documentation, and delivery history. A low-cost quote is not enough when downtime or leakage can be expensive.</p>
+        </div>
+        <div class="card accent-teal">
+          <h3>Capabilities that matter</h3>
+          <p>DEE claims India's largest installed capacity in process-piping solutions. The Anjar expansion took process-piping capacity to <strong>30,000 MTPA</strong>, and the seamless-pipe plant adds backward integration for alloy steel and high-specification requirements.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-3">
+      <div class="chapter-head">
+        <div class="num">3</div>
+        <div>
+          <p class="eyebrow">Chapter 3</p>
+          <h2 id="chapter-3">Vertical Stories: four demand engines and one option value</h2>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card accent-industrial">
+          <h3>Power and nuclear-linked systems</h3>
+          <p><strong>Catalyst:</strong> thermal ordering, nuclear ambition, and grid reliability. <strong>Status:</strong> running and scaling. Q2 commentary pointed to <strong>&#8377;500 crore</strong> of expected power-sector orders in the remaining five months of FY26 and <strong>&#8377;650-700 crore</strong> potential in FY27.</p>
+        </div>
+        <div class="card accent-amber">
+          <h3>Oil, gas, and petrochemicals</h3>
+          <p><strong>Catalyst:</strong> refinery expansion, gas demand, and petrochemical capacity. <strong>Status:</strong> core order driver. IBEF cites India's refining capacity moving toward <strong>309.5 MMT by 2028</strong>, while oil PSUs continue heavy capex execution.</p>
+        </div>
+        <div class="card accent-teal">
+          <h3>Process industries and chemicals</h3>
+          <p><strong>Catalyst:</strong> chemicals, industrial gases, fertilizers, and process manufacturing. <strong>Status:</strong> mature adjacency. These customers need customized piping more than standardized inventory, which plays to DEE's engineering-led manufacturing base.</p>
+        </div>
+        <div class="card accent-coral">
+          <h3>Seamless pipes and backward integration</h3>
+          <p><strong>Catalyst:</strong> high-spec alloy-steel demand and import substitution. <strong>Status:</strong> newly validated. DEE secured a <strong>&#8377;58 crore</strong> seamless-pipe order for its Anjar facility, with execution scheduled by December 2026.</p>
+        </div>
+        <div class="card accent-green">
+          <h3>Green hydrogen and clean energy</h3>
+          <p><strong>Catalyst:</strong> modular hydrogen systems, purification, and industrial decarbonization. <strong>Status:</strong> option value. Management has described a clean-tech partnership and Molsieve Designs acquisition, but investors should wait for named orders before underwriting large profits here.</p>
+        </div>
+        <div class="card accent-gray">
+          <h3>Biomass power</h3>
+          <p><strong>Catalyst:</strong> tariff clarity. <strong>Status:</strong> non-core stabilizer. The Malwa biomass plant received a PSERC tariff of <strong>&#8377;5.224/kWh</strong>, which may reduce drag, but this is not the main valuation engine.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-4">
+      <div class="chapter-head">
+        <div class="num">4</div>
+        <div>
+          <p class="eyebrow">Chapter 4</p>
+          <h2 id="chapter-4">Strategic Insight: the seamless plant is not just capacity, it is bargaining power</h2>
+        </div>
+      </div>
+      <div class="insight">
+        <p>The non-obvious thing about DEE is that backward integration changes the character of the business. A normal fabricator waits on bought-out pipes and components, then earns a margin on conversion and project execution. A more integrated supplier can control availability, quality, lead time, and metallurgy for critical scopes. The seamless-pipe plant therefore matters less as a standalone product line and more as a way to make DEE harder to substitute in power and oil-and-gas projects. If the plant ramps well, DEE can move from "good fabricator" to "qualified critical-scope partner." That is the difference between competing on price and being shortlisted for complexity.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-5">
+      <div class="chapter-head">
+        <div class="num">5</div>
+        <div>
+          <p class="eyebrow">Chapter 5</p>
+          <h2 id="chapter-5">The Numbers in Context: order book is strong, returns still need proof</h2>
+        </div>
+      </div>
+      <div class="grid two">
+        <div class="card">
+          <h3>Financial snapshot</h3>
+          <div class="stat-row"><span>Market cap</span><strong>About &#8377;3,473 crore</strong></div>
+          <div class="stat-row"><span>Current price</span><strong>About &#8377;501</strong></div>
+          <div class="stat-row"><span>Trailing P/E</span><strong>About 50.9x</strong></div>
+          <div class="stat-row"><span>Book value / P/B</span><strong>&#8377;122 / about 4.1x</strong></div>
+          <div class="stat-row"><span>ROCE / ROE</span><strong>6.94% / 3.54%</strong></div>
+          <div class="stat-row"><span>Order book, Apr. 2026</span><strong>&#8377;1,909.82 crore</strong></div>
+        </div>
+        <div class="card">
+          <h3>Operating trajectory</h3>
+          <div class="stat-row"><span>FY25 revenue</span><strong>&#8377;827.4 crore</strong></div>
+          <div class="stat-row"><span>Q3 FY26 revenue</span><strong>&#8377;286.7 crore, up 77% YoY</strong></div>
+          <div class="stat-row"><span>9M FY26 revenue</span><strong>&#8377;780.4 crore, up 44.3% YoY</strong></div>
+          <div class="stat-row"><span>9M FY26 EBITDA</span><strong>&#8377;123.4 crore, 15.8% margin</strong></div>
+          <div class="stat-row"><span>9M FY26 PAT</span><strong>&#8377;49.5 crore, up 308.2% YoY</strong></div>
+          <div class="stat-row"><span>Gross-margin context</span><strong>Backward integration intended to improve gross margins</strong></div>
+          <div class="stat-row"><span>Q2 cash cycle</span><strong>243 days; receivables 104, inventory 223</strong></div>
+        </div>
+      </div>
+      <p>The improvement is visible: Q3 FY26 revenue rose <strong>77%</strong> YoY, operating EBITDA margin expanded to <strong>15.2%</strong> from <strong>3.5%</strong>, and 9M FY26 PAT was already above FY25 PAT. The catch is return quality. Screener's current ROCE and ROE remain modest because this is a capex-heavy, working-capital-heavy business coming off expansion. The order book is the bridge from promise to proof: April 2026 closing order book of <strong>&#8377;1,909.82 crore</strong> is more than twice FY25 revenue.</p>
+      <div class="callout">
+        <p><strong>Valuation context:</strong> DEE at roughly <strong>51x</strong> trailing earnings trades below Thermax at about <strong>93x</strong> and BHEL's current elevated multiple near <strong>88x</strong>, but above older IPO peer references for ISGEC around <strong>19x</strong>. The market is pricing DEE as a small-cap capital-goods compounder with order-book visibility, not as a plain fabrication shop.</p>
+      </div>
+      <p><strong>What the market is pricing in:</strong> investors are assuming that the new Anjar capacity, seamless-pipe plant, and power/oil-and-gas orders will raise utilization, protect mid-teens operating margins, and lift ROCE. That is reasonable only if cash conversion improves; otherwise, earnings growth can look good while balance-sheet stress quietly builds.</p>
+    </section>
+
+    <section aria-labelledby="chapter-6">
+      <div class="chapter-head">
+        <div class="num">6</div>
+        <div>
+          <p class="eyebrow">Chapter 6</p>
+          <h2 id="chapter-6">Risks: where the story can leak</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Working-capital stretch:</strong> Q2 FY26 cash conversion cycle was <strong>243 days</strong>, with inventory days at <strong>223</strong>. The risk is that order growth consumes cash faster than profits replenish it; the signal is receivables and inventory rising faster than revenue.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Seamless-pipe ramp risk:</strong> the new facility has to prove quality, yield, and utilization. The magnitude is meaningful because management has spoken of a large revenue opportunity from this plant; the signal is delayed commissioning, low dispatches, or margin dilution.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Power tariff and non-core drag:</strong> the power segment has already affected profitability, and biomass economics depend on regulatory tariff clarity. The signal is recurring EBITDA loss from non-core businesses despite tariff orders.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Project lumpiness:</strong> DEE's orders are project-linked, so quarterly revenue can move with customer schedules, inspection clearances, logistics, and Incoterms. The signal is a falling order book or weak execution despite stated inflows.</div></div>
+        <div class="risk-row"><div class="warn">&#9888;</div><div><strong>Steel and import-policy volatility:</strong> seamless tubes, alloy steel, and stainless inputs face anti-dumping reviews, BIS compliance, and commodity swings. The signal is gross-margin pressure, procurement delays, or management commentary on input availability.</div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="chapter-7">
+      <div class="chapter-head">
+        <div class="num">7</div>
+        <div>
+          <p class="eyebrow">Chapter 7</p>
+          <h2 id="chapter-7">Watch Signals: five checks after every result</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="signal-row"><div class="dot industrial"></div><div><strong>Order book and order inflow:</strong> good is the book staying above <strong>1.8x FY25 revenue</strong> with power and oil-and-gas depth; red flag is two quarters of weak inflows or heavy dependence on one vertical.</div></div>
+        <div class="signal-row"><div class="dot teal"></div><div><strong>Execution rate:</strong> good is quarterly revenue above <strong>&#8377;275-300 crore</strong> with clean commentary; red flag is order book rising while dispatches lag without a customer-side explanation.</div></div>
+        <div class="signal-row"><div class="dot green"></div><div><strong>Operating margin:</strong> good is operating EBITDA margin holding around <strong>15-16%</strong>; red flag is margin below <strong>13%</strong> from pricing pressure, under-utilization, or non-core losses.</div></div>
+        <div class="signal-row"><div class="dot coral"></div><div><strong>Seamless-pipe contribution:</strong> good is repeat orders after the <strong>&#8377;58 crore</strong> maiden contract; red flag is no meaningful follow-on by late FY27 or quality-related delays.</div></div>
+        <div class="signal-row"><div class="dot amber"></div><div><strong>Cash conversion:</strong> good is inventory days and receivable days trending down from Q2's <strong>223</strong> and <strong>104</strong>; red flag is profit growth with negative operating cash flow.</div></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="verdict">
+      <div class="verdict">
+        <p class="eyebrow">Verdict</p>
+        <h2 id="verdict">Middle chapter, with a fresh capacity test</h2>
+        <p>DEE is backed by specific structural tailwinds: India's power and refinery capex cycle, oil-and-gas infrastructure expansion, process-industry localization, and the need for qualified suppliers in critical piping. The quality signal is improving execution rather than pristine return ratios: Q3 FY26 revenue grew 77% YoY, 9M EBITDA margin reached 15.8%, and the order book crossed &#8377;1,900 crore by April 2026, but ROCE and working capital still need to catch up. The near-term catalyst is clear: repeat seamless-pipe orders, faster Anjar utilization, and visible conversion of power-sector opportunities into revenue. Valuation near 51x trailing earnings is not cheap, but it is below several hot capital-goods peers; it is justified only if margins stay in the mid-teens and cash conversion improves. This is a middle-chapter story: DEE has moved beyond listing promise and early capacity build-out, but the next chapters must prove that new capacity creates bargaining power, not just more inventory on the balance sheet.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="sources">
+      <div class="chapter-head">
+        <div class="num">S</div>
+        <div>
+          <p class="eyebrow">Selected sources</p>
+          <h2 id="sources">Research trail</h2>
+        </div>
+      </div>
+      <ul class="sources">
+        <li><a href="https://www.screener.in/company/DEEDEV/">Screener: DEE Development Engineers valuation, financial snapshot, shareholding, and filings</a></li>
+        <li><a href="https://nsearchives.nseindia.com/corporate/DDEL_05022026222943_BSENSESIGNED.pdf">NSE filing: revised Q3 FY26 investor presentation, 5 February 2026</a></li>
+        <li><a href="https://www.gurufocus.com/stock/NSE%3ADEEDEV/transcripts/8608133">GuruFocus: Q3 FY26 DEE Development Engineers earnings call transcript</a></li>
+        <li><a href="https://www.alphaspread.com/de/security/nse/deedev/investor-relations/earnings-call/q2-2026">AlphaSpread: Q2 FY26 earnings call transcript and summary</a></li>
+        <li><a href="https://www.bseindia.com/xml-data/corpfiling/AttachLive/4f7ec35c-b39d-4ac3-9a55-70d87e0ebaa6.pdf">BSE filing: Q1 FY26 earnings call transcript, 19 August 2025</a></li>
+        <li><a href="https://bsmedia.business-standard.com/_media/bs/data/announcements/bse/06022026/646c2eac-23fc-4e10-bd42-2f3f884fb548.pdf">BSE/Business Standard hosted filing: revised Q3 FY26 earnings press release</a></li>
+        <li><a href="https://www.psuconnect.in/corporate-news/dee-development-engineers-maintains-strong-order-book-of-1909-82-crore-in-april-2026">PSU Connect: April 2026 order book update</a></li>
+        <li><a href="https://www.icra.in/Research/ViewResearchReport/industry-outlook-remains-positive-aided-by-stable-investments-across-end-user-sectors-particularly-power/6795">ICRA: capital goods industry outlook, February 2026</a></li>
+        <li><a href="https://www.grandviewresearch.com/industry-analysis/india-process-piping-market-report">Grand View Research: India process piping market size and CAGR</a></li>
+        <li><a href="https://www.ibef.org/archives/industry/indian-oil-and-gas-industry-analysis-reports/indian-oil-and-gas-industry-analysis-presentation">IBEF: Indian oil and gas industry analysis, February 2026</a></li>
+        <li><a href="https://www.business-standard.com/economy/news/oil-psus-spent-81-of-fy26-capex-target-by-jan-126022001228_1.html">Business Standard: oil PSU FY26 capex execution</a></li>
+        <li><a href="https://steelmath.com/articles/anti-dumping-duty-steel-imports-india-2026-active-cases">SteelMath: 2026 steel import anti-dumping and compliance context</a></li>
+        <li><a href="https://www.screener.in/company/THERMAX/">Screener: Thermax valuation comparison</a></li>
+        <li><a href="https://stockanalysis.com/quote/nse/BHEL/financials/ratios/">StockAnalysis: BHEL valuation ratios</a></li>
+      </ul>
+    </section>
+  </article>
+
+  <script>
+    const button = document.getElementById("themeToggle");
+    const storedTheme = localStorage.getItem("deedev-theme");
+    if (storedTheme === "night") {
+      document.documentElement.dataset.theme = "night";
+      button.textContent = "Day mode";
+      button.setAttribute("aria-pressed", "true");
+    }
+
+    button.addEventListener("click", () => {
+      const night = document.documentElement.dataset.theme !== "night";
+      document.documentElement.dataset.theme = night ? "night" : "";
+      localStorage.setItem("deedev-theme", night ? "night" : "day");
+      button.textContent = night ? "Day mode" : "Night mode";
+      button.setAttribute("aria-pressed", String(night));
+    });
+  </script>
+</body>
+</html>
