@@ -71,28 +71,30 @@ foreach ($f in $files) {
 
 Log "Files copied: $copied"
 
-# ── Persist manifest ──────────────────────────────────────────────────────────
 if ($newEntries.Count -gt 0) {
+    # ── Persist manifest ──────────────────────────────────────────────────────
     $allEntries | ConvertTo-Json -Depth 3 | Set-Content $manifest -Encoding UTF8
     Log "Manifest updated: $($allEntries.Count) total entries"
-}
 
-# ── Rebuild index ──────────────────────────────────────────────────────────────
-Log "Rebuilding index..."
-python "$repo\scripts\generate_index.py" 2>&1 | ForEach-Object { Log $_ }
+    # ── Rebuild index ─────────────────────────────────────────────────────────
+    Log "Rebuilding index..."
+    python "$repo\scripts\generate_index.py" 2>&1 | ForEach-Object { Log $_ }
 
-# ── Git commit + push (only if something changed) ─────────────────────────────
-Set-Location $repo
-git add reports/ logs/sync_manifest.json 2>&1 | Out-Null
-$staged = git diff --staged --name-only
+    # ── Git commit + push ─────────────────────────────────────────────────────
+    Set-Location $repo
+    git add reports/ logs/sync_manifest.json 2>&1 | Out-Null
+    $staged = git diff --staged --name-only
 
-if ($staged) {
-    $msg = "investor stories sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm') IST ($copied new)"
-    git commit -m $msg 2>&1 | Out-Null
-    git push 2>&1 | Out-Null
-    Log "Pushed to GitHub: $msg"
+    if ($staged) {
+        $msg = "investor stories sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm') IST ($copied new)"
+        git commit -m $msg 2>&1 | Out-Null
+        git push 2>&1 | Out-Null
+        Log "Pushed to GitHub: $msg"
+    } else {
+        Log "Nothing new to commit."
+    }
 } else {
-    Log "Nothing new to commit."
+    Log "No new files - skipping index rebuild and git push."
 }
 
 Log "=== Done ==="
