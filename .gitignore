@@ -11,6 +11,7 @@ ema-compression-scanner/.kite_token_stamp
 .us_ohlc_data/us_market.db
 .ema25_ohlc_cache/
 .niftymidsml400_cache.csv
+.fno_cache.csv
 .company_cache/
 logs/
 .claude/
