@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ganesh Benzoplast (GANESHBE) — Investor Story Brief</title>
+<style>
+  :root {
+    --bg: #f7f6f3;
+    --card: #ffffff;
+    --ink: #1c1c1e;
+    --ink-soft: #4a4a4f;
+    --line: #e3e1dc;
+    --eyebrow: #8a8a8f;
+    --blue: #378ADD;     /* LST / storage infrastructure */
+    --purple: #534AB7;   /* chemicals */
+    --teal: #1D9E75;     /* EPC / projects / favourable */
+    --coral: #D85A30;    /* high threat */
+    --amber: #BA7517;    /* moderate threat / risk */
+    --green: #3B6D11;    /* catalyst / positive */
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.04);
+  }
+  html.night {
+    --bg: #16171a;
+    --card: #1f2125;
+    --ink: #f2f2f0;
+    --ink-soft: #b9b9bd;
+    --line: #34363c;
+    --eyebrow: #9a9aa0;
+    --shadow: 0 1px 3px rgba(0,0,0,0.4), 0 8px 24px rgba(0,0,0,0.3);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Georgia', 'Iowan Old Style', serif;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+  h1,h2,h3,.eyebrow,.badge,.pill-label,.stat-label,.qs-label,.takeaway-pill,.controls,.nav { font-family: 'Helvetica Neue', Arial, sans-serif; }
+
+  /* Controls */
+  .controls {
+    position: sticky; top: 0; z-index: 200;
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 10px 20px; background: var(--bg); border-bottom: 1px solid var(--line);
+  }
+  .controls button {
+    font-size: 13px; padding: 7px 14px; border-radius: 20px; cursor: pointer;
+    border: 1px solid var(--line); background: var(--card); color: var(--ink);
+  }
+  .controls button:hover { border-color: var(--blue); }
+
+  /* Quick scan */
+  #quick-scan {
+    position: sticky; top: 52px; z-index: 100;
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    margin: 16px auto; max-width: 860px; box-shadow: var(--shadow);
+  }
+  #quick-scan .qs-head {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; cursor: pointer;
+  }
+  #quick-scan .qs-head strong { font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 14px; letter-spacing: .04em; }
+  #quick-scan .qs-body { padding: 4px 16px 14px; }
+  #quick-scan.collapsed .qs-body { display: none; }
+  .qs-row { display: flex; gap: 10px; padding: 5px 0; border-bottom: 1px dotted var(--line); font-size: 14.5px; }
+  .qs-row:last-child { border-bottom: none; }
+  .qs-label { flex: 0 0 118px; font-size: 11.5px; letter-spacing: .05em; color: var(--eyebrow); padding-top: 2px; }
+
+  /* Cover */
+  .cover {
+    background: linear-gradient(135deg, #0e2a44 0%, #173d5e 55%, #1f4a3d 100%);
+    color: #fff; border-radius: 16px; padding: 40px 34px; margin: 16px 0 36px;
+    box-shadow: var(--shadow);
+  }
+  .cover .eyebrow { color: #9fc4e8; letter-spacing: .14em; font-size: 12px; text-transform: uppercase; }
+  .cover h1 { font-size: 34px; line-height: 1.15; margin: 12px 0 6px; }
+  .cover .sub { color: #d6e6f3; font-size: 16px; font-style: italic; margin-bottom: 26px; }
+  .cover-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .cover-cell { background: rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; border-top: 3px solid; }
+  .cover-cell .lab { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color:#cfe0ee; margin-bottom: 7px; }
+  .cover-cell .val { font-size: 15px; line-height: 1.4; }
+  .cover-cell.thesis { border-color: var(--blue); }
+  .cover-cell.number { border-color: var(--teal); }
+  .cover-cell.risk { border-color: var(--amber); }
+  .cover-cell .big { font-size: 26px; font-weight: 700; font-family:'Helvetica Neue',Arial,sans-serif; display:block; margin-bottom:4px; }
+
+  /* Chapters */
+  section.chapter { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 26px 28px; margin: 22px 0; box-shadow: var(--shadow); }
+  .chap-head { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+  .chap-num { flex: 0 0 38px; height: 38px; border-radius: 50%; background: var(--blue); color:#fff; display:flex; align-items:center; justify-content:center; font-family:'Helvetica Neue',Arial,sans-serif; font-weight:700; }
+  .chap-eyebrow { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 11px; letter-spacing: .12em; text-transform: uppercase; color: var(--eyebrow); }
+  .chap-head h2 { font-size: 24px; margin: 2px 0 0; }
+  section.chapter p { color: var(--ink-soft); font-size: 16.5px; }
+  section.chapter p strong { color: var(--ink); }
+
+  /* Highlights */
+  .hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; color:#1c1c1e; }
+  .hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: 'SFMono-Regular',Consolas,monospace; color:#11385f; }
+  .hl-risk     { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; color:#5a4410; }
+  .hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; color:#234d0a; }
+  html.night .hl-key { color:#1c1c1e; }
+  html.night .hl-number { color:#11385f; }
+  html.night .hl-risk { color:#5a4410; }
+  html.night .hl-catalyst { color:#234d0a; }
+
+  .takeaway-pill {
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size: 13.5px; font-weight: 600;
+    background: rgba(55,138,221,0.10); border-left: 3px solid var(--blue);
+    border-radius: 8px; padding: 11px 15px; margin-top: 18px; color: var(--ink);
+  }
+
+  /* Cards & stats */
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; margin: 16px 0; background: var(--card); }
+  .card.accent-blue { border-left: 3px solid var(--blue); }
+  .card.accent-purple { border-left: 3px solid var(--purple); }
+  .card.accent-teal { border-left: 3px solid var(--teal); }
+  .card h3 { font-size: 16px; margin: 0 0 10px; }
+  .stat-row { display:flex; justify-content: space-between; gap:12px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 14.5px; }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--ink-soft); font-family:'Helvetica Neue',Arial,sans-serif; font-size: 13px; }
+  .stat-val { font-family:'SFMono-Regular',Consolas,monospace; font-weight: 600; text-align: right; }
+
+  /* Timeline */
+  .timeline { display: flex; gap: 10px; overflow-x: auto; padding: 6px 2px 14px; }
+  .tl-node { flex: 1 1 0; min-width: 150px; border-top: 3px solid var(--teal); padding-top: 10px; }
+  .tl-year { font-family:'Helvetica Neue',Arial,sans-serif; font-weight: 700; color: var(--teal); font-size: 15px; }
+  .tl-node p { font-size: 13.5px; margin: 4px 0 0; }
+
+  /* Porter grid */
+  .porter { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+  .force { border: 1px solid var(--line); border-radius: 12px; padding: 15px 17px; }
+  .force.center { grid-column: 1 / -1; background: rgba(55,138,221,0.05); }
+  .force h4 { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 14px; margin: 0 0 8px; display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .force p { font-size: 14px; margin: 0 0 7px; color: var(--ink-soft); }
+  .force .imp { font-style: italic; font-size: 13.5px; color: var(--ink); }
+  .badge { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 12px; color:#fff; letter-spacing:.03em; }
+  .b-high { background: var(--coral); }
+  .b-mod  { background: var(--amber); }
+  .b-low  { background: var(--teal); }
+  .moat-bar { background: rgba(29,158,117,0.10); border: 1px solid var(--teal); border-radius: 12px; padding: 15px 18px; margin-top: 14px; }
+  .moat-bar strong { color: var(--teal); }
+
+  /* Vertical cards */
+  .vcard { border-left: 3px solid; border-radius: 10px; border:1px solid var(--line); padding: 16px 18px; margin: 14px 0; }
+  .vcard .vtag { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 11px; letter-spacing:.06em; text-transform: uppercase; }
+  .vstatus { display:inline-block; font-family:'Helvetica Neue',Arial,sans-serif; font-size:11px; font-weight:700; padding:2px 9px; border-radius:10px; background:var(--line); color:var(--ink); margin-left:8px; }
+
+  /* Scorecard table */
+  table.score { width: 100%; border-collapse: collapse; font-family:'Helvetica Neue',Arial,sans-serif; font-size: 13px; margin-top: 6px; }
+  table.score th, table.score td { text-align: left; padding: 8px 9px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  table.score th { color: var(--eyebrow); font-size: 11px; letter-spacing:.04em; text-transform: uppercase; }
+  .v-beat { color: var(--teal); font-weight: 700; }
+  .v-track { color: var(--blue); font-weight: 700; }
+  .v-miss { color: var(--coral); font-weight: 700; }
+
+  /* Risk & watch */
+  .risk-row { display:flex; gap:12px; padding: 11px 0; border-bottom: 1px solid var(--line); }
+  .risk-row:last-child { border-bottom:none; }
+  .risk-ico { flex:0 0 22px; color: var(--amber); font-size: 18px; line-height:1.2; }
+  .risk-row p { margin:0; font-size:15px; color: var(--ink-soft); }
+  .risk-row p b { color: var(--ink); }
+  .watch-row { display:flex; gap:12px; padding: 10px 0; border-bottom:1px solid var(--line); align-items:flex-start; }
+  .watch-row:last-child { border-bottom:none; }
+  .dot { flex:0 0 11px; width:11px; height:11px; border-radius:50%; margin-top:6px; }
+
+  .verdict { background: linear-gradient(135deg, rgba(55,138,221,0.10), rgba(29,158,117,0.10)); border:1px solid var(--line); border-radius: 14px; padding: 24px 26px; }
+  .verdict .lab { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 12px; letter-spacing:.1em; text-transform: uppercase; color: var(--eyebrow); }
+
+  details#highlight-index { margin: 26px 0; background: var(--card); border:1px solid var(--line); border-radius: 12px; padding: 14px 18px; box-shadow: var(--shadow); }
+  details#highlight-index summary { font-family:'Helvetica Neue',Arial,sans-serif; font-weight: 700; cursor: pointer; font-size: 15px; }
+  details#highlight-index li { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 13.5px; margin: 6px 0; color: var(--ink-soft); }
+
+  .src { font-family:'Helvetica Neue',Arial,sans-serif; font-size: 12px; color: var(--eyebrow); }
+  .src a { color: var(--blue); }
+  .disclaimer { font-family:'Helvetica Neue',Arial,sans-serif; font-size:12px; color: var(--eyebrow); border-top:1px solid var(--line); padding-top:16px; margin-top:30px; }
+
+  @media (max-width: 640px) {
+    .cover-grid { grid-template-columns: 1fr; }
+    .porter { grid-template-columns: 1fr; }
+    .timeline { flex-direction: column; }
+    .tl-node { min-width: auto; }
+    .cover h1 { font-size: 27px; }
+  }
+
+  @media print {
+    .controls { display: none; }
+    #quick-scan { position: static !important; }
+    #quick-scan .qs-body, #quick-scan.collapsed .qs-body { display: block !important; max-height: none !important; visibility: visible !important; }
+    #highlight-index > *:not(summary) { display: block !important; }
+    section.chapter, .cover { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button id="themeBtn" aria-label="Toggle day or night mode">🌙 Night mode</button>
+  <button onclick="window.print()" aria-label="Print or save as PDF">🖨 Print</button>
+</div>
+
+<div class="wrap">
+
+  <!-- QUICK SCAN STRIP -->
+  <div id="quick-scan" role="region" aria-label="Quick scan summary">
+    <div class="qs-head" onclick="toggleQS()">
+      <strong>⚡ QUICK SCAN</strong>
+      <span id="qsToggle" aria-hidden="true">▼</span>
+    </div>
+    <div class="qs-body">
+      <div class="qs-row"><span class="qs-label">⚡ CONTEXT</span><span>India is in a <strong>US$37bn petrochemical capex super-cycle</strong>; every new refinery and chemical plant needs liquid storage at the port gate.</span></div>
+      <div class="qs-row"><span class="qs-label">🏭 MODEL</span><span>Annuity tank-rental income at JNPT, Goa &amp; Cochin (65–75%+ EBITDA) plus a lower-margin specialty-chemicals arm — an infrastructure landlord with a chemicals tenant inside.</span></div>
+      <div class="qs-row"><span class="qs-label">🎯 INSIGHT</span><span>The Reliance EPC order and Goa volumes are loss-leaders for relationships; the real money is the high-margin storage tank that fills behind them.</span></div>
+      <div class="qs-row"><span class="qs-label">📊 NUMBERS</span><span>FY26 consolidated PAT <strong>₹73.3 Cr, up 93%</strong>; trades at ~8× earnings and ~1× book — well below logistics peers.</span></div>
+      <div class="qs-row"><span class="qs-label">🚧 TOP RISK</span><span>JNPT annual lease reset from ₹2 Cr to ₹24 Cr — a structural margin hit that takes ~2 years to pass through.</span></div>
+      <div class="qs-row"><span class="qs-label">👁 WATCH</span><span>JNPT terminal occupancy &amp; blended LST EBITDA margin recovering toward the 65–75% band.</span></div>
+      <div class="qs-row"><span class="qs-label">💡 VERDICT</span><span><strong>Mid-story.</strong> Cheap, cash-generative, capacity built — but profit quality and a lease shock cloud the next four quarters.</span></div>
+    </div>
+  </div>
+
+  <!-- CHAPTER 0 — HOOK CARD -->
+  <article class="cover" role="region" aria-label="Cover thesis card">
+    <div class="eyebrow">NSE: GANESHBE · BSE: 500153 · Oil Storage &amp; Chemical Logistics · May 2026</div>
+    <h1>Ganesh Benzoplast</h1>
+    <div class="sub">The unglamorous landlord of India's liquid-cargo coastline — renting the tanks that the petrochemical boom has to fill.</div>
+    <div class="cover-grid">
+      <div class="cover-cell thesis">
+        <div class="lab">The Thesis</div>
+        <div class="val">A debt-free, picks-and-shovels play on India's port-side liquid storage — high-margin annuity income, capacity already built, trading at a fraction of peer multiples.</div>
+      </div>
+      <div class="cover-cell number">
+        <div class="lab">The One Number</div>
+        <div class="val"><span class="big">~8×</span>trailing earnings &amp; ~1× book, versus ~24–27× for listed peer Aegis Logistics. FY26 PAT up 93% to ₹73.3 Cr.</div>
+      </div>
+      <div class="cover-cell risk">
+        <div class="lab">The One Risk</div>
+        <div class="val">The JNPT ground-lease just jumped 12× (₹2 Cr → ₹24 Cr a year). Until pricing is passed through, reported storage margins stay compressed.</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CHAPTER 1 — CONTEXT -->
+  <section class="chapter" aria-labelledby="ch1">
+    <div class="chap-head">
+      <div class="chap-num">1</div>
+      <div><div class="chap-eyebrow">The Big Picture First</div><h2 id="ch1">Context — Why Now</h2></div>
+    </div>
+    <p>India has been declared the world's next petrochemicals powerhouse, with S&amp;P Global counting roughly <span class="hl-number">US$37 billion of refinery and petrochemical capex</span> in the pipeline — about ₹2.2 lakh crore of public-sector refinery spend and ₹1.06 lakh crore of private investment, led by Reliance's ₹75,000 Cr oil-to-chemicals push. Every barrel of feedstock, every tonne of specialty chemical and edible oil that moves through an Indian port has to sit somewhere first. That somewhere is a liquid storage terminal (LST), and that is Ganesh Benzoplast's core business.</p>
+    <p>The demand backdrop is structural, not cyclical. India's specialty-chemicals sector (~US$40 bn) is the fastest-growing slice of the chemical economy, pulled along by the global <strong>China-plus-one</strong> shift; the India chemical-logistics market is projected to grow from US$8.6 bn (2024) toward US$12.6 bn by 2033, while the broader 3PL market compounds at ~14% a year. On the capacity side, the largest private terminal operator (Aegis-Vopak) plans to lift liquid storage from 1.6 to 2.2 million cbm by FY28 — proof that the whole industry is racing to add tanks.</p>
+    <p><span class="hl-key">Now is interesting because the demand is structural but Ganesh Benzoplast's own price has fallen ~35% over the last year</span> — a high-margin infrastructure annuity is on sale precisely as the assets behind it are being expanded.</p>
+    <div class="takeaway-pill">A US$37bn petrochemical build-out needs port storage; GANESHBE owns that storage and trades down 35% on the year.</div>
+  </section>
+
+  <!-- CHAPTER 2 — BUSINESS MODEL + JOURNEY -->
+  <section class="chapter" aria-labelledby="ch2">
+    <div class="chap-head">
+      <div class="chap-num">2</div>
+      <div><div class="chap-eyebrow">What It Does &amp; How It Got Here</div><h2 id="ch2">The Business Model &amp; Company Journey</h2></div>
+    </div>
+    <p>Strip away the jargon and Ganesh Benzoplast runs two businesses bolted together. The first — the <strong>Liquid Storage Terminal (LST) division</strong> — is essentially a port-side landlord: it owns tank farms at JNPT (Navi Mumbai), Cochin and Goa and rents capacity to oil, petrochemical, edible-oil and chemical customers who pay to store and handle their cargo. The second — the <strong>Chemical division</strong> — manufactures specialty chemicals, food preservatives (benzoic acid / sodium benzoate lineage) and oil additives. In FY26 the split was roughly <span class="hl-number">₹226 Cr LST (55%) and ₹185 Cr chemicals (45%)</span> of ₹411 Cr consolidated revenue.</p>
+    <p>The economics of the two halves could not be more different, and that is the whole point. Storage is an annuity: once a tank is built and contracted, it throws off 65–75%+ EBITDA margins for years with almost no incremental cost. Chemicals is a working, competitive manufacturing business at mid-teens EBITDA. <span class="hl-key">The flywheel is that storage cash funds tank expansion, and each new tank is almost pure incremental profit because the land, jetty and pipelines are already paid for.</span> Customers are sticky because relocating hazardous liquid cargo means re-permitting under the MSIHC hazardous-chemical rules, re-qualifying a site, and physically re-plumbing to a different jetty — friction measured in years.</p>
+
+    <h3 style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:15px; margin-top:22px;">Company Journey</h3>
+    <div class="timeline" role="list" aria-label="Company journey timeline">
+      <div class="tl-node" role="listitem"><div class="tl-year">1974</div><p>Founder Ramesh Pilani sets up a benzoic-acid plant at Thane — the chemicals roots of the group.</p></div>
+      <div class="tl-node" role="listitem"><div class="tl-year">1986</div><p>Ganesh Benzoplast incorporated; first chemicals plant at Tarapur/Boisar.</p></div>
+      <div class="tl-node" role="listitem"><div class="tl-year">1994–95</div><p>The pivot: commissions one of India's largest bulk-liquid chemical storage terminals at Nhava Sheva (JNPT), later Goa &amp; Cochin.</p></div>
+      <div class="tl-node" role="listitem"><div class="tl-year">2008–11</div><p>Second-generation Rishi Pilani joins (ex-GE), becomes Chairman &amp; MD in 2011.</p></div>
+      <div class="tl-node" role="listitem"><div class="tl-year">2022</div><p>Signs 25-year lease on a 4.5-hectare reclaimed JNPT plot — the platform for the next capacity cycle.</p></div>
+      <div class="tl-node" role="listitem"><div class="tl-year">2024–26</div><p>₹160–170 Cr / 1-lakh-KL expansion underway; ₹51 Cr Reliance EPC order; Singapore subsidiary announced.</p></div>
+    </div>
+
+    <div class="card accent-blue" role="region" aria-label="Promoter and capital allocation">
+      <h3>Promoter &amp; Capital Allocation</h3>
+      <div class="stat-row"><span class="stat-label">Promoter holding (Dec 2025)</span><span class="stat-val">39.01%</span></div>
+      <div class="stat-row"><span class="stat-label">Direction over 8 quarters</span><span class="stat-val">Stable (down from ~44% in FY22)</span></div>
+      <div class="stat-row"><span class="stat-label">Balance sheet</span><span class="stat-val">Almost debt-free · D/E 0.03</span></div>
+      <div class="stat-row"><span class="stat-label">5-yr ROCE trend</span><span class="stat-val">26%→16% (FY21→FY25), softening</span></div>
+      <div class="stat-row"><span class="stat-label">Dividend philosophy</span><span class="stat-val">Nil historically; first payout guided FY27</span></div>
+      <div class="stat-row"><span class="stat-label">Leadership</span><span class="stat-val">Founder-led, 2nd-gen CMD (R. Pilani)</span></div>
+      <p class="src" style="margin-top:10px;">Founder-led group; the founder still serves as CFO while his son runs operations. No dividend in the company's listed history despite repeated profits — capital has gone back into tanks. Reinvestment-heavy, payout starting only now.</p>
+    </div>
+    <div class="takeaway-pill">Storage annuity funds the tank-building flywheel; promoter at 39%, debt-free, first-ever dividend due FY27.</div>
+  </section>
+
+  <!-- CHAPTER 3 — PORTER -->
+  <section class="chapter" aria-labelledby="ch3">
+    <div class="chap-head">
+      <div class="chap-num">3</div>
+      <div><div class="chap-eyebrow">Competitive Dynamics</div><h2 id="ch3">Porter's Five Forces</h2></div>
+    </div>
+    <div class="porter">
+      <div class="force">
+        <h4>Competitive Rivalry <span class="badge b-mod">Moderate threat</span></h4>
+        <p>Port-side LST is concentrated, not fragmented: the dominant force is Aegis-Vopak Terminals (1.6→2.2 mn cbm by FY28). GANESHBE is a focused mid-size operator at three ports, competing on location and service depth rather than scale.</p>
+        <p class="imp">Investor implication: it won't out-scale Aegis, but rivalry on its specific JNPT/Goa/Cochin tanks is limited by physical port real estate.</p>
+      </div>
+      <div class="force">
+        <h4>Threat of New Entrants <span class="badge b-low">Low threat</span></h4>
+        <p>Barriers are steep — waterfront port land is scarce and allotted on long leases, hazardous-liquid permitting runs under the MSIHC Rules 1989, and a jetty/pipeline build takes years. GANESHBE's 1994-95 JNPT footprint and 2022 reclaimed-land lease are not replicable quickly.</p>
+        <p class="imp">Investor implication: moats here are structural (years to replicate), not cosmetic.</p>
+      </div>
+      <div class="force">
+        <h4>Bargaining Power of Buyers <span class="badge b-mod">Moderate threat</span></h4>
+        <p>Storage customers are large oil/chemical majors with alternatives at competing terminals, and securing 10–15 year utilisation guarantees for high-value ammonia/LPG tanks remains a hurdle. But switching a contracted cargo to another port is slow and costly.</p>
+        <p class="imp">Investor implication: pricing power is real once a tank is filled, weaker when courting the marginal new contract.</p>
+      </div>
+      <div class="force">
+        <h4>Bargaining Power of Suppliers <span class="badge b-high">High threat</span></h4>
+        <p>The critical "supplier" is the port authority itself. The JNPT ground-lease just reset from ₹2 Cr to ₹24 Cr a year — a 12× cost shock the company does not control and can only pass through over time.</p>
+        <p class="imp">Investor implication: landlord (port trust) pricing power is the single biggest margin variable — watch every lease renewal.</p>
+      </div>
+      <div class="force center">
+        <h4>Threat of Substitutes <span class="badge b-low">Low threat</span></h4>
+        <p>There is no substitute for physically storing bulk liquid at a port — cargo must rest somewhere between ship and plant. The only real threat is a customer building captive storage, which only the very largest can justify, or a long-run decline in fossil-fuel throughput (road-fuel demand may peak later this decade). The chemicals arm faces ordinary competitive substitution.</p>
+        <p class="imp">Investor implication: a 10-year story on the storage side; the energy-transition tail risk is slow-moving, not imminent.</p>
+      </div>
+    </div>
+    <div class="moat-bar" role="region" aria-label="Moat summary">
+      <p style="margin:0; font-size:15px;"><strong>Moat verdict: Narrow-to-wide.</strong> The terminals sit on irreplaceable port land with multi-year permitting moats — genuinely wide. But scale and pricing power trail Aegis-Vopak, and the landlord (port trust) holds the whip hand on ground rent. <span class="hl-key">The single biggest structural vulnerability is that GANESHBE owns the tanks but not the land under them — the port trust does.</span></p>
+    </div>
+    <div class="takeaway-pill">Irreplaceable port real estate is the moat; the port trust's lease-pricing power is the crack in it.</div>
+  </section>
+
+  <!-- CHAPTER 4 — VERTICALS -->
+  <section class="chapter" aria-labelledby="ch4">
+    <div class="chap-head">
+      <div class="chap-num">4</div>
+      <div><div class="chap-eyebrow">Segment Stories</div><h2 id="ch4">The Vertical Stories</h2></div>
+    </div>
+
+    <div class="vcard" style="border-left-color: var(--blue);">
+      <div class="vtag" style="color:var(--blue);">Liquid Storage Terminals (LST) <span class="vstatus">Running · Expanding</span></div>
+      <p style="margin:8px 0 0; font-size:15px; color:var(--ink-soft);">The annuity engine — ₹226 Cr FY26 revenue at 65–75%+ EBITDA. Catalyst: the US$37bn petrochemical capex wave and rising edible-oil/POL imports feed terminal demand. The <span class="hl-catalyst">1-lakh-KL JNPT expansion (Phase 1 due Q1 FY27) should add ₹45–50 Cr of near-pure-margin revenue</span>. Drag: Goa remains underutilised pending regulatory clearance to handle additional petroleum products.</p>
+    </div>
+
+    <div class="vcard" style="border-left-color: var(--purple);">
+      <div class="vtag" style="color:var(--purple);">Specialty Chemicals &amp; Food Preservatives <span class="vstatus">Running</span></div>
+      <p style="margin:8px 0 0; font-size:15px; color:var(--ink-soft);">₹185 Cr FY26 revenue at mid-teens EBITDA — benzoic acid, sodium benzoate, oil additives. Catalyst: China-plus-one demand for India-made specialty chemicals and food-grade preservatives. This arm grows the top line and deepens customer relationships but is the lower-quality earnings stream.</p>
+    </div>
+
+    <div class="vcard" style="border-left-color: var(--teal);">
+      <div class="vtag" style="color:var(--teal);">EPC / Project Work <span class="vstatus">Selective</span></div>
+      <p style="margin:8px 0 0; font-size:15px; color:var(--ink-soft);">Lumpy, low-margin (5–10%) project execution taken on selectively to build marquee relationships — notably a <span class="hl-number">₹51.33 Cr carbon-fibre EPC order from Reliance Industries</span>. Not a profit centre; a foot in the door with anchor clients who may later become storage tenants.</p>
+    </div>
+    <div class="takeaway-pill">LST is the high-margin engine; chemicals add scale; EPC buys relationships — Phase-1 expansion lands Q1 FY27.</div>
+  </section>
+
+  <!-- CHAPTER 5 — STRATEGIC INSIGHT -->
+  <section class="chapter" aria-labelledby="ch5">
+    <div class="chap-head">
+      <div class="chap-num">5</div>
+      <div><div class="chap-eyebrow">The One Thing To Understand</div><h2 id="ch5">The Strategic Insight</h2></div>
+    </div>
+    <p>The number that catches the eye is the headline 93% profit jump — but that misreads the company. <span class="hl-key">Ganesh Benzoplast is not a chemicals company that happens to own tanks; it is a port-infrastructure landlord that uses chemicals and EPC as customer-acquisition tools.</span> The ₹51 Cr Reliance EPC order earns almost nothing at 5–10% margins, and the chemicals arm runs at mid-teens — but both exist to put GANESHBE inside the procurement systems of the exact oil and chemical majors who will rent its high-margin tanks for the next decade.</p>
+    <p>Read that way, the right scorecard is not group PAT but tank occupancy and storage EBITDA. The low-margin businesses are the front door; the storage annuity behind it is the house. When you see a lumpy EPC order or a flat chemicals quarter, the question is not "what did it earn?" but "which anchor customer did it just lock in for the tanks?"</p>
+    <div class="takeaway-pill">EPC and chemicals are the front door; the 70%-margin storage tank is the house you're actually buying.</div>
+  </section>
+
+  <!-- CHAPTER 6 — NUMBERS -->
+  <section class="chapter" aria-labelledby="ch6">
+    <div class="chap-head">
+      <div class="chap-num">6</div>
+      <div><div class="chap-eyebrow">Financials In Context</div><h2 id="ch6">The Numbers</h2></div>
+    </div>
+    <p>FY26 was a recovery year. Consolidated revenue rose ~10% to <span class="hl-number">₹411 Cr and PAT jumped 93% to ₹73.3 Cr</span> — but the 93% flatters, because FY25 was depressed by a one-off ~₹40 Cr write-off that pushed Q4 FY25 into a ₹13 Cr loss. The cleaner read: storage margins are structurally high (standalone OPM has run 38–46%), the company is almost debt-free (D/E 0.03), and it generates ~₹50 Cr of operating cash a year. The blemish is earnings quality — a meaningful chunk of recent quarterly PAT came from non-operating other income (~34% of PBT in Q2 FY26).</p>
+
+    <div class="card accent-blue">
+      <h3>Core Financials (Consolidated unless noted)</h3>
+      <div class="stat-row"><span class="stat-label">FY26 Revenue</span><span class="stat-val">₹411 Cr (+9.9% YoY)</span></div>
+      <div class="stat-row"><span class="stat-label">FY26 PAT</span><span class="stat-val">₹73.3 Cr (+93% YoY)</span></div>
+      <div class="stat-row"><span class="stat-label">Segment split</span><span class="stat-val">LST ₹226 Cr · Chem ₹185 Cr</span></div>
+      <div class="stat-row"><span class="stat-label">Standalone OPM range</span><span class="stat-val">38–46% (storage-led)</span></div>
+      <div class="stat-row"><span class="stat-label">ROCE / ROE</span><span class="stat-val">~16% / ~12%</span></div>
+      <div class="stat-row"><span class="stat-label">Net debt</span><span class="stat-val">Negligible (D/E 0.03)</span></div>
+      <div class="stat-row"><span class="stat-label">Market cap / P-E / P-B</span><span class="stat-val">~₹558 Cr · ~8× · ~1.0×</span></div>
+    </div>
+
+    <div class="card accent-teal">
+      <h3>Revenue Visibility &amp; Pipeline</h3>
+      <div class="stat-row"><span class="stat-label">Model type</span><span class="stat-val">Annuity storage + order-driven chem/EPC</span></div>
+      <div class="stat-row"><span class="stat-label">Storage contracts</span><span class="stat-val">Multi-year tank rentals (recurring)</span></div>
+      <div class="stat-row"><span class="stat-label">Marquee EPC order</span><span class="stat-val">₹51.33 Cr (Reliance, carbon fibre)</span></div>
+      <div class="stat-row"><span class="stat-label">Expansion revenue locked</span><span class="stat-val">+₹45–50 Cr from 1-lakh-KL (FY27–28)</span></div>
+      <div class="stat-row"><span class="stat-label">Concentration check</span><span class="stat-val">Diversified storage; EPC lumpy</span></div>
+      <p class="src" style="margin-top:8px;">GANESHBE is not a classic order-book business — storage visibility comes from contracted tank utilisation rather than a project backlog. Treat occupancy as the leading indicator.</p>
+    </div>
+
+    <div class="card accent-blue">
+      <h3>Capex Timeline</h3>
+      <div class="stat-row"><span class="stat-label">FY23–25 capex</span><span class="stat-val">Heavy: investing outflow ₹59–123 Cr/yr</span></div>
+      <div class="stat-row"><span class="stat-label">Current project</span><span class="stat-val">1-lakh-KL JNPT expansion, ₹160–170 Cr</span></div>
+      <div class="stat-row"><span class="stat-label">Phase 1 online</span><span class="stat-val">Q1 FY27; full commissioning early FY28</span></div>
+      <div class="stat-row"><span class="stat-label">Revenue bridge</span><span class="stat-val">+₹45–50 Cr at 65–75%+ EBITDA</span></div>
+      <div class="stat-row"><span class="stat-label">Funding</span><span class="stat-val">Internal accruals (balance-sheet light)</span></div>
+      <p class="src" style="margin-top:8px;">Red-flag check: capacity is being built ahead of contracted demand, and Goa is still underutilised — execution/fill-rate is the watch item, not funding.</p>
+    </div>
+
+    <h3 style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:15px; margin-top:22px;">Management Scorecard — Guidance vs. Delivered</h3>
+    <table class="score" aria-label="Management scorecard">
+      <thead><tr><th>Quarter</th><th>Theme / guidance</th><th>Delivered</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td>Q4 FY25</td><td>Clean operating quarter</td><td>₹13 Cr loss on ~₹40 Cr one-off write-off</td><td class="v-miss">Miss (one-off)</td></tr>
+        <tr><td>Q1 FY26</td><td>Resume growth</td><td>PAT ~₹18 Cr; recovery on track</td><td class="v-track">On-track</td></tr>
+        <tr><td>Q2 FY26</td><td>Grow PAT</td><td>PAT ₹23.8 Cr (+44% YoY) — aided by other income</td><td class="v-beat">Beat*</td></tr>
+        <tr><td>Q3 FY26</td><td>Margin hold</td><td>Rev +18%; PAT ₹16.2 Cr hit by ₹24 Cr lease provision</td><td class="v-miss">Miss (lease)</td></tr>
+        <tr><td>Q4 FY26</td><td>Return to profit</td><td>PAT ₹15.3 Cr vs prior-year loss</td><td class="v-track">On-track</td></tr>
+        <tr><td>FY26</td><td>Expand &amp; recover</td><td>Rev ₹411 Cr; PAT ₹73.3 Cr (+93%)</td><td class="v-beat">Beat</td></tr>
+      </tbody>
+    </table>
+    <p class="src" style="margin-top:8px;">*Quality caveat: part of the Q2 beat was non-operating other income. Pattern: capable operators and honest disclosers (they flagged the lease hit openly), but recent profit quality is mixed and detailed quarter-ahead numeric guidance is sparse — judge them on occupancy and margin recovery over the next 4 quarters.</p>
+
+    <p>On valuation, the market is pricing in the lease shock and the earnings-quality question, not the asset base. <span class="hl-risk">At ~8× earnings and ~1× book versus ~24–27× for Aegis Logistics, the market is treating GANESHBE as a stalled chemicals company rather than a port-infrastructure annuity.</span> That gap is the opportunity and the warning at once: it re-rates only if storage margins normalise and the dividend actually arrives.</p>
+    <div class="takeaway-pill">FY26 PAT ₹73.3 Cr at ~8× earnings vs ~24–27× for Aegis — the discount is the lease shock plus earnings-quality doubt.</div>
+  </section>
+
+  <!-- CHAPTER 7 — RISKS -->
+  <section class="chapter" aria-labelledby="ch7">
+    <div class="chap-head">
+      <div class="chap-num">7</div>
+      <div><div class="chap-eyebrow">Eyes Open</div><h2 id="ch7">Risks</h2></div>
+    </div>
+    <div class="risk-row"><div class="risk-ico">⚠</div><p><b>Lease-cost reset.</b> The JNPT ground-lease leapt from ₹2 Cr to ₹24 Cr a year. Management expects to recover margins via price pass-through over ~2 years, but until then storage profitability is visibly compressed. Signal: blended LST EBITDA margin below ~60%.</p></div>
+    <div class="risk-row"><div class="risk-ico">⚠</div><p><b>Legacy legal / contingent liability.</b> Unauthorised transactions and borrowings in the GBL Chemical subsidiary remain in court. Management disputes liability, but an adverse ruling is an uncapped overhang. Signal: any court order or provisioning.</p></div>
+    <div class="risk-row"><div class="risk-ico">⚠</div><p><b>Earnings quality.</b> A large share of recent quarterly PAT came from non-operating other income (~34% of PBT in Q2 FY26). Signal: operating-PAT growth lagging headline PAT.</p></div>
+    <div class="risk-row"><div class="risk-ico">⚠</div><p><b>Goa underutilisation &amp; fill-rate risk.</b> Capacity (and the new 1-lakh-KL build) is going up ahead of contracted demand; Goa still awaits regulatory clearance for more petroleum products. Signal: expansion commissioned but occupancy flat.</p></div>
+    <div class="risk-row"><div class="risk-ico">⚠</div><p><b>Scale disadvantage vs Aegis-Vopak.</b> A far larger, Vopak-backed rival is adding capacity aggressively and can win long-term ammonia/LPG contracts GANESHBE struggles to underwrite. Signal: loss of an anchor storage customer or marquee tender.</p></div>
+    <div class="takeaway-pill">The ₹24 Cr lease reset and the GBL Chemical court case are the two things that can break the next two years.</div>
+  </section>
+
+  <!-- CHAPTER 8 — WATCH SIGNALS -->
+  <section class="chapter" aria-labelledby="ch8">
+    <div class="chap-head">
+      <div class="chap-num">8</div>
+      <div><div class="chap-eyebrow">Track Every Quarter</div><h2 id="ch8">Watch Signals</h2></div>
+    </div>
+    <div class="watch-row"><span class="dot" style="background:var(--blue);"></span><p style="margin:0; font-size:15px; color:var(--ink-soft);"><b>JNPT occupancy &amp; blended LST EBITDA margin.</b> Good = margin climbing back toward the 65–75% band. Red flag = stuck below 60% beyond FY27.</p></div>
+    <div class="watch-row"><span class="dot" style="background:var(--teal);"></span><p style="margin:0; font-size:15px; color:var(--ink-soft);"><b>1-lakh-KL expansion timeline.</b> Good = Phase 1 commissioned by Q1 FY27 on budget. Red flag = slippage past FY27 or cost overrun above ₹170 Cr.</p></div>
+    <div class="watch-row"><span class="dot" style="background:var(--green);"></span><p style="margin:0; font-size:15px; color:var(--ink-soft);"><b>Maiden dividend.</b> Good = the FY27 payout actually arrives. Red flag = it slips again — a tell on cash confidence and capital discipline.</p></div>
+    <div class="watch-row"><span class="dot" style="background:var(--purple);"></span><p style="margin:0; font-size:15px; color:var(--ink-soft);"><b>Earnings quality.</b> Good = operating PAT growing in line with headline PAT. Red flag = other income carrying the quarter again.</p></div>
+    <div class="watch-row"><span class="dot" style="background:var(--amber);"></span><p style="margin:0; font-size:15px; color:var(--ink-soft);"><b>GBL Chemical legal case &amp; Goa clearances.</b> Good = case dismissed / Goa products approved. Red flag = adverse order or continued Goa idle capacity.</p></div>
+    <div class="takeaway-pill">If occupancy recovers, Phase 1 lands on time, and the dividend appears, the re-rating thesis is intact.</div>
+  </section>
+
+  <!-- VERDICT -->
+  <section class="chapter" aria-labelledby="verdict">
+    <div class="verdict">
+      <div class="lab">The Verdict</div>
+      <h2 id="verdict" style="margin:6px 0 10px; font-size:22px;">Where Are We In The Story?</h2>
+      <p style="font-size:16.5px; color:var(--ink-soft);">Ganesh Benzoplast rides two specific tailwinds: India's US$37bn petrochemical capex super-cycle and the China-plus-one pull on specialty chemicals — both of which create durable demand for port-side liquid storage. The quality signal is real: 38–46% standalone operating margins, a near-debt-free balance sheet and ~₹50 Cr of annual operating cash, even if recent PAT leans on other income. The near-term catalyst is the 1-lakh-KL JNPT expansion (Phase 1 Q1 FY27, ~₹45–50 Cr of high-margin revenue) and the maiden dividend due FY27. At ~8× earnings and ~1× book against ~24–27× for Aegis Logistics, the valuation looks cheap for an infrastructure annuity — but the discount is earned, not free: a 12× ground-lease shock and a legacy legal overhang are real. <span class="hl-key">This is a mid-story situation — the assets are built and the demand is structural, but the next four quarters of margin recovery and dividend follow-through decide whether the market re-rates it from "stalled chemicals company" to "port-infrastructure annuity."</span></p>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHT INDEX -->
+  <details id="highlight-index">
+    <summary>📌 All Highlights at a Glance</summary>
+    <ol></ol>
+  </details>
+
+  <p class="src">Sources: <a href="https://www.screener.in/company/GANESHBE/">Screener — GANESHBE</a> · <a href="https://www.ganeshbenzoplast.com/Investors/InvestorPresentation">Company investor presentations</a> · <a href="https://www.whalesbook.com/news/English/chemicals/Ganesh-Benzoplast-Q3-Profit-Hit-by-Lease-Provision-Expansion-Underway/699bdd33ee97f501b0eb1782">Whalesbook — Q3 FY26 analysis</a> · <a href="https://scanx.trade/stock-market-news/companies/ganesh-benzoplast-q4-results-net-profit-at-153m-rupees-vs-loss-of-132m-yoy-revenue-climbs-to-1-1b-rupees/41423707">ScanX — FY26 results</a> · <a href="https://www.business-standard.com/industry/news/india-to-emerge-as-next-petrochemicals-powerhouse-with-37-bn-capex-push-s-p-125100200577_1.html">Business Standard / S&amp;P — petrochemical capex</a> · <a href="https://www.sharescart.com/article/liquid-landscape-the-story-of-ganesh-benzoplast">Sharescart — company history</a> · <a href="https://aegisindia.com/liquid-logistics/">Aegis Logistics</a></p>
+
+  <p class="disclaimer">This brief is an educational investor-story synthesis, not investment advice. Figures are drawn from public sources (primarily Screener.in and company filings) as of late May 2026; the share price and valuation multiples move and may differ from those shown. Forward-looking items are management guidance, not facts. Do your own diligence and consult a SEBI-registered adviser before investing.</p>
+
+</div>
+
+<script>
+  // Theme toggle
+  const root = document.documentElement;
+  const tBtn = document.getElementById('themeBtn');
+  function setTheme(night){
+    root.classList.toggle('night', night);
+    tBtn.textContent = night ? '☀️ Day mode' : '🌙 Night mode';
+    try { localStorage.setItem('gbe-theme', night ? 'night':'day'); } catch(e){}
+  }
+  tBtn.addEventListener('click', () => setTheme(!root.classList.contains('night')));
+  try { if (localStorage.getItem('gbe-theme') === 'night') setTheme(true); } catch(e){}
+
+  // Quick scan toggle
+  const qs = document.getElementById('quick-scan');
+  const qsT = document.getElementById('qsToggle');
+  function applyQS(collapsed){
+    qs.classList.toggle('collapsed', collapsed);
+    qsT.textContent = collapsed ? '▲' : '▼';
+  }
+  function toggleQS(){
+    const c = !qs.classList.contains('collapsed');
+    applyQS(c);
+    try { localStorage.setItem('gbe-qs', c ? 'collapsed':'open'); } catch(e){}
+  }
+  window.toggleQS = toggleQS;
+  try { if (localStorage.getItem('gbe-qs') === 'collapsed') applyQS(true); } catch(e){}
+
+  // Highlight index auto-populate
+  document.addEventListener('DOMContentLoaded', () => {
+    const index = document.querySelector('#highlight-index ol');
+    if (!index) return;
+    document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+      const li = document.createElement('li');
+      li.textContent = el.textContent.trim();
+      const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+      li.setAttribute('data-type', type);
+      index.appendChild(li);
+    });
+  });
+
+  // Force highlight index + quick scan open for print
+  window.addEventListener('beforeprint', () => {
+    document.querySelector('#highlight-index')?.setAttribute('open','');
+    qs.classList.remove('collapsed');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PREMEXPLN — Investor Brief | Premier Explosives | May 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono&display=swap');
+
+:root {
+  --coral: #D85A30; --coral-lt: #FAECE7; --coral-dk: #993C1D;
+  --teal: #1D9E75; --teal-lt: #E1F5EE; --teal-dk: #0F6E56;
+  --blue: #378ADD; --blue-lt: #E6F1FB; --blue-dk: #185FA5;
+  --amber: #BA7517; --amber-lt: #FAEEDA; --amber-dk: #854F0B;
+  --green: #3B6D11; --green-lt: #EAF3DE; --green-dk: #27500A;
+  --gray: #5F5E5A; --gray-lt: #F1EFE8; --gray-dk: #2C2C2A;
+  --ink: #1a1916; --paper: #fdfcf9; --muted: #888780;
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.65; }
+
+/* QUICK SCAN STRIP — always expanded, printer-friendly */
+#quick-scan {
+  position: sticky; top: 0; z-index: 100;
+  background: #1a1916; color: #f5f3ef;
+  border-bottom: 3px solid var(--coral);
+  padding: 10px 20px;
+}
+.qs-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 4px 20px;
+  max-width: 960px; margin: 0 auto;
+}
+.qs-row { display: flex; gap: 8px; align-items: baseline; font-size: 12.5px; line-height: 1.4; padding: 3px 0; }
+.qs-icon { font-size: 13px; flex-shrink: 0; width: 18px; }
+.qs-label { font-weight: 600; color: var(--coral); text-transform: uppercase; font-size: 10px; letter-spacing: 0.06em; min-width: 64px; flex-shrink: 0; }
+.qs-text { color: #d4d0c8; }
+.qs-head { font-family: var(--serif); font-size: 13px; color: #e8e5df; letter-spacing: 0.01em; padding: 0 0 6px; border-bottom: 0.5px solid #333; margin-bottom: 6px; }
+
+/* LAYOUT */
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.spacer { height: 40px; }
+.spacer-sm { height: 24px; }
+
+/* COVER */
+.cover {
+  background: var(--ink); color: var(--paper);
+  padding: 48px 0 40px;
+}
+.cover-inner { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+.cover-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--coral); font-weight: 600; margin-bottom: 10px; }
+.cover-title { font-family: var(--serif); font-size: clamp(36px, 6vw, 58px); line-height: 1.05; margin-bottom: 12px; }
+.cover-sub { font-size: 17px; color: #b0ac9f; max-width: 580px; line-height: 1.5; }
+.cover-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 32px; padding-top: 24px; border-top: 0.5px solid #333; }
+.cover-stat { }
+.cs-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; color: #888; margin-bottom: 4px; }
+.cs-val { font-size: 22px; font-weight: 500; color: #f5f3ef; font-family: var(--mono); }
+.cs-sub { font-size: 11px; color: #666; margin-top: 2px; }
+
+/* CHAPTER HEADERS */
+.chapter-header { display: flex; align-items: flex-start; gap: 16px; margin: 48px 0 24px; }
+.ch-num { width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600; flex-shrink: 0; color: white; }
+.ch-text { }
+.ch-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; margin-bottom: 3px; }
+.ch-title { font-family: var(--serif); font-size: 26px; line-height: 1.1; color: var(--ink); }
+
+/* CARDS */
+.card { background: white; border: 0.5px solid #ddd8ce; border-radius: 12px; padding: 20px 22px; margin-bottom: 16px; }
+.card-accent { border-left: 3px solid var(--coral); border-radius: 0 12px 12px 0; }
+.card-accent-teal { border-left: 3px solid var(--teal); }
+.card-accent-blue { border-left: 3px solid var(--blue); }
+.card-accent-amber { border-left: 3px solid var(--amber); }
+.card-accent-green { border-left: 3px solid var(--green); }
+
+.card-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted); margin-bottom: 8px; }
+.card-body { font-size: 14.5px; line-height: 1.65; color: var(--ink); }
+
+/* GRID */
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+
+/* STAT ROWS */
+.stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 8px 0; border-bottom: 0.5px solid #ede9e3; font-size: 14px; }
+.stat-row:last-child { border-bottom: none; }
+.sr-label { color: var(--gray); }
+.sr-val { font-family: var(--mono); font-weight: 600; font-size: 13.5px; }
+.sr-up { color: var(--teal); }
+.sr-dn { color: var(--coral); }
+
+/* PORTER TABLE */
+.porter-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.porter-table th { background: var(--gray-lt); padding: 10px 12px; text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--gray); border: 0.5px solid #ddd8ce; }
+.porter-table td { padding: 11px 12px; border: 0.5px solid #ede9e3; vertical-align: top; line-height: 1.5; }
+.porter-table tr:nth-child(even) td { background: #fdf9f6; }
+.rating { display: inline-block; padding: 2px 9px; border-radius: 20px; font-size: 11px; font-weight: 600; letter-spacing: 0.04em; }
+.rating-low { background: var(--teal-lt); color: var(--teal-dk); }
+.rating-med { background: var(--amber-lt); color: var(--amber-dk); }
+.rating-high { background: var(--coral-lt); color: var(--coral-dk); }
+
+/* VERTICAL CARDS */
+.vertical-card { border-radius: 12px; padding: 18px 20px; margin-bottom: 14px; border: 0.5px solid; }
+.vc-tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+.vc-name { font-family: var(--serif); font-size: 20px; margin-bottom: 8px; }
+.vc-body { font-size: 14px; line-height: 1.6; }
+.vc-status { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 10px; border-radius: 20px; margin-top: 10px; text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* CAPEX TIMELINE */
+.timeline { position: relative; }
+.tl-item { display: grid; grid-template-columns: 90px 16px 1fr; gap: 0 16px; align-items: start; margin-bottom: 0; }
+.tl-year { font-family: var(--mono); font-size: 13px; font-weight: 600; color: var(--gray); padding-top: 3px; text-align: right; }
+.tl-dot-col { display: flex; flex-direction: column; align-items: center; }
+.tl-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--coral); flex-shrink: 0; margin-top: 5px; }
+.tl-dot-teal { background: var(--teal); }
+.tl-line { width: 2px; background: #e5e1da; flex: 1; min-height: 20px; }
+.tl-content { padding-bottom: 24px; }
+.tl-title { font-size: 13.5px; font-weight: 600; margin-bottom: 3px; }
+.tl-detail { font-size: 13px; color: var(--gray); line-height: 1.5; }
+.tl-pill { display: inline-block; background: var(--coral-lt); color: var(--coral-dk); font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; margin-top: 4px; font-family: var(--mono); }
+
+/* RISK ROWS */
+.risk-item { display: flex; gap: 12px; align-items: flex-start; padding: 14px 0; border-bottom: 0.5px solid #ede9e3; }
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { font-size: 18px; color: var(--amber); flex-shrink: 0; padding-top: 1px; }
+.risk-body { }
+.risk-title { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: var(--ink); }
+.risk-text { font-size: 13.5px; color: var(--gray); line-height: 1.5; }
+
+/* WATCH BULLETS */
+.watch-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 0; border-bottom: 0.5px solid #ede9e3; }
+.watch-item:last-child { border-bottom: none; }
+.watch-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); flex-shrink: 0; margin-top: 6px; }
+.watch-body { }
+.watch-title { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.watch-text { font-size: 13.5px; color: var(--gray); line-height: 1.5; }
+
+/* VERDICT */
+.verdict-card { background: var(--ink); color: var(--paper); border-radius: 14px; padding: 28px 30px; margin-top: 16px; }
+.vl-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--coral); margin-bottom: 10px; }
+.verdict-text { font-family: var(--serif); font-size: 17.5px; line-height: 1.65; color: #e8e5df; }
+.verdict-stage { display: inline-block; background: var(--coral); color: white; font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* HIGHLIGHT SPANS */
+.hl-key { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: var(--mono); }
+.hl-risk { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; }
+
+/* TAKEAWAY PILL */
+.takeaway-pill { background: var(--coral-lt); border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0; padding: 10px 14px; font-size: 13.5px; font-weight: 500; color: var(--coral-dk); margin-top: 20px; line-height: 1.5; }
+.takeaway-pill-teal { background: var(--teal-lt); border-left-color: var(--teal); color: var(--teal-dk); }
+.takeaway-pill-blue { background: var(--blue-lt); border-left-color: var(--blue); color: var(--blue-dk); }
+.takeaway-pill-amber { background: var(--amber-lt); border-left-color: var(--amber); color: var(--amber-dk); }
+
+/* HIGHLIGHT INDEX — always expanded, printer-friendly */
+#highlight-index-wrap {
+  background: var(--gray-lt); border-radius: 12px; padding: 22px 24px; margin: 40px 0;
+  border: 0.5px solid #ddd8ce;
+}
+.hi-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+#highlight-index ol { padding-left: 22px; }
+#highlight-index li { font-size: 13px; line-height: 1.55; color: var(--gray); margin-bottom: 6px; }
+#highlight-index li[data-type="hl-key"] { color: #5a5200; }
+#highlight-index li[data-type="hl-number"] { color: var(--blue-dk); font-family: var(--mono); font-size: 12.5px; }
+#highlight-index li[data-type="hl-risk"] { color: var(--amber-dk); }
+#highlight-index li[data-type="hl-catalyst"] { color: var(--green-dk); }
+#highlight-index li[data-type="takeaway-pill"] { font-weight: 500; color: var(--coral-dk); }
+
+/* MISC */
+p { margin-bottom: 12px; }
+p:last-child { margin-bottom: 0; }
+.mono { font-family: var(--mono); }
+.text-muted { color: var(--muted); }
+.text-sm { font-size: 13px; }
+strong { font-weight: 600; }
+.section-divider { border: none; border-top: 0.5px solid #e5e1da; margin: 32px 0; }
+
+/* PRINT */
+@media print {
+  #quick-scan { position: static; }
+  .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .verdict-card { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .ch-num { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+@media (max-width: 640px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .cover-stats { gap: 20px; }
+  .qs-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- QUICK SCAN STRIP — always expanded, printer-friendly -->
+<div id="quick-scan">
+  <div class="qs-head">⚡ Quick Scan — PREMEXPLN | Premier Explosives | May 28, 2026</div>
+  <div class="qs-grid">
+    <div class="qs-row">
+      <span class="qs-label">CONTEXT</span>
+      <span class="qs-text">India defence capex ₹2.19L Cr in FY27 (+22%); 75% ring-fenced for domestic firms — PEL is sole private solid propellant maker</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">MODEL</span>
+      <span class="qs-text">Monopoly supplier embedded inside ISRO & DRDO facilities; O&M contracts are institutional access, not just revenue</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">INSIGHT</span>
+      <span class="qs-text">PEL's ISRO O&M contracts are permanent technical clearances — rivals would need 5+ years of qualification to compete</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">NUMBERS</span>
+      <span class="qs-text">Order book ₹1,271 Cr = 3.1x FY25 revenue; 92% defence, ₹450 Cr exports — but margins under pressure at 13% vs FY24's 21%</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">TOP RISK</span>
+      <span class="qs-text">Factory safety: 2 incidents in FY25 (4 deaths); Katepally closed 4+ months — any new closure could wipe a full quarter's revenue</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">WATCH</span>
+      <span class="qs-text">Track: Katepally RDX/HMX production start confirmation (Q1 FY27 binary catalyst) + quarterly EBITDA margin trajectory</span>
+    </div>
+    <div class="qs-row">
+      <span class="qs-label">VERDICT</span>
+      <span class="qs-text">Mid-chapter story — monopoly moat is real but valuation at 60x+ PE is pricing perfection; FY27 is the proof year</span>
+    </div>
+  </div>
+</div>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">NSE: PREMEXPLN &nbsp;|&nbsp; Defence &amp; Aerospace &nbsp;|&nbsp; Investor Brief — May 28, 2026</div>
+    <div class="cover-title">Premier Explosives<br><em>India's Sole Private Armourer</em></div>
+    <div class="cover-sub">The only private company in India that manufactures solid propellants for missiles, operates inside ISRO and DRDO facilities, and exports fully assembled rocket motors. Structural monopoly — with structural risks to match.</div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cs-label">Market Cap</div>
+        <div class="cs-val">₹2,849 Cr</div>
+        <div class="cs-sub">at ₹530 (May 18); hit ₹714 on May 25</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cs-label">FY25 Revenue</div>
+        <div class="cs-val">₹417 Cr</div>
+        <div class="cs-sub">+53% YoY; FY26 guided ₹500 Cr</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cs-label">Order Book</div>
+        <div class="cs-val">₹1,271 Cr</div>
+        <div class="cs-sub">3.1x FY25 revenue; 92% defence</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cs-label">Trailing PE</div>
+        <div class="cs-val">~60x</div>
+        <div class="cs-sub">vs Solar Industries ~83x</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cs-label">ROCE</div>
+        <div class="cs-val">16.9%</div>
+        <div class="cs-sub">ROE 12.2% — room to improve</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- CHAPTER 1: CONTEXT -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">1</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Big Picture</div>
+    <div class="ch-title">India Is Rearming — And It Must Do It Domestically</div>
+  </div>
+</div>
+
+<p>India's 2026-27 defence budget crossed ₹6.81 lakh crore, with capital expenditure — the money that actually buys new weapons, missiles, and platforms — rising a sharp 22% to ₹2.19 lakh crore. Of that capital budget, <span class="hl-catalyst">75% has been ring-fenced explicitly for domestic procurement under Atmanirbhar Bharat</span>, making it the most decisive policy endorsement yet of India's indigenous defence manufacturing ambition.</p>
+
+<p>GlobalData projects India's total defence spend at $543 billion between 2026 and 2030. Every rupee directed at missiles, smart munitions, rocket artillery, and space launch vehicles flows through high-energy materials — propellants, explosives, chaff, flares, igniters. This is the narrow but structurally irreplaceable market that Premier Explosives Limited occupies as India's only private manufacturer of solid propellants.</p>
+
+<div class="grid-2">
+  <div class="card card-accent">
+    <div class="card-title">India Defence Capital Budget</div>
+    <div class="stat-row"><span class="sr-label">FY26-27 Capital Expenditure</span><span class="sr-val">₹2.19 lakh Cr</span></div>
+    <div class="stat-row"><span class="sr-label">YoY Growth</span><span class="sr-val sr-up">+22%</span></div>
+    <div class="stat-row"><span class="sr-label">Domestic Procurement Share</span><span class="sr-val sr-up">75%</span></div>
+    <div class="stat-row"><span class="sr-label">5-Year Cumulative Spend (2026-30)</span><span class="sr-val">$543 Bn</span></div>
+  </div>
+  <div class="card card-accent-teal">
+    <div class="card-title">India Explosives &amp; Propellants Market</div>
+    <div class="card-body">
+      <p>India's explosives and propellants sector is in transformation — driven by missile programme scale-up (Akash, Astra, LRSAM), ISRO's commercial launch ambitions, and the need to substitute imports of RDX, HMX, and ammonium perchlorate-based propellants. The Ministry of Defence has already awarded contracts worth ₹10,147 Cr to boost domestic firepower production.</p>
+    </div>
+  </div>
+</div>
+
+<p>The timing creates a convergence rare in Indian defence manufacturing: <span class="hl-number">the government now has both the budget intent (₹1.64 lakh Cr domestic capex allocation) and the policy architecture</span> to redirect procurement toward private domestic players. For a company with PEL's clearances and capabilities, this is less a tailwind and more a structural realignment of who holds pricing power in the ecosystem.</p>
+
+<div class="takeaway-pill">India's 75%-domestic-procurement defence budget is the single most important structural driver — PEL has no domestic competitors in its core product category.</div>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">2</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Business Model</div>
+    <div class="ch-title">What PEL Actually Does — and Why It Can't Be Easily Replaced</div>
+  </div>
+</div>
+
+<p>Premier Explosives operates across three concentric rings of the defence supply chain. Understanding what separates ring one from ring three is the key to understanding the business.</p>
+
+<div class="grid-3">
+  <div class="card card-accent">
+    <div class="card-title" style="color:var(--coral);">Ring 1 — Sole Source</div>
+    <div class="card-body text-sm">
+      <strong>Solid Propellants, Rocket Motors, Chaff &amp; Flares, Countermeasures</strong><br><br>
+      Only private Indian manufacturer of solid propellants. Only Indian company qualified for countermeasures (chaff/flares). Only Indian exporter of fully assembled rocket motors. Government has zero alternatives without multi-year requalification.
+    </div>
+  </div>
+  <div class="card card-accent-teal">
+    <div class="card-title" style="color:var(--teal);">Ring 2 — Embedded</div>
+    <div class="card-body text-sm">
+      <strong>O&amp;M Services at ISRO &amp; DRDO Facilities</strong><br><br>
+      Operates solid propellant plants at ISRO Sriharikota and DRDO's Solid Fuel Complex at Jagdalpur. Physical presence inside sovereign R&amp;D facilities. Access is non-replicable; knowledge compounds every quarter.
+    </div>
+  </div>
+  <div class="card card-accent-blue">
+    <div class="card-title" style="color:var(--blue);">Ring 3 — Competitive</div>
+    <div class="card-body text-sm">
+      <strong>Industrial Explosives, Detonators, Blasting Accessories</strong><br><br>
+      Serves mining, infra, and construction. Revenue contribution has shrunk from ~37% (FY22) to ~16% (9M FY26). Solar Industries and others compete here. Lower margin, higher competition.
+    </div>
+  </div>
+</div>
+
+<p><strong>The flywheel:</strong> Each missile contract requires PEL's propellants. Each propellant contract deepens its qualification history with DRDO. Each O&M contract at Sriharikota keeps PEL's chemists working on the frontier of Indian propellant science. New programmes (Astra Mk-II, LRSAM, future hypersonic) naturally qualify PEL first — not because of relationships, but because it already has the clearances, the materials handling credentials, and the accident history data required. Switching to a new supplier would require years of qualification, dozens of test firings, and DRDO/ISRO sign-off. The moat is regulatory and technical, not contractual.</p>
+
+<p>Client list reads like India's defence establishment: <span class="hl-key">DRDO, Bharat Dynamics Limited, Bharat Electronics, Advanced Systems Laboratory, ISRO, Coal India — and internationally, Israel, Greece, and Turkey</span>.</p>
+
+<div class="takeaway-pill takeaway-pill-teal">PEL's moat is not a patent or a brand — it is 40+ years of proprietary accident data, state-level clearances, and physical presence inside India's most sensitive propellant facilities.</div>
+
+<!-- CHAPTER 2B: PORTER'S 5 FORCES -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--gray);">2B</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--gray);">Competitive Structure</div>
+    <div class="ch-title">Porter's 5 Forces</div>
+  </div>
+</div>
+
+<div style="overflow-x:auto;">
+<table class="porter-table">
+  <thead>
+    <tr>
+      <th style="width:18%;">Force</th>
+      <th style="width:12%;">Rating</th>
+      <th>Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="rating rating-low">Low</span></td>
+      <td>No private Indian peer in solid propellants or countermeasures. Solar Industries competes in explosives (Ring 3) but is absent from PEL's core defence segments. In the defence ring, PEL effectively competes only against imports — which policy is actively blocking.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="rating rating-med">Medium</span></td>
+      <td>Government (MoD, DRDO, ISRO) accounts for 92%+ of the order book. Single buyer creates lumpiness and inspection delay risk. However, since PEL is often the only qualified supplier, the buyer cannot credibly threaten to walk away — bilateral monopoly tilts toward PEL over time as programmes scale.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="rating rating-med">Medium</span></td>
+      <td>RDX, HMX, and ammonium perchlorate are critical energetic inputs — partially imported from Western suppliers (US, Europe). Any export restriction or geopolitical friction can disrupt production. Katepally RDX/HMX expansion (Q1 FY27) will partially internalise this risk but not eliminate it.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="rating rating-low">Low</span></td>
+      <td>PESO licensing, state pollution control board consent, DRDO qualification cycles (3-5+ years per product), explosive materials handling infrastructure, and minimum viable technical workforce are collectively prohibitive. Estimated barrier: ₹300-500 Cr capex + 5-7 years of qualification before first missile contract.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="rating rating-low">Low</span></td>
+      <td>No substitute for solid propellants in short-range tactical missiles (Astra, Akash). Chaff and flares have no electronic equivalent for aircraft self-protection. Long qualification cycles mean even technological disruption would take a decade to manifest. Import substitution policy further reduces this risk.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="card" style="margin-top:16px; background:var(--gray-lt); border-color:#d0ccc4;">
+  <div class="card-title">Synthesis</div>
+  <div class="card-body text-sm">
+    The two structural pressure points are <strong>buyer power</strong> (Government controls contract timing and inspection pace — quarterly revenue will remain lumpy regardless of order book strength) and <strong>supplier power</strong> (imported energetic precursors create a production vulnerability that domestic RDX/HMX capacity can only partially solve). Both risks are manageable but not eliminable.
+  </div>
+</div>
+
+<div class="takeaway-pill" style="background:var(--gray-lt); border-left-color:var(--gray); color:var(--gray-dk);">PEL operates inside a near-monopoly structure — but the government as sole buyer means revenue recognition remains hostage to inspection schedules, not commercial demand.</div>
+
+<!-- CHAPTER 3: VERTICAL STORIES -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">3</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Segment Deep-Dive</div>
+    <div class="ch-title">Four Verticals, Four Growth Engines</div>
+  </div>
+</div>
+
+<div class="vertical-card" style="background:var(--coral-lt); border-color:#f0b9a5;">
+  <div class="vc-tag" style="color:var(--coral);">Aerospace &amp; Defence — 84% of Revenue</div>
+  <div class="vc-name">Solid Propellants, Rocket Motors &amp; Countermeasures</div>
+  <div class="vc-body">
+    <p>The crown jewel. PEL supplies propellants to Akash, Astra, and LRSAM missile programmes — India's frontline air defence architecture. The ₹429.56 Cr IAF order for chaff and flares (October 2025) alone represents more than a full year of FY23 revenue. Export orders — ₹350.23 Cr international defence order (April 2026) and ₹33.69 Cr rocket motors (May 2026) — confirm that foreign armed forces now view PEL as a credible alternate-source supplier, reducing the company's historic dependence on domestic government inspection timelines.</p>
+    <p>Export orders in the book: <span class="hl-number">₹450 Cr out of ₹1,271 Cr total order book</span> — the highest export proportion in PEL's history. These typically carry better EBITDA margins than domestic cost-plus contracts.</p>
+  </div>
+  <div class="vc-status" style="background:var(--coral); color:white;">Running &amp; Ramping</div>
+</div>
+
+<div class="vertical-card" style="background:var(--teal-lt); border-color:#9fe1cb;">
+  <div class="vc-tag" style="color:var(--teal);">Space Services — ISRO O&amp;M</div>
+  <div class="vc-name">Sriharikota &amp; Jagdalpur Facility Operations</div>
+  <div class="vc-body">
+    <p>PEL operates the solid propellant plants at ISRO's Sriharikota launch centre — the facility from which every PSLV and GSLV lifts off. Additionally, it manages the Solid Fuel Complex at Jagdalpur under DRDO. These are government-owned facilities staffed by PEL under multi-year service agreements. Revenue is relatively predictable (service fees vs. product delivery). More importantly: <span class="hl-key">every launch cycle teaches PEL's engineers something no competitor can learn from outside</span>. This is institutional knowledge that compounds silently.</p>
+    <p>With ISRO's commercial launch ambitions accelerating (OneWeb, Telesat, international customers), launch cadence at Sriharikota is set to rise — which directly increases PEL's service billings.</p>
+  </div>
+  <div class="vc-status" style="background:var(--teal); color:white;">Stable &amp; Recurring</div>
+</div>
+
+<div class="vertical-card" style="background:var(--blue-lt); border-color:#b5d4f4;">
+  <div class="vc-tag" style="color:var(--blue);">RDX / HMX Expansion — Katepally</div>
+  <div class="vc-name">New High-Energy Materials Production (Q1 FY27)</div>
+  <div class="vc-body">
+    <p>India currently imports RDX and HMX — high explosives critical to shaped charges, warhead fill, and advanced propellants. PEL's Katepally expansion will make it one of the first private Indian manufacturers of these materials. Management has guided <span class="hl-catalyst">₹150-200 Cr revenue contribution from RDX/HMX in FY27</span>, with production start targeted for Q1 FY27. This is the most significant capacity addition in PEL's history and the clearest near-term re-rating catalyst.</p>
+    <p>Risk: the same Katepally facility suffered a serious explosion in April 2025 (3 deaths, 4-month closure). The expansion is proceeding, but the incident history demands close safety monitoring.</p>
+  </div>
+  <div class="vc-status" style="background:var(--blue); color:white;">Ramping — Q1 FY27 Target</div>
+</div>
+
+<div class="vertical-card" style="background:var(--gray-lt); border-color:#d3d1c7;">
+  <div class="vc-tag" style="color:var(--gray);">Industrial Explosives — Mining &amp; Infra</div>
+  <div class="vc-name">Bulk Explosives, Detonators &amp; Accessories</div>
+  <div class="vc-body">
+    <p>The original business, now a minority revenue contributor (roughly 16% of mix). Serves Coal India, infrastructure majors, and quarrying operations. Competed against Solar Industries, HFIL, and others in a reverse-auction environment. Margins are structurally lower here, and PEL has deprioritised this segment in favour of the higher-margin defence mix. Order book share: ~4%. This vertical is a cash contributor but no longer a growth engine.</p>
+  </div>
+  <div class="vc-status" style="background:var(--gray); color:white;">Steady — Managed Decline</div>
+</div>
+
+<div class="takeaway-pill">The Katepally RDX/HMX expansion is the single most important binary event in PEL's near-term story — ₹150-200 Cr of incremental revenue, higher-margin product, and import substitution credentials in one project.</div>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">4</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Non-Obvious Truth</div>
+    <div class="ch-title">The O&amp;M Contracts Are Not Revenue — They Are Clearance</div>
+  </div>
+</div>
+
+<div class="card card-accent" style="padding:24px 26px;">
+  <div class="card-body" style="font-size:16px; line-height:1.7;">
+    <p>Most investors look at PEL's O&M contracts at ISRO Sriharikota and DRDO Jagdalpur as a steady revenue line — relatively predictable, government-backed, moderately profitable. They are all of that. But <span class="hl-key">the O&M contracts are primarily a permanent technical access pass inside India's most sensitive propellant research infrastructure</span>, not a business line in the conventional sense.</p>
+    <p>Think about what it means to physically operate a solid propellant mixing plant at Sriharikota for decades. PEL's engineers handle the same propellant chemistry used in GSLV upper stages. They observe every failure, every correction, every formulation tweak required by ISRO's scientists. Their accident and quality data feeds directly into DRDO qualification files. When a new missile programme — say, a next-generation Astra or a hypersonic glide vehicle — requires a new propellant formulation, PEL is not applying to be a supplier. It is already in the room.</p>
+    <p>This is why the market should think of PEL's moat not as a certification or a patent, but as institutional memory that compounds with every launch cycle. Any competitor who wanted to replicate this would need not just the capital and the plant — they would need to spend 5-7 years inside ISRO's facilities watching PEL's people work. That is not a barrier you can buy your way around.</p>
+  </div>
+</div>
+
+<div class="takeaway-pill">The real moat is not the product — it is 40 years of proprietary accident data, formulation history, and physical access inside ISRO Sriharikota that no competitor can replicate from outside.</div>
+
+<!-- CHAPTER 5: NUMBERS -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">5</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Numbers in Context</div>
+    <div class="ch-title">Strong Annual Trajectory, Volatile Quarters</div>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-title">Revenue Trajectory (₹ Cr)</div>
+    <div class="stat-row"><span class="sr-label">FY22</span><span class="sr-val">₹199 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">FY23</span><span class="sr-val">₹202 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">FY24</span><span class="sr-val sr-up">₹272 Cr &nbsp;(+35% YoY)</span></div>
+    <div class="stat-row"><span class="sr-label">FY25</span><span class="sr-val sr-up">₹417 Cr &nbsp;(+54% YoY)</span></div>
+    <div class="stat-row"><span class="sr-label">9M FY26</span><span class="sr-val">₹299 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">FY26 Guided</span><span class="sr-val">~₹500 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">FY27 Management View</span><span class="sr-val">₹500–600 Cr</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">Margin &amp; Profitability</div>
+    <div class="stat-row"><span class="sr-label">EBITDA Margin FY24</span><span class="sr-val sr-up">21.5%</span></div>
+    <div class="stat-row"><span class="sr-label">EBITDA Margin FY25</span><span class="sr-val sr-dn">13.9%</span></div>
+    <div class="stat-row"><span class="sr-label">EBITDA Margin 9M FY26</span><span class="sr-val sr-dn">13.1%</span></div>
+    <div class="stat-row"><span class="sr-label">Management EBITDA Target</span><span class="sr-val">15–20%</span></div>
+    <div class="stat-row"><span class="sr-label">Net Profit FY25</span><span class="sr-val">₹29 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">PAT TTM</span><span class="sr-val">~₹43 Cr (incl. other income)</span></div>
+    <div class="stat-row"><span class="sr-label">ROCE / ROE</span><span class="sr-val">16.9% / 12.2%</span></div>
+  </div>
+</div>
+
+<p class="text-sm text-muted" style="margin-top:-4px; margin-bottom:16px;">⚠ Note: Q4 FY26 results board meeting is May 29, 2026 — full-year numbers not yet available at time of writing. India Ratings expects 10-15% revenue growth in FY27, EBITDA margins 13-15%.</p>
+
+<div class="card card-accent-amber">
+  <div class="card-title" style="color:var(--amber);">Margin Story — Context Matters</div>
+  <div class="card-body text-sm">
+    <p>The margin compression from FY24 (21.5%) to FY26 (~13%) is explained by product mix. <span class="hl-risk">FY24's high margins were driven by a high share of export revenue, which carries superior profitability — as the mix shifted back to domestic delivery contracts, margins fell</span>. With ₹450 Cr of exports now in the order book (the highest ever), management is targeting a return to the 15-20% EBITDA band as those orders execute. The margin debate is therefore a timing question, not a structural deterioration story.</p>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-title">Valuation Context vs. Peers</div>
+  <div class="stat-row"><span class="sr-label">PEL Trailing PE</span><span class="sr-val">~60x (at ₹530)</span></div>
+  <div class="stat-row"><span class="sr-label">Solar Industries PE</span><span class="sr-val">~83x — but ROCE 34.8% vs PEL's 16.9%</span></div>
+  <div class="stat-row"><span class="sr-label">Industry Avg PE</span><span class="sr-val">~21x (chemicals); ~42x (defence)</span></div>
+  <div class="stat-row"><span class="sr-label">PEL PB Ratio</span><span class="sr-val">~10x book — high for current ROE</span></div>
+  <div class="stat-row"><span class="sr-label">What Market Is Pricing In</span><span class="sr-val">FY27 RDX/HMX ramp + margin recovery to 18-20%</span></div>
+</div>
+
+<p>The market is pricing in a FY27 where Katepally's RDX/HMX facility contributes ₹150-200 Cr, export orders execute on schedule, and EBITDA margins recover toward 18%. <span class="hl-number">At ₹530, PEL is pricing roughly 2-2.5x forward FY27 revenue</span> — defensible if the Katepally expansion lands on time, but offering little margin of safety if delays recur. The recent stock surge to ₹714 (May 25, 2026) ahead of Q4 results is a market bet on a strong fourth quarter.</p>
+
+<hr class="section-divider">
+
+<div class="card-title" style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.07em; color:var(--gray); margin-bottom:16px;">Capex Timeline</div>
+<div class="timeline">
+  <div class="tl-item">
+    <div class="tl-year">FY22–23</div>
+    <div class="tl-dot-col"><div class="tl-dot" style="background:var(--gray);"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-title">Maintenance &amp; Minor Upgrades</div>
+      <div class="tl-detail">Capex approximately ₹8–12 Cr/year. Company in revenue-generation mode, not investment cycle. Depreciation steady at ₹9-10 Cr. Balance sheet conserving capital for future expansion.</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-year">FY24–25</div>
+    <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-title">Katepally Phase 1 — Propellant Capacity Expansion</div>
+      <div class="tl-detail">Capex estimated ₹15–20 Cr. Expanded rocket motor integration capabilities. Led to ₹429 Cr IAF chaff &amp; flares order — capacity expansion enabled the contract, not vice versa.</div>
+      <div class="tl-pill">+₹429 Cr IAF Order</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-year">FY26</div>
+    <div class="tl-dot-col"><div class="tl-dot"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-title">Recovery Year — Post-Accident</div>
+      <div class="tl-detail">April 2025 Katepally explosion caused ₹20-30 Cr business loss and 4+ month closure. Capex constrained by plant downtime and TGPCB consent process. Revenue guidance cut from ₹600 Cr to ₹500 Cr.</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-year">FY27</div>
+    <div class="tl-dot-col"><div class="tl-dot tl-dot-teal"></div><div class="tl-line"></div></div>
+    <div class="tl-content">
+      <div class="tl-title">RDX/HMX Expansion at Katepally + PDK Plant Upgrade</div>
+      <div class="tl-detail">Management guided ₹60 Cr capex. RDX/HMX production targeted for Q1 FY27 — makes PEL one of first private Indian producers of these critical energetic materials.</div>
+      <div class="tl-pill" style="background:var(--teal-lt); color:var(--teal-dk);">+₹150–200 Cr Expected Revenue</div>
+    </div>
+  </div>
+  <div class="tl-item">
+    <div class="tl-year">FY28+</div>
+    <div class="tl-dot-col"><div class="tl-dot tl-dot-teal"></div></div>
+    <div class="tl-content">
+      <div class="tl-title">Odisha Greenfield + Andhra Land Acquisition</div>
+      <div class="tl-detail">Management evaluating greenfield project in Odisha and land in Andhra Pradesh for future scale. Plans not yet finalized — watch for land acquisition announcement as leading indicator of FY28 capex cycle.</div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="margin-top:16px; background:var(--teal-lt); border-color:#9fe1cb;">
+  <div class="card-title" style="color:var(--teal-dk);">Funding Source</div>
+  <div class="card-body text-sm">
+    Outstanding borrowings as of March 31, 2026: <span class="hl-number">₹21.26 Cr</span> — effectively near-zero net debt for a ₹2,800+ Cr market cap company. Operating cash flow reached ₹118 Cr in FY25. FY27's ₹60 Cr capex is comfortably fundable from internal accruals without any dilution. The board has approval for a ₹300 Cr equity raise (approved August 2025) but hasn't used it — suggesting management agrees internal accruals suffice for near-term expansion.
+  </div>
+</div>
+
+<div class="takeaway-pill takeaway-pill-teal">Near debt-free balance sheet + ₹118 Cr operating cash flow funds the entire FY27 ₹60 Cr capex from accruals — financial risk is low even as operating risk from expansion is elevated.</div>
+
+<!-- CHAPTER 6: RISKS -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--amber);">6</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--amber);">Eyes Open</div>
+    <div class="ch-title">Risks That Are Specific, Not Generic</div>
+  </div>
+</div>
+
+<div class="card" style="padding:4px 22px 4px;">
+  <div class="risk-item">
+    <div class="risk-icon">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Manufacturing Safety — The Systemic Pattern</div>
+      <div class="risk-text">Two serious incidents at PEL facilities in FY25: April 2025 explosion at Katepally (3 deaths, 6 injuries, 4+ month closure, ₹20-30 Cr business loss) and a second fatality at Peddakundukur in August 2025. Any new incident triggers immediate TGPCB/PESO closure order — which can wipe an entire quarter of revenue in days, with no certainty of timeline for reopening. <strong>Signal to watch:</strong> Any new closure order at either plant is an immediate sell trigger, not a buy-the-dip opportunity until root cause is published.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Revenue Lumpiness — MoD Inspection Dependence</div>
+      <div class="risk-text">PEL cannot recognise revenue on defence products until the Ministry of Defence conducts pre-dispatch inspection and signs off. These inspections are government-controlled, subject to bureaucratic delays, and cluster unpredictably. Q3 FY26 revenue was ₹81 Cr vs ₹166 Cr in Q3 FY25 — a 51% decline — purely from timing. Annual revenue is meaningful; quarterly earnings are nearly useless for forecasting. <strong>Signal:</strong> Consistent sequential quarterly improvement (not just YoY) indicates inspection process is stabilising.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">SEBI Insider Trading Inquiry (November 2025)</div>
+      <div class="risk-text">SEBI sent a formal information request in November 2025 regarding suspected insider trading in PEL shares. The company says it is cooperating. Status as of May 2026: no public resolution disclosed. This overhang depresses institutional appetite and adds headline risk around any material announcement. <strong>Signal:</strong> Closure of inquiry without penalty = rerating event. Formal charges or trading ban on insiders = severe negative.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Valuation Leaves No Room for Execution Misses</div>
+      <div class="risk-text">At 60x trailing PE, the stock is priced for a FY27 scenario where RDX/HMX ramps on schedule and margins recover to 18-20%. Any delay to the Katepally expansion, another safety incident, or further MoD inspection slowdowns collapses the earnings bridge. Solar Industries at 83x has the ROCE (34.8% vs PEL's 16.9%) and scale to justify its premium. PEL at 60x needs execution. <strong>Signal:</strong> If FY27 Q1 doesn't confirm RDX/HMX production start, the stock could de-rate 20-30% toward 40-45x.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Import Dependency on Energetic Precursors</div>
+      <div class="risk-text">Ammonium perchlorate (for solid propellants), certain oxidisers, and precursor chemicals are partly imported from US and European suppliers who maintain end-use certification requirements. Any geopolitical friction, export control change, or sanctions scenario could disrupt procurement. The Katepally expansion will reduce but not eliminate this dependency. <strong>Signal:</strong> Track DGFT notifications and any US Commerce Department changes to export licensing for high-energy materials.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill takeaway-pill-amber">The safety risk is not a one-time event — it is a systematic pattern in explosive manufacturing that investors must price permanently into their holding thesis, not just discount during incident quarters.</div>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--teal);">7</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--teal);">The Checklist</div>
+    <div class="ch-title">Five Signals to Track Every Quarter</div>
+  </div>
+</div>
+
+<div class="card" style="padding:8px 22px 8px;">
+  <div class="watch-item">
+    <div class="watch-dot"></div>
+    <div class="watch-body">
+      <div class="watch-title">1. Katepally RDX/HMX Production Confirmation</div>
+      <div class="watch-text">Management guided Q1 FY27 production start. Look for: (a) exchange filing confirming first dispatch from RDX/HMX line, or (b) Q1 FY27 results with segment-level revenue showing materials sales. <strong>Green:</strong> On-time production with ₹30-50 Cr quarterly run-rate. <strong>Red:</strong> Q1 FY27 passes without announcement — means FY27 revenue bridge collapses and stock de-rates.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot"></div>
+    <div class="watch-body">
+      <div class="watch-title">2. EBITDA Margin Trajectory</div>
+      <div class="watch-text">Management targets 15-20%. At 9M FY26 of 13.1%, the road to 18%+ depends on export order execution (higher margin) and RDX/HMX (new product premium). <strong>Green:</strong> Sequential improvement each quarter toward 16%+. <strong>Red:</strong> Margin stays below 14% for two consecutive quarters after RDX/HMX start — suggests pricing on new products disappoints.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot"></div>
+    <div class="watch-body">
+      <div class="watch-title">3. Export Order Execution Rate</div>
+      <div class="watch-text">₹450 Cr of exports are in the order book — the highest in history. These typically have 18-24 month delivery cycles. Track what percentage is dispatching each quarter. <strong>Green:</strong> Export revenue >20% of quarterly sales consistently. <strong>Red:</strong> Export license cancellations (already happened once with ₹18.90 Cr in April 2026) — any repeat at larger scale is a material warning.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--amber);"></div>
+    <div class="watch-body">
+      <div class="watch-title">4. Safety Incident Monitor</div>
+      <div class="watch-text">Check TGPCB and PESO notifications. Any closure order at Katepally or Peddakundukur (PDK) overrides any other metric — revenue stops immediately. <strong>Green:</strong> Zero closure orders and formal third-party safety audit completion. <strong>Red:</strong> Any new incident involving injury or regulatory action — even a mild one is a pattern signal, not an isolated event.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--amber);"></div>
+    <div class="watch-body">
+      <div class="watch-title">5. SEBI Inquiry Resolution</div>
+      <div class="watch-text">Open since November 2025. Track BSE/NSE exchange filings under Regulation 30. <strong>Green:</strong> Company files closure without adverse finding — likely +5-10% re-rating as institutional hesitation lifts. <strong>Red:</strong> SEBI issues show-cause notice or trading restrictions — meaningful de-rating, regardless of business fundamentals.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill takeaway-pill-teal">The two most time-sensitive signals in the next 2 quarters: Katepally RDX/HMX production start (binary FY27 catalyst) and SEBI inquiry closure (institutional re-rating event).</div>
+
+<!-- VERDICT -->
+<div class="chapter-header">
+  <div class="ch-num" style="background:var(--coral);">✓</div>
+  <div class="ch-text">
+    <div class="ch-eyebrow" style="color:var(--coral);">The Verdict</div>
+    <div class="ch-title">Where Are We in the Story?</div>
+  </div>
+</div>
+
+<div class="verdict-card">
+  <div class="vl-label">Verdict</div>
+  <div class="verdict-text">
+    Premier Explosives sits at the intersection of two irreversible structural tailwinds — India's defence indigenisation push (₹2.19 lakh Cr capital budget, 75% domestic) and the absence of any qualified domestic private competitor in solid propellants and countermeasures. The monopoly is real, the institutional moat is deep, and the balance sheet (₹21 Cr net debt, ₹118 Cr operating cash flow) is clean enough to fund the growth without dilution. The quality signal is mixed: ROCE of 16.9% is improving but not yet at the 25%+ levels of peers like Solar Industries, and the margin story is still a FY27 promise rather than a FY26 reality. The near-term re-rating catalyst is unambiguous: Katepally's RDX/HMX facility starting production in Q1 FY27, delivering ₹150-200 Cr of new revenue at better margins than the existing domestic product mix. The valuation at 60x trailing PE prices this in optimistically — there is little room for a second factory closure or another MoD inspection delay. We are in the middle chapters of this story: the monopoly thesis is established and the market has partially recognised it, but the FY27 execution proof has not yet been delivered. Investors entering now are paying for an optionality-heavy FY27 with concentrated execution risk in Katepally and a SEBI inquiry overhang that has suppressed institutional participation.
+  </div>
+  <div class="verdict-stage">Mid-Chapter · Proof Year = FY27</div>
+</div>
+
+<div class="spacer"></div>
+
+<!-- HIGHLIGHT INDEX — always expanded, printer-friendly -->
+<div id="highlight-index-wrap">
+  <div class="hi-title">
+    📌 All Highlights at a Glance
+    <span style="font-size:11px; font-weight:400; color:var(--muted); margin-left:8px;">Auto-assembled · Re-read the full brief in 60 seconds</span>
+  </div>
+  <div id="highlight-index">
+    <ol></ol>
+  </div>
+</div>
+
+<div class="spacer"></div>
+<div style="text-align:center; font-size:11px; color:var(--muted); padding-bottom:32px;">
+  NSE: PREMEXPLN &nbsp;|&nbsp; Premier Explosives Limited &nbsp;|&nbsp; Investor Brief generated May 28, 2026 &nbsp;|&nbsp; Based on Q3 FY26 concall (Feb 2026), Q2 FY26 concall (Nov 2025), public filings, and web research. Not investment advice.
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSE: WHEELS — Wheels India Limited | Investor Brief May 2026</title>
+<style>
+:root {
+  --bg: #f7f6f2;
+  --bg2: #ffffff;
+  --bg3: #f0ede6;
+  --text: #1a1a18;
+  --text2: #4a4a45;
+  --text3: #7a7a72;
+  --border: rgba(0,0,0,0.10);
+  --border2: rgba(0,0,0,0.16);
+  --teal: #1D9E75;
+  --teal-bg: #E1F5EE;
+  --teal-text: #085041;
+  --coral: #D85A30;
+  --coral-bg: #FAECE7;
+  --coral-text: #712B13;
+  --blue: #378ADD;
+  --blue-bg: #E6F1FB;
+  --blue-text: #0C447C;
+  --green: #3B6D11;
+  --green-bg: #EAF3DE;
+  --green-text: #27500A;
+  --purple: #534AB7;
+  --purple-bg: #EEEDFE;
+  --purple-text: #3C3489;
+  --amber: #BA7517;
+  --amber-bg: #FAEEDA;
+  --amber-text: #633806;
+  --gray: #888780;
+  --gray-bg: #F1EFE8;
+  --gray-text: #444441;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a18;
+    --bg2: #242420;
+    --bg3: #2c2c28;
+    --text: #e8e6de;
+    --text2: #b0ae a6;
+    --text3: #78766e;
+    --border: rgba(255,255,255,0.10);
+    --border2: rgba(255,255,255,0.18);
+    --teal: #5DCAA5;
+    --teal-bg: #04342C;
+    --teal-text: #9FE1CB;
+    --coral: #F0997B;
+    --coral-bg: #4A1B0C;
+    --coral-text: #F5C4B3;
+    --blue: #85B7EB;
+    --blue-bg: #042C53;
+    --blue-text: #B5D4F4;
+    --green: #97C459;
+    --green-bg: #173404;
+    --green-text: #C0DD97;
+    --purple: #AFA9EC;
+    --purple-bg: #26215C;
+    --purple-text: #CECBF6;
+    --amber: #EF9F27;
+    --amber-bg: #412402;
+    --amber-text: #FAC775;
+    --gray: #B4B2A9;
+    --gray-bg: #2C2C2A;
+    --gray-text: #D3D1C7;
+    --text2: #b0aea6;
+  }
+}
+body[data-theme="dark"] {
+  --bg: #1a1a18;
+  --bg2: #242420;
+  --bg3: #2c2c28;
+  --text: #e8e6de;
+  --text2: #b0aea6;
+  --text3: #78766e;
+  --border: rgba(255,255,255,0.10);
+  --border2: rgba(255,255,255,0.18);
+  --teal: #5DCAA5;
+  --teal-bg: #04342C;
+  --teal-text: #9FE1CB;
+  --coral: #F0997B;
+  --coral-bg: #4A1B0C;
+  --coral-text: #F5C4B3;
+  --blue: #85B7EB;
+  --blue-bg: #042C53;
+  --blue-text: #B5D4F4;
+  --green: #97C459;
+  --green-bg: #173404;
+  --green-text: #C0DD97;
+  --purple: #AFA9EC;
+  --purple-bg: #26215C;
+  --purple-text: #CECBF6;
+  --amber: #EF9F27;
+  --amber-bg: #412402;
+  --amber-text: #FAC775;
+  --gray: #B4B2A9;
+  --gray-bg: #2C2C2A;
+  --gray-text: #D3D1C7;
+}
+body[data-theme="light"] {
+  --bg: #f7f6f2;
+  --bg2: #ffffff;
+  --bg3: #f0ede6;
+  --text: #1a1a18;
+  --text2: #4a4a45;
+  --text3: #7a7a72;
+  --border: rgba(0,0,0,0.10);
+  --border2: rgba(0,0,0,0.16);
+  --teal: #1D9E75;
+  --teal-bg: #E1F5EE;
+  --teal-text: #085041;
+  --coral: #D85A30;
+  --coral-bg: #FAECE7;
+  --coral-text: #712B13;
+  --blue: #378ADD;
+  --blue-bg: #E6F1FB;
+  --blue-text: #0C447C;
+  --green: #3B6D11;
+  --green-bg: #EAF3DE;
+  --green-text: #27500A;
+  --purple: #534AB7;
+  --purple-bg: #EEEDFE;
+  --purple-text: #3C3489;
+  --amber: #BA7517;
+  --amber-bg: #FAEEDA;
+  --amber-text: #633806;
+  --gray: #888780;
+  --gray-bg: #F1EFE8;
+  --gray-text: #444441;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.page { max-width: 700px; margin: 0 auto; padding: 24px 16px 64px; }
+
+/* Theme toggle */
+.theme-toggle {
+  position: fixed; top: 16px; right: 16px; z-index: 100;
+  background: var(--bg2); border: 0.5px solid var(--border2);
+  border-radius: 20px; padding: 6px 14px; cursor: pointer;
+  font-size: 12px; color: var(--text2); display: flex; align-items: center; gap: 6px;
+  min-height: 36px; min-width: 44px;
+}
+.theme-toggle:hover { background: var(--bg3); }
+
+/* Cover */
+.cover {
+  background: var(--bg2);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px 24px;
+  margin-bottom: 16px;
+}
+.cover-eyebrow {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--text3);
+  margin-bottom: 8px;
+}
+.cover-title {
+  font-size: 26px; font-weight: 600; color: var(--text);
+  line-height: 1.2; margin-bottom: 4px;
+}
+.cover-sub {
+  font-size: 14px; color: var(--text2); margin-bottom: 20px;
+}
+.cover-stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+.cstat {
+  background: var(--bg3); border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+.cstat-label { font-size: 11px; color: var(--text3); margin-bottom: 2px; }
+.cstat-val { font-size: 17px; font-weight: 600; color: var(--text); }
+.cstat-sub { font-size: 11px; color: var(--text3); }
+
+/* Chapter header */
+.ch-header { display: flex; align-items: flex-start; gap: 12px; margin: 28px 0 14px; }
+.ch-num {
+  width: 28px; height: 28px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 600; flex-shrink: 0; margin-top: 2px;
+}
+.ch-title-block {}
+.ch-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 2px; }
+.ch-title { font-size: 18px; font-weight: 600; line-height: 1.2; }
+
+/* Cards */
+.card {
+  background: var(--bg2); border: 0.5px solid var(--border);
+  border-radius: var(--radius); padding: 18px 20px;
+  margin-bottom: 12px;
+}
+.card-accent {
+  border-left: 3px solid var(--accent-color);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+.card p { font-size: 14px; color: var(--text2); line-height: 1.65; }
+.card p + p { margin-top: 10px; }
+
+/* Stat rows */
+.stat-row {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 9px 0; border-bottom: 0.5px solid var(--border);
+  font-size: 14px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--text2); }
+.stat-val { font-weight: 600; color: var(--text); text-align: right; }
+.stat-note { font-size: 11px; color: var(--text3); }
+
+/* Segment badges */
+.badge {
+  display: inline-block; font-size: 11px; font-weight: 600;
+  padding: 2px 8px; border-radius: 20px; margin-bottom: 8px;
+}
+
+/* Porter table */
+.porter-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.porter-table th {
+  text-align: left; font-size: 10px; font-weight: 600;
+  letter-spacing: 0.05em; text-transform: uppercase;
+  color: var(--text3); padding: 8px 10px 6px;
+  border-bottom: 0.5px solid var(--border2);
+}
+.porter-table td { padding: 9px 10px; border-bottom: 0.5px solid var(--border); vertical-align: top; }
+.porter-table tr:last-child td { border-bottom: none; }
+.force-name { font-weight: 500; color: var(--text); font-size: 13px; }
+.force-rationale { color: var(--text2); font-size: 12px; margin-top: 2px; }
+.rating {
+  font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px;
+  white-space: nowrap;
+}
+.rating-low { background: var(--green-bg); color: var(--green-text); }
+.rating-med { background: var(--amber-bg); color: var(--amber-text); }
+.rating-high { background: var(--coral-bg); color: var(--coral-text); }
+
+/* Capex timeline */
+.timeline { position: relative; padding-left: 20px; }
+.timeline::before {
+  content: ''; position: absolute; left: 6px; top: 6px; bottom: 6px;
+  width: 1px; background: var(--border2);
+}
+.tl-item { position: relative; margin-bottom: 18px; }
+.tl-dot {
+  position: absolute; left: -17px; top: 4px;
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--teal); border: 2px solid var(--bg);
+}
+.tl-year { font-size: 11px; font-weight: 700; color: var(--teal); letter-spacing: 0.04em; }
+.tl-title { font-size: 14px; font-weight: 500; color: var(--text); margin-top: 1px; }
+.tl-detail { font-size: 13px; color: var(--text2); margin-top: 3px; }
+
+/* Risks */
+.risk-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { color: var(--amber); font-size: 16px; margin-top: 1px; flex-shrink: 0; }
+.risk-body {}
+.risk-title { font-size: 14px; font-weight: 500; color: var(--text); }
+.risk-detail { font-size: 13px; color: var(--text2); margin-top: 2px; }
+.risk-signal { font-size: 11px; color: var(--amber); margin-top: 4px; font-style: italic; }
+
+/* Watch signals */
+.watch-item { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 0.5px solid var(--border); }
+.watch-item:last-child { border-bottom: none; }
+.watch-dot { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.watch-metric { font-size: 14px; font-weight: 500; color: var(--text); }
+.watch-desc { font-size: 13px; color: var(--text2); margin-top: 1px; }
+.watch-flag { font-size: 11px; color: var(--coral); margin-top: 3px; }
+
+/* Verdict */
+.verdict {
+  background: var(--bg2); border: 0.5px solid var(--border2);
+  border-left: 4px solid var(--teal);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 20px 22px;
+  margin-top: 24px;
+}
+.verdict-label { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.verdict p { font-size: 14px; color: var(--text2); line-height: 1.7; }
+.verdict p + p { margin-top: 10px; }
+
+/* Grid 2-col */
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 480px) { .grid2 { grid-template-columns: 1fr; } }
+
+/* Segment card */
+.seg-card {
+  background: var(--bg2); border: 0.5px solid var(--border);
+  border-radius: var(--radius); padding: 14px 16px;
+  border-top: 3px solid var(--seg-color);
+}
+.seg-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.seg-pct { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.seg-catalyst { font-size: 12px; color: var(--text2); line-height: 1.5; }
+.seg-status {
+  display: inline-block; font-size: 10px; font-weight: 700;
+  padding: 2px 7px; border-radius: 10px; margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+.insight-card {
+  background: var(--purple-bg); border: 0.5px solid var(--purple);
+  border-left: 4px solid var(--purple);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 18px 20px;
+}
+.insight-card p { font-size: 14px; color: var(--purple-text); line-height: 1.7; }
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 11px; color: var(--text3); line-height: 1.5;
+  border-top: 0.5px solid var(--border); padding-top: 16px; margin-top: 32px;
+}
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+  <span id="theme-icon">☀</span> <span id="theme-label">Light</span>
+</button>
+
+<main class="page" role="main" aria-label="NSE WHEELS Investor Brief — Wheels India Limited">
+
+<!-- COVER -->
+<header class="cover">
+  <p class="cover-eyebrow" aria-label="Stock identifier and date">NSE: WHEELS &nbsp;·&nbsp; Auto Ancillary &nbsp;·&nbsp; TVS Group &nbsp;·&nbsp; May 2026</p>
+  <h1 class="cover-title">Wheels India Limited</h1>
+  <p class="cover-sub">The quiet giant at the crossroads of steel, aluminium, and electronically controlled air</p>
+  <div class="cover-stats" role="list" aria-label="Key financial metrics">
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">Market cap</div>
+      <div class="cstat-val">₹3,826 Cr</div>
+      <div class="cstat-sub">Small cap</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">FY26 revenue</div>
+      <div class="cstat-val">₹5,124 Cr</div>
+      <div class="cstat-sub">+16% YoY (standalone)</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">FY26 PAT</div>
+      <div class="cstat-val">₹158 Cr</div>
+      <div class="cstat-sub">+41% YoY (consol.)</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">Trailing PE</div>
+      <div class="cstat-val">~24×</div>
+      <div class="cstat-sub">vs sector 27–42×</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">52-week range</div>
+      <div class="cstat-val">₹706 – ₹1,658</div>
+      <div class="cstat-sub">+135% off lows</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">FY26 dividend</div>
+      <div class="cstat-val">₹14.44</div>
+      <div class="cstat-sub">Yield ~0.9%</div>
+    </div>
+  </div>
+</header>
+
+<!-- CHAPTER 1: CONTEXT -->
+<section aria-labelledby="ch1-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--blue-bg); color: var(--blue);">1</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--blue);">Chapter 1</div>
+      <h2 class="ch-title" id="ch1-title">Context — why now?</h2>
+    </div>
+  </div>
+  <div class="card" aria-label="Macro context and sector tailwinds">
+    <p>India's auto ancillary market reached ₹6.14 trillion in FY24 and is forecast to expand at ~10.67% CAGR through FY29 — one of the few industrial sectors where domestic volumes and export opportunity are compounding simultaneously. The India automotive market itself is on a 6.5% CAGR trajectory to 2030, driven by premiumisation, rural demand recovery, and CV upcycle.</p>
+    <p>Three structural forces align right now for Wheels India: (1) India's commercial vehicle replacement cycle is turning after subdued FY25 volumes — CVs are Wheels India's highest per-wheel realization product; (2) the global OEM "China+1" sourcing shift is opening alloy wheel export doors that were firmly shut five years ago; (3) a new Bosch JV announced May 2026 pivots the air suspension business from a commodity product to software-driven, electronically controlled systems — a product category where global OEMs are actively migrating.</p>
+    <p>The PLI scheme for automobiles and auto components has committed USD 3.5 billion in financial incentives of up to 18% for advanced automotive manufacturing. Indian Railways is targeting 1,800 LHB coaches per annum — Wheels India is the only domestic supplier of bogie frames at that scale. The wind energy sector, another non-automotive feeder, is in a procurement upcycle driven by India's 500 GW renewable target by 2030.</p>
+  </div>
+  <div class="card" style="padding: 14px 20px;">
+    <div class="stat-row">
+      <span class="stat-label">India auto ancillary market size (FY24)</span>
+      <span class="stat-val">₹6.14 trillion</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Sector CAGR (FY25–FY29)</span>
+      <span class="stat-val">~10.7%</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">PLI scheme allocation — auto sector</span>
+      <span class="stat-val">USD 3.5 Bn</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">India Railways LHB coach target</span>
+      <span class="stat-val">1,800 / year</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">India renewable energy target</span>
+      <span class="stat-val">500 GW by 2030</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section aria-labelledby="ch2-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--teal-bg); color: var(--teal);">2</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--teal);">Chapter 2</div>
+      <h2 class="ch-title" id="ch2-title">The business model</h2>
+    </div>
+  </div>
+  <div class="card" aria-label="Business model description">
+    <p>Wheels India has been making wheels since 1960, part of the TVS Group's T.S. Santhanam Family (TSF). In plain terms: they stamp, forge, and cast the round things every vehicle needs, then weld and machine them to OEM spec. At ₹5,124 Cr in standalone revenue, they are among the world's largest manufacturers of steel and aluminium wheels — serving everything from a tractor in Punjab to a Volvo bus in Stockholm.</p>
+    <p>About 75% of revenues come from wheels themselves — steel wheels dominating (tractors 17%, passenger vehicles 17%, earthmovers 16%, commercial vehicles 13%), with the newer cast aluminium division beginning to scale. The remaining 25% includes air suspension systems for luxury buses (9% of revenue), fabricated components for wind turbines, bogie frames for Indian Railways, and hydraulic cylinders.</p>
+    <p>The flywheel: OEM relationships run on platform-level qualification cycles of 18–36 months. Once Wheels India is on a vehicle platform, revenue is sticky for the platform's life — typically 5–8 years for CV and 3–5 years for tractors. Customer count exceeds 30 OEMs domestically including Tata Motors, Ashok Leyland, Mahindra, TAFE, Volvo, and JCB. The company now supplies Tata Motors and Stellantis in alloy wheels, and has received new orders from Hyundai and Volkswagen for supplies commencing in FY27.</p>
+  </div>
+  <div class="grid2" role="list" aria-label="Revenue breakdown">
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">Wheels as % of revenue</div>
+      <div class="cstat-val" style="color: var(--blue);">~75%</div>
+      <div class="cstat-sub">Steel + alloy + wire</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">Non-wheel businesses</div>
+      <div class="cstat-val" style="color: var(--teal);">~25%</div>
+      <div class="cstat-sub">Air susp. + industrial</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">Domestic revenue share</div>
+      <div class="cstat-val">~82%</div>
+      <div class="cstat-sub">Exports ~18%</div>
+    </div>
+    <div class="cstat" role="listitem">
+      <div class="cstat-label">OEM customer count</div>
+      <div class="cstat-val">30+</div>
+      <div class="cstat-sub">Diversified base</div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 2B: PORTER'S 5 FORCES -->
+<section aria-labelledby="ch2b-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--gray-bg); color: var(--gray);">2B</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--gray);">Chapter 2B</div>
+      <h2 class="ch-title" id="ch2b-title">Porter's 5 Forces</h2>
+    </div>
+  </div>
+  <div class="card" style="padding: 0; overflow: hidden;" aria-label="Porter five forces competitive analysis">
+    <table class="porter-table" role="table" aria-label="Porter five forces ratings">
+      <thead>
+        <tr>
+          <th scope="col">Force</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Specific rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="force-name">Rivalry intensity</span></td>
+          <td><span class="rating rating-med" aria-label="Medium">Medium</span></td>
+          <td><span class="force-rationale">Wheels India is the largest organized domestic player in steel wheels; peers like Enkei Wheels (alloy, loss-making in FY26) and Accuride compete on sub-segments rather than head-to-head across the full portfolio. Competition is capability-based, not purely price.</span></td>
+        </tr>
+        <tr>
+          <td><span class="force-name">Buyer power</span></td>
+          <td><span class="rating rating-med" aria-label="Medium">Medium</span></td>
+          <td><span class="force-rationale">Top 3 OEMs — Tata Motors, Ashok Leyland, Mahindra — historically ~47% of revenues; concentrated but offset by OEM platform qualification stickiness (1.5–3 year cycles mean switching mid-model is painful and expensive for the OEM).</span></td>
+        </tr>
+        <tr>
+          <td><span class="force-name">Supplier power</span></td>
+          <td><span class="rating rating-med" aria-label="Medium">Medium</span></td>
+          <td><span class="force-rationale">Steel BOM dependency creates pass-through risk — commodity steel price swings affect margins. Alloy wheel raw materials (aluminium) have import exposure. Management has demonstrated partial pass-through ability, but with a 1–2 quarter lag.</span></td>
+        </tr>
+        <tr>
+          <td><span class="force-name">Threat of new entrants</span></td>
+          <td><span class="rating rating-low" aria-label="Low">Low</span></td>
+          <td><span class="force-rationale">Steel wheel plants require ₹150–200+ Cr capex per phase; OEM qualification cycles run 18–36 months; NABL-accredited labs and robotic welding facilities are entry prerequisites. The Bosch JV adds a technology moat in electronically controlled air systems.</span></td>
+        </tr>
+        <tr>
+          <td><span class="force-name">Threat of substitutes</span></td>
+          <td><span class="rating rating-low" aria-label="Low to Medium">Low–Med</span></td>
+          <td><span class="force-rationale">EVs still need wheels — Wheels India's alloy wheel pivot reduces exposure to diesel-engine-specific segments. The primary substitution risk is OEM insourcing of alloy wheel production, which is cost-prohibitive at current volumes. No near-term non-wheel alternative for commercial vehicles.</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card" style="background: var(--amber-bg); border-color: var(--amber);" aria-label="Porter forces synthesis">
+    <p style="font-size: 13px; color: var(--amber-text);"><strong>Structural pressure summary:</strong> The two forces that pose the most sustained pressure are buyer power (OEM concentration means 3 customers can squeeze margins during volume slowdowns) and supplier power (commodity steel cycles have historically squeezed FY22–FY23 EBITDA). Both are partly mitigated by contract terms, but neither is fully insulated.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 3: VERTICALS -->
+<section aria-labelledby="ch3-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--coral-bg); color: var(--coral);">3</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--coral);">Chapter 3</div>
+      <h2 class="ch-title" id="ch3-title">The vertical stories</h2>
+    </div>
+  </div>
+
+  <div class="grid2" role="list" aria-label="Business segment cards">
+    <!-- Segment: Commercial Vehicles -->
+    <div class="seg-card" style="--seg-color: var(--blue);" role="listitem" aria-label="Commercial vehicles segment">
+      <span class="badge" style="background: var(--blue-bg); color: var(--blue-text);">Commercial Vehicles</span>
+      <div class="seg-pct" style="color: var(--blue);">13%</div>
+      <p class="seg-catalyst">CV replacement cycle turning in FY27 after muted FY25. Scrappage policy and fleet upgrades are tailwinds. Per-wheel realization is highest in this segment. Management flagged improved bus demand in Q4 FY26.</p>
+      <span class="seg-status" style="background: var(--blue-bg); color: var(--blue-text);">Ramping ↑</span>
+    </div>
+
+    <!-- Segment: Tractors -->
+    <div class="seg-card" style="--seg-color: var(--amber);" role="listitem" aria-label="Tractor segment">
+      <span class="badge" style="background: var(--amber-bg); color: var(--amber-text);">Tractors</span>
+      <div class="seg-pct" style="color: var(--amber);">17%</div>
+      <p class="seg-catalyst">Good monsoon FY25 drove strong tractor demand. India tractor market projected to reach USD 2 billion by 2030 (IBEF). Rural income recovery and normal FY26 rainfall continue to underpin volumes.</p>
+      <span class="seg-status" style="background: var(--green-bg); color: var(--green-text);">Running ✓</span>
+    </div>
+
+    <!-- Segment: Cast Aluminium Wheels -->
+    <div class="seg-card" style="--seg-color: var(--purple);" role="listitem" aria-label="Cast aluminium wheels segment">
+      <span class="badge" style="background: var(--purple-bg); color: var(--purple-text);">Cast Aluminium Wheels</span>
+      <div class="seg-pct" style="color: var(--purple);">~8%→</div>
+      <p class="seg-catalyst">Capacity 5L → 7L (done Q1 FY26) → 10L by end FY27 with Topy Industries technical support. New orders from Hyundai and Volkswagen begin delivery FY27. India PV alloy penetration growing from ~30% of new car sales.</p>
+      <span class="seg-status" style="background: var(--purple-bg); color: var(--purple-text);">Scaling 🚀</span>
+    </div>
+
+    <!-- Segment: Air Suspension + Bosch JV -->
+    <div class="seg-card" style="--seg-color: var(--coral);" role="listitem" aria-label="Air suspension and Bosch JV segment">
+      <span class="badge" style="background: var(--coral-bg); color: var(--coral-text);">Air Suspension + Bosch JV</span>
+      <div class="seg-pct" style="color: var(--coral);">9% + new</div>
+      <p class="seg-catalyst">50:50 Bosch JV (May 2026) targets electronically controlled air compression, air suspension, and parking brakes for global CV OEMs. Commercial launch targeted end 2026. This transforms a ₹400–450 Cr segment into a globally deployable platform.</p>
+      <span class="seg-status" style="background: var(--coral-bg); color: var(--coral-text);">Prototype → Live</span>
+    </div>
+
+    <!-- Segment: Railways -->
+    <div class="seg-card" style="--seg-color: var(--teal);" role="listitem" aria-label="Railways segment">
+      <span class="badge" style="background: var(--teal-bg); color: var(--teal-text);">Railways</span>
+      <div class="seg-pct" style="color: var(--teal);">~4–5%</div>
+      <p class="seg-catalyst">Only domestic supplier of LHB bogie frames and bolsters for Indian Railways at 1,800 coaches/year capacity. Railways capex remains elevated (₹2.65 lakh Cr allocated in Union Budget FY26). Sole-source position is a structural moat.</p>
+      <span class="seg-status" style="background: var(--teal-bg); color: var(--teal-text);">Running ✓</span>
+    </div>
+
+    <!-- Segment: Wind Energy -->
+    <div class="seg-card" style="--seg-color: var(--green);" role="listitem" aria-label="Wind energy segment">
+      <span class="badge" style="background: var(--green-bg); color: var(--green-text);">Wind / Energy</span>
+      <div class="seg-pct" style="color: var(--green);">~5–6%</div>
+      <p class="seg-catalyst">Fabricated and precision machined structures for wind turbines. India's renewable capacity addition is accelerating toward the 2030 target of 500 GW. Wind capacity additions expected to double from FY25 levels — direct feeder to this segment.</p>
+      <span class="seg-status" style="background: var(--green-bg); color: var(--green-text);">Upcycle ↑</span>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section aria-labelledby="ch4-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--purple-bg); color: var(--purple);">4</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--purple);">Chapter 4</div>
+      <h2 class="ch-title" id="ch4-title">The strategic insight</h2>
+    </div>
+  </div>
+  <div class="insight-card" role="region" aria-label="Key strategic insight">
+    <p><strong>The Bosch JV is not an incremental product extension — it is a category migration.</strong></p>
+    <p>For 35 years, Wheels India sold air suspension as a mechanical product to luxury bus OEMs. The physics were the same as a steel wheel: stamp metal, assemble to spec, ship. The Bosch JV does something categorically different: it combines Bosch's electronics and software capability with Wheels India's and Brakes India's pneumatic architecture to create <em>software-driven</em> air modules — products where the intelligence is in the firmware, not just the hardware. Global OEMs are mandating this transition as trucks and buses move toward advanced driver assistance and autonomous logistics.</p>
+    <p>The non-obvious implication: this makes Wheels India's 25% non-wheel revenue base — currently valued by the market as low-multiple industrial output — eligible for re-rating toward technology component multiples. A company making mechanical air suspension gets an auto ancillary multiple. A company with a Bosch co-branded software-driven air systems JV starts conversations in a different ZIP code.</p>
+    <p>The parallel with the alloy wheel pivot is instructive. In FY21, Wheels India entered cast aluminium wheels to serve the US and European aftermarket. By FY26, they are supplying Tata, Stellantis, Hyundai, and VW. The pattern — enter a premium category below the radar, build technical credibility with a Japanese or German partner, qualify into Tier-1 OEM programs — is now being run for a second time in air systems.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 5: NUMBERS -->
+<section aria-labelledby="ch5-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--blue-bg); color: var(--blue);">5</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--blue);">Chapter 5</div>
+      <h2 class="ch-title" id="ch5-title">Numbers in context</h2>
+    </div>
+  </div>
+
+  <div class="card" aria-label="FY26 financial performance">
+    <div class="stat-row">
+      <span class="stat-label">Revenue (standalone FY26)</span>
+      <span class="stat-val">₹5,124 Cr <span class="stat-note">+16% YoY</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Revenue (consolidated FY26)</span>
+      <span class="stat-val">₹5,465 Cr <span class="stat-note">+11.5% YoY</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">EBITDA margin (Q4 FY26)</span>
+      <span class="stat-val">8.08% <span class="stat-note">vs 7.31% Q3 — expanding</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">PAT standalone FY26</span>
+      <span class="stat-val">₹138 Cr <span class="stat-note">+31% YoY</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">PAT consolidated FY26</span>
+      <span class="stat-val">₹158 Cr <span class="stat-note">+41% YoY; first time ₹150 Cr+ consol.</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Q4 FY26 revenue</span>
+      <span class="stat-val">₹1,471 Cr <span class="stat-note">+23% YoY; best-ever quarter</span></span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Market cap</span>
+      <span class="stat-val">~₹3,826 Cr</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Trailing PE (post FY26 results)</span>
+      <span class="stat-val">~24×</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Price-to-book</span>
+      <span class="stat-val">~3.4–3.5×</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Dividend per share FY26</span>
+      <span class="stat-val">₹14.44 <span class="stat-note">Interim ₹5.30 + Final ₹9.14</span></span>
+    </div>
+  </div>
+
+  <div class="card" style="background: var(--blue-bg); border-color: var(--blue);" aria-label="Valuation context">
+    <p style="font-size: 13px; color: var(--blue-text);"><strong>What the market is pricing in:</strong> At ~24× trailing earnings, the market is giving Wheels India credit for the structural revenue recovery (revenue crossed ₹5,000 Cr first time in FY26) but is not yet pricing in the Bosch JV option value or the alloy wheel ramp to 10 lakh units by FY27. Peer auto ancillaries trade at 27–58× (Samvardhana Motherson 27×, Bharat Forge 42×, Sona BLW 58×). The discount likely reflects lower ROE (~12–13%) and commodity-linked margins, but the gap should narrow as the non-wheel premium segments scale.</p>
+  </div>
+
+  <!-- Capex Timeline -->
+  <h3 style="font-size: 15px; font-weight: 600; margin: 20px 0 12px; color: var(--text);" id="capex-section">Capex timeline</h3>
+  <div class="card" aria-labelledby="capex-section">
+    <div class="timeline" role="list" aria-label="Capital expenditure history and plans">
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot"></div>
+        <div class="tl-year">FY22</div>
+        <div class="tl-title">₹143 Cr — Alloy wheel plant commissioned</div>
+        <div class="tl-detail">Cast aluminium wheel plant at Thervoy Kandigai, Tamil Nadu. Initial capacity 5 lakh wheels/year for US and European aftermarket exports.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot"></div>
+        <div class="tl-year">FY23</div>
+        <div class="tl-title">₹200 Cr allocated — expansion phase</div>
+        <div class="tl-detail">CV, tractor, alloy wheel and windmill machining ramp. Sundaram Hydraulics Limited merger completed FY24, adding hydraulic cylinder capacity.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" style="background: var(--blue);"></div>
+        <div class="tl-year">FY26</div>
+        <div class="tl-title">Alloy capacity 5L → 7L completed</div>
+        <div class="tl-detail">Phase 2 expansion completed Q4 FY25/Q1 FY26. Supplies commenced to Tata Motors and Stellantis. New orders from Hyundai and Volkswagen qualified.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-dot" style="background: var(--coral);"></div>
+        <div class="tl-year">FY27</div>
+        <div class="tl-title">Alloy capacity → 10 lakh (target)</div>
+        <div class="tl-detail">Phase 3: 7L to 10L by end FY27 with Topy Industries tech partnership. Bosch JV entity commencing operations (regulatory approvals pending). Revenue impact: alloy wheel segment could scale from ~₹400 Cr to ₹700–800 Cr at full ramp.</div>
+      </div>
+    </div>
+    <p style="font-size: 12px; color: var(--text3); margin-top: 12px; padding-top: 12px; border-top: 0.5px solid var(--border);">Funding: Primarily internal accruals + working capital lines. Long-term debt ₹303 Cr, net D/E ~0.74 — moderate and declining as EBITDA improves. ICRA upgraded to A (Stable) in January 2026, signalling balance sheet confidence.</p>
+  </div>
+</section>
+
+<!-- CHAPTER 6: RISKS -->
+<section aria-labelledby="ch6-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--amber-bg); color: var(--amber);">6</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--amber);">Chapter 6</div>
+      <h2 class="ch-title" id="ch6-title">Risks — eyes open</h2>
+    </div>
+  </div>
+  <div class="card" aria-label="Investment risks">
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Commodity pass-through lag</div>
+        <div class="risk-detail">Steel prices (primary BOM input) and aluminium ingot costs can spike faster than OEM contracts allow renegotiation. In FY22–FY23, this compressed EBITDA margins to 6–7% from 8–9% levels. Magnitude: 100–150 bps margin hit per 10% steel price increase.</div>
+        <div class="risk-signal">Watch signal: Monthly steel HRC prices on MCX + Wheels India gross margin trend per quarter</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">CV volume cyclicality</div>
+        <div class="risk-detail">Commercial vehicles — Wheels India's highest per-unit revenue segment — are highly cyclical. A CV downcycle (as in FY19, FY25) can reduce segment revenues by 20–30% even as total company revenue grows elsewhere. The FY27 CV recovery assumption underpins guidance; a miss would be disproportionately visible.</div>
+        <div class="risk-signal">Watch signal: Monthly CV wholesale numbers from SIAM; M&M and Ashok Leyland demand commentary</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">US tariff exposure on alloy wheel exports</div>
+        <div class="risk-detail">Management flagged in Q3 FY26 that US tariff uncertainty (26% reciprocal tariff announced April 2026) creates headwinds for the export-oriented alloy wheel segment. If exemptions are not granted or US demand softens, the 7L → 10L capacity addition may not fill as quickly as planned.</div>
+        <div class="risk-signal">Watch signal: US tariff exception list for auto parts; alloy wheel export volumes each quarter</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Bosch JV execution risk</div>
+        <div class="risk-detail">The JV entity does not yet have regulatory approval; operations targeted end 2026. Equal shareholding (50:50) creates potential governance friction if product roadmap priorities diverge — Bosch's global electrification agenda may not always align with India-first CV priorities. Revenue contribution is years away.</div>
+        <div class="risk-signal">Watch signal: Regulatory clearance announcement; product launch timeline updates in concalls</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div class="risk-body">
+        <div class="risk-title">Customer concentration and new labour code costs</div>
+        <div class="risk-detail">Top 3 OEMs historically ~47% of revenues. A model-year change or sourcing reshuffle by any one of them (as Tata has done with some component categories) can cause lumpy revenue quarters. Additionally, new Labour Codes triggered an incremental ₹7.90 Cr gratuity provision in FY26 — management is still assessing total additional obligations.</div>
+        <div class="risk-signal">Watch signal: Any change in vendor shortlisting disclosures from Tata Motors, Ashok Leyland, or M&M</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section aria-labelledby="ch7-title">
+  <div class="ch-header">
+    <div class="ch-num" style="background: var(--green-bg); color: var(--green);">7</div>
+    <div class="ch-title-block">
+      <div class="ch-eyebrow" style="color: var(--green);">Chapter 7</div>
+      <h2 class="ch-title" id="ch7-title">Watch signals — check in 5 minutes</h2>
+    </div>
+  </div>
+  <div class="card" aria-label="Quarterly watch metrics">
+    <div class="watch-item">
+      <div class="watch-dot" style="background: var(--purple);"></div>
+      <div>
+        <div class="watch-metric">Alloy wheel volume and revenue contribution</div>
+        <div class="watch-desc">Track total alloy wheel units shipped per quarter vs. stated capacity. Target: 7L/year by Q1 FY27, 10L/year by Q4 FY27. Hyundai and VW supply commencement is the green light signal.</div>
+        <div class="watch-flag">Red flag: Utilisation below 60% of new capacity 2 quarters post-expansion completion</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background: var(--coral);"></div>
+      <div>
+        <div class="watch-metric">Bosch JV regulatory clearance and launch timeline</div>
+        <div class="watch-desc">Management guided operations by end 2026. Any Q2 FY27 update on JV entity incorporation, first product development milestones, or OEM LOIs will signal whether this is real or aspirational.</div>
+        <div class="watch-flag">Red flag: No JV update by Q3 FY27 concall suggests regulatory or strategic friction</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background: var(--blue);"></div>
+      <div>
+        <div class="watch-metric">EBITDA margin trajectory</div>
+        <div class="watch-desc">Q4 FY26 margin was 8.08%, best in several quarters. FY27 management cautioned about commodity and fuel inflation headwinds. Watch whether margins sustain 8%+ — the structural mix shift toward alloy and air systems should provide upward pressure over 2–3 years.</div>
+        <div class="watch-flag">Red flag: EBITDA margin falls below 7% for two consecutive quarters</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background: var(--amber);"></div>
+      <div>
+        <div class="watch-metric">Commercial vehicle segment revenue growth</div>
+        <div class="watch-desc">CVs are ~13% of revenue but highest per-unit realization. If the FY27 CV upcycle materialises (MHCV wholesale volumes +10–15% YoY), this segment could add 150–200 bps to overall revenue growth. Watch SIAM monthly dispatch data.</div>
+        <div class="watch-flag">Red flag: CV segment revenues flat or negative for more than one quarter in FY27</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background: var(--teal);"></div>
+      <div>
+        <div class="watch-metric">Export revenue and US tariff outcome</div>
+        <div class="watch-desc">Exports are ~18% of revenues. Alloy wheel exports to US/Europe are the fastest-growing export line. If India-US tariff negotiations deliver auto parts exemptions, this unlocks the alloy segment's full export potential. Track quarterly export line in P&L and management commentary.</div>
+        <div class="watch-flag">Red flag: Export revenue declines YoY for 2 consecutive quarters; US tariff exception not secured by Dec 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+  <div class="verdict" role="region" aria-labelledby="verdict-title">
+    <div class="verdict-label" id="verdict-title">Verdict</div>
+    <p>Wheels India is a company that has been quietly assembling the components of a structural re-rating — a shift from a commodity steel-wheel manufacturer into a multi-material, technology-enabled auto components platform. The structural tailwinds are layered: India's CV upcycle just beginning, tractor demand underpinned by rural income, wind energy in procurement expansion, and Railways locked in as sole-source supplier. The alloy wheel pivot is already proven — from zero OEM customer in FY21 to Tata, Stellantis, Hyundai, and VW by FY27. The Bosch JV is the big bet: if it commercialises by end CY2026, it adds a software-driven air systems dimension that no other Indian wheel maker has. The financials have caught up too — first time above ₹5,000 Cr standalone revenue, consolidated PAT above ₹150 Cr, EBITDA margins at multi-year highs of 8%+, and balance sheet strong enough for ICRA's upgrade to A-Stable.</p>
+    <p>Valuation at ~24× trailing earnings sits at a meaningful discount to auto ancillary peers (27–58×), reflecting the historically muted ROE (~12–13%) and commodity-linked margin variability. The catalyst for a re-rating is clear: alloy wheel OEM ramp-up proving sustainable margins and the Bosch JV delivering its first commercial product. We are at the early-middle chapter — the heavy investment cycle is done, the new platforms are qualified, and the FY27–FY28 period will determine whether the non-wheel segment transforms Wheels India's earnings quality or remains a supporting cast to the steel wheel core.</p>
+  </div>
+</section>
+
+<p class="disclaimer" role="contentinfo">This brief is for informational and research purposes only and does not constitute investment advice. All financial data sourced from company filings, exchange disclosures, and news reports as of May 2026. Investors should conduct independent due diligence and consult a SEBI-registered advisor before making investment decisions.</p>
+
+</main>
+
+<script>
+function toggleTheme() {
+  var body = document.body;
+  var icon = document.getElementById('theme-icon');
+  var label = document.getElementById('theme-label');
+  var stored = localStorage.getItem('wil-theme');
+  var isDark = body.getAttribute('data-theme') === 'dark';
+  if (isDark) {
+    body.setAttribute('data-theme', 'light');
+    icon.textContent = '☽';
+    label.textContent = 'Dark';
+    localStorage.setItem('wil-theme', 'light');
+  } else {
+    body.setAttribute('data-theme', 'dark');
+    icon.textContent = '☀';
+    label.textContent = 'Light';
+    localStorage.setItem('wil-theme', 'dark');
+  }
+}
+(function() {
+  var stored = localStorage.getItem('wil-theme');
+  var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var theme = stored || (prefersDark ? 'dark' : 'light');
+  document.body.setAttribute('data-theme', theme);
+  var icon = document.getElementById('theme-icon');
+  var label = document.getElementById('theme-label');
+  if (theme === 'dark') { icon.textContent = '☀'; label.textContent = 'Light'; }
+  else { icon.textContent = '☽'; label.textContent = 'Dark'; }
+})();
+</script>
+</body>
+</html>

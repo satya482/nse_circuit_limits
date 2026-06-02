@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Defence & Aerospace Theme — Listed Universe Mindmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e16; --bg2:#0e131d; --panel:#111824; --panel2:#0c1119;
+    --ink:#e8edf5; --muted:#8a97ab; --faint:#5a6678;
+    --line:#1d2738; --line2:#26344a;
+    --accent:#ffb347; --accent2:#3ed0d6; --accent3:#7aa2ff;
+    --chip:#172132; --chip-ink:#aeb9cb;
+    --psu:#f5d36b; --new:#5ddb7a;
+    --shadow:0 18px 50px -20px rgba(0,0,0,.7);
+  }
+  [data-theme="light"]{
+    --bg:#f4f1ea; --bg2:#eee9df; --panel:#ffffff; --panel2:#faf7f1;
+    --ink:#1b2230; --muted:#5e6979; --faint:#909aab;
+    --line:#e2ddd2; --line2:#d3ccbd;
+    --accent:#c8761a; --accent2:#1a8f95; --accent3:#3d5cc4;
+    --chip:#efeae0; --chip-ink:#5e6979;
+    --psu:#b07d10; --new:#2f9e4f;
+    --shadow:0 16px 40px -22px rgba(40,30,10,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 80% -10%, color-mix(in srgb, var(--accent2) 9%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 0% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    transition:background .4s ease,color .3s ease;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 90px}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;mask:radial-gradient(circle at 50% 0%,#000,transparent 80%);}
+  .wrap{position:relative;z-index:1}
+  header.hero{margin-bottom:22px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin:0 0 10px}
+  h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 8px;letter-spacing:-.01em}
+  h1 .thin{font-weight:400;font-style:italic;color:var(--muted)}
+  .sub{color:var(--muted);max-width:780px;font-size:15.5px;margin:6px 0 0}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px}
+  .search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:11px 14px}
+  .search input{flex:1;background:none;border:none;outline:none;color:var(--ink);font-size:15px;font-family:inherit}
+  .search input::placeholder{color:var(--faint)}
+  .search svg{flex:none;stroke:var(--faint)}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;cursor:pointer;background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:12px;padding:11px 15px;transition:.18s;white-space:nowrap}
+  .btn:hover{border-color:var(--accent2);color:var(--accent2)}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);margin-left:auto}
+  .chain{margin:18px 0 30px;border:1px solid var(--line2);border-radius:16px;background:linear-gradient(180deg,var(--panel),var(--panel2));padding:18px 18px 14px;box-shadow:var(--shadow)}
+  .chain h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:600}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+  .flow .node{flex:1;min-width:115px;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:11px 12px;position:relative}
+  .flow .node .lbl{font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+  .flow .node .val{font-family:'Fraunces',serif;font-weight:600;font-size:15.5px;margin-top:2px}
+  .flow .arrow{align-self:center;color:var(--accent);font-size:20px;font-weight:700;flex:none}
+  .cross{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .cross .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;padding:5px 11px;border-radius:20px;border:1px dashed var(--line2);color:var(--muted)}
+  .cross .tag b{color:var(--accent2);font-weight:600}
+  .sectors{display:flex;flex-direction:column;gap:16px}
+  .sector{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:var(--shadow)}
+  .sector>summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:14px;padding:18px 20px;position:relative;user-select:none}
+  .sector>summary::-webkit-details-marker{display:none}
+  .sector>summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--rail)}
+  .sec-dot{flex:none;width:13px;height:13px;border-radius:50%;background:var(--rail);margin-top:7px;box-shadow:0 0 0 4px color-mix(in srgb,var(--rail) 18%,transparent)}
+  .sec-head{flex:1}
+  .sec-head h2{margin:0;font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .sec-head p{margin:3px 0 0;color:var(--muted);font-size:14px}
+  .sec-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);flex:none;text-align:right;margin-top:4px}
+  .chev{flex:none;color:var(--faint);transition:transform .25s;margin-top:5px}
+  .sector[open] .chev{transform:rotate(180deg)}
+  .sec-body{padding:4px 20px 20px 39px}
+  .group{margin-top:16px}
+  .group>h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rail);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .group>h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .cos{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:9px}
+  .co{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;transition:.16s}
+  .co:hover{border-color:var(--rail);transform:translateY(-1px)}
+  .co .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .co .name{font-weight:600;font-size:14.5px}
+  .co .tk{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--rail);background:color-mix(in srgb,var(--rail) 12%,transparent);padding:2px 7px;border-radius:6px;white-space:nowrap}
+  .co .role{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .co .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.03em;padding:2px 7px;border-radius:20px;background:var(--chip);color:var(--chip-ink);border:1px solid var(--line)}
+  .chip.psu{color:var(--psu);border-color:color-mix(in srgb,var(--psu) 40%,transparent)}
+  .chip.nw{color:var(--new);border-color:color-mix(in srgb,var(--new) 40%,transparent)}
+  .chip.link{color:var(--accent3);border-color:color-mix(in srgb,var(--accent3) 35%,transparent)}
+  .chip.ind{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 38%,transparent)}
+  .nohit{display:none;color:var(--muted);font-style:italic;padding:30px;text-align:center}
+  footer{margin-top:34px;border-top:1px solid var(--line2);padding-top:20px;color:var(--muted);font-size:13px}
+  footer h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+  footer p{margin:0 0 10px;max-width:880px}
+  .disc{background:color-mix(in srgb,#e2606b 9%,transparent);border:1px solid color-mix(in srgb,#e2606b 30%,transparent);border-radius:12px;padding:13px 16px;color:var(--ink);font-size:13px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 18px}
+  .legend span{display:flex;align-items:center;gap:7px;font-size:12.5px;font-family:'IBM Plex Mono',monospace;color:var(--muted)}
+  .legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  @media(max-width:560px){
+    .sec-meta{display:none}
+    .cos{grid-template-columns:1fr}
+    .flow .arrow{transform:rotate(90deg)}
+    .flow .node{min-width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">NSE / BSE &middot; Indian Defence &amp; Aerospace Map &middot; Built Jun 2026</p>
+    <h1>India's Defence &amp; Aerospace Complex,<br><span class="thin">every listed proxy in one map</span></h1>
+    <p class="sub">The indigenisation supply chain end to end — strategic materials and forgings, precision components, sub-systems like electronics and engines, the air / sea / land platforms they go into, missiles and munitions, drones, and the new private primes rising alongside the PSUs. Multi-domain names carry blue <b>link</b> chips so you can read the connections; <b>PSU</b> marks state-owned anchors.</p>
+    <div class="legend" aria-label="Colour legend for subsectors"><span><i style="background:#7aa2ff"></i>Aerospace</span><span><i style="background:#3ec6c6"></i>Naval</span><span><i style="background:#5ddb7a"></i>Electronics / EW</span><span><i style="background:#e2606b"></i>Missiles &amp; munitions</span><span><i style="background:#c79a5b"></i>Land systems</span><span><i style="background:#ffb347"></i>Components</span><span><i style="background:#b8a0ff"></i>Materials</span><span><i style="background:#45c6ff"></i>Drones &amp; sims</span><span><i style="background:#f5d36b"></i>Private primes</span></div>
+  </header>
+  <section class="chain" aria-label="Theme value chain overview">
+    <h2>The indigenisation supply chain, raw material to battlefield</h2>
+    <div class="flow"><div class="node"><div class="lbl">Inputs</div><div class="val">Materials</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Make parts</div><div class="val">Components</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Build kit</div><div class="val">Sub-systems</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Assemble</div><div class="val">Platforms</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Arm</div><div class="val">Weapons</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Keep ready</div><div class="val">MRO</div></div></div>
+    <div class="cross"><span class="tag">Demand anchors: <b>Defence PSUs</b> (HAL &middot; BEL &middot; BDL &middot; shipyards)</span><span class="tag">Rising: <b>private primes</b> (L&amp;T &middot; Adani &middot; Kalyani &middot; Reliance)</span><span class="tag">Tailwind: <b>Atmanirbhar + exports</b> drive the order cycle</span></div>
+  </section>
+  <div class="toolbar">
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="text" placeholder="Search a company or ticker — e.g. HAL, missile, drone, forging…" aria-label="Search companies or tickers">
+    </label>
+    <button class="btn" id="expand">Expand all</button>
+    <button class="btn" id="collapse">Collapse all</button>
+    <button class="btn" id="theme" aria-label="Toggle day or night mode">&#9790; Night</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="sectors" id="root"></div>
+  <div class="nohit" id="nohit">No company or ticker matches that search.</div>
+  <footer>
+    <h3>How to read this map</h3>
+    <p>Each card is a listed company with its NSE symbol and one-line role. A defence name often spans domains — the blue <b>link</b> chip shows the others it touches (Bharat Forge in land systems, components and as a prime; Solar Industries in munitions and drones; HBL across defence, power and AI/DC). <b>PSU</b> marks government-owned anchors and <b>new listing</b> marks recent IPOs.</p>
+    <h3>Sources &amp; bias note</h3>
+    <p>Taxonomy and placements compiled from public market structure, the Nifty India Defence constituents and recent filings/news as of June 2026. Order flow here is lumpy and DAC-approval driven, and some brokerages (e.g. Kotak) have flagged several large defence names as "narrative stocks" with elevated passive holdings — moves can be sentiment-led. <b>Verify the exact NSE/BSE symbol and status before acting</b>, especially for recent IPOs (Unimech, Azad, DCX Systems, Apollo Micro) and SME-board names (DroneAcharya). "Top defence stocks" lists carry recency and selection bias.</p>
+    <div class="disc"><b>Not investment advice.</b> This is a structural reference map, not a recommendation, screen, or ranking. Inclusion says nothing about quality or valuation. Do your own diligence and verify every figure at source.</div>
+  </footer>
+</div>
+<script>
+const SECTORS = [
+ {
+  "id": "aero",
+  "name": "Aerospace &amp; Aircraft",
+  "rail": "#7aa2ff",
+  "blurb": "Platforms in the air — aircraft, helicopters, engines and aerostructures.",
+  "groups": [
+   {
+    "name": "Aircraft, helicopters &amp; engines",
+    "cos": [
+     {
+      "n": "Hindustan Aeronautics",
+      "t": "HAL",
+      "r": "Fighters, helicopters, aero-engines",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "Dynamatic Technologies",
+      "t": "DYNAMATECH",
+      "r": "Aerostructures / aero components",
+      "tags": [
+       [
+        "also: Components",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "naval",
+  "name": "Naval &amp; Shipbuilding",
+  "rail": "#3ec6c6",
+  "blurb": "Platforms at sea — the three defence shipyards building submarines, carriers and warships.",
+  "groups": [
+   {
+    "name": "Warship &amp; submarine builders",
+    "cos": [
+     {
+      "n": "Mazagon Dock",
+      "t": "MAZDOCK",
+      "r": "Submarines & destroyers",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "Cochin Shipyard",
+      "t": "COCHINSHIP",
+      "r": "Aircraft carriers & vessels",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "Garden Reach Shipbuilders",
+      "t": "GRSE",
+      "r": "Warships & frigates",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "elec",
+  "name": "Defence Electronics, Radar &amp; EW",
+  "rail": "#5ddb7a",
+  "blurb": "The sensors and electronic brains — radar, avionics, optronics, electronic warfare and harnesses.",
+  "groups": [
+   {
+    "name": "Systems anchor",
+    "cos": [
+     {
+      "n": "Bharat Electronics",
+      "t": "BEL",
+      "r": "Radar, EW, defence electronics",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Avionics, optronics &amp; subsystems",
+    "cos": [
+     {
+      "n": "Astra Microwave",
+      "t": "ASTRAMICRO",
+      "r": "RF & radar subsystems",
+      "tags": []
+     },
+     {
+      "n": "Data Patterns",
+      "t": "DATAPATTNS",
+      "r": "Avionics & radar electronics",
+      "tags": []
+     },
+     {
+      "n": "Paras Defence",
+      "t": "PARAS",
+      "r": "Optics, optronics & space",
+      "tags": [
+       [
+        "also: Space",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Centum Electronics",
+      "t": "CENTUM",
+      "r": "Defence ESDM",
+      "tags": []
+     },
+     {
+      "n": "DCX Systems",
+      "t": "DCXINDIA",
+      "r": "Cable harnesses / system integration",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     },
+     {
+      "n": "Apollo Micro Systems",
+      "t": "APOLLO",
+      "r": "Missile & weapon electronics",
+      "tags": []
+     },
+     {
+      "n": "HBL Engineering",
+      "t": "HBLENGINE",
+      "r": "Defence electronics & batteries",
+      "tags": [
+       [
+        "also: AI/DC",
+        "link"
+       ],
+       [
+        "also: Power",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "missile",
+  "name": "Missiles, Munitions &amp; Explosives",
+  "rail": "#e2606b",
+  "blurb": "The firepower — guided missiles, propellants, explosives and ammunition.",
+  "groups": [
+   {
+    "name": "Missiles &amp; guided systems",
+    "cos": [
+     {
+      "n": "Bharat Dynamics",
+      "t": "BDL",
+      "r": "Missiles & guided weapons",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Explosives, propellants &amp; ammo",
+    "cos": [
+     {
+      "n": "Solar Industries",
+      "t": "SOLARINDS",
+      "r": "Explosives, ammo, Nagastra drones",
+      "tags": [
+       [
+        "also: Drones",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Premier Explosives",
+      "t": "PREMEXPLN",
+      "r": "Propellants & defence explosives",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "land",
+  "name": "Land Systems, Vehicles &amp; Artillery",
+  "rail": "#c79a5b",
+  "blurb": "Platforms on the ground — combat vehicles, artillery and logistics.",
+  "groups": [
+   {
+    "name": "Vehicles, artillery &amp; combat systems",
+    "cos": [
+     {
+      "n": "BEML",
+      "t": "BEML",
+      "r": "Defence vehicles & equipment",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "Bharat Forge",
+      "t": "BHARATFORG",
+      "r": "Artillery (Kalyani Strategic Systems)",
+      "tags": [
+       [
+        "also: Components",
+        "link"
+       ],
+       [
+        "also: Primes",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Ashok Leyland",
+      "t": "ASHOKLEY",
+      "r": "Defence logistics vehicles",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "comp",
+  "name": "Engines, Precision Components &amp; Forgings",
+  "rail": "#ffb347",
+  "blurb": "The deep supply chain — precision machining, castings, forgings and aero tooling.",
+  "groups": [
+   {
+    "name": "Precision components &amp; castings",
+    "cos": [
+     {
+      "n": "MTAR Technologies",
+      "t": "MTARTECH",
+      "r": "Precision components; nuclear/clean energy",
+      "tags": [
+       [
+        "also: Clean energy",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Azad Engineering",
+      "t": "AZAD",
+      "r": "Aero & turbine precision parts",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     },
+     {
+      "n": "PTC Industries",
+      "t": "PTCIL",
+      "r": "Titanium & superalloy castings (Aerolloy)",
+      "tags": [
+       [
+        "also: Materials",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Unimech Aerospace",
+      "t": "UNIMECH",
+      "r": "Aero tooling & sub-assemblies",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     },
+     {
+      "n": "Dynamatic Technologies",
+      "t": "DYNAMATECH",
+      "r": "Aero components",
+      "tags": [
+       [
+        "also: Aerospace",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "mat",
+  "name": "Special Materials &amp; Alloys",
+  "rail": "#b8a0ff",
+  "blurb": "Strategic metallurgy — superalloys, titanium and armour-grade materials.",
+  "groups": [
+   {
+    "name": "Strategic materials",
+    "cos": [
+     {
+      "n": "Mishra Dhatu Nigam",
+      "t": "MIDHANI",
+      "r": "Superalloys, armour, titanium",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "PTC Industries",
+      "t": "PTCIL",
+      "r": "Titanium / superalloy supply",
+      "tags": [
+       [
+        "also: Components",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "drone",
+  "name": "Drones, UAV &amp; Simulators",
+  "rail": "#45c6ff",
+  "blurb": "New-age warfare — UAVs, loitering munitions, counter-drone and training systems.",
+  "groups": [
+   {
+    "name": "UAV, counter-drone &amp; training",
+    "cos": [
+     {
+      "n": "ideaForge Technology",
+      "t": "IDEAFORGE",
+      "r": "Drones / UAV systems",
+      "tags": []
+     },
+     {
+      "n": "Zen Technologies",
+      "t": "ZENTEC",
+      "r": "Simulators & anti-drone systems",
+      "tags": []
+     },
+     {
+      "n": "DroneAcharya Aerial",
+      "t": "DRONACHRYA",
+      "r": "Drone services & training (SME)",
+      "tags": []
+     },
+     {
+      "n": "Solar Industries",
+      "t": "SOLARINDS",
+      "r": "Nagastra loitering munitions",
+      "tags": [
+       [
+        "also: Munitions",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "prime",
+  "name": "Private Primes &amp; Conglomerate Defence",
+  "rail": "#f5d36b",
+  "blurb": "The new private system-integrators challenging the PSU monopoly on platforms.",
+  "groups": [
+   {
+    "name": "New private primes",
+    "cos": [
+     {
+      "n": "Larsen & Toubro",
+      "t": "LT",
+      "r": "Shipbuilding, missiles, systems",
+      "tags": [
+       [
+        "also: AI/DC",
+        "link"
+       ],
+       [
+        "also: Power",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Adani Enterprises",
+      "t": "ADANIENT",
+      "r": "Adani Defence & Aerospace",
+      "tags": [
+       [
+        "also: AI/DC",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Reliance Infrastructure",
+      "t": "RELINFRA",
+      "r": "Reliance Defence",
+      "tags": [
+       [
+        "also: Power",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Bharat Forge",
+      "t": "BHARATFORG",
+      "r": "Kalyani Strategic Systems",
+      "tags": [
+       [
+        "also: Land",
+        "link"
+       ],
+       [
+        "also: Components",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ }
+];
+const root = document.getElementById('root');
+let TOTAL = 0;
+SECTORS.forEach((s,i)=>{
+  const det = document.createElement('details');
+  det.className='sector'; det.open = (i<2); det.style.setProperty('--rail', s.rail);
+  let coCount = s.groups.reduce((a,g)=>a+g.cos.length,0); TOTAL += coCount;
+  let gh = s.groups.map(g=>{
+    const cards = g.cos.map(c=>{
+      const chips = (c.tags||[]).map(t=>`<span class="chip ${t[1]}">${t[0]}</span>`).join('');
+      return `<div class="co" data-search="${(c.n+' '+c.t+' '+c.r).toLowerCase()}">
+        <div class="top"><span class="name">${c.n}</span><span class="tk">${c.t}</span></div>
+        <div class="role">${c.r}</div>
+        ${chips?`<div class="chips">${chips}</div>`:''}
+      </div>`;
+    }).join('');
+    return `<div class="group"><h3>${g.name}</h3><div class="cos">${cards}</div></div>`;
+  }).join('');
+  det.innerHTML = `
+    <summary>
+      <span class="sec-dot"></span>
+      <span class="sec-head"><h2>${s.name}</h2><p>${s.blurb}</p></span>
+      <span class="sec-meta">${coCount} listed</span>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="sec-body">${gh}</div>`;
+  root.appendChild(det);
+});
+document.getElementById('count').textContent = TOTAL + ' entries · ' + SECTORS.length + ' subsectors';
+const q = document.getElementById('q'), nohit = document.getElementById('nohit');
+q.addEventListener('input', ()=>{
+  const term = q.value.trim().toLowerCase();
+  let anyShown = false;
+  document.querySelectorAll('.sector').forEach(sec=>{
+    let secHit = false;
+    sec.querySelectorAll('.group').forEach(gr=>{
+      let grHit = false;
+      gr.querySelectorAll('.co').forEach(co=>{
+        const match = !term || co.dataset.search.includes(term);
+        co.style.display = match ? '' : 'none';
+        if(match){grHit=true; anyShown=true;}
+      });
+      gr.style.display = grHit ? '' : 'none';
+      if(grHit) secHit=true;
+    });
+    sec.style.display = secHit ? '' : 'none';
+    if(secHit && term) sec.open = true;
+  });
+  nohit.style.display = anyShown ? 'none' : 'block';
+});
+document.getElementById('expand').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=true);
+document.getElementById('collapse').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=false);
+const themeBtn = document.getElementById('theme');
+themeBtn.onclick = ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  themeBtn.innerHTML = next==='dark' ? '&#9790; Night' : '&#9728; Day';
+};
+</script>
+</body>
+</html>

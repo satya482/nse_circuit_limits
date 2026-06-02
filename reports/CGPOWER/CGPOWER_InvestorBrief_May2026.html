@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CG Power and Industrial Solutions — Investor Brief | May 2026</title>
+<style>
+  :root {
+    --bg: #FAFAF8;
+    --bg-card: #FFFFFF;
+    --text: #1A1A1A;
+    --text-muted: #6B6B6B;
+    --border: #E2E2DD;
+    --accent-blue: #378ADD;
+    --accent-purple: #534AB7;
+    --accent-teal: #1D9E75;
+    --accent-green: #3B6D11;
+    --accent-amber: #BA7517;
+    --accent-coral: #D85A30;
+    --risk-amber: #BA7517;
+    --positive-green: #1D9E75;
+    --neutral-gray: #8A8A8A;
+    --shadow: 0 1px 4px rgba(0,0,0,0.06);
+    --radius: 10px;
+  }
+  [data-theme="night"] {
+    --bg: #111114;
+    --bg-card: #1C1C21;
+    --text: #E8E8E4;
+    --text-muted: #9A9A9A;
+    --border: #2E2E34;
+    --shadow: 0 1px 4px rgba(0,0,0,0.3);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+  }
+  .container { max-width: 820px; margin: 0 auto; padding: 24px 20px 60px; }
+  .theme-toggle {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 24px; padding: 8px 16px; cursor: pointer;
+    font-size: 14px; color: var(--text); box-shadow: var(--shadow);
+    transition: all 0.3s;
+  }
+  .theme-toggle:hover { opacity: 0.85; }
+  .cover {
+    background: linear-gradient(135deg, #378ADD 0%, #2A6DB8 100%);
+    border-radius: var(--radius);
+    padding: 48px 36px;
+    color: #fff;
+    margin-bottom: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::after {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .cover-eyebrow {
+    font-size: 13px; letter-spacing: 1.5px;
+    text-transform: uppercase; opacity: 0.85; margin-bottom: 12px;
+  }
+  .cover h1 { font-size: 32px; font-weight: 700; line-height: 1.25; margin-bottom: 8px; }
+  .cover-subtitle { font-size: 17px; opacity: 0.9; line-height: 1.5; max-width: 600px; }
+  .cover-stats {
+    display: flex; flex-wrap: wrap; gap: 24px;
+    margin-top: 28px; padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  .cover-stat-item { min-width: 120px; }
+  .cover-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; opacity: 0.7; }
+  .cover-stat-value { font-size: 22px; font-weight: 700; }
+  .chapter { margin-top: 44px; margin-bottom: 24px; }
+  .chapter-number {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--accent-blue); color: #fff;
+    font-size: 15px; font-weight: 700; margin-bottom: 8px;
+  }
+  .chapter-eyebrow {
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--accent-blue); margin-bottom: 4px;
+  }
+  .chapter-title { font-size: 24px; font-weight: 700; line-height: 1.3; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 28px;
+    margin-bottom: 20px; box-shadow: var(--shadow);
+  }
+  .card p { margin-bottom: 14px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card-accent-blue { border-left: 3px solid var(--accent-blue); }
+  .card-accent-purple { border-left: 3px solid var(--accent-purple); }
+  .card-accent-teal { border-left: 3px solid var(--accent-teal); }
+  .card-accent-green { border-left: 3px solid var(--accent-green); }
+  .card-accent-amber { border-left: 3px solid var(--accent-amber); }
+  .card-accent-coral { border-left: 3px solid var(--accent-coral); }
+  .stat-row {
+    display: flex; justify-content: space-between;
+    align-items: baseline; padding: 10px 0;
+    border-bottom: 1px solid var(--border); font-size: 15px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text-muted); }
+  .stat-value { font-weight: 600; text-align: right; }
+  .vertical-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px 28px;
+    margin-bottom: 16px; box-shadow: var(--shadow);
+  }
+  .vertical-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .vertical-tag {
+    display: inline-block; font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1px; padding: 2px 10px; border-radius: 12px;
+    margin-bottom: 10px; font-weight: 600;
+  }
+  .tag-blue { background: rgba(55,138,221,0.12); color: var(--accent-blue); }
+  .tag-purple { background: rgba(83,74,183,0.12); color: var(--accent-purple); }
+  .tag-teal { background: rgba(29,158,117,0.12); color: var(--accent-teal); }
+  .tag-green { background: rgba(59,109,17,0.12); color: var(--accent-green); }
+  .tag-amber { background: rgba(186,117,23,0.12); color: var(--accent-amber); }
+  .tag-coral { background: rgba(216,90,48,0.12); color: var(--accent-coral); }
+  .risk-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 0; border-bottom: 1px solid var(--border);
+  }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-icon {
+    flex-shrink: 0; width: 24px; height: 24px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; margin-top: 2px;
+  }
+  .risk-content { flex: 1; }
+  .risk-title { font-weight: 600; margin-bottom: 4px; }
+  .risk-detail { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
+  .signal-row {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+  }
+  .signal-row:last-child { border-bottom: none; }
+  .signal-dot {
+    flex-shrink: 0; width: 10px; height: 10px;
+    border-radius: 50%; margin-top: 7px;
+  }
+  .dot-blue { background: var(--accent-blue); }
+  .dot-purple { background: var(--accent-purple); }
+  .dot-teal { background: var(--accent-teal); }
+  .dot-green { background: var(--accent-green); }
+  .dot-amber { background: var(--accent-amber); }
+  .dot-coral { background: var(--accent-coral); }
+  .signal-content { flex: 1; }
+  .signal-title { font-weight: 600; margin-bottom: 2px; }
+  .signal-detail { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+  .verdict-card {
+    background: var(--bg-card); border: 2px solid var(--accent-blue);
+    border-radius: var(--radius); padding: 32px;
+    margin-top: 32px; box-shadow: var(--shadow);
+  }
+  .verdict-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 2px;
+    color: var(--accent-blue); font-weight: 700; margin-bottom: 12px;
+  }
+  .verdict-card p { font-size: 16px; line-height: 1.75; }
+  .callout {
+    background: rgba(55,138,221,0.06); border-left: 3px solid var(--accent-blue);
+    padding: 20px 24px; border-radius: 0 var(--radius) var(--radius) 0;
+    margin: 20px 0; font-size: 15px; line-height: 1.7;
+  }
+  [data-theme="night"] .callout { background: rgba(55,138,221,0.08); }
+  .insight-box {
+    background: linear-gradient(135deg, rgba(83,74,183,0.07), rgba(55,138,221,0.07));
+    border: 1px solid var(--accent-purple); border-radius: var(--radius);
+    padding: 28px; margin: 24px 0;
+  }
+  [data-theme="night"] .insight-box {
+    background: linear-gradient(135deg, rgba(83,74,183,0.12), rgba(55,138,221,0.12));
+  }
+  .insight-box .insight-label {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px;
+    color: var(--accent-purple); font-weight: 700; margin-bottom: 10px;
+  }
+  .insight-box p { font-size: 16px; line-height: 1.75; }
+  .peer-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 12px; }
+  .peer-table th {
+    text-align: left; padding: 10px 12px;
+    border-bottom: 2px solid var(--border);
+    font-size: 11px; text-transform: uppercase;
+    letter-spacing: 1px; color: var(--text-muted);
+  }
+  .peer-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); }
+  .peer-table tr.highlight { background: rgba(55,138,221,0.06); font-weight: 600; }
+  [data-theme="night"] .peer-table tr.highlight { background: rgba(55,138,221,0.1); }
+  .footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px; color: var(--text-muted); text-align: center;
+  }
+  @media (max-width: 600px) {
+    .container { padding: 16px 14px 48px; }
+    .cover { padding: 32px 24px; }
+    .cover h1 { font-size: 24px; }
+    .cover-stats { gap: 16px; }
+    .card { padding: 20px; }
+    .chapter-title { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle day and night mode">🌙 Night Mode</button>
+
+<main class="container" role="main">
+
+<article class="cover" aria-label="Cover card for CG Power investor brief">
+  <div class="cover-eyebrow">NSE: CGPOWER · Electrical Equipment · May 2026</div>
+  <h1>CG Power and Industrial Solutions</h1>
+  <p class="cover-subtitle">The Murugappa Group's turnaround champion — riding India's biggest-ever power capex cycle, with a semiconductor moonshot in the wings.</p>
+  <div class="cover-stats">
+    <div class="cover-stat-item">
+      <div class="cover-stat-label">Market Cap</div>
+      <div class="cover-stat-value">₹1.31L Cr</div>
+    </div>
+    <div class="cover-stat-item">
+      <div class="cover-stat-label">FY26 Revenue</div>
+      <div class="cover-stat-value">₹12,418 Cr</div>
+    </div>
+    <div class="cover-stat-item">
+      <div class="cover-stat-label">Order Book</div>
+      <div class="cover-stat-value">₹17,107 Cr</div>
+    </div>
+    <div class="cover-stat-item">
+      <div class="cover-stat-label">ROCE</div>
+      <div class="cover-stat-value">37.5%</div>
+    </div>
+  </div>
+</article>
+
+<!-- CHAPTER 1: CONTEXT -->
+<section class="chapter" aria-label="Chapter 1: Context">
+  <div class="chapter-number" aria-hidden="true">1</div>
+  <div class="chapter-eyebrow">The Big Picture</div>
+  <h2 class="chapter-title">India's First-Ever Multi-Vector Power Capex Upcycle</h2>
+</section>
+
+<div class="card">
+  <p>India is in the midst of something its power sector has never seen before — a simultaneous capex surge across thermal generation, renewables, transmission, and distribution. Citi Research forecasts a 5–6% CAGR for the power sector through 2030, with GENCO capacity additions between FY26 and FY32 expected to be 2.3–2.5 times the levels of FY19–FY25. That is not incremental growth — it is a structural step change.</p>
+
+  <p>The India electrical equipment market, valued at roughly USD 44 billion in 2024, is projected to grow at a CAGR of 10.8–15.6% through 2029, adding an estimated USD 95 billion in new demand. The Union Budget FY27 allocated ₹12.2 lakh crore in total capital expenditure (up 12% YoY), with ₹29,997 crore for the Ministry of Power alone (up 39%). The Reform-Linked Distribution Sector Scheme saw its allocation jump from ₹156.7 billion to ₹180 billion.</p>
+
+  <p>Layered on top of this are two global tailwinds: a severe transformer shortage (delivery times stretching to 3–5 years worldwide) and explosive data centre demand, with the global data centre transformer market crossing USD 10 billion in 2026. Indian manufacturers with scale, quality certifications, and available capacity are suddenly the most sought-after suppliers in the world.</p>
+
+  <p>CG Power sits right at the intersection of all these tailwinds — domestic power capex, export opportunity, and semiconductor ambition. That is why NOW is the time to understand this company.</p>
+</div>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section class="chapter" aria-label="Chapter 2: Business Model">
+  <div class="chapter-number" aria-hidden="true">2</div>
+  <div class="chapter-eyebrow">How It Works</div>
+  <h2 class="chapter-title">From Turnaround to Flywheel</h2>
+</section>
+
+<div class="card">
+  <p>CG Power makes the heavy electrical equipment that keeps India's lights on and its factories running. The company operates through two core business segments — <strong>Power Systems</strong> (transformers, switchgear, circuit breakers for power transmission and distribution) and <strong>Industrial Systems</strong> (motors, drives, railway traction equipment) — plus a newly launched third leg: <strong>Semiconductors</strong>, through subsidiary CG Semi.</p>
+
+  <p>The revenue flywheel works like this: India builds more generation capacity, which requires more transmission and distribution infrastructure, and CG Power supplies the transformers and switchgear. That installed base creates a recurring relationship for upgrades, spares, and additional orders. Meanwhile, every new factory, data centre, and railway line needs motors and drives from the Industrial side.</p>
+
+  <p>Customer stickiness comes from three sources. First, power equipment requires stringent testing, type-approval certifications, and long qualification cycles — once a utility qualifies CG Power's 765 kV transformers, switching costs are enormous. Second, the Murugappa Group brand (promoters with 56.4% stake) carries deep institutional trust with government utilities and PSUs like Power Grid Corporation. Third, the company's pan-India manufacturing footprint and service network means it can deliver and maintain equipment where competitors cannot reach easily.</p>
+
+  <p>The balance sheet tells the turnaround story better than anything: from a negative net worth of minus ₹2,081 crore in FY20, the company is now virtually debt-free with ₹41 crore in borrowings and a net-debt-to-equity ratio of negative 0.17. The Murugappa acquisition in 2020 was a corporate rescue that has turned into one of the decade's great value-creation stories.</p>
+</div>
+
+<!-- CHAPTER 3: VERTICAL STORIES -->
+<section class="chapter" aria-label="Chapter 3: Vertical Stories">
+  <div class="chapter-number" aria-hidden="true">3</div>
+  <div class="chapter-eyebrow">The Growth Engines</div>
+  <h2 class="chapter-title">Five Verticals, Five Tailwinds</h2>
+</section>
+
+<div class="vertical-card card-accent-blue" aria-label="Power Systems vertical">
+  <span class="vertical-tag tag-blue">Power Systems</span>
+  <h3>Transformers and Switchgear — The Core Engine</h3>
+  <p>FY26 segment revenue of ₹5,138 crore represents a 46% year-over-year surge. Q4 standalone sales hit ₹1,487 crore (up 50% YoY) with PBIT margins expanding to 23.8%. The government's ₹9.15 lakh crore transmission spend plan (2022–2032) provides a multi-year demand floor. Globally, transformer lead times of 3–5 years mean Indian manufacturers are winning export orders they never had access to before — CG Power's ₹900 crore US data centre transformer order from Tallgrass is the proof point.</p>
+  <div class="stat-row"><span class="stat-label">FY26 Segment Revenue</span><span class="stat-value">₹5,138 Cr (+46% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 PBIT Margin</span><span class="stat-value">23.8%</span></div>
+  <div class="stat-row"><span class="stat-label">Key Order Win</span><span class="stat-value">₹641 Cr — Power Grid</span></div>
+  <div class="stat-row"><span class="stat-label">Status</span><span class="stat-value" style="color:var(--positive-green);">Running at full tilt</span></div>
+</div>
+
+<div class="vertical-card card-accent-teal" aria-label="Industrial Systems vertical">
+  <span class="vertical-tag tag-teal">Industrial Systems</span>
+  <h3>Motors, Drives and Railway Traction — The Steady Compounder</h3>
+  <p>FY26 segment revenue of ₹6,197 crore makes this the larger of the two core segments. Motors returned to double-digit growth in Q4, helped by a roughly 50-50 mix of price increases and volume. CG Power holds a dominant market share in hazardous-area motors (used in refineries, chemical plants, mining) — a niche with high entry barriers and certification requirements. Railway traction motors saw supply stoppages earlier in FY26, but management brought in new leadership and the segment is stabilising.</p>
+  <div class="stat-row"><span class="stat-label">FY26 Segment Revenue</span><span class="stat-value">₹6,197 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Growth Driver</span><span class="stat-value">Make in India + Industrial capex</span></div>
+  <div class="stat-row"><span class="stat-label">Railway Status</span><span class="stat-value" style="color:var(--accent-amber);">Stabilising after disruption</span></div>
+</div>
+
+<div class="vertical-card card-accent-coral" aria-label="Exports vertical">
+  <span class="vertical-tag tag-coral">Export and Data Centres</span>
+  <h3>The US and Global Opportunity — The Margin Multiplier</h3>
+  <p>The global transformer shortage has turned CG Power from a purely domestic player into an export story. The ₹900 crore Tallgrass order for US data centre transformers is the company's largest-ever single export win. Management is targeting 35–40% of new capacity for exports. With US transformer delivery times at 3–5 years and more than half of planned data centres reportedly facing delays due to transformer shortages, CG Power's ability to deliver on competitive timelines is a genuine competitive advantage.</p>
+  <div class="stat-row"><span class="stat-label">Largest Export Order</span><span class="stat-value">₹900 Cr (US data centre)</span></div>
+  <div class="stat-row"><span class="stat-label">Export Capacity Target</span><span class="stat-value">35–40% of new capacity</span></div>
+  <div class="stat-row"><span class="stat-label">Status</span><span class="stat-value" style="color:var(--accent-blue);">Rapidly ramping</span></div>
+</div>
+
+<div class="vertical-card card-accent-purple" aria-label="Semiconductor vertical">
+  <span class="vertical-tag tag-purple">Semiconductors — CG Semi</span>
+  <h3>India's OSAT Moonshot — The Long-Term Bet</h3>
+  <p>CG Semi, a joint venture with Japan's Renesas Electronics and Thailand's Stars Microelectronics, launched one of India's first end-to-end OSAT (Outsourced Semiconductor Assembly and Test) facilities in Sanand, Gujarat. The G1 facility offers 0.5 million units per day capacity and targets commercial production in 2026. The G2 facility (14.5 million units per day) is under construction and expected by end-2026. Total investment: ₹7,600 crore (approximately USD 870 million) over five years, backed by central and state government incentives. FY26 consolidated loss: ₹108 crore — expected at this stage of a semiconductor ramp.</p>
+  <div class="stat-row"><span class="stat-label">Investment Commitment</span><span class="stat-value">₹7,600 Cr over 5 years</span></div>
+  <div class="stat-row"><span class="stat-label">G1 Peak Capacity</span><span class="stat-value">0.5M units/day</span></div>
+  <div class="stat-row"><span class="stat-label">G2 Peak Capacity</span><span class="stat-value">14.5M units/day</span></div>
+  <div class="stat-row"><span class="stat-label">FY26 Loss</span><span class="stat-value" style="color:var(--risk-amber);">₹108 Cr (pre-revenue ramp)</span></div>
+  <div class="stat-row"><span class="stat-label">Status</span><span class="stat-value" style="color:var(--accent-purple);">G1 launched; G2 under construction</span></div>
+</div>
+
+<div class="vertical-card card-accent-green" aria-label="Renewable energy vertical">
+  <span class="vertical-tag tag-green">Renewable Energy Integration</span>
+  <h3>Solar and Wind Transformers — The Policy-Driven Tailwind</h3>
+  <p>India's renewable capacity additions require dedicated grid-integration transformers and switchgear. The Budget FY27 allocated ₹180 billion for the RDSS scheme and continued support for renewable integration. CG Power supplies transformers specifically designed for solar and wind farm interconnection. As India pushes toward its 500 GW renewable energy target, every gigawatt of new solar or wind capacity needs dedicated step-up transformers — and CG Power is a qualified supplier for both domestic utilities and international renewable developers.</p>
+  <div class="stat-row"><span class="stat-label">Policy Support</span><span class="stat-value">₹180 Bn RDSS + RE targets</span></div>
+  <div class="stat-row"><span class="stat-label">Status</span><span class="stat-value" style="color:var(--positive-green);">Running and growing</span></div>
+</div>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section class="chapter" aria-label="Chapter 4: Strategic Insight">
+  <div class="chapter-number" aria-hidden="true">4</div>
+  <div class="chapter-eyebrow">The One Thing</div>
+  <h2 class="chapter-title">What the Market Underappreciates</h2>
+</section>
+
+<div class="insight-box">
+  <div class="insight-label">Strategic Insight</div>
+  <p>The market sees CG Power as a transformer company that happens to be doing well. What it misses is the optionality structure. The core electrical business (ROCE 37.5%, virtually debt-free, order book at 1.4 times revenue) is a cash-generating machine that is now <em>funding</em> a ₹7,600 crore semiconductor bet without taking on meaningful debt. CG Semi is not a distraction — it is what you get when a company with 37% ROCE decides to self-fund a generational capital allocation move.</p>
+  <p>The ₹3,000 crore QIP further strengthened this position, nearly doubling equity. If CG Semi works, this company transforms from a capital goods cyclical into a diversified industrial-plus-semiconductor platform — a profile that commands a completely different valuation multiple in markets like Korea, Taiwan, or Japan. If CG Semi does not work, the core business is strong enough to absorb the losses without existential risk. It is a convex payoff structure — limited downside from the bet, massive upside if it plays out.</p>
+</div>
+
+<!-- CHAPTER 5: NUMBERS IN CONTEXT -->
+<section class="chapter" aria-label="Chapter 5: Financial Performance">
+  <div class="chapter-number" aria-hidden="true">5</div>
+  <div class="chapter-eyebrow">The Numbers</div>
+  <h2 class="chapter-title">Financials That Tell a Story</h2>
+</section>
+
+<div class="card">
+  <h3 style="margin-bottom:16px;">Profit and Loss — FY26 Consolidated</h3>
+  <div class="stat-row"><span class="stat-label">Revenue</span><span class="stat-value">₹12,418 Cr (+25.3% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Operating Profit</span><span class="stat-value">₹1,466 Cr (TTM OPM approximately 12.5%)</span></div>
+  <div class="stat-row"><span class="stat-label">PAT</span><span class="stat-value">₹1,206 Cr (+23.8% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 FY26 Revenue</span><span class="stat-value">₹3,442 Cr (+25% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 FY26 PAT</span><span class="stat-value">₹365 Cr (+34.4% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 Operating Margin (ex other income)</span><span class="stat-value">13.55% (record)</span></div>
+</div>
+
+<div class="card">
+  <h3 style="margin-bottom:16px;">Balance Sheet and Cash Flow</h3>
+  <div class="stat-row"><span class="stat-label">Total Borrowings</span><span class="stat-value">₹41 Cr (virtually debt-free)</span></div>
+  <div class="stat-row"><span class="stat-label">Net Debt to Equity</span><span class="stat-value">-0.17 (net cash position)</span></div>
+  <div class="stat-row"><span class="stat-label">ROCE</span><span class="stat-value">37.5%</span></div>
+  <div class="stat-row"><span class="stat-label">ROE (3-Year Average)</span><span class="stat-value">45.0%</span></div>
+  <div class="stat-row"><span class="stat-label">ROE (FY25)</span><span class="stat-value">27.7%</span></div>
+  <div class="stat-row"><span class="stat-label">Cash from Operations (FY25)</span><span class="stat-value">₹944 Cr (CFO/OP: 86%)</span></div>
+  <div class="stat-row"><span class="stat-label">Free Cash Flow (FY25)</span><span class="stat-value">₹519 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">QIP Raised</span><span class="stat-value">₹3,000 Cr (equity nearly doubled)</span></div>
+</div>
+
+<div class="card">
+  <h3 style="margin-bottom:16px;">Order Book and Visibility</h3>
+  <div class="stat-row"><span class="stat-label">Unexecuted Order Book (Mar 2026)</span><span class="stat-value">₹17,107 Cr (+61% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 FY26 Order Intake</span><span class="stat-value">₹5,335 Cr (+39% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Order Book / TTM Revenue</span><span class="stat-value">1.4x (strong visibility)</span></div>
+  <div class="stat-row"><span class="stat-label">Standalone Backlog</span><span class="stat-value">₹15,719 Cr (+59% YoY)</span></div>
+</div>
+
+<div class="card">
+  <h3 style="margin-bottom:16px;">Growth Trajectory</h3>
+  <div class="stat-row"><span class="stat-label">Sales CAGR (3-Year)</span><span class="stat-value">22%</span></div>
+  <div class="stat-row"><span class="stat-label">Sales CAGR (5-Year)</span><span class="stat-value">14%</span></div>
+  <div class="stat-row"><span class="stat-label">Profit CAGR (5-Year)</span><span class="stat-value">34%</span></div>
+  <div class="stat-row"><span class="stat-label">Stock Price CAGR (3-Year)</span><span class="stat-value">38%</span></div>
+  <div class="stat-row"><span class="stat-label">Stock Price CAGR (5-Year)</span><span class="stat-value">64%</span></div>
+</div>
+
+<div class="card">
+  <h3 style="margin-bottom:16px;">Valuation vs. Peers</h3>
+  <table class="peer-table" role="table" aria-label="Peer valuation comparison">
+    <thead>
+      <tr><th>Company</th><th>PE (TTM)</th><th>Segment Focus</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Siemens India</td><td>~62x</td><td>Diversified industrial</td></tr>
+      <tr><td>ABB India</td><td>~80x</td><td>Power + automation</td></tr>
+      <tr class="highlight"><td><strong>CG Power</strong></td><td><strong>~109–117x</strong></td><td><strong>Power + industrial + semi</strong></td></tr>
+      <tr><td>Hitachi Energy India</td><td>~117–133x</td><td>Pure power T and D</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px; font-size:14px; color:var(--text-muted);">CG Power trades at 109–117 times trailing earnings — a premium to ABB and Siemens, roughly in line with Hitachi Energy. The market is pricing in continued 25%+ revenue growth, margin expansion from operating leverage, and some optionality value for CG Semi. At a price-to-book of 17.3x and book value of ₹47.4 per share, the valuation demands flawless execution.</p>
+</div>
+
+<div class="callout">
+  <strong>What is the market pricing in?</strong> At approximately 110x PE, the market is valuing CG Power as a premium compounder with a semiconductor kicker — not as a traditional capital goods cyclical. For this valuation to hold, the company needs to sustain 25%+ revenue growth, expand margins toward 15%+ (from approximately 13%), and demonstrate commercial traction at CG Semi by FY28. Any stumble on order execution or semiconductor timeline would compress the multiple significantly.
+</div>
+
+<!-- CHAPTER 6: RISKS -->
+<section class="chapter" aria-label="Chapter 6: Risks">
+  <div class="chapter-number" aria-hidden="true">6</div>
+  <div class="chapter-eyebrow">Eyes Open</div>
+  <h2 class="chapter-title">What Could Go Wrong</h2>
+</section>
+
+<div class="card">
+  <div class="risk-row">
+    <div class="risk-icon" aria-hidden="true">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">Valuation Compression Risk</div>
+      <div class="risk-detail">At 109–117x PE and 17x book, CG Power is priced for perfection. Any earnings miss, margin squeeze, or slowdown in order intake could trigger a sharp de-rating. The stock has already seen a 31% correction from its 52-week high, demonstrating this vulnerability. A reversion to even ABB-like multiples (80x) would imply meaningful downside.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon" aria-hidden="true">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">CRGO Steel and Copper Volatility</div>
+      <div class="risk-detail">Transformers are materials-intensive — CRGO steel and copper are the primary inputs. A sharp spike in either commodity can compress margins faster than CG Power can pass through costs, especially on fixed-price contracts in the order backlog. OPM has already fluctuated between 11–15% quarterly, showing margin sensitivity.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon" aria-hidden="true">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">Semiconductor Execution Risk</div>
+      <div class="risk-detail">CG Semi is a ₹7,600 crore bet on a business the company has never operated before. OSAT is scale-driven and technology-cycle-sensitive. FY26 consolidated loss was ₹108 crore, and the G2 facility must scale from construction to 14.5 million units per day — a massive operational ramp. If technology cycles shift or partnerships fray, losses could widen before they narrow.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon" aria-hidden="true">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">Export Concentration and Tariff Risk</div>
+      <div class="risk-detail">Management is targeting 35–40% of new capacity for exports, with the US as a key market. A single ₹900 crore US order represents significant concentration. Changes in US trade policy, tariff regimes, or Buy America provisions could suddenly close off the most lucrative export opportunity.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <div class="risk-icon" aria-hidden="true">⚠️</div>
+    <div class="risk-content">
+      <div class="risk-title">Railway Segment Operational Fragility</div>
+      <div class="risk-detail">Service issues and supply stoppages in the railway traction business hurt margins earlier in FY26, requiring a leadership change. While management says the segment is stabilising, the episode revealed that operational excellence in specialised government-facing segments requires constant vigilance. Indian Railways contracts carry penalty clauses and reputational consequences.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section class="chapter" aria-label="Chapter 7: Watch Signals">
+  <div class="chapter-number" aria-hidden="true">7</div>
+  <div class="chapter-eyebrow">What to Track</div>
+  <h2 class="chapter-title">Five Metrics Every Quarter</h2>
+</section>
+
+<div class="card">
+  <div class="signal-row">
+    <div class="signal-dot dot-blue" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-title">Order Intake Growth (Quarterly)</div>
+      <div class="signal-detail"><strong>Good:</strong> Sustained above 25% YoY (Q4 FY26 was 39%). <strong>Red flag:</strong> Growth falling below 15% or order book declining QoQ — would signal demand peaking or market share loss.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot dot-blue" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-title">Power Systems PBIT Margin</div>
+      <div class="signal-detail"><strong>Good:</strong> Sustaining above 20% (Q4 FY26: 23.8%). <strong>Red flag:</strong> Falling below 18% — would suggest cost pass-through is failing or competitive pricing pressure is intensifying.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot dot-purple" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-title">CG Semi Revenue and Loss Trajectory</div>
+      <div class="signal-detail"><strong>Good:</strong> First commercial revenue by Q2 FY27 and losses narrowing QoQ. <strong>Red flag:</strong> G2 delays beyond CY2026, losses widening past ₹150 Cr per year, or partnership friction signals.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot dot-coral" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-title">Export Order Mix and Delivery Execution</div>
+      <div class="signal-detail"><strong>Good:</strong> Export share of order book trending toward 20%+ with on-time delivery. <strong>Red flag:</strong> Major export orders seeing delays, penalty clauses triggered, or new US tariff announcements impacting Indian transformer imports.</div>
+    </div>
+  </div>
+  <div class="signal-row">
+    <div class="signal-dot dot-green" aria-hidden="true"></div>
+    <div class="signal-content">
+      <div class="signal-title">Working Capital Cycle (Cash Conversion Days)</div>
+      <div class="signal-detail"><strong>Good:</strong> Cash conversion cycle below 40 days (FY25: 35 days) and CFO/OP above 80%. <strong>Red flag:</strong> Debtor days crossing 80+ or cash conversion cycle breaching 50 days — would signal execution strain from the rapidly growing order book.</div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-card" aria-label="Investment verdict">
+  <div class="verdict-label">Verdict</div>
+  <p>CG Power is riding three structural tailwinds simultaneously — India's unprecedented power capex cycle (₹9.15 lakh crore planned in transmission alone), a global transformer shortage that has turned Indian manufacturers into export champions, and the country's semiconductor sovereignty push through CG Semi. The financial quality signals are strong: 37.5% ROCE, virtually zero debt, a ₹17,107 crore order book growing at 61% YoY, and CFO consistently converting at 85%+ of operating profit. The near-term re-rating catalyst is sustained export order wins and the CG Semi G1 commercial ramp — both expected in the next 2–3 quarters. At approximately 110x PE, the valuation is undeniably stretched and prices in near-flawless execution; peers like ABB (80x) and Siemens (62x) offer similar sector exposure at lower multiples, though without the semiconductor optionality. We are in the middle chapters of this story — the turnaround is complete, the growth flywheel is spinning, but the semiconductor bet and export ramp are still early innings. The convexity is in CG Semi: if it works, the company re-rates as an industrial-semiconductor platform; if it does not, the core business remains robust enough to justify a capital goods premium — just not this one.</p>
+</div>
+
+<div class="card" style="margin-top:32px;">
+  <h3 style="margin-bottom:16px;">Shareholding Snapshot (March 2026)</h3>
+  <div class="stat-row"><span class="stat-label">Promoters (Murugappa Group via TI)</span><span class="stat-value">56.36%</span></div>
+  <div class="stat-row"><span class="stat-label">DIIs (rising steadily)</span><span class="stat-value">18.01%</span></div>
+  <div class="stat-row"><span class="stat-label">FIIs</span><span class="stat-value">12.03%</span></div>
+  <div class="stat-row"><span class="stat-label">Public</span><span class="stat-value">13.53%</span></div>
+  <div class="stat-row"><span class="stat-label">Number of Shareholders</span><span class="stat-value">5,21,349</span></div>
+  <p style="margin-top:12px; font-size:14px; color:var(--text-muted);">Notable trend: DIIs have more than doubled their stake from 7.2% (March 2023) to 18.0% (March 2026), while FIIs have been trimming from 16.7% to 12.0%. Domestic institutional conviction is rising.</p>
+</div>
+
+<div class="footer">
+  <p>CG Power and Industrial Solutions · NSE: CGPOWER · Investor Brief · May 2026</p>
+  <p>This is an educational research summary, not investment advice. Always do your own due diligence.</p>
+</div>
+
+</main>
+
+<script>
+  function toggleTheme() {
+    var body = document.body;
+    var btn = document.querySelector('.theme-toggle');
+    if (body.getAttribute('data-theme') === 'night') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '🌙 Night Mode';
+    } else {
+      body.setAttribute('data-theme', 'night');
+      btn.textContent = '☀️ Day Mode';
+    }
+  }
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.setAttribute('data-theme', 'night');
+    document.querySelector('.theme-toggle').textContent = '☀️ Day Mode';
+  }
+</script>
+</body>
+</html>

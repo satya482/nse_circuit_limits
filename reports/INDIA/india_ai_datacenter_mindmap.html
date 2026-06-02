@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India AI & Data-Centre Theme — Listed Universe Mindmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e16; --bg2:#0e131d; --panel:#111824; --panel2:#0c1119;
+    --ink:#e8edf5; --muted:#8a97ab; --faint:#5a6678;
+    --line:#1d2738; --line2:#26344a;
+    --accent:#ffb347; --accent2:#3ed0d6; --accent3:#7aa2ff;
+    --chip:#172132; --chip-ink:#aeb9cb;
+    --psu:#f5d36b; --new:#5ddb7a;
+    --shadow:0 18px 50px -20px rgba(0,0,0,.7);
+  }
+  [data-theme="light"]{
+    --bg:#f4f1ea; --bg2:#eee9df; --panel:#ffffff; --panel2:#faf7f1;
+    --ink:#1b2230; --muted:#5e6979; --faint:#909aab;
+    --line:#e2ddd2; --line2:#d3ccbd;
+    --accent:#c8761a; --accent2:#1a8f95; --accent3:#3d5cc4;
+    --chip:#efeae0; --chip-ink:#5e6979;
+    --psu:#b07d10; --new:#2f9e4f;
+    --shadow:0 16px 40px -22px rgba(40,30,10,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 80% -10%, color-mix(in srgb, var(--accent2) 9%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 0% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    transition:background .4s ease,color .3s ease;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 90px}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;mask:radial-gradient(circle at 50% 0%,#000,transparent 80%);}
+  .wrap{position:relative;z-index:1}
+  header.hero{margin-bottom:22px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin:0 0 10px}
+  h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 8px;letter-spacing:-.01em}
+  h1 .thin{font-weight:400;font-style:italic;color:var(--muted)}
+  .sub{color:var(--muted);max-width:780px;font-size:15.5px;margin:6px 0 0}
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px}
+  .search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:11px 14px}
+  .search input{flex:1;background:none;border:none;outline:none;color:var(--ink);font-size:15px;font-family:inherit}
+  .search input::placeholder{color:var(--faint)}
+  .search svg{flex:none;stroke:var(--faint)}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;cursor:pointer;background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:12px;padding:11px 15px;transition:.18s;white-space:nowrap}
+  .btn:hover{border-color:var(--accent2);color:var(--accent2)}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);margin-left:auto}
+  .chain{margin:18px 0 30px;border:1px solid var(--line2);border-radius:16px;background:linear-gradient(180deg,var(--panel),var(--panel2));padding:18px 18px 14px;box-shadow:var(--shadow)}
+  .chain h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:600}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+  .flow .node{flex:1;min-width:115px;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:11px 12px;position:relative}
+  .flow .node .lbl{font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+  .flow .node .val{font-family:'Fraunces',serif;font-weight:600;font-size:15.5px;margin-top:2px}
+  .flow .arrow{align-self:center;color:var(--accent);font-size:20px;font-weight:700;flex:none}
+  .cross{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .cross .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;padding:5px 11px;border-radius:20px;border:1px dashed var(--line2);color:var(--muted)}
+  .cross .tag b{color:var(--accent2);font-weight:600}
+  .sectors{display:flex;flex-direction:column;gap:16px}
+  .sector{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:var(--shadow)}
+  .sector>summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:14px;padding:18px 20px;position:relative;user-select:none}
+  .sector>summary::-webkit-details-marker{display:none}
+  .sector>summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--rail)}
+  .sec-dot{flex:none;width:13px;height:13px;border-radius:50%;background:var(--rail);margin-top:7px;box-shadow:0 0 0 4px color-mix(in srgb,var(--rail) 18%,transparent)}
+  .sec-head{flex:1}
+  .sec-head h2{margin:0;font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .sec-head p{margin:3px 0 0;color:var(--muted);font-size:14px}
+  .sec-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);flex:none;text-align:right;margin-top:4px}
+  .chev{flex:none;color:var(--faint);transition:transform .25s;margin-top:5px}
+  .sector[open] .chev{transform:rotate(180deg)}
+  .sec-body{padding:4px 20px 20px 39px}
+  .group{margin-top:16px}
+  .group>h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rail);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .group>h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .cos{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:9px}
+  .co{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;transition:.16s}
+  .co:hover{border-color:var(--rail);transform:translateY(-1px)}
+  .co .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .co .name{font-weight:600;font-size:14.5px}
+  .co .tk{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--rail);background:color-mix(in srgb,var(--rail) 12%,transparent);padding:2px 7px;border-radius:6px;white-space:nowrap}
+  .co .role{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .co .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.03em;padding:2px 7px;border-radius:20px;background:var(--chip);color:var(--chip-ink);border:1px solid var(--line)}
+  .chip.psu{color:var(--psu);border-color:color-mix(in srgb,var(--psu) 40%,transparent)}
+  .chip.nw{color:var(--new);border-color:color-mix(in srgb,var(--new) 40%,transparent)}
+  .chip.link{color:var(--accent3);border-color:color-mix(in srgb,var(--accent3) 35%,transparent)}
+  .chip.ind{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 38%,transparent)}
+  .nohit{display:none;color:var(--muted);font-style:italic;padding:30px;text-align:center}
+  footer{margin-top:34px;border-top:1px solid var(--line2);padding-top:20px;color:var(--muted);font-size:13px}
+  footer h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+  footer p{margin:0 0 10px;max-width:880px}
+  .disc{background:color-mix(in srgb,#e2606b 9%,transparent);border:1px solid color-mix(in srgb,#e2606b 30%,transparent);border-radius:12px;padding:13px 16px;color:var(--ink);font-size:13px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 18px}
+  .legend span{display:flex;align-items:center;gap:7px;font-size:12.5px;font-family:'IBM Plex Mono',monospace;color:var(--muted)}
+  .legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+  @media(max-width:560px){
+    .sec-meta{display:none}
+    .cos{grid-template-columns:1fr}
+    .flow .arrow{transform:rotate(90deg)}
+    .flow .node{min-width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">NSE / BSE &middot; AI &amp; Data-Centre Capex Map &middot; Built Jun 2026</p>
+    <h1>India's AI &amp; Data-Centre Stack,<br><span class="thin">every listed proxy in one map</span></h1>
+    <p class="sub">The full capex stack behind India's data-centre build-out — the campuses and operators, the compute and AI servers inside them, the power and cooling that keep them running, the connectivity, the electronics and chips that supply them, and the IT services riding the demand. Names spanning several layers carry blue <b>link</b> chips; conglomerates where data centres are only a sliver of revenue are marked <b>indirect</b>.</p>
+    <div class="legend" aria-label="Colour legend for subsectors"><span><i style="background:#7c8cff"></i>Operators / Real estate</span><span><i style="background:#00d9c0"></i>Compute / AI servers</span><span><i style="background:#ffb13d"></i>Power &amp; backup</span><span><i style="background:#45c6ff"></i>Cooling</span><span><i style="background:#b07cff"></i>Connectivity</span><span><i style="background:#ff7eb6"></i>Electronics (EMS)</span><span><i style="background:#5ddb7a"></i>Semiconductors</span><span><i style="background:#f5d36b"></i>IT &amp; AI software</span></div>
+  </header>
+  <section class="chain" aria-label="Theme value chain overview">
+    <h2>The data-centre capex stack, bottom to top</h2>
+    <div class="flow"><div class="node"><div class="lbl">Foundation</div><div class="val">Power &amp; Land</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Build</div><div class="val">DC Shell</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Keep cool</div><div class="val">Cooling</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Compute</div><div class="val">GPU / Servers</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Connect</div><div class="val">Network</div></div><div class="arrow">&rarr;</div><div class="node"><div class="lbl">Monetise</div><div class="val">AI Software</div></div></div>
+    <div class="cross"><span class="tag">Cross-cutting: <b>Electronics / EMS</b> supplies the hardware</span><span class="tag"><b>Semiconductors</b> are the silicon base (OSAT in India)</span><span class="tag">Conglomerate proxies (<b>Reliance &middot; Airtel &middot; Adani &middot; Tata</b>) are indirect</span></div>
+  </section>
+  <div class="toolbar">
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="text" placeholder="Search a company or ticker — e.g. NETWEB, cooling, GPU, semiconductor…" aria-label="Search companies or tickers">
+    </label>
+    <button class="btn" id="expand">Expand all</button>
+    <button class="btn" id="collapse">Collapse all</button>
+    <button class="btn" id="theme" aria-label="Toggle day or night mode">&#9790; Night</button>
+    <span class="count" id="count"></span>
+  </div>
+  <div class="sectors" id="root"></div>
+  <div class="nohit" id="nohit">No company or ticker matches that search.</div>
+  <footer>
+    <h3>How to read this map</h3>
+    <p>Each card is a listed company with its NSE symbol and one-line role. A company can sit in more than one layer of the stack — the blue <b>link</b> chip tells you which other layers (or your power map) it also proxies. <b>indirect</b> flags conglomerates (Reliance, Airtel, Adani, Tata) where data centres are only a small slice of revenue, not pure-plays. <b>new listing</b> marks recent IPOs.</p>
+    <h3>Sources &amp; bias note</h3>
+    <p>Taxonomy and placements compiled from public market structure and recent filings/news as of June 2026. The pure-play AI/DC names (Netweb, E2E Networks, Anant Raj, KRN Heat Exchanger, Orient Technologies) and the semiconductor microcaps move fast and several are recently listed or SME-board — <b>verify the exact NSE/BSE symbol and current status on the exchange before acting</b>. Treat conglomerate names with care: their data-centre exposure is real but a minor fraction of group value. "Top data-centre stocks" listings carry inherent recency and selection bias.</p>
+    <div class="disc"><b>Not investment advice.</b> This is a structural reference map, not a recommendation, screen, or ranking. Inclusion says nothing about quality or valuation. Do your own diligence and verify every figure at source.</div>
+  </footer>
+</div>
+<script>
+const SECTORS = [
+ {
+  "id": "ops",
+  "name": "Operators &amp; DC Real Estate",
+  "rail": "#7c8cff",
+  "blurb": "Who builds and owns the campuses — colocation operators, DC parks and the conglomerate hyperscalers.",
+  "groups": [
+   {
+    "name": "Colocation &amp; DC developers",
+    "cos": [
+     {
+      "n": "Anant Raj",
+      "t": "ANANTRAJ",
+      "r": "Data-centre park developer; real-estate pivot",
+      "tags": []
+     },
+     {
+      "n": "RailTel Corp",
+      "t": "RAILTEL",
+      "r": "PSU; data centres + ICT backbone",
+      "tags": [
+       [
+        "PSU",
+        "psu"
+       ]
+      ]
+     },
+     {
+      "n": "Tata Communications",
+      "t": "TATACOMM",
+      "r": "Digital infra; STT GDC India JV stake",
+      "tags": []
+     },
+     {
+      "n": "Black Box",
+      "t": "BBOX",
+      "r": "DC systems integration & digital infra",
+      "tags": []
+     }
+    ]
+   },
+   {
+    "name": "Conglomerate / indirect proxies",
+    "cos": [
+     {
+      "n": "Reliance Industries",
+      "t": "RELIANCE",
+      "r": "Jio hyperscale DCs + AI cloud",
+      "tags": [
+       [
+        "indirect",
+        "ind"
+       ]
+      ]
+     },
+     {
+      "n": "Bharti Airtel",
+      "t": "BHARTIARTL",
+      "r": "Nxtra Data colocation network",
+      "tags": [
+       [
+        "indirect",
+        "ind"
+       ]
+      ]
+     },
+     {
+      "n": "Adani Enterprises",
+      "t": "ADANIENT",
+      "r": "AdaniConneX gigawatt-scale JV",
+      "tags": [
+       [
+        "indirect",
+        "ind"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "compute",
+  "name": "Compute, Cloud &amp; AI Servers",
+  "rail": "#00d9c0",
+  "blurb": "The actual compute — AI servers, HPC and GPU-cloud capacity.",
+  "groups": [
+   {
+    "name": "AI servers / HPC",
+    "cos": [
+     {
+      "n": "Netweb Technologies",
+      "t": "NETWEB",
+      "r": "AI servers, HPC, GPU systems (Skylus.ai)",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "GPU cloud / DC infra",
+    "cos": [
+     {
+      "n": "E2E Networks",
+      "t": "E2E",
+      "r": "GPU cloud; IndiaAI Mission orders",
+      "tags": []
+     },
+     {
+      "n": "Orient Technologies",
+      "t": "ORIENTTECH",
+      "r": "IT infra & data-centre solutions",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "power",
+  "name": "Power, Gensets &amp; Backup",
+  "rail": "#ffb13d",
+  "blurb": "The energy a DC eats — prime power, gensets, UPS and batteries. Heavy overlap with your power map.",
+  "groups": [
+   {
+    "name": "Prime &amp; backup power (gensets)",
+    "cos": [
+     {
+      "n": "Cummins India",
+      "t": "CUMMINSIND",
+      "r": "Diesel/gas gensets for DC backup",
+      "tags": []
+     },
+     {
+      "n": "Kirloskar Oil Engines",
+      "t": "KIRLOSENG",
+      "r": "Gensets & engines",
+      "tags": []
+     }
+    ]
+   },
+   {
+    "name": "Electrical &amp; UPS systems",
+    "cos": [
+     {
+      "n": "CG Power & Ind",
+      "t": "CGPOWER",
+      "r": "Transformers, UPS, power systems",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ],
+       [
+        "also: Semis",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "ABB India",
+      "t": "ABB",
+      "r": "Electrification & DC power",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Schneider Electric Infra",
+      "t": "SCHNEIDER",
+      "r": "DC power & cooling automation",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Hitachi Energy India",
+      "t": "POWERINDIA",
+      "r": "Grid power for DC campuses",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Batteries / energy backup",
+    "cos": [
+     {
+      "n": "HBL Engineering",
+      "t": "HBLENGINE",
+      "r": "DC batteries / UPS",
+      "tags": [
+       [
+        "also: Defence",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Exide Industries",
+      "t": "EXIDEIND",
+      "r": "Backup batteries; Li-ion build",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Amara Raja Energy",
+      "t": "ARE&M",
+      "r": "Backup & Li-ion cells",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "cool",
+  "name": "Cooling &amp; Thermal Management",
+  "rail": "#45c6ff",
+  "blurb": "AI rack density makes cooling a theme of its own — HVAC, heat exchangers and immersion fluids.",
+  "groups": [
+   {
+    "name": "HVAC &amp; cooling systems",
+    "cos": [
+     {
+      "n": "Blue Star",
+      "t": "BLUESTARCO",
+      "r": "DC HVAC & cooling solutions",
+      "tags": []
+     },
+     {
+      "n": "Voltas",
+      "t": "VOLTAS",
+      "r": "Cooling / HVAC",
+      "tags": []
+     },
+     {
+      "n": "Amber Enterprises",
+      "t": "AMBER",
+      "r": "HVAC + electronics manufacturing",
+      "tags": [
+       [
+        "also: EMS",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "JCH Air Conditioning",
+      "t": "JCHAC",
+      "r": "Hitachi cooling systems",
+      "tags": []
+     },
+     {
+      "n": "KRN Heat Exchanger",
+      "t": "KRN",
+      "r": "Heat exchangers / cooling coils",
+      "tags": [
+       [
+        "new listing",
+        "nw"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Cooling fluids &amp; airflow",
+    "cos": [
+     {
+      "n": "Navin Fluorine",
+      "t": "NAVINFLUOR",
+      "r": "Immersion-cooling fluids (Opteon tie-up)",
+      "tags": []
+     },
+     {
+      "n": "SRF",
+      "t": "SRF",
+      "r": "Fluorochemicals for cooling",
+      "tags": []
+     },
+     {
+      "n": "Aeroflex Industries",
+      "t": "AEROFLEX",
+      "r": "Flexible flow / cooling skids (Vertiv)",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "net",
+  "name": "Connectivity &amp; Networking",
+  "rail": "#b07cff",
+  "blurb": "The wires and gear that move the data — optical fibre, structured cabling and networking equipment.",
+  "groups": [
+   {
+    "name": "Optical fibre &amp; cabling",
+    "cos": [
+     {
+      "n": "Sterlite Technologies",
+      "t": "STLTECH",
+      "r": "Optical fibre; DC interconnect",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "HFCL",
+      "t": "HFCL",
+      "r": "Optical fibre + networking gear",
+      "tags": []
+     },
+     {
+      "n": "Polycab India",
+      "t": "POLYCAB",
+      "r": "Structured cabling",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "KEI Industries",
+      "t": "KEI",
+      "r": "Cabling",
+      "tags": [
+       [
+        "also: Power map",
+        "link"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Networking equipment",
+    "cos": [
+     {
+      "n": "Tejas Networks",
+      "t": "TEJASNET",
+      "r": "Routers/switches; networking gear (Tata)",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "ems",
+  "name": "Electronics Manufacturing (EMS)",
+  "rail": "#ff7eb6",
+  "blurb": "The contract manufacturers building servers, boards and hardware locally.",
+  "groups": [
+   {
+    "name": "EMS / ODM",
+    "cos": [
+     {
+      "n": "Dixon Technologies",
+      "t": "DIXON",
+      "r": "Largest EMS; servers/IT-hardware push",
+      "tags": []
+     },
+     {
+      "n": "Kaynes Technology",
+      "t": "KAYNES",
+      "r": "EMS + OSAT (Kaynes Semicon)",
+      "tags": [
+       [
+        "also: Semis",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Syrma SGS",
+      "t": "SYRMA",
+      "r": "EMS / electronics manufacturing",
+      "tags": []
+     },
+     {
+      "n": "Cyient DLM",
+      "t": "CYIENTDLM",
+      "r": "EMS for aero/industrial",
+      "tags": []
+     },
+     {
+      "n": "Aimtron Electronics",
+      "t": "AIMTRON",
+      "r": "PCB / EMS (SME board)",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "semi",
+  "name": "Semiconductors",
+  "rail": "#5ddb7a",
+  "blurb": "India's silicon angle — mostly OSAT/packaging and design today; large fabs sit at unlisted parent level.",
+  "groups": [
+   {
+    "name": "OSAT / packaging",
+    "cos": [
+     {
+      "n": "CG Power & Ind",
+      "t": "CGPOWER",
+      "r": "CG Semi OSAT (Sanand)",
+      "tags": [
+       [
+        "also: Power",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "Kaynes Technology",
+      "t": "KAYNES",
+      "r": "Kaynes Semicon OSAT",
+      "tags": [
+       [
+        "also: EMS",
+        "link"
+       ]
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Chip design &amp; power semis",
+    "cos": [
+     {
+      "n": "Tata Elxsi",
+      "t": "TATAELXSI",
+      "r": "Chip/embedded design services",
+      "tags": [
+       [
+        "also: IT",
+        "link"
+       ]
+      ]
+     },
+     {
+      "n": "MosChip Technologies",
+      "t": "MOSCHIP",
+      "r": "Semiconductor design / turnkey",
+      "tags": []
+     },
+     {
+      "n": "ASM Technologies",
+      "t": "ASMS",
+      "r": "Engineering R&D / semi design",
+      "tags": []
+     },
+     {
+      "n": "RIR Power Electronics",
+      "t": "RIR",
+      "r": "Power semiconductors / diodes",
+      "tags": []
+     },
+     {
+      "n": "SPEL Semiconductor",
+      "t": "SPEL",
+      "r": "Semiconductor assembly & test",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "it",
+  "name": "IT Services &amp; AI Software",
+  "rail": "#f5d36b",
+  "blurb": "The demand side and enablers — GenAI services, cloud transformation and engineering.",
+  "groups": [
+   {
+    "name": "Large-cap IT",
+    "cos": [
+     {
+      "n": "TCS",
+      "t": "TCS",
+      "r": "GenAI services + DC/cloud build",
+      "tags": []
+     },
+     {
+      "n": "Infosys",
+      "t": "INFY",
+      "r": "AI/cloud services (Topaz)",
+      "tags": []
+     },
+     {
+      "n": "HCLTech",
+      "t": "HCLTECH",
+      "r": "AI/cloud + engineering",
+      "tags": []
+     },
+     {
+      "n": "Wipro",
+      "t": "WIPRO",
+      "r": "AI/cloud services",
+      "tags": []
+     },
+     {
+      "n": "Tech Mahindra",
+      "t": "TECHM",
+      "r": "AI / telecom / network services",
+      "tags": []
+     }
+    ]
+   },
+   {
+    "name": "Mid-cap IT &amp; platforms",
+    "cos": [
+     {
+      "n": "LTIMindtree",
+      "t": "LTIM",
+      "r": "AI/cloud transformation",
+      "tags": []
+     },
+     {
+      "n": "Persistent Systems",
+      "t": "PERSISTENT",
+      "r": "AI engineering / digital",
+      "tags": []
+     },
+     {
+      "n": "Coforge",
+      "t": "COFORGE",
+      "r": "AI/cloud services",
+      "tags": []
+     },
+     {
+      "n": "Cyient",
+      "t": "CYIENT",
+      "r": "Engineering R&D / design",
+      "tags": []
+     },
+     {
+      "n": "Aurionpro Solutions",
+      "t": "AURIONPRO",
+      "r": "BFSI software + data-centre arm",
+      "tags": []
+     }
+    ]
+   }
+  ]
+ }
+];
+const root = document.getElementById('root');
+let TOTAL = 0;
+SECTORS.forEach((s,i)=>{
+  const det = document.createElement('details');
+  det.className='sector'; det.open = (i<2); det.style.setProperty('--rail', s.rail);
+  let coCount = s.groups.reduce((a,g)=>a+g.cos.length,0); TOTAL += coCount;
+  let gh = s.groups.map(g=>{
+    const cards = g.cos.map(c=>{
+      const chips = (c.tags||[]).map(t=>`<span class="chip ${t[1]}">${t[0]}</span>`).join('');
+      return `<div class="co" data-search="${(c.n+' '+c.t+' '+c.r).toLowerCase()}">
+        <div class="top"><span class="name">${c.n}</span><span class="tk">${c.t}</span></div>
+        <div class="role">${c.r}</div>
+        ${chips?`<div class="chips">${chips}</div>`:''}
+      </div>`;
+    }).join('');
+    return `<div class="group"><h3>${g.name}</h3><div class="cos">${cards}</div></div>`;
+  }).join('');
+  det.innerHTML = `
+    <summary>
+      <span class="sec-dot"></span>
+      <span class="sec-head"><h2>${s.name}</h2><p>${s.blurb}</p></span>
+      <span class="sec-meta">${coCount} listed</span>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="sec-body">${gh}</div>`;
+  root.appendChild(det);
+});
+document.getElementById('count').textContent = TOTAL + ' entries · ' + SECTORS.length + ' subsectors';
+const q = document.getElementById('q'), nohit = document.getElementById('nohit');
+q.addEventListener('input', ()=>{
+  const term = q.value.trim().toLowerCase();
+  let anyShown = false;
+  document.querySelectorAll('.sector').forEach(sec=>{
+    let secHit = false;
+    sec.querySelectorAll('.group').forEach(gr=>{
+      let grHit = false;
+      gr.querySelectorAll('.co').forEach(co=>{
+        const match = !term || co.dataset.search.includes(term);
+        co.style.display = match ? '' : 'none';
+        if(match){grHit=true; anyShown=true;}
+      });
+      gr.style.display = grHit ? '' : 'none';
+      if(grHit) secHit=true;
+    });
+    sec.style.display = secHit ? '' : 'none';
+    if(secHit && term) sec.open = true;
+  });
+  nohit.style.display = anyShown ? 'none' : 'block';
+});
+document.getElementById('expand').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=true);
+document.getElementById('collapse').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=false);
+const themeBtn = document.getElementById('theme');
+themeBtn.onclick = ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  themeBtn.innerHTML = next==='dark' ? '&#9790; Night' : '&#9728; Day';
+};
+</script>
+</body>
+</html>

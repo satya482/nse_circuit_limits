@@ -1,0 +1,1541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATHERENERG — NSE Investor Brief | Ather Energy | June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════
+   ROOT VARIABLES & RESET
+═══════════════════════════════════════════════════════════ */
+:root {
+  --bg:          #F7F9F5;
+  --bg-card:     #FFFFFF;
+  --bg-dark:     #0D1F0E;
+  --text-primary:#111816;
+  --text-secondary:#4A5E4D;
+  --text-muted:  #7A907D;
+  --border:      #D6E4D8;
+  --ev-green:    #2A7F3D;
+  --ev-green-lt: #E6F4EA;
+  --ev-lime:     #6BC54A;
+  --amber:       #BA7517;
+  --amber-lt:    #FFF3CD;
+  --blue:        #1D6FAE;
+  --blue-lt:     #E3F0FF;
+  --risk-red:    #C0392B;
+  --risk-lt:     #FDECEA;
+  --nav-bg:      #FFFFFF;
+  --nav-shadow:  0 2px 12px rgba(0,0,0,0.08);
+  --pill-bg:     #E6F4EA;
+  --hl-key-bg:   #FFF176;
+  --hl-num-bg:   #E3F0FF;
+  --hl-risk-bg:  #FFF3CD;
+  --hl-cat-bg:   #E6F4EA;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.06);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.09);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.12);
+  --radius:      12px;
+  --radius-sm:   8px;
+}
+
+[data-theme="dark"] {
+  --bg:          #0A1F0B;
+  --bg-card:     #0D2A0F;
+  --text-primary:#E8F5E9;
+  --text-secondary:#9DC4A0;
+  --text-muted:  #5A8A5D;
+  --border:      #1E4021;
+  --nav-bg:      #0D2A0F;
+  --nav-shadow:  0 2px 12px rgba(0,0,0,0.4);
+  --pill-bg:     #1A3D1C;
+  --hl-key-bg:   #3D3500;
+  --hl-num-bg:   #0A2540;
+  --hl-risk-bg:  #3D2A00;
+  --hl-cat-bg:   #0A2B0D;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md:   0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:   0 8px 32px rgba(0,0,0,0.5);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.7;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRINT STYLES
+═══════════════════════════════════════════════════════════ */
+@media print {
+  body { background: #fff; color: #111; font-size: 11pt; }
+  .quick-scan-wrap, .day-night-btn, .back-to-top { display: block !important; position: static !important; }
+  .quick-scan-inner { display: block !important; }
+  .highlight-index-block { display: block !important; }
+  details { display: block; }
+  details summary { display: none; }
+  details > * { display: block !important; }
+  canvas { max-width: 100%; }
+  .cover-card { page-break-after: always; }
+  .chapter { page-break-inside: avoid; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   DAY/NIGHT TOGGLE
+═══════════════════════════════════════════════════════════ */
+.day-night-btn {
+  position: fixed;
+  top: 16px; right: 16px;
+  z-index: 200;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.2s;
+}
+.day-night-btn:hover { box-shadow: var(--shadow-md); }
+
+/* ═══════════════════════════════════════════════════════════
+   QUICK-SCAN STRIP — always expanded, printer-friendly
+═══════════════════════════════════════════════════════════ */
+.quick-scan-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--nav-bg);
+  border-bottom: 2px solid var(--ev-green);
+  box-shadow: var(--nav-shadow);
+  transition: background 0.3s;
+}
+
+.quick-scan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ev-green);
+  cursor: default;
+}
+
+.quick-scan-inner {
+  display: block; /* always expanded */
+  padding: 6px 20px 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 4px 20px;
+}
+
+.qs-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  padding: 3px 0;
+}
+.qs-line .qs-icon { font-size: 14px; flex-shrink: 0; }
+.qs-line .qs-label {
+  font-weight: 700;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ev-green);
+  flex-shrink: 0;
+  padding-top: 2px;
+  min-width: 72px;
+}
+.qs-line .qs-text { color: var(--text-primary); font-size: 12px; }
+
+/* ═══════════════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════════════ */
+.container { max-width: 900px; margin: 0 auto; padding: 32px 20px 80px; }
+
+/* ═══════════════════════════════════════════════════════════
+   COVER CARD
+═══════════════════════════════════════════════════════════ */
+.cover-card {
+  background: linear-gradient(145deg, #0A1F0C 0%, #143318 50%, #0D2B10 100%);
+  border-radius: 20px;
+  padding: 44px 40px 36px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  box-shadow: var(--shadow-lg);
+}
+.cover-card::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(107,197,74,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-card::after {
+  content: '';
+  position: absolute;
+  bottom: -40px; left: 40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(42,127,61,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--ev-lime);
+  margin-bottom: 14px;
+}
+.cover-eyebrow span { margin: 0 10px; color: rgba(255,255,255,0.3); }
+
+.cover-company {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(32px, 5vw, 50px);
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.cover-company em {
+  color: var(--ev-lime);
+  font-style: normal;
+}
+
+.cover-tagline {
+  font-size: 16px;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+.cover-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  padding: 4px 12px;
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.8);
+}
+.chip.accent { background: rgba(107,197,74,0.15); border-color: rgba(107,197,74,0.4); color: var(--ev-lime); }
+
+.cover-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.cover-metric {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.03);
+}
+.cover-metric .m-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.45); margin-bottom: 4px; }
+.cover-metric .m-value { font-size: 20px; font-weight: 700; font-family: 'Bricolage Grotesque', sans-serif; color: #fff; }
+.cover-metric .m-sub { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+.cover-metric .m-value.green { color: var(--ev-lime); }
+.cover-metric .m-value.amber { color: #FFB347; }
+
+/* ═══════════════════════════════════════════════════════════
+   CHAPTERS
+═══════════════════════════════════════════════════════════ */
+.chapter {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.chapter-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+.chapter-num {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--ev-green);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.chapter-num.amber { background: var(--amber); }
+.chapter-num.blue  { background: var(--blue); }
+.chapter-num.risk  { background: var(--risk-red); }
+
+.chapter-titles { flex: 1; }
+.chapter-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+.chapter-title {
+  font-size: clamp(18px, 2.5vw, 24px);
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PROSE
+═══════════════════════════════════════════════════════════ */
+.prose p { margin-bottom: 14px; color: var(--text-secondary); }
+.prose p:last-child { margin-bottom: 0; }
+.prose strong { color: var(--text-primary); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════════
+   HIGHLIGHT CLASSES
+═══════════════════════════════════════════════════════════ */
+.hl-key {
+  background: var(--hl-key-bg);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.hl-number {
+  background: var(--hl-num-bg);
+  padding: 0 4px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.95em;
+  color: var(--blue);
+}
+.hl-risk {
+  background: var(--hl-risk-bg);
+  padding: 0 4px 0 6px;
+  border-radius: 3px;
+  border-left: 3px solid var(--amber);
+  color: var(--text-primary);
+}
+.hl-catalyst {
+  background: var(--hl-cat-bg);
+  padding: 0 4px 0 6px;
+  border-radius: 3px;
+  border-left: 3px solid var(--ev-green);
+  color: var(--text-primary);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TAKEAWAY PILL
+═══════════════════════════════════════════════════════════ */
+.takeaway-pill {
+  background: var(--pill-bg);
+  border-left: 4px solid var(--ev-green);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 12px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ev-green);
+  margin-top: 20px;
+  line-height: 1.5;
+}
+.takeaway-pill.amber { background: var(--amber-lt); border-left-color: var(--amber); color: #7A5010; }
+.takeaway-pill.blue  { background: var(--blue-lt);  border-left-color: var(--blue);  color: #0D4F80; }
+.takeaway-pill.risk  { background: var(--risk-lt);  border-left-color: var(--risk-red); color: var(--risk-red); }
+
+/* ═══════════════════════════════════════════════════════════
+   STAT ROWS
+═══════════════════════════════════════════════════════════ */
+.stat-block {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin: 16px 0;
+}
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  gap: 12px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-row:nth-child(even) { background: rgba(42,127,61,0.04); }
+.stat-label { color: var(--text-secondary); }
+.stat-value { font-weight: 600; font-family: 'Bricolage Grotesque', sans-serif; font-size: 15px; color: var(--text-primary); text-align: right; }
+.stat-value.green { color: var(--ev-green); }
+.stat-value.amber { color: var(--amber); }
+.stat-value.red   { color: var(--risk-red); }
+
+/* ═══════════════════════════════════════════════════════════
+   PORTER'S FIVE FORCES TABLE
+═══════════════════════════════════════════════════════════ */
+.five-forces-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.five-forces-table th {
+  background: var(--ev-green);
+  color: #fff;
+  padding: 10px 14px;
+  text-align: left;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.five-forces-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+.five-forces-table tr:last-child td { border-bottom: none; }
+.five-forces-table tr:nth-child(even) td { background: rgba(42,127,61,0.03); }
+
+.rating {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.rating.high   { background: #FDECEA; color: var(--risk-red); }
+.rating.medium { background: var(--amber-lt); color: var(--amber); }
+.rating.low    { background: var(--ev-green-lt); color: var(--ev-green); }
+
+/* ═══════════════════════════════════════════════════════════
+   SEGMENT CARDS (Vertical stories)
+═══════════════════════════════════════════════════════════ */
+.segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.segment-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  border-top: 4px solid var(--ev-green);
+}
+.segment-card.amber-top { border-top-color: var(--amber); }
+.segment-card.blue-top  { border-top-color: var(--blue); }
+
+.seg-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 4px; }
+.seg-title { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; font-family: 'Bricolage Grotesque', sans-serif; }
+.seg-body  { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
+.seg-data  { font-size: 12px; font-weight: 600; color: var(--ev-green); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.seg-status {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.08em;
+  padding: 2px 8px; border-radius: 50px; margin-bottom: 6px;
+}
+.seg-status.running { background: var(--ev-green-lt); color: var(--ev-green); }
+.seg-status.ramping { background: var(--hl-num-bg); color: var(--blue); }
+.seg-status.proto   { background: var(--amber-lt); color: var(--amber); }
+
+/* ═══════════════════════════════════════════════════════════
+   INSIGHT BOX
+═══════════════════════════════════════════════════════════ */
+.insight-box {
+  background: linear-gradient(135deg, #0A1F0C, #143318);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: #fff;
+  margin: 16px 0;
+  position: relative;
+  overflow: hidden;
+}
+.insight-box::before {
+  content: '"';
+  position: absolute;
+  top: -20px; left: 20px;
+  font-size: 180px;
+  color: rgba(107,197,74,0.06);
+  font-family: Georgia, serif;
+  pointer-events: none;
+  line-height: 1;
+}
+.insight-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ev-lime);
+  margin-bottom: 10px;
+}
+.insight-text {
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.85);
+}
+.insight-text strong { color: var(--ev-lime); font-weight: 600; }
+
+/* ═══════════════════════════════════════════════════════════
+   CAPEX TIMELINE
+═══════════════════════════════════════════════════════════ */
+.capex-timeline {
+  position: relative;
+  padding-left: 28px;
+  margin: 16px 0;
+}
+.capex-timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px; top: 8px; bottom: 8px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--ev-green), rgba(42,127,61,0.2));
+}
+.capex-item {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 14px 16px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.capex-item::before {
+  content: '';
+  position: absolute;
+  left: -24px; top: 18px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--ev-green);
+  border: 2px solid var(--bg-card);
+}
+.capex-year { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ev-green); margin-bottom: 4px; }
+.capex-spend { font-size: 20px; font-weight: 800; font-family: 'Bricolage Grotesque', sans-serif; color: var(--text-primary); }
+.capex-desc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+.capex-milestone { font-size: 12px; color: var(--text-muted); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+
+/* ═══════════════════════════════════════════════════════════
+   RISK ITEMS
+═══════════════════════════════════════════════════════════ */
+.risk-list { list-style: none; margin: 16px 0; }
+.risk-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 10px;
+  background: var(--bg);
+}
+.risk-icon { color: var(--amber); font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+.risk-content {}
+.risk-title { font-weight: 600; font-size: 14px; color: var(--text-primary); margin-bottom: 3px; }
+.risk-detail { font-size: 13px; color: var(--text-secondary); }
+.risk-signal { font-size: 12px; color: var(--amber); margin-top: 4px; font-weight: 500; }
+
+/* ═══════════════════════════════════════════════════════════
+   WATCH SIGNALS
+═══════════════════════════════════════════════════════════ */
+.watch-list { list-style: none; margin: 16px 0; }
+.watch-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  margin-bottom: 8px;
+  background: var(--bg);
+}
+.watch-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ev-green); flex-shrink: 0; margin-top: 6px; }
+.watch-dot.amber { background: var(--amber); }
+.watch-content {}
+.watch-title { font-weight: 600; font-size: 14px; color: var(--text-primary); }
+.watch-desc  { font-size: 13px; color: var(--text-secondary); margin-top: 2px; }
+.watch-flag  { font-size: 12px; color: var(--risk-red); margin-top: 4px; font-weight: 500; }
+
+/* ═══════════════════════════════════════════════════════════
+   VERDICT
+═══════════════════════════════════════════════════════════ */
+.verdict-card {
+  background: var(--ev-green);
+  border-radius: var(--radius);
+  padding: 28px;
+  color: #fff;
+  margin-bottom: 24px;
+}
+.verdict-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+.verdict-stage {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--ev-lime);
+}
+.verdict-text { font-size: 15px; line-height: 1.8; color: rgba(255,255,255,0.88); }
+.verdict-text strong { color: #fff; }
+
+/* ═══════════════════════════════════════════════════════════
+   HIGHLIGHT INDEX — always expanded, printer-friendly
+═══════════════════════════════════════════════════════════ */
+.highlight-index-block {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 2px solid var(--ev-green);
+  margin-bottom: 32px;
+  display: block !important;
+}
+.highlight-index-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ev-green);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hi-list { list-style: none; counter-reset: hi; }
+.hi-list li {
+  counter-increment: hi;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13.5px;
+}
+.hi-list li:last-child { border-bottom: none; }
+.hi-list li::before {
+  content: counter(hi);
+  min-width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--ev-green);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.hi-tag {
+  font-size: 10px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  padding: 2px 7px; border-radius: 4px;
+  flex-shrink: 0; margin-top: 2px;
+}
+.hi-tag.hl-key     { background: var(--hl-key-bg); color: #5a4500; }
+.hi-tag.hl-number  { background: var(--hl-num-bg); color: var(--blue); }
+.hi-tag.hl-risk    { background: var(--hl-risk-bg); color: var(--amber); }
+.hi-tag.hl-catalyst{ background: var(--hl-cat-bg); color: var(--ev-green); }
+.hi-tag.takeaway-pill { background: var(--pill-bg); color: var(--ev-green); }
+
+/* ═══════════════════════════════════════════════════════════
+   CHART WRAPPER
+═══════════════════════════════════════════════════════════ */
+.chart-wrap {
+  background: var(--bg);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 16px;
+  margin: 16px 0;
+}
+.chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PEER COMPARISON TABLE
+═══════════════════════════════════════════════════════════ */
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin: 14px 0;
+}
+.peer-table th {
+  background: var(--bg);
+  padding: 9px 12px;
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+.peer-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+.peer-table td:first-child { font-weight: 600; color: var(--text-primary); }
+.peer-table tr:last-child td { border-bottom: none; }
+.peer-table tr.highlight-row td { background: rgba(42,127,61,0.07); font-weight: 600; }
+.peer-table td.green { color: var(--ev-green); font-weight: 600; }
+.peer-table td.red   { color: var(--risk-red); }
+
+/* ═══════════════════════════════════════════════════════════
+   DIVIDER / SUB-SECTION HEADER
+═══════════════════════════════════════════════════════════ */
+.subsection-header {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 22px 0 10px;
+  padding-left: 10px;
+  border-left: 3px solid var(--ev-green);
+}
+.subsection-header.amber { border-left-color: var(--amber); }
+
+/* ═══════════════════════════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════════════════════════ */
+.back-to-top {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.back-to-top a {
+  color: var(--text-muted);
+  font-size: 13px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .chapter { padding: 20px; }
+  .cover-card { padding: 28px 20px 24px; }
+  .cover-metrics { grid-template-columns: repeat(2, 1fr); }
+  .quick-scan-inner { grid-template-columns: 1fr; }
+  .segment-grid { grid-template-columns: 1fr; }
+  .five-forces-table { font-size: 12px; }
+  .five-forces-table th, .five-forces-table td { padding: 8px 10px; }
+}
+
+/* TTS-friendly: ensure logical reading order for screen readers */
+main { display: block; }
+article { display: block; }
+</style>
+</head>
+<body id="top">
+
+<!-- ═══════════ DAY/NIGHT TOGGLE ═══════════ -->
+<button class="day-night-btn" onclick="toggleTheme()" aria-label="Toggle day/night mode">
+  <i class="ti ti-moon-stars"></i>
+  <span id="theme-label">Night Mode</span>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUICK-SCAN STRIP — always expanded, printer-friendly
+═══════════════════════════════════════════════════════════ -->
+<div class="quick-scan-wrap" id="quick-scan" role="complementary" aria-label="Quick scan highlights">
+  <div class="quick-scan-header">
+    <span>⚡ Quick Scan — Ather Energy (ATHERENERG)</span>
+    <span style="font-size:10px;color:var(--text-muted);">June 2026</span>
+  </div>
+  <div class="quick-scan-inner">
+    <div class="qs-line">
+      <span class="qs-icon">⚡</span>
+      <span class="qs-label">Context</span>
+      <span class="qs-text">India's E2W market at ~1.4 M units in FY26 (6.5% penetration), targeting 7–9 M by 2030; PM E-DRIVE backs transition with ₹10,900 Cr through Jul 2026.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🏭</span>
+      <span class="qs-label">Model</span>
+      <span class="qs-text">Software-defined scooter + proprietary charging grid; 93% of Q4 FY26 buyers opted for AtherStack Pro subscription on day one.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🎯</span>
+      <span class="qs-label">Insight</span>
+      <span class="qs-text">The scooter is the subscription acquisition engine — Ather is building a 245,000+ subscriber SaaS book inside a hardware company that most models value at zero.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">📊</span>
+      <span class="qs-label">Numbers</span>
+      <span class="qs-text">FY26: Revenue ₹3,672 Cr (+63% YoY), Loss ₹517 Cr (down 36%), Operating cash flow positive ₹32 Cr for first time ever; Q4 Adjusted Gross Margin 25%.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🚧</span>
+      <span class="qs-label">Top Risk</span>
+      <span class="qs-text">PM E-DRIVE subsidy for E2Ws expires July 2026; any lapse without successor scheme could trigger a demand air-pocket as seen post-FAME-II expiry.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">👁</span>
+      <span class="qs-label">Watch</span>
+      <span class="qs-text">Adjusted gross margin crossing 30% in Q1/Q2 FY27 — the single clearest signal that the margin inflection is structural, not seasonal.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">💡</span>
+      <span class="qs-label">Verdict</span>
+      <span class="qs-text">Mid chapter — volume scale achieved (3rd nationally, #1 in South India), margin inflection underway; EBITDA breakeven visible in FY28 if volume and software mix hold.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════════════════════════ -->
+<div class="container">
+<main>
+
+<!-- COVER CARD -->
+<div class="cover-card" role="banner">
+  <div class="cover-eyebrow">
+    ATHERENERG <span>|</span> NSE <span>|</span> CLEAN ENERGY / EV <span>|</span> JUNE 2026
+  </div>
+  <h1 class="cover-company">Ather <em>Energy</em></h1>
+  <p class="cover-tagline">India's software-defined electric scooter — where the vehicle is the subscription.</p>
+  <div class="cover-chips">
+    <span class="chip">Electric Two-Wheelers</span>
+    <span class="chip">Listed May 2025</span>
+    <span class="chip accent">#3 India Market Share 18.6%</span>
+    <span class="chip">#1 South India</span>
+    <span class="chip">IIT Madras Incubated · 2013</span>
+    <span class="chip">Hosur + Factory 3.0 (Aurangabad)</span>
+  </div>
+  <div class="cover-metrics" role="region" aria-label="Key metrics">
+    <div class="cover-metric">
+      <div class="m-label">Market Cap</div>
+      <div class="m-value">₹36,923 Cr</div>
+      <div class="m-sub">~$4.4 Billion</div>
+    </div>
+    <div class="cover-metric">
+      <div class="m-label">FY26 Revenue</div>
+      <div class="m-value green">₹3,672 Cr</div>
+      <div class="m-sub">+63% YoY</div>
+    </div>
+    <div class="cover-metric">
+      <div class="m-label">FY26 Net Loss</div>
+      <div class="m-value amber">₹517 Cr</div>
+      <div class="m-sub">Down 36% YoY</div>
+    </div>
+    <div class="cover-metric">
+      <div class="m-label">FY26 Volumes</div>
+      <div class="m-value green">2,62,942</div>
+      <div class="m-sub">+69% YoY</div>
+    </div>
+    <div class="cover-metric">
+      <div class="m-label">Q4 Gross Margin</div>
+      <div class="m-value green">25%</div>
+      <div class="m-sub">vs 18% Q4 FY25</div>
+    </div>
+    <div class="cover-metric">
+      <div class="m-label">Price/Sales</div>
+      <div class="m-value amber">10x</div>
+      <div class="m-sub">vs TVS 3.4x, Ola 6.2x</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CHAPTER 1: CONTEXT ═══════════ -->
+<article class="chapter" id="ch1">
+  <div class="chapter-header">
+    <div class="chapter-num">1</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter One · Sector Context</div>
+      <h2 class="chapter-title">India's 1.4 Billion People Are Skipping the Car</h2>
+    </div>
+  </div>
+  <div class="prose">
+    <p>For most of the world, electrification is a car story. In India, it is a <strong>two-wheeler story</strong> — and that makes it structurally more interesting. India is home to more than 200 million registered two-wheelers and adds over 18 million new ones annually. The two-wheeler is not a lifestyle choice in India; it is the primary commuting asset for the working middle class, the last-mile delivery worker, and the small-business owner. Electrifying this category is not a niche trend — it is <span class="hl-catalyst">the single largest electrification opportunity in the world outside China's car market.</span></p>
+
+    <p>The numbers reflect this energy. <span class="hl-number">India's electric two-wheeler market crossed 1.4 million units in FY26, with a penetration rate of approximately 6.5% of total 2W sales</span> — up from under 2% three years ago. Analysts project the market to grow at a CAGR of 28–35% through 2033, reaching 7–9 million units annually by 2030. India is now the second-largest e-2W market in the world by volume, behind only China.</p>
+
+    <p>Policy has been the primary accelerant. The central government's <strong>PM E-DRIVE scheme</strong>, launched in September 2024 with a ₹10,900 crore outlay, extended demand subsidies for electric two-wheelers through July 2026. At the state level, Maharashtra added a ₹11,373 crore EV policy (2025–2030) offering ₹10,000 per electric scooter buyer, 100% road tax waiver, and registration fee exemption — subsidies that can be stacked on top of the central PM E-DRIVE incentive. Karnataka and Tamil Nadu, Ather's home states, have run parallel incentive programs throughout. According to CRISIL, if government demand incentives continue at equivalent levels, India's e-2W retail could reach 10.2 million units annually by FY31 at a 41% CAGR.</p>
+
+    <p>The structural economics underpin the trajectory. Electric scooter running costs average ₹1.48 per km versus ₹2.46 per km for an equivalent petrol scooter — a 40% operational saving that becomes self-reinforcing as fuel prices rise. Battery prices, still the largest single cost component, are trending toward $80–90 per kWh by 2030 from ~$130 today. Every percentage point of cost decline expands the addressable market without any additional policy support. The tailwind is structural, not manufactured.</p>
+
+    <p>Why study Ather now? The company has just completed its first full fiscal year as a listed entity (FY26), validating the volume thesis — <span class="hl-key">262,942 units sold, 18.6% national market share, and the first-ever positive operating cash flow</span> of ₹32 crore — while the next phase of the story, margin expansion through software and platform leverage, is only beginning to appear in the financials.</p>
+  </div>
+  <div class="takeaway-pill">E2W penetration at 6.5% in FY26; if growth trajectory holds, the market is 5–6× today's size by FY30 — and Ather holds a top-3 seat at that table.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 2: BUSINESS MODEL ═══════════ -->
+<article class="chapter" id="ch2">
+  <div class="chapter-header">
+    <div class="chapter-num">2</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Two · Business Model</div>
+      <h2 class="chapter-title">A Scooter Company That Sells Subscriptions</h2>
+    </div>
+  </div>
+  <div class="prose">
+    <p>Ather Energy was founded in 2013 by Tarun Mehta and Swapnil Jain — IIT Madras alumni who began by studying battery technology before building what became India's first connected electric scooter. The company designs, develops, and manufactures its own electric two-wheelers, battery packs, and charging infrastructure, and writes its own vehicle operating system — <strong>AtherStack</strong>. This vertical integration, unusual for an Indian two-wheeler startup, is both Ather's greatest strength and its primary path to margin improvement.</p>
+
+    <p>Revenue comes from three main sources today. Vehicle sales dominate at roughly 86–88% of total revenue — the company sold 262,942 units in FY26 at an average revenue per unit of approximately ₹1.35–1.40 lakh. Non-vehicle revenue, comprising software subscriptions (AtherStack Pro), charging income from the Ather Grid, spare parts, accessories, and services, contributed <span class="hl-number">12–14% of total income in recent quarters</span>, up from under 8% two years ago. This mix shift matters: software and services carry structurally superior margins compared to hardware.</p>
+
+    <p>The product range sits squarely in the premium segment. The <strong>Ather 450 series</strong> (performance-focused, seven variants) and the <strong>Ather Rizta</strong> (family scooter, India's largest single-seat design with 56-liter boot space, launched 2024) together cover 90–110cc and 125cc+ equivalent performance bands. Both share the same battery platform and AtherStack OS, enabling software economies of scale. Pricing ranges from roughly ₹1.05–1.45 lakh on-road — comfortably premium but not unaffordable.</p>
+
+    <p><strong>What makes customers sticky?</strong> Three things. First, the Ather Grid — 4,357 fast-charging points across India (also accessible in Nepal and Sri Lanka) — creates infrastructure lock-in. Once a user has the Ather charging habit (including free charging at Grid points), switching to a competitor means renegotiating their daily routine. Second, AtherStack's OTA update cadence means the scooter improves after purchase: features like pothole alerts, crash detection, voice interaction (AtherStack 7.0), and trip planning are pushed wirelessly, creating a product experience that deepens over time. Third, the Eight70 battery warranty — guaranteeing 70% battery health for 8 years or 80,000 km — reduces the single biggest EV adoption anxiety among Indian buyers. No petrol scooter brand offers anything comparable.</p>
+
+    <p><span class="hl-key">The flywheel is this: better software drives higher AtherStack Pro attach rates, which generate recurring revenue, which fund R&D, which makes the software better</span> — while each additional Grid charger reduces switching costs for current owners and reduces range anxiety for new buyers. The hardware is the entry ticket; the ecosystem is the moat.</p>
+  </div>
+  <div class="takeaway-pill">93% of Q4 FY26 buyers subscribed to AtherStack Pro — the highest software attach rate ever and the clearest sign the ecosystem lock-in is compounding.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 2B: PORTER'S FIVE FORCES ═══════════ -->
+<article class="chapter" id="ch2b">
+  <div class="chapter-header">
+    <div class="chapter-num" style="background:var(--blue);font-size:13px;">2B</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Two-B · Competitive Structure</div>
+      <h2 class="chapter-title">Porter's Five Forces: Where the Real Pressure Lies</h2>
+    </div>
+  </div>
+
+  <table class="five-forces-table" role="table" aria-label="Porter's Five Forces Analysis">
+    <thead>
+      <tr>
+        <th style="width:22%">Force</th>
+        <th style="width:12%">Rating</th>
+        <th>Specific Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Rivalry Intensity</strong></td>
+        <td><span class="rating high">High</span></td>
+        <td>TVS iQube leads with 24.4% national share (341,513 units in FY26), followed by Bajaj Chetak at 21%; while Ola Electric collapsed from 39% in 2024 to under 5% by March 2026, Honda and Yamaha are entering the electric segment with distribution networks 5–10× Ather's experience center count. Competition is capability-based at the premium end (technology, software) but intensely price-based in the mass segment where new platforms like Ather's EL will compete.</td>
+      </tr>
+      <tr>
+        <td><strong>Buyer Power</strong></td>
+        <td><span class="rating medium">Medium</span></td>
+        <td>Individual retail buyers have limited direct bargaining power, but their switching cost is moderate — a customer can choose any of 4–5 credible premium brands. Ather's 91%+ software attach rate and Eight70 warranty create post-purchase stickiness, reducing effective churn. However, the company has no single large buyer concentration risk — no fleet contract dominates revenue.</td>
+      </tr>
+      <tr>
+        <td><strong>Supplier Power</strong></td>
+        <td><span class="rating high">High</span></td>
+        <td>Lithium-ion cells (NMC chemistry) are sourced primarily from Chinese suppliers including CATL-aligned chains. China's November 2025 lithium export restrictions created acute short-term supply anxiety and BOM cost inflation. Ather is actively transitioning to LFP chemistry (partnering with CBAK Energy and Amara Raja Advanced Cell Technologies for domestically produced cells), but full transition will take 12–18 months. Until then, cell sourcing remains a structural vulnerability.</td>
+      </tr>
+      <tr>
+        <td><strong>Threat of New Entrants</strong></td>
+        <td><span class="rating medium">Medium</span></td>
+        <td>Capital barrier is significant: Factory 3.0 alone costs ₹927 Cr, and building a software stack like AtherStack requires years of engineering investment. However, the real threat is legacy OEMs (Hero MotoCorp's Vida, Honda's upcoming e-scooter range) entering with dealer networks already built. A brand like Honda can bypass the experience-center investment cycle entirely by converting existing dealerships — making distribution a moat only against pure-play EV startups, not incumbents.</td>
+      </tr>
+      <tr>
+        <td><strong>Threat of Substitutes</strong></td>
+        <td><span class="rating medium">Medium</span></td>
+        <td>ICE scooters remain cheaper upfront (Honda Activa at ₹80,000 vs Ather Rizta at ₹1.05 lakh), but the TCO gap narrows every year. Battery swapping (Gogoro model) and app-based shared mobility threaten the premium personal ownership segment in metro markets. E-motorcycles are not yet a substitute but could become so as the Zenith platform (Ather's own) and rivals' products arrive in the 2027–28 period.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="prose">
+    <p><strong>Structural Pressure Synthesis:</strong> <span class="hl-risk">The two forces posing the most structural pressure on Ather are Supplier Power (Chinese cell dependency creating margin unpredictability) and Rivalry Intensity (TVS and Bajaj each outscale Ather at a national level with distribution networks that took decades to build).</span> Ather's technology and software differentiation insulates it at the premium end, but the EL platform's success in expanding the price pyramid downward will determine whether these scale advantages can be overcome.</p>
+  </div>
+  <div class="takeaway-pill blue">Two forces to watch: Chinese cell dependency (supplier) and TVS/Bajaj distribution scale (rivalry) — both are structural, not cyclical, and require multi-year engineering responses already underway.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 3: VERTICAL STORIES ═══════════ -->
+<article class="chapter" id="ch3">
+  <div class="chapter-header">
+    <div class="chapter-num">3</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Three · Segment Deep-Dives</div>
+      <h2 class="chapter-title">Four Revenue Verticals, Four Different Growth Gears</h2>
+    </div>
+  </div>
+
+  <div class="segment-grid">
+
+    <div class="segment-card">
+      <span class="seg-status running">Running ✓</span>
+      <div class="seg-label">Vertical 1 · Core Hardware</div>
+      <div class="seg-title">450 Platform — Performance Scooters</div>
+      <div class="seg-body">The Ather 450 series (450X, 450S, 450 Apex — seven variants) remains the company's engineering crown jewel and brand identity anchor. These scooters compete on performance and technology: 0–40 km/h in 3.2 seconds, 146 km true range, traction control, and real-time diagnostics via AtherStack. South India (Bengaluru, Chennai, Hyderabad) is the home market — Ather holds 24–25% market share in the South, its strongest region.</div>
+      <div class="seg-data">~₹2,800–3,200 Cr estimated contribution to FY26 revenue</div>
+    </div>
+
+    <div class="segment-card amber-top">
+      <span class="seg-status running">Running ✓</span>
+      <div class="seg-label">Vertical 2 · Family Segment</div>
+      <div class="seg-title">Rizta — The Middle-India Unlock</div>
+      <div class="seg-body">Launched in 2024, the Rizta targets the family scooter buyer — India's largest two-wheeler purchase decision-maker. With 56-liter storage, the widest pillion seat in the segment, and price starting at ₹1.05 lakh, the Rizta broke Ather out of its Bengaluru-techie niche. Middle India (Gujarat, Maharashtra, Madhya Pradesh) is now Ather's fastest-growing region, growing to 14.6% market share by Q2 FY26. The Rizta was the primary driver of Ather's jump from 12.1% to 18.8% national market share in two quarters.</div>
+      <div class="seg-data">Key driver of FY26 volume growth from 155K to 263K units</div>
+    </div>
+
+    <div class="segment-card blue-top">
+      <span class="seg-status ramping">Ramping ↑</span>
+      <div class="seg-label">Vertical 3 · Software & Recurring Revenue</div>
+      <div class="seg-title">AtherStack — The SaaS Revenue Layer</div>
+      <div class="seg-body">AtherStack Pro subscription includes connected services, OTA updates, premium ride analytics, Ather Connect, and roadside assistance. At 91–93% attach rate on new vehicles, this represents India's most successful attempt to monetize the vehicle OS. Non-vehicle revenue (software, charging, spares, accessories) grew to 12–14% of total income in FY26. The data generated from every ride session feeds product development — a non-replicable behavioral dataset tied to 500,000+ cumulative units sold.</div>
+      <div class="seg-data">~₹450–510 Cr estimated non-vehicle revenue FY26; growing faster than hardware</div>
+    </div>
+
+    <div class="segment-card">
+      <span class="seg-status proto">Prototype Stage</span>
+      <div class="seg-label">Vertical 4 · New Category</div>
+      <div class="seg-title">Zenith — Electric Motorcycle Platform</div>
+      <div class="seg-body">India's two-wheeler market is 63% motorcycles, yet the E2W revolution has been entirely scooter-led. Ather's Zenith platform, currently in development, targets the 125–300cc motorcycle segment — equivalent to India's largest volume band (Hero Splendor, Bajaj Pulsar equivalents). The company estimates E2W penetration in motorcycles could reach 10% by 2030. The Zenith platform, planned for production at Factory 3.0 in Aurangabad, could add an entirely new addressable market that is 2× the current scooter opportunity by volume.</div>
+      <div class="seg-data">Market: 63% of 18M units/year; EV penetration today: ~1% — enormous whitespace</div>
+    </div>
+
+  </div>
+
+  <div class="takeaway-pill">The Rizta unlocked Middle India; the EL platform and Zenith motorcycle will unlock mass-market and motorcycle verticals — Ather's TAM expands materially when both arrive.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 4: STRATEGIC INSIGHT ═══════════ -->
+<article class="chapter" id="ch4">
+  <div class="chapter-header">
+    <div class="chapter-num" style="background:var(--amber);">4</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Four · Strategic Insight</div>
+      <h2 class="chapter-title">"The Scooter is the Customer Acquisition Cost"</h2>
+    </div>
+  </div>
+
+  <div class="insight-box" role="note">
+    <div class="insight-title">The Non-Obvious Truth About Ather's Business</div>
+    <div class="insight-text">
+      <p>Every EV analyst measures Ather by vehicle sales, gross margins, and EBITDA losses. They are measuring the wrong business. Ather is not primarily a scooter company that also offers a subscription. It is <strong>a recurring-revenue software business that acquires customers by selling them a scooter at near-cost.</strong></p>
+      <p style="margin-top:12px;">When 93% of Q4 FY26 buyers choose AtherStack Pro on the day they collect their vehicle, that is not a product feature adoption rate — it is a <strong>day-one SaaS conversion rate</strong> that most pure software companies would consider exceptional. At 262,942 units sold in FY26 with ~91% attach, Ather added approximately <strong>239,000 new software subscribers in a single year</strong>. Each subscriber generates recurring annual revenue across the subscription lifetime of the vehicle (8 years under the Eight70 warranty). The present value of that subscriber base compounds with every new unit sold.</p>
+      <p style="margin-top:12px;">The deeper implication is in the cost structure. Software has near-zero marginal cost of delivery — an OTA update that goes to 1,000 vehicles costs virtually the same as one that goes to 500,000. This means that as Ather's installed base grows, the <strong>software margin expands non-linearly</strong> while hardware margins improve only linearly through BOM reduction. The transition from NMC to LFP batteries, the aluminium-reduction program, and Factory 3.0's backward integration are all hardware margin improvement levers. But the software margin improvement is automatic — it simply needs more units on the road.</p>
+      <p style="margin-top:12px;">The Ather Grid reinforces this. By opening the Grid's fast-charging connector to other EV brands (no exclusivity), Ather positioned itself not just as an OEM but as the <strong>charging infrastructure standard-setter for India's premium EV segment</strong>. Every non-Ather user who charges at an Ather Grid point sees the brand, experiences the reliability, and faces a slight friction when switching to a competitor who lacks equivalent network depth. The Grid is simultaneously a customer retention tool, a new user acquisition asset, and an eventual revenue stream — valued today at zero in any bear-case analysis of the stock.</p>
+    </div>
+  </div>
+
+  <div class="prose" style="margin-top:16px;">
+    <p>This reframe changes the valuation lens. A 10× P/S multiple looks expensive for a loss-making scooter manufacturer. It looks more reasonable — though not cheap — for a vertically integrated hardware-software platform with a 91% recurring revenue attach rate, a first-mover charging infrastructure network, and a behavioral data moat that strengthens with every kilometre driven. Ather's 3.2 billion kilometres clocked on the 450 platform since launch are not just a marketing number. <span class="hl-key">They represent 3.2 billion data points that train the OS, improve energy management, and create an experiential gap that pure-hardware competitors cannot replicate without years of data accumulation.</span></p>
+  </div>
+  <div class="takeaway-pill amber">AtherStack Pro at 91% attach is not a feature preference; it is proof that Ather has built India's only vehicle-embedded SaaS subscription at scale — a moat that compounds with every scooter delivered.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 5: FINANCIALS ═══════════ -->
+<article class="chapter" id="ch5">
+  <div class="chapter-header">
+    <div class="chapter-num">5</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Five · Financial Scorecard</div>
+      <h2 class="chapter-title">The Numbers: From Survival Mode to Scale Mode</h2>
+    </div>
+  </div>
+
+  <div class="subsection-header">Revenue & Loss Trajectory</div>
+  <div class="chart-wrap">
+    <div class="chart-title">Revenue (₹ Cr) vs Net Loss (₹ Cr) — FY22 to FY26</div>
+    <canvas id="revenueChart" height="220"></canvas>
+  </div>
+
+  <div class="subsection-header">Key Financial Metrics</div>
+  <div class="stat-block" role="table" aria-label="Financial scorecard">
+    <div class="stat-row">
+      <div class="stat-label">FY26 Revenue from Operations</div>
+      <div class="stat-value green">₹3,672 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Total Income (incl. other income)</div>
+      <div class="stat-value green">₹3,823 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Revenue Growth (YoY)</div>
+      <div class="stat-value green">+63%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 EBITDA Loss</div>
+      <div class="stat-value amber">₹257 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 EBITDA Loss (prior year FY25)</div>
+      <div class="stat-value">₹531 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Net Loss</div>
+      <div class="stat-value amber">₹517 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Net Loss (prior year FY25)</div>
+      <div class="stat-value">₹812 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Operating Cash Flow</div>
+      <div class="stat-value green">+₹32 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Q4 FY26 Adjusted Gross Margin</div>
+      <div class="stat-value green">25%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Q4 FY25 Adjusted Gross Margin (comparative)</div>
+      <div class="stat-value">18%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Total Assets</div>
+      <div class="stat-value">₹4,722 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Total Equity (post-IPO)</div>
+      <div class="stat-value">₹2,573 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">IPO Fresh Issue Proceeds Raised (FY25)</div>
+      <div class="stat-value">₹2,626 Cr</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 Units Sold</div>
+      <div class="stat-value green">2,62,942</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">FY26 National Market Share</div>
+      <div class="stat-value green">18.6%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Cumulative Units Sold (as of Apr 2026)</div>
+      <div class="stat-value">6,00,000+</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">AtherStack Pro Attach Rate (Q4 FY26)</div>
+      <div class="stat-value green">93%</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Ather Grid Fast-Charging Points</div>
+      <div class="stat-value">4,357+</div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-label">Experience Centres (FY26 year-end)</div>
+      <div class="stat-value">700</div>
+    </div>
+  </div>
+
+  <div class="subsection-header">What Is the Market Pricing In?</div>
+  <div class="prose">
+    <p>At a ~10× trailing P/S ratio, the market is not paying for today's results — it is paying for a specific future: that Ather reaches EBITDA breakeven by FY27–28, that software revenue grows to 20%+ of total income, and that volume grows to 600,000–700,000 units per year as Factory 3.0 comes online. If this scenario plays out, the P/S re-rates downward naturally as revenue scales, and the margin story justifies the current multiple retroactively. If volume growth stalls or subsidy support lapses, the valuation looks stretched.</p>
+    <p><span class="hl-risk">The market is also implicitly pricing zero for Ola Electric's competitive recovery</span> — after Ola's market share collapsed from 39% to under 5% in two years amid service complaints and quality issues, the market assumes Ola's share flows to TVS, Bajaj, and Ather rather than reversing. That assumption needs monitoring.</p>
+  </div>
+
+  <div class="subsection-header">Peer Valuation Comparison</div>
+  <table class="peer-table" role="table" aria-label="Peer valuation comparison">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>P/Sales (Fwd)</th>
+        <th>Est. Revenue Growth</th>
+        <th>EBITDA Status</th>
+        <th>Market Share</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight-row">
+        <td>Ather Energy (ATHERENERG)</td>
+        <td class="amber">10.6×</td>
+        <td class="green">~26%</td>
+        <td class="amber">Negative, Improving</td>
+        <td>18.6%</td>
+      </tr>
+      <tr>
+        <td>Ola Electric (OLAELEC)</td>
+        <td>6.2×</td>
+        <td>21.7%</td>
+        <td class="red">Deep Negative</td>
+        <td class="red">&lt;5%</td>
+      </tr>
+      <tr>
+        <td>TVS Motor (500570)</td>
+        <td>3.4×</td>
+        <td>7.8%</td>
+        <td class="green">Strongly Positive</td>
+        <td>24.4% (E2W)</td>
+      </tr>
+      <tr>
+        <td>Bajaj Auto (532977)</td>
+        <td>2.7×</td>
+        <td>8.0%</td>
+        <td class="green">Strongly Positive</td>
+        <td>21.0% (E2W)</td>
+      </tr>
+      <tr>
+        <td>Eicher Motors (505200)</td>
+        <td>9.8×</td>
+        <td>11.6%</td>
+        <td class="green">Profitable</td>
+        <td>N/A (premium)</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--text-muted);margin-top:-8px;">Source: Simply Wall St, Screener.in, Company filings. P/S = Price-to-Sales (forward). As of June 2026.</p>
+
+  <div class="subsection-header amber">Capex Timeline</div>
+  <div class="capex-timeline" role="region" aria-label="Capex timeline">
+
+    <div class="capex-item">
+      <div class="capex-year">FY24 — Consolidation Year</div>
+      <div class="capex-spend">~₹200–250 Cr estimated capex</div>
+      <div class="capex-desc">Hosur plant optimization and R&D investment. Capacity held at 420,000 units/year (E2W + battery packs). Pre-IPO fundraising underway. Revenue flat at ₹1,754 Cr — company in capital conservation mode ahead of listing.</div>
+      <div class="capex-milestone">Milestone: Hosur at ~40% utilization; capacity available but demand constrained</div>
+    </div>
+
+    <div class="capex-item">
+      <div class="capex-year">FY25 — IPO Year</div>
+      <div class="capex-spend">₹2,626 Cr raised (IPO fresh issue)</div>
+      <div class="capex-desc">Capital structure transformed via IPO. Use of proceeds earmarked: ₹927 Cr for Factory 3.0 (Maharashtra), ₹750 Cr for R&D over 3 years, ₹300 Cr marketing, ₹40 Cr debt repayment. Revenue grew 29% to ₹2,255 Cr with losses narrowing to ₹812 Cr. Factory 3.0 construction began May 2025.</div>
+      <div class="capex-milestone">Milestone: Construction of Factory 3.0 (Chhatrapati Sambhajinagar, Maharashtra) commenced</div>
+    </div>
+
+    <div class="capex-item">
+      <div class="capex-year">FY26 — Deployment Year</div>
+      <div class="capex-spend">₹140 Cr deployed → Factory 3.0 | ₹272 Cr → R&D</div>
+      <div class="capex-desc">IPO proceeds actively deployed. Factory 3.0 Phase 1 construction underway, phased production target from July 2026. Total FY26 capex deployment from IPO funds: ₹412+ Cr. Revenue jumped 63% to ₹3,672 Cr on Hosur capacity ramp (utilization climbing toward 60–65%). Operating cash flow turned positive at ₹32 Cr — first time in company history.</div>
+      <div class="capex-milestone">Milestone: Hosur ramp + 700 Experience Centres + 4,357 Grid chargers</div>
+    </div>
+
+    <div class="capex-item" style="border-left: 2px dashed var(--ev-green); background: var(--ev-green-lt);">
+      <div class="capex-year">FY27 — Capacity Inflection (Planned)</div>
+      <div class="capex-spend">Factory 3.0 Phase 1: 0.5 M units/year online</div>
+      <div class="capex-desc">Phase 1 completion (March 2027) brings total installed capacity to 920,000 E2W per year. Factory 3.0 incorporates backward integration of transmission assembly, electronics assembly, and painting — reducing BOM dependency and improving quality control. New EL platform scooters and Zenith motorcycle platform production begins from Aurangabad.</div>
+      <div class="capex-milestone">Revenue bridge: 0.5M incremental capacity at current ASP = ~₹6,500–7,000 Cr revenue potential if fully utilized</div>
+    </div>
+
+    <div class="capex-item" style="border-left: 2px dashed var(--text-muted);">
+      <div class="capex-year">FY28 — Full Phase (Planned)</div>
+      <div class="capex-spend">Factory 3.0 Phase 2: 1.42 M units/year total capacity</div>
+      <div class="capex-desc">Full Factory 3.0 completion gives Ather the largest E2W production capacity of any pure-play EV manufacturer in India. Funded primarily from IPO proceeds + internal accruals by FY27 if operating cash flow continues positive. No equity dilution signaled at this stage.</div>
+      <div class="capex-milestone">Red flag check: Factory 3.0 capex is ahead of current order book visibility — the investment is a bet on market growth, not confirmed demand</div>
+    </div>
+
+  </div>
+
+  <div class="prose">
+    <p><strong>Funding Source Assessment:</strong> Ather's capex is funded primarily from the IPO proceeds (₹2,626 Cr fresh issue), with remaining undeployed IPO funds providing a runway buffer. Short-term borrowings declined from ₹333 Cr (FY25) to ₹146 Cr (FY26), signaling balance sheet improvement. The first positive operating cash flow (₹32 Cr in FY26) reduces the urgency of external debt, though Factory 3.0's full build-out will consume most of the remaining IPO capital. <span class="hl-number">Management has not guided equity dilution for Factory 3.0 Phase 2</span> — implying confidence that internal accruals and Phase 1 cash generation will fund the final phase.</p>
+  </div>
+  <div class="takeaway-pill">First-ever positive operating cash flow in FY26 + EBITDA loss narrowing from ₹531 Cr to ₹257 Cr — the financial narrative is changing quarter by quarter, not year by year.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 6: RISKS ═══════════ -->
+<article class="chapter" id="ch6">
+  <div class="chapter-header">
+    <div class="chapter-num risk">6</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Six · Risk Register</div>
+      <h2 class="chapter-title">Eyes Open: Five Risks Worth Watching</h2>
+    </div>
+  </div>
+
+  <ul class="risk-list">
+    <li class="risk-item">
+      <span class="risk-icon"><i class="ti ti-alert-triangle"></i></span>
+      <div class="risk-content">
+        <div class="risk-title">Risk 1 — PM E-DRIVE Subsidy Cliff (July 2026)</div>
+        <div class="risk-detail">The central government's PM E-DRIVE scheme for E2Ws expires July 31, 2026. The post-FAME-II period (April–September 2024) saw a sharp industry-wide demand contraction before EMPS bridged the gap. A second subsidy gap, even a temporary one, could suppress Q2/Q3 FY27 volumes and force pricing adjustments. Historically, EV two-wheeler demand drops 15–25% in months when subsidy frameworks are in transition.</div>
+        <div class="risk-signal">Signal to watch: Government announcement of PM E-Drive successor or extension before June 2026; Ather's retail discount activity in August–September 2026</div>
+      </div>
+    </li>
+    <li class="risk-item">
+      <span class="risk-icon"><i class="ti ti-alert-triangle"></i></span>
+      <div class="risk-content">
+        <div class="risk-title">Risk 2 — Chinese Lithium Supply Restrictions</div>
+        <div class="risk-detail">China's November 2025 export controls on lithium battery components and cathode materials directly impact Ather's NMC cell sourcing. The full transition to LFP cells (from CBAK Energy, Amara Raja Advanced Cell) will take 12–18 months. Until then, any further tightening of Chinese export policy, or escalation in US-China trade tensions, could spike BOM costs by 5–10%, eroding the gross margin gains achieved through Q4 FY26.</div>
+        <div class="risk-signal">Signal: Monthly BOM cost per vehicle (watch Ather's materials cost as % of revenue in quarterly filings); any NMC cell shortage announcements from Chinese suppliers</div>
+      </div>
+    </li>
+    <li class="risk-item">
+      <span class="risk-icon"><i class="ti ti-alert-triangle"></i></span>
+      <div class="risk-content">
+        <div class="risk-title">Risk 3 — Factory 3.0 Execution and Ramp Risk</div>
+        <div class="risk-detail">Phase 1 production is targeted from July 2026, but greenfield plant ramps rarely go to plan. Under-utilization of the new Maharashtra facility would mean high fixed cost absorption without proportional revenue — structurally negative for EBITDA margins. Ather's Hosur plant took multiple years to ramp from 40% to 60%+ utilization. A similar timeline for Aurangabad would push EBITDA breakeven from FY28 to FY29.</div>
+        <div class="risk-signal">Signal: Quarterly production volume from Aurangabad facility (disclosed in investor presentations); any delay in Phase 1 completion beyond September 2026</div>
+      </div>
+    </li>
+    <li class="risk-item">
+      <span class="risk-icon"><i class="ti ti-alert-triangle"></i></span>
+      <div class="risk-content">
+        <div class="risk-title">Risk 4 — TVS/Bajaj Distribution Scale at Lower Price Points</div>
+        <div class="risk-detail">Ather's EL platform is designed to compete at lower price points (₹90,000–1,05,000) where TVS iQube and Bajaj Chetak already operate from 10,000+ dealer networks vs Ather's 700 experience centers. In markets outside South India, Ather's brand recognition is 3–4 years behind TVS and Bajaj. A price war at the mass-premium intersection — where the EL platform will compete — could force margin sacrifice to maintain share.</div>
+        <div class="risk-signal">Signal: EL platform ASP at launch vs existing Rizta/450 ASP; regional market share data in North and East India from VAHAN portal</div>
+      </div>
+    </li>
+    <li class="risk-item">
+      <span class="risk-icon"><i class="ti ti-alert-triangle"></i></span>
+      <div class="risk-content">
+        <div class="risk-title">Risk 5 — Path to EBITDA Profitability Is Volume-Dependent</div>
+        <div class="risk-detail">Ather's operating leverage means that losses narrow rapidly with volume growth — but the same leverage works in reverse. EBITDA loss narrowed from ₹531 Cr (FY25) to ₹257 Cr (FY26) on 69% volume growth. If FY27 volume growth moderates to 30–35% (a real scenario if Factory 3.0 ramps slowly and subsidies lapse), the EBITDA improvement could plateau, extending the loss cycle by 12–18 months and testing investor patience in a company trading at 10× P/S.</div>
+        <div class="risk-signal">Signal: Q1/Q2 FY27 volume guidance from management; monthly registration data from VAHAN; Q1 FY27 EBITDA margin direction</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="takeaway-pill risk">The two risks that can materially impair the investment thesis are the subsidy cliff (exogenous, near-term, July 2026) and Factory 3.0 ramp pace (endogenous, medium-term) — both are trackable within one quarter of evidence.</div>
+</article>
+
+<!-- ═══════════ CHAPTER 7: WATCH SIGNALS + VERDICT ═══════════ -->
+<article class="chapter" id="ch7">
+  <div class="chapter-header">
+    <div class="chapter-num">7</div>
+    <div class="chapter-titles">
+      <div class="chapter-eyebrow">Chapter Seven · Watch Signals &amp; Verdict</div>
+      <h2 class="chapter-title">Five Metrics to Check Every Quarter</h2>
+    </div>
+  </div>
+
+  <ul class="watch-list">
+    <li class="watch-item">
+      <div class="watch-dot"></div>
+      <div class="watch-content">
+        <div class="watch-title">1 — Adjusted Gross Margin (quarterly)</div>
+        <div class="watch-desc">The single most important number in Ather's financials. Q4 FY26 reached 25%, up from 18% a year earlier — a 700 bps expansion. Target: cross 30% in H1 FY27 as LFP battery transition lowers cell costs and Factory 3.0 backward integration reduces assembly BOM.</div>
+        <div class="watch-flag">Red flag: Any quarter where margin is flat or declines sequentially — suggests BOM inflation or pricing pressure outpacing efficiency gains</div>
+      </div>
+    </li>
+    <li class="watch-item">
+      <div class="watch-dot"></div>
+      <div class="watch-content">
+        <div class="watch-title">2 — Non-Vehicle Revenue as % of Total Income</div>
+        <div class="watch-desc">Currently 12–14%. Every percentage point of mix-shift toward software (AtherStack Pro), charging (Grid revenue), and accessories is a margin-accretive improvement. Structural target: 20% by FY27–28. Watch the absolute growth alongside the percentage — both must grow.</div>
+        <div class="watch-flag">Red flag: If this mix percentage stagnates below 14% for two consecutive quarters, it suggests the SaaS thesis is not scaling at the expected rate</div>
+      </div>
+    </li>
+    <li class="watch-item">
+      <div class="watch-dot"></div>
+      <div class="watch-content">
+        <div class="watch-title">3 — AtherStack Pro Attach Rate</div>
+        <div class="watch-desc">Currently 91–93%. This metric measures whether the ecosystem is genuinely differentiated or whether customers are subscribing out of default. Any structural decline toward 80% would signal that competitors are offering comparable connected services, eroding Ather's most important moat.</div>
+        <div class="watch-flag">Red flag: Attach rate below 85% for one quarter, or below 80% for any period — indicates competitive erosion of the software moat</div>
+      </div>
+    </li>
+    <li class="watch-item">
+      <div class="watch-dot amber"></div>
+      <div class="watch-content">
+        <div class="watch-title">4 — Factory 3.0 Production Volume (from July 2026)</div>
+        <div class="watch-desc">Phase 1 production from the Aurangabad plant is targeted from July 2026. Monthly production numbers from this facility will confirm whether the capex investment is translating into capacity. First meaningful output would ideally be 10,000+ units/month by Q2 FY27, scaling to 30,000–40,000 by Q4 FY27.</div>
+        <div class="watch-flag">Red flag: No production start by September 2026, or production below 5,000 units/month by Q2 FY27 — signals serious ramp delay</div>
+      </div>
+    </li>
+    <li class="watch-item">
+      <div class="watch-dot amber"></div>
+      <div class="watch-content">
+        <div class="watch-title">5 — Monthly VAHAN Registrations &amp; Market Share (real-time)</div>
+        <div class="watch-desc">VAHAN portal data provides near-real-time monthly registration data (published around the 7th of each month). Ather's national market share trajectory — 12.1% (Q2 FY25) → 18.8% (Q3 FY26) → should hold above 17% to validate the thesis. Any multi-month slide below 15% would suggest Rizta momentum is fading and EL platform is urgently needed.</div>
+        <div class="watch-flag">Red flag: National market share below 15% for three consecutive months, especially if South India share falls below 20% — Ather's home base cannot be allowed to erode</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="takeaway-pill">Five metrics, all publicly trackable within 5 minutes of reading a quarterly result: gross margin, non-vehicle revenue mix, AtherStack attach rate, Factory 3.0 output, and VAHAN share.</div>
+</article>
+
+<!-- ═══════════ VERDICT ═══════════ -->
+<div class="verdict-card" role="note" aria-label="Investment verdict">
+  <div class="verdict-label">Investment Verdict — June 2026</div>
+  <div class="verdict-stage">📖 Mid-Chapter: Volume Proven, Margin in Progress</div>
+  <div class="verdict-text">
+    <p>Ather Energy sits at the intersection of two powerful structural tailwinds: India's electric two-wheeler revolution (28–35% CAGR to 2033) and the government's PM E-DRIVE and state EV policy support layering totalling over ₹22,000 crore of incentives. The company has cleared the most critical early hurdle — achieving 263,000 units of FY26 volume (+69% YoY), securing the #3 national and #1 South India position, and generating positive operating cash flow for the first time. The <strong>financial quality signal is unambiguous: losses halved, EBITDA loss narrowed 51%, gross margin expanded 700 bps in Q4 alone</strong>.</p>
+    <p style="margin-top:12px;">The near-term re-rating catalyst is the July 2026 Factory 3.0 Phase 1 ramp — <strong>if Aurangabad begins shipping in Q2 FY27 on schedule, and if the PM E-DRIVE successor scheme is announced without a demand gap, the EBITDA breakeven timeline compresses to FY27-28</strong>. Valuation at 10× P/S is pricing exactly this optimistic scenario — there is no margin of safety for a stumble. Ather trades as a growth optionality bet, not a value play. For investors comfortable with that framing, the risk-reward lies in tracking the five watch signals rather than hoping for a narrative — the next twelve months of data will either validate or test the software-on-wheels thesis conclusively.</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HIGHLIGHT INDEX — always expanded, printer-friendly
+═══════════════════════════════════════════════════════════ -->
+<div class="highlight-index-block" id="highlight-index" role="complementary" aria-label="All highlights at a glance">
+  <div class="highlight-index-title">
+    <i class="ti ti-bookmark"></i>
+    📌 All Highlights at a Glance
+  </div>
+  <ol class="hi-list" id="hi-ol">
+    <!-- JS auto-populates below; static fallback also listed for print -->
+  </ol>
+</div>
+
+<!-- FOOTER -->
+<div class="back-to-top">
+  <a href="#top"><i class="ti ti-arrow-up"></i> Back to top</a>
+</div>
+<p style="text-align:center;font-size:11px;color:var(--text-muted);margin-top:12px;padding-bottom:20px;">
+  NSE Investor Brief · ATHERENERG · Ather Energy Ltd · Generated June 2026 · For informational purposes only — not investment advice.
+</p>
+
+</main>
+</div>
+
+<!-- ═══════════ CHART.JS SCRIPTS ═══════════ -->
+<script>
+/* ─── Day/Night Theme ─── */
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+  document.getElementById('theme-label').textContent = isDark ? 'Night Mode' : 'Day Mode';
+  try { localStorage.setItem('ather-theme', isDark ? 'light' : 'dark'); } catch(e) {}
+  updateChartColors();
+}
+(function() {
+  try {
+    const saved = localStorage.getItem('ather-theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+      document.getElementById('theme-label').textContent = saved === 'dark' ? 'Day Mode' : 'Night Mode';
+    }
+  } catch(e) {}
+})();
+
+/* ─── Revenue / Loss Chart ─── */
+function getChartColors() {
+  const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+  return {
+    gridColor: dark ? 'rgba(255,255,255,0.07)' : 'rgba(0,0,0,0.06)',
+    labelColor: dark ? '#9DC4A0' : '#4A5E4D',
+    rev: 'rgba(42,127,61,0.85)',
+    revBg: 'rgba(42,127,61,0.15)',
+    loss: 'rgba(186,117,23,0.85)',
+    lossBg: 'rgba(186,117,23,0.10)',
+  };
+}
+
+const ctx = document.getElementById('revenueChart').getContext('2d');
+const revenueChart = new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['FY22', 'FY23', 'FY24', 'FY25', 'FY26'],
+    datasets: [
+      {
+        label: 'Revenue (₹ Cr)',
+        data: [409, 1755, 1754, 2255, 3672],
+        backgroundColor: 'rgba(42,127,61,0.75)',
+        borderColor: 'rgba(42,127,61,1)',
+        borderWidth: 1.5,
+        borderRadius: 4,
+        yAxisID: 'y',
+      },
+      {
+        label: 'Net Loss (₹ Cr)',
+        data: [345, 865, 1059, 812, 517],
+        backgroundColor: 'rgba(186,117,23,0.6)',
+        borderColor: 'rgba(186,117,23,1)',
+        borderWidth: 1.5,
+        borderRadius: 4,
+        yAxisID: 'y',
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: { color: getChartColors().labelColor, font: { family: 'DM Sans', size: 12 }, padding: 16 }
+      },
+      tooltip: {
+        callbacks: {
+          label: ctx => `  ${ctx.dataset.label}: ₹${ctx.parsed.y} Cr`
+        }
+      }
+    },
+    scales: {
+      y: {
+        beginAtZero: true,
+        grid: { color: getChartColors().gridColor },
+        ticks: { color: getChartColors().labelColor, font: { family: 'DM Sans', size: 11 }, callback: v => '₹' + v },
+      },
+      x: {
+        grid: { display: false },
+        ticks: { color: getChartColors().labelColor, font: { family: 'DM Sans', size: 12 } }
+      }
+    }
+  }
+});
+
+function updateChartColors() {
+  const c = getChartColors();
+  revenueChart.options.scales.y.grid.color = c.gridColor;
+  revenueChart.options.scales.y.ticks.color = c.labelColor;
+  revenueChart.options.scales.x.ticks.color = c.labelColor;
+  revenueChart.options.plugins.legend.labels.color = c.labelColor;
+  revenueChart.update();
+}
+
+/* ─── Highlight Index Auto-Populate ─── */
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('hi-ol');
+  if (!list) return;
+
+  const typeMap = {
+    'hl-key':      { tag: 'KEY', cls: 'hl-key' },
+    'hl-number':   { tag: 'NUMBER', cls: 'hl-number' },
+    'hl-risk':     { tag: 'RISK', cls: 'hl-risk' },
+    'hl-catalyst': { tag: 'CATALYST', cls: 'hl-catalyst' },
+    'takeaway-pill': { tag: 'TAKEAWAY', cls: 'takeaway-pill' },
+  };
+
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const chEl = el.closest('[id^="ch"]');
+    const chLabel = chEl ? `Ch ${chEl.id.replace('ch','').toUpperCase()}` : '';
+    const li = document.createElement('li');
+
+    const typeClass = [...el.classList].find(c => typeMap[c]) || '';
+    const info = typeMap[typeClass] || { tag: '', cls: '' };
+
+    li.innerHTML = `
+      <span class="hi-tag ${info.cls}">${info.tag}</span>
+      <span>${el.textContent.trim().substring(0, 180)}${el.textContent.trim().length > 180 ? '…' : ''}</span>
+    `;
+    list.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

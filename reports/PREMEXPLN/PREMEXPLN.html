@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier Explosives Limited (PREMEXPLN) — Investor Brief</title>
+<style>
+  /* ── CSS CUSTOM PROPERTIES ── */
+  :root {
+    --bg: #f8f7f4;
+    --bg2: #ffffff;
+    --bg3: #f0ede8;
+    --text: #1a1a1a;
+    --text2: #444;
+    --text3: #666;
+    --border: #e0dbd4;
+    --defence: #D85A30;
+    --industrial: #378ADD;
+    --clean: #3B6D11;
+    --amber: #BA7517;
+    --shadow: rgba(0,0,0,0.08);
+    --card-radius: 10px;
+  }
+  [data-theme="dark"] {
+    --bg: #141414;
+    --bg2: #1e1e1e;
+    --bg3: #252525;
+    --text: #f0ede8;
+    --text2: #ccc;
+    --text3: #999;
+    --border: #333;
+    --shadow: rgba(0,0,0,0.3);
+  }
+  /* ── RESET & BASE ── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    font-family: 'Georgia', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.75;
+    transition: background 0.3s, color 0.3s;
+  }
+  /* ── QUICK SCAN STRIP ── */
+  #quick-scan {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg2);
+    border-bottom: 2px solid var(--defence);
+    box-shadow: 0 2px 8px var(--shadow);
+    font-family: 'Georgia', serif;
+  }
+  #qs-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 0.82rem;
+    color: var(--defence);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    user-select: none;
+  }
+  #qs-toggle span { margin-left: auto; font-size: 1rem; }
+  #qs-body {
+    display: none;
+    padding: 10px 20px 14px;
+    border-top: 1px solid var(--border);
+  }
+  #qs-body.open { display: block; }
+  .qs-line {
+    display: flex;
+    gap: 12px;
+    padding: 4px 0;
+    font-size: 0.84rem;
+    color: var(--text2);
+    border-bottom: 1px solid var(--border);
+  }
+  .qs-line:last-child { border-bottom: none; }
+  .qs-tag {
+    font-weight: 700;
+    min-width: 90px;
+    color: var(--defence);
+    font-family: monospace;
+    font-size: 0.78rem;
+  }
+
+  /* ── TOP BAR (title + controls) ── */
+  #topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.82rem;
+    color: var(--text3);
+    font-family: monospace;
+  }
+  #topbar strong { color: var(--defence); }
+  #theme-toggle {
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-family: monospace;
+    transition: background 0.2s;
+  }
+  #theme-toggle:hover { background: var(--defence); color: #fff; }
+
+  /* ── MAIN LAYOUT ── */
+  main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 24px 20px 60px;
+  }
+
+  /* ── HOOK CARD (CH.0) ── */
+  #hook-card {
+    background: linear-gradient(135deg, var(--defence) 0%, #b04020 100%);
+    color: #fff;
+    border-radius: var(--card-radius);
+    padding: 36px;
+    margin-bottom: 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  #hook-card::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+  .hook-eyebrow {
+    font-family: monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 12px;
+  }
+  .hook-title {
+    font-size: 1.65rem;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 24px;
+  }
+  .hook-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+  @media (max-width: 600px) { .hook-grid { grid-template-columns: 1fr; } }
+  .hook-cell {
+    background: rgba(255,255,255,0.12);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .hook-cell-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.75;
+    margin-bottom: 6px;
+    font-family: monospace;
+  }
+  .hook-cell-value {
+    font-size: 0.97rem;
+    line-height: 1.5;
+    font-weight: 600;
+  }
+  .hook-cell.risk { background: rgba(0,0,0,0.2); }
+
+  /* ── CHAPTER HEADER ── */
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 44px 0 18px;
+  }
+  .chapter-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--defence);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .chapter-header-text { flex: 1; }
+  .chapter-eyebrow {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--defence);
+    font-family: monospace;
+    font-weight: 700;
+  }
+  .chapter-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--text);
+  }
+
+  /* ── SECTION / CARD BASE ── */
+  .section { margin-bottom: 28px; }
+  article p { margin-bottom: 1em; color: var(--text2); font-size: 0.97rem; }
+  article h3 { font-size: 1rem; font-weight: 700; color: var(--text); margin: 20px 0 8px; }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 20px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .card-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--defence);
+    font-family: monospace;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* ── STAT ROW ── */
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+    gap: 12px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text3); flex: 1; }
+  .stat-value { font-weight: 700; color: var(--text); font-family: monospace; }
+  .stat-note { font-size: 0.78rem; color: var(--text3); text-align: right; }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+  }
+  @media (max-width: 600px) { .timeline { flex-direction: column; } }
+  .timeline-node {
+    flex: 1;
+    min-width: 130px;
+    position: relative;
+    padding: 14px 16px 14px 0;
+  }
+  .timeline-node::after {
+    content: '→';
+    position: absolute;
+    right: 2px;
+    top: 14px;
+    color: var(--defence);
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .timeline-node:last-child::after { display: none; }
+  .tl-year {
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--defence);
+    background: rgba(216,90,48,0.1);
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+  }
+  .tl-milestone {
+    font-size: 0.82rem;
+    color: var(--text2);
+    line-height: 1.4;
+  }
+
+  /* ── SIDEBAR / PROMOTER CARD ── */
+  .sidebar-card {
+    background: var(--bg3);
+    border-left: 4px solid var(--defence);
+    border-radius: 0 var(--card-radius) var(--card-radius) 0;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+  .sidebar-title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--defence);
+    font-family: monospace;
+    margin-bottom: 12px;
+  }
+
+  /* ── PORTER'S FIVE FORCES ── */
+  .forces-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .forces-grid .force-centre {
+    grid-column: span 2;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  @media (max-width: 600px) {
+    .forces-grid { grid-template-columns: 1fr; }
+    .forces-grid .force-centre { grid-column: span 1; max-width: 100%; }
+  }
+  .force-cell {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 16px;
+  }
+  .force-name {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text);
+    font-family: monospace;
+    margin-bottom: 8px;
+  }
+  .threat-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    font-family: monospace;
+  }
+  .threat-low    { background: rgba(29,158,117,0.15); color: #1D9E75; }
+  .threat-mod    { background: rgba(186,117,23,0.15); color: #BA7517; }
+  .threat-high   { background: rgba(216,90,48,0.15);  color: #D85A30; }
+  .force-text { font-size: 0.84rem; color: var(--text2); line-height: 1.55; margin-bottom: 8px; }
+  .force-implication {
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--text3);
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+    margin-top: 8px;
+  }
+  .moat-bar {
+    background: var(--bg2);
+    border: 2px solid var(--defence);
+    border-radius: var(--card-radius);
+    padding: 16px 20px;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .moat-rating {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--defence);
+    font-family: monospace;
+  }
+  .moat-text { font-size: 0.86rem; color: var(--text2); flex: 1; }
+
+  /* ── VERTICAL CARDS ── */
+  .vertical-card {
+    background: var(--bg2);
+    border-left: 4px solid var(--defence);
+    border-radius: 0 var(--card-radius) var(--card-radius) 0;
+    padding: 18px 20px;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-left-width: 4px;
+  }
+  .vertical-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .vertical-title { font-weight: 700; font-size: 1rem; color: var(--text); }
+  .status-pill {
+    font-size: 0.72rem;
+    font-family: monospace;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+  }
+  .status-running  { background: rgba(29,158,117,0.15); color: #1D9E75; }
+  .status-ramping  { background: rgba(186,117,23,0.15); color: #BA7517; }
+  .status-growing  { background: rgba(55,138,221,0.15); color: #378ADD; }
+  .vertical-text { font-size: 0.9rem; color: var(--text2); line-height: 1.6; }
+  .vertical-data {
+    font-size: 0.82rem;
+    font-family: monospace;
+    color: var(--defence);
+    margin-top: 8px;
+    font-weight: 700;
+  }
+
+  /* ── MANAGEMENT SCORECARD TABLE ── */
+  .scorecard-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    margin-top: 8px;
+  }
+  .scorecard-table th {
+    background: var(--bg3);
+    color: var(--text3);
+    font-weight: 700;
+    font-family: monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--border);
+  }
+  .scorecard-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  .scorecard-table tr:last-child td { border-bottom: none; }
+  .verdict-sandlag { color: #1D9E75; font-weight: 700; }
+  .verdict-ontrack { color: var(--industrial); font-weight: 700; }
+  .verdict-miss    { color: var(--defence); font-weight: 700; }
+
+  /* ── RISK ROWS ── */
+  .risk-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-icon { color: var(--amber); font-size: 1.1rem; flex-shrink: 0; margin-top: 2px; }
+  .risk-title { font-weight: 700; font-size: 0.9rem; color: var(--text); margin-bottom: 4px; }
+  .risk-text  { font-size: 0.86rem; color: var(--text2); line-height: 1.55; }
+  .risk-signal { font-size: 0.8rem; font-style: italic; color: var(--amber); margin-top: 4px; }
+
+  /* ── WATCH SIGNALS ── */
+  .watch-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .watch-item:last-child { border-bottom: none; }
+  .watch-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--defence);
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+  .watch-metric { font-weight: 700; font-size: 0.9rem; color: var(--text); }
+  .watch-text   { font-size: 0.86rem; color: var(--text2); margin-top: 3px; }
+  .watch-red    { font-size: 0.82rem; color: var(--defence); font-style: italic; margin-top: 3px; }
+
+  /* ── HIGHLIGHT CLASSES ── */
+  .hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; color: #1a1a1a; }
+  .hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: monospace; color: #1a1a1a; }
+  .hl-risk     { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; color: #1a1a1a; }
+  .hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; color: #1a1a1a; }
+
+  /* ── TAKEAWAY PILL ── */
+  .takeaway-pill {
+    background: rgba(216,90,48,0.08);
+    border-left: 3px solid var(--defence);
+    border-radius: 0 6px 6px 0;
+    padding: 10px 16px;
+    font-size: 0.86rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 20px;
+    line-height: 1.5;
+  }
+
+  /* ── INSIGHT CARD ── */
+  .insight-card {
+    background: var(--bg2);
+    border: 2px solid var(--defence);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .insight-label {
+    font-size: 0.72rem;
+    font-family: monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--defence);
+    margin-bottom: 12px;
+  }
+  .insight-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  /* ── VERDICT CARD ── */
+  .verdict-card {
+    background: linear-gradient(135deg, rgba(216,90,48,0.06) 0%, rgba(55,138,221,0.04) 100%);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--defence);
+    border-radius: var(--card-radius);
+    padding: 24px;
+    margin-bottom: 18px;
+  }
+  .verdict-label {
+    font-size: 0.72rem;
+    font-family: monospace;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--defence);
+    margin-bottom: 8px;
+  }
+  .verdict-stage {
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 800;
+    font-family: monospace;
+    color: #fff;
+    background: var(--defence);
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+  }
+  .verdict-text { font-size: 0.95rem; color: var(--text2); line-height: 1.7; }
+
+  /* ── HIGHLIGHT INDEX ── */
+  #highlight-index {
+    margin-top: 40px;
+    font-size: 0.85rem;
+  }
+  #highlight-index summary {
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--defence);
+    font-family: monospace;
+    font-size: 0.85rem;
+    padding: 10px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    user-select: none;
+  }
+  #highlight-index ol {
+    margin: 8px 0 0 20px;
+    color: var(--text2);
+    line-height: 2;
+  }
+  #highlight-index li { font-size: 0.84rem; }
+
+  /* ── CAPEX TIMELINE ── */
+  .capex-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.84rem;
+    align-items: start;
+  }
+  .capex-row:last-child { border-bottom: none; }
+  .capex-year { font-family: monospace; font-weight: 700; color: var(--defence); }
+  .capex-label { font-size: 0.72rem; font-weight: 700; color: var(--text3); text-transform: uppercase; font-family: monospace; margin-bottom: 4px; }
+  @media (max-width: 600px) {
+    .capex-row { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── DIVIDER ── */
+  .divider { border: none; border-top: 1px solid var(--border); margin: 32px 0; }
+
+  /* ── FOOTER ── */
+  footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.78rem;
+    color: var(--text3);
+    font-family: monospace;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- ── TOP BAR ── -->
+<div id="topbar" role="banner">
+  <span><strong>PREMEXPLN</strong> · NSE · Defence &amp; Aerospace · <time datetime="2026-05-28">28 May 2026</time></span>
+  <button id="theme-toggle" aria-label="Toggle day/night mode" onclick="toggleTheme()">🌙 Night</button>
+</div>
+
+<!-- ── QUICK SCAN STRIP ── -->
+<nav id="quick-scan" aria-label="Quick scan summary">
+  <div id="qs-toggle" role="button" tabindex="0" onclick="toggleQS()" onkeypress="if(event.key==='Enter')toggleQS()" aria-expanded="false" aria-controls="qs-body">
+    ▼ Quick Scan — 7 highlights in 30 seconds
+    <span id="qs-arrow">▼</span>
+  </div>
+  <div id="qs-body" role="region">
+    <div class="qs-line"><span class="qs-tag">⚡ CONTEXT</span><span>India defence production ₹1.5 lakh Cr in FY25 (+18%); 75% of capital procurement reserved for domestic players</span></div>
+    <div class="qs-line"><span class="qs-tag">🏭 MODEL</span><span>Only private Indian firm qualified to supply solid propellants for Pinaka, Astra, Akash — qualification moat takes 5+ years to replicate</span></div>
+    <div class="qs-line"><span class="qs-tag">🎯 INSIGHT</span><span>Industrial explosives was the 43-year cash engine that secretly funded the defence qualification journey — now the defence tail wags the industrial dog</span></div>
+    <div class="qs-line"><span class="qs-tag">📊 NUMBERS</span><span>Q4 FY26: ₹293 Cr revenue (+81% YoY), ₹36.8 Cr PAT (+163%) — single quarter beats all of FY25 PAT; order book ₹1,271 Cr (92% defence)</span></div>
+    <div class="qs-line"><span class="qs-tag">🚧 TOP RISK</span><span>Revenue hostage to MoD inspection timelines — three of four quarters in FY26 missed guidance before Q4 surge rescued the year</span></div>
+    <div class="qs-line"><span class="qs-tag">👁 WATCH</span><span>RDX/HMX plant revenue in Q1–Q2 FY27 — confirmation of ₹150–200 Cr guidance is the single most important inflection signal</span></div>
+    <div class="qs-line"><span class="qs-tag">💡 VERDICT</span><span>Mid-chapter — order book built, capacity coming, first full monetisation cycle FY27; margins need to recover from 13% toward 18%+</span></div>
+  </div>
+</nav>
+
+<!-- ── MAIN ── -->
+<main>
+
+<!-- ═══════════════════════════════════════════════
+     CH. 0 — HOOK CARD
+═══════════════════════════════════════════════ -->
+<section id="chapter-0" aria-label="Chapter 0: Hook Card">
+  <div id="hook-card" role="article">
+    <div class="hook-eyebrow">PREMEXPLN · NSE · Defence / Industrial Explosives · 28 May 2026</div>
+    <h1 class="hook-title">The only private Indian firm to export assembled rocket motors — now sitting on ₹1,271 Cr of defence orders as India's missile programmes scale from prototype to mass production.</h1>
+    <div class="hook-grid">
+      <div class="hook-cell">
+        <div class="hook-cell-label">Single most important number</div>
+        <div class="hook-cell-value">₹1,271 Cr order book = 2.1× FY26 revenue — 92% defence, with fresh orders of ₹350 Cr arriving in April 2026 alone</div>
+      </div>
+      <div class="hook-cell">
+        <div class="hook-cell-label">Thesis</div>
+        <div class="hook-cell-value">India cannot scale missile production without Premier. Every Pinaka salvo, every Astra intercept, every Akash scramble needs Premier's propellants — and there is no other qualified private-sector source.</div>
+      </div>
+      <div class="hook-cell risk">
+        <div class="hook-cell-label">⚠ Single biggest risk</div>
+        <div class="hook-cell-value">Revenue is hostage to MoD inspection scheduling. Three of four FY26 quarters missed guidance — Q4's ₹293 Cr saved the year but the volatility is structural, not a one-off.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════
+     CH. 1 — CONTEXT
+═══════════════════════════════════════════════ -->
+<article id="chapter-1" aria-label="Chapter 1: Context">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">1</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Context</div>
+      <h2 class="chapter-title">The Big Picture — India's Missile Supercycle Has a Supply Chain Problem</h2>
+    </div>
+  </div>
+
+  <div class="section">
+    <p>India's defence production crossed ₹1.50 lakh crore in FY25 — an 18% surge from the previous year and the highest ever recorded. The government has allocated <span class="hl-catalyst">₹7.86 lakh crore to defence in the FY27 budget, with ₹1.39 lakh crore (75% of the entire capital acquisition budget) ring-fenced exclusively for domestic suppliers.</span> Five successive Positive Indigenisation Lists have placed 5,012 defence items under import embargo, with 61% already indigenised as of December 2024. The direction of travel is unmistakeable: India is replacing imports with homegrown supply chains, and the government is willing to pay a premium to get there.</p>
+
+    <p>In the energetics sub-sector — the science of things that go boom — this shift is particularly acute. India's industrial explosives market is growing at a CAGR of 8.4% (2023–2029), driven by coal mining (India is the world's second-largest coal producer), infrastructure blasting, and the construction supercycle. But the more strategically significant growth is in the defence energetics segment: solid propellants, pyrotechnics, warhead fills, and rocket motors, where the addressable market is expanding with every new Indian missile programme that exits DRDO's lab and enters series production.</p>
+
+    <p>The inflection point right now is Operation Sindoor (May 2026), which demonstrated the battlefield utility of indigenously developed missile systems at scale. Every Astra air-to-air intercept and every Akash battery salvo is a live advertisement for the programmes that need Premier's propellants. DRDO has publicly announced plans to expand private-sector participation in Astra Mk-2 manufacturing as the extended-range version (160 km) enters production. The Pinaka rocket system has already attracted the highest-ever single order — ₹60,800 crore — with the Indian Army expanding its regiment count. 25% of the total Defence R&D budget is now structurally open to private industry, a policy shift that did not exist five years ago.</p>
+
+    <p><span class="hl-number">India produced 1.1 million metric tonnes of industrial explosives in 2023, and the defence explosives/propellants market is a small but fast-growing overlay on that base.</span> For Premier Explosives, the macro tailwind is not abstract — it is visible in every line of its order book.</p>
+  </div>
+
+  <div class="takeaway-pill">India's defence capital budget is ₹1.39 lakh Cr for domestic suppliers — the largest indigenisation allocation ever, arriving exactly as Premier's capacity comes online.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 2 — BUSINESS MODEL + JOURNEY
+═══════════════════════════════════════════════ -->
+<article id="chapter-2" aria-label="Chapter 2: Business Model and Company Journey">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">2</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Business Model &amp; Company Journey</div>
+      <h2 class="chapter-title">The Mining Company That Became a Missile Supplier</h2>
+    </div>
+  </div>
+
+  <div class="section">
+    <p>Premier Explosives makes the energetic materials that power two very different worlds: the detonators that blast coal seams in Telangana's mines, and the solid propellants that launch India's missiles at hypersonic speeds. The business model is deceptively simple — source regulated raw materials, manufacture under strict PESO and DRDO licences, supply to sovereign and industrial customers who cannot easily switch suppliers. The revenue flywheel is qualification-led: once you are certified to supply a particular propellant grade for a specific missile programme, you are effectively the sole-source vendor for the programme's life cycle, subject to government inspection timelines.</p>
+
+    <p><span class="hl-key">What makes customers sticky is not price, not even quality in isolation — it is the multi-year DRDO qualification process and the PESO explosive manufacturing licence, both of which take years of audits, trials, and facility inspections to obtain and cannot be transferred or shortcut.</span> Premier has accumulated certifications across Pinaka, Astra, Akash, LRSAM/MRSAM/QRSAM, BrahMos strap-on motors, and Agni systems. Each new programme qualification builds on the prior credibility, creating a compounding moat.</p>
+
+    <h3>Company Journey Timeline</h3>
+    <div class="card">
+      <div class="card-title">Six milestones that made Premier what it is today</div>
+      <div class="timeline" role="list" aria-label="Company timeline">
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">1980</div>
+          <div class="tl-milestone"><strong>Founded by Dr. A.N. Gupta</strong> (Indian School of Mines, Dhanbad) to manufacture commercial explosives for coal and mining near Singareni Collieries, Telangana</div>
+        </div>
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">2003</div>
+          <div class="tl-milestone"><strong>Pivoted into defence</strong> — manufactured first pyrogen igniter and solid propellants for Indian missile programmes; became first private company to supply propellants to DRDO projects</div>
+        </div>
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">2006</div>
+          <div class="tl-milestone"><strong>Solid propellant production commissioned</strong> at Peddakundukur — DRDO qualified; first fully-certified private source of defence-grade propellants in India</div>
+        </div>
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">2013</div>
+          <div class="tl-milestone"><strong>World-first innovation</strong> — first commercial manufacturer of NHN (Nickel Hydrazine Nitrate) primary-charge detonators; IP milestone that signalled R&amp;D depth</div>
+        </div>
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">2021</div>
+          <div class="tl-milestone"><strong>Katepally greenfield plant commissioned</strong> (200-acre site, Telangana) — dedicated defence expansion base; PESO licence received for RDX/HMX manufacture</div>
+        </div>
+        <div class="timeline-node" role="listitem">
+          <div class="tl-year">FY25–27</div>
+          <div class="tl-milestone"><strong>Export breakthrough &amp; RDX/HMX scale-up</strong> — only Indian firm to export assembled rocket motors; RDX/HMX full production Q1 FY27; ₹800 Cr Odisha investment announced</div>
+        </div>
+      </div>
+    </div>
+
+    <h3>How the Revenue Compounds</h3>
+    <p>The industrial explosives division (6 facilities across MP, Maharashtra, Telangana, Tamil Nadu) generates steady cash flow with modest margins, serving coal mines, quarries, and infrastructure projects. This division cross-subsidised the capital-intensive, long-gestation defence qualification journey over four decades. Today, <span class="hl-catalyst">92% of the order book is defence — the industrial tail has grown a defence head.</span> As missile programme volumes scale, the higher-margin defence propellant mix increasingly dominates revenue, and each export order adds a further margin premium (FY24's 21.5% EBITDA margin was boosted by a high export share).</p>
+  </div>
+
+  <!-- PROMOTER SIDEBAR -->
+  <div class="sidebar-card" role="complementary" aria-label="Promoter and capital allocation data">
+    <div class="sidebar-title">📊 Promoter &amp; Capital Allocation Sidebar</div>
+    <div class="stat-row">
+      <span class="stat-label">Promoter shareholding (Mar 2026)</span>
+      <span class="stat-value">41.3%</span>
+      <span class="stat-note">Stable; 0% pledged</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Pledge risk</span>
+      <span class="stat-value">NIL</span>
+      <span class="stat-note">0.00% pledged — clean balance sheet signal</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Largest individual promoter</span>
+      <span class="stat-value">24.37%</span>
+      <span class="stat-note">Amarnath Gupta</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">ROCE trend</span>
+      <span class="stat-value">12.8% (FY26)</span>
+      <span class="stat-note">vs. ~20%+ in FY24; compressed by margin squeeze &amp; capex</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Capital philosophy</span>
+      <span class="stat-value">Reinvest</span>
+      <span class="stat-note">Capex/FCF ratio elevated; RDX/HMX build absorbs cash</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Management character</span>
+      <span class="stat-value">Founder-led</span>
+      <span class="stat-note">Dr. A.N. Gupta, first-generation entrepreneur; 46-year track record in explosives</span>
+    </div>
+    <p style="font-size:0.82rem; color:var(--text3); margin-top:12px; font-style:italic;">Source: Screener.in, Trendlyne shareholding data, company filings</p>
+  </div>
+
+  <div class="takeaway-pill">Founded as a coal-explosives company, Premier spent 43 years qualifying for India's missile supply chain — and is now its only private-sector propellant source.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 3 — PORTER'S FIVE FORCES
+═══════════════════════════════════════════════ -->
+<article id="chapter-3" aria-label="Chapter 3: Competitive Dynamics">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">3</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Competitive Dynamics</div>
+      <h2 class="chapter-title">Porter's Five Forces — Where the Moat Holds and Where It Doesn't</h2>
+    </div>
+  </div>
+
+  <div class="forces-grid">
+    <!-- Force 1 -->
+    <div class="force-cell">
+      <div class="force-name">Force 1 — Competitive Rivalry</div>
+      <span class="threat-badge threat-low" aria-label="Threat level: Low">🟢 Low (Defence) / High (Industrial)</span>
+      <div class="force-text">In defence propellants — Premier's 92% of order book — there is no other listed private-sector rival. DRDO's own laboratories (HEMRL Pune) are the only substitute source, and they are capacity-constrained. In industrial explosives, Solar Industries commands ~30% market share versus Premier's ~5%, with Economic Explosives (Solar subsidiary), Gulf Oil Explosives, and Keltech as active competitors. Competition in industrial is on price and logistics proximity; defence is a captive relationship.</div>
+      <div class="force-implication"><em>Investor implication:</em> On the dominant segment (defence), competition is structurally absent. Margin sustainability in defence is about contract terms, not rivalry.</div>
+    </div>
+    <!-- Force 2 -->
+    <div class="force-cell">
+      <div class="force-name">Force 2 — Threat of New Entrants</div>
+      <span class="threat-badge threat-low" aria-label="Threat level: Low">🟢 Low</span>
+      <div class="force-text">Barriers are structural: (a) PESO licence for explosive manufacturing requires years of facility audits; (b) DRDO qualification for propellant supply involves multi-round trial firings, quality system certifications, and site approvals — a process that historically takes 5–7 years; (c) minimum facility footprint of 100–200 acres in approved locations; (d) a history-of-supply requirement that new entrants cannot fake. Solar Industries (₹1.67 lakh Cr market cap) could theoretically invest in defence propellants but has not yet achieved propellant qualification.</div>
+      <div class="force-implication"><em>Investor implication:</em> Moat is structural — years to replicate. Even if Solar commits to propellants today, Premier's supply relationship is safe through FY29–30.</div>
+    </div>
+    <!-- Force 3 -->
+    <div class="force-cell">
+      <div class="force-name">Force 3 — Bargaining Power of Buyers</div>
+      <span class="threat-badge threat-high" aria-label="Threat level: High">🔴 High</span>
+      <div class="force-text">Premier's primary buyers — BDL, DRDO, IAF, Indian Army — are effectively sovereign customers. They set procurement prices through the government contracting framework; Premier is a price-taker, not a price-setter. The FY26 margin compression (13% vs. 21.5% in FY24) includes a material hit from liquidated damages clauses invoked in one large order. Customer concentration is extreme: BDL and DRDO together account for the vast majority of defence revenue, with ISRO and BEL as secondary clients.</div>
+      <div class="force-implication"><em>Investor implication:</em> Pricing power is absent. Margin improvement must come from product mix (more exports, more RDX/HMX) — not from negotiating better prices with the MoD.</div>
+    </div>
+    <!-- Force 4 -->
+    <div class="force-cell">
+      <div class="force-name">Force 4 — Bargaining Power of Suppliers</div>
+      <span class="threat-badge threat-mod" aria-label="Threat level: Moderate">🟡 Moderate → Falling</span>
+      <div class="force-text">RDX and HMX — the key explosive filler materials — are currently imported, creating foreign-currency exposure and supplier dependency. The Katepally expansion directly addresses this: once Premier manufactures its own RDX/HMX from Q1 FY27, it backward-integrates into its most critical input. Other raw materials (ammonium nitrate, detonator components) are primarily sourced domestically. Proximity to SCCL (Singareni Collieries) provides a stable industrial explosives customer nearby, reducing geographic logistics costs.</div>
+      <div class="force-implication"><em>Investor implication:</em> Supplier risk is declining with the RDX/HMX plant coming online. Successful commissioning would reduce import dependency and potentially improve gross margins structurally.</div>
+    </div>
+    <!-- Force 5 (centre) -->
+    <div class="force-cell force-centre">
+      <div class="force-name">Force 5 — Threat of Substitutes</div>
+      <span class="threat-badge threat-mod" aria-label="Threat level: Moderate">🟡 Moderate (Long-Horizon)</span>
+      <div class="force-text">For solid-fuelled missiles, there is no near-term substitute for solid propellant — liquid fuelled alternatives exist but carry storage, handling, and response-time disadvantages that make them unsuitable for tactical battlefield systems like Akash and Pinaka. The long-horizon threat is directed energy weapons (laser, electromagnetic rail guns) that could theoretically replace some missile roles — but the Indian military's current and planned inventory is entirely propellant-dependent, making this a 15–20 year risk horizon at best. In industrial explosives, mechanical excavation competes at the margin but is uneconomical for hard rock at scale.</div>
+      <div class="force-implication"><em>Investor implication:</em> This is a 10-year story, not a 3-year story, for the defence propellant segment. No near-term technology obsolescence risk.</div>
+    </div>
+  </div>
+
+  <!-- Moat Summary -->
+  <div class="moat-bar" aria-label="Overall moat summary">
+    <div class="moat-rating">NARROW–WIDE MOAT</div>
+    <div class="moat-text">In defence propellants: effectively wide — no qualified private competitor exists and DRDO's own labs are capacity-constrained. In industrial explosives: no moat — Solar Industries dominates on scale. The overall moat rating depends entirely on how fast the defence propellant business scales relative to the industrial base. At 92% of order book in defence, the story is trending toward wide moat. Versus Solar Industries, Premier is neither better nor a competitor — they play in different sub-segments.</div>
+  </div>
+
+  <div class="takeaway-pill">Zero qualified private-sector competitors in defence propellants; Solar Industries' 30× scale advantage matters only in the 8% of business that is industrial.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 4 — VERTICAL STORIES
+═══════════════════════════════════════════════ -->
+<article id="chapter-4" aria-label="Chapter 4: Vertical Stories">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">4</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Vertical Stories</div>
+      <h2 class="chapter-title">Four Engines, One Runway</h2>
+    </div>
+  </div>
+
+  <!-- Vertical 1 -->
+  <div class="vertical-card" style="border-left-color: #D85A30;">
+    <div class="vertical-header">
+      <div class="vertical-title">🚀 Defence &amp; Aerospace Propellants</div>
+      <span class="status-pill status-running">Running</span>
+    </div>
+    <div class="vertical-text">The crown jewel. Premier is sole or preferred private-sector supplier of solid propellants for Pinaka (world-record ₹60,800 Cr order for the rocket system), Astra (DRDO now expanding private sector as Mk-2 enters 160 km range production), Akash SAM batteries, LRSAM/MRSAM/QRSAM, BrahMos strap-on motors, and Agni series. The IAF countermeasure order of ₹429.56 Cr (shafts and flares) signed in H1 FY26 was the largest single order in Premier's history. In April 2026, defence product orders worth ₹350.23 Cr were announced in a single announcement. Capacity utilisation as of Q3 FY26: countermeasures 100%, small rocket motors 60%, large rocket motors 33% — indicating significant revenue headroom as orders execute.</div>
+    <div class="vertical-data">Order book share: 92% · Order book value: ~₹1,171 Cr · April 2026 fresh inflow: ₹350 Cr</div>
+  </div>
+
+  <!-- Vertical 2 -->
+  <div class="vertical-card" style="border-left-color: #BA7517;">
+    <div class="vertical-header">
+      <div class="vertical-title">🧪 RDX/HMX — Import Substitution Play</div>
+      <span class="status-pill status-ramping">Ramping</span>
+    </div>
+    <div class="vertical-text">India currently imports RDX (cyclotrimethylenetrinitramine) and HMX (cyclotetramethylenetetranitramine) — the primary explosive fillings for warheads and shaped charges — from foreign sources. Premier received the PESO licence for domestic RDX/HMX manufacture at Katepally. The production line is expected to commence in Q1 FY27, with management guiding ₹150–200 Cr in revenue for FY27 from this single capacity addition. Beyond revenue, this vertical structurally reduces Premier's import dependency (Force 4) and gives India's defence supply chain a domestic energetics source for warhead fill — a strategic gap that the government has explicitly prioritised on the Positive Indigenisation List.</div>
+    <div class="vertical-data">FY27 guided contribution: ₹150–200 Cr · Capex: ₹60 Cr in FY27 · Commissioning: Q1 FY27</div>
+  </div>
+
+  <!-- Vertical 3 -->
+  <div class="vertical-card" style="border-left-color: #378ADD;">
+    <div class="vertical-header">
+      <div class="vertical-title">⛏ Industrial Explosives (Mining &amp; Infrastructure)</div>
+      <span class="status-pill status-running">Running</span>
+    </div>
+    <div class="vertical-text">Six manufacturing facilities across Madhya Pradesh, Maharashtra, Telangana, and Tamil Nadu supply bulk and packaged explosives, detonators, and detonating fuse to coal mines (principally SCCL — Singareni Collieries, a physical neighbour in Telangana), quarries, and infrastructure contractors. India's industrial explosives market is growing at 8.4% CAGR (2023–2029), backed by record coal production, PM Gati Shakti infrastructure corridors, and sustained metals mining activity. This division generates steady, if lower-margin, cash flows that anchor the balance sheet while the higher-margin defence business scales. Solar Industries' dominance (30% share) means Premier is a regional niche player here, not a market leader.</div>
+    <div class="vertical-data">Market CAGR: 8.4% (2023–29) · Premier market share: ~5% · India explosives production: 1.1 MT (2023)</div>
+  </div>
+
+  <!-- Vertical 4 -->
+  <div class="vertical-card" style="border-left-color: #3B6D11;">
+    <div class="vertical-header">
+      <div class="vertical-title">🌏 Rocket Motor Exports — The Margin Enhancer</div>
+      <span class="status-pill status-growing">Growing</span>
+    </div>
+    <div class="vertical-text">Premier is the only Indian private firm to export fully assembled rocket motors — a distinction that no competitor has yet replicated. Export contracts carry materially better margins than domestic defence procurement (FY24's 21.5% EBITDA margin vs. 13.9% in FY25 reflects the export-mix effect). In May 2026, Premier won ₹33.69 Cr of international rocket motor orders deliverable over 18 months. In July 2025, a ₹22.36 Cr export order was secured. While export revenue is a small fraction of total today, each contract builds the credentials for future international defence supply chains — and the Global Munitions supply chain for allied nations is a longer-term optionality. <span class="hl-catalyst">Every percentage point shift from domestic to export revenue is worth approximately 100–150 bps of EBITDA margin improvement.</span></div>
+    <div class="vertical-data">May 2026 export order: ₹33.69 Cr · Status: Only Indian firm with this capability · FY24 export-boost margin: 21.5%</div>
+  </div>
+
+  <div class="takeaway-pill">RDX/HMX commissioning in Q1 FY27 is the single biggest near-term revenue trigger — ₹150–200 Cr from one capacity addition alone.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 5 — STRATEGIC INSIGHT
+═══════════════════════════════════════════════ -->
+<article id="chapter-5" aria-label="Chapter 5: Strategic Insight">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">5</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Strategic Insight</div>
+      <h2 class="chapter-title">The One Thing to Understand</h2>
+    </div>
+  </div>
+
+  <div class="insight-card" role="article">
+    <div class="insight-label">🎯 The Non-Obvious Truth About Premier Explosives</div>
+    <p class="insight-text">
+      Most investors look at Premier and see a small-cap explosives manufacturer riding the defence capex wave. The more accurate framing is this: Premier is <span class="hl-key">the sole private-sector key to India's missile supply chain sovereignty — and the government cannot unlock that door without Premier, because no other private entity has the qualifications.</span>
+    </p>
+    <p class="insight-text" style="margin-top:14px;">
+      Think about what it would take for India to scale Pinaka production from the current rate to the Army's stated target of 72 rockets per day. DRDO's labs at HEMRL Pune are the only other domestic propellant source — and they are already capacity-constrained supplying their own test programmes. BDL, the government's missile manufacturer, has no propellant production capability and sources all of it externally. <strong>The entire production scaling of India's most battle-proven rocket artillery system runs through Premier's factory floors in Peddakundukur and Katepally.</strong>
+    </p>
+    <p class="insight-text" style="margin-top:14px;">
+      The industrial explosives business — 43 years of cash generation, plodding but profitable — was the invisible foundation that paid for the decade-long DRDO qualification process, the 200-acre facilities, the PESO licences, the R&D that invented the world's first NHN detonator. Premier didn't pivot into defence; it methodically planted a tree starting in 2003 and is now harvesting it as India's security environment has finally created demand for the fruit.
+    </p>
+    <p class="insight-text" style="margin-top:14px;">
+      The corollary: Premier's revenue volatility is not a business quality problem. It is a procurement rhythm problem — MoD inspections, acceptance ceremonies, and delivery schedules create lumpy recognition that look terrible on a quarterly P&amp;L screen. Q4 FY26's ₹293 Cr, following three weak quarters, is not an anomaly. It is what the underlying demand always was; the timing just caught up. <span class="hl-risk">The risk is not that demand disappears — it is that the inspection machine slows down again in one of the quarters that matters for the stock price.</span>
+    </p>
+  </div>
+
+  <div class="takeaway-pill">Industrial explosives was the 43-year cash engine that secretly funded the defence qualification journey — now the defence tail wags the industrial dog.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 6 — THE NUMBERS IN CONTEXT
+═══════════════════════════════════════════════ -->
+<article id="chapter-6" aria-label="Chapter 6: Numbers in Context">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">6</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Numbers in Context</div>
+      <h2 class="chapter-title">A Business Worth Owning, at a Price Worth Scrutinising</h2>
+    </div>
+  </div>
+
+  <!-- Core Financials -->
+  <div class="card">
+    <div class="card-title">Core Financials — Revenue &amp; Profitability Trajectory</div>
+    <div class="stat-row">
+      <span class="stat-label">FY24 Revenue</span>
+      <span class="stat-value">₹271 Cr</span>
+      <span class="stat-note">Base year; high margin (export-heavy)</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">FY25 Revenue</span>
+      <span class="stat-value">₹417 Cr</span>
+      <span class="stat-note">+54% YoY; margin compressed to 13.9%</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">FY26 Revenue (preliminary)</span>
+      <span class="stat-value">~₹592 Cr</span>
+      <span class="stat-note">9M ₹299 Cr + Q4 ₹293 Cr; board meeting May 29</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">FY24 EBITDA margin</span>
+      <span class="stat-value">21.5%</span>
+      <span class="stat-note">High — boosted by export revenue share</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">FY25 EBITDA margin</span>
+      <span class="stat-value">13.9%</span>
+      <span class="stat-note">Compressed — lower export share, LD clauses</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">9M FY26 EBITDA margin</span>
+      <span class="stat-value">13.0%</span>
+      <span class="stat-note">Guided 13–15% for FY27 (Ind-Ra, May 2026)</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">FY25 PAT</span>
+      <span class="stat-value">₹28.5 Cr</span>
+      <span class="stat-note">+1.5% YoY despite 54% revenue growth — margin squeeze</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Q4 FY26 PAT (preliminary)</span>
+      <span class="stat-value">₹36.8 Cr</span>
+      <span class="stat-note">+163% YoY — single quarter beats all FY25 PAT</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Market Cap (25 May 2026)</span>
+      <span class="stat-value">₹3,201 Cr</span>
+      <span class="stat-note">Stock up 46% in 5 days pre-Q4 results announcement</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Trailing PE (pre-Q4)</span>
+      <span class="stat-value">74.5×</span>
+      <span class="stat-note">vs. Solar Industries 99.7× — lower despite higher growth delta</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">ROCE (FY26)</span>
+      <span class="stat-value">12.8%</span>
+      <span class="stat-note">Below FY24 peak (~20%+); capex cycle depressing returns</span>
+    </div>
+  </div>
+
+  <!-- Order Book Card -->
+  <div class="card">
+    <div class="card-title">📋 Order Book Visibility</div>
+    <div class="stat-row">
+      <span class="stat-label">Total order book (end-Q4 FY26)</span>
+      <span class="stat-value">₹1,271 Cr</span>
+      <span class="stat-note">Down from Q3's ₹1,295 Cr as Q4 executed ₹293 Cr</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Order book / FY26 revenue</span>
+      <span class="stat-value">2.1×</span>
+      <span class="stat-note">Healthy; provides ~2 years of revenue visibility</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Defence share of order book</span>
+      <span class="stat-value">92%</span>
+      <span class="stat-note">Defence OB: ~₹1,171 Cr; industrial: ~₹100 Cr</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Fresh order intake (Q1 FY27 preview)</span>
+      <span class="stat-value">₹384 Cr</span>
+      <span class="stat-note">Apr 2026: ₹350.23 Cr; May 2026 export: ₹33.69 Cr</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Conversion cycle</span>
+      <span class="stat-value">12–18 months</span>
+      <span class="stat-note">Subject to MoD inspection scheduling (key execution risk)</span>
+    </div>
+    <p style="font-size:0.82rem;color:var(--text3);margin-top:10px;"><span class="hl-number">₹384 Cr of fresh orders in the first 28 days of FY27</span> — if sustained at even 50% of this pace, order book grows through FY27.</p>
+  </div>
+
+  <!-- Capex Timeline -->
+  <div class="card">
+    <div class="card-title">🏗 Capex Timeline</div>
+    <div class="capex-row">
+      <div class="capex-year">FY24</div>
+      <div><div class="capex-label">Capex Spend</div>Maintenance + Katepally completion; estimated ₹30–40 Cr range</div>
+      <div><div class="capex-label">Milestone</div>Katepally plant fully operational; PESO RDX/HMX licence received</div>
+      <div><div class="capex-label">Revenue Impact</div>Export-heavy revenue; 21.5% EBITDA margin — high return on earlier capex</div>
+    </div>
+    <div class="capex-row">
+      <div class="capex-year">FY25</div>
+      <div><div class="capex-label">Capex Spend</div>Ongoing civil work and plant preparation for RDX/HMX production lines</div>
+      <div><div class="capex-label">Milestone</div>Capacity partially built but not yet producing RDX/HMX; large rocket motor at 33% utilisation</div>
+      <div><div class="capex-label">Revenue Impact</div>Revenue ₹417 Cr; margin 13.9% — investment cycle depressing returns</div>
+    </div>
+    <div class="capex-row">
+      <div class="capex-year">FY26</div>
+      <div><div class="capex-label">Capex Spend</div>Pre-commissioning investment; plant readied</div>
+      <div><div class="capex-label">Milestone</div>RDX/HMX trial runs; PESO final approvals; Q4 FY26 defence execution surge (₹293 Cr)</div>
+      <div><div class="capex-label">Revenue Impact</div>FY26P ~₹592 Cr; Q4 alone validates demand exists when execution happens</div>
+    </div>
+    <div class="capex-row">
+      <div class="capex-year">FY27E</div>
+      <div><div class="capex-label">Capex Spend</div>₹60 Cr (RDX/HMX capacity expansion)</div>
+      <div><div class="capex-label">Milestone</div>RDX/HMX production commences Q1 FY27; Odisha project (₹800 Cr) groundwork</div>
+      <div><div class="capex-label">Revenue Impact</div>₹150–200 Cr incremental from RDX/HMX; management guided ₹500–600 Cr total FY27</div>
+    </div>
+    <div class="stat-row" style="margin-top:10px;">
+      <span class="stat-label">Red flag check</span>
+      <span class="stat-value" style="color:var(--amber);">⚠ Monitor</span>
+      <span class="stat-note">Capex broadly aligned with order book; but large-rocket motor at 33% utilisation is underutilised capacity — watch FY27 execution</span>
+    </div>
+  </div>
+
+  <!-- Management Scorecard -->
+  <div class="card">
+    <div class="card-title">🎯 Management Scorecard — Guidance vs. Actual (6 Quarters)</div>
+    <div style="overflow-x:auto;">
+      <table class="scorecard-table" role="table" aria-label="Management guidance vs actual performance">
+        <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">What Was Guided</th>
+            <th scope="col">What Was Delivered</th>
+            <th scope="col">Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>FY25 Full Year</td>
+            <td>Revenue ₹400–500 Cr, EBITDA margin 18–21%</td>
+            <td>Revenue ₹417 Cr ✓; EBITDA 13.9% ✗</td>
+            <td><span class="verdict-miss">Miss (Margin)</span></td>
+          </tr>
+          <tr>
+            <td>Q1 FY26</td>
+            <td>Ramp-up quarter; ₹100–120 Cr range expected</td>
+            <td>₹142 Cr, +71.6% YoY</td>
+            <td><span class="verdict-sandlag">Sandlag</span></td>
+          </tr>
+          <tr>
+            <td>Q2 FY26</td>
+            <td>Continued momentum; ₹120+ Cr range</td>
+            <td>₹75.6 Cr, –20.1% YoY — guidance cut to ₹500 Cr from ₹600 Cr</td>
+            <td><span class="verdict-miss">Miss</span></td>
+          </tr>
+          <tr>
+            <td>Q3 FY26</td>
+            <td>Recovery to ₹130–150 Cr guided by management</td>
+            <td>₹81.4 Cr, –50.9% YoY; PAT –34%</td>
+            <td><span class="verdict-miss">Miss</span></td>
+          </tr>
+          <tr>
+            <td>Q4 FY26</td>
+            <td>H2 recovery implied; ₹130–150 Cr to meet annual guidance</td>
+            <td>₹293.3 Cr, +81% YoY; PAT ₹36.8 Cr (+163%)</td>
+            <td><span class="verdict-sandlag">Sandlag</span></td>
+          </tr>
+          <tr>
+            <td>FY26 Full Year</td>
+            <td>Revised guidance ₹500–550 Cr (from ₹600 Cr)</td>
+            <td>Preliminary ~₹592 Cr — beat revised guidance</td>
+            <td><span class="verdict-sandlag">Sandlag (vs. revised)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:0.84rem;color:var(--text3);margin-top:12px;font-style:italic;"><strong>Pattern:</strong> Management is a volatile quarter-to-quarter deliverer but annual beats are common once guidance is revised down. Margins are the persistent gap — management has guided 18–21% EBITDA but delivered 13–14% for two consecutive years. This is a sandlagger on revenue, an overpromiser on margins.</p>
+  </div>
+
+  <!-- Valuation Context -->
+  <div class="card">
+    <div class="card-title">💹 Valuation — What Is the Market Pricing In?</div>
+    <div class="stat-row">
+      <span class="stat-label">PREMEXPLN PE (pre-Q4 results, May 25)</span>
+      <span class="stat-value">74.5×</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">Solar Industries PE (May 25)</span>
+      <span class="stat-value">99.7×</span>
+    </div>
+    <div class="stat-row">
+      <span class="stat-label">PREMEXPLN PE (post-Q4 FY26, estimated)</span>
+      <span class="stat-value">~45–50×</span>
+      <span class="stat-note">Once Q4 PAT (₹36.8 Cr) is annualised into TTM earnings</span>
+    </div>
+    <p style="font-size:0.9rem;color:var(--text2);margin-top:12px;line-height:1.7;">The market is pricing a sustained re-acceleration in defence revenue and successful RDX/HMX commissioning in FY27. At ₹3,200 Cr market cap and a business that just demonstrated ₹293 Cr in a single quarter, the implied FY27 PE (if ₹600–700 Cr revenue and 15% EBITDA margins materialise) is approximately 40–45×. <span class="hl-risk">The valuation is not cheap — it is pricing execution of RDX/HMX guidance and margin recovery, both of which have track-record gaps.</span> Solar Industries trades at a 33% premium PE despite being the more mature, industrial-heavy business, suggesting the market views Premier's defence growth as a higher-beta opportunity. If RDX/HMX delivers the ₹150–200 Cr FY27 guidance, the current price is defensible. If it slips by a quarter, the recent rally is vulnerable.</p>
+  </div>
+
+  <div class="takeaway-pill">Q4 FY26 single-quarter PAT of ₹36.8 Cr beats full-year FY25 PAT — the demand was always there; only inspection timing was the bottleneck.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 7 — RISKS
+═══════════════════════════════════════════════ -->
+<article id="chapter-7" aria-label="Chapter 7: Risks">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">7</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Eyes Open</div>
+      <h2 class="chapter-title">Risks — The Five Things That Could Break This Story</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">1. MoD Inspection Bottleneck — The Structural Revenue Lumpiness</div>
+        <div class="risk-text">Premier's revenue recognition requires physical acceptance by MoD inspection teams. These teams are shared across all defence suppliers and cannot be privately contracted or accelerated. Three of four quarters in FY26 missed guidance because inspectors were unavailable or delayed. This is not a fix management can implement unilaterally — it requires systemic MoD capacity improvement. <strong>Magnitude: High.</strong> A quarter that misses by 50% (as Q3 FY26 did) destroys 25–30% of stock price in the same period.</div>
+        <div class="risk-signal">Signal to watch: MoD inspector availability announcements; Q1 FY27 delivery timelines disclosed in concall</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">2. Margin Compression from Liquidated Damages Clauses</div>
+        <div class="risk-text">The FY26 EBITDA margin of 13% (vs. 21.5% in FY24) includes a material hit from liquidated damages invoked in one large order where Premier could not deliver on time (likely due to the MoD inspection issue itself, creating a painful feedback loop). If future large defence contracts carry similar LD provisions, margins may remain structurally capped at 13–15% even as revenue scales. The gap between management's 18–21% margin target and the 13% reality has persisted for two years. <strong>Magnitude: High for profitability.</strong></div>
+        <div class="risk-signal">Signal: Q1 FY27 gross margin; any LD provisions disclosed in results press releases</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">3. RDX/HMX Plant Commissioning Slip</div>
+        <div class="risk-text">Management has guided ₹150–200 Cr from RDX/HMX in FY27, contingent on Q1 FY27 commissioning. Defence manufacturing projects — especially involving Schedule I explosives under the Explosives Act — are subject to final government approvals and safety clearances that can slip by one to two quarters. If commissioning is delayed from Q1 to Q3, the FY27 contribution halves. This is Premier's most important near-term catalyst; it is also its most regulatory-dependent. <strong>Magnitude: Severe for FY27 estimates.</strong></div>
+        <div class="risk-signal">Signal: Any announcement of trial production at Katepally; Q1 FY27 concall commentary on commissioning status</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">4. Working Capital Intensity — Government Payment Cycles</div>
+        <div class="risk-text">Defence contracts require upfront investment in raw materials, manufacturing, and delivery — with payment released only on acceptance inspection. Extended working capital cycles, combined with capex for RDX/HMX, could strain the balance sheet in FY27 if order intake outpaces payment receipts. The business is inherently working-capital-heavy; this is manageable at ₹600 Cr revenue but becomes a balance sheet stress test if Premier reaches ₹800–900 Cr. <strong>Magnitude: Moderate.</strong></div>
+        <div class="risk-signal">Signal: Quarterly debt levels; cash conversion cycle disclosed in annual report</div>
+      </div>
+    </div>
+    <div class="risk-item">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">5. Solar Industries' Entry into Defence Propellants</div>
+        <div class="risk-text">Solar Industries (₹1.67 lakh Cr market cap, 52× Premier's size) has a stated defence ambition and is actively expanding into the segment. If Solar invests in DRDO propellant qualification — a 5–7 year process — it could erode Premier's sole-supplier status on programmes that come up for re-qualification or new contracts post-FY30. This is a medium-term risk, not immediate. But Solar's resources mean the timeline could be accelerated with the right acquisition or partnership. <strong>Magnitude: Low near-term, Medium by FY30.</strong></div>
+        <div class="risk-signal">Signal: Any Solar Industries defence propellant facility announcement or DRDO partnership</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">Risks are real but manageable — MoD inspection rhythm is the dominant near-term threat; RDX/HMX slip is the dominant valuation threat.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     CH. 8 — WATCH SIGNALS
+═══════════════════════════════════════════════ -->
+<article id="chapter-8" aria-label="Chapter 8: Watch Signals">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">8</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Watch Signals</div>
+      <h2 class="chapter-title">Five Numbers to Check Every Quarter</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="watch-item">
+      <div class="watch-dot" aria-hidden="true"></div>
+      <div>
+        <div class="watch-metric">1. RDX/HMX Revenue (FY27 Q1 &amp; Q2)</div>
+        <div class="watch-text">The single most important near-term inflection. Management guided ₹150–200 Cr contribution from RDX/HMX in FY27. Q1 FY27 concall should confirm whether commissioning happened. Good signal: any revenue from this segment in Q1. Red flag below.</div>
+        <div class="watch-red">🔴 Red flag: Zero RDX/HMX revenue in Q1 FY27 = commissioning slipped; revise FY27 estimates down 20–30%</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" aria-hidden="true"></div>
+      <div>
+        <div class="watch-metric">2. EBITDA Margin — Recovery Toward 18%</div>
+        <div class="watch-text">Management has guided 18–21% but delivered 13–14% for two years. RDX/HMX addition and rising export share should mechanically push margins up. Watch Q1 and Q2 FY27 margin closely. Good signal: any quarter with EBITDA &gt; 16%.</div>
+        <div class="watch-red">🔴 Red flag: EBITDA &lt; 13% in FY27 = LD clauses still biting in new contracts; structural margin problem confirmed</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" aria-hidden="true"></div>
+      <div>
+        <div class="watch-metric">3. Fresh Order Intake Per Quarter</div>
+        <div class="watch-text">April 2026 brought ₹350 Cr in a single announcement. Sustainable quarterly intake above ₹200 Cr would rebuild order book faster than execution depletes it. Good signal: three consecutive quarters of ₹200+ Cr intake.</div>
+        <div class="watch-red">🔴 Red flag: Two consecutive quarters of intake &lt; ₹100 Cr = order pipeline decelerating; check if India's missile production ramp has paused</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" aria-hidden="true"></div>
+      <div>
+        <div class="watch-metric">4. Large-Rocket Motor Capacity Utilisation</div>
+        <div class="watch-text">Large rocket motors were at only 33% utilisation as of Q3 FY26. This is the highest-margin sub-segment and represents significant revenue headroom. Good signal: utilisation crossing 60% within 2 quarters of a new large-motor order.</div>
+        <div class="watch-red">🔴 Red flag: Utilisation still at 33% by Q3 FY27 = large motor orders not converting to executed revenue; investigate order execution barriers</div>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" aria-hidden="true"></div>
+      <div>
+        <div class="watch-metric">5. Export Revenue as % of Total Revenue</div>
+        <div class="watch-text">Export orders carry materially higher margins. FY24's 21.5% EBITDA was export-boosted. Watch export revenue share vs. domestic. Good signal: export &gt; 10% of revenue in any quarter. Good for margin outlook.</div>
+        <div class="watch-red">🔴 Red flag: Export revenue below ₹15 Cr per quarter = export momentum stalling; margin ceiling stays at 13–15%</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">RDX/HMX first-quarter revenue is the single metric that will confirm or deny the FY27 growth thesis in five minutes of concall listening.</div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     VERDICT
+═══════════════════════════════════════════════ -->
+<article id="verdict" aria-label="Verdict">
+  <div class="chapter-header">
+    <div class="chapter-num" style="background: var(--text);" aria-hidden="true">V</div>
+    <div class="chapter-header-text">
+      <div class="chapter-eyebrow">Verdict</div>
+      <h2 class="chapter-title">Where We Are in the Story</h2>
+    </div>
+  </div>
+
+  <div class="verdict-card" role="article">
+    <div class="verdict-label">Story Stage</div>
+    <div class="verdict-stage">MID-CHAPTER — Inflection Approaching</div>
+    <div class="verdict-text">
+      <p>The structural tailwinds behind Premier Explosives are among the most durable available in Indian public markets: India's missile programme scaling from prototype to mass production, 75% of the defence capital budget going to domestic suppliers, an explicit indigenisation list that covers every product Premier makes, and Operation Sindoor serving as a live battlefield advertisement for the programmes Premier arms. These are not cycle-dependent tailwinds — they are policy-locked for the next decade.</p>
+      <p style="margin-top:12px;">The quality signal in the financials is mixed but improving. ROCE at 12.8% is below the threshold of capital efficiency, but this is a known consequence of the Katepally capex cycle — the same pattern of capital ahead of revenue that preceded every previous capacity addition. Q4 FY26's ₹36.8 Cr PAT (on ₹293 Cr revenue) — more than all of FY25 PAT in a single quarter — reveals the underlying earnings power when execution is uninterrupted. <span class="hl-catalyst">The near-term catalyst is binary: RDX/HMX commissioning in Q1 FY27 either delivers ₹150–200 Cr of new revenue or slips; there is no middle path.</span> A clean Q1 FY27 concall confirming production start would re-rate the stock from mid-cycle to late-cycle pricing.</p>
+      <p style="margin-top:12px;">Valuation at ~74× trailing PE (pre-Q4 results) is demanding — but post-Q4 FY26 results expected May 29, the PE compresses to ~45–50× on revised TTM earnings, bringing it below Solar Industries' 99.7×. The market is pricing execution of RDX/HMX guidance and margin recovery toward 16–18%; it is NOT pricing a return to FY24's 21.5% margin. We are in the middle chapters of a long-form story: the infrastructure is built, the credentials are established, and the first full monetisation cycle is arriving. The climax — Premier supplying not just propellant but complete rocket assemblies for India's growing export-grade defence portfolio — is 3–5 years away. This quarter's urgency is watching RDX/HMX, not waiting for the endgame.</p>
+    </div>
+  </div>
+</article>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════
+     HIGHLIGHT INDEX
+═══════════════════════════════════════════════ -->
+<details id="highlight-index" aria-label="All highlights at a glance">
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol>
+    <!-- Auto-populated by JS below -->
+  </ol>
+</details>
+
+</main>
+
+<footer role="contentinfo">
+  <p>PREMEXPLN · Premier Explosives Limited · NSE/BSE: 526247 · Investor Brief generated 28 May 2026</p>
+  <p style="margin-top:6px;">Sources: Screener.in, Trendlyne, Business Standard, Gurufocus, Yahoo Finance, Whalesbook, India Ratings (Ind-Ra), BSE/NSE filings, company concall transcripts Q1–Q3 FY26. Q4 FY26 data preliminary (board meeting 29 May 2026). This brief is for informational purposes only and does not constitute investment advice.</p>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+  // Day/Night Mode
+  function toggleTheme() {
+    const body = document.body;
+    const btn  = document.getElementById('theme-toggle');
+    if (body.getAttribute('data-theme') === 'dark') {
+      body.removeAttribute('data-theme');
+      btn.textContent = '🌙 Night';
+      localStorage.setItem('pelTheme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀️ Day';
+      localStorage.setItem('pelTheme', 'dark');
+    }
+  }
+  // Restore theme on load
+  (function() {
+    const saved = localStorage.getItem('pelTheme');
+    if (saved === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      const btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = '☀️ Day';
+    }
+  })();
+
+  // Quick Scan Toggle
+  function toggleQS() {
+    const body   = document.getElementById('qs-body');
+    const toggle = document.getElementById('qs-toggle');
+    const arrow  = document.getElementById('qs-arrow');
+    const isOpen = body.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen);
+    arrow.textContent = isOpen ? '▲' : '▼';
+    localStorage.setItem('pelQS', isOpen ? 'open' : 'closed');
+  }
+  (function() {
+    const saved = localStorage.getItem('pelQS');
+    if (saved === 'open') {
+      const body   = document.getElementById('qs-body');
+      const toggle = document.getElementById('qs-toggle');
+      const arrow  = document.getElementById('qs-arrow');
+      if (body)   body.classList.add('open');
+      if (toggle) toggle.setAttribute('aria-expanded', 'true');
+      if (arrow)  arrow.textContent = '▲';
+    }
+  })();
+
+  // Highlight Index Auto-Populate
+  document.addEventListener('DOMContentLoaded', () => {
+    const index = document.querySelector('#highlight-index ol');
+    if (!index) return;
+    const items = document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill');
+    items.forEach(el => {
+      const li = document.createElement('li');
+      const text = el.textContent.trim();
+      if (text.length > 0) {
+        li.textContent = text;
+        const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+        li.setAttribute('data-type', type);
+        const labels = {
+          'hl-key': '🔑',
+          'hl-number': '📊',
+          'hl-risk': '⚠️',
+          'hl-catalyst': '🌱',
+          'takeaway-pill': '💊'
+        };
+        const lbl = document.createElement('strong');
+        lbl.textContent = (labels[type] || '') + ' ';
+        li.prepend(lbl);
+        index.appendChild(li);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

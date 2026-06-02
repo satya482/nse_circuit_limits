@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APAR Industries (APARINDS) — NSE Investor Brief + The Ledger · June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --ink: #1A1A2E; --paper: #F7F5F0; --rule: #DDD8CE;
+  --blue: #378ADD; --blue-bg: #EBF4FF;
+  --green: #3B6D11; --green-bg: #E8F3E0;
+  --amber: #BA7517; --amber-bg: #FFF7E0;
+  --teal: #1D9E75; --teal-bg: #E0F5EE;
+  --coral: #D85A30; --coral-bg: #FDF0E8;
+  --purple: #534AB7; --purple-bg: #EEEDFB;
+  --red: #B03020; --red-bg: #FDF0EE;
+  --gray: #6B7280; --gray-light: #F0EDE8;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --mono: 'DM Mono', 'Courier New', monospace;
+  --bg: var(--paper); --text: var(--ink);
+}
+body.dark {
+  --bg: #0F1117; --text: #E8E4DC; --paper: #0F1117; --ink: #E8E4DC;
+  --rule: #2A2A3E; --gray-light: #1A1A2E;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.72;}
+
+/* PRINT */
+@media print {
+  body{font-size:11px;background:white !important;color:#000 !important;}
+  .no-print{display:none !important;}
+  .page-break{page-break-before:always;}
+  section,.card,.chapter-block{break-inside:avoid;}
+  #quick-scan{position:static !important;border-radius:0 !important;margin-bottom:20px;}
+  #quick-scan .qs-toggle{display:none;}
+  #quick-scan .qs-lines{display:block !important;}
+  #highlight-index{display:block !important;}
+  .dark-toggle{display:none;}
+  .masthead{background:#1A1A2E !important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* QUICK SCAN STRIP — always visible for print */
+#quick-scan {
+  position:sticky;top:0;z-index:100;
+  background:#1A1A2E;color:#F0EDE8;
+  border-bottom:3px solid var(--amber);
+  font-family:var(--mono);
+}
+.qs-header{display:flex;align-items:center;justify-content:space-between;padding:8px 20px;}
+.qs-label{font-size:10px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;font-weight:600;}
+.qs-toggle{background:transparent;border:1px solid rgba(255,255,255,0.25);color:#C8C0B0;font-family:var(--mono);font-size:10px;padding:3px 10px;cursor:pointer;border-radius:3px;}
+.qs-lines{display:block;padding:0 20px 10px;}
+.qs-line{font-size:11px;padding:4px 0;border-bottom:1px solid rgba(255,255,255,0.07);color:#C8C0B0;line-height:1.5;}
+.qs-line:last-child{border-bottom:none;}
+.qs-tag{color:var(--amber);margin-right:6px;}
+
+/* DARK TOGGLE */
+.dark-toggle{position:fixed;bottom:20px;right:20px;background:var(--ink);color:var(--paper);border:none;border-radius:50%;width:38px;height:38px;font-size:16px;cursor:pointer;z-index:200;box-shadow:0 2px 8px rgba(0,0,0,0.3);}
+
+/* MASTHEAD */
+.masthead{background:#1A1A2E;color:#F7F5F0;padding:56px 52px 44px;position:relative;overflow:hidden;}
+.masthead::before{content:'';position:absolute;top:0;right:0;width:400px;height:100%;background:repeating-linear-gradient(-45deg,transparent 0,transparent 6px,rgba(255,255,255,0.025) 6px,rgba(255,255,255,0.025) 12px);}
+.mast-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.mast-h1{font-family:var(--serif);font-size:52px;font-weight:700;letter-spacing:-1.5px;line-height:1.05;}
+.mast-sub{font-size:16px;color:#A8A098;margin-top:10px;max-width:600px;font-weight:300;}
+.mast-meta{margin-top:24px;display:flex;gap:20px;flex-wrap:wrap;}
+.meta-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:5px 13px;font-family:var(--mono);font-size:10px;letter-spacing:1px;color:#C8C0B0;}
+.meta-chip.pos{background:rgba(61,109,17,0.25);border-color:var(--teal);color:#88D4B0;}
+.mast-badges{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:4px;font-family:var(--mono);font-size:10px;font-weight:600;}
+.badge-blue{background:rgba(55,138,221,0.2);color:#7BB8F0;border:1px solid rgba(55,138,221,0.3);}
+.badge-green{background:rgba(59,109,17,0.2);color:#88C44A;border:1px solid rgba(59,109,17,0.3);}
+.badge-amber{background:rgba(186,117,23,0.2);color:#F0A830;border:1px solid rgba(186,117,23,0.3);}
+
+/* LAYOUT */
+.content{max-width:900px;margin:0 auto;padding:40px 36px 80px;}
+
+/* CHAPTER HEADERS */
+.ch-header{display:flex;align-items:flex-start;gap:16px;margin:56px 0 20px;padding-bottom:12px;border-bottom:2.5px solid var(--ink);}
+.ch-num{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:700;flex-shrink:0;margin-top:2px;}
+.ch-num.blue{background:var(--blue);color:white;}
+.ch-num.green{background:var(--green);color:white;}
+.ch-num.amber{background:var(--amber);color:white;}
+.ch-num.teal{background:var(--teal);color:white;}
+.ch-num.coral{background:var(--coral);color:white;}
+.ch-num.purple{background:var(--purple);color:white;}
+.ch-num.red{background:var(--red);color:white;}
+.ch-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.ch-title{font-family:var(--serif);font-size:23px;font-weight:700;line-height:1.2;margin-top:2px;}
+
+/* LEAD PARAGRAPHS */
+.lead{font-size:16px;line-height:1.78;color:var(--navy,#1E3A5F);padding:18px 22px;border-radius:0 6px 6px 0;margin-bottom:22px;}
+.lead-blue{border-left:4px solid var(--blue);background:var(--blue-bg);}
+.lead-green{border-left:4px solid var(--green);background:var(--green-bg);}
+.lead-amber{border-left:4px solid var(--amber);background:var(--amber-bg);}
+.lead-teal{border-left:4px solid var(--teal);background:var(--teal-bg);}
+.lead-coral{border-left:4px solid var(--coral);background:var(--coral-bg);}
+.lead-gray{border-left:4px solid var(--gray);background:var(--gray-light);}
+
+/* INLINE HIGHLIGHTS */
+.hl-key{background:#FFF176;padding:0 3px;border-radius:2px;font-weight:600;}
+.hl-number{background:#E3F0FF;padding:0 3px;border-radius:2px;font-family:var(--mono);font-size:0.92em;}
+.hl-risk{background:#FFF3CD;padding:0 3px;border-radius:2px;border-left:3px solid var(--amber);}
+.hl-catalyst{background:#E6F4EA;padding:0 3px;border-radius:2px;border-left:3px solid var(--teal);}
+
+/* TAKEAWAY PILL */
+.takeaway-pill{padding:10px 16px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:500;margin:20px 0;background:rgba(0,0,0,0.04);border-left:4px solid var(--blue);line-height:1.55;}
+
+/* STAT ROWS */
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid var(--rule);}
+.stat-row:last-child{border-bottom:none;}
+.stat-label{font-size:13px;color:var(--gray);}
+.stat-val{font-family:var(--mono);font-size:14px;font-weight:500;}
+.stat-val.pos{color:var(--teal);}
+.stat-val.neg{color:var(--red);}
+.stat-val.amber{color:var(--amber);}
+
+/* CARDS */
+.card{background:white;border:1.5px solid var(--rule);border-radius:8px;padding:20px 22px;margin:14px 0;}
+.card-blue{border-top:3px solid var(--blue);}
+.card-green{border-top:3px solid var(--green);}
+.card-amber{border-top:3px solid var(--amber);}
+.card-teal{border-top:3px solid var(--teal);}
+.card-coral{border-top:3px solid var(--coral);}
+.card-tag{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:7px;}
+.card-title{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:8px;}
+
+/* SEGMENT GRID */
+.seg-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0;}
+@media(max-width:700px){.seg-grid{grid-template-columns:1fr;}}
+.seg-card{border-radius:8px;border:1.5px solid var(--rule);padding:18px;background:white;position:relative;overflow:hidden;}
+.seg-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;}
+.seg-blue::before{background:var(--blue);}
+.seg-green::before{background:var(--green);}
+.seg-amber::before{background:var(--amber);}
+.seg-metric{font-family:var(--mono);font-size:22px;font-weight:600;margin:8px 0 2px;}
+.seg-name{font-size:11px;color:var(--gray);font-family:var(--mono);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.seg-detail{font-size:12.5px;color:var(--gray);line-height:1.55;}
+
+/* PORTER'S TABLE */
+.porter-table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;}
+.porter-table th{background:var(--ink);color:#EEE;padding:9px 12px;text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:0.5px;}
+.porter-table td{padding:10px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.55;}
+.porter-table tr:last-child td{border-bottom:none;}
+.porter-table tr:nth-child(even) td{background:#FAFAF7;}
+.pill{display:inline-block;padding:2px 9px;border-radius:12px;font-family:var(--mono);font-size:10px;font-weight:600;}
+.pill-high{background:#FDF0EE;color:var(--red);}
+.pill-med{background:#FFF7E0;color:var(--amber);}
+.pill-low{background:#E8F3E0;color:var(--green);}
+
+/* DATA TABLE */
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:16px 0;}
+.data-table th{background:var(--ink);color:#EEE;padding:9px 12px;text-align:left;font-family:var(--mono);font-size:10.5px;letter-spacing:0.5px;}
+.data-table td{padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:#FAFAF7;}
+
+/* CAPEX TIMELINE */
+.capex-card{background:white;border:1.5px solid var(--rule);border-radius:8px;overflow:hidden;margin:20px 0;}
+.capex-header{background:var(--blue);color:white;padding:10px 16px;font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+.capex-row{display:grid;grid-template-columns:0.8fr 1fr 1fr 1.2fr 1fr;border-bottom:1px solid var(--rule);}
+.capex-row:last-child{border-bottom:none;}
+.capex-cell{padding:10px 13px;font-size:12px;border-right:1px solid var(--rule);}
+.capex-cell:last-child{border-right:none;}
+.capex-cell .cl{font-family:var(--mono);font-size:9.5px;color:var(--gray);text-transform:uppercase;margin-bottom:3px;}
+.capex-cell .cv{font-weight:600;font-size:13px;}
+.capex-cell .cs{font-size:11px;color:var(--gray);margin-top:2px;}
+.status-ok{color:var(--teal);font-family:var(--mono);font-size:11px;}
+.status-warn{color:var(--amber);font-family:var(--mono);font-size:11px;}
+.status-miss{color:var(--red);font-family:var(--mono);font-size:11px;}
+.status-plan{color:var(--blue);font-family:var(--mono);font-size:11px;}
+@media(max-width:680px){.capex-row{grid-template-columns:1fr 1fr;}.capex-cell{border-right:none;}}
+
+/* RISKS */
+.risk-item{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:flex-start;}
+.risk-item:last-child{border-bottom:none;}
+.risk-icon{font-size:20px;color:var(--amber);flex-shrink:0;margin-top:2px;}
+.risk-title{font-weight:600;font-size:14px;margin-bottom:4px;}
+.risk-body{font-size:13px;color:var(--gray);line-height:1.55;}
+.risk-signal{font-family:var(--mono);font-size:10.5px;color:var(--amber);margin-top:5px;padding:4px 8px;background:var(--amber-bg);border-radius:3px;display:inline-block;}
+
+/* WATCH SIGNALS */
+.watch-item{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);}
+.watch-item:last-child{border-bottom:none;}
+.watch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:5px;}
+.watch-label{font-weight:600;font-size:13.5px;margin-bottom:3px;}
+.watch-body{font-size:13px;color:var(--gray);line-height:1.55;}
+
+/* INSIGHT BOX */
+.insight-box{background:var(--ink);color:#F0EDE8;border-radius:8px;padding:26px 30px;margin:24px 0;}
+.insight-box .label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.insight-box p{color:#D0C8BC;font-size:15px;line-height:1.72;}
+.insight-box strong{color:#F7F5F0;}
+
+/* VERDICT */
+.verdict-box{background:var(--amber-bg);border:2px solid var(--amber);border-radius:8px;padding:26px 30px;margin:36px 0;}
+.verdict-box .label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.verdict-box p{font-size:15px;line-height:1.78;}
+
+/* TWO COLUMN */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:16px 0;}
+@media(max-width:640px){.two-col{grid-template-columns:1fr;}}
+
+/* CHART CONTAINERS */
+.chart-wrap{position:relative;height:220px;margin:16px 0;}
+.chart-label{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;}
+
+/* ─── THE LEDGER SECTION ─── */
+.ledger-divider{border-top:4px solid var(--ink);margin:60px 0 0;padding:0;}
+.ledger-masthead{background:var(--ink);color:#F7F5F0;padding:44px 52px 36px;position:relative;overflow:hidden;}
+.ledger-masthead::after{content:'THE LEDGER';position:absolute;right:30px;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:100px;font-weight:700;color:rgba(255,255,255,0.04);letter-spacing:-3px;white-space:nowrap;}
+.ledger-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.ledger-h2{font-family:var(--serif);font-size:40px;font-weight:700;letter-spacing:-1px;line-height:1.1;}
+.ledger-sub{font-size:14px;color:#A8A098;margin-top:8px;font-weight:300;}
+
+/* TIER BADGE */
+.tier-card{background:white;border:2px solid var(--amber);border-radius:8px;padding:18px 22px;margin:24px 0;display:flex;align-items:flex-start;gap:18px;}
+.tier-badge{min-width:64px;height:64px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:36px;font-weight:700;flex-shrink:0;}
+.tier-b{background:var(--amber-bg);color:var(--amber);}
+.tier-info .ti-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.tier-info .ti-title{font-size:18px;font-weight:600;margin:4px 0;}
+.tier-info .ti-desc{font-size:13px;color:var(--gray);line-height:1.55;}
+
+/* REDFLAG CARDS */
+.redflag-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0;}
+@media(max-width:680px){.redflag-grid{grid-template-columns:1fr;}}
+.redflag-card{border:1px solid var(--rule);border-radius:6px;padding:14px 16px;background:white;}
+.redflag-card.capex{border-left:3px solid var(--coral);}
+.redflag-card.margin{border-left:3px solid var(--green);}
+.redflag-card.capital{border-left:3px solid var(--blue);}
+.redflag-card.warn{border-left:3px solid var(--amber);}
+.redflag-name{font-family:var(--mono);font-size:11.5px;font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:5px;}
+.redflag-what{font-size:12.5px;color:#2A2A3A;margin-bottom:5px;line-height:1.5;}
+.redflag-signal{font-size:11px;color:var(--gray);font-style:italic;}
+
+/* LEDGER CHAIN */
+.chain-flow{display:flex;align-items:stretch;gap:0;margin:22px 0;overflow-x:auto;}
+.chain-node{flex:1;min-width:100px;background:white;border:1.5px solid var(--rule);padding:11px 9px;text-align:center;position:relative;}
+.chain-node:first-child{border-radius:6px 0 0 6px;}
+.chain-node:last-child{border-radius:0 6px 6px 0;}
+.chain-node::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:14px;color:var(--amber);z-index:2;background:var(--bg);padding:0 2px;}
+.chain-node:last-child::after{display:none;}
+.chain-num{font-family:var(--mono);font-size:9px;color:var(--gray);margin-bottom:3px;}
+.chain-label{font-size:11.5px;font-weight:600;color:var(--ink);line-height:1.3;}
+.chain-detail{font-size:10.5px;color:var(--gray);margin-top:3px;line-height:1.3;}
+.chain-status-ok{border-top:3px solid var(--teal);}
+.chain-status-warn{border-top:3px solid var(--amber);}
+.chain-status-miss{border-top:3px solid var(--red);}
+
+/* SCORE TABLE */
+.score-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--rule);}
+.score-row:last-child{border-bottom:none;}
+.score-dim{font-weight:600;font-size:13.5px;}
+.score-weight{font-family:var(--mono);font-size:12px;color:var(--gray);}
+.score-val{font-family:var(--mono);font-size:13px;}
+
+/* HIGHLIGHT INDEX — always expanded for print */
+#highlight-index{margin:48px 0 20px;background:white;border:2px solid var(--amber);border-radius:8px;padding:22px 26px;}
+#highlight-index .hi-title{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:14px;color:var(--ink);}
+#highlight-index ol{padding-left:20px;}
+#highlight-index ol li{padding:5px 0;font-size:12.5px;line-height:1.55;border-bottom:1px dotted var(--rule);color:#2A2A3A;}
+#highlight-index ol li:last-child{border-bottom:none;}
+#highlight-index ol li[data-type="hl-key"]{color:var(--ink);font-weight:600;}
+#highlight-index ol li[data-type="hl-number"]{font-family:var(--mono);color:var(--blue);}
+#highlight-index ol li[data-type="hl-risk"]{color:var(--amber);}
+#highlight-index ol li[data-type="hl-catalyst"]{color:var(--teal);}
+#highlight-index ol li[data-type="takeaway-pill"]{color:var(--purple);font-style:italic;}
+
+/* FOOTER */
+footer{background:var(--ink);color:#6B7280;padding:22px 40px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;}
+
+/* MISC */
+p{margin-bottom:14px;line-height:1.72;}
+p:last-child{margin-bottom:0;}
+h3{font-family:var(--serif);font-size:17px;font-weight:700;margin:22px 0 10px;}
+.divider{border:none;border-top:1.5px solid var(--rule);margin:32px 0;}
+.small-label{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);margin-bottom:7px;}
+blockquote{border-left:3px solid var(--purple);padding:11px 18px;background:var(--purple-bg,#EEEDFB);border-radius:0 4px 4px 0;margin:18px 0;font-style:italic;color:var(--purple);font-size:13.5px;line-height:1.65;}
+strong{font-weight:600;}
+</style>
+</head>
+<body>
+
+<!-- QUICK-SCAN STRIP — always expanded; printer-friendly block -->
+<div id="quick-scan" role="region" aria-label="Quick Scan Summary">
+  <div class="qs-header">
+    <span class="qs-label">⚡ Quick Scan — APARINDS · June 2026</span>
+    <button class="qs-toggle no-print" onclick="toggleQS()" id="qs-btn" aria-expanded="true">▼ Collapse</button>
+  </div>
+  <div class="qs-lines" id="qs-body">
+    <div class="qs-line"><span class="qs-tag">⚡ CONTEXT</span> India's ₹9.15 lakh crore T&D capex by 2032; PGCIL alone targeting ₹1.08 lakh crore FY26–28 — the largest conductor demand upcycle in India's history.</div>
+    <div class="qs-line"><span class="qs-tag">🏭 MODEL</span> Conductor volumes (world's #1 manufacturer) cash-fund cable premiumisation; transformer oils command 45% India market share providing sticky annuity income across all grid cycles.</div>
+    <div class="qs-line"><span class="qs-tag">🎯 INSIGHT</span> APAR's conductor crown is not the prize — it is the cash engine whose margins subsidise the cable factory buildout that will determine the stock's next valuation multiple.</div>
+    <div class="qs-line"><span class="qs-tag">📊 NUMBERS</span> FY26 revenue ₹22,902 Cr (+23.3%); PAT ₹977 Cr (+19%, adj. +27%); conductor EBITDA/MT ₹43,012 (+17.3% YoY); D/E a fortress 0.10x.</div>
+    <div class="qs-line"><span class="qs-tag">🚧 TOP RISK</span> US Section 232 tariffs collapsed Q3 FY26 US exports by 65.4% YoY; FY27 US trajectory unclear; electrical grid equipment at temporary 15% tariff through 2027 only.</div>
+    <div class="qs-line"><span class="qs-tag">👁 WATCH</span> Cable segment revenue vs ₹10,000 Cr FY29 target; and whether ₹1,500 Cr FY27 capex is actually deployed at pace (FY26 was 57% vs plan — Ledger flag active).</div>
+    <div class="qs-line"><span class="qs-tag">💡 VERDICT</span> Mid-chapter compounder — conductor thesis fully validated; cable ₹10,000 Cr execution just started; market pricing at ~52x PE already assumes successful transition.</div>
+    <div class="qs-line"><span class="qs-tag">🗒 MGMT</span> Tier B · Active Ledger flags: Capex slow pacing (FY26 57% of plan), margin floor drift (9% vs 10-11% target), Cable CEO turnover (Dec 2025).</div>
+  </div>
+</div>
+
+<!-- DARK MODE TOGGLE -->
+<button class="dark-toggle no-print" onclick="toggleDark()" aria-label="Toggle dark mode">🌙</button>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- NSE INVESTOR BRIEF — MASTHEAD -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="mast-eyebrow">NSE · APARINDS · ELECTRICAL EQUIPMENT · INVESTOR BRIEF · JUNE 2, 2026</div>
+  <h1 class="mast-h1">APAR Industries</h1>
+  <div class="mast-sub">World's Largest Conductor Manufacturer · India's #1 Transformer Oil Producer · Powering the Grid Supercycle</div>
+  <div class="mast-meta">
+    <span class="meta-chip">NSE: APARINDS</span>
+    <span class="meta-chip">BSE: 532259</span>
+    <span class="meta-chip">MKT CAP ≈ ₹51,500 Cr</span>
+    <span class="meta-chip">FY26 REV ₹22,902 Cr</span>
+    <span class="meta-chip">CMD: KUSHAL DESAI</span>
+  </div>
+  <div class="mast-badges">
+    <span class="badge badge-blue">⚡ Conductors (55%)</span>
+    <span class="badge badge-amber">🛢 Specialty Oils (23%)</span>
+    <span class="badge badge-green">🔌 Cables (27%)</span>
+    <span class="meta-chip pos">EXPORTS 100+ COUNTRIES</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 1: CONTEXT -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num blue">1</div>
+  <div>
+    <div class="ch-eyebrow">Macro Context</div>
+    <div class="ch-title">The Grid Supercycle — And Why APAR Is at Its Centre</div>
+  </div>
+</div>
+
+<div class="lead lead-blue">
+  India has committed ₹9.15 lakh crore (₹9.15 trillion) to rebuilding its power transmission grid by 2032 — a spend that dwarfs any prior infrastructure programme in Indian electricity history. Every transmission line built in India requires aluminium conductors. APAR makes more of them than any other company on the planet.
+</div>
+
+<p>India's renewable ambitions are not merely aspirational — they are creating a physical infrastructure bottleneck. With 258 GW of renewable capacity installed as of December 2025, and a target of 500 GW by 2030, the country needs to move massive amounts of clean power from solar-rich deserts and wind-swept coasts to power-hungry cities. This requires transmission lines, and transmission lines require conductors. <span class="hl-catalyst">Power Grid Corporation of India (PGCIL) alone has planned capital expenditure of over ₹1.08 lakh crore across FY26–FY28 — ₹28,000 crore in FY26 growing to ₹45,000 crore by FY28</span>, making this the single fastest ramp of transmission investment in India's electricity history.</p>
+
+<p>The sector context extends beyond India. Globally, <strong>the transmission and distribution market was valued at $330 billion in 2023 and is projected to grow at 3.9% CAGR through 2030</strong>, with Asia-Pacific accounting for the largest single regional spend. India's domestic cables market — currently around $21 billion in FY25 — is growing at approximately 9% CAGR driven by data centre expansion, 5G rollout, railway electrification, and industrial demand. India's highest-ever annual renewable capacity addition in 2025 — nearly 38 GW of solar and 6.3 GW of wind — means grid infrastructure spending is not a future promise but a present reality demanding APAR's products today.</p>
+
+<p>The timing is additionally compelling because <span class="hl-number">substation additions grew 55% YoY in April–November 2025, even as transmission line additions lagged plan by about 15%</span>, signalling a catch-up in physical execution that should drive conductor order books upward through FY27 and FY28.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue);">
+  India's ₹9.15-trillion T&D mandate is the largest conductor demand upcycle in the country's history; APAR's position at the top of the global conductor food chain is structural, not cyclical.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num blue">2</div>
+  <div>
+    <div class="ch-eyebrow">Business Model</div>
+    <div class="ch-title">Three Businesses, One Grid — A Complementary Flywheel</div>
+  </div>
+</div>
+
+<div class="lead lead-blue">
+  APAR does not make one grid product — it makes three distinct products that are all required by the same customer (an electricity utility or industrial developer) at different points in the grid's lifecycle. This is the simplest version of why APAR is structurally stickier than it looks from the revenue mix alone.
+</div>
+
+<p>In plain English: APAR makes the <strong>wires that transmit power</strong> (conductors), the <strong>oil that insulates transformers</strong> (specialty oils), and the <strong>cables that distribute power</strong> from substations to end-users (cables). These three products serve a single buyer — the electricity infrastructure ecosystem — with different switching costs, margin profiles, and growth trajectories.</p>
+
+<div class="seg-grid">
+  <div class="seg-card seg-blue">
+    <div class="seg-name">Conductors</div>
+    <div class="seg-metric" style="color:var(--blue);">₹12,712 Cr</div>
+    <div class="seg-detail">World's #1 aluminium & alloy conductor maker. FY26 revenue +32.7% YoY. Premium HTLS/AL-59 mix at 45.8%. EBITDA/MT ₹43,012 (+17% YoY). Pending order book ₹7,671 Cr.</div>
+  </div>
+  <div class="seg-card seg-amber">
+    <div class="seg-name">Specialty Oils (TSO)</div>
+    <div class="seg-metric" style="color:var(--amber);">₹5,373 Cr</div>
+    <div class="seg-detail">India's #1 transformer oil maker; World's #3. ~45% India domestic market share. 350+ grades, 120+ countries. FY26 volume 631,985 KL (+9% YoY). Steady annuity income, crude-linked.</div>
+  </div>
+  <div class="seg-card seg-green">
+    <div class="seg-name">Cables</div>
+    <div class="seg-metric" style="color:var(--green);">₹6,220 Cr</div>
+    <div class="seg-detail">India's #1 exporter of renewable energy cables. #5 in India's organised sector. Revenue +25.8% FY26. US market surged +55.2% FY26. Target: ₹10,000 Cr by FY29. Pending OB ₹1,900 Cr.</div>
+  </div>
+</div>
+
+<p>The business model has a natural flywheel: conductor volumes (high, commodity-linked) generate consistent EBITDA that funds the higher-capex cable manufacturing buildout, which in turn earns higher-margin contracts from data centre, solar farm, and industrial customers who cannot tolerate delivery failure. The specialty oils business, meanwhile, provides counter-cyclical stability — transformer oil demand grows whenever transformers are installed, which happens regardless of whether the grid is being built for renewables or demand growth.</p>
+
+<p>What makes customers sticky? In conductors, each utility has its own technical specifications and material standards — once APAR is qualified to supply PGCIL or a state utility, competitors face a 12–24 month re-qualification process. In specialty oils, APAR's 400+ product grades and position as a dominant domestic supplier creates logistics stickiness that purely import-reliant alternatives cannot match. In cables, complex project specifications and the growing requirement for domestic manufacturing content under public procurement rules further entrench APAR's position.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue);">
+  Three products, one buyer ecosystem: conductors generate cash, oils provide annuity, cables are the margin re-rating vehicle — each reinforces the others' moat.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 2B: PORTER'S 5 FORCES -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num blue">2B</div>
+  <div>
+    <div class="ch-eyebrow">Competitive Structure</div>
+    <div class="ch-title">Porter's Five Forces — The Structural Pressures on APAR's Margins</div>
+  </div>
+</div>
+
+<table class="porter-table" role="table" aria-label="Porter's Five Forces Analysis for APAR Industries">
+  <thead>
+    <tr>
+      <th style="width:20%;">Force</th>
+      <th style="width:12%;">Rating</th>
+      <th>APAR-Specific Assessment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="pill pill-med">Medium</span></td>
+      <td>Conductor market globally fragmented (top-5 players hold ~15% share); Chinese players (Baotou, Hengtong) compete on price in non-US markets, pushing export volumes down 5.9% in Q3 FY26. However, APAR's premium HTLS/AL-59 mix and utility certifications create a capability moat that protects EBITDA/MT even when volume is contested. Domestically, KEI Industries and Polycab are cable rivals but not conductor competitors.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="pill pill-med">Medium</span></td>
+      <td>Utility buyers (PGCIL, state discoms, state transcos) are large and use tender-based competitive procurement — they have genuine leverage on price. However, buyer power is moderated by the technical certification barrier (once APAR is a qualified vendor for 765kV PGCIL conductors, alternatives are limited), and by the fact that no single buyer is dominant enough to determine APAR's pricing. Top 5 utility relationships are deep but diversified across geographies.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="pill pill-high">High</span></td>
+      <td>Aluminium (primary input for conductors), copper (cable inputs), and crude/base oil (transformer oil feedstock) are globally traded commodities with no single-source option. Aluminium price spikes directly compress gross margins unless pass-through contracts are in place. Management acknowledges that cost pass-through is not perfect — commodity volatility is the single most frequent explanation for margin compression quarters. Section 232 tariffs also raise aluminium costs for US customers.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="pill pill-low">Low</span></td>
+      <td>Building a competitive conductor plant from scratch requires ₹300–500 Cr capex, 2–3 years of customer qualification, and a global logistics/storage network. APAR's 65+ years of utility relationships and 140+ country export footprint represent accumulated trust that cannot be replicated quickly. In specialty oils, APAR's 350-grade product portfolio and UAE manufacturing base create further barriers. The specialty cable certification process for data centre and renewable applications takes 12–18 months even for well-funded competitors.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="pill pill-low">Low</span></td>
+      <td>For conductors, High-Temperature Low-Sag (HTLS) conductors are the primary substitute for conventional ACSR — and APAR already manufactures them, turning the substitution risk into a premiumisation opportunity. The 45.8% premium product mix in FY26 shows APAR is capturing the substitution rather than being displaced by it. For transformer oils, the long-term risk is the EV transition reducing transformer demand, but India's grid build cycle ensures 10+ years of structural demand. Underground cables are a partial substitute for overhead conductors in urban settings, and APAR makes these too.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card card-amber" style="margin-top:16px;">
+  <div class="card-tag" style="color:var(--amber);">Structural Synthesis</div>
+  <p style="margin:0;font-size:13.5px;"><strong>Supplier power</strong> (commodity input price volatility with imperfect pass-through) and <strong>buyer power</strong> (tender-based utility procurement at scale) are the two forces most structurally constraining APAR's EBITDA margin — creating the 8.5–10% band that management has so far been unable to durably exceed. The threat of new entrants and substitutes are well-managed by APAR's product range and relationships. Rivalry is manageable domestically but intensifying in export markets from Chinese competition.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber);">
+  Commodity inputs and utility tender discipline create a structural 9% margin ceiling; breaking to 10–11% requires premium cable mix to reach 30%+ of revenue.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 3: VERTICAL STORIES -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num teal">3</div>
+  <div>
+    <div class="ch-eyebrow">Vertical Stories</div>
+    <div class="ch-title">Three Businesses at Three Different Points in Their Growth Arc</div>
+  </div>
+</div>
+
+<div class="card card-blue" style="margin-bottom:14px;">
+  <div class="card-tag" style="color:var(--blue);">⚡ CONDUCTORS — Running at Full Speed</div>
+  <div class="card-title">The World #1 That Still Has Runway</div>
+  <p>The conductor business is APAR's engine room — and in FY26 it fired on every cylinder. Revenue grew 32.7% to ₹12,712 Cr, volume reached 241,788 metric tonnes (+8.6%), and crucially, <span class="hl-number">EBITDA per tonne climbed to ₹43,012 from ₹36,683 — a 17.3% improvement that reflects APAR's deliberate shift toward premium conductors</span>. Premium products (HTLS, AL-59 high-efficiency types) now account for 45.8% of conductor volume, up from 40.6% a year ago. This is not just higher revenue per tonne — it is fundamentally more defensible business because premium conductors require utility-specific engineering and technical approval that commodity ACSR does not.</p>
+  <p>The US market has been APAR's most exciting conductor export story — US revenue grew 83% YoY in Q1 FY26 and 55.2% for the full FY26 year, before the Section 232 tariff shock. The underlying US demand for Indian conductors is structural: America needs to upgrade an ageing grid, Indian suppliers offer quality and competitive pricing, and APAR is the most certified Indian exporter. Section 232 created a pause, but not a reversal. New order inflows in FY26 reached ₹11,450 Cr (+24.2% YoY), and the pending order book of ₹7,671 Cr (38.9% export) gives 9+ months of forward visibility.</p>
+  <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--gray);">External catalyst: PGCIL's ₹1.08 lakh crore FY26-28 capex + NEP 105,000 circuit-km line addition target by 2032</div>
+</div>
+
+<div class="card card-amber" style="margin-bottom:14px;">
+  <div class="card-tag" style="color:var(--amber);">🛢 SPECIALTY OILS — The Annuity Engine</div>
+  <div class="card-title">The Quiet Compounder With a Global Footprint</div>
+  <p>The transformer oil business is APAR's least flashy division but arguably its most strategically valuable franchise. With roughly 45% domestic market share, 60% share specifically in power transformer oil (the high-voltage segment), and the ability to supply over 350 grades to 120+ countries, this is a business built on depth that competitors cannot replicate quickly. <span class="hl-key">A utility planning a transformer for a 765 kV substation cannot switch transformer oil suppliers mid-project — the oil specification is built into the transformer's insulation design, making APAR effectively a mandated supplier for the transformer's lifetime</span>.</p>
+  <p>FY26 volumes grew 9% to 631,985 KL, with transformer oil volume up 10.6% in Q3. However, EBITDA per KL slipped to ₹5,942 from ₹6,145 — reflecting softer realisations rather than demand weakness. The division's strategic expansion includes a new storage terminal at JNPT (Jawaharlal Nehru Port Trust) — a ₹200 Cr investment that dramatically improves bulk export logistics for Middle East, Africa, and Southeast Asian markets where APAR has an existing UAE manufacturing subsidiary (APAR Petroleum Specialties FZE). Automotive and industrial lubricant sub-segments also growing at 14-16% YoY.</p>
+  <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--gray);">External catalyst: India transformer manufacturing growing to accommodate 595,000 MVA new substation capacity (NEP target); global transformer oil market tied to power infrastructure spending</div>
+</div>
+
+<div class="card card-green" style="margin-bottom:14px;">
+  <div class="card-tag" style="color:var(--green);">🔌 CABLES — The Margin Re-Rating Vehicle</div>
+  <div class="card-title">From ₹6,220 Cr to ₹10,000 Cr: The Make-or-Break Bet</div>
+  <p>The cable business is where APAR's future valuation premium will be won or lost. FY26 revenue reached ₹6,220 Cr (+25.8% YoY), making cables the company's fastest-growing division as a contributor to total revenue. India's cable market, at ~$21 Bn in FY25 growing at 9% CAGR, is itself attractive. But APAR's ambition is not just to grow with the market — it is to premiumise into specialty and renewable cables where margins approach 10% and customers are stickier (data centres, solar farms, and EV charging infrastructure do not switch cable suppliers mid-project).</p>
+  <p><span class="hl-catalyst">Management has guided ₹10,000 Cr cable revenue by FY29, backed by an ₹800 Cr investment in a new cable manufacturing facility that management says will unlock ₹10,000 Cr of revenue-generating capacity</span>. The new CEO, Chandrashekhar Shrotri (formerly Segment CEO at Siemens for India, ASEAN &amp; Africa), brings exactly the kind of global execution muscle needed to capture export contracts from data centre developers and utility-scale solar investors. A pending order book of ₹1,900 Cr provides visible near-term revenue.</p>
+  <div style="margin-top:10px;font-family:var(--mono);font-size:11px;color:var(--gray);">External catalyst: India cable market ~$21 Bn growing 9% CAGR; data centre capex surge; 5G rollout; EV charging infrastructure; US grid modernisation (subject to tariff resolution)</div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--teal);">
+  Conductors are running; oils are compounding; cables are the bet — the FY29 ₹10,000 Cr cable target requires tripling a business that took 20 years to reach ₹6,000 Cr.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num amber">4</div>
+  <div>
+    <div class="ch-eyebrow">Strategic Insight</div>
+    <div class="ch-title">The Conductor Crown Funds the Cable Coronation</div>
+  </div>
+</div>
+
+<div class="insight-box" role="note" aria-label="Core strategic insight">
+  <div class="label">🎯 THE ONE THING TO UNDERSTAND ABOUT APAR</div>
+  <p>Most investors value APAR as a conductor company with a cable division. That framing is structurally wrong. <strong>APAR is a cable company using conductor profits as venture capital.</strong></p>
+  <p style="margin-top:12px;">The conductor business — world's #1 by volume, generating ₹1,040 Cr of EBITDA in FY26 — is not the long-term prize. It is the funding mechanism. Every ₹100 of conductor EBITDA that APAR generates subsidises the ₹800 Cr cable factory being built on a 66-acre greenfield plot. Every quarter of strong conductor cash flow is a quarter where APAR does not need to dilute equity or take on meaningful debt to fund its cable ambitions. The balance sheet — D/E of 0.10x — is not caution; it is optionality preserved deliberately so that the cable business can be built on APAR's terms, not a banker's.</p>
+  <p style="margin-top:12px;">Why does this matter for valuation? Because cable companies command 10-12% EBITDA margins vs. conductor companies at 7-8%. As cables reach 30-35% of APAR's revenue (vs 27% now), blended margins structurally re-rate. The market is already pricing some of this — APAR at 52x PE is not a conductor multiple (KEC International trades at 20x). But <strong>whether APAR earns its current valuation depends entirely on executing the cable buildout on time and at margin</strong>. The conductor crown is beautiful. The cable factory is the destination.</p>
+</div>
+
+<p>There is a second non-obvious insight embedded in APAR's transformer oil position. The company commands 45% of India's domestic market for transformer oil. This is not just revenue — it is information. Because APAR supplies transformer oil to utilities and OEMs across every major power project, APAR's oil salesforce effectively sees India's grid investment pipeline 12–18 months before it becomes public news. This market intelligence feeds directly into conductor and cable order positioning, giving APAR a systematic lead-time advantage that competitors without an oil business cannot replicate.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber);">
+  APAR's conductor dominance is the flywheel; cable premiumisation is the destination; transformer oil market intelligence is the unfair information advantage few investors recognise.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 5: FINANCIALS + CAPEX TIMELINE -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num green">5</div>
+  <div>
+    <div class="ch-eyebrow">Financial Scorecard</div>
+    <div class="ch-title">The Numbers in Context — Record Year With an Asterisk</div>
+  </div>
+</div>
+
+<div class="lead lead-green">
+  FY26 was APAR's best year by revenue and PAT in the company's 66-year history. But the headline numbers carry an asterisk: a ₹33 Cr exceptional charge (wage code provision, MTM, legal), and a Q3 that showed the vulnerability of US-export-dependent quarters to tariff shocks. Adjusted for one-offs, the story is cleaner than the reported numbers suggest — but the margin thesis still has ground to cover.
+</div>
+
+<h3>Full Year FY26 — Consolidated P&amp;L Snapshot</h3>
+<div class="two-col">
+  <div class="card">
+    <div class="stat-row"><span class="stat-label">Revenue (FY26)</span><span class="stat-val pos">₹22,902 Cr +23.3% YoY</span></div>
+    <div class="stat-row"><span class="stat-label">EBITDA (FY26)</span><span class="stat-val pos">₹2,067 Cr +23.0% YoY</span></div>
+    <div class="stat-row"><span class="stat-label">EBITDA Margin</span><span class="stat-val amber">9.0% (flat vs FY25)</span></div>
+    <div class="stat-row"><span class="stat-label">PAT (Reported)</span><span class="stat-val pos">₹977 Cr +19.0% YoY</span></div>
+    <div class="stat-row"><span class="stat-label">PAT (Adj. excl. one-off)</span><span class="stat-val pos">~₹1,010 Cr +27% YoY</span></div>
+    <div class="stat-row"><span class="stat-label">PAT Margin</span><span class="stat-val">4.3%</span></div>
+    <div class="stat-row"><span class="stat-label">Export Revenue Mix</span><span class="stat-val">29.8% of total</span></div>
+    <div class="stat-row"><span class="stat-label">Dividend (FY26)</span><span class="stat-val pos">₹60 / share</span></div>
+  </div>
+  <div class="card">
+    <div class="stat-row"><span class="stat-label">ROCE (FY25, latest full-year)</span><span class="stat-val pos">~34%</span></div>
+    <div class="stat-row"><span class="stat-label">Debt-to-Equity</span><span class="stat-val pos">~0.10x (fortress)</span></div>
+    <div class="stat-row"><span class="stat-label">Debt-to-EBITDA</span><span class="stat-val pos">~0.48x</span></div>
+    <div class="stat-row"><span class="stat-label">CFO (FY25)</span><span class="stat-val pos">₹1,290 Cr vs -₹283 Cr FY24</span></div>
+    <div class="stat-row"><span class="stat-label">Promoter Holding</span><span class="stat-val pos">57.8% (zero pledge)</span></div>
+    <div class="stat-row"><span class="stat-label">Conductor OB</span><span class="stat-val pos">₹7,671 Cr (38.9% export)</span></div>
+    <div class="stat-row"><span class="stat-label">Cable OB</span><span class="stat-val pos">₹1,900 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">New conductor order inflow FY26</span><span class="stat-val pos">₹11,450 Cr +24.2% YoY</span></div>
+  </div>
+</div>
+
+<h3>Revenue Trajectory (FY24–FY26)</h3>
+<div class="card">
+  <div class="chart-label">Consolidated Revenue &amp; PAT — ₹ Crore</div>
+  <div class="chart-wrap">
+    <canvas id="revChart" aria-label="Revenue and PAT chart for APAR Industries FY24 to FY26"></canvas>
+  </div>
+</div>
+
+<h3>Segment Performance — FY26</h3>
+<table class="data-table" aria-label="Segment performance table">
+  <thead>
+    <tr><th>Segment</th><th>FY26 Revenue</th><th>YoY Growth</th><th>Key Metric</th><th>Trend</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Conductors</td><td>₹12,712 Cr</td><td>+32.7%</td><td>EBITDA/MT ₹43,012 (+17.3%)</td><td style="color:var(--teal);">↑ Premium mix expanding</td></tr>
+    <tr><td>Specialty Oils (TSO)</td><td>₹5,373 Cr</td><td>+5.6%</td><td>Volume 631,985 KL (+9%)</td><td style="color:var(--amber);">→ Volume up, realisation softening</td></tr>
+    <tr><td>Cables</td><td>₹6,220 Cr</td><td>+25.8%</td><td>US Rev +55.2% FY26; OB ₹1,900 Cr</td><td style="color:var(--teal);">↑ Scale-up phase</td></tr>
+  </tbody>
+</table>
+
+<h3>Valuation — What Is the Market Pricing In?</h3>
+<div class="card">
+  <div class="stat-row"><span class="stat-label">Market Cap (Jun 2026)</span><span class="stat-val">~₹51,500 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">APAR Trailing PE</span><span class="stat-val amber">~52x</span></div>
+  <div class="stat-row"><span class="stat-label">Polycab India PE</span><span class="stat-val">~45x</span></div>
+  <div class="stat-row"><span class="stat-label">KEI Industries PE</span><span class="stat-val">~48x</span></div>
+  <div class="stat-row"><span class="stat-label">KEC International PE</span><span class="stat-val">~21x (EPC, not pure-play)</span></div>
+  <div class="stat-row"><span class="stat-label">P/Book</span><span class="stat-val">~9.5x</span></div>
+</div>
+<p style="margin-top:12px;font-size:13.5px;">At 52x PE, APAR is priced slightly at a premium to cable peers Polycab (45x) and KEI (48x). The premium is partially justified by APAR's unique conductor #1 global position and the US export optionality — but it also implies the market is fully pricing the cable ₹10,000 Cr FY29 target as base case, not bull case. <span class="hl-number">A cable revenue miss — even 15-20% below target — could compress the multiple toward the Polycab range, representing ~15% downside from current levels</span>.</p>
+
+<hr class="divider">
+<h3 style="color:var(--blue);">Capex Timeline — Where Is the Money Going?</h3>
+
+<div class="capex-card" role="table" aria-label="Capex timeline card">
+  <div class="capex-header">📍 APAR INDUSTRIES — CAPEX TIMELINE (FY24–FY27E)</div>
+
+  <div class="capex-row" style="background:var(--gray-light);font-family:var(--mono);font-size:10.5px;letter-spacing:0.5px;color:var(--gray);">
+    <div class="capex-cell"><div class="cl">Year</div></div>
+    <div class="capex-cell"><div class="cl">Capex Spent</div></div>
+    <div class="capex-cell"><div class="cl">% of Revenue</div></div>
+    <div class="capex-cell"><div class="cl">Key Project / Milestone</div></div>
+    <div class="capex-cell"><div class="cl">Status</div></div>
+  </div>
+
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cv">FY24</div></div>
+    <div class="capex-cell"><div class="cv">~₹300 Cr</div><div class="cs">Maintenance + CTC expansion</div></div>
+    <div class="capex-cell"><div class="cv">~1.9%</div><div class="cs">Harvesting phase</div></div>
+    <div class="capex-cell"><div class="cv">CTC capacity 3x to 20,490 MT/yr (Q3 FY26)</div><div class="cs">Continuous Transposed Conductors for power transformers</div></div>
+    <div class="capex-cell"><div class="status-ok">● DELIVERED</div></div>
+  </div>
+
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cv">FY25</div></div>
+    <div class="capex-cell"><div class="cv">~₹500 Cr</div><div class="cs">Ramping investment</div></div>
+    <div class="capex-cell"><div class="cv">~2.7%</div><div class="cs">Investment cycle begins</div></div>
+    <div class="capex-cell"><div class="cv">Cable expansion groundwork; conductor upgrades</div><div class="cs">66-acre greenfield land acquired and developed</div></div>
+    <div class="capex-cell"><div class="status-ok">● ON TRACK</div></div>
+  </div>
+
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cv">FY26 (Actual)</div></div>
+    <div class="capex-cell"><div class="cv">₹740 Cr ⚠</div><div class="cs">vs ₹1,300 Cr guided</div></div>
+    <div class="capex-cell"><div class="cv">3.2%</div><div class="cs">57% of plan deployed</div></div>
+    <div class="capex-cell"><div class="cv">Cable factory construction; Conductor +10% capacity (25,000 MT/yr)</div><div class="cs">JNPT storage terminal initiated; cable lines being installed</div></div>
+    <div class="capex-cell"><div class="status-warn">⚠ SLOW PACING</div></div>
+  </div>
+
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cv">FY27E (Guided)</div></div>
+    <div class="capex-cell"><div class="cv">₹1,500 Cr</div><div class="cs">Stepped up significantly</div></div>
+    <div class="capex-cell"><div class="cv">~6% (est)</div><div class="cs">Peak investment year</div></div>
+    <div class="capex-cell"><div class="cv">Cable factory commissioning + production line ramp; JNPT terminal operationalised</div><div class="cs">₹800 Cr cable facility unlocks ₹10,000 Cr revenue capacity target (management guidance)</div></div>
+    <div class="capex-cell"><div class="status-plan">◎ GUIDED</div></div>
+  </div>
+</div>
+
+<div class="two-col" style="margin-top:14px;">
+  <div class="card" style="border-left:3px solid var(--teal);">
+    <div class="small-label">Funding Source</div>
+    <p style="font-size:13px;margin-top:8px;">Internal accruals remain the primary funding source — CFO of ₹1,290 Cr in FY25 and likely ₹1,400–1,600 Cr in FY26. FY27 capex of ₹1,500 Cr is comfortably within CFO range; no equity dilution required. Balance sheet confidence signal: D/E at 0.10x shows no leverage pressure. Some term loans possible for the cable factory but management has explicitly stated "no equity dilution" — a trackable Ledger claim.</p>
+  </div>
+  <div class="card" style="border-left:3px solid var(--amber);">
+    <div class="small-label">Red Flag Check</div>
+    <p style="font-size:13px;margin-top:8px;"><span class="hl-risk">FY26 capex was 57% of the ₹1,300 Cr plan — a classic Ledger "slow pacing" signal.</span> The jump from ₹740 Cr actual to ₹1,500 Cr guidance for FY27 is ambitious but not implausible if construction accelerates. The risk is that another year of underspending delays cable commissioning, pushing the ₹10,000 Cr FY29 target to FY30 or beyond. Cable order book of only ₹1,900 Cr vs the target run-rate needed (₹2,500+ Cr/quarter by FY29) also warrants watching.</p>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--green);">
+  FY26 capex at ₹740 Cr (57% of plan) is the key monitoring flag; FY27's ₹1,500 Cr deployment pace will determine whether the cable ₹10,000 Cr FY29 target is achievable or needs a revision.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 6: RISK REGISTER -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num coral">6</div>
+  <div>
+    <div class="ch-eyebrow">Risk Register</div>
+    <div class="ch-title">Five Specific Risks — With Their Measurable Signals</div>
+  </div>
+</div>
+
+<div role="list" aria-label="Risk register">
+
+  <div class="risk-item" role="listitem">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-title">1. US Section 232 Tariff Escalation — The Export Cliff Risk</div>
+      <div class="risk-body">Electrical conductors now face a 25% Section 232 tariff on full customs value in the US market (April 2026 proclamation). Electrical grid equipment has a temporary 15% rate through 2027. In Q3 FY26, this collapsed US conductor exports by 65.4% YoY, wiping ₹400+ Cr of quarterly revenue in a single quarter. The risk is that the 15% temporary rate on grid equipment becomes 25% post-2027, or that a Section 301 action targets Indian cables specifically. Given APAR's 55% FY26 US revenue growth, any permanent tariff escalation would be material — potentially reducing FY27 cable exports by ₹500–800 Cr versus the unhedged scenario.</div>
+      <div class="risk-signal">📡 Watch signal: Any US trade action announcement on electrical equipment from India; quarterly US revenue as % of APAR's cable segment revenue.</div>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-title">2. Commodity Price Spike — Aluminium and Copper Margin Compression</div>
+      <div class="risk-body"><span class="hl-risk">Aluminium is ~60-70% of conductor manufacturing cost; copper is a primary input for cables. Both are globally traded metals with no single-source alternatives and imperfect pass-through to utility customers.</span> A sharp aluminium price spike (as occurred in 2021-22) can compress EBITDA margins by 200-300 bps in a single quarter even with pass-through contracts, because of timing lags between input cost recognition and customer billing. This is the structural constraint identified in the Porter's analysis — and it is why APAR's blended EBITDA margin has been stuck at 9% despite 23%+ revenue growth.</div>
+      <div class="risk-signal">📡 Watch signal: LME Aluminium price (quarterly average); gross margin vs EBITDA margin spread — widening suggests cost absorption.</div>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-title">3. Cable Execution Risk — From ₹6,220 Cr to ₹10,000 Cr in Three Years</div>
+      <div class="risk-body">Management has committed to growing cable revenue from ₹6,220 Cr in FY26 to ₹10,000 Cr by FY29 — a 60% increase in three years. This requires: (a) the ₹800 Cr cable factory to commission on time and ramp to full utilisation, (b) the new CEO Chandrashekhar Shrotri to win new export contracts, (c) the domestic premium cable market to absorb incremental capacity without margin dilution. The cable CEO resignation in December 2025 (mid-execution) is a governance yellow flag. The pending cable order book of ₹1,900 Cr is only 8-9 months of current revenue run-rate — not yet a confident forward ledger for the FY29 target.</div>
+      <div class="risk-signal">📡 Watch signal: Cable segment order book (should reach ₹3,000+ Cr if the FY29 target is real); cable EBITDA margin (should reach 10%+ vs current ~9%).</div>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-title">4. Domestic T&D Capex Slowdown — PGCIL Right-of-Way Delays</div>
+      <div class="risk-body">Domestic transmission line additions in April–December 2025 were 15% below plan, partly because of Right-of-Way (RoW) delays and transformer bushing shortages that are delaying substation work. If these execution bottlenecks persist — as they have intermittently for the past three years — PGCIL's ₹45,000 Cr FY28 capex plan may deliver less physical output than guided. Conductor demand is directly linked to circuit-kilometres of line commissioned, not capex sanctioned. A 15-20% slippage in PGCIL and state utility line additions could reduce conductor volume growth to 5-6% vs the 10-12% management expects.</div>
+      <div class="risk-signal">📡 Watch signal: Monthly Ministry of Power T&D additions data (available from CEA); PGCIL quarterly capitalisation rate vs capex incurred.</div>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-title">5. Chinese Conductor Competition in Export Markets</div>
+      <div class="risk-body">In Q3 FY26, conductor export volumes de-grew 5.9% YoY, specifically attributed by management to "intensified competition from non-US geographies." Chinese conductor manufacturers — operating with state subsidies and lower cost structures — are aggressively pricing into Middle East, Southeast Asia, and African markets where APAR has historically been the dominant Indian exporter. If Chinese competition structurally compresses export realisations, the premium conductor EBITDA/MT improvement narrative (which drove the stock's re-rating) could reverse — particularly if APAR's export mix shifts from US (high-value) toward China-contested markets (price-sensitive).</div>
+      <div class="risk-signal">📡 Watch signal: Conductor export mix by region (US vs Middle East vs Africa); EBITDA/MT trend — any reversal from ₹43,000+ suggests pricing pressure.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--coral);">
+  The US tariff risk is the most binary — it already caused one severe quarterly miss; cable execution risk is the most consequential for long-term thesis; Chinese competition is the most underappreciated structural threat.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num purple">7</div>
+  <div>
+    <div class="ch-eyebrow">Watch Signals</div>
+    <div class="ch-title">Five Metrics to Check Every Quarter — With Red Flag Thresholds</div>
+  </div>
+</div>
+
+<div role="list" aria-label="Quarterly watch signals">
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" style="background:var(--blue);"></div>
+    <div>
+      <div class="watch-label">1. Conductor EBITDA per Metric Tonne (Capex Watch)</div>
+      <div class="watch-body"><strong>What it is:</strong> The single most revealing conductor segment metric — it combines volume, premium product mix, and realisation quality in one number. Currently ₹43,012/MT (FY26), vs management's medium-term guidance baseline of ₹35,000–36,000/MT as "floor." <strong>Green flag:</strong> ₹40,000+ with growing premium mix share. <strong>Red flag:</strong> Sub-₹35,000 for two consecutive quarters with flat/declining premium mix — signals pricing pressure or volume dumping at margin cost.</div>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" style="background:var(--green);"></div>
+    <div>
+      <div class="watch-label">2. Cable Segment Revenue Run-Rate vs ₹10,000 Cr FY29 Target (Margin Watch)</div>
+      <div class="watch-body"><strong>What it is:</strong> Current cable revenue is ₹6,220 Cr (FY26). To reach ₹10,000 Cr by FY29, APAR needs to add ~₹1,260 Cr/year over three years — roughly 20%+ CAGR. Track quarterly cable revenue YoY and sequential growth. <strong>Green flag:</strong> Cable growing at 22%+ with order book above ₹3,000 Cr. <strong>Red flag:</strong> Two consecutive quarters of cable growth below 15% — implies FY29 target needs revision, likely triggering PE de-rating toward Polycab range.</div>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" style="background:var(--amber);"></div>
+    <div>
+      <div class="watch-label">3. EBITDA Margin — Can the 9% Ceiling Break to 10%? (Margin Watch)</div>
+      <div class="watch-body"><strong>What it is:</strong> APAR's blended EBITDA margin has been essentially flat at 9.0% for two years despite 23%+ revenue growth. Management has guided 10–11% as the aspiration, tied to cable premiumisation. <strong>Green flag:</strong> EBITDA margin reaching and sustaining 9.5%+ for two consecutive quarters — signals the cable mix is beginning to flow through. <strong>Red flag:</strong> Any quarter below 8.0% — below the structural 5-year average — which would signal input cost shock or margin dilution from new capacity.</div>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" style="background:var(--teal);"></div>
+    <div>
+      <div class="watch-label">4. FY27 Capex Deployment Rate — Is the ₹1,500 Cr Planned Spend Actually Happening? (Capex Watch)</div>
+      <div class="watch-body"><strong>What it is:</strong> Management guided ₹1,500 Cr capex for FY27, up from ₹740 Cr actual in FY26. This is a Ledger-active flag — capex was slow-paced in FY26 (57% of plan). Check cash flow from investing activities quarterly. <strong>Green flag:</strong> ₹375 Cr+ capex per quarter on a trailing basis (annualising to ₹1,500 Cr). <strong>Red flag:</strong> Q1/Q2 FY27 capex below ₹300 Cr per quarter — implies completion drift and pushes cable factory commissioning toward FY28, making FY29 ₹10,000 Cr target essentially impossible.</div>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" style="background:var(--coral);"></div>
+    <div>
+      <div class="watch-label">5. US Market Recovery — Conductor and Cable Export Revenue Trajectory (Capital Watch)</div>
+      <div class="watch-body"><strong>What it is:</strong> The US was APAR's fastest-growing export market in H1 FY26 (+83% conductors, +130% cables) before Section 232 caused Q3 collapse (-65% US exports). The April 2026 tariff proclamation introduces a temporary 15% rate on grid equipment through 2027. Track US revenue as a % of total exports and compare to prior H1. <strong>Green flag:</strong> US revenue exceeding ₹400 Cr/quarter by Q2 FY27 — signals tariff adaptation (pass-through pricing to US buyers working). <strong>Red flag:</strong> US revenue below ₹200 Cr for three consecutive quarters — implies tariff is structural, not temporary, and the export bull case needs fundamental revision.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--purple);">
+  EBITDA/MT on conductors and cable revenue run-rate are the two most important quarterly numbers; capex deployment rate is the leading indicator for both targets being met.
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- VERDICT -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="verdict-box" role="note" aria-label="Investment verdict">
+  <div class="label">📌 INVESTMENT VERDICT — MID-CHAPTER COMPOUNDER</div>
+  <p>APAR Industries sits at the intersection of three structural tailwinds: India's ₹9.15 lakh crore T&D capex supercycle (which directly feeds conductor and cable demand), global grid infrastructure investment (which drives export opportunities), and India's renewable integration mandate (which is creating new-category demand for specialty cables to solar farms, EV infrastructure, and data centres). The quality signals are genuinely strong — ROCE of ~34%, D/E of 0.10x, zero promoter pledge, and CFO that turned positive in FY25 after being negative in FY24. These are not marginal improvements; they represent a company with genuine financial health and self-funding capacity.</p>
+  <p style="margin-top:12px;">The near-term catalyst that could re-rate the stock is a clean FY27 Q1 result showing: cable revenue above ₹1,800 Cr (+25%+ YoY), capex deployment at ₹350+ Cr for the quarter, and EBITDA margin at or above 9.2%. Any two of three would likely trigger analyst upgrades. On valuation: at 52x PE, APAR is priced at a slight premium to cable peers (Polycab at 45x, KEI at 48x) — the premium reflects the conductor global position and US export option, but the market is pricing the cable ₹10,000 Cr target as a base case. We are in the middle chapters of this story — the conductor thesis is proven, the cable thesis is in execution. The next 24 months will determine whether APAR re-rates further toward a pure cable multiple or corrects toward the conductor multiple.</p>
+</div>
+
+</div><!-- end content -->
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- THE LEDGER — MANAGEMENT CREDIBILITY SECTION -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="ledger-divider"></div>
+
+<div class="ledger-masthead" role="region" aria-labelledby="ledger-title">
+  <div class="ledger-eyebrow">THE LEDGER · MANAGEMENT CREDIBILITY TRACKER · APAR INDUSTRIES · Q4 FY26</div>
+  <h2 class="ledger-h2" id="ledger-title">The Ledger</h2>
+  <div class="ledger-sub">Promises made, promises kept — capex timelines, margin mechanisms, and capital structure, tracked quarter by quarter.</div>
+  <div class="mast-meta" style="margin-top:20px;">
+    <span class="meta-chip">APARINDS · NSE</span>
+    <span class="meta-chip">Q4 FY26 BASE QUARTER</span>
+    <span class="meta-chip">COMPANION TO NSE INVESTOR BRIEF</span>
+    <span class="meta-chip">JUNE 2026</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- CREDIBILITY TIER -->
+<div class="tier-card" role="note" aria-label="Management credibility tier">
+  <div class="tier-badge tier-b">B</div>
+  <div class="tier-info">
+    <div class="ti-label">CREDIBILITY TIER — Q4 FY26 ASSESSMENT</div>
+    <div class="ti-title">Generally Credible — Active Flags on Capex &amp; Margin</div>
+    <div class="ti-desc">APAR's management (CMD Kushal Desai, MD Chaitanya Desai, CFO Ramesh Iyer) has a strong track record on revenue growth and capital discipline. No stealth dilution, no promoter pledge, and strong cash generation. However, three active flags reduce the tier from A: capex slow pacing in FY26 (57% of plan), margin floor settling at 9% despite 10-11% guidance, and cable CEO turnover mid-execution. None individually is disqualifying — together they warrant active monitoring rather than unconditional trust on forward guidance.</div>
+  </div>
+</div>
+
+<!-- THE CHAIN -->
+<h3 style="margin-top:30px;">The Promise Chain — Where Is APAR?</h3>
+<p style="font-size:13.5px;">Every mid-cap infrastructure story follows the same seven-link chain. APAR's current position in that chain determines what promises need to be tracked most carefully.</p>
+<div class="chain-flow" role="list" aria-label="Promise execution chain">
+  <div class="chain-node chain-status-ok" role="listitem">
+    <div class="chain-num">①</div>
+    <div class="chain-label">Capex Deployed</div>
+    <div class="chain-detail">FY26: ₹740 Cr vs ₹1,300 Cr plan ⚠</div>
+  </div>
+  <div class="chain-node chain-status-warn" role="listitem">
+    <div class="chain-num">②</div>
+    <div class="chain-label">Capacity Created</div>
+    <div class="chain-detail">Cable factory partially built; CTC done</div>
+  </div>
+  <div class="chain-node chain-status-warn" role="listitem">
+    <div class="chain-num">③</div>
+    <div class="chain-label">Utilisation Ramp</div>
+    <div class="chain-detail">Conductors 75-80%, Cables 80-85%</div>
+  </div>
+  <div class="chain-node chain-status-warn" role="listitem">
+    <div class="chain-num">④</div>
+    <div class="chain-label">Margin Expansion</div>
+    <div class="chain-detail">9.0% vs 10-11% target ⚠</div>
+  </div>
+  <div class="chain-node chain-status-ok" role="listitem">
+    <div class="chain-num">⑤</div>
+    <div class="chain-label">Cash Flow Improves</div>
+    <div class="chain-detail">CFO ₹1,290 Cr (FY25) ✓</div>
+  </div>
+  <div class="chain-node chain-status-ok" role="listitem">
+    <div class="chain-num">⑥</div>
+    <div class="chain-label">Debt Reduces</div>
+    <div class="chain-detail">D/E 0.10x — fortress ✓</div>
+  </div>
+  <div class="chain-node chain-status-warn" role="listitem">
+    <div class="chain-num">⑦</div>
+    <div class="chain-label">New Cycle Begins</div>
+    <div class="chain-detail">FY27 ₹1,500 Cr planned — executing?</div>
+  </div>
+</div>
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;">APAR is operating well at Links 1, 5, and 6 — cash generation and debt discipline are strong. The active tension is at Links 2-4: capex deployment pace is lagging, capacity is not fully online yet, and margins have not expanded. This is not unusual for a company mid-cycle, but it is precisely the juncture where management credibility matters most.</p>
+
+<!-- SIX PILLARS ASSESSMENT -->
+<h3 style="margin-top:30px;">Six-Pillar Assessment — APAR Industries</h3>
+
+<div class="two-col" style="margin-bottom:14px;">
+  <div class="card" style="border-top:3px solid var(--teal);">
+    <div class="card-tag" style="color:var(--teal);">📋 PILLAR 1 — Promise Register</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      <strong>Revenue/Growth:</strong> Management guided 20%+ revenue CAGR — tracking: FY26 delivered 23.3%. ✅<br>
+      <strong>Cable target:</strong> ₹10,000 Cr by FY29. Current FY26 base ₹6,220 Cr. Requires 60% growth in 3 years. In execution — no miss yet, but early.<br>
+      <strong>Conductor order inflow:</strong> Guided sustained growth — FY26 delivered +24.2% new inflow. ✅<br>
+      <strong>EBITDA margin:</strong> "Approaching 10-11%" (Q2 FY26 concall) → FY26 actual 9.0%. ⚠ Not delivered.
+    </div>
+  </div>
+  <div class="card" style="border-top:3px solid var(--amber);">
+    <div class="card-tag" style="color:var(--amber);">🔬 PILLAR 2 — Tone Decoder</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      Kushal Desai's communication style is specific and data-rich — he quotes volumes, EBITDA/MT, and order inflow with precision. This is hallmark high-credibility tone. However, on margin expansion the language shifted from "approaching 10-11%" to "our endeavour is to get into double-digit range" by Q3 FY26 concall — qualifier creep on the margin narrative. On US tariffs: the Section 232 risk was underweighted in management's Q1-Q2 commentary before the Q3 shock. Attribution was fair ("external policy change") but the lack of pre-warning earns a yellow flag.
+    </div>
+  </div>
+</div>
+
+<div class="two-col" style="margin-bottom:14px;">
+  <div class="card" style="border-top:3px solid var(--coral);">
+    <div class="card-tag" style="color:var(--coral);">⚖️ PILLAR 3 — Execution Delta</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      <strong>Revenue targets:</strong> Delivered — +23.3% vs 20%+ guided. ✅<br>
+      <strong>Conductor EBITDA/MT:</strong> ₹43,012 vs ₹35,000-36,000 guidance floor — significantly above. ✅✅<br>
+      <strong>Margin target:</strong> 9.0% vs 10-11% aspiration. ⚠ Partial miss.<br>
+      <strong>Capex FY26:</strong> ₹740 Cr vs ₹1,300 Cr guided. ❌ 57% pacing.<br>
+      <strong>Dividend:</strong> ₹60/share — strong signal of confidence in FCF. ✅<br>
+      <strong>Overall execution delta:</strong> Revenue and conductor quality metrics — excellent. Capital deployment and margin — lagging.
+    </div>
+  </div>
+  <div class="card" style="border-top:3px solid var(--blue);">
+    <div class="card-tag" style="color:var(--blue);">🏗️ PILLAR 4 — Capex Timeline Tracker</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      <strong>Announced ₹1,300 Cr FY26 plan</strong> (May 2025 — ₹800 Cr cable + ₹300 Cr conductor + ₹200 Cr JNPT).<br>
+      <strong>Actual FY26 deployment: ₹740 Cr</strong> (57% pacing).<br>
+      <strong>FY27 guidance: ₹1,500 Cr</strong> — stepped up despite FY26 underspend.<br>
+      <strong>Active flags:</strong> SLOW PACING (FY26). Need to verify in Q1/Q2 FY27 whether the acceleration is real. Cable factory commissioning timeline needs tracking — if delayed, the ₹10,000 Cr FY29 revenue target becomes mathematically very difficult.
+    </div>
+  </div>
+</div>
+
+<div class="two-col" style="margin-bottom:14px;">
+  <div class="card" style="border-top:3px solid var(--green);">
+    <div class="card-tag" style="color:var(--green);">📈 PILLAR 5 — Margin Expansion Tracker</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      <strong>Stated mechanism:</strong> Product mix shift (higher premium conductor share + cable premiumisation) + operating leverage as cable revenue scales.<br>
+      <strong>Is it working?</strong> Partially. Conductor EBITDA/MT improved 17.3% — the premium mix is genuinely lifting per-unit margins. But blended EBITDA margin stuck at 9.0% — suggesting overhead (employee costs, depreciation from new capex) is absorbing the per-unit gains.<br>
+      <strong>Red flag active:</strong> EMPLOYEE ABSORPTION — gross margin improving at the unit level but EBITDA flat at blended level. Watch gross margin vs EBITDA margin spread each quarter.
+    </div>
+  </div>
+  <div class="card" style="border-top:3px solid var(--purple);">
+    <div class="card-tag" style="color:var(--purple);">🏦 PILLAR 6 — Capital Structure Tracker</div>
+    <div style="font-size:13px;line-height:1.6;margin-top:6px;">
+      <strong>Debt reduction target:</strong> No active "debt-free" promise — management simply hasn't needed to lever up. D/E at 0.10x is a positive signal.<br>
+      <strong>Equity dilution claim:</strong> "Internal accruals" — no dilution in FY26. ✅ Trackable for FY27: watch for any QIP/preferential allotment if FY27 capex exceeds CFO.<br>
+      <strong>Promoter pledge:</strong> Zero. Formally declared for FY26. ✅✅<br>
+      <strong>CFO/Capex ratio FY26:</strong> Estimated >1.5x (₹1,290 Cr CFO vs ₹740 Cr capex). Clean.<br>
+      <strong>Interest coverage:</strong> 3.5x — above warning threshold. ✅
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVE RED FLAGS -->
+<h3 style="margin-top:30px;">Active Red Flags — APAR Industries · Q4 FY26</h3>
+
+<div class="redflag-grid" role="list" aria-label="Active red flags">
+  <div class="redflag-card capex" role="listitem">
+    <div class="redflag-name"><i class="ti ti-tool" style="color:var(--coral);" aria-hidden="true"></i> CAPEX SLOW PACING (ACTIVE)</div>
+    <div class="redflag-what">Planned ₹1,300 Cr for FY26 across three divisions. Actually deployed ₹740 Cr (57%). Now guiding ₹1,500 Cr for FY27 — a 103% step-up from actual FY26. The cable factory that is meant to unlock ₹10,000 Cr revenue was the primary beneficiary of undeployed capex.</div>
+    <div class="redflag-signal">Signal to resolve: Q1 FY27 capex above ₹375 Cr (annualising to ₹1,500 Cr pace). If Q1 FY27 capex is again below ₹300 Cr — the FY27 plan is already a repeat of FY26, and FY29 ₹10,000 Cr cable target needs a year's revision.</div>
+  </div>
+  <div class="redflag-card margin" role="listitem">
+    <div class="redflag-name"><i class="ti ti-trending-down" style="color:var(--green);" aria-hidden="true"></i> MARGIN FLOOR DRIFT (MONITORING)</div>
+    <div class="redflag-what">In Q2 FY26 concall, management said EBITDA "endeavour is to get into double-digit range more closer to 11%." FY26 delivered 9.0%. Q4 came in at 8.8%. The "approaching 10-11%" narrative has been present for 4+ quarters with no delivery. Not yet a defined drift, but on trajectory to become one.</div>
+    <div class="redflag-signal">Signal to resolve: Blended EBITDA margin at or above 9.5% for two consecutive quarters. If FY27 full year lands at 9.0% again — the 10-11% guidance should be formally revised down.</div>
+  </div>
+  <div class="redflag-card warn" role="listitem">
+    <div class="redflag-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> CABLE CEO TURNOVER (YELLOW FLAG)</div>
+    <div class="redflag-what">Shashi Amin resigned as Cable CEO in December 2025 — mid-execution of the ₹10,000 Cr cable buildout. The company described it as "pursuing new challenges." The timing — just as the cable factory investment accelerates — raises a governance question. New CEO Chandrashekhar Shrotri (ex-Siemens, 40 years experience) is credentially strong, but requires 2-3 quarters to establish operating credibility in the role.</div>
+    <div class="redflag-signal">Signal to resolve: Cable revenue and order book growth under Shrotri's leadership for 3 consecutive quarters. Watch specifically for new international cable contract announcements — this is his stated priority.</div>
+  </div>
+  <div class="redflag-card warn" role="listitem">
+    <div class="redflag-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> US TARIFF RISK UNDER-SIGNALLED (RESOLVED?)</div>
+    <div class="redflag-what">The Section 232 impact that collapsed Q3 FY26 US exports (-65.4%) was not prominently flagged in Q1 or Q2 FY26 management commentary despite the tariff risk being publicly discussed. This is an attribution fairness concern — management should have flagged the Section 232 inclusion of cable/conductor products (August 2025 Federal Register) as a risk in Q1 FY26 concall. The Q3 surprise should not have been a surprise.</div>
+    <div class="redflag-signal">Signal to resolve: Q4 FY26 and Q1 FY27 management commentary on US tariff strategy — are they now providing explicit guidance on how they're quoting new US orders inclusive of tariff? (LNPR Capital reported they are for cable: "quoting new orders inclusive of tariff" — positive sign.)</div>
+  </div>
+</div>
+
+<!-- CLEAN SIGNALS -->
+<h3 style="margin-top:24px;">Clean Signals — APAR Industries</h3>
+<div class="card" style="border-top:3px solid var(--teal);">
+  <div class="two-col" style="margin:0;">
+    <div>
+      <div class="stat-row"><span class="stat-label">Promoter Pledge</span><span class="stat-val pos">✅ Zero — formally declared FY26</span></div>
+      <div class="stat-row"><span class="stat-label">Equity Dilution</span><span class="stat-val pos">✅ None in FY26; "internal accruals" claim clean</span></div>
+      <div class="stat-row"><span class="stat-label">Debt-to-Equity</span><span class="stat-val pos">✅ 0.10x — fortress balance sheet</span></div>
+    </div>
+    <div>
+      <div class="stat-row"><span class="stat-label">Revenue delivery</span><span class="stat-val pos">✅ +23.3% vs 20%+ guided</span></div>
+      <div class="stat-row"><span class="stat-label">Conductor EBITDA/MT</span><span class="stat-val pos">✅ ₹43,012 — significantly above ₹35-36K floor</span></div>
+      <div class="stat-row"><span class="stat-label">Dividend declared</span><span class="stat-val pos">✅ ₹60/share — FCF confidence signal</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- UPDATED CREDIBILITY SCORE -->
+<h3 style="margin-top:28px;">Seven-Dimension Credibility Score</h3>
+<div class="card">
+  <div class="score-row"><span class="score-dim">Promise Hit Rate (Revenue + Conductor metrics)</span><span class="score-weight">25%</span><span class="score-val" style="color:var(--teal);">Strong — 80%+ on revenue; conductors exceed guidance</span></div>
+  <div class="score-row"><span class="score-dim">Capex Execution Rate (FY26 deployment vs plan)</span><span class="score-weight">20%</span><span class="score-val" style="color:var(--amber);">Weak — 57% pacing; flag active</span></div>
+  <div class="score-row"><span class="score-dim">Margin Mechanism Fidelity (mix shift + leverage)</span><span class="score-weight">15%</span><span class="score-val" style="color:var(--amber);">Partial — unit margin improving; blended not breaking 9%</span></div>
+  <div class="score-row"><span class="score-dim">Capital Structure Integrity (no dilution, pledge, masking)</span><span class="score-weight">15%</span><span class="score-val" style="color:var(--teal);">Clean — zero pledge, no dilution, D/E 0.10x</span></div>
+  <div class="score-row"><span class="score-dim">Specificity &amp; Attribution (guidance with numbers; miss ownership)</span><span class="score-weight">15%</span><span class="score-val" style="color:var(--teal);">Good — Kushal Desai speaks in specifics; US tariff attribution was fair</span></div>
+  <div class="score-row"><span class="score-dim">Q&amp;A Quality (direct answers; no evasion)</span><span class="score-weight">10%</span><span class="score-val" style="color:var(--teal);">Good — management engages directly on margin shortfall questions</span></div>
+  <div class="score-row" style="border-top:2px solid var(--ink);margin-top:4px;padding-top:10px;"><span class="score-dim" style="font-weight:700;">Composite Score</span><span class="score-weight"></span><span class="score-val" style="color:var(--amber);font-weight:700;font-size:15px;">Tier B — Generally Credible, Active Flags</span></div>
+</div>
+
+<!-- LEDGER VERDICT -->
+<div class="verdict-box" style="background:var(--blue-bg);border-color:var(--blue);" role="note" aria-label="Ledger verdict">
+  <div class="label" style="color:var(--blue);">🗒 THE LEDGER VERDICT — APAR INDUSTRIES · Q4 FY26</div>
+  <p>APAR's management team earns a Tier B on the credibility ladder — not because of broken promises, but because of the gap between aspiration and delivery on two specific dimensions. The capex slow pacing (57% of plan in FY26) is the most consequential active flag: if FY27 capex deployment is again below the ₹1,500 Cr guided, the cable ₹10,000 Cr FY29 target automatically requires a timeline extension, which would be a clear negative catalyst for the stock at current valuations. The margin narrative — "approaching 10-11%" — has been present for four quarters without delivery; if FY27 full year again lands at 9.0%, the language needs to be walked back or the mechanism (cable premiumisation) needs to accelerate visibly. What keeps APAR at Tier B rather than C is the genuinely clean capital structure: zero pledge, no equity dilution, D/E of 0.10x, and a management team that communicates in numbers rather than adjectives. The next test of credibility is Q1 FY27 — specifically, whether capex deployment steps up as guided and cable revenue sustains 20%+ growth.</p>
+</div>
+
+<!-- NSE BRIEF INTEGRATION BOX -->
+<blockquote>
+  <strong>Ledger Integration with Ch.7 Watch Signals:</strong> Three of the five watch signals in Chapter 7 directly track Ledger flags — EBITDA/MT (margin mechanism), cable revenue run-rate (phantom revenue bridge check), and FY27 capex deployment (slow pacing). These are not independent signals; they are the same chain, measured at different links.
+</blockquote>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- HIGHLIGHT INDEX — always visible (no <details>) -->
+<!-- ═══════════════════════════════════════════ -->
+<div id="highlight-index" role="complementary" aria-label="All highlights at a glance">
+  <div class="hi-title">📌 All Highlights at a Glance</div>
+  <p style="font-size:12px;color:var(--gray);margin-bottom:12px;">Auto-populated from all inline highlights and chapter takeaways in this document — colour-coded by type.</p>
+  <ol id="highlight-list" aria-label="Highlights list">
+    <!-- auto-populated by JS -->
+  </ol>
+</div>
+
+</div><!-- end content -->
+
+<footer role="contentinfo">
+  <span>APARINDS INVESTOR BRIEF + THE LEDGER · JUNE 2, 2026</span>
+  <span>NSE EQUITY RESEARCH · INTERNAL USE ONLY</span>
+  <span>DATA SOURCES: APAR CONCALLS · SCREENER · QUARTR · CEA · ARKIVES · PGCIL</span>
+</footer>
+
+<script>
+/* ── Dark mode ── */
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('apar-dark', document.body.classList.contains('dark') ? '1' : '0');
+}
+if (localStorage.getItem('apar-dark') === '1') document.body.classList.add('dark');
+
+/* ── Quick Scan toggle ── */
+function toggleQS() {
+  const body = document.getElementById('qs-body');
+  const btn = document.getElementById('qs-btn');
+  const collapsed = body.style.display === 'none';
+  body.style.display = collapsed ? 'block' : 'none';
+  btn.textContent = collapsed ? '▼ Collapse' : '▶ Quick Scan';
+  btn.setAttribute('aria-expanded', collapsed ? 'true' : 'false');
+  localStorage.setItem('apar-qs', collapsed ? '1' : '0');
+}
+if (localStorage.getItem('apar-qs') === '0') {
+  const body = document.getElementById('qs-body');
+  const btn = document.getElementById('qs-btn');
+  if (body) { body.style.display = 'none'; btn.textContent = '▶ Quick Scan'; btn.setAttribute('aria-expanded','false'); }
+}
+
+/* ── Highlight Index auto-populate ── */
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('highlight-list');
+  if (!list) return;
+  const typeLabels = { 'hl-key': '[KEY]', 'hl-number': '[#]', 'hl-risk': '[RISK]', 'hl-catalyst': '[↑]', 'takeaway-pill': '[TAKEAWAY]' };
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const text = el.textContent.trim();
+    if (!text || text.length < 10) return;
+    const li = document.createElement('li');
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    const prefix = typeLabels[type] || '';
+    li.textContent = prefix ? prefix + ' ' + text : text;
+    list.appendChild(li);
+  });
+});
+
+/* ── Revenue/PAT Chart ── */
+window.addEventListener('load', () => {
+  const ctx = document.getElementById('revChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['FY24', 'FY25', 'FY26'],
+      datasets: [
+        {
+          label: 'Revenue (₹ Cr)',
+          data: [16153, 18581, 22902],
+          backgroundColor: 'rgba(55,138,221,0.75)',
+          borderRadius: 4, yAxisID: 'y'
+        },
+        {
+          label: 'PAT (₹ Cr)',
+          data: [825, 821, 977],
+          backgroundColor: 'rgba(59,109,17,0.75)',
+          borderRadius: 4, yAxisID: 'y'
+        },
+        {
+          label: 'EBITDA Margin %',
+          data: [10.3, 9.0, 9.0],
+          type: 'line',
+          borderColor: 'rgba(186,117,23,0.9)',
+          backgroundColor: 'rgba(186,117,23,0.1)',
+          pointRadius: 5, borderWidth: 2, yAxisID: 'y2',
+          tension: 0.3
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { font: { family: "'DM Mono', monospace", size: 10 } } } },
+      scales: {
+        y: { title: { display: true, text: '₹ Crore', font: { size: 10 } }, grid: { color: 'rgba(0,0,0,0.06)' } },
+        y2: { position: 'right', title: { display: true, text: 'EBITDA Margin %', font: { size: 10 } }, grid: { display: false }, min: 0, max: 15 }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

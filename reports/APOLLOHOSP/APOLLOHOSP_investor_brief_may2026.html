@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apollo Hospitals — NSE Investor Brief · May 2026</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --bg: #f5f4f0;
+  --surface: #ffffff;
+  --surface2: #f0efe9;
+  --border: rgba(0,0,0,0.10);
+  --border-strong: rgba(0,0,0,0.18);
+  --text: #1a1a18;
+  --text2: #4a4a46;
+  --text3: #7a7a74;
+  --blue: #378ADD;
+  --blue-bg: #e6f1fb;
+  --blue-text: #0c447c;
+  --purple: #534AB7;
+  --purple-bg: #eeedfe;
+  --purple-text: #26215c;
+  --teal: #1D9E75;
+  --teal-bg: #e1f5ee;
+  --teal-text: #085041;
+  --amber: #BA7517;
+  --amber-bg: #faeeda;
+  --amber-text: #633806;
+  --green: #3B6D11;
+  --green-bg: #eaf3de;
+  --green-text: #173404;
+  --coral: #D85A30;
+  --coral-bg: #faece7;
+  --coral-text: #4a1b0c;
+}
+[data-theme="dark"] {
+  --bg: #16160f;
+  --surface: #1e1e16;
+  --surface2: #252518;
+  --border: rgba(255,255,255,0.10);
+  --border-strong: rgba(255,255,255,0.20);
+  --text: #f0efe8;
+  --text2: #b8b8b0;
+  --text3: #7a7a72;
+  --blue: #5ea6f0;
+  --blue-bg: #0c2a4a;
+  --blue-text: #b5d4f4;
+  --purple: #8880d8;
+  --purple-bg: #1a1840;
+  --purple-text: #cecbf6;
+  --teal: #3db88a;
+  --teal-bg: #052820;
+  --teal-text: #9fe1cb;
+  --amber: #e09030;
+  --amber-bg: #2a1c05;
+  --amber-text: #fac775;
+  --green: #6aaa30;
+  --green-bg: #142008;
+  --green-text: #c0dd97;
+  --coral: #e87550;
+  --coral-bg: #2a1008;
+  --coral-text: #f5c4b3;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;max-width:700px;margin:0 auto;padding:16px 16px 60px}
+h1{font-size:clamp(1.6rem,5vw,2rem);font-weight:600;line-height:1.2}
+h2{font-size:clamp(1.1rem,4vw,1.35rem);font-weight:600;line-height:1.3;margin-bottom:8px}
+h3{font-size:1rem;font-weight:600;margin-bottom:4px}
+p{margin-bottom:0.75rem;color:var(--text2)}
+strong{color:var(--text);font-weight:600}
+a{color:var(--blue);text-decoration:none}
+
+.chip{display:inline-block;font-size:11px;font-weight:600;letter-spacing:0.04em;padding:3px 9px;border-radius:20px;text-transform:uppercase}
+.chip-blue{background:var(--blue-bg);color:var(--blue-text)}
+.chip-purple{background:var(--purple-bg);color:var(--purple-text)}
+.chip-teal{background:var(--teal-bg);color:var(--teal-text)}
+.chip-amber{background:var(--amber-bg);color:var(--amber-text)}
+.chip-green{background:var(--green-bg);color:var(--green-text)}
+.chip-coral{background:var(--coral-bg);color:var(--coral-text)}
+
+.card{background:var(--surface);border:0.5px solid var(--border);border-radius:14px;padding:20px 22px;margin-bottom:14px}
+.card-colored{border-radius:14px;padding:20px 22px;margin-bottom:14px}
+
+.accent-blue{border-left:3px solid var(--blue);border-radius:0 10px 10px 0;padding-left:18px;background:var(--surface)}
+.accent-purple{border-left:3px solid var(--purple);border-radius:0 10px 10px 0;padding-left:18px;background:var(--surface)}
+.accent-teal{border-left:3px solid var(--teal);border-radius:0 10px 10px 0;padding-left:18px;background:var(--surface)}
+.accent-amber{border-left:3px solid var(--amber);border-radius:0 10px 10px 0;padding-left:18px;background:var(--surface)}
+.accent-coral{border-left:3px solid var(--coral);border-radius:0 10px 10px 0;padding-left:18px;background:var(--surface)}
+
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:14px 0}
+.stat-box{background:var(--surface2);border-radius:10px;padding:14px 16px}
+.stat-label{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:4px}
+.stat-value{font-size:1.5rem;font-weight:600;color:var(--text);line-height:1}
+.stat-delta{font-size:11px;color:var(--green);margin-top:3px;font-weight:600}
+.stat-note{font-size:11px;color:var(--text3);margin-top:3px}
+
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:14px}
+.stat-row:last-child{border-bottom:none}
+.stat-row-label{color:var(--text3)}
+.stat-row-value{font-weight:600;color:var(--text)}
+
+.chapter-header{display:flex;align-items:flex-start;gap:14px;margin:28px 0 14px}
+.chapter-circle{flex-shrink:0;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#fff}
+.chapter-circle-blue{background:var(--blue)}
+.chapter-circle-purple{background:var(--purple)}
+.chapter-circle-teal{background:var(--teal)}
+.chapter-circle-amber{background:var(--amber)}
+.chapter-circle-coral{background:var(--coral)}
+.chapter-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);font-weight:600;margin-bottom:2px}
+
+.risk-row{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:0.5px solid var(--border)}
+.risk-row:last-child{border-bottom:none}
+.risk-icon{flex-shrink:0;font-size:18px;color:var(--amber);margin-top:1px}
+.risk-title{font-weight:600;color:var(--text);font-size:14px;margin-bottom:3px}
+.risk-body{font-size:13px;color:var(--text2);line-height:1.5}
+
+.watch-row{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:0.5px solid var(--border)}
+.watch-row:last-child{border-bottom:none}
+.watch-dot{flex-shrink:0;width:10px;height:10px;border-radius:50%;margin-top:5px}
+.watch-title{font-weight:600;font-size:14px;color:var(--text);margin-bottom:2px}
+.watch-body{font-size:13px;color:var(--text2);line-height:1.5}
+
+.verdict-card{background:var(--blue-bg);border:0.5px solid var(--border);border-radius:14px;padding:22px 24px;margin-top:20px}
+.verdict-label{font-size:10px;text-transform:uppercase;letter-spacing:0.12em;color:var(--blue-text);font-weight:700;margin-bottom:8px}
+.verdict-text{font-size:15px;color:var(--text);line-height:1.7}
+
+.toggle-btn{position:fixed;top:14px;right:14px;background:var(--surface);border:0.5px solid var(--border-strong);border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;color:var(--text2);z-index:100;min-height:40px;min-width:44px}
+.toggle-btn:focus{outline:2px solid var(--blue);outline-offset:2px}
+
+.cover-eyebrow{font-size:12px;color:var(--text3);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:10px;font-weight:500}
+.cover-tagline{font-size:14px;color:var(--text2);margin-top:10px;line-height:1.6}
+
+.vl-header{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--blue-text);font-weight:700;margin-bottom:6px}
+
+.quote-block{border-left:3px solid var(--border-strong);padding:10px 16px;margin:12px 0;font-size:13px;color:var(--text2);font-style:italic;border-radius:0 8px 8px 0;background:var(--surface2)}
+
+.flywheel{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.fw-box{background:var(--surface2);border-radius:10px;padding:12px 14px;font-size:13px}
+.fw-box b{display:block;font-size:12px;font-weight:600;margin-bottom:3px}
+
+.big-insight{background:var(--purple-bg);border-radius:14px;padding:20px 22px;margin:14px 0;border:0.5px solid var(--border)}
+.bi-label{font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--purple-text);font-weight:700;margin-bottom:8px}
+.bi-text{font-size:15px;color:var(--text);line-height:1.7;font-weight:500}
+
+hr.divider{border:none;border-top:0.5px solid var(--border);margin:20px 0}
+
+@media(max-width:500px){
+  body{padding:12px 12px 56px}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .flywheel{grid-template-columns:1fr}
+  .toggle-btn{top:10px;right:10px}
+}
+
+canvas{border-radius:8px}
+</style>
+</head>
+<body>
+<button class="toggle-btn" id="themeToggle" aria-label="Toggle dark mode" onclick="toggleTheme()">🌙</button>
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">Apollo Hospitals Enterprise Ltd — NSE Investor Brief, May 2026. Seven-chapter research summary covering business model, financials, risks, and watch signals.</h2>
+
+<!-- COVER -->
+<div style="padding:6px 0 20px">
+  <p class="cover-eyebrow" aria-label="NSE symbol: APOLLOHOSP, Healthcare Services, May 2026, Q4 FY26 results scheduled May 20">NSE: APOLLOHOSP &nbsp;·&nbsp; Healthcare Services &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Q4 FY26 results May 20</p>
+  <h1>Apollo Hospitals</h1>
+  <p class="cover-tagline">India's largest private healthcare network — 73 hospitals, 6,500+ pharmacies, 46 million digital health users — now spinning off its pharmacy and digital arm into a separately listed entity.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px">
+    <span class="chip chip-blue">Healthcare Services</span>
+    <span class="chip chip-purple">HealthCo · Digital</span>
+    <span class="chip chip-teal">AHLL · Diagnostics</span>
+    <span class="chip chip-green">Medical Tourism</span>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER 1: CONTEXT -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-blue" aria-hidden="true">1</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter one</p>
+    <h2>Context — why this company, why now</h2>
+  </div>
+</div>
+
+<div class="card">
+  <p>India's hospital market — valued at <strong>USD 99 billion in 2023</strong> — is projected to reach <strong>USD 193 billion by 2032</strong> at an 8–10.6% CAGR. But the headline underestimates the opportunity: the broader healthcare sector (including digital health, pharma, and diagnostics) carries an 18–20% CAGR outlook through 2030.</p>
+  <p>Three structural forces are compounding simultaneously. First, chronic disease burden: India now has over 101 million diabetics, up from 70 million in 2019. The shift from infectious to lifestyle diseases structurally favors high-margin tertiary care — Apollo's bread and butter. Second, insurance penetration: India's health insurance premiums exceeded <strong>₹1.2 lakh crore in FY25</strong>, growing at 16.3% CAGR through 2033. Insurance patients now make up 83% of Apollo's inpatient revenues. Third, digital health: the Indian digital health market is projected to grow from USD 8.8 billion (2024) to <strong>USD 47.8 billion by 2033</strong> at 17.67% CAGR — exactly the space Apollo 24/7 occupies.</p>
+  <p>The government's Ayushman Bharat scheme has empanelled 70% of Indian hospitals, expanding the insured patient base at a pace that favors scaled chains with bed capacity and clinical credibility. India also needs 3 million additional beds by 2025 to hit the 3-per-1,000 target — a structural undersupply that protects pricing and occupancy for established players.</p>
+  <p>Apollo specifically benefits from a fourth tailwind — medical tourism growing at 22–25% annually. India's cardiac surgery costs up to 80% less than Western alternatives. With Bangladesh patient flows recovering from a 2024 trough, and new markets in Africa and the Middle East being developed, the international revenue base is diversifying from dependence on a single corridor.</p>
+</div>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-blue" aria-hidden="true">2</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter two</p>
+    <h2>The business model — how the machine works</h2>
+  </div>
+</div>
+
+<div class="card accent-blue" role="region" aria-label="Business model description">
+  <p>Apollo is a healthcare platform company, not just a hospital chain. Revenue flows from three distinct but deliberately interlocking segments.</p>
+  <p><strong>Healthcare Services (HCS)</strong> — the core hospital business — runs 73 hospitals with 10,200 beds, of which 8,072 are operating. Revenue is driven by inpatient admissions and a deliberate strategy to grow high-acuity specialties: Cardiac, Oncology, Neurosciences, Gastroenterology, Orthopaedics, and Transplant — collectively branded "CONGO." These six specialties contribute roughly <strong>60% of hospital revenues</strong> and command premium pricing (average revenue per inpatient: ₹1,80,917 in Q3 FY26). CONGO is why Apollo's EBITDA margin for the hospital segment (24.8%) significantly exceeds those of general hospital chains.</p>
+  <p><strong>Apollo HealthCo</strong> — the pharmacy-and-digital arm — operates 6,500+ retail pharmacy outlets and the Apollo 24/7 digital platform serving 46 million users with telemedicine, diagnostics ordering, and pharmacy delivery. This unit generates ~43% of group revenue and is now being structured as a separate listed entity (NewCo).</p>
+  <p><strong>Apollo Health and Lifestyle Ltd (AHLL)</strong> — diagnostics, specialty clinics, cradle (maternity), and primary care — contributes ~7% of revenue. It is the patient acquisition top-of-funnel: people encounter Apollo here before they need a hospital.</p>
+</div>
+
+<div class="flywheel" role="list" aria-label="Business model flywheel: four stages">
+  <div class="fw-box" role="listitem"><b style="color:var(--teal)">① AHLL draws patients</b>Clinics, diagnostics, cradle — first contact with the Apollo brand</div>
+  <div class="fw-box" role="listitem"><b style="color:var(--blue)">② Hospital creates trust</b>CONGO procedures, JCI-accredited quality, NABH standards — build deep loyalty</div>
+  <div class="fw-box" role="listitem"><b style="color:var(--purple)">③ Digital captures data</b>Apollo 24/7 hosts post-discharge care, prescriptions, records — turns patients into users</div>
+  <div class="fw-box" role="listitem"><b style="color:var(--amber)">④ Pharmacy converts</b>6,500+ stores + home delivery — recurring high-margin revenue from existing relationships</div>
+</div>
+
+<p style="font-size:13px;color:var(--text3);margin-top:2px">Switching costs are high: clinical records, chronic disease management plans, pharmacy history, and doctor relationships all sit within the Apollo ecosystem.</p>
+
+<!-- CHAPTER 3: VERTICAL STORIES -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-teal" aria-hidden="true">3</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter three</p>
+    <h2>The three verticals — what's driving each segment</h2>
+  </div>
+</div>
+
+<!-- HCS Card -->
+<div class="card accent-blue" role="region" aria-label="Healthcare Services segment">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+    <span class="chip chip-blue">Healthcare Services</span>
+    <span style="font-size:12px;color:var(--text3)">~50% of group revenue</span>
+  </div>
+  <h3>Hospitals: CONGO + new bed capacity</h3>
+  <p>Healthcare Services grew <strong>14% YoY in Q3 FY26</strong> to ₹3,183 crore, with the CONGO specialty bundle delivering 16% revenue growth and 6% volume growth for the quarter. Growth was balanced — 5% volume, 4% case-mix improvement, 5% pricing — a quality combination that signals sustained pricing power without volume saturation.</p>
+  <p>The near-term catalyst is bed expansion. Apollo is commissioning four new hospitals in FY27 — Hyderabad, Kolkata, Bengaluru (Sarjapur), and Gurgaon — adding ~1,660 beds. Total five-year expansion plan: 4,444 beds at ₹8,200 crore capital outlay, entirely funded through internal accruals (no equity dilution or external debt). New hospitals drag EBITDA by ~₹150 crore during ramp-up, typically 3–5 years — this is the short-term margin headwind the market is weighing against the long-term capacity story.</p>
+  <div class="stat-grid" role="list" aria-label="Healthcare Services key metrics">
+    <div class="stat-box" role="listitem"><div class="stat-label">Revenue (Q3 FY26)</div><div class="stat-value">₹3,183<span style="font-size:1rem">Cr</span></div><div class="stat-delta">+14% YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">EBITDA margin</div><div class="stat-value">24.8<span style="font-size:1rem">%</span></div><div class="stat-note">+73 bps YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">ROCE (YTD Dec 25)</div><div class="stat-value">29.5<span style="font-size:1rem">%</span></div><div class="stat-note">Strong capital returns</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">Avg revenue / patient</div><div class="stat-value">₹1.81<span style="font-size:1rem">L</span></div><div class="stat-delta">+4.4% vs Q2</div></div>
+  </div>
+  <p style="font-size:13px;color:var(--text3)">International patients: currently ~5–7% of HCS revenue; management targeting 10% by FY27. Markets being developed: Africa, Middle East, Southeast Asia.</p>
+</div>
+
+<!-- HealthCo Card -->
+<div class="card accent-purple" role="region" aria-label="Apollo HealthCo segment">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+    <span class="chip chip-purple">Apollo HealthCo</span>
+    <span style="font-size:12px;color:var(--text3)">~43% of group revenue</span>
+  </div>
+  <h3>Pharmacy + Digital: the demerger story</h3>
+  <p>Apollo HealthCo grew <strong>20% YoY in Q3 FY26</strong> to ₹2,827 crore, with offline pharmacy distribution (₹2,511 crore, +21% YoY) doing the heavy lifting. The digital platform Apollo 24/7 reported a GMV of ₹525 crore (+28% YoY), now serving 46 million users — with cash losses down to ₹29 crore in Q3 (lowest in any quarter), putting EBITDA breakeven firmly in sight.</p>
+  <p>The structural story is the planned demerger: the pharmacy and digital businesses are being separated into a new listed entity (NewCo / Apollo Healthtech Limited), targeting listing in Q4 FY27. For every 100 AHEL shares, shareholders receive 195.2 NewCo shares. The combined entity targets ₹25,000 crore revenue by FY27 at 7% EBITDA margin. The integration with Keimed (101 distribution centres, 75,000+ pharmacy clients, 18 states) brings backend scale that Apollo 24/7's front-end can monetise. Private labels already account for 15.5% of pharmacy sales, with a target of 20%+ by FY28 — a significant margin driver.</p>
+  <div class="stat-grid" role="list" aria-label="HealthCo segment key metrics">
+    <div class="stat-box" role="listitem"><div class="stat-label">Revenue (Q3 FY26)</div><div class="stat-value">₹2,827<span style="font-size:1rem">Cr</span></div><div class="stat-delta">+20% YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">Apollo 24/7 GMV</div><div class="stat-value">₹525<span style="font-size:1rem">Cr</span></div><div class="stat-delta">+28% YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">Digital cash losses</div><div class="stat-value">₹29<span style="font-size:1rem">Cr</span></div><div class="stat-note">Lowest ever; near breakeven</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">NewCo revenue target</div><div class="stat-value">₹25K<span style="font-size:1rem">Cr</span></div><div class="stat-note">By FY27; 7% EBITDA</div></div>
+  </div>
+</div>
+
+<!-- AHLL Card -->
+<div class="card accent-teal" role="region" aria-label="Apollo Health and Lifestyle segment">
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+    <span class="chip chip-teal">AHLL — Diagnostics &amp; Clinics</span>
+    <span style="font-size:12px;color:var(--text3)">~7% of group revenue</span>
+  </div>
+  <h3>Diagnostics: the quiet compounder</h3>
+  <p>Apollo Health and Lifestyle Ltd posted <strong>20% YoY revenue growth</strong> to ₹467 crore in Q3 FY26, with EBITDA surging 39% and margin expanding to 10.2% from 8.8% a year ago. The wellness segment grew approximately 32% YoY over 9 months — well above the industry average of 12–13%. AHLL added 12 satellite labs and 239 collection centres in Q3 alone, taking its diagnostic network well beyond the hospital walls.</p>
+  <p>The Indian diagnostics market is growing at 11–13% CAGR, driven by preventive health screening and chronic disease monitoring. AHLL's "Spectra" specialty labs, "Cradle" maternity centres, and fertility clinics give Apollo early access to the patient lifecycle — customers who will eventually need CONGO-level hospital care.</p>
+  <div class="stat-grid" role="list" aria-label="AHLL key metrics">
+    <div class="stat-box" role="listitem"><div class="stat-label">Revenue (Q3 FY26)</div><div class="stat-value">₹467<span style="font-size:1rem">Cr</span></div><div class="stat-delta">+20% YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">EBITDA margin</div><div class="stat-value">10.2<span style="font-size:1rem">%</span></div><div class="stat-delta">+140 bps YoY</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">Wellness growth (9M)</div><div class="stat-value">~32<span style="font-size:1rem">%</span></div><div class="stat-note">Well above industry 12–13%</div></div>
+    <div class="stat-box" role="listitem"><div class="stat-label">New labs added (Q3)</div><div class="stat-value">12<span style="font-size:1rem"> satellite</span></div><div class="stat-note">+ 239 collection centres</div></div>
+  </div>
+</div>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-purple" aria-hidden="true">4</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter four</p>
+    <h2>The strategic insight — the one thing to understand</h2>
+  </div>
+</div>
+
+<div class="big-insight" role="region" aria-label="Strategic insight about the HealthCo demerger">
+  <div class="bi-label">The insight</div>
+  <p class="bi-text">The HealthCo demerger is not a breakup — it is an arbitrage unlock. A hospital business trading at 25–30x EBITDA gets dragged down in valuation because the pharmacy-and-digital arm carries digital losses and growth capex. Separate them, and each trades on its own multiple. Pharmacy chains like Tata 1mg and PharmEasy command 40–50x revenue multiples from tech-sector investors. Apollo's pharmacy arm — 6,500+ stores growing at 20% annually — should attract a very different valuation pool once it stands alone.</p>
+  <p class="bi-text" style="margin-top:10px">Meanwhile, the hospital entity shed of its digital drag would show a clean 25% EBITDA margin and 29% ROCE — comparable to the most premium names in global private healthcare. AHEL shareholders get both. The demerger creates a second equity event without a single new share being issued or a rupee of fresh capital raised.</p>
+</div>
+
+<div class="quote-block" role="blockquote" aria-label="Analyst quote from PL Capital">
+"The demerger is value accretive and strategically sound, creating a high-growth digital and pharmacy platform while allowing AHEL to concentrate on core healthcare." — Param Desai, Analyst, PL Capital (maintaining Buy, target ₹8,350)
+</div>
+
+<p style="font-size:13px;color:var(--text2)">BNP Paribas retained its Outperform rating with a ₹8,723 target, valuing the hospital business at 29x FY27 EV/EBITDA and the HealthCo–Keimed entity at 15x. Macquarie holds an Underperform, citing below-market return expectations — the bear case is that demerger execution slips and digital losses continue longer than guided.</p>
+
+<!-- CHAPTER 5: NUMBERS -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-blue" aria-hidden="true">5</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter five</p>
+    <h2>The numbers in context</h2>
+  </div>
+</div>
+
+<!-- Q series performance -->
+<div class="card" role="region" aria-label="Quarterly financial performance">
+  <h3 style="margin-bottom:12px">Quarterly performance trajectory</h3>
+  <div class="stat-row"><span class="stat-row-label">Revenue — Q1 FY26</span><span class="stat-row-value">₹5,842 Cr <span style="color:var(--green);font-size:12px">+15% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">Revenue — Q2 FY26</span><span class="stat-row-value">₹6,304 Cr <span style="color:var(--green);font-size:12px">+13% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">Revenue — Q3 FY26</span><span class="stat-row-value">₹6,477 Cr <span style="color:var(--green);font-size:12px">+17% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">9M FY26 revenue</span><span class="stat-row-value">₹18,623 Cr <span style="color:var(--green);font-size:12px">+15% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">9M FY26 EBITDA</span><span class="stat-row-value">₹2,758 Cr <span style="color:var(--green);font-size:12px">+22% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">9M FY26 PAT</span><span class="stat-row-value">₹1,412 Cr <span style="color:var(--green);font-size:12px">+34% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">Q3 EBITDA margin (consol.)</span><span class="stat-row-value">14.9% <span style="font-size:12px;color:var(--text3)">(27% EBITDA growth)</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">Hospital ROCE (YTD Dec 25)</span><span class="stat-row-value"><strong>29.5%</strong> — flagship quality signal</span></div>
+</div>
+
+<!-- Chart -->
+<div class="card" role="region" aria-label="Revenue and PAT growth chart">
+  <h3 style="margin-bottom:8px">Revenue and PAT growth — quarterly trend</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:10px;font-size:12px;color:var(--text3)">
+    <span style="display:flex;align-items:center;gap:5px"><span style="width:12px;height:12px;border-radius:2px;background:#378ADD;display:inline-block"></span>Revenue (₹ Cr)</span>
+    <span style="display:flex;align-items:center;gap:5px"><span style="width:12px;height:4px;background:#1D9E75;display:inline-block;border-top:2px dashed #1D9E75"></span>PAT (₹ Cr)</span>
+  </div>
+  <div style="position:relative;width:100%;height:240px">
+    <canvas id="revenueChart" role="img" aria-label="Bar chart showing quarterly revenue growing from ₹5,086 Cr in Q1 FY25 to ₹6,477 Cr in Q3 FY26, with PAT rising from ₹305 Cr to ₹502 Cr over the same period">Revenue Q1 FY25: 5086, Q2 FY25: 5589, Q3 FY25: 5527, Q4 FY25: 6072, Q1 FY26: 5842, Q2 FY26: 6304, Q3 FY26: 6477. PAT Q1 FY25: 305, Q2 FY25: 379, Q3 FY25: 372, Q4 FY25: 520, Q1 FY26: 433, Q2 FY26: 477, Q3 FY26: 502.</canvas>
+  </div>
+</div>
+
+<!-- Valuation -->
+<div class="card" role="region" aria-label="Valuation and peer comparison">
+  <h3 style="margin-bottom:12px">Valuation — what the market is pricing in</h3>
+  <div class="stat-row"><span class="stat-row-label">Market cap (May 2026)</span><span class="stat-row-value">~₹1,16,000 Cr</span></div>
+  <div class="stat-row"><span class="stat-row-label">Share price (May 18)</span><span class="stat-row-value">₹8,063 &nbsp;<span style="font-size:12px;color:var(--text3)">52W: ₹6,002–₹8,099</span></span></div>
+  <div class="stat-row"><span class="stat-row-label">Trailing PE</span><span class="stat-row-value">~71x</span></div>
+  <div class="stat-row"><span class="stat-row-label">FY27E PE (consensus)</span><span class="stat-row-value"><strong>~56x</strong> — declining as earnings scale</span></div>
+  <div class="stat-row"><span class="stat-row-label">EV/EBITDA (trailing)</span><span class="stat-row-value">~36x</span></div>
+  <div class="stat-row"><span class="stat-row-label">P/Book</span><span class="stat-row-value">~12.3x &nbsp;<span style="font-size:12px;color:var(--text3)">ROE ~18%</span></span></div>
+  <div style="background:var(--surface2);border-radius:10px;padding:14px;margin-top:12px">
+    <div class="stat-row" style="padding:5px 0;border-bottom:0.5px solid var(--border)"><span class="stat-row-label" style="font-size:13px">Apollo Hospitals</span><span class="stat-row-value" style="font-size:13px">~71x PE trailing</span></div>
+    <div class="stat-row" style="padding:5px 0;border-bottom:0.5px solid var(--border)"><span class="stat-row-label" style="font-size:13px">Max Healthcare</span><span class="stat-row-value" style="font-size:13px;color:var(--amber)">~98x PE</span></div>
+    <div class="stat-row" style="padding:5px 0"><span class="stat-row-label" style="font-size:13px">Fortis Healthcare</span><span class="stat-row-value" style="font-size:13px">~75–85x PE</span></div>
+  </div>
+  <p style="font-size:13px;color:var(--text3);margin-top:10px;margin-bottom:0">At ~56x FY27E, Apollo trades at a meaningful discount to Max Healthcare and in-line with Fortis. The demerger, if executed, adds a re-rating catalyst: AHEL's hospital stub — shorn of digital drag — should command a premium comparable to Max Healthcare. Analyst consensus 12-month target: <strong>₹7,800–₹8,500</strong>; long-term (2–3 yr): ₹9,500–₹12,000 assuming demerger and FY27 bed ramp.</p>
+</div>
+
+<!-- CHAPTER 6: RISKS -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-amber" aria-hidden="true">6</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter six</p>
+    <h2>Risks — eyes open</h2>
+  </div>
+</div>
+
+<div class="card" role="region" aria-label="Five key risks">
+  <div class="risk-row">
+    <span class="risk-icon" aria-hidden="true">⚠</span>
+    <div>
+      <div class="risk-title">Risk 1: New hospital drag overshoots guidance</div>
+      <div class="risk-body">Four major hospitals commissioning in FY27 — Hyderabad, Kolkata, Sarjapur, Gurgaon — carry a guided EBITDA drag of ~₹150 crore during ramp-up. If occupancy in new units is slower than the modelled 3–5 year breakeven (Apollo achieved 50%+ in existing hospitals in 18–24 months historically), consolidated EBITDA margins could stay depressed into FY28. Signal: watch occupancy of new hospitals cross 50% within 6 quarters.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <span class="risk-icon" aria-hidden="true">⚠</span>
+    <div>
+      <div class="risk-title">Risk 2: Apollo 24/7 breakeven keeps slipping</div>
+      <div class="risk-body">The digital platform's EBITDA breakeven target was originally Q4 FY26. It has been pushed to Q1 FY27 — management citing insurance revenue deferral. Cash losses are now ₹29 crore per quarter (down from ₹67 crore cash + non-cash), but the trajectory must continue downward. A further slip would delay the NewCo IPO, depress sentiment, and make the demerger thesis less compelling. Signal: quarterly cash losses must fall below ₹20 crore for the thesis to hold.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <span class="risk-icon" aria-hidden="true">⚠</span>
+    <div>
+      <div class="risk-title">Risk 3: Demerger execution — regulatory and structural complexity</div>
+      <div class="risk-body">The scheme requires NCLT approval (expected Q1 FY27), SEBI clearance, FPI compliance (the NewCo needs to qualify as an Indian Owned and Controlled Company), and shareholder votes. Any one of these could delay or modify the structure. Keimed's integration — 101 distribution centres across 18 states — adds backend complexity. A delayed listing pushes back the valuation unlock by at least 2–4 quarters. Signal: NCLT approval date and any exchange communications regarding FPI ownership caps in NewCo.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <span class="risk-icon" aria-hidden="true">⚠</span>
+    <div>
+      <div class="risk-title">Risk 4: International patient diversification takes longer than expected</div>
+      <div class="risk-body">Bangladesh, once 30% of international inflow, is now just 7–8% after the 2024 political upheaval. Management is targeting 10% of total revenue from international patients by FY27, up from ~5–7% currently. If Africa and Middle East ramp-up is slower than planned, or geopolitical disruptions arise, the high-margin international segment stalls — and Apollo loses pricing power in its premium beds. Signal: international revenue share in quarterly disclosures.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <span class="risk-icon" aria-hidden="true">⚠</span>
+    <div>
+      <div class="risk-title">Risk 5: Pharmacy margin pressure from quick commerce</div>
+      <div class="risk-body">Apollo Pharmacy's 6,500+ outlets are facing growing competition from 10-minute quick commerce platforms (Blinkit, Zepto, Swiggy Instamart) entering the medication delivery space, and Tata 1mg's aggressive generics push. The pharmacy distribution segment's EBITDA margin is currently 7.8% — thin enough that pricing pressure or market share losses at scale would visibly impact HealthCo profitability. Max Healthcare is also expanding its pharmacy-in-hospital footprint aggressively. Signal: pharmacy same-store revenue growth and private label penetration percentage.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<div class="chapter-header">
+  <div class="chapter-circle chapter-circle-teal" aria-hidden="true">7</div>
+  <div>
+    <p class="chapter-eyebrow">Chapter seven</p>
+    <h2>Watch signals — five things to track every quarter</h2>
+  </div>
+</div>
+
+<div class="card" role="region" aria-label="Five quarterly watch signals">
+  <div class="watch-row">
+    <span class="watch-dot" style="background:var(--blue)" aria-hidden="true"></span>
+    <div>
+      <div class="watch-title">Average Revenue Per Inpatient (ARPP)</div>
+      <div class="watch-body">Currently ₹1,80,917 (Q3 FY26). Direction: upward, driven by CONGO case mix improvement. Green flag: ARPP crosses ₹1,90,000+ within 2 quarters. Red flag: stagnation below ₹1,75,000 for two consecutive quarters, signalling that case mix is not improving or competition is forcing price concessions.</div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot" style="background:var(--purple)" aria-hidden="true"></span>
+    <div>
+      <div class="watch-title">Apollo 24/7 quarterly cash losses</div>
+      <div class="watch-body">Currently ₹29 crore per quarter — lowest ever. Green flag: falls below ₹20 crore in Q4 FY26 or Q1 FY27, confirming the breakeven trajectory. Red flag: any quarter where losses re-widen, or management pushes the breakeven target beyond Q1 FY27. This is the most watched metric for the demerger thesis.</div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot" style="background:var(--teal)" aria-hidden="true"></span>
+    <div>
+      <div class="watch-title">New hospital occupancy ramp</div>
+      <div class="watch-body">Four hospitals commissioning in FY27. Green flag: occupancy crosses 50% within 5–6 quarters of opening, consistent with Apollo's historical ramp in recent brownfield expansions. Red flag: two consecutive quarters below 40% occupancy at any new unit, implying localised demand shortfall or operational issues. Management discloses bed count and occupancy by geography — this can be reconstructed from earnings slides.</div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot" style="background:var(--green)" aria-hidden="true"></span>
+    <div>
+      <div class="watch-title">International patient revenue share</div>
+      <div class="watch-body">Currently ~5–7% of Healthcare Services revenue. Management's FY27 target is 10%. Green flag: measurable increase each quarter, or explicit management guidance on new geographies (Africa, Middle East, South-East Asia) translating to volumes. Red flag: share falls back below 5%, or further Bangladesh-like disruption in a key corridor. Disclosed in concall commentary and sometimes broken out in the IP slides.</div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot" style="background:var(--amber)" aria-hidden="true"></span>
+    <div>
+      <div class="watch-title">NewCo demerger regulatory milestones</div>
+      <div class="watch-body">NCLT approval expected Q1 FY27. SEBI and FPI compliance approvals are parallel tracks. Green flag: NCLT order in Q1 FY27, SEBI filing by Q2 FY27, listing on track for Q4 FY27. Red flag: any regulator requesting modification to the scheme structure, or delay beyond Q4 FY27 — each quarter's delay compresses the valuation re-rating window. Watch NSE corporate filings under "Scheme of Arrangement" disclosures.</div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-card" role="region" aria-label="Verdict: investment summary">
+  <div class="verdict-label">Verdict</div>
+  <p class="verdict-text">Three structural tailwinds — India's chronic disease burden driving high-acuity demand, rising health insurance penetration now covering 83% of Apollo's inpatient revenues, and medical tourism diversifying from Bangladesh toward higher-yield corridors — are compounding through a business that no competitor has fully replicated: a four-layer stack of hospitals, diagnostics, digital platform, and pharmacy. The financial quality signal is unambiguous: hospital-segment ROCE of 29.5%, 9-month PAT growth of 34%, and a planned ₹8,200 crore bed expansion funded entirely through internal cash flows. The near-term re-rating catalyst is the NewCo listing — separating the pharmacy-digital engine (growing at 20%+) from the hospital core lets each trade on its natural multiple, unlocking a second equity event for existing shareholders at no dilution cost. At 56x FY27E earnings, Apollo trades at a discount to Max Healthcare and in-line with Fortis, arguably mispriced for a business with superior ROCE and a structural demerger catalyst ahead. We are in the middle chapter — hospital expansion ramping, digital approaching breakeven, demerger approvals progressing, international patient base rebuilding. The main risks are execution: new hospital drag, digital breakeven timing, and regulatory complexity around the demerger. None of these are existential, but each is a watch-and-verify story, not a trust-and-forget one.</p>
+</div>
+
+<p style="font-size:11px;color:var(--text3);margin-top:20px;text-align:center">This brief is for research and informational purposes only. It does not constitute investment advice. Past performance and management guidance are not guarantees of future results. Consult a SEBI-registered advisor before making investment decisions. Sources: Apollo Hospitals Q3 FY26 earnings call (Feb 11, 2026), Q2 FY26 concall, company investor presentations, IBEF, ICICI Direct Research, PL Capital, BNP Paribas.</p>
+
+<script>
+(function(){
+  var saved = localStorage.getItem('apolloBriefTheme');
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  var theme = saved || (mq.matches ? 'dark' : 'light');
+  document.documentElement.setAttribute('data-theme', theme);
+  var btn = document.getElementById('themeToggle');
+  if(btn) btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+})();
+
+function toggleTheme(){
+  var curr = document.documentElement.getAttribute('data-theme');
+  var next = curr === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('apolloBriefTheme', next);
+  document.getElementById('themeToggle').textContent = next === 'dark' ? '☀️' : '🌙';
+  if(window._apolloChart) {
+    var isDark = next === 'dark';
+    window._apolloChart.data.datasets[0].backgroundColor = isDark ? 'rgba(94,166,240,0.55)' : 'rgba(55,138,221,0.55)';
+    window._apolloChart.data.datasets[1].borderColor = isDark ? '#3db88a' : '#1D9E75';
+    window._apolloChart.data.datasets[1].pointBackgroundColor = isDark ? '#3db88a' : '#1D9E75';
+    window._apolloChart.options.scales.x.ticks.color = isDark ? '#7a7a72' : '#7a7a74';
+    window._apolloChart.options.scales.y.ticks.color = isDark ? '#7a7a72' : '#7a7a74';
+    window._apolloChart.options.scales.y1.ticks.color = isDark ? '#7a7a72' : '#7a7a74';
+    window._apolloChart.update();
+  }
+}
+
+window.addEventListener('load', function(){
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var ctx = document.getElementById('revenueChart');
+  if(!ctx) return;
+  window._apolloChart = new Chart(ctx, {
+    data: {
+      labels: ['Q1 FY25','Q2 FY25','Q3 FY25','Q4 FY25','Q1 FY26','Q2 FY26','Q3 FY26'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Revenue (₹ Cr)',
+          data: [5086, 5589, 5527, 6072, 5842, 6304, 6477],
+          backgroundColor: isDark ? 'rgba(94,166,240,0.55)' : 'rgba(55,138,221,0.55)',
+          borderColor: 'transparent',
+          borderRadius: 6,
+          yAxisID: 'y'
+        },
+        {
+          type: 'line',
+          label: 'PAT (₹ Cr)',
+          data: [305, 379, 372, 520, 433, 477, 502],
+          borderColor: isDark ? '#3db88a' : '#1D9E75',
+          borderWidth: 2.5,
+          borderDash: [4,3],
+          pointBackgroundColor: isDark ? '#3db88a' : '#1D9E75',
+          pointRadius: 4,
+          tension: 0.35,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
+      scales: {
+        x: {
+          ticks: { color: isDark ? '#7a7a72' : '#7a7a74', font: { size: 11 }, autoSkip: false, maxRotation: 35 },
+          grid: { display: false }
+        },
+        y: {
+          position: 'left',
+          ticks: { color: isDark ? '#7a7a72' : '#7a7a74', font: { size: 11 }, callback: v => '₹'+v.toLocaleString() },
+          grid: { color: isDark ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.06)' }
+        },
+        y1: {
+          position: 'right',
+          ticks: { color: isDark ? '#7a7a72' : '#7a7a74', font: { size: 11 }, callback: v => '₹'+v },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schneider Electric Infrastructure — NSE Investor Brief | May 2026</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --color-primary: #378ADD;
+            --color-primary-light: #E8F2FF;
+            --color-primary-dark: #2C5FA8;
+            --color-success: #3B6D11;
+            --color-warning: #BA7517;
+            --color-risk: #D85A30;
+            --color-neutral: #6B7280;
+            --color-bg: #FFFFFF;
+            --color-text: #1F2937;
+            --color-text-light: #6B7280;
+            --color-border: #E5E7EB;
+            --color-divider: #F3F4F6;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #1F2937;
+                --color-text: #F3F4F6;
+                --color-text-light: #D1D5DB;
+                --color-border: #4B5563;
+                --color-divider: #374151;
+                --color-primary-light: #1E3A5F;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+            color: white;
+            padding: 2rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        article {
+            background: var(--color-bg);
+        }
+
+        .cover-card {
+            background: var(--color-primary-light);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .cover-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .cover-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--color-text);
+        }
+
+        .cover-subtitle {
+            font-size: 1rem;
+            color: var(--color-text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .cover-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .meta-item {
+            padding: 0.75rem;
+            background: var(--color-bg);
+            border-radius: 4px;
+            border-left: 2px solid var(--color-primary);
+        }
+
+        .meta-label {
+            font-weight: 600;
+            color: var(--color-text-light);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .meta-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .chapter-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--color-border);
+            padding-bottom: 1rem;
+        }
+
+        .chapter-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--color-primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .chapter-title-group {
+            flex: 1;
+        }
+
+        .chapter-eyebrow {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .chapter-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .section-content {
+            padding: 0 0 0  56px;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .insight-card {
+            background: var(--color-primary-light);
+            border-left: 3px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .insight-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .insight-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .vertical-card {
+            background: var(--color-primary-light);
+            border-left: 3px solid var(--color-primary);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .vertical-name {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .vertical-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--color-border);
+            font-size: 0.95rem;
+        }
+
+        .stat-row:last-child {
+            border-bottom: none;
+        }
+
+        .stat-label {
+            color: var(--color-text-light);
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-weight: 700;
+            color: var(--color-text);
+        }
+
+        .risk-item {
+            background: rgba(216, 90, 48, 0.08);
+            border-left: 3px solid var(--color-risk);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .risk-title {
+            font-weight: 700;
+            color: var(--color-risk);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .risk-title::before {
+            content: "⚠";
+            font-size: 1.2rem;
+        }
+
+        .risk-description {
+            color: var(--color-text);
+            font-size: 0.95rem;
+        }
+
+        .watch-signal {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--color-border);
+            display: flex;
+            gap: 1rem;
+        }
+
+        .watch-signal:last-child {
+            border-bottom: none;
+        }
+
+        .signal-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--color-primary);
+            border-radius: 50%;
+            margin-top: 0.4rem;
+            flex-shrink: 0;
+        }
+
+        .signal-content {
+            flex: 1;
+        }
+
+        .signal-metric {
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .signal-description {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+        }
+
+        .verdict-card {
+            background: var(--color-primary-light);
+            border-left: 4px solid var(--color-primary);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .verdict-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .verdict-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--color-text);
+        }
+
+        ul, ol {
+            margin: 1rem 0 1rem 1.5rem;
+            color: var(--color-text);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: var(--color-primary-light);
+            padding: 0.2rem 0.4rem;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+
+        .number-highlight {
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            main {
+                padding: 1rem;
+            }
+
+            .cover-title {
+                font-size: 1.5rem;
+            }
+
+            .chapter-title {
+                font-size: 1.4rem;
+            }
+
+            .section-content {
+                padding-left: 0;
+            }
+
+            .cover-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-row {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+
+        .positive-signal {
+            color: var(--color-success);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: var(--color-text-light);
+            font-size: 0.85rem;
+            border-top: 1px solid var(--color-border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <header role="banner">
+        <div>
+            <h1>Schneider Electric Infrastructure</h1>
+            <p>NSE Investor Brief | May 18, 2026</p>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark mode" onclick="toggleTheme()">🌙 Mode</button>
+    </header>
+
+    <main>
+        <article>
+            <!-- COVER CARD -->
+            <section class="cover-card">
+                <div class="cover-eyebrow">Electrical Equipment & Power Infrastructure</div>
+                <h2 class="cover-title">The Silent Infra Compounding Machine</h2>
+                <p class="cover-subtitle">Riding India's 9-trillion-rupee grid transformation and the AI data center boom</p>
+
+                <div class="cover-meta">
+                    <div class="meta-item">
+                        <div class="meta-label">NSE Symbol</div>
+                        <div class="meta-value">SCHNEIDER</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Sector</div>
+                        <div class="meta-value">Industrial/Power</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">Market Cap</div>
+                        <div class="meta-value">₹19,400 Cr</div>
+                    </div>
+                    <div class="meta-item">
+                        <div class="meta-label">FY26 Revenue Est.</div>
+                        <div class="meta-value">₹4,200+ Cr</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAPTER 1: CONTEXT -->
+            <section aria-label="Chapter 1: Context">
+                <div class="chapter-header">
+                    <div class="chapter-number">1</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">The Macro Moment</div>
+                        <h3 class="chapter-title">Why Now: Three Structural Tailwinds Converging</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <p>India is entering an unprecedented transformation of its power infrastructure. Three mega-trends are colliding in 2026, creating the most favorable demand backdrop for electrical equipment manufacturers in a decade.</p>
+
+                    <p><strong>First: Grid modernization is capital-intensive.</strong> India's transmission and distribution (T&D) sector faces a <span class="number-highlight">₹9.1 trillion capex</span> spend between FY25 and FY32—that is ₹1.1 trillion per year. Power Grid Corporation is awarding record transmission contracts to accommodate renewable energy integration, requiring large power transformers, switchgear, and digital control systems at scale. This is not cyclical demand; it is mandated by the Ministry of Power.</p>
+
+                    <p><strong>Second: Renewable energy is driving transformer demand.</strong> India's electrical equipment market is growing at a <span class="number-highlight">CAGR of 15.6%–15.9%</span> through 2030, significantly above GDP growth. The integration of solar and wind into the grid requires distribution transformers, high-voltage switchgear, and reactive power equipment. Government has allocated <span class="number-highlight">₹3,400 crore</span> (Karnataka alone) for battery energy storage systems (BESS) to stabilize the grid. Every MW of renewable energy added requires electrical infrastructure downstream.</p>
+
+                    <p><strong>Third: Data centers are a surprise growth driver.</strong> India is expected to host <span class="number-highlight">30+ hyperscaler data centers</span> by 2027, each requiring massive electrical infrastructure—transformers, switchgear, UPS systems, and cooling power management. Global AI demand means data centers are moving beyond the US and Europe into Asia. Schneider has already won orders from leading semiconductor and cloud service providers. This is a structural shift, not a project win.</p>
+
+                    <p>The electrical equipment sector is cyclical, but these three tailwinds are structural and multi-year. The market is not just growing; it is transitioning to a higher-capex regime.</p>
+                </div>
+            </section>
+
+            <!-- CHAPTER 2: BUSINESS MODEL -->
+            <section aria-label="Chapter 2: Business Model">
+                <div class="chapter-header">
+                    <div class="chapter-number">2</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">What They Make and Why It Sticks</div>
+                        <h3 class="chapter-title">The Business Model: Stickiness Through Specification Locks</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <p>Schneider Electric Infrastructure is not a commodity supplier. It is a specified brand in power tenders across India. Once a transformer, switchgear, or substation system is specified by a consulting engineer or utility, it creates a lock-in effect. Customers rarely redesign to save 5% on equipment; reliability and continuity matter more than cost.</p>
+
+                    <p><strong>The revenue flywheel:</strong></p>
+                    <ul>
+                        <li>Win major transformer or switchgear tenders from state utilities and private power projects (Government of India contracts, renewable project EPCs, data center buildouts)</li>
+                        <li>Manufacture at 4 facilities across Vadodara, Kolkata, Chennai, and other locations; deliver service and spares for 15–20 years</li>
+                        <li>Build deep relationships with consulting engineers and procurement teams who specify your brand in the next cycle</li>
+                        <li>Capture spares, maintenance, and digital solutions revenue (EcoStruxure, remote monitoring, predictive analytics) for decades</li>
+                        <li>Use cash generation to invest in manufacturing (moving from Engineering-to-Order to Configuration-to-Order, reducing lead times from 3 months to 3 weeks)</li>
+                    </ul>
+
+                    <p><strong>Why customers stick:</strong> Specification lock is powerful. Consulting engineers in Indian tenders typically prescribe "L&T, Schneider, ABB, or Siemens"—a curated list. Once a brand is specified in a major utility's standards, substituting it requires re-approval. Switching costs are high; reliability is non-negotiable in power infrastructure. A transformer failure at a grid substation is not a 5% cost difference; it is a supply-chain crisis.</p>
+
+                    <p><strong>Capabilities that matter:</strong> Schneider has built (1) end-to-end manufacturing and testing infrastructure, (2) deep embedding in India's utility and EPC ecosystems, (3) ability to navigate complex government contracting, and (4) emerging digital/IoT capabilities (remote asset monitoring, predictive maintenance software). They are shifting from hardware to hardware-plus-software, which increases margin and creates recurring revenue.</p>
+
+                    <p>The business is not high-margin on a per-unit basis (typical EBITDA margins run 12–14%), but it is high-velocity, capital-efficient, and sticky. Cash conversion is strong, and the backlog is long.</p>
+                </div>
+            </section>
+
+            <!-- CHAPTER 3: VERTICAL STORIES -->
+            <section aria-label="Chapter 3: Vertical Stories">
+                <div class="chapter-header">
+                    <div class="chapter-number">3</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">Revenue Segments</div>
+                        <h3 class="chapter-title">The Vertical Stories: Where the Order Growth Is Coming From</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <p>Schneider's order intake surged <span class="number-highlight">60.7% YoY</span> in Q3 FY26, with backlog hitting <span class="number-highlight">₹1,707 crore</span> (+52.8% YoY). This growth is not concentrated; it is broad-based across multiple verticals. Here is where each vertical sits in the narrative:</p>
+
+                    <div class="vertical-card">
+                        <div class="vertical-name">Vertical 1: Power Grids & Distribution</div>
+                        <div class="vertical-title">The Backbone (Still Growing)</div>
+                        <p>State utilities and Power Grid Corporation are upgrading distribution networks to reduce losses, integrate renewables, and accommodate rising demand. Schneider's large power transformers, medium-voltage switchgear, and substation systems are the workhorse products here. This is mature but growing at <span class="number-highlight">8–12% annually</span> because capex is structural and regulated. External catalyst: Revamped Distribution Sector Scheme (RDSS) is mandating distribution network upgrades across 28 states and union territories. Government allocations are ₹4+ trillion for power sector capex through 2032. Status: Running strong, execution accelerating.</p>
+                    </div>
+
+                    <div class="vertical-card">
+                        <div class="vertical-name">Vertical 2: Renewable Energy & Smart Grids</div>
+                        <div class="vertical-title">The Inflection (Ramping Fast)</div>
+                        <p>Solar and wind power plants require transformers, switchgear, and reactive power equipment. Schneider won major transformer orders in Q3 and Q4 FY26, particularly in the solar EPC space. The India solar EPC market alone is growing at <span class="number-highlight">12–16% CAGR</span> through 2035, with 15–20 GW of annual capacity additions expected. The grid modernization to absorb renewables is the external catalyst. Status: Early-to-middle chapter. Schneider has the right product portfolio but still smaller relative to Power & Grid. Growing at <span class="number-highlight">25–30% YoY</span> in this vertical.</p>
+                    </div>
+
+                    <div class="vertical-card">
+                        <div class="vertical-name">Vertical 3: Data Centers & Cloud Infrastructure</div>
+                        <div class="vertical-title">The Dark Horse (Nascent but High-Growth)</div>
+                        <p>This is the surprise story. Hyperscaler data centers (Google, Amazon, Meta, Microsoft, and Indian providers like Adani, Yotta Data) are setting up in India. Each facility requires transformers, switchgear, UPS systems, and intelligent power distribution systems. Schneider has already won orders from leading cloud service providers and semiconductor manufacturers. The external catalyst: India attracting global data center capex due to geography (proximity to Asia-Pacific demand), policy support (incentives for data center hubs in Gujarat, Mumbai), and the AI/ML boom. This vertical is <span class="number-highlight">growing at 40%+ YoY</span> but from a smaller base. Status: Prototype-to-ramp. Will likely become 20%+ of revenue by FY28.</p>
+                    </div>
+
+                    <div class="vertical-card">
+                        <div class="vertical-name">Vertical 4: Semiconductor & Industrial Manufacturing</div>
+                        <div class="vertical-title">The Emerging Beneficiary</div>
+                        <p>Semiconductor fabs and advanced manufacturing plants require reliable, stable power. Schneider won orders from leading semiconductor manufacturers in FY26. India's semiconductor manufacturing push (SEMICON India scheme with ₹76,000 crore incentive) and EV/battery manufacturing are second-order beneficiaries. Status: Just starting to accelerate, but the tailwind is structural.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAPTER 4: STRATEGIC INSIGHT -->
+            <section aria-label="Chapter 4: Strategic Insight">
+                <div class="chapter-header">
+                    <div class="chapter-number">4</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">The Non-Obvious Thing</div>
+                        <h3 class="chapter-title">Why This Company Is Winning Beyond Its Traditional Patch</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="insight-card">
+                        <div class="insight-label">The Strategic Insight</div>
+                        <div class="insight-text">Schneider's manufacturing cost advantage and engineering depth in India allow it to serve high-specification customers (utilities, hyperscalers, chipmakers) at prices ABB and Siemens struggle to match. But more crucially: Schneider is the only Indian manufacturer of large power transformers and switchgear that is also deeply embedded in global supply chains. It can serve both domestic utilities and multinational data center operators without foreign exchange friction or supply delays. ABB and Siemens have higher global capex needs and margin targets; Schneider can compete on cost and delivery. This is its structural advantage in a capex upcycle.</div>
+                    </div>
+
+                    <p>The secondary insight: <strong>Schneider is shifting from ETO (Engineer-to-Order) to CTO (Configuration-to-Order)</strong>, reducing manufacturing lead times from 12 weeks to 3 weeks. This matters in a competitive bidding environment. If a customer needs a 315 MVA transformer in 8 weeks, Schneider can win the bid; competitors cannot. This is a non-obvious operational advantage that will compound as capex cycle intensity increases.</p>
+
+                    <p>The third angle: <strong>Data center and semiconductor demand is structural, but Schneider's installed base in India gives it first-mover advantage.</strong> Global data center operators are not going to reengineer their power systems once installed. Schneider's early wins in this vertical create a flywheel of specifications, case studies, and reference customers that will accelerate the next wave of site buildouts.</p>
+                </div>
+            </section>
+
+            <!-- CHAPTER 5: NUMBERS IN CONTEXT -->
+            <section aria-label="Chapter 5: Numbers in Context">
+                <div class="chapter-header">
+                    <div class="chapter-number">5</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">The Numbers</div>
+                        <h3 class="chapter-title">Financials: Growth, Margins, and What the Market Is Pricing In</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <h4 style="font-weight: 700; margin: 1.5rem 0 1rem; color: var(--color-text);">Revenue & Profitability</h4>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 Revenue</span>
+                        <span class="stat-value">₹1,029 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 Revenue Growth (YoY)</span>
+                        <span class="stat-value">+19.9%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 PBIT (Before Exceptional Items)</span>
+                        <span class="stat-value">₹155 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 Net Profit (PAT)</span>
+                        <span class="stat-value">₹97 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 PAT Growth (YoY)</span>
+                        <span class="stat-value">-12.2%</span>
+                    </div>
+
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-light);"><strong>Note on Q3 PAT decline:</strong> Net profit fell due to an exceptional charge of ₹42.2 Cr from labour code changes (gratuity liability). Underlying operating profit grew 19.4% YoY. This is a one-time, non-cash charge.</p>
+
+                    <h4 style="font-weight: 700; margin: 1.5rem 0 1rem; color: var(--color-text);">Margins & Capital Efficiency</h4>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Estimated FY26 EBITDA Margin (Q3 run-rate)</span>
+                        <span class="stat-value">~14–15%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">ROCE (Trailing 12M, Q3 FY26)</span>
+                        <span class="stat-value">26.1%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">ROIC (3-year growth)</span>
+                        <span class="stat-value">14% → 24.6%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Parent Company Gross Margin (FY25)</span>
+                        <span class="stat-value">42.1%</span>
+                    </div>
+
+                    <p style="margin-top: 1rem;">Margins are healthy and improving. ROCE of 26% is exceptional for a capital-intensive business and signals that capital deployment is efficient. The improvement in ROIC from 14% to 24.6% over 3 years shows operational leverage as the company scales. Gross margin in the parent company is expected to expand by 50–80 bps in FY26 as price increases offset raw material inflation.</p>
+
+                    <h4 style="font-weight: 700; margin: 1.5rem 0 1rem; color: var(--color-text);">Order Book & Backlog</h4>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Order Backlog (as of Sep 2025)</span>
+                        <span class="stat-value">₹1,805 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Backlog Growth (YoY)</span>
+                        <span class="stat-value">+25%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Q3 FY26 Order Inflow</span>
+                        <span class="stat-value">₹909 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Order Inflow Growth (YoY)</span>
+                        <span class="stat-value">+60.7%</span>
+                    </div>
+
+                    <p style="margin-top: 1rem;">The order book is the single most important metric for visibility. A 12-month backlog of ₹1,805 Cr against quarterly revenue of ₹1,000+ Cr means execution is visible into Q3–Q4 FY27. Order growth of 60.7% is not a one-off; management sees sustained demand across grids, data centers, and renewables. This supports management guidance for sustained double-digit growth through FY27–FY28.</p>
+
+                    <h4 style="font-weight: 700; margin: 1.5rem 0 1rem; color: var(--color-text);">Valuation: What Is the Market Pricing In?</h4>
+
+                    <div class="stat-row">
+                        <span class="stat-label">Current Share Price (May 2026)</span>
+                        <span class="stat-value">₹1,350</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Market Cap</span>
+                        <span class="stat-value">₹19,400 Cr</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Trailing PE Ratio</span>
+                        <span class="stat-value">~65.7x</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">ABB India Trailing PE</span>
+                        <span class="stat-value">~77.0x</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Siemens India Trailing PE</span>
+                        <span class="stat-value">48.4x – 75.2x</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Industry Average PE</span>
+                        <span class="stat-value">~49–52x</span>
+                    </div>
+
+                    <p style="margin-top: 1rem;"><strong>Valuation Assessment:</strong> Schneider is trading at <span class="number-highlight">65.7x trailing PE</span>, higher than the industry average (49–52x) but lower than ABB (77x). The market is pricing in growth, but not expecting it to persist forever. The embedded assumption is 15–18% earnings growth for 2–3 years, then moderation to 10–12% as the capex cycle matures.</p>
+
+                    <p>Is it justified? The case depends on your view of order visibility and execution. If you believe the ₹1,800+ Cr backlog converts to revenue growth of 18–22% in FY27, then the valuation is fair. If capex slows faster than expected, the multiple will compress. The market is not pricing in a boom; it is pricing in continuation of a favorable demand environment with disciplined execution.</p>
+
+                    <h4 style="font-weight: 700; margin: 1.5rem 0 1rem; color: var(--color-text);">Cash Flow & Working Capital</h4>
+
+                    <p>Free cash flow generation is robust. The parent company (Schneider Electric SE) converted 111% of earnings into free cash flow in FY25 (€4.6 Bn). The India subsidiary is asset-light relative to revenue; factories are largely owned, and working capital cycles are short (utilities pay promptly, manufacturing cycles are 3–8 weeks). Cash deployment into capex for manufacturing expansion and technology is measured; the company is not over-leveraged.</p>
+                </div>
+            </section>
+
+            <!-- CHAPTER 6: RISKS -->
+            <section aria-label="Chapter 6: Risks">
+                <div class="chapter-header">
+                    <div class="chapter-number">6</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">Eyes Open</div>
+                        <h3 class="chapter-title">Four Concrete Risks to Monitor</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <div class="risk-item">
+                        <div class="risk-title">Raw Material Cost Volatility (Copper & Electrical Steel)</div>
+                        <div class="risk-description">Transformers and switchgear are 40–50% material cost (copper, silicon steel, insulation oil). In 2026, global copper demand is surging (AI data centers, EV electrification), and supply is constrained. India imports 80%+ of its copper and electrical steel from Africa and Southeast Asia. If copper prices spike 15–20%, Schneider's gross margins will compress unless it can pass through price increases to customers within 2–3 quarters. Management has hedging programs and long-term contracts, but this is the single largest margin risk in the next 18 months. Signal to watch: London Metals Exchange copper prices above $10,000/tonne or electrical steel prices rising faster than Schneider can offset via price increases.</div>
+                    </div>
+
+                    <div class="risk-item">
+                        <div class="risk-title">Government Capex Delays or Policy Reversals</div>
+                        <div class="risk-description">The ₹9.1 trillion T&D capex and RDSS are government mandated, but execution is dependent on budget cycles, state utility financial health, and political continuity. If a state government pivots away from grid capex due to fiscal stress, order inflow could slow. The renewable energy capex is also policy-dependent; a change in renewable energy targets or tariff structures could impact demand. Mitigation: Diversification across states and verticals (data centers, semiconductors, private sector) reduces concentration risk. Signal: Watch for state electricity board financial distress or delays in government tender awards.</div>
+                    </div>
+
+                    <div class="risk-item">
+                        <div class="risk-title">Data Center Capex Pullback Due to AI Bubble Moderation</div>
+                        <div class="risk-description">Data center demand is one of Schneider's key growth drivers, but it is subject to cyclical AI capex cycles. If hyperscalers moderate spending due to slower AI monetization or margin pressure, data center orders could slow sharply. This is a binary risk; currently, Schneider's exposure to data centers is estimated at 10–15% of revenues, so a 30% pullback would impact FY27 growth by 3–4 percentage points. Signal: Monitor hyperscaler quarterly capex guidance and announcements of data center deferrals.</div>
+                    </div>
+
+                    <div class="risk-item">
+                        <div class="risk-title">Manufacturing Capacity Utilization & Quality Issues</div>
+                        <div class="risk-description">Schneider is ramping production from 4 factories to meet demand. If manufacturing execution falters (quality issues, delays, cost overruns), project deliveries could slip, damaging relationships with utilities and hyperscalers. Large transformers are custom-built; rework is expensive and reputationally damaging. Signal: Track quarterly gross margins for compression due to rework or warranty costs; monitor management commentary on delivery timelines.</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAPTER 7: WATCH SIGNALS -->
+            <section aria-label="Chapter 7: Watch Signals">
+                <div class="chapter-header">
+                    <div class="chapter-number">7</div>
+                    <div class="chapter-title-group">
+                        <div class="chapter-eyebrow">Five Metrics to Check</div>
+                        <h3 class="chapter-title">What to Monitor Every Quarter</h3>
+                    </div>
+                </div>
+
+                <div class="section-content">
+                    <p>These five metrics will tell you if the investment thesis is holding up. Check them within 5 minutes of each earnings release:</p>
+
+                    <div class="watch-signal">
+                        <div class="signal-dot"></div>
+                        <div class="signal-content">
+                            <div class="signal-metric">Order Inflow Growth Rate</div>
+                            <div class="signal-description"><strong>What it is:</strong> New orders booked in the quarter (in rupees). <strong>Direction that's good:</strong> 25%+ YoY growth sustained. <strong>Red flag:</strong> Falls below 10% YoY, or shows a declining trend quarter-over-quarter (e.g., Q1 +40%, Q2 +35%, Q3 +25%). <strong>Why it matters:</strong> Order inflow is the leading indicator of revenue growth 2–4 quarters ahead. A slowdown here signals demand deterioration before it shows up in revenue.</div>
+                        </div>
+                    </div>
+
+                    <div class="watch-signal">
+                        <div class="signal-dot"></div>
+                        <div class="signal-content">
+                            <div class="signal-metric">Order Backlog to Quarterly Revenue Ratio</div>
+                            <div class="signal-description"><strong>What it is:</strong> Total order backlog divided by quarterly revenue (should be expressed as months of execution visibility). <strong>Direction that's good:</strong> Backlog-to-revenue ratio of 12–15 months (currently ~1.7x). <strong>Red flag:</strong> Falls below 10 months, or backlog growth lags revenue growth. <strong>Why it matters:</strong> This tells you how much revenue is locked in. If the backlog is shrinking relative to revenue, it signals the company is burning through orders faster than it is winning new ones.</div>
+                        </div>
+                    </div>
+
+                    <div class="watch-signal">
+                        <div class="signal-dot"></div>
+                        <div class="signal-content">
+                            <div class="signal-metric">Gross Margin or EBITDA Margin Trend</div>
+                            <div class="signal-description"><strong>What it is:</strong> (Revenue – Cost of Goods Sold) / Revenue, or EBITDA / Revenue. <strong>Direction that's good:</strong> Stable to expanding (currently ~14–15%, should trend to 15–16% in FY27). <strong>Red flag:</strong> Margin compression of more than 100 bps quarter-over-quarter, especially if accompanied by management commentary about raw material inflation. <strong>Why it matters:</strong> Margin compression signals either input cost inflation (copper, steel) that the company cannot pass through, or operational inefficiency (rework, underutilization). Both are warning signs.</div>
+                        </div>
+                    </div>
+
+                    <div class="watch-signal">
+                        <div class="signal-dot"></div>
+                        <div class="signal-content">
+                            <div class="signal-metric">Data Center & Semiconductor Segment Revenue Mix</div>
+                            <div class="signal-description"><strong>What it is:</strong> Percentage of revenue coming from data center and semiconductor orders. <strong>Direction that's good:</strong> Growing from ~10–12% to 15%+ of total revenue by FY28. <strong>Red flag:</strong> Falls below 8%, or management guidance on data center capex slows. <strong>Why it matters:</strong> This vertical is key to sustaining 18%+ growth. If it stalls, the company reverts to 10–12% growth on power & grid alone.</div>
+                        </div>
+                    </div>
+
+                    <div class="watch-signal">
+                        <div class="signal-dot"></div>
+                        <div class="signal-content">
+                            <div class="signal-metric">Free Cash Flow Conversion Rate</div>
+                            <div class="signal-description"><strong>What it is:</strong> Net profit converted to cash from operations (should be 85%+). <strong>Direction that's good:</strong> Sustained above 80%; working capital stays flat or improves. <strong>Red flag:</strong> Falls below 60%, or working capital deteriorates (days sales outstanding exceeds 90 days). <strong>Why it matters:</strong> If cash conversion drops, it signals either profitability is artificial (inventory build, payment delays) or capex is being deployed inefficiently.</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VERDICT -->
+            <section aria-label="Verdict">
+                <div class="verdict-card">
+                    <div class="verdict-label">Investment Thesis Summary</div>
+                    <div class="verdict-text">
+                        <strong>Schneider Electric Infrastructure is compounding in a structural capex upcycle.</strong> Three tailwinds are converging: (1) ₹9.1 trillion government capex on power T&D and grid modernization through 2032, (2) renewable energy integration requiring transformers and switchgear at scale, and (3) data center hyperscaler buildup in India creating incremental electrical infrastructure demand. Revenue growth is tracking 18–22% YoY, and order backlog has surged 50%+ in the past 18 months, providing 12+ months of execution visibility. Financially, the company is capital-efficient (ROCE 26%) with stable-to-expanding margins (14–15% EBITDA) as price increases offset input inflation. Valuation at 65.7x trailing PE is elevated but justified by order visibility and structural growth, trading at a discount to ABB (77x) while offering better growth. The single largest risk is raw material volatility (copper, steel) in 2026–27 and the pace of data center capex normalization. Near-term catalyst: FY27 guidance will set tone for whether management expects 15%+ growth to persist through FY28. If backlog conversion accelerates and gross margins expand, the stock re-rates higher. We are in the early-to-middle chapter of this story—capex is ramping, execution is solid, and the backlog is the best visibility tool. Monitor quarterly order inflow, backlog ratio, and gross margins closely; all three are holding strong.
+                    </div>
+                </div>
+            </section>
+
+            <footer>
+                <p>Schneider Electric Infrastructure Ltd (NSE: SCHNEIDER) | Data as of May 18, 2026</p>
+                <p>This brief is research for context only. Past performance and order backlogs are not guarantees of future results. Sector tailwinds and government capex cycles may shift. Consult a financial advisor before making investment decisions.</p>
+            </footer>
+        </article>
+    </main>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const isDark = html.style.colorScheme === 'dark';
+            html.style.colorScheme = isDark ? 'light' : 'dark';
+            localStorage.setItem('theme', isDark ? 'light' : 'dark');
+        }
+
+        // Load saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+            document.documentElement.style.colorScheme = 'dark';
+        }
+    </script>
+</body>
+</html>

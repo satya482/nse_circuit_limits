@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KSHINTL · KSH International · NSE Investor Brief · June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --ink:#1A1A2E;--paper:#F7F5F0;--card:#FFFFFF;--rule:#DDD8CE;
+  --coral:#D85A30;--coral-bg:#FDF0E8;
+  --teal:#1D9E75;--teal-bg:#E8F5EF;
+  --blue:#378ADD;--blue-bg:#EBF3FD;
+  --green:#3B6D11;--green-bg:#EBF3E4;
+  --amber:#BA7517;--amber-bg:#FFF7E6;
+  --red:#B03020;--red-bg:#FDF0EE;
+  --gray:#6B7280;--gray-bg:#F4F2ED;
+  --navy:#1E3A5F;--navy-bg:#EBF0F8;
+  --purple:#534AB7;--purple-bg:#F0EDFB;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono','Courier New',monospace;
+  --radius:6px;
+}
+body.dark{
+  --ink:#E8E0D0;--paper:#0F1117;--card:#1A1D28;--rule:#2A2D3A;
+  --gray:#9BA3AE;--gray-bg:#1E2130;
+  --coral-bg:#2A1A12;--teal-bg:#0D2418;--blue-bg:#0D1E34;
+  --green-bg:#111E08;--amber-bg:#221508;--navy-bg:#0D1828;
+  --red-bg:#2A0E0A;--purple-bg:#1A1830;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.72;transition:background .3s,color .3s;}
+@media print{
+  body{font-size:11px;background:white!important;color:black!important;}
+  .no-print{display:none!important;}
+  .page-break{page-break-before:always;}
+  .card,.chapter-wrap,.porter-table,.capex-card,.risk-row,.watch-row{break-inside:avoid;}
+  .dark-toggle{display:none!important;}
+  .quick-scan-bar{position:static!important;box-shadow:none!important;}
+}
+
+/* ── TOGGLE ── */
+.dark-toggle{position:fixed;top:14px;right:14px;z-index:9999;
+  background:var(--card);border:1.5px solid var(--rule);border-radius:20px;
+  padding:5px 13px;cursor:pointer;font-family:var(--mono);font-size:11px;
+  color:var(--ink);letter-spacing:.5px;box-shadow:0 2px 8px rgba(0,0,0,.12);}
+
+/* ── QUICK SCAN STRIP ── */
+.quick-scan-bar{position:sticky;top:0;z-index:100;background:var(--ink);
+  border-bottom:3px solid var(--coral);padding:10px 28px;
+  display:flex;flex-wrap:wrap;gap:10px 22px;}
+.qs-line{display:flex;align-items:flex-start;gap:7px;font-family:var(--mono);
+  font-size:11px;line-height:1.5;color:#C8BEB0;flex:1 1 320px;}
+.qs-label{color:var(--amber);font-weight:600;white-space:nowrap;flex-shrink:0;}
+.qs-line.mgmt .qs-label{color:#9BD0C8;}
+.qs-bar-title{width:100%;font-family:var(--mono);font-size:9.5px;letter-spacing:2px;
+  text-transform:uppercase;color:#7A7060;padding-bottom:4px;
+  border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:2px;}
+
+/* ── MASTHEAD ── */
+.masthead{background:var(--ink);color:#F0EDE8;padding:48px 52px 36px;position:relative;overflow:hidden;}
+.masthead::after{content:'';position:absolute;top:0;right:0;width:320px;height:100%;
+  background:repeating-linear-gradient(-45deg,transparent 0,transparent 7px,rgba(255,255,255,.02) 7px,rgba(255,255,255,.02) 14px);}
+.masthead-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.masthead h1{font-family:var(--serif);font-size:46px;font-weight:700;letter-spacing:-1px;line-height:1.1;}
+.masthead-ticker{font-family:var(--mono);font-size:18px;font-weight:500;color:var(--coral);margin-top:4px;}
+.masthead-tagline{font-size:16px;color:#A09080;margin-top:10px;font-weight:300;max-width:540px;}
+.masthead-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}
+.mchip{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
+  border-radius:4px;padding:5px 12px;font-family:var(--mono);font-size:10px;
+  letter-spacing:1px;color:#BEB4A4;}
+.mchip.coral{background:rgba(216,90,48,.18);border-color:rgba(216,90,48,.4);color:#EF9A7A;}
+
+/* ── CONTENT ── */
+.content{max-width:980px;margin:0 auto;padding:36px 36px 80px;}
+@media(max-width:720px){.content{padding:20px 16px 60px;}}
+
+/* ── CHAPTER HEADERS ── */
+.ch-header{display:flex;align-items:flex-start;gap:16px;margin:52px 0 18px;
+  padding-bottom:12px;border-bottom:2.5px solid var(--ink);}
+body.dark .ch-header{border-bottom-color:var(--rule);}
+.ch-num{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--coral);line-height:1;min-width:36px;}
+.ch-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);}
+.ch-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.25;}
+.ch-header.teal{border-bottom-color:var(--teal);}
+.ch-header.teal .ch-num{color:var(--teal);}
+.ch-header.blue{border-bottom-color:var(--blue);}
+.ch-header.blue .ch-num{color:var(--blue);}
+.ch-header.green{border-bottom-color:var(--green);}
+.ch-header.green .ch-num{color:var(--green);}
+.ch-header.amber{border-bottom-color:var(--amber);}
+.ch-header.amber .ch-num{color:var(--amber);}
+.ch-header.navy{border-bottom-color:var(--navy);}
+.ch-header.navy .ch-num{color:var(--navy);}
+.ch-header.purple{border-bottom-color:var(--purple);}
+.ch-header.purple .ch-num{color:var(--purple);}
+
+/* ── PROSE & LEAD ── */
+p{margin-bottom:14px;color:var(--ink);}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600;}
+.lead{font-size:16px;line-height:1.8;padding:16px 20px;
+  border-left:4px solid var(--coral);background:var(--coral-bg);
+  border-radius:0 var(--radius) var(--radius) 0;margin-bottom:20px;}
+.lead.teal{border-left-color:var(--teal);background:var(--teal-bg);}
+.lead.blue{border-left-color:var(--blue);background:var(--blue-bg);}
+.lead.green{border-left-color:var(--green);background:var(--green-bg);}
+.lead.amber{border-left-color:var(--amber);background:var(--amber-bg);}
+.lead.navy{border-left-color:var(--navy);background:var(--navy-bg);}
+
+/* ── HIGHLIGHTS ── */
+.hl-key{background:#FFF176;padding:0 3px;border-radius:2px;font-weight:600;color:#1A1A2E;}
+.hl-number{background:#E3F0FF;padding:0 3px;border-radius:2px;font-family:var(--mono);font-size:.92em;color:#1E3A5F;}
+.hl-risk{background:#FFF3CD;padding:0 3px;border-radius:2px;border-left:3px solid var(--amber);color:#3A2800;}
+.hl-catalyst{background:#E6F4EA;padding:0 3px;border-radius:2px;border-left:3px solid var(--green);color:#1A3008;}
+body.dark .hl-key{background:#4A4000;color:#FFE066;}
+body.dark .hl-number{background:#0D1E34;color:#9AC4F0;}
+body.dark .hl-risk{background:#2A1E00;color:#FFD566;}
+body.dark .hl-catalyst{background:#0D1E08;color:#A0D080;}
+
+/* ── TAKEAWAY PILL ── */
+.takeaway-pill{background:var(--gray-bg);border-left:3px solid var(--coral);
+  border-radius:0 20px 20px 0;padding:10px 18px;margin:18px 0 4px;
+  font-size:13.5px;font-weight:500;color:var(--ink);}
+.takeaway-pill.teal{border-left-color:var(--teal);}
+.takeaway-pill.blue{border-left-color:var(--blue);}
+.takeaway-pill.green{border-left-color:var(--green);}
+.takeaway-pill.amber{border-left-color:var(--amber);}
+
+/* ── CARDS & INSIGHT BOX ── */
+.card{background:var(--card);border:1.5px solid var(--rule);border-radius:var(--radius);padding:20px 22px;margin:16px 0;}
+.insight-box{background:var(--ink);color:#F0EDE8;border-radius:8px;padding:26px 30px;margin:22px 0;}
+body.dark .insight-box{background:#232635;}
+.insight-box .ib-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.insight-box p{color:#D0C8BC;line-height:1.75;}
+.insight-box strong{color:#F0EDE8;}
+
+/* ── STAT ROW ── */
+.stat-row{display:flex;justify-content:space-between;align-items:center;
+  padding:9px 0;border-bottom:1px solid var(--rule);font-size:13.5px;}
+.stat-row:last-child{border-bottom:none;}
+.stat-label{color:var(--gray);font-size:12.5px;}
+.stat-val{font-weight:600;font-family:var(--mono);font-size:13px;}
+.stat-val.up{color:var(--teal);}
+.stat-val.down{color:var(--red);}
+.stat-val.warn{color:var(--amber);}
+
+/* ── TABLES ── */
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;}
+.data-table th{background:var(--ink);color:#EEE;padding:8px 12px;text-align:left;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;}
+body.dark .data-table th{background:#232635;}
+.data-table td{padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.data-table tr:nth-child(even) td{background:var(--gray-bg);}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table th.coral{background:var(--coral);}
+.data-table th.teal{background:var(--teal);}
+.data-table th.blue{background:var(--blue);}
+.data-table th.amber{background:var(--amber);}
+.data-table th.navy{background:var(--navy);}
+.data-table th.green{background:var(--green);}
+
+/* ── TAG BADGES ── */
+.tag{display:inline-block;padding:2px 8px;border-radius:3px;
+  font-family:var(--mono);font-size:10px;font-weight:500;}
+.tag-coral{background:var(--coral-bg);color:var(--coral);}
+.tag-teal{background:var(--teal-bg);color:var(--teal);}
+.tag-blue{background:var(--blue-bg);color:var(--blue);}
+.tag-green{background:var(--green-bg);color:var(--green);}
+.tag-amber{background:var(--amber-bg);color:var(--amber);}
+.tag-red{background:var(--red-bg);color:var(--red);}
+.tag-navy{background:var(--navy-bg);color:var(--navy);}
+.tag-gray{background:var(--gray-bg);color:var(--gray);}
+
+/* ── VERTICAL CARDS ── */
+.vert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:18px 0;}
+@media(max-width:680px){.vert-grid{grid-template-columns:1fr;}}
+.vert-card{border:1.5px solid var(--rule);border-radius:var(--radius);padding:18px;
+  background:var(--card);border-top:3px solid var(--coral);}
+.vert-card.teal{border-top-color:var(--teal);}
+.vert-card.blue{border-top-color:var(--blue);}
+.vert-card.green{border-top-color:var(--green);}
+.vert-card.amber{border-top-color:var(--amber);}
+.vert-name{font-family:var(--serif);font-size:14px;font-weight:700;margin-bottom:6px;}
+.vert-tag-row{margin-bottom:8px;}
+.vert-desc{font-size:12.5px;color:var(--gray);line-height:1.6;}
+.vert-status{font-family:var(--mono);font-size:10.5px;font-weight:600;margin-top:8px;}
+.vert-status.live{color:var(--teal);}
+.vert-status.ramping{color:var(--amber);}
+.vert-status.early{color:var(--blue);}
+
+/* ── PORTER TABLE ── */
+.porter-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:13px;}
+.porter-table th{background:var(--navy);color:white;padding:9px 14px;text-align:left;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.5px;}
+.porter-table td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.55;}
+.porter-table tr:last-child td{border-bottom:none;}
+.force-name{font-weight:600;font-size:13px;}
+.force-rating{padding:3px 8px;border-radius:3px;font-family:var(--mono);font-size:10px;
+  font-weight:600;white-space:nowrap;}
+.fr-low{background:var(--teal-bg);color:var(--teal);}
+.fr-med{background:var(--amber-bg);color:var(--amber);}
+.fr-high{background:var(--red-bg);color:var(--red);}
+.fr-vlow{background:#E0F5FA;color:#0E7490;}
+
+/* ── RISK ROWS ── */
+.risk-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule);}
+.risk-row:last-child{border-bottom:none;}
+.risk-icon{min-width:32px;height:32px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:15px;flex-shrink:0;margin-top:1px;}
+.risk-icon.amber{background:var(--amber-bg);color:var(--amber);}
+.risk-icon.red{background:var(--red-bg);color:var(--red);}
+.risk-icon.coral{background:var(--coral-bg);color:var(--coral);}
+.risk-icon.navy{background:var(--navy-bg);color:var(--navy);}
+.risk-title{font-weight:600;font-size:13.5px;margin-bottom:4px;}
+.risk-what{font-size:13px;color:var(--ink);line-height:1.55;margin-bottom:5px;}
+.risk-signal{font-family:var(--mono);font-size:11px;color:var(--gray);font-style:italic;}
+
+/* ── WATCH SIGNALS ── */
+.watch-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule);}
+.watch-row:last-child{border-bottom:none;}
+.watch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+.watch-metric{font-weight:600;font-size:13.5px;margin-bottom:3px;}
+.watch-desc{font-size:13px;color:var(--ink);line-height:1.55;}
+.watch-red{font-family:var(--mono);font-size:11px;color:var(--red);margin-top:5px;}
+
+/* ── CAPEX TIMELINE ── */
+.capex-card{background:var(--card);border:1.5px solid var(--rule);border-radius:var(--radius);overflow:hidden;margin:18px 0;}
+.capex-header{background:var(--coral);color:white;padding:10px 18px;
+  font-family:var(--mono);font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+.capex-row{display:grid;grid-template-columns:110px 1fr 1fr 1fr 1.4fr;gap:0;border-bottom:1px solid var(--rule);}
+.capex-row:last-child{border-bottom:none;}
+.capex-row.header{background:var(--gray-bg);font-family:var(--mono);font-size:10px;letter-spacing:.5px;color:var(--gray);text-transform:uppercase;}
+.capex-cell{padding:10px 14px;font-size:12.5px;border-right:1px solid var(--rule);}
+.capex-cell:last-child{border-right:none;}
+@media(max-width:680px){.capex-row{grid-template-columns:1fr 1fr;}}
+.cc-label{font-family:var(--mono);font-size:10px;color:var(--gray);margin-bottom:2px;}
+.cc-val{font-weight:600;}
+.cc-sub{font-size:11px;color:var(--gray);}
+.status-on{color:var(--teal);font-family:var(--mono);font-size:11px;font-weight:600;}
+.status-warn{color:var(--amber);font-family:var(--mono);font-size:11px;font-weight:600;}
+.status-watch{color:var(--blue);font-family:var(--mono);font-size:11px;font-weight:600;}
+
+/* ── VERDICT BOX ── */
+.verdict-box{background:var(--amber-bg);border:2px solid var(--amber);border-radius:8px;padding:24px 28px;margin:28px 0;}
+.verdict-box .vl-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;
+  text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.verdict-box p{font-size:14.5px;line-height:1.78;}
+
+/* ── CHART WRAPPER ── */
+.chart-wrap{background:var(--card);border:1.5px solid var(--rule);border-radius:var(--radius);
+  padding:20px;margin:18px 0;}
+.chart-title{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--gray);margin-bottom:14px;}
+.chart-canvas-wrap{position:relative;height:240px;}
+
+/* ── TWO COL ── */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:16px 0;}
+@media(max-width:680px){.two-col{grid-template-columns:1fr;}}
+
+/* ── PEER TABLE ── */
+.peer-chip{background:var(--gray-bg);border:1px solid var(--rule);border-radius:4px;
+  padding:4px 10px;font-family:var(--mono);font-size:11px;display:inline-block;}
+.peer-chip.leader{border-color:var(--coral);background:var(--coral-bg);color:var(--coral);}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1.5px solid var(--rule);margin:36px 0;}
+.section-divider{border:none;border-top:4px solid var(--ink);margin:52px 0;
+  position:relative;}
+body.dark .section-divider{border-top-color:var(--coral);}
+.section-divider-label{position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  background:var(--paper);padding:0 16px;font-family:var(--mono);font-size:10px;
+  letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+
+/* ── LEDGER MASTHEAD ── */
+.ledger-masthead{background:var(--navy);color:#F0EDE8;padding:36px 44px 28px;
+  border-radius:8px;margin-top:12px;position:relative;overflow:hidden;}
+body.dark .ledger-masthead{background:#0D1828;}
+.ledger-masthead::after{content:'';position:absolute;top:0;right:0;width:280px;height:100%;
+  background:repeating-linear-gradient(-45deg,transparent 0,transparent 7px,rgba(255,255,255,.015) 7px,rgba(255,255,255,.015) 14px);}
+.ledger-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:2.5px;
+  text-transform:uppercase;color:#9BD0C8;margin-bottom:8px;}
+.ledger-masthead h2{font-family:var(--serif);font-size:34px;font-weight:700;color:#F0EDE8;}
+.ledger-tagline{font-size:14.5px;color:#8090A0;margin-top:8px;font-weight:300;}
+.ledger-tier{display:inline-block;background:var(--teal);color:white;border-radius:4px;
+  padding:4px 12px;font-family:var(--mono);font-size:11px;font-weight:600;
+  letter-spacing:1px;margin-top:14px;}
+
+/* ── CREDIBILITY FLAGS ── */
+.flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+@media(max-width:680px){.flag-grid{grid-template-columns:1fr;}}
+.flag-card{border:1px solid var(--rule);border-radius:var(--radius);padding:14px 16px;background:var(--card);}
+.flag-card.warn{border-left:3px solid var(--amber);}
+.flag-card.delivered{border-left:3px solid var(--teal);}
+.flag-card.watch{border-left:3px solid var(--blue);}
+.flag-card.crit{border-left:3px solid var(--red);}
+.flag-name{font-family:var(--mono);font-size:11.5px;font-weight:600;
+  display:flex;align-items:center;gap:7px;margin-bottom:5px;}
+.flag-what{font-size:12.5px;color:var(--ink);line-height:1.5;margin-bottom:4px;}
+.flag-signal{font-size:11.5px;color:var(--gray);font-style:italic;}
+
+/* ── PROMISE REGISTER ── */
+.promise-status-d{color:var(--teal);font-family:var(--mono);font-size:11px;font-weight:600;}
+.promise-status-w{color:var(--amber);font-family:var(--mono);font-size:11px;font-weight:600;}
+.promise-status-m{color:var(--red);font-family:var(--mono);font-size:11px;font-weight:600;}
+.promise-status-p{color:var(--blue);font-family:var(--mono);font-size:11px;font-weight:600;}
+
+/* ── SCORE DIMENSIONS ── */
+.score-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0;}
+@media(max-width:680px){.score-grid{grid-template-columns:1fr;}}
+.score-dim{background:var(--card);border:1.5px solid var(--rule);border-radius:var(--radius);padding:14px 16px;}
+.score-dim-name{font-weight:600;font-size:13px;margin-bottom:4px;display:flex;align-items:center;gap:6px;}
+.score-dim-name .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.score-dim-desc{font-size:12px;color:var(--gray);line-height:1.5;}
+.score-dim-val{font-family:var(--mono);font-size:15px;font-weight:600;margin-top:6px;}
+
+/* ── HIGHLIGHT INDEX ── */
+.hl-index-wrap{background:var(--card);border:2px solid var(--rule);
+  border-radius:var(--radius);margin:36px 0;overflow:hidden;}
+.hl-index-header{background:var(--ink);color:#F0EDE8;padding:14px 22px;
+  font-family:var(--serif);font-size:17px;font-weight:700;
+  display:flex;align-items:center;gap:10px;}
+body.dark .hl-index-header{background:#232635;}
+.hl-index-body{padding:20px 24px;}
+#highlight-index-list{list-style:none;margin:0;padding:0;}
+#highlight-index-list li{padding:7px 0 7px 14px;border-bottom:1px dotted var(--rule);
+  font-size:13px;line-height:1.55;position:relative;}
+#highlight-index-list li:last-child{border-bottom:none;}
+#highlight-index-list li::before{content:'›';position:absolute;left:0;color:var(--coral);font-weight:700;}
+#highlight-index-list li[data-type="hl-number"]{font-family:var(--mono);font-size:12px;}
+#highlight-index-list li[data-type="hl-risk"]::before{color:var(--amber);}
+#highlight-index-list li[data-type="hl-catalyst"]::before{color:var(--green);}
+#highlight-index-list li[data-type="takeaway-pill"]::before{color:var(--teal);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:#5A5248;padding:22px 44px;
+  font-family:var(--mono);font-size:10.5px;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;}
+footer span{color:#6A6258;}
+
+/* ── SMALL LABEL ── */
+.small-label{font-family:var(--mono);font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--gray);margin-bottom:7px;}
+h3{font-family:var(--serif);font-size:16px;font-weight:700;margin:20px 0 9px;}
+h3.teal{color:var(--teal);}
+h3.coral{color:var(--coral);}
+h3.amber{color:var(--amber);}
+h3.navy{color:var(--navy);}
+blockquote{border-left:3px solid var(--purple);padding:10px 16px;
+  background:var(--purple-bg);border-radius:0 4px 4px 0;margin:16px 0;
+  font-style:italic;color:var(--purple);font-size:13.5px;line-height:1.65;}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════
+     DAY / NIGHT TOGGLE
+     ════════════════════════════════════════════ -->
+<button class="dark-toggle no-print" onclick="toggleDark()" id="darkBtn" aria-label="Toggle dark mode">☀ Light</button>
+
+<!-- ════════════════════════════════════════════
+     QUICK-SCAN STRIP — always expanded, non-collapsible
+     Printer-friendly: position:static in @media print
+     ════════════════════════════════════════════ -->
+<div class="quick-scan-bar" id="quick-scan" role="region" aria-label="Quick scan summary of key takeaways">
+  <div class="qs-bar-title">📋 QUICK SCAN — KSHINTL · KSH International · NSE · June 2026</div>
+  <div class="qs-line"><span class="qs-label">⚡ CONTEXT</span><span>India's transformer manufacturing capacity tripling to 300 GVA by FY28; ₹17 lakh crore T&D buildout adds 50,000+ circuit km by 2030 — winding wire demand is a structural certainty, not a cycle story.</span></div>
+  <div class="qs-line"><span class="qs-label">🏭 MODEL</span><span>Copper-to-conductor value-add business; 75% revenue from specialized wires (CTC, PICC) where OEM qualification moats make customers sticky for years; 90%+ repeat revenue from 120 customers.</span></div>
+  <div class="qs-line"><span class="qs-label">🎯 INSIGHT</span><span>KSH's PGCIL approval for 400kV HVDC transformer wire is not a quality badge — it is a government-issued regulatory monopoly; every converter transformer in India's renewable evacuation infrastructure must use KSH wire.</span></div>
+  <div class="qs-line"><span class="qs-label">📊 NUMBERS</span><span>FY26 revenue ₹3,107 Cr (+61%), PAT ₹110 Cr (+62%), EBITDA/ton ₹67,625 (+29%); Q4 FY26 revenue doubled YoY to ₹1,018 Cr; OPM still thin at 6% — operating leverage thesis pending Supa ramp.</span></div>
+  <div class="qs-line"><span class="qs-label">🚧 TOP RISK</span><span>Copper payable days stuck at ~6 days (effectively advance payment); CCC of 82 days on ₹489 Cr working capital facility creates acute liquidity exposure if copper prices spike ≥15%.</span></div>
+  <div class="qs-line"><span class="qs-label">👁 WATCH</span><span>Supa facility utilization: must cross 80% by Q3 FY27 for operating leverage to materially lift OPM from 6% toward 7–8% — this is the single most important quarterly metric to track.</span></div>
+  <div class="qs-line"><span class="qs-label">💡 VERDICT</span><span>Mid-story: IPO delivered, HVDC monopoly confirmed, Supa commissioned — execution risk now shifts to ramp speed. 46x FY26 PE at slight discount to PRECWIRE (49x) and RAMRAT (51x), justified if CTC mix holds.</span></div>
+  <div class="qs-line mgmt"><span class="qs-label">🗒 MGMT</span><span>Tier B+ · Active flags: Metric hop (OPM% quietly replaced by EBITDA/ton in headline reporting), Phase 2 capex budget undisclosed, interest cost doubling despite term debt repayment, copper payable days stagnant.</span></div>
+</div>
+
+<!-- ════════════════════════════════════════════
+     MASTHEAD
+     ════════════════════════════════════════════ -->
+<div class="masthead">
+  <div class="masthead-eyebrow">NSE EQUITY RESEARCH · INVESTOR BRIEF · JUNE 2026</div>
+  <h1>KSH International</h1>
+  <div class="masthead-ticker">NSE: KSHINTL · BSE: 544664</div>
+  <div class="masthead-tagline">India's only approved manufacturer of wire for 400kV HVDC converter transformers — engineering the nervous system of the energy transition.</div>
+  <div class="masthead-chips">
+    <span class="mchip">SECTOR: INDUSTRIALS · ELECTRICAL COMPONENTS</span>
+    <span class="mchip">MARKET CAP ≈ ₹5,100 CR</span>
+    <span class="mchip">FY26 PE ≈ 46x</span>
+    <span class="mchip coral">HVDC WIRE MONOPOLY</span>
+    <span class="mchip">IPO DEC 2026 · LISTED 23 DEC 2025</span>
+    <span class="mchip">PROMOTER HOLDING 74.58%</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 1 — CONTEXT
+     ════════════════════════════════════════════ -->
+<div class="ch-header teal">
+  <div class="ch-num">1</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER ONE · MACRO CONTEXT</div>
+    <div class="ch-title">The grid is the growth — India's wiring bill</div>
+  </div>
+</div>
+
+<div class="lead teal">
+  India has committed to 500 GW of renewable energy by 2030. Solar farms in Rajasthan and Gujarat cannot power factories in Uttar Pradesh and Maharashtra without the most ambitious grid buildout in independent India's history. Every megawatt of renewable capacity requires transmission capacity to move it — and every transmission corridor requires transformers at both ends. <span class="hl-catalyst">India's transformer manufacturing capacity is on track to triple from approximately 110 GVA to 300 GVA by FY28, according to ICICI Securities — an expansion that requires proportional growth in specialized winding wire inputs.</span>
+</div>
+
+<p>The structural driver is not a policy preference — it is physics. High voltage direct current (HVDC) transmission is the only technology capable of moving thousands of megawatts of power over 1,000+ kilometre distances with acceptable losses. India's renewable generation zones are geographically remote from its industrial load centres, which is exactly the problem HVDC was designed to solve. <span class="hl-number">India's National Electricity Plan calls for 123,577 circuit kilometres of new transmission lines between 2022 and 2027, supporting 3,000 new substations.</span> Peak demand has already climbed from 130 GW in 2014 to 243 GW in 2024 and is projected to exceed 400 GW by 2030.</p>
+
+<p>The India transformer market — the immediate demand driver for winding wire — stands at approximately USD 3 billion in 2025 and is expected to reach USD 4.82 billion by 2031, growing at 8.2% CAGR. The HVDC and 765kV segments are the fastest-growing subsectors within that market, at 10-12% CAGR, exactly the voltage classes where KSH International holds exclusive Indian supplier approvals.</p>
+
+<p>The IPO timing is not coincidental. KSH International listed on December 23, 2025 — precisely as utility-scale HVDC orders began flowing to Indian transformer OEMs. The company is not anticipating a tailwind; it is already inside one.</p>
+
+<div class="takeaway-pill teal">India's transformer capacity tripling to 300 GVA by FY28 creates a decade-long structural demand pull for CTC/PICC winding wire — the sector CAGR is 8-12%, not a cyclical uptick.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 2 — BUSINESS MODEL
+     ════════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num">2</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER TWO · BUSINESS MODEL</div>
+    <div class="ch-title">Copper rod in, precision conductor out — margin in the inches between</div>
+  </div>
+</div>
+
+<p>KSH International buys copper rod and aluminium rod, draws them down to precision dimensions, applies layered insulation — enamel coating, paper wrapping, or complex transposition geometries — and delivers custom-engineered conductors to the OEM customer's exact drawing specification. <span class="hl-key">The margin does not live in the copper; it lives in the engineering complexity of what is done to the copper before it reaches the customer.</span> Copper prices, which represent 85-90% of raw material cost, are passed through to customers. What KSH actually sells is precision processing, specification compliance, and regulatory approval status.</p>
+
+<p>The product portfolio divides cleanly into two categories that sit at very different points on the value-complexity spectrum.</p>
+
+<p><strong>Specialized Winding Wires (75% of FY26 revenue, ₹2,187 Cr):</strong> The flagship product is the Continuously Transposed Conductor (CTC) — an assembly of multiple individually insulated copper strands transposed in a continuous mechanical process so each strand occupies every position in the bundle. This geometry eliminates circulating eddy currents in large transformer windings, enabling transformer efficiency at high voltage ratings. CTC for HVDC-grade applications involves up to 47 strands, widths of 3-12.5mm, thicknesses of 1.1-3.2mm, and up to 24 layers of paper insulation. No other Indian manufacturer matches this specification range. Also in this category: Paper Insulated Copper Conductors (PICC) for oil-filled grid transformers, wrapped rectangular wires for generators and wind turbine alternators, and RDSO-approved traction conductors for locomotive drives.</p>
+
+<p><strong>Standard Winding Wires (25%, ₹717 Cr):</strong> Round enamelled copper and aluminium wires for motors, alternators, gensets, compressors, and home appliances. More commoditised, competed on reliability and customer proximity. The strategic role of standard wire is vendor consolidation — an OEM that already buys CTC from KSH is more likely to consolidate its round wire sourcing at the same supplier.</p>
+
+<p>The business model flywheel runs on qualification moats: an OEM building a power transformer to PGCIL specifications must use PGCIL-approved conductors. Qualifying a new conductor supplier requires sample submission, destructive testing, factory inspection, and multi-year performance monitoring. Once KSH is on a transformer OEM's approved vendor list, it stays there — <span class="hl-number">over 90% of revenue comes from repeat customers across a base of approximately 120 OEM accounts.</span> Four manufacturing plants in Maharashtra (Chakan x2, Taloja, Supa) serve both domestic and export markets, with exports representing 27% of FY26 revenue.</p>
+
+<div class="takeaway-pill">KSH's moat is the qualification list, not the copper; 90%+ repeat revenue from 120 OEM customers is the structural proof — switching away from KSH means re-qualifying a transformer design from scratch.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 2B — PORTER'S FIVE FORCES
+     ════════════════════════════════════════════ -->
+<div class="ch-header navy">
+  <div class="ch-num">2B</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER TWO-B · COMPETITIVE STRUCTURE</div>
+    <div class="ch-title">Porter's Five Forces — the competitive anatomy</div>
+  </div>
+</div>
+
+<table class="porter-table" aria-label="Porter's Five Forces analysis for KSH International">
+<thead><tr>
+  <th style="width:18%">FORCE</th>
+  <th style="width:12%">RATING</th>
+  <th>SPECIFIC EVIDENCE FOR KSH</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><span class="force-name">Rivalry Intensity</span></td>
+  <td><span class="force-rating fr-med">MEDIUM</span></td>
+  <td>Three meaningful players: Precision Wires India (PRECWIRE, #1 by capacity, ~25,000 MT pre-expansion), Ram Ratna Wires (RAMRAT, #2), and KSH (#3). PRECWIRE competes directly in CTC and PICC for standard transformers; KSH's HVDC 400kV approval creates a protected sub-segment where rivalry is effectively zero. Standard wire segment (25% of KSH revenue) sees price competition from PRECWIRE, RAMRAT, and smaller regional players.</td>
+</tr>
+<tr>
+  <td><span class="force-name">Buyer Power</span></td>
+  <td><span class="force-rating fr-low">LOW</span></td>
+  <td>120 OEM customers; top 10 are well-diversified (no single customer dominance disclosed). Switching costs are structural, not contractual — an OEM that changes conductor supplier on an HVDC transformer must re-qualify the design with PGCIL, a 2-4 year process. PSU procurement (PGCIL, NTPC, NPCIL) is governed by approved vendor lists that update slowly. Export customers (24 countries) provide geographic bargaining diversification.</td>
+</tr>
+<tr>
+  <td><span class="force-name">Supplier Power</span></td>
+  <td><span class="force-rating fr-high">HIGH</span></td>
+  <td>Copper represents 85-90% of raw material cost. KSH sources copper rod from global commodity markets and is a price taker with no hedging advantage. Critically, KSH currently pays copper suppliers on approximately 6-day terms — effectively in advance — because its scale does not yet give it procurement leverage. This means every copper price increase compounds directly into working capital requirements before revenue is collected. The lack of payable extension is a structural earnings vulnerability.</td>
+</tr>
+<tr>
+  <td><span class="force-name">Threat of New Entrants</span></td>
+  <td><span class="force-rating fr-vlow">VERY LOW</span></td>
+  <td>The PGCIL Approved Vendor List for HVDC CTC takes 3-5 years of sample submission, destructive testing, and field deployment monitoring. The global OEM qualifications (Hitachi Energy, GE Vernova, Siemens Energy) operate their own multi-year vendor programmes. Even if a competitor buys the CTC machinery (which is specialty equipment requiring calibration), they cannot start shipping HVDC-grade wire without completing the approval process from scratch. Standard wire has lower barriers, but the economics are thinner.</td>
+</tr>
+<tr>
+  <td><span class="force-name">Threat of Substitutes</span></td>
+  <td><span class="force-rating fr-low">LOW</span></td>
+  <td>For HVDC transformer windings, CTC is the engineering solution — there is no meaningful substitute at this voltage class and power rating. Aluminium substitution (replacing copper) is limited by conductivity requirements in high-performance windings. The EV traction motor wave is an opportunity for KSH rather than a substitute threat — PEEK-insulated wire for 800V EV motors requires similar precision processing capabilities, and KSH is developing this via HPW Metallwerk licensing.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="lead amber" style="margin-top:14px;">
+  <strong>Structural pressure synthesis:</strong> The two forces posing greatest structural pressure on KSH are (1) <strong>supplier power</strong> — copper price dependency with advance-payment terms creates a working capital trap that management acknowledges but has not yet fixed, and (2) <strong>rivalry in standard wire</strong> — the 25% of revenue that competes on price compresses blended margins and limits the company's ability to price for value across its full portfolio.
+</div>
+
+<div class="takeaway-pill amber">Supplier power (copper advance-payment) and standard wire rivalry are the structural weaknesses; HVDC approval list and OEM qualification cycles are the structural strengths.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 3 — VERTICALS
+     ════════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num">3</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER THREE · SEGMENT DEEP-DIVES</div>
+    <div class="ch-title">Five verticals — each with its own external catalyst</div>
+  </div>
+</div>
+
+<div class="vert-grid">
+  <div class="vert-card">
+    <div class="vert-name">HVDC &amp; Ultra-High Voltage Grid</div>
+    <div class="vert-tag-row"><span class="tag tag-coral">Monopoly Position</span> <span class="tag tag-gray">~25% of Revenue Est.</span></div>
+    <div class="vert-desc">KSH is the <strong>only Indian company approved to supply wire for 400kV HVDC converter transformers</strong> by PGCIL. India is building multiple HVDC corridors to move solar power from Rajasthan and Gujarat to Northern and Eastern load centres. As of Q3 FY26, KSH held cumulative orders for 37 HVDC transformers (all to execute in 12-18 months) from Hitachi Energy India, GE Vernova T&D, and BHEL. By voltage class, HVDC and 765kV grow at 10-12% CAGR — fastest in the transformer market. External anchor: PGCIL's National Transmission Plan, Ministry of New and Renewable Energy 500 GW target.</div>
+    <div class="vert-status live">● LIVE &amp; ACCELERATING</div>
+  </div>
+  <div class="vert-card teal">
+    <div class="vert-name">Power T&D Grid Transformers (CTC / PICC)</div>
+    <div class="vert-tag-row"><span class="tag tag-teal">Approved Vendor</span> <span class="tag tag-gray">~40% of Revenue Est.</span></div>
+    <div class="vert-desc">The broader power T&D segment — 220kV to 765kV standard grid transformers — requires CTC and PICC conductors. KSH is an approved supplier to PGCIL, NTPC, NPCIL, and all major transformer OEMs (ABB, Hitachi, Siemens, Toshiba, Bharat Bijlee). India's T&D capex is running at ₹17 lakh crore across 2016-2024, with similar quantum under construction. Transformer OEMs are at near-capacity utilisation, expanding manufacturing lines. Supa facility was specifically designed to capture this demand with 14,400 MT Phase 1 capacity dedicated to specialized wire.</div>
+    <div class="vert-status live">● LIVE — SUPA RAMP UNDERWAY</div>
+  </div>
+  <div class="vert-card teal">
+    <div class="vert-name">Railways &amp; Traction Transformers</div>
+    <div class="vert-tag-row"><span class="tag tag-teal">RDSO Approved</span> <span class="tag tag-gray">~5-8% of Revenue Est.</span></div>
+    <div class="vert-desc">RDSO (Research Designs and Standards Organisation) qualification for traction transformer wire — used in locomotive drives for Indian Railways electrification. 100% electrification of the Indian Railways broad-gauge network is a stated government target, with locomotive traction requiring high-performance conductors. KSH's RDSO approval creates a captive demand pipeline as railway procurements accelerate. Market size: Ministry of Railways plans 20,000+ new freight and passenger locomotives over the next decade.</div>
+    <div class="vert-status live">● LIVE — GROWING</div>
+  </div>
+  <div class="vert-card blue">
+    <div class="vert-name">Exports — China+1 Beneficiary</div>
+    <div class="vert-tag-row"><span class="tag tag-blue">~27% of Revenue</span> <span class="tag tag-gray">24 Countries</span></div>
+    <div class="vert-desc">KSH is the largest exporter of magnet winding wires from India by revenue, per CARE Ratings. Exports cover 24 countries including USA, Germany, UAE, Kuwait, Japan, Romania, and Bangladesh. The export business is dominated by CTC and PICC — the specialized products where Indian cost-plus-quality is competitive globally. US tariff changes on Chinese specialty wire are accelerating the China+1 shift for Western transformer OEMs. <span class="hl-catalyst">Q4 FY26 export growth of 92% YoY to ₹253 Cr represents a step-change — management sees this as structural, not a one-quarter event.</span> Export revenue for FY26 totalled approximately ₹597 Cr (+39% YoY).</div>
+    <div class="vert-status ramping">▲ RAMPING — STRUCTURAL SHIFT</div>
+  </div>
+  <div class="vert-card green">
+    <div class="vert-name">EV Traction Motors — PEEK Wire</div>
+    <div class="vert-tag-row"><span class="tag tag-green">New Vertical</span> <span class="tag tag-gray">800V Platform</span></div>
+    <div class="vert-desc">In January 2026, KSH entered an exclusive licensing agreement with HPW Metallwerk (Germany/Austria) for PEEK (Polyether ether ketone)-insulated copper wires for 800V EV traction motor applications. PEEK insulation can handle 800V architectures that standard enamel cannot. 2-wheeler EV motor wire supply has already begun. 4-wheeler EV entry is guided within 12-18 months from Q3 FY26 (~Q1-Q2 FY27). PEEK wire commands substantially higher per-ton pricing than any existing KSH product, making it the highest-potential margin uplift in the portfolio if OEM qualifications proceed. India's PLI-Auto and PM E-DRIVE programmes favour domestic wire sourcing for EV drivetrains.</div>
+    <div class="vert-status early">◉ EARLY STAGE — OPTION VALUE</div>
+  </div>
+  <div class="vert-card amber">
+    <div class="vert-name">Industrial Motors, Alternators, Appliances</div>
+    <div class="vert-tag-row"><span class="tag tag-amber">Standard Wire</span> <span class="tag tag-gray">~20% of Revenue Est.</span></div>
+    <div class="vert-desc">Standard round enamelled copper/aluminium wire for motors, gensets, compressors, refrigeration equipment, and home appliances. The vendor consolidation play — OEMs who already buy specialized wire from KSH consolidate their standard wire orders at the same supplier. Margin contribution is lower, but these customers anchor the relationship for the more valuable specialized wire orders. Competition from PRECWIRE, RAMRAT, and smaller regional players is meaningful here.</div>
+    <div class="vert-status live">● LIVE — STEADY</div>
+  </div>
+</div>
+
+<div class="takeaway-pill blue">Five verticals, one engine: HVDC approval drives revenue mix toward specialty; Supa expansion captures the volume; exports diversify the customer base — any two of these three working together creates a compounding story.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 4 — STRATEGIC INSIGHT
+     ════════════════════════════════════════════ -->
+<div class="ch-header">
+  <div class="ch-num">4</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER FOUR · THE NON-OBVIOUS TRUTH</div>
+    <div class="ch-title">"The PGCIL vendor list is not a quality badge — it is a monopoly licence"</div>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="ib-label">⚡ THE ONE INSIGHT TO UNDERSTAND</div>
+  <p>Most analysts model KSH International as a copper-processing business — raw material in, finished wire out, margin in the spread. That framing misses the central value driver entirely. The critical asset at KSH is not the Supa plant, not the copper rod, and not even the CTC machinery. <strong>It is KSH's name on the PGCIL Approved Vendor List for 400kV HVDC converter transformer conductors.</strong></p>
+  <p style="margin-top:12px;">In India, procurement by Power Grid Corporation of India Limited — the entity that designs, builds, and operates the national grid — requires vendors to appear on a pre-qualified Approved Vendor List. The qualification for wire used in the highest-voltage, most sensitive transformer class (HVDC, 400kV) requires years of sample submission, destructive and endurance testing, third-party validation, and in some cases field performance monitoring in actual transformers. The process is not a paperwork exercise; it involves Hitachi, GE, and BHEL running KSH wire through their own testing regimes before the PGCIL AVL entry is awarded. <strong>No competitor has currently completed this process for the HVDC 400kV category.</strong></p>
+  <p style="margin-top:12px;">The consequence is a quiet monopoly: every HVDC converter transformer ordered by India's power OEMs for the national grid must use KSH wire. Not because KSH is the only company that can make CTC — Precision Wires can make CTC — but because KSH is the only Indian company whose name appears on the PGCIL AVL for this specific application. Until another manufacturer completes the qualification process (minimum 3-5 years from initiation), the HVDC order pipeline is KSH's exclusive. <strong>The market is pricing this company as a wire manufacturer. The correct model is a government-licensed monopoly supplier to a state-mandated infrastructure programme.</strong> Every new HVDC corridor announced by PGCIL is, in effect, a multi-year exclusive purchase order for KSH.</p>
+</div>
+
+<div class="takeaway-pill">KSH's true moat is regulatory, not technological: a PGCIL vendor approval that took years to earn, cannot be transferred, and gives KSH sole-source status on every HVDC transformer India builds for the next 3-5 years minimum.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 5 — NUMBERS IN CONTEXT
+     ════════════════════════════════════════════ -->
+<div class="ch-header blue">
+  <div class="ch-num">5</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER FIVE · FINANCIALS &amp; CAPEX</div>
+    <div class="ch-title">Revenue doubled — now the margin must follow</div>
+  </div>
+</div>
+
+<div class="lead blue">
+  FY26 was a breakout year by revenue and volume metrics. <span class="hl-number">Revenue crossed ₹3,107 Crore (+61% YoY), PAT reached ₹110 Crore (+62% YoY), and EBITDA/ton improved 29% to ₹67,625 — the clearest signal that mix is genuinely shifting toward specialty wire.</span> The caveat: OPM remained stubbornly compressed at 6.1%, reflecting the Supa facility running at 50-70% utilization through much of FY26. Operating leverage is present in the EBITDA/ton metric but not yet visible in absolute margin percentage. This is the tension the next 4 quarters must resolve.
+</div>
+
+<!-- Charts -->
+<div class="two-col">
+  <div class="chart-wrap">
+    <div class="chart-title">Revenue vs EBITDA — FY21 to FY26 (₹ Crore)</div>
+    <div class="chart-canvas-wrap"><canvas id="revChart" aria-label="Revenue and EBITDA trend chart for KSH International FY21 to FY26"></canvas></div>
+  </div>
+  <div class="chart-wrap">
+    <div class="chart-title">EBITDA per Metric Ton (₹ thousands)</div>
+    <div class="chart-canvas-wrap"><canvas id="ebitdaTonChart" aria-label="EBITDA per tonne trend chart for KSH International"></canvas></div>
+  </div>
+</div>
+
+<!-- Financial Scorecard -->
+<div class="two-col">
+  <div class="card">
+    <div class="small-label">Annual Financial Scorecard</div>
+    <div class="stat-row"><span class="stat-label">Revenue FY26</span><span class="stat-val up">₹3,107 Cr (+61%)</span></div>
+    <div class="stat-row"><span class="stat-label">Revenue FY25</span><span class="stat-val">₹1,928 Cr (+39%)</span></div>
+    <div class="stat-row"><span class="stat-label">EBITDA FY26</span><span class="stat-val up">₹190 Cr (+55%)</span></div>
+    <div class="stat-row"><span class="stat-label">OPM FY26</span><span class="stat-val warn">6.1% (vs 6.4% FY25)</span></div>
+    <div class="stat-row"><span class="stat-label">PAT FY26</span><span class="stat-val up">₹110 Cr (+62%)</span></div>
+    <div class="stat-row"><span class="stat-label">Volume FY26</span><span class="stat-val up">28,167 MT (+21%)</span></div>
+    <div class="stat-row"><span class="stat-label">EBITDA/ton FY26</span><span class="stat-val up">₹67,625 (+29%)</span></div>
+    <div class="stat-row"><span class="stat-label">Export Revenue FY26</span><span class="stat-val up">~₹597 Cr (+39%)</span></div>
+    <div class="stat-row"><span class="stat-label">Q4 FY26 Revenue</span><span class="stat-val up">₹1,018 Cr (+101%)</span></div>
+    <div class="stat-row"><span class="stat-label">Q4 FY26 OPM</span><span class="stat-val warn">5.5% ↓ Compression</span></div>
+  </div>
+  <div class="card">
+    <div class="small-label">Balance Sheet &amp; Returns (FY25 / FY26)</div>
+    <div class="stat-row"><span class="stat-label">ROCE (FY25)</span><span class="stat-val up">21.4%</span></div>
+    <div class="stat-row"><span class="stat-label">ROE (FY25)</span><span class="stat-val up">25.7%</span></div>
+    <div class="stat-row"><span class="stat-label">Borrowings (Sep 2025)</span><span class="stat-val warn">₹489 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Post-IPO D/E (Dec 2025)</span><span class="stat-val">0.42x (ex-IPO cash)</span></div>
+    <div class="stat-row"><span class="stat-label">Credit Rating</span><span class="stat-val up">CARE A / Stable ↑</span></div>
+    <div class="stat-row"><span class="stat-label">Cash Conversion Cycle</span><span class="stat-val warn">~82 days</span></div>
+    <div class="stat-row"><span class="stat-label">Debtor Days</span><span class="stat-val">~42 days</span></div>
+    <div class="stat-row"><span class="stat-label">Payable Days</span><span class="stat-val warn">~6 days (advance)</span></div>
+    <div class="stat-row"><span class="stat-label">Capacity (Mar 2026)</span><span class="stat-val">43,445 MT</span></div>
+    <div class="stat-row"><span class="stat-label">Target Capacity (Q4 FY27)</span><span class="stat-val up">59,045 MT</span></div>
+  </div>
+</div>
+
+<!-- Peer Comparison -->
+<h3 class="coral">Valuation in Context — Peer Comparison</h3>
+<table class="data-table" aria-label="Peer comparison table for KSH International, Precision Wires, Ram Ratna Wires">
+<thead><tr>
+  <th>COMPANY</th><th>MARKET CAP</th><th class="coral">FY26 PE</th><th>OPM</th><th>REVENUE (TTM)</th><th>EXPORT INTENSITY</th><th>HVDC APPROVAL</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><strong>KSH International (KSHINTL)</strong></td>
+  <td>₹5,100 Cr</td>
+  <td><strong>~46x</strong></td>
+  <td>6.1%</td>
+  <td>₹3,107 Cr</td>
+  <td>~27%</td>
+  <td><span class="tag tag-teal">YES — 400kV</span></td>
+</tr>
+<tr>
+  <td>Precision Wires India (PRECWIRE)</td>
+  <td>₹7,608 Cr</td>
+  <td>~49x</td>
+  <td>~6%</td>
+  <td>₹4,713 Cr</td>
+  <td>~15%</td>
+  <td><span class="tag tag-gray">Standard CTC only</span></td>
+</tr>
+<tr>
+  <td>Ram Ratna Wires (RAMRAT)</td>
+  <td>₹4,397 Cr</td>
+  <td>~51x</td>
+  <td>~6%</td>
+  <td>~₹3,200 Cr</td>
+  <td>Limited</td>
+  <td><span class="tag tag-gray">No</span></td>
+</tr>
+</tbody>
+</table>
+<p style="font-size:12.5px;color:var(--gray);margin-top:6px;">At approximately 46x FY26 PE, KSH trades at a slight discount to both PRECWIRE (49x) and RAMRAT (51x) despite holding the HVDC monopoly and the highest export growth rate in the sector. <span class="hl-key">The market appears to be pricing KSH as a generic winding wire manufacturer rather than as a government-approved sole supplier to India's HVDC infrastructure programme — this gap is the investment thesis.</span> The discount is partially justified by thinner OPM versus the Supa ramp, but compresses as utilization rises.</p>
+
+<hr class="divider">
+
+<!-- CAPEX TIMELINE SUB-SECTION -->
+<h3 class="coral">Capex Timeline — From Investment Cycle to Harvest</h3>
+
+<div class="capex-card">
+  <div class="capex-header">🏗 SUPA GREENFIELD EXPANSION · KSH INTERNATIONAL · CAPEX REGISTER</div>
+  <div class="capex-row header">
+    <div class="capex-cell">Period</div>
+    <div class="capex-cell">Capex Spend</div>
+    <div class="capex-cell">Capacity Milestone</div>
+    <div class="capex-cell">Utilization</div>
+    <div class="capex-cell">Revenue Impact / Status</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-label">Year</div><div class="cc-val">FY23</div></div>
+    <div class="capex-cell"><div class="cc-label">CFI</div><div class="cc-val">~₹20 Cr</div><div class="cc-sub">1.9% of revenue</div></div>
+    <div class="capex-cell"><div class="cc-label">Capacity</div><div class="cc-val">29,045 MT</div><div class="cc-sub">3 old plants</div></div>
+    <div class="capex-cell"><div class="cc-label">Utilization</div><div class="cc-val">~75%</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div><div class="cc-val">Maintenance &amp; brownfield</div><div class="status-on">✓ HARVESTING</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-label">Year</div><div class="cc-val">FY24</div></div>
+    <div class="capex-cell"><div class="cc-label">CFI</div><div class="cc-val">~₹39 Cr</div><div class="cc-sub">2.8% of revenue</div></div>
+    <div class="capex-cell"><div class="cc-label">Capacity</div><div class="cc-val">29,045 MT</div><div class="cc-sub">Supa land acquired</div></div>
+    <div class="capex-cell"><div class="cc-label">Utilization</div><div class="cc-val">~80%</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div><div class="cc-val">Supa land + planning phase</div><div class="status-on">✓ ON PLAN</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-label">Year</div><div class="cc-val">FY25</div></div>
+    <div class="capex-cell"><div class="cc-label">CFI</div><div class="cc-val">~₹118 Cr</div><div class="cc-sub">6.1% of revenue</div></div>
+    <div class="capex-cell"><div class="cc-label">Capacity</div><div class="cc-val">29,045 MT</div><div class="cc-sub">CWIP ₹108 Cr on books</div></div>
+    <div class="capex-cell"><div class="cc-label">Utilization</div><div class="cc-val">80.7%</div><div class="cc-sub">Old plants fully loaded</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div><div class="cc-val">Supa Phase 1 machinery ordered</div><div class="status-warn">⚠ CFO NEGATIVE (-₹10 Cr)</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-label">Year</div><div class="cc-val">FY26</div></div>
+    <div class="capex-cell"><div class="cc-label">CFI</div><div class="cc-val">~₹157 Cr est.</div><div class="cc-sub">5.1% of revenue</div></div>
+    <div class="capex-cell"><div class="cc-label">Capacity</div><div class="cc-val">43,445 MT</div><div class="cc-sub">Supa P1 commissioned Sep 2025</div></div>
+    <div class="capex-cell"><div class="cc-label">Utilization</div><div class="cc-val">70% company-level</div><div class="cc-sub">Supa at ~50-70%</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div><div class="cc-val">Phase 1 delivered. IPO debt repaid ₹226 Cr.</div><div class="status-on">✓ ON TRACK</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-label">Target</div><div class="cc-val">FY27</div></div>
+    <div class="capex-cell"><div class="cc-label">Est. Capex</div><div class="cc-val">₹60–80 Cr est.</div><div class="cc-sub">Budget not disclosed</div></div>
+    <div class="capex-cell"><div class="cc-label">Capacity</div><div class="cc-val">59,045 MT target</div><div class="cc-sub">by Q4 FY27</div></div>
+    <div class="capex-cell"><div class="cc-label">Utilization</div><div class="cc-val">80–85% guided</div><div class="cc-sub">35,000–37,000 MT volume</div></div>
+    <div class="capex-cell"><div class="cc-label">Revenue Unlock</div><div class="cc-val">+₹770–990 Cr incremental</div><div class="status-watch">◉ WATCH — PHASE 2 UNDISCLOSED</div></div>
+  </div>
+</div>
+
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;">Capex-to-revenue bridge: ₹90 Cr Phase 1 Supa machinery + ₹226 Cr debt repayment from IPO ₹420 Cr fresh issue. Phase 2 budget not disclosed in concalls; the silence on Phase 2 specifics is a Ledger watch item. FCF expected to turn positive in FY27 as capex moderates and Supa utilization ramps.</p>
+
+<div class="takeaway-pill blue">FY26 was peak capex year; FY27 should see FCF turn positive as Supa absorbs fixed costs at 80%+ utilization — this is the moment OPM improvement becomes visible in reported numbers.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 6 — RISKS
+     ════════════════════════════════════════════ -->
+<div class="ch-header amber">
+  <div class="ch-num">6</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER SIX · RISK REGISTER</div>
+    <div class="ch-title">Five risks — eyes open, all specific and trackable</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon amber"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">1 · Copper Working Capital Trap</div>
+    <div class="risk-what">Copper represents 85-90% of raw material cost. <span class="hl-risk">KSH currently pays copper suppliers on approximately 6-day terms — effectively in advance — meaning the entire inventory cycle is self-funded before a single rupee of revenue is collected.</span> With a cash conversion cycle of ~82 days, the working capital requirement scales directly with revenue. A 15-20% copper price spike (which has happened multiple times in the past decade) forces KSH to immediately fund higher-cost inventory while customer payment terms remain unchanged. The working capital facility as of Sep 2025 was ₹489 Cr. Continued advance-payment copper sourcing limits the FCF turnaround story significantly.</div>
+    <div class="risk-signal">Signal to watch: Copper payable days in quarterly disclosures. If still ≤10 days by Q2 FY27, the working capital improvement thesis is not materializing. Watch LME copper price alongside KSH's quarterly net debt.</div>
+  </div>
+</div>
+<div class="risk-row">
+  <div class="risk-icon amber"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">2 · HVDC Pipeline Stall</div>
+    <div class="risk-what">The 37 HVDC transformer orders cover approximately 12-18 months of execution. The next wave of orders depends on India's HVDC corridors progressing from planning to procurement. India's grid infrastructure has a history of delays — land acquisition issues, state utility financing constraints, and bureaucratic timelines have pushed commissioning dates by 12-24 months on multiple occasions. If the next HVDC corridor wave stalls, KSH's Supa facility (built to absorb specialized wire demand) would run below capacity, compressing margins during the underutilization period. This is the scenario where the bear case plays out most cleanly.</div>
+    <div class="risk-signal">Signal: Any PGCIL quarterly procurement announcement for HVDC converter transformers. Watch Hitachi Energy India, GE Vernova, and BHEL order announcements. No new HVDC orders by Q2 FY27 = risk materializing.</div>
+  </div>
+</div>
+<div class="risk-row">
+  <div class="risk-icon amber"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">3 · Supa Utilization Lag and OPM Compression</div>
+    <div class="risk-what">Q4 FY26 saw revenue double YoY while OPM compressed from 6.93% to 5.53% — the clearest indicator that Supa's fixed costs are not yet covered. Management emphasizes EBITDA/ton (which is improving) over OPM% (which is declining). If Supa utilization does not cross 80% by Q3 FY27, the fixed-cost absorption story fails and margins remain depressed. The risk is that investors who bought the "operating leverage from Supa" thesis face a two-year wait rather than the one-year wait guided. Meanwhile, interest costs doubled QoQ from ₹7 Cr to ₹14 Cr, putting additional pressure on PAT.</div>
+    <div class="risk-signal">Signal: Quarterly utilization disclosure from management. Watch Q1 and Q2 FY27 Supa utilization rates explicitly. Also track the EBITDA/ton vs OPM% divergence — if they continue moving in opposite directions, management is managing the narrative, not the business.</div>
+  </div>
+</div>
+<div class="risk-row">
+  <div class="risk-icon coral"><i class="ti ti-user-exclamation"></i></div>
+  <div>
+    <div class="risk-title">4 · CEO Transition Execution Risk</div>
+    <div class="risk-what">Hukumchand (Hemant) Lakhotiya joined as CEO in April 2026 from CG Power/Schneider Electric/SAEL Industries — KSH's first external CEO appointment in its 45-year history. The company has operated as a closely held family business under Managing Director Rajesh Hegde (fourth generation). No track record exists at KSH for this new leadership structure. The risk is cultural friction, execution slippage during transition, or strategic disagreements between the new CEO and the founding family MD. The appointment is a net positive signal for professionalization, but transition periods in family businesses have historically created operating disruptions.</div>
+    <div class="risk-signal">Signal: Watch for management commentary changes in Q1 FY27 concall. Any shift in strategic framing, delayed decisions on Phase 2 capex, or departure of key operational staff within 6 months of the CEO appointment warrants attention.</div>
+  </div>
+</div>
+<div class="risk-row">
+  <div class="risk-icon navy"><i class="ti ti-building-bank"></i></div>
+  <div>
+    <div class="risk-title">5 · PRECWIRE HVDC Qualification — Moat Erosion Risk</div>
+    <div class="risk-what">Precision Wires India (PRECWIRE) is larger than KSH by capacity and already makes CTC for standard transformer applications. PRECWIRE has the manufacturing capability, the customer relationships, and the financial capacity to pursue PGCIL HVDC qualification. If PRECWIRE (or any well-capitalized entrant) initiates the PGCIL AVL process for 400kV HVDC CTC, the qualification clock starts. In 3-5 years, KSH's current monopoly position could face competition. The market is currently pricing KSH's HVDC moat as permanent; it is durable but not eternal.</div>
+    <div class="risk-signal">Signal: Any PGCIL tender document or PRECWIRE annual report mentioning HVDC conductor qualification initiative. Any government policy accelerating the approved vendor list process (even a "fast-track" qualification for strategic products) would compress the moat timeline.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill amber">The top two risks interact: a copper spike during a Supa utilization lag is the scenario that simultaneously hits margins, working capital, and the balance sheet — the triple-pressure scenario is the bear case.</div>
+
+<!-- ════════════════════════════════════════════
+     CHAPTER 7 — WATCH SIGNALS + VERDICT
+     ════════════════════════════════════════════ -->
+<div class="ch-header green">
+  <div class="ch-num">7</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER SEVEN · FORWARD SIGNALS &amp; VERDICT</div>
+    <div class="ch-title">Five metrics that will tell you if the thesis is working</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot" style="background:var(--teal)"></div>
+  <div>
+    <div class="watch-metric">1 · Supa Facility Utilization Rate (Quarterly)</div>
+    <div class="watch-desc">Currently at approximately 70% company-wide as of Q4 FY26, with Supa specifically at roughly 50-70%. Management targets 80-85% utilization across 43,445 MT in FY27 (implying 35,000-37,000 MT volume). Operating leverage — the margin improvement that justifies the investment thesis — only materializes above 75-80% utilization at Supa. This is the single most important quarterly metric to track.</div>
+    <div class="watch-red">Red flag: Supa utilization below 70% in Q2 FY27 = ramp behind guide; below 65% = thesis in trouble.</div>
+  </div>
+</div>
+<div class="watch-row">
+  <div class="watch-dot" style="background:var(--coral)"></div>
+  <div>
+    <div class="watch-metric">2 · EBITDA per Metric Ton (Quarterly)</div>
+    <div class="watch-desc">The cleanest measure of whether KSH is actually improving mix toward specialty. FY25: ₹52,536 → FY26: ₹67,625 → Q4 FY26: ₹74,018. Direction is clearly positive. Target: ₹80,000+ as Supa comes online at full specialized-wire configuration. This metric isolates the value-add improvement from copper price noise. GOOD if: continues rising toward ₹80k. CONCERN if: flattens or reverses even as revenue grows.</div>
+    <div class="watch-red">Red flag: EBITDA/ton below ₹65,000 in any FY27 quarter = mix reversal or pricing pressure from competition.</div>
+  </div>
+</div>
+<div class="watch-row">
+  <div class="watch-dot" style="background:var(--amber)"></div>
+  <div>
+    <div class="watch-metric">3 · Copper Payable Days (Quarterly, Balance Sheet)</div>
+    <div class="watch-desc">Currently stuck at approximately 6 days — the working capital Achilles' heel. Management has explicitly guided normalization toward industry-standard 30+ day terms as KSH's scale gives it procurement leverage with copper rod suppliers. Every additional 10 days of payable extension releases approximately ₹50-70 Cr in working capital at current revenue levels. The working capital improvement story is a significant FCF catalyst if it materializes.</div>
+    <div class="watch-red">Red flag: Payable days still below 15 days by Q4 FY27 = copper supplier negotiating leverage not improving at guided pace; FCF improvement delayed.</div>
+  </div>
+</div>
+<div class="watch-row">
+  <div class="watch-dot" style="background:var(--blue)"></div>
+  <div>
+    <div class="watch-metric">4 · HVDC Order Pipeline — Post-37-Order Backlog</div>
+    <div class="watch-desc">The current 37-order backlog executes over approximately 12-18 months. The next wave depends on new PGCIL HVDC corridor tenders. Watch management commentary on HVDC order flow in each quarterly concall. Given India's HVDC pipeline includes at least 5-7 corridors in various stages of planning, new orders should flow if project timelines hold. The absence of new HVDC order announcements for 2 consecutive quarters would be a significant demand signal.</div>
+    <div class="watch-red">Red flag: Zero new HVDC orders in any 2 consecutive quarters after the existing backlog completes = HVDC pipeline pausing, Supa utilization at risk.</div>
+  </div>
+</div>
+<div class="watch-row">
+  <div class="watch-dot" style="background:var(--green)"></div>
+  <div>
+    <div class="watch-metric">5 · PEEK Wire Revenue and 4-Wheeler EV Qualification Progress</div>
+    <div class="watch-desc">Management guided 4-wheeler EV traction motor wire entry within 12-18 months from Q3 FY26 (i.e., by Q1-Q2 FY27). Monitor for any announcement of OEM qualification agreements, sample approvals, or initial orders from automotive EV manufacturers. PEEK wire for 800V applications commands substantially higher per-ton pricing — even modest volumes would be meaningfully accretive to EBITDA/ton. No progress by Q3 FY27 would indicate the timeline was aspirational.</div>
+    <div class="watch-red">Red flag: No 4-wheeler EV customer qualification announcement by Q2 FY27 = 12-18 month guidance slipping; PEEK opportunity pushed to FY28-29.</div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- VERDICT -->
+<div class="verdict-box">
+  <div class="vl-label">📌 INVESTMENT VERDICT — KSH INTERNATIONAL · JUNE 2026</div>
+  <p>
+    <strong>Structural tailwinds:</strong> Three converging forces make KSH's demand picture unusually durable — India's transmission grid tripling to 300 GVA by FY28, the HVDC revolution in renewable energy evacuation, and the China+1 shift in global transformer OEM supply chains. These are decade-long trends, not policy cycles.
+    <br><br>
+    <strong>Quality signal:</strong> EBITDA/ton improved 29% in FY26 and accelerated further to ₹74,018 in Q4 — the clearest evidence that mix is genuinely shifting toward specialty CTC. ROCE at 21.4% and ROE at 25.7% in FY25 (improving further in FY26 on higher PAT) reflect a capital-light processing model with real returns. The credit rating upgrade to CARE A post-IPO signals institutional confidence in balance sheet quality.
+    <br><br>
+    <strong>Near-term catalyst:</strong> Supa utilization crossing 80% — expected by Q2-Q3 FY27 — is the trigger that converts volume growth into visible OPM expansion. If OPM moves from 6% toward 7-8%, re-rating toward a premium multiple over peers is justified. Separately, Q4 FY26 export growth of 92% YoY signals the China+1 trade is live, not hypothetical.
+    <br><br>
+    <strong>Valuation:</strong> At approximately 46x FY26 PE, KSH trades at a modest discount to PRECWIRE (49x) and RAMRAT (51x) — peers without the HVDC monopoly or export intensity. The discount reflects compressed OPM during the Supa ramp. As utilization improves, the premium justified by HVDC sole-source status should narrow this gap.
+    <br><br>
+    <strong>Story stage: Mid-chapter.</strong> The foundation has been laid — IPO executed, debt cleared, Supa Phase 1 commissioned, HVDC orders confirmed. The next chapter is about utilization ramp and FCF generation. This is a high-quality compounding story with a specific, near-term, falsifiable catalyst. The risk is execution delay in a capital-heavy facility ramp, not business model failure.
+  </p>
+</div>
+
+<div class="takeaway-pill green">KSH is a government-certified monopoly inside a structural infrastructure super-cycle, temporarily discounted because the Supa factory is not yet full — the discount disappears when utilization reports 80%+.</div>
+
+<!-- ════════════════════════════════════════════
+     SECTION DIVIDER — THE LEDGER
+     ════════════════════════════════════════════ -->
+<div class="section-divider page-break">
+  <span class="section-divider-label">THE LEDGER · MANAGEMENT CREDIBILITY TRACKER</span>
+</div>
+
+<!-- ════════════════════════════════════════════
+     THE LEDGER — KSHINTL
+     ════════════════════════════════════════════ -->
+<div class="ledger-masthead" role="region" aria-label="The Ledger management credibility tracker for KSH International">
+  <div class="ledger-eyebrow">THE LEDGER · COMPANION PERSONA · NSE INVESTOR BRIEF · KSHINTL</div>
+  <h2>The Ledger</h2>
+  <div class="ledger-tagline">Management promises, execution delta, capex timelines, margin mechanics &amp; capital structure — tracked quarter by quarter across six pillars.</div>
+  <div class="ledger-tier">CREDIBILITY TIER: B+ · Credible with Active Watches</div>
+</div>
+
+<div class="card" style="margin-top:18px;">
+  <div class="small-label">Tier Assessment Rationale</div>
+  <p style="font-size:13.5px;line-height:1.7;">KSH International listed in December 2025 — only two full quarterly concalls are on record (Q2 FY26 Jan 2026; Q3 FY26 Feb 2026; Q4 FY26 May 2026). The track record window is short, but the observable data is instructive. IPO-related commitments — debt repayment timeline, Supa Phase 1 commissioning, and volume guidance — were all delivered on schedule. Specificity is above average for a new listing (management discloses EBITDA/ton, capacity by facility, HVDC order counts). The B+ rating reflects strong near-term promise delivery, offset by three active watches: a quiet metric hop from OPM% to EBITDA/ton in headline reporting, Phase 2 capex budget undisclosed, and a working capital improvement promise (payable days) that has not yet materialized.</p>
+</div>
+
+<!-- PROMISE REGISTER -->
+<div class="ch-header navy" style="margin-top:36px;">
+  <div class="ch-num" style="font-size:22px;">L1</div>
+  <div>
+    <div class="ch-eyebrow">PILLAR 1–3 · PROMISE REGISTER &amp; EXECUTION DELTA</div>
+    <div class="ch-title">Every commitment — delivered, drifted, or in progress</div>
+  </div>
+</div>
+
+<table class="data-table" aria-label="Promise register and execution delta for KSH International">
+<thead><tr>
+  <th class="navy">PROMISE (SOURCE)</th>
+  <th class="navy">CATEGORY</th>
+  <th class="navy">QUARTER MADE</th>
+  <th class="navy">DEADLINE</th>
+  <th class="navy">STATUS (Q4 FY26)</th>
+  <th class="navy">DELTA / EVIDENCE</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td>Supa Phase 1 commissioning by Q2 FY26</td>
+  <td><span class="tag tag-coral">Capex/Capacity</span></td>
+  <td>IPO Prospectus 2025</td>
+  <td>Sep 2025</td>
+  <td><span class="promise-status-d">✓ DELIVERED</span></td>
+  <td>Phase 1 (12,000 MT) began Sep 2025; additional 2,400 MT added Q3 FY26. On budget, on schedule.</td>
+</tr>
+<tr>
+  <td>IPO debt repayment of ₹226 Cr by December 2025</td>
+  <td><span class="tag tag-navy">Capital Structure</span></td>
+  <td>IPO Prospectus 2025</td>
+  <td>Dec 2025</td>
+  <td><span class="promise-status-d">✓ DELIVERED</span></td>
+  <td>Fully repaid last week of December 2025 as stated. D/E moved to 0.42x ex-IPO cash. CARE rating upgraded to A.</td>
+</tr>
+<tr>
+  <td>FY26 volume guidance: 28,000–29,000 MT</td>
+  <td><span class="tag tag-red">Revenue/Growth</span></td>
+  <td>Q3 FY26 Concall (Feb 2026)</td>
+  <td>FY26 full year</td>
+  <td><span class="promise-status-d">✓ DELIVERED</span></td>
+  <td>FY26 actual: 28,167 MT. Within the guided range. Credibility: High on volume guidance specificity.</td>
+</tr>
+<tr>
+  <td>70%+ utilization post-Supa commissioning</td>
+  <td><span class="tag tag-coral">Capex/Capacity</span></td>
+  <td>Q3 FY26 Concall</td>
+  <td>Q4 FY26</td>
+  <td><span class="promise-status-d">✓ DELIVERED</span></td>
+  <td>Q4 FY26 company-level utilization stated at 70%. Sequential improvement from Q3. Matches guidance.</td>
+</tr>
+<tr>
+  <td>Capacity expansion to 59,045 MT by Q4 FY27</td>
+  <td><span class="tag tag-coral">Capex/Capacity</span></td>
+  <td>Q3 FY26 Concall</td>
+  <td>Q4 FY27 (~Feb 2027)</td>
+  <td><span class="promise-status-p">◉ IN PROGRESS</span></td>
+  <td>From 43,445 MT currently. Phase 2 budget not disclosed in Q3 or Q4 concalls. No capex commitment announced. Watch for Phase 2 timeline details in Q1 FY27 concall.</td>
+</tr>
+<tr>
+  <td>37 HVDC transformer orders over 12–18 months</td>
+  <td><span class="tag tag-red">Revenue/Growth</span></td>
+  <td>Q3 FY26 Concall</td>
+  <td>Q1–Q2 FY27</td>
+  <td><span class="promise-status-p">◉ IN PROGRESS</span></td>
+  <td>Revenue from HVDC orders executing. Q4 export growth 92% YoY confirms HVDC orders in delivery. Next watch: announcement of new HVDC orders after backlog exhausts.</td>
+</tr>
+<tr>
+  <td>4-wheeler EV PEEK wire qualification in 12–18 months</td>
+  <td><span class="tag tag-teal">Operational Milestone</span></td>
+  <td>Q3 FY26 Concall (Jan 2026)</td>
+  <td>Q1–Q2 FY27</td>
+  <td><span class="promise-status-p">◉ IN PROGRESS</span></td>
+  <td>2-wheeler EV supply has started. 4-wheeler qualification ongoing. No specific OEM named. Watch for any customer qualification announcement in Q1 FY27.</td>
+</tr>
+<tr>
+  <td>"Copper payable days will normalize as volumes grow"</td>
+  <td><span class="tag tag-navy">Capital Structure</span></td>
+  <td>Q3 FY26 Concall</td>
+  <td>FY27 (guided direction)</td>
+  <td><span class="promise-status-w">⚠ NO PROGRESS</span></td>
+  <td>Payable days still ~6 days through FY26. No improvement visible in balance sheet data. This is the most consequential undelivered working capital promise — watch each quarter explicitly.</td>
+</tr>
+</tbody>
+</table>
+
+<!-- TONE ANALYSIS -->
+<div class="ch-header" style="border-bottom-color:var(--purple);">
+  <div class="ch-num" style="font-size:22px;color:var(--purple);">L2</div>
+  <div>
+    <div class="ch-eyebrow">PILLAR 2 · TONE DECODER</div>
+    <div class="ch-title">Language patterns — confidence, hedging, and what changed</div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="small-label" style="color:var(--teal);">✓ POSITIVE TONE INDICATORS</div>
+    <ul style="list-style:none;padding:0;margin:0;">
+      <li style="padding:7px 0;border-bottom:1px dotted var(--rule);font-size:13px;">Specific numerical guidance: volume, EBITDA/ton, capacity (not vague directional commentary)</li>
+      <li style="padding:7px 0;border-bottom:1px dotted var(--rule);font-size:13px;">Honest about Supa utilization lag — did not over-promise Q3 FY26 capacity absorption</li>
+      <li style="padding:7px 0;border-bottom:1px dotted var(--rule);font-size:13px;">HVDC monopoly position discussed with specific detail (37 orders, 12-18 months, customer names)</li>
+      <li style="padding:7px 0;font-size:13px;">Credit rating upgrade and debt repayment proactively highlighted as milestone</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="small-label" style="color:var(--amber);">⚠ WATCH PATTERNS</div>
+    <ul style="list-style:none;padding:0;margin:0;">
+      <li style="padding:7px 0;border-bottom:1px dotted var(--rule);font-size:13px;"><strong>Metric hop signal:</strong> Q3 FY26 concall foregrounded EBITDA/ton as the primary performance metric while OPM% compressed — a classic hedge against a disappointing absolute margin number</li>
+      <li style="padding:7px 0;border-bottom:1px dotted var(--rule);font-size:13px;">Phase 2 capex described directionally ("59,045 MT by Q4 FY27") without budget commitment — vagueness on the mechanism while being specific on the destination</li>
+      <li style="padding:7px 0;font-size:13px;">Working capital improvement described as "expected as volumes grow" — no timeline or trigger specified; same language used in both Q3 and Q4 concalls</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CAPEX TRACKER -->
+<div class="ch-header" style="border-bottom-color:var(--coral);">
+  <div class="ch-num" style="font-size:22px;color:var(--coral);">L3</div>
+  <div>
+    <div class="ch-eyebrow">PILLAR 4 · CAPEX TIMELINE TRACKER</div>
+    <div class="ch-title">Project-level tracking — budget, completion, revenue bridge</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="small-label">Supa Greenfield — All-In Capex Assessment</div>
+  <div class="stat-row"><span class="stat-label">Project Type</span><span class="stat-val">Greenfield — Ahilyanagar, Maharashtra</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 1 Total Budget</span><span class="stat-val">~₹90 Cr machinery + land/civil (IPO-stated: ₹90 Cr machinery)</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 1 Completion</span><span class="stat-val up">Sep 2025 ✓ DELIVERED</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 1 Budget vs Actual</span><span class="stat-val up">On budget per management; no revision disclosed</span></div>
+  <div class="stat-row"><span class="stat-label">Utilization 3 Months Post-Commissioning</span><span class="stat-val warn">~50% (Q3 FY26, Supa alone) → improving</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 2 Target Capacity</span><span class="stat-val">59,045 MT (from 43,445 MT) by Q4 FY27</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 2 Budget Disclosed</span><span class="stat-val warn">NOT DISCLOSED — Active Ledger Flag</span></div>
+  <div class="stat-row"><span class="stat-label">Phase 2 Funding Source</span><span class="stat-val warn">Internal accruals stated — CFO/capex ratio to be tested</span></div>
+  <div class="stat-row"><span class="stat-label">Revenue Unlock (Mgmt Guide)</span><span class="stat-val">80-85% utilization on 43,445 MT = ~35-37k MT in FY27</span></div>
+</div>
+
+<div class="flag-grid">
+  <div class="flag-card watch">
+    <div class="flag-name"><i class="ti ti-tool" style="color:var(--blue)"></i> PHASE 2 SLOW PACING WATCH</div>
+    <div class="flag-what">Management has committed to 59,045 MT by Q4 FY27 but has not disclosed Phase 2 capex budget, machinery ordering status, or civil work progress. The "14 months from Q3 FY26" timeline implies Q1-Q2 FY27 as commissioning date. No spend signal in FY26 results suggests Phase 2 machinery ordering is in early stages.</div>
+    <div class="flag-signal">Monitor: Does any Phase 2 capex appear in CFI line of Q1 FY27 cash flow? If Phase 2 machinery is not ordered by Q2 FY27, the Q4 FY27 target will slip.</div>
+  </div>
+  <div class="flag-card delivered">
+    <div class="flag-name"><i class="ti ti-check" style="color:var(--teal)"></i> PHASE 1 — DELIVERED ON SCHEDULE</div>
+    <div class="flag-what">Supa Phase 1 commissioned on time (Sep 2025) and on budget. 14,400 MT operational. Utilization improving sequentially. Debt repayment from IPO proceeds completed December 2025 as guided. Full marks on IPO-era capex promises.</div>
+    <div class="flag-signal">No active concern. Track Q1 FY27 utilization for confirmation that capacity-to-revenue bridge is working.</div>
+  </div>
+</div>
+
+<!-- MARGIN TRACKER -->
+<div class="ch-header" style="border-bottom-color:var(--teal);">
+  <div class="ch-num" style="font-size:22px;color:var(--teal);">L4</div>
+  <div>
+    <div class="ch-eyebrow">PILLAR 5 · MARGIN EXPANSION TRACKER</div>
+    <div class="ch-title">Is the stated margin mechanism actually working?</div>
+  </div>
+</div>
+
+<div class="lead teal">
+  KSH's margin thesis has two stated mechanisms: (1) product mix shift toward specialized wire (CTC, PICC) as Supa adds specialized capacity, and (2) operating leverage from Supa — fixed costs absorbed as utilization rises. Both are structurally valid. The question is pace.
+</div>
+
+<table class="data-table" aria-label="Margin mechanism analysis for KSH International">
+<thead><tr>
+  <th class="teal">MECHANISM CLAIMED</th>
+  <th class="teal">WORKING?</th>
+  <th class="teal">EVIDENCE</th>
+  <th class="teal">PACE VS GUIDED</th>
+</tr></thead>
+<tbody>
+<tr>
+  <td><span class="tag tag-teal">Product Mix Shift</span></td>
+  <td>✅ Yes</td>
+  <td>Specialized wire maintained at ~75% of revenue in both FY25 and FY26. EBITDA/ton improved 29% (₹52,536 → ₹67,625) confirming that the mix is delivering higher per-unit economics despite flat OPM%.</td>
+  <td>Working as described but not translating to OPM% expansion yet — copper price inflation in revenue is diluting the margin % even as the per-ton metric improves.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-blue">Operating Leverage (Supa)</span></td>
+  <td>⚠ Partial</td>
+  <td>OPM compressed from 6.93% to 5.53% in Q4 FY26 despite revenue doubling. Fixed costs not yet absorbed. However, sequential improvement expected as utilization moves from 50% to 70%+ at Supa.</td>
+  <td>BEHIND guided pace. Management said margins would improve as Supa ramps — Q4 data shows the opposite. Timing mismatch, not a fundamental failure. Needs 80%+ Supa utilization to resolve.</td>
+</tr>
+<tr>
+  <td><span class="tag tag-amber">Copper Passthrough</span></td>
+  <td>✅ Yes</td>
+  <td>Copper cost is passed through to customers via price adjustment mechanisms. Gross margin preservation on copper moves is structurally in place. The issue is working capital, not margin permanence.</td>
+  <td>Working correctly. Not a margin risk; is a working capital risk.</td>
+</tr>
+</tbody>
+</table>
+
+<!-- Red Flag: H2 Mirage Watch -->
+<div class="flag-grid">
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-trending-down" style="color:var(--amber)"></i> ONE-TIME ETERNAL WATCH</div>
+    <div class="flag-what">Both Q3 and Q4 FY26 management commentary cited "Supa ramp-up costs" and "higher working capital interest" as temporary items affecting reported OPM. These items appeared in consecutive quarters. If the same language appears in Q1 FY27, it has crossed into recurring territory (3 quarters = structural, per Ledger red flag taxonomy).</div>
+    <div class="flag-signal">Signal: Count the quarters in which "Supa ramp costs" or "higher interest" is cited as non-recurring. Third appearance = flag it as structural in the register.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-trending-down" style="color:var(--amber)"></i> METRIC HOP — ACTIVE</div>
+    <div class="flag-what">Primary performance metric shifted from OPM% (which was compressing) to EBITDA/ton (which was improving) in Q3 FY26 concall headline commentary. While EBITDA/ton is a legitimate and useful metric for this business, the timing of the shift — precisely when OPM% started compressing — fits the Metric Hop red flag pattern.</div>
+    <div class="flag-signal">Signal: Is OPM% mentioned prominently in Q1 FY27 concall opening commentary? If only EBITDA/ton is cited and OPM% continues below 6%, this is a confirmed metric hop.</div>
+  </div>
+</div>
+
+<!-- CAPITAL STRUCTURE TRACKER -->
+<div class="ch-header" style="border-bottom-color:var(--navy);">
+  <div class="ch-num" style="font-size:22px;color:var(--navy);">L5</div>
+  <div>
+    <div class="ch-eyebrow">PILLAR 6 · CAPITAL STRUCTURE TRACKER</div>
+    <div class="ch-title">Debt promises, funding sources &amp; working capital signals</div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div class="card">
+    <div class="small-label">Capital Structure Snapshot (Post-IPO)</div>
+    <div class="stat-row"><span class="stat-label">Borrowings (Sep 2025, pre-repay)</span><span class="stat-val warn">₹489 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Term Loan Repaid (Dec 2025)</span><span class="stat-val up">₹226 Cr ✓</span></div>
+    <div class="stat-row"><span class="stat-label">Remaining WC Facility (est.)</span><span class="stat-val warn">~₹263 Cr ongoing</span></div>
+    <div class="stat-row"><span class="stat-label">D/E Post-IPO (ex-IPO cash)</span><span class="stat-val up">0.42x ✓</span></div>
+    <div class="stat-row"><span class="stat-label">Interest Cost Q4 FY26</span><span class="stat-val warn">₹13 Cr (was ₹7 Cr Q4 FY25)</span></div>
+    <div class="stat-row"><span class="stat-label">Interest Coverage (EBITDA/Finance)</span><span class="stat-val">~5.4x (FY26)</span></div>
+    <div class="stat-row"><span class="stat-label">Promoter Pledge</span><span class="stat-val">One employee pledge noted May 2026; promoter holding stable at 74.58%</span></div>
+    <div class="stat-row"><span class="stat-label">Phase 2 Capex Funding Claim</span><span class="stat-val warn">"Internal accruals" — unverified</span></div>
+  </div>
+  <div class="card">
+    <div class="small-label">Capital Structure Red Flags — Current Status</div>
+    <div class="stat-row"><span class="stat-label">Stealth Dilution</span><span class="stat-val up">Not Active — No QIP/dilution post-IPO</span></div>
+    <div class="stat-row"><span class="stat-label">Debt-Free Mirage</span><span class="stat-val up">Not Active — WC facility is operational, not reducing</span></div>
+    <div class="stat-row"><span class="stat-label">Working Capital Masking</span><span class="stat-val warn">Watch — CCC stable at ~82 days; payables not improving</span></div>
+    <div class="stat-row"><span class="stat-label">Funding Flip Risk</span><span class="stat-val warn">Watch — Phase 2 "internal accruals" claim vs CFO/capex test needed in FY27</span></div>
+    <div class="stat-row"><span class="stat-label">Promoter Pledge Rise</span><span class="stat-val up">Not Active — 74.58% promoter holding stable</span></div>
+    <div class="stat-row"><span class="stat-label">Interest Coverage Squeeze</span><span class="stat-val up">Not Active — 5.4x coverage is comfortable</span></div>
+    <div class="stat-row"><span class="stat-label">Refinancing Spin</span><span class="stat-val up">Not Active</span></div>
+  </div>
+</div>
+
+<blockquote>The core capital structure finding: KSH executed its IPO-stated debt repayment perfectly. The remaining concern is the working capital facility (~₹263 Cr ongoing) which is growing proportionally with revenue, combined with unchanged advance-payment copper sourcing terms. Interest costs almost doubled despite term debt repayment — working capital interest is the residual pressure. Until payable days improve, the FCF story will be delayed quarter by quarter.</blockquote>
+
+<!-- CREDIBILITY SCORE -->
+<div class="ch-header" style="border-bottom-color:var(--amber);">
+  <div class="ch-num" style="font-size:22px;color:var(--amber);">L6</div>
+  <div>
+    <div class="ch-eyebrow">COMPOSITE SCORE · SEVEN DIMENSIONS</div>
+    <div class="ch-title">B+ Credibility — specific gaps below</div>
+  </div>
+</div>
+
+<div class="score-grid">
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--teal)"></span>Promise Hit Rate</div>
+    <div class="score-dim-desc">4/4 IPO-era hard promises delivered on time and on budget. 1 operational promise (payable days) showing no progress. Limited longer-dated track record available.</div>
+    <div class="score-dim-val" style="color:var(--teal)">85 / 100</div>
+  </div>
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--teal)"></span>Capex Execution Rate</div>
+    <div class="score-dim-desc">Phase 1 delivered on time, on budget, with post-commissioning utilization improving sequentially. Phase 2 budget undisclosed — cannot score fully yet.</div>
+    <div class="score-dim-val" style="color:var(--teal)">80 / 100</div>
+  </div>
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--amber)"></span>Margin Mechanism Fidelity</div>
+    <div class="score-dim-desc">Mix shift working (EBITDA/ton improving). Operating leverage not yet delivering (OPM compressed). Mechanism is valid; execution timing behind guided pace.</div>
+    <div class="score-dim-val" style="color:var(--amber)">PARTIAL</div>
+  </div>
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--teal)"></span>Capital Structure Integrity</div>
+    <div class="score-dim-desc">No stealth dilution, no funding flip observed, no promoter pledge issues. One active watch: "internal accruals" Phase 2 claim to test in FY27 CFO/capex ratio.</div>
+    <div class="score-dim-val" style="color:var(--teal)">CLEAN (1 WATCH)</div>
+  </div>
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--amber)"></span>Specificity &amp; Attribution</div>
+    <div class="score-dim-desc">Above average specificity on volume, EBITDA/ton, capacity. Below average on Phase 2 budget and working capital improvement timeline. Active metric hop pattern identified.</div>
+    <div class="score-dim-val" style="color:var(--amber)">75 / 100</div>
+  </div>
+  <div class="score-dim">
+    <div class="score-dim-name"><span class="dot" style="background:var(--teal)"></span>Q&A Quality</div>
+    <div class="score-dim-desc">Management answered HVDC detail questions directly with specific order counts, customer names, and timelines. No evasion patterns observed in available transcripts. No analyst escalation pattern noted yet.</div>
+    <div class="score-dim-val" style="color:var(--teal)">82 / 100</div>
+  </div>
+</div>
+
+<!-- ACTIVE FLAGS SUMMARY -->
+<h3 class="amber">Active Ledger Flags — All Six Pillars</h3>
+<div class="flag-grid">
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-flag" style="color:var(--amber)"></i> METRIC HOP [ACTIVE Q3–Q4 FY26]</div>
+    <div class="flag-what">Primary headline metric shifted from OPM% to EBITDA/ton across Q3–Q4 FY26 concalls, coinciding precisely with OPM% compression to below 6%. Watch Q1 FY27 for either: (a) OPM% recovery makes the metric re-appear, or (b) only EBITDA/ton cited = confirmed pattern.</div>
+    <div class="flag-signal">Severity: MEDIUM. Does not indicate deception — EBITDA/ton is a valid metric for this business. But the timing warrants explicit attention.</div>
+  </div>
+  <div class="flag-card watch">
+    <div class="flag-name"><i class="ti ti-tool" style="color:var(--blue)"></i> CAPEX PHASE 2 — BUDGET UNDISCLOSED</div>
+    <div class="flag-what">59,045 MT target by Q4 FY27 requires meaningful capex spend starting now (H1 FY27 at latest). Zero budget or machinery order details in Q4 FY26 results. Management cites "internal accruals" as funding — the CFO/capex ratio must be tested when Phase 2 appears in cash flows.</div>
+    <div class="flag-signal">Severity: MEDIUM-HIGH. Timeline for Phase 2 is firm; budget opacity is the watch item. Expect details in Q1 FY27 investor presentation.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-trending-down" style="color:var(--amber)"></i> ONE-TIME ETERNAL WATCH [Q3 + Q4]</div>
+    <div class="flag-what">"Supa ramp-up costs" and "higher working capital interest" cited as non-recurring in two consecutive quarters (Q3 and Q4 FY26). Third consecutive appearance in Q1 FY27 would cross the Ledger threshold for structural reclassification.</div>
+    <div class="flag-signal">Severity: LOW-MEDIUM currently. Monitor Q1 FY27 opening commentary for repetition of these specific phrases.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-building-bank" style="color:var(--amber)"></i> WORKING CAPITAL MASKING WATCH</div>
+    <div class="flag-what">Gross term debt reduced (₹226 Cr repaid) but WC facility remains unchanged at ~₹263 Cr. Payable days stuck at ~6 days despite management guidance on normalization. CCC has not improved despite higher volumes.</div>
+    <div class="flag-signal">Severity: MEDIUM. The FCF improvement thesis requires payable normalization. No improvement in payables over 3 consecutive quarters after the IPO = promise not tracking.</div>
+  </div>
+</div>
+
+<!-- INTEGRATION WITH NSE BRIEF -->
+<div class="card" style="margin-top:18px;">
+  <div class="small-label">Ledger Integration — Amends to the NSE Brief</div>
+  <p style="font-size:13.5px;line-height:1.7;margin-bottom:10px;"><strong>Chapter 5 addition:</strong> The gap between EBITDA/ton (improving, ₹52k→₹67k→₹74k) and OPM% (flat-to-compressing, 6.4%→6.1%→5.5% in Q4) is explained by copper price passthrough inflating the revenue base — the per-unit economics are improving but the absolute margin percentage is being diluted by higher copper prices showing up in both revenues and costs. This divergence will resolve in KSH's favour as Supa utilization absorbs fixed costs.</p>
+  <p style="font-size:13.5px;line-height:1.7;"><strong>Chapter 7 addition (Ledger-derived watch signals):</strong> (a) Capex watch — does Phase 2 machinery ordering appear in Q1 FY27 cash flow? (b) Margin watch — does OPM% recover above 6.5% as Supa hits 80% utilization? (c) Capital watch — does any equity fundraise emerge in FY27 despite "internal accruals" guidance for Phase 2?</p>
+</div>
+
+<!-- ════════════════════════════════════════════
+     ALL HIGHLIGHTS AT A GLANCE — always expanded
+     ════════════════════════════════════════════ -->
+<div class="hl-index-wrap" id="highlight-index-container" role="region" aria-label="All highlights at a glance — summary of key findings">
+  <div class="hl-index-header">
+    <i class="ti ti-pin" style="font-size:20px;color:var(--amber)"></i>
+    📌 All Highlights at a Glance — KSH International · June 2026
+  </div>
+  <div class="hl-index-body">
+    <p style="font-size:12px;color:var(--gray);margin-bottom:12px;">Auto-assembled from all highlighted spans and takeaway pills in this document. Use for 30-second context rebuild.</p>
+    <ol id="highlight-index-list" aria-label="Compiled list of all highlights and takeaways">
+      <!-- Auto-populated by JavaScript -->
+    </ol>
+  </div>
+</div>
+
+</div><!-- end .content -->
+
+<!-- ════════════════════════════════════════════
+     FOOTER
+     ════════════════════════════════════════════ -->
+<footer class="no-print">
+  <span>KSHINTL · NSE INVESTOR BRIEF + THE LEDGER · JUNE 2026</span>
+  <span>RESEARCH USE ONLY · NOT INVESTMENT ADVICE</span>
+  <span>Sources: Screener.in · BSE Filings · ICICI Securities · CARE Ratings · Company Concalls · Mordor Intelligence</span>
+</footer>
+
+<!-- ════════════════════════════════════════════
+     JAVASCRIPT
+     ════════════════════════════════════════════ -->
+<script>
+/* ── DARK MODE ── */
+function toggleDark(){
+  const b=document.body;
+  const btn=document.getElementById('darkBtn');
+  b.classList.toggle('dark');
+  const isDark=b.classList.contains('dark');
+  btn.textContent=isDark?'☀ Light':'🌙 Dark';
+  try{localStorage.setItem('ksh-theme',isDark?'dark':'light');}catch(e){}
+  updateChartTheme();
+}
+(function(){
+  try{
+    const t=localStorage.getItem('ksh-theme');
+    if(t==='dark'){document.body.classList.add('dark');document.getElementById('darkBtn').textContent='☀ Light';}
+  }catch(e){}
+})();
+
+/* ── CHART: REVENUE & EBITDA ── */
+const revCtx=document.getElementById('revChart').getContext('2d');
+const labels=['FY21','FY22','FY23','FY24','FY25','FY26'];
+const revData=[470,871,1049,1383,1928,3107];
+const ebitdaData=[25,51,51,72,123,190];
+const getColor=v=>document.body.classList.contains('dark');
+
+let revChart=new Chart(revCtx,{
+  type:'bar',
+  data:{
+    labels,
+    datasets:[
+      {label:'Revenue (₹ Cr)',data:revData,backgroundColor:'rgba(29,158,117,0.75)',borderColor:'#1D9E75',borderWidth:1.5,yAxisID:'y'},
+      {label:'EBITDA (₹ Cr)',data:ebitdaData,backgroundColor:'rgba(216,90,48,0.8)',borderColor:'#D85A30',borderWidth:1.5,yAxisID:'y'}
+    ]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#6B7280',font:{family:'DM Mono',size:10}}}},
+    scales:{
+      x:{ticks:{color:'#6B7280',font:{size:10}},grid:{color:'rgba(180,170,160,0.2)'}},
+      y:{ticks:{color:'#6B7280',font:{size:10}},grid:{color:'rgba(180,170,160,0.2)'},title:{display:true,text:'₹ Crore',color:'#6B7280',font:{size:10}}}
+    }
+  }
+});
+
+/* ── CHART: EBITDA/TON ── */
+const etCtx=document.getElementById('ebitdaTonChart').getContext('2d');
+let etChart=new Chart(etCtx,{
+  type:'bar',
+  data:{
+    labels:['FY24 Est.','FY25','FY26','Q4 FY26'],
+    datasets:[{
+      label:'EBITDA per Ton (₹ thousands)',
+      data:[36,52.5,67.6,74.0],
+      backgroundColor:['rgba(186,117,23,0.6)','rgba(186,117,23,0.7)','rgba(216,90,48,0.8)','rgba(29,158,117,0.85)'],
+      borderColor:['#BA7517','#BA7517','#D85A30','#1D9E75'],
+      borderWidth:1.5
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{labels:{color:'#6B7280',font:{family:'DM Mono',size:10}}}},
+    scales:{
+      x:{ticks:{color:'#6B7280',font:{size:10}},grid:{color:'rgba(180,170,160,0.2)'}},
+      y:{
+        ticks:{color:'#6B7280',font:{size:10},callback:v=>v+'k'},
+        grid:{color:'rgba(180,170,160,0.2)'},
+        title:{display:true,text:'₹ thousands/MT',color:'#6B7280',font:{size:10}}
+      }
+    }
+  }
+});
+
+function updateChartTheme(){
+  const isDark=document.body.classList.contains('dark');
+  const tc=isDark?'#9BA3AE':'#6B7280';
+  const gc=isDark?'rgba(60,65,80,0.5)':'rgba(180,170,160,0.2)';
+  [revChart,etChart].forEach(chart=>{
+    chart.options.scales.x.ticks.color=tc;
+    chart.options.scales.y.ticks.color=tc;
+    chart.options.scales.x.grid.color=gc;
+    chart.options.scales.y.grid.color=gc;
+    if(chart.options.scales.y.title) chart.options.scales.y.title.color=tc;
+    chart.options.plugins.legend.labels.color=tc;
+    chart.update();
+  });
+}
+
+/* ── AUTO-POPULATE HIGHLIGHT INDEX ── */
+document.addEventListener('DOMContentLoaded',()=>{
+  const index=document.getElementById('highlight-index-list');
+  if(!index)return;
+  const els=document.querySelectorAll('.hl-key,.hl-number,.hl-risk,.hl-catalyst,.takeaway-pill');
+  if(els.length===0){
+    const li=document.createElement('li');
+    li.textContent='Highlights will populate as the page fully loads.';
+    index.appendChild(li);
+    return;
+  }
+  els.forEach(el=>{
+    const text=el.textContent.trim();
+    if(text.length<10)return;
+    const li=document.createElement('li');
+    li.textContent=text.substring(0,200)+(text.length>200?'…':'');
+    const cls=[...el.classList].find(c=>c.startsWith('hl-')||c==='takeaway-pill')||'';
+    li.setAttribute('data-type',cls);
+    if(cls==='takeaway-pill') li.style.fontStyle='italic';
+    if(cls==='hl-number') li.style.fontFamily='DM Mono, monospace';
+    index.appendChild(li);
+  });
+});
+
+/* Fallback in case DOMContentLoaded already fired */
+if(document.readyState==='complete'||document.readyState==='interactive'){
+  setTimeout(()=>{
+    const index=document.getElementById('highlight-index-list');
+    if(index&&index.children.length===0){
+      const els=document.querySelectorAll('.hl-key,.hl-number,.hl-risk,.hl-catalyst,.takeaway-pill');
+      els.forEach(el=>{
+        const li=document.createElement('li');
+        li.textContent=el.textContent.trim().substring(0,200);
+        li.setAttribute('data-type',[...el.classList].find(c=>c.startsWith('hl-')||c==='takeaway-pill')||'');
+        index.appendChild(li);
+      });
+    }
+  },500);
+}
+</script>
+
+</body>
+</html>

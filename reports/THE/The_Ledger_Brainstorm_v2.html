@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ledger v0.2 — Management Credibility Tracker · Brainstorm</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --ink:        #1A1A2E;
+  --paper:      #F7F5F0;
+  --rule:       #DDD8CE;
+  --amber:      #C47B00;
+  --amber-bg:   #FFF7E6;
+  --green:      #1D7A5B;
+  --green-bg:   #E8F5F0;
+  --red:        #B03020;
+  --red-bg:     #FDF0EE;
+  --navy:       #1E3A5F;
+  --navy-bg:    #EBF0F8;
+  --purple:     #5340A0;
+  --purple-bg:  #F0EDFB;
+  --teal:       #0E7490;
+  --teal-bg:    #E0F5FA;
+  --coral:      #C05020;
+  --coral-bg:   #FDF0E8;
+  --gray:       #6B7280;
+  --gray-light: #F0EDE8;
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --mono:       'DM Mono', 'Courier New', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.7; }
+
+@media print {
+  body { font-size: 11.5px; background: white; }
+  .no-print { display: none !important; }
+  .page-break { page-break-before: always; }
+  section, .redflag-card, .pillar-card { break-inside: avoid; }
+  .masthead { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* MASTHEAD */
+.masthead {
+  background: var(--ink); color: #F7F5F0;
+  padding: 52px 64px 40px; position: relative; overflow: hidden;
+}
+.masthead::before {
+  content: ''; position: absolute; top: 0; right: 0;
+  width: 380px; height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 6px, rgba(255,255,255,0.025) 6px, rgba(255,255,255,0.025) 12px);
+}
+.masthead-eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+.masthead h1 { font-family: var(--serif); font-size: 50px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+.masthead-sub { font-size: 16px; color: #A8A098; margin-top: 10px; max-width: 580px; font-weight: 300; }
+.masthead-meta { margin-top: 26px; display: flex; gap: 28px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 6px 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: #C8C0B0; }
+.version-badge { background: var(--amber); color: white; border-radius: 3px; padding: 3px 8px; font-family: var(--mono); font-size: 10px; font-weight: 600; margin-left: 10px; vertical-align: middle; }
+
+/* LAYOUT */
+.content { max-width: 940px; margin: 0 auto; padding: 44px 40px 80px; }
+
+/* SEC HEADERS */
+.sec-header { display: flex; align-items: flex-start; gap: 16px; margin: 52px 0 20px; padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.sec-num { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--amber); line-height: 1; min-width: 30px; }
+.sec-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.sec-title { font-family: var(--serif); font-size: 21px; font-weight: 700; line-height: 1.2; }
+.sec-header-accent { border-bottom-color: var(--teal); }
+.sec-header-accent .sec-num { color: var(--teal); }
+.sec-header-margin { border-bottom-color: var(--green); }
+.sec-header-margin .sec-num { color: var(--green); }
+.sec-header-capital { border-bottom-color: var(--navy); }
+.sec-header-capital .sec-num { color: var(--navy); }
+
+/* PROSE */
+p { margin-bottom: 14px; color: #2A2A3A; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+.lead { font-size: 16.5px; line-height: 1.75; color: var(--navy); padding: 18px 22px; border-left: 4px solid var(--amber); background: var(--amber-bg); border-radius: 0 6px 6px 0; margin-bottom: 22px; }
+.lead-teal  { border-left-color: var(--teal);  background: var(--teal-bg);  }
+.lead-green { border-left-color: var(--green); background: var(--green-bg); }
+.lead-navy  { border-left-color: var(--navy);  background: var(--navy-bg);  }
+
+/* INSIGHT BOX */
+.insight-box { background: var(--ink); color: #F0EDE8; border-radius: 8px; padding: 26px 30px; margin: 24px 0; }
+.insight-box .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.insight-box p { color: #D0C8BC; font-size: 15px; line-height: 1.7; }
+.insight-box strong { color: #F7F5F0; }
+
+/* CHAIN FLOW */
+.chain-flow {
+  display: flex; align-items: stretch; gap: 0;
+  margin: 24px 0; overflow-x: auto;
+}
+.chain-node {
+  flex: 1; min-width: 110px;
+  background: white; border: 1.5px solid var(--rule);
+  padding: 12px 10px; text-align: center; position: relative;
+}
+.chain-node:first-child { border-radius: 6px 0 0 6px; }
+.chain-node:last-child  { border-radius: 0 6px 6px 0; }
+.chain-node::after {
+  content: '→'; position: absolute; right: -13px; top: 50%; transform: translateY(-50%);
+  font-size: 16px; color: var(--amber); z-index: 2; background: var(--paper); padding: 0 2px;
+}
+.chain-node:last-child::after { display: none; }
+.chain-num { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 4px; }
+.chain-label { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.chain-detail { font-size: 11px; color: var(--gray); margin-top: 4px; line-height: 1.3; }
+.chain-node.c1 { border-top: 3px solid var(--coral); }
+.chain-node.c2 { border-top: 3px solid var(--amber); }
+.chain-node.c3 { border-top: 3px solid var(--amber); }
+.chain-node.c4 { border-top: 3px solid var(--green); }
+.chain-node.c5 { border-top: 3px solid var(--green); }
+.chain-node.c6 { border-top: 3px solid var(--navy); }
+.chain-node.c7 { border-top: 3px solid var(--navy); }
+
+/* TABLES */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 18px 0; }
+.data-table th { background: var(--ink); color: #EEE; padding: 9px 12px; text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.5px; font-weight: 500; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; color: #2A2A3A; line-height: 1.5; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: #FAFAF7; }
+.data-table th.teal { background: var(--teal); }
+.data-table th.green { background: var(--green); }
+.data-table th.navy { background: var(--navy); }
+.data-table th.coral { background: var(--coral); }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 500; }
+.tag-green  { background: var(--green-bg);  color: var(--green);  }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber);  }
+.tag-red    { background: var(--red-bg);    color: var(--red);    }
+.tag-navy   { background: var(--navy-bg);   color: var(--navy);   }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+.tag-teal   { background: var(--teal-bg);   color: var(--teal);   }
+.tag-coral  { background: var(--coral-bg);  color: var(--coral);  }
+
+/* PILLARS */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+@media (max-width: 700px) { .pillars { grid-template-columns: 1fr; } }
+.pillar-card { border: 1.5px solid var(--rule); border-radius: 8px; padding: 18px; background: white; }
+.pillar-card.promise  { border-top: 3px solid #1D9E75; }
+.pillar-card.tone     { border-top: 3px solid var(--amber); }
+.pillar-card.exec     { border-top: 3px solid #D85A30; }
+.pillar-card.capex    { border-top: 3px solid var(--coral); }
+.pillar-card.margin   { border-top: 3px solid var(--green); }
+.pillar-card.capital  { border-top: 3px solid var(--navy); }
+.pillar-icon { font-size: 22px; margin-bottom: 8px; }
+.pillar-name { font-family: var(--serif); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.pillar-desc { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.new-badge { display: inline-block; background: #1D9E75; color: white; font-family: var(--mono); font-size: 9px; padding: 1px 5px; border-radius: 2px; margin-left: 5px; vertical-align: middle; }
+
+/* RED FLAGS */
+.redflag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0; }
+@media (max-width: 680px) { .redflag-grid { grid-template-columns: 1fr; } }
+.redflag-card { border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; background: white; }
+.redflag-card.critical { border-left: 3px solid var(--red); }
+.redflag-card.warning  { border-left: 3px solid var(--amber); }
+.redflag-card.capex    { border-left: 3px solid var(--coral); }
+.redflag-card.margin   { border-left: 3px solid var(--green); }
+.redflag-card.capital  { border-left: 3px solid var(--navy); }
+.redflag-name { font-family: var(--mono); font-size: 11.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.icon-flag { color: var(--red); font-size: 13px; }
+.icon-warn { color: var(--amber); font-size: 13px; }
+.icon-capex { color: var(--coral); font-size: 13px; }
+.icon-margin { color: var(--green); font-size: 13px; }
+.icon-capital { color: var(--navy); font-size: 13px; }
+.redflag-what { font-size: 13px; color: #2A2A3A; margin-bottom: 5px; line-height: 1.5; }
+.redflag-signal { font-size: 11.5px; color: var(--gray); font-style: italic; }
+
+/* SCORE DIMENSIONS */
+.score-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 18px 0; }
+@media (max-width: 600px) { .score-grid { grid-template-columns: 1fr; } }
+.score-dim { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; }
+.score-dim-name { font-weight: 600; font-size: 13.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 7px; }
+.score-dim-name .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.score-dim-desc { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.score-dim-example { font-family: var(--mono); font-size: 10.5px; color: var(--navy); margin-top: 7px; background: var(--navy-bg); padding: 5px 8px; border-radius: 3px; }
+
+/* WORKFLOW */
+.workflow { margin: 18px 0; }
+.wf-step { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+.wf-step:last-child { border-bottom: none; }
+.wf-num { min-width: 26px; height: 26px; background: var(--ink); color: var(--amber); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11.5px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+.wf-action { font-weight: 600; font-size: 13.5px; margin-bottom: 3px; }
+.wf-detail { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.wf-tool { display: inline-block; background: var(--amber-bg); color: var(--amber); font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 3px; margin-top: 5px; }
+
+/* TIMELINE CARD */
+.timeline-card { background: white; border: 1.5px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.timeline-header { background: var(--coral); color: white; padding: 10px 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+.timeline-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); }
+.timeline-row:last-child { border-bottom: none; }
+.timeline-cell { padding: 10px 14px; flex: 1; font-size: 12.5px; border-right: 1px solid var(--rule); }
+.timeline-cell:last-child { border-right: none; }
+.timeline-cell .tl-label { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 3px; text-transform: uppercase; }
+.timeline-cell .tl-val { font-weight: 600; color: var(--ink); }
+.timeline-cell .tl-sub { font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+.tl-status-delivered { color: var(--green); font-family: var(--mono); font-size: 11px; }
+.tl-status-drift     { color: var(--amber); font-family: var(--mono); font-size: 11px; }
+.tl-status-miss      { color: var(--red);   font-family: var(--mono); font-size: 11px; }
+
+/* MARGIN TRACKER */
+.mechanism-row { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.mechanism-row:last-child { border-bottom: none; }
+.mech-type { min-width: 140px; }
+.mech-type .tag { font-size: 10px; }
+.mech-what { flex: 1; font-size: 13px; color: #2A2A3A; line-height: 1.5; }
+.mech-signal { min-width: 180px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.45; }
+
+/* SIGNAL COLS */
+.signal-col { display: flex; gap: 14px; margin: 18px 0; }
+.signal-col > div { flex: 1; }
+@media (max-width: 650px) { .signal-col { flex-direction: column; } }
+.signal-list-head { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; padding: 7px 11px; border-radius: 4px 4px 0 0; font-weight: 600; }
+.sl-green { background: var(--green); color: white; }
+.sl-red   { background: var(--red);   color: white; }
+.sl-amber { background: var(--amber); color: white; }
+.sl-teal  { background: var(--teal);  color: white; }
+.sl-navy  { background: var(--navy);  color: white; }
+.signal-list { list-style: none; border: 1px solid var(--rule); border-top: none; border-radius: 0 0 4px 4px; }
+.signal-list li { padding: 7px 11px; font-family: var(--mono); font-size: 11.5px; border-bottom: 1px solid var(--rule); color: #2A2A3A; line-height: 1.45; }
+.signal-list li:last-child { border-bottom: none; }
+.sl-g li::before { content: '✓ '; color: var(--green); }
+.sl-r li::before { content: '✗ '; color: var(--red); }
+.sl-a li::before { content: '~ '; color: var(--amber); }
+.sl-t li::before { content: '↑ '; color: var(--teal); }
+.sl-n li::before { content: '⚠ '; color: var(--navy); }
+
+/* INTEGRATION */
+.integration-row { display: flex; gap: 12px; margin: 18px 0; flex-wrap: wrap; }
+.int-card { flex: 1; min-width: 190px; background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; }
+.int-chapter { font-family: var(--mono); font-size: 10.5px; color: var(--gray); margin-bottom: 5px; }
+.int-title { font-weight: 600; font-size: 13.5px; margin-bottom: 5px; }
+.int-what { font-size: 12.5px; color: var(--gray); line-height: 1.5; }
+
+/* TEMPLATE BOX */
+.template-box { background: #F2F0EC; border: 1px solid var(--rule); border-radius: 6px; padding: 18px 22px; margin: 18px 0; font-family: var(--mono); font-size: 11.5px; line-height: 1.9; color: #2A2A3A; }
+.comment { color: #9B9488; }
+.field   { color: var(--navy); font-weight: 500; }
+.value   { color: var(--green); }
+
+/* VERDICT + CALLOUTS */
+.verdict-box { background: var(--amber-bg); border: 1.5px solid var(--amber); border-radius: 8px; padding: 22px 26px; margin: 30px 0; }
+.verdict-box .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.verdict-box p { color: var(--ink); font-size: 14.5px; line-height: 1.7; }
+
+blockquote { border-left: 3px solid var(--purple); padding: 11px 18px; background: var(--purple-bg); border-radius: 0 4px 4px 0; margin: 18px 0; font-style: italic; color: var(--purple); font-size: 13.5px; line-height: 1.65; }
+
+h3 { font-family: var(--serif); font-size: 16.5px; font-weight: 700; margin: 22px 0 9px; color: var(--ink); }
+h3.teal   { color: var(--teal); }
+h3.green  { color: var(--green); }
+h3.navy   { color: var(--navy); }
+h3.coral  { color: var(--coral); }
+
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 32px 0; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 14px 0; }
+@media (max-width: 650px) { .two-col { grid-template-columns: 1fr; } }
+.small-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 7px; }
+
+ul.prose-list { list-style: none; padding: 0; margin: 0 0 14px; }
+ul.prose-list li { padding: 5px 0 5px 18px; position: relative; font-size: 13.5px; color: #2A2A3A; line-height: 1.55; border-bottom: 1px dotted var(--rule); }
+ul.prose-list li:last-child { border-bottom: none; }
+ul.prose-list li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+
+.pname-chip { display: inline-block; border: 1.5px solid var(--rule); border-radius: 4px; padding: 7px 15px; font-family: var(--serif); font-size: 14px; font-weight: 600; background: white; margin: 4px 6px 4px 0; }
+.pname-chip.recommended { border-color: var(--amber); background: var(--amber-bg); color: var(--amber); }
+
+footer { background: var(--ink); color: #6B7280; padding: 24px 48px; font-family: var(--mono); font-size: 10.5px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+
+/* COLUMN SECTION HEADERS */
+.dim-header { padding: 8px 14px; border-radius: 4px; margin: 18px 0 10px; display: flex; align-items: center; gap: 10px; }
+.dim-header .dh-icon { font-size: 18px; }
+.dim-header .dh-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+.dh-capex  { background: var(--coral-bg); color: var(--coral);   border-left: 3px solid var(--coral); }
+.dh-margin { background: var(--green-bg); color: var(--green);   border-left: 3px solid var(--green); }
+.dh-capital{ background: var(--navy-bg);  color: var(--navy);    border-left: 3px solid var(--navy);  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="masthead-eyebrow">NSE EQUITY RESEARCH · COMPANION PERSONA · BRAINSTORM <span class="version-badge">v0.2</span></div>
+  <h1>The Ledger</h1>
+  <div class="masthead-sub">Management promises, tone &amp; execution — tracked quarter by quarter. Now expanded: Capex timelines · Margin expansion · Debt &amp; capital raising.</div>
+  <div class="masthead-meta">
+    <span class="meta-chip">BRAINSTORM v0.2</span>
+    <span class="meta-chip">JUNE 2026</span>
+    <span class="meta-chip">COMPANION TO NSE_INVESTOR_STORY_PERSONA</span>
+    <span class="meta-chip">+ CAPEX · MARGIN · CAPITAL STRUCTURE</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- 00 — THE CORE THESIS -->
+<div class="sec-header" style="margin-top:28px;">
+  <div class="sec-num">00</div>
+  <div>
+    <div class="sec-eyebrow">THE CORE LOGIC</div>
+    <div class="sec-title">The chain — and where it breaks</div>
+  </div>
+</div>
+
+<p>Every management team in Indian mid-cap manufacturing is promising the same story: spend on capex → build capacity → win revenue → improve margins → reduce debt → rinse and repeat. The Ledger's job is to check whether each link in that chain is actually holding.</p>
+
+<div class="chain-flow">
+  <div class="chain-node c1"><div class="chain-num">①</div><div class="chain-label">Capex Deployed</div><div class="chain-detail">On budget, on schedule?</div></div>
+  <div class="chain-node c2"><div class="chain-num">②</div><div class="chain-label">Capacity Created</div><div class="chain-detail">Plant commissioned as promised?</div></div>
+  <div class="chain-node c3"><div class="chain-num">③</div><div class="chain-label">Utilisation Ramp</div><div class="chain-detail">Revenue materialising from new capacity?</div></div>
+  <div class="chain-node c4"><div class="chain-num">④</div><div class="chain-label">Margin Expansion</div><div class="chain-detail">Operating leverage kicking in?</div></div>
+  <div class="chain-node c5"><div class="chain-num">⑤</div><div class="chain-label">Cash Flow Improves</div><div class="chain-detail">FCF positive &amp; growing?</div></div>
+  <div class="chain-node c6"><div class="chain-num">⑥</div><div class="chain-label">Debt Reduces</div><div class="chain-detail">D/E falling as promised?</div></div>
+  <div class="chain-node c7"><div class="chain-num">⑦</div><div class="chain-label">New Cycle Begins</div><div class="chain-detail">Next capex funded internally?</div></div>
+</div>
+
+<div class="insight-box">
+  <div class="label">⚡ THE NON-OBVIOUS INSIGHT</div>
+  <p>The break in the chain is almost never announced. Management keeps describing a healthy chain — "strong visibility," "on track," "margins will follow revenue" — while the fracture quietly widens. The Ledger makes the break visible by tracking each link independently. <strong>A company whose capex is on schedule but whose utilisation isn't ramping is at Link 3 — not Link 7. The market often prices it as if it were at Link 6.</strong> That gap is the investment risk — or the opportunity if you're on the right side of it.</p>
+</div>
+
+<!-- 01 — SIX PILLARS -->
+<div class="sec-header">
+  <div class="sec-num">01</div>
+  <div>
+    <div class="sec-eyebrow">FRAMEWORK</div>
+    <div class="sec-title">Six tracking dimensions — three original, three new</div>
+  </div>
+</div>
+
+<p>The original three pillars (Register, Tone, Delta) handle the qualitative credibility layer. Three new financial tracking dimensions now handle the quantitative chain: capex timelines, margin expansion trajectory, and capital structure promises.</p>
+
+<div class="pillars">
+  <div class="pillar-card promise">
+    <div class="pillar-icon">📋</div>
+    <div class="pillar-name">Promise Register</div>
+    <div class="pillar-desc">Structured extraction of every forward-looking commitment: financial targets, milestones, initiatives. Tagged by type, timeline, conditionality, and source.</div>
+  </div>
+  <div class="pillar-card tone">
+    <div class="pillar-icon">🔬</div>
+    <div class="pillar-name">Tone Decoder</div>
+    <div class="pillar-desc">Linguistic pattern analysis. Confidence vs hedge word ratios, attribution habits, Q&amp;A evasion patterns, specificity trajectory across quarters.</div>
+  </div>
+  <div class="pillar-card exec">
+    <div class="pillar-icon">⚖️</div>
+    <div class="pillar-name">Execution Delta</div>
+    <div class="pillar-desc">Promise vs reality comparison. Delivered, partial, drifted, or silently withdrawn. Assigns status to every row in the register each quarter.</div>
+  </div>
+  <div class="pillar-card capex">
+    <div class="pillar-icon">🏗️</div>
+    <div class="pillar-name">Capex Timeline Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Project-level tracking: announced amounts, completion dates, revenue unlock bridge. Detects completion drift, dark capex, and phantom revenue promises.</div>
+  </div>
+  <div class="pillar-card margin">
+    <div class="pillar-icon">📈</div>
+    <div class="pillar-name">Margin Expansion Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Tracks the specific mechanism management says will drive margin improvement — and whether that mechanism is actually working at the pace claimed.</div>
+  </div>
+  <div class="pillar-card capital">
+    <div class="pillar-icon">🏦</div>
+    <div class="pillar-name">Capital Structure Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Debt reduction timelines, equity dilution claims vs outcomes, working capital masking, fundraise pattern analysis, promoter pledge trajectory.</div>
+  </div>
+</div>
+
+
+<!-- 02 — CAPEX TIMELINE TRACKER -->
+<div class="sec-header sec-header-accent">
+  <div class="sec-num">02</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 4</div>
+    <div class="sec-title">Capex Timeline Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-teal">
+  Capex promises are the richest credibility signal in Indian mid-cap concalls — because they are the most specific, the most falsifiable, and the most frequently missed. A company that deploys capex on time almost always executes on revenue. A company whose capex keeps drifting is already behind on everything downstream.
+</div>
+
+<h3 class="teal">What to extract per project, per quarter</h3>
+
+<div class="template-box">
+<span class="comment"># One block per announced capex project — update status each quarter</span><br><br>
+<span class="field">project_name        :</span> <span class="value">Phase 2 greenfield plant, Pune</span><br>
+<span class="field">project_type        :</span> <span class="value">Greenfield | Brownfield | Maintenance | R&amp;D | Acquisition</span><br>
+<span class="field">announced_quarter   :</span> <span class="value">Q1 FY25</span><br>
+<span class="field">announced_amount    :</span> <span class="value">₹280 Cr</span><br>
+<span class="field">latest_budget       :</span> <span class="value">₹310 Cr  ← if revised, flag delta (+₹30 Cr, +10.7%)</span><br>
+<span class="field">original_completion :</span> <span class="value">Q3 FY26</span><br>
+<span class="field">current_completion  :</span> <span class="value">Q1 FY27  ← drifted 2 quarters</span><br>
+<span class="field">actual_spend_to_date:</span> <span class="value">₹190 Cr vs ₹280 Cr budgeted-to-date (68% pacing)</span><br>
+<span class="field">revenue_unlock_mgmt :</span> <span class="value">"₹400–500 Cr incremental revenue from H2 FY27"</span><br>
+<span class="field">funding_source_mgmt :</span> <span class="value">Internal accruals + ₹100 Cr term loan</span><br>
+<span class="field">funding_actual      :</span> <span class="value">QIP of ₹150 Cr done in Q3 FY25 (contradicts "no dilution" claim)</span><br>
+<span class="field">utilisation_post_comm:</span> <span class="value">Track 2 quarters after commissioning — is the revenue actually arriving?</span><br>
+<span class="field">status              :</span> <span class="value">DRIFTED | ON TRACK | DELIVERED | DARK CAPEX | ABANDONED</span>
+</div>
+
+<h3 class="teal">Capex promise types (taxonomy)</h3>
+<table class="data-table">
+  <tr><th class="teal">TYPE</th><th class="teal">WHAT IT IS</th><th class="teal">CREDIBILITY WEIGHT</th><th class="teal">COMMON MISS PATTERN</th></tr>
+  <tr><td><span class="tag tag-coral">Capacity Expansion</span></td><td>New plant, new line, brownfield add — promises specific MW/MT/units of capacity</td><td>Highest — most traceable against production data</td><td>Commissioned on paper but utilisation stuck below 40%</td></tr>
+  <tr><td><span class="tag tag-teal">Technology Upgrade</span></td><td>Import of new machines, automation, quality certification capex</td><td>Medium — hard to verify from outside</td><td>Spend happens but margin improvement (the rationale) doesn't follow</td></tr>
+  <tr><td><span class="tag tag-navy">Geographic Expansion</span></td><td>New facility in a new location — often for customer proximity or regulatory benefit</td><td>High — very visible when commencing/delayed</td><td>Location announced, land acquired, then silent for 2–3 years</td></tr>
+  <tr><td><span class="tag tag-amber">Maintenance Capex</span></td><td>"Run-the-business" spend management says is recurring</td><td>Lower weight — used as a catch-all for unexplained spend</td><td>Maintenance capex swells in bad years (capex that isn't maintenance labelled as such)</td></tr>
+  <tr><td><span class="tag tag-purple">Acquisition / JV</span></td><td>Inorganic capex — buyout, strategic stake, JV formation</td><td>High — very binary (done/not done)</td><td>"In discussions" language used for 4+ quarters without conclusion</td></tr>
+</table>
+
+<h3 class="teal">Six capex-specific red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> COMPLETION DRIFT</div>
+    <div class="redflag-what">Plant or project commissioning date pushed out across consecutive quarters. "Q3 FY26" becomes "Q4 FY26" becomes "H1 FY27" — always just one quarter away.</div>
+    <div class="redflag-signal">Signal: Same project, different completion quarter, 3 consecutive transcripts. No explanation given for the slip.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> PHANTOM REVENUE BRIDGE</div>
+    <div class="redflag-what">Management says the new capacity will unlock "₹X Cr incremental revenue" — but after commissioning, that revenue simply doesn't appear. The plant is online; the revenue isn't.</div>
+    <div class="redflag-signal">Signal: Track utilisation rate 2 quarters post-commissioning. &lt;50% utilisation with no explanation = phantom revenue bridge.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> DARK CAPEX</div>
+    <div class="redflag-what">Significant capex spend appears in cash flow statements but is never explained in concalls. Management spends but doesn't tell you what the capacity addition is. Often a sign of unannounced project problems.</div>
+    <div class="redflag-signal">Signal: CapEx in cash flow &gt;20% above the sum of all announced projects. Ask: where did the rest go?</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> BUDGET INFLATION</div>
+    <div class="redflag-what">The announced capex budget quietly grows each quarter — "₹200 Cr" becomes "₹250 Cr" becomes "₹310 Cr" — without proportional upward revision to the revenue unlock guidance.</div>
+    <div class="redflag-signal">Signal: Track budget revision percentage vs revenue unlock revision percentage. If budget rises 20% but revenue guidance stays flat — margin of the new capacity is compressing.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> SLOW PACING</div>
+    <div class="redflag-what">Management says the plant will be ready by a certain quarter, but actual capex spend is significantly behind the implied pace needed to get there. The money isn't being deployed at the rate the timeline requires.</div>
+    <div class="redflag-signal">Signal: Divide total budget by quarters to commissioning — is actual spend-to-date at that pace? More than 20% behind pace = completion timeline is aspirational.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex"></i> ABANDONED SILENCE</div>
+    <div class="redflag-what">A capex project that was regularly discussed simply disappears from concall commentary. No cancellation announced — just never mentioned again. Often signals a customer who cancelled an order that the capex was for.</div>
+    <div class="redflag-signal">Signal: Was mentioned in Q1–Q3, not mentioned in Q4 or next year's concalls. Cross-check with exchange filings for any cancellation notice.</div>
+  </div>
+</div>
+
+<h3 class="teal">Capex timeline example register (4 quarters)</h3>
+<div class="timeline-card">
+  <div class="timeline-header">📍 PROJECT: PHASE 2 EXPANSION — Announced Q1 FY25 · ₹280 Cr</div>
+  <div class="timeline-row" style="background:#F7F5F0;">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-label">Quarter</div></div>
+    <div class="timeline-cell"><div class="tl-label">Budget Stated</div></div>
+    <div class="timeline-cell"><div class="tl-label">Spend-to-Date</div></div>
+    <div class="timeline-cell"><div class="tl-label">Completion Date Given</div></div>
+    <div class="timeline-cell"><div class="tl-label">Revenue Unlock Claim</div></div>
+    <div class="timeline-cell"><div class="tl-label">Status</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q1 FY25</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹280 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹0</div><div class="tl-sub">Announced</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div></div>
+    <div class="timeline-cell"><div class="tl-status-delivered">● ON TRACK</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q3 FY25</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹280 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹85 Cr</div><div class="tl-sub">30% of budget</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div></div>
+    <div class="timeline-cell"><div class="tl-status-drift">⚠ PACING SLOW</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q1 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹310 Cr ↑</div><div class="tl-sub">+₹30 Cr revision</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹140 Cr</div><div class="tl-sub">45% of revised</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q1 FY27 ← slipped</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div><div class="tl-sub">unchanged despite budget rise</div></div>
+    <div class="timeline-cell"><div class="tl-status-drift">⚠ DRIFT · BUDGET ↑</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹310 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹190 Cr</div><div class="tl-sub">61% of budget</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q2 FY27 ← slipped again</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹350–450 Cr / yr ↓</div><div class="tl-sub">revenue unlock quietly cut</div></div>
+    <div class="timeline-cell"><div class="tl-status-miss">✗ 2 QTR DRIFT · REV ↓</div></div>
+  </div>
+</div>
+<p style="font-size:12.5px; color:var(--gray); font-style:italic;">The above illustrates three simultaneous red flags developing across 18 months: slow pacing → completion drift → budget inflation with revenue unlock quietly trimmed. Each individually might be excused. Together, they signal a project in trouble.</p>
+
+
+<!-- 03 — MARGIN EXPANSION TRACKER -->
+<div class="sec-header sec-header-margin">
+  <div class="sec-num">03</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 5</div>
+    <div class="sec-title">Margin Expansion Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-green">
+  "Margins will improve as revenue scales" is the single most repeated and least delivered promise in Indian mid-cap equity. The Margin Tracker asks a harder question than "did margins improve?" — it asks: <em>is the specific mechanism management cited for margin improvement actually working at the rate they claimed?</em>
+</div>
+
+<h3 class="green">The five margin promise mechanisms — and how to test each</h3>
+
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-green">Operating Leverage</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Fixed costs are absorbed as revenue scales — beyond ₹X revenue run-rate, incremental margins are 30–35%." <br>The most common and most abused. Almost always true in theory; frequently wrong in the timeline claimed.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track EBITDA margin vs revenue each quarter. If revenue grows 20% but EBITDA margin is flat or falling, fixed costs are growing alongside revenue — management hasn't built the leverage they claimed.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-navy">Product Mix Shift</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Higher-margin product segment (defence / export / value-added) growing faster — will lift blended margin by 200–300 bps over 2 years."<br>Common in companies transitioning from commodity to specialty.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track the high-margin segment's revenue share vs guided trajectory. If the mix isn't shifting at the speed claimed, the margin improvement will undershoot. Ask: why is the mix not shifting?</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-amber">Input Cost Normalization</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Current margins are depressed by elevated [raw material / energy / logistics] costs — once these normalise, gross margin returns to X%." Often valid but used as a perennial excuse.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track the relevant commodity index alongside gross margin. If the input cost has normalised but gross margin hasn't followed — something else is wrong (pricing pressure, volume shortfall, product mix).</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-coral">Cost Efficiency Program</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "We have identified ₹X Cr of annual cost savings through automation / vendor renegotiation / process improvements — to be realised over the next 4 quarters."<br>Specific and trackable when well-stated.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track employee cost %, raw material %, and other expenses % of revenue each quarter. If the savings program is working, one of these lines should compress. No compression = program isn't delivering.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-purple">Pricing Power / Pass-Through</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "We have contractual pass-through mechanisms for input cost increases — our gross margins are structurally protected." Or: "We are taking selective price increases."<br>Often overstated — customer pushback limits actual pass-through.</div>
+  <div class="mech-signal"><strong>Test:</strong> When input costs rise, does gross margin hold? If it falls despite the "protected" claim, the pass-through either doesn't exist or isn't being exercised (competitive pressure). Track the gross margin independently of EBITDA.</div>
+</div>
+
+<h3 class="green">The gross margin vs EBITDA margin split — the hidden signal</h3>
+<p>Tracking only EBITDA margin misses a critical sub-story. A company can improve gross margins while EBITDA stays flat — it means employee costs or overheads are absorbing all the gains. Conversely, flat gross margins with improving EBITDA means cost-cutting is masking a product-level problem. Track both lines independently, plus the key cost-line ratios below.</p>
+
+<table class="data-table">
+  <tr><th class="green">LINE ITEM</th><th class="green">WHAT A RISING % SIGNALS</th><th class="green">WHAT A FALLING % SIGNALS</th><th class="green">RED FLAG TRIGGER</th></tr>
+  <tr><td>Raw Material / Revenue</td><td>Input cost pressure or weak pricing power</td><td>Pricing power or input normalisation working</td><td>Rising for 3+ quarters while management says "normalising"</td></tr>
+  <tr><td>Employee Cost / Revenue</td><td>Hiring ahead of revenue (bet on growth) or wage inflation</td><td>Operating leverage on headcount</td><td>Rising while management claims operating leverage kicking in</td></tr>
+  <tr><td>Other Expenses / Revenue</td><td>Volume-related or fixed overhead not scaling down</td><td>Overhead absorption at higher revenue</td><td>Hidden escalations (logistics, energy, quality rejects)</td></tr>
+  <tr><td>Depreciation / Revenue</td><td>Capex cycle adding asset base faster than revenue</td><td>Revenue growing into the asset base</td><td>Rising sharply post-capex with no revenue ramp = overcapacity</td></tr>
+  <tr><td>Finance Cost / EBITDA</td><td>Debt service burden increasing — eating margins from below</td><td>Deleveraging working; debt reducing relative to earnings</td><td>&gt;25% of EBITDA going to interest; watch D/E alongside</td></tr>
+</table>
+
+<h3 class="green">Six margin-specific red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> H2 MIRAGE</div>
+    <div class="redflag-what">Every H1 miss is explained as "margin expansion is H2 weighted." H2 arrives and margins are still below guidance. Next year's H1 is weak again. The H2 story resets endlessly without ever resolving.</div>
+    <div class="redflag-signal">Signal: H2 margin outcomes for 3 consecutive years. If H2 is consistently just marginally better than H1 but still below guidance — the H2 weighting is a structural excuse, not a business reality.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> FLOOR DRIFT</div>
+    <div class="redflag-what">Management keeps resetting the "normalized" or "steady-state" margin floor downward. What was "15% is our floor" in FY24 becomes "12–13% in the current environment" in FY25 becomes "10–11% with the current mix" in FY26.</div>
+    <div class="redflag-signal">Signal: Track every stated "normalized margin" across 6+ quarters. Downward drift with each reset = the original margin thesis was incorrect.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> MECHANISM FAILURE</div>
+    <div class="redflag-what">The stated driver of margin improvement is verifiably not working. Operating leverage isn't playing out. Mix shift isn't happening. Cost savings weren't realised. The mechanism is real; the pace is wrong.</div>
+    <div class="redflag-signal">Signal: If management's stated mechanism requires 20% revenue growth to show 100 bps improvement, test it against the actual growth-to-margin relationship. A regression tells you the true leverage ratio.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> ONE-TIME ETERNAL</div>
+    <div class="redflag-what">A "one-time" cost headwind (disruption, quality issue, expedite freight, ramp-up costs) appears in 3 or more consecutive quarters, each time described as temporary or non-recurring.</div>
+    <div class="redflag-signal">Signal: Count the quarters in which an "exceptional" or "one-time" cost category is mentioned. 3+ occurrences means it is structural, not one-time.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> EMPLOYEE ABSORPTION</div>
+    <div class="redflag-what">Gross margin improves (raw material costs falling, pricing holding) but EBITDA stays flat because employee costs and overheads are rising. The gross margin gains are absorbed before reaching EBITDA. Management may not highlight this split.</div>
+    <div class="redflag-signal">Signal: Gross margin – EBITDA margin spread widening over 3+ quarters = overhead is growing faster than scale. Management may be presenting gross improvement as if it flows to EBITDA.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> MIX DELAY LOOP</div>
+    <div class="redflag-what">The "premium product / export / high-value segment" that was supposed to improve mix is perpetually "growing strongly" but its actual revenue contribution barely moves. The high-margin segment stays at 8–10% of revenue for years while management calls it a "key driver."</div>
+    <div class="redflag-signal">Signal: Track the stated high-margin segment's % of revenue each quarter. &lt;3% change in share over 6 quarters while being called a "margin driver" = wishful framing.</div>
+  </div>
+</div>
+
+
+<!-- 04 — CAPITAL STRUCTURE TRACKER -->
+<div class="sec-header sec-header-capital">
+  <div class="sec-num">04</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 6</div>
+    <div class="sec-title">Capital Structure Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-navy">
+  The three most commonly broken financial promises in Indian mid-caps: "we will be debt-free by FY27," "no equity dilution for this expansion," and "capex will be entirely from internal accruals." The Capital Structure Tracker holds management to each of these — and detects the creative accounting that obscures slippage.
+</div>
+
+<h3 class="navy">What to track — the five capital structure dimensions</h3>
+
+<table class="data-table">
+  <tr><th class="navy">DIMENSION</th><th class="navy">WHAT TO EXTRACT FROM CONCALL</th><th class="navy">HOW TO VERIFY</th><th class="navy">KEY RATIO TO WATCH</th></tr>
+  <tr><td><strong>Gross Debt Trajectory</strong></td><td>Management's stated debt level target and timeline: "Debt-free by FY27." "Net debt to below ₹200 Cr by Q4." "D/E ratio below 0.5x by FY26."</td><td>Balance sheet — long-term borrowings + short-term borrowings each quarter</td><td>Gross debt ₹ Cr absolute; D/E ratio; Net debt/EBITDA</td></tr>
+  <tr><td><strong>Working Capital Masking</strong></td><td>Less frequently guided — but a common place for debt to migrate invisibly. Management says "debt is reducing" while trade payables and working capital debt grows.</td><td>Cash conversion cycle (Debtors + Inventory – Payables days). Track this alongside gross debt. Net debt = gross debt minus cash.</td><td>Net Debt (not gross); Cash Conversion Cycle days trend</td></tr>
+  <tr><td><strong>Equity Dilution Claims</strong></td><td>"No equity dilution required for this capex cycle." "Our internal accruals are sufficient." Any statement about not raising equity is a trackable claim.</td><td>BSE exchange filings — preferential allotment, QIP, rights issue, ESOP grants to promoters. Check even NCD (non-convertible debentures) with equity kickers.</td><td>Equity shares outstanding quarter-on-quarter; promoter holding %</td></tr>
+  <tr><td><strong>Capex Funding Source</strong></td><td>Per-project: "This ₹300 Cr capex is from internal accruals." "We have arranged a ₹150 Cr term loan." "No additional debt needed."</td><td>Cash flow statement — CFO vs CFI. If CFO &lt; Capex and net debt is rising, the funding came from debt regardless of what management said.</td><td>CFO/Capex ratio; Net debt change vs guided</td></tr>
+  <tr><td><strong>Promoter Pledge Level</strong></td><td>Often not discussed in concalls — must be pulled from exchange quarterly pledging disclosures. A rising pledge level while management says "balance sheet is strong" is a contradiction.</td><td>BSE/NSE quarterly promoter shareholding filings. % of promoter shares pledged.</td><td>% promoter shares pledged; absolute pledged value vs market cap</td></tr>
+</table>
+
+<h3 class="navy">Fundraising pattern analysis — what the method signals</h3>
+<p>Different fundraising instruments carry different management intent signals. The method chosen often reveals what management actually believes about near-term prospects.</p>
+
+<table class="data-table">
+  <tr><th class="navy">INSTRUMENT</th><th class="navy">WHAT IT SIGNALS</th><th class="navy">RED FLAG PATTERN</th></tr>
+  <tr>
+    <td><span class="tag tag-navy">QIP (Institutional)</span></td>
+    <td>Management is accessing institutional money quickly, often at a good price to them. Efficient but opaque on terms. Most common when stock is at a relative high.</td>
+    <td><strong>QIP after "no dilution" guidance</strong> — the most common credibility break. Also watch: QIP immediately after a strong quarterly result (management selling good news to raise capital before conditions deteriorate).</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-amber">Rights Issue</span></td>
+    <td>Management inviting existing shareholders to maintain their stake. More shareholder-friendly than QIP but requires disclosure of use of funds. Often signals a genuine funding need.</td>
+    <td>Rights issue at a deep discount after management repeatedly said the business was cash-generative — suggests the cash position was worse than communicated.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-purple">Preferential Allotment</span></td>
+    <td>Allotment to specific investors — often promoters increasing stake, strategic investors, or PE partners. Check who gets the preferential allotment and at what price.</td>
+    <td>Preferential allotment to promoters at a below-market price after they pledged shares — essentially bailing out the promoter's pledge using corporate equity.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-teal">NCD / Bonds</span></td>
+    <td>Debt instrument, but often with equity warrants attached. Technically "no equity dilution" but future dilutive. Management may not disclose the warrant component prominently.</td>
+    <td>NCD issued with warrants at a strike price management claims is "well above market" — check back 2 years later whether they were exercised. Hidden dilution.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-red">Promoter Pledge Increase</span></td>
+    <td>Not a company fundraise but a promoter personal fundraise using company shares. Signals promoter has personal liquidity needs and/or low confidence in near-term share price.</td>
+    <td>Rising pledge + falling promoter % holding + QIP announcement within the same 2-quarter window = structural stress pattern. Highest risk combination in this tracker.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-green">Term Loan (Incremental)</span></td>
+    <td>Straightforward bank debt for capex. Most transparent funding method. Watch the tenor and rate.</td>
+    <td>New term loan announced while management claimed "capex from internal accruals." Flag this mismatch even if the amount is small — the principle matters for credibility scoring.</td>
+  </tr>
+</table>
+
+<h3 class="navy">Seven capital structure red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> DEBT-FREE MIRAGE</div>
+    <div class="redflag-what">"Debt-free by FY27" promised in FY25. By Q3 FY26 it's "net debt below ₹200 Cr by FY27." By Q1 FY27 it's "we expect significant debt reduction over the next 24 months." The absolute goal retreats with every quarter.</div>
+    <div class="redflag-signal">Signal: Score this exactly like Promise Drift. Track the stated debt-reduction target across every quarter. Softening language + lengthening timeline = Drift.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> STEALTH DILUTION</div>
+    <div class="redflag-what">Management says "no equity dilution required for this capex cycle" in Q2, then announces a QIP in Q4. Often preceded by a strong quarterly result — management creates the good-news window, then uses it to raise capital.</div>
+    <div class="redflag-signal">Signal: Any equity fundraise within 4 quarters of a "no dilution needed" statement. No exceptions — even "opportunistic" QIPs are a credibility break on this claim.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> WORKING CAPITAL MASKING</div>
+    <div class="redflag-what">Gross debt appears flat or falling while cash conversion cycle (debtor days + inventory days) lengthens. The company is effectively borrowing through its working capital rather than term loans — net debt is rising invisibly.</div>
+    <div class="redflag-signal">Signal: Gross debt flat but (debtor days + inventory days – payable days) expanding by &gt;15 days over 4 quarters. Net debt, not gross debt, is the real number to track.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> FUNDING FLIP</div>
+    <div class="redflag-what">"This capex is entirely from internal accruals" stated in Q1. By Q3 the cash flow statement shows net new term loans equal to the capex amount and CFO coverage of capex is below 1x. The funding source silently switched.</div>
+    <div class="redflag-signal">Signal: CFO/Capex ratio &lt;0.7 in any year where management claimed "internal accruals" funding. The shortfall had to come from somewhere — check net borrowings in cash flow statement.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> PROMOTER PLEDGE RISE</div>
+    <div class="redflag-what">Promoter pledge percentage rising while management discusses "strong balance sheet" and "confident growth outlook." These are incompatible signals. A promoter who is pledging more shares is personally borrowing against the company's value — which implies personal doubt about near-term prospects.</div>
+    <div class="redflag-signal">Signal: Promoter pledge &gt;30% of total promoter holding AND increasing for 2+ consecutive quarters. Cross-reference with management's public statements about the business.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> REFINANCING SPIN</div>
+    <div class="redflag-what">Management announces "we have refinanced our debt at lower rates" as a positive. Check: did net debt also reduce, or did they just roll the same debt forward at a lower rate while calling it progress? Refinancing is not deleveraging.</div>
+    <div class="redflag-signal">Signal: Management uses word "refinanced" or "restructured debt" — immediately check net debt level. If net debt is flat or rising, the headline is misleading regardless of rate improvement.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> INTEREST COVERAGE SQUEEZE</div>
+    <div class="redflag-what">EBITDA flat or falling while finance costs rise (from new term loans for capex). Interest coverage (EBITDA / Finance costs) compresses below 3x — the range where servicing obligations start to affect operating flexibility and future capex decisions.</div>
+    <div class="redflag-signal">Signal: Interest coverage &lt;3x and declining. Check against management's debt-free / deleverage timeline — they cannot reduce debt quickly if they're spending most of EBITDA on interest.</div>
+  </div>
+</div>
+
+
+<!-- 05 — COMBINED PROMISE REGISTER (EXPANDED) -->
+<div class="sec-header">
+  <div class="sec-num">05</div>
+  <div>
+    <div class="sec-eyebrow">EXPANDED PROMISE REGISTER</div>
+    <div class="sec-title">All six promise categories in one taxonomy</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th>CATEGORY</th><th>PROMISE TYPES IN THIS BUCKET</th><th>CREDIBILITY WEIGHT</th><th>PRIMARY TRACKER</th></tr>
+  <tr><td><span class="tag tag-red">Revenue / Growth</span></td><td>Revenue guidance (hard/range/directional), order book claims, new customer wins, market share statements</td><td>Highest</td><td>Promise Register · Execution Delta</td></tr>
+  <tr><td><span class="tag tag-teal">Capex / Capacity</span></td><td>Specific project amounts, completion timelines, capacity additions, revenue unlock bridge</td><td>Highest — most falsifiable</td><td>Capex Timeline Tracker</td></tr>
+  <tr><td><span class="tag tag-green">Margin Expansion</span></td><td>EBITDA/gross margin targets, mechanism claims (operating leverage, mix shift), floor/ceiling statements</td><td>High</td><td>Margin Expansion Tracker</td></tr>
+  <tr><td><span class="tag tag-navy">Capital Structure</span></td><td>Debt-reduction targets, "no dilution" claims, funding source claims, net debt level guidance</td><td>High — especially equity dilution</td><td>Capital Structure Tracker</td></tr>
+  <tr><td><span class="tag tag-amber">Operational Milestones</span></td><td>Certifications, product launches, customer qualifications, geographic entries, hiring</td><td>Medium-High</td><td>Promise Register · Execution Delta</td></tr>
+  <tr><td><span class="tag tag-purple">Strategic Aspirations</span></td><td>Long-horizon positioning claims (top-3 in sector, global capability, platform company)</td><td>Low (unfalsifiable near-term)</td><td>Tone Decoder (do they repeat without progress?)</td></tr>
+</table>
+
+<!-- 06 — COMPLETE RED FLAG MASTER LIST -->
+<div class="sec-header">
+  <div class="sec-num">06</div>
+  <div>
+    <div class="sec-eyebrow">MASTER TAXONOMY</div>
+    <div class="sec-title">All twenty red flags — classified by severity and domain</div>
+  </div>
+</div>
+
+<div class="dim-header dh-capex"><div class="dh-icon">🏗️</div><div class="dh-label">Original Credibility Flags (from v0.1)</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag"></i> PROMISE DRIFT</div><div class="redflag-what">A specific milestone keeps getting pushed one quarter forward with no explanation. Three consecutive quarterly resets = systemic drift, not a one-off delay.</div><div class="redflag-signal">Signal: Same milestone, different date, 3+ quarterly transcripts.</div></div>
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag"></i> METRIC HOP</div><div class="redflag-what">The headline KPI switches mid-year because the original metric started disappointing. Revenue growth → order book → pipeline quality → customer conversations.</div><div class="redflag-signal">Signal: Primary metric in opening commentary changes from prior quarter without explanation.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn"></i> QUALIFIER CREEP</div><div class="redflag-what">Language around the same target accumulates conditional clauses over consecutive quarters. "We will" → "We expect to subject to" → a range → silence.</div><div class="redflag-signal">Signal: Count conditional clauses on the same stated target across 3 quarters. Rising = rising doubt.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn"></i> GUIDANCE WITHDRAWAL</div><div class="redflag-what">After a miss, management stops providing specific guidance. "We remain optimistic" replaces ₹ numbers.</div><div class="redflag-signal">Signal: Prior quarter had hard guidance. This quarter has direction only. Confirm it's not industry-wide policy.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn"></i> VERBATIM REPEAT</div><div class="redflag-what">Identical bullish language 3+ quarters with no underlying delivery. Enthusiasm without progress.</div><div class="redflag-signal">Signal: &gt;60% of key phrases match across 4 quarterly opening commentaries. No delivery on the underlying metric.</div></div>
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag"></i> ANALYST ESCALATION</div><div class="redflag-what">Same hard question from the same (or multiple) analyst(s) in consecutive quarters. Analysts only repeat when they know the first answer wasn't real.</div><div class="redflag-signal">Signal: Identify recurring analyst questions across transcripts. Same topic, 2+ quarters = credibility gap.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn"></i> ATTRIBUTION SHIFT</div><div class="redflag-what">A miss described as "temporary" becomes "structural headwinds" then "market-wide challenges" — the scale of the problem expands retroactively.</div><div class="redflag-signal">Signal: Compare language for same underlying problem across 3+ quarters. "Temporary" → "structural" = thesis risk.</div></div>
+</div>
+
+<div class="dim-header dh-capex" style="background:var(--coral-bg); color:var(--coral); border-left-color:var(--coral);"><div class="dh-icon">🏗️</div><div class="dh-label">Capex-Specific Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> COMPLETION DRIFT</div><div class="redflag-what">Plant commissioning date pushed across consecutive quarters with no explanation.</div><div class="redflag-signal">Signal: Same project, different completion quarter, 3 consecutive transcripts.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> PHANTOM REVENUE BRIDGE</div><div class="redflag-what">New capacity commissioned but promised revenue doesn't appear. Utilisation stuck below 50% 2 quarters post-commissioning.</div><div class="redflag-signal">Signal: Track production utilisation rates in quarterly results vs capacity addition date.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> DARK CAPEX</div><div class="redflag-what">Spend in cash flow significantly exceeds the sum of all disclosed projects. Unaccounted capex.</div><div class="redflag-signal">Signal: Cash flow capex &gt;20% above all announced project budgets summed.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> BUDGET INFLATION</div><div class="redflag-what">Capex budget rises without proportional revenue unlock revision. Margin on new capacity compressing silently.</div><div class="redflag-signal">Signal: Budget +X% with revenue unlock flat or declining.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> SLOW PACING</div><div class="redflag-what">Actual spend-to-date significantly below the pace implied by the stated completion date.</div><div class="redflag-signal">Signal: Actual spend &lt;80% of required pace to hit stated commissioning date.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex"></i> ABANDONED SILENCE</div><div class="redflag-what">Project discussed regularly, then disappears from concall commentary. No cancellation notice.</div><div class="redflag-signal">Signal: Project mentioned Q1–Q3, absent from Q4 and next year's transcripts. Cross-check exchange filings.</div></div>
+</div>
+
+<div class="dim-header dh-margin"><div class="dh-icon">📈</div><div class="dh-label">Margin-Specific Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> H2 MIRAGE</div><div class="redflag-what">Margin expansion permanently "H2 weighted" — H2 is always marginally better than H1 but both are below guidance. Resets every year.</div><div class="redflag-signal">Signal: H2 actual margins for 3 consecutive FYs all below annual guidance.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> FLOOR DRIFT</div><div class="redflag-what">The stated "normalized margin" floor shifts downward each cycle. Original thesis is quietly abandoned.</div><div class="redflag-signal">Signal: Track every "normalized / steady-state / sustainable" margin statement across 6+ quarters.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> ONE-TIME ETERNAL</div><div class="redflag-what">A "non-recurring" cost appears 3+ consecutive quarters.</div><div class="redflag-signal">Signal: Flag every "one-time / exceptional / non-recurring" cost line. &gt;3 occurrences = it is structural.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin"></i> EMPLOYEE ABSORPTION</div><div class="redflag-what">Gross margins improve but EBITDA stays flat — headcount / overheads absorbing all gross gains.</div><div class="redflag-signal">Signal: Gross margin – EBITDA spread widening for 3+ quarters.</div></div>
+</div>
+
+<div class="dim-header dh-capital"><div class="dh-icon">🏦</div><div class="dh-label">Capital Structure Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> DEBT-FREE MIRAGE</div><div class="redflag-what">Debt-free target pushed outward each quarter, language softening progressively.</div><div class="redflag-signal">Signal: Score as Promise Drift — same timeline, softer language, 3+ quarterly resets.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> STEALTH DILUTION</div><div class="redflag-what">QIP/preferential allotment within 4 quarters of a "no equity dilution" guidance statement.</div><div class="redflag-signal">Signal: Any equity fundraise within 4 quarters of explicit "no dilution needed" claim.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> WORKING CAPITAL MASKING</div><div class="redflag-what">Gross debt flat but cash conversion cycle lengthening — net debt rising invisibly.</div><div class="redflag-signal">Signal: CCC days expanding &gt;15 days over 4 quarters while management calls debt "under control."</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> PROMOTER PLEDGE RISE</div><div class="redflag-what">Promoter pledge % rising alongside management confidence rhetoric. Internally inconsistent signals.</div><div class="redflag-signal">Signal: Pledge &gt;30% of promoter holding + increasing 2+ consecutive quarters.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> FUNDING FLIP</div><div class="redflag-what">Capex funded by debt despite "internal accruals" claim. CFO/Capex &lt;0.7 in the relevant year.</div><div class="redflag-signal">Signal: Net borrowings in cash flow statement + CFO coverage &lt;0.7 in the "internal accruals" year.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital"></i> INTEREST COVERAGE SQUEEZE</div><div class="redflag-what">EBITDA/Finance costs falling below 3x while deleveraging story is being told.</div><div class="redflag-signal">Signal: Interest coverage &lt;3x declining. Cannot deleverage quickly at this ratio.</div></div>
+</div>
+
+
+<!-- 07 — UPDATED CREDIBILITY SCORE -->
+<div class="sec-header">
+  <div class="sec-num">07</div>
+  <div>
+    <div class="sec-eyebrow">UPDATED COMPOSITE</div>
+    <div class="sec-title">Seven-dimension Credibility Score</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th>DIMENSION</th><th>WHAT IT MEASURES</th><th>WEIGHT</th></tr>
+  <tr><td><strong>Promise Hit Rate</strong></td><td>% of Hard Guidance and Milestones delivered within 1 quarter of original timeline. Rolling 4-quarter window.</td><td>25%</td></tr>
+  <tr><td><strong>Capex Execution Rate</strong></td><td>% of announced capex projects on time and within 10% of original budget. Track post-commissioning utilisation as well.</td><td>20%</td></tr>
+  <tr><td><strong>Margin Mechanism Fidelity</strong></td><td>Is the stated mechanism for margin improvement actually working at the pace claimed? Score qualitatively: Working / Partial / Not Working.</td><td>15%</td></tr>
+  <tr><td><strong>Capital Structure Integrity</strong></td><td>No stealth dilution, no funding flips, no working capital masking, no promoter pledge red flags. Binary: Clean / Flagged.</td><td>15%</td></tr>
+  <tr><td><strong>Specificity &amp; Attribution</strong></td><td>Are numbers given? Are misses owned? Combines original specificity score and attribution fairness dimensions.</td><td>15%</td></tr>
+  <tr><td><strong>Q&amp;A Quality</strong></td><td>Are hard analyst questions answered directly? Analyst escalation patterns detected?</td><td>10%</td></tr>
+</table>
+
+<p>Output tiers remain A–D (Highly Credible → Credibility Deficit) as in v0.1. The addition of Capex Execution, Margin Mechanism, and Capital Structure Integrity dimensions means the score is now sensitive to financial promise-keeping, not just verbal credibility.</p>
+
+
+<!-- 08 — NSE BRIEF INTEGRATION (UPDATED) -->
+<div class="sec-header">
+  <div class="sec-num">08</div>
+  <div>
+    <div class="sec-eyebrow">ECOSYSTEM FIT — UPDATED</div>
+    <div class="sec-title">Where each new tracker plugs into the NSE Brief</div>
+  </div>
+</div>
+
+<div class="integration-row">
+  <div class="int-card">
+    <div class="int-chapter">CH. 5 · NUMBERS IN CONTEXT</div>
+    <div class="int-title">Capex + Margin Guidance vs Actual Table</div>
+    <div class="int-what">Rolling 4-quarter table: guided margin → actual margin → delta. Separate capex deployment row: budget vs actual spend per year. Makes the tracking visible within the numbers narrative.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 5 · CAPEX TIMELINE SUB-SECTION</div>
+    <div class="int-title">Live Project Ledger</div>
+    <div class="int-what">The existing capex timeline card gets enriched with completion drift status, funding source vs stated, and post-commissioning utilisation rate where available. Each project gets a status badge.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 6 · RISK REGISTER</div>
+    <div class="int-title">Capital Structure Risk Line</div>
+    <div class="int-what">Explicit risk entry for: promoter pledge level, any active dilution risk, interest coverage trajectory, and net debt vs stated guidance. Not generic — must name the specific flags that are currently active.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 7 · WATCH SIGNALS</div>
+    <div class="int-title">Three Ledger-Derived Metrics</div>
+    <div class="int-what">One of the 5 watch signals should be a Capex watch (is X plant commissioned this quarter?), one a Margin watch (did gross margin reach Y% as management guided for H2?), and one a Capital watch (was QIP announced despite prior denial?).</div>
+  </div>
+</div>
+
+<blockquote>The Quick-Scan Strip gets an 8th line: <br><strong>🗒 MGMT — Tier [X] · Active flags: [list e.g. "Capex drift on Plant 2, H2 margin mirage active, stealth dilution watch"]</strong><br>This tells a reader whether to trust this quarter's concall before they read a single paragraph.</blockquote>
+
+
+<!-- 09 — NEXT STEPS -->
+<div class="sec-header">
+  <div class="sec-num">09</div>
+  <div>
+    <div class="sec-eyebrow">IMPLEMENTATION PATH</div>
+    <div class="sec-title">From brainstorm to working persona</div>
+  </div>
+</div>
+
+<div class="workflow">
+  <div class="wf-step">
+    <div class="wf-num">1</div>
+    <div class="wf-body">
+      <div class="wf-action">Back-test on Avalon (AVALON) — 4 quarters of transcripts already in the project</div>
+      <div class="wf-detail">Run all six pillars manually. Focus especially on: the capex timeline for their US and India plants, the margin expansion mechanism they've cited, and whether their "internal accruals" claim for capex held up in the cash flow statements. This calibration pass will validate or sharpen the red flag triggers.</div>
+      <div class="wf-tool">TARGET: AVALON · Q1–Q4 FY26 transcripts + annual results</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">2</div>
+    <div class="wf-body">
+      <div class="wf-action">Formalise the Persona file — The_Ledger_Persona.md</div>
+      <div class="wf-detail">Write the formal persona in the same structure as NSE_Investor_Story_Persona.md. Include: six-pillar overview, extraction templates for all three new trackers, red flag taxonomy (all 20), credibility scoring rubric, NSE brief integration instructions, and the workflow Claude should follow for each new ticker.</div>
+      <div class="wf-tool">DELIVERABLE: The_Ledger_Persona.md for the project</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">3</div>
+    <div class="wf-body">
+      <div class="wf-action">Build the Ledger Card HTML template</div>
+      <div class="wf-detail">The visual output: a compact HTML document containing the credibility tier badge, all active red flags, the rolling promise register table (4 quarters), the capex project tracker, margin trajectory chart, and capital structure summary. Delivered alongside every NSE brief going forward.</div>
+      <div class="wf-tool">DELIVERABLE: [TICKER]_Ledger_[Quarter].html</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">4</div>
+    <div class="wf-body">
+      <div class="wf-action">Optional Phase 2 — Claude-in-Claude transcript processor</div>
+      <div class="wf-detail">Build a React artifact where you paste a new concall transcript and it auto-extracts promises (all 6 categories), scores the tone dimensions, and updates the register. Uses the Anthropic API to run structured extraction on the transcript text and return JSON promise rows.</div>
+      <div class="wf-tool">TECH: React artifact + Claude API structured JSON extraction</div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-box">
+  <div class="label">📌 BRAINSTORM VERDICT — v0.2</div>
+  <p>The three new dimensions — capex timelines, margin expansion mechanics, and capital structure integrity — transform The Ledger from a qualitative credibility tool into a complete financial promise audit. The key structural insight: capex, margins, and debt are not independent stories. They are one chain. A management team that is systematically late on capex will systematically miss margin guidance (utilisation lagging) and will systematically fail its debt-reduction targets (cash flows weaker than guided). <strong>Tracking the chain, not just individual promises, is what turns The Ledger from a post-mortem tool into a forward-looking signal.</strong> The priority calibration step is to run v0.2 against Avalon's last 4 quarters — the company has been through an investment cycle that should surface multiple flags across all six pillars.</p>
+</div>
+
+<hr class="divider">
+<div class="small-label">PERSONA NAME</div>
+<div style="margin: 10px 0 6px;">
+  <span class="pname-chip recommended">The Ledger</span>
+  <span class="pname-chip">The Scorekeeper</span>
+  <span class="pname-chip">Concall Forensics</span>
+  <span class="pname-chip">The Promise Register</span>
+</div>
+<p style="font-size:12.5px; color:var(--gray);">"The Ledger" remains the right name — it now earns it more fully. A ledger tracks debits (promises made) against credits (promises kept) across all accounts: operational, financial, and structural. Double-entry: every promise is a debit; only verified delivery credits it back.</p>
+
+</div><!-- end content -->
+
+<footer>
+  <span>THE LEDGER v0.2 · COMPANION PERSONA TO NSE INVESTOR STORY</span>
+  <span>BRAINSTORM · JUNE 2026</span>
+  <span>INTERNAL RESEARCH USE ONLY</span>
+</footer>
+
+</body>
+</html>

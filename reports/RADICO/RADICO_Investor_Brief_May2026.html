@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RADICO | Radico Khaitan — NSE Investor Brief | May 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Mono:wght@400;500&family=Barlow+Condensed:wght@300;400;500;600;700;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --ink: #1A1209;
+  --ink-mid: #4A3F2F;
+  --ink-light: #8A7B65;
+  --border: #DDD5C5;
+  --amber: #BA7517;
+  --amber-bg: #FFF3CD;
+  --teal: #1D9E75;
+  --teal-bg: #E6F4EF;
+  --coral: #D85A30;
+  --coral-bg: #FEF0EA;
+  --blue: #378ADD;
+  --blue-bg: #E3F0FF;
+  --green: #3B6D11;
+  --green-bg: #E6F4EA;
+  --purple: #534AB7;
+  --gold: #C9963A;
+  --gold-light: #F5ECD7;
+  --shadow: 0 2px 12px rgba(26,18,9,0.08);
+  --shadow-lg: 0 8px 32px rgba(26,18,9,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Barlow', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* ── QUICK SCAN STRIP ─────────────────────────────── */
+#quick-scan {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--ink);
+  color: #FAF7F2;
+  border-bottom: 3px solid var(--gold);
+}
+#quick-scan-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  cursor: pointer;
+  user-select: none;
+}
+#quick-scan-header h3 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+#quick-scan-toggle {
+  font-size: 11px;
+  color: #AAA;
+  letter-spacing: 1px;
+  font-family: 'DM Mono', monospace;
+}
+#quick-scan-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.qs-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 9px 24px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  font-size: 13px;
+  line-height: 1.4;
+}
+.qs-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--gold);
+  min-width: 80px;
+  padding-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.qs-text { color: #E8E0D0; }
+
+/* ── LAYOUT ───────────────────────────────────────── */
+.wrapper { max-width: 900px; margin: 0 auto; padding: 0 20px 60px; }
+
+/* ── COVER ────────────────────────────────────────── */
+.cover {
+  background: var(--ink);
+  color: #FAF7F2;
+  padding: 48px 40px 40px;
+  margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -80px;
+  width: 320px; height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201,150,58,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.cover-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin-bottom: 10px;
+}
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(250,247,242,0.65);
+  margin-bottom: 24px;
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+}
+.cover-stat { font-size: 13px; }
+.cover-stat span { display: block; font-family: 'DM Mono', monospace; font-size: 16px; font-weight: 500; color: var(--gold); }
+.cover-verdict-tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 2px;
+  margin-top: 16px;
+}
+
+/* ── CHAPTER HEADER ───────────────────────────────── */
+.chapter-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 40px 0 16px;
+  border-top: 2px solid var(--border);
+  margin-top: 36px;
+}
+.chapter-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.chapter-text { flex: 1; }
+.chapter-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.chapter-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+/* ── CARDS & SECTIONS ─────────────────────────────── */
+.insight-card {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-light);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 6px 6px 0;
+}
+.insight-card.teal { border-color: var(--teal); background: var(--teal-bg); }
+.insight-card.coral { border-color: var(--coral); background: var(--coral-bg); }
+.insight-card.blue { border-color: var(--blue); background: var(--blue-bg); }
+.insight-card.amber { border-color: var(--amber); background: var(--amber-bg); }
+.insight-card.green { border-color: var(--green); background: var(--green-bg); }
+.insight-card.purple { border-color: var(--purple); background: #F0EFFF; }
+
+.card-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.card-label.teal { color: var(--teal); }
+.card-label.coral { color: var(--coral); }
+.card-label.blue { color: var(--blue); }
+.card-label.amber { color: var(--amber); }
+.card-label.green { color: var(--green); }
+.card-label.gold { color: var(--gold); }
+.card-label.purple { color: var(--purple); }
+
+/* ── STAT ROW ─────────────────────────────────────── */
+.stat-table { width: 100%; margin: 16px 0; }
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--ink-mid); }
+.stat-value {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  color: var(--ink);
+}
+.stat-value.up { color: var(--teal); }
+.stat-value.down { color: var(--coral); }
+.stat-value.warn { color: var(--amber); }
+
+/* ── PORTER'S 5 FORCES TABLE ──────────────────────── */
+.porter-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13.5px; }
+.porter-table th {
+  background: var(--ink);
+  color: #FAF7F2;
+  text-align: left;
+  padding: 10px 14px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.porter-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.porter-table tr:last-child td { border-bottom: none; }
+.porter-table tr:nth-child(even) td { background: #F8F5F0; }
+.rating { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+.rating.low { background: var(--green-bg); color: var(--green); }
+.rating.medium { background: var(--amber-bg); color: var(--amber); }
+.rating.high { background: var(--coral-bg); color: var(--coral); }
+
+/* ── VERTICAL CARDS ───────────────────────────────── */
+.vertical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+@media (max-width: 600px) { .vertical-grid { grid-template-columns: 1fr; } }
+.vertical-card {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 18px;
+  border-top: 4px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.vertical-card.teal { border-top-color: var(--teal); }
+.vertical-card.coral { border-top-color: var(--coral); }
+.vertical-card.blue { border-top-color: var(--blue); }
+.vertical-card.green { border-top-color: var(--green); }
+.vertical-card.amber { border-top-color: var(--amber); }
+.vertical-card.purple { border-top-color: var(--purple); }
+.vertical-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.vertical-status {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+.status-running { background: var(--green-bg); color: var(--green); }
+.status-ramping { background: var(--amber-bg); color: var(--amber); }
+.status-building { background: var(--blue-bg); color: var(--blue); }
+
+/* ── CAPEX TIMELINE ───────────────────────────────── */
+.capex-timeline { margin: 16px 0; }
+.capex-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  align-items: start;
+}
+.capex-row:last-child { border-bottom: none; }
+.capex-year {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--gold);
+}
+.capex-col-head {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+@media (max-width: 600px) {
+  .capex-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .capex-year { grid-column: 1 / -1; }
+}
+
+/* ── RISK ROWS ────────────────────────────────────── */
+.risk-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+.risk-body {}
+.risk-title { font-weight: 600; margin-bottom: 3px; font-size: 14px; color: var(--amber); }
+.risk-detail { font-size: 13.5px; color: var(--ink-mid); line-height: 1.5; }
+
+/* ── WATCH SIGNALS ────────────────────────────────── */
+.watch-item {
+  display: flex;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.watch-item:last-child { border-bottom: none; }
+.watch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+.watch-body { flex: 1; }
+.watch-metric { font-weight: 600; font-size: 14px; margin-bottom: 3px; }
+.watch-detail { font-size: 13.5px; color: var(--ink-mid); }
+
+/* ── VERDICT ──────────────────────────────────────── */
+.verdict-card {
+  background: var(--ink);
+  color: #FAF7F2;
+  border-radius: 8px;
+  padding: 28px 32px;
+  margin: 28px 0;
+  border-left: 6px solid var(--gold);
+}
+.verdict-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.verdict-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(250,247,242,0.92);
+}
+.verdict-stage {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 4px 14px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+
+/* ── HIGHLIGHT CLASSES ────────────────────────────── */
+.hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: 'DM Mono', monospace; font-size: 0.95em; }
+.hl-risk     { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; padding-left: 6px; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; padding-left: 6px; }
+
+/* ── TAKEAWAY PILL ────────────────────────────────── */
+.takeaway-pill {
+  margin: 20px 0 0;
+  padding: 11px 16px;
+  border-radius: 6px;
+  border-left: 4px solid var(--gold);
+  background: var(--gold-light);
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.45;
+}
+
+/* ── HIGHLIGHT INDEX ──────────────────────────────── */
+#highlight-index {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin: 32px 0 24px;
+  overflow: hidden;
+}
+#highlight-index summary {
+  padding: 14px 20px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--gold);
+  cursor: pointer;
+  list-style: none;
+}
+#highlight-index ol {
+  list-style: decimal;
+  padding: 16px 20px 16px 40px;
+  font-size: 13px;
+  line-height: 1.7;
+}
+#highlight-index li { margin-bottom: 6px; color: var(--ink-mid); }
+#highlight-index li[data-type="hl-key"] { color: #7A6A00; font-weight: 600; }
+#highlight-index li[data-type="hl-number"] { font-family: 'DM Mono', monospace; font-size: 12px; }
+#highlight-index li[data-type="hl-risk"] { color: var(--amber); }
+#highlight-index li[data-type="hl-catalyst"] { color: var(--green); }
+#highlight-index li[data-type="takeaway-pill"] { font-style: italic; }
+
+/* ── BODY TEXT ────────────────────────────────────── */
+p { margin-bottom: 14px; color: var(--ink-mid); font-size: 14.5px; line-height: 1.7; }
+p:last-child { margin-bottom: 0; }
+.prose { margin: 10px 0 16px; }
+blockquote {
+  border-left: 3px solid var(--gold);
+  padding: 10px 16px;
+  margin: 16px 0;
+  background: var(--gold-light);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--ink-mid);
+}
+.section-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-light);
+  margin: 20px 0 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 12px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ── PRINT ────────────────────────────────────────── */
+@media print {
+  #quick-scan { position: static !important; }
+  #quick-scan-body { display: grid !important; }
+  #highlight-index { display: block !important; }
+  #highlight-index ol { display: block !important; }
+  .chapter-header { page-break-before: always; }
+  .cover { page-break-after: always; }
+  body { font-size: 13px; }
+  .cover-title { font-size: 36px; }
+}
+
+/* ── DAY/NIGHT TOGGLE ─────────────────────────────── */
+.theme-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--ink);
+  color: var(--gold);
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.dark {
+  --bg: #12100C;
+  --bg-card: #1E1B15;
+  --ink: #F0EAE0;
+  --ink-mid: #B0A488;
+  --ink-light: #7A6E58;
+  --border: #2E2820;
+  --gold-light: #2A2010;
+  --amber-bg: #2A1E00;
+  --teal-bg: #051A12;
+  --coral-bg: #1E0A00;
+  --blue-bg: #030F1E;
+  --green-bg: #061200;
+}
+</style>
+</head>
+<body>
+
+<!-- ══ QUICK SCAN STRIP ══════════════════════════════════════ -->
+<div id="quick-scan">
+  <div id="quick-scan-header" onclick="toggleQS()" aria-expanded="true" role="button" aria-controls="quick-scan-body">
+    <h3>⚡ Quick Scan — RADICO | Radico Khaitan | May 2026</h3>
+    <span id="quick-scan-toggle">▲ COLLAPSE</span>
+  </div>
+  <div id="quick-scan-body">
+    <div class="qs-line">
+      <span class="qs-label">⚡ CONTEXT</span>
+      <span class="qs-text">India's premium spirits market growing at 12.2% CAGR to USD 26.8 bn by 2033 — Radico positioned directly in the upgrade path</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">🏭 MODEL</span>
+      <span class="qs-text">Mass-to-premium flywheel: volume base funds brand building; each prestige launch draws consumers up the ladder, expanding margins structurally</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">🎯 INSIGHT</span>
+      <span class="qs-text">Radico's mass brands are not legacy drag — they are the marketing engine that funds Rampur's global journey, and EBITDA proves it: margins near-doubled in 3 years</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">📊 NUMBERS</span>
+      <span class="qs-text">FY26: Revenue ₹6,050 Cr (+24.7%), EBITDA ₹1,018 Cr (+52.4%), PAT ₹600 Cr (+75.9%), EBITDA margin 16.8% (up from 13.8% in FY25)</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">🚧 TOP RISK</span>
+      <span class="qs-text">State excise policy volatility: regulatory changes in Maharashtra + Karnataka in FY26 dented regular volumes — one adverse state policy can wipe a full quarter</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">👁 WATCH</span>
+      <span class="qs-text">Luxury portfolio quarterly revenue run-rate — ₹475 Cr in FY26, management guiding 25% growth to ~₹595 Cr in FY27</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-label">💡 VERDICT</span>
+      <span class="qs-text">Mid-chapter — premiumisation thesis playing out with financial proof, but stock priced at 78x earnings; re-rating will come from margin expansion, not valuation expansion</span>
+    </div>
+  </div>
+</div>
+
+<!-- ══ COVER ════════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-eyebrow">NSE: RADICO &nbsp;|&nbsp; Indian Spirits / IMFL &nbsp;|&nbsp; Investor Brief — May 30, 2026</div>
+  <div class="cover-title">Radico Khaitan</div>
+  <div class="cover-subtitle">From Rampur to the World — The Premium Pivot Playing Out in Real Time</div>
+  <div class="cover-meta">
+    <div class="cover-stat">Market Cap<span>₹47,400 Cr</span></div>
+    <div class="cover-stat">FY26 Revenue<span>₹6,050 Cr</span></div>
+    <div class="cover-stat">FY26 EBITDA Margin<span>16.8%</span></div>
+    <div class="cover-stat">FY26 PAT Growth<span>+75.9% YoY</span></div>
+    <div class="cover-stat">Trailing PE<span>~78x</span></div>
+    <div class="cover-stat">52-Week Range<span>₹2,436–₹3,679</span></div>
+  </div>
+  <div class="cover-verdict-tag">Story Stage: Mid-Chapter</div>
+</div>
+
+<div class="wrapper">
+
+<!-- ══ CHAPTER 1 — CONTEXT ══════════════════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--gold-light);color:var(--gold);border:2px solid var(--gold);">01</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--gold);">Context</div>
+    <div class="chapter-title">India's Drinking Upgrade Cycle — And Why Now</div>
+  </div>
+</div>
+
+<p>India is the world's most interesting spirits market right now, and not because of volume — it's because of the direction of spend. The country's total alcohol market is a USD 208 billion industry in 2026, but the value action is concentrated in the upper tier. The premium spirits segment alone is forecast to grow at a <span class="hl-number">12.2% CAGR from 2026 to 2033, reaching USD 26.8 billion</span> — more than doubling in seven years, driven by urban income growth, a young demographic, and rising social acceptance of fine drinking.</p>
+
+<p>The structural driver is simple: India has roughly 350 million working-age adults in cities, a rising professional class, and per-capita spirits consumption that is still a fraction of developed markets. The aspirational arc from mass whisky to craft gin to aged single malt is happening faster than anyone projected. Whisky alone holds 60%+ of the domestic market share by volume; vodka is underpenetrated at under 5% of IMFL volumes against 25–30% globally — an enormous whitespace waiting to be captured.</p>
+
+<p>Karnataka — India's second-largest IMFL state, contributing roughly 15% of national volumes — announced a landmark policy reform in March 2026: abolishing state-controlled retail price fixation and introducing Alcohol-in-Beverage (AIB) based taxation from April 2026. <span class="hl-catalyst">This is the most significant alcobev regulatory liberalisation in India in two decades, and it directly benefits premium-branded players like Radico who compete on quality, not cheapest-per-unit</span>. Pricing flexibility, historically a constraint, is now a competitive weapon.</p>
+
+<p>Meanwhile, the Indian craft spirits category — Rampur's natural habitat — is on its own exponential trajectory. IMARC projects the India craft spirits market to reach USD 20.2 billion by 2034, a 21.87% CAGR. This is the global "Indian single malt" moment: the world is discovering that Himalayan aging in extreme seasonal temperatures produces whiskies that mature faster and with greater complexity than Scottish equivalents.</p>
+
+<div class="insight-card">
+  <div class="card-label gold">Why Now</div>
+  <p style="margin:0;font-size:14px;">The confluence of rising domestic premiumisation, regulatory liberalisation in key states, and global recognition of Indian single malts has arrived simultaneously — creating a rare multi-year growth window for the incumbents who built infrastructure before the demand inflected.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--gold);">
+  India's premium spirits market is on a 12.2% CAGR curve to 2033; regulatory reform in Karnataka adds near-term pricing power for branded players.
+</div>
+
+<!-- ══ CHAPTER 2 — BUSINESS MODEL ══════════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--teal-bg);color:var(--teal);border:2px solid var(--teal);">02</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--teal);">Business Model</div>
+    <div class="chapter-title">The Mass-to-Luxury Flywheel</div>
+  </div>
+</div>
+
+<p>Radico Khaitan is one of India's oldest and largest IMFL companies, founded in 1943 as Rampur Distillery Company. It makes and sells spirits — whisky, vodka, rum, gin, brandy — across every price tier from ₹200 to ₹20,000 a bottle. But the business model is more elegant than a diversified spirits shelf suggests.</p>
+
+<p>Think of Radico as a three-tier pyramid. At the base are the mass brands: 8PM Whisky, Contessa Rum, Old Admiral Brandy — millionaire brands (selling over 1 million cases per year each) that generate volume, cashflow, and production scale. They are not glamorous, but they are the engine room. <span class="hl-key">The mass brands fund the working capital, the distillery investment, and the marketing budgets that build the premium brands above — making Radico's mass portfolio the silent financier of its luxury ambitions</span>.</p>
+
+<p>In the middle tier sits the Prestige and Above (P&A) range — Magic Moments Vodka (8.6 million cases, 60% market share in Indian vodka), After Dark Whisky (3.1 million+ cases), 8PM Premium Black, Royal Ranthambore Whisky — brands growing at 20–50%+ per year and driving realization upgrades. This is where volume meets value.</p>
+
+<p>At the top is the luxury layer: Rampur Indian Single Malt (Himalayan distilled, globally distributed), Jaisalmer Indian Craft Gin, Sangam World Malt, and the newest entrant Spirit of Kashmyr Luxury Vodka. These brands don't scale in cases — they scale in value and brand equity.</p>
+
+<div class="two-col">
+  <div class="insight-card teal">
+    <div class="card-label teal">Revenue Flywheel</div>
+    <p style="font-size:13.5px;margin:0;">Mass volume → operating leverage → margin improvement → marketing budget for premium brands → premium brand success → average realisation upgrades → higher EBITDA on the same case volume. The loop is self-reinforcing.</p>
+  </div>
+  <div class="insight-card green">
+    <div class="card-label green">Backward Integration Moat</div>
+    <p style="font-size:13.5px;margin:0;">Radico owns ENA (Extra Neutral Alcohol) capacity at Rampur and Sitapur totalling 321 million litres — enough for 6–7 years of growth visibility. Competitors who buy ENA externally face input cost volatility that Radico does not.</p>
+  </div>
+</div>
+
+<p>Customer stickiness is structural: 60–65% of bottling is handled through lease arrangements with third-party bottling partners across states (essential given India's state-by-state distribution regime), while 30–35% is in-house. The CSD (Canteen Stores Department, Ministry of Defence) channel provides a particularly captive, barrier-to-entry-protected revenue stream — Radico is one of the largest IMFL suppliers to India's armed forces, with a 26–27% share.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--teal);">
+  Mass brands are not the problem — they are the capital engine that funds Radico's luxury pyramid; the flywheel is now turning visibly in the financials.
+</div>
+
+<!-- ══ CHAPTER 2B — PORTER'S 5 FORCES ══════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:#F0EFFF;color:var(--purple);border:2px solid var(--purple);">2B</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--purple);">Competitive Structure</div>
+    <div class="chapter-title">Porter's Five Forces</div>
+  </div>
+</div>
+
+<table class="porter-table">
+  <thead>
+    <tr><th>Force</th><th>Rating</th><th>Specific Rationale</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="rating medium">Medium</span></td>
+      <td>Three-player premium market: Radico, Diageo's United Spirits (PE ~55x, market cap ₹99,100 Cr), and Pernod Ricard India (unlisted). Mass segment intensely competitive; premium segment is capability-gated and less price-driven. Radico growing volume share consistently.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="rating medium">Medium</span></td>
+      <td>No single customer concentration risk — India's state government controlled distribution means no single retailer or chain can exert pricing pressure. CSD is captive and recurring. However, state excise departments are powerful intermediaries who set maximum retail prices (though this is now being reformed in progressive states like Karnataka).</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="rating low">Low</span></td>
+      <td>Radico owns 321 million litres of ENA capacity at Rampur and Sitapur — the primary input. Grain prices (broken rice, maize) are domestic commodities with softening trends in FY26 due to FCI surplus offloads. Glass suppliers are competitive; recycled glass usage rose to 19.8% in FY25, reducing dependence on virgin glass.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="rating low">Low</span></td>
+      <td>Three compounding barriers: (1) CSD registration requires years of track record; (2) state-by-state label registration and excise compliance is a 2–5 year process per state; (3) ENA distillery capex (₹750 Cr for Sitapur plant) is prohibitive for challengers. Craft distillery startups exist at the micro level but cannot achieve the volume to challenge Radico's economics.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="rating medium">Medium</span></td>
+      <td>Beer and wine compete at the entry end; RTD (ready-to-drink) cocktails are a nascent category growing in urban India. Imported Scotch competes in the super-premium tier — but import duties maintain a significant price disadvantage for imports versus domestically produced premium spirits like Rampur. The risk is episodic import duty reductions, not structural.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="insight-card amber">
+  <div class="card-label amber">Structural Pressure Synthesis</div>
+  <p style="margin:0;font-size:14px;"><strong>The two forces that matter most:</strong> (1) State government buyer power — as intermediary price-setters, state excise departments remain the most consequential single actor in Radico's economics; policy changes in Andhra Pradesh and Maharashtra in FY26 directly impacted regular volumes. (2) Rivalry intensity — United Spirits' Diageo parentage means access to global supply chains, advertising muscle, and import brand portfolio that Radico must outmanoeuvre through domestic authenticity and CSD moat.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--purple);">
+  Structural moats are strong — the state excise intermediary layer is the primary swing factor between a good and great year for Radico.
+</div>
+
+<!-- ══ CHAPTER 3 — VERTICAL STORIES ════════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--blue-bg);color:var(--blue);border:2px solid var(--blue);">03</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--blue);">Vertical Stories</div>
+    <div class="chapter-title">Five Growth Engines, Five Different Gears</div>
+  </div>
+</div>
+
+<div class="vertical-grid">
+
+  <div class="vertical-card teal">
+    <div class="vertical-name" style="color:var(--teal);">Prestige & Above Whisky</div>
+    <span class="vertical-status status-running">Running ✓</span>
+    <p style="font-size:13.5px;">Royal Ranthambore grew 50%+ in FY26 and just entered CSD (blended scotch whisky category in CSD: 10 lakh cases/year, targeting 10% share). After Dark crossed 3.1 million cases with 60%+ growth. External catalyst: 350 million aspirational urban consumers trading up from economy to prestige as income rises. Management guidance: 20% P&A volume growth in FY27.</p>
+  </div>
+
+  <div class="vertical-card amber">
+    <div class="vertical-name" style="color:var(--amber);">Magic Moments Vodka</div>
+    <span class="vertical-status status-running">Running ✓</span>
+    <p style="font-size:13.5px;">India's #1 vodka brand at 8.6 million cases, ~₹1,500 Cr sales value in FY26, and 60% domestic market share. Ranked 6th largest vodka brand globally. Flavour extensions (Jamun SpicyMint, Mango, Thandai) — the "Flavours of India" strategy — addressing India's under-5% vodka penetration vs. 25–30% globally. National rollout of new flavours planned FY27.</p>
+  </div>
+
+  <div class="vertical-card blue">
+    <div class="vertical-name" style="color:var(--blue);">Rampur Single Malt — Global</div>
+    <span class="vertical-status status-ramping">Ramping ↑</span>
+    <p style="font-size:13.5px;">Ranked #4 among Top Trending World Whiskies 2026 (Drinks International). Named World's 50 Most Admired Whiskies. Official Whisky Partner, MICHELIN Guide Dubai 2025. Exports to 100+ countries. New expressions: Rampur 1943 Virasat, Barrel Blush. Himalayan aging provides faster maturation (4x Scottish rate) — structural quality advantage. D'YAVOL tequila JV (47.5% stake, ₹40 Cr investment) adds a celebrity-powered global entry into the fastest-growing spirits subcategory.</p>
+  </div>
+
+  <div class="vertical-card green">
+    <div class="vertical-name" style="color:var(--green);">CSD / Defence Channel</div>
+    <span class="vertical-status status-running">Running ✓</span>
+    <p style="font-size:13.5px;">26–27% share in CSD, India's largest captive government retail channel for defence personnel. Contessa Rum, Morpheus Brandy, Rampur, Jaisalmer Gin, and now Royal Ranthambore all cleared for CSD supply. CSD channel has significant barriers to entry — only government-approved suppliers can participate. Sticky, recurring, and margin-accretive.</p>
+  </div>
+
+  <div class="vertical-card purple">
+    <div class="vertical-name" style="color:var(--purple);">D'YAVOL / Luxury Expansion</div>
+    <span class="vertical-status status-building">Building →</span>
+    <p style="font-size:13.5px;">Partnership with Shah Rukh Khan, Aryan Khan's D'YAVOL Luxury Collective and Nikhil Kamath (Aug 2025). Radico holds 47.5% stake. First product: D'YAVOL Añejo luxury tequila, priced ₹20,000–₹30,000, targeting year-end FY27 launch. D'YAVOL Single Estate Vodka already live in UK market. Tequila is the fastest-growing global premium spirits subcategory at 8.37% CAGR. This JV plants Radico's flag in a category it otherwise has no presence in, using celebrity distribution leverage.</p>
+  </div>
+
+  <div class="vertical-card coral">
+    <div class="vertical-name" style="color:var(--coral);">Non-IMFL / ENA / Bulk</div>
+    <span class="vertical-status status-running">Running ✓</span>
+    <p style="font-size:13.5px;">Sitapur greenfield plant (350 KLPD, commissioned Q2 FY24, ₹750 Cr total investment) generates ENA revenue from third-party sales and ethanol supply. Government's push for E20 ethanol blending creates structural demand tailwind for grain-based ENA. Guided 7–8% growth in FY27. Acts as the balance sheet shock absorber in years when grain prices are volatile.</p>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue);">
+  Radico has five concurrent growth engines at different stages of maturity — this staggered architecture means at least one vertical is always accelerating regardless of the macro cycle.
+</div>
+
+<!-- ══ CHAPTER 4 — STRATEGIC INSIGHT ═══════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--gold-light);color:var(--gold);border:2px solid var(--gold);">04</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--gold);">Strategic Insight</div>
+    <div class="chapter-title">The One Thing to Understand</div>
+  </div>
+</div>
+
+<p>Most investors look at Radico and see a mid-sized spirits company with a lot of brands across a lot of segments — complex, hard to pin down. The insight they miss is architectural.</p>
+
+<p><span class="hl-key">Radico's mass brands are not a legacy problem to be solved — they are the deliberate funding mechanism for India's most ambitious luxury spirits globalisation play. Every case of 8PM Whisky sold at ₹250 effectively subsidises a bottle of Rampur Single Malt making its way onto a Michelin-starred bar's menu in Dubai.</span></p>
+
+<p>This is unusual in spirits globally. Diageo acquired its way up the ladder (buying Johnnie Walker, Talisker, etc). Pernod Ricard is a portfolio of separate acquisitions. Radico grew both ends organically from one distillery complex in Rampur, Uttar Pradesh — meaning the cost structure is integrated in a way that is extremely hard to replicate.</p>
+
+<p>The strategic implication: Radico's EBITDA margin expansion (from ~12% trough in FY23 to 16.8% in FY26 and guided 18%+ by FY27) is not a cyclical recovery — it is operating leverage from the pyramid filling in at the top. <span class="hl-catalyst">Every luxury rupee of revenue that Rampur earns carries incremental margins significantly above the corporate average, so the mix shift alone is a mathematically guaranteed margin expansion engine for the next 3–5 years as the luxury portfolio scales from ₹475 Cr today to what management has internally described as a multi-thousand-crore business</span>.</p>
+
+<blockquote>
+  "This recognition reflects the strong growth trajectory of Rampur and our broader international portfolio, as we continue to build relevance with the global bar community." — Sanjeev Banga, President International Business, Radico Khaitan, January 2026
+</blockquote>
+
+<p>The second non-obvious thing: Radico's CSD moat is more valuable than the balance sheet suggests. Government procurement relationships in India take 5–10 years to build, require track record, and cannot be fast-followed. CSD is a recurring, recession-resistant, price-stable channel representing hundreds of thousands of defence personnel with reliable income. Competitors who benchmark Radico only against consumer brand metrics are missing this.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--gold);">
+  Radico's mass brands are the silent engine of its luxury globalisation — not a drag but the structural moat that no challenger can replicate without 80 years of distillery heritage.
+</div>
+
+<!-- ══ CHAPTER 5 — NUMBERS IN CONTEXT ══════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--blue-bg);color:var(--blue);border:2px solid var(--blue);">05</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--blue);">Numbers in Context</div>
+    <div class="chapter-title">FY26 — The Inflection Year</div>
+  </div>
+</div>
+
+<p>FY26 was not a good year — it was a breakout year. Radico crossed two symbolic milestones simultaneously: net revenue above ₹6,000 Cr and EBITDA above ₹1,000 Cr. These are not just round numbers — they signal a step-change in operating leverage.</p>
+
+<div class="section-sub">Key Financials</div>
+<div class="stat-table">
+  <div class="stat-row"><span class="stat-label">Net Revenue FY26</span><span class="stat-value up">₹6,050 Cr (+24.7% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">EBITDA FY26</span><span class="stat-value up">₹1,018 Cr (+52.4% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">EBITDA Margin FY26</span><span class="stat-value up">16.8% (vs 13.8% in FY25, 12% trough in FY23)</span></div>
+  <div class="stat-row"><span class="stat-label">Gross Margin FY26</span><span class="stat-value up">45.3% (vs 42.8% FY25, +250 bps YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Profit After Tax FY26</span><span class="stat-value up">₹600 Cr (+75.9% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Basic EPS FY26</span><span class="stat-value up">₹45.01 (+74.4% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Q4 FY26 EBITDA Margin</span><span class="stat-value up">19% — highest-ever quarter (+565 bps YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Net Debt Reduction FY26</span><span class="stat-value up">₹329 Cr reduction; targeting debt-free by H1 FY27</span></div>
+</div>
+
+<div class="section-sub">Volume Architecture</div>
+<div class="stat-table">
+  <div class="stat-row"><span class="stat-label">Total Own Volume FY26</span><span class="stat-value up">36.62 mn cases (+29.8% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Prestige & Above Volume</span><span class="stat-value up">16.70 mn cases (+28.5% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">P&A share of IMFL revenue</span><span class="stat-value up">70.3% (up from ~51% in FY19)</span></div>
+  <div class="stat-row"><span class="stat-label">Luxury Portfolio Revenue</span><span class="stat-value up">₹475 Cr (in-line with management guidance)</span></div>
+  <div class="stat-row"><span class="stat-label">Magic Moments Vodka</span><span class="stat-value up">8.6 mn cases, ~₹1,500 Cr value</span></div>
+</div>
+
+<div class="section-sub">Valuation Context</div>
+<div class="stat-table">
+  <div class="stat-row"><span class="stat-label">Market Cap (May 2026)</span><span class="stat-value">~₹47,400 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Trailing PE (RADICO)</span><span class="stat-value warn">~78x earnings</span></div>
+  <div class="stat-row"><span class="stat-label">PB Ratio</span><span class="stat-value warn">~14.5x book</span></div>
+  <div class="stat-row"><span class="stat-label">United Spirits (Diageo JV) PE</span><span class="stat-value">~55–60x earnings</span></div>
+  <div class="stat-row"><span class="stat-label">Tilaknagar Industries PE</span><span class="stat-value">~45x earnings</span></div>
+  <div class="stat-row"><span class="stat-label">Allied Blenders & Distillers PE</span><span class="stat-value">~48x earnings</span></div>
+  <div class="stat-row"><span class="stat-label">1-Year Stock Return</span><span class="stat-value up">+45% (vs. Nifty mid-cap)</span></div>
+</div>
+
+<div class="insight-card amber">
+  <div class="card-label amber">What The Market Is Pricing In</div>
+  <p style="font-size:14px;margin:0;">At 78x trailing earnings, the market is paying for a premium spirits compounder, not a mass IMFL player. The valuation implies continuation of 25–30% PAT growth for at least 4–5 years. This is achievable given management's FY27 guidance (125 bps EBITDA expansion, 20% P&A volume growth, 25% luxury value growth) but leaves little room for execution stumbles. <span class="hl-risk">A policy disruption in a major state, or a raw material shock that dents margins even one quarter, would trigger disproportionate multiple compression given the current price.</span></p>
+</div>
+
+<div class="section-sub">FY27 Management Guidance</div>
+<div class="stat-table">
+  <div class="stat-row"><span class="stat-label">EBITDA Margin Target</span><span class="stat-value up">+125 bps expansion (targeting ~18.1%)</span></div>
+  <div class="stat-row"><span class="stat-label">Prestige & Above Volume</span><span class="stat-value up">+20% YoY growth</span></div>
+  <div class="stat-row"><span class="stat-label">Luxury Portfolio Value</span><span class="stat-value up">+25% growth from ₹475 Cr base (~₹594 Cr)</span></div>
+  <div class="stat-row"><span class="stat-label">Regular Volume Growth</span><span class="stat-value">3–5% YoY</span></div>
+  <div class="stat-row"><span class="stat-label">Capex FY27</span><span class="stat-value">₹150–175 Cr (modest maintenance)</span></div>
+  <div class="stat-row"><span class="stat-label">Debt Status</span><span class="stat-value up">Targeting debt-free by H1 FY27</span></div>
+  <div class="stat-row"><span class="stat-label">Dividend Policy</span><span class="stat-value up">Minimum 20% of PAT (introduced FY27)</span></div>
+</div>
+
+<!-- ── CAPEX TIMELINE ─────────────────────────────────────── -->
+<div class="section-sub" style="margin-top:24px;">Capex Timeline Card</div>
+
+<div class="capex-timeline">
+  <div class="capex-row">
+    <div class="capex-col-head"></div>
+    <div class="capex-col-head">Capex Spend</div>
+    <div class="capex-col-head">Capacity Milestone</div>
+    <div class="capex-col-head">Revenue Impact</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-year">FY22–24</div>
+    <div>₹923 Cr total (across Rampur dual-feed conversion + Sitapur greenfield + other projects). Peak investment cycle — debt rose to ~₹730 Cr.</div>
+    <div>Sitapur greenfield (350 KLPD grain distillery) commissioned Q2 FY24. Total ENA capacity to 321 mn litres. Dual-feed capability at Rampur securing raw material flexibility.</div>
+    <div>Non-IMFL revenue (ENA third-party sales) ramped from Sitapur in FY25. Capacity constraint removed for IMFL volume growth from FY25 onward.</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-year">FY25</div>
+    <div>Maintenance/optimisation capex. Net debt reduced by ~₹172 Cr. Capex well below depreciation — harvest phase.</div>
+    <div>Full-year benefit of Sitapur capacity. Utilisation building. Recycled glass usage rising (19.8%), improving cost structure.</div>
+    <div>FY25 Revenue: ₹4,851 Cr (+14% YoY). First year of clear margin recovery after the investment peak.</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-year">FY26</div>
+    <div>Low capex cycle. Net debt reduced ₹329 Cr during year.</div>
+    <div>Capacity not a constraint — 60–65% outsourced bottling augments owned capacity. ENA self-sufficiency provides pricing stability.</div>
+    <div>Revenue: ₹6,050 Cr (+24.7%). EBITDA: ₹1,018 Cr (+52.4%). Operating leverage from the FY22–24 investment clearly visible.</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-year">FY27E</div>
+    <div>Guided ₹150–175 Cr — largely internal capacity optimisation. Free cash flow strongly positive.</div>
+    <div>Debt-free balance sheet targeted H1 FY27. Surplus cash to fund dividends (min 20% of PAT) and bolt-on brand investments (e.g., D'YAVOL ₹40 Cr).</div>
+    <div>Management guiding 20% P&A volume growth + luxury at ₹595 Cr+ → Revenue likely ₹7,000–7,500 Cr range. FCF turning meaningfully positive.</div>
+  </div>
+</div>
+
+<div class="insight-card green">
+  <div class="card-label green">Capex Verdict</div>
+  <p style="font-size:14px;margin:0;">The ₹923 Cr investment cycle of FY22–24 is done. Radico is now in the cash harvest phase — capacity is in place, debt is being retired, and the FCF generation will accelerate through FY27. The D'YAVOL JV (₹40 Cr) is the only new capital deployment and is strategically well-contained. No red flags: capex is running well below the order book and brand demand visibility.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue);">
+  FY26 was the year the FY22–24 investment cycle paid off; FY27 will be the year free cash flow turns meaningfully positive and debt disappears from the balance sheet.
+</div>
+
+<!-- ══ CHAPTER 6 — RISKS ═════════════════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--amber-bg);color:var(--amber);border:2px solid var(--amber);">06</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--amber);">Risks — Eyes Open</div>
+    <div class="chapter-title">What Could Derail the Story</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <span class="risk-icon">⚠️</span>
+  <div class="risk-body">
+    <div class="risk-title">State Excise Policy Disruption</div>
+    <div class="risk-detail">The most material and recurring risk. Radico's regular volumes in Q4 FY26 were dented by policy changes in Maharashtra and Karnataka, and the route-to-market shift in Andhra Pradesh required a multi-quarter adjustment. <span class="hl-risk">Excise taxes can represent 60–80% of final retail price in some states — a single adverse state policy can wipe an entire quarter's regular volume growth overnight, with zero prior warning</span>. Signal to watch: any adverse change in state excise policy in UP, Maharashtra, Karnataka, Telangana, or Andhra Pradesh.</div>
+  </div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠️</span>
+  <div class="risk-body">
+    <div class="risk-title">Valuation-to-Execution Gap</div>
+    <div class="risk-detail">At 78x trailing PE, even a one-quarter miss on EBITDA margin or luxury portfolio growth could compress the multiple significantly. The market has priced in near-flawless execution through FY27 and FY28. If management's guided +125 bps EBITDA margin expansion lands at 60–70 bps instead, the stock could de-rate 20–30% without any deterioration in the underlying business. This is priced-to-perfection territory.</div>
+  </div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠️</span>
+  <div class="risk-body">
+    <div class="risk-title">Raw Material Volatility — Grain and ENA</div>
+    <div class="risk-detail">Broken rice and maize are the primary inputs for grain-based ENA. In FY22–24, grain price inflation caused 500 bps of gross margin compression. The FCI surplus-driven softening in FY26 has helped, but this can reverse quickly with monsoon failure or policy changes. Radico's Sitapur ownership provides supply security but not price immunity — it still pays market prices for grain. Glass costs are secondary but also volatile.</div>
+  </div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠️</span>
+  <div class="risk-body">
+    <div class="risk-title">Luxury Brand Scale Timing Risk</div>
+    <div class="risk-detail">The investment thesis depends significantly on the luxury portfolio (currently ₹475 Cr) continuing to compound at 25%+ annually. Rampur's global traction is real (Drinks International #4 ranking, Michelin Guide partnership) but global spirits is a market where brand building takes 8–12 years and a single bad batch or brand misstep can reverse years of premium equity. If D'YAVOL tequila misfires or Rampur extensions fail to resonate, the margin expansion story loses its primary driver.</div>
+  </div>
+</div>
+<div class="risk-item">
+  <span class="risk-icon">⚠️</span>
+  <div class="risk-body">
+    <div class="risk-title">Competitive Intensification from Diageo / Pernod Ricard</div>
+    <div class="risk-detail">United Spirits (Diageo JV) has a ₹99,100 Cr market cap and access to Diageo's global brands, marketing dollars, and supply chain. If Diageo decides to aggressively compete in Radico's prestige segments (whisky at ₹1,000–5,000 price band), the marketing spend required to defend share could compress Radico's A&P-to-sales ratio discipline (currently managed at 6–8% of IMFL revenues). Pernod Ricard India remains unlisted but is a fierce operator in the premium end.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber);">
+  State excise policy is the primary uncontrollable risk — everything else Radico can manage; adverse state-level decisions cannot be hedged.
+</div>
+
+<!-- ══ CHAPTER 7 — WATCH SIGNALS ════════════════════════ -->
+<div class="chapter-header">
+  <div class="chapter-number" style="background:var(--teal-bg);color:var(--teal);border:2px solid var(--teal);">07</div>
+  <div class="chapter-text">
+    <div class="chapter-eyebrow" style="color:var(--teal);">Watch Signals</div>
+    <div class="chapter-title">Five Metrics to Track Every Quarter</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--teal);"></div>
+  <div class="watch-body">
+    <div class="watch-metric">1. Luxury Portfolio Quarterly Revenue Run-Rate</div>
+    <div class="watch-detail">Track the rolling 4-quarter total luxury sales value. FY26 full-year was ₹475 Cr — so target run-rate is ₹119 Cr/quarter for flat, and ₹148 Cr/quarter for management's 25% FY27 growth. <strong>Green flag:</strong> any quarter above ₹140 Cr. <strong>Red flag:</strong> sequential decline in luxury revenue, which would suggest global bar demand or domestic premium demand is softening.</div>
+  </div>
+</div>
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--blue);"></div>
+  <div class="watch-body">
+    <div class="watch-metric">2. EBITDA Margin Trajectory</div>
+    <div class="watch-detail">Q4 FY26 EBITDA margin was 19% — a record. FY27 guidance is full-year 125 bps expansion (implying ~18.1% for the year). Track if Q1 FY27 EBITDA margin holds above 16% (seasonally weaker quarter). <strong>Green flag:</strong> margin above 17% in H1 FY27. <strong>Red flag:</strong> any guidance revision downward citing grain prices or state-specific volume losses.</div>
+  </div>
+</div>
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--gold);"></div>
+  <div class="watch-body">
+    <div class="watch-metric">3. Prestige & Above Volume Growth vs. Guidance</div>
+    <div class="watch-detail">Management guided 20% P&A volume growth in FY27 from the 16.70 million case base (target: ~20 million cases). Track quarterly P&A volume YoY growth — this is the core indicator of whether premiumisation is sustaining. <strong>Green flag:</strong> consecutive quarters of 20%+ P&A volume growth. <strong>Red flag:</strong> two consecutive quarters below 15% growth would suggest the premiumisation cycle is peaking.</div>
+  </div>
+</div>
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--green);"></div>
+  <div class="watch-body">
+    <div class="watch-metric">4. Net Debt / Debt-Free Milestone</div>
+    <div class="watch-detail">Radico is guiding debt-free status by H1 FY27. Net debt was already reduced by ₹329 Cr in FY26. At Q1 FY27 concall, verify whether they are on track. A debt-free balance sheet will trigger a formal dividend payout ramp (min 20% of PAT), which could bring new income-oriented institutional investors into the register. <strong>Green flag:</strong> confirmation of zero net debt by September 2026. <strong>Red flag:</strong> any new capex announcement above ₹200 Cr that pushes out the debt-free date.</div>
+  </div>
+</div>
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--purple);"></div>
+  <div class="watch-body">
+    <div class="watch-metric">5. D'YAVOL Tequila Launch Execution</div>
+    <div class="watch-detail">Radico has guided a D'YAVOL Añejo tequila launch in end-FY27 (Q3–Q4 FY27), priced ₹20,000–30,000. Watch for: (1) actual launch date vs. guidance; (2) state approvals (excise clearance state-by-state is a multi-month process); (3) initial sell-in data if available at the FY27 year-end call. A delayed launch is a minor negative; a launch with strong on-trade adoption (bar menus in top Michelin-tier restaurants) would be a significant positive signal for the luxury portfolio mix.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--teal);">
+  If luxury portfolio quarterly run-rate and EBITDA margin both sustain above guidance, the re-rating thesis holds; watch for either of these softening before the financials do.
+</div>
+
+<!-- ══ VERDICT ═══════════════════════════════════════════ -->
+<div class="verdict-card">
+  <div class="verdict-label">💡 Verdict — Mid-Chapter Story</div>
+  <div class="verdict-text">
+    Radico Khaitan sits at the intersection of three structural tailwinds that are unlikely to reverse: India's demographic-driven premiumisation wave, global appetite for authentic "origin-story" spirits (Indian single malt's moment is now), and regulatory liberalisation in key states creating pricing freedom that was unavailable five years ago. The quality signal in the financials is unambiguous — EBITDA margins near-doubled from a 12% trough to 16.8% in three years, PAT grew 75.9% in FY26, and the company is on track to be debt-free in H1 FY27, unlocking consistent dividend payouts. The near-term catalyst is the luxury portfolio sustaining its 25% growth guidance in FY27, which would bring EBITDA margins above 18% and validate the market's premium multiple. At 78x trailing PE, the stock is not cheap — it is priced as a secular compounder, and it will require near-flawless execution on its luxury and premium pillars to justify that premium over industry peers like United Spirits trading at 55–60x. The story is mid-chapter: the thesis is proven, the investment cycle is complete, and the FCF harvest is beginning — but the market has already paid for the next two chapters, leaving investors requiring patience and vigilance on execution rather than conviction on direction.
+  </div>
+  <span class="verdict-stage">Mid-Chapter — Execution Phase</span>
+</div>
+
+<!-- ══ HIGHLIGHT INDEX ═══════════════════════════════════ -->
+<details id="highlight-index" open>
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol id="highlight-list">
+    <!-- JS populates this -->
+  </ol>
+</details>
+
+<p style="font-size:12px;color:var(--ink-light);text-align:center;margin:20px 0 0;">
+  NSE: RADICO &nbsp;|&nbsp; Radico Khaitan Limited &nbsp;|&nbsp; Brief compiled May 30, 2026 &nbsp;|&nbsp; For informational purposes only. Not investment advice. All projections are management guidance, not guarantees.
+</p>
+
+</div><!-- end .wrapper -->
+
+<!-- ── THEME TOGGLE ─────────────────────────────────────── -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+
+<script>
+// Quick scan toggle
+function toggleQS() {
+  const body = document.getElementById('quick-scan-body');
+  const toggle = document.getElementById('quick-scan-toggle');
+  const isVisible = body.style.display !== 'none';
+  body.style.display = isVisible ? 'none' : 'grid';
+  toggle.textContent = isVisible ? '▼ EXPAND' : '▲ COLLAPSE';
+  try { localStorage.setItem('qs_open', !isVisible); } catch(e) {}
+}
+// Restore QS state
+(function() {
+  try {
+    const open = localStorage.getItem('qs_open');
+    if (open === 'false') {
+      document.getElementById('quick-scan-body').style.display = 'none';
+      document.getElementById('quick-scan-toggle').textContent = '▼ EXPAND';
+    }
+  } catch(e) {}
+})();
+
+// Theme toggle
+function toggleTheme() {
+  document.body.classList.toggle('dark');
+  const btn = document.querySelector('.theme-toggle');
+  btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  try { localStorage.setItem('theme', document.body.classList.contains('dark') ? 'dark' : 'light'); } catch(e) {}
+}
+(function() {
+  try {
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark');
+      document.querySelector('.theme-toggle').textContent = '☀️';
+    }
+  } catch(e) {}
+})();
+
+// Auto-populate highlight index
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-list');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THYROCARE — NSE Investor Brief | June 2026</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --surface: #ffffff;
+    --surface2: #f0f4f8;
+    --text: #1a1a2e;
+    --text2: #4a5568;
+    --text3: #718096;
+    --border: #e2e8f0;
+    --primary: #0E7C7B;
+    --primary-light: #e0f5f5;
+    --primary-dark: #085f5e;
+    --accent2: #378ADD;
+    --accent2-light: #E3F0FF;
+    --amber: #BA7517;
+    --amber-light: #FFF3CD;
+    --green: #3B6D11;
+    --green-light: #E6F4EA;
+    --red: #D85A30;
+    --red-light: #FDEEE8;
+    --shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --radius: 12px;
+  }
+  [data-theme="dark"] {
+    --bg: #0f1117;
+    --surface: #1a1d2e;
+    --surface2: #232640;
+    --text: #e8eaf6;
+    --text2: #b0bec5;
+    --text3: #78909c;
+    --border: #2d3248;
+    --primary: #14a9a8;
+    --primary-light: #0d3a3a;
+    --primary-dark: #1cc4c3;
+    --accent2-light: #1a2d4a;
+    --amber-light: #2d2410;
+    --green-light: #0d2010;
+    --red-light: #2d1510;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; line-height: 1.7; }
+
+  /* ── Quick-Scan Strip ── */
+  #quick-scan {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--primary); color: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  #qs-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 8px 20px; cursor: pointer; user-select: none;
+  }
+  #qs-header span { font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; }
+  #qs-toggle { background: rgba(255,255,255,0.2); border: none; color: #fff; border-radius: 4px; padding: 2px 10px; cursor: pointer; font-size: 0.8rem; }
+  #qs-body {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0; border-top: 1px solid rgba(255,255,255,0.2);
+    overflow: hidden; max-height: 300px; transition: max-height 0.3s ease;
+  }
+  #qs-body.collapsed { max-height: 0; }
+  .qs-item { padding: 8px 20px; border-right: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; line-height: 1.4; }
+  .qs-label { font-weight: 700; opacity: 0.7; margin-right: 6px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+
+  /* ── Theme Toggle ── */
+  #theme-btn {
+    position: fixed; top: 60px; right: 16px; z-index: 200;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 50%; width: 40px; height: 40px; cursor: pointer;
+    font-size: 1.1rem; box-shadow: var(--shadow);
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  /* ── Layout ── */
+  main { max-width: 960px; margin: 0 auto; padding: 24px 16px 80px; }
+  section { margin-bottom: 40px; }
+
+  /* ── Cover / Hook Card ── */
+  #hook-card {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1a9a99 100%);
+    border-radius: var(--radius); padding: 40px; color: #fff;
+    margin-bottom: 32px; position: relative; overflow: hidden;
+  }
+  #hook-card::before {
+    content: ''; position: absolute; right: -60px; top: -60px;
+    width: 300px; height: 300px; border-radius: 50%;
+    background: rgba(255,255,255,0.05);
+  }
+  .hook-eyebrow { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.8; margin-bottom: 12px; }
+  .hook-thesis { font-size: 1.5rem; font-weight: 800; line-height: 1.3; margin-bottom: 28px; }
+  .hook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .hook-grid { grid-template-columns: 1fr; } }
+  .hook-cell { background: rgba(255,255,255,0.12); border-radius: 10px; padding: 16px; }
+  .hook-cell-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.7; margin-bottom: 6px; }
+  .hook-cell-value { font-size: 1.15rem; font-weight: 700; }
+  .hook-cell-sub { font-size: 0.8rem; opacity: 0.8; margin-top: 4px; }
+  .hook-risk { background: rgba(216,90,48,0.25); border: 1px solid rgba(216,90,48,0.4); }
+
+  /* ── Chapter headers ── */
+  .chapter-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+  .ch-num {
+    min-width: 44px; height: 44px; border-radius: 50%;
+    background: var(--primary); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1rem; flex-shrink: 0; margin-top: 4px;
+  }
+  .ch-eyebrow { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--primary); margin-bottom: 4px; }
+  .ch-title { font-size: 1.4rem; font-weight: 800; color: var(--text); line-height: 1.2; }
+
+  /* ── Cards ── */
+  .card { background: var(--surface); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); margin-bottom: 20px; }
+  .card-accent { border-left: 4px solid var(--primary); }
+  .card-amber { border-left: 4px solid var(--amber); }
+  .card-blue { border-left: 4px solid var(--accent2); }
+  .card-green { border-left: 4px solid var(--green); }
+
+  /* ── Stats ── */
+  .stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 0.92rem; }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--text2); }
+  .stat-value { font-weight: 700; color: var(--text); }
+  .stat-value.up { color: var(--green); }
+  .stat-value.risk { color: var(--red); }
+  .stat-value.amber { color: var(--amber); }
+
+  /* ── Stat grid ── */
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .stat-tile { background: var(--surface); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); text-align: center; }
+  .stat-tile-value { font-size: 1.5rem; font-weight: 800; color: var(--primary); }
+  .stat-tile-label { font-size: 0.75rem; color: var(--text3); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .stat-tile-sub { font-size: 0.78rem; color: var(--text2); margin-top: 2px; }
+
+  /* ── Timeline ── */
+  .timeline { display: flex; gap: 0; overflow-x: auto; padding: 8px 0 16px; }
+  .timeline-item { display: flex; flex-direction: column; align-items: center; min-width: 130px; position: relative; padding: 0 8px; }
+  .timeline-item:not(:last-child)::after {
+    content: ''; position: absolute; top: 14px; left: calc(50% + 14px);
+    width: calc(100% - 28px); height: 2px; background: var(--border);
+  }
+  .timeline-dot { width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: #fff; font-size: 0.65rem; font-weight: 700; display: flex; align-items: center; justify-content: center; z-index: 1; flex-shrink: 0; margin-bottom: 8px; }
+  .timeline-year { font-weight: 800; font-size: 0.8rem; color: var(--primary); margin-bottom: 4px; }
+  .timeline-text { font-size: 0.72rem; color: var(--text2); text-align: center; line-height: 1.35; }
+  @media (max-width: 600px) { .timeline { flex-direction: column; } .timeline-item { flex-direction: row; min-width: unset; gap: 12px; align-items: flex-start; padding: 0 0 16px; } .timeline-item::after { display: none; } .timeline-text { text-align: left; } }
+
+  /* ── Porter's Five Forces ── */
+  .forces-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 600px) { .forces-grid { grid-template-columns: 1fr; } }
+  .force-center { grid-column: 1 / -1; }
+  .force-card { background: var(--surface); border-radius: 10px; padding: 16px; box-shadow: var(--shadow); }
+  .force-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+  .force-name { font-weight: 700; font-size: 0.9rem; }
+  .threat-badge { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .threat-high { background: #FDEEE8; color: #D85A30; }
+  .threat-mod { background: #FFF3CD; color: #BA7517; }
+  .threat-low { background: #E6F4EA; color: #3B6D11; }
+  .force-text { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
+  .force-implication { font-size: 0.8rem; color: var(--text); font-style: italic; margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+  .moat-bar { background: var(--primary-light); border-radius: 10px; padding: 14px 20px; margin-top: 12px; display: flex; align-items: center; gap: 12px; }
+  .moat-badge { background: var(--primary); color: #fff; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 0.82rem; }
+
+  /* ── Vertical cards ── */
+  .vertical-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .vertical-grid { grid-template-columns: 1fr; } }
+  .v-card { background: var(--surface); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow); }
+  .v-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+  .v-name { font-weight: 800; font-size: 0.95rem; }
+  .v-status { font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; }
+  .v-running { background: var(--green-light); color: var(--green); }
+  .v-ramping { background: var(--accent2-light); color: var(--accent2); }
+  .v-proto { background: var(--amber-light); color: var(--amber); }
+  .v-metric { font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+  .v-text { font-size: 0.82rem; color: var(--text2); line-height: 1.5; margin-top: 6px; }
+
+  /* ── Management Scorecard ── */
+  .scorecard table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .scorecard th { background: var(--surface2); padding: 10px 12px; text-align: left; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text3); border-bottom: 2px solid var(--border); }
+  .scorecard td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .scorecard tr:hover td { background: var(--surface2); }
+  .verdict-sandbag { background: var(--green-light); color: var(--green); padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 0.75rem; white-space: nowrap; }
+  .verdict-ontrack { background: var(--accent2-light); color: var(--accent2); padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 0.75rem; white-space: nowrap; }
+  .verdict-miss { background: var(--red-light); color: var(--red); padding: 2px 8px; border-radius: 12px; font-weight: 700; font-size: 0.75rem; white-space: nowrap; }
+
+  /* ── Risks ── */
+  .risk-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .risk-item:last-child { border-bottom: none; }
+  .risk-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+  .risk-title { font-weight: 700; font-size: 0.92rem; margin-bottom: 4px; }
+  .risk-text { font-size: 0.83rem; color: var(--text2); line-height: 1.5; }
+  .risk-signal { font-size: 0.78rem; color: var(--amber); font-style: italic; margin-top: 4px; }
+
+  /* ── Watch signals ── */
+  .watch-item { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--border); }
+  .watch-item:last-child { border-bottom: none; }
+  .watch-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--primary); flex-shrink: 0; margin-top: 6px; }
+  .watch-title { font-weight: 700; font-size: 0.9rem; }
+  .watch-text { font-size: 0.82rem; color: var(--text2); margin-top: 2px; }
+  .watch-flag { font-size: 0.78rem; color: var(--red); margin-top: 2px; font-style: italic; }
+
+  /* ── Highlights ── */
+  .hl-key { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+  .hl-number { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: monospace; }
+  .hl-risk { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; }
+  .hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; }
+  [data-theme="dark"] .hl-key { background: #5a5200; color: #fff; }
+  [data-theme="dark"] .hl-number { background: #1a2d4a; color: #fff; }
+  [data-theme="dark"] .hl-risk { background: #2d2410; color: #fff; }
+  [data-theme="dark"] .hl-catalyst { background: #0d2010; color: #fff; }
+
+  /* ── Takeaway pill ── */
+  .takeaway-pill {
+    background: var(--primary-light); border-left: 3px solid var(--primary);
+    border-radius: 6px; padding: 10px 14px; margin-top: 16px;
+    font-size: 0.83rem; font-weight: 600; color: var(--primary-dark);
+    line-height: 1.4;
+  }
+  [data-theme="dark"] .takeaway-pill { color: var(--primary); }
+
+  /* ── Verdict ── */
+  #verdict-card {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: #fff; border-radius: var(--radius); padding: 32px;
+    margin-top: 8px;
+  }
+  .verdict-label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; opacity: 0.7; margin-bottom: 8px; }
+  .verdict-stage { font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; }
+  .verdict-text { font-size: 0.92rem; line-height: 1.75; opacity: 0.95; }
+
+  /* ── Highlight index ── */
+  #highlight-index { margin-top: 40px; }
+  #highlight-index summary { cursor: pointer; font-weight: 700; font-size: 1rem; padding: 12px; background: var(--surface2); border-radius: 8px; }
+  #highlight-index ol { padding: 16px 20px; background: var(--surface); border-radius: 0 0 8px 8px; border: 1px solid var(--border); }
+  #highlight-index li { padding: 6px 0; font-size: 0.83rem; border-bottom: 1px solid var(--border); color: var(--text2); }
+  #highlight-index li:last-child { border-bottom: none; }
+  #highlight-index li[data-type="hl-key"] { border-left: 3px solid #f5c518; padding-left: 8px; }
+  #highlight-index li[data-type="hl-number"] { border-left: 3px solid #378ADD; padding-left: 8px; }
+  #highlight-index li[data-type="hl-risk"] { border-left: 3px solid #BA7517; padding-left: 8px; }
+  #highlight-index li[data-type="hl-catalyst"] { border-left: 3px solid #3B6D11; padding-left: 8px; }
+  #highlight-index li[data-type="takeaway-pill"] { border-left: 3px solid #0E7C7B; padding-left: 8px; font-weight: 600; }
+
+  /* ── Peer comparison table ── */
+  .peer-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; }
+  .peer-table th { background: var(--surface2); padding: 10px 12px; text-align: right; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--text3); border-bottom: 2px solid var(--border); }
+  .peer-table th:first-child { text-align: left; }
+  .peer-table td { padding: 10px 12px; border-bottom: 1px solid var(--border); text-align: right; }
+  .peer-table td:first-child { text-align: left; font-weight: 600; }
+  .peer-table tr.highlight-row td { background: var(--primary-light); font-weight: 700; color: var(--primary-dark); }
+  [data-theme="dark"] .peer-table tr.highlight-row td { color: var(--primary); }
+
+  /* ── Promoter sidebar ── */
+  .promoter-sidebar { background: var(--surface2); border-radius: 10px; padding: 20px; }
+  .ps-title { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--primary); margin-bottom: 12px; }
+
+  /* ── Two-col layout ── */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* ── Typography ── */
+  h2 { font-size: 1.1rem; font-weight: 700; margin: 20px 0 10px; color: var(--text); }
+  h3 { font-size: 0.95rem; font-weight: 700; margin: 16px 0 8px; color: var(--text); }
+  p { font-size: 0.9rem; color: var(--text2); line-height: 1.75; margin-bottom: 10px; }
+  p:last-child { margin-bottom: 0; }
+  strong { color: var(--text); }
+  ul { padding-left: 20px; }
+  ul li { font-size: 0.87rem; color: var(--text2); margin-bottom: 4px; line-height: 1.5; }
+
+  /* ── ROCE trend ── */
+  .roce-bar { display: flex; align-items: flex-end; gap: 6px; margin: 8px 0; }
+  .roce-col { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .roce-fill { width: 28px; background: var(--primary); border-radius: 4px 4px 0 0; transition: height 0.3s; }
+  .roce-year { font-size: 0.65rem; color: var(--text3); }
+  .roce-pct { font-size: 0.68rem; font-weight: 700; color: var(--text2); }
+
+  /* ── Print ── */
+  @media print {
+    #quick-scan { position: static !important; }
+    #qs-body, #qs-body.collapsed { display: grid !important; max-height: none !important; visibility: visible !important; }
+    #highlight-index > *:not(summary) { display: block !important; }
+    #theme-btn { display: none; }
+    body { background: #fff; color: #000; }
+    .card, .v-card, .force-card { box-shadow: none; border: 1px solid #ddd; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ QUICK-SCAN STRIP ══ -->
+<div id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div id="qs-header" onclick="toggleQS()" aria-expanded="true">
+    <span>▦ THYROCARE — 7-LINE QUICK SCAN</span>
+    <button id="qs-toggle" aria-label="Toggle quick scan">▲ Collapse</button>
+  </div>
+  <div id="qs-body" role="list">
+    <div class="qs-item" role="listitem"><span class="qs-label">⚡ Context</span>India's diagnostic market growing 12% CAGR to $28.5 Bn by 2034; organized sector barely 30% — every year Thyrocare eats into fragmented independents.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">🏭 Model</span>B2B infrastructure play: 10,800 franchisees + 1,900 phlebotomists make Thyrocare the back-end lab that front-end clinics, hospitals, and healthtech platforms don't want to build.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">🎯 Insight</span>Thyrocare doesn't compete with Dr. Lal — it is the backbone its competitors would need if they scaled to Tier 3. The franchise is a customer acquisition engine, not a retailer.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">📊 Numbers</span>FY26: Revenue ₹829 Cr (+21%), PAT ₹163 Cr (+81%), EBITDA margin 31.6% — fastest profit growth in listed diagnostics; ROCE recovering to ~30%+ from 17% trough in FY23.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">🚧 Top Risk</span>60.93% of all shares pledged by API Holdings (PharmEasy parent); ₹1,200 Cr+ NCDs still outstanding. Forced pledge invocation = sudden, large block sale regardless of business health.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">👁 Watch</span>Promoter pledge reduction each quarter — any NCD repayment or pledge release is the single most important re-rating catalyst for the stock.</div>
+    <div class="qs-item" role="listitem"><span class="qs-label">💡 Verdict</span>Middle chapter — turnaround executed, specialty pivot just beginning. PE 34× FY26 at ₹351 is the cheapest in listed diagnostics but the pledge overhang is real.</div>
+  </div>
+</div>
+
+<button id="theme-btn" onclick="toggleTheme()" aria-label="Toggle dark mode">🌙</button>
+
+<main>
+
+<!-- ══ CHAPTER 0: HOOK CARD ══ -->
+<div id="hook-card" role="banner" aria-label="Investment thesis">
+  <div class="hook-eyebrow">NSE: THYROCARE &nbsp;·&nbsp; Healthcare Services &nbsp;·&nbsp; June 1, 2026</div>
+  <p class="hook-thesis">India's only 100% NABL-accredited national diagnostic chain — turnaround complete, specialty pivot just beginning, affordable infrastructure at the heart of India's preventive health supercycle.</p>
+  <div class="hook-grid">
+    <div class="hook-cell">
+      <div class="hook-cell-label">📌 Single most important number</div>
+      <div class="hook-cell-value">$28.5 Billion</div>
+      <div class="hook-cell-sub">India diagnostics market by 2034 (12% CAGR from $10.95 Bn today). Organized sector is barely 30%. Thyrocare at ₹829 Cr FY26 revenue is a 0.7% share of a fast-consolidating market.</div>
+    </div>
+    <div class="hook-cell hook-risk">
+      <div class="hook-cell-label">⚠️ Single biggest risk</div>
+      <div class="hook-cell-value">60.93% pledged</div>
+      <div class="hook-cell-sub">All promoter shares (Docon Technologies / API Holdings) are pledged against ₹1,200 Cr+ outstanding NCDs. PharmEasy's financial stress means forced block sales remain a live tail risk.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CHAPTER 1: CONTEXT ══ -->
+<section aria-labelledby="ch1-title">
+  <div class="chapter-header">
+    <div class="ch-num" aria-hidden="true">1</div>
+    <div>
+      <div class="ch-eyebrow">The Big Picture</div>
+      <h1 id="ch1-title" class="ch-title">Context — Why Diagnostics, Why Now</h1>
+    </div>
+  </div>
+
+  <div class="card card-accent">
+    <p>India's healthcare spending is undergoing a structural shift from reactive (treat the sick) to preventive (screen the well). This is not a marketing trend — it is being driven by three compounding forces that all point in the same direction.</p>
+    <p><strong>Force 1 — The market is large and still fragmented.</strong> India's diagnostic market was valued at <span class="hl-number">$10.95 billion in 2025</span> and is projected to reach $28.53 billion by 2034 at a 12% CAGR. Critically, the organized (chain) segment accounts for just ~30% of this market. The remaining 70% is run by independent neighbourhood labs that lack NABL accreditation, cold-chain infrastructure, or digital reporting capabilities. This is precisely where Thyrocare's franchise model extracts value — it brings organized-quality testing to an unorganized distribution network.</p>
+    <p><strong>Force 2 — The wellness boom is structural.</strong> The preventive wellness sub-segment is growing at 25%+ CAGR, with wellness packages (Thyrocare's flagship "Aarogyam") accounting for a rising share of total revenues across the sector. Post-COVID health consciousness, growing health insurance penetration, and the explosion of employer wellness programs have made annual health check-ups routine rather than exceptional.</p>
+    <p><strong>Force 3 — Government is a tailwind, not just a payer.</strong> <span class="hl-catalyst">The Ayushman Bharat Digital Mission (ABDM) has created 84.79 crore unique ABHA health IDs with 82.69 crore health records linked</span> as of January 2026. This digitizes the patient journey and creates a longitudinal records infrastructure that makes data-driven diagnostics easier to sell. ABDM also validates testing infrastructure — accredited labs like Thyrocare become preferred partners. Separately, CGHS rate revisions in 2025 have eased pricing pressure across the industry.</p>
+  </div>
+
+  <div class="stats-grid">
+    <div class="stat-tile">
+      <div class="stat-tile-value">$28.5B</div>
+      <div class="stat-tile-label">Diagnostics Market 2034</div>
+      <div class="stat-tile-sub">12% CAGR from $10.95B</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-tile-value">70%</div>
+      <div class="stat-tile-label">Unorganized Market</div>
+      <div class="stat-tile-sub">Thyrocare's addressable runway</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-tile-value">25%+</div>
+      <div class="stat-tile-label">Wellness CAGR</div>
+      <div class="stat-tile-sub">4-year track record</div>
+    </div>
+    <div class="stat-tile">
+      <div class="stat-tile-value">84.8 Cr</div>
+      <div class="stat-tile-label">ABHA IDs Created</div>
+      <div class="stat-tile-sub">Digital health backbone</div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color: #0E7C7B;">India diagnostics market doubles by 2034; organized sector gaining from 30% base — Thyrocare is the most distributed chain in the unorganized-to-organized migration.</div>
+</section>
+
+<!-- ══ CHAPTER 2: BUSINESS MODEL + JOURNEY + PROMOTER ══ -->
+<section aria-labelledby="ch2-title">
+  <div class="chapter-header">
+    <div class="ch-num">2</div>
+    <div>
+      <div class="ch-eyebrow">The Flywheel</div>
+      <h1 id="ch2-title" class="ch-title">Business Model, Company Journey & Promoter</h1>
+    </div>
+  </div>
+
+  <div class="card card-accent">
+    <h2>What Thyrocare Actually Does</h2>
+    <p>Thyrocare is a B2B diagnostic infrastructure company — not a consumer brand in the traditional sense. It operates Asia's largest <strong>Central Processing Lab (CPL)</strong> in Navi Mumbai (processing 1 lakh+ samples daily) and a network of 37 regional/zonal labs across India. But it owns almost none of the collection points. Instead, it has built a <strong>hub-and-spoke franchise network</strong> of 10,800 active partners — hospitals, nursing homes, standalone pathology labs, pharmacies, and collection centers — who collect patient samples and route them to Thyrocare's processing backbone.</p>
+    <p>The flywheel: <span class="hl-key">more franchise partners → more sample volumes → better reagent negotiation → lower per-test cost → more competitive pricing → more partners</span>. Every additional franchise partner increases Thyrocare's procurement leverage without requiring Thyrocare to invest in new real estate. This is why gross margins have expanded from ~66% to ~73% over three years, not through price hikes, but through volume-driven procurement savings and operational efficiency.</p>
+    <p>Revenue breaks into two primary channels. The <strong>Franchise business</strong> (~78% of revenue) serves walk-in and doctor-referred patients through the partner network. The <strong>Partnerships business</strong> (~22% of revenue, growing at 35% YoY) serves HealthTech platforms (PharmEasy, Tata 1mg, etc.), corporate wellness programs, and insurance companies — all routed through Thyrocare's own phlebotomy fleet of 1,900 company-employed collectors. The company is also the only diagnostics chain to operate a <strong>dedicated company phlebotomy fleet</strong> for its B2B partners, a differentiator management explicitly calls out.</p>
+  </div>
+
+  <div class="card" style="margin-bottom:20px;">
+    <h2>Company Journey Timeline</h2>
+    <div class="timeline" role="list" aria-label="Company history timeline">
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">1996</div>
+        <div>
+          <div class="timeline-year">1996</div>
+          <div class="timeline-text">Founded by Dr. A. Velumani, ex-BARC scientist, in Byculla, Mumbai. Started with thyroid testing — a neglected, high-volume diagnostic niche.</div>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">2003</div>
+        <div>
+          <div class="timeline-year">~2003</div>
+          <div class="timeline-text">Pioneered hub-and-spoke model for diagnostics in India. Centralised processing in Mumbai; franchise collection network expands across states.</div>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">2015</div>
+        <div>
+          <div class="timeline-year">2015</div>
+          <div class="timeline-text">Asia's largest CPL commissioned in Navi Mumbai. World's longest lab track automation (94.5M track) — a moat that takes ₹100 Cr+ and years to replicate.</div>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">2016</div>
+        <div>
+          <div class="timeline-year">2016</div>
+          <div class="timeline-text">IPO at NSE/BSE — second diagnostics company to list in India. Capital raised for geographic expansion and technology investment.</div>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">2021</div>
+        <div>
+          <div class="timeline-year">2021</div>
+          <div class="timeline-text">PharmEasy (API Holdings) acquires 66.1% stake for ₹4,546 Cr at ₹1,300/share. First listed Indian company acquired by a startup. Dr. Velumani exits promoter group.</div>
+        </div>
+      </div>
+      <div class="timeline-item" role="listitem">
+        <div class="timeline-dot">2022</div>
+        <div>
+          <div class="timeline-year">2022–25</div>
+          <div class="timeline-text">Rahul Guha (ex-FMCG) appointed CEO. Franchise restructuring: pruned inactive partners, re-launched slab-based incentive model. Polo Labs + Vimta acquisitions. 100% NABL accreditation achieved. Bonus 2:1 announced Oct 2025.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card promoter-sidebar">
+    <div class="ps-title">Promoter & Capital Allocation</div>
+    <div class="two-col">
+      <div>
+        <div class="stat-row"><span class="stat-label">Promoter (Docon Technologies)</span><span class="stat-value risk">60.93%</span></div>
+        <div class="stat-row"><span class="stat-label">Pledge on promoter holding</span><span class="stat-value risk">100%</span></div>
+        <div class="stat-row"><span class="stat-label">Promoter trend (last 8Q)</span><span class="stat-value amber">↓ from 71.14%</span></div>
+        <div class="stat-row"><span class="stat-label">Oct 2025 block sale</span><span class="stat-value">10% sold at ₹1,252/sh</span></div>
+        <div class="stat-row"><span class="stat-label">NCDs outstanding (API Holdings)</span><span class="stat-value risk">₹1,200 Cr+ (Series 1)</span></div>
+        <div class="stat-row"><span class="stat-label">Dividend payout (FY26)</span><span class="stat-value">122% of PAT</span></div>
+        <div class="stat-row"><span class="stat-label">Net cash (Sep 2025)</span><span class="stat-value up">₹190 Cr+ (debt-free)</span></div>
+      </div>
+      <div>
+        <p style="font-size:0.82rem;"><strong>ROCE Trend (5 years):</strong></p>
+        <div class="roce-bar" aria-label="ROCE trend chart">
+          <div class="roce-col"><div class="roce-fill" style="height:60px;"></div><div class="roce-year">FY21</div><div class="roce-pct">36%</div></div>
+          <div class="roce-col"><div class="roce-fill" style="height:70px;"></div><div class="roce-year">FY22</div><div class="roce-pct">42%</div></div>
+          <div class="roce-col"><div class="roce-fill" style="height:28px; background:#D85A30;"></div><div class="roce-year">FY23</div><div class="roce-pct">17%</div></div>
+          <div class="roce-col"><div class="roce-fill" style="height:30px; background:#BA7517;"></div><div class="roce-year">FY24</div><div class="roce-pct">18%</div></div>
+          <div class="roce-col"><div class="roce-fill" style="height:42px;"></div><div class="roce-year">FY25</div><div class="roce-pct">25%</div></div>
+          <div class="roce-col"><div class="roce-fill" style="height:55px; background:#1a9a99;"></div><div class="roce-year">FY26e</div><div class="roce-pct">~32%</div></div>
+        </div>
+        <p style="font-size:0.8rem; color:var(--text2); margin-top:8px;"><span class="hl-risk">ROCE crashed in FY23 post-COVID base effect + franchise restructuring costs.</span> Recovery to ~32% FY26 reflects operating leverage kicking in on a leaner, higher-quality franchise base. Management: professional, founder-operated culture retained by Rahul Guha since 2022.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">Franchise restructuring FY22–23 cleared dead weight; ROCE recovering from 17% trough — FY26 marks the first full year of clean compounding.</div>
+</section>
+
+<!-- ══ CHAPTER 3: PORTER'S FIVE FORCES ══ -->
+<section aria-labelledby="ch3-title">
+  <div class="chapter-header">
+    <div class="ch-num">3</div>
+    <div>
+      <div class="ch-eyebrow">Competitive Dynamics</div>
+      <h1 id="ch3-title" class="ch-title">Porter's Five Forces</h1>
+    </div>
+  </div>
+
+  <div class="forces-grid">
+
+    <div class="force-card">
+      <div class="force-header">
+        <span class="force-name">① Competitive Rivalry</span>
+        <span class="threat-badge threat-mod" aria-label="Moderate threat">🟡 Moderate</span>
+      </div>
+      <p class="force-text">Named peers: Dr. Lal PathLabs (₹2,763 Cr revenue), Metropolis Healthcare (~₹1,230 Cr), Vijaya Diagnostics (~₹1,016 Cr). Thyrocare at ₹829 Cr is smallest listed peer but growing fastest (+21% FY26 vs. Dr. Lal's +12%). The key distinction: Thyrocare is B2B-first (franchises, healthtech partnerships) while Dr. Lal and Metropolis are more B2C direct. This means Thyrocare and its peers compete for different layers of the same patient — Thyrocare for the outsourced lab back-end, peers for the consumer-facing brand.</p>
+      <p class="force-implication">Investor implication: Thyrocare's franchise model means pricing decisions are less about consumer brand wars and more about B2B loyalty. Margin pressure comes from HealthTech aggregators squeezing partnership rates, not from direct consumer competition.</p>
+    </div>
+
+    <div class="force-card">
+      <div class="force-header">
+        <span class="force-name">② Threat of New Entrants</span>
+        <span class="threat-badge threat-low" aria-label="Low threat">🟢 Low</span>
+      </div>
+      <p class="force-text">Thyrocare is India's only 100% NABL-accredited national chain — a certification held by merely 2% of pathology labs nationwide. The CPL in Navi Mumbai (Asia's largest) took 25+ years and ₹100 Cr+ to build. The 10,800-franchise network is a relationship asset that took a decade of on-ground effort to assemble. Cold-chain logistics with end-to-end data loggers and 18-hour pan-India turnaround time (down from 40+ hours) require significant operational investment. A new entrant would need 5–8 years of customer qualification cycles and ₹500 Cr+ of capital before approaching Thyrocare's network density.</p>
+      <p class="force-implication">Investor implication: Structural moats are deep — the entry barriers are operational (scale, accreditation, cold-chain), not regulatory. No new entrant is credibly building this from scratch in the foreseeable future.</p>
+    </div>
+
+    <div class="force-card">
+      <div class="force-header">
+        <span class="force-name">③ Buyer Bargaining Power</span>
+        <span class="threat-badge threat-mod" aria-label="Moderate threat">🟡 Moderate</span>
+      </div>
+      <p class="force-text">Franchise segment (78% of revenue): Individual small labs, hospitals, nursing homes — low bargaining power. Slab-based pricing incentivises volume growth; high switching costs since partners carry Thyrocare's brand and equipment. Partnerships segment (22%, growing 35%+): HealthTech platforms, corporates, insurers have moderate leverage — PharmEasy (parent = API Holdings) is the largest single partner, accounting for a meaningful slice, and grew 46% YoY in Q2 FY26. However, management noted "equivalent to PharmEasy, we have as many other HealthTech partners," implying concentration is reducing. Insurance segment normalised pricing in Q4 FY26, causing a one-off growth dip.</p>
+      <p class="force-implication">Investor implication: Slab pricing in franchises creates loyalty; partnership concentration in PharmEasy is a related-party risk — if API degrows, Thyrocare's partnership revenue is exposed.</p>
+    </div>
+
+    <div class="force-card">
+      <div class="force-header">
+        <span class="force-name">④ Supplier Bargaining Power</span>
+        <span class="threat-badge threat-low" aria-label="Low threat">🟢 Low</span>
+      </div>
+      <p class="force-text">Key inputs: reagents, test kits (biochemistry, immunology, molecular). Thyrocare processes 209 million tests per year — among the largest sample volumes of any single diagnostics chain globally. This scale gives it significant procurement leverage; CFO Vikram Gupta confirmed gross margin expansion is "partly from harder vendor negotiations." Import dependency exists: some specialty reagents (HPLC, Phadia allergy platform, BioFire PCR) are imported, primarily from Western suppliers. Global supply chain issues flagged as an emerging margin risk in Q4 FY26 concall. Company has not backward-integrated into reagent manufacturing.</p>
+      <p class="force-implication">Investor implication: Volume-driven procurement is a durable margin lever, but specialty reagent import dependency (especially Phadia allergy platform from Thermo Fisher) could squeeze margins if currency or supply disruption occurs.</p>
+    </div>
+
+    <div class="force-card force-center">
+      <div class="force-header">
+        <span class="force-name">⑤ Threat of Substitutes</span>
+        <span class="threat-badge threat-mod" aria-label="Moderate threat">🟡 Moderate</span>
+      </div>
+      <p class="force-text">Three substitute threats exist on different time horizons. Near-term (0–3 years): Point-of-care (POC) testing devices are proliferating — blood glucose meters, home thyroid kits — but lack the 929-test depth and NABL credibility Thyrocare offers. <span class="hl-risk">Medium-term (3–7 years): AI-enabled remote diagnostics and wearable continuous monitoring could reduce the need for lab-based periodic testing, particularly for chronic disease management.</span> Long-term (7–10 years): Genetic/genomic testing platforms (like 23andMe equivalents) could shift the preventive testing paradigm toward one-time genetic profiling rather than annual blood panels. Management's pivot into genomics (NIPT launched, genomics lab commissioned FY26) is a deliberate hedge against this last threat. Vertical integration by hospital chains (building captive labs) is a near-term concern, but NABL qualification takes 18 months minimum and requires scale Thyrocare already has.</p>
+      <p class="force-implication">Investor implication: This is a 7–10 year story, not a 3-year worry. The genomics pivot shows management is aware of the long horizon risk and is acting on it.</p>
+    </div>
+
+  </div>
+
+  <div class="moat-bar" role="note" aria-label="Moat summary">
+    <span class="moat-badge">Narrow-to-Wide Moat</span>
+    <span style="font-size:0.85rem; color:var(--text2);">The hub-spoke infrastructure, 100% NABL accreditation, and 10,800-partner network constitute a genuine narrow-to-wide moat in the B2B diagnostics segment — structurally superior to Metropolis (B2C-heavy, less network density) and Vijaya (geography-concentrated, South India only). Dr. Lal is the strongest peer overall but trades at 44× PE vs. Thyrocare's 34×.</span>
+  </div>
+
+  <div class="takeaway-pill">Lowest new-entrant threat in the peer group; real moat risk is internal — if PharmEasy's distress contaminates the partnership revenue channel.</div>
+</section>
+
+<!-- ══ CHAPTER 4: VERTICAL STORIES ══ -->
+<section aria-labelledby="ch4-title">
+  <div class="chapter-header">
+    <div class="ch-num">4</div>
+    <div>
+      <div class="ch-eyebrow">Revenue Verticals</div>
+      <h1 id="ch4-title" class="ch-title">The Five Growth Engines</h1>
+    </div>
+  </div>
+
+  <div class="vertical-grid">
+
+    <div class="v-card" style="border-top: 3px solid #0E7C7B;">
+      <div class="v-header">
+        <span class="v-name">🩺 Aarogyam (Preventive Wellness)</span>
+        <span class="v-status v-running">Running</span>
+      </div>
+      <div class="v-metric">~33% of Revenue</div>
+      <p class="v-text">Thyrocare's flagship wellness package brand — 43 packages including Aarogyam C (70 tests, highest seller). Growing at 19% YoY in Q2 FY26. External catalyst: preventive wellness market growing at 25%+ CAGR; post-COVID habits, employer health mandates, insurance renewal check-ups all driving demand. The average Aarogyam patient does 10+ tests per visit vs. industry average of ~3, driving revenue per patient far above walk-in testing. Accounts for ~33% of standalone revenue.</p>
+    </div>
+
+    <div class="v-card" style="border-top: 3px solid #378ADD;">
+      <div class="v-header">
+        <span class="v-name">💊 Jaanch (Lifestyle & Chronic)</span>
+        <span class="v-status v-ramping">Ramping Fast</span>
+      </div>
+      <div class="v-metric">+66% YoY (Q4 FY26)</div>
+      <p class="v-text">Thyrocare's newer disease-specific and chronic condition testing brand, targeting lifestyle diseases — diabetes, liver function, kidney function, metabolic panels. Grew 31% in Q2 FY26 and an extraordinary 66% in Q4 FY26. External catalyst: India's diabetes epidemic (1 in 3 fevers in Thyrocare's own PIVA study involved complex infections). GLP-1 weight-loss drugs going mainstream creates a direct companion testing market — Thyrocare is developing pre/during/post-GLP1 companion panels. Fastest-growing segment with premium test mix.</p>
+    </div>
+
+    <div class="v-card" style="border-top: 3px solid #BA7517;">
+      <div class="v-header">
+        <span class="v-name">🤝 Partnerships (HealthTech + Corporate + Insurance)</span>
+        <span class="v-status v-running">Running</span>
+      </div>
+      <div class="v-metric">+35% YoY</div>
+      <p class="v-text">B2B channel serving PharmEasy/API Diagnostics (+46% YoY Q2 FY26), Tata 1mg, Practo-equivalent platforms, corporate wellness programs, and insurance pre-policy medicals. Growing at 35% vs. franchise's 20%. Served through Thyrocare's own phlebotomy fleet — the only such fleet in listed diagnostics. External catalyst: health insurance penetration rising, Ayushman Bharat, employer ESG mandates driving wellness spending. Seasonal softness in Q4 FY26 (insurance normalization + fewer camps) flagged as one-off.</p>
+    </div>
+
+    <div class="v-card" style="border-top: 3px solid #534AB7;">
+      <div class="v-header">
+        <span class="v-name">🧬 Specialty (Genomics + Allergy + NIPT)</span>
+        <span class="v-status v-proto">Early Stage</span>
+      </div>
+      <div class="v-metric">₹5–8 Cr CapEx Deployed</div>
+      <p class="v-text">Thyrocare's newest growth leg — launched allergy testing with 250+ SKUs on the Phadia platform (Thermo Fisher), commissioned a dedicated genomics lab, and introduced NIPT (Non-Invasive Pre-Natal Testing). External catalyst: overall pathology market ₹50,000–60,000 Cr, specialty is 15–20% (~₹7,500–10,000 Cr). Management targets bringing specialty from near-zero to 15–20% of revenue within 3 years. Meaningful revenue not expected until FY28. A 40-person doctor education team deployed. Capital invested upfront; payoff is on the horizon.</p>
+    </div>
+
+    <div class="v-card" style="border-top: 3px solid #3B6D11; grid-column: 1 / -1;">
+      <div class="v-header">
+        <span class="v-name">🌍 International (Tanzania)</span>
+        <span class="v-status v-ramping">Ramping</span>
+      </div>
+      <div class="v-metric">+75% YoY | Aims EBITDA Breakeven in 18–24 Months</div>
+      <p class="v-text">Thyrocare's Africa foray — 1 lab in Tanzania, nascent but growing fast (30% QoQ in Q2 FY26, 75% YoY in Q4 FY26). USD $475,000 invested in CCPS (Feb 2026). External catalyst: Sub-Saharan Africa has among the lowest diagnostic infrastructure per capita globally. The hub-and-spoke model that worked in India's Tier 3 is directly exportable to African cities. Management is explicitly modelling this as a long-term replication opportunity. Currently loss-making but minimally — management says losses are "negligible." If Tanzania reaches EBITDA breakeven by FY27, it validates the international optionality thesis.</p>
+    </div>
+
+  </div>
+
+  <div class="takeaway-pill">Jaanch (+66% Q4 FY26) is the signal to watch — if lifestyle testing becomes 20% of revenue, revenue-per-patient metrics re-rate materially upward.</div>
+</section>
+
+<!-- ══ CHAPTER 5: STRATEGIC INSIGHT ══ -->
+<section aria-labelledby="ch5-title">
+  <div class="chapter-header">
+    <div class="ch-num">5</div>
+    <div>
+      <div class="ch-eyebrow">The Non-Obvious Truth</div>
+      <h1 id="ch5-title" class="ch-title">Strategic Insight</h1>
+    </div>
+  </div>
+
+  <div class="card card-accent">
+    <p><span class="hl-key">Thyrocare is not a diagnostic brand competing with Dr. Lal PathLabs — it is the back-end infrastructure that small diagnostic brands, hospitals, and healthtech platforms don't want to build themselves.</span></p>
+    <p>Most investors frame Thyrocare as a smaller version of Dr. Lal — same sector, lower market cap, lower revenue, so presumably lower quality. This framing misses the structural reality. Dr. Lal competes for the patient's choice of where to get tested. Thyrocare competes for the clinic's choice of whether to build a lab or outsource. These are entirely different competitive games.</p>
+    <p>The 10,800 franchise partners are not Thyrocare's customers in the consumer sense — they are Thyrocare's <strong>distribution partners who pay Thyrocare for every test processed</strong>. A hospital in Bhagalpur doesn't need to invest ₹2 Cr in a NABL-accredited laboratory — it outsources to Thyrocare and earns a margin. This dynamic means Thyrocare grows every time a small clinic in a Tier 3 city wants to offer diagnostic services without the capital burden.</p>
+    <p>The insight extends to the partnership channel: <strong>PharmEasy is not just Thyrocare's promoter — it is also Thyrocare's largest customer</strong>. Every PharmEasy Diagnostics test is Thyrocare's revenue. When PharmEasy sells a diagnostic package online, it is arbitraging between Thyrocare's wholesale price and the retail customer price. Thyrocare gets the volume without paying for the digital customer acquisition. This makes Thyrocare's partnership revenue structurally cheap to generate — but also structurally vulnerable to one stakeholder's financial health.</p>
+    <p>The deepest non-obvious truth: <span class="hl-key">Thyrocare's franchise model is designed to make its partners more profitable, not to extract maximum margin from them.</span> The slab-based incentive structure, where partners earn better rates as they hit higher volumes, is deliberately designed to create a graduation pathway — from bronze to diamond. The 1,000 branded "Thyrocare" collection centres (just 10% of partners) generate 40% of revenue because they're fully committed. The other 9,800 are the pipeline. This is a customer acquisition engine disguised as a franchise network.</p>
+  </div>
+
+  <div class="takeaway-pill">Thyrocare's 10,800 franchisees are not customers — they are a distribution pipeline that cost Thyrocare almost nothing in capex and generated ₹650 Cr of FY26 revenue.</div>
+</section>
+
+<!-- ══ CHAPTER 6: NUMBERS ══ -->
+<section aria-labelledby="ch6-title">
+  <div class="chapter-header">
+    <div class="ch-num">6</div>
+    <div>
+      <div class="ch-eyebrow">The Financials in Context</div>
+      <h1 id="ch6-title" class="ch-title">Numbers, Order Book & Management Scorecard</h1>
+    </div>
+  </div>
+
+  <!-- Core financials -->
+  <div class="card card-blue" style="margin-bottom:20px;">
+    <h2>Core Financials — FY26 Full Year</h2>
+    <div class="two-col">
+      <div>
+        <div class="stat-row"><span class="stat-label">Revenue (FY26)</span><span class="stat-value up">₹829 Cr (+21% YoY)</span></div>
+        <div class="stat-row"><span class="stat-label">EBITDA (FY26)</span><span class="stat-value up">₹262 Cr (+38% YoY)</span></div>
+        <div class="stat-row"><span class="stat-label">EBITDA Margin</span><span class="stat-value up">31.6% (↑ from 24% in FY24)</span></div>
+        <div class="stat-row"><span class="stat-label">PAT (FY26)</span><span class="stat-value up">₹163 Cr (+81% YoY)</span></div>
+        <div class="stat-row"><span class="stat-label">Gross Margin</span><span class="stat-value up">~73% (expanding)</span></div>
+        <div class="stat-row"><span class="stat-label">ROCE (FY25)</span><span class="stat-value">24.8% (recovering)</span></div>
+        <div class="stat-row"><span class="stat-label">Operating Cash Flow (FY25)</span><span class="stat-value up">₹191 Cr</span></div>
+        <div class="stat-row"><span class="stat-label">Net Cash Position</span><span class="stat-value up">₹190 Cr+ (debt-free)</span></div>
+      </div>
+      <div>
+        <div class="stat-row"><span class="stat-label">TTM Revenue</span><span class="stat-value">₹792 Cr (pre-Q4 update)</span></div>
+        <div class="stat-row"><span class="stat-label">Non-COVID Revenue CAGR (4Y)</span><span class="stat-value up">19%</span></div>
+        <div class="stat-row"><span class="stat-label">Test Volumes (FY26)</span><span class="stat-value up">209.6 Mn (+23% YoY)</span></div>
+        <div class="stat-row"><span class="stat-label">Dividend Payout (FY26)</span><span class="stat-value">122% of PAT</span></div>
+        <div class="stat-row"><span class="stat-label">Debtor Days (FY25)</span><span class="stat-value">39 days</span></div>
+        <div class="stat-row"><span class="stat-label">Days Payable (FY25)</span><span class="stat-value up">146 days</span></div>
+        <div class="stat-row"><span class="stat-label">Cash Conversion Cycle (FY25)</span><span class="stat-value up">-18 days (negative!)</span></div>
+        <div class="stat-row"><span class="stat-label">Working Capital Days (FY25)</span><span class="stat-value up">13 days (vs 41 in FY22)</span></div>
+      </div>
+    </div>
+    <p style="margin-top:12px; font-size:0.83rem; color:var(--text2);"><span class="hl-number">Cash conversion cycle turned negative in FY25 (-18 days)</span> — Thyrocare now collects cash before paying its suppliers, a hallmark of a business with real pricing and procurement leverage. The 5-year compounded revenue growth of 10% understates current momentum; the 3-year was impacted by post-COVID base effects and the FY22–23 franchise restructuring.</p>
+  </div>
+
+  <!-- Peer Valuation -->
+  <div class="card" style="margin-bottom:20px;">
+    <h2>Peer Valuation Comparison (as of June 2026)</h2>
+    <table class="peer-table" aria-label="Peer comparison table">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>FY26 Revenue</th>
+          <th>Revenue Growth</th>
+          <th>EBITDA Margin</th>
+          <th>Trailing PE</th>
+          <th>Moat Type</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="highlight-row">
+          <td>Thyrocare (THYROCARE)</td>
+          <td>₹829 Cr</td>
+          <td>+21%</td>
+          <td>31.6%</td>
+          <td>~34×</td>
+          <td>B2B Infra / Franchise</td>
+        </tr>
+        <tr>
+          <td>Dr. Lal PathLabs (LALPATHLAB)</td>
+          <td>₹2,763 Cr</td>
+          <td>+12%</td>
+          <td>~28%</td>
+          <td>~44×</td>
+          <td>B2C Brand / Network</td>
+        </tr>
+        <tr>
+          <td>Metropolis Healthcare (METROPOLIS)</td>
+          <td>~₹1,230 Cr</td>
+          <td>+23%</td>
+          <td>~25%</td>
+          <td>~57–60×</td>
+          <td>B2C Brand / West+South</td>
+        </tr>
+        <tr>
+          <td>Vijaya Diagnostics (VIJAYA)</td>
+          <td>~₹1,016 Cr</td>
+          <td>+26.5%</td>
+          <td>~35%</td>
+          <td>~63–69×</td>
+          <td>Integrated Path+Radiology</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:10px; font-size:0.82rem; color:var(--text2);">Thyrocare trades at a <span class="hl-number">35–50% PE discount to all listed diagnostic peers</span> despite having the fastest profit growth (+81% FY26 PAT). The market is pricing in two things: (1) the promoter pledge overhang (~10 percentage points of discount), and (2) the smaller absolute revenue scale vs. Dr. Lal. If/when the pledge is released, the discount could compress materially.</p>
+  </div>
+
+  <!-- Pipeline / Order Book — adapted for diagnostics -->
+  <div class="card card-accent" style="margin-bottom:20px;">
+    <h2>Revenue Pipeline Visibility</h2>
+    <p style="font-size:0.82rem; color:var(--text3); margin-bottom:12px;"><em>Diagnostics companies don't have formal order books. Pipeline is assessed through franchise count, partnership agreements, and volume momentum.</em></p>
+    <div class="stat-row"><span class="stat-label">Active franchise partners (Q4 FY26)</span><span class="stat-value up">10,800 (highest ever)</span></div>
+    <div class="stat-row"><span class="stat-label">Franchise net adds per month</span><span class="stat-value up">100–150</span></div>
+    <div class="stat-row"><span class="stat-label">Revenue contribution: top 1,000 branded centers</span><span class="stat-value">40% of franchise revenue</span></div>
+    <div class="stat-row"><span class="stat-label">Partnership revenue growth trajectory</span><span class="stat-value up">35% YoY (Q2 FY26)</span></div>
+    <div class="stat-row"><span class="stat-label">Tests processed (FY26)</span><span class="stat-value up">209.6 Mn (+23% YoY)</span></div>
+    <div class="stat-row"><span class="stat-label">Revenue visibility depth</span><span class="stat-value">High — recurring, subscription-like franchise revenue</span></div>
+    <p style="margin-top:10px; font-size:0.83rem; color:var(--text2);">Management guided "mid-teens" volume growth as the base case; they have consistently delivered 18–23% for 8 consecutive quarters. The franchise pipeline (9,800 non-branded partners who could upgrade to branded Thyrocare centres) represents a significant latent revenue upgrade option.</p>
+  </div>
+
+  <!-- Capex Timeline -->
+  <div class="card card-green" style="margin-bottom:20px;">
+    <h2>Capex Timeline</h2>
+    <div class="stat-row"><span class="stat-label">FY23 — Investing Outflow</span><span class="stat-value">₹39 Cr (network maintenance)</span></div>
+    <div class="stat-row"><span class="stat-label">FY24 — Investing Outflow</span><span class="stat-value risk">₹91 Cr (Polo Labs + Vimta acquisitions)</span></div>
+    <div class="stat-row"><span class="stat-label">FY25 — Investing Outflow</span><span class="stat-value">₹53 Cr (lab network, SyncHealth ECG)</span></div>
+    <div class="stat-row"><span class="stat-label">FY26 Specialty CapEx</span><span class="stat-value">₹5–8 Cr (genomics lab + allergy platform)</span></div>
+    <div class="stat-row"><span class="stat-label">Lab network (Jun 2026)</span><span class="stat-value up">37 India + 1 Tanzania</span></div>
+    <div class="stat-row"><span class="stat-label">Fixed assets (Sep 2025)</span><span class="stat-value">₹301 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Capex as % of revenue (FY25)</span><span class="stat-value up">~8% (modest, asset-light)</span></div>
+    <p style="margin-top:10px; font-size:0.83rem; color:var(--text2);">No major capex cycle is planned — Thyrocare is in a <strong>harvest phase</strong>. FY24's ₹91 Cr spike was M&A (Polo + Vimta), not greenfield build. The company's operating cash flow (₹191 Cr FY25) comfortably funds ongoing investments from internal accruals. The balance sheet is clean: debt-free with ₹190 Cr net cash. <span class="hl-catalyst">Capex-to-revenue is declining, which means every additional rupee of revenue in FY27–28 drops more directly to free cash flow.</span> Red flag check: No red flag — capacity is not constrained relative to pipeline.</p>
+  </div>
+
+  <!-- Management Scorecard -->
+  <div class="card scorecard">
+    <h2>Management Scorecard — Last 8 Quarters</h2>
+    <div style="overflow-x:auto;">
+      <table aria-label="Management guidance vs delivery scorecard">
+        <thead>
+          <tr>
+            <th>Quarter</th>
+            <th>What Was Guided</th>
+            <th>What Was Delivered</th>
+            <th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Q1 FY25</td>
+            <td>Mid-teen volume growth, margins stable</td>
+            <td>Revenue ₹157 Cr, +12% YoY; EBITDA 27%</td>
+            <td><span class="verdict-ontrack">On-Track</span></td>
+          </tr>
+          <tr>
+            <td>Q2 FY25</td>
+            <td>Seasonal strength, mid-teen growth</td>
+            <td>Revenue ₹177 Cr, +23% YoY; EBITDA 27%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+          <tr>
+            <td>Q3 FY25</td>
+            <td>Q3 soft (seasonal), costs fixed</td>
+            <td>Revenue ₹166 Cr, +23% YoY; EBITDA 25%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+          <tr>
+            <td>Q4 FY25</td>
+            <td>Q4 recovery, strong H2</td>
+            <td>Revenue ₹187 Cr, +21% YoY; EBITDA 30%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+          <tr>
+            <td>Q1 FY26</td>
+            <td>Mid-teen growth continuation</td>
+            <td>Revenue ₹193 Cr, +23% YoY; EBITDA 30%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+          <tr>
+            <td>Q2 FY26</td>
+            <td>H1=H2 range, mid-teen top line</td>
+            <td>Revenue ₹217 Cr, +22% YoY; EBITDA 33%; PAT +82%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+          <tr>
+            <td>Q3 FY26</td>
+            <td>Margin dip (seasonal), Q4 recovery</td>
+            <td>Revenue ₹196 Cr, +18% YoY; EBITDA 30%</td>
+            <td><span class="verdict-ontrack">On-Track</span></td>
+          </tr>
+          <tr>
+            <td>Q4 FY26</td>
+            <td>Strong Q4, H1≈H2</td>
+            <td>Revenue ₹224 Cr, +20% YoY; PAT +128%; EBITDA 33.7%</td>
+            <td><span class="verdict-sandbag">Sandbag</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px; font-size:0.83rem; color:var(--text2);"><strong>Pattern: Consistent sandlagger.</strong> Management guides "mid-teens" and delivers 18–23% for 6 of the last 8 quarters. Margin guidance has been conservative — EBITDA consistently beats the floor. <span class="hl-key">Rahul Guha's philosophy of "plan for the worst, hope for the best" has translated into a track record of positive earnings surprises every single quarter.</span> The lone On-Track quarters (Q1 FY25, Q3 FY26) were exactly as guided — seasonal softness — not misses. Zero guidance misses in 8 quarters.</p>
+  </div>
+
+  <div class="takeaway-pill">Management guided "mid-teens"; delivered 18–23% for 8 quarters straight — the most consistent sandlagger in listed diagnostics.</div>
+</section>
+
+<!-- ══ CHAPTER 7: RISKS ══ -->
+<section aria-labelledby="ch7-title">
+  <div class="chapter-header">
+    <div class="ch-num">7</div>
+    <div>
+      <div class="ch-eyebrow">Eyes Open</div>
+      <h1 id="ch7-title" class="ch-title">Risks — Specific, Not Generic</h1>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="risk-item" role="note" aria-label="Risk 1">
+      <div class="risk-icon">⚠️</div>
+      <div>
+        <div class="risk-title">1. Promoter Pledge Overhang — The Single Biggest Structural Risk</div>
+        <p class="risk-text">Docon Technologies (API Holdings' subsidiary) holds 60.93% of Thyrocare shares, all pledged with Catalyst Trusteeship Limited against ₹1,200 Cr+ outstanding NCDs (Series 1, as of Oct 2025 — Series 2 ₹500 Cr was redeemed). API Holdings (PharmEasy parent) has been financially stressed for 2+ years: delayed IPO, tight liquidity, credit downgrades. If API defaults on the Series 1 NCDs, debenture holders can invoke the pledge and sell Thyrocare shares in the open market — creating a forced, potentially large block sale irrespective of Thyrocare's business performance. The Oct 2025 block sale (10% at ₹1,252/share) was reportedly to partially service debt. The risk is not that Thyrocare's business deteriorates — it's that the promoter's financial problems become the stock's problem.</p>
+        <p class="risk-signal">Signal to watch: Any BSE/NSE filing showing NCD repayment or pledge reduction by Docon Technologies.</p>
+      </div>
+    </div>
+    <div class="risk-item" role="note" aria-label="Risk 2">
+      <div class="risk-icon">⚠️</div>
+      <div>
+        <div class="risk-title">2. PharmEasy Revenue Concentration — Related-Party Double Exposure</div>
+        <p class="risk-text">API Holdings/PharmEasy is simultaneously Thyrocare's controlling promoter AND its largest single business partner. PharmEasy's Diagnostics business (routed through Thyrocare) grew 46% YoY in Q2 FY26. If API Holdings undergoes financial restructuring, a strategic pivot, or sale of its diagnostics business, Thyrocare could lose a partner contributing a meaningful share of its fastest-growing revenue segment. The related-party dimension — where the promoter and largest customer are the same entity — makes this concentration risk qualitatively worse than typical customer concentration.</p>
+        <p class="risk-signal">Signal to watch: PharmEasy's quarterly diagnostics volumes, any concall commentary on partner diversification progress.</p>
+      </div>
+    </div>
+    <div class="risk-item" role="note" aria-label="Risk 3">
+      <div class="risk-icon">⚠️</div>
+      <div>
+        <div class="risk-title">3. Pricing Commoditisation in HealthTech Partnerships</div>
+        <p class="risk-text">Online diagnostic aggregators (PharmEasy, Tata 1mg, Practo) compete aggressively on price for consumer mindshare, and Thyrocare absorbs pricing pressure through its partnership rates. Q4 FY26 saw insurance segment pricing normalize (a one-off, management says), causing partnership growth to slow to 23% from 35%+. If aggregators structurally compress diagnostics pricing — as happened in e-pharmacy — Thyrocare's partnership margins could erode. The franchise segment is more insulated (B2B loyalty + slab pricing), but partnerships growing as a share of revenue means this risk is directionally increasing.</p>
+        <p class="risk-signal">Signal to watch: Gross margin trend in partnership segment; revenue per test in partnerships vs. franchises.</p>
+      </div>
+    </div>
+    <div class="risk-item" role="note" aria-label="Risk 4">
+      <div class="risk-icon">⚠️</div>
+      <div>
+        <div class="risk-title">4. Specialty Execution Risk — Genomics & Allergy Timeline Uncertainty</div>
+        <p class="risk-text">Thyrocare's specialty pivot (genomics, allergy testing, NIPT) is capital deployed today for returns in FY28+. Management explicitly said "significant revenue contributions are not expected until FY28 and beyond." The specialty market (₹7,500–10,000 Cr) is also where Dr. Lal and Metropolis have established strongholds with existing referring physician relationships. Building a doctor education network (40 people currently) for high-complexity tests takes years. If specialty revenue doesn't materialise by FY28, the narrative loses an important growth leg and the 20%+ revenue growth thesis is at risk.</p>
+        <p class="risk-signal">Signal to watch: Specialty segment revenue as % of total; number of new specialty tests crossing ₹1 Cr quarterly revenue.</p>
+      </div>
+    </div>
+    <div class="risk-item" role="note" aria-label="Risk 5">
+      <div class="risk-icon">⚠️</div>
+      <div>
+        <div class="risk-title">5. Reagent Import Dependency & Raw Material Inflation</div>
+        <p class="risk-text">Thyrocare's specialty pivot relies on imported platforms: Phadia (allergy, Thermo Fisher), BioFire (PCR, bioMérieux), HPLC equipment. Global supply chain disruptions, ₹/USD depreciation, or geopolitical restrictions on medical equipment exports could inflate input costs faster than Thyrocare's pricing power. CFO flagged this explicitly in Q4 FY26 as an "emerging concern." The core pathology business (biochemistry, immunology) uses domestic reagents with volume discounts, insulating ~80% of costs — but the high-growth specialty segment is import-dependent.</p>
+        <p class="risk-signal">Signal to watch: Gross margin % in specialty; management commentary on reagent price trends each quarter.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color: #D85A30; background: var(--red-light); color: var(--red);">The promoter pledge is not a company risk — it is a stock risk. Business quality has never been better; the overhang is entirely external to Thyrocare's operations.</div>
+</section>
+
+<!-- ══ CHAPTER 8: WATCH SIGNALS ══ -->
+<section aria-labelledby="ch8-title">
+  <div class="chapter-header">
+    <div class="ch-num">8</div>
+    <div>
+      <div class="ch-eyebrow">Quarterly Monitoring</div>
+      <h1 id="ch8-title" class="ch-title">Five Watch Signals</h1>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="watch-item">
+      <div class="watch-dot" style="background:#D85A30;"></div>
+      <div>
+        <div class="watch-title">① Promoter Pledge Level (BSE filings, each quarter)</div>
+        <p class="watch-text">Current: 60.93% pledged (all promoter shares). Track whether Docon Technologies files any pledge creation/release. Any reduction is unambiguously positive — it means API Holdings' NCD burden is easing. Good direction: pledge % falling, even by 5%. </p>
+        <p class="watch-flag">🚨 Red flag: Fresh pledge creation on additional shares, or any public notice of pledge invocation from Catalyst Trusteeship.</p>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot"></div>
+      <div>
+        <div class="watch-title">② Jaanch Revenue as % of Total (every concall PPT)</div>
+        <p class="watch-text">Jaanch (lifestyle/chronic testing) grew 66% YoY in Q4 FY26. If it crosses 15% of total revenue (from ~8% today), it signals a structural shift toward higher-value, recurring-need testing — which re-rates revenue quality. Good direction: Jaanch % rising 100–200 bps per quarter.</p>
+        <p class="watch-flag">🚨 Red flag: Jaanch growth decelerates below 20% for two consecutive quarters — means the GLP-1/lifestyle thesis isn't converting to volumes.</p>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot"></div>
+      <div>
+        <div class="watch-title">③ Partnership Business Growth Rate (quarterly)</div>
+        <p class="watch-text">Partnership revenue grew 35% in Q2 FY26, dipped to 23% in Q4 FY26 (one-off insurance normalisation). Steady 25–30% is the "healthy franchise" range. Good direction: above 25% YoY, partner count diversifying beyond PharmEasy.</p>
+        <p class="watch-flag">🚨 Red flag: Two consecutive quarters below 15% — implies PharmEasy is shrinking its diagnostics business or competitors are capturing alternative platforms.</p>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background:#3B6D11;"></div>
+      <div>
+        <div class="watch-title">④ EBITDA Margin Trajectory (quarterly)</div>
+        <p class="watch-text">EBITDA margin has expanded from 23% (FY23) → 28% (FY25) → 31.6% (FY26). Management targets stable to expanding margins as operating leverage kicks in. Good direction: normalized EBITDA margin holding 30%+ on standalone basis.</p>
+        <p class="watch-flag">🚨 Red flag: Normalized EBITDA drops below 28% for two quarters — implies reagent inflation or partnership pricing pressure is structural, not seasonal.</p>
+      </div>
+    </div>
+    <div class="watch-item">
+      <div class="watch-dot" style="background:#534AB7;"></div>
+      <div>
+        <div class="watch-title">⑤ Specialty Segment Revenue Traction (from FY28)</div>
+        <p class="watch-text">Genomics + allergy + NIPT are currently sub-₹5 Cr/quarter. Management's target: 15–20% of revenue from specialty within 3 years. Good direction: first quarter above ₹10 Cr in specialty; doctor engagement metrics from the 40-person education team. </p>
+        <p class="watch-flag">🚨 Red flag: By Q2 FY28, specialty is still under 2% of revenue — means the doctor education + infrastructure investment has not converted, and the high-margin specialty re-rating thesis evaporates.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">One watch signal dominates all others: the promoter pledge release is the trigger that could re-rate the stock 20–30% in a single quarter.</div>
+</section>
+
+<!-- ══ VERDICT ══ -->
+<section aria-labelledby="verdict-title">
+  <div class="chapter-header">
+    <div class="ch-num">✓</div>
+    <div>
+      <div class="ch-eyebrow">The Bottom Line</div>
+      <h1 id="verdict-title" class="ch-title">Verdict</h1>
+    </div>
+  </div>
+
+  <div id="verdict-card" role="article" aria-label="Investment verdict">
+    <div class="verdict-label">Story Stage</div>
+    <div class="verdict-stage">📖 Middle Chapter — Turnaround Executed, Second Act Beginning</div>
+    <p class="verdict-text">
+      Three structural tailwinds support Thyrocare's thesis simultaneously: India's diagnostic market doubling by 2034 (12% CAGR), a preventive wellness segment growing at 25%+, and the inexorable shift from 70% unorganized to organized diagnostics. Thyrocare is the only pan-India diagnostic chain with 100% NABL accreditation, 10,800 franchise partners, and a B2B infrastructure model that makes it the back-end for the industry rather than a competitor to it.
+    </p>
+    <p class="verdict-text" style="margin-top:10px;">
+      The quality signal in financials is real: ROCE recovering from 17% (FY23) trough to ~30%+ (FY26e), EBITDA margins expanding 800 bps in three years, negative cash conversion cycle, PAT growing 81% in FY26 — the fastest profit acceleration in listed diagnostics. The management scorecard is pristine: eight consecutive quarters of either meeting or beating guidance, with zero misses.
+    </p>
+    <p class="verdict-text" style="margin-top:10px;">
+      The near-term catalyst is straightforward: any announcement of NCD repayment or pledge release by Docon Technologies / API Holdings. At ₹351 (June 2026), Thyrocare trades at ~34× FY26 PAT — a 35–50% discount to peers Dr. Lal (44×), Metropolis (57×), and Vijaya (63×) — without any obvious justification in business quality. The discount is entirely attributable to the promoter pledge overhang. If that risk resolves, the PE could re-rate toward 45–50×, implying significant upside. But the overhang is real — ₹1,200 Cr+ of API Holdings' NCDs have not disappeared, and forced selling has happened once already (Oct 2025 block sale).
+    </p>
+    <p class="verdict-text" style="margin-top:10px;">
+      This is a middle-chapter story: the restructuring is done, the growth engine is rebuilt and accelerating, and the specialty/genomics third act is still ahead of us. The question is whether the promoter's financial distress creates buying opportunity — or a recurring overhang. Watch the pledge, watch Jaanch, watch the specialty pivot. The business is genuinely good; the corporate structure around it remains complicated.
+    </p>
+  </div>
+</section>
+
+<!-- ══ HIGHLIGHT INDEX ══ -->
+<details id="highlight-index" open>
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol>
+    <!-- Auto-populated by JS -->
+  </ol>
+</details>
+
+</main>
+
+<script>
+// ── Theme toggle ──
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.getElementById('theme-btn').textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  document.getElementById('theme-btn').textContent = next === 'dark' ? '☀️' : '🌙';
+}
+
+// ── Quick-scan toggle ──
+const qsCollapsed = localStorage.getItem('qs-collapsed') === 'true';
+if (qsCollapsed) {
+  document.getElementById('qs-body').classList.add('collapsed');
+  document.getElementById('qs-toggle').textContent = '▼ Expand';
+}
+
+function toggleQS() {
+  const body = document.getElementById('qs-body');
+  const btn = document.getElementById('qs-toggle');
+  const isCollapsed = body.classList.toggle('collapsed');
+  btn.textContent = isCollapsed ? '▼ Expand' : '▲ Collapse';
+  localStorage.setItem('qs-collapsed', isCollapsed);
+  document.getElementById('qs-header').setAttribute('aria-expanded', !isCollapsed);
+}
+
+// ── Highlight index auto-populate ──
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+
+// ── Print: force open ──
+window.addEventListener('beforeprint', () => {
+  document.querySelector('#highlight-index')?.setAttribute('open', '');
+  const qs = document.getElementById('qs-body');
+  if (qs) { qs.classList.remove('collapsed'); qs.style.maxHeight = 'none'; }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>WELCORP — NSE Investor Brief | May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f1ec;
+    --surface: #ffffff;
+    --surface2: #f8f6f1;
+    --text: #1a1410;
+    --text2: #5a5248;
+    --text3: #8a8078;
+    --border: #e0d8d0;
+    --teal: #1D9E75;
+    --coral: #D85A30;
+    --blue: #378ADD;
+    --green: #3B6D11;
+    --purple: #534AB7;
+    --amber: #BA7517;
+    --red-warn: #C0392B;
+    --shadow: 0 2px 16px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --mode: dark; }
+  }
+  [data-theme="dark"] {
+    --bg: #0f0d0b;
+    --surface: #1c1916;
+    --surface2: #242018;
+    --text: #f0ece4;
+    --text2: #b0a898;
+    --text3: #706860;
+    --border: #2e2a24;
+    --shadow: 0 2px 16px rgba(0,0,0,0.4);
+    --shadow-lg: 0 8px 40px rgba(0,0,0,0.5);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 0 80px 0;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 100;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: var(--shadow);
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .theme-toggle:hover { background: var(--surface2); }
+
+  /* COVER */
+  .cover {
+    background: var(--text);
+    color: var(--bg);
+    padding: 56px 28px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: rgba(29, 158, 117, 0.12);
+    pointer-events: none;
+  }
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(216, 90, 48, 0.1);
+    pointer-events: none;
+  }
+  .cover-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  .cover h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin-bottom: 6px;
+    letter-spacing: -0.02em;
+  }
+  .cover-sub {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.7;
+    margin-bottom: 28px;
+  }
+  .cover-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .cover-tag {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    color: rgba(255,255,255,0.75);
+  }
+  .cover-tag.accent { background: var(--teal); border-color: var(--teal); color: #fff; }
+  .cover-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .cstat {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 12px;
+  }
+  .cstat-val {
+    font-family: 'DM Mono', monospace;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    display: block;
+  }
+  .cstat-lbl {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-top: 3px;
+    display: block;
+  }
+
+  /* SECTION STRUCTURE */
+  .section { padding: 32px 20px 0; }
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .chapter-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .chapter-title-block { flex: 1; }
+  .chapter-eyebrow {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 2px;
+  }
+  .chapter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+  }
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 28px 20px 0;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+  .card-accent {
+    border-left: 3px solid var(--teal);
+    padding-left: 16px;
+  }
+  .card-accent.coral { border-left-color: var(--coral); }
+  .card-accent.blue { border-left-color: var(--blue); }
+  .card-accent.green { border-left-color: var(--green); }
+  .card-accent.purple { border-left-color: var(--purple); }
+  .card-accent.amber { border-left-color: var(--amber); }
+
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 6px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  p { margin-bottom: 12px; font-size: 15px; color: var(--text2); }
+  p:last-child { margin-bottom: 0; }
+
+  /* SEGMENT TAGS */
+  .seg-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 3px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    margin-bottom: 8px;
+  }
+  .seg-teal { background: rgba(29,158,117,0.12); color: var(--teal); }
+  .seg-coral { background: rgba(216,90,48,0.12); color: var(--coral); }
+  .seg-blue { background: rgba(55,138,221,0.12); color: var(--blue); }
+  .seg-green { background: rgba(59,109,17,0.12); color: var(--green); }
+  .seg-purple { background: rgba(83,74,183,0.12); color: var(--purple); }
+  .seg-amber { background: rgba(186,117,23,0.12); color: var(--amber); }
+
+  /* STAT ROW */
+  .stat-table { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 12px; }
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-lbl { color: var(--text2); font-weight: 400; }
+  .stat-val {
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
+    color: var(--text);
+    font-size: 13px;
+    text-align: right;
+  }
+  .stat-val.up { color: var(--teal); }
+  .stat-val.dn { color: var(--coral); }
+  .stat-val.neutral { color: var(--amber); }
+
+  /* INSIGHT BOX */
+  .insight-box {
+    background: var(--text);
+    color: var(--bg);
+    border-radius: 12px;
+    padding: 24px 20px;
+    margin-bottom: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  .insight-box::after {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 160px;
+    position: absolute;
+    right: 10px;
+    top: -20px;
+    opacity: 0.07;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .insight-box .insight-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .insight-box p {
+    color: rgba(244,241,236,0.85);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* RISKS */
+  .risk-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-icon { font-size: 18px; flex-shrink: 0; margin-top: 2px; }
+  .risk-title { font-weight: 600; color: var(--text); margin-bottom: 3px; }
+  .risk-body { color: var(--text2); line-height: 1.5; }
+
+  /* WATCH SIGNALS */
+  .watch-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .watch-row:last-child { border-bottom: none; }
+  .watch-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .watch-title { font-weight: 600; color: var(--text); margin-bottom: 2px; }
+  .watch-body { color: var(--text2); line-height: 1.5; }
+
+  /* VERDICT */
+  .verdict-box {
+    background: linear-gradient(135deg, var(--teal) 0%, #159060 100%);
+    color: #fff;
+    border-radius: 12px;
+    padding: 24px 20px;
+    margin-bottom: 12px;
+  }
+  .verdict-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    margin-bottom: 10px;
+  }
+  .verdict-box p {
+    color: rgba(255,255,255,0.9);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* EBITDA PROGRESS BAR */
+  .progress-bar-wrap { margin: 8px 0 4px; }
+  .progress-bar-label { display: flex; justify-content: space-between; font-size: 12px; color: var(--text3); margin-bottom: 5px; }
+  .progress-bar-bg { background: var(--border); border-radius: 4px; height: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; border-radius: 4px; transition: width 1s ease; }
+
+  /* MINI CHART */
+  .sparkline-section { padding: 14px 18px; }
+  .sparkline-row { display: flex; align-items: flex-end; gap: 4px; height: 52px; margin: 12px 0 4px; }
+  .spark-bar { flex: 1; border-radius: 3px 3px 0 0; min-width: 28px; transition: opacity 0.2s; }
+  .spark-labels { display: flex; justify-content: space-between; font-size: 11px; color: var(--text3); margin-top: 4px; }
+  .spark-values { display: flex; justify-content: space-between; font-size: 10px; font-family: 'DM Mono', monospace; color: var(--text2); margin-bottom: 2px; }
+
+  /* FOOTER */
+  .footer {
+    margin: 40px 20px 0;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--text3);
+    line-height: 1.6;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 400px) {
+    .cover { padding: 44px 18px 36px; }
+    .cover-stats { grid-template-columns: repeat(2, 1fr); }
+    .cover-stats .cstat:last-child { grid-column: span 2; }
+    .section { padding: 28px 16px 0; }
+    .divider { margin: 24px 16px 0; }
+    .card { padding: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode" id="themeBtn">
+  ☀︎ Light
+</button>
+
+<!-- COVER -->
+<header class="cover" role="banner">
+  <div class="cover-eyebrow" aria-label="Stock information">NSE: WELCORP · Iron &amp; Steel · May 19, 2026</div>
+  <h1>Welspun Corp</h1>
+  <div class="cover-sub">The pipe that flows from AI data centres to Arabian deserts</div>
+  <div class="cover-meta" aria-label="Stock tags">
+    <span class="cover-tag accent">Global Line Pipes</span>
+    <span class="cover-tag">DI Pipes</span>
+    <span class="cover-tag">Sintex</span>
+    <span class="cover-tag">USA + Saudi + India</span>
+  </div>
+  <div class="cover-stats" aria-label="Key metrics">
+    <div class="cstat">
+      <span class="cstat-val">₹25,350 Cr</span>
+      <span class="cstat-lbl">Order Book</span>
+    </div>
+    <div class="cstat">
+      <span class="cstat-val">~₹36,000 Cr</span>
+      <span class="cstat-lbl">Market Cap</span>
+    </div>
+    <div class="cstat">
+      <span class="cstat-val">24.4%</span>
+      <span class="cstat-lbl">ROCE (9M FY26)</span>
+    </div>
+  </div>
+</header>
+
+<!-- CHAPTER 1: CONTEXT -->
+<section class="section" aria-labelledby="ch1-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">1</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Context</div>
+      <h2 class="chapter-title" id="ch1-title">Three tailwinds, one pipe company</h2>
+    </div>
+  </div>
+
+  <div class="card card-accent coral">
+    <div class="card-label">USA — AI &amp; LNG Supercycle</div>
+    <p>The AI data-centre boom has created an unexpected new customer for steel pipes. Each mega data centre needs a dedicated gas-fired power plant, and each power plant needs pipelines. Kinder Morgan estimates US natural gas demand will hit 150 Bcf per day by 2031. The INGAA Foundation forecasts a $1 trillion pipeline buildout over 26 years — 40,000 new miles of transmission capacity. US LNG exports are expected to reach 17 Bcf/d in 2026 and nearly double to over 30 Bcf/d by the early 2030s. This is the strongest sustained pipe demand cycle in a generation.</p>
+  </div>
+
+  <div class="card card-accent amber">
+    <div class="card-label">Saudi Arabia — Vision 2030 Rearmament</div>
+    <p>Saudi Aramco has raised its capex guidance to US$52–55 billion and plans to grow gas production from 11.8 Bcf/day to 16.6 Bcf/day by 2030 — requiring 4,000 km of new gas pipelines. Reconstruction spending across Syria and neighbouring countries adds further demand. Two-thirds of the Saudi DI pipe market currently relies on imports. Welspun is building localised manufacturing in the Kingdom for both line pipes and ductile iron pipes, positioning itself as an import-substitution play.</p>
+  </div>
+
+  <div class="card card-accent blue">
+    <div class="card-label">India — JJM Revival + Domestic O&amp;G Awakening</div>
+    <p>After two soft quarters, India's water infrastructure cycle is turning. The Union Budget allocated ₹70,000 crores to Jal Jeevan Mission, which has been extended to 2028. River-interlinking mega-projects (Ken-Betwa, PKC, ERCP, Marathwada Grid) represent 2–3 million tonnes of DI pipe demand in 3–5 years. Simultaneously, India's CGD network will see ₹40,000 crore in investment until 2034, and GAIL is investing ₹2,000–3,000 crore in FY26 for pipeline infrastructure. Water infrastructure in India is on track to grow at 11.6% CAGR to reach US$17.9 billion by FY29.</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section class="section" aria-labelledby="ch2-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">2</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Business Model</div>
+      <h2 class="chapter-title" id="ch2-title">Making the arteries that move energy and water</h2>
+    </div>
+  </div>
+
+  <p style="font-size:15px;color:var(--text2);">Welspun Corp makes large-diameter steel pipes — the physical infrastructure that moves oil, gas, and water from where it is to where it's needed. The company operates five business lines spread across three continents: India, the United States, and Saudi Arabia.</p>
+
+  <div class="card">
+    <div class="card-label">The Five Businesses</div>
+    <div class="stat-row">
+      <div>
+        <span class="seg-tag seg-teal">Line Pipes</span>
+        <div class="stat-lbl">India + USA (Little Rock, Arkansas)</div>
+      </div>
+      <span class="stat-val">~265 KMT / Qtr</span>
+    </div>
+    <div class="stat-row">
+      <div>
+        <span class="seg-tag seg-blue">DI Pipes</span>
+        <div class="stat-lbl">India + Saudi Arabia (greenfield)</div>
+      </div>
+      <span class="stat-val">~92 KMT / Qtr</span>
+    </div>
+    <div class="stat-row">
+      <div>
+        <span class="seg-tag seg-green">Sintex</span>
+        <div class="stat-lbl">Water tanks + OPVC plastic pipes</div>
+      </div>
+      <span class="stat-val">Ramping up</span>
+    </div>
+    <div class="stat-row">
+      <div>
+        <span class="seg-tag seg-purple">WSSL</span>
+        <div class="stat-lbl">Stainless steel bars, pipes &amp; tubes</div>
+      </div>
+      <span class="stat-val">~6 KMT / Qtr</span>
+    </div>
+    <div class="stat-row">
+      <div>
+        <span class="seg-tag seg-amber">TMT Rebars</span>
+        <div class="stat-lbl">Welspun Shield brand (India)</div>
+      </div>
+      <span class="stat-val">~50 KMT / Qtr</span>
+    </div>
+  </div>
+
+  <div class="card card-accent teal">
+    <div class="card-label">The Flywheel</div>
+    <p>Welspun wins project orders by offering end-to-end supply — pipes, corrosion coatings, concrete coating, bends, and bend coatings — along with technical certifications for hydrogen-grade and deep-sea applications that few competitors hold. Getting certified for a new market (Argentina, Australia, Europe) permanently expands the addressable pool. Each project executed becomes a reference for the next. Over 8 of the last 10 years, Welspun has broken the 1-million-tonne-per-year global line pipe sales mark — an extraordinary consistency in a project-driven business.</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 3: VERTICALS -->
+<section class="section" aria-labelledby="ch3-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">3</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Vertical Stories</div>
+      <h2 class="chapter-title" id="ch3-title">Five engines, three geographies</h2>
+    </div>
+  </div>
+
+  <div class="card card-accent coral">
+    <span class="seg-tag seg-coral">USA — Line Pipes</span>
+    <div class="card-title">Little Rock: Booked solid until FY28</div>
+    <p>Welspun's mill in Little Rock, Arkansas currently runs a spiral mill that is fully booked through March 2028. A new LSAW (longitudinal submerged arc welded) mill is coming online in Q4 FY26 and a new HFIW mill in Q1 FY27. These additions will materially expand US volumes. The external demand driver is concrete: midstream operators are building 8–9 major new pipelines to feed LNG export terminals and data-centre power plants. The Strait of Hormuz conflict has added further urgency to US-based pipeline supply chains.</p>
+    <p style="font-size:13px;margin-top:8px;color:var(--text3);">Status: ✦ Running &amp; ramping | New capacity H2 FY26</p>
+  </div>
+
+  <div class="card card-accent amber">
+    <span class="seg-tag seg-amber">Saudi Arabia — Line Pipes + DI Pipes</span>
+    <div class="card-title">Two greenfield plants in the Kingdom</div>
+    <p>Welspun is building a new LSAW pipe facility in Saudi Arabia — with the dual logic of serving Saudi Aramco's domestic 4,000 km pipeline programme and acting as an export hub for markets currently unreachable from India due to antidumping duties. Separately, a greenfield DI pipe plant targets the Saudi water infrastructure market, where 2/3rds of consumption is currently imported. The Saudi government is already investigating antidumping duties on cheap DI pipe imports — which would accelerate Welspun's import substitution story once production begins. Management expects Saudi projects to begin contributing from Q2 FY27 onwards.</p>
+    <p style="font-size:13px;margin-top:8px;color:var(--text3);">Status: ✦✦ Under construction | First steel by Q2 FY27</p>
+  </div>
+
+  <div class="card card-accent blue">
+    <span class="seg-tag seg-blue">India — DI Pipes (Ductile Iron)</span>
+    <div class="card-title">JJM revival: ₹70,000 Cr budget, projects starting Q1 FY27</div>
+    <p>DI pipes serve the water infrastructure market — Jal Jeevan Mission, AMRUT 2, irrigation, and sewerage. After a two-quarter funding lull (government payments were delayed while an audit was completed), management confirms the audit is done and spending is expected from Q1 FY27. The mega river-linking projects alone could generate 2–3 million tonnes of pipe demand over 3–5 years. Welspun also began exporting DI pipes to Europe, Middle East, and Africa, with an export infrastructure now fully ready. Q3 FY26 volumes grew 39% YoY despite the domestic slowdown.</p>
+    <p style="font-size:13px;margin-top:8px;color:var(--text3);">Status: ✦ Running | Domestic recovery expected Q1 FY27</p>
+  </div>
+
+  <div class="card card-accent teal">
+    <span class="seg-tag seg-teal">India — Line Pipes (Export O&amp;G)</span>
+    <div class="card-title">India as an export hub for non-tariff global markets</div>
+    <p>India-origin pipe exports are going to Australia, Qatar, Latin America, and Europe — markets with no antidumping barriers. A first breakthrough in Argentina in Q3 FY26 was notable, won on quality and technical superiority. India also benefits from upcoming Free Trade Agreements (particularly with the EU) that will open new export corridors. For domestic O&G, GAIL, BPCL, and IOCL are expected to tender multiple large projects in FY27 as LNG capacity at Indian terminals grows from 52.7 MMTPA to 86.9 MMTPA.</p>
+    <p style="font-size:13px;margin-top:8px;color:var(--text3);">Status: ✦ Running, FTA optionality building</p>
+  </div>
+
+  <div class="card card-accent green">
+    <span class="seg-tag seg-green">Sintex — Water Tanks + OPVC Pipes</span>
+    <div class="card-title">Brand revival + new category entry</div>
+    <p>Sintex (acquired from resolution proceedings) is India's most recognised water tank brand. Management is systematically rebuilding market share via dealer expansion (7,000 unique billed outlets, up 25% in H1 FY26), the Sintex Eterno 50-year warranty premium tank, and WPL women's cricket sponsorship. The bigger prize is OPVC pipes — a newer plastic pipe technology for water distribution with a very large total addressable market. Sintex has now cleared approvals and empanelment in Chhattisgarh, Madhya Pradesh, and southern states. Execution of the OPVC order backlog has started.</p>
+    <p style="font-size:13px;margin-top:8px;color:var(--text3);">Status: ✦ Tanks ramping | OPVC early innings</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section class="section" aria-labelledby="ch4-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">4</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Strategic Insight</div>
+      <h2 class="chapter-title" id="ch4-title">The one thing to understand</h2>
+    </div>
+  </div>
+
+  <div class="insight-box" role="blockquote" aria-label="Key strategic insight">
+    <div class="insight-label">The Non-Obvious Insight</div>
+    <p>Welspun Corp is not an Indian pipe exporter. It is three local manufacturers — one American, one Saudi, one Indian — that happen to share an owner. When the US imposed antidumping duties on Indian line pipes, Welspun's response was not to lobby for exemptions. It was to build a factory in Arkansas. When Saudi Arabia restricts imports, Welspun's answer is a greenfield plant in the Kingdom. This "local everywhere" strategy means tariffs, trade wars, and import restrictions — events that hurt every Indian exporter — are events that <em>help</em> Welspun, by raising the bar against the Chinese and Korean competition while Welspun sits safely inside the tariff wall. The US mill is fully booked until FY28 not because of Indian pipe exports, but because American pipeline companies would rather buy from an American manufacturer.</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 5: NUMBERS -->
+<section class="section" aria-labelledby="ch5-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">5</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Numbers in Context</div>
+      <h2 class="chapter-title" id="ch5-title">Eight quarters of compounding</h2>
+    </div>
+  </div>
+
+  <!-- EBITDA sparkline -->
+  <div class="card" aria-label="EBITDA trend over six quarters">
+    <div class="card-label">Quarterly EBITDA (₹ Crore) — 6-Quarter Arc</div>
+    <div class="sparkline-section">
+      <div class="spark-values">
+        <span>462</span>
+        <span>478</span>
+        <span>502</span>
+        <span>560</span>
+        <span>626</span>
+        <span style="color:var(--teal);font-weight:600;">645</span>
+      </div>
+      <div class="sparkline-row" aria-hidden="true">
+        <div class="spark-bar" style="height:56%;background:var(--border);"></div>
+        <div class="spark-bar" style="height:58%;background:var(--border);"></div>
+        <div class="spark-bar" style="height:61%;background:var(--border);"></div>
+        <div class="spark-bar" style="height:72%;background:var(--border);"></div>
+        <div class="spark-bar" style="height:90%;background:var(--teal);opacity:0.6;"></div>
+        <div class="spark-bar" style="height:100%;background:var(--teal);"></div>
+      </div>
+      <div class="spark-labels">
+        <span>Q2FY25</span>
+        <span>Q3FY25</span>
+        <span>Q4FY25</span>
+        <span>Q1FY26</span>
+        <span>Q2FY26</span>
+        <span style="color:var(--teal)">Q3FY26</span>
+      </div>
+    </div>
+    <p style="font-size:13px;color:var(--text3);padding:0 0 6px;">Q3 FY26 EBITDA of ₹645 Cr is the highest ever quarterly EBITDA; includes ₹25 Cr one-time labour code provision. Underlying EBITDA ~₹670 Cr.</p>
+  </div>
+
+  <!-- FY26 Guidance Progress -->
+  <div class="card" aria-label="FY26 guidance progress">
+    <div class="card-label">FY26 Guidance vs. 9M Progress</div>
+    <div style="padding: 4px 0 12px;">
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text2);margin-bottom:6px;">
+        <span>Revenue</span>
+        <span style="font-family:'DM Mono',monospace;">₹12,458 Cr / ₹17,500 Cr guidance</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width:71%;background:var(--teal);"></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px;">71% of full-year target in 9 months</div>
+    </div>
+    <div style="padding: 4px 0 4px;border-top:1px solid var(--border);">
+      <div style="display:flex;justify-content:space-between;font-size:13px;color:var(--text2);margin-bottom:6px;margin-top:10px;">
+        <span>EBITDA</span>
+        <span style="font-family:'DM Mono',monospace;">₹1,831 Cr / ₹2,200 Cr guidance</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width:83%;background:var(--teal);"></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:4px;">83% achieved — on track to exceed guidance</div>
+    </div>
+  </div>
+
+  <!-- Key financials -->
+  <div class="stat-table" aria-label="Key financial metrics">
+    <div class="stat-row"><span class="stat-lbl">Q3 FY26 Revenue</span><span class="stat-val up">₹4,532 Cr (+25% YoY)</span></div>
+    <div class="stat-row"><span class="stat-lbl">Q3 FY26 EBITDA</span><span class="stat-val up">₹645 Cr (+35% YoY)</span></div>
+    <div class="stat-row"><span class="stat-lbl">EBITDA Margin (9M FY26)</span><span class="stat-val up">14.7%</span></div>
+    <div class="stat-row"><span class="stat-lbl">PAT (Q3 FY26)</span><span class="stat-val">₹453 Cr</span></div>
+    <div class="stat-row"><span class="stat-lbl">ROCE (9M FY26 annualised)</span><span class="stat-val up">24.4%</span></div>
+    <div class="stat-row"><span class="stat-lbl">Net Debt (9M FY26)</span><span class="stat-val up">Net cash ₹132 Cr</span></div>
+    <div class="stat-row"><span class="stat-lbl">FY26 Capex (9M)</span><span class="stat-val dn">₹1,722 Cr deployed</span></div>
+    <div class="stat-row"><span class="stat-lbl">Global Order Book (May 2026)</span><span class="stat-val up">₹25,350 Cr / US$2.6B</span></div>
+  </div>
+
+  <!-- Valuation -->
+  <div class="card card-accent amber" aria-label="Valuation context">
+    <div class="card-label">Valuation &amp; What the Market is Pricing In</div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">CMP (May 19, 2026)</span>
+      <span class="stat-val">~₹1,350</span>
+    </div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">Market Cap</span>
+      <span class="stat-val">~₹36,000 Cr</span>
+    </div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">TTM P/E</span>
+      <span class="stat-val neutral">~18–19x</span>
+    </div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">P/B</span>
+      <span class="stat-val neutral">~4.6x</span>
+    </div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">1-Year Price Return</span>
+      <span class="stat-val up">+74%</span>
+    </div>
+    <div class="stat-row" style="padding:8px 0;border-bottom:1px solid var(--border);">
+      <span class="stat-lbl">Nuvama Target Price</span>
+      <span class="stat-val up">₹1,028 (Buy, initiated)</span>
+    </div>
+    <p style="font-size:13px;color:var(--text2);padding: 10px 0 0;">At 18–19x trailing earnings, the market is crediting the ongoing capacity expansion but not fully pricing the potential step-change when Saudi and new US mills come online in FY27. The EBITDA trajectory (8% → 10% → 13% → 14.7%) implies further margin expansion as high-margin US and Saudi operations scale. Peers like Ratnamani trade at 35–40x; APL Apollo at 50–60x. WELCORP's discount partly reflects the project execution risk and working capital intensity, but also creates headroom if FY27 delivery surprises.</p>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 6: RISKS -->
+<section class="section" aria-labelledby="ch6-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">6</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Risks — Eyes Open</div>
+      <h2 class="chapter-title" id="ch6-title">Five things that could go wrong</h2>
+    </div>
+  </div>
+
+  <div class="stat-table" role="list" aria-label="Investment risks">
+    <div class="risk-row" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <div class="risk-title">Simultaneous capex on 7–8 projects</div>
+        <div class="risk-body">Welspun is executing new mills in the US (LSAW + HFIW), Saudi Arabia (DI + LSAW), and multiple India projects concurrently. Any delays push revenue recognition into later quarters and tie up working capital. Signal: watch for capex guidance slippage or delays in first-steel dates disclosed each quarter.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <div class="risk-title">India government spending unpredictability</div>
+        <div class="risk-body">JJM funds were slow in FY25–H1 FY26 despite budget allocations. The domestic DI pipe and water-sector pipe business is entirely dependent on state governments actually spending money. The FY26 budget gives comfort, but the same risk repeats every year. Signal: Monitor quarterly DI pipe volume — two consecutive soft quarters below 80 KMT would be a red flag.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <div class="risk-title">Hot-rolled coil price volatility</div>
+        <div class="risk-body">Line pipes are essentially fabricated HR coil. Sharp HRC price spikes compress margins, especially in fixed-price contracts. The pass-through lag can be 1–2 quarters. When input costs rise faster than realisations, margins compress. Signal: Watch gross margin and EBITDA per tonne in back-to-back quarters when HRC prices are rising sharply.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <div class="risk-title">US political / regulatory risk</div>
+        <div class="risk-body">The "local manufacturer" story depends on Welspun's US entity being treated as an American company for tariff purposes. Any change in Buy America provisions, tightening of domestic content rules, or aggressive trade investigation could challenge this positioning. Welspun's US subsidiary is operationally domestic but Indian-owned — a distinction that could matter under certain political scenarios. Magnitude: high but probability low given current administration's infrastructure push.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="listitem">
+      <div class="risk-icon" aria-hidden="true">⚠️</div>
+      <div>
+        <div class="risk-title">Sintex integration drag on group margins</div>
+        <div class="risk-body">Sintex and TMT rebars are structurally lower-margin than large-diameter steel pipes. As these segments scale, they may dilute consolidated EBITDA margin even as headline revenues grow. The brand revival is real, but OPVC pipe market penetration in competitive state-level tender markets could take longer than management's timeline. Signal: Watch Sintex EBITDA contribution (or losses) disclosed quarterly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section class="section" aria-labelledby="ch7-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">7</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Watch Signals</div>
+      <h2 class="chapter-title" id="ch7-title">Five metrics, five minutes per concall</h2>
+    </div>
+  </div>
+
+  <div class="stat-table" role="list" aria-label="Watch signals for investors">
+    <div class="watch-row" role="listitem">
+      <div class="watch-dot" style="background:var(--teal);" aria-hidden="true"></div>
+      <div>
+        <div class="watch-title">Global order book trajectory</div>
+        <div class="watch-body">Currently ₹25,350 Cr. Good: breaching ₹28,000 Cr signals continued demand strength and allows pricing power. Red flag: order book declining below ₹20,000 Cr would mean bookings aren't replacing executions.</div>
+      </div>
+    </div>
+    <div class="watch-row" role="listitem">
+      <div class="watch-dot" style="background:var(--coral);" aria-hidden="true"></div>
+      <div>
+        <div class="watch-title">US mill utilisation &amp; first revenue from new LSAW</div>
+        <div class="watch-body">Watch Q4 FY26 and Q1 FY27 disclosures for when the new US LSAW mill achieves commercial production. A positive: first order execution from the new LSAW mill on schedule. Red flag: any communication of delay beyond Q1 FY27.</div>
+      </div>
+    </div>
+    <div class="watch-row" role="listitem">
+      <div class="watch-dot" style="background:var(--blue);" aria-hidden="true"></div>
+      <div>
+        <div class="watch-title">DI pipe volumes recovering post JJM revival</div>
+        <div class="watch-body">Q3 FY26 was 92 KMT. With JJM funds expected to flow from Q1 FY27, watch for DI pipe volumes consistently exceeding 100 KMT per quarter. That would confirm the government spending cycle has genuinely restarted. Anything below 75 KMT in Q2 FY27 would be a red flag.</div>
+      </div>
+    </div>
+    <div class="watch-row" role="listitem">
+      <div class="watch-dot" style="background:var(--amber);" aria-hidden="true"></div>
+      <div>
+        <div class="watch-title">Saudi first-steel date for LSAW and DI plants</div>
+        <div class="watch-body">Management guided H2 FY26 to FY27 for Saudi plants. These are strategic anchors — both the margin premium and the strategic value of being a local Saudi supplier are significant. Watch for any slippage in the commissioning timeline across Q4 FY26 and Q1 FY27 calls.</div>
+      </div>
+    </div>
+    <div class="watch-row" role="listitem">
+      <div class="watch-dot" style="background:var(--green);" aria-hidden="true"></div>
+      <div>
+        <div class="watch-title">EBITDA margin sustaining above 14%</div>
+        <div class="watch-body">Margin has expanded from 8.2% (FY23) to 14.7% (9M FY26). Sustaining above 14% through the capex cycle would confirm the high-value US and Saudi mix is structurally improving profitability. A drop below 12% for two consecutive quarters would indicate input cost pressure or margin dilution from lower-value segments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<!-- VERDICT -->
+<section class="section" aria-labelledby="verdict-title">
+  <div class="chapter-header">
+    <div class="chapter-num" aria-hidden="true">✦</div>
+    <div class="chapter-title-block">
+      <div class="chapter-eyebrow">Verdict</div>
+      <h2 class="chapter-title" id="verdict-title">Where are we in the story?</h2>
+    </div>
+  </div>
+
+  <div class="verdict-box" role="region" aria-labelledby="verdict-title">
+    <div class="verdict-label">The Investment Case in 175 Words</div>
+    <p>Welspun Corp is a late-middle-chapters story. The structural tailwinds — US LNG and data-centre pipeline buildout, Saudi Vision 2030, India JJM revival — are not speculative; they are funded and underway. The quality signal is unambiguous: ROCE has gone from 7.9% in FY23 to 24.4% in 9M FY26, EBITDA margins have nearly doubled, and the company sits in a net cash position despite deploying ₹1,722 crore in capex in nine months. The near-term catalyst is the commissioning of new US LSAW and Saudi mills in FY27 — these will add high-margin capacity at a time when the global order book is a record ₹25,350 crore. At 18–19x trailing earnings, the stock is cheap relative to pipeline peers who trade at 35–50x — the discount reflects execution risk on simultaneous projects. That risk is real, but management's track record of hitting 1 million tonnes globally for 8 of 10 years suggests this team knows how to execute. This is a company mid-transition from Indian pipe maker to global infrastructure manufacturer — and that repricing is still incomplete.</p>
+  </div>
+</section>
+
+<footer class="footer" role="contentinfo">
+  <strong>Disclaimer:</strong> This brief is for informational and educational purposes only. It does not constitute investment advice or a recommendation to buy, sell, or hold any security. All data sourced from public disclosures, concall transcripts, and investor presentations. Q4 FY26 results are due May 22, 2026 — some financials reflect 9M FY26. Verify all figures independently before making investment decisions.<br><br>
+  Sources: Welspun Corp Q3 FY26 Earnings Concall (Feb 2, 2026), Q3 FY26 Investor Presentation, NSE exchange filings (May 2026), EIA, INGAA Foundation, Deloitte Energy Outlook 2026, Kinder Morgan earnings call (Apr 2026).
+</footer>
+
+<script>
+  // Theme management
+  const savedTheme = localStorage.getItem('wcl-brief-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+  if (initialTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('themeBtn').textContent = '☾ Dark';
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      document.getElementById('themeBtn').textContent = '☀︎ Light';
+      localStorage.setItem('wcl-brief-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      document.getElementById('themeBtn').textContent = '☾ Dark';
+      localStorage.setItem('wcl-brief-theme', 'dark');
+    }
+  }
+</script>
+</body>
+</html>

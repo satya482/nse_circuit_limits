@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IGL — Indraprastha Gas Limited | Investor Brief May 2026</title>
+  <style>
+    /* ===== CSS CUSTOM PROPERTIES — DAY/NIGHT MODE ===== */
+    :root {
+      --bg: #f5f4f0;
+      --bg-card: #ffffff;
+      --bg-card2: #f0efe9;
+      --text-primary: #1a1a1a;
+      --text-secondary: #4a4a4a;
+      --text-muted: #767676;
+      --border: #e0ddd5;
+      --border-accent: #c8c4ba;
+      --shadow: 0 2px 8px rgba(0,0,0,0.08);
+      --shadow-lg: 0 4px 16px rgba(0,0,0,0.12);
+
+      /* segment colours */
+      --c-amber:  #BA7517;
+      --c-teal:   #1D9E75;
+      --c-blue:   #378ADD;
+      --c-green:  #3B6D11;
+      --c-purple: #534AB7;
+      --c-coral:  #D85A30;
+      --c-gray:   #767676;
+
+      /* rating badges */
+      --badge-high:   #D85A30;
+      --badge-mod:    #BA7517;
+      --badge-low:    #1D9E75;
+    }
+
+    [data-theme="dark"] {
+      --bg: #111210;
+      --bg-card: #1c1c1a;
+      --bg-card2: #242420;
+      --text-primary: #f0ede6;
+      --text-secondary: #c4c0b4;
+      --text-muted: #7a7870;
+      --border: #2e2e2a;
+      --border-accent: #3c3c36;
+      --shadow: 0 2px 8px rgba(0,0,0,0.4);
+      --shadow-lg: 0 4px 16px rgba(0,0,0,0.5);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 17px;
+      line-height: 1.75;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    /* ===== LAYOUT ===== */
+    .page-wrap { max-width: 860px; margin: 0 auto; padding: 20px 20px 60px; }
+
+    /* ===== TOGGLE ===== */
+    .mode-toggle {
+      position: fixed;
+      top: 14px;
+      right: 18px;
+      z-index: 999;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      transition: background 0.3s, color 0.3s;
+    }
+    .mode-toggle:hover { background: var(--bg-card2); }
+
+    /* ===== COVER CARD ===== */
+    .cover {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px 36px 30px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-lg);
+    }
+    .cover-eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--c-amber);
+      margin-bottom: 10px;
+    }
+    .cover-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+    .cover-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 22px;
+    }
+    .cover-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .tag {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 3px 10px;
+      border-radius: 12px;
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+    }
+    .cover-hook {
+      font-size: 1.12rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      border-left: 4px solid var(--c-amber);
+      padding-left: 16px;
+      line-height: 1.6;
+    }
+
+    /* ===== CHAPTER HEADERS ===== */
+    .chapter {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 32px 32px 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+    .chapter-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 22px;
+    }
+    .chapter-num {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #ffffff;
+      background: var(--c-amber);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .chapter-num.teal   { background: var(--c-teal); }
+    .chapter-num.blue   { background: var(--c-blue); }
+    .chapter-num.green  { background: var(--c-green); }
+    .chapter-num.coral  { background: var(--c-coral); }
+    .chapter-num.purple { background: var(--c-purple); }
+    .chapter-num.gray   { background: var(--c-gray); }
+
+    .chapter-header-text {}
+    .chapter-eyebrow {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    .chapter-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.25;
+    }
+
+    /* ===== PROSE ===== */
+    .prose p { margin-bottom: 14px; color: var(--text-secondary); }
+    .prose p:last-child { margin-bottom: 0; }
+
+    /* ===== STAT ROWS ===== */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .stat-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+    }
+    .stat-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .stat-value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    .stat-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .stat-value.up   { color: var(--c-teal); }
+    .stat-value.down { color: var(--c-coral); }
+    .stat-value.amber { color: var(--c-amber); }
+
+    /* ===== INSIGHT CARDS ===== */
+    .insight-card {
+      border-left: 4px solid var(--c-amber);
+      background: var(--bg-card2);
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+    .insight-card.teal   { border-left-color: var(--c-teal); }
+    .insight-card.blue   { border-left-color: var(--c-blue); }
+    .insight-card.green  { border-left-color: var(--c-green); }
+    .insight-card.coral  { border-left-color: var(--c-coral); }
+    .insight-card.purple { border-left-color: var(--c-purple); }
+
+    /* ===== VERTICAL STORY CARDS ===== */
+    .vertical-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .vertical-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      border-top: 4px solid var(--c-amber);
+    }
+    .vertical-card.teal   { border-top-color: var(--c-teal); }
+    .vertical-card.blue   { border-top-color: var(--c-blue); }
+    .vertical-card.green  { border-top-color: var(--c-green); }
+    .vertical-card.coral  { border-top-color: var(--c-coral); }
+    .vertical-card.purple { border-top-color: var(--c-purple); }
+
+    .vertical-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    .vertical-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+    .vertical-body {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .status-badge {
+      display: inline-block;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+    .status-running { background: #e6f7f2; color: #1D9E75; }
+    .status-ramping  { background: #fef3e2; color: #BA7517; }
+    .status-proto    { background: #f5e9e5; color: #D85A30; }
+    [data-theme="dark"] .status-running { background: #0d2e23; }
+    [data-theme="dark"] .status-ramping  { background: #2e2003; }
+    [data-theme="dark"] .status-proto    { background: #2e1209; }
+
+    /* ===== PORTER'S FIVE FORCES ===== */
+    .forces-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .force-center { grid-column: 1 / -1; }
+
+    @media (max-width: 600px) {
+      .forces-grid { grid-template-columns: 1fr; }
+      .force-center { grid-column: 1; }
+    }
+
+    .force-card {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .force-name {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .force-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .force-rating.high   { background: var(--badge-high); }
+    .force-rating.mod    { background: var(--badge-mod); }
+    .force-rating.low    { background: var(--badge-low); }
+
+    .force-body {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+    .force-implication {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+
+    .moat-bar {
+      background: var(--bg-card2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 14px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .moat-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-right: 6px;
+    }
+    .moat-badge {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--c-amber);
+      background: var(--bg-card);
+      border: 2px solid var(--c-amber);
+      padding: 4px 14px;
+      border-radius: 14px;
+    }
+    .moat-peer {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* ===== RISKS ===== */
+    .risk-list { margin-top: 16px; }
+    .risk-item {
+      display: flex;
+      gap: 14px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .risk-item:last-child { border-bottom: none; }
+    .risk-icon {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+      color: var(--c-amber);
+    }
+    .risk-title {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    .risk-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+    .risk-signal {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-top: 5px;
+      font-style: italic;
+    }
+
+    /* ===== WATCH SIGNALS ===== */
+    .watch-list { margin-top: 16px; }
+    .watch-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .watch-item:last-child { border-bottom: none; }
+    .watch-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--c-teal);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .watch-dot.amber  { background: var(--c-amber); }
+    .watch-dot.blue   { background: var(--c-blue); }
+    .watch-dot.coral  { background: var(--c-coral); }
+    .watch-dot.purple { background: var(--c-purple); }
+    .watch-dot.green  { background: var(--c-green); }
+
+    .watch-title { font-weight: 700; color: var(--text-primary); margin-bottom: 3px; }
+    .watch-body { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ===== VERDICT ===== */
+    .verdict {
+      background: var(--bg-card);
+      border: 2px solid var(--c-amber);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-lg);
+    }
+    .verdict-label {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-amber);
+      margin-bottom: 10px;
+    }
+    .verdict-text { color: var(--text-secondary); line-height: 1.8; }
+
+    /* ===== TABLE ===== */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin: 16px 0;
+    }
+    .data-table th {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-align: left;
+      padding: 8px 10px;
+      border-bottom: 2px solid var(--border);
+    }
+    .data-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+    .data-table tr:last-child td { border-bottom: none; }
+    .data-table td.num {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      color: var(--text-primary);
+      text-align: right;
+    }
+    .data-table td.up  { color: var(--c-teal); font-weight: 700; text-align: right; }
+    .data-table td.dn  { color: var(--c-coral); font-weight: 700; text-align: right; }
+    .data-table tr.hl { background: var(--bg-card2); }
+
+    /* ===== DIVIDER ===== */
+    .divider { height: 1px; background: var(--border); margin: 8px 0 20px; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .page-wrap { padding: 12px 14px 50px; }
+      .cover, .chapter { padding: 22px 18px 20px; }
+      .cover-title { font-size: 1.7rem; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+      .verdict { padding: 20px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<button class="mode-toggle" onclick="toggleTheme()" aria-label="Toggle day and night mode">🌙 Night Mode</button>
+
+<main class="page-wrap" role="main">
+
+  <!-- ===== COVER ===== -->
+  <header class="cover" aria-label="Company overview cover card">
+    <div class="cover-eyebrow" aria-label="Stock identifier and date">NSE: IGL &nbsp;·&nbsp; City Gas Distribution &nbsp;·&nbsp; Energy Utility &nbsp;·&nbsp; May 27, 2026</div>
+    <h1 class="cover-title">Indraprastha Gas Limited</h1>
+    <p class="cover-subtitle">Delhi-NCR's Gas Monopoly — Navigating the APM Squeeze, CNG Hikes, and a ₹165 Cr-Per-Year Expansion Machine</p>
+    <div class="cover-tags" role="list" aria-label="Company characteristic tags">
+      <span class="tag" role="listitem">#CityGasDistribution</span>
+      <span class="tag" role="listitem">#RegulatedMonopoly</span>
+      <span class="tag" role="listitem">#CNGTransport</span>
+      <span class="tag" role="listitem">#PNGDomestic</span>
+      <span class="tag" role="listitem">#APMSqueeze</span>
+      <span class="tag" role="listitem">#GeographicExpansion</span>
+      <span class="tag" role="listitem">#MarginRecovery</span>
+      <span class="tag" role="listitem">#DelhibNCR</span>
+      <span class="tag" role="listitem">#DebtFree</span>
+      <span class="tag" role="listitem">#EVThreatBuilding</span>
+      <span class="tag" role="listitem">#NarrowMoat</span>
+      <span class="tag" role="listitem">#HistoricallyLowPE</span>
+    </div>
+    <blockquote class="cover-hook" aria-label="Investment memory hook">
+      "IGL doesn't sell gas — it sells the pipe that gas flows through. In every one of its 32 authorized districts, it is the only company allowed to do so for the next 25 years. The current profit squeeze is a gas-cost crisis, not a business-model crisis."
+    </blockquote>
+  </header>
+
+  <!-- ===== CHAPTER 1 — CONTEXT ===== -->
+  <article class="chapter" aria-labelledby="ch1-title">
+    <div class="chapter-header">
+      <div class="chapter-num" aria-hidden="true">01</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">The Big Picture First</div>
+        <h2 class="chapter-title" id="ch1-title">Context — Why India's Gas Story Is Only in Chapter Two</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>India is in the middle of a structural shift toward natural gas as a transition fuel. The government has set an ambitious target of raising natural gas's share in India's energy mix from about 6 percent today to 15 percent by 2030. That's not a rounding error — it's a near-threefold increase in gas consumption over the next four years. The City Gas Distribution (CGD) sector sits directly in the path of that shift.</p>
+      <p>The India CGD market was estimated at USD 12.79 billion in 2026 and is growing at a <strong>12.84 percent CAGR</strong>, projected to reach USD 23.38 billion by 2031. The CNG segment alone constitutes 55 percent of CGD volumes, and the India CNG market is forecast to hit USD 56.30 billion by 2035. Every auto-rickshaw converted from petrol, every commercial vehicle moved off diesel, every household kitchen that replaces LPG cylinders with a piped connection is a permanent unit of incremental demand for CGD companies.</p>
+      <p>The <strong>PNGRB (Petroleum and Natural Gas Regulatory Board)</strong> has been the institutional enabler: it awarded GAs across 9+ bidding rounds, handed out 25-year exclusivity licences, and is now implementing a Unified Tariff Order (effective January 2026) to rationalise pipeline charges and incentivise infrastructure investment. Simultaneously, the government has been trying to manage APM (Administered Price Mechanism) gas pricing to balance upstream producer economics with downstream affordability — a tug-of-war that has been IGL's dominant financial headline in FY26.</p>
+      <p>In Delhi-NCR specifically, 23,000 to 26,000 new CNG vehicles are being added every month. The city's air quality crisis is the unstated policy tailwind — every regulator and court order that pushes diesel vehicles off Delhi roads is IGL's customer acquisition campaign running for free.</p>
+    </div>
+    <div class="stat-grid" role="region" aria-label="Sector statistics">
+      <div class="stat-card">
+        <div class="stat-label">India CGD Market 2026</div>
+        <div class="stat-value">$12.8 Bn</div>
+        <div class="stat-sub">Growing to $23.4 Bn by 2031</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Sector CAGR (2026–2031)</div>
+        <div class="stat-value up">12.84%</div>
+        <div class="stat-sub">Mordor Intelligence estimate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Gas Mix Target (2030)</div>
+        <div class="stat-value amber">15%</div>
+        <div class="stat-sub">of India primary energy (from ~6%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Monthly CNG Vehicles Added</div>
+        <div class="stat-value up">23–26K</div>
+        <div class="stat-sub">Delhi-NCR per month, FY26</div>
+      </div>
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 2 — BUSINESS MODEL ===== -->
+  <article class="chapter" aria-labelledby="ch2-title">
+    <div class="chapter-header">
+      <div class="chapter-num teal" aria-hidden="true">02</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">How the Money Works</div>
+        <h2 class="chapter-title" id="ch2-title">The Business Model — A Toll Road Buried Underground</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Indraprastha Gas Limited is a City Gas Distribution (CGD) company. Its simple job: buy natural gas in bulk, move it through a network of steel pipes it has built and owns, and sell it retail to CNG-powered vehicles, households cooking on piped gas, and factories running industrial burners. Everything about the model is a franchise.</p>
+      <p>The <strong>revenue flywheel</strong> looks like this: IGL wins a geographical area (GA) through PNGRB bidding → spends capex building a pipeline network over several years → connects a household or a CNG station → earns a margin per standard cubic meter (SCM) for the next 25 years with essentially zero additional investment. Every ₹1 spent on capex today is a 25-year annuity. The pipelines don't wear out. The customers don't leave.</p>
+      <p>Three revenue streams define the business. <strong>CNG transport</strong> is the volume engine: currently about 75 percent of IGL's total sales volumes. Auto-rickshaws, taxis, Uber/Ola fleets, city buses, and private cars in Delhi-NCR all run on CNG because it is meaningfully cheaper per kilometre than petrol or diesel. CNG demand is sticky because it requires a ₹30,000–₹50,000 vehicle conversion kit and depends on a network of 1,024 CNG stations — once a driver converts, switching back to petrol is expensive and inconvenient. <strong>Domestic PNG</strong> (piped natural gas for home cooking) is the stickiest segment: once a pipe enters your kitchen wall, you're a captive customer forever. IGL has 27 lakh domestic connections and adds 3–4 lakh a year. <strong>Industrial and commercial PNG</strong> serves around 10,600 customers — restaurants, hotels, factories — who value uninterrupted supply over cylinder logistics.</p>
+      <p>The business earns a <strong>distribution margin per SCM</strong> — the spread between the gas purchase price (APM or market) and the retail price charged to end consumers. When APM gas allocations are full, this margin is healthy. When the government cuts APM allocation (as happened with a 40 percent cumulative cut in H2 FY25), IGL must replace cheap APM gas with costlier HPHT or spot LNG at $13–14 per mmBtu versus $6.5 under APM — squeezing the margin immediately. The business model response is straightforward: raise CNG retail prices. That's exactly what IGL has been doing — four price hikes in May 2026 alone.</p>
+    </div>
+    <div class="insight-card teal" role="note" aria-label="Key business model insight">
+      <strong>The model in one line:</strong> IGL is a toll collector on the underground gas highway. It paid to build the road; now every cubic meter of gas that flows down it earns a toll. The only risk is whether the government changes the toll rate — or whether customers find a different road entirely.
+    </div>
+    <div class="stat-grid" role="region" aria-label="Business model key statistics">
+      <div class="stat-card">
+        <div class="stat-label">CNG Stations (FY26)</div>
+        <div class="stat-value">1,024</div>
+        <div class="stat-sub">+65 added in FY26</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Domestic PNG Connections</div>
+        <div class="stat-value">27+ Lakh</div>
+        <div class="stat-sub">+3.7 lakh added in FY26</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Geographical Areas</div>
+        <div class="stat-value">11 GAs</div>
+        <div class="stat-sub">32 districts · 4 states</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Industrial/Commercial Customers</div>
+        <div class="stat-value">~10,600</div>
+        <div class="stat-sub">Factories, hotels, restaurants</div>
+      </div>
+    </div>
+    <div class="prose">
+      <p>IGL is a joint venture promoted by <strong>GAIL (India) Limited (22.5%)</strong> and <strong>BPCL (22.5%)</strong>, with the Government of NCT of Delhi holding 5 percent. This ownership structure matters: GAIL is also IGL's primary gas supplier, aligning the interests of the upstream supplier with the distribution entity. BPCL's retail network provides strategic synergies. Institutional investors (FIIs 17.2%, DIIs 24.1%, mutual funds 10.5%) hold the balance.</p>
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 3 — PORTER'S FIVE FORCES ===== -->
+  <article class="chapter" aria-labelledby="ch3-title">
+    <div class="chapter-header">
+      <div class="chapter-num blue" aria-hidden="true">03</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">Competitive Dynamics</div>
+        <h2 class="chapter-title" id="ch3-title">Porter's Five Forces — The Regulated Moat and Its Cracks</h2>
+      </div>
+    </div>
+
+    <div class="forces-grid" role="region" aria-label="Porter's Five Forces analysis">
+
+      <!-- Force 1: Competitive Rivalry -->
+      <div class="force-card" aria-labelledby="force1-title">
+        <div class="force-name" id="force1-title">Force 1 — Competitive Rivalry</div>
+        <div class="force-rating low" role="img" aria-label="Low threat rating, favourable for the company">🟢 Low Threat</div>
+        <p class="force-body">Within IGL's 11 authorised GAs, there is <strong>no competition</strong>. PNGRB's framework mandates geographic exclusivity for a 25-year development period — no other CGD company can legally lay competing pipes in Delhi, Noida, Ghaziabad, Gurugram, Karnal, Ajmer, or any of IGL's other districts. Outside its GAs, peers like Mahanagar Gas (MGL, Mumbai), Gujarat Gas (Surat, Morbi), and Adani Total Gas operate in entirely different territories. There is no head-to-head rivalry on pricing or volumes within a GA.</p>
+        <div class="force-implication"><em>Investor implication:</em> Within its authorised territories, IGL faces zero pricing rivalry. Margins compress only when input costs (APM gas) rise — not because a competitor undercuts retail prices.</div>
+      </div>
+
+      <!-- Force 2: New Entrants -->
+      <div class="force-card" aria-labelledby="force2-title">
+        <div class="force-name" id="force2-title">Force 2 — Threat of New Entrants</div>
+        <div class="force-rating low" role="img" aria-label="Low threat rating, favourable for the company">🟢 Low Threat</div>
+        <p class="force-body">Entry barriers are among the highest of any Indian sector. A new entrant must win a PNGRB GA bid, commit to a 25-year development plan, spend ₹1,500–5,000 crore on pipeline infrastructure per GA, secure APM gas allocation (government-controlled), and qualify with state government approvals. In IGL's core Delhi territory — where the pipeline network has been built over 25 years — the network itself is the moat. Building a competing network is structurally impossible under PNGRB rules until IGL's authorisation period expires.</p>
+        <div class="force-implication"><em>Investor implication:</em> IGL's moats are structural, not cosmetic. No competitor can replicate 25 years of pipeline build and 1,024 CNG stations without PNGRB re-authorisation. This is a 25-year runway per GA.</div>
+      </div>
+
+      <!-- Force 3: Buyer Power -->
+      <div class="force-card" aria-labelledby="force3-title">
+        <div class="force-name" id="force3-title">Force 3 — Bargaining Power of Buyers</div>
+        <div class="force-rating mod" role="img" aria-label="Moderate threat rating, some pressure on the company">🟡 Moderate Threat</div>
+        <p class="force-body">Individual households and auto-rickshaw drivers have zero pricing power — they accept IGL's tariff or switch fuel (the latter is costly). However, <strong>three structural buyers</strong> carry indirect power: the Delhi government (which can politically pressure IGL to delay hikes or invoke subsidy discussions), large fleet operators like DTC (Delhi Transport Corporation), and industrial customers who can theoretically switch to alternative fuels above certain price thresholds. The CNG price in Delhi hit ₹83.09/kg in May 2026 after four hikes — at some price point, the economics of CNG vs. petrol/EV narrow. DTC specifically has been reducing its CNG fleet as electric buses replace it.</p>
+        <div class="force-implication"><em>Investor implication:</em> IGL can pass through gas cost increases, but political sensitivity is real. Repeated CNG hikes risk triggering Delhi government intervention or accelerating EV adoption — the margin recovery must be watched against customer defection data.</div>
+      </div>
+
+      <!-- Force 4: Supplier Power -->
+      <div class="force-card" aria-labelledby="force4-title">
+        <div class="force-name" id="force4-title">Force 4 — Bargaining Power of Suppliers</div>
+        <div class="force-rating high" role="img" aria-label="High threat rating, unfavourable for the company">🔴 High Threat</div>
+        <p class="force-body">This is IGL's <strong>most significant structural vulnerability</strong>. The government (through GAIL/ONGC/Oil Ministry) controls APM gas allocation, which is the lowest-cost gas input. A 40 percent cumulative APM cut in H2 FY25 forced IGL to replace cheap APM gas (₹6.5/mmBtu) with HPHT or spot LNG at ₹13–14/mmBtu — a cost increase of over 100 percent on the replaced portion. Gas cost rose 31 percent in FY26. GAIL, while a 22.5% promoter, wears a different hat as IGL's gas supplier and is not structurally obligated to protect IGL's margin. Spot LNG is priced globally; the West Asia conflict of 2025-26 has kept LNG prices elevated, directly compressing IGL's margins.</p>
+        <div class="force-implication"><em>Investor implication:</em> IGL cannot control its input cost independently — it is a policy taker on the most important cost line. Any recurrence of APM allocation cuts will immediately hit EBITDA/SCM, even if IGL passes it through with retail hikes (with a lag).</div>
+      </div>
+
+      <!-- Force 5: Substitutes (centre) -->
+      <div class="force-card force-center" aria-labelledby="force5-title">
+        <div class="force-name" id="force5-title">Force 5 — Threat of Substitutes</div>
+        <div class="force-rating mod" role="img" aria-label="Moderate threat rating, building over time">🟡 Moderate Threat (Building)</div>
+        <p class="force-body">The most debated long-term risk for all CGD companies is <strong>electric vehicle adoption</strong>. The Delhi Draft EV Policy 2026–2030 (released April 2026) envisions mandatory EV transitions for new registrations by 2030 — the precise customer segment that drives IGL's CNG volumes. Two mitigants exist today: Delhi has only ~9,000 of the ~36,000 EV charging points needed for a full transition, and the Rs 30,000–50,000 CNG conversion kit creates vehicle-level lock-in. For the 3–5 year horizon, EV substitution in the auto and taxi segment is real but limited. For households, PNG offers significant cost and convenience advantages over LPG cylinders and electric induction cooking that are unlikely to erode before 2030. The DTC electric bus program is a visible headwind — IGL has lost DTC as a CNG customer as electric buses replace compressed-gas buses.</p>
+        <div class="force-implication"><em>Investor implication:</em> IGL is a clear 5-to-7-year story — within that window, EV penetration is too limited to materially dent CNG volumes. Beyond 7–10 years, the base case changes and PNG domestic becomes the more durable revenue stream.</div>
+      </div>
+    </div>
+
+    <!-- Moat Summary -->
+    <div class="moat-bar" role="region" aria-label="Overall moat summary">
+      <span class="moat-label">Overall Moat Rating:</span>
+      <span class="moat-badge" aria-label="Narrow moat rating">NARROW MOAT</span>
+      <span class="moat-peer">Within GAs: wide (regulatory exclusivity). Across time: narrow (gas policy risk + EV). Wider moat than Gujarat Gas (higher industrial exposure to volatile I/C customers); comparable to MGL (similar regulatory structure, also Delhi-type market).</span>
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 4 — VERTICAL STORIES ===== -->
+  <article class="chapter" aria-labelledby="ch4-title">
+    <div class="chapter-header">
+      <div class="chapter-num green" aria-hidden="true">04</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">Revenue Engines</div>
+        <h2 class="chapter-title" id="ch4-title">The Vertical Stories — Four Catalysts, One Pipeline</h2>
+      </div>
+    </div>
+    <div class="vertical-grid" role="region" aria-label="Revenue vertical cards">
+
+      <div class="vertical-card amber" aria-labelledby="v1-title">
+        <div class="vertical-name">CNG Transport</div>
+        <h3 class="vertical-title" id="v1-title">Delhi's Auto-Rickshaw Army</h3>
+        <p class="vertical-body">Approximately 75% of IGL's volumes. Delhi and NCR run over 1.1 million CNG-powered three-wheelers, taxis, private cars, and commercial vehicles. The Supreme Court's CNG mandate for Delhi public transport (dating to 2001) created IGL's foundational customer base. CNG volumes grew 5% in FY26; management guides 10–13% growth in FY27 as vehicle penetration deepens in newer GAs like Kanpur, Muzaffarnagar, and Ajmer.</p>
+        <span class="status-badge status-running" aria-label="Status: Running">Running</span>
+      </div>
+
+      <div class="vertical-card teal" aria-labelledby="v2-title">
+        <div class="vertical-name">PNG Domestic</div>
+        <h3 class="vertical-title" id="v2-title">27 Lakh Kitchen Connections — and Counting</h3>
+        <p class="vertical-body">Domestic PNG is IGL's annuity. Once a gas pipe enters a kitchen, the customer almost never leaves. Connections grew 9% YoY in FY26, adding 3.7 lakh new households. The government's Harit Dhara initiative and PNGRB's minimum work program mandate connection additions, structurally driving this segment. Per-unit profitability is lower than CNG, but the revenue is more predictable and shielded from CNG-to-EV substitution risk.</p>
+        <span class="status-badge status-running" aria-label="Status: Running">Running</span>
+      </div>
+
+      <div class="vertical-card blue" aria-labelledby="v3-title">
+        <div class="vertical-name">Industrial &amp; Commercial PNG</div>
+        <h3 class="vertical-title" id="v3-title">Hotels, Factories, and the B2B Margin Premium</h3>
+        <p class="vertical-body">Industrial and commercial PNG makes up ~13% of IGL's volumes — far lower than Gujarat Gas (~49%). This conservative mix is a <strong>margin stabiliser</strong>: I/C customers are on contract pricing closer to market rates, while IGL's CNG focus means it benefits more from regulated APM pricing. I/C volumes grew 4% in FY26. The risk of I/C customers switching fuels in a price spike is lower than for Gujarat Gas, whose heavy industrial exposure creates more volatility.</p>
+        <span class="status-badge status-running" aria-label="Status: Running">Running</span>
+      </div>
+
+      <div class="vertical-card green" aria-labelledby="v4-title">
+        <div class="vertical-name">Geographic Expansion</div>
+        <h3 class="vertical-title" id="v4-title">17% Growth Engines in UP, Haryana, Rajasthan</h3>
+        <p class="vertical-body">IGL has been authorised across 13 new GAs beyond its core Delhi-NCR heartland: districts in Uttar Pradesh (Kanpur, Muzaffarnagar, Shamli, Meerut, Banda, Chitrakoot, Mahoba, Hamirpur, Fatehpur), Haryana (Karnal, Kaithal, Gurugram, Rewari), and Rajasthan (Ajmer, Pali, Rajasamand). These new GAs contributed <strong>17% volume growth</strong> in FY26 vs. 1% in mature Delhi. Total capex planned for FY25–27 is ₹4,700 crore — the infrastructure investment phase that will monetise over the following 20+ years.</p>
+        <span class="status-badge status-ramping" aria-label="Status: Ramping">Ramping</span>
+      </div>
+
+      <div class="vertical-card purple" aria-labelledby="v5-title">
+        <div class="vertical-name">Associate Investments</div>
+        <h3 class="vertical-title" id="v5-title">MNGL and CUGL — Optionality Built In</h3>
+        <p class="vertical-body">IGL holds stakes in Maharashtra Natural Gas Limited (MNGL, Pune CGD) and Central UP Gas Limited (CUGL, Kanpur). Analysts value these associate investments at ₹32/share (MNGL) and ₹5/share (CUGL) combined, adding ~₹37 of latent value to IGL's stock — that alone is approximately 22% of the current market price of ₹166. These are separately profitable regulated utilities growing in their own right.</p>
+        <span class="status-badge status-ramping" aria-label="Status: Ramping">Ramping</span>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 5 — STRATEGIC INSIGHT ===== -->
+  <article class="chapter" aria-labelledby="ch5-title">
+    <div class="chapter-header">
+      <div class="chapter-num coral" aria-hidden="true">05</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">The One Thing to Understand</div>
+        <h2 class="chapter-title" id="ch5-title">Strategic Insight — The APM Crisis Is IGL's Pricing Power Proof</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>Every time the government has cut IGL's APM gas allocation, the first reaction has been stock price panic — a 20 percent single-day fall in November 2024 when the second 20 percent cut was announced. The second reaction, always, is IGL raising CNG prices. The third reaction, after a quarter or two, is volume growth recovering and margins partially restored. This cycle — government cuts APM → input costs jump → IGL hikes retail prices → volumes absorb the hike → margins recover — has repeated itself across three APM disruptions since 2022.</p>
+      <p>The insight is this: <strong>every APM crisis tests, and then confirms, IGL's pricing power</strong>. In a competitive market, you cannot raise prices four times in two weeks (as IGL did in May 2026) without losing customers to rivals. IGL did it because there are no rivals in its territory. CNG is still 30–40 percent cheaper per kilometre than petrol for Delhi's auto drivers — even at ₹83/kg — so the economic incentive to run on CNG remains intact even after the hikes.</p>
+      <p>The second non-obvious insight is about the capex cycle. IGL is investing ₹4,700 crore across FY25–FY27 to build pipeline infrastructure in 13 new GAs. This investment earns almost nothing right now — connection counts are low, volumes are minimal, and the infrastructure sits largely idle. But the <strong>25-year exclusivity clock started ticking the moment the pipeline was laid</strong>. Each of these GAs is a sleeping annuity. Kanpur, Muzaffarnagar, and Ajmer combined produced 17 percent volume growth in FY26 off a small base. In FY32 or FY35, those same pipelines — long since depreciated — will be earning contribution margins at near-zero incremental cost. The market, pricing IGL at 8.5x PE today, is not pricing in any of that optionality.</p>
+    </div>
+    <div class="insight-card coral" role="note" aria-label="Key strategic insight">
+      <strong>The strategic non-obvious:</strong> The panic over each APM cut is analytically correct for the quarter but strategically wrong for the decade. A company that can raise prices four times in two weeks — because customers have nowhere else to go — is not a company with a broken business model. It is a company with a temporary cost problem and a permanent pricing moat.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 6 — NUMBERS ===== -->
+  <article class="chapter" aria-labelledby="ch6-title">
+    <div class="chapter-header">
+      <div class="chapter-num purple" aria-hidden="true">06</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">The Financials in Context</div>
+        <h2 class="chapter-title" id="ch6-title">The Numbers — What Matters, What It Means</h2>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>FY26 was a year of <strong>volume growth and margin compression</strong>. Revenue grew 8 percent on a 4.4 percent volume increase; EBITDA fell 6 percent; PAT fell 7 percent. The culprit is mechanical: APM gas allocation was cut 40 percent cumulatively in H2 FY25, gas costs rose 31 percent year-on-year in FY26, and EBITDA per SCM compressed from historical levels of ₹8–10 down to ₹4.85 in Q4 FY26. This is not a demand problem — volumes are growing. It is an input-cost-pass-through lag: the margin squeeze starts the moment APM is cut; it ends when enough CNG price hikes have been executed to restore the spread.</p>
+    </div>
+
+    <table class="data-table" role="table" aria-label="IGL financial summary">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th style="text-align:right">FY25</th>
+          <th style="text-align:right">FY26</th>
+          <th style="text-align:right">YoY</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hl">
+          <td>Revenue (Standalone, ₹ Cr)</td>
+          <td class="num">14,928</td>
+          <td class="num">16,451</td>
+          <td class="up">+8.3%</td>
+        </tr>
+        <tr>
+          <td>EBITDA (₹ Cr)</td>
+          <td class="num">~1,968</td>
+          <td class="num">1,850</td>
+          <td class="dn">−6%</td>
+        </tr>
+        <tr class="hl">
+          <td>PAT (₹ Cr)</td>
+          <td class="num">1,467</td>
+          <td class="num">1,364</td>
+          <td class="dn">−7%</td>
+        </tr>
+        <tr>
+          <td>Volume (MMSCMD)</td>
+          <td class="num">9.0</td>
+          <td class="num">9.39</td>
+          <td class="up">+4.4%</td>
+        </tr>
+        <tr class="hl">
+          <td>EBITDA per SCM (Q4 FY26)</td>
+          <td class="num">₹7.5–8.0</td>
+          <td class="num">₹4.85</td>
+          <td class="dn">Compressed</td>
+        </tr>
+        <tr>
+          <td>ROCE</td>
+          <td class="num">~22%</td>
+          <td class="num">~17.9%</td>
+          <td class="dn">Declining</td>
+        </tr>
+        <tr class="hl">
+          <td>Debt-to-Equity</td>
+          <td class="num">~0.01x</td>
+          <td class="num">~0.01x</td>
+          <td class="num">Debt-free</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="divider"></div>
+
+    <div class="prose">
+      <p><strong>The critical FY27 recovery story:</strong> Management has guided for an exit volume of 10.6 MMSCMD and EBITDA/SCM recovery to ₹7–8 in FY27, supported by the ongoing CNG price hike cycle. If ₹7.5/SCM is achieved on 10.6 MMSCMD (~3,870 MMSCM annual), EBITDA could recover to ₹2,400–2,750 crore — a 30–50 percent increase from FY26. Analysts are sceptical: Motilal Oswal's model shows EBITDA/SCM of only ₹4.3 in FY27 before recovering to ₹6.5 in FY28. The spread between management guidance and analyst estimates is where the investment debate lives.</p>
+    </div>
+
+    <h3 style="font-size:1rem; font-weight:700; color:var(--text-primary); margin:20px 0 10px; font-family:'Helvetica Neue',Arial,sans-serif;">Valuation — What the Market Is Pricing In</h3>
+
+    <table class="data-table" role="table" aria-label="Peer valuation comparison">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th style="text-align:right">Stock Price</th>
+          <th style="text-align:right">Approx PE</th>
+          <th>Analyst Consensus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hl">
+          <td><strong>IGL (Indraprastha Gas)</strong></td>
+          <td class="num">₹166</td>
+          <td class="num">~8.5x</td>
+          <td>Moderate Buy · TP ₹215 avg</td>
+        </tr>
+        <tr>
+          <td>MGL (Mahanagar Gas)</td>
+          <td class="num">₹1,134</td>
+          <td class="num">~8.6x</td>
+          <td>Buy · Comparable APM risk</td>
+        </tr>
+        <tr class="hl">
+          <td>Gujarat Gas</td>
+          <td class="num">₹362</td>
+          <td class="num">~12–14x</td>
+          <td>Mixed · Higher I/C risk</td>
+        </tr>
+        <tr>
+          <td>Adani Total Gas</td>
+          <td class="num">Premium</td>
+          <td class="num">~30x+</td>
+          <td>Premium to peers; growth priced in</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>At 8.5x PE, IGL is near its lowest historical valuation in a decade. The market is pricing in either sustained margin compression (the bear case: APM doesn't fully recover, EVs accelerate) or that the current trough is a temporary cost spike (the bull case: hikes restore ₹7–8 EBITDA/SCM, PE re-rates to 15–18x on FY28 earnings). IGL historically traded at 15–25x PE when margins were normalised. A re-rating back to 15x on FY28 PAT of ~₹1,700–1,900 crore would imply a stock price of ₹250–350 — a 50–110 percent upside from current levels. The associate investment value alone (MNGL ₹32/share + CUGL ₹5/share) accounts for ~22 percent of the current stock price.</p>
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 7 — RISKS ===== -->
+  <article class="chapter" aria-labelledby="ch7-title">
+    <div class="chapter-header">
+      <div class="chapter-num" aria-hidden="true">07</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">Eyes Open</div>
+        <h2 class="chapter-title" id="ch7-title">Risks — What Could Go Wrong, and What to Watch</h2>
+      </div>
+    </div>
+    <div class="risk-list" role="list" aria-label="Key investment risks">
+
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon" aria-hidden="true">⚠</div>
+        <div>
+          <div class="risk-title">APM Gas Allocation — The Recurring Policy Risk</div>
+          <p class="risk-body">The government has cut APM gas allocation to CNG transport twice in FY25 — 20% in October 2024 and another 20% in November 2024, a cumulative 40% reduction. Each cut forces IGL to replace cheap APM gas with HPHT or spot LNG at 2x the cost, triggering a quarter or two of margin pain before price hikes catch up. There is no structural guarantee that APM allocations will be restored or maintained at current levels. PNGRB did announce partial restoration for CNG transport following an Expert Committee report, but the policy window remains open.</p>
+          <div class="risk-signal">Signal to watch: Monthly MoPNG circulars on APM gas allocation percentages for the CGD sector.</div>
+        </div>
+      </div>
+
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon" aria-hidden="true">⚠</div>
+        <div>
+          <div class="risk-title">Global LNG Price Spike — The West Asia Variable</div>
+          <p class="risk-body">The ongoing West Asia conflict has kept spot LNG prices elevated (above $11–14/mmBtu). Every month these prices stay high, IGL's replacement gas cost stays high. IGL has been raising CNG prices (four hikes in May 2026 alone, Delhi CNG now at ₹83.09/kg), but there is a political ceiling on how fast and how high it can go. A prolonged geopolitical disruption that keeps LNG elevated for 2–3 years would structurally challenge margin recovery regardless of volume growth.</p>
+          <div class="risk-signal">Signal to watch: Spot LNG JKM prices (Japan/Korea marker) on energy commodity exchanges — if sustained above $12/mmBtu for 2+ quarters, assume EBITDA/SCM stays compressed below ₹6.</div>
+        </div>
+      </div>
+
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon" aria-hidden="true">⚠</div>
+        <div>
+          <div class="risk-title">Delhi EV Policy 2026–2030 — The Medium-Term Demand Threat</div>
+          <p class="risk-body">The Delhi Government's Draft EV Policy (April 2026) aims to mandate electric vehicles for new commercial registrations by 2030. If enforced, auto-rickshaws and taxi fleets — the backbone of IGL's CNG volumes — begin transitioning away from CNG. DTC has already been replacing CNG buses with electric buses. If 15–20% of IGL's CNG fleet transitions to electric over 5 years, volume growth would be significantly impaired. The counter-argument: Delhi needs 36,000 EV charging points but has only 9,000 — the infrastructure gap makes a rapid EV mandate practically difficult to execute by 2030.</p>
+          <div class="risk-signal">Signal to watch: Monthly DTC fleet data (CNG buses as % of total), new auto-rickshaw registrations in Delhi (CNG vs. EV split), and annual EV charging point deployment numbers.</div>
+        </div>
+      </div>
+
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon" aria-hidden="true">⚠</div>
+        <div>
+          <div class="risk-title">New GA Capex Drag — Capital Returns Under Pressure</div>
+          <p class="risk-body">IGL is investing ₹4,700 crore across FY25–FY27 in 13 new GAs. In the near term, these investments drag ROCE from its historical 25–28% down toward 17–18%. New GAs generate very low revenues for 5–7 years while infrastructure is built. If any of the new GA markets (Kanpur, Ajmer outskirts, Rajasthan districts) fail to scale as projected, the return on this capex will be permanently impaired. The capex commitment is substantial for a company earning ₹1,364 crore PAT in FY26.</p>
+          <div class="risk-signal">Signal to watch: Volume ramp in new GAs (quarterly data by geography), capex-to-volume-addition ratio versus IGL's historical cost-per-connection metrics.</div>
+        </div>
+      </div>
+
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon" aria-hidden="true">⚠</div>
+        <div>
+          <div class="risk-title">PNGRB Regulatory Tariff Changes — The Re-Rating Ceiling</div>
+          <p class="risk-body">The PNGRB Unified Tariff Order (effective January 2026) initially led to tariff reductions across CGD companies. Regulatory tariff structures for distribution can change at the regulator's discretion. If PNGRB further compresses distribution margins or network tariffs, IGL's regulated return framework could weaken even in a normalised gas cost environment. This is a slow-moving but low-probability risk that constrains the upside case for margin recovery.</p>
+          <div class="risk-signal">Signal to watch: PNGRB gazette notifications, particularly any revision to compression charges, distribution network tariffs, or CNG marketing margins.</div>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 8 — WATCH SIGNALS ===== -->
+  <article class="chapter" aria-labelledby="ch8-title">
+    <div class="chapter-header">
+      <div class="chapter-num gray" aria-hidden="true">08</div>
+      <div class="chapter-header-text">
+        <div class="chapter-eyebrow">Quarterly Tracking</div>
+        <h2 class="chapter-title" id="ch8-title">Watch Signals — Five Numbers to Check Every Quarter</h2>
+      </div>
+    </div>
+    <div class="watch-list" role="list" aria-label="Five key metrics to track quarterly">
+
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot amber" aria-hidden="true"></div>
+        <div>
+          <div class="watch-title">EBITDA per SCM — The Margin Recovery Thermometer</div>
+          <p class="watch-body">This single metric tells you whether the APM-to-retail price-hike cycle is working. FY26 Q4 sat at ₹4.85. Management guides ₹7–8 for FY27 exit. Track this quarterly: a move above ₹6 is a green signal; staying below ₹5 for two consecutive quarters despite price hikes signals that input costs (LNG) are rising faster than pass-through. <em>Red flag: EBITDA/SCM below ₹5 for three consecutive quarters with no improvement trajectory.</em></p>
+        </div>
+      </div>
+
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot teal" aria-hidden="true"></div>
+        <div>
+          <div class="watch-title">Total Volume MMSCMD — Volume Growth vs. Guidance</div>
+          <p class="watch-body">Management guided for 10.6 MMSCMD exit volume in FY27. Q4 FY26 was at 9.69 MMSCMD. Track the growth rate: 6–8% volume growth across CNG and new GAs is the base case. A slowdown below 4% growth would signal either CNG-to-EV substitution beginning earlier than modelled, or new GA ramp underperforming. <em>Red flag: two consecutive quarters of volume growth below 3% YoY.</em></p>
+        </div>
+      </div>
+
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot blue" aria-hidden="true"></div>
+        <div>
+          <div class="watch-title">APM Gas Allocation % — The Input Cost Wild Card</div>
+          <p class="watch-body">Track the official APM allocation percentage for the CNG transport segment (disclosed in MoPNG circulars and discussed on each concall). Any further reduction below current levels is a direct margin headwind. A restoration toward 100% APM allocation would be a significant positive catalyst — EBITDA/SCM could snap back by ₹2–3 without any price hike needed. <em>Green signal: APM allocation restored above 80% of historical base; red flag: further cut below current levels.</em></p>
+        </div>
+      </div>
+
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot green" aria-hidden="true"></div>
+        <div>
+          <div class="watch-title">New GA Volume as % of Total — The Future Revenue Pipeline</div>
+          <p class="watch-body">New GAs (UP, Haryana, Rajasthan) contributed 17% volume growth in FY26 off a small base. Track the absolute volume from these new GAs as a percentage of total. The investment thesis requires these areas to scale from ~10% today to 25–30% of volumes over 5–7 years, justifying the ₹4,700 crore capex. <em>Red flag: new GA volume growth decelerates below 12% annual despite ongoing capex.</em></p>
+        </div>
+      </div>
+
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot coral" aria-hidden="true"></div>
+        <div>
+          <div class="watch-title">CNG Volume Growth in Core Delhi — EV Canary</div>
+          <p class="watch-body">Delhi volumes grew only 1% in FY26 — already showing maturity, not just market saturation. This number is the early warning system for EV substitution. If Delhi CNG volume growth turns negative for two consecutive quarters, it means EV adoption has crossed a tipping point in the core market. IGL can compensate with new GA growth, but the narrative — and valuation — would change. <em>Red flag: two consecutive quarters of negative Delhi CNG volume growth.</em></p>
+        </div>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- ===== VERDICT ===== -->
+  <section class="verdict" aria-labelledby="verdict-label">
+    <div class="verdict-label" id="verdict-label">One-Paragraph Verdict</div>
+    <p class="verdict-text">
+      IGL sits at the intersection of two powerful structural tailwinds — India's gas urbanisation wave (CGD sector growing at 12.84% CAGR through 2031) and the irreversible build-out of a 32-district, 11-GA pipeline monopoly that earns 25-year exclusivity on every district it touches. The near-term story is ugly: a 40% APM gas cut, a 31% jump in input costs, and EBITDA/SCM compressed to ₹4.85 in Q4 FY26 against a historical target of ₹7–8. But quality shows in the response: IGL has raised CNG prices four times in two weeks in May 2026 — and customers have absorbed it, because CNG is still 30–40% cheaper per kilometre than petrol and EVs are years away from adequate charging infrastructure. The financial quality signals are intact: the balance sheet is debt-free, ROCE at ~18% is under pressure but not broken, and ₹37 per share of associate investment value (MNGL + CUGL) sits largely unacknowledged in the current stock price of ₹166. At 8.5x PE — near a decade low — the market is pricing in prolonged margin compression and dismissing the new-GA optionality entirely. The near-term catalyst is EBITDA/SCM recovery toward ₹6–7 in FY27 as price hikes accumulate and gas costs stabilise; a re-rating from 8.5x to 13–15x PE on FY28 earnings would be a 70–100% return from current levels. We are in the early-to-middle chapters of a 10-year story, at a price that seems to have forgotten the story exists.
+    </p>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer style="text-align:center; color:var(--text-muted); font-size:0.82rem; font-family:'Helvetica Neue',Arial,sans-serif; padding:16px 0;">
+    <p>NSE: IGL &nbsp;·&nbsp; Indraprastha Gas Limited &nbsp;·&nbsp; Investor Brief generated May 27, 2026</p>
+    <p style="margin-top:4px;">For informational purposes only. Not investment advice. Data sourced from company earnings, screener.in, analyst reports, and news as of May 2026.</p>
+  </footer>
+
+</main>
+
+<script>
+  // Day/Night toggle
+  function toggleTheme() {
+    var btn = document.querySelector('.mode-toggle');
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      btn.textContent = '🌙 Night Mode';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀️ Day Mode';
+    }
+  }
+  // Keyboard shortcut: press D for dark/light
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'd' || e.key === 'D') toggleTheme();
+  });
+</script>
+
+</body>
+</html>

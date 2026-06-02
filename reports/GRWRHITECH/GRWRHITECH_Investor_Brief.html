@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>GRWRHITECH — Investor Brief | May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#F5F2EB;--bg2:#EDE9DF;--bg3:#E3DDCF;
+  --ink:#1A1612;--ink2:#3D3630;--ink3:#6B6259;
+  --teal:#1D9E75;--coral:#D85A30;--blue:#378ADD;
+  --green:#3B6D11;--purple:#534AB7;--amber:#BA7517;
+  --yellow-hl:#FFF176;--blue-hl:#E3F0FF;
+  --risk-hl:#FFF3CD;--catalyst-hl:#E6F4EA;
+  --card:#FFFDF8;--border:#D4CFC5;
+  --font-display:'DM Serif Display',serif;
+  --font-body:'Outfit',sans-serif;
+  --font-mono:'IBM Plex Mono',monospace;
+  --r:8px;
+}
+[data-theme="dark"]{
+  --bg:#14120E;--bg2:#1C1916;--bg3:#242118;
+  --ink:#F0EDE6;--ink2:#C8C3BB;--ink3:#857D73;
+  --card:#1C1916;--border:#3A362F;
+  --yellow-hl:#5C5600;--blue-hl:#0F2A4A;
+  --risk-hl:#4A3800;--catalyst-hl:#0D2E14;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+
+/* ─── QUICK SCAN STRIP ─── */
+#qs{position:sticky;top:0;z-index:200;background:var(--ink);color:var(--bg);font-family:var(--font-body);font-size:12px;overflow:hidden;transition:max-height .35s ease}
+#qs.closed{max-height:38px}
+#qs.open{max-height:400px}
+#qs-header{display:flex;align-items:center;justify-content:space-between;padding:0 16px;height:38px;cursor:pointer;user-select:none;letter-spacing:.02em}
+#qs-header span{font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.1em;opacity:.7}
+#qs-toggle{background:none;border:none;color:inherit;font-size:18px;cursor:pointer;padding:0;line-height:1;opacity:.7;transition:transform .3s}
+#qs.open #qs-toggle{transform:rotate(180deg)}
+#qs-lines{padding:4px 16px 14px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:6px 24px}
+.qs-line{display:flex;gap:8px;align-items:flex-start;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:12px;line-height:1.5}
+.qs-icon{font-size:14px;flex-shrink:0;margin-top:1px}
+.qs-label{opacity:.5;font-size:10px;text-transform:uppercase;letter-spacing:.08em;flex-shrink:0;padding-top:2px;min-width:58px}
+.qs-text{opacity:.88}
+
+/* ─── THEME TOGGLE ─── */
+#theme-btn{position:fixed;top:48px;right:14px;z-index:201;background:var(--card);border:1px solid var(--border);border-radius:20px;padding:5px 10px;font-size:11px;cursor:pointer;color:var(--ink);font-family:var(--font-body);font-weight:600;box-shadow:0 2px 8px rgba(0,0,0,.1);transition:all .2s}
+#theme-btn:hover{background:var(--ink);color:var(--bg)}
+
+/* ─── LAYOUT ─── */
+.page{max-width:780px;margin:0 auto;padding:0 16px 80px}
+
+/* ─── COVER ─── */
+.cover{padding:44px 0 36px;border-bottom:2px solid var(--ink)}
+.cover-eye{font-size:11px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cover-eye .sep{color:var(--border)}
+.cover-symbol{display:inline-block;background:var(--ink);color:var(--bg);padding:2px 8px;font-size:10px;border-radius:3px;font-weight:700}
+.cover-title{font-family:var(--font-display);font-size:clamp(34px,7vw,58px);line-height:1.05;margin:10px 0 18px;letter-spacing:-.01em}
+.cover-subtitle{font-size:17px;color:var(--ink2);max-width:560px;line-height:1.6;border-left:3px solid var(--teal);padding-left:14px}
+.cover-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px}
+.cover-stat{text-align:center}
+.cover-stat .sv{font-family:var(--font-mono);font-size:20px;font-weight:600;color:var(--ink)}
+.cover-stat .sl{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);margin-top:2px}
+
+/* ─── CHAPTER HEADER ─── */
+.ch{margin:48px 0 22px}
+.ch-eye{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink3);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.ch-num{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--ink);color:var(--bg);font-size:10px;font-weight:700;flex-shrink:0}
+.ch-title{font-family:var(--font-display);font-size:clamp(22px,4.5vw,32px);line-height:1.1;letter-spacing:-.01em}
+
+/* ─── PROSE ─── */
+.prose{color:var(--ink2);line-height:1.75}
+.prose p{margin-bottom:14px}
+.prose p:last-child{margin-bottom:0}
+
+/* ─── INLINE HIGHLIGHTS ─── */
+.hl-key{background:var(--yellow-hl);padding:1px 4px;border-radius:2px;font-weight:600;color:var(--ink)}
+.hl-number{background:var(--blue-hl);padding:1px 4px;border-radius:2px;font-family:var(--font-mono);font-size:.92em;color:var(--ink)}
+.hl-risk{background:var(--risk-hl);padding:1px 4px;border-radius:2px;border-left:3px solid var(--amber);color:var(--ink)}
+.hl-catalyst{background:var(--catalyst-hl);padding:1px 4px;border-radius:2px;border-left:3px solid var(--green);color:var(--ink)}
+
+/* ─── TAKEAWAY PILL ─── */
+.takeaway-pill{margin:20px 0 0;background:var(--bg2);border-radius:var(--r);padding:11px 16px;font-size:13px;font-weight:600;color:var(--ink);line-height:1.5;border-left:4px solid currentColor}
+
+/* ─── INSIGHT CARD ─── */
+.insight-card{background:var(--card);border:1px solid var(--border);border-left:4px solid var(--amber);border-radius:var(--r);padding:22px 24px;margin:18px 0}
+.insight-card .ic-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--amber);margin-bottom:10px}
+.insight-card p{font-size:16px;line-height:1.7;color:var(--ink);font-style:italic}
+
+/* ─── STAT ROWS ─── */
+.stat-block{background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin:18px 0}
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:11px 16px;border-bottom:1px solid var(--border);gap:12px}
+.stat-row:last-child{border-bottom:none}
+.sr-label{font-size:13px;color:var(--ink3);flex:1}
+.sr-val{font-family:var(--font-mono);font-size:14px;font-weight:600;color:var(--ink);text-align:right}
+.sr-tag{font-size:11px;padding:2px 7px;border-radius:12px;font-weight:600;flex-shrink:0}
+.tag-green{background:var(--catalyst-hl);color:var(--green);border:1px solid #c3e6c9}
+.tag-amber{background:var(--risk-hl);color:var(--amber);border:1px solid #f0d9a0}
+.tag-blue{background:var(--blue-hl);color:var(--blue);border:1px solid #bcd7f5}
+
+/* ─── SEGMENT CARDS ─── */
+.segment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px;margin:18px 0}
+.seg-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:18px;border-top:4px solid var(--teal)}
+.seg-card .sc-seg{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px}
+.seg-card .sc-title{font-family:var(--font-display);font-size:18px;margin-bottom:8px;line-height:1.2}
+.seg-card .sc-pct{font-size:26px;font-family:var(--font-mono);font-weight:700;margin-bottom:6px}
+.seg-card .sc-body{font-size:13px;color:var(--ink3);line-height:1.55}
+.seg-card .sc-status{display:inline-block;margin-top:10px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:12px}
+.status-running{background:#E6F4EA;color:var(--green)}
+.status-ramping{background:var(--blue-hl);color:var(--blue)}
+.status-nascent{background:#F3EDFF;color:var(--purple)}
+
+/* ─── PORTER'S TABLE ─── */
+.porter-table{width:100%;border-collapse:collapse;margin:18px 0;background:var(--card);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.porter-table th{background:var(--bg3);padding:10px 14px;font-size:11px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--ink3);text-align:left}
+.porter-table td{padding:12px 14px;border-top:1px solid var(--border);font-size:13px;color:var(--ink2);vertical-align:top;line-height:1.55}
+.porter-table td:first-child{font-weight:600;color:var(--ink);white-space:nowrap}
+.porter-table td:nth-child(2){text-align:center}
+.rating-low{color:var(--green);font-weight:700}
+.rating-med{color:var(--amber);font-weight:700}
+.rating-high{color:var(--coral);font-weight:700}
+
+/* ─── CAPEX TIMELINE ─── */
+.capex-timeline{margin:18px 0;position:relative}
+.ct-item{display:grid;grid-template-columns:80px 1fr;gap:0;margin-bottom:0;position:relative}
+.ct-item:last-child .ct-body{border-left:none}
+.ct-year{padding:16px 0;font-family:var(--font-mono);font-size:13px;font-weight:700;color:var(--ink3);text-align:right;padding-right:20px;border-right:2px solid var(--border)}
+.ct-body{padding:12px 0 24px 24px;border-left:2px solid var(--border);margin-left:-1px}
+.ct-dot{position:absolute;left:79px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--teal);border:2px solid var(--bg)}
+.ct-head{font-weight:600;color:var(--ink);font-size:14px;margin-bottom:4px}
+.ct-sub{font-size:13px;color:var(--ink3);line-height:1.55}
+.ct-amount{display:inline-block;font-family:var(--font-mono);font-size:12px;font-weight:600;background:var(--blue-hl);color:var(--blue);padding:2px 8px;border-radius:4px;margin:5px 0}
+
+/* ─── RISKS ─── */
+.risk-list{margin:18px 0;display:flex;flex-direction:column;gap:12px}
+.risk-item{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px;display:flex;gap:14px;align-items:flex-start}
+.risk-icon{font-size:20px;flex-shrink:0;margin-top:1px}
+.risk-content .rh{font-weight:600;color:var(--ink);font-size:14px;margin-bottom:4px}
+.risk-content .rb{font-size:13px;color:var(--ink3);line-height:1.6}
+.risk-content .rs{font-size:11px;font-family:var(--font-mono);color:var(--amber);margin-top:6px;font-weight:600}
+
+/* ─── WATCH SIGNALS ─── */
+.watch-list{margin:18px 0;display:flex;flex-direction:column;gap:10px}
+.watch-item{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:var(--r)}
+.watch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px}
+.watch-content .wh{font-weight:600;color:var(--ink);font-size:14px;margin-bottom:3px}
+.watch-content .wb{font-size:13px;color:var(--ink3);line-height:1.55}
+.watch-content .wred{font-size:11px;font-family:var(--font-mono);color:var(--coral);margin-top:5px;font-weight:600}
+
+/* ─── VERDICT ─── */
+.verdict-card{background:var(--ink);color:var(--bg);border-radius:var(--r);padding:28px;margin:28px 0}
+.vc-label{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.15em;opacity:.5;margin-bottom:14px}
+.vc-text{font-size:16px;line-height:1.8;font-family:var(--font-display);font-style:italic}
+.vc-text strong{font-style:normal;color:#FFF176}
+.vc-stage{margin-top:18px;display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;letter-spacing:.04em}
+
+/* ─── HIGHLIGHT INDEX ─── */
+#highlight-index{margin:32px 0;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+#highlight-index summary{padding:14px 18px;cursor:pointer;font-weight:600;font-size:14px;color:var(--ink);display:flex;align-items:center;gap:8px;list-style:none}
+#highlight-index summary::-webkit-details-marker{display:none}
+#highlight-index ol{padding:0 18px 18px;display:flex;flex-direction:column;gap:8px;counter-reset:hi}
+#highlight-index ol li{counter-increment:hi;display:flex;gap:10px;font-size:13px;color:var(--ink2);line-height:1.55;padding:8px 0;border-bottom:1px solid var(--border)}
+#highlight-index ol li:last-child{border-bottom:none}
+#highlight-index ol li::before{content:counter(hi);font-family:var(--font-mono);font-size:11px;color:var(--ink3);flex-shrink:0;padding-top:1px;min-width:20px}
+
+/* ─── UTIL ─── */
+.divider{border:none;border-top:1px solid var(--border);margin:32px 0}
+.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.tag{display:inline-block;font-size:11px;padding:3px 10px;border-radius:12px;font-weight:600;border:1px solid}
+.tag-teal{background:#E0F5EE;color:#0D7A5A;border-color:#A8E0CE}
+.tag-coral{background:#FDE8E1;color:#A83B1A;border-color:#F0B8A5}
+.tag-blue{background:var(--blue-hl);color:var(--blue);border-color:#A3C8F0}
+.tag-purple{background:#EEE8FF;color:#3730A3;border-color:#C4BFEE}
+.note{font-size:12px;color:var(--ink3);font-style:italic;margin-top:10px}
+
+@media(max-width:600px){
+  .cover{padding:28px 0 24px}
+  .segment-grid{grid-template-columns:1fr}
+  .ct-item{grid-template-columns:60px 1fr}
+  .qs-lines{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- QUICK SCAN STRIP -->
+<div id="qs" class="closed" role="navigation" aria-label="Quick Scan Summary">
+  <div id="qs-header" onclick="toggleQS()" tabindex="0" role="button" aria-expanded="false">
+    <span>⚡ Quick Scan — GRWRHITECH</span>
+    <button id="qs-toggle" aria-label="Toggle quick scan">▼</button>
+  </div>
+  <div id="qs-lines">
+    <div class="qs-line"><span class="qs-icon">⚡</span><span class="qs-label">Context</span><span class="qs-text">Global window film market $21.9B by 2033 at 7.1% CAGR; Garware is the world's largest sun control film manufacturer — India's only vertically integrated chips-to-film player</span></div>
+    <div class="qs-line"><span class="qs-icon">🏭</span><span class="qs-label">Model</span><span class="qs-text">Backward-integrated PET chipmaker turned brand owner: every new product category (PPF → TPU → Home Solutions) stacks on the same factory, expanding margin mix without new fixed-cost bases</span></div>
+    <div class="qs-line"><span class="qs-icon">🎯</span><span class="qs-label">Insight</span><span class="qs-text">The Sun Control line is 4× larger than a PPF line — Garware uses it as a fungible capacity asset for PPF overflow, meaning one ₹191 Cr investment buys flexibility across two product families</span></div>
+    <div class="qs-line"><span class="qs-icon">📊</span><span class="qs-label">Numbers</span><span class="qs-text">FY26: Revenue ₹2,120 Cr (+0.5% YoY on tariff drag), EBITDA ₹500 Cr at 23.6%, PAT ₹338 Cr — all record highs. Debt-free. Cash ₹774 Cr. FY27 guidance: ₹2,500 Cr+, margin 25% ±2%</span></div>
+    <div class="qs-line"><span class="qs-icon">🚧</span><span class="qs-label">Top Risk</span><span class="qs-text">US concentration (45% of revenue) means any return of tariff policy shock — or demand slowdown in US automotive — could replay Q1–Q3 FY26 margin compression</span></div>
+    <div class="qs-line"><span class="qs-icon">👁</span><span class="qs-label">Watch</span><span class="qs-text">Track D2C revenue share quarterly — currently 10–15% of total; sustained growth here is the margin re-rating trigger; target 25–35% over 3 years per management</span></div>
+    <div class="qs-line"><span class="qs-icon">💡</span><span class="qs-label">Verdict</span><span class="qs-text">MIDDLE CHAPTERS — Tariff drag cleared, TPU line imminent, Dubai subsidiary live. Stock at 37× PE vs industry 22×; premium justified only if D2C and MENA narratives execute</span></div>
+  </div>
+</div>
+
+<button id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">☀ / ☾</button>
+
+<div class="page">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eye">
+    <span class="cover-symbol">NSE: GRWRHITECH</span>
+    <span class="sep">|</span>
+    <span>Specialty Films</span>
+    <span class="sep">|</span>
+    <span>Small Cap</span>
+    <span class="sep">|</span>
+    <span>May 2026</span>
+  </div>
+  <h1 class="cover-title">Garware<br/>Hi-Tech Films</h1>
+  <p class="cover-subtitle">The world's largest sun control film manufacturer, pivoting from global B2B distributor to consumer brand — with a debt-free balance sheet, ₹774 Cr in cash, and three new product ladders climbing at once.</p>
+  <div class="cover-meta">
+    <div class="cover-stat"><div class="sv">₹2,120 Cr</div><div class="sl">FY26 Revenue</div></div>
+    <div class="cover-stat"><div class="sv">23.6%</div><div class="sl">EBITDA Margin</div></div>
+    <div class="cover-stat"><div class="sv">₹774 Cr</div><div class="sl">Cash (Debt-Free)</div></div>
+    <div class="cover-stat"><div class="sv">90+ Countries</div><div class="sl">Export Reach</div></div>
+    <div class="cover-stat"><div class="sv">₹13,100 Cr</div><div class="sl">Market Cap</div></div>
+  </div>
+</div>
+
+<!-- ─── CHAPTER 1: CONTEXT ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">1</span> The Big Picture First</div>
+  <h2 class="ch-title">Context — Why This Company, Why Now</h2>
+</div>
+
+<div class="tag-row">
+  <span class="tag tag-teal">Sun Control Films</span>
+  <span class="tag tag-blue">Paint Protection Films</span>
+  <span class="tag tag-coral">Architectural Films</span>
+  <span class="tag tag-purple">TPU Backward Integration</span>
+</div>
+
+<div class="prose">
+  <p>Three structural forces are converging at Garware's doorstep simultaneously. The global window film market is headed to <span class="hl-number">$21.9 billion by 2033 at a 7.1% CAGR</span>, with sun control films — Garware's core — commanding 46% of that. In India specifically, the window film segment is growing at <span class="hl-number">8.6–8.8% CAGR through 2031</span>, driven by rapid urbanisation, extreme heat seasons, and expanding construction. The solar control window films sub-segment alone is expected to reach $11.5 billion globally by 2035 at a <span class="hl-number">9.6% CAGR</span>, according to Market Research Future (2026).</p>
+  <p>Second, the Paint Protection Film market — Garware's fastest-growing vertical — is a $670 million global market growing at 6.2% CAGR toward $1.1 billion by 2034. India specifically is growing at 8.6% CAGR with a target of $31 million by 2030. Premium automotive adoption is structurally rising, and PPF is migrating from a luxury accessory to a near-standard offering on mid-to-high-end vehicles.</p>
+  <p><span class="hl-key">The reason NOW matters: Garware just cleared the worst tariff year in its history, ended FY26 at all-time high revenue and profits, and simultaneously pressed the button on three compounding catalysts — TPU backward integration (October 2026), the Dubai MENA subsidiary (April 2026), and Garware Home Solutions' D2C rollout — all in the same 12-month window.</span></p>
+  <p>This is not a company at the beginning of its story. But it is unambiguously at the start of its margin re-rating chapter.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--teal)">
+  Three catalysts lit within 12 months: TPU line online Oct 2026, Dubai subsidiary incorporated Apr 2026, D2C Home Solutions target 50 studios by FY27 end.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 2: BUSINESS MODEL ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">2</span> The Business Model</div>
+  <h2 class="ch-title">What They Actually Do</h2>
+</div>
+
+<div class="prose">
+  <p>Garware Hi-Tech Films is, at its simplest, a polymer-to-product company. It starts with PTA and MEG (petrochemical inputs), converts them into PET chips in-house, extrudes those chips into base polyester film, then coats, laminates, and metallises that film into specialty products that sell for multiples of the raw input cost. <span class="hl-key">This is one of very few companies globally that operates a fully vertically integrated "chips-to-film" model for both window films and paint protection films — most global competitors buy base film from others.</span> That integration is cost insurance and quality control rolled into one.</p>
+  <p>Revenue compounding works like a ladder. Garware started as an industrial and commodity polyester film supplier (₹750–800 Cr revenue range). Then it layered in Consumer Product Division (CPD) — branded automotive and architectural sun control films. Revenue jumped to ₹1,300 Cr. Then it entered PPF, a higher-margin, growing category. Revenue crossed ₹1,600 Cr. Each new category stacks on the same manufacturing base, spreading fixed costs further and lifting the blended margin. The next stacking is TPU films (backward integration for PPF), PDLC switchable films, and Garware Home Solutions (D2C architectural).</p>
+  <p>Customer stickiness is real and multi-layered: film certifications take 18–24 months to obtain with US and European distributors; Garware's 25-year relationships in the US mean a distributor who switches faces recertification risk; and for OEM partnerships (4 signed, 2 in pipeline in India), the approval cycle is 6–12 months of sample testing. The switching cost is time, not price.</p>
+  <p><span class="hl-number">55%</span> of revenues flow through Garware's own brand (Garware or Global), with <span class="hl-number">40–45%</span> as private label. The brand share is the most important number to track: it is the variable that determines long-run margin trajectory.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue)">
+  Vertical integration from PET chips to branded consumer film is globally rare; each new product category stacks on the same factory, so revenue growth outpaces capex.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 2B: PORTER'S 5 FORCES ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">2B</span> Competitive Structure</div>
+  <h2 class="ch-title">Porter's Five Forces</h2>
+</div>
+
+<table class="porter-table" aria-label="Porter's Five Forces analysis">
+  <thead>
+    <tr><th>Force</th><th>Rating</th><th>Rationale</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Rivalry Intensity</td>
+      <td><span class="rating-med">Medium</span></td>
+      <td>Global peers are Eastman (LLumar, ~30% market share), 3M (~25%), Saint-Gobain (Solar Gard), and XPEL in PPF. Garware competes on quality and cost; it is the only large vertically integrated Indian manufacturer. In domestic market it holds dominant position but faces import competition from China/Korea in commodity-adjacent IPD segment.</td>
+    </tr>
+    <tr>
+      <td>Buyer Power</td>
+      <td><span class="rating-med">Medium</span></td>
+      <td>US market is ~45% of revenues but served through distributors with long certification cycles. In PPF, 4 OEM partnerships in India create captive demand. D2C share (10–15% now) structurally lowers buyer power over time. Top customer concentration is not disclosed but multi-decade distributor relationships reduce switching likelihood.</td>
+    </tr>
+    <tr>
+      <td>Supplier Power</td>
+      <td><span class="rating-med">Medium</span></td>
+      <td>Key inputs are PTA and MEG (crude derivatives), meaning raw material costs are correlated with oil price. However, backward integration into PET chips partially insulates vs. competitors. ~45–50% of input cost linked to imports or import parity; management passes through increases via scientific pricing correlated to crude.</td>
+    </tr>
+    <tr>
+      <td>Threat of New Entrants</td>
+      <td><span class="rating-low">Low</span></td>
+      <td>Building a vertically integrated sun control or PPF facility requires substantial capital, 12–24 month certification timelines with major US/EU distributors, proprietary coating and nano-dispersion technology, and brand trust built over decades. Management explicitly notes the SCF machinery is built in-house with unique multi-operation capabilities not replicable commercially.</td>
+    </tr>
+    <tr>
+      <td>Threat of Substitutes</td>
+      <td><span class="rating-low">Low-Med</span></td>
+      <td>Smart glass is the theoretical substitute for architectural sun control, but cost differential remains 10–15× vs. film installations. Ceramic coatings substitute for PPF in some applications (Garware is entering this market via Dubai subsidiary). Cheap Chinese imports are the primary substitute risk in IPD/commodity segment, not in the branded CPD/PPF business.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="prose">
+  <p class="note">Structural pressure synthesis: The two forces worth watching most are <strong>Supplier Power</strong> (oil-linked raw material volatility can compress margins in any quarter) and <strong>Rivalry Intensity</strong> (Eastman/3M have far larger R&D budgets; Garware's moat is vertical integration and brand relationships, not technology alone). The antidumping petition against cheap Chinese/Korean imports — if granted — would sharply reduce rivalry pressure in the domestic IPD segment.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--coral)">
+  Antidumping ruling expected "this month or next" per management; a positive decision would materially reduce low-cost import rivalry in the domestic IPD segment.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 3: VERTICALS ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">3</span> The Vertical Stories</div>
+  <h2 class="ch-title">Three Businesses Inside One Stock</h2>
+</div>
+
+<div class="segment-grid">
+
+  <div class="seg-card" style="border-top-color:var(--teal)">
+    <div class="sc-seg" style="color:var(--teal)">Vertical 01 — SCF</div>
+    <div class="sc-title">Sun Control Films</div>
+    <div class="sc-pct">50%</div>
+    <div class="sc-body">Automotive and architectural window films. Garware holds the world's largest sun control film manufacturing position. Architectural sub-segment is ~25% of SCF revenue and growing at 25–30% — airports, hospitality chains, residential. SCF utilisation at 75–80%, will be fully utilised by FY27. New ₹191 Cr line adds 1,200 LSF capacity (30% addition), online Q1 FY28.</div>
+    <span class="sc-status status-running">● Running & Ramping</span>
+  </div>
+
+  <div class="seg-card" style="border-top-color:var(--coral)">
+    <div class="sc-seg" style="color:var(--coral)">Vertical 02 — PPF</div>
+    <div class="sc-title">Paint Protection Films</div>
+    <div class="sc-pct">25%</div>
+    <div class="sc-body">India's first and largest PPF manufacturer. 4 OEM partnerships (Mahindra & others). PPF utilisation 85–89%, near full. D2C through 250+ Garware Application Studios and US direct channel. Global brand gaining distributors from competition in US/UK. TPU backward integration (Oct 2026) reduces input cost and opens new TPU-based architectural and automotive products.</div>
+    <span class="sc-status status-ramping">● Ramping Fast</span>
+  </div>
+
+  <div class="seg-card" style="border-top-color:var(--blue)">
+    <div class="sc-seg" style="color:var(--blue)">Vertical 03 — IPD</div>
+    <div class="sc-title">Industrial Products</div>
+    <div class="sc-pct">25%</div>
+    <div class="sc-body">PET shrink films (60% domestic market share), electrical insulation films, packaging. Lower-margin commodity-adjacent business but cash generative. At risk from cheap Chinese/Korean imports — antidumping petition pending decision. 42,000 MT annual capacity installed.</div>
+    <span class="sc-status status-running">● Steady / Defensive</span>
+  </div>
+
+  <div class="seg-card" style="border-top-color:var(--green)">
+    <div class="sc-seg" style="color:var(--green)">Emerging — D2C</div>
+    <div class="sc-title">Garware Home Solutions</div>
+    <div class="sc-pct">~2–3%</div>
+    <div class="sc-body">Direct-to-consumer architectural films, switchable PDLC privacy films, graphic solutions. 6 studios operational, target 50 by FY27 end. Revenue target ₹200 Cr by FY28 across Home Solutions + new products. D2C margins 30–40% higher than distributor channel. 1.8 lakh monthly website visits, 8 Cr annual Meta impressions.</div>
+    <span class="sc-status status-nascent">● Nascent / High Upside</span>
+  </div>
+
+</div>
+
+<div class="insight-card">
+  <div class="ic-label">MENA as Structural Catalyst</div>
+  <p>The Dubai subsidiary (Garware Hi-Tech Global Trading FZCO, incorporated April 27, 2026) is not just a sales office — it is a supply chain hedge. When US tariffs hit 50%, Garware could not pivot fast enough. The Dubai entity gives local presence in the fastest-growing film market globally, where construction activity is structurally elevated and architectural film penetration is early-stage. MENA revenue was $15 million in FY26; management targets $20–22 million in FY27 at 25–30% CAGR.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--green)">
+  GHS and new products expected to cross ₹200 Cr revenue by FY28 — this is the highest-margin incremental revenue bucket in the entire business.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 4: STRATEGIC INSIGHT ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">4</span> The One Thing To Understand</div>
+  <h2 class="ch-title">The Strategic Insight</h2>
+</div>
+
+<div class="insight-card" style="border-left-color:var(--amber)">
+  <div class="ic-label">The Non-Obvious Truth</div>
+  <p><span class="hl-key">The sun control lamination line is not just a sun control line — it is a capacity option on everything Garware makes.</span> Management disclosed that a sun control line produces 125 lakh square feet per month, whereas a PPF line produces only 25 lakh square feet. The ₹191 Cr SCF investment therefore buys 5× the flexibility of a PPF-only expansion. When PPF demand exceeds dedicated PPF capacity, Garware runs PPF "fungibly" through the SCF line. This means the new SCF line effectively solves the capacity constraint for both verticals simultaneously — which is why management chose SCF over PPF expansion even with PPF at 89% utilisation.</p>
+</div>
+
+<div class="prose">
+  <p>The second non-obvious truth is about D2C. Management's 1.8 lakh monthly website visits and 8 Cr Meta impressions are not marketing vanity metrics. <span class="hl-catalyst">They are proof that Garware is successfully repositioning from an ingredients supplier (making films for others to brand) to a consumer brand that end customers recognise, trust, and seek out.</span> The D2C margin premium of 30–40% over distributor sales means that every percentage point of revenue that migrates from B2B to D2C adds disproportionate EBITDA. At 25% D2C mix vs. today's 10–15%, the EBITDA margin could expand 150–200 bps structurally, independent of volume.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber)">
+  One SCF line purchase = capacity optionality for two product families; the investment math understates its strategic value by 4–5×.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 5: NUMBERS ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">5</span> The Numbers in Context</div>
+  <h2 class="ch-title">Financials — Record Year, Eyes Forward</h2>
+</div>
+
+<div class="stat-block" aria-label="Financial summary">
+  <div class="stat-row"><span class="sr-label">FY26 Revenue (Consolidated)</span><span class="sr-val">₹2,120 Cr</span><span class="sr-tag tag-green">All-time high</span></div>
+  <div class="stat-row"><span class="sr-label">YoY Revenue Growth</span><span class="sr-val">+0.5%</span><span class="sr-tag tag-amber">Tariff-muted</span></div>
+  <div class="stat-row"><span class="sr-label">EBITDA</span><span class="sr-val">₹500 Cr</span><span class="sr-tag tag-green">Record</span></div>
+  <div class="stat-row"><span class="sr-label">EBITDA Margin</span><span class="sr-val">23.6%</span><span class="sr-tag tag-green">Held well</span></div>
+  <div class="stat-row"><span class="sr-label">PAT</span><span class="sr-val">₹338 Cr</span><span class="sr-tag tag-green">Record; +2% vs FY25</span></div>
+  <div class="stat-row"><span class="sr-label">PAT Margin</span><span class="sr-val">16.0%</span><span class="sr-tag tag-blue">Improving</span></div>
+  <div class="stat-row"><span class="sr-label">Q4 FY26 EBITDA (Quarterly Record)</span><span class="sr-val">₹157 Cr</span><span class="sr-tag tag-green">+29% YoY</span></div>
+  <div class="stat-row"><span class="sr-label">Q4 FY26 EBITDA Margin</span><span class="sr-val">26.2%</span><span class="sr-tag tag-green">Peak quarter</span></div>
+  <div class="stat-row"><span class="sr-label">Cash &amp; Liquid Investments</span><span class="sr-val">₹774 Cr</span><span class="sr-tag tag-green">Debt-Free</span></div>
+  <div class="stat-row"><span class="sr-label">Market Cap (May 2026)</span><span class="sr-val">~₹13,100 Cr</span><span class="sr-tag tag-amber">37× trailing PE</span></div>
+  <div class="stat-row"><span class="sr-label">Peer Median PE</span><span class="sr-val">~22×</span><span class="sr-tag tag-amber">~68% premium</span></div>
+  <div class="stat-row"><span class="sr-label">FY27 Revenue Guidance</span><span class="sr-val">₹2,500 Cr+</span><span class="sr-tag tag-blue">~18% growth guided</span></div>
+  <div class="stat-row"><span class="sr-label">FY27 EBITDA Margin Guidance</span><span class="sr-val">25% ±2%</span><span class="sr-tag tag-blue">Tightened from ±3%</span></div>
+  <div class="stat-row"><span class="sr-label">Export Share of Revenue</span><span class="sr-val">74–77%</span><span class="sr-tag tag-blue">US = 45%</span></div>
+</div>
+
+<div class="prose">
+  <p><span class="hl-number">Revenue trajectory FY22–FY26: ₹1,303 Cr → ₹1,438 Cr → ₹1,677 Cr → ₹2,109 Cr → ₹2,120 Cr.</span> Flat FY26 was entirely attributable to a 50% US tariff imposed for most of the year. The underlying business — sans tariff — grew meaningfully: Q4 FY26 alone was ₹597 Cr, running at a ₹2,388 Cr annualised rate, already well above the FY26 full-year number. Working capital days have expanded from ~70 to ~146, partly reflecting strategic inventory holding during tariff disruption — worth monitoring for normalisation.</p>
+  <p><span class="hl-risk">The 37× PE vs. the industry median of 22× means the market is pricing in a continuation of 20%+ revenue CAGR and margin expansion to 25%+. The stock has zero room for a second flat year.</span> If FY27 comes in below ₹2,300 Cr or margins compress below 22%, the valuation re-rates sharply. The guidance tightening from ±3% to ±2% bandwidth is management signalling elevated confidence, not caution.</p>
+</div>
+
+<h3 style="font-family:var(--font-display);font-size:20px;margin:28px 0 14px;color:var(--ink)">Capex Timeline</h3>
+
+<div class="capex-timeline">
+  <div class="ct-item">
+    <div class="ct-year">FY22–FY24</div>
+    <div class="ct-dot"></div>
+    <div class="ct-body">
+      <div class="ct-head">Phase 1 — Building the Product Platform</div>
+      <span class="ct-amount">~₹350–400 Cr cumulative</span>
+      <div class="ct-sub">2 PPF lines commissioned. First dedicated sun control lamination line. Metalizer. All funded via internal accruals. Revenue went from ₹1,303 Cr to ₹1,677 Cr over this period — approx. 1.5× asset turnover on incremental spend.</div>
+    </div>
+  </div>
+  <div class="ct-item">
+    <div class="ct-year">FY25</div>
+    <div class="ct-dot" style="background:var(--coral)"></div>
+    <div class="ct-body">
+      <div class="ct-head">Second SCF Line + PPF Capacity Doubling</div>
+      <span class="ct-amount">~₹150–180 Cr</span>
+      <div class="ct-sub">Second PPF line came online, doubling PPF manufacturing capacity. Second sun control line. FY25 revenue hit ₹2,109 Cr, PAT ₹331 Cr. Tariff headwinds began appearing in Q4 FY25.</div>
+    </div>
+  </div>
+  <div class="ct-item">
+    <div class="ct-year">FY26</div>
+    <div class="ct-dot" style="background:var(--amber)"></div>
+    <div class="ct-body">
+      <div class="ct-head">TPU Line — India's First</div>
+      <span class="ct-amount">₹118 Cr</span>
+      <div class="ct-sub">TPU (thermoplastic polyurethane) extrusion facility at Waluj, Aurangabad. Expected commissioning: October 2026. Completes backward integration for PPF, eliminating TPU import dependence. Also enables 2 new architectural/automotive products. Management guided TPU to improve margins when live.</div>
+    </div>
+  </div>
+  <div class="ct-item">
+    <div class="ct-year">FY27–FY28</div>
+    <div class="ct-dot" style="background:var(--green)"></div>
+    <div class="ct-body">
+      <div class="ct-head">New SCF Lamination Line (Board Approved)</div>
+      <span class="ct-amount">₹191 Cr</span>
+      <div class="ct-sub">1,200 LSF capacity addition (30% to existing 4,200 LSF). Advanced robotics and automation, new facility adjacent to existing plant at Waluj. Expected completion by June 2027 (Q1 FY28). Revenue expected to be fully utilised by FY28. Funded entirely through internal accruals — ₹774 Cr cash is sufficient to cover 2.4× this spend without any debt.</div>
+    </div>
+  </div>
+</div>
+
+<div class="prose">
+  <p class="note">Capex red-flag check: No red flags on balance sheet confidence — ₹774 Cr cash vs. ₹191 Cr approved spend. Total multi-year capex of ~₹700 Cr has been absorbed entirely from operating cash flows. No equity dilution, no debt. Order book visibility is strong: 75–80% SCF and 85–89% PPF utilisation means capacity is fully justified by current demand.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--blue)">
+  ₹700 Cr deployed in 4 years of capex from internal accruals with zero debt — and ₹774 Cr still on the balance sheet. This is not a stressed capex cycle; it is a cash machine reinvesting in itself.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 6: RISKS ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">6</span> Eyes Open</div>
+  <h2 class="ch-title">Risks — Specific, Not Generic</h2>
+</div>
+
+<div class="risk-list">
+  <div class="risk-item">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="rh">US Tariff Relapse Risk</div>
+      <div class="rb">US contributes 45% of revenue. The 50% tariff in FY26 (now down to 10% additional vs. baseline 6.26%) disrupted full-year performance despite Q4 recovery. Any escalation in Indo-US trade policy — or broader reciprocal tariff resurgence — replicates the Q1–Q3 FY26 drag. Management has reduced US share from 48% (FY25) to 45% (FY26) intentionally, but 45% remains high concentration.</div>
+      <div class="rs">SIGNAL: Watch US revenue share in Q1 FY27 concall — should be 42–45%; any climb back above 48% without corresponding EBITDA improvement is a concentration concern.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="rh">Customer Backward Integration in PPF</div>
+      <div class="rb">At least one large US customer has disclosed plans for in-house PPF manufacturing. Management downplayed impact, noting Garware is not the sole supplier and the customer buys both SCF and PPF. However, any large customer taking PPF in-house reduces addressable volume in the 25% PPF segment. This risk is real but slow-moving.</div>
+      <div class="rs">SIGNAL: Flat or declining PPF volume growth for 2 consecutive quarters while capacity utilisation is still high would be an early indicator.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="rh">Working Capital Bloat</div>
+      <div class="rb">Working capital days expanded from ~70 to ~146. Part of this was deliberate (holding inventory near US ports during tariff uncertainty), but if this does not normalise with order velocity returning in FY27, it signals either demand softness or structural supply-chain inefficiency. Elevated WC consumes cash even on a debt-free balance sheet.</div>
+      <div class="rs">SIGNAL: Working capital days above 120 in Q2 FY27 (post-peak season) would be a flag requiring explanation.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="rh">CFO Departure (Key Person Risk)</div>
+      <div class="rb">Abhishek Agarwal resigned as CFO effective May 15, 2026, to "pursue career opportunities outside the Company." CFO departures at record-profit moments are unusual and deserve scrutiny. No other material reason was cited, and no successor has been named yet. For a company entering its highest-capex and highest-complexity phase, finance leadership continuity matters.</div>
+      <div class="rs">SIGNAL: Appointment of CFO within 60 days and Q1 FY27 guidance maintained is the confirmation that this is routine; extended vacancy or guidance revision is not.</div>
+    </div>
+  </div>
+  <div class="risk-item">
+    <div class="risk-icon">⚠️</div>
+    <div class="risk-content">
+      <div class="rh">D2C Execution vs. Narrative</div>
+      <div class="rb">The Garware Home Solutions story is compelling but entirely in narrative stage — 6 studios open, targeting 50. Building 44 more studios by March 2027 requires capital, staffing, brand, and operational discipline across geographies. If the rollout is slow or studios underperform unit economics, the premium valuation for the D2C re-rating thesis gets challenged.</div>
+      <div class="rs">SIGNAL: GHS studio count below 25 by Q3 FY27, or D2C revenue share stuck below 12% in the same period.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber)">
+  CFO departure at the start of a high-complexity capex phase is the near-term watch — reassurance needed within 60 days via successor appointment.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── CHAPTER 7: WATCH SIGNALS ─── -->
+<div class="ch">
+  <div class="ch-eye"><span class="ch-num">7</span> The Investor Dashboard</div>
+  <h2 class="ch-title">Watch Signals — Five Metrics Every Quarter</h2>
+</div>
+
+<div class="watch-list">
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--teal)"></div>
+    <div class="watch-content">
+      <div class="wh">1. D2C Revenue Share</div>
+      <div class="wb">Currently 10–15% of total. Management targets 25–35% over 3 years. This is the primary margin re-rating lever. Good: share rising each quarter, especially in India domestic. Better: Global Application Studios contributing to export D2C.</div>
+      <div class="wred">RED FLAG: Stuck at 10–12% by Q3 FY27 signals the D2C buildout is not executing at management's guided pace.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--coral)"></div>
+    <div class="watch-content">
+      <div class="wh">2. MENA Revenue ($)</div>
+      <div class="wb">FY26 base: ~$15 million. FY27 target: $20–22 million (+33–47% growth). This tests the Dubai subsidiary thesis and the MENA architectural push.</div>
+      <div class="wred">RED FLAG: MENA revenue flat at $14–15 million in H1 FY27 with no pipeline visibility would signal the expansion is behind schedule.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--blue)"></div>
+    <div class="watch-content">
+      <div class="wh">3. EBITDA Margin Band</div>
+      <div class="wb">Guidance: 25% ±2% (i.e., 23–27%). Q4 FY26 was 26.2%. Management tightened from ±3% to ±2% bandwidth — a confidence signal. This band reflects the underlying quality of the business. Good: above 24% consistently. Very good: above 25.5% once TPU comes online.</div>
+      <div class="wred">RED FLAG: Two consecutive quarters below 22% without a cited one-time event indicates structural margin pressure, not cycle.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--amber)"></div>
+    <div class="watch-content">
+      <div class="wh">4. US Revenue Share Trend</div>
+      <div class="wb">US went from 48% (FY25) to 45% (FY26) — intentional dilution as MENA and Europe grew. Management targets continued diversification. The structural goal is to get US below 40% over 2–3 years to reduce single-market risk.</div>
+      <div class="wred">RED FLAG: US share climbing back above 47% without corresponding improvement in EBITDA signals geographic diversification is not happening and tariff risk is rising.</div>
+    </div>
+  </div>
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--green)"></div>
+    <div class="watch-content">
+      <div class="wh">5. TPU Commissioning & Initial Revenue</div>
+      <div class="wb">TPU line targeted for October 2026 (Q2 FY27). First revenues in Q3 FY27. Management identified 2 products (automotive + architectural). This is the backward integration milestone that reduces PPF input cost and unlocks margin upside.</div>
+      <div class="wred">RED FLAG: TPU commissioning pushed beyond Q3 FY27 or initial revenue contribution below management's ₹200 Cr FY28 new-products target on a run-rate basis.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--green)">
+  EBITDA margin trajectory and D2C share in the same quarter gives you the full picture in 30 seconds: one shows business quality, the other shows where the story is going.
+</div>
+
+<hr class="divider"/>
+
+<!-- ─── VERDICT ─── -->
+<div class="verdict-card" role="region" aria-label="Investment verdict">
+  <div class="vc-label">Verdict — May 2026</div>
+  <p class="vc-text">Garware Hi-Tech Films is a globally rare asset: <strong>vertically integrated, brand-owning, debt-free, cash-generating</strong>, and sitting at the intersection of three structural tailwinds — solar energy efficiency awareness, automotive premiumisation, and rapid MENA construction. FY26 was a stress-test year that confirmed the business is sticky: even with a 50% US tariff for most of the year, revenue only declined 0.5% and margins held above 23%. <strong>The quality signal is unmissable — ₹700 Cr of capex in four years funded from operations, with ₹774 Cr still in the bank.</strong> The near-term catalyst is clear: TPU commissioning in October 2026 completes backward integration and triggers margin uplift; the Dubai subsidiary crystallises the MENA growth option; and even one antidumping ruling in the domestic IPD segment provides windfall earnings. The valuation at <strong>37× trailing PE vs. a 22× peer median</strong> is pricing in execution of all three — which is demanding. This is a middle-chapter story: the macro setup is perfect, the financial foundation is exceptional, but the D2C re-rating and MENA scale-up must now visibly deliver. Watch working capital normalisation and CFO appointment as near-term confidence tests.</p>
+  <div class="vc-stage">📖 Story Stage: MIDDLE CHAPTERS — Transition from global distributor to consumer brand owner</div>
+</div>
+
+<!-- ─── HIGHLIGHT INDEX ─── -->
+<details id="highlight-index">
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol id="hi-list">
+    <!-- auto-populated by JS -->
+  </ol>
+</details>
+
+</div><!-- /page -->
+
+<script>
+/* ─── QUICK SCAN ─── */
+function toggleQS(){
+  const qs=document.getElementById('qs');
+  const open=qs.classList.toggle('open');
+  qs.classList.toggle('closed',!open);
+  const btn=document.getElementById('qs-toggle');
+  const hdr=document.getElementById('qs-header');
+  hdr.setAttribute('aria-expanded',open.toString());
+  try{localStorage.setItem('qs-state',open?'open':'closed')}catch(e){}
+}
+(function(){
+  try{
+    const s=localStorage.getItem('qs-state');
+    if(s==='open'){
+      const qs=document.getElementById('qs');
+      qs.classList.remove('closed');qs.classList.add('open');
+      document.getElementById('qs-header').setAttribute('aria-expanded','true');
+    }
+  }catch(e){}
+})();
+
+/* ─── THEME ─── */
+function toggleTheme(){
+  const isDark=document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme',isDark?'light':'dark');
+  try{localStorage.setItem('theme',isDark?'light':'dark')}catch(e){}
+}
+(function(){
+  try{
+    const t=localStorage.getItem('theme');
+    if(t){document.documentElement.setAttribute('data-theme',t);}
+    else if(window.matchMedia('(prefers-color-scheme: dark)').matches){
+      document.documentElement.setAttribute('data-theme','dark');
+    }
+  }catch(e){}
+})();
+
+/* ─── HIGHLIGHT INDEX ─── */
+document.addEventListener('DOMContentLoaded',()=>{
+  const index=document.getElementById('hi-list');
+  if(!index)return;
+  const hlTypes=['.hl-key','.hl-number','.hl-risk','.hl-catalyst','.takeaway-pill'];
+  const nodes=document.querySelectorAll(hlTypes.join(','));
+  nodes.forEach(el=>{
+    const text=el.textContent.trim();
+    if(!text||text.length<20)return;
+    const li=document.createElement('li');
+    const typeClass=[...el.classList].find(c=>c.startsWith('hl-')||c==='takeaway-pill')||'';
+    const typeLabel={
+      'hl-key':'🔑',
+      'hl-number':'📊',
+      'hl-risk':'⚠️',
+      'hl-catalyst':'🚀',
+      'takeaway-pill':'💡'
+    }[typeClass]||'•';
+    li.innerHTML=`<span style="font-size:14px;flex-shrink:0">${typeLabel}</span><span>${text}</span>`;
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

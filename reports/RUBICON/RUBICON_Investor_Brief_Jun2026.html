@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RUBICON · Investor Brief · June 2026 + The Ledger Brainstorm</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+/* ============================================================
+   DESIGN TOKENS — SHARED ACROSS BOTH PARTS
+   ============================================================ */
+:root {
+  --ink:        #1A1A2E;
+  --paper:      #F7F5F0;
+  --rule:       #DDD8CE;
+  --amber:      #C47B00;
+  --amber-bg:   #FFF7E6;
+  --green:      #1D7A5B;
+  --green-bg:   #E8F5F0;
+  --red:        #B03020;
+  --red-bg:     #FDF0EE;
+  --navy:       #1E3A5F;
+  --navy-bg:    #EBF0F8;
+  --purple:     #534AB7;
+  --purple-bg:  #F0EDFB;
+  --teal:       #0E7490;
+  --teal-bg:    #E0F5FA;
+  --coral:      #C05020;
+  --coral-bg:   #FDF0E8;
+  --gray:       #6B7280;
+  --gray-light: #F0EDE8;
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --mono:       'DM Mono', 'Courier New', monospace;
+  /* Brief-specific accent colours */
+  --pharma:     #534AB7;  /* purple for specialty pharma */
+  --pharma-bg:  #EDECF9;
+  --us-blue:    #2563EB;
+  --us-bg:      #EFF6FF;
+  --device:     #0E7490;  /* teal for drug-device */
+  --potent:     #C05020;  /* coral for high-potency */
+  --india:      #C47B00;  /* amber for India/CNS */
+  /* Day/night toggle */
+  --bg:   #F7F5F0;
+  --text: #1A1A2E;
+  --card: #ffffff;
+  --border: #DDD8CE;
+}
+body.dark {
+  --bg:    #111118;
+  --text:  #E8E4DC;
+  --card:  #1E1E2A;
+  --border:#2D2D3D;
+  --paper: #111118;
+  --ink:   #E8E4DC;
+  --rule:  #2D2D3D;
+  --gray:  #9CA3AF;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--bg); color: var(--text);
+  font-size: 15px; line-height: 1.7; transition: background 0.3s, color 0.3s; }
+
+/* ============================================================
+   PRINT RULES — CRITICAL
+   ============================================================ */
+@media print {
+  body { font-size: 11px; background: white; color: black; }
+  .no-print, .mode-toggle, .print-hide { display: none !important; }
+  .quick-scan-strip { position: static !important; background: #f3f1ff !important;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+    page-break-inside: avoid; }
+  .highlight-index-block { display: block !important; }
+  .brief-cover { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .chapter-card, .vertical-card, .risk-item, .watch-item { break-inside: avoid; }
+  .doc-separator { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .masthead { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  canvas { max-width: 100% !important; }
+  section { break-inside: avoid; }
+  .redflag-card, .pillar-card { break-inside: avoid; }
+}
+
+/* ============================================================
+   DAY/NIGHT TOGGLE
+   ============================================================ */
+.mode-toggle {
+  position: fixed; top: 12px; right: 16px; z-index: 999;
+  background: var(--card); border: 1px solid var(--border); border-radius: 20px;
+  padding: 6px 14px; font-family: var(--mono); font-size: 11px; cursor: pointer;
+  color: var(--text); letter-spacing: 1px;
+}
+.mode-toggle:hover { background: var(--amber-bg); }
+
+/* ============================================================
+   PART 1 — BRIEF LAYOUT
+   ============================================================ */
+.brief-wrap { max-width: 980px; margin: 0 auto; padding: 0 24px 60px; }
+
+/* --- COVER CARD --- */
+.brief-cover {
+  background: var(--ink); color: #F7F5F0;
+  padding: 56px 64px 44px; position: relative; overflow: hidden;
+  border-radius: 0 0 12px 12px;
+}
+.brief-cover::before {
+  content:''; position:absolute; top:0; right:0; width:50%; height:100%;
+  background: repeating-linear-gradient(-45deg, transparent, transparent 5px,
+    rgba(83,74,183,0.07) 5px, rgba(83,74,183,0.07) 10px);
+}
+.cover-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 14px; }
+.cover-h1 { font-family: var(--serif); font-size: 58px; font-weight: 700;
+  line-height: 1.05; letter-spacing: -1.5px; }
+.cover-h1 span { color: #8B83D4; }
+.cover-sub { font-size: 17px; color: #A8A098; margin-top: 10px;
+  max-width: 580px; font-weight: 300; }
+.cover-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px; }
+.cover-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px; padding: 6px 14px; font-family: var(--mono); font-size: 10px;
+  letter-spacing: 1.5px; color: #C8C0B0; }
+.cover-chip.hi { background: rgba(83,74,183,0.3); border-color: rgba(83,74,183,0.5); color: #C8C0FF; }
+
+/* --- QUICK-SCAN STRIP (always expanded, printer-friendly) --- */
+.quick-scan-strip {
+  background: var(--pharma-bg); border-bottom: 2px solid var(--pharma);
+  padding: 16px 24px; position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(83,74,183,0.12);
+}
+.qs-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--pharma); font-weight: 600; margin-bottom: 12px; }
+.qs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 6px; }
+.qs-line { display: flex; gap: 8px; align-items: flex-start; font-size: 12.5px; color: var(--ink); line-height: 1.45; }
+.qs-icon { flex-shrink: 0; font-size: 13px; margin-top: 1px; }
+.qs-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--pharma); min-width: 60px; flex-shrink: 0; font-weight: 600; }
+
+/* --- SECTION HEADERS --- */
+.ch-header { display: flex; align-items: flex-start; gap: 18px; margin: 56px 0 22px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.ch-num-circle { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center;
+  justify-content: center; font-family: var(--serif); font-size: 17px; font-weight: 700;
+  color: white; flex-shrink: 0; margin-top: 2px; }
+.ch-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+.ch-title { font-family: var(--serif); font-size: 22px; font-weight: 700; line-height: 1.2; }
+
+/* --- PROSE --- */
+p { margin-bottom: 14px; color: var(--text); }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+h3 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin: 22px 0 8px; }
+.lead { font-size: 16px; line-height: 1.75; padding: 18px 22px;
+  border-left: 4px solid var(--pharma); background: var(--pharma-bg);
+  border-radius: 0 6px 6px 0; margin-bottom: 22px; }
+.lead.teal  { border-left-color: var(--teal);  background: var(--teal-bg);  }
+.lead.amber { border-left-color: var(--amber); background: var(--amber-bg); }
+.lead.green { border-left-color: var(--green); background: var(--green-bg); }
+.lead.coral { border-left-color: var(--coral); background: var(--coral-bg); }
+
+/* --- INLINE HIGHLIGHTS --- */
+.hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: monospace; font-size: 0.95em; }
+.hl-risk     { background: #FFF3CD; padding: 1px 3px; border-radius: 2px; border-left: 3px solid var(--amber); }
+.hl-catalyst { background: #E6F4EA; padding: 1px 3px; border-radius: 2px; border-left: 3px solid #1D7A5B; }
+
+/* --- TAKEAWAY PILL --- */
+.takeaway-pill { border-radius: 6px; padding: 11px 18px; margin-top: 22px; margin-bottom: 4px;
+  font-size: 13.5px; font-weight: 600; line-height: 1.45; color: var(--ink);
+  border-left: 4px solid var(--pharma); background: var(--pharma-bg); }
+
+/* --- PORTER TABLE --- */
+.porter-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 18px 0; }
+.porter-table th { background: var(--ink); color: #EEE; padding: 9px 12px;
+  text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; font-weight: 500; }
+.porter-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; color: var(--text); line-height: 1.5; }
+.porter-table tr:last-child td { border-bottom: none; }
+.porter-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+.rating-badge { display: inline-block; padding: 2px 9px; border-radius: 12px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600; }
+.r-high   { background: var(--red-bg);    color: var(--red); }
+.r-medium { background: var(--amber-bg);  color: var(--amber); }
+.r-low    { background: var(--green-bg);  color: var(--green); }
+
+/* --- VERTICAL CARDS --- */
+.verticals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 22px 0; }
+@media (max-width: 700px) { .verticals-grid { grid-template-columns: 1fr; } }
+.vertical-card { background: var(--card); border: 1.5px solid var(--border);
+  border-radius: 10px; padding: 20px; }
+.vc-status { display: inline-block; font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 3px 9px; border-radius: 10px; margin-bottom: 10px; }
+.vc-title { font-family: var(--serif); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+.vc-body { font-size: 13px; color: var(--gray); line-height: 1.6; }
+.vc-number { font-family: var(--mono); font-size: 12px; margin-top: 8px;
+  padding: 5px 9px; border-radius: 4px; display: inline-block; }
+
+/* --- INSIGHT BOX --- */
+.insight-box { background: var(--ink); color: #F0EDE8; border-radius: 10px;
+  padding: 28px 32px; margin: 24px 0; }
+.insight-box .ib-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+.insight-box p { color: #D0C8BC; font-size: 14.5px; line-height: 1.75; margin-bottom: 12px; }
+.insight-box p:last-child { margin-bottom: 0; }
+.insight-box strong { color: #F7F5F0; }
+
+/* --- FINANCIAL SCORECARD --- */
+.scorecard-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+@media (max-width: 650px) { .scorecard-grid { grid-template-columns: 1fr 1fr; } }
+.sc-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; padding: 16px; }
+.sc-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 4px; }
+.sc-value { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--text); line-height: 1.1; }
+.sc-delta { font-size: 12px; color: var(--green); font-family: var(--mono); margin-top: 3px; }
+.sc-delta.neg { color: var(--red); }
+.sc-delta.neutral { color: var(--gray); }
+
+/* --- DATA TABLES --- */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 18px 0; }
+.data-table th { background: var(--ink); color: #EEE; padding: 9px 12px;
+  text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; font-weight: 500; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; line-height: 1.5; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+.data-table th.purple { background: var(--purple); }
+.data-table th.teal   { background: var(--teal); }
+.data-table th.coral  { background: var(--coral); }
+.data-table th.amber  { background: #b5730f; }
+
+/* --- CAPEX TIMELINE CARD --- */
+.capex-card { background: var(--card); border: 1.5px solid var(--border); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.capex-header { background: var(--coral); color: white; padding: 10px 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+.capex-row { display: flex; gap: 0; border-bottom: 1px solid var(--border); }
+.capex-row:last-child { border-bottom: none; }
+.capex-row.hdr { background: var(--gray-light); }
+.capex-cell { padding: 10px 14px; flex: 1; font-size: 12.5px; border-right: 1px solid var(--border); }
+.capex-cell:last-child { border-right: none; }
+.capex-cell .cc-label { font-family: var(--mono); font-size: 9.5px; color: var(--gray); margin-bottom: 3px; text-transform: uppercase; }
+.capex-cell .cc-val { font-weight: 600; color: var(--text); }
+.capex-cell .cc-sub { font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+.status-ok   { color: var(--green);  font-family: var(--mono); font-size: 11px; }
+.status-warn { color: var(--amber);  font-family: var(--mono); font-size: 11px; }
+.status-pend { color: var(--purple); font-family: var(--mono); font-size: 11px; }
+
+/* --- RISKS --- */
+.risk-item { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { font-size: 20px; color: var(--amber); flex-shrink: 0; margin-top: 2px; }
+.risk-title { font-family: var(--mono); font-size: 11.5px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+.risk-body { font-size: 13.5px; color: var(--text); line-height: 1.55; margin-bottom: 5px; }
+.risk-signal { font-size: 12px; color: var(--gray); font-style: italic; }
+
+/* --- WATCH SIGNALS --- */
+.watch-item { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); align-items: flex-start; }
+.watch-item:last-child { border-bottom: none; }
+.watch-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--pharma); flex-shrink: 0; margin-top: 6px; }
+.watch-metric { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--pharma); margin-bottom: 3px; text-transform: uppercase; }
+.watch-desc { font-size: 13.5px; color: var(--text); line-height: 1.5; }
+.watch-flag { font-size: 11.5px; color: var(--red); margin-top: 4px; font-family: var(--mono); }
+
+/* --- VERDICT --- */
+.verdict-card { background: var(--pharma-bg); border: 2px solid var(--pharma); border-radius: 10px;
+  padding: 24px 28px; margin: 32px 0; }
+.verdict-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--pharma); margin-bottom: 10px; }
+.verdict-card p { color: var(--ink); font-size: 14.5px; line-height: 1.75; }
+.verdict-stage { display: inline-block; background: var(--pharma); color: white;
+  font-family: var(--mono); font-size: 11px; padding: 3px 10px; border-radius: 10px; margin-left: 6px; }
+
+/* --- HIGHLIGHT INDEX (always open) --- */
+.highlight-index-block { background: var(--gray-light); border: 1.5px solid var(--border);
+  border-radius: 8px; padding: 24px 28px; margin: 40px 0; }
+.hi-title { font-family: var(--serif); font-size: 18px; font-weight: 700; margin-bottom: 16px;
+  color: var(--ink); display: flex; align-items: center; gap: 10px; }
+.hi-list { list-style: none; padding: 0; }
+.hi-list li { padding: 6px 0 6px 18px; position: relative; font-size: 13px;
+  color: var(--text); line-height: 1.5; border-bottom: 1px dotted var(--rule); }
+.hi-list li:last-child { border-bottom: none; }
+.hi-list li[data-type="hl-key"]::before      { content: "KEY"; position: absolute; left: 0;
+  font-family: var(--mono); font-size: 8px; color: #997700; background: #FFF176; padding: 1px 3px; border-radius: 2px; top: 9px; }
+.hi-list li[data-type="hl-number"]::before   { content: "NUM"; position: absolute; left: 0;
+  font-family: var(--mono); font-size: 8px; color: #1E3A5F; background: #E3F0FF; padding: 1px 3px; border-radius: 2px; top: 9px; }
+.hi-list li[data-type="hl-risk"]::before     { content: "RISK"; position: absolute; left: 0;
+  font-family: var(--mono); font-size: 8px; color: var(--amber); background: #FFF3CD; padding: 1px 3px; border-radius: 2px; top: 9px; }
+.hi-list li[data-type="hl-catalyst"]::before { content: "CAT"; position: absolute; left: 0;
+  font-family: var(--mono); font-size: 8px; color: var(--green); background: #E6F4EA; padding: 1px 3px; border-radius: 2px; top: 9px; }
+.hi-list li[data-type="takeaway-pill"]::before { content: "→"; position: absolute; left: 0;
+  font-size: 12px; color: var(--pharma); top: 6px; }
+
+/* --- CHART WRAPPER --- */
+.chart-wrap { background: var(--card); border: 1.5px solid var(--border); border-radius: 8px;
+  padding: 20px; margin: 20px 0; }
+.chart-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 14px; }
+canvas { max-height: 220px; }
+
+/* --- STAT ROWS --- */
+.stat-row { display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 0; border-bottom: 1px solid var(--border); font-size: 13.5px; }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--gray); }
+.stat-value { font-family: var(--mono); font-weight: 600; color: var(--text); }
+.stat-value.good { color: var(--green); }
+.stat-value.warn { color: var(--amber); }
+
+/* --- PEER TABLE --- */
+.peer-wrap { background: var(--card); border: 1.5px solid var(--border); border-radius: 8px;
+  overflow: hidden; margin: 18px 0; }
+.peer-head { background: var(--pharma); color: white; padding: 8px 14px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; }
+.peer-row { display: flex; padding: 9px 14px; border-bottom: 1px solid var(--border); font-size: 13px; }
+.peer-row:last-child { border-bottom: none; }
+.peer-row.rubicon { background: var(--pharma-bg); font-weight: 600; }
+.peer-cell { flex: 1; }
+.peer-cell:first-child { flex: 1.4; }
+
+/* --- DIVIDER --- */
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 36px 0; }
+
+/* ============================================================
+   TAGS + MISC
+   ============================================================ */
+.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 500; }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+.tag-green  { background: var(--green-bg);  color: var(--green); }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber); }
+.tag-red    { background: var(--red-bg);    color: var(--red); }
+.tag-teal   { background: var(--teal-bg);   color: var(--teal); }
+.tag-coral  { background: var(--coral-bg);  color: var(--coral); }
+.tag-navy   { background: var(--navy-bg);   color: var(--navy); }
+
+blockquote { border-left: 3px solid var(--purple); padding: 11px 18px; background: var(--purple-bg);
+  border-radius: 0 4px 4px 0; margin: 18px 0; font-style: italic; color: var(--purple);
+  font-size: 13.5px; line-height: 1.65; }
+
+/* ============================================================
+   DOCUMENT SEPARATOR (between Brief and Ledger)
+   ============================================================ */
+.doc-separator {
+  background: var(--ink); color: #F7F5F0;
+  text-align: center; padding: 24px 40px; margin-top: 60px;
+  font-family: var(--serif); font-size: 24px; font-weight: 700; letter-spacing: 1px;
+}
+.doc-separator .ds-sub { font-family: var(--mono); font-size: 10px; letter-spacing: 3px;
+  text-transform: uppercase; color: #A8A098; margin-top: 6px; }
+
+/* ============================================================
+   LEDGER SECTION STYLES (from Brainstorm v0.2)
+   ============================================================ */
+.masthead { background: var(--ink); color: #F7F5F0; padding: 52px 64px 40px; position: relative; overflow: hidden; }
+.masthead::before { content:''; position:absolute; top:0; right:0; width:380px; height:100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 6px, rgba(255,255,255,0.025) 6px, rgba(255,255,255,0.025) 12px); }
+.masthead-eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 12px; }
+.masthead h1 { font-family: var(--serif); font-size: 50px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+.masthead-sub { font-size: 16px; color: #A8A098; margin-top: 10px; max-width: 580px; font-weight: 300; }
+.masthead-meta { margin-top: 26px; display: flex; gap: 28px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px; padding: 6px 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: #C8C0B0; }
+.version-badge { background: var(--amber); color: white; border-radius: 3px; padding: 3px 8px;
+  font-family: var(--mono); font-size: 10px; font-weight: 600; margin-left: 10px; vertical-align: middle; }
+.content { max-width: 940px; margin: 0 auto; padding: 44px 40px 80px; }
+.sec-header { display: flex; align-items: flex-start; gap: 16px; margin: 52px 0 20px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--ink); }
+.sec-num { font-family: var(--serif); font-size: 26px; font-weight: 700; color: var(--amber); line-height: 1; min-width: 30px; }
+.sec-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.sec-title { font-family: var(--serif); font-size: 21px; font-weight: 700; line-height: 1.2; }
+.sec-header-accent { border-bottom-color: var(--teal); }
+.sec-header-accent .sec-num { color: var(--teal); }
+.sec-header-margin { border-bottom-color: var(--green); }
+.sec-header-margin .sec-num { color: var(--green); }
+.sec-header-capital { border-bottom-color: var(--navy); }
+.sec-header-capital .sec-num { color: var(--navy); }
+.lead-teal  { border-left-color: var(--teal)  !important; background: var(--teal-bg)  !important; }
+.lead-green { border-left-color: var(--green) !important; background: var(--green-bg) !important; }
+.lead-navy  { border-left-color: var(--navy)  !important; background: var(--navy-bg)  !important; }
+.chain-flow { display: flex; align-items: stretch; gap: 0; margin: 24px 0; overflow-x: auto; }
+.chain-node { flex: 1; min-width: 110px; background: white; border: 1.5px solid var(--rule);
+  padding: 12px 10px; text-align: center; position: relative; }
+.chain-node:first-child { border-radius: 6px 0 0 6px; }
+.chain-node:last-child  { border-radius: 0 6px 6px 0; }
+.chain-node::after { content: '→'; position: absolute; right: -13px; top: 50%; transform: translateY(-50%);
+  font-size: 16px; color: var(--amber); z-index: 2; background: var(--paper); padding: 0 2px; }
+.chain-node:last-child::after { display: none; }
+.chain-num { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 4px; }
+.chain-label { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.chain-detail { font-size: 11px; color: var(--gray); margin-top: 4px; line-height: 1.3; }
+.chain-node.c1 { border-top: 3px solid var(--coral); }
+.chain-node.c2 { border-top: 3px solid var(--amber); }
+.chain-node.c3 { border-top: 3px solid var(--amber); }
+.chain-node.c4 { border-top: 3px solid var(--green); }
+.chain-node.c5 { border-top: 3px solid var(--green); }
+.chain-node.c6 { border-top: 3px solid var(--navy); }
+.chain-node.c7 { border-top: 3px solid var(--navy); }
+.insight-box-ledger { background: var(--ink); color: #F0EDE8; border-radius: 8px; padding: 26px 30px; margin: 24px 0; }
+.insight-box-ledger .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.insight-box-ledger p { color: #D0C8BC; font-size: 15px; line-height: 1.7; }
+.insight-box-ledger strong { color: #F7F5F0; }
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+@media (max-width: 700px) { .pillars { grid-template-columns: 1fr; } }
+.pillar-card { border: 1.5px solid var(--rule); border-radius: 8px; padding: 18px; background: white; }
+.pillar-card.promise  { border-top: 3px solid #1D9E75; }
+.pillar-card.tone     { border-top: 3px solid var(--amber); }
+.pillar-card.exec     { border-top: 3px solid #D85A30; }
+.pillar-card.capex    { border-top: 3px solid var(--coral); }
+.pillar-card.margin   { border-top: 3px solid var(--green); }
+.pillar-card.capital  { border-top: 3px solid var(--navy); }
+.pillar-icon { font-size: 22px; margin-bottom: 8px; }
+.pillar-name { font-family: var(--serif); font-size: 14px; font-weight: 700; margin-bottom: 6px; }
+.pillar-desc { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.new-badge { display: inline-block; background: #1D9E75; color: white; font-family: var(--mono);
+  font-size: 9px; padding: 1px 5px; border-radius: 2px; margin-left: 5px; vertical-align: middle; }
+.redflag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0; }
+@media (max-width: 680px) { .redflag-grid { grid-template-columns: 1fr; } }
+.redflag-card { border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; background: white; }
+.redflag-card.critical { border-left: 3px solid var(--red); }
+.redflag-card.warning  { border-left: 3px solid var(--amber); }
+.redflag-card.capex    { border-left: 3px solid var(--coral); }
+.redflag-card.margin   { border-left: 3px solid var(--green); }
+.redflag-card.capital  { border-left: 3px solid var(--navy); }
+.redflag-name { font-family: var(--mono); font-size: 11.5px; font-weight: 600;
+  display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.icon-flag { color: var(--red); font-size: 13px; }
+.icon-warn { color: var(--amber); font-size: 13px; }
+.icon-capex { color: var(--coral); font-size: 13px; }
+.icon-margin { color: var(--green); font-size: 13px; }
+.icon-capital { color: var(--navy); font-size: 13px; }
+.redflag-what { font-size: 13px; color: #2A2A3A; margin-bottom: 5px; line-height: 1.5; }
+.redflag-signal { font-size: 11.5px; color: var(--gray); font-style: italic; }
+.timeline-card { background: white; border: 1.5px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.timeline-header { background: var(--coral); color: white; padding: 10px 16px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+.timeline-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); }
+.timeline-row:last-child { border-bottom: none; }
+.timeline-cell { padding: 10px 14px; flex: 1; font-size: 12.5px; border-right: 1px solid var(--rule); }
+.timeline-cell:last-child { border-right: none; }
+.timeline-cell .tl-label { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 3px; text-transform: uppercase; }
+.timeline-cell .tl-val { font-weight: 600; color: var(--ink); }
+.timeline-cell .tl-sub { font-size: 11.5px; color: var(--gray); margin-top: 2px; }
+.tl-status-delivered { color: var(--green);  font-family: var(--mono); font-size: 11px; }
+.tl-status-drift     { color: var(--amber);  font-family: var(--mono); font-size: 11px; }
+.tl-status-miss      { color: var(--red);    font-family: var(--mono); font-size: 11px; }
+.mechanism-row { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.mechanism-row:last-child { border-bottom: none; }
+.mech-type { min-width: 140px; }
+.mech-what { flex: 1; font-size: 13px; color: #2A2A3A; line-height: 1.5; }
+.mech-signal { min-width: 180px; font-size: 12px; color: var(--gray); font-style: italic; line-height: 1.45; }
+.signal-col { display: flex; gap: 14px; margin: 18px 0; }
+.signal-col > div { flex: 1; }
+@media (max-width: 650px) { .signal-col { flex-direction: column; } }
+.signal-list-head { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px;
+  text-transform: uppercase; padding: 7px 11px; border-radius: 4px 4px 0 0; font-weight: 600; }
+.sl-green { background: var(--green); color: white; }
+.sl-red   { background: var(--red);   color: white; }
+.sl-amber { background: var(--amber); color: white; }
+.sl-teal  { background: var(--teal);  color: white; }
+.sl-navy  { background: var(--navy);  color: white; }
+.signal-list { list-style: none; border: 1px solid var(--rule); border-top: none; border-radius: 0 0 4px 4px; }
+.signal-list li { padding: 7px 11px; font-family: var(--mono); font-size: 11.5px;
+  border-bottom: 1px solid var(--rule); color: #2A2A3A; line-height: 1.45; }
+.signal-list li:last-child { border-bottom: none; }
+.sl-g li::before { content: '✓ '; color: var(--green); }
+.sl-r li::before { content: '✗ '; color: var(--red); }
+.sl-a li::before { content: '~ '; color: var(--amber); }
+.sl-t li::before { content: '↑ '; color: var(--teal); }
+.sl-n li::before { content: '⚠ '; color: var(--navy); }
+.integration-row { display: flex; gap: 12px; margin: 18px 0; flex-wrap: wrap; }
+.int-card { flex: 1; min-width: 190px; background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; }
+.int-chapter { font-family: var(--mono); font-size: 10.5px; color: var(--gray); margin-bottom: 5px; }
+.int-title { font-weight: 600; font-size: 13.5px; margin-bottom: 5px; }
+.int-what { font-size: 12.5px; color: var(--gray); line-height: 1.5; }
+.template-box { background: #F2F0EC; border: 1px solid var(--rule); border-radius: 6px;
+  padding: 18px 22px; margin: 18px 0; font-family: var(--mono); font-size: 11.5px; line-height: 1.9; color: #2A2A3A; }
+.comment { color: #9B9488; }
+.field   { color: var(--navy); font-weight: 500; }
+.value   { color: var(--green); }
+.verdict-box { background: var(--amber-bg); border: 1.5px solid var(--amber); border-radius: 8px; padding: 22px 26px; margin: 30px 0; }
+.verdict-box .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.verdict-box p { color: var(--ink); font-size: 14.5px; line-height: 1.7; }
+.score-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 18px 0; }
+@media (max-width: 600px) { .score-grid { grid-template-columns: 1fr; } }
+.score-dim { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px; }
+.score-dim-name { font-weight: 600; font-size: 13.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 7px; }
+.score-dim-name .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.score-dim-desc { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.score-dim-example { font-family: var(--mono); font-size: 10.5px; color: var(--navy); margin-top: 7px; background: var(--navy-bg); padding: 5px 8px; border-radius: 3px; }
+.workflow { margin: 18px 0; }
+.wf-step { display: flex; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--rule); }
+.wf-step:last-child { border-bottom: none; }
+.wf-num { min-width: 26px; height: 26px; background: var(--ink); color: var(--amber); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11.5px; font-weight: 600; flex-shrink: 0; margin-top: 2px; }
+.wf-action { font-weight: 600; font-size: 13.5px; margin-bottom: 3px; }
+.wf-detail { font-size: 12.5px; color: var(--gray); line-height: 1.55; }
+.wf-tool { display: inline-block; background: var(--amber-bg); color: var(--amber); font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 3px; margin-top: 5px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 14px 0; }
+@media (max-width: 650px) { .two-col { grid-template-columns: 1fr; } }
+.small-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 7px; }
+.dim-header { padding: 8px 14px; border-radius: 4px; margin: 18px 0 10px; display: flex; align-items: center; gap: 10px; }
+.dim-header .dh-icon { font-size: 18px; }
+.dim-header .dh-label { font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600; }
+.dh-capex   { background: var(--coral-bg); color: var(--coral); border-left: 3px solid var(--coral); }
+.dh-margin  { background: var(--green-bg); color: var(--green); border-left: 3px solid var(--green); }
+.dh-capital { background: var(--navy-bg);  color: var(--navy);  border-left: 3px solid var(--navy); }
+ul.prose-list { list-style: none; padding: 0; margin: 0 0 14px; }
+ul.prose-list li { padding: 5px 0 5px 18px; position: relative; font-size: 13.5px; color: #2A2A3A; line-height: 1.55; border-bottom: 1px dotted var(--rule); }
+ul.prose-list li:last-child { border-bottom: none; }
+ul.prose-list li::before { content: '—'; position: absolute; left: 0; color: var(--amber); font-weight: 700; }
+.pname-chip { display: inline-block; border: 1.5px solid var(--rule); border-radius: 4px; padding: 7px 15px; font-family: var(--serif); font-size: 14px; font-weight: 600; background: white; margin: 4px 6px 4px 0; }
+.pname-chip.recommended { border-color: var(--amber); background: var(--amber-bg); color: var(--amber); }
+footer { background: var(--ink); color: #6B7280; padding: 24px 48px; font-family: var(--mono); font-size: 10.5px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+/* Ledger rubicon-specific callout */
+.rubicon-callout { background: var(--pharma-bg); border: 2px solid var(--pharma); border-radius: 8px; padding: 20px 24px; margin: 24px 0; }
+.rubicon-callout .rc-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--pharma); margin-bottom: 8px; }
+.rubicon-callout p { font-size: 13.5px; line-height: 1.65; }
+</style>
+</head>
+<body>
+
+<button class="mode-toggle no-print" onclick="document.body.classList.toggle('dark')" aria-label="Toggle dark mode">
+  ☀ / ☾ Mode
+</button>
+
+<!-- ==============================================================
+     PART 1 · RUBICON INVESTOR BRIEF
+     ============================================================== -->
+
+<!-- COVER CARD -->
+<div class="brief-cover" role="banner" aria-label="Investor Brief Cover">
+  <div class="cover-eyebrow" aria-hidden="true">NSE EQUITY RESEARCH · SPECIALTY PHARMA · JUNE 1, 2026</div>
+  <div class="cover-h1">Rubicon<br><span>Research</span></div>
+  <div class="cover-sub">The low-competition density playbook — where proprietary drug delivery technology converts formulation chemistry into pricing power.</div>
+  <div class="cover-chips">
+    <span class="cover-chip">NSE: RUBICON</span>
+    <span class="cover-chip">BSE: 544578</span>
+    <span class="cover-chip hi">SPECIALTY PHARMA · US MARKETS</span>
+    <span class="cover-chip">IPO: OCT 2025</span>
+    <span class="cover-chip">MKT CAP: ₹18,609 Cr</span>
+    <span class="cover-chip">JUNE 1, 2026</span>
+  </div>
+</div>
+
+<!-- QUICK-SCAN STRIP — always expanded, printer-friendly -->
+<div class="quick-scan-strip" id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div class="qs-label" aria-hidden="true">⚡ QUICK SCAN — 7 KEY TAKEAWAYS</div>
+  <div class="qs-grid">
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">⚡</span>
+      <span class="qs-tag">CONTEXT</span>
+      <span>India specialty pharma CDMO market growing at 11.3% CAGR; US patent cliff (Eliquis, Januvia 2026) opens multi-billion dollar generic opportunity.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">🏭</span>
+      <span class="qs-tag">MODEL</span>
+      <span>Pure-play US specialty formulations — 9 proprietary drug delivery platforms turn complex chemistry into structurally stable pricing.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">🎯</span>
+      <span class="qs-tag">INSIGHT</span>
+      <span>While the market suffered 5.2% annual price erosion, Rubicon grew per-unit pricing at 8% — because its technologies limit competitor entry per product to 2–5 players.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">📊</span>
+      <span class="qs-tag">NUMBERS</span>
+      <span>FY26 revenue ₹1,754 Cr (+37%), PAT ₹247 Cr (+84%), ROCE 34%; EBITDA margin guidance 22–23%.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">🚧</span>
+      <span class="qs-tag">TOP RISK</span>
+      <span>Top 5 US customers = 77% of revenue; one relationship shift with Big 3 wholesalers is a material risk to the business model.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">👁</span>
+      <span class="qs-tag">WATCH</span>
+      <span>Pithampur high-potency facility commissioning and utilisation rate — target mid-2026 commissioning, Q1 CY27 commercialisation.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon" aria-hidden="true">💡</span>
+      <span class="qs-tag">VERDICT</span>
+      <span>Mid-chapter <span class="verdict-stage" aria-hidden="true">MID</span> — structural moat is real, but 75× trailing PE prices in flawless execution of Pithampur + ANDA approvals.</span>
+    </div>
+  </div>
+</div>
+
+<div class="brief-wrap">
+
+<!-- ============================================================
+     CHAPTER 1 — CONTEXT
+     ============================================================ -->
+<section role="region" aria-labelledby="ch1-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--pharma)" aria-hidden="true">1</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 1 · CONTEXT</div>
+    <div class="ch-title" id="ch1-title">The Pharmacy of the World Is Moving Up the Value Chain</div>
+  </div>
+</div>
+
+<div class="lead">
+  The US generic drug market is a $60 billion annual market where 90% of all prescriptions are filled with generics — yet those prescriptions represent less than 25% of total US drug spending by value. That arithmetic tells the whole story of commodity generics: high volume, brutal price. The intelligent response is not to fight harder in commodity generics but to move into the specialty layer where complexity limits competition and pricing holds.
+</div>
+
+<p>India supplies 20% of global generic drug volume by units and $30.47 billion in pharma exports as of FY25. Yet the sector's smartest operators have recognised that <span class="hl-catalyst">the US patent cliff of 2026 — with Eliquis (apixaban) and Januvia (sitagliptin) patent expiries opening multi-billion dollar generic opportunities — rewards complexity, not commodity</span>. The companies that developed formulation expertise and drug delivery platforms in advance are now positioned to launch first and hold price longer than a commodity generic ever could.</p>
+
+<p>Government policy is aligned. India's Production Linked Incentive scheme allocated <span class="hl-number">₹15,000 crore (approximately $1.8 billion)</span> to pharmaceutical manufacturers to build world-class manufacturing capability. More specifically, the Trump administration's April 2026 executive order imposing 100% tariffs on patented pharmaceutical imports explicitly exempted India's generic drug exports — effectively strengthening India's position as the preferred global supplier of affordable medicines to the US healthcare system.</p>
+
+<p>India's specialty pharma contract manufacturing market is projected to reach $6 billion by 2030, growing at 11.3% CAGR from 2025. This is the structural tailwind Rubicon Research is riding — not as a commodity participant but as the most focused US specialty formulations operator among all Indian peers. The company IPO'd in October 2025 at ₹485 per share, listed at ₹620 (a 27.8% listing gain), and was oversubscribed 104 times — a market signal of the scarcity premium on genuine specialty pharma capacity in India.</p>
+
+<blockquote>"Indian pharma companies have committed $19.1 billion investments in the US during the SelectUSA Investment Summit 2026. Indian drug manufacturers have the opportunity to move up the value chain into complex generics and specialty drugs." — Industry commentary, May 2026</blockquote>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--pharma)">
+  India generic exports exempted from US tariffs; specialty CDMO market at 11.3% CAGR — structural tailwind is policy-backed, not just demographic.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 2 — BUSINESS MODEL
+     ============================================================ -->
+<section role="region" aria-labelledby="ch2-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--us-blue)" aria-hidden="true">2</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 2 · BUSINESS MODEL</div>
+    <div class="ch-title" id="ch2-title">The Formulation-First Flywheel</div>
+  </div>
+</div>
+
+<p>Rubicon Research's business is simple to describe and hard to replicate. The company develops, manufactures, and sells specialty generic pharmaceutical formulations almost entirely into the United States market — 99.5% of revenue in Q1 FY26 came from the US. <span class="hl-key">Unlike most Indian pharma companies which play across multiple geographies to diversify, Rubicon has made concentrated US focus a deliberate, structural competitive advantage: deeper customer relationships, faster ANDA response times, and a product portfolio perfectly calibrated to the US formulary landscape.</span></p>
+
+<p>The revenue flywheel works as follows. Rubicon's data science team identifies product categories in the US where the total number of FDA-approved generic manufacturers is low — typically 2 to 5 players. These are products where the formulation is technically demanding: liquid controlled-release systems, drug-device nasal spray combinations, ophthalmic formulations, or high-potency APIs requiring specialised containment. The company then uses one of its nine proprietary drug delivery platforms to develop a formulation, files an Abbreviated New Drug Application (ANDA) or New Drug Application (NDA) with the US FDA, and upon approval, launches through its US subsidiary AdvaGen Pharma — which maintains direct relationships with America's Big Three pharmaceutical wholesalers (McKesson, AmerisourceBergen, Cardinal Health), which collectively control 90%+ of US wholesale drug distribution.</p>
+
+<p>The platforms are the moat. Nine proprietary technologies — including <span class="hl-number">RubiSRL (sustained-release liquids using ion exchange and membrane diffusion) and RubiReten (gastro-retentive system for poor-solubility drugs)</span> — are backed by 10 patents. These platforms allow Rubicon to solve formulation challenges that competitors cannot quickly replicate, keeping competitor counts low per product and prices structurally stable.</p>
+
+<p>Customer stickiness is built at multiple levels. Once a wholesaler integrates a supplier into their system for a given product, switching carries FDA notification requirements and supply chain disruption risk. The company maintains product inventory at three US locations for rapid fulfilment — a service standard that further embeds relationships. As of the IPO in October 2025, Rubicon had 96 unique US customers including the Big 3 wholesalers, national pharmacy chains, group purchasing organisations, and managed care organisations.</p>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--us-blue)">
+  Pure-play US specialty formulations: 9 drug delivery platforms drive a product selection flywheel where technical complexity controls competitor density per product.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 2B — PORTER'S 5 FORCES
+     ============================================================ -->
+<section role="region" aria-labelledby="ch2b-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--ink)" aria-hidden="true">2B</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 2B · COMPETITIVE STRUCTURE</div>
+    <div class="ch-title" id="ch2b-title">Porter's Five Forces — Specialty Generic Pharma</div>
+  </div>
+</div>
+
+<table class="porter-table" aria-label="Porter's Five Forces analysis for Rubicon Research">
+  <thead>
+    <tr>
+      <th>Force</th>
+      <th>Rating</th>
+      <th>Specific Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="rating-badge r-medium">MEDIUM</span></td>
+      <td>On a per-product basis, Rubicon deliberately limits itself to markets with 2–5 competitors (Amneal, Hikma, Lannett in specific product categories). At the portfolio level, however, there are 877 global CDMO competitors and dozens of Indian specialty pharma operators. The key insight: rivalry is intense for the right to enter a product category, but low within the category after entry.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="rating-badge r-high">HIGH</span></td>
+      <td>Top 5 customers = 77% of revenue; Big 3 US wholesalers (McKesson, AmerisourceBergen, Cardinal) collectively control 90%+ of US drug wholesale. These buyers have significant leverage on pricing and terms. This is the most structurally pressurised force on Rubicon's business model.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="rating-badge r-low">LOW</span></td>
+      <td>API sourcing is primarily from India and China with multiple vendor options per molecule. Rubicon's proprietary formulation know-how means its value-add is the chemistry transformation, not the raw material — reducing API supplier leverage. Multiple USFDA-qualified API suppliers exist for most of Rubicon's product categories.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="rating-badge r-low">LOW</span></td>
+      <td>ANDA approval takes 2–4 years from filing; FDA manufacturing compliance requires years of inspection track record. Rubicon's facilities at Ambernath and Satara have never received an Official Action Indicated (OAI) status — a record that took 10+ years to build. Replicating the proprietary drug delivery platforms (RubiSRL, RubiReten) would require independent R&D and patent navigation, adding 3–5 years to any entrant's timeline.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="rating-badge r-low">LOW–MED</span></td>
+      <td>For drug-device combination products (nasal sprays, ophthalmic combinations), substitution requires a separate FDA approval pathway — providing meaningful protection. For basic oral generics in Rubicon's portfolio, generic-of-generic substitution is the risk, managed by selecting products where new entrants face formulation barriers. Biologics/biosimilars are not yet direct substitutes for Rubicon's therapeutic areas.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="insight-box" style="margin-top:16px">
+  <div class="ib-label" aria-hidden="true">▶ PORTER SYNTHESIS — TWO STRUCTURAL PRESSURE POINTS</div>
+  <p><strong>Primary pressure: Buyer Power.</strong> The concentration of Rubicon's top-5 customers at 77% of revenue, combined with the Big 3 wholesalers' dominance of US drug distribution, means pricing and commercial terms are negotiated from a position of structural disadvantage. Any relationship deterioration has outsized revenue impact.</p>
+  <p><strong>Secondary pressure: Rivalry at the portfolio entry level.</strong> While individual products face low competition post-approval, the race to identify and file ANDAs for low-competition-density products is intensifying as more Indian pharma operators apply the same strategic logic. Rubicon's lead in proprietary platforms must be actively sustained through R&D spending.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--ink)">
+  Buyer concentration is the primary structural risk; new entrant barriers via ANDA timelines and proprietary platforms are the primary structural protection.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 3 — VERTICAL STORIES
+     ============================================================ -->
+<section role="region" aria-labelledby="ch3-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--teal)" aria-hidden="true">3</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 3 · VERTICAL STORIES</div>
+    <div class="ch-title" id="ch3-title">Four Fronts at Different Stages of Maturity</div>
+  </div>
+</div>
+
+<div class="verticals-grid">
+
+  <!-- Vertical 1: US Generic Core -->
+  <div class="vertical-card" style="border-top: 3px solid var(--us-blue)">
+    <div class="vc-status" style="background:var(--us-bg); color:var(--us-blue)">RUNNING</div>
+    <div class="vc-title">US Generic Core — Oral Solids and Liquids</div>
+    <div class="vc-body">The foundational business: 66 commercialised products in the US as of March 2024, spanning analgesics (morphine oral solution), hypokalemia management (potassium chloride extended-release), skeletal muscle relaxants (baclofen oral suspension), and cardiovascular products. These are technically demanding formulations — oral liquids, extended-release tablets, solutions — where product complexity naturally limits the pool of qualified manufacturers. Rubicon's US market contribution in FY24: USD 195 million, against a total addressable pool of USD 2.46 billion in that specific product category. Catalyst: 2026 US patent cliff creates ANDA filing opportunities in molecules expiring this year.</div>
+    <div class="vc-number" style="background:var(--us-bg); color:var(--us-blue)">66 commercialised products · 17 ANDAs pending FDA clearance</div>
+  </div>
+
+  <!-- Vertical 2: Drug-Device Combinations -->
+  <div class="vertical-card" style="border-top: 3px solid var(--teal)">
+    <div class="vc-status" style="background:var(--teal-bg); color:var(--teal)">RAMPING</div>
+    <div class="vc-title">Drug-Device Combinations — Nasal Sprays and Ophthalmic</div>
+    <div class="vc-body">The highest-barrier vertical. Nasal spray products (unit-dose, bi-dose, multi-dose) combine pharmaceutical formulation with precision delivery devices, requiring FDA clearance as a drug-device combination — a dual regulatory pathway that most generic manufacturers cannot navigate. Rubicon's Concord, Canada R&D centre specialises in pulmonary/nasal/ophthalmic formulations and is dual-inspected by the US FDA and Health Canada. The company holds 9 active New Drug Applications approved by the US FDA in this category. Catalyst: the NDA pathway provides 30-month stay protection against generic competition, creating a differentiated pricing window unavailable to commodity ANDA players.</div>
+    <div class="vc-number" style="background:var(--teal-bg); color:var(--teal)">9 active NDAs · Canada R&D centre (USFDA + Health Canada inspected)</div>
+  </div>
+
+  <!-- Vertical 3: High-Potency / Pithampur -->
+  <div class="vertical-card" style="border-top: 3px solid var(--coral)">
+    <div class="vc-status" style="background:var(--coral-bg); color:var(--coral)">COMMISSIONING</div>
+    <div class="vc-title">High-Potency Specialty — Pithampur, Madhya Pradesh</div>
+    <div class="vc-body">Rubicon acquired Alkem Laboratories' formulations facility in Pithampur in June 2025 for ₹149 crore — an all-cash deal that brought specialised infrastructure for steroids, hormones, immunosuppressants, and oncology medications. This adds 17% to installed capacity and opens a product category (high-potency APIs) that requires dedicated containment infrastructure most generic manufacturers don't have. Currently, Rubicon outsources these products while the facility is being upgraded and validated — which is the primary reason gross margins are compressed at 69-70% rather than the 71-75% level the portfolio otherwise supports. Facility expected to be commissioned by mid-2026 with commercialisation in Q1 CY27.</div>
+    <div class="vc-number" style="background:var(--coral-bg); color:var(--coral)">₹149 Cr acquisition · +17% capacity · Commissioning: mid-2026</div>
+  </div>
+
+  <!-- Vertical 4: India CNS via Arinna -->
+  <div class="vertical-card" style="border-top: 3px solid var(--india)">
+    <div class="vc-status" style="background:var(--amber-bg); color:var(--amber)">NEWLY ACQUIRED</div>
+    <div class="vc-title">India CNS Market — Arinna Lifesciences (April 2026)</div>
+    <div class="vc-body">A strategic pivot: Rubicon acquired 85% of Arinna Lifesciences for ₹175.92 crore in April 2026 — its first serious India domestic investment. Arinna has 60+ CNS-focused brands (antiepileptics, antidepressants, antipsychotics) with 4,000+ prescribers and established distribution in India. Arinna's FY25 revenue was ₹71.5 crore. The acquisition gives Rubicon a domestic commercial platform to distribute its own differentiated specialty products (including drug-device combinations) to Indian patients — a market it previously could not reach. The India pharma CNS market is approximately ₹20,000 crore and growing 8–10% annually. Arinna's founder retains 15% and continues as Managing Director, ensuring operational continuity.</div>
+    <div class="vc-number" style="background:var(--amber-bg); color:var(--amber)">₹176 Cr for 85% · 60+ brands · 4,000+ prescribers · Closed Apr 30, 2026</div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--teal)">
+  Four verticals at different stages: US Generic Core (running), Drug-Device (ramping), Pithampur (commissioning mid-2026), India CNS (just acquired) — portfolio sequencing is logical.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 4 — STRATEGIC INSIGHT
+     ============================================================ -->
+<section role="region" aria-labelledby="ch4-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--ink)" aria-hidden="true">4</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 4 · THE NON-OBVIOUS INSIGHT</div>
+    <div class="ch-title" id="ch4-title">The Low-Competition Density Playbook</div>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="ib-label" aria-hidden="true">🎯 THE ONE THING TO UNDERSTAND ABOUT RUBICON</div>
+  <p>Most Indian pharmaceutical companies compete in a game of ANDA volume — file as many applications as possible, launch as quickly as possible, and accept that prices will collapse within 18 months as 10, 20, or 30 competitors enter each product. <span class="hl-key">Rubicon plays a fundamentally different game: it uses its proprietary drug delivery platforms not to enable product development, but to control how many manufacturers can ever enter each product category.</span></p>
+  <p>Think about what potassium chloride extended-release oral solution requires: a liquid formulation that releases the drug in a sustained manner (not a bolus) to protect the oesophagus and stomach lining, using ion exchange resin technology, while maintaining precise release kinetics across different gastrointestinal conditions. This is what RubiSRL does. A competitor wanting to copy this would need to independently develop an equivalent ion exchange platform, patent-navigate around Rubicon's IP, manufacture it consistently at commercial scale, and then wait 2–4 years for FDA approval. In that time, Rubicon's product has already established formulary positions with wholesalers and maintained pricing.</p>
+  <p>The proof is in the data: <strong>While the broader US generic drugs market suffered average price erosion of 5.2% annually between FY22 and FY25, Rubicon achieved 8% per-unit average price growth over the same period.</strong> That 13-percentage-point spread over three years is not luck or timing. It is the systematic outcome of competing in markets with 2–5 manufacturers instead of 20–30. The proprietary technology platforms are not R&D assets in the conventional sense. They are the keys to a set of rooms that very few players can enter.</p>
+  <p>The Arinna acquisition adds a second dimension to this insight: Rubicon's differentiated specialty products — particularly its drug-device combinations — have been effectively locked out of India's domestic market because the company had no distribution platform. Arinna's 4,000-prescriber CNS network is not just a revenue line. It is the door into the Indian market for Rubicon's existing IP, which was previously monetised only in the US. Every rupee of India revenue from Rubicon's proprietary formulations through Arinna's network is essentially incremental margin on R&D that was already amortised against US sales.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--ink)">
+  Rubicon's platforms are not innovation tools — they are competitive density controllers; 8% price growth vs. 5.2% industry erosion is the quantified outcome.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 5 — THE NUMBERS IN CONTEXT
+     ============================================================ -->
+<section role="region" aria-labelledby="ch5-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--green)" aria-hidden="true">5</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 5 · THE NUMBERS IN CONTEXT</div>
+    <div class="ch-title" id="ch5-title">Financial Scorecard — Quality Compounder in Investment Mode</div>
+  </div>
+</div>
+
+<p>The headline numbers for FY26 — the first full year as a listed company — are genuinely strong. <span class="hl-number">Revenue ₹1,754 crore (+37% YoY), PAT ₹247 crore (+84% YoY), ROCE 34%</span>. For Q3 FY26 specifically, revenue grew 52% YoY to ₹476 crore with EBITDA at ₹112 crore. The multi-year trajectory tells an even stronger story: the company compounded PAT at 52% CAGR over the last 5 years, with a net loss in FY23 now converted to ₹247 crore of profit in FY26 — a turnaround driven by US product launches, not restructuring.</p>
+
+<div class="scorecard-grid">
+  <div class="sc-card">
+    <div class="sc-label">FY26 Revenue</div>
+    <div class="sc-value">₹1,754 Cr</div>
+    <div class="sc-delta">+37% vs FY25 (₹1,284 Cr)</div>
+  </div>
+  <div class="sc-card">
+    <div class="sc-label">FY26 PAT</div>
+    <div class="sc-value">₹247 Cr</div>
+    <div class="sc-delta">+84% vs FY25 (₹134 Cr)</div>
+  </div>
+  <div class="sc-card">
+    <div class="sc-label">EBITDA Margin</div>
+    <div class="sc-value">22–23%</div>
+    <div class="sc-delta neutral">Management guidance range</div>
+  </div>
+  <div class="sc-card">
+    <div class="sc-label">ROCE</div>
+    <div class="sc-value">34%</div>
+    <div class="sc-delta">Up from 30% (FY25)</div>
+  </div>
+  <div class="sc-card">
+    <div class="sc-label">Gross Margin</div>
+    <div class="sc-value">~70%</div>
+    <div class="sc-delta neutral">Compressed by outsourcing; FY25 was 71%</div>
+  </div>
+  <div class="sc-card">
+    <div class="sc-label">R&D Spend</div>
+    <div class="sc-value">~10–11%</div>
+    <div class="sc-delta neutral">Of revenue; ~2× peer average</div>
+  </div>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-title" aria-label="Revenue and EBITDA Margin trend chart">Revenue (₹ Crore) + EBITDA Margin (%) — FY22 to FY26</div>
+  <canvas id="revenueChart" aria-label="Bar chart showing revenue growth from FY22 to FY26 with EBITDA margin line"></canvas>
+</div>
+
+<h3 style="color: var(--green); margin-top:28px">Valuation Context vs. Peers</h3>
+<div class="peer-wrap" role="table" aria-label="Peer comparison table">
+  <div class="peer-head" role="rowheader">Specialty Pharma Peer Comparison — Trailing PE (June 2026 est.)</div>
+  <div class="peer-row" role="row">
+    <div class="peer-cell" role="cell" style="font-family:var(--mono); font-size:10px; color:var(--gray)">COMPANY</div>
+    <div class="peer-cell" role="cell" style="font-family:var(--mono); font-size:10px; color:var(--gray)">FOCUS</div>
+    <div class="peer-cell" role="cell" style="font-family:var(--mono); font-size:10px; color:var(--gray)">TRAILING PE</div>
+    <div class="peer-cell" role="cell" style="font-family:var(--mono); font-size:10px; color:var(--gray)">ROCE</div>
+  </div>
+  <div class="peer-row rubicon" role="row">
+    <div class="peer-cell" role="cell">Rubicon Research (RUBICON)</div>
+    <div class="peer-cell" role="cell">US Specialty Generic + CDMO</div>
+    <div class="peer-cell" role="cell">~75×</div>
+    <div class="peer-cell" role="cell" style="color:var(--green)">34%</div>
+  </div>
+  <div class="peer-row" role="row">
+    <div class="peer-cell" role="cell">Suven Pharmaceuticals</div>
+    <div class="peer-cell" role="cell">CDMO + Specialty</div>
+    <div class="peer-cell" role="cell">~65–70×</div>
+    <div class="peer-cell" role="cell">~22%</div>
+  </div>
+  <div class="peer-row" role="row">
+    <div class="peer-cell" role="cell">Eris Lifesciences</div>
+    <div class="peer-cell" role="cell">India Branded Generics</div>
+    <div class="peer-cell" role="cell">~30–35×</div>
+    <div class="peer-cell" role="cell">~18%</div>
+  </div>
+  <div class="peer-row" role="row">
+    <div class="peer-cell" role="cell">Glenmark Life Sciences</div>
+    <div class="peer-cell" role="cell">US Generic API + Formulations</div>
+    <div class="peer-cell" role="cell">~25–30×</div>
+    <div class="peer-cell" role="cell">~17%</div>
+  </div>
+  <div class="peer-row" role="row">
+    <div class="peer-cell" role="cell">Sun Pharma (large cap)</div>
+    <div class="peer-cell" role="cell">US Specialty + India + Global</div>
+    <div class="peer-cell" role="cell">~35–40×</div>
+    <div class="peer-cell" role="cell">~16%</div>
+  </div>
+</div>
+<p style="font-size:12.5px; color:var(--gray); font-style:italic; margin-top:8px">Peer PEs are approximate estimates for June 2026. Rubicon's premium to peers is justified by superior ROCE and growth velocity, but assumes continued execution. At 75× trailing PE, the market is pricing in 30–35% revenue CAGR through FY28E.</p>
+
+<h3 style="color: var(--coral); margin-top:32px">Capex Timeline — Investment Cycle in Active Phase</h3>
+<div class="capex-card">
+  <div class="capex-header" aria-hidden="true">🏗 RUBICON CAPEX REGISTER — FY24 TO FY27E</div>
+  <div class="capex-row hdr">
+    <div class="capex-cell"><div class="cc-label">Period</div></div>
+    <div class="capex-cell"><div class="cc-label">Amount</div></div>
+    <div class="capex-cell"><div class="cc-label">Project / Milestone</div></div>
+    <div class="capex-cell"><div class="cc-label">Revenue Bridge</div></div>
+    <div class="capex-cell"><div class="cc-label">Funding Source</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY24</div></div>
+    <div class="capex-cell"><div class="cc-val">~₹80 Cr</div><div class="cc-sub">Maintenance + Satara ramp</div></div>
+    <div class="capex-cell"><div class="cc-val">Satara facility upgrade</div><div class="cc-sub">Oral liquids + nasal production scale-up</div></div>
+    <div class="capex-cell"><div class="cc-val">Supported US product launches</div><div class="cc-sub">FY24 revenue +78% YoY</div></div>
+    <div class="capex-cell"><div class="cc-val">Internal accruals + debt</div></div>
+    <div class="capex-cell"><div class="tl-status-delivered">● DELIVERED</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY25 (Jun 2025)</div></div>
+    <div class="capex-cell"><div class="cc-val">₹149 Cr</div><div class="cc-sub">All-cash deal</div></div>
+    <div class="capex-cell"><div class="cc-val">Pithampur facility acquisition</div><div class="cc-sub">From Alkem Laboratories; steroids, hormones, high-potency, immunosuppressants</div></div>
+    <div class="capex-cell"><div class="cc-val">+17% capacity; target ₹300–400 Cr incremental</div><div class="cc-sub">Post-commissioning (Q1 CY27)</div></div>
+    <div class="capex-cell"><div class="cc-val">Pre-IPO balance sheet; cash</div></div>
+    <div class="capex-cell"><div class="tl-status-drift">⚠ COMMISSIONING</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY26 (Oct 2025)</div></div>
+    <div class="capex-cell"><div class="cc-val">₹500 Cr fresh issue</div><div class="cc-sub">IPO; ₹310 Cr for debt repayment</div></div>
+    <div class="capex-cell"><div class="cc-val">IPO proceeds deployment</div><div class="cc-sub">Debt repayment ₹264.6 Cr used; ₹59 Cr for inorganic; ₹164.9 Cr pending</div></div>
+    <div class="capex-cell"><div class="cc-val">Deleverage improves PAT margin</div><div class="cc-sub">Finance cost reduction unlocks margin</div></div>
+    <div class="capex-cell"><div class="cc-val">Equity (IPO)</div></div>
+    <div class="capex-cell"><div class="tl-status-drift">~ IN PROGRESS</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY26 (Apr 2026)</div></div>
+    <div class="capex-cell"><div class="cc-val">₹176 Cr</div><div class="cc-sub">85% stake purchase</div></div>
+    <div class="capex-cell"><div class="cc-val">Arinna Lifesciences acquisition</div><div class="cc-sub">CNS branded generics; 60+ brands; 4,000+ prescribers in India</div></div>
+    <div class="capex-cell"><div class="cc-val">Arinna FY25 revenue ₹71.5 Cr</div><div class="cc-sub">Growth + Rubicon product cross-sell via India platform</div></div>
+    <div class="capex-cell"><div class="cc-val">IPO proceeds + cash</div></div>
+    <div class="capex-cell"><div class="tl-status-drift">⚠ INTEGRATION</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY27E</div></div>
+    <div class="capex-cell"><div class="cc-val">TBD</div><div class="cc-sub">Pithampur validation capex + new ANDA filings</div></div>
+    <div class="capex-cell"><div class="cc-val">Pithampur commissioning + ramp</div><div class="cc-sub">Commercial launch Q1 CY27 (management guidance)</div></div>
+    <div class="capex-cell"><div class="cc-val">Management expects material incremental US revenue</div><div class="cc-sub">High-potency: structurally low competition</div></div>
+    <div class="capex-cell"><div class="cc-val">Internal accruals (guided)</div></div>
+    <div class="capex-cell"><div class="status-pend">● PLANNED</div></div>
+  </div>
+</div>
+
+<p><span class="hl-risk">Red flag check: IPO proceeds deployment is behind its original timeline — management extended the utilisation deadline to March 31, 2027 from the original date, and India Ratings flagged commingling of IPO proceeds with general company accounts. The Audit Committee is reviewing this. It is not a business-threatening event, but it is an early governance signal worth watching.</span> The Pithampur capex is at its most critical juncture: the facility must commission by mid-2026 and ramp in CY27 or the margin expansion narrative gets pushed further out.</p>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--green)">
+  FY26: revenue ₹1,754 Cr (+37%), PAT ₹247 Cr (+84%), ROCE 34%; the company is in active investment mode — Pithampur + Arinna must deliver in FY27 to justify 75× PE.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 6 — RISKS
+     ============================================================ -->
+<section role="region" aria-labelledby="ch6-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--red)" aria-hidden="true">6</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 6 · RISKS — EYES OPEN</div>
+    <div class="ch-title" id="ch6-title">Five Specific, Trackable Risks</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">CUSTOMER CONCENTRATION — THE 77% PROBLEM</div>
+    <div class="risk-body">As of Q1 FY26, Rubicon's top 5 customers accounted for 77% of product revenue from the sale of goods. America's Big 3 pharmaceutical wholesalers collectively control 90%+ of US drug distribution — meaning Rubicon's core commercial relationships are critically concentrated in a handful of counterparties. A pricing renegotiation, formulary delisting, or supplier diversification decision by any of the top 3 customers would have an outsized impact on revenue with very limited ability to redirect volume elsewhere quickly.</div>
+    <div class="risk-signal">Signal to watch: Top-5 customer revenue concentration should trend downward each quarter as new ANDAs bring new customers. If it stays above 70% through FY27 despite new product launches, the concentration is structural, not transitional.</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">US FDA COMPLIANCE — THE SINGLE POINT OF FAILURE</div>
+    <div class="risk-body">Rubicon derives 99.5% of its revenue from the US. Its Ambernath and Satara facilities have never received an Official Action Indicated (OAI) status to date — an unblemished track record. But a single OAI finding would trigger an import alert from the US FDA, effectively shutting Rubicon out of its only material market. The company has no meaningful revenue diversification into EU, Australia, or Canada that would provide a cushion during an FDA enforcement period. This is not a probability statement — it is a consequence-severity statement.</div>
+    <div class="risk-signal">Signal: Any Form 483 observation or Warning Letter from the USFDA. Track post-inspection FDA response time as a leading indicator of potential enforcement action.</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">PITHAMPUR EXECUTION — MARGIN EXPANSION IS CONDITIONAL</div>
+    <div class="risk-body">Gross margins at ~70% (vs. the 71-75% the portfolio should structurally support) are currently compressed because Rubicon is outsourcing its high-potency products while Pithampur is being commissioned. Management guidance is that Pithampur commissions by mid-2026 and achieves commercialisation in Q1 CY27. If either milestone slips by more than one quarter, the outsourcing costs continue to compress gross margins — and the EBITDA margin expansion story (which the 75× PE partially prices in) gets pushed out. High-potency manufacturing requires rigorous validation protocols that can encounter unexpected regulatory snags.</div>
+    <div class="risk-signal">Signal: Track Pithampur commissioning news every quarter. Red flag: "Q1 CY27 target" in Q3 FY26 concall slipping to "H2 CY27" in Q4 FY26 concall without explanation.</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">IPO PROCEEDS GOVERNANCE — EARLY SIGNAL, NOT YET A RED FLAG</div>
+    <div class="risk-body">India Ratings and Research, acting as the independent monitoring agency for Rubicon's IPO proceeds, flagged that funds were commingled with the company's general accounts in its Q4 FY26 report. The total unused IPO proceeds stand at ₹164.9 crore as of March 31, 2026, and the utilisation timeline has been extended to March 31, 2027. This is not a financial crisis — the money is accounted for. But commingling of ring-fenced IPO proceeds with operating accounts is a governance lapse that the Audit Committee is formally reviewing. For a company that listed only 7 months ago, this is worth monitoring.</div>
+    <div class="risk-signal">Signal: Management commentary on IPO proceeds governance in Q4 FY26 concall (May 30, 2026). Watch whether the Audit Committee finds further systemic issues or classifies this as a one-time process error.</div>
+  </div>
+</div>
+
+<div class="risk-item">
+  <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+  <div>
+    <div class="risk-title">USD CONCENTRATION + WORKING CAPITAL STRETCH</div>
+    <div class="risk-body">Rubicon's revenues are almost entirely in USD, while a significant portion of its cost base (employee costs, India manufacturing) is in INR. As of June 30, 2025, the company had a negative unhedged USD exposure of ₹835 crore — net payables in USD. Any INR depreciation against the USD would increase the rupee cost of those payables. Separately, working capital days have increased from 68.8 days to 104 days — partly due to inventory build for upcoming product launches (management says this is intentional), but a sustained stretch above 100 days would signal either slower-than-guided launches or customer payment cycle deterioration.</div>
+    <div class="risk-signal">Signal: Working capital days should return toward 80-90 days by H2 FY27 as inventory converts to revenue. If working capital days exceed 110 days in two consecutive quarters, the inventory is not converting as planned.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--red)">
+  Customer concentration (77%), FDA single-market dependency, and Pithampur execution timing are the three risks that directly affect the FY27 earnings trajectory.
+</div>
+</section>
+
+<!-- ============================================================
+     CHAPTER 7 — WATCH SIGNALS + VERDICT
+     ============================================================ -->
+<section role="region" aria-labelledby="ch7-title">
+<div class="ch-header">
+  <div class="ch-num-circle" style="background:var(--pharma)" aria-hidden="true">7</div>
+  <div>
+    <div class="ch-eyebrow">CHAPTER 7 · WATCH SIGNALS + VERDICT</div>
+    <div class="ch-title" id="ch7-title">Five Quarterly Metrics — and the Bottom Line</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--coral)"></div>
+  <div>
+    <div class="watch-metric">PITHAMPUR COMMISSIONING MILESTONE</div>
+    <div class="watch-desc">Management has guided that the Pithampur high-potency facility will be commissioned by mid-2026 and reach commercial production in Q1 CY27. Track this explicitly every quarter. Good: any announcement of facility commissioning on schedule. Neutral: 1-quarter slip with explanation. Red flag: slip to H2 CY27 with vague explanation.</div>
+    <div class="watch-flag">⚠ RED FLAG: "Pithampur expected H2 CY27" in Q1 FY27 concall without revenue timeline revision.</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--us-blue)"></div>
+  <div>
+    <div class="watch-metric">TOP-5 CUSTOMER REVENUE CONCENTRATION</div>
+    <div class="watch-desc">Currently 77% of product revenue. New ANDA launches should diversify the customer base over time. Good: trending below 70% by Q4 FY27. Neutral: stable at 70-77% with new customer additions. Red flag: exceeding 80% as new products consolidate with existing customers rather than expanding the base.</div>
+    <div class="watch-flag">⚠ RED FLAG: Concentration above 80% while management talks of "portfolio diversification."</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--green)"></div>
+  <div>
+    <div class="watch-metric">EBITDA MARGIN TRAJECTORY VS. 22–23% GUIDANCE</div>
+    <div class="watch-desc">Management has guided EBITDA margins of 22–23% with improvement expected post-Pithampur commissioning. Q3 FY26 delivered 22.7% — consistent with guidance. Good: Q1 FY27 margins expanding toward 24% post-Pithampur. Neutral: flat at 22-23%. Red flag: margin falling below 20% due to outsourcing costs or Arinna integration expenses without clear timeline for recovery.</div>
+    <div class="watch-flag">⚠ RED FLAG: EBITDA margin below 20% for two consecutive quarters post-Pithampur commissioning date.</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--pharma)"></div>
+  <div>
+    <div class="watch-metric">ANDA APPROVAL RATE AND COMMERCIALISATION SPEED</div>
+    <div class="watch-desc">Rubicon has 17 ANDAs pending FDA clearance as of the IPO prospectus (June 2025). Each approval represents potential new revenue within 6–12 months of commercialisation. Good: 3–4 ANDA approvals per quarter with rapid commercialisation (within 2 quarters). Neutral: 1–2 per quarter with normal timelines. Red flag: zero approvals for 2 consecutive quarters, which would signal an FDA review backlog or application quality issue.</div>
+    <div class="watch-flag">⚠ RED FLAG: No new ANDA approvals for 6+ months while the 17-pending pipeline is not disclosed as having changed.</div>
+  </div>
+</div>
+
+<div class="watch-item">
+  <div class="watch-dot" style="background:var(--india)"></div>
+  <div>
+    <div class="watch-metric">ARINNA INDIA REVENUE CONTRIBUTION AND PRESCRIBER GROWTH</div>
+    <div class="watch-desc">Arinna brought ₹71.5 crore of FY25 revenue and 4,000+ prescribers. Post-acquisition, track whether Rubicon's own differentiated products are being introduced through Arinna's network — that cross-sell is the strategic rationale for the acquisition. Good: India revenue (Arinna + Rubicon) exceeding ₹100 crore in FY27 with prescriber count above 5,000. Neutral: Arinna grows at its historical 8–10% with no cross-sell evident. Red flag: prescriber count declining or Arinna revenue flat/falling in post-acquisition quarters.</div>
+    <div class="watch-flag">⚠ RED FLAG: Arinna FY27 revenue below ₹70 crore or prescriber count stagnant at 4,000 after 2 full quarters of integration.</div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-card" style="margin-top: 32px">
+  <div class="verdict-label" aria-hidden="true">📌 INVESTMENT VERDICT · JUNE 1, 2026 <span class="verdict-stage">MID-CHAPTER</span></div>
+  <p>Rubicon Research's structural advantages are real and independently verifiable: 9 proprietary drug delivery platforms that limit competitor density per product, a decade-long clean FDA compliance track record at Ambernath and Satara, and an 8% per-unit pricing improvement during a period of broad industry erosion — that is a quantified expression of competitive moat, not a narrative. The quality signal in the financials is equally convincing: 34% ROCE, PAT CAGR of 52% over 5 years, and a Q3 FY26 EBITDA margin of 22.7% consistent with guidance. The near-term catalyst for re-rating is the Pithampur facility commissioning (mid-2026) and the subsequent high-potency product launches (Q1 CY27), which should simultaneously expand gross margins and open a new product category with structurally low competitor density.</p>
+  <p>The valuation, however, demands respect. At approximately 75× trailing PE, Rubicon trades at a significant premium even to specialty pharma peers like Suven Pharmaceuticals (65–70×), and the market is implicitly pricing in 30–35% revenue CAGR through FY28. Any slippage in Pithampur commissioning, ANDA approvals, or customer concentration normalisation will compress the multiple sharply. We are in the middle of the story — the company has cleared the hardest part (building the US platform) and is investing for the next chapter (high-potency, India domestic). That next chapter needs to visibly begin in the next 2–3 quarters. Worth owning through the story at a reasonable entry point; the valuation demands conviction, not comfort.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left: 4px solid var(--pharma)">
+  Mid-chapter specialty compounder: structural moat real, 75× trailing PE prices in flawless execution — Pithampur commissioning in next 6 months is the defining event.
+</div>
+</section>
+
+<!-- ALL HIGHLIGHTS AT A GLANCE — always expanded for print -->
+<div class="highlight-index-block" id="highlight-index" role="complementary" aria-label="All highlights at a glance">
+  <div class="hi-title">
+    <span aria-hidden="true">📌</span> All Highlights at a Glance
+    <span style="font-family:var(--mono); font-size:10px; color:var(--gray); font-weight:400; margin-left:10px;">Auto-generated from all inline highlights and chapter takeaways above</span>
+  </div>
+  <ol class="hi-list" id="hi-ol">
+    <!-- Auto-populated by JS below -->
+  </ol>
+</div>
+
+<hr class="divider">
+<p style="font-family:var(--mono); font-size:10.5px; color:var(--gray); text-align:center;">
+  RUBICON RESEARCH LIMITED · NSE: RUBICON · INVESTOR BRIEF · JUNE 1, 2026 · FOR RESEARCH PURPOSES ONLY · NOT INVESTMENT ADVICE
+</p>
+<hr class="divider">
+
+</div><!-- end brief-wrap -->
+
+<!-- ==============================================================
+     DOCUMENT SEPARATOR
+     ============================================================== -->
+<div class="doc-separator" role="separator" aria-label="The Ledger companion analysis begins here">
+  The Ledger
+  <div class="ds-sub">Management Credibility Tracker · Brainstorm v0.2 · Companion to NSE Investor Story Persona</div>
+</div>
+
+<!-- ==============================================================
+     PART 2 · THE LEDGER — BRAINSTORM v0.2
+     (Full content appended below)
+     ============================================================== -->
+
+<div class="masthead" role="banner">
+  <div class="masthead-eyebrow">NSE EQUITY RESEARCH · COMPANION PERSONA · BRAINSTORM <span class="version-badge">v0.2</span></div>
+  <h1>The Ledger</h1>
+  <div class="masthead-sub">Management promises, tone &amp; execution — tracked quarter by quarter. Now expanded: Capex timelines · Margin expansion · Debt &amp; capital raising.</div>
+  <div class="masthead-meta">
+    <span class="meta-chip">BRAINSTORM v0.2</span>
+    <span class="meta-chip">JUNE 2026</span>
+    <span class="meta-chip">COMPANION TO NSE_INVESTOR_STORY_PERSONA</span>
+    <span class="meta-chip">+ CAPEX · MARGIN · CAPITAL STRUCTURE</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- RUBICON-SPECIFIC LEDGER APPLICATION -->
+<div class="rubicon-callout" style="margin-top:32px">
+  <div class="rc-label" aria-hidden="true">🔎 THE LEDGER APPLIED TO RUBICON · JUNE 2026 SNAPSHOT</div>
+  <p>Running the six Ledger pillars against Rubicon's available Q3 FY26 data and IPO prospectus reveals a nuanced picture: strong promise-hit rates on core financial delivery (52% Q3 revenue growth as guided), but active red flags in capital structure governance (IPO proceeds commingling) and an untested capex execution record (Pithampur is the first major greenfield-style commission). The margin mechanism (outsourcing compression → Pithampur commissioning → gross margin recovery) is clearly stated but unproven. The company's Q3 EBITDA of 22.7% is consistent with guidance, supporting Tone credibility. Management should receive a provisional <strong>Tier B (Credible · Watch Flags Active)</strong> rating with specific monitoring of: (1) Pithampur completion drift, (2) IPO fund commingling resolution, and (3) working capital days normalisation.</p>
+  <p><strong>Active Ledger flags for RUBICON:</strong> Capex Commissioning Watch (Pithampur mid-2026) · Capital Structure Flag (IPO proceeds commingling, India Ratings) · Working Capital Watch (104 days, elevated from 69) · Funding Flip Check (IPO proceeds use vs. stated objects — ₹164.9 Cr pending as of Mar 2026).</p>
+</div>
+
+<!-- 00 — THE CORE THESIS -->
+<div class="sec-header" style="margin-top:28px;">
+  <div class="sec-num">00</div>
+  <div>
+    <div class="sec-eyebrow">THE CORE LOGIC</div>
+    <div class="sec-title">The chain — and where it breaks</div>
+  </div>
+</div>
+
+<p>Every management team in Indian mid-cap manufacturing is promising the same story: spend on capex → build capacity → win revenue → improve margins → reduce debt → rinse and repeat. The Ledger's job is to check whether each link in that chain is actually holding.</p>
+
+<div class="chain-flow" role="img" aria-label="The capital allocation chain: Capex Deployed to New Cycle Begins">
+  <div class="chain-node c1"><div class="chain-num">①</div><div class="chain-label">Capex Deployed</div><div class="chain-detail">On budget, on schedule?</div></div>
+  <div class="chain-node c2"><div class="chain-num">②</div><div class="chain-label">Capacity Created</div><div class="chain-detail">Plant commissioned as promised?</div></div>
+  <div class="chain-node c3"><div class="chain-num">③</div><div class="chain-label">Utilisation Ramp</div><div class="chain-detail">Revenue materialising from new capacity?</div></div>
+  <div class="chain-node c4"><div class="chain-num">④</div><div class="chain-label">Margin Expansion</div><div class="chain-detail">Operating leverage kicking in?</div></div>
+  <div class="chain-node c5"><div class="chain-num">⑤</div><div class="chain-label">Cash Flow Improves</div><div class="chain-detail">FCF positive &amp; growing?</div></div>
+  <div class="chain-node c6"><div class="chain-num">⑥</div><div class="chain-label">Debt Reduces</div><div class="chain-detail">D/E falling as promised?</div></div>
+  <div class="chain-node c7"><div class="chain-num">⑦</div><div class="chain-label">New Cycle Begins</div><div class="chain-detail">Next capex funded internally?</div></div>
+</div>
+
+<div class="insight-box-ledger">
+  <div class="label" aria-hidden="true">⚡ THE NON-OBVIOUS INSIGHT</div>
+  <p>The break in the chain is almost never announced. Management keeps describing a healthy chain — "strong visibility," "on track," "margins will follow revenue" — while the fracture quietly widens. The Ledger makes the break visible by tracking each link independently. <strong>A company whose capex is on schedule but whose utilisation isn't ramping is at Link 3 — not Link 7. The market often prices it as if it were at Link 6.</strong> That gap is the investment risk — or the opportunity if you're on the right side of it.</p>
+</div>
+
+<!-- 01 — SIX PILLARS -->
+<div class="sec-header">
+  <div class="sec-num">01</div>
+  <div>
+    <div class="sec-eyebrow">FRAMEWORK</div>
+    <div class="sec-title">Six tracking dimensions — three original, three new</div>
+  </div>
+</div>
+
+<p>The original three pillars (Register, Tone, Delta) handle the qualitative credibility layer. Three new financial tracking dimensions now handle the quantitative chain: capex timelines, margin expansion trajectory, and capital structure promises.</p>
+
+<div class="pillars">
+  <div class="pillar-card promise">
+    <div class="pillar-icon" aria-hidden="true">📋</div>
+    <div class="pillar-name">Promise Register</div>
+    <div class="pillar-desc">Structured extraction of every forward-looking commitment: financial targets, milestones, initiatives. Tagged by type, timeline, conditionality, and source.</div>
+  </div>
+  <div class="pillar-card tone">
+    <div class="pillar-icon" aria-hidden="true">🔬</div>
+    <div class="pillar-name">Tone Decoder</div>
+    <div class="pillar-desc">Linguistic pattern analysis. Confidence vs hedge word ratios, attribution habits, Q&amp;A evasion patterns, specificity trajectory across quarters.</div>
+  </div>
+  <div class="pillar-card exec">
+    <div class="pillar-icon" aria-hidden="true">⚖️</div>
+    <div class="pillar-name">Execution Delta</div>
+    <div class="pillar-desc">Promise vs reality comparison. Delivered, partial, drifted, or silently withdrawn. Assigns status to every row in the register each quarter.</div>
+  </div>
+  <div class="pillar-card capex">
+    <div class="pillar-icon" aria-hidden="true">🏗️</div>
+    <div class="pillar-name">Capex Timeline Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Project-level tracking: announced amounts, completion dates, revenue unlock bridge. Detects completion drift, dark capex, and phantom revenue promises.</div>
+  </div>
+  <div class="pillar-card margin">
+    <div class="pillar-icon" aria-hidden="true">📈</div>
+    <div class="pillar-name">Margin Expansion Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Tracks the specific mechanism management says will drive margin improvement — and whether that mechanism is actually working at the pace claimed.</div>
+  </div>
+  <div class="pillar-card capital">
+    <div class="pillar-icon" aria-hidden="true">🏦</div>
+    <div class="pillar-name">Capital Structure Tracker <span class="new-badge">NEW</span></div>
+    <div class="pillar-desc">Debt reduction timelines, equity dilution claims vs outcomes, working capital masking, fundraise pattern analysis, promoter pledge trajectory.</div>
+  </div>
+</div>
+
+<!-- 02 — CAPEX TIMELINE TRACKER -->
+<div class="sec-header sec-header-accent">
+  <div class="sec-num">02</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 4</div>
+    <div class="sec-title">Capex Timeline Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-teal">
+  Capex promises are the richest credibility signal in Indian mid-cap concalls — because they are the most specific, the most falsifiable, and the most frequently missed. A company that deploys capex on time almost always executes on revenue. A company whose capex keeps drifting is already behind on everything downstream.
+</div>
+
+<h3 class="teal">What to extract per project, per quarter</h3>
+
+<div class="template-box">
+<span class="comment"># One block per announced capex project — update status each quarter</span><br><br>
+<span class="field">project_name        :</span> <span class="value">Phase 2 greenfield plant, Pune</span><br>
+<span class="field">project_type        :</span> <span class="value">Greenfield | Brownfield | Maintenance | R&amp;D | Acquisition</span><br>
+<span class="field">announced_quarter   :</span> <span class="value">Q1 FY25</span><br>
+<span class="field">announced_amount    :</span> <span class="value">₹280 Cr</span><br>
+<span class="field">latest_budget       :</span> <span class="value">₹310 Cr  ← if revised, flag delta (+₹30 Cr, +10.7%)</span><br>
+<span class="field">original_completion :</span> <span class="value">Q3 FY26</span><br>
+<span class="field">current_completion  :</span> <span class="value">Q1 FY27  ← drifted 2 quarters</span><br>
+<span class="field">actual_spend_to_date:</span> <span class="value">₹190 Cr vs ₹280 Cr budgeted-to-date (68% pacing)</span><br>
+<span class="field">revenue_unlock_mgmt :</span> <span class="value">"₹400–500 Cr incremental revenue from H2 FY27"</span><br>
+<span class="field">funding_source_mgmt :</span> <span class="value">Internal accruals + ₹100 Cr term loan</span><br>
+<span class="field">funding_actual      :</span> <span class="value">QIP of ₹150 Cr done in Q3 FY25 (contradicts "no dilution" claim)</span><br>
+<span class="field">utilisation_post_comm:</span> <span class="value">Track 2 quarters after commissioning — is the revenue actually arriving?</span><br>
+<span class="field">status              :</span> <span class="value">DRIFTED | ON TRACK | DELIVERED | DARK CAPEX | ABANDONED</span>
+</div>
+
+<h3 class="teal">Capex promise types (taxonomy)</h3>
+<table class="data-table" aria-label="Capex promise types and credibility weights">
+  <tr><th class="teal">TYPE</th><th class="teal">WHAT IT IS</th><th class="teal">CREDIBILITY WEIGHT</th><th class="teal">COMMON MISS PATTERN</th></tr>
+  <tr><td><span class="tag tag-coral">Capacity Expansion</span></td><td>New plant, new line, brownfield add — promises specific MW/MT/units of capacity</td><td>Highest — most traceable against production data</td><td>Commissioned on paper but utilisation stuck below 40%</td></tr>
+  <tr><td><span class="tag tag-teal">Technology Upgrade</span></td><td>Import of new machines, automation, quality certification capex</td><td>Medium — hard to verify from outside</td><td>Spend happens but margin improvement (the rationale) doesn't follow</td></tr>
+  <tr><td><span class="tag tag-navy">Geographic Expansion</span></td><td>New facility in a new location — often for customer proximity or regulatory benefit</td><td>High — very visible when commencing/delayed</td><td>Location announced, land acquired, then silent for 2–3 years</td></tr>
+  <tr><td><span class="tag tag-amber">Maintenance Capex</span></td><td>"Run-the-business" spend management says is recurring</td><td>Lower weight — used as a catch-all for unexplained spend</td><td>Maintenance capex swells in bad years (capex that isn't maintenance labelled as such)</td></tr>
+  <tr><td><span class="tag tag-purple">Acquisition / JV</span></td><td>Inorganic capex — buyout, strategic stake, JV formation</td><td>High — very binary (done/not done)</td><td>"In discussions" language used for 4+ quarters without conclusion</td></tr>
+</table>
+
+<h3 class="teal">Six capex-specific red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> COMPLETION DRIFT</div>
+    <div class="redflag-what">Plant or project commissioning date pushed out across consecutive quarters. "Q3 FY26" becomes "Q4 FY26" becomes "H1 FY27" — always just one quarter away.</div>
+    <div class="redflag-signal">Signal: Same project, different completion quarter, 3 consecutive transcripts. No explanation given for the slip.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> PHANTOM REVENUE BRIDGE</div>
+    <div class="redflag-what">Management says the new capacity will unlock "₹X Cr incremental revenue" — but after commissioning, that revenue simply doesn't appear. The plant is online; the revenue isn't.</div>
+    <div class="redflag-signal">Signal: Track utilisation rate 2 quarters post-commissioning. Less than 50% utilisation with no explanation = phantom revenue bridge.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> DARK CAPEX</div>
+    <div class="redflag-what">Significant capex spend appears in cash flow statements but is never explained in concalls. Management spends but doesn't tell you what the capacity addition is. Often a sign of unannounced project problems.</div>
+    <div class="redflag-signal">Signal: CapEx in cash flow more than 20% above the sum of all announced projects. Ask: where did the rest go?</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> BUDGET INFLATION</div>
+    <div class="redflag-what">The announced capex budget quietly grows each quarter — "₹200 Cr" becomes "₹250 Cr" becomes "₹310 Cr" — without proportional upward revision to the revenue unlock guidance.</div>
+    <div class="redflag-signal">Signal: Track budget revision percentage vs revenue unlock revision percentage. If budget rises 20% but revenue guidance stays flat — margin of the new capacity is compressing.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> SLOW PACING</div>
+    <div class="redflag-what">Management says the plant will be ready by a certain quarter, but actual capex spend is significantly behind the implied pace needed to get there. The money isn't being deployed at the rate the timeline requires.</div>
+    <div class="redflag-signal">Signal: Divide total budget by quarters to commissioning — is actual spend-to-date at that pace? More than 20% behind pace = completion timeline is aspirational.</div>
+  </div>
+  <div class="redflag-card capex">
+    <div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> ABANDONED SILENCE</div>
+    <div class="redflag-what">A capex project that was regularly discussed simply disappears from concall commentary. No cancellation announced — just never mentioned again. Often signals a customer who cancelled an order that the capex was for.</div>
+    <div class="redflag-signal">Signal: Was mentioned in Q1–Q3, not mentioned in Q4 or next year's concalls. Cross-check with exchange filings for any cancellation notice.</div>
+  </div>
+</div>
+
+<h3 class="teal">Capex timeline example register (4 quarters)</h3>
+<div class="timeline-card">
+  <div class="timeline-header" aria-hidden="true">📍 PROJECT: PHASE 2 EXPANSION — Announced Q1 FY25 · ₹280 Cr</div>
+  <div class="timeline-row" style="background:#F7F5F0;">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-label">Quarter</div></div>
+    <div class="timeline-cell"><div class="tl-label">Budget Stated</div></div>
+    <div class="timeline-cell"><div class="tl-label">Spend-to-Date</div></div>
+    <div class="timeline-cell"><div class="tl-label">Completion Date Given</div></div>
+    <div class="timeline-cell"><div class="tl-label">Revenue Unlock Claim</div></div>
+    <div class="timeline-cell"><div class="tl-label">Status</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q1 FY25</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹280 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹0</div><div class="tl-sub">Announced</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div></div>
+    <div class="timeline-cell"><div class="tl-status-delivered">● ON TRACK</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q3 FY25</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹280 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹85 Cr</div><div class="tl-sub">30% of budget</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div></div>
+    <div class="timeline-cell"><div class="tl-status-drift">⚠ PACING SLOW</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q1 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹310 Cr ↑</div><div class="tl-sub">+₹30 Cr revision</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹140 Cr</div><div class="tl-sub">45% of revised</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q1 FY27 ← slipped</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹400–500 Cr / yr</div><div class="tl-sub">unchanged despite budget rise</div></div>
+    <div class="timeline-cell"><div class="tl-status-drift">⚠ DRIFT · BUDGET ↑</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Q3 FY26</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹310 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹190 Cr</div><div class="tl-sub">61% of budget</div></div>
+    <div class="timeline-cell"><div class="tl-val">Q2 FY27 ← slipped again</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹350–450 Cr / yr ↓</div><div class="tl-sub">revenue unlock quietly cut</div></div>
+    <div class="timeline-cell"><div class="tl-status-miss">✗ 2 QTR DRIFT · REV ↓</div></div>
+  </div>
+</div>
+<p style="font-size:12.5px; color:var(--gray); font-style:italic;">The above illustrates three simultaneous red flags developing across 18 months: slow pacing → completion drift → budget inflation with revenue unlock quietly trimmed. Each individually might be excused. Together, they signal a project in trouble.</p>
+
+<!-- 03 — MARGIN EXPANSION TRACKER -->
+<div class="sec-header sec-header-margin">
+  <div class="sec-num">03</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 5</div>
+    <div class="sec-title">Margin Expansion Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-green">
+  "Margins will improve as revenue scales" is the single most repeated and least delivered promise in Indian mid-cap equity. The Margin Tracker asks a harder question than "did margins improve?" — it asks: <em>is the specific mechanism management cited for margin improvement actually working at the rate they claimed?</em>
+</div>
+
+<h3 class="green">The five margin promise mechanisms — and how to test each</h3>
+
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-green">Operating Leverage</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Fixed costs are absorbed as revenue scales — beyond ₹X revenue run-rate, incremental margins are 30–35%." The most common and most abused. Almost always true in theory; frequently wrong in the timeline claimed.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track EBITDA margin vs revenue each quarter. If revenue grows 20% but EBITDA margin is flat or falling, fixed costs are growing alongside revenue — management hasn't built the leverage they claimed.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-navy">Product Mix Shift</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Higher-margin product segment growing faster — will lift blended margin by 200–300 bps over 2 years." Common in companies transitioning from commodity to specialty.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track the high-margin segment's revenue share vs guided trajectory. If the mix isn't shifting at the speed claimed, the margin improvement will undershoot.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-amber">Input Cost Normalization</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "Current margins are depressed by elevated raw material or energy costs — once these normalise, gross margin returns to X%." Often valid but used as a perennial excuse.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track the relevant commodity index alongside gross margin. If input cost has normalised but gross margin hasn't followed — something else is wrong.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-coral">Cost Efficiency Program</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "We have identified ₹X Cr of annual cost savings through automation or vendor renegotiation — to be realised over the next 4 quarters." Specific and trackable when well-stated.</div>
+  <div class="mech-signal"><strong>Test:</strong> Track employee cost %, raw material %, and other expenses % of revenue each quarter. If the savings program is working, one of these lines should compress.</div>
+</div>
+<div class="mechanism-row">
+  <div class="mech-type"><span class="tag tag-purple">Pricing Power</span></div>
+  <div class="mech-what"><strong>Claim:</strong> "We have contractual pass-through mechanisms for input cost increases — our gross margins are structurally protected." Often overstated — customer pushback limits actual pass-through.</div>
+  <div class="mech-signal"><strong>Test:</strong> When input costs rise, does gross margin hold? If it falls despite the "protected" claim, the pass-through either doesn't exist or isn't being exercised.</div>
+</div>
+
+<h3 class="green">Six margin-specific red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> H2 MIRAGE</div>
+    <div class="redflag-what">Every H1 miss is explained as "margin expansion is H2 weighted." H2 arrives and margins are still below guidance. The H2 story resets endlessly without ever resolving.</div>
+    <div class="redflag-signal">Signal: H2 margin outcomes for 3 consecutive years. If H2 is consistently just marginally better than H1 but still below guidance — the H2 weighting is a structural excuse.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> FLOOR DRIFT</div>
+    <div class="redflag-what">Management keeps resetting the "normalized" margin floor downward. What was "15% is our floor" in FY24 becomes "12–13% in the current environment" in FY25.</div>
+    <div class="redflag-signal">Signal: Track every stated "normalized margin" across 6+ quarters. Downward drift with each reset = the original margin thesis was incorrect.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> MECHANISM FAILURE</div>
+    <div class="redflag-what">The stated driver of margin improvement is verifiably not working. Operating leverage isn't playing out. Mix shift isn't happening. The mechanism is real; the pace is wrong.</div>
+    <div class="redflag-signal">Signal: Test management's stated mechanism against actual growth-to-margin relationship. A regression tells you the true leverage ratio.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> ONE-TIME ETERNAL</div>
+    <div class="redflag-what">A "one-time" cost headwind appears in 3 or more consecutive quarters, each time described as temporary or non-recurring.</div>
+    <div class="redflag-signal">Signal: Count the quarters in which an "exceptional" or "non-recurring" cost category is mentioned. 3+ occurrences means it is structural, not one-time.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> EMPLOYEE ABSORPTION</div>
+    <div class="redflag-what">Gross margin improves but EBITDA stays flat because employee costs and overheads are rising. The gross margin gains are absorbed before reaching EBITDA.</div>
+    <div class="redflag-signal">Signal: Gross margin minus EBITDA margin spread widening over 3+ quarters = overhead is growing faster than scale.</div>
+  </div>
+  <div class="redflag-card margin">
+    <div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> MIX DELAY LOOP</div>
+    <div class="redflag-what">The "premium product or high-value segment" that was supposed to improve mix is perpetually "growing strongly" but its actual revenue contribution barely moves.</div>
+    <div class="redflag-signal">Signal: Track the stated high-margin segment's % of revenue each quarter. Less than 3% change in share over 6 quarters while being called a "margin driver" = wishful framing.</div>
+  </div>
+</div>
+
+<!-- 04 — CAPITAL STRUCTURE TRACKER -->
+<div class="sec-header sec-header-capital">
+  <div class="sec-num">04</div>
+  <div>
+    <div class="sec-eyebrow">NEW DIMENSION · PILLAR 6</div>
+    <div class="sec-title">Capital Structure Tracker</div>
+  </div>
+</div>
+
+<div class="lead lead-navy">
+  The three most commonly broken financial promises in Indian mid-caps: "we will be debt-free by FY27," "no equity dilution for this expansion," and "capex will be entirely from internal accruals." The Capital Structure Tracker holds management to each of these — and detects the creative accounting that obscures slippage.
+</div>
+
+<h3 class="navy">What to track — the five capital structure dimensions</h3>
+
+<table class="data-table" aria-label="Capital structure tracking dimensions">
+  <tr><th class="navy">DIMENSION</th><th class="navy">WHAT TO EXTRACT FROM CONCALL</th><th class="navy">HOW TO VERIFY</th><th class="navy">KEY RATIO TO WATCH</th></tr>
+  <tr><td><strong>Gross Debt Trajectory</strong></td><td>Management's stated debt level target and timeline: "Debt-free by FY27." "Net debt to below ₹200 Cr by Q4."</td><td>Balance sheet — long-term borrowings + short-term borrowings each quarter</td><td>Gross debt ₹ Cr absolute; D/E ratio; Net debt/EBITDA</td></tr>
+  <tr><td><strong>Working Capital Masking</strong></td><td>Less frequently guided — but a common place for debt to migrate invisibly. Management says "debt is reducing" while working capital debt grows.</td><td>Cash conversion cycle (Debtors + Inventory minus Payables days). Track this alongside gross debt.</td><td>Net Debt (not gross); Cash Conversion Cycle days trend</td></tr>
+  <tr><td><strong>Equity Dilution Claims</strong></td><td>"No equity dilution required for this capex cycle." Any statement about not raising equity is a trackable claim.</td><td>BSE exchange filings — preferential allotment, QIP, rights issue, ESOP grants to promoters.</td><td>Equity shares outstanding quarter-on-quarter; promoter holding %</td></tr>
+  <tr><td><strong>Capex Funding Source</strong></td><td>Per-project: "This ₹300 Cr capex is from internal accruals." "We have arranged a ₹150 Cr term loan."</td><td>Cash flow statement — CFO vs CFI. If CFO less than Capex and net debt is rising, the funding came from debt regardless of what management said.</td><td>CFO/Capex ratio; Net debt change vs guided</td></tr>
+  <tr><td><strong>Promoter Pledge Level</strong></td><td>Often not discussed in concalls — must be pulled from exchange quarterly pledging disclosures.</td><td>BSE/NSE quarterly promoter shareholding filings. % of promoter shares pledged.</td><td>% promoter shares pledged; absolute pledged value vs market cap</td></tr>
+</table>
+
+<h3 class="navy">Fundraising pattern analysis — what the method signals</h3>
+
+<table class="data-table" aria-label="Fundraising instrument signals">
+  <tr><th class="navy">INSTRUMENT</th><th class="navy">WHAT IT SIGNALS</th><th class="navy">RED FLAG PATTERN</th></tr>
+  <tr><td><span class="tag tag-navy">QIP (Institutional)</span></td><td>Management is accessing institutional money quickly, often at a good price to them. Most common when stock is at a relative high.</td><td>QIP after "no dilution" guidance — the most common credibility break. Also watch: QIP immediately after a strong quarterly result.</td></tr>
+  <tr><td><span class="tag tag-amber">Rights Issue</span></td><td>Management inviting existing shareholders to maintain their stake. More shareholder-friendly than QIP but requires disclosure of use of funds.</td><td>Rights issue at a deep discount after management repeatedly said the business was cash-generative — suggests the cash position was worse than communicated.</td></tr>
+  <tr><td><span class="tag tag-purple">Preferential Allotment</span></td><td>Allotment to specific investors — often promoters increasing stake, strategic investors, or PE partners. Check who gets it and at what price.</td><td>Preferential allotment to promoters at a below-market price after they pledged shares — essentially bailing out the promoter's pledge using corporate equity.</td></tr>
+  <tr><td><span class="tag tag-teal">NCD / Bonds</span></td><td>Debt instrument, but often with equity warrants attached. Technically "no equity dilution" but future dilutive.</td><td>NCD issued with warrants at a strike price management claims is "well above market" — check back 2 years later whether they were exercised. Hidden dilution.</td></tr>
+  <tr><td><span class="tag tag-red">Promoter Pledge Increase</span></td><td>Not a company fundraise but a promoter personal fundraise using company shares. Signals promoter has personal liquidity needs.</td><td>Rising pledge + falling promoter % holding + QIP announcement within the same 2-quarter window = structural stress pattern.</td></tr>
+  <tr><td><span class="tag tag-green">Term Loan (Incremental)</span></td><td>Straightforward bank debt for capex. Most transparent funding method.</td><td>New term loan announced while management claimed "capex from internal accruals." Flag this mismatch even if the amount is small.</td></tr>
+</table>
+
+<h3 class="navy">Seven capital structure red flags</h3>
+<div class="redflag-grid">
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> DEBT-FREE MIRAGE</div>
+    <div class="redflag-what">"Debt-free by FY27" promised in FY25. By Q3 FY26 it's "net debt below ₹200 Cr by FY27." By Q1 FY27 it's "we expect significant debt reduction over the next 24 months." The absolute goal retreats with every quarter.</div>
+    <div class="redflag-signal">Signal: Score this exactly like Promise Drift. Track the stated debt-reduction target across every quarter. Softening language + lengthening timeline = Drift.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> STEALTH DILUTION</div>
+    <div class="redflag-what">Management says "no equity dilution required for this capex cycle" in Q2, then announces a QIP in Q4. Often preceded by a strong quarterly result — management creates the good-news window, then uses it to raise capital.</div>
+    <div class="redflag-signal">Signal: Any equity fundraise within 4 quarters of a "no dilution needed" statement. No exceptions.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> WORKING CAPITAL MASKING</div>
+    <div class="redflag-what">Gross debt appears flat or falling while cash conversion cycle lengthens. The company is effectively borrowing through its working capital rather than term loans — net debt is rising invisibly.</div>
+    <div class="redflag-signal">Signal: Gross debt flat but (debtor days + inventory days minus payable days) expanding by more than 15 days over 4 quarters. Net debt, not gross debt, is the real number to track.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> FUNDING FLIP</div>
+    <div class="redflag-what">"This capex is entirely from internal accruals" stated in Q1. By Q3 the cash flow statement shows net new term loans equal to the capex amount and CFO coverage of capex is below 1x.</div>
+    <div class="redflag-signal">Signal: CFO/Capex ratio less than 0.7 in any year where management claimed "internal accruals" funding.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> PROMOTER PLEDGE RISE</div>
+    <div class="redflag-what">Promoter pledge percentage rising while management discusses "strong balance sheet" and "confident growth outlook." These are incompatible signals.</div>
+    <div class="redflag-signal">Signal: Promoter pledge more than 30% of total promoter holding AND increasing for 2+ consecutive quarters.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> REFINANCING SPIN</div>
+    <div class="redflag-what">Management announces "we have refinanced our debt at lower rates" as a positive. Check: did net debt also reduce, or did they just roll the same debt forward? Refinancing is not deleveraging.</div>
+    <div class="redflag-signal">Signal: Management uses word "refinanced" or "restructured debt" — immediately check net debt level. If net debt is flat or rising, the headline is misleading.</div>
+  </div>
+  <div class="redflag-card capital">
+    <div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> INTEREST COVERAGE SQUEEZE</div>
+    <div class="redflag-what">EBITDA flat or falling while finance costs rise. Interest coverage (EBITDA divided by Finance costs) compresses below 3x — the range where servicing obligations start to affect operating flexibility.</div>
+    <div class="redflag-signal">Signal: Interest coverage less than 3x and declining. Check against management's debt-free / deleverage timeline.</div>
+  </div>
+</div>
+
+<!-- 05 — COMBINED PROMISE REGISTER -->
+<div class="sec-header">
+  <div class="sec-num">05</div>
+  <div>
+    <div class="sec-eyebrow">EXPANDED PROMISE REGISTER</div>
+    <div class="sec-title">All six promise categories in one taxonomy</div>
+  </div>
+</div>
+
+<table class="data-table" aria-label="All six promise category types">
+  <tr><th>CATEGORY</th><th>PROMISE TYPES IN THIS BUCKET</th><th>CREDIBILITY WEIGHT</th><th>PRIMARY TRACKER</th></tr>
+  <tr><td><span class="tag tag-red">Revenue / Growth</span></td><td>Revenue guidance (hard/range/directional), order book claims, new customer wins, market share statements</td><td>Highest</td><td>Promise Register · Execution Delta</td></tr>
+  <tr><td><span class="tag tag-teal">Capex / Capacity</span></td><td>Specific project amounts, completion timelines, capacity additions, revenue unlock bridge</td><td>Highest — most falsifiable</td><td>Capex Timeline Tracker</td></tr>
+  <tr><td><span class="tag tag-green">Margin Expansion</span></td><td>EBITDA/gross margin targets, mechanism claims (operating leverage, mix shift), floor/ceiling statements</td><td>High</td><td>Margin Expansion Tracker</td></tr>
+  <tr><td><span class="tag tag-navy">Capital Structure</span></td><td>Debt-reduction targets, "no dilution" claims, funding source claims, net debt level guidance</td><td>High — especially equity dilution</td><td>Capital Structure Tracker</td></tr>
+  <tr><td><span class="tag tag-amber">Operational Milestones</span></td><td>Certifications, product launches, customer qualifications, geographic entries, hiring</td><td>Medium-High</td><td>Promise Register · Execution Delta</td></tr>
+  <tr><td><span class="tag tag-purple">Strategic Aspirations</span></td><td>Long-horizon positioning claims (top-3 in sector, global capability, platform company)</td><td>Low (unfalsifiable near-term)</td><td>Tone Decoder (do they repeat without progress?)</td></tr>
+</table>
+
+<!-- 06 — MASTER RED FLAG LIST -->
+<div class="sec-header">
+  <div class="sec-num">06</div>
+  <div>
+    <div class="sec-eyebrow">MASTER TAXONOMY</div>
+    <div class="sec-title">All twenty red flags — classified by severity and domain</div>
+  </div>
+</div>
+
+<div class="dim-header dh-capex"><div class="dh-icon" aria-hidden="true">📋</div><div class="dh-label">Original Credibility Flags (from v0.1)</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag" aria-hidden="true"></i> PROMISE DRIFT</div><div class="redflag-what">A specific milestone keeps getting pushed one quarter forward with no explanation. Three consecutive quarterly resets = systemic drift, not a one-off delay.</div><div class="redflag-signal">Signal: Same milestone, different date, 3+ quarterly transcripts.</div></div>
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag" aria-hidden="true"></i> METRIC HOP</div><div class="redflag-what">The headline KPI switches mid-year because the original metric started disappointing. Revenue growth → order book → pipeline quality → customer conversations.</div><div class="redflag-signal">Signal: Primary metric in opening commentary changes from prior quarter without explanation.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn" aria-hidden="true"></i> QUALIFIER CREEP</div><div class="redflag-what">Language around the same target accumulates conditional clauses over consecutive quarters. "We will" → "We expect to subject to" → a range → silence.</div><div class="redflag-signal">Signal: Count conditional clauses on the same stated target across 3 quarters. Rising = rising doubt.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn" aria-hidden="true"></i> GUIDANCE WITHDRAWAL</div><div class="redflag-what">After a miss, management stops providing specific guidance. "We remain optimistic" replaces rupee numbers.</div><div class="redflag-signal">Signal: Prior quarter had hard guidance. This quarter has direction only. Confirm it's not industry-wide policy.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn" aria-hidden="true"></i> VERBATIM REPEAT</div><div class="redflag-what">Identical bullish language 3+ quarters with no underlying delivery. Enthusiasm without progress.</div><div class="redflag-signal">Signal: More than 60% of key phrases match across 4 quarterly opening commentaries. No delivery on the underlying metric.</div></div>
+  <div class="redflag-card critical"><div class="redflag-name"><i class="ti ti-flag icon-flag" aria-hidden="true"></i> ANALYST ESCALATION</div><div class="redflag-what">Same hard question from the same or multiple analysts in consecutive quarters. Analysts only repeat when they know the first answer wasn't real.</div><div class="redflag-signal">Signal: Identify recurring analyst questions across transcripts. Same topic, 2+ quarters = credibility gap.</div></div>
+  <div class="redflag-card warning"><div class="redflag-name"><i class="ti ti-alert-triangle icon-warn" aria-hidden="true"></i> ATTRIBUTION SHIFT</div><div class="redflag-what">A miss described as "temporary" becomes "structural headwinds" then "market-wide challenges" — the scale of the problem expands retroactively.</div><div class="redflag-signal">Signal: Compare language for same underlying problem across 3+ quarters. "Temporary" → "structural" = thesis risk.</div></div>
+</div>
+
+<div class="dim-header dh-capex" style="background:var(--coral-bg); color:var(--coral); border-left-color:var(--coral);"><div class="dh-icon" aria-hidden="true">🏗️</div><div class="dh-label">Capex-Specific Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> COMPLETION DRIFT</div><div class="redflag-what">Plant commissioning date pushed across consecutive quarters with no explanation.</div><div class="redflag-signal">Signal: Same project, different completion quarter, 3 consecutive transcripts.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> PHANTOM REVENUE BRIDGE</div><div class="redflag-what">New capacity commissioned but promised revenue doesn't appear. Utilisation stuck below 50% 2 quarters post-commissioning.</div><div class="redflag-signal">Signal: Track production utilisation rates in quarterly results vs capacity addition date.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> DARK CAPEX</div><div class="redflag-what">Spend in cash flow significantly exceeds the sum of all disclosed projects. Unaccounted capex.</div><div class="redflag-signal">Signal: Cash flow capex more than 20% above all announced project budgets summed.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> BUDGET INFLATION</div><div class="redflag-what">Capex budget rises without proportional revenue unlock revision. Margin on new capacity compressing silently.</div><div class="redflag-signal">Signal: Budget up X% with revenue unlock flat or declining.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> SLOW PACING</div><div class="redflag-what">Actual spend-to-date significantly below the pace implied by the stated completion date.</div><div class="redflag-signal">Signal: Actual spend less than 80% of required pace to hit stated commissioning date.</div></div>
+  <div class="redflag-card capex"><div class="redflag-name"><i class="ti ti-tool icon-capex" aria-hidden="true"></i> ABANDONED SILENCE</div><div class="redflag-what">Project discussed regularly, then disappears from concall commentary. No cancellation notice.</div><div class="redflag-signal">Signal: Project mentioned Q1–Q3, absent from Q4 and next year's transcripts. Cross-check exchange filings.</div></div>
+</div>
+
+<div class="dim-header dh-margin"><div class="dh-icon" aria-hidden="true">📈</div><div class="dh-label">Margin-Specific Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> H2 MIRAGE</div><div class="redflag-what">Margin expansion permanently "H2 weighted" — H2 is always marginally better than H1 but both are below guidance. Resets every year.</div><div class="redflag-signal">Signal: H2 actual margins for 3 consecutive FYs all below annual guidance.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> FLOOR DRIFT</div><div class="redflag-what">The stated "normalized margin" floor shifts downward each cycle. Original thesis is quietly abandoned.</div><div class="redflag-signal">Signal: Track every "normalized / steady-state / sustainable" margin statement across 6+ quarters.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> ONE-TIME ETERNAL</div><div class="redflag-what">A "non-recurring" cost appears 3+ consecutive quarters.</div><div class="redflag-signal">Signal: Flag every "one-time or exceptional or non-recurring" cost line. More than 3 occurrences = it is structural.</div></div>
+  <div class="redflag-card margin"><div class="redflag-name"><i class="ti ti-trending-down icon-margin" aria-hidden="true"></i> EMPLOYEE ABSORPTION</div><div class="redflag-what">Gross margins improve but EBITDA stays flat — headcount and overheads absorbing all gross gains.</div><div class="redflag-signal">Signal: Gross margin minus EBITDA spread widening for 3+ quarters.</div></div>
+</div>
+
+<div class="dim-header dh-capital"><div class="dh-icon" aria-hidden="true">🏦</div><div class="dh-label">Capital Structure Flags</div></div>
+<div class="redflag-grid">
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> DEBT-FREE MIRAGE</div><div class="redflag-what">Debt-free target pushed outward each quarter, language softening progressively.</div><div class="redflag-signal">Signal: Score as Promise Drift — same timeline, softer language, 3+ quarterly resets.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> STEALTH DILUTION</div><div class="redflag-what">QIP or preferential allotment within 4 quarters of a "no equity dilution" guidance statement.</div><div class="redflag-signal">Signal: Any equity fundraise within 4 quarters of explicit "no dilution needed" claim.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> WORKING CAPITAL MASKING</div><div class="redflag-what">Gross debt flat but cash conversion cycle lengthening — net debt rising invisibly.</div><div class="redflag-signal">Signal: CCC days expanding more than 15 days over 4 quarters while management calls debt "under control."</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> PROMOTER PLEDGE RISE</div><div class="redflag-what">Promoter pledge % rising alongside management confidence rhetoric. Internally inconsistent signals.</div><div class="redflag-signal">Signal: Pledge more than 30% of promoter holding + increasing 2+ consecutive quarters.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> FUNDING FLIP</div><div class="redflag-what">Capex funded by debt despite "internal accruals" claim. CFO/Capex less than 0.7 in the relevant year.</div><div class="redflag-signal">Signal: Net borrowings in cash flow statement + CFO coverage less than 0.7 in the "internal accruals" year.</div></div>
+  <div class="redflag-card capital"><div class="redflag-name"><i class="ti ti-building-bank icon-capital" aria-hidden="true"></i> INTEREST COVERAGE SQUEEZE</div><div class="redflag-what">EBITDA divided by Finance costs falling below 3x while deleveraging story is being told.</div><div class="redflag-signal">Signal: Interest coverage less than 3x declining. Cannot deleverage quickly at this ratio.</div></div>
+</div>
+
+<!-- 07 — UPDATED CREDIBILITY SCORE -->
+<div class="sec-header">
+  <div class="sec-num">07</div>
+  <div>
+    <div class="sec-eyebrow">UPDATED COMPOSITE</div>
+    <div class="sec-title">Seven-dimension Credibility Score</div>
+  </div>
+</div>
+
+<table class="data-table" aria-label="Seven-dimension credibility scoring rubric">
+  <tr><th>DIMENSION</th><th>WHAT IT MEASURES</th><th>WEIGHT</th></tr>
+  <tr><td><strong>Promise Hit Rate</strong></td><td>% of Hard Guidance and Milestones delivered within 1 quarter of original timeline. Rolling 4-quarter window.</td><td>25%</td></tr>
+  <tr><td><strong>Capex Execution Rate</strong></td><td>% of announced capex projects on time and within 10% of original budget. Track post-commissioning utilisation as well.</td><td>20%</td></tr>
+  <tr><td><strong>Margin Mechanism Fidelity</strong></td><td>Is the stated mechanism for margin improvement actually working at the pace claimed? Score qualitatively: Working / Partial / Not Working.</td><td>15%</td></tr>
+  <tr><td><strong>Capital Structure Integrity</strong></td><td>No stealth dilution, no funding flips, no working capital masking, no promoter pledge red flags. Binary: Clean / Flagged.</td><td>15%</td></tr>
+  <tr><td><strong>Specificity and Attribution</strong></td><td>Are numbers given? Are misses owned? Combines original specificity score and attribution fairness dimensions.</td><td>15%</td></tr>
+  <tr><td><strong>Q&amp;A Quality</strong></td><td>Are hard analyst questions answered directly? Analyst escalation patterns detected?</td><td>10%</td></tr>
+</table>
+
+<p>Output tiers remain A–D (Highly Credible → Credibility Deficit) as in v0.1. The addition of Capex Execution, Margin Mechanism, and Capital Structure Integrity dimensions means the score is now sensitive to financial promise-keeping, not just verbal credibility.</p>
+
+<!-- 08 — NSE BRIEF INTEGRATION -->
+<div class="sec-header">
+  <div class="sec-num">08</div>
+  <div>
+    <div class="sec-eyebrow">ECOSYSTEM FIT — UPDATED</div>
+    <div class="sec-title">Where each new tracker plugs into the NSE Brief</div>
+  </div>
+</div>
+
+<div class="integration-row">
+  <div class="int-card">
+    <div class="int-chapter">CH. 5 · NUMBERS IN CONTEXT</div>
+    <div class="int-title">Capex + Margin Guidance vs Actual Table</div>
+    <div class="int-what">Rolling 4-quarter table: guided margin → actual margin → delta. Separate capex deployment row: budget vs actual spend per year. Makes the tracking visible within the numbers narrative.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 5 · CAPEX TIMELINE SUB-SECTION</div>
+    <div class="int-title">Live Project Ledger</div>
+    <div class="int-what">The existing capex timeline card gets enriched with completion drift status, funding source vs stated, and post-commissioning utilisation rate where available. Each project gets a status badge.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 6 · RISK REGISTER</div>
+    <div class="int-title">Capital Structure Risk Line</div>
+    <div class="int-what">Explicit risk entry for: promoter pledge level, any active dilution risk, interest coverage trajectory, and net debt vs stated guidance. Not generic — must name the specific flags that are currently active.</div>
+  </div>
+  <div class="int-card">
+    <div class="int-chapter">CH. 7 · WATCH SIGNALS</div>
+    <div class="int-title">Three Ledger-Derived Metrics</div>
+    <div class="int-what">One of the 5 watch signals should be a Capex watch (is X plant commissioned this quarter?), one a Margin watch (did gross margin reach Y% as management guided for H2?), and one a Capital watch (was QIP announced despite prior denial?).</div>
+  </div>
+</div>
+
+<blockquote>The Quick-Scan Strip gets an 8th line: <br><strong>Note on Management Credibility: Tier [X] — Active flags: [list for example: "Capex drift on Plant 2, H2 margin mirage active, stealth dilution watch"]</strong><br>This tells a reader whether to trust this quarter's concall before they read a single paragraph.</blockquote>
+
+<!-- 09 — NEXT STEPS -->
+<div class="sec-header">
+  <div class="sec-num">09</div>
+  <div>
+    <div class="sec-eyebrow">IMPLEMENTATION PATH</div>
+    <div class="sec-title">From brainstorm to working persona</div>
+  </div>
+</div>
+
+<div class="workflow">
+  <div class="wf-step">
+    <div class="wf-num">1</div>
+    <div class="wf-body">
+      <div class="wf-action">Back-test on RUBICON — Q3 and Q4 FY26 transcripts now available (Q4 concall: May 30, 2026)</div>
+      <div class="wf-detail">Run all six pillars against Rubicon's concall record. Focus especially on: the capex timeline for Pithampur (track any drift from "mid-2026" guidance), the margin mechanism (outsourcing compression → Pithampur commissioning → gross margin recovery), and the IPO proceeds commingling flag raised by India Ratings. This calibration pass will validate or sharpen the red flag triggers against a real, recently listed company with a clean 7-month post-IPO track record.</div>
+      <div class="wf-tool">TARGET: RUBICON · Q3 FY26 + Q4 FY26 transcripts · IPO prospectus baseline</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">2</div>
+    <div class="wf-body">
+      <div class="wf-action">Formalise the Persona file — The_Ledger_Persona.md</div>
+      <div class="wf-detail">Write the formal persona in the same structure as NSE_Investor_Story_Persona.md. Include: six-pillar overview, extraction templates for all three new trackers, red flag taxonomy (all 20), credibility scoring rubric, NSE brief integration instructions, and the workflow Claude should follow for each new ticker.</div>
+      <div class="wf-tool">DELIVERABLE: The_Ledger_Persona.md for the project</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">3</div>
+    <div class="wf-body">
+      <div class="wf-action">Build the Ledger Card HTML template</div>
+      <div class="wf-detail">The visual output: a compact HTML document containing the credibility tier badge, all active red flags, the rolling promise register table (4 quarters), the capex project tracker, margin trajectory chart, and capital structure summary. Delivered alongside every NSE brief going forward.</div>
+      <div class="wf-tool">DELIVERABLE: [TICKER]_Ledger_[Quarter].html</div>
+    </div>
+  </div>
+  <div class="wf-step">
+    <div class="wf-num">4</div>
+    <div class="wf-body">
+      <div class="wf-action">Optional Phase 2 — Claude-in-Claude transcript processor</div>
+      <div class="wf-detail">Build a React artifact where you paste a new concall transcript and it auto-extracts promises (all 6 categories), scores the tone dimensions, and updates the register. Uses the Anthropic API to run structured extraction on the transcript text and return JSON promise rows.</div>
+      <div class="wf-tool">TECH: React artifact + Claude API structured JSON extraction</div>
+    </div>
+  </div>
+</div>
+
+<!-- LEDGER VERDICT -->
+<div class="verdict-box">
+  <div class="label" aria-hidden="true">📌 BRAINSTORM VERDICT — v0.2</div>
+  <p>The three new dimensions — capex timelines, margin expansion mechanics, and capital structure integrity — transform The Ledger from a qualitative credibility tool into a complete financial promise audit. The key structural insight: capex, margins, and debt are not independent stories. They are one chain. A management team that is systematically late on capex will systematically miss margin guidance (utilisation lagging) and will systematically fail its debt-reduction targets (cash flows weaker than guided). <strong>Tracking the chain, not just individual promises, is what turns The Ledger from a post-mortem tool into a forward-looking signal.</strong> For RUBICON specifically: the chain is at Link 2 (capacity being created at Pithampur) and the test of management credibility is whether they get to Link 3 (utilisation ramp in Q1 CY27) on the schedule they have publicly committed to.</p>
+</div>
+
+<hr class="divider">
+<div class="small-label">PERSONA NAME</div>
+<div style="margin: 10px 0 6px;">
+  <span class="pname-chip recommended">The Ledger</span>
+  <span class="pname-chip">The Scorekeeper</span>
+  <span class="pname-chip">Concall Forensics</span>
+  <span class="pname-chip">The Promise Register</span>
+</div>
+<p style="font-size:12.5px; color:var(--gray);">"The Ledger" remains the right name — it now earns it more fully. A ledger tracks debits (promises made) against credits (promises kept) across all accounts: operational, financial, and structural. Double-entry: every promise is a debit; only verified delivery credits it back.</p>
+
+</div><!-- end content -->
+
+<footer>
+  <span>RUBICON RESEARCH · NSE: RUBICON · INVESTOR BRIEF + THE LEDGER v0.2</span>
+  <span>JUNE 1, 2026</span>
+  <span>INTERNAL RESEARCH USE ONLY — NOT INVESTMENT ADVICE</span>
+</footer>
+
+<!-- ============================================================
+     SCRIPTS
+     ============================================================ -->
+<script>
+/* --- Revenue + EBITDA Margin Chart --- */
+document.addEventListener('DOMContentLoaded', () => {
+  const ctx = document.getElementById('revenueChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['FY22', 'FY23', 'FY24', 'FY25', 'FY26E'],
+      datasets: [
+        {
+          label: 'Revenue (₹ Crore)',
+          data: [315, 510, 854, 1284, 1754],
+          backgroundColor: 'rgba(83,74,183,0.75)',
+          borderColor: 'rgba(83,74,183,1)',
+          borderWidth: 1.5,
+          borderRadius: 4,
+          yAxisID: 'y'
+        },
+        {
+          label: 'EBITDA Margin (%)',
+          data: [29, 20, 18, 21, 22.5],
+          type: 'line',
+          borderColor: '#C47B00',
+          backgroundColor: 'rgba(196,123,0,0.15)',
+          borderWidth: 2.5,
+          pointBackgroundColor: '#C47B00',
+          pointRadius: 5,
+          tension: 0.35,
+          yAxisID: 'y2'
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          labels: { font: { family: "'DM Mono', monospace", size: 11 }, color: '#2A2A3A' }
+        },
+        tooltip: {
+          callbacks: {
+            label: ctx => {
+              if (ctx.datasetIndex === 0) return ` Revenue: ₹${ctx.raw} Cr`;
+              return ` EBITDA Margin: ${ctx.raw}%`;
+            }
+          }
+        }
+      },
+      scales: {
+        y: {
+          type: 'linear', position: 'left',
+          title: { display: true, text: '₹ Crore', font: { family: "'DM Mono'", size: 10 }, color: '#6B7280' },
+          ticks: { font: { family: "'DM Mono'", size: 10 }, color: '#6B7280' },
+          grid: { color: 'rgba(0,0,0,0.05)' }
+        },
+        y2: {
+          type: 'linear', position: 'right',
+          title: { display: true, text: 'EBITDA %', font: { family: "'DM Mono'", size: 10 }, color: '#6B7280' },
+          ticks: { font: { family: "'DM Mono'", size: 10 }, color: '#6B7280',
+            callback: v => v + '%' },
+          min: 0, max: 35,
+          grid: { drawOnChartArea: false }
+        },
+        x: {
+          ticks: { font: { family: "'DM Mono'", size: 11 }, color: '#2A2A3A' },
+          grid: { display: false }
+        }
+      }
+    }
+  });
+});
+
+/* --- Highlight Index Auto-populate --- */
+document.addEventListener('DOMContentLoaded', () => {
+  const ol = document.getElementById('hi-ol');
+  if (!ol) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const text = el.textContent.trim();
+    if (!text || text.length < 10) return;
+    const li = document.createElement('li');
+    li.textContent = text;
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    ol.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMSL — Apollo Micro Systems | NSE Investor Brief | May 2026</title>
+<style>
+:root {
+  --bg: #fafaf8;
+  --bg2: #f2f1ec;
+  --bg3: #ffffff;
+  --text: #1a1a18;
+  --text2: #4a4a46;
+  --text3: #7a7a74;
+  --border: rgba(0,0,0,0.10);
+  --border2: rgba(0,0,0,0.18);
+  --teal: #1D9E75;
+  --teal-light: #e1f5ee;
+  --teal-dark: #085041;
+  --coral: #D85A30;
+  --coral-light: #faece7;
+  --coral-dark: #4a1b0c;
+  --blue: #378ADD;
+  --blue-light: #e6f1fb;
+  --blue-dark: #042c53;
+  --amber: #BA7517;
+  --amber-light: #faeeda;
+  --amber-dark: #412402;
+  --green: #3B6D11;
+  --green-light: #eaf3de;
+  --green-dark: #173404;
+  --gray: #888780;
+  --gray-light: #f1efe8;
+  --gray-dark: #2c2c2a;
+  --radius: 10px;
+  --radius-sm: 6px;
+}
+[data-theme="dark"] {
+  --bg: #18181a;
+  --bg2: #222226;
+  --bg3: #2a2a2e;
+  --text: #f0efea;
+  --text2: #b8b7b0;
+  --text3: #7a7a74;
+  --border: rgba(255,255,255,0.09);
+  --border2: rgba(255,255,255,0.16);
+  --teal-light: #04342c;
+  --coral-light: #4a1b0c;
+  --blue-light: #042c53;
+  --amber-light: #412402;
+  --green-light: #173404;
+  --gray-light: #2c2c2a;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 700px; margin: 0 auto; padding: 0 1.25rem 4rem; }
+
+/* Theme toggle */
+.toggle-bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.75rem 1.25rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.toggle-btn {
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 12px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--text2);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+}
+.toggle-btn:hover { background: var(--bg2); }
+
+/* Cover */
+.cover {
+  border-bottom: 2px solid var(--coral);
+  padding: 2rem 0 1.5rem;
+  margin-bottom: 2rem;
+}
+.eyebrow {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.75rem;
+}
+.cover-title {
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.cover-sub {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  color: var(--text2);
+  margin-bottom: 1.25rem;
+}
+.cover-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  color: var(--text3);
+}
+.cover-meta span { display: flex; align-items: center; gap: 5px; }
+.dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+/* Stat grid */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  margin: 1.5rem 0;
+}
+.stat-card {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+.stat-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+.stat-value {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+}
+.stat-delta {
+  font-size: 11px;
+  margin-top: 3px;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.up { color: var(--teal); }
+.down { color: var(--coral); }
+.warn { color: var(--amber); }
+
+/* Chapter header */
+.chapter {
+  margin: 2.5rem 0 1rem;
+}
+.chapter-eyebrow {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 4px;
+}
+.chapter-num {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--text);
+  color: var(--bg);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 26px;
+  margin-right: 8px;
+  flex-shrink: 0;
+}
+.chapter-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+}
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+/* Insight card */
+.insight {
+  border-left: 3px solid var(--coral);
+  border-radius: 0;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  background: var(--coral-light);
+  margin: 1.25rem 0;
+}
+.insight.teal { border-color: var(--teal); background: var(--teal-light); }
+.insight.blue { border-color: var(--blue); background: var(--blue-light); }
+.insight.amber { border-color: var(--amber); background: var(--amber-light); }
+.insight.green { border-color: var(--green); background: var(--green-light); }
+.insight.gray { border-color: var(--gray); background: var(--gray-light); }
+.insight-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.insight-label.coral { color: var(--coral); }
+.insight-label.teal { color: var(--teal); }
+.insight-label.blue { color: var(--blue); }
+.insight-label.amber { color: var(--amber); }
+.insight-label.green { color: var(--green); }
+.insight-label.gray { color: var(--gray); }
+.insight p { font-size: 14px; color: var(--text); line-height: 1.6; }
+
+/* Prose */
+p { margin-bottom: 0.9rem; font-size: 15px; }
+p:last-child { margin-bottom: 0; }
+
+/* Segment cards */
+.segment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 1.25rem 0;
+}
+.segment-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  background: var(--bg3);
+  position: relative;
+  overflow: hidden;
+}
+.segment-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.seg-navy::before { background: var(--teal); }
+.seg-missile::before { background: var(--coral); }
+.seg-munitions::before { background: var(--amber); }
+.seg-uav::before { background: var(--green); }
+.seg-export::before { background: var(--blue); }
+.segment-name {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+.seg-navy .segment-name { color: var(--teal); }
+.seg-missile .segment-name { color: var(--coral); }
+.seg-munitions .segment-name { color: var(--amber); }
+.seg-uav .segment-name { color: var(--green); }
+.seg-export .segment-name { color: var(--blue); }
+.segment-card p { font-size: 13px; color: var(--text2); margin: 0; }
+.seg-badge {
+  display: inline-block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 2px 8px;
+  border-radius: 3px;
+  margin-top: 8px;
+}
+.badge-running { background: var(--teal-light); color: var(--teal-dark); }
+.badge-ramping { background: var(--amber-light); color: var(--amber-dark); }
+.badge-new { background: var(--blue-light); color: var(--blue-dark); }
+
+/* Porter table */
+.porter-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  margin: 1rem 0;
+}
+.porter-table th {
+  text-align: left;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-weight: 600;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border2);
+}
+.porter-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text);
+  line-height: 1.5;
+}
+.porter-table tr:last-child td { border-bottom: none; }
+.rating {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.r-low { background: var(--teal-light); color: var(--teal-dark); }
+.r-med { background: var(--amber-light); color: var(--amber-dark); }
+.r-high { background: var(--coral-light); color: var(--coral-dark); }
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+.stats-row:last-child { border-bottom: none; }
+.stats-row-label { font-size: 13px; color: var(--text2); }
+.stats-row-value { font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* Capex timeline */
+.capex-timeline {
+  position: relative;
+  margin: 1.25rem 0;
+}
+.capex-item {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+}
+.capex-item:last-child { border-bottom: none; }
+.capex-year {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  padding-top: 2px;
+}
+.capex-body { }
+.capex-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.capex-detail {
+  font-size: 13px;
+  color: var(--text2);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+}
+.capex-amount {
+  display: inline-block;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--blue-light);
+  padding: 1px 7px;
+  border-radius: 3px;
+  margin-left: 5px;
+}
+
+/* Risk items */
+.risk-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.risk-item:last-child { border-bottom: none; }
+.risk-icon {
+  font-size: 16px;
+  color: var(--amber);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.risk-body { }
+.risk-title {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.risk-detail {
+  font-size: 13px;
+  color: var(--text2);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+}
+.risk-signal {
+  font-size: 12px;
+  color: var(--coral);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 3px;
+}
+
+/* Watch signals */
+.watch-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.watch-item:last-child { border-bottom: none; }
+.watch-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 5px;
+}
+.watch-body { }
+.watch-metric {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+.watch-detail {
+  font-size: 13px;
+  color: var(--text2);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+}
+.watch-flag {
+  font-size: 12px;
+  color: var(--coral);
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  margin-top: 2px;
+}
+
+/* Verdict */
+.verdict {
+  background: var(--bg3);
+  border: 1.5px solid var(--coral);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.5rem;
+  margin: 2rem 0;
+}
+.verdict-label {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.75rem;
+}
+.verdict p { font-size: 15px; line-height: 1.72; color: var(--text); margin-bottom: 0.8rem; }
+.verdict p:last-child { margin-bottom: 0; }
+
+/* Chapter section box */
+.section-box {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+}
+
+/* Peer compare */
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 12px;
+}
+.peer-table th {
+  text-align: right;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text3);
+  font-weight: 600;
+  padding: 5px 8px;
+  border-bottom: 1px solid var(--border2);
+}
+.peer-table th:first-child { text-align: left; }
+.peer-table td {
+  padding: 7px 8px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  color: var(--text2);
+}
+.peer-table td:first-child { text-align: left; color: var(--text); font-weight: 600; }
+.peer-table tr.highlight td { color: var(--coral); font-weight: 700; }
+.peer-table tr.highlight td:first-child { color: var(--coral); }
+.peer-table tr:last-child td { border-bottom: none; }
+
+/* Quote */
+.pullquote {
+  border-left: 3px solid var(--blue);
+  padding: 0.75rem 1rem;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text2);
+  background: var(--blue-light);
+  margin: 1.5rem 0;
+  border-radius: 0;
+}
+.pullquote cite {
+  display: block;
+  font-style: normal;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  margin-top: 6px;
+  color: var(--text3);
+}
+
+/* Checklist row */
+.checklist-row {
+  display: flex;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text2);
+}
+.checklist-row:last-child { border-bottom: none; }
+.check-icon { flex-shrink: 0; margin-top: 1px; }
+.check-green { color: var(--teal); }
+.check-amber { color: var(--amber); }
+
+footer {
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 11px;
+  color: var(--text3);
+  padding: 2rem 0 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 480px) {
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .segment-grid { grid-template-columns: 1fr; }
+  .cover-title { font-size: 26px; }
+  .capex-item { grid-template-columns: 55px 1fr; }
+  .porter-table { font-size: 12px; }
+  .porter-table td, .porter-table th { padding: 6px 6px; }
+}
+</style>
+</head>
+<body>
+
+<div class="toggle-bar" role="banner">
+  <button class="toggle-btn" id="themeToggle" aria-label="Toggle light or dark mode">&#9790; Dark mode</button>
+</div>
+
+<div class="container">
+
+<h2 class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);">Apollo Micro Systems NSE Investor Brief — May 2026. A comprehensive seven-chapter analysis covering business model, financials, strategy, risks and watch signals.</h2>
+
+<!-- COVER -->
+<div class="cover" aria-label="Cover">
+  <div class="eyebrow">NSE: AMSL &nbsp;·&nbsp; Aerospace &amp; Defence Electronics &nbsp;·&nbsp; May 20 2026</div>
+  <h1 class="cover-title">Apollo Micro Systems</h1>
+  <p class="cover-sub">From subsystem supplier to full-spectrum defence OEM — the next chapter begins</p>
+  <div class="cover-meta">
+    <span><span class="dot" style="background:var(--coral)" aria-hidden="true"></span> Aerospace / Defence</span>
+    <span><span class="dot" style="background:var(--teal)" aria-hidden="true"></span> Underwater / Naval</span>
+    <span><span class="dot" style="background:var(--amber)" aria-hidden="true"></span> Munitions / Explosives</span>
+    <span><span class="dot" style="background:var(--green)" aria-hidden="true"></span> UAV / Loitering</span>
+    <span><span class="dot" style="background:var(--blue)" aria-hidden="true"></span> Export / Avionics</span>
+  </div>
+</div>
+
+<!-- FY26 SNAPSHOT -->
+<div class="stat-grid" aria-label="Key financial metrics FY26">
+  <div class="stat-card">
+    <div class="stat-label">FY26 Revenue (consol.)</div>
+    <div class="stat-value">₹904 Cr</div>
+    <div class="stat-delta up">+61% YoY</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">FY26 PAT (consol.)</div>
+    <div class="stat-value">₹107 Cr</div>
+    <div class="stat-delta up">+90% YoY</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Q4 FY26 EBITDA margin</div>
+    <div class="stat-value">29.4%</div>
+    <div class="stat-delta up">+715 bps YoY</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Order book (Jan 2026)</div>
+    <div class="stat-value">₹1,305 Cr</div>
+    <div class="stat-delta up">~1.4× FY26 revenue</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Market cap (today)</div>
+    <div class="stat-value">₹12,173 Cr</div>
+    <div class="stat-delta warn">PE: ~108×</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">5-year return</div>
+    <div class="stat-value">+2,837%</div>
+    <div class="stat-delta up">52w: ₹133 → ₹357</div>
+  </div>
+</div>
+
+<!-- CHAPTER 1 -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 1</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">1</span>Context — why this company, why now</h2>
+</div>
+
+<p>India is spending money it hasn't spent before. The defence budget for FY27 is ₹7.85 lakh crore — a record, up 15% year-on-year — and the capital acquisition line alone is ₹2.19 lakh crore, up 22%. More importantly, 75% of that capital budget is legally reserved for domestic manufacturers. That's ₹1.39 lakh crore that <em>cannot</em> go to foreign suppliers. This isn't a policy hope — it's a procurement rule embedded in the Defence Acquisition Procedure.</p>
+
+<p>The indigenisation pipeline is just as deep. The Defence Acquisition Council gave approvals worth ₹3.3–3.6 trillion in FY26 alone — nearly twice the annual capital outlay. These approvals take 2–4 years to become executable orders, meaning the current approval pipeline feeds revenue well into FY29. On top of that, India's defence export target is USD 5 billion for FY26, growing at 30% per year, creating a second demand vector beyond the home market.</p>
+
+<div class="insight blue" aria-label="Sector context">
+  <div class="insight-label blue">Sector tailwind</div>
+  <p>India's private defence electronics sector is expected to grow at 15–20% CAGR through FY30, riding indigenisation mandates, record DAC approvals (₹3.3–3.6 trillion in FY26), and a DRDO budget of ₹29,100 crore in FY27. The positive indigenisation list covers 509 major systems — every item is a captive domestic market.</p>
+</div>
+
+<p>Apollo Micro Systems sits precisely at the intersection of three structural shifts: the indigenisation mandate pushing complex weapons subsystem work to Indian private companies; India's naval expansion requiring torpedo, mine and underwater systems; and the post-Operation Sindoor geopolitical environment accelerating defence procurement timelines. The company just closed its strongest year on record, and the board has outlined a 10-year vision to become a global defence OEM across air, land, and underwater domains. The story is in its middle chapters — past the "prove you can deliver" phase, but well before the "OEM at scale" phase.</p>
+
+<hr class="divider">
+
+<!-- CHAPTER 2 -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 2</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">2</span>The business model</h2>
+</div>
+
+<p>Apollo Micro Systems designs and manufactures high-performance electronic, electromechanical, and engineering solutions for mission-critical defence applications. In plain terms: they build the complex, embedded systems that make weapons systems work — the guidance electronics inside a torpedo, the actuation systems that steer a missile, the fire control systems that coordinate targeting, the homing modules that track a submarine. They do not build platforms (ships, aircraft); they build the intelligent sub-systems inside them.</p>
+
+<p>The business model has a natural compounding quality. Defence contracts are awarded after long qualification and testing cycles — often 2–3 years — but once a system is certified and integrated into a platform, it becomes very difficult to displace. An Indian Navy submarine doesn't switch its torpedo homing systems between procurement cycles. Each new platform qualification (a new missile programme, a new submarine class) extends the revenue runway by years. Apollo has been doing this since 1985, building up a catalogue of certified components that makes each new contract proposal lower-risk for the customer.</p>
+
+<div class="insight teal" aria-label="Business flywheel">
+  <div class="insight-label teal">The flywheel</div>
+  <p>Win one subsystem contract → get qualified on the platform → qualify adjacent subsystems on the same platform → deepen revenue per platform → platform certifications create barriers to new entrants. Apollo is at this stage across BDL torpedo programmes, Project Kusha LRSAM, QRSAM, AKASH-NG, and now — through IDL — munitions across all calibres.</p>
+</div>
+
+<p>The IDL Explosives acquisition (₹107 Cr, November 2025) fundamentally changes the ceiling. Apollo now holds capabilities across the full weapons stack: electronics and guidance → actuation and control → energetics and propulsion. This vertical integration is what makes an OEM, not a subsystem vendor. A DPIIT licence for UAV manufacturing received in FY26, and India's first-ever arms manufacturing licence authorising Apollo to produce missiles, torpedoes, underwater mines, SAMs, loitering munitions and aerial bombs, confirm that the regulatory infrastructure for this ambition is now in place.</p>
+
+<hr class="divider">
+
+<!-- CHAPTER 2B: PORTER'S 5 FORCES -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 2B</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">2B</span>Porter's five forces</h2>
+</div>
+
+<div class="section-box" aria-label="Porter's five forces competitive analysis">
+  <table class="porter-table" role="table">
+    <thead>
+      <tr>
+        <th scope="col" style="text-align:left">Force</th>
+        <th scope="col" style="text-align:center">Rating</th>
+        <th scope="col">Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Rivalry</strong></td>
+        <td style="text-align:center"><span class="rating r-med">Medium</span></td>
+        <td>Direct peers — Data Patterns, MTAR Technologies, Astra Microwave — each occupy distinct niches; price-based competition is rare at this technical depth. BEL and BDL are PSU customers as much as competitors. Scale gap is meaningful: Apollo's ₹904 Cr revenue vs Data Patterns' ₹1,500 Cr+.</td>
+      </tr>
+      <tr>
+        <td><strong>Buyer power</strong></td>
+        <td style="text-align:center"><span class="rating r-high">High</span></td>
+        <td>Top customers — MoD, BDL, BEL, HAL — are government entities or government-owned companies with monopsony pricing power. However, once a system is qualified on a platform, switching mid-programme is operationally disruptive, limiting in-programme buyer leverage.</td>
+      </tr>
+      <tr>
+        <td><strong>Supplier power</strong></td>
+        <td style="text-align:center"><span class="rating r-med">Medium</span></td>
+        <td>Critical components include imported electronic modules and precision-machined parts where Apollo has limited pricing control. The IDL acquisition partially mitigates this for energetics. Management guided EBITDA at 26–28% — a range, not a point — suggesting some pass-through uncertainty.</td>
+      </tr>
+      <tr>
+        <td><strong>New entrants</strong></td>
+        <td style="text-align:center"><span class="rating r-low">Low</span></td>
+        <td>Entering this space requires MoD supplier registration, DRDO qualification (2–3 year cycles), capital-intensive testing infrastructure, and 40 years of institutional knowledge. Apollo's new arms manufacturing licence — covering missiles, torpedoes, mines, SAMs — is a structural moat few can replicate quickly.</td>
+      </tr>
+      <tr>
+        <td><strong>Substitutes</strong></td>
+        <td style="text-align:center"><span class="rating r-low">Low</span></td>
+        <td>No credible domestic substitute in the near term given indigenisation mandates. Import substitution risk from foreign OEMs is structurally constrained by MoD's 75% domestic procurement rule and positive indigenisation lists. Technology disruption is slow in defence (platform cycles of 20–30 years).</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="insight amber" aria-label="Porter's synthesis">
+  <div class="insight-label amber">Structural pressure — two forces to watch</div>
+  <p>Buyer power is the primary structural constraint: MoD and PSUs dictate pricing and timelines, and receivable days stretch. Supplier power on imported components is the secondary pressure — important because Apollo's 26–28% EBITDA guidance leaves limited buffer if input costs rise. New entrant and substitute risk are genuinely low, which is the structural privilege of this sector.</p>
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER 3 -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 3</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">3</span>The vertical stories</h2>
+</div>
+
+<div class="segment-grid" role="list" aria-label="Revenue segment summaries">
+
+  <div class="segment-card seg-navy" role="listitem">
+    <div class="segment-name">Naval / Underwater</div>
+    <p>Sole Indian supplier of limpet mines to the Navy (blast trials completed April 2026). Electric heavy weight torpedoes (EHWT) for majority of Indian submarines via BDL. Moored mines submitted to DRDO for evaluation. Varunastra anti-submarine torpedo programme awaiting MoD production orders.</p>
+    <div class="seg-badge badge-running">Running</div>
+  </div>
+
+  <div class="segment-card seg-missile" role="listitem">
+    <div class="segment-name">Missile Systems</div>
+    <p>Actuation systems and launchers for Project Kusha (long-range SAM). QRSAM launcher orders expected from BDL. AKASH-NG components in development. Large order pipeline of ₹4,000 Cr+ linked to MIGM programme (Apollo's share estimated ₹200 Cr).</p>
+    <div class="seg-badge badge-ramping">Ramping</div>
+  </div>
+
+  <div class="segment-card seg-munitions" role="listitem">
+    <div class="segment-name">Munitions &amp; Explosives</div>
+    <p>IDL Explosives (acquired Nov 2025, ₹107 Cr) manufactures artillery shells, propellants, warhead components, and torpedo/UAV payloads. CE-certified products unlock European and export markets. PRACHAND anti-tank munition hardware production shortlisted by DRDO. IDL guided to break even by Q2 FY27.</p>
+    <div class="seg-badge badge-ramping">Ramping</div>
+  </div>
+
+  <div class="segment-card seg-uav" role="listitem">
+    <div class="segment-name">UAV / Loitering</div>
+    <p>DPIIT licence for UAV manufacturing received FY26 — covers loitering munitions, aerial bombs, decoys, chaffs. India's loitering munition demand structurally accelerating post recent conflict experience. Still pre-revenue at scale; product development phase.</p>
+    <div class="seg-badge badge-new">New</div>
+  </div>
+
+  <div class="segment-card seg-export" role="listitem">
+    <div class="segment-name">Export / Avionics</div>
+    <p>First-ever export order received in FY26 — ₹113 Cr for avionic LRUs. IDL's CE-certified products open East and West Africa, Middle East, Southeast Asia, and Far East markets. India's defence export target: USD 5 billion FY26, growing 30% annually.</p>
+    <div class="seg-badge badge-new">Early</div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER 4 -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 4</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">4</span>The strategic insight</h2>
+</div>
+
+<div class="insight" aria-label="Core strategic insight">
+  <div class="insight-label coral">The one thing to understand</div>
+  <p><strong>The IDL acquisition is not a diversification move — it's a licence to bid.</strong> Before IDL, Apollo could design the electronics and guidance inside a weapon system but could not manufacture the energetics (explosives, propellants, warheads). Major integrated weapons contracts — full missiles, torpedo systems, loitering munitions — require the proposing company to control the energetics supply. By acquiring IDL for ₹107 Cr, Apollo has purchased eligibility for contract categories that were structurally unavailable to them before. In the same way a pharma company that acquires a manufacturing API licence suddenly qualifies for a much larger formulary, Apollo has expanded the universe of contracts it can win — not just the components within contracts it already had.</p>
+</div>
+
+<p>The arms manufacturing licence reinforces this. Apollo is now legally authorised to manufacture, assemble, integrate, and proof-test missiles, ATGMs, torpedoes, underwater mines, SAMs, loitering munitions, rockets, aerial bombs, chaffs, flares, and decoys. That's a licence list that reads like the entire MoD procurement catalogue for guided weapons. Combined with IDL's energetics capability, Apollo's ceiling on contract scale has moved from "subsystem components worth tens of crores" to "integrated weapons systems worth hundreds of crores each."</p>
+
+<p>The risk the market may be underpricing: this transition from Tier-2 supplier to Tier-1 OEM is not guaranteed. Building integrated systems requires systems engineering depth, programme management at a different scale, and customer relationships at a different seniority level. Apollo is capable — 40 years of history says so — but the execution runway for the next 3 years carries genuine integration and ramp risk.</p>
+
+<hr class="divider">
+
+<!-- CHAPTER 5 -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 5</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">5</span>The numbers in context</h2>
+</div>
+
+<div class="section-box" aria-label="Key financial summary">
+  <div class="stats-row"><span class="stats-row-label">FY26 consolidated revenue</span><span class="stats-row-value">₹904 Cr <span class="up" style="font-weight:400;font-size:12px">+61% YoY</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">FY26 standalone revenue</span><span class="stats-row-value">₹765 Cr <span class="up" style="font-weight:400;font-size:12px">+36% YoY</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">FY26 consolidated PAT</span><span class="stats-row-value">₹107 Cr <span class="up" style="font-weight:400;font-size:12px">+90% YoY</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">Q4 FY26 revenue (highest-ever quarter)</span><span class="stats-row-value">₹293 Cr <span class="up" style="font-weight:400;font-size:12px">+81% YoY</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">Q4 FY26 standalone EBITDA margin</span><span class="stats-row-value">29.4% <span class="up" style="font-weight:400;font-size:12px">vs 22.3% prior year</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">Order book (Jan 2026 estimate)</span><span class="stats-row-value">₹1,305 Cr</span></div>
+  <div class="stats-row"><span class="stats-row-label">Total assets (standalone, Mar 2026)</span><span class="stats-row-value">₹2,295 Cr <span class="warn" style="font-weight:400;font-size:12px">vs ₹1,262 Cr prior year</span></span></div>
+  <div class="stats-row"><span class="stats-row-label">Pending capex on balance sheet</span><span class="stats-row-value">₹1,430 Cr <span class="warn" style="font-weight:400;font-size:12px">significant execution risk</span></span></div>
+</div>
+
+<p>The trajectory is genuinely impressive. Revenue has grown from ~₹372 Cr in FY24 to ₹562 Cr in FY25 to ₹904 Cr in FY26 — adding more in one year than in the prior three combined. Margins are expanding with operating leverage: EBITDA on the standalone business touched 29.4% in Q4, ahead of management's 26–28% full-year guidance. PAT has more than doubled in two consecutive years, with EPS growing from ₹1.89 in FY25 to ₹3.57 on a standalone basis.</p>
+
+<p>What the market is pricing in: at ₹361/share and ₹12,173 Cr market cap, the stock trades at ~108× TTM consolidated earnings. Management has guided 45–50% revenue CAGR through FY27 (standalone, excluding IDL), implying consolidated revenue in the ₹1,300–1,400 Cr range. If margins hold at 26–28% EBITDA and PAT grows proportionately, FY27 earnings could approach ₹160–180 Cr — which would still leave the stock at 70–75× forward earnings. That is a lot of execution to price in. The PEG ratio of ~1.3× (at 45% growth) makes the valuation less alarming than the absolute PE, but leaves no room for guidance misses.</p>
+
+<div class="section-box" aria-label="Peer valuation comparison">
+  <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--text3);margin-bottom:10px">Valuation vs peers — PE ratio (TTM)</div>
+  <table class="peer-table" role="table">
+    <thead>
+      <tr>
+        <th scope="col">Company</th>
+        <th scope="col">TTM PE</th>
+        <th scope="col">1-yr return</th>
+        <th scope="col">Est. growth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="highlight">
+        <td>Apollo Micro Systems (AMSL)</td>
+        <td>~108×</td>
+        <td>+128%</td>
+        <td>45–50% (mgmt)</td>
+      </tr>
+      <tr>
+        <td>Data Patterns (India)</td>
+        <td>~62×</td>
+        <td>+39%</td>
+        <td>~28%</td>
+      </tr>
+      <tr>
+        <td>MTAR Technologies</td>
+        <td>~162×</td>
+        <td>+113%</td>
+        <td>~25%</td>
+      </tr>
+      <tr>
+        <td>Zen Technologies</td>
+        <td>~46×</td>
+        <td>-19%</td>
+        <td>~33%</td>
+      </tr>
+      <tr>
+        <td>Paras Defence</td>
+        <td>~82×</td>
+        <td>n/a</td>
+        <td>~26%</td>
+      </tr>
+    </tbody>
+  </table>
+  <div style="font-size:11px;color:var(--text3);font-family:'Helvetica Neue',Arial,sans-serif;margin-top:8px">AMSL trades at a premium to peers (except MTAR) on TTM PE, justified by the highest guided growth rate in the cohort. The premium is defensible only if the 45–50% CAGR holds through FY27.</div>
+</div>
+
+<!-- CAPEX TIMELINE -->
+<div class="chapter" style="margin-top:2rem">
+  <div class="chapter-eyebrow">Chapter 5B — Capex timeline</div>
+  <h3 style="font-size:15px;font-weight:700;color:var(--text);margin:4px 0 1rem">Capacity investment &amp; revenue bridge</h3>
+</div>
+
+<div class="capex-timeline section-box" aria-label="Capex timeline from FY24 to FY28">
+
+  <div class="capex-item">
+    <div class="capex-year">FY24–25</div>
+    <div class="capex-body">
+      <div class="capex-title">Unit 2 facility — ramp phase</div>
+      <div class="capex-detail">Hyderabad Unit 1 (55,000 sq ft) operating at full capacity. Unit 2 constructed; partial operations began Q2 FY26. Funded via internal accruals and initial preferential issue. Revenue base: ₹372 Cr → ₹562 Cr.</div>
+    </div>
+  </div>
+
+  <div class="capex-item">
+    <div class="capex-year">FY26</div>
+    <div class="capex-body">
+      <div class="capex-title">IDL Explosives acquisition + Unit 2 full operations <span class="capex-amount">₹107 Cr + capex</span></div>
+      <div class="capex-detail">IDL acquired November 2025 for ₹107 Cr — adds energetics manufacturing, CE-certified products, and access to larger integrated weapons contracts. Unit 2 moves to full operations. Share warrants of ₹432 Cr issued at ₹114/share to fund growth. Revenue: ₹904 Cr consolidated.</div>
+    </div>
+  </div>
+
+  <div class="capex-item">
+    <div class="capex-year">FY26–27</div>
+    <div class="capex-body">
+      <div class="capex-title">Greenfield Unit 3 — Hyderabad <span class="capex-amount">₹250–300 Cr</span></div>
+      <div class="capex-detail">New greenfield facility announced in May 2026 concall. Focused on missile warheads, rocket motors, and complete armament systems. Expected to be the key production vehicle for integrated weapons OEM ambition. Longer-term, Telangana expansion project cited at ₹1,500 Cr. Total pending capex on balance sheet: ₹1,430 Cr.</div>
+    </div>
+  </div>
+
+  <div class="capex-item">
+    <div class="capex-year">FY27</div>
+    <div class="capex-body">
+      <div class="capex-title">2nd ADIPL acquisition (announced, undisclosed target)</div>
+      <div class="capex-detail">MD confirmed a second acquisition by ADIPL expected before end of FY27. Details undisclosed. Likely targeted at further capability vertical integration — could be propulsion, electronics manufacturing, or export market entry. IDL guided to break even Q2 FY27. Management revenue CAGR guidance: 45–50% standalone through FY27 (revenue ~₹1,100–1,150 Cr standalone).</div>
+    </div>
+  </div>
+
+  <div class="capex-item">
+    <div class="capex-year">FY28+</div>
+    <div class="capex-body">
+      <div class="capex-title">Full-scale OEM operations</div>
+      <div class="capex-detail">Capex-to-revenue bridge: if Unit 3 adds capacity for ₹400–500 Cr of integrated weapons revenue and IDL reaches scale, consolidated revenue could approach ₹2,000 Cr by FY28. However, ₹1,430 Cr of pending capex on the balance sheet against ₹107 Cr PAT means the funding structure — warrants, potential further dilution, debt — is a key watchpoint. Balance sheet confidence signal: management chose warrants (not debt), suggesting equity dilution preference over leverage.</div>
+    </div>
+  </div>
+
+  <div style="background:var(--amber-light);border-radius:var(--radius-sm);padding:0.75rem;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;color:var(--amber-dark);margin-top:8px" role="alert" aria-label="Capex red flag alert">
+    <strong>Red flag check:</strong> Pending capex of ₹1,430 Cr is 13× FY26 PAT. Order book of ₹1,305 Cr provides revenue visibility but does not fully cover the capex pipeline. The second undisclosed ADIPL acquisition adds further balance sheet uncertainty. Watch for equity dilution announcements — more warrants or a QIP would signal that internal accruals are insufficient.
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER 6 — RISKS -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 6</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">6</span>Risks — eyes open</h2>
+</div>
+
+<div class="section-box" aria-label="Risk factors">
+
+  <div class="risk-item">
+    <div class="risk-icon" aria-hidden="true">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Valuation leaves no margin for error</div>
+      <div class="risk-detail">At 108× TTM PE against peers at 46–62×, the stock prices in management's most optimistic growth trajectory. Any quarterly miss — delayed order conversion, margin compression, IDL integration drag — risks a sharp derating. The stock delivered +128% in the past year; expectations are high and baked in.</div>
+      <div class="risk-signal">Signal to watch: quarterly revenue vs prior guided trajectory; management guidance changes on calls.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <div class="risk-icon" aria-hidden="true">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">₹1,430 Cr capex pipeline — funding and execution risk</div>
+      <div class="risk-detail">Pending capex of ₹1,430 Cr is 13× FY26 PAT. While ₹432 Cr in warrants were issued, substantial funding remains unresolved. A large QIP or additional warrant issue would dilute existing shareholders materially. Construction and commissioning delays are common in defence manufacturing, and delays here directly constrain revenue ramp.</div>
+      <div class="risk-signal">Signal to watch: new warrant announcements, balance sheet debt trajectory, Unit 3 commissioning timeline.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <div class="risk-icon" aria-hidden="true">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">IDL Explosives integration — currently loss-making</div>
+      <div class="risk-detail">IDL was acquired from GOCL Corporation and was loss-making at acquisition. Management guided breakeven by Q2 FY27. If IDL's turnaround takes longer — due to legacy workforce costs, facility upgrades, or order pipeline delays — it will drag consolidated PAT and margins. IDL's contribution to FY26 consolidated revenue inflates the headline 61% growth; like-for-like standalone was +36%.</div>
+      <div class="risk-signal">Signal to watch: IDL quarterly contribution disclosed in consolidated results; PAT breakeven milestone.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <div class="risk-icon" aria-hidden="true">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">Government procurement cycle and receivable days</div>
+      <div class="risk-detail">Defence contracts with MoD, BDL, and BEL have notoriously long payment cycles. Working capital days are high, meaning strong revenue growth does not automatically mean strong cash flow. A slowdown in government disbursements — historically linked to budget cycle pressures and audit requirements — can significantly stretch receivables without impacting reported revenue.</div>
+      <div class="risk-signal">Signal to watch: working capital days per quarterly results; operating cash flow vs PAT ratio.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <div class="risk-icon" aria-hidden="true">⚠</div>
+    <div class="risk-body">
+      <div class="risk-title">OEM transition execution — systems engineering is different from components</div>
+      <div class="risk-detail">Moving from delivering qualified subsystems to integrating full weapons platforms requires programme management, systems engineering, and customer interface capabilities at a significantly higher level. Apollo has 40 years of component track record, but integrated OEM delivery is a different discipline. An early programme-level failure on a flagship contract could be reputationally and financially damaging. Note also that a prior SEBI penalty in November 2022 for disclosure norm violations is a governance datapoint investors should carry.</div>
+      <div class="risk-signal">Signal to watch: first integrated system contract value and delivery outcome; any programme-level delays announced.</div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- CHAPTER 7 — WATCH SIGNALS -->
+<div class="chapter">
+  <div class="chapter-eyebrow">Chapter 7</div>
+  <h2 class="chapter-title"><span class="chapter-num" aria-hidden="true">7</span>Watch signals — five metrics to track each quarter</h2>
+</div>
+
+<div class="section-box" aria-label="Watch signals to monitor quarterly">
+
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--teal)" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-metric">Order book trajectory</div>
+      <div class="watch-detail">Management targeted tripling the order book to ₹1,800 Cr by end of FY26 from ₹615 Cr in May 2025. Disclosed most recently at ~₹1,305 Cr in January 2026. Track every quarter — order book growth gives 6–12 month revenue visibility and is the clearest real-time signal of whether the business is winning in the field.</div>
+      <div class="watch-flag">Red flag: order book flat or declining quarter-on-quarter despite rising management capex commitments.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--coral)" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-metric">IDL Explosives breakeven — guided Q2 FY27</div>
+      <div class="watch-detail">IDL is currently loss-making and drags consolidated PAT. Management has guided breakeven by Q2 FY27 (September 2026). The quarterly results should begin showing IDL's revenue contribution improving and losses narrowing from Q1 FY27 onwards.</div>
+      <div class="watch-flag">Red flag: IDL losses widen or breakeven is pushed beyond Q2 FY27 without explanation.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--amber)" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-metric">Standalone EBITDA margin (guided 26–28%)</div>
+      <div class="watch-detail">Q4 FY26 hit 29.4% on a standalone basis — ahead of guidance. The sustainable range guided is 26–28%, with quarter-to-quarter variation expected based on product mix. Margin below 24% would signal either pricing pressure or cost creep from imported components; margin above 30% sustained would signal pricing power improving.</div>
+      <div class="watch-flag">Red flag: two consecutive quarters below 24% EBITDA margin standalone.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--blue)" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-metric">Second ADIPL acquisition — expected before FY27 end</div>
+      <div class="watch-detail">The MD confirmed a second acquisition by Apollo Defence Industries is expected before end of FY27. This disclosure matters both for what capability it adds (the strategic logic) and how it is funded (potential further dilution). Watch for the announcement — it will reshape the investment thesis materially.</div>
+      <div class="watch-flag">Red flag: acquisition announced with opaque financials, funded purely through equity, or in a non-complementary segment.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" style="background:var(--green)" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-metric">Export order pipeline build</div>
+      <div class="watch-detail">The first export order (₹113 Cr, avionic systems) was secured in FY26 — a structural milestone. Track whether export order value builds through FY27. IDL's CE-certified products create export eligibility in multiple new geographies. Export revenue is structurally higher-margin and reduces MoD concentration risk.</div>
+      <div class="watch-flag">Red flag: no new export orders through FY27 despite the licence and IDL capabilities being in place.</div>
+    </div>
+  </div>
+
+</div>
+
+<hr class="divider">
+
+<!-- VERDICT -->
+<div class="verdict" aria-label="Verdict summary">
+  <div class="verdict-label">Verdict</div>
+  <p>Apollo Micro Systems is a genuine structural beneficiary of three converging forces: India's record defence budget (₹7.85 lakh crore FY27, with ₹1.39 lakh crore mandatorily for domestic industry), the indigenisation mandate covering 509 weapons platforms, and the post-Sindoor geopolitical environment compressing procurement timelines. The FY26 financials — ₹904 Cr consolidated revenue, 90% PAT growth, Q4 EBITDA at 29.4% — confirm that execution is happening, not just being guided. The limpet mine sole-supply status, the first export order, the IDL acquisition, and the DPIIT UAV licence are not stories — they are done deals.</p>
+  <p>The quality signal is positive: EBITDA margin expanding ahead of guidance, PAT doubling in two consecutive years, and a business model where each new platform certification is a recurring revenue annuity. The near-term catalyst is the IDL Explosives breakeven in Q2 FY27 — the moment when the consolidated earnings drag turns into a consolidated earnings driver. If management delivers on this, expect meaningful PAT upgrades and potential re-rating of the consolidated business.</p>
+  <p>The valuation is the single hardest thing to hold. At 108× TTM PE — roughly 70% above the peer median — the stock already prices in several years of flawless execution. The ₹1,430 Cr of pending capex and the undisclosed second ADIPL acquisition introduce genuine uncertainty. This is a story in its middle chapters — the OEM transition is the plot, not a promised sequel. Buy the thesis if you believe in the execution; respect the valuation risk if you do not. At present prices, a 15–20% position sizing that leaves room to average in on execution milestones is more defensible than conviction sizing at this PE.</p>
+</div>
+
+<div class="insight gray" aria-label="Template checklist completed">
+  <div class="insight-label gray">Brief checklist — May 20 2026</div>
+  <div style="font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px">
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>All 7 chapters present (including 2B Porter's Five Forces)</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>Sector CAGR and government scheme data (₹7.85L Cr budget, 75% domestic rule)</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>Capex timeline — 3-year history, announced projects, revenue bridge</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>Valuation vs peers (AMSL 108× vs sector 46–62×)</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>5 watch signals with specific measurable triggers</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>Risks are specific (not generic); each has a signal</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>Verdict answers all 5 required questions (tailwind, quality, catalyst, valuation, chapter)</div>
+    <div class="checklist-row"><span class="check-icon check-green" aria-hidden="true">✓</span>First export order and international opportunity context included</div>
+    <div class="checklist-row"><span class="check-icon check-amber" aria-hidden="true">~</span>Q4 FY26 concall just conducted (May 19, 2026) — full transcript not yet publicly available; brief synthesised from BSE filings, press releases, and prior concall notes</div>
+  </div>
+</div>
+
+<footer>
+  <p>Apollo Micro Systems Limited (NSE: AMSL) &nbsp;·&nbsp; Investor Brief &nbsp;·&nbsp; May 20, 2026</p>
+  <p>Sources: BSE/NSE filings, company press releases, ScanX, TradeBrains, WhalesBook, investor concall notes (Q1–Q3 FY26), PIB defence budget data, Kotak MF sector note (Feb 2026). This brief is for informational purposes only and does not constitute investment advice. Consult a SEBI-registered advisor before making investment decisions.</p>
+</footer>
+
+</div>
+
+<script>
+(function() {
+  var btn = document.getElementById('themeToggle');
+  var saved = localStorage.getItem('amsl-theme');
+  if (saved === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀ Light mode';
+  }
+  btn.addEventListener('click', function() {
+    var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      document.documentElement.removeAttribute('data-theme');
+      btn.textContent = '☾ Dark mode';
+      localStorage.setItem('amsl-theme', 'light');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      btn.textContent = '☀ Light mode';
+      localStorage.setItem('amsl-theme', 'dark');
+    }
+  });
+})();
+</script>
+</body>
+</html>

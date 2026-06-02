@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Ledger — AVALON · FY26 Calibration Pass</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --ink:      #1A1A2E;
+  --paper:    #F7F5F0;
+  --rule:     #DDD8CE;
+  --amber:    #C47B00;
+  --amber-bg: #FFF7E6;
+  --green:    #1D7A5B;
+  --green-bg: #E8F5F0;
+  --red:      #B03020;
+  --red-bg:   #FDF0EE;
+  --navy:     #1E3A5F;
+  --navy-bg:  #EBF0F8;
+  --teal:     #0E7490;
+  --teal-bg:  #E0F5FA;
+  --coral:    #C05020;
+  --coral-bg: #FDF0E8;
+  --purple:   #5340A0;
+  --gray:     #6B7280;
+  --serif:    'Playfair Display', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --mono:     'DM Mono', 'Courier New', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 14.5px; line-height: 1.65; }
+
+@media print {
+  body { font-size: 11px; background: white; }
+  .masthead, .section-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page-break { page-break-before: always; }
+}
+
+/* MASTHEAD */
+.masthead { background: var(--ink); color: #F0EDE8; padding: 40px 52px 32px; position: relative; overflow: hidden; }
+.masthead::before { content:''; position:absolute; top:0; right:0; width:320px; height:100%;
+  background: repeating-linear-gradient(-45deg,transparent 0,transparent 6px,rgba(255,255,255,.025) 6px,rgba(255,255,255,.025) 12px); }
+.mh-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.mh-title { font-family: var(--serif); font-size: 42px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
+.mh-sub { font-size: 15px; color: #A8A098; margin-top: 8px; font-weight: 300; }
+.mh-meta { margin-top: 22px; display: flex; gap: 20px; flex-wrap: wrap; align-items: center; }
+.mh-chip { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 3px; padding: 5px 12px; font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: #C0B8A8; }
+.tier-badge { padding: 6px 16px; border-radius: 4px; font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 1px; }
+.tier-a  { background: var(--green);  color: white; }
+.tier-b  { background: var(--teal);   color: white; }
+.tier-c  { background: var(--amber);  color: white; }
+.tier-d  { background: var(--red);    color: white; }
+
+/* QUICK SCAN */
+details#quick-scan { position: sticky; top: 0; z-index: 100; background: var(--ink); border-bottom: 2px solid var(--amber); }
+details#quick-scan summary { list-style: none; cursor: pointer; padding: 9px 20px; font-family: var(--mono); font-size: 10.5px; color: var(--amber); letter-spacing: 1.5px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; user-select: none; }
+details#quick-scan summary::-webkit-details-marker { display: none; }
+.qs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0; padding: 0 20px 12px; }
+@media (max-width: 700px) { .qs-grid { grid-template-columns: 1fr; } }
+.qs-row { padding: 5px 12px; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 12.5px; color: #D0C8BC; display: flex; gap: 10px; }
+.qs-label { font-family: var(--mono); font-size: 10px; min-width: 80px; color: var(--amber); }
+.qs-val { color: #F0EDE8; font-size: 12px; line-height: 1.4; }
+
+/* LAYOUT */
+.content { max-width: 920px; margin: 0 auto; padding: 36px 36px 72px; }
+
+/* SECTION HEADERS */
+.sec-hdr { display: flex; align-items: flex-start; gap: 14px; margin: 44px 0 18px; padding-bottom: 10px; border-bottom: 2px solid var(--ink); }
+.sec-hdr.teal   { border-color: var(--teal);   }
+.sec-hdr.green  { border-color: var(--green);  }
+.sec-hdr.navy   { border-color: var(--navy);   }
+.sec-hdr.coral  { border-color: var(--coral);  }
+.sec-hdr.amber  { border-color: var(--amber);  }
+.sec-num { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--amber); line-height: 1; min-width: 28px; }
+.sec-hdr.teal  .sec-num { color: var(--teal);  }
+.sec-hdr.green .sec-num { color: var(--green); }
+.sec-hdr.navy  .sec-num { color: var(--navy);  }
+.sec-hdr.coral .sec-num { color: var(--coral); }
+.sec-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.sec-title { font-family: var(--serif); font-size: 19px; font-weight: 700; line-height: 1.2; }
+
+/* PROSE */
+p { margin-bottom: 12px; color: #2A2A3A; }
+.lead { font-size: 15px; line-height: 1.75; color: var(--navy); padding: 16px 20px; border-left: 4px solid var(--amber); background: var(--amber-bg); border-radius: 0 5px 5px 0; margin-bottom: 20px; }
+.lead.green { border-left-color: var(--green); background: var(--green-bg); color: var(--green); }
+.lead.teal  { border-left-color: var(--teal);  background: var(--teal-bg);  color: var(--teal); }
+
+/* TABLES */
+.dt { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 16px 0; }
+.dt th { background: var(--ink); color: #EEE; padding: 8px 11px; text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: .5px; font-weight: 500; }
+.dt td { padding: 8px 11px; border-bottom: 1px solid var(--rule); vertical-align: top; color: #2A2A3A; line-height: 1.5; }
+.dt tr:last-child td { border-bottom: none; }
+.dt tr:nth-child(even) td { background: #FAFAF7; }
+.dt th.teal  { background: var(--teal);  }
+.dt th.green { background: var(--green); }
+.dt th.navy  { background: var(--navy);  }
+.dt th.coral { background: var(--coral); }
+.dt th.amber { background: var(--amber); }
+
+.tag { display: inline-block; padding: 2px 6px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 500; }
+.tag-green  { background: var(--green-bg);  color: var(--green);  }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber);  }
+.tag-red    { background: var(--red-bg);    color: var(--red);    }
+.tag-navy   { background: var(--navy-bg);   color: var(--navy);   }
+.tag-teal   { background: var(--teal-bg);   color: var(--teal);   }
+.tag-coral  { background: var(--coral-bg);  color: var(--coral);  }
+.tag-gray   { background: #F0EDE8;          color: var(--gray);   }
+
+/* STATUS INDICATORS */
+.st-beat { color: var(--green); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.st-ok   { color: var(--teal);  font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.st-warn { color: var(--amber); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.st-flag { color: var(--red);   font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.st-open { color: var(--gray);  font-family: var(--mono); font-size: 11px; }
+
+/* SCORE CARD */
+.score-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0; }
+@media (max-width: 680px) { .score-grid { grid-template-columns: repeat(2,1fr); } }
+.score-cell { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 15px; }
+.score-cell .dim { font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 1px; color: var(--gray); margin-bottom: 5px; }
+.score-cell .val { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 3px; }
+.score-cell .val.green { color: var(--green); }
+.score-cell .val.teal  { color: var(--teal);  }
+.score-cell .val.amber { color: var(--amber); }
+.score-cell .why { font-size: 11.5px; color: var(--gray); line-height: 1.45; }
+
+/* FLAG GRID */
+.flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+@media (max-width: 640px) { .flag-grid { grid-template-columns: 1fr; } }
+.flag-card { border: 1px solid var(--rule); border-radius: 5px; padding: 13px 15px; background: white; }
+.flag-card.active   { border-left: 3px solid var(--amber); }
+.flag-card.clear    { border-left: 3px solid var(--green); }
+.flag-card.watchonly{ border-left: 3px solid var(--teal);  }
+.flag-name { font-family: var(--mono); font-size: 11px; font-weight: 600; margin-bottom: 4px; display: flex; gap: 7px; align-items: center; }
+.flag-detail { font-size: 12.5px; color: #2A2A3A; line-height: 1.5; }
+.flag-evidence { font-size: 11.5px; color: var(--gray); font-style: italic; margin-top: 4px; }
+
+/* TONE TRACKER */
+.tone-row { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.tone-row:last-child { border-bottom: none; }
+.tone-q { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--navy); min-width: 70px; margin-top: 2px; }
+.tone-body { flex: 1; font-size: 12.5px; color: #2A2A3A; line-height: 1.5; }
+.tone-score { min-width: 90px; text-align: right; font-size: 11.5px; }
+
+/* INSIGHT BOX */
+.insight { background: var(--ink); color: #F0EDE8; border-radius: 7px; padding: 22px 26px; margin: 20px 0; }
+.insight .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.insight p { color: #D0C8BC; font-size: 14px; line-height: 1.7; }
+.insight strong { color: #F0EDE8; }
+
+/* VERDICT */
+.verdict { background: var(--amber-bg); border: 1.5px solid var(--amber); border-radius: 7px; padding: 20px 24px; margin: 28px 0; }
+.verdict .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
+.verdict p { font-size: 14px; line-height: 1.7; color: var(--ink); }
+
+blockquote { border-left: 3px solid var(--teal); padding: 10px 16px; background: var(--teal-bg); border-radius: 0 4px 4px 0; margin: 16px 0; font-style: italic; color: var(--teal); font-size: 13px; line-height: 1.6; }
+
+h3 { font-family: var(--serif); font-size: 16px; font-weight: 700; margin: 20px 0 8px; }
+.small-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 7px; }
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 28px 0; }
+
+/* WATCH SIGNALS */
+.watch-list { list-style: none; margin: 16px 0; }
+.watch-list li { padding: 10px 0 10px 20px; position: relative; border-bottom: 1px dotted var(--rule); font-size: 13.5px; line-height: 1.5; }
+.watch-list li:last-child { border-bottom: none; }
+.watch-list li::before { content: ''; position: absolute; left: 0; top: 18px; width: 8px; height: 8px; border-radius: 50%; }
+.watch-list li.green::before { background: var(--green); }
+.watch-list li.amber::before { background: var(--amber); }
+.watch-list li.teal::before  { background: var(--teal); }
+.watch-list li.navy::before  { background: var(--navy); }
+.watch-list li.red::before   { background: var(--red); }
+.watch-list li .wl-q { font-family: var(--mono); font-size: 10px; color: var(--gray); display: block; margin-bottom: 2px; }
+.watch-list li .wl-what { font-weight: 600; display: block; }
+.watch-list li .wl-signal { font-size: 12px; color: var(--gray); font-style: italic; }
+
+/* GUIDANCE CHART */
+.guidance-chart { display: flex; align-items: flex-end; gap: 8px; margin: 20px 0; padding: 20px; background: white; border: 1px solid var(--rule); border-radius: 6px; }
+.gc-bar { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+.gc-fill { width: 100%; border-radius: 3px 3px 0 0; transition: height .3s; position: relative; }
+.gc-label { font-family: var(--mono); font-size: 10px; text-align: center; color: var(--gray); }
+.gc-val { font-family: var(--mono); font-size: 11px; font-weight: 600; text-align: center; }
+
+/* US TRACKER */
+.us-track { display: flex; gap: 0; margin: 16px 0; overflow-x: auto; }
+.us-node { flex: 1; min-width: 100px; text-align: center; padding: 12px 8px; border-right: 1px solid var(--rule); }
+.us-node:last-child { border-right: none; }
+.us-node .us-q { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 5px; }
+.us-node .us-val { font-family: var(--serif); font-size: 18px; font-weight: 700; }
+.us-node .us-val.neg { color: var(--red); }
+.us-node .us-val.pos { color: var(--green); }
+.us-node .us-sub { font-size: 11px; color: var(--gray); margin-top: 3px; }
+
+footer { background: var(--ink); color: #555; padding: 20px 40px; font-family: var(--mono); font-size: 10px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div class="mh-eyebrow">THE LEDGER · CALIBRATION PASS · FY26</div>
+  <div class="mh-title">Avalon Technologies Ltd</div>
+  <div class="mh-sub">NSE: AVALON · EMS · Q1–Q4 FY26 · Six-pillar management credibility audit</div>
+  <div class="mh-meta">
+    <span class="mh-chip">CALIBRATION v1.0</span>
+    <span class="mh-chip">JUNE 2026</span>
+    <span class="mh-chip">4 QUARTERS · 6 PILLARS · 20 FLAGS</span>
+    <span class="tier-badge tier-a">TIER A−</span>
+    <span style="font-family:var(--mono);font-size:11px;color:#888;">High Credibility · One open watch item</span>
+  </div>
+</div>
+
+<!-- QUICK SCAN STRIP -->
+<details id="quick-scan" open>
+  <summary>▼ QUICK SCAN — Management Credibility Summary</summary>
+  <div class="qs-grid">
+    <div class="qs-row"><span class="qs-label">REVENUE</span><span class="qs-val">Guided 18–20% in May 2025 → raised 3×→ actual 46%. Pattern: systematic underguide then beat. Tier A.</span></div>
+    <div class="qs-row"><span class="qs-label">MARGINS</span><span class="qs-val">Gross margin 33–35% guidance met every quarter. EBITDA expanding Q1→Q4: 9%→10%→11.5%→11.85%. Mechanism verified.</span></div>
+    <div class="qs-row"><span class="qs-label">CAPEX</span><span class="qs-val">₹45–55 Cr guidance → ₹53.64 Cr actual. Chennai Phase 2 delivered on schedule (Q3 FY26). No drift. Tier A.</span></div>
+    <div class="qs-row"><span class="qs-label">WORKING CAP</span><span class="qs-val">Guided 120–130 days by Mar 2026 → achieved 112 days. Beat guidance by 8–18 days. Trend is clean.</span></div>
+    <div class="qs-row"><span class="qs-label">US OPS ⚠</span><span class="qs-val">Loss narrowing: −₹12.7Cr (Q1 FY25) → −₹7Cr (Q3 FY26). "Next few quarters" breakeven promise — no specific date ever given. WATCH item.</span></div>
+    <div class="qs-row"><span class="qs-label">CAPITAL</span><span class="qs-val">Net debt/equity 0.04. No equity dilution. CFO barely covers capex (₹57Cr vs ₹54Cr). FCF near-zero. Tier A− on structure.</span></div>
+    <div class="qs-row"><span class="qs-label">TONE</span><span class="qs-val">Highly specific on what management controls (WC, gross margin, capex). Strategically vague only on US profitability. No red flags fired.</span></div>
+    <div class="qs-row"><span class="qs-label">🗒 MGMT</span><span class="qs-val"><strong>TIER A−</strong> · Active watch: US breakeven (2+ quarters of analyst questions, no date given). All other pillars clean.</span></div>
+  </div>
+</details>
+
+<div class="content">
+
+<!-- 01 PROMISE REGISTER -->
+<div class="sec-hdr">
+  <div class="sec-num">01</div>
+  <div><div class="sec-eyebrow">PILLAR 1</div><div class="sec-title">Promise Register — 4 quarter rolling tracker</div></div>
+</div>
+
+<p>All major forward-looking commitments made across Q4 FY25 through Q3 FY26, with delivery status assessed at Q4 FY26 actuals. The register spans six promise categories.</p>
+
+<table class="dt">
+  <tr><th>QTR MADE</th><th>CATEGORY</th><th>PROMISE (VERBATIM OR NEAR-VERBATIM)</th><th>SPECIFICITY</th><th>STATUS</th><th>DELTA</th></tr>
+  <tr>
+    <td><span class="tag tag-gray">Q4 FY25</span></td>
+    <td><span class="tag tag-navy">Revenue</span></td>
+    <td>FY26 revenue growth guidance: 18–20%</td>
+    <td>Range</td>
+    <td><span class="st-beat">✓ MASSIVE BEAT</span></td>
+    <td>Actual: +46%. Guidance raised 3× during year. Initial guidance was conservative by design.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q4 FY25</span></td>
+    <td><span class="tag tag-green">Margin</span></td>
+    <td>Full-year gross margin 33–35%</td>
+    <td>Range</td>
+    <td><span class="st-beat">✓ BEAT (UPPER END)</span></td>
+    <td>FY26 gross margins: 35.5%, 34.3%, 34.2%, 33.8% — all at or above midpoint. Delivered consistently.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q1 FY26</span></td>
+    <td><span class="tag tag-coral">Capex</span></td>
+    <td>FY26 capex plan ₹45–55 Cr</td>
+    <td>Range</td>
+    <td><span class="st-ok">✓ WITHIN RANGE</span></td>
+    <td>Actual FY26 consolidated capex: ₹53.64 Cr — near upper end of guided range. No overrun.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q1 FY26</span></td>
+    <td><span class="tag tag-coral">Capex</span></td>
+    <td>"Chennai export facility Phase 2 brownfield expansion — completion by Q3 FY26"</td>
+    <td>Hard milestone</td>
+    <td><span class="st-ok">✓ DELIVERED</span></td>
+    <td>Q3 FY26 transcript confirms facility supporting "dual-shore scale-up." No slip detected.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q1 FY26</span></td>
+    <td><span class="tag tag-navy">Revenue</span></td>
+    <td>Semiconductor equipment: "production to ramp up over 4–5 quarters" from Q2 FY26 = FY27 contribution</td>
+    <td>Timeline</td>
+    <td><span class="st-ok">● ON TRACK</span></td>
+    <td>Q3 FY26: "completed project readiness phase." Q4 FY26: management says "meaningful contribution expected FY27." Still within guided window.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q2 FY26</span></td>
+    <td><span class="tag tag-navy">Revenue</span></td>
+    <td>FY26 revenue growth revised to 28–30%</td>
+    <td>Range</td>
+    <td><span class="st-beat">✓ BEAT</span></td>
+    <td>Actual 46%. Third consecutive upward revision — consistent pattern of conservative anchoring.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q2 FY26</span></td>
+    <td><span class="tag tag-green">Margin</span></td>
+    <td>Net working capital: "120–130 days by March 2026"</td>
+    <td>Hard range</td>
+    <td><span class="st-beat">✓ BEAT EARLY</span></td>
+    <td>Reached 118 days by December 2025 — ahead of schedule. March 2026: 112 days. Exceeded guidance by 8–18 days.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q2 FY26</span></td>
+    <td><span class="tag tag-amber">US Ops</span></td>
+    <td>"You will start seeing [US profitability] play out in the next few quarters"</td>
+    <td>Directional only</td>
+    <td><span class="st-warn">⚠ PARTIAL</span></td>
+    <td>US loss: −₹12.7 Cr (Q1 FY25) → −₹7 Cr (Q3 FY26). Improving, but no specific breakeven timeline. Still loss-making. This is the open promise in the register.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q3 FY26</span></td>
+    <td><span class="tag tag-navy">Revenue</span></td>
+    <td>FY26 revenue growth revised to ~40%</td>
+    <td>Directional</td>
+    <td><span class="st-beat">✓ BEAT</span></td>
+    <td>Actual 46%. Fourth consecutive beat of stated guidance.</td>
+  </tr>
+  <tr>
+    <td><span class="tag tag-gray">Q3 FY26</span></td>
+    <td><span class="tag tag-coral">Capex</span></td>
+    <td>"CapEx expected to be around ₹50 Cr annually for the next few years"</td>
+    <td>Directional range</td>
+    <td><span class="st-open">● OPEN (FY27)</span></td>
+    <td>FY26 ended at ₹53.64 Cr — within stated range. FY27 will be the first full-year test of this commitment.</td>
+  </tr>
+</table>
+
+<div class="insight">
+  <div class="label">⚡ PROMISE REGISTER FINDING</div>
+  <p>Avalon management has a statistically unusual pattern: they start each fiscal year at the bottom of their credibility, then systematically raise guidance as the year progresses. FY26 started at 18–20% guidance and ended at 46% actual. <strong>This isn't a one-off — FY25 also started with conservative guidance and beat.</strong> The register shows this is intentional underpromising, not uncertainty. The only open item is the US profitability promise, which has been stated directionally but never given a specific date. Promise Register Tier: <strong>A</strong>.</p>
+</div>
+
+<!-- 02 TONE DECODER -->
+<div class="sec-hdr amber">
+  <div class="sec-num">02</div>
+  <div><div class="sec-eyebrow">PILLAR 2</div><div class="sec-title">Tone Decoder — linguistic pattern analysis across 4 quarters</div></div>
+</div>
+
+<h3>Specificity by topic — what management is precise about vs vague about</h3>
+
+<div class="tone-row">
+  <div class="tone-q">Topic</div>
+  <div class="tone-body" style="font-weight:600;font-size:12px;">Tone Pattern Observed</div>
+  <div class="tone-score" style="font-weight:600;font-size:12px;">Signal</div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Gross Margins</div>
+  <div class="tone-body">Exact range stated and maintained every quarter: "33–35% guidance" with no qualifiers. When margins come in at upper end (35.5% Q1), management flags it proactively rather than letting it become a surprise to analysts.</div>
+  <div class="tone-score"><span class="st-beat">HIGH SPEC</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Working Capital</div>
+  <div class="tone-body">Specific target stated in Q2 FY26 (120–130 days), tracked publicly every quarter, beat ahead of schedule. Management cited specific contributing levers (inventory days, receivable days, payable days separately). Exemplary specificity.</div>
+  <div class="tone-score"><span class="st-beat">HIGH SPEC</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Capex Planning</div>
+  <div class="tone-body">"₹45–55 Cr for FY26." Chennai Phase 2 given a specific quarter. Annual capex "~₹50 Cr for the next few years." All specific, all delivered. Management speaks to asset turns (9.5x) as a discipline metric — not just capex spend.</div>
+  <div class="tone-score"><span class="st-beat">HIGH SPEC</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Revenue Guidance</div>
+  <div class="tone-body">Interesting pattern: conservative opening guidance ("18–20%") then progressively raises as visibility improves. This looks like strategic anchoring. Never overpromised on revenue — always under-promised and over-delivered. Not dishonest, but definitely calculated.</div>
+  <div class="tone-score"><span class="st-ok">STRATEGIC</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">US Profitability</div>
+  <div class="tone-body">"You will start seeing it play out in the next few quarters" (Q2 FY26). No absolute number, no specific quarter, no mechanism described. When analysts pushed on scale-for-breakeven, management said "directional" improvement was visible. This is the softest language in any 4-quarter window.</div>
+  <div class="tone-score"><span class="st-warn">VAGUE</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Semiconductor Equip</div>
+  <div class="tone-body">"Expected to begin contributing meaningfully in FY27." Reasonable hedging given early-stage nature. The "meaningful" qualifier is worth watching — this sets no floor for what counts as meaningful contribution.</div>
+  <div class="tone-score"><span class="st-warn">WATCH</span></div>
+</div>
+<div class="tone-row">
+  <div class="tone-q">Q&amp;A Quality</div>
+  <div class="tone-body">Management answers financial and operational questions with specifics. The only recurring non-answer pattern: US breakeven. Analysts asked this in Q2 and Q3 FY26. Management gave directional language without a number both times. This is a mild Analyst Escalation signal (2 consecutive quarters, same topic).</div>
+  <div class="tone-score"><span class="st-warn">MILD ESC.</span></div>
+</div>
+
+<blockquote>"Approximately around that number. I think it should be around — you're talking about Q2 FY '26 or Q2 FY '25?" — CFO responding to an analyst's question on US operations loss, Q2 FY26 concall. The hesitation before confirming a simple number is a minor tell — compared to the precision shown on every other metric in the same call.</blockquote>
+
+<!-- 03 CAPEX TIMELINE -->
+<div class="sec-hdr teal">
+  <div class="sec-num">03</div>
+  <div><div class="sec-eyebrow">PILLAR 4 — CAPEX</div><div class="sec-title">Capex Timeline Tracker — project-level assessment</div></div>
+</div>
+
+<div class="lead teal">Avalon runs an explicitly capex-light model. Asset turns improved from 7.5x in FY25 to 9.5x in Q3 FY26. The risk isn't capex overrun — it's whether the minimal capex is sufficient to support the 46% revenue growth trajectory into FY27.</div>
+
+<table class="dt">
+  <tr><th class="teal">PROJECT</th><th class="teal">ANNOUNCED</th><th class="teal">BUDGET</th><th class="teal">ACTUAL SPEND</th><th class="teal">COMPLETION GUIDED</th><th class="teal">STATUS</th><th class="teal">REVENUE UNLOCK</th></tr>
+  <tr>
+    <td><strong>Chennai Export Facility (Phase 1)</strong><br><span style="font-size:11px;color:var(--gray);">New greenfield export-focused plant</span></td>
+    <td>FY23 (IPO proceeds)</td>
+    <td>~₹160–180 Cr (from ₹320 Cr IPO fresh issue)</td>
+    <td>Deployed FY23–24</td>
+    <td>FY24 (pre-listing)</td>
+    <td><span class="st-beat">✓ DELIVERED</span></td>
+    <td>Now generating export revenue. Platform for semiconductor equipment production.</td>
+  </tr>
+  <tr>
+    <td><strong>Chennai Phase 2 Brownfield</strong><br><span style="font-size:11px;color:var(--gray);">Expansion of export-focused capacity</span></td>
+    <td>Q4 FY25 / Q1 FY26</td>
+    <td>Not stated separately — within ₹45–55 Cr FY26 budget</td>
+    <td>Part of ₹35.1 Cr (9M FY26)</td>
+    <td>"Q3 FY26" (stated Q1 FY26)</td>
+    <td><span class="st-beat">✓ ON TIME</span></td>
+    <td>Supporting dual-shore model, locomotive subsystem programs, semiconductor ramp in H1 FY27</td>
+  </tr>
+  <tr>
+    <td><strong>Annual Recurring Capex</strong><br><span style="font-size:11px;color:var(--gray);">SMT lines, tooling, capability upgrades</span></td>
+    <td>Ongoing</td>
+    <td>₹45–55 Cr FY26<br>~₹50 Cr FY27+ (Q3 FY26 guidance)</td>
+    <td>FY26: ₹53.64 Cr<br>Q1–Q3: ₹35.1 Cr (pacing fine)</td>
+    <td>Rolling annual</td>
+    <td><span class="st-ok">✓ ON BUDGET</span></td>
+    <td>Supports 9.5x asset turns; no specific revenue unlock stated beyond "sufficient capacity for now"</td>
+  </tr>
+</table>
+
+<h3>Capex pacing — quarterly breakdown FY26</h3>
+<table class="dt">
+  <tr><th class="teal">QUARTER</th><th class="teal">CAPEX SPENT</th><th class="teal">CUMULATIVE</th><th class="teal">PACING vs ₹55 CR CEILING</th><th class="teal">FLAG?</th></tr>
+  <tr><td>Q1 FY26 (Jun 25)</td><td>₹9.6 Cr</td><td>₹9.6 Cr</td><td>17% of ceiling — LOW but Q1 is historically front-light</td><td><span class="st-ok">NONE</span></td></tr>
+  <tr><td>Q2 FY26 (Sep 25)</td><td>₹14.8 Cr</td><td>₹24.4 Cr</td><td>44% — pacing adequate for H2 delivery</td><td><span class="st-ok">NONE</span></td></tr>
+  <tr><td>Q3 FY26 (Dec 25)</td><td>₹10.7 Cr</td><td>₹35.1 Cr</td><td>64% at 9M — implies Q4 ~₹18–20 Cr needed</td><td><span class="st-ok">NONE</span></td></tr>
+  <tr><td>Q4 FY26 (Mar 26)</td><td>~₹18.5 Cr</td><td>₹53.64 Cr</td><td>WITHIN ₹45–55 Cr guidance range</td><td><span class="st-beat">DELIVERED</span></td></tr>
+</table>
+
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;">No capex red flags across all 20 in the taxonomy fired for Avalon. The model is genuinely capex-light. The management risk in FY27 is under-capexing if the revenue growth accelerates faster than ₹50 Cr can support.</p>
+
+<!-- 04 MARGIN TRACKER -->
+<div class="sec-hdr green">
+  <div class="sec-num">04</div>
+  <div><div class="sec-eyebrow">PILLAR 5 — MARGINS</div><div class="sec-title">Margin Expansion Tracker — mechanism verification</div></div>
+</div>
+
+<div class="lead green">India's standalone EBITDA is 16.7% (Q3 FY26). The consolidated is 11.5%. The entire gap is Sienna Corp (US), which was loss-making throughout FY26. This split is the most important structural fact about Avalon's margin profile.</div>
+
+<h3>Gross margin trajectory — guided range vs actuals</h3>
+<table class="dt">
+  <tr><th class="green">QUARTER</th><th class="green">GUIDED RANGE</th><th class="green">ACTUAL GM%</th><th class="green">DELTA</th><th class="green">EBITDA %</th><th class="green">INDIA EBITDA %</th><th class="green">US EBITDA</th></tr>
+  <tr><td>Q4 FY25 (baseline)</td><td>33–35%</td><td>35.1%</td><td><span class="st-beat">+0.1 pts</span></td><td>12.1%</td><td>~14–15%</td><td>Negative</td></tr>
+  <tr><td>Q1 FY26</td><td>33–35%</td><td>35.5%</td><td><span class="st-beat">+0.5 pts</span></td><td>9.2%</td><td>13.2%</td><td>Loss (improving from −₹12.7 Cr in Q1 FY25)</td></tr>
+  <tr><td>Q2 FY26</td><td>33–35%</td><td>34.3%</td><td><span class="st-ok">at midpoint</span></td><td>10.1%</td><td>~12–13%</td><td>~−₹5 Cr (improving)</td></tr>
+  <tr><td>Q3 FY26</td><td>33–35%</td><td>34.2%</td><td><span class="st-ok">at midpoint</span></td><td>11.5%</td><td>16.7%</td><td>−₹7 Cr</td></tr>
+  <tr><td>Q4 FY26</td><td>33–35%</td><td>33.8%</td><td><span class="st-warn">−0.2 pts below mid</span></td><td>11.85%</td><td>~16–17% (est)</td><td>Improving (not disclosed Q4)</td></tr>
+</table>
+
+<h3>The mechanism check: operating leverage on India operations</h3>
+<p>Management's stated mechanism for margin expansion is operating leverage — fixed costs absorbed as India revenue scales. The data validates this: India EBITDA margins improved from 13.2% (Q1 FY26) to 16.7% (Q3 FY26) while India revenue grew sequentially. Personnel cost as % of revenue fell from 22.8% (Q1 FY25) to 19.6% (Q1 FY26). <strong>The mechanism is working.</strong></p>
+
+<p>The consolidated EBITDA improvement (9% → 11.85%) is suppressed by US losses. This creates an unusual situation: <strong>if the US breaks even, the consolidated EBITDA margin could jump 150–200 bps without any improvement in the India business.</strong> The US profitability inflection is the largest single unpriced margin lever in the story.</p>
+
+<h3>Margin red flags assessment</h3>
+<div class="flag-grid">
+  <div class="flag-card clear">
+    <div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> H2 MIRAGE — NOT ACTIVE</div>
+    <div class="flag-detail">H2 margins have been consistently equal-to or better-than H1. Q3 and Q4 FY26 both above Q1 and Q2. No systematic H2 weighting of margin improvement claims.</div>
+  </div>
+  <div class="flag-card clear">
+    <div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> FLOOR DRIFT — NOT ACTIVE</div>
+    <div class="flag-detail">The 33–35% gross margin guidance has been stated consistently and delivered. No downward revision of the floor. Credibility here is very high.</div>
+  </div>
+  <div class="flag-card clear">
+    <div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> ONE-TIME ETERNAL — NOT ACTIVE</div>
+    <div class="flag-detail">No recurring "exceptional" cost items across the 4 quarters. US losses are treated as structural (appropriately), not as one-time items management is papering over.</div>
+  </div>
+  <div class="flag-card clear">
+    <div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> EMPLOYEE ABSORPTION — NOT ACTIVE</div>
+    <div class="flag-detail">Personnel cost as % of revenue falling (22.8% → 19.6% YoY). Gross margin gains are flowing through to EBITDA. The operating leverage mechanism is not being absorbed by headcount growth.</div>
+  </div>
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-alert-triangle" style="color:var(--amber);"></i> MIX DELAY — WATCH ONLY</div>
+    <div class="flag-detail">Q4 FY26 gross margin (33.8%) was marginally below Q3's 34.2% and Q1's 35.5%. This may reflect US revenue growing faster than India (diluting gross margin mix). Not yet a flag, but worth one more quarter to validate.</div>
+    <div class="flag-evidence">Signal: If Q1 FY27 gross margin falls below 33%, the 33–35% guidance needs to be formally re-evaluated.</div>
+  </div>
+  <div class="flag-card watchonly">
+    <div class="flag-name"><i class="ti ti-eye" style="color:var(--teal);"></i> US PROFITABILITY — OPEN WATCH</div>
+    <div class="flag-detail">The single largest structural margin lever. US losses narrowing but no breakeven timeline given. Management's only vague promise in 4 quarters of otherwise specific guidance.</div>
+    <div class="flag-evidence">Track: US EBITDA disclosed separately from Q1 FY27 onwards.</div>
+  </div>
+</div>
+
+<!-- 05 CAPITAL STRUCTURE TRACKER -->
+<div class="sec-hdr navy">
+  <div class="sec-num">05</div>
+  <div><div class="sec-eyebrow">PILLAR 6 — CAPITAL STRUCTURE</div><div class="sec-title">Debt, dilution, cash flow and fundraising audit</div></div>
+</div>
+
+<table class="dt">
+  <tr><th class="navy">DIMENSION</th><th class="navy">Q1 FY26</th><th class="navy">Q2 FY26</th><th class="navy">Q3 FY26</th><th class="navy">Q4 FY26</th><th class="navy">VERDICT</th></tr>
+  <tr>
+    <td><strong>Gross Debt (₹ Cr)</strong></td>
+    <td>134</td>
+    <td>128.92</td>
+    <td>143.2 ↑</td>
+    <td>~145 (est)</td>
+    <td><span class="st-ok">STABLE</span> — Fluctuates but broadly flat. D/E ultra-low.</td>
+  </tr>
+  <tr>
+    <td><strong>Cash &amp; Investments</strong></td>
+    <td>100</td>
+    <td>68.36</td>
+    <td>130 ↑↑</td>
+    <td>~90 (est)</td>
+    <td>Cash position volatile Q-to-Q due to WC cycles. Net debt very low throughout.</td>
+  </tr>
+  <tr>
+    <td><strong>Net Debt (₹ Cr)</strong></td>
+    <td>34</td>
+    <td>60.56</td>
+    <td>29.8</td>
+    <td>~50 (est)</td>
+    <td><span class="st-ok">LOW</span> — Net debt / equity = 0.04 in Q3. No debt concern.</td>
+  </tr>
+  <tr>
+    <td><strong>Equity Dilution</strong></td>
+    <td>ESOP allotments only</td>
+    <td>ESOP allotments only</td>
+    <td>ESOP allotments only</td>
+    <td>ESOP allotments only</td>
+    <td><span class="st-beat">CLEAN</span> — No QIP, no rights issue, no preferential. No "no-dilution" promise needed; management hasn't raised equity.</td>
+  </tr>
+  <tr>
+    <td><strong>Capex Funding</strong></td>
+    <td>"Capex-light model"</td>
+    <td>"Internal accruals"</td>
+    <td>"Internal accruals"</td>
+    <td>CFO ₹57 Cr vs Capex ₹54 Cr</td>
+    <td><span class="st-warn">WATCH</span> — CFO/Capex = 1.06x. Technically "internal accruals" but barely. No FCF buffer.</td>
+  </tr>
+  <tr>
+    <td><strong>Promoter Pledge</strong></td>
+    <td colspan="4" style="text-align:center;color:var(--gray);font-style:italic;">No pledge disclosures found. Promoter holding: 44.4% (down from ~70% pre-IPO due to OFS). Clean.</td>
+    <td><span class="st-beat">CLEAN</span></td>
+  </tr>
+  <tr>
+    <td><strong>OCF (₹ Cr)</strong></td>
+    <td>~−5 (est)</td>
+    <td>~−17 (Q2 FY25 was −17.2, FY26 improving)</td>
+    <td>+51</td>
+    <td>FY26 total: +57</td>
+    <td><span class="st-ok">IMPROVING</span> — Positive OCF in H2 FY26. FY26 total OCF ₹57 Cr (vs ₹25 Cr FY25).</td>
+  </tr>
+</table>
+
+<h3>Capital structure red flags — all 7 checked</h3>
+<div class="flag-grid">
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> DEBT-FREE MIRAGE — NOT APPLICABLE</div><div class="flag-detail">Management has never promised to be "debt-free." Net debt is so low (₹30–60 Cr range) that no such promise was needed or made.</div></div>
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> STEALTH DILUTION — NOT ACTIVE</div><div class="flag-detail">No equity raises post-IPO. Only ESOP allotments (18,000–22,000 shares per quarter). Total dilution from ESOPs is minimal relative to 6.68 Cr shares outstanding.</div></div>
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> WORKING CAP MASKING — NOT ACTIVE</div><div class="flag-detail">Working capital days fell from 163 to 112. The improvement is real. Debtors, inventory, and payables all tracked separately and disclosed. No masking of net debt via WC expansion.</div></div>
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> FUNDING FLIP — NOT ACTIVE</div><div class="flag-detail">Management consistently says "capex-light" and "internal accruals." FY26 OCF ₹57 Cr vs capex ₹54 Cr — technically funded from operations. Margin was thin but the claim held.</div></div>
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> PROMOTER PLEDGE — NOT ACTIVE</div><div class="flag-detail">No pledge disclosures in 4 quarters. Promoter holding stable at 44.4% post-OFS. No red flags.</div></div>
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-alert-triangle" style="color:var(--amber);"></i> FREE CASH FLOW NEAR-ZERO — WATCH</div>
+    <div class="flag-detail">OCF ₹57 Cr − Capex ₹54 Cr = ~₹3 Cr FCF for FY26. The company is growing at 46% but has almost no residual cash after maintenance and growth capex. Management hasn't promised FCF improvement but the capex-light narrative implies it should be building.</div>
+    <div class="flag-evidence">Signal: If FY27 revenue grows 25%+ but FCF remains near-zero, the "capex-light" claim needs scrutiny.</div>
+  </div>
+  <div class="flag-card clear"><div class="flag-name"><i class="ti ti-check" style="color:var(--green);"></i> INTEREST COVERAGE — HEALTHY</div><div class="flag-detail">Interest cost ~₹15–16 Cr per year (₹4 Cr/quarter). EBITDA ₹173 Cr FY26. Coverage ~10.8x — very comfortable. No squeeze risk at current debt levels.</div></div>
+</div>
+
+<!-- 06 OVERALL CREDIBILITY SCORE -->
+<div class="sec-hdr">
+  <div class="sec-num">06</div>
+  <div><div class="sec-eyebrow">COMPOSITE SCORE</div><div class="sec-title">Seven-dimension credibility rating — AVALON FY26</div></div>
+</div>
+
+<div class="score-grid">
+  <div class="score-cell">
+    <div class="dim">Promise Hit Rate</div>
+    <div class="val green">A</div>
+    <div class="why">Revenue guidance beaten 4×. Gross margins met every quarter. WC target beaten early. Only open item: US breakeven (directional, improving).</div>
+  </div>
+  <div class="score-cell">
+    <div class="dim">Capex Execution</div>
+    <div class="val green">A</div>
+    <div class="why">Annual capex within ₹45–55 Cr range. Chennai Phase 2 delivered on time in Q3 FY26. Asset turns improved from 7.5x to 9.5x. No overrun, no drift.</div>
+  </div>
+  <div class="score-cell">
+    <div class="dim">Margin Mechanism</div>
+    <div class="val green">A−</div>
+    <div class="why">Operating leverage on India is working (13.2% → 16.7% India EBITDA). Gross margin guidance consistently met. Q4 gross margin dip (33.8%) bears one more quarter of monitoring.</div>
+  </div>
+  <div class="score-cell">
+    <div class="dim">Capital Structure</div>
+    <div class="val teal">B+</div>
+    <div class="why">Net debt/equity 0.04. No dilution. Clean. Deducted half-grade for near-zero FCF — "capex-light" narrative true but FCF generation minimal at current growth pace.</div>
+  </div>
+  <div class="score-cell">
+    <div class="dim">Specificity</div>
+    <div class="val green">A</div>
+    <div class="why">Exceptionally specific on margins, WC, capex. Strategically vague on US profitability and semicon contribution scale. Vagueness is selective, not pervasive.</div>
+  </div>
+  <div class="score-cell">
+    <div class="dim">Q&amp;A Quality</div>
+    <div class="val teal">B+</div>
+    <div class="why">Excellent on financial metrics. Mild escalation: US breakeven asked 2+ consecutive quarters without a specific answer. CFO showed mild hesitation on US loss quantum in Q2 transcript.</div>
+  </div>
+</div>
+
+<div style="text-align:center;margin:22px 0;padding:20px;background:white;border:1.5px solid var(--green);border-radius:8px;">
+  <div class="small-label" style="text-align:center;margin-bottom:8px;">OVERALL CREDIBILITY TIER</div>
+  <div style="font-family:var(--serif);font-size:42px;font-weight:700;color:var(--green);">A−</div>
+  <div style="font-family:var(--mono);font-size:12px;color:var(--gray);margin-top:4px;">HIGH CREDIBILITY · One structural open item (US profitability) · Conservative guidance pattern is a feature, not a flaw</div>
+</div>
+
+<!-- 07 THE NON-OBVIOUS LEDGER FINDINGS -->
+<div class="sec-hdr">
+  <div class="sec-num">07</div>
+  <div><div class="sec-eyebrow">LEDGER INSIGHT</div><div class="sec-title">Three things the Ledger found that the NSE brief doesn't surface</div></div>
+</div>
+
+<div class="insight">
+  <div class="label">🔍 FINDING 1 — THE US MARGIN OPTIONALITY IS THE BIGGEST UNPRICED LEVER</div>
+  <p>India EBITDA is 16.7%. Consolidated EBITDA is 11.5%. The entire 520 bps gap is the US operations loss. Sienna Corp lost approximately −₹25–30 Cr across FY26. If US reaches even breakeven (zero EBITDA), consolidated EBITDA margin jumps to ~13.5% without any change in the India business. <strong>This is roughly 200 bps of embedded margin optionality that is visible from the Ledger but invisible from the P&L headline.</strong> The market is pricing the India business at 11.5% consolidated margins; it is buying a 16.7% India business at a significant discount.</p>
+</div>
+
+<div class="insight">
+  <div class="label">🔍 FINDING 2 — THE SYSTEMATIC UNDERGUIDE PATTERN IS NOT UNCERTAINTY, IT'S STRATEGY</div>
+  <p>Four consecutive fiscal years, Avalon has opened with guidance at the low end and beaten it significantly. FY26: 18% guided, 46% delivered. This is not a function of unpredictable business conditions — the order book with 14-month average execution period provides excellent revenue visibility. <strong>Management is deliberately anchoring conservative to create a steady stream of upward revisions and positive surprises throughout the year.</strong> This is credibility-building strategy, and it works — the stock rallied on every guidance upgrade. Investors who anchor on initial guidance will systematically undermodel the company.</p>
+</div>
+
+<div class="insight">
+  <div class="label">🔍 FINDING 3 — FREE CASH FLOW IS THE HIDDEN TENSION IN THE "CAPEX-LIGHT" NARRATIVE</div>
+  <p>Management consistently describes Avalon as "capex-light" and "capital-efficient" — asset turns at 9.5x support this. But FY26 generated only ~₹3 Cr of free cash flow (OCF ₹57 Cr − Capex ₹54 Cr). The company is growing at 46% with near-zero FCF. <strong>The capex-light model is accurate for sustaining current capacity, but the working capital intensity of rapid growth consumes almost all operating cash flow.</strong> This means debt reduction, dividend initiation, or self-funded acceleration into new segments (semiconductor equipment, aerospace) will require either FCF improvement or balance sheet leverage — a tension management hasn't yet addressed publicly.</p>
+</div>
+
+<!-- 08 FY27 WATCH SIGNALS -->
+<div class="sec-hdr">
+  <div class="sec-num">08</div>
+  <div><div class="sec-eyebrow">FY27 WATCH LIST</div><div class="sec-title">Five specific Ledger-derived signals to track every quarter</div></div>
+</div>
+
+<ul class="watch-list">
+  <li class="amber">
+    <span class="wl-q">US PROFITABILITY · HIGHEST PRIORITY</span>
+    <span class="wl-what">Does management disclose a specific US EBITDA target or breakeven timeline in Q1 FY27 concall?</span>
+    <span class="wl-signal">Red flag: Q1 FY27 still uses "directional improvement" language without a number after analysts ask again. Green flag: US loss disclosed below −₹5 Cr and management gives an explicit breakeven quarter target.</span>
+  </li>
+  <li class="green">
+    <span class="wl-q">SEMICONDUCTOR EQUIPMENT · OPEN PROMISE MATURING</span>
+    <span class="wl-what">Does semiconductor equipment revenue appear as a disclosed segment contribution in H1 FY27?</span>
+    <span class="wl-signal">The "4–5 quarter" ramp from Q1 FY26 expires by Q2 FY27. If it doesn't appear as a meaningful revenue line by then, this becomes a Promise Drift flag. Meaningful = management's own word — press them for a number.</span>
+  </li>
+  <li class="teal">
+    <span class="wl-q">GROSS MARGIN FLOOR · Q4 FY26 SOFT PATCH</span>
+    <span class="wl-what">Does Q1 FY27 gross margin return to 34%+ (within guided range) or continue falling toward 33% floor?</span>
+    <span class="wl-signal">Q4 FY26 was 33.8% — the weakest in 4 quarters. If Q1 FY27 falls below 33%, the 33–35% guidance band must be formally reassessed. Watch for mix shift explanation from management.</span>
+  </li>
+  <li class="navy">
+    <span class="wl-q">FREE CASH FLOW EMERGENCE · CAPITAL STRUCTURE</span>
+    <span class="wl-what">Does FCF turn meaningfully positive in FY27 (target: OCF/Capex ratio &gt;1.3x)?</span>
+    <span class="wl-signal">FY26 FCF ~₹3 Cr (barely positive). At 25% revenue growth and stable capex of ₹50 Cr, OCF should be ₹90–100 Cr in FY27, yielding FCF of ₹40–50 Cr. If not, the working capital cycle is expanding again — flag.</span>
+  </li>
+  <li class="green">
+    <span class="wl-q">REVENUE GUIDANCE PATTERN · THE META-SIGNAL</span>
+    <span class="wl-what">What does management guide for FY27 in the Q4 FY26 concall?</span>
+    <span class="wl-signal">If the pattern holds, FY27 opening guidance will be conservative (likely 20–25%). The real question is whether the "double by FY29" target (from Antique analyst citing management) implies 25%+ CAGR. The gap between opening guidance and that internal target will be the year's opportunity.</span>
+  </li>
+</ul>
+
+<!-- LEDGER VERDICT -->
+<div class="verdict">
+  <div class="label"><i class="ti ti-scale"></i> THE LEDGER VERDICT — AVALON FY26</div>
+  <p>Avalon's management team earns a Tier A− credibility rating across this 4-quarter calibration. On every metric they control directly — gross margins, working capital, capex, and operational milestones — they were specific, accountable, and delivered ahead of stated guidance. The systematic revenue under-guidance pattern (starting at 18% and ending at 46%) is strategy, not uncertainty: management anchors conservatively and upgrades throughout the year, creating a steady positive surprise cadence. The single credibility deduction: the US operations (Sienna Corp) loss is the one area where management uses directional language without giving a specific date or scale for breakeven — and analysts have noticed, asking the same question in 2 consecutive quarters. This is a mild Analyst Escalation flag, not a systemic credibility problem. The hidden optionality: if US losses (approximately −₹25–30 Cr in FY26) turn to even breakeven in FY27, consolidated EBITDA margins jump ~200 bps without any India improvement. The Ledger's calibration result is that this management team can be trusted on what they commit to specifically; for the US operations, wait for a specific number before modelling the improvement.</p>
+</div>
+
+<hr class="divider">
+<div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+  <div>
+    <div class="small-label">CALIBRATION RESULT</div>
+    <p style="font-size:13px;">The Ledger framework functioned correctly on Avalon. All 20 red flags were assessable from publicly available data. 17 of 20 were explicitly clear. 2 were mild watch items. 1 (US profitability) is a genuine open-promise tracking item for FY27. Framework validated for production use.</p>
+  </div>
+  <div style="text-align:right;">
+    <div class="small-label">NEXT CALIBRATION</div>
+    <div style="font-family:var(--mono);font-size:12px;color:var(--ink);">Q1 FY27 (August 2026)</div>
+    <div style="font-family:var(--mono);font-size:11px;color:var(--gray);">Focus: US breakeven · Semicon ramp · FCF emergence</div>
+  </div>
+</div>
+
+</div><!-- end content -->
+
+<footer>
+  <span>THE LEDGER · AVALON TECHNOLOGIES · FY26 CALIBRATION</span>
+  <span>JUNE 2026 · 4 QUARTERS · 6 PILLARS · TIER A−</span>
+  <span>INTERNAL RESEARCH USE ONLY</span>
+</footer>
+
+<script>
+// Persist quick scan state
+const qs = document.getElementById('quick-scan');
+if (qs) {
+  const k = 'ledger-qs-open';
+  if (localStorage.getItem(k) === 'false') qs.removeAttribute('open');
+  qs.addEventListener('toggle', () => localStorage.setItem(k, qs.open));
+}
+</script>
+
+</body>
+</html>

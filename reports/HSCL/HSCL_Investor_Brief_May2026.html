@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HSCL — Himadri Speciality Chemical · Investor Brief · May 2026</title>
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg2: #f7f6f2;
+    --bg3: #eeede8;
+    --text: #1a1a18;
+    --text2: #5f5e5a;
+    --text3: #888780;
+    --border: rgba(0,0,0,0.12);
+    --border2: rgba(0,0,0,0.22);
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --teal-mid: #0F6E56;
+    --teal-dark: #085041;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --blue-light: #E3F0FF;
+    --blue: #185FA5;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --green-light: #E6F4EA;
+    --green: #3B6D11;
+    --warn-light: #FFF3CD;
+    --key-light: #FFF176;
+    --font: -apple-system, 'Segoe UI', system-ui, sans-serif;
+    --mono: 'SF Mono', 'Fira Code', monospace;
+    --radius: 10px;
+    --radius-sm: 6px;
+  }
+  [data-theme="dark"] {
+    --bg: #1c1c1a;
+    --bg2: #252522;
+    --bg3: #2e2e2b;
+    --text: #f0efe8;
+    --text2: #b4b2a9;
+    --text3: #888780;
+    --border: rgba(255,255,255,0.10);
+    --border2: rgba(255,255,255,0.18);
+    --teal-light: #04342C;
+    --teal-mid: #5DCAA5;
+    --teal-dark: #9FE1CB;
+    --amber-light: #412402;
+    --blue-light: #042C53;
+    --coral-light: #4A1B0C;
+    --green-light: #173404;
+    --warn-light: #412402;
+    --key-light: #5a4a00;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 0 60px;
+  }
+
+  /* ── Quick Scan ── */
+  #quick-scan {
+    position: sticky; top: 0; z-index: 200;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border2);
+  }
+  #qs-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 9px 20px;
+    background: var(--teal);
+    color: #fff;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+    cursor: pointer; user-select: none;
+  }
+  #qs-toggle { font-size: 11px; opacity: 0.85; }
+  #qs-body { padding: 10px 20px 12px; display: block; }
+  .qs-row {
+    display: flex; gap: 10px; align-items: flex-start;
+    padding: 4px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 12px;
+  }
+  .qs-row:last-child { border-bottom: none; }
+  .qs-tag {
+    min-width: 82px; font-size: 10px; font-weight: 700;
+    letter-spacing: 0.06em; color: var(--text3); padding-top: 2px;
+    flex-shrink: 0;
+  }
+  .qs-val { color: var(--text); line-height: 1.55; }
+
+  /* ── Toolbar ── */
+  #toolbar {
+    display: flex; align-items: center; justify-content: flex-end; gap: 10px;
+    padding: 10px 20px;
+    border-bottom: 0.5px solid var(--border);
+  }
+  .tb-btn {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 5px 12px; border-radius: 20px;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--text2); cursor: pointer;
+  }
+  .tb-btn:hover { background: var(--bg2); }
+
+  /* ── Body ── */
+  .body { padding: 0 24px; }
+
+  /* ── Cover ── */
+  .cover {
+    background: var(--teal);
+    border-radius: var(--radius);
+    padding: 28px 24px 22px;
+    margin: 20px 0 28px;
+    color: #fff;
+  }
+  .cover-eye { font-size: 10px; letter-spacing: 0.09em; opacity: 0.75; margin-bottom: 7px; text-transform: uppercase; }
+  .cover-name { font-size: 28px; font-weight: 700; line-height: 1.15; margin-bottom: 4px; }
+  .cover-tagline { font-size: 13px; opacity: 0.88; margin-bottom: 18px; }
+  .cover-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+  .cpill {
+    background: rgba(255,255,255,0.18);
+    border-radius: 20px; font-size: 11px;
+    padding: 3px 11px; font-weight: 500;
+  }
+
+  /* ── Chapter header ── */
+  .ch { margin: 36px 0 12px; }
+  .ch-eye { font-size: 10px; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 3px; text-transform: uppercase; }
+  .ch-inner { display: flex; align-items: center; gap: 10px; }
+  .ch-num {
+    display: flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; border-radius: 50%;
+    background: var(--teal-light); color: var(--teal-mid);
+    font-size: 12px; font-weight: 700; flex-shrink: 0;
+  }
+  .ch-title { font-size: 19px; font-weight: 600; }
+
+  /* ── Text ── */
+  .p { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 13px; }
+  hr.div { border: none; border-top: 0.5px solid var(--border); margin: 32px 0; }
+
+  /* ── Insight card ── */
+  .card-insight {
+    border-left: 3px solid var(--teal);
+    background: var(--bg2);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 12px 16px; margin: 14px 0;
+    font-size: 13px; line-height: 1.65; color: var(--text);
+  }
+  .card-insight.warn { border-left-color: var(--amber); }
+
+  /* ── Metric grid ── */
+  .metric-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin: 14px 0; }
+  .mc {
+    background: var(--bg2);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+  }
+  .mc-label { font-size: 10px; color: var(--text3); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
+  .mc-val { font-size: 21px; font-weight: 700; }
+  .mc-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
+
+  /* ── Stat table ── */
+  .stat-t { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  .stat-t tr { border-bottom: 0.5px solid var(--border); }
+  .stat-t tr:last-child { border-bottom: none; }
+  .stat-t td { padding: 7px 4px; font-size: 13px; }
+  .stat-t .lbl { color: var(--text2); }
+  .stat-t .val { text-align: right; font-weight: 600; }
+
+  /* ── Segment cards ── */
+  .seg-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 10px; margin: 14px 0; }
+  .seg-card {
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius);
+    background: var(--bg);
+    padding: 14px;
+  }
+  .seg-tag {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    border-radius: 12px; padding: 2px 9px; margin-bottom: 8px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+  .seg-name { font-size: 14px; font-weight: 600; margin-bottom: 5px; }
+  .seg-desc { font-size: 12px; color: var(--text2); line-height: 1.55; }
+  .seg-status {
+    font-size: 10px; margin-top: 9px; padding: 2px 9px;
+    border-radius: 10px; display: inline-block; font-weight: 600;
+  }
+
+  /* ── Porter table ── */
+  .porter { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 12px 0; }
+  .porter th {
+    text-align: left; padding: 6px 8px;
+    border-bottom: 1px solid var(--border2);
+    font-size: 10px; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--text3); text-transform: uppercase;
+  }
+  .porter td { padding: 9px 8px; border-bottom: 0.5px solid var(--border); vertical-align: top; line-height: 1.5; }
+  .porter tr:last-child td { border-bottom: none; }
+  .prating {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 9px; border-radius: 10px; white-space: nowrap; letter-spacing: 0.04em;
+  }
+  .r-low { background: var(--green-light); color: var(--green); }
+  .r-med { background: var(--warn-light); color: var(--amber); }
+  .r-high { background: var(--coral-light); color: var(--coral); }
+
+  /* ── Capex timeline ── */
+  .cap-row {
+    display: grid; grid-template-columns: 68px 1fr 1fr;
+    gap: 8px; padding: 9px 0; border-bottom: 0.5px solid var(--border);
+    font-size: 12.5px; align-items: start;
+  }
+  .cap-row:last-child { border-bottom: none; }
+  .cap-yr { font-weight: 700; color: var(--teal); font-size: 13px; }
+  .cap-ms { color: var(--text2); }
+
+  /* ── Risk rows ── */
+  .risk-row { display: flex; gap: 12px; margin: 12px 0; align-items: flex-start; }
+  .risk-ico { color: var(--amber); font-size: 17px; flex-shrink: 0; padding-top: 1px; }
+  .risk-title { font-weight: 600; font-size: 13px; margin-bottom: 2px; }
+  .risk-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+
+  /* ── Watch rows ── */
+  .watch-row { display: flex; gap: 12px; margin: 11px 0; align-items: flex-start; }
+  .watch-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; margin-top: 6px; }
+  .watch-title { font-weight: 600; font-size: 13px; }
+  .watch-desc { font-size: 12.5px; color: var(--text2); line-height: 1.55; }
+
+  /* ── Highlights ── */
+  .hl-key { background: var(--key-light); padding: 0 3px; border-radius: 2px; font-weight: 700; }
+  .hl-number { background: var(--blue-light); padding: 0 3px; border-radius: 2px; font-family: var(--mono); font-size: 0.92em; }
+  .hl-risk { background: var(--warn-light); padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--amber); padding-left: 5px; }
+  .hl-catalyst { background: var(--green-light); padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--green); padding-left: 5px; }
+
+  /* ── Takeaway pill ── */
+  .pill {
+    border-left: 3px solid var(--teal);
+    background: var(--teal-light);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 9px 15px; margin: 14px 0 0;
+    font-size: 12.5px; font-weight: 600;
+    color: var(--teal-dark); line-height: 1.55;
+  }
+  .pill.risk { border-left-color: var(--amber); background: var(--warn-light); color: #5a3500; }
+
+  /* ── Verdict ── */
+  .verdict {
+    border: 1.5px solid var(--teal);
+    border-radius: var(--radius);
+    padding: 18px 20px; margin: 24px 0 16px;
+    background: var(--bg);
+  }
+  .verdict-lbl { font-size: 10px; letter-spacing: 0.08em; color: var(--teal); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+  .verdict-text { font-size: 13.5px; line-height: 1.82; }
+
+  /* ── Highlight Index ── */
+  #hi-wrap {
+    border: 0.5px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 16px 18px; margin: 16px 0;
+    background: var(--bg2);
+  }
+  #hi-wrap h3 { font-size: 13px; font-weight: 600; padding-bottom: 10px; border-bottom: 0.5px solid var(--border2); margin-bottom: 10px; }
+  #hi-list { padding-left: 18px; }
+  #hi-list li { font-size: 12px; line-height: 1.55; padding: 3px 0; border-bottom: 0.5px solid var(--border); color: var(--text); }
+  #hi-list li:last-child { border-bottom: none; }
+  #hi-list li[data-type="hl-key"] { color: #5a4000; }
+  #hi-list li[data-type="hl-number"] { font-family: var(--mono); color: var(--blue); }
+  #hi-list li[data-type="hl-risk"] { color: #6b3a00; }
+  #hi-list li[data-type="hl-catalyst"] { color: var(--green); }
+  #hi-list li[data-type="pill"] { font-weight: 600; color: var(--teal-mid); }
+
+  .section-lbl { font-size: 10px; font-weight: 700; letter-spacing: 0.07em; color: var(--text3); text-transform: uppercase; margin: 18px 0 8px; }
+
+  @media (max-width: 600px) {
+    body { font-size: 14px; }
+    .seg-grid { grid-template-columns: 1fr; }
+    .cap-row { grid-template-columns: 55px 1fr; }
+    .cap-ms { display: none; }
+    .metric-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media print {
+    #quick-scan { position: static; }
+    #qs-body { display: block !important; }
+    .tb-btn { display: none; }
+    #hi-wrap { display: block !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ QUICK SCAN ══ -->
+<div id="quick-scan">
+  <div id="qs-header" onclick="toggleQS()">
+    <span>⚡ QUICK SCAN — 7 lines to rebuild context</span>
+    <span id="qs-toggle">▲ collapse</span>
+  </div>
+  <div id="qs-body">
+    <div class="qs-row"><span class="qs-tag">⚡ CONTEXT</span><span class="qs-val">India Li-ion battery materials market growing at 12.4% CAGR to $3.3B by 2032; PLI scheme commits ₹18,100 Cr for 50 GWh domestic ACC capacity — zero domestic LFP cathode supply today.</span></div>
+    <div class="qs-row"><span class="qs-tag">🏭 MODEL</span><span class="qs-val">Coal tar refiner → specialty carbon black world-largest site → battery materials flywheel: the same high-purity pitch that feeds aluminium smelters also feeds Li-ion anodes.</span></div>
+    <div class="qs-row"><span class="qs-tag">🎯 INSIGHT</span><span class="qs-val">Himadri's coal tar pitch monopoly isn't legacy baggage — it is the proprietary feedstock moat that makes its battery anode structurally cheaper than any new Indian entrant can achieve.</span></div>
+    <div class="qs-row"><span class="qs-tag">📊 NUMBERS</span><span class="qs-val">FY26: ₹4,661 Cr revenue (+14%), EBITDA ₹1,006 Cr (+19%), PAT ₹755 Cr (+36%), ROCE 32%, net cash ₹121 Cr. Five-year PAT CAGR: 110%.</span></div>
+    <div class="qs-row"><span class="qs-tag">🚧 TOP RISK</span><span class="qs-val">Chinese LFP dumping: if India doesn't impose anti-dumping duties on imported cathode material, the ₹1,125 Cr Odisha plant faces severe margin pressure at scale.</span></div>
+    <div class="qs-row"><span class="qs-tag">👁 WATCH</span><span class="qs-val">LFP cathode commissioning: 2,000 MT milestone by Q3 FY27 is the first gate — any delay signals customer approval trouble.</span></div>
+    <div class="qs-row"><span class="qs-tag">💡 VERDICT</span><span class="qs-val">Mid chapter — core business cash machine funding an early-stage battery bet; PE ~41x prices in success not yet delivered; justified only if LFP ramp executes on time by FY29.</span></div>
+  </div>
+</div>
+
+<!-- ══ TOOLBAR ══ -->
+<div id="toolbar">
+  <button class="tb-btn" onclick="toggleTheme()">☀ / ☾ Mode</button>
+  <button class="tb-btn" onclick="window.print()">⎙ Print</button>
+</div>
+
+<!-- ══ BODY ══ -->
+<div class="body">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eye">NSE: HSCL &nbsp;·&nbsp; Specialty Chemicals / Advanced Materials &nbsp;·&nbsp; May 2026</div>
+  <div class="cover-name">Himadri Speciality Chemical</div>
+  <div class="cover-tagline">From coal tar to cathode — India's most vertically integrated battery materials bet</div>
+  <div class="cover-pills">
+    <span class="cpill">₹30,636 Cr market cap</span>
+    <span class="cpill">PE ~41x</span>
+    <span class="cpill">ROCE 32%</span>
+    <span class="cpill">PAT +36% FY26</span>
+    <span class="cpill">Net cash ₹121 Cr</span>
+    <span class="cpill">52w range ₹418–₹654</span>
+  </div>
+</div>
+
+<!-- ══ CHAPTER 1 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 1</div>
+  <div class="ch-inner">
+    <div class="ch-num">1</div>
+    <div class="ch-title">Context — the structural tailwind</div>
+  </div>
+</div>
+
+<p class="p">Two macro forces are converging to make this company worth serious attention right now. First, India's electric vehicle transition is forcing the country to confront a supply chain vulnerability: nearly all lithium-ion battery cathode and anode materials are imported from China. Second, the government has set out to fix this — the PLI scheme for Advanced Chemistry Cells commits <span class="hl-number">₹18,100 crore to establish 50 GWh of domestic battery manufacturing capacity</span>, and every gigawatt-hour of cell production needs tonnes of cathode and anode active material to fill it. Himadri Speciality Chemical has spent a decade building the only integrated feedstock-to-battery-material platform in India.</p>
+
+<p class="p">The India lithium-ion battery market was valued at $3.59 billion in 2025 and is projected to reach $9.79 billion by 2034 at an 11.78% CAGR. Battery materials specifically — cathodes, anodes, electrolytes — are on a 12.4% CAGR trajectory and expected to reach $3.3 billion by 2032. <span class="hl-key">LFP (Lithium Iron Phosphate) has overtaken NMC as the dominant global chemistry for mass-market EVs, e-buses, and grid storage</span> — it is safer, longer-cycling, and now the cheapest cell chemistry. And today, there is no commercial LFP cathode active material manufacturer outside China — until Himadri completes its Odisha plant.</p>
+
+<p class="p">Alongside the battery narrative, Himadri's core specialty carbon black business added 70,000 MTPA of capacity in FY26, making its Mahistikry facility <span class="hl-catalyst">the world's largest single-location specialty carbon black plant and placing Himadri among the top five producers globally</span>. This generates the operating cash to fund the battery expansion without equity dilution — a rare combination of cash quality and growth optionality.</p>
+
+<div class="pill">India's PLI-driven battery manufacturing push creates a cathode and anode material gap only Himadri is currently positioned to fill domestically.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 2 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 2</div>
+  <div class="ch-inner">
+    <div class="ch-num">2</div>
+    <div class="ch-title">The business model — coal tar's flywheel</div>
+  </div>
+</div>
+
+<p class="p">Himadri starts with a simple, unglamorous input: coal tar, a byproduct of steel and coke manufacturing. Through its 600,000 MTPA distillation capacity, it refines this into a cascade of valuable fractions — coal tar pitch (used in aluminium smelting and graphite electrodes), specialty carbon black (tyres, cables, inks, conductive applications), refined naphthalene, specialty oils, and SNF (construction chemicals). Each fraction serves a different industry; the same raw material feeds multiple revenue streams simultaneously. This is the flywheel: scale in coal tar procurement drives cost advantage across every downstream product, and every new product deepens the reason to buy more coal tar.</p>
+
+<p class="p">What makes customers sticky? In coal tar pitch, Himadri commands <span class="hl-number">~70% market share in India's organised segment</span>. Its aluminium smelter and graphite electrode customers depend on it for certified, consistent-quality pitch — and qualification cycles run 12–24 months. Switching costs are structural, not just contractual. In specialty carbon black, Himadri's R&D team of 180+ scientists (including 28 PhDs drawn from Japan, South Korea, Australia, US, Europe, and China) continuously develops new high-margin grades — conductive black for batteries, fibre black for high-performance applications — creating product-level stickiness beyond price.</p>
+
+<p class="p">The new flywheel arm: <span class="hl-catalyst">high-purity coal tar pitch — a proprietary grade produced entirely in-house by Himadri — is the primary carbon precursor for lithium-ion battery anode material</span>. No other Indian company controls this raw material at scale for anode production. So the legacy pitch business is not just a cash cow; it is the backward-integration moat for the battery business. Every tonne of proprietary high-purity pitch produced creates an anode material input that any new entrant would need to build an entire separate supply chain to source.</p>
+
+<div class="pill">The coal tar pitch monopoly is not legacy — it is the raw material moat that makes Himadri's anode structurally cheaper than any new Indian entrant can achieve.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 2B — PORTER'S ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 2B</div>
+  <div class="ch-inner">
+    <div class="ch-num">2B</div>
+    <div class="ch-title">Porter's 5 Forces — competitive structure</div>
+  </div>
+</div>
+
+<table class="porter">
+  <thead>
+    <tr>
+      <th style="width:20%">Force</th>
+      <th style="width:12%">Rating</th>
+      <th>Specific rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry intensity</strong></td>
+      <td><span class="prating r-low">Low–Med</span></td>
+      <td>In coal tar pitch, Epsilon Carbon and Rain Industries compete but Himadri holds ~70% organised share and export reach via new terminals at Haldia and Mangalore. In specialty carbon black, PCBL and Birla Carbon are peers but Himadri's Mahistikry scale is now the single largest site globally — scale itself is the differentiator.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer power</strong></td>
+      <td><span class="prating r-med">Medium</span></td>
+      <td>Aluminium smelters and graphite electrode makers are large, sophisticated, and have international sourcing alternatives for pitch. This creates pricing discipline. However, 12–24 month qualification cycles make exit costly — buyers have leverage on price margins, not on switching away.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier power</strong></td>
+      <td><span class="prating r-med">Medium</span></td>
+      <td>Coal tar is sourced from a concentrated base of domestic steel plants (JSW, Tata Steel, SAIL) — not a commodity spot market. Himadri's scale makes it a preferred off-taker, but any upstream supply disruption flows directly to throughput. New export terminals partially diversify geography.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of new entrants</strong></td>
+      <td><span class="prating r-low">Low</span></td>
+      <td>Coal tar distillation requires ₹500–800 Cr capex for meaningful capacity, 10+ years of application know-how, and long customer qualification cycles. Battery materials add a further decade of in-house R&D that cannot be quickly licensed — Himadri spent ₹120 Cr in R&D in FY26 alone.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of substitutes</strong></td>
+      <td><span class="prating r-med">Medium</span></td>
+      <td>In battery anodes, petroleum-coke-based synthetic graphite from Chinese suppliers is the dominant global substitute. For cathodes, NMC chemistry competes with LFP. Neither displaces entirely, but Chinese scale and pricing — if not countered by Indian trade policy — is the primary structural threat to Himadri's battery economics.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="card-insight warn">
+  <strong>Structural pressure synthesis:</strong> The two forces that matter most for Himadri are <em>buyer power</em> (aluminium and graphite customers have global sourcing options that structurally cap pitch pricing power) and <em>threat of substitutes</em> (Chinese battery material manufacturers with cost structures that Indian trade policy must adequately address for the Odisha plant to make economic sense at scale).
+</div>
+
+<div class="pill">Himadri's moat is deepest in pitch and specialty carbon black; the battery bet trades on China import policy risk being offset by first-mover qualification advantage.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 3 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 3</div>
+  <div class="ch-inner">
+    <div class="ch-num">3</div>
+    <div class="ch-title">Vertical stories — four growth engines</div>
+  </div>
+</div>
+
+<div class="seg-grid">
+  <div class="seg-card">
+    <span class="seg-tag" style="background:var(--green-light); color:var(--green);">Clean Energy</span>
+    <div class="seg-name">LFP Cathode Active Material</div>
+    <div class="seg-desc">India's first commercial LFP cathode plant under construction in Odisha. Phase 1: 40,000 MTPA at ₹1,125 Cr capex. First 2,000 MT milestone targeted Q3 FY27, full Phase 1 by FY29. Long-term vision: 200,000 MTPA serving 100 GWh of battery demand globally. Revenue at full Phase 1 utilisation: ~4x capex (~₹4,500 Cr). Global LiB demand growing 27% annually toward 4,700 GWh by 2030.</div>
+    <span class="seg-status" style="background:var(--green-light); color:var(--green);">▶ Ramping — Q3 FY27 first gate</span>
+  </div>
+
+  <div class="seg-card">
+    <span class="seg-tag" style="background:var(--blue-light); color:var(--blue);">Battery Anode</span>
+    <div class="seg-name">Anode Active Material</div>
+    <div class="seg-desc">First 200 MTPA plant commissioned April 23, 2026 at Mahistikry, West Bengal. Entire technology developed fully in-house — no licensed external IP. Backward integrated via proprietary high-purity coal tar pitch. Exclusive technology licensing for Sicona (Australia) silicon-carbon anode tech for India and the world — Gen3 and Gen4 SiCx under OEM sampling with global cell manufacturers.</div>
+    <span class="seg-status" style="background:var(--warn-light); color:var(--amber);">◉ Commissioned — OEM validation phase</span>
+  </div>
+
+  <div class="seg-card">
+    <span class="seg-tag" style="background:var(--amber-light); color:var(--amber);">Specialty Chem</span>
+    <div class="seg-name">Specialty Carbon Black</div>
+    <div class="seg-desc">130,000 MTPA specialty + 250,000 MTPA total — world's largest single-site facility now operational. Serves tyres, cables, inks, coatings, conductive applications. EBITDA per tonne ₹20,000–50,000 depending on grade. Management targets 85–90% utilisation in FY27. Expansion commissioned Q3 FY26; first full-year contribution in FY27.</div>
+    <span class="seg-status" style="background:var(--green-light); color:var(--green);">✓ Running — full-year benefit in FY27</span>
+  </div>
+
+  <div class="seg-card">
+    <span class="seg-tag" style="background:var(--coral-light); color:var(--coral);">Tyres</span>
+    <div class="seg-name">Birla Tyres</div>
+    <div class="seg-desc">Acquired FY26 (₹306 Cr). ₹187 Cr revenue in first half-year. 43 distributors, 1,000+ dealers. Agri, TBB, and PCR segments. New Agriplus and Agribin tractor tyre series launched Q4 FY26. Management target: ₹3,000 Cr revenue over four years. Not yet profitable — in brand rebuild and channel expansion phase. Annual ongoing capex: ₹250–300 Cr.</div>
+    <span class="seg-status" style="background:var(--warn-light); color:var(--amber);">▶ Early — calibrated ramp FY27–28</span>
+  </div>
+</div>
+
+<p class="p" style="margin-top:14px;">Two additional specialty chemicals in pipeline: anthraquinone and carbazole project expected Q2 FY27, addressing significant Indian import dependency in dye and pigment intermediates. Durofresh (branded naphthalene balls for consumer retail) in early traction — small revenue but signals intent to develop B2C brand equity from commodity chemistry.</p>
+
+<div class="pill">Three of four verticals are still ramping or in early stage; only specialty carbon black is fully online — FY27–28 is a volume and margin unlock story.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 4 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 4</div>
+  <div class="ch-inner">
+    <div class="ch-num">4</div>
+    <div class="ch-title">The strategic insight — the one thing to understand</div>
+  </div>
+</div>
+
+<div class="card-insight" style="border-color:var(--teal); background:var(--teal-light);">
+  <p style="font-size:14px; line-height:1.82; color:var(--teal-dark); margin-bottom:12px;">
+    Most investors look at Himadri and see a specialty chemical company trying to pivot into batteries. That is the wrong frame. <span class="hl-key">Himadri is not pivoting — it is ascending a value chain it has always been at the base of.</span> Coal tar pitch has been the primary carbon precursor for synthetic graphite anodes for decades. Himadri has been making the direct input for battery anodes for years without the market ever pricing that in. The new anode plant does not require Himadri to build a new supply chain — it requires only the final processing step, using the same proprietary high-purity pitch that already flows out of its distillation columns.
+  </p>
+  <p style="font-size:14px; line-height:1.82; color:var(--teal-dark);">
+    The same logic applies to the LFP cathode strategy. <span class="hl-key">The specialty carbon black business — now the world's single largest site — is the bridge loan for the battery business.</span> Its cash generation self-funds the ₹1,125 Cr cathode capex without equity dilution. Management confirmed a net cash position of ₹121 Cr at FY26 close. ROCE of 32% on the existing base means capital is being deployed at high returns before the large battery capex even begins. This is not hope-funded; it is cash-funded. That distinction matters enormously when evaluating execution risk.
+  </p>
+</div>
+
+<div class="pill">Himadri ascending into battery materials is backward integration in reverse — the feedstock was always theirs; the final manufacturing step is what is new.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 5 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 5</div>
+  <div class="ch-inner">
+    <div class="ch-num">5</div>
+    <div class="ch-title">The numbers in context</div>
+  </div>
+</div>
+
+<div class="metric-grid">
+  <div class="mc"><div class="mc-label">FY26 Revenue</div><div class="mc-val">₹4,661 Cr</div><div class="mc-sub">+14% YoY · 5yr CAGR 14%</div></div>
+  <div class="mc"><div class="mc-label">FY26 EBITDA</div><div class="mc-val">₹1,006 Cr</div><div class="mc-sub">+19% YoY · 5yr CAGR 58%</div></div>
+  <div class="mc"><div class="mc-label">FY26 PAT</div><div class="mc-val">₹755 Cr</div><div class="mc-sub">+36% YoY · 5yr CAGR 110%</div></div>
+  <div class="mc"><div class="mc-label">EBITDA Margin</div><div class="mc-val">21.6%</div><div class="mc-sub">vs 19.3% FY25; mgmt guides 20%+</div></div>
+  <div class="mc"><div class="mc-label">ROCE</div><div class="mc-val">32%</div><div class="mc-sub">Up from ~22% in FY23</div></div>
+  <div class="mc"><div class="mc-label">Net Cash</div><div class="mc-val">₹121 Cr</div><div class="mc-sub">Positive; self-funded capex</div></div>
+</div>
+
+<div class="section-lbl">Quarterly Trajectory</div>
+<table class="stat-t">
+  <tr><td class="lbl">Q4 FY26 revenue</td><td class="val">₹1,288 Cr &nbsp;(+14% YoY)</td></tr>
+  <tr><td class="lbl">Q4 FY26 EBITDA</td><td class="val">₹280 Cr &nbsp;(+21% YoY)</td></tr>
+  <tr><td class="lbl">Q4 FY26 PAT</td><td class="val">₹208 Cr &nbsp;(+34% YoY)</td></tr>
+  <tr><td class="lbl">Q3 FY26 revenue (reference)</td><td class="val">₹1,248 Cr</td></tr>
+  <tr><td class="lbl">Birla Tyres — half-year FY26</td><td class="val">₹187 Cr revenue (loss-making)</td></tr>
+  <tr><td class="lbl">R&D spend FY26</td><td class="val">₹120 Cr &nbsp;(~2.6% of revenue)</td></tr>
+</table>
+
+<div class="section-lbl">Valuation vs Peers</div>
+<table class="stat-t">
+  <tr><td class="lbl">Market cap (29 May 2026)</td><td class="val">₹30,636 Cr</td></tr>
+  <tr><td class="lbl">Trailing PE</td><td class="val">~41x</td></tr>
+  <tr><td class="lbl">Price-to-Book</td><td class="val">~6.6x</td></tr>
+  <tr><td class="lbl">PCBL (specialty carbon black peer) PE</td><td class="val">~30–35x (no battery optionality)</td></tr>
+  <tr><td class="lbl">Specialty chemicals sector average PE</td><td class="val">~35–45x</td></tr>
+  <tr><td class="lbl">What the market is pricing in</td><td class="val">~10–12x premium over core carbon peers for battery optionality</td></tr>
+</table>
+
+<p class="p" style="margin-top:12px;"><span class="hl-risk">At PE ~41x on FY26 earnings, the market is paying for battery materials revenue that does not yet exist.</span> If the LFP cathode project delays past FY29 full commissioning, valuation likely compresses toward peer multiples of 30–35x — a 20–25% downside without any fundamental deterioration in the core business. On the upside, if LFP ramps toward ₹4,500 Cr in Phase 1 revenue, the PE on FY29 earnings would compress dramatically even at the current share price.</p>
+
+<div class="section-lbl">Capex Timeline</div>
+<div style="margin:10px 0;">
+  <div class="cap-row">
+    <div class="cap-yr">FY24</div>
+    <div>~₹400–500 Cr · Investment cycle starts</div>
+    <div class="cap-ms">Specialty carbon black expansion initiated; LFP project announced (₹1,125 Cr Phase 1)</div>
+  </div>
+  <div class="cap-row">
+    <div class="cap-yr">FY25</div>
+    <div>Birla Tyres acquisition ₹306 Cr</div>
+    <div class="cap-ms">Pitch debottlenecked to 600,000 MTPA; SCB construction on track</div>
+  </div>
+  <div class="cap-row">
+    <div class="cap-yr">FY26</div>
+    <div>SCB expansion ~₹220 Cr · Birla Tyres ₹250–300 Cr ongoing · Anode seed capex</div>
+    <div class="cap-ms">SCB → 130,000 MTPA live; anode 200 MTPA commissioned Apr 2026; net cash positive ₹121 Cr</div>
+  </div>
+  <div class="cap-row">
+    <div class="cap-yr">FY27</div>
+    <div>LFP cathode Phase 1 (₹1,125 Cr total, internal accruals + balance debt)</div>
+    <div class="cap-ms">2,000 MT LFP milestone Q3 FY27; anthraquinone/carbazole Q2 FY27; SCB ramp to 85–90% utilisation</div>
+  </div>
+  <div class="cap-row">
+    <div class="cap-yr">FY29</div>
+    <div>Full Phase 1 LFP at 40,000 MTPA</div>
+    <div class="cap-ms">Revenue unlock: ~₹4,500 Cr from LFP Phase 1; Birla Tyres target ₹3,000 Cr by FY29</div>
+  </div>
+</div>
+
+<div class="card-insight warn">
+  <strong>Capex red flag check:</strong> The ₹1,125 Cr LFP capex is large relative to free cash flow (~₹700–750 Cr PAT minus maintenance capex), but management has guided internal accruals as the primary funding source with balance from debt. Net cash of ₹121 Cr and ROCE of 32% provide balance sheet headroom. The risk is not funding — it is order book visibility at scale: 40,000 MT requires committed offtake from multiple cell manufacturers whose approval timelines are long.
+</div>
+
+<div class="pill"><span class="hl-number">EBITDA CAGR 58%, PAT CAGR 110% over 5 years</span> — the quality of the core business is real and verified; valuation is a bet on battery execution.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 6 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 6</div>
+  <div class="ch-inner">
+    <div class="ch-num" style="background:var(--amber-light); color:var(--amber);">6</div>
+    <div class="ch-title">Risks — eyes open</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-ico">⚠</div>
+  <div>
+    <div class="risk-title">Chinese LFP dumping — the existential battery risk</div>
+    <div class="risk-desc">China's LFP cathode producers (CATL, BYD supply chains) operate at multi-hundred-thousand tonne scale and can price below Himadri's cost of production if India does not impose adequate anti-dumping duties or BIS quality standards. The 2,000 MT pilot is safe regardless; the 40,000 MT full plant is not. Signal to watch: India's DGTR anti-dumping investigations and MoCI policy stance on imported battery materials.</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-ico">⚠</div>
+  <div>
+    <div class="risk-title">LFP customer qualification delay</div>
+    <div class="risk-desc">Cell manufacturers (Ola Electric, Exide, Tata, global OEMs) must complete long approval cycles before committing to offtake. If 2–3 key customer approvals slip, the ramp from 2,000 MT to 40,000 MT stretches by 1–2 years, deferring the revenue unlock and putting pressure on balance sheet leverage. This is the most likely scenario for a mid-story re-rating downward.</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-ico">⚠</div>
+  <div>
+    <div class="risk-title">Birla Tyres capital drag</div>
+    <div class="risk-desc">The tyre revival is capital-intensive, brand-rebuild is slow, and the segment is not yet profitable. If working capital balloons or market share gains disappoint, Birla Tyres could absorb ₹300+ Cr of annual capex for 3–4 years without proportional EBITDA contribution — diluting ROCE from the current 32% high and creating a drag that analysts will penalise.</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-ico">⚠</div>
+  <div>
+    <div class="risk-title">Coal tar feedstock concentration</div>
+    <div class="risk-desc">Coal tar is sourced from a concentrated set of Indian steel and coke producers. A supply disruption — plant shutdown, domestic policy change, or margin squeeze from steel producers — flows directly to Himadri's distillation throughput and cost structure. New export terminals at Haldia and Mangalore partially address geography but do not eliminate the concentration risk.</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-ico">⚠</div>
+  <div>
+    <div class="risk-title">Valuation stretch at PE ~41x</div>
+    <div class="risk-desc">The stock is priced for battery success. Any miss — raw material spread compression, LFP milestone delay, or Birla Tyres losses widening — could trigger multiple compression toward specialty chemicals peers at 30–35x, implying 20–25% downside from current levels without any change in the fundamental quality of the core business.</div>
+  </div>
+</div>
+
+<div class="pill risk">The risk that matters most is not company execution — it is whether India's trade policy creates a viable commercial window for domestic LFP cathode material against Chinese scale.</div>
+
+<hr class="div">
+
+<!-- ══ CHAPTER 7 ══ -->
+<div class="ch">
+  <div class="ch-eye">Chapter 7</div>
+  <div class="ch-inner">
+    <div class="ch-num">7</div>
+    <div class="ch-title">Watch signals — 5 metrics to track every quarter</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot"></div>
+  <div>
+    <div class="watch-title">LFP cathode commissioning milestones</div>
+    <div class="watch-desc">Good: 2,000 MT by Q3 FY27 as guided, with named customer approvals. Red flag: any pushback beyond Q4 FY27 signals customer qualification trouble or construction delays. Listen for specific quarter targets in concall commentary — "progressing well" without a quarter is a soft signal to probe harder.</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot"></div>
+  <div>
+    <div class="watch-title">Specialty carbon black utilisation rate</div>
+    <div class="watch-desc">Good: 85–90% on the expanded 130,000 MTPA capacity in FY27 as guided. Red flag: sustained below 70% two quarters post-commissioning — demand visibility is weaker than guided. This is the core earnings engine; any wobble here hits EBITDA directly and removes the cash cushion funding battery capex.</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot"></div>
+  <div>
+    <div class="watch-title">ROCE trajectory through capex cycle</div>
+    <div class="watch-desc">Good: ROCE sustains above 25% even as LFP capex ramps through FY27. Red flag: ROCE drops below 20% — indicates the balance sheet is being stretched faster than returns are being generated. ROCE is management's stated primary capital allocation KPI; they will say so directly if it is at risk.</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot"></div>
+  <div>
+    <div class="watch-title">Birla Tyres EBITDA inflection</div>
+    <div class="watch-desc">Good: first positive EBITDA quarter in FY27 and revenue run-rate trending toward ₹1,000 Cr annualised. Red flag: revenues below ₹300 Cr annualised by Q2 FY27 or continued EBITDA losses without a clear breakeven timeline — could trigger a strategic review and re-rating of the capital allocation thesis.</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <div class="watch-dot"></div>
+  <div>
+    <div class="watch-title">India trade policy on battery materials</div>
+    <div class="watch-desc">Not in the quarterly financials but arguably the most important exogenous watch item: any MoCI investigation, BIS standard announcement, or anti-dumping duty on imported LFP cathode or anode material creates a protective commercial window for Himadri's Odisha plant. Absence of such protection is the key scenario where battery capex returns shrink materially at full scale.</div>
+  </div>
+</div>
+
+<div class="pill">Single most important quarterly data point: LFP cathode commissioning status and named customer approval milestones — everything else in the story follows from this.</div>
+
+<hr class="div">
+
+<!-- ══ VERDICT ══ -->
+<div class="verdict">
+  <div class="verdict-lbl">▌ Verdict</div>
+  <p class="verdict-text">
+    Himadri sits at a genuine structural intersection: India's EV transition needs domestic battery materials, the PLI scheme provides policy cover, and Himadri has spent a decade building the only fully backward-integrated platform to serve that need — from coal tar distillation to battery-grade pitch to anode material to LFP cathode. The financials are not aspirational: <span class="hl-number">EBITDA at ₹1,006 Cr, ROCE at 32%, PAT growing at a 110% CAGR over 5 years</span>, and a net cash balance sheet give the company the rarest of combinations — genuine quality and genuine optionality. The near-term catalyst is the LFP cathode 2,000 MT milestone in Q3 FY27: successful commissioning with confirmed customer offtake letters would be the most important fundamental re-rating event for the stock. The valuation at PE ~41x is stretched relative to core specialty chemicals peers but defensible if battery revenue materialises — the Phase 1 economics at full utilisation are compelling. We are in the middle chapters of a multi-year story: the core business is proven and cash-generating, the battery business is commissioned but pre-revenue at meaningful scale, and Birla Tyres is a wildcard that management is handling with appropriate discipline. Patience is required, and the watch signals in Chapter 7 are the GPS coordinates.
+  </p>
+</div>
+
+<hr class="div">
+
+<!-- ══ HIGHLIGHT INDEX — always expanded ══ -->
+<div id="hi-wrap">
+  <h3>📌 All Highlights at a Glance</h3>
+  <ol id="hi-list"></ol>
+</div>
+
+<p style="font-size:11px; color:var(--text3); text-align:center; margin-top:32px;">
+  HSCL Investor Brief · Generated May 2026 · Based on Q4 FY26 concall (Apr 27 2026) and public filings · Not investment advice
+</p>
+
+</div><!-- /body -->
+
+<script>
+  function toggleTheme() {
+    var d = document.documentElement;
+    var cur = d.getAttribute('data-theme');
+    var next = cur === 'dark' ? 'light' : 'dark';
+    d.setAttribute('data-theme', next);
+    try { localStorage.setItem('hscl-theme', next); } catch(e) {}
+  }
+
+  function toggleQS() {
+    var b = document.getElementById('qs-body');
+    var lbl = document.getElementById('qs-toggle');
+    var open = b.style.display !== 'none';
+    b.style.display = open ? 'none' : 'block';
+    lbl.textContent = open ? '▼ expand' : '▲ collapse';
+    try { localStorage.setItem('hscl-qs', !open); } catch(e) {}
+  }
+
+  (function init() {
+    try {
+      var t = localStorage.getItem('hscl-theme');
+      if (t) document.documentElement.setAttribute('data-theme', t);
+      var qs = localStorage.getItem('hscl-qs');
+      if (qs === 'false') {
+        document.getElementById('qs-body').style.display = 'none';
+        document.getElementById('qs-toggle').textContent = '▼ expand';
+      }
+    } catch(e) {}
+
+    var list = document.getElementById('hi-list');
+    document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .pill').forEach(function(el) {
+      var txt = el.textContent.trim();
+      if (!txt) return;
+      var li = document.createElement('li');
+      li.textContent = txt;
+      var type = Array.from(el.classList).find(function(c) {
+        return c.startsWith('hl-') || c === 'pill';
+      }) || '';
+      li.setAttribute('data-type', type);
+      list.appendChild(li);
+    });
+  })();
+</script>
+</body>
+</html>

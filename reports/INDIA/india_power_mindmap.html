@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian Power Sector — Listed Universe Mindmap</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e16; --bg2:#0e131d; --panel:#111824; --panel2:#0c1119;
+    --ink:#e8edf5; --muted:#8a97ab; --faint:#5a6678;
+    --line:#1d2738; --line2:#26344a;
+    --accent:#ffb347; --accent2:#3ed0d6; --accent3:#7aa2ff;
+    --rail-gen:#ff8c42; --rail-td:#3ed0d6; --rail-equip:#c792ff;
+    --rail-new:#5ddb7a; --rail-fuel:#e2606b; --rail-fin:#f5d36b;
+    --rail-epc:#7aa2ff;
+    --chip:#172132; --chip-ink:#aeb9cb;
+    --psu:#f5d36b; --new:#5ddb7a;
+    --shadow:0 18px 50px -20px rgba(0,0,0,.7);
+  }
+  [data-theme="light"]{
+    --bg:#f4f1ea; --bg2:#eee9df; --panel:#ffffff; --panel2:#faf7f1;
+    --ink:#1b2230; --muted:#5e6979; --faint:#909aab;
+    --line:#e2ddd2; --line2:#d3ccbd;
+    --accent:#c8761a; --accent2:#1a8f95; --accent3:#3d5cc4;
+    --rail-gen:#d4691f; --rail-td:#1a8f95; --rail-equip:#8a4fd6;
+    --rail-new:#2f9e4f; --rail-fuel:#c4434f; --rail-fin:#c79a1f;
+    --rail-epc:#3d5cc4;
+    --chip:#efeae0; --chip-ink:#5e6979;
+    --shadow:0 16px 40px -22px rgba(40,30,10,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:
+      radial-gradient(1200px 600px at 80% -10%, color-mix(in srgb, var(--accent2) 9%, transparent), transparent 60%),
+      radial-gradient(900px 500px at 0% 0%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    transition:background .4s ease,color .3s ease;
+  }
+  .wrap{max-width:1180px;margin:0 auto;padding:28px 20px 90px}
+
+  /* blueprint grid texture */
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.5;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:46px 46px;mask:radial-gradient(circle at 50% 0%,#000,transparent 80%);}
+  .wrap{position:relative;z-index:1}
+
+  header.hero{margin-bottom:22px}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent2);margin:0 0 10px}
+  h1{font-family:'Fraunces',serif;font-weight:900;font-size:clamp(30px,5vw,52px);line-height:1.02;margin:0 0 8px;letter-spacing:-.01em}
+  h1 .thin{font-weight:400;font-style:italic;color:var(--muted)}
+  .sub{color:var(--muted);max-width:760px;font-size:15.5px;margin:6px 0 0}
+
+  .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:22px 0 8px}
+  .search{flex:1;min-width:240px;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line2);border-radius:12px;padding:11px 14px}
+  .search input{flex:1;background:none;border:none;outline:none;color:var(--ink);font-size:15px;font-family:inherit}
+  .search input::placeholder{color:var(--faint)}
+  .search svg{flex:none;stroke:var(--faint)}
+  .btn{font-family:'IBM Plex Mono',monospace;font-size:12.5px;letter-spacing:.04em;cursor:pointer;background:var(--panel);color:var(--ink);border:1px solid var(--line2);border-radius:12px;padding:11px 15px;transition:.18s;white-space:nowrap}
+  .btn:hover{border-color:var(--accent2);color:var(--accent2)}
+  .btn[aria-pressed]{}
+  .count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);margin-left:auto}
+
+  /* value chain strip */
+  .chain{margin:18px 0 30px;border:1px solid var(--line2);border-radius:16px;background:linear-gradient(180deg,var(--panel),var(--panel2));padding:18px 18px 14px;box-shadow:var(--shadow)}
+  .chain h2{font-size:13px;font-family:'IBM Plex Mono',monospace;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 14px;font-weight:600}
+  .flow{display:flex;flex-wrap:wrap;align-items:stretch;gap:8px}
+  .flow .node{flex:1;min-width:120px;background:var(--bg2);border:1px solid var(--line2);border-radius:11px;padding:11px 12px;position:relative}
+  .flow .node .lbl{font-size:11px;font-family:'IBM Plex Mono',monospace;letter-spacing:.08em;color:var(--faint);text-transform:uppercase}
+  .flow .node .val{font-family:'Fraunces',serif;font-weight:600;font-size:16px;margin-top:2px}
+  .flow .arrow{align-self:center;color:var(--accent);font-size:20px;font-weight:700;flex:none}
+  .cross{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .cross .tag{font-family:'IBM Plex Mono',monospace;font-size:11.5px;padding:5px 11px;border-radius:20px;border:1px dashed var(--line2);color:var(--muted)}
+  .cross .tag b{color:var(--accent2);font-weight:600}
+
+  /* sector cards */
+  .sectors{display:flex;flex-direction:column;gap:16px}
+  .sector{border:1px solid var(--line2);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:var(--shadow)}
+  .sector>summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:14px;padding:18px 20px;position:relative;user-select:none}
+  .sector>summary::-webkit-details-marker{display:none}
+  .sector>summary::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--rail)}
+  .sec-dot{flex:none;width:13px;height:13px;border-radius:50%;background:var(--rail);margin-top:7px;box-shadow:0 0 0 4px color-mix(in srgb,var(--rail) 18%,transparent)}
+  .sec-head{flex:1}
+  .sec-head h2{margin:0;font-family:'Fraunces',serif;font-weight:600;font-size:22px;letter-spacing:-.01em}
+  .sec-head p{margin:3px 0 0;color:var(--muted);font-size:14px}
+  .sec-meta{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--faint);flex:none;text-align:right;margin-top:4px}
+  .chev{flex:none;color:var(--faint);transition:transform .25s;margin-top:5px}
+  .sector[open] .chev{transform:rotate(180deg)}
+
+  .sec-body{padding:4px 20px 20px 39px}
+  .group{margin-top:16px}
+  .group>h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--rail);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+  .group>h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .cos{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:9px}
+  .co{background:var(--bg2);border:1px solid var(--line);border-radius:11px;padding:11px 13px;transition:.16s}
+  .co:hover{border-color:var(--rail);transform:translateY(-1px)}
+  .co .top{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
+  .co .name{font-weight:600;font-size:14.5px}
+  .co .tk{font-family:'IBM Plex Mono',monospace;font-size:11.5px;color:var(--rail);background:color-mix(in srgb,var(--rail) 12%,transparent);padding:2px 7px;border-radius:6px;white-space:nowrap}
+  .co .role{color:var(--muted);font-size:12.5px;margin-top:4px}
+  .co .chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+  .chip{font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.03em;padding:2px 7px;border-radius:20px;background:var(--chip);color:var(--chip-ink);border:1px solid var(--line)}
+  .chip.psu{color:var(--psu);border-color:color-mix(in srgb,var(--psu) 40%,transparent)}
+  .chip.nw{color:var(--new);border-color:color-mix(in srgb,var(--new) 40%,transparent)}
+  .chip.link{color:var(--accent3);border-color:color-mix(in srgb,var(--accent3) 35%,transparent)}
+
+  .nohit{display:none;color:var(--muted);font-style:italic;padding:30px;text-align:center}
+
+  footer{margin-top:34px;border-top:1px solid var(--line2);padding-top:20px;color:var(--muted);font-size:13px}
+  footer h3{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+  footer p{margin:0 0 10px;max-width:860px}
+  .disc{background:color-mix(in srgb,var(--rail-fuel) 9%,transparent);border:1px solid color-mix(in srgb,var(--rail-fuel) 30%,transparent);border-radius:12px;padding:13px 16px;color:var(--ink);font-size:13px}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin:12px 0 18px}
+  .legend span{display:flex;align-items:center;gap:7px;font-size:12.5px;font-family:'IBM Plex Mono',monospace;color:var(--muted)}
+  .legend i{width:11px;height:11px;border-radius:3px;display:inline-block}
+
+  @media(max-width:560px){
+    .sec-meta{display:none}
+    .cos{grid-template-columns:1fr}
+    .flow .arrow{transform:rotate(90deg)}
+    .flow .node{min-width:100%}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <p class="eyebrow">NSE / BSE &nbsp;·&nbsp; Listed Universe Map &nbsp;·&nbsp; Built Jun 2026</p>
+    <h1>The Indian Power Sector,<br><span class="thin">every listed proxy in one map</span></h1>
+    <p class="sub">The whole electricity value chain — fuel, generation, transmission &amp; distribution, the equipment &amp; capital-goods ecosystem, new energy, plus financing and trading. Companies that span several themes carry blue <b>link</b> chips so you can read the connections between subsectors, not just the silos.</p>
+
+    <div class="legend" aria-label="Colour legend for subsectors">
+      <span><i style="background:var(--rail-fuel)"></i>Fuel</span>
+      <span><i style="background:var(--rail-gen)"></i>Generation</span>
+      <span><i style="background:var(--rail-td)"></i>T&amp;D / Grid</span>
+      <span><i style="background:var(--rail-equip)"></i>Equipment</span>
+      <span><i style="background:var(--rail-new)"></i>New Energy</span>
+      <span><i style="background:var(--rail-fin)"></i>Financing &amp; Trading</span>
+      <span><i style="background:var(--rail-epc)"></i>EPC / Execution</span>
+    </div>
+  </header>
+
+  <!-- value chain -->
+  <section class="chain" aria-label="Power value chain overview">
+    <h2>The value chain, end to end</h2>
+    <div class="flow">
+      <div class="node"><div class="lbl">Upstream</div><div class="val">Fuel</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="lbl">Make power</div><div class="val">Generation</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="lbl">Move power</div><div class="val">Transmission</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="lbl">Deliver power</div><div class="val">Distribution</div></div>
+      <div class="arrow">→</div>
+      <div class="node"><div class="lbl">End use</div><div class="val">Consumer</div></div>
+    </div>
+    <div class="cross">
+      <span class="tag">Cross-cutting: <b>Equipment &amp; capital goods</b> feed every stage</span>
+      <span class="tag"><b>Financing</b> (PFC · REC · IREDA) funds the assets</span>
+      <span class="tag"><b>Trading / exchange</b> (IEX) clears the merchant power</span>
+    </div>
+  </section>
+
+  <!-- toolbar -->
+  <div class="toolbar">
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="text" placeholder="Search a company or ticker — e.g. TDPOWERSYS, transformer, hydrogen…" aria-label="Search companies or tickers">
+    </label>
+    <button class="btn" id="expand">Expand all</button>
+    <button class="btn" id="collapse">Collapse all</button>
+    <button class="btn" id="theme" aria-label="Toggle day or night mode">☾ Night</button>
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="sectors" id="root"></div>
+  <div class="nohit" id="nohit">No company or ticker matches that search.</div>
+
+  <footer>
+    <h3>How to read this map</h3>
+    <p>Each card is a listed company with its NSE symbol and one-line role. A company can legitimately sit in more than one branch — Tata Power, the Adani names, JSW Energy and NTPC all do — so the most useful signal here is the <b>link</b> chip, which tells you which other themes that name is also a proxy for. <b>PSU</b> marks government-owned entities; <b>new listing</b> marks recent IPOs (2024–25).</p>
+    <h3>Sources &amp; bias note</h3>
+    <p>Subsector taxonomy and company placements are compiled from public market structure and recent filings/news as of June 2026. Recent renewable and solar-manufacturing IPOs (Waaree, Premier Energies, NTPC Green, ACME Solar, Saatvik, Vikram Solar and the 2025 cohort) move fast and listing details change — <b>verify the exact NSE/BSE symbol and current status on the exchange before acting</b>, especially for SME and freshly listed names. Listings like company directories and "top stocks" pages carry inherent selection and recency bias.</p>
+    <div class="disc"><b>Not investment advice.</b> This is a structural reference map, not a recommendation, screen, or ranking. Inclusion says nothing about quality or valuation. Do your own diligence and verify every figure at source.</div>
+  </footer>
+</div>
+
+<script>
+/* ---------- DATA ---------- */
+const SECTORS = [
+ {id:"fuel", name:"Fuel &amp; Upstream", rail:"var(--rail-fuel)",
+  blurb:"The feedstock for generation — domestic coal, lignite and the gas pipeline grid.",
+  groups:[
+   {name:"Coal &amp; lignite", cos:[
+     {n:"Coal India",t:"COALINDIA",r:"World's largest coal miner; feeds thermal fleet",tags:[["PSU","psu"]]},
+     {n:"NLC India",t:"NLCINDIA",r:"Lignite mining + thermal + solar",tags:[["PSU","psu"],["also: Generation","link"]]},
+     {n:"GMDC",t:"GMDCLTD",r:"Gujarat lignite & minerals",tags:[["PSU","psu"]]},
+   ]},
+   {name:"Natural gas &amp; LNG", cos:[
+     {n:"GAIL India",t:"GAIL",r:"Gas transmission + petchem backbone",tags:[["PSU","psu"]]},
+     {n:"Petronet LNG",t:"PETRONET",r:"LNG import & regasification",tags:[["PSU","psu"]]},
+     {n:"Gujarat Gas",t:"GUJGASLTD",r:"Largest city-gas distributor",tags:[]},
+     {n:"GSPL",t:"GSPL",r:"Gujarat gas transmission pipelines",tags:[["PSU","psu"]]},
+     {n:"Mahanagar Gas",t:"MGL",r:"Mumbai city-gas distribution",tags:[]},
+     {n:"Indraprastha Gas",t:"IGL",r:"Delhi-NCR city-gas distribution",tags:[]},
+     {n:"Adani Total Gas",t:"ATGL",r:"City-gas JV; Adani group",tags:[["also: Adani cluster","link"]]},
+   ]},
+  ]},
+
+ {id:"gen", name:"Generation", rail:"var(--rail-gen)",
+  blurb:"The producers — thermal, hydro and the listed renewable IPPs (independent power producers).",
+  groups:[
+   {name:"Thermal &amp; integrated utilities", cos:[
+     {n:"NTPC",t:"NTPC",r:"India's largest power generator",tags:[["PSU","psu"],["also: NTPC Green","link"]]},
+     {n:"Adani Power",t:"ADANIPOWER",r:"Largest private thermal IPP",tags:[["also: Adani cluster","link"]]},
+     {n:"JSW Energy",t:"JSWENERGY",r:"Thermal + hydro + RE + storage",tags:[["also: Hydro · New Energy","link"]]},
+     {n:"Tata Power",t:"TATAPOWER",r:"Integrated: gen→T&D→discom→solar→EV",tags:[["also: T&D · New Energy","link"]]},
+     {n:"Torrent Power",t:"TORNTPOWER",r:"Gen + T&D + gas + renewables",tags:[["also: T&D · Gas","link"]]},
+     {n:"CESC",t:"CESC",r:"Kolkata integrated utility (RP-SG)",tags:[["also: Distribution","link"]]},
+     {n:"Reliance Power",t:"RPOWER",r:"Thermal + solar IPP (ADAG)",tags:[]},
+   ]},
+   {name:"Hydro", cos:[
+     {n:"NHPC",t:"NHPC",r:"Largest hydro generator + RE",tags:[["PSU","psu"]]},
+     {n:"SJVN",t:"SJVN",r:"Hydro + expanding renewables",tags:[["PSU","psu"]]},
+   ]},
+   {name:"Renewable IPPs (own & operate)", cos:[
+     {n:"Adani Green Energy",t:"ADANIGREEN",r:"Largest listed RE IPP",tags:[["also: Adani cluster","link"]]},
+     {n:"NTPC Green Energy",t:"NTPCGREEN",r:"NTPC's RE arm",tags:[["PSU","psu"],["new listing","nw"]]},
+     {n:"ACME Solar Holdings",t:"ACMESOLAR",r:"Diversified solar/hybrid IPP",tags:[["new listing","nw"]]},
+     {n:"KPI Green Energy",t:"KPIGREEN",r:"Solar/wind IPP + CPP model",tags:[]},
+     {n:"Orient Green Power",t:"GREENPOWER",r:"Wind-focused IPP",tags:[]},
+     {n:"Waaree Renewable Tech",t:"WAAREERTL",r:"RE EPC + IPP (Waaree group)",tags:[["also: Solar mfg","link"]]},
+   ]},
+  ]},
+
+ {id:"td", name:"Transmission, Distribution &amp; Grid", rail:"var(--rail-td)",
+  blurb:"Moving and delivering power — the wires business, discoms, and the smart-grid / metering layer.",
+  groups:[
+   {name:"Transmission (the wires)", cos:[
+     {n:"Power Grid Corp",t:"POWERGRID",r:"National transmission monopoly-scale",tags:[["PSU","psu"]]},
+     {n:"Adani Energy Solutions",t:"ADANIENSOL",r:"Pvt transmission + smart metering",tags:[["also: Smart meter · Adani","link"]]},
+   ]},
+   {name:"Distribution (discoms)", cos:[
+     {n:"Tata Power",t:"TATAPOWER",r:"Mumbai/Delhi/Odisha discoms",tags:[["also: Generation","link"]]},
+     {n:"Torrent Power",t:"TORNTPOWER",r:"Ahmedabad/Surat discoms",tags:[["also: Generation","link"]]},
+     {n:"CESC",t:"CESC",r:"Kolkata distribution",tags:[["also: Generation","link"]]},
+     {n:"Reliance Infrastructure",t:"RELINFRA",r:"BSES Delhi distribution + EPC",tags:[]},
+   ]},
+   {name:"Smart metering &amp; grid kit", cos:[
+     {n:"Genus Power Infra",t:"GENUSPOWER",r:"Leading smart-meter (AMI) maker",tags:[]},
+     {n:"HPL Electric & Power",t:"HPL",r:"Meters + switchgear + wires",tags:[]},
+     {n:"Salzer Electronics",t:"SALZERELEC",r:"Switchgear + wires + smart-meter push",tags:[["also: Equipment","link"]]},
+   ]},
+  ]},
+
+ {id:"equip", name:"Equipment &amp; Capital Goods", rail:"var(--rail-equip)",
+  blurb:"The picks-and-shovels ecosystem that supplies every stage — gen equipment, transformers, switchgear and cables.",
+  groups:[
+   {name:"Generation equipment (BTG / turbines)", cos:[
+     {n:"BHEL",t:"BHEL",r:"Boiler-turbine-generator; thermal/nuclear kit",tags:[["PSU","psu"]]},
+     {n:"Thermax",t:"THERMAX",r:"Boilers, heating, clean-energy systems",tags:[["also: New Energy","link"]]},
+     {n:"Triveni Turbine",t:"TRITURBINE",r:"Industrial steam turbines (<100 MW)",tags:[]},
+     {n:"TD Power Systems",t:"TDPOWERSYS",r:"AC generators for all prime movers",tags:[]},
+     {n:"ISGEC Heavy Engg",t:"ISGEC",r:"Boilers, EPC, heavy fabrication",tags:[]},
+     {n:"Walchandnagar Inds",t:"WALCHANNAG",r:"Heavy machinery; nuclear/defence kit",tags:[]},
+   ]},
+   {name:"Transformers", cos:[
+     {n:"Hitachi Energy India",t:"POWERINDIA",r:"Power transformers, HVDC, grid tech",tags:[]},
+     {n:"GE Vernova T&D India",t:"GVTD",r:"Grid transmission equipment",tags:[]},
+     {n:"Siemens",t:"SIEMENS",r:"Electrification, automation, grid",tags:[]},
+     {n:"Siemens Energy India",t:"SIEMENSENR",r:"Demerged power/grid pure-play",tags:[["new listing","nw"]]},
+     {n:"ABB India",t:"ABB",r:"Electrification & motion",tags:[]},
+     {n:"CG Power & Ind",t:"CGPOWER",r:"Transformers, motors, switchgear, semis",tags:[]},
+     {n:"Transformers & Rectifiers",t:"TARIL",r:"Pure-play transformer maker",tags:[]},
+     {n:"Voltamp Transformers",t:"VOLTAMP",r:"Dry & oil-filled transformers",tags:[]},
+     {n:"Bharat Bijlee",t:"BBL",r:"Transformers + motors",tags:[]},
+     {n:"Indo Tech Transformers",t:"INDOTECH",r:"Power & distribution transformers",tags:[]},
+   ]},
+   {name:"Switchgear &amp; electrical systems", cos:[
+     {n:"Schneider Electric Infra",t:"SCHNEIDER",r:"MV switchgear, grid automation",tags:[]},
+     {n:"HBL Engineering",t:"HBLENGINE",r:"Batteries + railway KAVACH + electronics",tags:[["also: Storage","link"]]},
+   ]},
+   {name:"Cables, wires &amp; conductors", cos:[
+     {n:"Polycab India",t:"POLYCAB",r:"Largest W&C maker; FMEG",tags:[]},
+     {n:"KEI Industries",t:"KEI",r:"Cables, EHV, EPC",tags:[]},
+     {n:"Finolex Cables",t:"FINCABLES",r:"Electrical & communication cables",tags:[]},
+     {n:"RR Kabel",t:"RRKABEL",r:"Wires & cables + FMEG",tags:[]},
+     {n:"Havells India",t:"HAVELLS",r:"Cables + electrical consumer goods",tags:[]},
+     {n:"Apar Industries",t:"APARINDS",r:"Conductors + transformer oil + cables",tags:[]},
+     {n:"Universal Cables",t:"UNIVCABLES",r:"Power & EHV cables (M.P. Birla)",tags:[]},
+     {n:"Diamond Power Infra",t:"DIACABS",r:"Conductors, cables, transformers",tags:[]},
+     {n:"Sterlite Technologies",t:"STLTECH",r:"Optical fibre + OPGW for grid",tags:[["also: Telecom infra","link"]]},
+   ]},
+  ]},
+
+ {id:"new", name:"New Energy", rail:"var(--rail-new)",
+  blurb:"The clean-energy stack — solar & wind manufacturing, EPC, storage, hydrogen and bioenergy proxies.",
+  groups:[
+   {name:"Solar — cells &amp; modules", cos:[
+     {n:"Waaree Energies",t:"WAAREEENER",r:"Largest module maker; integrating upstream",tags:[["new listing","nw"]]},
+     {n:"Premier Energies",t:"PREMIERENE",r:"#2 integrated cell+module maker",tags:[["new listing","nw"]]},
+     {n:"Websol Energy",t:"WEBELSOLAR",r:"Solar cells & modules",tags:[]},
+     {n:"Vikram Solar",t:"VIKRAMSOLR",r:"Module maker + EPC",tags:[["new listing","nw"]]},
+     {n:"Saatvik Green Energy",t:"SAATVIKGL",r:"Modules + EPC + storage",tags:[["new listing","nw"]]},
+     {n:"Insolation Energy",t:"INSOLATION",r:"Modules; SME-origin",tags:[]},
+     {n:"Solex Energy",t:"SOLEX",r:"Module manufacturing",tags:[]},
+   ]},
+   {name:"Solar EPC &amp; rooftop", cos:[
+     {n:"Sterling & Wilson RE",t:"SWSOLAR",r:"Global solar EPC (Reliance-backed)",tags:[["also: EPC","link"]]},
+     {n:"Oriana Power",t:"ORIANA",r:"C&I solar + green-H2 EPC",tags:[]},
+     {n:"KPI Green Energy",t:"KPIGREEN",r:"Solar developer + EPC",tags:[["also: RE IPP","link"]]},
+   ]},
+   {name:"Wind", cos:[
+     {n:"Suzlon Energy",t:"SUZLON",r:"Largest wind OEM + O&M",tags:[]},
+     {n:"Inox Wind",t:"INOXWIND",r:"Wind turbine OEM",tags:[["also: Inox Green","link"]]},
+     {n:"Inox Green Energy",t:"IGESL",r:"Wind O&M services arm",tags:[["also: Inox Wind","link"]]},
+   ]},
+   {name:"Storage, hydrogen &amp; bioenergy", cos:[
+     {n:"Exide Industries",t:"EXIDEIND",r:"Lead-acid + Li-ion gigafactory build",tags:[]},
+     {n:"Amara Raja Energy",t:"ARE&M",r:"Batteries + new-energy cells",tags:[]},
+     {n:"Servotech Renewable",t:"SERVOTECH",r:"EV chargers, inverters, solar kit",tags:[]},
+     {n:"Praj Industries",t:"PRAJIND",r:"Ethanol/biofuels + green-H2 tech",tags:[]},
+     {n:"IREDA",t:"IREDA",r:"Dedicated green-energy lender",tags:[["PSU","psu"],["also: Financing","link"]]},
+   ]},
+  ]},
+
+ {id:"fin", name:"Financing &amp; Power Trading", rail:"var(--rail-fin)",
+  blurb:"The capital and the marketplace — the NBFCs that fund power assets and the exchange that clears merchant power.",
+  groups:[
+   {name:"Power-sector financiers (NBFCs)", cos:[
+     {n:"Power Finance Corp",t:"PFC",r:"Largest power-sector lender",tags:[["PSU","psu"]]},
+     {n:"REC",t:"RECLTD",r:"Power & infra financing (PFC subsidiary)",tags:[["PSU","psu"]]},
+     {n:"IREDA",t:"IREDA",r:"Renewable-energy focused lender",tags:[["PSU","psu"],["also: New Energy","link"]]},
+     {n:"PTC India Fin. Svcs",t:"PFS",r:"Power-sector NBFC",tags:[]},
+   ]},
+   {name:"Trading &amp; exchange", cos:[
+     {n:"Indian Energy Exchange",t:"IEX",r:"Dominant power exchange / spot market",tags:[]},
+     {n:"PTC India",t:"PTC",r:"Largest power trading company",tags:[]},
+   ]},
+  ]},
+
+ {id:"epc", name:"EPC &amp; Project Execution", rail:"var(--rail-epc)",
+  blurb:"Cross-cutting builders — the contractors that erect transmission lines, substations and power projects.",
+  groups:[
+   {name:"Transmission &amp; power EPC", cos:[
+     {n:"Larsen & Toubro",t:"LT",r:"Power T&D EPC + green-H2 + nuclear",tags:[["also: New Energy","link"]]},
+     {n:"KEC International",t:"KEC",r:"Largest transmission-tower EPC (RPG)",tags:[]},
+     {n:"Kalpataru Projects",t:"KPIL",r:"T&D + infra EPC",tags:[]},
+     {n:"Techno Electric",t:"TECHNOE",r:"Substation/transmission EPC + data centres",tags:[]},
+     {n:"Skipper",t:"SKIPPER",r:"Transmission towers + poles",tags:[]},
+   ]},
+  ]},
+];
+
+/* ---------- RENDER ---------- */
+const root = document.getElementById('root');
+let TOTAL = 0;
+SECTORS.forEach((s,i)=>{
+  const det = document.createElement('details');
+  det.className='sector'; det.open = (i<2); det.style.setProperty('--rail', s.rail); det.dataset.sector='';
+  let coCount = s.groups.reduce((a,g)=>a+g.cos.length,0); TOTAL += coCount;
+  let gh = s.groups.map(g=>{
+    const cards = g.cos.map(c=>{
+      const chips = (c.tags||[]).map(t=>`<span class="chip ${t[1]}">${t[0]}</span>`).join('');
+      return `<div class="co" data-search="${(c.n+' '+c.t+' '+c.r).toLowerCase()}">
+        <div class="top"><span class="name">${c.n}</span><span class="tk">${c.t}</span></div>
+        <div class="role">${c.r}</div>
+        ${chips?`<div class="chips">${chips}</div>`:''}
+      </div>`;
+    }).join('');
+    return `<div class="group"><h3>${g.name}</h3><div class="cos">${cards}</div></div>`;
+  }).join('');
+  det.innerHTML = `
+    <summary>
+      <span class="sec-dot"></span>
+      <span class="sec-head"><h2>${s.name}</h2><p>${s.blurb}</p></span>
+      <span class="sec-meta">${coCount} listed</span>
+      <svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg>
+    </summary>
+    <div class="sec-body">${gh}</div>`;
+  root.appendChild(det);
+});
+document.getElementById('count').textContent = TOTAL + ' companies · ' + SECTORS.length + ' subsectors';
+
+/* ---------- SEARCH ---------- */
+const q = document.getElementById('q'), nohit = document.getElementById('nohit');
+q.addEventListener('input', ()=>{
+  const term = q.value.trim().toLowerCase();
+  let anyShown = false;
+  document.querySelectorAll('.sector').forEach(sec=>{
+    let secHit = false;
+    sec.querySelectorAll('.group').forEach(gr=>{
+      let grHit = false;
+      gr.querySelectorAll('.co').forEach(co=>{
+        const match = !term || co.dataset.search.includes(term);
+        co.style.display = match ? '' : 'none';
+        if(match){grHit=true; anyShown=true;}
+      });
+      gr.style.display = grHit ? '' : 'none';
+      if(grHit) secHit=true;
+    });
+    sec.style.display = secHit ? '' : 'none';
+    if(secHit && term) sec.open = true;
+  });
+  nohit.style.display = anyShown ? 'none' : 'block';
+});
+
+/* ---------- CONTROLS ---------- */
+document.getElementById('expand').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=true);
+document.getElementById('collapse').onclick = ()=>document.querySelectorAll('.sector').forEach(s=>s.open=false);
+const themeBtn = document.getElementById('theme');
+themeBtn.onclick = ()=>{
+  const cur = document.documentElement.getAttribute('data-theme');
+  const next = cur==='dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  themeBtn.textContent = next==='dark' ? '☾ Night' : '☀ Day';
+};
+</script>
+</body>
+</html>

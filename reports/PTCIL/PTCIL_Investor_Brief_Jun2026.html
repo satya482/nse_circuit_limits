@@ -1,0 +1,1266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PTC Industries — NSE Investor Brief · PTCIL · June 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+<style>
+/* ============ CSS VARIABLES ============ */
+:root {
+  --ink:        #1A1A2E;
+  --paper:      #F7F5F0;
+  --rule:       #DDD8CE;
+  --amber:      #C47B00;
+  --amber-bg:   #FFF7E6;
+  --green:      #1D7A5B;
+  --green-bg:   #E8F5F0;
+  --red:        #B03020;
+  --red-bg:     #FDF0EE;
+  --navy:       #1E3A5F;
+  --navy-bg:    #EBF0F8;
+  --purple:     #5340A0;
+  --purple-bg:  #F0EDFB;
+  --teal:       #0E7490;
+  --teal-bg:    #E0F5FA;
+  --coral:      #C05020;
+  --coral-bg:   #FDF0E8;
+  --gray:       #6B7280;
+  --gray-light: #F0EDE8;
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --mono:       'DM Mono', 'Courier New', monospace;
+  /* Segment colours per persona */
+  --seg-aero:   #D85A30; /* Aerospace/defence = Coral */
+  --seg-ind:    #378ADD; /* Industrial = Blue */
+  --seg-mat:    #534AB7; /* Materials/Tech = Purple */
+  --seg-uk:     #1D9E75; /* UK/Trac = Teal/Green */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--sans); background: var(--paper); color: var(--ink); font-size: 15px; line-height: 1.75; }
+
+/* ============ PRINT ============ */
+@media print {
+  body { font-size: 11px; background: white; }
+  .no-print { display: none !important; }
+  .masthead { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #quick-scan { position: static !important; border-radius: 0; page-break-inside: avoid; }
+  #quick-scan-body { display: block !important; }
+  #highlight-index { display: block !important; }
+  #highlight-index ol { display: block !important; }
+  details { display: block !important; }
+  details summary { display: none !important; }
+  section, .chapter-card, .risk-row, .watch-row { break-inside: avoid; }
+}
+
+/* ============ QUICK-SCAN STRIP ============ */
+#quick-scan {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--ink);
+  color: #F0EDE8;
+  border-bottom: 3px solid var(--amber);
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+#quick-scan-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+.qs-label {
+  color: var(--amber);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 10.5px;
+}
+.qs-ticker { color: #A8A098; font-size: 10px; }
+.qs-chevron { color: var(--amber); font-size: 14px; transition: transform 0.2s; }
+.qs-chevron.open { transform: rotate(180deg); }
+#quick-scan-body {
+  display: block;
+  padding: 0 20px 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.qs-line {
+  display: flex;
+  gap: 12px;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  line-height: 1.5;
+}
+.qs-line:last-child { border-bottom: none; }
+.qs-icon { min-width: 22px; }
+.qs-tag {
+  color: #A8A098;
+  min-width: 90px;
+  font-size: 10px;
+  letter-spacing: 0.5px;
+  padding-top: 1px;
+}
+.qs-text { color: #E8E4DC; flex: 1; }
+.qs-text strong { color: #FFF; }
+
+/* ============ LAYOUT ============ */
+.content { max-width: 900px; margin: 0 auto; padding: 40px 28px 80px; }
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  background: var(--ink); color: #F7F5F0;
+  padding: 52px 56px 44px; position: relative; overflow: hidden;
+}
+.masthead::before {
+  content: ''; position: absolute; top: 0; right: 0;
+  width: 360px; height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 6px, rgba(255,255,255,0.02) 6px, rgba(255,255,255,0.02) 12px);
+}
+.masthead-eyebrow {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 12px;
+}
+.masthead h1 { font-family: var(--serif); font-size: 46px; font-weight: 700; letter-spacing: -1px; line-height: 1.1; }
+.masthead-sub { font-size: 15px; color: #A8A098; margin-top: 10px; max-width: 560px; font-weight: 300; }
+.masthead-meta { margin-top: 26px; display: flex; gap: 14px; flex-wrap: wrap; }
+.meta-chip {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 4px; padding: 5px 12px;
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: #C8C0B0;
+}
+.meta-chip.hot { background: rgba(196,123,0,0.25); border-color: var(--amber); color: var(--amber); }
+
+/* ============ CHAPTER HEADERS ============ */
+.ch-header {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin: 52px 0 22px; padding-bottom: 12px; border-bottom: 2px solid var(--ink);
+}
+.ch-num {
+  width: 38px; height: 38px; background: var(--ink); color: #F0EDE8;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 16px; font-weight: 700; flex-shrink: 0; margin-top: 3px;
+}
+.ch-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.ch-title { font-family: var(--serif); font-size: 22px; font-weight: 700; line-height: 1.25; margin-top: 2px; }
+/* Colour accents per chapter */
+.ch-aero { border-bottom-color: var(--coral); } .ch-aero .ch-num { background: var(--coral); }
+.ch-mat  { border-bottom-color: var(--purple); } .ch-mat .ch-num { background: var(--purple); }
+.ch-ind  { border-bottom-color: var(--navy); } .ch-ind .ch-num { background: var(--navy); }
+.ch-ins  { border-bottom-color: var(--amber); } .ch-ins .ch-num { background: var(--amber); }
+.ch-num-fin { border-bottom-color: var(--teal); } .ch-fin .ch-num { background: var(--teal); }
+.ch-risk { border-bottom-color: var(--red); } .ch-risk .ch-num { background: var(--red); }
+.ch-watch { border-bottom-color: var(--green); } .ch-watch .ch-num { background: var(--green); }
+.ch-ver { border-bottom-color: var(--ink); } .ch-ver .ch-num { background: var(--ink); }
+.ch-ledger { border-bottom-color: var(--teal); } .ch-ledger .ch-num { background: var(--teal); }
+
+/* ============ PROSE ============ */
+p { margin-bottom: 14px; color: #2A2A3A; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+
+/* ============ LEAD ============ */
+.lead {
+  font-size: 16px; line-height: 1.8; color: var(--navy);
+  padding: 18px 22px; border-left: 4px solid var(--amber);
+  background: var(--amber-bg); border-radius: 0 6px 6px 0; margin-bottom: 22px;
+}
+.lead-coral  { border-left-color: var(--coral);  background: var(--coral-bg); color: #3A1505; }
+.lead-teal   { border-left-color: var(--teal);   background: var(--teal-bg);  }
+.lead-purple { border-left-color: var(--purple); background: var(--purple-bg); }
+.lead-green  { border-left-color: var(--green);  background: var(--green-bg);  }
+.lead-navy   { border-left-color: var(--navy);   background: var(--navy-bg);  }
+
+/* ============ INLINE HIGHLIGHTS ============ */
+.hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: var(--mono); font-size: 0.95em; }
+.hl-risk     { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--amber); padding-left: 6px; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--green); padding-left: 6px; }
+
+/* ============ TAKEAWAY PILLS ============ */
+.takeaway-pill {
+  background: var(--gray-light); border-left: 3px solid var(--amber);
+  border-radius: 0 6px 6px 0; padding: 11px 16px; margin: 24px 0 0;
+  font-size: 13px; font-weight: 600; color: var(--ink); font-family: var(--sans);
+}
+
+/* ============ STAT ROWS ============ */
+.stat-block { background: white; border: 1.5px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.stat-row { display: flex; justify-content: space-between; padding: 10px 16px; border-bottom: 1px solid var(--rule); font-size: 13.5px; }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--gray); font-size: 12.5px; }
+.stat-value { font-family: var(--mono); font-weight: 600; color: var(--ink); }
+.stat-value.up { color: var(--green); }
+.stat-value.down { color: var(--red); }
+.stat-value.warn { color: var(--amber); }
+.stat-header { background: var(--ink); color: #EEE; padding: 9px 16px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.5px; font-weight: 500; }
+
+/* ============ SEGMENT CARDS ============ */
+.seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+@media(max-width:680px) { .seg-grid { grid-template-columns: 1fr; } }
+.seg-card { border: 1.5px solid var(--rule); border-radius: 8px; padding: 18px; background: white; }
+.seg-card.aero { border-top: 3px solid var(--coral); }
+.seg-card.mat  { border-top: 3px solid var(--purple); }
+.seg-card.uk   { border-top: 3px solid var(--green); }
+.seg-card.ind  { border-top: 3px solid var(--navy); }
+.seg-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+.seg-name { font-family: var(--serif); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.seg-tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 500; margin-bottom: 8px; }
+.tag-coral { background: var(--coral-bg); color: var(--coral); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+.tag-green { background: var(--green-bg); color: var(--green); }
+.tag-navy { background: var(--navy-bg); color: var(--navy); }
+.tag-teal { background: var(--teal-bg); color: var(--teal); }
+.tag-amber { background: var(--amber-bg); color: var(--amber); }
+.tag-red { background: var(--red-bg); color: var(--red); }
+.seg-desc { font-size: 13px; color: #2A2A3A; line-height: 1.6; }
+.seg-client { font-family: var(--mono); font-size: 11px; color: var(--gray); margin-top: 8px; }
+
+/* ============ TABLES ============ */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 18px 0; }
+.data-table th { background: var(--ink); color: #EEE; padding: 9px 12px; text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.5px; font-weight: 500; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; color: #2A2A3A; line-height: 1.5; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: #FAFAF7; }
+.data-table th.coral { background: var(--coral); }
+.data-table th.teal  { background: var(--teal); }
+.data-table th.navy  { background: var(--navy); }
+.data-table th.purple{ background: var(--purple); }
+.data-table th.green { background: var(--green); }
+.data-table th.amber { background: var(--amber); }
+
+/* ============ INSIGHT BOX ============ */
+.insight-box { background: var(--ink); color: #F0EDE8; border-radius: 8px; padding: 24px 28px; margin: 24px 0; }
+.insight-box .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.insight-box p { color: #D0C8BC; font-size: 14.5px; line-height: 1.75; }
+.insight-box strong { color: #FFF; }
+
+/* ============ RISK REGISTER ============ */
+.risk-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); align-items: flex-start; }
+.risk-row:last-child { border-bottom: none; }
+.risk-num { min-width: 28px; height: 28px; background: var(--red-bg); color: var(--red); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 12px; font-weight: 700; flex-shrink: 0; }
+.risk-body { flex: 1; }
+.risk-name { font-weight: 700; font-size: 13.5px; margin-bottom: 4px; color: var(--ink); }
+.risk-what { font-size: 13px; color: #2A2A3A; line-height: 1.6; margin-bottom: 6px; }
+.risk-signal { font-size: 11.5px; color: var(--gray); font-style: italic; }
+.risk-mag { font-family: var(--mono); font-size: 10px; }
+
+/* ============ WATCH SIGNALS ============ */
+.watch-row { display: flex; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.watch-row:last-child { border-bottom: none; }
+.watch-dot { min-width: 10px; height: 10px; border-radius: 50%; background: var(--green); margin-top: 7px; flex-shrink: 0; }
+.watch-body { flex: 1; }
+.watch-name { font-weight: 700; font-size: 13.5px; margin-bottom: 3px; }
+.watch-what { font-size: 13px; color: #2A2A3A; line-height: 1.6; }
+.watch-flag { font-size: 11.5px; color: var(--red); font-style: italic; margin-top: 4px; }
+
+/* ============ VERDICT ============ */
+.verdict-box { background: var(--amber-bg); border: 1.5px solid var(--amber); border-radius: 8px; padding: 22px 26px; margin: 30px 0; }
+.verdict-box .label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.verdict-box p { color: var(--ink); font-size: 14.5px; line-height: 1.75; }
+
+/* ============ CAPEX TIMELINE ============ */
+.capex-card { background: white; border: 1.5px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.capex-header { background: var(--teal); color: white; padding: 10px 16px; font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+.capex-row { display: grid; grid-template-columns: 80px 1fr 1fr 1fr; border-bottom: 1px solid var(--rule); }
+.capex-row:last-child { border-bottom: none; }
+.capex-cell { padding: 10px 12px; font-size: 12.5px; border-right: 1px solid var(--rule); }
+.capex-cell:last-child { border-right: none; }
+.tl-label { font-family: var(--mono); font-size: 10px; color: var(--gray); margin-bottom: 3px; text-transform: uppercase; }
+.tl-val { font-weight: 600; color: var(--ink); font-size: 13px; }
+.tl-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+.status-ok     { color: var(--green); font-family: var(--mono); font-size: 11px; }
+.status-drift  { color: var(--amber); font-family: var(--mono); font-size: 11px; }
+.status-active { color: var(--teal);  font-family: var(--mono); font-size: 11px; }
+
+/* ============ PORTER'S TABLE ============ */
+.force-pill { display: inline-block; padding: 2px 8px; border-radius: 12px; font-family: var(--mono); font-size: 10px; font-weight: 600; }
+.pill-low  { background: var(--green-bg); color: var(--green); }
+.pill-med  { background: var(--amber-bg); color: var(--amber); }
+.pill-high { background: var(--red-bg);   color: var(--red);   }
+
+/* ============ DIVIDERS ============ */
+hr.divider { border: none; border-top: 1.5px solid var(--rule); margin: 36px 0; }
+
+/* ============ SMALL LABEL ============ */
+.small-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+
+/* ============ HIGHLIGHT INDEX (always expanded) ============ */
+#highlight-index {
+  background: white; border: 1.5px solid var(--rule); border-radius: 8px;
+  padding: 20px 22px; margin: 32px 0;
+}
+.hi-title { font-family: var(--serif); font-size: 15px; font-weight: 700; margin-bottom: 14px; color: var(--ink); }
+#highlight-index ol { padding-left: 20px; }
+#highlight-index li { font-size: 12.5px; color: #2A2A3A; line-height: 1.6; margin-bottom: 5px; padding-bottom: 5px; border-bottom: 1px dotted var(--rule); }
+#highlight-index li:last-child { border-bottom: none; }
+#highlight-index li[data-type="hl-key"]      { border-left: 3px solid #C4A000; padding-left: 8px; }
+#highlight-index li[data-type="hl-number"]   { border-left: 3px solid var(--navy); padding-left: 8px; }
+#highlight-index li[data-type="hl-risk"]     { border-left: 3px solid var(--amber); padding-left: 8px; }
+#highlight-index li[data-type="hl-catalyst"] { border-left: 3px solid var(--green); padding-left: 8px; }
+#highlight-index li[data-type="takeaway-pill"]{ border-left: 3px solid var(--coral); padding-left: 8px; font-style: italic; }
+
+/* ============ LEDGER SECTION ============ */
+.ledger-header-band {
+  background: var(--teal); color: white;
+  padding: 32px 56px 28px; margin-top: 0;
+}
+.ledger-header-band .eyebrow {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: rgba(255,255,255,0.6); margin-bottom: 8px;
+}
+.ledger-header-band h2 {
+  font-family: var(--serif); font-size: 34px; font-weight: 700; line-height: 1.1; margin-bottom: 8px;
+}
+.ledger-header-band .sub { font-size: 14px; color: rgba(255,255,255,0.75); max-width: 560px; }
+
+.credibility-badge {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--amber-bg); border: 2px solid var(--amber);
+  border-radius: 8px; padding: 12px 18px; margin: 18px 0;
+}
+.cb-tier { font-family: var(--serif); font-size: 28px; font-weight: 700; color: var(--amber); }
+.cb-label { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--amber); }
+.cb-desc { font-size: 12.5px; color: var(--gray); margin-top: 2px; }
+
+.flag-card {
+  border: 1px solid var(--rule); border-radius: 6px; padding: 15px 17px;
+  background: white; margin-bottom: 10px;
+}
+.flag-card.active   { border-left: 3px solid var(--red); }
+.flag-card.watch    { border-left: 3px solid var(--amber); }
+.flag-card.clear    { border-left: 3px solid var(--green); }
+.flag-name { font-family: var(--mono); font-size: 11.5px; font-weight: 600; display: flex; align-items: center; gap: 7px; margin-bottom: 5px; }
+.flag-what { font-size: 13px; color: #2A2A3A; line-height: 1.55; }
+.flag-signal { font-size: 11.5px; color: var(--gray); font-style: italic; margin-top: 4px; }
+
+.promise-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 14px 0; }
+.promise-table th { background: var(--teal); color: white; padding: 8px 11px; text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px; }
+.promise-table td { padding: 8px 11px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.promise-table tr:last-child td { border-bottom: none; }
+.promise-table tr:nth-child(even) td { background: #FAFAF7; }
+
+.ledger-score-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+@media(max-width:680px) { .ledger-score-grid { grid-template-columns: 1fr; } }
+.lsg-card { background: white; border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.lsg-name { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 6px; }
+.lsg-score { font-family: var(--serif); font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+.lsg-score.green { color: var(--green); }
+.lsg-score.amber { color: var(--amber); }
+.lsg-score.red   { color: var(--red); }
+.lsg-label { font-size: 12px; color: var(--gray); }
+
+footer {
+  background: var(--ink); color: #6B7280; padding: 20px 40px;
+  font-family: var(--mono); font-size: 10.5px;
+  display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ QUICK-SCAN STRIP ============ -->
+<div id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div id="quick-scan-toggle" onclick="toggleQS()" aria-expanded="true" aria-controls="quick-scan-body">
+    <span class="qs-label">⚡ Quick Scan — PTCIL</span>
+    <span class="qs-ticker">NSE · PTCIL · Precision Castings &amp; Aerospace Materials · June 2026</span>
+    <span class="qs-chevron open" id="qs-chevron" aria-hidden="true">▲</span>
+  </div>
+  <div id="quick-scan-body" aria-live="polite">
+    <div class="qs-line">
+      <span class="qs-icon">⚡</span>
+      <span class="qs-tag">CONTEXT</span>
+      <span class="qs-text">Russia-Ukraine titanium supply shock has created a strategic vacuum; India's defence import bill heading to <strong>₹35,000 Cr by 2026</strong> — PTC is the only Indian company building end-to-end titanium capacity to fill it.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🏭</span>
+      <span class="qs-tag">MODEL</span>
+      <span class="qs-text">Three-arm flywheel: legacy industrial castings funds Aerolloy (Ti aerospace) which is now funded by the SMTC complex — full vertical integration from titanium sponge to finished aero-engine blades.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🎯</span>
+      <span class="qs-tag">INSIGHT</span>
+      <span class="qs-text"><strong>PTC is not a casting company — it is India's only entity capable of supplying the full titanium supply chain</strong>: raw ingot → casting → finished machined component — to Western OEMs locked out of Russia.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">📊</span>
+      <span class="qs-tag">NUMBERS</span>
+      <span class="qs-text">Q4 FY26: Revenue <strong>+85% YoY</strong> to ₹225 Cr; EBITDA <strong>+153% YoY</strong> to ₹72.6 Cr; FY26 full-year revenue ~₹603 Cr vs ₹308 Cr in FY25 — first year of exponential inflection.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🚧</span>
+      <span class="qs-tag">TOP RISK</span>
+      <span class="qs-text">Working capital days have ballooned to <strong>381 days</strong> (from 205) and debtor days stand at 170 — a hidden balance sheet stress that could convert revenue growth to negligible free cash flow.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">👁</span>
+      <span class="qs-tag">WATCH</span>
+      <span class="qs-text">Single most important metric: <strong>EBCHR commissioning confirmation</strong> + post-commissioning titanium material revenue in Q1/Q2 FY27 — this unlocks the 10x growth thesis.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">💡</span>
+      <span class="qs-tag">VERDICT</span>
+      <span class="qs-text"><strong>Mid-chapter compounder</strong> — capability built, customer roster assembled; FY27 is the execution proof year. Priced for perfection at 360-400x trailing PE; thesis is real but execution risk is elevated.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🗒</span>
+      <span class="qs-tag">MGMT</span>
+      <span class="qs-text">Ledger Tier <strong>B+</strong> · Active flags: <em>Working capital stretch · EBCHR completion drift tracking · QIP dilution post "internal accruals" framing · Margin mechanism partially working</em></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ MASTHEAD ============ -->
+<div class="masthead" role="banner">
+  <div class="masthead-eyebrow">NSE INVESTOR BRIEF · EQUITY RESEARCH · JUNE 2026</div>
+  <h1>PTC Industries</h1>
+  <div class="masthead-sub">India's only vertically integrated titanium-to-airframe supply chain — and why the Russian sanction regime may have handed it a once-in-a-generation moat.</div>
+  <div class="masthead-meta">
+    <span class="meta-chip">NSE: PTCIL</span>
+    <span class="meta-chip">Mkt Cap ~₹24,000–26,000 Cr</span>
+    <span class="meta-chip">SMALL CAP · SEBI CLASSIFICATION</span>
+    <span class="meta-chip">CMD: SACHIN AGARWAL</span>
+    <span class="meta-chip hot">Q4 FY26: +85% REV · +153% EBITDA</span>
+    <span class="meta-chip">ICRA: STABLE OUTLOOK</span>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- ====================== CHAPTER 1: CONTEXT ====================== -->
+<div class="ch-header ch-aero" role="heading" aria-level="2">
+  <div class="ch-num">1</div>
+  <div>
+    <div class="ch-eyebrow">Chapter One · Macro Tailwind</div>
+    <div class="ch-title">The titanium supply shock that nobody planned for</div>
+  </div>
+</div>
+
+<div class="lead lead-coral">
+  VSMPO-AVISMA, Russia's titanium giant, supplied roughly 30% of the world's aerospace-grade titanium before 2022. Sanctions, war, and Western OEM blacklisting have systematically cut that supply. The resulting shortage — happening precisely when the global airline fleet needs 40,000 new narrowbodies over the next two decades — has turned titanium supply chain sovereignty from a "nice to have" into an existential priority for Airbus, Boeing, Safran, GE Aerospace, and Rolls-Royce.
+</div>
+
+<p>India's aerospace sector sits at a structural inflection with three overlapping tailwinds converging simultaneously: a global titanium supply crisis, a domestic defence indigenisation imperative, and one of the world's fastest-growing commercial aviation markets. <span class="hl-catalyst">India's domestic air passenger traffic is projected to grow 8-10% annually through FY30, requiring approximately 1,500 new aircraft deliveries over the decade</span> — each narrowbody consuming 6–10 tonnes of titanium in its engine and airframe.</p>
+
+<p>The global aerospace titanium market was valued at <span class="hl-number">$3.1 billion in 2025</span> and is forecast to reach $7.2 billion by 2035 at an 8.6% CAGR, driven by aero-engine production ramp-ups, defence re-armament in Europe and Asia, and space launch vehicle demand. Within India specifically, the aerospace titanium machining segment is projected to grow at 15.2% CAGR from $105 million in 2025 to $324 million by 2033 — roughly three times the global market's growth rate.</p>
+
+<p>The policy architecture is equally compelling. India still imports approximately 70% of its defence requirements — an annual import bill the government projects will reach <span class="hl-number">₹35,000 crore by FY27</span>. The Defence Acquisition Procedure 2020, the UP Defence Industrial Corridor (where PTC's SMTC complex is anchored), and the iDEX fast-track procurement framework all point toward forced indigenisation across propulsion, airframe, and materials. <span class="hl-key">For the first time in India's industrial history, a company building aerospace-grade titanium domestically is not a supplier to domestic programs — it is a strategic asset of the Indian state.</span></p>
+
+<div class="takeaway-pill" style="border-left-color: var(--coral);">
+  Russia's titanium export collapse + India's 70% defence import dependency = a strategic demand signal that a company with PTC's capabilities cannot ignore — and neither can global OEMs.
+</div>
+
+<!-- ====================== CHAPTER 2: BUSINESS MODEL ====================== -->
+<div class="ch-header ch-mat" role="heading" aria-level="2">
+  <div class="ch-num">2</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Two · Business Model</div>
+    <div class="ch-title">A 62-year-old foundry that quietly became a strategic materials company</div>
+  </div>
+</div>
+
+<div class="lead lead-purple">
+  Founded in 1963 as a precision foundry, PTC Industries spent five decades serving Oil &amp; Gas and Marine clients with stainless steel castings — respectable but unremarkable. The pivot to aerospace-grade titanium and superalloy casting, begun in 2017 through the subsidiary Aerolloy Technologies, has now evolved into something no other Indian company has built: a single-site, fully vertically integrated titanium supply chain from raw ingot to finished engine components.
+</div>
+
+<p>The business today has three distinct revenue arms that interact in a virtuous capacity-funding loop. The legacy <strong>Industrial Castings</strong> business (PTC standalone) generates steady, dollar-denominated revenue from global Oil &amp; Gas, LNG, Marine, and Power clients including Rolls-Royce Marine, Metso, Siemens, and Flowserve. This arm throws off working capital and cross-subsidises the higher-capex aerospace divisions.</p>
+
+<p><strong>Aerolloy Technologies</strong> is the strategic core. Using proprietary technologies — Replicast®, RapidCast®, Printcast® (3D-printed patterns for near-net-shape titanium casting), and forgeCAST® — Aerolloy produces titanium and superalloy castings for aero-engines, defence platforms, and space propulsion. Its facility within the Strategic Materials Technology Complex (SMTC) at the UP Defence Industrial Corridor now hosts a Vacuum Arc Remelting (VAR) furnace (1,500 tpa), a Vacuum Induction Melting (VIM) furnace (900 tpa), and an Electron Beam Cold Hearth Remelting (EBCHR) facility (5,000 tpa, commissioning imminent). <span class="hl-key">Aerolloy is one of only two companies in the world capable of manufacturing large investment castings in both titanium alloys and superalloys at the same site</span> — a capability concentration that took $100+ million and eight years to build.</p>
+
+<p>The third arm, <strong>Trac Precision Solutions</strong> (UK), acquired in December 2024 for approximately £25 million, adds machining of High-Pressure and Low-Pressure Turbine Blades, Nozzle Guide Vanes, Heat Shields, and Seal Segments — the finished-component layer that sits atop casting. Trac's revenue of ~£24.8 million (~₹260 Cr) brings immediate international scale and, critically, access to Western supply chain qualification standards and aero-engine OEM relationships. The Trac acquisition effectively completes PTC's chain from raw titanium ingot → investment casting → precision-machined ready-to-fit turbine component.</p>
+
+<p>Customer stickiness in aerospace casting is structural rather than contractual. Aerospace OEMs require 18–36 months of qualification testing before a new casting supplier ships on a production program. Once qualified on a platform like the LEAP engine (Safran/CFM) or the Rafale's M88 engine (Dassault), <span class="hl-number">the average program life is 20–30 years</span> — making each qualification a long-duration annuity rather than a repeating sales effort. PTC now holds multi-year supply agreements with Safran Aircraft Engines, Dassault Aviation (Rafale and Falcon programs), Honeywell Aerospace Technologies, BAE Systems, Israel Aerospace Industries, HAL, DRDO/GTRE, and BrahMos.</p>
+
+<div class="takeaway-pill" style="border-left-color: var(--purple);">
+  The flywheel: Industrial castings fund Aerolloy; Aerolloy's titanium capability attracts OEM qualifications; qualifications fund 20-year revenue visibility; visibility justifies SMTC capex; capex builds the materials capability that completes the vertical.
+</div>
+
+<!-- ====================== CHAPTER 2B: PORTER'S FIVE FORCES ====================== -->
+<div class="ch-header" style="border-bottom-color:#1D9E75;" role="heading" aria-level="2">
+  <div class="ch-num" style="background:#1D9E75;">2B</div>
+  <div>
+    <div class="ch-eyebrow">Chapter 2B · Competitive Structure</div>
+    <div class="ch-title">Porter's Five Forces — titanium aerospace casting</div>
+  </div>
+</div>
+
+<table class="data-table" role="table" aria-label="Porter's Five Forces analysis">
+  <thead>
+    <tr>
+      <th class="green">Force</th>
+      <th class="green">Rating</th>
+      <th class="green">Company-Specific Mechanism &amp; Named Evidence</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="force-pill pill-low">LOW</span></td>
+      <td>In aerospace titanium casting globally, Precision Castparts Corp (US) and Howmet Aerospace (US) are the primary full-capability peers; in India, PTC has no domestic rival. Russia's VSMPO has been effectively removed from Western supply chains. New entrants (ATI, Timet) focus on mill products, not precision net-shape casting. Aerolloy's unique dual Ti+superalloy large-casting capability creates a near-duopoly in this specific niche.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="force-pill pill-med">MEDIUM</span></td>
+      <td>Top customers include Safran, Dassault, Honeywell, BAE — all global OEMs with procurement scale. However, customer switching costs are extremely high: aerospace qualification takes 2-3 years per platform and cannot be short-cut. Contracts are multi-year (Dassault's Rafale agreement spans the aircraft program life). OEM leverage is constrained by the fact that PTC is one of very few qualified alternatives globally.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="force-pill pill-high">HIGH</span></td>
+      <td>Titanium sponge (the critical feedstock) is produced globally by only a handful of companies in Japan (Osaka Titanium Technologies, Toho Titanium), Kazakhstan (UKTMP), and the US (ATI). Russia's VSMPO (formerly a major sponge source) is largely unavailable to Western supply chains. PTC's January 2025 MoU with the Odisha government for a titanium sponge facility is the strategic response — but feedstock self-sufficiency is at least 3–4 years away.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="force-pill pill-low">LOW</span></td>
+      <td>Capital barrier: ₹1,000+ Cr of capex merely to build the SMTC complex. Qualification barrier: 2–5 years per OEM program. Regulatory barrier: ITAR compliance, DCSA approval (for US defence programs), NSIA approval (UK — already obtained for Trac acquisition). Metallurgical knowledge barrier: senior hires like VP Operations Baljinder Koura (ex-Rolls-Royce, GE Aviation — 30+ years) cannot be replicated quickly. Together, these create a 7–10 year replication moat.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="force-pill pill-low">LOW</span></td>
+      <td>CFRP (carbon fibre reinforced polymer) substitutes for some titanium in airframe structures. However, in hot-section aero-engine applications (turbine blades, compressor stages, combustion casings), titanium and nickel superalloys are irreplaceable due to thermal and strength requirements. PTC's focus on engine components rather than airframe means the substitute threat is structurally contained. Single-crystal turbine blade orders from DRDO/GTRE confirm the permanence of this demand.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="lead lead-teal" style="margin-top:14px;">
+  <strong>Synthesis:</strong> The two most structurally pressuring forces on PTC are <strong>Supplier Power</strong> (titanium sponge import dependency — a single supply disruption could halt production) and <strong>Buyer Power</strong> (OEM pricing leverage, especially as PTC scales into high-volume programs where OEM procurement teams will push harder). Both are being actively mitigated — SMTC's vertical integration attacks supplier dependency; multi-year locked agreements reduce buyer leverage.
+</div>
+
+<div class="takeaway-pill" style="border-left-color: #1D9E75;">
+  Near-duopoly globally in large Ti+superalloy investment casting; structural moats come not from patents but from an irreplaceable combination of capex, certification, and metallurgical expertise accumulated over a decade.
+</div>
+
+<!-- ====================== CHAPTER 3: VERTICALS ====================== -->
+<div class="ch-header ch-ind" role="heading" aria-level="2">
+  <div class="ch-num">3</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Three · Revenue Verticals</div>
+    <div class="ch-title">Four business arms, four different growth clocks</div>
+  </div>
+</div>
+
+<div class="seg-grid">
+  <div class="seg-card aero">
+    <div class="seg-eyebrow">Segment · Aerolloy Technologies</div>
+    <div class="seg-name">Titanium &amp; Superalloy Aerospace Castings</div>
+    <span class="seg-tag tag-coral">RAMPING · HIGHEST VALUE</span>
+    <p class="seg-desc">Precision investment castings in titanium (Ti-6Al-4V, Ti-5553) and nickel superalloys for aero-engines, defence platforms, and space propulsion. Programs include LEAP engine (Safran/CFM), Rafale M88 (Dassault), Honeywell aero-engine components, BAE Systems, and GTRE's single-crystal turbine blade program for India's indigenous fighter engine (Kaveri successors). The October 2025 GTRE order — the first-ever single-crystal turbine blade awarded to an Indian private company — is particularly significant as a strategic indigenisation milestone.</p>
+    <p class="seg-client">KEY CLIENTS: Safran · Dassault · Honeywell · BAE Systems · HAL · DRDO/GTRE · Israel Aerospace · Blue Origin</p>
+  </div>
+
+  <div class="seg-card mat">
+    <div class="seg-eyebrow">Segment · SMTC Materials Facility</div>
+    <div class="seg-name">Titanium &amp; Superalloy Materials (VAR/VIM/EBCHR)</div>
+    <span class="seg-tag tag-purple">PRE-REVENUE · COMMISSIONING</span>
+    <p class="seg-desc">The SMTC at Lucknow's UP Defence Industrial Corridor houses the world's largest single-site titanium and superalloy remelting plant (inaugurated May 2025 by Raksha Mantri Rajnath Singh). Current operating capacity: VAR 1,500 tpa + VIM 900 tpa. Imminent addition: EBCHR 5,000 tpa — the critical missing link that enables high-purity recycled titanium and superalloy ingots for both internal use (Aerolloy castings) and external sale to OEMs. The EBCHR uses an electron beam to melt and purify scrap titanium without contamination, yielding aerospace-grade material at significantly lower cost than virgin titanium.</p>
+    <p class="seg-client">REVENUE STATUS: VAR/VIM online; EBCHR commissioning expected Q1 FY27; titanium powder capability targeted Phase 2</p>
+  </div>
+
+  <div class="seg-card uk">
+    <div class="seg-eyebrow">Segment · Trac Precision Solutions (UK)</div>
+    <div class="seg-name">Precision-Machined Turbine Blades &amp; Engine Components</div>
+    <span class="seg-tag tag-green">INTEGRATION · RECOVERING</span>
+    <p class="seg-desc">Acquired December 2024, Trac is a UK-based specialist in HP/LP turbine blades, nozzle guide vanes, heat shields, and seal segments for aero-engines, industrial gas turbines, and defence programs. Revenue at acquisition: ~£24.8 million (~₹260 Cr annually). The H1 FY26 margin compression was partly attributable to Trac integration costs — management guided margin recovery as synergies take hold. Trac has now also signed an MoU with Coolbrook Oy (Finland) for machining RotoDynamic Heater components — a strategic foray into the industrial electrification market.</p>
+    <p class="seg-client">KEY CLIENTS: Western aero-engine OEMs (undisclosed) · Coolbrook Oy · Niche industrial gas turbine programs</p>
+  </div>
+
+  <div class="seg-card ind">
+    <div class="seg-eyebrow">Segment · PTC Standalone (Legacy)</div>
+    <div class="seg-name">Industrial Castings — Oil &amp; Gas, LNG, Marine</div>
+    <span class="seg-tag tag-navy">STEADY · CASH GENERATIVE</span>
+    <p class="seg-desc">The 62-year-old foundry business serving global Oil &amp; Gas, LNG, Marine, Petrochemical, and Power Generation sectors. Products include complex valve castings, pump bodies, marine propeller hubs, and heat exchanger components in stainless steel, duplex, super-duplex, Inconel, Hastelloy, and Nickel Aluminium Bronze (NAB). Clients include Rolls-Royce Marine, Metso, Siemens, Flowserve. This arm operates with proven technologies (Replicast, Centrifugal Casting) and generates the free cash flow that historically funded Aerolloy's early capex phases.</p>
+    <p class="seg-client">KEY CLIENTS: Rolls-Royce Marine · Metso · Siemens · Flowserve · Global LNG operators</p>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color: var(--navy);">
+  Legacy industrial (steady) → Aerolloy castings (ramping) → SMTC materials (pre-revenue) → Trac UK (integrating): four growth clocks at four different phases, with EBCHR commissioning the single event that changes the most clocks simultaneously.
+</div>
+
+<!-- ====================== CHAPTER 4: STRATEGIC INSIGHT ====================== -->
+<div class="ch-header ch-ins" role="heading" aria-level="2">
+  <div class="ch-num">4</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Four · Strategic Insight</div>
+    <div class="ch-title">The Russian Vacancy — and who filled it</div>
+  </div>
+</div>
+
+<div class="insight-box" role="region" aria-label="Key strategic insight">
+  <div class="label">⚡ The Non-Obvious Truth About PTCIL</div>
+  <p>The standard aerospace casting narrative frames PTC as a "Make in India" precision manufacturer riding government policy. That framing is accurate but misses the structural point. <strong>PTC Industries is not just building an alternative to China — it is filling a strategic supply vacuum created by the permanent isolation of Russia.</strong></p>
+  <p style="margin-top:12px;">VSMPO-AVISMA produced roughly 30% of the world's aerospace-grade titanium before 2022. Boeing, Airbus, Safran, and Rolls-Royce spent years finding alternatives. Japan and the US have titanium mill capacity but not the casting expertise. China has both but is geopolitically ineligible for Western OEM supply chains. <strong>India — specifically PTC at the UP Defence Industrial Corridor — is the only non-Western country building a fully vertically integrated titanium supply chain (raw ingot + casting + machined component) that is simultaneously ITAR-compliant, politically acceptable to Western democracies, and actually operational.</strong></p>
+  <p style="margin-top:12px;">This makes PTC's SMTC complex not just a manufacturing asset, but a geopolitical hedge — one that Western aerospace primes are motivated to support through long-term contracts. The Dassault, Safran, Honeywell, and BAE agreements that have accumulated over 2023–2025 are not just commercial wins; they are strategic partnerships by OEMs who need a politically reliable, technologically capable titanium supplier outside of China and Russia.</p>
+</div>
+
+<p>The Trac Precision acquisition reinforces this thesis. By acquiring a UK-qualified precision machining house with established Western supply chain certifications, PTC can now offer the full chain — from ingot to ready-to-fit turbine blade — from a single group that spans Lucknow and the UK. <span class="hl-key">This India-UK axis — government-approved under the UK National Security and Investment Act — is PTC's most durable moat: not a patent or a process, but a supply chain position that Western OEMs will spend 5–7 years building for any alternative.</span></p>
+
+<div class="takeaway-pill" style="border-left-color: var(--amber);">
+  The real thesis: PTC has captured the titanium supply chain position that Russia's isolation created — and Western OEMs are now paying to secure it via long-term contracts.
+</div>
+
+<!-- ====================== CHAPTER 5: NUMBERS ====================== -->
+<div class="ch-header ch-fin" style="border-bottom-color: var(--teal);" role="heading" aria-level="2">
+  <div class="ch-num" style="background: var(--teal);">5</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Five · Financial Scorecard</div>
+    <div class="ch-title">The inflection is real — the free cash flow gap is the question</div>
+  </div>
+</div>
+
+<div class="lead lead-teal">
+  FY26 marks the first year PTC's revenue jumped visibly — from ₹308 Cr in FY25 to an estimated ₹603 Cr in FY26, driven by Aerolloy ramp-up, Trac consolidation (from Q3 FY26), and legacy industrial recovery. EBITDA recovered sharply in Q4 FY26 to 32%+ after a Q1 compression (9%) caused by Trac integration costs. The market has priced this inflection at 360-400x trailing PE — among the highest valuations on the NSE for an industrial company.
+</div>
+
+<h3 style="font-family: var(--serif); font-size: 16px; margin: 20px 0 10px; color: var(--teal);">Revenue &amp; Profitability Trajectory (₹ Crore)</h3>
+
+<div class="stat-block">
+  <div class="stat-header">CONSOLIDATED P&amp;L — FY22 to FY26E</div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue — FY22</span>
+    <span class="stat-value">₹179 Cr</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue — FY23</span>
+    <span class="stat-value">₹219 Cr <span style="font-size:11px;color:var(--green);">(+22% YoY)</span></span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue — FY24</span>
+    <span class="stat-value">₹257 Cr <span style="font-size:11px;color:var(--green);">(+17% YoY)</span></span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue — FY25</span>
+    <span class="stat-value">₹308 Cr <span style="font-size:11px;color:var(--green);">(+20% YoY)</span></span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Revenue — FY26E (Q1–Q4 actual)</span>
+    <span class="stat-value up">₹603 Cr <span style="font-size:11px;">(+96% YoY)</span></span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Q4 FY26 EBITDA Margin</span>
+    <span class="stat-value up">~32% (recovered from Q1's 9%)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Q4 FY26 PAT</span>
+    <span class="stat-value up">₹59.91 Cr (+144% YoY)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">FY26E Full-Year PAT (est.)</span>
+    <span class="stat-value">~₹102 Cr</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">ROCE (latest)</span>
+    <span class="stat-value warn">7.74% — depressed by capex cycle</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">ROE (latest)</span>
+    <span class="stat-value warn">6.07% — low; improving with earnings ramp</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Promoter Holding</span>
+    <span class="stat-value">59.7% (declined 8.21% over 3 years — QIP dilution)</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Debt / Equity</span>
+    <span class="stat-value up">~12.7% — remarkably light balance sheet</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Working Capital Days</span>
+    <span class="stat-value down">381 days (up from 205) ← key risk</span>
+  </div>
+  <div class="stat-row">
+    <span class="stat-label">Debtor Days</span>
+    <span class="stat-value down">170 days ← elevated; watch closely</span>
+  </div>
+</div>
+
+<h3 style="font-family: var(--serif); font-size: 16px; margin: 24px 0 10px; color: var(--teal);">Valuation Context vs Peers</h3>
+
+<table class="data-table" role="table" aria-label="Peer valuation comparison">
+  <thead>
+    <tr>
+      <th class="teal">Company</th>
+      <th class="teal">Sector Focus</th>
+      <th class="teal">Trailing PE</th>
+      <th class="teal">P/B</th>
+      <th class="teal">Comment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PTC Industries (PTCIL)</strong></td>
+      <td>Aerospace Ti casting + materials</td>
+      <td><span class="hl-number">362–428x</span></td>
+      <td>17–19x</td>
+      <td>Priced for 10x revenue growth; sector peers median PE is 38x</td>
+    </tr>
+    <tr>
+      <td>Bharat Forge (BHFC)</td>
+      <td>Forgings (auto + aerospace)</td>
+      <td>~55x</td>
+      <td>~5x</td>
+      <td>Dominant in forgings but not in titanium aerospace casting</td>
+    </tr>
+    <tr>
+      <td>AIA Engineering (AIAE)</td>
+      <td>High-chrome grinding media</td>
+      <td>~32x</td>
+      <td>~5x</td>
+      <td>Specialty industrial but not aerospace-grade</td>
+    </tr>
+    <tr>
+      <td>Precision Castparts (US, PCC)</td>
+      <td>Aerospace Ti/Ni castings (US)</td>
+      <td>N/A (Berkshire subsidiary)</td>
+      <td>N/A</td>
+      <td>Global benchmark — PTC's US peer equivalent</td>
+    </tr>
+    <tr>
+      <td>Howmet Aerospace (HWM, US)</td>
+      <td>Aerospace structures + fasteners</td>
+      <td>~35x</td>
+      <td>~8x</td>
+      <td>Best-in-class aerospace manufacturer; PTCIL trades at 10x premium</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The market is pricing PTCIL as a <strong>high-conviction growth option</strong> rather than a current-period earnings asset. At ₹26,000 Cr market cap on ~₹102 Cr FY26E PAT, the stock is pricing in management's 10–15x revenue target over 5–7 years. ICICI Securities values the stock at ₹21,500 based on 50x FY28E EPS — implying management must deliver a further tripling of earnings by FY28 for the stock to justify its current price. <span class="hl-risk">The valuation allows almost no margin of error on execution — a single significant delay (EBCHR commissioning, OEM order push-out, working capital crisis) could compress the multiple sharply.</span></p>
+
+<hr class="divider">
+
+<h3 style="font-family: var(--serif); font-size: 16px; margin: 0 0 10px; color: var(--teal);">Capex Timeline Card</h3>
+
+<div class="capex-card" role="region" aria-label="Capex timeline">
+  <div class="capex-header">📍 CAPEX PROGRAMME — SMTC LUCKNOW · UP DEFENCE INDUSTRIAL CORRIDOR</div>
+  <div class="capex-row" style="background:#F7F5F0; font-family: var(--mono); font-size:11px; color: var(--gray);">
+    <div class="capex-cell" style="border-right:1px solid var(--rule);">YEAR</div>
+    <div class="capex-cell" style="border-right:1px solid var(--rule);">PROJECT / MILESTONE</div>
+    <div class="capex-cell" style="border-right:1px solid var(--rule);">CAPEX DEPLOYED</div>
+    <div class="capex-cell">REVENUE IMPACT</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="tl-val">FY24</div><div class="tl-sub">Apr 23–Mar 24</div></div>
+    <div class="capex-cell">
+      <div class="tl-val">QIP ₹700 Cr raised; 50-acre SMTC land acquired; SMTC construction begins</div>
+      <div class="tl-sub">Foundation year of the transformation — internal accruals funding cited initially; equity raise executed</div>
+    </div>
+    <div class="capex-cell"><div class="tl-val">₹700 Cr QIP</div><div class="tl-sub">Capex-to-revenue: ~2.7x FY24 revenue — unusually heavy</div></div>
+    <div class="capex-cell"><div class="status-active">● FOUNDATION</div><div class="tl-sub">No immediate revenue impact; capacity being built</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="tl-val">FY25</div><div class="tl-sub">Apr 24–Mar 25</div></div>
+    <div class="capex-cell">
+      <div class="tl-val">VAR 1,500 tpa + VIM 900 tpa commissioned; SMTC inaugurated May 2025 by Raksha Mantri; Trac acquisition (Dec 2024)</div>
+      <div class="tl-sub">VAR 400 furnace: PTC becomes one of only 2 companies globally with large Ti+superalloy investment casting capability</div>
+    </div>
+    <div class="capex-cell"><div class="tl-val">₹350 Cr expansion (ongoing)</div><div class="tl-sub">Plus ~£25M for Trac UK (cash); approx. ₹470 Cr total</div></div>
+    <div class="capex-cell"><div class="status-ok">✓ OPERATIONAL</div><div class="tl-sub">FY25 revenue ₹308 Cr; VAR/VIM beginning to contribute material revenue in FY26</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="tl-val">FY26</div><div class="tl-sub">Apr 25–Mar 26</div></div>
+    <div class="capex-cell">
+      <div class="tl-val">EBCHR 5,000 tpa: "on verge of commissioning" (ICICI, June 2026); Aerolloy VAR 400 furnace producing titanium alloy ingots commercially; Trac integration progresses</div>
+      <div class="tl-sub">GTRE single-crystal turbine blade PO received Oct 2025; Honeywell LTA signed Dec 2025; Safran MoU Jun 2025; Kineco MoU 2026</div>
+    </div>
+    <div class="capex-cell"><div class="tl-val">Included in ₹1,000 Cr total programme</div><div class="tl-sub">Fully funded per management (QIP + internal accruals + term loans)</div></div>
+    <div class="capex-cell"><div class="status-drift">⚠ EBCHR DRIFT</div><div class="tl-sub">Originally Q4 FY26; now guiding Q1 FY27. FY26 revenue: ~₹603 Cr (+96% YoY)</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="tl-val">FY27E</div><div class="tl-sub">Apr 26 onwards</div></div>
+    <div class="capex-cell">
+      <div class="tl-val">EBCHR commission + utilisation ramp; Phase 2 titanium recycling plant (₹300 Cr new, announced separately); approval/qualification build-up phase with new clients</div>
+      <div class="tl-sub">ICICI: "next 1-2 years are approval/order build-up phase; followed by exponential growth"</div>
+    </div>
+    <div class="capex-cell"><div class="tl-val">₹300 Cr recycling plant (announced)</div><div class="tl-sub">Over and above the ₹1,000 Cr programme; funding TBD</div></div>
+    <div class="capex-cell"><div class="status-active">● PENDING</div><div class="tl-sub">Analyst 3-year revenue CAGR projected at ~100%; FY28E earnings basis for current valuation</div></div>
+  </div>
+</table>
+
+<p style="font-size:12.5px; color: var(--gray); margin-top: 8px; font-style: italic;">Red flag check: EBCHR commissioning has drifted from Q4 FY26 to Q1 FY27 — a one-quarter drift that is acceptable given the complexity. The ₹300 Cr recycling plant (additional capex, over and above the funded ₹1,000 Cr programme) introduces budget expansion risk. Working capital days at 381 suggest free cash flow is significantly below operating profit.</p>
+
+<div class="takeaway-pill" style="border-left-color: var(--teal);">
+  EBCHR commissioning in Q1 FY27 is the capex cycle's pivotal event — it unlocks titanium recycling revenue and is the bridge between the "capability built" phase and the "earnings exponential" phase.
+</div>
+
+<!-- ====================== CHAPTER 6: RISKS ====================== -->
+<div class="ch-header ch-risk" role="heading" aria-level="2">
+  <div class="ch-num">6</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Six · Risk Register</div>
+    <div class="ch-title">Five risks that could break the chain</div>
+  </div>
+</div>
+
+<div role="list">
+  <div class="risk-row" role="listitem">
+    <div class="risk-num">R1</div>
+    <div class="risk-body">
+      <div class="risk-name"><i class="ti ti-tool" aria-hidden="true" style="color:var(--amber);"></i> &nbsp;EBCHR Execution Risk — Commissioning Delay &gt;2 Quarters</div>
+      <div class="risk-what"><span class="hl-risk">The EBCHR facility (5,000 tpa titanium recycling) was originally targeted Q4 FY26; it has already drifted to Q1 FY27.</span> A further delay beyond Q2 FY27 would materially delay the company's titanium materials revenue stream — the highest-margin segment — and would compress FY27 earnings below analyst estimates, triggering significant multiple compression at current valuations. The technology is globally rare; commissioning setbacks in complex metallurgical equipment are common.</div>
+      <div class="risk-signal">📡 Watch signal: Any Q1 FY27 concall language — "Q2/Q3 FY27 commissioning" replaces Q1 = elevated risk. Track utilisation rate 2 quarters post-commissioning.</div>
+      <div class="risk-mag"><span class="tag-red" style="font-size:11px;">MAGNITUDE: HIGH</span> &nbsp;<span class="tag-amber" style="font-size:11px;">PROBABILITY: MEDIUM</span></div>
+    </div>
+  </div>
+  <div class="risk-row" role="listitem">
+    <div class="risk-num">R2</div>
+    <div class="risk-body">
+      <div class="risk-name"><i class="ti ti-trending-down" aria-hidden="true" style="color:var(--amber);"></i> &nbsp;Working Capital Crisis — 381-Day Cycle Straining Cash</div>
+      <div class="risk-what">Working capital days have expanded from 205 to 381 — a near-doubling that absorbs most of the operating profit in working capital buildup. Debtor days stand at 170, partly attributable to long payment cycles from government defence clients (HAL, DRDO, GTRE) and global OEMs. <span class="hl-risk">If debtor days do not normalise as revenue scales, FY27 could see ₹200+ Cr of revenue growth produce almost no incremental free cash flow</span> — making the company reliant on further equity or debt raises for the ₹300 Cr recycling plant.</div>
+      <div class="risk-signal">📡 Watch signal: Cash conversion cycle in each quarterly balance sheet. Debtor days falling below 120 = healthy; remaining above 150 at FY27 annual = structural concern.</div>
+      <div class="risk-mag"><span class="tag-red" style="font-size:11px;">MAGNITUDE: HIGH</span> &nbsp;<span class="tag-amber" style="font-size:11px;">PROBABILITY: MEDIUM</span></div>
+    </div>
+  </div>
+  <div class="risk-row" role="listitem">
+    <div class="risk-num">R3</div>
+    <div class="risk-body">
+      <div class="risk-name"><i class="ti ti-world" aria-hidden="true" style="color:var(--amber);"></i> &nbsp;Geopolitical Reversal — Russia Sanctions Ease</div>
+      <div class="risk-what">The central bull thesis for PTCIL rests on Russia's permanent exclusion from Western aerospace supply chains. A Russia-Ukraine ceasefire — even a partial one — could trigger gradual OEM re-engagement with VSMPO-AVISMA for non-defence titanium supply. While this is a multi-year process and unlikely to fully reverse, even partial VSMPO supply reinstatement would remove pricing urgency for Western OEMs to dual-qualify PTC at premium pricing. The July 2025 India-Russia summit added nuance: India has maintained titanium sourcing relationships with Russia, which helps feedstock but creates optics risk with Western OEM partners.</div>
+      <div class="risk-signal">📡 Watch signal: Any news of VSMPO-AVISMA re-qualification discussions with Airbus, Boeing, or Safran; any titanium price collapse indicating supply restoration.</div>
+      <div class="risk-mag"><span class="tag-amber" style="font-size:11px;">MAGNITUDE: HIGH</span> &nbsp;<span class="tag-green" style="font-size:11px;">PROBABILITY: LOW-MEDIUM</span></div>
+    </div>
+  </div>
+  <div class="risk-row" role="listitem">
+    <div class="risk-num">R4</div>
+    <div class="risk-body">
+      <div class="risk-name"><i class="ti ti-package" aria-hidden="true" style="color:var(--amber);"></i> &nbsp;Titanium Sponge Supply Dependency</div>
+      <div class="risk-what">PTC currently imports titanium sponge (the primary feedstock for all its remelting and casting operations) from Japan, Kazakhstan, and possibly Russia. The EBCHR's titanium recycling capability partially addresses this — recycled scrap is cheaper than virgin sponge — but pure titanium recycling still requires virgin sponge as a make-up feed. The Odisha titanium sponge MoU (January 2025) is promising but production is 4–5 years away. Until domestic sponge production begins, any disruption to Japan or Kazakhstan supply (the primary non-Russian sources) would be existential for the SMTC operation.</div>
+      <div class="risk-signal">📡 Watch signal: Monthly titanium sponge import data; any supplier concentration disclosures in annual reports; Odisha project progress announcements.</div>
+      <div class="risk-mag"><span class="tag-amber" style="font-size:11px;">MAGNITUDE: HIGH</span> &nbsp;<span class="tag-green" style="font-size:11px;">PROBABILITY: LOW (short term)</span></div>
+    </div>
+  </div>
+  <div class="risk-row" role="listitem">
+    <div class="risk-num">R5</div>
+    <div class="risk-body">
+      <div class="risk-name"><i class="ti ti-building-factory-2" aria-hidden="true" style="color:var(--amber);"></i> &nbsp;Trac Integration Margin Drag — If It Takes Longer Than Guided</div>
+      <div class="risk-what">Q1 FY26 EBITDA margin compressed to 9% (from 28–30% historically) when Trac was consolidated. Management attributed this to integration one-time costs and guided recovery "as synergies take hold." Q4 FY26 showed a strong recovery (EBITDA ~32%), suggesting the integration is progressing. However, if Trac's underlying business remains margin-dilutive at the blended level — perhaps due to UK labour cost inflation or delayed operational restructuring — the company's FY27 margin path will be slower than management has guided. Trac's UK operations are exposed to GBP/INR and UK wage inflation dynamics outside PTC's control.</div>
+      <div class="risk-signal">📡 Watch signal: Report Trac's contribution margin separately if disclosed; if consolidated EBITDA margin fails to sustain 25%+ by Q2 FY27, question the integration timeline.</div>
+      <div class="risk-mag"><span class="tag-amber" style="font-size:11px;">MAGNITUDE: MEDIUM</span> &nbsp;<span class="tag-amber" style="font-size:11px;">PROBABILITY: MEDIUM</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color: var(--red);">
+  R1 (EBCHR delay) and R2 (working capital) are the two risks that can impair the FY27 thesis without any change in the long-term story — they should be tracked every quarter.
+</div>
+
+<!-- ====================== CHAPTER 7: WATCH SIGNALS ====================== -->
+<div class="ch-header ch-watch" role="heading" aria-level="2">
+  <div class="ch-num">7</div>
+  <div>
+    <div class="ch-eyebrow">Chapter Seven · Watch Signals</div>
+    <div class="ch-title">Five metrics to check within five minutes of each concall</div>
+  </div>
+</div>
+
+<div role="list">
+  <div class="watch-row" role="listitem">
+    <div class="watch-dot" style="background:var(--teal);" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-name">W1 · EBCHR Commissioning Status</div>
+      <div class="watch-what">Each concall, ask: has EBCHR been commissioned? Is production running? What is the utilisation rate? The EBCHR unlocks titanium recycling revenue (potentially ₹300–500 Cr incremental when ramped), transforms the cost structure of titanium inputs for Aerolloy, and is the key reason FY27 is supposed to show dramatic earnings leverage. A confirmed Q1 FY27 commissioning with utilisation ramp visible by Q2 = thesis confirmation. Another quarter of delay = Ledger flag.</div>
+      <div class="watch-flag">🚩 Red flag: "Q3/Q4 FY27 commissioning" language in Q1 FY27 concall — signals project slippage of 2+ quarters total.</div>
+    </div>
+  </div>
+  <div class="watch-row" role="listitem">
+    <div class="watch-dot" style="background:var(--green);" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-name">W2 · EBITDA Margin Trajectory — Sustaining the Q4 FY26 Recovery</div>
+      <div class="watch-what">Q4 FY26 showed a strong EBITDA margin recovery to ~32%, recovering from Q1 FY26's 9% (Trac integration) and Q3 FY26's 16%. The question is whether this recovery is structural (Trac synergies + Aerolloy mix improvement) or temporary (a high-execution quarter). Management has guided margin recovery to "normalised" 25–30% as integration matures. Track gross margin and EBITDA margin independently — if gross margin improves but EBITDA stays flat, Trac's overheads are absorbing gains.</div>
+      <div class="watch-flag">🚩 Red flag: Consolidated EBITDA margin below 20% for two consecutive quarters in FY27 without a specific one-time explanation.</div>
+    </div>
+  </div>
+  <div class="watch-row" role="listitem">
+    <div class="watch-dot" style="background:var(--navy);" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-name">W3 · Working Capital Days — Is the Cash Cycle Normalising?</div>
+      <div class="watch-what">Working capital at 381 days (debtor days 170) is the single most important balance sheet risk. As revenue scales rapidly, working capital absorption could cause the company to report strong EBITDA but generate negligible free cash flow — potentially requiring another equity raise. Watch the quarterly balance sheet: debtors ÷ revenue run-rate. A progressive decline toward 120–140 days by FY27 end would indicate healthy cash conversion. If it stays above 160 days even as revenue doubles, the fundamental business model is more capital-intensive than the income statement suggests.</div>
+      <div class="watch-flag">🚩 Red flag: Debtors remain above ₹350 Cr even when FY27 quarterly revenue is ₹200+ Cr (debtor days persistently above 150).</div>
+    </div>
+  </div>
+  <div class="watch-row" role="listitem">
+    <div class="watch-dot" style="background:var(--purple);" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-name">W4 · New Programme Wins — Beyond the Current Client Roster</div>
+      <div class="watch-what">PTC's current revenue visibility is anchored by Dassault (Rafale/Falcon), Safran (LEAP), Honeywell (aero-engine castings), HAL, DRDO/GTRE, and Trac's existing customer base. The 10–15x revenue growth thesis requires qualifying on 3–5 additional major OEM programmes. Watch for new MoUs, supply agreements, or POs from names not currently on the roster — Rolls-Royce (aero-engines), GE Aerospace, Pratt &amp; Whitney, ISRO (space propulsion), or Boeing Defence. Each new OEM qualification is a 20–30 year revenue stream.</div>
+      <div class="watch-flag">🚩 Red flag: If no new OEM programme win is announced for 3 consecutive quarters, management's 10x growth thesis lacks the pipeline necessary to support it.</div>
+    </div>
+  </div>
+  <div class="watch-row" role="listitem">
+    <div class="watch-dot" style="background:var(--coral);" aria-hidden="true"></div>
+    <div class="watch-body">
+      <div class="watch-name">W5 · Capital Structure — Is the ₹300 Cr Recycling Plant Funded Without Dilution?</div>
+      <div class="watch-what">Management announced a ₹300 Cr titanium recycling plant "over and above" the ₹1,000 Cr funded programme. This additional capex has no disclosed funding source. If management announces another QIP or preferential allotment for this project — having previously characterised the expansion as "fully funded" — it represents a significant credibility break. Watch the CFO/capex ratio in FY27 cash flow statements: if operating cash flow is insufficient to fund this incremental capex and working capital simultaneously, another dilutive raise becomes likely.</div>
+      <div class="watch-flag">🚩 Red flag: QIP/rights issue announcement in FY27 for the recycling plant — after management said the SMTC programme was "fully funded."</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left-color: var(--green);">
+  W1 (EBCHR on/off) and W2 (margin ≥25%) are the two binary signals that will tell you whether FY27 is the promised inflection year or another setup year.
+</div>
+
+<!-- ====================== VERDICT ====================== -->
+<div class="ch-header ch-ver" role="heading" aria-level="2">
+  <div class="ch-num">✦</div>
+  <div>
+    <div class="ch-eyebrow">Investment Verdict</div>
+    <div class="ch-title">Mid-chapter compounder — capability proven; execution proof pending</div>
+  </div>
+</div>
+
+<div class="verdict-box" role="region" aria-label="Investment verdict">
+  <div class="label">📌 VL — INVESTMENT VERDICT · PTCIL · JUNE 2026</div>
+  <p><strong>The structural tailwinds are rare and real:</strong> Russia's isolation from Western aerospace supply chains, India's ₹35,000 Cr defence import substitution imperative, and a global aerospace production ramp that will absorb every qualified titanium casting supplier for the next decade. PTC is the only Indian entity — and one of fewer than five globally — that has assembled the full stack: raw titanium ingot capability, investment casting in Ti and superalloys, and precision machining of finished engine components. The customer roster (Dassault, Safran, Honeywell, BAE, HAL, DRDO) is the strongest in Indian aerospace manufacturing history.</p>
+  <p style="margin-top:10px;"><strong>The quality signal in the financials is improving but not yet clean:</strong> FY26 delivered 96% revenue growth and a dramatic Q4 margin recovery (EBITDA ~32%), validating the Trac integration narrative. ROCE at 7.74% and debtor days at 170 reflect the reality of a company in a heavy capex and working capital absorption cycle — not a defective business model. Free cash flow should inflect as EBCHR ramps and working capital normalises. The near-term catalyst is EBCHR commissioning (Q1 FY27): once titanium recycling is live, the cost structure improves materially and a new high-margin revenue stream opens.</p>
+  <p style="margin-top:10px;"><strong>On valuation:</strong> At 360–400x trailing PE and 50x Price/Sales, PTC is not cheap by any conventional metric. The market is pricing 10x revenue over 5–7 years — and management has explicitly guided this target. If FY27 and FY28 deliver the order book growth, margin expansion, and capex completion that analysts expect, the stock grows into its valuation. <strong>We are in the middle chapters of a 10-year story — the chapter where the hard infrastructure is built and the first proof-of-execution data starts arriving. FY27 is when the thesis must begin to convert to earnings.</strong> The risk is elevated at current prices; the opportunity is real.</p>
+</div>
+
+<hr class="divider">
+
+<!-- ====================== HIGHLIGHT INDEX (always expanded) ====================== -->
+<div id="highlight-index" role="region" aria-label="All highlights at a glance">
+  <div class="hi-title">📌 All Highlights at a Glance</div>
+  <ol id="highlight-list"><!-- JS populates --></ol>
+</div>
+
+</div><!-- end .content -->
+
+<!-- =============================================================== -->
+<!-- ==================== THE LEDGER SECTION ======================= -->
+<!-- =============================================================== -->
+
+<div class="ledger-header-band" role="banner" aria-label="The Ledger management credibility section">
+  <div class="eyebrow">THE LEDGER v0.2 · MANAGEMENT CREDIBILITY TRACKER · COMPANION REPORT</div>
+  <h2>The Ledger — PTCIL</h2>
+  <div class="sub">Promise register · Capex execution · Margin mechanism fidelity · Capital structure integrity — tracked through the last 4 quarters of available data.</div>
+</div>
+
+<div class="content">
+
+<!-- CREDIBILITY TIER -->
+<div style="margin-top: 8px;">
+  <div class="credibility-badge" role="region" aria-label="Management credibility tier">
+    <div>
+      <div class="cb-tier">B+</div>
+    </div>
+    <div>
+      <div class="cb-label">CREDIBILITY TIER</div>
+      <div class="cb-desc">Strong strategic vision and verifiable milestone delivery; elevated execution monitoring warranted on EBCHR timeline, working capital, and capital structure integrity.</div>
+    </div>
+  </div>
+</div>
+
+<!-- LEDGER SCORE GRID -->
+<div class="ledger-score-grid" role="list">
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Promise Hit Rate</div>
+    <div class="lsg-score green">B+</div>
+    <div class="lsg-label">Revenue milestones delivered (+96% FY26 as guided ~90-100%); EBCHR slipped 1 quarter</div>
+  </div>
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Capex Execution</div>
+    <div class="lsg-score amber">B−</div>
+    <div class="lsg-label">VAR/VIM on schedule; EBCHR drifted Q4 FY26 → Q1 FY27; ₹300 Cr new plant undisclosed funding</div>
+  </div>
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Margin Mechanism Fidelity</div>
+    <div class="lsg-score amber">B</div>
+    <div class="lsg-label">Q1 FY26 margin crash (9%) attributed to Trac — fair; Q4 recovery to 32% validates guidance</div>
+  </div>
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Capital Structure Integrity</div>
+    <div class="lsg-score amber">B−</div>
+    <div class="lsg-label">QIP ₹700 Cr raised while "internal accruals" framing was in play; WC stretch unflagged by mgmt</div>
+  </div>
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Specificity &amp; Attribution</div>
+    <div class="lsg-score green">A−</div>
+    <div class="lsg-label">CMD Sachin Agarwal gives specific targets (10-15x, 90-100% FY26) — accountable and measurable</div>
+  </div>
+  <div class="lsg-card" role="listitem">
+    <div class="lsg-name">Q&amp;A Quality</div>
+    <div class="lsg-score green">B+</div>
+    <div class="lsg-label">Management generally transparent on strategic rationale; less specific on working capital or capex funding sources when questioned</div>
+  </div>
+</div>
+
+<!-- DIMENSION 1: PROMISE REGISTER -->
+<div class="ch-header ch-ledger" style="margin-top: 32px;" role="heading" aria-level="3">
+  <div class="ch-num" style="background: var(--teal); width:32px; height:32px; font-size:14px;">L1</div>
+  <div>
+    <div class="ch-eyebrow">Ledger · Pillar 1–3</div>
+    <div class="ch-title">Promise Register — key commitments tracked</div>
+  </div>
+</div>
+
+<table class="promise-table" role="table" aria-label="Management promise register">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Promise Made</th>
+      <th>Source Quarter</th>
+      <th>Outcome</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span style="background:var(--red-bg);color:var(--red);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Revenue</span></td>
+      <td>"90–100% revenue growth in FY26"</td>
+      <td>Q1 FY25 (concall)</td>
+      <td>FY26E ~₹603 Cr vs ₹308 Cr FY25 = +96% YoY</td>
+      <td style="color:var(--green);font-family:var(--mono);font-size:11px;">✓ DELIVERED</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--coral-bg);color:var(--coral);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Capex</span></td>
+      <td>"EBCHR commissioned Q3/Q4 FY26"</td>
+      <td>Q4 FY25 (investor deck)</td>
+      <td>As of Q4 FY26 results (June 2, 2026): "on verge of commissioning" — not yet live</td>
+      <td style="color:var(--amber);font-family:var(--mono);font-size:11px;">⚠ DRIFTED 1 QTR</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--coral-bg);color:var(--coral);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Capex</span></td>
+      <td>"SMTC expansion fully funded — no additional equity raise needed for ₹1,000 Cr programme"</td>
+      <td>FY24 concall</td>
+      <td>QIP of ₹700 Cr executed in Aug-Sep 2024; promoter holding reduced by 8.21% over 3 years; Trac funded by additional cash outflow</td>
+      <td style="color:var(--amber);font-family:var(--mono);font-size:11px;">⚠ PARTIAL — equity was raised</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--green-bg);color:var(--green);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Margin</span></td>
+      <td>"Trac integration margin impact is temporary; margins will recover as synergies take hold" (H1 FY26)</td>
+      <td>Q2 FY26 (CMD commentary)</td>
+      <td>Q4 FY26 EBITDA margin ~32% — strong recovery validates the claim</td>
+      <td style="color:var(--green);font-family:var(--mono);font-size:11px;">✓ DELIVERED (Q4)</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--navy-bg);color:var(--navy);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Capital</span></td>
+      <td>"₹300 Cr titanium recycling plant — over and above the ongoing ₹350 Cr expansion"</td>
+      <td>2025 announcement</td>
+      <td>Funding source not disclosed; no clarity on equity vs debt vs accruals</td>
+      <td style="color:var(--amber);font-family:var(--mono);font-size:11px;">⚠ WATCH — UNDISCLOSED FUNDING</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--red-bg);color:var(--red);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Revenue</span></td>
+      <td>"10–15x topline growth over 5–7 years"</td>
+      <td>Sep 2025 concall</td>
+      <td>FY26 delivers first year of inflection (+96%); requires sustained ~50–70% CAGR for 4–5 more years</td>
+      <td style="color:var(--teal);font-family:var(--mono);font-size:11px;">● ON TRACK (Year 1)</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--amber-bg);color:var(--amber);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Milestone</span></td>
+      <td>Aerolloy: VAR 1,500 tpa + VIM 900 tpa commissioning</td>
+      <td>FY24 guidance</td>
+      <td>Both commissioned and producing; VAR 400 furnace announced Sep 2025 as operational</td>
+      <td style="color:var(--green);font-family:var(--mono);font-size:11px;">✓ DELIVERED</td>
+    </tr>
+    <tr>
+      <td><span style="background:var(--amber-bg);color:var(--amber);font-family:var(--mono);font-size:10px;padding:2px 6px;border-radius:3px;">Milestone</span></td>
+      <td>Trac tripling of revenue (target: triple Trac revenue from ~₹260 Cr to ~₹780 Cr)</td>
+      <td>Q3 FY25 concall</td>
+      <td>Trac acquired Dec 2024; first full year consolidation in FY27; revenue trajectory TBD</td>
+      <td style="color:var(--teal);font-family:var(--mono);font-size:11px;">● PENDING — too early to assess</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- DIMENSION 2: CAPEX TIMELINE TRACKER -->
+<div class="ch-header ch-ledger" role="heading" aria-level="3">
+  <div class="ch-num" style="background: var(--coral); width:32px; height:32px; font-size:14px;">L2</div>
+  <div>
+    <div class="ch-eyebrow">Ledger · Pillar 4 · Capex Timeline</div>
+    <div class="ch-title">Active capex red flags — PTCIL</div>
+  </div>
+</div>
+
+<div class="flag-card watch" role="region">
+  <div class="flag-name"><i class="ti ti-tool" style="color:var(--amber);" aria-hidden="true"></i> COMPLETION DRIFT — EBCHR</div>
+  <div class="flag-what">EBCHR (5,000 tpa electron beam cold hearth remelting) was guided for Q3-Q4 FY26. As of the Q4 FY26 result (June 2, 2026), ICICI Securities characterises it as "on the verge of commissioning" — still not operational. This is a 1-quarter drift so far. One drift is acceptable in complex metallurgical plant commissioning; a second drift (to Q2 FY27 or later) would become a Ledger flag of concern, as the market is pricing EBCHR revenue into FY27 estimates.</div>
+  <div class="flag-signal">📡 Status: WATCHING — Q1 FY27 concall will confirm or escalate.</div>
+</div>
+
+<div class="flag-card watch" role="region">
+  <div class="flag-name"><i class="ti ti-tool" style="color:var(--amber);" aria-hidden="true"></i> BUDGET EXPANSION — ₹300 CR RECYCLING PLANT</div>
+  <div class="flag-what">The ₹300 Cr titanium recycling plant was announced as a new project "over and above" the ongoing ₹350 Cr titanium casting plant expansion, which itself was over and above the ₹1,000 Cr SMTC programme. Budget appears to be growing incrementally with each announcement, without proportional disclosure of the revenue unlock or funding source. This is a mild budget inflation flag — not critical yet, but should be tracked.</div>
+  <div class="flag-signal">📡 Watch: Annual Report FY26 capex schedule vs disclosed project budget. Revenue unlock guidance for recycling plant revenue not yet given — a gap in management communication.</div>
+</div>
+
+<div class="flag-card clear" role="region">
+  <div class="flag-name"><i class="ti ti-check" style="color:var(--green);" aria-hidden="true"></i> CLEAR — VAR + VIM COMMISSIONING</div>
+  <div class="flag-what">Both the Vacuum Arc Remelting (1,500 tpa) and Vacuum Induction Melting (900 tpa) facilities were commissioned within the guided timeframe and are producing aerospace-grade material. The Aerolloy VAR 400 furnace (largest single titanium alloy melting furnace in the region) was commissioned September 2025. These commitments were delivered on time. This is a positive credibility signal for the management team's ability to execute complex metallurgical installations.</div>
+  <div class="flag-signal">📡 Status: DELIVERED — No active flag.</div>
+</div>
+
+<!-- DIMENSION 3: MARGIN TRACKER -->
+<div class="ch-header ch-ledger" role="heading" aria-level="3">
+  <div class="ch-num" style="background: var(--green); width:32px; height:32px; font-size:14px;">L3</div>
+  <div>
+    <div class="ch-eyebrow">Ledger · Pillar 5 · Margin Expansion</div>
+    <div class="ch-title">The stated margin mechanism — is it working?</div>
+  </div>
+</div>
+
+<p><strong>Management's stated mechanism:</strong> Margin pressure in H1 FY26 is "temporary" and caused by Trac integration costs; as integration progresses and operational synergies take hold, margins will recover. Underlying Aerolloy business remains high-margin. As EBCHR comes online, titanium materials (higher-margin than castings alone) will lift blended margins further.</p>
+
+<table class="data-table" role="table" aria-label="Margin trajectory tracking">
+  <thead>
+    <tr>
+      <th class="green">Quarter</th>
+      <th class="green">Revenue ₹Cr</th>
+      <th class="green">EBITDA ₹Cr</th>
+      <th class="green">EBITDA Margin</th>
+      <th class="green">Ledger Assessment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Q4 FY25 (Mar 25)</td>
+      <td>₹122 Cr</td>
+      <td>₹29 Cr</td>
+      <td>24%</td>
+      <td>Pre-Trac; healthy Aerolloy margin</td>
+    </tr>
+    <tr>
+      <td>Q1 FY26 (Jun 25)</td>
+      <td>₹97 Cr</td>
+      <td>₹9 Cr</td>
+      <td style="color:var(--red);font-weight:600;">9%</td>
+      <td><span style="color:var(--red);">⚠ ONE-TIME ETERNAL WATCH</span> — integration costs flagged as temporary</td>
+    </tr>
+    <tr>
+      <td>Q2 FY26 (Sep 25)</td>
+      <td>₹125 Cr</td>
+      <td>₹26 Cr</td>
+      <td>21%</td>
+      <td>Partial recovery — mechanism beginning to work</td>
+    </tr>
+    <tr>
+      <td>Q3 FY26 (Dec 25)</td>
+      <td>₹156 Cr</td>
+      <td>₹25 Cr</td>
+      <td>16%</td>
+      <td>Disappointing — slipped after Q2 recovery; revenue growing but margins flat</td>
+    </tr>
+    <tr>
+      <td>Q4 FY26 (Mar 26)</td>
+      <td>₹225 Cr</td>
+      <td>₹72.6 Cr</td>
+      <td style="color:var(--green);font-weight:600;">32%</td>
+      <td><span style="color:var(--green);">✓ MECHANISM WORKING</span> — strong recovery validates integration guidance</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="flag-card watch" role="region">
+  <div class="flag-name"><i class="ti ti-trending-down" style="color:var(--amber);" aria-hidden="true"></i> MECHANISM DELAY — 3 QUARTERS BELOW 24% BEFORE RECOVERY</div>
+  <div class="flag-what">The integration thesis required margins to recover "as synergies take hold." Q1 FY26 (9%), Q2 (21%), Q3 (16%) — three quarters of below-historical margins before the Q4 FY26 recovery. Q3's slide back to 16% after Q2's recovery to 21% was the concerning moment: it suggested the recovery was not linear. The Ledger notes that Q4's 32% margin cannot be confirmed as structural until Q1 FY27 sustains it above 25%. If Q1 FY27 shows a slide back to 16–18%, the integration thesis is longer than guided.</div>
+  <div class="flag-signal">📡 Active watch: Q1 FY27 margin. Threshold: must sustain above 22% to confirm mechanism is working. Below 18% = Mechanism Failure flag escalated.</div>
+</div>
+
+<div class="flag-card clear" role="region">
+  <div class="flag-name"><i class="ti ti-check" style="color:var(--green);" aria-hidden="true"></i> CLEAR — NOT A FLOOR DRIFT (margin floor has not been reset downward)</div>
+  <div class="flag-what">Management has not publicly lowered the normalised margin floor. The H1 FY26 compression was attributed to a specific, verifiable cause (Trac integration), not to structural pricing pressure or cost inflation. Q4 FY26 validates that the underlying Aerolloy+legacy business can achieve 30%+ EBITDA margins. This distinguishes PTCIL from the "Floor Drift" red flag — the standard has not moved.</div>
+  <div class="flag-signal">📡 Status: CLEAN — No floor drift detected in management communications.</div>
+</div>
+
+<!-- DIMENSION 4: CAPITAL STRUCTURE TRACKER -->
+<div class="ch-header ch-ledger" role="heading" aria-level="3">
+  <div class="ch-num" style="background: var(--navy); width:32px; height:32px; font-size:14px;">L4</div>
+  <div>
+    <div class="ch-eyebrow">Ledger · Pillar 6 · Capital Structure</div>
+    <div class="ch-title">Capital structure promises — what was said vs what happened</div>
+  </div>
+</div>
+
+<div class="flag-card watch" role="region">
+  <div class="flag-name"><i class="ti ti-building-bank" style="color:var(--amber);" aria-hidden="true"></i> FUNDING FLIP — QIP AFTER "INTERNAL ACCRUALS" FRAMING</div>
+  <div class="flag-what">PTC management characterised the SMTC expansion as funded through "internal accruals" in early FY24 communications. In August–September 2024, the company executed a QIP raising ₹700 Cr by issuing 5.30 lakh equity shares at ~₹13,200/share — a meaningful dilution (~3.5% of equity) that was not telegraphed clearly when the "internal accruals" framing was active. The QIP was ultimately necessary and rational given the scale of capex — but the gap between the stated funding mechanism and the actual instrument is a Ledger credibility point. The Trac acquisition also required additional cash outflow (£~25M) not explicitly covered by the ₹700 Cr QIP.</div>
+  <div class="flag-signal">📡 The "fully funded" claim for the ₹300 Cr recycling plant should be verified against any future equity raise. CFO/Capex ratio in FY27 cash flow is the diagnostic.</div>
+</div>
+
+<div class="flag-card active" role="region">
+  <div class="flag-name"><i class="ti ti-building-bank" style="color:var(--red);" aria-hidden="true"></i> WORKING CAPITAL MASKING — ACTIVE FLAG</div>
+  <div class="flag-what">Gross debt is low (D/E ~12.7%), but working capital days have expanded from 205 to 381 — debtor days at 170 represent effectively a hidden form of credit extension to customers (OEMs, defence clients). Management has not prominently flagged this in concall commentary. The company reports strong EBITDA but the cash conversion cycle means free cash flow is significantly lower than operating profit suggests. This is the single most active Ledger flag on PTCIL — it represents an invisible balance sheet stress that could force a capital raise if revenue continues to scale without debtor normalisation.</div>
+  <div class="flag-signal">📡 ACTIVE — Track quarterly: Debtors ÷ (Quarterly revenue × 4) to compute rolling debtor days. Signal: If debtor days remain above 150 by Q2 FY27, this is a structural concern requiring analyst escalation.</div>
+</div>
+
+<div class="flag-card clear" role="region">
+  <div class="flag-name"><i class="ti ti-check" style="color:var(--green);" aria-hidden="true"></i> CLEAR — DEBT-FREE MIRAGE NOT ACTIVE; PROMOTER PLEDGE NOT A CONCERN</div>
+  <div class="flag-what">Management has not made aggressive debt-reduction timeline promises that are drifting. Gross D/E is low at ~12.7%, reflecting a balance sheet that is cleaner than the capex cycle might suggest. No evidence of significant promoter share pledging in available data. The promoter holding decline (from dilution via QIP, not pledge) is a different dynamic — not a Ledger red flag of the same severity as pledge stress.</div>
+  <div class="flag-signal">📡 Status: CLEAN — Continue monitoring promoter pledge quarterly disclosures.</div>
+</div>
+
+<!-- LEDGER VERDICT -->
+<div class="verdict-box" style="border-color: var(--teal); background: var(--teal-bg);" role="region" aria-label="Ledger verdict">
+  <div class="label" style="color: var(--teal);">🗒 LEDGER VERDICT — PTCIL · JUNE 2026</div>
+  <p><strong>Overall Credibility Tier: B+.</strong> Sachin Agarwal and the PTC management team have demonstrated above-average credibility on their most critical promise — FY26 revenue growth of 90-100% was delivered at 96%. VAR and VIM commissioning milestones were met. The Trac integration margin recovery (Q4 FY26 at 32% EBITDA) validates the "temporary disruption" narrative that was under scrutiny in H1 FY26. These are significant deliveries that earn credibility credit.</p>
+  <p style="margin-top: 10px;">The active flags are: (1) <strong>EBCHR drift</strong> of one quarter — watch closely in Q1 FY27; (2) <strong>Working capital expansion</strong> to 381 days — the most active concern, largely unflagged by management in public communications; (3) <strong>Funding flip</strong> — the QIP was rational but followed "internal accruals" framing that was not retired cleanly before the capital raise. None of these constitute a credibility-deficit scenario (Tier C or D), but together they warrant careful tracking. The company scores well on specificity and attribution (management gives specific, measurable targets) and reasonably well on Q&A quality. The chain analysis suggests: <strong>capex is deploying mostly on schedule, utilisation will begin in FY27, margin is recovering, but the cash flow link (chain node 5) is the weakest element</strong> — free cash flow conversion remains well below operating profit due to the working capital cycle.</p>
+</div>
+
+<hr class="divider">
+
+<!-- FINAL HIGHLIGHT INDEX (always expanded) -->
+<div id="highlight-index-ledger" role="region" aria-label="Ledger highlights">
+  <div class="hi-title">🗒 The Ledger — Active Flags Summary (June 2026)</div>
+  <ol>
+    <li data-type="hl-risk" style="border-left:3px solid var(--amber);padding-left:8px;list-style:none;margin-bottom:8px;font-size:12.5px;color:#2A2A3A;line-height:1.6;">⚠ CAPEX DRIFT: EBCHR commissioning drifted from Q4 FY26 to Q1 FY27 — watch Q1 FY27 concall for further drift confirmation.</li>
+    <li data-type="hl-risk" style="border-left:3px solid var(--red);padding-left:8px;list-style:none;margin-bottom:8px;font-size:12.5px;color:#2A2A3A;line-height:1.6;">🚨 WORKING CAPITAL: Active flag — 381 days WC cycle (170-day debtors); free cash flow significantly below EBITDA; not prominently disclosed by management.</li>
+    <li data-type="hl-risk" style="border-left:3px solid var(--amber);padding-left:8px;list-style:none;margin-bottom:8px;font-size:12.5px;color:#2A2A3A;line-height:1.6;">⚠ FUNDING FLIP: QIP ₹700 Cr raised in 2024 post "internal accruals" framing; ₹300 Cr recycling plant has no disclosed funding source.</li>
+    <li data-type="hl-catalyst" style="border-left:3px solid var(--green);padding-left:8px;list-style:none;margin-bottom:8px;font-size:12.5px;color:#2A2A3A;line-height:1.6;">✓ DELIVERED: FY26 revenue +96% YoY — matches guided 90-100%; VAR+VIM commissioning on time; Trac margin recovery in Q4.</li>
+    <li data-type="hl-key" style="border-left:3px solid #C4A000;padding-left:8px;list-style:none;margin-bottom:8px;font-size:12.5px;color:#2A2A3A;line-height:1.6;">🔑 CHAIN DIAGNOSIS: Capex deploying (links 1-2 mostly on track); utilisation ramp imminent (link 3 pending EBCHR); margins recovering (link 4 confirmed in Q4); cash flow link (5) is the weakest — working capital expansion delays FCF generation.</li>
+  </ol>
+</div>
+
+</div><!-- end .content (ledger) -->
+
+<footer role="contentinfo">
+  <span>PTCIL NSE INVESTOR BRIEF + THE LEDGER · JUNE 2026</span>
+  <span>RESEARCH COMPILATION · NOT INVESTMENT ADVICE · VERIFY ALL DATA INDEPENDENTLY</span>
+  <span>Source: Screener, BSE/NSE, ICICI Securities, Company Press Releases, ICRA, Yahoo Finance</span>
+</footer>
+
+<script>
+// ============ QUICK-SCAN TOGGLE ============
+function toggleQS() {
+  const body = document.getElementById('quick-scan-body');
+  const chevron = document.getElementById('qs-chevron');
+  const toggle = document.getElementById('quick-scan-toggle');
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  chevron.textContent = isOpen ? '▼' : '▲';
+  chevron.classList.toggle('open', !isOpen);
+  toggle.setAttribute('aria-expanded', String(!isOpen));
+  try { localStorage.setItem('ptcil_qs_open', !isOpen); } catch(e) {}
+}
+// Restore state
+try {
+  const saved = localStorage.getItem('ptcil_qs_open');
+  if (saved === 'false') {
+    const body = document.getElementById('quick-scan-body');
+    const chevron = document.getElementById('qs-chevron');
+    body.style.display = 'none';
+    chevron.textContent = '▼';
+    chevron.classList.remove('open');
+  }
+} catch(e) {}
+
+// ============ HIGHLIGHT INDEX AUTO-POPULATE ============
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-list');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    const text = el.textContent.trim().replace(/\s+/g, ' ');
+    li.textContent = text.length > 200 ? text.substring(0, 200) + '…' : text;
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

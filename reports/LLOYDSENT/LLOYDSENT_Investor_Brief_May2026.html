@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLOYDSENT — Investor Brief | May 2026</title>
+<style>
+  :root {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface2: #f2f0eb;
+    --border: #e2ded7;
+    --text: #1a1816;
+    --muted: #6b6660;
+    --hint: #9c9690;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --blue: #378ADD;
+    --blue-light: #E6F1FB;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --green: #3B6D11;
+    --green-light: #EAF3DE;
+    --gray: #888780;
+    --gray-light: #F1EFE8;
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141210;
+      --surface: #1e1c19;
+      --surface2: #272420;
+      --border: #342f2a;
+      --text: #f0ece6;
+      --muted: #a09890;
+      --hint: #706860;
+      --teal: #5DCAA5;
+      --teal-light: #085041;
+      --coral: #F0997B;
+      --coral-light: #712B13;
+      --blue: #85B7EB;
+      --blue-light: #0C447C;
+      --amber: #EF9F27;
+      --amber-light: #633806;
+      --green: #97C459;
+      --green-light: #27500A;
+      --gray: #B4B2A9;
+      --gray-light: #444441;
+      --purple: #AFA9EC;
+      --purple-light: #3C3489;
+      --shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+  }
+  [data-theme="dark"] {
+    --bg: #141210;
+    --surface: #1e1c19;
+    --surface2: #272420;
+    --border: #342f2a;
+    --text: #f0ece6;
+    --muted: #a09890;
+    --hint: #706860;
+    --teal: #5DCAA5;
+    --teal-light: #085041;
+    --coral: #F0997B;
+    --coral-light: #712B13;
+    --blue: #85B7EB;
+    --blue-light: #0C447C;
+    --amber: #EF9F27;
+    --amber-light: #633806;
+    --green: #97C459;
+    --green-light: #27500A;
+    --gray: #B4B2A9;
+    --gray-light: #444441;
+    --purple: #AFA9EC;
+    --purple-light: #3C3489;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+  [data-theme="light"] {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface2: #f2f0eb;
+    --border: #e2ded7;
+    --text: #1a1816;
+    --muted: #6b6660;
+    --hint: #9c9690;
+    --teal: #1D9E75;
+    --teal-light: #E1F5EE;
+    --coral: #D85A30;
+    --coral-light: #FAECE7;
+    --blue: #378ADD;
+    --blue-light: #E6F1FB;
+    --amber: #BA7517;
+    --amber-light: #FAEEDA;
+    --green: #3B6D11;
+    --green-light: #EAF3DE;
+    --gray: #888780;
+    --gray-light: #F1EFE8;
+    --purple: #534AB7;
+    --purple-light: #EEEDFE;
+    --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.65;
+    font-size: 15px;
+  }
+  .page { max-width: 700px; margin: 0 auto; padding: 24px 16px 48px; }
+
+  /* THEME TOGGLE */
+  .theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    color: var(--muted);
+    cursor: pointer;
+    z-index: 99;
+    box-shadow: var(--shadow);
+  }
+  .theme-toggle:focus { outline: 2px solid var(--blue); }
+
+  /* COVER */
+  .cover {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 24px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--coral) 0%, var(--blue) 35%, var(--amber) 70%, var(--teal) 100%);
+  }
+  .eyebrow {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .cover-title {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .cover-sub {
+    font-size: 14px;
+    color: var(--muted);
+    font-family: -apple-system, sans-serif;
+    margin-bottom: 18px;
+  }
+  .cover-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+  .cstat {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 12px;
+  }
+  .cstat-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    color: var(--hint);
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .cstat-val {
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--text);
+    font-family: -apple-system, sans-serif;
+  }
+  .cstat-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-family: -apple-system, sans-serif;
+  }
+
+  /* SECTION HEADERS */
+  .chapter {
+    margin-top: 28px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .chapter-num {
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    font-family: -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .chapter-inner { flex: 1; }
+  .chapter-eyebrow {
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hint);
+    line-height: 1;
+    margin-bottom: 2px;
+  }
+  .chapter-title {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  /* CARDS */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+  .card-title {
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .card p {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.65;
+    margin-bottom: 8px;
+  }
+  .card p:last-child { margin-bottom: 0; }
+
+  /* ACCENT BORDER CARDS */
+  .accent-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--coral);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow);
+  }
+  .accent-card.teal { border-left-color: var(--teal); }
+  .accent-card.blue { border-left-color: var(--blue); }
+  .accent-card.amber { border-left-color: var(--amber); }
+  .accent-card.green { border-left-color: var(--green); }
+  .accent-card.gray { border-left-color: var(--gray); }
+  .accent-card.purple { border-left-color: var(--purple); }
+  .accent-card-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 4px;
+  }
+  .accent-card-title {
+    font-family: -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+  .accent-card p { font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 0; }
+
+  /* STAT ROWS */
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    font-family: -apple-system, sans-serif;
+  }
+  .stat-row:last-child { border-bottom: none; }
+  .stat-label { color: var(--muted); }
+  .stat-val { font-weight: 600; color: var(--text); text-align: right; }
+  .stat-val.up { color: var(--green); }
+  .stat-val.dn { color: var(--coral); }
+  .stat-val.warn { color: var(--amber); }
+
+  /* PORTER TABLE */
+  .porter-table { width: 100%; border-collapse: collapse; font-size: 13px; font-family: -apple-system, sans-serif; }
+  .porter-table th {
+    text-align: left;
+    padding: 8px 10px;
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--border);
+  }
+  .porter-table td {
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+  .porter-table tr:last-child td { border-bottom: none; }
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: -apple-system, sans-serif;
+    white-space: nowrap;
+  }
+  .badge-low { background: var(--teal-light); color: var(--teal); }
+  .badge-med { background: var(--amber-light); color: var(--amber); }
+  .badge-high { background: var(--coral-light); color: var(--coral); }
+
+  /* RISK ROWS */
+  .risk-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .risk-row:last-child { border-bottom: none; }
+  .risk-icon {
+    color: var(--amber);
+    font-size: 16px;
+    min-width: 20px;
+    margin-top: 2px;
+  }
+  .risk-title {
+    font-family: -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .risk-body { font-size: 13px; color: var(--muted); line-height: 1.5; }
+
+  /* WATCH SIGNALS */
+  .watch-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 9px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+  .watch-row:last-child { border-bottom: none; }
+  .watch-dot {
+    width: 10px;
+    height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    margin-top: 4px;
+  }
+  .watch-title {
+    font-family: -apple-system, sans-serif;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .watch-body { color: var(--muted); font-size: 13px; line-height: 1.5; }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 24px; margin-top: 4px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px; top: 8px; bottom: 8px;
+    width: 1px;
+    background: var(--border);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 14px;
+    font-size: 13px;
+    font-family: -apple-system, sans-serif;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -21px;
+    top: 5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--coral);
+    border: 2px solid var(--bg);
+  }
+  .tl-year { font-weight: 700; color: var(--text); font-size: 12px; }
+  .tl-desc { color: var(--muted); margin-top: 1px; line-height: 1.5; }
+
+  /* VERDICT */
+  .verdict {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 20px 18px;
+    margin-top: 20px;
+    box-shadow: var(--shadow);
+    position: relative;
+  }
+  .verdict-label {
+    font-family: -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--hint);
+    margin-bottom: 10px;
+  }
+  .verdict p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+  .verdict p:last-child { margin-bottom: 0; }
+
+  /* SEGMENT TAGS */
+  .seg-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 10px 3px 8px;
+    border-radius: 20px;
+    font-family: -apple-system, sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  .seg-dot { width: 7px; height: 7px; border-radius: 50%; }
+  .seg-engineering { background: var(--coral-light); color: var(--coral); }
+  .seg-realestate { background: var(--blue-light); color: var(--blue); }
+  .seg-gold { background: var(--amber-light); color: var(--amber); }
+  .seg-steel { background: var(--gray-light); color: var(--gray); }
+
+  /* QUOTE */
+  .insight-quote {
+    border-left: 3px solid var(--purple);
+    padding: 10px 14px;
+    margin: 12px 0;
+    background: var(--purple-light);
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* DIVIDER */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 20px 0;
+  }
+
+  /* SUMMARY TAG LINE */
+  .tagline {
+    font-family: -apple-system, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 480px) {
+    .cover-stats { grid-template-columns: 1fr 1fr; }
+    .cover-title { font-size: 21px; }
+    body { font-size: 14px; }
+    .page { padding: 16px 12px 40px; }
+  }
+</style>
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">Toggle theme</button>
+
+<main class="page" role="main">
+
+<!-- COVER -->
+<header class="cover" aria-label="Investor brief cover">
+  <p class="eyebrow">NSE: LLOYDSENT &nbsp;·&nbsp; Diversified Holdings &nbsp;·&nbsp; May 2026</p>
+  <h1 class="cover-title">Lloyds Enterprises Limited</h1>
+  <p class="cover-sub">From steel trader to a multi-vertical holding company sitting on India's first private gold mine, a ₹7,000 Cr Mumbai real estate pipeline, and a fast-scaling defence engineering subsidiary.</p>
+
+  <div style="margin-bottom: 14px;">
+    <span class="seg-tag seg-engineering"><span class="seg-dot" style="background:var(--coral)"></span>Engineering</span>
+    <span class="seg-tag seg-realestate"><span class="seg-dot" style="background:var(--blue)"></span>Real estate</span>
+    <span class="seg-tag seg-gold"><span class="seg-dot" style="background:var(--amber)"></span>Gold mining</span>
+    <span class="seg-tag seg-steel"><span class="seg-dot" style="background:var(--gray)"></span>Steel trading</span>
+  </div>
+
+  <div class="cover-stats" role="region" aria-label="Key financial metrics">
+    <div class="cstat">
+      <div class="cstat-label">Market cap</div>
+      <div class="cstat-val">₹10,767 Cr</div>
+      <div class="cstat-sub">~₹71.64 / share</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">Consolidated revenue FY26</div>
+      <div class="cstat-val">₹2,184 Cr</div>
+      <div class="cstat-sub">+39% year on year</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">Consolidated PAT FY26</div>
+      <div class="cstat-val">₹417 Cr</div>
+      <div class="cstat-sub">+238% year on year</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">PE ratio</div>
+      <div class="cstat-val">~26x</div>
+      <div class="cstat-sub">Consol PAT basis</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">LEWL order book</div>
+      <div class="cstat-val">₹8,335 Cr</div>
+      <div class="cstat-sub">Pro-forma FY26</div>
+    </div>
+    <div class="cstat">
+      <div class="cstat-label">52-week range</div>
+      <div class="cstat-val">₹40–₹88</div>
+      <div class="cstat-sub">1-year return ~60%</div>
+    </div>
+  </div>
+</header>
+
+
+<!-- CHAPTER 1: CONTEXT -->
+<section aria-labelledby="ch1-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">1</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter one</div>
+      <h2 class="chapter-title" id="ch1-title">Context — why this company, why now</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p>Three separate catalysts are maturing at the same time, all pointing at Lloyds Enterprises. In early May 2026, the Jonnagiri gold mine in Andhra Pradesh quietly entered commercial production — India's first large-scale private gold mine since Independence, with over ₹400 Cr already invested, peak capacity of 750–1,000 kg of gold per year, and certified reserves of 13.1 tonnes (with exploration indicating up to 42.5 tonnes). LEL owns 31.58% of this asset.</p>
+    <p>Simultaneously, the company received "No Adverse Observations" from BSE and NSE on May 15, 2026 for its Composite Scheme of Arrangement — the regulatory gateway to listing its real estate business separately as Lloyds Realty Limited. That pipeline, anchored in the Mumbai Metropolitan Region (MMR), carries management-guided revenue potential of over ₹7,000 Cr.</p>
+    <p>And third: subsidiary Lloyds Engineering Works (LEWL) just reported its second year of back-to-back record performance, with a pro-forma order book of ₹8,335 Cr after absorbing LICL, Metalfab and Techno Industries. LEWL's pivot into naval systems and defence, backed by Indian Navy orders and a tie-up with Polish drone firm FlyFocus, puts it in the direct path of India's ₹6.21 lakh Cr infrastructure and defence capex cycle.</p>
+    <p>The three catalysts together are what make this company interesting right now — not any one of them alone.</p>
+  </div>
+
+  <div class="accent-card amber">
+    <div class="accent-card-label">India gold context</div>
+    <div class="accent-card-title">India imports over 800 tonnes of gold per year — Jonnagiri is a structural inflection</div>
+    <p>At ₹7,600/g current gold price, 1,000 kg of annual production is worth ~₹760 Cr in revenue to Geomysore. LEL's 31.58% economic interest could yield ₹150–250 Cr of income at steady state. The mine's environmental clearance runs to 2043, providing a two-decade cash flow runway. AP Chief Minister Chandrababu Naidu personally flagged this as a national strategic asset in his May 2026 inauguration.</p>
+  </div>
+</section>
+
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section aria-labelledby="ch2-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">2</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter two</div>
+      <h2 class="chapter-title" id="ch2-title">The business model — what this company actually is</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p>Lloyds Enterprises is not, in any meaningful operational sense, a steel trader. The standalone entity generated just ₹463 Cr in revenue from operations in FY26 — but reported ₹349 Cr of "other income" and a ₹268 Cr profit. The real business is capital allocation: the promoter group uses LEL as a holding vehicle to seed, scale, and periodically separate high-growth assets.</p>
+    <p>Think of it as a three-layer structure. At the top is LEL standalone — a lean holding entity that trades steel (legacy), deploys capital into strategic stakes, and harvests gains from those stakes as "other income." In the middle are the operating subsidiaries: LEWL (engineering, 54% revenue growth, ₹8,335 Cr order book) and LRDL (real estate, being demerged). At the bottom are the investment assets: a 31.58% stake in Geomysore's gold mine, a stake in Lloyds Metals and Energy (funded via ₹361 Cr warrant purchase), and various minority positions.</p>
+    <p>The "flywheel": promoters build an asset within the Lloyds Group, park it under LEL while it matures, then either separately list it (LEWL was listed; LRDL is being listed) or retain it as an investment asset generating dividend and mark-to-market income for LEL. This is the same playbook used by Godrej Industries, Bajaj Holdings, and other Indian promoter-led holding vehicles.</p>
+  </div>
+
+  <div class="card">
+    <p class="card-title">What makes the model sticky</p>
+    <div class="stat-row"><span class="stat-label">Engineering (LEWL) moat</span><span class="stat-val">39-month execution track record on naval/PSU projects; naval certifications are hard to replicate</span></div>
+    <div class="stat-row"><span class="stat-label">Real estate (LRDL) model</span><span class="stat-val">Asset-light JV model with landowner/partner — minimises capital tied up in land acquisition</span></div>
+    <div class="stat-row"><span class="stat-label">Gold mine (GMSI) moat</span><span class="stat-val">12-year development journey, unique environmental clearance to 2043; no new entrant can replicate quickly</span></div>
+    <div class="stat-row"><span class="stat-label">Group brand advantage</span><span class="stat-val">Lloyds name across metals, engineering, real estate creates cross-group credibility with PSU buyers and banks</span></div>
+  </div>
+</section>
+
+
+<!-- CHAPTER 2B: PORTER'S 5 FORCES -->
+<section aria-labelledby="ch2b-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">2B</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter two-B</div>
+      <h2 class="chapter-title" id="ch2b-title">Porter's five forces — competitive structure</h2>
+    </div>
+  </div>
+
+  <p class="tagline">Analysed through the lens of LEWL — the primary operating engine. LEL standalone (holding company) has minimal competitive structure.</p>
+
+  <div class="card" style="padding: 0; overflow: hidden;">
+    <table class="porter-table" aria-label="Porter's five forces analysis">
+      <thead>
+        <tr>
+          <th style="width: 28%">Force</th>
+          <th style="width: 14%">Rating</th>
+          <th>Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Rivalry</strong></td>
+          <td><span class="badge badge-med" aria-label="Rating: Medium">Medium</span></td>
+          <td>L&T, Thermax, BHEL compete in heavy engineering; but LEWL's hydrocarbon + naval niche is specialty, and the ₹613 Cr SAIL-IISCO order shows competitive wins in large PSU projects.</td>
+        </tr>
+        <tr>
+          <td><strong>Buyer power</strong></td>
+          <td><span class="badge badge-med" aria-label="Rating: Medium">Medium</span></td>
+          <td>SAIL, ONGC, Indian Navy are large, concentrated buyers. However, multi-year project execution contracts (39-month SAIL order) reduce quarter-to-quarter leverage; PSU switching costs are moderate.</td>
+        </tr>
+        <tr>
+          <td><strong>Supplier power</strong></td>
+          <td><span class="badge badge-low" aria-label="Rating: Low">Low</span></td>
+          <td>Steel fabrication inputs (plates, structural steel) are broadly available in domestic market; LEWL's parent-group connection to Lloyds Metals provides some supply advantage.</td>
+        </tr>
+        <tr>
+          <td><strong>New entrants</strong></td>
+          <td><span class="badge badge-low" aria-label="Rating: Low">Low</span></td>
+          <td>Naval approvals, PSU vendor qualification, and the capex required for heavy fabrication yards (LEWL raised ₹857 Cr in rights issue for capacity) represent multi-year barriers for new entrants.</td>
+        </tr>
+        <tr>
+          <td><strong>Substitutes</strong></td>
+          <td><span class="badge badge-med" aria-label="Rating: Medium">Medium</span></td>
+          <td>Global EPC players could compete for very large project tenders; Indian defence import substitution policy protects the naval segment. Drone/UAV business via FlyFocus tie-up could face competition from DRDO-backed vendors.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card" style="background: var(--surface2);">
+    <p class="card-title">Structural pressure summary</p>
+    <p style="font-size: 13px; color: var(--muted);">The two forces that matter most: <strong>buyer concentration</strong> (PSU clients have multi-year payment cycles and can hold execution risk over contractors) and <strong>competitive rivalry</strong> (at the ₹500–1,000 Cr project size, L&T and Thermax become active bidders). LEWL's best defence is deepening naval certification and winning a pattern of repeat orders — which the order book growth to ₹8,335 Cr is beginning to suggest.</p>
+  </div>
+</section>
+
+
+<!-- CHAPTER 3: VERTICALS -->
+<section aria-labelledby="ch3-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">3</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter three</div>
+      <h2 class="chapter-title" id="ch3-title">Vertical stories — four business pillars</h2>
+    </div>
+  </div>
+
+  <div class="accent-card coral">
+    <div class="accent-card-label">Vertical 1 — Engineering &nbsp;·&nbsp; Status: Running and ramping fast</div>
+    <div class="accent-card-title">Lloyds Engineering Works (LEWL) — the operational engine</div>
+    <p>LEWL is a capital goods and EPC company pivoting from traditional steel fabrication into defence, naval systems, and infrastructure. FY26 consolidated revenue: ₹1,301 Cr (+54%); EBITDA: ₹239 Cr (+50%); consolidated order book: ₹2,643 Cr (+91%). Pro-forma entity (including LICL, Metalfab, Techno Industries post-merger): ₹3,253 Cr revenue and ₹8,335 Cr order book. Anchor order: ₹613 Cr + €18.26 million SAIL-IISCO pellet plant on a 39-month execution window. Naval segment: orders for steering gear systems worth ₹81 Cr over three years. Defence subsidiary (Lloyds Advance Defence System Ltd) incorporated but generating zero revenue in FY26 — the real optionality bet for FY27–28.</p>
+  </div>
+
+  <div class="accent-card blue">
+    <div class="accent-card-label">Vertical 2 — Real estate &nbsp;·&nbsp; Status: Pipeline secured, demerger in progress</div>
+    <div class="accent-card-title">Lloyds Realty Developers (LRDL) — the value unlock</div>
+    <p>LRDL (LEL holds 60.38%) is building an asset-light real estate platform in the Mumbai Metropolitan Region using JV partnerships. Total MoU pipeline: 270+ acres across MMR growth corridors with guided revenue potential of ₹7,000+ Cr. Key projects: large residential redevelopment in Goregaon West; premium commercial in Bandra; mixed-use in Thane's Ghodbunder Road; industrial and data centre park in Taloja; and a residential township in Khopoli. The demerger into Lloyds Realty Limited received BSE/NSE regulatory clearance on May 15, 2026, with NCLT filing required within six months. LEL shareholders will receive 1 share of Lloyds Realty for every 2 LEL shares held.</p>
+  </div>
+
+  <div class="accent-card amber">
+    <div class="accent-card-label">Vertical 3 — Gold mining &nbsp;·&nbsp; Status: Commercial production commenced May 2026</div>
+    <div class="accent-card-title">Geomysore Services India (GMSI) — the national landmark bet</div>
+    <p>LEL invested ₹200 Cr for a 31.58% economic stake in GMSI via a 50% partnership in Prakar Estate and Promoters LLP. GMSI's Jonnagiri Gold Mine (Kurnool, Andhra Pradesh) became India's first large-scale private gold mine since Independence, with commercial operations beginning in early May 2026. Spread across 598 hectares; certified reserves of 13.1 tonnes; exploration potential of 42.5 tonnes; mine life to 2043. Peak annual production target: 750–1,000 kg of refined gold. FY27 expected production: ~600 kg. At current gold price (~₹7,600/g), 1,000 kg per year equals ~₹760 Cr in GMSI revenue. LEL's 31.58% share implies potential income of ₹150–240 Cr at steady state.</p>
+  </div>
+
+  <div class="accent-card gray">
+    <div class="accent-card-label">Vertical 4 — Steel trading &nbsp;·&nbsp; Status: Legacy, residual</div>
+    <div class="accent-card-title">Standalone steel trading — the historical core</div>
+    <p>LEL's original business: trading iron and steel products. Standalone FY26 revenue from ops: ₹463 Cr (+29% YoY). But this is not where the story lives. The segment posted losses in Q3 FY26 (–₹19 Cr at the subsidiary level); revenue is lumpy (Q4 standalone jumped to ₹720 Cr; Q3 was ₹299 Cr). The entity will remain post-demerger, retaining the steel trading business alongside a financial investment portfolio. Think of standalone LEL as a treasury/holding entity that happens to also trade steel.</p>
+  </div>
+</section>
+
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section aria-labelledby="ch4-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">4</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter four</div>
+      <h2 class="chapter-title" id="ch4-title">The strategic insight — the one thing to understand</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="insight-quote" role="note" aria-label="Key strategic insight">
+      "LEL's FY26 ₹268 Cr standalone profit came almost entirely from investment income — not operations. The company's ROCE is 2.81%. If you are trying to value this as a conventional P&amp;E business, you are asking the wrong question. This is a sum-of-parts story, not an earnings story."
+    </div>
+    <p>The non-obvious insight: Lloyds Enterprises should be valued like Bajaj Holdings or Godrej Industries — on the net asset value of its portfolio, not on its operating earnings. The ₹349 Cr of "other income" in FY26 likely includes mark-to-market gains on LYMT warrants (Lloyds Metals and Energy, a ₹1.04 lakh Cr company), gains on Geomysore investment, and treasury income. Those are real, but non-recurring. The operating EBITDA of the group is thin (6.3% in Q4 FY26).</p>
+    <p>The real question investors should be asking: what is the sum-of-parts (SOP) value of (1) a ~60% stake in LRDL with ₹7,000 Cr pipeline + (2) a 31.58% stake in India's only private gold mine + (3) a minority stake in LEWL with ₹8,335 Cr order book + (4) LEL's position in LYMT? Each of those four assets, separately listed, would carry a very different multiple than the 26x PE the market currently assigns to the consolidated entity's thin operating earnings. The demerger of real estate is step one of the SOP unlock — and the exchange clearance in May 2026 has de-risked the process.</p>
+    <p>This is an <em>asset value realisation</em> story with an operating earnings story layered on top. Miss that, and the thesis is invisible.</p>
+  </div>
+</section>
+
+
+<!-- CHAPTER 5: NUMBERS -->
+<section aria-labelledby="ch5-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">5</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter five</div>
+      <h2 class="chapter-title" id="ch5-title">The numbers in context</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <p class="card-title">FY26 consolidated — headline performance</p>
+    <div class="stat-row"><span class="stat-label">Revenue from operations</span><span class="stat-val">₹2,184 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Revenue growth (YoY)</span><span class="stat-val up">+39%</span></div>
+    <div class="stat-row"><span class="stat-label">Net profit (PAT)</span><span class="stat-val">₹417 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">PAT growth (YoY)</span><span class="stat-val up">+238%</span></div>
+    <div class="stat-row"><span class="stat-label">Q4 FY26 EBITDA margin</span><span class="stat-val warn">6.3%</span></div>
+    <div class="stat-row"><span class="stat-label">EBITDA growth Q4 YoY</span><span class="stat-val up">+82% (₹45 Cr vs ₹25 Cr)</span></div>
+    <div class="stat-row"><span class="stat-label">Debt to equity</span><span class="stat-val">0.04× net</span></div>
+    <div class="stat-row"><span class="stat-label">Return on equity (standalone)</span><span class="stat-val warn">8.52%</span></div>
+    <div class="stat-row"><span class="stat-label">ROCE (standalone)</span><span class="stat-val dn">2.81%</span></div>
+    <div class="stat-row"><span class="stat-label">Market cap</span><span class="stat-val">₹10,767 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">PE (consolidated PAT basis)</span><span class="stat-val warn">~26×</span></div>
+    <div class="stat-row"><span class="stat-label">Price-to-book</span><span class="stat-val">2.06×</span></div>
+    <div class="stat-row"><span class="stat-label">5-year return (stock)</span><span class="stat-val up">+1,456%</span></div>
+    <div class="stat-row"><span class="stat-label">Promoter holding</span><span class="stat-val">62.72% (zero pledging)</span></div>
+  </div>
+
+  <div class="card" style="border-left: 3px solid var(--coral); border-radius: 0 8px 8px 0;">
+    <p class="card-title">LEWL (engineering subsidiary) — standalone operational metrics</p>
+    <div class="stat-row"><span class="stat-label">Standalone FY26 revenue</span><span class="stat-val">₹1,052 Cr (+39%)</span></div>
+    <div class="stat-row"><span class="stat-label">Standalone EBITDA</span><span class="stat-val">₹188 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Standalone EBITDA margin</span><span class="stat-val up">~18%</span></div>
+    <div class="stat-row"><span class="stat-label">Standalone order book (April 2026)</span><span class="stat-val">₹2,352 Cr (+79%)</span></div>
+    <div class="stat-row"><span class="stat-label">Pro-forma group order book</span><span class="stat-val">₹8,335 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Rights issue raised (FY26)</span><span class="stat-val">₹857 Cr</span></div>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Earnings quality — the caution flag</p>
+    <p style="font-size:13px;color:var(--muted);">In Q4 FY26, 77.23% of LEL's standalone pre-tax profit came from non-operating income. For the nine months ended December 2025, standalone "other income" totalled ₹302 Cr vs. actual operations revenue of ₹49 Cr in Q3. This is not a red flag per se — many holding companies earn primarily from investments — but it means the stated PE of 26× is not pricing operating performance; it's pricing asset portfolio gains. Investors must track whether the gold mine and LRDL move from "value potential" to "actual cash flow."</p>
+  </div>
+
+  <div class="card">
+    <p class="card-title">Valuation context vs. peers</p>
+    <div class="stat-row"><span class="stat-label">LLOYDSENT (consolidated, FY26)</span><span class="stat-val">~26× PE, 2.1× PB</span></div>
+    <div class="stat-row"><span class="stat-label">Godrej Industries (promoter holding co.)</span><span class="stat-val">~35–40× PE (SOP premium)</span></div>
+    <div class="stat-row"><span class="stat-label">Bajaj Holdings</span><span class="stat-val">~20× PE; deep discount to NAV</span></div>
+    <div class="stat-row"><span class="stat-label">LEWL (pure-play engineering peer)</span><span class="stat-val">~30–35× PE (FY26 basis)</span></div>
+    <div class="stat-row"><span class="stat-label">MMR real estate peers (Macrotech, Oberoi)</span><span class="stat-val">~30–45× PE; 3–5× PB</span></div>
+    <div class="stat-row"><span class="stat-label">What the market is pricing in</span><span class="stat-val warn">Modest demerger premium; partial gold mine value; LEWL earnings at conservative multiples</span></div>
+  </div>
+
+  <!-- CAPEX TIMELINE -->
+  <h3 style="font-family:-apple-system,sans-serif;font-size:13px;font-weight:600;color:var(--text);margin:16px 0 10px;" id="capex-timeline">Capex timeline</h3>
+  <div class="card">
+    <div class="timeline" role="list" aria-label="Capital expenditure timeline">
+      <div class="tl-item" role="listitem">
+        <div class="tl-year">FY25</div>
+        <div class="tl-desc">LEWL rights issue initiated; GMSI stake acquisition under negotiation; LEL invested ₹140 Cr in Prakar LLP for 31.58% economic stake in Jonnagiri mine. Harvest phase for historical LEL capex.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-year">FY26 Q1</div>
+        <div class="tl-desc">LEWL rights issue completed — ₹857 Cr raised for capacity expansion and inorganic growth. LEL invested additional ₹200 Cr total in Geomysore stake. LEL deployed ₹361 Cr via Tata Capital/Bajaj Finance facilities for LYMT warrants.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-year">FY26 Q2–Q3</div>
+        <div class="tl-desc">LEWL acquires Metalfab Hightech (76%) and makes Techno Industries a 100% subsidiary. LICL merger approved. LRDL signs MoUs for 270+ acres across MMR. Jonnagiri pre-commercial production trials begin.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-year">FY26 Q4 / May 2026</div>
+        <div class="tl-desc">Jonnagiri commercial production commenced. Exchange NOC for LRDL demerger received May 15, 2026. LEL FY26 results approved — consolidated PAT ₹417 Cr. LEWL pro-forma order book reaches ₹8,335 Cr.</div>
+      </div>
+      <div class="tl-item" role="listitem">
+        <div class="tl-year">FY27 (expected)</div>
+        <div class="tl-desc">NCLT filing for real estate demerger (6-month window). Jonnagiri production ramp to ~600 kg by FY27. First bookings in Goregaon West and Bandra real estate projects. LEWL order book execution accelerates on SAIL pellet plant.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CHAPTER 6: RISKS -->
+<section aria-labelledby="ch6-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">6</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter six</div>
+      <h2 class="chapter-title" id="ch6-title">Risks — eyes open</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="risk-row" role="group" aria-label="Risk: Earnings quality">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">Earnings quality — 77% of profit is non-operating income</div>
+        <div class="risk-body">LEL's headline PAT is heavily dependent on investment gains, mark-to-market income, and treasury activity — not sustainable operational earnings. If capital markets correct or LYMT/Geomysore values decline, reported profits could collapse. Watch: standalone operating revenue vs. other income split each quarter.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="group" aria-label="Risk: Demerger execution">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">Demerger complexity — NCLT approval is a 6-month window that can slip</div>
+        <div class="risk-body">The Composite Scheme involves four entities (LRDL, IPPL, LEL, LRL) and requires NCLT approval, SEBI compliance disclosures, and demat-only share issuance. Any delay beyond November 2026 means re-starting the exchange observation letter process. The scheme also requires SEBI's conditions on adjudication proceedings to be addressed. Signal to watch: NCLT filing date.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="group" aria-label="Risk: Steel segment losses">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">Steel trading — loss-making in Q3, revenue is volatile</div>
+        <div class="risk-body">The standalone steel trading segment posted a ₹19 Cr loss at the subsidiary level in Q3 FY26. Revenue swung from ₹299 Cr in Q3 to ₹720 Cr in Q4 — lumpy project-linked buying, not a steady-state business. If steel prices fall or PSU ordering slows, this segment could drag on consolidated results for multiple quarters.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="group" aria-label="Risk: Gold mine ramp">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">Jonnagiri ramp risk — land acquisition still pending, first commercial production is fragile</div>
+        <div class="risk-body">The Kurnool District Collector was still directing resolution of land acquisition issues as of April 2026. Pre-commercial production trials are technically challenging (as the 12-year development timeline shows). A production shortfall or regulatory clearance issue could delay the FY27 ~600 kg target. This investment is illiquid — LEL cannot exit quickly.</div>
+      </div>
+    </div>
+    <div class="risk-row" role="group" aria-label="Risk: Conglomerate discount">
+      <div class="risk-icon" aria-hidden="true">⚠</div>
+      <div>
+        <div class="risk-title">Governance opacity — conglomerate structure obscures true value and risks</div>
+        <div class="risk-body">The four-entity demerger scheme, multiple inter-group transactions (LEL borrowing to buy LYMT warrants, block deals in subsidiaries, RPTs with Geomysore), and several layers of subsidiaries/associates make it difficult for minority shareholders to track value. The sale of the LEWL stake via block deal in February 2026 was a dilution of LEL's interest in its best operating asset, and the rationale was not fully disclosed. Related-party transaction risks are real.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section aria-labelledby="ch7-title">
+  <div class="chapter">
+    <div class="chapter-num" aria-hidden="true">7</div>
+    <div class="chapter-inner">
+      <div class="chapter-eyebrow">Chapter seven</div>
+      <h2 class="chapter-title" id="ch7-title">Watch signals — five metrics to track every quarter</h2>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="watch-row">
+      <div>
+        <div class="watch-dot" style="background:var(--amber);margin-top:5px;min-width:10px;" aria-hidden="true"></div>
+      </div>
+      <div>
+        <div class="watch-title">Jonnagiri gold production volume (Geomysore press releases / Deccan Gold Mines disclosures)</div>
+        <div class="watch-body">Target: 750–1,000 kg/year at peak; expect 600 kg by FY27. Good signal: consistent month-on-month production ramp, no regulatory interruption. Red flag: production suspended, or land acquisition dispute escalated to AP High Court.</div>
+      </div>
+    </div>
+    <div class="watch-row">
+      <div>
+        <div class="watch-dot" style="background:var(--blue);margin-top:5px;min-width:10px;" aria-hidden="true"></div>
+      </div>
+      <div>
+        <div class="watch-title">NCLT filing timeline for real estate demerger (within 6 months of May 15, 2026)</div>
+        <div class="watch-body">The exchange observation letters are valid six months. NCLT must be filed by November 2026, and approval before March 2027 for the scheme to be complete. Good signal: filing by September 2026, no SEBI compliance issues. Red flag: filing delayed past November; any SEBI adjudication proceedings flagged.</div>
+      </div>
+    </div>
+    <div class="watch-row">
+      <div>
+        <div class="watch-dot" style="background:var(--coral);margin-top:5px;min-width:10px;" aria-hidden="true"></div>
+      </div>
+      <div>
+        <div class="watch-title">LEWL standalone operating margin (each quarterly result)</div>
+        <div class="watch-body">Standalone EBITDA margin was ~18% in FY26 — among the best in its peer group. Good signal: margins sustain at 16–18% as revenue scales. Red flag: margin compression below 14% (signals aggressive bidding to win order book share at poor economics).</div>
+      </div>
+    </div>
+    <div class="watch-row">
+      <div>
+        <div class="watch-dot" style="background:var(--blue);margin-top:5px;min-width:10px;" aria-hidden="true"></div>
+      </div>
+      <div>
+        <div class="watch-title">LRDL first project launch bookings (Goregaon West or Bandra)</div>
+        <div class="watch-body">MoUs are signed; regulatory and partner processes are underway. First actual bookings/launches are the bridge from "pipeline" to "revenue." Good signal: first project RERA registration by Q3 FY27, bookings within 6 months. Red flag: no project launches by FY28 end (signals pipeline is not converting).</div>
+      </div>
+    </div>
+    <div class="watch-row">
+      <div>
+        <div class="watch-dot" style="background:var(--muted);margin-top:5px;min-width:10px;" aria-hidden="true"></div>
+      </div>
+      <div>
+        <div class="watch-title">LEL standalone operating revenue vs. other income split (quarterly P&amp;L)</div>
+        <div class="watch-body">This single ratio tells you whether the business is building operational strength or remaining a financial holding shell. Good signal: operating revenue trending up to 50%+ of total income by FY28. Red flag: other income remains above 80% of PBT for three or more consecutive quarters — signals the company is managing earnings through investments, not building a real operating base.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<hr class="divider" aria-hidden="true">
+
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+  <div class="verdict" role="region" aria-labelledby="verdict-title">
+    <div class="verdict-label" id="verdict-title">Verdict</div>
+    <p>Three structural tailwinds converge on Lloyds Enterprises simultaneously: India's defence and heavy engineering supercycle (₹6.21 lakh Cr infra capex in Union Budget 2025–26), the structural undersupply in Mumbai's premium real estate market, and India's first large-scale private gold mine now in commercial production — the most politically symbolic mineral story in the country this year. LEL owns a meaningful stake in all three.</p>
+    <p>The quality signal in the financials is mixed but improving in the right direction. The consolidated entity's 6.3% EBITDA margin is thin, and the 77% non-operating income dependence is a structural weakness. But LEWL's 18% standalone EBITDA margin with a 2× order book growth is genuinely high quality; the real estate pipeline is asset-light and de-risked via JV structures; and the gold mine investment at ₹200 Cr deployed will look exceptionally cheap if production ramps to 1,000 kg/year.</p>
+    <p>The near-term catalyst that could re-rate the stock is the real estate demerger completion — expected by H1 FY28. A separately listed Lloyds Realty with a ₹7,000 Cr project pipeline would trade at 3–5× PB (peer comparable); that value is currently invisible inside a diversified holding company at 2× PB. On valuation: at ₹71.64 (26× consolidated PE), the market is pricing in LEWL's earnings at a modest multiple but giving limited credit to GMSI or LRDL. If you believe the demerger executes, the gold mine ramps, and LEWL sustains 15%+ margins on a ₹3,000+ Cr revenue base, you are in the early-to-middle chapters of a sum-of-parts re-rating story. If any two of those three fail to materialise, the thesis weakens significantly.</p>
+  </div>
+</section>
+
+<p style="font-family:-apple-system,sans-serif;font-size:11px;color:var(--hint);text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid var(--border);">NSE: LLOYDSENT &nbsp;·&nbsp; Brief date: 27 May 2026 &nbsp;·&nbsp; Sources: BSE/NSE filings, company investor presentations, ScanX, InvestyWise, Deccan Chronicle, Business Standard, The Federal. Not investment advice.</p>
+
+</main>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const current = body.getAttribute('data-theme');
+    if (current === 'dark') {
+      body.setAttribute('data-theme', 'light');
+      localStorage.setItem('lloydsent-theme', 'light');
+    } else {
+      body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('lloydsent-theme', 'dark');
+    }
+  }
+  (function() {
+    const saved = localStorage.getItem('lloydsent-theme');
+    if (saved) {
+      document.body.setAttribute('data-theme', saved);
+    }
+  })();
+</script>
+</body>
+</html>

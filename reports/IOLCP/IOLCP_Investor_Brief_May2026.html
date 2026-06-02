@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IOLCP — IOL Chemicals &amp; Pharmaceuticals | Investor Brief | May 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/1.119.0/webfont/tabler-icons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root {
+  --primary:#378ADD; --primary-dark:#185FA5; --primary-light:#E6F1FB;
+  --ind:#534AB7; --ind-light:#EEEDFE;
+  --green:#3B6D11; --green-light:#EAF3DE;
+  --amber:#BA7517; --amber-light:#FAEEDA;
+  --coral:#D85A30; --coral-light:#FAECE7;
+  --teal:#1D9E75; --teal-light:#E1F5EE;
+  --text:#1a1a1a; --text-sec:#555; --text-hint:#888;
+  --bg:#ffffff; --bg-sec:#f7f8fc; --bg-ter:#eff1f7;
+  --border:rgba(0,0,0,0.1); --border-strong:rgba(0,0,0,0.2);
+  --font-display:'Lora',Georgia,serif;
+  --font-body:'Jost',system-ui,sans-serif;
+  --radius:10px; --radius-sm:6px;
+}
+[data-theme="dark"]{
+  --text:#e5e8f0; --text-sec:#9098b0; --text-hint:#6070a0;
+  --bg:#141720; --bg-sec:#1c2030; --bg-ter:#222840;
+  --border:rgba(255,255,255,0.1); --border-strong:rgba(255,255,255,0.2);
+  --primary-light:rgba(55,138,221,0.15);
+  --ind-light:rgba(83,74,183,0.15);
+  --green-light:rgba(59,109,17,0.15);
+  --amber-light:rgba(186,117,23,0.15);
+  --coral-light:rgba(216,90,48,0.15);
+  --teal-light:rgba(29,158,117,0.15);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-body);font-size:15px;line-height:1.7;color:var(--text);background:var(--bg);max-width:760px;margin:0 auto;padding:0 0 60px}
+p{margin:0.65rem 0;font-size:14.5px;line-height:1.75;color:var(--text)}
+
+/* TOPBAR */
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;background:var(--primary-dark);color:#E6F1FB}
+.topbar-left{font-size:11.5px;letter-spacing:0.4px;opacity:0.85}
+.theme-btn{background:transparent;border:0.5px solid rgba(255,255,255,0.35);color:#E6F1FB;padding:4px 14px;border-radius:20px;font-size:11px;cursor:pointer;font-family:var(--font-body)}
+
+/* QUICK SCAN — ALWAYS EXPANDED (printer-friendly) */
+.qs-strip{background:var(--primary-dark);margin-bottom:1.5rem}
+.qs-header{padding:11px 24px 10px;border-bottom:0.5px solid rgba(255,255,255,0.15)}
+.qs-header-label{font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#B5D4F4;font-weight:500}
+.qs-inner{padding:10px 24px 16px;display:flex;flex-direction:column;gap:0}
+.qs-row{display:grid;grid-template-columns:100px 1fr;gap:12px;padding:6px 0;border-bottom:0.5px solid rgba(255,255,255,0.07)}
+.qs-row:last-child{border-bottom:none}
+.qs-tag{font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:#B5D4F4;padding-top:2px;font-weight:500}
+.qs-val{font-size:13px;color:#E6F1FB;line-height:1.5}
+
+/* CONTENT */
+.content{padding:0 24px}
+
+/* COVER */
+.cover{padding:1.75rem 0 1.5rem}
+.cover-eyebrow{display:flex;align-items:center;gap:7px;margin-bottom:10px;flex-wrap:wrap}
+.eyebrow-tag{font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:var(--text-hint);padding:2px 8px;border:0.5px solid var(--border);border-radius:3px}
+.cover-title{font-size:36px;font-weight:400;line-height:1.15;color:var(--text);margin-bottom:6px;font-family:var(--font-display)}
+.cover-sub{font-size:15px;color:var(--text-sec);margin-bottom:1.4rem}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.mc{background:var(--bg-sec);border-radius:var(--radius-sm);padding:11px 13px;border:0.5px solid var(--border)}
+.mc-lbl{font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:var(--text-hint);margin-bottom:3px}
+.mc-val{font-size:21px;font-weight:500;color:var(--text);line-height:1.1;font-family:var(--font-display)}
+.mc-sub{font-size:11px;color:var(--text-sec);margin-top:2px}
+.mc-up{color:var(--primary)}
+
+/* CHAPTERS */
+.ch-wrap{padding-top:1.75rem;margin-top:1.25rem;border-top:0.5px solid var(--border)}
+.ch-head{display:flex;align-items:flex-start;gap:13px;margin-bottom:0.9rem}
+.ch-num{width:33px;height:33px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:500;flex-shrink:0;margin-top:2px}
+.ch-eyebrow{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-hint);margin-bottom:2px}
+.ch-title{font-size:21px;font-weight:400;color:var(--text);font-family:var(--font-display);line-height:1.2}
+
+/* HIGHLIGHTS */
+.hl-key{background:#FFF176;padding:1px 4px;border-radius:2px;font-weight:500;color:#333}
+.hl-number{background:var(--primary-light);padding:1px 4px;border-radius:2px;font-family:monospace;font-size:0.92em}
+.hl-risk{background:var(--amber-light);padding:1px 4px;border-radius:2px;border-left:3px solid var(--amber);padding-left:6px}
+.hl-catalyst{background:var(--green-light);padding:1px 4px;border-radius:2px;border-left:3px solid var(--green);padding-left:6px}
+[data-theme="dark"] .hl-key{background:rgba(255,241,0,0.2);color:var(--text)}
+[data-theme="dark"] .hl-number,.hl-risk,.hl-catalyst{color:var(--text)}
+
+/* TAKEAWAY PILL */
+.takeaway-pill{background:var(--primary-light);border-left:3px solid var(--primary);padding:10px 14px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1.4rem 0 0.4rem;font-size:13px;font-weight:500;color:var(--primary-dark);line-height:1.5}
+[data-theme="dark"] .takeaway-pill{color:#85B7EB}
+
+/* STATS */
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:8px 0;border-bottom:0.5px solid var(--border);font-size:14px}
+.stat-lbl{color:var(--text-sec)}
+.stat-val{font-weight:500;color:var(--text);font-family:monospace;font-size:13px}
+
+/* INSIGHT CARD */
+.insight-card{border-left:3px solid var(--primary);padding:1rem 1.25rem;background:var(--primary-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:1rem 0}
+.insight-card p{margin:0;font-size:14.5px;line-height:1.75}
+
+/* VERTICAL CARDS */
+.vert-card{border-left:3px solid var(--primary);background:var(--primary-light);padding:11px 15px;border-radius:0 var(--radius-sm) var(--radius-sm) 0;margin:9px 0}
+.vert-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
+.vert-title{font-weight:500;font-size:14px;color:var(--primary-dark)}
+[data-theme="dark"] .vert-title{color:#85B7EB}
+.vert-status{font-size:10px;font-weight:500;letter-spacing:0.5px;padding:2px 8px;border-radius:3px;text-transform:uppercase}
+.st-running{background:#B5D4F4;color:#0C447C}
+.st-ramping{background:#FAC775;color:#633806}
+[data-theme="dark"] .st-running{background:rgba(181,212,244,0.2);color:#85B7EB}
+[data-theme="dark"] .st-ramping{background:rgba(250,199,117,0.2);color:#EF9F27}
+.vert-body{font-size:13.5px;color:var(--text);line-height:1.6}
+
+/* CHEM VERT (teal) */
+.vert-card-teal{border-left:3px solid var(--teal);background:var(--teal-light)}
+.vert-title-teal{color:#085041 !important}
+[data-theme="dark"] .vert-title-teal{color:#5DCAA5 !important}
+.st-chem{background:#9FE1CB;color:#04342C}
+[data-theme="dark"] .st-chem{background:rgba(159,225,203,0.2);color:#5DCAA5}
+
+/* PORTER TABLE */
+table.porter{width:100%;font-size:13px;border-collapse:collapse;margin:1rem 0}
+table.porter th{text-align:left;font-weight:500;padding:8px 10px;border-bottom:1.5px solid var(--border-strong);font-size:11px;letter-spacing:0.5px;color:var(--text-hint);text-transform:uppercase}
+table.porter td{padding:10px;border-bottom:0.5px solid var(--border);vertical-align:top;line-height:1.55;font-size:13.5px}
+table.porter tr:last-child td{border-bottom:none}
+.r-high{color:var(--coral);font-weight:500}
+.r-med{color:var(--amber);font-weight:500}
+.r-low{color:var(--green);font-weight:500}
+.porter-synthesis{background:var(--bg-sec);border-radius:var(--radius-sm);padding:11px 15px;margin-top:1rem;font-size:13.5px;color:var(--text-sec);border:0.5px solid var(--border)}
+
+/* CAPEX */
+.capex-wrap{border:0.5px solid var(--border);border-radius:var(--radius-sm);margin:1rem 0;overflow:hidden}
+.capex-hdr{display:grid;grid-template-columns:80px 110px 1fr 1fr;gap:10px;padding:8px 10px;background:var(--bg-sec);font-size:10px;letter-spacing:0.8px;text-transform:uppercase;color:var(--text-hint);font-weight:500}
+.capex-row{display:grid;grid-template-columns:80px 110px 1fr 1fr;gap:10px;padding:10px;border-top:0.5px solid var(--border);font-size:13px;align-items:start}
+.capex-row:hover{background:rgba(55,138,221,0.04)}
+.capex-year{font-weight:500;color:var(--primary);font-size:13.5px}
+.capex-amt{font-family:monospace;color:var(--text-sec);font-size:12.5px}
+.capex-peak{background:rgba(55,138,221,0.05)}
+
+/* RISKS */
+.risk-item{display:flex;gap:14px;padding:13px 0;border-bottom:0.5px solid var(--border);align-items:flex-start}
+.risk-item:last-child{border-bottom:none}
+.risk-icon{font-size:20px;color:var(--amber);flex-shrink:0;margin-top:1px}
+.risk-name{font-weight:500;font-size:14px;margin-bottom:3px}
+.risk-desc{font-size:13.5px;color:var(--text-sec);line-height:1.6}
+
+/* WATCH */
+.watch-item{display:flex;gap:12px;padding:10px 0;border-bottom:0.5px solid var(--border);align-items:flex-start}
+.watch-item:last-child{border-bottom:none}
+.watch-dot{width:8px;height:8px;border-radius:50%;background:var(--primary);flex-shrink:0;margin-top:7px}
+.watch-name{font-weight:500;font-size:14px;margin-bottom:3px}
+.watch-desc{font-size:13.5px;color:var(--text-sec);line-height:1.6}
+.watch-flag{font-size:12px;color:var(--amber);margin-top:3px}
+
+/* VERDICT */
+.verdict-wrap{background:var(--primary-light);border:0.5px solid var(--primary);border-radius:var(--radius);padding:1.4rem;margin:2rem 0 1rem}
+[data-theme="dark"] .verdict-wrap{background:rgba(55,138,221,0.1)}
+.verdict-eyebrow{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--primary-dark);margin-bottom:8px;font-weight:500}
+[data-theme="dark"] .verdict-eyebrow{color:#85B7EB}
+.stage-badge{display:inline-block;background:var(--primary);color:#fff;font-size:11px;font-weight:500;padding:3px 12px;border-radius:3px;letter-spacing:0.5px;margin-bottom:10px}
+.verdict-text p{font-size:14.5px;line-height:1.85}
+
+/* HIGHLIGHT INDEX — ALWAYS VISIBLE (printer-friendly) */
+.hi-block{margin:2rem 0;border:0.5px solid var(--border);border-radius:var(--radius-sm);overflow:hidden}
+.hi-header{padding:11px 16px;background:var(--bg-sec);border-bottom:0.5px solid var(--border);display:flex;align-items:center;gap:8px}
+.hi-header-label{font-weight:500;font-size:14px;color:var(--text)}
+.hi-list{padding:12px 16px 16px;list-style:decimal;padding-left:34px;display:flex;flex-direction:column;gap:6px}
+.hi-list li{font-size:13px;color:var(--text-sec);line-height:1.5}
+.hi-list li[data-type="hl-key"]{color:var(--text);font-weight:500}
+.hi-list li[data-type="hl-catalyst"]{color:var(--green)}
+.hi-list li[data-type="hl-risk"]{color:var(--amber)}
+.hi-list li[data-type="takeaway-pill"]{color:var(--primary-dark);font-style:italic}
+[data-theme="dark"] .hi-list li[data-type="takeaway-pill"]{color:#85B7EB}
+
+/* CHART */
+.chart-wrap{position:relative;width:100%;height:250px;margin:1rem 0}
+.chart-legend{display:flex;gap:16px;margin-bottom:8px;flex-wrap:wrap}
+.legend-item{display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-sec)}
+.legend-swatch{width:10px;height:10px;border-radius:2px}
+
+/* MISC */
+.footnote{font-size:11.5px;color:var(--text-hint);margin:0.5rem 0;line-height:1.6}
+.section-note{background:var(--bg-sec);border-radius:var(--radius-sm);padding:10px 14px;border-left:3px solid var(--primary);margin:1rem 0;font-size:13px;color:var(--text-sec)}
+
+@media print {
+  .topbar,.theme-btn{display:none}
+  body{max-width:100%;padding:0}
+  .qs-strip{page-break-after:avoid}
+  .ch-wrap{page-break-inside:avoid}
+  .hi-block{page-break-inside:avoid}
+}
+@media(max-width:600px){
+  .capex-hdr,.capex-row{grid-template-columns:65px 1fr;font-size:12px}
+  .capex-amt{display:none}
+  .cover-title{font-size:27px}
+  .qs-row{grid-template-columns:80px 1fr}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar" role="banner">
+  <span class="topbar-left">NSE: IOLCP &nbsp;·&nbsp; IOL Chemicals &amp; Pharmaceuticals &nbsp;·&nbsp; May 28, 2026</span>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle colour theme">☀ / ☾</button>
+</div>
+
+<!-- QUICK SCAN — ALWAYS EXPANDED -->
+<div class="qs-strip" role="complementary" aria-label="Quick scan summary">
+  <div class="qs-header">
+    <span class="qs-header-label">⚡ Quick Scan — IOLCP · IOL Chemicals &amp; Pharmaceuticals</span>
+  </div>
+  <div class="qs-inner">
+    <div class="qs-row"><span class="qs-tag">⚡ Context</span><span class="qs-val">The Biosecure Act (Dec 2025) is forcing Western pharma buyers off Chinese API suppliers; IOL — the world's only fully backward-integrated ibuprofen maker — is the natural beneficiary.</span></div>
+    <div class="qs-row"><span class="qs-tag">🏭 Model</span><span class="qs-val">Dual-engine: pharma APIs (ibuprofen 35% global share) + specialty chemicals (ethyl acetate, IBB) where the chemical division secretly subsidises the API cost base.</span></div>
+    <div class="qs-row"><span class="qs-tag">🎯 Insight</span><span class="qs-val">IOL's chemical business is not a separate division — it is an integrated cost shield. Every rupee of ethyl acetate and IBB produced in-house reduces ibuprofen raw material cost, and the surplus sold externally converts that cost saving into additional revenue.</span></div>
+    <div class="qs-row"><span class="qs-tag">📊 Numbers</span><span class="qs-val">FY26: ₹2,319 cr revenue (+11.5%), EBITDA ₹290 cr (+29.3%, 12.5% margin), PAT ₹137.7 cr (+36.4%); Q4 FY26 EBITDA margin hit 15.2% — highest in 7+ quarters.</span></div>
+    <div class="qs-row"><span class="qs-tag">🚧 Top Risk</span><span class="qs-val">Revenue CAGR of only 3.35% over five years — the greenfield expansion (₹1,200–1,400 cr) is the bet that the next five years look different from the last five.</span></div>
+    <div class="qs-row"><span class="qs-tag">👁 Watch</span><span class="qs-val">Pharma segment EBIT margin (Q4: 16.6% — rising) and export revenue % (currently 29% — should climb with Biosecure tailwind); track quarterly.</span></div>
+    <div class="qs-row"><span class="qs-tag">💡 Verdict</span><span class="qs-val">Early-to-mid chapter: PE ~29x vs sector 47x is compelling, but you're underwriting a margin recovery and a greenfield execution — both still in early innings.</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-eyebrow">
+    <span class="eyebrow-tag">NSE: IOLCP</span>
+    <span class="eyebrow-tag">API · Specialty Chemicals</span>
+    <span class="eyebrow-tag">Listed Nov 2010 · Ludhiana, Punjab</span>
+  </div>
+  <h1 class="cover-title">IOL Chemicals &amp;<br>Pharmaceuticals Limited</h1>
+  <p class="cover-sub">World's largest ibuprofen maker, the only fully backward-integrated producer globally — now at a margin inflection point as Western pharma de-risks away from China</p>
+  <div class="mgrid">
+    <div class="mc"><div class="mc-lbl">Market Cap</div><div class="mc-val">₹3,994 cr</div><div class="mc-sub">~₹131/share (May 27)</div></div>
+    <div class="mc"><div class="mc-lbl">FY26 Revenue</div><div class="mc-val">₹2,319 cr</div><div class="mc-sub mc-up">+11.5% YoY</div></div>
+    <div class="mc"><div class="mc-lbl">FY26 PAT</div><div class="mc-val">₹137.7 cr</div><div class="mc-sub mc-up">+36.4% YoY</div></div>
+    <div class="mc"><div class="mc-lbl">Trailing PE</div><div class="mc-val">~29x</div><div class="mc-sub">Sector avg ~47x</div></div>
+    <div class="mc"><div class="mc-lbl">Q4 EBITDA Margin</div><div class="mc-val">15.2%</div><div class="mc-sub mc-up">Highest in 7+ qtrs</div></div>
+    <div class="mc"><div class="mc-lbl">Global IBU Share</div><div class="mc-val">35%</div><div class="mc-sub">World's largest producer</div></div>
+    <div class="mc"><div class="mc-lbl">Debt Position</div><div class="mc-val">Net cash</div><div class="mc-sub">D/E ≈ −0.06x</div></div>
+    <div class="mc"><div class="mc-lbl">Promoter Holding</div><div class="mc-val">57.5%</div><div class="mc-sub mc-up">+4.86% in Q1 FY26</div></div>
+  </div>
+</div>
+
+<!-- CH 1 — CONTEXT -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">1</div>
+    <div>
+      <div class="ch-eyebrow">Chapter One</div>
+      <div class="ch-title">Context — the Biosecure moment for Indian API makers</div>
+    </div>
+  </div>
+
+  <p>On December 18, 2025, President Trump signed the BIOSECURE Act into US law as part of the FY26 National Defense Authorization Act. The legislation prohibits federal agencies from contracting with entities using biotechnology equipment or services from Chinese "companies of concern." Its practical effect is broader: Western pharma companies — already anxious since the COVID supply chain rupture — now face institutional pressure to diversify procurement away from Chinese API and biotech suppliers, or risk losing access to US government-linked contracts.</p>
+
+  <p>The result: <span class="hl-catalyst">a reported 50% jump in request-for-quotation (RFQ) volumes from Western pharma buyers to Indian API manufacturers in 2024</span>, a trend the Biosecure Act is expected to accelerate through 2026 and beyond. India is the only country with the volumetric API manufacturing capacity to rival China — and within India, the companies with proven regulatory standing (USFDA, EDQM, WHO-GMP) across high-demand molecules are the first-call beneficiaries.</p>
+
+  <p>The India API market is projected to grow from <span class="hl-number">$14.18 billion (2025) to $22.18 billion by 2031 at a 7.74% CAGR</span> (Mordor Intelligence). The government's Production Linked Incentive (PLI) scheme — ₹6,940 crore allocation — is funding domestic critical API and Key Starting Material (KSM) production to reduce China reliance. Bulk drug parks in Gujarat, Himachal Pradesh, and Andhra Pradesh are providing shared infrastructure.</p>
+
+  <p>Why study IOL Chemicals now? Because a company that spent five years navigating ibuprofen pricing cycles and Indian chemical commodity swings — with revenue barely growing — has just posted its highest quarterly EBITDA margin in seven quarters, has a debt-free balance sheet, has acquired 101 acres for a ₹1,200–1,400 crore greenfield expansion, and is staring at a structural demand shift that is explicitly designed to move business toward companies like it.</p>
+
+  <div class="takeaway-pill">Biosecure Act + PLI + 7.74% India API CAGR = the three-policy tailwind stack that could finally monetise IOL's 35% global ibuprofen market share into sustained earnings growth.</div>
+</div>
+
+<!-- CH 2 — BUSINESS MODEL -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">2</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Two</div>
+      <div class="ch-title">The business model — two businesses, one chemistry loop</div>
+    </div>
+  </div>
+
+  <p>IOL Chemicals operates two reported segments: Pharmaceuticals (~60% of revenue) and Chemicals (~40%). This binary description undersells the integration between them. The chemical business produces Ethyl Acetate (the primary solvent in ibuprofen synthesis), Iso Butyl Benzene (IBB, the key starting material for ibuprofen), Acetic Anhydride, and Acetyl Chloride — all essential inputs into the pharmaceutical manufacturing process. By making these at scale, IOL consumes a portion captively at cost and sells the surplus to third parties at market prices.</p>
+
+  <p>The result: <span class="hl-key">IOL is the only company in the world with full backward integration for ibuprofen, controlling every production step from KSM to finished API</span>. Its competitors must buy IBB and Ethyl Acetate from the same market IOL is partly supplying. This gives IOL structural cost control that cannot be replicated quickly — it requires parallel infrastructure across both chemical and pharma plants, which took IOL three decades to build.</p>
+
+  <p>The pharma segment serves customers in 80+ countries, including marquee domestic clients (Cipla, Dr Reddy, Ranbaxy) and global generics players. <span class="hl-number">Exports contribute ~29% of total revenue</span>, with market presence across major regulated geographies (US, EU, Japan). Regulatory standing: USFDA-approved ibuprofen facility, EDQM (European certificate), WHO-GMP, ISO 9001/14001, DSIR-approved R&D. The R&D team has 50+ scientists and 120 members, with 20+ commercialised APIs and 9 more in the pipeline.</p>
+
+  <p>The revenue flywheel: scale in ibuprofen → economies in chemical inputs → competitive pricing that defends market share → re-investment in newer, higher-margin APIs → broader portfolio → incremental export volumes → higher utilisation → even lower unit costs. The chemical division is not a drag — it is the structural enabler of the pharmaceutical margin.</p>
+
+  <div class="takeaway-pill">IOL's chemical division is not a separate business — it is an integrated cost shield for the API segment, and competitors who buy IBB and ethyl acetate at market price are permanently at a cost disadvantage on ibuprofen.</div>
+</div>
+
+<!-- CH 2B — PORTER'S -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true" style="background:var(--text-sec)">2B</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Two-B</div>
+      <div class="ch-title">Porter's five forces — competitive structure of API manufacturing</div>
+    </div>
+  </div>
+
+  <table class="porter" role="table" aria-label="Porter's five forces for IOL Chemicals">
+    <thead>
+      <tr>
+        <th style="width:22%">Force</th>
+        <th style="width:14%">Rating</th>
+        <th>Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Rivalry</strong></td>
+        <td><span class="r-high">High</span></td>
+        <td>Biocause (US/China) and Shandong Xinhua are IOL's primary ibuprofen API rivals. Chinese producers compete aggressively on price and scale. Granules India competes in finished dose. Broader API space includes Divi's, Laurus, Aarti, and global CDMOs. In commodity APIs, pricing discipline breaks down during oversupply cycles — IOL's backward integration provides a cost floor, but not immunity.</td>
+      </tr>
+      <tr>
+        <td><strong>Buyer power</strong></td>
+        <td><span class="r-high">High</span></td>
+        <td>Large pharma companies (Cipla, Dr Reddy, Pfizer, generic multinationals) procure APIs in bulk through competitive tenders. For commodity APIs like ibuprofen and metformin, buyers have significant leverage on price and can dual-source. IOL's USFDA + EDQM compliance creates some stickiness in regulated markets, but switching costs remain lower than in specialised formulation markets.</td>
+      </tr>
+      <tr>
+        <td><strong>Supplier power</strong></td>
+        <td><span class="r-low">Low (IBU) / Med (others)</span></td>
+        <td>For ibuprofen specifically: supplier power is near-zero — IOL makes IBB and all intermediates in-house, eliminating dependence on external chemistry suppliers. For newer APIs (Lamotrigine, Clopidogrel, Levetiracetam), Key Starting Material (KSM) imports continue, primarily from China — supplier power applies there. The greenfield expansion aims to extend backward integration to more molecules.</td>
+      </tr>
+      <tr>
+        <td><strong>New entrants</strong></td>
+        <td><span class="r-med">Medium</span></td>
+        <td>Regulatory compliance (USFDA, EDQM) takes 2–4 years and significant capex. Building backward-integrated chemistry requires parallel chemical plant investment, not just pharmaceutical GMP capacity. However, China has demonstrated it can build API capacity rapidly with state support. Vietnam is emerging as a lower-cost alternative. Indian PLI scheme attracts new domestic entrants into APIs, potentially crowding some molecules.</td>
+      </tr>
+      <tr>
+        <td><strong>Substitutes</strong></td>
+        <td><span class="r-low">Low</span></td>
+        <td>Ibuprofen is the cheapest NSAID globally — no over-the-counter pain relief substitute is cheaper. Metformin is the gold-standard first-line diabetes drug with decades of safety data. Both molecules have generic mass demand with no therapeutic alternative that is both cheaper and equivalent. The risk is brand-vs-generic, not API-vs-API substitution.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="porter-synthesis">
+    <strong>Synthesis:</strong> Buyer power (large pharma price leverage in commodity API markets) and Chinese rivalry (scale and cost competition) are the two forces that most structurally compress IOL's margins. IOL's backward integration for ibuprofen provides the best available defence, but the same moat does not yet cover its expanding API portfolio — where conventional import dependency and competitive pressures apply.
+  </div>
+
+  <div class="takeaway-pill">For ibuprofen, IOL has the best competitive position of any manufacturer globally; for every API beyond ibuprofen, the moat shrinks — which makes portfolio diversification both the biggest opportunity and the biggest execution risk.</div>
+</div>
+
+<!-- CH 3 — VERTICALS -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">3</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Three</div>
+      <div class="ch-title">Vertical stories — molecule by molecule</div>
+    </div>
+  </div>
+
+  <div class="vert-card">
+    <div class="vert-head"><span class="vert-title">Ibuprofen — the global anchor (pain management)</span><span class="vert-status st-running">Running · Scale</span></div>
+    <div class="vert-body">12,000 MT/year installed capacity; 35% global API market share; USFDA + EDQM + BP/USP/Ph.Eur/JP grades. The only fully backward-integrated producer worldwide — makes IBB and all intermediates. Demand driver: aging populations in developed markets, increasing OTC pain management adoption in emerging markets. <span class="hl-catalyst">Biosecure Act restrictions on Chinese biotech companies are already redirecting RFQs toward USFDA-compliant Indian suppliers</span>. IOL's 30-year track record in ibuprofen manufacturing makes it a natural first-call supplier for risk-averse global generics companies.</div>
+  </div>
+
+  <div class="vert-card">
+    <div class="vert-head"><span class="vert-title">Metformin — the diabetes molecule (anti-diabetic)</span><span class="vert-status st-running">Running · Expanding</span></div>
+    <div class="vert-body">India has ~100 million diabetics; globally, Metformin remains the first-line generic diabetes drug with WHO Model List of Essential Medicines inclusion. IOL has multiple dedicated units (Unit VII, 7,200 MT Metformin commissioned). <span class="hl-number">Metformin global market growing at ~6% CAGR as diabetes prevalence rises</span>. IOL's Metformin revenue has expanded as it built unit-specific capacity rather than sharing multi-product lines — improving yield and consistency.</div>
+  </div>
+
+  <div class="vert-card">
+    <div class="vert-head"><span class="vert-title">Emerging APIs — portfolio diversification</span><span class="vert-status st-ramping">Ramping</span></div>
+    <div class="vert-body">Clopidogrel (antiplatelet), Pantoprazole (proton pump inhibitor), Fenofibrate (anticholesterol — approved for China SFDA export), Levetiracetam + Lamotrigine (antiepileptic), Gabapentin (pain/neuropathy), Losartan (antihypertensive), Ursodeoxycholic acid, Minoxidil (Unit 9B, 120 MT, commissioned Dec 2025). These are higher-margin, lower-competition molecules vs ibuprofen. Pipeline has 9 products. The UK subsidiary (incorporated 2025) targets direct EU/UK sales, improving margin vs distributor-led export channels. EDQM approval supports European market access.</div>
+  </div>
+
+  <div class="vert-card vert-card-teal">
+    <div class="vert-head"><span class="vert-title vert-title-teal">Specialty Chemicals — the chemistry backbone</span><span class="vert-status st-chem">Running · Captive + Merchant</span></div>
+    <div class="vert-body">Ethyl Acetate ("green solvent" — 3rd largest global producer), IBB (Iso Butyl Benzene — 2nd largest globally, 30% global share), Acetic Anhydride (expanded to 32,000 MTPA, March 2026 — was operating at 90%+ utilisation), Acetyl Chloride, Mono Chloro Acetic Acid. End markets: flexible packaging, pharma solvents, textiles, food processing, pesticides, paints. Acetic Anhydride expansion (₹5.71 crore) targets both captive consumption increase and merchant sales growth. <span class="hl-key">The chemical segment's "thin" reported EBIT margin (₹12.8 cr EBIT on ₹244.9 cr revenue in Q4 FY26) is deceptive — it doesn't credit the cost subsidy the captive supply delivers to the pharma segment.</span></div>
+  </div>
+
+  <div class="takeaway-pill">Four verticals: ibuprofen (moat), metformin (volume), emerging APIs (margin upgrade), specialty chemicals (cost shield) — the inter-dependency between them is IOL's deepest structural advantage.</div>
+</div>
+
+<!-- CH 4 — STRATEGIC INSIGHT -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">4</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Four</div>
+      <div class="ch-title">The strategic insight — what the segment P&amp;L hides</div>
+    </div>
+  </div>
+
+  <div class="insight-card">
+    <p>When analysts look at IOL's Q4 FY26 chemical segment reporting ₹12.8 crore EBIT on ₹244.9 crore revenue — a 5.2% margin — the natural reaction is "commodity chemicals, thin margins, not interesting." That framing is the most expensive misread in the IOL investment case.</p>
+    <p style="margin-top:0.8rem">Here is what the segment P&L does not show: Ethyl Acetate is the primary solvent in ibuprofen synthesis. IBB is the single most important starting material for ibuprofen. Acetic Anhydride and Acetyl Chloride are used directly in intermediate chemistry. IOL consumes meaningful volumes of each of these captively — at production cost, not market price. <span class="hl-key">Every unit of IBB or Ethyl Acetate that IOL makes in-house costs less than what a competitor must pay in the open market to produce the same ibuprofen kilogram.</span></p>
+    <p style="margin-top:0.8rem">The surplus production beyond captive consumption is what gets reported as "chemical segment revenue." The implied EBIT on captive consumption — the true economic contribution — never appears in any reported number. It silently flows into pharmaceutical segment margins as a structural cost advantage.</p>
+    <p style="margin-top:0.8rem">The practical consequence: when Chinese ibuprofen API producers dump product at low prices, they compress IOL's realisation — but they cannot compress IOL's cost base below zero, because IOL's cost base for ibuprofen intermediates is below the market price these Chinese firms are paying for the same inputs. <span class="hl-catalyst">IOL's backward integration creates a cost floor that gets wider — not narrower — during Chinese price-dumping cycles, because dumped prices also lower the market value of IBB and ethyl acetate that IOL sells externally, creating a natural commodity hedge.</span></p>
+  </div>
+
+  <div class="takeaway-pill">IOL's real competitive moat is not market share — it's a self-reinforcing cost structure that gets relatively stronger, not weaker, when Chinese competitors cut ibuprofen prices.</div>
+</div>
+
+<!-- CH 5 — NUMBERS -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">5</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Five</div>
+      <div class="ch-title">The numbers in context — from stagnation to inflection</div>
+    </div>
+  </div>
+
+  <p>The most important context for IOL's financials: <span class="hl-risk">revenue grew at a 3.35% CAGR over the past five years — below inflation</span>. This is the first number to acknowledge honestly. The past five years included COVID supply chain disruptions, ibuprofen pricing cycles, Chinese competition, and high raw material costs. FY26 is showing the first material breakout, but one year does not make a trend.</p>
+
+  <p>What is different in FY26: EBITDA margin reached <span class="hl-number">15.2% in Q4 FY26 — up 304 bps year-on-year and the highest in at least seven quarters</span>. Sequential improvement has been consistent across all four quarters of FY26: 4.53%, 2.87%, 2.27%, and 6.73% QoQ revenue growth respectively. The acceleration in Q4 is not a one-off; it reflects both favourable product mix (more pharma, higher-margin APIs) and moderating raw material costs.</p>
+
+  <!-- Revenue Chart -->
+  <div style="margin:1.4rem 0 0.5rem">
+    <div class="chart-legend">
+      <div class="legend-item"><div class="legend-swatch" style="background:#378ADD"></div>Revenue (₹ cr)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#534AB7"></div>PAT (₹ cr)</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:#BA7517;border:1px dashed #BA7517;background:transparent;border-color:#BA7517"></div>EBITDA Margin % (right)</div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="revChart" role="img" aria-label="Bar chart showing IOL Chemicals revenue from FY23 to FY26 with EBITDA margin trend. Revenue grew from ₹2,133 crore in FY24 to ₹2,319 crore in FY26. PAT recovered from ₹101 crore in FY25 to ₹138 crore in FY26.">Revenue: FY24 ₹2,133cr, FY25 ₹2,079cr, FY26 ₹2,319cr. PAT: FY24 ~₹135cr, FY25 ₹101cr, FY26 ₹138cr. EBITDA margin FY24 ~11%, FY25 ~10.5%, FY26 ~12.5%.</canvas>
+    </div>
+  </div>
+
+  <h3 style="font-size:15px;font-weight:500;margin:1.5rem 0 0.75rem">Key financial metrics — FY26 and trajectory</h3>
+  <div class="stat-row"><span class="stat-lbl">FY26 Revenue</span><span class="stat-val">₹2,319 cr <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+11.5% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">FY26 EBITDA</span><span class="stat-val">₹290.4 cr <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+29.3% YoY · 12.5% full-year margin</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">FY26 PAT</span><span class="stat-val">₹137.7 cr <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+36.4% YoY · EPS ₹4.69</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Q4 FY26 Revenue (record)</span><span class="stat-val">₹619.5 cr <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+17.4% YoY; highest-ever quarterly revenue</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Q4 FY26 EBITDA margin</span><span class="stat-val">15.2% <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">vs 11.89% Q4 FY25 (+304 bps YoY)</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Q4 FY26 PAT</span><span class="stat-val">₹53.2 cr <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+68.2% YoY</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Q4 Pharma EBIT / revenue</span><span class="stat-val">₹62.2 cr on ₹374.5 cr <span style="color:var(--text-hint);font-family:var(--font-body);font-size:12px">= 16.6% margin</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Net Debt/Equity</span><span class="stat-val">−0.06x <span style="color:var(--text-hint);font-family:var(--font-body);font-size:12px">debt-free (net cash)</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">5-year revenue CAGR</span><span class="stat-val" style="color:var(--amber)">3.35% <span style="color:var(--text-hint);font-family:var(--font-body);font-size:12px">— the central challenge the greenfield must address</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">ROE (3-year average)</span><span class="stat-val" style="color:var(--amber)">7.73% <span style="color:var(--text-hint);font-family:var(--font-body);font-size:12px">— improving as margins expand</span></span></div>
+  <div class="stat-row"><span class="stat-lbl">Promoter holding</span><span class="stat-val">57.5% <span style="color:var(--primary);font-family:var(--font-body);font-size:12px">+4.86% in Q1 FY26 — significant insider buying</span></span></div>
+
+  <h3 style="font-size:15px;font-weight:500;margin:1.5rem 0 0.75rem">Valuation — the discount is real, but so is the ROE gap</h3>
+  <div class="stat-row"><span class="stat-lbl">IOLCP trailing PE</span><span class="stat-val">~29x</span></div>
+  <div class="stat-row"><span class="stat-lbl">Indian bulk drugs sector PE</span><span class="stat-val">~47x</span></div>
+  <div class="stat-row"><span class="stat-lbl">Divi's Laboratories PE</span><span class="stat-val">~75x</span></div>
+  <div class="stat-row"><span class="stat-lbl">Laurus Labs PE</span><span class="stat-val">~40x</span></div>
+  <div class="stat-row"><span class="stat-lbl">Aarti Industries PE</span><span class="stat-val">~30x</span></div>
+  <div class="stat-row" style="border-bottom:none"><span class="stat-lbl">IOLCP discount to sector</span><span class="stat-val" style="color:var(--primary)">~38% below sector avg; gap narrows if margin sustains</span></div>
+
+  <div class="section-note">The PE discount vs Divi's or Laurus is partially justified by IOL's lower ROE (7.73% vs Divi's ~25%) and sluggish 5-year CAGR. It becomes unjustified if Q4 FY26's 15.2% EBITDA margin proves durable and the greenfield expansion begins generating incremental revenue by FY28–29.</div>
+
+  <h3 style="font-size:15px;font-weight:500;margin:1.5rem 0 0.75rem">Capex timeline — the investment cycle behind the stagnation</h3>
+  <p>IOL's five-year revenue stagnation coincided with significant but uncoordinated capital deployment. The next five years will be different in scale: a single, planned greenfield on 101 newly-acquired acres.</p>
+
+  <div class="capex-wrap">
+    <div class="capex-hdr"><div>Period</div><div>Capex</div><div>Milestone</div><div>Revenue Impact</div></div>
+    <div class="capex-row">
+      <div class="capex-year">FY22–24</div>
+      <div class="capex-amt">₹229 cr</div>
+      <div style="font-size:13px;line-height:1.5">Multi-product PPIs plant; dedicated ibuprofen facility; Units IV &amp; V (Metformin + Clopidogrel)</div>
+      <div style="font-size:12.5px;color:var(--text-sec);line-height:1.5">Added API portfolio depth but revenue growth remained sluggish; margin compressed by Chinese competition</div>
+    </div>
+    <div class="capex-row">
+      <div class="capex-year">FY25</div>
+      <div class="capex-amt">₹28 cr</div>
+      <div style="font-size:13px;line-height:1.5">Unit VI (Pantoprazole); Unit VII (Metformin, 7,200 MT); Unit 10 APIs initiated</div>
+      <div style="font-size:12.5px;color:var(--text-sec);line-height:1.5">Revenue declined 2.5% YoY due to pricing headwinds; PAT fell 24.8%; balance sheet remained clean</div>
+    </div>
+    <div class="capex-row">
+      <div class="capex-year">FY26</div>
+      <div class="capex-amt">~₹12 cr</div>
+      <div style="font-size:13px;line-height:1.5">Acetic Anhydride +7,000 MTPA (Mar 2026); Unit 9B Minoxidil (120 MT, Dec 2025); 101 acres land acquired</div>
+      <div style="font-size:12.5px;color:var(--text-sec);line-height:1.5">Record Q4 revenue ₹619.5 cr; margin inflection to 15.2%; greenfield land secured</div>
+    </div>
+    <div class="capex-row capex-peak">
+      <div class="capex-year">FY27–31 ★</div>
+      <div class="capex-amt">₹1,200–1,400 cr</div>
+      <div style="font-size:13px;line-height:1.5">Greenfield manufacturing facility (101 acres, Chandigarh-Bathinda Highway); new API + chemical manufacturing units; expanded backward integration</div>
+      <div style="font-size:12.5px;color:var(--text-sec);line-height:1.5">Management targets mid-to-high-teens revenue CAGR once greenfield ramps; 4–5 year phased deployment; funding: internal accruals + likely partial debt (balance sheet headroom exists)</div>
+    </div>
+  </div>
+  <p class="footnote">★ Greenfield funding: FY26 PAT ₹137.7 cr + growing earnings = ~₹600–700 cr internal accruals over 4-5 years. Residual ₹500–700 cr may require working capital lines or term loans — manageable at current debt-free balance sheet. Exact project phasing not yet disclosed.</p>
+
+  <div class="takeaway-pill">Greenfield is the structural bet on the next five years; capex of ₹1,200–1,400 crore at a debt-free starting point is executable — but FY28–29 is when revenue impact arrives, not FY27.</div>
+</div>
+
+<!-- CH 6 — RISKS -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">6</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Six</div>
+      <div class="ch-title">Risks — eyes open</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-name">Chinese ibuprofen pricing pressure (severity: high, recurring)</div>
+      <div class="risk-desc"><span class="hl-risk">Biocause and Shandong Xinhua are state-supported Chinese producers who can price below economic cost to defend volume during demand slowdowns.</span> IOL's backward integration provides a floor — but not immunity — to ibuprofen price compression. A sustained 15–20% drop in global ibuprofen API prices would compress IOL's pharma segment EBIT margin from 16.6% toward 10–12%, materially reducing PAT. Signal: monthly PV InfoLink or Chemanalyst ibuprofen API spot price monitoring.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-name">Revenue stagnation persistence — structural vs cyclical question (severity: high)</div>
+      <div class="risk-desc">A 3.35% revenue CAGR over five years raises a legitimate question: is IOL's growth constrained by market share (structural), or by pricing cycles and raw material costs (cyclical)? If the former, no amount of greenfield investment corrects it. The Q4 FY26 acceleration is encouraging but one quarter. <span class="hl-risk">If FY27 Q1–Q2 show revenue growth below 10% YoY, the cyclical recovery narrative collapses.</span> Magnitude: if stagnation persists, the PE re-rating story dies and the stock returns to 15–18x on flat earnings.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-name">Energy and fuel cost volatility — Punjab-specific risk (severity: medium)</div>
+      <div class="risk-desc">Q3 FY26 PAT grew only 0.2% despite 10.9% revenue growth — the culprit was elevated fuel costs following Punjab floods. IOL's Barnala facility relies on grid power and fuel for chemical synthesis processes. Punjab's electricity distribution challenges and any further infrastructure disruption can spike variable costs in unpredictable ways. Magnitude: Q3's ~3 percentage point EBITDA margin erosion from cost spikes erased two quarters of progress. Signal: management commentary on energy cost trends in each concall.</div>
+    </div>
+  </div>
+
+  <div class="risk-item">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-name">KSM import dependency for non-ibuprofen APIs (severity: medium)</div>
+      <div class="risk-desc">While ibuprofen is fully backward integrated, newer APIs (Clopidogrel, Lamotrigine, Levetiracetam, Gabapentin) still rely on Key Starting Materials imported primarily from China. The Biosecure Act creates opportunity on the demand side but highlights the same vulnerability on the supply side — IOL is diversifying its API portfolio into molecules where it does not yet have the backward integration advantage it holds in ibuprofen. Any Chinese KSM supply disruption hits these newer products directly.</div>
+    </div>
+  </div>
+
+  <div class="risk-item" style="border-bottom:none">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div>
+      <div class="risk-name">Greenfield capex execution at ₹1,200–1,400 crore (severity: medium, long-dated)</div>
+      <div class="risk-desc">The greenfield expansion on 101 newly-acquired acres is IOL's largest-ever single capital commitment. It requires plant design, regulatory approvals for new facilities, equipment procurement, talent deployment, and USFDA/EDQM qualification of new production lines — typically a 3–5 year process. Delays push revenue impact beyond FY29. Cost overruns re-leverage a currently clean balance sheet. Management has not yet released detailed timelines, project phasing, or debt structure — a disclosure gap investors should press on.</div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">Chinese pricing and revenue stagnation are the two risks worth monitoring most closely — one is macro and recurring, the other is the central thesis question that FY27 quarterly data will begin to answer.</div>
+</div>
+
+<!-- CH 7 — WATCH SIGNALS -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true">7</div>
+    <div>
+      <div class="ch-eyebrow">Chapter Seven</div>
+      <div class="ch-title">Watch signals — five metrics to track every quarter</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div>
+      <div class="watch-name">Pharma segment EBIT margin (quarterly) — the recovery confirmation</div>
+      <div class="watch-desc">Q4 FY26 delivered 16.6% pharma segment EBIT (₹62.2 cr on ₹374.5 cr revenue). This is the number that determines whether IOL's PE re-rating is justified. Every 100 bps of sustained margin improvement translates to ~₹25 crore incremental annual EBIT at current revenue scale.</div>
+      <div class="watch-flag"><i class="ti ti-alert-circle" style="vertical-align:-2px" aria-hidden="true"></i> Red flag: pharma margin drops below 13% for two consecutive quarters = price pressure returning, not a one-off.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div>
+      <div class="watch-name">Export revenue % — the Biosecure indicator</div>
+      <div class="watch-desc">Currently ~29% of total revenue. The Biosecure Act and China-Plus-One sourcing shift should drive this meaningfully higher as Western pharma buyers formalise alternate supplier qualifications. IOL's USFDA + EDQM credentials position it well. Track export revenue as a % of total every quarter.</div>
+      <div class="watch-flag"><i class="ti ti-alert-circle" style="vertical-align:-2px" aria-hidden="true"></i> Red flag: export % remains flat at 28–30% through FY27 = the Biosecure tailwind is not converting into incremental IOL business.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div>
+      <div class="watch-name">Revenue growth rate (quarterly YoY) — the stagnation thesis test</div>
+      <div class="watch-desc">The 5-year 3.35% CAGR is the central bear case. Q4 FY26 grew 17.4% YoY — highest in recent history. For the thesis to hold, FY27 must sustain above-10% YoY growth in most quarters, demonstrating the acceleration is structural rather than a raw material cost tailwind.</div>
+      <div class="watch-flag"><i class="ti ti-alert-circle" style="vertical-align:-2px" aria-hidden="true"></i> Red flag: revenue growth drops below 8% for two consecutive quarters in FY27 = thesis in question.</div>
+    </div>
+  </div>
+
+  <div class="watch-item">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div>
+      <div class="watch-name">Promoter open-market buying — the insider conviction signal</div>
+      <div class="watch-desc">Promoter (NCVI Enterprises) bought an additional 4.04 lakh + additional shares in March 2026, taking holding from 52.62% to 57.48% in a single quarter. Open-market buying by a promoter with full information access is the strongest insider conviction signal available. Continued purchases near current prices signal management confidence in the earnings trajectory.</div>
+      <div class="watch-flag"><i class="ti ti-alert-circle" style="vertical-align:-2px" aria-hidden="true"></i> Red flag: promoter stops buying or reduces holding below 55% = signal that the conviction has moderated.</div>
+    </div>
+  </div>
+
+  <div class="watch-item" style="border-bottom:none">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div>
+      <div class="watch-name">Greenfield project disclosures — the expansion catalyst tracker</div>
+      <div class="watch-desc">101 acres acquired; ₹1,200–1,400 crore planned over 4–5 years — but no detailed phasing or commencement date yet disclosed. The first concrete milestone (board approval of DPR, groundbreaking, or first capex tranche) is the catalyst for a re-rating of FY28–29 earnings projections. Watch every quarterly concall and exchange filing for greenfield progress updates.</div>
+      <div class="watch-flag"><i class="ti ti-alert-circle" style="vertical-align:-2px" aria-hidden="true"></i> Red flag: no greenfield commencement announcement through FY27 = management cautious on demand visibility, or capex cost/debt concerns.</div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill">Five minutes post-concall: (1) pharma EBIT margin vs 16.6% benchmark, (2) export revenue %, (3) YoY revenue growth vs 17.4% Q4 benchmark, (4) greenfield update — these four answer 80% of what matters.</div>
+</div>
+
+<!-- VERDICT -->
+<div class="ch-wrap">
+  <div class="ch-head">
+    <div class="ch-num" aria-hidden="true" style="background:var(--primary-dark)">VL</div>
+    <div>
+      <div class="ch-eyebrow">Verdict</div>
+      <div class="ch-title">Where are we in the story</div>
+    </div>
+  </div>
+
+  <div class="verdict-wrap">
+    <div class="verdict-eyebrow">Story assessment · NSE: IOLCP · May 2026</div>
+    <div class="stage-badge">EARLY-TO-MID — Turnaround &amp; Greenfield Setup</div>
+    <div class="verdict-text">
+      <p>IOL Chemicals is in the early-to-mid chapter of a turnaround that is only beginning to show in the financial statements. The structural credentials are stronger than five years of stagnant revenue suggest: the world's largest and only fully backward-integrated ibuprofen maker, USFDA + EDQM regulatory standing across multiple molecules, a debt-free balance sheet, 80-country customer network, and a 120-member R&D organisation with 9 APIs in the pipeline. These are not promotional claims — they are 30-year-old institutional advantages that competitors cannot buy quickly.</p>
+      <p style="margin-top:0.8rem">The quality signal in the most recent data is encouraging: <span class="hl-number">Q4 FY26 EBITDA margin of 15.2% is the highest in at least seven quarters</span>, driven by favourable product mix and moderating raw material costs, and the four quarters of sequential revenue growth through FY26 suggest the compression cycle is behind rather than ahead. The near-term catalyst is the Biosecure Act — signed December 2025 — which is already translating into RFQ volume growth at Indian USFDA-compliant API manufacturers; IOL's USFDA/EDQM credentials make it a first-call beneficiary among export-ready Indian API producers. A second catalyst is the greenfield — when IOL discloses a concrete commencement timeline for its 101-acre facility, that announcement alone will re-rate FY28–29 earnings estimates.</p>
+      <p style="margin-top:0.8rem">On valuation, <span class="hl-catalyst">PE ~29× trades at a 38% discount to the Indian bulk drugs sector average of ~47×</span>, a gap that reflects IOL's historically low ROE (7.73%) and sluggish 5-year CAGR rather than any structural inferiority in its manufacturing platform. If the Q4 FY26 margin recovery proves durable through FY27 and the greenfield begins on schedule, the ROE and earnings power in FY28–29 could justify a meaningful valuation re-rating. The risk you are buying is the thesis question: is the revenue acceleration structural and durable, or a raw-material-cost-driven cyclical bounce? One more strong quarter turns this from a "watch" into a "conviction."</p>
+    </div>
+  </div>
+</div>
+
+<!-- HIGHLIGHT INDEX — ALWAYS VISIBLE (printer-friendly) -->
+<div class="hi-block">
+  <div class="hi-header">
+    <i class="ti ti-bookmark" style="font-size:16px;color:var(--primary)" aria-hidden="true"></i>
+    <span class="hi-header-label">All highlights at a glance</span>
+  </div>
+  <ol class="hi-list" id="hi-list"></ol>
+</div>
+
+<p class="footnote" style="text-align:center;border-top:0.5px solid var(--border);padding-top:1rem;margin-top:1rem">For informational purposes only. Not investment advice. Data sourced from company filings, exchange notifications, and public sources as of May 28, 2026. Verify all figures before making investment decisions.</p>
+
+</div><!-- /content -->
+
+<script>
+var dark = false;
+function toggleTheme(){
+  dark = !dark;
+  document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+  try { localStorage.setItem('iolcp_theme', dark ? 'dark' : 'light'); } catch(e){}
+}
+(function(){
+  try{ if(localStorage.getItem('iolcp_theme')==='dark'){ dark=true; document.documentElement.setAttribute('data-theme','dark'); } }catch(e){}
+})();
+
+new Chart(document.getElementById('revChart'), {
+  type: 'bar',
+  data: {
+    labels: ['FY24', 'FY25', 'FY26'],
+    datasets: [
+      { label: 'Revenue (₹ cr)', data: [2133, 2079, 2319], backgroundColor: '#378ADD', borderRadius: 4, order: 2 },
+      { label: 'PAT (₹ cr)', data: [135, 101, 138], backgroundColor: '#534AB7', borderRadius: 4, order: 2 },
+      {
+        label: 'EBITDA Margin %', data: [11, 10.5, 12.5],
+        type: 'line', borderColor: '#BA7517', backgroundColor: 'transparent',
+        borderWidth: 2, pointBackgroundColor: '#BA7517', yAxisID: 'y2',
+        order: 1, tension: 0.3, borderDash: [5,3]
+      }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            if(ctx.dataset.yAxisID === 'y2') return ' EBITDA Margin: ' + ctx.parsed.y + '%';
+            return ' ' + ctx.dataset.label + ': ₹' + ctx.parsed.y.toLocaleString('en-IN') + ' cr';
+          }
+        }
+      }
+    },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#888' } },
+      y: {
+        grid: { color: 'rgba(128,128,128,0.1)' },
+        ticks: { color: '#888', callback: function(v){ return '₹' + v.toLocaleString('en-IN'); } },
+        title: { display: true, text: '₹ crore', color: '#888', font: { size: 11 } }
+      },
+      y2: {
+        position: 'right', grid: { display: false },
+        ticks: { color: '#BA7517', callback: function(v){ return v + '%'; } },
+        min: 0, max: 25,
+        title: { display: true, text: 'EBITDA Margin', color: '#BA7517', font: { size: 11 } }
+      }
+    }
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function(){
+  var list = document.getElementById('hi-list');
+  if(!list) return;
+  document.querySelectorAll('.hl-key,.hl-number,.hl-risk,.hl-catalyst,.takeaway-pill').forEach(function(el){
+    var li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    var t = Array.from(el.classList).find(function(c){ return c.startsWith('hl-')||c==='takeaway-pill'; }) || '';
+    li.setAttribute('data-type', t);
+    list.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BALAMINES — Balaji Amines Investor Brief | June 2026</title>
+<style>
+/* ===== CSS CUSTOM PROPERTIES — DAY / NIGHT MODE ===== */
+:root {
+  --bg: #f5f5f0;
+  --surface: #ffffff;
+  --surface2: #f0ede8;
+  --text: #1a1a1a;
+  --text2: #444444;
+  --text3: #666666;
+  --border: #ddd;
+  --accent-blue: #378ADD;
+  --accent-teal: #1D9E75;
+  --accent-coral: #D85A30;
+  --accent-green: #3B6D11;
+  --accent-purple: #534AB7;
+  --accent-amber: #BA7517;
+  --accent-gray: #888;
+  --shadow: rgba(0,0,0,0.08);
+  --pill-bg: #eef4fb;
+  --pill-border: #378ADD;
+  --qs-bg: #1a2332;
+  --qs-text: #e8eef5;
+  --qs-accent: #61b0f7;
+  --badge-high: #D85A30;
+  --badge-mod: #BA7517;
+  --badge-low: #1D9E75;
+}
+[data-theme="dark"] {
+  --bg: #13161c;
+  --surface: #1e2330;
+  --surface2: #262d3d;
+  --text: #e8eef5;
+  --text2: #b0bac8;
+  --text3: #8892a0;
+  --border: #2e3648;
+  --shadow: rgba(0,0,0,0.3);
+  --pill-bg: #1a2840;
+  --pill-border: #61b0f7;
+  --qs-bg: #0d1117;
+  --qs-text: #e8eef5;
+  --qs-accent: #61b0f7;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Georgia', serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
+  transition: background 0.3s, color 0.3s;
+}
+h1, h2, h3, h4, h5 {
+  font-family: 'Georgia', serif;
+  line-height: 1.3;
+}
+a { color: var(--accent-blue); text-decoration: none; }
+
+/* ===== QUICK SCAN STRIP ===== */
+#quick-scan {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--qs-bg);
+  color: var(--qs-text);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  border-bottom: 2px solid var(--accent-blue);
+}
+#qs-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: none;
+  border: none;
+  color: var(--qs-accent);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+#qs-toggle-btn:hover { background: rgba(255,255,255,0.05); }
+.qs-body {
+  padding: 8px 16px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px 32px;
+}
+@media (max-width: 600px) {
+  .qs-body { grid-template-columns: 1fr; }
+}
+.qs-line {
+  display: flex;
+  gap: 8px;
+  padding: 2px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items: baseline;
+}
+.qs-icon { flex-shrink: 0; }
+.qs-label {
+  color: var(--qs-accent);
+  font-weight: bold;
+  min-width: 78px;
+  flex-shrink: 0;
+}
+.qs-val { color: var(--qs-text); }
+#quick-scan.collapsed .qs-body { display: none; }
+
+/* ===== DARK MODE TOGGLE ===== */
+#mode-toggle {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  z-index: 200;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  color: var(--text);
+  box-shadow: 0 2px 8px var(--shadow);
+  font-family: sans-serif;
+}
+#mode-toggle:hover { opacity: 0.8; }
+
+/* ===== LAYOUT ===== */
+.container { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+
+/* ===== COVER / HOOK CARD ===== */
+.hook-card {
+  background: linear-gradient(135deg, #1a2332 0%, #0d1b2a 100%);
+  border-radius: 12px;
+  padding: 36px;
+  margin-bottom: 32px;
+  color: #e8eef5;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #2e4060;
+}
+.hook-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-teal));
+}
+.hook-eyebrow {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #61b0f7;
+  margin-bottom: 20px;
+}
+.hook-thesis {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.4;
+  margin-bottom: 28px;
+  color: #f0f4f8;
+}
+.hook-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 20px;
+}
+@media (max-width: 600px) { .hook-metrics { grid-template-columns: 1fr; } }
+.hook-metric {
+  background: rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 16px;
+  border-left: 3px solid;
+}
+.hook-metric.number { border-color: #61b0f7; }
+.hook-metric.risk { border-color: var(--accent-coral); }
+.hook-metric-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #8899aa;
+  margin-bottom: 6px;
+  font-family: sans-serif;
+}
+.hook-metric-val {
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+.hook-metric.number .hook-metric-val { color: #61b0f7; font-family: 'Courier New', monospace; }
+.hook-metric.risk .hook-metric-val { color: #f4836a; }
+
+/* ===== CHAPTER HEADERS ===== */
+.chapter-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.chapter-number {
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.chapter-eyebrow {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text3);
+  font-family: sans-serif;
+}
+.chapter-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+.chapter {
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 28px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 12px var(--shadow);
+}
+
+/* ===== ACCENT BORDER CARDS ===== */
+.insight-card {
+  border-left: 3px solid var(--accent-blue);
+  background: var(--surface2);
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 15px;
+}
+
+/* ===== STAT ROWS ===== */
+.stat-table { width: 100%; margin: 12px 0; }
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  gap: 16px;
+}
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--text2); flex: 1; }
+.stat-val { font-weight: bold; color: var(--text); font-family: 'Courier New', monospace; text-align: right; }
+.stat-val.up { color: var(--accent-teal); }
+.stat-val.down { color: var(--accent-coral); }
+.stat-val.flat { color: var(--accent-amber); }
+
+/* ===== TIMELINE ===== */
+.timeline { position: relative; padding: 16px 0; }
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 18px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent-blue), var(--accent-teal));
+}
+.timeline-item {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+  position: relative;
+}
+.timeline-dot {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  flex-shrink: 0;
+  font-family: sans-serif;
+  z-index: 1;
+}
+.timeline-content { flex: 1; padding-top: 4px; }
+.timeline-year { font-size: 11px; color: var(--text3); font-family: sans-serif; }
+.timeline-event { font-size: 14px; font-weight: 600; }
+.timeline-desc { font-size: 13px; color: var(--text2); margin-top: 3px; }
+
+/* ===== PORTER'S FIVE FORCES ===== */
+.porter-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+.porter-center { grid-column: 1 / -1; }
+@media (max-width: 600px) { .porter-grid { grid-template-columns: 1fr; } }
+.force-card {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+}
+.force-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  font-family: sans-serif;
+  margin-bottom: 6px;
+}
+.threat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: sans-serif;
+  margin-bottom: 10px;
+}
+.threat-high { background: rgba(216,90,48,0.15); color: var(--badge-high); }
+.threat-mod { background: rgba(186,117,23,0.15); color: var(--badge-mod); }
+.threat-low { background: rgba(29,158,117,0.15); color: var(--badge-low); }
+.force-text { font-size: 13px; line-height: 1.6; }
+.force-implication { font-size: 12px; font-style: italic; color: var(--text3); margin-top: 8px; padding-top: 8px; border-top: 1px solid var(--border); }
+.moat-bar {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 16px;
+  border: 2px solid var(--accent-blue);
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.moat-rating {
+  background: var(--accent-blue);
+  color: white;
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+/* ===== VERTICAL SEGMENT CARDS ===== */
+.vertical-card {
+  border-radius: 8px;
+  padding: 18px;
+  margin-bottom: 14px;
+  border-left: 4px solid;
+}
+.vertical-card.blue { border-color: var(--accent-blue); background: rgba(55,138,221,0.06); }
+.vertical-card.teal { border-color: var(--accent-teal); background: rgba(29,158,117,0.06); }
+.vertical-card.green { border-color: var(--accent-green); background: rgba(59,109,17,0.06); }
+.vertical-card.amber { border-color: var(--accent-amber); background: rgba(186,117,23,0.06); }
+.vertical-card.purple { border-color: var(--accent-purple); background: rgba(83,74,183,0.06); }
+.vertical-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px; }
+.vertical-title { font-size: 16px; font-weight: bold; }
+.vertical-badge {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.badge-live { background: rgba(29,158,117,0.15); color: var(--accent-teal); }
+.badge-ramp { background: rgba(55,138,221,0.15); color: var(--accent-blue); }
+.badge-build { background: rgba(186,117,23,0.15); color: var(--accent-amber); }
+
+/* ===== RISKS ===== */
+.risk-item {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { font-size: 20px; flex-shrink: 0; }
+.risk-title { font-weight: bold; font-size: 15px; color: var(--accent-amber); }
+.risk-text { font-size: 14px; color: var(--text2); margin-top: 4px; }
+
+/* ===== WATCH SIGNALS ===== */
+.watch-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+}
+.watch-item:last-child { border-bottom: none; }
+.watch-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.watch-signal { font-weight: bold; font-size: 14px; }
+.watch-trigger { font-size: 13px; color: var(--text2); margin-top: 3px; }
+
+/* ===== SCORECARD TABLE ===== */
+.scorecard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 14px;
+}
+.scorecard-table th {
+  background: var(--surface2);
+  padding: 10px 12px;
+  text-align: left;
+  font-family: sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  border-bottom: 2px solid var(--border);
+}
+.scorecard-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.scorecard-table tr:last-child td { border-bottom: none; }
+.scorecard-table tr:hover td { background: var(--surface2); }
+.verdict-sandlag { background: rgba(29,158,117,0.12); color: var(--accent-teal); font-weight: bold; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: sans-serif; }
+.verdict-miss { background: rgba(216,90,48,0.12); color: var(--accent-coral); font-weight: bold; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: sans-serif; }
+.verdict-ontrack { background: rgba(55,138,221,0.12); color: var(--accent-blue); font-weight: bold; border-radius: 4px; padding: 2px 7px; font-size: 11px; font-family: sans-serif; }
+
+/* ===== SIDEBAR CARDS (Promoter) ===== */
+.sidebar-card {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 18px;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+}
+.sidebar-title {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-blue);
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+/* ===== HIGHLIGHT SYSTEM ===== */
+.hl-key { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: 'Courier New', monospace; }
+.hl-risk { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #3B6D11; }
+[data-theme="dark"] .hl-key { background: #5a5200; color: #ffe; }
+[data-theme="dark"] .hl-number { background: #1a3050; color: #9dd; }
+[data-theme="dark"] .hl-risk { background: #3a2a00; color: #ffdc80; }
+[data-theme="dark"] .hl-catalyst { background: #122a0a; color: #90e090; }
+
+/* ===== TAKEAWAY PILLS ===== */
+.takeaway-pill {
+  background: rgba(55,138,221,0.08);
+  border-left: 3px solid var(--accent-blue);
+  padding: 10px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 20px;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text2);
+}
+
+/* ===== VERDICT CARD ===== */
+.verdict-card {
+  background: linear-gradient(135deg, rgba(55,138,221,0.08) 0%, rgba(29,158,117,0.06) 100%);
+  border: 1px solid rgba(55,138,221,0.3);
+  border-radius: 10px;
+  padding: 24px;
+  margin-top: 16px;
+}
+.verdict-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-blue);
+  font-family: sans-serif;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.verdict-stage {
+  display: inline-block;
+  background: var(--accent-blue);
+  color: white;
+  padding: 4px 14px;
+  border-radius: 14px;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+/* ===== ORDER BOOK CARD ===== */
+.ob-card {
+  background: var(--surface2);
+  border-radius: 8px;
+  padding: 18px;
+  margin: 16px 0;
+  border: 1px solid var(--border);
+}
+.ob-headline {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--accent-blue);
+  font-family: 'Courier New', monospace;
+}
+.ob-label { font-size: 12px; color: var(--text3); font-family: sans-serif; }
+
+/* ===== CAPEX TIMELINE ===== */
+.capex-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+  align-items: center;
+}
+.capex-row:last-child { border-bottom: none; }
+.capex-year {
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  color: var(--accent-blue);
+}
+.capex-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr 1fr;
+  gap: 12px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  font-family: sans-serif;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+/* ===== PEER TABLE ===== */
+.peer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-top: 12px;
+}
+.peer-table th {
+  background: var(--surface2);
+  padding: 9px 12px;
+  text-align: right;
+  font-family: sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text3);
+  border-bottom: 2px solid var(--border);
+}
+.peer-table th:first-child { text-align: left; }
+.peer-table td {
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: right;
+  color: var(--text2);
+}
+.peer-table td:first-child { text-align: left; font-weight: 500; color: var(--text); }
+.peer-table tr.highlight td { font-weight: bold; color: var(--accent-blue); }
+.peer-table tr.highlight td:first-child { color: var(--text); }
+
+/* ===== HIGHLIGHT INDEX ===== */
+#highlight-index {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 32px;
+}
+#highlight-index summary {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 4px 0;
+  color: var(--accent-blue);
+  font-family: sans-serif;
+}
+#highlight-index ol {
+  padding-left: 24px;
+  margin-top: 12px;
+}
+#highlight-index li {
+  padding: 5px 0;
+  font-size: 13px;
+  color: var(--text2);
+  border-bottom: 1px dashed var(--border);
+  line-height: 1.5;
+}
+#highlight-index li:last-child { border-bottom: none; }
+
+/* ===== MISC ===== */
+.section-intro { font-size: 15px; color: var(--text2); margin-bottom: 18px; line-height: 1.7; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } }
+.tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 2px 10px; font-size: 11px; font-family: sans-serif; color: var(--text3); margin: 2px; }
+p { margin-bottom: 12px; }
+.note { font-size: 12px; color: var(--text3); font-style: italic; margin-top: 8px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media(max-width:600px){ .two-col { grid-template-columns: 1fr; } }
+
+/* ===== PRINT ===== */
+@media print {
+  #quick-scan { position: static !important; }
+  #quick-scan .qs-body,
+  #quick-scan.collapsed .qs-body { display: grid !important; max-height: none !important; visibility: visible !important; }
+  #mode-toggle { display: none !important; }
+  #highlight-index > *:not(summary) { display: block !important; }
+  body { background: white; color: black; }
+  .chapter { box-shadow: none; border: 1px solid #ddd; }
+  .hook-card { background: #1a2332 !important; color: white !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #quick-scan { background: #1a2332 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+<button id="mode-toggle" onclick="toggleMode()" aria-label="Toggle dark mode">🌙 Night</button>
+
+<!-- ===== QUICK SCAN STRIP ===== -->
+<div id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <button id="qs-toggle-btn" onclick="toggleQS()" aria-expanded="true">
+    ▼ Quick Scan — BALAMINES
+  </button>
+  <div class="qs-body" aria-label="Seven key highlights">
+    <div class="qs-line"><span class="qs-icon">⚡</span><span class="qs-label">CONTEXT&nbsp;&nbsp;</span><span class="qs-val">India specialty chemicals heading to $40B by 2026 at 9%+ CAGR; China+1 accelerating domestic sourcing</span></div>
+    <div class="qs-line"><span class="qs-icon">🏭</span><span class="qs-label">MODEL&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="qs-val">Near-duopoly with Alkyl Amines in domestic aliphatic amines; sole Indian maker of GBL, NMP &amp; Morpholine</span></div>
+    <div class="qs-line"><span class="qs-icon">🎯</span><span class="qs-label">INSIGHT&nbsp;&nbsp;</span><span class="qs-val">The DME plant isn't a new product — it's India's first LPG import-substitution bet, with zero domestic competition for years</span></div>
+    <div class="qs-line"><span class="qs-icon">📊</span><span class="qs-label">NUMBERS&nbsp;&nbsp;</span><span class="qs-val">Q4 FY26 EBITDA margin 25% — best in 8 quarters; Elara estimates FY27 revenue ₹1,840 Cr vs FY26 ₹1,454 Cr (+26%)</span></div>
+    <div class="qs-line"><span class="qs-icon">🚧</span><span class="qs-label">TOP RISK&nbsp;</span><span class="qs-val">DME transport regulatory approvals pending; stock at ~35x PE already prices in FY28 execution before first rupee of DME revenue</span></div>
+    <div class="qs-line"><span class="qs-icon">👁</span><span class="qs-label">WATCH&nbsp;&nbsp;&nbsp;</span><span class="qs-val">DME quarterly volume (MT sold) — the single data point that validates or kills the LPG substitution thesis</span></div>
+    <div class="qs-line"><span class="qs-icon">💡</span><span class="qs-label">VERDICT&nbsp;&nbsp;</span><span class="qs-val">Mid-chapter: inflection confirmed in Q4 FY26; story turns on DME + BSCL delivery in FY27</span></div>
+  </div>
+</div>
+
+<!-- ===== CONTAINER ===== -->
+<div class="container">
+
+  <!-- ===== CHAPTER 0 — HOOK CARD ===== -->
+  <article id="chapter-0" aria-label="Chapter 0 Hook Card">
+    <div class="hook-card" role="banner">
+      <div class="hook-eyebrow">NSE: BALAMINES · Specialty Chemicals · June 2026</div>
+      <div class="hook-thesis">India's first DME producer and ₹750 Cr specialty chemicals expansion — Balaji Amines is transitioning from commodity amine price-taker to energy-infrastructure supplier, just as the three-year sector downcycle shows its first credible break.</div>
+      <div class="hook-metrics">
+        <div class="hook-metric number">
+          <div class="hook-metric-label">📊 Single most important number</div>
+          <div class="hook-metric-val">₹1,840 Cr — FY27E revenue (Elara Securities), +26% vs FY26 ₹1,454 Cr, driven by DME (India's only 1,00,000 TPA plant), NMM, ACN upgrade, and BSCL ₹750 Cr expansion commissioning</div>
+        </div>
+        <div class="hook-metric risk">
+          <div class="hook-metric-label">⚠ Single biggest risk</div>
+          <div class="hook-metric-val">DME transport regulatory approvals from the Indian government are pending — without these, ₹1,00,000 TPA of India's first DME plant cannot scale beyond aerosol niche, and the stock at ~35x FY26 earnings has no margin of safety</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center;">
+      <span style="font-size: 13px; color: var(--text3); font-family: sans-serif;">Themes:</span>
+      <span class="tag">#DME</span><span class="tag">#AliphaticAmines</span><span class="tag">#SpecialtyChemicals</span><span class="tag">#LPGSubstitution</span><span class="tag">#NearDuopoly</span><span class="tag">#ZeroDebt</span><span class="tag">#BatteryChemicals</span><span class="tag">#BSCL750Cr</span><span class="tag">#OperatingLeverage</span><span class="tag">#CycleRecovery</span>
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 1 — CONTEXT ===== -->
+  <article id="chapter-1" class="chapter" aria-labelledby="ch1-title">
+    <header class="chapter-header">
+      <div class="chapter-number">1</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 1</div>
+        <div class="chapter-title" id="ch1-title">Context — The Big Picture</div>
+      </div>
+    </header>
+    <section>
+      <p class="section-intro">Balaji Amines sits at the intersection of three overlapping structural stories — and the timing of all three is compressing into the same 18-month window.</p>
+
+      <p><strong>The India Specialty Chemicals Supercycle.</strong> India's specialty and fine chemicals sector is projected to grow at a <span class="hl-number">CAGR of 9–11% to reach $40 billion by 2026–27</span>, up from roughly $22 billion in 2020. The engine is China+1: US, European, and Japanese multinationals accelerating sourcing diversification from China following supply-chain failures of 2020–22 and continuing geopolitical tension. India, with lower labour costs, an established chemicals regulatory framework, and a growing domestic user base in pharma and agrochem, is the primary beneficiary. Indian specialty chemicals firms now export to 100+ countries, with domestic volumes supplemented by an export corridor that has grown from 15% to 22% of sector revenues over the past five years.</p>
+
+      <p><strong>The Aliphatic Amines Duopoly.</strong> Within specialty chemicals, aliphatic amines and their derivatives are a ₹3,000 Cr+ domestic market growing at roughly 8–10% per year. Pharma (drug synthesis intermediates), agrochemicals (herbicide actives), paints and resins, and water treatment chemicals are the primary demand engines — all industries with a structural India growth story. Balaji Amines and Alkyl Amines together command an estimated 60–70% of domestic aliphatic amines supply; the duopoly pricing structure gives both companies meaningful advantage over commodity chemical alternatives. The three-year 2022–2025 downcycle — driven by aggressive Chinese price dumping and global destocking — is now visibly reversing. <span class="hl-catalyst">Q4 FY26 EBITDA margins of 25% are the highest in eight quarters, signalling that the cycle has turned.</span></p>
+
+      <p><strong>The DME Moment.</strong> India's LPG import bill runs to $10–12 billion annually; the country imports roughly 60% of its domestic LPG needs, making it one of the world's largest LPG importers. Dimethyl Ether (DME) can blend with LPG up to 8% under a newly issued BIS IS standard — and over time potentially replace LPG in commercial and industrial applications. Balaji Amines commissioned India's first-ever commercial DME plant on May 20, 2026, at 1,00,000 TPA capacity. There is no other domestic competitor at commercial scale. This is not a commodity market share story — it is an import substitution story with the government as a structural tailwind.</p>
+
+      <div class="insight-card" style="border-color: var(--accent-blue);">
+        <strong>Why NOW?</strong> Three catalysts coincide in the same window: (1) the specialty chemicals downcycle bottom is confirmed by Q4 FY26 numbers; (2) the DME plant began commercial production in May 2026; (3) the BSCL subsidiary ₹750 Cr expansion (HCN, EDTA, Sodium Cyanide) is commissioning Sep–Dec 2026. The story from flat FY25–FY26 revenues could inflect to 25–40% revenue growth in FY27–FY28 if execution holds.
+      </div>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-blue);">
+      Q4 FY26 25% EBITDA margin confirms cycle bottom; DME and BSCL create the FY27 inflection catalyst.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 2 — BUSINESS MODEL + JOURNEY ===== -->
+  <article id="chapter-2" class="chapter" aria-labelledby="ch2-title">
+    <header class="chapter-header">
+      <div class="chapter-number">2</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 2</div>
+        <div class="chapter-title" id="ch2-title">The Business Model + Company Journey</div>
+      </div>
+    </header>
+    <section>
+      <h3 style="font-size: 16px; margin-bottom: 10px; color: var(--text);">What they actually do</h3>
+      <p>Balaji Amines starts with three simple molecules — methanol, ethanol, and ammonia — and reacts them over catalysts to produce methylamines, ethylamines, and their downstream derivatives. Those derivative molecules go into a vast portfolio of end products: solvents (NMP, GBL), crop protection actives, pharma intermediates, rubber chemicals, and personal care ingredients. The product range spans 40+ molecules across 4 manufacturing plants in Maharashtra (Solapur: Units I, II, IV) and Telangana (Bollaram: Unit III).</p>
+
+      <p>The <strong>revenue flywheel</strong> is volume-driven with margin leverage: commodity amines (methylamines/ethylamines) provide stable base volumes; specialty derivatives (GBL, NMP, Morpholine) command premium margins; and new high-value molecules (DME, NMM, ACN, HCN) shift the mix upward over time. <span class="hl-key">The company's real moat is its 35-year-old self-developed amine technology, which was built at roughly one-quarter the cost of competing UK-imported technology</span> — meaning Balaji can absorb margin compression that would bankrupt a higher-cost entrant. Customer stickiness in pharma runs deep: drug master file (DMF) registration with US/European regulators takes 3–5 years, making switching suppliers a multi-year project.</p>
+
+      <p>Revenue by end market (FY26 approximate): Pharma 51%, Paints &amp; Resins 26%, Agrochemicals/Water Treatment/Other 23%. Export share: ~20–22% of revenues, reaching 50+ countries including US, UK, Israel, and Argentina. The subsidiary Balaji Speciality Chemicals (BSCL, ~54% owned) manufactures higher-value derivatives and is the vehicle for the ₹750 Cr expansion into HCN, EDTA, and Sodium Cyanide.</p>
+
+      <h3 style="font-size: 16px; margin: 20px 0 14px; color: var(--text);">Company Journey Timeline</h3>
+      <div class="timeline" aria-label="Company journey timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot">1988</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Founded</div>
+            <div class="timeline-event">Balaji Amines incorporated — KPR Group, Solapur</div>
+            <div class="timeline-desc">Ande Prathap Reddy, a civil engineer who started his entrepreneurial journey in 1976 with a ₹25,000 bank loan, founded the company to address domestic demand for aliphatic amines then dominated by international suppliers. First plant at Tamalwadi, Solapur began methylamines production in 1989 using in-house developed technology at ~¼th the cost of imported UK technology.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">1992</div>
+          <div class="timeline-content">
+            <div class="timeline-year">R&amp;D Capability</div>
+            <div class="timeline-event">In-house R&amp;D Centre established at Bollaram, Hyderabad</div>
+            <div class="timeline-desc">Derivatives of methylamines and specialty chemicals became the focus. This internal R&amp;D engine — rather than licensed technology — is the foundation of every subsequent product launch.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">1995</div>
+          <div class="timeline-content">
+            <div class="timeline-year">IPO + World Record</div>
+            <div class="timeline-event">Listed on BSE (Aug 1995); became world's largest DMA-HCl producer</div>
+            <div class="timeline-desc">IPO proceeds funded capacity expansion. The company became the world's largest manufacturer of Dimethylamine Hydrochloride (DMA-HCl) — a pharma and industrial intermediate — establishing its first global moat.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2006</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Sole Manufacturer Milestone</div>
+            <div class="timeline-event">First and only Indian producer of GBL, NMP, and Morpholine</div>
+            <div class="timeline-desc">By 2005–06, Balaji Amines expanded methylamines capacity to 40 TPD and developed GBL (gamma-butyrolactone), NMP (N-Methyl-2-Pyrrolidone), and Morpholine domestically — eliminating India's import dependency and earning a durable cost advantage over any new domestic entrant.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">~2018</div>
+          <div class="timeline-content">
+            <div class="timeline-year">BSCL Launch</div>
+            <div class="timeline-event">Balaji Speciality Chemicals subsidiary formed for higher-value derivatives</div>
+            <div class="timeline-desc">The subsidiary became the vehicle for producing higher-value molecules with better margins — NMM, morpholine derivatives, pharma excipients. Today it is the platform for the ₹750 Cr HCN/EDTA/NaCN expansion.</div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2026</div>
+          <div class="timeline-content">
+            <div class="timeline-year">Category Creation</div>
+            <div class="timeline-event">India's first DME plant (1,00,000 TPA) commissioned — Solapur, May 20, 2026</div>
+            <div class="timeline-desc">Commercial production commenced at Unit IV, Chincholi MIDC, Solapur. Zero domestic competition at commercial scale. BIS IS standard permits DME blending with LPG up to 8%. First applications: aerosol industry and select industrial heating.</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 style="font-size: 16px; margin: 24px 0 14px; color: var(--text);">Promoter &amp; Capital Allocation Sidebar</h3>
+      <div class="sidebar-card" aria-label="Promoter shareholding and capital allocation">
+        <div class="sidebar-title">Promoter Intelligence</div>
+        <p style="font-size: 14px; margin-bottom: 14px;"><strong>Promoter background:</strong> Founder-led. Ande Prathap Reddy (Chairman) built the business from scratch; son/family continue active management. Dundurapu Ram Reddy serves as MD, with three decades of experience in procurement, marketing, and logistics. The company is part of the KPR Group of Industries.</p>
+        <div class="stat-table">
+          <div class="stat-row">
+            <div class="stat-label">Promoter shareholding (Mar 2026)</div>
+            <div class="stat-val flat">54.59% — stable</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">Promoter holding trend (8 quarters)</div>
+            <div class="stat-val flat">Stable (54.59%–54.62% band; zero pledging)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">Promoter pledge</div>
+            <div class="stat-val up">NIL — zero pledged shares</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">FII holding trend</div>
+            <div class="stat-val down">Declining: 5.16% (Dec'24) → 3.30% (Dec'25)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">ROCE — FY23</div>
+            <div class="stat-val up">~36% (peak of last cycle)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">ROCE — FY24</div>
+            <div class="stat-val flat">~17.8% (downcycle impact)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">ROCE — H1 FY26</div>
+            <div class="stat-val down">10.39% (decade low; capex-heavy phase)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">5-year avg ROCE</div>
+            <div class="stat-val flat">~29–30% (includes FY21–22 peak of 45%+)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">Dividend vs. reinvestment</div>
+            <div class="stat-val flat">Low payout ratio ~17%; company reinvests heavily (₹750 Cr BSCL + ₹280 Cr FY27 capex)</div>
+          </div>
+          <div class="stat-row">
+            <div class="stat-label">Net debt position</div>
+            <div class="stat-val up">Net cash (D/E = –0.08); standalone zero-debt</div>
+          </div>
+        </div>
+        <p class="note">⚠ ROCE collapse from 36% to 10% reflects the dual impact of revenue decline (FY24 ₹1,671 Cr → FY25 ₹1,444 Cr) and aggressive capital deployment. If new capacities (DME, BSCL) ramp toward 50–60% utilization as guided, ROCE recovery toward 18–22% is plausible in FY27–FY28.</p>
+      </div>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-teal);">
+      Self-developed technology + 35 years of scale = structural moat; ROCE recovery contingent on DME/BSCL ramp, not the core business.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 3 — PORTER'S FIVE FORCES ===== -->
+  <article id="chapter-3" class="chapter" aria-labelledby="ch3-title">
+    <header class="chapter-header">
+      <div class="chapter-number">3</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 3</div>
+        <div class="chapter-title" id="ch3-title">Competitive Dynamics — Porter's Five Forces</div>
+      </div>
+    </header>
+    <div class="porter-grid" role="region" aria-label="Porter's Five Forces analysis">
+      <div class="force-card" aria-label="Force 1: Competitive Rivalry">
+        <div class="force-title">Force 1 — Competitive Rivalry</div>
+        <span class="threat-badge threat-mod" aria-label="Moderate threat">🟡 Moderate</span>
+        <div class="force-text">Domestic near-duopoly with Alkyl Amines Chemicals (NSE: ALKYLAMINE) — together the two control an estimated 60–70% of Indian aliphatic amines supply. Indo Amines and Rashtriya Chemicals (RCF) cover fringe segments. Chinese suppliers are the real competitive force: aggressive price dumping in methylamines/ethylamines compressed domestic EBITDA spreads by an estimated 5–12 percentage points in FY23–25. Competition in derivatives (GBL, NMP, Morpholine) is minimal — Balaji remains the sole domestic producer. Market share is not shifting domestically; the pressure is on pricing, not volume.</div>
+        <div class="force-implication">Investor implication: Commodity amines face Chinese pricing pressure that limits margin expansion; derivative segment is de facto monopoly pricing.</div>
+      </div>
+      <div class="force-card" aria-label="Force 2: Threat of New Entrants">
+        <div class="force-title">Force 2 — Threat of New Entrants</div>
+        <span class="threat-badge threat-low" aria-label="Low threat">🟢 Low</span>
+        <div class="force-text">Barriers are structural and multi-layered. Amine chemistry requires captive technology (Balaji developed its own in 1988–92); importing equivalent UK technology would cost ~4× as much. Pharma customer qualification takes 3–5 years of DMF registration per product per customer — a new entrant cannot supplant an existing supplier within a single capex cycle. MIDC plant permits, hazardous chemical handling certifications (ISO 14001, ISO 45001), and fire-safety clearances add 12–24 months of lead time. Minimum efficient scale for a standalone amines plant requires ₹300–500 Cr investment.</div>
+        <div class="force-implication">Investor implication: No credible domestic new entrant in the foreseeable 3–5 years; DME has zero domestic competition at commercial scale.</div>
+      </div>
+      <div class="force-card" aria-label="Force 3: Bargaining Power of Buyers">
+        <div class="force-title">Force 3 — Bargaining Power of Buyers</div>
+        <span class="threat-badge threat-mod" aria-label="Moderate threat">🟡 Moderate</span>
+        <div class="force-text">Pharma (51% revenue) has moderate power: global drug companies have alternatives in Alkyl Amines or Chinese suppliers, but switching triggers re-registration costs. Paints &amp; resins customers (26% revenue) — likely including Asian Paints, Berger, and others — have spot pricing relationships and can negotiate more aggressively. <span class="hl-risk">MD Dundurapu Reddy explicitly flagged in Q4 FY26 concall that "a large customer's backward integration" into methylamines is a concern</span> — this customer is unidentified but likely a major pharma or agrochem user at scale. Contract structures are predominantly spot/annual — not long-term cost-plus.</div>
+        <div class="force-implication">Investor implication: Derivatives pricing is stickier; core methylamines pricing is exposed to one large customer backward-integration risk.</div>
+      </div>
+      <div class="force-card" aria-label="Force 4: Bargaining Power of Suppliers">
+        <div class="force-title">Force 4 — Bargaining Power of Suppliers</div>
+        <span class="threat-badge threat-high" aria-label="High threat">🔴 High</span>
+        <div class="force-text">The three critical inputs are methanol (imported primarily from Saudi Arabia), ammonia (domestically sourced but globally traded), and denatured ethyl alcohol (domestic). In March 2026, geopolitical disruption in West Asia triggered a force-majeure event in ammonia supply that halted Balaji Amines' ammonia-dependent production lines for several weeks. Methanol prices have at times doubled or tripled with Middle East supply volatility. The company has no backward integration into methanol or ammonia. Management strategy: purchase inputs in smaller tranches to reduce timing risk, but this cannot insulate margins from a sustained spike.</div>
+        <div class="force-implication">Investor implication: A single quarterly margin miss is always possible from a raw material spike; this is cyclical risk, not structural impairment — but it explains the high earnings volatility.</div>
+      </div>
+      <div class="force-card porter-center" aria-label="Force 5: Threat of Substitutes">
+        <div class="force-title">Force 5 — Threat of Substitutes</div>
+        <span class="threat-badge threat-low" aria-label="Low threat">🟢 Low</span>
+        <div class="force-text">Aliphatic amines are functional building blocks in drug synthesis and chemical manufacturing — not discretionary additives that can be swapped out for an alternative material. GBL and NMP are industry-standard solvents with no practical low-cost substitute in pharma and electronics manufacturing. The only meaningful substitution threat is technology-led: if pharma synthesis pathways shift (e.g., biocatalysis displaces chemical amination), derivative demand could gradually shrink over a 10–15 year horizon. Near term (3–5 years), no such shift is commercially validated. For DME specifically, Balaji is the substitute (for LPG) — not the substituted. Battery chemicals (DMC, ACN) face competition from Chinese suppliers in the long run but offer scale economics if domestic EV demand accelerates.</div>
+        <div class="force-implication">Investor implication: Core amines are a 10+ year structural business; the substitution risk is innovation-led and distant, not a near-term threat.</div>
+      </div>
+    </div>
+    <div class="moat-bar" aria-label="Overall moat summary">
+      <span class="moat-rating">🏰 Narrow Moat</span>
+      <span style="font-size: 14px; flex: 1; color: var(--text2);">Near-duopoly position + sole Indian maker of several derivatives + 35-year captive technology = narrow moat. Single biggest vulnerability: customer backward-integration into methylamines and raw material supply concentration in the Middle East. Moat quality is comparable to Alkyl Amines but with lower margin consistency (Alkyl Amines delivered stronger margins through the FY24–25 downcycle).</span>
+    </div>
+    <div class="takeaway-pill" style="border-color: var(--accent-amber);">
+      Narrow moat in derivatives, duopoly position in amines; raw material supply concentration is the structural weak point.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 4 — VERTICAL STORIES ===== -->
+  <article id="chapter-4" class="chapter" aria-labelledby="ch4-title">
+    <header class="chapter-header">
+      <div class="chapter-number">4</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 4</div>
+        <div class="chapter-title" id="ch4-title">The Vertical Stories</div>
+      </div>
+    </header>
+    <section>
+
+      <div class="vertical-card teal" aria-label="DME vertical">
+        <div class="vertical-header">
+          <div class="vertical-title">Dimethyl Ether (DME) — LPG Import Substitution</div>
+          <span class="vertical-badge badge-live">🟢 Live — May 2026</span>
+        </div>
+        <p style="font-size: 14px;">India imports roughly 60% of its LPG needs — a $10–12 billion annual import bill. The Bureau of Indian Standards has issued IS code permitting DME blending with LPG up to 8%. Balaji Amines commissioned India's only commercial-scale DME plant (1,00,000 TPA) at Unit IV, Chincholi MIDC, Solapur on May 20, 2026. <span class="hl-catalyst">At 50–60% utilization — management's own FY27 target — this plant alone could contribute ₹200–300 Cr in incremental revenue at 22% EBITDA margins.</span> Near-term market: aerosol industry (no regulatory change needed) and select industrial heating. Long-term optionality: commercial LPG blending across cooking applications, if transport approvals clear. The government's goal of reducing fuel import dependence gives this regulatory pathway political tailwind. Zero domestic competitor at commercial scale for the foreseeable future.</p>
+      </div>
+
+      <div class="vertical-card blue" aria-label="Core amines vertical">
+        <div class="vertical-header">
+          <div class="vertical-title">Core Amines + Derivatives (Methylamines, GBL, NMP, Morpholine)</div>
+          <span class="vertical-badge badge-ramp">🔵 Running — Ramping</span>
+        </div>
+        <p style="font-size: 14px;">The revenue base (approximately ₹800–900 Cr of FY26 standalone revenues) is the core amines and derivatives business. Capacity utilization was running at only 35–40% through FY24–FY26 — reflecting the Chinese pricing pressure downcycle, not structural demand loss. <span class="hl-number">Q4 FY26 volumes of 27,341 MT are 6% above Q4 FY25's 25,871 MT</span>, confirming the beginning of a volume recovery. With fixed costs largely absorbed, each incremental MT of volume drops to EBITDA at significantly above-average margins — the operating leverage story. MD Reddy guided 10–15% volume growth for FY27 on the base business, which at current pricing would add ~₹100–150 Cr in revenue.</p>
+      </div>
+
+      <div class="vertical-card purple" aria-label="Battery chemicals vertical">
+        <div class="vertical-header">
+          <div class="vertical-title">Battery Chemicals — DMC &amp; Acetonitrile (ACN)</div>
+          <span class="vertical-badge badge-build">🟡 Building Optionality</span>
+        </div>
+        <p style="font-size: 14px;">Dimethyl Carbonate (DMC) is a key electrolyte solvent for lithium-ion batteries. Balaji Amines already has an Electronic Grade DMC plant — but utilization has been limited by delays from domestic battery cell manufacturers. As India's EV supply chain matures and FAME-III policy drives local battery manufacturing, DMC demand is expected to accelerate. The acetonitrile (ACN) plant upgrade to electronic grade (scheduled Q2 FY27) targets the same EV battery electrolyte market. Together, DMC + ACN could become a meaningful revenue stream in FY28–FY29 as India's battery manufacturing ecosystem scales. Current contribution is minimal; this is optionality, not a near-term catalyst.</p>
+      </div>
+
+      <div class="vertical-card amber" aria-label="BSCL expansion vertical">
+        <div class="vertical-header">
+          <div class="vertical-title">BSCL ₹750 Cr Expansion — HCN, Sodium Cyanide, EDTA</div>
+          <span class="vertical-badge badge-build">🟡 Commissioning Sep–Dec 2026</span>
+        </div>
+        <p style="font-size: 14px;">Balaji Speciality Chemicals (54% subsidiary) has government Mega Project status for a ₹750 Cr phased expansion covering Hydrogen Cyanide (HCN), Sodium Cyanide (NaCN), EDTA/EDTA-2Na, Benzyl Cyanide, Phenylacetic Acid, and TEOF/TMOF. Brownfield unit targeting commissioning September 2026; greenfield MIDC facility by December 2026. The Maharashtra Government has approved ₹258 Cr in incentives under the Packaged Scheme of Incentives (PSI) 2019. HCN and Sodium Cyanide are critical inputs for mining, pharmaceuticals, and agricultural chemicals — today predominantly imported. EDTA is a pharma excipient and industrial chelating agent. This expansion takes Balaji up the value chain from commodity amines into high-margin, import-substituting specialty intermediates. Elara Securities estimates this expansion contributes significantly to the FY28 revenue jump to ₹2,600 Cr.</p>
+      </div>
+
+      <div class="vertical-card green" aria-label="NMM vertical">
+        <div class="vertical-header">
+          <div class="vertical-title">N-Methylmorpholine (NMM) — Pharma &amp; Industrial Solvents</div>
+          <span class="vertical-badge badge-build">🟡 FY27 Launch</span>
+        </div>
+        <p style="font-size: 14px;">A 5,000 TPA NMM plant is planned for commissioning in FY27. NMM is used as a solvent in pharmaceuticals, adhesives, polyurethane foams, and textiles. The global NMM market is a niche but high-value segment — pricing typically runs significantly higher than commodity amines. This is a derivative that leverages Balaji's existing morpholine production capability into a higher-margin application.</p>
+      </div>
+
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-teal);">
+      DME is the swing variable for FY27; BSCL expansion (Sep–Dec 2026 commissioning) is the FY28 revenue catalyst.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 5 — STRATEGIC INSIGHT ===== -->
+  <article id="chapter-5" class="chapter" aria-labelledby="ch5-title">
+    <header class="chapter-header">
+      <div class="chapter-number">5</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 5</div>
+        <div class="chapter-title" id="ch5-title">The Strategic Insight</div>
+      </div>
+    </header>
+    <section>
+      <p class="section-intro">The single most important non-obvious thing about Balaji Amines right now is this:</p>
+      <div class="insight-card" style="border-color: var(--accent-blue); background: rgba(55,138,221,0.06); font-size: 16px; line-height: 1.8; padding: 20px 24px;">
+        <span class="hl-key">The DME plant is not a chemical product line. It is Balaji Amines' application to become an energy infrastructure company — and the aerosol market is just the temporary parking spot while the government decides whether to unlock commercial LPG blending.</span>
+      </div>
+      <p style="margin-top: 16px;">Here is what most people get wrong about the DME story: they model it as a specialty chemical with a niche market (aerosols, ~5–10% of capacity). That's the safe scenario. The transformative scenario is different. India's LPG import dependence is a chronic political problem — every dollar of oil above $70/barrel makes the government anxious. <span class="hl-number">India imports 55–60% of its LPG needs</span>, representing a roughly $10–12 billion annual forex outflow. DME is one of the only scalable, domestically producible alternatives that can blend directly with LPG cylinders already distributed across 320 million households and millions of commercial cooking operations — no infrastructure rebuild needed.</p>
+      <p>The BIS IS standard permitting 8% blending is the regulatory foot in the door. The next question is transportation — whether PESO (Petroleum and Explosives Safety Organisation) and the Ministry of Petroleum will approve DME transport infrastructure (pipeline standards, tanker specifications). <em>That</em> is the regulatory unlock Dundurapu Reddy referred to when he said the company is "awaiting government approvals for DME transportation" in the Q4 FY26 concall. Once those approvals land, the potential market isn't aerosols — it is the entire commercial cooking and industrial heating segment currently running on LPG.</p>
+      <p>Balaji Amines is the only company in India that has made this bet at commercial scale. The capital is deployed. The plant is running. The first-mover advantage in a regulated, infrastructure-adjacent market could endure for years. And if the regulatory doors remain closed, the aerosol market alone isn't sufficient to justify the capital — making this a high-conviction binary rather than a low-risk compounder.</p>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-blue);">
+      At ₹1,820/share, investors are not buying a chemicals recovery — they are paying for the optionality that LPG blending approval arrives.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 6 — NUMBERS IN CONTEXT ===== -->
+  <article id="chapter-6" class="chapter" aria-labelledby="ch6-title">
+    <header class="chapter-header">
+      <div class="chapter-number">6</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 6</div>
+        <div class="chapter-title" id="ch6-title">The Numbers in Context</div>
+      </div>
+    </header>
+    <section>
+      <h3 style="font-size: 16px; margin-bottom: 14px;">Core Financials — Revenue &amp; Profitability Trajectory</h3>
+      <div class="stat-table" aria-label="Core financial metrics">
+        <div class="stat-row"><div class="stat-label">FY24 Consolidated Revenue</div><div class="stat-val">₹1,671 Cr</div></div>
+        <div class="stat-row"><div class="stat-label">FY25 Consolidated Revenue</div><div class="stat-val down">₹1,444 Cr (–13.6% YoY)</div></div>
+        <div class="stat-row"><div class="stat-label">FY26 Consolidated Revenue</div><div class="stat-val up">₹1,454 Cr (+0.7% YoY)</div></div>
+        <div class="stat-row"><div class="stat-label">FY26 EBITDA</div><div class="stat-val up">₹294 Cr (margin: 20%)</div></div>
+        <div class="stat-row"><div class="stat-label">FY25 EBITDA</div><div class="stat-val flat">₹265 Cr (margin: 19%)</div></div>
+        <div class="stat-row"><div class="stat-label">FY26 PAT</div><div class="stat-val up">₹169 Cr (margin: 12%)</div></div>
+        <div class="stat-row"><div class="stat-label">FY25 PAT</div><div class="stat-val flat">₹170 Cr (margin: 11%)</div></div>
+        <div class="stat-row"><div class="stat-label">Q4 FY26 Revenue (best quarter)</div><div class="stat-val up">₹403 Cr (+12% YoY)</div></div>
+        <div class="stat-row"><div class="stat-label">Q4 FY26 EBITDA Margin</div><div class="stat-val up">25% (best in 8 quarters)</div></div>
+        <div class="stat-row"><div class="stat-label">Q4 FY26 PAT</div><div class="stat-val up">₹65 Cr (+62% YoY)</div></div>
+        <div class="stat-row"><div class="stat-label">Net debt / equity</div><div class="stat-val up">–0.08 (net cash company; standalone zero-debt)</div></div>
+        <div class="stat-row"><div class="stat-label">Shareholder equity (Mar'25)</div><div class="stat-val">₹1,845 Cr | Book value ~₹569/share</div></div>
+        <div class="stat-row"><div class="stat-label">FY27E Revenue (Elara Securities)</div><div class="stat-val up">₹1,840 Cr (+26% YoY)</div></div>
+        <div class="stat-row"><div class="stat-label">FY27E EBITDA Margin (management guide)</div><div class="stat-val up">22–23%</div></div>
+      </div>
+
+      <h3 style="font-size: 16px; margin: 24px 0 14px;">Quarterly Trend — The Downcycle &amp; Recovery</h3>
+      <div style="overflow-x: auto;">
+        <table class="scorecard-table" aria-label="Quarterly revenue trend">
+          <thead>
+            <tr><th>Quarter</th><th>Revenue (₹ Cr)</th><th>EBITDA %</th><th>PAT (₹ Cr)</th><th>Vol (MT)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Q4 FY26 (Mar'26)</td><td>403</td><td>25.3%</td><td>65</td><td>27,341</td></tr>
+            <tr><td>Q3 FY26 (Dec'25)</td><td>340</td><td>17.6%</td><td>35</td><td>25,894</td></tr>
+            <tr><td>Q2 FY26 (Sep'25)</td><td>341</td><td>15.3%</td><td>38</td><td>26,165</td></tr>
+            <tr><td>Q1 FY26 (Jun'25)</td><td>~370</td><td>~17%</td><td>~31</td><td>—</td></tr>
+            <tr><td>Q4 FY25 (Mar'25)</td><td>361</td><td>19%</td><td>40</td><td>25,871</td></tr>
+            <tr><td>Q3 FY25 (Dec'24)</td><td>321</td><td>17%</td><td>33</td><td>24,107</td></tr>
+            <tr><td>Q2 FY25 (Sep'24)</td><td>356</td><td>20%</td><td>41</td><td>—</td></tr>
+            <tr><td>Q1 FY25 (Jun'24)</td><td>385</td><td>~17%</td><td>43</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note" style="margin-top: 8px;">Source: Company results disclosures, BSE/NSE filings, concall transcripts. Q1 FY26 figures are derived (FY26 full-year minus Q2–Q4).</p>
+
+      <h3 style="font-size: 16px; margin: 24px 0 14px;">Capex Timeline</h3>
+      <div class="ob-card" aria-label="Capex timeline">
+        <div class="capex-header">
+          <span>Year</span><span>Capex Spend</span><span>Key Project</span><span>Expected Revenue Impact</span>
+        </div>
+        <div class="capex-row">
+          <span class="capex-year">FY24</span>
+          <span>~₹160 Cr (est.)</span>
+          <span>BSCL Phase 1 initiation; DMC plant commissioning; Unit III debottlenecking</span>
+          <span>DMC contributing minimal (low utilization); BSCL derivatives ramping</span>
+        </div>
+        <div class="capex-row">
+          <span class="capex-year">FY25</span>
+          <span>~₹110–130 Cr (fixed assets ₹891→₹998 Cr net; gross ~₹165 Cr)</span>
+          <span>DME plant construction at Unit IV; BSCL brownfield works begin</span>
+          <span>No revenue contribution yet; investment phase</span>
+        </div>
+        <div class="capex-row">
+          <span class="capex-year">FY26</span>
+          <span>~₹180–220 Cr (est.)</span>
+          <span>DME plant completion (commissioned May 2026); BSCL works advancing</span>
+          <span>DME contributes from Q1 FY27; aerosol market first</span>
+        </div>
+        <div class="capex-row" style="background: rgba(55,138,221,0.05);">
+          <span class="capex-year">FY27</span>
+          <span>₹280 Cr announced (₹250 Cr specialty)</span>
+          <span>ACN plant upgrade (Q2 FY27); NMM 5,000 TPA; BSCL brownfield (Sep) + greenfield (Dec)</span>
+          <span>Management guides 22–23% EBITDA on ₹1,840 Cr revenue (Elara estimate). DME at 50–60% utilization = ₹200–300 Cr revenue</span>
+        </div>
+        <p class="note" style="margin-top: 12px;">⚠ Red flag check: Capex is running ahead of volume ramp — combined FY24–FY26 gross capex of ~₹450–550 Cr against revenue that's been flat to declining. This is a bet on FY27–FY28 ramp. Balance sheet is clean (zero net debt), so financial risk is low — execution risk is the concern. Maharashtra Govt has approved ₹258 Cr incentives for BSCL Mega Project, partially offsetting investment.</p>
+        <p class="note"><strong>Funding source:</strong> Internal accruals + net cash on balance sheet. No equity dilution. Long-term debt negligible (₹1.52 Cr as of Mar'25). This signals balance sheet confidence from management.</p>
+      </div>
+
+      <h3 style="font-size: 16px; margin: 24px 0 14px;">Valuation vs. Peers</h3>
+      <div style="overflow-x: auto;">
+        <table class="peer-table" aria-label="Valuation peer comparison">
+          <thead>
+            <tr>
+              <th>Company</th><th>P/E (TTM)</th><th>P/BV</th><th>ROE (Avg 5Y)</th><th>D/E</th><th>Div Yield</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight"><td>Balaji Amines (BALAMINES)</td><td>~34–35x</td><td>2.36x</td><td>18.3%</td><td>–0.08</td><td>0.6%</td></tr>
+            <tr><td>Alkyl Amines (ALKYLAMINE)</td><td>~38–42x</td><td>~5x</td><td>~22%</td><td>Net cash</td><td>~0.5%</td></tr>
+            <tr><td>Archean Chemical</td><td>40.8x</td><td>3.66x</td><td>16.1%</td><td>0.05</td><td>0.53%</td></tr>
+            <tr><td>Galaxy Surfactants</td><td>23.6x</td><td>2.67x</td><td>16.2%</td><td>–0.15</td><td>1.15%</td></tr>
+            <tr><td>Laxmi Organic</td><td>47.9x</td><td>2.07x</td><td>8.8%</td><td>0.10</td><td>0.35%</td></tr>
+            <tr><td>Epigral</td><td>11.3x</td><td>2.17x</td><td>24.9%</td><td>0.24</td><td>0.24%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-card" style="border-color: var(--accent-amber); margin-top: 16px;">
+        <strong>What is the market pricing in?</strong> At ~35x FY26 PAT (₹169 Cr PAT → ₹5,900 Cr market cap), the market is not paying for current earnings. It is paying for an FY28 earnings stream where PAT could reach ₹300–350 Cr (implied by Elara's ₹2,600 Cr FY28 revenue estimate at 22% EBITDA, ~12% PAT). That translates to a 17–18x FY28E P/E — reasonable if delivery is on track, but zero margin of safety if DME or BSCL commissionings slip. <span class="hl-risk">Elara Securities raised its target to ₹1,696 but downgraded to Reduce, noting that "the stock price is pricing in execution ahead of delivery."</span>
+      </div>
+
+      <h3 style="font-size: 16px; margin: 24px 0 14px;">Management Scorecard — Guidance vs. Delivery</h3>
+      <p style="font-size: 14px; color: var(--text2); margin-bottom: 10px;">Note: Explicit per-quarter revenue guidance is not publicly stated by Balaji Amines management. The following scorecard uses management's thematic guidance statements from concall disclosures vs. delivered outcomes. Quarters where management guided optimism and revenue declined are classified as Miss; quarters where conservatively guided outcomes were exceeded are Sandlag.</p>
+      <div style="overflow-x: auto;">
+        <table class="scorecard-table" aria-label="Management guidance vs actual scorecard">
+          <thead>
+            <tr><th>Quarter</th><th>Management Guidance / Tone</th><th>What Was Delivered</th><th>Verdict</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Q4 FY26 (Mar'26)</td>
+              <td>Volume recovery + DME commissioning expected; margin expansion with new capacity</td>
+              <td>Revenue ₹403 Cr (+12% YoY); EBITDA margin 25% — highest since FY23 peak; PAT ₹65 Cr (+62% YoY)</td>
+              <td><span class="verdict-sandlag">Sandlag</span></td>
+            </tr>
+            <tr>
+              <td>Q3 FY26 (Dec'25)</td>
+              <td>Cautious outlook; raw material costs elevated; gradual margin recovery expected</td>
+              <td>Revenue ₹340 Cr (–1.8% YoY); EBITDA margin 17.6%; PAT ₹35 Cr (–15% YoY)</td>
+              <td><span class="verdict-miss">Miss</span></td>
+            </tr>
+            <tr>
+              <td>Q2 FY26 (Sep'25)</td>
+              <td>Revenue dip temporary; margin improvement underway; new projects commissioning FY27</td>
+              <td>Revenue ₹341 Cr (–4.4% YoY); EBITDA margin 15.3%; PAT ₹38 Cr (–7% YoY)</td>
+              <td><span class="verdict-miss">Miss</span></td>
+            </tr>
+            <tr>
+              <td>Q1 FY26 (Jun'25)</td>
+              <td>Volume stabilisation; awaiting new project commissioning; cautious on FY26 outlook</td>
+              <td>Revenue ~₹370 Cr (est.); EBITDA ~17%; PAT ~₹31 Cr</td>
+              <td><span class="verdict-ontrack">On-Track</span></td>
+            </tr>
+            <tr>
+              <td>Q4 FY25 (Mar'25)</td>
+              <td>"Cautious optimism" for FY26; sequential volume recovery beginning; capex discipline</td>
+              <td>Revenue ₹361 Cr (–11% YoY); EBITDA margin 19%; PAT ₹40 Cr (–41% YoY from peak)</td>
+              <td><span class="verdict-ontrack">On-Track</span></td>
+            </tr>
+            <tr>
+              <td>Q3 FY25 (Dec'24)</td>
+              <td>Sector-wide pressure acknowledged; volume seasonality; FY25 recovery aspirational</td>
+              <td>Revenue ₹321 Cr (–9.8% QoQ); EBITDA margin 17%; PAT ₹33 Cr</td>
+              <td><span class="verdict-miss">Miss</span></td>
+            </tr>
+            <tr>
+              <td>Q2 FY25 (Sep'24)</td>
+              <td>Volume stabilising; margins recovering from FY24 lows</td>
+              <td>Revenue ₹356 Cr; EBITDA margin 20%; PAT ₹41 Cr — best quarter of FY25</td>
+              <td><span class="verdict-sandlag">Sandlag</span></td>
+            </tr>
+            <tr>
+              <td>Q1 FY25 (Jun'24)</td>
+              <td>Positive channel checks for H2 FY25; specialty chemicals recovery</td>
+              <td>Revenue ₹385 Cr (–17% YoY vs FY24 strong base); EBITDA ~17%; PAT ₹43 Cr</td>
+              <td><span class="verdict-miss">Miss</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="insight-card" style="border-color: var(--accent-amber); margin-top: 12px;">
+        <strong>Pattern:</strong> 5 of 8 quarters were Miss against the preceding cycle's baseline. Management is directionally correct — they called the recovery correctly by Q4 FY26 — but consistently over-optimistic on pace. The pattern is a straight-shooter with a habit of guidance that assumes the macro cooperates. Q4 FY26 (Sandlag) is the clearest signal of the cycle turn, but investors should budget for a guidance revision if raw material prices spike again. Management's FY27 guidance of 22–23% EBITDA margins and 25–30% volume growth should be treated as aspirational targets, not committed deliverables.
+      </div>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-amber);">
+      Management guided FY27 EBITDA margin 22–23%; first hard test is Q1 FY27 with DME plant ramping and BSCL timelines intact.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 7 — RISKS ===== -->
+  <article id="chapter-7" class="chapter" aria-labelledby="ch7-title">
+    <header class="chapter-header">
+      <div class="chapter-number">7</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 7</div>
+        <div class="chapter-title" id="ch7-title">Risks — Eyes Open</div>
+      </div>
+    </header>
+    <section role="list" aria-label="Risk factors">
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon">⚠</div>
+        <div>
+          <div class="risk-title">1. DME regulatory approvals — the gating risk</div>
+          <div class="risk-text">Commercial DME production began May 20, 2026, but PESO and the Ministry of Petroleum have not yet cleared the transportation standards (tanker specifications, pipeline norms) needed to deliver DME to commercial LPG blending facilities or end-users at scale. Without transport approval, the 1,00,000 TPA plant is limited to the aerosol market (~10–15% of capacity). Management acknowledged in the Q4 FY26 concall that they are "awaiting government approvals for DME transportation." Signal to watch: official gazette notification from PESO on DME transport standards. Magnitude: if approvals take 12–24 months, DME revenue in FY27 falls to ₹50–80 Cr vs the bull case of ₹200–300 Cr, eliminating the stock's re-rating catalyst.</div>
+        </div>
+      </div>
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon">⚠</div>
+        <div>
+          <div class="risk-title">2. Customer backward integration into methylamines</div>
+          <div class="risk-text">MD Dundurapu Reddy flagged in the Q4 FY26 concall the "uncertainty regarding the impact of a large customer's backward integration on Balaji Amines' methylamines business." This unnamed customer (likely a major pharma company or agrochem formulator representing ≥5% of methylamines revenue) is building internal amines capacity. If and when this capacity comes online, Balaji loses a volume anchor customer. The magnitude depends on who it is and how much volume is at stake — but any methylamines customer at scale represents ₹50–100+ Cr of revenue risk.</div>
+        </div>
+      </div>
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon">⚠</div>
+        <div>
+          <div class="risk-title">3. Raw material supply concentration — ammonia / methanol</div>
+          <div class="risk-text">In March 2026, geopolitical disruption in West Asia triggered a force-majeure event in ammonia supply, halting Balaji Amines' ammonia-dependent production lines for several weeks. Methanol — imported primarily from Saudi Arabia — is subject to similar geopolitical risk. The company has no backward integration into either input; its mitigation strategy (buying in smaller tranches) reduces timing risk but cannot prevent a sustained price spike from compressing margins. A repeat of the March 2026 ammonia disruption in a higher-stakes quarter (Q1 FY27, when DME ramp is expected) could meaningfully dent the recovery story.</div>
+        </div>
+      </div>
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon">⚠</div>
+        <div>
+          <div class="risk-title">4. BSCL commissioning slippage — brownfield Sep 2026, greenfield Dec 2026</div>
+          <div class="risk-text">The ₹750 Cr BSCL expansion (HCN, Sodium Cyanide, EDTA) is the FY28 revenue anchor in every analyst model. The brownfield unit targets September 2026 commissioning; greenfield December 2026. Construction execution in Indian specialty chemicals has a well-documented history of 6–12 month slippage versus stated timelines. If either milestone slips into FY28, Elara's ₹2,600 Cr FY28 revenue estimate collapses and the current 35x P/E has no forward earnings justification.</div>
+        </div>
+      </div>
+      <div class="risk-item" role="listitem">
+        <div class="risk-icon">⚠</div>
+        <div>
+          <div class="risk-title">5. Valuation premium with low margin of safety</div>
+          <div class="risk-text">At ₹1,820/share and ~₹5,900 Cr market cap, Balaji Amines trades at ~35x FY26 PAT (₹169 Cr) and approximately 20x FY27E PAT (~₹290 Cr, if management guidance materialises). The 52-week range of ₹968–₹1,956 already captures a ~90% re-rating from the lows — reflecting the DME commissioning event. Sector PE average for specialty chemicals is approximately 30–35x. If any one of the above risks materialises (DME delays, BSCL slippage, raw material spike), the earnings multiple will compress rapidly. This is not a value stock; it is a growth-execution bet at a growth-execution price.</div>
+        </div>
+      </div>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-coral);">
+      Regulatory, execution, and raw-material risks are all binary in nature — any one miss compresses a 35x multiple with no cushion.
+    </div>
+  </article>
+
+  <!-- ===== CHAPTER 8 — WATCH SIGNALS ===== -->
+  <article id="chapter-8" class="chapter" aria-labelledby="ch8-title">
+    <header class="chapter-header">
+      <div class="chapter-number">8</div>
+      <div>
+        <div class="chapter-eyebrow">Chapter 8</div>
+        <div class="chapter-title" id="ch8-title">Watch Signals — What to Track Every Quarter</div>
+      </div>
+    </header>
+    <section role="list" aria-label="Watch signals">
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot" style="background: var(--accent-teal);"></div>
+        <div>
+          <div class="watch-signal">1. DME quarterly volume (MT sold) — Q1 FY27 concall</div>
+          <div class="watch-trigger">What to look for: Management targets 50,000–60,000 MT annual run rate by FY27-end. Any Q1 FY27 data point on DME volumes is the first hard evidence that the LPG substitution thesis is moving. Green flag: DME volumes above 10,000 MT/quarter. Red flag: aerosol-only sales below 5,000 MT/quarter, indicating transport approval delay.</div>
+        </div>
+      </div>
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot" style="background: var(--accent-blue);"></div>
+        <div>
+          <div class="watch-signal">2. EBITDA margin trend — threshold: 22%</div>
+          <div class="watch-trigger">Management guided 22–23% EBITDA for FY27. Q4 FY26 at 25% was exceptional. If Q1 FY27 sustains above 20% on a higher revenue base, the margin recovery is structural. Red flag: margin falls back below 18% in Q1 FY27, indicating raw material or volume pressure has resumed.</div>
+        </div>
+      </div>
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot" style="background: var(--accent-amber);"></div>
+        <div>
+          <div class="watch-signal">3. BSCL commissioning milestones — September &amp; December 2026</div>
+          <div class="watch-trigger">Monitor BSE/NSE corporate filings for BSCL brownfield start-up (Sept 2026 target) and greenfield commissioning (Dec 2026). Any announcement delaying either by more than 3 months materially reduces FY27–FY28 revenue estimates. Green flag: first production announcement for HCN or NaCN before December 2026.</div>
+        </div>
+      </div>
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot" style="background: var(--accent-coral);"></div>
+        <div>
+          <div class="watch-signal">4. Methanol / ammonia price trend — quarterly raw material commentary</div>
+          <div class="watch-trigger">Management mentions input cost trends explicitly in every concall. If methanol prices double or ammonia supply disruption re-occurs (West Asia conflict escalation is the watch variable), Q2 FY27 margin could revert sharply. Safe signal: both materials stable to declining, and management confirms no force-majeure or supply interruption.</div>
+        </div>
+      </div>
+      <div class="watch-item" role="listitem">
+        <div class="watch-dot" style="background: var(--accent-purple);"></div>
+        <div>
+          <div class="watch-signal">5. Promoter shareholding &amp; FII direction</div>
+          <div class="watch-trigger">Promoter holding has been stable at 54.59% with zero pledging — that needs to hold. FII holding has been declining (5.16% → 3.30% over 4 quarters) — watch for stabilisation or reversal as the new capacities ramp. Any promoter selling above 0.5% would be a significant red flag at this stage of the execution cycle. A reversal in FII outflow would validate institutional conviction in the recovery.</div>
+        </div>
+      </div>
+    </section>
+    <div class="takeaway-pill" style="border-color: var(--accent-purple);">
+      DME volume data (Q1 FY27 concall) is the single most important number in the next 12 months.
+    </div>
+  </article>
+
+  <!-- ===== VERDICT ===== -->
+  <article id="verdict" class="chapter" aria-label="Verdict">
+    <header class="chapter-header">
+      <div class="chapter-number" style="background: var(--accent-teal);">✓</div>
+      <div>
+        <div class="chapter-eyebrow">Verdict</div>
+        <div class="chapter-title">Where Are We in the Story?</div>
+      </div>
+    </header>
+    <div class="verdict-card" role="region" aria-label="Investment verdict">
+      <div class="verdict-label">Story Stage</div>
+      <div class="verdict-stage">🔄 Mid-Chapter — Inflection Confirmed, Delivery Awaited</div>
+      <p>Balaji Amines sits at a genuine and rare inflection: a sector downcycle bottom confirmed by Q4 FY26's 25% EBITDA margin, coinciding with the commissioning of India's first DME plant and the imminent start-up of a ₹750 Cr specialty chemicals expansion. The structural tailwinds are real — India specialty chemicals heading to $40 billion at 9%+ CAGR, China+1 diversification favouring domestic amines suppliers, and a government with a long-term interest in LPG import substitution. The financial quality signals are mixed but directionally improving: ROCE is at decade lows (H1 FY26 at 10.39%) but will mechanically recover as DME and BSCL revenues flow through a largely fixed-cost base. The balance sheet is clean — zero net debt, ₹1,845 Cr equity, self-funded capex without dilution — signalling management's confidence in the business model.</p>
+      <p>The near-term catalyst is unambiguous: the first two quarterly data points on DME volume (Q1 and Q2 FY27) will determine whether the LPG substitution thesis is alive or parked. The valuation is demanding — at ~35x FY26 PAT, the market is paying for FY28 execution, not FY26 reality — but sector peers command 35–48x multiples, so relative to the specialty chemicals universe it is not egregiously expensive if the growth is delivered. The single biggest investor question is not whether Balaji Amines is a good business (it is, over a cycle) — it is whether DME transport regulatory approvals arrive in time to justify the current stock price. That is a government decision, not a management decision, and it introduces a binary risk that comfortable margin-of-safety investors should price appropriately.</p>
+      <p style="margin-bottom: 0;"><em>For new investors: reasonable entry with a 2–3 year horizon for DME + BSCL to contribute revenue, accepting that a 20–25% drawdown is possible if any single commissioning milestone slips. For existing holders: the thesis is intact through Q2 FY27; the watch signal is DME volume data in August 2026.</em></p>
+    </div>
+  </article>
+
+  <!-- ===== HIGHLIGHT INDEX ===== -->
+  <details id="highlight-index" aria-label="All highlights at a glance">
+    <summary>📌 All Highlights at a Glance</summary>
+    <ol></ol>
+  </details>
+
+  <p style="text-align: center; font-size: 11px; color: var(--text3); margin-top: 32px; font-family: sans-serif;">
+    BALAMINES Investor Brief · Compiled June 1, 2026 · Sources: BSE/NSE filings, company concall transcripts, Screener.in, MarketsMojo, Elara Securities, Guru Focus, Business Standard, Indian Chemical News, ETV Bharat · This is not investment advice. All forward-looking statements are based on management guidance and analyst estimates. Verify all figures independently before investing.
+  </p>
+
+</div><!-- /container -->
+
+<script>
+// ===== DARK MODE =====
+function toggleMode() {
+  const el = document.documentElement;
+  const btn = document.getElementById('mode-toggle');
+  if (el.getAttribute('data-theme') === 'dark') {
+    el.removeAttribute('data-theme');
+    btn.textContent = '🌙 Night';
+    localStorage.setItem('balamines-theme', 'light');
+  } else {
+    el.setAttribute('data-theme', 'dark');
+    btn.textContent = '☀️ Day';
+    localStorage.setItem('balamines-theme', 'dark');
+  }
+}
+
+// ===== QUICK SCAN TOGGLE =====
+function toggleQS() {
+  const qs = document.getElementById('quick-scan');
+  const btn = document.getElementById('qs-toggle-btn');
+  if (qs.classList.contains('collapsed')) {
+    qs.classList.remove('collapsed');
+    btn.innerHTML = '▼ Quick Scan — BALAMINES';
+    btn.setAttribute('aria-expanded', 'true');
+    localStorage.setItem('balamines-qs', 'open');
+  } else {
+    qs.classList.add('collapsed');
+    btn.innerHTML = '▶ Quick Scan — BALAMINES';
+    btn.setAttribute('aria-expanded', 'false');
+    localStorage.setItem('balamines-qs', 'closed');
+  }
+}
+
+// ===== HIGHLIGHT INDEX AUTO-POPULATE =====
+document.addEventListener('DOMContentLoaded', () => {
+  // Restore preferences
+  const theme = localStorage.getItem('balamines-theme');
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.getElementById('mode-toggle').textContent = '☀️ Day';
+  }
+  const qs = localStorage.getItem('balamines-qs');
+  if (qs === 'closed') {
+    document.getElementById('quick-scan').classList.add('collapsed');
+    document.getElementById('qs-toggle-btn').innerHTML = '▶ Quick Scan — BALAMINES';
+    document.getElementById('qs-toggle-btn').setAttribute('aria-expanded', 'false');
+  }
+
+  // Populate highlight index
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    const text = el.textContent.trim();
+    if (!text || text.length < 10) return;
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    const labels = { 'hl-key': '🔑 Key Insight', 'hl-number': '📊 Number', 'hl-risk': '⚠ Risk', 'hl-catalyst': '⚡ Catalyst', 'takeaway-pill': '💊 Takeaway' };
+    const label = labels[type] || '';
+    li.innerHTML = `<strong style="font-family:sans-serif;font-size:10px;opacity:0.7;">${label}</strong> ${text}`;
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+
+// ===== BEFOREPRINT — force open for printing =====
+window.addEventListener('beforeprint', () => {
+  document.getElementById('highlight-index')?.setAttribute('open', '');
+  document.getElementById('quick-scan')?.classList.remove('collapsed');
+});
+</script>
+</body>
+</html>
