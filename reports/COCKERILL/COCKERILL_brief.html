@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>John Cockerill India (COCKERILL) — Investor Brief · June 2026</title>
+<style>
+/* ── CSS Custom Properties ── */
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --surface2: #f0f2f5;
+  --text: #1a1d23;
+  --text2: #4a5568;
+  --text3: #718096;
+  --border: #e2e8f0;
+  --accent: #378ADD;
+  --accent-dark: #2563ae;
+  --accent-light: #dbeafe;
+  --amber: #BA7517;
+  --amber-light: #FFF3CD;
+  --green: #1D9E75;
+  --green-light: #E6F4EA;
+  --coral: #D85A30;
+  --coral-light: #fde8df;
+  --red: #D85A30;
+  --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
+  --radius: 10px;
+}
+[data-theme="dark"] {
+  --bg: #0f1117;
+  --surface: #1a1d2e;
+  --surface2: #242736;
+  --text: #e8eaf0;
+  --text2: #a0aec0;
+  --text3: #718096;
+  --border: #2d3148;
+  --accent: #60a5fa;
+  --accent-dark: #93c5fd;
+  --accent-light: #1e2d4a;
+  --amber: #f6c458;
+  --amber-light: #2d2507;
+  --green: #34d399;
+  --green-light: #0d2a1e;
+  --coral: #fb7c5a;
+  --coral-light: #2d1109;
+  --shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 16px; }
+h1, h2, h3, h4 { line-height: 1.3; }
+a { color: var(--accent); text-decoration: none; }
+
+/* ── Layout ── */
+.container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+section { margin-bottom: 40px; }
+
+/* ── Quick Scan Strip ── */
+#quick-scan {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 2px solid var(--accent);
+  box-shadow: 0 2px 12px rgba(55,138,221,0.15);
+}
+#quick-scan .qs-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+#quick-scan .qs-header h2 { font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); }
+#quick-scan .qs-toggle { font-size: 11px; color: var(--text3); }
+#quick-scan .qs-body { padding: 0 20px 10px; }
+#quick-scan.collapsed .qs-body { display: none; }
+.qs-item { display: flex; align-items: flex-start; gap: 10px; padding: 3px 0; font-size: 13px; line-height: 1.5; }
+.qs-label { font-weight: 700; min-width: 90px; color: var(--accent); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 2px; }
+.qs-text { color: var(--text2); }
+
+/* ── Top Bar ── */
+#topbar {
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+#topbar .symbol { font-weight: 800; font-size: 16px; letter-spacing: 0.08em; }
+#topbar .meta { opacity: 0.85; }
+.theme-btn {
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: #fff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+.theme-btn:hover { background: rgba(255,255,255,0.35); }
+
+/* ── Hook Card (Chapter 0) ── */
+.hook-card {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  margin: 24px 0;
+  box-shadow: 0 8px 32px rgba(55,138,221,0.25);
+}
+.hook-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; opacity: 0.8; margin-bottom: 16px; }
+.hook-thesis { font-size: 22px; font-weight: 700; line-height: 1.4; margin-bottom: 28px; }
+.hook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+@media (max-width: 600px) { .hook-grid { grid-template-columns: 1fr; } }
+.hook-stat { background: rgba(255,255,255,0.12); border-radius: 8px; padding: 16px 20px; }
+.hook-stat-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 6px; }
+.hook-stat-value { font-size: 20px; font-weight: 800; }
+.hook-stat-sub { font-size: 12px; opacity: 0.75; margin-top: 4px; }
+.hook-risk { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-left: 4px solid #f6c458; border-radius: 8px; padding: 14px 18px; }
+.hook-risk-label { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0.75; margin-bottom: 4px; }
+.hook-risk-text { font-size: 14px; line-height: 1.5; }
+
+/* ── Chapter Headers ── */
+.chapter-header { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; padding-bottom: 16px; border-bottom: 2px solid var(--border); }
+.chapter-num { background: var(--accent); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; flex-shrink: 0; }
+.chapter-meta { }
+.chapter-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 2px; }
+.chapter-title { font-size: 20px; font-weight: 700; color: var(--text); }
+
+/* ── Cards ── */
+.card { background: var(--surface); border-radius: var(--radius); padding: 24px 28px; box-shadow: var(--shadow); border: 1px solid var(--border); margin-bottom: 20px; }
+.card-title { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+
+/* ── Stat Rows ── */
+.stat-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { color: var(--text2); }
+.stat-value { font-weight: 700; color: var(--text); font-family: 'Courier New', monospace; font-size: 15px; }
+.stat-value.accent { color: var(--accent); }
+.stat-value.green { color: var(--green); }
+.stat-value.amber { color: var(--amber); }
+.stat-value.red { color: var(--coral); }
+
+/* ── Inline highlights ── */
+.hl-key { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; }
+.hl-number { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: 'Courier New', monospace; font-size: 0.95em; }
+.hl-risk { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid #BA7517; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid #1D9E75; }
+[data-theme="dark"] .hl-key { background: #4a4500; color: #ffe066; }
+[data-theme="dark"] .hl-number { background: #1a2d4a; color: #93c5fd; }
+[data-theme="dark"] .hl-risk { background: #2d2000; border-left-color: #f6c458; }
+[data-theme="dark"] .hl-catalyst { background: #0d2a1e; border-left-color: #34d399; }
+
+/* ── Takeaway Pill ── */
+.takeaway-pill {
+  background: var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-top: 20px;
+  font-style: italic;
+}
+[data-theme="dark"] .takeaway-pill { color: var(--accent); }
+
+/* ── Key Insight Card ── */
+.insight-card { border-left: 3px solid var(--accent); background: var(--accent-light); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; }
+.insight-card p { font-size: 15px; line-height: 1.7; color: var(--text); }
+
+/* ── Timeline ── */
+.timeline { display: flex; flex-direction: column; gap: 0; margin: 20px 0; }
+.timeline-item { display: flex; gap: 0; }
+.timeline-left { width: 80px; flex-shrink: 0; text-align: right; padding-right: 16px; padding-top: 4px; }
+.timeline-year { font-weight: 800; font-size: 13px; color: var(--accent); font-family: monospace; }
+.timeline-line { display: flex; flex-direction: column; align-items: center; width: 24px; flex-shrink: 0; }
+.timeline-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 5px; }
+.timeline-vert { width: 2px; background: var(--border); flex: 1; min-height: 20px; }
+.timeline-item:last-child .timeline-vert { display: none; }
+.timeline-right { padding: 0 0 20px 16px; flex: 1; }
+.timeline-title { font-weight: 700; font-size: 14px; color: var(--text); margin-bottom: 2px; }
+.timeline-desc { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+/* ── Porter Forces Grid ── */
+.porter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+@media (max-width: 600px) { .porter-grid { grid-template-columns: 1fr; } }
+.force-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; }
+.force-card.center { grid-column: 1 / -1; background: var(--surface2); }
+.force-name { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text3); margin-bottom: 8px; }
+.force-rating { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 20px; font-size: 12px; font-weight: 700; margin-bottom: 10px; }
+.force-rating.high { background: #fde8df; color: #D85A30; }
+.force-rating.moderate { background: #fff3cd; color: #BA7517; }
+.force-rating.low { background: #e6f4ea; color: #1D9E75; }
+[data-theme="dark"] .force-rating.high { background: #2d1109; }
+[data-theme="dark"] .force-rating.moderate { background: #2d2000; }
+[data-theme="dark"] .force-rating.low { background: #0d2a1e; }
+.force-assess { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 8px; }
+.force-implication { font-size: 12px; color: var(--text3); font-style: italic; line-height: 1.5; }
+.moat-bar { background: var(--accent-light); border: 1px solid var(--accent); border-radius: 8px; padding: 14px 20px; margin-top: 16px; }
+.moat-bar strong { color: var(--accent); }
+
+/* ── Vertical Cards ── */
+.vertical-card { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 0 8px 8px 0; padding: 20px 24px; margin-bottom: 16px; }
+.vertical-name { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text3); margin-bottom: 4px; }
+.vertical-title { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 10px; }
+.vertical-status { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 700; margin-bottom: 10px; }
+.status-running { background: var(--green-light); color: var(--green); }
+.status-ramping { background: var(--accent-light); color: var(--accent); }
+.status-prototype { background: var(--amber-light); color: var(--amber); }
+.vertical-body { font-size: 14px; color: var(--text2); line-height: 1.7; }
+
+/* ── Table ── */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+thead { background: var(--accent); color: #fff; }
+th { padding: 10px 14px; text-align: left; font-weight: 700; font-size: 12px; letter-spacing: 0.06em; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text2); }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: var(--surface2); }
+.verdict-sandlag { color: var(--green); font-weight: 700; }
+.verdict-ontrack { color: var(--accent); font-weight: 700; }
+.verdict-miss { color: var(--coral); font-weight: 700; }
+
+/* ── Risks ── */
+.risk-item { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid var(--border); }
+.risk-item:last-child { border-bottom: none; }
+.risk-icon { font-size: 18px; flex-shrink: 0; padding-top: 1px; }
+.risk-body { flex: 1; }
+.risk-title { font-weight: 700; font-size: 15px; color: var(--text); margin-bottom: 4px; }
+.risk-detail { font-size: 13px; color: var(--text2); line-height: 1.6; }
+.risk-signal { font-size: 12px; color: var(--amber); font-style: italic; margin-top: 4px; }
+
+/* ── Watch Signals ── */
+.watch-item { display: flex; gap: 14px; align-items: flex-start; padding: 12px 0; border-bottom: 1px solid var(--border); }
+.watch-item:last-child { border-bottom: none; }
+.watch-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 6px; }
+.watch-body { flex: 1; }
+.watch-metric { font-weight: 700; font-size: 14px; color: var(--text); }
+.watch-good { font-size: 13px; color: var(--green); margin-top: 2px; }
+.watch-red { font-size: 13px; color: var(--coral); margin-top: 2px; }
+
+/* ── Verdict ── */
+.verdict-card { background: linear-gradient(135deg, var(--accent-light) 0%, var(--surface) 100%); border: 2px solid var(--accent); border-radius: var(--radius); padding: 28px 32px; }
+.verdict-label { font-size: 10px; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.verdict-stage { font-size: 18px; font-weight: 800; color: var(--text); margin-bottom: 14px; }
+.verdict-body { font-size: 15px; color: var(--text2); line-height: 1.8; }
+
+/* ── Highlight Index ── */
+#highlight-index { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; margin-top: 40px; }
+#highlight-index summary { cursor: pointer; font-weight: 700; font-size: 15px; color: var(--text); user-select: none; padding: 4px 0; }
+#highlight-index ol { margin: 16px 0 0 20px; }
+#highlight-index li { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 6px; padding-left: 4px; }
+#highlight-index li[data-type="takeaway-pill"] { color: var(--accent-dark); font-style: italic; }
+[data-theme="dark"] #highlight-index li[data-type="takeaway-pill"] { color: var(--accent); }
+
+/* ── Promoter Sidebar ── */
+.sidebar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width: 580px) { .sidebar-grid { grid-template-columns: 1fr; } }
+
+/* ── Prose ── */
+.prose p { color: var(--text2); line-height: 1.8; font-size: 15px; margin-bottom: 16px; }
+.prose p:last-child { margin-bottom: 0; }
+
+/* ── Print CSS ── */
+@media print {
+  #quick-scan { position: static !important; }
+  #quick-scan .qs-body, #quick-scan.collapsed .qs-body { display: block !important; max-height: none !important; visibility: visible !important; }
+  #highlight-index > *:not(summary) { display: block !important; }
+  .theme-btn { display: none; }
+  body { font-size: 12px; }
+  .hook-card { box-shadow: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Top Bar ── -->
+<div id="topbar" role="banner">
+  <div>
+    <span class="symbol">NSE: COCKERILL</span>
+    <span class="meta"> · Industrial Capital Goods · Steel Equipment Technology · June 2026</span>
+  </div>
+  <button class="theme-btn" onclick="toggleTheme()" aria-label="Toggle day/night mode">🌙 Night</button>
+</div>
+
+<!-- ── Quick-Scan Strip ── -->
+<div id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div class="qs-header" onclick="toggleQS()" aria-expanded="true" aria-controls="qs-content">
+    <h2>⚡ Quick Scan — 7 Key Lines</h2>
+    <span class="qs-toggle" id="qs-toggle-text">▲ Collapse</span>
+  </div>
+  <div class="qs-body" id="qs-content">
+    <div class="qs-item">
+      <span class="qs-label">⚡ Context</span>
+      <span class="qs-text">India's steel capex supercycle is printing ₹5,845 Cr+ annual equipment orders; JCIL is the sole India-listed technology supplier for high-end processing lines.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">🏭 Model</span>
+      <span class="qs-text">Project-based EPC for steel processing lines; moat = technology IP (JVD, Volteron) + decade-long customer qualification cycles with JSW, Tata, AMNS.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">🎯 Insight</span>
+      <span class="qs-text">The JCMI acquisition isn't an inorganic revenue deal — the Belgian parent is transferring its global metals HQ to Mumbai, making JCIL a globally-headquartered technology company listed in India.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">📊 Numbers</span>
+      <span class="qs-text">Order book ₹3,300 Cr (9.2× TTM revenue); Q1 CY26 consolidated revenue ₹344 Cr vs ₹76 Cr in Q1 CY25 — revenue step-up has arrived.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">🚧 Top Risk</span>
+      <span class="qs-text">PE of 200–220× on standalone trailing earnings — the market is pricing in flawless JCMI integration and JVD commercialisation. Any slip fractures the valuation.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">👁 Watch</span>
+      <span class="qs-text">Quarterly order intake: must sustain ≥₹400 Cr/quarter to hit management's ₹8,000 Cr by 2030 aspiration.</span>
+    </div>
+    <div class="qs-item">
+      <span class="qs-label">💡 Verdict</span>
+      <span class="qs-text">Early-to-Mid chapters — the revenue ramp has just begun; the real story is CY2026–2028 as JCMI consolidates and JVD books its first commercial order.</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ── -->
+<main role="main">
+<div class="container">
+
+<!-- ── Chapter 0: Hook Card ── -->
+<article aria-label="Chapter 0: Hook Card">
+<div class="hook-card" role="region" aria-label="Investment thesis overview">
+  <p class="hook-eyebrow">NSE: COCKERILL · Industrial Capital Goods · Steel Equipment Technology · June 4, 2026</p>
+  <p class="hook-thesis">India's only listed play on the technology that turns raw steel into the galvanized sheets, electrical-grade coils and green iron that India's next decade will be built with — and the parent company just moved its global HQ to Mumbai.</p>
+  <div class="hook-grid">
+    <div class="hook-stat">
+      <p class="hook-stat-label">📦 Most Important Number</p>
+      <p class="hook-stat-value">₹3,300 Cr</p>
+      <p class="hook-stat-sub">Order book as of June 2026 — 9.2× CY2025 revenue. Includes ₹1,300 Cr from JSW Vijayanagar (CRNO, announced June 2, 2026). Source: BSE filings + DSIJ.</p>
+    </div>
+    <div class="hook-risk">
+      <p class="hook-risk-label">⚠️ Single Biggest Risk</p>
+      <p class="hook-risk-text">At ₹7,879/share (June 3 ATH, market cap ~₹3,940 Cr), the stock trades at 200–220× trailing standalone earnings. Flawless JCMI integration + JVD commercialisation are both baked in. A miss on either — or a delay in order execution — compresses this multiple sharply.</p>
+    </div>
+  </div>
+</div>
+</article>
+
+<!-- ── Chapter 1: Context ── -->
+<section aria-label="Chapter 1: Context">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">1</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter One</p>
+    <h2 class="chapter-title">Context — The Big Picture First</h2>
+  </div>
+</div>
+
+<div class="card">
+  <div class="prose">
+    <p>India is in the middle of a steel capacity supercycle that is only about a third complete. From JSW Steel and ArcelorMittal Nippon Steel to Tata Steel and SAIL, every major producer is investing heavily in both raw capacity and — crucially — the quality of what they produce. The shift is structural: India consumed 136 million tonnes of steel in FY26 and the Ministry of Steel targets 300 MT capacity by 2030. <span class="hl-number">The India Hot Rolled and Cold Rolled Steel market is growing at 8.5% CAGR through 2030</span>, driven by automotive, infrastructure, and the rapidly growing EV supply chain.</p>
+    <p>But the real acceleration is happening in the segment that matters most for John Cockerill India: <em>specialty and coated steel</em>. India's PLI Scheme for Specialty Steel has attracted commitments of <span class="hl-number">₹43,800 Cr</span> (plus a further ₹11,887 Cr in PLI 1.2), targeting the addition of 8.7 million tonnes of high-grade capacity by FY31. This includes cold-rolled grain-oriented (CRGO) electrical steel for power transformers, galvanized and colour-coated products for automotive and construction, and advanced high-strength steels. These are products that cannot be made on a blast furnace alone — they require precisely engineered processing lines. That is the machine John Cockerill India builds.</p>
+    <p><span class="hl-catalyst">The JSW-JFE Steel joint venture announced in August 2025 — a ₹5,845 Cr investment to expand CRGO capacity to 350,000 TPA by FY28 — is a direct order-pipeline catalyst for JCIL, which has already won the annealing and coating line contract for this project.</span> PM Gati Shakti, the National Infrastructure Pipeline, and the National Green Hydrogen Mission layer further momentum on top. For JCIL, the timing is as good as it has ever been.</p>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  India's PLI Specialty Steel commitments total ₹43,800 Cr; JCIL builds the equipment that earns the PLI.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 2: Business Model + Journey + Promoter ── -->
+<section aria-label="Chapter 2: Business Model and Company Journey">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">2</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Two</p>
+    <h2 class="chapter-title">The Business Model + Company Journey</h2>
+  </div>
+</div>
+
+<div class="card">
+  <h3 class="card-title">How John Cockerill India Makes Money</h3>
+  <div class="prose">
+    <p>JCIL designs, manufactures (at its Taloja and Hedavali facilities in Raigad, Maharashtra), and commissions the processing lines that transform raw steel coils into finished products — galvanized sheet for cars and appliances, electrical-grade steel for EV motors and transformers, colour-coated sheet for roofing, and high-strength steel for infrastructure. The company does not make steel; it makes the machine that makes the steel valuable.</p>
+    <p>The revenue flywheel works like this: a first project win with a steelmaker (say, a continuous galvanizing line) creates an installed base. The company then becomes the preferred supplier for the customer's next line, its expansion, its revamp — and for spares and maintenance throughout the 20–25 year life of the equipment. <span class="hl-key">Today, services and spares represent 20–25% of JCIL's order book, up sharply from prior years, and this segment carries structurally higher margins than project work.</span></p>
+    <p>What makes customers sticky? Three things: (1) technology lock-in — JCIL's proprietary JVD coating technology and its exclusive Indian licence for the process means customers cannot simply switch to a competitor mid-product-lifecycle; (2) certification cycles — qualifying a new equipment supplier for a critical steel process can take 12–18 months; (3) site knowledge — JCIL has commissioned lines for JSW, Tata Steel, AMNS Hazira, Godawari Power, and Jindal India, and institutional memory from commissioning is irreplaceable.</p>
+  </div>
+</div>
+
+<!-- Timeline -->
+<div class="card">
+  <h3 class="card-title">Company Journey — Six Nodes</h3>
+  <div class="timeline" role="list" aria-label="Company history timeline">
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">1986</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">Founded as Flat Products Equipment India Limited (FPE)</p>
+        <p class="timeline-desc">Promoted by T.R. Mehta in Maharashtra. Original purpose: supply processing line equipment to India's nascent steel finishing industry.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">2008</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">Acquired by Cockerill Maintenance & Ingénierie SA (CMI), Belgium</p>
+        <p class="timeline-desc">Belgian parent takes control; company renamed CMI FPE Limited. Access to global technology, European engineering, and international client relationships follows. First major capability leap.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">2020</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">Renamed John Cockerill India Limited</p>
+        <p class="timeline-desc">CMI Group rebrands globally as John Cockerill — invoking the 19th-century Belgian industrial pioneer. India entity renamed June 16, 2020. Brand alignment signals global integration.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">2023</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">AMNS Hazira CGAL — Largest Single Contract in Company History</p>
+        <p class="timeline-desc">ArcelorMittal Nippon Steel Hazira commissioned JCIL for a Combined Galvanizing and Annealing Line (CGAL) exceeding 800 metres in length. Chairman described it as potentially the largest contract in the company's India history. Galvanizing Line #3 (CGL3) also commissioned same site.</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">2025</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">Order Intake Explosion — ₹862 Cr vs ₹300 Cr Prior Year</p>
+        <p class="timeline-desc">Full CY2025 order intake reached ₹862 Cr — nearly 3× the prior year — ending with record backlog of ₹11.9 billion (INR). Wins included JSW Steel, Tata Steel Kalinganagar, Godawari Power, Jindal India, JSW-JFE Nashik (India's first CRNO electrical steel facility).</p>
+      </div>
+    </div>
+
+    <div class="timeline-item" role="listitem">
+      <div class="timeline-left"><span class="timeline-year">2026</span></div>
+      <div class="timeline-line"><div class="timeline-dot"></div><div class="timeline-vert"></div></div>
+      <div class="timeline-right">
+        <p class="timeline-title">JCMI Acquisition — Global Metals HQ Moves to Mumbai</p>
+        <p class="timeline-desc">John Cockerill India acquired 100% of John Cockerill Metals International SA (Belgium), effective January 1, 2026, for EUR 29.6M (₹320 Cr) on 5-year interest-free terms. JCMI includes the Group's metals businesses in Belgium/Germany and China. JCIL becomes the worldwide consolidated entity for metals. First consolidated quarter (Q1 CY26): revenue ₹344 Cr.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Promoter Sidebar -->
+<div class="card">
+  <h3 class="card-title">Promoter &amp; Capital Allocation</h3>
+  <div class="sidebar-grid">
+    <div>
+      <div class="stat-row"><span class="stat-label">Promoter (John Cockerill SA, Belgium)</span><span class="stat-value accent">70.44%</span></div>
+      <div class="stat-row"><span class="stat-label">Promoter trend (Jun '23–Mar '26)</span><span class="stat-value amber">↓ 75% → 70.44%</span></div>
+      <div class="stat-row"><span class="stat-label">Reason for drop (Dec 2025)</span><span class="stat-value" style="font-size:12px;">JCMI acquisition dilution</span></div>
+      <div class="stat-row"><span class="stat-label">Promoter pledge</span><span class="stat-value green">None reported</span></div>
+      <div class="stat-row"><span class="stat-label">Public shareholders</span><span class="stat-value">13,233 (Mar '26)</span></div>
+    </div>
+    <div>
+      <div class="stat-row"><span class="stat-label">ROCE CY2021</span><span class="stat-value red">–15%</span></div>
+      <div class="stat-row"><span class="stat-label">ROCE CY2022</span><span class="stat-value">9%</span></div>
+      <div class="stat-row"><span class="stat-label">ROCE CY2023</span><span class="stat-value">14%</span></div>
+      <div class="stat-row"><span class="stat-label">ROCE CY2024</span><span class="stat-value red">–2%</span></div>
+      <div class="stat-row"><span class="stat-label">ROCE CY2025</span><span class="stat-value green">12.2%</span></div>
+    </div>
+  </div>
+  <div class="prose" style="margin-top: 16px;">
+    <p style="font-size:13px; color: var(--text2);">The promoter drop from 75% to 70.44% is directly attributable to the JCMI acquisition structure — new shares or consideration shares issued. The ROCE pattern is volatile because revenue recognition is project-lumpy, but the recovery from –15% (CY2021) to 12.2% (CY2025) is real. The promoter accommodated JCIL with an interest-free 5-year payment schedule for the JCMI acquisition — a strong vote of confidence. <span class="hl-key">The Belgian parent is not extracting value; it is transferring its global metals engine to the India-listed subsidiary.</span> Dividend philosophy is opportunistic (paid in CY2022 and CY2023, paused in CY2024–25 during the trough).</p>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Belgian parent holds 70.44%, no pledges, interest-free acquisition terms: promoter is betting on JCIL, not extracting from it.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 3: Porter's Five Forces ── -->
+<section aria-label="Chapter 3: Competitive Dynamics">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">3</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Three</p>
+    <h2 class="chapter-title">Competitive Dynamics — Porter's Five Forces</h2>
+  </div>
+</div>
+
+<div class="porter-grid" role="list" aria-label="Porter's Five Forces analysis">
+
+  <div class="force-card" role="listitem">
+    <p class="force-name">Force 1</p>
+    <h3 style="font-size:15px; margin-bottom:6px;">Competitive Rivalry</h3>
+    <span class="force-rating moderate" aria-label="Moderate threat">🟡 Moderate Threat</span>
+    <p class="force-assess">Global peers are SMS Group, Danieli, and Primetals Technologies — all European heavyweights with global scale. In India, JCIL holds an established installed base with JSW, Tata Steel, AMNS, Godawari, and Jindal. Management explicitly claims a win-rate "superior to competitors." Chinese equipment makers are emerging at lower price points but lack the technology certification for specialty lines (CRNO, JVD).</p>
+    <p class="force-implication"><em>Investor implication: Pricing power is intact for high-complexity lines. Margin pressure is most likely at the lower end (simple pickling, standard CGL). High-end technology lines — which are the growth vector — face limited Indian competition.</em></p>
+  </div>
+
+  <div class="force-card" role="listitem">
+    <p class="force-name">Force 2</p>
+    <h3 style="font-size:15px; margin-bottom:6px;">Threat of New Entrants</h3>
+    <span class="force-rating low" aria-label="Low threat">🟢 Low Threat</span>
+    <p class="force-assess">Entering the high-end steel processing line market requires 12–18 months of customer qualification, proprietary technology IP (JCIL holds exclusive Indian rights to JVD, co-developed with ArcelorMittal), and physical engineering capability that takes a decade to build. JCIL's Taloja facility (machining, assembly) and Hedavali (heavy fabrication) represent a barrier that cannot be replicated quickly. The roll coating facility (HP-HVAF technology, first in India) inaugurated in 2026 deepens the moat further.</p>
+    <p class="force-implication"><em>Investor implication: Structural moat. New domestic entrants are 5–7 years away from competing on complex lines. Chinese entrants face import perception risk given the "Make in India" procurement preference of JSW and Tata.</em></p>
+  </div>
+
+  <div class="force-card" role="listitem">
+    <p class="force-name">Force 3</p>
+    <h3 style="font-size:15px; margin-bottom:6px;">Bargaining Power of Buyers</h3>
+    <span class="force-rating moderate" aria-label="Moderate threat">🟡 Moderate Threat</span>
+    <p class="force-assess">JSW Steel is clearly the anchor customer — the most recent ₹1,300 Cr CRNO order (JSW Vijayanagar Metallics), the ₹300 Cr CGL#3 (JSW Steel Coated Products), and a ₹1,750 Cr earlier JSW order suggest JSW accounts for a very large share of the CY2025–26 order book. AMNS (ArcelorMittal), Tata Steel, Godawari, and Jindal India diversify the base. Contract structures appear long-term project-based, with advance payment milestones that create negative working capital.</p>
+    <p class="force-implication"><em>Investor implication: JSW concentration is the key buyer-power risk — loss of a single JSW order round could meaningfully dent intake. However, the qualification moat means JSW cannot easily switch mid-project. Advance-payment structure is a significant protection.</em></p>
+  </div>
+
+  <div class="force-card" role="listitem">
+    <p class="force-name">Force 4</p>
+    <h3 style="font-size:15px; margin-bottom:6px;">Bargaining Power of Suppliers</h3>
+    <span class="force-rating moderate" aria-label="Moderate threat">🟡 Moderate Threat</span>
+    <p class="force-assess">Key inputs include specialized steel plates, electrical components, high-precision rollers, and furnace components — several of which are sourced from European and Japanese suppliers. The JCMI acquisition brings JCIL's German subsidiary (John Cockerill UVK) in-house, reducing one critical supplier link. Hedavali handles heavy fabrication, reducing third-party dependence for structural components. India's "China+1" manufacturing shift may ease sourcing of some components domestically over time.</p>
+    <p class="force-implication"><em>Investor implication: Moderate supplier risk, improving. JCMI consolidation is explicitly a supply chain play as much as a revenue play — bringing European engineering capability in-house reduces the margin leakage to external suppliers.</em></p>
+  </div>
+
+  <div class="force-card center" role="listitem">
+    <p class="force-name">Force 5</p>
+    <h3 style="font-size:15px; margin-bottom:6px;">Threat of Substitutes</h3>
+    <span class="force-rating low" aria-label="Low threat">🟢 Low Threat (near-term)</span>
+    <p class="force-assess">Steel customers cannot cost-effectively in-source the engineering and manufacturing of a CGL or CGAL — these are billion-rupee capex projects requiring 15–18 months of specialist execution. The more interesting substitution risk is technological: could a competitor develop a disruptive alternative to conventional galvanizing lines? JCIL's JVD technology IS the disruptive alternative — making it both the defender and the disruptor. Volteron threatens blast furnace economics in the 2030s, a segment JCIL is positioning to lead. The substitute threat is a tailwind, not a headwind, for JCIL's technology portfolio.</p>
+    <p class="force-implication"><em>Investor implication: This is a 10+ year story for the core business. JVD and Volteron extend the runway further. No near-term disruption risk to the core processing line business.</em></p>
+  </div>
+
+</div>
+
+<div class="moat-bar" role="note" aria-label="Overall moat assessment">
+  <strong>Overall Moat: Narrow-to-Wide</strong> — JCIL's moat on conventional processing lines is narrow (global competitors exist, pricing is contested). But its technology portfolio (JVD exclusive + Volteron partnership) is the foundation of a widening moat in specialty steel. <span class="hl-key">No Indian-listed peer competes in this technology segment. The closest analogues globally — SMS Group, Danieli — are not publicly listed in India.</span>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Narrow moat today, widening via JVD and Volteron — the technology bet is where the upside lives.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 4: Vertical Stories ── -->
+<section aria-label="Chapter 4: Revenue Verticals">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">4</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Four</p>
+    <h2 class="chapter-title">The Vertical Stories</h2>
+  </div>
+</div>
+
+<div class="vertical-card" role="region" aria-label="Galvanizing and coated lines vertical" style="border-left-color: #378ADD;">
+  <p class="vertical-name">Vertical 1 · Largest Segment</p>
+  <h3 class="vertical-title">Galvanizing, Coating &amp; Pickling Lines</h3>
+  <span class="vertical-status status-running">● Running</span>
+  <p class="vertical-body">Continuous galvanizing lines (CGL), combined annealing and galvanizing lines (CGAL), colour coating lines, and acid pickling facilities. This is JCIL's established core — the AMNS Hazira CGAL (800+ metres, largest in company history), Tata Steel Kalinganagar CGL, and JSW Steel CGL#3 (₹300 Cr, due May 2028) all sit here. External catalyst: India's automotive sheet and construction sheet demand growing at 8.5% CAGR through 2030. Government's PLI scheme subsidises production of coated products. <span class="hl-number">The India Cold Rolled and Coated Steel market is projected at USD 20 billion by 2033.</span> This vertical provides the visible, bankable revenue base.</p>
+</div>
+
+<div class="vertical-card" role="region" aria-label="CRNO electrical steel vertical" style="border-left-color: #3B6D11;">
+  <p class="vertical-name">Vertical 2 · Fastest Growing</p>
+  <h3 class="vertical-title">CRNO / Electrical Steel Processing Lines</h3>
+  <span class="vertical-status status-ramping">▲ Ramping</span>
+  <p class="vertical-body">Cold-rolled non-oriented (CRNO) steel is the critical material for EV motor cores and industrial motors. Cold-rolled grain-oriented (CRGO) is used in power transformers. India currently imports over 80% of its CRNO/CRGO requirement. The JSW-JFE Steel ₹5,845 Cr investment at Nashik/Vijayanagar is the anchor catalyst. <span class="hl-catalyst">JCIL's ₹1,300 Cr CRNO contract from JSW Vijayanagar Metallics (June 2, 2026) — covering two annealing and coating lines and one annealing and pickling line — is the largest single project in this vertical.</span> PLI Scheme has lowered investment thresholds for CRGO to ₹3,000 Cr and 50,000 TPA. This vertical is the highest-margin, highest-growth segment of the decade.</p>
+</div>
+
+<div class="vertical-card" role="region" aria-label="Value services and spares vertical" style="border-left-color: #BA7517;">
+  <p class="vertical-name">Vertical 3 · Highest Margin</p>
+  <h3 class="vertical-title">Value Services — Revamps, Spares &amp; Roll Coating</h3>
+  <span class="vertical-status status-running">● Running &amp; Growing</span>
+  <p class="vertical-body">Every processing line JCIL installs creates a 20–25 year aftermarket opportunity. Spares and revamps now represent 20–25% of the CY2025 order book — up materially from prior years. In January 2026, JCIL inaugurated India's first HP-HVAF (High Pressure High Velocity Air Fuel) roll coating facility at Taloja. The technology coats furnace rolls used in high-temperature processing lines, extending their operational life. <span class="hl-key">Capacity: 300 rolls per year. Revenue: EUR 3 million (₹27 Cr) per year. Capex: EUR 2 million — a 1.5× revenue payback in the first year.</span> The installed base of 30+ commissioned lines across India creates a captive aftermarket that grows as the project order book delivers.</p>
+</div>
+
+<div class="vertical-card" role="region" aria-label="New technology verticals JVD and Volteron" style="border-left-color: #534AB7;">
+  <p class="vertical-name">Vertical 4 · The Option Value</p>
+  <h3 class="vertical-title">JVD &amp; Volteron — Green Steel Technologies</h3>
+  <span class="vertical-status status-prototype">◆ Pre-Commercial / First Orders Imminent</span>
+  <p class="vertical-body">Two disruptive technologies co-developed with ArcelorMittal sit at the frontier of JCIL's portfolio. <strong>JVD (Jet Vapour Deposition):</strong> A new galvanizing technique that is twice as fast as conventional methods, requires no zinc bath, and produces a thinner, more uniform coating. Over 1.1 million tonnes already coated at ArcelorMittal's Belgium facility. JCIL holds exclusive Indian commercialisation rights. Management guided the first commercial JVD order in India for Q1 CY26. <strong>Volteron™:</strong> A cold electrolysis process that extracts iron from ore using electricity — no blast furnace, no coal, zero CO₂. The world's first industrial-scale Volteron plant (40,000–80,000 TPA) is targeted to start in 2027. Management believes Volteron will enter a first commercial contract in 12–24 months. <span class="hl-catalyst">A Volteron contract would be transformational in scale — ironmaking equipment represents ~80% of a steel mill's total capex.</span></p>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Four verticals: core galvanizing (revenue now), CRNO electrical steel (revenue ramping), services (margin engine), and JVD/Volteron (option value worth watching closely).
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 5: Strategic Insight ── -->
+<section aria-label="Chapter 5: Strategic Insight">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">5</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Five</p>
+    <h2 class="chapter-title">The Strategic Insight</h2>
+  </div>
+</div>
+
+<div class="insight-card" role="note" aria-label="Core strategic insight">
+  <p>The JCMI acquisition is being reported as an inorganic revenue bolt-on. It is not. It is the Belgian parent, John Cockerill SA, systematically transferring its entire global metals technology headquarters to its India-listed subsidiary. The January 1, 2026 completion brought JCIL the German (John Cockerill UVK), Belgian, and Chinese metals businesses. The US metals transfer follows as Phase II. When complete, <span class="hl-key">a Belgian engineering conglomerate will have its metals division — including JVD and Volteron technology rights — headquartered in a company listed on the NSE in Mumbai. That is arguably unprecedented for a company of this technology sophistication.</span></p>
+  <p style="margin-top:14px; font-size:15px; color: var(--text2); line-height:1.8;">Why does this matter for investors? Because the promoter is not treating JCIL as an outsourced manufacturing arm or a regional contractor. The management explicitly stated their ambition: "You are investing in a global technology company out of India — this kind of company is very rare on the market, not more than four or five in total." The 5-year interest-free payment terms for the JCMI acquisition, the transfer of technology IP to India, and the stated ₹8,000 Cr revenue aspiration by 2030 all point in the same direction. The Belgian parent wants JCIL to become the world's leading listed technology company for the steel value chain — not just a project contractor in one market. The India listing is a feature, not a constraint.</p>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  JCMI isn't a revenue deal — it's a Belgian parent re-domiciling its global metals technology engine to the NSE.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 6: The Numbers ── -->
+<section aria-label="Chapter 6: Financial Numbers">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">6</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Six</p>
+    <h2 class="chapter-title">The Numbers in Context</h2>
+  </div>
+</div>
+
+<!-- Core Financials -->
+<div class="card">
+  <h3 class="card-title">Core Financials — Standalone (CY2025) + Q1 CY2026</h3>
+  <div class="stat-row"><span class="stat-label">Revenue CY2025 (standalone)</span><span class="stat-value">₹358 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Revenue Q1 CY26 standalone (Jan–Mar 2026)</span><span class="stat-value green">₹200 Cr (+162% QoQ)</span></div>
+  <div class="stat-row"><span class="stat-label">Revenue Q1 CY26 consolidated (with JCMI)</span><span class="stat-value green">₹344 Cr (+56% YoY on consolidated basis)</span></div>
+  <div class="stat-row"><span class="stat-label">EBITDA CY2025</span><span class="stat-value">₹23 Cr · OPM 6.4%</span></div>
+  <div class="stat-row"><span class="stat-label">Q3 CY25 OPM (peak quarterly)</span><span class="stat-value green">11.7%</span></div>
+  <div class="stat-row"><span class="stat-label">PAT CY2025 (standalone)</span><span class="stat-value">₹10 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">ROCE CY2025</span><span class="stat-value">12.2%</span></div>
+  <div class="stat-row"><span class="stat-label">Debt (Dec 2025)</span><span class="stat-value green">~₹5 Cr (near debt-free)</span></div>
+  <div class="stat-row"><span class="stat-label">Debtor Days (Dec 2025)</span><span class="stat-value red">226 days ⚠</span></div>
+  <div class="stat-row"><span class="stat-label">JCMI annual revenue (management guided)</span><span class="stat-value accent">EUR 100M+ (~₹900 Cr)</span></div>
+  <div class="stat-row"><span class="stat-label">Implied post-JCMI consolidated revenue run-rate</span><span class="stat-value accent">~₹1,250–1,400 Cr</span></div>
+
+  <div class="prose" style="margin-top: 16px;">
+    <p style="font-size:13px;">The standalone revenue number (₹358 Cr in CY2025) is the trough. The company was mid-transition between completing large projects (AMNS Hazira) and the new order book ramping to execution. <span class="hl-number">The Q1 CY26 jump from ₹76 Cr (Q1 CY25) to ₹200 Cr standalone — and ₹344 Cr consolidated — is the inflection point the order intake data has been signalling for 3 quarters.</span> JCMI's EUR 100M+ annual revenue (management's own guided multiple on the EUR 29.6M consideration) means the full-year CY2026 consolidated revenue could approach ₹1,250–1,400 Cr — a 3.5–4× step-up from standalone CY2025.</p>
+  </div>
+</div>
+
+<!-- Valuation -->
+<div class="card">
+  <h3 class="card-title">Valuation Context</h3>
+  <div class="stat-row"><span class="stat-label">Market Cap (June 3, 2026 @ ₹7,879)</span><span class="stat-value">~₹3,940 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Trailing PE (standalone rolling 4Q)</span><span class="stat-value red">~210–220×</span></div>
+  <div class="stat-row"><span class="stat-label">Price to Book (standalone, BV ₹426)</span><span class="stat-value red">~18.5×</span></div>
+  <div class="stat-row"><span class="stat-label">EV / Revenue (TTM standalone)</span><span class="stat-value red">~11×</span></div>
+  <div class="stat-row"><span class="stat-label">Forward PE (if CY2026 consolidated PAT ₹60–80 Cr)</span><span class="stat-value amber">~50–65× (hypothetical)</span></div>
+  <div class="stat-row"><span class="stat-label">Peer: SMS Group, Danieli (unlisted globally)</span><span class="stat-value">No direct listed Indian peer</span></div>
+
+  <div class="prose" style="margin-top: 16px;">
+    <p style="font-size:13px;"><span class="hl-risk">What is the market pricing in? At ₹3,940 Cr market cap vs ₹358 Cr standalone revenue, the valuation only makes sense if investors are pricing in: (a) full JCMI consolidation adding ~₹900 Cr revenue, (b) EBITDA margins expanding toward 10–12% as high-margin services and technology contracts grow, and (c) a successful first JVD commercial order. All three must materialise.</span> There is no directly comparable listed Indian peer — which creates both a valuation discovery premium and a risk that the multiple compresses sharply when it eventually needs to be benchmarked against something concrete.</p>
+  </div>
+</div>
+
+<!-- Order Book Card -->
+<div class="card">
+  <h3 class="card-title">📦 Order Book Visibility</h3>
+  <div class="stat-row"><span class="stat-label">Order book (as of June 2026, post-JSW CRNO)</span><span class="stat-value green">~₹3,300 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Order book / TTM standalone revenue</span><span class="stat-value green">9.2×</span></div>
+  <div class="stat-row"><span class="stat-label">Order intake CY2025</span><span class="stat-value green">₹862 Cr (+188% YoY)</span></div>
+  <div class="stat-row"><span class="stat-label">Avg. project execution cycle</span><span class="stat-value">15–18 months</span></div>
+  <div class="stat-row"><span class="stat-label">JSW CRNO execution timeline</span><span class="stat-value">36 months from May 2026</span></div>
+  <div class="stat-row"><span class="stat-label">Services/spares % of order book</span><span class="stat-value accent">20–25% (higher margin)</span></div>
+  <div class="stat-row"><span class="stat-label">Pipeline (addressable, 2–3 year horizon)</span><span class="stat-value">~₹40,000 Cr (guided)</span></div>
+
+  <div class="prose" style="margin-top: 16px;">
+    <p style="font-size:13px;"><span class="hl-catalyst">At 9.2× trailing revenue, the order book provides unprecedented visibility — far above the 2–3× that was JCIL's historical norm. The ₹3,300 Cr figure is already booked; it does not include the ₹40,000 Cr pipeline management is tracking.</span> The concentration check: JSW Steel (multiple entities) accounts for an estimated 50–60% of the current booked order book. Diversification with Tata, AMNS, Godawari, and Jindal is progressing but remains work-in-progress.</p>
+  </div>
+</div>
+
+<!-- Capex Timeline -->
+<div class="card">
+  <h3 class="card-title">🏗 Capex Timeline</h3>
+  <table>
+    <thead><tr><th>Period</th><th>Capex</th><th>Milestone</th><th>Revenue Impact</th></tr></thead>
+    <tbody>
+      <tr><td>FY2022–CY2023</td><td>₹5–8 Cr/yr (est.)</td><td>Maintenance capex; Taloja + Hedavali upkeep</td><td>Enabling existing revenue base</td></tr>
+      <tr><td>CY2024</td><td>~₹8–10 Cr</td><td>Roll coating facility at Taloja (HP-HVAF technology) — ~EUR 2M total</td><td>EUR 3M/yr (~₹27 Cr) from CY2026</td></tr>
+      <tr><td>CY2025–CY2026</td><td>~₹15–20 Cr est.</td><td>Roll coating commissioning (Jan 2026); CWIP ₹5 Cr → ₹1 Cr (activated)</td><td>300 rolls/yr; recurring high-margin revenue</td></tr>
+      <tr><td>CY2026 onwards</td><td>TBD (management: India focus)</td><td>JVD workshop expansion; Volteron commercialisation prep</td><td>First JVD project: large revenue + premium margin</td></tr>
+    </tbody>
+  </table>
+  <div class="prose" style="margin-top: 12px;">
+    <p style="font-size:13px;">JCIL is structurally asset-light — it designs, project-manages, and assembles; heavy fabrication (Hedavali) is its largest physical asset. Fixed assets are only ~₹57 Cr on the balance sheet. The company does not need large capex to execute the current order book. The risk flag: <span class="hl-risk">JVD and Volteron commercialisation will eventually require significant workshop investment at Taloja and possibly a new facility — the quantum and timing are not yet guided. Management has said the biggest capex will be within India, but has not sized it yet.</span></p>
+  </div>
+</div>
+
+<!-- Management Scorecard -->
+<div class="card">
+  <h3 class="card-title">📋 Management Scorecard — Guidance vs Actual</h3>
+  <table>
+    <thead><tr><th>Quarter</th><th>What Was Guided</th><th>What Was Delivered</th><th>Verdict</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Q2 CY25<br><small>(Apr–Jun 2025)</small></td>
+        <td>Recovery in execution pace; OPM improvement from FY24 trough</td>
+        <td>Revenue ₹82 Cr, OPM 2.4% — weak but improving</td>
+        <td class="verdict-ontrack">On-Track</td>
+      </tr>
+      <tr>
+        <td>Q3 CY25<br><small>(Jul–Sep 2025)</small></td>
+        <td>Revenue acceleration 7.5% QoQ; EBITDA ₹120M; order intake to accelerate</td>
+        <td>Revenue ₹97 Cr (+18% QoQ), OPM 11.7%, order intake ₹586 Cr (nearly 10× Q1)</td>
+        <td class="verdict-sandlag">Sandlag ✓</td>
+      </tr>
+      <tr>
+        <td>Q4 CY25<br><small>(Oct–Dec 2025)</small></td>
+        <td>Cautious optimism; margins sustaining; order backlog doubling</td>
+        <td>Revenue ₹102 Cr, OPM 9.9%; order backlog >₹1,100 Cr. On track.</td>
+        <td class="verdict-ontrack">On-Track</td>
+      </tr>
+      <tr>
+        <td>Q1 CY26<br><small>(Jan–Mar 2026)</small></td>
+        <td>"Revenue step-up is a near-term, high-confidence milestone" (guided at Q4 CY25 call)</td>
+        <td>Standalone revenue ₹200 Cr (+162% QoQ); Consolidated ₹344 Cr. PAT ₹7.36 Cr.</td>
+        <td class="verdict-sandlag">Sandlag ✓✓</td>
+      </tr>
+      <tr>
+        <td>CY2026 FY<br><small>(ongoing)</small></td>
+        <td>Double-digit profit growth; JCMI consolidation adds EUR 100M+ revenue</td>
+        <td>To be tracked — consolidated Q1 data is first data point</td>
+        <td class="verdict-ontrack">Tracking</td>
+      </tr>
+      <tr>
+        <td>By 2030</td>
+        <td>₹8,000 Cr revenue aspiration (management stated)</td>
+        <td>Current run-rate ~₹1,300 Cr — ₹8,000 Cr requires ~6× growth in 4 years</td>
+        <td class="verdict-ontrack">Aspirational</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="prose" style="margin-top: 12px;">
+    <p style="font-size:13px;"><strong>Pattern summary:</strong> Over 4 comparable quarters, management has been a consistent straight-shooter on near-term guidance and a sandlagger on actual execution when conditions improved. The Q1 CY26 delivery — ₹200 Cr standalone vs ₹76 Cr in the prior year — was a substantial beat. <span class="hl-key">Management does not bluster or overpromise on numbers; the Chairman explicitly avoided giving margin targets ("cannot give you a figure") but framed qualitative trajectory correctly.</span> The ₹8,000 Cr by 2030 is an aspiration, not a guidance — treat it accordingly.</p>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Management sandlagged Q3 CY25 and Q1 CY26; order book at 9.2× revenue is the strongest forward visibility in company history.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 7: Risks ── -->
+<section aria-label="Chapter 7: Key Risks">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">7</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Seven</p>
+    <h2 class="chapter-title">Risks — Eyes Open</h2>
+  </div>
+</div>
+
+<div class="card">
+
+  <div class="risk-item" role="listitem">
+    <span class="risk-icon" aria-hidden="true">⚠️</span>
+    <div class="risk-body">
+      <p class="risk-title">Extreme Valuation — 200× PE Requires Perfect Execution</p>
+      <p class="risk-detail">At ~₹3,940 Cr market cap against CY2025 standalone PAT of ₹10 Cr, the stock trades at approximately 394× trailing standalone earnings. The valuation is only defensible if consolidated earnings (post-JCMI) reach ₹60–80 Cr in CY2026 and scale significantly in CY2027. Any integration delay, project slippage, or margin disappointment on JCMI will trigger a multiple compression that standalone revenue growth cannot offset. The stock has gained 98% in 12 months; a correction to half the current price would still leave it richly valued.</p>
+      <p class="risk-signal">Signal to watch: Q2 CY26 consolidated results — if PAT does not show a meaningful step-up from Q1's ₹7.36 Cr, re-rating risk is real.</p>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <span class="risk-icon" aria-hidden="true">⚠️</span>
+    <div class="risk-body">
+      <p class="risk-title">JSW Customer Concentration — One Client, Multiple Projects</p>
+      <p class="risk-detail">The most recent ₹1,300 Cr CRNO order (JSW Vijayanagar), the ₹300 Cr CGL#3 (JSW Steel Coated Products), and a prior ₹1,750 Cr JSW order collectively suggest JSW entities account for over half the current order book. While each JSW entity is a distinct legal entity, a strategic decision by JSW to pause or slow steel capex — for example, due to global steel demand softness or a financing constraint — would materially compress JCIL's intake for 2–3 quarters.</p>
+      <p class="risk-signal">Signal to watch: JSW Steel quarterly capex guidance and their capacity utilisation announcements.</p>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <span class="risk-icon" aria-hidden="true">⚠️</span>
+    <div class="risk-body">
+      <p class="risk-title">226-Day Debtors — Working Capital Can Turn Ugly</p>
+      <p class="risk-detail">Debtor days of 226 as of December 2025 is the highest in a decade for JCIL. In project-based business, large project completions often involve milestone disputes or client acceptance delays, leaving large receivables outstanding. The cash conversion cycle has been volatile historically (from +79 days to –179 days). A single large project where the customer delays SAT (Site Acceptance Testing) approval can spike working capital requirements and force the company to draw on credit lines. JCMI's integration adds European and Chinese receivable dynamics that management has not yet disclosed.</p>
+      <p class="risk-signal">Signal to watch: Quarterly debtors figure — any increase above 250 days on the consolidated balance sheet is a red flag.</p>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <span class="risk-icon" aria-hidden="true">⚠️</span>
+    <div class="risk-body">
+      <p class="risk-title">JCMI Integration Risk — Three Geographies, One Quarter of Experience</p>
+      <p class="risk-detail">The JCMI acquisition closed January 1, 2026. Q1 CY26 is literally the first quarter of consolidated operations. JCML includes businesses in Belgium, Germany (John Cockerill UVK), and China — each with its own culture, contracts, working capital profile, and management team. The consideration structure includes a debt convertible into shares after 5 years if unpaid — adding a potential future dilution overhang of ~EUR 24.6M (~₹220 Cr). The US metals transfer is still pending (Phase II), adding another integration milestone. Until CY2026 full-year consolidated results are in, integration quality is guesswork.</p>
+      <p class="risk-signal">Signal to watch: JCMI's revenue and EBITDA disclosure in quarterly results — specifically whether European margins are additive or dilutive.</p>
+    </div>
+  </div>
+
+  <div class="risk-item" role="listitem">
+    <span class="risk-icon" aria-hidden="true">⚠️</span>
+    <div class="risk-body">
+      <p class="risk-title">JVD / Volteron Commercial Delay — Option Value Is Not a Revenue Line Yet</p>
+      <p class="risk-detail">The market is partially pricing in JVD's commercialisation. Management guided the first commercial JVD order for Q1 CY26 — there has been no public announcement of this order yet. Volteron's first industrial plant is targeted for 2027, but is at CRL7 (development stage) — with 12–24 months to a first contract. Green technology adoption in India's steel sector is a regulatory and economic push, not a pull; if global carbon pricing frameworks stall, the timeline for Volteron could extend materially. At the current market cap, a delay of 2 years in JVD/Volteron would still leave the standalone business fairly valued — but would remove the upside catalyst that justifies the premium.</p>
+      <p class="risk-signal">Signal to watch: Any BSE announcement of a JVD commercial order. Silence beyond Q2 CY26 is a yellow flag.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Five specific risks: extreme valuation, JSW concentration, 226-day debtors, JCMI integration opacity, JVD commercial delay.
+</div>
+</article>
+</section>
+
+<!-- ── Chapter 8: Watch Signals ── -->
+<section aria-label="Chapter 8: Watch Signals">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" aria-hidden="true">8</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow">Chapter Eight</p>
+    <h2 class="chapter-title">Watch Signals — Track Every Quarter</h2>
+  </div>
+</div>
+
+<div class="card">
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div class="watch-body">
+      <p class="watch-metric">1. Consolidated Order Intake (quarterly)</p>
+      <p class="watch-good">✅ Green: ≥₹400 Cr/quarter intake — needed to sustain the ₹8,000 Cr trajectory. Two consecutive sandlag quarters = thesis strengthening.</p>
+      <p class="watch-red">🔴 Red: Intake falls below ₹200 Cr for two consecutive quarters — signals the large JSW order was a one-time event, not a cycle.</p>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div class="watch-body">
+      <p class="watch-metric">2. JCMI Consolidated EBITDA Margin (quarterly)</p>
+      <p class="watch-good">✅ Green: Consolidated OPM expanding toward 9–11%. JCMI's European operations should structurally add margin (European engineering commands premium pricing).</p>
+      <p class="watch-red">🔴 Red: Consolidated OPM falls below 6% for two consecutive quarters — suggests JCMI is dilutive to margins, not accretive.</p>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div class="watch-body">
+      <p class="watch-metric">3. Debtor Days (quarterly, watch consolidated)</p>
+      <p class="watch-good">✅ Green: Debtor days trending below 200 days — shows disciplined collections and favourable contract payment milestones.</p>
+      <p class="watch-red">🔴 Red: Debtor days cross 280 days on consolidated basis — potential large receivable dispute or JCMI-inherited working capital stress.</p>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div class="watch-body">
+      <p class="watch-metric">4. First JVD Commercial Order Announcement (event-based)</p>
+      <p class="watch-good">✅ Green: Any BSE filing announcing a JVD commercial project. This is the technology validation that the market needs to see.</p>
+      <p class="watch-red">🔴 Red: No JVD announcement by end of CY2026 — implies the Q1 CY26 guidance missed; recalibrate technology timeline and its contribution to the bull case.</p>
+    </div>
+  </div>
+
+  <div class="watch-item" role="listitem">
+    <div class="watch-dot" aria-hidden="true"></div>
+    <div class="watch-body">
+      <p class="watch-metric">5. JCMI Phase II (US metals transfer) Completion</p>
+      <p class="watch-good">✅ Green: BSE announcement of the US metals business transfer to JCMI — completes the global consolidation and removes an overhang on the "global HQ" narrative.</p>
+      <p class="watch-red">🔴 Red: Phase II delayed beyond CY2027 — may indicate complications with the US business (financial, regulatory, or strategic) that could surface in the consolidated entity.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left: 3px solid #378ADD;">
+  Order intake ≥₹400 Cr/quarter and first JVD order are the two signals that separate thesis-intact from thesis-at-risk.
+</div>
+</article>
+</section>
+
+<!-- ── Verdict ── -->
+<section aria-label="Verdict">
+<article>
+<div class="chapter-header">
+  <div class="chapter-num" style="background: var(--green);" aria-hidden="true">✓</div>
+  <div class="chapter-meta">
+    <p class="chapter-eyebrow" style="color: var(--green);">Verdict</p>
+    <h2 class="chapter-title">Where Are We in the Story?</h2>
+  </div>
+</div>
+
+<div class="verdict-card" role="region" aria-label="Investment verdict">
+  <p class="verdict-label">Story Stage</p>
+  <p class="verdict-stage">Early-to-Mid Chapters — The Revenue Ramp Has Arrived; The Technology Re-Rating Has Not</p>
+  <p class="verdict-body">
+    John Cockerill India is carried by three structural tailwinds that are real and durable: India's steel specialty capex cycle (PLI ₹43,800 Cr, CRGO ramp, EV supply chain), the company's unique position as the only India-listed high-technology steel equipment supplier, and the JCMI consolidation that transforms it from an ₹358 Cr regional contractor into a potential ₹1,250+ Cr globally-headquartered technology company. The quality signal in the financials is modest but improving — ROCE recovering to 12.2%, OPM expanding from negative to 11.7% at peak, cash from operations turning positive (₹159 Cr in CY2025 vs –₹66 Cr in CY2024). The near-term catalyst is already in play: the JSW CRNO ₹1,300 Cr order (June 2026) and the Q1 CY26 consolidated revenue ₹344 Cr suggest the execution step-up has begun, and Q2 CY26 results will be the first true test of the consolidated entity. On valuation, the stock at ₹7,879 (PE 200–220× trailing standalone, PB 18.5×) is aggressively priced for a narrative that is only partially proven — this is a stock where being directionally right on the 3-year story but wrong on the entry price can still cost you significantly. We are early-to-middle chapters: the revenue ramp has arrived, the technology re-rating (JVD, Volteron) has not.
+  </p>
+</div>
+</article>
+</section>
+
+<!-- ── Highlight Index ── -->
+<details id="highlight-index" role="complementary" aria-label="All highlights at a glance">
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol>
+    <!-- JS auto-populates -->
+  </ol>
+</details>
+
+</div><!-- /container -->
+</main>
+
+<!-- ── JavaScript ── -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const html = document.documentElement;
+  const btn = document.querySelector('.theme-btn');
+  if (html.dataset.theme === 'dark') {
+    html.removeAttribute('data-theme');
+    btn.textContent = '🌙 Night';
+    localStorage.setItem('cockerill-theme', 'light');
+  } else {
+    html.dataset.theme = 'dark';
+    btn.textContent = '☀️ Day';
+    localStorage.setItem('cockerill-theme', 'dark');
+  }
+}
+
+// Quick Scan toggle
+function toggleQS() {
+  const qs = document.getElementById('quick-scan');
+  const toggle = document.getElementById('qs-toggle-text');
+  qs.classList.toggle('collapsed');
+  toggle.textContent = qs.classList.contains('collapsed') ? '▼ Expand' : '▲ Collapse';
+  localStorage.setItem('cockerill-qs', qs.classList.contains('collapsed') ? '1' : '0');
+}
+
+// Restore preferences
+document.addEventListener('DOMContentLoaded', () => {
+  // Theme
+  const theme = localStorage.getItem('cockerill-theme');
+  if (theme === 'dark') {
+    document.documentElement.dataset.theme = 'dark';
+    document.querySelector('.theme-btn').textContent = '☀️ Day';
+  }
+  // QS
+  if (localStorage.getItem('cockerill-qs') === '1') {
+    document.getElementById('quick-scan').classList.add('collapsed');
+    document.getElementById('qs-toggle-text').textContent = '▼ Expand';
+  }
+
+  // Auto-populate highlight index
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+
+// Before print — force open
+window.addEventListener('beforeprint', () => {
+  document.querySelector('#highlight-index')?.setAttribute('open', '');
+  document.getElementById('quick-scan')?.classList.remove('collapsed');
+  document.getElementById('qs-toggle-text').textContent = '▲ Collapse';
+});
+</script>
+
+</body>
+</html>
