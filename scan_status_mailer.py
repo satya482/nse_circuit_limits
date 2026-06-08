@@ -33,8 +33,12 @@ SCANNER_KEYWORDS = {
     "Inside Bar Scanner":    "inside-bar:",
     "Weekly ZL Scanner":     "weekly-zl:",
     "EMA Screener":          "screener:",
+    "WT BullCross":          "wt bullcross scan",
+    "WT Squeeze Dash":       "wt-squeeze dashboard",
     "Dashboard":             "dashboard",
 }
+
+PAGES = "https://satya482.github.io/nse_circuit_limits"
 
 SCANNER_MD_LINKS_STATIC = {
     "Swing Scanner":         f"{BLOB}/swing_scans/swing_scans.md",
@@ -45,6 +49,8 @@ SCANNER_MD_LINKS_STATIC = {
     "US ZL Squeeze":         f"{BLOB}/us_zl_squeeze_scans/us_zl_squeeze_scans.md",
     "Inside Bar Scanner":    f"{BLOB}/inside_bar_scans/inside_bar_scans.md",
     "Weekly ZL Scanner":     f"{BLOB}/weekly_zl_scans/weekly_zl_scans.md",
+    "WT BullCross":          f"{BLOB}/wt_scans/wt_bullcross_latest.md",
+    "WT Squeeze Dash":       f"{PAGES}/wt_squeeze_dashboard.html",
     "Dashboard":             f"{BLOB}/NSE_Circuit_Limits.md",
 }
 
@@ -121,6 +127,13 @@ def parse_weekly_zl_count(md: str, today: str) -> str:
     return (m.group(1) + " signals") if m else "—"
 
 
+def parse_wt_bullcross_count(md: str, today: str) -> str:
+    if today not in md[:200]:
+        return "—"
+    m = re.search(r'\*\*Total bull crosses today: (\d+)\*\*', md)
+    return (m.group(1) + " crosses") if m else "—"
+
+
 def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
     if today not in md[:100]:
         return "—", "—"
@@ -139,6 +152,7 @@ def get_scan_details(today: str) -> dict:
     inside_bar_md  = read_file(os.path.join(BASE, "inside_bar_scans", "inside_bar_scans.md"))
     weekly_zl_md   = read_file(os.path.join(BASE, "weekly_zl_scans", "weekly_zl_scans.md"))
     screener_md    = read_file(os.path.join(BASE, "ema_screener_scans", f"ema_screener_{today}.md"))
+    wt_md          = read_file(os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md"))
     zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
     ema_adds, ema_dels  = parse_screener_counts(screener_md, today)
 
@@ -152,6 +166,8 @@ def get_scan_details(today: str) -> dict:
         "Inside Bar Scanner":parse_inside_bar_count(inside_bar_md, today),
         "Weekly ZL Scanner": parse_weekly_zl_count(weekly_zl_md, today),
         "EMA Screener":      f"+{ema_adds} adds / -{ema_dels} exits",
+        "WT BullCross":      parse_wt_bullcross_count(wt_md, today),
+        "WT Squeeze Dash":   "generated",
         "Dashboard":         "generated",
     }
 
