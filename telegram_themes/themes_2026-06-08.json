@@ -1,0 +1,331 @@
+{
+  "date": "2026-06-08",
+  "generated": "2026-06-08 16:01 IST",
+  "reports": [
+    {
+      "date": "2026-06-08",
+      "source": "20260608_1515.pdf",
+      "themes": [
+        "AI Infrastructure Buildout",
+        "Data Center Supply Shortage",
+        "Hyperscaler Capital Expenditure Acceleration",
+        "Supply Chain Constraints",
+        "Digital Infrastructure Investment"
+      ],
+      "companies": [
+        {
+          "symbol": "DLR",
+          "name": "Digital Realty Trust",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "EQIX",
+          "name": "Equinix",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "CORZ",
+          "name": "Core One Labs",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "WULF",
+          "name": "TeraWulf Inc",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "CAT",
+          "name": "Caterpillar",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "ETN",
+          "name": "Eaton Corporation",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "PRIM",
+          "name": "Primary Energy Solutions",
+          "sentiment": "bullish",
+          "nse_code": "RHIM",
+          "res_conf": 0.75,
+          "res_method": "fuzzy_symbol"
+        },
+        {
+          "symbol": "NI",
+          "name": "NiSource Inc",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "GEV",
+          "name": "GE Vernova",
+          "sentiment": "bullish",
+          "nse_code": "GVT&D",
+          "res_conf": 0.775,
+          "res_method": "token_name"
+        },
+        {
+          "symbol": "CRDO",
+          "name": "Crudo Petroleum",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "AMZN",
+          "name": "Amazon",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "GOOGL",
+          "name": "Alphabet",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "MSFT",
+          "name": "Microsoft",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "CRWV",
+          "name": "CoreWeave",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "MRL",
+          "name": "Merlin Properties",
+          "sentiment": "bullish",
+          "nse_code": "MRPL",
+          "res_conf": 0.857,
+          "res_method": "fuzzy_symbol"
+        },
+        {
+          "symbol": "VNET",
+          "name": "Vnet Group",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "IRM",
+          "name": "Iron Mountain",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "BBOX",
+          "name": "Balanced Property Fund",
+          "sentiment": "bullish",
+          "nse_code": "BBOX",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        },
+        {
+          "symbol": "SGRO",
+          "name": "Segro",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        }
+      ],
+      "key_points": [
+        "Data center capacity deficit reached 12.2 GW in 2025, with leases signed exceeding delivered capacity by over 12 GW",
+        "Hyperscaler capex projected at $770B in 2026, up 74% YoY and nearly 5x 2023 levels",
+        "Demand for 30 GW of global AI power in 2026 vastly exceeds expected supply of 10.3 GW in North America",
+        "EPC/Labor shortage is binding constraint in 2026 with ceiling of 10.4 GW; cooling becomes binding from 2028",
+        "Data center REIT vacancy rates at 1-3% across primary markets with wholesale rents accelerating",
+        "Cumulative undelivered capacity deficit from 2021-2025 reached 20.4 GW",
+        "Bitcoin miners converting infrastructure to AI/HPC use with faster delivery timelines than traditional developers",
+        "Colocation leases signed in 2025 exceeded actual delivered capacity by 12 GW, widening supply gap"
+      ],
+      "catalysts": [
+        "Hyperscaler backlog conversion to revenue as AI capacity comes online",
+        "EPC labor availability and skill constraints resolution",
+        "Cooling infrastructure deployment acceleration",
+        "New entrant capacity delivery from Bitcoin mining conversion",
+        "Regulatory approval for new data center sites",
+        "Power grid interconnection queue completion",
+        "Equipment supplier backlog fulfillment"
+      ],
+      "time_horizon": "6-12M",
+      "conviction": "High",
+      "summary": "Data center supply faces a structural 12 GW deficit in 2025 with demand exceeding supply by nearly 2.4x, driven by hyperscaler AI capex acceleration reaching $770B in 2026. EPC labor and cooling infrastructure represent binding constraints limiting delivery to 10.4 GW when demand implies 30 GW needed for AI workloads. This undersupply benefits data center REITs, equipment suppliers, and new entrants converting Bitcoin mining infrastructure.",
+      "connection_narrative": "The data center industry is experiencing a fundamental supply-demand imbalance driven by the AI infrastructure buildout cycle, where hyperscaler capex is accelerating at a 74% year-over-year rate while physical supply constraints limit delivery. The demand signals are unambiguous across every metric: cumulative cloud backlog has surged to two trillion dollars and is growing three times faster than capex deployment since 2023, while bottom-up semiconductor shipment data implies thirty gigawatts of global AI power demand in 2026 alone, predominantly destined for North America. The policy environment has also shifted, with companies increasingly willing to commit capacity deliverable 24 months or beyond rather than the historical 12 to 18 month window, indicating confidence in sustained demand and willingness to accept extended timelines. This structural undersupply benefits multiple constituencies across the ecosystem in distinct ways. Data center REITs like Digital Realty, Equinix, and Iron Mountain are capturing meaningful uplift through leasing volume acceleration and wholesale rent increases, with AI now representing 33 to 50 percent of aggregate bookings compared to low-teens penetration a year prior. Equipment suppliers face a different but equally attractive dynamic where order growth continues to outpace revenue delivery across cooling, electrical, and power transformation, with backlogs expanding at rates two to four times revenue growth. New entrants including CORZ, WULF, and former Bitcoin miners are positioned advantageously, leveraging energized sites and established grid connections to deliver capacity on compressed timelines that traditional developers constrained by multi-year interconnection queues and equipment lead times cannot match. The binding constraints differ meaningfully by year, with EPC and labor shortage imposing a ceiling of 10.4 gigawatts in 2026, while cooling infrastructure becomes the co-binding constraint at 11.4 gigawatts and transitions to binding status by 2028. Hyperscalers are likely to continue committing capacity further into the future as they recognize the supply ceiling, potentially extending commitment windows to 24 months or beyond. The most important catalyst to watch is the pace at which EPC labor availability improves or constrains delivery, as this represents the single most significant bottleneck across the power and data center ecosystem. The key risk is that cooling infrastructure costs and delivery timelines could escalate faster than projected, potentially pushing the binding constraint earlier than 2028 and further limiting North American supply expansion."
+    },
+    {
+      "date": "2026-06-07",
+      "source": "msg_1514",
+      "themes": [
+        "Artificial Intelligence",
+        "Valuation Risk",
+        "Bubble Assessment"
+      ],
+      "companies": [],
+      "key_points": [
+        "AI sector valuation concerns warrant systematic assessment",
+        "Bubble risk requires differentiation between hype and fundamental value creation",
+        "Critical evaluation needed for AI investment sustainability"
+      ],
+      "catalysts": [
+        "AI capex rationalization",
+        "Profitability demonstrations from AI companies",
+        "Market sentiment shift on AI valuations"
+      ],
+      "time_horizon": "2Y+",
+      "conviction": "not mentioned",
+      "summary": "The report provides perspective on assessing whether the AI sector represents a bubble or sustainable growth opportunity, emphasizing the need for rigorous valuation analysis and differentiation between speculative enthusiasm and fundamental business value creation.",
+      "connection_narrative": "The artificial intelligence sector has experienced explosive valuation expansion as enterprises and governments recognize genuine productivity and efficiency gains from large language models and generative AI capabilities. The structural relevance stems from the technology cycle we are in where incumbent capex spending on AI infrastructure remains at historic highs, competing for capital allocation alongside traditional business investments. Valuation risk is elevated because the sector has attracted significant speculative capital seeking the next mega-cap tech winner, potentially decoupling price from rational cash flow expectations. The bubble assessment framework requires investors to distinguish between companies with sustainable competitive moats and durable revenue models versus those riding purely on narrative momentum. Without specific companies named in this report, the critical lens is on whether the AI ecosystem companies can demonstrate profitable unit economics and return on invested capital that justify premium valuations. The most important catalyst to monitor is when major AI companies begin demonstrating meaningful profitability and free cash flow generation relative to their capex spending, which would either validate or deflate current valuation levels. The primary risk is a sudden repricing event driven by macro rate changes or disappointing earnings guidance that triggers capitulation across highly leveraged AI positions."
+    },
+    {
+      "date": "2026-06-07",
+      "source": "20260608_1513.pdf",
+      "themes": [
+        "AI Bubble Risk",
+        "Technology Capex Boom",
+        "Generative AI Limitations",
+        "Market Correction Scenarios",
+        "Defensive Sector Hedges"
+      ],
+      "companies": [
+        {
+          "symbol": "UNKNOWN",
+          "name": "OpenAI",
+          "sentiment": "bearish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "UNKNOWN",
+          "name": "Anthropic",
+          "sentiment": "bearish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "INDITEX",
+          "name": "Inditex",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "HMSNST",
+          "name": "H&M",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "NXT",
+          "name": "Next",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "BMEB",
+          "name": "B&M",
+          "sentiment": "bullish",
+          "nse_code": "MBEL",
+          "res_conf": 0.704,
+          "res_method": "token_name"
+        },
+        {
+          "symbol": "BBY",
+          "name": "Balfour Beatty",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "MGDL",
+          "name": "Morgan Sindall",
+          "sentiment": "bullish",
+          "nse_code": "MGL",
+          "res_conf": 0.857,
+          "res_method": "fuzzy_symbol"
+        },
+        {
+          "symbol": "KLR",
+          "name": "Keller",
+          "sentiment": "bullish",
+          "nse_code": null,
+          "res_conf": 0.0,
+          "res_method": "unresolved"
+        },
+        {
+          "symbol": "ALFA",
+          "name": "Alfa Financial Software Holdings",
+          "sentiment": "neutral",
+          "nse_code": "OFSS",
+          "res_conf": 0.685,
+          "res_method": "token_name"
+        }
+      ],
+      "key_points": [
+        "AI boom is 60% larger than TMT bubble; tech capex now accounts for nearly 100% of US GDP growth",
+        "OpenAI and Anthropic lack viable business models; hyperscalers need $2-5 trillion in additional revenue to justify capex",
+        "Empirical evidence shows AI productivity gains are modest; software quality metrics show mixed results with AI adoption",
+        "LLM hallucinations and limitations undermine business viability of generative AI companies",
+        "Even mild AI correction scenarios trigger bear markets in S&P 500, Stoxx Europe, and FTSE 350",
+        "UK retailers (Inditex, H&M, Next, B&M) and UK construction (Balfour Beatty, Morgan Sindall, Keller) offer best AI crash hedges with <10% downside",
+        "AI bubble likely to persist 1-2 more years despite irrational exuberance; central bank rate cuts may sustain bubble"
+      ],
+      "catalysts": [
+        "Central bank rate cut decisions",
+        "Hyperscaler capex pivot or revenue guidance misses",
+        "Deterioration in AI software productivity metrics",
+        "LLM commercial deployment failures",
+        "Tech investment recession indicators"
+      ],
+      "time_horizon": "6-12M",
+      "conviction": "High",
+      "summary": "Panmure Liberum argues the AI investment boom exhibits irrational exuberance with unrealistic growth expectations, particularly for OpenAI and Anthropic which lack viable business models. While AI will transformatively change the world, current analyst consensus implies hyperscalers need to quadruple revenues without meaningful cost increases to justify capex plans. Even moderate AI boom corrections would trigger 20-30% bear markets across US, UK and European equity markets, making defensive European retailers and UK construction stocks optimal hedges.",
+      "connection_narrative": "The artificial intelligence investment boom has become structurally oversized relative to economic fundamentals, with technology capex now accounting for nearly 100 percent of US GDP growth and the overall AI capex boom already exceeding the TMT bubble of the early 2000s by 60 percent. This dynamic is being driven by competitive pressures among hyperscalers like Amazon, Microsoft and Google to build data center capacity for generative AI, combined with market euphoria around transformative AI potential. However, empirical evidence from MIT, Princeton, Microsoft and Accenture field experiments demonstrates that actual productivity gains from AI adoption are modest and often come with quality degradation and increased supervision requirements, casting doubt on whether AI will deliver the revolutionary ROI assumptions embedded in current valuations. OpenAI and Anthropic face particularly acute challenges given their business models depend on scaling language models that exhibit persistent hallucination problems and may never achieve profitability at the scale required by their funding structures. The hyperscalers themselves face an impossible equation where current analyst consensus implies they must generate two to five trillion dollars in additional annual revenue to justify planned data center investments, suggesting either dramatically lower capex spending or a repricing of technology stocks must occur. If the AI investment boom corrects even moderately, simulation scenarios show the S&P 500 would decline 20 percent with European and UK markets dropping 30 percent or more, as these markets would face dual headwinds of tech sector weakness and economic slowdown from reduced technology investment. The most important catalyst to monitor is central bank rate cut decisions later in 2026, which could theoretically sustain the bubble for another one to two years by supporting speculative risk appetite despite fundamental deterioration. The key risk to monitor is that AI deployment failures or significant capex revisions from hyperscalers could accelerate the correction timeline and trigger the most severe scenario outcome resembling the post-2000 TMT crash, where technology stocks decline over 70 percent in the first year. Among equity exposures, UK retailers including Inditex, H&M, Next and B&M along with UK construction plays like Balfour Beatty, Morgan Sindall and Keller offer the most attractive risk-adjusted hedges as these sectors show projected losses under 10 percent even in severe correction scenarios due to their non-cyclical demand characteristics and lower exposure to technology spending cycles."
+    }
+  ]
+}
