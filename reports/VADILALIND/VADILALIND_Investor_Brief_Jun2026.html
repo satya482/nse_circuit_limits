@@ -1,0 +1,1646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VADILALIND · NSE Investor Brief · June 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,500;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+
+<style>
+/* ─── ROOT TOKENS ─────────────────────────────────────────── */
+:root {
+  --paper:    #FAF8F4;
+  --ink:      #1C1917;
+  --rule:     #E2DDD6;
+  --muted:    #7A7068;
+  --coral:    #C05020;
+  --coral-bg: #FDF1EC;
+  --teal:     #0E7490;
+  --teal-bg:  #E0F5FA;
+  --blue:     #1D5BA0;
+  --blue-bg:  #EBF0FB;
+  --amber:    #C47B00;
+  --amber-bg: #FFF7E0;
+  --green:    #1D7A4A;
+  --green-bg: #E8F5EE;
+  --navy:     #1E3A5F;
+  --navy-bg:  #EBF0F8;
+  --purple:   #5340A0;
+  --purple-bg:#F0EDFB;
+  --red:      #B03020;
+  --red-bg:   #FDF0EE;
+  --serif:    'Bricolage Grotesque', Georgia, serif;
+  --sans:     'DM Sans', system-ui, sans-serif;
+  --mono:     'DM Mono', 'Courier New', monospace;
+  --radius:   8px;
+}
+
+[data-theme="dark"] {
+  --paper:    #141210;
+  --ink:      #F0EDE8;
+  --rule:     #2E2A26;
+  --muted:    #8C8478;
+  --coral-bg: #2A1810;
+  --teal-bg:  #0A2028;
+  --blue-bg:  #0E1E38;
+  --amber-bg: #231800;
+  --green-bg: #0A201A;
+  --navy-bg:  #0A1828;
+  --purple-bg:#180E38;
+  --red-bg:   #220A08;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.72;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ─── PRINT STYLES ────────────────────────────────────────── */
+@media print {
+  body { font-size: 11.5px; background: white !important; color: #1C1917 !important; }
+  .no-print { display: none !important; }
+  .quick-scan { position: static !important; box-shadow: none !important; border: 2px solid #1C1917 !important; page-break-inside: avoid; display: block !important; }
+  .qs-body { display: block !important; max-height: none !important; overflow: visible !important; }
+  #highlight-index { display: block !important; }
+  #highlight-index ol { display: block !important; }
+  .masthead { background: #1C1917 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  section, .card, .porter-table, .timeline-card, .capex-row { break-inside: avoid; }
+  .two-col { grid-template-columns: 1fr 1fr !important; }
+  [data-theme="dark"] { --paper: white; --ink: #1C1917; }
+}
+
+/* ─── LAYOUT ──────────────────────────────────────────────── */
+.wrapper { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ─── THEME TOGGLE ────────────────────────────────────────── */
+.theme-toggle {
+  position: fixed; top: 14px; right: 16px; z-index: 500;
+  background: var(--ink); color: var(--paper);
+  border: none; border-radius: 20px; padding: 6px 14px;
+  font-family: var(--mono); font-size: 11px; cursor: pointer;
+  display: flex; align-items: center; gap: 6px;
+  transition: all 0.2s;
+}
+.theme-toggle:hover { opacity: 0.85; }
+
+/* ─── QUICK SCAN STRIP ───────────────────────────────────── */
+.quick-scan {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--ink);
+  border-bottom: 3px solid var(--coral);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+}
+.qs-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 20px 6px;
+}
+.qs-title {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--coral);
+  display: flex; align-items: center; gap: 8px;
+}
+.qs-body {
+  padding: 0 20px 12px;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px 32px;
+}
+@media (max-width: 640px) { .qs-body { grid-template-columns: 1fr; } }
+.qs-line {
+  display: flex; align-items: flex-start; gap: 8px;
+  font-size: 12px; color: #C8C0B0; line-height: 1.5; padding: 3px 0;
+  border-bottom: 1px dotted rgba(255,255,255,0.1);
+}
+.qs-line:last-child { border-bottom: none; }
+.qs-icon { flex-shrink: 0; font-style: normal; width: 22px; text-align: center; }
+.qs-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--coral); flex-shrink: 0; min-width: 72px; }
+.qs-text { color: #DDD8D0; }
+.qs-text strong { color: #F7F5F0; }
+
+/* ─── MASTHEAD ────────────────────────────────────────────── */
+.masthead {
+  background: var(--ink);
+  padding: 52px 40px 44px;
+  position: relative; overflow: hidden;
+  margin-bottom: 0;
+}
+.masthead::before {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 320px; height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 8px, rgba(192,80,32,0.08) 8px, rgba(192,80,32,0.08) 16px);
+}
+.masthead-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 14px;
+}
+.masthead-ticker {
+  font-family: var(--serif); font-size: 62px; font-weight: 800;
+  color: #FFFFFF; letter-spacing: -2px; line-height: 1;
+}
+.masthead-name {
+  font-family: var(--serif); font-size: 22px; font-weight: 300;
+  color: #A8A098; margin-top: 6px; letter-spacing: 0.5px;
+}
+.masthead-tagline {
+  font-size: 15px; color: #C8C0B0; margin-top: 10px;
+  font-weight: 300; max-width: 560px; line-height: 1.6;
+}
+.masthead-chips {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-top: 26px;
+}
+.chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 4px; padding: 5px 12px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+  color: #C0B8AC;
+}
+.chip.hot { background: rgba(192,80,32,0.2); border-color: rgba(192,80,32,0.4); color: #E88858; }
+
+/* ─── CHAPTER HEADERS ─────────────────────────────────────── */
+.ch-header {
+  display: flex; align-items: flex-start; gap: 18px;
+  margin: 52px 0 22px; padding-bottom: 14px;
+  border-bottom: 2.5px solid var(--ink);
+}
+.ch-num {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--ink); color: var(--paper);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 16px; font-weight: 700;
+  flex-shrink: 0; margin-top: 2px;
+}
+.ch-meta { }
+.ch-eyebrow {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 3px;
+}
+.ch-title {
+  font-family: var(--serif); font-size: 22px; font-weight: 700;
+  color: var(--ink); line-height: 1.2;
+}
+
+/* Accent variants */
+.ch-header.coral .ch-num { background: var(--coral); }
+.ch-header.coral { border-bottom-color: var(--coral); }
+.ch-header.teal .ch-num { background: var(--teal); }
+.ch-header.teal { border-bottom-color: var(--teal); }
+.ch-header.blue .ch-num { background: var(--blue); }
+.ch-header.blue { border-bottom-color: var(--blue); }
+.ch-header.amber .ch-num { background: var(--amber); }
+.ch-header.amber { border-bottom-color: var(--amber); }
+.ch-header.green .ch-num { background: var(--green); }
+.ch-header.green { border-bottom-color: var(--green); }
+.ch-header.navy .ch-num { background: var(--navy); }
+.ch-header.navy { border-bottom-color: var(--navy); }
+.ch-header.purple .ch-num { background: var(--purple); }
+.ch-header.purple { border-bottom-color: var(--purple); }
+.ch-header.red .ch-num { background: var(--red); }
+.ch-header.red { border-bottom-color: var(--red); }
+
+/* ─── PROSE ───────────────────────────────────────────────── */
+p { margin-bottom: 14px; color: var(--ink); line-height: 1.75; }
+p:last-child { margin-bottom: 0; }
+h3 {
+  font-family: var(--serif); font-size: 16px; font-weight: 700;
+  margin: 24px 0 10px; color: var(--ink);
+}
+strong { font-weight: 600; }
+
+/* ─── LEAD CARD ───────────────────────────────────────────── */
+.lead {
+  padding: 18px 22px; border-radius: 0 var(--radius) var(--radius) 0;
+  border-left: 4px solid var(--amber); background: var(--amber-bg);
+  margin-bottom: 22px; font-size: 15.5px; line-height: 1.7; color: var(--ink);
+}
+.lead.coral  { border-left-color: var(--coral);  background: var(--coral-bg);  }
+.lead.teal   { border-left-color: var(--teal);   background: var(--teal-bg);   }
+.lead.blue   { border-left-color: var(--blue);   background: var(--blue-bg);   }
+.lead.green  { border-left-color: var(--green);  background: var(--green-bg);  }
+.lead.navy   { border-left-color: var(--navy);   background: var(--navy-bg);   }
+.lead.purple { border-left-color: var(--purple); background: var(--purple-bg); }
+
+/* ─── INSIGHT BOX ─────────────────────────────────────────── */
+.insight-box {
+  background: var(--ink); color: #F0EDE8;
+  border-radius: var(--radius); padding: 26px 30px; margin: 24px 0;
+}
+.insight-box .ib-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--coral); margin-bottom: 10px;
+}
+.insight-box p { color: #C8C0B0; }
+.insight-box strong { color: #F7F5F0; }
+
+/* ─── INLINE HIGHLIGHTS ───────────────────────────────────── */
+.hl-key      { background: #FFF176; padding: 1px 4px; border-radius: 2px; font-weight: 600; color: #2A1800; }
+.hl-number   { background: #E3F0FF; padding: 1px 4px; border-radius: 2px; font-family: var(--mono); font-size: 0.92em; color: #1E3A5F; }
+.hl-risk     { background: #FFF3CD; padding: 1px 4px; border-radius: 2px; border-left: 3px solid var(--amber); color: #432800; }
+.hl-catalyst { background: #E6F4EA; padding: 1px 4px; border-radius: 2px; border-left: 3px solid var(--green); color: #0A2818; }
+
+/* ─── TAKEAWAY PILL ───────────────────────────────────────── */
+.takeaway-pill {
+  border-radius: 4px; padding: 12px 18px; margin: 24px 0 8px;
+  font-size: 13.5px; font-weight: 600; line-height: 1.5;
+  border-left: 3px solid var(--coral); background: var(--coral-bg);
+  color: var(--ink);
+}
+.tp-teal   { border-left-color: var(--teal);   background: var(--teal-bg);   }
+.tp-blue   { border-left-color: var(--blue);   background: var(--blue-bg);   }
+.tp-amber  { border-left-color: var(--amber);  background: var(--amber-bg);  }
+.tp-green  { border-left-color: var(--green);  background: var(--green-bg);  }
+.tp-navy   { border-left-color: var(--navy);   background: var(--navy-bg);   }
+.tp-purple { border-left-color: var(--purple); background: var(--purple-bg); }
+.tp-red    { border-left-color: var(--red);    background: var(--red-bg);    }
+
+/* ─── STAT ROWS ───────────────────────────────────────────── */
+.stat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+  margin: 20px 0;
+}
+@media (max-width: 640px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+.stat-card {
+  background: white; border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: 14px 16px;
+}
+[data-theme="dark"] .stat-card { background: rgba(255,255,255,0.04); }
+.stat-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 5px;
+}
+.stat-val {
+  font-family: var(--serif); font-size: 22px; font-weight: 700;
+  color: var(--ink); line-height: 1;
+}
+.stat-sub {
+  font-size: 11.5px; color: var(--muted); margin-top: 3px;
+}
+.stat-up   { color: var(--green); }
+.stat-down { color: var(--red); }
+.stat-flat { color: var(--amber); }
+
+/* ─── DATA TABLES ─────────────────────────────────────────── */
+.data-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 12.5px; margin: 18px 0;
+}
+.data-table th {
+  background: var(--ink); color: #EEE;
+  padding: 9px 12px; text-align: left;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px;
+}
+.data-table th.coral  { background: var(--coral); }
+.data-table th.teal   { background: var(--teal);  }
+.data-table th.green  { background: var(--green); }
+.data-table th.navy   { background: var(--navy);  }
+.data-table th.amber  { background: var(--amber); }
+.data-table th.blue   { background: var(--blue);  }
+.data-table th.red    { background: var(--red);   }
+.data-table td {
+  padding: 9px 12px; border-bottom: 1px solid var(--rule);
+  vertical-align: top; color: var(--ink); line-height: 1.5;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: rgba(0,0,0,0.025); }
+[data-theme="dark"] .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+
+/* ─── TAGS ────────────────────────────────────────────────── */
+.tag {
+  display: inline-block; padding: 2px 7px; border-radius: 3px;
+  font-family: var(--mono); font-size: 10px; font-weight: 500;
+}
+.tag-coral   { background: var(--coral-bg);  color: var(--coral);  }
+.tag-teal    { background: var(--teal-bg);   color: var(--teal);   }
+.tag-blue    { background: var(--blue-bg);   color: var(--blue);   }
+.tag-amber   { background: var(--amber-bg);  color: var(--amber);  }
+.tag-green   { background: var(--green-bg);  color: var(--green);  }
+.tag-navy    { background: var(--navy-bg);   color: var(--navy);   }
+.tag-purple  { background: var(--purple-bg); color: var(--purple); }
+.tag-red     { background: var(--red-bg);    color: var(--red);    }
+
+/* ─── VERTICAL CARDS ──────────────────────────────────────── */
+.vertical-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0;
+}
+@media (max-width: 640px) { .vertical-grid { grid-template-columns: 1fr; } }
+.vcard {
+  background: white; border: 1.5px solid var(--rule);
+  border-radius: var(--radius); padding: 18px;
+  border-top: 3px solid var(--coral);
+}
+[data-theme="dark"] .vcard { background: rgba(255,255,255,0.04); }
+.vcard.teal   { border-top-color: var(--teal);   }
+.vcard.blue   { border-top-color: var(--blue);   }
+.vcard.coral  { border-top-color: var(--coral);  }
+.vcard.amber  { border-top-color: var(--amber);  }
+.vcard.green  { border-top-color: var(--green);  }
+.vcard-icon   { font-size: 22px; margin-bottom: 8px; }
+.vcard-name   { font-family: var(--serif); font-size: 14px; font-weight: 700; margin-bottom: 6px; color: var(--ink); }
+.vcard-body   { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+.vcard-status { margin-top: 10px; }
+
+/* ─── RISK CARDS ──────────────────────────────────────────── */
+.risk-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0;
+}
+@media (max-width: 640px) { .risk-grid { grid-template-columns: 1fr; } }
+.risk-card {
+  border: 1px solid var(--rule); border-radius: var(--radius);
+  padding: 15px 17px; background: white;
+  border-left: 3px solid var(--amber);
+}
+[data-theme="dark"] .risk-card { background: rgba(255,255,255,0.04); }
+.risk-card.high  { border-left-color: var(--red);   }
+.risk-card.med   { border-left-color: var(--amber);  }
+.risk-card.low   { border-left-color: var(--green);  }
+.risk-name {
+  font-family: var(--mono); font-size: 11px; font-weight: 600;
+  display: flex; align-items: center; gap: 7px; margin-bottom: 5px;
+}
+.risk-body  { font-size: 12.5px; color: var(--ink); line-height: 1.5; margin-bottom: 5px; }
+.risk-signal { font-size: 11.5px; color: var(--muted); font-style: italic; }
+
+/* ─── WATCH SIGNALS ───────────────────────────────────────── */
+.watch-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 18px 0;
+}
+@media (max-width: 640px) { .watch-grid { grid-template-columns: 1fr; } }
+.watch-card {
+  background: white; border: 1px solid var(--rule);
+  border-radius: var(--radius); padding: 14px 16px;
+  border-top: 2px solid var(--teal);
+}
+[data-theme="dark"] .watch-card { background: rgba(255,255,255,0.04); }
+.watch-metric { font-family: var(--mono); font-size: 11.5px; font-weight: 600; margin-bottom: 5px; color: var(--teal); }
+.watch-body { font-size: 12.5px; color: var(--ink); line-height: 1.5; }
+.signal-row { display: flex; gap: 8px; margin-top: 7px; flex-wrap: wrap; }
+.sig { font-family: var(--mono); font-size: 10px; padding: 2px 7px; border-radius: 3px; }
+.sig-green { background: var(--green-bg); color: var(--green); }
+.sig-red   { background: var(--red-bg);   color: var(--red);   }
+
+/* ─── CAPEX TIMELINE ──────────────────────────────────────── */
+.timeline-card {
+  background: white; border: 1.5px solid var(--rule);
+  border-radius: var(--radius); overflow: hidden; margin: 20px 0;
+}
+[data-theme="dark"] .timeline-card { background: rgba(255,255,255,0.04); }
+.timeline-header {
+  background: var(--coral); color: white;
+  padding: 10px 16px; font-family: var(--mono);
+  font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+}
+.timeline-row {
+  display: flex; border-bottom: 1px solid var(--rule);
+}
+.timeline-row:last-child { border-bottom: none; }
+.timeline-cell {
+  padding: 10px 14px; flex: 1; font-size: 12px;
+  border-right: 1px solid var(--rule);
+}
+.timeline-cell:last-child { border-right: none; }
+.tc-label { font-family: var(--mono); font-size: 9px; color: var(--muted); text-transform: uppercase; margin-bottom: 3px; }
+.tc-val { font-weight: 600; color: var(--ink); }
+.tc-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.status-ok   { color: var(--green); font-family: var(--mono); font-size: 11px; }
+.status-warn { color: var(--amber); font-family: var(--mono); font-size: 11px; }
+.status-miss { color: var(--red);   font-family: var(--mono); font-size: 11px; }
+
+/* ─── TWO COLUMN ──────────────────────────────────────────── */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 14px 0; }
+@media (max-width: 640px) { .two-col { grid-template-columns: 1fr; } }
+
+/* ─── VERDICT ─────────────────────────────────────────────── */
+.verdict-box {
+  background: var(--amber-bg); border: 1.5px solid var(--amber);
+  border-radius: var(--radius); padding: 26px 30px; margin: 36px 0;
+}
+.verdict-label {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 10px;
+}
+.verdict-box p { color: var(--ink); font-size: 14.5px; line-height: 1.75; }
+
+/* ─── DIVIDER ─────────────────────────────────────────────── */
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 36px 0; }
+
+/* ─── HIGHLIGHT INDEX ─────────────────────────────────────── */
+.highlight-index-wrapper {
+  border: 1.5px solid var(--amber); border-radius: var(--radius);
+  overflow: hidden; margin: 36px 0;
+}
+.hi-header {
+  background: var(--amber); color: white;
+  padding: 12px 18px; font-family: var(--mono); font-size: 11px;
+  letter-spacing: 1.5px; text-transform: uppercase; font-weight: 600;
+}
+#highlight-index {
+  padding: 18px 22px; background: var(--amber-bg);
+}
+#highlight-index ol {
+  padding-left: 20px; font-size: 13px;
+  color: var(--ink); line-height: 2;
+}
+#highlight-index ol li { padding-left: 6px; border-bottom: 1px dotted var(--rule); }
+#highlight-index ol li:last-child { border-bottom: none; }
+#highlight-index ol li[data-type="takeaway-pill"] { font-weight: 600; color: var(--coral); }
+#highlight-index ol li[data-type="hl-key"]      { background: #FFFFF0; }
+#highlight-index ol li[data-type="hl-number"]   { font-family: var(--mono); background: #F0F8FF; }
+#highlight-index ol li[data-type="hl-risk"]     { background: #FFFFF0; }
+#highlight-index ol li[data-type="hl-catalyst"] { background: #F0FFF4; }
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background: var(--ink); color: #6B7280;
+  padding: 22px 48px; font-family: var(--mono); font-size: 10px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+
+/* ─── THE LEDGER SECTION ──────────────────────────────────── */
+.ledger-masthead {
+  background: #0F0F1A; color: #F0EDE8;
+  padding: 46px 40px 38px; position: relative; overflow: hidden;
+  margin-top: 0;
+}
+.ledger-masthead::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(135deg, transparent 0, transparent 12px, rgba(255,200,0,0.03) 12px, rgba(255,200,0,0.03) 24px);
+}
+.ledger-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--amber); margin-bottom: 12px;
+}
+.ledger-masthead h2 {
+  font-family: var(--serif); font-size: 46px; font-weight: 800;
+  color: #FFFFFF; letter-spacing: -1.5px; line-height: 1.05;
+}
+.ledger-masthead .lm-sub {
+  font-size: 14.5px; color: #A8A098; margin-top: 8px; font-weight: 300;
+}
+.ledger-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+
+/* Ledger section headers */
+.l-sec {
+  display: flex; align-items: flex-start; gap: 16px;
+  margin: 48px 0 18px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--ink);
+}
+.l-sec-num {
+  font-family: var(--serif); font-size: 24px; font-weight: 700;
+  color: var(--amber); min-width: 28px; line-height: 1;
+}
+.l-sec-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.l-sec-title { font-family: var(--serif); font-size: 20px; font-weight: 700; color: var(--ink); }
+
+.l-sec.teal .l-sec-num { color: var(--teal); }
+.l-sec.teal { border-bottom-color: var(--teal); }
+.l-sec.green .l-sec-num { color: var(--green); }
+.l-sec.green { border-bottom-color: var(--green); }
+.l-sec.navy .l-sec-num { color: var(--navy); }
+.l-sec.navy { border-bottom-color: var(--navy); }
+.l-sec.coral .l-sec-num { color: var(--coral); }
+.l-sec.coral { border-bottom-color: var(--coral); }
+.l-sec.red .l-sec-num { color: var(--red); }
+.l-sec.red { border-bottom-color: var(--red); }
+
+/* Credibility badge */
+.cred-tier {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--amber-bg); border: 2px solid var(--amber);
+  border-radius: var(--radius); padding: 14px 22px; margin: 18px 0;
+}
+.cred-grade {
+  font-family: var(--serif); font-size: 52px; font-weight: 800;
+  color: var(--amber); line-height: 1;
+}
+.cred-body { }
+.cred-name { font-family: var(--mono); font-size: 12px; font-weight: 600; letter-spacing: 1px; color: var(--amber); }
+.cred-desc { font-size: 12.5px; color: var(--muted); margin-top: 3px; }
+
+/* Chain flow */
+.chain-flow {
+  display: flex; align-items: stretch; gap: 0;
+  margin: 20px 0; overflow-x: auto;
+}
+.chain-node {
+  flex: 1; min-width: 100px;
+  background: white; border: 1.5px solid var(--rule);
+  padding: 12px 10px; text-align: center; position: relative;
+}
+[data-theme="dark"] .chain-node { background: rgba(255,255,255,0.04); }
+.chain-node:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.chain-node:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+.chain-node::after {
+  content: '→'; position: absolute; right: -12px; top: 50%;
+  transform: translateY(-50%); font-size: 15px; color: var(--amber);
+  z-index: 2; background: var(--paper); padding: 0 2px;
+}
+.chain-node:last-child::after { display: none; }
+.chain-label { font-size: 11.5px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+.chain-status { font-family: var(--mono); font-size: 10px; margin-top: 4px; }
+.cn-ok   { color: var(--green); border-top: 3px solid var(--green); }
+.cn-warn { color: var(--amber); border-top: 3px solid var(--amber); }
+.cn-miss { color: var(--red);   border-top: 3px solid var(--red);   }
+.cn-na   { color: var(--muted); border-top: 3px solid var(--muted); }
+
+/* Promise register */
+.promise-row {
+  display: flex; gap: 10px; padding: 12px 0;
+  border-bottom: 1px solid var(--rule); align-items: flex-start;
+}
+.promise-row:last-child { border-bottom: none; }
+.pr-quarter { min-width: 80px; font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+.pr-promise { flex: 1; font-size: 13px; color: var(--ink); line-height: 1.5; }
+.pr-status  { min-width: 90px; font-family: var(--mono); font-size: 10px; text-align: right; }
+
+/* Red flag cards (compact for Ledger) */
+.lf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+@media (max-width: 640px) { .lf-grid { grid-template-columns: 1fr; } }
+.lf-card {
+  border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px;
+  background: white; border-left: 3px solid var(--amber);
+}
+[data-theme="dark"] .lf-card { background: rgba(255,255,255,0.04); }
+.lf-card.active-flag { border-left-color: var(--red); }
+.lf-card.watch { border-left-color: var(--amber); }
+.lf-card.clear { border-left-color: var(--green); }
+.lf-name { font-family: var(--mono); font-size: 10.5px; font-weight: 600; margin-bottom: 4px; display: flex; align-items: center; gap: 6px; }
+.lf-body { font-size: 12px; color: var(--ink); line-height: 1.5; }
+.lf-evidence { font-size: 11px; color: var(--muted); font-style: italic; margin-top: 5px; }
+
+/* Ledger verdict */
+.ledger-verdict {
+  background: #0F0F1A; border-radius: var(--radius); padding: 24px 28px; margin: 28px 0;
+}
+.lv-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.ledger-verdict p { color: #C8C0B0; font-size: 14px; line-height: 1.75; }
+.ledger-verdict strong { color: #F7F5F0; }
+
+/* Quarterly tracker table */
+.qtable { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 16px 0; }
+.qtable th { background: var(--navy); color: white; padding: 8px 12px; text-align: left; font-family: var(--mono); font-size: 10px; }
+.qtable td { padding: 9px 12px; border-bottom: 1px solid var(--rule); color: var(--ink); }
+.qtable tr:last-child td { border-bottom: none; }
+.qtable tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+
+/* ─── PORTER'S TABLE ──────────────────────────────────────── */
+.porter-wrap { overflow-x: auto; margin: 18px 0; }
+.porter-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+.porter-table th {
+  background: var(--ink); color: white;
+  padding: 10px 14px; font-family: var(--mono);
+  font-size: 10px; letter-spacing: 0.5px; text-align: left;
+}
+.porter-table td {
+  padding: 11px 14px; border-bottom: 1px solid var(--rule);
+  font-size: 13px; color: var(--ink); vertical-align: top; line-height: 1.55;
+}
+.porter-table tr:last-child td { border-bottom: none; }
+.porter-force { font-family: var(--serif); font-size: 13.5px; font-weight: 700; }
+
+/* ─── MISC ────────────────────────────────────────────────── */
+.small-label {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 7px;
+}
+ul.prose-list { list-style: none; padding: 0; margin: 0 0 14px; }
+ul.prose-list li {
+  padding: 5px 0 5px 20px; position: relative;
+  font-size: 13.5px; line-height: 1.55; border-bottom: 1px dotted var(--rule);
+}
+ul.prose-list li:last-child { border-bottom: none; }
+ul.prose-list li::before { content: '—'; position: absolute; left: 0; color: var(--coral); font-weight: 700; }
+
+.flywheel-row {
+  display: flex; gap: 0; margin: 18px 0; overflow-x: auto;
+}
+.fw-node {
+  flex: 1; min-width: 100px; padding: 10px 12px;
+  background: white; border: 1px solid var(--rule);
+  text-align: center; font-size: 11.5px; font-weight: 600;
+  position: relative; color: var(--ink);
+}
+[data-theme="dark"] .fw-node { background: rgba(255,255,255,0.04); }
+.fw-node:first-child { border-radius: var(--radius) 0 0 var(--radius); }
+.fw-node:last-child  { border-radius: 0 var(--radius) var(--radius) 0; }
+.fw-node::after {
+  content: '▶'; position: absolute; right: -10px; top: 50%;
+  transform: translateY(-50%); font-size: 12px;
+  color: var(--coral); background: var(--paper); z-index: 2;
+}
+.fw-node:last-child::after { display: none; }
+
+/* TTS friendly — skip symbols in TTS with aria-hidden */
+.tts-skip { speak: never; }
+
+</style>
+</head>
+<body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle no-print" onclick="toggleTheme()" aria-label="Toggle dark or light mode">
+  <span id="theme-icon">☀</span> <span id="theme-label">Light</span>
+</button>
+
+<!-- ═══════════════════════════════════════════════════════════
+     QUICK-SCAN STRIP — always visible, always expanded
+═══════════════════════════════════════════════════════════════ -->
+<div class="quick-scan" role="complementary" aria-label="Quick scan summary">
+  <div class="qs-header">
+    <div class="qs-title">
+      <span aria-hidden="true">⚡</span>
+      <span>VADILALIND · Quick-Scan Strip · June 2026</span>
+    </div>
+  </div>
+  <div class="qs-body">
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">🏔</span>
+      <span class="qs-label">Context</span>
+      <span class="qs-text">India ice cream market at <strong>USD 3.98 billion, 15% CAGR</strong> to 2035; per capita at 400ml vs China's 3,000ml — a structural consumption catch-up story</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">🏭</span>
+      <span class="qs-label">Model</span>
+      <span class="qs-text">Manufacturer-exporter: domestic ice cream via sister distributor VEL; direct US export via NJ subsidiary; <strong>two plants, 300+ SKUs, 118-year brand</strong></span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">🎯</span>
+      <span class="qs-label">Insight</span>
+      <span class="qs-text"><strong>VIL built India's #2 ice cream brand but didn't own the trademark</strong> — until March 2025. Brand recapitalization into the listed entity changes the terminal value of every scoop sold going forward</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">📊</span>
+      <span class="qs-label">Numbers</span>
+      <span class="qs-text">FY26 revenue <strong>₹1,501 Cr (+21% YoY)</strong>, net profit ₹155 Cr, ROCE 25.1%; Q1 alone contributes 43% of annual profit — extreme seasonal concentration</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">🚧</span>
+      <span class="qs-label">Top Risk</span>
+      <span class="qs-text"><span class="qs-text"><strong>Vadilal Enterprises (domestic distributor) has D/E of 84% and interest coverage barely 3x</strong> — if VEL faces financial stress, VIL's domestic channel is directly at risk</span></span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">👁</span>
+      <span class="qs-label">Watch</span>
+      <span class="qs-text"><strong>Q1 FY27 revenue</strong> (due July 2026): must exceed ₹530 Cr to signal summer momentum; below ₹480 Cr = demand compression warning</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">💡</span>
+      <span class="qs-label">Verdict</span>
+      <span class="qs-text"><strong>Mid-Chapter</strong> — brand ownership, governance cleanup, and US manufacturing are three de-risking events converging; discount to FMCG peers (21x vs 36x) is the opportunity if execution holds</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon tts-skip" aria-hidden="true">🗒</span>
+      <span class="qs-label">Ledger</span>
+      <span class="qs-text">Credibility Tier <strong>B+</strong> · Active flags: US manufacturing without timeline (Qualifier Creep), VEL non-merger (Strategic Omission Watch), winter quarter no-guidance pattern</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════
+     MASTHEAD
+═══════════════════════════════════════════════════════════════ -->
+<div class="masthead" role="banner">
+  <div class="masthead-eyebrow">NSE EQUITY RESEARCH · CONSUMER FOODS · JUNE 2026</div>
+  <div class="masthead-ticker">VADILALIND</div>
+  <div class="masthead-name">Vadilal Industries Limited</div>
+  <div class="masthead-tagline">India's second-largest branded ice cream manufacturer and a direct exporter of Indian frozen foods to the United States — now at the start of a governance re-rating cycle after a decade of promoter disputes.</div>
+  <div class="masthead-chips">
+    <span class="chip">BSE: 519156</span>
+    <span class="chip">NSE: VADILALIND</span>
+    <span class="chip">SECTOR: Consumer FMCG</span>
+    <span class="chip">MKT CAP: ₹3,367 Cr</span>
+    <span class="chip hot">FY26 RESULTS: MAY 2026</span>
+    <span class="chip">PROMOTER: 64.7%</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 1 — CONTEXT
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch1-title">
+<div class="ch-header coral">
+  <div class="ch-num" aria-hidden="true">1</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">THE BIG PICTURE FIRST</div>
+    <div class="ch-title" id="ch1-title">Context — The structural tailwind behind the scoop</div>
+  </div>
+</div>
+
+<p>India's ice cream market is one of the most compelling long-runway consumption stories in the country. <span class="hl-catalyst">The market reached approximately USD 3.98 billion in 2025 and is projected to grow at a 15% compound annual growth rate through 2035, reaching USD 16.1 billion</span> — a genuine 4x expansion in a decade. The structural case isn't just the numbers; it is the starting point. India's per capita ice cream consumption stands at roughly 400 millilitres annually, compared to 3,000 millilitres in China and 22,000 millilitres in the United States. That is not a gap waiting to close slowly — it is a structural catch-up story waiting for the right infrastructure and distribution triggers.</p>
+
+<p>Those triggers are now arriving simultaneously. <span class="hl-number">Quick commerce platforms — Zepto, Blinkit, and Swiggy Instamart — have converted ice cream from a seasonal, outlet-dependent purchase into an on-demand, year-round product</span>, fundamentally altering the demand profile of the category. A consumer who previously bought ice cream only when passing a kirana with a deep freezer can now order it in 12 minutes at midnight in December. This structural demand smoothing is material for manufacturers like Vadilal who have historically seen Q3 (winter) near-breakeven performance.</p>
+
+<p>The organised sector is also consolidating its share. The top six players — Amul (GCMMF), HUL's Kwality Walls, Vadilal, Mother Dairy, Hatsun Agro, and Havmor/CreamBell — collectively account for an estimated 68–70% of market value. The remaining 30–32% is fragmented across regional and unorganised players, and this share is slowly being absorbed by brands with better cold chain infrastructure and product consistency. India's recent above-normal summer seasons have accelerated this shift: organised players with national freezer networks and supply chain depth benefited disproportionately from the extended heat of FY26's early summer.</p>
+
+<p>For Vadilal specifically, the timing of this sectoral tailwind coincides with the resolution of a decade-long promoter governance dispute — a resolution that, if completed, transforms the investment thesis from "an undermanaged asset in a growing market" to "a governance-upgraded compounder in a structurally expanding category."</p>
+
+<div class="takeaway-pill">
+  India ice cream market at USD 3.98B is projected to reach USD 16.1B by 2035 at 15% CAGR; per capita at 400ml — a 7x structural underpenetration gap versus China.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 2 — BUSINESS MODEL
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch2-title">
+<div class="ch-header teal">
+  <div class="ch-num" aria-hidden="true">2</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">HOW THE MACHINE WORKS</div>
+    <div class="ch-title" id="ch2-title">The business model — manufacturer, brand, and exporter in one</div>
+  </div>
+</div>
+
+<p>Vadilal Industries Limited is the manufacturing entity of the Vadilal Group. It manufactures ice cream, frozen desserts, frozen fruits and vegetables, canned fruit pulp, and ready-to-eat processed foods across two plants: one in Pundhra, Gandhinagar district in Gujarat (the heartland of the original business), and one in Bareilly, Uttar Pradesh. The dual-plant structure provides strategic geographic coverage — Gujarat and West India from Pundhra; North India and export staging from Bareilly. Together, these facilities produce over 300 stock-keeping units across price points from affordable impulse packs to premium Gourmet Naturals.</p>
+
+<p>The business runs through two parallel channels that operate very differently. The domestic ice cream channel flows entirely through Vadilal Enterprises Limited (VEL), a separate listed company that is also part of the Gandhi family group. <span class="hl-key">VEL is VIL's captive domestic distributor — it purchases 100% of domestically-sold ice cream from VIL and handles marketing, distribution, and over 50,000 retail touchpoints across India. VIL sets the transfer price; VEL absorbs all distribution costs.</span> This means VIL's domestic ice cream margin is essentially a manufacturing margin, not a full brand P&L. VEL owns the deep freezers placed at kirana stores — approximately 1.5 lakh freezers nationwide — which creates the cold chain moat that keeps Vadilal on the shelf.</p>
+
+<p>The export channel works entirely differently. Vadilal Industries USA Inc., a wholly-owned NJ-based subsidiary, operates a national US cold-chain distribution network reaching "nearly every South Asian retail outlet" in the United States. This direct export-to-subsidiary model means VIL captures both manufacturer margins and a portion of distributor economics on the US business — which is why export profitability historically runs above domestic. In September 2025, Vadilal announced plans to begin local manufacturing within its US subsidiary, which would reduce import dependency and allow mainstream American retail access beyond the diaspora channel.</p>
+
+<h3>The flywheel</h3>
+<div class="flywheel-row" role="img" aria-label="Business flywheel showing seasonal revenue builds capacity utilisation which drives operating leverage leading to improved margins which funds cold chain expansion and grows distribution">
+  <div class="fw-node">Summer demand peak</div>
+  <div class="fw-node">Capacity utilisation spike</div>
+  <div class="fw-node">Operating leverage</div>
+  <div class="fw-node">Margin expansion</div>
+  <div class="fw-node">Cold chain investment</div>
+  <div class="fw-node">Wider distribution</div>
+</div>
+
+<h3>Customer stickiness mechanisms</h3>
+<ul class="prose-list" role="list">
+  <li><strong>Freezer ownership:</strong> Vadilal (through VEL) places and maintains deep freezers at retailer premises — a retailer with a Vadilal freezer is, for practical purposes, a captive customer. Replacing the freezer means losing the Vadilal relationship.</li>
+  <li><strong>118-year brand equity:</strong> In Gujarat, Vadilal holds an estimated 40% market share, reflecting generational brand loyalty. The "Kesar Pista" and "Rajbhog" flavours are category-defining products in the Indian diaspora globally.</li>
+  <li><strong>Export certification stack:</strong> Bureau Veritas food safety certification (2013) and USFDA compliance enable premium positioning in the US market — certifications that take years to build and create real barriers for new entrants into the export channel.</li>
+  <li><strong>VEL interdependence:</strong> VEL purchases exclusively from VIL under an arrangement where VIL sets price and VEL absorbs distribution costs. This creates a captive B2B relationship, though it also concentrates VIL's domestic channel risk in a single counterparty.</li>
+</ul>
+
+<div class="takeaway-pill tp-teal">
+  VIL is a manufacturer with a captive domestic distributor and a direct US export subsidiary — two radically different economics in one P&L that most analysis treats as homogeneous.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 2B — PORTER'S FIVE FORCES
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch2b-title">
+<div class="ch-header blue">
+  <div class="ch-num" aria-hidden="true">2B</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">COMPETITIVE STRUCTURE</div>
+    <div class="ch-title" id="ch2b-title">Porter's Five Forces — where the structural pressure lies</div>
+  </div>
+</div>
+
+<div class="porter-wrap" role="region" aria-label="Porter's Five Forces competitive analysis table">
+<table class="porter-table">
+  <thead>
+    <tr>
+      <th style="width:18%">Force</th>
+      <th style="width:12%">Rating</th>
+      <th>Assessment &amp; Specific Rationale</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><span class="porter-force">Rivalry Intensity</span></td>
+      <td><span class="tag tag-red">HIGH</span></td>
+      <td>Amul (GCMMF cooperative) commands approximately 40% market share and competes on cost structures that private manufacturers cannot match. HUL's Kwality Walls brings global R&amp;D and marketing budgets. Hatsun's Arun dominates South India. Meanwhile, unorganised regional players account for 30–32% of the market and compete purely on price without any brand maintenance cost. The top six organised players together control 68–70% of market value, but the competitive intensity within organised is high — especially as Amul's cooperative model makes absolute cost competition structurally impossible for listed peers.</td>
+    </tr>
+    <tr>
+      <td><span class="porter-force">Buyer Power</span></td>
+      <td><span class="tag tag-amber">MEDIUM</span></td>
+      <td>In domestic ice cream, VEL is the single buyer of all of VIL's domestic production — creating concentration risk but also captive-channel protection. VEL's chronic thin margins (interest coverage barely 3x) suggest VEL cannot easily absorb price increases, effectively limiting VIL's domestic pricing power. In exports, US diaspora retail buyers (South Asian grocery stores) are somewhat sticky given Vadilal's brand recognition, but they have access to competing South Asian brands. Mainstream US retail (if local manufacturing launches) would bring significantly more buyer power.</td>
+    </tr>
+    <tr>
+      <td><span class="porter-force">Supplier Power</span></td>
+      <td><span class="tag tag-green">LOW-MED</span></td>
+      <td>Core inputs — milk solids, sugar, and vegetable oil for ice cream; frozen vegetables and fruit for processed foods — are commodity markets with multiple suppliers. No single-source risk is evident. Imported flavour compounds and cocoa butter carry moderate pricing risk (global cocoa price spikes in FY24 were a temporary margin headwind). Vadilal's scale (₹1,500 Cr revenue) gives reasonable leverage in milk procurement, though it is far smaller than Amul's cooperative sourcing pool. India Ratings credit report (April 2025) notes pass-through ability for input costs, but with a lag.</td>
+    </tr>
+    <tr>
+      <td><span class="porter-force">Threat of New Entrants</span></td>
+      <td><span class="tag tag-amber">MEDIUM</span></td>
+      <td>The cold chain infrastructure required — freezer placement at 50,000+ retail points, refrigerated logistics, and plant investment — is a genuine capital barrier for scale entry. Vadilal's 1.5 lakh-plus freezer network at retail represents years of investment. However, premium artisan entrants (NIC Naturals, Keventers, Noto) are successfully taking urban market share with asset-light models and quick commerce delivery. International brands (Baskin-Robbins, Haagen-Dazs) remain present. The USFDA certification for exports adds a regulatory moat in the international channel.</td>
+    </tr>
+    <tr>
+      <td><span class="porter-force">Threat of Substitutes</span></td>
+      <td><span class="tag tag-amber">MEDIUM</span></td>
+      <td>Traditional substitutes — kulfi from unorganised vendors, mithai, falooda — still compete for the occasional dessert occasion, especially in tier-2 and tier-3 cities. However, quick commerce is paradoxically reducing substitute threat by making branded ice cream more accessible than informal alternatives. The more significant substitute risk is channel substitution within the category: premium artisanal parlours (Ibaco, Naturals) drawing away the premium urban consumer that Vadilal's Gourmet Naturals range is trying to retain. In processed foods exports, global competing suppliers (Thailand, Mexico) offer alternative sourcing to US buyers.</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="lead blue" role="note" aria-label="Porter's Five Forces synthesis">
+  <strong>Structural pressure synthesis:</strong> The two forces that most constrain Vadilal's margin trajectory are <em>rivalry intensity</em> (Amul's cooperative cost structure sets a ceiling on pricing ambition) and <em>buyer power via VEL concentration</em> (domestic channel economics are effectively determined by a related-party distributor whose own financial health is a legitimate watch point). All other forces are manageable. The US manufacturing pivot, if executed, would directly improve buyer power in the most important export market.
+</div>
+
+<div class="takeaway-pill tp-blue">
+  Amul's cooperative cost structure and VEL's concentration make domestic margin expansion structurally constrained — the export channel is where VIL has real pricing autonomy.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 3 — VERTICAL STORIES
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch3-title">
+<div class="ch-header amber">
+  <div class="ch-num" aria-hidden="true">3</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">SEGMENT BY SEGMENT</div>
+    <div class="ch-title" id="ch3-title">Vertical stories — three engines, three different risk profiles</div>
+  </div>
+</div>
+
+<div class="vertical-grid" role="list">
+  <div class="vcard coral" role="listitem">
+    <div class="vcard-icon" aria-hidden="true">🍦</div>
+    <div class="vcard-name">Domestic Ice Cream (via VEL)</div>
+    <div class="vcard-body">
+      India ice cream market growing at 15% CAGR. Quick commerce converting seasonal buyers to year-round. Vadilal launched premium Gourmet Naturals, Gourmet, Badabite and Flingo lines in FY25, targeting the fast-growing artisanal segment (18.5% CAGR). Impulse ice cream still dominates at 60% of market volume. North India is the largest regional market at 35% share.
+      <br><br>
+      External catalyst: India's extended summer seasons (2024 and 2025 both saw above-normal temperatures) drove exceptional Q1 and Q4 demand. Quick commerce penetration adding incremental year-round volume.
+    </div>
+    <div class="vcard-status"><span class="tag tag-green">Running · Ramping Premium</span></div>
+  </div>
+  <div class="vcard teal" role="listitem">
+    <div class="vcard-icon" aria-hidden="true">🇺🇸</div>
+    <div class="vcard-name">USA Export and Local Manufacturing</div>
+    <div class="vcard-body">
+      Indian diaspora in the US exceeds 4.5 million. Vadilal USA (NJ) has built a cold-chain network reaching virtually every South Asian retail outlet nationally. US ice cream market is approximately USD 15 billion — the mainstream channel remains largely untapped. September 2025 announcement of local US manufacturing changes the thesis from "diaspora exporter" to "local-for-local brand." Local production reduces import duties, transport costs, and enables mainstream retail listings.
+      <br><br>
+      External catalyst: Growing Indian diaspora purchasing power and premium frozen food category growth in US mainstream channels.
+    </div>
+    <div class="vcard-status"><span class="tag tag-amber">Export Running · Local Mfg Announced</span></div>
+  </div>
+  <div class="vcard blue" role="listitem">
+    <div class="vcard-icon" aria-hidden="true">❄</div>
+    <div class="vcard-name">Processed Foods Export (Frozen Veg, RTE)</div>
+    <div class="vcard-body">
+      Frozen vegetables, canned fruit pulp, ready-to-eat curries and breads exported primarily to the USA, UAE, and Gulf. Also distributes to Australia via Vadilal Industries Pty Ltd (2018) and Middle East via Vadilal Gulf FZE (2018). This business provides some revenue counter-seasonality to the domestic ice cream cycle — export orders run year-round. Historically variable margin business: made losses in FY2016–17; recovered post-FY22. Bureau Veritas global food safety certification (2013) enables access to institutional buyers.
+      <br><br>
+      External catalyst: India's processed food export opportunity; Gulf and UK diaspora markets expanding.
+    </div>
+    <div class="vcard-status"><span class="tag tag-coral">Running · Margin Variable</span></div>
+  </div>
+</div>
+
+<div class="takeaway-pill tp-amber">
+  The US manufacturing pivot announced in September 2025 is the highest-optionality catalyst — if local production scales into mainstream US retail, it re-rates the export margin narrative entirely.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 4 — THE STRATEGIC INSIGHT
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch4-title">
+<div class="ch-header green">
+  <div class="ch-num" aria-hidden="true">4</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">THE ONE THING TO UNDERSTAND</div>
+    <div class="ch-title" id="ch4-title">The strategic insight — the brand recapitalisation hiding in the restructuring headlines</div>
+  </div>
+</div>
+
+<div class="insight-box" role="note" aria-label="Core strategic insight">
+  <div class="ib-label" aria-hidden="true">⚡ NON-OBVIOUS INSIGHT</div>
+  <p>Vadilal Industries Limited built one of India's most recognised ice cream brands over 118 years — and for most of that time, did not own the trademark. <strong>The "Vadilal" brand was licensed non-exclusively from a promoter-held entity, Vadilal International Private Limited.</strong> This means every scoop manufactured, every distributor relationship built, and every dollar of brand equity created went into a trademark that sat outside the listed company's balance sheet. Shareholders of VADILALIND owned the manufacturing business, the export subsidiary, the plants — but not the name on the box.</p>
+</div>
+
+<p><span class="hl-key">The March 2025 family settlement, which includes a scheme to merge Vadilal International Private Limited into Vadilal Industries, is not merely a governance cleanup — it is a brand recapitalization event.</span> Once the scheme receives NCLT and shareholder approval, the Vadilal trademark will reside inside the listed entity for the first time in the company's modern history. This changes the terminal value mathematics for investors. A brand that was previously a licensed input cost becomes a company-owned asset that appreciates with every year of distribution expansion, marketing investment, and consumer loyalty building.</p>
+
+<p>The secondary insight is structural: VIL's reported P&amp;L is a manufacturing P&amp;L, not a consumer brand P&amp;L. The full economics of the Vadilal brand — including the retail front end, the distribution margin, and the consumer relationship — are split across two listed entities: VIL (manufacturer) and VEL (distributor-marketer). An investor reading only VIL's results is seeing a partial picture. The unresolved question — and the most important one in the restructuring — is whether VEL will eventually merge into VIL, completing the vertical integration. The March 2025 settlement conspicuously excluded VEL from the merger scheme. Understanding why this choice was made is essential to understanding the long-term structure of the investment.</p>
+
+<div class="takeaway-pill tp-green">
+  VIL manufactured India's Number 2 ice cream brand for 118 years without owning the trademark; the March 2025 restructuring begins the process of correcting this — and changes the terminal value calculus for long-term shareholders.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 5 — THE NUMBERS IN CONTEXT
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch5-title">
+<div class="ch-header navy">
+  <div class="ch-num" aria-hidden="true">5</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">FINANCIAL SCORECARD</div>
+    <div class="ch-title" id="ch5-title">The numbers in context — quality is there; seasonality is the caveat</div>
+  </div>
+</div>
+
+<!-- Key stat cards -->
+<div class="stat-grid" role="region" aria-label="Key financial metrics">
+  <div class="stat-card">
+    <div class="stat-label">FY26 Revenue</div>
+    <div class="stat-val">₹1,501 Cr</div>
+    <div class="stat-sub stat-up">+21.2% YoY from ₹1,238 Cr</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">FY26 Net Profit</div>
+    <div class="stat-val">₹155 Cr</div>
+    <div class="stat-sub stat-up">+3.3% YoY from ₹150 Cr</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">ROCE</div>
+    <div class="stat-val">25.1%</div>
+    <div class="stat-sub stat-down">FY24: 34.1% → FY25: 30% (moderating)</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Debt-to-Equity</div>
+    <div class="stat-val">0.24x</div>
+    <div class="stat-sub stat-up">Near-debt-free; interest coverage 22.5x</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">Market Cap</div>
+    <div class="stat-val">₹3,367 Cr</div>
+    <div class="stat-sub">Stock at ₹4,681; 52W: ₹3,990–₹7,399</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-label">P/E (FY26)</div>
+    <div class="stat-val">21.7x</div>
+    <div class="stat-sub">Screener shows 27.6x on TTM; FY26 EPS ~₹216</div>
+  </div>
+</div>
+
+<h3>Five-year financial trajectory (Consolidated)</h3>
+<table class="data-table" role="table" aria-label="Five year consolidated financial performance">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Revenue (Cr)</th>
+      <th>EBITDA Margin</th>
+      <th>Net Profit (Cr)</th>
+      <th>ROE</th>
+      <th>Story</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>FY22</td><td>₹698</td><td>14%</td><td>₹45</td><td>~8%</td><td>Post-COVID recovery; promoter disputes active</td></tr>
+    <tr><td>FY23</td><td>₹1,058</td><td>16%</td><td>₹96</td><td>~19%</td><td>Revenue surge; margin improving; NCLT hearing</td></tr>
+    <tr><td>FY24</td><td>₹1,125</td><td>20%</td><td>₹146</td><td>27%</td><td>Peak cycle year; high ROCE 34.1%; best margins</td></tr>
+    <tr><td>FY25</td><td>₹1,238</td><td>19%</td><td>₹150</td><td>24%</td><td>Governance settlement signed; WC days rising</td></tr>
+    <tr><td>FY26</td><td>₹1,501</td><td>~19%</td><td>₹155</td><td>~24%</td><td>Revenue re-accelerates; Q4 summer surge +149% PAT</td></tr>
+  </tbody>
+</table>
+
+<p>The trajectory reveals two important patterns. First, <span class="hl-number">the 3-year revenue CAGR stands at 21% and the 3-year profit CAGR at 49% per Screener data</span> — strong compounding that contradicts the stock's 21% decline over the past year. Second, the FY24 peak margins (20% EBITDA, 34% ROCE) have slightly moderated, which is expected as working capital expanded with growth. The key quality signal is that the business has maintained ROCE above 25% even as it doubled revenue from FY22 to FY26.</p>
+
+<h3>Quarterly seasonality pattern — the 43% problem</h3>
+<table class="data-table" role="table" aria-label="FY26 quarterly results showing seasonal variation">
+  <thead>
+    <tr>
+      <th class="navy">Quarter</th>
+      <th class="navy">Revenue</th>
+      <th class="navy">EBITDA Margin</th>
+      <th class="navy">Net Profit</th>
+      <th class="navy">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Q1 FY26</strong> (Apr–Jun)</td><td>₹505.91 Cr</td><td>19.7%</td><td>₹66.98 Cr</td><td>Peak summer; 43% of full-year profit</td></tr>
+    <tr><td><strong>Q2 FY26</strong> (Jul–Sep)</td><td>₹341.30 Cr</td><td>15.0%</td><td>₹33.42 Cr</td><td>Post-monsoon; still decent margin</td></tr>
+    <tr><td><strong>Q3 FY26</strong> (Oct–Dec)</td><td>₹238.02 Cr</td><td>4.5%</td><td>-₹0.15 Cr</td><td>Winter: near-breakeven; fixed costs dominate</td></tr>
+    <tr><td><strong>Q4 FY26</strong> (Jan–Mar)</td><td>~₹416 Cr</td><td>~20.4%</td><td>₹54.86 Cr</td><td>Early summer surge; +149% YoY PAT</td></tr>
+  </tbody>
+</table>
+
+<p><span class="hl-risk">The Q3 near-zero profitability is a structural feature, not an anomaly — the company has negative operating leverage in the winter quarter because fixed manufacturing costs (depreciation ₹11.76 Cr/quarter, employee costs, facility overheads) continue regardless of whether consumers buy ice cream.</span> Management has not provided a stated mechanism for improving winter quarter margins — an important gap in the narrative.</p>
+
+<h3>Valuation context — why the discount exists</h3>
+<table class="data-table" role="table" aria-label="Peer valuation comparison">
+  <thead>
+    <tr>
+      <th class="coral">Company</th>
+      <th class="coral">P/E</th>
+      <th class="coral">Market Cap</th>
+      <th class="coral">ROCE</th>
+      <th class="coral">Note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Vadilal Industries (VADILALIND)</strong></td><td>21–27x</td><td>₹3,367 Cr</td><td>25.1%</td><td>Governance discount + VEL dependency</td></tr>
+    <tr><td>Hatsun Agro Product (HATSUN)</td><td>70–71x</td><td>₹19,744 Cr</td><td>Moderate</td><td>Dairy + ice cream compounder premium</td></tr>
+    <tr><td>Heritage Foods (HERITGFOOD)</td><td>~20x</td><td>₹3,750 Cr</td><td>~16%</td><td>Dairy-focused; lower growth</td></tr>
+    <tr><td>FMCG Food Peer Average</td><td>~36x</td><td>—</td><td>—</td><td>Per simplywall.st comparison</td></tr>
+  </tbody>
+</table>
+
+<p>The market is pricing Vadilal at a material discount to its food FMCG peers (21x vs 36x peer average, vs 71x for Hatsun). This discount reflects three legitimate concerns: extreme seasonality (single-quarter concentration), the unresolved VEL channel dependency, and the governance transition that is still in progress. A re-rating to the mid-30x range (not requesting parity with Hatsun) would imply a stock price in the ₹7,500–₹8,000 range — roughly a 60–70% premium to current levels. That re-rating requires the brand ownership transfer to complete and Q1 FY27 to demonstrate continued volume momentum.</p>
+
+<!-- CAPEX TIMELINE SUB-SECTION -->
+<h3>Capex timeline card</h3>
+<div class="timeline-card" role="region" aria-label="Capital expenditure timeline">
+  <div class="timeline-header">Capex Timeline · FY23–FY26 History and Forward Plans</div>
+  <div class="timeline-row" style="background: rgba(0,0,0,0.03);">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-label">Year</div></div>
+    <div class="timeline-cell"><div class="tc-label">Capex Spend</div></div>
+    <div class="timeline-cell"><div class="tc-label">As % Revenue</div></div>
+    <div class="timeline-cell"><div class="tc-label">Project / Milestone</div></div>
+    <div class="timeline-cell"><div class="tc-label">Depreciation</div></div>
+    <div class="timeline-cell"><div class="tc-label">Status</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-val">FY23</div></div>
+    <div class="timeline-cell"><div class="tc-val">~₹45 Cr</div><div class="tc-sub">Estimated</div></div>
+    <div class="timeline-cell"><div class="tc-val">~4.3%</div></div>
+    <div class="timeline-cell"><div class="tc-val">Capacity maintenance + US warehouse infrastructure</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹30 Cr</div></div>
+    <div class="timeline-cell"><div class="status-ok">DELIVERED</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-val">FY24</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹66 Cr</div></div>
+    <div class="timeline-cell"><div class="tc-val">5.9%</div></div>
+    <div class="timeline-cell"><div class="tc-val">Expansion cycle; plant upgrades; US distribution expansion</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹35 Cr</div></div>
+    <div class="timeline-cell"><div class="status-ok">DELIVERED</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-val">FY25</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹29 Cr</div></div>
+    <div class="timeline-cell"><div class="tc-val">2.4%</div></div>
+    <div class="timeline-cell"><div class="tc-val">Harvest phase; governance transition absorbing bandwidth</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹42 Cr</div></div>
+    <div class="timeline-cell"><div class="status-ok">DELIVERED</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-val">FY26</div></div>
+    <div class="timeline-cell"><div class="tc-val">~₹35 Cr est.</div><div class="tc-sub">No hard guidance</div></div>
+    <div class="timeline-cell"><div class="tc-val">~2.3%</div></div>
+    <div class="timeline-cell"><div class="tc-val">Maintenance + US manufacturing feasibility. Depreciation TTM ₹46 Cr suggests mild asset addition</div></div>
+    <div class="timeline-cell"><div class="tc-val">₹46 Cr</div></div>
+    <div class="timeline-cell"><div class="status-warn">IN PROGRESS</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8"><div class="tc-val">FY27E</div></div>
+    <div class="timeline-cell"><div class="tc-val">TBD</div><div class="tc-sub">No quantum disclosed</div></div>
+    <div class="timeline-cell"><div class="tc-val">Unknown</div></div>
+    <div class="timeline-cell"><div class="tc-val">US local manufacturing capex (announced Sep 2025 — no budget given); domestic capacity if summer volume grows</div></div>
+    <div class="timeline-cell"><div class="tc-val">~₹50+ Cr</div></div>
+    <div class="timeline-cell"><div class="status-warn">ANNOUNCED, UNQUANTIFIED</div></div>
+  </div>
+</div>
+
+<p style="font-size:12.5px; color:var(--muted); font-style:italic; margin-top: 4px;">The domestic India business is in a harvest phase (capex below depreciation in FY25). The US manufacturing announcement is the next capex decision — management has not disclosed budget, timeline, or expected capacity, which is a red flag worth tracking per Ledger framework. The CFO/Capex ratio remains healthy: FY25 CFO ₹77.7 Cr vs capex ₹29 Cr = 2.7x coverage.</p>
+
+<div class="takeaway-pill tp-navy">
+  FY26 revenue growth of 21% has not yet translated to profit growth (only 3% PAT increase) — the operating leverage thesis is seasonal, not structural; ROCE at 25% validates capital efficiency even if margin headlines disappoint.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 6 — RISKS
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch6-title">
+<div class="ch-header red">
+  <div class="ch-num" aria-hidden="true">6</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">EYES OPEN</div>
+    <div class="ch-title" id="ch6-title">Risks — five specific risks that could break the thesis</div>
+  </div>
+</div>
+
+<div class="risk-grid" role="list">
+  <div class="risk-card high" role="listitem">
+    <div class="risk-name"><span aria-hidden="true">⚠</span> VEL CHANNEL CONCENTRATION</div>
+    <div class="risk-body">Vadilal Enterprises, VIL's sole domestic ice cream channel, carries a D/E ratio of 84% and interest coverage barely 3x. If VEL faces financial stress — from competitive pressure, working capital tightening, or the broader consumer credit cycle — VIL's domestic revenue flow is directly at risk. VEL's Q4 FY26 net loss of ₹4.22 Cr despite peak-season revenue is a warning signal the market is not fully pricing.</div>
+    <div class="risk-signal">Signal: Monitor VEL quarterly results alongside VIL — if VEL's interest coverage drops below 2x or its debtor days expand sharply, raise the risk to critical.</div>
+  </div>
+  <div class="risk-card high" role="listitem">
+    <div class="risk-name"><span aria-hidden="true">⚠</span> EXTREME SEASONALITY CONCENTRATION</div>
+    <div class="risk-body">Q1 (April–June) drives approximately 43% of annual net profit. A single poor summer — whether due to an unusual monsoon pattern compressing the April–May window, or demand disruption from an exogenous event — can devastate the full-year P&amp;L. Q3 FY26 showed what a weak season looks like: near-zero profit despite ₹238 Cr of revenue. There is no stated management mechanism for improving this concentration.</div>
+    <div class="risk-signal">Signal: Weather forecasts for April–June 2027, and early Q1 FY27 revenue trajectory. A single bad week of early monsoon onset is a material financial event.</div>
+  </div>
+  <div class="risk-card med" role="listitem">
+    <div class="risk-name"><span aria-hidden="true">⚠</span> GOVERNANCE TRANSITION RISK</div>
+    <div class="risk-body">The March 2025 family settlement is a framework, not a completed transaction. The merger scheme (Vadilal International + Vadilal Finance Company + Veronica Constructions into VIL) requires NCLT approval and shareholder vote. The promoter dispute, while formally settled, involved multi-year NCLT litigation — there is no guarantee it won't resurface. New independent management (Chairman Shivakumar Dega, appointed June 2025) needs to demonstrate operational and strategic credibility over multiple quarters.</div>
+    <div class="risk-signal">Signal: Any exchange filing showing new legal complaints by Gandhi family members, or delay in scheme filing with NCLT beyond Q2 FY27.</div>
+  </div>
+  <div class="risk-card med" role="listitem">
+    <div class="risk-name"><span aria-hidden="true">⚠</span> US MANUFACTURING EXECUTION RISK</div>
+    <div class="risk-body">The September 2025 announcement of US local ice cream manufacturing is strategically sound but operationally complex. It involves capital expenditure (quantum undisclosed), FDA manufacturing compliance, US cold chain logistics, and US labour cost management. The existing US business imports from India — a fundamentally different operating model than local manufacturing. If the US manufacturing ramp takes 2–3 years longer than planned or fails to achieve utilisation, it creates a drag on the consolidated P&amp;L.</div>
+    <div class="risk-signal">Signal: First Vadilal USA capex announcement (quantum and timeline); any FDA warning letters to the US entity during the transition.</div>
+  </div>
+  <div class="risk-card med" role="listitem">
+    <div class="risk-name"><span aria-hidden="true">⚠</span> WORKING CAPITAL CREEP</div>
+    <div class="risk-body">Working capital days have increased from 52.6 to 78.3 days — a 25-day deterioration that implies approximately ₹100 Cr of additional capital tied up in the business. The FY25 CFO fell from ₹192 Cr in FY24 to ₹77.7 Cr as working capital absorbed cash generation. If this trend continues — more inventory held, longer receivable cycles from VEL — free cash flow deteriorates even as headline profits grow.</div>
+    <div class="risk-signal">Signal: Quarterly cash conversion cycle data on Screener. Greater than 90 days NWC = structural stress; below 70 days = resolution signal.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill tp-red">
+  VEL's financial health is the single most undermonitored risk in the VADILALIND investment thesis — a related-party distributor with an 84% debt-to-equity ratio that controls the entire domestic channel.
+</div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPTER 7 — WATCH SIGNALS
+═══════════════════════════════════════════════════════════════ -->
+<section aria-labelledby="ch7-title">
+<div class="ch-header purple">
+  <div class="ch-num" aria-hidden="true">7</div>
+  <div class="ch-meta">
+    <div class="ch-eyebrow">QUARTERLY TRACKING</div>
+    <div class="ch-title" id="ch7-title">Watch signals — five metrics to check in five minutes</div>
+  </div>
+</div>
+
+<div class="watch-grid" role="list">
+  <div class="watch-card" role="listitem">
+    <div class="watch-metric">1 · Q1 FY27 Revenue (July 2026 results)</div>
+    <div class="watch-body">Q1 FY26 was ₹505.91 Cr. Summer momentum must continue to justify the growth narrative. This is the single most important quarterly data point for VIL.</div>
+    <div class="signal-row">
+      <span class="sig sig-green">GREEN: &gt;₹530 Cr — summer acceleration</span>
+      <span class="sig sig-red">RED: &lt;₹480 Cr — demand compression</span>
+    </div>
+  </div>
+  <div class="watch-card" role="listitem">
+    <div class="watch-metric">2 · Merger Scheme Progress (NCLT/Shareholders)</div>
+    <div class="watch-body">Brand ownership transfer (merger of Vadilal International into VIL) requires NCLT filing and shareholder approval. Timeline tracking is critical for re-rating catalyst.</div>
+    <div class="signal-row">
+      <span class="sig sig-green">GREEN: NCLT file confirmed by Q2 FY27</span>
+      <span class="sig sig-red">RED: No filing by end of FY27 — dispute risk</span>
+    </div>
+  </div>
+  <div class="watch-card" role="listitem">
+    <div class="watch-metric">3 · VEL Financial Health (Quarterly)</div>
+    <div class="watch-body">Monitor Vadilal Enterprises quarterly results alongside VIL. VEL's interest coverage and debt trajectory are proxies for VIL's domestic channel stability.</div>
+    <div class="signal-row">
+      <span class="sig sig-green">GREEN: VEL annual profit &gt;₹15 Cr</span>
+      <span class="sig sig-red">RED: VEL interest coverage below 2x</span>
+    </div>
+  </div>
+  <div class="watch-card" role="listitem">
+    <div class="watch-metric">4 · Working Capital Days (NWC)</div>
+    <div class="watch-body">Currently 78.3 days vs 52.6 days previously. Trending higher means cash generation is degrading even as profits grow — a stealth deterioration in capital efficiency.</div>
+    <div class="signal-row">
+      <span class="sig sig-green">GREEN: NWC days below 70</span>
+      <span class="sig sig-red">RED: NWC days above 90 for 2+ quarters</span>
+    </div>
+  </div>
+  <div class="watch-card" role="listitem">
+    <div class="watch-metric">5 · Q3 FY27 EBITDA Margin (Winter Quarter)</div>
+    <div class="watch-body">If the winter floor improves through better export mix or year-round demand from quick commerce, it signals structural improvement. Sustained near-zero margins in Q3 = seasonality is immovable.</div>
+    <div class="signal-row">
+      <span class="sig sig-green">GREEN: Q3 OPM above 8%</span>
+      <span class="sig sig-red">RED: Q3 OPM below 5% again — no structural change</span>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill tp-purple">
+  The July 2026 Q1 FY27 result and the NCLT merger scheme filing are the two binary signals that will define the next 12-month narrative for VADILALIND.
+</div>
+</section>
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+<div class="verdict-box" role="note" aria-label="Investment verdict">
+  <div class="verdict-label">vl · VERDICT — JUNE 2026</div>
+  <p id="verdict-title">Vadilal Industries sits at a genuine inflection point where three structural de-risking events are converging: the March 2025 brand ownership transfer (pending NCLT completion), the September 2025 US local manufacturing announcement, and the June 2025 governance professionalisation through an independent chairman. The underlying business is demonstrably high quality — <span class="hl-number">ROCE at 25.1%, D/E at 0.24x, interest coverage at 22.5x</span>, and a 5-year profit CAGR of 29%. It operates in India's fastest-growing consumer category (15% CAGR ice cream market) with structural tailwinds from quick commerce and premiumisation. <span class="hl-key">The valuation discount to FMCG peers — 21x P/E versus a peer average of 36x — reflects genuine risks (VEL dependency, extreme seasonality, governance transition) rather than fundamental weakness in the business.</span> The story is mid-chapter: the operational quality is already there; the market is waiting for structural de-risking to confirm. If the merger scheme completes in FY27 and Q1 FY27 summer momentum holds above ₹530 Cr revenue, the multiple re-rating case becomes compelling. If VEL's financial health deteriorates or the NCLT process stalls, the discount is justified. Watch the five signals defined above — they will tell you which chapter you are actually in before the market prices it.</p>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     HIGHLIGHT INDEX — always expanded, printer friendly
+═══════════════════════════════════════════════════════════════ -->
+<div class="highlight-index-wrapper" role="complementary" aria-label="All highlights at a glance">
+  <div class="hi-header">
+    <span aria-hidden="true">📌</span> All Highlights at a Glance — Auto-assembled from document
+  </div>
+  <div id="highlight-index">
+    <ol aria-label="Document highlights in order of appearance">
+      <!-- JS auto-populates -->
+    </ol>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ═══════════════════════════════════════════════════════════
+     THE LEDGER — VADILALIND
+═══════════════════════════════════════════════════════════════ -->
+<div class="ledger-masthead" role="complementary" aria-label="The Ledger management credibility analysis">
+  <div class="ledger-eyebrow">THE LEDGER v0.2 · MANAGEMENT CREDIBILITY AUDIT · COMPANION TO NSE INVESTOR BRIEF</div>
+  <h2>The Ledger: VADILALIND</h2>
+  <div class="lm-sub">Management promises, tone and execution tracked across six pillars — Vadilal Industries · FY25–FY26 calibration · June 2026</div>
+  <div class="ledger-chips">
+    <span class="chip">VADILAL INDUSTRIES LTD</span>
+    <span class="chip">CALIBRATION RUN: FY25–FY26</span>
+    <span class="chip">SOURCE: EXCHANGE FILINGS + NEWS DISCLOSURES</span>
+    <span class="chip hot">NOTE: NO PUBLIC CONCALL TRANSCRIPTS FOUND FOR FY26</span>
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- CREDIBILITY TIER -->
+<div class="l-sec">
+  <div class="l-sec-num">00</div>
+  <div>
+    <div class="l-sec-eyebrow">COMPOSITE VERDICT</div>
+    <div class="l-sec-title">Overall credibility tier and active flags</div>
+  </div>
+</div>
+
+<div class="cred-tier" role="note" aria-label="Credibility tier B plus, Mostly Credible with caveats">
+  <div class="cred-grade" aria-label="Grade B plus">B+</div>
+  <div class="cred-body">
+    <div class="cred-name">MOSTLY CREDIBLE — STRUCTURAL CAVEATS</div>
+    <div class="cred-desc">Strong capital structure integrity. Governance settlement delivered as announced. Active flags in guidance specificity and US manufacturing timeline. No concall transcripts available for FY26 — limits tone analysis significantly. No stealth dilution, no debt-free mirage, no promoter pledge risk detected.</div>
+  </div>
+</div>
+
+<div class="lead">
+  <strong>Ledger calibration note:</strong> Vadilal Industries has not hosted public concall Q&amp;A sessions that are accessible via standard transcript repositories for FY26. This limits the Tone Decoder and Q&amp;A Quality dimensions to exchange filings and press disclosures only. The capital structure, capex, and promise register pillars are calibrated from BSE/NSE filings and third-party analysis. The Credibility Tier is <strong>B+</strong> rather than A because of this transparency gap — not because of detected deception.
+</div>
+
+<!-- CHAIN STATUS -->
+<div class="l-sec teal">
+  <div class="l-sec-num">01</div>
+  <div>
+    <div class="l-sec-eyebrow">CHAIN INTEGRITY CHECK</div>
+    <div class="l-sec-title">The capex-to-cash-flow chain — where VADILALIND stands</div>
+  </div>
+</div>
+
+<div class="chain-flow" role="img" aria-label="Business chain showing capex deployed through capacity, utilisation, margin expansion, cash flow, debt reduction to new cycle with status indicators">
+  <div class="chain-node cn-ok"><div class="chain-label">Capex Deployed</div><div class="chain-status">✓ DELIVERED</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">FY24 ₹66Cr; FY25 ₹29Cr; harvest mode</div></div>
+  <div class="chain-node cn-ok"><div class="chain-label">Capacity Created</div><div class="chain-status">✓ ADEQUATE</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">Two plants operational; no capacity crunch reported</div></div>
+  <div class="chain-node cn-ok"><div class="chain-label">Utilisation Ramp</div><div class="chain-status">✓ SEASONAL</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">Q1 and Q4 high; Q3 near-zero — normal for ice cream</div></div>
+  <div class="chain-node cn-warn"><div class="chain-label">Margin Expansion</div><div class="chain-status">⚠ PARTIAL</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">FY24 20% → FY25 19% → FY26 ~19%; slightly compressing</div></div>
+  <div class="chain-node cn-warn"><div class="chain-label">Cash Flow</div><div class="chain-status">⚠ DECLINING</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">CFO FY24 ₹192Cr → FY25 ₹77.7Cr; WC absorbing</div></div>
+  <div class="chain-node cn-ok"><div class="chain-label">Debt Reduces</div><div class="chain-status">✓ CLEAN</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">D/E 0.24x; interest coverage 22.5x; debt reducing</div></div>
+  <div class="chain-node cn-na"><div class="chain-label">New Cycle Begins</div><div class="chain-status">— PENDING</div><div style="font-size:10px;color:var(--muted);margin-top:3px;">US manufacturing is next cycle; no capex quantum yet</div></div>
+</div>
+
+<p style="font-size:12.5px; color:var(--muted); font-style:italic;">The chain is largely intact. The only active concerns are Links 4 and 5: margins have slightly compressed from the FY24 peak, and CFO has declined sharply due to working capital expansion. The debt link (6) is exceptionally clean. The chain break risk is Link 2→3 (the US manufacturing capacity will need to ramp utilisation quickly to justify the capex, and there is no timeline disclosed yet).</p>
+
+<!-- PROMISE REGISTER -->
+<div class="l-sec coral">
+  <div class="l-sec-num">02</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 1 — PROMISE REGISTER</div>
+    <div class="l-sec-title">Promises made — extracted from filings, press releases and announcements</div>
+  </div>
+</div>
+
+<div class="lead coral">
+  Vadilal's promise register for FY25–FY26 is drawn from BSE exchange filings, corporate announcement disclosures, and news coverage since no public concall transcripts are available. The limited forward guidance is itself a data point — companies under governance restructuring tend to reduce specificity of guidance, which is consistent with Vadilal's communication pattern during this period.
+</div>
+
+<p><strong>Promise 1 — Family settlement and governance restructuring</strong></p>
+<div class="promise-row">
+  <div class="pr-quarter">Mar 2025<br><span style="font-size:10px; color:var(--muted);">Board filing</span></div>
+  <div class="pr-promise">Three branches of the Gandhi family will resolve disputes, withdraw all complaints, maintain equal interests, and transition management to independent professionals. Board reconstitution to include independent chairman.</div>
+  <div class="pr-status"><span class="tag tag-green">DELIVERED</span></div>
+</div>
+<p><strong>Promise 2 — Brand ownership merger scheme</strong></p>
+<div class="promise-row">
+  <div class="pr-quarter">Mar 2025<br><span style="font-size:10px; color:var(--muted);">Corporate announcement</span></div>
+  <div class="pr-promise">Vadilal International, Vadilal Finance Company, and Veronica Constructions to be merged into VIL. This will transfer "Vadilal" brand ownership into the listed company. Timeline: subject to shareholder and regulatory approvals.</div>
+  <div class="pr-status"><span class="tag tag-amber">ON TRACK — PENDING</span></div>
+</div>
+<p><strong>Promise 3 — Dividend recommendation FY26</strong></p>
+<div class="promise-row">
+  <div class="pr-quarter">May 2026<br><span style="font-size:10px; color:var(--muted);">Board meeting</span></div>
+  <div class="pr-promise">Board recommended ₹43 per share dividend for FY26 on 71,87,830 equity shares, subject to shareholder approval at the upcoming AGM.</div>
+  <div class="pr-status"><span class="tag tag-green">DELIVERED</span></div>
+</div>
+<p><strong>Promise 4 — US local manufacturing</strong></p>
+<div class="promise-row">
+  <div class="pr-quarter">Sep 2025<br><span style="font-size:10px; color:var(--muted);">Media disclosure</span></div>
+  <div class="pr-promise">Vadilal Industries announced plans to begin manufacturing ice cream within its US subsidiary. No timeline, no capex quantum, no capacity target disclosed. "Reducing import dependency and expanding availability" cited as rationale.</div>
+  <div class="pr-status"><span class="tag tag-amber">WATCH — NO TIMELINE</span></div>
+</div>
+
+<!-- TONE DECODER -->
+<div class="l-sec">
+  <div class="l-sec-num">03</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 2 — TONE DECODER</div>
+    <div class="l-sec-title">Linguistic patterns — limited data, key observations</div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div>
+    <p><strong>What is observable from filings:</strong></p>
+    <ul class="prose-list" role="list">
+      <li>Exchange filings are compliance-centric and procedural — no forward guidance language in standard disclosures.</li>
+      <li>The governance settlement language is precise and specific: "equal interest of each of the three families," "withdraw all complaints" — high specificity, clear commitments.</li>
+      <li>The US manufacturing announcement uses classic aspirational language: "plans to start manufacturing" with no metrics attached — consistent with an exploratory stage decision, not a committed investment.</li>
+      <li>FY26 results announcement (May 27, 2026): Board approved results and dividend. No investor-facing forward commentary found in public domain.</li>
+    </ul>
+  </div>
+  <div>
+    <p><strong>Tone risk flags:</strong></p>
+    <ul class="prose-list" role="list">
+      <li>The <strong>absence</strong> of forward guidance for FY27 revenue or margin targets is notable — most FMCG peers provide direction. This may reflect management transition caution, or deliberate opacity.</li>
+      <li>Qualifier Creep Watch: US manufacturing has now been "in plans" for approximately 9 months with no concrete update — this needs one more quarter before triggering the formal Qualifier Creep flag.</li>
+      <li>Positive signal: The governance settlement language is unusually precise for an Indian family business dispute resolution — both the specific obligations (Janmajay Gandhi as Executive Director, equal branch interests) and the corporate actions (board reconstitution) have been delivered on schedule.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- CAPEX TIMELINE TRACKER (LEDGER VIEW) -->
+<div class="l-sec teal">
+  <div class="l-sec-num">04</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 4 — CAPEX TIMELINE TRACKER</div>
+    <div class="l-sec-title">Project-level capex status — what was announced vs what was delivered</div>
+  </div>
+</div>
+
+<p>The only formally announced new capex project is the US manufacturing initiative (September 2025). Domestic capex in FY25–FY26 appears to be maintenance and incremental — no specific domestic expansion project has been announced to the market.</p>
+
+<h3>Active capex flags</h3>
+<div class="lf-grid" role="list">
+  <div class="lf-card watch" role="listitem">
+    <div class="lf-name"><span class="tag tag-amber">WATCH</span> US MANUFACTURING — NO TIMELINE</div>
+    <div class="lf-body">Announced September 2025. No capex budget disclosed. No completion timeline given. No capacity target stated. The announcement stated "plans to start manufacturing" — aspirational language without commitment.</div>
+    <div class="lf-evidence">9 months since announcement. If Q2 FY27 results (Oct 2026) have no update, this becomes a formal Qualifier Creep flag.</div>
+  </div>
+  <div class="lf-card clear" role="listitem">
+    <div class="lf-name"><span class="tag tag-green">CLEAR</span> DOMESTIC CAPEX PACING</div>
+    <div class="lf-body">No overcommitment on domestic capacity. FY25 capex of ₹29 Cr is well within CFO generation. No dark capex detected — depreciation of ₹42 Cr vs capex ₹29 Cr suggests slight asset base decline, consistent with harvest phase.</div>
+    <div class="lf-evidence">CFO/Capex ratio FY25: 2.7x — healthy. No budget inflation patterns. No completion drift (because nothing specific has been promised).</div>
+  </div>
+</div>
+
+<!-- MARGIN TRACKER -->
+<div class="l-sec green">
+  <div class="l-sec-num">05</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 5 — MARGIN EXPANSION TRACKER</div>
+    <div class="l-sec-title">Is the margin mechanism actually working?</div>
+  </div>
+</div>
+
+<div class="lead green">
+  Vadilal has not explicitly articulated a margin expansion mechanism in accessible public communications during FY25–FY26. The most observable margin story is the seasonal pattern — not a stated improvement pathway. This is the Ledger's key gap: without a stated mechanism, we can only compare actual margins to the range implied by management's general optimism.
+</div>
+
+<table class="qtable" role="table" aria-label="Quarterly margin tracking">
+  <thead>
+    <tr>
+      <th>Quarter</th>
+      <th>Revenue</th>
+      <th>EBITDA Margin</th>
+      <th>Gross Margin (est.)</th>
+      <th>Mechanism Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Q1 FY25 (Jun 2024)</td><td>₹464 Cr</td><td>24.4%</td><td>~30%+</td><td>Peak season operating leverage working as expected</td></tr>
+    <tr><td>Q2 FY25 (Sep 2024)</td><td>₹296 Cr</td><td>20.5%</td><td>~26%</td><td>Post-monsoon; healthy</td></tr>
+    <tr><td>Q3 FY25 (Dec 2024)</td><td>₹204 Cr</td><td>12.5%</td><td>~18%</td><td>Winter: higher than Q3 FY26 — was this FY26 an anomaly?</td></tr>
+    <tr><td>Q4 FY25 (Mar 2025)</td><td>₹274 Cr</td><td>14.1%</td><td>~20%</td><td>Early summer; margin recovery expected</td></tr>
+    <tr><td>Q1 FY26 (Jun 2025)</td><td>₹506 Cr</td><td>19.7%</td><td>~26%</td><td>Peak season — but margin lower than Q1 FY25 (24.4%)</td></tr>
+    <tr><td>Q2 FY26 (Sep 2025)</td><td>₹341 Cr</td><td>15.0%</td><td>~21%</td><td>Adequate; in line with prior year</td></tr>
+    <tr><td>Q3 FY26 (Dec 2025)</td><td>₹238 Cr</td><td>4.5%</td><td>~10%</td><td>Worse than Q3 FY25 (12.5%) — EMPLOYEE ABSORPTION suspected</td></tr>
+    <tr><td>Q4 FY26 (Mar 2026)</td><td>₹416 Cr</td><td>~20.4%</td><td>~27%</td><td>Strong summer recovery; +149% YoY PAT</td></tr>
+  </tbody>
+</table>
+
+<h3>Active margin flags</h3>
+<div class="lf-grid" role="list">
+  <div class="lf-card watch" role="listitem">
+    <div class="lf-name"><span class="tag tag-amber">WATCH</span> Q1 MARGIN DRIFT — PEAK COMPRESSION</div>
+    <div class="lf-body">Q1 FY26 EBITDA margin at 19.7% is lower than Q1 FY25 at 24.4% — despite higher revenue (₹506 Cr vs ₹464 Cr). Revenue grew 9% but EBITDA margin dropped 470 basis points. This is the opposite of operating leverage. One more quarter of this pattern would trigger the Mechanism Failure flag.</div>
+    <div class="lf-evidence">Revenue +9% YoY in Q1 FY26; EBITDA margin fell 470 bps YoY. Not one-time (no specific cost item cited). Track Q1 FY27.</div>
+  </div>
+  <div class="lf-card active-flag" role="listitem">
+    <div class="lf-name"><span class="tag tag-red">FLAG</span> Q3 FLOOR DETERIORATION</div>
+    <div class="lf-body">Q3 FY26 EBITDA margin at 4.5% is dramatically worse than Q3 FY25 at 12.5%. This is not seasonal normalcy — Q3 is always the weakest quarter, but the year-over-year deterioration is significant. The gap between gross margin (~10%) and EBITDA margin (~4.5%) in Q3 FY26 is consistent with Employee Absorption: fixed employee and overhead costs have grown, consuming the gross margin in low-revenue quarters.</div>
+    <div class="lf-evidence">Q3 FY26 OPM 4.5% vs Q3 FY25 12.5% — a 800 bps deterioration. No exceptional items cited. This flag is active.</div>
+  </div>
+</div>
+
+<!-- CAPITAL STRUCTURE TRACKER -->
+<div class="l-sec navy">
+  <div class="l-sec-num">06</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 6 — CAPITAL STRUCTURE TRACKER</div>
+    <div class="l-sec-title">Debt, dilution, and capital promises — the clean part of the ledger</div>
+  </div>
+</div>
+
+<table class="data-table" role="table" aria-label="Capital structure tracking">
+  <thead>
+    <tr>
+      <th class="navy">Dimension</th>
+      <th class="navy">FY24 Position</th>
+      <th class="navy">FY25 Position</th>
+      <th class="navy">Flag Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Gross Debt</strong></td>
+      <td>₹376 Mn long-term debt; D/E ~28%</td>
+      <td>₹429 Mn long-term; Total debt ₹155 Cr; D/E 23.5%</td>
+      <td><span class="tag tag-green">CLEAR — Debt declining from prior peak</span></td>
+    </tr>
+    <tr>
+      <td><strong>Working Capital</strong></td>
+      <td>NWC days ~52.6</td>
+      <td>NWC days ~78.3 (+25 days)</td>
+      <td><span class="tag tag-amber">WATCH — CCC expanding significantly</span></td>
+    </tr>
+    <tr>
+      <td><strong>Equity Dilution</strong></td>
+      <td>71,87,830 shares outstanding</td>
+      <td>71,87,830 shares unchanged; no equity raise</td>
+      <td><span class="tag tag-green">CLEAR — Zero dilution</span></td>
+    </tr>
+    <tr>
+      <td><strong>Capex Funding Source</strong></td>
+      <td>CFO ₹192 Cr vs capex ₹66 Cr — 2.9x cover</td>
+      <td>CFO ₹77.7 Cr vs capex ₹29 Cr — 2.7x cover</td>
+      <td><span class="tag tag-green">CLEAR — Internal accruals credible</span></td>
+    </tr>
+    <tr>
+      <td><strong>Interest Coverage</strong></td>
+      <td>~18x</td>
+      <td>22.5x (improving)</td>
+      <td><span class="tag tag-green">CLEAR — Exceptional coverage</span></td>
+    </tr>
+    <tr>
+      <td><strong>Promoter Pledge</strong></td>
+      <td>No significant pledge data flagged</td>
+      <td>No pledge red flags in exchange filings; promoter holding 64.7%</td>
+      <td><span class="tag tag-green">CLEAR — No pledge stress detected</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The capital structure story is Vadilal's strongest credibility signal. <span class="hl-catalyst">An interest coverage of 22.5x, zero equity dilution, and debt declining from its historical peak — despite a decade of governance turmoil — suggests the underlying manufacturing business has been capital-disciplined even when management was distracted by family litigation.</span> The only active watch point is the working capital day expansion, which needs to reverse before the CFO story becomes structurally concerning.</p>
+
+<div class="lf-grid" role="list">
+  <div class="lf-card watch" role="listitem">
+    <div class="lf-name"><span class="tag tag-amber">WATCH</span> WORKING CAPITAL MASKING RISK</div>
+    <div class="lf-body">NWC days expanding from 52.6 to 78.3 days is a structural concern. This 25-day expansion implies approximately ₹100 Cr of additional working capital absorbed. The CFO fell from ₹192 Cr to ₹77.7 Cr largely due to this factor. If it continues, the company may show profit growth while free cash flow stagnates or turns negative.</div>
+    <div class="lf-evidence">Trigger: NWC days above 90 for 2 consecutive quarters = upgrade to active Working Capital Masking flag.</div>
+  </div>
+  <div class="lf-card clear" role="listitem">
+    <div class="lf-name"><span class="tag tag-green">CLEAR</span> NO STEALTH DILUTION</div>
+    <div class="lf-body">Share count has been stable at 71,87,830 for multiple years. No QIP, preferential allotment, or rights issue has been announced during the governance restructuring — despite VIL needing to fund merger administrative costs. This is a positive credibility signal — management did not use restructuring as a cover for equity raise.</div>
+    <div class="lf-evidence">BSE quarterly shareholding: shares outstanding unchanged. Promoter holding stable at 64.7%.</div>
+  </div>
+</div>
+
+<!-- EXECUTION DELTA -->
+<div class="l-sec red">
+  <div class="l-sec-num">07</div>
+  <div>
+    <div class="l-sec-eyebrow">PILLAR 3 — EXECUTION DELTA</div>
+    <div class="l-sec-title">What was promised vs what was delivered — the scorecard</div>
+  </div>
+</div>
+
+<table class="data-table" role="table" aria-label="Execution delta promise vs delivery comparison">
+  <thead>
+    <tr>
+      <th class="red">Promise (Source)</th>
+      <th class="red">Quarter Promised</th>
+      <th class="red">Current Status</th>
+      <th class="red">Delta Assessment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Board reconstitution with independent chairman</td>
+      <td>Mar 2025 (settlement)</td>
+      <td>Shivakumar Dega appointed Independent Chairman, June 2025</td>
+      <td><span class="tag tag-green">DELIVERED</span> — On time, 3 months after announcement</td>
+    </tr>
+    <tr>
+      <td>All Gandhi family complaints withdrawn; equal branch interests maintained</td>
+      <td>Mar 2025 (MoFA)</td>
+      <td>No subsequent legal actions detected in exchange filings through May 2026</td>
+      <td><span class="tag tag-green">DELIVERED</span> — 14 months clean post-settlement</td>
+    </tr>
+    <tr>
+      <td>Janmajay Gandhi appointment as Executive Director</td>
+      <td>Mar 2025 (board)</td>
+      <td>Confirmed as non-executive non-independent director in exchange disclosures</td>
+      <td><span class="tag tag-green">DELIVERED</span> — Consistent with settlement terms</td>
+    </tr>
+    <tr>
+      <td>Merger scheme filing (Vadilal International + others into VIL)</td>
+      <td>Mar 2025 (scheme subject to approvals)</td>
+      <td>No NCLT filing confirmation found as of June 2026 (15 months post-announcement)</td>
+      <td><span class="tag tag-amber">ON TRACK / DRIFTING</span> — Regulatory approvals inherently slow, but watch for Q2 FY27 filing update</td>
+    </tr>
+    <tr>
+      <td>US local manufacturing commencement</td>
+      <td>Sep 2025 (announcement)</td>
+      <td>No capex announcement, no timeline, no regulatory filing found through June 2026 (9 months)</td>
+      <td><span class="tag tag-amber">QUALIFIER CREEP WATCH</span> — approaching the 4-quarter boundary for formal Qualifier Creep flag</td>
+    </tr>
+    <tr>
+      <td>₹43/share dividend for FY26</td>
+      <td>May 2026 (board)</td>
+      <td>Approved by board; pending shareholder AGM vote</td>
+      <td><span class="tag tag-green">DELIVERED (pending AGM)</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- LEDGER VERDICT -->
+<div class="ledger-verdict" role="note" aria-label="Ledger final verdict">
+  <div class="lv-label">📋 LEDGER VERDICT — VADILALIND · JUNE 2026</div>
+  <p>Vadilal Industries' credibility profile presents a rare combination: <strong>exceptional capital structure integrity alongside genuine guidance opacity.</strong> The company has maintained near-zero debt, 22.5x interest coverage, and zero equity dilution through a decade of promoter litigation — a testament to the manufacturing discipline of the underlying business. The governance settlement promises (board reconstitution, family dispute resolution, dividend) have been delivered on time and as stated. However, the Ledger's most significant concern is not deception — it is opacity. With no accessible public concall transcripts for FY26 and no quantified guidance on either the US manufacturing plan or FY27 operating parameters, the promise register is thin. The US manufacturing announcement remains a headline without a balance sheet implication. If Q2 FY27 results (October 2026) arrive without a disclosed capex budget for the US plant, the Qualifier Creep flag on Promise 4 will be formally activated. <strong>The chain is intact through Link 6 (debt reduction), but Link 7 (new investment cycle) is a pending question mark that the market deserves an answer to.</strong> Tier B+ — upgrade path to A requires (a) concall reinstatement with Q&amp;A access, (b) US manufacturing capex disclosed with timeline, and (c) NCLT scheme filing confirmed.</p>
+</div>
+
+</div><!-- inner wrapper for ledger -->
+
+<hr class="divider">
+
+<!-- FINAL HIGHLIGHT INDEX NOTE -->
+<div class="highlight-index-wrapper" role="complementary" aria-label="Ledger specific highlights">
+  <div class="hi-header">
+    <span aria-hidden="true">🗂</span> Ledger-Specific Highlights — Key Findings
+  </div>
+  <div id="ledger-index" style="padding: 18px 22px; background: var(--amber-bg);">
+    <ol aria-label="Ledger highlights">
+      <li><strong>Chain Status:</strong> Links 1–3 and 6 are intact. Links 4–5 have active watch flags (Q1 margin compression, CFO decline from WC expansion).</li>
+      <li><strong>Active Flags (as of June 2026):</strong> (1) Q3 Floor Deterioration — EBITDA margin 4.5% vs 12.5% prior year; (2) Q1 Peak Margin Compression — 470 bps YoY decline despite revenue growth; (3) US Manufacturing Qualifier Creep Watch — approaching formal flag threshold; (4) Working Capital Watch — NWC days up from 52 to 78.</li>
+      <li><strong>Clear Flags:</strong> No stealth dilution. No promoter pledge risk. No debt-free mirage. No funding flip (CFO covers capex 2.7x). Capital structure is Vadilal's strongest credibility signal.</li>
+      <li><strong>Governance Promise Hit Rate:</strong> 3 of 3 governance commitments delivered on time. 1 pending but on track (scheme). 1 at watch level (US manufacturing).</li>
+      <li><strong>Credibility Tier B+ Upgrade Conditions:</strong> (1) Reinstate investor concall with Q&amp;A; (2) Disclose US manufacturing capex budget and timeline; (3) Confirm NCLT scheme filing.</li>
+    </ol>
+  </div>
+</div>
+
+</div><!-- outer wrapper -->
+
+<footer role="contentinfo">
+  <span>VADILALIND · NSE INVESTOR BRIEF + THE LEDGER · JUNE 2026</span>
+  <span>FOR RESEARCH PURPOSES ONLY · NOT INVESTMENT ADVICE</span>
+  <span>DATA: SCREENER.IN · BSE/NSE FILINGS · EXCHANGE DISCLOSURES</span>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SCRIPTS
+═══════════════════════════════════════════════════════════════ -->
+<script>
+// Theme toggle
+function toggleTheme() {
+  const body = document.documentElement;
+  const current = body.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  body.setAttribute('data-theme', next);
+  document.getElementById('theme-icon').textContent  = next === 'dark' ? '☀' : '🌙';
+  document.getElementById('theme-label').textContent = next === 'dark' ? 'Light' : 'Dark';
+  try { localStorage.setItem('vadilal-brief-theme', next); } catch(e) {}
+}
+
+// Restore saved theme (respects OS preference if no manual override)
+(function() {
+  let saved = null;
+  try { saved = localStorage.getItem('vadilal-brief-theme'); } catch(e) {}
+  if (saved) {
+    document.documentElement.setAttribute('data-theme', saved);
+    const icon  = document.getElementById('theme-icon');
+    const label = document.getElementById('theme-label');
+    if (icon && label) {
+      icon.textContent  = saved === 'dark' ? '☀' : '🌙';
+      label.textContent = saved === 'dark' ? 'Light' : 'Dark';
+    }
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    const icon  = document.getElementById('theme-icon');
+    const label = document.getElementById('theme-label');
+    if (icon && label) { icon.textContent = '☀'; label.textContent = 'Light'; }
+  }
+})();
+
+// Auto-populate highlight index
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>
