@@ -11,7 +11,7 @@ Signal hierarchy (wt_signal_rank):
   +4  BULL_ANY_PPV   — any cross + Pocket Pivot Volume
   +3  BULL_OVERSOLD  — deep oversold cross (wt2 ≤ -60)
   +2  BULL_OS_L2     — soft oversold cross (wt2 ≤ -53)
-  +1  BULL_ANY       — any bull cross (mid-range)
+  +1  BULL_ZERO_CROSS — WT1 crosses above 0 (momentum confirmation)
 
 Context columns:
   ZL    : ZLEMA25 direction (↑ rising / ↓ flat-down)
@@ -184,8 +184,14 @@ def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator) -> dic
 
 # ── Markdown output ───────────────────────────────────────────────────────────
 
-_RANK_EMOJI = {5: "🔥", 4: "⚡", 3: "🟢", 2: "🟡", 1: "🔵"}
-_RANK_LABEL = {5: "BULL OS+PPV", 4: "BULL ANY+PPV", 3: "BULL OVERSOLD", 2: "BULL OS L2", 1: "BULL ANY"}
+_RANK_EMOJI = {5: "🔥", 4: "⚡", 3: "🟢", 2: "🟡", 1: "📈"}
+_RANK_LABEL = {5: "BULL OS+PPV", 4: "BULL ANY+PPV", 3: "BULL OVERSOLD", 2: "BULL OS L2", 1: "ABOVE ZERO LINE"}
+
+_CATEGORIES = [
+    ("🔥", "MAJOR",           "PPV confirmed",         [5, 4]),
+    ("🟢", "OVERSOLD",        "reversal from −53/−60", [3, 2]),
+    ("📈", "ABOVE ZERO LINE", "momentum confirmed",    [1]),
+]
 
 _HDR = [
     "| Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | Day Chg | Close | Circuit |",
@@ -251,11 +257,10 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         "",
     ]
 
-    for rank in [5, 4, 3, 2, 1]:
-        group = rank_groups.get(rank, [])
-        emoji = _RANK_EMOJI.get(rank, "")
-        label = _RANK_LABEL.get(rank, "")
-        lines.append(f"### {emoji} Rank {rank} — {label} ({len(group)})")
+    for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
+        group = [f for r in ranks for f in rank_groups.get(r, [])]
+        group.sort(key=lambda x: (-x["wt_rank"], x["wt1"]))
+        lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit) for f in group]
         else:
@@ -272,12 +277,12 @@ def print_results(findings: list[dict]) -> None:
     print(f"  WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  Total bull crosses: {len(findings)}")
     print(f"{'='*70}")
-    for rank in [5, 4, 3, 2, 1]:
-        group = [f for f in findings if f["wt_rank"] == rank]
+    for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
+        group = [f for f in findings if f["wt_rank"] in ranks]
         if not group:
             continue
-        label = _RANK_LABEL.get(rank, f"Rank {rank}")
-        print(f"\n  ── {_RANK_EMOJI.get(rank,'')} {label} ({len(group)}) ──")
+        group.sort(key=lambda x: (-x["wt_rank"], x["wt1"]))
+        print(f"\n  ── {emoji} {cat_name} ({len(group)}) ──")
         for f in group:
             ds  = "+" if f["day_chg"] >= 0 else ""
             zl  = "ZL↑" if f["zl_rising"] else "ZL↓"

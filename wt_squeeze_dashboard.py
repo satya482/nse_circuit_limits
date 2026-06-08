@@ -30,7 +30,7 @@ if os.path.exists(_LABELS_FILE):
     with open(_LABELS_FILE, encoding="utf-8") as _f:
         _LABELS = json.load(_f)
 
-_RANK_LABEL = {5: "OS+PPV", 4: "ANY+PPV", 3: "OVERSOLD", 2: "OS L2", 1: "ANY"}
+_RANK_LABEL = {5: "OS+PPV", 4: "ANY+PPV", 3: "OVERSOLD", 2: "OS L2", 1: "ZERO"}
 _RANK_COLOR = {5: "#f97316", 4: "#eab308", 3: "#22c55e", 2: "#84cc16", 1: "#3b82f6"}
 
 

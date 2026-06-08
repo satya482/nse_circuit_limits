@@ -14,7 +14,7 @@ Signal Rank Hierarchy (wt_signal_rank field):
   +4  BULL_ANY_PPV     Bull cross (any level) + Pocket Pivot Volume
   +3  BULL_OVERSOLD    Bull cross in deep oversold (L1, -60)
   +2  BULL_OS_L2       Bull cross in soft oversold (L2, -53)
-  +1  BULL_ANY         Bull cross at any level
+  +1  BULL_ZERO_CROSS  WT1 crosses above 0 (momentum confirmation)
    0  NONE             No signal today
   -1  BEAR_ANY         Bear cross at any level
   -2  BEAR_OB_L2       Bear cross in soft overbought (L2, +53)
@@ -362,8 +362,8 @@ class WaveTrendCalculator:
             signal, rank = "BULL_OVERSOLD",  3
         elif bull_os_l2:
             signal, rank = "BULL_OS_L2",     2
-        elif bull_any:
-            signal, rank = "BULL_ANY",       1
+        elif bull_zero:
+            signal, rank = "BULL_ZERO_CROSS", 1
         elif bear_ob:
             signal, rank = "BEAR_OB",       -3
         elif bear_ob_l2:
