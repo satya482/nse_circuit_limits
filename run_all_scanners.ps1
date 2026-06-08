@@ -46,6 +46,9 @@ $comp = "$ROOT\ema-compression-scanner\run_scanner.ps1"
 if (Test-Path $comp) { Run-Scanner "EMA_Compression" $comp }
 else { OrcLog "--- SKIP EMA_Compression (not found) ---" }
 
+Run-Scanner "WT_BullCross"         "$ROOT\run_wt_bullcross_scanner.ps1"
+Run-Scanner "WT_SqueezeDash"       "$ROOT\run_wt_squeeze_dashboard.ps1"
+
 Run-Scanner "CircuitLimits"        "$ROOT\run_dashboard.ps1"
 Run-Scanner "US_FetchData"         "$ROOT\run_us_fetch_data.ps1"
 Run-Scanner "US_ZL_Squeeze"        "$ROOT\run_us_zl_squeeze_scanner.ps1"

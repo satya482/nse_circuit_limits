@@ -13,6 +13,8 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
+.\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
+.\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 ```
 
 Run any Python script directly for debugging:
@@ -22,6 +24,8 @@ python fetch_data.py
 python ema25_zl_scanner.py
 python ema-compression-scanner/screener.py
 python dashboard_generator.py
+python wt_bullcross_scanner.py
+python wt_squeeze_dashboard.py
 ```
 
 Install dependencies:
@@ -89,6 +93,30 @@ All thresholds live in `settings.yaml`. Pipeline:
 6. Writes `daily_brief.html` (root, always overwritten) + `daily_briefs/daily_brief_YYYY-MM-DD.html`
 7. `--dry-run` flag prints enriched context, skips HTML write
 
+### Scanner pipeline — WaveTrend Bull Cross (`wt_bullcross_scanner.py`)
+
+1. TradingView screener → broad watchlist (NSE equity, 1,000–1,00,000 Cr, price > ₹50, **no RS filter**)
+2. `load_ohlc_many(symbols)` → batch OHLCV load from SQLite
+3. `WaveTrendCalculator` (from `wavetrend_scanner.py`) → `wt_signal_rank` per stock
+   - Rank 5: BULL_OS_PPV — deep oversold cross (wt2 ≤ −60) + Pocket Pivot Volume
+   - Rank 4: BULL_ANY_PPV — any cross + PPV
+   - Rank 3: BULL_OVERSOLD — deep oversold cross
+   - Rank 2: BULL_OS_L2 — soft oversold cross (wt2 ≤ −53)
+   - Rank 1: BULL_ANY — any bull cross (mid-range)
+4. Context per stock: ZLEMA25 direction + turn stats, BB-KC squeeze flag
+5. Writes `wt_scans/wt_bullcross_latest.md` (grouped by rank, rank desc)
+
+**No RS filter** is intentional: WT oversold signals fire before RS turns positive; filtering on RS would kill the best setups.
+
+### Dashboard — WaveTrend + Squeeze (`wt_squeeze_dashboard.py`)
+
+Reads two scanner outputs, finds confluence, builds `wt_squeeze_dashboard.html`:
+- `wt_scans/wt_bullcross_latest.md` → WT bull cross rows
+- `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md` → squeeze rows
+- Confluence section (starred ★): stocks appearing in **both** today
+- WT section has priority — sorted rank 5→1, deeper oversold first within same rank
+- Links back to `dashboard.html`
+
 ### Dashboard (`dashboard_generator.py`)
 
 Reads today's block from 6 markdown files (swing, momentum, weekly-RS, EMA25-ZL, EMA compression, circuit limits), cross-references symbols, builds `dashboard.html` with confluence scoring.
@@ -119,6 +147,8 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md` | `screener.py` |
 | `momentum_scans/momentum_scans.md` | `momentum_scanner.py` |
 | `momentum_scans/momentum_rs_weekly_scans.md` | `momentum_rs_weekly_scanner.py` |
+| `wt_scans/wt_bullcross_latest.md`, `wt_scans/wt_bullcross_YYYY-MM-DD.md` | `wt_bullcross_scanner.py` |
+| `wt_squeeze_dashboard.html` | `wt_squeeze_dashboard.py` |
 | `swing_scans/swing_scans.md` | `swing_scanner.py` |
 | `ema_screener_changes.md` | `nse_ema_daily.py` |
 | `dashboard.html` | `dashboard_generator.py` |
