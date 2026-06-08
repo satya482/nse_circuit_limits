@@ -1,19 +1,19 @@
 # WaveTrend Bull Cross Scan — 2026-06-08
-*Generated 2026-06-08 17:44 IST*
+*Generated 2026-06-08 18:29 IST*
 
 ### Scan definition
 | Filter | Value |
 |--------|-------|
 | Exchange | NSE common equity |
 | Price | > ₹50 |
-| Market cap | ₹1,000 Cr – ₹1 Lakh Cr |
+| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
 | RS filter | None — WT captures pre-RS-turn reversals |
 | Min rank | Any bull cross (rank ≥ 1) |
 | Sqz | BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar |
 
 ---
 
-**Total bull crosses today: 19**
+**Total bull crosses today: 20**
 
 ### 🔥 MAJOR — PPV confirmed (7)
 | Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | Day Chg | Close | Circuit |
@@ -33,12 +33,13 @@
 | [INDOTHAI](https://in.tradingview.com/chart/?symbol=NSE:INDOTHAI) | Stock broker serving corporates HNIs retail investors Indore | 🟢 BULL_OVERSOLD | 3 | -58.1 | -61.26 | ↓ | 23d | -19.5% | — | — | +5.34% | 233.76 | 10% 🟩 |
 | [ISGEC](https://in.tradingview.com/chart/?symbol=NSE:ISGEC) | Heavy equipment manufacturing for sugar and steel industries | 🟡 BULL_OS_L2 | 2 | -55.97 | -55.98 | ↓ | 13d | -15.0% | — | — | -2.94% | 900.90 | 20%  |
 
-### 📈 ABOVE ZERO LINE — momentum confirmed (9)
+### 📈 ABOVE ZERO LINE — momentum confirmed (10)
 | Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | Day Chg | Close | Circuit |
 |--------|-------|--------|:----:|----:|----:|:--:|--------:|--------:|:---:|:---:|--------:|------:|:-------:|
 | [IIFLCAPS](https://in.tradingview.com/chart/?symbol=NSE:IIFLCAPS) | Equities broking wealth management investment banking retail | 📈 BULL_ZERO_CROSS | 1 | 0.46 | -2.0 | ↓ | 2d | +0.5% | ✓ | — | -0.80% | 340.00 | 20%  |
 | [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS) | Hospital chains, diagnostics, multi-specialty acute care services | 📈 BULL_ZERO_CROSS | 1 | 1.52 | -11.53 | ↑ | 2d | +5.2% | ✓ | ✓ | +2.11% | 989.10 | 20%  |
 | [THOMASCOOK](https://in.tradingview.com/chart/?symbol=NSE:THOMASCOOK) | Travel services, forex, insurance across leisure and corporate segments | 📈 BULL_ZERO_CROSS | 1 | 1.77 | -21.71 | ↑ | 2d | +13.7% | ✓ | ✓ | +11.68% | 104.82 | 20%  |
+| [TORNTPHARM](https://in.tradingview.com/chart/?symbol=NSE:TORNTPHARM) |  | 📈 BULL_ZERO_CROSS | 1 | 1.94 | -9.55 | ↑ | 2d | +1.7% | ✓ | — | -0.80% | 4186.10 | 20%  |
 | [CAMLINFINE](https://in.tradingview.com/chart/?symbol=NSE:CAMLINFINE) | Antioxidants preservatives specialty chemicals food pharma | 📈 BULL_ZERO_CROSS | 1 | 2.92 | -10.48 | ↑ | 2d | +6.4% | ✓ | — | -5.74% | 127.33 | 20%  |
 | [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER) | AC manufacturing and EMS for consumer appliances India | 📈 BULL_ZERO_CROSS | 1 | 3.79 | -4.79 | ↑ | 2d | +1.8% | — | — | -0.92% | 7750.00 | 20%  |
 | [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC) | Tourism infrastructure, hotels, transport, hospitality services | 📈 BULL_ZERO_CROSS | 1 | 4.32 | -17.85 | ↑ | 3d | +12.0% | — | — | -10.49% | 599.70 | 10% 🟨 |

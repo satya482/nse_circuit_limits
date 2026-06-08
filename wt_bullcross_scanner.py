@@ -3,7 +3,7 @@
 WaveTrend Bull Cross Scanner
 Run after 4:05 PM IST on trading days (after run_fetch_data.ps1).
 
-Universe: NSE common equity, MCap ₹1,000 Cr – ₹1 Lakh Cr, price > ₹50
+Universe: NSE common equity, MCap ₹1,000 Cr – ₹5 Lakh Cr, price > ₹50
           No RS filter — WT captures oversold reversals before RS turns positive.
 
 Signal hierarchy (wt_signal_rank):
@@ -42,7 +42,7 @@ MD_LATEST    = os.path.join(SCANS_DIR, "wt_bullcross_latest.md")
 MD_DATED     = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
 
 MC_LOW   = 1_000   * 1_00_00_000   # 1,000 Cr
-MC_HIGH  = 1_00_000 * 1_00_00_000  # 1 Lakh Cr
+MC_HIGH  = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
 MIN_RANK = 1
 ZL_TURN_CAP = 60
 
@@ -246,7 +246,7 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         "|--------|-------|",
         "| Exchange | NSE common equity |",
         "| Price | > ₹50 |",
-        "| Market cap | ₹1,000 Cr – ₹1 Lakh Cr |",
+        "| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |",
         "| RS filter | None — WT captures pre-RS-turn reversals |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
         "| Sqz | BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar |",
