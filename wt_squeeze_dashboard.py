@@ -45,6 +45,7 @@ def _strip_md_link(s: str) -> str:
 
 def parse_wt_rows(content: str) -> list[dict]:
     rows = []
+    seen: set[str] = set()  # deduplicate — squeeze stocks appear in both SQUEEZE BREAKOUT and category sections
     for line in content.splitlines():
         ls = line.strip()
         if not ls.startswith('|'):
@@ -58,6 +59,9 @@ def parse_wt_rows(content: str) -> list[dict]:
         sym = _strip_md_link(parts[0])
         if not sym or sym in ("Symbol", "#"):
             continue
+        if sym in seen:
+            continue
+        seen.add(sym)
         try:
             rank = int(parts[3])
         except ValueError:
@@ -183,12 +187,13 @@ _TABLE_HDR = """    <thead><tr>
 
 
 def build_html(today: str, now_str: str, wt_rows: list) -> str:
-    sqz_rows  = [r for r in wt_rows if r["squeeze"] == "✓"]
-    wt_html   = [_wt_html_row(r) for r in wt_rows]
-    sqz_html  = [_wt_html_row(r) for r in sqz_rows]
-    n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
-    n_ppv     = sum(1 for r in wt_rows if r["ppv"] == "✓")
-    n_sqz     = len(sqz_rows)
+    sqz_rows   = [r for r in wt_rows if r["squeeze"] == "✓"]
+    other_rows = [r for r in wt_rows if r["squeeze"] != "✓"]
+    wt_html    = [_wt_html_row(r) for r in other_rows]
+    sqz_html   = [_wt_html_row(r) for r in sqz_rows]
+    n_os_plus  = sum(1 for r in wt_rows if r["rank"] >= 3)
+    n_ppv      = sum(1 for r in wt_rows if r["ppv"] == "✓")
+    n_sqz      = len(sqz_rows)
 
     sqz_section = ""
     if sqz_rows:
@@ -239,12 +244,12 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
 {sqz_section}
 <div class="section">
   <div class="stitle">
-    All WaveTrend Bull Crosses
-    <span class="cnt">({len(wt_rows)} signals — sorted rank desc, deeper oversold first)</span>
+    Other WT Bull Crosses — no active squeeze
+    <span class="cnt">({len(other_rows)} signals — sorted rank desc, deeper oversold first)</span>
   </div>
   <table>
 {_TABLE_HDR}
-    <tbody>{_rows_or_empty(wt_html, 13, "No WaveTrend bull crosses today — run wt_bullcross_scanner.py first")}</tbody>
+    <tbody>{_rows_or_empty(wt_html, 13, "No other WT bull crosses today")}</tbody>
   </table>
 </div>
 
