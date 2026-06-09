@@ -237,6 +237,8 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
     for f in sorted_f:
         rank_groups.setdefault(f["wt_rank"], []).append(f)
 
+    sqz_count = sum(1 for f in findings if f["squeeze"])
+
     lines = [
         f"# WaveTrend Bull Cross Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
@@ -253,9 +255,18 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         "",
         "---",
         "",
-        f"**Total bull crosses today: {len(findings)}**",
+        f"**Total bull crosses today: {len(findings)}** · {sqz_count} inside active squeeze",
         "",
     ]
+
+    # Squeeze Breakout — highest conviction: WT cross firing inside active BB-KC squeeze
+    sqz_breaks = [f for f in sorted_f if f["squeeze"]]
+    if sqz_breaks:
+        lines.append(f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})")
+        lines += _HDR + [_row(f, circuit) for f in sqz_breaks]
+        lines.append("")
+        lines.append("---")
+        lines.append("")
 
     for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
         group = [f for r in ranks for f in rank_groups.get(r, [])]
@@ -277,6 +288,17 @@ def print_results(findings: list[dict]) -> None:
     print(f"  WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print(f"  Total bull crosses: {len(findings)}")
     print(f"{'='*70}")
+    sqz_breaks_c = sorted([f for f in findings if f["squeeze"]], key=lambda x: (-x["wt_rank"], x["wt1"]))
+    if sqz_breaks_c:
+        print(f"\n  ── 🎯 SQUEEZE BREAKOUT ({len(sqz_breaks_c)}) ──")
+        for f in sqz_breaks_c:
+            ds  = "+" if f["day_chg"] >= 0 else ""
+            zl  = "ZL↑" if f["zl_rising"] else "ZL↓"
+            ppv = "PPV" if f["wt_is_ppv"] else "   "
+            print(f"  {f['symbol']:<18} {f['close']:>9.2f}  "
+                  f"wt1:{f['wt1']:>7.2f}  {zl} SQZ {ppv}  "
+                  f"day:{ds}{f['day_chg']:.1f}%")
+
     for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
         group = [f for f in findings if f["wt_rank"] in ranks]
         if not group:

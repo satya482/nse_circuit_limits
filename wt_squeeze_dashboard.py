@@ -175,10 +175,39 @@ tr:hover td{background:var(--bg3)}
 """
 
 
+_TABLE_HDR = """    <thead><tr>
+      <th>Symbol</th><th>Label</th><th>WT Signal</th>
+      <th>WT1</th><th>WT2</th><th>ZL</th><th>ZL Days</th><th>ZL Chg%</th>
+      <th>Sqz</th><th>PPV</th><th>Day Chg</th><th>Close</th><th>Circuit</th>
+    </tr></thead>"""
+
+
 def build_html(today: str, now_str: str, wt_rows: list) -> str:
+    sqz_rows  = [r for r in wt_rows if r["squeeze"] == "✓"]
     wt_html   = [_wt_html_row(r) for r in wt_rows]
+    sqz_html  = [_wt_html_row(r) for r in sqz_rows]
     n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
     n_ppv     = sum(1 for r in wt_rows if r["ppv"] == "✓")
+    n_sqz     = len(sqz_rows)
+
+    sqz_section = ""
+    if sqz_rows:
+        sqz_section = f"""
+<div class="section" style="border:1px solid var(--gld);border-radius:6px;padding:12px;background:#1a1600">
+  <div class="stitle" style="color:var(--gld);border-color:var(--gld)">
+    🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze
+    <span class="cnt" style="color:var(--gld)">({n_sqz} highest conviction)</span>
+  </div>
+  <p style="font-size:11px;color:#b8a000;margin-bottom:8px">
+    BB-KC squeeze (energy coiling) + WT bull cross (momentum turning up) = spring loaded → fires UP.
+    Oversold cross inside squeeze = maximum compression + mean-reversion force.
+  </p>
+  <table>
+{_TABLE_HDR}
+    <tbody>{"".join(sqz_html)}</tbody>
+  </table>
+</div>
+"""
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -201,22 +230,20 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
 </div>
 
 <div class="bar">
+  <div class="stat"><div class="sv gld">{n_sqz}</div><div class="sl">🎯 Squeeze Breakout</div></div>
   <div class="stat"><div class="sv ora">{len(wt_rows)}</div><div class="sl">WT Bull Cross</div></div>
   <div class="stat"><div class="sv grn">{n_os_plus}</div><div class="sl">Oversold+ (rank≥3)</div></div>
   <div class="stat"><div class="sv pur">{n_ppv}</div><div class="sl">PPV confirmed</div></div>
 </div>
 
+{sqz_section}
 <div class="section">
   <div class="stitle">
-    WaveTrend Bull Cross
+    All WaveTrend Bull Crosses
     <span class="cnt">({len(wt_rows)} signals — sorted rank desc, deeper oversold first)</span>
   </div>
   <table>
-    <thead><tr>
-      <th>Symbol</th><th>Label</th><th>WT Signal</th>
-      <th>WT1</th><th>WT2</th><th>ZL</th><th>ZL Days</th><th>ZL Chg%</th>
-      <th>Sqz</th><th>PPV</th><th>Day Chg</th><th>Close</th><th>Circuit</th>
-    </tr></thead>
+{_TABLE_HDR}
     <tbody>{_rows_or_empty(wt_html, 13, "No WaveTrend bull crosses today — run wt_bullcross_scanner.py first")}</tbody>
   </table>
 </div>

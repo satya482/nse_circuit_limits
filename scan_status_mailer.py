@@ -130,8 +130,12 @@ def parse_weekly_zl_count(md: str, today: str) -> str:
 def parse_wt_bullcross_count(md: str, today: str) -> str:
     if today not in md[:200]:
         return "—"
-    m = re.search(r'\*\*Total bull crosses today: (\d+)\*\*', md)
-    return (m.group(1) + " crosses") if m else "—"
+    m = re.search(r'\*\*Total bull crosses today: (\d+)\*\*(?:\s*·\s*(\d+) inside active squeeze)?', md)
+    if not m:
+        return "—"
+    total = m.group(1)
+    sqz   = m.group(2)
+    return f"{total} crosses ({sqz} squeeze)" if sqz else f"{total} crosses"
 
 
 def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
