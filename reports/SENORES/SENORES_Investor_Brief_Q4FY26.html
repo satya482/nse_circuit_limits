@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SENORES · Senores Pharmaceuticals · NSE Investor Brief Q4 FY26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --ink:        #1A1A2E;
+  --paper:      #F8F6F1;
+  --card:       #FFFFFF;
+  --rule:       #E0DCD4;
+  --purple:     #534AB7;
+  --purple-bg:  #EFEDFC;
+  --amber:      #BA7517;
+  --amber-bg:   #FFF7E6;
+  --teal:       #1D9E75;
+  --teal-bg:    #E6F5EF;
+  --coral:      #D85A30;
+  --coral-bg:   #FDF0EB;
+  --blue:       #378ADD;
+  --blue-bg:    #EBF4FD;
+  --green:      #3B6D11;
+  --green-bg:   #EAF2E0;
+  --red:        #C0392B;
+  --red-bg:     #FDECEA;
+  --gray:       #6B7280;
+  --gray-light: #F2EFE9;
+  --serif:      'Playfair Display', Georgia, serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --display:    'Bricolage Grotesque', 'DM Sans', system-ui, sans-serif;
+  --mono:       'JetBrains Mono', 'Courier New', monospace;
+  --bg:         var(--paper);
+  --fg:         var(--ink);
+}
+[data-theme="dark"] {
+  --bg:     #12121F;
+  --fg:     #E8E4DC;
+  --card:   #1E1E30;
+  --rule:   #2E2E44;
+  --paper:  #12121F;
+  --ink:    #E8E4DC;
+  --gray:   #9AA0AC;
+  --gray-light: #1A1A2C;
+  --purple-bg: #1E1A40;
+  --amber-bg:  #221800;
+  --teal-bg:   #0A2219;
+  --coral-bg:  #2A1008;
+  --blue-bg:   #0A1A2E;
+  --green-bg:  #0E1E04;
+  --red-bg:    #2A0806;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg); color: var(--fg); font-size: 15.5px; line-height: 1.75; transition: background .3s, color .3s; }
+
+/* ========== PRINT ========== */
+@media print {
+  body { font-size: 11px; background: white !important; color: black !important; }
+  .no-print { display: none !important; }
+  .page-break { page-break-before: always; }
+  .cover-band, .chapter, .card-box, table { break-inside: avoid; }
+  #quick-scan { position: static !important; background: #F0EDE8 !important; border: 1px solid #ccc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  #quick-scan .qs-body { display: block !important; max-height: none !important; overflow: visible !important; }
+  #highlight-index { display: block !important; }
+  #highlight-index > .hi-body { display: block !important; }
+  .cover-band { background: #1A1A2E !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .theme-btn { display: none !important; }
+}
+
+/* ========== QUICK SCAN STRIP ========== */
+#quick-scan {
+  position: sticky; top: 0; z-index: 200;
+  background: var(--ink); color: #EDE8E0;
+  border-bottom: 2px solid var(--purple);
+  font-family: var(--mono); font-size: 11.5px;
+}
+.qs-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 20px; cursor: pointer; user-select: none;
+}
+.qs-toggle-label { font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--amber); font-size: 10px; }
+.qs-toggle-btn { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 3px; padding: 2px 10px; font-family: var(--mono); font-size: 9px; color: #CCC; cursor: pointer; }
+.qs-body { overflow: hidden; transition: max-height .3s ease; }
+.qs-body.collapsed { max-height: 0; }
+.qs-body.expanded { max-height: 400px; }
+.qs-lines { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 0; }
+.qs-line { display: flex; align-items: flex-start; gap: 8px; padding: 5px 20px; border-top: 1px solid rgba(255,255,255,0.06); }
+.qs-line .icon { min-width: 20px; font-size: 13px; }
+.qs-line .tag { color: var(--amber); font-weight: 600; font-size: 9.5px; letter-spacing: 1px; text-transform: uppercase; min-width: 70px; }
+.qs-line .text { color: #D0CAC0; font-size: 11px; line-height: 1.5; }
+.qs-mgmt { grid-column: 1 / -1; background: rgba(83,74,183,0.15); border-top: 1px solid rgba(83,74,183,0.3) !important; }
+
+/* ========== THEME TOGGLE ========== */
+.theme-btn {
+  position: fixed; bottom: 20px; right: 20px; z-index: 300;
+  background: var(--ink); color: var(--amber); border: 1px solid var(--amber);
+  border-radius: 50%; width: 44px; height: 44px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 18px; box-shadow: 0 2px 10px rgba(0,0,0,.3);
+  transition: all .2s;
+}
+
+/* ========== LAYOUT ========== */
+.content { max-width: 960px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ========== COVER ========== */
+.cover-band {
+  background: var(--ink); color: #F0EDE8; padding: 56px 24px 44px;
+  position: relative; overflow: hidden;
+}
+.cover-band::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 60% at 80% 50%, rgba(83,74,183,0.18) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cover-inner { max-width: 960px; margin: 0 auto; position: relative; }
+.cover-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 14px; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.cover-eyebrow .sep { opacity: .4; }
+.cover-ticker { background: var(--purple); color: white; border-radius: 4px; padding: 2px 9px; font-size: 11px; font-weight: 600; }
+.cover-h1 { font-family: var(--display); font-size: clamp(32px, 5vw, 54px); font-weight: 800; line-height: 1.05; letter-spacing: -1px; margin-bottom: 10px; }
+.cover-sub { font-size: 16px; color: #A8A098; font-weight: 300; max-width: 580px; margin-bottom: 24px; }
+.cover-chips { display: flex; gap: 10px; flex-wrap: wrap; }
+.chip { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 4px; padding: 5px 13px; font-family: var(--mono); font-size: 10px; letter-spacing: .8px; color: #C0B8A8; }
+.chip.hi { background: rgba(83,74,183,0.25); border-color: rgba(83,74,183,0.4); color: #B8B4F0; }
+
+/* ========== CHAPTER HEADERS ========== */
+.chapter { margin-top: 52px; }
+.ch-header { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid var(--fg); }
+.ch-num { font-family: var(--display); font-size: 28px; font-weight: 800; line-height: 1; min-width: 36px; }
+.ch-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 3px; }
+.ch-title { font-family: var(--display); font-size: 20px; font-weight: 700; line-height: 1.2; }
+/* Accent variants */
+.ch-purple .ch-header { border-bottom-color: var(--purple); }
+.ch-purple .ch-num { color: var(--purple); }
+.ch-amber .ch-header { border-bottom-color: var(--amber); }
+.ch-amber .ch-num { color: var(--amber); }
+.ch-teal .ch-header { border-bottom-color: var(--teal); }
+.ch-teal .ch-num { color: var(--teal); }
+.ch-coral .ch-header { border-bottom-color: var(--coral); }
+.ch-coral .ch-num { color: var(--coral); }
+.ch-blue .ch-header { border-bottom-color: var(--blue); }
+.ch-blue .ch-num { color: var(--blue); }
+.ch-green .ch-header { border-bottom-color: var(--green); }
+.ch-green .ch-num { color: var(--green); }
+
+/* ========== PROSE ========== */
+p { margin-bottom: 14px; color: var(--fg); }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+h3.sub { font-family: var(--display); font-size: 15.5px; font-weight: 700; margin: 22px 0 8px; }
+
+/* ========== LEAD / CALLOUT ========== */
+.lead { font-size: 16px; line-height: 1.8; color: var(--fg); padding: 16px 20px; border-left: 4px solid var(--amber); background: var(--amber-bg); border-radius: 0 6px 6px 0; margin-bottom: 20px; }
+.lead-purple { border-left-color: var(--purple); background: var(--purple-bg); }
+.lead-teal   { border-left-color: var(--teal);   background: var(--teal-bg); }
+.lead-coral  { border-left-color: var(--coral);  background: var(--coral-bg); }
+.lead-blue   { border-left-color: var(--blue);   background: var(--blue-bg); }
+
+/* ========== STAT ROWS ========== */
+.stat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; margin: 18px 0; }
+.stat-cell { background: var(--card); padding: 13px 16px; }
+.stat-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); margin-bottom: 4px; }
+.stat-val { font-family: var(--display); font-size: 22px; font-weight: 800; line-height: 1; }
+.stat-delta { font-family: var(--mono); font-size: 10.5px; margin-top: 3px; }
+.stat-delta.up   { color: var(--teal); }
+.stat-delta.dn   { color: var(--red); }
+.stat-delta.warn { color: var(--amber); }
+.stat-col-purple .stat-val { color: var(--purple); }
+.stat-col-teal   .stat-val { color: var(--teal); }
+.stat-col-amber  .stat-val { color: var(--amber); }
+.stat-col-coral  .stat-val { color: var(--coral); }
+.stat-col-blue   .stat-val { color: var(--blue); }
+
+/* ========== CARD BOX ========== */
+.card-box { background: var(--card); border: 1.5px solid var(--rule); border-radius: 8px; padding: 20px 22px; margin: 18px 0; }
+.card-box.accent-purple { border-left: 4px solid var(--purple); }
+.card-box.accent-teal   { border-left: 4px solid var(--teal); }
+.card-box.accent-coral  { border-left: 4px solid var(--coral); }
+.card-box.accent-amber  { border-left: 4px solid var(--amber); }
+.card-box.accent-blue   { border-left: 4px solid var(--blue); }
+.card-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 7px; }
+
+/* ========== INSIGHT BOX ========== */
+.insight-box { background: var(--ink); color: #EDE8E0; border-radius: 8px; padding: 24px 28px; margin: 22px 0; }
+.insight-box .ib-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); margin-bottom: 9px; }
+.insight-box p { color: #D0C8BC; line-height: 1.75; }
+.insight-box strong { color: #F0EDE8; }
+[data-theme="dark"] .insight-box { background: #0D0D1C; border: 1px solid #2E2E44; }
+
+/* ========== HIGHLIGHT SPANS ========== */
+.hl-key      { background: #FFF176; padding: 0 3px; border-radius: 2px; font-weight: 600; color: #1A1A2E; }
+.hl-number   { background: #E3F0FF; padding: 0 3px; border-radius: 2px; font-family: var(--mono); font-size: .9em; color: #1A1A2E; }
+.hl-risk     { background: #FFF3CD; padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--amber); color: #1A1A2E; }
+.hl-catalyst { background: #E6F4EA; padding: 0 3px; border-radius: 2px; border-left: 3px solid var(--teal); color: #1A1A2E; }
+
+/* ========== TAKEAWAY PILL ========== */
+.takeaway-pill { margin: 18px 0 0; padding: 10px 16px; border-radius: 24px; font-size: 13.5px; font-weight: 600; line-height: 1.5; border-left: 4px solid var(--purple); background: var(--purple-bg); color: var(--purple); }
+
+/* ========== TABLES ========== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+.data-table th { background: var(--ink); color: #EEE; padding: 8px 12px; text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: .5px; font-weight: 500; }
+.data-table td { padding: 8px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.5; color: var(--fg); }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: var(--gray-light); }
+.data-table th.purple { background: var(--purple); }
+.data-table th.teal   { background: var(--teal); }
+.data-table th.amber  { background: var(--amber); }
+.data-table th.coral  { background: var(--coral); }
+.data-table th.blue   { background: var(--blue); }
+.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 600; }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+.tag-teal   { background: var(--teal-bg);   color: var(--teal); }
+.tag-amber  { background: var(--amber-bg);  color: var(--amber); }
+.tag-coral  { background: var(--coral-bg);  color: var(--coral); }
+.tag-blue   { background: var(--blue-bg);   color: var(--blue); }
+.tag-red    { background: var(--red-bg);    color: var(--red); }
+.tag-green  { background: var(--green-bg);  color: var(--green); }
+
+/* ========== VERTICAL SEGMENT CARDS ========== */
+.seg-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; margin: 18px 0; }
+.seg-card { border: 1.5px solid var(--rule); border-radius: 8px; padding: 17px; background: var(--card); }
+.seg-top-bar { height: 4px; border-radius: 2px; margin-bottom: 13px; }
+.seg-name { font-family: var(--display); font-size: 14px; font-weight: 700; margin-bottom: 5px; }
+.seg-rev { font-family: var(--mono); font-size: 18px; font-weight: 700; margin-bottom: 3px; }
+.seg-delta { font-family: var(--mono); font-size: 10px; color: var(--teal); margin-bottom: 7px; }
+.seg-desc { font-size: 12px; color: var(--gray); line-height: 1.5; }
+.seg-status { display: inline-block; margin-top: 8px; font-family: var(--mono); font-size: 9.5px; padding: 2px 7px; border-radius: 3px; }
+.seg-running { background: var(--teal-bg); color: var(--teal); }
+.seg-ramping { background: var(--amber-bg); color: var(--amber); }
+.seg-building { background: var(--coral-bg); color: var(--coral); }
+
+/* ========== PORTER'S TABLE ========== */
+.porter-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 16px 0; }
+.porter-table th { background: var(--purple); color: white; padding: 9px 14px; text-align: left; font-family: var(--mono); font-size: 10px; }
+.porter-table td { padding: 9px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; color: var(--fg); }
+.porter-table tr:last-child td { border-bottom: none; }
+.force-name { font-weight: 600; font-size: 13px; }
+.rating-hi   { background: var(--red-bg);    color: var(--red);    font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 700; }
+.rating-med  { background: var(--amber-bg);  color: var(--amber);  font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 700; }
+.rating-lo   { background: var(--green-bg);  color: var(--green);  font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 3px; font-weight: 700; }
+
+/* ========== CAPEX TIMELINE ========== */
+.capex-timeline { margin: 18px 0; }
+.capex-row { display: flex; gap: 0; border-bottom: 1px solid var(--rule); }
+.capex-row:first-child { border-top: 1px solid var(--rule); }
+.capex-cell { padding: 9px 13px; flex: 1; font-size: 12.5px; border-right: 1px solid var(--rule); color: var(--fg); }
+.capex-cell:last-child { border-right: none; }
+.capex-cell:first-child { flex: .6; }
+.capex-head { background: var(--teal); color: white; font-family: var(--mono); font-size: 9.5px; letter-spacing: .5px; padding: 7px 13px; }
+.capex-year { font-family: var(--mono); font-weight: 600; font-size: 13px; color: var(--teal); }
+.capex-amt  { font-family: var(--mono); font-weight: 600; font-size: 13px; }
+.capex-sub  { font-size: 11px; color: var(--gray); margin-top: 2px; }
+.status-on  { color: var(--teal); font-family: var(--mono); font-size: 10px; }
+.status-drift { color: var(--amber); font-family: var(--mono); font-size: 10px; }
+.status-watch { color: var(--coral); font-family: var(--mono); font-size: 10px; }
+
+/* ========== RISK CARDS ========== */
+.risk-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+@media (max-width: 640px) { .risk-grid { grid-template-columns: 1fr; } }
+.risk-card { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 15px 16px; }
+.risk-card.hi   { border-left: 3px solid var(--red); }
+.risk-card.med  { border-left: 3px solid var(--amber); }
+.risk-name { font-family: var(--mono); font-size: 11px; font-weight: 600; display: flex; align-items: center; gap: 6px; margin-bottom: 5px; color: var(--fg); }
+.ri { font-size: 14px; }
+.ri-red  { color: var(--red); }
+.ri-amb  { color: var(--amber); }
+.risk-what  { font-size: 13px; color: var(--fg); margin-bottom: 5px; line-height: 1.5; }
+.risk-signal { font-size: 11.5px; color: var(--gray); font-style: italic; line-height: 1.45; }
+
+/* ========== WATCH SIGNALS ========== */
+.watch-list { list-style: none; margin: 14px 0; }
+.watch-item { display: flex; align-items: flex-start; gap: 10px; padding: 11px 0; border-bottom: 1px solid var(--rule); }
+.watch-item:last-child { border-bottom: none; }
+.watch-dot { width: 9px; height: 9px; border-radius: 50%; margin-top: 7px; flex-shrink: 0; }
+.watch-label { font-family: var(--mono); font-size: 11px; font-weight: 600; margin-bottom: 3px; color: var(--fg); }
+.watch-desc { font-size: 13px; color: var(--fg); line-height: 1.5; }
+.watch-flag { font-size: 11.5px; color: var(--gray); font-style: italic; margin-top: 3px; }
+
+/* ========== VERDICT ========== */
+.verdict-box { background: var(--purple-bg); border: 1.5px solid var(--purple); border-radius: 8px; padding: 22px 26px; margin: 28px 0; }
+.verdict-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--purple); margin-bottom: 9px; }
+.verdict-box p { font-size: 15px; line-height: 1.75; }
+.verdict-stage { display: inline-block; background: var(--purple); color: white; border-radius: 20px; padding: 3px 14px; font-family: var(--mono); font-size: 11px; font-weight: 600; margin-top: 10px; }
+
+/* ========== HIGHLIGHT INDEX ========== */
+#highlight-index { margin: 40px 0; }
+.hi-summary { font-family: var(--display); font-size: 16px; font-weight: 700; cursor: pointer; padding: 12px 0; border-bottom: 2px solid var(--purple); display: flex; align-items: center; gap: 8px; }
+.hi-body { padding: 16px 0; }
+.hi-body ol { list-style: decimal inside; display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+@media (max-width: 640px) { .hi-body ol { grid-template-columns: 1fr; } }
+.hi-body li { font-size: 12.5px; color: var(--fg); line-height: 1.5; padding: 4px 0; border-bottom: 1px dotted var(--rule); }
+.hi-body li[data-type="hl-key"]      { border-left: 3px solid #F9A825; padding-left: 6px; }
+.hi-body li[data-type="hl-number"]   { border-left: 3px solid var(--blue); padding-left: 6px; font-family: var(--mono); }
+.hi-body li[data-type="hl-risk"]     { border-left: 3px solid var(--amber); padding-left: 6px; }
+.hi-body li[data-type="hl-catalyst"] { border-left: 3px solid var(--teal); padding-left: 6px; }
+.hi-body li[data-type="takeaway-pill"] { border-left: 3px solid var(--purple); padding-left: 6px; font-weight: 600; }
+
+/* ========== THE LEDGER SECTION ========== */
+.ledger-band { background: var(--ink); color: #EDE8E0; padding: 48px 24px 40px; margin: 60px -24px 0; }
+.ledger-inner { max-width: 960px; margin: 0 auto; }
+.ledger-eyebrow { font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+.ledger-h1 { font-family: var(--display); font-size: clamp(28px, 4vw, 42px); font-weight: 800; margin-bottom: 8px; }
+.ledger-sub { color: #9A9288; font-size: 14px; font-weight: 300; }
+[data-theme="dark"] .ledger-band { background: #0A0A16; border-top: 2px solid var(--purple); }
+
+.ledger-section { margin-top: 36px; }
+.ledger-sec-head { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--amber); border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: 6px; margin-bottom: 14px; }
+.promise-table { width: 100%; border-collapse: collapse; font-size: 12px; margin-bottom: 12px; }
+.promise-table th { background: rgba(255,255,255,.08); color: #C0B8A8; padding: 7px 11px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .5px; text-align: left; }
+.promise-table td { padding: 7px 11px; border-bottom: 1px solid rgba(255,255,255,.06); color: #D0C8BC; vertical-align: top; line-height: 1.5; }
+.promise-table tr:last-child td { border-bottom: none; }
+.p-cat { font-family: var(--mono); font-size: 9.5px; padding: 1px 6px; border-radius: 2px; }
+.p-hard { background: rgba(193,57,43,.25); color: #FF8B7B; }
+.p-mile { background: rgba(83,74,183,.25); color: #A8A0F8; }
+.p-cap  { background: rgba(186,117,23,.25); color: #FFB84D; }
+.p-mar  { background: rgba(29,158,117,.25); color: #70DDB8; }
+.p-cap2 { background: rgba(30,58,95,.35); color: #90B8E8; }
+.p-strat{ background: rgba(105,80,200,.2); color: #C0A8F8; }
+.status-delivered { color: #70DDB8; font-family: var(--mono); font-size: 10px; }
+.status-ontrack   { color: #90B8E8; font-family: var(--mono); font-size: 10px; }
+.status-drift     { color: #FFB84D; font-family: var(--mono); font-size: 10px; }
+.status-watch     { color: #FF8B7B; font-family: var(--mono); font-size: 10px; }
+.status-pending   { color: #9A9288; font-family: var(--mono); font-size: 10px; }
+
+.ledger-flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+@media (max-width: 640px) { .ledger-flag-grid { grid-template-columns: 1fr; } }
+.ledger-flag { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: 5px; padding: 12px 15px; }
+.ledger-flag.critical { border-left: 3px solid var(--red); }
+.ledger-flag.warning  { border-left: 3px solid var(--amber); }
+.ledger-flag.clean    { border-left: 3px solid var(--teal); }
+.lf-name { font-family: var(--mono); font-size: 11px; font-weight: 600; color: #EDE8E0; margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.lf-desc { font-size: 12px; color: #A0988C; line-height: 1.5; }
+
+.credibility-box { background: rgba(83,74,183,.15); border: 1.5px solid rgba(83,74,183,.35); border-radius: 8px; padding: 20px 24px; margin-top: 20px; }
+.cred-tier { font-family: var(--display); font-size: 40px; font-weight: 800; color: var(--purple); display: inline-block; margin-right: 14px; }
+[data-theme="dark"] .cred-tier { color: #A8A0F8; }
+.cred-label { font-family: var(--mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #90B8E8; margin-bottom: 5px; }
+.cred-summary { font-size: 13.5px; color: #C0B8A8; line-height: 1.6; }
+.cred-dim-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.06); font-size: 12.5px; color: #C0B8A8; }
+.cred-dim-row:last-child { border-bottom: none; }
+.cred-score { font-family: var(--mono); font-weight: 700; }
+.cred-score.a { color: #70DDB8; }
+.cred-score.b { color: #90B8E8; }
+.cred-score.c { color: #FFB84D; }
+.cred-score.d { color: #FF8B7B; }
+
+/* ========== DIVIDER ========== */
+hr.div { border: none; border-top: 1.5px solid var(--rule); margin: 32px 0; }
+.divider-label { text-align: center; position: relative; margin: 30px 0; }
+.divider-label::before { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 1px; background: var(--rule); }
+.divider-label span { position: relative; background: var(--bg); padding: 0 14px; font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+
+/* ========== FOOTER ========== */
+.brief-footer { background: var(--ink); color: #5A6070; padding: 22px 24px; font-family: var(--mono); font-size: 10px; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.brief-footer a { color: #7080A0; }
+
+/* ========== CHART CONTAINER ========== */
+.chart-wrap { background: var(--card); border: 1px solid var(--rule); border-radius: 8px; padding: 18px; margin: 18px 0; max-height: 280px; }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 640px) {
+  .seg-cards { grid-template-columns: 1fr 1fr; }
+  .stat-grid  { grid-template-columns: 1fr 1fr; }
+  .capex-row  { flex-direction: column; }
+  .capex-row .capex-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+  .qs-lines   { grid-template-columns: 1fr; }
+  .hi-body ol { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-btn no-print" onclick="toggleTheme()" title="Toggle dark mode" aria-label="Toggle dark mode">
+  <i class="ti ti-moon-stars" id="theme-icon"></i>
+</button>
+
+<!-- QUICK-SCAN STRIP -->
+<nav id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div class="qs-toggle no-print">
+    <span class="qs-toggle-label">⚡ Quick Scan</span>
+    <button class="qs-toggle-btn" id="qs-btn" onclick="toggleQS()" aria-expanded="true" aria-controls="qs-body">▲ Collapse</button>
+  </div>
+  <div class="qs-body expanded" id="qs-body" role="region" aria-label="Quick scan content">
+    <div class="qs-lines">
+      <div class="qs-line">
+        <span class="icon">⚡</span>
+        <span class="tag">Context</span>
+        <span class="text">Global patent cliff 2026–28 unlocking Eliquis, Xtandi, Imbruvica; India supplies 47% of US generic needs — and accounts for 60% of ANDA submissions to USFDA as of March 2026</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">🏭</span>
+        <span class="tag">Model</span>
+        <span class="text">B2B generics-to-regulated markets pipeline: 51 approved ANDAs (as of March 2026, up from 22 a year ago), 30 yet to commercially launch, backed by multi-facility manufacturing in the US and India</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">🎯</span>
+        <span class="tag">Insight</span>
+        <span class="text">The Atlanta OSD facility is a DEA and BAA compliance asset, not a profit center — it unlocks US controlled substances and federal procurement channels inaccessible to a pure India-export model</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">📊</span>
+        <span class="tag">Numbers</span>
+        <span class="text">FY26: Revenue ₹633 Cr +62% YoY; EBITDA ₹200 Cr +96% at 31.5% margin; PAT ₹121.5 Cr +108%; guided 30–40% revenue and 50–60% PAT growth for FY27</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">🚧</span>
+        <span class="tag">Top Risk</span>
+        <span class="text">Working capital days surged to 187 (from 114 in FY25); ₹497 Cr tied in receivables and profit-share assets versus ₹633 Cr revenue — cash conversion remains the test of earnings quality</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">👁</span>
+        <span class="tag">Watch</span>
+        <span class="text">Q1 FY27 Apnar Pharma revenue ramp (guided ₹80–100 Cr full-year FY27) and net operating cash flow versus ₹200 Cr planned capex — first true free-cash-flow test</span>
+      </div>
+      <div class="qs-line">
+        <span class="icon">💡</span>
+        <span class="tag">Verdict</span>
+        <span class="text">Mid-Early Pivot — regulatory moat proven, US platform taking shape; priced at 41x FY26 PAT, with transformational upside if ₹2,500–3,000 Cr US revenue thesis materialises in 3–5 years</span>
+      </div>
+      <div class="qs-line qs-mgmt">
+        <span class="icon">🗒</span>
+        <span class="tag">Mgmt</span>
+        <span class="text">Tier B — Delivered FY26 guidance; Active flags: Working capital surge (187 days) not yet resolved; Apnar revenue conversion unproven; free cash flow definition needs investor scrutiny</span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- COVER BAND -->
+<div class="cover-band">
+  <div class="cover-inner">
+    <div class="cover-eyebrow">
+      <span class="cover-ticker">NSE: SENORES</span>
+      <span class="sep">·</span>
+      <span>Pharmaceuticals</span>
+      <span class="sep">·</span>
+      <span>Q4 FY26 Brief</span>
+      <span class="sep">·</span>
+      <span>June 2026</span>
+    </div>
+    <h1 class="cover-h1">Senores Pharmaceuticals</h1>
+    <p class="cover-sub">Building India's first fully-vertical US generics platform — from Ahmedabad to Atlanta to the Pentagon procurement desk</p>
+    <div class="cover-chips">
+      <span class="chip">Market Cap ≈ ₹4,800–5,000 Cr</span>
+      <span class="chip hi">51 Approved ANDAs</span>
+      <span class="chip">FY26 Revenue ₹633 Cr</span>
+      <span class="chip">Listed Dec 2024 (IPO ₹500 Cr)</span>
+      <span class="chip">Ahmedabad · Atlanta</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+<!-- ======================================================
+  CHAPTER 1: CONTEXT
+======================================================= -->
+<section class="chapter ch-purple" aria-labelledby="ch1-title">
+  <div class="ch-header">
+    <div class="ch-num">1</div>
+    <div>
+      <div class="ch-eyebrow">The Big Picture</div>
+      <div class="ch-title" id="ch1-title">Context — Why This Company, Why Now</div>
+    </div>
+  </div>
+
+  <p>The global pharmaceutical industry is entering one of its most lucrative windows in a decade: a <strong>patent cliff stretching from 2026 to 2028</strong> that will strip brand protection from blockbuster drugs including Eliquis (Bristol-Myers Squibb, ~$11 Bn in US annual sales), Januvia/Janumet (Merck), Xtandi (Astellas), and Imbruvica (AbbVie). As each patent lapses, the door opens for generic manufacturers to capture multi-billion-dollar market opportunities almost overnight — if they already hold USFDA-approved ANDAs for those molecules. The global generics market, valued at <span class="hl-number">USD 454.7 billion in 2025, is forecast to reach USD 770 billion by 2033</span> at a 6.5% CAGR, with Asia-Pacific expected to be the fastest-growing region at 7.0% annually.</p>
+
+  <p>India's role in this story is structural, not aspirational. India accounts for <strong>47% of the United States' requirement for affordable generic medicines</strong> and, as of March 2026, accounted for just over 60% of all ANDA submissions filed at the US Food and Drug Administration — the highest among any country globally. The Indian pharmaceutical market itself, at USD 42.9 billion in 2025, is projected to reach USD 79.5 billion by 2033 at an 8.1% CAGR, driven by rising chronic disease burden, expanding healthcare access, and government schemes boosting domestic API production.</p>
+
+  <p>The policy backdrop is equally supportive. The Indian government's Production Linked Incentive scheme for pharmaceuticals allocated significant funding to boost domestic API manufacturing — reducing import dependence and strengthening cost competitiveness for generics exporters. On the US side, <span class="hl-catalyst">President Trump's April 2026 proclamation imposed 100% tariffs on patented pharmaceutical imports — but explicitly exempted generic drugs</span>, which constitute virtually all of India's pharma exports to the US. This asymmetric tariff regime is a structural tailwind for Indian generic manufacturers: it raises costs for innovators while leaving generics untouched, accelerating the cost-to-value equation that drives US pharmacy chains and hospital formularies toward generics.</p>
+
+  <p>Senores Pharmaceuticals sits at the intersection of these three forces — the patent cliff, India's regulatory credibility, and the US policy shift toward generic procurement. Listed in December 2024 through a ₹500 crore IPO, the Ahmedabad-based company is still in its formative innings as a public entity, but the speed with which it has assembled a multi-layer US platform in the 18 months since listing sets it apart from the typical mid-cap Indian generic story.</p>
+
+  <div class="card-box accent-purple">
+    <div class="card-label">Sector Snapshot</div>
+    <div class="stat-grid">
+      <div class="stat-cell stat-col-purple">
+        <div class="stat-label">Global Generics Market 2025</div>
+        <div class="stat-val">$454 Bn</div>
+        <div class="stat-delta up">→ $770 Bn by 2033 (6.5% CAGR)</div>
+      </div>
+      <div class="stat-cell stat-col-blue">
+        <div class="stat-label">India Pharma Market 2025</div>
+        <div class="stat-val">$42.9 Bn</div>
+        <div class="stat-delta up">→ $79.5 Bn by 2033 (8.1% CAGR)</div>
+      </div>
+      <div class="stat-cell stat-col-teal">
+        <div class="stat-label">India Share of US Generic Supply</div>
+        <div class="stat-val">47%</div>
+        <div class="stat-delta up">60% of all ANDA filings at FDA (Mar 2026)</div>
+      </div>
+      <div class="stat-cell stat-col-amber">
+        <div class="stat-label">India Pharma Exports to US (FY25)</div>
+        <div class="stat-val">$9.7 Bn</div>
+        <div class="stat-delta up">38% of India's total pharma exports</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--purple);background:var(--purple-bg);color:var(--purple);">
+    The global patent cliff 2026–28, combined with US tariff exemption for generics, sets up a multi-year structural tailwind for USFDA-credentialed Indian pharma — and Senores entered this window with 51 approved ANDAs and an accelerating US execution track.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 2: BUSINESS MODEL
+======================================================= -->
+<section class="chapter ch-teal" aria-labelledby="ch2-title">
+  <div class="ch-header">
+    <div class="ch-num">2</div>
+    <div>
+      <div class="ch-eyebrow">The Business Model</div>
+      <div class="ch-title" id="ch2-title">What Senores Actually Does — And How Revenue Compounds</div>
+    </div>
+  </div>
+
+  <p>Senores Pharmaceuticals is a research-driven pharmaceutical company that develops, manufactures, and commercialises generic formulations primarily for regulated markets — the US, Canada, and the UK — alongside a parallel presence in emerging markets across 40+ countries. The company also manufactures Active Pharmaceutical Ingredients (APIs) for domestic and SAARC markets, and supplies critical care injectables to Indian hospitals. Founded in 2017 and converted to a public company in September 2023, Senores has grown from ₹14 crore in revenue in FY22 to ₹633 crore in FY26 — an implied five-year revenue CAGR of approximately 115%.</p>
+
+  <p>The <strong>core flywheel</strong> works as follows: Senores identifies specialty, underpenetrated, or complex generic molecules with multi-million-dollar US market sizes and limited competition. It files ANDAs (or acquires them from larger companies rationalising their portfolios), manufactures the product at its USFDA-approved facility in Chhatral, Ahmedabad, or at its newly acquired Apnar Pharma plant in Jambusar, and then either commercialises through third-party US distribution partners (the traditional B2B model, sharing profit) or, increasingly, through its own US-facing platforms — Zoraya Pharmaceuticals for commercial distribution and Amerisyn for government procurement. The Atlanta, Georgia OSD facility functions as the compliance anchor for the US market.</p>
+
+  <p><span class="hl-key">What makes customers sticky is not switching costs in the conventional sense — it is qualification depth: a generic product approved by USFDA, with DEA scheduling compliance for controlled substances, and BAA certification for government procurement, takes 3–5 years and tens of crores to qualify from scratch.</span> Once Senores has these approvals in place, the commercial moat is the approval itself. This is why the ANDA portfolio — 51 approved ANDAs as of March 2026 — is the single most important asset on Senores' balance sheet, even though it doesn't show up as a line item.</p>
+
+  <div class="seg-cards">
+    <div class="seg-card">
+      <div class="seg-top-bar" style="background:var(--purple);"></div>
+      <div class="seg-name">Regulated Markets</div>
+      <div class="seg-rev" style="color:var(--purple);">₹427 Cr</div>
+      <div class="seg-delta">+74.6% YoY · 67.5% of FY26 revenue</div>
+      <div class="seg-desc">US, Canada, UK. Core growth engine. B2B generics through partners + own label via Zoraya. EBITDA margin ~39%.</div>
+      <span class="seg-status seg-running">▶ RUNNING &amp; SCALING</span>
+    </div>
+    <div class="seg-card">
+      <div class="seg-top-bar" style="background:var(--amber);"></div>
+      <div class="seg-name">Emerging Markets</div>
+      <div class="seg-rev" style="color:var(--amber);">₹131 Cr</div>
+      <div class="seg-delta">+13.1% YoY · 20.7% of FY26 revenue</div>
+      <div class="seg-desc">40+ countries including Philippines, Peru, Ghana, Nigeria, Myanmar. EBITDA margin 18–19%, guided 20–21% in FY27.</div>
+      <span class="seg-status seg-running">▶ RUNNING · STEADY</span>
+    </div>
+    <div class="seg-card">
+      <div class="seg-top-bar" style="background:var(--coral);"></div>
+      <div class="seg-name">India Branded Generics</div>
+      <div class="seg-rev" style="color:var(--coral);">~₹40 Cr</div>
+      <div class="seg-delta">+385% YoY (small base) · ~6% of revenue</div>
+      <div class="seg-desc">Critical care injectables to hospitals across India. Field-force expansion underway. Target ₹60–70 Cr in FY27.</div>
+      <span class="seg-status seg-ramping">↗ RAMPING</span>
+    </div>
+    <div class="seg-card">
+      <div class="seg-top-bar" style="background:var(--teal);"></div>
+      <div class="seg-name">API and CDMO</div>
+      <div class="seg-rev" style="color:var(--teal);">~₹34 Cr</div>
+      <div class="seg-delta">Residual · ~5.4% of revenue</div>
+      <div class="seg-desc">Two API facilities near Ahmedabad (Chhatral + Naroda). Supports captive formulation needs and third-party CMO contracts across 40+ products.</div>
+      <span class="seg-status seg-running">▶ RUNNING</span>
+    </div>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--teal);background:var(--teal-bg);color:var(--teal);">
+    Regulated Markets (US-led) now drive 67% of revenue at 39% EBITDA margins — and the 30 yet-to-launch ANDAs in the approved portfolio represent a ready-to-ignite revenue pipe that management expects to commercialise over 6–8 quarters.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 2B: PORTER'S FIVE FORCES
+======================================================= -->
+<section class="chapter ch-purple" aria-labelledby="ch2b-title">
+  <div class="ch-header">
+    <div class="ch-num">2B</div>
+    <div>
+      <div class="ch-eyebrow">Competitive Structure</div>
+      <div class="ch-title" id="ch2b-title">Porter's Five Forces Analysis</div>
+    </div>
+  </div>
+
+  <div class="lead lead-purple">Competitive analysis of the US generics landscape for a small-cap Indian player like Senores reveals a nuanced picture: high structural pressures on pricing and buyer concentration, but meaningful moats around regulatory qualification, government procurement access, and complex molecule capability.</div>
+
+  <table class="porter-table" role="table" aria-label="Porter's Five Forces Analysis">
+    <thead>
+      <tr>
+        <th>Force</th>
+        <th>Rating</th>
+        <th>Rationale (Company-Specific)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="force-name">Rivalry Intensity</span></td>
+        <td><span class="rating-hi">HIGH</span></td>
+        <td>US generics market experiences 3–7% annual price erosion as a structural feature. Senores competes with Dr. Reddy's, Aurobindo, Sun Pharma, and Teva at a fraction of their scale. However, Senores' deliberate focus on specialty and complex niche products with fewer than 3–4 competitors per molecule partially insulates revenue from commodity price wars. The acquisition of 14 ANDAs from Dr. Reddy's illustrates that even larger players rationalise portfolios — creating inbound opportunity for Senores.</td>
+      </tr>
+      <tr>
+        <td><span class="force-name">Buyer Power</span></td>
+        <td><span class="rating-hi">HIGH</span></td>
+        <td>Three US drug wholesalers — McKesson, Cardinal Health, and AmerisourceBergen — control over 85% of US drug distribution, and their consolidated purchasing power drives relentless price pressure on generic suppliers. Senores' B2B model (selling through US distribution partners) places it directly in the crosshairs of this buyer concentration. The Amerisyn JV partially offsets this by routing a portion of supply into the US federal/VA/Defense procurement system, where pricing is more stable and buyer concentration lower.</td>
+      </tr>
+      <tr>
+        <td><span class="force-name">Supplier Power</span></td>
+        <td><span class="rating-lo">LOW–MED</span></td>
+        <td>Senores has partial backward integration through its two API facilities in Chhatral and Naroda (Ahmedabad), reducing dependence on external API suppliers for key molecules. However, for complex molecules and controlled substances, specialised raw material supply chains carry single-source risk. The Apnar Pharma acquisition (Jambusar) adds a second regulatory-grade formulation facility, further diluting input concentration risk.</td>
+      </tr>
+      <tr>
+        <td><span class="force-name">Threat of New Entrants</span></td>
+        <td><span class="rating-lo">LOW</span></td>
+        <td>USFDA approval for a manufacturing facility takes 3–5 years from inception. DEA and BAA compliance (for controlled substances and US government supply) adds another 1–2 years and significant capital. Senores' Atlanta OSD facility took years to qualify, and its DEA Schedule 2 compliance is not replicable quickly. The Apnar Pharma acquisition (USFDA, MHRA, Health Canada approvals) similarly took 3+ years to build. New entrants face meaningful time and capital barriers to replicating this multi-jurisdiction regulatory stack.</td>
+      </tr>
+      <tr>
+        <td><span class="force-name">Threat of Substitutes</span></td>
+        <td><span class="rating-med">MEDIUM</span></td>
+        <td>For oral solid dosage generics, substitution risk is relatively contained — the USFDA bioequivalence requirement means one approved generic substitutes another only within tight parameters. However, larger US wholesalers can switch preferred suppliers within the same ANDA. For hospital procurement, reference pricing and formulary decisions can shift volume rapidly. The patent cliff creates opportunity, but also means that once a molecule is genericised, 3–5 additional competitors often receive approvals within 18 months, gradually compressing margins.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="card-box accent-purple">
+    <div class="card-label">Synthesis — Two Highest-Pressure Forces</div>
+    <p><strong>Buyer Power</strong> from the consolidated US drug distribution oligopoly and <strong>Rivalry Intensity</strong> in the US generics market are the two forces exerting the most persistent structural pressure on Senores' margins. The company's primary strategic counter is the complexity of the product mix (fewer competitors per molecule), the Amerisyn JV's access to stable-priced government procurement, and the vertical integration of its US commercial platform via Zoraya — reducing dependence on the big three distributors as it scales.</p>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--purple);background:var(--purple-bg);color:var(--purple);">
+    Low new-entrant threat (regulatory moat) is Senores' core structural advantage; high buyer power and pricing erosion are the forces that make execution discipline — not just ANDA counts — the difference between a compounder and a value trap.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 3: VERTICAL STORIES
+======================================================= -->
+<section class="chapter ch-amber" aria-labelledby="ch3-title">
+  <div class="ch-header">
+    <div class="ch-num">3</div>
+    <div>
+      <div class="ch-eyebrow">Vertical Stories</div>
+      <div class="ch-title" id="ch3-title">Four Platforms, Each With a Distinct Growth Catalyst</div>
+    </div>
+  </div>
+
+  <h3 class="sub" style="color:var(--purple);">Vertical 1 — US Regulated Markets: The ANDA Launch Conveyor</h3>
+  <p>Senores' US business is growing at a pace that most mid-cap Indian pharma companies take a decade to achieve. Regulated Markets revenue hit <span class="hl-number">₹117.8 Cr in Q4 FY26 alone — a 169% year-on-year jump — and ₹427.4 Cr for the full fiscal year (+74.6% YoY)</span>. The external catalyst is the US patent cliff: major drugs losing exclusivity between 2026 and 2028 across cardiovascular, metabolic, oncology, and autoimmune categories represent a combined US market opportunity running into tens of billions of dollars. Senores has positioned itself to capture a slice of this through two mechanisms.</p>
+  <p>The first is the <strong>ANDA launch pipeline</strong>: of 51 approved ANDAs as of March 2026 (up from just 22 a year earlier), only 20 have been commercially launched. The remaining 30 approved ANDAs — covering 100+ strengths — are scheduled to launch over the next 6–8 quarters. Management says 90–95% of the approved portfolio will be commercialised in this window. The 14 ANDAs acquired from Dr. Reddy's (USD 421 Mn market opportunity as per IQVIA) have added controlled substances and specialty categories. The second mechanism is the <span class="hl-catalyst">Amerisyn JV (70% Senores stake, April 2026): a direct route into the US federal, Veterans Affairs, and Department of Defense pharmaceutical procurement market</span> — a high-entry-barrier, stable-pricing procurement channel that existing generics B2B players cannot access without dedicated BAA and security compliance. Management guided Amerisyn to generate ₹50–80 Cr in its first year at approximately 40% EBITDA margins.</p>
+  <div class="card-box" style="border-left:3px solid var(--purple);">
+    <div class="card-label">US Market Opportunity — External Data</div>
+    <p style="font-size:13px;">US generic pharma market is part of the global generic pharmaceuticals market worth USD 454.7 Bn in 2025. Indian pharma's US exports reached USD 9.7 Bn in FY25. The 14 ANDAs acquired from Dr. Reddy's alone carry a IQVIA-assessed US market opportunity of approximately USD 421 Mn; management's 3–5 year US revenue aspiration is ₹2,500–3,000 Cr (≈USD 300–360 Mn at current exchange rates).</p>
+  </div>
+
+  <h3 class="sub" style="color:var(--amber);">Vertical 2 — Emerging Markets: Steady Cash, Rising Margins</h3>
+  <p>Emerging Markets is Senores' oldest, most diversified segment — over 260 product registrations across 40+ countries including the Philippines, Peru, Ghana, Nigeria, Myanmar, Guatemala, and Kenya. FY26 revenue was ₹131.4 Cr (+13.1% YoY), and management guided approximately ₹180 Cr for FY27. While this segment's growth rate is deliberately slower, its importance is strategic: it provides geographical diversification, a cash-flow-positive base, and a testing ground for products that can later be scaled in regulated markets. EBITDA margin for emerging markets was 18–19% in FY26, with management guiding 20–21% in FY27, and a further 200–300 bps improvement once segment revenue crosses the ₹220–250 Cr threshold — a threshold they expect to approach in FY28.</p>
+
+  <h3 class="sub" style="color:var(--coral);">Vertical 3 — India Branded Generics / Critical Care: The Overlooked Optionality</h3>
+  <p>Critical care injectables to Indian hospitals is Senores' newest domestic segment, started in 2022. FY26 saw remarkable percentage growth (approximately 385% YoY) off a small base, reaching approximately ₹40 Cr. Management guided ₹60–70 Cr for FY27, driven by hospital approvals and field-force expansion. This segment matters for two reasons beyond its current size: hospital relationships in India are a captive recurring revenue channel (formulary inclusion is sticky), and critical care injectable capabilities overlap with the sterile manufacturing investment that Senores is making in FY27 — potentially creating shared capex benefits between the India hospital business and future regulated-market sterile launches.</p>
+
+  <h3 class="sub" style="color:var(--teal);">Vertical 4 — Apnar Pharma: The India-Based USFDA Facility that Changes the Cost Structure</h3>
+  <p>The December 2025 acquisition of a 75% stake in Apnar Pharma (total enterprise value ₹91 Cr, with ₹76 Cr representing assumed debt) was the most strategically important move of FY26. Apnar's manufacturing facility in Jambusar, Gujarat is approved by USFDA, MHRA (UK), and Health Canada — three of the most demanding regulatory bodies in the world. It brings 5 additional ANDAs (3 already commercialisable), a USD 722 Mn total addressable market for acquired products, and critically, India-based regulated-market manufacturing capacity that is structurally more cost-efficient than the Atlanta OSD facility for the formulation side of the business. Management guided Apnar to generate ₹80–100 Cr revenue in FY27, growing to ₹180–200 Cr in 2–3 years.</p>
+
+  <div class="takeaway-pill" style="border-left-color:var(--amber);background:var(--amber-bg);color:var(--amber);">
+    The ANDA launch conveyor (30 pending launches) + Amerisyn federal JV + Apnar revenue ramp are the three concurrent catalysts that management is counting on to deliver the guided 30–40% revenue growth in FY27 — all three need to move simultaneously for guidance to hold.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 4: STRATEGIC INSIGHT
+======================================================= -->
+<section class="chapter ch-purple" aria-labelledby="ch4-title">
+  <div class="ch-header">
+    <div class="ch-num">4</div>
+    <div>
+      <div class="ch-eyebrow">The One Thing to Understand</div>
+      <div class="ch-title" id="ch4-title">Strategic Insight — The Vertical Integration Stack</div>
+    </div>
+  </div>
+
+  <div class="insight-box">
+    <div class="ib-label">⚡ The Non-Obvious Insight</div>
+    <p>Most mid-cap Indian pharma companies playing the US generics market operate at one of two layers: Layer 1 (India manufacturing → export to US distributors → share profit) or Layer 2 (Layer 1 + own B2B partnership agreements). Senores is quietly building four simultaneous layers — India manufacturing, India-based USFDA facility, US commercial brand, and US government procurement — and the short-term cost is visible in the working capital surge, but the long-term payoff is structural. <strong>If all four layers are operational simultaneously, Senores shifts from a product-level margin story to a platform-level margin story, where the same ANDA generates revenue through retail, hospital, and federal channels at different price points and different margin profiles — without changing the manufacturing footprint.</strong></p>
+  </div>
+
+  <p>Here is the four-layer stack in plain English:</p>
+  <p><strong>Layer 1 — India Manufacturing (Chhatral OSD + Naroda API):</strong> The base. USFDA-approved Indian facilities producing generics cost-efficiently for the US market. This is where most peers stop.</p>
+  <p><strong>Layer 2 — Apnar Pharma (Jambusar, Gujarat — USFDA + MHRA + Health Canada):</strong> A second India-based regulated-market facility, adding capacity for the product pipeline that Layer 1 cannot absorb. Suppressed FY26 margins by ~100 bps (cost before revenue), but positioned to generate ₹80–100 Cr revenue in FY27. This is the manufacturing scale layer.</p>
+  <p><strong>Layer 3 — Zoraya Pharmaceuticals (51% stake, US-facing commercial platform):</strong> <span class="hl-key">Instead of perpetually sharing 30–50% of US revenue with distributors under the B2B profit-share model, Zoraya creates Senores' own-label distribution capability in the US — capturing the commercial margin that previously flowed to partners.</span> The transition from B2B to own-label is inherently working-capital-intensive (inventory builds before revenue flows), which partly explains the FY26 working capital surge. This is the margin upgrade layer.</p>
+  <p><strong>Layer 4 — Amerisyn JV (70%, April 2026, US Federal Market):</strong> The Atlanta OSD facility's DEA and BAA compliance is the key that unlocks this layer. US federal, VA, and Defense procurement follows a specific contracting process that requires GMP compliance + BAA certification — preventing pure Indian exporters from participating. Senores is one of very few small Indian pharma companies with the compliance stack to enter this channel. Amerisyn is expected to operate at approximately 40% EBITDA margins, significantly above the blended company average.</p>
+
+  <div class="card-box accent-purple">
+    <div class="card-label">Why the Working Capital Surge Makes Sense (But Still Needs Watching)</div>
+    <p style="font-size:13.5px;">When a company transitions from B2B (collect cash from distributor upon shipment) to own-label commercial distribution (carry inventory → sell → collect receivable → collect profit share), working capital days expand structurally before margins improve. Senores' trade receivables of ₹324.8 Cr plus other current financial assets of ₹172.7 Cr (profit-share/unbilled revenue) totalling ₹497.5 Cr against ₹633 Cr revenue sounds alarming. Management says these convert in 1–6 months. If true, FY27 operating cash flow should improve dramatically. If they don't — the B2B-to-own-label transition is more fraught than presented.</p>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--purple);background:var(--purple-bg);color:var(--purple);">
+    Senores is not just an ANDA count story — it is an attempt to build the first fully-vertical Indian generics platform in the US, from Indian manufacturing to own-label US commercial to federal government supply; each layer compounds the margin of the one below it, but all four must execute simultaneously to justify the current valuation.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 5: NUMBERS IN CONTEXT
+======================================================= -->
+<section class="chapter ch-blue" aria-labelledby="ch5-title">
+  <div class="ch-header">
+    <div class="ch-num">5</div>
+    <div>
+      <div class="ch-eyebrow">The Numbers in Context</div>
+      <div class="ch-title" id="ch5-title">Financial Scorecard — FY26 Full Year and Trajectory</div>
+    </div>
+  </div>
+
+  <div class="stat-grid">
+    <div class="stat-cell stat-col-blue">
+      <div class="stat-label">FY26 Revenue (Ops)</div>
+      <div class="stat-val">₹633 Cr</div>
+      <div class="stat-delta up">+62% YoY (₹398 Cr in FY25)</div>
+    </div>
+    <div class="stat-cell stat-col-teal">
+      <div class="stat-label">FY26 EBITDA</div>
+      <div class="stat-val">₹200 Cr</div>
+      <div class="stat-delta up">+96% YoY · 31.5% EBITDA margin</div>
+    </div>
+    <div class="stat-cell stat-col-purple">
+      <div class="stat-label">FY26 PAT</div>
+      <div class="stat-val">₹121.5 Cr</div>
+      <div class="stat-delta up">+108% YoY (₹58.3 Cr in FY25)</div>
+    </div>
+    <div class="stat-cell stat-col-amber">
+      <div class="stat-label">FY26 Diluted EPS</div>
+      <div class="stat-val">₹26.39</div>
+      <div class="stat-delta up">vs ₹16.12 in FY25 (+64% EPS)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">Operating CFO FY26</div>
+      <div class="stat-val" style="color:var(--amber);">₹62 Cr</div>
+      <div class="stat-delta warn">Only 51% of PAT — cash conversion gap</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">Working Capital Days</div>
+      <div class="stat-val" style="color:var(--red);">187 days</div>
+      <div class="stat-delta dn">vs 114 days in FY25 — alarming rise</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">ROCE (Latest)</div>
+      <div class="stat-val" style="color:var(--teal);">13.5%</div>
+      <div class="stat-delta up">Improving from 8.6% in Q3 FY26</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-label">Interest Coverage</div>
+      <div class="stat-val" style="color:var(--teal);">~8x</div>
+      <div class="stat-delta up">Strong debt service position (Q2 FY26)</div>
+    </div>
+  </div>
+
+  <h3 class="sub">Quarterly Progression FY26</h3>
+  <table class="data-table" role="table" aria-label="Quarterly financial progression FY26">
+    <thead>
+      <tr>
+        <th>Quarter</th>
+        <th>Revenue (₹ Cr)</th>
+        <th>EBITDA Margin</th>
+        <th>PAT (₹ Cr)</th>
+        <th>YoY PAT Growth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Q1 FY26</strong></td>
+        <td>₹115 Cr</td>
+        <td>~24%</td>
+        <td>~₹20 Cr</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td><strong>Q2 FY26</strong></td>
+        <td>₹162–171 Cr</td>
+        <td>32.3%</td>
+        <td>₹32.4 Cr</td>
+        <td>+152% YoY</td>
+      </tr>
+      <tr>
+        <td><strong>Q3 FY26</strong></td>
+        <td>₹175 Cr</td>
+        <td>~32%</td>
+        <td>₹31.7 Cr</td>
+        <td>+105% YoY</td>
+      </tr>
+      <tr>
+        <td><strong>Q4 FY26</strong></td>
+        <td>₹175 Cr (standalone) · ₹190 Cr (total income)</td>
+        <td>27.1%</td>
+        <td>₹37 Cr</td>
+        <td>+104% YoY</td>
+      </tr>
+      <tr>
+        <td><strong>FY26 Full Year</strong></td>
+        <td>₹633 Cr ops revenue · ₹664 Cr total income</td>
+        <td>31.5%</td>
+        <td>₹121.5 Cr</td>
+        <td>+108% YoY</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">Valuation Context — What the Market Is Pricing In</h3>
+  <p>At an approximate market cap of ₹5,000 Cr (based on trading near ₹1,050–1,100 per share as of May–June 2026 with approximately 4.6 Cr shares outstanding), Senores trades at <span class="hl-number">approximately 41x trailing FY26 PAT</span> — a meaningful premium to the sector. Peers provide context: Ajanta Pharma trades at approximately 36–37x PE; Gland Pharma at approximately 34–36x. J B Chemicals trades above 48x. Senores sits in the upper band of the peer group — but its PEG ratio of approximately 0.47 (price-to-earnings to growth) is among the lowest of its peer set, suggesting the headline multiple is partly justified by the growth rate.</p>
+
+  <p>If management delivers its guided 50–60% PAT growth in FY27 (implying PAT of ₹182–194 Cr), the stock moves from approximately 41x trailing to approximately 26–27x on forward FY27 earnings — a meaningful de-rating if the growth lands. <span class="hl-risk">However, this assumes no execution shortfall on the three simultaneous catalysts (Apnar ramp, ANDA launches, Amerisyn contracts) — and any single miss could compress forward earnings significantly at this valuation level.</span></p>
+
+  <table class="data-table" role="table" aria-label="Peer valuation comparison">
+    <thead>
+      <tr>
+        <th class="blue">Company</th>
+        <th class="blue">P/E (Trailing)</th>
+        <th class="blue">EV/EBITDA</th>
+        <th class="blue">PEG Ratio</th>
+        <th class="blue">Market Cap</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Senores Pharma (SENORES)</strong></td><td>~41–46x</td><td>~26–30x</td><td>~0.47</td><td>~₹4,800–5,000 Cr</td></tr>
+      <tr><td>Ajanta Pharma</td><td>~36–38x</td><td>~27–28x</td><td>~2.47</td><td>Large-cap</td></tr>
+      <tr><td>Gland Pharma</td><td>~34–36x</td><td>~20–21x</td><td>~0.72</td><td>Mid-cap</td></tr>
+      <tr><td>J B Chemicals</td><td>~48x</td><td>–</td><td>–</td><td>Mid-cap</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12px;color:var(--gray);font-style:italic;">Sources: MarketsMOJO, Simply Wall St, company filings. PE data approximate as of May–June 2026.</p>
+
+  <!-- CAPEX TIMELINE CARD -->
+  <h3 class="sub">Capex Timeline — Historical, Announced, and Revenue Bridge</h3>
+
+  <div class="card-box" style="border-top:3px solid var(--teal);padding-top:16px;">
+    <div class="card-label">Capex Deployment Register — FY24 to FY27</div>
+    <div class="capex-timeline" role="table" aria-label="Capex timeline">
+      <div class="capex-row">
+        <div class="capex-cell capex-head">Period</div>
+        <div class="capex-cell capex-head">Capex / Acquisition</div>
+        <div class="capex-cell capex-head">Project / Milestone</div>
+        <div class="capex-cell capex-head">Revenue Bridge</div>
+        <div class="capex-cell capex-head">Funding Source</div>
+        <div class="capex-cell capex-head">Status</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-cell"><span class="capex-year">FY24</span></div>
+        <div class="capex-cell"><span class="capex-amt">~₹30–40 Cr est.</span><div class="capex-sub">Organic only</div></div>
+        <div class="capex-cell">Atlanta OSD facility expansion; India API facility scale-up (Naroda)</div>
+        <div class="capex-cell">Revenue ramp from US approvals in FY25–26</div>
+        <div class="capex-cell">Internal accruals</div>
+        <div class="capex-cell"><span class="status-on">● DELIVERED</span></div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-cell"><span class="capex-year">FY25</span></div>
+        <div class="capex-cell"><span class="capex-amt">~₹50–70 Cr est.</span><div class="capex-sub">Organic + ANDA acquisitions</div></div>
+        <div class="capex-cell">14 ANDAs from Dr. Reddy's (announced Mar 2025, USD 421 Mn opportunity); Atlanta 4th line expansion commenced</div>
+        <div class="capex-cell">USD 421 Mn addressable; launches driving Q3–Q4 FY26 regulated market surge</div>
+        <div class="capex-cell">IPO proceeds + internal accruals</div>
+        <div class="capex-cell"><span class="status-on">● ON TRACK</span></div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-cell"><span class="capex-year">FY26</span></div>
+        <div class="capex-cell"><span class="capex-amt">~₹91 Cr (Apnar EV)</span><div class="capex-sub">+ organic capex est. ₹50–60 Cr; ₹394.98 Cr IPO deployed total</div></div>
+        <div class="capex-cell">Apnar Pharma (75% stake, Jambusar, USFDA + MHRA + Health Canada); Zoraya 51% stake; Amerisyn 70% JV (Apr 2026); Havix Group US</div>
+        <div class="capex-cell">Apnar: ₹80–100 Cr FY27 revenue guided. Zoraya: own-label distribution margin uplift. Amerisyn: ₹50–80 Cr Year 1</div>
+        <div class="capex-cell">IPO proceeds (₹394.98 Cr deployed of ₹500 Cr); ₹76 Cr debt assumed in Apnar deal</div>
+        <div class="capex-cell"><span class="status-drift">⚠ REVENUE PENDING</span><div class="capex-sub">Costs landed FY26; revenue in FY27</div></div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-cell"><span class="capex-year">FY27 (Planned)</span></div>
+        <div class="capex-cell"><span class="capex-amt">₹200 Cr planned</span><div class="capex-sub">₹100 Cr sterile mfg + ₹100 Cr other</div></div>
+        <div class="capex-cell">Sterile manufacturing capability development; Atlanta 4th line completion; Apnar ramp; remaining ANDA launch capex</div>
+        <div class="capex-cell">Sterile mfg enables injectable ANDA launches (currently outsourced). Revenue bridge: ₹50–100 Cr incremental in FY28+</div>
+        <div class="capex-cell">₹100 Cr from remaining IPO proceeds; ₹100 Cr from internal accruals (management guidance)</div>
+        <div class="capex-cell"><span class="status-watch">◈ WATCH: FCF test</span><div class="capex-sub">FY26 operating CFO was only ₹62 Cr vs ₹200 Cr planned capex</div></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:12px;color:var(--gray);font-style:italic;margin-top:6px;">Note: FY24 and FY25 organic capex figures are estimates; management has not disclosed granular historical capex by year. The ₹200 Cr FY27 capex plan is from Q4 FY26 concall guidance. IPO utilisation of ₹394.98 Cr is per company filings as of March 2026.</p>
+
+  <div class="card-box accent-amber" style="margin-top:14px;">
+    <div class="card-label">Capex Red Flag Check</div>
+    <p style="font-size:13.5px;"><strong>Capex-vs-CFO mismatch:</strong> FY26 operating cash flow was ₹62 Cr. FY27 planned capex is ₹200 Cr. Even if ₹100 Cr comes from remaining IPO proceeds, Senores needs operating cash flow to more than double — from ₹62 Cr to ₹100+ Cr — for the "internal accruals" claim to hold. This is the primary free-cash-flow watch signal for FY27. Management believes working capital normalisation (from 187 days back toward industry norms) will drive the cash flow improvement. Watch Q1 and Q2 FY27 CFO numbers carefully.</p>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--blue);background:var(--blue-bg);color:var(--blue);">
+    Revenue is growing at 62% and margins at 96% — but operating cash flow of only ₹62 Cr against ₹121.5 Cr PAT signals a working-capital-intensive transition phase; FY27 will determine if this is a temporary B2B-to-own-label friction or a structural earnings quality concern.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 6: RISKS
+======================================================= -->
+<section class="chapter ch-coral" aria-labelledby="ch6-title">
+  <div class="ch-header">
+    <div class="ch-num">6</div>
+    <div>
+      <div class="ch-eyebrow">Eyes Open</div>
+      <div class="ch-title" id="ch6-title">Risks — Specific, Concrete, and Measurable</div>
+    </div>
+  </div>
+
+  <div class="lead lead-coral">These are not generic disclaimers. Each risk below is specific to Senores' current business stage, measurable against quarterly data points, and directly linked to the thesis that could break.</div>
+
+  <div class="risk-grid" role="list" aria-label="Risk register">
+    <div class="risk-card hi" role="listitem">
+      <div class="risk-name"><i class="ti ti-alert-triangle ri ri-red" aria-hidden="true"></i> Risk 1 — Working Capital Blowout (Critical)</div>
+      <div class="risk-what">Trade receivables of ₹324.8 Cr plus other current financial assets of ₹172.7 Cr total ₹497.5 Cr — approximately 79% of FY26 revenue. Working capital days jumped from 114 to 187 between FY25 and FY26. Management attributes this to B2B profit-share timing under the distribution model and unbilled revenue. If this explanation is valid, FY27 cash flows improve dramatically as these convert. If it is not — and receivables keep rising — earnings quality becomes structurally questionable.</div>
+      <div class="risk-signal">Signal to watch: Working capital days in Q1 FY27 results. If 187 days persists or rises — escalate this from risk to thesis-breaker. Target: below 150 days by Q2 FY27.</div>
+    </div>
+
+    <div class="risk-card hi" role="listitem">
+      <div class="risk-name"><i class="ti ti-alert-triangle ri ri-red" aria-hidden="true"></i> Risk 2 — ANDA Commercialisation Gap (Critical)</div>
+      <div class="risk-what">Senores has 30 approved ANDAs that are not yet commercially launched. These represent significant potential revenue, but ANDA approval and ANDA commercialisation revenue are separated by: manufacturing ramp, US distribution partner agreements (or own-label build-out), US price discovery, and actual formulary adoption. US generics pricing has structural 3–7% annual erosion; by the time lower-priority ANDAs are launched, the market price may have compressed further. Additionally, the shift to own-label distribution through Zoraya adds execution risk and working capital intensity to each new launch.</div>
+      <div class="risk-signal">Signal to watch: Number of new ANDA launches per quarter in concall disclosure. Management guided 90–95% of 51 approved ANDAs to be launched in 6–8 quarters. Red flag: fewer than 4 new launches per quarter or revenue contribution from new launches below 10% of quarterly revenue growth.</div>
+    </div>
+
+    <div class="risk-card med" role="listitem">
+      <div class="risk-name"><i class="ti ti-alert-triangle ri ri-amb" aria-hidden="true"></i> Risk 3 — Apnar Integration and Ramp Risk (High)</div>
+      <div class="risk-what">Apnar Pharma is now central to FY27 delivery. Management guided ₹80–100 Cr from Apnar in FY27, but in FY26 the asset contributed minimal revenue while its operating costs suppressed blended EBITDA margin by approximately 100 basis points. The remaining 25% stake is yet to be acquired (expected by October 2026, second tranche). Any delay in Apnar's ANDA-level commercialisation, regulatory inspection concerns, or integration friction with Senores' existing systems could materially dent FY27 guidance — and Apnar is the single largest swing factor in that guidance.</div>
+      <div class="risk-signal">Signal to watch: Apnar-specific revenue disclosure in Q1 and Q2 FY27 concalls. Management said ₹80–100 Cr for FY27. If Q1 FY27 Apnar contribution is below ₹18–20 Cr, the annual run-rate target is at risk.</div>
+    </div>
+
+    <div class="risk-card med" role="listitem">
+      <div class="risk-name"><i class="ti ti-alert-triangle ri ri-amb" aria-hidden="true"></i> Risk 4 — US Tariff Policy Extension to Generics (Sector Risk)</div>
+      <div class="risk-what">The April 2026 Trump executive order on pharmaceutical tariffs explicitly exempted generic drugs — for now. The order includes a Commerce Department review of generics reshoring, with the possibility of extending tariffs to generics if reshoring does not accelerate. India supplies 47% of US generic medicines; even a 10–15% tariff on generics would structurally compress margins for Indian exporters. Senores, with the Atlanta OSD facility providing partial US manufacturing cover, is better positioned than pure-India exporters, but still derives the majority of its US revenue from Indian-manufactured products.</div>
+      <div class="risk-signal">Signal to watch: Commerce Department generics tariff review announcements. Any formal rulemaking proposal on generics tariffs is a sector-wide negative that would require immediate valuation reassessment across all Indian pharma exporters.</div>
+    </div>
+
+    <div class="risk-card med" role="listitem">
+      <div class="risk-name"><i class="ti ti-alert-triangle ri ri-amb" aria-hidden="true"></i> Risk 5 — Valuation Sensitivity to Guidance Miss (Specific to Stage)</div>
+      <div class="risk-what">At approximately 41x trailing PE, Senores is priced for the FY27 guidance (30–40% revenue, 50–60% PAT) to land. Management itself called this guidance conservative, based on minimum achievable targets. But any shortfall in even one of the three simultaneous catalysts (Apnar ramp, ANDA launches, Amerisyn contracts) could compress FY27 PAT by 20–30%. At 41x, that creates disproportionate downside: a 20% PAT shortfall at constant multiples translates to approximately 20% stock decline; if the multiple also de-rates (say to 35x on disappointing growth), the combined impact could be 30–35%. This is not a stock with margin of safety; it is an execution-led compounding thesis.</div>
+      <div class="risk-signal">Signal to watch: Q1 FY27 revenue run-rate (implied: ₹200+ Cr to be on track for 35% full-year growth). Below ₹185 Cr in Q1 FY27 is an early caution signal.</div>
+    </div>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--coral);background:var(--coral-bg);color:var(--coral);">
+    The two critical risks — working capital sustainability and ANDA commercialisation pace — are both resolvable in 2–3 quarters if the B2B-to-own-label transition is executing as explained; FY27 H1 data will either validate or invalidate the thesis at current valuations.
+  </div>
+</section>
+
+<!-- ======================================================
+  CHAPTER 7: WATCH SIGNALS
+======================================================= -->
+<section class="chapter ch-teal" aria-labelledby="ch7-title">
+  <div class="ch-header">
+    <div class="ch-num">7</div>
+    <div>
+      <div class="ch-eyebrow">Track Every Quarter</div>
+      <div class="ch-title" id="ch7-title">Watch Signals — Five Falsifiable Metrics</div>
+    </div>
+  </div>
+
+  <ul class="watch-list" role="list" aria-label="Watch signals list">
+    <li class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--red);"></div>
+      <div>
+        <div class="watch-label">1. Working Capital Days (Quarterly: Target below 150 by Q2 FY27)</div>
+        <div class="watch-desc">The most important quarterly metric for Senores at this stage. Working capital days of 187 in FY26 are management's biggest credibility test. If the B2B profit-share explanation is correct, receivables should convert meaningfully in Q1 FY27, pulling days down toward 140–150. Calculate: (Trade Receivables + Other Current Financial Assets) divided by (Revenue per day). Any number above 180 in Q1 FY27 is a red flag.</div>
+        <div class="watch-flag">Red flag: Working capital days above 190 in Q1 FY27 = thesis under threat. Green flag: below 160 days = B2B collection thesis holding.</div>
+      </div>
+    </li>
+    <li class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--amber);"></div>
+      <div>
+        <div class="watch-label">2. Apnar Pharma Revenue Contribution (Quarterly: Target ₹18–25 Cr per quarter in FY27)</div>
+        <div class="watch-desc">Management guided ₹80–100 Cr from Apnar in FY27 full year. This implies roughly ₹20–25 Cr per quarter. Track Apnar-specific revenue disclosure in each concall — if management stops breaking this out separately, that in itself is a warning signal. The Apnar asset has USFDA, MHRA, and Health Canada approvals and a USD 722 Mn addressable product portfolio; utilisation of this capacity is the single most material FY27 growth lever.</div>
+        <div class="watch-flag">Red flag: Apnar not separately disclosed or below ₹15 Cr in Q1 FY27. Green flag: ₹22+ Cr Apnar revenue in Q1 FY27 — full-year target is on track.</div>
+      </div>
+    </li>
+    <li class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--purple);"></div>
+      <div>
+        <div class="watch-label">3. ANDA Launch Velocity (Quarterly: Minimum 4 new commercial launches per quarter)</div>
+        <div class="watch-desc">Management has 30 approved-but-unlaunched ANDAs to commercialise over 6–8 quarters. That implies approximately 4–5 new launches per quarter. Track the "ANDAs commercially launched" count in each investor presentation. This is directly verifiable from the company's own quarterly disclosures. ANDA launches without revenue follow-through (ie., launches below ₹2–3 Cr revenue contribution each) suggests pricing pressure or distribution execution issues.</div>
+        <div class="watch-flag">Red flag: Fewer than 3 new ANDA launches per quarter. Green flag: 5+ new launches per quarter with disclosed US revenue contribution.</div>
+      </div>
+    </li>
+    <li class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--teal);"></div>
+      <div>
+        <div class="watch-label">4. EBITDA Margin Trajectory (Quarterly: Sustain 29–31%, as management guided)</div>
+        <div class="watch-desc">EBITDA margin in Q4 FY26 came in at 27.1% — below management's stated 29–31% steady-state range. Management attributed this partly to Apnar integration costs that preceded revenue. As Apnar begins contributing revenue in FY27, operating leverage should lift blended margins back to the 29–31% range. Track gross margin alongside EBITDA margin — if gross margin improves but EBITDA stays flat, overheads are absorbing the gains (employee absorption pattern from The Ledger).</div>
+        <div class="watch-flag">Red flag: EBITDA below 27% for two consecutive quarters in FY27. Green flag: Return to 30%+ EBITDA margin by Q2 FY27.</div>
+      </div>
+    </li>
+    <li class="watch-item" role="listitem">
+      <div class="watch-dot" style="background:var(--blue);"></div>
+      <div>
+        <div class="watch-label">5. Free Cash Flow Test (Annual: Operating CFO vs Capex of ₹200 Cr)</div>
+        <div class="watch-label" style="margin-top:3px;">Management guided positive FCF for FY27. Test it properly.</div>
+        <div class="watch-desc">FY26 operating cash flow was ₹62 Cr. FY27 planned capex is ₹200 Cr, of which ₹100 Cr is IPO-funded (so not from operations). True FCF = Operating CFO minus organic capex. IPO funds financing capex is not FCF positive in the traditional sense. Monitor: if FY27 Operating CFO does not reach at least ₹100–120 Cr, any claim of "free cash flow positive" should be treated with scepticism — the IPO is doing the work, not the business.</div>
+        <div class="watch-flag">Red flag: FY27 Operating CFO below ₹80 Cr. Green flag: Operating CFO above ₹120 Cr — genuine business-level cash generation improving.</div>
+      </div>
+    </li>
+  </ul>
+
+  <div class="takeaway-pill" style="border-left-color:var(--teal);background:var(--teal-bg);color:var(--teal);">
+    Investors checking in on a quarterly basis need only four data points: working capital days, Apnar revenue, ANDA launch count, and EBITDA margin — together they tell the complete FY27 execution story.
+  </div>
+</section>
+
+<!-- ======================================================
+  VERDICT
+======================================================= -->
+<div class="divider-label"><span>Verdict</span></div>
+
+<div class="verdict-box" role="complementary" aria-label="Investment verdict">
+  <div class="verdict-label">📌 Verdict — SENORES · June 2026</div>
+  <p>Senores Pharmaceuticals is one of the few Indian pharma companies that has assembled a genuine multi-layer US platform — a USFDA-compliant India manufacturing base, a second USFDA/MHRA/Health Canada facility through Apnar, a dedicated US commercial brand through Zoraya, and a direct line into the US federal procurement market through Amerisyn — all within 18 months of its IPO. The structural tailwinds are real and multi-year: the global patent cliff through 2028, India's entrenched position as the world's largest ANDA filer, and US tariffs that exempt generics while pressuring innovators. Quality signals are mixed but improving: EBITDA margins of 31.5% reflect genuine operating leverage, but the ₹62 Cr operating cash flow against ₹121.5 Cr PAT — and the 187-day working capital cycle — demand resolution before the earnings quality thesis is fully established. The nearest-term catalyst is Apnar Pharma's revenue ramp in Q1 FY27, which if it lands at ₹20+ Cr per quarter, will prove the acquisition thesis and narrow the PAT-to-FCF gap simultaneously. Valuation at approximately 41x trailing FY26 PAT is expensive in absolute terms but not irrational given a PEG of 0.47; on delivered FY27 guidance, the forward multiple drops to approximately 26–27x — reasonable for this quality of regulated-market pipeline. This is a Mid-Early Pivot story: the regulatory moat is proven, the US platform architecture is laid, but full-season execution is still ahead. Own it for the ₹2,500 Cr US revenue thesis over 3–5 years, but size it for the working-capital and guidance-delivery risks it carries today.</p>
+  <div>
+    <span class="verdict-stage">Mid-Early Pivot</span>
+    <span class="verdict-stage" style="background:var(--teal);margin-left:8px;">30 ANDAs to Launch</span>
+    <span class="verdict-stage" style="background:var(--amber);margin-left:8px;">Apnar Ramp — FY27 Key Test</span>
+  </div>
+</div>
+
+<!-- ======================================================
+  HIGHLIGHT INDEX
+======================================================= -->
+<details id="highlight-index" open>
+  <summary class="hi-summary">📌 All Highlights at a Glance</summary>
+  <div class="hi-body">
+    <ol id="hi-list"><!-- auto-populated by JS --></ol>
+  </div>
+</details>
+
+</div><!-- end .content -->
+
+<!-- ======================================================
+  THE LEDGER — MANAGEMENT CREDIBILITY AUDIT
+======================================================= -->
+<div class="ledger-band" role="complementary" aria-label="The Ledger management credibility audit">
+<div class="ledger-inner">
+
+  <div class="ledger-eyebrow">The Ledger · Companion Section · SENORES · Q4 FY26 Calibration</div>
+  <h2 class="ledger-h1">The Ledger</h2>
+  <p class="ledger-sub">Management promises, tone, and execution — tracked across six pillars. Initial calibration from Q3 and Q4 FY26 concalls and FY26 audited results.</p>
+
+  <!-- PILLAR 1: PROMISE REGISTER -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">📋 Pillar 1 — Promise Register (FY26 Guidance Commitments)</div>
+    <table class="promise-table" role="table" aria-label="Promise register">
+      <thead>
+        <tr>
+          <th>Category</th>
+          <th>Commitment Made</th>
+          <th>Source Quarter</th>
+          <th>Deadline</th>
+          <th>Outcome / Status</th>
+          <th>Delta</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="p-cat p-hard">Revenue</span></td>
+          <td>At least 50% revenue growth and 100% PAT growth for FY26 over FY25</td>
+          <td>Q3 FY26 Concall</td>
+          <td>Mar 2026</td>
+          <td><span class="status-delivered">● DELIVERED</span><br>Revenue +62%, PAT +108%</td>
+          <td>Beat on both — exceeded guidance</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-cap">Capex / Acq</span></td>
+          <td>Acquire 75% stake in Apnar Pharma by March 2026</td>
+          <td>Q3 FY26 Concall (Dec 2025)</td>
+          <td>Mar 2026</td>
+          <td><span class="status-delivered">● DELIVERED</span><br>75% acquired by Mar 2026</td>
+          <td>On time; remaining 25% by Oct 2026</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-mile">Milestone</span></td>
+          <td>ANDA portfolio to reach 50+ by FY26 end</td>
+          <td>Multiple concalls FY26</td>
+          <td>Mar 2026</td>
+          <td><span class="status-delivered">● DELIVERED</span><br>51 approved ANDAs as of Mar 2026</td>
+          <td>Target met; significant acceleration from 22 ANDAs in Mar 2025</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-mar">Margin</span></td>
+          <td>Steady-state EBITDA margins of 29–31%</td>
+          <td>Multiple concalls FY26</td>
+          <td>FY26 full year</td>
+          <td><span class="status-drift">⚠ PARTIAL</span><br>FY26 blended 31.5%; Q4 FY26 was only 27.1%</td>
+          <td>Full-year delivered; Q4 below range — Apnar drag</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-cap">Capex / Acq</span></td>
+          <td>Acquire basket of 14 ANDAs from Dr. Reddy's; fund from IPO proceeds</td>
+          <td>Mar 2025 announcement</td>
+          <td>H1 FY26</td>
+          <td><span class="status-delivered">● DELIVERED</span><br>13 approved + 1 pending USFDA acquisition completed</td>
+          <td>USD 421 Mn market opportunity; launches contributing to Q4 FY26 surge</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-cap">Capex / Acq</span></td>
+          <td>Enter US federal / VA / defense procurement via JV</td>
+          <td>Q4 FY26 (Apr 2026 announcement)</td>
+          <td>Apr 2026</td>
+          <td><span class="status-ontrack">◉ DELIVERED</span><br>Amerisyn 70% JV formed Apr 2026</td>
+          <td>JV formed; ₹50–80 Cr revenue guided for FY27 Year 1 — unverified</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-hard">Revenue FY27</span></td>
+          <td>30–40% revenue growth in FY27; 50–60% PAT growth</td>
+          <td>Q4 FY26 Concall (May 2026)</td>
+          <td>Mar 2027</td>
+          <td><span class="status-pending">○ PENDING</span><br>FY27 has begun; Q1 FY27 data not yet available</td>
+          <td>Tracking begins Q1 FY27. Management called this "minimum achievable"</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-cap2">Capital</span></td>
+          <td>Capex of ₹200 Cr in FY27 — ₹100 Cr IPO funded (sterile mfg) + ₹100 Cr internal accruals</td>
+          <td>Q4 FY26 Concall</td>
+          <td>Mar 2027</td>
+          <td><span class="status-pending">○ PENDING</span></td>
+          <td>Watch: FY26 operating CFO was only ₹62 Cr — internal accruals funding ₹100 Cr capex requires CFO to more than double</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-cap2">Capital</span></td>
+          <td>Positive free cash flow in FY27</td>
+          <td>Q4 FY26 Concall</td>
+          <td>Mar 2027</td>
+          <td><span class="status-watch">⚠ WATCH</span></td>
+          <td>Definition risk: if IPO proceeds fund capex, FCF could be called "positive" while true operating FCF is negative. Scrutinise carefully.</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-mar">Margin</span></td>
+          <td>Emerging Markets EBITDA margin to reach 20–21% in FY27 (from 18–19% in FY26)</td>
+          <td>Q4 FY26 Concall</td>
+          <td>Mar 2027</td>
+          <td><span class="status-pending">○ PENDING</span></td>
+          <td>Mechanism: mix shift to niche products + scale leverage. Track EM-specific margin disclosure per quarter</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-mar">Margin FY27</span></td>
+          <td>Blended EBITDA margin back to 29–31% as Apnar ramps</td>
+          <td>Q4 FY26 Concall</td>
+          <td>H1 FY27</td>
+          <td><span class="status-pending">○ PENDING</span></td>
+          <td>Q4 FY26 at 27.1% — need 200+ bps improvement. Mechanism: Apnar revenue (cost already booked) + ANDA launches</td>
+        </tr>
+        <tr>
+          <td><span class="p-cat p-strat">Strategic</span></td>
+          <td>₹2,500–3,000 Cr US revenue in 3–5 years; management cited ₹3,000–4,000 Cr as aspiration</td>
+          <td>Q4 FY26 Concall</td>
+          <td>FY29–31</td>
+          <td><span class="status-pending">○ LONG-HORIZON</span></td>
+          <td>Long-horizon aspiration; not a near-term commitment. Track US revenue trajectory annually. FY26 regulated markets: ₹427 Cr.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PILLAR 2: TONE DECODER -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">🔬 Pillar 2 — Tone Decoder (Q4 FY26 Concall Analysis)</div>
+    <div class="ledger-flag-grid">
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ Specificity: High</div>
+        <div class="lf-desc">Management provided specific segment-level revenue numbers (Apnar: ₹80–100 Cr; Amerisyn: ₹50–80 Cr; EM: ₹180 Cr; India generics: ₹60–70 Cr), granular ANDA counts (51 approved, 20 launched, 30 pending), and precise FY27 guidance with margin ranges. This is above-average disclosure quality for a newly listed small-cap.</div>
+      </div>
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ FY26 Guidance Delivery: Outperformed</div>
+        <div class="lf-desc">Management guided "at least 50% revenue growth and 100% PAT growth." Actual: +62% revenue, +108% PAT. This is the highest-quality credibility signal: guidance was exceeded, not just met. First concall guidance delivery post-IPO — strong baseline for trust.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ FY27 Conservatism Claim — Unverifiable</div>
+        <div class="lf-desc">Management called FY27 guidance (30–40% revenue, 50–60% PAT) the "minimum achievable" estimate, citing geopolitical uncertainty and shipping disruptions as reasons for conservatism. This is common framing but should be tested: if Q1 FY27 runs 35%+ YoY, the conservative claim holds; if it's below 25% YoY, the conservatism language was expectation management rather than genuine floor-setting.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ Working Capital Explanation — Partially Accepted</div>
+        <div class="lf-desc">The 187-day working capital figure is a legitimate concern that analysts raised in the Q4 FY26 call. Management's explanation (profit-share and unbilled revenue under B2B model, converting in 1–6 months) is reasonable in theory but needs quarterly verification. The language was clear; the delivery will prove or disprove the explanation.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ FCF Definition — Requires Clarification</div>
+        <div class="lf-desc">Management guided "positive free cash flow" for FY27 in the same breath as discussing ₹100 Cr IPO-funded capex. The standard definition of FCF (Operating CFO minus capex) was not explicitly used. Ask management to confirm whether their FCF guidance excludes IPO proceeds from both the numerator and denominator of the calculation.</div>
+      </div>
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ Q and A Quality: Direct</div>
+        <div class="lf-desc">The concall moderated by Ambit Capital's Gaurav Tinani included pointed questions on working capital, CGT product margins, Amerisyn revenue expectations, and Atlanta 4th line timing. Management answered each with specific numbers and timelines rather than deflecting. No analyst escalation patterns detected — meaning no question was repeated across multiple consecutive calls without an answer.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 3: EXECUTION DELTA -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">⚖️ Pillar 3 — Execution Delta (Promise vs Reality)</div>
+    <table class="promise-table" role="table" aria-label="Execution delta table">
+      <thead>
+        <tr>
+          <th>Commitment</th>
+          <th>Original Target</th>
+          <th>Actual Delivery</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>FY26 Revenue Growth</td>
+          <td>≥50% YoY</td>
+          <td>+62% YoY (₹633 Cr)</td>
+          <td><span class="status-delivered">● BEAT</span></td>
+          <td>Exceeded by 12 percentage points</td>
+        </tr>
+        <tr>
+          <td>FY26 PAT Growth</td>
+          <td>≥100% YoY</td>
+          <td>+108% YoY (₹121.5 Cr)</td>
+          <td><span class="status-delivered">● BEAT</span></td>
+          <td>Crossed ₹100 Cr PAT milestone for first time</td>
+        </tr>
+        <tr>
+          <td>ANDA Portfolio Expansion</td>
+          <td>Active expansion (no specific number per public guidance)</td>
+          <td>22 → 51 ANDAs in one year</td>
+          <td><span class="status-delivered">● OUTPERFORM</span></td>
+          <td>Largest single-year jump; driven by Dr. Reddy's acquisition + own filings</td>
+        </tr>
+        <tr>
+          <td>Apnar Pharma 75% acquisition by Mar 2026</td>
+          <td>Mar 2026</td>
+          <td>Completed as guided</td>
+          <td><span class="status-delivered">● ON TIME</span></td>
+          <td>Remaining 25% expected Oct 2026</td>
+        </tr>
+        <tr>
+          <td>EBITDA Margins (steady-state 29–31%)</td>
+          <td>29–31% for FY26</td>
+          <td>FY26 full year ~31.5%; Q4 FY26 27.1%</td>
+          <td><span class="status-drift">⚠ PARTIAL</span></td>
+          <td>Full-year in range; Q4 below — Apnar drag. Not a miss but worth flagging</td>
+        </tr>
+        <tr>
+          <td>IPO Fund Deployment</td>
+          <td>Defined objectives in RHP</td>
+          <td>₹394.98 Cr of ₹500 Cr deployed by Mar 2026; ₹33.02 Cr delayed (geopolitical)</td>
+          <td><span class="status-drift">⚠ SLIGHT DELAY</span></td>
+          <td">₹105 Cr remaining; geopolitical reasons cited for delay. Remaining to be deployed in FY27</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PILLAR 4: CAPEX TIMELINE -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">🏗️ Pillar 4 — Capex Timeline Tracker</div>
+    <div class="ledger-flag-grid">
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ Apnar Acquisition — On Time, On Budget</div>
+        <div class="lf-desc">₹91 Cr enterprise value deal (₹76 Cr debt + ₹15 Cr equity). 75% closed by March 2026 as guided. Facility is USFDA, MHRA, Health Canada approved. No completion drift detected. Revenue suppression (~100 bps margin drag) was disclosed proactively — not hidden.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ Atlanta 4th Line — Delayed</div>
+        <div class="lf-desc">The Atlanta OSD facility's fourth production line expansion was cited in media reporting as delayed as of Q4 FY26. Management did not prominently address this in the Q4 concall. This is an early signal of completion drift — if the fourth line is not mentioned with a specific commissioning quarter in Q1 FY27, escalate to a watch flag.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ Sterile Manufacturing — Nascent, No Timeline</div>
+        <div class="lf-desc">₹100 Cr from IPO proceeds is earmarked for sterile manufacturing development in FY27. No specific plant, no specific commissioning date, and no specific product list has been disclosed publicly. This is early-stage (pre-announcement) and will need to be tracked from Q1 FY27 onwards for any project-level disclosure.</div>
+      </div>
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ Dr Reddy's ANDA Portfolio — Revenue Arriving</div>
+        <div class="lf-desc">14 ANDAs (13 approved + 1 pending) acquired in March 2025 for IPO-funded undisclosed amount. The sharp Q4 FY26 regulated market surge (₹117.8 Cr, +169% YoY) is partly attributed to launches from this portfolio. Post-commissioning revenue is flowing — no phantom revenue bridge pattern detected.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PILLAR 5: MARGIN EXPANSION TRACKER -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">📈 Pillar 5 — Margin Expansion Tracker</div>
+    <table class="promise-table" role="table" aria-label="Margin expansion tracker">
+      <thead>
+        <tr>
+          <th>Mechanism Cited</th>
+          <th>Management Claim</th>
+          <th>Current Evidence</th>
+          <th>Working?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Operating Leverage</strong></td>
+          <td>Fixed costs get absorbed as regulated market revenue scales; incremental margins significantly above blended average</td>
+          <td>EBITDA jumped 96% on 62% revenue growth — faster than revenue. Operating leverage is clearly kicking in. Q2 FY26 EBITDA margin: 32.3%. Year-long trend is positive.</td>
+          <td><span class="status-delivered">✓ WORKING</span></td>
+        </tr>
+        <tr>
+          <td><strong>Product Mix Shift</strong></td>
+          <td>Regulated markets (39% EBITDA) growing faster than Emerging Markets (18–19% EBITDA) — lifting blended margin</td>
+          <td>Regulated Markets rose from ~61% of FY25 revenue to ~67.5% of FY26 — mix shift confirmed. Direction is correct.</td>
+          <td><span class="status-delivered">✓ WORKING</span></td>
+        </tr>
+        <tr>
+          <td><strong>Apnar Revenue on Fixed Base</strong></td>
+          <td>Apnar costs booked FY26; revenue arrives FY27 — unlocking 100+ bps margin expansion as Apnar utilises its capacity</td>
+          <td>FY26 EBITDA suppressed ~100 bps by Apnar (management disclosed). Q1 FY27 margin recovery is the first test of this mechanism.</td>
+          <td><span class="status-drift">⚠ PENDING (FY27 test)</span></td>
+        </tr>
+        <tr>
+          <td><strong>One-Time Eternal Watch</strong></td>
+          <td>Several quarters of "Apnar integration costs," "shipping disruption costs," and "ramp-up expenses" described as temporary</td>
+          <td>Q3 FY26 concall cited shipping disruptions. Q4 FY26 concall cited Apnar costs. Two consecutive quarters of "temporary" headwinds — not yet at the three-quarter threshold for pattern escalation, but worth monitoring.</td>
+          <td><span class="status-watch">⚠ MONITOR</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PILLAR 6: CAPITAL STRUCTURE TRACKER -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">🏦 Pillar 6 — Capital Structure Tracker</div>
+    <div class="ledger-flag-grid">
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ Net Debt Position — Comfortable</div>
+        <div class="lf-desc">Net Debt-to-Equity of approximately 0.05x as of March 2025 (post-IPO cash buffer). Long-term debt ~₹162 Cr (FY25). Apnar assumption added ~₹76 Cr debt; estimated FY26-end long-term debt approximately ₹235–250 Cr. With ₹200 Cr EBITDA, Debt/EBITDA approximately 1.2x — not a concern at present stage. Interest coverage approximately 8x (Q2 FY26 — best in recent history).</div>
+      </div>
+      <div class="ledger-flag clean">
+        <div class="lf-name">✓ No Equity Dilution Post-IPO</div>
+        <div class="lf-desc">No QIP, preferential allotment, or rights issue announced post-December 2024 IPO through June 2026. Management has not mentioned any equity fundraise. Capex funded from IPO proceeds (₹100 Cr remaining) and internal accruals. No stealth dilution flag triggered.</div>
+      </div>
+      <div class="ledger-flag critical">
+        <div class="lf-name">⚠ Funding Flip Watch — Capex vs CFO</div>
+        <div class="lf-desc">Management stated FY27 capex of ₹200 Cr will be funded ₹100 Cr from IPO proceeds and ₹100 Cr from "internal accruals." FY26 operating CFO was ₹62 Cr. For ₹100 Cr to come from internal accruals, operating CFO must more than double. If net borrowings increase instead, this is a Funding Flip — the capex was financed by debt, not accruals, regardless of management's statement. Watch the cash flow statement in Q1 FY27.</div>
+      </div>
+      <div class="ledger-flag warning">
+        <div class="lf-name">⚠ Working Capital Masking Risk</div>
+        <div class="lf-desc">Gross debt may appear flat while cash conversion cycle (187 days) means the company is effectively carrying a significant unfunded working capital burden. ₹497.5 Cr in receivables and profit-share assets versus ₹633 Cr revenue is structurally stretched. If receivables do not normalise in FY27 Q1–Q2 while new term loans appear in the cash flow statement — this flag upgrades to Critical.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CREDIBILITY SCORE -->
+  <div class="ledger-section">
+    <div class="ledger-sec-head">📊 Seven-Dimension Credibility Score — Initial Calibration</div>
+    <div class="credibility-box">
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:12px;">
+        <div class="cred-tier">B</div>
+        <div>
+          <div class="cred-label">Credibility Tier B — Credible with Active Monitoring Flags</div>
+          <div class="cred-summary">Management delivered on FY26 guidance, disclosed specific numbers, and acted on strategic milestones as announced. Working capital and FCF definition concerns prevent a Tier A rating — these need FY27 Q1–Q2 resolution before upgrading.</div>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:12px;margin-top:6px;">
+        <div class="cred-dim-row"><span>Promise Hit Rate (25% weight)</span><span class="cred-score b">B+ · 5 of 6 trackable FY26 promises delivered; 1 partial (Q4 margin)</span></div>
+        <div class="cred-dim-row"><span>Capex Execution Rate (20% weight)</span><span class="cred-score a">A · Apnar on time; Dr. Reddy's ANDAs revenue flowing; Atlanta 4th line delay early-stage only</span></div>
+        <div class="cred-dim-row"><span>Margin Mechanism Fidelity (15% weight)</span><span class="cred-score b">B · Operating leverage working; Apnar mechanism pending FY27 test</span></div>
+        <div class="cred-dim-row"><span>Capital Structure Integrity (15% weight)</span><span class="cred-score c">C+ · No dilution; but Funding Flip Watch active; working capital masking risk flagged</span></div>
+        <div class="cred-dim-row"><span>Specificity and Attribution (15% weight)</span><span class="cred-score a">A · Specific numbers, proactive disclosure, honest about temporary pressures</span></div>
+        <div class="cred-dim-row"><span>Q and A Quality (10% weight)</span><span class="cred-score a">A · Direct answers; no analyst escalation; hard questions addressed with data</span></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:11.5px;color:#6A6360;margin-top:20px;line-height:1.6;">The Ledger is a management credibility audit companion to the NSE Investor Brief. It tracks promises versus reality across six pillars: Promise Register, Tone Decoder, Execution Delta, Capex Timeline, Margin Expansion, and Capital Structure. Tier B indicates credible management with active flags that require quarterly monitoring. This is an initial calibration from Q3 and Q4 FY26 concalls. Update with each new concall transcript. For research use only. Not investment advice.</p>
+
+</div><!-- end .ledger-inner -->
+</div><!-- end .ledger-band -->
+
+<!-- ======================================================
+  FOOTER
+======================================================= -->
+<footer class="brief-footer" role="contentinfo">
+  <span>NSE INVESTOR BRIEF · SENORES · Q4 FY26 · JUNE 2026</span>
+  <span>NSE_INVESTOR_STORY_PERSONA · THE LEDGER v0.2</span>
+  <span>For research and reference use only. Not investment advice.</span>
+</footer>
+
+<!-- ======================================================
+  JAVASCRIPT
+======================================================= -->
+<script>
+// -------- THEME TOGGLE --------
+const THEME_KEY = 'senores_theme';
+function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  const pref = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  applyTheme(pref);
+}
+function applyTheme(t) {
+  document.documentElement.setAttribute('data-theme', t);
+  const icon = document.getElementById('theme-icon');
+  if (icon) icon.className = t === 'dark' ? 'ti ti-sun' : 'ti ti-moon-stars';
+  localStorage.setItem(THEME_KEY, t);
+}
+function toggleTheme() {
+  const cur = document.documentElement.getAttribute('data-theme') || 'light';
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+}
+
+// -------- QUICK-SCAN TOGGLE --------
+const QS_KEY = 'senores_qs_open';
+function initQS() {
+  const saved = localStorage.getItem(QS_KEY);
+  const open = saved === null ? true : saved === 'true';
+  setQS(open);
+}
+function setQS(open) {
+  const body = document.getElementById('qs-body');
+  const btn  = document.getElementById('qs-btn');
+  if (!body || !btn) return;
+  if (open) {
+    body.classList.remove('collapsed');
+    body.classList.add('expanded');
+    btn.textContent = '▲ Collapse';
+    btn.setAttribute('aria-expanded', 'true');
+  } else {
+    body.classList.remove('expanded');
+    body.classList.add('collapsed');
+    btn.textContent = '▼ Quick Scan';
+    btn.setAttribute('aria-expanded', 'false');
+  }
+  localStorage.setItem(QS_KEY, String(open));
+}
+function toggleQS() {
+  const body = document.getElementById('qs-body');
+  const isOpen = body && body.classList.contains('expanded');
+  setQS(!isOpen);
+}
+
+// -------- HIGHLIGHT INDEX AUTO-POPULATE --------
+document.addEventListener('DOMContentLoaded', function() {
+  initTheme();
+  initQS();
+
+  const list = document.getElementById('hi-list');
+  if (!list) return;
+  const els = document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill');
+  els.forEach(function(el) {
+    const text = el.textContent.trim();
+    if (!text || text.length < 10) return;
+    const li = document.createElement('li');
+    li.textContent = text;
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    list.appendChild(li);
+  });
+});
+</script>
+
+</body>
+</html>
