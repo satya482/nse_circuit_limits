@@ -132,6 +132,16 @@ def _rows_or_empty(rows_html: list[str], cols: int, msg: str) -> str:
     return "\n".join(rows_html) if rows_html else f'<tr><td colspan="{cols}" class="empty">{msg}</td></tr>'
 
 
+def _tv_watchlist_csv(rows: list[dict]) -> str:
+    return ",".join(f"NSE:{r['symbol']}" for r in rows)
+
+
+def _copy_btn(rows: list[dict]) -> str:
+    if not rows:
+        return ""
+    return f'<button class="copy-btn" data-syms="{_tv_watchlist_csv(rows)}">📋 Copy TV List ({len(rows)})</button>'
+
+
 # ── HTML builder ──────────────────────────────────────────────────────────────
 
 CSS = """
@@ -176,6 +186,11 @@ tr:hover td{background:var(--bg3)}
 .sqz-on{color:var(--grn);font-weight:600;text-align:center}
 .sqz-off{color:var(--mu);text-align:center;font-size:11px}
 .empty{color:var(--mu);font-style:italic;text-align:center;padding:10px}
+
+.copy-btn{margin-left:auto;background:var(--bg3);border:1px solid var(--bd);color:var(--tx);
+  font-size:10px;padding:3px 9px;border-radius:4px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600}
+.copy-btn:hover{background:var(--bd);border-color:var(--blu)}
+.copy-btn.copied{background:var(--grn);border-color:var(--grn);color:#0d1117}
 """
 
 
@@ -202,6 +217,7 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   <div class="stitle" style="color:var(--gld);border-color:var(--gld)">
     🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze
     <span class="cnt" style="color:var(--gld)">({n_sqz} highest conviction)</span>
+    {_copy_btn(sqz_rows)}
   </div>
   <p style="font-size:11px;color:#b8a000;margin-bottom:8px">
     BB-KC squeeze (energy coiling) + WT bull cross (momentum turning up) = spring loaded → fires UP.
@@ -246,12 +262,26 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   <div class="stitle">
     Other WT Bull Crosses — no active squeeze
     <span class="cnt">({len(other_rows)} signals — sorted rank desc, deeper oversold first)</span>
+    {_copy_btn(other_rows)}
   </div>
   <table>
 {_TABLE_HDR}
     <tbody>{_rows_or_empty(wt_html, 13, "No other WT bull crosses today")}</tbody>
   </table>
 </div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {{
+  btn.addEventListener('click', () => {{
+    navigator.clipboard.writeText(btn.dataset.syms).then(() => {{
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {{ btn.textContent = orig; btn.classList.remove('copied'); }}, 1500);
+    }});
+  }});
+}});
+</script>
 
 </body>
 </html>"""

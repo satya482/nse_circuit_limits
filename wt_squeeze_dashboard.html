@@ -46,6 +46,11 @@ tr:hover td{background:var(--bg3)}
 .sqz-on{color:var(--grn);font-weight:600;text-align:center}
 .sqz-off{color:var(--mu);text-align:center;font-size:11px}
 .empty{color:var(--mu);font-style:italic;text-align:center;padding:10px}
+
+.copy-btn{margin-left:auto;background:var(--bg3);border:1px solid var(--bd);color:var(--tx);
+  font-size:10px;padding:3px 9px;border-radius:4px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600}
+.copy-btn:hover{background:var(--bd);border-color:var(--blu)}
+.copy-btn.copied{background:var(--grn);border-color:var(--grn);color:#0d1117}
 </style>
 </head>
 <body>
@@ -54,7 +59,7 @@ tr:hover td{background:var(--bg3)}
 
 <h1>WaveTrend Bull Cross — 2026-06-16</h1>
 <div class="sub">
-  Generated 2026-06-16 15:44 IST &nbsp;|&nbsp;
+  Generated 2026-06-16 18:15 IST &nbsp;|&nbsp;
   🔥 MAJOR = PPV confirmed &nbsp;|&nbsp;
   🟢 OVERSOLD = cross below −53/−60 &nbsp;|&nbsp;
   📈 ABOVE ZERO = WT1 crossed zero
@@ -72,6 +77,7 @@ tr:hover td{background:var(--bg3)}
   <div class="stitle" style="color:var(--gld);border-color:var(--gld)">
     🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze
     <span class="cnt" style="color:var(--gld)">(42 highest conviction)</span>
+    <button class="copy-btn" data-syms="NSE:INDIQUBE,NSE:SAPPHIRE,NSE:TCPLPACK,NSE:TARSONS,NSE:TIMKEN,NSE:METROPOLIS,NSE:MEDANTA,NSE:SURYODAY,NSE:ADFFOODS,NSE:NFL,NSE:VENTIVE,NSE:VEEDOL,NSE:APTUS,NSE:BAJAJHFL,NSE:SHRINGARMS,NSE:TORNTPHARM,NSE:VISHNU,NSE:NAUKRI,NSE:RUPA,NSE:RKFORGE,NSE:RCF,NSE:SUNDRMFAST,NSE:AFFLE,NSE:IGPL,NSE:OMAXE,NSE:VERANDA,NSE:SHREEPUSHK,NSE:DCBBANK,NSE:CLSEL,NSE:NYKAA,NSE:EBGNG,NSE:NDRAUTO,NSE:CSBBANK,NSE:VSSL,NSE:LODHA,NSE:BBTC,NSE:GNFC,NSE:TARIL,NSE:AHLUCONT,NSE:HUDCO,NSE:POKARNA,NSE:INDIAMART">📋 Copy TV List (42)</button>
   </div>
   <p style="font-size:11px;color:#b8a000;margin-bottom:8px">
     BB-KC squeeze (energy coiling) + WT bull cross (momentum turning up) = spring loaded → fires UP.
@@ -91,6 +97,7 @@ tr:hover td{background:var(--bg3)}
   <div class="stitle">
     Other WT Bull Crosses — no active squeeze
     <span class="cnt">(42 signals — sorted rank desc, deeper oversold first)</span>
+    <button class="copy-btn" data-syms="NSE:VESUVIUS,NSE:SONATSOFTW,NSE:ARVINDFASN,NSE:LLOYDSENGG,NSE:PREMEXPLN,NSE:NIITLTD,NSE:ZENTEC,NSE:RRKABEL,NSE:HUBTOWN,NSE:GLAXO,NSE:SAGCEM,NSE:AEQUS,NSE:KKCL,NSE:BRIGADE,NSE:INGERRAND,NSE:NEWGEN,NSE:GABRIEL,NSE:JSWCEMENT,NSE:KMEW,NSE:FMGOETZE,NSE:FINCABLES,NSE:CDSL,NSE:DODLA,NSE:UJJIVANSFB,NSE:ARIHANTSUP,NSE:FLUOROCHEM,NSE:PRESTIGE,NSE:MTARTECH,NSE:ALLTIME,NSE:360ONE,NSE:AUBANK,NSE:HINDPETRO,NSE:AJMERA,NSE:IXIGO,NSE:PGEL,NSE:BRIGHOTEL,NSE:CREDITACC,NSE:PETRONET,NSE:JAMNAAUTO,NSE:APOLLOTYRE,NSE:COROMANDEL,NSE:GULFOILLUB">📋 Copy TV List (42)</button>
   </div>
   <table>
     <thead><tr>
@@ -142,6 +149,19 @@ tr:hover td{background:var(--bg3)}
 <tr><td class="sym"><a href="https://in.tradingview.com/chart/?symbol=NSE:GULFOILLUB" target="_blank" rel="noopener">GULFOILLUB</a></td><td class="lbl">Automotive and industrial lubricant manufacturer for vehicles</td><td><span style="background:#3b82f6;color:#fff;font-size:9px;padding:1px 6px;border-radius:3px;font-weight:700">ZERO</span></td><td class="num">11.84</td><td class="num">-8.99</td><td class="pos">↑</td><td class="mu">3d</td><td class="pos">+9.1%</td><td class="sqz-off">—</td><td class="mu">—</td><td class="pos">+1.36%</td><td class="num">992.95</td><td class="mu">20%</td></tr></tbody>
   </table>
 </div>
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    navigator.clipboard.writeText(btn.dataset.syms).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+    });
+  });
+});
+</script>
 
 </body>
 </html>
