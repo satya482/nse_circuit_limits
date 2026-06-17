@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QUADFUTURE · NSE Investor Brief Q4 FY26 · Quadrant Future Tek Limited + The Ledger</title>
+<meta name="description" content="Investor brief and management-credibility Ledger for Quadrant Future Tek Limited (NSE: QUADFUTURE) — specialty cables and KAVACH train control systems.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --ink:        #10192B;
+  --paper:      #F6F4EE;
+  --paper2:     #FFFFFF;
+  --rule:       #DCD6C8;
+  --signal-amber: #C47B00;
+  --signal-amber-bg: #FFF3DC;
+  --signal-green:  #1D7A4D;
+  --signal-green-bg: #E5F4EA;
+  --signal-red:    #B0312A;
+  --signal-red-bg: #FBEAE7;
+  --teal:       #0E7A78;
+  --teal-bg:    #E2F3F1;
+  --coral:      #C2542B;
+  --coral-bg:   #FCEAE2;
+  --blue:       #2C6BAE;
+  --blue-bg:    #E7F0FA;
+  --green:      #3B6D11;
+  --green-bg:   #EBF3DF;
+  --purple:     #5A4AAE;
+  --purple-bg:  #EEEBFA;
+  --amber:      #BA7517;
+  --amber-bg:   #FBF0DC;
+  --gray:       #6B6759;
+  --gray-light: #ECE8DD;
+  --copper:     #A3592A;
+  --copper-bg:  #F7E9DD;
+  --serif:      'Playfair Display', Georgia, serif;
+  --display:    'Bricolage Grotesque', system-ui, sans-serif;
+  --sans:       'DM Sans', system-ui, sans-serif;
+  --mono:       'JetBrains Mono', 'Courier New', monospace;
+}
+
+[data-theme="dark"] {
+  --ink:        #ECE7DA;
+  --paper:      #11161F;
+  --paper2:     #161C28;
+  --rule:       #2B3242;
+  --gray:       #9CA1AE;
+  --gray-light: #1D2330;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans); background: var(--paper); color: var(--ink);
+  font-size: 16px; line-height: 1.7; transition: background .25s, color .25s;
+}
+img, svg { max-width: 100%; }
+a { color: var(--teal); }
+
+/* ============ TOP CONTROL BAR ============ */
+.control-bar {
+  position: sticky; top: 0; z-index: 200; display: flex; justify-content: flex-end;
+  gap: 8px; padding: 8px 16px; background: var(--ink); border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ctrl-btn {
+  background: rgba(255,255,255,0.08); color: #F2EFE6; border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 5px; padding: 6px 12px; font-family: var(--mono); font-size: 11.5px;
+  cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+}
+.ctrl-btn:hover { background: rgba(255,255,255,0.16); }
+
+/* ============ QUICK SCAN STRIP — always expanded ============ */
+#quick-scan {
+  position: sticky; top: 41px; z-index: 150; background: var(--ink); color: #EDE9DC;
+  border-bottom: 2px solid var(--signal-amber);
+}
+#quick-scan summary, #quick-scan .qs-toggle-row {
+  list-style: none; cursor: pointer; padding: 10px 20px; display: flex; align-items: center;
+  justify-content: space-between; font-family: var(--mono); font-size: 11px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--signal-amber);
+}
+#quick-scan summary::-webkit-details-marker { display: none; }
+.qs-body { padding: 4px 20px 16px; }
+.qs-line {
+  display: grid; grid-template-columns: 130px 1fr; gap: 12px; padding: 7px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08); font-size: 13px; align-items: baseline;
+}
+.qs-line:last-child { border-bottom: none; }
+.qs-tag { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: #C8C0A8; white-space: nowrap; }
+.qs-val { color: #F2EFE6; line-height: 1.5; }
+.qs-val b { color: #FFD27A; }
+
+/* ============ MASTHEAD ============ */
+.masthead {
+  background: linear-gradient(135deg, var(--ink) 0%, #1B2C42 100%); color: #F2EFE6;
+  padding: 56px 64px 44px; position: relative; overflow: hidden;
+}
+.masthead::before {
+  content: ''; position: absolute; top: -40px; right: -60px; width: 420px; height: 420px;
+  border-radius: 50%; background: radial-gradient(circle, rgba(196,123,0,0.16) 0%, transparent 70%);
+}
+.rail-rule { position: absolute; left: 0; right: 0; bottom: 0; height: 6px;
+  background: repeating-linear-gradient(90deg, var(--signal-amber) 0 28px, transparent 28px 40px); opacity: .8; }
+.eyebrow-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+.masthead-eyebrow { font-family: var(--mono); font-size: 11px; letter-spacing: 2.2px; text-transform: uppercase; color: var(--signal-amber); }
+.signal-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 20px; padding: 4px 12px 4px 8px; font-family: var(--mono); font-size: 10.5px; }
+.signal-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+.sd-amber { background: var(--signal-amber); box-shadow: 0 0 6px var(--signal-amber); }
+.sd-red { background: var(--signal-red); box-shadow: 0 0 6px var(--signal-red); }
+.sd-green { background: var(--signal-green); box-shadow: 0 0 6px var(--signal-green); }
+.masthead h1 { font-family: var(--display); font-size: 52px; font-weight: 800; letter-spacing: -1.5px; line-height: 1.05; }
+.masthead .sub-name { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: 21px; color: #C8C0A8; margin-top: 6px; }
+.masthead-sub { font-size: 16.5px; color: #B8AF98; margin-top: 14px; max-width: 640px; font-weight: 300; line-height: 1.6; }
+.masthead-meta { margin-top: 28px; display: flex; gap: 22px; flex-wrap: wrap; }
+.meta-chip { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16); border-radius: 4px;
+  padding: 7px 14px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; color: #CFC8B4; }
+.meta-chip b { color: #F2EFE6; }
+
+/* ============ LAYOUT ============ */
+.content { max-width: 980px; margin: 0 auto; padding: 0 40px 70px; }
+.toc { background: var(--paper2); border: 1px solid var(--rule); border-radius: 8px; padding: 22px 26px; margin: -26px 0 40px; }
+.toc-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 12px; }
+.toc ol { list-style: none; columns: 2; column-gap: 28px; }
+.toc li { font-size: 13.5px; padding: 4px 0; }
+.toc a { color: var(--ink); text-decoration: none; }
+.toc a:hover { color: var(--teal); text-decoration: underline; }
+@media (max-width: 640px) { .toc ol { columns: 1; } }
+
+/* ============ CHAPTER HEADERS ============ */
+.chap-header { display: flex; align-items: flex-start; gap: 18px; margin: 56px 0 22px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+.chap-num { width: 46px; height: 46px; border-radius: 50%; background: var(--ink); color: #F2EFE6;
+  display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 19px; font-weight: 700; flex-shrink: 0; }
+.chap-eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 3px; }
+.chap-title { font-family: var(--display); font-size: 24px; font-weight: 700; line-height: 1.2; }
+.chap-header.teal .chap-num { background: var(--teal); }
+.chap-header.coral .chap-num { background: var(--coral); }
+.chap-header.blue .chap-num { background: var(--blue); }
+.chap-header.green .chap-num { background: var(--green); }
+.chap-header.amber .chap-num { background: var(--amber); }
+.chap-header.copper .chap-num { background: var(--copper); }
+
+/* ============ PROSE ============ */
+p { margin-bottom: 14px; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+h3 { font-family: var(--display); font-size: 18px; font-weight: 700; margin: 24px 0 10px; }
+ul.prose-list, ol.prose-list { padding-left: 22px; margin: 0 0 14px; }
+ul.prose-list li, ol.prose-list li { font-size: 15px; padding: 4px 0; line-height: 1.6; }
+
+/* ============ HIGHLIGHTS ============ */
+.hl-key      { background: #FFF176; padding: 0 4px; border-radius: 2px; font-weight: 600; color: #1A1A2E; }
+.hl-number   { background: #D7EAFB; padding: 0 4px; border-radius: 2px; font-family: var(--mono); color: #1A1A2E; }
+.hl-risk     { background: #FCE3B8; padding: 0 4px; border-radius: 2px; border-left: 3px solid var(--signal-amber); color: #1A1A2E; }
+.hl-catalyst { background: #DCEFE0; padding: 0 4px; border-radius: 2px; border-left: 3px solid var(--signal-green); color: #1A1A2E; }
+[data-theme="dark"] .hl-key, [data-theme="dark"] .hl-number, [data-theme="dark"] .hl-risk, [data-theme="dark"] .hl-catalyst { color: #1A1A2E; }
+
+/* ============ KEY INSIGHT CARDS ============ */
+.insight-card { border-left: 3px solid var(--signal-amber); background: var(--paper2); border: 1px solid var(--rule);
+  border-left-width: 3px; border-radius: 0 8px 8px 0; padding: 20px 24px; margin: 20px 0; }
+.insight-card .ic-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--signal-amber); margin-bottom: 8px; }
+.insight-card.teal { border-left-color: var(--teal); } .insight-card.teal .ic-label { color: var(--teal); }
+.insight-card.coral { border-left-color: var(--coral); } .insight-card.coral .ic-label { color: var(--coral); }
+.insight-card.green { border-left-color: var(--signal-green); } .insight-card.green .ic-label { color: var(--signal-green); }
+.insight-card.red { border-left-color: var(--signal-red); } .insight-card.red .ic-label { color: var(--signal-red); }
+
+.dark-insight { background: var(--ink); color: #EDE9DC; border-radius: 8px; padding: 24px 28px; margin: 22px 0; }
+.dark-insight .di-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--signal-amber); margin-bottom: 10px; }
+.dark-insight p { color: #D6D0BF; }
+.dark-insight strong { color: #F2EFE6; }
+
+/* ============ TAKEAWAY PILL ============ */
+.takeaway-pill { background: var(--gray-light); border-left: 3px solid var(--teal); border-radius: 0 24px 24px 0;
+  padding: 11px 20px; margin: 18px 0 8px; font-size: 14px; font-weight: 500; display: flex; gap: 8px; align-items: baseline; }
+.takeaway-pill .tp-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gray); flex-shrink: 0; }
+
+/* ============ STAT ROWS ============ */
+.stat-block { background: var(--paper2); border: 1px solid var(--rule); border-radius: 8px; padding: 18px 22px; margin: 18px 0; }
+.stat-row { display: flex; justify-content: space-between; align-items: baseline; padding: 9px 0; border-bottom: 1px dotted var(--rule); gap: 14px; }
+.stat-row:last-child { border-bottom: none; }
+.stat-label { font-size: 13.5px; color: var(--gray); }
+.stat-value { font-family: var(--mono); font-size: 14.5px; font-weight: 600; text-align: right; }
+.stat-value .delta-up { color: var(--signal-green); }
+.stat-value .delta-down { color: var(--signal-red); }
+
+/* ============ TABLES ============ */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: 18px 0; }
+.data-table th { background: var(--ink); color: #EEE7D8; padding: 10px 12px; text-align: left; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.5px; font-weight: 500; }
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.5; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: rgba(0,0,0,0.02); }
+[data-theme="dark"] .data-table tr:nth-child(even) td { background: rgba(255,255,255,0.03); }
+.data-table th.teal { background: var(--teal); } .data-table th.coral { background: var(--coral); }
+.data-table th.blue { background: var(--blue); } .data-table th.amber { background: var(--amber); }
+.data-table th.green { background: var(--signal-green); }
+
+.tag { display: inline-block; padding: 2px 8px; border-radius: 3px; font-family: var(--mono); font-size: 10.5px; font-weight: 500; }
+.tag-green { background: var(--signal-green-bg); color: var(--signal-green); }
+.tag-amber { background: var(--signal-amber-bg); color: var(--signal-amber); }
+.tag-red   { background: var(--signal-red-bg); color: var(--signal-red); }
+.tag-teal  { background: var(--teal-bg); color: var(--teal); }
+.tag-coral { background: var(--coral-bg); color: var(--coral); }
+.tag-blue  { background: var(--blue-bg); color: var(--blue); }
+.tag-gray  { background: var(--gray-light); color: var(--gray); }
+
+/* ============ PORTER FORCE PILLS ============ */
+.force-pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 14px; font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.force-high { background: var(--signal-red-bg); color: var(--signal-red); }
+.force-med  { background: var(--signal-amber-bg); color: var(--signal-amber); }
+.force-low  { background: var(--signal-green-bg); color: var(--signal-green); }
+
+/* ============ VERTICAL CARDS ============ */
+.vert-card { background: var(--paper2); border: 1px solid var(--rule); border-radius: 10px; padding: 22px 24px; margin: 18px 0; border-top: 4px solid var(--gray); }
+.vert-card.teal { border-top-color: var(--teal); } .vert-card.coral { border-top-color: var(--coral); }
+.vert-card.green { border-top-color: var(--green); } .vert-card.blue { border-top-color: var(--blue); }
+.vert-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+.vert-name { font-family: var(--display); font-size: 18px; font-weight: 700; }
+.vert-status { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 4px 10px; border-radius: 12px; white-space: nowrap; }
+.vs-running { background: var(--signal-green-bg); color: var(--signal-green); }
+.vs-ramping { background: var(--signal-amber-bg); color: var(--signal-amber); }
+.vs-prototype { background: var(--signal-red-bg); color: var(--signal-red); }
+
+/* ============ RISK ROWS ============ */
+.risk-row { display: flex; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.risk-row:last-child { border-bottom: none; }
+.risk-icon { color: var(--signal-amber); font-size: 19px; flex-shrink: 0; margin-top: 2px; }
+.risk-name { font-weight: 700; font-size: 14.5px; margin-bottom: 4px; }
+.risk-body p { font-size: 14px; margin-bottom: 6px; }
+.risk-signal { font-size: 12.5px; color: var(--gray); font-style: italic; }
+
+/* ============ WATCH SIGNALS ============ */
+.watch-row { display: flex; gap: 12px; padding: 13px 0; border-bottom: 1px dotted var(--rule); align-items: flex-start; }
+.watch-row:last-child { border-bottom: none; }
+.watch-dot { width: 11px; height: 11px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.watch-name { font-weight: 700; font-size: 14.5px; }
+.watch-meta { font-size: 13px; color: var(--gray); margin-top: 3px; }
+.watch-thresh { display: flex; gap: 14px; margin-top: 6px; font-family: var(--mono); font-size: 11.5px; flex-wrap: wrap; }
+.wt-chip { padding: 2px 9px; border-radius: 4px; }
+
+/* ============ CAPEX TIMELINE CARD ============ */
+.timeline-card { background: var(--paper2); border: 1.5px solid var(--rule); border-radius: 8px; overflow: hidden; margin: 20px 0; }
+.timeline-header { background: var(--copper); color: white; padding: 11px 18px; font-family: var(--mono); font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; }
+.timeline-row { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--rule); }
+.timeline-row:last-child { border-bottom: none; }
+.timeline-cell { padding: 11px 14px; flex: 1; min-width: 110px; font-size: 12.5px; border-right: 1px solid var(--rule); }
+.timeline-cell:last-child { border-right: none; }
+.tl-label { font-family: var(--mono); font-size: 9.5px; color: var(--gray); margin-bottom: 3px; text-transform: uppercase; letter-spacing: .5px; }
+.tl-val { font-weight: 600; }
+.tl-sub { font-size: 11px; color: var(--gray); margin-top: 2px; }
+.tl-status-delivered { color: var(--signal-green); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.tl-status-drift { color: var(--signal-amber); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+.tl-status-miss { color: var(--signal-red); font-family: var(--mono); font-size: 11px; font-weight: 600; }
+
+/* ============ VERDICT ============ */
+.verdict-box { background: var(--signal-amber-bg); border: 1.5px solid var(--signal-amber); border-radius: 10px; padding: 26px 30px; margin: 36px 0; }
+[data-theme="dark"] .verdict-box { background: #2A2110; }
+.verdict-box .vl-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--signal-amber); margin-bottom: 10px; }
+.verdict-box p { font-size: 15.5px; line-height: 1.75; }
+
+/* ============ CHART CONTAINER ============ */
+.chart-box { background: var(--paper2); border: 1px solid var(--rule); border-radius: 8px; padding: 18px; margin: 18px 0; height: 320px; }
+
+/* ============ HIGHLIGHT INDEX — always expanded ============ */
+#highlight-index { margin: 50px 0 10px; border: 1.5px solid var(--rule); border-radius: 8px; background: var(--paper2); }
+#highlight-index summary { list-style: none; cursor: pointer; padding: 14px 22px; font-family: var(--mono); font-size: 12px;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); border-bottom: 1px solid var(--rule); }
+#highlight-index summary::-webkit-details-marker { display: none; }
+#highlight-index ol { padding: 16px 22px 20px 44px; }
+#highlight-index li { font-size: 13.5px; padding: 5px 0; line-height: 1.55; }
+#highlight-index li[data-type="hl-key"] { border-left: 3px solid #FFD600; padding-left: 10px; }
+#highlight-index li[data-type="hl-number"] { border-left: 3px solid #5B9BD5; padding-left: 10px; }
+#highlight-index li[data-type="hl-risk"] { border-left: 3px solid var(--signal-amber); padding-left: 10px; }
+#highlight-index li[data-type="hl-catalyst"] { border-left: 3px solid var(--signal-green); padding-left: 10px; }
+#highlight-index li[data-type="takeaway-pill"] { border-left: 3px solid var(--teal); padding-left: 10px; font-weight: 500; }
+
+/* ============ DIVIDERS / MISC ============ */
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 48px 0; }
+.section-jump { margin: 40px 0 56px; padding: 20px 0; border-top: 4px double var(--rule); border-bottom: 4px double var(--rule); text-align: center; }
+.section-jump .sj-label { font-family: var(--mono); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+.section-jump .sj-title { font-family: var(--display); font-size: 28px; font-weight: 800; margin-top: 6px; }
+blockquote { border-left: 3px solid var(--purple); padding: 12px 18px; background: var(--purple-bg); border-radius: 0 6px 6px 0; margin: 18px 0; font-style: italic; font-size: 14px; line-height: 1.65; }
+[data-theme="dark"] blockquote { color: #D8D2EE; }
+
+footer { background: var(--ink); color: #9A9483; padding: 26px 48px; font-family: var(--mono); font-size: 10.5px; display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+
+/* ============ PRINT ============ */
+@media print {
+  body { font-size: 11.5px; background: white; color: #111; }
+  .control-bar, .no-print { display: none !important; }
+  .masthead { background: #10192B !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; color: white !important; }
+  #quick-scan { position: static !important; background: #10192B !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .qs-body { display: block !important; }
+  #highlight-index ol { display: block !important; }
+  details { display: block !important; }
+  details > summary { pointer-events: none; }
+  .chap-header, .vert-card, .insight-card, .risk-row, .timeline-card, .stat-block { break-inside: avoid; }
+  a { color: inherit; text-decoration: underline; }
+  .toc { page-break-after: always; }
+}
+@media (max-width: 680px) {
+  .masthead { padding: 40px 22px 32px; }
+  .masthead h1 { font-size: 38px; }
+  .content { padding: 0 20px 50px; }
+  .qs-line { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+
+<div class="control-bar no-print">
+  <button class="ctrl-btn" onclick="window.print()"><i class="ti ti-printer"></i> Print</button>
+  <button class="ctrl-btn" id="themeToggle"><i class="ti ti-moon"></i> Dark mode</button>
+</div>
+
+<!-- ============ QUICK SCAN STRIP — always expanded, 8 lines incl. Ledger line ============ -->
+<details id="quick-scan" open>
+  <summary>
+    <span>▼ Quick Scan — read this before anything else (always expanded for print)</span>
+    <span class="sr-only">Eight one-line highlights summarising this brief, expanded by default for screen, print, and screen-reader use.</span>
+  </summary>
+  <div class="qs-body">
+    <div class="qs-line"><span class="qs-tag">⚡ CONTEXT</span><span class="qs-val">Union Budget 2026 allocates <b>₹2,93,030 Cr</b> to Indian Railways capex, with KAVACH 4.0 targeted across 18,000 route-km of high-density track — but the Signalling &amp; Telecom budget line itself has been called "grossly insufficient" by a former IRISET official.</span></div>
+    <div class="qs-line"><span class="qs-tag">🏭 MODEL</span><span class="qs-val">Two-engine company: a profitable Specialty Cables division (railway, naval, EV, solar) is <b>self-funding</b> a loss-making bet on becoming a fourth approved vendor for India's KAVACH train-protection system.</span></div>
+    <div class="qs-line"><span class="qs-tag">🎯 INSIGHT</span><span class="qs-val">QUADFUTURE is not a railway-cables compounder being re-rated for growth — it is <b>a regulatory-approval option</b> on KAVACH, priced at 4–6x book value, while the cables business that funds it barely breaks even.</span></div>
+    <div class="qs-line"><span class="qs-tag">📊 NUMBERS</span><span class="qs-val">FY26 revenue ~<b>₹153 Cr</b>, net loss <b>₹55.7 Cr</b> (board-approved, 27 May 2026) — operating margin fell from roughly breakeven in FY25 to <b>−32% to −37%</b> in three of four FY26 quarters.</span></div>
+    <div class="qs-line"><span class="qs-tag">🚧 TOP RISK</span><span class="qs-val">Final RDSO type-approval for KAVACH Version 4.0 remains <b>pending</b> as of the May 2026 CARE Ratings monitoring report, despite "final stage" language since at least November 2025 — the entire ₹898 Cr order book is contingent on this single approval.</span></div>
+    <div class="qs-line"><span class="qs-tag">👁 WATCH</span><span class="qs-val">RDSO final Type Approval / certification date for KAVACH 4.0 — the single binary event this entire brief pivots on.</span></div>
+    <div class="qs-line"><span class="qs-tag">💡 VERDICT</span><span class="qs-val">Story stage: <b>Early-to-mid, pre-monetisation</b> — the option is real and the order book exists, but nothing converts to cash until the regulator signs off.</span></div>
+    <div class="qs-line"><span class="qs-tag">🗒 MGMT</span><span class="qs-val">Ledger Tier <b>B–C (Watch Flags Active)</b> · Active flags: KAVACH approval qualifier creep, Electron Interlocking System capex 93% undeployed past deadline, company "no deviation" filing vs CARE Ratings "procedural deviation" finding, frequent KMP changes in FY26.</span></div>
+  </div>
+</details>
+
+<!-- ============ MASTHEAD ============ -->
+<div class="masthead">
+  <div class="eyebrow-row">
+    <span class="masthead-eyebrow">NSE: QUADFUTURE · BSE: 544336 · ISIN INE0LRY01011</span>
+    <span class="signal-chip"><span class="signal-dot sd-amber"></span> Story stage: Early–Mid</span>
+  </div>
+  <h1>Quadrant Future Tek</h1>
+  <div class="sub-name">The cable company betting itself on a railway signal</div>
+  <div class="masthead-sub">An NSE investor brief on Quadrant Future Tek Limited (QUADFUTURE) — specialty cable manufacturer and aspiring fourth vendor for India's indigenous KAVACH train-protection system. Companion section: The Ledger, a management-credibility calibration tracking promise delivery, capex pacing, and capital-structure integrity.</div>
+  <div class="masthead-meta">
+    <span class="meta-chip">SECTOR: <b>Cables · Railway Signalling</b></span>
+    <span class="meta-chip">BRIEF DATE: <b>17 June 2026</b></span>
+    <span class="meta-chip">BASELINE QUARTER: <b>Q4 / FY26 (audited, 27 May 2026)</b></span>
+    <span class="meta-chip">MARKET CAP: <b>~₹1,300 Cr</b></span>
+  </div>
+  <div class="rail-rule"></div>
+</div>
+
+<div class="content">
+
+<div class="toc no-print">
+  <div class="toc-title">In this brief</div>
+  <ol>
+    <li><a href="#ch1">1 · Context — the KAVACH capex wave</a></li>
+    <li><a href="#ch2">2 · The business model</a></li>
+    <li><a href="#ch2b">2B · Porter's Five Forces</a></li>
+    <li><a href="#ch3">3 · The vertical stories</a></li>
+    <li><a href="#ch4">4 · The strategic insight</a></li>
+    <li><a href="#ch5">5 · The numbers in context</a></li>
+    <li><a href="#ch6">6 · Risks</a></li>
+    <li><a href="#ch7">7 · Watch signals</a></li>
+    <li><a href="#verdict">Verdict</a></li>
+    <li><a href="#ledger">The Ledger — management credibility</a></li>
+    <li><a href="#highlight-index">All highlights at a glance</a></li>
+  </ol>
+</div>
+
+<!-- ============ CHAPTER 1 — CONTEXT ============ -->
+<div class="chap-header teal" id="ch1">
+  <div class="chap-num">1</div>
+  <div>
+    <div class="chap-eyebrow">Context</div>
+    <div class="chap-title">A record railway capex cycle, and a safety mandate that only four companies can fulfil</div>
+  </div>
+</div>
+
+<p>Indian Railways is in the middle of the largest capital expenditure cycle in its history. The Union Budget for 2026 allocated <span class="hl-number">₹2,93,030 Cr</span> to Railways capex — a figure that sits alongside a separate, ring-fenced safety budget of roughly ₹1,16,514 Cr for FY 2025–26. A meaningful share of that safety spend is earmarked for one programme: KAVACH, the indigenous Automatic Train Protection system that Indian Railways has adopted as its national standard since July 2020, after a series of fatal collisions made automatic braking a political as well as an engineering priority.</p>
+
+<p>KAVACH is not a niche signalling upgrade. The Railway Ministry's stated near-term target is to cover 18,000 route-kilometres of high-density track with KAVACH Version 4.0, en route to a longer-term ambition — voiced by railway officials — of 44,000 route-kilometres within five years. That second number matters because it has already drawn public criticism: a former Director General of the Railway Institute of Signal Engineering & Telecommunications called the FY 2025–26 Gross Budget Outlay for Signalling and Telecom works, set at roughly ₹6,800 Cr, "grossly insufficient" to meet it. That is the honest starting point for this brief — the tailwind is real, but so is the funding gap between ambition and budget line.</p>
+
+<p>What makes this relevant to a small specialty-cable maker in Mohali, Punjab is that KAVACH has, by design, a tiny supplier base. The system was co-developed by the Research Designs & Standards Organisation (RDSO) together with three Indian companies — HBL Power Systems (now HBL Engineering), Kernex Microsystems, and Medha Servo Drives — who jointly hold the original patent. <span class="hl-key">Quadrant Future Tek is trying to become a fourth vendor in a market the incumbents already patent-protect</span>, and as of this brief's baseline quarter, it has not yet crossed that line: the company is in the final passenger field-trial phase for KAVACH 4.0, with RDSO's final type-approval still pending. Every other number in this brief sits downstream of that one regulatory event.</p>
+
+<p>The company's other business — specialty cables for railway rolling stock, naval and defence vessels, solar installations, and electric vehicles — rides a second, calmer tailwind. India's Navy alone has seen its budget grow from ₹49,623 Cr in 2020–21 to <span class="hl-number">₹1,03,548 Cr</span> in 2025–26 (21% of total defence spend), with 51 warships currently under construction worth approximately ₹90,000 Cr under the Indian Naval Indigenisation Plan 2015–2030. Roughly 67% of the Navy's capital acquisition over the last decade has gone to Indian industry — exactly the kind of indigenisation push that rewards a DGQA-approved domestic cable manufacturer, even one few investors have heard of.</p>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> Railways will spend ₹2.93 lakh Cr this year and the Navy ₹1.03 lakh Cr — but Quadrant captures almost none of it until one regulator signs one approval.</div>
+
+<!-- ============ CHAPTER 2 — BUSINESS MODEL ============ -->
+<div class="chap-header teal" id="ch2">
+  <div class="chap-num">2</div>
+  <div>
+    <div class="chap-eyebrow">The business model</div>
+    <div class="chap-title">A profitable cable business, quietly funding an unprofitable bet on a railway signal</div>
+  </div>
+</div>
+
+<p>Strip away the ticker and Quadrant Future Tek is two separate companies sharing one balance sheet. The first is a specialty-cable manufacturer: a Mohali facility built around a 2.5 MeV Electron Beam Industrial Accelerator that produces "irradiated" or cross-linked cables — a process that improves mechanical strength, thermal resistance, and flame retardance without the heat-intensive chemical cross-linking older plants rely on. That facility is approved by RDSO for railway control, power, and signalling cables for coaches, locomotives, and EMUs, and separately approved by the DGQA (Directorate General of Quality Assurance) for naval and marine cables — two certifications that take years to obtain and that most regional cable makers simply do not have. The same infrastructure also produces solar and EV cables. As of the last disclosed capacity figures, installed capacity stood at roughly 1,887 MTPA, running at utilisation in the high-50% range historically — a real, if modest, manufacturing business with genuine certification moats.</p>
+
+<p>The second business is the Train Control & Signalling (TCS) division, built around KAVACH — now formally renamed the Indian Railways Automatic Train Protection (IR-ATP) system in some filings. This is not a manufacturing business yet; it is a multi-year regulatory and engineering programme to get Quadrant's own version of the system through RDSO's CENELEC SIL-4 safety certification process, the same standard the three incumbent vendors cleared years earlier. The company has already secured prototype/technical clearance on a 43.6 km pilot stretch of South Central Railway and has built an executable order book of <span class="hl-number">₹897.88 Cr</span> (as of 28 February 2026) — covering 768 locomotives/EMUs and roughly 1,109 route-kilometres of trackside equipment — almost all of which sits behind the same locked gate: final RDSO type-approval for KAVACH Version 4.0.</p>
+
+<div class="dark-insight">
+  <div class="di-label">⚡ The non-obvious mechanism</div>
+  <p>Per the company's own disclosure to its IPO monitoring agency (CARE Ratings), losses are <strong>"primarily attributable to ongoing investments in the KAVACH project,"</strong> while "the Speciality Cable Division remains profitable." In plain terms: the cables business is not really the growth story investors are pricing — <strong>it is the bank account funding a seven-figure-crore regulatory bet.</strong> The cables division's modest, steady cash generation is what lets Quadrant keep its KAVACH engineering and certification team funded through repeated trial delays, without going back to shareholders for fresh capital. That is also why the stock's real driver is not quarterly cable volumes — it is a single approval letter from RDSO.</p>
+</div>
+
+<p>There is one genuine flywheel worth understanding, and it sits inside the KAVACH contracts themselves rather than the cables business: onboard KAVACH equipment supply contracts come bundled with an 11-year maintenance annuity — Quadrant has disclosed that it will provide comprehensive maintenance of onboard KAVACH equipment from year five through year fifteen of each contract, priced at roughly 3.00% of capital cost per year. <span class="hl-catalyst">If RDSO approval lands and the current order book converts to installed equipment, the resulting annuity-style maintenance revenue is the closest thing this company has to a recurring-revenue moat</span> — but that flywheel cannot start turning until the first wheel (approval) turns first.</p>
+
+<p>What makes customers sticky here is not brand loyalty — it is certification. Indian Railways production units, the Navy's shipyards, and RDSO itself do not requalify a new cable or signalling vendor casually; once a facility clears RDSO and DGQA approval, it tends to stay on an approved-vendor list for years. That is a real moat for the cables business. It is also exactly the moat Quadrant does not yet have in the TCS business — which is precisely why this brief spends as much time on a pending approval letter as it does on revenue.</p>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> The cables division pays the bills; the KAVACH division is the entire investment thesis — and the two have not yet met in the income statement.</div>
+
+<!-- ============ CHAPTER 2B — PORTER'S FIVE FORCES ============ -->
+<div class="chap-header coral" id="ch2b">
+  <div class="chap-num">2B</div>
+  <div>
+    <div class="chap-eyebrow">Competitive structure</div>
+    <div class="chap-title">Porter's Five Forces — a moat the incumbents already built, and Quadrant is climbing from outside it</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th class="coral">FORCE</th><th class="coral">RATING</th><th class="coral">SPECIFIC RATIONALE</th></tr>
+  <tr>
+    <td><strong>Rivalry intensity</strong></td>
+    <td><span class="force-pill force-high">● HIGH</span></td>
+    <td>In TCS/KAVACH, three patent-co-holding incumbents — HBL Engineering, Kernex Microsystems, Medha Servo Drives — already have approved, revenue-generating positions. HBL alone holds an accumulated KAVACH order book exceeding ₹3,763 Cr and was first to clear RDSO's Version 4.0 approval. Quadrant's ₹898 Cr order book is real but roughly a quarter of HBL's, and unconverted. In cables, rivalry is more diffuse — Polycab, KEI Industries, Universal Cables, Dynamic Cables and Paramount Communications compete largely on price in commodity grades, leaving Quadrant's irradiated/E-beam niche comparatively less contested.</td>
+  </tr>
+  <tr>
+    <td><strong>Buyer power</strong></td>
+    <td><span class="force-pill force-high">● HIGH</span></td>
+    <td>For the TCS division, the buyer is effectively one entity — Indian Railways, acting through RDSO and individual production units such as Patiala Locomotive Works. For naval cables, the buyer is the Ministry of Defence / Indian Navy and PSU shipyards. Single-buyer-dominated revenue, even when the buyer is expanding its budget, means tendering pace and policy choices outside the company's control set the growth ceiling.</td>
+  </tr>
+  <tr>
+    <td><strong>Supplier power</strong></td>
+    <td><span class="force-pill force-med">◐ MEDIUM</span></td>
+    <td>Copper and specialty polymer compounds are globally traded commodities with some pass-through ability in cable pricing, keeping this force moderate rather than high. The 2.5 MeV Electron Beam Industrial Accelerator itself is a sunk capital asset rather than a recurring supplier dependency once installed, which removes one common mid-cap manufacturing risk.</td>
+  </tr>
+  <tr>
+    <td><strong>Threat of new entrants</strong></td>
+    <td><span class="force-pill force-high">● HIGH (and Quadrant is on the wrong side of it)</span></td>
+    <td>KAVACH's entry barrier — CENELEC SIL-4 safety certification, years of type-testing and field trials, RDSO sign-off — is so high that Quadrant itself, despite years of engineering investment and an MoU with RailTel since May 2024, has still not cleared it as of this brief's baseline date. That barrier protects incumbents from new entrants; it has so far also kept Quadrant outside the approved-vendor club it is trying to join. In specialty cables, the barrier is lower (RDSO/DGQA approval plus E-beam capex) but still meaningful.</td>
+  </tr>
+  <tr>
+    <td><strong>Threat of substitutes</strong></td>
+    <td><span class="force-pill force-low">○ LOW</span></td>
+    <td>Indian Railways has mandated KAVACH as its national Automatic Train Protection standard rather than adopting a foreign system such as ETCS, which removes the most obvious substitution risk for the TCS division. In cables, conventional chemically cross-linked cables remain a substitute for E-beam irradiated ones in less safety-critical applications, but railway and naval specifications increasingly favour the irradiated grade Quadrant already produces.</td>
+  </tr>
+</table>
+
+<div class="insight-card coral">
+  <div class="ic-label">Synthesis — the two forces that matter most</div>
+  <p><strong>Threat of new entrants and rivalry intensity are the two highest-pressure forces here</strong> — and unusually, Quadrant sits on the losing side of both. The high entry barrier that should protect an approved KAVACH vendor is the same barrier currently keeping Quadrant out, while three incumbents with first-mover order books compound the rivalry pressure the moment Quadrant does get in. Buyer power compounds both: a single dominant customer (Indian Railways) controls the pace at which any of this resolves.</p>
+</div>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> The same certification wall that makes KAVACH a moat for HBL, Kernex and Medha is the wall Quadrant is still trying to climb.</div>
+
+<!-- ============ CHAPTER 3 — VERTICAL STORIES ============ -->
+<div class="chap-header teal" id="ch3">
+  <div class="chap-num">3</div>
+  <div>
+    <div class="chap-eyebrow">The vertical stories</div>
+    <div class="chap-title">Four verticals, four very different stages of maturity</div>
+  </div>
+</div>
+
+<div class="vert-card teal">
+  <div class="vert-head">
+    <div class="vert-name">🚦 KAVACH / Train Control &amp; Signalling</div>
+    <div class="vert-status vs-prototype">PROTOTYPE — AWAITING FINAL APPROVAL</div>
+  </div>
+  <p><strong>External catalyst:</strong> Union Budget 2026's ₹2,93,030 Cr railway capex allocation and the Railway Ministry's 18,000 route-km KAVACH 4.0 rollout target. <strong>Where it stands:</strong> prototype/technical clearance already secured on a 43.6 km South Central Railway pilot; an Interim Independent Safety Assessment report received in November 2025; final passenger field trials underway since March 2026 on a dedicated route and train allocated by Indian Railways. Final RDSO type-approval — the milestone that unlocks the entire ₹897.88 Cr order book — was still pending as of the May 2026 CARE Ratings monitoring report. A small but real proof point: a fresh ₹20.19 Cr Letter of Acceptance from Patiala Locomotive Works arrived on 15 April 2026, with the final delivery tranche due by 15 March 2027, suggesting Railways continues to place incremental orders even ahead of full certification.</p>
+</div>
+
+<div class="vert-card teal">
+  <div class="vert-head">
+    <div class="vert-name">🚆 Specialty Cables — Railway Rolling Stock</div>
+    <div class="vert-status vs-running">RUNNING</div>
+  </div>
+  <p><strong>External catalyst:</strong> Railways' own rolling-stock production ramp — continued Vande Bharat expansion and a planned production shift toward 17,000 new general and sleeper coaches. <strong>Where it stands:</strong> RDSO-approved supplier of single/multi-core control, power and signalling cables to Railway Production Units since well before the IPO; this is the steadiest, most established part of the company and — per management's own characterisation to the IPO monitoring agency — the segment that remains profitable even as the group reports a consolidated loss.</p>
+</div>
+
+<div class="vert-card coral">
+  <div class="vert-head">
+    <div class="vert-name">⚓ Specialty Cables — Naval &amp; Defence</div>
+    <div class="vert-status vs-running">RUNNING (smaller scale)</div>
+  </div>
+  <p><strong>External catalyst:</strong> the Indian Naval Indigenisation Plan 2015–2030 and a Navy capital budget that has more than doubled to ₹1,03,548 Cr in 2025–26; 51 warships currently under construction worth roughly ₹90,000 Cr, with the Navy targeting a 200-ship fleet by 2035 built domestically. <strong>Where it stands:</strong> the Mohali facility is DGQA-approved for naval/marine single and multi-core power and screened cables — a certification very few Indian cable makers hold — but the company does not break out naval revenue separately in retail-facing disclosures, so the scale of current contribution is not independently verifiable from public filings.</p>
+</div>
+
+<div class="vert-card green">
+  <div class="vert-head">
+    <div class="vert-name">🔋 Specialty Cables — Solar &amp; EV</div>
+    <div class="vert-status vs-ramping">EARLY / INFRASTRUCTURE-READY</div>
+  </div>
+  <p><strong>External catalyst:</strong> India's continuing solar capacity build-out and EV adoption curve, both of which favour lightweight, thermally resistant, fire-safe cabling — exactly what E-beam irradiation is designed to deliver. <strong>Where it stands:</strong> the company has disclosed "full infrastructure" for solar and EV cable production at the same Mohali facility, but, as with naval cables, no separately disclosed revenue line exists yet to confirm how much of current sales this vertical represents. Treat this as optionality rather than a quantified growth driver until segment-level disclosure improves.</p>
+</div>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> One vertical (KAVACH) carries the entire equity story; the other three are real but currently un-quantified in public filings.</div>
+
+<!-- ============ CHAPTER 4 — STRATEGIC INSIGHT ============ -->
+<div class="chap-header amber" id="ch4">
+  <div class="chap-num">4</div>
+  <div>
+    <div class="chap-eyebrow">The strategic insight</div>
+    <div class="chap-title">You are not buying a cable company — you are buying a lottery ticket the cable company is paying for</div>
+  </div>
+</div>
+
+<p>Most investors who encounter QUADFUTURE encounter it as a "railway safety play" — the same framing used for HBL Engineering, which has already cleared the regulatory gate and is converting a ₹3,763 Cr+ KAVACH order book into reported profit. That framing is the trap. <span class="hl-key">Quadrant is not yet a railway-safety-equipment company in any cash-flow sense — it is a small, profitable cable manufacturer that has spent several years and a large share of its IPO proceeds trying to become one</span>, and has not yet succeeded.</p>
+
+<p>Look at the balance sheet and the story becomes obvious in a way the order-book headline does not show: fixed assets have actually <em>shrunk</em> slightly over the past 18 months (from roughly ₹83 Cr to ₹69 Cr), and capital work-in-progress sits at zero. This is not a company building a bigger factory. The cash being spent is overwhelmingly working capital and engineering/certification cost for the TCS division — exactly matching management's own description to the IPO monitoring agency that losses are "primarily attributable to ongoing investments in the KAVACH project." The ₹290 Cr raised at IPO in January 2025 is best understood not as growth capital for cable capacity, but as a war chest to fund the cost of waiting for a regulator.</p>
+
+<div class="insight-card amber">
+  <div class="ic-label">⚡ The one thing to understand</div>
+  <p>The market is currently paying roughly <strong>4.4–5.9x book value</strong> for a company with negative ROCE (−7.0%) and negative ROE (−11.4%) — a multiple that has nothing to do with current earnings, because there are none, and everything to do with the embedded option on RDSO approval. <span class="hl-catalyst">That option has real value: the order book is genuine, the maintenance annuity structure is genuine, and the cables business genuinely funds the wait.</span> But an option that has been "in the final stage" for over six months without resolving is also exactly the kind of position where qualifier creep — "near term" becoming "final phase" becoming simply "pending," without ever attaching a date — is the signal to watch, not the headline order-book number.</p>
+</div>
+
+<p>The honest one-sentence version: Quadrant Future Tek is a cable company that decided, several years ago, to spend its cash flow trying to win a four-player government certification race against three companies that already won it — and the entire investment case now rests on whether that bet pays off before the cables business runs out of patience funding it.</p>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> This is a certification-timing trade dressed as a railway-infrastructure growth story — price it as the former.</div>
+
+<!-- ============ CHAPTER 5 — NUMBERS IN CONTEXT ============ -->
+<div class="chap-header blue" id="ch5">
+  <div class="chap-num">5</div>
+  <div>
+    <div class="chap-eyebrow">The numbers in context</div>
+    <div class="chap-title">Revenue is growing on paper; profitability is moving the wrong way</div>
+  </div>
+</div>
+
+<p>Read the quarterly trend, not the headline FY26 total: revenue has been choppy but directionally up, while operating margin has fallen off a cliff. <span class="hl-number">FY26 full-year revenue came in around ₹153 Cr against a net loss of ₹55.7 Cr</span> — the board-approved figure from the 27 May 2026 audited results — compared with a near-breakeven FY25. Three of four FY26 quarters posted operating margins between −32% and −37%, a level of cash burn well beyond what cable-business seasonality alone would explain.</p>
+
+<div class="stat-block">
+  <div class="stat-row"><span class="stat-label">Revenue, FY26 (audited)</span><span class="stat-value">₹153 Cr <span class="delta-down">(≈flat vs FY25's ₹150 Cr)</span></span></div>
+  <div class="stat-row"><span class="stat-label">Net loss, FY26 (board-approved, 27 May 2026)</span><span class="stat-value">₹55.7 Cr <span class="delta-down">(vs FY25 net loss ₹19.7–20 Cr)</span></span></div>
+  <div class="stat-row"><span class="stat-label">9M FY26 EBITDA (per IPO monitoring disclosure)</span><span class="stat-value">≈ −₹2.8 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">ROCE / ROE</span><span class="stat-value">−7.0% / −11.4%</span></div>
+  <div class="stat-row"><span class="stat-label">Book value per share / Price-to-book</span><span class="stat-value">₹67.5 / ≈4.4–5.9x</span></div>
+  <div class="stat-row"><span class="stat-label">Cash Conversion Cycle (FY23 → FY25)</span><span class="stat-value">97 days <span class="delta-down">→ 261 days</span></span></div>
+  <div class="stat-row"><span class="stat-label">Debtor days (FY21 → FY25)</span><span class="stat-value">85 <span class="delta-down">→ 134 days</span></span></div>
+  <div class="stat-row"><span class="stat-label">Gross borrowings (Mar 2025 → Sep 2025)</span><span class="stat-value">₹85 Cr <span class="delta-up">→ ₹25 Cr</span></span></div>
+  <div class="stat-row"><span class="stat-label">Executable order book (as of 28 Feb 2026)</span><span class="stat-value">₹897.88 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Promoter holding / pledge</span><span class="stat-value">70.0% / <span class="delta-up">0% pledged</span></span></div>
+</div>
+
+<h3>Quarterly trajectory — FY25 Q3 through FY26 Q4</h3>
+<table class="data-table">
+  <tr><th class="blue">QUARTER</th><th class="blue">REVENUE (₹ CR)</th><th class="blue">OPERATING MARGIN</th><th class="blue">NET PROFIT/(LOSS) (₹ CR)</th></tr>
+  <tr><td>Q3 FY25 (Dec 2024)</td><td>27</td><td>−7%</td><td>−8</td></tr>
+  <tr><td>Q4 FY25 (Mar 2025)</td><td>58</td><td>2%</td><td>+2</td></tr>
+  <tr><td>Q1 FY26 (Jun 2025)</td><td>29</td><td>−35%</td><td>−14</td></tr>
+  <tr><td>Q2 FY26 (Sep 2025)</td><td>34</td><td>−37%</td><td>−16</td></tr>
+  <tr><td>Q3 FY26 (Dec 2025)</td><td>33</td><td>−32%</td><td>−15</td></tr>
+  <tr><td>Q4 FY26 (Mar 2026, derived)</td><td>≈57</td><td>improving sequentially</td><td>≈−12</td></tr>
+</table>
+<p style="font-size:13px;color:var(--gray);font-style:italic;">Q4 FY26 figures are derived by subtracting the sum of the first three quarters from the board-approved FY26 full-year total, since the quarter has not yet appeared in third-party quarterly trackers at the time of writing. Source hierarchy: exchange filing (board outcome) &gt; company presentation &gt; concall &gt; financial data aggregators, per project convention.</p>
+
+<div class="chart-box"><canvas id="qftRevMarginChart"></canvas></div>
+
+<h3>Valuation in context</h3>
+<p>Trailing PE is not a usable metric here — Quadrant has posted a consolidated loss in every recent quarter bar one. The market is instead pricing the stock on price-to-book, and at <span class="hl-number">roughly 4.4–5.9x book value</span> it trades at a meaningful premium to a typical small-cap industrial peer set (commonly cited median peer P/B closer to 2.9x), while its closest direct comparables sit at opposite ends of the credibility spectrum: HBL Engineering, already RDSO-approved and converting orders to profit, carried a market capitalisation around ₹15,222 Cr with a recent quarterly PAT of ₹66.31 Cr; Kernex Microsystems, a smaller approved KAVACH OEM that turned around its own losses by FY25, traded around a ₹679 Cr market cap with a recent annual PAT of roughly ₹18 Cr. Quadrant's own market capitalisation has ranged between roughly ₹1,280 Cr and ₹1,540 Cr through 2026 — i.e., the market already prices it well above either Kernex's standalone size, despite Kernex having cleared the approval hurdle Quadrant has not.</p>
+<div class="insight-card blue">
+  <div class="ic-label">What the market is pricing in</div>
+  <p>At this valuation, the market is not pricing "will Quadrant get KAVACH approval" as a coin-flip — it is pricing approval as <em>more likely than not, and arriving soon</em>, with the order book converting cleanly to revenue shortly after. <span class="hl-risk">That is a reasonable bet, not a certain one — and the gap between "final stage" language repeated since November 2025 and an actual signed approval is precisely the gap the current valuation is not discounting very much.</span> If approval slips further into FY27, the multiple has little earnings support to fall back on.</p>
+</div>
+
+<h3>Capex timeline — the capex that mostly isn't capex</h3>
+<p>Unlike most companies profiled in this series, Quadrant's "capex story" is not a new plant coming online — it is a single, specific, and currently underperforming capital-expenditure object inside its IPO proceeds: the Electronic Interlocking System (EIS) development line. This is the cleanest, most falsifiable capex promise the company has made, which is exactly why it belongs front and centre here rather than buried in a footnote.</p>
+
+<div class="timeline-card">
+  <div class="timeline-header">📍 IPO PROCEEDS OBJECT: ELECTRONIC INTERLOCKING SYSTEM (EIS) DEVELOPMENT CAPEX — ₹24.38 Cr EARMARKED, JANUARY 2025</div>
+  <div class="timeline-row" style="background:var(--gray-light);">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-label">Milestone</div></div>
+    <div class="timeline-cell"><div class="tl-label">Amount Earmarked</div></div>
+    <div class="timeline-cell"><div class="tl-label">Deployed</div></div>
+    <div class="timeline-cell"><div class="tl-label">Deadline</div></div>
+    <div class="timeline-cell"><div class="tl-label">Status</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">IPO objects, Jan 2025</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹24.38 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹0</div><div class="tl-sub">Just raised</div></div>
+    <div class="timeline-cell"><div class="tl-val">31 Mar 2026 (committed)</div></div>
+    <div class="timeline-cell"><div class="tl-status-delivered">● ANNOUNCED</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">CARE Ratings Q4 FY26 monitoring report, 12 May 2026</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹24.38 Cr</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹1.65 Cr<br><span class="tl-sub">(~7% deployed)</span></div></div>
+    <div class="timeline-cell"><div class="tl-val">Passed, 31 Mar 2026<br>no ratified extension at report date</div></div>
+    <div class="timeline-cell"><div class="tl-status-miss">✗ DEADLINE MISSED</div></div>
+  </div>
+  <div class="timeline-row">
+    <div class="timeline-cell" style="flex:0.8;"><div class="tl-val">Same report — total IPO proceeds</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹290.00 Cr total</div></div>
+    <div class="timeline-cell"><div class="tl-val">₹267.12 Cr<br><span class="tl-sub">(92% of total proceeds)</span></div></div>
+    <div class="timeline-cell"><div class="tl-val">₹22.88 Cr unutilised overall, almost entirely the EIS line</div></div>
+    <div class="timeline-cell"><div class="tl-status-drift">⚠ CONCENTRATED IN ONE OBJECT</div></div>
+  </div>
+</div>
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;">CARE Ratings' Q4 FY26 Monitoring Agency Report (filed 12 May 2026) explicitly flagged "nil deployment under the Electronic Interlocking System object" with ₹22.73 Cr remaining beyond its committed deadline, alongside a separately deferred board approval for general-corporate-purpose utilisation that was only ratified after the fact, on 8 April 2026. Funding source for the company overall is unambiguous and not in dispute: this is IPO equity proceeds, not debt — there is no "funding flip" here, only a pacing and governance-process miss on one specific object.</p>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> 92% of total IPO proceeds are deployed — but the one capex object meant to diversify the business beyond cables and KAVACH is 93% undeployed past its own deadline.</div>
+
+<!-- ============ CHAPTER 6 — RISKS ============ -->
+<div class="chap-header amber" id="ch6">
+  <div class="chap-num">6</div>
+  <div>
+    <div class="chap-eyebrow">Risks</div>
+    <div class="chap-title">Eyes open — five specific things that could go wrong</div>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon" role="img" aria-label="Warning"><i class="ti ti-alert-triangle"></i></div>
+  <div class="risk-body">
+    <div class="risk-name">Risk 1 — High risk: RDSO final type-approval for KAVACH 4.0 keeps not arriving</div>
+    <p>This is the single largest swing factor in the entire investment case. The company has described itself as in the "final stage" of RDSO approval since at least November 2025 (Interim ISA report); by March 2026 it had entered final passenger field trials; as of the May 2026 CARE Ratings monitoring report, approval remained pending with no confirmed date. Each additional quarter of delay extends cash burn on a division management itself says is loss-making, without unlocking the ₹897.88 Cr order book.</p>
+    <p class="risk-signal">Signal: any further quarter in which "final stage" or "near term" language repeats without an actual RDSO certification announcement.</p>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon" role="img" aria-label="Warning"><i class="ti ti-alert-triangle"></i></div>
+  <div class="risk-body">
+    <div class="risk-name">Risk 2 — High risk: structural disadvantage versus three patent-holding incumbents</div>
+    <p>HBL Engineering, Kernex Microsystems and Medha Servo Drives jointly hold the original KAVACH patent and already have approved, revenue-converting positions — HBL's order book alone exceeds ₹3,763 Cr. Even after Quadrant clears RDSO approval, it enters a market where the largest incumbent has a multi-year head start in execution, relationships, and scale, and where Indian Railways has no obligation to award Quadrant a proportionate share of future tenders.</p>
+    <p class="risk-signal">Signal: watch the size and pace of Quadrant's tender wins relative to HBL's and Kernex's in the first two quarters after any approval.</p>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon" role="img" aria-label="Warning"><i class="ti ti-alert-triangle"></i></div>
+  <div class="risk-body">
+    <div class="risk-name">Risk 3 — Medium risk: working capital is deteriorating independent of the KAVACH question</div>
+    <p>Cash Conversion Cycle has stretched from 97 days in FY23 to 261 days in FY25, and debtor days have risen from roughly 89 to 134 days. Even if RDSO approval arrives on schedule, a business that already struggles to collect cash from its existing customer base may not convert a larger order book into cash as quickly as the order-book headline implies.</p>
+    <p class="risk-signal">Signal: Cash Conversion Cycle and debtor days each quarter — continued lengthening would undercut the bull case even after approval.</p>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon" role="img" aria-label="Warning"><i class="ti ti-alert-triangle"></i></div>
+  <div class="risk-body">
+    <div class="risk-name">Risk 4 — Medium risk: capex and compliance execution on the diversification object has slipped</div>
+    <p>The Electronic Interlocking System capex object — meant to be a second growth leg beyond cables and KAVACH — is 93% undeployed (₹22.73 Cr of ₹24.38 Cr) past its committed March 2026 deadline, flagged explicitly by the IPO monitoring agency as a procedural deviation, with no shareholder-ratified timeline extension on record at the time of that report.</p>
+    <p class="risk-signal">Signal: a board-ratified revised timeline and visible EIS deployment progress in the next two quarterly filings; continued silence would harden this into a structural miss rather than a pacing delay.</p>
+  </div>
+</div>
+
+<div class="risk-row">
+  <div class="risk-icon" role="img" aria-label="Warning"><i class="ti ti-alert-triangle"></i></div>
+  <div class="risk-body">
+    <div class="risk-name">Risk 5 — Medium risk: single-buyer concentration and government policy dependence</div>
+    <p>Indian Railways is effectively the sole customer for the TCS division, and the Navy/Ministry of Defence plays a similarly dominant role for naval cables. A shift in railway tendering priorities, a budget reallocation away from Signalling & Telecom (a line item already publicly criticised as underfunded relative to the 44,000 route-km five-year target), or any policy pivot toward a different ATP standard would directly compress Quadrant's addressable opportunity, with no diversified customer base to absorb the impact.</p>
+    <p class="risk-signal">Signal: Union Budget Signalling & Telecom allocation trend year-on-year, and any public commentary on KAVACH versus alternative ATP standards.</p>
+  </div>
+</div>
+
+<!-- ============ CHAPTER 7 — WATCH SIGNALS ============ -->
+<div class="chap-header green" id="ch7">
+  <div class="chap-num">7</div>
+  <div>
+    <div class="chap-eyebrow">Watch signals</div>
+    <div class="chap-title">Five things to check within five minutes of the next concall</div>
+  </div>
+</div>
+
+<div class="watch-row">
+  <span class="watch-dot" style="background:var(--teal)" role="img" aria-label="Teal indicator"></span>
+  <div>
+    <div class="watch-name">1 — RDSO final Type Approval / certification status for KAVACH Version 4.0</div>
+    <div class="watch-meta">The single watch signal that supersedes all others. Check for an actual certification announcement, not further "final stage" language.</div>
+    <div class="watch-thresh"><span class="wt-chip tag-green">Green: certification announced with a date</span><span class="wt-chip tag-amber">Amber: trials continue, no new date slippage</span><span class="wt-chip tag-red">Red: trial setback or further unexplained delay</span></div>
+  </div>
+</div>
+<div class="watch-row">
+  <span class="watch-dot" style="background:var(--signal-amber)" role="img" aria-label="Amber indicator"></span>
+  <div>
+    <div class="watch-name">2 — Train Control & Signalling segment operating margin trend</div>
+    <div class="watch-meta">Consolidated operating margin has run at −32% to −37% for three straight FY26 quarters. Watch whether losses narrow even before approval (a good sign of cost discipline) or keep widening (a bad one).</div>
+    <div class="watch-thresh"><span class="wt-chip tag-green">Green: losses narrowing quarter on quarter</span><span class="wt-chip tag-amber">Amber: flat around −30%</span><span class="wt-chip tag-red">Red: margin below −37% again</span></div>
+  </div>
+</div>
+<div class="watch-row">
+  <span class="watch-dot" style="background:var(--blue)" role="img" aria-label="Blue indicator"></span>
+  <div>
+    <div class="watch-name">3 — Cash Conversion Cycle (debtor days + inventory days − payable days)</div>
+    <div class="watch-meta">Currently around 261 days, up from 97 days two years ago. This determines whether order-book conversion will actually show up as cash.</div>
+    <div class="watch-thresh"><span class="wt-chip tag-green">Green: trending back under 200 days</span><span class="wt-chip tag-amber">Amber: flat near 250–260 days</span><span class="wt-chip tag-red">Red: further lengthening past 260 days</span></div>
+  </div>
+</div>
+<div class="watch-row">
+  <span class="watch-dot" style="background:var(--copper)" role="img" aria-label="Copper indicator"></span>
+  <div>
+    <div class="watch-name">4 — Electronic Interlocking System capex deployment</div>
+    <div class="watch-meta">₹22.73 Cr of the ₹24.38 Cr IPO object remains undeployed past its original deadline. A board-ratified revised timeline with visible spend is the marker of credible execution recovery.</div>
+    <div class="watch-thresh"><span class="wt-chip tag-green">Green: ratified timeline + spend resumes</span><span class="wt-chip tag-amber">Amber: timeline ratified, spend still pending</span><span class="wt-chip tag-red">Red: continued silence / SEBI scrutiny escalates</span></div>
+  </div>
+</div>
+<div class="watch-row">
+  <span class="watch-dot" style="background:var(--signal-green)" role="img" aria-label="Green indicator"></span>
+  <div>
+    <div class="watch-name">5 — New KAVACH order inflow beyond the existing ₹897.88 Cr book</div>
+    <div class="watch-meta">Incremental orders like the ₹20.19 Cr Patiala Locomotive Works LoA (April 2026) signal continued Railways confidence even pre-approval. A stalling order book would be a quieter but earlier warning sign than the approval delay itself.</div>
+    <div class="watch-thresh"><span class="wt-chip tag-green">Green: new LoAs continue accumulating</span><span class="wt-chip tag-amber">Amber: flat order book</span><span class="wt-chip tag-red">Red: order book shrinks or a contract is cancelled</span></div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdict-box" id="verdict">
+  <div class="vl-label">📌 Verdict</div>
+  <p>Quadrant Future Tek sits at the intersection of two genuine structural tailwinds — Indian Railways' record ₹2.93 lakh crore capex cycle and the Navy's indigenisation-driven budget growth — but captures almost none of the first one yet. The quality signal in the financials is currently poor: ROCE and ROE are both negative, operating margin has fallen to −32% to −37% in most of FY26, and the cash conversion cycle has more than doubled in two years. The near-term catalyst that could re-rate the stock is singular and binary — final RDSO type-approval for KAVACH Version 4.0, which would unlock an ₹897.88 Cr order book and an 11-year maintenance annuity behind it. At roughly 4.4–5.9x book value with no usable PE, the market is pricing that approval as likely and imminent, a more optimistic stance than the "final stage since November 2025" pattern in management's own language fully supports — and a separate ₹22.73 Cr capex object missing its deadline is a reminder that execution risk exists even away from the KAVACH question. This is an early-to-mid chapter story: the option is real, the order book is real, but the company has not yet turned either into cash, and the next concall's wording on RDSO approval matters more than any other line in this brief.</p>
+</div>
+
+<!-- ============ SECTION JUMP — LEDGER ============ -->
+<div class="section-jump" id="ledger">
+  <div class="sj-label">Companion section</div>
+  <div class="sj-title">The Ledger — Management Credibility Calibration</div>
+</div>
+
+<p>The Ledger tracks whether management's promises — on regulatory approval, on capex deployment, on margins, and on capital structure — are actually being kept, using six pillars: Promise Register, Tone Decoder, Execution Delta, Capex Timeline Tracker, Margin Expansion Tracker, and Capital Structure Tracker. <span class="hl-risk">This is an initial calibration, not a multi-year track record</span> — Quadrant listed in January 2025 and has only three public concalls (August 2025, November 2025, February 2026) plus exchange filings to draw on, so the tier assigned below should be read as a first read, to be sharpened as more quarters accumulate.</p>
+
+<div class="chap-header copper">
+  <div class="chap-num">L1</div>
+  <div>
+    <div class="chap-eyebrow">Pillar 1 + 3</div>
+    <div class="chap-title">Promise Register &amp; Execution Delta</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th>PROMISE</th><th>SOURCE / QUARTER</th><th>LATEST STATUS</th><th>EXECUTION DELTA</th></tr>
+  <tr>
+    <td><strong>KAVACH 4.0 final RDSO approval</strong> — repeatedly described as imminent</td>
+    <td>Interim ISA report, Nov 2025 → final field trials, Mar 2026 → CARE Ratings monitoring report, May 2026</td>
+    <td>Still pending; language has moved from "near term" to "final stage" to simply "pending," without ever attaching a firm date</td>
+    <td><span class="tag tag-amber">DRIFTED — qualifier creep</span></td>
+  </tr>
+  <tr>
+    <td><strong>Electronic Interlocking System capex deployment</strong> — ₹24.38 Cr by 31 Mar 2026</td>
+    <td>IPO prospectus, Jan 2025</td>
+    <td>Only ₹1.65 Cr (≈7%) deployed as of the deadline; ₹22.73 Cr unutilised, no ratified extension at report date</td>
+    <td><span class="tag tag-red">MISS</span></td>
+  </tr>
+  <tr>
+    <td><strong>Use IPO proceeds to repay working-capital term loans</strong> (₹23.62 Cr earmarked)</td>
+    <td>IPO prospectus, Jan 2025</td>
+    <td>Gross borrowings fell from ₹85 Cr (Mar 2025) to ₹25 Cr (Sep 2025) — consistent with the stated debt-repayment use of proceeds</td>
+    <td><span class="tag tag-green">DELIVERED</span></td>
+  </tr>
+  <tr>
+    <td><strong>"No deviation" in IPO proceeds utilisation</strong> — company's own quarterly filing</td>
+    <td>Company exchange filing, 27 May 2026</td>
+    <td>Filed roughly two weeks after CARE Ratings' independent monitoring report (12 May 2026) explicitly flagged "procedural deviations" and pending KAVACH approval — the two characterisations of the same underlying fund-utilisation picture do not fully align</td>
+    <td><span class="tag tag-amber">ATTRIBUTION SHIFT — flagged, not resolved</span></td>
+  </tr>
+  <tr>
+    <td><strong>"Speciality Cable Division remains profitable"</strong> even as consolidated results show a loss</td>
+    <td>Management commentary via CARE Ratings monitoring report</td>
+    <td>Plausible given the group's manufacturing/certification track record, but segment-level P&amp;L is not separately published in retail-facing filings, so the claim cannot be independently verified from public disclosure alone</td>
+    <td><span class="tag tag-gray">UNVERIFIABLE FROM PUBLIC FILINGS</span></td>
+  </tr>
+  <tr>
+    <td><strong>Continued KAVACH order intake</strong> ahead of full approval</td>
+    <td>Q3 FY26 new orders (~₹82.87 Cr); ₹20.19 Cr Patiala Locomotive Works LoA, Apr 2026</td>
+    <td>New orders have continued to materialise on schedule, suggesting Railways' confidence in eventual approval has not visibly wavered</td>
+    <td><span class="tag tag-green">DELIVERED</span></td>
+  </tr>
+</table>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> Two promises delivered clean (debt repayment, order intake), one missed outright (EIS capex), one drifting via qualifier creep (KAVACH approval), and one unverifiable from public disclosure (segment profitability).</div>
+
+<div class="chap-header copper">
+  <div class="chap-num">L2</div>
+  <div>
+    <div class="chap-eyebrow">Pillar 2</div>
+    <div class="chap-title">Tone Decoder</div>
+  </div>
+</div>
+
+<p>Across the three available concalls and associated filings, the language pattern on KAVACH approval shows a textbook qualifier-creep signature: "near term" (interim ISA, Nov 2025) softened into "final phase" / "final stage" (Mar 2026) without ever converting into a dated commitment, and the most recent independent source (CARE Ratings, May 2026) simply records the approval as "pending" with no company-supplied date at all. That pattern — increasing vagueness on a milestone that started out sounding close — is the single clearest tone signal in this calibration. Counterbalancing it: management has been transparent and consistent in attributing consolidated losses specifically to "ongoing investments in the KAVACH project" rather than reframing the loss around a shifting metric, which is a more credible pattern than outright metric-hopping would be.</p>
+
+<div class="insight-card coral">
+  <div class="ic-label">Tone flag</div>
+  <p><span class="hl-risk">The clearest attribution-shift flag in this calibration is the gap between the company's own 27 May 2026 "no deviation" filing and CARE Ratings' 12 May 2026 "procedural deviations... pending KAVACH approval" finding</span> — both are genuine exchange-linked disclosures, filed two weeks apart, describing materially the same underlying fund-utilisation and approval situation in different terms. This does not necessarily indicate bad faith; monitoring-agency reports and company self-certifications can legitimately differ in framing. It is, however, exactly the kind of discrepancy this Ledger exists to surface and watch in subsequent quarters.</p>
+</div>
+
+<div class="chap-header copper">
+  <div class="chap-num">L3</div>
+  <div>
+    <div class="chap-eyebrow">Pillar 4</div>
+    <div class="chap-title">Capex Timeline Tracker</div>
+  </div>
+</div>
+
+<p>See Chapter 5 for the full capex timeline card. In Ledger terms, the Electronic Interlocking System object exhibits two of the six standard capex red flags simultaneously: <strong>Slow Pacing</strong> (₹1.65 Cr deployed against a ₹24.38 Cr budget that needed full deployment by the stated deadline — far below 20% of required pace) and, depending on how the next two quarters unfold, early characteristics of <strong>Abandoned Silence</strong> if the object continues to go unmentioned without a ratified revised timeline. It is not yet Dark Capex (the shortfall is disclosed, not hidden) and not Budget Inflation (the budget has not grown). Funding source is unambiguous IPO equity, so there is no Funding Flip risk on this specific object.</p>
+
+<table class="data-table">
+  <tr><th class="teal">RED FLAG</th><th class="teal">PRESENT?</th><th class="teal">EVIDENCE</th></tr>
+  <tr><td>Completion Drift</td><td><span class="tag tag-amber">PARTIAL</span></td><td>No fixed "completion date" was ever attached to the EIS object beyond the IPO deployment deadline itself — so this manifests as a missed deadline rather than a series of pushed dates</td></tr>
+  <tr><td>Phantom Revenue Bridge</td><td><span class="tag tag-gray">NOT APPLICABLE YET</span></td><td>No capacity has been commissioned from this object yet, so there is no revenue bridge to test</td></tr>
+  <tr><td>Dark Capex</td><td><span class="tag tag-green">NOT PRESENT</span></td><td>Shortfall is disclosed via the IPO monitoring agency report, not hidden in cash flow statements</td></tr>
+  <tr><td>Budget Inflation</td><td><span class="tag tag-green">NOT PRESENT</span></td><td>The ₹24.38 Cr figure has not been revised upward</td></tr>
+  <tr><td>Slow Pacing</td><td><span class="tag tag-red">PRESENT</span></td><td>≈7% of budget deployed against a deadline that has already passed</td></tr>
+  <tr><td>Abandoned Silence</td><td><span class="tag tag-amber">EARLY WATCH</span></td><td>One quarter of non-deployment flagged so far; needs 2–3 more quarters of silence to confirm the pattern</td></tr>
+</table>
+
+<div class="chap-header copper">
+  <div class="chap-num">L4</div>
+  <div>
+    <div class="chap-eyebrow">Pillar 5</div>
+    <div class="chap-title">Margin Expansion Tracker</div>
+  </div>
+</div>
+
+<p>No explicit margin-expansion mechanism (operating leverage, mix shift, cost-efficiency programme) has been clearly quantified by management in public disclosures reviewed for this calibration — which is itself worth noting, since the absence of a stated mechanism makes it harder to hold management to a specific claim. What can be tracked directly is the trend, and the trend is unambiguous: <span class="hl-number">operating margin moved from roughly breakeven in FY25 Q3–Q4 (−7% and +2%) to −35%, −37%, and −32% across the first three quarters of FY26</span> — the opposite of margin expansion, driven by TCS-division costs that have not yet found enough revenue to absorb them.</p>
+
+<div class="insight-card red">
+  <div class="ic-label">Margin flag — Mechanism Failure (implicit)</div>
+  <p>Because order-book growth (a stated positive) has coincided with margin deterioration (an observed negative) for three consecutive quarters, this calibration assigns an implicit <strong>Mechanism Failure</strong> flag: whatever operating leverage management may be counting on once KAVACH revenue converts has not yet shown up, and in fact the opposite has occurred — costs are scaling ahead of revenue, not behind it. This is consistent with the company's own framing (losses are KAVACH-investment-driven) rather than evidence of mismanagement, but it means margin trajectory cannot be used as a leading indicator of approval timing — it has moved in the wrong direction regardless of how close approval may be.</p>
+</div>
+
+<div class="chap-header copper">
+  <div class="chap-num">L5</div>
+  <div>
+    <div class="chap-eyebrow">Pillar 6</div>
+    <div class="chap-title">Capital Structure Tracker</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th class="navy">DIMENSION</th><th class="navy">CLAIM / EXPECTATION</th><th class="navy">VERIFICATION</th><th class="navy">STATUS</th></tr>
+  <tr><td>Gross debt trajectory</td><td>Use IPO proceeds to repay working-capital term loans</td><td>Borrowings fell from ₹85 Cr (Mar 2025) to ₹25 Cr (Sep 2025)</td><td><span class="tag tag-green">CLEAN</span></td></tr>
+  <tr><td>Equity dilution</td><td>No additional dilution claimed or expected beyond the Jan 2025 IPO itself</td><td>No QIP, preferential allotment, or rights issue since listing; promoter holding flat at 70.0%</td><td><span class="tag tag-green">CLEAN</span></td></tr>
+  <tr><td>Promoter pledge</td><td>Not explicitly addressed in concalls</td><td>0% of promoter holding pledged, per latest shareholding disclosure</td><td><span class="tag tag-green">CLEAN</span></td></tr>
+  <tr><td>Capex funding source</td><td>EIS object funded entirely from IPO equity proceeds, not debt</td><td>Confirmed — the shortfall is a pacing/governance issue, not a funding-source substitution</td><td><span class="tag tag-green">CLEAN</span></td></tr>
+  <tr><td>Working capital masking</td><td>Not explicitly claimed by management either way</td><td>Cash Conversion Cycle has lengthened from 97 to 261 days over two years — a real deterioration, though disclosed transparently in financial statements rather than masked</td><td><span class="tag tag-amber">WATCH</span></td></tr>
+</table>
+
+<p>On balance, Quadrant's capital structure is the cleanest part of this calibration: no pledge, no post-IPO dilution, and genuine debt reduction. The working-capital lengthening is a real operating concern but is not a capital-structure integrity issue in the sense the Ledger framework is designed to catch (no stealth dilution, no funding flips, no refinancing spin).</p>
+
+<div class="chap-header copper">
+  <div class="chap-num">L6</div>
+  <div>
+    <div class="chap-eyebrow">Composite</div>
+    <div class="chap-title">Active flags &amp; credibility tier</div>
+  </div>
+</div>
+
+<table class="data-table">
+  <tr><th>ACTIVE FLAG</th><th>SEVERITY</th><th>EVIDENCE</th></tr>
+  <tr><td>KAVACH approval qualifier creep</td><td><span class="tag tag-amber">WARNING</span></td><td>"Near term" → "final stage" → "pending," no firm date attached across 3+ quarters</td></tr>
+  <tr><td>EIS capex deployment miss</td><td><span class="tag tag-red">CRITICAL</span></td><td>93% of the ₹24.38 Cr object undeployed past its committed deadline, externally flagged</td></tr>
+  <tr><td>Company vs. monitoring-agency attribution shift</td><td><span class="tag tag-amber">WARNING</span></td><td>"No deviation" (company, 27 May 2026) vs. "procedural deviations" (CARE Ratings, 12 May 2026)</td></tr>
+  <tr><td>Frequent KMP changes in FY26</td><td><span class="tag tag-amber">WARNING</span></td><td>Advisor–Train Control System resignation (1 Apr 2026); CFO change (Umesh P Srivastava appointed 17 Apr 2026); explicitly noted by the monitoring agency</td></tr>
+  <tr><td>Working capital lengthening</td><td><span class="tag tag-amber">WATCH</span></td><td>Cash Conversion Cycle 97 → 261 days over two years</td></tr>
+</table>
+
+<table class="data-table">
+  <tr><th>DIMENSION</th><th>SCORE / READ</th><th>WEIGHT</th></tr>
+  <tr><td><strong>Promise Hit Rate</strong></td><td>Mixed — 2 delivered, 1 missed, 1 drifted, 1 unverifiable (of 5 tracked)</td><td>25%</td></tr>
+  <tr><td><strong>Capex Execution Rate</strong></td><td>Weak — the one falsifiable object (EIS) missed its deadline by a wide margin</td><td>20%</td></tr>
+  <tr><td><strong>Margin Mechanism Fidelity</strong></td><td>Not Working — margins have moved opposite to any implied expansion story</td><td>15%</td></tr>
+  <tr><td><strong>Capital Structure Integrity</strong></td><td>Clean — no dilution, no pledge, genuine deleveraging</td><td>15%</td></tr>
+  <tr><td><strong>Specificity &amp; Attribution</strong></td><td>Mixed — losses are clearly attributed to KAVACH, but approval timing has lost specificity over time</td><td>15%</td></tr>
+  <tr><td><strong>Q&amp;A / disclosure consistency</strong></td><td>Watch — company and monitoring-agency filings characterised the same fund-utilisation picture differently within two weeks of each other</td><td>10%</td></tr>
+</table>
+
+<div class="dark-insight">
+  <div class="di-label">🗒 Composite tier</div>
+  <p><strong>Tier B–C — Credible, Watch Flags Active, trending toward Mixed/Improving.</strong> Quadrant's capital-structure conduct (debt reduction, no dilution, no pledge) and consistent loss-attribution language support a Tier B read. But a missed, externally-flagged capex deadline, a genuine discrepancy between company and monitoring-agency characterisations of fund utilisation, ongoing KMP churn, and a regulatory approval that has lost specificity over three quarters collectively pull this toward Tier C territory. <span class="hl-key">This is a calibration, not a verdict on intent</span> — most of these flags are consistent with a young, post-IPO company juggling a genuine engineering bet under public-market scrutiny for the first time, rather than evidence of deliberate misdirection. The tier should be revisited once a second concall cycle is available to test whether these patterns persist or resolve.</p>
+</div>
+
+<div class="takeaway-pill"><span class="tp-label">Takeaway</span> Clean balance sheet conduct, messy execution conduct — the Ledger's job next quarter is to see which one wins out.</div>
+
+<!-- ============ HIGHLIGHT INDEX — always expanded ============ -->
+<details id="highlight-index" open>
+  <summary>📌 All Highlights at a Glance — auto-populated, always expanded for print and quick re-read</summary>
+  <ol></ol>
+</details>
+
+<p style="font-size:12px;color:var(--gray);margin-top:18px;">
+Sources: Screener.in (financials, shareholding, ratios), BSE/NSE exchange filings and corporate announcements, CARE Ratings IPO Monitoring Agency Reports (Q3 &amp; Q4 FY26), company investor presentations and concall summaries (Aug 2025, Nov 2025, Feb 2026), Union Budget 2026 documentation, RDSO/Indian Railways public statements, and contemporaneous financial-news reporting (Business Standard, ScanX, Rail Analysis India, Whalesbook, MarketsMojo, MoneyWorks4Me, Simply Wall St, TipRanks). Figures are as reported at the time of writing and should be re-verified against the company's own filings before any investment decision. This brief is research synthesis for personal study, not investment advice.
+</p>
+
+</div><!-- end content -->
+
+<footer>
+  <span>QUADFUTURE · NSE INVESTOR BRIEF + THE LEDGER · Q4 FY26</span>
+  <span>QUADRANT FUTURE TEK LIMITED · NSE: QUADFUTURE · BSE: 544336</span>
+  <span>PREPARED 17 JUNE 2026 · FOR PERSONAL RESEARCH USE</span>
+</footer>
+
+<script>
+// Theme toggle with persistence
+(function() {
+  const root = document.documentElement;
+  const btn = document.getElementById('themeToggle');
+  const saved = localStorage.getItem('quadfuture-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === 'dark' || (!saved && prefersDark)) {
+    root.setAttribute('data-theme', 'dark');
+    btn.innerHTML = '<i class="ti ti-sun"></i> Light mode';
+  }
+  btn.addEventListener('click', function() {
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      root.removeAttribute('data-theme');
+      localStorage.setItem('quadfuture-theme', 'light');
+      btn.innerHTML = '<i class="ti ti-moon"></i> Dark mode';
+    } else {
+      root.setAttribute('data-theme', 'dark');
+      localStorage.setItem('quadfuture-theme', 'dark');
+      btn.innerHTML = '<i class="ti ti-sun"></i> Light mode';
+    }
+  });
+})();
+
+// Highlight Index auto-populate — always reflects current DOM, in document order
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+
+// Revenue / Operating Margin chart
+document.addEventListener('DOMContentLoaded', () => {
+  const el = document.getElementById('qftRevMarginChart');
+  if (!el || !window.Chart) return;
+  new Chart(el.getContext('2d'), {
+    type: 'bar',
+    data: {
+      labels: ['Q3 FY25', 'Q4 FY25', 'Q1 FY26', 'Q2 FY26', 'Q3 FY26', 'Q4 FY26 (derived)'],
+      datasets: [
+        {
+          type: 'bar',
+          label: 'Revenue (₹ Cr)',
+          data: [27, 58, 29, 34, 33, 57],
+          backgroundColor: '#0E7A78',
+          order: 2,
+          yAxisID: 'y'
+        },
+        {
+          type: 'line',
+          label: 'Operating margin (%)',
+          data: [-7, 2, -35, -37, -32, -20],
+          borderColor: '#C47B00',
+          backgroundColor: '#C47B00',
+          tension: 0.3,
+          order: 1,
+          yAxisID: 'y1'
+        }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { family: 'DM Sans' } } },
+        title: { display: true, text: 'Revenue vs operating margin — Q3 FY25 to Q4 FY26', font: { family: 'Bricolage Grotesque', size: 13 } } },
+      scales: {
+        y: { position: 'left', title: { display: true, text: '₹ Cr' } },
+        y1: { position: 'right', title: { display: true, text: 'Operating margin %' }, grid: { drawOnChartArea: false } }
+      }
+    }
+  });
+});
+</script>
+
+</body>
+</html>
