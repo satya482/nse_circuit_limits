@@ -13,6 +13,7 @@ Flags: --symbol RVNL   (single company)
        --limit  100    (process first N unprocessed)
 Re-run: safe — MERGE is idempotent; cache skips already-done companies
 """
+
 from __future__ import annotations
 
 import argparse
@@ -30,18 +31,18 @@ from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE  = Path(__file__).parent
-_ENV   = _HERE.parent.parent / ".env"
+_HERE = Path(__file__).parent
+_ENV = _HERE.parent.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
-SCR_EMAIL  = os.getenv("SCREENER_EMAIL",  "")
-SCR_PASS   = os.getenv("SCREENER_PASSWORD", "")
+SCR_EMAIL = os.getenv("SCREENER_EMAIL", "")
+SCR_PASS = os.getenv("SCREENER_PASSWORD", "")
 
 SCREENER_BASE = "https://www.screener.in"
-CACHE_FILE    = _HERE.parent.parent / "data" / "quarterly_cache.json"
+CACHE_FILE = _HERE.parent.parent / "data" / "quarterly_cache.json"
 
 HEADERS = {
     "User-Agent": (
@@ -55,8 +56,10 @@ HEADERS = {
 def make_session() -> requests.Session:
     s = requests.Session()
     s.headers.update(HEADERS)
-    lp   = s.get(f"{SCREENER_BASE}/login/", timeout=15)
-    csrf = BeautifulSoup(lp.text, "html.parser").select_one("input[name=csrfmiddlewaretoken]")
+    lp = s.get(f"{SCREENER_BASE}/login/", timeout=15)
+    csrf = BeautifulSoup(lp.text, "html.parser").select_one(
+        "input[name=csrfmiddlewaretoken]"
+    )
     if not csrf:
         raise RuntimeError("Could not get CSRF token from screener.in")
     s.post(
@@ -115,7 +118,7 @@ def fetch_quarters(session: requests.Session, nse_code: str) -> dict[str, dict]:
         if r.status_code != 200:
             continue
         soup = BeautifulSoup(r.text, "html.parser")
-        sec  = soup.find(id="quarters")
+        sec = soup.find(id="quarters")
         if not sec:
             continue
         table = sec.find("table")
@@ -127,18 +130,22 @@ def fetch_quarters(session: requests.Session, nse_code: str) -> dict[str, dict]:
             continue
 
         # Row 0: header row with quarter labels
-        header_cells = [td.get_text(strip=True) for td in rows[0].find_all(["td", "th"])]
+        header_cells = [
+            td.get_text(strip=True) for td in rows[0].find_all(["td", "th"])
+        ]
         # header_cells[0] is empty label column; [1:] are quarter labels
         quarter_labels = header_cells[1:]
         if not quarter_labels or not quarter_labels[0]:
             continue  # no data, try next path
 
         def _row_values(row_idx: int) -> list[float | None]:
-            cells = [td.get_text(strip=True) for td in rows[row_idx].find_all(["td", "th"])]
+            cells = [
+                td.get_text(strip=True) for td in rows[row_idx].find_all(["td", "th"])
+            ]
             return [_parse_num(c) for c in cells[1:]]
 
-        sales_vals  = _row_values(1)   # Sales+
-        pat_vals    = _row_values(10)  # Net Profit+
+        sales_vals = _row_values(1)  # Sales+
+        pat_vals = _row_values(10)  # Net Profit+
 
         result: dict[str, dict] = {}
         for i, label in enumerate(quarter_labels):
@@ -146,7 +153,7 @@ def fetch_quarters(session: requests.Session, nse_code: str) -> dict[str, dict]:
             if not qid:
                 continue
             rev = sales_vals[i] if i < len(sales_vals) else None
-            pat = pat_vals[i]   if i < len(pat_vals)   else None
+            pat = pat_vals[i] if i < len(pat_vals) else None
             if rev is not None or pat is not None:
                 result[qid] = {"revenue": rev, "pat": pat, "label": label}
 
@@ -161,6 +168,7 @@ def compute_yoy(quarters: dict[str, dict]) -> dict[str, dict]:
     Add pat_yoy_pct and revenue_yoy_pct to each quarter by matching with same
     quarter one fiscal year earlier (e.g. Q1FY25 vs Q1FY24).
     """
+
     # Parse FY and Q from each key
     def parse_qid(qid: str):
         m = re.match(r"Q(\d)FY(\d\d)", qid)
@@ -180,7 +188,11 @@ def compute_yoy(quarters: dict[str, dict]) -> dict[str, dict]:
                 data["pat_yoy_pct"] = round(
                     (data["pat"] - prev["pat"]) / abs(prev["pat"]) * 100, 1
                 )
-            if data.get("revenue") is not None and prev.get("revenue") and prev["revenue"] != 0:
+            if (
+                data.get("revenue") is not None
+                and prev.get("revenue")
+                and prev["revenue"] != 0
+            ):
                 data["revenue_yoy_pct"] = round(
                     (data["revenue"] - prev["revenue"]) / abs(prev["revenue"]) * 100, 1
                 )
@@ -209,6 +221,7 @@ MATCH (c:Company {nse_code: $nse_code})
 MERGE (c)-[:REPORTED]->(q)
 """
 
+
 def write_quarters(nse_code: str, quarters: dict[str, dict], session) -> int:
     written = 0
     for qid, data in quarters.items():
@@ -217,13 +230,13 @@ def write_quarters(nse_code: str, quarters: dict[str, dict], session) -> int:
         rev_yoy = data.get("revenue_yoy_pct")
         session.run(
             _MERGE_QUARTER,
-            qid        = f"{nse_code}_{qid}",
-            period     = qid,
-            nse_code   = nse_code,
-            revenue    = data.get("revenue"),
-            pat        = data.get("pat"),
-            pat_yoy_pct = pat_yoy,
-            rev_yoy_pct = rev_yoy,
+            qid=f"{nse_code}_{qid}",
+            period=qid,
+            nse_code=nse_code,
+            revenue=data.get("revenue"),
+            pat=data.get("pat"),
+            pat_yoy_pct=pat_yoy,
+            rev_yoy_pct=rev_yoy,
         )
         written += 1
     return written
@@ -246,9 +259,9 @@ def save_cache(cache: dict) -> None:
 # ── Recompute trigger ─────────────────────────────────────────────────────────
 def _rescore(nse_code: str) -> None:
     try:
-        etl  = _HERE.parent.parent / "etl" / "recompute_scores.py"
+        etl = _HERE.parent.parent / "etl" / "recompute_scores.py"
         spec = importlib.util.spec_from_file_location("recompute_scores", etl)
-        mod  = importlib.util.module_from_spec(spec)
+        mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         mod.run(nse_code)
     except Exception as exc:
@@ -261,19 +274,24 @@ def run(symbol: str | None = None, limit: int | None = None) -> None:
 
     with driver.session() as neo:
         if symbol:
-            rows = list(neo.run(
-                "MATCH (c:Company {nse_code: $s}) RETURN c.nse_code AS code", s=symbol
-            ))
+            rows = list(
+                neo.run(
+                    "MATCH (c:Company {nse_code: $s}) RETURN c.nse_code AS code",
+                    s=symbol,
+                )
+            )
         else:
-            rows = list(neo.run(
-                "MATCH (c:Company) WHERE c.roe_3yr_avg IS NOT NULL "
-                "RETURN c.nse_code AS code ORDER BY c.nse_code"
-            ))
+            rows = list(
+                neo.run(
+                    "MATCH (c:Company) WHERE c.roe_3yr_avg IS NOT NULL "
+                    "RETURN c.nse_code AS code ORDER BY c.nse_code"
+                )
+            )
 
     codes = [r["code"] for r in rows]
     print(f"[QUARTERLY] {len(codes)} companies to process")
 
-    cache   = load_cache()
+    cache = load_cache()
     session = make_session()
     print(f"[QUARTERLY] Authenticated as {SCR_EMAIL}")
 
@@ -299,20 +317,24 @@ def run(symbol: str | None = None, limit: int | None = None) -> None:
 
         # Keep only the last 5 quarters (most recent — have YoY data)
         yoy_quarters = {k: v for k, v in enriched.items() if "pat_yoy_pct" in v}
-        recent_keys  = sorted(yoy_quarters.keys())[-5:]  # oldest to newest
-        recent       = {k: yoy_quarters[k] for k in recent_keys}
+        recent_keys = sorted(yoy_quarters.keys())[-5:]  # oldest to newest
+        recent = {k: yoy_quarters[k] for k in recent_keys}
 
         with driver.session() as neo:
-            written = write_quarters(nse_code, recent, neo)
+            write_quarters(nse_code, recent, neo)
 
         beats = sum(1 for v in recent.values() if (v.get("pat_yoy_pct") or 0) > 0)
-        print(f"{len(recent)} quarters | {beats} beats | "
-              f"latest: {sorted(recent.keys())[-1] if recent else '-'}")
+        print(
+            f"{len(recent)} quarters | {beats} beats | "
+            f"latest: {sorted(recent.keys())[-1] if recent else '-'}"
+        )
         if recent:
             latest_q = sorted(recent.keys())[-1]
             d = recent[latest_q]
-            print(f"  revenue={d.get('revenue')} pat={d.get('pat')} "
-                  f"pat_yoy={d.get('pat_yoy_pct')}%")
+            print(
+                f"  revenue={d.get('revenue')} pat={d.get('pat')} "
+                f"pat_yoy={d.get('pat_yoy_pct')}%"
+            )
 
         cache[nse_code] = {"status": "done", "quarters": len(recent), "beats": beats}
         save_cache(cache)
@@ -327,7 +349,7 @@ def run(symbol: str | None = None, limit: int | None = None) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Load screener.in quarterly results")
     parser.add_argument("--symbol", help="Single NSE symbol")
-    parser.add_argument("--limit",  type=int, help="Max companies this run")
+    parser.add_argument("--limit", type=int, help="Max companies this run")
     args = parser.parse_args()
     run(symbol=args.symbol, limit=args.limit)
 

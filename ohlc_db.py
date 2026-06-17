@@ -43,7 +43,8 @@ def load_ohlc(
         df = pd.read_sql(
             "SELECT date, open, high, low, close, volume FROM ohlc "
             "WHERE symbol=? ORDER BY date DESC LIMIT ?",
-            con, params=(symbol, lookback),
+            con,
+            params=(symbol, lookback),
         )
         if df.empty:
             return None
@@ -73,7 +74,8 @@ def load_ohlc_many(
             df = pd.read_sql(
                 "SELECT date, open, high, low, close, volume FROM ohlc "
                 "WHERE symbol=? ORDER BY date DESC LIMIT ?",
-                con, params=(sym, lookback),
+                con,
+                params=(sym, lookback),
             )
             if not df.empty:
                 df["date"] = pd.to_datetime(df["date"])

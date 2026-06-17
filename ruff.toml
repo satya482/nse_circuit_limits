@@ -1,0 +1,6 @@
+[lint]
+ignore = [
+    "E741",  # ambiguous variable name l/O/I — l=low is standard in OHLCV code
+    "E402",  # module import not at top — intentional in scanners that configure paths first
+    "E701",  # multiple statements on one line — compact if/return style used in small helpers
+]

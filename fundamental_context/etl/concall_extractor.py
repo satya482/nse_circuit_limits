@@ -11,6 +11,7 @@ Usage:
 
 Requires: feedparser, youtube-transcript-api, anthropic, neo4j, python-dotenv
 """
+
 from __future__ import annotations
 
 import argparse
@@ -20,17 +21,17 @@ import re
 import sys
 import time
 import unicodedata
-from datetime import date, datetime
+from datetime import date
 from pathlib import Path
 
 import feedparser
 import requests
-from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 try:
     from youtube_transcript_api import YouTubeTranscriptApi
+
     YT_AVAILABLE = True
 except ImportError:
     YT_AVAILABLE = False
@@ -38,6 +39,7 @@ except ImportError:
 
 try:
     import anthropic
+
     ANTHROPIC_AVAILABLE = True
 except ImportError:
     ANTHROPIC_AVAILABLE = False
@@ -45,18 +47,18 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent / ".env"
+_ENV = _HERE.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI      = os.getenv("NEO4J_URI",         "bolt://localhost:7687")
-NEO4J_USER     = os.getenv("NEO4J_USER",         "neo4j")
-NEO4J_PASS     = os.getenv("NEO4J_PASSWORD",     "")
-ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY",  "")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
+ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
-TRENDLYNE_RSS     = "https://trendlyne.com/feeds/earning-calls-podcast-rss/"
+TRENDLYNE_RSS = "https://trendlyne.com/feeds/earning-calls-podcast-rss/"
 TRENDLYNE_SITEMAP = "https://trendlyne.com/equity-sitemap-stocks.xml"
-SITEMAP_CACHE     = _HERE.parent / "data" / "trendlyne_sitemap_cache.json"
-CLAUDE_MODEL      = "claude-sonnet-4-6"
+SITEMAP_CACHE = _HERE.parent / "data" / "trendlyne_sitemap_cache.json"
+CLAUDE_MODEL = "claude-sonnet-4-6"
 
 
 # ── Trendlyne sitemap -> slug_to_symbol lookup ─────────────────────────────────
@@ -98,7 +100,7 @@ def fetch_sitemap() -> dict[str, str]:
     # Extract URLs like /equity/12345/AARTIIND/aarti-industries-ltd/
     for m in re.finditer(r"/equity/\d+/([A-Z0-9&]+)/([a-z0-9-]+)/", resp.text):
         symbol = m.group(1)
-        slug   = m.group(2)
+        slug = m.group(2)
         slug_to_symbol[slug] = symbol
 
     SITEMAP_CACHE.parent.mkdir(parents=True, exist_ok=True)
@@ -312,17 +314,17 @@ def write_to_neo4j(nse_code: str, concall_date: date, extracted: dict, session) 
     # Guidance node
     session.run(
         _MERGE_GUIDANCE,
-        guidance_id    = guidance_id,
-        nse_code       = nse_code,
-        concall_date   = concall_date.isoformat(),
-        revenue_growth = extracted.get("revenue_growth_guided_pct"),
-        margin_low     = extracted.get("margin_guided_low"),
-        margin_high    = extracted.get("margin_guided_high"),
-        order_inflow   = extracted.get("order_inflow_guided_crore"),
-        confidence     = extracted.get("management_confidence"),
-        tone           = extracted.get("management_tone"),
-        key_quotes     = json.dumps(extracted.get("key_quotes", [])),
-        vikram_verdict = extracted.get("vikram_verdict"),
+        guidance_id=guidance_id,
+        nse_code=nse_code,
+        concall_date=concall_date.isoformat(),
+        revenue_growth=extracted.get("revenue_growth_guided_pct"),
+        margin_low=extracted.get("margin_guided_low"),
+        margin_high=extracted.get("margin_guided_high"),
+        order_inflow=extracted.get("order_inflow_guided_crore"),
+        confidence=extracted.get("management_confidence"),
+        tone=extracted.get("management_tone"),
+        key_quotes=json.dumps(extracted.get("key_quotes", [])),
+        vikram_verdict=extracted.get("vikram_verdict"),
     )
     print(f"[GRAPH] Guidance MERGE | Guidance | {guidance_id} | ok")
 
@@ -332,38 +334,40 @@ def write_to_neo4j(nse_code: str, concall_date: date, extracted: dict, session) 
         ob_id = f"{nse_code}_{concall_date.isoformat()}"
         # Fetch revenue for coverage ratio
         rev_row = session.run(
-            "MATCH (c:Company {nse_code: $n}) RETURN c.revenue_ttm AS rev",
-            n=nse_code
+            "MATCH (c:Company {nse_code: $n}) RETURN c.revenue_ttm AS rev", n=nse_code
         ).single()
         rev = float(rev_row["rev"]) if rev_row and rev_row["rev"] else None
         coverage = round(ob_size / rev, 2) if rev and rev > 0 else None
-        ratio    = round(ob_size / (rev / 4), 2) if rev and rev > 0 else None  # vs annualised quarterly
+        ratio = (
+            round(ob_size / (rev / 4), 2) if rev and rev > 0 else None
+        )  # vs annualised quarterly
 
         session.run(
             _MERGE_ORDERBOOK,
-            orderbook_id = ob_id,
-            nse_code     = nse_code,
-            ob_date      = concall_date.isoformat(),
-            size_crore   = ob_size,
-            coverage     = coverage,
+            orderbook_id=ob_id,
+            nse_code=nse_code,
+            ob_date=concall_date.isoformat(),
+            size_crore=ob_size,
+            coverage=coverage,
         )
         session.run(
             _UPDATE_COMPANY_OB,
-            nse_code   = nse_code,
-            size_crore = ob_size,
-            ratio      = ratio,
+            nse_code=nse_code,
+            size_crore=ob_size,
+            ratio=ratio,
         )
         print(f"[GRAPH] OrderBook MERGE | OrderBook | {ob_id} | Rs.{ob_size:.0f} Cr")
 
     # Risk nodes
     for i, risk_desc in enumerate(extracted.get("risk_flags") or []):
         import hashlib
+
         risk_id = hashlib.md5(f"{nse_code}:{risk_desc[:80]}".encode()).hexdigest()[:12]
         session.run(
             _MERGE_RISK,
-            risk_id     = risk_id,
-            nse_code    = nse_code,
-            description = risk_desc[:500],
+            risk_id=risk_id,
+            nse_code=nse_code,
+            description=risk_desc[:500],
         )
         print(f"[GRAPH] Risk MERGE | Risk | {nse_code} | {risk_desc[:60]}")
 
@@ -390,16 +394,17 @@ def run_auto(driver, auto_confirm: bool = False) -> None:
     print(f"[CONCALL] {len(entries)} entries in Trendlyne RSS")
 
     for entry in entries:
-        title       = entry.get("title", "")
+        title = entry.get("title", "")
         description = entry.get("summary", entry.get("description", ""))
         # Extract company name from title: "{Company} Results Earnings Call for ..."
         m = re.match(r"^(.+?)\s+Results?\s+Earnings?\s+Call", title, re.IGNORECASE)
         creator = m.group(1).strip() if m else entry.get("author", "")
-        pub_date    = date.today()
+        pub_date = date.today()
 
         if entry.get("published"):
             try:
                 from email.utils import parsedate_to_datetime
+
                 pub_date = parsedate_to_datetime(entry["published"]).date()
             except Exception:
                 pass
@@ -437,7 +442,7 @@ def run_auto(driver, auto_confirm: bool = False) -> None:
         if auto_confirm:
             confirm = "y"
         else:
-            confirm = input(f"Write to Neo4j? [y/N]: ").strip().lower()
+            confirm = input("Write to Neo4j? [y/N]: ").strip().lower()
         if confirm != "y":
             print("[CONCALL] Skipped by user")
             continue
@@ -445,11 +450,16 @@ def run_auto(driver, auto_confirm: bool = False) -> None:
         with driver.session() as session:
             write_to_neo4j(nse_code, pub_date, extracted, session)
 
-        verdict = (extracted.get('vikram_verdict') or 'N/A').encode('ascii', 'replace').decode()
+        verdict = (
+            (extracted.get("vikram_verdict") or "N/A")
+            .encode("ascii", "replace")
+            .decode()
+        )
         print(f"\n*** Vikram's Verdict: {verdict} ***\n")
 
         # Recompute score for this company only
         from recompute_scores import run as scores_run  # type: ignore[import]
+
         scores_run(nse_code)
 
 
@@ -480,6 +490,7 @@ def run_manual(nse_code: str, transcript_file: str, driver) -> None:
     print(f"\n*** Vikram's Verdict: {extracted.get('vikram_verdict', 'N/A')} ***\n")
 
     from recompute_scores import run as scores_run  # type: ignore[import]
+
     scores_run(nse_code)
 
 
@@ -488,8 +499,13 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Concall extractor")
     parser.add_argument("--mode", choices=["auto", "manual"], default="auto")
     parser.add_argument("--company", help="NSE code (manual mode only)")
-    parser.add_argument("--file",    help="Transcript .txt file (manual mode only)")
-    parser.add_argument("--yes", "-y", action="store_true", help="Auto-confirm all writes (non-interactive)")
+    parser.add_argument("--file", help="Transcript .txt file (manual mode only)")
+    parser.add_argument(
+        "--yes",
+        "-y",
+        action="store_true",
+        help="Auto-confirm all writes (non-interactive)",
+    )
     args = parser.parse_args()
 
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))

@@ -38,18 +38,18 @@ _HERE = Path(__file__).parent
 load_dotenv(_HERE / "fundamental_context" / ".env")
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
-_UNIVERSE_CSV  = _HERE / "NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
-_LABELS_JSON   = _HERE / "tools" / "stock_labels.json"
-_CACHE_DIR     = _HERE / ".company_cache"
-_OUT_DIR       = _HERE / "daily_briefs"
-_OUT_LATEST    = _HERE / "daily_brief.html"
+_UNIVERSE_CSV = _HERE / "NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
+_LABELS_JSON = _HERE / "tools" / "stock_labels.json"
+_CACHE_DIR = _HERE / ".company_cache"
+_OUT_DIR = _HERE / "daily_briefs"
+_OUT_LATEST = _HERE / "daily_brief.html"
 
 # ── Config ────────────────────────────────────────────────────────────────────
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
-TOP_N      = 20
+TOP_N = 20
 CACHE_DAYS = 30
 
 GAINERS_URL = (
@@ -109,8 +109,8 @@ def _load_universe() -> dict[str, dict]:
             code = (row.get("NSE Code") or "").strip().upper()
             if code:
                 out[code] = {
-                    "name":     (row.get("Stock Name") or "").strip(),
-                    "sector":   (row.get("sector_name") or "").strip(),
+                    "name": (row.get("Stock Name") or "").strip(),
+                    "sector": (row.get("sector_name") or "").strip(),
                     "industry": (row.get("Industry Name") or "").strip(),
                 }
     return out
@@ -154,14 +154,18 @@ def _write_cache(symbol: str, screener_desc: str, tl_desc: str = "") -> None:
             existing = json.loads(p.read_text(encoding="utf-8"))
         except Exception:
             pass
-    existing.update({
-        "symbol": symbol,
-        "screener_description": screener_desc or existing.get("screener_description", ""),
-        "trendlyne_description": tl_desc or existing.get("trendlyne_description", ""),
-        "combined_description": screener_desc or tl_desc,
-        "fetched_at": datetime.now(timezone.utc).isoformat(),
-        "sources": ["screener"] if screener_desc else [],
-    })
+    existing.update(
+        {
+            "symbol": symbol,
+            "screener_description": screener_desc
+            or existing.get("screener_description", ""),
+            "trendlyne_description": tl_desc
+            or existing.get("trendlyne_description", ""),
+            "combined_description": screener_desc or tl_desc,
+            "fetched_at": datetime.now(timezone.utc).isoformat(),
+            "sources": ["screener"] if screener_desc else [],
+        }
+    )
     p.write_text(json.dumps(existing, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
@@ -204,7 +208,15 @@ def _extract_symbol_change(row: dict) -> tuple[str, float, float]:
     chg = 0.0
     for k in row:
         kl = k.lower().replace(" ", "").replace("%", "pct")
-        if kl in ("%chng", "pctchng", "netchgpct", "netprice", "changepct", "chgpct", "pctchange"):
+        if kl in (
+            "%chng",
+            "pctchng",
+            "netchgpct",
+            "netprice",
+            "changepct",
+            "chgpct",
+            "pctchange",
+        ):
             chg = _norm_float(row[k])
             break
         if "%" in k and "chng" in k.lower():
@@ -241,13 +253,20 @@ def _fetch_nse_gainers() -> list[dict]:
                 if label == "value" and chg <= 0:
                     continue  # value list: positive change only
                 if sym not in combined or chg > combined[sym]["change_pct"]:
-                    combined[sym] = {"symbol": sym, "ltp": ltp, "change_pct": chg, "source_list": label}
+                    combined[sym] = {
+                        "symbol": sym,
+                        "ltp": ltp,
+                        "change_pct": chg,
+                        "source_list": label,
+                    }
                 added += 1
             print(f"  [{label}] {added} rows parsed")
         except Exception as e:
             print(f"  [{label}] error: {e}")
 
-    ranked = sorted(combined.values(), key=lambda x: x["change_pct"], reverse=True)[:TOP_N]
+    ranked = sorted(combined.values(), key=lambda x: x["change_pct"], reverse=True)[
+        :TOP_N
+    ]
     print(f"  Combined top {len(ranked)} stocks after dedup")
     return ranked
 
@@ -261,7 +280,11 @@ def _scrape_screener(symbol: str) -> str:
         if resp.status_code != 200:
             return ""
         soup = BeautifulSoup(resp.text, "html.parser")
-        for sel in ["div.about p", "div.company-profile div.about p", "section.about-section p"]:
+        for sel in [
+            "div.about p",
+            "div.company-profile div.about p",
+            "section.about-section p",
+        ]:
             el = soup.select_one(sel)
             if el:
                 text = el.get_text(separator=" ", strip=True)
@@ -276,6 +299,7 @@ def _scrape_screener(symbol: str) -> str:
 def _open_kg_driver():
     try:
         from neo4j import GraphDatabase
+
         driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
         driver.verify_connectivity()
         return driver
@@ -294,7 +318,9 @@ def _query_kg(symbol: str, driver) -> dict:
                 return result
             result.update(dict(rec))
             result["themes"] = [dict(r) for r in sess.run(_Q_THEMES, nse_code=symbol)]
-            result["catalysts"] = [dict(r) for r in sess.run(_Q_CATALYSTS, nse_code=symbol)]
+            result["catalysts"] = [
+                dict(r) for r in sess.run(_Q_CATALYSTS, nse_code=symbol)
+            ]
     except Exception as e:
         print(f"    [KG] {symbol}: {e}")
     return result
@@ -316,43 +342,45 @@ def _enrich(stock: dict, universe: dict, labels: dict, kg_driver) -> dict:
     uni = universe.get(sym, {})
 
     ctx: dict = {
-        "symbol":     sym,
-        "name":       uni.get("name", sym),
-        "sector":     uni.get("sector", ""),
-        "industry":   uni.get("industry", ""),
-        "ltp":        stock["ltp"],
+        "symbol": sym,
+        "name": uni.get("name", sym),
+        "sector": uni.get("sector", ""),
+        "industry": uni.get("industry", ""),
+        "ltp": stock["ltp"],
         "change_pct": stock["change_pct"],
-        "label":      labels.get(sym, ""),
-        "business":   "",
-        "tl_desc":    "",
-        "themes":     [],
-        "catalysts":  [],
+        "label": labels.get(sym, ""),
+        "business": "",
+        "tl_desc": "",
+        "themes": [],
+        "catalysts": [],
         "conviction": None,
-        "quality":    None,
-        "kg_source":  False,
+        "quality": None,
+        "kg_source": False,
     }
 
     # [C] KG first
     if kg_driver:
         kg = _query_kg(sym, kg_driver)
         if kg:
-            ctx["kg_source"]  = True
+            ctx["kg_source"] = True
             ctx["conviction"] = kg.get("conviction_score")
-            ctx["quality"]    = kg.get("quality_score")
+            ctx["quality"] = kg.get("quality_score")
             if kg.get("sector"):
                 ctx["sector"] = kg["sector"]
             if kg.get("industry"):
                 ctx["industry"] = kg["industry"]
             if kg.get("name"):
                 ctx["name"] = kg["name"]
-            ctx["themes"]    = kg.get("themes", [])
+            ctx["themes"] = kg.get("themes", [])
             ctx["catalysts"] = kg.get("catalysts", [])
 
     # [D] Cache
     cached = _load_cache(sym)
     if cached:
-        ctx["business"] = cached.get("screener_description") or cached.get("combined_description", "")
-        ctx["tl_desc"]  = cached.get("trendlyne_description", "")
+        ctx["business"] = cached.get("screener_description") or cached.get(
+            "combined_description", ""
+        )
+        ctx["tl_desc"] = cached.get("trendlyne_description", "")
 
     # [E] Scrape screener.in if no description yet
     if not ctx["business"]:
@@ -379,11 +407,22 @@ def _assemble(ctx: dict) -> dict:
     # Macro: join vikram_thesis from KG themes (top 2); else plain sector/industry
     if ctx["themes"]:
         theses = [t["thesis"] for t in ctx["themes"] if t.get("thesis")]
-        macro = "  ".join(theses[:2]) if theses else f"{ctx['industry']} · {ctx['sector']}"
+        macro = (
+            "  ".join(theses[:2]) if theses else f"{ctx['industry']} · {ctx['sector']}"
+        )
     else:
-        macro = f"{ctx['industry']} · {ctx['sector']}" if (ctx["industry"] or ctx["sector"]) else ""
+        macro = (
+            f"{ctx['industry']} · {ctx['sector']}"
+            if (ctx["industry"] or ctx["sector"])
+            else ""
+        )
 
-    return {**ctx, "business_text": business, "products_text": products, "macro_text": macro}
+    return {
+        **ctx,
+        "business_text": business,
+        "products_text": products,
+        "macro_text": macro,
+    }
 
 
 # ── HTML generation ───────────────────────────────────────────────────────────
@@ -512,18 +551,18 @@ document.querySelectorAll('.stbl th[data-col]').forEach(th=>{
 
 
 def _html_card(c: dict) -> str:
-    sym     = c["symbol"]
-    tv_url  = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-    sc_url  = f"https://www.screener.in/company/{sym}/"
-    chg     = c["change_pct"]
+    sym = c["symbol"]
+    tv_url = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sc_url = f"https://www.screener.in/company/{sym}/"
+    chg = c["change_pct"]
     chg_cls = "pos" if chg >= 0 else "neg"
     chg_str = f"+{chg:.2f}%" if chg >= 0 else f"{chg:.2f}%"
-    sector  = " · ".join(filter(None, [c.get("industry"), c.get("sector")]))
-    kg_cls  = "card kg-card" if c["kg_source"] else "card"
+    sector = " · ".join(filter(None, [c.get("industry"), c.get("sector")]))
+    kg_cls = "card kg-card" if c["kg_source"] else "card"
 
     business = _esc(c.get("business_text", ""))
     products = _esc(c.get("products_text", ""))
-    macro    = _esc(c.get("macro_text", ""))
+    macro = _esc(c.get("macro_text", ""))
 
     pills = ""
     for th in c.get("themes", [])[:3]:
@@ -542,7 +581,7 @@ def _html_card(c: dict) -> str:
     kg_row = f'<div class="kg-row">{pills}</div>' if pills else ""
 
     products_section = ""
-    if products and products != business[:len(products)]:
+    if products and products != business[: len(products)]:
         products_section = f"""
       <div class="sec-label">Products &amp; Segments</div>
       <p class="sec-body sec-small">{products}</p>"""
@@ -571,15 +610,15 @@ def _html_card(c: dict) -> str:
 
 
 def _html_table_row(i: int, c: dict) -> str:
-    sym     = c["symbol"]
-    tv_url  = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-    sc_url  = f"https://www.screener.in/company/{sym}/"
-    chg     = c["change_pct"]
+    sym = c["symbol"]
+    tv_url = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sc_url = f"https://www.screener.in/company/{sym}/"
+    chg = c["change_pct"]
     chg_cls = "pos" if chg >= 0 else "neg"
     chg_str = f"+{chg:.2f}%" if chg >= 0 else f"{chg:.2f}%"
-    sector  = c.get("sector", "")
+    sector = c.get("sector", "")
     return (
-        f'<tr>'
+        f"<tr>"
         f'<td data-col="rank">{i}</td>'
         f'<td data-col="sym"><a class="sym-link" href="{tv_url}" target="_blank">{sym}</a>'
         f'<a class="sc-link" href="{sc_url}" target="_blank">SC</a></td>'
@@ -587,18 +626,24 @@ def _html_table_row(i: int, c: dict) -> str:
         f'<td data-col="chg" class="{chg_cls}">{chg_str}</td>'
         f'<td data-col="ltp">{c["ltp"]:.2f}</td>'
         f'<td data-col="sector">{_esc(sector)}</td>'
-        f'</tr>'
+        f"</tr>"
     )
 
 
 def _esc(s: str) -> str:
-    return (s or "").replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
+    return (
+        (s or "")
+        .replace("&", "&amp;")
+        .replace("<", "&lt;")
+        .replace(">", "&gt;")
+        .replace('"', "&quot;")
+    )
 
 
 def _build_html(cards: list[dict], date_str: str, gen_time: str) -> str:
     table_rows = "\n".join(_html_table_row(i + 1, c) for i, c in enumerate(cards))
-    card_html  = "\n".join(_html_card(c) for c in cards)
-    kg_count   = sum(1 for c in cards if c["kg_source"])
+    card_html = "\n".join(_html_card(c) for c in cards)
+    kg_count = sum(1 for c in cards if c["kg_source"])
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -648,11 +693,14 @@ def _build_html(cards: list[dict], date_str: str, gen_time: str) -> str:
 # ── Main ──────────────────────────────────────────────────────────────────────
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Print enriched context only — skip HTML write")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print enriched context only — skip HTML write",
+    )
     args = parser.parse_args()
 
-    today    = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now().strftime("%Y-%m-%d")
     gen_time = datetime.now().strftime("%H:%M")
     date_str = datetime.now().strftime("%d %b %Y")
 
@@ -660,7 +708,7 @@ def main() -> None:
     print(f"Date: {today}  Time: {gen_time}\n")
 
     universe = _load_universe()
-    labels   = _load_labels()
+    labels = _load_labels()
     print(f"Universe: {len(universe)} stocks  Labels: {len(labels)}")
 
     stocks = _fetch_nse_gainers()
@@ -705,9 +753,11 @@ def main() -> None:
 
     print(f"\n  Saved → {_OUT_LATEST}")
     print(f"  Saved → {dated}")
-    print(f"\n  {len(enriched)} cards  |  KG: {sum(1 for c in enriched if c['kg_source'])}  |  "
-          f"Cache: {sum(1 for c in enriched if not c['kg_source'] and c['business'])}  |  "
-          f"Scraped: {sum(1 for c in enriched if not c['kg_source'] and not _load_cache(c['symbol']))}")
+    print(
+        f"\n  {len(enriched)} cards  |  KG: {sum(1 for c in enriched if c['kg_source'])}  |  "
+        f"Cache: {sum(1 for c in enriched if not c['kg_source'] and c['business'])}  |  "
+        f"Scraped: {sum(1 for c in enriched if not c['kg_source'] and not _load_cache(c['symbol']))}"
+    )
 
 
 if __name__ == "__main__":

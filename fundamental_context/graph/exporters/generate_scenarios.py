@@ -8,6 +8,7 @@ Output: project_root/graph_data/scenarios/{theme_slug}.json
 
 Run: python generate_scenarios.py
 """
+
 from __future__ import annotations
 
 import json
@@ -21,23 +22,24 @@ from neo4j import GraphDatabase
 
 try:
     import anthropic
+
     ANTHROPIC_AVAILABLE = True
 except ImportError:
     ANTHROPIC_AVAILABLE = False
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE     = Path(__file__).parent
-_ENV      = _HERE.parent.parent / ".env"
-_ROOT     = _HERE.parent.parent.parent
-_OUT_DIR  = _ROOT / "graph_data" / "scenarios"
+_HERE = Path(__file__).parent
+_ENV = _HERE.parent.parent / ".env"
+_ROOT = _HERE.parent.parent.parent
+_OUT_DIR = _ROOT / "graph_data" / "scenarios"
 _OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 load_dotenv(_ENV)
 
-NEO4J_URI     = os.getenv("NEO4J_URI",         "bolt://localhost:7687")
-NEO4J_USER    = os.getenv("NEO4J_USER",         "neo4j")
-NEO4J_PASS    = os.getenv("NEO4J_PASSWORD",     "")
-ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY",  "")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
+ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 HAIKU_MODEL = "claude-haiku-4-5-20251001"
 
@@ -137,9 +139,9 @@ def main() -> None:
             time.sleep(0.3)  # rate limit buffer for Haiku
 
             scenario = {
-                "theme":          theme,
-                "tier1":          tier1,
-                "tier2":          tier2,
+                "theme": theme,
+                "tier1": tier1,
+                "tier2": tier2,
                 "vikram_verdict": verdict,
                 "generated_date": __import__("datetime").date.today().isoformat(),
             }
@@ -147,10 +149,11 @@ def main() -> None:
             slug = _slugify(theme)
             out_path = _OUT_DIR / f"{slug}.json"
             out_path.write_text(
-                json.dumps(scenario, indent=2, ensure_ascii=False),
-                encoding="utf-8"
+                json.dumps(scenario, indent=2, ensure_ascii=False), encoding="utf-8"
             )
-            print(f"[SCENARIOS] {theme} -> {slug}.json ({len(tier1)} T1, {len(tier2)} T2)")
+            print(
+                f"[SCENARIOS] {theme} -> {slug}.json ({len(tier1)} T1, {len(tier2)} T2)"
+            )
             generated += 1
 
     driver.close()

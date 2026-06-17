@@ -19,6 +19,7 @@ Strategy:
   4. Feed company profile + KG themes + top relevant reports to Claude Sonnet
      as Vikram Iyer for synthesis
 """
+
 from __future__ import annotations
 
 import argparse
@@ -43,16 +44,16 @@ _HERE = Path(__file__).parent
 load_dotenv(_HERE / "fundamental_context" / ".env")
 
 # ── Config ────────────────────────────────────────────────────────────────────
-ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY", "")
-SONNET_MODEL   = "claude-sonnet-4-6"
+ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+SONNET_MODEL = "claude-sonnet-4-6"
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
-_UNIVERSE_CSV  = _HERE / "NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
-_LABELS_JSON   = _HERE / "tools" / "stock_labels.json"
-_THEMES_DIR    = _HERE / "telegram_themes"
+_UNIVERSE_CSV = _HERE / "NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
+_LABELS_JSON = _HERE / "tools" / "stock_labels.json"
+_THEMES_DIR = _HERE / "telegram_themes"
 _SUMMARIES_DIR = _HERE / "kg_summaries"
 
 # ── Cypher ────────────────────────────────────────────────────────────────────
@@ -77,6 +78,7 @@ RETURN t.name           AS theme,
 ORDER BY t.name
 """
 
+
 # ── Universe loaders ──────────────────────────────────────────────────────────
 def _load_universe() -> dict[str, dict]:
     if not _UNIVERSE_CSV.exists():
@@ -87,8 +89,8 @@ def _load_universe() -> dict[str, dict]:
             code = (row.get("NSE Code") or "").strip().upper()
             if code:
                 out[code] = {
-                    "name":     (row.get("Stock Name") or "").strip(),
-                    "sector":   (row.get("sector_name") or "").strip(),
+                    "name": (row.get("Stock Name") or "").strip(),
+                    "sector": (row.get("sector_name") or "").strip(),
                     "industry": (row.get("Industry Name") or "").strip(),
                 }
     return out
@@ -106,6 +108,7 @@ def _query_kg(nse_code: str) -> dict | None:
     """Return {name, sector, industry, quality_score, conviction_score, themes:[]} or None."""
     try:
         from neo4j import GraphDatabase
+
         driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
         driver.verify_connectivity()
     except Exception as exc:
@@ -143,12 +146,36 @@ def _load_telegram_reports(days: int = 30) -> list[dict]:
 
 
 # ── Relevance scoring ─────────────────────────────────────────────────────────
-_NOISE = {'and', 'the', 'of', 'in', 'for', 'a', 'an', 'by', 'with', 'to', 'at', 'on',
-          'is', 'its', 'limited', 'ltd', 'india', 'indian', 'growth', 'expansion'}
+_NOISE = {
+    "and",
+    "the",
+    "of",
+    "in",
+    "for",
+    "a",
+    "an",
+    "by",
+    "with",
+    "to",
+    "at",
+    "on",
+    "is",
+    "its",
+    "limited",
+    "ltd",
+    "india",
+    "indian",
+    "growth",
+    "expansion",
+}
+
 
 def _tokenise(text: str) -> set[str]:
-    return {t for t in re.sub(r'[&,\-\(\)/]', ' ', text.lower()).split()
-            if len(t) > 3 and t not in _NOISE}
+    return {
+        t
+        for t in re.sub(r"[&,\-\(\)/]", " ", text.lower()).split()
+        if len(t) > 3 and t not in _NOISE
+    }
 
 
 def _theme_score(company_themes: list[str], report_themes: list[str]) -> float:
@@ -192,14 +219,16 @@ def _find_relevant_reports(
         report_themes = r.get("themes") or []
 
         if nse_code in report_cos:
-            score = 2.0                          # direct mention — top priority
+            score = 2.0  # direct mention — top priority
         else:
             score = _theme_score(all_company_themes, report_themes)
-            if score < 0.15:                     # broad sector fallback
+            if score < 0.15:  # broad sector fallback
                 rt_toks = {tok for t in report_themes for tok in _tokenise(t)}
                 overlap = len(ctx_toks & rt_toks)
                 if overlap:
-                    score = max(score, overlap / max(len(ctx_toks), len(rt_toks)) * 0.35)
+                    score = max(
+                        score, overlap / max(len(ctx_toks), len(rt_toks)) * 0.35
+                    )
 
         if score >= 0.10:
             scored.append((score, r))
@@ -211,11 +240,14 @@ def _find_relevant_reports(
 # ── Report compactor ──────────────────────────────────────────────────────────
 def _compact(report: dict, nse_code: str) -> str:
     themes = ", ".join(report.get("themes") or []) or "—"
-    cos = ", ".join(
-        c.get("nse_code") or c.get("symbol") or ""
-        for c in (report.get("companies") or [])
-        if (c.get("nse_code") or c.get("symbol"))
-    ) or "—"
+    cos = (
+        ", ".join(
+            c.get("nse_code") or c.get("symbol") or ""
+            for c in (report.get("companies") or [])
+            if (c.get("nse_code") or c.get("symbol"))
+        )
+        or "—"
+    )
     kps = "\n".join(f"  • {k}" for k in (report.get("key_points") or [])[:5])
     cats = "; ".join(report.get("catalysts") or []) or "—"
     src = Path(report.get("source", "?")).stem
@@ -269,8 +301,12 @@ def _build_prompt(
             thesis = (t.get("thesis") or "")[:200]
             mag = t.get("mag") or "—"
             tg_linked = t.get("tg_themes") or []
-            tg_note = f"\n    ↳ Telegram: {', '.join(tg_linked[:3])}" if tg_linked else ""
-            theme_lines.append(f"- **{t['theme']}** (magnitude: {mag}){tg_note}\n  {thesis}")
+            tg_note = (
+                f"\n    ↳ Telegram: {', '.join(tg_linked[:3])}" if tg_linked else ""
+            )
+            theme_lines.append(
+                f"- **{t['theme']}** (magnitude: {mag}){tg_note}\n  {thesis}"
+            )
         theme_block = "\n".join(theme_lines)
     else:
         theme_block = "_Company not yet mapped in KG — infer relevance from sector context and research below._"
@@ -288,14 +324,19 @@ def _build_prompt(
             if r.get("source") in seen:
                 continue
             themes = "; ".join((r.get("themes") or [])[:4]) or "—"
-            cos = ", ".join(
-                c.get("nse_code") or c.get("symbol") or ""
-                for c in (r.get("companies") or [])[:5]
-                if c.get("nse_code") or c.get("symbol")
-            ) or "—"
+            cos = (
+                ", ".join(
+                    c.get("nse_code") or c.get("symbol") or ""
+                    for c in (r.get("companies") or [])[:5]
+                    if c.get("nse_code") or c.get("symbol")
+                )
+                or "—"
+            )
             src = Path(r.get("source", "?")).stem[:35]
             summary_snippet = (r.get("summary") or "")[:120]
-            ultra.append(f"• [{src}] Themes: {themes} | Cos: {cos}\n  {summary_snippet}")
+            ultra.append(
+                f"• [{src}] Themes: {themes} | Cos: {cos}\n  {summary_snippet}"
+            )
         if ultra:
             bg = "\n".join(ultra)
             research_block += (
@@ -351,12 +392,12 @@ def generate_summary(
 
     # 1. Company profile
     universe = _load_universe()
-    labels   = _load_labels()
+    labels = _load_labels()
     csv_info = universe.get(nse_code, {})
 
-    name        = csv_info.get("name") or nse_code
-    sector      = csv_info.get("sector") or "Unknown"
-    industry    = csv_info.get("industry") or "Unknown"
+    name = csv_info.get("name") or nse_code
+    sector = csv_info.get("sector") or "Unknown"
+    industry = csv_info.get("industry") or "Unknown"
     description = labels.get(nse_code) or ""
 
     quality_score = conviction_score = None
@@ -364,33 +405,38 @@ def generate_summary(
 
     kg_data = _query_kg(nse_code)
     if kg_data:
-        name             = kg_data.get("name") or name
-        sector           = kg_data.get("sector") or sector
-        industry         = kg_data.get("industry") or industry
-        quality_score    = kg_data.get("quality_score")
+        name = kg_data.get("name") or name
+        sector = kg_data.get("sector") or sector
+        industry = kg_data.get("industry") or industry
+        quality_score = kg_data.get("quality_score")
         conviction_score = kg_data.get("conviction_score")
-        kg_themes        = [t for t in (kg_data.get("themes") or []) if t.get("theme")]
+        kg_themes = [t for t in (kg_data.get("themes") or []) if t.get("theme")]
 
     if not csv_info and not kg_data:
         print(f"[SUMMARY] WARNING: {nse_code} not found in NSE universe CSV")
 
     print(f"[SUMMARY] {name} | {sector} | {industry}")
-    print(f"[SUMMARY] KG: quality={quality_score} conviction={conviction_score} themes={len(kg_themes)}")
+    print(
+        f"[SUMMARY] KG: quality={quality_score} conviction={conviction_score} themes={len(kg_themes)}"
+    )
     print(f"[SUMMARY] Description: {description[:80] or '—'}")
 
     # Build list of theme names for scoring
     kg_theme_names = [t["theme"] for t in kg_themes if t.get("theme")]
-    tg_theme_names = [
-        tg for t in kg_themes for tg in (t.get("tg_themes") or [])
-    ]
+    tg_theme_names = [tg for t in kg_themes for tg in (t.get("tg_themes") or [])]
 
     # 2. Telegram research
     all_reports = _load_telegram_reports(days)
     print(f"[SUMMARY] Telegram reports: {len(all_reports)} loaded (last {days}d)")
 
     relevant = _find_relevant_reports(
-        nse_code, kg_theme_names, tg_theme_names,
-        sector, industry, description, all_reports,
+        nse_code,
+        kg_theme_names,
+        tg_theme_names,
+        sector,
+        industry,
+        description,
+        all_reports,
     )
     print(f"[SUMMARY] Relevant reports: {len(relevant)}")
     for score, r in relevant:
@@ -404,8 +450,15 @@ def generate_summary(
 
     # 3. Build prompt
     prompt = _build_prompt(
-        nse_code, name, sector, industry, description,
-        quality_score, conviction_score, kg_themes, relevant,
+        nse_code,
+        name,
+        sector,
+        industry,
+        description,
+        quality_score,
+        conviction_score,
+        kg_themes,
+        relevant,
         all_reports=all_reports,
     )
 
@@ -451,7 +504,9 @@ def generate_summary(
 
     if save:
         _SUMMARIES_DIR.mkdir(parents=True, exist_ok=True)
-        out_path = _SUMMARIES_DIR / f"{nse_code}_{datetime.now().strftime('%Y-%m-%d')}.md"
+        out_path = (
+            _SUMMARIES_DIR / f"{nse_code}_{datetime.now().strftime('%Y-%m-%d')}.md"
+        )
         out_path.write_text(full, encoding="utf-8")
         print(f"[SUMMARY] Saved → {out_path}")
 
@@ -459,17 +514,29 @@ def generate_summary(
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Generate KG+Telegram company summary via Claude")
-    parser.add_argument("nse_code",  help="NSE code (e.g. KRN, NTPC, SOLARINDS)")
-    parser.add_argument("--days",    type=int, default=30,
-                        help="Days of telegram history to scan (default: 30)")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Print assembled context without calling Claude")
-    parser.add_argument("--save",    action="store_true",
-                        help="Save markdown output to kg_summaries/")
+    parser = argparse.ArgumentParser(
+        description="Generate KG+Telegram company summary via Claude"
+    )
+    parser.add_argument("nse_code", help="NSE code (e.g. KRN, NTPC, SOLARINDS)")
+    parser.add_argument(
+        "--days",
+        type=int,
+        default=30,
+        help="Days of telegram history to scan (default: 30)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Print assembled context without calling Claude",
+    )
+    parser.add_argument(
+        "--save", action="store_true", help="Save markdown output to kg_summaries/"
+    )
     args = parser.parse_args()
 
-    generate_summary(args.nse_code, days=args.days, dry_run=args.dry_run, save=args.save)
+    generate_summary(
+        args.nse_code, days=args.days, dry_run=args.dry_run, save=args.save
+    )
 
 
 if __name__ == "__main__":

@@ -37,9 +37,9 @@ if _ENV_FILE.exists() and not os.environ.get("ANTHROPIC_API_KEY"):
             os.environ["ANTHROPIC_API_KEY"] = line.split("=", 1)[1].strip()
             break
 
-REPO_DIR    = Path(__file__).parent.parent
-CACHE_DIR   = REPO_DIR / ".company_cache"
-TOOLS_DIR   = Path(__file__).parent
+REPO_DIR = Path(__file__).parent.parent
+CACHE_DIR = REPO_DIR / ".company_cache"
+TOOLS_DIR = Path(__file__).parent
 LABELS_FILE = TOOLS_DIR / "stock_labels.json"
 
 MODEL = "claude-haiku-4-5-20251001"
@@ -61,6 +61,7 @@ Description: {desc}"""
 
 _client: anthropic.Anthropic | None = None
 
+
 def _get_client() -> anthropic.Anthropic:
     global _client
     if _client is None:
@@ -74,7 +75,9 @@ def generate_label(name: str, description: str) -> str:
         model=MODEL,
         max_tokens=40,
         system=SYSTEM,
-        messages=[{"role": "user", "content": USER_TMPL.format(name=name, desc=desc_snippet)}],
+        messages=[
+            {"role": "user", "content": USER_TMPL.format(name=name, desc=desc_snippet)}
+        ],
     )
     label = msg.content[0].text.strip().strip('"').strip("'")
     # Truncate to 12 words max as safety
@@ -85,6 +88,7 @@ def generate_label(name: str, description: str) -> str:
 
 
 # ── Cache helpers ──────────────────────────────────────────────────────────────
+
 
 def _load_cache(symbol: str) -> dict | None:
     p = CACHE_DIR / f"{symbol}.json"
@@ -98,7 +102,7 @@ def _load_cache(symbol: str) -> dict | None:
 
 def _save_cache(data: dict):
     sym = data["symbol"]
-    p   = CACHE_DIR / f"{sym}.json"
+    p = CACHE_DIR / f"{sym}.json"
     p.write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
@@ -108,10 +112,13 @@ def _has_label(data: dict) -> bool:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--symbols", nargs="+", help="Specific symbols to process")
-    parser.add_argument("--force",   action="store_true", help="Regenerate even if label exists")
+    parser.add_argument(
+        "--force", action="store_true", help="Regenerate even if label exists"
+    )
     args = parser.parse_args()
 
     if args.symbols:
@@ -129,8 +136,8 @@ def main():
             pass
 
     generated = 0
-    skipped   = 0
-    errors    = 0
+    skipped = 0
+    errors = 0
 
     for i, sym in enumerate(symbols, 1):
         data = _load_cache(sym)

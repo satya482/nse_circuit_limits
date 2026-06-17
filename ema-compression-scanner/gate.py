@@ -12,7 +12,9 @@ def _bar_compressed(row: pd.Series, atr_threshold: float, pct_threshold: float) 
     return spread_atr < atr_threshold and spread_pct < pct_threshold
 
 
-def compression_duration(df: pd.DataFrame, atr_threshold: float, pct_threshold: float) -> int:
+def compression_duration(
+    df: pd.DataFrame, atr_threshold: float, pct_threshold: float
+) -> int:
     """Count consecutive bars at the tail where both EMA gates pass."""
     count = 0
     for i in range(len(df) - 1, -1, -1):
@@ -48,6 +50,10 @@ def bb_squeeze_passes(df: pd.DataFrame, settings: dict) -> tuple[bool, int]:
         else:
             break
 
-    last_pct_rank = df["bb_width_pct_rank"].iloc[-1] if "bb_width_pct_rank" in df.columns else 100.0
-    width_ok = pd.notna(last_pct_rank) and float(last_pct_rank) <= sq["bb_width_pct_max"]
+    last_pct_rank = (
+        df["bb_width_pct_rank"].iloc[-1] if "bb_width_pct_rank" in df.columns else 100.0
+    )
+    width_ok = (
+        pd.notna(last_pct_rank) and float(last_pct_rank) <= sq["bb_width_pct_max"]
+    )
     return count >= sq["min_bars"] and width_ok, count

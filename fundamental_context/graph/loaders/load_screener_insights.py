@@ -20,13 +20,13 @@ Flags : --symbol RVNL   (single company)
         --limit  50     (process first N unprocessed)
         --no-claude     (fetch + cache only; skip Claude + Neo4j writes)
 """
+
 from __future__ import annotations
 
 import argparse
 import json
 import os
 import re
-import sys
 import time
 from datetime import date
 from pathlib import Path
@@ -38,36 +38,52 @@ from neo4j import GraphDatabase
 
 try:
     import anthropic
+
     ANTHROPIC_AVAILABLE = True
 except ImportError:
     ANTHROPIC_AVAILABLE = False
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE  = Path(__file__).parent
-_ENV   = _HERE.parent.parent / ".env"
+_HERE = Path(__file__).parent
+_ENV = _HERE.parent.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI      = os.getenv("NEO4J_URI",         "bolt://localhost:7687")
-NEO4J_USER     = os.getenv("NEO4J_USER",         "neo4j")
-NEO4J_PASS     = os.getenv("NEO4J_PASSWORD",     "")
-ANTHROPIC_KEY  = os.getenv("ANTHROPIC_API_KEY",  "")
-SCR_EMAIL      = os.getenv("SCREENER_EMAIL",     "")
-SCR_PASSWORD   = os.getenv("SCREENER_PASSWORD",  "")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
+NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
+ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
+SCR_EMAIL = os.getenv("SCREENER_EMAIL", "")
+SCR_PASSWORD = os.getenv("SCREENER_PASSWORD", "")
 
-CLAUDE_MODEL   = "claude-sonnet-4-6"
-CACHE_FILE     = _HERE.parent.parent / "data" / "screener_insights_cache.json"
+CLAUDE_MODEL = "claude-sonnet-4-6"
+CACHE_FILE = _HERE.parent.parent / "data" / "screener_insights_cache.json"
 
-SCREENER_BASE  = "https://www.screener.in"
+SCREENER_BASE = "https://www.screener.in"
 
 # All valid theme names (must match Neo4j Theme nodes)
 VALID_THEMES = [
-    "GovernmentCapex", "ManufacturingTailwind", "FutureEconomy",
-    "InfraCapex", "Defence", "PowerCapex",
-    "Railways", "Roads", "Ports",
-    "Defence_Electronics", "Defence_Platforms", "Defence_MRO",
-    "PowerT&D", "RenewableEnergy",
-    "PLI_Electronics", "PLI_Chemicals", "China+1_Textiles", "Semiconductor",
-    "DataCentre", "EV_Components", "SpecialtyChemicals", "Hospitals_HealthcareInfra",
+    "GovernmentCapex",
+    "ManufacturingTailwind",
+    "FutureEconomy",
+    "InfraCapex",
+    "Defence",
+    "PowerCapex",
+    "Railways",
+    "Roads",
+    "Ports",
+    "Defence_Electronics",
+    "Defence_Platforms",
+    "Defence_MRO",
+    "PowerT&D",
+    "RenewableEnergy",
+    "PLI_Electronics",
+    "PLI_Chemicals",
+    "China+1_Textiles",
+    "Semiconductor",
+    "DataCentre",
+    "EV_Components",
+    "SpecialtyChemicals",
+    "Hospitals_HealthcareInfra",
 ]
 
 HEADERS = {
@@ -83,10 +99,9 @@ HEADERS = {
 def make_session() -> requests.Session:
     s = requests.Session()
     s.headers.update(HEADERS)
-    lp  = s.get(f"{SCREENER_BASE}/login/", timeout=15)
-    csrf = (
-        BeautifulSoup(lp.text, "html.parser")
-        .select_one("input[name=csrfmiddlewaretoken]")
+    lp = s.get(f"{SCREENER_BASE}/login/", timeout=15)
+    csrf = BeautifulSoup(lp.text, "html.parser").select_one(
+        "input[name=csrfmiddlewaretoken]"
     )
     if not csrf:
         raise RuntimeError("Could not get CSRF token from screener.in login page")
@@ -179,9 +194,12 @@ _SYSTEM = """You are Vikram Iyer, 30-year Indian equity veteran.
 Extract structured data from company Key Points and concall summaries.
 Return ONLY valid JSON — no prose, no markdown fences, no explanation."""
 
-_SCHEMA = """
+_SCHEMA = (
+    """
 {
-  "themes": [<list of theme names that apply, chosen ONLY from: """ + ", ".join(f'"{t}"' for t in VALID_THEMES) + """>],
+  "themes": [<list of theme names that apply, chosen ONLY from: """
+    + ", ".join(f'"{t}"' for t in VALID_THEMES)
+    + """>],
   "theme_confidence": {<theme_name>: "High"|"Medium"|"Low"},
   "order_book_crore": <latest order book in Rs Cr, number or null>,
   "order_inflow_crore": <guided order inflow for current year, number or null>,
@@ -195,6 +213,8 @@ _SCHEMA = """
   "key_risks": [<up to 3 short risk strings>],
   "business_summary": "<2-line Vikram-style summary: what business does + key metric>"
 }"""
+)
+
 
 def extract_with_claude(nse_code: str, key_points: str, concall_text: str) -> dict:
     if not ANTHROPIC_AVAILABLE or not ANTHROPIC_KEY:
@@ -274,7 +294,9 @@ MERGE (c)-[:HAS_ORDER_BOOK]->(ob)
 """
 
 
-def write_to_neo4j(nse_code: str, extracted: dict, revenue_ttm: float | None, session) -> None:
+def write_to_neo4j(
+    nse_code: str, extracted: dict, revenue_ttm: float | None, session
+) -> None:
     today = date.today().isoformat()
 
     # Order book ratio
@@ -286,56 +308,63 @@ def write_to_neo4j(nse_code: str, extracted: dict, revenue_ttm: float | None, se
     # Update Company node
     session.run(
         _UPDATE_COMPANY,
-        nse_code  = nse_code,
-        summary   = extracted.get("business_summary"),
-        ob_crore  = ob_crore,
-        ob_ratio  = ob_ratio,
-        mkt_share = extracted.get("market_share_pct"),
-        cap_util  = extracted.get("capacity_utilization_pct"),
-        wc_days   = extracted.get("working_capital_days"),
+        nse_code=nse_code,
+        summary=extracted.get("business_summary"),
+        ob_crore=ob_crore,
+        ob_ratio=ob_ratio,
+        mkt_share=extracted.get("market_share_pct"),
+        cap_util=extracted.get("capacity_utilization_pct"),
+        wc_days=extracted.get("working_capital_days"),
     )
 
     # BENEFITS_FROM edges
-    themes     = extracted.get("themes") or []
+    themes = extracted.get("themes") or []
     confidence = extracted.get("theme_confidence") or {}
     for theme in themes:
         if theme in VALID_THEMES:
             session.run(
                 _MERGE_BENEFITS_FROM,
-                nse_code   = nse_code,
-                theme      = theme,
-                confidence = confidence.get(theme, "Medium"),
+                nse_code=nse_code,
+                theme=theme,
+                confidence=confidence.get(theme, "Medium"),
             )
-            print(f"[GRAPH] BENEFITS_FROM | {nse_code} -> {theme} | {confidence.get(theme,'Medium')}")
+            print(
+                f"[GRAPH] BENEFITS_FROM | {nse_code} -> {theme} | {confidence.get(theme,'Medium')}"
+            )
 
     # OrderBook node
     if ob_crore:
         session.run(
             _MERGE_ORDERBOOK,
-            ob_id      = f"{nse_code}_{today}",
-            nse_code   = nse_code,
-            size_crore = ob_crore,
-            ob_date    = today,
+            ob_id=f"{nse_code}_{today}",
+            nse_code=nse_code,
+            size_crore=ob_crore,
+            ob_date=today,
         )
-        print(f"[GRAPH] OrderBook MERGE | {nse_code} | Rs.{ob_crore:.0f} Cr (ratio={ob_ratio})", flush=True)
+        print(
+            f"[GRAPH] OrderBook MERGE | {nse_code} | Rs.{ob_crore:.0f} Cr (ratio={ob_ratio})",
+            flush=True,
+        )
 
     # Guidance node
     rev_growth = extracted.get("revenue_growth_guided_pct")
-    margin     = extracted.get("margin_guided_pct")
-    tone       = extracted.get("management_tone")
-    conf       = extracted.get("management_confidence")
+    margin = extracted.get("margin_guided_pct")
+    tone = extracted.get("management_tone")
+    conf = extracted.get("management_confidence")
     if any(x is not None for x in [rev_growth, margin, tone]):
         session.run(
             _MERGE_GUIDANCE,
-            gid          = f"{nse_code}_{today}_screener",
-            nse_code     = nse_code,
-            concall_date = today,
-            rev_growth   = rev_growth,
-            margin       = margin,
-            confidence   = conf,
-            tone         = tone,
+            gid=f"{nse_code}_{today}_screener",
+            nse_code=nse_code,
+            concall_date=today,
+            rev_growth=rev_growth,
+            margin=margin,
+            confidence=conf,
+            tone=tone,
         )
-        print(f"[GRAPH] Guidance MERGE | {nse_code} | growth={rev_growth} margin={margin} tone={tone}")
+        print(
+            f"[GRAPH] Guidance MERGE | {nse_code} | growth={rev_growth} margin={margin} tone={tone}"
+        )
 
 
 # ── Cache helpers ─────────────────────────────────────────────────────────────
@@ -353,21 +382,27 @@ def save_cache(cache: dict) -> None:
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
-def run(symbol: str | None = None, limit: int | None = None, no_claude: bool = False) -> None:
+def run(
+    symbol: str | None = None, limit: int | None = None, no_claude: bool = False
+) -> None:
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
 
     # Get all companies from Neo4j
     with driver.session() as neo_session:
         if symbol:
-            rows = list(neo_session.run(
-                "MATCH (c:Company {nse_code: $s}) RETURN c.nse_code AS code, c.revenue_ttm AS rev",
-                s=symbol
-            ))
+            rows = list(
+                neo_session.run(
+                    "MATCH (c:Company {nse_code: $s}) RETURN c.nse_code AS code, c.revenue_ttm AS rev",
+                    s=symbol,
+                )
+            )
         else:
-            rows = list(neo_session.run(
-                "MATCH (c:Company) WHERE c.roe_3yr_avg IS NOT NULL "
-                "RETURN c.nse_code AS code, c.revenue_ttm AS rev ORDER BY c.nse_code"
-            ))
+            rows = list(
+                neo_session.run(
+                    "MATCH (c:Company) WHERE c.roe_3yr_avg IS NOT NULL "
+                    "RETURN c.nse_code AS code, c.revenue_ttm AS rev ORDER BY c.nse_code"
+                )
+            )
 
     codes = [(r["code"], r["rev"]) for r in rows]
     print(f"[INSIGHTS] {len(codes)} companies to process")
@@ -432,18 +467,23 @@ def run(symbol: str | None = None, limit: int | None = None, no_claude: bool = F
             with driver.session() as neo_session:
                 write_to_neo4j(nse_code, extracted, rev, neo_session)
 
-            summary = (extracted.get("business_summary") or "")[:80].encode("ascii", "replace").decode()
-            themes  = extracted.get("themes") or []
-            ob      = extracted.get("order_book_crore")
-            tone    = extracted.get("management_tone")
+            summary = (
+                (extracted.get("business_summary") or "")[:80]
+                .encode("ascii", "replace")
+                .decode()
+            )
+            themes = extracted.get("themes") or []
+            ob = extracted.get("order_book_crore")
+            tone = extracted.get("management_tone")
             print(f"  themes={themes} ob={ob} tone={tone} summary={summary!r}")
 
             # Trigger score recompute for this company
             try:
                 import importlib.util
+
                 _etl = _HERE.parent.parent / "etl" / "recompute_scores.py"
                 spec = importlib.util.spec_from_file_location("recompute_scores", _etl)
-                mod  = importlib.util.module_from_spec(spec)
+                mod = importlib.util.module_from_spec(spec)
                 spec.loader.exec_module(mod)
                 new_score = mod.run(nse_code)
                 print(f"  [SCORES] {nse_code} recomputed ({new_score} updated)")
@@ -454,14 +494,20 @@ def run(symbol: str | None = None, limit: int | None = None, no_claude: bool = F
         time.sleep(1.0)  # rate limit
 
     driver.close()
-    print(f"\n[INSIGHTS] Done — {processed} companies processed, {len(cache)} total in cache")
+    print(
+        f"\n[INSIGHTS] Done — {processed} companies processed, {len(cache)} total in cache"
+    )
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Load screener.in Key Points + concall summaries")
+    parser = argparse.ArgumentParser(
+        description="Load screener.in Key Points + concall summaries"
+    )
     parser.add_argument("--symbol", help="Process single NSE symbol")
-    parser.add_argument("--limit",  type=int, help="Max companies to process this run")
-    parser.add_argument("--no-claude", action="store_true", help="Fetch only, skip Claude + Neo4j")
+    parser.add_argument("--limit", type=int, help="Max companies to process this run")
+    parser.add_argument(
+        "--no-claude", action="store_true", help="Fetch only, skip Claude + Neo4j"
+    )
     args = parser.parse_args()
     run(symbol=args.symbol, limit=args.limit, no_claude=args.no_claude)
 

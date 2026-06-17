@@ -16,6 +16,7 @@ Usage:
   nse_code, conf, method = r.resolve("PGRD", "Power Grid Corporation of India")
   # → ("POWERGRID", 0.91, "fuzzy_name")
 """
+
 from __future__ import annotations
 
 import csv
@@ -25,9 +26,9 @@ import re
 from functools import cached_property
 from pathlib import Path
 
-_HERE         = Path(__file__).parent
+_HERE = Path(__file__).parent
 _UNIVERSE_CSV = _HERE / "NSE_500cr_15CrNotional10D_50rs_sector_industry.csv"
-_LABELS_JSON  = _HERE / "tools" / "stock_labels.json"
+_LABELS_JSON = _HERE / "tools" / "stock_labels.json"
 
 # Suffixes stripped before name comparison — only true legal/corporate forms,
 # NOT domain words (energy, power, tech, bank …) that distinguish company identity.
@@ -43,8 +44,24 @@ _SUFFIX_RE = re.compile(
 _NON_NSE_RE = re.compile(r"\.(L|AX|TO|HK|PA|T|F|DE|SW)$", re.IGNORECASE)
 
 # US ticker heuristics: 1-4 UPPER letters with no digit, common US tickers
-_US_TICKERS = {"HON", "UEC", "CNTRF", "CCJ", "NXE", "DNN", "URG", "LEU",
-               "UUUU", "GE", "BA", "LMT", "RTX", "NOC", "HII", "GD"}
+_US_TICKERS = {
+    "HON",
+    "UEC",
+    "CNTRF",
+    "CCJ",
+    "NXE",
+    "DNN",
+    "URG",
+    "LEU",
+    "UUUU",
+    "GE",
+    "BA",
+    "LMT",
+    "RTX",
+    "NOC",
+    "HII",
+    "GD",
+}
 
 
 def _normalize(name: str) -> str:
@@ -130,25 +147,27 @@ class Resolver:
             return clean, 1.0, "exact"
 
         # ── 2. Fuzzy symbol match ──────────────────────────────────────────
-        sym_matches = difflib.get_close_matches(clean, all_codes, n=3, cutoff=self.threshold)
+        sym_matches = difflib.get_close_matches(
+            clean, all_codes, n=3, cutoff=self.threshold
+        )
         best_sym_score = 0.0
-        best_sym_code  = None
+        best_sym_code = None
         for cand in sym_matches:
             score = difflib.SequenceMatcher(None, clean, cand).ratio()
             if score > best_sym_score:
                 best_sym_score = score
-                best_sym_code  = cand
+                best_sym_code = cand
 
         # ── 3. Name-based matching ─────────────────────────────────────────
         norm_extracted = _normalize(name) if name else ""
         best_name_score = 0.0
-        best_name_code  = None
+        best_name_code = None
 
         if norm_extracted:
             # 3a. Exact normalized name
             if norm_extracted in norm_to_nse:
                 best_name_score = 0.97
-                best_name_code  = norm_to_nse[norm_extracted]
+                best_name_code = norm_to_nse[norm_extracted]
 
             # 3b. Fuzzy normalized name
             if best_name_score < 0.9:
@@ -157,10 +176,12 @@ class Resolver:
                     norm_extracted, norm_keys, n=3, cutoff=self.threshold
                 )
                 for cand_norm in name_matches:
-                    score = difflib.SequenceMatcher(None, norm_extracted, cand_norm).ratio()
+                    score = difflib.SequenceMatcher(
+                        None, norm_extracted, cand_norm
+                    ).ratio()
                     if score > best_name_score:
-                        best_name_score = score * 0.93   # slight penalty vs exact
-                        best_name_code  = norm_to_nse[cand_norm]
+                        best_name_score = score * 0.93  # slight penalty vs exact
+                        best_name_code = norm_to_nse[cand_norm]
 
             # 3c. Token overlap (handles partial name matches)
             if best_name_score < 0.80:
@@ -179,12 +200,15 @@ class Resolver:
                             score = min(score * 1.2, 1.0)
                         if score > best_name_score and score >= 0.55:
                             best_name_score = score * 0.88
-                            best_name_code  = code
+                            best_name_code = code
 
         # ── 4. Pick winner: name match wins if significantly better ────────
         if best_name_code and best_name_score >= best_sym_score:
-            method = "name_exact" if best_name_score > 0.93 else \
-                     "fuzzy_name" if best_name_score > 0.78 else "token_name"
+            method = (
+                "name_exact"
+                if best_name_score > 0.93
+                else "fuzzy_name" if best_name_score > 0.78 else "token_name"
+            )
             if best_name_score >= self.threshold * 0.85:
                 return best_name_code, best_name_score, method
 
@@ -196,34 +220,34 @@ class Resolver:
 
     def resolve_company(self, company: dict) -> dict:
         """Enrich a company dict with nse_code + resolver metadata."""
-        sym  = company.get("symbol") or ""
-        name = company.get("name")   or ""
+        sym = company.get("symbol") or ""
+        name = company.get("name") or ""
         nse_code, conf, method = self.resolve(sym, name)
         return {
             **company,
-            "nse_code":  nse_code,
-            "res_conf":  round(conf, 3),
+            "nse_code": nse_code,
+            "res_conf": round(conf, 3),
             "res_method": method,
         }
 
 
 # ── CLI for quick testing ──────────────────────────────────────────────────────
 if __name__ == "__main__":
-    import sys
+
     r = Resolver()
     test_cases = [
-        ("CAPILLAR",     "Capillary Technologies India"),
-        ("SOIL",         "Solar Industries India"),
-        ("NTPC",         "NTPC Limited"),
-        ("PGRD",         "Power Grid Corporation of India"),
-        ("TTPW",         "Tata Power"),
-        ("JSWE",         "JSW Energy"),
-        ("UEC",          "Yellow Cake"),
-        ("HON",          "SOLS (Honeywell spinoff)"),
-        ("CNTRF",        "Centrus"),
-        ("HITACHIENERGY","Hitachi Energy India"),
-        ("SHADOWF",      "ShadowFax Technologies"),
-        ("DELHIVERY",    "Delhivery"),
+        ("CAPILLAR", "Capillary Technologies India"),
+        ("SOIL", "Solar Industries India"),
+        ("NTPC", "NTPC Limited"),
+        ("PGRD", "Power Grid Corporation of India"),
+        ("TTPW", "Tata Power"),
+        ("JSWE", "JSW Energy"),
+        ("UEC", "Yellow Cake"),
+        ("HON", "SOLS (Honeywell spinoff)"),
+        ("CNTRF", "Centrus"),
+        ("HITACHIENERGY", "Hitachi Energy India"),
+        ("SHADOWF", "ShadowFax Technologies"),
+        ("DELHIVERY", "Delhivery"),
     ]
     print(f"{'Sym':<16} {'Name':<38} {'-> NSE Code':<14} {'Conf':>5}  Method")
     print("-" * 90)

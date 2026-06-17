@@ -42,7 +42,9 @@ def load_instruments(kite: KiteConnect, cache_dir: Path) -> dict:
         df = pd.read_csv(cache_file)
 
     eq = df[(df["segment"] == "NSE") & (df["instrument_type"] == "EQ")]
-    return {row["tradingsymbol"]: int(row["instrument_token"]) for _, row in eq.iterrows()}
+    return {
+        row["tradingsymbol"]: int(row["instrument_token"]) for _, row in eq.iterrows()
+    }
 
 
 def load_benchmark_token(cache_dir: Path) -> int:
@@ -52,7 +54,9 @@ def load_benchmark_token(cache_dir: Path) -> int:
     df = pd.read_csv(cache_file)
     row = df[df["tradingsymbol"] == "NIFTY MIDSML 400"]
     if row.empty:
-        raise RuntimeError("NIFTY MIDSML 400 not found in instruments cache — check instruments CSV")
+        raise RuntimeError(
+            "NIFTY MIDSML 400 not found in instruments cache — check instruments CSV"
+        )
     return int(row.iloc[0]["instrument_token"])
 
 
@@ -64,12 +68,14 @@ def load_universe(csv_path: str) -> list[dict]:
         for row in reader:
             symbol = row.get("NSE Code", "").strip()
             if symbol:
-                rows.append({
-                    "symbol": symbol,
-                    "name": row.get("Stock Name", "").strip(),
-                    "sector": row.get("sector_name", "").strip(),
-                    "industry": row.get("Industry Name", "").strip(),
-                })
+                rows.append(
+                    {
+                        "symbol": symbol,
+                        "name": row.get("Stock Name", "").strip(),
+                        "sector": row.get("sector_name", "").strip(),
+                        "industry": row.get("Industry Name", "").strip(),
+                    }
+                )
     return rows
 
 
@@ -102,8 +108,8 @@ def fetch_ohlc(
 ) -> pd.DataFrame | None:
     """Fetch OHLCV with parquet/CSV dual-read delta cache. Returns DataFrame or None on failure."""
     parquet_file = cache_dir / f"{symbol}.parquet"
-    csv_file     = cache_dir / f"{symbol}.csv"
-    to_date      = datetime.now().date()
+    csv_file = cache_dir / f"{symbol}.csv"
+    to_date = datetime.now().date()
 
     df_existing = _load_cached(parquet_file, csv_file)
 

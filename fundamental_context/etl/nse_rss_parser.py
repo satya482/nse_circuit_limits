@@ -11,11 +11,11 @@ MERGE on catalyst_id deduplicates.
 Requires: requests, neo4j, python-dotenv
 Run     : python nse_rss_parser.py
 """
+
 from __future__ import annotations
 
 import hashlib
 import os
-import re
 from datetime import date, datetime
 from pathlib import Path
 
@@ -25,15 +25,15 @@ from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent / ".env"
+_ENV = _HERE.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 NSE_HOMEPAGE = "https://www.nseindia.com"
-NSE_API_URL  = "https://www.nseindia.com/api/corporate-announcements?index=equities"
+NSE_API_URL = "https://www.nseindia.com/api/corporate-announcements?index=equities"
 
 HEADERS = {
     "User-Agent": (
@@ -50,34 +50,68 @@ HEADERS = {
 # Matches against: desc (category) + attchmntText (summary sentence)
 KEYWORD_MAP: dict[str, list[str]] = {
     "OrderWin": [
-        "order", "contract", "loa", "letter of award",
-        "purchase order", "work order", "awarded", "secured order",
-        "bagged", "new orders", "order win",
+        "order",
+        "contract",
+        "loa",
+        "letter of award",
+        "purchase order",
+        "work order",
+        "awarded",
+        "secured order",
+        "bagged",
+        "new orders",
+        "order win",
     ],
     "CapacityExpansion": [
-        "capacity expansion", "greenfield", "brownfield",
-        "new plant", "capex", "capital expenditure", "capacity addition",
-        "new facility", "manufacturing unit",
+        "capacity expansion",
+        "greenfield",
+        "brownfield",
+        "new plant",
+        "capex",
+        "capital expenditure",
+        "capacity addition",
+        "new facility",
+        "manufacturing unit",
     ],
     "GovtApproval": [
-        "pli", "production linked incentive", "ministry",
-        "license", "clearance", "dpiit", "regulatory approval",
-        "government approval", "govt approval", "noc",
+        "pli",
+        "production linked incentive",
+        "ministry",
+        "license",
+        "clearance",
+        "dpiit",
+        "regulatory approval",
+        "government approval",
+        "govt approval",
+        "noc",
     ],
     "PromotorBuy": [
         "acquisition of shares by promoter",
-        "inter-se transfer", "promoter purchase",
-        "creeping acquisition", "insider buying",
+        "inter-se transfer",
+        "promoter purchase",
+        "creeping acquisition",
+        "insider buying",
     ],
     "M&A": [
-        "merger", "acquisition", "amalgamation",
-        "takeover", "stake acquisition", "demerger",
-        "business transfer", "slump sale",
+        "merger",
+        "acquisition",
+        "amalgamation",
+        "takeover",
+        "stake acquisition",
+        "demerger",
+        "business transfer",
+        "slump sale",
     ],
     "GovernanceFlag": [
-        "investigation", "show cause",
-        "sebi notice", "auditor resignation", "qualified opinion",
-        "fraud", "default", "non-payment", "bse query",
+        "investigation",
+        "show cause",
+        "sebi notice",
+        "auditor resignation",
+        "qualified opinion",
+        "fraud",
+        "default",
+        "non-payment",
+        "bse query",
         "promoter pledge",
     ],
 }
@@ -171,8 +205,8 @@ def process_announcements(entries: list[dict], session) -> tuple[int, int]:
             skipped += 1
             continue
 
-        desc   = entry.get("desc", "")
-        text   = entry.get("attchmntText", "")
+        desc = entry.get("desc", "")
+        text = entry.get("attchmntText", "")
         pub_date = _parse_date(entry)
 
         cat_type = classify(desc, text)
@@ -183,10 +217,10 @@ def process_announcements(entries: list[dict], session) -> tuple[int, int]:
         # Look up ep_probability and base_delta from CatalystType node
         ct_row = session.run(_LOOKUP_CT, name=cat_type).single()
         if ct_row:
-            ep_prob          = ct_row["ep_prob"]
+            ep_prob = ct_row["ep_prob"]
             conviction_delta = ct_row["base_delta"]
         else:
-            ep_prob          = "Low"
+            ep_prob = "Low"
             conviction_delta = 3
 
         # Combine desc + first 200 chars of text for description field
@@ -195,17 +229,19 @@ def process_announcements(entries: list[dict], session) -> tuple[int, int]:
         catalyst_id = _make_catalyst_id(nse_code, cat_type, pub_date)
         result = session.run(
             _MERGE_CATALYST,
-            catalyst_id      = catalyst_id,
-            nse_code         = nse_code,
-            cat_type         = cat_type,
-            pub_date         = pub_date.isoformat(),
-            description      = description[:300],
-            ep_probability   = ep_prob,
-            conviction_delta = conviction_delta,
+            catalyst_id=catalyst_id,
+            nse_code=nse_code,
+            cat_type=cat_type,
+            pub_date=pub_date.isoformat(),
+            description=description[:300],
+            ep_probability=ep_prob,
+            conviction_delta=conviction_delta,
         )
         counters = result.consume().counters
-        action   = "created" if counters.nodes_created > 0 else "exists"
-        print(f"[GRAPH] Catalyst MERGE | {nse_code} | {cat_type} | {pub_date} | {action}")
+        action = "created" if counters.nodes_created > 0 else "exists"
+        print(
+            f"[GRAPH] Catalyst MERGE | {nse_code} | {cat_type} | {pub_date} | {action}"
+        )
         matched += 1
 
     return matched, skipped

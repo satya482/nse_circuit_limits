@@ -15,6 +15,7 @@ Output: data/processed/ep_watchlist_YYYYMMDD.csv
 
 Run: python flag_ep_candidates.py
 """
+
 from __future__ import annotations
 
 import csv
@@ -32,6 +33,7 @@ sys.path.insert(0, str(_PROJECT_ROOT))
 
 try:
     from ohlc_db import load_ohlc  # type: ignore[import]
+
     OHLC_AVAILABLE = True
 except ImportError:
     OHLC_AVAILABLE = False
@@ -39,11 +41,11 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent / ".env"
+_ENV = _HERE.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 OUTPUT_DIR = _HERE.parent / "data" / "processed"
@@ -112,9 +114,9 @@ def _check_ep_technicals(nse_code: str, catalyst_date: date) -> tuple[bool, str]
         return False, f"Volume {cat_vol:.0f} < 5x 20D avg {avg_vol:.0f}"
 
     # ── Sideways check: ATR tight for 3+ months (≈63 trading days) ───────
-    lookback_end   = cat_idx
+    lookback_end = cat_idx
     lookback_start = max(0, cat_idx - 63)
-    period         = df.iloc[lookback_start:lookback_end]
+    period = df.iloc[lookback_start:lookback_end]
     if len(period) < 20:
         return True, "Insufficient history for sideways check"
 
@@ -138,7 +140,7 @@ def run() -> list[dict]:
     ep_list: list[dict] = []
 
     for row in candidates:
-        nse_code     = row["nse_code"]
+        nse_code = row["nse_code"]
         catalyst_date = row["catalyst_date"]
 
         if catalyst_date is None:
@@ -148,16 +150,16 @@ def run() -> list[dict]:
         status = "EP_WATCH" if passes else "FILTERED"
 
         record = {
-            "symbol":         nse_code,
-            "name":           row["name"],
-            "conviction":     row["conviction"],
-            "quality":        row["quality"],
-            "ob_ratio":       row["ob_ratio"],
-            "catalyst_type":  row["catalyst_type"],
-            "catalyst_date":  str(catalyst_date),
+            "symbol": nse_code,
+            "name": row["name"],
+            "conviction": row["conviction"],
+            "quality": row["quality"],
+            "ob_ratio": row["ob_ratio"],
+            "catalyst_type": row["catalyst_type"],
+            "catalyst_date": str(catalyst_date),
             "ep_probability": row["ep_prob"],
-            "themes":         "|".join(row["themes"] or []),
-            "ep_status":      status,
+            "themes": "|".join(row["themes"] or []),
+            "ep_status": status,
             "technical_note": reason,
         }
         ep_list.append(record)
@@ -165,7 +167,7 @@ def run() -> list[dict]:
 
     # Write CSV
     today_str = date.today().isoformat()
-    out_path  = OUTPUT_DIR / f"ep_watchlist_{today_str}.csv"
+    out_path = OUTPUT_DIR / f"ep_watchlist_{today_str}.csv"
     if ep_list:
         fieldnames = list(ep_list[0].keys())
         with open(out_path, "w", newline="", encoding="utf-8") as fh:
@@ -175,7 +177,9 @@ def run() -> list[dict]:
         print(f"[EP] Watchlist written -> {out_path}")
 
     ep_watch = [r for r in ep_list if r["ep_status"] == "EP_WATCH"]
-    print(f"[EP] Summary | {len(ep_watch)} EP candidates | {len(ep_list)} total screened")
+    print(
+        f"[EP] Summary | {len(ep_watch)} EP candidates | {len(ep_list)} total screened"
+    )
     return ep_list
 
 

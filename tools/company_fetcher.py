@@ -26,16 +26,16 @@ from tradingview_screener import Query, col
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REPO_DIR     = Path(__file__).parent.parent
-CACHE_DIR    = REPO_DIR / ".company_cache"
-TOOLS_DIR    = Path(__file__).parent
-ID_MAP_FILE  = TOOLS_DIR / "trendlyne_id_map.json"
+REPO_DIR = Path(__file__).parent.parent
+CACHE_DIR = REPO_DIR / ".company_cache"
+TOOLS_DIR = Path(__file__).parent
+ID_MAP_FILE = TOOLS_DIR / "trendlyne_id_map.json"
 UNIVERSE_OUT = TOOLS_DIR / "sector_rotation_universe.json"
 
-STALE_DAYS   = 30
-MC_LOW       = 800     * 1_00_00_000   # 800 Cr in rupees
-MC_HIGH      = 1_00_000 * 1_00_00_000  # 1 Lakh Cr in rupees
-MIN_PRICE    = 50
+STALE_DAYS = 30
+MC_LOW = 800 * 1_00_00_000  # 800 Cr in rupees
+MC_HIGH = 1_00_000 * 1_00_00_000  # 1 Lakh Cr in rupees
+MIN_PRICE = 50
 
 HEADERS = {
     "User-Agent": (
@@ -47,6 +47,7 @@ HEADERS = {
 }
 
 # ── Universe ───────────────────────────────────────────────────────────────────
+
 
 def fetch_universe() -> list[dict]:
     """Return list of {symbol, name} from TradingView screener."""
@@ -73,7 +74,8 @@ def fetch_universe() -> list[dict]:
     UNIVERSE_OUT.write_text(
         json.dumps(
             {"fetched_at": _now_iso(), "count": len(stocks), "stocks": stocks},
-            indent=2, ensure_ascii=False,
+            indent=2,
+            ensure_ascii=False,
         ),
         encoding="utf-8",
     )
@@ -82,11 +84,14 @@ def fetch_universe() -> list[dict]:
 
 # ── Cache helpers ──────────────────────────────────────────────────────────────
 
+
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
+
 def _cache_path(symbol: str) -> Path:
     return CACHE_DIR / f"{symbol}.json"
+
 
 def _is_fresh(symbol: str) -> bool:
     p = _cache_path(symbol)
@@ -103,6 +108,7 @@ def _is_fresh(symbol: str) -> bool:
 
 
 # ── Trendlyne fetcher ──────────────────────────────────────────────────────────
+
 
 def _trendlyne_url(symbol: str, id_map: dict) -> str | None:
     entry = id_map.get(symbol)
@@ -142,6 +148,7 @@ def fetch_trendlyne(symbol: str, id_map: dict) -> str:
 
 # ── Screener.in fetcher ────────────────────────────────────────────────────────
 
+
 def fetch_screener(symbol: str) -> tuple[str, list[str]]:
     """Return (description, peers_list)."""
     url = f"https://www.screener.in/company/{symbol}/"
@@ -168,7 +175,9 @@ def fetch_screener(symbol: str) -> tuple[str, list[str]]:
 
         # Screener peer table: links in the peers section
         peers: list[str] = []
-        peer_section = soup.select_one("div#peers table") or soup.select_one("table.peers")
+        peer_section = soup.select_one("div#peers table") or soup.select_one(
+            "table.peers"
+        )
         if peer_section:
             for a in peer_section.select("a[href*='/company/']"):
                 href = a.get("href", "")
@@ -186,6 +195,7 @@ def fetch_screener(symbol: str) -> tuple[str, list[str]]:
 
 
 # ── Merge + save ───────────────────────────────────────────────────────────────
+
 
 def _combine(*texts: str) -> str:
     seen, parts = set(), []
@@ -215,14 +225,14 @@ def fetch_and_cache(symbol: str, name: str, id_map: dict) -> dict:
     combined = _combine(tl_desc, sc_desc)
 
     entry = {
-        "symbol":               symbol,
-        "name":                 name,
+        "symbol": symbol,
+        "name": name,
         "trendlyne_description": tl_desc,
-        "screener_description":  sc_desc,
-        "combined_description":  combined,
-        "screener_peers":        sc_peers,
-        "fetched_at":            _now_iso(),
-        "sources":               sources,
+        "screener_description": sc_desc,
+        "combined_description": combined,
+        "screener_peers": sc_peers,
+        "fetched_at": _now_iso(),
+        "sources": sources,
     }
 
     path = _cache_path(symbol)
@@ -235,16 +245,21 @@ def fetch_and_cache(symbol: str, name: str, id_map: dict) -> dict:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--symbols", nargs="+", help="Specific symbols to fetch")
-    parser.add_argument("--force",   action="store_true", help="Re-fetch even if cache is fresh")
+    parser.add_argument(
+        "--force", action="store_true", help="Re-fetch even if cache is fresh"
+    )
     args = parser.parse_args()
 
     CACHE_DIR.mkdir(exist_ok=True)
 
     if not ID_MAP_FILE.exists():
-        print(f"ERROR: {ID_MAP_FILE} not found. Run tools/build_trendlyne_map.py first.")
+        print(
+            f"ERROR: {ID_MAP_FILE} not found. Run tools/build_trendlyne_map.py first."
+        )
         return 1
 
     id_map = json.loads(ID_MAP_FILE.read_text(encoding="utf-8"))
@@ -254,12 +269,12 @@ def main():
     else:
         stocks = fetch_universe()
 
-    total    = len(stocks)
-    fetched  = 0
-    skipped  = 0
+    total = len(stocks)
+    fetched = 0
+    skipped = 0
 
     for i, stock in enumerate(stocks, 1):
-        sym  = stock["symbol"]
+        sym = stock["symbol"]
         name = stock.get("name", sym)
 
         if not args.force and _is_fresh(sym):

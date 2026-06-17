@@ -45,6 +45,7 @@ warnings.filterwarnings("ignore", category=RuntimeWarning)
 # OUTPUT SCHEMA
 # ══════════════════════════════════════════════════════════════════════════════
 
+
 @dataclass
 class WaveTrendSignal:
     """
@@ -53,64 +54,67 @@ class WaveTrendSignal:
     """
 
     # ── Raw oscillator values ─────────────────────────────────────────────────
-    wt1:      float = np.nan   # WaveTrend line 1 (faster)
-    wt2:      float = np.nan   # WaveTrend line 2 (slower, SMA-4 of wt1)
-    wt_diff:  float = np.nan   # wt1 - wt2  (positive = bullish momentum)
+    wt1: float = np.nan  # WaveTrend line 1 (faster)
+    wt2: float = np.nan  # WaveTrend line 2 (slower, SMA-4 of wt1)
+    wt_diff: float = np.nan  # wt1 - wt2  (positive = bullish momentum)
 
     # ── Primary signal (human-readable, scanner display) ─────────────────────
-    wt_signal:      str = "NONE"   # e.g. "BULL_OS_PPV"
-    wt_signal_rank: int = 0        # -3 to +5, higher = stronger bull
+    wt_signal: str = "NONE"  # e.g. "BULL_OS_PPV"
+    wt_signal_rank: int = 0  # -3 to +5, higher = stronger bull
 
     # ── Zone-specific crosses ─────────────────────────────────────────────────
-    wt_bull_cross_os:     bool = False   # WT1 crossover WT2 while wt2 ≤ -60 (L1)
-    wt_bull_cross_os_l2:  bool = False   # WT1 crossover WT2 while wt2 ≤ -53 (L2)
-    wt_bear_cross_ob:     bool = False   # WT1 crossunder WT2 while wt2 ≥ +60 (L1)
-    wt_bear_cross_ob_l2:  bool = False   # WT1 crossunder WT2 while wt2 ≥ +53 (L2)
+    wt_bull_cross_os: bool = False  # WT1 crossover WT2 while wt2 ≤ -60 (L1)
+    wt_bull_cross_os_l2: bool = False  # WT1 crossover WT2 while wt2 ≤ -53 (L2)
+    wt_bear_cross_ob: bool = False  # WT1 crossunder WT2 while wt2 ≥ +60 (L1)
+    wt_bear_cross_ob_l2: bool = False  # WT1 crossunder WT2 while wt2 ≥ +53 (L2)
 
     # ── Any-level crosses ─────────────────────────────────────────────────────
-    wt_bull_cross_any:  bool = False
-    wt_bear_cross_any:  bool = False
+    wt_bull_cross_any: bool = False
+    wt_bear_cross_any: bool = False
 
     # ── Zero-line crosses ─────────────────────────────────────────────────────
-    wt_bull_cross_zero: bool = False   # WT1 crosses above 0
-    wt_bear_cross_zero: bool = False   # WT1 crosses below 0
+    wt_bull_cross_zero: bool = False  # WT1 crosses above 0
+    wt_bear_cross_zero: bool = False  # WT1 crosses below 0
 
     # ── Pocket Pivot Volume ───────────────────────────────────────────────────
-    wt_is_ppv:       bool = False   # Pocket Pivot Volume fires today
-    wt_bull_ppv:     bool = False   # Bull cross (any) + PPV
-    wt_bull_os_ppv:  bool = False   # Bull cross in oversold L1 + PPV (STRONGEST)
+    wt_is_ppv: bool = False  # Pocket Pivot Volume fires today
+    wt_bull_ppv: bool = False  # Bull cross (any) + PPV
+    wt_bull_os_ppv: bool = False  # Bull cross in oversold L1 + PPV (STRONGEST)
 
     # ── State ─────────────────────────────────────────────────────────────────
-    wt_in_oversold:   bool = False   # wt1 ≤ -60
-    wt_in_overbought: bool = False   # wt1 ≥ +60
+    wt_in_oversold: bool = False  # wt1 ≤ -60
+    wt_in_overbought: bool = False  # wt1 ≥ +60
 
     def to_dict(self) -> dict:
         """Flat dict → merge into scanner signal DataFrame."""
         return {
-            "wt1":               round(float(self.wt1), 2)  if not np.isnan(self.wt1) else np.nan,
-            "wt2":               round(float(self.wt2), 2)  if not np.isnan(self.wt2) else np.nan,
-            "wt_diff":           round(float(self.wt_diff), 2) if not np.isnan(self.wt_diff) else np.nan,
-            "wt_signal":         self.wt_signal,
-            "wt_signal_rank":    self.wt_signal_rank,
-            "wt_bull_cross_os":  self.wt_bull_cross_os,
+            "wt1": round(float(self.wt1), 2) if not np.isnan(self.wt1) else np.nan,
+            "wt2": round(float(self.wt2), 2) if not np.isnan(self.wt2) else np.nan,
+            "wt_diff": (
+                round(float(self.wt_diff), 2) if not np.isnan(self.wt_diff) else np.nan
+            ),
+            "wt_signal": self.wt_signal,
+            "wt_signal_rank": self.wt_signal_rank,
+            "wt_bull_cross_os": self.wt_bull_cross_os,
             "wt_bull_cross_os_l2": self.wt_bull_cross_os_l2,
-            "wt_bear_cross_ob":  self.wt_bear_cross_ob,
+            "wt_bear_cross_ob": self.wt_bear_cross_ob,
             "wt_bear_cross_ob_l2": self.wt_bear_cross_ob_l2,
             "wt_bull_cross_any": self.wt_bull_cross_any,
             "wt_bear_cross_any": self.wt_bear_cross_any,
             "wt_bull_cross_zero": self.wt_bull_cross_zero,
             "wt_bear_cross_zero": self.wt_bear_cross_zero,
-            "wt_is_ppv":         self.wt_is_ppv,
-            "wt_bull_ppv":       self.wt_bull_ppv,
-            "wt_bull_os_ppv":    self.wt_bull_os_ppv,
-            "wt_in_oversold":    self.wt_in_oversold,
-            "wt_in_overbought":  self.wt_in_overbought,
+            "wt_is_ppv": self.wt_is_ppv,
+            "wt_bull_ppv": self.wt_bull_ppv,
+            "wt_bull_os_ppv": self.wt_bull_os_ppv,
+            "wt_in_oversold": self.wt_in_oversold,
+            "wt_in_overbought": self.wt_in_overbought,
         }
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # CORE CALCULATOR
 # ══════════════════════════════════════════════════════════════════════════════
+
 
 class WaveTrendCalculator:
     """
@@ -131,22 +135,22 @@ class WaveTrendCalculator:
 
     def __init__(
         self,
-        n1:         int   = 10,
-        n2:         int   = 21,
-        ob_level1:  float = 60.0,
-        ob_level2:  float = 53.0,
-        os_level1:  float = -60.0,
-        os_level2:  float = -53.0,
-        pp_len:     int   = 10,
-        vol_ma_len: int   = 50,
+        n1: int = 10,
+        n2: int = 21,
+        ob_level1: float = 60.0,
+        ob_level2: float = 53.0,
+        os_level1: float = -60.0,
+        os_level2: float = -53.0,
+        pp_len: int = 10,
+        vol_ma_len: int = 50,
     ):
-        self.n1         = n1
-        self.n2         = n2
-        self.ob_level1  = ob_level1
-        self.ob_level2  = ob_level2
-        self.os_level1  = os_level1
-        self.os_level2  = os_level2
-        self.pp_len     = pp_len
+        self.n1 = n1
+        self.n2 = n2
+        self.ob_level1 = ob_level1
+        self.ob_level2 = ob_level2
+        self.os_level1 = os_level1
+        self.os_level2 = os_level2
+        self.pp_len = pp_len
         self.vol_ma_len = vol_ma_len
 
         # Minimum bars needed for stable EMA warmup
@@ -205,15 +209,15 @@ class WaveTrendCalculator:
             wt2 = SMA(wt1, 4)
         """
         df = df.copy()
-        ap  = (df["high"] + df["low"] + df["close"]) / 3
+        ap = (df["high"] + df["low"] + df["close"]) / 3
         esa = self._ema(ap, self.n1)
-        d   = self._ema((ap - esa).abs(), self.n1)
-        ci  = (ap - esa) / (0.015 * d)
+        d = self._ema((ap - esa).abs(), self.n1)
+        ci = (ap - esa) / (0.015 * d)
         tci = self._ema(ci, self.n2)
 
-        df["wt1"]    = tci
-        df["wt2"]    = self._sma(df["wt1"], 4)
-        df["wt_diff"]= df["wt1"] - df["wt2"]
+        df["wt1"] = tci
+        df["wt2"] = self._sma(df["wt1"], 4)
+        df["wt_diff"] = df["wt1"] - df["wt2"]
         return df
 
     # ── Cross signals (full history) ─────────────────────────────────────────
@@ -223,22 +227,22 @@ class WaveTrendCalculator:
         Adds all cross signal boolean columns for ALL bars.
         Useful for backtesting or historical analysis.
         """
-        wt1  = df["wt1"]
-        wt2  = df["wt2"]
+        wt1 = df["wt1"]
+        wt2 = df["wt2"]
         zero = pd.Series(0.0, index=wt1.index)
 
         # ── FIXED: crossover/crossunder with wt2 zone check ──────────────────
-        df["wt_bull_cross_os"]    = self._crossover(wt1, wt2) & (wt2 <= self.os_level1)
+        df["wt_bull_cross_os"] = self._crossover(wt1, wt2) & (wt2 <= self.os_level1)
         df["wt_bull_cross_os_l2"] = self._crossover(wt1, wt2) & (wt2 <= self.os_level2)
-        df["wt_bear_cross_ob"]    = self._crossunder(wt1, wt2) & (wt2 >= self.ob_level1)
+        df["wt_bear_cross_ob"] = self._crossunder(wt1, wt2) & (wt2 >= self.ob_level1)
         df["wt_bear_cross_ob_l2"] = self._crossunder(wt1, wt2) & (wt2 >= self.ob_level2)
-        df["wt_bull_cross_any"]   = self._crossover(wt1, wt2)
-        df["wt_bear_cross_any"]   = self._crossunder(wt1, wt2)
-        df["wt_bull_cross_zero"]  = self._crossover(wt1, zero)
-        df["wt_bear_cross_zero"]  = self._crossunder(wt1, zero)
+        df["wt_bull_cross_any"] = self._crossover(wt1, wt2)
+        df["wt_bear_cross_any"] = self._crossunder(wt1, wt2)
+        df["wt_bull_cross_zero"] = self._crossover(wt1, zero)
+        df["wt_bear_cross_zero"] = self._crossunder(wt1, zero)
 
         # State
-        df["wt_in_oversold"]   = wt1 <= self.os_level1
+        df["wt_in_oversold"] = wt1 <= self.os_level1
         df["wt_in_overbought"] = wt1 >= self.ob_level1
 
         return df
@@ -247,7 +251,7 @@ class WaveTrendCalculator:
 
     def _calc_pocket_pivot_today(
         self,
-        close:  np.ndarray,
+        close: np.ndarray,
         volume: np.ndarray,
     ) -> Tuple[bool, float, int]:
         """
@@ -271,16 +275,16 @@ class WaveTrendCalculator:
             return False, 0.0, 0
 
         is_up_today = close[-1] > close[-2]
-        today_vol   = volume[-1]
+        today_vol = volume[-1]
 
-        seen         = 0
+        seen = 0
         max_down_vol = 0.0
 
         # Walk backwards from yesterday (i=1 in Pine Script)
         for i in range(1, min(501, n)):
-            if seen >= self.pp_len:       # mirrors Pine Script break condition
+            if seen >= self.pp_len:  # mirrors Pine Script break condition
                 break
-            bar = n - 1 - i               # absolute index of bar[i]
+            bar = n - 1 - i  # absolute index of bar[i]
             if bar < 1:
                 break
             is_down = close[bar] < close[bar - 1]
@@ -328,9 +332,9 @@ class WaveTrendCalculator:
 
         last = df.iloc[-1]
 
-        wt1_val  = float(last["wt1"])
-        wt2_val  = float(last["wt2"])
-        wt_diff  = float(last["wt_diff"])
+        wt1_val = float(last["wt1"])
+        wt2_val = float(last["wt2"])
+        wt_diff = float(last["wt_diff"])
 
         # ── Pocket Pivot (raw arrays for speed) ───────────────────────────────
         is_ppv, _, _ = self._calc_pocket_pivot_today(
@@ -338,40 +342,40 @@ class WaveTrendCalculator:
         )
 
         # ── Read cross flags ──────────────────────────────────────────────────
-        bull_os     = bool(last["wt_bull_cross_os"])
-        bull_os_l2  = bool(last["wt_bull_cross_os_l2"])
-        bear_ob     = bool(last["wt_bear_cross_ob"])
-        bear_ob_l2  = bool(last["wt_bear_cross_ob_l2"])
-        bull_any    = bool(last["wt_bull_cross_any"])
-        bear_any    = bool(last["wt_bear_cross_any"])
-        bull_zero   = bool(last["wt_bull_cross_zero"])
-        bear_zero   = bool(last["wt_bear_cross_zero"])
-        in_os       = bool(last["wt_in_oversold"])
-        in_ob       = bool(last["wt_in_overbought"])
+        bull_os = bool(last["wt_bull_cross_os"])
+        bull_os_l2 = bool(last["wt_bull_cross_os_l2"])
+        bear_ob = bool(last["wt_bear_cross_ob"])
+        bear_ob_l2 = bool(last["wt_bear_cross_ob_l2"])
+        bull_any = bool(last["wt_bull_cross_any"])
+        bear_any = bool(last["wt_bear_cross_any"])
+        bull_zero = bool(last["wt_bull_cross_zero"])
+        bear_zero = bool(last["wt_bear_cross_zero"])
+        in_os = bool(last["wt_in_oversold"])
+        in_ob = bool(last["wt_in_overbought"])
 
         # ── Combined signals ──────────────────────────────────────────────────
-        bull_ppv    = bull_any and is_ppv
-        bull_os_ppv = bull_os  and is_ppv
+        bull_ppv = bull_any and is_ppv
+        bull_os_ppv = bull_os and is_ppv
 
         # ── Signal rank (priority ladder) ────────────────────────────────────
         if bull_os_ppv:
-            signal, rank = "BULL_OS_PPV",    5
+            signal, rank = "BULL_OS_PPV", 5
         elif bull_ppv:
-            signal, rank = "BULL_ANY_PPV",   4
+            signal, rank = "BULL_ANY_PPV", 4
         elif bull_os:
-            signal, rank = "BULL_OVERSOLD",  3
+            signal, rank = "BULL_OVERSOLD", 3
         elif bull_os_l2:
-            signal, rank = "BULL_OS_L2",     2
+            signal, rank = "BULL_OS_L2", 2
         elif bull_zero:
             signal, rank = "BULL_ZERO_CROSS", 1
         elif bear_ob:
-            signal, rank = "BEAR_OB",       -3
+            signal, rank = "BEAR_OB", -3
         elif bear_ob_l2:
-            signal, rank = "BEAR_OB_L2",    -2
+            signal, rank = "BEAR_OB_L2", -2
         elif bear_any:
-            signal, rank = "BEAR_ANY",      -1
+            signal, rank = "BEAR_ANY", -1
         else:
-            signal, rank = "NONE",           0
+            signal, rank = "NONE", 0
 
         return WaveTrendSignal(
             wt1=wt1_val,
@@ -415,10 +419,11 @@ class WaveTrendCalculator:
 # UNIVERSE SCANNER
 # ══════════════════════════════════════════════════════════════════════════════
 
+
 def scan_universe(
-    universe:   Dict[str, pd.DataFrame],
+    universe: Dict[str, pd.DataFrame],
     calculator: Optional[WaveTrendCalculator] = None,
-    min_rank:   int = 1,
+    min_rank: int = 1,
 ) -> pd.DataFrame:
     """
     Scan all stocks in the 962-stock universe for WaveTrend signals today.
@@ -484,6 +489,7 @@ def scan_universe(
 # (optional: parse TradingView webhook messages into the same schema)
 # ══════════════════════════════════════════════════════════════════════════════
 
+
 def parse_alert_message(message: str) -> dict:
     """
     Parse a pipe-delimited TradingView webhook alert message
@@ -508,10 +514,10 @@ def parse_alert_message(message: str) -> dict:
     parts = [p.strip() for p in message.split("|")]
     return {
         "signal_type": parts[0] if len(parts) > 0 else "",
-        "ticker":      parts[1] if len(parts) > 1 else "",
+        "ticker": parts[1] if len(parts) > 1 else "",
         "description": parts[2] if len(parts) > 2 else "",
-        "timeframe":   parts[3].replace("TF:", "") if len(parts) > 3 else "",
-        "raw":         message,
+        "timeframe": parts[3].replace("TF:", "") if len(parts) > 3 else "",
+        "raw": message,
     }
 
 
@@ -535,15 +541,16 @@ if __name__ == "__main__":
 
     test_tickers = {
         "RELIANCE": "RELIANCE.NS",
-        "INFY":     "INFY.NS",
+        "INFY": "INFY.NS",
         "HDFCBANK": "HDFCBANK.NS",
     }
 
     universe = {}
     for nse_code, yf_ticker in test_tickers.items():
         try:
-            df = yf.download(yf_ticker, period="1y", interval="1d",
-                             auto_adjust=True, progress=False)
+            df = yf.download(
+                yf_ticker, period="1y", interval="1d", auto_adjust=True, progress=False
+            )
             if len(df) > 0:
                 df.columns = [c.lower() for c in df.columns]
                 universe[nse_code] = df
@@ -556,9 +563,15 @@ if __name__ == "__main__":
 
     if not result.empty:
         display_cols = [
-            "nse_code", "wt_signal", "wt_signal_rank",
-            "wt1", "wt2", "wt_diff",
-            "wt_in_oversold", "wt_is_ppv", "wt_bull_os_ppv"
+            "nse_code",
+            "wt_signal",
+            "wt_signal_rank",
+            "wt1",
+            "wt2",
+            "wt_diff",
+            "wt_in_oversold",
+            "wt_is_ppv",
+            "wt_bull_os_ppv",
         ]
         print(result[display_cols].to_string(index=False))
     else:

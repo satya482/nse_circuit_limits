@@ -5,23 +5,32 @@ Reads 5 markdown files, builds confluence-ranked HTML dashboard.
 Output: dashboard.html
 """
 
-import re, os, glob, json
+import re
+import os
+import glob
+import json
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 
 IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-SWING_MD           = os.path.join(BASE, "swing_scans", "swing_scans.md")
-MOMENTUM_MD        = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
-WEEKLY_RS_MD       = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
-EMA25_ZL_MD        = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
-EMA_SCANS_DIR      = os.path.join(BASE, "ema_screener_scans")
-CIRCUIT_MD         = os.path.join(BASE, "NSE_Circuit_Limits.md")
-COMPRESSION_MD     = os.path.join(BASE, "ema-compression-scanner",
-                                   "ema_compression_scans", "ema_compression_latest.md")
-ZL_SQUEEZE_MD      = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
-SECTOR_ROTATION_MD = os.path.join(BASE, "sector_rotation_scans", "sector_rotation_latest.md")
+SWING_MD = os.path.join(BASE, "swing_scans", "swing_scans.md")
+MOMENTUM_MD = os.path.join(BASE, "momentum_scans", "momentum_scans.md")
+WEEKLY_RS_MD = os.path.join(BASE, "momentum_scans", "momentum_rs_weekly_scans.md")
+EMA25_ZL_MD = os.path.join(BASE, "ema25_zl_scans", "ema25_zl_scans.md")
+EMA_SCANS_DIR = os.path.join(BASE, "ema_screener_scans")
+CIRCUIT_MD = os.path.join(BASE, "NSE_Circuit_Limits.md")
+COMPRESSION_MD = os.path.join(
+    BASE,
+    "ema-compression-scanner",
+    "ema_compression_scans",
+    "ema_compression_latest.md",
+)
+ZL_SQUEEZE_MD = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
+SECTOR_ROTATION_MD = os.path.join(
+    BASE, "sector_rotation_scans", "sector_rotation_latest.md"
+)
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
 
 _LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
@@ -29,6 +38,7 @@ _LABELS: dict = {}
 if os.path.exists(_LABELS_FILE):
     with open(_LABELS_FILE, encoding="utf-8") as _f:
         _LABELS = json.load(_f)
+
 
 def _lbl(sym: str) -> str:
     return _LABELS.get(sym, "")
@@ -46,11 +56,14 @@ def find_latest_screener(scans_dir: str, today: str) -> str:
     today_file = os.path.join(scans_dir, f"ema_screener_{today}.md")
     if os.path.exists(today_file):
         return read_file(today_file)
-    files = sorted(glob.glob(os.path.join(scans_dir, "ema_screener_*.md")), reverse=True)
+    files = sorted(
+        glob.glob(os.path.join(scans_dir, "ema_screener_*.md")), reverse=True
+    )
     return read_file(files[0]) if files else ""
 
 
-_DATE_HEADING_RE = re.compile(r'^# .+(\d{4}-\d{2}-\d{2})', re.MULTILINE)
+_DATE_HEADING_RE = re.compile(r"^# .+(\d{4}-\d{2}-\d{2})", re.MULTILINE)
+
 
 def _most_recent_date(content: str) -> str:
     """Return the most recent YYYY-MM-DD date found in a # heading, or ''."""
@@ -60,9 +73,9 @@ def _most_recent_date(content: str) -> str:
 
 def extract_today_block(content: str, today: str) -> str:
     """Return the block whose heading contains today's date, or the most recent block."""
-    blocks = re.split(r'\n---\n', content)
+    blocks = re.split(r"\n---\n", content)
     for block in blocks:
-        if re.search(rf'^# .+{re.escape(today)}', block, re.MULTILINE):
+        if re.search(rf"^# .+{re.escape(today)}", block, re.MULTILINE):
             return block
     # Fallback: return first block that has a date heading (files are newest-first)
     for block in blocks:
@@ -75,51 +88,65 @@ def extract_today_section(content: str, today: str) -> str:
     """Return the full section for today's date, or the most recent date's section.
     Stops at the next day-level heading or end of file."""
     # Try exact date first, then fall back to most recent
-    date = today if re.search(rf'^# .+{re.escape(today)}', content, re.MULTILINE) \
-           else _most_recent_date(content)
+    date = (
+        today
+        if re.search(rf"^# .+{re.escape(today)}", content, re.MULTILINE)
+        else _most_recent_date(content)
+    )
     if not date:
         return ""
-    m = re.search(rf'^# .+{re.escape(date)}', content, re.MULTILINE)
+    m = re.search(rf"^# .+{re.escape(date)}", content, re.MULTILINE)
     if not m:
         return ""
-    rest = content[m.end():]
-    next_m = re.search(r'\n# .+\d{4}-\d{2}-\d{2}', rest)
-    return content[m.start() : m.end() + next_m.start()] if next_m else content[m.start():]
+    rest = content[m.end() :]
+    next_m = re.search(r"\n# .+\d{4}-\d{2}-\d{2}", rest)
+    return (
+        content[m.start() : m.end() + next_m.start()]
+        if next_m
+        else content[m.start() :]
+    )
 
 
-_ZL_DAY_RE = re.compile(r'^\d+d\+?$')
+_ZL_DAY_RE = re.compile(r"^\d+d\+?$")
+
 
 def _strip_md_link(s: str) -> str:
     """[TEXT](url) → TEXT, else return as-is."""
-    m = re.match(r'\[([^\]]+)\]\([^)]+\)', s)
+    m = re.match(r"\[([^\]]+)\]\([^)]+\)", s)
     return m.group(1) if m else s
+
 
 def _parse_table_rows(text: str, has_signal: bool) -> list:
     """Generic row parser. has_signal=True for entry tables, has_signal=False for turning-up.
-    Detects new format (ZL Days at parts[1]) vs old format (Signal or Day Change at parts[1])."""
+    Detects new format (ZL Days at parts[1]) vs old format (Signal or Day Change at parts[1]).
+    """
     results = []
-    lines = text.split('\n')
+    lines = text.split("\n")
     i = 0
     while i < len(lines):
         line = lines[i].strip()
-        header_match = ('| Signal' in line) if has_signal else ('| ZL Days' in line and '| Signal' not in line)
-        if '| Symbol' in line and header_match:
+        header_match = (
+            ("| Signal" in line)
+            if has_signal
+            else ("| ZL Days" in line and "| Signal" not in line)
+        )
+        if "| Symbol" in line and header_match:
             i += 1
-            if i < len(lines) and lines[i].strip().startswith('|---'):
+            if i < len(lines) and lines[i].strip().startswith("|---"):
                 i += 1
             while i < len(lines):
                 row = lines[i].strip()
-                if not row.startswith('|'):
+                if not row.startswith("|"):
                     break
-                parts = [p.strip() for p in row.split('|')]
-                parts = [p for p in parts if p != '']
+                parts = [p.strip() for p in row.split("|")]
+                parts = [p for p in parts if p != ""]
                 if parts:
                     sym = _strip_md_link(parts[0])
                     if has_signal:
                         if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
                             # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
                             zl_days = parts[1]
-                            zl_pct  = parts[2] if len(parts) > 2 else ""
+                            zl_pct = parts[2] if len(parts) > 2 else ""
                             day_chg = parts[4] if len(parts) > 4 else ""
                             sig_raw = parts[5] if len(parts) > 5 else ""
                             circuit = parts[6] if len(parts) > 6 else ""
@@ -129,23 +156,36 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                             day_chg = parts[2] if len(parts) > 2 else ""
                             if len(parts) >= 5 and _ZL_DAY_RE.match(parts[3]):
                                 zl_days = parts[3]
-                                zl_pct  = parts[4] if len(parts) > 4 else ""
+                                zl_pct = parts[4] if len(parts) > 4 else ""
                                 circuit = parts[5] if len(parts) > 5 else ""
                             else:
                                 zl_days = ""
-                                zl_pct  = ""
+                                zl_pct = ""
                                 circuit = parts[3] if len(parts) > 3 else ""
-                        sig = ("STRONG" if "STRONG" in sig_raw
-                               else "PRIMARY" if "PRIMARY" in sig_raw
-                               else "DEEP PULLBACK" if "DEEP" in sig_raw
-                               else sig_raw)
-                        results.append({"symbol": sym, "signal": sig, "day_chg": day_chg,
-                                        "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
+                        sig = (
+                            "STRONG"
+                            if "STRONG" in sig_raw
+                            else (
+                                "PRIMARY"
+                                if "PRIMARY" in sig_raw
+                                else "DEEP PULLBACK" if "DEEP" in sig_raw else sig_raw
+                            )
+                        )
+                        results.append(
+                            {
+                                "symbol": sym,
+                                "signal": sig,
+                                "day_chg": day_chg,
+                                "zl_days": zl_days,
+                                "zl_pct": zl_pct,
+                                "circuit": circuit,
+                            }
+                        )
                     else:
                         if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
                             # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit
                             zl_days = parts[1]
-                            zl_pct  = parts[2] if len(parts) > 2 else ""
+                            zl_pct = parts[2] if len(parts) > 2 else ""
                             day_chg = parts[4] if len(parts) > 4 else ""
                             circuit = parts[5] if len(parts) > 5 else ""
                         else:
@@ -153,21 +193,30 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                             day_chg = parts[1] if len(parts) > 1 else ""
                             if len(parts) >= 3 and _ZL_DAY_RE.match(parts[2]):
                                 zl_days = parts[2]
-                                zl_pct  = parts[3] if len(parts) > 3 else ""
+                                zl_pct = parts[3] if len(parts) > 3 else ""
                                 circuit = parts[4] if len(parts) > 4 else ""
                             else:
                                 zl_days = ""
-                                zl_pct  = ""
+                                zl_pct = ""
                                 circuit = parts[2] if len(parts) > 2 else ""
-                        results.append({"symbol": sym, "day_chg": day_chg,
-                                        "zl_days": zl_days, "zl_pct": zl_pct, "circuit": circuit})
+                        results.append(
+                            {
+                                "symbol": sym,
+                                "day_chg": day_chg,
+                                "zl_days": zl_days,
+                                "zl_pct": zl_pct,
+                                "circuit": circuit,
+                            }
+                        )
                 i += 1
             return results
         i += 1
     return results
 
+
 def parse_signal_table(text: str) -> list:
     return _parse_table_rows(text, has_signal=True)
+
 
 def parse_turning_table(text: str) -> list:
     return _parse_table_rows(text, has_signal=False)
@@ -175,15 +224,17 @@ def parse_turning_table(text: str) -> list:
 
 def parse_weekly_rs_block(block: str) -> tuple:
     """Return (entry_signals, turning_signals) from a weekly RS scan block."""
-    entry_m   = re.search(r'### Entry Signals\n(.*?)(?=###|\Z)', block, re.DOTALL)
-    turning_m = re.search(r'### ZLEMA25 Turning Up[^\n]*\n(.*?)(?=###|\Z)', block, re.DOTALL)
+    entry_m = re.search(r"### Entry Signals\n(.*?)(?=###|\Z)", block, re.DOTALL)
+    turning_m = re.search(
+        r"### ZLEMA25 Turning Up[^\n]*\n(.*?)(?=###|\Z)", block, re.DOTALL
+    )
 
     if entry_m:
-        entry   = parse_signal_table(entry_m.group(1))
+        entry = parse_signal_table(entry_m.group(1))
         turning = parse_turning_table(turning_m.group(1)) if turning_m else []
     else:
         # Old format — entire block is the entry table, no turning section
-        entry   = parse_signal_table(block)
+        entry = parse_signal_table(block)
         turning = []
     return entry, turning
 
@@ -192,29 +243,45 @@ def parse_ema_changes(content: str) -> tuple:
     """Parse additions and deletions from ema_screener_changes.md."""
     additions, deletions = [], []
 
-    add_m = re.search(r'## ✅ Additions.*?\n(.*?)(?=^##|\Z)', content, re.DOTALL | re.MULTILINE)
+    add_m = re.search(
+        r"## ✅ Additions.*?\n(.*?)(?=^##|\Z)", content, re.DOTALL | re.MULTILINE
+    )
     if add_m:
         for line in add_m.group(1).splitlines():
             line = line.strip()
-            if line.startswith('|') and not line.startswith('| Symbol') and not line.startswith('|---'):
-                parts = [p.strip() for p in line.split('|') if p.strip()]
+            if (
+                line.startswith("|")
+                and not line.startswith("| Symbol")
+                and not line.startswith("|---")
+            ):
+                parts = [p.strip() for p in line.split("|") if p.strip()]
                 if len(parts) >= 2:
-                    additions.append({"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]})
+                    additions.append(
+                        {"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]}
+                    )
 
-    del_m = re.search(r'## ❌ Deletions.*?\n(.*?)(?=^##|\Z)', content, re.DOTALL | re.MULTILINE)
+    del_m = re.search(
+        r"## ❌ Deletions.*?\n(.*?)(?=^##|\Z)", content, re.DOTALL | re.MULTILINE
+    )
     if del_m:
         for line in del_m.group(1).splitlines():
             line = line.strip()
-            if line.startswith('|') and not line.startswith('| Symbol') and not line.startswith('|---'):
-                parts = [p.strip() for p in line.split('|') if p.strip()]
+            if (
+                line.startswith("|")
+                and not line.startswith("| Symbol")
+                and not line.startswith("|---")
+            ):
+                parts = [p.strip() for p in line.split("|") if p.strip()]
                 if len(parts) >= 2:
-                    deletions.append({"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]})
+                    deletions.append(
+                        {"symbol": _strip_md_link(parts[0]), "day_chg": parts[1]}
+                    )
 
     return additions, deletions
 
 
 def parse_ema_date(content: str) -> str:
-    m = re.search(r'^# NSE EMA Screener — (\d{4}-\d{2}-\d{2})', content, re.MULTILINE)
+    m = re.search(r"^# NSE EMA Screener — (\d{4}-\d{2}-\d{2})", content, re.MULTILINE)
     return m.group(1) if m else ""
 
 
@@ -228,15 +295,19 @@ def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
         rows = []
         for line in section_text.splitlines():
             line = line.strip()
-            if not line.startswith('|') or line.startswith('| Symbol') or line.startswith('|---'):
+            if (
+                not line.startswith("|")
+                or line.startswith("| Symbol")
+                or line.startswith("|---")
+            ):
                 continue
-            parts = [p.strip() for p in line.split('|') if p.strip()]
+            parts = [p.strip() for p in line.split("|") if p.strip()]
             if len(parts) < 5:
                 continue
             if len(parts) >= 8 and _ZL_DAY_RE.match(parts[1]):
                 # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit
                 zl_days, zl_pct = parts[1], parts[2]
-                day_chg, close  = parts[4], parts[5]
+                day_chg, close = parts[4], parts[5]
                 squeeze, circuit = parts[6], parts[7]
             elif len(parts) >= 7:
                 # Old 7-col: Symbol | Close | Day Chg | ZL Days | ZL Chg% | Squeeze | Circuit
@@ -248,22 +319,24 @@ def parse_ema25_zl(content: str, today: str) -> tuple[list, list]:
                 squeeze, circuit = "", parts[5]
             else:
                 continue
-            rows.append({
-                "symbol":  _strip_md_link(parts[0]),
-                "close":   close,
-                "day_chg": day_chg,
-                "zl_days": zl_days,
-                "zl_pct":  zl_pct,
-                "squeeze": squeeze,
-                "circuit": circuit,
-            })
+            rows.append(
+                {
+                    "symbol": _strip_md_link(parts[0]),
+                    "close": close,
+                    "day_chg": day_chg,
+                    "zl_days": zl_days,
+                    "zl_pct": zl_pct,
+                    "squeeze": squeeze,
+                    "circuit": circuit,
+                }
+            )
         return rows
 
-    rising_m = re.search(r'### ZLEMA25 Rising\n(.*?)(?=###|\Z)', block, re.DOTALL)
-    watch_m  = re.search(r'### ZLEMA25 Watch[^\n]*\n(.*?)(?=###|\Z)', block, re.DOTALL)
+    rising_m = re.search(r"### ZLEMA25 Rising\n(.*?)(?=###|\Z)", block, re.DOTALL)
+    watch_m = re.search(r"### ZLEMA25 Watch[^\n]*\n(.*?)(?=###|\Z)", block, re.DOTALL)
 
     rising = _parse_section(rising_m.group(1)) if rising_m else []
-    watch  = _parse_section(watch_m.group(1))  if watch_m  else []
+    watch = _parse_section(watch_m.group(1)) if watch_m else []
     return rising, watch
 
 
@@ -272,22 +345,24 @@ def parse_circuit_changes(content: str, limit: int = 12) -> list:
     in_table = False
     for line in content.splitlines():
         line = line.strip()
-        if line.startswith('| Date'):
+        if line.startswith("| Date"):
             in_table = True
             continue
-        if line.startswith('|---'):
+        if line.startswith("|---"):
             continue
-        if in_table and line.startswith('|'):
-            parts = [p.strip() for p in line.split('|') if p.strip()]
+        if in_table and line.startswith("|"):
+            parts = [p.strip() for p in line.split("|") if p.strip()]
             if len(parts) >= 5:
-                changes.append({
-                    "date":   parts[0],
-                    "symbol": _strip_md_link(parts[1]).replace('**', ''),
-                    "name":   parts[2],
-                    "from_":  parts[3],
-                    "to_":    parts[4],
-                })
-        elif in_table and not line.startswith('|'):
+                changes.append(
+                    {
+                        "date": parts[0],
+                        "symbol": _strip_md_link(parts[1]).replace("**", ""),
+                        "name": parts[2],
+                        "from_": parts[3],
+                        "to_": parts[4],
+                    }
+                )
+        elif in_table and not line.startswith("|"):
             break
     return changes[:limit]
 
@@ -301,53 +376,57 @@ def parse_ema_compression(content: str, today: str) -> tuple[list, int, int]:
     if today not in content[:150]:
         return [], 0, 0
 
-    total_m   = re.search(r'\*\*Compressed[^:]*:\*\* (\d+)', content)
-    signals_m = re.search(r'\*\*Signals:\*\* (\d+)', content)
-    total_compressed = int(total_m.group(1))   if total_m   else 0
-    total_signals    = int(signals_m.group(1)) if signals_m else 0
+    total_m = re.search(r"\*\*Compressed[^:]*:\*\* (\d+)", content)
+    signals_m = re.search(r"\*\*Signals:\*\* (\d+)", content)
+    total_compressed = int(total_m.group(1)) if total_m else 0
+    total_signals = int(signals_m.group(1)) if signals_m else 0
 
     rows = []
     in_table = False
     for line in content.splitlines():
         ls = line.strip()
-        if ls.startswith('|') and 'Symbol' in ls and 'Comp Days' in ls:
+        if ls.startswith("|") and "Symbol" in ls and "Comp Days" in ls:
             in_table = True
             continue
-        if in_table and ls.startswith('|---'):
+        if in_table and ls.startswith("|---"):
             continue
-        if in_table and ls.startswith('|'):
-            parts = [p.strip() for p in ls.split('|') if p.strip()]
+        if in_table and ls.startswith("|"):
+            parts = [p.strip() for p in ls.split("|") if p.strip()]
             if not parts or not parts[0].isdigit():
                 pass
             elif len(parts) >= 12 and _ZL_DAY_RE.match(parts[2]):
                 # New format: # Symbol ZLDays ZLChg% Label DayChg Sector Close CompDays SqzDays ZL Score
-                rows.append({
-                    "symbol":    _strip_md_link(parts[1]),
-                    "zl_days":   parts[2],
-                    "zl_chg":    parts[3],
-                    "day_chg":   parts[5],
-                    "sector":    parts[6],
-                    "close":     parts[7],
-                    "comp_days": parts[8],
-                    "sqz_days":  parts[9],
-                    "zl_dir":    parts[10],
-                    "score":     parts[11].replace('**', ''),
-                })
+                rows.append(
+                    {
+                        "symbol": _strip_md_link(parts[1]),
+                        "zl_days": parts[2],
+                        "zl_chg": parts[3],
+                        "day_chg": parts[5],
+                        "sector": parts[6],
+                        "close": parts[7],
+                        "comp_days": parts[8],
+                        "sqz_days": parts[9],
+                        "zl_dir": parts[10],
+                        "score": parts[11].replace("**", ""),
+                    }
+                )
             elif len(parts) >= 10:
                 # Old format: # Symbol Sector Close CompDays SqzDays ZL ZLDays ZLChg% Score
-                rows.append({
-                    "symbol":    _strip_md_link(parts[1]),
-                    "sector":    parts[2],
-                    "close":     parts[3],
-                    "comp_days": parts[4],
-                    "sqz_days":  parts[5],
-                    "zl_dir":    parts[6],
-                    "zl_days":   parts[7],
-                    "zl_chg":    parts[8],
-                    "score":     parts[9].replace('**', ''),
-                    "day_chg":   "",
-                })
-        elif in_table and not ls.startswith('|'):
+                rows.append(
+                    {
+                        "symbol": _strip_md_link(parts[1]),
+                        "sector": parts[2],
+                        "close": parts[3],
+                        "comp_days": parts[4],
+                        "sqz_days": parts[5],
+                        "zl_dir": parts[6],
+                        "zl_days": parts[7],
+                        "zl_chg": parts[8],
+                        "score": parts[9].replace("**", ""),
+                        "day_chg": "",
+                    }
+                )
+        elif in_table and not ls.startswith("|"):
             break
 
     return rows, total_compressed, total_signals
@@ -366,41 +445,55 @@ def parse_zl_squeeze(content: str, today: str) -> list:
     rows = []
     for line in block.splitlines():
         ls = line.strip()
-        if not ls.startswith('|') or ls.startswith('| Symbol') or ls.startswith('|---') or ls.startswith('| ---'):
+        if (
+            not ls.startswith("|")
+            or ls.startswith("| Symbol")
+            or ls.startswith("|---")
+            or ls.startswith("| ---")
+        ):
             continue
-        parts = [p.strip() for p in ls.split('|') if p.strip()]
+        parts = [p.strip() for p in ls.split("|") if p.strip()]
         if len(parts) < 6:
             continue
         try:
-            float(parts[1].replace(',', '').replace('₹', ''))
+            float(parts[1].replace(",", "").replace("₹", ""))
             new_fmt = False  # parts[1] is numeric → old format (Close)
         except ValueError:
-            new_fmt = True   # parts[1] is text → new format (Label)
+            new_fmt = True  # parts[1] is text → new format (Label)
         if new_fmt and len(parts) >= 7:
             # New col order: Symbol | Label | Sqz Days | ZL Days | ZL Chg% | Close | Day Chg | ... | Circuit
-            rows.append({
-                "symbol":   _strip_md_link(parts[0]),
-                "sqz_days": parts[2],
-                "zl_days":  parts[3],
-                "zl_pct":   parts[4],
-                "close":    parts[5],
-                "day_chg":  parts[6],
-                "circuit":  parts[10] if len(parts) > 10 else (parts[7] if len(parts) > 7 else ""),
-            })
+            rows.append(
+                {
+                    "symbol": _strip_md_link(parts[0]),
+                    "sqz_days": parts[2],
+                    "zl_days": parts[3],
+                    "zl_pct": parts[4],
+                    "close": parts[5],
+                    "day_chg": parts[6],
+                    "circuit": (
+                        parts[10]
+                        if len(parts) > 10
+                        else (parts[7] if len(parts) > 7 else "")
+                    ),
+                }
+            )
         else:
-            rows.append({
-                "symbol":   _strip_md_link(parts[0]),
-                "close":    parts[1],
-                "day_chg":  parts[2],
-                "sqz_days": parts[3],
-                "zl_days":  parts[4],
-                "zl_pct":   parts[5],
-                "circuit":  parts[6] if len(parts) > 6 else "",
-            })
+            rows.append(
+                {
+                    "symbol": _strip_md_link(parts[0]),
+                    "close": parts[1],
+                    "day_chg": parts[2],
+                    "sqz_days": parts[3],
+                    "zl_days": parts[4],
+                    "zl_pct": parts[5],
+                    "circuit": parts[6] if len(parts) > 6 else "",
+                }
+            )
     return rows
 
 
 # ── HTML helpers ──────────────────────────────────────────────────────────────
+
 
 def tv_link(symbol: str) -> str:
     url = f"https://in.tradingview.com/chart/?symbol=NSE:{symbol}"
@@ -408,30 +501,35 @@ def tv_link(symbol: str) -> str:
 
 
 def chg_cls(v: str) -> str:
-    return "pos" if v.startswith('+') else ("neg" if v.startswith('-') else "")
+    return "pos" if v.startswith("+") else ("neg" if v.startswith("-") else "")
 
 
 def circuit_cls(s: str) -> str:
-    if '🟨' in s: return 'ccy'
-    if '🟥' in s: return 'ccr'
-    if '🟩' in s: return 'ccg'
-    if '🟦' in s: return 'ccb'
-    return ''
+    if "🟨" in s:
+        return "ccy"
+    if "🟥" in s:
+        return "ccr"
+    if "🟩" in s:
+        return "ccg"
+    if "🟦" in s:
+        return "ccb"
+    return ""
 
 
 def td_circ(circuit: str) -> str:
     cls = circuit_cls(circuit)
-    return f'<td class="{cls}">{circuit}</td>' if cls else f'<td>{circuit}</td>'
+    return f'<td class="{cls}">{circuit}</td>' if cls else f"<td>{circuit}</td>"
 
 
 def chg_float(s: str) -> float:
     try:
-        return float(s.rstrip('%').lstrip('+'))
+        return float(s.rstrip("%").lstrip("+"))
     except Exception:
         return 0.0
 
 
 # ── Sector rotation parser ────────────────────────────────────────────────────
+
 
 def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
     """
@@ -441,9 +539,9 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
     rot_in/out: list of {label, size, rs_chg, leaders/laggards}
     zl_breadth: list of {label, zl_rising, breadth, avg_days, avg_pct, cluster, members}
     """
-    high_conv  = []
-    rot_in     = []
-    rot_out    = []
+    high_conv = []
+    rot_in = []
+    rot_out = []
     zl_breadth = []
 
     section = None
@@ -460,36 +558,63 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
         elif line.startswith("##"):
             section = None
 
-        if not line.startswith("|") or line.startswith("|---") or line.startswith("| ---") or line.startswith("| Symbol") or line.startswith("| Group"):
+        if (
+            not line.startswith("|")
+            or line.startswith("|---")
+            or line.startswith("| ---")
+            or line.startswith("| Symbol")
+            or line.startswith("| Group")
+        ):
             continue
 
         cols = [c.strip() for c in line.split("|")[1:-1]]
         if section == "hc" and len(cols) >= 5:
             sym = cols[0].replace("**", "").strip()
-            high_conv.append({"symbol": sym, "group": cols[2], "rank": cols[3], "rs_chg": cols[4]})
+            high_conv.append(
+                {"symbol": sym, "group": cols[2], "rank": cols[3], "rs_chg": cols[4]}
+            )
         elif section == "hc" and len(cols) >= 4:
             sym = cols[0].replace("**", "").strip()
-            high_conv.append({"symbol": sym, "group": cols[1], "rank": cols[2], "rs_chg": cols[3]})
+            high_conv.append(
+                {"symbol": sym, "group": cols[1], "rank": cols[2], "rs_chg": cols[3]}
+            )
         elif section == "in" and len(cols) >= 4:
-            rot_in.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "leaders": cols[3]})
+            rot_in.append(
+                {
+                    "label": cols[0],
+                    "size": cols[1],
+                    "rs_chg": cols[2],
+                    "leaders": cols[3],
+                }
+            )
         elif section == "out" and len(cols) >= 4:
-            rot_out.append({"label": cols[0], "size": cols[1], "rs_chg": cols[2], "laggards": cols[3]})
+            rot_out.append(
+                {
+                    "label": cols[0],
+                    "size": cols[1],
+                    "rs_chg": cols[2],
+                    "laggards": cols[3],
+                }
+            )
         elif section == "zlb" and len(cols) >= 7:
             # Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members
-            zl_breadth.append({
-                "label":      cols[0],
-                "zl_rising":  cols[1],
-                "breadth":    cols[2],
-                "avg_days":   cols[3],
-                "avg_pct":    cols[4],
-                "cluster":    cols[5],
-                "members":    cols[6],
-            })
+            zl_breadth.append(
+                {
+                    "label": cols[0],
+                    "zl_rising": cols[1],
+                    "breadth": cols[2],
+                    "avg_days": cols[3],
+                    "avg_pct": cols[4],
+                    "cluster": cols[5],
+                    "members": cols[6],
+                }
+            )
 
     return high_conv, rot_in, rot_out, zl_breadth
 
 
 # ── Company fetch staleness check ────────────────────────────────────────────
+
 
 def _company_fetch_warning() -> str:
     """Return a warning HTML banner if stock_labels.json is from a prior month, else ''."""
@@ -497,43 +622,56 @@ def _company_fetch_warning() -> str:
     if not os.path.exists(labels_path):
         return (
             '<div class="warn">⚠️ Company data missing — '
-            '<code>tools/stock_labels.json</code> not found. '
-            'Run <code>tools/run_company_fetch.ps1</code> to bootstrap.</div>'
+            "<code>tools/stock_labels.json</code> not found. "
+            "Run <code>tools/run_company_fetch.ps1</code> to bootstrap.</div>"
         )
     mtime = datetime.fromtimestamp(os.path.getmtime(labels_path), tz=IST)
-    now   = datetime.now(tz=IST)
+    now = datetime.now(tz=IST)
     if mtime.year == now.year and mtime.month == now.month:
         return ""
     days_old = (now - mtime).days
     return (
         f'<div class="warn">⚠️ Company data is stale — last refreshed '
         f'{mtime.strftime("%Y-%m-%d")} ({days_old}d ago). '
-        f'Scheduled task <b>NSE_COMPANY_FETCH</b> runs on the 1st of each month at 10:00 AM.</div>'
+        f"Scheduled task <b>NSE_COMPANY_FETCH</b> runs on the 1st of each month at 10:00 AM.</div>"
     )
 
 
 # ── Main HTML builder ─────────────────────────────────────────────────────────
 
-def build_html(today: str, now_str: str,
-               swing: list, momentum: list,
-               weekly_entry: list, weekly_turning: list,
-               zl25_rising: list, zl25_watch: list,
-               ema_adds: list, ema_dels: list, ema_date: str,
-               circuit_changes: list,
-               compression_rows: list, total_compressed: int, total_zl_rising: int,
-               zl_squeeze: list,
-               rot_high_conv: list, rot_in: list, rot_out: list,
-               zl_breadth: list,
-               ep_candidates: list | None = None,
-               kg_catalysts: list | None = None) -> str:
+
+def build_html(
+    today: str,
+    now_str: str,
+    swing: list,
+    momentum: list,
+    weekly_entry: list,
+    weekly_turning: list,
+    zl25_rising: list,
+    zl25_watch: list,
+    ema_adds: list,
+    ema_dels: list,
+    ema_date: str,
+    circuit_changes: list,
+    compression_rows: list,
+    total_compressed: int,
+    total_zl_rising: int,
+    zl_squeeze: list,
+    rot_high_conv: list,
+    rot_in: list,
+    rot_out: list,
+    zl_breadth: list,
+    ep_candidates: list | None = None,
+    kg_catalysts: list | None = None,
+) -> str:
 
     # Build unified confluence map
     scanner_map: dict = defaultdict(set)
-    signal_map:  dict = {}
+    signal_map: dict = {}
     day_chg_map: dict = {}
     circuit_map: dict = {}
     zl_days_map: dict = {}
-    zl_pct_map:  dict = {}
+    zl_pct_map: dict = {}
 
     def register(rows, tag):
         for r in rows:
@@ -546,10 +684,10 @@ def build_html(today: str, now_str: str,
                 circuit_map[s] = r.get("circuit", "")
             if not zl_days_map.get(s) and r.get("zl_days"):
                 zl_days_map[s] = r.get("zl_days", "")
-                zl_pct_map[s]  = r.get("zl_pct", "")
+                zl_pct_map[s] = r.get("zl_pct", "")
 
-    register(swing,        "Swing")
-    register(momentum,     "Momentum")
+    register(swing, "Swing")
+    register(momentum, "Momentum")
     register(weekly_entry, "WeeklyRS")
     register(rot_high_conv, "Rotation")
 
@@ -566,45 +704,44 @@ def build_html(today: str, now_str: str,
     u_rows = []
     for sym in all_syms:
         tags = scanner_map[sym]
-        n    = len(tags)
+        n = len(tags)
         if n == 3:
             stars = '<span class="s3">★★★</span>'
-            rcls  = ' class="r3"'
+            rcls = ' class="r3"'
         elif n == 2:
             stars = '<span class="s2">★★</span>'
-            rcls  = ' class="r2"'
+            rcls = ' class="r2"'
         else:
             stars = '<span class="s1">★</span>'
-            rcls  = ''
+            rcls = ""
 
         badges = "".join(
-            f'<span class="b b-{t.lower()}">{t}</span>'
-            for t in sorted(tags)
+            f'<span class="b b-{t.lower()}">{t}</span>' for t in sorted(tags)
         )
-        sig  = signal_map.get(sym, "")
-        chg  = day_chg_map.get(sym, "")
+        sig = signal_map.get(sym, "")
+        chg = day_chg_map.get(sym, "")
         circ = circuit_map.get(sym, "")
         sig_cls = "ss" if sig == "STRONG" else ("sp" if sig == "PRIMARY" else "sd")
 
-        zld  = zl_days_map.get(sym, "")
-        zlp  = zl_pct_map.get(sym, "")
+        zld = zl_days_map.get(sym, "")
+        zlp = zl_pct_map.get(sym, "")
         u_rows.append(
-            f'<tr{rcls}>'
-            f'<td>{stars}</td>'
+            f"<tr{rcls}>"
+            f"<td>{stars}</td>"
             f'<td class="sym">{tv_link(sym)}</td>'
             f'<td class="lbl">{_lbl(sym)}</td>'
-            f'<td>{badges}</td>'
+            f"<td>{badges}</td>"
             f'<td class="{sig_cls}">{sig}</td>'
             f'<td class="{chg_cls(chg)}">{chg}</td>'
             f'<td class="zld">{zld}</td>'
             f'<td class="{chg_cls(zlp)}">{zlp}</td>'
-            f'{td_circ(circ)}'
-            f'</tr>'
+            f"{td_circ(circ)}"
+            f"</tr>"
         )
 
     # Turning table rows
     t_rows = [
-        f'<tr>'
+        f"<tr>"
         f'<td class="sym">{tv_link(r["symbol"])}</td>'
         f'<td class="zld">{r.get("zl_days","")}</td>'
         f'<td class="{chg_cls(r.get("zl_pct",""))}">{r.get("zl_pct","")}</td>'
@@ -628,6 +765,7 @@ def build_html(today: str, now_str: str,
             f'<td class="{sqz_cls}">{sqz if sqz else "—"}</td>'
             f'{td_circ(r["circuit"])}</tr>'
         )
+
     zr_rows = [_zl_row(r) for r in zl25_rising[:20]]
     zw_rows = [_zl_row(r) for r in zl25_watch[:15]]
 
@@ -666,7 +804,7 @@ def build_html(today: str, now_str: str,
         zld = r["zl_days"]
         zlc = r["zl_chg"]
         comp_rows_html.append(
-            f'<tr>'
+            f"<tr>"
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="lbl">{_lbl(r["symbol"])}</td>'
             f'<td class="num">{r["close"]}</td>'
@@ -675,7 +813,7 @@ def build_html(today: str, now_str: str,
             f'<td class="num">{r["score"]}</td>'
             f'<td class="zld">{zld}</td>'
             f'<td class="{chg_cls(zlc)}">{zlc}</td>'
-            f'</tr>'
+            f"</tr>"
         )
 
     # ZL Squeeze rows
@@ -683,12 +821,12 @@ def build_html(today: str, now_str: str,
     for r in zl_squeeze[:30]:
         sqz_d = r["sqz_days"]  # e.g. "36d"
         try:
-            sqz_n = int(sqz_d.rstrip('d'))
+            sqz_n = int(sqz_d.rstrip("d"))
         except ValueError:
             sqz_n = 0
         sqz_cls = "sqz-hi" if sqz_n >= 20 else ("sqz-on" if sqz_n >= 5 else "sqz-off")
         sqz_rows_html.append(
-            f'<tr>'
+            f"<tr>"
             f'<td class="sym">{tv_link(r["symbol"])}</td>'
             f'<td class="lbl">{_lbl(r["symbol"])}</td>'
             f'<td class="{sqz_cls}">{sqz_d}</td>'
@@ -745,38 +883,56 @@ def build_html(today: str, now_str: str,
         for z in zl_breadth[:20]:
             has_cluster = z["cluster"] and z["cluster"] != "—"
             # breadth string now may have arrow prefix like "▲ 92%" or "↑ 55%"
-            pct_raw = z["breadth"].replace("▲", "").replace("↑", "").replace("%", "").strip()
+            pct_raw = (
+                z["breadth"].replace("▲", "").replace("↑", "").replace("%", "").strip()
+            )
             pct_val = int(pct_raw) if pct_raw.isdigit() else 0
             pct_cls = "chg-g" if pct_val >= 60 else ""
-            cluster_cell = f'<td style="color:var(--gld)">{z["cluster"]}</td>' if has_cluster else f'<td class="nm">—</td>'
+            cluster_cell = (
+                f'<td style="color:var(--gld)">{z["cluster"]}</td>'
+                if has_cluster
+                else '<td class="nm">—</td>'
+            )
             zlb_rows_html.append(
-                f'<tr>'
+                f"<tr>"
                 f'<td>{z["label"]}</td>'
                 f'<td class="num">{z["zl_rising"]}</td>'
                 f'<td class="{pct_cls}" style="font-weight:600;color:var(--grn)">{z["breadth"]}</td>'
                 f'<td class="num">{z["avg_days"]}</td>'
                 f'<td class="num">{z["avg_pct"]}</td>'
-                f'{cluster_cell}'
+                f"{cluster_cell}"
                 f'<td class="nm" style="font-size:11px">{z["members"]}</td>'
-                f'</tr>'
+                f"</tr>"
             )
 
         hc_table = (
-            '<table><thead><tr><th>Symbol</th><th>Label</th><th>Peer Group</th>'
-            '<th>RS Rank (now/4W)</th><th>Group RS 4W</th></tr></thead>'
-            f'<tbody>{"".join(hc_rows_html) or "<tr><td colspan=5>No high-conviction today</td></tr>"}</tbody></table>'
-        ) if rot_high_conv else ""
+            (
+                "<table><thead><tr><th>Symbol</th><th>Label</th><th>Peer Group</th>"
+                "<th>RS Rank (now/4W)</th><th>Group RS 4W</th></tr></thead>"
+                f'<tbody>{"".join(hc_rows_html) or "<tr><td colspan=5>No high-conviction today</td></tr>"}</tbody></table>'
+            )
+            if rot_high_conv
+            else ""
+        )
         ri_table = (
-            '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Leaders</th></tr></thead>'
-            f'<tbody>{"".join(rot_in_rows)}</tbody></table>'
-        ) if rot_in else ""
+            (
+                "<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Leaders</th></tr></thead>"
+                f'<tbody>{"".join(rot_in_rows)}</tbody></table>'
+            )
+            if rot_in
+            else ""
+        )
         ro_table = (
-            '<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Laggards</th></tr></thead>'
-            f'<tbody>{"".join(rot_out_rows)}</tbody></table>'
-        ) if rot_out else ""
+            (
+                "<table><thead><tr><th>Group</th><th>Size</th><th>RS Change 4W</th><th>Laggards</th></tr></thead>"
+                f'<tbody>{"".join(rot_out_rows)}</tbody></table>'
+            )
+            if rot_out
+            else ""
+        )
         zlb_table = (
-            '<table><thead><tr><th>Group</th><th>ZL Rising</th><th>Breadth</th>'
-            '<th>Avg ZL Days</th><th>Avg ZL Chg%</th><th>⚡ Cluster</th><th>Members</th></tr></thead>'
+            "<table><thead><tr><th>Group</th><th>ZL Rising</th><th>Breadth</th>"
+            "<th>Avg ZL Days</th><th>Avg ZL Chg%</th><th>⚡ Cluster</th><th>Members</th></tr></thead>"
             f'<tbody>{"".join(zlb_rows_html) or "<tr><td colspan=7>No breadth data</td></tr>"}</tbody></table>'
         )
 
@@ -789,7 +945,11 @@ def build_html(today: str, now_str: str,
   <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating Out ({len(rot_out)} groups)</summary>{ro_table}</details>
 </div>"""
 
-    ema_label = f"EMA Screener ({ema_date})" if ema_date and ema_date != today else "EMA Screener — Today"
+    ema_label = (
+        f"EMA Screener ({ema_date})"
+        if ema_date and ema_date != today
+        else "EMA Screener — Today"
+    )
 
     turning_section = ""
     if weekly_turning:
@@ -828,16 +988,16 @@ def build_html(today: str, now_str: str,
     if ep_data:
         ep_rows = []
         for r in ep_data[:20]:
-            sym   = r.get("symbol", "")
-            tv    = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-            conv  = r.get("conviction", "—")
-            cat   = r.get("catalyst_type", "")
-            stat  = r.get("ep_status", "")
+            sym = r.get("symbol", "")
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+            conv = r.get("conviction", "—")
+            cat = r.get("catalyst_type", "")
+            stat = r.get("ep_status", "")
             stat_cls = "b-ep-watch" if stat == "EP_WATCH" else "b-ep-filter"
             ep_rows.append(
                 f'<tr><td><a href="{tv}" target="_blank" style="color:var(--blu)">{sym}</a></td>'
                 f'<td style="color:var(--mu);font-size:11px">{r.get("name","")[:30]}</td>'
-                f'<td>{conv}</td>'
+                f"<td>{conv}</td>"
                 f'<td style="font-size:10px">{cat}</td>'
                 f'<td style="font-size:10px">{r.get("catalyst_date","")}</td>'
                 f'<td style="font-size:10px;color:var(--mu)">{(r.get("themes","") or "").replace("|",", ")[:40]}</td>'
@@ -846,14 +1006,14 @@ def build_html(today: str, now_str: str,
         _ep_section = (
             '<div class="section">'
             f'<div class="stitle">EP Watchlist — Knowledge Graph ({len(ep_data)} candidates)</div>'
-            '<table><thead><tr>'
-            '<th>Symbol</th><th>Name</th><th>Conviction</th>'
-            '<th>Catalyst</th><th>Date</th><th>Themes</th><th>Status</th>'
-            '</tr></thead>'
+            "<table><thead><tr>"
+            "<th>Symbol</th><th>Name</th><th>Conviction</th>"
+            "<th>Catalyst</th><th>Date</th><th>Themes</th><th>Status</th>"
+            "</tr></thead>"
             f'<tbody>{"".join(ep_rows)}</tbody></table>'
             '<div style="margin-top:4px;font-size:10px;color:var(--mu)">'
             '<a href="graph_dashboard.html" style="color:var(--pur)">Open Knowledge Graph Explorer →</a>'
-            '</div></div>'
+            "</div></div>"
         )
 
     # ── Recent Catalysts section (from KG pipeline) ───────────────────────────
@@ -862,24 +1022,30 @@ def build_html(today: str, now_str: str,
     recent_cats = [c for c in cat_data if c.get("date", "") >= today[:7]]  # this month
     if recent_cats:
         _cat_type_cls = {
-            "OrderWin": "b-orderwin", "CapacityExpansion": "b-cap",
-            "GovtApproval": "b-gov",  "PLIInclusion": "b-gov",
-            "PromotorBuy": "b-momentum", "M&A": "b-momentum",
+            "OrderWin": "b-orderwin",
+            "CapacityExpansion": "b-cap",
+            "GovtApproval": "b-gov",
+            "PLIInclusion": "b-gov",
+            "PromotorBuy": "b-momentum",
+            "M&A": "b-momentum",
             "GovernanceFlag": "b-neg",
         }
         cat_rows = []
         for c in recent_cats[:20]:
-            sym  = c.get("symbol", "")
-            tv   = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+            sym = c.get("symbol", "")
+            tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
             ctype = c.get("type", "")
-            cls  = _cat_type_cls.get(ctype, "b-weeklyrs")
-            ep   = c.get("ep_prob", "")
-            ep_cls = "b-swing" if ep == "High" else "b-momentum" if ep == "Medium" else ""
+            cls = _cat_type_cls.get(ctype, "b-weeklyrs")
+            ep = c.get("ep_prob", "")
+            ep_cls = (
+                "b-swing" if ep == "High" else "b-momentum" if ep == "Medium" else ""
+            )
+            ep_cell = f'<span class="b {ep_cls}">{ep}</span>' if ep and ep_cls else ep
             cat_rows.append(
                 f'<tr><td>{c.get("date","")}</td>'
                 f'<td><a href="{tv}" target="_blank" style="color:var(--blu)">{sym}</a></td>'
                 f'<td><span class="b {cls}">{ctype}</span></td>'
-                f'<td>{f"<span class=\"b {ep_cls}\">{ep}</span>" if ep and ep_cls else ep}</td>'
+                f"<td>{ep_cell}</td>"
                 f'<td>{c.get("conviction","—")}</td>'
                 f'<td style="color:var(--mu);font-size:10px;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'
                 f'{(c.get("description","") or "")[:80]}</td></tr>'
@@ -887,10 +1053,10 @@ def build_html(today: str, now_str: str,
         _kg_catalysts_section = (
             '<div class="section">'
             f'<div class="stitle">Recent Catalysts — Knowledge Graph (this month, {len(recent_cats)} events)</div>'
-            '<table><thead><tr>'
-            '<th>Date</th><th>Symbol</th><th>Type</th>'
-            '<th>EP Prob</th><th>Conviction</th><th>Description</th>'
-            '</tr></thead>'
+            "<table><thead><tr>"
+            "<th>Date</th><th>Symbol</th><th>Type</th>"
+            "<th>EP Prob</th><th>Conviction</th><th>Description</th>"
+            "</tr></thead>"
             f'<tbody>{"".join(cat_rows)}</tbody></table></div>'
         )
 
@@ -1035,26 +1201,26 @@ tr:hover td{{background:var(--bg3)}}
 
 def main():
     now_ist = datetime.now(IST)
-    today   = now_ist.strftime("%Y-%m-%d")
+    today = now_ist.strftime("%Y-%m-%d")
     now_str = now_ist.strftime("%Y-%m-%d %H:%M IST")
 
     print(f"[{now_str}] Building dashboard for {today}…")
 
-    swing_content       = read_file(SWING_MD)
-    momentum_content    = read_file(MOMENTUM_MD)
-    weekly_content      = read_file(WEEKLY_RS_MD)
-    zl25_content        = read_file(EMA25_ZL_MD)
-    ema_content         = find_latest_screener(EMA_SCANS_DIR, today)
-    circuit_content     = read_file(CIRCUIT_MD)
-    compression_content    = read_file(COMPRESSION_MD)
-    zl_squeeze_content     = read_file(ZL_SQUEEZE_MD)
+    swing_content = read_file(SWING_MD)
+    momentum_content = read_file(MOMENTUM_MD)
+    weekly_content = read_file(WEEKLY_RS_MD)
+    zl25_content = read_file(EMA25_ZL_MD)
+    ema_content = find_latest_screener(EMA_SCANS_DIR, today)
+    circuit_content = read_file(CIRCUIT_MD)
+    compression_content = read_file(COMPRESSION_MD)
+    zl_squeeze_content = read_file(ZL_SQUEEZE_MD)
     sector_rotation_content = read_file(SECTOR_ROTATION_MD)
 
     # Knowledge Graph JSON (optional — graceful fallback if KG not yet built)
     _kg_data_dir = os.path.join(BASE, "graph_data")
     ep_candidates_data: list = []
-    kg_catalysts_data:  list = []
-    _ep_path  = os.path.join(_kg_data_dir, "ep_watchlist.json")
+    kg_catalysts_data: list = []
+    _ep_path = os.path.join(_kg_data_dir, "ep_watchlist.json")
     _cat_path = os.path.join(_kg_data_dir, "catalysts.json")
     if os.path.exists(_ep_path):
         try:
@@ -1069,11 +1235,11 @@ def main():
         except Exception:
             pass
 
-    swing_block    = extract_today_block(swing_content,    today)
+    swing_block = extract_today_block(swing_content, today)
     momentum_block = extract_today_block(momentum_content, today)
-    weekly_block   = extract_today_block(weekly_content,   today)
+    weekly_block = extract_today_block(weekly_content, today)
 
-    swing_signals    = parse_signal_table(swing_block)
+    swing_signals = parse_signal_table(swing_block)
     momentum_signals = parse_signal_table(momentum_block)
     weekly_entry, weekly_turning = parse_weekly_rs_block(weekly_block)
 
@@ -1081,16 +1247,26 @@ def main():
     ema_adds, ema_dels = parse_ema_changes(ema_content)
     ema_date = parse_ema_date(ema_content)
     circuit_changes = parse_circuit_changes(circuit_content)
-    compression_rows, total_compressed, total_zl_rising = parse_ema_compression(compression_content, today)
+    compression_rows, total_compressed, total_zl_rising = parse_ema_compression(
+        compression_content, today
+    )
     zl_squeeze_rows = parse_zl_squeeze(zl_squeeze_content, today)
-    rot_high_conv, rot_in_groups, rot_out_groups, zl_breadth_groups = parse_sector_rotation(sector_rotation_content)
+    rot_high_conv, rot_in_groups, rot_out_groups, zl_breadth_groups = (
+        parse_sector_rotation(sector_rotation_content)
+    )
 
     html = build_html(
-        today=today, now_str=now_str,
-        swing=swing_signals, momentum=momentum_signals,
-        weekly_entry=weekly_entry, weekly_turning=weekly_turning,
-        zl25_rising=zl25_rising, zl25_watch=zl25_watch,
-        ema_adds=ema_adds, ema_dels=ema_dels, ema_date=ema_date,
+        today=today,
+        now_str=now_str,
+        swing=swing_signals,
+        momentum=momentum_signals,
+        weekly_entry=weekly_entry,
+        weekly_turning=weekly_turning,
+        zl25_rising=zl25_rising,
+        zl25_watch=zl25_watch,
+        ema_adds=ema_adds,
+        ema_dels=ema_dels,
+        ema_date=ema_date,
         circuit_changes=circuit_changes,
         compression_rows=compression_rows,
         total_compressed=total_compressed,
@@ -1108,15 +1284,26 @@ def main():
         f.write(html)
 
     print(f"Written: {DASHBOARD_HTML}")
-    print(f"  Swing:{len(swing_signals)} Momentum:{len(momentum_signals)} WeeklyRS:{len(weekly_entry)} Turning:{len(weekly_turning)}")
+    print(
+        f"  Swing:{len(swing_signals)} Momentum:{len(momentum_signals)} WeeklyRS:{len(weekly_entry)} Turning:{len(weekly_turning)}"
+    )
     print(f"  ZL25 Rising:{len(zl25_rising)} Watch:{len(zl25_watch)}")
     print(f"  ZL Squeeze: {len(zl_squeeze_rows)}")
-    print(f"  EMA Compression: {total_compressed} compressed, {total_zl_rising} ZL rising")
-    print(f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}")
-    print(f"  Sector Rotation: High-conv={len(rot_high_conv)} Rot-In={len(rot_in_groups)} Rot-Out={len(rot_out_groups)}")
-    triple = sum(1 for s in {r['symbol'] for r in swing_signals} &
-                              {r['symbol'] for r in momentum_signals} &
-                              {r['symbol'] for r in weekly_entry})
+    print(
+        f"  EMA Compression: {total_compressed} compressed, {total_zl_rising} ZL rising"
+    )
+    print(
+        f"  EMA adds:{len(ema_adds)} dels:{len(ema_dels)} Circuit changes:{len(circuit_changes)}"
+    )
+    print(
+        f"  Sector Rotation: High-conv={len(rot_high_conv)} Rot-In={len(rot_in_groups)} Rot-Out={len(rot_out_groups)}"
+    )
+    triple = sum(
+        1
+        for s in {r["symbol"] for r in swing_signals}
+        & {r["symbol"] for r in momentum_signals}
+        & {r["symbol"] for r in weekly_entry}
+    )
     if triple:
         print(f"  Triple confluence (3 scanners): {triple} stocks")
 

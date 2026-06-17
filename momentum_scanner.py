@@ -24,7 +24,10 @@ RS filter (all 3 must pass):
 Output: momentum_scans/momentum_scans.md — auto-committed and pushed to GitHub
 """
 
-import sys, os, csv, json
+import sys
+import os
+import csv
+import json
 from datetime import datetime, date, timedelta
 from concurrent.futures import ThreadPoolExecutor
 
@@ -35,39 +38,47 @@ from tradingview_screener import Query, col
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
-SCANS_DIR   = os.path.join(REPO_DIR, "momentum_scans")
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
+SCANS_DIR = os.path.join(REPO_DIR, "momentum_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
-_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
+_LABELS: dict = (
+    json.loads(open(_LABELS_FILE, encoding="utf-8").read())
+    if os.path.exists(_LABELS_FILE)
+    else {}
+)
 INDEX_CACHE = os.path.join(REPO_DIR, ".niftymidsml400_cache.csv")
-TODAY       = datetime.now().strftime("%Y-%m-%d")
-MD_FILE     = os.path.join(SCANS_DIR, "momentum_scans.md")
+TODAY = datetime.now().strftime("%Y-%m-%d")
+MD_FILE = os.path.join(SCANS_DIR, "momentum_scans.md")
 
-MC_LOW      = 1_000  * 1_00_00_000    # ₹1,000 Cr  (~10B INR)
-MC_HIGH     = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr (~1T INR)
-TOUCH_PCT    = 0.015
-ZL_TURN_CAP  = 60
-INDEX_NAME  = "Nifty MidSmallcap 400"
-NSE_ARCH    = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
+MC_LOW = 1_000 * 1_00_00_000  # ₹1,000 Cr  (~10B INR)
+MC_HIGH = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr (~1T INR)
+TOUCH_PCT = 0.015
+ZL_TURN_CAP = 60
+INDEX_NAME = "Nifty MidSmallcap 400"
+NSE_ARCH = "https://nsearchives.nseindia.com/content/indices/ind_close_all_{}.csv"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
 def ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
 
+
 def zlema(s: pd.Series, n: int) -> pd.Series:
     e = ema(s, n)
     return 2 * e - ema(e, n)
 
+
 def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
-    n     = len(zl25)
+    n = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i
-            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            pct = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
-    return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[-(ZL_TURN_CAP + 2)] - 1) * 100, 2)
+    return ZL_TURN_CAP, round(
+        (closes.iloc[-1] / closes.iloc[-(ZL_TURN_CAP + 2)] - 1) * 100, 2
+    )
 
 
 # ── Nifty MidSmallcap 400 index cache ────────────────────────────────────────
@@ -84,9 +95,12 @@ def _fetch_index_day(d: date) -> tuple | None:
     except Exception:
         return None
 
+
 def get_index_history(months: int = 6) -> pd.Series:
     if os.path.exists(INDEX_CACHE):
-        cached = pd.read_csv(INDEX_CACHE, index_col=0, parse_dates=True).squeeze("columns")
+        cached = pd.read_csv(INDEX_CACHE, index_col=0, parse_dates=True).squeeze(
+            "columns"
+        )
     else:
         cached = pd.Series(dtype=float)
 
@@ -133,9 +147,15 @@ def get_watchlist() -> list[str]:
 
 
 # ── Circuit limits ────────────────────────────────────────────────────────────
-_CIRCUIT_EMOJI = {("20","10"): "🟨", ("10","5"): "🟥", ("5","10"): "🟩", ("10","20"): "🟦"}
+_CIRCUIT_EMOJI = {
+    ("20", "10"): "🟨",
+    ("10", "5"): "🟥",
+    ("5", "10"): "🟩",
+    ("10", "20"): "🟦",
+}
 
 _NSE_CSV = r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv"
+
 
 def get_circuit_limits() -> dict[str, tuple[str, str]]:
     """Return {symbol: (current_pct, emoji)} from yesterday's circuit dashboard nse.csv."""
@@ -150,7 +170,7 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
                 sym = row.get("SYMBOL", "")
                 dte = row.get("EFFECTIVE DATE", "")
                 frm = row.get("FROM", "")
-                to  = row.get("TO",   "")
+                to = row.get("TO", "")
                 if not sym or not dte:
                     continue
                 try:
@@ -174,12 +194,12 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(df) < 210:
             return None
 
-        c  = df["Close"]
+        c = df["Close"]
         lo = df["Low"]
         op = df["Open"]
 
-        e20  = ema(c, 20)
-        e50  = ema(c, 50)
+        e20 = ema(c, 20)
+        e50 = ema(c, 50)
         e100 = ema(c, 100)
         e200 = ema(c, 200)
         zl25 = zlema(c, 25)
@@ -187,14 +207,14 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not (e50.iloc[-1] > e200.iloc[-1] and e100.iloc[-1] > e200.iloc[-1]):
             return None
 
-        zl_now, zl_prev   = zl25.iloc[-1], zl25.iloc[-2]
-        e20_now, e20_prev = e20.iloc[-1],  e20.iloc[-2]
+        zl_now, zl_prev = zl25.iloc[-1], zl25.iloc[-2]
+        e20_now, e20_prev = e20.iloc[-1], e20.iloc[-2]
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
-        curr_low   = lo.iloc[-1]
-        curr_open  = op.iloc[-1]
+        curr_low = lo.iloc[-1]
+        curr_open = op.iloc[-1]
 
-        zl_rising  = zl_now > zl_prev
+        zl_rising = zl_now > zl_prev
         e20_rising = e20_now > e20_prev
 
         if not zl_rising:
@@ -207,24 +227,24 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        c_rs   = c_norm.loc[common]
+        c_rs = c_norm.loc[common]
         idx_rs = index_s.loc[common]
 
-        rs    = (c_rs / idx_rs) * 1000
-        rs_e9  = ema(rs, 9)
+        rs = (c_rs / idx_rs) * 1000
+        rs_e9 = ema(rs, 9)
         rs_e21 = ema(rs, 21)
 
-        rs_above_e9  = rs.iloc[-1] > rs_e9.iloc[-1]
+        rs_above_e9 = rs.iloc[-1] > rs_e9.iloc[-1]
         rs_above_e21 = rs.iloc[-1] > rs_e21.iloc[-1]
 
-        weekly_c   = c_rs.resample("W").last().dropna()
+        weekly_c = c_rs.resample("W").last().dropna()
         weekly_idx = idx_rs.resample("W").last().dropna()
-        wk_common  = weekly_c.index.intersection(weekly_idx.index)
+        wk_common = weekly_c.index.intersection(weekly_idx.index)
         if len(wk_common) < 12:
             return None
 
-        wk_rs        = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
-        wk_rs_e9     = ema(wk_rs, 9)
+        wk_rs = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
+        wk_rs_e9 = ema(wk_rs, 9)
         wk_rs_rising = wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]
 
         if not (rs_above_e9 and rs_above_e21 and wk_rs_rising):
@@ -233,19 +253,19 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         # ── Entry conditions ──────────────────────────────────────────────────
         entries = []
 
-        was_above  = prev_close > zl_prev
+        was_above = prev_close > zl_prev
         touched_zl = (
             curr_low <= zl_now * (1 + TOUCH_PCT)
             and curr_low >= zl_now * (1 - TOUCH_PCT)
         ) or (curr_low <= zl_now and curr_close >= zl_now)
 
         if was_above and touched_zl:
-            tag   = "STRONG" if e20_rising else "PRIMARY"
+            tag = "STRONG" if e20_rising else "PRIMARY"
             label = "ZLEMA25 touch + EMA20 rising" if e20_rising else "ZLEMA25 touch"
             entries.append((tag, label, zl_now))
 
         for level, name in [
-            (e50.iloc[-1],  "EMA50"),
+            (e50.iloc[-1], "EMA50"),
             (e100.iloc[-1], "EMA100"),
             (e200.iloc[-1], "EMA200"),
         ]:
@@ -259,11 +279,11 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
 
         zl_days, zl_pct = zl25_turn_stats(zl25, c)
         return {
-            "symbol":  symbol,
-            "close":   curr_close,
+            "symbol": symbol,
+            "close": curr_close,
             "day_chg": (curr_close - prev_close) / prev_close * 100,
             "zl_days": zl_days,
-            "zl_pct":  zl_pct,
+            "zl_pct": zl_pct,
             "entries": entries,
         }
 
@@ -292,6 +312,7 @@ STATIC_FOOTER = """
 - RS Line (stock / Nifty MidSmallcap 400 × 1000) above its 9 EMA and 21 EMA (daily)
 - Weekly RS EMA9 is rising"""
 
+
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
 
@@ -299,17 +320,19 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"# NSE Momentum Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
-        f"*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*\n",
+        "*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*\n",
         "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |",
         "|--------|--------:|--------:|-------|--------:|--------|:-------:|",
     ]
 
     for f in findings:
         cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv      = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
-        zl_d    = f"{f['zl_days']}d+" if f['zl_days'] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-        zl_p    = f"+{f['zl_pct']:.1f}%" if f['zl_pct'] >= 0 else f"{f['zl_pct']:.1f}%"
-        lbl     = _LABELS.get(f["symbol"], "")
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        zl_d = (
+            f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        )
+        zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        lbl = _LABELS.get(f["symbol"], "")
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
@@ -338,7 +361,9 @@ def print_results(findings: list[dict]) -> None:
 
     for f in findings:
         ds = "+" if f["day_chg"] >= 0 else ""
-        print(f"\n  {f['symbol']:<15}  Close: {f['close']:>8.2f}  ({ds}{f['day_chg']:.2f}% day)")
+        print(
+            f"\n  {f['symbol']:<15}  Close: {f['close']:>8.2f}  ({ds}{f['day_chg']:.2f}% day)"
+        )
         for tag, label, level in f["entries"]:
             vs = (f["close"] - level) / level * 100
             print(f"    [{tag}]  {label}  Level={level:.2f}  ({vs:+.1f}%)")
@@ -349,7 +374,9 @@ def print_results(findings: list[dict]) -> None:
 def main():
     print("\nFetching NIFTY MidSmallcap 400 index history...")
     index_s = get_index_history(months=6)
-    print(f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})")
+    print(
+        f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})"
+    )
 
     print("\nFetching NSE circuit limits...")
     circuit = get_circuit_limits()

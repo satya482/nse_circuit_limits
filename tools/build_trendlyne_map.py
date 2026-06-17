@@ -18,7 +18,7 @@ import requests
 sys.stdout.reconfigure(encoding="utf-8")
 
 SITEMAP_URL = "https://trendlyne.com/equity-sitemap-stocks.xml"
-OUT_FILE    = Path(__file__).parent / "trendlyne_id_map.json"
+OUT_FILE = Path(__file__).parent / "trendlyne_id_map.json"
 
 HEADERS = {
     "User-Agent": (
@@ -38,13 +38,13 @@ def build_map() -> dict:
     resp.raise_for_status()
 
     root = ET.fromstring(resp.text)
-    ns   = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+    ns = {"sm": "http://www.sitemaps.org/schemas/sitemap/0.9"}
 
     mapping = {}
     skipped = 0
     for url_el in root.findall("sm:url", ns):
         loc = url_el.findtext("sm:loc", namespaces=ns) or ""
-        m   = _LOC_RE.search(loc)
+        m = _LOC_RE.search(loc)
         if not m:
             skipped += 1
             continue
@@ -57,7 +57,9 @@ def build_map() -> dict:
 
 def main():
     mapping = build_map()
-    OUT_FILE.write_text(json.dumps(mapping, indent=2, ensure_ascii=False), encoding="utf-8")
+    OUT_FILE.write_text(
+        json.dumps(mapping, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print(f"Written: {OUT_FILE}  ({len(mapping)} entries)")
 
     # Quick sanity check

@@ -5,6 +5,7 @@ Source  : TradingView screener (MCap ₹800 Cr – ₹1 Lakh Cr, price > ₹50, 
 Run     : python load_universe.py
 Re-run  : safe — idempotent via MERGE
 """
+
 from __future__ import annotations
 
 import os
@@ -16,14 +17,14 @@ from neo4j import GraphDatabase
 from tradingview_screener import Query, col
 
 # ── Config ────────────────────────────────────────────────────────────────────
-MC_LOW  = 8_000_000_000        # ₹800 Cr  (in absolute INR)
-MC_HIGH = 1_000_000_000_000    # ₹1 Lakh Cr
+MC_LOW = 8_000_000_000  # ₹800 Cr  (in absolute INR)
+MC_HIGH = 1_000_000_000_000  # ₹1 Lakh Cr
 
 _ENV = Path(__file__).parent.parent.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 
@@ -35,10 +36,10 @@ def fetch_universe() -> list[dict]:
         .set_markets("india")
         .select("name", "close", "market_cap_basic", "sector", "industry")
         .where(
-            col("exchange")          == "NSE",
-            col("type")              == "stock",
+            col("exchange") == "NSE",
+            col("type") == "stock",
             col("typespecs").has(["common"]),
-            col("close")             >  50,
+            col("close") > 50,
             col("market_cap_basic").between(MC_LOW, MC_HIGH),
         )
         .limit(700)
@@ -46,13 +47,17 @@ def fetch_universe() -> list[dict]:
     )
     records: list[dict] = []
     for _, row in df.iterrows():
-        records.append({
-            "nse_code": str(row["name"]).strip(),
-            "close":    float(row.get("close")              or 0),
-            "mcap":     round(float(row.get("market_cap_basic") or 0) / 1e7, 2),  # -> ₹ Cr
-            "sector":   str(row.get("sector")   or "Unknown").strip(),
-            "industry": str(row.get("industry") or "Unknown").strip(),
-        })
+        records.append(
+            {
+                "nse_code": str(row["name"]).strip(),
+                "close": float(row.get("close") or 0),
+                "mcap": round(
+                    float(row.get("market_cap_basic") or 0) / 1e7, 2
+                ),  # -> ₹ Cr
+                "sector": str(row.get("sector") or "Unknown").strip(),
+                "industry": str(row.get("industry") or "Unknown").strip(),
+            }
+        )
     return records
 
 
@@ -98,7 +103,7 @@ MERGE (c)-[:BELONGS_TO]->(i)
 def load(records: list[dict]) -> tuple[int, int, int]:
     """Write records to Neo4j. Returns (companies, industries, sectors)."""
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
-    sectors:    set[str] = set()
+    sectors: set[str] = set()
     industries: set[str] = set()
     companies = 0
 
@@ -112,11 +117,11 @@ def load(records: list[dict]) -> tuple[int, int, int]:
                 sectors.add(sec)
 
             if ind not in industries:
-                session.run(_MERGE_INDUSTRY,       industry=ind, sector=sec)
+                session.run(_MERGE_INDUSTRY, industry=ind, sector=sec)
                 session.run(_LINK_INDUSTRY_SECTOR, industry=ind, sector=sec)
                 industries.add(ind)
 
-            session.run(_MERGE_COMPANY,        **r)
+            session.run(_MERGE_COMPANY, **r)
             session.run(_LINK_COMPANY_INDUSTRY, nse_code=r["nse_code"], industry=ind)
             print(f"[GRAPH] Company MERGE | Company | {r['nse_code']} | ok")
             companies += 1

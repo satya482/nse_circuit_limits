@@ -7,6 +7,7 @@ telegram_themes/index.html — a self-contained GitHub Pages-ready dashboard.
 Run  : python telegram_dashboard_generator.py
 Output: telegram_themes/index.html
 """
+
 from __future__ import annotations
 
 import json
@@ -14,9 +15,9 @@ import re
 from datetime import datetime
 from pathlib import Path
 
-_HERE    = Path(__file__).parent
+_HERE = Path(__file__).parent
 _THEMES_DIR = _HERE / "telegram_themes"
-_OUT     = _THEMES_DIR / "index.html"
+_OUT = _THEMES_DIR / "index.html"
 
 
 def _tv_link(symbol: str) -> str:
@@ -26,21 +27,35 @@ def _tv_link(symbol: str) -> str:
 
 def _conviction_cls(conviction: str) -> str:
     c = (conviction or "").lower()
-    if "high" in c:   return "conv-high"
-    if "medium" in c: return "conv-med"
+    if "high" in c:
+        return "conv-high"
+    if "medium" in c:
+        return "conv-med"
     return "conv-low"
 
 
 def _sentiment_cls(sentiment: str) -> str:
     s = (sentiment or "").lower()
-    if "bullish" in s: return "sent-bull"
-    if "bearish" in s: return "sent-bear"
+    if "bullish" in s:
+        return "sent-bull"
+    if "bearish" in s:
+        return "sent-bear"
     return "sent-neu"
 
 
 def _theme_color(idx: int) -> str:
-    palette = ["#58a6ff", "#3fb950", "#a371f7", "#d29922", "#f85149",
-               "#79c0ff", "#56d364", "#bc8cff", "#e3b341", "#ff7b72"]
+    palette = [
+        "#58a6ff",
+        "#3fb950",
+        "#a371f7",
+        "#d29922",
+        "#f85149",
+        "#79c0ff",
+        "#56d364",
+        "#bc8cff",
+        "#e3b341",
+        "#ff7b72",
+    ]
     return palette[idx % len(palette)]
 
 
@@ -59,10 +74,10 @@ def _load_all_data() -> dict[str, list[dict]]:
 
 
 def _build_html(data: dict[str, list[dict]]) -> str:
-    dates     = sorted(data.keys(), reverse=True)
+    dates = sorted(data.keys(), reverse=True)
     all_dates_json = json.dumps(dates)
     data_json = json.dumps(data, ensure_ascii=False)
-    now       = datetime.now().strftime("%Y-%m-%d %H:%M IST")
+    now = datetime.now().strftime("%Y-%m-%d %H:%M IST")
 
     # ── Pre-build theme sidebar items for each date ──────────────────────────
     # (used for non-JS fallback; JS overrides at runtime)

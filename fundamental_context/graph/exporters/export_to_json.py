@@ -9,6 +9,7 @@ Outputs (all written to project_root/graph_data/):
 
 Run: python export_to_json.py
 """
+
 from __future__ import annotations
 
 import csv
@@ -21,16 +22,16 @@ from dotenv import load_dotenv
 from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE     = Path(__file__).parent
-_ENV      = _HERE.parent.parent / ".env"
-_ROOT     = _HERE.parent.parent.parent          # nse_circuit_limits/
-_OUT_DIR  = _ROOT / "graph_data"
+_HERE = Path(__file__).parent
+_ENV = _HERE.parent.parent / ".env"
+_ROOT = _HERE.parent.parent.parent  # nse_circuit_limits/
+_OUT_DIR = _ROOT / "graph_data"
 _OUT_DIR.mkdir(exist_ok=True)
 
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 # EP watchlist from today's run
@@ -133,64 +134,70 @@ def export_graph(session) -> None:
         add_node(
             row["id"],
             {
-                "label":      row["id"],
-                "name":       row["name"] or row["id"],
-                "type":       "Company",
+                "label": row["id"],
+                "name": row["name"] or row["id"],
+                "type": "Company",
                 "conviction": conviction,
-                "quality":    _safe(row["quality"]) or 0,
-                "mcap":       _safe(row["mcap"]) or 0,
-                "ob_ratio":   _safe(row["ob_ratio"]),
-                "sector":     row["sector"] or "Unknown",
-                "industry":   row["industry"] or "Unknown",
+                "quality": _safe(row["quality"]) or 0,
+                "mcap": _safe(row["mcap"]) or 0,
+                "ob_ratio": _safe(row["ob_ratio"]),
+                "sector": row["sector"] or "Unknown",
+                "industry": row["industry"] or "Unknown",
             },
         )
         # Sector node + edge
         if row["sector"]:
             add_node(row["sector"], {"label": row["sector"], "type": "Sector"})
-            edges.append({
-                "data": {
-                    "id":     f"{row['id']}_{row['sector']}",
-                    "source": row["id"],
-                    "target": row["sector"],
-                    "rel":    "BELONGS_TO",
+            edges.append(
+                {
+                    "data": {
+                        "id": f"{row['id']}_{row['sector']}",
+                        "source": row["id"],
+                        "target": row["sector"],
+                        "rel": "BELONGS_TO",
+                    }
                 }
-            })
+            )
 
     # Theme nodes + BENEFITS_FROM edges
     for row in session.run(_Q_THEME_NODES):
         add_node(
             row["name"],
             {
-                "label":    row["name"],
-                "type":     "Theme",
+                "label": row["name"],
+                "type": "Theme",
                 "maturity": row["maturity"],
-                "thesis":   row["thesis"],
+                "thesis": row["thesis"],
             },
         )
 
     for row in session.run(_Q_THEME_EDGES):
         edge_id = f"{row['company']}_BF_{row['theme']}"
-        edges.append({
-            "data": {
-                "id":     edge_id,
-                "source": row["company"],
-                "target": row["theme"],
-                "rel":    "BENEFITS_FROM",
+        edges.append(
+            {
+                "data": {
+                    "id": edge_id,
+                    "source": row["company"],
+                    "target": row["theme"],
+                    "rel": "BENEFITS_FROM",
+                }
             }
-        })
+        )
 
     # SUPPLIES_TO edges
     for row in session.run(_Q_SUPPLY_EDGES):
         edge_id = f"{row['source']}_ST_{row['target']}"
-        edges.append({
-            "data": {
-                "id":      edge_id,
-                "source":  row["source"],
-                "target":  row["target"],
-                "rel":     "SUPPLIES_TO",
-                "product": row["product"],
+        edges.append(
+            {
+                "data": {
+                    "id": edge_id,
+                    "source": row["source"],
+                    "target": row["target"],
+                    "rel": "SUPPLIES_TO",
+                    "product": row["product"],
+                }
             }
-        })
+        )
 
     out = {"nodes": nodes, "edges": edges}
     path = _OUT_DIR / "graph.json"
@@ -205,7 +212,9 @@ def export_catalysts(session) -> None:
         catalysts.append({k: _safe(v) for k, v in row.items()})
 
     path = _OUT_DIR / "catalysts.json"
-    path.write_text(json.dumps(catalysts, indent=2, ensure_ascii=False), encoding="utf-8")
+    path.write_text(
+        json.dumps(catalysts, indent=2, ensure_ascii=False), encoding="utf-8"
+    )
     print(f"[EXPORT] catalysts.json -> {len(catalysts)} entries")
 
 
@@ -219,13 +228,15 @@ def export_themes(session) -> None:
             if c.get("id")
         ]
         companies.sort(key=lambda x: x.get("conviction") or 0, reverse=True)
-        themes.append({
-            "name":      row["name"],
-            "maturity":  row["maturity"],
-            "thesis":    row["thesis"],
-            "children":  row["children"] or [],
-            "companies": companies,
-        })
+        themes.append(
+            {
+                "name": row["name"],
+                "maturity": row["maturity"],
+                "thesis": row["thesis"],
+                "children": row["children"] or [],
+                "companies": companies,
+            }
+        )
 
     path = _OUT_DIR / "themes.json"
     path.write_text(json.dumps(themes, indent=2, ensure_ascii=False), encoding="utf-8")
@@ -235,10 +246,12 @@ def export_themes(session) -> None:
 def export_ep_watchlist() -> None:
     """Copy today's EP watchlist CSV to graph_data/ep_watchlist.json."""
     today_str = date.today().isoformat()
-    csv_path  = _EP_DIR / f"ep_watchlist_{today_str}.csv"
+    csv_path = _EP_DIR / f"ep_watchlist_{today_str}.csv"
 
     if not csv_path.exists():
-        print(f"[EXPORT] ep_watchlist.json — no CSV for today ({csv_path.name}), skipping")
+        print(
+            f"[EXPORT] ep_watchlist.json — no CSV for today ({csv_path.name}), skipping"
+        )
         (_OUT_DIR / "ep_watchlist.json").write_text("[]", encoding="utf-8")
         return
 

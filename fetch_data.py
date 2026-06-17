@@ -28,21 +28,21 @@ sys.path.insert(0, str(Path(__file__).parent / "ema-compression-scanner"))
 from data_loader import load_env, get_kite
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-REPO_DIR      = Path(__file__).parent
-DB_PATH       = REPO_DIR / ".ohlc_data" / "market.db"
+REPO_DIR = Path(__file__).parent
+DB_PATH = REPO_DIR / ".ohlc_data" / "market.db"
 MANIFEST_PATH = REPO_DIR / ".ohlc_data" / "data_manifest.csv"
-ENV_PATH      = REPO_DIR / "ema-compression-scanner" / ".env"
+ENV_PATH = REPO_DIR / "ema-compression-scanner" / ".env"
 
-LOOKBACK_DAYS  = 400        # calendar days for historical backfill (~280 trading bars)
-MIN_ROWS       = 200        # symbols below this trigger a backfill
-BATCH_SIZE     = 50         # max instruments per quote() call (larger batches trigger Cloudflare rate-limit)
-BATCH_SLEEP    = 3          # seconds between batches
-BATCH_RETRY_WAIT = 30      # seconds to wait before retrying a failed batch
-HIST_RATE      = 0.35       # seconds between historical_data() calls
+LOOKBACK_DAYS = 400  # calendar days for historical backfill (~280 trading bars)
+MIN_ROWS = 200  # symbols below this trigger a backfill
+BATCH_SIZE = 50  # max instruments per quote() call (larger batches trigger Cloudflare rate-limit)
+BATCH_SLEEP = 3  # seconds between batches
+BATCH_RETRY_WAIT = 30  # seconds to wait before retrying a failed batch
+HIST_RATE = 0.35  # seconds between historical_data() calls
 
-MC_LOW         = 800     * 1_00_00_000   # ₹800 Cr
-MC_HIGH        = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
-BENCHMARK_SYM  = "NIFTY MIDSML 400"     # Kite tradingsymbol; used by all RS scanners
+MC_LOW = 800 * 1_00_00_000  # ₹800 Cr
+MC_HIGH = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
+BENCHMARK_SYM = "NIFTY MIDSML 400"  # Kite tradingsymbol; used by all RS scanners
 
 # ── Schema ─────────────────────────────────────────────────────────────────────
 _SCHEMA = """
@@ -108,8 +108,9 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
     ).fetchone()
     if row[0] > 0:
         print("  Instruments already fetched today, loading from DB...")
-        return pd.read_sql("SELECT * FROM instruments WHERE last_updated=?",
-                           con, params=(today,))
+        return pd.read_sql(
+            "SELECT * FROM instruments WHERE last_updated=?", con, params=(today,)
+        )
 
     tv_symbols = get_tv_universe()
 
@@ -120,21 +121,22 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
 
     # Stocks: EQ segment intersected with TV universe
     stocks = raw[
-        (raw["exchange"] == "NSE") &
-        (raw["segment"] == "NSE") &
-        (raw["instrument_type"] == "EQ") &
-        no_dash &
-        raw["tradingsymbol"].isin(tv_symbols)
+        (raw["exchange"] == "NSE")
+        & (raw["segment"] == "NSE")
+        & (raw["instrument_type"] == "EQ")
+        & no_dash
+        & raw["tradingsymbol"].isin(tv_symbols)
     ].copy()
 
     # Benchmark index: exactly one row
     benchmark = raw[
-        (raw["segment"] == "INDICES") &
-        (raw["tradingsymbol"] == BENCHMARK_SYM)
+        (raw["segment"] == "INDICES") & (raw["tradingsymbol"] == BENCHMARK_SYM)
     ].copy()
     if benchmark.empty:
-        print(f"  WARN: {BENCHMARK_SYM!r} not found in Kite instruments list",
-              file=sys.stderr)
+        print(
+            f"  WARN: {BENCHMARK_SYM!r} not found in Kite instruments list",
+            file=sys.stderr,
+        )
 
     filtered = pd.concat([stocks, benchmark], ignore_index=True)
     filtered["last_updated"] = today
@@ -143,8 +145,14 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
     for _, r in filtered.iterrows():
         con.execute(
             "INSERT OR REPLACE INTO instruments VALUES (?,?,?,?,?,?)",
-            (int(r["instrument_token"]), r["tradingsymbol"],
-             str(r.get("name", "")), r["segment"], r["instrument_type"], today),
+            (
+                int(r["instrument_token"]),
+                r["tradingsymbol"],
+                str(r.get("name", "")),
+                r["segment"],
+                r["instrument_type"],
+                today,
+            ),
         )
     con.commit()
     print(f"  Instruments: {len(stocks)} EQ stocks + {len(benchmark)} benchmark index")
@@ -161,11 +169,12 @@ def get_symbol_status(con: sqlite3.Connection) -> dict[str, tuple[str, int]]:
 
 
 # ── Phase 1: Backfill ──────────────────────────────────────────────────────────
-def backfill(kite, tokens: dict[str, int], symbols: list[str],
-             con: sqlite3.Connection) -> None:
-    today     = date.today()
+def backfill(
+    kite, tokens: dict[str, int], symbols: list[str], con: sqlite3.Connection
+) -> None:
+    today = date.today()
     from_date = today - timedelta(days=LOOKBACK_DAYS)
-    total     = len(symbols)
+    total = len(symbols)
     print(f"\n  Phase 1 — Backfill: {total} symbols (from {from_date})...")
 
     for i, sym in enumerate(symbols, 1):
@@ -178,9 +187,20 @@ def backfill(kite, tokens: dict[str, int], symbols: list[str],
                 rows = []
                 for d in data:
                     dt = d["date"]
-                    dt_str = dt.date().isoformat() if hasattr(dt, "date") else str(dt)[:10]
-                    rows.append((sym, dt_str, d["open"], d["high"],
-                                 d["low"], d["close"], d["volume"]))
+                    dt_str = (
+                        dt.date().isoformat() if hasattr(dt, "date") else str(dt)[:10]
+                    )
+                    rows.append(
+                        (
+                            sym,
+                            dt_str,
+                            d["open"],
+                            d["high"],
+                            d["low"],
+                            d["close"],
+                            d["volume"],
+                        )
+                    )
                 con.executemany(
                     "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
                 )
@@ -192,14 +212,15 @@ def backfill(kite, tokens: dict[str, int], symbols: list[str],
             print(f"    {i}/{total}...")
         time.sleep(HIST_RATE)
 
-    print(f"  Phase 1 complete.")
+    print("  Phase 1 complete.")
 
 
 # ── Phase 2: Daily delta via quote() ──────────────────────────────────────────
-def delta_update(kite, instruments_df: pd.DataFrame,
-                 symbols: list[str], con: sqlite3.Connection) -> None:
-    today   = date.today().isoformat()
-    total   = len(symbols)
+def delta_update(
+    kite, instruments_df: pd.DataFrame, symbols: list[str], con: sqlite3.Connection
+) -> None:
+    today = date.today().isoformat()
+    total = len(symbols)
     print(f"\n  Phase 2 — Delta update via quote(): {total} symbols for {today}...")
 
     # Build "NSE:SYMBOL" strings; keep mapping back to plain symbol
@@ -208,41 +229,50 @@ def delta_update(kite, instruments_df: pd.DataFrame,
     total_batches = -(-len(ex_syms) // BATCH_SIZE)
     inserted = 0
     for i in range(0, len(ex_syms), BATCH_SIZE):
-        batch     = ex_syms[i : i + BATCH_SIZE]
+        batch = ex_syms[i : i + BATCH_SIZE]
         batch_num = i // BATCH_SIZE + 1
         for attempt in (1, 2):
             try:
                 quotes = kite.quote(batch)
                 rows = []
                 for ex_sym, q in quotes.items():
-                    sym  = ex_sym.split(":", 1)[1]        # "NSE:SBIN" -> "SBIN"
-                    ltp  = q.get("last_price", 0)
-                    if not ltp:                            # market closed / no data
+                    sym = ex_sym.split(":", 1)[1]  # "NSE:SBIN" -> "SBIN"
+                    ltp = q.get("last_price", 0)
+                    if not ltp:  # market closed / no data
                         continue
                     ohlc = q.get("ohlc", {})
-                    rows.append((
-                        sym, today,
-                        ohlc.get("open"),
-                        ohlc.get("high"),
-                        ohlc.get("low"),
-                        ltp,                               # close = LTP, NOT ohlc.close
-                        q.get("volume", 0),
-                    ))
+                    rows.append(
+                        (
+                            sym,
+                            today,
+                            ohlc.get("open"),
+                            ohlc.get("high"),
+                            ohlc.get("low"),
+                            ltp,  # close = LTP, NOT ohlc.close
+                            q.get("volume", 0),
+                        )
+                    )
                 con.executemany(
                     "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
                 )
                 con.commit()
                 inserted += len(rows)
-                print(f"    Batch {batch_num}/{total_batches}: {len(rows)} quotes inserted")
+                print(
+                    f"    Batch {batch_num}/{total_batches}: {len(rows)} quotes inserted"
+                )
                 break
             except Exception as e:
                 if attempt == 1:
-                    print(f"    WARN batch {batch_num} (attempt 1): {e} — retrying in {BATCH_RETRY_WAIT}s...",
-                          file=sys.stderr)
+                    print(
+                        f"    WARN batch {batch_num} (attempt 1): {e} — retrying in {BATCH_RETRY_WAIT}s...",
+                        file=sys.stderr,
+                    )
                     time.sleep(BATCH_RETRY_WAIT)
                 else:
-                    print(f"    WARN batch {batch_num} (attempt 2): {e} — skipping",
-                          file=sys.stderr)
+                    print(
+                        f"    WARN batch {batch_num} (attempt 2): {e} — skipping",
+                        file=sys.stderr,
+                    )
         time.sleep(BATCH_SLEEP)
 
     print(f"  Phase 2 complete: {inserted} symbols updated for {today}")
@@ -264,7 +294,7 @@ def write_manifest(con: sqlite3.Connection) -> None:
 def main() -> None:
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
-    env  = load_env(ENV_PATH)
+    env = load_env(ENV_PATH)
     kite = get_kite(env)
 
     con = sqlite3.connect(DB_PATH)
@@ -272,25 +302,30 @@ def main() -> None:
 
     # 1. Instruments
     instruments_df = refresh_instruments(kite, con)
-    all_symbols    = instruments_df["tradingsymbol"].tolist()
-    tokens: dict[str, int] = dict(zip(
-        instruments_df["tradingsymbol"],
-        instruments_df["instrument_token"].astype(int),
-    ))
+    all_symbols = instruments_df["tradingsymbol"].tolist()
+    tokens: dict[str, int] = dict(
+        zip(
+            instruments_df["tradingsymbol"],
+            instruments_df["instrument_token"].astype(int),
+        )
+    )
     print(f"  Total symbols to track: {len(all_symbols)}")
 
     # 2. Determine what each symbol needs
-    status  = get_symbol_status(con)
-    today   = date.today().isoformat()
+    status = get_symbol_status(con)
+    today = date.today().isoformat()
 
-    needs_backfill = [s for s in all_symbols
-                      if s not in status or status[s][1] < MIN_ROWS]
-    needs_delta    = [s for s in all_symbols
-                      if s in status and status[s][1] >= MIN_ROWS
-                      and status[s][0] < today]
-    up_to_date     = len(all_symbols) - len(needs_backfill) - len(needs_delta)
+    needs_backfill = [
+        s for s in all_symbols if s not in status or status[s][1] < MIN_ROWS
+    ]
+    needs_delta = [
+        s
+        for s in all_symbols
+        if s in status and status[s][1] >= MIN_ROWS and status[s][0] < today
+    ]
+    up_to_date = len(all_symbols) - len(needs_backfill) - len(needs_delta)
 
-    print(f"\n  Symbol status:")
+    print("\n  Symbol status:")
     print(f"    Needs backfill : {len(needs_backfill)}")
     print(f"    Needs delta    : {len(needs_delta)}")
     print(f"    Already today  : {up_to_date}")
@@ -304,9 +339,9 @@ def main() -> None:
     write_manifest(con)
     con.close()
 
-    total_rows = sqlite3.connect(DB_PATH).execute(
-        "SELECT COUNT(*) FROM ohlc"
-    ).fetchone()[0]
+    total_rows = (
+        sqlite3.connect(DB_PATH).execute("SELECT COUNT(*) FROM ohlc").fetchone()[0]
+    )
     print(f"\nDone. DB: {DB_PATH}  ({total_rows:,} total rows)")
 
 

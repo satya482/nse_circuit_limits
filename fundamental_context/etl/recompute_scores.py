@@ -9,10 +9,10 @@ Runs nightly after NSE RSS parse. Implements the full 4-layer formula:
 Run     : python recompute_scores.py
 Re-run  : safe — always overwrites conviction_score
 """
+
 from __future__ import annotations
 
 import os
-from datetime import date, timedelta
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -20,11 +20,11 @@ from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent / ".env"
+_ENV = _HERE.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 # Optionally compute for a single company only
@@ -124,53 +124,68 @@ def _f(v) -> float:
 def compute_conviction(company: dict, ctx: dict) -> int:
     score = 0.0
 
-    roe       = _f(company.get("roe"))
-    roce      = _f(company.get("roce"))
-    ob_ratio  = company.get("ob_ratio")
-    pledge    = company.get("pledge")
-    promoter  = _f(company.get("promoter"))
+    roe = _f(company.get("roe"))
+    roce = _f(company.get("roce"))
+    ob_ratio = company.get("ob_ratio")
+    pledge = company.get("pledge")
+    promoter = _f(company.get("promoter"))
     cash_conv = _f(company.get("cash_conv"))
-    debt_eq   = _f(company.get("debt_eq"))
-    wc_days   = company.get("wc_days")
+    debt_eq = _f(company.get("debt_eq"))
+    wc_days = company.get("wc_days")
     piotroski = company.get("piotroski")
-    int_cov   = company.get("int_cov")
-    curr_ratio= company.get("curr_ratio")
-
+    int_cov = company.get("int_cov")
     # ── Business Quality (max 35) ──────────────────────────────────────────
-    if roe  > 25:                  score += 8
-    if roce > 30:                  score += 8
-    if ob_ratio and ob_ratio > 2:  score += 10
-    if pledge is not None and pledge == 0: score += 5
-    if promoter > 50:              score += 4
+    if roe > 25:
+        score += 8
+    if roce > 30:
+        score += 8
+    if ob_ratio and ob_ratio > 2:
+        score += 10
+    if pledge is not None and pledge == 0:
+        score += 5
+    if promoter > 50:
+        score += 4
 
     # ── Earnings Quality (max 25) ──────────────────────────────────────────
     # cash_conv now populated from screener.in (FCF/PAT)
-    if cash_conv > 0.85:           score += 8
-    if _f(ctx.get("beat_streak")) >= 3: score += 7
-    if wc_days is not None and wc_days < 90: score += 5
+    if cash_conv > 0.85:
+        score += 8
+    if _f(ctx.get("beat_streak")) >= 3:
+        score += 7
+    if wc_days is not None and wc_days < 90:
+        score += 5
     # Piotroski score > 7 = strong balance sheet health across 9 criteria
-    if piotroski is not None and _f(piotroski) >= 7: score += 5
+    if piotroski is not None and _f(piotroski) >= 7:
+        score += 5
 
     # ── Thematic Alignment (max 20) ────────────────────────────────────────
-    if _f(ctx.get("theme_count")) > 0:      score += 8
-    if ctx.get("scheme_approved"):          score += 7
-    if _f(ctx.get("industry_growth")) > 15: score += 5
+    if _f(ctx.get("theme_count")) > 0:
+        score += 8
+    if ctx.get("scheme_approved"):
+        score += 7
+    if _f(ctx.get("industry_growth")) > 15:
+        score += 5
 
     # ── Catalyst Layer (max 25, decayed 20%/quarter) ───────────────────────
     catalyst_score = 0.0
     for cat in ctx.get("recent_catalysts") or []:
-        delta        = _f(cat.get("conviction_delta"))
+        delta = _f(cat.get("conviction_delta"))
         age_quarters = max(0.0, _f(cat.get("age_quarters")))
-        catalyst_score += delta * (0.8 ** age_quarters)
+        catalyst_score += delta * (0.8**age_quarters)
     score += min(25, catalyst_score)
 
     # ── Negative adjustments ──────────────────────────────────────────────
-    if pledge is not None and pledge > 0:      score -= 10
-    if ctx.get("governance_flag"):             score -= 20
-    if ob_ratio is not None and ob_ratio < 1:  score -= 8
-    if debt_eq  > 1.5:                         score -= 5
+    if pledge is not None and pledge > 0:
+        score -= 10
+    if ctx.get("governance_flag"):
+        score -= 20
+    if ob_ratio is not None and ob_ratio < 1:
+        score -= 8
+    if debt_eq > 1.5:
+        score -= 5
     # Poor debt serviceability (interest coverage < 1.5x = danger zone)
-    if int_cov is not None and _f(int_cov) < 1.5: score -= 5
+    if int_cov is not None and _f(int_cov) < 1.5:
+        score -= 5
 
     return max(0, min(100, round(score)))
 
@@ -178,7 +193,7 @@ def compute_conviction(company: dict, ctx: dict) -> int:
 # ── Main ──────────────────────────────────────────────────────────────────────
 def run(nse_code: str | None = None) -> int:
     """Recompute scores. Returns count of updated companies."""
-    driver  = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
+    driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
     updated = 0
 
     with driver.session() as session:

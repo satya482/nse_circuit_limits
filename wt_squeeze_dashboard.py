@@ -7,15 +7,18 @@ Source : wt_scans/wt_bullcross_latest.md  (wt_bullcross_scanner.py)
 Output : wt_squeeze_dashboard.html
 """
 
-import re, os, sys, json
+import re
+import os
+import sys
+import json
 from datetime import datetime, timezone, timedelta
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-IST  = timezone(timedelta(hours=5, minutes=30))
+IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
-WT_MD       = os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md")
+WT_MD = os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md")
 OUTPUT_HTML = os.path.join(BASE, "wt_squeeze_dashboard.html")
 
 _LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
@@ -36,24 +39,27 @@ def read_file(path: str) -> str:
 
 
 def _strip_md_link(s: str) -> str:
-    m = re.match(r'\[([^\]]+)\]\([^)]+\)', s)
+    m = re.match(r"\[([^\]]+)\]\([^)]+\)", s)
     return m.group(1) if m else s
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
 # Table cols: Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | Day Chg | Close | Circuit
 
+
 def parse_wt_rows(content: str) -> list[dict]:
     rows = []
-    seen: set[str] = set()  # deduplicate — squeeze stocks appear in both SQUEEZE BREAKOUT and category sections
+    seen: set[str] = (
+        set()
+    )  # deduplicate — squeeze stocks appear in both SQUEEZE BREAKOUT and category sections
     for line in content.splitlines():
         ls = line.strip()
-        if not ls.startswith('|'):
+        if not ls.startswith("|"):
             continue
-        if ls.startswith('|---') or ls.startswith('| ---'):
+        if ls.startswith("|---") or ls.startswith("| ---"):
             continue
         # preserve empty cells (Label may be empty) — use [1:-1] slice not if-strip filter
-        parts = [p.strip() for p in ls.split('|')][1:-1]
+        parts = [p.strip() for p in ls.split("|")][1:-1]
         if len(parts) < 15:
             continue
         sym = _strip_md_link(parts[0])
@@ -66,53 +72,67 @@ def parse_wt_rows(content: str) -> list[dict]:
             rank = int(parts[3])
         except ValueError:
             continue
-        rows.append({
-            "symbol":   sym,
-            "label":    parts[1],
-            "signal":   parts[2],
-            "rank":     rank,
-            "wt1":      parts[4],
-            "wt2":      parts[5],
-            "zl_dir":   parts[6],
-            "zl_days":  parts[7],
-            "zl_pct":   parts[8],
-            "squeeze":  parts[9],
-            "ppv":      parts[10],
-            "rs_state": parts[11],
-            "day_chg":  parts[12],
-            "close":    parts[13],
-            "circuit":  parts[14],
-        })
-    rows.sort(key=lambda r: (-r["rank"], float(r["wt1"]) if r["wt1"].lstrip("-").replace(".", "", 1).isdigit() else 0))
+        rows.append(
+            {
+                "symbol": sym,
+                "label": parts[1],
+                "signal": parts[2],
+                "rank": rank,
+                "wt1": parts[4],
+                "wt2": parts[5],
+                "zl_dir": parts[6],
+                "zl_days": parts[7],
+                "zl_pct": parts[8],
+                "squeeze": parts[9],
+                "ppv": parts[10],
+                "rs_state": parts[11],
+                "day_chg": parts[12],
+                "close": parts[13],
+                "circuit": parts[14],
+            }
+        )
+    rows.sort(
+        key=lambda r: (
+            -r["rank"],
+            (
+                float(r["wt1"])
+                if r["wt1"].lstrip("-").replace(".", "", 1).isdigit()
+                else 0
+            ),
+        )
+    )
     return rows
 
 
 # ── HTML helpers ──────────────────────────────────────────────────────────────
+
 
 def _tv_link(sym: str) -> str:
     return f'<a href="https://in.tradingview.com/chart/?symbol=NSE:{sym}" target="_blank" rel="noopener">{sym}</a>'
 
 
 def _chg_cls(v: str) -> str:
-    return "pos" if v.startswith('+') else ("neg" if v.startswith('-') else "")
+    return "pos" if v.startswith("+") else ("neg" if v.startswith("-") else "")
 
 
 def _rank_badge(rank: int) -> str:
     color = _RANK_COLOR.get(rank, "#6b7280")
     label = _RANK_LABEL.get(rank, str(rank))
-    return (f'<span style="background:{color};color:#fff;font-size:9px;'
-            f'padding:1px 6px;border-radius:3px;font-weight:700">{label}</span>')
+    return (
+        f'<span style="background:{color};color:#fff;font-size:9px;'
+        f'padding:1px 6px;border-radius:3px;font-weight:700">{label}</span>'
+    )
 
 
 def _wt_html_row(r: dict) -> str:
-    sym     = r["symbol"]
-    zl_cls  = "pos" if r["zl_dir"] == "↑" else "neg"
+    sym = r["symbol"]
+    zl_cls = "pos" if r["zl_dir"] == "↑" else "neg"
     sqz_cls = "sqz-on" if r["squeeze"] == "✓" else "sqz-off"
     ppv_cls = "pos" if r["ppv"] == "✓" else "mu"
-    rs_val  = r.get("rs_state", "—")
-    rs_cls  = "gld" if rs_val == "🔄" else ("pos" if rs_val == "↑" else "mu")
+    rs_val = r.get("rs_state", "—")
+    rs_cls = "gld" if rs_val == "🔄" else ("pos" if rs_val == "↑" else "mu")
     return (
-        f'<tr>'
+        f"<tr>"
         f'<td class="sym">{_tv_link(sym)}</td>'
         f'<td class="lbl">{r["label"]}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
@@ -127,13 +147,16 @@ def _wt_html_row(r: dict) -> str:
         f'<td class="{_chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'<td class="num">{r["close"]}</td>'
         f'<td class="mu">{r["circuit"]}</td>'
-        f'</tr>'
+        f"</tr>"
     )
 
 
-
 def _rows_or_empty(rows_html: list[str], cols: int, msg: str) -> str:
-    return "\n".join(rows_html) if rows_html else f'<tr><td colspan="{cols}" class="empty">{msg}</td></tr>'
+    return (
+        "\n".join(rows_html)
+        if rows_html
+        else f'<tr><td colspan="{cols}" class="empty">{msg}</td></tr>'
+    )
 
 
 def _tv_watchlist_csv(rows: list[dict]) -> str:
@@ -206,13 +229,13 @@ _TABLE_HDR = """    <thead><tr>
 
 
 def build_html(today: str, now_str: str, wt_rows: list) -> str:
-    sqz_rows   = [r for r in wt_rows if r["squeeze"] == "✓"]
+    sqz_rows = [r for r in wt_rows if r["squeeze"] == "✓"]
     other_rows = [r for r in wt_rows if r["squeeze"] != "✓"]
-    wt_html    = [_wt_html_row(r) for r in other_rows]
-    sqz_html   = [_wt_html_row(r) for r in sqz_rows]
-    n_os_plus  = sum(1 for r in wt_rows if r["rank"] >= 3)
-    n_ppv      = sum(1 for r in wt_rows if r["ppv"] == "✓")
-    n_sqz      = len(sqz_rows)
+    wt_html = [_wt_html_row(r) for r in other_rows]
+    sqz_html = [_wt_html_row(r) for r in sqz_rows]
+    n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
+    n_ppv = sum(1 for r in wt_rows if r["ppv"] == "✓")
+    n_sqz = len(sqz_rows)
 
     sqz_section = ""
     if sqz_rows:
@@ -293,7 +316,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
 
 def main():
     now_ist = datetime.now(IST)
-    today   = now_ist.strftime("%Y-%m-%d")
+    today = now_ist.strftime("%Y-%m-%d")
     now_str = now_ist.strftime("%Y-%m-%d %H:%M IST")
 
     print(f"[{now_str}] Building WaveTrend + Squeeze Dashboard...")

@@ -6,6 +6,7 @@ Writes graph_data/event_classifier.json (keyword -> theme map) for mobile Macro 
 Run     : python load_themes.py
 Re-run  : safe — idempotent via MERGE
 """
+
 from __future__ import annotations
 
 import json
@@ -17,15 +18,17 @@ from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent.parent / ".env"
+_ENV = _HERE.parent.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 # Event classifier JSON output path (served by GitHub Pages)
-EVENT_CLASSIFIER_PATH = Path(__file__).parent.parent.parent.parent / "graph_data" / "event_classifier.json"
+EVENT_CLASSIFIER_PATH = (
+    Path(__file__).parent.parent.parent.parent / "graph_data" / "event_classifier.json"
+)
 
 
 # ── Theme hierarchy ───────────────────────────────────────────────────────────
@@ -47,7 +50,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Emerging",
         "thesis": "Digital infrastructure, EV transition, speciality materials, and healthcare infrastructure — long runway, early innings.",
     },
-
     # GovernmentCapex sub-themes
     "InfraCapex": {
         "parent": "GovernmentCapex",
@@ -64,7 +66,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Growing",
         "thesis": "Transmission + renewable addition target 500 GW by 2030. T&D capex and generation build-out running in parallel.",
     },
-
     # InfraCapex sub-themes
     "Railways": {
         "parent": "InfraCapex",
@@ -81,7 +82,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Growing",
         "thesis": "Sagarmala programme + export-led growth. Mechanisation and capacity expansion driving equipment demand.",
     },
-
     # Defence sub-themes
     "Defence_Electronics": {
         "parent": "Defence",
@@ -98,7 +98,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Emerging",
         "thesis": "Maintenance, repair, overhaul for ageing fleet. Annuity-like recurring revenue once qualified. Under-tracked opportunity.",
     },
-
     # PowerCapex sub-themes
     "PowerT&D": {
         "parent": "PowerCapex",
@@ -110,7 +109,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Growing",
         "thesis": "Solar + wind + green hydrogen. Equipment manufacturers, EPC players, and balance-of-plant suppliers all benefit.",
     },
-
     # ManufacturingTailwind sub-themes
     "PLI_Electronics": {
         "parent": "ManufacturingTailwind",
@@ -132,7 +130,6 @@ THEMES: dict[str, dict] = {
         "maturity": "Emerging",
         "thesis": "India Semiconductor Mission. Early-stage but strategic. Packaging + ATMP first; fab longer-term. High geopolitical tailwind.",
     },
-
     # FutureEconomy sub-themes
     "DataCentre": {
         "parent": "FutureEconomy",
@@ -162,48 +159,48 @@ THEMES: dict[str, dict] = {
 # Add more as needed; graph traversal handles upward (Railways -> InfraCapex -> GovernmentCapex)
 SEED_BENEFITS: dict[str, list[str]] = {
     # Infrastructure / Railways
-    "WELCORP":   ["Railways", "InfraCapex"],
-    "RVNL":      ["Railways"],
-    "IRFC":      ["Railways"],
-    "BEML":      ["Railways", "Defence_Platforms"],
-    "IRCON":     ["Railways", "Roads"],
-    "NBCC":      ["InfraCapex"],
-    "GPIL":      ["InfraCapex"],
+    "WELCORP": ["Railways", "InfraCapex"],
+    "RVNL": ["Railways"],
+    "IRFC": ["Railways"],
+    "BEML": ["Railways", "Defence_Platforms"],
+    "IRCON": ["Railways", "Roads"],
+    "NBCC": ["InfraCapex"],
+    "GPIL": ["InfraCapex"],
     # Defence — platforms & systems (mid-cap; BEL/HAL exceed MCap ceiling)
-    "GRSE":      ["Defence_Platforms"],        # frigates, patrol vessels
-    "COCHINSHIP":["Defence_Platforms"],        # naval shipbuilding
-    "MIDHANI":   ["Defence_Platforms"],        # superalloys for aero/defence
-    "MTARTECH":  ["Defence_Platforms", "Defence_Electronics"],  # precision for ISRO/DRDO
-    "PARAS":     ["Defence_Electronics"],      # optics, night vision
-    "DATAPATTNS":["Defence_Electronics"],      # defence electronics subsystems
-    "IDEAFORGE": ["Defence_Electronics"],      # tactical drones
-    "ASTRALDTX": ["Defence_Electronics"],      # radars, EW
+    "GRSE": ["Defence_Platforms"],  # frigates, patrol vessels
+    "COCHINSHIP": ["Defence_Platforms"],  # naval shipbuilding
+    "MIDHANI": ["Defence_Platforms"],  # superalloys for aero/defence
+    "MTARTECH": ["Defence_Platforms", "Defence_Electronics"],  # precision for ISRO/DRDO
+    "PARAS": ["Defence_Electronics"],  # optics, night vision
+    "DATAPATTNS": ["Defence_Electronics"],  # defence electronics subsystems
+    "IDEAFORGE": ["Defence_Electronics"],  # tactical drones
+    "ASTRALDTX": ["Defence_Electronics"],  # radars, EW
     # Defence — electronics & cables
-    "STLTECH":   ["Defence_Electronics", "Railways"],
-    "HFCL":      ["Defence_Electronics", "Railways"],
-    "KAYNES":    ["Defence_Electronics", "PLI_Electronics"],
+    "STLTECH": ["Defence_Electronics", "Railways"],
+    "HFCL": ["Defence_Electronics", "Railways"],
+    "KAYNES": ["Defence_Electronics", "PLI_Electronics"],
     # Power
-    "HBLPOWER":  ["PowerT&D", "DataCentre"],
-    "KALPATPOWR":["PowerT&D", "RenewableEnergy"],
-    "POLYCAB":   ["PowerT&D", "DataCentre"],
-    "KEI":       ["PowerT&D"],
+    "HBLPOWER": ["PowerT&D", "DataCentre"],
+    "KALPATPOWR": ["PowerT&D", "RenewableEnergy"],
+    "POLYCAB": ["PowerT&D", "DataCentre"],
+    "KEI": ["PowerT&D"],
     "TATAPOWER": ["RenewableEnergy", "PowerCapex"],
-    "INOXWIND":  ["RenewableEnergy"],
-    "WAAREEENER":["RenewableEnergy"],
-    "CESC":      ["PowerCapex"],
+    "INOXWIND": ["RenewableEnergy"],
+    "WAAREEENER": ["RenewableEnergy"],
+    "CESC": ["PowerCapex"],
     # Manufacturing / PLI
-    "DIXON":     ["PLI_Electronics"],
-    "KAYNESTECH":["PLI_Electronics"],
-    "APARINDS":  ["EV_Components"],
+    "DIXON": ["PLI_Electronics"],
+    "KAYNESTECH": ["PLI_Electronics"],
+    "APARINDS": ["EV_Components"],
     "MOTHERSON": ["EV_Components"],
-    "MNRE":      ["EV_Components"],
-    "AARTIIND":  ["SpecialtyChemicals", "PLI_Chemicals"],
-    "DEEPAKFERT":["SpecialtyChemicals"],
-    "TATACHEM":  ["PLI_Chemicals"],
+    "MNRE": ["EV_Components"],
+    "AARTIIND": ["SpecialtyChemicals", "PLI_Chemicals"],
+    "DEEPAKFERT": ["SpecialtyChemicals"],
+    "TATACHEM": ["PLI_Chemicals"],
     # Future economy
-    "LALPATHLAB":["Hospitals_HealthcareInfra"],
-    "APOLLOHOSP":["Hospitals_HealthcareInfra"],
-    "YATHARTH":  ["Hospitals_HealthcareInfra"],
+    "LALPATHLAB": ["Hospitals_HealthcareInfra"],
+    "APOLLOHOSP": ["Hospitals_HealthcareInfra"],
+    "YATHARTH": ["Hospitals_HealthcareInfra"],
 }
 
 
@@ -235,7 +232,9 @@ MERGE (c)-[r:BENEFITS_FROM]->(t)
 def load_themes(session) -> int:
     """Create Theme nodes and SUBTHEME_OF edges. Returns count of themes loaded."""
     for name, meta in THEMES.items():
-        session.run(_MERGE_THEME, name=name, maturity=meta["maturity"], thesis=meta["thesis"])
+        session.run(
+            _MERGE_THEME, name=name, maturity=meta["maturity"], thesis=meta["thesis"]
+        )
         print(f"[GRAPH] Theme MERGE | Theme | {name} | ok")
 
     for name, meta in THEMES.items():
@@ -263,73 +262,73 @@ def load_benefits(session) -> int:
 def write_event_classifier() -> None:
     """Write keyword -> theme mapping JSON for mobile Macro Simulator."""
     classifier: dict[str, list[str]] = {
-        "railway":              ["Railways"],
-        "railways":             ["Railways"],
-        "train":                ["Railways"],
-        "rvnl":                 ["Railways"],
-        "irfc":                 ["Railways"],
-        "dedicated freight":    ["Railways"],
-        "vande bharat":         ["Railways"],
-        "nhai":                 ["Roads"],
-        "highway":              ["Roads"],
-        "road":                 ["Roads"],
-        "port":                 ["Ports"],
-        "sagarmala":            ["Ports"],
-        "defence":              ["Defence"],
-        "defense":              ["Defence"],
-        "drdo":                 ["Defence", "Defence_Electronics"],
-        "dpp":                  ["Defence"],
-        "dac":                  ["Defence"],
-        "atmanirbhar":          ["Defence", "ManufacturingTailwind"],
-        "missile":              ["Defence_Platforms"],
-        "aircraft":             ["Defence_Platforms"],
-        "warship":              ["Defence_Platforms"],
-        "radar":                ["Defence_Electronics"],
-        "avionics":             ["Defence_Electronics"],
-        "mro":                  ["Defence_MRO"],
-        "maintenance repair":   ["Defence_MRO"],
-        "power":                ["PowerT&D", "RenewableEnergy"],
-        "transmission":         ["PowerT&D"],
-        "substation":           ["PowerT&D"],
-        "smart meter":          ["PowerT&D"],
-        "cable":                ["PowerT&D"],
-        "solar":                ["RenewableEnergy"],
-        "wind":                 ["RenewableEnergy"],
-        "green hydrogen":       ["RenewableEnergy"],
-        "renewable":            ["RenewableEnergy"],
-        "nuclear":              ["PowerCapex"],
-        "pli":                  ["PLI_Electronics", "PLI_Chemicals"],
-        "production linked":    ["PLI_Electronics", "PLI_Chemicals"],
-        "semiconductor":        ["Semiconductor"],
-        "chip":                 ["Semiconductor"],
-        "fab":                  ["Semiconductor"],
-        "atmp":                 ["Semiconductor"],
-        "data centre":          ["DataCentre"],
-        "data center":          ["DataCentre"],
-        "ai":                   ["DataCentre"],
-        "cloud":                ["DataCentre"],
-        "ev":                   ["EV_Components"],
-        "electric vehicle":     ["EV_Components"],
-        "battery":              ["EV_Components"],
-        "charging":             ["EV_Components"],
-        "specialty chemical":   ["SpecialtyChemicals"],
-        "speciality chemical":  ["SpecialtyChemicals"],
-        "agrochemical":         ["SpecialtyChemicals", "PLI_Chemicals"],
-        "pharma":               ["PLI_Chemicals"],
-        "crams":                ["PLI_Chemicals", "SpecialtyChemicals"],
-        "china+1":              ["China+1_Textiles", "PLI_Chemicals"],
-        "china plus":           ["China+1_Textiles", "ManufacturingTailwind"],
-        "textile":              ["China+1_Textiles"],
-        "hospital":             ["Hospitals_HealthcareInfra"],
-        "healthcare":           ["Hospitals_HealthcareInfra"],
-        "medical":              ["Hospitals_HealthcareInfra"],
-        "ems":                  ["PLI_Electronics"],
-        "electronics":          ["PLI_Electronics"],
-        "capex":                ["InfraCapex", "GovernmentCapex"],
-        "infrastructure":       ["InfraCapex"],
-        "infra":                ["InfraCapex"],
-        "budget":               ["GovernmentCapex"],
-        "government":           ["GovernmentCapex"],
+        "railway": ["Railways"],
+        "railways": ["Railways"],
+        "train": ["Railways"],
+        "rvnl": ["Railways"],
+        "irfc": ["Railways"],
+        "dedicated freight": ["Railways"],
+        "vande bharat": ["Railways"],
+        "nhai": ["Roads"],
+        "highway": ["Roads"],
+        "road": ["Roads"],
+        "port": ["Ports"],
+        "sagarmala": ["Ports"],
+        "defence": ["Defence"],
+        "defense": ["Defence"],
+        "drdo": ["Defence", "Defence_Electronics"],
+        "dpp": ["Defence"],
+        "dac": ["Defence"],
+        "atmanirbhar": ["Defence", "ManufacturingTailwind"],
+        "missile": ["Defence_Platforms"],
+        "aircraft": ["Defence_Platforms"],
+        "warship": ["Defence_Platforms"],
+        "radar": ["Defence_Electronics"],
+        "avionics": ["Defence_Electronics"],
+        "mro": ["Defence_MRO"],
+        "maintenance repair": ["Defence_MRO"],
+        "power": ["PowerT&D", "RenewableEnergy"],
+        "transmission": ["PowerT&D"],
+        "substation": ["PowerT&D"],
+        "smart meter": ["PowerT&D"],
+        "cable": ["PowerT&D"],
+        "solar": ["RenewableEnergy"],
+        "wind": ["RenewableEnergy"],
+        "green hydrogen": ["RenewableEnergy"],
+        "renewable": ["RenewableEnergy"],
+        "nuclear": ["PowerCapex"],
+        "pli": ["PLI_Electronics", "PLI_Chemicals"],
+        "production linked": ["PLI_Electronics", "PLI_Chemicals"],
+        "semiconductor": ["Semiconductor"],
+        "chip": ["Semiconductor"],
+        "fab": ["Semiconductor"],
+        "atmp": ["Semiconductor"],
+        "data centre": ["DataCentre"],
+        "data center": ["DataCentre"],
+        "ai": ["DataCentre"],
+        "cloud": ["DataCentre"],
+        "ev": ["EV_Components"],
+        "electric vehicle": ["EV_Components"],
+        "battery": ["EV_Components"],
+        "charging": ["EV_Components"],
+        "specialty chemical": ["SpecialtyChemicals"],
+        "speciality chemical": ["SpecialtyChemicals"],
+        "agrochemical": ["SpecialtyChemicals", "PLI_Chemicals"],
+        "pharma": ["PLI_Chemicals"],
+        "crams": ["PLI_Chemicals", "SpecialtyChemicals"],
+        "china+1": ["China+1_Textiles", "PLI_Chemicals"],
+        "china plus": ["China+1_Textiles", "ManufacturingTailwind"],
+        "textile": ["China+1_Textiles"],
+        "hospital": ["Hospitals_HealthcareInfra"],
+        "healthcare": ["Hospitals_HealthcareInfra"],
+        "medical": ["Hospitals_HealthcareInfra"],
+        "ems": ["PLI_Electronics"],
+        "electronics": ["PLI_Electronics"],
+        "capex": ["InfraCapex", "GovernmentCapex"],
+        "infrastructure": ["InfraCapex"],
+        "infra": ["InfraCapex"],
+        "budget": ["GovernmentCapex"],
+        "government": ["GovernmentCapex"],
     }
 
     EVENT_CLASSIFIER_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -341,7 +340,7 @@ def write_event_classifier() -> None:
 def main() -> None:
     driver = GraphDatabase.driver(NEO4J_URI, auth=(NEO4J_USER, NEO4J_PASS))
     with driver.session() as session:
-        n_themes   = load_themes(session)
+        n_themes = load_themes(session)
         n_benefits = load_benefits(session)
     driver.close()
 

@@ -22,46 +22,61 @@ Data source: .ohlc_data/market.db  (populated by fetch_data.py)
 Output:      ema25_zl_scans/ema25_zl_scans.md
 """
 
-import sys, os, csv, json
+import sys
+import os
+import csv
+import json
 from datetime import datetime
 
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc, DB_PATH
+from ohlc_db import load_ohlc
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REPO_DIR    = os.path.dirname(os.path.abspath(__file__))
-SCANS_DIR   = os.path.join(REPO_DIR, "ema25_zl_scans")
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
+SCANS_DIR = os.path.join(REPO_DIR, "ema25_zl_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
-_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
-TODAY       = datetime.now().strftime("%Y-%m-%d")
-MD_FILE     = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
+_LABELS: dict = (
+    json.loads(open(_LABELS_FILE, encoding="utf-8").read())
+    if os.path.exists(_LABELS_FILE)
+    else {}
+)
+TODAY = datetime.now().strftime("%Y-%m-%d")
+MD_FILE = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
-MC_LOW      = 1_000     * 1_00_00_000   # 1000 Cr  = 10B INR
-MC_HIGH     = 1_00_000  * 1_00_00_000   # 1L Cr    = 1T INR
-ZL_TURN_CAP          = 60
-FILTER_1W_CHANGE     = False   # True = require 1-week price change > 5%
-FILTER_PRICE_EMA25   = False   # True = require price > EMA25 (off by default: squeeze builds before reclaim)
-RS_MODE              = "daily_ema21"  # "daily_ema21" | "weekly_ema9"
+MC_LOW = 1_000 * 1_00_00_000  # 1000 Cr  = 10B INR
+MC_HIGH = 1_00_000 * 1_00_00_000  # 1L Cr    = 1T INR
+ZL_TURN_CAP = 60
+FILTER_1W_CHANGE = False  # True = require 1-week price change > 5%
+FILTER_PRICE_EMA25 = False  # True = require price > EMA25 (off by default: squeeze builds before reclaim)
+RS_MODE = "daily_ema21"  # "daily_ema21" | "weekly_ema9"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
 def ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
 
+
 def zlema(s: pd.Series, n: int) -> pd.Series:
     e = ema(s, n)
     return 2 * e - ema(e, n)
 
-def _atr_wilder(high: pd.Series, low: pd.Series, close: pd.Series, period: int) -> pd.Series:
-    tr = pd.concat([
-        high - low,
-        (high - close.shift(1)).abs(),
-        (low  - close.shift(1)).abs(),
-    ], axis=1).max(axis=1)
+
+def _atr_wilder(
+    high: pd.Series, low: pd.Series, close: pd.Series, period: int
+) -> pd.Series:
+    tr = pd.concat(
+        [
+            high - low,
+            (high - close.shift(1)).abs(),
+            (low - close.shift(1)).abs(),
+        ],
+        axis=1,
+    ).max(axis=1)
     return tr.ewm(span=period, adjust=False).mean()
+
 
 def bb_kc_squeeze(df: pd.DataFrame, kc_atr_wilder: bool = False) -> bool:
     """True if BB(20,2.0,SMA) is fully inside KC(20,1.5,SMA ATR) on the last bar.
@@ -73,26 +88,36 @@ def bb_kc_squeeze(df: pd.DataFrame, kc_atr_wilder: bool = False) -> bool:
     l = df["low"].astype(float)
 
     bb_basis = c.rolling(20).mean()
-    bb_std   = c.rolling(20).std()
+    bb_std = c.rolling(20).std()
     bb_upper = bb_basis + 2.0 * bb_std
     bb_lower = bb_basis - 2.0 * bb_std
 
     kc_basis = c.rolling(20).mean()
-    kc_atr   = _atr_wilder(h, l, c, 20) if kc_atr_wilder else (
-        pd.concat([h-l, (h-c.shift(1)).abs(), (l-c.shift(1)).abs()], axis=1).max(axis=1).rolling(20).mean()
+    kc_atr = (
+        _atr_wilder(h, l, c, 20)
+        if kc_atr_wilder
+        else (
+            pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1)
+            .max(axis=1)
+            .rolling(20)
+            .mean()
+        )
     )
     kc_upper = kc_basis + 1.5 * kc_atr
     kc_lower = kc_basis - 1.5 * kc_atr
 
-    return bool(bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1])
+    return bool(
+        bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1]
+    )
+
 
 def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
-    n     = len(zl25)
+    n = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i + 1
-            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            pct = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
@@ -124,11 +149,17 @@ def get_watchlist() -> list[str]:
 
 
 # ── Circuit limits ─────────────────────────────────────────────────────────────
-_CIRCUIT_EMOJI = {("20","10"): "🟨", ("10","5"): "🟥", ("5","10"): "🟩", ("10","20"): "🟦"}
+_CIRCUIT_EMOJI = {
+    ("20", "10"): "🟨",
+    ("10", "5"): "🟥",
+    ("5", "10"): "🟩",
+    ("10", "20"): "🟦",
+}
 _NSE_CSV_PATHS = [
     os.path.join(REPO_DIR, "nse.csv"),
     r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv",
 ]
+
 
 def get_circuit_limits() -> dict[str, tuple[str, str]]:
     nse_csv = next((p for p in _NSE_CSV_PATHS if os.path.exists(p)), None)
@@ -143,7 +174,7 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
                 sym = row.get("SYMBOL", "")
                 dte = row.get("EFFECTIVE DATE", "")
                 frm = row.get("FROM", "")
-                to  = row.get("TO",   "")
+                to = row.get("TO", "")
                 if not sym or not dte:
                     continue
                 try:
@@ -164,14 +195,16 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 def _rs_gate(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
     """Return True if the stock passes the active RS filter (RS_MODE)."""
     if RS_MODE == "weekly_ema9":
-        weekly_c   = c_rs.resample("W").last().dropna()
+        weekly_c = c_rs.resample("W").last().dropna()
         weekly_idx = idx_rs.resample("W").last().dropna()
-        wk_common  = weekly_c.index.intersection(weekly_idx.index)
+        wk_common = weekly_c.index.intersection(weekly_idx.index)
         if len(wk_common) < 12:
             return False
-        wk_rs    = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
+        wk_rs = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
         wk_rs_e9 = ema(wk_rs, 9)
-        return bool(rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2])
+        return bool(
+            rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]
+        )
     else:  # daily_ema21
         if len(rs) < 22:
             return False
@@ -195,31 +228,31 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if len(common) < 30:
             return None
 
-        c_rs   = c.loc[common]
+        c_rs = c.loc[common]
         idx_rs = index_s.loc[common]
-        rs     = (c_rs / idx_rs) * 1000
+        rs = (c_rs / idx_rs) * 1000
 
         if not _rs_gate(rs, c_rs, idx_rs):
             return None
 
         # ZLEMA25
-        zl25      = zlema(c, 25)
+        zl25 = zlema(c, 25)
         zl_rising = zl25.iloc[-1] > zl25.iloc[-2]
 
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
-        day_chg    = (curr_close - prev_close) / prev_close * 100
+        day_chg = (curr_close - prev_close) / prev_close * 100
 
         zl_days, zl_pct = zl25_turn_stats(zl25, c)
 
         return {
-            "symbol":    symbol,
-            "close":     curr_close,
-            "day_chg":   day_chg,
+            "symbol": symbol,
+            "close": curr_close,
+            "day_chg": day_chg,
             "zl_rising": zl_rising,
-            "zl_days":   zl_days,
-            "zl_pct":    zl_pct,
-            "squeeze":   bb_kc_squeeze(raw),
+            "zl_days": zl_days,
+            "zl_pct": zl_pct,
+            "squeeze": bb_kc_squeeze(raw),
         }
     except Exception:
         return None
@@ -256,11 +289,13 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
     rows = []
     for f in findings:
         cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv     = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
-        zl_d   = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-        zl_p   = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        ds     = "+" if f["day_chg"] >= 0 else ""
-        sqz    = "✓" if f.get("squeeze") else "—"
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        zl_d = (
+            f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        )
+        zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        ds = "+" if f["day_chg"] >= 0 else ""
+        sqz = "✓" if f.get("squeeze") else "—"
         lbl = _LABELS.get(f["symbol"], "")
         rows.append(
             f"| [{f['symbol']}]({tv}) "
@@ -276,8 +311,10 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
 
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    rising = sorted([f for f in findings if     f["zl_rising"]], key=lambda x: x["zl_days"])
-    watch  = sorted([f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"])
+    rising = sorted([f for f in findings if f["zl_rising"]], key=lambda x: x["zl_days"])
+    watch = sorted(
+        [f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"]
+    )
 
     hdr = [
         "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |",
@@ -309,8 +346,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
 
 # ── Console output ─────────────────────────────────────────────────────────────
 def print_results(findings: list[dict]) -> None:
-    rising = [f for f in findings if     f["zl_rising"]]
-    watch  = [f for f in findings if not f["zl_rising"]]
+    rising = [f for f in findings if f["zl_rising"]]
+    watch = [f for f in findings if not f["zl_rising"]]
 
     print(f"\n{'='*70}")
     print(f"  NSE EMA25 ZL Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
@@ -320,17 +357,25 @@ def print_results(findings: list[dict]) -> None:
     if rising:
         print("\n  ── ZLEMA25 Rising (top 15 by ZL Chg%) ──")
         for f in rising[:15]:
-            ds  = "+" if f["day_chg"] >= 0 else ""
-            zp  = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-            zd  = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-            print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  day:{ds}{f['day_chg']:.1f}%  zl:{zd} {zp}")
+            ds = "+" if f["day_chg"] >= 0 else ""
+            zp = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+            zd = (
+                f"{f['zl_days']}d+"
+                if f["zl_days"] >= ZL_TURN_CAP
+                else f"{f['zl_days']}d"
+            )
+            print(
+                f"  {f['symbol']:<18}  {f['close']:>9.2f}  day:{ds}{f['day_chg']:.1f}%  zl:{zd} {zp}"
+            )
 
     if watch:
         print(f"\n  ── ZLEMA25 Watch ({len(watch)} stocks) ──")
         for f in watch[:10]:
             ds = "+" if f["day_chg"] >= 0 else ""
             zp = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-            print(f"  {f['symbol']:<18}  {f['close']:>9.2f}  day:{ds}{f['day_chg']:.1f}%  zl:{f['zl_days']}d {zp}")
+            print(
+                f"  {f['symbol']:<18}  {f['close']:>9.2f}  day:{ds}{f['day_chg']:.1f}%  zl:{f['zl_days']}d {zp}"
+            )
     print()
 
 
@@ -346,7 +391,9 @@ def main():
     bm_raw = bm_raw.set_index("date")
     bm_raw.index = pd.to_datetime(bm_raw.index)
     index_s = bm_raw["close"].astype(float)
-    print(f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})")
+    print(
+        f"  Index data: {len(index_s)} days  (latest: {index_s.index[-1].date()}  {index_s.iloc[-1]:.2f})"
+    )
 
     print("\nFetching NSE circuit limits...")
     circuit = get_circuit_limits()

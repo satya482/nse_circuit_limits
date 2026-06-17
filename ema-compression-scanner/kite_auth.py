@@ -5,15 +5,17 @@ Automates browser login using TOTP and updates .env with the new access token.
 Run once daily before any scanner — scheduled at 8:00 AM Mon-Fri.
 """
 
-import os, sys, requests, pyotp
+import sys
+import requests
+import pyotp
 from urllib.parse import urlparse, parse_qs
 from kiteconnect import KiteConnect
 from pathlib import Path
 from datetime import datetime, timedelta
 
-ENV_FILE       = Path(__file__).parent / ".env"
-TOKEN_STAMP    = Path(__file__).parent / ".kite_token_stamp"
-TOKEN_MAX_AGE  = timedelta(hours=16)   # refreshed ~4 PM, valid until 8 AM next day
+ENV_FILE = Path(__file__).parent / ".env"
+TOKEN_STAMP = Path(__file__).parent / ".kite_token_stamp"
+TOKEN_MAX_AGE = timedelta(hours=16)  # refreshed ~4 PM, valid until 8 AM next day
 
 
 def load_env() -> dict:
@@ -41,8 +43,10 @@ def fetch_access_token(api_key, api_secret, user_id, password, totp_secret) -> s
     s.headers.update({"X-Kite-Version": "3"})
 
     # Step 1: password login
-    r = s.post("https://kite.zerodha.com/api/login",
-               data={"user_id": user_id, "password": password})
+    r = s.post(
+        "https://kite.zerodha.com/api/login",
+        data={"user_id": user_id, "password": password},
+    )
     r.raise_for_status()
     body = r.json()
     if body.get("status") != "success":
@@ -51,17 +55,25 @@ def fetch_access_token(api_key, api_secret, user_id, password, totp_secret) -> s
 
     # Step 2: TOTP
     otp = pyotp.TOTP(totp_secret).now()
-    r = s.post("https://kite.zerodha.com/api/twofa",
-               data={"user_id": user_id, "request_id": request_id,
-                     "twofa_value": otp, "twofa_type": "totp"})
+    r = s.post(
+        "https://kite.zerodha.com/api/twofa",
+        data={
+            "user_id": user_id,
+            "request_id": request_id,
+            "twofa_value": otp,
+            "twofa_type": "totp",
+        },
+    )
     r.raise_for_status()
     body = r.json()
     if body.get("status") != "success":
         raise RuntimeError(f"TOTP failed: {body}")
 
     # Step 3: follow Kite's internal redirects, stop at the localhost callback
-    r = s.get(f"https://kite.zerodha.com/connect/login?api_key={api_key}&v=3",
-              allow_redirects=False)
+    r = s.get(
+        f"https://kite.zerodha.com/connect/login?api_key={api_key}&v=3",
+        allow_redirects=False,
+    )
     location = r.headers.get("Location", "")
     while r.status_code in (301, 302, 303, 307, 308):
         if not location:
@@ -114,11 +126,11 @@ def main():
     env = load_env()
     try:
         token = fetch_access_token(
-            api_key     = env["KITE_API_KEY"],
-            api_secret  = env["KITE_API_SECRET"],
-            user_id     = env["KITE_USER_ID"],
-            password    = env["KITE_PASSWORD"],
-            totp_secret = env["KITE_TOTP_SECRET"],
+            api_key=env["KITE_API_KEY"],
+            api_secret=env["KITE_API_SECRET"],
+            user_id=env["KITE_USER_ID"],
+            password=env["KITE_PASSWORD"],
+            totp_secret=env["KITE_TOTP_SECRET"],
         )
         update_env_token(token)
         TOKEN_STAMP.write_text(datetime.now().isoformat(timespec="seconds"))

@@ -16,6 +16,7 @@ Source file : data/NSE_UNIVERSE_screener_in_fundamentals.csv
 Run         : python load_screener.py
 Re-run      : safe — MERGE overwrites properties idempotently
 """
+
 from __future__ import annotations
 
 import os
@@ -27,29 +28,29 @@ from neo4j import GraphDatabase
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE.parent.parent / ".env"
+_ENV = _HERE.parent.parent / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 DATA_FILE = _HERE.parent.parent / "data" / "NSE_UNIVERSE_screener_in_fundamentals.csv"
 
 # ── Column map: screener.in header -> internal name ───────────────────────────
 _COL = {
-    "NSE Code":                     "nse_code",
+    "NSE Code": "nse_code",
     "Average return on equity 3Years": "roe_3yr_avg",
-    "Return on capital employed":   "roce_current",
-    "Sales growth 3Years":          "revenue_cagr_3yr",
-    "Profit growth 3Years":         "pat_cagr_3yr",
-    "Piotroski score":              "piotroski_score",
-    "Interest Coverage Ratio":      "interest_coverage",
-    "EVEBITDA":                     "ev_ebitda_current",
-    "Current ratio":                "current_ratio",
-    "Market Capitalization":        "mcap_scr",     # interim, used to derive FCF
-    "Price to Free Cash Flow":      "p_to_fcf",     # interim, used to derive FCF
-    "Profit after tax":             "pat_annual",   # interim, used to derive FCF
+    "Return on capital employed": "roce_current",
+    "Sales growth 3Years": "revenue_cagr_3yr",
+    "Profit growth 3Years": "pat_cagr_3yr",
+    "Piotroski score": "piotroski_score",
+    "Interest Coverage Ratio": "interest_coverage",
+    "EVEBITDA": "ev_ebitda_current",
+    "Current ratio": "current_ratio",
+    "Market Capitalization": "mcap_scr",  # interim, used to derive FCF
+    "Price to Free Cash Flow": "p_to_fcf",  # interim, used to derive FCF
+    "Profit after tax": "pat_annual",  # interim, used to derive FCF
 }
 
 # ── Cypher ────────────────────────────────────────────────────────────────────
@@ -72,12 +73,14 @@ def _f(val) -> float | None:
     """Convert to float, returning None for NaN/inf."""
     try:
         v = float(val)
-        return None if (v != v or abs(v) > 1e12) else v   # NaN check
+        return None if (v != v or abs(v) > 1e12) else v  # NaN check
     except (TypeError, ValueError):
         return None
 
 
-def _cash_conv(mcap: float | None, p_to_fcf: float | None, pat: float | None) -> float | None:
+def _cash_conv(
+    mcap: float | None, p_to_fcf: float | None, pat: float | None
+) -> float | None:
     """Derive cash_conversion_ratio = FCF / PAT. Clipped to [-3, 3]."""
     if mcap is None or p_to_fcf is None or pat is None:
         return None
@@ -102,32 +105,32 @@ def load(session) -> int:
             skipped += 1
             continue
 
-        roe_3yr     = _f(row.get("Average return on equity 3Years"))
-        roce_cur    = _f(row.get("Return on capital employed"))
-        rev_cagr    = _f(row.get("Sales growth 3Years"))
-        pat_cagr    = _f(row.get("Profit growth 3Years"))
-        piotroski   = _f(row.get("Piotroski score"))
-        int_cov     = _f(row.get("Interest Coverage Ratio"))
-        ev_ebitda   = _f(row.get("EVEBITDA"))
-        curr_ratio  = _f(row.get("Current ratio"))
+        roe_3yr = _f(row.get("Average return on equity 3Years"))
+        roce_cur = _f(row.get("Return on capital employed"))
+        rev_cagr = _f(row.get("Sales growth 3Years"))
+        pat_cagr = _f(row.get("Profit growth 3Years"))
+        piotroski = _f(row.get("Piotroski score"))
+        int_cov = _f(row.get("Interest Coverage Ratio"))
+        ev_ebitda = _f(row.get("EVEBITDA"))
+        curr_ratio = _f(row.get("Current ratio"))
 
-        mcap        = _f(row.get("Market Capitalization"))
-        p_to_fcf    = _f(row.get("Price to Free Cash Flow"))
-        pat_annual  = _f(row.get("Profit after tax"))
-        cash_conv   = _cash_conv(mcap, p_to_fcf, pat_annual)
+        mcap = _f(row.get("Market Capitalization"))
+        p_to_fcf = _f(row.get("Price to Free Cash Flow"))
+        pat_annual = _f(row.get("Profit after tax"))
+        cash_conv = _cash_conv(mcap, p_to_fcf, pat_annual)
 
         result = session.run(
             _MERGE_SCREENER,
-            nse_code          = nse_code,
-            roe_3yr_avg       = roe_3yr,
-            roce_current      = roce_cur,
-            revenue_cagr_3yr  = rev_cagr,
-            pat_cagr_3yr      = pat_cagr,
-            piotroski_score   = piotroski,
-            interest_coverage = int_cov,
-            ev_ebitda_current = ev_ebitda,
-            current_ratio     = curr_ratio,
-            cash_conv         = cash_conv,
+            nse_code=nse_code,
+            roe_3yr_avg=roe_3yr,
+            roce_current=roce_cur,
+            revenue_cagr_3yr=rev_cagr,
+            pat_cagr_3yr=pat_cagr,
+            piotroski_score=piotroski,
+            interest_coverage=int_cov,
+            ev_ebitda_current=ev_ebitda,
+            current_ratio=curr_ratio,
+            cash_conv=cash_conv,
         )
         props = result.consume().counters.properties_set
         if props > 0:

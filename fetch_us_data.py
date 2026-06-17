@@ -29,17 +29,17 @@ from tradingview_screener import Query, col
 sys.stdout.reconfigure(encoding="utf-8")
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
-REPO_DIR      = Path(__file__).parent
-DB_PATH       = REPO_DIR / ".us_ohlc_data" / "us_market.db"
+REPO_DIR = Path(__file__).parent
+DB_PATH = REPO_DIR / ".us_ohlc_data" / "us_market.db"
 MANIFEST_PATH = REPO_DIR / "us_data_manifest.csv"
 
 # ── Config ─────────────────────────────────────────────────────────────────────
-BENCHMARK_SYM  = "SPY"
-MIN_ROWS       = 200          # symbols below this trigger a 2y backfill
-BATCH_SIZE     = 100          # tickers per yf.download() call
-BATCH_SLEEP    = 2            # seconds between batches
-MC_LOW         = 300_000_000  # $300M
-MC_HIGH        = 10_000_000_000  # $10B
+BENCHMARK_SYM = "SPY"
+MIN_ROWS = 200  # symbols below this trigger a 2y backfill
+BATCH_SIZE = 100  # tickers per yf.download() call
+BATCH_SLEEP = 2  # seconds between batches
+MC_LOW = 300_000_000  # $300M
+MC_HIGH = 10_000_000_000  # $10B
 
 # ── Schema ─────────────────────────────────────────────────────────────────────
 _SCHEMA = """
@@ -134,12 +134,18 @@ def get_symbol_status(con: sqlite3.Connection) -> dict[str, tuple[str, int]]:
 
 def _upsert(con: sqlite3.Connection, symbol: str, df: pd.DataFrame) -> int:
     rows = [
-        (symbol, str(dt.date()), row.open, row.high, row.low, row.close, int(row.volume))
+        (
+            symbol,
+            str(dt.date()),
+            row.open,
+            row.high,
+            row.low,
+            row.close,
+            int(row.volume),
+        )
         for dt, row in df.iterrows()
     ]
-    con.executemany(
-        "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
-    )
+    con.executemany("INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows)
     con.commit()
     return len(rows)
 
@@ -150,7 +156,7 @@ def backfill(symbols: list[str], con: sqlite3.Connection) -> None:
     print(f"\n  Phase 1 — Backfill: {total} symbols (period=2y)...")
     inserted = 0
     for batch_start in range(0, total, BATCH_SIZE):
-        batch = symbols[batch_start: batch_start + BATCH_SIZE]
+        batch = symbols[batch_start : batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
         n_batches = (total + BATCH_SIZE - 1) // BATCH_SIZE
         print(f"    Batch {batch_num}/{n_batches} ({len(batch)} tickers)...")
@@ -163,12 +169,11 @@ def backfill(symbols: list[str], con: sqlite3.Connection) -> None:
 
 # ── Phase 2: Delta ─────────────────────────────────────────────────────────────
 def delta_update(symbols: list[str], con: sqlite3.Connection) -> None:
-    today = date.today().isoformat()
     total = len(symbols)
     print(f"\n  Phase 2 — Delta: {total} symbols (period=5d)...")
     updated = 0
     for batch_start in range(0, total, BATCH_SIZE):
-        batch = symbols[batch_start: batch_start + BATCH_SIZE]
+        batch = symbols[batch_start : batch_start + BATCH_SIZE]
         batch_num = batch_start // BATCH_SIZE + 1
         n_batches = (total + BATCH_SIZE - 1) // BATCH_SIZE
         data = _download_batch(batch, period="5d")
@@ -210,19 +215,24 @@ def main() -> None:
 
     # 1. Build universe (TV screener + SPY)
     tv_symbols = get_tv_universe()
-    all_symbols = list(dict.fromkeys([BENCHMARK_SYM] + tv_symbols))  # SPY first, deduped
+    all_symbols = list(
+        dict.fromkeys([BENCHMARK_SYM] + tv_symbols)
+    )  # SPY first, deduped
     print(f"  Total symbols to track: {len(all_symbols)}  (incl. {BENCHMARK_SYM})")
 
     # 2. Classify each symbol
     status = get_symbol_status(con)
-    needs_backfill = [s for s in all_symbols
-                      if s not in status or status[s][1] < MIN_ROWS]
-    needs_delta    = [s for s in all_symbols
-                      if s in status and status[s][1] >= MIN_ROWS
-                      and status[s][0] < today]
-    up_to_date     = len(all_symbols) - len(needs_backfill) - len(needs_delta)
+    needs_backfill = [
+        s for s in all_symbols if s not in status or status[s][1] < MIN_ROWS
+    ]
+    needs_delta = [
+        s
+        for s in all_symbols
+        if s in status and status[s][1] >= MIN_ROWS and status[s][0] < today
+    ]
+    up_to_date = len(all_symbols) - len(needs_backfill) - len(needs_delta)
 
-    print(f"\n  Symbol status:")
+    print("\n  Symbol status:")
     print(f"    Needs backfill : {len(needs_backfill)}")
     print(f"    Needs delta    : {len(needs_delta)}")
     print(f"    Already today  : {up_to_date}")
@@ -236,9 +246,9 @@ def main() -> None:
     write_manifest(con)
     con.close()
 
-    total_rows = sqlite3.connect(DB_PATH).execute(
-        "SELECT COUNT(*) FROM ohlc"
-    ).fetchone()[0]
+    total_rows = (
+        sqlite3.connect(DB_PATH).execute("SELECT COUNT(*) FROM ohlc").fetchone()[0]
+    )
     print(f"\nDone. DB: {DB_PATH}  ({total_rows:,} total rows)")
 
 

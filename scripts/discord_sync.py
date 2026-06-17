@@ -8,20 +8,24 @@ Manifest: logs/sync_manifest.json       — filenames already synced (shared wit
                                           sync_investor_stories.ps1)
 """
 
-import json, os, subprocess, sys
+import json
+import os
+import subprocess
+import sys
 import requests
 from datetime import datetime
 from pathlib import Path
 
-REPO        = Path(__file__).parent.parent
+REPO = Path(__file__).parent.parent
 REPORTS_DIR = REPO / "reports"
-LOGS_DIR    = REPO / "logs"
-MANIFEST    = LOGS_DIR / "sync_manifest.json"
-STATE       = LOGS_DIR / "discord_sync_state.json"
-API_BASE    = "https://discord.com/api/v10"
+LOGS_DIR = REPO / "logs"
+MANIFEST = LOGS_DIR / "sync_manifest.json"
+STATE = LOGS_DIR / "discord_sync_state.json"
+API_BASE = "https://discord.com/api/v10"
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
+
 
 def load_env():
     env = {}
@@ -40,7 +44,9 @@ def load_env():
 
 def load_json(path, default):
     if path.exists():
-        return json.loads(path.read_text(encoding="utf-8-sig"))  # handles PowerShell BOM
+        return json.loads(
+            path.read_text(encoding="utf-8-sig")
+        )  # handles PowerShell BOM
     return default
 
 
@@ -51,6 +57,7 @@ def save_json(path, data):
 
 # ── Discord API ───────────────────────────────────────────────────────────────
 
+
 def fetch_messages(token, channel_id, after=None):
     """Return all messages newer than `after`, oldest-first, with pagination."""
     headers = {"Authorization": f"Bot {token}"}
@@ -60,8 +67,12 @@ def fetch_messages(token, channel_id, after=None):
         params = {"limit": 100}
         if cursor:
             params["after"] = cursor
-        r = requests.get(f"{API_BASE}/channels/{channel_id}/messages",
-                         headers=headers, params=params, timeout=15)
+        r = requests.get(
+            f"{API_BASE}/channels/{channel_id}/messages",
+            headers=headers,
+            params=params,
+            timeout=15,
+        )
         r.raise_for_status()
         batch = r.json()
         if not batch:
@@ -76,14 +87,14 @@ def fetch_messages(token, channel_id, after=None):
 
 
 def download_file(url, token, dest):
-    r = requests.get(url, headers={"Authorization": f"Bot {token}"},
-                     timeout=30)
+    r = requests.get(url, headers={"Authorization": f"Bot {token}"}, timeout=30)
     r.raise_for_status()
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_bytes(r.content)
 
 
 # ── helpers ───────────────────────────────────────────────────────────────────
+
 
 def derive_symbol(filename):
     stem = Path(filename).stem
@@ -93,7 +104,8 @@ def derive_symbol(filename):
 def rebuild_index():
     result = subprocess.run(
         [sys.executable, str(REPO / "scripts" / "generate_index.py")],
-        capture_output=True, text=True
+        capture_output=True,
+        text=True,
     )
     out = (result.stdout + result.stderr).strip()
     if out:
@@ -104,7 +116,9 @@ def git_push(copied):
     subprocess.run(["git", "add", "reports/"], cwd=REPO, capture_output=True)
     staged = subprocess.run(
         ["git", "diff", "--staged", "--name-only"],
-        cwd=REPO, capture_output=True, text=True
+        cwd=REPO,
+        capture_output=True,
+        text=True,
     ).stdout.strip()
     if not staged:
         print("Nothing staged for git.")
@@ -121,11 +135,12 @@ def git_push(copied):
 
 # ── main ──────────────────────────────────────────────────────────────────────
 
+
 def main():
     LOGS_DIR.mkdir(parents=True, exist_ok=True)
 
-    env        = load_env()
-    token      = env.get("DISCORD_BOT_TOKEN", "").strip()
+    env = load_env()
+    token = env.get("DISCORD_BOT_TOKEN", "").strip()
     channel_id = env.get("DISCORD_CHANNEL_ID", "").strip()
 
     if not token or not channel_id:
@@ -134,8 +149,8 @@ def main():
 
     # manifest: {filename -> entry}  (shared with sync_investor_stories.ps1)
     manifest = {e["file"]: e for e in load_json(MANIFEST, [])}
-    state    = load_json(STATE, {})
-    last_id  = state.get("last_message_id")
+    state = load_json(STATE, {})
+    last_id = state.get("last_message_id")
 
     print(f"Polling channel {channel_id}  (after={last_id or 'start'})...")
 
@@ -161,15 +176,15 @@ def main():
                 print(f"Skip    {fname}  (already synced)")
                 continue
             symbol = derive_symbol(fname)
-            dest   = REPORTS_DIR / symbol / fname
+            dest = REPORTS_DIR / symbol / fname
             print(f"Downloading  {fname}  ->  reports/{symbol}/")
             download_file(att["url"], token, dest)
             manifest[fname] = {
-                "file":       fname,
-                "symbol":     symbol,
-                "synced_at":  datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-                "dest":       f"reports/{symbol}/{fname}",
-                "source":     "discord",
+                "file": fname,
+                "symbol": symbol,
+                "synced_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+                "dest": f"reports/{symbol}/{fname}",
+                "source": "discord",
                 "message_id": msg["id"],
             }
             copied += 1

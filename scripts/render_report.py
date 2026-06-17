@@ -6,29 +6,31 @@ Usage:
     python scripts/render_report.py path/to/data.json [--out path/to/output.html]
 """
 
-import json, sys, os, re, html
+import json
+import sys
+import html
 from pathlib import Path
 from datetime import datetime
 
 # ── Segment colour map (from persona doc) ─────────────────────────────────────
 SEGMENT_COLORS = {
-    "railways":      "#1D9E75",
+    "railways": "#1D9E75",
     "infrastructure": "#1D9E75",
-    "infra":         "#1D9E75",
-    "aerospace":     "#D85A30",
-    "defence":       "#D85A30",
-    "defense":       "#D85A30",
-    "industrial":    "#378ADD",
-    "power":         "#378ADD",
-    "energy":        "#3B6D11",
-    "ev":            "#3B6D11",
-    "clean":         "#3B6D11",
+    "infra": "#1D9E75",
+    "aerospace": "#D85A30",
+    "defence": "#D85A30",
+    "defense": "#D85A30",
+    "industrial": "#378ADD",
+    "power": "#378ADD",
+    "energy": "#3B6D11",
+    "ev": "#3B6D11",
+    "clean": "#3B6D11",
     "semiconductor": "#534AB7",
-    "tech":          "#534AB7",
-    "technology":    "#534AB7",
+    "tech": "#534AB7",
+    "technology": "#534AB7",
     "communications": "#BA7517",
-    "telecom":       "#BA7517",
-    "default":       "#378ADD",
+    "telecom": "#BA7517",
+    "default": "#378ADD",
 }
 
 MAGNITUDE_COLOR = {"High": "#D85A30", "Medium": "#BA7517", "Low": "#1D9E75"}
@@ -48,42 +50,42 @@ def e(text) -> str:
 
 
 def build_html(data: dict) -> str:
-    sym          = e(data.get("symbol", ""))
+    sym = e(data.get("symbol", ""))
     company_name = e(data.get("company_name", sym))
-    sector       = e(data.get("sector", ""))
-    date_str     = e(data.get("date", datetime.today().strftime("%Y-%m-%d")))
-    cover        = data.get("cover", {})
-    chs          = data.get("chapters", {})
-    verdict      = e(data.get("verdict", ""))
+    sector = e(data.get("sector", ""))
+    date_str = e(data.get("date", datetime.today().strftime("%Y-%m-%d")))
+    cover = data.get("cover", {})
+    chs = data.get("chapters", {})
+    verdict = e(data.get("verdict", ""))
 
-    tagline      = e(cover.get("tagline", ""))
-    sector_cagr  = e(cover.get("sector_cagr", ""))
-    mcap         = e(cover.get("mcap", ""))
-    pe           = e(cover.get("pe", ""))
+    tagline = e(cover.get("tagline", ""))
+    sector_cagr = e(cover.get("sector_cagr", ""))
+    mcap = e(cover.get("mcap", ""))
+    pe = e(cover.get("pe", ""))
 
     # ── Chapter 1 ──────────────────────────────────────────────────────────────
     ch1 = chs.get("ch1_context", {})
     ch1_title = e(ch1.get("title", "Context"))
-    ch1_body  = e(ch1.get("body", ""))
+    ch1_body = e(ch1.get("body", ""))
 
     # ── Chapter 2 ──────────────────────────────────────────────────────────────
     ch2 = chs.get("ch2_business", {})
-    ch2_title    = e(ch2.get("title", "The Business Model"))
-    ch2_body     = e(ch2.get("body", ""))
+    ch2_title = e(ch2.get("title", "The Business Model"))
+    ch2_body = e(ch2.get("body", ""))
     ch2_flywheel = e(ch2.get("flywheel", ""))
 
     # ── Chapter 3 — Verticals ─────────────────────────────────────────────────
     verticals = chs.get("ch3_verticals", [])
     ch3_cards = ""
     for v in verticals:
-        color   = seg_color(v.get("color_key", ""))
-        name    = e(v.get("name", ""))
-        cat     = e(v.get("catalyst", ""))
-        body    = e(v.get("body", ""))
-        status  = e(v.get("status", ""))
+        color = seg_color(v.get("color_key", ""))
+        name = e(v.get("name", ""))
+        cat = e(v.get("catalyst", ""))
+        body = e(v.get("body", ""))
+        status = e(v.get("status", ""))
         status_badge = {
-            "running":   ('<span class="badge badge-green">Running</span>'),
-            "ramping":   ('<span class="badge badge-amber">Ramping</span>'),
+            "running": ('<span class="badge badge-green">Running</span>'),
+            "ramping": ('<span class="badge badge-amber">Ramping</span>'),
             "prototype": ('<span class="badge badge-gray">Prototype</span>'),
         }.get(status.lower(), f'<span class="badge badge-gray">{status}</span>')
         ch3_cards += f"""
@@ -98,18 +100,19 @@ def build_html(data: dict) -> str:
 
     # ── Chapter 4 ──────────────────────────────────────────────────────────────
     ch4 = chs.get("ch4_insight", {})
-    ch4_title   = e(ch4.get("title", "The Strategic Insight"))
+    ch4_title = e(ch4.get("title", "The Strategic Insight"))
     ch4_insight = e(ch4.get("insight", ""))
     ch4_analogy = e(ch4.get("analogy", ""))
     ch4_analogy_block = (
         f'<blockquote class="analogy">"{ch4_analogy}"</blockquote>'
-        if ch4_analogy else ""
+        if ch4_analogy
+        else ""
     )
 
     # ── Chapter 5 ──────────────────────────────────────────────────────────────
     ch5 = chs.get("ch5_numbers", {})
     ch5_title = e(ch5.get("title", "The Numbers in Context"))
-    ch5_body  = e(ch5.get("body", ""))
+    ch5_body = e(ch5.get("body", ""))
     stats_rows = ""
     for s in ch5.get("stats", []):
         stats_rows += f"""
@@ -121,7 +124,7 @@ def build_html(data: dict) -> str:
     # ── Chapter 6 — Risks ─────────────────────────────────────────────────────
     risks_html = ""
     for r in chs.get("ch6_risks", []):
-        mag   = r.get("magnitude", "Medium")
+        mag = r.get("magnitude", "Medium")
         color = MAGNITUDE_COLOR.get(mag, "#BA7517")
         risks_html += f"""
         <div class="risk-card">
@@ -157,7 +160,9 @@ def build_html(data: dict) -> str:
         ("ch7", "7 Watch"),
         ("verdict", "Verdict"),
     ]
-    nav_links = "".join(f'<a href="#{id}" class="nav-link">{label}</a>' for id, label in nav_labels)
+    nav_links = "".join(
+        f'<a href="#{id}" class="nav-link">{label}</a>' for id, label in nav_labels
+    )
 
     # ── Full HTML ─────────────────────────────────────────────────────────────
     return f"""<!DOCTYPE html>
@@ -497,9 +502,12 @@ function ttsStop(){{
 
 def main():
     import argparse
+
     parser = argparse.ArgumentParser(description="Render investor story JSON to HTML")
     parser.add_argument("json_file", help="Path to the JSON data file")
-    parser.add_argument("--out", help="Output HTML path (default: same dir, .html extension)")
+    parser.add_argument(
+        "--out", help="Output HTML path (default: same dir, .html extension)"
+    )
     args = parser.parse_args()
 
     json_path = Path(args.json_file)
@@ -515,7 +523,7 @@ def main():
     else:
         # Same directory, replace .json with .html, prefix symbol if not already
         stem = json_path.stem
-        sym  = data.get("symbol", "")
+        sym = data.get("symbol", "")
         if sym and not stem.startswith(sym):
             stem = f"{sym}_{stem}"
         out_path = json_path.with_name(stem + ".html")

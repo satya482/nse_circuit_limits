@@ -5,13 +5,13 @@ Usage:
     python scripts/generate_index.py
 """
 
-import os, json, re
+import re
 from pathlib import Path
 from datetime import datetime
 from collections import defaultdict
 
 REPORTS_DIR = Path(__file__).parent.parent / "reports"
-INDEX_PATH  = REPORTS_DIR / "index.html"
+INDEX_PATH = REPORTS_DIR / "index.html"
 
 
 def scan_reports() -> dict[str, list[dict]]:
@@ -29,7 +29,9 @@ def scan_reports() -> dict[str, list[dict]]:
             m = re.search(r"(\d{4}-\d{2}-\d{2})", html_file.stem)
             date_str = m.group(1) if m else "Unknown"
             rel_path = f"{sym}/{html_file.name}"
-            by_symbol[sym].append({"date": date_str, "path": rel_path, "name": html_file.name})
+            by_symbol[sym].append(
+                {"date": date_str, "path": rel_path, "name": html_file.name}
+            )
 
     return by_symbol
 
@@ -40,17 +42,17 @@ def build_index(by_symbol: dict) -> str:
     symbol_cards = ""
     for sym in sorted(by_symbol):
         reports = by_symbol[sym]
-        latest  = reports[0]
+        latest = reports[0]
         archive_opts = "".join(
-            f'<option value="{r["path"]}">{r["date"]}</option>'
-            for r in reports
+            f'<option value="{r["path"]}">{r["date"]}</option>' for r in reports
         )
         archive_block = (
             f"""<select class="archive-sel" onchange="window.open(this.value,'_blank')">
               <option value="">Archive ({len(reports)} reports)</option>
               {archive_opts}
             </select>"""
-            if len(reports) > 1 else ""
+            if len(reports) > 1
+            else ""
         )
         symbol_cards += f"""
         <div class="sym-card">

@@ -14,6 +14,7 @@ Run  : python telegram_kg_loader.py
 Needs: neo4j, python-dotenv
 Creds: fundamental_context/.env  (NEO4J_URI, NEO4J_USER, NEO4J_PASSWORD)
 """
+
 from __future__ import annotations
 
 import argparse
@@ -33,12 +34,12 @@ except ImportError:
     sys.exit(1)
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE  = Path(__file__).parent
-_ENV   = _HERE / "fundamental_context" / ".env"
+_HERE = Path(__file__).parent
+_ENV = _HERE / "fundamental_context" / ".env"
 load_dotenv(_ENV)
 
-NEO4J_URI  = os.getenv("NEO4J_URI",      "bolt://localhost:7687")
-NEO4J_USER = os.getenv("NEO4J_USER",     "neo4j")
+NEO4J_URI = os.getenv("NEO4J_URI", "bolt://localhost:7687")
+NEO4J_USER = os.getenv("NEO4J_USER", "neo4j")
 NEO4J_PASS = os.getenv("NEO4J_PASSWORD", "")
 
 _THEMES_DIR = _HERE / "telegram_themes"
@@ -91,17 +92,38 @@ MERGE (child)-[r:SUBTHEME_OF]->(parent)
 RETURN child.name AS child, parent.name AS parent
 """
 
-_STOP = {'and', 'the', 'of', 'in', 'for', 'a', 'an', 'by', 'with', 'to', 'at', 'on',
-         'is', 'its', 'via', 'into', 'from', 'through'}
+_STOP = {
+    "and",
+    "the",
+    "of",
+    "in",
+    "for",
+    "a",
+    "an",
+    "by",
+    "with",
+    "to",
+    "at",
+    "on",
+    "is",
+    "its",
+    "via",
+    "into",
+    "from",
+    "through",
+}
+
 
 def _camel_to_tokens(s: str) -> set[str]:
     """GovernmentCapex → {government, capex}"""
-    return set(re.sub(r'([A-Z])', r' \1', s).lower().split()) - _STOP
+    return set(re.sub(r"([A-Z])", r" \1", s).lower().split()) - _STOP
 
-def _match_curated_theme(telegram_name: str, curated_names: list[str],
-                          threshold: float = 0.38) -> str | None:
+
+def _match_curated_theme(
+    telegram_name: str, curated_names: list[str], threshold: float = 0.38
+) -> str | None:
     """Fuzzy-match a natural-language telegram theme to a CamelCase curated theme."""
-    tg_tokens = set(re.sub(r'[&,\-\(\)/]', ' ', telegram_name).lower().split()) - _STOP
+    tg_tokens = set(re.sub(r"[&,\-\(\)/]", " ", telegram_name).lower().split()) - _STOP
     if not tg_tokens:
         return None
     best_score, best = 0.0, None
@@ -117,11 +139,14 @@ def _match_curated_theme(telegram_name: str, curated_names: list[str],
             best_score, best = score, cname
     return best if best_score >= threshold else None
 
+
 def _bridge_to_curated(session, theme_names: set[str]) -> None:
     """Create SUBTHEME_OF edges from telegram themes to matching curated themes."""
     curated = [r["name"] for r in session.run(_FETCH_CURATED_THEMES)]
     if not curated:
-        print("[KG] No curated themes in KG — run load_themes.py first to enable bridging")
+        print(
+            "[KG] No curated themes in KG — run load_themes.py first to enable bridging"
+        )
         return
     bridges = 0
     for tname in sorted(theme_names):
@@ -133,14 +158,18 @@ def _bridge_to_curated(session, theme_names: set[str]) -> None:
         if rec:
             print(f"  [KG] SUBTHEME_OF | {rec['child']} -> {rec['parent']}")
             bridges += 1
-    print(f"[KG] Theme bridges: {bridges}/{len(theme_names)} telegram themes linked to curated KG themes")
+    print(
+        f"[KG] Theme bridges: {bridges}/{len(theme_names)} telegram themes linked to curated KG themes"
+    )
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
 def _magnitude(conviction: str) -> str:
     c = (conviction or "").lower()
-    if "high"   in c: return "High"
-    if "medium" in c: return "Medium"
+    if "high" in c:
+        return "High"
+    if "medium" in c:
+        return "Medium"
     return "Low"
 
 
@@ -160,18 +189,18 @@ def load_themes(date: str, driver, dry_run: bool = False) -> None:
     reports: list[dict] = obj.get("reports", [])
     print(f"[KG] {len(reports)} reports to process for {date}")
 
-    theme_count   = 0
+    theme_count = 0
     benefit_count = 0
-    skipped_cos   = 0
+    skipped_cos = 0
     all_theme_names: set[str] = set()
 
     with driver.session() as session:
         for report in reports:
-            themes     = report.get("themes") or []
-            companies  = report.get("companies") or []
+            themes = report.get("themes") or []
+            companies = report.get("companies") or []
             conviction = report.get("conviction") or "Medium"
-            summary    = report.get("summary") or ""
-            magnitude  = _magnitude(conviction)
+            summary = report.get("summary") or ""
+            magnitude = _magnitude(conviction)
 
             # 1. MERGE Theme nodes
             for theme_name in themes:
@@ -198,9 +227,12 @@ def load_themes(date: str, driver, dry_run: bool = False) -> None:
             for co in companies:
                 # Prefer resolver-verified nse_code; fall back to raw symbol
                 resolved = (co.get("nse_code") or "").strip()
-                raw_sym  = co.get("symbol") or ""
-                nse_code = resolved if resolved and resolved != "None" \
-                           else _normalize_symbol(raw_sym)
+                raw_sym = co.get("symbol") or ""
+                nse_code = (
+                    resolved
+                    if resolved and resolved != "None"
+                    else _normalize_symbol(raw_sym)
+                )
                 if not nse_code or nse_code == "—":
                     continue
                 sentiment = (co.get("sentiment") or "neutral").capitalize()
@@ -216,7 +248,9 @@ def load_themes(date: str, driver, dry_run: bool = False) -> None:
                     if not theme_name.strip():
                         continue
                     if dry_run:
-                        print(f"  [DRY] MERGE BENEFITS_FROM: {nse_code} -> {theme_name!r} ({sentiment}, {magnitude})")
+                        print(
+                            f"  [DRY] MERGE BENEFITS_FROM: {nse_code} -> {theme_name!r} ({sentiment}, {magnitude})"
+                        )
                         benefit_count += 1
                         continue
                     res = session.run(
@@ -229,7 +263,9 @@ def load_themes(date: str, driver, dry_run: bool = False) -> None:
                     )
                     rec = res.single()
                     if rec:
-                        print(f"  [KG] BENEFITS_FROM MERGE | {rec['co']} -> {rec['theme']} | {sentiment} | {magnitude}")
+                        print(
+                            f"  [KG] BENEFITS_FROM MERGE | {rec['co']} -> {rec['theme']} | {sentiment} | {magnitude}"
+                        )
                         benefit_count += 1
 
         # 3. Bridge telegram themes → curated KG themes via SUBTHEME_OF
@@ -237,17 +273,25 @@ def load_themes(date: str, driver, dry_run: bool = False) -> None:
             _bridge_to_curated(session, all_theme_names)
 
     if dry_run and all_theme_names:
-        print(f"\n[DRY] Would bridge {len(all_theme_names)} themes to curated KG themes")
+        print(
+            f"\n[DRY] Would bridge {len(all_theme_names)} themes to curated KG themes"
+        )
 
-    print(f"\n[KG] Done — Themes: {theme_count} | Edges: {benefit_count} | Skipped cos: {skipped_cos}")
+    print(
+        f"\n[KG] Done — Themes: {theme_count} | Edges: {benefit_count} | Skipped cos: {skipped_cos}"
+    )
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Load telegram themes into Neo4j KG")
-    parser.add_argument("--date",    default=datetime.now().strftime("%Y-%m-%d"),
-                        help="Date to load (default: today, format YYYY-MM-DD)")
-    parser.add_argument("--dry-run", action="store_true",
-                        help="Print actions without writing to Neo4j")
+    parser.add_argument(
+        "--date",
+        default=datetime.now().strftime("%Y-%m-%d"),
+        help="Date to load (default: today, format YYYY-MM-DD)",
+    )
+    parser.add_argument(
+        "--dry-run", action="store_true", help="Print actions without writing to Neo4j"
+    )
     args = parser.parse_args()
 
     if args.dry_run:

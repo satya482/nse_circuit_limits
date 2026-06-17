@@ -6,7 +6,8 @@ Cache: .fno_cache.csv  (gitignored)
 Source: NSE equity-stockIndices API (requires session cookie, same pattern as main.py)
 """
 
-import csv, time
+import csv
+import time
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -17,10 +18,10 @@ CACHE_DAYS = 30
 
 _HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-                  "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
-    "Accept":          "application/json, text/plain, */*",
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "Accept": "application/json, text/plain, */*",
     "Accept-Language": "en-US,en;q=0.9",
-    "Referer":         "https://www.nseindia.com/",
+    "Referer": "https://www.nseindia.com/",
 }
 
 
@@ -67,7 +68,7 @@ def get_fno_symbols(force_refresh: bool = False) -> list[str]:
     """Return NSE F&O underlying symbols. Refreshes from NSE if cache is older than 30 days."""
     if not force_refresh and _cache_fresh():
         syms = _load()
-        age  = (datetime.now() - datetime.fromtimestamp(CACHE_FILE.stat().st_mtime)).days
+        age = (datetime.now() - datetime.fromtimestamp(CACHE_FILE.stat().st_mtime)).days
         print(f"  F&O universe: {len(syms)} symbols  (cached, {age}d old)")
         return syms
 

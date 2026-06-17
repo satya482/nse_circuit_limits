@@ -9,14 +9,15 @@ Run locally only — not via GitHub Actions.
 
 from tradingview_screener import Query, col
 from datetime import datetime, timezone, timedelta
-import json, os
+import json
+import os
 
-IST        = timezone(timedelta(hours=5, minutes=30))
-BASE       = os.path.dirname(os.path.abspath(__file__))
-SCANS_DIR  = os.path.join(BASE, "ema_screener_scans")
-DATA_FILE  = os.path.join(BASE, "nse_ema_results.json")
-MC_LOW     = 800     * 1_00_00_000   # ₹800 Crore  in INR
-MC_HIGH    = 1_00_000 * 1_00_00_000  # ₹1 Lakh Crore in INR
+IST = timezone(timedelta(hours=5, minutes=30))
+BASE = os.path.dirname(os.path.abspath(__file__))
+SCANS_DIR = os.path.join(BASE, "ema_screener_scans")
+DATA_FILE = os.path.join(BASE, "nse_ema_results.json")
+MC_LOW = 800 * 1_00_00_000  # ₹800 Crore  in INR
+MC_HIGH = 1_00_000 * 1_00_00_000  # ₹1 Lakh Crore in INR
 
 
 def fetch() -> dict[str, float]:
@@ -29,7 +30,7 @@ def fetch() -> dict[str, float]:
             col("exchange") == "NSE",
             col("type") == "stock",
             col("typespecs").has(["common"]),
-            col("EMA50")  > col("EMA100"),
+            col("EMA50") > col("EMA100"),
             col("EMA100") > col("EMA200"),
             col("market_cap_basic").between(MC_LOW, MC_HIGH),
         )
@@ -58,7 +59,7 @@ def pct_str(v: float) -> str:
 def build_md(current: dict, previous: dict, today: str) -> str:
     curr_set = set(current)
     prev_set = set(previous)
-    additions = sorted(curr_set - prev_set, key=lambda s: current[s],  reverse=True)
+    additions = sorted(curr_set - prev_set, key=lambda s: current[s], reverse=True)
     deletions = sorted(prev_set - curr_set, key=lambda s: previous[s], reverse=True)
 
     lines = [
@@ -112,10 +113,10 @@ def build_md(current: dict, previous: dict, today: str) -> str:
 
 def main():
     now_ist = datetime.now(IST)
-    today   = now_ist.strftime("%Y-%m-%d")
+    today = now_ist.strftime("%Y-%m-%d")
 
     print(f"[{now_ist.strftime('%Y-%m-%d %H:%M IST')}] Fetching screener data…")
-    current  = fetch()
+    current = fetch()
     previous = load_previous()
 
     os.makedirs(SCANS_DIR, exist_ok=True)
@@ -128,7 +129,9 @@ def main():
 
     additions = len(set(current) - set(previous))
     deletions = len(set(previous) - set(current))
-    print(f"Done — {len(current)} stocks total | +{additions} additions | -{deletions} deletions")
+    print(
+        f"Done — {len(current)} stocks total | +{additions} additions | -{deletions} deletions"
+    )
     print(f"Written: {md_file}")
 
 

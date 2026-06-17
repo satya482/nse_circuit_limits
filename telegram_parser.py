@@ -12,6 +12,7 @@ Run (from local folder)     :  python telegram_parser.py --folder C:/path/to/pdf
 Needs: anthropic, pdfplumber, python-dotenv
 Creds: fundamental_context/.env  (ANTHROPIC_API_KEY)
 """
+
 from __future__ import annotations
 
 import argparse
@@ -34,28 +35,32 @@ except ImportError:
 
 try:
     import pdfplumber
+
     _PDF_OK = True
 except ImportError:
     _PDF_OK = False
-    print("[PARSER] WARNING: pdfplumber not installed — PDF parsing disabled. Run: pip install pdfplumber")
+    print(
+        "[PARSER] WARNING: pdfplumber not installed — PDF parsing disabled. Run: pip install pdfplumber"
+    )
 
 from telegram_symbol_resolver import Resolver as _Resolver
+
 _resolver = _Resolver()
 
 # ── Config ────────────────────────────────────────────────────────────────────
-_HERE  = Path(__file__).parent
-_ENV   = _HERE / "fundamental_context" / ".env"
+_HERE = Path(__file__).parent
+_ENV = _HERE / "fundamental_context" / ".env"
 load_dotenv(_ENV)
 
 ANTHROPIC_KEY = os.getenv("ANTHROPIC_API_KEY", "")
-HAIKU_MODEL   = "claude-haiku-4-5-20251001"
+HAIKU_MODEL = "claude-haiku-4-5-20251001"
 
-_MANIFEST  = _HERE / "telegram_themes" / ".today_messages.json"
-_CACHE     = _HERE / "telegram_themes" / ".telegram_parsed_cache.json"
-_OUT_DIR   = _HERE / "telegram_themes"
+_MANIFEST = _HERE / "telegram_themes" / ".today_messages.json"
+_CACHE = _HERE / "telegram_themes" / ".telegram_parsed_cache.json"
+_OUT_DIR = _HERE / "telegram_themes"
 
 _IMAGE_EXTS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
-_PDF_EXTS   = {".pdf"}
+_PDF_EXTS = {".pdf"}
 
 # ── Claude prompts ────────────────────────────────────────────────────────────
 _SYSTEM = (
@@ -83,7 +88,9 @@ _SCHEMA = """{
 # ── Cache helpers ─────────────────────────────────────────────────────────────
 def _load_cache() -> set[str]:
     if _CACHE.exists():
-        with open(_CACHE, encoding="utf-8-sig") as fh:  # utf-8-sig strips BOM if present
+        with open(
+            _CACHE, encoding="utf-8-sig"
+        ) as fh:  # utf-8-sig strips BOM if present
             return set(json.load(fh).get("processed", []))
     return set()
 
@@ -100,6 +107,7 @@ def _file_key(path: str) -> str:
         for chunk in iter(lambda: fh.read(65536), b""):
             h.update(chunk)
     return "f:" + h.hexdigest()
+
 
 def _msg_key(msg_id: str) -> str:
     return "m:" + hashlib.md5(str(msg_id).encode()).hexdigest()[:12]
@@ -122,8 +130,11 @@ def _pdf_text(path: str) -> str:
 
 def _image_text(path: str, client: anthropic.Anthropic) -> str:
     mime_map = {
-        ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
-        ".png": "image/png", ".gif": "image/gif", ".webp": "image/webp",
+        ".jpg": "image/jpeg",
+        ".jpeg": "image/jpeg",
+        ".png": "image/png",
+        ".gif": "image/gif",
+        ".webp": "image/webp",
     }
     mime = mime_map.get(Path(path).suffix.lower(), "image/jpeg")
     try:
@@ -132,13 +143,25 @@ def _image_text(path: str, client: anthropic.Anthropic) -> str:
         resp = client.messages.create(
             model=HAIKU_MODEL,
             max_tokens=4096,
-            messages=[{
-                "role": "user",
-                "content": [
-                    {"type": "image", "source": {"type": "base64", "media_type": mime, "data": data}},
-                    {"type": "text", "text": "Extract all text from this image verbatim. Output only the extracted text, nothing else."},
-                ],
-            }],
+            messages=[
+                {
+                    "role": "user",
+                    "content": [
+                        {
+                            "type": "image",
+                            "source": {
+                                "type": "base64",
+                                "media_type": mime,
+                                "data": data,
+                            },
+                        },
+                        {
+                            "type": "text",
+                            "text": "Extract all text from this image verbatim. Output only the extracted text, nothing else.",
+                        },
+                    ],
+                }
+            ],
         )
         return resp.content[0].text.strip()
     except Exception as exc:
@@ -147,7 +170,9 @@ def _image_text(path: str, client: anthropic.Anthropic) -> str:
 
 
 # ── Claude theme extraction ───────────────────────────────────────────────────
-def _extract_themes(content: str, client: anthropic.Anthropic, today: str) -> dict | None:
+def _extract_themes(
+    content: str, client: anthropic.Anthropic, today: str
+) -> dict | None:
     if not content.strip():
         return None
     user_msg = (
@@ -169,7 +194,9 @@ def _extract_themes(content: str, client: anthropic.Anthropic, today: str) -> di
         data = json.loads(raw)
         # Resolve each company's symbol to a canonical NSE code
         if isinstance(data.get("companies"), list):
-            data["companies"] = [_resolver.resolve_company(c) for c in data["companies"]]
+            data["companies"] = [
+                _resolver.resolve_company(c) for c in data["companies"]
+            ]
         return data
     except json.JSONDecodeError as exc:
         print(f"[PARSER] JSON parse error: {exc}")
@@ -181,13 +208,13 @@ def _extract_themes(content: str, client: anthropic.Anthropic, today: str) -> di
 
 # ── Markdown renderer ─────────────────────────────────────────────────────────
 def _render_report(idx: int, msg: dict, ex: dict, source: str) -> str:
-    themes    = ", ".join(ex.get("themes") or []) or "—"
+    themes = ", ".join(ex.get("themes") or []) or "—"
     catalysts = ", ".join(ex.get("catalysts") or []) or "—"
-    horizon   = ex.get("time_horizon") or "—"
+    horizon = ex.get("time_horizon") or "—"
     conviction = ex.get("conviction") or "—"
-    summary   = ex.get("summary") or "—"
+    summary = ex.get("summary") or "—"
     companies = ex.get("companies") or []
-    key_pts   = ex.get("key_points") or []
+    key_pts = ex.get("key_points") or []
 
     lines = [
         f"## Report {idx} — {themes}",
@@ -205,7 +232,9 @@ def _render_report(idx: int, msg: dict, ex: dict, source: str) -> str:
             "|--------|------|-----------|",
         ]
         for c in companies:
-            lines.append(f"| {c.get('symbol','—')} | {c.get('name','—')} | {c.get('sentiment','—')} |")
+            lines.append(
+                f"| {c.get('symbol','—')} | {c.get('name','—')} | {c.get('sentiment','—')} |"
+            )
         lines.append("")
     if key_pts:
         lines.append("### Key points")
@@ -237,7 +266,7 @@ def _process_messages(
     reports: list[tuple[dict, dict, str]] = []
 
     for msg in messages:
-        text  = msg.get("text") or ""
+        text = msg.get("text") or ""
         files = msg.get("files") or []
 
         if files:
@@ -277,7 +306,7 @@ def _process_messages(
                     print(f"[PARSER] Extraction failed: {Path(fpath).name}")
 
         elif text.strip():
-            cache_key = _msg_key(msg['msg_id'])
+            cache_key = _msg_key(msg["msg_id"])
             if cache_key in cache:
                 continue
             print(f"[PARSER] Extracting themes from text msg id={msg['msg_id']}")
@@ -301,7 +330,9 @@ def _process_messages(
     data_records: list[dict] = []
     for idx, (msg, ex, src) in enumerate(reports, start=start_idx):
         md += _render_report(idx, msg, ex, src)
-        data_records.append({**ex, "source": Path(src).name, "date": msg.get("date", today)})
+        data_records.append(
+            {**ex, "source": Path(src).name, "date": msg.get("date", today)}
+        )
 
     out_path.write_text(md, encoding="utf-8")
     return len(reports), data_records
@@ -310,19 +341,23 @@ def _process_messages(
 def _folder_to_messages(folder: Path) -> list[dict]:
     """Build a synthetic message list from all PDFs/images in a folder."""
     supported = _PDF_EXTS | _IMAGE_EXTS
-    files = sorted(p for p in folder.iterdir() if p.suffix.lower() in supported and p.is_file())
+    files = sorted(
+        p for p in folder.iterdir() if p.suffix.lower() in supported and p.is_file()
+    )
     if not files:
         print(f"[PARSER] No supported files found in {folder}")
         return []
     today = datetime.now().strftime("%Y-%m-%d")
     messages = []
     for i, f in enumerate(files):
-        messages.append({
-            "msg_id":  f"folder_{i}",
-            "date":    today,
-            "text":    "",
-            "files":   [str(f)],
-        })
+        messages.append(
+            {
+                "msg_id": f"folder_{i}",
+                "date": today,
+                "text": "",
+                "files": [str(f)],
+            }
+        )
     print(f"[PARSER] Folder mode: {len(files)} file(s) found in {folder}")
     return messages
 
@@ -336,7 +371,11 @@ def _merge_json(json_path: Path, new_records: list[dict], today: str) -> None:
             existing = json.load(fh).get("reports", [])
     seen_sources = {r.get("source") for r in existing}
     merged = existing + [r for r in new_records if r.get("source") not in seen_sources]
-    out = {"date": today, "generated": datetime.now().strftime("%Y-%m-%d %H:%M IST"), "reports": merged}
+    out = {
+        "date": today,
+        "generated": datetime.now().strftime("%Y-%m-%d %H:%M IST"),
+        "reports": merged,
+    }
     with open(json_path, "w", encoding="utf-8") as fh:
         json.dump(out, fh, indent=2, ensure_ascii=False)
     print(f"[PARSER] JSON saved: {json_path} ({len(merged)} total reports)")
@@ -346,7 +385,9 @@ def _merge_json(json_path: Path, new_records: list[dict], today: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Telegram equity theme parser")
     parser.add_argument(
-        "--folder", "-f", metavar="PATH",
+        "--folder",
+        "-f",
+        metavar="PATH",
         help="Parse all PDFs/images in this local folder instead of the Telegram manifest",
     )
     args = parser.parse_args()
@@ -355,11 +396,11 @@ def main() -> None:
         print("[PARSER] ERROR: ANTHROPIC_API_KEY not set in fundamental_context/.env")
         sys.exit(1)
 
-    today    = datetime.now().strftime("%Y-%m-%d")
+    today = datetime.now().strftime("%Y-%m-%d")
     _OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path = _OUT_DIR / f"themes_{today}.md"
-    client   = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
-    cache    = _load_cache()
+    client = anthropic.Anthropic(api_key=ANTHROPIC_KEY)
+    cache = _load_cache()
 
     json_path = _OUT_DIR / f"themes_{today}.json"
 
@@ -373,7 +414,9 @@ def main() -> None:
         if not messages:
             sys.exit(0)
         append = out_path.exists()
-        n, records = _process_messages(messages, client, cache, today, out_path, append=append)
+        n, records = _process_messages(
+            messages, client, cache, today, out_path, append=append
+        )
         _save_cache(cache)
         if n:
             _merge_json(json_path, records, today)
@@ -383,7 +426,9 @@ def main() -> None:
     else:
         # ── Telegram manifest mode ────────────────────────────────────────────
         if not _MANIFEST.exists():
-            print(f"[PARSER] Manifest not found at {_MANIFEST} — run telegram_ingest.py first")
+            print(
+                f"[PARSER] Manifest not found at {_MANIFEST} — run telegram_ingest.py first"
+            )
             sys.exit(0)
         with open(_MANIFEST, encoding="utf-8") as fh:
             messages = json.load(fh)

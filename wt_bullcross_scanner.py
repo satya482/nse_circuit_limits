@@ -22,7 +22,10 @@ Output: wt_scans/wt_bullcross_latest.md
         wt_scans/wt_bullcross_YYYY-MM-DD.md
 """
 
-import sys, os, csv, json
+import sys
+import os
+import csv
+import json
 from datetime import datetime
 
 import pandas as pd
@@ -33,29 +36,36 @@ from wavetrend_scanner import WaveTrendCalculator
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REPO_DIR     = os.path.dirname(os.path.abspath(__file__))
-SCANS_DIR    = os.path.join(REPO_DIR, "wt_scans")
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
+SCANS_DIR = os.path.join(REPO_DIR, "wt_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
-_LABELS: dict = json.loads(open(_LABELS_FILE, encoding="utf-8").read()) if os.path.exists(_LABELS_FILE) else {}
-TODAY        = datetime.now().strftime("%Y-%m-%d")
-MD_LATEST    = os.path.join(SCANS_DIR, "wt_bullcross_latest.md")
-MD_DATED     = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
+_LABELS: dict = (
+    json.loads(open(_LABELS_FILE, encoding="utf-8").read())
+    if os.path.exists(_LABELS_FILE)
+    else {}
+)
+TODAY = datetime.now().strftime("%Y-%m-%d")
+MD_LATEST = os.path.join(SCANS_DIR, "wt_bullcross_latest.md")
+MD_DATED = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
 
-MC_LOW   = 1_000   * 1_00_00_000   # 1,000 Cr
-MC_HIGH  = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
+MC_LOW = 1_000 * 1_00_00_000  # 1,000 Cr
+MC_HIGH = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
 MIN_RANK = 1
 ZL_TURN_CAP = 60
-BENCH_SYM   = "NIFTY MIDSML 400"
+BENCH_SYM = "NIFTY MIDSML 400"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
 
+
 def _ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
+
 
 def _zlema(s: pd.Series, n: int) -> pd.Series:
     e = _ema(s, n)
     return 2 * e - _ema(e, n)
+
 
 def _bb_kc_squeeze(df: pd.DataFrame) -> bool:
     """True if BB(20,2.0,SMA) is fully inside KC(20,1.5,SMA ATR) on the last bar."""
@@ -65,23 +75,28 @@ def _bb_kc_squeeze(df: pd.DataFrame) -> bool:
     h = df["high"].astype(float)
     l = df["low"].astype(float)
     bb_basis = c.rolling(20).mean()
-    bb_std   = c.rolling(20).std()
+    bb_std = c.rolling(20).std()
     bb_upper = bb_basis + 2.0 * bb_std
     bb_lower = bb_basis - 2.0 * bb_std
-    tr       = pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1).max(axis=1)
-    kc_atr   = tr.rolling(20).mean()
+    tr = pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1).max(
+        axis=1
+    )
+    kc_atr = tr.rolling(20).mean()
     kc_basis = c.rolling(20).mean()
     kc_upper = kc_basis + 1.5 * kc_atr
     kc_lower = kc_basis - 1.5 * kc_atr
-    return bool(bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1])
+    return bool(
+        bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1]
+    )
+
 
 def _zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
-    n     = len(zl25)
+    n = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i + 1
-            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            pct = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
@@ -96,14 +111,14 @@ def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
         return "weak"
     try:
         stock_close = df.set_index("date")["close"].astype(float)
-        bench       = bench_series.reindex(stock_close.index)
-        valid       = bench.notna()
+        bench = bench_series.reindex(stock_close.index)
+        valid = bench.notna()
         if valid.sum() < 11:
             return "weak"
-        rs      = (stock_close[valid] / bench[valid]) * 1000
+        rs = (stock_close[valid] / bench[valid]) * 1000
         rs_ema9 = rs.ewm(span=9, adjust=False).mean()
         now_strong = bool(rs.iloc[-1] > rs_ema9.iloc[-1])
-        was_weak   = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
+        was_weak = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
         if was_weak and now_strong:
             return "transition"
         return "strong" if now_strong else "weak"
@@ -112,6 +127,7 @@ def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
 
 
 # ── Watchlist ─────────────────────────────────────────────────────────────────
+
 
 def get_watchlist() -> list[str]:
     """Broad universe — no RS or EMA25 filter (WT captures pre-RS-turn reversals)."""
@@ -134,11 +150,17 @@ def get_watchlist() -> list[str]:
 
 # ── Circuit limits ────────────────────────────────────────────────────────────
 
-_CIRCUIT_EMOJI = {("20", "10"): "🟨", ("10", "5"): "🟥", ("5", "10"): "🟩", ("10", "20"): "🟦"}
+_CIRCUIT_EMOJI = {
+    ("20", "10"): "🟨",
+    ("10", "5"): "🟥",
+    ("5", "10"): "🟩",
+    ("10", "20"): "🟦",
+}
 _NSE_CSV_PATHS = [
     os.path.join(REPO_DIR, "nse.csv"),
     r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv",
 ]
+
 
 def get_circuit_limits() -> dict[str, tuple[str, str]]:
     nse_csv = next((p for p in _NSE_CSV_PATHS if os.path.exists(p)), None)
@@ -152,7 +174,7 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
                 sym = row.get("SYMBOL", "")
                 dte = row.get("EFFECTIVE DATE", "")
                 frm = row.get("FROM", "")
-                to  = row.get("TO", "")
+                to = row.get("TO", "")
                 if not sym or not dte:
                     continue
                 try:
@@ -171,10 +193,15 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 # ── Per-stock analysis ────────────────────────────────────────────────────────
 
-def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator,
-            bench_series: pd.Series | None = None) -> dict | None:
+
+def analyse(
+    symbol: str,
+    df_raw: pd.DataFrame,
+    calc: WaveTrendCalculator,
+    bench_series: pd.Series | None = None,
+) -> dict | None:
     try:
-        if df_raw is None or len(df_raw) < 83:   # WaveTrendCalculator._min_bars
+        if df_raw is None or len(df_raw) < 83:  # WaveTrendCalculator._min_bars
             return None
 
         sig = calc.get_signal(df_raw)
@@ -187,29 +214,29 @@ def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator,
         if sig.wt_signal_rank == 1 and rs == "weak":
             return None
 
-        c    = df_raw["close"].astype(float)
+        c = df_raw["close"].astype(float)
         zl25 = _zlema(c, 25)
         zl_rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
         zl_days, zl_pct = _zl25_turn_stats(zl25, c)
 
         curr_close = float(c.iloc[-1])
         prev_close = float(c.iloc[-2])
-        day_chg    = (curr_close - prev_close) / prev_close * 100
+        day_chg = (curr_close - prev_close) / prev_close * 100
 
         return {
-            "symbol":    symbol,
+            "symbol": symbol,
             "wt_signal": sig.wt_signal,
-            "wt_rank":   sig.wt_signal_rank,
-            "wt1":       round(sig.wt1, 2),
-            "wt2":       round(sig.wt2, 2),
+            "wt_rank": sig.wt_signal_rank,
+            "wt1": round(sig.wt1, 2),
+            "wt2": round(sig.wt2, 2),
             "wt_is_ppv": sig.wt_is_ppv,
             "zl_rising": zl_rising,
-            "zl_days":   zl_days,
-            "zl_pct":    zl_pct,
-            "squeeze":   _bb_kc_squeeze(df_raw),
-            "rs_state":  rs,
-            "close":     curr_close,
-            "day_chg":   day_chg,
+            "zl_days": zl_days,
+            "zl_pct": zl_pct,
+            "squeeze": _bb_kc_squeeze(df_raw),
+            "rs_state": rs,
+            "close": curr_close,
+            "day_chg": day_chg,
         }
     except Exception:
         return None
@@ -218,13 +245,19 @@ def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator,
 # ── Markdown output ───────────────────────────────────────────────────────────
 
 _RANK_EMOJI = {5: "🔥", 4: "⚡", 3: "🟢", 2: "🟡", 1: "📈"}
-_RANK_LABEL = {5: "BULL OS+PPV", 4: "BULL ANY+PPV", 3: "BULL OVERSOLD", 2: "BULL OS L2", 1: "ABOVE ZERO LINE"}
-_RS_EMOJI   = {"transition": "🔄", "strong": "↑", "weak": "↓"}
+_RANK_LABEL = {
+    5: "BULL OS+PPV",
+    4: "BULL ANY+PPV",
+    3: "BULL OVERSOLD",
+    2: "BULL OS L2",
+    1: "ABOVE ZERO LINE",
+}
+_RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
 
 _CATEGORIES = [
-    ("🔥", "MAJOR",           "PPV confirmed",         [5, 4]),
-    ("🟢", "OVERSOLD",        "reversal from −53/−60", [3, 2]),
-    ("📈", "ABOVE ZERO LINE", "momentum confirmed",    [1]),
+    ("🔥", "MAJOR", "PPV confirmed", [5, 4]),
+    ("🟢", "OVERSOLD", "reversal from −53/−60", [3, 2]),
+    ("📈", "ABOVE ZERO LINE", "momentum confirmed", [1]),
 ]
 
 _HDR = [
@@ -234,18 +267,18 @@ _HDR = [
 
 
 def _row(f: dict, circuit: dict) -> str:
-    sym      = f["symbol"]
-    tv       = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-    cl, em   = circuit.get(sym, ("20%", ""))
-    zl_d     = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-    zl_p     = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-    ds       = "+" if f["day_chg"] >= 0 else ""
+    sym = f["symbol"]
+    tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    cl, em = circuit.get(sym, ("20%", ""))
+    zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+    zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+    ds = "+" if f["day_chg"] >= 0 else ""
     zl_arrow = "↑" if f["zl_rising"] else "↓"
-    sqz      = "✓" if f["squeeze"] else "—"
-    ppv      = "✓" if f["wt_is_ppv"] else "—"
-    rs       = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
-    emoji    = _RANK_EMOJI.get(f["wt_rank"], "")
-    lbl      = _LABELS.get(sym, "")
+    sqz = "✓" if f["squeeze"] else "—"
+    ppv = "✓" if f["wt_is_ppv"] else "—"
+    rs = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
+    emoji = _RANK_EMOJI.get(f["wt_rank"], "")
+    lbl = _LABELS.get(sym, "")
     return (
         f"| [{sym}]({tv}) "
         f"| {lbl} "
@@ -298,7 +331,9 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
     # Squeeze Breakout — highest conviction: WT cross firing inside active BB-KC squeeze
     sqz_breaks = [f for f in sorted_f if f["squeeze"]]
     if sqz_breaks:
-        lines.append(f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})")
+        lines.append(
+            f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})"
+        )
         lines += _HDR + [_row(f, circuit) for f in sqz_breaks]
         lines.append("")
         lines.append("---")
@@ -319,22 +354,31 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
 
 # ── Console output ─────────────────────────────────────────────────────────────
 
+
 def print_results(findings: list[dict]) -> None:
     print(f"\n{'='*70}")
-    print(f"  WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(
+        f"  WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}"
+    )
     print(f"  Total bull crosses: {len(findings)}")
     print(f"{'='*70}")
-    sqz_breaks_c = sorted([f for f in findings if f["squeeze"]], key=lambda x: (-x["wt_rank"], x["wt1"]))
+    sqz_breaks_c = sorted(
+        [f for f in findings if f["squeeze"]], key=lambda x: (-x["wt_rank"], x["wt1"])
+    )
     if sqz_breaks_c:
         print(f"\n  ── 🎯 SQUEEZE BREAKOUT ({len(sqz_breaks_c)}) ──")
         for f in sqz_breaks_c:
-            ds  = "+" if f["day_chg"] >= 0 else ""
-            zl  = "ZL↑" if f["zl_rising"] else "ZL↓"
+            ds = "+" if f["day_chg"] >= 0 else ""
+            zl = "ZL↑" if f["zl_rising"] else "ZL↓"
             ppv = "PPV" if f["wt_is_ppv"] else "   "
-            rs  = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(f.get("rs_state", "weak"), "")
-            print(f"  {f['symbol']:<18} {f['close']:>9.2f}  "
-                  f"wt1:{f['wt1']:>7.2f}  {zl} SQZ {ppv} {rs}  "
-                  f"day:{ds}{f['day_chg']:.1f}%")
+            rs = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(
+                f.get("rs_state", "weak"), ""
+            )
+            print(
+                f"  {f['symbol']:<18} {f['close']:>9.2f}  "
+                f"wt1:{f['wt1']:>7.2f}  {zl} SQZ {ppv} {rs}  "
+                f"day:{ds}{f['day_chg']:.1f}%"
+            )
 
     for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
         group = [f for f in findings if f["wt_rank"] in ranks]
@@ -343,18 +387,23 @@ def print_results(findings: list[dict]) -> None:
         group.sort(key=lambda x: (-x["wt_rank"], x["wt1"]))
         print(f"\n  ── {emoji} {cat_name} ({len(group)}) ──")
         for f in group:
-            ds  = "+" if f["day_chg"] >= 0 else ""
-            zl  = "ZL↑" if f["zl_rising"] else "ZL↓"
+            ds = "+" if f["day_chg"] >= 0 else ""
+            zl = "ZL↑" if f["zl_rising"] else "ZL↓"
             sqz = "SQZ" if f["squeeze"] else "   "
             ppv = "PPV" if f["wt_is_ppv"] else "   "
-            rs  = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(f.get("rs_state", "weak"), "")
-            print(f"  {f['symbol']:<18} {f['close']:>9.2f}  "
-                  f"wt1:{f['wt1']:>7.2f}  {zl} {sqz} {ppv} {rs}  "
-                  f"day:{ds}{f['day_chg']:.1f}%")
+            rs = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(
+                f.get("rs_state", "weak"), ""
+            )
+            print(
+                f"  {f['symbol']:<18} {f['close']:>9.2f}  "
+                f"wt1:{f['wt1']:>7.2f}  {zl} {sqz} {ppv} {rs}  "
+                f"day:{ds}{f['day_chg']:.1f}%"
+            )
     print()
 
 
 # ── Main ──────────────────────────────────────────────────────────────────────
+
 
 def main():
     os.makedirs(SCANS_DIR, exist_ok=True)
@@ -368,16 +417,22 @@ def main():
     print(f"  Loaded {len(all_data)} stocks")
 
     print(f"\nLoading benchmark ({BENCH_SYM}) for RS...")
-    bench_dict   = load_ohlc_many([BENCH_SYM], lookback=400)
-    bench_df     = bench_dict.get(BENCH_SYM)
-    bench_series = bench_df.set_index("date")["close"].astype(float) if bench_df is not None else None
-    print(f"  Benchmark {'loaded' if bench_series is not None else 'NOT FOUND — RS defaults to weak'}")
+    bench_dict = load_ohlc_many([BENCH_SYM], lookback=400)
+    bench_df = bench_dict.get(BENCH_SYM)
+    bench_series = (
+        bench_df.set_index("date")["close"].astype(float)
+        if bench_df is not None
+        else None
+    )
+    print(
+        f"  Benchmark {'loaded' if bench_series is not None else 'NOT FOUND — RS defaults to weak'}"
+    )
 
     print("\nFetching circuit limits...")
     circuit = get_circuit_limits()
 
     print(f"\nScanning {len(all_data)} stocks for WaveTrend bull crosses...")
-    calc     = WaveTrendCalculator()
+    calc = WaveTrendCalculator()
     findings = []
     for i, (sym, df_raw) in enumerate(all_data.items(), 1):
         print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")

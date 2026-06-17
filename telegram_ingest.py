@@ -12,6 +12,7 @@ Creds: fundamental_context/.env  (TELEGRAM_API_ID, TELEGRAM_API_HASH, TELEGRAM_C
 First run triggers interactive Telethon login (phone + OTP) — subsequent
 runs reuse the .telegram_session file silently.
 """
+
 from __future__ import annotations
 
 import asyncio
@@ -32,16 +33,16 @@ except ImportError:
 
 # ── Config ────────────────────────────────────────────────────────────────────
 _HERE = Path(__file__).parent
-_ENV  = _HERE / "fundamental_context" / ".env"
+_ENV = _HERE / "fundamental_context" / ".env"
 load_dotenv(_ENV)
 
-API_ID   = int(os.getenv("TELEGRAM_API_ID", "0"))
+API_ID = int(os.getenv("TELEGRAM_API_ID", "0"))
 API_HASH = os.getenv("TELEGRAM_API_HASH", "")
-CHANNEL  = os.getenv("TELEGRAM_CHANNEL", "Equity_Insights")
+CHANNEL = os.getenv("TELEGRAM_CHANNEL", "Equity_Insights")
 
-_SESSION_FILE  = _HERE / ".telegram_session"
-_STATE_FILE    = _HERE / ".telegram_state.json"
-_RAW_DIR       = _HERE / "telegram_themes" / "raw"
+_SESSION_FILE = _HERE / ".telegram_session"
+_STATE_FILE = _HERE / ".telegram_state.json"
+_RAW_DIR = _HERE / "telegram_themes" / "raw"
 _MANIFEST_FILE = _HERE / "telegram_themes" / ".today_messages.json"
 
 _DOWNLOAD_EXTS = {".pdf", ".jpg", ".jpeg", ".png", ".gif", ".webp"}
@@ -61,6 +62,7 @@ def _save_state(state: dict) -> None:
 
 def _today_prefix() -> str:
     from datetime import datetime
+
     return datetime.now().strftime("%Y%m%d")
 
 
@@ -76,9 +78,9 @@ async def ingest() -> list[dict]:
     _RAW_DIR.mkdir(parents=True, exist_ok=True)
     _MANIFEST_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-    state   = _load_state()
+    state = _load_state()
     last_id = state.get("last_message_id", 0)
-    prefix  = _today_prefix()
+    prefix = _today_prefix()
 
     print(f"[TELEGRAM] Channel: {CHANNEL}  |  fetching after msg_id={last_id}")
 
@@ -100,7 +102,7 @@ async def ingest() -> list[dict]:
 
             if msg.media:
                 if isinstance(msg.media, MessageMediaDocument):
-                    doc  = msg.media.document
+                    doc = msg.media.document
                     fname = None
                     for attr in doc.attributes:
                         if hasattr(attr, "file_name") and attr.file_name:
@@ -108,7 +110,7 @@ async def ingest() -> list[dict]:
                             break
                     if not fname:
                         mime = getattr(doc, "mime_type", "")
-                        ext  = ".pdf" if "pdf" in mime else ".bin"
+                        ext = ".pdf" if "pdf" in mime else ".bin"
                         fname = f"{prefix}_{msg.id}{ext}"
                     ext = Path(fname).suffix.lower()
                     if ext in _DOWNLOAD_EXTS:
@@ -125,12 +127,14 @@ async def ingest() -> list[dict]:
                         print(f"[TELEGRAM] Downloaded photo: {dest.name}")
                     files_downloaded.append(str(dest))
 
-            messages_out.append({
-                "msg_id": msg.id,
-                "date":   msg_date,
-                "text":   msg_text,
-                "files":  files_downloaded,
-            })
+            messages_out.append(
+                {
+                    "msg_id": msg.id,
+                    "date": msg_date,
+                    "text": msg_text,
+                    "files": files_downloaded,
+                }
+            )
 
     print(f"[TELEGRAM] {len(messages_out)} new messages fetched")
 

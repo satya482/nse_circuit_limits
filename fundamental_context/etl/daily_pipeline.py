@@ -12,6 +12,7 @@ Usage:
   python daily_pipeline.py --mode scores    # only score recompute
   python daily_pipeline.py --mode ep        # only EP flag check
 """
+
 from __future__ import annotations
 
 import argparse
@@ -21,7 +22,7 @@ from datetime import date
 from pathlib import Path
 
 # ── Logging ───────────────────────────────────────────────────────────────────
-_HERE    = Path(__file__).parent
+_HERE = Path(__file__).parent
 _LOG_DIR = _HERE.parent / "logs"
 _LOG_DIR.mkdir(exist_ok=True)
 
@@ -43,6 +44,7 @@ log = logging.getLogger(__name__)
 def step_rss() -> None:
     log.info("=== Step 1: NSE RSS Parser ===")
     from nse_rss_parser import main as rss_main  # type: ignore[import]
+
     rss_main()
     log.info("=== Step 1 Done ===")
 
@@ -50,6 +52,7 @@ def step_rss() -> None:
 def step_scores() -> None:
     log.info("=== Step 2: Score Recompute ===")
     from recompute_scores import run as scores_run  # type: ignore[import]
+
     updated = scores_run()
     log.info(f"=== Step 2 Done | {updated} companies updated ===")
 
@@ -57,14 +60,15 @@ def step_scores() -> None:
 def step_ep() -> None:
     log.info("=== Step 3: EP Flag Check ===")
     from flag_ep_candidates import run as ep_run  # type: ignore[import]
+
     ep_run()
     log.info("=== Step 3 Done ===")
 
 
 STEPS = {
-    "rss":    step_rss,
+    "rss": step_rss,
     "scores": step_scores,
-    "ep":     step_ep,
+    "ep": step_ep,
 }
 
 
