@@ -1,0 +1,23 @@
+repos:
+  # Formatting — black
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        language_version: python3
+
+  # Linting + import sort — ruff (replaces flake8 + isort, much faster)
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+        args: [--fix]
+
+  # Secret scanning — blocks commits that contain API keys / tokens
+  # First run: `detect-secrets scan > .secrets.baseline` then commit .secrets.baseline
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.5.0
+    hooks:
+      - id: detect-secrets
+        args: [--baseline, .secrets.baseline]
+        exclude: (\.env\.example|\.secrets\.baseline)
