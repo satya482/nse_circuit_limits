@@ -528,6 +528,18 @@ def chg_float(s: str) -> float:
         return 0.0
 
 
+def _copy_btn(rows, key: str = "symbol") -> str:
+    if not rows:
+        return ""
+    if isinstance(rows[0], str):
+        syms = ",".join(f"NSE:{s}" for s in rows)
+        n = len(rows)
+    else:
+        syms = ",".join(f"NSE:{r[key]}" for r in rows if r.get(key))
+        n = sum(1 for r in rows if r.get(key))
+    return f'<button class="copy-btn" data-syms="{syms}">📋 TV ({n})</button>'
+
+
 # ── Sector rotation parser ────────────────────────────────────────────────────
 
 
@@ -841,7 +853,7 @@ def build_html(
     if zl_squeeze:
         zl_squeeze_section = f"""
 <div class="section">
-  <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON ({len(zl_squeeze)} stocks, top 30 by ZL Days asc)</div>
+  <div class="stitle">ZL Squeeze — ZLEMA25 Rising + BB Squeeze ON ({len(zl_squeeze)} stocks, top 30 by ZL Days asc){_copy_btn(zl_squeeze[:30])}</div>
   <table>
     <thead><tr><th>Symbol</th><th>Label</th><th>Sqz Days</th><th>ZL Days</th><th>ZL Chg%</th><th>Close</th><th>Day Chg</th><th>Circuit</th></tr></thead>
     <tbody>{table_or_empty(sqz_rows_html, 8, "No signals today")}</tbody>
@@ -852,7 +864,7 @@ def build_html(
     if compression_rows or total_compressed:
         compression_section = f"""
 <div class="section">
-  <div class="stitle">EMA Compression + BB Squeeze — top {len(compression_rows[:20])} signals &nbsp;|&nbsp; {total_compressed} compressed &nbsp;|&nbsp; {total_zl_rising} passed all gates</div>
+  <div class="stitle">EMA Compression + BB Squeeze — top {len(compression_rows[:20])} signals &nbsp;|&nbsp; {total_compressed} compressed &nbsp;|&nbsp; {total_zl_rising} passed all gates{_copy_btn(compression_rows[:20])}</div>
   <table>
     <thead><tr><th>Symbol</th><th>Label</th><th>Close</th><th>Comp Days</th><th>Sqz Days</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th></tr></thead>
     <tbody>{table_or_empty(comp_rows_html, 8, "No signals today")}</tbody>
@@ -938,7 +950,7 @@ def build_html(
 
         sector_rotation_section = f"""
 <div class="section">
-  <div class="stitle">Sector Rotation — High-Conviction ({len(rot_high_conv)}) &nbsp;|&nbsp; Rotating In: {len(rot_in)} groups &nbsp;|&nbsp; Rotating Out: {len(rot_out)} groups &nbsp;|&nbsp; ZL Breadth: {len(zl_breadth)} groups</div>
+  <div class="stitle">Sector Rotation — High-Conviction ({len(rot_high_conv)}) &nbsp;|&nbsp; Rotating In: {len(rot_in)} groups &nbsp;|&nbsp; Rotating Out: {len(rot_out)} groups &nbsp;|&nbsp; ZL Breadth: {len(zl_breadth)} groups{_copy_btn(rot_high_conv)}</div>
   {hc_table}
   <details style="margin-top:8px"><summary style="cursor:pointer;font-weight:600">ZL Breadth per Group ({len(zl_breadth)} groups ≥40% rising) ⚡ = coordinated cluster</summary>{zlb_table}</details>
   <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating In ({len(rot_in)} groups)</summary>{ri_table}</details>
@@ -955,7 +967,7 @@ def build_html(
     if weekly_turning:
         turning_section = f"""
 <div class="section">
-  <div class="stitle">ZLEMA25 Turning Up — early entries ({len(weekly_turning)})</div>
+  <div class="stitle">ZLEMA25 Turning Up — early entries ({len(weekly_turning)}){_copy_btn(weekly_turning)}</div>
   <table>
     <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Circuit</th></tr></thead>
     <tbody>{table_or_empty(t_rows, 6, "No ZLEMA25 turns today")}</tbody>
@@ -967,14 +979,14 @@ def build_html(
         zl25_section = f"""
 <div class="two">
   <div class="section">
-    <div class="stitle">EMA25 ZL Rising — RS-filtered ({len(zl25_rising)} stocks, top 20)</div>
+    <div class="stitle">EMA25 ZL Rising — RS-filtered ({len(zl25_rising)} stocks, top 20){_copy_btn(zl25_rising[:20])}</div>
     <table>
       <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Close</th><th>Squeeze</th><th>Circuit</th></tr></thead>
       <tbody>{table_or_empty(zr_rows, 8, "No ZL rising stocks")}</tbody>
     </table>
   </div>
   <div class="section">
-    <div class="stitle">EMA25 ZL Watch — RS-filtered ({len(zl25_watch)} stocks, top 15)</div>
+    <div class="stitle">EMA25 ZL Watch — RS-filtered ({len(zl25_watch)} stocks, top 15){_copy_btn(zl25_watch[:15])}</div>
     <table>
       <thead><tr><th>Symbol</th><th>ZL Days</th><th>ZL Chg%</th><th>Label</th><th>Day Chg</th><th>Close</th><th>Squeeze</th><th>Circuit</th></tr></thead>
       <tbody>{table_or_empty(zw_rows, 8, "No ZL watch stocks")}</tbody>
@@ -1060,6 +1072,23 @@ def build_html(
             f'<tbody>{"".join(cat_rows)}</tbody></table></div>'
         )
 
+    # All unique symbols across every section (order: confluence first, then others)
+    _seen: set = set()
+    all_tv_syms: list = []
+    for _s in list(all_syms) + [
+        r["symbol"]
+        for r in weekly_turning
+        + zl25_rising
+        + zl25_watch
+        + zl_squeeze
+        + compression_rows
+        + rot_high_conv
+    ]:
+        if _s not in _seen:
+            _seen.add(_s)
+            all_tv_syms.append(_s)
+    all_tv_csv = ",".join(f"NSE:{s}" for s in all_tv_syms)
+
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1085,7 +1114,10 @@ h1{{font-size:1.25rem;color:var(--blu);margin-bottom:3px}}
 .gld{{color:var(--gld)}}.grn{{color:var(--grn)}}.red{{color:var(--red)}}.blu{{color:var(--blu)}}.pur{{color:var(--pur)}}
 
 .section{{margin-bottom:18px}}
-.stitle{{font-size:.78rem;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px;border-bottom:1px solid var(--bd);padding-bottom:3px}}
+.stitle{{font-size:.78rem;font-weight:600;color:var(--mu);text-transform:uppercase;letter-spacing:.7px;margin-bottom:6px;border-bottom:1px solid var(--bd);padding-bottom:3px;display:flex;align-items:center;gap:8px}}
+.copy-btn{{margin-left:auto;background:var(--bg3);border:1px solid var(--bd);color:var(--tx);font-size:10px;padding:3px 9px;border-radius:4px;cursor:pointer;font-weight:600;text-transform:none;letter-spacing:0;flex-shrink:0}}
+.copy-btn:hover{{background:var(--bd);border-color:var(--blu)}}
+.copy-btn.copied{{background:var(--grn);border-color:var(--grn);color:#0d1117}}
 
 table{{width:100%;border-collapse:collapse;background:var(--bg2);border-radius:6px;overflow:hidden;font-size:12px}}
 th{{background:var(--bg3);color:var(--mu);font-size:10px;text-transform:uppercase;letter-spacing:.5px;padding:5px 9px;text-align:left;border-bottom:1px solid var(--bd)}}
@@ -1127,6 +1159,9 @@ tr:hover td{{background:var(--bg3)}}
 
 <h1>NSE Daily Dashboard — {today}</h1>
 <div class="sub">Generated {now_str}</div>
+<div style="margin-bottom:14px">
+  <button class="copy-btn" data-syms="{all_tv_csv}" style="margin-left:0;font-size:12px;padding:5px 16px">📋 Copy ALL {len(all_tv_syms)} symbols → TradingView</button>
+</div>
 
 {_company_fetch_warning()}
 <div class="bar">
@@ -1148,7 +1183,7 @@ tr:hover td{{background:var(--bg3)}}
 </div>
 
 <div class="section">
-  <div class="stitle">Unified Entry Signals — sorted by confluence ({len(all_syms)} stocks)</div>
+  <div class="stitle">Unified Entry Signals — sorted by confluence ({len(all_syms)} stocks){_copy_btn(all_syms)}</div>
   <table>
     <thead><tr><th width="60">Conf</th><th>Symbol</th><th>Label</th><th>Scanners</th><th>Signal</th><th>Day Chg</th><th>ZL Days</th><th>ZL Chg%</th><th>Circuit</th></tr></thead>
     <tbody>{table_or_empty(u_rows, 9, "No signals today")}</tbody>
@@ -1167,7 +1202,7 @@ tr:hover td{{background:var(--bg3)}}
 
 <div class="two">
   <div class="section">
-    <div class="stitle">{ema_label} — Additions ({len(ema_adds)})</div>
+    <div class="stitle">{ema_label} — Additions ({len(ema_adds)}){_copy_btn(ema_adds)}</div>
     <table>
       <thead><tr><th>Symbol</th><th>Day Chg</th></tr></thead>
       <tbody>{table_or_empty(ea_rows, 2, "No additions")}</tbody>
@@ -1193,6 +1228,19 @@ tr:hover td{{background:var(--bg3)}}
 {_ep_section}
 
 {_kg_catalysts_section}
+
+<script>
+document.querySelectorAll('.copy-btn').forEach(btn => {{
+  btn.addEventListener('click', () => {{
+    navigator.clipboard.writeText(btn.dataset.syms).then(() => {{
+      const orig = btn.textContent;
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {{ btn.textContent = orig; btn.classList.remove('copied'); }}, 1500);
+    }});
+  }});
+}});
+</script>
 
 </body>
 </html>
