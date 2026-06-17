@@ -1,5 +1,5 @@
 # NSE ZL Squeeze Scan — 2026-06-17
-*Generated 2026-06-17 15:42 IST*
+*Generated 2026-06-17 18:13 IST*
 
 ### Scan definition
 | Filter | Value |

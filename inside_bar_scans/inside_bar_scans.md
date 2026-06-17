@@ -1,5 +1,5 @@
 # NSE Inside Bar / Mini Coil Scan — 2026-06-17
-*Generated 2026-06-17 15:43 IST*
+*Generated 2026-06-17 18:14 IST*
 
 ### Scan definition
 | Filter | Value |

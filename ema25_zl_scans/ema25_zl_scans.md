@@ -1,5 +1,5 @@
 # NSE EMA25 ZL Scan — 2026-06-17
-*Generated 2026-06-17 15:42 IST*
+*Generated 2026-06-17 18:12 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -195,8 +195,8 @@
 | [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | 4d | +10.2% | Small finance bank serving underbanked individuals small businesses | -0.13% | 78.65 | — | 20%  |
 | [DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK) | 4d | +6.1% | Secured retail lending and MSME focused bank | +0.70% | 185.01 | — | 20%  |
 | [TEXRAIL](https://in.tradingview.com/chart/?symbol=NSE:TEXRAIL) | 4d | +8.5% | Railway rolling stock manufacturing and hydro-mechanical equipment | +1.57% | 109.52 | — | 20%  |
-| [UNIVCABLES](https://in.tradingview.com/chart/?symbol=NSE:UNIVCABLES) | 4d | +9.3% | Electrical power cables manufacturing 1.1kV to 400kV voltage range | +4.09% | 1240.40 | ✓ | 20%  |
 | [NIBE](https://in.tradingview.com/chart/?symbol=NSE:NIBE) | 4d | +13.2% | Defense aerospace components manufacturing renewable energy | +0.39% | 1625.30 | — | 10% 🟨 |
+| [UNIVCABLES](https://in.tradingview.com/chart/?symbol=NSE:UNIVCABLES) | 4d | +9.3% | Electrical power cables manufacturing 1.1kV to 400kV voltage range | +4.09% | 1240.40 | ✓ | 20%  |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB) | 4d | +6.5% | Microfinance bank serving unbanked retail borrowers India | -1.12% | 56.75 | — | 20%  |
 | [AYE](https://in.tradingview.com/chart/?symbol=NSE:AYE) | 4d | +15.2% | Micro-enterprise loans, working capital, small business NBFC | -2.59% | 161.50 | — | 20%  |
 | [SHAKTIPUMP](https://in.tradingview.com/chart/?symbol=NSE:SHAKTIPUMP) | 4d | +7.7% | Solar submersible pumps irrigation agriculture India | -0.38% | 546.30 | — | 20%  |

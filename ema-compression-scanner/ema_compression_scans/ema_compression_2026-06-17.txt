@@ -1,6 +1,6 @@
 # EMA Compression + BB Squeeze — 2026-06-17
 
-**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 145 &nbsp;|&nbsp; **BB Squeeze:** 32 &nbsp;|&nbsp; **Signals:** 5 &nbsp;|&nbsp; **Run time:** 24s
+**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 145 &nbsp;|&nbsp; **BB Squeeze:** 32 &nbsp;|&nbsp; **Signals:** 5 &nbsp;|&nbsp; **Run time:** 21s
 
 | # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |
 |---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|
@@ -24,4 +24,4 @@
 
 _Gates: EMA spread < 1.5xATR50 + < 3% EMA200 (>=10 bars) + BB(34,2.5) inside KC(34,1.5) (>=5 bars, width bottom 20%) + weekly RS vs NiftyMidSml400 above EMA9 + 4-week slope positive_
 
-_Generated 2026-06-17 15:44:36 IST_
+_Generated 2026-06-17 18:15:13 IST_

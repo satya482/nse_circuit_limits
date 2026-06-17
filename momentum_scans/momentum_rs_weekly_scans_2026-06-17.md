@@ -1,5 +1,5 @@
 # NSE Momentum Scan (Weekly RS) — 2026-06-17
-*Generated 2026-06-17 15:41 IST*
+*Generated 2026-06-17 18:12 IST*
 
 **Entry Signals: 39** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 0**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*

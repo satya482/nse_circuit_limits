@@ -1,5 +1,5 @@
 # NSE Weekly ZL Scan — 2026-06-17
-*Generated 2026-06-17 15:44 IST*
+*Generated 2026-06-17 18:13 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -119,8 +119,8 @@
 | [ELECTCAST](https://in.tradingview.com/chart/?symbol=NSE:ELECTCAST) | 1w | ABOVE | 1w | +9.9% | +2.24% | 79.01 | 1w | 20%  |
 | [ARVSMART](https://in.tradingview.com/chart/?symbol=NSE:ARVSMART) | 1w | ABOVE | 1w | +7.4% | +2.01% | 616.45 | 2w | 20%  |
 | [KNRCON](https://in.tradingview.com/chart/?symbol=NSE:KNRCON) | 1w | ABOVE | 1w | +5.2% | +1.98% | 131.64 | — | 20%  |
-| [AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA) | 1w | ABOVE | 1w | +12.8% | -2.32% | 136.37 | 3w | 20%  |
 | [CHALET](https://in.tradingview.com/chart/?symbol=NSE:CHALET) | 1w | ABOVE | 1w | +6.9% | +3.25% | 781.00 | — | 20%  |
+| [AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA) | 1w | ABOVE | 1w | +12.8% | -2.32% | 136.37 | 3w | 20%  |
 | [JAICORPLTD](https://in.tradingview.com/chart/?symbol=NSE:JAICORPLTD) | 1w | ABOVE | 1w | +7.2% | +1.46% | 120.93 | — | 20%  |
 | [ASHOKA](https://in.tradingview.com/chart/?symbol=NSE:ASHOKA) | 1w | ABOVE | 1w | +6.2% | -1.45% | 130.69 | — | 20%  |
 | [SUDARSCHEM](https://in.tradingview.com/chart/?symbol=NSE:SUDARSCHEM) | 1w | ABOVE | 1w | +1.9% | -0.83% | 898.55 | 6w | 20%  |

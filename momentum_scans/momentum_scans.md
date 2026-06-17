@@ -1,5 +1,5 @@
 # NSE Momentum Scan — 2026-06-17
-*Generated 2026-06-17 15:40 IST*
+*Generated 2026-06-17 18:11 IST*
 
 **Entry Opportunities: 36**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*
