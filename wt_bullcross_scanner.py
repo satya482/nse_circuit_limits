@@ -45,6 +45,7 @@ MC_LOW   = 1_000   * 1_00_00_000   # 1,000 Cr
 MC_HIGH  = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
 MIN_RANK = 1
 ZL_TURN_CAP = 60
+BENCH_SYM   = "NIFTY MIDSML 400"
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
@@ -84,6 +85,30 @@ def _zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
+
+
+def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
+    """
+    Mirrors Pine Script RS logic: rsLine = (close/indexClose)*1000, rsEma9 = EMA(9).
+    Returns 'transition' (weak→strong flip today), 'strong', or 'weak'.
+    """
+    if bench_series is None or len(bench_series) < 11:
+        return "weak"
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench       = bench_series.reindex(stock_close.index)
+        valid       = bench.notna()
+        if valid.sum() < 11:
+            return "weak"
+        rs      = (stock_close[valid] / bench[valid]) * 1000
+        rs_ema9 = rs.ewm(span=9, adjust=False).mean()
+        now_strong = bool(rs.iloc[-1] > rs_ema9.iloc[-1])
+        was_weak   = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
+        if was_weak and now_strong:
+            return "transition"
+        return "strong" if now_strong else "weak"
+    except Exception:
+        return "weak"
 
 
 # ── Watchlist ─────────────────────────────────────────────────────────────────
@@ -146,13 +171,20 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 # ── Per-stock analysis ────────────────────────────────────────────────────────
 
-def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator) -> dict | None:
+def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator,
+            bench_series: pd.Series | None = None) -> dict | None:
     try:
         if df_raw is None or len(df_raw) < 83:   # WaveTrendCalculator._min_bars
             return None
 
         sig = calc.get_signal(df_raw)
         if sig.wt_signal_rank < MIN_RANK:
+            return None
+
+        rs = _rs_state(df_raw, bench_series)
+
+        # Rank 1 (zero-line cross only) without RS support is post-cross noise — drop it.
+        if sig.wt_signal_rank == 1 and rs == "weak":
             return None
 
         c    = df_raw["close"].astype(float)
@@ -175,6 +207,7 @@ def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator) -> dic
             "zl_days":   zl_days,
             "zl_pct":    zl_pct,
             "squeeze":   _bb_kc_squeeze(df_raw),
+            "rs_state":  rs,
             "close":     curr_close,
             "day_chg":   day_chg,
         }
@@ -186,6 +219,7 @@ def analyse(symbol: str, df_raw: pd.DataFrame, calc: WaveTrendCalculator) -> dic
 
 _RANK_EMOJI = {5: "🔥", 4: "⚡", 3: "🟢", 2: "🟡", 1: "📈"}
 _RANK_LABEL = {5: "BULL OS+PPV", 4: "BULL ANY+PPV", 3: "BULL OVERSOLD", 2: "BULL OS L2", 1: "ABOVE ZERO LINE"}
+_RS_EMOJI   = {"transition": "🔄", "strong": "↑", "weak": "↓"}
 
 _CATEGORIES = [
     ("🔥", "MAJOR",           "PPV confirmed",         [5, 4]),
@@ -194,8 +228,8 @@ _CATEGORIES = [
 ]
 
 _HDR = [
-    "| Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | Day Chg | Close | Circuit |",
-    "|--------|-------|--------|:----:|----:|----:|:--:|--------:|--------:|:---:|:---:|--------:|------:|:-------:|",
+    "| Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | RS | Day Chg | Close | Circuit |",
+    "|--------|-------|--------|:----:|----:|----:|:--:|--------:|--------:|:---:|:---:|:--:|--------:|------:|:-------:|",
 ]
 
 
@@ -209,6 +243,7 @@ def _row(f: dict, circuit: dict) -> str:
     zl_arrow = "↑" if f["zl_rising"] else "↓"
     sqz      = "✓" if f["squeeze"] else "—"
     ppv      = "✓" if f["wt_is_ppv"] else "—"
+    rs       = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
     emoji    = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl      = _LABELS.get(sym, "")
     return (
@@ -223,6 +258,7 @@ def _row(f: dict, circuit: dict) -> str:
         f"| {zl_p} "
         f"| {sqz} "
         f"| {ppv} "
+        f"| {rs} "
         f"| {ds}{f['day_chg']:.2f}% "
         f"| {f['close']:.2f} "
         f"| {cl} {em} |"
@@ -295,8 +331,9 @@ def print_results(findings: list[dict]) -> None:
             ds  = "+" if f["day_chg"] >= 0 else ""
             zl  = "ZL↑" if f["zl_rising"] else "ZL↓"
             ppv = "PPV" if f["wt_is_ppv"] else "   "
+            rs  = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(f.get("rs_state", "weak"), "")
             print(f"  {f['symbol']:<18} {f['close']:>9.2f}  "
-                  f"wt1:{f['wt1']:>7.2f}  {zl} SQZ {ppv}  "
+                  f"wt1:{f['wt1']:>7.2f}  {zl} SQZ {ppv} {rs}  "
                   f"day:{ds}{f['day_chg']:.1f}%")
 
     for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
@@ -310,8 +347,9 @@ def print_results(findings: list[dict]) -> None:
             zl  = "ZL↑" if f["zl_rising"] else "ZL↓"
             sqz = "SQZ" if f["squeeze"] else "   "
             ppv = "PPV" if f["wt_is_ppv"] else "   "
+            rs  = {"transition": "RS🔄", "strong": "RS↑", "weak": "RS↓"}.get(f.get("rs_state", "weak"), "")
             print(f"  {f['symbol']:<18} {f['close']:>9.2f}  "
-                  f"wt1:{f['wt1']:>7.2f}  {zl} {sqz} {ppv}  "
+                  f"wt1:{f['wt1']:>7.2f}  {zl} {sqz} {ppv} {rs}  "
                   f"day:{ds}{f['day_chg']:.1f}%")
     print()
 
@@ -329,6 +367,12 @@ def main():
     all_data = load_ohlc_many(watchlist, lookback=400)
     print(f"  Loaded {len(all_data)} stocks")
 
+    print(f"\nLoading benchmark ({BENCH_SYM}) for RS...")
+    bench_dict   = load_ohlc_many([BENCH_SYM], lookback=400)
+    bench_df     = bench_dict.get(BENCH_SYM)
+    bench_series = bench_df.set_index("date")["close"].astype(float) if bench_df is not None else None
+    print(f"  Benchmark {'loaded' if bench_series is not None else 'NOT FOUND — RS defaults to weak'}")
+
     print("\nFetching circuit limits...")
     circuit = get_circuit_limits()
 
@@ -337,7 +381,7 @@ def main():
     findings = []
     for i, (sym, df_raw) in enumerate(all_data.items(), 1):
         print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
-        result = analyse(sym, df_raw, calc)
+        result = analyse(sym, df_raw, calc, bench_series)
         if result:
             findings.append(result)
 

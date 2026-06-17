@@ -54,7 +54,7 @@ def parse_wt_rows(content: str) -> list[dict]:
             continue
         # preserve empty cells (Label may be empty) — use [1:-1] slice not if-strip filter
         parts = [p.strip() for p in ls.split('|')][1:-1]
-        if len(parts) < 14:
+        if len(parts) < 15:
             continue
         sym = _strip_md_link(parts[0])
         if not sym or sym in ("Symbol", "#"):
@@ -67,20 +67,21 @@ def parse_wt_rows(content: str) -> list[dict]:
         except ValueError:
             continue
         rows.append({
-            "symbol":  sym,
-            "label":   parts[1],
-            "signal":  parts[2],
-            "rank":    rank,
-            "wt1":     parts[4],
-            "wt2":     parts[5],
-            "zl_dir":  parts[6],
-            "zl_days": parts[7],
-            "zl_pct":  parts[8],
-            "squeeze": parts[9],
-            "ppv":     parts[10],
-            "day_chg": parts[11],
-            "close":   parts[12],
-            "circuit": parts[13],
+            "symbol":   sym,
+            "label":    parts[1],
+            "signal":   parts[2],
+            "rank":     rank,
+            "wt1":      parts[4],
+            "wt2":      parts[5],
+            "zl_dir":   parts[6],
+            "zl_days":  parts[7],
+            "zl_pct":   parts[8],
+            "squeeze":  parts[9],
+            "ppv":      parts[10],
+            "rs_state": parts[11],
+            "day_chg":  parts[12],
+            "close":    parts[13],
+            "circuit":  parts[14],
         })
     rows.sort(key=lambda r: (-r["rank"], float(r["wt1"]) if r["wt1"].lstrip("-").replace(".", "", 1).isdigit() else 0))
     return rows
@@ -104,10 +105,12 @@ def _rank_badge(rank: int) -> str:
 
 
 def _wt_html_row(r: dict) -> str:
-    sym    = r["symbol"]
-    zl_cls = "pos" if r["zl_dir"] == "↑" else "neg"
+    sym     = r["symbol"]
+    zl_cls  = "pos" if r["zl_dir"] == "↑" else "neg"
     sqz_cls = "sqz-on" if r["squeeze"] == "✓" else "sqz-off"
     ppv_cls = "pos" if r["ppv"] == "✓" else "mu"
+    rs_val  = r.get("rs_state", "—")
+    rs_cls  = "gld" if rs_val == "🔄" else ("pos" if rs_val == "↑" else "mu")
     return (
         f'<tr>'
         f'<td class="sym">{_tv_link(sym)}</td>'
@@ -120,6 +123,7 @@ def _wt_html_row(r: dict) -> str:
         f'<td class="{_chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
         f'<td class="{sqz_cls}">{r["squeeze"]}</td>'
         f'<td class="{ppv_cls}">{r["ppv"]}</td>'
+        f'<td class="{rs_cls}" style="text-align:center">{rs_val}</td>'
         f'<td class="{_chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'<td class="num">{r["close"]}</td>'
         f'<td class="mu">{r["circuit"]}</td>'
@@ -197,7 +201,7 @@ tr:hover td{background:var(--bg3)}
 _TABLE_HDR = """    <thead><tr>
       <th>Symbol</th><th>Label</th><th>WT Signal</th>
       <th>WT1</th><th>WT2</th><th>ZL</th><th>ZL Days</th><th>ZL Chg%</th>
-      <th>Sqz</th><th>PPV</th><th>Day Chg</th><th>Close</th><th>Circuit</th>
+      <th>Sqz</th><th>PPV</th><th>RS</th><th>Day Chg</th><th>Close</th><th>Circuit</th>
     </tr></thead>"""
 
 
@@ -266,7 +270,7 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   </div>
   <table>
 {_TABLE_HDR}
-    <tbody>{_rows_or_empty(wt_html, 13, "No other WT bull crosses today")}</tbody>
+    <tbody>{_rows_or_empty(wt_html, 14, "No other WT bull crosses today")}</tbody>
   </table>
 </div>
 
