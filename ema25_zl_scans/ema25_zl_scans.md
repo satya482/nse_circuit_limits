@@ -1,5 +1,5 @@
 # NSE EMA25 ZL Scan — 2026-06-18
-*Generated 2026-06-18 15:42 IST*
+*Generated 2026-06-18 19:15 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -202,8 +202,8 @@
 | [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO) | 5d | +6.8% | Home beauty repairs cleaning services marketplace platform | +1.08% | 131.40 | — | 20%  |
 | [IGL](https://in.tradingview.com/chart/?symbol=NSE:IGL) | 5d | +5.7% | Natural gas distribution Delhi NCR transport domestic industrial | -0.46% | 169.99 | — | 20%  |
 | [SKIPPER](https://in.tradingview.com/chart/?symbol=NSE:SKIPPER) | 5d | +5.0% | Power transmission towers, polymer pipes, infrastructure EPC projects | -0.36% | 547.05 | — | 20%  |
-| [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | 5d | +8.8% | Small finance bank serving underbanked individuals small businesses | -1.21% | 77.70 | — | 20%  |
 | [MUFIN](https://in.tradingview.com/chart/?symbol=NSE:MUFIN) | 5d | +8.6% | EV financing NBFC for clean mobility solutions India | -0.04% | 128.66 | — | 20%  |
+| [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | 5d | +8.8% | Small finance bank serving underbanked individuals small businesses | -1.21% | 77.70 | — | 20%  |
 | [WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA) | 6d | +8.5% | Pharmaceuticals: injectables, oral drugs, diabetes, cardiology, anti-infectives | -1.66% | 1989.20 | — | 20%  |
 | [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM) | 6d | +5.4% | Fluorine chemicals, PTFE, refrigerants, polymers manufacturing | +4.40% | 3837.50 | — | 20%  |
 | [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | 6d | +11.2% | Mobile cranes, forklifts, construction equipment manufacturer | +1.49% | 976.45 | — | 20%  |
