@@ -11,7 +11,7 @@ Signal hierarchy (wt_signal_rank):
   +4  BULL_ANY_PPV   — any cross + Pocket Pivot Volume
   +3  BULL_OVERSOLD  — deep oversold cross (wt2 ≤ -60)
   +2  BULL_OS_L2     — soft oversold cross (wt2 ≤ -53)
-  (rank 1 BULL_ZERO_CROSS excluded — zero-line cross is post-cross noise, not a bull cross)
+  +1  BULL_ANY_MID   — mid-range cross (WT2 > −53, no PPV)
 
 Context columns:
   ZL    : ZLEMA25 direction (↑ rising / ↓ flat-down)
@@ -50,7 +50,7 @@ MD_DATED = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
 
 MC_LOW = 1_000 * 1_00_00_000  # 1,000 Cr
 MC_HIGH = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
-MIN_RANK = 2
+MIN_RANK = 1
 ZL_TURN_CAP = 60
 BENCH_SYM = "NIFTY MIDSML 400"
 
@@ -246,14 +246,14 @@ _RANK_LABEL = {
     4: "BULL ANY+PPV",
     3: "BULL OVERSOLD",
     2: "BULL OS L2",
-    1: "ABOVE ZERO LINE",
+    1: "BULL ANY MID",
 }
 _RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
 
 _CATEGORIES = [
     ("🔥", "MAJOR", "PPV confirmed", [5, 4]),
     ("🟢", "OVERSOLD", "reversal from −53/−60", [3, 2]),
-    ("📈", "ABOVE ZERO LINE", "momentum confirmed", [1]),
+    ("📈", "MID-RANGE", "any cross, WT2 > −53, no PPV", [1]),
 ]
 
 _HDR = [
