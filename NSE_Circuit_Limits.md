@@ -1,6 +1,6 @@
 # NSE Circuit Limit Dashboard
 
-_Last updated: 2026-06-15 18:46:39_
+_Last updated: 2026-06-18 19:18:36_
 
 Changes in your TradingView watchlist:
 
