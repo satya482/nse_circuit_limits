@@ -44,7 +44,7 @@ def _strip_md_link(s: str) -> str:
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
-# Table cols: Symbol | Label | Signal | Rank | RS | Sqz | PPV | ZL | ZL Days | ZL Chg% | WT1 | WT2 | Day Chg | Close | Circuit
+# Table cols: Symbol | Label | Signal | ZL Chg% | Day Chg | Rank | RS | Sqz | PPV | ZL | ZL Days | WT1 | WT2 | Close | Circuit
 
 
 def parse_wt_rows(content: str) -> list[dict]:
@@ -69,7 +69,7 @@ def parse_wt_rows(content: str) -> list[dict]:
             continue
         seen.add(sym)
         try:
-            rank = int(parts[3])
+            rank = int(parts[5])
         except ValueError:
             continue
         rows.append(
@@ -77,16 +77,16 @@ def parse_wt_rows(content: str) -> list[dict]:
                 "symbol": sym,
                 "label": parts[1],
                 "signal": parts[2],
+                "zl_pct": parts[3],
+                "day_chg": parts[4],
                 "rank": rank,
-                "rs_state": parts[4],
-                "squeeze": parts[5],
-                "ppv": parts[6],
-                "zl_dir": parts[7],
-                "zl_days": parts[8],
-                "zl_pct": parts[9],
-                "wt1": parts[10],
-                "wt2": parts[11],
-                "day_chg": parts[12],
+                "rs_state": parts[6],
+                "squeeze": parts[7],
+                "ppv": parts[8],
+                "zl_dir": parts[9],
+                "zl_days": parts[10],
+                "wt1": parts[11],
+                "wt2": parts[12],
                 "close": parts[13],
                 "circuit": parts[14],
             }
@@ -136,15 +136,15 @@ def _wt_html_row(r: dict) -> str:
         f'<td class="sym">{_tv_link(sym)}</td>'
         f'<td class="lbl">{r["label"]}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
+        f'<td class="{_chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+        f'<td class="{_chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'<td class="{rs_cls}" style="text-align:center">{rs_val}</td>'
         f'<td class="{sqz_cls}">{r["squeeze"]}</td>'
         f'<td class="{ppv_cls}">{r["ppv"]}</td>'
         f'<td class="{zl_cls}">{r["zl_dir"]}</td>'
         f'<td class="mu">{r["zl_days"]}</td>'
-        f'<td class="{_chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
         f'<td class="num">{r["wt1"]}</td>'
         f'<td class="num">{r["wt2"]}</td>'
-        f'<td class="{_chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
         f'<td class="num">{r["close"]}</td>'
         f'<td class="mu">{r["circuit"]}</td>'
         f"</tr>"
@@ -223,8 +223,8 @@ tr:hover td{background:var(--bg3)}
 
 _TABLE_HDR = """    <thead><tr>
       <th>Symbol</th><th>Label</th><th>WT Signal</th>
-      <th>RS</th><th>Sqz</th><th>PPV</th><th>ZL</th><th>ZL Days</th><th>ZL Chg%</th>
-      <th>WT1</th><th>WT2</th><th>Day Chg</th><th>Close</th><th>Circuit</th>
+      <th>ZL Chg%</th><th>Day Chg</th><th>RS</th><th>Sqz</th><th>PPV</th><th>ZL</th><th>ZL Days</th>
+      <th>WT1</th><th>WT2</th><th>Close</th><th>Circuit</th>
     </tr></thead>"""
 
 
