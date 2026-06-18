@@ -257,8 +257,8 @@ _CATEGORIES = [
 ]
 
 _HDR = [
-    "| Symbol | Label | Signal | Rank | WT1 | WT2 | ZL | ZL Days | ZL Chg% | Sqz | PPV | RS | Day Chg | Close | Circuit |",
-    "|--------|-------|--------|:----:|----:|----:|:--:|--------:|--------:|:---:|:---:|:--:|--------:|------:|:-------:|",
+    "| Symbol | Label | Signal | Rank | RS | Sqz | PPV | ZL | ZL Days | ZL Chg% | WT1 | WT2 | Day Chg | Close | Circuit |",
+    "|--------|-------|--------|:----:|:--:|:---:|:---:|:--:|--------:|--------:|----:|----:|--------:|------:|:-------:|",
 ]
 
 
@@ -280,14 +280,14 @@ def _row(f: dict, circuit: dict) -> str:
         f"| {lbl} "
         f"| {emoji} {f['wt_signal']} "
         f"| {f['wt_rank']} "
-        f"| {f['wt1']} "
-        f"| {f['wt2']} "
+        f"| {rs} "
+        f"| {sqz} "
+        f"| {ppv} "
         f"| {zl_arrow} "
         f"| {zl_d} "
         f"| {zl_p} "
-        f"| {sqz} "
-        f"| {ppv} "
-        f"| {rs} "
+        f"| {f['wt1']} "
+        f"| {f['wt2']} "
         f"| {ds}{f['day_chg']:.2f}% "
         f"| {f['close']:.2f} "
         f"| {cl} {em} |"
