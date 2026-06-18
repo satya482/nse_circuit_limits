@@ -2,32 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 466** &nbsp;|&nbsp; **Additions: 14** &nbsp;|&nbsp; **Deletions: 3**
+**Total stocks in list: 466** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (14)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [PANAMAPET](https://in.tradingview.com/chart/?symbol=NSE:PANAMAPET) | +9.13% |
-| [NIBE](https://in.tradingview.com/chart/?symbol=NSE:NIBE) | +7.57% |
-| [UTSSAV](https://in.tradingview.com/chart/?symbol=NSE:UTSSAV) | +5.00% |
-| [SHRIAHIMSA](https://in.tradingview.com/chart/?symbol=NSE:SHRIAHIMSA) | +4.99% |
-| [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM) | +4.40% |
-| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG) | +1.14% |
-| [SARLAPOLY](https://in.tradingview.com/chart/?symbol=NSE:SARLAPOLY) | +1.06% |
-| [DIAMONDYD](https://in.tradingview.com/chart/?symbol=NSE:DIAMONDYD) | +0.73% |
-| [VADILALIND](https://in.tradingview.com/chart/?symbol=NSE:VADILALIND) | +0.70% |
-| [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) | +0.56% |
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | +0.39% |
-| [360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE) | +0.39% |
-| [AURUM](https://in.tradingview.com/chart/?symbol=NSE:AURUM) | -0.61% |
-| [MMTC](https://in.tradingview.com/chart/?symbol=NSE:MMTC) | -1.42% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (3)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [PARIN](https://in.tradingview.com/chart/?symbol=NSE:PARIN) | -0.96% |
-| [GICRE](https://in.tradingview.com/chart/?symbol=NSE:GICRE) | -1.40% |
-| [CELLECOR](https://in.tradingview.com/chart/?symbol=NSE:CELLECOR) | -3.07% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (466)
 | # | Symbol | Day Change % |
@@ -161,8 +142,8 @@ _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹
 | 127 | [RAMRAT](https://in.tradingview.com/chart/?symbol=NSE:RAMRAT) | +1.61% |
 | 128 | [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL) | +1.60% |
 | 129 | [DYNAMATECH](https://in.tradingview.com/chart/?symbol=NSE:DYNAMATECH) | +1.60% |
-| 130 | [HAPPYFORGE](https://in.tradingview.com/chart/?symbol=NSE:HAPPYFORGE) | +1.59% |
-| 131 | [EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE) | +1.59% |
+| 130 | [EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE) | +1.59% |
+| 131 | [HAPPYFORGE](https://in.tradingview.com/chart/?symbol=NSE:HAPPYFORGE) | +1.59% |
 | 132 | [KAPSTON](https://in.tradingview.com/chart/?symbol=NSE:KAPSTON) | +1.58% |
 | 133 | [VINYAS](https://in.tradingview.com/chart/?symbol=NSE:VINYAS) | +1.52% |
 | 134 | [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND) | +1.51% |
