@@ -27,7 +27,7 @@ if os.path.exists(_LABELS_FILE):
     with open(_LABELS_FILE, encoding="utf-8") as _f:
         _LABELS = json.load(_f)
 
-_RANK_LABEL = {5: "OS+PPV", 4: "ANY+PPV", 3: "OVERSOLD", 2: "OS L2", 1: "ZERO"}
+_RANK_LABEL = {5: "OS+PPV", 4: "ANY+PPV", 3: "OVERSOLD", 2: "OS L2", 1: "ANY MID"}
 _RANK_COLOR = {5: "#f97316", 4: "#eab308", 3: "#22c55e", 2: "#84cc16", 1: "#3b82f6"}
 
 
@@ -274,7 +274,7 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   Generated {now_str} &nbsp;|&nbsp;
   🔥 MAJOR = PPV confirmed &nbsp;|&nbsp;
   🟢 OVERSOLD = cross below −53/−60 &nbsp;|&nbsp;
-  📈 ABOVE ZERO = WT1 crossed zero
+  📈 MID-RANGE = any cross, WT2 > −53, no PPV
 </div>
 
 <div class="bar">
