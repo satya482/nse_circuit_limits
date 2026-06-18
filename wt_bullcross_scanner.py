@@ -11,7 +11,7 @@ Signal hierarchy (wt_signal_rank):
   +4  BULL_ANY_PPV   — any cross + Pocket Pivot Volume
   +3  BULL_OVERSOLD  — deep oversold cross (wt2 ≤ -60)
   +2  BULL_OS_L2     — soft oversold cross (wt2 ≤ -53)
-  +1  BULL_ZERO_CROSS — WT1 crosses above 0 (momentum confirmation)
+  (rank 1 BULL_ZERO_CROSS excluded — zero-line cross is post-cross noise, not a bull cross)
 
 Context columns:
   ZL    : ZLEMA25 direction (↑ rising / ↓ flat-down)
@@ -50,7 +50,7 @@ MD_DATED = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
 
 MC_LOW = 1_000 * 1_00_00_000  # 1,000 Cr
 MC_HIGH = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
-MIN_RANK = 1
+MIN_RANK = 2
 ZL_TURN_CAP = 60
 BENCH_SYM = "NIFTY MIDSML 400"
 
@@ -209,10 +209,6 @@ def analyse(
             return None
 
         rs = _rs_state(df_raw, bench_series)
-
-        # Rank 1 (zero-line cross only) without RS support is post-cross noise — drop it.
-        if sig.wt_signal_rank == 1 and rs == "weak":
-            return None
 
         c = df_raw["close"].astype(float)
         zl25 = _zlema(c, 25)
