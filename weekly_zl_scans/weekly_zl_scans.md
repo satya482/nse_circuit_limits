@@ -1,5 +1,5 @@
 # NSE Weekly ZL Scan — 2026-06-18
-*Generated 2026-06-18 15:44 IST*
+*Generated 2026-06-18 19:17 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -98,8 +98,8 @@
 | [BAJAJHCARE](https://in.tradingview.com/chart/?symbol=NSE:BAJAJHCARE) | 1w | ABOVE | 1w | +4.4% | +5.98% | 317.10 | — | 20%  |
 | [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF) | 1w | ABOVE | 1w | +12.3% | +7.93% | 1913.60 | 5w | 20%  |
 | [RAILTEL](https://in.tradingview.com/chart/?symbol=NSE:RAILTEL) | 1w | ABOVE | 1w | +4.5% | -0.39% | 322.70 | — | 20%  |
-| [BIRLACORPN](https://in.tradingview.com/chart/?symbol=NSE:BIRLACORPN) | 1w | ABOVE | 1w | +10.4% | +6.58% | 1049.70 | — | 20%  |
 | [ARE&M](https://in.tradingview.com/chart/?symbol=NSE:ARE&M) | 1w | ABOVE | 1w | +3.4% | -0.42% | 851.70 | — | 20%  |
+| [BIRLACORPN](https://in.tradingview.com/chart/?symbol=NSE:BIRLACORPN) | 1w | ABOVE | 1w | +10.4% | +6.58% | 1049.70 | — | 20%  |
 | [BAJAJHFL](https://in.tradingview.com/chart/?symbol=NSE:BAJAJHFL) | 1w | ABOVE | 1w | +1.5% | +0.16% | 85.87 | — | 20%  |
 | [ABFRL](https://in.tradingview.com/chart/?symbol=NSE:ABFRL) | 1w | ABOVE | 1w | +2.7% | -0.29% | 61.54 | — | 20%  |
 | [SJVN](https://in.tradingview.com/chart/?symbol=NSE:SJVN) | 1w | ABOVE | 1w | +2.2% | +0.46% | 74.21 | 5w | 20%  |
@@ -206,8 +206,8 @@
 | [BALMLAWRIE](https://in.tradingview.com/chart/?symbol=NSE:BALMLAWRIE) | 1w | ABOVE | 1w | +4.9% | +0.42% | 183.48 | — | 20%  |
 | [MONTECARLO](https://in.tradingview.com/chart/?symbol=NSE:MONTECARLO) | 1w | ABOVE | 1w | +4.3% | +2.32% | 558.20 | 4w | 20%  |
 | [BUTTERFLY](https://in.tradingview.com/chart/?symbol=NSE:BUTTERFLY) | 1w | ABOVE | 1w | +4.0% | -1.84% | 651.85 | 13w | 20%  |
-| [AHLUCONT](https://in.tradingview.com/chart/?symbol=NSE:AHLUCONT) | 1w | ABOVE | 1w | +3.2% | -1.92% | 823.70 | — | 20%  |
 | [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK) | 1w | ABOVE | 1w | +14.3% | +4.72% | 2880.10 | 4w | 20%  |
+| [AHLUCONT](https://in.tradingview.com/chart/?symbol=NSE:AHLUCONT) | 1w | ABOVE | 1w | +3.2% | -1.92% | 823.70 | — | 20%  |
 | [WESTLIFE](https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE) | 1w | ABOVE | 1w | +4.1% | +1.48% | 464.25 | 6w | 20%  |
 | [UFLEX](https://in.tradingview.com/chart/?symbol=NSE:UFLEX) | 1w | ABOVE | 1w | +1.6% | +0.81% | 424.30 | — | 20%  |
 | [ORKLAINDIA](https://in.tradingview.com/chart/?symbol=NSE:ORKLAINDIA) | 1w | ABOVE | 1w | +6.0% | +0.52% | 638.00 | — | 20%  |
