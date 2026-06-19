@@ -53,6 +53,7 @@ Run-Scanner "CircuitLimits"        "$ROOT\run_dashboard.ps1"
 Run-Scanner "US_FetchData"         "$ROOT\run_us_fetch_data.ps1"
 Run-Scanner "US_ZL_Squeeze"        "$ROOT\run_us_zl_squeeze_scanner.ps1"
 Run-Scanner "Dashboard"            "$ROOT\run_dashboard_generator.ps1"
+Run-Scanner "CatalystBot"          "$ROOT\run_catalyst_bot.ps1"
 Run-Scanner "ScanStatusMailer"     "$ROOT\run_scan_status_mailer.ps1"
 
 $total  = "{0:hh}h {0:mm}m {0:ss}s" -f ((Get-Date) - $overallStart)
