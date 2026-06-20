@@ -31,6 +31,7 @@ ZL_SQUEEZE_MD = os.path.join(BASE, "zl_squeeze_scans", "zl_squeeze_scans.md")
 SECTOR_ROTATION_MD = os.path.join(
     BASE, "sector_rotation_scans", "sector_rotation_latest.md"
 )
+TREND_MD = os.path.join(BASE, "trend_scans", "trend_scan_latest.md")
 DASHBOARD_HTML = os.path.join(BASE, "dashboard.html")
 
 _LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
@@ -144,12 +145,20 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                     sym = _strip_md_link(parts[0])
                     if has_signal:
                         if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
-                            # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
-                            zl_days = parts[1]
-                            zl_pct = parts[2] if len(parts) > 2 else ""
-                            day_chg = parts[4] if len(parts) > 4 else ""
-                            sig_raw = parts[5] if len(parts) > 5 else ""
-                            circuit = parts[6] if len(parts) > 6 else ""
+                            if len(parts) >= 9:
+                                # Extended format: Symbol | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit
+                                zl_days = parts[1]
+                                zl_pct = parts[2] if len(parts) > 2 else ""
+                                day_chg = parts[6] if len(parts) > 6 else ""
+                                sig_raw = parts[7] if len(parts) > 7 else ""
+                                circuit = parts[8] if len(parts) > 8 else ""
+                            else:
+                                # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
+                                zl_days = parts[1]
+                                zl_pct = parts[2] if len(parts) > 2 else ""
+                                day_chg = parts[4] if len(parts) > 4 else ""
+                                sig_raw = parts[5] if len(parts) > 5 else ""
+                                circuit = parts[6] if len(parts) > 6 else ""
                         else:
                             # Old format: Symbol | Signal | Day Chg | ZL Days | ZL Chg% | Circuit
                             sig_raw = parts[1] if len(parts) > 1 else ""
@@ -625,6 +634,47 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
     return high_conv, rot_in, rot_out, zl_breadth
 
 
+def parse_trend_scanner(content: str) -> list:
+    """Parse trend_scan_latest.md.
+    Table cols: Symbol | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit
+    """
+    rows = []
+    in_table = False
+    for line in content.splitlines():
+        ls = line.strip()
+        if "| Symbol" in ls and "| Signal" in ls and "| Score" in ls:
+            in_table = True
+            continue
+        if in_table and ls.startswith("|---"):
+            continue
+        if in_table and ls.startswith("|"):
+            parts = [p.strip() for p in ls.split("|") if p.strip()]
+            if len(parts) < 10:
+                continue
+            sym = _strip_md_link(parts[0])
+            sig_raw = parts[2]
+            tag = "TREND"
+            for t in ("LEADER_ZL", "ZL_PULLBACK", "EMA_SUPPORT", "ZL_ENTRY"):
+                if t in sig_raw:
+                    tag = t
+                    break
+            zl_days = parts[8].lstrip("↑↓").strip() if len(parts) > 8 else ""
+            rows.append(
+                {
+                    "symbol": sym,
+                    "signal": tag,
+                    "score": parts[3] if len(parts) > 3 else "",
+                    "day_chg": parts[10] if len(parts) > 10 else "",
+                    "zl_days": zl_days,
+                    "zl_pct": parts[9] if len(parts) > 9 else "",
+                    "circuit": parts[11] if len(parts) > 11 else "",
+                }
+            )
+        elif in_table and not ls.startswith("|"):
+            in_table = False
+    return rows
+
+
 # ── Company fetch staleness check ────────────────────────────────────────────
 
 
@@ -673,6 +723,7 @@ def build_html(
     rot_in: list,
     rot_out: list,
     zl_breadth: list,
+    trend: list | None = None,
     ep_candidates: list | None = None,
     kg_catalysts: list | None = None,
 ) -> str:
@@ -698,10 +749,12 @@ def build_html(
                 zl_days_map[s] = r.get("zl_days", "")
                 zl_pct_map[s] = r.get("zl_pct", "")
 
+    trend_rows = trend or []
     register(swing, "Swing")
     register(momentum, "Momentum")
     register(weekly_entry, "WeeklyRS")
     register(rot_high_conv, "Rotation")
+    register(trend_rows, "Trend")
 
     all_syms = sorted(
         scanner_map.keys(),
@@ -957,6 +1010,36 @@ def build_html(
   <details style="margin-top:4px"><summary style="cursor:pointer;font-weight:600">Rotating Out ({len(rot_out)} groups)</summary>{ro_table}</details>
 </div>"""
 
+    # ── Trend scanner section ────────────────────────────────────────────────
+    trend_section = ""
+    if trend_rows:
+        _sig_cls = {
+            "LEADER_ZL": "b-trend",
+            "ZL_PULLBACK": "b-swing",
+            "EMA_SUPPORT": "b-weeklyrs",
+            "ZL_ENTRY": "b-momentum",
+        }
+        tr_rows_html = [
+            f"<tr>"
+            f'<td class="sym">{tv_link(r["symbol"])}</td>'
+            f'<td class="lbl">{_lbl(r["symbol"])}</td>'
+            f'<td><span class="b {_sig_cls.get(r["signal"], "b-trend")}">{r["signal"]}</span></td>'
+            f'<td class="num">{r["score"]}</td>'
+            f'<td class="zld">{r["zl_days"]}</td>'
+            f'<td class="{chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+            f'<td class="{chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
+            f'{td_circ(r["circuit"])}</tr>'
+            for r in trend_rows[:30]
+        ]
+        trend_section = f"""
+<div class="section">
+  <div class="stitle">Trend Scanner — Leaders in Pullbacks ({len(trend_rows)} stocks, top 30 by entry score){_copy_btn(trend_rows)}</div>
+  <table>
+    <thead><tr><th>Symbol</th><th>Label</th><th>Signal</th><th>Score</th><th>ZL Days</th><th>ZL Chg%</th><th>Day Chg</th><th>Circuit</th></tr></thead>
+    <tbody>{table_or_empty(tr_rows_html, 8, "No signals today")}</tbody>
+  </table>
+</div>"""
+
     ema_label = (
         f"EMA Screener ({ema_date})"
         if ema_date and ema_date != today
@@ -1083,6 +1166,7 @@ def build_html(
         + zl_squeeze
         + compression_rows
         + rot_high_conv
+        + trend_rows
     ]:
         if _s not in _seen:
             _seen.add(_s)
@@ -1139,7 +1223,7 @@ tr:hover td{{background:var(--bg3)}}
 .pos{{color:var(--grn)}}.neg{{color:var(--red)}}.sqz-hi{{color:var(--gld);font-weight:700;text-align:center}}.sqz-on{{color:var(--grn);font-weight:600;text-align:center}}.sqz-off{{color:var(--mu);text-align:center;font-size:11px}}
 
 .b{{display:inline-block;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700;color:#fff;margin-right:2px}}
-.b-swing{{background:#1f6feb}}.b-momentum{{background:#388bfd}}.b-weeklyrs{{background:#7c3aed}}
+.b-swing{{background:#1f6feb}}.b-momentum{{background:#388bfd}}.b-weeklyrs{{background:#7c3aed}}.b-trend{{background:#2d6a4f}}
 .b-ep-watch{{background:#3fb950}}.b-ep-filter{{background:#6e7681}}
 .b-orderwin{{background:#58a6ff}}.b-cap{{background:#a371f7}}.b-gov{{background:#d29922}}
 .b-neg{{background:#f85149}}
@@ -1180,6 +1264,7 @@ tr:hover td{{background:var(--bg3)}}
   <div class="stat"><div class="sv gld">{total_zl_rising}</div><div class="sl">Squeeze+RS</div></div>
   <div class="stat"><div class="sv grn">{len(rot_high_conv)}</div><div class="sl">Rot Leaders</div></div>
   <div class="stat"><div class="sv blu">{len(rot_in)}</div><div class="sl">Rot Groups In</div></div>
+  <div class="stat"><div class="sv grn">{len(trend_rows)}</div><div class="sl">Trend</div></div>
 </div>
 
 <div class="section">
@@ -1199,6 +1284,8 @@ tr:hover td{{background:var(--bg3)}}
 {compression_section}
 
 {sector_rotation_section}
+
+{trend_section}
 
 <div class="two">
   <div class="section">
@@ -1263,6 +1350,7 @@ def main():
     compression_content = read_file(COMPRESSION_MD)
     zl_squeeze_content = read_file(ZL_SQUEEZE_MD)
     sector_rotation_content = read_file(SECTOR_ROTATION_MD)
+    trend_content = read_file(TREND_MD)
 
     # Knowledge Graph JSON (optional — graceful fallback if KG not yet built)
     _kg_data_dir = os.path.join(BASE, "graph_data")
@@ -1302,6 +1390,7 @@ def main():
     rot_high_conv, rot_in_groups, rot_out_groups, zl_breadth_groups = (
         parse_sector_rotation(sector_rotation_content)
     )
+    trend_signals = parse_trend_scanner(trend_content)
 
     html = build_html(
         today=today,
@@ -1324,6 +1413,7 @@ def main():
         rot_in=rot_in_groups,
         rot_out=rot_out_groups,
         zl_breadth=zl_breadth_groups,
+        trend=trend_signals,
         ep_candidates=ep_candidates_data,
         kg_catalysts=kg_catalysts_data,
     )
@@ -1346,6 +1436,7 @@ def main():
     print(
         f"  Sector Rotation: High-conv={len(rot_high_conv)} Rot-In={len(rot_in_groups)} Rot-Out={len(rot_out_groups)}"
     )
+    print(f"  Trend Scanner: {len(trend_signals)} leader pullbacks")
     triple = sum(
         1
         for s in {r["symbol"] for r in swing_signals}
