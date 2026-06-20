@@ -126,6 +126,69 @@ def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
         return "weak"
 
 
+def _compute_rs_pct_map(all_data: dict, bench_series: pd.Series) -> dict[str, float]:
+    """IBD-style RS percentile rank vs NIFTY MIDSML 400 across full universe.
+    RS line = (stock_close / bench_close) * 1000; weighted 3m/6m/9m/12m return."""
+    WINDOWS = [63, 126, 189, 252]
+    WEIGHTS = [0.4, 0.2, 0.2, 0.2]
+    scores: dict[str, float] = {}
+    for sym, df in all_data.items():
+        if df is None or len(df) < 253:
+            continue
+        try:
+            stock_c = df.set_index("date")["close"].astype(float)
+            bench = bench_series.reindex(stock_c.index)
+            valid = bench.notna()
+            if valid.sum() < 253:
+                continue
+            rs_line = (stock_c[valid] / bench[valid]) * 1000
+            score = sum(
+                wt * (rs_line.iloc[-1] / rs_line.iloc[-w] - 1)
+                for w, wt in zip(WINDOWS, WEIGHTS)
+                if len(rs_line) >= w + 1
+            )
+            scores[sym] = score
+        except Exception:
+            continue
+    if not scores:
+        return {}
+    s = pd.Series(scores)
+    pct = s.rank(pct=True) * 100
+    return pct.round(1).to_dict()
+
+
+def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
+    """Close / EMA(close, length) ratio and whether it is rising."""
+    avg = c.ewm(span=length, adjust=False).mean()
+    ratio = c / avg
+    if pd.isna(ratio.iloc[-1]):
+        return 1.0, False
+    return float(ratio.iloc[-1]), bool(ratio.iloc[-1] > ratio.iloc[-2])
+
+
+def _earliness(
+    rs_state: str,
+    zl_days: int,
+    cavgc: float,
+    cavgc_rising: bool,
+    squeeze: bool,
+) -> float:
+    """Earliness score 0–100: how close to the START of a momentum move.
+    Squeeze(40) + RS-transition(30) + ZL freshness(0-20) + C/AvgC freshness(0-10).
+    High score = entry at the very inflection, before the crowd arrives."""
+    score = 0.0
+    if squeeze:
+        score += 40  # coiled, hasn't broken out yet
+    if rs_state == "transition":
+        score += 30  # RS turned positive today
+    score += max(0, 20 - zl_days)  # 1d=19, 10d=10, 20d+=0
+    if cavgc_rising and 1.0 < cavgc < 1.015:
+        score += 10  # just ignited, not extended
+    elif cavgc_rising and cavgc < 1.03:
+        score += 5  # moving but still fresh
+    return round(score, 1)
+
+
 # ── Watchlist ─────────────────────────────────────────────────────────────────
 
 
@@ -199,6 +262,7 @@ def analyse(
     df_raw: pd.DataFrame,
     calc: WaveTrendCalculator,
     bench_series: pd.Series | None = None,
+    rs_pct: float = 50.0,
 ) -> dict | None:
     try:
         if df_raw is None or len(df_raw) < 83:  # WaveTrendCalculator._min_bars
@@ -219,6 +283,10 @@ def analyse(
         prev_close = float(c.iloc[-2])
         day_chg = (curr_close - prev_close) / prev_close * 100
 
+        cavgc_val, cavgc_rising = _cavgc(c)
+        squeeze = _bb_kc_squeeze(df_raw)
+        earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
+
         return {
             "symbol": symbol,
             "wt_signal": sig.wt_signal,
@@ -229,8 +297,12 @@ def analyse(
             "zl_rising": zl_rising,
             "zl_days": zl_days,
             "zl_pct": zl_pct,
-            "squeeze": _bb_kc_squeeze(df_raw),
+            "squeeze": squeeze,
             "rs_state": rs,
+            "rs_pct": rs_pct,
+            "cavgc": round(cavgc_val, 4),
+            "cavgc_rising": cavgc_rising,
+            "earliness": earliness,
             "close": curr_close,
             "day_chg": day_chg,
         }
@@ -257,8 +329,8 @@ _CATEGORIES = [
 ]
 
 _HDR = [
-    "| Symbol | Label | Signal | ZL Chg% | Day Chg | Rank | RS | Sqz | PPV | ZL | ZL Days | WT1 | WT2 | Close | Circuit |",
-    "|--------|-------|--------|--------:|--------:|:----:|:--:|:---:|:---:|:--:|--------:|----:|----:|------:|:-------:|",
+    "| Symbol | Label | Signal | ZL Chg% | Day Chg | Rank | RS | RS% | C/AvgC | Erly | Sqz | PPV | ZL | ZL Days | WT1 | WT2 | Close | Circuit |",
+    "|--------|-------|--------|--------:|--------:|:----:|:--:|----:|-------:|-----:|:---:|:---:|:--:|--------:|----:|----:|------:|:-------:|",
 ]
 
 
@@ -273,6 +345,10 @@ def _row(f: dict, circuit: dict) -> str:
     sqz = "✓" if f["squeeze"] else "—"
     ppv = "✓" if f["wt_is_ppv"] else "—"
     rs = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
+    rs_pct_str = f"{f.get('rs_pct', 50.0):.0f}"
+    cavgc_arrow = "↑" if f.get("cavgc_rising", False) else "↓"
+    cavgc_str = f"{cavgc_arrow}{f.get('cavgc', 1.0):.3f}"
+    erly = f"{f.get('earliness', 0.0):.0f}"
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl = _LABELS.get(sym, "")
     return (
@@ -283,6 +359,9 @@ def _row(f: dict, circuit: dict) -> str:
         f"| {ds}{f['day_chg']:.2f}% "
         f"| {f['wt_rank']} "
         f"| {rs} "
+        f"| {rs_pct_str} "
+        f"| {cavgc_str} "
+        f"| {erly} "
         f"| {sqz} "
         f"| {ppv} "
         f"| {zl_arrow} "
@@ -295,8 +374,8 @@ def _row(f: dict, circuit: dict) -> str:
 
 
 def build_markdown(findings: list[dict], circuit: dict) -> str:
-    # Sort: rank desc, then wt1 asc within rank (deeper oversold first)
-    sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], x["wt1"]))
+    # Sort: rank desc, then composite score desc within rank (strongest RS + momentum first)
+    sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
 
     rank_groups: dict[int, list] = {}
     for f in sorted_f:
@@ -337,7 +416,7 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
 
     for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
         group = [f for r in ranks for f in rank_groups.get(r, [])]
-        group.sort(key=lambda x: (-x["wt_rank"], x["wt1"]))
+        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit) for f in group]
@@ -380,7 +459,7 @@ def print_results(findings: list[dict]) -> None:
         group = [f for f in findings if f["wt_rank"] in ranks]
         if not group:
             continue
-        group.sort(key=lambda x: (-x["wt_rank"], x["wt1"]))
+        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         print(f"\n  ── {emoji} {cat_name} ({len(group)}) ──")
         for f in group:
             ds = "+" if f["day_chg"] >= 0 else ""
@@ -424,6 +503,12 @@ def main():
         f"  Benchmark {'loaded' if bench_series is not None else 'NOT FOUND — RS defaults to weak'}"
     )
 
+    print("\nComputing RS percentile ranks across universe...")
+    rs_pct_map: dict[str, float] = (
+        _compute_rs_pct_map(all_data, bench_series) if bench_series is not None else {}
+    )
+    print(f"  RS ranks computed for {len(rs_pct_map)} stocks")
+
     print("\nFetching circuit limits...")
     circuit = get_circuit_limits()
 
@@ -432,7 +517,9 @@ def main():
     findings = []
     for i, (sym, df_raw) in enumerate(all_data.items(), 1):
         print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
-        result = analyse(sym, df_raw, calc, bench_series)
+        result = analyse(
+            sym, df_raw, calc, bench_series, rs_pct=rs_pct_map.get(sym, 50.0)
+        )
         if result:
             findings.append(result)
 
