@@ -5,6 +5,9 @@ Reads wt_bullcross_latest.md and builds wt_squeeze_dashboard.html.
 
 Source : wt_scans/wt_bullcross_latest.md  (wt_bullcross_scanner.py)
 Output : wt_squeeze_dashboard.html
+
+Table format (12 cols):
+  Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
 """
 
 import re
@@ -44,23 +47,37 @@ def _strip_md_link(s: str) -> str:
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
-# Table cols: Symbol | Label | Signal | ZL Chg% | Day Chg | Rank | RS | Sqz | PPV | ZL | ZL Days | WT1 | WT2 | Close | Circuit
+# Table cols (12): Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
+# parts indices:     0        1       2        3     4     5       6     7        8         9    10        11
+
+_SIG_RANK = {
+    "OS_PPV": 5,
+    "ANY_PPV": 4,
+    "OVERSOLD": 3,
+    "OS_L2": 2,
+    "ANY": 1,
+}
+
+
+def _sig_to_rank(sig: str) -> int:
+    for key, rank in _SIG_RANK.items():
+        if key in sig:
+            return rank
+    return 1
 
 
 def parse_wt_rows(content: str) -> list[dict]:
     rows = []
-    seen: set[str] = (
-        set()
-    )  # deduplicate — squeeze stocks appear in both SQUEEZE BREAKOUT and category sections
+    seen: set[str] = set()
     for line in content.splitlines():
         ls = line.strip()
         if not ls.startswith("|"):
             continue
         if ls.startswith("|---") or ls.startswith("| ---"):
             continue
-        # preserve empty cells (Label may be empty) — use [1:-1] slice not if-strip filter
+        # preserve empty cells (Label may be empty) — [1:-1] slice, not filter
         parts = [p.strip() for p in ls.split("|")][1:-1]
-        if len(parts) < 15:
+        if len(parts) < 12:
             continue
         sym = _strip_md_link(parts[0])
         if not sym or sym in ("Symbol", "#"):
@@ -68,35 +85,55 @@ def parse_wt_rows(content: str) -> list[dict]:
         if sym in seen:
             continue
         seen.add(sym)
-        try:
-            rank = int(parts[5])
-        except ValueError:
-            continue
+        # ZL col: "↑6d" or "↓6d"
+        zl_raw = parts[6]
+        zl_dir = "↑" if zl_raw.startswith("↑") else "↓"
+        zl_days = zl_raw.lstrip("↑↓").strip()
+        # WT col: "41.53/40.92"
+        wt_parts = parts[9].split("/")
+        wt1 = wt_parts[0].strip() if wt_parts else ""
+        wt2 = wt_parts[1].strip() if len(wt_parts) > 1 else ""
+        # Flags col: "SQ·PV" | "SQ" | "PV" | "—"
+        flags = parts[7]
+        squeeze = "SQ" in flags
+        ppv = "PV" in flags
+        # RS col: "🔄82" | "↑82" | "↓30"
+        rs_raw = parts[4]
+        if rs_raw.startswith("🔄"):
+            rs_state = "transition"
+        elif rs_raw.startswith("↑"):
+            rs_state = "strong"
+        else:
+            rs_state = "weak"
         rows.append(
             {
                 "symbol": sym,
                 "label": parts[1],
                 "signal": parts[2],
-                "zl_pct": parts[3],
-                "day_chg": parts[4],
-                "rank": rank,
-                "rs_state": parts[6],
-                "squeeze": parts[7],
-                "ppv": parts[8],
-                "zl_dir": parts[9],
-                "zl_days": parts[10],
-                "wt1": parts[11],
-                "wt2": parts[12],
-                "close": parts[13],
-                "circuit": parts[14],
+                "rank": _sig_to_rank(parts[2]),
+                "earliness": parts[3],
+                "rs_raw": rs_raw,
+                "rs_state": rs_state,
+                "cavgc": parts[5],
+                "zl_dir": zl_dir,
+                "zl_days": zl_days,
+                "flags": flags,
+                "squeeze": squeeze,
+                "ppv": ppv,
+                "zl_pct": parts[8],
+                "wt": parts[9],
+                "wt1": wt1,
+                "wt2": wt2,
+                "day_chg": parts[10],
+                "circuit": parts[11],
             }
         )
     rows.sort(
         key=lambda r: (
             -r["rank"],
-            (
-                float(r["wt1"])
-                if r["wt1"].lstrip("-").replace(".", "", 1).isdigit()
+            -(
+                float(r["earliness"])
+                if r["earliness"].replace(".", "", 1).isdigit()
                 else 0
             ),
         )
@@ -124,28 +161,39 @@ def _rank_badge(rank: int) -> str:
     )
 
 
+def _rs_badge(rs_raw: str, rs_state: str) -> str:
+    cls = (
+        "gld" if rs_state == "transition" else ("pos" if rs_state == "strong" else "mu")
+    )
+    return f'<span class="{cls}">{rs_raw}</span>'
+
+
+def _flags_html(flags: str) -> str:
+    parts = []
+    if "SQ" in flags:
+        parts.append('<span style="color:var(--gld);font-weight:700">SQ</span>')
+    if "PV" in flags:
+        parts.append('<span style="color:var(--pur);font-weight:700">PV</span>')
+    return "·".join(parts) if parts else '<span class="mu">—</span>'
+
+
 def _wt_html_row(r: dict) -> str:
     sym = r["symbol"]
     zl_cls = "pos" if r["zl_dir"] == "↑" else "neg"
-    sqz_cls = "sqz-on" if r["squeeze"] == "✓" else "sqz-off"
-    ppv_cls = "pos" if r["ppv"] == "✓" else "mu"
-    rs_val = r.get("rs_state", "—")
-    rs_cls = "gld" if rs_val == "🔄" else ("pos" if rs_val == "↑" else "mu")
+    cavgc_cls = "pos" if r["cavgc"].startswith("↑") else "mu"
     return (
         f"<tr>"
         f'<td class="sym">{_tv_link(sym)}</td>'
         f'<td class="lbl">{r["label"]}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
+        f'<td class="num">{r["earliness"]}</td>'
+        f'<td style="text-align:center">{_rs_badge(r["rs_raw"], r["rs_state"])}</td>'
+        f'<td class="{cavgc_cls}">{r["cavgc"]}</td>'
+        f'<td class="{zl_cls}">{r["zl_dir"]}{r["zl_days"]}</td>'
+        f'<td style="text-align:center">{_flags_html(r["flags"])}</td>'
         f'<td class="{_chg_cls(r["zl_pct"])}">{r["zl_pct"]}</td>'
+        f'<td class="num">{r["wt"]}</td>'
         f'<td class="{_chg_cls(r["day_chg"])}">{r["day_chg"]}</td>'
-        f'<td class="{rs_cls}" style="text-align:center">{rs_val}</td>'
-        f'<td class="{sqz_cls}">{r["squeeze"]}</td>'
-        f'<td class="{ppv_cls}">{r["ppv"]}</td>'
-        f'<td class="{zl_cls}">{r["zl_dir"]}</td>'
-        f'<td class="mu">{r["zl_days"]}</td>'
-        f'<td class="num">{r["wt1"]}</td>'
-        f'<td class="num">{r["wt2"]}</td>'
-        f'<td class="num">{r["close"]}</td>'
         f'<td class="mu">{r["circuit"]}</td>'
         f"</tr>"
     )
@@ -223,18 +271,18 @@ tr:hover td{background:var(--bg3)}
 
 _TABLE_HDR = """    <thead><tr>
       <th>Symbol</th><th>Label</th><th>WT Signal</th>
-      <th>ZL Chg%</th><th>Day Chg</th><th>RS</th><th>Sqz</th><th>PPV</th><th>ZL</th><th>ZL Days</th>
-      <th>WT1</th><th>WT2</th><th>Close</th><th>Circuit</th>
+      <th>Erly</th><th>RS</th><th>C/AvgC</th><th>ZL</th><th>Flags</th>
+      <th>ZL Chg%</th><th>WT1/WT2</th><th>Day Chg</th><th>Circuit</th>
     </tr></thead>"""
 
 
 def build_html(today: str, now_str: str, wt_rows: list) -> str:
-    sqz_rows = [r for r in wt_rows if r["squeeze"] == "✓"]
-    other_rows = [r for r in wt_rows if r["squeeze"] != "✓"]
+    sqz_rows = [r for r in wt_rows if r["squeeze"]]
+    other_rows = [r for r in wt_rows if not r["squeeze"]]
     wt_html = [_wt_html_row(r) for r in other_rows]
     sqz_html = [_wt_html_row(r) for r in sqz_rows]
     n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
-    n_ppv = sum(1 for r in wt_rows if r["ppv"] == "✓")
+    n_ppv = sum(1 for r in wt_rows if r["ppv"])
     n_sqz = len(sqz_rows)
 
     sqz_section = ""
@@ -272,9 +320,10 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
 <h1>WaveTrend Bull Cross — {today}</h1>
 <div class="sub">
   Generated {now_str} &nbsp;|&nbsp;
-  🔥 MAJOR = PPV confirmed &nbsp;|&nbsp;
-  🟢 OVERSOLD = cross below −53/−60 &nbsp;|&nbsp;
-  📈 MID-RANGE = any cross, WT2 > −53, no PPV
+  Erly = earliness score (higher = earlier entry) &nbsp;|&nbsp;
+  RS = 🔄transition / ↑strong / ↓weak vs NIFTY MIDSML 400 &nbsp;|&nbsp;
+  Flags = SQ (BB-KC squeeze ON) · PV (Pocket Pivot Volume) &nbsp;|&nbsp;
+  Sorted: rank desc → earliness desc
 </div>
 
 <div class="bar">
@@ -293,7 +342,7 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   </div>
   <table>
 {_TABLE_HDR}
-    <tbody>{_rows_or_empty(wt_html, 14, "No other WT bull crosses today")}</tbody>
+    <tbody>{_rows_or_empty(wt_html, 12, "No other WT bull crosses today")}</tbody>
   </table>
 </div>
 
