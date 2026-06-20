@@ -218,6 +218,16 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not zl_rising:
             return None
 
+        # Leader filter: close within 30% of 52W high
+        high_52w = c.rolling(252, min_periods=200).max()
+        leader_ratio = float(curr_close / high_52w.iloc[-1])
+        if leader_ratio < 0.70:
+            return None
+
+        vol = df["Volume"].astype(float)
+        vol_ratio = float(vol.tail(3).mean() / vol.rolling(20).mean().iloc[-1])
+        vol_dryup = vol_ratio < 0.65
+
         # ── RS Line filter ────────────────────────────────────────────────────
         # Align stock close with index on common trading dates (strip tz)
         c_norm = c.copy()
@@ -278,6 +288,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             return None
 
         zl_days, zl_pct = zl25_turn_stats(zl25, c)
+        entry_score = round(
+            leader_ratio * 35 + max(0.0, (1.0 - vol_ratio) * 20) + max(0, 10 - zl_days),
+            1,
+        )
         return {
             "symbol": symbol,
             "close": curr_close,
@@ -293,6 +307,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "rs_e9": rs_e9.iloc[-1],
             "rs_e21": rs_e21.iloc[-1],
             "entries": entries,
+            "leader_ratio": round(leader_ratio, 3),
+            "vol_ratio": round(vol_ratio, 2),
+            "vol_dryup": vol_dryup,
+            "entry_score": entry_score,
         }
 
     except Exception:
@@ -304,15 +322,20 @@ TAG_ORDER = {"STRONG": 0, "PRIMARY": 1, "DEEP PULLBACK": 2}
 
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
+    findings.sort(
+        key=lambda x: (
+            min(TAG_ORDER.get(e[0], 9) for e in x["entries"]),
+            -x.get("entry_score", 0.0),
+        )
+    )
 
     lines = [
         f"# NSE Swing Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
-        "*(RS filter: RS Line > EMA9 & EMA21 daily + Weekly RS EMA9 rising)*\n",
-        "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |",
-        "|--------|--------:|--------:|-------|--------:|--------|:-------:|",
+        "*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*\n",
+        "| Symbol | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |",
+        "|--------|--------:|--------:|-------|-----:|:---:|--------:|--------|:-------:|",
     ]
 
     for f in findings:
@@ -323,6 +346,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         lbl = _LABELS.get(f["symbol"], "")
+        w52 = f"{f.get('leader_ratio', 1.0) * 100:.0f}%"
+        vol_cell = f"{'🔵' if f.get('vol_dryup') else ''}{f.get('vol_ratio', 1.0):.2f}x"
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
@@ -330,6 +355,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
                 f"| {zl_d} "
                 f"| {zl_p} "
                 f"| {lbl} "
+                f"| {w52} "
+                f"| {vol_cell} "
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| **{tag}** — {label} "
                 f"| {cl} {em} |"

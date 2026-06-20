@@ -15,6 +15,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
+.\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
 ```
 
 Run any Python script directly for debugging:
@@ -148,6 +149,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `momentum_scans/momentum_scans.md` | `momentum_scanner.py` |
 | `momentum_scans/momentum_rs_weekly_scans.md` | `momentum_rs_weekly_scanner.py` |
 | `wt_scans/wt_bullcross_latest.md`, `wt_scans/wt_bullcross_YYYY-MM-DD.md` | `wt_bullcross_scanner.py` |
+| `trend_scans/trend_scan_latest.md`, `trend_scans/trend_scan_YYYY-MM-DD.md` | `trend_scanner.py` |
 | `wt_squeeze_dashboard.html` | `wt_squeeze_dashboard.py` |
 | `swing_scans/swing_scans.md` | `swing_scanner.py` |
 | `ema_screener_changes.md` | `nse_ema_daily.py` |
