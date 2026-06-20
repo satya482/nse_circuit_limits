@@ -328,9 +328,11 @@ _CATEGORIES = [
     ("📈", "MID-RANGE", "any cross, WT2 > −53, no PPV", [1]),
 ]
 
+# 12 cols: Rank dropped (encoded in Signal emoji); Close dropped; RS+RS%, ZL+ZLDays,
+#          WT1+WT2, Sqz+PPV merged. Keeps all decision-relevant info, fits GitHub width.
 _HDR = [
-    "| Symbol | Label | Signal | ZL Chg% | Day Chg | Rank | RS | RS% | C/AvgC | Erly | Sqz | PPV | ZL | ZL Days | WT1 | WT2 | Close | Circuit |",
-    "|--------|-------|--------|--------:|--------:|:----:|:--:|----:|-------:|-----:|:---:|:---:|:--:|--------:|----:|----:|------:|:-------:|",
+    "| Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |",
+    "|--------|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|",
 ]
 
 
@@ -339,37 +341,34 @@ def _row(f: dict, circuit: dict) -> str:
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
     cl, em = circuit.get(sym, ("20%", ""))
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+    zl_arrow = "↑" if f["zl_rising"] else "↓"
+    zl_cell = f"{zl_arrow}{zl_d}"  # e.g. ↑6d
     zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
     ds = "+" if f["day_chg"] >= 0 else ""
-    zl_arrow = "↑" if f["zl_rising"] else "↓"
-    sqz = "✓" if f["squeeze"] else "—"
-    ppv = "✓" if f["wt_is_ppv"] else "—"
-    rs = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
-    rs_pct_str = f"{f.get('rs_pct', 50.0):.0f}"
+    rs_emoji = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
+    rs_cell = f"{rs_emoji}{f.get('rs_pct', 50.0):.0f}"  # e.g. 🔄82
     cavgc_arrow = "↑" if f.get("cavgc_rising", False) else "↓"
     cavgc_str = f"{cavgc_arrow}{f.get('cavgc', 1.0):.3f}"
     erly = f"{f.get('earliness', 0.0):.0f}"
+    sqz, ppv = f["squeeze"], f["wt_is_ppv"]
+    flags = "SQ·PV" if sqz and ppv else "SQ" if sqz else "PV" if ppv else "—"
+    wt_cell = f"{f['wt1']}/{f['wt2']}"  # e.g. 41.5/40.9
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl = _LABELS.get(sym, "")
+    circuit_cell = f"{cl} {em}".strip()
     return (
         f"| [{sym}]({tv}) "
         f"| {lbl} "
         f"| {emoji} {f['wt_signal']} "
-        f"| {zl_p} "
-        f"| {ds}{f['day_chg']:.2f}% "
-        f"| {f['wt_rank']} "
-        f"| {rs} "
-        f"| {rs_pct_str} "
-        f"| {cavgc_str} "
         f"| {erly} "
-        f"| {sqz} "
-        f"| {ppv} "
-        f"| {zl_arrow} "
-        f"| {zl_d} "
-        f"| {f['wt1']} "
-        f"| {f['wt2']} "
-        f"| {f['close']:.2f} "
-        f"| {cl} {em} |"
+        f"| {rs_cell} "
+        f"| {cavgc_str} "
+        f"| {zl_cell} "
+        f"| {flags} "
+        f"| {zl_p} "
+        f"| {wt_cell} "
+        f"| {ds}{f['day_chg']:.2f}% "
+        f"| {circuit_cell} |"
     )
 
 
@@ -394,12 +393,14 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         "| Price | > ₹50 |",
         "| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |",
         "| RS filter | None — WT captures pre-RS-turn reversals |",
-        "| RS% | IBD-style percentile vs NIFTY MIDSML 400 (0.4×3m + 0.2×6m/9m/12m) |",
+        "| RS | 🔄/↑/↓ state + IBD percentile vs NIFTY MIDSML 400 — e.g. 🔄82 |",
         "| C/AvgC | Close / EMA(10) ratio — ↑ rising momentum |",
-        "| Erly | Earliness score: Squeeze(40) + RS-transition(30) + ZL freshness(0-20) + C/AvgC freshness(0-10) |",
+        "| Erly | Squeeze(40)+RS-transition(30)+ZL freshness(0-20)+C/AvgC freshness(0-10) |",
+        "| ZL | ZLEMA25 direction + days since turn — e.g. ↑6d |",
+        "| Flags | SQ=squeeze  PV=pocket-pivot  SQ·PV=both  —=neither |",
+        "| WT | WT1/WT2 oscillator values |",
         "| Sort | Rank desc → Erly desc (entry closest to move start floats up) |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
-        "| Sqz | BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar |",
         "",
         "---",
         "",
