@@ -374,7 +374,7 @@ def _row(f: dict, circuit: dict) -> str:
 
 
 def build_markdown(findings: list[dict], circuit: dict) -> str:
-    # Sort: rank desc, then composite score desc within rank (strongest RS + momentum first)
+    # Sort: rank desc, then earliness score desc within rank (closest to move start first)
     sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
 
     rank_groups: dict[int, list] = {}
@@ -394,6 +394,10 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         "| Price | > ₹50 |",
         "| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |",
         "| RS filter | None — WT captures pre-RS-turn reversals |",
+        "| RS% | IBD-style percentile vs NIFTY MIDSML 400 (0.4×3m + 0.2×6m/9m/12m) |",
+        "| C/AvgC | Close / EMA(10) ratio — ↑ rising momentum |",
+        "| Erly | Earliness score: Squeeze(40) + RS-transition(30) + ZL freshness(0-20) + C/AvgC freshness(0-10) |",
+        "| Sort | Rank desc → Erly desc (entry closest to move start floats up) |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
         "| Sqz | BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar |",
         "",
