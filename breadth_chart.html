@@ -17,9 +17,11 @@
             padding: 4px 14px; cursor: pointer; font-size: 0.78rem; transition: all 0.15s; }
   button:hover { background: #2e3148; color: #ddd; }
   button.active { background: #3b5bdb; color: #fff; border-color: #3b5bdb; }
-  .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; }
-  .li { display: flex; align-items: center; gap: 7px; font-size: 0.75rem; color: #999; cursor: pointer; }
-  .li:hover { color: #ddd; }
+  .legend { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .li { display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #999; }
+  .li span { cursor: pointer; }
+  .li span:hover { color: #ddd; }
+  .style-btn { padding: 1px 7px !important; font-size: 0.67rem !important; margin-left: 2px; }
   .swatch { width: 24px; height: 3px; border-radius: 2px; flex-shrink: 0; }
   .swatch.dashed { background: repeating-linear-gradient(90deg, #a78bfa 0 5px, transparent 5px 9px); }
   canvas { width: 100% !important; }
@@ -32,7 +34,7 @@
 </head>
 <body>
 <h1>NSE Market Breadth — % Stocks Above Moving Average</h1>
-<p class="meta">Universe: NSE equity Rs.500 Cr–Rs.5 Lakh Cr &nbsp;(~1579 stocks) &nbsp;|&nbsp; Benchmark: NIFTY MidSmallcap 400 &nbsp;|&nbsp; Generated: 2026-06-21 19:42 IST</p>
+<p class="meta">Universe: NSE equity Rs.500 Cr–Rs.5 Lakh Cr &nbsp;(~1579 stocks) &nbsp;|&nbsp; Benchmark: NIFTY MidSmallcap 400 &nbsp;|&nbsp; Generated: 2026-06-21 19:54 IST</p>
 
 <div class="card">
   <div class="controls">
@@ -42,17 +44,13 @@
     <button onclick="setRange(180)" id="btn-180">180D</button>
     <button onclick="setRange(252)" id="btn-252">1Y</button>
     <button onclick="setRange(0)"   id="btn-all" class="active">All</button>
-    <span style="color:#333;margin:0 6px">|</span>
-    <label>Style:</label>
-    <button onclick="setStep(false)" id="btn-line" class="active">Line</button>
-    <button onclick="setStep(true)"  id="btn-step">Step</button>
   </div>
   <div class="legend">
-    <div class="li" onclick="toggleLine(0)"><div class="swatch" style="background:#60a5fa"></div>% &gt; SMA10</div>
-    <div class="li" onclick="toggleLine(1)"><div class="swatch" style="background:#fb923c"></div>% &gt; SMA20</div>
-    <div class="li" onclick="toggleLine(2)"><div class="swatch" style="background:#34d399"></div>% &gt; SMA50</div>
-    <div class="li" onclick="toggleLine(3)"><div class="swatch" style="background:#f87171"></div>% &gt; SMA200</div>
-    <div class="li" onclick="toggleLine(4)"><div class="swatch dashed"></div>NIFTY MidSml 400 (norm.)</div>
+    <div class="li"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide"></div><span onclick="toggleLine(0)">% &gt; SMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Line</button></div>
+    <div class="li"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide"></div><span onclick="toggleLine(1)">% &gt; SMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
+    <div class="li"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide"></div><span onclick="toggleLine(2)">% &gt; SMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
+    <div class="li"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide"></div><span onclick="toggleLine(3)">% &gt; SMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
+    <div class="li"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span></div>
   </div>
   <canvas id="bc" height="400"></canvas>
 </div>
@@ -65,22 +63,23 @@ const D = {"dates": ["2025-03-24", "2025-03-25", "2025-03-26", "2025-03-27", "20
 function sl(arr, n) { return n > 0 ? arr.slice(-n) : [...arr]; }
 
 const DATASETS = [
-  { label: '% > SMA10',  key: 'p10',  color: '#60a5fa', width: 1.5 },
-  { label: '% > SMA20',  key: 'p20',  color: '#fb923c', width: 1.5 },
-  { label: '% > SMA50',  key: 'p50',  color: '#34d399', width: 2.0 },
-  { label: '% > SMA200', key: 'p200', color: '#f87171', width: 2.5 },
-  { label: 'NIFTY MidSml 400 (norm.)', key: 'bench', color: '#a78bfa', width: 1, dash: [5,3] },
+  { label: '% > SMA10',  key: 'p10',  color: '#60a5fa', width: 1.5, step: false },
+  { label: '% > SMA20',  key: 'p20',  color: '#fb923c', width: 1.5, step: false },
+  { label: '% > SMA50',  key: 'p50',  color: '#34d399', width: 2.0, step: true  },
+  { label: '% > SMA200', key: 'p200', color: '#f87171', width: 2.5, step: true  },
+  { label: 'NIFTY MidSml 400 (norm.)', key: 'bench', color: '#a78bfa', width: 1, dash: [5,3], step: false },
 ];
 
 function makeDatasets(n) {
-  return DATASETS.map((d, i) => ({
+  return DATASETS.map((d) => ({
     label: d.label,
     data: sl(D[d.key], n),
     borderColor: d.color,
     borderWidth: d.width,
     borderDash: d.dash || [],
     pointRadius: 0,
-    tension: 0.1,
+    stepped: d.step ? 'middle' : false,
+    tension: d.step ? 0 : 0.1,
     fill: false,
     spanGaps: true,
     hidden: false,
@@ -88,7 +87,7 @@ function makeDatasets(n) {
 }
 
 let currentRange = 0;
-let isStep = false;
+const stepState = DATASETS.map(d => d.step);
 const ctx = document.getElementById('bc').getContext('2d');
 
 // Reference line plugin
@@ -166,14 +165,13 @@ function setRange(n) {
   updateStats(n);
 }
 
-function setStep(step) {
-  isStep = step;
-  document.getElementById('btn-line').classList.toggle('active', !step);
-  document.getElementById('btn-step').classList.toggle('active', step);
-  chart.data.datasets.forEach(ds => {
-    ds.stepped = step ? 'middle' : false;
-    ds.tension = step ? 0 : 0.1;
-  });
+function toggleStep(i) {
+  stepState[i] = !stepState[i];
+  const step = stepState[i];
+  chart.data.datasets[i].stepped = step ? 'middle' : false;
+  chart.data.datasets[i].tension = step ? 0 : 0.1;
+  const btn = document.getElementById('style-' + i);
+  if (btn) { btn.textContent = step ? 'Step' : 'Line'; }
   chart.update('none');
 }
 
