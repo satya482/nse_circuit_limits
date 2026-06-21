@@ -6,8 +6,8 @@ Reads wt_bullcross_latest.md and builds wt_squeeze_dashboard.html.
 Source : wt_scans/wt_bullcross_latest.md  (wt_bullcross_scanner.py)
 Output : wt_squeeze_dashboard.html
 
-Table format (12 cols):
-  Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
+Table format (13 cols):
+  Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
 """
 
 import re
@@ -47,8 +47,8 @@ def _strip_md_link(s: str) -> str:
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
-# Table cols (12): Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
-# parts indices:     0        1       2        3     4     5       6     7        8         9    10        11
+# Table cols (13): Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
+# parts indices:     0       1      2       3        4     5     6       7     8        9        10    11        12
 
 _SIG_RANK = {
     "OS_PPV": 5,
@@ -77,7 +77,7 @@ def parse_wt_rows(content: str) -> list[dict]:
             continue
         # preserve empty cells (Label may be empty) — [1:-1] slice, not filter
         parts = [p.strip() for p in ls.split("|")][1:-1]
-        if len(parts) < 12:
+        if len(parts) < 13:
             continue
         sym = _strip_md_link(parts[0])
         if not sym or sym in ("Symbol", "#"):
@@ -86,19 +86,19 @@ def parse_wt_rows(content: str) -> list[dict]:
             continue
         seen.add(sym)
         # ZL col: "↑6d" or "↓6d"
-        zl_raw = parts[6]
+        zl_raw = parts[7]
         zl_dir = "↑" if zl_raw.startswith("↑") else "↓"
         zl_days = zl_raw.lstrip("↑↓").strip()
         # WT col: "41.53/40.92"
-        wt_parts = parts[9].split("/")
+        wt_parts = parts[10].split("/")
         wt1 = wt_parts[0].strip() if wt_parts else ""
         wt2 = wt_parts[1].strip() if len(wt_parts) > 1 else ""
         # Flags col: "SQ·PV" | "SQ" | "PV" | "—"
-        flags = parts[7]
+        flags = parts[8]
         squeeze = "SQ" in flags
         ppv = "PV" in flags
         # RS col: "🔄82" | "↑82" | "↓30"
-        rs_raw = parts[4]
+        rs_raw = parts[5]
         if rs_raw.startswith("🔄"):
             rs_state = "transition"
         elif rs_raw.startswith("↑"):
@@ -108,24 +108,25 @@ def parse_wt_rows(content: str) -> list[dict]:
         rows.append(
             {
                 "symbol": sym,
-                "label": parts[1],
-                "signal": parts[2],
-                "rank": _sig_to_rank(parts[2]),
-                "earliness": parts[3],
+                "trap": parts[1],
+                "label": parts[2],
+                "signal": parts[3],
+                "rank": _sig_to_rank(parts[3]),
+                "earliness": parts[4],
                 "rs_raw": rs_raw,
                 "rs_state": rs_state,
-                "cavgc": parts[5],
+                "cavgc": parts[6],
                 "zl_dir": zl_dir,
                 "zl_days": zl_days,
                 "flags": flags,
                 "squeeze": squeeze,
                 "ppv": ppv,
-                "zl_pct": parts[8],
-                "wt": parts[9],
+                "zl_pct": parts[9],
+                "wt": parts[10],
                 "wt1": wt1,
                 "wt2": wt2,
-                "day_chg": parts[10],
-                "circuit": parts[11],
+                "day_chg": parts[11],
+                "circuit": parts[12],
             }
         )
     rows.sort(
@@ -168,6 +169,16 @@ def _rs_badge(rs_raw: str, rs_state: str) -> str:
     return f'<span class="{cls}">{rs_raw}</span>'
 
 
+def _trap_html(trap: str) -> str:
+    if "SAFE" in trap:
+        return f'<span class="pos">{trap}</span>'
+    if "CAUTION" in trap:
+        return f'<span style="color:var(--ylw)">{trap}</span>'
+    if "AVOID" in trap:
+        return f'<span class="neg">{trap}</span>'
+    return f'<span class="mu">{trap}</span>'
+
+
 def _flags_html(flags: str) -> str:
     parts = []
     if "SQ" in flags:
@@ -184,6 +195,7 @@ def _wt_html_row(r: dict) -> str:
     return (
         f"<tr>"
         f'<td class="sym">{_tv_link(sym)}</td>'
+        f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
         f'<td class="lbl">{r["label"]}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
         f'<td class="num">{r["earliness"]}</td>'
@@ -270,7 +282,7 @@ tr:hover td{background:var(--bg3)}
 
 
 _TABLE_HDR = """    <thead><tr>
-      <th>Symbol</th><th>Label</th><th>WT Signal</th>
+      <th>Symbol</th><th>Trap</th><th>Label</th><th>WT Signal</th>
       <th>Erly</th><th>RS</th><th>C/AvgC</th><th>ZL</th><th>Flags</th>
       <th>ZL Chg%</th><th>WT1/WT2</th><th>Day Chg</th><th>Circuit</th>
     </tr></thead>"""
@@ -342,7 +354,7 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
   </div>
   <table>
 {_TABLE_HDR}
-    <tbody>{_rows_or_empty(wt_html, 12, "No other WT bull crosses today")}</tbody>
+    <tbody>{_rows_or_empty(wt_html, 13, "No other WT bull crosses today")}</tbody>
   </table>
 </div>
 

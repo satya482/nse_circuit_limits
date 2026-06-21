@@ -132,6 +132,7 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
             else ("| ZL Days" in line and "| Signal" not in line)
         )
         if "| Symbol" in line and header_match:
+            _has_trap = "| Trap |" in line  # detect Trap column added by float_gate
             i += 1
             if i < len(lines) and lines[i].strip().startswith("|---"):
                 i += 1
@@ -143,34 +144,35 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                 parts = [p for p in parts if p != ""]
                 if parts:
                     sym = _strip_md_link(parts[0])
+                    o = 1 if _has_trap else 0  # column offset for Trap column
                     if has_signal:
-                        if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
-                            if len(parts) >= 9:
-                                # Extended format: Symbol | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit
-                                zl_days = parts[1]
-                                zl_pct = parts[2] if len(parts) > 2 else ""
-                                day_chg = parts[6] if len(parts) > 6 else ""
-                                sig_raw = parts[7] if len(parts) > 7 else ""
-                                circuit = parts[8] if len(parts) > 8 else ""
+                        if len(parts) > 1 + o and _ZL_DAY_RE.match(parts[1 + o]):
+                            if len(parts) >= 9 + o:
+                                # Extended format: Symbol | [Trap |] ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit
+                                zl_days = parts[1 + o]
+                                zl_pct = parts[2 + o] if len(parts) > 2 + o else ""
+                                day_chg = parts[6 + o] if len(parts) > 6 + o else ""
+                                sig_raw = parts[7 + o] if len(parts) > 7 + o else ""
+                                circuit = parts[8 + o] if len(parts) > 8 + o else ""
                             else:
-                                # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
-                                zl_days = parts[1]
-                                zl_pct = parts[2] if len(parts) > 2 else ""
-                                day_chg = parts[4] if len(parts) > 4 else ""
-                                sig_raw = parts[5] if len(parts) > 5 else ""
-                                circuit = parts[6] if len(parts) > 6 else ""
+                                # Short format: Symbol | [Trap |] ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit
+                                zl_days = parts[1 + o]
+                                zl_pct = parts[2 + o] if len(parts) > 2 + o else ""
+                                day_chg = parts[4 + o] if len(parts) > 4 + o else ""
+                                sig_raw = parts[5 + o] if len(parts) > 5 + o else ""
+                                circuit = parts[6 + o] if len(parts) > 6 + o else ""
                         else:
                             # Old format: Symbol | Signal | Day Chg | ZL Days | ZL Chg% | Circuit
-                            sig_raw = parts[1] if len(parts) > 1 else ""
-                            day_chg = parts[2] if len(parts) > 2 else ""
-                            if len(parts) >= 5 and _ZL_DAY_RE.match(parts[3]):
-                                zl_days = parts[3]
-                                zl_pct = parts[4] if len(parts) > 4 else ""
-                                circuit = parts[5] if len(parts) > 5 else ""
+                            sig_raw = parts[1 + o] if len(parts) > 1 + o else ""
+                            day_chg = parts[2 + o] if len(parts) > 2 + o else ""
+                            if len(parts) >= 5 + o and _ZL_DAY_RE.match(parts[3 + o]):
+                                zl_days = parts[3 + o]
+                                zl_pct = parts[4 + o] if len(parts) > 4 + o else ""
+                                circuit = parts[5 + o] if len(parts) > 5 + o else ""
                             else:
                                 zl_days = ""
                                 zl_pct = ""
-                                circuit = parts[3] if len(parts) > 3 else ""
+                                circuit = parts[3 + o] if len(parts) > 3 + o else ""
                         sig = (
                             "STRONG"
                             if "STRONG" in sig_raw
@@ -191,23 +193,23 @@ def _parse_table_rows(text: str, has_signal: bool) -> list:
                             }
                         )
                     else:
-                        if len(parts) > 1 and _ZL_DAY_RE.match(parts[1]):
-                            # New format: Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit
-                            zl_days = parts[1]
-                            zl_pct = parts[2] if len(parts) > 2 else ""
-                            day_chg = parts[4] if len(parts) > 4 else ""
-                            circuit = parts[5] if len(parts) > 5 else ""
+                        if len(parts) > 1 + o and _ZL_DAY_RE.match(parts[1 + o]):
+                            # New format: Symbol | [Trap |] ZL Days | ZL Chg% | Label | Day Chg | Circuit
+                            zl_days = parts[1 + o]
+                            zl_pct = parts[2 + o] if len(parts) > 2 + o else ""
+                            day_chg = parts[4 + o] if len(parts) > 4 + o else ""
+                            circuit = parts[5 + o] if len(parts) > 5 + o else ""
                         else:
                             # Old format: Symbol | Day Change | ZL Days | ZL Chg% | Circuit
-                            day_chg = parts[1] if len(parts) > 1 else ""
-                            if len(parts) >= 3 and _ZL_DAY_RE.match(parts[2]):
-                                zl_days = parts[2]
-                                zl_pct = parts[3] if len(parts) > 3 else ""
-                                circuit = parts[4] if len(parts) > 4 else ""
+                            day_chg = parts[1 + o] if len(parts) > 1 + o else ""
+                            if len(parts) >= 3 + o and _ZL_DAY_RE.match(parts[2 + o]):
+                                zl_days = parts[2 + o]
+                                zl_pct = parts[3 + o] if len(parts) > 3 + o else ""
+                                circuit = parts[4 + o] if len(parts) > 4 + o else ""
                             else:
                                 zl_days = ""
                                 zl_pct = ""
-                                circuit = parts[2] if len(parts) > 2 else ""
+                                circuit = parts[2 + o] if len(parts) > 2 + o else ""
                         results.append(
                             {
                                 "symbol": sym,
@@ -636,38 +638,42 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
 
 def parse_trend_scanner(content: str) -> list:
     """Parse trend_scan_latest.md.
-    Table cols: Symbol | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit
+    New cols (13): Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit
+    Old cols (12): Symbol | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit
     """
     rows = []
     in_table = False
+    has_trap = False
     for line in content.splitlines():
         ls = line.strip()
         if "| Symbol" in ls and "| Signal" in ls and "| Score" in ls:
             in_table = True
+            has_trap = "| Trap |" in ls
             continue
         if in_table and ls.startswith("|---"):
             continue
         if in_table and ls.startswith("|"):
             parts = [p.strip() for p in ls.split("|") if p.strip()]
-            if len(parts) < 10:
+            o = 1 if has_trap else 0
+            if len(parts) < 10 + o:
                 continue
             sym = _strip_md_link(parts[0])
-            sig_raw = parts[2]
+            sig_raw = parts[2 + o]
             tag = "TREND"
             for t in ("LEADER_ZL", "ZL_PULLBACK", "EMA_SUPPORT", "ZL_ENTRY"):
                 if t in sig_raw:
                     tag = t
                     break
-            zl_days = parts[8].lstrip("↑↓").strip() if len(parts) > 8 else ""
+            zl_days = parts[8 + o].lstrip("↑↓").strip() if len(parts) > 8 + o else ""
             rows.append(
                 {
                     "symbol": sym,
                     "signal": tag,
-                    "score": parts[3] if len(parts) > 3 else "",
-                    "day_chg": parts[10] if len(parts) > 10 else "",
+                    "score": parts[3 + o] if len(parts) > 3 + o else "",
+                    "day_chg": parts[10 + o] if len(parts) > 10 + o else "",
                     "zl_days": zl_days,
-                    "zl_pct": parts[9] if len(parts) > 9 else "",
-                    "circuit": parts[11] if len(parts) > 11 else "",
+                    "zl_pct": parts[9 + o] if len(parts) > 9 + o else "",
+                    "circuit": parts[11 + o] if len(parts) > 11 + o else "",
                 }
             )
         elif in_table and not ls.startswith("|"):

@@ -33,6 +33,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many
+from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -162,12 +163,12 @@ def _entry_score(
 # ── Watchlist ──────────────────────────────────────────────────────────────────
 
 
-def get_watchlist() -> list[str]:
+def get_watchlist() -> tuple[list[str], dict[str, float]]:
     """EMA uptrend universe — same MCap/EMA structure as swing scanner."""
     _, df = (
         Query()
         .set_markets("india")
-        .select("name", "close", "market_cap_basic")
+        .select("name", "close", "market_cap_basic", "float_shares_outstanding")
         .where(
             col("exchange") == "NSE",
             col("type") == "stock",
@@ -180,7 +181,13 @@ def get_watchlist() -> list[str]:
         .limit(1000)
         .get_scanner_data()
     )
-    return df["name"].tolist()
+    float_map = {
+        row["name"]: float(row["float_shares_outstanding"])
+        for _, row in df.iterrows()
+        if pd.notna(row.get("float_shares_outstanding"))
+        and row["float_shares_outstanding"] > 0
+    }
+    return df["name"].tolist(), float_map
 
 
 # ── Circuit limits ─────────────────────────────────────────────────────────────
@@ -234,6 +241,7 @@ def analyse(
     df_raw: pd.DataFrame,
     bench_series: pd.Series,
     rs_pct: float = 0.0,
+    float_shares: float = 0,
 ) -> dict | None:
     try:
         if df_raw is None or len(df_raw) < 252:
@@ -241,6 +249,10 @@ def analyse(
 
         # RS percentile pre-filter — must be established leader
         if rs_pct < RS_PCT_MIN:
+            return None
+
+        fm = float_metrics(df_raw["close"], df_raw["volume"], float_shares or None)
+        if not passes_hard_gate(fm):
             return None
 
         c = df_raw["close"].astype(float)
@@ -344,6 +356,7 @@ def analyse(
             "zl_days": zl_days,
             "zl_pct": zl_pct,
             "day_chg": day_chg,
+            "trap": _trap_label(fm),
         }
 
     except Exception:
@@ -362,8 +375,8 @@ _SIG_EMOJI = {
 _RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
 
 _HDR = [
-    "| Symbol | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit |",
-    "|--------|-------|--------|------:|:--:|-------:|-----:|:---:|:--:|--------:|--------:|:-------:|",
+    "| Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit |",
+    "|--------|:----:|-------|--------|------:|:--:|-------:|-----:|:---:|:--:|--------:|--------:|:-------:|",
 ]
 
 
@@ -382,6 +395,7 @@ def _row(f: dict, circuit: dict) -> str:
     vol_cell = f"{'🔵' if f['vol_dryup'] else ''}{f['vol_ratio']:.2f}x"
     return (
         f"| [{sym}]({tv}) "
+        f"| {f.get('trap', 'n/a')} "
         f"| {lbl} "
         f"| {sig_emoji} {label} "
         f"| {f['score']:.0f} "
@@ -475,8 +489,8 @@ def main():
     os.makedirs(SCANS_DIR, exist_ok=True)
 
     print("\nFetching watchlist from TradingView screener...")
-    watchlist = get_watchlist()
-    print(f"  {len(watchlist)} stocks")
+    watchlist, float_map = get_watchlist()
+    print(f"  {len(watchlist)} stocks  |  float data for {len(float_map)}")
 
     print("\nLoading OHLCV from SQLite (batch)...")
     all_data = load_ohlc_many(watchlist, lookback=400)
@@ -506,7 +520,13 @@ def main():
     findings = []
     for i, (sym, df_raw) in enumerate(all_data.items(), 1):
         print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
-        result = analyse(sym, df_raw, bench_series, rs_pct=rs_pct_map.get(sym, 0.0))
+        result = analyse(
+            sym,
+            df_raw,
+            bench_series,
+            rs_pct=rs_pct_map.get(sym, 0.0),
+            float_shares=float_map.get(sym, 0),
+        )
         if result:
             findings.append(result)
 

@@ -29,6 +29,7 @@ import requests
 import yfinance as yf
 import pandas as pd
 from tradingview_screener import Query, col
+from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -123,11 +124,11 @@ def get_index_history(months: int = 6) -> pd.Series:
 
 
 # ── Watchlist ─────────────────────────────────────────────────────────────────
-def get_watchlist() -> list[str]:
+def get_watchlist() -> tuple[list[str], dict[str, float]]:
     _, df = (
         Query()
         .set_markets("india")
-        .select("name", "EMA50", "EMA100", "EMA200")
+        .select("name", "EMA50", "EMA100", "EMA200", "float_shares_outstanding")
         .where(
             col("exchange") == "NSE",
             col("type") == "stock",
@@ -139,7 +140,13 @@ def get_watchlist() -> list[str]:
         .limit(500)
         .get_scanner_data()
     )
-    return df["name"].tolist()
+    float_map = {
+        row["name"]: float(row["float_shares_outstanding"])
+        for _, row in df.iterrows()
+        if pd.notna(row.get("float_shares_outstanding"))
+        and row["float_shares_outstanding"] > 0
+    }
+    return df["name"].tolist(), float_map
 
 
 # ── Circuit limits ────────────────────────────────────────────────────────────
@@ -185,10 +192,14 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 
 # ── Stock analysis ────────────────────────────────────────────────────────────
-def analyse(symbol: str, index_s: pd.Series) -> dict | None:
+def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | None:
     try:
         df = yf.Ticker(f"{symbol}.NS").history(period="1y")
         if len(df) < 210:
+            return None
+
+        fm = float_metrics(df["Close"], df["Volume"], float_shares or None)
+        if not passes_hard_gate(fm):
             return None
 
         c = df["Close"]
@@ -311,6 +322,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "vol_ratio": round(vol_ratio, 2),
             "vol_dryup": vol_dryup,
             "entry_score": entry_score,
+            "trap": _trap_label(fm),
         }
 
     except Exception:
@@ -334,8 +346,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
         "*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*\n",
-        "| Symbol | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |",
-        "|--------|--------:|--------:|-------|-----:|:---:|--------:|--------|:-------:|",
+        "| Symbol | Trap | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |",
+        "|--------|:----:|--------:|--------:|-------|-----:|:---:|--------:|--------|:-------:|",
     ]
 
     for f in findings:
@@ -352,6 +364,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| [{f['symbol']}]({tv}) "
+                f"| {f.get('trap', 'n/a')} "
                 f"| {zl_d} "
                 f"| {zl_p} "
                 f"| {lbl} "
@@ -416,13 +429,15 @@ def main():
     print(f"  Circuit data: {len(circuit)} stocks with recent limit changes")
 
     print("\nFetching live watchlist from TradingView screener...")
-    watchlist = get_watchlist()
-    print(f"  Watchlist: {len(watchlist)} stocks  |  Scanning...\n")
+    watchlist, float_map = get_watchlist()
+    print(
+        f"  Watchlist: {len(watchlist)} stocks  |  float data for {len(float_map)}  |  Scanning...\n"
+    )
 
     findings = []
     for i, sym in enumerate(watchlist, 1):
         print(f"  {sym:<20} ({i}/{len(watchlist)})   ", end="\r")
-        result = analyse(sym, index_s)
+        result = analyse(sym, index_s, float_shares=float_map.get(sym, 0))
         if result:
             findings.append(result)
 

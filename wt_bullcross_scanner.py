@@ -33,6 +33,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many
 from wavetrend_scanner import WaveTrendCalculator
+from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -192,12 +193,14 @@ def _earliness(
 # ── Watchlist ─────────────────────────────────────────────────────────────────
 
 
-def get_watchlist() -> list[str]:
-    """Broad universe — no RS or EMA25 filter (WT captures pre-RS-turn reversals)."""
+def get_watchlist() -> tuple[list[str], dict[str, float]]:
+    """Broad universe — no RS or EMA25 filter (WT captures pre-RS-turn reversals).
+    Returns (symbols, float_map) where float_map = {symbol: float_shares}.
+    float_shares is None-absent for symbols where TV has no data."""
     _, df = (
         Query()
         .set_markets("india")
-        .select("name", "close", "market_cap_basic")
+        .select("name", "close", "market_cap_basic", "float_shares_outstanding")
         .where(
             col("exchange") == "NSE",
             col("type") == "stock",
@@ -208,7 +211,13 @@ def get_watchlist() -> list[str]:
         .limit(2000)
         .get_scanner_data()
     )
-    return df["name"].tolist()
+    float_map = {
+        row["name"]: float(row["float_shares_outstanding"])
+        for _, row in df.iterrows()
+        if pd.notna(row.get("float_shares_outstanding"))
+        and row["float_shares_outstanding"] > 0
+    }
+    return df["name"].tolist(), float_map
 
 
 # ── Circuit limits ────────────────────────────────────────────────────────────
@@ -263,6 +272,7 @@ def analyse(
     calc: WaveTrendCalculator,
     bench_series: pd.Series | None = None,
     rs_pct: float = 50.0,
+    float_shares: float = 0,
 ) -> dict | None:
     try:
         if df_raw is None or len(df_raw) < 83:  # WaveTrendCalculator._min_bars
@@ -270,6 +280,10 @@ def analyse(
 
         sig = calc.get_signal(df_raw)
         if sig.wt_signal_rank < MIN_RANK:
+            return None
+
+        fm = float_metrics(df_raw["close"], df_raw["volume"], float_shares or None)
+        if not passes_hard_gate(fm):
             return None
 
         rs = _rs_state(df_raw, bench_series)
@@ -305,6 +319,7 @@ def analyse(
             "earliness": earliness,
             "close": curr_close,
             "day_chg": day_chg,
+            "trap": _trap_label(fm),
         }
     except Exception:
         return None
@@ -331,8 +346,8 @@ _CATEGORIES = [
 # 12 cols: Rank dropped (encoded in Signal emoji); Close dropped; RS+RS%, ZL+ZLDays,
 #          WT1+WT2, Sqz+PPV merged. Keeps all decision-relevant info, fits GitHub width.
 _HDR = [
-    "| Symbol | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |",
-    "|--------|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|",
+    "| Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |",
+    "|--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|",
 ]
 
 
@@ -358,6 +373,7 @@ def _row(f: dict, circuit: dict) -> str:
     circuit_cell = f"{cl} {em}".strip()
     return (
         f"| [{sym}]({tv}) "
+        f"| {f.get('trap', 'n/a')} "
         f"| {lbl} "
         f"| {emoji} {f['wt_signal']} "
         f"| {erly} "
@@ -489,8 +505,8 @@ def main():
     os.makedirs(SCANS_DIR, exist_ok=True)
 
     print("\nFetching watchlist from TradingView screener...")
-    watchlist = get_watchlist()
-    print(f"  {len(watchlist)} stocks")
+    watchlist, float_map = get_watchlist()
+    print(f"  {len(watchlist)} stocks  |  float data for {len(float_map)}")
 
     print("\nLoading OHLCV from SQLite (batch)...")
     all_data = load_ohlc_many(watchlist, lookback=400)
@@ -523,7 +539,12 @@ def main():
     for i, (sym, df_raw) in enumerate(all_data.items(), 1):
         print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
         result = analyse(
-            sym, df_raw, calc, bench_series, rs_pct=rs_pct_map.get(sym, 50.0)
+            sym,
+            df_raw,
+            calc,
+            bench_series,
+            rs_pct=rs_pct_map.get(sym, 50.0),
+            float_shares=float_map.get(sym, 0),
         )
         if result:
             findings.append(result)
