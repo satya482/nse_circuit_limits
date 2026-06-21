@@ -223,7 +223,7 @@ function makeDatasets(n) {{
     tension: 0.1,
     fill: false,
     spanGaps: true,
-    hidden: chart ? chart.data.datasets[i].hidden : false,
+    hidden: false,
   }}));
 }}
 
