@@ -157,7 +157,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `dashboard.html` | `dashboard_generator.py` |
 | `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
-| `breadth_scans/breadth_history.csv`, `breadth_scans/breadth_chart.html` | `breadth_scanner.py` |
+| `breadth_scans/breadth_history.csv`, `breadth_chart.html` | `breadth_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 

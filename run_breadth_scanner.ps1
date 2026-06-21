@@ -20,7 +20,7 @@ try {
 }
 
 Log "--- Git commit+push ---"
-& git -C C:\Users\satya\nse_circuit_limits add breadth_scans/ 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits add breadth_scans/ breadth_chart.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit -m "breadth scan $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "--- Done ---"

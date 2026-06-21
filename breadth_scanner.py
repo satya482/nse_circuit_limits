@@ -9,7 +9,7 @@ Subsequent runs: appends only new dates since the last CSV entry.
 
 Output:
   breadth_scans/breadth_history.csv   — date, pct_above_10/20/50/200, n_10/20/50/200
-  breadth_scans/breadth_chart.html    — Chart.js interactive chart
+  breadth_chart.html                  — Chart.js interactive chart (repo root → GitHub Pages)
 """
 
 import os
@@ -27,7 +27,7 @@ sys.stdout.reconfigure(encoding="utf-8")
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 OUT_DIR = os.path.join(REPO_DIR, "breadth_scans")
 CSV_PATH = os.path.join(OUT_DIR, "breadth_history.csv")
-HTML_PATH = os.path.join(OUT_DIR, "breadth_chart.html")
+HTML_PATH = os.path.join(REPO_DIR, "breadth_chart.html")  # root → GitHub Pages
 
 MC_LOW = 500 * 1_00_00_000  # Rs.500 Cr
 MC_HIGH = 5_00_000 * 1_00_00_000  # Rs.5 Lakh Cr
@@ -186,6 +186,10 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
     <button onclick="setRange(180)" id="btn-180">180D</button>
     <button onclick="setRange(252)" id="btn-252">1Y</button>
     <button onclick="setRange(0)"   id="btn-all" class="active">All</button>
+    <span style="color:#333;margin:0 6px">|</span>
+    <label>Style:</label>
+    <button onclick="setStep(false)" id="btn-line" class="active">Line</button>
+    <button onclick="setStep(true)"  id="btn-step">Step</button>
   </div>
   <div class="legend">
     <div class="li" onclick="toggleLine(0)"><div class="swatch" style="background:#60a5fa"></div>% &gt; SMA10</div>
@@ -228,6 +232,7 @@ function makeDatasets(n) {{
 }}
 
 let currentRange = 0;
+let isStep = false;
 const ctx = document.getElementById('bc').getContext('2d');
 
 // Reference line plugin
@@ -297,12 +302,23 @@ const chart = new Chart(ctx, {{
 
 function setRange(n) {{
   currentRange = n;
-  document.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+  ['60','90','180','252','all'].forEach(k => document.getElementById('btn-' + k).classList.remove('active'));
   document.getElementById(n === 0 ? 'btn-all' : 'btn-' + n).classList.add('active');
   chart.data.labels = sl(D.dates, n);
   DATASETS.forEach((d, i) => {{ chart.data.datasets[i].data = sl(D[d.key], n); }});
   chart.update('none');
   updateStats(n);
+}}
+
+function setStep(step) {{
+  isStep = step;
+  document.getElementById('btn-line').classList.toggle('active', !step);
+  document.getElementById('btn-step').classList.toggle('active', step);
+  chart.data.datasets.forEach(ds => {{
+    ds.stepped = step ? 'middle' : false;
+    ds.tension = step ? 0 : 0.1;
+  }});
+  chart.update('none');
 }}
 
 function toggleLine(i) {{
