@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIRLOSENG — Kirloskar Oil Engines Ltd · NSE Investor Brief · FY26</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root {
+  --ink: #1A1A2E;
+  --paper: #F7F5F0;
+  --rule: #DDD8CE;
+  --blue: #378ADD;
+  --blue-bg: #EBF4FF;
+  --teal: #1D9E75;
+  --teal-bg: #E8F5F0;
+  --coral: #D85A30;
+  --coral-bg: #FDF0EA;
+  --green: #3B6D11;
+  --green-bg: #E6F4EA;
+  --purple: #534AB7;
+  --purple-bg: #F0EDFB;
+  --amber: #BA7517;
+  --amber-bg: #FFF7E6;
+  --gray: #6B7280;
+  --gray-light: #F0EDE8;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "DM Sans", system-ui, sans-serif;
+  --mono: "DM Mono", "Courier New", monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.7;}
+
+/* PRINT */
+@media print {
+  body{font-size:11px;background:white;}
+  .no-print{display:none!important;}
+  #quick-scan{position:static!important;background:#1A1A2E!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  #quick-scan details, #quick-scan .qs-body{display:block!important;}
+  #highlight-index{display:block!important;}
+  #highlight-index summary{display:none;}
+  #highlight-index ol{display:block!important;}
+  details[open], details{display:block;}
+  details summary::marker{display:none;}
+  .masthead{background:#1A1A2E!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .ledger-tier{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  section,table,.stat-row,.verdict-card,.takeaway-pill,.porter-table{break-inside:avoid;}
+}
+
+/* DARK MODE */
+@media (prefers-color-scheme: dark) {
+  body.auto-dark{background:#111118;color:#E8E4DC;}
+  body.auto-dark .chapter-card{background:#1C1C28;border-color:#2A2A3A;}
+  body.auto-dark .stat-row{border-color:#2A2A3A;}
+}
+body.dark-mode{background:#111118;color:#E8E4DC;}
+body.dark-mode .chapter-card{background:#1C1C28;border-color:#2A2A3A;}
+body.dark-mode .stat-row{border-color:#2A2A3A;}
+body.dark-mode #quick-scan{background:#0D0D18;}
+
+/* MASTHEAD */
+.masthead{background:var(--ink);color:#F7F5F0;padding:52px 64px 40px;position:relative;overflow:hidden;}
+.masthead::before{content:"";position:absolute;top:0;right:0;width:380px;height:100%;background:repeating-linear-gradient(-45deg,transparent 0,transparent 6px,rgba(255,255,255,0.025) 6px,rgba(255,255,255,0.025) 12px);}
+.masthead-eyebrow{font-family:var(--mono);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.masthead h1{font-family:var(--serif);font-size:46px;font-weight:700;letter-spacing:-1px;line-height:1.1;}
+.masthead-sub{font-size:16px;color:#A8A098;margin-top:10px;max-width:600px;font-weight:300;}
+.masthead-meta{margin-top:26px;display:flex;gap:16px;flex-wrap:wrap;}
+.meta-chip{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:4px;padding:6px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:1px;color:#C8C0B0;}
+.meta-chip.accent{background:rgba(186,117,23,0.2);border-color:rgba(186,117,23,0.4);color:var(--amber);}
+
+/* QUICK SCAN STRIP */
+#quick-scan{position:sticky;top:0;z-index:100;background:var(--ink);border-bottom:2px solid var(--amber);}
+.qs-toggle{width:100%;background:none;border:none;cursor:pointer;padding:9px 24px;display:flex;align-items:center;justify-content:space-between;color:#C8C0B0;font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;}
+.qs-toggle:hover{background:rgba(255,255,255,0.05);}
+.qs-body{padding:12px 24px 16px;display:flex;flex-direction:column;gap:6px;}
+.qs-line{font-size:13px;color:#E0D8CC;display:flex;gap:10px;align-items:baseline;}
+.qs-label{font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);min-width:72px;flex-shrink:0;}
+
+/* LAYOUT */
+.content{max-width:960px;margin:0 auto;padding:44px 40px 80px;}
+@media(max-width:640px){.content{padding:24px 16px 60px;}.masthead{padding:32px 24px 28px;}.masthead h1{font-size:32px;}}
+
+/* CHAPTER HEADER */
+.ch-header{display:flex;align-items:flex-start;gap:16px;margin:52px 0 20px;padding-bottom:12px;border-bottom:2.5px solid var(--ink);}
+.ch-num{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1;min-width:30px;}
+.ch-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);}
+.ch-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.2;}
+
+/* CHAPTER CARD */
+.chapter-card{background:white;border:1.5px solid var(--rule);border-radius:8px;padding:28px 32px;margin-bottom:20px;}
+p{margin-bottom:14px;line-height:1.75;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600;}
+
+/* LEAD / INSIGHT */
+.lead{font-size:16px;line-height:1.8;color:#1A2A4A;padding:18px 22px;border-left:4px solid var(--blue);background:var(--blue-bg);border-radius:0 6px 6px 0;margin-bottom:22px;}
+.lead.teal{border-left-color:var(--teal);background:var(--teal-bg);}
+.lead.coral{border-left-color:var(--coral);background:var(--coral-bg);}
+.lead.amber{border-left-color:var(--amber);background:var(--amber-bg);}
+.lead.purple{border-left-color:var(--purple);background:var(--purple-bg);}
+.insight-box{background:var(--ink);color:#F0EDE8;border-radius:8px;padding:26px 30px;margin:24px 0;}
+.insight-box .label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.insight-box p{color:#D0C8BC;}
+
+/* STAT ROW */
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);}
+.stat-label{color:var(--gray);font-size:13px;}
+.stat-val{font-family:var(--mono);font-size:15px;font-weight:500;}
+.stat-val.up{color:var(--teal);}
+.stat-val.dn{color:var(--coral);}
+
+/* VERTICAL CARD */
+.vert-card{border-left:4px solid var(--blue);background:white;border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:14px;}
+.vert-title{font-family:var(--serif);font-size:17px;font-weight:700;margin-bottom:6px;}
+.vert-badge{display:inline-block;font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-bottom:10px;}
+
+/* PORTER TABLE */
+.porter-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:13.5px;}
+.porter-table th{background:var(--ink);color:#F7F5F0;padding:10px 14px;font-family:var(--mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;text-align:left;}
+.porter-table td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top;}
+.porter-table tr:last-child td{border-bottom:none;}
+.porter-table tr:nth-child(even) td{background:rgba(0,0,0,0.025);}
+.rating{display:inline-block;padding:2px 10px;border-radius:3px;font-family:var(--mono);font-size:10.5px;font-weight:600;}
+.r-low{background:#E6F4EA;color:var(--green);}
+.r-med{background:var(--amber-bg);color:var(--amber);}
+.r-high{background:var(--coral-bg);color:var(--coral);}
+
+/* RISK ROW */
+.risk-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid var(--rule);}
+.risk-icon{font-size:20px;color:var(--amber);flex-shrink:0;margin-top:2px;}
+.risk-title{font-weight:600;margin-bottom:4px;}
+.risk-body{font-size:13.5px;color:#3A3A4A;}
+
+/* WATCH SIGNAL */
+.watch-row{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--rule);}
+.watch-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+.watch-metric{font-weight:600;margin-bottom:2px;}
+.watch-body{font-size:13.5px;color:#3A3A4A;}
+
+/* TAKEAWAY PILL */
+.takeaway-pill{border-left:4px solid var(--blue);background:var(--blue-bg);border-radius:0 6px 6px 0;padding:12px 18px;margin:20px 0 0;font-size:14px;font-weight:500;color:#1A2A4A;}
+
+/* VERDICT CARD */
+.verdict-card{background:var(--ink);color:#F0EDE8;border-radius:8px;padding:30px 36px;margin:32px 0;}
+.verdict-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.verdict-card p{color:#D8D0C4;font-size:15.5px;line-height:1.8;margin-bottom:12px;}
+.verdict-stage{display:inline-block;background:var(--amber);color:white;padding:4px 14px;border-radius:4px;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1px;margin-top:8px;}
+
+/* CAPEX TIMELINE */
+.capex-timeline{margin:20px 0;}
+.capex-row{display:grid;grid-template-columns:80px 1fr 1fr 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:baseline;font-size:13.5px;}
+.capex-row.header{font-family:var(--mono);font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gray);border-bottom:2px solid var(--ink);}
+.capex-year{font-family:var(--mono);font-weight:600;color:var(--blue);}
+
+/* HIGHLIGHT CLASSES */
+.hl-key{background:#FFF176;padding:0 3px;border-radius:2px;font-weight:600;}
+.hl-number{background:#E3F0FF;padding:0 3px;border-radius:2px;font-family:var(--mono);}
+.hl-risk{background:#FFF3CD;padding:0 3px;border-radius:2px;border-left:3px solid var(--amber);}
+.hl-catalyst{background:#E6F4EA;padding:0 3px;border-radius:2px;border-left:3px solid var(--teal);}
+
+/* LEDGER STYLES */
+.ledger-masthead{background:#0F1F35;color:#F0EDE8;padding:40px 48px;border-radius:10px;margin:48px 0 32px;position:relative;overflow:hidden;}
+.ledger-masthead::before{content:"LEDGER";position:absolute;right:-20px;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:180px;font-weight:700;color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;}
+.ledger-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.ledger-masthead h2{font-family:var(--serif);font-size:34px;font-weight:700;line-height:1.2;}
+.ledger-masthead p{color:#A8A098;font-size:14px;margin-top:8px;}
+.ledger-tier{display:inline-flex;align-items:center;gap:10px;margin-top:18px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:6px;padding:10px 18px;}
+.tier-label{font-family:var(--mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:#A8A098;}
+.tier-grade{font-family:var(--serif);font-size:32px;font-weight:700;}
+.tier-desc{font-size:13px;color:#C8C0B0;}
+.pillar-card{background:white;border:1.5px solid var(--rule);border-radius:8px;padding:24px 28px;margin-bottom:16px;}
+.pillar-header{display:flex;align-items:center;gap:12px;margin-bottom:14px;padding-bottom:12px;border-bottom:1.5px solid var(--rule);}
+.pillar-num{font-family:var(--mono);font-size:11px;letter-spacing:1.5px;color:var(--amber);text-transform:uppercase;}
+.pillar-title{font-family:var(--serif);font-size:18px;font-weight:700;}
+.promise-row{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--rule);font-size:13.5px;}
+.promise-row:last-child{border-bottom:none;}
+.p-status{font-family:var(--mono);font-size:11px;font-weight:600;min-width:70px;}
+.p-kept{color:var(--teal);}
+.p-watch{color:var(--amber);}
+.p-miss{color:var(--coral);}
+.flag-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px dashed var(--rule);font-size:13px;}
+.flag-item:last-child{border-bottom:none;}
+.flag-icon{font-size:16px;flex-shrink:0;}
+.credibility-bar{height:8px;border-radius:4px;background:var(--rule);margin:10px 0;overflow:hidden;}
+.credibility-fill{height:100%;border-radius:4px;}
+
+/* HIGHLIGHT INDEX */
+#highlight-index{border:1.5px solid var(--rule);border-radius:8px;margin:40px 0;overflow:hidden;}
+#highlight-index summary{background:var(--ink);color:#F7F5F0;padding:14px 24px;cursor:pointer;font-family:var(--mono);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;list-style:none;display:flex;align-items:center;gap:10px;}
+#highlight-index ol{padding:20px 28px;list-style-type:decimal;}
+#highlight-index li{padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;line-height:1.6;}
+#highlight-index li:last-child{border-bottom:none;}
+#highlight-index li[data-type="hl-key"]{border-left:3px solid #FFF176;padding-left:10px;}
+#highlight-index li[data-type="hl-number"]{border-left:3px solid var(--blue);padding-left:10px;font-family:var(--mono);font-size:12.5px;}
+#highlight-index li[data-type="hl-risk"]{border-left:3px solid var(--amber);padding-left:10px;}
+#highlight-index li[data-type="hl-catalyst"]{border-left:3px solid var(--teal);padding-left:10px;}
+#highlight-index li[data-type="takeaway-pill"]{border-left:3px solid var(--blue);padding-left:10px;font-style:italic;}
+
+/* DARK MODE TOGGLE */
+.dm-toggle{position:fixed;bottom:24px;right:24px;background:var(--ink);color:#F7F5F0;border:1px solid rgba(255,255,255,0.2);border-radius:50%;width:40px;height:40px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;z-index:200;}
+.dm-toggle:hover{background:#2A2A3E;}
+
+/* SECTION DIVIDER */
+.section-rule{border:none;border-top:2px dashed var(--rule);margin:44px 0;}
+
+@media(max-width:640px){
+  .masthead h1{font-size:28px;}
+  .capex-row{grid-template-columns:60px 1fr 1fr;font-size:12px;}
+  .capex-row .capex-col3{display:none;}
+  .porter-table{font-size:12px;}
+  .porter-table td,.porter-table th{padding:8px 8px;}
+}
+</style>
+</head>
+<body>
+
+<!-- DARK MODE TOGGLE -->
+<button class="dm-toggle no-print" id="dmToggle" title="Toggle dark mode" aria-label="Toggle dark mode">
+  <i class="ti ti-moon"></i>
+</button>
+
+<!-- MASTHEAD -->
+<header class="masthead" role="banner">
+  <div class="masthead-eyebrow">NSE Investor Brief &nbsp;·&nbsp; Compressors, Pumps &amp; Diesel Engines &nbsp;·&nbsp; June 2026</div>
+  <h1>Kirloskar Oil Engines</h1>
+  <div class="masthead-sub">The powermen behind India's data centres, nuclear plants, and navy&mdash;and a hidden NBFC inside a genset company</div>
+  <div class="masthead-meta">
+    <span class="meta-chip">NSE: KIRLOSENG</span>
+    <span class="meta-chip">BSE: 533293</span>
+    <span class="meta-chip">Market Cap &#8377;27,930 Cr</span>
+    <span class="meta-chip">FY26 Revenue &#8377;7,701 Cr</span>
+    <span class="meta-chip accent">FY26 PAT &#8377;558 Cr &uarr;21%</span>
+    <span class="meta-chip">PE &#8764;43x</span>
+  </div>
+</header>
+
+<!-- QUICK SCAN STRIP -->
+<div id="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div class="qs-body" id="qsBody">
+    <div class="qs-line"><span class="qs-label">&#9889; Context</span><span>India genset market USD 1.33 Bn growing at 7.2% CAGR; data centre boom is turbocharging high-horsepower demand at 8.75% CAGR in HHP tier</span></div>
+    <div class="qs-line"><span class="qs-label">&#127981; Model</span><span>KOEL earns from three flywheels: genset B2B (PowerGen + Industrial), B2C pumps/farm, and Arka Fincap NBFC&mdash;each with different risk and return profiles</span></div>
+    <div class="qs-line"><span class="qs-label">&#127919; Insight</span><span>KOEL is not just a genset company&mdash;it is India's only NPCIL-qualified emergency power supplier and is converting its HHP capex into a data centre infrastructure play</span></div>
+    <div class="qs-line"><span class="qs-label">&#128202; Numbers</span><span>FY26 standalone revenue &#8377;5,604 Cr (+25% YoY); EBITDA margin expanded to 13.1%; international business crossed &#8377;1,000 Cr (+37% YoY)</span></div>
+    <div class="qs-line"><span class="qs-label">&#128679; Top Risk</span><span>Free cash flow has been deeply negative for 5 consecutive years due to Arka Fincap scaling&mdash;the NBFC credit cycle is the most under-watched risk in this story</span></div>
+    <div class="qs-line"><span class="qs-label">&#128065; Watch</span><span>HHP segment contribution to PowerGen revenue each quarter&mdash;this single metric tells you whether the &#8377;1,400 Cr capex is landing</span></div>
+    <div class="qs-line"><span class="qs-label">&#128161; Verdict</span><span>Mid-chapter story: execution credible, capex cycle peaking in FY27, re-rating contingent on HHP volumes and Arka Fincap asset quality</span></div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- CHAPTER 1: CONTEXT -->
+<section aria-labelledby="ch1-title">
+  <div class="ch-header" style="border-bottom-color:var(--blue);">
+    <div>
+      <div class="ch-eyebrow">Chapter 1</div>
+      <div class="ch-num" style="color:var(--blue);">01</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">The Big Picture</div>
+      <div class="ch-title" id="ch1-title">Context — Why This Company, Why Now</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+    <div class="lead">
+      India is in the middle of a structural power infrastructure supercycle. Grid reliability remains inconsistent for industrial users, data centre construction is exploding, and the government's nuclear power ambitions are accelerating. Kirloskar Oil Engines sits at the intersection of all three demand streams&mdash;and it is the only Indian company cleared to supply emergency gensets to nuclear power plants.
+    </div>
+    <p>The India diesel genset market was valued at <span class="hl-number">USD 1.33 billion in 2026</span> and is projected to reach USD 1.88 billion by 2031 at a 7.2% CAGR (IMARC Group). Within this, the high-horsepower segment (375 kVA and above, the tier dominated by KOEL's Optiprime and HHP products) is growing at a faster 8.75% CAGR, driven specifically by hyperscale data centres and large construction projects requiring synchronised, emission-compliant sets.</p>
+    <p>Three structural forces are converging simultaneously. First, India's data centre capacity is expected to triple by 2028 according to JLL India, with investments of over USD 50 billion announced. Every hyperscale facility needs N+1 standby power — and at 5–10 MW per facility, that translates directly into KOEL's sweet spot of 2,500–3,000 kVA Optiprime systems. Second, the Indian government's PM KUSUM scheme (₹34,422 Cr allocated) and broader rural electrification push sustain KOEL's traditional LHP genset and pump-set demand. Third, the Nuclear Power Corporation of India (NPCIL) has 21 reactors under various stages of construction as part of India's target to triple nuclear capacity to 22,000 MW by 2032 — each reactor requires emergency diesel gensets that meet stringent international safety standards.</p>
+    <p><span class="hl-catalyst">The combined tailwind from data centre power backup, nuclear plant emergency power, and India's maritime power indigenisation creates a multi-year demand runway that transcends the traditional cyclical genset story.</span> KOEL is not riding one wave; it is riding three at once, all at different stages of their respective build-out cycles.</p>
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--blue);background:var(--blue-bg);">
+    Data centres, nuclear power, and navy indigenisation create a structural demand floor that makes KOEL's growth less cyclical than the diesel genset label implies.
+  </div>
+</section>
+
+<!-- CHAPTER 2: BUSINESS MODEL -->
+<section aria-labelledby="ch2-title">
+  <div class="ch-header" style="border-bottom-color:var(--blue);">
+    <div>
+      <div class="ch-eyebrow">Chapter 2</div>
+      <div class="ch-num" style="color:var(--blue);">02</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">The Engine Room</div>
+      <div class="ch-title" id="ch2-title">Business Model — What KOEL Actually Does</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+    <div class="lead">
+      Three revenue engines run inside one listed entity: a genset manufacturing business (B2B), a pump-set and farm equipment business (B2C), and a systemically important NBFC called Arka Fincap. Understanding this structure is essential — it explains the apparent paradox of strong earnings growth alongside consistently negative free cash flow.
+    </div>
+    <p><strong>B2B segment</strong> is the core and the growth engine. KOEL manufactures diesel and gas engines across a power range of 2.1 kVA to 3,000 kVA (with custom solutions up to 6.3 MW). The product ladder runs from LHP (low-horsepower, below 500 kVA), which serves residential backup, telecom towers, and small industrial facilities, up to HHP (high-horsepower, 1,000 kVA+), which is where data centres, hospitals, nuclear plants, and large infrastructure clients buy. The flagship HHP product is the <strong>Optiprime Dual Core</strong>&mdash;a paralleled twin-engine architecture that can deliver up to 3,000 kVA from a compact footprint, and up to 5,200 kVA in paralleled configurations. KOEL is also the only Indian company that holds NPCIL qualification for emergency safety gensets&mdash;a certification that took years of testing and is essentially non-replicable by any domestic competitor in the near term.</p>
+    <p>The <strong>customer stickiness mechanism</strong> in B2B is layered. Data centre clients run KOEL gensets on multi-year AMC (Annual Maintenance Contract) arrangements; NPCIL has a multi-decade supply relationship; Indian Navy projects involve 7–10 year qualification and delivery cycles. The aftermarket and distribution business — spare parts, oil, batteries, service touchpoints — provides a high-margin annuity revenue stream that grows proportionally with the installed base. <span class="hl-key">Every engine KOEL sells today is a customer for 10–15 years of service revenue, making the installed base the real long-duration asset of this business.</span></p>
+    <p><strong>B2C segment</strong> covers pump sets (diesel, petrol, kerosene-based) for agriculture and rural water supply, plus electric pumps and farm equipment. This is a lower-margin, high-volume business that benefits from government rural electrification schemes but lacks the pricing power of B2B. Revenue from B2C has been growing steadily but is not the primary growth driver.</p>
+    <p><strong>Arka Fincap</strong> (wholly owned NBFC, RBI-classified Systemically Important) provides corporate, MSME, and real estate financing. AUM stood at <span class="hl-number">₹7,256 Cr as of March 2025</span>, with retail AUM exceeding 64% of book, GNPA of 1.2%, and NNPA of 0.3%. CRISIL has assigned AA (stable) to long-term borrowings and A1+ to short-term. Arka is funded through market borrowings, which flow through the consolidated balance sheet as debt — explaining the ₹5,819 Cr in borrowings that would look alarming without context.</p>
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--blue);background:var(--blue-bg);">
+    KOEL's installed base is an annuity; every diesel engine sold today creates 10+ years of service revenue, making market share gains structurally compounding.
+  </div>
+</section>
+
+<!-- CHAPTER 2B: PORTER'S FIVE FORCES -->
+<section aria-labelledby="ch2b-title">
+  <div class="ch-header" style="border-bottom-color:var(--purple);">
+    <div>
+      <div class="ch-eyebrow">Chapter 2B</div>
+      <div class="ch-num" style="color:var(--purple);">2B</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">Competitive Structure</div>
+      <div class="ch-title" id="ch2b-title">Porter's Five Forces</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+    <p>KOEL operates in a market where scale, certification moats, and relationship tenure matter far more than price. The structural picture is generally favourable, but two forces deserve active monitoring.</p>
+    <table class="porter-table" role="table" aria-label="Porter's Five Forces analysis for KIRLOSENG">
+      <thead>
+        <tr>
+          <th scope="col">Force</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Specific Rationale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Rivalry Intensity</strong></td>
+          <td><span class="rating r-med" aria-label="Medium intensity">Medium</span></td>
+          <td>Cummins India dominates the organised genset market (approx. 35–40% share by value) and commands a premium PE re-rating (~47x). KOEL is the #2 organised player but is rapidly closing in the HHP segment where Cummins's Indian manufacturing footprint is smaller. Greaves Cotton, Mahindra Powerol, and SDMO compete at LHP tiers; MTU (Rolls-Royce) and Caterpillar compete at very high HHP. Pricing competition is moderate — buyers in the data centre and nuclear segment select on certification and reliability, not price.</td>
+        </tr>
+        <tr>
+          <td><strong>Buyer Power</strong></td>
+          <td><span class="rating r-med" aria-label="Medium intensity">Medium</span></td>
+          <td>Data centre hyperscalers (Adani, Hiranandani, CtrlS) and large infra clients can negotiate volume discounts, but NPCIL and Indian Navy are sovereign customers with limited alternatives — they MUST use KOEL or import (no other Indian company is NPCIL-qualified). Top 5 customers' share of revenue is not disclosed, but the distribution of 50,000+ annual genset units across diverse end markets implies no single buyer has excessive leverage in the LHP tier.</td>
+        </tr>
+        <tr>
+          <td><strong>Supplier Power</strong></td>
+          <td><span class="rating r-med" aria-label="Medium intensity">Medium</span></td>
+          <td>Key inputs are copper (for alternators) and pig iron/steel (for engine castings). Both commodities saw price spikes in FY25–26, and management acknowledged partial rather than full pass-through. Imported components — fuel injection systems from Bosch, and electronic controls — remain a single-source dependency risk. KOEL manufactures engines in-house but sources certain sub-assemblies, limiting full commodity insulation.</td>
+        </tr>
+        <tr>
+          <td><strong>Threat of New Entrants</strong></td>
+          <td><span class="rating r-low" aria-label="Low intensity">Low</span></td>
+          <td>Greenfield entry requires ₹500–1,000 Cr minimum capex, 5–7 year relationship-building for key accounts, and multi-year testing cycles for NPCIL qualification (which KOEL holds and no new Indian entrant has passed). CPCB-IV+ emission compliance standards introduced in 2023 further raised the bar, as they require on-board diagnostics and sophisticated emission controls that newer or unorganised players cannot easily implement.</td>
+        </tr>
+        <tr>
+          <td><strong>Threat of Substitutes</strong></td>
+          <td><span class="rating r-low" aria-label="Low to medium intensity">Low-Med</span></td>
+          <td>Natural gas gensets are a growing alternative for industrial users with piped gas access, but penetration in India is limited to ~5% of the installed base. UPS and battery storage are adequate for telecom towers and small offices but cannot replace diesel at the MW scale required by data centres. Hydrogen gensets are emerging (KOEL itself unveiled India's first prototype), but commercial deployment is 5+ years away. The primary competitive threat from substitutes is in the 10–200 kVA residential/small-commercial tier, not KOEL's focus HHP segment.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="lead amber" style="margin-top:20px;">
+      <strong>Synthesis:</strong> The two highest-pressure forces are <strong>Supplier Power</strong> (copper and pig iron volatility directly compress margins when pass-through is incomplete) and <strong>Rivalry Intensity</strong> in HHP (Cummins will not cede market share without a fight as data centre demand grows). Both are manageable but require active monitoring each quarter.
+    </div>
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--purple);background:var(--purple-bg);color:#1A0A4A;">
+    KOEL's NPCIL certification is a structural moat with no near-term replicability — it is the most defensible part of the entire competitive position.
+  </div>
+</section>
+
+<!-- CHAPTER 3: VERTICAL STORIES -->
+<section aria-labelledby="ch3-title">
+  <div class="ch-header" style="border-bottom-color:var(--teal);">
+    <div>
+      <div class="ch-eyebrow">Chapter 3</div>
+      <div class="ch-num" style="color:var(--teal);">03</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">Revenue Engines</div>
+      <div class="ch-title" id="ch3-title">The Vertical Stories — Five Growth Vectors</div>
+    </div>
+  </div>
+
+  <!-- V1: PowerGen/Data Centre -->
+  <div class="vert-card" style="border-left-color:var(--blue);">
+    <div class="vert-badge" style="background:var(--blue-bg);color:var(--blue);">PowerGen &bull; High Horsepower</div>
+    <div class="vert-title">Data Centre Backbone: The HHP Surge</div>
+    <p>The PowerGen segment grew <span class="hl-catalyst">32% year-on-year in FY26</span>, making it KOEL's fastest-growing division. Within this, the HHP sub-segment (gensets above 1,000 kVA) is the primary engine. KOEL's market share in HHP is approaching double digits — up from a near-negligible position three years ago — because the company invested early in the Optiprime Dual Core architecture at a time when data centre developers were scrambling for large, certified standby power systems.</p>
+    <p>The landmark order that signals KOEL's arrival in this tier was the <strong>HyperNext 192 MW contract</strong> — 96 units of 2,500 kVA Optiprime systems, described as one of the largest single deployments of high-capacity standby power in India's history. KOEL now has HHP products up to 3,000 kVA commercially deployed and can configure up to 6.3 MW through parallelisation. Management expects data centre orders to constitute a double-digit share of PowerGen revenue by FY28.</p>
+    <p>Status: <strong>Ramping hard</strong>. 50,000+ genset units sold in FY26 (+41% in diesel generator sales). New 50,000-engine capacity (₹700 Cr capex) comes online April 2027; additional 20,000 HHP engines (₹1,400 Cr) follow within 2 years.</p>
+  </div>
+
+  <!-- V2: Industrial/Nuclear/Navy -->
+  <div class="vert-card" style="border-left-color:var(--coral);">
+    <div class="vert-badge" style="background:var(--coral-bg);color:var(--coral);">Industrial &bull; Defence &bull; Nuclear</div>
+    <div class="vert-title">Critical Infrastructure: Nuclear, Navy, and Nation-Building</div>
+    <p>The Industrial segment grew 22% in FY26. Within this, two strategic programmes define KOEL's long-term defensibility. For <strong>NPCIL</strong>, KOEL is the sole Indian supplier of emergency diesel generator sets for nuclear reactor safety systems. With 21 reactors under construction as India targets 22,000 MW nuclear capacity by 2032, KOEL has decades of sovereign order flow in this niche. The NPCIL programme involves engines that undergo 5+ years of testing and qualification — no competitor has cleared this hurdle domestically.</p>
+    <p>For the <strong>Indian Navy</strong>, KOEL is developing high-power marine diesel engines as part of the government's Defence indigenisation push. This involves multi-year R&amp;D programmes funded partly through DRDO partnerships. Management referenced a strategic Navy project in the Q4 FY26 concall without disclosing specifics, consistent with defence confidentiality requirements. KOEL also unveiled India's first hydrogen-powered genset prototype in 2026, positioning itself as a future supplier to hydrogen-ready naval and industrial applications.</p>
+    <p>Status: <strong>Strategic, long-gestation, high-margin</strong>. NPCIL deliveries are ongoing and will accelerate with reactor construction. Navy and hydrogen are 3–5 year payoff stories.</p>
+  </div>
+
+  <!-- V3: International -->
+  <div class="vert-card" style="border-left-color:var(--teal);">
+    <div class="vert-badge" style="background:var(--teal-bg);color:var(--teal);">International Business</div>
+    <div class="vert-title">Going Global: Middle East, Americas, and the Pivot from Exports</div>
+    <p>KOEL's international business crossed <span class="hl-number">₹1,000 Cr in gross sales in FY26</span>, growing 37% year-on-year. Management is explicitly transitioning from a traditional export model (ship from India, sell through distributors) to a proper international business model (local hiring, local presence, local after-sales infrastructure). The Middle East — where 40–50% of international revenue currently originates — is the primary market. The Americas are the targeted growth frontier. Africa and Southeast Asia are secondary markets.</p>
+    <p>The strategic logic is sound: KOEL gensets are price-competitive with international peers, and India's CPCB-IV+ emission standards align with European/GCC regulations, making Indian-manufactured units exportable to compliance-heavy markets without modification. The risk, acknowledged by management, is that Middle East political instability could disrupt 40–50% of export revenue in a tail scenario.</p>
+    <p>Status: <strong>Running well, building local infrastructure</strong>. Growth expected to sustain at 25–30% annually through FY28 if Middle East remains stable.</p>
+  </div>
+
+  <!-- V4: B2C / Pumps -->
+  <div class="vert-card" style="border-left-color:var(--green);">
+    <div class="vert-badge" style="background:var(--green-bg);color:var(--green);">B2C &bull; Agriculture &bull; Pumps</div>
+    <div class="vert-title">The Rural Annuity: Pump Sets and Farm Equipment</div>
+    <p>KOEL's B2C business manufactures engine-based and electric pump sets for agriculture, aquaculture, and domestic water supply. This business is slower-growth (single-digit to low-double-digit revenue growth) but important as a distribution channel into rural India. It benefits from government schemes including PM KUSUM (₹34,422 Cr for solar pump deployment, which displaces some diesel pumps but also expands KOEL's addressable market for solar-diesel hybrid solutions). The aftermarket and service component of this business is high-margin and recurring.</p>
+    <p>Status: <strong>Steady, reliable, not the growth story</strong>. Distribution &amp; aftermarket grew 15% in FY26. Contributes stable margins to the consolidated P&amp;L.</p>
+  </div>
+
+  <!-- V5: Arka Fincap -->
+  <div class="vert-card" style="border-left-color:var(--amber);">
+    <div class="vert-badge" style="background:var(--amber-bg);color:var(--amber);">Financial Services &bull; NBFC</div>
+    <div class="vert-title">Arka Fincap: The NBFC Inside the Genset Company</div>
+    <p>Arka Fincap is a wholly owned, RBI-registered Systemically Important NBFC offering corporate, MSME, and real estate loans. AUM: ₹7,256 Cr (March 2025), with 64%+ retail book. Asset quality is clean — GNPA 1.2%, NNPA 0.3%, CRISIL AA stable. Arka was originally conceived to provide working capital solutions to KOEL's dealer and customer network, but has evolved into a standalone institutional lender. It raises capital through market borrowings (bonds, CPs, bank lines), which is why KOEL's consolidated debt of ₹5,819 Cr looks alarming on first read — the vast majority of this is Arka's lending capital, not manufacturing leverage.</p>
+    <p><span class="hl-risk">The NBFC embedded inside a manufacturing company is a structural complexity that equity investors frequently misprice in both directions.</span> A strong Arka adds earnings and ROE diversification; a stressed Arka could require capital from the parent at the worst possible moment — during a manufacturing capex cycle. The current 1.2% GNPA is not a concern, but the trend in this metric over the next 4–6 quarters is the most important Arka-specific watch signal.</p>
+    <p>Status: <strong>Growing well, asset quality healthy, rate cycle risk exists</strong>. Rising interest costs (₹483 Cr in FY25 vs ₹9 Cr in FY16) reflect Arka's scale-up and are the primary drag on consolidated net margins.</p>
+  </div>
+
+  <div class="takeaway-pill" style="border-left-color:var(--teal);background:var(--teal-bg);color:#0A2A1A;">
+    Five growth vectors at different stages: HHP/data centre (ramping), nuclear/navy (strategic moat), international (building), B2C/pumps (steady), Arka Fincap (financial wildcard).
+  </div>
+</section>
+
+<!-- CHAPTER 4: STRATEGIC INSIGHT -->
+<section aria-labelledby="ch4-title">
+  <div class="ch-header" style="border-bottom-color:var(--purple);">
+    <div>
+      <div class="ch-eyebrow">Chapter 4</div>
+      <div class="ch-num" style="color:var(--purple);">04</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">The One Thing</div>
+      <div class="ch-title" id="ch4-title">Strategic Insight — What Most Investors Miss</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+    <div class="insight-box">
+      <div class="label">The Non-Obvious Truth</div>
+      <p><strong>KOEL is not a diesel genset manufacturer that also happens to have an NBFC.</strong> It is a <em>capital-allocation machine</em> that uses genset cash flows to fund an NBFC lending book, which in turn grows assets and interest income, which funds more genset R&amp;D. The free cash flow is structurally negative by design — not by distress — because Arka Fincap consumes capital as it grows its loan book. The moment investors separate the manufacturing P&amp;L from the NBFC balance sheet, the picture clarifies entirely: the manufacturing business is healthy, profitable, and margin-expanding; the NBFC is a separate financial business being scaled with borrowed capital.</p>
+    </div>
+    <p>The practical implication is counterintuitive: <span class="hl-key">the right way to value KOEL is as a sum-of-parts — manufacturing business (PE multiple on standalone earnings) plus NBFC franchise (price-to-book on Arka's equity) — not as a single conglomerate PE.</span> When investors treat the consolidated negative free cash flow as a manufacturing red flag, they are confusing NBFC capital deployment with operating deterioration. When the NBFC's AUM growth slows (or it raises external equity), the consolidated cash flows will look dramatically better, even if the manufacturing business hasn't changed at all.</p>
+    <p>There is a second layer to this insight: <strong>KOEL's capex in HHP is also a customer acquisition tool</strong> for Arka Fincap. Data centre developers who buy KOEL's Optiprime systems on credit arrangements, or MSME industrial buyers who finance a 750 kVA genset, often become Arka Fincap borrowers. The business model creates a vertically integrated loop — sell the engine, finance the engine, service the engine — that is more valuable than any of the three legs in isolation.</p>
+    <p>The third non-obvious element: KOEL's NPCIL qualification is a <strong>regulatory moat, not a product moat</strong>. The specific gensets KOEL supplies to nuclear plants are not dramatically different in engineering from its regular industrial sets — but the qualification process (5+ years, multiple independent safety audits, site integration testing) means any competitor must spend the same time regardless of their technical capability. This is a barrier built on bureaucratic clock cycles, not patents — and those are often the most durable barriers of all.</p>
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--purple);background:var(--purple-bg);color:#1A0A4A;">
+    Value KOEL as sum-of-parts: manufacturing standalone earnings (PE) plus Arka Fincap book value (P/B) — consolidated free cash flow is misleading as a standalone signal.
+  </div>
+</section>
+
+<!-- CHAPTER 5: NUMBERS -->
+<section aria-labelledby="ch5-title">
+  <div class="ch-header" style="border-bottom-color:var(--blue);">
+    <div>
+      <div class="ch-eyebrow">Chapter 5</div>
+      <div class="ch-num" style="color:var(--blue);">05</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">Financials in Context</div>
+      <div class="ch-title" id="ch5-title">The Numbers — What the Financials Actually Say</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+    <div class="lead">
+      FY26 was KOEL's best year on record by almost every standalone metric. Revenue, EBITDA, and PAT all hit new highs. The consolidation picture is complicated by Arka Fincap's interest costs, but standalone manufacturing economics are strong and improving.
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:17px;margin:20px 0 12px;">FY26 Scorecard</h3>
+    <div class="stat-row"><span class="stat-label">Consolidated Revenue (FY26)</span><span class="stat-val up">&#8377;7,701 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">+21% YoY</small></span></div>
+    <div class="stat-row"><span class="stat-label">Standalone Revenue (FY26)</span><span class="stat-val up">&#8377;5,604 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">+25% YoY</small></span></div>
+    <div class="stat-row"><span class="stat-label">Consolidated PAT (FY26)</span><span class="stat-val up">&#8377;558 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">+21% YoY</small></span></div>
+    <div class="stat-row"><span class="stat-label">Standalone PAT (continuing ops)</span><span class="stat-val up">&#8377;464 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">+35% YoY</small></span></div>
+    <div class="stat-row"><span class="stat-label">Standalone EBITDA Margin (FY26)</span><span class="stat-val up">13.1% &nbsp;<small style="font-size:11px;color:var(--teal);">vs 12.2% FY25</small></span></div>
+    <div class="stat-row"><span class="stat-label">Q4 FY26 Standalone Sales</span><span class="stat-val up">&#8377;1,522 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">Highest-ever quarter</small></span></div>
+    <div class="stat-row"><span class="stat-label">International Revenue (FY26)</span><span class="stat-val up">>&#8377;1,000 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">+37% YoY</small></span></div>
+    <div class="stat-row"><span class="stat-label">ROCE (Consolidated)</span><span class="stat-val">13.7%</span></div>
+    <div class="stat-row"><span class="stat-label">ROE (Consolidated)</span><span class="stat-val">15.4%</span></div>
+    <div class="stat-row"><span class="stat-label">Arka Fincap AUM</span><span class="stat-val up">&#8377;7,256 Cr &nbsp;<small style="font-size:11px;color:var(--teal);">GNPA 1.2%</small></span></div>
+    <div class="stat-row"><span class="stat-label">Consolidated Borrowings</span><span class="stat-val dn">&#8377;5,819 Cr &nbsp;<small style="font-size:11px;color:var(--amber);">largely Arka Fincap</small></span></div>
+    <div class="stat-row"><span class="stat-label">5-Year Sales CAGR</span><span class="stat-val">13%</span></div>
+    <div class="stat-row"><span class="stat-label">5-Year Profit CAGR</span><span class="stat-val up">23%</span></div>
+
+    <h3 style="font-family:var(--serif);font-size:17px;margin:24px 0 12px;">Revenue Trajectory</h3>
+    <p>KOEL's consolidated revenue has grown from ₹3,296 Cr (FY21) to ₹7,701 Cr (FY26) — a 5-year CAGR of approximately 18.5%. The pace has accelerated: 3-year CAGR is 16%, and TTM (trailing twelve months through Dec 2025) is already at ₹7,334 Cr, implying full-year FY26 consolidated growth exceeds 21%. Margin expansion from 9% OPM (FY18) to 19% OPM (TTM) is the quality signal — KOEL has used operating leverage to convert revenue growth into faster profit growth (3-year PAT CAGR of 39% versus 16% revenue CAGR).</p>
+
+    <h3 style="font-family:var(--serif);font-size:17px;margin:24px 0 12px;">Valuation Context</h3>
+    <p>At ₹1,613 per share (Apr 2026) and market cap of ₹23,451 Cr (rising to ~₹27,930 Cr by mid-June 2026 as the stock continued its run), KOEL trades at approximately <span class="hl-number">43x trailing PE</span>. For comparison, Cummins India trades at ~47x on lower revenue growth but higher ROCE. The market is pricing KOEL at a slight discount to Cummins, which appears reasonable given that KOEL's ROCE of 13.7% is below Cummins's ~30%+ (Cummins India is a leaner, non-NBFC business). However, the discount does not adequately credit KOEL's faster revenue growth trajectory (25% standalone vs Cummins's ~12–15%), its nuclear/defence moats, and the optionality embedded in HHP capacity coming online in FY27. The stock has returned 117% over the last year and 61% annually over 3 years, suggesting the market is partially re-rating the story — but the full HHP thesis is not yet priced in.</p>
+
+    <p><strong>What the market is pricing in:</strong> A normalization of standalone EBITDA margins at 13–14%, HHP volume growth of 20–25% annually, and Arka Fincap maintaining its current credit quality. The market is NOT yet pricing in the possibility that KOEL breaks above the 15% EBITDA margin threshold (which becomes achievable if HHP mix exceeds 35% of PowerGen revenue), nor is it pricing a significant re-rating of Arka Fincap as a standalone financial franchise.</p>
+  </div>
+
+  <!-- CAPEX TIMELINE -->
+  <div class="chapter-card" style="margin-top:16px;">
+    <h3 style="font-family:var(--serif);font-size:17px;margin-bottom:16px;">&#8987; Capex Timeline Card</h3>
+    <div class="capex-timeline">
+      <div class="capex-row header">
+        <div>Year</div>
+        <div>Capex Spend</div>
+        <div>Capacity / Project Milestone</div>
+        <div>Expected Revenue Impact</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-year">FY23</div>
+        <div>~&#8377;145 Cr</div>
+        <div>LHP capacity maintenance; Kagal upgrades; Arka Fincap book build</div>
+        <div>Steady-state manufacturing output; NBFC AUM ₹3,000+ Cr</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-year">FY24</div>
+        <div>~&#8377;109 Cr (mfg); &#8377;465 Cr total incl. Arka</div>
+        <div>HHP product development; CWIP ₹293 Cr (Kagal expansion groundwork)</div>
+        <div>HHP first commercial deployments; PowerGen +30% in FY24</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-year">FY25</div>
+        <div>~&#8377;522 Cr total</div>
+        <div>Kagal HHP line construction; fixed assets ₹1,183 Cr (up from ₹769 Cr FY24)</div>
+        <div>HHP revenue contribution growing; 50,000 units sold FY26</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-year">FY26–27</div>
+        <div>&#8377;700 Cr (50,000 LHP/LMH capacity)</div>
+        <div>New production block at Kagal; target online April 2027</div>
+        <div>+₹2,500–3,500 Cr incremental revenue at full utilisation (4–5x asset turn)</div>
+      </div>
+      <div class="capex-row">
+        <div class="capex-year">FY27–28</div>
+        <div>&#8377;1,400 Cr (20,000 HHP engines)</div>
+        <div>Dedicated HHP manufacturing complex, Kagal; new building + equipment</div>
+        <div>+₹5,000–6,000 Cr peak revenue potential (4–5x asset turn on ₹1,400 Cr)</div>
+      </div>
+    </div>
+    <div class="lead amber" style="margin-top:16px;">
+      <strong>Capex-to-Revenue Bridge:</strong> Total announced capex of ₹2,100 Cr (₹700 Cr + ₹1,400 Cr) over 2 years implies peak incremental revenue of ₹7,500–9,500 Cr at management's guided 4–5x asset turns. This bridges nearly two-thirds of the gap between FY26's ₹5,604 Cr standalone revenue and the USD 2 billion (≈₹16,700 Cr) FY30 target, suggesting the remainder must come from international growth and Arka Fincap.<br><br>
+      <strong>Funding source:</strong> Internal accruals plus market borrowings through Arka Fincap's NBFC structure. No equity dilution planned. This is consistent with management's balance sheet confidence — but it means the manufacturing capex is funded through a financial intermediary, adding one layer of execution and refinancing risk.<br><br>
+      <strong>Red flag check:</strong> The HHP capex (₹1,400 Cr) currently runs <em>ahead</em> of disclosed order book specifics — management has confirmed the HyperNext 192 MW order and NPCIL pipeline, but has not published a granular order book figure for HHP. If data centre demand normalises before the new capacity comes online in FY28, asset turns could disappoint. This is the primary capex execution risk to monitor.
+    </div>
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--blue);background:var(--blue-bg);">
+    ₹2,100 Cr of capex over FY26–28 could unlock ₹7,500–9,500 Cr of peak incremental revenue — but only if HHP demand is still strong when capacity comes online in FY27–28.
+  </div>
+</section>
+
+<!-- CHAPTER 6: RISKS -->
+<section aria-labelledby="ch6-title">
+  <div class="ch-header" style="border-bottom-color:var(--amber);">
+    <div>
+      <div class="ch-eyebrow">Chapter 6</div>
+      <div class="ch-num" style="color:var(--amber);">06</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">Eyes Open</div>
+      <div class="ch-title" id="ch6-title">Risks — Specific, Concrete, Measurable</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+
+    <div class="risk-row">
+      <div class="risk-icon" aria-label="Warning">&#9888;</div>
+      <div>
+        <div class="risk-title">Arka Fincap Credit Cycle — The Hidden Risk</div>
+        <div class="risk-body">Arka's GNPA of 1.2% looks clean today, but the NBFC is in a rapid AUM expansion phase (₹7,256 Cr AUM, retail-heavy). History shows MSME and real estate lending NBFCs can deteriorate quickly in a credit tightening cycle. KOEL's consolidated interest costs have risen from ₹9 Cr (FY16) to ₹483 Cr (FY25) — all Arka-driven. If GNPA creeps above 3%, KOEL may need to inject equity into Arka, diverting capital from manufacturing capex. Signal to watch: GNPA trend in Arka's quarterly numbers, and whether provisioning coverage falls below 70%.</div>
+      </div>
+    </div>
+
+    <div class="risk-row">
+      <div class="risk-icon" aria-label="Warning">&#9888;</div>
+      <div>
+        <div class="risk-title">HHP Capex Execution vs. Demand Materialisation</div>
+        <div class="risk-body">The ₹1,400 Cr HHP capacity investment assumes data centre demand remains robust through FY28 when the capacity comes online. If hyperscale spending in India decelerates (a global trend in H1 2026 with some US tech companies pausing datacentre commitments), KOEL could commission capacity into a softer market. Asset turns of 4–5x are management guidance, not contractual commitments. If actual turns are 2–3x, the investment return is mediocre. The HyperNext 192 MW order is a proof point, but a single order does not validate a ₹1,400 Cr capex thesis. Signal: order book disclosures for HHP specifically — if management begins providing this metric, it's a positive; if not, opacity itself is a flag.</div>
+      </div>
+    </div>
+
+    <div class="risk-row">
+      <div class="risk-icon" aria-label="Warning">&#9888;</div>
+      <div>
+        <div class="risk-title">Raw Material Inflation — Copper and Pig Iron</div>
+        <div class="risk-body">Copper is a key input for alternators; pig iron and steel for engine castings. Both have seen volatile price movements in FY25–26. Management has acknowledged only partial pass-through of input cost increases to customers. If copper prices spike another 15–20% (plausible in a sustained China demand recovery scenario), KOEL's EBITDA margins could compress 80–120 bps — reversing the FY26 expansion that was a key re-rating trigger. Signal: gross margin trend in quarterly results; any management commentary about pass-through lag duration.</div>
+      </div>
+    </div>
+
+    <div class="risk-row">
+      <div class="risk-icon" aria-label="Warning">&#9888;</div>
+      <div>
+        <div class="risk-title">Middle East Geopolitical Disruption</div>
+        <div class="risk-body">40–50% of KOEL's international revenue originates from the Middle East. A serious escalation in regional conflict (Gulf states, Israel-Iran) could disrupt project site access, delay payment cycles, and reduce new infrastructure tenders. KOEL has been building local presence in the region to partially mitigate this, but revenue concentration remains high. FX volatility (USD/AED movements) is a secondary concern. Signal: international revenue quarterly run rate — any deceleration from the ~₹250 Cr/quarter pace should be interrogated for geo cause.</div>
+      </div>
+    </div>
+
+    <div class="risk-row" style="border-bottom:none;">
+      <div class="risk-icon" aria-label="Warning">&#9888;</div>
+      <div>
+        <div class="risk-title">Promoter Dilution Narrative</div>
+        <div class="risk-body">Promoter holding has declined from 59.3% (FY17) to 41.1% (Dec 2025) — a 18 percentage point reduction over 8 years. While some of this reflects secondary market sales and the FY22–23 dilution that likely funded Arka Fincap's expansion, the trend bears watching. At 41%, promoter commitment remains adequate, but further dilution could signal capital stress or change governance dynamics. The Screener "Cons" column already flags this. Signal: any regulatory or SEBI filings showing promoter pledge creation or further stake reduction.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--amber);background:var(--amber-bg);color:#3A1A00;">
+    Arka Fincap's credit quality is the most underrated risk in KOEL's investment thesis — it can impair the manufacturing capex story if it deteriorates at an inconvenient moment.
+  </div>
+</section>
+
+<!-- CHAPTER 7: WATCH SIGNALS -->
+<section aria-labelledby="ch7-title">
+  <div class="ch-header" style="border-bottom-color:var(--teal);">
+    <div>
+      <div class="ch-eyebrow">Chapter 7</div>
+      <div class="ch-num" style="color:var(--teal);">07</div>
+    </div>
+    <div>
+      <div class="ch-eyebrow">Quarterly Tracker</div>
+      <div class="ch-title" id="ch7-title">Watch Signals — What to Check Every Quarter</div>
+    </div>
+  </div>
+  <div class="chapter-card">
+
+    <div class="watch-row">
+      <div class="watch-dot" style="background:var(--blue);"></div>
+      <div>
+        <div class="watch-metric">1. HHP Revenue Mix within PowerGen</div>
+        <div class="watch-body">What to track: management commentary or any disclosed HHP-specific revenue or unit number. Direction: rising HHP share (target >25% of PowerGen revenue by FY28) is the primary validation of the capex thesis. Red flag: if Q4 FY26's momentum (HHP market share "approaching double digits") stalls or management stops discussing HHP traction in concalls — that silence is a signal.</div>
+      </div>
+    </div>
+
+    <div class="watch-row">
+      <div class="watch-dot" style="background:var(--amber);"></div>
+      <div>
+        <div class="watch-metric">2. Arka Fincap GNPA and Provisioning Coverage</div>
+        <div class="watch-body">What to track: GNPA percentage (currently 1.2%) and provision coverage ratio (currently ~75%). Direction: GNPA below 2% with stable coverage = healthy. Red flag: GNPA creeping above 2%, or coverage falling below 65% — either of these signals a credit deterioration that could require parent capital injection and disrupt the manufacturing capex schedule.</div>
+      </div>
+    </div>
+
+    <div class="watch-row">
+      <div class="watch-dot" style="background:var(--teal);"></div>
+      <div>
+        <div class="watch-metric">3. International Revenue Quarterly Run Rate</div>
+        <div class="watch-body">What to track: international gross sales per quarter (FY26 crossed ₹1,000 Cr annual = ~₹250 Cr/quarter run rate). Direction: sustaining or growing this run rate. Red flag: any sequential quarterly decline in international revenue, especially if management attributes it to Middle East political factors rather than timing/project cycles.</div>
+      </div>
+    </div>
+
+    <div class="watch-row">
+      <div class="watch-dot" style="background:var(--blue);"></div>
+      <div>
+        <div class="watch-metric">4. Standalone EBITDA Margin Trajectory</div>
+        <div class="watch-body">What to track: standalone EBITDA margin (currently 13.1% FY26, up from 12.2% FY25). Direction: any further expansion toward 14–15% indicates HHP product mix shifting toward higher-margin units. Red flag: margin contraction below 12% — would signal copper/input cost absorption or competitive pricing pressure in LHP tier that cannot be passed through.</div>
+      </div>
+    </div>
+
+    <div class="watch-row" style="border-bottom:none;">
+      <div class="watch-dot" style="background:var(--coral);"></div>
+      <div>
+        <div class="watch-metric">5. Capex Progress vs. Timeline — Kagal April 2027 Milestone</div>
+        <div class="watch-body">What to track: management updates on the ₹700 Cr LHP/LMH capacity (target: April 2027 online) and ₹1,400 Cr HHP complex (2-year horizon). Direction: on-time commissioning. Red flag: any 6+ month delay in the Kagal April 2027 target — delays tend to cluster and a slippage here could signal either construction issues or a demand signal read by management that they're choosing not to disclose directly.</div>
+      </div>
+    </div>
+
+  </div>
+  <div class="takeaway-pill" style="border-left-color:var(--teal);background:var(--teal-bg);color:#0A2A1A;">
+    Five minutes of quarterly research: HHP mix commentary, Arka GNPA, international revenue, standalone EBITDA margin, Kagal capex progress&mdash;these five cover 90% of the investment thesis.
+  </div>
+</section>
+
+<!-- VERDICT -->
+<section aria-labelledby="verdict-title">
+  <div class="verdict-card" role="region" aria-labelledby="verdict-title">
+    <div class="verdict-label">Investment Verdict</div>
+    <div id="verdict-title" style="font-family:var(--serif);font-size:22px;font-weight:700;color:#F7F5F0;margin-bottom:16px;">The Powermen Behind India's Buildout</div>
+    <p>Kirloskar Oil Engines sits at the intersection of three of India's most capital-intensive structural buildouts: data centres requiring multi-megawatt standby power, nuclear power plants requiring certified emergency gensets, and naval indigenisation requiring marine diesel engines. The PowerGen segment's 32% growth and the international business crossing ₹1,000 Cr in FY26 confirm that the structural demand thesis is converting into revenue — not just management aspiration. KOEL's EBITDA margin expansion from 12.2% to 13.1% in a year when raw material costs were volatile demonstrates genuine operating leverage, and the installed base of 50,000+ annual genset sales creates a compounding service revenue annuity that makes the business increasingly resilient.</p>
+    <p>The financial quality signal is nuanced: ROCE of 13.7% is adequate but not exceptional, constrained by the capital-intensive NBFC inside the consolidated entity. Stripping Arka Fincap out, standalone manufacturing ROCE would be materially higher. Free cash flow is structurally negative by design, not distress — a distinction that matters enormously for valuation. The ₹2,100 Cr capex cycle through FY28, if executed on time and absorbed at guided asset turns, will add ₹7,500–9,500 Cr of peak revenue capacity — more than bridging the gap to KOEL's USD 2 billion FY30 target. The near-term re-rating catalyst is April 2027: when the first Kagal capacity block comes online and management reports its first full quarter of contribution, the market will have hard evidence for the capex-to-revenue bridge.</p>
+    <p>At 43x trailing PE against 25% standalone revenue growth and 35% PAT growth, the valuation is not cheap — but it is not wildly expensive relative to Cummins India's 47x on slower growth. The premium is warranted only if HHP momentum is sustained and Arka Fincap's credit quality holds. Both conditions are currently met. This is a mid-chapter story: execution has been credible, structural tailwinds are intact, and the next 18 months will determine whether this is a long-term compounder or a cyclical with a great story.</p>
+    <span class="verdict-stage">MID-CHAPTER &nbsp;·&nbsp; BUY ON DIPS, TRACK CLOSELY</span>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- THE LEDGER -->
+<div class="ledger-masthead" role="region" aria-label="The Ledger — Management Credibility Tracker">
+  <div class="ledger-eyebrow">Companion Appendix</div>
+  <h2 class="ledger-title">The Ledger</h2>
+  <p>Management Credibility Tracker &mdash; Kirloskar Oil Engines &mdash; FY26 Review</p>
+  <div class="ledger-tier">
+    <span class="tier-label">Credibility Tier</span>
+    <span class="tier-grade" style="color:var(--teal);">B</span>
+    <span class="tier-desc">Credible, Watch Flags Active</span>
+  </div>
+</div>
+
+<!-- PILLAR 1: PROMISE REGISTER -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 01</div>
+      <div class="pillar-title">Promise Register</div>
+    </div>
+  </div>
+  <p style="margin-bottom:16px;font-size:13.5px;color:var(--gray);">Tracking public management commitments against actual outcomes across the most recent four quarters.</p>
+
+  <div class="promise-row">
+    <div class="p-status p-kept">KEPT &#10003;</div>
+    <div><strong>FY25 guidance: margin expansion</strong><br>Management guided for EBITDA margin improvement in FY26. Delivered: 13.1% vs 12.2% — a clean 90 bps expansion in a year of raw material volatility. Credit: full delivery, exceeded consensus expectations.</div>
+  </div>
+  <div class="promise-row">
+    <div class="p-status p-kept">KEPT &#10003;</div>
+    <div><strong>International business USD 100 million target</strong><br>Management had indicated the international business would cross USD 100M in FY26. Delivered: ₹1,000+ Cr (~USD 120M), exceeding the stated threshold by 20%. This is a meaningful beat — not a rounding error.</div>
+  </div>
+  <div class="promise-row">
+    <div class="p-status p-kept">KEPT &#10003;</div>
+    <div><strong>HHP market share expansion</strong><br>Committed to gaining HHP market share through Optiprime product launches and data centre targeting. Delivered: market share approaching double digits in HHP, with the landmark 192 MW HyperNext order as public proof. 41% growth in diesel generator sales validates the strategy execution.</div>
+  </div>
+  <div class="promise-row">
+    <div class="p-status p-watch">WATCH &#9679;</div>
+    <div><strong>USD 2 billion revenue by FY30</strong><br>Announced target: USD 2 billion (≈₹16,700 Cr consolidated) by FY30. Current run rate: ₹7,701 Cr FY26. Required CAGR: approximately 21–22% annually for 4 years. This is achievable but requires every growth vector (HHP, international, B2C, Arka Fincap) to fire simultaneously. Capex execution on schedule is table stakes. Classify as aspirational guidance — credible if capex lands, stretched if any vector underperforms.</div>
+  </div>
+  <div class="promise-row">
+    <div class="p-status p-watch">WATCH &#9679;</div>
+    <div><strong>Kagal capacity by April 2027</strong><br>Committed to 50,000-engine new block online by April 2027. Currently in construction. No slippage reported as of Q4 FY26, but the critical 12-month window is now active. If this milestone slips, it will challenge the FY30 revenue bridge narrative.</div>
+  </div>
+</div>
+
+<!-- PILLAR 2: TONE DECODER -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 02</div>
+      <div class="pillar-title">Tone Decoder</div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;margin-bottom:12px;">Analysing management language patterns across Q4 FY26 and FY26 full-year concall.</p>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--teal);">&#128994;</div>
+    <div><strong>Specificity is high.</strong> CEO Rahul Sahai cited precise metrics: "50,000+ units," "market share nearing double digits," "37% international growth," "April 2027" capacity milestone. Specific numbers without hedging language signal genuine tracking of these metrics internally — not narrative smoothing.</div>
+  </div>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--teal);">&#128994;</div>
+    <div><strong>Risk transparency is present.</strong> Management acknowledged geopolitical exposure (Middle East 40–50% export concentration), raw material pass-through incompleteness, and capex execution dependency on demand materialisation. This is a positive signal — acknowledging specific risks is more credible than generic disclaimers.</div>
+  </div>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--amber);">&#128993;</div>
+    <div><strong>HHP order book opacity.</strong> Despite the ₹1,400 Cr HHP capex announcement, no specific order book figure has been disclosed for HHP specifically. The single HyperNext order is cited frequently — which suggests it may be a significant portion of visible HHP pipeline. Absence of a broader order book disclosure in a capex-heavy year is a mild tone flag.</div>
+  </div>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--amber);">&#128993;</div>
+    <div><strong>Promoter dilution not addressed.</strong> No management commentary in recent concalls about the 18 percentage point promoter stake decline since FY17. A structural change of this magnitude deserves at least a narrative explanation — its absence is noted.</div>
+  </div>
+</div>
+
+<!-- PILLAR 3: EXECUTION DELTA -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 03</div>
+      <div class="pillar-title">Execution Delta</div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;margin-bottom:16px;">Guidance vs. actual for key financial metrics in FY26.</p>
+  <div class="stat-row"><span class="stat-label">Revenue Growth (Guided ~20%+)</span><span class="stat-val up">Actual +25% standalone &nbsp;&#10003; Beat</span></div>
+  <div class="stat-row"><span class="stat-label">EBITDA Margin (Guided expansion)</span><span class="stat-val up">Actual 13.1% vs 12.2% prior &nbsp;&#10003; Beat</span></div>
+  <div class="stat-row"><span class="stat-label">International Revenue (Guided USD 100M)</span><span class="stat-val up">Actual USD ~120M &nbsp;&#10003; Beat</span></div>
+  <div class="stat-row"><span class="stat-label">PowerGen segment growth (Guided double-digit)</span><span class="stat-val up">Actual +32% YoY &nbsp;&#10003; Beat</span></div>
+  <div class="stat-row"><span class="stat-label">Working capital efficiency (inventory improvement)</span><span class="stat-val up">Inventory days: 48 vs 66 prior &nbsp;&#10003; Improved</span></div>
+  <div class="stat-row" style="border-bottom:none;"><span class="stat-label">Free cash flow (implied negative from capex)</span><span class="stat-val dn">Deeply negative — as guided, Arka-driven &nbsp;&#9679; Neutral</span></div>
+  <p style="margin-top:14px;font-size:13.5px;color:var(--gray);">Overall execution delta: <strong style="color:var(--teal);">Positive across all tracked metrics in FY26.</strong> Management consistently delivered at or above guidance on revenue, margins, and segment growth. This is a full-year validation — not a single-quarter coincidence.</p>
+</div>
+
+<!-- PILLAR 4: CAPEX TIMELINE TRACKER -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 04</div>
+      <div class="pillar-title">Capex Timeline Tracker</div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;margin-bottom:16px;">Scoring management's track record on capex promises and delivery.</p>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--teal);">&#128994;</div>
+    <div><strong>FY25 manufacturing capex (₹522 Cr):</strong> Deployed as guided. Fixed assets grew from ₹769 Cr (FY24) to ₹1,183 Cr (FY25) — consistent with the Kagal expansion groundwork. No capex overrun reported.</div>
+  </div>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--amber);">&#128993;</div>
+    <div><strong>Kagal April 2027 block (₹700 Cr):</strong> Active construction, 12-month window, no slippage reported. Watch: Q2 FY27 concall will be the first test — if any delay is announced there, pattern recognition kicks in and the ₹1,400 Cr HHP timeline comes into doubt.</div>
+  </div>
+  <div class="flag-item">
+    <div class="flag-icon" style="color:var(--amber);">&#128993;</div>
+    <div><strong>HHP complex (₹1,400 Cr, 2-year timeline):</strong> Announced in Q4 FY26, construction presumably beginning. No site or equipment procurement updates disclosed. Given the complexity (new building, new production lines), execution risk here is higher than for the LHP capacity block.</div>
+  </div>
+  <div style="margin-top:12px;">
+    <div class="credibility-bar"><div class="credibility-fill" style="width:72%;background:linear-gradient(90deg,var(--teal),var(--amber));"></div></div>
+    <p style="font-size:12px;color:var(--gray);margin-top:4px;">Capex credibility score: 72/100 (historic delivery strong; new HHP cycle unproven)</p>
+  </div>
+</div>
+
+<!-- PILLAR 5: MARGIN EXPANSION TRACKER -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 05</div>
+      <div class="pillar-title">Margin Expansion Tracker</div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;margin-bottom:16px;">Tracing the EBITDA margin journey and identifying what's driving it — and what could reverse it.</p>
+  <div class="stat-row"><span class="stat-label">FY18 OPM (consolidated)</span><span class="stat-val">9%</span></div>
+  <div class="stat-row"><span class="stat-label">FY22 OPM</span><span class="stat-val">10%</span></div>
+  <div class="stat-row"><span class="stat-label">FY23 OPM</span><span class="stat-val">15%</span></div>
+  <div class="stat-row"><span class="stat-label">FY24 OPM</span><span class="stat-val up">17%</span></div>
+  <div class="stat-row"><span class="stat-label">FY25 OPM</span><span class="stat-val up">19%</span></div>
+  <div class="stat-row" style="border-bottom:none;"><span class="stat-label">TTM OPM (Dec 2025)</span><span class="stat-val up">18% &nbsp;(slight moderation from peak)</span></div>
+  <p style="margin-top:14px;font-size:13.5px;">The margin journey from 9% to 19% over 7 years reflects genuine operating leverage: fixed cost absorption as revenue doubled, HHP product mix shift (higher ASP per unit), and aftermarket growth (high margin, asset-light). The Q4 FY26 standalone EBITDA of 12.6% is lower than the annual figure — suggesting the quarterly mix in Q4 was more LHP-heavy. <span class="hl-catalyst">If HHP mix continues to increase toward 35%+ of PowerGen revenue, management's implicit guidance of 14–15% EBITDA margin is achievable by FY28.</span> The risk is commodity cost absorption re-inflating fixed costs faster than product mix can offset.</p>
+</div>
+
+<!-- PILLAR 6: CAPITAL STRUCTURE TRACKER -->
+<div class="pillar-card">
+  <div class="pillar-header">
+    <div>
+      <div class="pillar-num">Pillar 06</div>
+      <div class="pillar-title">Capital Structure Tracker</div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;margin-bottom:16px;">Assessing debt levels, equity actions, and what the balance sheet signals about management confidence.</p>
+  <div class="stat-row"><span class="stat-label">Total Borrowings (Consolidated FY25)</span><span class="stat-val">&#8377;5,819 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Of which: Arka Fincap (estimated)</span><span class="stat-val">~&#8377;4,800–5,200 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Manufacturing Debt (estimated standalone)</span><span class="stat-val up">~&#8377;600–1,000 Cr &nbsp;(manageable)</span></div>
+  <div class="stat-row"><span class="stat-label">Reserves (Consolidated FY25)</span><span class="stat-val">&#8377;3,057 Cr</span></div>
+  <div class="stat-row"><span class="stat-label">Net D/E (manufacturing business, estimated)</span><span class="stat-val up">&lt;0.5x &nbsp;(healthy)</span></div>
+  <div class="stat-row" style="border-bottom:none;"><span class="stat-label">Promoter pledge</span><span class="stat-val up">None disclosed &nbsp;&#10003;</span></div>
+  <p style="margin-top:14px;font-size:13.5px;">The capital structure is clean for the manufacturing business and complicated for the NBFC. No equity dilution is planned for manufacturing capex — management has explicitly funded the ₹2,100 Cr programme through internal accruals and Arka's own borrowings. This is a balance sheet confidence signal: they believe manufacturing cash flows will cover the capex without requiring dilution. Promoter pledges are not disclosed — a positive. The main structural concern is the rising interest cost trajectory (₹483 Cr in FY25) eating into consolidated earnings quality. If Arka's cost of funds rises 50–75 bps in a rate-tightening scenario, the consolidated interest cost could cross ₹600 Cr — a meaningful drag on PAT.</p>
+</div>
+
+<!-- Ledger Summary -->
+<div class="insight-box" style="margin-top:24px;">
+  <div class="label">Ledger Summary — Credibility Tier B</div>
+  <p><strong>What earns the B rating (Credible, Watch Flags Active):</strong> FY26 execution was exemplary — management delivered at or above guidance on every public metric. NPCIL and HyperNext orders validate both the nuclear moat and HHP commercial traction. Tone is specific, risks are acknowledged, and no major public promise has been broken in FY25–26.</p>
+  <p style="margin-top:10px;"><strong>Why not A (Highly Credible):</strong> Three active watch flags prevent upgrade to Tier A. First, the USD 2 billion FY30 target is aspirational and has not been validated by the capex milestones being reached. Second, HHP order book opacity — a ₹1,400 Cr capex without disclosed order coverage is a credibility gap. Third, promoter stake decline from 59% to 41% over 8 years has never been publicly explained in detail.</p>
+  <p style="margin-top:10px;"><strong>Active flags:</strong> (1) Kagal April 2027 milestone — first hard test; (2) Arka Fincap GNPA trend — currently clean but must stay clean; (3) HHP order book — needs disclosure before Q1 FY28 to validate capex rationale. Review tier after Q2 FY27 results.</p>
+</div>
+
+<!-- HIGHLIGHT INDEX -->
+<details id="highlight-index" open aria-label="All highlights at a glance">
+  <summary>&#128204; All Highlights at a Glance</summary>
+  <ol id="highlight-list">
+    <!-- auto-populated by JS -->
+  </ol>
+</details>
+
+</div><!-- end .content -->
+
+<!-- FOOTER -->
+<footer style="background:var(--ink);color:#A8A098;padding:28px 64px;font-family:var(--mono);font-size:10.5px;letter-spacing:1px;" role="contentinfo">
+  <div style="max-width:960px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;">
+    <span>KIRLOSENG &mdash; Kirloskar Oil Engines Ltd &mdash; NSE Investor Brief &mdash; June 2026</span>
+    <span>Research: Screener, BSE filings, Q4 FY26 concall (May 14, 2026), ChartAlert, InvestyWise, Gurufocus, IMARC Group</span>
+  </div>
+  <div style="max-width:960px;margin:10px auto 0;font-size:9.5px;color:#6B6060;">
+    This brief is for informational purposes only and does not constitute investment advice. Financial data sourced from public filings. Verify all figures independently before making investment decisions.
+  </div>
+</footer>
+
+<script>
+// ---- DARK MODE ----
+(function(){
+  const toggle = document.getElementById('dmToggle');
+  const stored = localStorage.getItem('koel-dm');
+  if(stored === 'dark') { document.body.classList.add('dark-mode'); }
+  toggle.addEventListener('click', function(){
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('koel-dm', document.body.classList.contains('dark-mode') ? 'dark' : 'light');
+  });
+})();
+
+// ---- QUICK SCAN TOGGLE ----
+(function(){
+  const qs = document.getElementById('qsBody');
+  const btn = document.querySelector('.qs-toggle');
+  if(!qs || !btn) return;
+  // Always open by default (printer-friendly)
+  qs.style.display = 'flex';
+  qs.style.flexDirection = 'column';
+  btn && (btn.textContent = '&#9660; Quick Scan — 7 Key Lines');
+  if(btn) btn.addEventListener('click', function(){
+    if(qs.style.display === 'none'){
+      qs.style.display = 'flex';
+      qs.style.flexDirection = 'column';
+      btn.innerHTML = '&#9660; Quick Scan &mdash; 7 Key Lines';
+    } else {
+      qs.style.display = 'none';
+      btn.innerHTML = '&#9650; Quick Scan &mdash; 7 Key Lines (click to expand)';
+    }
+    localStorage.setItem('koel-qs', qs.style.display === 'none' ? 'closed' : 'open');
+  });
+  const storedQs = localStorage.getItem('koel-qs');
+  if(storedQs === 'closed'){ qs.style.display = 'none'; btn.innerHTML = '&#9650; Quick Scan &mdash; 7 Key Lines (click to expand)'; }
+})();
+
+// ---- HIGHLIGHT INDEX AUTO-POPULATE ----
+document.addEventListener('DOMContentLoaded', function(){
+  const list = document.getElementById('highlight-list');
+  if(!list) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(function(el){
+    const li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    const type = Array.from(el.classList).find(function(c){ return c.startsWith('hl-') || c === 'takeaway-pill'; }) || '';
+    li.setAttribute('data-type', type);
+    list.appendChild(li);
+  });
+
+  // Force highlight-index open for print
+  const hiDetails = document.getElementById('highlight-index');
+  if(hiDetails){ hiDetails.open = true; }
+});
+</script>
+
+</body>
+</html>
