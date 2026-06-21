@@ -50,6 +50,7 @@ Run-Scanner "WT_BullCross"         "$ROOT\run_wt_bullcross_scanner.ps1"
 Run-Scanner "WT_SqueezeDash"       "$ROOT\run_wt_squeeze_dashboard.ps1"
 Run-Scanner "TrendScanner"         "$ROOT\run_trend_scanner.ps1"
 Run-Scanner "TrendDashboard"       "$ROOT\run_trend_dashboard.ps1"
+Run-Scanner "BreadthScanner"       "$ROOT\run_breadth_scanner.ps1"
 
 Run-Scanner "CircuitLimits"        "$ROOT\run_dashboard.ps1"
 Run-Scanner "US_FetchData"         "$ROOT\run_us_fetch_data.ps1"

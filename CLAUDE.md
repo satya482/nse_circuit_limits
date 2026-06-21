@@ -16,6 +16,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
+.\run_breadth_scanner.ps1       # 4:50 PM — Market breadth: % stocks above SMA10/20/50/200
 ```
 
 Run any Python script directly for debugging:
@@ -156,6 +157,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `dashboard.html` | `dashboard_generator.py` |
 | `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
+| `breadth_scans/breadth_history.csv`, `breadth_scans/breadth_chart.html` | `breadth_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
