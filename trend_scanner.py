@@ -57,6 +57,9 @@ BENCH_SYM = "NIFTY MIDSML 400"
 LEADER_MIN = 0.70  # close must be >= 70% of 52W high
 RS_PCT_MIN = 60.0  # RS percentile floor vs benchmark
 VOL_DRYUP_THRESH = 0.65  # 3-bar avg vol < 65% of 20-day avg
+STAGE2_LOW_FLOOR = (
+    20.0  # % above 52W low (Minervini TT criterion 6; NSE-calibrated from 25-30%)
+)
 
 
 # ── Indicators ─────────────────────────────────────────────────────────────────
@@ -139,6 +142,50 @@ def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
     if pd.isna(ratio.iloc[-1]):
         return 1.0, False
     return float(ratio.iloc[-1]), bool(ratio.iloc[-1] > ratio.iloc[-2])
+
+
+def _stage2_metrics(c: pd.Series, rs_pct_passes: bool) -> dict:
+    """Minervini Trend Template qualification (8 criteria: 7 OHLC + RS rank).
+
+    Criteria:
+      1. Price > SMA50
+      2. Price > SMA150
+      3. Price > SMA200
+      4. SMA150 > SMA200
+      5. SMA200 slope up (21-bar diff, ~1 month)
+      6. SMA50 > SMA150
+      7. Price >= STAGE2_LOW_FLOOR% above 52W low
+      8. RS percentile >= RS_PCT_MIN (cross-sectional rank)
+    """
+    sma50 = c.rolling(50).mean()
+    sma150 = c.rolling(150).mean()
+    sma200 = c.rolling(200).mean()
+    low_52w = c.rolling(252, min_periods=200).min()
+
+    close_now = float(c.iloc[-1])
+    raw_low = float(low_52w.iloc[-1])
+    pct_above_low = (close_now / raw_low - 1) * 100 if raw_low > 0 else 0.0
+    sma200_up = bool(sma200.iloc[-1] > sma200.iloc[-22]) if len(sma200) >= 23 else False
+    sma150_gt_200 = bool(sma150.iloc[-1] > sma200.iloc[-1])
+    sma50_gt_150 = bool(sma50.iloc[-1] > sma150.iloc[-1])
+
+    score = sum(
+        [
+            close_now > float(sma50.iloc[-1]),
+            close_now > float(sma150.iloc[-1]),
+            close_now > float(sma200.iloc[-1]),
+            sma150_gt_200,
+            sma200_up,
+            sma50_gt_150,
+            pct_above_low >= STAGE2_LOW_FLOOR,
+            rs_pct_passes,
+        ]
+    )
+    return {
+        "pct_above_low": round(pct_above_low, 1),
+        "sma200_up": sma200_up,
+        "tt_score": score,
+    }
 
 
 def _entry_score(
@@ -260,6 +307,8 @@ def analyse(
         op = df_raw["open"].astype(float)
         vol = df_raw["volume"].astype(float)
 
+        s2 = _stage2_metrics(c, rs_pct >= RS_PCT_MIN)
+
         # EMA structure: Stage 2 uptrend
         e50 = _ema(c, 50)
         e100 = _ema(c, 100)
@@ -357,6 +406,9 @@ def analyse(
             "zl_pct": zl_pct,
             "day_chg": day_chg,
             "trap": _trap_label(fm),
+            "pct_above_low": s2["pct_above_low"],
+            "sma200_up": s2["sma200_up"],
+            "tt_score": s2["tt_score"],
         }
 
     except Exception:
@@ -375,8 +427,8 @@ _SIG_EMOJI = {
 _RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
 
 _HDR = [
-    "| Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | Vol | ZL | ZL Chg% | Day Chg | Circuit |",
-    "|--------|:----:|-------|--------|------:|:--:|-------:|-----:|:---:|:--:|--------:|--------:|:-------:|",
+    "| Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |",
+    "|--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|",
 ]
 
 
@@ -395,6 +447,10 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     vol_cell = f"{'🔵' if f['vol_dryup'] else ''}{f['vol_ratio']:.2f}x"
     co = (names or {}).get(sym, "")
     name_sub = f" <sub>{co}</sub>" if co else ""
+    tt = f["tt_score"]
+    tt_cell = f"{'✅' if tt >= 7 else ''}{tt}/8"
+    sma200_arrow = "↑" if f.get("sma200_up") else "↓"
+    abv_low = f"{f['pct_above_low']:.0f}% {sma200_arrow}"
     return (
         f"| [{sym}]({tv}){name_sub} "
         f"| {f.get('trap', 'n/a')} "
@@ -404,6 +460,8 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
         f"| {rs_cell} "
         f"| {cavgc_arrow}{f['cavgc']:.3f} "
         f"| {f['leader_pct']:.0f}% "
+        f"| {abv_low} "
+        f"| {tt_cell} "
         f"| {vol_cell} "
         f"| ↑{zl_d} "
         f"| {zl_p} "
@@ -434,6 +492,8 @@ def build_markdown(
         "| ZLEMA25 | Rising required |",
         "| Score | RS%(×0.35) + vol dry-up(20) + 52W proximity(20) + RS holds(15) + ZL fresh(10) |",
         "| Sort | Score desc — early entries in strongest leaders first |",
+        "| S2 (Stage 2) | Minervini TT score /8: P>SMA50/150/200, SMA150>200, SMA200↑, SMA50>150, AbvLow≥20%, RS≥60 |",
+        "| AbvLow | % above 52W low · SMA200 slope arrow |",
         "",
         "---",
         "",
@@ -482,6 +542,7 @@ def print_results(findings: list[dict]) -> None:
         print(
             f"  {f['symbol']:<18} score:{f['score']:>5.1f}  "
             f"RS:{f['rs_pct']:>4.0f}%  52W:{f['leader_pct']:>4.0f}%  "
+            f"AbvLow:{f['pct_above_low']:>5.1f}%  S2:{f['tt_score']}/8  "
             f"{vol_flag}  [{tag}]  day:{ds}{f['day_chg']:.1f}%"
         )
     print()
