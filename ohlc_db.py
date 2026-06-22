@@ -95,3 +95,45 @@ def latest_date(db_path: Path = DB_PATH) -> str | None:
         return row[0] if row else None
     finally:
         con.close()
+
+
+def _fmt_name(raw: str) -> str:
+    """Title-case a Kite instrument name and strip common legal suffixes."""
+    s = raw.strip().title()
+    for suffix in (
+        " Private Limited", " Pvt. Ltd.", " Pvt Ltd", " Pvt. Ltd",
+        " Limited", " Ltd.", " Ltd", " Llp", " Lp",
+    ):
+        if s.endswith(suffix):
+            s = s[: -len(suffix)]
+            break
+    return s
+
+
+def get_names(
+    symbols: list[str] | None = None,
+    db_path: Path = DB_PATH,
+) -> dict[str, str]:
+    """Return {tradingsymbol: display_name} from the instruments table.
+    If symbols is None, returns all instruments. Missing symbols are omitted."""
+    con = _connect(db_path)
+    if con is None:
+        return {}
+    try:
+        if symbols is not None and len(symbols) == 0:
+            return {}
+        if symbols is None:
+            rows = con.execute(
+                "SELECT tradingsymbol, name FROM instruments"
+            ).fetchall()
+        else:
+            ph = ",".join("?" * len(symbols))
+            rows = con.execute(
+                f"SELECT tradingsymbol, name FROM instruments WHERE tradingsymbol IN ({ph})",
+                symbols,
+            ).fetchall()
+        return {sym: _fmt_name(name) for sym, name in rows if name and name.strip()}
+    except Exception:
+        return {}
+    finally:
+        con.close()

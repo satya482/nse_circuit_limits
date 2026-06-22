@@ -24,7 +24,7 @@ import scorer
 from data_loader import load_universe
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from ohlc_db import load_ohlc, load_ohlc_many
+from ohlc_db import load_ohlc, load_ohlc_many, get_names
 
 BASE_DIR = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
@@ -63,6 +63,7 @@ def build_markdown(
     n_bb_squeeze: int,
     elapsed: float,
     today: str,
+    names: dict[str, str] | None = None,
 ) -> str:
     n_signals = len(candidates)
 
@@ -77,6 +78,7 @@ def build_markdown(
         "",
     ]
 
+    names = names or {}
     if not candidates:
         lines.append("_No stocks passed all gates today._")
         lines += ["", f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_"]
@@ -101,9 +103,11 @@ def build_markdown(
             f"+{day_chg_pct:.2f}%" if day_chg_pct >= 0 else f"{day_chg_pct:.2f}%"
         )
         lbl = _LABELS.get(c["symbol"], "")
+        co = names.get(c["symbol"], "")
+        sym_cell = tv_link(c["symbol"]) + (f" <sub>{co}</sub>" if co else "")
         lines.append(
             f"| {i} "
-            f"| {tv_link(c['symbol'])} "
+            f"| {sym_cell} "
             f"| {_zl_days_str(c['zl_days'])} "
             f"| {_chg_str(c['zl_chg'])} "
             f"| {lbl} "
@@ -319,6 +323,7 @@ def run():
     candidates.sort(key=lambda x: (-x["score"], x["zl_days"]))
 
     elapsed = time.time() - t0
+    names = get_names([c["symbol"] for c in candidates])
     md = build_markdown(
         candidates,
         len(all_data),
@@ -326,6 +331,7 @@ def run():
         n_bb_squeeze,
         elapsed,
         today,
+        names,
     )
 
     out_file = output_dir / f"ema_compression_{today}.txt"

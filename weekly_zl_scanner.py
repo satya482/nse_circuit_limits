@@ -24,7 +24,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc
+from ohlc_db import load_ohlc, get_names
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -265,15 +265,20 @@ def _static_header() -> str:
 """
 
 
-def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
+def _table_rows(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str] | None = None,
+) -> list[str]:
     hdr = [
         "| Symbol | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |",
         "|--------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|",
     ]
     rows = []
     for f in sorted(findings, key=_sort_key):
-        cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        sym = f["symbol"]
+        cl, em = circuit.get(sym, ("20%", ""))
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
         zl_w = (
             f"{f['zl_weeks']}w+"
             if f["zl_weeks"] >= ZL_TURN_CAP
@@ -283,8 +288,10 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
         pvz = f["price_vs_zl"]
+        co = (names or {}).get(sym, "")
+        name_sub = f" <sub>{co}</sub>" if co else ""
         rows.append(
-            f"| [{f['symbol']}]({tv}) "
+            f"| [{sym}]({tv}){name_sub} "
             f"| {f['consec_weeks']}w "
             f"| {pvz} "
             f"| {zl_w} "
@@ -297,7 +304,11 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
     return hdr + rows
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def build_markdown(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str] | None = None,
+) -> str:
     lines = [
         f"# NSE Weekly ZL Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
@@ -307,7 +318,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         "",
     ]
     if findings:
-        lines += _table_rows(findings, circuit)
+        lines += _table_rows(findings, circuit, names)
     else:
         lines.append("*No uptrend start signals today.*")
 
@@ -355,7 +366,8 @@ def main():
     print_results(findings)
 
     dated_file = os.path.join(SCANS_DIR, f"weekly_zl_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    names = get_names([f["symbol"] for f in findings])
+    md = build_markdown(findings, circuit, names)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:

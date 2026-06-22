@@ -12,6 +12,13 @@ import json
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 
+try:
+    from ohlc_db import get_names as _get_names
+except ImportError:
+    _get_names = None
+
+_NAMES: dict[str, str] = {}
+
 IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -508,7 +515,9 @@ def parse_zl_squeeze(content: str, today: str) -> list:
 
 def tv_link(symbol: str) -> str:
     url = f"https://in.tradingview.com/chart/?symbol=NSE:{symbol}"
-    return f'<a href="{url}" target="_blank" rel="noopener">{symbol}</a>'
+    co = _NAMES.get(symbol, "")
+    name_span = f'<span class="co-name">{co}</span>' if co else ""
+    return f'<a href="{url}" target="_blank" rel="noopener">{symbol}</a>{name_span}'
 
 
 def chg_cls(v: str) -> str:
@@ -1222,6 +1231,7 @@ tr:hover td{{background:var(--bg3)}}
 
 .sym{{font-weight:600;font-family:monospace;font-size:12px}}
 .sym a{{color:inherit;text-decoration:none}}.sym a:hover{{text-decoration:underline;color:var(--blu)}}
+.co-name{{display:block;font-size:10px;color:var(--mu);font-weight:normal;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}}
 .zld{{color:var(--mu);font-size:11px}}
 .lbl{{font-size:11px;color:var(--mu);max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 .nm{{font-size:11px;color:var(--mu)}}
@@ -1341,6 +1351,10 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
 
 
 def main():
+    global _NAMES
+    if _get_names:
+        _NAMES = _get_names()
+
     now_ist = datetime.now(IST)
     today = now_ist.strftime("%Y-%m-%d")
     now_str = now_ist.strftime("%Y-%m-%d %H:%M IST")

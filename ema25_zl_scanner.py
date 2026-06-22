@@ -31,7 +31,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc
+from ohlc_db import load_ohlc, get_names
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -285,20 +285,27 @@ STATIC_HEADER = """### Scan definition
 )
 
 
-def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
+def _table_rows(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str],
+) -> list[str]:
     rows = []
     for f in findings:
-        cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        sym = f["symbol"]
+        cl, em = circuit.get(sym, ("20%", ""))
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
         zl_d = (
             f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = "✓" if f.get("squeeze") else "—"
-        lbl = _LABELS.get(f["symbol"], "")
+        lbl = _LABELS.get(sym, "")
+        co = names.get(sym, "")
+        name_sub = f" <sub>{co}</sub>" if co else ""
         rows.append(
-            f"| [{f['symbol']}]({tv}) "
+            f"| [{sym}]({tv}){name_sub} "
             f"| {zl_d} "
             f"| {zl_p} "
             f"| {lbl} "
@@ -310,7 +317,10 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
     return rows
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def build_markdown(
+    findings: list[dict], circuit: dict[str, tuple], names: dict[str, str] | None = None
+) -> str:
+    names = names or {}
     rising = sorted([f for f in findings if f["zl_rising"]], key=lambda x: x["zl_days"])
     watch = sorted(
         [f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"]
@@ -331,13 +341,13 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         "### ZLEMA25 Rising",
     ]
     if rising:
-        lines += hdr + _table_rows(rising, circuit)
+        lines += hdr + _table_rows(rising, circuit, names)
     else:
         lines.append("*No ZLEMA25 rising stocks today.*")
 
     lines += ["", "### ZLEMA25 Watch *(pullback / flat)*"]
     if watch:
-        lines += hdr + _table_rows(watch, circuit)
+        lines += hdr + _table_rows(watch, circuit, names)
     else:
         lines.append("*No ZLEMA25 watch stocks today.*")
 
@@ -413,7 +423,8 @@ def main():
     print_results(findings)
 
     dated_file = os.path.join(SCANS_DIR, f"ema25_zl_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    names = get_names([f["symbol"] for f in findings])
+    md = build_markdown(findings, circuit, names)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:

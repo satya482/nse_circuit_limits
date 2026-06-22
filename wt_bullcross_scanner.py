@@ -31,7 +31,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many
+from ohlc_db import load_ohlc_many, get_names
 from wavetrend_scanner import WaveTrendCalculator
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
@@ -351,7 +351,7 @@ _HDR = [
 ]
 
 
-def _row(f: dict, circuit: dict) -> str:
+def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
     cl, em = circuit.get(sym, ("20%", ""))
@@ -371,8 +371,10 @@ def _row(f: dict, circuit: dict) -> str:
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl = _LABELS.get(sym, "")
     circuit_cell = f"{cl} {em}".strip()
+    co = (names or {}).get(sym, "")
+    name_sub = f" <sub>{co}</sub>" if co else ""
     return (
-        f"| [{sym}]({tv}) "
+        f"| [{sym}]({tv}){name_sub} "
         f"| {f.get('trap', 'n/a')} "
         f"| {lbl} "
         f"| {emoji} {f['wt_signal']} "
@@ -388,7 +390,10 @@ def _row(f: dict, circuit: dict) -> str:
     )
 
 
-def build_markdown(findings: list[dict], circuit: dict) -> str:
+def build_markdown(
+    findings: list[dict], circuit: dict, names: dict[str, str] | None = None
+) -> str:
+    names = names or {}
     # Sort: rank desc, then earliness score desc within rank (closest to move start first)
     sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
 
@@ -430,7 +435,7 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         lines.append(
             f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})"
         )
-        lines += _HDR + [_row(f, circuit) for f in sqz_breaks]
+        lines += _HDR + [_row(f, circuit, names) for f in sqz_breaks]
         lines.append("")
         lines.append("---")
         lines.append("")
@@ -440,7 +445,7 @@ def build_markdown(findings: list[dict], circuit: dict) -> str:
         group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
-            lines += _HDR + [_row(f, circuit) for f in group]
+            lines += _HDR + [_row(f, circuit, names) for f in group]
         else:
             lines.append("*No signals.*")
         lines.append("")
@@ -551,7 +556,8 @@ def main():
 
     print_results(findings)
 
-    md = build_markdown(findings, circuit)
+    names = get_names([f["symbol"] for f in findings])
+    md = build_markdown(findings, circuit, names)
     with open(MD_LATEST, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(MD_DATED, "w", encoding="utf-8") as fh:

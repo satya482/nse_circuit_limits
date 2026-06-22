@@ -36,6 +36,8 @@ import yfinance as yf
 import pandas as pd
 from tradingview_screener import Query, col
 
+from ohlc_db import get_names
+
 sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -313,7 +315,12 @@ STATIC_FOOTER = """
 - Weekly RS EMA9 is rising"""
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def build_markdown(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str] | None = None,
+) -> str:
+    names = names or {}
     findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
 
     lines = [
@@ -326,17 +333,20 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     ]
 
     for f in findings:
-        cl, em = circuit.get(f["symbol"], ("20%", ""))
-        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{f['symbol']}"
+        sym = f["symbol"]
+        cl, em = circuit.get(sym, ("20%", ""))
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
         zl_d = (
             f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        lbl = _LABELS.get(f["symbol"], "")
+        lbl = _LABELS.get(sym, "")
+        co = names.get(sym, "")
+        name_sub = f" <sub>{co}</sub>" if co else ""
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
-                f"| [{f['symbol']}]({tv}) "
+                f"| [{sym}]({tv}){name_sub} "
                 f"| {zl_d} "
                 f"| {zl_p} "
                 f"| {lbl} "
@@ -397,7 +407,8 @@ def main():
 
     os.makedirs(SCANS_DIR, exist_ok=True)
     dated_file = os.path.join(SCANS_DIR, f"momentum_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    names = get_names([f["symbol"] for f in findings])
+    md = build_markdown(findings, circuit, names)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:
