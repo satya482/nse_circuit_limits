@@ -52,7 +52,8 @@ CREATE TABLE IF NOT EXISTS instruments (
     name              TEXT,
     segment           TEXT,
     instrument_type   TEXT,
-    last_updated      DATE
+    last_updated      DATE,
+    market_cap_cr     REAL
 );
 
 CREATE TABLE IF NOT EXISTS ohlc (
@@ -73,16 +74,22 @@ CREATE INDEX IF NOT EXISTS idx_ohlc_symbol_date ON ohlc (symbol, date);
 def init_db(con: sqlite3.Connection) -> None:
     con.executescript(_SCHEMA)
     con.commit()
+    # one-time migration: add market_cap_cr to existing DBs
+    try:
+        con.execute("ALTER TABLE instruments ADD COLUMN market_cap_cr REAL")
+        con.commit()
+    except Exception:
+        pass
 
 
 # ── TVScreener universe ────────────────────────────────────────────────────────
-def get_tv_universe() -> set[str]:
-    """Return NSE common-stock symbols passing MCap filter (no EMA condition)."""
+def get_tv_universe() -> tuple[set[str], dict[str, float]]:
+    """Return (symbols, {symbol: market_cap_cr}) from TradingView screener."""
     print("  Fetching universe from TradingView screener...")
     _, df = (
         Query()
         .set_markets("india")
-        .select("name")
+        .select("name", "market_cap_basic")
         .where(
             col("exchange") == "NSE",
             col("type") == "stock",
@@ -93,8 +100,14 @@ def get_tv_universe() -> set[str]:
         .get_scanner_data()
     )
     symbols = set(df["name"].tolist())
+    # market_cap_basic is in absolute INR; convert to Cr (1 Cr = 10,000,000)
+    mcaps = {
+        row["name"]: row["market_cap_basic"] / 10_000_000
+        for _, row in df.iterrows()
+        if row["market_cap_basic"] and row["market_cap_basic"] > 0
+    }
     print(f"  TVScreener universe: {len(symbols)} stocks")
-    return symbols
+    return symbols, mcaps
 
 
 # ── Instruments ────────────────────────────────────────────────────────────────
@@ -112,7 +125,7 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
             "SELECT * FROM instruments WHERE last_updated=?", con, params=(today,)
         )
 
-    tv_symbols = get_tv_universe()
+    tv_symbols, tv_mcaps = get_tv_universe()
 
     print("  Downloading instruments from Kite...")
     raw = pd.DataFrame(kite.instruments("NSE"))
@@ -143,8 +156,9 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
 
     con.execute("DELETE FROM instruments")
     for _, r in filtered.iterrows():
+        mcap_cr = tv_mcaps.get(r["tradingsymbol"])  # None for benchmark index
         con.execute(
-            "INSERT OR REPLACE INTO instruments VALUES (?,?,?,?,?,?)",
+            "INSERT OR REPLACE INTO instruments VALUES (?,?,?,?,?,?,?)",
             (
                 int(r["instrument_token"]),
                 r["tradingsymbol"],
@@ -152,6 +166,7 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
                 r["segment"],
                 r["instrument_type"],
                 today,
+                mcap_cr,
             ),
         )
     con.commit()

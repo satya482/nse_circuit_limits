@@ -101,8 +101,15 @@ def _fmt_name(raw: str) -> str:
     """Title-case a Kite instrument name and strip common legal suffixes."""
     s = raw.strip().title()
     for suffix in (
-        " Private Limited", " Pvt. Ltd.", " Pvt Ltd", " Pvt. Ltd",
-        " Limited", " Ltd.", " Ltd", " Llp", " Lp",
+        " Private Limited",
+        " Pvt. Ltd.",
+        " Pvt Ltd",
+        " Pvt. Ltd",
+        " Limited",
+        " Ltd.",
+        " Ltd",
+        " Llp",
+        " Lp",
     ):
         if s.endswith(suffix):
             s = s[: -len(suffix)]
@@ -110,29 +117,58 @@ def _fmt_name(raw: str) -> str:
     return s
 
 
+def _fmt_mcap(cr: float) -> str:
+    """Format market cap in crores to a short display string."""
+    if cr >= 100_000:
+        return f"₹{cr / 100_000:.1f}L Cr"
+    elif cr >= 1_000:
+        return f"₹{round(cr / 1_000):.0f}K Cr"
+    else:
+        return f"₹{cr:.0f} Cr"
+
+
+def _ensure_mcap_col(con: sqlite3.Connection) -> None:
+    """Add market_cap_cr column to instruments if not present (one-time migration)."""
+    try:
+        con.execute("ALTER TABLE instruments ADD COLUMN market_cap_cr REAL")
+        con.commit()
+    except Exception:
+        pass
+
+
 def get_names(
     symbols: list[str] | None = None,
     db_path: Path = DB_PATH,
 ) -> dict[str, str]:
-    """Return {tradingsymbol: display_name} from the instruments table.
-    If symbols is None, returns all instruments. Missing symbols are omitted."""
+    """Return {tradingsymbol: 'Name · ₹XK Cr'} from the instruments table.
+    market_cap_cr is appended when available. Missing symbols are omitted."""
     con = _connect(db_path)
     if con is None:
         return {}
     try:
         if symbols is not None and len(symbols) == 0:
             return {}
+        _ensure_mcap_col(con)
         if symbols is None:
             rows = con.execute(
-                "SELECT tradingsymbol, name FROM instruments"
+                "SELECT tradingsymbol, name, market_cap_cr FROM instruments"
             ).fetchall()
         else:
             ph = ",".join("?" * len(symbols))
             rows = con.execute(
-                f"SELECT tradingsymbol, name FROM instruments WHERE tradingsymbol IN ({ph})",
+                f"SELECT tradingsymbol, name, market_cap_cr FROM instruments"
+                f" WHERE tradingsymbol IN ({ph})",
                 symbols,
             ).fetchall()
-        return {sym: _fmt_name(name) for sym, name in rows if name and name.strip()}
+        result = {}
+        for sym, name, mcap_cr in rows:
+            label = _fmt_name(name) if name and name.strip() else ""
+            if mcap_cr:
+                mcap_str = _fmt_mcap(float(mcap_cr))
+                label = f"{label} · {mcap_str}" if label else mcap_str
+            if label:
+                result[sym] = label
+        return result
     except Exception:
         return {}
     finally:
