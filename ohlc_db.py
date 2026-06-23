@@ -183,14 +183,20 @@ def liq_tag(df: pd.DataFrame) -> str:
     Returns '' on insufficient data or error.
     """
     try:
-        notional = df["close"].astype(float) * df["volume"].astype(float)
-        avg10 = float(notional.rolling(10, min_periods=5).mean().iloc[-1]) / 1e7
-        avg20 = float(notional.rolling(20, min_periods=10).mean().iloc[-1]) / 1e7
-        today_val = float(notional.iloc[-1]) / 1e7
-        if avg10 <= 0:
+        vol = df["volume"].astype(float)
+        close = df["close"].astype(float)
+        today_close = float(close.iloc[-1])
+        today_vol = float(vol.iloc[-1])
+        avg10_vol = float(vol.rolling(10, min_periods=5).mean().iloc[-1])
+        avg20_vol = float(vol.rolling(20, min_periods=10).mean().iloc[-1])
+        if avg10_vol <= 0:
             return ""
-        ratio = today_val / avg10
-        accel = avg10 / avg20 if avg20 > 0 else 1.0
+        # val_avg10_cr = today_close × avg10(volume) — matches Pine val_avg10_cr
+        avg10 = today_close * avg10_vol / 1e7
+        # ratio = today_vol / avg10_vol (price cancels — pure volume comparison)
+        ratio = today_vol / avg10_vol
+        # accel = avg10_vol / avg20_vol (is volume baseline building?)
+        accel = avg10_vol / avg20_vol if avg20_vol > 0 else 1.0
         ratio_arrow = "↑" if ratio > 1.15 else ("↓" if ratio < 0.75 else "")
         accel_arrow = "↗" if accel > 1.10 else ("↘" if accel < 0.90 else "→")
         cr_str = f"{avg10:.1f}Cr" if avg10 < 1 else f"{avg10:.0f}Cr"
