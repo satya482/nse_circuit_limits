@@ -32,7 +32,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many, get_names
+from ohlc_db import load_ohlc_many, get_names, liq_tag
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -409,6 +409,7 @@ def analyse(
             "pct_above_low": s2["pct_above_low"],
             "sma200_up": s2["sma200_up"],
             "tt_score": s2["tt_score"],
+            "liq_tag": liq_tag(df_raw),
         }
 
     except Exception:
@@ -446,7 +447,9 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     ds = "+" if f["day_chg"] >= 0 else ""
     vol_cell = f"{'🔵' if f['vol_dryup'] else ''}{f['vol_ratio']:.2f}x"
     co = (names or {}).get(sym, "")
-    name_sub = f" <sub>{co}</sub>" if co else ""
+    liq = f.get("liq_tag", "")
+    _sub_parts = [p for p in [co, liq] if p]
+    name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
     tt = f["tt_score"]
     tt_cell = f"{'✅' if tt >= 7 else ''}{tt}/8"
     sma200_arrow = "↑" if f.get("sma200_up") else "↓"

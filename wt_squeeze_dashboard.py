@@ -19,11 +19,13 @@ from datetime import datetime, timezone, timedelta
 sys.stdout.reconfigure(encoding="utf-8")
 
 try:
-    from ohlc_db import get_names as _get_names
+    from ohlc_db import get_names as _get_names, get_liq_labels as _get_liq_labels
 except ImportError:
     _get_names = None
+    _get_liq_labels = None
 
 _NAMES: dict[str, str] = {}
+_LIQ: dict[str, str] = {}
 
 IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -154,8 +156,10 @@ def parse_wt_rows(content: str) -> list[dict]:
 
 def _tv_link(sym: str) -> str:
     co = _NAMES.get(sym, "")
+    liq = _LIQ.get(sym, "")
     name_span = f'<span class="co-name">{co}</span>' if co else ""
-    return f'<a href="https://in.tradingview.com/chart/?symbol=NSE:{sym}" target="_blank" rel="noopener">{sym}</a>{name_span}'
+    liq_span = f'<span class="liq-tag">{liq}</span>' if liq else ""
+    return f'<a href="https://in.tradingview.com/chart/?symbol=NSE:{sym}" target="_blank" rel="noopener">{sym}</a>{name_span}{liq_span}'
 
 
 def _chg_cls(v: str) -> str:
@@ -275,6 +279,7 @@ tr:hover td{background:var(--bg3)}
 .sym{font-weight:600;font-family:monospace;font-size:12px}
 .sym a{color:inherit;text-decoration:none}.sym a:hover{text-decoration:underline;color:var(--blu)}
 .co-name{display:block;font-size:10px;color:var(--mu);font-weight:normal;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px}
+.liq-tag{display:block;font-size:9px;color:#6b9aaa;font-family:monospace;font-weight:600;line-height:1.3;letter-spacing:0.02em}
 .lbl{font-size:11px;color:var(--mu);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .mu{color:var(--mu);font-size:11px}
 .num{font-family:monospace;font-size:12px;color:var(--mu)}
@@ -386,9 +391,11 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
 
 
 def main():
-    global _NAMES
+    global _NAMES, _LIQ
     if _get_names:
         _NAMES = _get_names()
+    if _get_liq_labels:
+        _LIQ = _get_liq_labels(symbols=list(_NAMES.keys()) if _NAMES else None)
 
     now_ist = datetime.now(IST)
     today = now_ist.strftime("%Y-%m-%d")

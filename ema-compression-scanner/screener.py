@@ -24,7 +24,7 @@ import scorer
 from data_loader import load_universe
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from ohlc_db import load_ohlc, load_ohlc_many, get_names
+from ohlc_db import load_ohlc, load_ohlc_many, get_names, liq_tag
 
 BASE_DIR = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
@@ -104,7 +104,11 @@ def build_markdown(
         )
         lbl = _LABELS.get(c["symbol"], "")
         co = names.get(c["symbol"], "")
-        sym_cell = tv_link(c["symbol"]) + (f" <sub>{co}</sub>" if co else "")
+        liq = liq_tag(c["df"])
+        _sub_parts = [p for p in [co, liq] if p]
+        sym_cell = tv_link(c["symbol"]) + (
+            f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
+        )
         lines.append(
             f"| {i} "
             f"| {sym_cell} "

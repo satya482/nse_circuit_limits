@@ -24,7 +24,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc, get_names
+from ohlc_db import load_ohlc, get_names, liq_tag
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -233,6 +233,7 @@ def analyse(symbol: str) -> dict | None:
             "consec_weeks": consec_weeks,
             "wk_zl25_val": wk_zl25_val,
             "price_vs_zl": price_vs_zl,
+            "liq_tag": liq_tag(daily),
         }
     except Exception:
         return None
@@ -289,7 +290,9 @@ def _table_rows(
         sqz = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
         pvz = f["price_vs_zl"]
         co = (names or {}).get(sym, "")
-        name_sub = f" <sub>{co}</sub>" if co else ""
+        liq = f.get("liq_tag", "")
+        _sub_parts = [p for p in [co, liq] if p]
+        name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
         rows.append(
             f"| [{sym}]({tv}){name_sub} "
             f"| {f['consec_weeks']}w "

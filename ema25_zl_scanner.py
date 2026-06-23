@@ -31,7 +31,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc, get_names
+from ohlc_db import load_ohlc, get_names, liq_tag
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -253,6 +253,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_days": zl_days,
             "zl_pct": zl_pct,
             "squeeze": bb_kc_squeeze(raw),
+            "liq_tag": liq_tag(raw),
         }
     except Exception:
         return None
@@ -303,7 +304,9 @@ def _table_rows(
         sqz = "✓" if f.get("squeeze") else "—"
         lbl = _LABELS.get(sym, "")
         co = names.get(sym, "")
-        name_sub = f" <sub>{co}</sub>" if co else ""
+        liq = f.get("liq_tag", "")
+        _sub_parts = [p for p in [co, liq] if p]
+        name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
         rows.append(
             f"| [{sym}]({tv}){name_sub} "
             f"| {zl_d} "

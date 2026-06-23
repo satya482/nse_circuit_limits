@@ -280,6 +280,23 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             return None
 
         zl_days, zl_pct = zl25_turn_stats(zl25, c)
+
+        try:
+            notional = df["Close"] * df["Volume"]
+            _avg10 = float(notional.rolling(10, min_periods=5).mean().iloc[-1]) / 1e7
+            _avg20 = float(notional.rolling(20, min_periods=10).mean().iloc[-1]) / 1e7
+            _today = float(notional.iloc[-1]) / 1e7
+            if _avg10 > 0:
+                _ratio = _today / _avg10
+                _accel = _avg10 / _avg20 if _avg20 > 0 else 1.0
+                _ra = "↑" if _ratio > 1.15 else ("↓" if _ratio < 0.75 else "")
+                _aa = "↗" if _accel > 1.10 else ("↘" if _accel < 0.90 else "→")
+                _liq = f"{_aa}{_avg10:.0f}Cr {_ra}{_ratio:.1f}×"
+            else:
+                _liq = ""
+        except Exception:
+            _liq = ""
+
         return {
             "symbol": symbol,
             "close": curr_close,
@@ -287,6 +304,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_days": zl_days,
             "zl_pct": zl_pct,
             "entries": entries,
+            "liq_tag": _liq,
         }
 
     except Exception:
@@ -342,7 +360,9 @@ def build_markdown(
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         lbl = _LABELS.get(sym, "")
         co = names.get(sym, "")
-        name_sub = f" <sub>{co}</sub>" if co else ""
+        liq = f.get("liq_tag", "")
+        _sub_parts = [p for p in [co, liq] if p]
+        name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(

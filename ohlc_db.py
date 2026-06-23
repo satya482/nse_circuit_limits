@@ -173,3 +173,65 @@ def get_names(
         return {}
     finally:
         con.close()
+
+
+def liq_tag(df: pd.DataFrame) -> str:
+    """Compact traded-value label for scanner sub cells.
+    Format: '{accel_arrow}{avg10_cr:.0f}Cr {ratio_arrow}{ratio:.1f}×'
+    accel_arrow: ↗ avg10>avg20 by >10% | ↘ avg10<avg20 by >10% | → stable
+    ratio_arrow: ↑ today>avg10 by >15% | ↓ today<avg10 by >25% | '' neutral
+    Returns '' on insufficient data or error.
+    """
+    try:
+        notional = df["close"].astype(float) * df["volume"].astype(float)
+        avg10 = float(notional.rolling(10, min_periods=5).mean().iloc[-1]) / 1e7
+        avg20 = float(notional.rolling(20, min_periods=10).mean().iloc[-1]) / 1e7
+        today_val = float(notional.iloc[-1]) / 1e7
+        if avg10 <= 0:
+            return ""
+        ratio = today_val / avg10
+        accel = avg10 / avg20 if avg20 > 0 else 1.0
+        ratio_arrow = "↑" if ratio > 1.15 else ("↓" if ratio < 0.75 else "")
+        accel_arrow = "↗" if accel > 1.10 else ("↘" if accel < 0.90 else "→")
+        return f"{accel_arrow}{avg10:.0f}Cr {ratio_arrow}{ratio:.1f}×"
+    except Exception:
+        return ""
+
+
+def get_liq_labels(
+    symbols: list[str] | None = None,
+    db_path: Path = DB_PATH,
+) -> dict[str, str]:
+    """Return {tradingsymbol: liq_tag_str} using the last 25 bars per symbol.
+    Pass symbols=None to load for all symbols in the DB.
+    """
+    con = _connect(db_path)
+    if con is None:
+        return {}
+    try:
+        if symbols is None:
+            syms = [
+                r[0] for r in con.execute("SELECT DISTINCT symbol FROM ohlc").fetchall()
+            ]
+        else:
+            syms = list(symbols)
+        if not syms:
+            return {}
+        result = {}
+        for sym in syms:
+            df = pd.read_sql(
+                "SELECT date, close, volume FROM ohlc"
+                " WHERE symbol=? ORDER BY date DESC LIMIT 25",
+                con,
+                params=(sym,),
+            )
+            if len(df) >= 5:
+                df = df.iloc[::-1].reset_index(drop=True)
+                tag = liq_tag(df)
+                if tag:
+                    result[sym] = tag
+        return result
+    except Exception:
+        return {}
+    finally:
+        con.close()

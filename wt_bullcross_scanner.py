@@ -31,7 +31,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many, get_names
+from ohlc_db import load_ohlc_many, get_names, liq_tag
 from wavetrend_scanner import WaveTrendCalculator
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
@@ -320,6 +320,7 @@ def analyse(
             "close": curr_close,
             "day_chg": day_chg,
             "trap": _trap_label(fm),
+            "liq_tag": liq_tag(df_raw),
         }
     except Exception:
         return None
@@ -372,7 +373,9 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     lbl = _LABELS.get(sym, "")
     circuit_cell = f"{cl} {em}".strip()
     co = (names or {}).get(sym, "")
-    name_sub = f" <sub>{co}</sub>" if co else ""
+    liq = f.get("liq_tag", "")
+    _sub_parts = [p for p in [co, liq] if p]
+    name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
     return (
         f"| [{sym}]({tv}){name_sub} "
         f"| {f.get('trap', 'n/a')} "
