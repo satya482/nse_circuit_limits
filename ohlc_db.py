@@ -193,7 +193,8 @@ def liq_tag(df: pd.DataFrame) -> str:
         accel = avg10 / avg20 if avg20 > 0 else 1.0
         ratio_arrow = "↑" if ratio > 1.15 else ("↓" if ratio < 0.75 else "")
         accel_arrow = "↗" if accel > 1.10 else ("↘" if accel < 0.90 else "→")
-        return f"{accel_arrow}{avg10:.0f}Cr {ratio_arrow}{ratio:.1f}×"
+        cr_str = f"{avg10:.1f}Cr" if avg10 < 1 else f"{avg10:.0f}Cr"
+        return f"{accel_arrow}{cr_str} {ratio_arrow}{ratio:.1f}×"
     except Exception:
         return ""
 
