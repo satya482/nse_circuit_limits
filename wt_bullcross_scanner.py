@@ -375,11 +375,12 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     co = (names or {}).get(sym, "")
     liq = f.get("liq_tag", "")
     _sub_parts = [p for p in [co, liq] if p]
-    name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
+    _meta = " · ".join(_sub_parts)
+    lbl_cell = f"{_meta} — {lbl}" if _meta and lbl else (_meta or lbl)
     return (
-        f"| [{sym}]({tv}){name_sub} "
+        f"| [{sym}]({tv}) "
         f"| {f.get('trap', 'n/a')} "
-        f"| {lbl} "
+        f"| {lbl_cell} "
         f"| {emoji} {f['wt_signal']} "
         f"| {erly} "
         f"| {rs_cell} "

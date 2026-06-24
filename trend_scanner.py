@@ -449,15 +449,16 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     co = (names or {}).get(sym, "")
     liq = f.get("liq_tag", "")
     _sub_parts = [p for p in [co, liq] if p]
-    name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
+    _meta = " · ".join(_sub_parts)
+    lbl_cell = f"{_meta} — {lbl}" if _meta and lbl else (_meta or lbl)
     tt = f["tt_score"]
     tt_cell = f"{'✅' if tt >= 7 else ''}{tt}/8"
     sma200_arrow = "↑" if f.get("sma200_up") else "↓"
     abv_low = f"{f['pct_above_low']:.0f}% {sma200_arrow}"
     return (
-        f"| [{sym}]({tv}){name_sub} "
+        f"| [{sym}]({tv}) "
         f"| {f.get('trap', 'n/a')} "
-        f"| {lbl} "
+        f"| {lbl_cell} "
         f"| {sig_emoji} {label} "
         f"| {f['score']:.0f} "
         f"| {rs_cell} "

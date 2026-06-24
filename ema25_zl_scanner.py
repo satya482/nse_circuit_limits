@@ -306,12 +306,13 @@ def _table_rows(
         co = names.get(sym, "")
         liq = f.get("liq_tag", "")
         _sub_parts = [p for p in [co, liq] if p]
-        name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
+        _meta = " · ".join(_sub_parts)
+        lbl_cell = f"{_meta} — {lbl}" if _meta and lbl else (_meta or lbl)
         rows.append(
-            f"| [{sym}]({tv}){name_sub} "
+            f"| [{sym}]({tv}) "
             f"| {zl_d} "
             f"| {zl_p} "
-            f"| {lbl} "
+            f"| {lbl_cell} "
             f"| {ds}{f['day_chg']:.2f}% "
             f"| {f['close']:.2f} "
             f"| {sqz} "

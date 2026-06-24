@@ -272,8 +272,8 @@ def _table_rows(
     names: dict[str, str] | None = None,
 ) -> list[str]:
     hdr = [
-        "| Symbol | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |",
-        "|--------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|",
+        "| Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |",
+        "|--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|",
     ]
     rows = []
     for f in sorted(findings, key=_sort_key):
@@ -292,9 +292,10 @@ def _table_rows(
         co = (names or {}).get(sym, "")
         liq = f.get("liq_tag", "")
         _sub_parts = [p for p in [co, liq] if p]
-        name_sub = f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
+        _meta = " · ".join(_sub_parts)
         rows.append(
-            f"| [{sym}]({tv}){name_sub} "
+            f"| [{sym}]({tv}) "
+            f"| {_meta} "
             f"| {f['consec_weeks']}w "
             f"| {pvz} "
             f"| {zl_w} "

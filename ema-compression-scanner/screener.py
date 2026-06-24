@@ -106,15 +106,14 @@ def build_markdown(
         co = names.get(c["symbol"], "")
         liq = liq_tag(c["df"])
         _sub_parts = [p for p in [co, liq] if p]
-        sym_cell = tv_link(c["symbol"]) + (
-            f" <sub>{' · '.join(_sub_parts)}</sub>" if _sub_parts else ""
-        )
+        _meta = " · ".join(_sub_parts)
+        lbl_cell = f"{_meta} — {lbl}" if _meta and lbl else (_meta or lbl)
         lines.append(
             f"| {i} "
-            f"| {sym_cell} "
+            f"| {tv_link(c['symbol'])} "
             f"| {_zl_days_str(c['zl_days'])} "
             f"| {_chg_str(c['zl_chg'])} "
-            f"| {lbl} "
+            f"| {lbl_cell} "
             f"| {day_chg_str} "
             f"| {c['sector']} "
             f"| {fmt_price(last['close'])} "
