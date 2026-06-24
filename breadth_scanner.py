@@ -63,8 +63,8 @@ def get_universe() -> list[str]:
 
 def compute_breadth(ohlc_map: dict[str, pd.DataFrame]) -> pd.DataFrame:
     """
-    For each trading date, count stocks with valid SMAx and stocks where close > SMAx.
-    Returns DataFrame: date, pct_above_10/20/50/200, n_10/20/50/200.
+    For each trading date, count stocks above SMAx and EMAx.
+    Returns DataFrame: date, pct_above_10/20/50/200, pct_above_ema_10/20/50/200, n_* columns.
     """
     parts = []
     for sym, df in ohlc_map.items():
@@ -73,9 +73,12 @@ def compute_breadth(ohlc_map: dict[str, pd.DataFrame]) -> pd.DataFrame:
         chunk = pd.DataFrame({"date": dates})
         for period in [10, 20, 50, 200]:
             sma = c.rolling(period, min_periods=period).mean()
-            valid = sma.notna()
-            chunk[f"above_{period}"] = ((c > sma) & valid).astype(int)
-            chunk[f"valid_{period}"] = valid.astype(int)
+            ema = c.ewm(span=period, adjust=False).mean()
+            valid_sma = sma.notna()
+            chunk[f"above_{period}"] = ((c > sma) & valid_sma).astype(int)
+            chunk[f"valid_{period}"] = valid_sma.astype(int)
+            chunk[f"above_ema_{period}"] = (c > ema).astype(int)
+            chunk[f"valid_ema_{period}"] = 1  # EWM always produces a value
         parts.append(chunk)
 
     all_df = pd.concat(parts, ignore_index=True)
@@ -88,6 +91,11 @@ def compute_breadth(ohlc_map: dict[str, pd.DataFrame]) -> pd.DataFrame:
         result[f"n_{period}"] = n.values
         pct = (above / n * 100).where(n >= MIN_STOCKS).round(2)
         result[f"pct_above_{period}"] = pct.values
+        n_ema = grouped[f"valid_ema_{period}"]
+        above_ema = grouped[f"above_ema_{period}"]
+        result[f"n_ema_{period}"] = n_ema.values
+        pct_ema = (above_ema / n_ema * 100).where(n_ema >= MIN_STOCKS).round(2)
+        result[f"pct_above_ema_{period}"] = pct_ema.values
 
     return result.reset_index(drop=True)
 
@@ -105,6 +113,26 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
     p20 = to_js("pct_above_20")
     p50 = to_js("pct_above_50")
     p200 = to_js("pct_above_200")
+    e10 = (
+        to_js("pct_above_ema_10")
+        if "pct_above_ema_10" in breadth_df.columns
+        else [None] * len(dates)
+    )
+    e20 = (
+        to_js("pct_above_ema_20")
+        if "pct_above_ema_20" in breadth_df.columns
+        else [None] * len(dates)
+    )
+    e50 = (
+        to_js("pct_above_ema_50")
+        if "pct_above_ema_50" in breadth_df.columns
+        else [None] * len(dates)
+    )
+    e200 = (
+        to_js("pct_above_ema_200")
+        if "pct_above_ema_200" in breadth_df.columns
+        else [None] * len(dates)
+    )
 
     # Benchmark: normalize to 0-100 range for overlay
     bench_series = [None] * len(dates)
@@ -135,6 +163,10 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
             "p20": p20,
             "p50": p50,
             "p200": p200,
+            "e10": e10,
+            "e20": e20,
+            "e50": e50,
+            "e200": e200,
             "bench": bench_series,
         }
     )
@@ -191,12 +223,14 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
     <button onclick="setRange(0)"   id="btn-all">All</button>
     <label style="margin-left:10px">Style:</label>
     <button onclick="toggleAllStep()" id="btn-allstep">All Step</button>
+    <label style="margin-left:10px">MA:</label>
+    <button onclick="toggleSmaEma()" id="btn-smaema" class="active">EMA</button>
   </div>
   <div class="legend">
-    <div class="li" id="li-0"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide/show"></div><span onclick="toggleLine(0)">% &gt; SMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Line</button></div>
-    <div class="li" id="li-1"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide/show"></div><span onclick="toggleLine(1)">% &gt; SMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
-    <div class="li" id="li-2"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide/show"></div><span onclick="toggleLine(2)">% &gt; SMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
-    <div class="li" id="li-3"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide/show"></div><span onclick="toggleLine(3)">% &gt; SMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
+    <div class="li" id="li-0"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide/show"></div><span id="lbl-0" onclick="toggleLine(0)">% &gt; EMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Step</button></div>
+    <div class="li" id="li-1"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide/show"></div><span id="lbl-1" onclick="toggleLine(1)">% &gt; EMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
+    <div class="li" id="li-2"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide/show"></div><span id="lbl-2" onclick="toggleLine(2)">% &gt; EMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
+    <div class="li" id="li-3"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide/show"></div><span id="lbl-3" onclick="toggleLine(3)">% &gt; EMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
     <div class="li" id="li-4"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide/show"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span><button class="style-btn active" id="style-4" onclick="toggleStep(4)">Step</button></div>
   </div>
   <canvas id="bc" height="400"></canvas>
@@ -210,17 +244,26 @@ const D = {data_json};
 function sl(arr, n) {{ return n > 0 ? arr.slice(-n) : [...arr]; }}
 
 const DATASETS = [
-  {{ label: '% > SMA10',  key: 'p10',  color: '#60a5fa', width: 1.5, step: false }},
+  {{ label: '% > SMA10',  key: 'p10',  color: '#60a5fa', width: 1.5, step: true  }},
   {{ label: '% > SMA20',  key: 'p20',  color: '#fb923c', width: 1.5, step: false }},
   {{ label: '% > SMA50',  key: 'p50',  color: '#34d399', width: 2.0, step: true  }},
   {{ label: '% > SMA200', key: 'p200', color: '#f87171', width: 2.5, step: true  }},
   {{ label: 'NIFTY MidSml 400 (norm.)', key: 'bench', color: '#a78bfa', width: 1, dash: [5,3], step: true  }},
 ];
 
+const MA_KEYS = {{ sma: ['p10','p20','p50','p200'], ema: ['e10','e20','e50','e200'] }};
+const MA_LABELS = {{
+  sma: ['% &gt; SMA10','% &gt; SMA20','% &gt; SMA50','% &gt; SMA200'],
+  ema: ['% &gt; EMA10','% &gt; EMA20','% &gt; EMA50','% &gt; EMA200'],
+}};
+let _useEma = true;  // EMA default
+
+function activeKey(i) {{ return i < 4 ? MA_KEYS[_useEma ? 'ema' : 'sma'][i] : DATASETS[i].key; }}
+
 function makeDatasets(n) {{
   return DATASETS.map((d, i) => ({{
-    label: d.label,
-    data: sl(D[d.key], n),
+    label: i < 4 ? MA_LABELS[_useEma ? 'ema' : 'sma'][i] : d.label,
+    data: sl(D[activeKey(i)], n),
     borderColor: d.color,
     borderWidth: d.width,
     borderDash: d.dash || [],
@@ -307,7 +350,7 @@ function setRange(n) {{
   ['60','90','180','252','all'].forEach(k => document.getElementById('btn-' + k).classList.remove('active'));
   document.getElementById(n === 0 ? 'btn-all' : 'btn-' + n).classList.add('active');
   chart.data.labels = sl(D.dates, n);
-  DATASETS.forEach((d, i) => {{ chart.data.datasets[i].data = sl(D[d.key], n); }});
+  DATASETS.forEach((d, i) => {{ chart.data.datasets[i].data = sl(D[activeKey(i)], n); }});
   chart.update('none');
   updateStats(n);
 }}
@@ -337,6 +380,23 @@ function toggleAllStep() {{
   chart.update('none');
 }}
 
+function toggleSmaEma() {{
+  _useEma = !_useEma;
+  const mode = _useEma ? 'ema' : 'sma';
+  DATASETS.forEach((d, i) => {{
+    chart.data.datasets[i].data = sl(D[activeKey(i)], currentRange);
+    if (i < 4) {{
+      chart.data.datasets[i].label = MA_LABELS[mode][i];
+      const sp = document.getElementById('lbl-' + i);
+      if (sp) sp.innerHTML = MA_LABELS[mode][i];
+    }}
+  }});
+  const btn = document.getElementById('btn-smaema');
+  if (btn) {{ btn.textContent = _useEma ? 'SMA' : 'EMA'; btn.classList.toggle('active', _useEma); }}
+  updateStats(currentRange);
+  chart.update('none');
+}}
+
 function toggleLine(i) {{
   chart.data.datasets[i].hidden = !chart.data.datasets[i].hidden;
   const li = document.getElementById('li-' + i);
@@ -348,11 +408,13 @@ function updateStats(n) {{
   const labels = sl(D.dates, n);
   const last = labels[labels.length - 1];
   const idx = D.dates.indexOf(last);
+  const mode = _useEma ? 'ema' : 'sma';
+  const statKeys = _useEma ? ['e10','e20','e50','e200'] : ['p10','p20','p50','p200'];
   const cards = [
-    {{ label: 'SMA10', val: D.p10[idx],  cls: 'blue'   }},
-    {{ label: 'SMA20', val: D.p20[idx],  cls: 'orange'  }},
-    {{ label: 'SMA50', val: D.p50[idx],  cls: 'green'   }},
-    {{ label: 'SMA200',val: D.p200[idx], cls: 'red'     }},
+    {{ label: mode.toUpperCase() + '10',  val: D[statKeys[0]][idx], cls: 'blue'   }},
+    {{ label: mode.toUpperCase() + '20',  val: D[statKeys[1]][idx], cls: 'orange' }},
+    {{ label: mode.toUpperCase() + '50',  val: D[statKeys[2]][idx], cls: 'green'  }},
+    {{ label: mode.toUpperCase() + '200', val: D[statKeys[3]][idx], cls: 'red'    }},
   ];
   document.getElementById('stat-cards').innerHTML = cards.map(c => `
     <div class="stat">
@@ -396,16 +458,20 @@ def main():
     # Incremental update: append only dates newer than last CSV entry
     if os.path.exists(CSV_PATH):
         existing = pd.read_csv(CSV_PATH)
-        last_date = existing["date"].max()
-        new_rows = breadth[breadth["date"] > last_date]
-        if new_rows.empty:
-            print("CSV up to date — no new dates to append")
-            combined = existing
+        if "pct_above_ema_10" not in existing.columns:
+            print("Migrating CSV: adding EMA breadth columns (full recompute)")
+            combined = breadth
         else:
-            print(
-                f"Appending {len(new_rows)} new date(s) (last: {new_rows['date'].max()})"
-            )
-            combined = pd.concat([existing, new_rows], ignore_index=True)
+            last_date = existing["date"].max()
+            new_rows = breadth[breadth["date"] > last_date]
+            if new_rows.empty:
+                print("CSV up to date — no new dates to append")
+                combined = existing
+            else:
+                print(
+                    f"Appending {len(new_rows)} new date(s) (last: {new_rows['date'].max()})"
+                )
+                combined = pd.concat([existing, new_rows], ignore_index=True)
     else:
         print("First run — writing full backfill history")
         combined = breadth
