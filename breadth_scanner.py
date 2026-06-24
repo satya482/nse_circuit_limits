@@ -189,6 +189,8 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
     <button onclick="setRange(180)" id="btn-180">180D</button>
     <button onclick="setRange(252)" id="btn-252">1Y</button>
     <button onclick="setRange(0)"   id="btn-all">All</button>
+    <label style="margin-left:10px">Style:</label>
+    <button onclick="toggleAllStep()" id="btn-allstep">All Step</button>
   </div>
   <div class="legend">
     <div class="li" id="li-0"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide/show"></div><span onclick="toggleLine(0)">% &gt; SMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Line</button></div>
@@ -317,6 +319,21 @@ function toggleStep(i) {{
   chart.data.datasets[i].tension = step ? 0 : 0.1;
   const btn = document.getElementById('style-' + i);
   if (btn) {{ btn.textContent = step ? 'Step' : 'Line'; }}
+  chart.update('none');
+}}
+
+let _allStep = false;
+function toggleAllStep() {{
+  _allStep = !_allStep;
+  DATASETS.forEach((d, i) => {{
+    stepState[i] = _allStep;
+    chart.data.datasets[i].stepped = _allStep ? 'middle' : false;
+    chart.data.datasets[i].tension = _allStep ? 0 : 0.1;
+    const btn = document.getElementById('style-' + i);
+    if (btn) {{ btn.textContent = _allStep ? 'Step' : 'Line'; }}
+  }});
+  const ab = document.getElementById('btn-allstep');
+  if (ab) {{ ab.textContent = _allStep ? 'All Line' : 'All Step'; }}
   chart.update('none');
 }}
 
