@@ -20,6 +20,7 @@
   .legend { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 10px; }
   .li { display: flex; align-items: center; gap: 7px; font-size: 0.75rem; color: #999; cursor: pointer; }
   .li:hover { color: #ddd; }
+  .li.dim { opacity: 0.35; }
   .swatch { width: 24px; height: 3px; border-radius: 2px; flex-shrink: 0; }
   .swatch.dashed { background: repeating-linear-gradient(90deg, #a78bfa 0 5px, transparent 5px 9px); }
   canvas { width: 100% !important; }
@@ -38,17 +39,17 @@
   <div class="controls">
     <label>Range:</label>
     <button onclick="setRange(60)"  id="btn-60">60D</button>
-    <button onclick="setRange(90)"  id="btn-90">90D</button>
+    <button onclick="setRange(90)"  id="btn-90" class="active">90D</button>
     <button onclick="setRange(180)" id="btn-180">180D</button>
     <button onclick="setRange(252)" id="btn-252">1Y</button>
-    <button onclick="setRange(0)"   id="btn-all" class="active">All</button>
+    <button onclick="setRange(0)"   id="btn-all">All</button>
   </div>
   <div class="legend">
-    <div class="li" onclick="toggleLine(0)"><div class="swatch" style="background:#60a5fa"></div>% &gt; SMA10</div>
-    <div class="li" onclick="toggleLine(1)"><div class="swatch" style="background:#fb923c"></div>% &gt; SMA20</div>
-    <div class="li" onclick="toggleLine(2)"><div class="swatch" style="background:#34d399"></div>% &gt; SMA50</div>
-    <div class="li" onclick="toggleLine(3)"><div class="swatch" style="background:#f87171"></div>% &gt; SMA200</div>
-    <div class="li" onclick="toggleLine(4)"><div class="swatch dashed"></div>NIFTY MidSml 400 (norm.)</div>
+    <div class="li" id="li-0" onclick="toggleLine(0)"><div class="swatch" style="background:#60a5fa"></div>% &gt; SMA10</div>
+    <div class="li" id="li-1" onclick="toggleLine(1)"><div class="swatch" style="background:#fb923c"></div>% &gt; SMA20</div>
+    <div class="li" id="li-2" onclick="toggleLine(2)"><div class="swatch" style="background:#34d399"></div>% &gt; SMA50</div>
+    <div class="li" id="li-3" onclick="toggleLine(3)"><div class="swatch" style="background:#f87171"></div>% &gt; SMA200</div>
+    <div class="li" id="li-4" onclick="toggleLine(4)"><div class="swatch dashed"></div>NIFTY MidSml 400 (norm.)</div>
   </div>
   <canvas id="bc" height="400"></canvas>
 </div>
@@ -79,11 +80,11 @@ function makeDatasets(n) {
     tension: 0.1,
     fill: false,
     spanGaps: true,
-    hidden: false,
+    hidden: [1, 2].includes(i),
   }));
 }
 
-let currentRange = 0;
+let currentRange = 90;
 const ctx = document.getElementById('bc').getContext('2d');
 
 // Reference line plugin
@@ -116,7 +117,7 @@ Chart.register(refPlugin);
 
 const chart = new Chart(ctx, {
   type: 'line',
-  data: { labels: sl(D.dates, 0), datasets: makeDatasets(0) },
+  data: { labels: sl(D.dates, 90), datasets: makeDatasets(90) },
   options: {
     responsive: true,
     animation: false,
@@ -163,6 +164,8 @@ function setRange(n) {
 
 function toggleLine(i) {
   chart.data.datasets[i].hidden = !chart.data.datasets[i].hidden;
+  const li = document.getElementById('li-' + i);
+  if (li) li.classList.toggle('dim', chart.data.datasets[i].hidden);
   chart.update('none');
 }
 
@@ -183,7 +186,15 @@ function updateStats(n) {
     </div>`).join('');
 }
 
-updateStats(0);
+// Initialize dim state for datasets hidden by default
+DATASETS.forEach((_, i) => {
+  if (chart.data.datasets[i].hidden) {
+    const li = document.getElementById('li-' + i);
+    if (li) li.classList.add('dim');
+  }
+});
+
+updateStats(90);
 </script>
 </body>
 </html>

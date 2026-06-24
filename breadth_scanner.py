@@ -165,6 +165,7 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
   .li {{ display: flex; align-items: center; gap: 6px; font-size: 0.75rem; color: #999; }}
   .li span {{ cursor: pointer; }}
   .li span:hover {{ color: #ddd; }}
+  .li.dim {{ opacity: 0.35; }}
   .style-btn {{ padding: 1px 7px !important; font-size: 0.67rem !important; margin-left: 2px; }}
   .swatch {{ width: 24px; height: 3px; border-radius: 2px; flex-shrink: 0; }}
   .swatch.dashed {{ background: repeating-linear-gradient(90deg, #a78bfa 0 5px, transparent 5px 9px); }}
@@ -184,17 +185,17 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
   <div class="controls">
     <label>Range:</label>
     <button onclick="setRange(60)"  id="btn-60">60D</button>
-    <button onclick="setRange(90)"  id="btn-90">90D</button>
+    <button onclick="setRange(90)"  id="btn-90" class="active">90D</button>
     <button onclick="setRange(180)" id="btn-180">180D</button>
     <button onclick="setRange(252)" id="btn-252">1Y</button>
-    <button onclick="setRange(0)"   id="btn-all" class="active">All</button>
+    <button onclick="setRange(0)"   id="btn-all">All</button>
   </div>
   <div class="legend">
-    <div class="li"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide"></div><span onclick="toggleLine(0)">% &gt; SMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Line</button></div>
-    <div class="li"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide"></div><span onclick="toggleLine(1)">% &gt; SMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
-    <div class="li"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide"></div><span onclick="toggleLine(2)">% &gt; SMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
-    <div class="li"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide"></div><span onclick="toggleLine(3)">% &gt; SMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
-    <div class="li"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span></div>
+    <div class="li" id="li-0"><div class="swatch" style="background:#60a5fa" onclick="toggleLine(0)" title="Click to hide/show"></div><span onclick="toggleLine(0)">% &gt; SMA10</span><button class="style-btn active" id="style-0" onclick="toggleStep(0)">Line</button></div>
+    <div class="li" id="li-1"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide/show"></div><span onclick="toggleLine(1)">% &gt; SMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
+    <div class="li" id="li-2"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide/show"></div><span onclick="toggleLine(2)">% &gt; SMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
+    <div class="li" id="li-3"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide/show"></div><span onclick="toggleLine(3)">% &gt; SMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
+    <div class="li" id="li-4"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide/show"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span></div>
   </div>
   <canvas id="bc" height="400"></canvas>
 </div>
@@ -226,11 +227,11 @@ function makeDatasets(n) {{
     tension: d.step ? 0 : 0.1,
     fill: false,
     spanGaps: true,
-    hidden: false,
+    hidden: [1, 2].includes(i),
   }}));
 }}
 
-let currentRange = 0;
+let currentRange = 90;
 const stepState = DATASETS.map(d => d.step);
 const ctx = document.getElementById('bc').getContext('2d');
 
@@ -264,7 +265,7 @@ Chart.register(refPlugin);
 
 const chart = new Chart(ctx, {{
   type: 'line',
-  data: {{ labels: sl(D.dates, 0), datasets: makeDatasets(0) }},
+  data: {{ labels: sl(D.dates, 90), datasets: makeDatasets(90) }},
   options: {{
     responsive: true,
     animation: false,
@@ -321,6 +322,8 @@ function toggleStep(i) {{
 
 function toggleLine(i) {{
   chart.data.datasets[i].hidden = !chart.data.datasets[i].hidden;
+  const li = document.getElementById('li-' + i);
+  if (li) li.classList.toggle('dim', chart.data.datasets[i].hidden);
   chart.update('none');
 }}
 
@@ -341,7 +344,15 @@ function updateStats(n) {{
     </div>`).join('');
 }}
 
-updateStats(0);
+// Initialize dim state for datasets hidden by default
+DATASETS.forEach((_, i) => {{
+  if (chart.data.datasets[i].hidden) {{
+    const li = document.getElementById('li-' + i);
+    if (li) li.classList.add('dim');
+  }}
+}});
+
+updateStats(90);
 </script>
 </body>
 </html>"""
