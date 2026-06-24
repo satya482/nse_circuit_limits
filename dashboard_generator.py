@@ -519,8 +519,15 @@ def tv_link(symbol: str) -> str:
     url = f"https://in.tradingview.com/chart/?symbol=NSE:{symbol}"
     co = _NAMES.get(symbol, "")
     liq = _LIQ.get(symbol, "")
-    name_span = f'<span class="co-name">{co}</span>' if co else ""
-    liq_span = f'<span class="liq-tag">{liq}</span>' if liq else ""
+    # Split "Company · ₹MCap" → company on line 2, ₹MCap | notionals on line 3
+    _parts = co.rsplit(" · ", 1)
+    if len(_parts) == 2 and _parts[1].startswith("₹"):
+        name_part, mcap_part = _parts
+    else:
+        name_part, mcap_part = co, ""
+    name_span = f'<span class="co-name">{name_part}</span>' if name_part else ""
+    liq_content = f"{mcap_part} | {liq}" if mcap_part and liq else (mcap_part or liq)
+    liq_span = f'<span class="liq-tag">{liq_content}</span>' if liq_content else ""
     return f'<a href="{url}" target="_blank" rel="noopener">{symbol}</a>{name_span}{liq_span}'
 
 

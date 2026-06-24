@@ -157,8 +157,15 @@ def parse_wt_rows(content: str) -> list[dict]:
 def _tv_link(sym: str) -> str:
     co = _NAMES.get(sym, "")
     liq = _LIQ.get(sym, "")
-    name_span = f'<span class="co-name">{co}</span>' if co else ""
-    liq_span = f'<span class="liq-tag">{liq}</span>' if liq else ""
+    # Split "Company · ₹MCap" → company on line 2, ₹MCap | notionals on line 3
+    _parts = co.rsplit(" · ", 1)
+    if len(_parts) == 2 and _parts[1].startswith("₹"):
+        name_part, mcap_part = _parts
+    else:
+        name_part, mcap_part = co, ""
+    name_span = f'<span class="co-name">{name_part}</span>' if name_part else ""
+    liq_content = f"{mcap_part} | {liq}" if mcap_part and liq else (mcap_part or liq)
+    liq_span = f'<span class="liq-tag">{liq_content}</span>' if liq_content else ""
     return f'<a href="https://in.tradingview.com/chart/?symbol=NSE:{sym}" target="_blank" rel="noopener">{sym}</a>{name_span}{liq_span}'
 
 
