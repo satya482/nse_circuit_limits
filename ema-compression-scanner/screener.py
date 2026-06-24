@@ -105,9 +105,13 @@ def build_markdown(
         lbl = _LABELS.get(c["symbol"], "")
         co = names.get(c["symbol"], "")
         liq = liq_tag(c["df"])
-        _sub_parts = [p for p in [co, liq] if p]
-        _meta = " · ".join(_sub_parts)
-        lbl_cell = f"{_meta} — {lbl}" if _meta and lbl else (_meta or lbl)
+        _co_parts = co.rsplit(" · ", 1)
+        _co_name = _co_parts[0] if co else ""
+        _mcap = (
+            _co_parts[1] if len(_co_parts) == 2 and _co_parts[1].startswith("₹") else ""
+        )
+        _line2 = " · ".join(p for p in [_mcap, liq] if p)
+        lbl_cell = "<br>".join(p for p in [_co_name, _line2, lbl] if p)
         lines.append(
             f"| {i} "
             f"| {tv_link(c['symbol'])} "
