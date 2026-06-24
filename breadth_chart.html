@@ -35,7 +35,7 @@
 </head>
 <body>
 <h1>NSE Market Breadth — % Stocks Above Moving Average</h1>
-<p class="meta">Universe: NSE equity Rs.500 Cr–Rs.5 Lakh Cr &nbsp;(~1579 stocks) &nbsp;|&nbsp; Benchmark: NIFTY MidSmallcap 400 &nbsp;|&nbsp; Generated: 2026-06-24 19:00 IST</p>
+<p class="meta">Universe: NSE equity Rs.500 Cr–Rs.5 Lakh Cr &nbsp;(~1579 stocks) &nbsp;|&nbsp; Benchmark: NIFTY MidSmallcap 400 &nbsp;|&nbsp; Generated: 2026-06-24 19:18 IST</p>
 
 <div class="card">
   <div class="controls">
@@ -72,7 +72,7 @@ const DATASETS = [
 ];
 
 function makeDatasets(n) {
-  return DATASETS.map((d) => ({
+  return DATASETS.map((d, i) => ({
     label: d.label,
     data: sl(D[d.key], n),
     borderColor: d.color,

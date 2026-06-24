@@ -216,7 +216,7 @@ const DATASETS = [
 ];
 
 function makeDatasets(n) {{
-  return DATASETS.map((d) => ({{
+  return DATASETS.map((d, i) => ({{
     label: d.label,
     data: sl(D[d.key], n),
     borderColor: d.color,
