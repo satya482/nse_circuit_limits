@@ -177,9 +177,10 @@ def get_names(
 
 def liq_tag(df: pd.DataFrame) -> str:
     """Compact traded-value label for scanner sub cells.
-    Format: '{accel_arrow}{avg10_cr:.0f}Cr {ratio_arrow}{ratio:.1f}×'
+    Format: '{accel_arrow}{avg10_cr}Cr · {today_cr}Cr'
     accel_arrow: ↗ avg10>avg20 by >10% | ↘ avg10<avg20 by >10% | → stable
-    ratio_arrow: ↑ today>avg10 by >15% | ↓ today<avg10 by >25% | '' neutral
+    avg10_cr  = price × avg_volume(10d) / 1e7  — avg daily notional
+    today_cr  = price × today_volume / 1e7     — today's notional
     Returns '' on insufficient data or error.
     """
     try:
@@ -191,16 +192,13 @@ def liq_tag(df: pd.DataFrame) -> str:
         avg20_vol = float(vol.rolling(20, min_periods=10).mean().iloc[-1])
         if avg10_vol <= 0:
             return ""
-        # val_avg10_cr = today_close × avg10(volume) — matches Pine val_avg10_cr
         avg10 = today_close * avg10_vol / 1e7
-        # ratio = today_vol / avg10_vol (price cancels — pure volume comparison)
-        ratio = today_vol / avg10_vol
-        # accel = avg10_vol / avg20_vol (is volume baseline building?)
+        today_cr = today_close * today_vol / 1e7
         accel = avg10_vol / avg20_vol if avg20_vol > 0 else 1.0
-        ratio_arrow = "↑" if ratio > 1.15 else ("↓" if ratio < 0.75 else "")
         accel_arrow = "↗" if accel > 1.10 else ("↘" if accel < 0.90 else "→")
-        cr_str = f"{avg10:.1f}Cr" if avg10 < 1 else f"{avg10:.0f}Cr"
-        return f"{accel_arrow}{cr_str} {ratio_arrow}{ratio:.1f}×"
+        avg_str = f"{avg10:.1f}Cr" if avg10 < 1 else f"{avg10:.0f}Cr"
+        today_str = f"{today_cr:.1f}Cr" if today_cr < 1 else f"{today_cr:.0f}Cr"
+        return f"{accel_arrow}{avg_str} · {today_str}"
     except Exception:
         return ""
 

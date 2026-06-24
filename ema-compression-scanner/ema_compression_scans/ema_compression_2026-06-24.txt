@@ -1,15 +1,15 @@
 # EMA Compression + BB Squeeze — 2026-06-24
 
-**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 145 &nbsp;|&nbsp; **BB Squeeze:** 35 &nbsp;|&nbsp; **Signals:** 6 &nbsp;|&nbsp; **Run time:** 37s
+**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 145 &nbsp;|&nbsp; **BB Squeeze:** 35 &nbsp;|&nbsp; **Signals:** 6 &nbsp;|&nbsp; **Run time:** 19s
 
 | # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |
 |---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|
-| 1 | [IKS](https://www.tradingview.com/chart/?symbol=NSE:IKS) | 4d | +2.6% | Inventurus Knowledge So L<br>₹28K Cr · →23Cr ↑1.5×<br>Healthcare IT platform optimizing provider revenue and operations | +1.04% | Healthcare | ₹1,717.6 | 35d | 20d | up | **55.5** |
-| 2 | [DATAMATICS](https://www.tradingview.com/chart/?symbol=NSE:DATAMATICS) | 7d | +1.8% | Datamatics Global Ser<br>₹5K Cr · ↘6Cr ↓0.7×<br>Digital transformation services and automation for enterprises | +0.50% | Software & Services | ₹807.1 | 26d | 19d | up | **54.8** |
-| 3 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | 2d | +2.8% | Narayana Hrudayalaya<br>₹39K Cr · →57Cr 0.9×<br>Affordable multi-specialty hospital chain cardiac focus India | +1.61% | Healthcare | ₹1,958.5 | 51d | 11d | up | **38.5** |
-| 4 | [BBL](https://www.tradingview.com/chart/?symbol=NSE:BBL) | 7d | +2.3% | Bharat Bijlee<br>₹3K Cr · ↗12Cr ↓0.6×<br>Transformers motors elevators drives industrial automation solutions | -1.81% | Consumer Durables | ₹2,856.8 | 22d | 10d | up | **37.6** |
-| 5 | [JSWCEMENT](https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | 7d | +2.3% | Jsw Cement<br>₹18K Cr · ↗44Cr ↑1.5×<br>Eco-friendly cement manufacturer serving infrastructure construction | +3.25% | Cement and Construction | ₹133.6 | 21d | 6d | up | **33.3** |
-| 6 | [PRICOLLTD](https://www.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | 2d | +2.7% | Pricol<br>₹7K Cr · ↗37Cr ↑1.9×<br>Automotive instrument clusters and precision components for OEMs | +2.39% | Automobiles & Auto Components | ₹589.3 | 18d | 13d | up | **26.7** |
+| 1 | [IKS](https://www.tradingview.com/chart/?symbol=NSE:IKS) | 4d | +2.6% | Healthcare IT platform optimizing provider revenue and operations | +1.04% | Healthcare | ₹1,717.6 | 35d | 20d | up | **55.5** |
+| 2 | [DATAMATICS](https://www.tradingview.com/chart/?symbol=NSE:DATAMATICS) | 7d | +1.8% | Digital transformation services and automation for enterprises | +0.50% | Software & Services | ₹807.1 | 26d | 19d | up | **54.8** |
+| 3 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | 2d | +2.8% | Affordable multi-specialty hospital chain cardiac focus India | +1.61% | Healthcare | ₹1,958.5 | 51d | 11d | up | **38.5** |
+| 4 | [BBL](https://www.tradingview.com/chart/?symbol=NSE:BBL) | 7d | +2.3% | Transformers motors elevators drives industrial automation solutions | -1.81% | Consumer Durables | ₹2,856.8 | 22d | 10d | up | **37.6** |
+| 5 | [JSWCEMENT](https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | 7d | +2.3% | Eco-friendly cement manufacturer serving infrastructure construction | +3.25% | Cement and Construction | ₹133.6 | 21d | 6d | up | **33.3** |
+| 6 | [PRICOLLTD](https://www.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | 2d | +2.7% | Automotive instrument clusters and precision components for OEMs | +2.39% | Automobiles & Auto Components | ₹589.3 | 18d | 13d | up | **26.7** |
 
 ---
 
@@ -26,4 +26,4 @@
 
 _Gates: EMA spread < 1.5xATR50 + < 3% EMA200 (>=10 bars) + BB(34,2.5) inside KC(34,1.5) (>=5 bars, width bottom 20%) + weekly RS vs NiftyMidSml400 above EMA9 + 4-week slope positive_
 
-_Generated 2026-06-24 15:45:30 IST_
+_Generated 2026-06-24 17:58:54 IST_
