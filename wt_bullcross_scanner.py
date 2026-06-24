@@ -372,13 +372,7 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl = _LABELS.get(sym, "")
     circuit_cell = f"{cl} {em}".strip()
-    co = (names or {}).get(sym, "")
-    liq = f.get("liq_tag", "")
-    _co_parts = co.rsplit(" · ", 1)
-    _co_name = _co_parts[0] if co else ""
-    _mcap = _co_parts[1] if len(_co_parts) == 2 and _co_parts[1].startswith("₹") else ""
-    _line2 = " · ".join(p for p in [_mcap, liq] if p)
-    lbl_cell = "<br>".join(p for p in [_co_name, _line2, lbl] if p)
+    lbl_cell = lbl
     return (
         f"| [{sym}]({tv}) "
         f"| {f.get('trap', 'n/a')} "

@@ -162,6 +162,12 @@ def _tv_link(sym: str) -> str:
     return f'<a href="https://in.tradingview.com/chart/?symbol=NSE:{sym}" target="_blank" rel="noopener">{sym}</a>{name_span}{liq_span}'
 
 
+def _desc_from_label(label: str) -> str:
+    """Extract description-only from a <br>-joined label cell (last segment)."""
+    parts = label.split("<br>")
+    return parts[-1] if len(parts) > 1 else label
+
+
 def _chg_cls(v: str) -> str:
     return "pos" if v.startswith("+") else ("neg" if v.startswith("-") else "")
 
@@ -209,7 +215,7 @@ def _wt_html_row(r: dict) -> str:
         f"<tr>"
         f'<td class="sym">{_tv_link(sym)}</td>'
         f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
-        f'<td class="lbl">{r["label"]}</td>'
+        f'<td class="lbl">{_desc_from_label(r["label"])}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
         f'<td class="num">{r["earliness"]}</td>'
         f'<td style="text-align:center">{_rs_badge(r["rs_raw"], r["rs_state"])}</td>'

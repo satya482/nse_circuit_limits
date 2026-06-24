@@ -24,7 +24,7 @@ import scorer
 from data_loader import load_universe
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from ohlc_db import load_ohlc, load_ohlc_many, get_names, liq_tag
+from ohlc_db import load_ohlc, load_ohlc_many, get_names
 
 BASE_DIR = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
@@ -103,15 +103,7 @@ def build_markdown(
             f"+{day_chg_pct:.2f}%" if day_chg_pct >= 0 else f"{day_chg_pct:.2f}%"
         )
         lbl = _LABELS.get(c["symbol"], "")
-        co = names.get(c["symbol"], "")
-        liq = liq_tag(c["df"])
-        _co_parts = co.rsplit(" · ", 1)
-        _co_name = _co_parts[0] if co else ""
-        _mcap = (
-            _co_parts[1] if len(_co_parts) == 2 and _co_parts[1].startswith("₹") else ""
-        )
-        _line2 = " · ".join(p for p in [_mcap, liq] if p)
-        lbl_cell = "<br>".join(p for p in [_co_name, _line2, lbl] if p)
+        lbl_cell = lbl
         lines.append(
             f"| {i} "
             f"| {tv_link(c['symbol'])} "
