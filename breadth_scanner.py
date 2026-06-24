@@ -195,7 +195,7 @@ def build_html(breadth_df: pd.DataFrame, bench_df: "pd.DataFrame | None") -> str
     <div class="li" id="li-1"><div class="swatch" style="background:#fb923c" onclick="toggleLine(1)" title="Click to hide/show"></div><span onclick="toggleLine(1)">% &gt; SMA20</span><button class="style-btn active" id="style-1" onclick="toggleStep(1)">Line</button></div>
     <div class="li" id="li-2"><div class="swatch" style="background:#34d399" onclick="toggleLine(2)" title="Click to hide/show"></div><span onclick="toggleLine(2)">% &gt; SMA50</span><button class="style-btn active" id="style-2" onclick="toggleStep(2)">Step</button></div>
     <div class="li" id="li-3"><div class="swatch" style="background:#f87171" onclick="toggleLine(3)" title="Click to hide/show"></div><span onclick="toggleLine(3)">% &gt; SMA200</span><button class="style-btn active" id="style-3" onclick="toggleStep(3)">Step</button></div>
-    <div class="li" id="li-4"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide/show"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span></div>
+    <div class="li" id="li-4"><div class="swatch dashed" onclick="toggleLine(4)" title="Click to hide/show"></div><span onclick="toggleLine(4)">NIFTY MidSml 400 (norm.)</span><button class="style-btn active" id="style-4" onclick="toggleStep(4)">Step</button></div>
   </div>
   <canvas id="bc" height="400"></canvas>
 </div>
@@ -212,7 +212,7 @@ const DATASETS = [
   {{ label: '% > SMA20',  key: 'p20',  color: '#fb923c', width: 1.5, step: false }},
   {{ label: '% > SMA50',  key: 'p50',  color: '#34d399', width: 2.0, step: true  }},
   {{ label: '% > SMA200', key: 'p200', color: '#f87171', width: 2.5, step: true  }},
-  {{ label: 'NIFTY MidSml 400 (norm.)', key: 'bench', color: '#a78bfa', width: 1, dash: [5,3], step: false }},
+  {{ label: 'NIFTY MidSml 400 (norm.)', key: 'bench', color: '#a78bfa', width: 1, dash: [5,3], step: true  }},
 ];
 
 function makeDatasets(n) {{
