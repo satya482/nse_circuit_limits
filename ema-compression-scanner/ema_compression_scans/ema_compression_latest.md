@@ -1,16 +1,16 @@
 # EMA Compression + BB Squeeze — 2026-06-25
 
-**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 141 &nbsp;|&nbsp; **BB Squeeze:** 35 &nbsp;|&nbsp; **Signals:** 7 &nbsp;|&nbsp; **Run time:** 34s
+**Scanned:** 952 &nbsp;|&nbsp; **Compressed (>=10d):** 141 &nbsp;|&nbsp; **BB Squeeze:** 35 &nbsp;|&nbsp; **Signals:** 7 &nbsp;|&nbsp; **Run time:** 15s
 
 | # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |
 |---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|
-| 1 | [WAAREERTL](https://www.tradingview.com/chart/?symbol=NSE:WAAREERTL) | 7d | +5.2% | Solar EPC contractor, residential commercial industrial installations | +3.74% | Utilities | ₹1,020.6 | 41d | 10d | up | **80.3** |
-| 2 | [SHRINGARMS](https://www.tradingview.com/chart/?symbol=NSE:SHRINGARMS) | 1d | +0.7% | Mangalsutra jewelry manufacturer, 18k-22k gold, Indian bridal market | +0.70% | Textiles Apparels & Accessories | ₹216.0 | 60d | 21d | up | **54.6** |
-| 3 | [DATAMATICS](https://www.tradingview.com/chart/?symbol=NSE:DATAMATICS) | 8d | +0.9% | Digital transformation services and automation for enterprises | -0.90% | Software & Services | ₹799.8 | 27d | 20d | up | **46.5** |
-| 4 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | 3d | +2.7% | Affordable multi-specialty hospital chain cardiac focus India | -0.09% | Healthcare | ₹1,956.8 | 52d | 12d | up | **40.6** |
-| 5 | [JSWCEMENT](https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | 8d | +2.3% | Eco-friendly cement manufacturer serving infrastructure construction | -0.03% | Cement and Construction | ₹133.6 | 22d | 7d | up | **32.5** |
-| 6 | [PRICOLLTD](https://www.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | 3d | +2.2% | Automotive instrument clusters and precision components for OEMs | -0.44% | Automobiles & Auto Components | ₹586.7 | 19d | 14d | up | **21.5** |
-| 7 | [SUPRAJIT](https://www.tradingview.com/chart/?symbol=NSE:SUPRAJIT) | 9d | +1.8% | Automotive cables, lamps, mechanical components manufacturer | +0.11% | Automobiles & Auto Components | ₹468.4 | 36d | 6d | up | **18.6** |
+| 1 | [WAAREERTL](https://www.tradingview.com/chart/?symbol=NSE:WAAREERTL) | 7d | +5.2% | Waaree Renewable Tech<br>₹10K Cr \| ↗32Cr · 99Cr<br>Solar EPC contractor, residential commercial industrial installations | +3.74% | Utilities | ₹1,020.6 | 41d | 10d | up | **80.3** |
+| 2 | [SHRINGARMS](https://www.tradingview.com/chart/?symbol=NSE:SHRINGARMS) | 1d | +0.7% | Shringar Hou Of Mangals L<br>₹2K Cr \| ↗19Cr · 23Cr<br>Mangalsutra jewelry manufacturer, 18k-22k gold, Indian bridal market | +0.70% | Textiles Apparels & Accessories | ₹216.0 | 60d | 21d | up | **54.6** |
+| 3 | [DATAMATICS](https://www.tradingview.com/chart/?symbol=NSE:DATAMATICS) | 8d | +0.9% | Datamatics Global Ser<br>₹5K Cr \| ↘6Cr · 5Cr<br>Digital transformation services and automation for enterprises | -0.90% | Software & Services | ₹799.8 | 27d | 20d | up | **46.5** |
+| 4 | [NH](https://www.tradingview.com/chart/?symbol=NSE:NH) | 3d | +2.7% | Narayana Hrudayalaya<br>₹40K Cr \| →54Cr · 51Cr<br>Affordable multi-specialty hospital chain cardiac focus India | -0.09% | Healthcare | ₹1,956.8 | 52d | 12d | up | **40.6** |
+| 5 | [JSWCEMENT](https://www.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | 8d | +2.3% | Jsw Cement<br>₹18K Cr \| ↗47Cr · 61Cr<br>Eco-friendly cement manufacturer serving infrastructure construction | -0.03% | Cement and Construction | ₹133.6 | 22d | 7d | up | **32.5** |
+| 6 | [PRICOLLTD](https://www.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | 3d | +2.2% | Pricol<br>₹7K Cr \| ↗38Cr · 33Cr<br>Automotive instrument clusters and precision components for OEMs | -0.44% | Automobiles & Auto Components | ₹586.7 | 19d | 14d | up | **21.5** |
+| 7 | [SUPRAJIT](https://www.tradingview.com/chart/?symbol=NSE:SUPRAJIT) | 9d | +1.8% | Suprajit Engineering<br>₹6K Cr \| →9Cr · 4Cr<br>Automotive cables, lamps, mechanical components manufacturer | +0.11% | Automobiles & Auto Components | ₹468.4 | 36d | 6d | up | **18.6** |
 
 ---
 
@@ -28,4 +28,4 @@
 
 _Gates: EMA spread < 1.5xATR50 + < 3% EMA200 (>=10 bars) + BB(34,2.5) inside KC(34,1.5) (>=5 bars, width bottom 20%) + weekly RS vs NiftyMidSml400 above EMA9 + 4-week slope positive_
 
-_Generated 2026-06-25 15:45:36 IST_
+_Generated 2026-06-25 21:00:06 IST_

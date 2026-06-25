@@ -19,6 +19,7 @@ Output: weekly_zl_scans/weekly_zl_scans.md  +  weekly_zl_scans/weekly_zl_scans_Y
 import sys
 import os
 import csv
+import json
 from datetime import datetime
 
 import pandas as pd
@@ -30,6 +31,12 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "weekly_zl_scans")
+_LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
+_LABELS: dict = (
+    json.loads(open(_LABELS_FILE, encoding="utf-8").read())
+    if os.path.exists(_LABELS_FILE)
+    else {}
+)
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_FILE = os.path.join(SCANS_DIR, "weekly_zl_scans.md")
 
@@ -289,10 +296,16 @@ def _table_rows(
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
         pvz = f["price_vs_zl"]
-        co = (names or {}).get(sym, "")
+        lbl = _LABELS.get(sym, "")
+        name_mcap_str = (names or {}).get(sym, "")
+        if " · " in name_mcap_str:
+            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
+        else:
+            _name_part, _mcap_part = name_mcap_str, ""
         liq = f.get("liq_tag", "")
-        _sub_parts = [p for p in [co, liq] if p]
-        _meta = " · ".join(_sub_parts)
+        _mcap_liq = r" \| ".join(p for p in [_mcap_part, liq] if p)
+        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
+        _meta = "<br>".join(_label_lines)
         rows.append(
             f"| [{sym}]({tv}) "
             f"| {_meta} "

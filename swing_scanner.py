@@ -30,6 +30,7 @@ import yfinance as yf
 import pandas as pd
 from tradingview_screener import Query, col
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
+from ohlc_db import get_names, get_liq_labels
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -333,7 +334,12 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
 TAG_ORDER = {"STRONG": 0, "PRIMARY": 1, "DEEP PULLBACK": 2}
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def build_markdown(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict | None = None,
+    liq_labels: dict | None = None,
+) -> str:
     findings.sort(
         key=lambda x: (
             min(TAG_ORDER.get(e[0], 9) for e in x["entries"]),
@@ -357,7 +363,17 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        lbl = _LABELS.get(f["symbol"], "")
+        sym_s = f["symbol"]
+        lbl = _LABELS.get(sym_s, "")
+        name_mcap_str = (names or {}).get(sym_s, "")
+        if " · " in name_mcap_str:
+            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
+        else:
+            _name_part, _mcap_part = name_mcap_str, ""
+        _liq_str = (liq_labels or {}).get(sym_s, "")
+        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
+        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
+        lbl_cell = "<br>".join(_label_lines)
         w52 = f"{f.get('leader_ratio', 1.0) * 100:.0f}%"
         vol_cell = f"{'🔵' if f.get('vol_dryup') else ''}{f.get('vol_ratio', 1.0):.2f}x"
         for tag, label, _ in f["entries"]:
@@ -367,7 +383,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
                 f"| {f.get('trap', 'n/a')} "
                 f"| {zl_d} "
                 f"| {zl_p} "
-                f"| {lbl} "
+                f"| {lbl_cell} "
                 f"| {w52} "
                 f"| {vol_cell} "
                 f"| {ds}{f['day_chg']:.2f}% "
@@ -445,7 +461,10 @@ def main():
 
     os.makedirs(SCANS_DIR, exist_ok=True)
     dated_file = os.path.join(SCANS_DIR, f"swing_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    syms = [f["symbol"] for f in findings]
+    names = get_names(syms)
+    liq_labels = get_liq_labels(syms)
+    md = build_markdown(findings, circuit, names, liq_labels)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:

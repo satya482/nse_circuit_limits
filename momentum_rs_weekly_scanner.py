@@ -34,6 +34,7 @@ import requests
 import yfinance as yf
 import pandas as pd
 from tradingview_screener import Query, col
+from ohlc_db import get_names, get_liq_labels
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -312,7 +313,12 @@ STATIC_FOOTER = """
 - Weekly RS EMA9 is rising"""
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def build_markdown(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict | None = None,
+    liq_labels: dict | None = None,
+) -> str:
     entry_findings = [f for f in findings if f["entries"]]
     turning_findings = [f for f in findings if f["zl_turning_up"]]
     entry_findings.sort(key=lambda x: min(TAG_ORDER.get(e[0], 9) for e in x["entries"]))
@@ -342,14 +348,24 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
                 else f"{f['zl_days']}d"
             )
             zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-            lbl = _LABELS.get(f["symbol"], "")
+            sym_r = f["symbol"]
+            lbl = _LABELS.get(sym_r, "")
+            name_mcap_str = (names or {}).get(sym_r, "")
+            if " · " in name_mcap_str:
+                _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
+            else:
+                _name_part, _mcap_part = name_mcap_str, ""
+            _liq_str = (liq_labels or {}).get(sym_r, "")
+            _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
+            _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
+            lbl_cell = "<br>".join(_label_lines)
             for tag, label, _ in f["entries"]:
                 ds = "+" if f["day_chg"] >= 0 else ""
                 lines.append(
                     f"| [{f['symbol']}]({tv}) "
                     f"| {zl_d} "
                     f"| {zl_p} "
-                    f"| {lbl} "
+                    f"| {lbl_cell} "
                     f"| {ds}{f['day_chg']:.2f}% "
                     f"| **{tag}** — {label} "
                     f"| {cl} {em} |"
@@ -373,13 +389,23 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
                 else f"{f['zl_days']}d"
             )
             zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-            lbl = _LABELS.get(f["symbol"], "")
+            sym_t = f["symbol"]
+            lbl = _LABELS.get(sym_t, "")
+            name_mcap_str = (names or {}).get(sym_t, "")
+            if " · " in name_mcap_str:
+                _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
+            else:
+                _name_part, _mcap_part = name_mcap_str, ""
+            _liq_str = (liq_labels or {}).get(sym_t, "")
+            _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
+            _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
+            lbl_cell = "<br>".join(_label_lines)
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(
                 f"| [{f['symbol']}]({tv}) "
                 f"| {zl_d} "
                 f"| {zl_p} "
-                f"| {lbl} "
+                f"| {lbl_cell} "
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| {cl} {em} |"
             )
@@ -452,7 +478,10 @@ def main():
 
     os.makedirs(SCANS_DIR, exist_ok=True)
     dated_file = os.path.join(SCANS_DIR, f"momentum_rs_weekly_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    syms = [f["symbol"] for f in findings]
+    names = get_names(syms)
+    liq_labels = get_liq_labels(syms)
+    md = build_markdown(findings, circuit, names, liq_labels)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:

@@ -303,7 +303,15 @@ def _table_rows(
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = "✓" if f.get("squeeze") else "—"
         lbl = _LABELS.get(sym, "")
-        lbl_cell = lbl
+        name_mcap_str = (names or {}).get(sym, "")
+        if " · " in name_mcap_str:
+            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
+        else:
+            _name_part, _mcap_part = name_mcap_str, ""
+        _liq_str = f.get("liq_tag", "")
+        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
+        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
+        lbl_cell = "<br>".join(_label_lines)
         rows.append(
             f"| [{sym}]({tv}) "
             f"| {zl_d} "
