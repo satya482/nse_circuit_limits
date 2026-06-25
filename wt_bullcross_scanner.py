@@ -372,7 +372,16 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
     lbl = _LABELS.get(sym, "")
     circuit_cell = f"{cl} {em}".strip()
-    lbl_cell = lbl
+    name_mcap = (names or {}).get(sym, "")
+    liq = f.get("liq_tag", "")
+    meta_parts = [p for p in [name_mcap, liq] if p]
+    meta_line = " · ".join(meta_parts)
+    if lbl and meta_line:
+        lbl_cell = f"{lbl}<br>{meta_line}"
+    elif meta_line:
+        lbl_cell = meta_line
+    else:
+        lbl_cell = lbl
     return (
         f"| [{sym}]({tv}) "
         f"| {f.get('trap', 'n/a')} "
@@ -413,6 +422,7 @@ def build_markdown(
         "| Exchange | NSE common equity |",
         "| Price | > ₹50 |",
         "| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |",
+        "| Label | Description · Name · MCap · avg10d/today notional |",
         "| RS filter | None — WT captures pre-RS-turn reversals |",
         "| RS | 🔄/↑/↓ state + IBD percentile vs NIFTY MIDSML 400 — e.g. 🔄82 |",
         "| C/AvgC | Close / EMA(10) ratio — ↑ rising momentum |",
