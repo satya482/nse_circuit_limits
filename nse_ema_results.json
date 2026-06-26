@@ -151,7 +151,6 @@
   "GHCLTEXTIL": -3.79,
   "GLAND": -0.49,
   "GLENMARK": -1.2,
-  "GLOSTERLTD": -1.83,
   "GMDCLTD": -1.79,
   "GNA": 4.05,
   "GOCLCORP": -3.58,
@@ -261,6 +260,7 @@
   "LUXIND": -1.21,
   "MACPOWER": -1.28,
   "MAHABANK": 0.2,
+  "MAHASTEEL": -0.76,
   "MAHSEAMLES": -3.14,
   "MANAPPURAM": 0.05,
   "MANGLMCEM": 1.27,
@@ -441,6 +441,7 @@
   "TALBROAUTO": 5.27,
   "TATACOMM": -1.8,
   "TDPOWERSYS": -0.62,
+  "TEJASCARGO": 0.0,
   "TFCILTD": -1.37,
   "THANGAMAYL": 2.69,
   "THELEELA": -0.94,
@@ -497,6 +498,5 @@
   "YATHARTH": -2.33,
   "YESBANK": -0.28,
   "ZENTEC": -3.89,
-  "ZFCVINDIA": -1.65,
   "ZYDUSWELL": -1.42
 }
