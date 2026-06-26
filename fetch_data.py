@@ -40,6 +40,11 @@ BATCH_SLEEP = 3  # seconds between batches
 BATCH_RETRY_WAIT = 30  # seconds to wait before retrying a failed batch
 HIST_RATE = 0.35  # seconds between historical_data() calls
 
+NIFTY50_SYM = "NIFTY 50"  # added for breadth dashboard price panel
+BREADTH_UNIVERSE_PATH = REPO_DIR / "data" / "breadth_universe.csv"
+BREADTH_LOOKBACK_DAYS = 3650  # ~10 years calendar days
+BREADTH_MIN_ROWS = 2000  # re-backfill if SQLite has fewer rows
+
 MC_LOW = 800 * 1_00_00_000  # ₹800 Cr
 MC_HIGH = 1_00_000 * 1_00_00_000  # ₹1 Lakh Cr
 BENCHMARK_SYM = "NIFTY MIDSML 400"  # Kite tradingsymbol; used by all RS scanners
@@ -141,15 +146,14 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
         & raw["tradingsymbol"].isin(tv_symbols)
     ].copy()
 
-    # Benchmark index: exactly one row
+    # Benchmark indices: MIDSML 400 (RS benchmark) and NIFTY 50 (dashboard price panel)
     benchmark = raw[
-        (raw["segment"] == "INDICES") & (raw["tradingsymbol"] == BENCHMARK_SYM)
+        (raw["segment"] == "INDICES")
+        & raw["tradingsymbol"].isin([BENCHMARK_SYM, NIFTY50_SYM])
     ].copy()
-    if benchmark.empty:
-        print(
-            f"  WARN: {BENCHMARK_SYM!r} not found in Kite instruments list",
-            file=sys.stderr,
-        )
+    missing = {BENCHMARK_SYM, NIFTY50_SYM} - set(benchmark["tradingsymbol"])
+    for sym in missing:
+        print(f"  WARN: {sym!r} not found in Kite instruments list", file=sys.stderr)
 
     filtered = pd.concat([stocks, benchmark], ignore_index=True)
     filtered["last_updated"] = today
@@ -228,6 +232,79 @@ def backfill(
         time.sleep(HIST_RATE)
 
     print("  Phase 1 complete.")
+
+
+# ── Breadth universe: 10yr backfill ───────────────────────────────────────────
+def backfill_breadth(kite, con: sqlite3.Connection) -> None:
+    """Extended 10yr backfill for broad breadth universe.
+
+    Runs only for symbols below BREADTH_MIN_ROWS in SQLite.
+    Skipped silently if breadth_universe.csv is absent.
+    """
+    if not BREADTH_UNIVERSE_PATH.exists():
+        print(
+            "  breadth_universe.csv not found — skipping breadth backfill"
+            " (run scripts/refresh_breadth_universe.py first)"
+        )
+        return
+
+    breadth_df = pd.read_csv(BREADTH_UNIVERSE_PATH)
+    symbols = breadth_df["symbol"].tolist()
+    tokens: dict[str, int] = dict(
+        zip(breadth_df["symbol"], breadth_df["instrument_token"].astype(int))
+    )
+
+    today = date.today()
+    from_date = today - timedelta(days=BREADTH_LOOKBACK_DAYS)
+    status = get_symbol_status(con)
+
+    needs = [s for s in symbols if s not in status or status[s][1] < BREADTH_MIN_ROWS]
+    if not needs:
+        print(
+            f"  Breadth universe: all {len(symbols)} symbols have"
+            f" ≥{BREADTH_MIN_ROWS} rows"
+        )
+        return
+
+    print(
+        f"\n  Breadth backfill: {len(needs)}/{len(symbols)} symbols (from {from_date})..."
+    )
+    for i, sym in enumerate(needs, 1):
+        token = tokens.get(sym)
+        if not token:
+            continue
+        try:
+            data = kite.historical_data(token, from_date, today, "day")
+            if data:
+                rows = []
+                for d in data:
+                    dt = d["date"]
+                    dt_str = (
+                        dt.date().isoformat() if hasattr(dt, "date") else str(dt)[:10]
+                    )
+                    rows.append(
+                        (
+                            sym,
+                            dt_str,
+                            d["open"],
+                            d["high"],
+                            d["low"],
+                            d["close"],
+                            d["volume"],
+                        )
+                    )
+                con.executemany(
+                    "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
+                )
+                con.commit()
+        except Exception as e:
+            print(f"    WARN {sym}: {e}", file=sys.stderr)
+
+        if i % 100 == 0:
+            print(f"    {i}/{len(needs)}...")
+        time.sleep(HIST_RATE)
+
+    print(f"  Breadth backfill complete: {len(needs)} symbols from {from_date}")
 
 
 # ── Phase 2: Daily delta via quote() ──────────────────────────────────────────
@@ -352,6 +429,10 @@ def main() -> None:
         delta_update(kite, instruments_df, needs_delta, con)
 
     write_manifest(con)
+
+    # Breadth universe: 10yr extended backfill (runs after main manifest write)
+    backfill_breadth(kite, con)
+
     con.close()
 
     total_rows = (
