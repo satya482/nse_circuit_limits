@@ -10,10 +10,13 @@ than emitting per-day candidate lists. Deliberate — documented here and in CLA
 """
 
 import sys
-from datetime import date, timezone, timedelta
+import argparse
+from datetime import date, datetime, timezone, timedelta
 from pathlib import Path
 
 import pandas as pd
+
+from ohlc_db import load_ohlc, load_ohlc_many
 
 REPO_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_DIR))
@@ -642,3 +645,71 @@ window.addEventListener('resize', drawHeatmap);
 </script>
 </body>
 </html>"""
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(description="NSE Breadth Monitor")
+    parser.add_argument(
+        "--backfill",
+        action="store_true",
+        help="Iterate all trading dates in SQLite and compute breadth for each. "
+        "Use for one-time historical backfill. Idempotent.",
+    )
+    args = parser.parse_args()
+
+    if not UNIVERSE_PATH.exists():
+        print(
+            f"ERROR: {UNIVERSE_PATH} not found. Run scripts/refresh_breadth_universe.py first."
+        )
+        raise SystemExit(1)
+
+    universe_df = pd.read_csv(UNIVERSE_PATH)
+    symbols = universe_df["symbol"].tolist()
+    print(f"Universe: {len(symbols)} symbols from {UNIVERSE_PATH.name}")
+
+    print("Loading OHLCV from SQLite (lookback=2500)...")
+    ohlc_map = load_ohlc_many(symbols, lookback=OHLC_LOOKBACK)
+    print(f"Loaded: {len(ohlc_map)} symbols with data")
+
+    if args.backfill:
+        # Collect all trading dates across all symbols
+        all_dates = sorted(
+            set(
+                d
+                for df in ohlc_map.values()
+                for d in df["date"].dt.strftime("%Y-%m-%d")
+            )
+        )
+        print(f"Backfilling {len(all_dates)} trading dates...")
+        for i, date_str in enumerate(all_dates):
+            as_of = date.fromisoformat(date_str)
+            row = compute_daily_breadth(universe_df, as_of, ohlc_map)
+            if row:
+                update_breadth_history(str(HISTORY_PATH), row)
+            if (i + 1) % 100 == 0:
+                print(f"  {i + 1}/{len(all_dates)} dates processed...")
+        print("Backfill complete.")
+    else:
+        today = datetime.now(IST).date()
+        print(f"Computing breadth for {today}...")
+        row = compute_daily_breadth(universe_df, today, ohlc_map)
+        if row is None:
+            print(f"  {today} is not a trading day in SQLite — no row written.")
+        else:
+            update_breadth_history(str(HISTORY_PATH), row)
+            print(
+                f"  up4={row['up4_count']} down4={row['down4_count']} ratio5d={row['ratio_5d']}"
+            )
+
+    # Build dashboard from full history
+    print("Building dashboard HTML...")
+    history_df = pd.read_csv(HISTORY_PATH)
+    nifty_df = load_ohlc(NIFTY50_SYM, lookback=OHLC_LOOKBACK)
+    html = build_dashboard_html(history_df, nifty_df)
+    DASHBOARD_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DASHBOARD_PATH.write_text(html, encoding="utf-8")
+    print(f"Dashboard → {DASHBOARD_PATH}")
+
+
+if __name__ == "__main__":
+    main()
