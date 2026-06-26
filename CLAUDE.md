@@ -16,7 +16,12 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
-.\run_breadth_scanner.ps1       # 4:50 PM — Market breadth: % stocks above SMA10/20/50/200
+.\run_breadth_monitor.ps1       # 4:50 PM — NSE Breadth Monitor: thrust/cap regime dashboard
+```
+
+**Weekly (manual, Monday AM before market open):**
+```powershell
+python scripts/refresh_breadth_universe.py   # Refresh broad NSE EQ universe (~2000 stocks)
 ```
 
 Run any Python script directly for debugging:
@@ -110,6 +115,21 @@ All thresholds live in `settings.yaml`. Pipeline:
 
 **No RS filter** is intentional: WT oversold signals fire before RS turns positive; filtering on RS would kill the best setups.
 
+### Scanner pipeline — Breadth Monitor (`scanners/breadth_monitor.py`)
+
+**Regime/timing layer — not a candidate-selection scanner.** Answers "is the market supportive?"
+
+1. Reads `data/breadth_universe.csv` (broad NSE EQ, ~2,000–2,500 symbols, refreshed weekly)
+2. `load_ohlc_many(symbols, lookback=2500)` → 10yr OHLCV from SQLite
+3. `compute_daily_breadth(universe_df, as_of, ohlc_map)` — pure function:
+   - up4/down4: stocks ≥+4% / ≤-4% (circuit-frozen excluded: close==prev AND vol==0)
+   - ratio_5d / ratio_10d: rolling up/down count ratios (thresholds 1.6/0.6 — TODO: validate)
+   - up25_quarter / down25_quarter: ≥25% / ≤-25% over 63 trading days
+   - pct_above_sma200: plain SMA (circuit-gap distortion: known, deferred v1.1)
+   - composite_score: always null (v1 — TODO: backtest weights before enabling)
+4. `update_breadth_history()` upsert → `data/breadth_history.csv` keyed (date, universe_tag)
+5. `build_dashboard_html()` → `dashboard/nse_breadth_monitor.html` (GitHub Pages)
+
 ### Dashboard — WaveTrend + Squeeze (`wt_squeeze_dashboard.py`)
 
 Reads two scanner outputs, finds confluence, builds `wt_squeeze_dashboard.html`:
@@ -157,7 +177,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `dashboard.html` | `dashboard_generator.py` |
 | `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
-| `breadth_scans/breadth_history.csv`, `breadth_chart.html` | `breadth_scanner.py` |
+| `data/breadth_history.csv`, `dashboard/nse_breadth_monitor.html` | `scanners/breadth_monitor.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
