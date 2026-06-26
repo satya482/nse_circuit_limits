@@ -16,10 +16,10 @@ from pathlib import Path
 
 import pandas as pd
 
-from ohlc_db import load_ohlc, load_ohlc_many
-
 REPO_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_DIR))
+
+from ohlc_db import load_ohlc, load_ohlc_many  # noqa: E402
 
 IST = timezone(timedelta(hours=5, minutes=30))
 

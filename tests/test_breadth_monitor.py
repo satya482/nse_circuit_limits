@@ -178,6 +178,20 @@ def test_stock_with_no_as_of_row_skipped():
     assert result is None
 
 
+def test_universe_filter_excludes_non_universe_symbols():
+    """Symbols in ohlc_map but not in universe_df must not be counted in breadth."""
+    dates = ["2026-06-20", "2026-06-21"]
+    ohlc_map = {
+        "AA": _make_ohlc(dates, [100.0, 110.0]),  # +10% → up4, IN universe
+        "NIFTY 50": _make_ohlc(dates, [22000.0, 23000.0]),  # NOT in universe
+    }
+    universe_df = pd.DataFrame({"symbol": ["AA"]})
+    result = compute_daily_breadth(universe_df, date(2026, 6, 21), ohlc_map)
+    assert result is not None
+    assert result["total_eligible"] == 1  # only AA counted, not NIFTY 50
+    assert result["up4_count"] == 1  # AA is +10%
+
+
 # ── ratio_5d / ratio_10d ──────────────────────────────────────────────────────
 
 
