@@ -175,3 +175,30 @@ def compute_daily_breadth(
         "pct_above_sma200": pct_sma200,
         "composite_score": None,  # v1.1: backtest normalization bounds before enabling
     }
+
+
+def update_breadth_history(history_path: str, new_row: dict) -> None:
+    """Upsert new_row into breadth_history.csv keyed on (date, universe_tag). Idempotent."""
+    path = Path(history_path)
+    if path.exists():
+        df = pd.read_csv(path)
+        # Ensure all expected columns present (handles schema evolution)
+        for col in _CSV_COLUMNS:
+            if col not in df.columns:
+                df[col] = None
+        df = df[_CSV_COLUMNS]
+    else:
+        df = pd.DataFrame(columns=_CSV_COLUMNS)
+
+    # Remove existing row for this (date, universe_tag) — idempotent upsert
+    mask = (df["date"] == new_row["date"]) & (
+        df["universe_tag"] == new_row["universe_tag"]
+    )
+    df = df[~mask]
+
+    new_df = pd.DataFrame([{c: new_row.get(c) for c in _CSV_COLUMNS}])
+    df = pd.concat([df, new_df], ignore_index=True)
+    df = df.sort_values("date").reset_index(drop=True)
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    df.to_csv(path, index=False)

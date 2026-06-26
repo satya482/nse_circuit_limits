@@ -1,5 +1,7 @@
 import pandas as pd
 import pytest
+import tempfile
+import os
 
 # Insert project root into path so imports work from tests/
 import sys
@@ -8,6 +10,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from scripts.refresh_breadth_universe import filter_instruments
+from scanners.breadth_monitor import update_breadth_history, _CSV_COLUMNS
 
 
 def test_filter_keeps_nse_eq_no_dash():
@@ -290,3 +293,97 @@ def test_universe_tag_is_breadth_broad():
     ohlc_map = {"AA": _make_ohlc(dates, [100.0, 105.0])}
     result = compute_daily_breadth(_universe_df(["AA"]), date(2026, 6, 21), ohlc_map)
     assert result["universe_tag"] == "breadth_broad"
+
+
+# ── update_breadth_history upsert tests ───────────────────────────────────────
+
+
+def _sample_row(date_str: str, up4: int = 10, dn4: int = 5) -> dict:
+    return {
+        "date": date_str,
+        "universe_tag": "breadth_broad",
+        "total_eligible": 1500,
+        "up4_count": up4,
+        "down4_count": dn4,
+        "ratio_5d": 2.0,
+        "ratio_10d": 1.8,
+        "up25_quarter": 100,
+        "down25_quarter": 50,
+        "pct_above_sma200": 55.0,
+        "composite_score": None,
+    }
+
+
+def test_upsert_creates_file_on_first_run():
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as f:
+        path = f.name
+    os.unlink(path)  # ensure file doesn't exist
+    try:
+        update_breadth_history(path, _sample_row("2026-06-20"))
+        df = pd.read_csv(path)
+        assert len(df) == 1
+        assert df.iloc[0]["date"] == "2026-06-20"
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+
+def test_upsert_appends_new_date():
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as f:
+        path = f.name
+    os.unlink(path)
+    try:
+        update_breadth_history(path, _sample_row("2026-06-20"))
+        update_breadth_history(path, _sample_row("2026-06-21"))
+        df = pd.read_csv(path)
+        assert len(df) == 2
+        assert list(df["date"]) == ["2026-06-20", "2026-06-21"]
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+
+def test_upsert_overwrites_existing_date():
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as f:
+        path = f.name
+    os.unlink(path)
+    try:
+        update_breadth_history(path, _sample_row("2026-06-20", up4=10))
+        update_breadth_history(
+            path, _sample_row("2026-06-20", up4=99)
+        )  # same date, different value
+        df = pd.read_csv(path)
+        assert len(df) == 1  # no duplicate
+        assert df.iloc[0]["up4_count"] == 99  # updated value
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+
+def test_upsert_sorted_by_date():
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as f:
+        path = f.name
+    os.unlink(path)
+    try:
+        update_breadth_history(path, _sample_row("2026-06-21"))
+        update_breadth_history(
+            path, _sample_row("2026-06-20")
+        )  # older date inserted second
+        df = pd.read_csv(path)
+        assert list(df["date"]) == ["2026-06-20", "2026-06-21"]  # always sorted
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
+
+
+def test_columns_match_schema():
+    with tempfile.NamedTemporaryFile(suffix=".csv", delete=False) as f:
+        path = f.name
+    os.unlink(path)
+    try:
+        update_breadth_history(path, _sample_row("2026-06-20"))
+        df = pd.read_csv(path)
+        assert list(df.columns) == _CSV_COLUMNS
+    finally:
+        if os.path.exists(path):
+            os.unlink(path)
