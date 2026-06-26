@@ -1,0 +1,9 @@
+exclude:
+  - docs/
+  - "*.py"
+  - "*.ps1"
+  - "*.csv"
+  - requirements.txt
+  - "*.db"
+  - logs/
+  - .ohlc_data/
