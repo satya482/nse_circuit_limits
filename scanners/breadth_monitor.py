@@ -242,7 +242,8 @@ def build_dashboard_html(
     # Nifty 50 price — normalized 0-100 for overlay
     nifty_js = "[]"
     if nifty_df is not None and not nifty_df.empty:
-        nifty_dates = nifty_df["date"].dt.strftime("%Y-%m-%d").tolist()
+        date_col = pd.to_datetime(nifty_df["date"])
+        nifty_dates = date_col.dt.strftime("%Y-%m-%d").tolist()
         nifty_close = nifty_df["close"].astype(float).tolist()
         mn, mx = min(nifty_close), max(nifty_close)
         rng = mx - mn if mx != mn else 1.0
@@ -618,9 +619,7 @@ function drawHeatmap() {{
       }} else {{
         ctx.fillStyle = '#1c2530'; // no data / weekend
       }}
-      ctx.beginPath();
-      ctx.roundRect(x, y, CELL, CELL, 2);
-      ctx.fill();
+      ctx.fillRect(x, y, CELL, CELL);
 
       // Month label on first cell of month
       const month = cur.getMonth();
