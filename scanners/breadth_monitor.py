@@ -56,10 +56,15 @@ def compute_daily_breadth(
     """Single-day breadth snapshot. Pure function, no I/O.
 
     as_of strictly bounds all calculations — never reads closes after as_of.
-    Returns None when as_of is not a trading day in the data.
+    Returns None when as_of is not present as a trading date in ohlc_map.
     Circuit-frozen (v1): excluded if close == prev_close AND volume == 0.
     """
     as_of_str = as_of.strftime("%Y-%m-%d")
+
+    # Filter ohlc_map to universe symbols only — prevents benchmark or other
+    # non-universe symbols in SQLite from being silently counted in breadth metrics
+    universe_syms = set(universe_df["symbol"].tolist())
+    ohlc_map = {s: df for s, df in ohlc_map.items() if s in universe_syms}
 
     # Collect all trading dates up to as_of to build ratio window
     all_dates: set[str] = set()
@@ -68,13 +73,8 @@ def compute_daily_breadth(
         all_dates.update(d for d in date_strs if d <= as_of_str)
 
     sorted_dates = sorted(all_dates)
-    if not sorted_dates:
-        return None  # no data at all in the ohlc_map
-    # Note: we do NOT return None when as_of is absent from all stocks' data.
-    # If all stocks are stale (last row < as_of), total_eligible stays 0 and the
-    # result is still a valid (zero-count) breadth snapshot.  The per-stock guard
-    # below handles individual skips.  Return None only if there is no OHLC data
-    # whatsoever.
+    if not sorted_dates or as_of_str not in sorted_dates:
+        return None  # as_of is not a trading day in this dataset
 
     # Window: last 10 trading dates (ratio_10d uses all 10; ratio_5d uses last 5)
     window_10 = sorted_dates[-10:]

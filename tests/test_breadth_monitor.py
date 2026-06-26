@@ -167,12 +167,12 @@ def test_as_of_bounds_future_data():
 
 
 def test_stock_with_no_as_of_row_skipped():
-    """Stock whose last row is before as_of is not counted."""
+    """Stock whose last row is before as_of → function returns None (not a trading day)."""
     ohlc_map = {
         "AA": _make_ohlc(["2026-06-18", "2026-06-19"], [100.0, 102.0]),
     }
     result = compute_daily_breadth(_universe_df(["AA"]), date(2026, 6, 21), ohlc_map)
-    assert result["total_eligible"] == 0
+    assert result is None
 
 
 # ── ratio_5d / ratio_10d ──────────────────────────────────────────────────────
