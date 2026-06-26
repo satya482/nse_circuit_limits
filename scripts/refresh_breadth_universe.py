@@ -50,7 +50,7 @@ def main() -> None:
     broad = filter_instruments(raw)
     OUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     broad.to_csv(OUT_PATH, index=False)
-    print(f"breadth_universe.csv: {len(broad)} symbols → {OUT_PATH}")
+    print(f"breadth_universe.csv: {len(broad)} symbols -> {OUT_PATH}")
 
 
 if __name__ == "__main__":
