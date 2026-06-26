@@ -18,7 +18,7 @@ Output:
 import sys
 import time
 import sqlite3
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -39,6 +39,8 @@ BATCH_SIZE = 50  # max instruments per quote() call (larger batches trigger Clou
 BATCH_SLEEP = 3  # seconds between batches
 BATCH_RETRY_WAIT = 30  # seconds to wait before retrying a failed batch
 HIST_RATE = 0.35  # seconds between historical_data() calls
+
+IST = timezone(timedelta(hours=5, minutes=30))
 
 NIFTY50_SYM = "NIFTY 50"  # added for breadth dashboard price panel
 BREADTH_UNIVERSE_PATH = REPO_DIR / "data" / "breadth_universe.csv"
@@ -240,6 +242,10 @@ def backfill_breadth(kite, con: sqlite3.Connection) -> None:
 
     Runs only for symbols below BREADTH_MIN_ROWS in SQLite.
     Skipped silently if breadth_universe.csv is absent.
+
+    Kite API enforces a 2000-calendar-day limit per request for the "day"
+    interval.  We paginate in 1800-day windows (oldest-first) so each call
+    stays within the limit.
     """
     if not BREADTH_UNIVERSE_PATH.exists():
         print(
@@ -254,57 +260,71 @@ def backfill_breadth(kite, con: sqlite3.Connection) -> None:
         zip(breadth_df["symbol"], breadth_df["instrument_token"].astype(int))
     )
 
-    today = date.today()
-    from_date = today - timedelta(days=BREADTH_LOOKBACK_DAYS)
-    status = get_symbol_status(con)
+    today = datetime.now(IST).date()
+    target_from = today - timedelta(days=BREADTH_LOOKBACK_DAYS)
 
+    # Build date windows of <= 1800 calendar days (safe below Kite's 2000-day limit)
+    WINDOW = 1800
+    windows: list[tuple[date, date]] = []
+    win_end = today
+    while win_end > target_from:
+        win_start = max(win_end - timedelta(days=WINDOW), target_from)
+        windows.append((win_start, win_end))
+        win_end = win_start - timedelta(days=1)
+    windows.reverse()  # oldest window first
+
+    status = get_symbol_status(con)
     needs = [s for s in symbols if s not in status or status[s][1] < BREADTH_MIN_ROWS]
     if not needs:
         print(
             f"  Breadth universe: all {len(symbols)} symbols have"
-            f" ≥{BREADTH_MIN_ROWS} rows"
+            f" >=BREADTH_MIN_ROWS rows"
         )
         return
 
     print(
-        f"\n  Breadth backfill: {len(needs)}/{len(symbols)} symbols (from {from_date})..."
+        f"\n  Breadth backfill: {len(needs)}/{len(symbols)} symbols"
+        f" from {target_from} ({len(windows)} windows x ~{WINDOW}d)..."
     )
     for i, sym in enumerate(needs, 1):
         token = tokens.get(sym)
         if not token:
             continue
-        try:
-            data = kite.historical_data(token, from_date, today, "day")
-            if data:
-                rows = []
-                for d in data:
-                    dt = d["date"]
-                    dt_str = (
-                        dt.date().isoformat() if hasattr(dt, "date") else str(dt)[:10]
-                    )
-                    rows.append(
-                        (
-                            sym,
-                            dt_str,
-                            d["open"],
-                            d["high"],
-                            d["low"],
-                            d["close"],
-                            d["volume"],
+        for w_start, w_end in windows:
+            try:
+                data = kite.historical_data(token, w_start, w_end, "day")
+                if data:
+                    rows = []
+                    for d in data:
+                        dt = d["date"]
+                        dt_str = (
+                            dt.date().isoformat()
+                            if hasattr(dt, "date")
+                            else str(dt)[:10]
                         )
+                        rows.append(
+                            (
+                                sym,
+                                dt_str,
+                                d["open"],
+                                d["high"],
+                                d["low"],
+                                d["close"],
+                                d["volume"],
+                            )
+                        )
+                    con.executemany(
+                        "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
                     )
-                con.executemany(
-                    "INSERT OR IGNORE INTO ohlc VALUES (?,?,?,?,?,?,?)", rows
-                )
-                con.commit()
-        except Exception as e:
-            print(f"    WARN {sym}: {e}", file=sys.stderr)
+                    con.commit()
+            except Exception as e:
+                print(f"    WARN {sym} [{w_start}..{w_end}]: {e}", file=sys.stderr)
+            time.sleep(HIST_RATE)
 
         if i % 100 == 0:
             print(f"    {i}/{len(needs)}...")
-        time.sleep(HIST_RATE)
 
-    print(f"  Breadth backfill complete: {len(needs)} symbols from {from_date}")
+    print(f"  Breadth backfill complete: {len(needs)} symbols from {target_from}")
 
 
 # ── Phase 2: Daily delta via quote() ──────────────────────────────────────────
