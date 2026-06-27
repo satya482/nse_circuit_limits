@@ -46,6 +46,9 @@ _CSV_COLUMNS = [
     "ratio_10d",
     "up25_quarter",
     "down25_quarter",
+    "pct_above_sma10",
+    "pct_above_sma20",
+    "pct_above_sma50",
     "pct_above_sma200",
     "composite_score",
 ]
@@ -91,6 +94,12 @@ def compute_daily_breadth(
     total_eligible = 0
     up25 = 0
     dn25 = 0
+    above_sma10 = 0
+    elig_sma10 = 0
+    above_sma20 = 0
+    elig_sma20 = 0
+    above_sma50 = 0
+    elig_sma50 = 0
     above_sma200 = 0
     elig_sma200 = 0
 
@@ -145,8 +154,20 @@ def compute_daily_breadth(
             if pct_63d <= -0.25:
                 dn25 += 1
 
-        # SMA200 — plain SMA, min_periods=200
+        # SMA10/20/50/200 — plain SMA, min_periods=N
         # Known limitation: circuit-gap days distort plain SMA. Flagged, deferred to v1.1.
+        if len(df_s) >= 10:
+            elig_sma10 += 1
+            if today_close > closes[-10:].mean():
+                above_sma10 += 1
+        if len(df_s) >= 20:
+            elig_sma20 += 1
+            if today_close > closes[-20:].mean():
+                above_sma20 += 1
+        if len(df_s) >= 50:
+            elig_sma50 += 1
+            if today_close > closes[-50:].mean():
+                above_sma50 += 1
         if len(df_s) >= 200:
             elig_sma200 += 1
             if today_close > closes[-200:].mean():
@@ -163,7 +184,8 @@ def compute_daily_breadth(
         dn_sum = sum(dn4.get(d, 0) for d in last_n)
         return round(up_sum / max(1, dn_sum), 4)
 
-    pct_sma200 = round(above_sma200 / elig_sma200 * 100, 2) if elig_sma200 > 0 else None
+    def _pct(above: int, elig: int) -> float | None:
+        return round(above / elig * 100, 2) if elig > 0 else None
 
     return {
         "date": as_of_str,
@@ -175,7 +197,10 @@ def compute_daily_breadth(
         "ratio_10d": _ratio(10),
         "up25_quarter": up25,
         "down25_quarter": dn25,
-        "pct_above_sma200": pct_sma200,
+        "pct_above_sma10": _pct(above_sma10, elig_sma10),
+        "pct_above_sma20": _pct(above_sma20, elig_sma20),
+        "pct_above_sma50": _pct(above_sma50, elig_sma50),
+        "pct_above_sma200": _pct(above_sma200, elig_sma200),
         "composite_score": None,  # v1.1: backtest normalization bounds before enabling
     }
 
@@ -240,6 +265,9 @@ def build_dashboard_html(
     )
     r5_js = _to_js(history_df["ratio_5d"])
     r10_js = _to_js(history_df["ratio_10d"])
+    sma10_js = _to_js(history_df["pct_above_sma10"])
+    sma20_js = _to_js(history_df["pct_above_sma20"])
+    sma50_js = _to_js(history_df["pct_above_sma50"])
     sma200_js = _to_js(history_df["pct_above_sma200"])
 
     # Nifty 50 price — normalized 0-100 for overlay
@@ -356,7 +384,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
 <!-- Panel 5: % above SMA200 -->
 <div class="card">
-  <h2>% Stocks Above SMA200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
+  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
   <canvas id="c-sma200" height="140"></canvas>
 </div>
 
@@ -376,6 +404,9 @@ const DATA = {{
   dn4neg: {dn4_neg_js},
   r5:     {r5_js},
   r10:    {r10_js},
+  sma10:  {sma10_js},
+  sma20:  {sma20_js},
+  sma50:  {sma50_js},
   sma200: {sma200_js},
   nifty:  {nifty_js},
 }};
@@ -403,9 +434,30 @@ function setRange(n) {{
   drawHeatmap();
 }}
 
+// FY-end vertical lines (Mar 31 each year) for all chart types
+function fyLines(dates) {{
+  const result = {{}};
+  const seen = new Set();
+  dates.forEach(d => {{
+    const yr = d.slice(0, 4);
+    if (!seen.has(yr) && d >= yr + '-03-25' && d <= yr + '-04-05') {{
+      seen.add(yr);
+      result['fy' + yr] = {{
+        type: 'line', xMin: d, xMax: d,
+        borderColor: 'rgba(255,184,0,0.35)', borderWidth: 1, borderDash: [3, 3],
+        label: {{ content: 'FY' + String(Number(yr)+1).slice(-2), display: true, position: 'start', color: 'rgba(255,184,0,0.6)', font: {{ size: 9 }} }},
+      }};
+    }}
+  }});
+  return result;
+}}
+
 function buildAnnotations(type, n) {{
+  const dates = sl(DATA.dates, n);
+  const fy = fyLines(dates);
   if (type === 'ratio') {{
     return {{
+      ...fy,
       thrustZone: {{
         type: 'box', yMin: THRUST, yMax: 4,
         backgroundColor: 'rgba(31,217,128,0.08)', borderWidth: 0,
@@ -425,10 +477,9 @@ function buildAnnotations(type, n) {{
     }};
   }}
   if (type === 'nifty') {{
-    const dates = sl(DATA.dates, n);
     const r5    = sl(DATA.r5, n);
     const nifty = sl(DATA.nifty, n);
-    const annotations = {{}};
+    const annotations = {{ ...fy }};
     for (let i = 1; i < r5.length; i++) {{
       if (r5[i] == null || r5[i-1] == null) continue;
       if (r5[i] >= THRUST && r5[i-1] < THRUST) {{
@@ -450,12 +501,14 @@ function buildAnnotations(type, n) {{
   }}
   if (type === 'sma200') {{
     return {{
+      ...fy,
       ref80: {{ type: 'line', yMin: 80, yMax: 80, borderColor: 'rgba(255,85,119,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref50: {{ type: 'line', yMin: 50, yMax: 50, borderColor: 'rgba(107,119,133,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
     }};
   }}
+  if (type === 'bars') {{ return {{ ...fy }}; }}
   return {{}};
 }}
 
@@ -528,22 +581,19 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
   type: 'line',
   data: {{
     labels: sl(DATA.dates, 90),
-    datasets: [{{
-      data: sl(DATA.sma200, 90), _dataKey: 'sma200',
-      borderColor: '#1fd980', borderWidth: 2, pointRadius: 0,
-      fill: false, spanGaps: true, label: '% Above SMA200',
-    }}],
+    datasets: [
+      {{ data: sl(DATA.sma10,  90), _dataKey: 'sma10',  borderColor: '#60a5fa', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA10'  }},
+      {{ data: sl(DATA.sma20,  90), _dataKey: 'sma20',  borderColor: '#fb923c', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA20'  }},
+      {{ data: sl(DATA.sma50,  90), _dataKey: 'sma50',  borderColor: '#34d399', borderWidth: 2.0, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA50'  }},
+      {{ data: sl(DATA.sma200, 90), _dataKey: 'sma200', borderColor: '#f87171', borderWidth: 2.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA200' }},
+    ],
   }},
   options: {{
     ...CHART_OPTS('sma200'),
     plugins: {{
       ...CHART_OPTS('sma200').plugins,
-      annotation: {{ annotations: {{
-        ref80: {{ type: 'line', yMin: 80, yMax: 80, borderColor: 'rgba(255,85,119,0.5)', borderWidth: 1, borderDash: [4,3] }},
-        ref50: {{ type: 'line', yMin: 50, yMax: 50, borderColor: 'rgba(107,119,133,0.5)', borderWidth: 1, borderDash: [4,3] }},
-        ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
-        ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
-      }} }},
+      legend: {{ display: true, labels: {{ color: '#6b7785', boxWidth: 12, padding: 10 }} }},
+      annotation: {{ annotations: buildAnnotations('sma200', _range) }},
     }},
     scales: {{ ...CHART_OPTS('sma200').scales, y: {{ min: 0, max: 100, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => v + '%' }} }} }},
   }},
