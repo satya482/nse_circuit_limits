@@ -583,7 +583,7 @@ function drawHeatmap() {{
 
   // Color scale: net → red/neutral/green
   function netColor(net) {{
-    const MAX = 300;
+    const MAX = 150; // p90 net ~171 → clips to full intensity; median ~53 → ~35% visible
     const t = Math.max(-1, Math.min(1, net / MAX));
     if (t >= 0) {{
       // 0 → neutral, 1 → bull
@@ -614,7 +614,7 @@ function drawHeatmap() {{
     const x = LABEL_W + w * STEP;
     for (let d = 0; d < 7; d++) {{
       const y = 30 + d * STEP;
-      const iso = cur.toISOString().slice(0, 10);
+      const iso = cur.getFullYear() + '-' + String(cur.getMonth()+1).padStart(2,'0') + '-' + String(cur.getDate()).padStart(2,'0');
       const net = netMap[iso];
 
       if (net !== undefined) {{
