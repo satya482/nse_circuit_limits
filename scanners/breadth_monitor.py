@@ -708,7 +708,7 @@ def main() -> None:
     html = build_dashboard_html(history_df, nifty_df)
     DASHBOARD_PATH.parent.mkdir(parents=True, exist_ok=True)
     DASHBOARD_PATH.write_text(html, encoding="utf-8")
-    print(f"Dashboard → {DASHBOARD_PATH}")
+    print(f"Dashboard -> {DASHBOARD_PATH}")
 
 
 if __name__ == "__main__":
