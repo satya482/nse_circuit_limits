@@ -448,6 +448,14 @@ function buildAnnotations(type, n) {{
     }}
     return annotations;
   }}
+  if (type === 'sma200') {{
+    return {{
+      ref80: {{ type: 'line', yMin: 80, yMax: 80, borderColor: 'rgba(255,85,119,0.5)', borderWidth: 1, borderDash: [4,3] }},
+      ref50: {{ type: 'line', yMin: 50, yMax: 50, borderColor: 'rgba(107,119,133,0.5)', borderWidth: 1, borderDash: [4,3] }},
+      ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
+      ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
+    }};
+  }}
   return {{}};
 }}
 
