@@ -33,7 +33,7 @@ CAPITULATION_THRESHOLD = (
 HISTORY_PATH = REPO_DIR / "data" / "breadth_history.csv"
 UNIVERSE_PATH = REPO_DIR / "data" / "breadth_universe.csv"
 DASHBOARD_PATH = REPO_DIR / "dashboard" / "nse_breadth_monitor.html"
-NIFTY50_SYM = "NIFTY 50"
+NIFTY50_SYM = "NIFTY MIDSML 400"
 OHLC_LOOKBACK = 2500  # ~10yr trading bars
 
 _CSV_COLUMNS = [
@@ -338,7 +338,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
 <!-- Panel 2: Nifty 50 price + thrust/cap markers -->
 <div class="card">
-  <h2>NIFTY 50 (normalised) — ▲ Thrust / ▼ Capitulation crossings</h2>
+  <h2>NIFTY MIDSML 400 (normalised) — ▲ Thrust / ▼ Capitulation crossings</h2>
   <canvas id="c-nifty" height="160"></canvas>
 </div>
 
@@ -356,7 +356,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
 <!-- Panel 5: % above SMA200 -->
 <div class="card">
-  <h2>% Stocks Above SMA200</h2>
+  <h2>% Stocks Above SMA200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
   <canvas id="c-sma200" height="140"></canvas>
 </div>
 
@@ -531,7 +531,10 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
     plugins: {{
       ...CHART_OPTS('sma200').plugins,
       annotation: {{ annotations: {{
+        ref80: {{ type: 'line', yMin: 80, yMax: 80, borderColor: 'rgba(255,85,119,0.5)', borderWidth: 1, borderDash: [4,3] }},
         ref50: {{ type: 'line', yMin: 50, yMax: 50, borderColor: 'rgba(107,119,133,0.5)', borderWidth: 1, borderDash: [4,3] }},
+        ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
+        ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
       }} }},
     }},
     scales: {{ ...CHART_OPTS('sma200').scales, y: {{ min: 0, max: 100, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => v + '%' }} }} }},
