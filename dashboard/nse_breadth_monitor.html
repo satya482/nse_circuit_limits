@@ -37,7 +37,7 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
 </head>
 <body>
 <h1>NSE Breadth Monitor</h1>
-<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-27 19:59 IST</p>
+<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-27 20:16 IST</p>
 
 <!-- Panel 1: Stat strip -->
 <div class="stats">
@@ -232,7 +232,7 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {
       { data: sl(DATA.r10, 90), _dataKey: 'r10', borderColor: '#ffb454', borderWidth: 1.5, borderDash: [5,3], pointRadius: 0, fill: false, spanGaps: true, label: 'Ratio 10D' },
     ],
   },
-  options: { ...CHART_OPTS('ratio'), scales: { ...CHART_OPTS('ratio').scales, y: { min: 0, max: 4, grid: { color: '#1a222d' }, ticks: { color: '#6b7785' } } } },
+  options: { ...CHART_OPTS('ratio'), scales: { ...CHART_OPTS('ratio').scales, y: { min: 0, suggestedMax: 4, grid: { color: '#1a222d' }, ticks: { color: '#6b7785' } } } },
 });
 chartRatio._type = 'ratio';
 

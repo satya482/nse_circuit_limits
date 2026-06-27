@@ -511,7 +511,7 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {{
       {{ data: sl(DATA.r10, 90), _dataKey: 'r10', borderColor: '#ffb454', borderWidth: 1.5, borderDash: [5,3], pointRadius: 0, fill: false, spanGaps: true, label: 'Ratio 10D' }},
     ],
   }},
-  options: {{ ...CHART_OPTS('ratio'), scales: {{ ...CHART_OPTS('ratio').scales, y: {{ min: 0, max: 4, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785' }} }} }} }},
+  options: {{ ...CHART_OPTS('ratio'), scales: {{ ...CHART_OPTS('ratio').scales, y: {{ min: 0, suggestedMax: 4, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785' }} }} }} }},
 }});
 chartRatio._type = 'ratio';
 
