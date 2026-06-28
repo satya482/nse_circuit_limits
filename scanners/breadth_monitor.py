@@ -364,28 +364,28 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <button onclick="setRange(0)"   id="btn-all">All</button>
 </div>
 
-<!-- Panel 2: Nifty 50 price + thrust/cap markers -->
+<!-- Panel 2: % above SMA10/20/50/200 -->
+<div class="card">
+  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
+  <canvas id="c-sma200" height="200"></canvas>
+</div>
+
+<!-- Panel 3: Nifty price + thrust/cap markers -->
 <div class="card">
   <h2>NIFTY MIDSML 400 (normalised) — ▲ Thrust / ▼ Capitulation crossings</h2>
   <canvas id="c-nifty" height="160"></canvas>
 </div>
 
-<!-- Panel 3: Mirrored thrust bars -->
+<!-- Panel 4: Mirrored thrust bars -->
 <div class="card">
   <h2>Daily 4% Movers — Up (green) vs Down (red)</h2>
-  <canvas id="c-bars" height="160"></canvas>
+  <canvas id="c-bars" height="220"></canvas>
 </div>
 
-<!-- Panel 4: Ratio oscillator -->
+<!-- Panel 5: Ratio oscillator -->
 <div class="card">
   <h2>Ratio Oscillator — 5D (solid) · 10D (dashed) | Thrust ≥1.6 · Cap ≤0.6</h2>
-  <canvas id="c-ratio" height="160"></canvas>
-</div>
-
-<!-- Panel 5: % above SMA200 -->
-<div class="card">
-  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
-  <canvas id="c-sma200" height="140"></canvas>
+  <canvas id="c-ratio" height="220"></canvas>
 </div>
 
 <!-- Panel 6: Calendar heatmap -->
@@ -445,7 +445,7 @@ function fyLines(dates) {{
       result['fy' + yr] = {{
         type: 'line', xMin: d, xMax: d,
         borderColor: 'rgba(255,184,0,0.35)', borderWidth: 1, borderDash: [3, 3],
-        label: {{ content: 'FY' + String(Number(yr)+1).slice(-2), display: true, position: 'start', color: 'rgba(255,184,0,0.6)', font: {{ size: 9 }} }},
+        label: {{ content: 'FY' + String(Number(yr)+1).slice(-2), display: true, position: 'end', color: 'rgba(255,184,0,0.6)', font: {{ size: 9 }} }},
       }};
     }}
   }});
