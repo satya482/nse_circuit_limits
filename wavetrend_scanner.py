@@ -196,29 +196,98 @@ class WaveTrendCalculator:
 
     # ── WaveTrend calculation ────────────────────────────────────────────────
 
-    def _calc_wavetrend(self, df: pd.DataFrame) -> pd.DataFrame:
+    def _calc_wavetrend(
+        self,
+        df: pd.DataFrame,
+        input_series: pd.Series | None = None,
+        _n1: int | None = None,
+        _n2: int | None = None,
+    ) -> pd.DataFrame:
         """
         Adds wt1, wt2, wt_diff to df.
         Exact Pine Script formula:
-            ap  = hlc3
+            ap  = hlc3  (or input_series if provided)
             esa = EMA(ap, n1)
             d   = EMA(|ap - esa|, n1)
             ci  = (ap - esa) / (0.015 * d)
             tci = EMA(ci, n2)
             wt1 = tci
             wt2 = SMA(wt1, 4)
+
+        Parameters
+        ----------
+        df           : DataFrame with OHLCV columns (or minimal stub for index).
+        input_series : Optional pd.Series to use as the 'ap' (action price) input
+                       instead of hlc3. NaN values propagate through EMA.
+                       If None, computes ap = (high + low + close) / 3 from df.
+        _n1          : Internal override for channel length (uses self.n1 if None).
+        _n2          : Internal override for average length (uses self.n2 if None).
         """
         df = df.copy()
-        ap = (df["high"] + df["low"] + df["close"]) / 3
-        esa = self._ema(ap, self.n1)
-        d = self._ema((ap - esa).abs(), self.n1)
+        n1 = _n1 if _n1 is not None else self.n1
+        n2 = _n2 if _n2 is not None else self.n2
+        if input_series is not None:
+            ap = input_series
+        else:
+            ap = (df["high"] + df["low"] + df["close"]) / 3
+        esa = self._ema(ap, n1)
+        d = self._ema((ap - esa).abs(), n1)
         ci = (ap - esa) / (0.015 * d)
-        tci = self._ema(ci, self.n2)
+        tci = self._ema(ci, n2)
 
         df["wt1"] = tci
         df["wt2"] = self._sma(df["wt1"], 4)
         df["wt_diff"] = df["wt1"] - df["wt2"]
         return df
+
+    def calc_from_series(
+        self,
+        series: pd.Series,
+        n1: int | None = None,
+        n2: int | None = None,
+    ) -> pd.DataFrame:
+        """
+        Compute WaveTrend on an arbitrary pd.Series (e.g. net breadth thrust).
+
+        Parameters
+        ----------
+        series : pd.Series
+            Input time series. NaN values propagate through EMA (not zero-filled).
+        n1 : int, optional — override channel length (default: self.n1)
+        n2 : int, optional — override average length (default: self.n2)
+
+        Returns
+        -------
+        pd.DataFrame, same index as series. Columns:
+            wt1        : WaveTrend line 1
+            wt2        : WaveTrend line 2 (SMA-4 of wt1)
+            wt_diff    : wt1 - wt2
+            cross_type : str — "BULL_CROSS" / "BEAR_CROSS" / "NONE" per bar
+        """
+        # Build a minimal stub DataFrame with the same index; _calc_wavetrend
+        # will use input_series directly as 'ap' so only the index matters.
+        stub = pd.DataFrame(index=series.index)
+        result_df = self._calc_wavetrend(stub, input_series=series, _n1=n1, _n2=n2)
+
+        wt1 = result_df["wt1"]
+        wt2 = result_df["wt2"]
+
+        bull = self._crossover(wt1, wt2)
+        bear = self._crossunder(wt1, wt2)
+
+        cross_type = pd.Series("NONE", index=series.index)
+        cross_type[bull] = "BULL_CROSS"
+        cross_type[bear] = "BEAR_CROSS"
+
+        return pd.DataFrame(
+            {
+                "wt1": wt1,
+                "wt2": wt2,
+                "wt_diff": result_df["wt_diff"],
+                "cross_type": cross_type,
+            },
+            index=series.index,
+        )
 
     # ── Cross signals (full history) ─────────────────────────────────────────
 
