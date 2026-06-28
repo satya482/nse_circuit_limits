@@ -51,6 +51,7 @@ _CSV_COLUMNS = [
     "pct_above_sma50",
     "pct_above_sma200",
     "composite_score",
+    "net_thrust",  # (up4 - dn4) / total_eligible; None when total_eligible < 2000
 ]
 
 
@@ -187,6 +188,16 @@ def compute_daily_breadth(
     def _pct(above: int, elig: int) -> float | None:
         return round(above / elig * 100, 2) if elig > 0 else None
 
+    net_thrust_val = None
+    if total_eligible >= 2000:
+        net_thrust_val = round((up4_today - dn4_today) / total_eligible, 6)
+    else:
+        print(
+            f"WARNING: net_thrust skipped for {as_of_str} — "
+            f"total_eligible={total_eligible} below threshold (2000)",
+            flush=True,
+        )
+
     return {
         "date": as_of_str,
         "universe_tag": UNIVERSE_TAG,
@@ -202,6 +213,7 @@ def compute_daily_breadth(
         "pct_above_sma50": _pct(above_sma50, elig_sma50),
         "pct_above_sma200": _pct(above_sma200, elig_sma200),
         "composite_score": None,  # v1.1: backtest normalization bounds before enabling
+        "net_thrust": net_thrust_val,
     }
 
 
@@ -888,6 +900,40 @@ window.addEventListener('resize', drawHeatmap);
 </html>"""
 
 
+def backfill_net_thrust(history_path: Path) -> None:
+    """Backfill net_thrust column for all historical rows."""
+    df = pd.read_csv(history_path)
+    if "net_thrust" not in df.columns:
+        df["net_thrust"] = None
+
+    mask_missing = df["net_thrust"].isna()
+    rows_updated = 0
+    for idx in df[mask_missing].index:
+        total_elig = df.at[idx, "total_eligible"]
+        up4 = df.at[idx, "up4_count"]
+        dn4 = df.at[idx, "down4_count"]
+        try:
+            total_elig = int(total_elig)
+            up4 = int(up4)
+            dn4 = int(dn4)
+        except (ValueError, TypeError):
+            continue
+        if total_elig >= 2000:
+            df.at[idx, "net_thrust"] = round((up4 - dn4) / total_elig, 6)
+            rows_updated += 1
+        else:
+            # Rows with total_eligible < 2000 (early history ~2016 or bad data) stay NaN
+            pass
+
+    # Ensure columns in correct order
+    for col in _CSV_COLUMNS:
+        if col not in df.columns:
+            df[col] = None
+    df = df[_CSV_COLUMNS]
+    df.to_csv(history_path, index=False)
+    print(f"backfill_net_thrust: updated {rows_updated} rows in {history_path}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="NSE Breadth Monitor")
     parser.add_argument(
@@ -896,7 +942,16 @@ def main() -> None:
         help="Iterate all trading dates in SQLite and compute breadth for each. "
         "Use for one-time historical backfill. Idempotent.",
     )
+    parser.add_argument(
+        "--backfill-net-thrust",
+        action="store_true",
+        help="Backfill net_thrust column in breadth_history.csv and exit",
+    )
     args = parser.parse_args()
+
+    if args.backfill_net_thrust:
+        backfill_net_thrust(HISTORY_PATH)
+        sys.exit(0)
 
     if not UNIVERSE_PATH.exists():
         print(
