@@ -62,7 +62,7 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
 </head>
 <body>
 <h1>NSE Breadth Monitor</h1>
-<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-28 11:20 IST</p>
+<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-28 11:37 IST</p>
 
 <!-- Panel 1: Stat strip -->
 <div class="stats">
@@ -91,6 +91,8 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
     <button id="btn-step-1" class="step-btn"    onclick="toggleStepDs(1)">SMA20</button>
     <button id="btn-step-2" class="step-btn"    onclick="toggleStepDs(2)">SMA50</button>
     <button id="btn-step-3" class="step-btn"    onclick="toggleStepDs(3)">SMA200</button>
+    <span style="font-size:0.7rem;color:#6b7785;margin-left:8px;">|</span>
+    <button id="btn-cross" class="step-btn" onclick="toggleCross()">SMA10/20 Cross</button>
   </div>
   <canvas id="c-sma200" height="200"></canvas>
 </div>
@@ -137,6 +139,7 @@ const CAPITU = 0.6;
 
 // --- shared x-axis range ---
 let _range = 90;
+let _showCross = false;
 function sl(arr, n) { return n > 0 ? arr.slice(-n) : [...arr]; }
 
 function setRange(n) {
@@ -261,6 +264,20 @@ function buildAnnotations(type, n) {
         annot['c'+i] = { type: 'point', xValue: dates[i], yValue: np[i] ?? 0,
           yScaleID: 'y2', pointStyle: 'triangle', rotation: 180, radius: 7,
           backgroundColor: '#ff5577', borderColor: '#ff5577' };
+      }
+    }
+    if (_showCross) {
+      const s10 = sl(DATA.sma10, n);
+      const s20 = sl(DATA.sma20, n);
+      for (let i = 1; i < s10.length; i++) {
+        if (s10[i] == null || s20[i] == null || s10[i-1] == null || s20[i-1] == null) continue;
+        if (s10[i] > s20[i] && s10[i-1] <= s20[i-1]) {
+          annot['xo'+i] = { type: 'point', xValue: dates[i], yValue: (s10[i]+s20[i])/2,
+            pointStyle: 'circle', radius: 4, backgroundColor: '#1fd980', borderColor: '#1fd980', borderWidth: 1.5 };
+        } else if (s10[i] < s20[i] && s10[i-1] >= s20[i-1]) {
+          annot['xu'+i] = { type: 'point', xValue: dates[i], yValue: (s10[i]+s20[i])/2,
+            pointStyle: 'circle', radius: 4, backgroundColor: '#ff5577', borderColor: '#ff5577', borderWidth: 1.5 };
+        }
       }
     }
     return annot;
@@ -393,6 +410,12 @@ function toggleStepDs(idx) {
   chartSma200.data.datasets[idx].stepped = _steppedDs[idx] ? 'before' : false;
   chartSma200.update('none');
   document.getElementById('btn-step-' + idx).classList.toggle('on', _steppedDs[idx]);
+}
+function toggleCross() {
+  _showCross = !_showCross;
+  document.getElementById('btn-cross').classList.toggle('on', _showCross);
+  chartSma200.options.plugins.annotation.annotations = buildAnnotations('sma200', _range);
+  chartSma200.update('none');
 }
 
 // Panel 6: Calendar heatmap (custom canvas — net = up4 - dn4)
