@@ -31,6 +31,7 @@ IST = timezone(timedelta(hours=5, minutes=30))
 BASE = os.path.dirname(os.path.abspath(__file__))
 
 WT_MD = os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md")
+TREND_MD = os.path.join(BASE, "trend_scans", "trend_scan_latest.md")
 OUTPUT_HTML = os.path.join(BASE, "wt_squeeze_dashboard.html")
 
 _LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
@@ -151,6 +152,40 @@ def parse_wt_rows(content: str) -> list[dict]:
     return rows
 
 
+def parse_trend_symbols(content: str) -> dict[str, str]:
+    """Return {symbol: signal_tag} for every row in trend_scan_latest.md.
+
+    signal_tag is one of: LEADER_ZL, ZL_PULLBACK, EMA_SUPPORT, TREND (fallback).
+    """
+    result: dict[str, str] = {}
+    in_table = False
+    has_trap = False
+    for line in content.splitlines():
+        ls = line.strip()
+        if "| Symbol" in ls and "| Signal" in ls and "| Score" in ls:
+            in_table = True
+            has_trap = "| Trap |" in ls
+            continue
+        if in_table and ls.startswith("|---"):
+            continue
+        if in_table and ls.startswith("|"):
+            parts = [p.strip() for p in ls.split("|") if p.strip()]
+            o = 1 if has_trap else 0
+            if len(parts) < 4 + o:
+                continue
+            sym = _strip_md_link(parts[0])
+            if not sym or sym == "Symbol":
+                continue
+            sig_raw = parts[2 + o]
+            tag = "TREND"
+            for t in ("LEADER_ZL", "ZL_PULLBACK", "EMA_SUPPORT", "ZL_ENTRY"):
+                if t in sig_raw:
+                    tag = t
+                    break
+            result[sym] = tag
+    return result
+
+
 # ── HTML helpers ──────────────────────────────────────────────────────────────
 
 
@@ -214,13 +249,26 @@ def _flags_html(flags: str) -> str:
     return "·".join(parts) if parts else '<span class="mu">—</span>'
 
 
-def _wt_html_row(r: dict) -> str:
+_TREND_TAG_LABEL = {
+    "LEADER_ZL": "🏆 LEADER ZL",
+    "ZL_PULLBACK": "ZL PULL",
+    "EMA_SUPPORT": "EMA SUP",
+    "ZL_ENTRY": "ZL ENTRY",
+    "TREND": "TREND",
+}
+
+
+def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
     sym = r["symbol"]
     zl_cls = "pos" if r["zl_dir"] == "↑" else "neg"
     cavgc_cls = "pos" if r["cavgc"].startswith("↑") else "mu"
+    trend_badge = ""
+    if trend_info and sym in trend_info:
+        lbl = _TREND_TAG_LABEL.get(trend_info[sym], trend_info[sym])
+        trend_badge = f'<span class="trend-tag">{lbl}</span>'
     return (
         f"<tr>"
-        f'<td class="sym">{_tv_link(sym)}</td>'
+        f'<td class="sym">{_tv_link(sym)}{trend_badge}</td>'
         f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
         f'<td class="lbl">{_desc_from_label(r["label"])}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
@@ -306,6 +354,8 @@ tr:hover td{background:var(--bg3)}
   font-size:10px;padding:3px 9px;border-radius:4px;cursor:pointer;text-transform:none;letter-spacing:0;font-weight:600}
 .copy-btn:hover{background:var(--bd);border-color:var(--blu)}
 .copy-btn.copied{background:var(--grn);border-color:var(--grn);color:#0d1117}
+.trend-tag{display:inline-block;font-size:8px;background:#14532d;color:#86efac;
+  padding:1px 5px;border-radius:3px;font-weight:700;letter-spacing:.4px;margin-top:2px;white-space:nowrap}
 """
 
 
@@ -316,14 +366,40 @@ _TABLE_HDR = """    <thead><tr>
     </tr></thead>"""
 
 
-def build_html(today: str, now_str: str, wt_rows: list) -> str:
+def build_html(today: str, now_str: str, wt_rows: list, trend_info: "dict | None" = None) -> str:
+    trend_info = trend_info or {}
     sqz_rows = [r for r in wt_rows if r["squeeze"]]
     other_rows = [r for r in wt_rows if not r["squeeze"]]
-    wt_html = [_wt_html_row(r) for r in other_rows]
-    sqz_html = [_wt_html_row(r) for r in sqz_rows]
+    # Trend × WT confluence — all WT rows also in trend scanner, rank desc
+    conf_rows = [r for r in wt_rows if r["symbol"] in trend_info]
+    wt_html = [_wt_html_row(r, trend_info) for r in other_rows]
+    sqz_html = [_wt_html_row(r, trend_info) for r in sqz_rows]
     n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
     n_ppv = sum(1 for r in wt_rows if r["ppv"])
     n_sqz = len(sqz_rows)
+    n_conf = len(conf_rows)
+
+    conf_html = [_wt_html_row(r, trend_info) for r in conf_rows]
+    conf_section = ""
+    if conf_rows:
+        conf_section = f"""
+<div class="section" style="border:1px solid #16a34a;border-radius:6px;padding:12px;background:#071a0f">
+  <div class="stitle" style="color:#4ade80;border-color:#16a34a">
+    🏆 TREND × WT BULLCROSS — Stage-2 leader in pullback + WT signal firing now
+    <span class="cnt" style="color:#4ade80">({n_conf} stocks)</span>
+    {_copy_btn(conf_rows)}
+  </div>
+  <p style="font-size:11px;color:#86efac;margin-bottom:8px;opacity:.85">
+    These stocks passed the trend scanner (Stage-2 leader, RS ≥60, ZLEMA25 rising, near key support)
+    AND have a WT bull cross today. Highest-rank WT signals first.
+    🏆 LEADER ZL = ZLEMA25 touch + RS holds + vol dry-up (best setup).
+  </p>
+  <table>
+{_TABLE_HDR}
+    <tbody>{"".join(conf_html)}</tbody>
+  </table>
+</div>
+"""
 
     sqz_section = ""
     if sqz_rows:
@@ -367,12 +443,14 @@ def build_html(today: str, now_str: str, wt_rows: list) -> str:
 </div>
 
 <div class="bar">
-  <div class="stat"><div class="sv gld">{n_sqz}</div><div class="sl">🎯 Squeeze Breakout</div></div>
+  <div class="stat"><div class="sv grn">{n_conf}</div><div class="sl">🏆 Trend×WT</div></div>
+  <div class="stat"><div class="sv gld">{n_sqz}</div><div class="sl">🎯 Squeeze Break</div></div>
   <div class="stat"><div class="sv ora">{len(wt_rows)}</div><div class="sl">WT Bull Cross</div></div>
   <div class="stat"><div class="sv grn">{n_os_plus}</div><div class="sl">Oversold+ (rank≥3)</div></div>
   <div class="stat"><div class="sv pur">{n_ppv}</div><div class="sl">PPV confirmed</div></div>
 </div>
 
+{conf_section}
 {sqz_section}
 <div class="section">
   <div class="stitle">
@@ -419,7 +497,11 @@ def main():
     wt_rows = parse_wt_rows(read_file(WT_MD))
     print(f"  WT bull crosses : {len(wt_rows)}")
 
-    html = build_html(today, now_str, wt_rows)
+    trend_info = parse_trend_symbols(read_file(TREND_MD))
+    conf_count = sum(1 for r in wt_rows if r["symbol"] in trend_info)
+    print(f"  Trend leaders   : {len(trend_info)}  |  Trend×WT confluence: {conf_count}")
+
+    html = build_html(today, now_str, wt_rows, trend_info)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  Written → {OUTPUT_HTML}")
