@@ -37,7 +37,7 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
 </head>
 <body>
 <h1>NSE Breadth Monitor</h1>
-<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-28 06:41 IST</p>
+<p class="meta">Universe: NSE broad EQ (~2396 stocks) · Regime/timing layer · Generated: 2026-06-28 06:46 IST</p>
 
 <!-- Panel 1: Stat strip -->
 <div class="stats">
@@ -59,7 +59,9 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
 
 <!-- Panel 2: % above SMA10/20/50/200 -->
 <div class="card">
-  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
+  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%
+    <button id="btn-step" onclick="toggleStep()" style="margin-left:12px;font-size:11px;padding:2px 8px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">Step</button>
+  </h2>
   <canvas id="c-sma200" height="200"></canvas>
 </div>
 
@@ -292,6 +294,17 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {
   },
 });
 chartSma200._type = 'sma200';
+
+let _stepped = false;
+function toggleStep() {
+  _stepped = !_stepped;
+  chartSma200.data.datasets.forEach(ds => { ds.stepped = _stepped ? 'before' : false; });
+  chartSma200.update('none');
+  const btn = document.getElementById('btn-step');
+  btn.style.background = _stepped ? '#1fd98022' : '#1c2530';
+  btn.style.color      = _stepped ? '#1fd980'   : '#6b7785';
+  btn.style.borderColor = _stepped ? '#1fd980'  : '#2a3545';
+}
 
 // Panel 6: Calendar heatmap (custom canvas — net = up4 - dn4)
 function drawHeatmap() {
