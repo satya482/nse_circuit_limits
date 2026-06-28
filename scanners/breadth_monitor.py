@@ -456,7 +456,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
     <span style="font-size:0.7rem;color:#6b7785;margin-left:8px;">|</span>
     <button id="btn-cross" class="step-btn" onclick="toggleCross()">SMA10/20 Cross</button>
   </div>
-  <canvas id="c-sma200" height="200"></canvas>
+  <canvas id="c-sma200" height="320"></canvas>
 </div>
 
 <!-- Panel 3: Ratio oscillator -->
