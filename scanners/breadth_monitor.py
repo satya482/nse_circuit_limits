@@ -270,19 +270,14 @@ def build_dashboard_html(
     sma50_js = _to_js(history_df["pct_above_sma50"])
     sma200_js = _to_js(history_df["pct_above_sma200"])
 
-    # Nifty 50 price — normalized 0-100 for overlay
-    nifty_js = "[]"
+    # Nifty actual close prices — for dual-axis overlay on SMA breadth panel
+    nifty_price_js = "[]"
     if nifty_df is not None and not nifty_df.empty:
         date_col = pd.to_datetime(nifty_df["date"])
         nifty_dates = date_col.dt.strftime("%Y-%m-%d").tolist()
         nifty_close = nifty_df["close"].astype(float).tolist()
-        mn, mx = min(nifty_close), max(nifty_close)
-        rng = mx - mn if mx != mn else 1.0
-        nifty_map = {
-            d: round((c - mn) / rng * 100, 2) for d, c in zip(nifty_dates, nifty_close)
-        }
-        nifty_vals = [nifty_map.get(d) for d in dates]
-        nifty_js = __import__("json").dumps(nifty_vals)
+        nifty_map = {d: round(c, 2) for d, c in zip(nifty_dates, nifty_close)}
+        nifty_price_js = __import__("json").dumps([nifty_map.get(d) for d in dates])
 
     generated = datetime.now(IST).strftime("%Y-%m-%d %H:%M IST")
     n_stocks = int(history_df["total_eligible"].max()) if not history_df.empty else 0
@@ -449,9 +444,9 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <button onclick="setRange(0)"   id="btn-all">All</button>
 </div>
 
-<!-- Panel 2: % above SMA10/20/50/200 -->
+<!-- Panel 2: % above SMA10/20/50/200 + Nifty overlay -->
 <div class="card">
-  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
+  <h2>% Stocks Above SMA10/20/50/200 + NIFTY MIDSML 400 (right axis) | Peak ≥80% · Bottom ≤20%</h2>
   <div class="step-controls">
     <span style="font-size:0.7rem;color:#6b7785;">Step line:</span>
     <button id="btn-step-0" class="step-btn on" onclick="toggleStepDs(0)">SMA10</button>
@@ -462,13 +457,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <canvas id="c-sma200" height="200"></canvas>
 </div>
 
-<!-- Panel 3: Nifty price + regime bands -->
-<div class="card">
-  <h2>NIFTY MIDSML 400 — Green band: Thrust regime · Red band: Capitulation regime</h2>
-  <canvas id="c-nifty" height="160"></canvas>
-</div>
-
-<!-- Panel 4: Ratio oscillator -->
+<!-- Panel 3: Ratio oscillator -->
 <div class="card">
   <h2>Ratio Oscillator — 5D (solid) · 10D (dashed) | Thrust ≥1.6 · Cap ≤0.6</h2>
   <canvas id="c-ratio" height="220"></canvas>
@@ -500,7 +489,7 @@ const DATA = {{
   sma20:  {sma20_js},
   sma50:  {sma50_js},
   sma200: {sma200_js},
-  nifty:  {nifty_js},
+  niftyPrice: {nifty_price_js},
   thrustBands: {thrust_bands_js},
   capBands:    {cap_bands_js},
 }};
@@ -516,7 +505,7 @@ function setRange(n) {{
   _range = n;
   ['90','180','252','504','all'].forEach(k => document.getElementById('btn-' + k)?.classList.remove('active'));
   document.getElementById(n === 0 ? 'btn-all' : 'btn-' + n)?.classList.add('active');
-  [chartNifty, chartBars, chartRatio, chartSma200].forEach(ch => {{
+  [chartBars, chartRatio, chartSma200].forEach(ch => {{
     ch.data.labels = sl(DATA.dates, n);
     ch.data.datasets.forEach((ds, i) => {{
       const key = ds._dataKey;
@@ -602,13 +591,37 @@ function buildAnnotations(type, n) {{
     return annotations;
   }}
   if (type === 'sma200') {{
-    return {{
+    const r5    = sl(DATA.r5, n);
+    const np    = sl(DATA.niftyPrice, n);
+    const annot = {{
       ...fy,
       ref80: {{ type: 'line', yMin: 80, yMax: 80, borderColor: 'rgba(255,85,119,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref50: {{ type: 'line', yMin: 50, yMax: 50, borderColor: 'rgba(107,119,133,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
     }};
+    DATA.thrustBands.forEach((b, i) => {{
+      annot['tb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+        yMin: 0, yMax: 100, backgroundColor: 'rgba(31,217,128,0.07)', borderWidth: 0 }};
+    }});
+    DATA.capBands.forEach((b, i) => {{
+      annot['cb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+        yMin: 0, yMax: 100, backgroundColor: 'rgba(255,85,119,0.07)', borderWidth: 0 }};
+    }});
+    for (let i = 1; i < r5.length; i++) {{
+      if (r5[i] == null || r5[i-1] == null) continue;
+      if (r5[i] >= THRUST && r5[i-1] < THRUST) {{
+        annot['t'+i] = {{ type: 'point', xValue: dates[i], yValue: np[i] ?? 0,
+          yScaleID: 'y2', pointStyle: 'triangle', radius: 7,
+          backgroundColor: '#1fd980', borderColor: '#1fd980' }};
+      }}
+      if (r5[i] <= CAPITU && r5[i-1] > CAPITU) {{
+        annot['c'+i] = {{ type: 'point', xValue: dates[i], yValue: np[i] ?? 0,
+          yScaleID: 'y2', pointStyle: 'triangle', rotation: 180, radius: 7,
+          backgroundColor: '#ff5577', borderColor: '#ff5577' }};
+      }}
+    }}
+    return annot;
   }}
   if (type === 'bars') {{
     return {{
@@ -638,21 +651,6 @@ const CHART_OPTS = (type) => ({{
     y: {{ grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785' }} }},
   }},
 }});
-
-// Panel 2: Nifty price
-const chartNifty = new Chart(document.getElementById('c-nifty'), {{
-  type: 'line',
-  data: {{
-    labels: sl(DATA.dates, 90),
-    datasets: [{{
-      data: sl(DATA.nifty, 90), _dataKey: 'nifty',
-      borderColor: '#4dd9e8', borderWidth: 1.5, pointRadius: 0,
-      fill: false, spanGaps: true,
-    }}],
-  }},
-  options: {{ ...CHART_OPTS('nifty'), scales: {{ ...CHART_OPTS('nifty').scales, y: {{ min: 0, max: 100, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => v + '%' }} }} }} }},
-}});
-chartNifty._type = 'nifty';
 
 // Panel 3: Mirrored bars
 const chartBars = new Chart(document.getElementById('c-bars'), {{
@@ -686,16 +684,17 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {{
 }});
 chartRatio._type = 'ratio';
 
-// Panel 5: % above SMA200
+// Panel 2: % above SMA + Nifty dual-axis
 const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
   type: 'line',
   data: {{
     labels: sl(DATA.dates, 90),
     datasets: [
-      {{ data: sl(DATA.sma10,  90), _dataKey: 'sma10',  borderColor: '#60a5fa', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA10',  stepped: 'before' }},
-      {{ data: sl(DATA.sma20,  90), _dataKey: 'sma20',  borderColor: '#fb923c', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA20',  hidden: true }},
-      {{ data: sl(DATA.sma50,  90), _dataKey: 'sma50',  borderColor: '#34d399', borderWidth: 2.0, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA50',  hidden: true }},
-      {{ data: sl(DATA.sma200, 90), _dataKey: 'sma200', borderColor: '#f87171', borderWidth: 2.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA200' }},
+      {{ data: sl(DATA.sma10,       90), _dataKey: 'sma10',      yAxisID: 'y',  borderColor: '#60a5fa', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA10',         stepped: 'before' }},
+      {{ data: sl(DATA.sma20,       90), _dataKey: 'sma20',      yAxisID: 'y',  borderColor: '#fb923c', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA20',         hidden: true }},
+      {{ data: sl(DATA.sma50,       90), _dataKey: 'sma50',      yAxisID: 'y',  borderColor: '#34d399', borderWidth: 2.0, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA50',         hidden: true }},
+      {{ data: sl(DATA.sma200,      90), _dataKey: 'sma200',     yAxisID: 'y',  borderColor: '#f87171', borderWidth: 2.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA200' }},
+      {{ data: sl(DATA.niftyPrice,  90), _dataKey: 'niftyPrice', yAxisID: 'y2', borderColor: 'rgba(255,255,255,0.35)', borderWidth: 1, pointRadius: 0, fill: false, spanGaps: true, label: 'Nifty MidSmall 400' }},
     ],
   }},
   options: {{
@@ -705,7 +704,11 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
       legend: {{ display: true, labels: {{ color: '#6b7785', boxWidth: 12, padding: 10 }} }},
       annotation: {{ annotations: buildAnnotations('sma200', _range) }},
     }},
-    scales: {{ ...CHART_OPTS('sma200').scales, y: {{ min: 0, max: 100, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => v + '%' }} }} }},
+    scales: {{
+      ...CHART_OPTS('sma200').scales,
+      y:  {{ min: 0, max: 100, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => v + '%' }} }},
+      y2: {{ position: 'right', grid: {{ drawOnChartArea: false }}, ticks: {{ color: 'rgba(255,255,255,0.25)', callback: v => v >= 1000 ? (v/1000).toFixed(0) + 'k' : v }} }},
+    }},
   }},
 }});
 chartSma200._type = 'sma200';
