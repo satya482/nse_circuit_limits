@@ -287,6 +287,41 @@ def build_dashboard_html(
     generated = datetime.now(IST).strftime("%Y-%m-%d %H:%M IST")
     n_stocks = int(history_df["total_eligible"].max()) if not history_df.empty else 0
 
+    # Regime bands: consecutive thrust / cap runs for Nifty panel background
+    import json as _json
+
+    thrust_bands: list[list[str]] = []
+    cap_bands: list[list[str]] = []
+    r5_series = history_df["ratio_5d"].tolist()
+    date_series = history_df["date"].tolist()
+    i = 0
+    while i < len(r5_series):
+        v = r5_series[i]
+        if pd.notna(v) and v >= THRUST_THRESHOLD:
+            j = i
+            while (
+                j < len(r5_series)
+                and pd.notna(r5_series[j])
+                and r5_series[j] >= THRUST_THRESHOLD
+            ):
+                j += 1
+            thrust_bands.append([date_series[i], date_series[j - 1]])
+            i = j
+        elif pd.notna(v) and v <= CAPITULATION_THRESHOLD:
+            j = i
+            while (
+                j < len(r5_series)
+                and pd.notna(r5_series[j])
+                and r5_series[j] <= CAPITULATION_THRESHOLD
+            ):
+                j += 1
+            cap_bands.append([date_series[i], date_series[j - 1]])
+            i = j
+        else:
+            i += 1
+    thrust_bands_js = _json.dumps(thrust_bands)
+    cap_bands_js = _json.dumps(cap_bands)
+
     # Latest stats for stat strip
     if not history_df.empty:
         last = history_df.iloc[-1]
@@ -302,8 +337,33 @@ def build_dashboard_html(
             if pd.notna(last.get("pct_above_sma200"))
             else "—"
         )
+        # Current regime state + consecutive days
+        last_r5 = last.get("ratio_5d")
+        if pd.notna(last_r5) and last_r5 >= THRUST_THRESHOLD:
+            _rd = 0
+            for k in range(len(r5_series) - 1, -1, -1):
+                if pd.notna(r5_series[k]) and r5_series[k] >= THRUST_THRESHOLD:
+                    _rd += 1
+                else:
+                    break
+            stat_regime = f"THRUST ▲ {_rd}d"
+            regime_css = "bull"
+        elif pd.notna(last_r5) and last_r5 <= CAPITULATION_THRESHOLD:
+            _rd = 0
+            for k in range(len(r5_series) - 1, -1, -1):
+                if pd.notna(r5_series[k]) and r5_series[k] <= CAPITULATION_THRESHOLD:
+                    _rd += 1
+                else:
+                    break
+            stat_regime = f"CAP ▼ {_rd}d"
+            regime_css = "bear"
+        else:
+            stat_regime = "NEUTRAL"
+            regime_css = "muted"
     else:
         stat_r5 = stat_up4 = stat_dn4 = stat_sma = "—"
+        stat_regime = "—"
+        regime_css = "muted"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -348,7 +408,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
 <!-- Panel 1: Stat strip -->
 <div class="stats">
-  <div class="stat"><div class="stat-label">Composite Score</div><div class="stat-val muted">— v1.1</div></div>
+  <div class="stat"><div class="stat-label">Market Regime</div><div class="stat-val {regime_css}" id="s-regime">{stat_regime}</div></div>
   <div class="stat"><div class="stat-label">Ratio 5D</div><div class="stat-val cyan" id="s-r5">{stat_r5}</div></div>
   <div class="stat"><div class="stat-label">Up 4% Today</div><div class="stat-val bull" id="s-up4">{stat_up4}</div></div>
   <div class="stat"><div class="stat-label">Down 4% Today</div><div class="stat-val bear" id="s-dn4">{stat_dn4}</div></div>
@@ -376,9 +436,9 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <canvas id="c-sma200" height="200"></canvas>
 </div>
 
-<!-- Panel 3: Nifty price + thrust/cap markers -->
+<!-- Panel 3: Nifty price + regime bands -->
 <div class="card">
-  <h2>NIFTY MIDSML 400 (normalised) — ▲ Thrust / ▼ Capitulation crossings</h2>
+  <h2>NIFTY MIDSML 400 — Green band: Thrust regime · Red band: Capitulation regime</h2>
   <canvas id="c-nifty" height="160"></canvas>
 </div>
 
@@ -415,6 +475,8 @@ const DATA = {{
   sma50:  {sma50_js},
   sma200: {sma200_js},
   nifty:  {nifty_js},
+  thrustBands: {thrust_bands_js},
+  capBands:    {cap_bands_js},
 }};
 
 const THRUST = {THRUST_THRESHOLD};
@@ -486,6 +548,14 @@ function buildAnnotations(type, n) {{
     const r5    = sl(DATA.r5, n);
     const nifty = sl(DATA.nifty, n);
     const annotations = {{ ...fy }};
+    DATA.thrustBands.forEach((b, i) => {{
+      annotations['tb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+        yMin: 0, yMax: 100, backgroundColor: 'rgba(31,217,128,0.12)', borderWidth: 0 }};
+    }});
+    DATA.capBands.forEach((b, i) => {{
+      annotations['cb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+        yMin: 0, yMax: 100, backgroundColor: 'rgba(255,85,119,0.12)', borderWidth: 0 }};
+    }});
     for (let i = 1; i < r5.length; i++) {{
       if (r5[i] == null || r5[i-1] == null) continue;
       if (r5[i] >= THRUST && r5[i-1] < THRUST) {{
