@@ -786,14 +786,21 @@ _allCharts.forEach(function(ch) {{
       const om = other.getDatasetMeta(0);
       if (!om || !om.data.length) return;
       const idx = Math.min(nearestIdx, om.data.length - 1);
-      other._cX = om.data[idx] ? om.data[idx].x : undefined;
+      const pixX = om.data[idx] ? om.data[idx].x : undefined;
+      other._cX = pixX;
       other._cHover = (other === ch);
       other._cY = (other === ch) ? cy : undefined;
+      const activeEls = other.data.datasets.map(function(_, dsIdx) {{ return {{ datasetIndex: dsIdx, index: idx }}; }});
+      other.tooltip.setActiveElements(activeEls, {{ x: pixX || 0, y: cy }});
       other.draw();
     }});
   }});
   ch.canvas.addEventListener('mouseleave', function() {{
-    _allCharts.forEach(function(other) {{ delete other._cX; delete other._cY; delete other._cHover; other.draw(); }});
+    _allCharts.forEach(function(other) {{
+      delete other._cX; delete other._cY; delete other._cHover;
+      other.tooltip.setActiveElements([], {{ x: 0, y: 0 }});
+      other.draw();
+    }});
   }});
 }});
 
