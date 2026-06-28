@@ -260,6 +260,17 @@ def backfill_breadth(kite, con: sqlite3.Connection) -> None:
         zip(breadth_df["symbol"], breadth_df["instrument_token"].astype(int))
     )
 
+    # Benchmark indices need the same 10yr depth (dashboard price panel + RS)
+    bench_rows = con.execute(
+        "SELECT tradingsymbol, instrument_token FROM instruments"
+        " WHERE tradingsymbol IN (?,?)",
+        [BENCHMARK_SYM, NIFTY50_SYM],
+    ).fetchall()
+    for sym, tok in bench_rows:
+        if sym not in tokens:
+            symbols.append(sym)
+            tokens[sym] = int(tok)
+
     today = datetime.now(IST).date()
     target_from = today - timedelta(days=BREADTH_LOOKBACK_DAYS)
 

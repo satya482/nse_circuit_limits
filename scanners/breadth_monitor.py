@@ -367,7 +367,11 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 <!-- Panel 2: % above SMA10/20/50/200 -->
 <div class="card">
   <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%
-    <button id="btn-step" onclick="toggleStep()" style="margin-left:12px;font-size:11px;padding:2px 8px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">Step</button>
+    <span style="margin-left:12px;font-size:11px;color:#6b7785;">Step:</span>
+    <button id="btn-step-0" onclick="toggleStepDs(0)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1fd98022;color:#1fd980;border:1px solid #1fd980;border-radius:4px;cursor:pointer;">SMA10</button>
+    <button id="btn-step-1" onclick="toggleStepDs(1)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA20</button>
+    <button id="btn-step-2" onclick="toggleStepDs(2)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA50</button>
+    <button id="btn-step-3" onclick="toggleStepDs(3)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA200</button>
   </h2>
   <canvas id="c-sma200" height="200"></canvas>
 </div>
@@ -592,9 +596,9 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
   data: {{
     labels: sl(DATA.dates, 90),
     datasets: [
-      {{ data: sl(DATA.sma10,  90), _dataKey: 'sma10',  borderColor: '#60a5fa', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA10'  }},
-      {{ data: sl(DATA.sma20,  90), _dataKey: 'sma20',  borderColor: '#fb923c', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA20'  }},
-      {{ data: sl(DATA.sma50,  90), _dataKey: 'sma50',  borderColor: '#34d399', borderWidth: 2.0, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA50'  }},
+      {{ data: sl(DATA.sma10,  90), _dataKey: 'sma10',  borderColor: '#60a5fa', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA10',  stepped: 'before' }},
+      {{ data: sl(DATA.sma20,  90), _dataKey: 'sma20',  borderColor: '#fb923c', borderWidth: 1.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA20',  hidden: true }},
+      {{ data: sl(DATA.sma50,  90), _dataKey: 'sma50',  borderColor: '#34d399', borderWidth: 2.0, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA50',  hidden: true }},
       {{ data: sl(DATA.sma200, 90), _dataKey: 'sma200', borderColor: '#f87171', borderWidth: 2.5, pointRadius: 0, fill: false, spanGaps: true, label: '% > SMA200' }},
     ],
   }},
@@ -610,15 +614,16 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
 }});
 chartSma200._type = 'sma200';
 
-let _stepped = false;
-function toggleStep() {{
-  _stepped = !_stepped;
-  chartSma200.data.datasets.forEach(ds => {{ ds.stepped = _stepped ? 'before' : false; }});
+const _steppedDs = [true, false, false, false];
+function toggleStepDs(idx) {{
+  _steppedDs[idx] = !_steppedDs[idx];
+  chartSma200.data.datasets[idx].stepped = _steppedDs[idx] ? 'before' : false;
   chartSma200.update('none');
-  const btn = document.getElementById('btn-step');
-  btn.style.background = _stepped ? '#1fd98022' : '#1c2530';
-  btn.style.color      = _stepped ? '#1fd980'   : '#6b7785';
-  btn.style.borderColor = _stepped ? '#1fd980'  : '#2a3545';
+  const btn = document.getElementById('btn-step-' + idx);
+  const on = _steppedDs[idx];
+  btn.style.background  = on ? '#1fd98022' : '#1c2530';
+  btn.style.color       = on ? '#1fd980'   : '#6b7785';
+  btn.style.borderColor = on ? '#1fd980'   : '#2a3545';
 }}
 
 // Panel 6: Calendar heatmap (custom canvas — net = up4 - dn4)
