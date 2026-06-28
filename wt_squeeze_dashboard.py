@@ -155,34 +155,45 @@ def parse_wt_rows(content: str) -> list[dict]:
 def parse_trend_symbols(content: str) -> dict[str, str]:
     """Return {symbol: signal_tag} for every row in trend_scan_latest.md.
 
-    signal_tag is one of: LEADER_ZL, ZL_PULLBACK, EMA_SUPPORT, TREND (fallback).
+    signal_tag is one of: LEADER_ZL, ZL_PULLBACK, EMA_SUPPORT, ZL_ENTRY, TREND (fallback).
+    Tag is derived from the ### section heading, not the Signal cell (which uses
+    human-readable text and contains escaped pipes that break column-index parsing).
     """
+    _SEC_MAP = (
+        ("LEADER ZL", "LEADER_ZL"),
+        ("ZL PULLBACK", "ZL_PULLBACK"),
+        ("EMA SUPPORT", "EMA_SUPPORT"),
+        ("ZL ENTRY", "ZL_ENTRY"),
+    )
     result: dict[str, str] = {}
     in_table = False
-    has_trap = False
+    current_tag = "TREND"
     for line in content.splitlines():
         ls = line.strip()
+        if ls.startswith("###"):
+            in_table = False
+            current_tag = "TREND"
+            for key, tag in _SEC_MAP:
+                if key in ls:
+                    current_tag = tag
+                    break
+            continue
         if "| Symbol" in ls and "| Signal" in ls and "| Score" in ls:
             in_table = True
-            has_trap = "| Trap |" in ls
             continue
         if in_table and ls.startswith("|---"):
             continue
         if in_table and ls.startswith("|"):
-            parts = [p.strip() for p in ls.split("|") if p.strip()]
-            o = 1 if has_trap else 0
-            if len(parts) < 4 + o:
+            # Replace escaped pipes (\|) before splitting to avoid column shift
+            parts = [
+                p.strip() for p in ls.replace(r"\|", "\x00").split("|") if p.strip()
+            ]
+            if len(parts) < 2:
                 continue
             sym = _strip_md_link(parts[0])
             if not sym or sym == "Symbol":
                 continue
-            sig_raw = parts[2 + o]
-            tag = "TREND"
-            for t in ("LEADER_ZL", "ZL_PULLBACK", "EMA_SUPPORT", "ZL_ENTRY"):
-                if t in sig_raw:
-                    tag = t
-                    break
-            result[sym] = tag
+            result[sym] = current_tag
     return result
 
 
@@ -366,7 +377,9 @@ _TABLE_HDR = """    <thead><tr>
     </tr></thead>"""
 
 
-def build_html(today: str, now_str: str, wt_rows: list, trend_info: "dict | None" = None) -> str:
+def build_html(
+    today: str, now_str: str, wt_rows: list, trend_info: "dict | None" = None
+) -> str:
     trend_info = trend_info or {}
     sqz_rows = [r for r in wt_rows if r["squeeze"]]
     other_rows = [r for r in wt_rows if not r["squeeze"]]
@@ -499,7 +512,9 @@ def main():
 
     trend_info = parse_trend_symbols(read_file(TREND_MD))
     conf_count = sum(1 for r in wt_rows if r["symbol"] in trend_info)
-    print(f"  Trend leaders   : {len(trend_info)}  |  Trend×WT confluence: {conf_count}")
+    print(
+        f"  Trend leaders   : {len(trend_info)}  |  Trend×WT confluence: {conf_count}"
+    )
 
     html = build_html(today, now_str, wt_rows, trend_info)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
