@@ -461,7 +461,7 @@ function buildAnnotations(type, n) {{
     return {{
       ...fy,
       thrustZone: {{
-        type: 'box', yMin: THRUST, yMax: 4,
+        type: 'box', yMin: THRUST, yMax: 999,
         backgroundColor: 'rgba(31,217,128,0.08)', borderWidth: 0,
       }},
       capZone: {{
@@ -510,7 +510,15 @@ function buildAnnotations(type, n) {{
       ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
     }};
   }}
-  if (type === 'bars') {{ return {{ ...fy }}; }}
+  if (type === 'bars') {{
+    return {{
+      ...fy,
+      up150: {{ type: 'line', yMin: 150, yMax: 150, borderColor: 'rgba(31,217,128,0.4)', borderWidth: 1, borderDash: [4,3] }},
+      up200: {{ type: 'line', yMin: 200, yMax: 200, borderColor: 'rgba(31,217,128,0.7)', borderWidth: 1.5, borderDash: [3,2] }},
+      dn150: {{ type: 'line', yMin: -150, yMax: -150, borderColor: 'rgba(255,85,119,0.4)', borderWidth: 1, borderDash: [4,3] }},
+      dn200: {{ type: 'line', yMin: -200, yMax: -200, borderColor: 'rgba(255,85,119,0.7)', borderWidth: 1.5, borderDash: [3,2] }},
+    }};
+  }}
   return {{}};
 }}
 
@@ -574,7 +582,7 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {{
       {{ data: sl(DATA.r10, 90), _dataKey: 'r10', borderColor: '#ffb454', borderWidth: 1.5, borderDash: [5,3], pointRadius: 0, fill: false, spanGaps: true, label: 'Ratio 10D' }},
     ],
   }},
-  options: {{ ...CHART_OPTS('ratio'), scales: {{ ...CHART_OPTS('ratio').scales, y: {{ min: 0, suggestedMax: 4, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785' }} }} }} }},
+  options: {{ ...CHART_OPTS('ratio'), scales: {{ ...CHART_OPTS('ratio').scales, y: {{ min: 0, max: 8, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785' }} }} }} }},
 }});
 chartRatio._type = 'ratio';
 
