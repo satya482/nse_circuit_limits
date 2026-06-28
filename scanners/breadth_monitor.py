@@ -685,6 +685,28 @@ const CHART_OPTS = (type) => ({{
   }},
 }});
 
+// Crosshair plugin — global; all Chart.js panels get synced vertical + horizontal hair
+const crosshairPlugin = {{
+  id: 'crosshair',
+  afterDraw(chart) {{
+    if (chart._cX === undefined) return;
+    const ctx = chart.ctx;
+    const {{ top, bottom, left, right }} = chart.chartArea;
+    const cx = Math.max(left, Math.min(right, chart._cX));
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    ctx.beginPath(); ctx.moveTo(cx, top); ctx.lineTo(cx, bottom); ctx.stroke();
+    if (chart._cHover && chart._cY !== undefined) {{
+      const cy = Math.max(top, Math.min(bottom, chart._cY));
+      ctx.beginPath(); ctx.moveTo(left, cy); ctx.lineTo(right, cy); ctx.stroke();
+    }}
+    ctx.restore();
+  }},
+}};
+Chart.register(crosshairPlugin);
+
 // Panel 3: Mirrored bars
 const chartBars = new Chart(document.getElementById('c-bars'), {{
   type: 'bar',
@@ -717,26 +739,8 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {{
 }});
 chartRatio._type = 'ratio';
 
-// Crosshair plugin — vertical + horizontal hair on sma200 canvas
-const crosshairPlugin = {{
-  id: 'crosshair',
-  afterDraw(chart) {{
-    if (chart._cX === undefined || chart._cY === undefined) return;
-    const ctx = chart.ctx;
-    const {{ top, bottom, left, right }} = chart.chartArea;
-    ctx.save();
-    ctx.setLineDash([4, 4]);
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = 'rgba(255,255,255,0.35)';
-    ctx.beginPath(); ctx.moveTo(chart._cX, top);  ctx.lineTo(chart._cX, bottom); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(left, chart._cY); ctx.lineTo(right, chart._cY);  ctx.stroke();
-    ctx.restore();
-  }},
-}};
-
 // Panel 2: % above SMA + Nifty dual-axis
 const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
-  plugins: [crosshairPlugin],
   type: 'line',
   data: {{
     labels: sl(DATA.dates, 90),
@@ -763,20 +767,35 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
   }},
 }});
 chartSma200._type = 'sma200';
-(function() {{
-  const el = document.getElementById('c-sma200');
-  el.style.cursor = 'crosshair';
-  el.addEventListener('mousemove', function(e) {{
+
+// Synced crosshair — vertical line follows same date across all panels
+const _allCharts = [chartBars, chartRatio, chartSma200];
+_allCharts.forEach(function(ch) {{
+  ch.canvas.style.cursor = 'crosshair';
+  ch.canvas.addEventListener('mousemove', function(e) {{
     const r = this.getBoundingClientRect();
-    chartSma200._cX = e.clientX - r.left;
-    chartSma200._cY = e.clientY - r.top;
-    chartSma200.draw();
+    const cx = e.clientX - r.left;
+    const cy = e.clientY - r.top;
+    const ca = ch.chartArea;
+    if (cx < ca.left || cx > ca.right || cy < ca.top || cy > ca.bottom) return;
+    const meta = ch.getDatasetMeta(0);
+    if (!meta || !meta.data.length) return;
+    let nearestIdx = 0, minDist = Infinity;
+    meta.data.forEach(function(pt, i) {{ const d = Math.abs(pt.x - cx); if (d < minDist) {{ minDist = d; nearestIdx = i; }} }});
+    _allCharts.forEach(function(other) {{
+      const om = other.getDatasetMeta(0);
+      if (!om || !om.data.length) return;
+      const idx = Math.min(nearestIdx, om.data.length - 1);
+      other._cX = om.data[idx] ? om.data[idx].x : undefined;
+      other._cHover = (other === ch);
+      other._cY = (other === ch) ? cy : undefined;
+      other.draw();
+    }});
   }});
-  el.addEventListener('mouseleave', function() {{
-    delete chartSma200._cX; delete chartSma200._cY;
-    chartSma200.draw();
+  ch.canvas.addEventListener('mouseleave', function() {{
+    _allCharts.forEach(function(other) {{ delete other._cX; delete other._cY; delete other._cHover; other.draw(); }});
   }});
-}})();
+}});
 
 const _steppedDs = [true, false, false, false];
 function toggleStepDs(idx) {{
