@@ -674,6 +674,7 @@ const CHART_OPTS = (type) => ({{
   plugins: {{
     legend: {{ display: false }},
     tooltip: {{
+      position: 'fixedCorner',
       backgroundColor: '#10151d', titleColor: '#e8edf3',
       bodyColor: '#6b7785', borderColor: '#1c2530', borderWidth: 1,
     }},
@@ -706,6 +707,16 @@ const crosshairPlugin = {{
   }},
 }};
 Chart.register(crosshairPlugin);
+
+// Fixed-corner tooltip positioner — pins to top-left or top-right to avoid obscuring data
+Chart.Tooltip.positioners.fixedCorner = function(elements, eventPosition) {{
+  const ca = this.chart.chartArea;
+  const mid = (ca.left + ca.right) / 2;
+  if (eventPosition.x > mid) {{
+    return {{ x: ca.left + 8, y: ca.top + 8, xAlign: 'left', yAlign: 'top' }};
+  }}
+  return {{ x: ca.right - 8, y: ca.top + 8, xAlign: 'right', yAlign: 'top' }};
+}};
 
 // Panel 3: Mirrored bars
 const chartBars = new Chart(document.getElementById('c-bars'), {{
