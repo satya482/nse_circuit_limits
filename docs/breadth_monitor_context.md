@@ -4,7 +4,7 @@
 Regime/timing layer for NSE equity trading. NOT a stock-selection scanner.
 Answers: "Is the market environment supportive right now?"
 
-Live dashboard: https://satya482.github.io/nse_circuit_limits/dashboard/nse_breadth_monitor.html
+Live dashboard: https://satya482.github.io/nse_circuit_limits/dashboard/breadth.html
 
 ## Universe
 ~2400–2700 NSE common equity stocks (broad market, not just large-cap).
@@ -149,7 +149,7 @@ SMA10 drops sharply → ratio approaches 0.6 (near cap)
 scanners/breadth_monitor.py       # All logic: compute + dashboard HTML
 data/breadth_history.csv          # 10yr daily breadth rows (2016–present)
 data/breadth_universe.csv         # ~2400–2700 NSE symbols
-dashboard/nse_breadth_monitor.html # Static dashboard (GitHub Pages)
+dashboard/breadth.html # Static dashboard (GitHub Pages)
 scripts/refresh_breadth_universe.py # Weekly universe refresh
 ```
 

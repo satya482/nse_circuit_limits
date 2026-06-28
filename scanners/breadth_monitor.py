@@ -32,7 +32,7 @@ CAPITULATION_THRESHOLD = (
 )
 HISTORY_PATH = REPO_DIR / "data" / "breadth_history.csv"
 UNIVERSE_PATH = REPO_DIR / "data" / "breadth_universe.csv"
-DASHBOARD_PATH = REPO_DIR / "dashboard" / "nse_breadth_monitor.html"
+DASHBOARD_PATH = REPO_DIR / "dashboard" / "breadth.html"
 NIFTY50_SYM = "NIFTY MIDSML 400"
 OHLC_LOOKBACK = 2500  # ~10yr trading bars
 

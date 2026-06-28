@@ -128,7 +128,7 @@ All thresholds live in `settings.yaml`. Pipeline:
    - pct_above_sma200: plain SMA (circuit-gap distortion: known, deferred v1.1)
    - composite_score: always null (v1 — TODO: backtest weights before enabling)
 4. `update_breadth_history()` upsert → `data/breadth_history.csv` keyed (date, universe_tag)
-5. `build_dashboard_html()` → `dashboard/nse_breadth_monitor.html` (GitHub Pages)
+5. `build_dashboard_html()` → `dashboard/breadth.html` (GitHub Pages)
 
 ### Dashboard — WaveTrend + Squeeze (`wt_squeeze_dashboard.py`)
 
@@ -177,7 +177,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `dashboard.html` | `dashboard_generator.py` |
 | `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
-| `data/breadth_history.csv`, `dashboard/nse_breadth_monitor.html` | `scanners/breadth_monitor.py` |
+| `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 

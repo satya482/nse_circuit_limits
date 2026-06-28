@@ -24,7 +24,7 @@ try {
 }
 
 Log "--- Git commit+push ---"
-$gitResult = & git -C C:\Users\satya\nse_circuit_limits status --porcelain data/breadth_history.csv dashboard/nse_breadth_monitor.html 2>&1
+$gitResult = & git -C C:\Users\satya\nse_circuit_limits status --porcelain data/breadth_history.csv dashboard/breadth.html 2>&1
 if ($gitResult) {
     # Extract stats for commit message from latest CSV row
     $csv = Import-Csv "C:\Users\satya\nse_circuit_limits\data\breadth_history.csv"
@@ -34,7 +34,7 @@ if ($gitResult) {
     $r5    = [math]::Round([double]$last.ratio_5d, 2)
     $msg   = "[scan $date] breadth-monitor: ${up4}↑ ${dn4}↓ ratio5d=$r5"
 
-    & git -C C:\Users\satya\nse_circuit_limits add data/breadth_history.csv dashboard/nse_breadth_monitor.html 2>&1 |
+    & git -C C:\Users\satya\nse_circuit_limits add data/breadth_history.csv dashboard/breadth.html 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
     & git -C C:\Users\satya\nse_circuit_limits commit -m $msg 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
