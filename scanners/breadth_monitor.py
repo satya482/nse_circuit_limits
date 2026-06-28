@@ -392,14 +392,39 @@ canvas{{width:100%!important}}
 .bull{{color:#1fd980}}.bear{{color:#ff5577}}.cyan{{color:#4dd9e8}}.amber{{color:#ffb454}}.muted{{color:#6b7785}}
 
 /* Range controls */
-.controls{{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}}
+.controls{{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}}
 button{{background:#1c2530;color:#6b7785;border:1px solid #1c2530;border-radius:4px;
-        padding:4px 12px;cursor:pointer;font-size:0.75rem;font-family:'Space Grotesk',sans-serif;transition:all .15s}}
+        padding:6px 14px;min-height:36px;cursor:pointer;font-size:0.75rem;
+        font-family:'Space Grotesk',sans-serif;transition:all .15s;-webkit-tap-highlight-color:transparent}}
 button:hover{{background:#2a3545;color:#e8edf3}}
 button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
+/* Step-line controls row */
+.step-controls{{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:6px;margin-bottom:10px}}
+.step-btn{{font-size:0.72rem;padding:5px 10px;min-height:32px;border-radius:4px;cursor:pointer;
+           border:1px solid #2a3545;background:#1c2530;color:#6b7785;
+           font-family:'Space Grotesk',sans-serif;transition:all .15s;-webkit-tap-highlight-color:transparent}}
+.step-btn.on{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
+
 /* Calendar heatmap */
 #heatmap-canvas{{display:block}}
+
+/* ── Responsive ─────────────────────────────── */
+@media(max-width:1024px){{
+  body{{padding:12px}}
+  .card{{padding:12px}}
+  .stats{{gap:8px}}
+  .stat{{padding:10px 14px;min-width:110px}}
+  .stat-val{{font-size:1.25rem}}
+}}
+@media(max-width:600px){{
+  body{{padding:8px}}
+  .card{{padding:10px;margin-bottom:10px}}
+  .stat{{min-width:calc(50% - 4px);flex:none}}
+  .stat-val{{font-size:1.1rem}}
+  h1{{font-size:1rem}}
+  .card h2{{font-size:0.72rem}}
+}}
 </style>
 </head>
 <body>
@@ -426,13 +451,14 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
 
 <!-- Panel 2: % above SMA10/20/50/200 -->
 <div class="card">
-  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%
-    <span style="margin-left:12px;font-size:11px;color:#6b7785;">Step:</span>
-    <button id="btn-step-0" onclick="toggleStepDs(0)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1fd98022;color:#1fd980;border:1px solid #1fd980;border-radius:4px;cursor:pointer;">SMA10</button>
-    <button id="btn-step-1" onclick="toggleStepDs(1)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA20</button>
-    <button id="btn-step-2" onclick="toggleStepDs(2)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA50</button>
-    <button id="btn-step-3" onclick="toggleStepDs(3)" style="margin-left:4px;font-size:11px;padding:2px 7px;background:#1c2530;color:#6b7785;border:1px solid #2a3545;border-radius:4px;cursor:pointer;">SMA200</button>
-  </h2>
+  <h2>% Stocks Above SMA10/20/50/200 | Peak ≥80% · Bottom ≤20% · Extreme ≤15%</h2>
+  <div class="step-controls">
+    <span style="font-size:0.7rem;color:#6b7785;">Step line:</span>
+    <button id="btn-step-0" class="step-btn on" onclick="toggleStepDs(0)">SMA10</button>
+    <button id="btn-step-1" class="step-btn"    onclick="toggleStepDs(1)">SMA20</button>
+    <button id="btn-step-2" class="step-btn"    onclick="toggleStepDs(2)">SMA50</button>
+    <button id="btn-step-3" class="step-btn"    onclick="toggleStepDs(3)">SMA200</button>
+  </div>
   <canvas id="c-sma200" height="200"></canvas>
 </div>
 
@@ -689,11 +715,7 @@ function toggleStepDs(idx) {{
   _steppedDs[idx] = !_steppedDs[idx];
   chartSma200.data.datasets[idx].stepped = _steppedDs[idx] ? 'before' : false;
   chartSma200.update('none');
-  const btn = document.getElementById('btn-step-' + idx);
-  const on = _steppedDs[idx];
-  btn.style.background  = on ? '#1fd98022' : '#1c2530';
-  btn.style.color       = on ? '#1fd980'   : '#6b7785';
-  btn.style.borderColor = on ? '#1fd980'   : '#2a3545';
+  document.getElementById('btn-step-' + idx).classList.toggle('on', _steppedDs[idx]);
 }}
 
 // Panel 6: Calendar heatmap (custom canvas — net = up4 - dn4)
