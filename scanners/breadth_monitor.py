@@ -675,8 +675,9 @@ const CHART_OPTS = (type) => ({{
     legend: {{ display: false }},
     tooltip: {{
       position: 'fixedCorner',
-      backgroundColor: '#10151d', titleColor: '#e8edf3',
-      bodyColor: '#6b7785', borderColor: '#1c2530', borderWidth: 1,
+      backgroundColor: 'rgba(0,0,0,0)',
+      titleColor: '#ffffff', bodyColor: '#c8d4e0',
+      borderWidth: 0,
     }},
     annotation: {{ annotations: buildAnnotations(type, _range) }},
   }},
