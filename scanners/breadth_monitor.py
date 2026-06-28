@@ -468,16 +468,16 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <canvas id="c-nifty" height="160"></canvas>
 </div>
 
-<!-- Panel 4: Mirrored thrust bars -->
-<div class="card">
-  <h2>Daily 4% Movers — Up (green) vs Down (red)</h2>
-  <canvas id="c-bars" height="220"></canvas>
-</div>
-
-<!-- Panel 5: Ratio oscillator -->
+<!-- Panel 4: Ratio oscillator -->
 <div class="card">
   <h2>Ratio Oscillator — 5D (solid) · 10D (dashed) | Thrust ≥1.6 · Cap ≤0.6</h2>
   <canvas id="c-ratio" height="220"></canvas>
+</div>
+
+<!-- Panel 5: Mirrored thrust bars -->
+<div class="card">
+  <h2>Daily 4% Movers — Up (green) vs Down (red)</h2>
+  <canvas id="c-bars" height="220"></canvas>
 </div>
 
 <!-- Panel 6: Calendar heatmap -->
