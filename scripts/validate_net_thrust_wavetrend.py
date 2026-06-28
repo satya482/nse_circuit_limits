@@ -269,11 +269,15 @@ def print_verdict(
         print("       FAIL (insufficient data)")
     else:
         baseline_median = baseline_series.median()
-        c2 = median_lag < baseline_median
-        print(
-            f"  C2 - WT median lag ({median_lag:.1f}) vs SMA10 baseline ({baseline_median:.1f})"
+        c2 = (
+            median_lag is not None
+            and baseline_median is not None
+            and abs(median_lag) < abs(baseline_median)
         )
-        print(f"       {'PASS' if c2 else 'FAIL'} (WT must be shorter)")
+        print(
+            f"  C2 - |WT lag| ({abs(median_lag):.1f}) vs |SMA10 baseline| ({abs(baseline_median):.1f})"
+        )
+        print(f"       {'PASS' if c2 else 'FAIL'} (WT absolute lag must be shorter)")
 
     # Criterion 3: False-cross rate not materially worse than baseline
     print(
@@ -498,9 +502,16 @@ def main() -> None:
                 if len(window_vals) > 0 and window_vals.min() < tu_level:
                     baseline_false_count += 1
 
-    baseline_false_rate = (
-        baseline_false_count / baseline_total if baseline_total > 0 else 0.5
-    )
+    if baseline_total > 0:
+        baseline_false_rate = baseline_false_count / baseline_total
+    else:
+        baseline_false_rate = 0.5
+        print(
+            "  WARNING: No SMA10 turn-up events found in any chop window — "
+            "C3 baseline defaulting to 50% (arbitrary). "
+            "Check that chop window dates overlap with history.",
+            flush=True,
+        )
     print(
         f"  SMA10 baseline false-cross rate in chop: "
         f"{baseline_false_count}/{baseline_total} = {baseline_false_rate:.0%}"
@@ -592,10 +603,11 @@ def main() -> None:
     ]
     output = combined[output_cols].copy()
 
-    # Write CSV
+    # Write CSV — rename 'date' -> 'cross_date' per spec §7 column contract
+    output_df = output.rename(columns={"date": "cross_date"})
     out_path = REPO_DIR / "data" / "net_thrust_wt_validation.csv"
-    output.to_csv(out_path, index=False)
-    print(f"Wrote {len(output)} rows to {out_path}")
+    output_df.to_csv(out_path, index=False)
+    print(f"Wrote {len(output_df)} rows to {out_path}")
 
     # Summary stats
     print("\n--- Summary ---")

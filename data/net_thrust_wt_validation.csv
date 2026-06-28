@@ -1,4 +1,4 @@
-date,channel,cross_type,breadth_cross_tier,sma200_band,sma200_roc_10d,confirm_or_diverge,lag_to_sma10_uptick,lag_to_sma200_inflection,is_false_cross
+cross_date,channel,cross_type,breadth_cross_tier,sma200_band,sma200_roc_10d,confirm_or_diverge,lag_to_sma10_uptick,lag_to_sma200_inflection,is_false_cross
 2025-01-15,fast,BULL_CROSS,3.0,weakening,-17.370000000000005,DIVERGENT,0.0,13.0,
 2025-01-21,fast,BEAR_CROSS,,,,,,,
 2025-01-29,fast,BULL_CROSS,3.0,weakening,-8.649999999999999,DIVERGENT,0.0,-1.0,
