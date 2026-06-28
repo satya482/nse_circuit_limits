@@ -275,9 +275,12 @@ class WaveTrendCalculator:
         bull = self._crossover(wt1, wt2)
         bear = self._crossunder(wt1, wt2)
 
-        cross_type = pd.Series("NONE", index=series.index)
-        cross_type[bull] = "BULL_CROSS"
-        cross_type[bear] = "BEAR_CROSS"
+        # bull and bear cannot both be True on the same bar (NaN comparisons yield False in pandas)
+        cross_type = pd.Series(
+            np.where(bull, "BULL_CROSS", np.where(bear, "BEAR_CROSS", "NONE")),
+            index=series.index,
+            dtype=object,
+        )
 
         return pd.DataFrame(
             {
