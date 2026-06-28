@@ -600,12 +600,16 @@ function buildAnnotations(type, n) {{
       ref20: {{ type: 'line', yMin: 20, yMax: 20, borderColor: 'rgba(31,217,128,0.5)', borderWidth: 1, borderDash: [4,3] }},
       ref15: {{ type: 'line', yMin: 15, yMax: 15, borderColor: 'rgba(31,217,128,0.8)', borderWidth: 1.5, borderDash: [2,2] }},
     }};
+    const minD = dates[0] || '';
+    const maxD = dates[dates.length - 1] || '';
     DATA.thrustBands.forEach((b, i) => {{
-      annot['tb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+      if (b[1] < minD || b[0] > maxD) return;
+      annot['tb'+i] = {{ type: 'box', xMin: b[0] < minD ? minD : b[0], xMax: b[1] > maxD ? maxD : b[1],
         yMin: 0, yMax: 100, backgroundColor: 'rgba(31,217,128,0.07)', borderWidth: 0 }};
     }});
     DATA.capBands.forEach((b, i) => {{
-      annot['cb'+i] = {{ type: 'box', xMin: b[0], xMax: b[1],
+      if (b[1] < minD || b[0] > maxD) return;
+      annot['cb'+i] = {{ type: 'box', xMin: b[0] < minD ? minD : b[0], xMax: b[1] > maxD ? maxD : b[1],
         yMin: 0, yMax: 100, backgroundColor: 'rgba(255,85,119,0.07)', borderWidth: 0 }};
     }});
     for (let i = 1; i < r5.length; i++) {{
@@ -684,8 +688,26 @@ const chartRatio = new Chart(document.getElementById('c-ratio'), {{
 }});
 chartRatio._type = 'ratio';
 
+// Crosshair plugin — vertical + horizontal hair on sma200 canvas
+const crosshairPlugin = {{
+  id: 'crosshair',
+  afterDraw(chart) {{
+    if (chart._cX === undefined || chart._cY === undefined) return;
+    const ctx = chart.ctx;
+    const {{ top, bottom, left, right }} = chart.chartArea;
+    ctx.save();
+    ctx.setLineDash([4, 4]);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = 'rgba(255,255,255,0.35)';
+    ctx.beginPath(); ctx.moveTo(chart._cX, top);  ctx.lineTo(chart._cX, bottom); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(left, chart._cY); ctx.lineTo(right, chart._cY);  ctx.stroke();
+    ctx.restore();
+  }},
+}};
+
 // Panel 2: % above SMA + Nifty dual-axis
 const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
+  plugins: [crosshairPlugin],
   type: 'line',
   data: {{
     labels: sl(DATA.dates, 90),
@@ -712,6 +734,20 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
   }},
 }});
 chartSma200._type = 'sma200';
+(function() {{
+  const el = document.getElementById('c-sma200');
+  el.style.cursor = 'crosshair';
+  el.addEventListener('mousemove', function(e) {{
+    const r = this.getBoundingClientRect();
+    chartSma200._cX = e.clientX - r.left;
+    chartSma200._cY = e.clientY - r.top;
+    chartSma200.draw();
+  }});
+  el.addEventListener('mouseleave', function() {{
+    delete chartSma200._cX; delete chartSma200._cY;
+    chartSma200.draw();
+  }});
+}})();
 
 const _steppedDs = [true, false, false, false];
 function toggleStepDs(idx) {{
