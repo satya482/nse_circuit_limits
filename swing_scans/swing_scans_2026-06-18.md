@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-18
 *Generated 2026-06-18 19:11 IST*
 
@@ -76,3 +78,6 @@
 | [INDNIPPON](https://in.tradingview.com/chart/?symbol=NSE:INDNIPPON) | 4d | +5.9% | Two-wheeler ignition systems manufacturer for automotive sector | -0.57% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL) | 4d | +5.7% |  | -1.91% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SGIL](https://in.tradingview.com/chart/?symbol=NSE:SGIL) | 3d | +7.1% | Wind turbine and industrial castings manufacturer | +0.37% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

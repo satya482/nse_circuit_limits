@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-11
 *Generated 2026-05-11 15:42 IST*
 
@@ -164,3 +166,6 @@
 | [HARSHA](https://in.tradingview.com/chart/?symbol=NSE:HARSHA) | 410.85 | -3.58% | 2d | 469.00 | 393.65 | 19.14% | 20%  |
 | [APOLLOPIPE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOPIPE) | 487.70 | -1.87% | 2d | 540.15 | 446.00 | 21.11% | 20%  |
 | [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE) | 121.45 | -1.44% | 2d | 131.00 | 107.38 | 22.00% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

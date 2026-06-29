@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Trend Scanner — 2026-06-25
 *Generated 2026-06-25 20:59 IST*
 
@@ -67,3 +69,7 @@
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [SCI](https://in.tradingview.com/chart/?symbol=NSE:SCI) | ✓ SAFE | Shipping Corp Of India Lt<br>₹15K Cr \| →237Cr · 138Cr<br>Cargo shipping, tankers, offshore vessels, maritime logistics | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 42 | ↓72 | ↓0.997 | 90% | 59% ↑ | ✅8/8 | 0.90x | ↑9d | +5.0% | -3.50% | 20%  |
 | [RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK) | ✓ SAFE | Rbl Bank<br>₹23K Cr \| ↗245Cr · 191Cr<br>Private sector bank retail corporate lending treasury services | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 40 | ↓61 | ↓1.002 | 98% | 66% ↑ | ✅8/8 | 1.19x | ↑25d | +12.9% | -1.59% | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

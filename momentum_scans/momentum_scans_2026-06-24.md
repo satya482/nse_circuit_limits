@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-24
 *Generated 2026-06-24 17:58 IST*
 
@@ -50,3 +52,6 @@
 | [GUJTHEM](https://in.tradingview.com/chart/?symbol=NSE:GUJTHEM) | 2d | +4.6% | Fermentation-based APIs for pharmaceutical formulations | +0.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 3d | +11.3% |  | -0.26% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [KICL](https://in.tradingview.com/chart/?symbol=NSE:KICL) | 8d | +8.4% |  | -1.34% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

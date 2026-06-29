@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-10
 *Generated 2026-06-10 16:30 IST · 209 F&O stocks scanned*
 
@@ -149,3 +151,6 @@
 | [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE) | 1800.00 | -0.8% | 5d | -5.8% | -2.6% | - |
 | [UPL](https://in.tradingview.com/chart/?symbol=NSE:UPL) | 611.00 | -2.8% | 5d | -5.4% | -3.7% | - |
 | [NYKAA](https://in.tradingview.com/chart/?symbol=NSE:NYKAA) | 262.40 | -1.7% | 5d | -2.6% | -1.8% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

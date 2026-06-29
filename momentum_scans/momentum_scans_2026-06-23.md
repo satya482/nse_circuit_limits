@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-23
 *Generated 2026-06-23 15:40 IST*
 
@@ -38,3 +40,6 @@
 | [FAZE3Q](https://in.tradingview.com/chart/?symbol=NSE:FAZE3Q) <sub>Faze Three · ₹1K Cr · →2Cr ↓0.7×</sub> | 7d | +13.5% |  | -0.31% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [KODYTECH](https://in.tradingview.com/chart/?symbol=NSE:KODYTECH) <sub>↗2Cr ↑3.2×</sub> | 9d | +36.6% |  | +1.78% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) <sub>→0Cr ↑2.1×</sub> | 2d | +11.6% |  | +2.98% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

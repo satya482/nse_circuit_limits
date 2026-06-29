@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Breadth Monitor — Design Doc
 _Date: 2026-06-26_
 
@@ -270,3 +272,7 @@ Scheduled task: replace existing `NSE_BreadthScanner` schtask entry (same name, 
 - SMA200 gap-day correction
 - Cross-referencing breadth regime into EP/WaveTrend/compression scanner ranking
 - GitHub Actions automation (all local PS1)
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

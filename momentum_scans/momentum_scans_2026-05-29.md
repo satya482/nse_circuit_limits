@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-29
 *Generated 2026-05-29 15:40 IST*
 
@@ -34,3 +36,6 @@
 | [SWANDEF](https://in.tradingview.com/chart/?symbol=NSE:SWANDEF) | 17d | +14.0% |  | +5.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [KAPSTON](https://in.tradingview.com/chart/?symbol=NSE:KAPSTON) | 3d | +6.0% |  | +0.91% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND) | 3d | +4.1% |  | +0.01% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

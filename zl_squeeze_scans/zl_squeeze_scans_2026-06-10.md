@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-10
 *Generated 2026-06-10 15:41 IST*
 
@@ -140,3 +142,6 @@
 | [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS) | AC manufacturer, EPC contractor, cooling solutions India | 5d | 5d | +4.5% | 1290.00 | -1.10% | ✓ | ✓ | — | 20%  |
 | [NCLIND](https://in.tradingview.com/chart/?symbol=NSE:NCLIND) | Cement RMC building boards doors renewable energy manufacturer | 7d | 8d | +5.3% | 182.70 | -1.23% | ✓ | ✓ | — | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 5d | 14d | +10.0% | 132.98 | -4.93% | ✓ | ✓ | — | 10% 🟨 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Circuit Limit Dashboard
 
 _Last updated: 2026-06-18 19:18:36_
@@ -30,3 +32,7 @@ Changes in your TradingView watchlist:
 | 08-APR-2026 | [**AVANTIFEED**](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | AVANTI FEEDS LIMITED | 10% | 20% 🟦 Blue |
 | 08-APR-2026 | [**APEX**](https://in.tradingview.com/chart/?symbol=NSE:APEX) | APEX FROZEN FOODS LIMITED | 10% | 20% 🟦 Blue |
 | 08-APR-2026 | [**AIMTRON**](https://in.tradingview.com/chart/?symbol=NSE:AIMTRON) | AIMTRON ELECTRONICS LIMITED | 5% | 10% 🟩 Green |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

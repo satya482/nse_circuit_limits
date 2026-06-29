@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-26
 *Generated 2026-05-26 15:39 IST*
 
@@ -72,3 +74,6 @@
 | [SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND) | 1d | +4.9% |  | +1.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RML](https://in.tradingview.com/chart/?symbol=NSE:RML) | 33d | +35.1% | Automotive steering linkages and metal castings OEM supplier | -0.36% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [MENONBE](https://in.tradingview.com/chart/?symbol=NSE:MENONBE) | 20d | +25.7% |  | -0.33% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

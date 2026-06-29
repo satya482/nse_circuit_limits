@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-26
 *Generated 2026-05-26 15:40 IST*
 
@@ -53,3 +55,6 @@
 | [ESABINDIA](https://in.tradingview.com/chart/?symbol=NSE:ESABINDIA) | 4d | +6.7% | Welding equipment and cutting solutions for automotive railways infrastructure | +0.15% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [ASHIANA](https://in.tradingview.com/chart/?symbol=NSE:ASHIANA) | 36d | +25.7% | Senior living homes, mid-premium residential projects, niche segments | -0.70% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND) | 1d | +4.9% |  | +1.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

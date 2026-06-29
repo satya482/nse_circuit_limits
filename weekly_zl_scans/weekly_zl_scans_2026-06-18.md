@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-18
 *Generated 2026-06-18 19:17 IST*
 
@@ -252,3 +254,6 @@
 | [GUJALKALI](https://in.tradingview.com/chart/?symbol=NSE:GUJALKALI) | 1w | BELOW | 1w | +0.7% | -1.75% | 638.35 | — | 10% 🟨 |
 | [ANDHRSUGAR](https://in.tradingview.com/chart/?symbol=NSE:ANDHRSUGAR) | 1w | BELOW | 1w | +2.1% | +1.40% | 84.52 | — | 20%  |
 | [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST) | 1w | BELOW | 1w | +1.7% | +0.56% | 1095.00 | 24w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

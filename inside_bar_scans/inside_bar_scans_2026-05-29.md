@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-29
 *Generated 2026-05-29 15:42 IST*
 
@@ -256,3 +258,6 @@
 | [GRAUWEIL](https://in.tradingview.com/chart/?symbol=NSE:GRAUWEIL) | 70.00 | -3.05% | 2d | 81.00 | 67.80 | 19.47% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
 | [GUJTHEM](https://in.tradingview.com/chart/?symbol=NSE:GUJTHEM) | 404.30 | -6.46% | 2d | 441.20 | 366.00 | 20.55% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

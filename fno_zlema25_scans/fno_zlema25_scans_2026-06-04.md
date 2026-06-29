@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-04
 *Generated 2026-06-04 16:30 IST · 209 F&O stocks scanned*
 
@@ -156,3 +158,6 @@
 | [PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET) | 269.05 | -0.3% | 5d | -3.5% | -1.0% | - |
 | [360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE) | 1071.80 | -0.1% | 5d | -3.6% | -2.8% | ✓ |
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND) | 3642.80 | +2.0% | 5d | +0.2% | +2.8% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

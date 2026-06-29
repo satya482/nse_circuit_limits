@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-16
 *Generated 2026-06-16 15:47 IST*
 
@@ -39,3 +41,6 @@
 | [TENX](https://www.tradingview.com/chart/?symbol=TENX) | 11.48 | +6.99% | 2.6x | 1d | 0d | +7.0% | ✓ | — | — |
 | [STOK](https://www.tradingview.com/chart/?symbol=STOK) | 30.00 | +0.60% | 1.5x | 6d | 1d | +2.2% | ✓ | — | — |
 | [TSHA](https://www.tradingview.com/chart/?symbol=TSHA) | 5.97 | +4.55% | 2.5x | 3d | 1d | +7.0% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-13
 *Generated 2026-05-13 15:45 IST*
 
@@ -39,3 +41,6 @@
 | [NATL](https://www.tradingview.com/chart/?symbol=NATL) | 44.94 | +2.58% | 3.2x | 1d | 0d | +2.6% | ✓ | — | — |
 | [MBI](https://www.tradingview.com/chart/?symbol=MBI) | 6.18 | +1.31% | 3.0x | 3d | 1d | +8.2% | ✓ | — | — |
 | [ETOR](https://www.tradingview.com/chart/?symbol=ETOR) | 37.61 | -2.94% | 2.7x | 1d | 7d | +5.7% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

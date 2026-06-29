@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-13
 *Generated 2026-05-13 15:41 IST*
 
@@ -121,3 +123,6 @@
 | [EMBDL](https://in.tradingview.com/chart/?symbol=NSE:EMBDL) | 73.34 | +7.79% | 2d | 75.22 | 66.16 | 13.69% | 20%  |
 | [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL) | 883.40 | -0.27% | 2d | 999.00 | 842.50 | 18.58% | 20%  |
 | [MAPMYINDIA](https://in.tradingview.com/chart/?symbol=NSE:MAPMYINDIA) | 1025.75 | +1.72% | 2d | 1126.90 | 930.00 | 21.17% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-02
 *Generated 2026-06-02 15:39 IST*
 
@@ -45,3 +47,6 @@
 | [HBLENGINE](https://in.tradingview.com/chart/?symbol=NSE:HBLENGINE) | 5d | +5.8% | Batteries, power systems, e-mobility equipment for industrial applications | +0.57% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [MANORAMA](https://in.tradingview.com/chart/?symbol=NSE:MANORAMA) | 1d | +3.9% | Specialty fats, butters from tree seeds, chocolates cosmetics | +3.03% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 4d | +10.0% |  | +1.42% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

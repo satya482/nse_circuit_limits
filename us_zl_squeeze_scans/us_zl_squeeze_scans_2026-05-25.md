@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-25
 *Generated 2026-05-25 15:47 IST*
 
@@ -26,3 +28,6 @@
 | [PTON](https://www.tradingview.com/chart/?symbol=PTON) | 5.71 | +10.23% | 2.7x | 9d | 0d | +10.2% | ✓ | ✓ | — |
 | [IMRX](https://www.tradingview.com/chart/?symbol=IMRX) | 5.39 | +3.26% | 14.0x | 1d | 1d | +7.4% | ✓ | ✓ | — |
 | [ANIP](https://www.tradingview.com/chart/?symbol=ANIP) | 82.72 | -0.06% | 1.5x | 9d | 3d | +4.3% | ✓ | ✓ | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

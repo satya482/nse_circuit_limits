@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-25
 *Generated 2026-05-25 15:41 IST*
 
@@ -47,3 +49,6 @@
 | [WALCHANNAG](https://in.tradingview.com/chart/?symbol=NSE:WALCHANNAG) | 0d | +5.7% | Heavy engineering, defense ordnance, aerospace manufacturing India | +5.67% | 20%  |
 | [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | 0d | +5.3% |  | +5.35% | 20%  |
 | [KRISHNADEF](https://in.tradingview.com/chart/?symbol=NSE:KRISHNADEF) | 0d | +2.9% | Defense equipment manufacturing, dairy processing machinery | +2.94% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-12
 *Generated 2026-06-12 15:40 IST*
 
@@ -34,3 +36,6 @@
 | [MANINDS](https://in.tradingview.com/chart/?symbol=NSE:MANINDS) | 0d | +7.2% | Large-diameter steel welded pipes, oil-gas infrastructure exports | +7.25% | 20% 🟦 |
 | [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +6.2% | Fragrance and flavor chemicals manufacturer for cosmetics | +6.20% | 20%  |
 | [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES) | 0d | +3.9% | Engineering design services for automotive manufacturing OEMs | +3.94% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

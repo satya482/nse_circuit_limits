@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-03
 *Generated 2026-06-03 15:40 IST*
 
@@ -145,3 +147,6 @@
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | NBFC retail loans home gold MSME microfinance | 10d | 16d | +11.9% | 498.80 | +4.04% | ✓ | ✓ | — | 20%  |
 | [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | Cash management, ATM operations, banking infrastructure services | 4d | 17d | +3.8% | 304.65 | -0.42% | ✓ | ✓ | — | 20%  |
 | [NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO) | Cement and concrete manufacturer, east and north India | 2d | 21d | +11.2% | 328.65 | -2.22% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

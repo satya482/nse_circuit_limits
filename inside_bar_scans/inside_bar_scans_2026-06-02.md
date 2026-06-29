@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-02
 *Generated 2026-06-02 15:41 IST*
 
@@ -200,3 +202,6 @@
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
 | [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM) | 159.72 | +0.69% | 2d | 173.00 | 142.89 | 21.07% | 20%  |
 | [TAALTECH](https://in.tradingview.com/chart/?symbol=NSE:TAALTECH) | 3615.00 | +1.83% | 2d | 3949.90 | 3261.00 | 21.13% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

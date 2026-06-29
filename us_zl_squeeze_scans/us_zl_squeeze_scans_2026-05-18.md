@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-18
 *Generated 2026-05-18 15:45 IST*
 
@@ -33,3 +35,6 @@
 | [CZR](https://www.tradingview.com/chart/?symbol=CZR) | 27.80 | +2.36% | 1.7x | 14d | 0d | +2.4% | ✓ | — | — |
 | [IEP](https://www.tradingview.com/chart/?symbol=IEP) | 8.19 | +0.99% | 2.7x | 1d | 1d | +2.2% | ✓ | — | — |
 | [CXW](https://www.tradingview.com/chart/?symbol=CXW) | 20.74 | -2.40% | 1.6x | 14d | 2d | +5.8% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

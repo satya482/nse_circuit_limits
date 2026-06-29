@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-01
 *Generated 2026-06-01 15:41 IST*
 
@@ -135,3 +137,6 @@
 | [EFCIL](https://in.tradingview.com/chart/?symbol=NSE:EFCIL) | 179.35 | -1.40% | 2d | 195.00 | 175.01 | 11.42% | 20%  |
 | [TECHNVISN](https://in.tradingview.com/chart/?symbol=NSE:TECHNVISN) | 5450.00 | +0.55% | 2d | 5595.00 | 4938.00 | 13.30% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-17
 *Generated 2026-06-17 18:10 IST*
 
@@ -87,3 +89,6 @@
 | [PRIZOR](https://in.tradingview.com/chart/?symbol=NSE:PRIZOR) | 12d | +33.5% |  | -2.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [ADOR](https://in.tradingview.com/chart/?symbol=NSE:ADOR) | 3d | +5.8% |  | +0.44% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO) | 4d | +5.8% |  | -0.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

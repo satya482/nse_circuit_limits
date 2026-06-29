@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-01
 *Generated 2026-06-01 15:40 IST*
 
@@ -122,3 +124,6 @@
 | [ASTRAZEN](https://in.tradingview.com/chart/?symbol=NSE:ASTRAZEN) | Oncology, respiratory, cardiovascular medicines manufacturer and distributor | 2d | 12d | +4.5% | 8729.00 | +1.13% | ✓ | ✓ | — | 20%  |
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | NBFC retail loans home gold MSME microfinance | 8d | 14d | +5.0% | 467.80 | +0.19% | ✓ | ✓ | — | 20%  |
 | [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | Cash management, ATM operations, banking infrastructure services | 2d | 15d | +3.7% | 304.40 | -0.03% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

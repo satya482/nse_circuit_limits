@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-22
 *Generated 2026-06-22 15:44 IST*
 
@@ -182,3 +184,7 @@
 | [DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT) <sub>Deepak Fertilizers & Petr · ₹20K Cr</sub> | ✓ SAFE | Fertilisers, bulk chemicals, mining chemicals, crop nutrition | 📈 BULL_ANY_MID | 0 | ↑84 | ↑1.046 | ↑29d | — | +30.1% | 64.91/63.78 | +2.51% | 20% |
 | [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA) <sub>Saregama India · ₹9K Cr</sub> | ✓ SAFE | Music label, podcasts, digital content, entertainment IP monetization | 📈 BULL_ANY_MID | 0 | ↑65 | ↑1.038 | ↑28d | — | +42.4% | 50.96/47.84 | +2.44% | 20% |
 | [UNIPARTS](https://in.tradingview.com/chart/?symbol=NSE:UNIPARTS) <sub>Uniparts India · ₹3K Cr</sub> | ✓ SAFE | Off-highway vehicle components for agriculture and construction | 📈 BULL_ANY_MID | 0 | ↑93 | ↑1.035 | ↑23d | — | +26.8% | 64.9/64.46 | +0.93% | 20% |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

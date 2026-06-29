@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-28
 *Generated 2026-05-28 15:42 IST*
 
@@ -438,3 +440,6 @@
 | [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO) | 1990.00 | +0.00% | 2d | 2238.70 | 1875.30 | 19.38% | 20%  |
 | [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON) | 1497.10 | +0.00% | 2d | 1558.60 | 1305.00 | 19.43% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

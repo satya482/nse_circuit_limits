@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-07
 *Generated 2026-05-07 16:47 IST*
 
@@ -57,3 +59,6 @@
 | [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.48% | 39d | +35.6% | 20%  |
 | [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.46% | 8d | +12.1% | 20%  |
 | [NRAIL](https://in.tradingview.com/chart/?symbol=NSE:NRAIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +1.22% | 20d | +25.9% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

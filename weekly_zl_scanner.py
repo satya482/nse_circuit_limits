@@ -26,6 +26,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc, get_names, liq_tag
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -339,7 +340,7 @@ def build_markdown(
     else:
         lines.append("*No uptrend start signals today.*")
 
-    return "\n".join(lines)
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
 def print_results(findings: list[dict]) -> None:

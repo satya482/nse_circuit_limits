@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-22
 *Generated 2026-06-22 16:30 IST · 209 F&O stocks scanned*
 
@@ -133,3 +135,6 @@
 | [VMM](https://in.tradingview.com/chart/?symbol=NSE:VMM) | 118.90 | +0.2% | 5d | -1.5% | -0.0% | ✓ |
 | [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE) | 1800.00 | -0.8% | 5d | -5.8% | -2.6% | - |
 | [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS) | 975.85 | +1.3% | 5d | -0.4% | -0.2% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-08
 *Generated 2026-06-08 15:40 IST*
 
@@ -31,3 +33,6 @@
 | [JNKINDIA](https://in.tradingview.com/chart/?symbol=NSE:JNKINDIA) | 3d | +15.8% | Heating equipment and waste gas recovery systems for oil refining | -0.70% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
 | [INDOBORAX](https://in.tradingview.com/chart/?symbol=NSE:INDOBORAX) | 27d | +50.5% | Boron lithium chemicals manufacturer industrial pharmaceutical sectors | +1.10% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [UNIPARTS](https://in.tradingview.com/chart/?symbol=NSE:UNIPARTS) | 12d | +17.9% | Off-highway vehicle components for agriculture and construction | -0.14% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

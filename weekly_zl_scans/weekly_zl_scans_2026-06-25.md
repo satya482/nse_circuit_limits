@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-25
 *Generated 2026-06-25 20:57 IST*
 
@@ -68,3 +70,6 @@
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) | Sundrop Brands<br>₹2K Cr \| ↗0.7Cr · 0.2Cr | 1w | ABOVE | 1w | +1.2% | +1.05% | 661.75 | 7w | 20%  |
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | The Ge Shpg.Ltd<br>₹21K Cr \| ↘100Cr · 137Cr<br>Bulk carrier tanker ships crude oil petroleum products | 1w | BELOW | 1w | +4.3% | +0.12% | 1499.00 | 2w | 20%  |
 | [LINCOLN](https://in.tradingview.com/chart/?symbol=NSE:LINCOLN) | Lincoln Pharma<br>₹1K Cr \| ↘5Cr · 21Cr<br>Pharmaceutical manufacturing and marketing therapeutic molecules globally | 1w | BELOW | 1w | +2.8% | +4.60% | 631.55 | 2w | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

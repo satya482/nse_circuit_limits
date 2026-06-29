@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-12
 *Generated 2026-06-12 15:42 IST*
 
@@ -153,3 +155,7 @@
 | [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) | Contract manufacturing pharma biotech development services | 📈 BULL_ZERO_CROSS | 1 | 8.94 | -1.98 | ↑ | 2d | +3.0% | ✓ | — | +1.11% | 788.70 | 20%  |
 | [JUSTDIAL](https://in.tradingview.com/chart/?symbol=NSE:JUSTDIAL) | Local search platform connecting Indian businesses and consumers | 📈 BULL_ZERO_CROSS | 1 | 8.96 | -5.35 | ↑ | 4d | +4.1% | ✓ | — | +1.57% | 538.20 | 20%  |
 | [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | Mobile cranes, forklifts, construction equipment manufacturer | 📈 BULL_ZERO_CROSS | 1 | 10.31 | -3.27 | ↑ | 2d | +6.1% | ✓ | ✓ | +4.38% | 931.05 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

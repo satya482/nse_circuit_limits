@@ -375,6 +375,7 @@ def main():
         // Initial sort
         sortCards();
     </script>
+{SEBI_HTML_FOOTER}
 </body>
 </html>"""
 

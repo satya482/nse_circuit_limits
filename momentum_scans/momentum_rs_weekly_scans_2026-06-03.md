@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-03
 *Generated 2026-06-03 15:39 IST*
 
@@ -44,3 +46,6 @@
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit |
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | 0d | +4.7% | Spirits manufacturer, IMFL exporter, Indian domestic and global markets | +4.68% | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

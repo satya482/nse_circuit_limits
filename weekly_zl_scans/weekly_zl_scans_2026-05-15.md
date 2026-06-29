@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-15
 *Generated 2026-05-15 15:41 IST*
 
@@ -36,3 +38,6 @@
 | [PRABHA](https://in.tradingview.com/chart/?symbol=NSE:PRABHA) | 1w | ABOVE | 1w | +5.9% | -5.32% | 169.16 | 5w | 20%  |
 | [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | 1w | ABOVE | 1w | +15.3% | +5.88% | 1444.30 | — | 20%  |
 | [DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK) | 1w | BELOW | 1w | +1.5% | +1.34% | 183.55 | 11w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

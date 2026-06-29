@@ -24,6 +24,7 @@ import json
 import os
 import sys
 import time
+from disclaimer import SEBI_HTML_FOOTER
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
@@ -686,6 +687,7 @@ def _build_html(cards: list[dict], date_str: str, gen_time: str) -> str:
 </div>
 
 <script>{_JS}</script>
+{SEBI_HTML_FOOTER}
 </body>
 </html>"""
 

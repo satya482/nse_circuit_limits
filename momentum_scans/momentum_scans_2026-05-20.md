@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-20
 *Generated 2026-05-20 15:40 IST*
 
@@ -42,3 +44,6 @@
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | 32d | +40.9% | Security guarding, facility management, cash logistics services | -2.29% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 36d | +115.4% |  | +2.61% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [ELGIEQUIP](https://in.tradingview.com/chart/?symbol=NSE:ELGIEQUIP) | 1d | +6.0% | Air compressors and automotive garage equipment manufacturer | +4.46% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

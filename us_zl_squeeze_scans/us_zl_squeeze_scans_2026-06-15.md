@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-15
 *Generated 2026-06-15 18:49 IST*
 
@@ -35,3 +37,6 @@
 | [HTFL](https://www.tradingview.com/chart/?symbol=HTFL) | 33.24 | +8.38% | 1.5x | 7d | 2d | +15.9% | ✓ | ✓ | — |
 | [VIA](https://www.tradingview.com/chart/?symbol=VIA) | 15.10 | +2.30% | 1.5x | 5d | 0d | +2.3% | ✓ | — | — |
 | [TENX](https://www.tradingview.com/chart/?symbol=TENX) | 11.48 | +6.99% | 2.6x | 1d | 0d | +7.0% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

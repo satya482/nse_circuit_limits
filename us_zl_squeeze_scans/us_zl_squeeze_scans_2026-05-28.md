@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-28
 *Generated 2026-05-28 15:46 IST*
 
@@ -32,3 +34,6 @@
 | [CWT](https://www.tradingview.com/chart/?symbol=CWT) | 44.06 | +1.29% | 1.6x | 1d | 2d | +2.0% | ✓ | — | — |
 | [APAM](https://www.tradingview.com/chart/?symbol=APAM) | 37.99 | +0.16% | 1.6x | 21d | 3d | +4.2% | ✓ | — | — |
 | [IMRX](https://www.tradingview.com/chart/?symbol=IMRX) | 5.34 | +1.23% | 1.6x | 3d | 3d | +6.3% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

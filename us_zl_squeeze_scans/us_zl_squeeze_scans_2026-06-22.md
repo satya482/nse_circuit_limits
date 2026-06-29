@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-22
 *Generated 2026-06-22 15:50 IST*
 
@@ -29,3 +31,6 @@
 | [MATW](https://www.tradingview.com/chart/?symbol=MATW) | 26.36 | +3.41% | 1.8x | 2d | 0d | +3.4% | ✓ | ✓ | — |
 | [USLM](https://www.tradingview.com/chart/?symbol=USLM) | 113.60 | +2.93% | 7.8x | 9d | 4d | +7.2% | ✓ | ✓ | — |
 | [FRME](https://www.tradingview.com/chart/?symbol=FRME) | 40.72 | +0.32% | 2.3x | 2d | 0d | +0.3% | — | ✓ | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

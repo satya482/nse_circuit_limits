@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-19
 *Generated 2026-05-19 15:46 IST*
 
@@ -38,3 +40,6 @@
 | [ABX](https://www.tradingview.com/chart/?symbol=ABX) | 9.38 | +3.19% | 1.6x | 7d | 0d | +3.2% | ✓ | — | — |
 | [AXS](https://www.tradingview.com/chart/?symbol=AXS) | 100.64 | +1.56% | 1.9x | 35d | 1d | +3.0% | ✓ | — | — |
 | [SLDE](https://www.tradingview.com/chart/?symbol=SLDE) | 18.98 | +0.96% | 1.8x | 13d | 2d | +4.3% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

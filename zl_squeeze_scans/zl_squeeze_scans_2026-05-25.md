@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-25
 *Generated 2026-05-25 15:42 IST*
 
@@ -168,3 +170,6 @@
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | NBFC retail loans home gold MSME microfinance | 3d | 9d | +8.1% | 481.90 | +4.15% | ✓ | ✓ | — | 20%  |
 | [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | Cash management, ATM operations, banking infrastructure services | 3d | 10d | +5.8% | 310.55 | +1.35% | ✓ | ✓ | — | 20%  |
 | [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS) | Hospital chains, diagnostics, multi-specialty acute care services | 4d | 32d | +20.1% | 970.35 | +1.04% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

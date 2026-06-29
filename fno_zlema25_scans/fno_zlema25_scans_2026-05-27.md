@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-05-27
 *Generated 2026-05-27 16:30 IST · 209 F&O stocks scanned*
 
@@ -154,3 +156,6 @@
 | [YESBANK](https://in.tradingview.com/chart/?symbol=NSE:YESBANK) | 22.76 | -0.3% | 5d | +3.5% | +1.3% | - |
 | [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE) | 1800.00 | -0.8% | 5d | -5.8% | -2.6% | - |
 | [JUBLFOOD](https://in.tradingview.com/chart/?symbol=NSE:JUBLFOOD) | 427.30 | -0.6% | 5d | -9.6% | -3.9% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

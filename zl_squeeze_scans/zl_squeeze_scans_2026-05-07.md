@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-07
 *Generated 2026-05-07 16:51 IST*
 
@@ -84,3 +86,6 @@
 | [BOROSCI](https://in.tradingview.com/chart/?symbol=NSE:BOROSCI) | 123.45 | +1.36% | 4d | 23d | +11.4% | ✓ | ✓ | — | 20%  |
 | [MONARCH](https://in.tradingview.com/chart/?symbol=NSE:MONARCH) | 314.05 | +1.22% | 2d | 23d | +18.1% | ✓ | ✓ | — | 20%  |
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL) | 820.80 | +0.43% | 1d | 23d | +13.2% | — | — | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

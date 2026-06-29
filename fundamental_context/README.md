@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Knowledge Graph
 
 A Neo4j-powered fundamental knowledge graph of ~962 NSE-listed stocks.
@@ -146,3 +148,7 @@ Weekly:
 - **AI**: Claude API (claude-sonnet-4-20250514) for concall extraction (Vikram Iyer persona)
 - **Dev**: VS Code + Claude Code extension
 - **Visualization**: Neo4j Bloom (built-in) + future React layer
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

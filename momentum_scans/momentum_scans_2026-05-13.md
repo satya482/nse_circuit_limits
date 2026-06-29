@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-13
 *Generated 2026-05-13 15:40 IST*
 
@@ -32,3 +34,6 @@
 | [E2E](https://in.tradingview.com/chart/?symbol=NSE:E2E) | 27d | +50.9% | GPU cloud infrastructure for AI model training deployment | -5.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [APCOTEXIND](https://in.tradingview.com/chart/?symbol=NSE:APCOTEXIND) | 27d | +37.3% | Synthetic rubber and latex for adhesives, coatings, textiles | -2.46% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 31d | +100.7% |  | +1.43% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

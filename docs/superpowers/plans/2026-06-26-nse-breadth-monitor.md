@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Breadth Monitor Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -1683,3 +1685,7 @@ git push
 - `build_dashboard_html(pd.DataFrame, pd.DataFrame | None)` — called with `pd.read_csv(HISTORY_PATH)` and `load_ohlc(NIFTY50_SYM, ...)` ✓
 - `_CSV_COLUMNS` used in both `update_breadth_history` and test (`test_columns_match_schema`) ✓
 - `ohlc_map` has `date` as `datetime64` — accessed via `.dt.strftime()` throughout ✓
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

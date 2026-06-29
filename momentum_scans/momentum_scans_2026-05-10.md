@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-10
 *Generated 2026-05-10 15:07 IST*
 
@@ -49,3 +51,6 @@
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN) | 3d | +11.6% | Rural auto tractor financing NBFC semi-urban retail | +3.24% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN) | 3d | +11.6% | Rural auto tractor financing NBFC semi-urban retail | +3.24% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [LUMAXIND](https://in.tradingview.com/chart/?symbol=NSE:LUMAXIND) | 2d | +14.5% | Automotive lighting systems manufacturer for cars trucks | +6.19% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

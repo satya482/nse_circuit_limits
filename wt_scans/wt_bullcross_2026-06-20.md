@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-20
 *Generated 2026-06-20 13:15 IST*
 
@@ -113,3 +115,7 @@
 | [CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO) | Heavy civil engineering construction EPC infrastructure projects | 📈 BULL_ANY_MID | 0 | ↑97 | ↑1.069 | ↑22d | — | +47.0% | 61.4/61.32 | +5.00% | 5% 🟥 |
 | [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL) | Casual dining restaurants, grilled cuisine, urban consumers | 📈 BULL_ANY_MID | 0 | ↑99 | ↑1.093 | ↑23d | — | +92.9% | 69.86/69.83 | +3.14% | 10% 🟨 |
 | [JAGRAN](https://in.tradingview.com/chart/?symbol=NSE:JAGRAN) | Hindi newspapers, magazines, radio, digital, outdoor advertising | 📈 BULL_ANY_MID | 0 | ↓35 | ↓1.004 | ↓27d | — | +0.6% | 3.38/2.87 | -0.02% | 20% |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-18
 *Generated 2026-06-18 19:16 IST*
 
@@ -177,3 +179,6 @@
 | [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD) | Gold casting jewellery manufacturing, 22-carat designs, retail market | 7d | 12d | +7.2% | 224.78 | +0.48% | — | ✓ | ✓ | 20%  |
 | [KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL) | Luxury watch components and retail distribution India | 3d | 22d | +33.5% | 2908.80 | +0.19% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 8d | 53d | +51.3% | 424.20 | -0.52% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-29
 *Generated 2026-05-29 15:43 IST*
 
@@ -120,3 +122,6 @@
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY) | 1w | BELOW | 1w | +1.1% | -1.61% | 452.35 | — | 20%  |
 | [VOLTAMP](https://in.tradingview.com/chart/?symbol=NSE:VOLTAMP) | 1w | BELOW | 1w | +4.0% | +1.87% | 9497.00 | — | 20%  |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | 1w | BELOW | 1w | +4.4% | +0.30% | 1098.00 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

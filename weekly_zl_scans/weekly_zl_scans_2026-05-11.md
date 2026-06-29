@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-11
 *Generated 2026-05-11 15:43 IST*
 
@@ -982,3 +984,6 @@
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | 1582.30 | -0.38% | — | 37w | +70.6% | 20%  |
 | [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN) | 95.00 | -1.20% | — | 37w | +189.1% | 20% 🟦 |
 | [NATIONALUM](https://in.tradingview.com/chart/?symbol=NSE:NATIONALUM) | 393.05 | -2.21% | — | 41w | +117.5% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

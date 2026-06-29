@@ -26,6 +26,9 @@ from data_loader import load_universe
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from ohlc_db import load_ohlc, load_ohlc_many, get_names, liq_tag
 
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+
 BASE_DIR = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
 _LABELS_FILE = BASE_DIR.parent / "tools" / "stock_labels.json"
@@ -82,7 +85,7 @@ def build_markdown(
     if not candidates:
         lines.append("_No stocks passed all gates today._")
         lines += ["", f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_"]
-        return "\n".join(lines)
+        return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
     hdr = "| # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |"
     sep = "|---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|"
@@ -158,7 +161,7 @@ def build_markdown(
         "",
         f"_Generated {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} IST_",
     ]
-    return "\n".join(lines)
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
 def run():

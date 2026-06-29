@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-15
 *Generated 2026-06-15 16:30 IST · 209 F&O stocks scanned*
 
@@ -160,3 +162,6 @@
 | [TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI) | 4064.90 | +1.4% | 5d | -5.5% | -3.0% | - |
 | [KFINTECH](https://in.tradingview.com/chart/?symbol=NSE:KFINTECH) | 826.70 | +2.6% | 5d | -4.8% | +0.5% | ✓ |
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND) | 3485.00 | +1.2% | 5d | -3.2% | -0.3% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

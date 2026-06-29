@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-17
 *Generated 2026-06-17 18:14 IST*
 
@@ -244,3 +246,6 @@
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL) | 830.95 | -2.04% | 2d | 931.25 | 796.40 | 16.93% | 20%  |
 | [ARROWGREEN](https://in.tradingview.com/chart/?symbol=NSE:ARROWGREEN) | 573.05 | -3.04% | 2d | 616.45 | 525.60 | 17.29% | 5%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

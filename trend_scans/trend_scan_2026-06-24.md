@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Trend Scanner — 2026-06-24
 *Generated 2026-06-24 17:58 IST*
 
@@ -72,3 +74,7 @@
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [WALCHANNAG](https://in.tradingview.com/chart/?symbol=NSE:WALCHANNAG) | ✓ SAFE | Heavy engineering, defense ordnance, aerospace manufacturing India | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 51 | ↓81 | ↓1.012 | 92% | 118% ↑ | ✅8/8 | 🔵0.63x | ↑9d | +18.1% | -2.43% | 20%  |
 | [RICOAUTO](https://in.tradingview.com/chart/?symbol=NSE:RICOAUTO) | ✓ SAFE | Aluminum ferrous auto components supplier two four wheelers | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 46 | ↓63 | ↓1.008 | 95% | 109% ↑ | ✅8/8 | 🔵0.64x | ↑15d | +21.1% | -1.39% | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

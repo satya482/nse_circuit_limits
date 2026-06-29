@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-25
 *Generated 2026-06-25 15:39 IST*
 
@@ -99,3 +101,6 @@
 | [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) | ✓ SAFE | 12d | +7.3% | Private bank serving SMEs, MSMEs, retail customers | 88% | 0.97x | -2.81% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [KICL](https://in.tradingview.com/chart/?symbol=NSE:KICL) | ⚠ CAUTION | 9d | +8.3% |  | 86% | 1.26x | -0.06% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [VOLTAMP](https://in.tradingview.com/chart/?symbol=NSE:VOLTAMP) | ✓ SAFE | 9d | +8.1% | Power and distribution transformers for industrial infrastructure | 82% | 1.43x | -1.50% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

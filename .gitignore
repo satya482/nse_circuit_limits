@@ -26,3 +26,5 @@ fundamental_context/.claudeignore
 telegram_themes/raw/
 telegram_themes/.today_messages.json
 # telegram_themes/.telegram_parsed_cache.json  — tracked (git-added below)
+
+.code-index/

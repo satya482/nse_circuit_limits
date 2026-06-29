@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-22
 *Generated 2026-05-22 15:41 IST*
 
@@ -208,3 +210,6 @@
 | [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH) | 246.06 | -0.60% | 2d | 268.70 | 231.21 | 16.21% | 20%  |
 | [NATIONSTD](https://in.tradingview.com/chart/?symbol=NSE:NATIONSTD) | 1220.00 | +1.75% | 2d | 1288.90 | 1100.10 | 17.16% | 20%  |
 | [SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY) | 2695.20 | -2.08% | 2d | 2828.30 | 2376.00 | 19.04% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

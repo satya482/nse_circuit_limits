@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-24
 *Generated 2026-06-24 15:50 IST*
 
@@ -41,3 +43,6 @@
 | [STOK](https://www.tradingview.com/chart/?symbol=STOK) | 31.11 | +0.45% | 2.3x | 11d | 3d | +6.7% | ✓ | ✓ | — |
 | [XPOF](https://www.tradingview.com/chart/?symbol=XPOF) | 6.82 | +3.18% | 1.6x | 2d | 5d | +5.4% | ✓ | ✓ | — |
 | [TRTX](https://www.tradingview.com/chart/?symbol=TRTX) | 8.65 | +1.29% | 2.1x | 4d | 9d | +3.8% | ✓ | ✓ | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # EMA Compression Scanner — Project Context
 
 ## What This Project Does
@@ -339,3 +341,7 @@ Before running full universe scan, validate each indicator on these stocks:
 - KC(20, 1.5, SMA basis) must match
 - Note: TradingView BB uses SMA basis and rolling std — code must match this exactly
 - Only then run on full universe
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-10
 *Generated 2026-06-10 15:40 IST*
 
@@ -33,3 +35,6 @@
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit |
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [MANINDS](https://in.tradingview.com/chart/?symbol=NSE:MANINDS) | 0d | +1.9% | Large-diameter steel welded pipes, oil-gas infrastructure exports | +1.86% | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

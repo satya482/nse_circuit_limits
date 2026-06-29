@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-12
 *Generated 2026-06-12 15:38 IST*
 
@@ -66,3 +68,6 @@
 | [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL) | 0d | +3.1% |  | +3.06% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
 | [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU) | 1d | +2.8% |  | +1.38% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU) | 1d | +2.8% |  | +1.38% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

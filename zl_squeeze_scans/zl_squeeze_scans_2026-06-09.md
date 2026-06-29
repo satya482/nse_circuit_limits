@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-09
 *Generated 2026-06-09 15:41 IST*
 
@@ -204,3 +206,6 @@
 | [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | Crude oil refining, petrochemicals production, domestic fuel supply | 3d | 5d | +9.1% | 160.34 | +5.80% | ✓ | ✓ | — | 20%  |
 | [NCLIND](https://in.tradingview.com/chart/?symbol=NSE:NCLIND) | Cement RMC building boards doors renewable energy manufacturer | 6d | 7d | +6.6% | 184.97 | +1.34% | ✓ | ✓ | — | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 4d | 13d | +15.7% | 139.88 | +9.51% | ✓ | ✓ | — | 10% 🟨 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

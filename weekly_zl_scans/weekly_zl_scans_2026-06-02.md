@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-02
 *Generated 2026-06-02 15:42 IST*
 
@@ -80,3 +82,6 @@
 | [HINDCOPPER](https://in.tradingview.com/chart/?symbol=NSE:HINDCOPPER) | 1w | BELOW | 1w | +1.4% | +1.16% | 546.20 | 5w | 20%  |
 | [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) | 1w | BELOW | 1w | +1.5% | +2.36% | 293.05 | 1w | 20%  |
 | [ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS) | 1w | BELOW | 1w | +2.4% | -0.25% | 1324.90 | 11w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

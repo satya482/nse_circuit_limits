@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-10
 *Generated 2026-06-10 15:39 IST*
 
@@ -27,3 +29,6 @@
 | [APCOTEXIND](https://in.tradingview.com/chart/?symbol=NSE:APCOTEXIND) | 7d | +11.5% | Synthetic rubber and latex for adhesives, coatings, textiles | -0.77% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RAJRATAN](https://in.tradingview.com/chart/?symbol=NSE:RAJRATAN) | 4d | +7.0% |  | -0.93% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NGLFINE](https://in.tradingview.com/chart/?symbol=NSE:NGLFINE) | 3d | +8.9% | Veterinary APIs, intermediates, animal health pharmaceuticals manufacturer | -0.32% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

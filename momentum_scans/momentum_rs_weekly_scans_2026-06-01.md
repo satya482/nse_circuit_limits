@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-01
 *Generated 2026-06-01 15:39 IST*
 
@@ -43,3 +45,6 @@
 | [INDOTECH](https://in.tradingview.com/chart/?symbol=NSE:INDOTECH) | 0d | +3.0% | Power distribution transformers utility industrial renewable | +3.04% | 5% 🟥 |
 | [LUXIND](https://in.tradingview.com/chart/?symbol=NSE:LUXIND) | 0d | +2.6% | Innerwear and thermals manufacturer for Indian mass market | +2.61% | 5% 🟥 |
 | [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | 0d | +1.7% | Edible oils refining and meals processing Gujarat based | +1.69% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-26
 *Generated 2026-06-26 16:30 IST · 209 F&O stocks scanned*
 
@@ -154,3 +156,6 @@
 | [PAYTM](https://in.tradingview.com/chart/?symbol=NSE:PAYTM) | 1124.80 | +0.0% | 5d | +3.2% | +2.8% | - |
 | [JSWSTEEL](https://in.tradingview.com/chart/?symbol=NSE:JSWSTEEL) | 1231.00 | -0.0% | 5d | -4.9% | -3.3% | - |
 | [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN) | 549.85 | +0.0% | 5d | -0.0% | +0.1% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Design: Reduce Claude Code Token Usage
 
 **Date:** 2026-06-26
@@ -77,3 +79,7 @@ Estimated reduction: 50-70% of the 32% general-purpose driver → ~15-20% total 
 1. Run `update-config` skill → add `defaultSubagentModel` to `.claude/settings.json`
 2. Run `skill-creator` skill → create `cavecrew:find-fix-router` global skill
 3. Test: run one "find + fix" task, verify cavecrew-investigator fires first
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

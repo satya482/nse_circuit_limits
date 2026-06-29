@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-14
 *Generated 2026-05-14 15:41 IST*
 
@@ -225,3 +227,6 @@
 | [MBEL](https://in.tradingview.com/chart/?symbol=NSE:MBEL) | 308.25 | +3.46% | 2d | 333.00 | 283.60 | 17.42% | 20%  |
 | [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | 599.80 | +0.06% | 2d | 635.50 | 529.00 | 20.13% | 20%  |
 | [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | 1788.00 | +4.26% | 2d | 1949.40 | 1602.80 | 21.62% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

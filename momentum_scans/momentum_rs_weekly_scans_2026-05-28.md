@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-28
 *Generated 2026-05-28 15:41 IST*
 
@@ -86,3 +88,6 @@
 | [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB) | 0d | +5.7% | Supercomputing systems design manufacturing enterprise IT | +5.72% | 20%  |
 | [BHARATWIRE](https://in.tradingview.com/chart/?symbol=NSE:BHARATWIRE) | 0d | +3.6% | Steel wire ropes manufacturing for industrial rigging applications | +3.61% | 20%  |
 | [BHARATSE](https://in.tradingview.com/chart/?symbol=NSE:BHARATSE) | 0d | +2.1% | Automotive seating systems manufacturer for passenger cars | +2.12% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

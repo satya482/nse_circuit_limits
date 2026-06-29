@@ -22,6 +22,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -345,7 +346,7 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         lines += hdr + rows
     else:
         lines.append("*No signals today.*")
-    return "\n".join(lines)
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
 def print_results(findings: list[dict]) -> None:

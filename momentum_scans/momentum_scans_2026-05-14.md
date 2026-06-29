@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-14
 *Generated 2026-05-14 15:39 IST*
 
@@ -22,3 +24,6 @@
 | [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 26d | +41.3% | Diagnostic imaging and pathology lab services South India | -1.71% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SURYODAY](https://in.tradingview.com/chart/?symbol=NSE:SURYODAY) | 26d | +36.6% | Small finance bank serving unbanked rural and semi-urban customers | -1.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 32d | +103.0% |  | +1.15% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

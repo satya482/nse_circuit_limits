@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Trend Scanner — 2026-06-23
 *Generated 2026-06-23 15:46 IST*
 
@@ -73,3 +75,7 @@
 | [MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK) <sub>Bank Of Maharashtra · ₹69K Cr · ↗164Cr ↓0.5×</sub> | ✓ SAFE | Public sector bank, retail corporate lending deposits | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 52 | ↓78 | ↓1.004 | 97% | 69% ↑ | ✅8/8 | 0.69x | ↑11d | +10.4% | -1.77% | 20%  |
 | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) <sub>Craftsman Automation · ₹23K Cr · ↗118Cr 0.8×</sub> | ✓ SAFE | Precision auto parts, powertrain, aluminum for OEMs | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 45 | ↓73 | ↓1.008 | 96% | 83% ↑ | ✅8/8 | 2.22x | ↑8d | +7.4% | -0.80% | 20%  |
 | [RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK) <sub>Rbl Bank · ₹23K Cr · ↗242Cr 1.1×</sub> | ✓ SAFE | Private sector bank retail corporate lending treasury services | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 41 | ↓65 | ↓1.007 | 98% | 70% ↑ | ✅8/8 | 1.54x | ↑23d | +12.9% | -1.92% | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

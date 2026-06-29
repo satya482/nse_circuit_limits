@@ -33,6 +33,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many, get_names, liq_tag
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -532,7 +533,7 @@ def build_markdown(
             lines.append("*No signals.*")
         lines.append("")
 
-    return "\n".join(lines)
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
 # ── Console output ─────────────────────────────────────────────────────────────

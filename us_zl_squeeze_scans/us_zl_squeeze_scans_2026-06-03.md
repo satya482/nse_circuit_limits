@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-03
 *Generated 2026-06-03 15:45 IST*
 
@@ -31,3 +33,6 @@
 | [PAYO](https://www.tradingview.com/chart/?symbol=PAYO) | 5.35 | -1.47% | 2.1x | 12d | 3d | +7.2% | ✓ | ✓ | — |
 | [DOO](https://www.tradingview.com/chart/?symbol=DOO) | 61.18 | +4.62% | 1.7x | 4d | 4d | +8.8% | ✓ | ✓ | — |
 | [LILA](https://www.tradingview.com/chart/?symbol=LILA) | 7.93 | -1.25% | 1.5x | 5d | 1d | +8.1% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-11
 *Generated 2026-06-11 15:42 IST*
 
@@ -61,3 +63,7 @@
 | [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH) | Tertiary quaternary hospitals Delhi NCR North India patient care | 📈 BULL_ZERO_CROSS | 1 | 5.55 | -5.36 | ↑ | 4d | +3.3% | — | — | -0.05% | 1009.60 | 20%  |
 | [BERGEPAINT](https://in.tradingview.com/chart/?symbol=NSE:BERGEPAINT) | Decorative and industrial paints manufacturing for residential commercial construction | 📈 BULL_ZERO_CROSS | 1 | 5.66 | -3.22 | ↑ | 2d | +2.4% | ✓ | — | -0.53% | 513.95 | 20%  |
 | [HGS](https://in.tradingview.com/chart/?symbol=NSE:HGS) | Customer experience BPM services, global contact center operations | 📈 BULL_ZERO_CROSS | 1 | 6.26 | -13.3 | ↑ | 2d | +6.7% | ✓ | — | -5.14% | 427.20 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

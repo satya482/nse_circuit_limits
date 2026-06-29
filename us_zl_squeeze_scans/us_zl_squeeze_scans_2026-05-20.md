@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-20
 *Generated 2026-05-20 15:45 IST*
 
@@ -29,3 +31,6 @@
 | [BBOT](https://www.tradingview.com/chart/?symbol=BBOT) | 8.72 | -0.34% | 1.5x | 2d | 3d | +7.9% | ✓ | ✓ | — |
 | [HLX](https://www.tradingview.com/chart/?symbol=HLX) | 10.22 | -2.39% | 1.6x | 2d | 4d | +3.1% | ✓ | ✓ | — |
 | [BBW](https://www.tradingview.com/chart/?symbol=BBW) | 37.48 | +7.45% | 1.6x | 1d | 0d | +7.5% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

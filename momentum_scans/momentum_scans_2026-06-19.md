@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-19
 *Generated 2026-06-19 15:41 IST*
 
@@ -68,3 +70,6 @@
 | [VMARCIND](https://in.tradingview.com/chart/?symbol=NSE:VMARCIND) | 21d | +52.9% | PVC insulated wires cables manufacturer electrical infrastructure | -3.92% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [AURUM](https://in.tradingview.com/chart/?symbol=NSE:AURUM) | 5d | +12.0% |  | +1.82% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 5d | +5.9% |  | +0.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

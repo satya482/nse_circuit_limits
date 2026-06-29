@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-09
 *Generated 2026-06-09 15:46 IST*
 
@@ -34,3 +36,6 @@
 | [CPB](https://www.tradingview.com/chart/?symbol=CPB) | 21.49 | -0.88% | 1.9x | 1d | 8d | +6.8% | ✓ | ✓ | — |
 | [HLMN](https://www.tradingview.com/chart/?symbol=HLMN) | 7.38 | +1.10% | 1.9x | 2d | 0d | +1.1% | ✓ | — | — |
 | [MRLN](https://www.tradingview.com/chart/?symbol=MRLN) | 7.89 | -8.26% | 2.2x | 2d | 1d | +9.9% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

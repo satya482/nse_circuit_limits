@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-16
 *Generated 2026-06-16 15:43 IST*
 
@@ -185,3 +187,6 @@
 | [IMFA](https://in.tradingview.com/chart/?symbol=NSE:IMFA) | 1w | BELOW | 1w | +2.6% | -0.49% | 1435.70 | — | 20%  |
 | [GUJALKALI](https://in.tradingview.com/chart/?symbol=NSE:GUJALKALI) | 1w | BELOW | 1w | +1.6% | -1.53% | 643.95 | — | 10% 🟨 |
 | [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST) | 1w | BELOW | 1w | +1.4% | +0.68% | 1092.00 | 24w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

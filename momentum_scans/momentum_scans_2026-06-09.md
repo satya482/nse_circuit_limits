@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-09
 *Generated 2026-06-09 15:39 IST*
 
@@ -53,3 +55,6 @@
 | [MUTHOOTMF](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTMF) | 0d | +1.7% | Microfinance loans for rural women borrowers India | +1.72% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST) | 2d | +13.6% |  | +2.42% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST) | 2d | +13.6% |  | +2.42% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

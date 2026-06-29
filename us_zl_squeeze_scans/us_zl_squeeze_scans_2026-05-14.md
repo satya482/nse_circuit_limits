@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-14
 *Generated 2026-05-14 15:45 IST*
 
@@ -38,3 +40,6 @@
 | [IRON](https://www.tradingview.com/chart/?symbol=IRON) | 70.03 | +2.19% | 2.0x | 9d | 3d | +3.7% | ✓ | — | — |
 | [KRNT](https://www.tradingview.com/chart/?symbol=KRNT) | 16.48 | +2.49% | 8.2x | 10d | 9d | +8.2% | ✓ | — | — |
 | [WSR](https://www.tradingview.com/chart/?symbol=WSR) | 18.99 | +0.05% | 1.5x | 6d | 31d | +18.8% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

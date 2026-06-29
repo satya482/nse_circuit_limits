@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-10
 *Generated 2026-05-10 20:42 IST*
 
@@ -91,3 +93,6 @@
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL) |  | 2d | 24d | +16.7% | 812.75 | -0.98% | — | — | ✓ | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS) | Suppository and tablet formulations for Indian pharmaceutical markets | 1d | 27d | +30.6% | 269.65 | -0.86% | — | — | ✓ | 20%  |
 | [SAATVIKGL](https://in.tradingview.com/chart/?symbol=NSE:SAATVIKGL) | Solar modules manufacturing, EPC, renewable energy | 1d | 29d | +31.4% | 471.80 | -1.61% | — | — | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-10
 *Generated 2026-06-10 15:42 IST*
 
@@ -245,3 +247,6 @@
 | [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED) | 301.85 | -4.48% | 2d | 338.85 | 297.85 | 13.77% | 20%  |
 | [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM) | 149.53 | +1.47% | 2d | 154.32 | 129.06 | 19.57% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

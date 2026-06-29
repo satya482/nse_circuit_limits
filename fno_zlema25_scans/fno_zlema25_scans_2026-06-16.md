@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-16
 *Generated 2026-06-16 16:30 IST · 209 F&O stocks scanned*
 
@@ -192,3 +194,6 @@
 | [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN) | 552.80 | -0.2% | 5d | +0.0% | +0.6% | ✓ |
 | [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA) | 1660.70 | -0.0% | 5d | +6.7% | +3.2% | - |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) | 944.25 | +0.5% | 5d | +9.2% | +5.7% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

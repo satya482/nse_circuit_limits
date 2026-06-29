@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-05-21
 *Generated 2026-05-21 16:30 IST · 209 F&O stocks scanned*
 
@@ -145,3 +147,6 @@
 | [NBCC](https://in.tradingview.com/chart/?symbol=NSE:NBCC) | 93.07 | +0.1% | 5d | -2.5% | -1.5% | ✓ |
 | [SHREECEM](https://in.tradingview.com/chart/?symbol=NSE:SHREECEM) | 24605.00 | +0.8% | 5d | -1.7% | -0.8% | ✓ |
 | [ALKEM](https://in.tradingview.com/chart/?symbol=NSE:ALKEM) | 5501.50 | +1.2% | 5d | -1.3% | +0.1% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-21
 *Generated 2026-05-21 15:41 IST*
 
@@ -175,3 +177,6 @@
 | [RESPONIND](https://in.tradingview.com/chart/?symbol=NSE:RESPONIND) |  | 1d | 27d | +19.2% | 165.47 | +0.46% | — | ✓ | ✓ | 20%  |
 | [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL) | Toothpaste, mouthwash, oral care FMCG, mass market India | 4d | 29d | +17.0% | 2164.90 | -0.94% | — | ✓ | ✓ | 20%  |
 | [ADFFOODS](https://in.tradingview.com/chart/?symbol=NSE:ADFFOODS) | Ethnic Indian processed foods pickles chutneys export manufacturer | 1d | 33d | +57.8% | 263.85 | +0.02% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

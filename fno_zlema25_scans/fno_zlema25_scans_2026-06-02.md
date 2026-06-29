@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-02
 *Generated 2026-06-02 16:30 IST · 209 F&O stocks scanned*
 
@@ -148,3 +150,6 @@
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY) | 437.95 | +0.2% | 5d | -5.5% | -4.1% | - |
 | [CROMPTON](https://in.tradingview.com/chart/?symbol=NSE:CROMPTON) | 273.45 | +0.0% | 5d | -5.4% | -5.8% | ✓ |
 | [PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD) | 1706.80 | -2.4% | 5d | -4.4% | -3.9% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

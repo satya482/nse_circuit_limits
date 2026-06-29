@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-19
 *Generated 2026-06-19 15:44 IST*
 
@@ -237,3 +239,6 @@
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI) | 489.55 | -1.89% | 2d | 522.20 | 440.65 | 18.51% | 20%  |
 | [IDBI](https://in.tradingview.com/chart/?symbol=NSE:IDBI) | 82.98 | -1.94% | 2d | 92.25 | 77.32 | 19.31% | 20% 🟦 |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

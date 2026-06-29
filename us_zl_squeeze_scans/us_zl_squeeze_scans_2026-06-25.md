@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-25
 *Generated 2026-06-25 15:51 IST*
 
@@ -49,3 +51,6 @@
 | [EZPW](https://www.tradingview.com/chart/?symbol=EZPW) | 32.43 | +0.15% | 1.6x | 1d | 2d | +7.5% | ✓ | ✓ | — |
 | [JBI](https://www.tradingview.com/chart/?symbol=JBI) | 5.56 | +5.90% | 1.6x | 6d | 3d | +8.2% | ✓ | ✓ | — |
 | [UAA](https://www.tradingview.com/chart/?symbol=UAA) | 6.06 | +4.84% | 1.6x | 3d | 3d | +6.3% | ✓ | ✓ | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

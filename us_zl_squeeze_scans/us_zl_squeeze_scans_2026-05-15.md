@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-15
 *Generated 2026-05-15 15:45 IST*
 
@@ -34,3 +36,6 @@
 | [DIN](https://www.tradingview.com/chart/?symbol=DIN) | 31.02 | +8.27% | 1.5x | 7d | 5d | +14.2% | ✓ | ✓ | — |
 | [KURA](https://www.tradingview.com/chart/?symbol=KURA) | 9.74 | +2.74% | 1.6x | 5d | 8d | +11.1% | ✓ | ✓ | — |
 | [FG](https://www.tradingview.com/chart/?symbol=FG) | 28.59 | +1.78% | 4.7x | 1d | 2d | +3.1% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

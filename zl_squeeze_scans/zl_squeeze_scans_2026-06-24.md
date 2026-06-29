@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-24
 *Generated 2026-06-24 15:43 IST*
 
@@ -159,3 +161,6 @@
 | [LAOPALA](https://in.tradingview.com/chart/?symbol=NSE:LAOPALA) | Opalware and crystalware tableware manufacturer for Indian households | 14d | 11d | +6.4% | 183.41 | -0.31% | ✓ | ✓ | — | 20%  |
 | [BAJEL](https://in.tradingview.com/chart/?symbol=NSE:BAJEL) | EPC contractor power transmission distribution renewable energy | 3d | 25d | +14.1% | 201.37 | -1.42% | — | ✓ | ✓ | 20%  |
 | [ELGIEQUIP](https://in.tradingview.com/chart/?symbol=NSE:ELGIEQUIP) | Air compressors and automotive garage equipment manufacturer | 4d | 27d | +14.2% | 609.35 | -1.69% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

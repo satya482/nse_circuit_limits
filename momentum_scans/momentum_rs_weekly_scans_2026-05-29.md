@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-29
 *Generated 2026-05-29 15:41 IST*
 
@@ -41,3 +43,6 @@
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [ASHAPURMIN](https://in.tradingview.com/chart/?symbol=NSE:ASHAPURMIN) | 0d | +13.1% | Bauxite mining processing distribution industrial minerals globally | +13.06% | 20%  |
 | [SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY) | 0d | +12.3% | Precision plastic injection molding components for automotive OEMs | +12.34% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

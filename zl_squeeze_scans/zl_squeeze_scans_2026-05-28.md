@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-28
 *Generated 2026-05-28 15:42 IST*
 
@@ -118,3 +120,6 @@
 | [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING) | Housing loans and mortgages for retail customers | 5d | 37d | +38.2% | 1077.90 | +0.00% | — | ✓ | ✓ | 20%  |
 | [ADFFOODS](https://in.tradingview.com/chart/?symbol=NSE:ADFFOODS) | Ethnic Indian processed foods pickles chutneys export manufacturer | 6d | 38d | +61.7% | 270.30 | +0.00% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 1d | 38d | +40.9% | 394.90 | +0.00% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

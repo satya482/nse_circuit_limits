@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-15
 *Generated 2026-06-15 18:44 IST*
 
@@ -267,3 +269,6 @@
 | [ASIANENE](https://in.tradingview.com/chart/?symbol=NSE:ASIANENE) | Seismic data acquisition and oilfield operations services provider | 1d | 23d | +26.1% | 363.45 | -0.75% | — | ✓ | ✓ | 20%  |
 | [TEAMLEASE](https://in.tradingview.com/chart/?symbol=NSE:TEAMLEASE) |  | 11d | 49d | +22.1% | 1404.70 | -0.03% | — | ✓ | ✓ | 20%  |
 | [ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND) | Denim and apparel manufacturer, textiles to retail, global | 3d | 49d | +42.2% | 498.70 | +0.85% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

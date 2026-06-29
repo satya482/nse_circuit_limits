@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-04
 *Generated 2026-06-04 15:38 IST*
 
@@ -82,3 +84,6 @@
 | [NAHARSPING](https://in.tradingview.com/chart/?symbol=NSE:NAHARSPING) | 10d | +8.1% | Cotton yarn and hosiery knitwear manufacturer export textiles | +0.36% | **STRONG** — ZLEMA25 touch + EMA20 rising | 2%  |
 | [MAHASTEEL](https://in.tradingview.com/chart/?symbol=NSE:MAHASTEEL) | 9d | +16.4% |  | -0.49% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5% 🟥 |
 | [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN) | 3d | +11.8% | AI-powered software engineering, digital transformation, enterprise clients | -2.24% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

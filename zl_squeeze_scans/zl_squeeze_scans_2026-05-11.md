@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-11
 *Generated 2026-05-11 15:42 IST*
 
@@ -101,3 +103,6 @@
 | [TIIL](https://in.tradingview.com/chart/?symbol=NSE:TIIL) |  | 1d | 28d | +20.0% | 2580.00 | +3.13% | ✓ | ✓ | — | 20%  |
 | [SAATVIKGL](https://in.tradingview.com/chart/?symbol=NSE:SAATVIKGL) | Solar modules manufacturing, EPC, renewable energy | 2d | 30d | +31.4% | 471.95 | +0.03% | — | — | ✓ | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) | Physics Wallah - Online competitive exam prep with coaching centers | 2d | 34d | +37.2% | 110.10 | +1.68% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

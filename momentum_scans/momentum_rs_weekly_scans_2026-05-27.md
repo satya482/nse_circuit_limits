@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-27
 *Generated 2026-05-27 15:42 IST*
 
@@ -78,3 +80,6 @@
 | [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS) | 0d | +7.1% | Power cables, specialty fluids, electrical insulation materials manufacturing | +7.10% | 20%  |
 | [BHARATWIRE](https://in.tradingview.com/chart/?symbol=NSE:BHARATWIRE) | 0d | +3.6% | Steel wire ropes manufacturing for industrial rigging applications | +3.61% | 20%  |
 | [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | 0d | +2.6% |  | +2.61% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

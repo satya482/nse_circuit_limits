@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-17
 *Generated 2026-06-17 18:15 IST*
 
@@ -97,3 +99,7 @@
 | [RGL](https://in.tradingview.com/chart/?symbol=NSE:RGL) | Diamond jewelry manufacturer and cut polished diamond trader | 📈 BULL_ZERO_CROSS | — | -3.32% | 1 | 11.08 | -8.34 | ↑ | 5d | +14.6% | — | ↑ | 110.21 | 20%  |
 | [TARSONS](https://in.tradingview.com/chart/?symbol=NSE:TARSONS) |  | 📈 BULL_ZERO_CROSS | — | +16.50% | 1 | 12.48 | -15.64 | ↑ | 2d | +34.5% | ✓ | ↑ | 278.11 | 20%  |
 | [KIRLOSIND](https://in.tradingview.com/chart/?symbol=NSE:KIRLOSIND) |  | 📈 BULL_ZERO_CROSS | — | +11.84% | 1 | 18.75 | -5.74 | ↑ | 3d | +16.0% | ✓ | ↑ | 3628.70 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

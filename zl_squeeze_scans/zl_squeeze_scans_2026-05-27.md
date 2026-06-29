@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-27
 *Generated 2026-05-27 15:43 IST*
 
@@ -115,3 +117,6 @@
 | [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU) | Residential real estate development Ahmedabad Gujarat region | 5d | 33d | +26.5% | 703.00 | -0.15% | — | ✓ | ✓ | 20%  |
 | [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING) | Housing loans and mortgages for retail customers | 4d | 36d | +38.2% | 1077.90 | -1.35% | — | ✓ | ✓ | 20%  |
 | [ADFFOODS](https://in.tradingview.com/chart/?symbol=NSE:ADFFOODS) | Ethnic Indian processed foods pickles chutneys export manufacturer | 5d | 37d | +61.7% | 270.30 | -2.01% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

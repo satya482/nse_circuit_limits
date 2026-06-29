@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-09
 *Generated 2026-05-09 22:01 IST*
 
@@ -91,3 +93,6 @@
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL) | 812.75 | -0.98% | 2d | 24d | +16.7% | — | — | ✓ | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS) | 269.65 | -0.86% | 1d | 27d | +30.6% | — | — | ✓ | 20%  |
 | [SAATVIKGL](https://in.tradingview.com/chart/?symbol=NSE:SAATVIKGL) | 471.80 | -1.61% | 1d | 29d | +31.4% | — | — | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

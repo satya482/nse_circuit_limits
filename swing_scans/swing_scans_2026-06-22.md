@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-22
 *Generated 2026-06-22 15:39 IST*
 
@@ -83,3 +85,6 @@
 | [DLINKINDIA](https://in.tradingview.com/chart/?symbol=NSE:DLINKINDIA) | ✓ SAFE | 14d | +12.1% | Networking equipment distribution consumer SMB enterprise | 93% | 2.17x | -0.98% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [MANORAMA](https://in.tradingview.com/chart/?symbol=NSE:MANORAMA) | ✓ SAFE | 15d | +8.5% | Specialty fats, butters from tree seeds, chocolates cosmetics | 92% | 1.03x | -0.69% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [IZMO](https://in.tradingview.com/chart/?symbol=NSE:IZMO) | ✓ SAFE | 23d | +57.9% | Automotive digital retail and interactive marketing solutions provider | 78% | 0.76x | -2.20% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

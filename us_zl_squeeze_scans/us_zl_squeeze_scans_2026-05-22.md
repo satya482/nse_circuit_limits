@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-22
 *Generated 2026-05-22 15:45 IST*
 
@@ -40,3 +42,6 @@
 | [VCEL](https://www.tradingview.com/chart/?symbol=VCEL) | 35.15 | -0.71% | 1.6x | 18d | 3d | +6.4% | ✓ | — | — |
 | [SPNT](https://www.tradingview.com/chart/?symbol=SPNT) | 23.53 | -0.63% | 1.5x | 16d | 3d | +2.5% | ✓ | — | — |
 | [CDP](https://www.tradingview.com/chart/?symbol=CDP) | 32.31 | +1.48% | 1.7x | 5d | 11d | +4.3% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

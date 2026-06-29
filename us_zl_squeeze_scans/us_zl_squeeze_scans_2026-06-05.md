@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-05
 *Generated 2026-06-05 15:44 IST*
 
@@ -33,3 +35,6 @@
 | [CDP](https://www.tradingview.com/chart/?symbol=CDP) | 32.09 | +2.49% | 1.6x | 4d | 0d | +2.5% | ✓ | — | — |
 | [FNB](https://www.tradingview.com/chart/?symbol=FNB) | 17.64 | +3.34% | 1.5x | 1d | 0d | +3.3% | ✓ | — | — |
 | [PPC](https://www.tradingview.com/chart/?symbol=PPC) | 28.97 | +5.04% | 1.8x | 1d | 0d | +5.0% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

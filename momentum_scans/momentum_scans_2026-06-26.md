@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-26
 *Generated 2026-06-26 16:12 IST*
 
@@ -31,3 +33,6 @@
 | [RML](https://in.tradingview.com/chart/?symbol=NSE:RML) | 9d | +16.8% | Rane (Madras)<br>₹3K Cr \| ↗30Cr ↓0.1×<br>Automotive steering linkages and metal castings OEM supplier | -1.92% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | 6d | +14.4% | Spectrum Electric Ind<br>₹3K Cr \| ↘3Cr ↓0.4× | +1.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 4d | +11.3% | →1Cr 1.0× | -0.01% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

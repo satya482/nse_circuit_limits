@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-16
 *Generated 2026-06-16 15:40 IST*
 
@@ -49,3 +51,6 @@
 | [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO) | 3d | +5.9% |  | -0.59% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB) | 2d | +7.8% | Microfinance bank serving unbanked retail borrowers India | +0.77% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB) | 2d | +7.8% | Microfinance bank serving unbanked retail borrowers India | +0.77% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

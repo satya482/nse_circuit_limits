@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE EMA25 ZL Scan — 2026-06-26
 *Generated 2026-06-26 16:13 IST*
 
@@ -308,3 +310,6 @@
 | [VINDHYATEL](https://in.tradingview.com/chart/?symbol=NSE:VINDHYATEL) | 11d | +8.2% | Vindhya Telelinks<br>₹3K Cr \| ↘21Cr · 0.0Cr<br>Telecom cables manufacturing, EPC contractor for infrastructure projects | +0.00% | 2141.20 | ✓ | 20%  |
 | [WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA) | 12d | +7.2% | Wockhardt<br>₹32K Cr \| ↘253Cr · 0.0Cr<br>Pharmaceuticals: injectables, oral drugs, diabetes, cardiology, anti-infectives | +0.00% | 1965.20 | ✓ | 20%  |
 | [PANAMAPET](https://in.tradingview.com/chart/?symbol=NSE:PANAMAPET) | 18d | +28.3% | Panama Petrochem<br>₹3K Cr \| →74Cr · 0.0Cr<br>Specialty petroleum derivatives for pharma, cosmetics, textiles, rubber | +0.00% | 404.85 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-19
 *Generated 2026-06-19 15:44 IST*
 
@@ -179,3 +181,6 @@
 | [BOROSCI](https://in.tradingview.com/chart/?symbol=NSE:BOROSCI) |  | 1d | 27d | +36.9% | 154.71 | +0.52% | — | ✓ | ✓ | 20%  |
 | [THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE) | Diagnostic pathology radiology clinical chemistry affordable testing | 1d | 53d | +49.3% | 540.55 | +1.15% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 9d | 54d | +53.3% | 429.75 | +1.31% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

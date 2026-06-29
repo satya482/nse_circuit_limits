@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-20
 *Generated 2026-05-20 15:41 IST*
 
@@ -155,3 +157,6 @@
 | [PRABHA](https://in.tradingview.com/chart/?symbol=NSE:PRABHA) |  | 17d | 10d | +7.2% | 167.23 | -0.77% | — | — | ✓ | 20%  |
 | [PIXTRANS](https://in.tradingview.com/chart/?symbol=NSE:PIXTRANS) |  | 9d | 11d | +2.3% | 1538.00 | +0.40% | ✓ | ✓ | — | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) |  | 10d | 29d | +11.6% | 669.60 | -0.29% | — | — | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

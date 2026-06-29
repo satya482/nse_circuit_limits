@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-12
 *Generated 2026-06-12 15:39 IST*
 
@@ -24,3 +26,6 @@
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH) | 3d | +9.3% | Electrical metering instruments, automation controls for industrial applications | +3.74% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RAJRATAN](https://in.tradingview.com/chart/?symbol=NSE:RAJRATAN) | 6d | +11.3% |  | +4.96% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [GULPOLY](https://in.tradingview.com/chart/?symbol=NSE:GULPOLY) | 6d | +12.5% | Ethanol and specialty chemicals producer for industrial applications | +0.88% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

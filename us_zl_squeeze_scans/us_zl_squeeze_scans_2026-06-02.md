@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-02
 *Generated 2026-06-02 15:44 IST*
 
@@ -38,3 +40,6 @@
 | [GBTG](https://www.tradingview.com/chart/?symbol=GBTG) | 9.34 | +0.00% | 1.8x | 1d | 21d | +62.0% | — | ✓ | ✓ |
 | [LILAK](https://www.tradingview.com/chart/?symbol=LILAK) | 8.08 | +8.39% | 1.6x | 4d | 0d | +8.4% | ✓ | — | — |
 | [LILA](https://www.tradingview.com/chart/?symbol=LILA) | 8.03 | +9.45% | 1.9x | 4d | 0d | +9.4% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

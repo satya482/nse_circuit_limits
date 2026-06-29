@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-18
 *Generated 2026-05-18 15:40 IST*
 
@@ -98,3 +100,6 @@
 | [PIXTRANS](https://in.tradingview.com/chart/?symbol=NSE:PIXTRANS) |  | 7d | 9d | +1.6% | 1528.20 | +0.19% | ✓ | ✓ | — | 20%  |
 | [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) |  | 11d | 12d | +5.7% | 1051.90 | +3.49% | ✓ | ✓ | — | 20%  |
 | [HDBFS](https://in.tradingview.com/chart/?symbol=NSE:HDBFS) | NBFC auto loans two-wheeler finance underbanked retail lending | 3d | 26d | +15.9% | 675.10 | +0.02% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

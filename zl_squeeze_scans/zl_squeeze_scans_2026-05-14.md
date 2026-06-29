@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-14
 *Generated 2026-05-14 15:41 IST*
 
@@ -107,3 +109,6 @@
 | [HGINFRA](https://in.tradingview.com/chart/?symbol=NSE:HGINFRA) | Highway construction and maintenance EPC services | 2d | 27d | +28.3% | 612.70 | -1.44% | — | ✓ | ✓ | 20%  |
 | [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL) |  | 1d | 27d | +25.6% | 887.60 | +0.48% | ✓ | ✓ | — | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) | Physics Wallah - Online competitive exam prep with coaching centers | 5d | 37d | +40.1% | 112.40 | +0.94% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

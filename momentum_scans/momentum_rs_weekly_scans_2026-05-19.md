@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-19
 *Generated 2026-05-19 15:40 IST*
 
@@ -24,3 +26,6 @@
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [HIRECT](https://in.tradingview.com/chart/?symbol=NSE:HIRECT) | 0d | +9.1% | Power electronics converters and railway traction transformers manufacturer | +9.10% | 20%  |
 | [VENUSREM](https://in.tradingview.com/chart/?symbol=NSE:VENUSREM) | 0d | +5.0% | Antibiotics manufacturer critical care multi-drug resistant bacteria | +5.00% | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

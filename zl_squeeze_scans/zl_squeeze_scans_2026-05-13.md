@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-13
 *Generated 2026-05-13 15:41 IST*
 
@@ -95,3 +97,6 @@
 | [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER) | Copier paper, coated paper, packaging boards manufacturer | 3d | 27d | +25.6% | 384.95 | -1.57% | ✓ | ✓ | — | 20%  |
 | [MANYAVAR](https://in.tradingview.com/chart/?symbol=NSE:MANYAVAR) | Wedding ethnic wear designer, multi-brand retailer India | 1d | 27d | +26.0% | 442.35 | -3.84% | — | ✓ | ✓ | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) | Physics Wallah - Online competitive exam prep with coaching centers | 4d | 36d | +38.8% | 111.35 | +2.63% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

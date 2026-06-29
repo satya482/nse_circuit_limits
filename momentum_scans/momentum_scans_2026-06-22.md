@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-22
 *Generated 2026-06-22 15:40 IST*
 
@@ -31,3 +33,6 @@
 | [CENTENKA](https://in.tradingview.com/chart/?symbol=NSE:CENTENKA) <sub>Century Enka · ₹1K Cr</sub> | 6d | +11.1% |  | +3.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [VMARCIND](https://in.tradingview.com/chart/?symbol=NSE:VMARCIND) | 22d | +53.0% | PVC insulated wires cables manufacturer electrical infrastructure | +0.06% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO) <sub>Hester Biosciences · ₹2K Cr</sub> | 7d | +10.8% |  | +3.50% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

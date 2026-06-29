@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-15
 *Generated 2026-05-15 15:40 IST*
 
@@ -120,3 +122,6 @@
 | [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER) | Copier paper, coated paper, packaging boards manufacturer | 5d | 29d | +24.6% | 381.65 | +1.07% | ✓ | ✓ | — | 20%  |
 | [INDIASHLTR](https://in.tradingview.com/chart/?symbol=NSE:INDIASHLTR) | Housing finance for low-income home construction Tier II III | 2d | 33d | +23.8% | 826.55 | -1.03% | — | ✓ | ✓ | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) | Physics Wallah - Online competitive exam prep with coaching centers | 6d | 38d | +40.8% | 113.00 | +0.53% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-19
 *Generated 2026-05-19 15:41 IST*
 
@@ -150,3 +152,6 @@
 | [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) |  | 12d | 13d | +3.3% | 1028.60 | -2.22% | ✓ | — | — | 20%  |
 | [ORIENTELEC](https://in.tradingview.com/chart/?symbol=NSE:ORIENTELEC) | Electric fans, lighting, home appliances, switchgear manufacturer | 3d | 25d | +18.3% | 188.88 | -0.65% | — | ✓ | ✓ | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) |  | 9d | 28d | +11.9% | 671.55 | -1.63% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

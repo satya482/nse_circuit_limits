@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-22
 *Generated 2026-06-22 15:42 IST*
 
@@ -217,3 +219,6 @@
 | [BATAINDIA](https://in.tradingview.com/chart/?symbol=NSE:BATAINDIA) | 731.00 | -2.23% | 2d | 803.30 | 676.05 | 18.82% | 20%  |
 | [ICIL](https://in.tradingview.com/chart/?symbol=NSE:ICIL) | 389.25 | -1.36% | 2d | 410.50 | 343.10 | 19.64% | 20% 🟦 |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-18
 *Generated 2026-05-18 15:38 IST*
 
@@ -38,3 +40,6 @@
 | [SKMEGGPROD](https://in.tradingview.com/chart/?symbol=NSE:SKMEGGPROD) | 3d | +7.6% |  | +0.12% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [SKMEGGPROD](https://in.tradingview.com/chart/?symbol=NSE:SKMEGGPROD) | 3d | +7.6% |  | +0.12% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | 5d | +2.0% | NBFC gold loans MSMEs self-employed individuals retail finance | -0.79% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

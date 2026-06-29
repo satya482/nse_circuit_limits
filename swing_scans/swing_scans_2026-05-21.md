@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-21
 *Generated 2026-05-21 15:38 IST*
 
@@ -67,3 +69,6 @@
 | [VISHNU](https://in.tradingview.com/chart/?symbol=NSE:VISHNU) | 2d | +3.1% | Chromium Barium chemicals manufacturer serving industrial applications | -0.39% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [MENONBE](https://in.tradingview.com/chart/?symbol=NSE:MENONBE) | 17d | +25.2% |  | -1.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 37d | +117.9% |  | +1.16% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

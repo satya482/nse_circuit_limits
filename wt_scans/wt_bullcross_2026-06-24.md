@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-24
 *Generated 2026-06-24 17:57 IST*
 
@@ -93,3 +95,7 @@
 | [NIITLTD](https://in.tradingview.com/chart/?symbol=NSE:NIITLTD) | ✓ SAFE | Skills training IT professionals global sectors workforce | 📈 BULL_ANY_MID | 0 | ↑76 | ↑1.056 | ↑23d | — | +56.5% | 55.3/54.66 | +3.31% | 20% |
 | [VADILALIND](https://in.tradingview.com/chart/?symbol=NSE:VADILALIND) | ✓ SAFE | Frozen desserts and processed foods manufacturer retail distribution | 📈 BULL_ANY_MID | 0 | ↑78 | ↓1.044 | ↑23d | — | +48.2% | 55.46/55.42 | +0.54% | 20% |
 | [RELAXO](https://in.tradingview.com/chart/?symbol=NSE:RELAXO) | ✓ SAFE | Mass-market rubber slippers sandals shoes manufacturing India | 📈 BULL_ANY_MID | 0 | ↑44 | ↑1.037 | ↑24d | — | +25.6% | 58.29/58.15 | +1.25% | 20% |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

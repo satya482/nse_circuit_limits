@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-21
 *Generated 2026-05-21 15:45 IST*
 
@@ -35,3 +37,6 @@
 | [TRMK](https://www.tradingview.com/chart/?symbol=TRMK) | 44.26 | +1.03% | 1.6x | 14d | 0d | +1.0% | ✓ | — | — |
 | [TARS](https://www.tradingview.com/chart/?symbol=TARS) | 64.79 | +5.71% | 1.7x | 6d | 0d | +5.7% | ✓ | — | — |
 | [GTY](https://www.tradingview.com/chart/?symbol=GTY) | 33.60 | +2.88% | 1.8x | 4d | 0d | +2.9% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

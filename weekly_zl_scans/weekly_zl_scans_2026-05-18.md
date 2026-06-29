@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-18
 *Generated 2026-05-18 15:41 IST*
 
@@ -42,3 +44,6 @@
 | [HEALTHX](https://in.tradingview.com/chart/?symbol=NSE:HEALTHX) | 1w | ABOVE | 1w | +3.0% | +2.97% | 292.50 | 3w | 20%  |
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK) | 1w | BELOW | 1w | +0.9% | +0.94% | 283.95 | 2w | 20%  |
 | [TORNTPOWER](https://in.tradingview.com/chart/?symbol=NSE:TORNTPOWER) | 1w | BELOW | 1w | +3.9% | +3.92% | 1523.50 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

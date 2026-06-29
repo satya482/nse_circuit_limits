@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-20
 *Generated 2026-05-20 15:42 IST*
 
@@ -195,3 +197,6 @@
 | [RESPONIND](https://in.tradingview.com/chart/?symbol=NSE:RESPONIND) | 164.71 | -0.43% | 2d | 192.50 | 158.00 | 21.84% | 20%  |
 | [ASTEC](https://in.tradingview.com/chart/?symbol=NSE:ASTEC) | 751.55 | +1.73% | 2d | 797.00 | 647.95 | 23.00% | 20%  |
 | [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT) | 141.50 | -1.48% | 2d | 168.85 | 134.39 | 25.64% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

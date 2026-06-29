@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Trend Scanner — 2026-06-22
 *Generated 2026-06-22 17:06 IST*
 
@@ -77,3 +79,7 @@
 | [J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK) <sub>J & K Bank · ₹18K Cr</sub> | ✓ SAFE | Regional bank retail corporate lending Kashmir Ladakh | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 52 | ↓74 | ↓1.022 | 99% | 66% ↑ | ✅8/8 | 0.70x | ↑25d | +27.3% | -0.74% | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES) <sub>Granules India · ₹19K Cr</sub> | ✓ SAFE | Pharmaceutical APIs formulations intermediates finished dosages manufacturer | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 51 | ↓66 | ↓1.012 | 98% | 77% ↑ | ✅8/8 | 0.88x | ↑3d | +5.0% | -1.08% | 20%  |
 | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) <sub>Craftsman Automation · ₹24K Cr</sub> | ✓ SAFE | Precision auto parts, powertrain, aluminum for OEMs | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 47 | ↓74 | ↓1.018 | 97% | 84% ↑ | ✅8/8 | 2.08x | ↑7d | +8.3% | -2.90% | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

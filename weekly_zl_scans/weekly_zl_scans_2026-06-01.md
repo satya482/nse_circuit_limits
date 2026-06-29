@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-01
 *Generated 2026-06-01 15:41 IST*
 
@@ -54,3 +56,6 @@
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | 1w | BELOW | 1w | +3.4% | +3.44% | 1467.70 | — | 20%  |
 | [OIL](https://in.tradingview.com/chart/?symbol=NSE:OIL) | 1w | BELOW | 1w | +1.4% | +1.39% | 482.75 | 5w | 20%  |
 | [ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS) | 1w | BELOW | 1w | +2.6% | +2.65% | 1328.20 | 11w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

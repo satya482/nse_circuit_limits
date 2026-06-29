@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-27
 *Generated 2026-05-27 15:39 IST*
 
@@ -93,3 +95,6 @@
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 41d | +138.1% |  | +3.39% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND) | 2d | +4.1% |  | -0.78% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [MAHASTEEL](https://in.tradingview.com/chart/?symbol=NSE:MAHASTEEL) | 3d | +15.3% |  | +2.89% | **DEEP PULLBACK** — Bounce from EMA50 | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

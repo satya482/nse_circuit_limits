@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-04
 *Generated 2026-06-04 15:44 IST*
 
@@ -27,3 +29,6 @@
 | [THO](https://www.tradingview.com/chart/?symbol=THO) | 79.76 | +2.86% | 2.3x | 10d | 8d | +6.7% | ✓ | ✓ | — |
 | [PHVS](https://www.tradingview.com/chart/?symbol=PHVS) | 30.14 | +4.00% | 1.9x | 29d | 0d | +4.0% | ✓ | — | — |
 | [CWT](https://www.tradingview.com/chart/?symbol=CWT) | 44.75 | -1.30% | 1.7x | 6d | 7d | +3.6% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

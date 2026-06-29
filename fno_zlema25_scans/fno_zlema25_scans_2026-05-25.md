@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-05-25
 *Generated 2026-05-25 16:30 IST · 209 F&O stocks scanned*
 
@@ -149,3 +151,6 @@
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH) | 1199.90 | -2.3% | 5d | -16.7% | -8.2% | - |
 | [NMDC](https://in.tradingview.com/chart/?symbol=NSE:NMDC) | 90.19 | +2.7% | 5d | +0.1% | -0.4% | ✓ |
 | [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE) | 1800.00 | -0.8% | 5d | -5.8% | -2.6% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Sector Rotation — 2026-05-10
 
 Universe: 221 stocks  |  Active groups: 36  |  Rotating In: 13  |  Rotating Out: 2
@@ -80,3 +82,7 @@ _Groups where ≥40% of members have ZLEMA25 rising. ⚡ = coordinated cluster (
 | Welspun World | 3/3 | ▲ 100% | 22d | +34.7% | — | WELCORP, WELENT, WELSPUNLIV |
 | Iron Mining | 3/4 | ▲ 75% | 25d | +32.6% | — | KIOCL, LLOYDSME, ORISSAMINE |
 | Public Enterprise | 2/3 | ▲ 67% | 14d | +12.4% | — | CHENNPETRO, HINDPETRO |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

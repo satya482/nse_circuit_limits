@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-13
 *Generated 2026-05-13 15:40 IST*
 
@@ -40,3 +42,6 @@
 | [SAIL](https://in.tradingview.com/chart/?symbol=NSE:SAIL) | 0d | +14.3% | Integrated steel producer for construction infrastructure automotive | +14.32% | 20%  |
 | [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS) | 0d | +7.1% |  | +7.12% | 20%  |
 | [GRAPHITE](https://in.tradingview.com/chart/?symbol=NSE:GRAPHITE) | 0d | +4.5% | Graphite electrodes for electric arc furnace steel production | +4.49% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

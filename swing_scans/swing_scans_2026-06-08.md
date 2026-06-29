@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-08
 *Generated 2026-06-08 15:38 IST*
 
@@ -77,3 +79,6 @@
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL) | 4d | +5.3% |  | +0.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NAHARSPING](https://in.tradingview.com/chart/?symbol=NSE:NAHARSPING) | 12d | +6.4% | Cotton yarn and hosiery knitwear manufacturer export textiles | -2.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 2%  |
 | [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST) | 2d | +3.4% | Ductile grey iron castings commercial vehicle tractor sectors | +0.76% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-09
 *Generated 2026-06-09 16:30 IST · 209 F&O stocks scanned*
 
@@ -144,3 +146,6 @@
 | [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE) | 1354.00 | +2.0% | 5d | -2.9% | -1.4% | ✓ |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) | 864.30 | +5.2% | 5d | -0.2% | -1.0% | ✓ |
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY) | 1632.50 | +2.0% | 5d | -2.5% | -1.5% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

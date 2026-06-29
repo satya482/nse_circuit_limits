@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-09
 *Generated 2026-06-09 15:42 IST*
 
@@ -51,3 +53,6 @@
 | [IGARASHI](https://in.tradingview.com/chart/?symbol=NSE:IGARASHI) | 1w | ABOVE | 1w | +2.0% | +2.88% | 375.05 | — | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) | 1w | ABOVE | 1w | +2.9% | +0.05% | 663.15 | 5w | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) | 1w | BELOW | 1w | +1.1% | +0.04% | 2824.80 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

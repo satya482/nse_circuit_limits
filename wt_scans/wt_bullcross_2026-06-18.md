@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-18
 *Generated 2026-06-18 19:32 IST*
 
@@ -108,3 +110,7 @@
 | [CARYSIL](https://in.tradingview.com/chart/?symbol=NSE:CARYSIL) | Quartz stainless steel kitchen sinks bathroom products manufacturer | 📈 BULL_ANY_MID | +17.2% | +4.21% | 1 | ↑ | — | — | ↑ | 8d | 62.65 | 61.26 | 1237.80 | 20%  |
 | [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL) | Specialty carbon chemicals, coal pitch, graphite materials | 📈 BULL_ANY_MID | +17.6% | -1.54% | 1 | ↓ | — | — | ↑ | 19d | 62.88 | 62.58 | 690.30 | 20%  |
 | [STOVEKRAFT](https://in.tradingview.com/chart/?symbol=NSE:STOVEKRAFT) | Kitchen appliances cookware utensils retail consumer homes | 📈 BULL_ANY_MID | +26.5% | +2.66% | 1 | ↑ | — | — | ↑ | 21d | 63.36 | 62.58 | 687.75 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

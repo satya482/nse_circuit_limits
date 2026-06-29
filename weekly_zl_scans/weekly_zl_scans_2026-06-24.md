@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-24
 *Generated 2026-06-24 15:44 IST*
 
@@ -72,3 +74,6 @@
 | [ROHLTD](https://in.tradingview.com/chart/?symbol=NSE:ROHLTD) | Royal Orchid Hotels<br>₹943 Cr · ↘1Cr ↓0.3× | 1w | ABOVE | 1w | +3.1% | +0.22% | 340.40 | — | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) | Multi Commodity Exchange<br>₹73K Cr · ↘686Cr ↓0.7× | 1w | BELOW | 1w | +1.3% | +0.34% | 2840.60 | — | 20%  |
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | The Ge Shpg.Ltd<br>₹21K Cr · ↘99Cr ↓0.7× | 1w | BELOW | 1w | +4.1% | +1.83% | 1497.20 | 2w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

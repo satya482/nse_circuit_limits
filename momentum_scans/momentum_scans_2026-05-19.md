@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-19
 *Generated 2026-05-19 15:39 IST*
 
@@ -17,3 +19,6 @@
 | [APOLLOPIPE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOPIPE) | 8d | +13.1% | PVC HDPE pipes agriculture construction water management | +0.15% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [MUKANDLTD](https://in.tradingview.com/chart/?symbol=NSE:MUKANDLTD) | 3d | +5.8% |  | -2.56% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | 31d | +44.2% | Security guarding, facility management, cash logistics services | +2.45% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

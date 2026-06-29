@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Setup Guide — VS Code + Claude Code + Neo4j
 
 ## Prerequisites Checklist
@@ -341,3 +343,7 @@ RETURN c, r, connected;
 | Claude Code can't see CSV | @-mention it: `@data/raw/NSE_500cr_universe.csv` |
 | Conviction score not updating | Run `python daily_pipeline.py --mode scores` |
 | BSE RSS blocked | Try with VPN or switch to BSE API alternative |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

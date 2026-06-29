@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-14
 *Generated 2026-05-14 15:42 IST*
 
@@ -37,3 +39,6 @@
 | [VIDHIING](https://in.tradingview.com/chart/?symbol=NSE:VIDHIING) | 1w | ABOVE | 1w | +2.6% | +6.69% | 306.95 | 6w | 20%  |
 | [AMRUTANJAN](https://in.tradingview.com/chart/?symbol=NSE:AMRUTANJAN) | 1w | ABOVE | 1w | +4.6% | -1.91% | 573.85 | — | 20%  |
 | [BIGBLOC](https://in.tradingview.com/chart/?symbol=NSE:BIGBLOC) | 1w | ABOVE | 1w | +16.7% | -3.78% | 56.27 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

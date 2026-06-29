@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-18
 *Generated 2026-05-18 15:39 IST*
 
@@ -16,3 +18,6 @@
 | [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP) | 31d | +49.0% | Ibuprofen APIs, specialty chemicals, global pharma export | +2.36% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [CONFIPET](https://in.tradingview.com/chart/?symbol=NSE:CONFIPET) | 5d | +12.6% | LPG cylinders manufacturing, bottling, auto-fuel dispensing stations | -0.02% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟨 |
 | [DSSL](https://in.tradingview.com/chart/?symbol=NSE:DSSL) | 30d | +60.0% | IT infrastructure integration, networking, managed cloud services | +1.46% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

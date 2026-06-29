@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-12
 *Generated 2026-05-12 15:46 IST*
 
@@ -44,3 +46,6 @@
 | [TILE](https://www.tradingview.com/chart/?symbol=TILE) | 28.70 | -3.24% | 1.7x | 5d | 3d | +5.1% | ✓ | — | — |
 | [DCTH](https://www.tradingview.com/chart/?symbol=DCTH) | 11.06 | -3.66% | 1.9x | 2d | 6d | +6.5% | — | — | ✓ |
 | [PHVS](https://www.tradingview.com/chart/?symbol=PHVS) | 29.95 | -0.47% | 2.5x | 14d | 8d | +6.1% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

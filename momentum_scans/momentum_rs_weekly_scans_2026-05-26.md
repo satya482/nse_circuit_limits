@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-26
 *Generated 2026-05-26 15:41 IST*
 
@@ -63,3 +65,6 @@
 | [AZAD](https://in.tradingview.com/chart/?symbol=NSE:AZAD) | 0d | +3.7% | Precision-cast aerospace defense turbine components for global OEMs | +3.73% | 20%  |
 | [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK) | 0d | +2.9% | Small finance bank serving underbanked individuals small businesses | +2.92% | 20%  |
 | [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS) | 0d | +1.7% |  | +1.66% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

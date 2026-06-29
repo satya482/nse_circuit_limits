@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-26
 *Generated 2026-06-26 16:22 IST*
 
@@ -39,3 +41,6 @@
 | [NESR](https://www.tradingview.com/chart/?symbol=NESR) | 26.98 | +7.19% | 3.1x | 10d | 3d | +13.5% | ✓ | ✓ | — |
 | [STOK](https://www.tradingview.com/chart/?symbol=STOK) | 30.40 | +0.03% | 1.7x | 13d | 5d | +4.3% | ✓ | ✓ | — |
 | [HLF](https://www.tradingview.com/chart/?symbol=HLF) | 11.97 | -4.01% | 1.6x | 4d | 4d | +3.0% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

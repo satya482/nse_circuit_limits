@@ -26,6 +26,7 @@ import sys
 import os
 import csv
 import json
+import re
 from datetime import datetime
 
 import pandas as pd
@@ -33,6 +34,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many, get_names, liq_tag
 from wavetrend_scanner import WaveTrendCalculator
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -48,6 +50,7 @@ _LABELS: dict = (
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_LATEST = os.path.join(SCANS_DIR, "wt_bullcross_latest.md")
 MD_DATED = os.path.join(SCANS_DIR, f"wt_bullcross_{TODAY}.md")
+TREND_LATEST = os.path.join(REPO_DIR, "trend_scans", "trend_scan_latest.md")
 
 MC_LOW = 1_000 * 1_00_00_000  # 1,000 Cr
 MC_HIGH = 5_00_000 * 1_00_00_000  # 5 Lakh Cr
@@ -352,9 +355,15 @@ _HDR = [
 ]
 
 
-def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
+def _row(
+    f: dict,
+    circuit: dict,
+    names: dict[str, str] | None = None,
+    trend_syms: set | None = None,
+) -> str:
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sym_label = f"{sym} ★" if trend_syms and sym in trend_syms else sym
     cl, em = circuit.get(sym, ("20%", ""))
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
     zl_arrow = "↑" if f["zl_rising"] else "↓"
@@ -382,7 +391,7 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     label_lines = [p for p in [name_part, mcap_liq, lbl] if p]
     lbl_cell = "<br>".join(label_lines)
     return (
-        f"| [{sym}]({tv}) "
+        f"| [{sym_label}]({tv}) "
         f"| {f.get('trap', 'n/a')} "
         f"| {lbl_cell} "
         f"| {emoji} {f['wt_signal']} "
@@ -399,7 +408,10 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
 
 
 def build_markdown(
-    findings: list[dict], circuit: dict, names: dict[str, str] | None = None
+    findings: list[dict],
+    circuit: dict,
+    names: dict[str, str] | None = None,
+    trend_syms: set | None = None,
 ) -> str:
     names = names or {}
     # Sort: rank desc, then earliness score desc within rank (closest to move start first)
@@ -444,7 +456,7 @@ def build_markdown(
         lines.append(
             f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})"
         )
-        lines += _HDR + [_row(f, circuit, names) for f in sqz_breaks]
+        lines += _HDR + [_row(f, circuit, names, trend_syms) for f in sqz_breaks]
         lines.append("")
         lines.append("---")
         lines.append("")
@@ -454,12 +466,12 @@ def build_markdown(
         group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
-            lines += _HDR + [_row(f, circuit, names) for f in group]
+            lines += _HDR + [_row(f, circuit, names, trend_syms) for f in group]
         else:
             lines.append("*No signals.*")
         lines.append("")
 
-    return "\n".join(lines)
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
 # ── Console output ─────────────────────────────────────────────────────────────
@@ -566,7 +578,16 @@ def main():
     print_results(findings)
 
     names = get_names([f["symbol"] for f in findings])
-    md = build_markdown(findings, circuit, names)
+    trend_syms: set = set()
+    if os.path.exists(TREND_LATEST):
+        trend_syms = set(
+            re.findall(
+                r"\[([A-Z0-9]+)[^\]]*\]\(https://in\.tradingview\.com/chart/\?symbol=NSE:[A-Z0-9]+\)",
+                open(TREND_LATEST, encoding="utf-8").read(),
+            )
+        )
+        print(f"  Trend leaders loaded: {len(trend_syms)} symbols")
+    md = build_markdown(findings, circuit, names, trend_syms)
     with open(MD_LATEST, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(MD_DATED, "w", encoding="utf-8") as fh:

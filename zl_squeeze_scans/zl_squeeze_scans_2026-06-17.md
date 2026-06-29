@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-17
 *Generated 2026-06-17 18:13 IST*
 
@@ -206,3 +208,6 @@
 | [HONAUT](https://in.tradingview.com/chart/?symbol=NSE:HONAUT) | Industrial automation control systems for manufacturing plants | 1d | 21d | +25.1% | 36380.00 | -0.66% | — | ✓ | ✓ | 20%  |
 | [ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND) | Denim and apparel manufacturer, textiles to retail, global | 5d | 51d | +42.0% | 498.00 | +0.32% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 7d | 52d | +52.1% | 426.40 | +0.71% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

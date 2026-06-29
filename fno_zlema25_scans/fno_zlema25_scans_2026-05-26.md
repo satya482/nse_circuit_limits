@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-05-26
 *Generated 2026-05-26 16:30 IST · 209 F&O stocks scanned*
 
@@ -150,3 +152,6 @@
 | [ICICIGI](https://in.tradingview.com/chart/?symbol=NSE:ICICIGI) | 1860.30 | +0.3% | 5d | +2.1% | +2.0% | ✓ |
 | [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE) | 1800.00 | -0.8% | 5d | -5.8% | -2.6% | - |
 | [TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI) | 4335.60 | +0.2% | 5d | +3.6% | +3.5% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

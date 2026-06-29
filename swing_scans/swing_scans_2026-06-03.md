@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-03
 *Generated 2026-06-03 15:38 IST*
 
@@ -81,3 +83,6 @@
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 45d | +152.2% |  | +0.21% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [IMFA](https://in.tradingview.com/chart/?symbol=NSE:IMFA) | 0d | +2.8% | Ferrochrome producer for stainless steel manufacturing supply chain | +2.76% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL) | 0d | +1.0% | Sugar substitutes glucose powder health wellness FMCG | +0.97% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

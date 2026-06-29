@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-15
 *Generated 2026-06-15 18:41 IST*
 
@@ -69,3 +71,6 @@
 | [GOCLCORP](https://in.tradingview.com/chart/?symbol=NSE:GOCLCORP) | 16d | +32.0% | Explosives manufacturing, detonators, mining infrastructure services | +0.60% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RUBYMILLS](https://in.tradingview.com/chart/?symbol=NSE:RUBYMILLS) | 15d | +46.7% |  | +0.53% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU) | 2d | +1.5% |  | -1.26% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-09
 *Generated 2026-05-09 22:02 IST*
 
@@ -51,3 +53,6 @@
 | [DIN](https://www.tradingview.com/chart/?symbol=DIN) | 28.29 | +4.16% | 2.5x | 2d | 0d | +4.2% | ✓ | — | — |
 | [LPX](https://www.tradingview.com/chart/?symbol=LPX) | 75.49 | +4.14% | 1.8x | 19d | 1d | +8.2% | ✓ | — | — |
 | [ADNT](https://www.tradingview.com/chart/?symbol=ADNT) | 21.86 | -2.06% | 1.6x | 5d | 1d | +5.8% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

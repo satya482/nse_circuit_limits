@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-15
 *Generated 2026-05-15 15:41 IST*
 
@@ -217,3 +219,6 @@
 | [FRACTAL](https://in.tradingview.com/chart/?symbol=NSE:FRACTAL) | 942.00 | +0.32% | 2d | 1035.00 | 913.45 | 13.31% | 20%  |
 | [STALLION](https://in.tradingview.com/chart/?symbol=NSE:STALLION) | 141.01 | +2.46% | 2d | 152.00 | 132.25 | 14.93% | 20%  |
 | [TECHNVISN](https://in.tradingview.com/chart/?symbol=NSE:TECHNVISN) | 5250.00 | -4.55% | 2d | 5549.00 | 4825.00 | 15.01% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-09
 *Generated 2026-06-09 15:43 IST*
 
@@ -86,3 +88,7 @@
 | [YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH) | Trauma care multi-specialty hospitals Delhi-NCR Madhya Pradesh region | 📈 BULL_ZERO_CROSS | 1 | 4.65 | -3.56 | ↑ | 1d | +2.7% | ✓ | — | +2.71% | 839.10 | 20%  |
 | [ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI) |  | 📈 BULL_ZERO_CROSS | 1 | 5.43 | 6.7 | ↑ | 2d | +0.3% | ✓ | ✓ | +0.16% | 827.25 | 20%  |
 | [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL) | Instant coffee manufacturing and export for global beverage brands | 📈 BULL_ZERO_CROSS | 1 | 9.68 | -11.69 | ↑ | 2d | +6.5% | — | — | -2.04% | 1149.10 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

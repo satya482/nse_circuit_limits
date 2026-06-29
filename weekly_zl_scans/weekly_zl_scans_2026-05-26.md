@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-26
 *Generated 2026-05-26 15:43 IST*
 
@@ -123,3 +125,6 @@
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | 1w | BELOW | 1w | +4.4% | +2.14% | 1097.50 | — | 20%  |
 | [SHRIPISTON](https://in.tradingview.com/chart/?symbol=NSE:SHRIPISTON) | 1w | BELOW | 1w | +1.3% | +1.78% | 3296.30 | — | 20%  |
 | [INDSWFTLAB](https://in.tradingview.com/chart/?symbol=NSE:INDSWFTLAB) | 1w | BELOW | 1w | +3.3% | +3.02% | 136.17 | 1w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

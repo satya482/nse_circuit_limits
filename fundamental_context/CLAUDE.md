@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Knowledge Graph — Claude Code Context
 
 ## What This Is
@@ -195,3 +197,7 @@ When writing thesis text, node descriptions, or stock analysis:
 - [ ] Phase 5: Concall extractor (Claude API → structured nodes)
 - [ ] Phase 6: Conviction score auto-computation
 - [ ] Phase 7: React/Bloom visualization layer
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

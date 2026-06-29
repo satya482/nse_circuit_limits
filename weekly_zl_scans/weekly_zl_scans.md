@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-26
 *Generated 2026-06-26 16:15 IST*
 
@@ -68,3 +70,6 @@
 | [PAUSHAKLTD](https://in.tradingview.com/chart/?symbol=NSE:PAUSHAKLTD) | Paushak<br>₹1K Cr \| ↘0.9Cr · 0.3Cr | 1w | ABOVE | 1w | +8.6% | +0.01% | 500.00 | — | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL) | ↘0.0Cr · 0.1Cr | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | The Ge Shpg.Ltd<br>₹21K Cr \| →93Cr · 0.0Cr<br>Bulk carrier tanker ships crude oil petroleum products | 1w | BELOW | 1w | +4.3% | +0.00% | 1499.00 | 2w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

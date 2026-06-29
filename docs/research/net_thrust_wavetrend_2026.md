@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Net-Thrust WaveTrend Oscillator — Research Log
 **Date:** 2026-06-28  
 **Status:** NO-GO (validation failed all three acceptance criteria)  
@@ -273,3 +275,7 @@ Total                               67 tests  all passing
 ---
 
 *This document was auto-generated from the implementation session on 2026-06-28. All numerical values are from the actual data files as of that date.*
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

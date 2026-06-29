@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-26
 *Generated 2026-05-26 15:42 IST*
 
@@ -228,3 +230,6 @@
 | [GENESYS](https://in.tradingview.com/chart/?symbol=NSE:GENESYS) | 251.50 | -0.85% | 2d | 284.60 | 236.25 | 20.47% | 20%  |
 | [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM) | 147.95 | -2.66% | 2d | 163.20 | 133.29 | 22.44% | 20%  |
 | [SKMEGGPROD](https://in.tradingview.com/chart/?symbol=NSE:SKMEGGPROD) | 185.73 | +2.12% | 2d | 225.48 | 170.15 | 32.52% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

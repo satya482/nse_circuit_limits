@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-16
 *Generated 2026-06-16 15:42 IST*
 
@@ -258,3 +260,6 @@
 | [TEAMLEASE](https://in.tradingview.com/chart/?symbol=NSE:TEAMLEASE) |  | 12d | 50d | +22.6% | 1410.60 | +0.42% | — | ✓ | ✓ | 20%  |
 | [ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND) | Denim and apparel manufacturer, textiles to retail, global | 4d | 50d | +41.6% | 496.40 | -0.46% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 6d | 51d | +51.0% | 423.40 | -1.02% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

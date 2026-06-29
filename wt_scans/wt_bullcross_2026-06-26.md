@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-26
 *Generated 2026-06-26 16:16 IST*
 
@@ -98,3 +100,7 @@
 | [IGL](https://in.tradingview.com/chart/?symbol=NSE:IGL) | ✓ SAFE | Indraprastha Gas<br>₹24K Cr \| →46Cr · 0.0Cr<br>Natural gas distribution Delhi NCR transport domestic industrial | 📈 BULL_ANY_MID | 9 | ↑25 | ↓1.011 | ↑11d | — | +6.0% | 44.94/44.27 | +0.00% | 20% |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) | ✓ SAFE | Nazara Technologies<br>₹11K Cr \| →55Cr · 0.0Cr<br>Gaming platform, esports, mobile and console games globally | 📈 BULL_ANY_MID | 6 | ↑71 | ↓1.018 | ↑14d | — | +12.2% | 36.19/35.6 | +0.00% | 20% |
 | [BAYERCROP](https://in.tradingview.com/chart/?symbol=NSE:BAYERCROP) | ⚠ CAUTION | Bayer Cropscience<br>₹19K Cr \| →15Cr · 0.0Cr<br>Crop protection chemicals seeds insecticides fungicides herbicides agrichemicals | 📈 BULL_ANY_MID | 5 | ↓11 | ↑0.991 | ↓24d | — | -4.2% | -46.41/-46.84 | +0.00% | 20% |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

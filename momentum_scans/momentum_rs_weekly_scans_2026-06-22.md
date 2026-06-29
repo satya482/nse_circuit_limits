@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-22
 *Generated 2026-06-22 15:41 IST*
 
@@ -40,3 +42,6 @@
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE) | 0d | +9.7% | Steam turbines, power generation equipment, industrial sector | +9.67% | 20%  |
 | [PRECWIRE](https://in.tradingview.com/chart/?symbol=NSE:PRECWIRE) | 0d | +3.5% | Enamelled copper winding wires for motors and transformers | +3.55% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-22
 *Generated 2026-05-22 15:42 IST*
 
@@ -119,3 +121,6 @@
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK) | 1w | BELOW | 1w | +2.1% | +1.22% | 287.20 | 2w | 20%  |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL) | 1w | BELOW | 1w | +6.2% | -1.15% | 3817.30 | 10w | 20% 🟦 |
 | [RICOAUTO](https://in.tradingview.com/chart/?symbol=NSE:RICOAUTO) | 1w | BELOW | 1w | +5.4% | +3.04% | 119.96 | 9w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

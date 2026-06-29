@@ -21,6 +21,7 @@ import re
 import os
 import sys
 from datetime import datetime, timezone, timedelta
+from disclaimer import SEBI_HTML_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -500,7 +501,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
   }});
 }});
 </script>
-
+{SEBI_HTML_FOOTER}
 </body>
 </html>"""
 

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-12
 *Generated 2026-05-12 15:42 IST*
 
@@ -103,3 +105,6 @@
 | [IPL](https://in.tradingview.com/chart/?symbol=NSE:IPL) | 167.96 | -6.23% | 2d | 194.00 | 161.77 | 19.92% | 20%  |
 | [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL) | 249.09 | -4.55% | 2d | 280.85 | 234.01 | 20.02% | 20%  |
 | [BETA](https://in.tradingview.com/chart/?symbol=NSE:BETA) | 1361.60 | +1.48% | 2d | 1410.50 | 1175.00 | 20.04% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

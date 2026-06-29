@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-10
 *Generated 2026-06-10 15:39 IST*
 
@@ -64,3 +66,6 @@
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 10d | +9.5% |  | -0.96% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [BHARATFORG](https://in.tradingview.com/chart/?symbol=NSE:BHARATFORG) | 0d | +1.2% | Forged auto components, aerospace, defence, railways | +1.24% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM) | 1d | +3.6% | Branded generic pharmaceuticals formulations Asia Africa markets | +1.91% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

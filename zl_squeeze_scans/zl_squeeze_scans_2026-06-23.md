@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-23
 *Generated 2026-06-23 15:42 IST*
 
@@ -152,3 +154,6 @@
 | [INDOSTAR](https://in.tradingview.com/chart/?symbol=NSE:INDOSTAR) | Commercial vehicle finance and retail lending NBFC | 2d | 24d | +25.9% | 244.75 | -0.73% | — | ✓ | ✓ | 20%  |
 | [BOROSCI](https://in.tradingview.com/chart/?symbol=NSE:BOROSCI) |  | 3d | 29d | +37.4% | 155.31 | +0.58% | — | ✓ | ✓ | 20%  |
 | [SIS](https://in.tradingview.com/chart/?symbol=NSE:SIS) | Security guarding, facility management, cash logistics services | 11d | 56d | +53.1% | 429.15 | -0.89% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

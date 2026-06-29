@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-23
 *Generated 2026-06-23 15:45 IST*
 
@@ -97,3 +99,7 @@
 | [TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI) <sub>Tata Elxsi · ₹26K Cr · →101Cr ↓0.7×</sub> | ✓ SAFE | Design engineering services automotive media communications healthcare | 📈 BULL_ANY_MID | 0 | ↓7 | ↓0.990 | ↓24d | — | -2.4% | -32.12/-32.46 | -0.95% | 20% |
 | [ATUL](https://in.tradingview.com/chart/?symbol=NSE:ATUL) <sub>Atul · ₹19K Cr · ↗12Cr 1.0×</sub> | ⚠ CAUTION | Specialty chemicals for pharma agrochemical industrial applications | 📈 BULL_ANY_MID | 0 | ↓42 | ↓0.994 | ↓26d | — | -5.5% | -43.9/-45.71 | -0.60% | 20% |
 | [SKMEGGPROD](https://in.tradingview.com/chart/?symbol=NSE:SKMEGGPROD) <sub>Skm Egg Prod Export(I) Lt · ₹1K Cr · ↘11Cr ↓0.6×</sub> | ✓ SAFE | Egg powder processing poultry complex export oriented | 📈 BULL_ANY_MID | 0 | ↑92 | ↓1.029 | ↑22d | — | +36.7% | 52.51/52.4 | -0.42% | 20% |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

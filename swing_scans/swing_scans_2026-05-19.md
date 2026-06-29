@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-19
 *Generated 2026-05-19 15:39 IST*
 
@@ -40,3 +42,6 @@
 | [KINGFA](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | 32d | +29.6% | Engineering plastics compounds for automotive consumer appliances | -1.47% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR) | 3d | +2.7% | Ballpoint pens stationery manufacturer India schools office | -0.10% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR) | 40d | +31.8% | Specialty pharma formulations global markets niche dosages | +0.19% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

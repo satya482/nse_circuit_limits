@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-03
 *Generated 2026-06-03 15:39 IST*
 
@@ -38,3 +40,6 @@
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 5d | +10.3% |  | +0.35% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 5d | +10.3% |  | +0.35% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 45d | +152.2% |  | +0.21% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

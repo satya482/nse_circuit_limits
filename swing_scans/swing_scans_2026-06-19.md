@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-19
 *Generated 2026-06-19 15:39 IST*
 
@@ -92,3 +94,6 @@
 | [RUBYMILLS](https://in.tradingview.com/chart/?symbol=NSE:RUBYMILLS) | 19d | +49.4% |  | +1.78% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [KAPSTON](https://in.tradingview.com/chart/?symbol=NSE:KAPSTON) | 5d | +3.6% |  | -1.10% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [SGIL](https://in.tradingview.com/chart/?symbol=NSE:SGIL) | 4d | +6.4% | Wind turbine and industrial castings manufacturer | -0.60% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

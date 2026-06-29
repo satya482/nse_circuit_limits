@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-26
 *Generated 2026-06-26 16:14 IST*
 
@@ -142,3 +144,6 @@
 | [CENTUM](https://in.tradingview.com/chart/?symbol=NSE:CENTUM) | Electronics manufacturing for aerospace defense telecom sectors | 2d | 12d | +7.8% | 3562.30 | +0.00% | — | ✓ | ✓ | 20%  |
 | [JSWDULUX](https://in.tradingview.com/chart/?symbol=NSE:JSWDULUX) | Decorative paints coatings Indian buildings infrastructure | 2d | 21d | +10.1% | 3199.10 | +0.00% | — | — | ✓ | 20%  |
 | [BOROSCI](https://in.tradingview.com/chart/?symbol=NSE:BOROSCI) |  | 6d | 32d | +37.0% | 154.84 | +0.00% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

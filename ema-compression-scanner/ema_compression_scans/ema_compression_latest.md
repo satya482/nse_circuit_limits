@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # EMA Compression + BB Squeeze — 2026-06-26
 
 **Scanned:** 954 &nbsp;|&nbsp; **Compressed (>=10d):** 144 &nbsp;|&nbsp; **BB Squeeze:** 36 &nbsp;|&nbsp; **Signals:** 6 &nbsp;|&nbsp; **Run time:** 19s
@@ -27,3 +29,6 @@
 _Gates: EMA spread < 1.5xATR50 + < 3% EMA200 (>=10 bars) + BB(34,2.5) inside KC(34,1.5) (>=5 bars, width bottom 20%) + weekly RS vs NiftyMidSml400 above EMA9 + 4-week slope positive_
 
 _Generated 2026-06-26 16:15:40 IST_
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

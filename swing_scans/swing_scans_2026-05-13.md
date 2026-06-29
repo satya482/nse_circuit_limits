@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-13
 *Generated 2026-05-13 15:39 IST*
 
@@ -54,3 +56,6 @@
 | [MWL](https://in.tradingview.com/chart/?symbol=NSE:MWL) | 24d | +32.9% |  | -0.53% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL) | 17d | +7.4% | Precision metal castings aerospace defense oil-gas industrial | -1.60% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL) | 17d | +7.4% | Precision metal castings aerospace defense oil-gas industrial | -1.60% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

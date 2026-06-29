@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-26
 *Generated 2026-05-26 15:42 IST*
 
@@ -138,3 +140,6 @@
 | [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU) | Residential real estate development Ahmedabad Gujarat region | 4d | 32d | +26.7% | 704.05 | -0.30% | — | ✓ | ✓ | 20%  |
 | [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM) | Multi-specialty hospitals and diagnostic centers India GCC | 1d | 32d | +15.5% | 757.60 | +1.43% | — | ✓ | ✓ | 20%  |
 | [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS) | Hospital chains, diagnostics, multi-specialty acute care services | 5d | 33d | +19.6% | 966.60 | -0.39% | — | — | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

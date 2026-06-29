@@ -20,6 +20,7 @@ REPO_DIR = Path(__file__).parent.parent
 sys.path.insert(0, str(REPO_DIR))
 
 from ohlc_db import load_ohlc, load_ohlc_many  # noqa: E402
+from disclaimer import SEBI_HTML_FOOTER
 
 IST = timezone(timedelta(hours=5, minutes=30))
 
@@ -934,6 +935,7 @@ function drawHeatmap() {{
 drawHeatmap();
 window.addEventListener('resize', drawHeatmap);
 </script>
+{SEBI_HTML_FOOTER}
 </body>
 </html>"""
 

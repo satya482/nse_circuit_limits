@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-11
 *Generated 2026-06-11 15:39 IST*
 
@@ -33,3 +35,6 @@
 | [RAJRATAN](https://in.tradingview.com/chart/?symbol=NSE:RAJRATAN) | 5d | +6.0% |  | -0.89% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST) | 4d | +7.6% |  | -4.39% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [JINDALPOLY](https://in.tradingview.com/chart/?symbol=NSE:JINDALPOLY) | 1d | +9.2% |  | +4.48% | **DEEP PULLBACK** — Bounce from EMA50 | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

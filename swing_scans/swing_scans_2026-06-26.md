@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-26
 *Generated 2026-06-26 16:11 IST*
 
@@ -97,3 +99,6 @@
 | [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU) | ⚠ CAUTION | 6d | +5.4% | Prime Securities<br>₹1000 Cr \| ↘1Cr · 0.0Cr | 93% | 1.04x | +1.42% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [TVSELECT](https://in.tradingview.com/chart/?symbol=NSE:TVSELECT) | ✓ SAFE | 0d | +6.0% | Tvs Electronics<br>₹882 Cr \| ↗8Cr · 0.0Cr<br>POS devices, printers, keyboards, OEM service solutions | 75% | 2.57x | +5.97% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 8d | +4.4% | Manappuram Finance<br>₹30K Cr \| →85Cr · 0.0Cr<br>Gold loans, money exchange, unbanked retail credit | 96% | 1.24x | +0.05% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

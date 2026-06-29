@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-11
 *Generated 2026-06-11 15:41 IST*
 
@@ -44,3 +46,6 @@
 | [EMUDHRA](https://in.tradingview.com/chart/?symbol=NSE:EMUDHRA) | 1w | ABOVE | 1w | +0.7% | +0.00% | 469.40 | — | 20%  |
 | [AMRUTANJAN](https://in.tradingview.com/chart/?symbol=NSE:AMRUTANJAN) | 1w | ABOVE | 1w | +1.9% | -1.18% | 562.30 | — | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) | 1w | ABOVE | 1w | +1.2% | -0.86% | 652.55 | 5w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

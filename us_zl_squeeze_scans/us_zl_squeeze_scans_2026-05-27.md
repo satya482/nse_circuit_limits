@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-27
 *Generated 2026-05-27 15:47 IST*
 
@@ -32,3 +34,6 @@
 | [FUL](https://www.tradingview.com/chart/?symbol=FUL) | 60.56 | +4.81% | 1.7x | 1d | 0d | +4.8% | ✓ | — | — |
 | [IMRX](https://www.tradingview.com/chart/?symbol=IMRX) | 5.27 | -2.23% | 1.7x | 2d | 2d | +5.0% | ✓ | — | — |
 | [NVRI](https://www.tradingview.com/chart/?symbol=NVRI) | 19.80 | +1.02% | 18.0x | 23d | 3d | +3.2% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

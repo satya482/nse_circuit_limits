@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-08
 *Generated 2026-05-08 15:39 IST*
 
@@ -60,3 +62,6 @@
 | [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.59% | 23d | +41.3% | 20%  |
 | [SGIL](https://in.tradingview.com/chart/?symbol=NSE:SGIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +3.61% | 20d | +20.5% | 20%  |
 | [NRAIL](https://in.tradingview.com/chart/?symbol=NSE:NRAIL) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.14% | 21d | +26.1% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

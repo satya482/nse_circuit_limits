@@ -13,6 +13,7 @@ Table format (13 cols):
 import re
 import os
 import sys
+from disclaimer import SEBI_HTML_FOOTER
 import json
 from datetime import datetime, timezone, timedelta
 
@@ -489,7 +490,7 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
   }});
 }});
 </script>
-
+{SEBI_HTML_FOOTER}
 </body>
 </html>"""
 

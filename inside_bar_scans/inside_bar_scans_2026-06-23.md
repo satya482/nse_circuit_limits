@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-23
 *Generated 2026-06-23 15:43 IST*
 
@@ -221,3 +223,6 @@
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 5%  |
 | [BAJAJST](https://in.tradingview.com/chart/?symbol=NSE:BAJAJST) | 395.00 | -3.02% | 2d | 460.90 | 380.15 | 21.24% | 20% 🟦 |
 | [BHAGCHEM](https://in.tradingview.com/chart/?symbol=NSE:BHAGCHEM) | 281.72 | -2.34% | 2d | 298.00 | 242.70 | 22.79% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

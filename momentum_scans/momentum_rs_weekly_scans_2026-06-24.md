@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-24
 *Generated 2026-06-24 15:41 IST*
 
@@ -61,3 +63,6 @@
 | [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | 0d | +4.0% |  | +3.96% | 20%  |
 | [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS) | 0d | +1.9% | Oil gas exploration production Indian subcontinent independent operator | +1.86% | 5% 🟥 |
 | [DSSL](https://in.tradingview.com/chart/?symbol=NSE:DSSL) | 0d | +1.2% | IT infrastructure integration, networking, managed cloud services | +1.25% | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

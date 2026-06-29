@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-12
 *Generated 2026-06-12 15:41 IST*
 
@@ -176,3 +178,6 @@
 | [NUCLEUS](https://in.tradingview.com/chart/?symbol=NSE:NUCLEUS) | 750.80 | -0.05% | 2d | 827.30 | 696.40 | 18.80% | 20%  |
 | [3BBLACKBIO](https://in.tradingview.com/chart/?symbol=NSE:3BBLACKBIO) | 1240.00 | -1.12% | 2d | 1441.50 | 1199.90 | 20.14% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

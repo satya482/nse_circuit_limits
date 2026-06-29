@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-22
 *Generated 2026-06-22 15:43 IST*
 
@@ -75,3 +77,6 @@
 | [HEXATRADEX](https://in.tradingview.com/chart/?symbol=NSE:HEXATRADEX) <sub>Hexa Tradex · ₹895 Cr</sub> | 1w | ABOVE | 1w | +1.9% | +1.85% | 165.51 | 47w | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) <sub>Multi Commodity Exchange · ₹71K Cr</sub> | 1w | BELOW | 1w | +2.4% | +2.38% | 2870.40 | — | 20%  |
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) <sub>The Ge Shpg.Ltd · ₹21K Cr</sub> | 1w | BELOW | 1w | +2.5% | +2.48% | 1473.30 | 2w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

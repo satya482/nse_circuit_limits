@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-10
 *Generated 2026-06-10 15:44 IST*
 
@@ -84,3 +86,7 @@
 | [STUDDS](https://in.tradingview.com/chart/?symbol=NSE:STUDDS) |  | 📈 BULL_ZERO_CROSS | 1 | 14.39 | -7.81 | ↑ | 2d | +19.9% | — | — | -0.16% | 526.30 | 20%  |
 | [WINDMACHIN](https://in.tradingview.com/chart/?symbol=NSE:WINDMACHIN) | Plastic injection moulding pipe extrusion machinery manufacturer | 📈 BULL_ZERO_CROSS | 1 | 15.95 | -6.99 | ↑ | 2d | +15.2% | — | ✓ | +4.53% | 327.90 | 20%  |
 | [UNICHEMLAB](https://in.tradingview.com/chart/?symbol=NSE:UNICHEMLAB) |  | 📈 BULL_ZERO_CROSS | 1 | 18.96 | -0.93 | ↑ | 2d | +22.6% | — | ✓ | +15.21% | 437.40 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

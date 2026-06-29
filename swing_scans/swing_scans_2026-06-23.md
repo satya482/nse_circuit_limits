@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-23
 *Generated 2026-06-23 15:39 IST*
 
@@ -95,3 +97,6 @@
 | [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR) | ✓ SAFE | 7d | +6.6% | Precision automotive gears and components for global OEMs | 80% | 1.12x | -3.89% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
 | [FAZE3Q](https://in.tradingview.com/chart/?symbol=NSE:FAZE3Q) | ✓ SAFE | 7d | +13.5% |  | 80% | 1.23x | -0.31% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RAJRATAN](https://in.tradingview.com/chart/?symbol=NSE:RAJRATAN) | ✓ SAFE | 13d | +9.0% |  | 86% | 1.06x | -3.03% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

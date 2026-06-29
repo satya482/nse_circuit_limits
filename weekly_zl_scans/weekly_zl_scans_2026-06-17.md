@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-17
 *Generated 2026-06-17 18:13 IST*
 
@@ -226,3 +228,6 @@
 | [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR) | 1w | BELOW | 1w | +1.8% | -1.66% | 1300.30 | 2w | 20% 🟦 |
 | [GUJALKALI](https://in.tradingview.com/chart/?symbol=NSE:GUJALKALI) | 1w | BELOW | 1w | +2.5% | +0.90% | 649.75 | — | 10% 🟨 |
 | [BHARATSE](https://in.tradingview.com/chart/?symbol=NSE:BHARATSE) | 1w | BELOW | 1w | +2.3% | -0.39% | 184.37 | 2w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

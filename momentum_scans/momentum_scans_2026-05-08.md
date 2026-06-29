@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-08
 *Generated 2026-05-08 15:40 IST*
 
@@ -35,3 +37,6 @@
 | [TATVA](https://in.tradingview.com/chart/?symbol=NSE:TATVA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.76% | 22d | +20.1% | 20%  |
 | [WSTCSTPAPR](https://in.tradingview.com/chart/?symbol=NSE:WSTCSTPAPR) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.68% | 25d | +28.8% | 20%  |
 | [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | **STRONG** — ZLEMA25 touch + EMA20 rising | -1.59% | 23d | +41.3% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

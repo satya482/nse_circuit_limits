@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-01
 *Generated 2026-06-01 15:44 IST*
 
@@ -48,3 +50,6 @@
 | [LRN](https://www.tradingview.com/chart/?symbol=LRN) | 92.38 | +0.45% | 1.6x | 1d | 2d | +3.2% | ✓ | — | — |
 | [AGIO](https://www.tradingview.com/chart/?symbol=AGIO) | 29.40 | -3.35% | 1.7x | 3d | 3d | +4.5% | ✓ | — | — |
 | [NTGR](https://www.tradingview.com/chart/?symbol=NTGR) | 25.99 | +1.09% | 1.7x | 14d | 4d | +4.5% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

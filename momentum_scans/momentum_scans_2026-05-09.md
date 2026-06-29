@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-09
 *Generated 2026-05-09 22:03 IST*
 
@@ -49,3 +51,6 @@
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN) | **DEEP PULLBACK** — Bounce from EMA50 | +3.24% | 3d | +11.6% | 20%  |
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN) | **DEEP PULLBACK** — Bounce from EMA100 | +3.24% | 3d | +11.6% | 20%  |
 | [LUMAXIND](https://in.tradingview.com/chart/?symbol=NSE:LUMAXIND) | **DEEP PULLBACK** — Bounce from EMA50 | +6.19% | 2d | +14.5% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

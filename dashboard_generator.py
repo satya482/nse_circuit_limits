@@ -11,6 +11,7 @@ import glob
 import json
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
+from disclaimer import SEBI_HTML_FOOTER
 
 try:
     from ohlc_db import get_names as _get_names, get_liq_labels as _get_liq_labels
@@ -1199,7 +1200,8 @@ def build_html(
             all_tv_syms.append(_s)
     all_tv_csv = ",".join(f"NSE:{s}" for s in all_tv_syms)
 
-    return f"""<!DOCTYPE html>
+    return (
+        f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -1356,10 +1358,13 @@ document.querySelectorAll('.copy-btn').forEach(btn => {{
   }});
 }});
 </script>
-
+"""
+        + SEBI_HTML_FOOTER
+        + """
 </body>
 </html>
 """
+    )
 
 
 def main():

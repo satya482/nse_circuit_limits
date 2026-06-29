@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Design: Tree-sitter Symbol Index
 
 **Date:** 2026-06-26
@@ -122,3 +124,7 @@ All failure modes degrade gracefully to cavecrew-investigator. No user-visible e
 - Per-repo `.gitignore` (auto-patched by indexer on first run)
 - Existing cavecrew-investigator behavior (still the fallback)
 - find-fix-router override clause (user "use general-purpose" still respected)
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

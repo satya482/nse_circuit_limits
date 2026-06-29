@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-05-07
 *Generated 2026-05-07 16:50 IST*
 
@@ -44,3 +46,6 @@
 | Symbol | Day Change | ZL Days | ZL Chg% | Circuit |
 |--------|----------:|--------:|--------:|:-------:|
 | [APOLLOPIPE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOPIPE) | +10.81% | 0d | +10.8% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

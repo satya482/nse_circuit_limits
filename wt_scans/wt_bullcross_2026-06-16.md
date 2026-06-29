@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-16
 *Generated 2026-06-16 15:44 IST*
 
@@ -158,3 +160,7 @@
 | [GULFOILLUB](https://in.tradingview.com/chart/?symbol=NSE:GULFOILLUB) | Automotive and industrial lubricant manufacturer for vehicles | 📈 BULL_ZERO_CROSS | 1 | 11.84 | -8.99 | ↑ | 3d | +9.1% | — | — | +1.36% | 992.95 | 20%  |
 | [POKARNA](https://in.tradingview.com/chart/?symbol=NSE:POKARNA) | Granite quarrying and engineered quartz surface manufacturing | 📈 BULL_ZERO_CROSS | 1 | 14.0 | -10.34 | ↑ | 3d | +11.0% | ✓ | ✓ | +4.38% | 908.85 | 20% 🟦 |
 | [INDIAMART](https://in.tradingview.com/chart/?symbol=NSE:INDIAMART) | B2B marketplace connecting MSMEs and suppliers digitally | 📈 BULL_ZERO_CROSS | 1 | 14.59 | -6.1 | ↑ | 3d | +5.9% | ✓ | ✓ | +1.73% | 2084.10 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

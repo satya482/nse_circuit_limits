@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-20
 *Generated 2026-05-20 15:42 IST*
 
@@ -84,3 +86,6 @@
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL) | 1w | BELOW | 1w | +5.2% | +3.50% | 3780.80 | 10w | 20% 🟦 |
 | [TORNTPOWER](https://in.tradingview.com/chart/?symbol=NSE:TORNTPOWER) | 1w | BELOW | 1w | +3.2% | +2.18% | 1512.60 | — | 20%  |
 | [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR) | 1w | BELOW | 1w | +1.5% | +0.28% | 1270.00 | — | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-08
 *Generated 2026-06-08 15:44 IST*
 
@@ -170,3 +172,6 @@
 | [PSPPROJECT](https://in.tradingview.com/chart/?symbol=NSE:PSPPROJECT) | 852.60 | -2.39% | 2d | 960.00 | 818.30 | 17.32% | 20%  |
 | [MSTCLTD](https://in.tradingview.com/chart/?symbol=NSE:MSTCLTD) | 490.15 | -4.33% | 2d | 535.70 | 448.00 | 19.58% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

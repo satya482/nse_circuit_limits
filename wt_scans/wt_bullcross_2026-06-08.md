@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-08
 *Generated 2026-06-08 18:29 IST*
 
@@ -46,3 +48,7 @@
 | [OSWALPUMPS](https://in.tradingview.com/chart/?symbol=NSE:OSWALPUMPS) | Solar pumps, electric motors, agricultural and industrial water systems | 📈 BULL_ZERO_CROSS | 1 | 4.55 | -11.2 | ↑ | 4d | +9.0% | — | — | -3.97% | 396.30 | 5% 🟥 |
 | [BEPL](https://in.tradingview.com/chart/?symbol=NSE:BEPL) |  | 📈 BULL_ZERO_CROSS | 1 | 9.2 | -5.79 | ↑ | 2d | +2.7% | ✓ | ✓ | +0.93% | 97.76 | 20%  |
 | [ROTO](https://in.tradingview.com/chart/?symbol=NSE:ROTO) |  | 📈 BULL_ZERO_CROSS | 1 | 9.75 | -11.33 | ↑ | 4d | +9.3% | ✓ | — | -1.70% | 61.21 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

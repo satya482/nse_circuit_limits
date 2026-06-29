@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-12
 *Generated 2026-06-12 15:41 IST*
 
@@ -86,3 +88,6 @@
 | [TNPETRO](https://in.tradingview.com/chart/?symbol=NSE:TNPETRO) | 1w | ABOVE | 1w | +1.6% | +1.57% | 90.50 | 2w | 20%  |
 | [PRABHA](https://in.tradingview.com/chart/?symbol=NSE:PRABHA) | 1w | ABOVE | 1w | +0.8% | +3.37% | 160.71 | 9w | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) | 1w | BELOW | 1w | +2.1% | +2.67% | 2853.00 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

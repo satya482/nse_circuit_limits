@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-14
 *Generated 2026-05-14 15:39 IST*
 
@@ -56,3 +58,6 @@
 | [KINGFA](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | 29d | +28.4% | Engineering plastics compounds for automotive consumer appliances | -0.45% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [GANDHITUBE](https://in.tradingview.com/chart/?symbol=NSE:GANDHITUBE) | 8d | +8.3% |  | +0.48% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 32d | +103.0% |  | +1.15% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

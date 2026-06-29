@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-05
 *Generated 2026-06-05 15:41 IST*
 
@@ -98,3 +100,6 @@
 | [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL) | 1w | BELOW | 1w | +2.4% | +1.07% | 1079.10 | 2w | 20%  |
 | [PTC](https://in.tradingview.com/chart/?symbol=NSE:PTC) | 1w | BELOW | 1w | +0.7% | +0.77% | 184.39 | — | 20%  |
 | [MMFL](https://in.tradingview.com/chart/?symbol=NSE:MMFL) | 1w | BELOW | 1w | +0.6% | -1.00% | 450.55 | 4w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

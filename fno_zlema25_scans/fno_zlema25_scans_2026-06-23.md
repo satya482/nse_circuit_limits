@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-23
 *Generated 2026-06-23 16:30 IST · 209 F&O stocks scanned*
 
@@ -134,3 +136,6 @@
 | [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL) | 1980.50 | -0.1% | 5d | -5.5% | -1.9% | - |
 | [DABUR](https://in.tradingview.com/chart/?symbol=NSE:DABUR) | 419.80 | -0.6% | 5d | -3.6% | -0.7% | - |
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND) | 3540.40 | -1.3% | 5d | -0.7% | +0.8% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-11
 *Generated 2026-05-11 15:46 IST*
 
@@ -43,3 +45,6 @@
 | [BGC](https://www.tradingview.com/chart/?symbol=BGC) | 11.39 | +0.89% | 1.8x | 1d | 1d | +4.6% | — | — | ✓ |
 | [TDS](https://www.tradingview.com/chart/?symbol=TDS) | 46.47 | +2.13% | 3.1x | 8d | 6d | +4.2% | ✓ | — | — |
 | [PHVS](https://www.tradingview.com/chart/?symbol=PHVS) | 30.09 | +1.38% | 1.8x | 13d | 7d | +6.6% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

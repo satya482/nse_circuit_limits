@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-22
 *Generated 2026-05-22 15:39 IST*
 
@@ -67,3 +69,6 @@
 | [MENONBE](https://in.tradingview.com/chart/?symbol=NSE:MENONBE) | 18d | +25.3% |  | +0.08% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 38d | +124.9% |  | +3.24% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [UNITEDPOLY](https://in.tradingview.com/chart/?symbol=NSE:UNITEDPOLY) | 7d | +15.1% |  | +0.78% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

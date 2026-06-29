@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-04
 *Generated 2026-06-04 15:41 IST*
 
@@ -84,3 +86,6 @@
 | [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) | 1w | BELOW | 1w | +5.2% | +0.80% | 1492.00 | — | 20%  |
 | [POCL](https://in.tradingview.com/chart/?symbol=NSE:POCL) | 1w | BELOW | 1w | +1.5% | -0.82% | 1305.10 | — | 20%  |
 | [MMFL](https://in.tradingview.com/chart/?symbol=NSE:MMFL) | 1w | BELOW | 1w | +1.6% | +3.56% | 455.10 | 4w | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

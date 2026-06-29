@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-06-08
 *Generated 2026-06-08 15:46 IST*
 
@@ -32,3 +34,6 @@
 | [ASALCBR](https://in.tradingview.com/chart/?symbol=NSE:ASALCBR) | 1w | ABOVE | 1w | +0.6% | +0.58% | 831.15 | — | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP) | 1w | ABOVE | 1w | +2.8% | +2.82% | 662.85 | 5w | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) | 1w | BELOW | 1w | +1.0% | +1.03% | 2823.80 | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-06-09
 *Generated 2026-06-09 15:41 IST*
 
@@ -165,3 +167,6 @@
 | [CAMLINFINE](https://in.tradingview.com/chart/?symbol=NSE:CAMLINFINE) | 133.05 | +4.49% | 2d | 139.33 | 119.27 | 16.82% | 20%  |
 | [QUESS](https://in.tradingview.com/chart/?symbol=NSE:QUESS) | 237.17 | +0.47% | 2d | 250.00 | 211.13 | 18.41% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

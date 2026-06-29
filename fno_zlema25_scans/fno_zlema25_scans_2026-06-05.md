@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-06-05
 *Generated 2026-06-05 16:30 IST · 209 F&O stocks scanned*
 
@@ -145,3 +147,6 @@
 | [IREDA](https://in.tradingview.com/chart/?symbol=NSE:IREDA) | 123.43 | +0.1% | 5d | -7.4% | -3.0% | ✓ |
 | [IEX](https://in.tradingview.com/chart/?symbol=NSE:IEX) | 122.38 | -1.4% | 5d | -4.6% | -2.5% | ✓ |
 | [ALKEM](https://in.tradingview.com/chart/?symbol=NSE:ALKEM) | 5251.50 | -0.5% | 5d | -4.5% | -1.8% | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

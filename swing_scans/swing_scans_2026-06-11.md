@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-11
 *Generated 2026-06-11 15:38 IST*
 
@@ -68,3 +70,6 @@
 | [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) | 0d | +1.8% | Contract manufacturing pharma biotech development services | +1.83% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG) | 0d | +1.3% | Sugarcane processor making sugar ethanol chemicals power spirits | +1.30% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [JINDALPOLY](https://in.tradingview.com/chart/?symbol=NSE:JINDALPOLY) | 1d | +9.2% |  | +4.48% | **DEEP PULLBACK** — Bounce from EMA50 | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Sector Rotation — 2026-06-17
 
 Universe: 238 stocks  |  Active groups: 37  |  Rotating In: 6  |  Rotating Out: 1
@@ -64,3 +66,7 @@ _Groups where ≥40% of members have ZLEMA25 rising. ⚡ = coordinated cluster (
 | Value Chain | 3/3 | ▲ 100% | 21d | +36.7% | — | ALKEM, INNOVACAP, ORCHPHARMA |
 | Public Enterprise | 3/3 | ▲ 100% | 10d | +11.3% | — | CHENNPETRO, HINDPETRO, MRPL |
 | Pharmaceuticals Research | 3/3 | ▲ 100% | 14d | +26.9% | — | KPL, SENORES, STAR |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

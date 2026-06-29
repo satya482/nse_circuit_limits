@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-15
 *Generated 2026-06-15 18:46 IST*
 
@@ -258,3 +260,7 @@
 | [RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO) | Spirits manufacturer whisky rum brandy Indian consumer drinks | 📈 BULL_ZERO_CROSS | 1 | 14.39 | 1.04 | ↑ | 2d | +4.1% | ✓ | — | +1.42% | 3592.00 | 20%  |
 | [SMLMAH](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH) | Light medium commercial vehicles manufacturing India | 📈 BULL_ZERO_CROSS | 1 | 16.55 | 0.39 | ↑ | 2d | +8.9% | ✓ | ✓ | +3.39% | 4015.30 | 10% 🟩 |
 | [BANARISUG](https://in.tradingview.com/chart/?symbol=NSE:BANARISUG) |  | 📈 BULL_ZERO_CROSS | 1 | 16.64 | -7.03 | ↑ | 2d | +1.3% | ✓ | — | +0.93% | 3649.30 | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-25
 *Generated 2026-05-25 15:43 IST*
 
@@ -221,3 +223,6 @@
 | [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH) | 921.85 | +0.53% | 2d | 1043.00 | 871.65 | 19.66% | 20%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 20%  |
 | [DRAGARWQ](https://in.tradingview.com/chart/?symbol=NSE:DRAGARWQ) | 4970.00 | -4.05% | 2d | 6059.70 | 4600.00 | 31.73% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

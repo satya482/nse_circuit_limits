@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-12
 *Generated 2026-06-12 15:45 IST*
 
@@ -37,3 +39,6 @@
 | [PTCT](https://www.tradingview.com/chart/?symbol=PTCT) | 74.71 | +1.85% | 2.1x | 3d | 5d | +8.8% | ✓ | ✓ | — |
 | [ESAB](https://www.tradingview.com/chart/?symbol=ESAB) | 89.15 | +7.51% | 1.8x | 1d | 0d | +7.5% | ✓ | — | — |
 | [BIOA](https://www.tradingview.com/chart/?symbol=BIOA) | 16.45 | +6.27% | 1.6x | 1d | 0d | +6.3% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

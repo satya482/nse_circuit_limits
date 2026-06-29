@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE + US Circuit Limits & Scanner Suite
 
 Daily post-market scanner suite for NSE-listed Indian equities and US equities.
@@ -165,3 +167,7 @@ Place `NSE_500cr_15CrNotional10D_50rs_sector_industry.csv` in the repo root (git
 | Trading-day gaps | Integer position-index diff, not calendar days (handles NSE holidays) |
 | DB columns | All lowercase: `date`, `open`, `high`, `low`, `close`, `volume` |
 | Kite quote close | `last_price` = today's close; `ohlc.close` = previous day |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

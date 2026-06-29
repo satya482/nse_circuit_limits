@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-05
 *Generated 2026-06-05 15:40 IST*
 
@@ -186,3 +188,6 @@
 | [IKS](https://in.tradingview.com/chart/?symbol=NSE:IKS) | Healthcare IT platform optimizing provider revenue and operations | 7d | 10d | +4.6% | 1659.10 | -1.87% | — | ✓ | ✓ | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 2d | 11d | +9.9% | 132.78 | +3.42% | ✓ | ✓ | — | 10% 🟨 |
 | [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | Cash management, ATM operations, banking infrastructure services | 6d | 19d | +4.2% | 305.80 | +0.23% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

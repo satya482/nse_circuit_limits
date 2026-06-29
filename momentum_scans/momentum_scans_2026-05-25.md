@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-25
 *Generated 2026-05-25 15:40 IST*
 
@@ -37,3 +39,6 @@
 | [SIGNPOST](https://in.tradingview.com/chart/?symbol=NSE:SIGNPOST) | 3d | +12.0% |  | +5.62% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [ASHIANA](https://in.tradingview.com/chart/?symbol=NSE:ASHIANA) | 35d | +26.6% | Senior living homes, mid-premium residential projects, niche segments | +1.81% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 39d | +128.7% |  | +1.70% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

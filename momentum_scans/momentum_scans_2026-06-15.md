@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-15
 *Generated 2026-06-15 18:42 IST*
 
@@ -34,3 +36,6 @@
 | [STYLAMIND](https://in.tradingview.com/chart/?symbol=NSE:STYLAMIND) | 49d | +49.6% | Decorative laminates and solid surfaces for residential commercial interiors | +2.43% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [INNOVACAP](https://in.tradingview.com/chart/?symbol=NSE:INNOVACAP) | 7d | +10.6% | Pharma contract manufacturing API research development marketing | +0.58% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [ADOR](https://in.tradingview.com/chart/?symbol=NSE:ADOR) | 1d | +6.2% |  | +1.04% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-19
 *Generated 2026-05-19 15:42 IST*
 
@@ -76,3 +78,6 @@
 | [SUDARCOLOR](https://in.tradingview.com/chart/?symbol=NSE:SUDARCOLOR) | 1w | ABOVE | 1w | +2.2% | +2.22% | 350.70 | — | 20%  |
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK) | 1w | BELOW | 1w | +1.9% | +0.93% | 286.60 | 2w | 20%  |
 | [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR) | 1w | BELOW | 1w | +1.3% | +1.23% | 1266.40 | — | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

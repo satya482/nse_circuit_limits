@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # Trend Scanner — 2026-06-21
 *Generated 2026-06-21 10:51 IST*
 
@@ -86,3 +88,7 @@
 | [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | ✓ SAFE | Private bank retail corporate MSME lending deposits | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 49 | ↓62 | ↓1.007 | 98% | 🔵0.62x | ↑9d | +7.0% | -1.15% | 20%  |
 | [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS) | ⚠ CAUTION | Steel castings manufacturer for heavy industrial equipment OEMs | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 46 | ↓64 | ↑1.014 | 95% | 0.86x | ↑6d | +4.0% | +0.34% | 20%  |
 | [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL) | ✓ SAFE | Highway bridge tunnel EPC construction contractor | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 44 | ↓70 | ↓1.013 | 99% | 1.01x | ↑14d | +9.5% | -1.37% | 20%  |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-15
 *Generated 2026-06-15 18:43 IST*
 
@@ -44,3 +46,6 @@
 | [VERANDA](https://in.tradingview.com/chart/?symbol=NSE:VERANDA) | 0d | +6.4% | Hybrid EdTech platform competitive exam prep and professional courses | +6.42% | 20%  |
 | [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW) | 0d | +2.6% | Dredging, marine repair, ship maintenance, maritime infrastructure | +2.61% | 20%  |
 | [KIRLPNU](https://in.tradingview.com/chart/?symbol=NSE:KIRLPNU) | 0d | +1.4% | Compressed air and gas systems for industrial manufacturing | +1.44% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

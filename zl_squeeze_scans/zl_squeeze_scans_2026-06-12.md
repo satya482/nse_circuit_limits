@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-12
 *Generated 2026-06-12 15:40 IST*
 
@@ -248,3 +250,6 @@
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 7d | 16d | +12.7% | 136.21 | +3.72% | ✓ | ✓ | — | 10% 🟨 |
 | [GLAND](https://in.tradingview.com/chart/?symbol=NSE:GLAND) | Generic injectable pharmaceuticals manufacturer regulated markets | 1d | 30d | +30.1% | 2262.20 | -1.92% | — | ✓ | ✓ | 20%  |
 | [ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND) | Denim and apparel manufacturer, textiles to retail, global | 2d | 48d | +41.0% | 494.50 | +0.25% | — | ✓ | ✓ | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

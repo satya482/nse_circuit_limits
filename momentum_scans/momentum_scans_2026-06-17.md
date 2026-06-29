@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-06-17
 *Generated 2026-06-17 18:11 IST*
 
@@ -42,3 +44,6 @@
 | [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL) | 3d | +7.7% |  | +1.69% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [PITTIENG](https://in.tradingview.com/chart/?symbol=NSE:PITTIENG) | 3d | +6.7% | Electrical steel laminations motor cores manufacturing precision components | +2.12% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO) | 4d | +5.8% |  | -0.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

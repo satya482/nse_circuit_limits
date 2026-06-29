@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-29
 *Generated 2026-05-29 15:46 IST*
 
@@ -33,3 +35,6 @@
 | [PHR](https://www.tradingview.com/chart/?symbol=PHR) | 9.45 | +3.50% | 4.2x | 1d | 1d | +5.6% | ✓ | — | — |
 | [GLUE](https://www.tradingview.com/chart/?symbol=GLUE) | 19.39 | +1.15% | 1.7x | 6d | 2d | +3.1% | ✓ | — | — |
 | [LILA](https://www.tradingview.com/chart/?symbol=LILA) | 7.98 | +1.79% | 1.7x | 2d | 4d | +6.1% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

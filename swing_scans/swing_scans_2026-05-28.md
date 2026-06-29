@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-05-28
 *Generated 2026-05-28 15:39 IST*
 
@@ -95,3 +97,6 @@
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 0d | +12.1% |  | +12.06% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | 0d | +12.1% |  | +12.06% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
 | [MAHASTEEL](https://in.tradingview.com/chart/?symbol=NSE:MAHASTEEL) | 3d | +15.3% |  | +2.89% | **DEEP PULLBACK** — Bounce from EMA50 | 5% 🟥 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

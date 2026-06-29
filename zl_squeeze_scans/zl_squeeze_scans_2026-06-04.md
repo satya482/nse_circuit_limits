@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-04
 *Generated 2026-06-04 15:40 IST*
 
@@ -161,3 +163,6 @@
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 1d | 10d | +6.2% | 128.39 | -0.36% | ✓ | — | — | 10% 🟨 |
 | [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH) | Health insurance policies retail customers medical expenses | 16d | 13d | +5.3% | 526.25 | -0.72% | — | ✓ | ✓ | 20%  |
 | [CMSINFO](https://in.tradingview.com/chart/?symbol=NSE:CMSINFO) | Cash management, ATM operations, banking infrastructure services | 5d | 18d | +4.0% | 305.10 | +0.15% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-05-12
 *Generated 2026-05-12 15:41 IST*
 
@@ -79,3 +81,6 @@
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS) | Differential assemblies and gears for electrified vehicle powertrains | 1d | 24d | +17.6% | 584.10 | -1.59% | ✓ | ✓ | — | 20%  |
 | [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER) | Copier paper, coated paper, packaging boards manufacturer | 2d | 26d | +27.6% | 391.10 | -0.09% | ✓ | ✓ | — | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) | Physics Wallah - Online competitive exam prep with coaching centers | 3d | 35d | +35.2% | 108.50 | -1.45% | ✓ | ✓ | — | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

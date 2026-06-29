@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE F&O ZLEMA25 Scanner — 2026-05-22
 *Generated 2026-05-22 16:30 IST · 209 F&O stocks scanned*
 
@@ -147,3 +149,6 @@
 | [CONCOR](https://in.tradingview.com/chart/?symbol=NSE:CONCOR) | 505.90 | +0.0% | 5d | -2.5% | -2.2% | - |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) | 849.45 | +0.7% | 5d | +0.7% | -1.4% | - |
 | [DABUR](https://in.tradingview.com/chart/?symbol=NSE:DABUR) | 451.05 | +0.9% | 5d | -3.6% | -1.3% | - |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

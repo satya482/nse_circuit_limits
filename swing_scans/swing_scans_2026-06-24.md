@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Swing Scan — 2026-06-24
 *Generated 2026-06-24 15:39 IST*
 
@@ -110,3 +112,6 @@
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK) | ⚠ CAUTION | 8d | +7.0% |  | 88% | 1.33x | -2.13% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [CANFINHOME](https://in.tradingview.com/chart/?symbol=NSE:CANFINHOME) | ⚠ CAUTION | 10d | +7.0% | Housing finance for middle-income first-time homebuyers | 93% | 1.03x | -0.26% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [HBLENGINE](https://in.tradingview.com/chart/?symbol=NSE:HBLENGINE) | ✓ SAFE | 7d | +6.3% | Batteries, power systems, e-mobility equipment for industrial applications | 75% | 1.02x | +0.31% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

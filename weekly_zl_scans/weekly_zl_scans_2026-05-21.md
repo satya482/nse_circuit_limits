@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-21
 *Generated 2026-05-21 15:42 IST*
 
@@ -105,3 +107,6 @@
 | [EIHAHOTELS](https://in.tradingview.com/chart/?symbol=NSE:EIHAHOTELS) | 1w | ABOVE | 1w | +3.3% | +1.16% | 327.90 | 1w | 20%  |
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK) | 1w | BELOW | 1w | +0.9% | -2.12% | 283.75 | 2w | 20%  |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL) | 1w | BELOW | 1w | +7.5% | +2.14% | 3861.80 | 10w | 20% 🟦 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

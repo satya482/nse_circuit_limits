@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-09
 *Generated 2026-06-09 15:40 IST*
 
@@ -75,3 +77,6 @@
 | [YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH) | 0d | +2.7% | Trauma care multi-specialty hospitals Delhi-NCR Madhya Pradesh region | +2.71% | 20%  |
 | [MUTHOOTMF](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTMF) | 0d | +1.7% | Microfinance loans for rural women borrowers India | +1.72% | 20%  |
 | [GAEL](https://in.tradingview.com/chart/?symbol=NSE:GAEL) | 0d | +1.1% | Corn starch soya derivatives feed ingredients edible oils | +1.08% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

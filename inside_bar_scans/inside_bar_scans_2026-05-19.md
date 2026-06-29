@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-19
 *Generated 2026-05-19 15:41 IST*
 
@@ -127,3 +129,6 @@
 | [SOLARA](https://in.tradingview.com/chart/?symbol=NSE:SOLARA) | 582.65 | +3.79% | 2d | 598.50 | 502.00 | 19.22% | 20%  |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) | 294.95 | -1.34% | 2d | 314.00 | 263.20 | 19.30% | 20%  |
 | [MPSLTD](https://in.tradingview.com/chart/?symbol=NSE:MPSLTD) | 1828.90 | +1.28% | 2d | 1936.00 | 1612.20 | 20.08% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

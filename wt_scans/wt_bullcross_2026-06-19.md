@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # WaveTrend Bull Cross Scan — 2026-06-19
 *Generated 2026-06-19 16:16 IST*
 
@@ -107,3 +109,7 @@
 | [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL) | Merchant banking, capital advisory, equity issuance services | 📈 BULL_ANY_MID | +9.2% | +1.28% | 1 | ↑ | — | — | ↑ | 9d | 64.16 | 63.77 | 439.75 | 20% 🟦 |
 | [NITINSPIN](https://in.tradingview.com/chart/?symbol=NSE:NITINSPIN) | Cotton yarn and knitted fabric manufacturer for apparel | 📈 BULL_ANY_MID | +16.2% | +1.37% | 1 | ↑ | — | — | ↑ | 15d | 65.08 | 63.9 | 568.70 | 20%  |
 | [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL) | Casual dining restaurants, grilled cuisine, urban consumers | 📈 BULL_ANY_MID | +92.9% | +3.14% | 1 | ↑ | — | — | ↑ | 23d | 69.86 | 69.83 | 644.15 | 10% 🟨 |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

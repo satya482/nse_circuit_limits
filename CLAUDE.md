@@ -2,6 +2,21 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## SEBI Disclaimer — mandatory on every output file
+
+Every `.md` and `.html` file generated or created in this repo **must** include the SEBI disclaimer.
+Use the shared constants from `disclaimer.py`:
+
+```python
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER        # for .md generators
+from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER     # for HTML generators
+```
+
+- **Markdown:** prepend `SEBI_MD_HEADER` at top, append `SEBI_MD_FOOTER` at bottom.
+- **HTML:** inject `SEBI_HTML_BANNER` after `<body>` (or top of content), `SEBI_HTML_FOOTER` before `</body>`.
+- New scanner or report file → add both. No exceptions.
+- Check: if a generated file lacks the disclaimer string `"SEBI registered"`, it is non-compliant.
+
 ## Running the scanners
 
 All scanners are triggered by PowerShell scripts that log to `logs/` and auto-commit results:

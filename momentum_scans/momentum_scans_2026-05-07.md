@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan — 2026-05-07
 *Generated 2026-05-07 16:48 IST*
 
@@ -32,3 +34,6 @@
 | [KINGFA](https://in.tradingview.com/chart/?symbol=NSE:KINGFA) | **STRONG** — ZLEMA25 touch + EMA20 rising | -0.95% | 24d | +23.0% | 20%  |
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.84% | 22d | +33.3% | 20%  |
 | [ACCENTMIC](https://in.tradingview.com/chart/?symbol=NSE:ACCENTMIC) | **STRONG** — ZLEMA25 touch + EMA20 rising | +0.48% | 39d | +35.6% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

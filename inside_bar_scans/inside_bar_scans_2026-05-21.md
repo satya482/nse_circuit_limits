@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-21
 *Generated 2026-05-21 15:41 IST*
 
@@ -206,3 +208,6 @@
 | [SPARC](https://in.tradingview.com/chart/?symbol=NSE:SPARC) | 180.33 | -1.82% | 2d | 189.45 | 162.36 | 16.69% | 20%  |
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH) | 517.20 | -0.64% | 2d | 545.00 | 465.75 | 17.02% | 20%  |
 | [JAINREC](https://in.tradingview.com/chart/?symbol=NSE:JAINREC) | 383.20 | -2.31% | 2d | 452.95 | 376.65 | 20.26% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-23
 *Generated 2026-06-23 15:49 IST*
 
@@ -50,3 +52,6 @@
 | [VIA](https://www.tradingview.com/chart/?symbol=VIA) | 14.94 | +1.60% | 1.5x | 10d | 0d | +1.6% | ✓ | — | — |
 | [JHG](https://www.tradingview.com/chart/?symbol=JHG) | 51.92 | +0.01% | 2.8x | 16d | 1d | +0.3% | ✓ | — | — |
 | [DBRG](https://www.tradingview.com/chart/?symbol=DBRG) | 15.72 | -0.03% | 2.6x | 14d | 8d | +0.4% | ✓ | — | — |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

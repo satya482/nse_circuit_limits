@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-25
 *Generated 2026-06-25 20:59 IST*
 
@@ -39,3 +41,6 @@
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit |
 |--------|--------:|--------:|-------|--------:|:-------:|
 | [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS) | 0d | +6.9% | Wheels India<br>₹4K Cr \| →22Cr · 36Cr<br>Steel aluminum wheels commercial vehicles tractors construction | +6.89% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE ZL Squeeze Scan — 2026-06-08
 *Generated 2026-06-08 15:43 IST*
 
@@ -115,3 +117,6 @@
 | [NCLIND](https://in.tradingview.com/chart/?symbol=NSE:NCLIND) | Cement RMC building boards doors renewable energy manufacturer | 5d | 6d | +5.2% | 182.52 | +0.52% | ✓ | ✓ | — | 20%  |
 | [TCI](https://in.tradingview.com/chart/?symbol=NSE:TCI) |  | 2d | 7d | +6.8% | 965.15 | +3.41% | ✓ | ✓ | — | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB) |  | 3d | 12d | +5.7% | 127.73 | -3.80% | ✓ | ✓ | — | 10% 🟨 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

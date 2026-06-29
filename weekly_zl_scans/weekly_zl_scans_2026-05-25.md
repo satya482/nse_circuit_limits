@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Weekly ZL Scan — 2026-05-25
 *Generated 2026-05-25 15:43 IST*
 
@@ -107,3 +109,6 @@
 | [KOKUYOCMLN](https://in.tradingview.com/chart/?symbol=NSE:KOKUYOCMLN) | 1w | ABOVE | 1w | +0.8% | +0.81% | 87.00 | — | 20%  |
 | [AUBANK](https://in.tradingview.com/chart/?symbol=NSE:AUBANK) | 1w | BELOW | 1w | +2.2% | +2.19% | 999.30 | — | 20%  |
 | [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT) | 1w | BELOW | 1w | +1.4% | +1.38% | 699.50 | — | 10% 🟨 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-18
 *Generated 2026-05-18 15:40 IST*
 
@@ -119,3 +121,6 @@
 | [CAPLIPOINT](https://in.tradingview.com/chart/?symbol=NSE:CAPLIPOINT) | 1986.10 | -0.64% | 2d | 2060.00 | 1803.00 | 14.25% | 20%  |
 | [CONFIPET](https://in.tradingview.com/chart/?symbol=NSE:CONFIPET) | 61.60 | -0.02% | 2d | 67.08 | 58.02 | 15.62% | 10% 🟨 |
 | [RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL) | 858.55 | +4.00% | 2d | 868.80 | 732.25 | 18.65% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

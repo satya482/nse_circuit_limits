@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-06-17
 *Generated 2026-06-17 15:47 IST*
 
@@ -35,3 +37,6 @@
 | [NAT](https://www.tradingview.com/chart/?symbol=NAT) | 5.52 | +1.47% | 1.9x | 1d | 2d | +7.2% | ✓ | ✓ | — |
 | [PRAA](https://www.tradingview.com/chart/?symbol=PRAA) | 15.65 | +0.97% | 1.8x | 7d | 3d | +2.7% | ✓ | — | — |
 | [BATRK](https://www.tradingview.com/chart/?symbol=BATRK) | 50.82 | +0.20% | 2.3x | 22d | 4d | +2.7% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

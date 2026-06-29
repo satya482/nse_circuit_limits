@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Inside Bar / Mini Coil Scan — 2026-05-08
 *Generated 2026-05-08 15:43 IST*
 
@@ -211,3 +213,6 @@
 | [ALKYLAMINE](https://in.tradingview.com/chart/?symbol=NSE:ALKYLAMINE) | 1707.30 | -1.60% | 2d | 1785.00 | 1531.00 | 16.59% | 20%  |
 | [SOTL](https://in.tradingview.com/chart/?symbol=NSE:SOTL) | 438.85 | +4.45% | 2d | 467.90 | 397.00 | 17.86% | 20%  |
 | [GANDHAR](https://in.tradingview.com/chart/?symbol=NSE:GANDHAR) | 151.45 | -1.01% | 2d | 165.20 | 140.00 | 18.00% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

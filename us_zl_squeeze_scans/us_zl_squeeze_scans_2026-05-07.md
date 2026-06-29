@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # US ZL Squeeze Scan — 2026-05-07
 *Generated 2026-05-07 16:56 IST*
 
@@ -57,3 +59,6 @@
 | [HOG](https://www.tradingview.com/chart/?symbol=HOG) | 23.84 | -5.06% | 1.5x | 1d | 1d | +2.7% | — | — | ✓ |
 | [NRDS](https://www.tradingview.com/chart/?symbol=NRDS) | 11.20 | +2.85% | 1.6x | 11d | 8d | +7.1% | ✓ | — | — |
 | [ZION](https://www.tradingview.com/chart/?symbol=ZION) | 63.99 | +1.36% | 1.5x | 3d | 25d | +15.1% | — | — | ✓ |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

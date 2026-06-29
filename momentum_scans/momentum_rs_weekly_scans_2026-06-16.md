@@ -1,3 +1,5 @@
+﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Momentum Scan (Weekly RS) — 2026-06-16
 *Generated 2026-06-16 15:41 IST*
 
@@ -60,3 +62,6 @@
 | [LLOYDSENGG](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENGG) | 0d | +12.0% | Heavy equipment manufacturing for hydrocarbon and power sectors | +12.04% | 20%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH) | 0d | +4.8% | Precision components for defense aerospace nuclear energy | +4.83% | 20%  |
 | [PRECWIRE](https://in.tradingview.com/chart/?symbol=NSE:PRECWIRE) | 0d | +4.8% | Enamelled copper winding wires for motors and transformers | +4.82% | 20%  |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
