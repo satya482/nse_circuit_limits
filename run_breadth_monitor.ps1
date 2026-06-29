@@ -1,8 +1,9 @@
-# run_breadth_monitor.ps1 — NSE Breadth Monitor runner
-# Schedule: 4:50 PM Mon–Fri (same slot as previous breadth scanner)
+# run_breadth_monitor.ps1 — NSE Breadth Monitor (standalone, independent of run_all_scanners.ps1)
+# Schedule: Mon–Fri 5:30 PM IST — runs AFTER regular scanners, manages its own data fetch
 # Logs: logs/breadth_monitor_YYYY-MM-DD.log
 
-$logDir  = "C:\Users\satya\nse_circuit_limits\logs"
+$ROOT    = "C:\Users\satya\nse_circuit_limits"
+$logDir  = "$ROOT\logs"
 $date    = Get-Date -Format "yyyy-MM-dd"
 $logFile = "$logDir\breadth_monitor_$date.log"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
@@ -14,36 +15,57 @@ function Log($msg) {
 
 Log "=== BREADTH_MONITOR START ==="
 
-try {
-    & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\scanners\breadth_monitor.py 2>&1 |
-        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    Log "=== FINISHED exit=0 ==="
-} catch {
-    Log "=== ERROR: $_ ==="
+# ── Step 1: Kite token (skip if fresh) ───────────────────────────────────────
+Log "--- Kite token refresh ---"
+& C:\Python313\python.exe "$ROOT\ema-compression-scanner\kite_auth.py" 2>&1 |
+    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: Kite auth failed (exit $LASTEXITCODE) - aborting ==="
     exit 1
 }
+Log "--- Kite auth OK ---"
 
+# ── Step 2: Fetch breadth universe OHLC (--all = includes breadth backfill) ──
+Log "--- Fetching OHLC data (--all) ---"
+& C:\Python313\python.exe "$ROOT\fetch_data.py" --all 2>&1 |
+    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: fetch_data.py --all failed (exit $LASTEXITCODE) - aborting ==="
+    exit 1
+}
+Log "--- Data fetch complete ---"
+
+# ── Step 3: Run breadth monitor ───────────────────────────────────────────────
+Log "--- Running breadth monitor ---"
+& C:\Python313\python.exe "$ROOT\scanners\breadth_monitor.py" 2>&1 |
+    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: breadth_monitor.py failed (exit $LASTEXITCODE) ==="
+    exit 1
+}
+Log "--- Breadth monitor complete ---"
+
+# ── Step 4: Git commit + push ─────────────────────────────────────────────────
 Log "--- Git commit+push ---"
-$gitResult = & git -C C:\Users\satya\nse_circuit_limits status --porcelain data/breadth_history.csv dashboard/breadth.html 2>&1
+$gitResult = & git -C $ROOT status --porcelain data/breadth_history.csv dashboard/breadth.html 2>&1
 if ($gitResult) {
-    # Extract stats for commit message from latest CSV row
-    $csv = Import-Csv "C:\Users\satya\nse_circuit_limits\data\breadth_history.csv"
+    $csv  = Import-Csv "$ROOT\data\breadth_history.csv"
     $last = $csv | Select-Object -Last 1
-    $up4   = $last.up4_count
-    $dn4   = $last.down4_count
-    $r5    = [math]::Round([double]$last.ratio_5d, 2)
-    $msg   = "[scan $date] breadth-monitor: up4=${up4} dn4=${dn4} ratio5d=$r5"
+    $up4  = $last.up4_count
+    $dn4  = $last.down4_count
+    $r5   = [math]::Round([double]$last.ratio_5d, 2)
+    $msg  = "[scan $date] breadth-monitor: up4=${up4} dn4=${dn4} ratio5d=$r5"
 
-    & git -C C:\Users\satya\nse_circuit_limits add data/breadth_history.csv dashboard/breadth.html 2>&1 |
+    & git -C $ROOT add data/breadth_history.csv dashboard/breadth.html 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    & git -C C:\Users\satya\nse_circuit_limits commit -m $msg 2>&1 |
+    & git -C $ROOT commit -m $msg 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    & git -C C:\Users\satya\nse_circuit_limits push 2>&1 |
+    & git -C $ROOT push 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 } else {
     Log "No changes to commit."
 }
-Log "--- Done ---"
+Log "=== BREADTH_MONITOR DONE ==="
 
 # To register scheduled task (run once as admin):
-# schtasks /create /tn "NSE_BreadthScanner" /tr "powershell -NonInteractive -File C:\Users\satya\nse_circuit_limits\run_breadth_monitor.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:50 /f
+# schtasks /create /tn "NSE_BreadthMonitor" /tr "powershell.exe -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\Users\satya\nse_circuit_limits\run_breadth_monitor.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 17:30 /f

@@ -22,7 +22,7 @@ from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER     # for HTML generat
 All scanners are triggered by PowerShell scripts that log to `logs/` and auto-commit results:
 
 ```powershell
-.\run_fetch_data.ps1          # 4:05 PM — Kite auth + SQLite backfill/delta + manifest commit
+.\run_fetch_data.ps1          # 4:05 PM — Kite auth + SQLite backfill/delta + manifest commit (EQ+indices only)
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
 .\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
@@ -31,7 +31,12 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
-.\run_breadth_monitor.ps1       # 4:50 PM — NSE Breadth Monitor: thrust/cap regime dashboard
+
+# Breadth Monitor — SEPARATE scheduled task (NSE_BreadthMonitor), NOT part of NSE_AllScanners
+# Triggered by run_all_scanners.ps1 via Start-ScheduledTask at end (no wait, separate log)
+# Fallback: 5:30 PM scheduled trigger if AllScanners didn't run
+# Self-contained: kite_auth + fetch_data.py --all + breadth_monitor.py + commit
+.\run_breadth_monitor.ps1       # fires after AllScanners (or 5:30 PM fallback)
 ```
 
 **Weekly (manual, Monday AM before market open):**
@@ -64,9 +69,10 @@ pip install requests bs4 python-dateutil yfinance tradingview-screener kiteconne
 run_fetch_data.ps1
   → kite_auth.py          # TOTP login → updates .env KITE_ACCESS_TOKEN
                           # Skipped if token < 16h old (.kite_token_stamp)
-  → fetch_data.py         # Kite instruments (filtered) → historical_data() backfill
-                          # + quote() delta → .ohlc_data/market.db (SQLite)
+  → fetch_data.py         # Kite EQ+indices: historical_data() backfill + quote() delta
+                          # → .ohlc_data/market.db (SQLite)
                           # → .ohlc_data/data_manifest.csv (git-tracked)
+                          # --all flag: also backfills breadth universe (2500 stocks, weekly)
 
 All scanners → ohlc_db.py → .ohlc_data/market.db
 ```
@@ -133,6 +139,8 @@ All thresholds live in `settings.yaml`. Pipeline:
 ### Scanner pipeline — Breadth Monitor (`scanners/breadth_monitor.py`)
 
 **Regime/timing layer — not a candidate-selection scanner.** Answers "is the market supportive?"
+**Runs as separate scheduled task `NSE_BreadthMonitor` at 5:30 PM** (after regular scanners).
+`run_breadth_monitor.ps1` is self-contained: kite_auth → `fetch_data.py --all` → breadth_monitor.py → commit.
 
 1. Reads `data/breadth_universe.csv` (broad NSE EQ, ~2,000–2,500 symbols, refreshed weekly)
 2. `load_ohlc_many(symbols, lookback=2500)` → 10yr OHLCV from SQLite

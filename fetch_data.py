@@ -2,19 +2,24 @@
 """
 Central OHLC data fetcher — run after 4:05 PM IST on every trading day.
 
-Universe:
-  - TVScreener-filtered NSE common stocks (MCap ₹800 Cr – ₹1 Lakh Cr, no EMA filter)
-  - NIFTY MIDSML 400 index (for RS benchmarking)
+Default universe (daily, fast):
+  - TVScreener-filtered NSE common stocks (MCap ₹800 Cr – ₹1 Lakh Cr)
+  - NIFTY MIDSML 400 + NIFTY 50 indices (RS benchmark + dashboard price panel)
+
+With --all (weekly, slow — ~2500 breadth universe stocks + 10yr backfill):
+  - Same as above PLUS breadth universe from data/breadth_universe.csv
+  - Run weekly after refresh_breadth_universe.py to keep breadth monitor current
 
 Two-phase fetch:
   Phase 1 — Backfill:  historical_data() per symbol where DB has < 200 rows
-  Phase 2 — Delta:     quote() in batches of 500 for today's bar (fast)
+  Phase 2 — Delta:     quote() in batches of 50 for today's bar
 
 Output:
   .ohlc_data/market.db          SQLite, gitignored
   .ohlc_data/data_manifest.csv  symbol/last_date/rows audit, committed to git
 """
 
+import argparse
 import sys
 import time
 import sqlite3
@@ -285,11 +290,13 @@ def backfill_breadth(kite, con: sqlite3.Connection) -> None:
     windows.reverse()  # oldest window first
 
     status = get_symbol_status(con)
-    needs = [s for s in symbols if s not in status or status[s][1] < BREADTH_MIN_ROWS]
+    # Gate on recency, not row count — recently-listed stocks never reach
+    # BREADTH_MIN_ROWS rows, causing infinite daily re-backfills.
+    recent_cutoff = (today - timedelta(days=7)).isoformat()
+    needs = [s for s in symbols if s not in status or status[s][0] < recent_cutoff]
     if not needs:
         print(
-            f"  Breadth universe: all {len(symbols)} symbols have"
-            f" >=BREADTH_MIN_ROWS rows"
+            f"  Breadth universe: all {len(symbols)} symbols up to date (last 7 days)"
         )
         return
 
@@ -415,6 +422,15 @@ def write_manifest(con: sqlite3.Connection) -> None:
 
 # ── Main ───────────────────────────────────────────────────────────────────────
 def main() -> None:
+    parser = argparse.ArgumentParser(description="NSE OHLC fetcher")
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        dest="fetch_all",
+        help="Also backfill breadth universe (2500 stocks, slow). Default: EQ+indices only.",
+    )
+    args = parser.parse_args()
+
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     env = load_env(ENV_PATH)
@@ -461,8 +477,11 @@ def main() -> None:
 
     write_manifest(con)
 
-    # Breadth universe: 10yr extended backfill (runs after main manifest write)
-    backfill_breadth(kite, con)
+    # Breadth universe: 10yr extended backfill — only with --all flag
+    if args.fetch_all:
+        backfill_breadth(kite, con)
+    else:
+        print("\n  Breadth backfill skipped (pass --all to include)")
 
     con.close()
 

@@ -50,7 +50,6 @@ Run-Scanner "WT_BullCross"         "$ROOT\run_wt_bullcross_scanner.ps1"
 Run-Scanner "WT_SqueezeDash"       "$ROOT\run_wt_squeeze_dashboard.ps1"
 Run-Scanner "TrendScanner"         "$ROOT\run_trend_scanner.ps1"
 Run-Scanner "TrendDashboard"       "$ROOT\run_trend_dashboard.ps1"
-Run-Scanner "BreadthMonitor"       "$ROOT\run_breadth_monitor.ps1"
 
 Run-Scanner "CircuitLimits"        "$ROOT\run_dashboard.ps1"
 Run-Scanner "US_FetchData"         "$ROOT\run_us_fetch_data.ps1"
@@ -71,6 +70,11 @@ foreach ($r in $results) {
 }
 OrcLog "--- TOTAL: $total  |  PASSED: $passed  FAILED: $failed"
 OrcLog "======================================================"
+
+# Fire BreadthMonitor as separate task — doesn't block, separate log
+OrcLog "--- Triggering NSE_BreadthMonitor ---"
+Start-ScheduledTask -TaskName "NSE_BreadthMonitor" -ErrorAction SilentlyContinue
+OrcLog "--- NSE_BreadthMonitor triggered ---"
 
 if ($failed -gt 0) { exit 1 }
 exit 0
