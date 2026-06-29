@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # WaveTrend Bull Cross Scan — 2026-06-29
-*Generated 2026-06-29 16:46 IST*
+*Generated 2026-06-29 17:47 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -51,7 +51,7 @@
 | [AYMSYNTEX](https://in.tradingview.com/chart/?symbol=NSE:AYMSYNTEX) | ⚠ CAUTION | Aym Syntex<br>₹1K Cr \| ↘0.1Cr · 0.3Cr | 📈 BULL_ANY_MID | 88 | 🔄66 | ↑1.002 | ↓12d | SQ | +0.9% | -35.17/-36.68 | +1.15% | 20% |
 | [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | ✓ SAFE | Diamond Power Infra<br>₹11K Cr \| →97Cr · 63Cr<br>Power transmission cables conductors distribution infrastructure manufacturing | 📈 BULL_ANY_MID | 61 | ↑93 | ↑1.015 | ↑4d | SQ | +3.1% | 40.53/39.6 | +1.10% | 20% |
 | [ORKLAINDIA](https://in.tradingview.com/chart/?symbol=NSE:ORKLAINDIA) | ✓ SAFE | Orkla India<br>₹9K Cr \| ↗5Cr · 2Cr | 📈 BULL_ANY_MID | 58 | ↑50 | ↓1.000 | ↓2d | SQ | +2.2% | -22.25/-23.34 | -0.65% | 20% |
-| [AGIIL ★](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | ✓ SAFE | Agi Infra<br>₹5K Cr \| ↘54Cr · 81Cr<br>Real estate development construction Punjab residential commercial projects | 📈 BULL_ANY_MID | 57 | ↑89 | ↓0.998 | ↓3d | SQ | +3.3% | -24.85/-30.93 | -1.08% | 20% |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | ✓ SAFE | Agi Infra<br>₹5K Cr \| ↘54Cr · 81Cr<br>Real estate development construction Punjab residential commercial projects | 📈 BULL_ANY_MID | 57 | ↑89 | ↓0.998 | ↓3d | SQ | +3.3% | -24.85/-30.93 | -1.08% | 20% |
 | [SUVEN](https://in.tradingview.com/chart/?symbol=NSE:SUVEN) | ✓ SAFE | Suven Life Sciences<br>₹7K Cr \| →47Cr · 77Cr<br>CNS disorder drug development clinical stage biotech | 📈 BULL_ANY_MID | 57 | ↑94 | ↑1.041 | ↑3d | SQ | +8.8% | 19.97/9.31 | +3.65% | 20% |
 | [DIAMONDYD](https://in.tradingview.com/chart/?symbol=NSE:DIAMONDYD) | ✓ SAFE | Prataap Snacks<br>₹3K Cr \| ↘3Cr · 2Cr<br>Potato chips namkeen extruded snacks packaged food FMCG | 📈 BULL_ANY_MID | 57 | ↓59 | ↓0.997 | ↓3d | SQ | +1.5% | 5.78/3.34 | -1.27% | 20% |
 | [IGPL](https://in.tradingview.com/chart/?symbol=NSE:IGPL) | ⚠ CAUTION | I G Petrochemicals<br>₹1K Cr \| →1Cr · 0.8Cr | 📈 BULL_ANY_MID | 56 | ↑66 | ↓1.002 | ↑4d | SQ | +1.2% | 34.56/33.86 | -0.57% | 20% |
@@ -90,11 +90,11 @@
 | [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) | ✓ SAFE | Premier Explosives<br>₹4K Cr \| ↗135Cr · 264Cr<br>Explosives propellants detonators defense space mining manufacturing | ⚡ BULL_ANY_PPV | 38 | 🔄94 | ↑1.076 | ↑12d | PV | +23.5% | 55.59/54.95 | +9.04% | 20% |
 | [SAIL](https://in.tradingview.com/chart/?symbol=NSE:SAIL) | ✓ SAFE | Steel Authority Of India<br>₹71K Cr \| →338Cr · 929Cr<br>Integrated steel producer for construction infrastructure automotive | ⚡ BULL_ANY_PPV | 35 | 🔄78 | ↑0.997 | ↓34d | PV | -0.5% | -43.02/-43.94 | +2.60% | 20% |
 | [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | ✓ SAFE | Allied Blend N Distils L<br>₹17K Cr \| ↘22Cr · 100Cr<br>Spirits manufacturer, IMFL exporter, Indian domestic and global markets | ⚡ BULL_ANY_PPV | 31 | 🔄88 | ↑1.050 | ↑19d | PV | +20.6% | 54.22/52.73 | +5.98% | 10% 🟩 |
-| [GOODLUCK ★](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK) | ✓ SAFE | Goodluck India<br>₹5K Cr \| ↗54Cr · 238Cr<br>Steel pipes, forgings, tubes, engineering structures export | ⚡ BULL_ANY_PPV | 11 | ↑87 | ↑1.047 | ↑9d | PV | +12.2% | 38.38/35.27 | +4.98% | 20% |
+| [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK) | ✓ SAFE | Goodluck India<br>₹5K Cr \| ↗54Cr · 238Cr<br>Steel pipes, forgings, tubes, engineering structures export | ⚡ BULL_ANY_PPV | 11 | ↑87 | ↑1.047 | ↑9d | PV | +12.2% | 38.38/35.27 | +4.98% | 20% |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) | ✓ SAFE | Motilal Oswal Fin<br>₹57K Cr \| ↘74Cr · 104Cr<br>Broking, wealth management, asset management, finance services | ⚡ BULL_ANY_PPV | 8 | ↑70 | ↓1.014 | ↑12d | PV | +14.0% | 42.74/42.46 | +0.16% | -% |
 | [RANEHOLDIN](https://in.tradingview.com/chart/?symbol=NSE:RANEHOLDIN) | ✓ SAFE | Rane Holdings<br>₹2K Cr \| ↗7Cr · 9Cr<br>Automotive components holding company for vehicles | ⚡ BULL_ANY_PPV | 8 | ↑82 | ↑1.058 | ↑12d | PV | +24.6% | 56.3/55.26 | +3.88% | 20% |
 | [MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK) | ✓ SAFE | Bank Of Maharashtra<br>₹68K Cr \| ↘145Cr · 468Cr<br>Public sector bank, retail corporate lending deposits | ⚡ BULL_ANY_PPV | 5 | ↑92 | ↑1.054 | ↑15d | PV | +17.9% | 56.37/54.5 | +5.79% | 20% |
-| [DIFFNKG](https://in.tradingview.com/chart/?symbol=NSE:DIFFNKG) | ✓ SAFE | Diffusion Engineers<br>₹1K Cr \| →9Cr · 30Cr<br>Welding consumables wear plates heavy engineering machinery | ⚡ BULL_ANY_PPV | 4 | ↑84 | ↑1.081 | ↑16d | PV | +27.8% | 71.38/70.44 | +6.95% | 20% |
+| [DIFFNKG ★](https://in.tradingview.com/chart/?symbol=NSE:DIFFNKG) | ✓ SAFE | Diffusion Engineers<br>₹1K Cr \| →9Cr · 30Cr<br>Welding consumables wear plates heavy engineering machinery | ⚡ BULL_ANY_PPV | 4 | ↑84 | ↑1.081 | ↑16d | PV | +27.8% | 71.38/70.44 | +6.95% | 20% |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL) | ✓ SAFE | Thangamayil Jewellery<br>₹17K Cr \| ↘81Cr · 336Cr<br>Gold silver diamond jewelry retail Tamil Nadu | ⚡ BULL_ANY_PPV | 0 | ↑99 | ↑1.060 | ↑24d | PV | +54.4% | 51.57/46.66 | +5.02% | 10% 🟨 |
 
 ### 🟢 OVERSOLD — reversal from −53/−60 (1)
@@ -116,7 +116,7 @@
 | [USHAMART](https://in.tradingview.com/chart/?symbol=NSE:USHAMART) | ✓ SAFE | Usha Martin<br>₹14K Cr \| →27Cr · 47Cr<br>Steel wire ropes offshore mining elevators infrastructure | 📈 BULL_ANY_MID | 59 | 🔄72 | ↑1.010 | ↑1d | — | +2.4% | -20.83/-22.19 | +2.38% | 20% |
 | [BALMLAWRIE](https://in.tradingview.com/chart/?symbol=NSE:BALMLAWRIE) | ⚠ CAUTION | Balmer Lawrie & Co<br>₹3K Cr \| →3Cr · 6Cr<br>Industrial packaging, lubricants, logistics, refinery services PSU | 📈 BULL_ANY_MID | 59 | 🔄43 | ↑1.013 | ↑1d | — | +2.0% | 2.85/-1.32 | +2.03% | 20% |
 | [ORKLAINDIA](https://in.tradingview.com/chart/?symbol=NSE:ORKLAINDIA) | ✓ SAFE | Orkla India<br>₹9K Cr \| ↗5Cr · 2Cr | 📈 BULL_ANY_MID | 58 | ↑50 | ↓1.000 | ↓2d | SQ | +2.2% | -22.25/-23.34 | -0.65% | 20% |
-| [AGIIL ★](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | ✓ SAFE | Agi Infra<br>₹5K Cr \| ↘54Cr · 81Cr<br>Real estate development construction Punjab residential commercial projects | 📈 BULL_ANY_MID | 57 | ↑89 | ↓0.998 | ↓3d | SQ | +3.3% | -24.85/-30.93 | -1.08% | 20% |
+| [AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL) | ✓ SAFE | Agi Infra<br>₹5K Cr \| ↘54Cr · 81Cr<br>Real estate development construction Punjab residential commercial projects | 📈 BULL_ANY_MID | 57 | ↑89 | ↓0.998 | ↓3d | SQ | +3.3% | -24.85/-30.93 | -1.08% | 20% |
 | [SUVEN](https://in.tradingview.com/chart/?symbol=NSE:SUVEN) | ✓ SAFE | Suven Life Sciences<br>₹7K Cr \| →47Cr · 77Cr<br>CNS disorder drug development clinical stage biotech | 📈 BULL_ANY_MID | 57 | ↑94 | ↑1.041 | ↑3d | SQ | +8.8% | 19.97/9.31 | +3.65% | 20% |
 | [DIAMONDYD](https://in.tradingview.com/chart/?symbol=NSE:DIAMONDYD) | ✓ SAFE | Prataap Snacks<br>₹3K Cr \| ↘3Cr · 2Cr<br>Potato chips namkeen extruded snacks packaged food FMCG | 📈 BULL_ANY_MID | 57 | ↓59 | ↓0.997 | ↓3d | SQ | +1.5% | 5.78/3.34 | -1.27% | 20% |
 | [IGPL](https://in.tradingview.com/chart/?symbol=NSE:IGPL) | ⚠ CAUTION | I G Petrochemicals<br>₹1K Cr \| →1Cr · 0.8Cr | 📈 BULL_ANY_MID | 56 | ↑66 | ↓1.002 | ↑4d | SQ | +1.2% | 34.56/33.86 | -0.57% | 20% |
