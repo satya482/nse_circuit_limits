@@ -32,7 +32,7 @@ if ($gitResult) {
     $up4   = $last.up4_count
     $dn4   = $last.down4_count
     $r5    = [math]::Round([double]$last.ratio_5d, 2)
-    $msg   = "[scan $date] breadth-monitor: ${up4}↑ ${dn4}↓ ratio5d=$r5"
+    $msg   = "[scan $date] breadth-monitor: up4=${up4} dn4=${dn4} ratio5d=$r5"
 
     & git -C C:\Users\satya\nse_circuit_limits add data/breadth_history.csv dashboard/breadth.html 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
