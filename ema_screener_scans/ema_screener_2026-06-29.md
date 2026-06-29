@@ -2,37 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 11** &nbsp;|&nbsp; **Deletions: 11**
+**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (11)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL) | +9.10% |
-| [MSTCLTD](https://in.tradingview.com/chart/?symbol=NSE:MSTCLTD) | +6.71% |
-| [BLUSPRING](https://in.tradingview.com/chart/?symbol=NSE:BLUSPRING) | +2.71% |
-| [ZFCVINDIA](https://in.tradingview.com/chart/?symbol=NSE:ZFCVINDIA) | +2.68% |
-| [MOLDTKPAC](https://in.tradingview.com/chart/?symbol=NSE:MOLDTKPAC) | +2.65% |
-| [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) | +0.29% |
-| [STLNETWORK](https://in.tradingview.com/chart/?symbol=NSE:STLNETWORK) | +0.07% |
-| [LMW](https://in.tradingview.com/chart/?symbol=NSE:LMW) | -1.07% |
-| [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND) | -1.50% |
-| [UNIMECH](https://in.tradingview.com/chart/?symbol=NSE:UNIMECH) | -3.88% |
-| [HCC](https://in.tradingview.com/chart/?symbol=NSE:HCC) | -4.00% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (11)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [HEALTHX](https://in.tradingview.com/chart/?symbol=NSE:HEALTHX) | +1.61% |
-| [TEJASCARGO](https://in.tradingview.com/chart/?symbol=NSE:TEJASCARGO) | +0.00% |
-| [MAHASTEEL](https://in.tradingview.com/chart/?symbol=NSE:MAHASTEEL) | -0.76% |
-| [RUBYMILLS](https://in.tradingview.com/chart/?symbol=NSE:RUBYMILLS) | -1.56% |
-| [PRIZOR](https://in.tradingview.com/chart/?symbol=NSE:PRIZOR) | -2.00% |
-| [STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL) | -2.23% |
-| [VHLTD](https://in.tradingview.com/chart/?symbol=NSE:VHLTD) | -2.64% |
-| [HMT](https://in.tradingview.com/chart/?symbol=NSE:HMT) | -2.79% |
-| [ASTRAL](https://in.tradingview.com/chart/?symbol=NSE:ASTRAL) | -3.24% |
-| [NAHARSPING](https://in.tradingview.com/chart/?symbol=NSE:NAHARSPING) | -3.52% |
-| [EIFFL](https://in.tradingview.com/chart/?symbol=NSE:EIFFL) | -3.75% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (500)
 | # | Symbol | Day Change % |
