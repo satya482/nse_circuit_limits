@@ -371,7 +371,7 @@ def build_markdown(
 ) -> str:
     sorted_f = sorted(findings, key=lambda x: -x["earliness"])
     lines = [
-        f"# RS High-Line Cross — {TODAY}",
+        f"## RS High-Line Cross — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
         "### Scan definition",
