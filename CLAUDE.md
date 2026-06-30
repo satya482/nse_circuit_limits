@@ -29,6 +29,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
+.\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
 
@@ -201,6 +202,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `daily_brief.html`, `daily_briefs/daily_brief_YYYY-MM-DD.html` | `daily_gainers_brief.py` |
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
 | `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
+| `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
