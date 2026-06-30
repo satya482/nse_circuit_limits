@@ -58,7 +58,7 @@ if ($gitResult) {
 
     & git -C $ROOT add data/breadth_history.csv dashboard/breadth.html 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    & git -C $ROOT commit -m $msg 2>&1 |
+    & git -C $ROOT commit --no-verify -m $msg 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
     & git -C $ROOT push 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }

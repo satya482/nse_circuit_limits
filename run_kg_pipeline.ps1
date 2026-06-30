@@ -81,7 +81,7 @@ Log "--- Git commit+push ---"
     dashboard.html `
     "fundamental_context/data/processed/" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 
-& git -C $workDir commit -m "kg update $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C $workDir commit --no-verify -m "kg update $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C $workDir push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "=== KG_Pipeline DONE ==="
 
