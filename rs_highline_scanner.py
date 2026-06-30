@@ -315,3 +315,89 @@ def analyse(
         }
     except Exception:
         return None
+
+
+# ── Markdown output ───────────────────────────────────────────────────────────
+
+_RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
+
+_HDR = [
+    "| Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |",
+    "|--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|",
+]
+
+
+def _row(f: dict, circuit: dict, names: dict[str, str]) -> str:
+    sym  = f["symbol"]
+    tv   = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    cl, em = circuit.get(sym, ("20%", ""))
+    circuit_cell = f"{cl} {em}".strip()
+
+    name_str = names.get(sym, "")
+    lbl      = _LABELS.get(sym, "")
+    label_parts = [p for p in [name_str, lbl] if p]
+    name_cell   = "<br>".join(label_parts)
+
+    zl_arrow = "↑" if f["zl_rising"] else "↓"
+    zl_d     = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+    zl_cell  = f"{zl_arrow}{zl_d}"
+    zl_p     = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+    ds       = "+" if f["day_chg"] >= 0 else ""
+    rs_icon  = _RS_EMOJI.get(f["rs_state"], "↓")
+    sqz      = "●" if f["squeeze"] else "—"
+
+    return (
+        f"| [{sym}]({tv}) [{circuit_cell}] "
+        f"| {name_cell} "
+        f"| {f['close']:.2f} "
+        f"| {ds}{f['day_chg']:.2f}% "
+        f"| {f['rs_high']:.2f} "
+        f"| +{f['pct_above']:.2f}% "
+        f"| {rs_icon} "
+        f"| {zl_cell} "
+        f"| {f['zl_days']}d "
+        f"| {zl_p} "
+        f"| {sqz} "
+        f"| {f['atr_pct']:.1f}% "
+        f"| {f['earliness']:.0f} "
+        f"| {f['liq_tag']} |"
+    )
+
+
+def build_markdown(
+    findings: list[dict],
+    circuit: dict,
+    names: dict[str, str],
+) -> str:
+    sorted_f = sorted(findings, key=lambda x: -x["earliness"])
+    lines = [
+        f"# RS High-Line Cross — {TODAY}",
+        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+        "",
+        "### Scan definition",
+        "| Filter | Value |",
+        "|--------|-------|",
+        "| Exchange | NSE common equity |",
+        "| Price | > ₹20 |",
+        "| 1W change | > 3% |",
+        "| Market cap | ₹800 Cr – ₹5 Lakh Cr |",
+        "| EMA10 / EMA20 | price above both |",
+        "| Notional 10D | > ₹20 Cr/day |",
+        "| ATR(14)% | > 3% (local, Wilder EWM) |",
+        "| Signal | Close crossed above high of last RS-down bar |",
+        "| Sort | Earliness score desc (entry closest to move start first) |",
+        "",
+        "---",
+        "",
+        f"**{len(findings)} signal{'s' if len(findings) != 1 else ''} "
+        f"— RS high-line cross today**",
+        "",
+    ]
+
+    if sorted_f:
+        lines += _HDR + [_row(f, circuit, names) for f in sorted_f]
+    else:
+        lines.append("*No signals.*")
+
+    lines.append("")
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
