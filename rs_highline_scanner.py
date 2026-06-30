@@ -21,28 +21,32 @@ from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
 
-REPO_DIR  = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "rs_highline_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
+
+
 def _load_labels() -> dict:
     if not os.path.exists(_LABELS_FILE):
         return {}
     with open(_LABELS_FILE, encoding="utf-8") as fh:
         return json.loads(fh.read())
 
-_LABELS: dict = _load_labels()
-TODAY     = datetime.now().strftime("%Y-%m-%d")
-MD_LATEST = os.path.join(SCANS_DIR, "rs_highline_latest.md")
-MD_DATED  = os.path.join(SCANS_DIR, f"rs_highline_{TODAY}.md")
 
-MC_LOW      = 8_000 * 1_00_00_000        # 8B INR = 800 Cr
-MC_HIGH     = 5_00_000 * 1_00_00_000     # 5T INR = 5 lakh Cr
-ATR_PCT_MIN = 3.0                         # ATR(14)/close*100 must exceed this
-BENCH_SYM   = "NIFTY MIDSML 400"
+_LABELS: dict = _load_labels()
+TODAY = datetime.now().strftime("%Y-%m-%d")
+MD_LATEST = os.path.join(SCANS_DIR, "rs_highline_latest.md")
+MD_DATED = os.path.join(SCANS_DIR, f"rs_highline_{TODAY}.md")
+
+MC_LOW = 8_000 * 1_00_00_000  # 8B INR = 800 Cr
+MC_HIGH = 5_00_000 * 1_00_00_000  # 5T INR = 5 lakh Cr
+ATR_PCT_MIN = 3.0  # ATR(14)/close*100 must exceed this
+BENCH_SYM = "NIFTY MIDSML 400"
 ZL_TURN_CAP = 60
 
 
 # ── Indicators ────────────────────────────────────────────────────────────────
+
 
 def _ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
@@ -57,9 +61,9 @@ def _atr_wilder(df: pd.DataFrame, period: int = 14) -> pd.Series:
     h = df["high"].astype(float)
     l = df["low"].astype(float)
     c = df["close"].astype(float)
-    tr = pd.concat(
-        [h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1
-    ).max(axis=1)
+    tr = pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1).max(
+        axis=1
+    )
     return tr.ewm(span=period, adjust=False).mean()
 
 
@@ -82,24 +86,28 @@ def _bb_kc_squeeze(df: pd.DataFrame) -> bool:
     h = df["high"].astype(float)
     l = df["low"].astype(float)
     bb_basis = c.rolling(20).mean()
-    bb_std   = c.rolling(20).std()
+    bb_std = c.rolling(20).std()
     bb_upper = bb_basis + 2.0 * bb_std
     bb_lower = bb_basis - 2.0 * bb_std
-    tr       = pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1).max(axis=1)
-    kc_atr   = tr.rolling(20).mean()
+    tr = pd.concat([h - l, (h - c.shift(1)).abs(), (l - c.shift(1)).abs()], axis=1).max(
+        axis=1
+    )
+    kc_atr = tr.rolling(20).mean()
     kc_basis = c.rolling(20).mean()
     kc_upper = kc_basis + 1.5 * kc_atr
     kc_lower = kc_basis - 1.5 * kc_atr
-    return bool(bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1])
+    return bool(
+        bb_upper.iloc[-1] < kc_upper.iloc[-1] and bb_lower.iloc[-1] > kc_lower.iloc[-1]
+    )
 
 
 def _zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
-    n     = len(zl25)
+    n = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
         if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
             bars = (n - 1) - i + 1
-            pct  = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
+            pct = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
@@ -111,14 +119,14 @@ def _rs_state(df: pd.DataFrame, bench: pd.Series | None) -> str:
         return "weak"
     try:
         stock_close = df.set_index("date")["close"].astype(float)
-        b           = bench.reindex(stock_close.index)
-        valid       = b.notna()
+        b = bench.reindex(stock_close.index)
+        valid = b.notna()
         if valid.sum() < 11:
             return "weak"
-        rs      = (stock_close[valid] / b[valid]) * 1000
+        rs = (stock_close[valid] / b[valid]) * 1000
         rs_ema9 = rs.ewm(span=9, adjust=False).mean()
         now_strong = bool(rs.iloc[-1] > rs_ema9.iloc[-1])
-        was_weak   = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
+        was_weak = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
         if was_weak and now_strong:
             return "transition"
         return "strong" if now_strong else "weak"
@@ -127,14 +135,16 @@ def _rs_state(df: pd.DataFrame, bench: pd.Series | None) -> str:
 
 
 def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
-    avg   = c.ewm(span=length, adjust=False).mean()
+    avg = c.ewm(span=length, adjust=False).mean()
     ratio = c / avg
     if pd.isna(ratio.iloc[-1]):
         return 1.0, False
     return float(ratio.iloc[-1]), bool(ratio.iloc[-1] > ratio.iloc[-2])
 
 
-def _earliness(rs_state: str, zl_days: int, cavgc: float, cavgc_rising: bool, squeeze: bool) -> float:
+def _earliness(
+    rs_state: str, zl_days: int, cavgc: float, cavgc_rising: bool, squeeze: bool
+) -> float:
     score = 0.0
     if squeeze:
         score += 40
@@ -149,6 +159,7 @@ def _earliness(rs_state: str, zl_days: int, cavgc: float, cavgc_rising: bool, sq
 
 
 # ── Core signal ───────────────────────────────────────────────────────────────
+
 
 def _rs_highline_cross(
     df: pd.DataFrame,
@@ -165,14 +176,14 @@ def _rs_highline_cross(
     if len(df) < 3:
         return False, nan, nan
 
-    stock_close   = df.set_index("date")["close"].astype(float)
+    stock_close = df.set_index("date")["close"].astype(float)
     bench_aligned = bench.reindex(stock_close.index)
-    valid         = bench_aligned.notna()
+    valid = bench_aligned.notna()
     if valid.sum() < 10:
         return False, nan, nan
 
     rs_line = (stock_close[valid] / bench_aligned[valid]) * 1000
-    highs   = df.set_index("date")["high"].astype(float).reindex(rs_line.index)
+    highs = df.set_index("date")["high"].astype(float).reindex(rs_line.index)
 
     # Scan backwards for most recent RS-declining bar
     latest_rs_high = nan
@@ -185,8 +196,8 @@ def _rs_highline_cross(
         return False, nan, nan
 
     c_today = float(stock_close.iloc[-1])
-    c_prev  = float(stock_close.iloc[-2])
-    crossed  = c_today > latest_rs_high and c_prev <= latest_rs_high
+    c_prev = float(stock_close.iloc[-2])
+    crossed = c_today > latest_rs_high and c_prev <= latest_rs_high
     pct_above = (c_today / latest_rs_high - 1) * 100
     return crossed, round(latest_rs_high, 2), round(pct_above, 2)
 
@@ -221,8 +232,8 @@ def get_watchlist() -> list[str]:
 
 _CIRCUIT_EMOJI = {
     ("20", "10"): "🟨",
-    ("10", "5"):  "🟥",
-    ("5",  "10"): "🟩",
+    ("10", "5"): "🟥",
+    ("5", "10"): "🟩",
     ("10", "20"): "🟦",
 }
 _NSE_CSV_PATHS = [
@@ -243,7 +254,7 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
                 sym = row.get("SYMBOL", "")
                 dte = row.get("EFFECTIVE DATE", "")
                 frm = row.get("FROM", "")
-                to  = row.get("TO", "")
+                to = row.get("TO", "")
                 if not sym or not dte:
                     continue
                 try:
@@ -284,34 +295,34 @@ def analyse(
             return None
 
         rs = _rs_state(df, bench)
-        c  = df["close"].astype(float)
-        zl25      = _zlema(c, 25)
+        c = df["close"].astype(float)
+        zl25 = _zlema(c, 25)
         zl_rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
         zl_days, zl_pct = _zl25_turn_stats(zl25, c)
 
         curr_close = float(c.iloc[-1])
         prev_close = float(c.iloc[-2])
-        day_chg    = (curr_close - prev_close) / prev_close * 100
+        day_chg = (curr_close - prev_close) / prev_close * 100
 
         cavgc_val, cavgc_rising = _cavgc(c)
-        squeeze   = _bb_kc_squeeze(df)
+        squeeze = _bb_kc_squeeze(df)
         earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
 
         return {
-            "symbol":    symbol,
-            "signal":    True,
-            "close":     curr_close,
-            "day_chg":   round(day_chg, 2),
-            "rs_high":   rs_high,
+            "symbol": symbol,
+            "signal": True,
+            "close": curr_close,
+            "day_chg": round(day_chg, 2),
+            "rs_high": rs_high,
             "pct_above": pct_above,
-            "rs_state":  rs,
+            "rs_state": rs,
             "zl_rising": zl_rising,
-            "zl_days":   zl_days,
-            "zl_pct":    zl_pct,
-            "squeeze":   squeeze,
-            "atr_pct":   round(atr_p, 1),
+            "zl_days": zl_days,
+            "zl_pct": zl_pct,
+            "squeeze": squeeze,
+            "atr_pct": round(atr_p, 1),
             "earliness": earliness,
-            "liq_tag":   liq_tag(df),
+            "liq_tag": liq_tag(df),
         }
     except Exception:
         return None
@@ -328,23 +339,23 @@ _HDR = [
 
 
 def _row(f: dict, circuit: dict, names: dict[str, str]) -> str:
-    sym  = f["symbol"]
-    tv   = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    sym = f["symbol"]
+    tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
     cl, em = circuit.get(sym, ("20%", ""))
     circuit_cell = f"{cl} {em}".strip()
 
     name_str = names.get(sym, "")
-    lbl      = _LABELS.get(sym, "")
+    lbl = _LABELS.get(sym, "")
     label_parts = [p for p in [name_str, lbl] if p]
-    name_cell   = "<br>".join(label_parts)
+    name_cell = "<br>".join(label_parts)
 
     zl_arrow = "↑" if f["zl_rising"] else "↓"
-    zl_d     = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
-    zl_cell  = f"{zl_arrow}{zl_d}"
-    zl_p     = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-    ds       = "+" if f["day_chg"] >= 0 else ""
-    rs_icon  = _RS_EMOJI.get(f["rs_state"], "↓")
-    sqz      = "●" if f["squeeze"] else "—"
+    zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+    zl_cell = f"{zl_arrow}{zl_d}"
+    zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+    ds = "+" if f["day_chg"] >= 0 else ""
+    rs_icon = _RS_EMOJI.get(f["rs_state"], "↓")
+    sqz = "●" if f["squeeze"] else "—"
 
     return (
         f"| [{sym}]({tv}) [{circuit_cell}] "
@@ -443,7 +454,7 @@ def main() -> None:
     print(f"\n  {len(findings)} RS high-line crosses found")
 
     names = get_names([f["symbol"] for f in findings])
-    md    = build_markdown(findings, circuit, names)
+    md = build_markdown(findings, circuit, names)
 
     with open(MD_LATEST, "w", encoding="utf-8") as fh:
         fh.write(md)
