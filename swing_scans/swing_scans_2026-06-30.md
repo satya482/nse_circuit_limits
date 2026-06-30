@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE Swing Scan — 2026-06-30
-*Generated 2026-06-30 18:43 IST*
+*Generated 2026-06-30 19:22 IST*
 
 **Entry Opportunities: 95**
 *(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*
