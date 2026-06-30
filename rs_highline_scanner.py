@@ -215,3 +215,102 @@ def get_watchlist() -> list[str]:
         .get_scanner_data()
     )
     return df["name"].tolist()
+
+
+# ── Circuit limits ────────────────────────────────────────────────────────────
+
+_CIRCUIT_EMOJI = {
+    ("20", "10"): "🟨",
+    ("10", "5"):  "🟥",
+    ("5",  "10"): "🟩",
+    ("10", "20"): "🟦",
+}
+_NSE_CSV_PATHS = [
+    os.path.join(REPO_DIR, "nse.csv"),
+    r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv",
+]
+
+
+def get_circuit_limits() -> dict[str, tuple[str, str]]:
+    nse_csv = next((p for p in _NSE_CSV_PATHS if os.path.exists(p)), None)
+    if not nse_csv:
+        return {}
+    try:
+        latest: dict[str, dict] = {}
+        with open(nse_csv, encoding="utf-8-sig") as fh:
+            for raw in csv.DictReader(fh):
+                row = {k.strip(): v.strip() for k, v in raw.items()}
+                sym = row.get("SYMBOL", "")
+                dte = row.get("EFFECTIVE DATE", "")
+                frm = row.get("FROM", "")
+                to  = row.get("TO", "")
+                if not sym or not dte:
+                    continue
+                try:
+                    parsed = datetime.strptime(dte, "%d-%b-%Y")
+                except ValueError:
+                    continue
+                if sym not in latest or parsed > latest[sym]["parsed"]:
+                    latest[sym] = {"parsed": parsed, "from": frm, "to": to}
+        return {
+            sym: (d["to"] + "%", _CIRCUIT_EMOJI.get((d["from"], d["to"]), ""))
+            for sym, d in latest.items()
+        }
+    except Exception:
+        return {}
+
+
+# ── Per-stock analysis ────────────────────────────────────────────────────────
+
+
+def analyse(
+    symbol: str,
+    df: pd.DataFrame,
+    bench: pd.Series | None,
+) -> dict | None:
+    try:
+        if df is None or len(df) < 30:
+            return None
+
+        atr_p = _atr_pct(df)
+        if atr_p < ATR_PCT_MIN:
+            return None
+
+        if bench is None:
+            return None
+
+        signal, rs_high, pct_above = _rs_highline_cross(df, bench)
+        if not signal:
+            return None
+
+        rs = _rs_state(df, bench)
+        c  = df["close"].astype(float)
+        zl25      = _zlema(c, 25)
+        zl_rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
+        zl_days, zl_pct = _zl25_turn_stats(zl25, c)
+
+        curr_close = float(c.iloc[-1])
+        prev_close = float(c.iloc[-2])
+        day_chg    = (curr_close - prev_close) / prev_close * 100
+
+        cavgc_val, cavgc_rising = _cavgc(c)
+        squeeze   = _bb_kc_squeeze(df)
+        earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
+
+        return {
+            "symbol":    symbol,
+            "close":     curr_close,
+            "day_chg":   round(day_chg, 2),
+            "rs_high":   rs_high,
+            "pct_above": pct_above,
+            "rs_state":  rs,
+            "zl_rising": zl_rising,
+            "zl_days":   zl_days,
+            "zl_pct":    zl_pct,
+            "squeeze":   squeeze,
+            "atr_pct":   round(atr_p, 1),
+            "earliness": earliness,
+            "liq_tag":   liq_tag(df),
+        }
+    except Exception:
+        return None
