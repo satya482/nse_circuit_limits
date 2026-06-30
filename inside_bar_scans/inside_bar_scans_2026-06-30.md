@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE Inside Bar / Mini Coil Scan — 2026-06-30
-*Generated 2026-06-30 12:28 IST*
+*Generated 2026-06-30 19:20 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -122,6 +122,7 @@
 | [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT) | 139.50 | -1.15% | 4d | 145.88 | 134.60 | 8.38% | 20%  |
 | [DEEDEV](https://in.tradingview.com/chart/?symbol=NSE:DEEDEV) | 476.35 | -5.00% | 4d | 511.00 | 471.40 | 8.40% | 5% 🟥 |
 | [JSWINFRA](https://in.tradingview.com/chart/?symbol=NSE:JSWINFRA) | 320.85 | -0.08% | 4d | 343.45 | 316.50 | 8.52% | 20%  |
+| [INDPRUD](https://in.tradingview.com/chart/?symbol=NSE:INDPRUD) | 6525.00 | -1.11% | 4d | 6750.00 | 6220.00 | 8.52% | 20%  |
 | [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC) | 159.01 | -1.85% | 4d | 171.70 | 158.01 | 8.66% | 20% 🟦 |
 | [CONFIPET](https://in.tradingview.com/chart/?symbol=NSE:CONFIPET) | 71.84 | +0.52% | 4d | 75.00 | 68.59 | 9.35% | 10% 🟨 |
 | [AMBIKCO](https://in.tradingview.com/chart/?symbol=NSE:AMBIKCO) | 1770.00 | +3.96% | 4d | 1816.30 | 1656.10 | 9.67% | 20%  |
@@ -166,6 +167,7 @@
 | [KSHINTL](https://in.tradingview.com/chart/?symbol=NSE:KSHINTL) | 860.15 | +1.06% | 3d | 875.00 | 828.00 | 5.68% | 20%  |
 | [BOROLTD](https://in.tradingview.com/chart/?symbol=NSE:BOROLTD) | 234.46 | +0.09% | 3d | 243.66 | 230.51 | 5.70% | 20%  |
 | [BRIGHOTEL](https://in.tradingview.com/chart/?symbol=NSE:BRIGHOTEL) | 63.10 | -0.19% | 3d | 65.69 | 62.13 | 5.73% | 20%  |
+| [ANUHPHR](https://in.tradingview.com/chart/?symbol=NSE:ANUHPHR) | 80.10 | +2.43% | 3d | 82.40 | 77.92 | 5.75% | 20%  |
 | [LGHL](https://in.tradingview.com/chart/?symbol=NSE:LGHL) | 222.33 | +0.15% | 3d | 230.46 | 217.25 | 6.08% | 20%  |
 | [VENUSPIPES](https://in.tradingview.com/chart/?symbol=NSE:VENUSPIPES) | 1716.20 | +0.88% | 3d | 1761.80 | 1659.60 | 6.16% | 20%  |
 | [INOXGREEN](https://in.tradingview.com/chart/?symbol=NSE:INOXGREEN) | 201.96 | +1.48% | 3d | 206.50 | 194.50 | 6.17% | 20%  |
@@ -187,7 +189,6 @@
 | [MAXIND](https://in.tradingview.com/chart/?symbol=NSE:MAXIND) | 159.92 | -1.53% | 3d | 170.03 | 157.35 | 8.06% | 20%  |
 | [BANDHANBNK](https://in.tradingview.com/chart/?symbol=NSE:BANDHANBNK) | 203.34 | +0.50% | 3d | 213.59 | 197.50 | 8.15% | 20%  |
 | [GRINDWELL](https://in.tradingview.com/chart/?symbol=NSE:GRINDWELL) | 2188.00 | +1.92% | 3d | 2294.40 | 2121.20 | 8.17% | 20%  |
-| [INDPRUD](https://in.tradingview.com/chart/?symbol=NSE:INDPRUD) | 6598.50 | +1.06% | 3d | 6750.00 | 6220.00 | 8.52% | 20%  |
 | [DYCL](https://in.tradingview.com/chart/?symbol=NSE:DYCL) | 369.05 | -0.15% | 3d | 385.80 | 355.45 | 8.54% | 20% 🟦 |
 | [FUSION](https://in.tradingview.com/chart/?symbol=NSE:FUSION) | 190.51 | +2.57% | 3d | 197.96 | 182.00 | 8.77% | 20%  |
 | [AVL](https://in.tradingview.com/chart/?symbol=NSE:AVL) | 670.20 | +0.25% | 3d | 705.00 | 647.10 | 8.95% | 20%  |
@@ -209,7 +210,6 @@
 | [GKSL](https://in.tradingview.com/chart/?symbol=NSE:GKSL) | 129.71 | +0.36% | 2d | 135.40 | 126.70 | 6.87% | 20%  |
 | [SHADOWFAX](https://in.tradingview.com/chart/?symbol=NSE:SHADOWFAX) | 222.75 | -1.65% | 2d | 232.90 | 217.33 | 7.16% | 20%  |
 | [SUDEEPPHRM](https://in.tradingview.com/chart/?symbol=NSE:SUDEEPPHRM) | 842.50 | +2.78% | 2d | 862.00 | 803.65 | 7.26% | 20%  |
-| [VLSFINANCE](https://in.tradingview.com/chart/?symbol=NSE:VLSFINANCE) | 258.55 | +0.51% | 2d | 275.00 | 245.30 | 12.11% | 20%  |
 | [SEDEMAC](https://in.tradingview.com/chart/?symbol=NSE:SEDEMAC) | 2788.50 | +2.14% | 2d | 2922.00 | 2565.40 | 13.90% | 20%  |
 | [ARROWGREEN](https://in.tradingview.com/chart/?symbol=NSE:ARROWGREEN) | 573.05 | -3.04% | 2d | 616.45 | 525.60 | 17.29% | 5%  |
 | [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | 75.80 | +2.28% | 2d | 81.90 | 68.05 | 20.35% | 5%  |
