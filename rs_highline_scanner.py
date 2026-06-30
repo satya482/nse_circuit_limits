@@ -401,3 +401,58 @@ def build_markdown(
 
     lines.append("")
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+
+def main() -> None:
+    os.makedirs(SCANS_DIR, exist_ok=True)
+
+    print("\nFetching watchlist from TradingView screener...")
+    watchlist = get_watchlist()
+    print(f"  {len(watchlist)} stocks after screener filters")
+
+    print(f"\nLoading OHLCV + benchmark ({BENCH_SYM}) from SQLite...")
+    syms_to_load = watchlist + [BENCH_SYM]
+    all_data = load_ohlc_many(syms_to_load, lookback=400)
+
+    bench_df = all_data.pop(BENCH_SYM, None)
+    bench_series: pd.Series | None = (
+        bench_df.set_index("date")["close"].astype(float)
+        if bench_df is not None
+        else None
+    )
+    if bench_series is None:
+        print(f"  WARNING: {BENCH_SYM} not in SQLite — RS signal unavailable")
+
+    print(f"  Loaded {len(all_data)} equity stocks")
+
+    print(f"\nFetching circuit limits...")
+    circuit = get_circuit_limits()
+
+    print(f"\nScanning {len(all_data)} stocks...")
+    findings: list[dict] = []
+    for i, (sym, df_raw) in enumerate(all_data.items(), 1):
+        print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
+        result = analyse(sym, df_raw, bench_series)
+        if result:
+            findings.append(result)
+    print()
+
+    print(f"\n  {len(findings)} RS high-line crosses found")
+
+    names = get_names([f["symbol"] for f in findings])
+    md    = build_markdown(findings, circuit, names)
+
+    with open(MD_LATEST, "w", encoding="utf-8") as fh:
+        fh.write(md)
+    with open(MD_DATED, "w", encoding="utf-8") as fh:
+        fh.write(md)
+
+    print(f"  Saved → {MD_LATEST}")
+    print(f"  Saved → {MD_DATED}")
+
+
+if __name__ == "__main__":
+    main()
