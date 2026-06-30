@@ -2,21 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 3** &nbsp;|&nbsp; **Deletions: 3**
+**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (3)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [SARLAPOLY](https://in.tradingview.com/chart/?symbol=NSE:SARLAPOLY) | +0.71% |
-| [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL) | +0.23% |
-| [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR) | -0.69% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (3)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [BAHETI](https://in.tradingview.com/chart/?symbol=NSE:BAHETI) | +0.50% |
-| [NXST.RR](https://in.tradingview.com/chart/?symbol=NSE:NXST.RR) | +0.24% |
-| [LLOYDSME](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSME) | -0.40% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (500)
 | # | Symbol | Day Change % |
