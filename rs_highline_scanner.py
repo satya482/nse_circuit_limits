@@ -299,6 +299,7 @@ def analyse(
 
         return {
             "symbol":    symbol,
+            "signal":    True,
             "close":     curr_close,
             "day_chg":   round(day_chg, 2),
             "rs_high":   rs_high,
