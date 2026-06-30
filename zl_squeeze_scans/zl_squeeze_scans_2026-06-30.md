@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE ZL Squeeze Scan — 2026-06-30
-*Generated 2026-06-30 12:27 IST*
+*Generated 2026-06-30 19:20 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -44,15 +44,15 @@
 | [SURYODAY](https://in.tradingview.com/chart/?symbol=NSE:SURYODAY) | Small finance bank serving unbanked rural and semi-urban customers | 22d | 2d | +2.3% | 175.90 | +1.35% | ✓ | ✓ | ✓ | 20%  |
 | [UDS](https://in.tradingview.com/chart/?symbol=NSE:UDS) | Facilities management and business support services provider | 21d | 2d | +1.6% | 184.16 | -0.55% | ✓ | ✓ | ✓ | 20%  |
 | [MOLDTKPAC](https://in.tradingview.com/chart/?symbol=NSE:MOLDTKPAC) | Injection-molded plastic containers for industrial and consumer goods | 16d | 2d | +6.3% | 733.00 | +3.57% | ✓ | ✓ | ✓ | 20%  |
-| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | Pharmaceutical manufacturing across multiple therapeutic segments | 14d | 2d | +3.8% | 839.10 | +0.80% | ✓ | ✓ | ✓ | 10% 🟨 |
 | [SOMANYCERA](https://in.tradingview.com/chart/?symbol=NSE:SOMANYCERA) |  | 14d | 2d | +1.9% | 523.45 | +1.12% | ✓ | ✓ | ✓ | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | Pharmaceutical manufacturing across multiple therapeutic segments | 14d | 2d | +3.8% | 839.10 | +0.80% | ✓ | ✓ | ✓ | 10% 🟨 |
 | [SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN) | Microfinance loans for rural and semi-urban unbanked populations | 8d | 2d | +4.8% | 242.00 | +2.59% | ✓ | ✓ | ✓ | 20%  |
 | [BLSE](https://in.tradingview.com/chart/?symbol=NSE:BLSE) | Digital services platform: e-governance, banking, semi-urban rural | 8d | 2d | +3.6% | 233.45 | +0.24% | ✓ | ✓ | ✓ | 20%  |
 | [SHOPERSTOP](https://in.tradingview.com/chart/?symbol=NSE:SHOPERSTOP) | Department store operator, fashion beauty retail, urban consumers | 8d | 2d | +1.7% | 362.40 | -0.77% | ✓ | ✓ | ✓ | 20%  |
 | [SUPRIYA](https://in.tradingview.com/chart/?symbol=NSE:SUPRIYA) | Pharmaceutical APIs manufacturer for global drug formulations | 5d | 2d | +8.8% | 1009.50 | +3.99% | ✓ | ✓ | ✓ | 20%  |
 | [OMNI](https://in.tradingview.com/chart/?symbol=NSE:OMNI) | Precision engineered components manufacturing for industrial automation | 5d | 2d | +7.6% | 526.00 | +4.98% | ✓ | ✓ | ✓ | 20% 🟦 |
-| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE) | Steam turbines, power generation equipment, industrial sector | 4d | 2d | +3.5% | 692.65 | +0.76% | ✓ | ✓ | ✓ | 20%  |
 | [WEWORK](https://in.tradingview.com/chart/?symbol=NSE:WEWORK) | Flexible office spaces for enterprises startups SMEs | 4d | 2d | +3.9% | 643.50 | -0.85% | ✓ | ✓ | ✓ | 20%  |
+| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE) | Steam turbines, power generation equipment, industrial sector | 4d | 2d | +3.5% | 692.65 | +0.76% | ✓ | ✓ | ✓ | 20%  |
 | [PRINCEPIPE](https://in.tradingview.com/chart/?symbol=NSE:PRINCEPIPE) | Polymer pipes and fittings for construction and plumbing | 3d | 2d | +1.9% | 285.80 | +0.18% | ✓ | ✓ | ✓ | 20%  |
 | [UNIPARTS](https://in.tradingview.com/chart/?symbol=NSE:UNIPARTS) | Off-highway vehicle components for agriculture and construction | 1d | 2d | +3.2% | 673.00 | +1.39% | ✓ | ✓ | ✓ | 20%  |
 | [ARROWGREEN](https://in.tradingview.com/chart/?symbol=NSE:ARROWGREEN) | Water-soluble films, security products, agriculture exports | 15d | 3d | +7.7% | 573.05 | -3.04% | ✓ | ✓ | ✓ | 5%  |
@@ -69,8 +69,8 @@
 | [INDOAMIN](https://in.tradingview.com/chart/?symbol=NSE:INDOAMIN) | Fatty amines and derivatives for pharma agrochemicals | 14d | 6d | +4.9% | 137.95 | -1.75% | ✓ | ✓ | ✓ | 20%  |
 | [JITFINFRA](https://in.tradingview.com/chart/?symbol=NSE:JITFINFRA) |  | 5d | 6d | +8.5% | 312.95 | -0.86% | ✓ | ✓ | ✓ | 10% 🟩 |
 | [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) |  | 13d | 7d | +2.8% | 1095.30 | -0.21% | ✓ | ✓ | ✓ | 20%  |
-| [SRM](https://in.tradingview.com/chart/?symbol=NSE:SRM) | Road and tunnel construction for J&K infrastructure development | 1d | 7d | +5.0% | 514.00 | +1.37% | ✓ | ✓ | ✓ | 20%  |
 | [GOCOLORS](https://in.tradingview.com/chart/?symbol=NSE:GOCOLORS) | Women's bottomwear branded retailer, vertical integration | 1d | 7d | +9.9% | 389.00 | +0.49% | ✓ | ✓ | ✓ | 20%  |
+| [SRM](https://in.tradingview.com/chart/?symbol=NSE:SRM) | Road and tunnel construction for J&K infrastructure development | 1d | 7d | +5.0% | 514.00 | +1.37% | ✓ | ✓ | ✓ | 20%  |
 | [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP) | Ibuprofen APIs, specialty chemicals, global pharma export | 11d | 8d | +13.6% | 145.72 | +2.38% | ✓ | ✓ | ✓ | 20%  |
 | [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA) | Digital-first beauty personal care brands millennial consumers | 9d | 8d | +9.0% | 442.95 | -0.78% | ✓ | ✓ | ✓ | 20%  |
 | [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE) | Diamond gold platinum jewelry omni-channel retail lifestyle | 3d | 8d | +8.4% | 546.25 | +1.45% | ✓ | ✓ | ✓ | 20%  |
@@ -104,9 +104,9 @@
 | [INDRAMEDCO](https://in.tradingview.com/chart/?symbol=NSE:INDRAMEDCO) | Tertiary care multi-specialty hospital chain Delhi NCT | 9d | 1d | +2.3% | 388.80 | +2.28% | ✓ | — | — | 20%  |
 | [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE) | Hindi TV serials films digital content production streaming | 9d | 1d | +2.2% | 88.50 | +2.18% | ✓ | — | — | 20%  |
 | [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | B2B building materials marketplace connecting manufacturers traders | 8d | 1d | +0.3% | 591.55 | +0.26% | ✓ | — | — | 20%  |
-| [BANCOINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANCOINDIA) | Automotive cooling and sealing systems manufacturer for OEMs | 7d | 1d | +3.7% | 677.60 | +3.71% | ✓ | ✓ | — | 20%  |
-| [AARTIDRUGS](https://in.tradingview.com/chart/?symbol=NSE:AARTIDRUGS) | APIs and pharma intermediates manufacturer for global drugmakers | 7d | 1d | +3.5% | 386.35 | +3.45% | ✓ | ✓ | — | 20%  |
 | [EIDPARRY](https://in.tradingview.com/chart/?symbol=NSE:EIDPARRY) | Sugar production, nutraceuticals, ethanol, farm inputs | 7d | 1d | +0.6% | 718.60 | +0.64% | ✓ | — | — | 20%  |
+| [AARTIDRUGS](https://in.tradingview.com/chart/?symbol=NSE:AARTIDRUGS) | APIs and pharma intermediates manufacturer for global drugmakers | 7d | 1d | +3.5% | 386.35 | +3.45% | ✓ | ✓ | — | 20%  |
+| [BANCOINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANCOINDIA) | Automotive cooling and sealing systems manufacturer for OEMs | 7d | 1d | +3.7% | 677.60 | +3.71% | ✓ | ✓ | — | 20%  |
 | [INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK) | Private bank: retail deposits, auto loans, microfinance | 6d | 1d | +1.3% | 927.10 | +1.28% | ✓ | — | — | 20%  |
 | [TENNIND](https://in.tradingview.com/chart/?symbol=NSE:TENNIND) | Automotive emission control systems for four-wheeler manufacturers | 6d | 1d | +2.8% | 597.45 | +2.76% | ✓ | ✓ | — | 20%  |
 | [BHARTIHEXA](https://in.tradingview.com/chart/?symbol=NSE:BHARTIHEXA) | Mobile telecom and broadband services Rajasthan Northeast circles | 6d | 1d | +2.8% | 1480.40 | +2.80% | ✓ | — | — | 20%  |
@@ -123,8 +123,8 @@
 | [HLEGLAS](https://in.tradingview.com/chart/?symbol=NSE:HLEGLAS) |  | 2d | 1d | +1.5% | 380.85 | +1.48% | — | ✓ | ✓ | 20%  |
 | [MATRIMONY](https://in.tradingview.com/chart/?symbol=NSE:MATRIMONY) |  | 2d | 1d | +0.5% | 399.00 | +0.54% | ✓ | — | — | 20%  |
 | [ARE&M](https://in.tradingview.com/chart/?symbol=NSE:ARE&M) | Lead-acid batteries automotive industrial energy storage | 1d | 1d | +2.5% | 842.50 | +2.45% | ✓ | — | — | 20%  |
-| [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER) | Copier paper, coated paper, packaging boards manufacturer | 1d | 1d | +2.1% | 351.00 | +2.14% | ✓ | — | — | 20%  |
 | [ELECON](https://in.tradingview.com/chart/?symbol=NSE:ELECON) | Gears, material handling equipment, power transmission, foundry | 1d | 1d | +2.5% | 535.80 | +2.49% | ✓ | ✓ | — | 20%  |
+| [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER) | Copier paper, coated paper, packaging boards manufacturer | 1d | 1d | +2.1% | 351.00 | +2.14% | ✓ | — | — | 20%  |
 | [SOLEX](https://in.tradingview.com/chart/?symbol=NSE:SOLEX) | Solar module manufacturing and EPC services provider | 1d | 1d | +1.7% | 1120.00 | +1.66% | ✓ | — | — | 20%  |
 | [AVTNPL](https://in.tradingview.com/chart/?symbol=NSE:AVTNPL) |  | 37d | 2d | +1.6% | 71.21 | +0.07% | ✓ | — | — | 20%  |
 | [SWELECTES](https://in.tradingview.com/chart/?symbol=NSE:SWELECTES) | Solar EPC and power conditioning solutions provider | 20d | 2d | +5.0% | 642.80 | +1.46% | ✓ | ✓ | — | 20%  |
@@ -144,9 +144,8 @@
 | [TIIL](https://in.tradingview.com/chart/?symbol=NSE:TIIL) | Drum closures, scaffolding systems, textiles manufacturing | 8d | 2d | +2.6% | 2625.00 | +0.29% | ✓ | ✓ | — | 20%  |
 | [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | Pharmaceutical generics, specialty drugs, OTC medicines globally | 4d | 2d | +2.3% | 2203.90 | +0.79% | ✓ | — | — | 20%  |
 | [ATULAUTO](https://in.tradingview.com/chart/?symbol=NSE:ATULAUTO) | Three-wheeler autorickshaws, last-mile transport, domestic exports | 4d | 2d | +3.5% | 484.00 | +1.93% | ✓ | ✓ | — | 20%  |
-| [STANLEY](https://in.tradingview.com/chart/?symbol=NSE:STANLEY) | Luxury furniture manufacturing and retail for premium homes | 4d | 2d | +5.0% | 151.99 | +0.72% | ✓ | ✓ | — | 20%  |
 | [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT) | Sleep mattresses furniture direct-to-consumer e-commerce home | 4d | 2d | +3.3% | 124.93 | +1.57% | ✓ | — | — | 20%  |
-| [LLOYDSME](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSME) | Iron ore mining, sponge iron production, power generation | 2d | 2d | +4.6% | 1800.10 | -0.31% | ✓ | ✓ | — | 20%  |
+| [STANLEY](https://in.tradingview.com/chart/?symbol=NSE:STANLEY) | Luxury furniture manufacturing and retail for premium homes | 4d | 2d | +5.0% | 151.99 | +0.72% | ✓ | ✓ | — | 20%  |
 | [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU) | Residential real estate development Ahmedabad Gujarat region | 2d | 2d | +0.9% | 761.80 | -0.46% | — | ✓ | ✓ | 20%  |
 | [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI) | Wealth management advisory for high-net-worth individuals | 1d | 2d | +2.1% | 1972.60 | -0.81% | ✓ | — | — | 20%  |
 | [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT) | IT services, digital transformation, automation for global enterprises | 1d | 2d | +4.1% | 515.05 | -0.84% | ✓ | ✓ | — | 20%  |
@@ -160,6 +159,7 @@
 | [MOBIKWIK](https://in.tradingview.com/chart/?symbol=NSE:MOBIKWIK) | Digital payments wallet, lending, bill payments fintech | 18d | 5d | +3.1% | 201.71 | +0.78% | ✓ | ✓ | — | 20%  |
 | [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN) | Home loans and residential project financing for individuals | 16d | 5d | +3.3% | 559.25 | -0.27% | ✓ | ✓ | — | 20%  |
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA) | Radiology pathology diagnostics PPP hospital networks India | 16d | 5d | +1.8% | 542.90 | +1.09% | ✓ | — | — | 20%  |
+| [ANUHPHR](https://in.tradingview.com/chart/?symbol=NSE:ANUHPHR) |  | 14d | 5d | +3.2% | 80.10 | +2.43% | ✓ | ✓ | — | 20%  |
 | [FIRSTCRY](https://in.tradingview.com/chart/?symbol=NSE:FIRSTCRY) | Babies kids products retailer multi-channel parenting platform | 8d | 5d | +3.0% | 223.73 | +1.07% | ✓ | — | — | 20%  |
 | [DPABHUSHAN](https://in.tradingview.com/chart/?symbol=NSE:DPABHUSHAN) |  | 7d | 5d | +3.3% | 943.95 | -0.76% | ✓ | — | — | 20%  |
 | [ARMANFIN](https://in.tradingview.com/chart/?symbol=NSE:ARMANFIN) | NBFC loans rural informal sector microfinance underserved India | 5d | 5d | +4.7% | 1702.80 | +1.84% | ✓ | ✓ | — | 20%  |
