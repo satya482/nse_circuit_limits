@@ -5,21 +5,29 @@ from rs_highline_scanner import _rs_highline_cross
 
 
 def _df(closes: list[float], highs: list[float] | None = None) -> pd.DataFrame:
-    n = len(closes)
+    """Build a 12-bar DataFrame. closes/highs define the LAST len(closes) bars; earlier bars are filled with closes[0]."""
+    target = 12
+    pad = target - len(closes)
+    c = [closes[0]] * pad + list(closes)
+    h = None
+    if highs is not None:
+        h = [highs[0]] * pad + list(highs)
+    n = len(c)
     dates = pd.date_range("2024-01-01", periods=n, freq="B")
     return pd.DataFrame({
         "date":   dates,
-        "open":   closes,
-        "high":   highs if highs else [c * 1.02 for c in closes],
-        "low":    [c * 0.98 for c in closes],
-        "close":  closes,
+        "open":   c,
+        "high":   h if h is not None else [x * 1.02 for x in c],
+        "low":    [x * 0.98 for x in c],
+        "close":  c,
         "volume": [1_000_000] * n,
     })
 
 
 def _bench(n: int, val: float = 100.0) -> pd.Series:
-    dates = pd.date_range("2024-01-01", periods=n, freq="B")
-    return pd.Series([val] * n, index=dates)
+    """Build a bench Series covering the same 12-bar date range as _df."""
+    dates = pd.date_range("2024-01-01", periods=max(n, 12), freq="B")
+    return pd.Series([val] * max(n, 12), index=dates)
 
 
 def test_basic_crossover():
@@ -67,8 +75,16 @@ def test_prev_close_already_above_no_signal():
 def test_insufficient_data():
     """Fewer than 10 valid bench bars → (False, nan, nan)."""
     import math
-    closes = [100.0, 101.0]
-    signal, rs_high, pct = _rs_highline_cross(_df(closes), _bench(2))
+    import pandas as pd
+    # 5-bar bench — below valid.sum() < 10 threshold
+    closes = [100.0, 101.0, 102.0, 103.0, 104.0]
+    dates = pd.date_range("2024-01-01", periods=5, freq="B")
+    df5 = pd.DataFrame({
+        "date": dates, "open": closes, "high": [c*1.02 for c in closes],
+        "low": [c*0.98 for c in closes], "close": closes, "volume": [1_000_000]*5,
+    })
+    bench5 = pd.Series([100.0]*5, index=dates)
+    signal, rs_high, pct = _rs_highline_cross(df5, bench5)
     assert signal is False
     assert math.isnan(rs_high)
 

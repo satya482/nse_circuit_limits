@@ -24,11 +24,13 @@ sys.stdout.reconfigure(encoding="utf-8")
 REPO_DIR  = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "rs_highline_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
-_LABELS: dict = (
-    json.loads(open(_LABELS_FILE, encoding="utf-8").read())
-    if os.path.exists(_LABELS_FILE)
-    else {}
-)
+def _load_labels() -> dict:
+    if not os.path.exists(_LABELS_FILE):
+        return {}
+    with open(_LABELS_FILE, encoding="utf-8") as fh:
+        return json.loads(fh.read())
+
+_LABELS: dict = _load_labels()
 TODAY     = datetime.now().strftime("%Y-%m-%d")
 MD_LATEST = os.path.join(SCANS_DIR, "rs_highline_latest.md")
 MD_DATED  = os.path.join(SCANS_DIR, f"rs_highline_{TODAY}.md")
@@ -166,7 +168,7 @@ def _rs_highline_cross(
     stock_close   = df.set_index("date")["close"].astype(float)
     bench_aligned = bench.reindex(stock_close.index)
     valid         = bench_aligned.notna()
-    if valid.sum() < 3:
+    if valid.sum() < 10:
         return False, nan, nan
 
     rs_line = (stock_close[valid] / bench_aligned[valid]) * 1000
