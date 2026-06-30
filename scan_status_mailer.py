@@ -39,6 +39,7 @@ SCANNER_KEYWORDS = {
     "Weekly ZL Scanner": "weekly-zl:",
     "EMA Screener": "screener:",
     "WT BullCross": "wt bullcross scan",
+    "RS HighLine": "rs-highline: scan",
     "WT Squeeze Dash": "wt-squeeze dashboard",
     "Dashboard": "dashboard",
 }
@@ -55,6 +56,7 @@ SCANNER_MD_LINKS_STATIC = {
     "Inside Bar Scanner": f"{BLOB}/inside_bar_scans/inside_bar_scans.md",
     "Weekly ZL Scanner": f"{BLOB}/weekly_zl_scans/weekly_zl_scans.md",
     "WT BullCross": f"{BLOB}/wt_scans/wt_bullcross_latest.md",
+    "RS HighLine": f"{BLOB}/rs_highline_scans/rs_highline_latest.md",
     "WT Squeeze Dash": f"{PAGES}/wt_squeeze_dashboard.html",
     "Dashboard": f"{BLOB}/NSE_Circuit_Limits.md",
 }
@@ -155,6 +157,13 @@ def parse_wt_bullcross_count(md: str, today: str) -> str:
     return f"{total} crosses ({sqz} squeeze)" if sqz else f"{total} crosses"
 
 
+def parse_rs_highline_count(md: str, today: str) -> str:
+    if today not in md[:200]:
+        return "—"
+    m = re.search(r"\*\*(\d+) signals — RS high-line cross today\*\*", md)
+    return (m.group(1) + " signals") if m else "—"
+
+
 def parse_compression_counts(md: str, today: str) -> tuple[str, str]:
     if today not in md[:100]:
         return "—", "—"
@@ -186,6 +195,7 @@ def get_scan_details(today: str) -> dict:
         os.path.join(BASE, "ema_screener_scans", f"ema_screener_{today}.md")
     )
     wt_md = read_file(os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md"))
+    rs_hl_md = read_file(os.path.join(BASE, "rs_highline_scans", "rs_highline_latest.md"))
     zl_rising, zl_watch = parse_ema25_zl_counts(zl25_md, today)
     ema_adds, ema_dels = parse_screener_counts(screener_md, today)
 
@@ -200,6 +210,7 @@ def get_scan_details(today: str) -> dict:
         "Weekly ZL Scanner": parse_weekly_zl_count(weekly_zl_md, today),
         "EMA Screener": f"+{ema_adds} adds / -{ema_dels} exits",
         "WT BullCross": parse_wt_bullcross_count(wt_md, today),
+        "RS HighLine": parse_rs_highline_count(rs_hl_md, today),
         "WT Squeeze Dash": "generated",
         "Dashboard": "generated",
     }
