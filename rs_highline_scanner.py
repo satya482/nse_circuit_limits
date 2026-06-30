@@ -189,3 +189,29 @@ def _rs_highline_cross(
     crossed  = c_today > latest_rs_high and c_prev <= latest_rs_high
     pct_above = (c_today / latest_rs_high - 1) * 100
     return crossed, round(latest_rs_high, 2), round(pct_above, 2)
+
+
+# ── Watchlist ─────────────────────────────────────────────────────────────────
+
+
+def get_watchlist() -> list[str]:
+    """TV screener: NSE common equity passing price/MCap/EMA/notional filters."""
+    _, df = (
+        Query()
+        .set_markets("india")
+        .select("name", "close", "market_cap_basic", "Perf.W")
+        .where(
+            col("exchange") == "NSE",
+            col("type") == "stock",
+            col("typespecs").has(["common"]),
+            col("close") > 20,
+            col("Perf.W") > 3,
+            col("market_cap_basic").between(MC_LOW, MC_HIGH),
+            col("close") > col("EMA10"),
+            col("close") > col("EMA20"),
+            col("Value.Traded") > 200e6,
+        )
+        .limit(2000)
+        .get_scanner_data()
+    )
+    return df["name"].tolist()
