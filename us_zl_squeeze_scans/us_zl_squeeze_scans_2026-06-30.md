@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # US ZL Squeeze Scan — 2026-06-30
-*Generated 2026-06-30 12:37 IST*
+*Generated 2026-06-30 19:46 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,11 +18,9 @@
 
 ---
 
-**1 stocks: ZLEMA25 Rising + Squeeze ON**
+**0 stocks: ZLEMA25 Rising + Squeeze ON**
 
-| Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
-|--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [ANDG](https://www.tradingview.com/chart/?symbol=ANDG) | 37.93 | +2.76% | 2.8x | 34d | 0d | +2.8% | ✓ | ✓ | ✓ |
+*No signals today.*
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
