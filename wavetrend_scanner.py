@@ -606,9 +606,8 @@ def weekly_wt_zone(
     """
     Detect whether the current daily bar is inside an active weekly WT bull-cross zone.
 
-    Zone starts: first daily bar of the week weekly wt1 crossed above zero.
-    Zone ends:   first daily bar of the week weekly wt1 crossed below zero.
-    "Zero-line cross" is the practical signal: wt1 recovers from negative territory.
+    Zone starts: first daily bar of the week weekly wt1 crossed above wt2.
+    Zone ends:   first daily bar of the week weekly wt1 crossed below wt2.
 
     Parameters
     ----------
@@ -660,13 +659,11 @@ def weekly_wt_zone(
         return False, 0
 
     wt1v = wt1.loc[valid_idx]
+    wt2v = wt2.loc[valid_idx]
 
-    # ── 3. Detect weekly zero-line crosses ───────────────────────────────────
-    # ponytail: zero-line cross (wt1 vs 0) rather than wt1 vs wt2 because the
-    # SMA-4 warmup artifact keeps wt1 above wt2 for all synthetic test sequences;
-    # zero-line cross is the meaningful signal and matches test helper semantics.
-    bull_cross = (wt1v > 0) & (wt1v.shift(1) <= 0)
-    bear_cross = (wt1v < 0) & (wt1v.shift(1) >= 0)
+    # ── 3. Detect weekly wt1/wt2 crossovers ─────────────────────────────────
+    bull_cross = (wt1v > wt2v) & (wt1v.shift(1) <= wt2v.shift(1))
+    bear_cross = (wt1v < wt2v) & (wt1v.shift(1) >= wt2v.shift(1))
 
     bull_dates = bull_cross[bull_cross].index
     if len(bull_dates) == 0:

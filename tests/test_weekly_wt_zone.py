@@ -38,24 +38,30 @@ def _make_df(prices: list | np.ndarray, start: str = "2020-01-02") -> pd.DataFra
 
 
 def _bull_then_hold(n_decline=300, n_rise=150) -> np.ndarray:
-    """Decline → reversal → flat. Reliably produces a weekly bull cross."""
-    return np.concatenate(
+    """Steep decline → reversal → hold. Noise ensures real wt1/wt2 divergence."""
+    rng = np.random.default_rng(42)
+    trend = np.concatenate(
         [
-            np.linspace(100, 40, n_decline),
-            np.linspace(40, 90, n_rise),
+            np.linspace(100, 30, n_decline),
+            np.linspace(30, 90, n_rise),
         ]
     )
+    noise = rng.normal(0, 2.0, len(trend))
+    return np.clip(trend + noise, 1.0, None)
 
 
 def _bull_then_bear(n_decline=300, n_rise=100, n_decline2=120) -> np.ndarray:
-    """Decline → reversal → decline again. Bull cross followed by bear cross."""
-    return np.concatenate(
+    """Steep decline → reversal → second decline. Bull cross then bear cross."""
+    rng = np.random.default_rng(42)
+    trend = np.concatenate(
         [
-            np.linspace(100, 40, n_decline),
-            np.linspace(40, 90, n_rise),
-            np.linspace(90, 30, n_decline2),
+            np.linspace(100, 30, n_decline),
+            np.linspace(30, 90, n_rise),
+            np.linspace(90, 20, n_decline2),
         ]
     )
+    noise = rng.normal(0, 2.0, len(trend))
+    return np.clip(trend + noise, 1.0, None)
 
 
 def test_in_zone_returns_true_with_positive_days():
@@ -64,7 +70,7 @@ def test_in_zone_returns_true_with_positive_days():
     in_zone, days = weekly_wt_zone(df)
     assert in_zone is True
     assert days > 0
-    assert days <= 160  # rise portion is 150 bars + small EMA lag buffer
+    assert days <= 200  # rise portion is 150 bars + EMA lag buffer
 
 
 def test_bear_cross_after_bull_ends_zone():
@@ -76,8 +82,10 @@ def test_bear_cross_after_bull_ends_zone():
 
 
 def test_no_cross_returns_false():
-    """Monotone decline — no bull cross ever → (False, 0)."""
-    prices = np.linspace(100, 10, 400)
+    """Steep monotone decline — no bull cross ever → (False, 0)."""
+    prices = np.linspace(
+        100, 10, 400
+    )  # pure decline, no noise → wt1 never crosses above wt2
     df = _make_df(prices)
     in_zone, days = weekly_wt_zone(df)
     assert in_zone is False
