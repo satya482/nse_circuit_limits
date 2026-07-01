@@ -352,7 +352,12 @@ def build_markdown(
         f"# NSE Swing Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
-        "*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*\n",
+        "*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*",
+        "",
+        "```",
+        ",".join(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
+        "```",
+        "",
         "| Symbol | Trap | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |",
         "|--------|:----:|--------:|--------:|-------|-----:|:---:|--------:|--------|:-------:|",
     ]
@@ -365,16 +370,7 @@ def build_markdown(
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         sym_s = f["symbol"]
-        lbl = _LABELS.get(sym_s, "")
-        name_mcap_str = (names or {}).get(sym_s, "")
-        if " · " in name_mcap_str:
-            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-        else:
-            _name_part, _mcap_part = name_mcap_str, ""
-        _liq_str = (liq_labels or {}).get(sym_s, "")
-        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
-        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-        lbl_cell = "<br>".join(_label_lines)
+        lbl_cell = _LABELS.get(sym_s, "")
         w52 = f"{f.get('leader_ratio', 1.0) * 100:.0f}%"
         vol_cell = f"{'🔵' if f.get('vol_dryup') else ''}{f.get('vol_ratio', 1.0):.2f}x"
         for tag, label, _ in f["entries"]:

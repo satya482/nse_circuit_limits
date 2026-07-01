@@ -387,17 +387,8 @@ def _row(
     flags = "SQ·PV" if sqz and ppv else "SQ" if sqz else "PV" if ppv else "—"
     wt_cell = f"{f['wt1']}/{f['wt2']}"  # e.g. 41.5/40.9
     emoji = _RANK_EMOJI.get(f["wt_rank"], "")
-    lbl = _LABELS.get(sym, "")
+    lbl_cell = _LABELS.get(sym, "")
     circuit_cell = f"{cl} {em}".strip()
-    name_mcap_str = (names or {}).get(sym, "")
-    if " · " in name_mcap_str:
-        name_part, mcap_part = name_mcap_str.split(" · ", 1)
-    else:
-        name_part, mcap_part = name_mcap_str, ""
-    liq = f.get("liq_tag", "")
-    mcap_liq = r" \| ".join(p for p in [mcap_part, liq] if p)
-    label_lines = [p for p in [name_part, mcap_liq, lbl] if p]
-    lbl_cell = "<br>".join(label_lines)
     return (
         f"| {sym_cell} "
         f"| {f.get('trap', 'n/a')} "
@@ -441,7 +432,7 @@ def build_markdown(
         "| Exchange | NSE common equity |",
         "| Price | > ₹50 |",
         "| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |",
-        "| Label | Name / MCap\\|avg10d·today notional / description (3 lines) |",
+        "| Label | Description from stock_labels.json |",
         "| RS filter | None — WT captures pre-RS-turn reversals |",
         "| RS | 🔄/↑/↓ state + IBD percentile vs NIFTY MIDSML 400 — e.g. 🔄82 |",
         "| C/AvgC | Close / EMA(10) ratio — ↑ rising momentum |",
@@ -456,6 +447,10 @@ def build_markdown(
         "---",
         "",
         f"**Total bull crosses today: {len(findings)}** · {sqz_count} inside active squeeze",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        "```",
         "",
     ]
 

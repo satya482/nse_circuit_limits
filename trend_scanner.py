@@ -438,16 +438,7 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
     cl, em = circuit.get(sym, ("20%", ""))
-    lbl = _LABELS.get(sym, "")
-    name_mcap_str = (names or {}).get(sym, "")
-    if " · " in name_mcap_str:
-        _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-    else:
-        _name_part, _mcap_part = name_mcap_str, ""
-    _liq_str = f.get("liq_tag", "")
-    _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
-    _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-    lbl_cell = "<br>".join(_label_lines)
+    lbl_cell = _LABELS.get(sym, "")
     tag, label, _ = min(f["entries"], key=lambda e: _SIG_ORDER.get(e[0], 9))
     sig_emoji = _SIG_EMOJI.get(tag, "")
     rs_cell = f"{_RS_EMOJI.get(f['rs_state'], '↓')}{f['rs_pct']:.0f}"
@@ -507,6 +498,10 @@ def build_markdown(
         "---",
         "",
         f"**Opportunities: {len(findings)}** · {leader_count} full LEADER_ZL (all 3 conditions)",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in findings),
+        "```",
         "",
     ]
 

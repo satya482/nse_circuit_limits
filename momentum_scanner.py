@@ -346,7 +346,12 @@ def build_markdown(
         f"# NSE Momentum Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         f"\n**Entry Opportunities: {len(findings)}**",
-        "*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*\n",
+        "*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*",
+        "",
+        "```",
+        ",".join(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
+        "```",
+        "",
         "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |",
         "|--------|--------:|--------:|-------|--------:|--------|:-------:|",
     ]
@@ -359,16 +364,7 @@ def build_markdown(
             f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
         )
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
-        lbl = _LABELS.get(sym, "")
-        name_mcap_str = names.get(sym, "")
-        if " · " in name_mcap_str:
-            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-        else:
-            _name_part, _mcap_part = name_mcap_str, ""
-        _liq_str = f.get("liq_tag", "")
-        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
-        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-        lbl_cell = "<br>".join(_label_lines)
+        lbl_cell = _LABELS.get(sym, "")
         for tag, label, _ in f["entries"]:
             ds = "+" if f["day_chg"] >= 0 else ""
             lines.append(

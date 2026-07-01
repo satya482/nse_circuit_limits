@@ -297,16 +297,7 @@ def _table_rows(
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
         pvz = f["price_vs_zl"]
-        lbl = _LABELS.get(sym, "")
-        name_mcap_str = (names or {}).get(sym, "")
-        if " · " in name_mcap_str:
-            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-        else:
-            _name_part, _mcap_part = name_mcap_str, ""
-        liq = f.get("liq_tag", "")
-        _mcap_liq = r" \| ".join(p for p in [_mcap_part, liq] if p)
-        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-        _meta = "<br>".join(_label_lines)
+        _meta = _LABELS.get(sym, "")
         rows.append(
             f"| [{sym}]({tv}) "
             f"| {_meta} "
@@ -333,6 +324,10 @@ def build_markdown(
         "",
         _static_header(),
         f"## UPTREND START — {len(findings)} stocks",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in findings),
+        "```",
         "",
     ]
     if findings:

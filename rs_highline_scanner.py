@@ -344,10 +344,7 @@ def _row(f: dict, circuit: dict, names: dict[str, str]) -> str:
     cl, em = circuit.get(sym, ("20%", ""))
     circuit_cell = f"{cl} {em}".strip()
 
-    name_str = names.get(sym, "")
-    lbl = _LABELS.get(sym, "")
-    label_parts = [p for p in [name_str, lbl] if p]
-    name_cell = "<br>".join(label_parts)
+    name_cell = _LABELS.get(sym, "")
 
     zl_arrow = "↑" if f["zl_rising"] else "↓"
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
@@ -402,6 +399,10 @@ def build_markdown(
         "",
         f"**{len(findings)} signal{'s' if len(findings) != 1 else ''} "
         f"— RS high-line cross today**",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        "```",
         "",
     ]
 

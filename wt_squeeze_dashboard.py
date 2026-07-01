@@ -226,8 +226,9 @@ def _tv_link(sym: str) -> str:
 
 
 def _desc_from_label(label: str) -> str:
-    """Extract description-only from a <br>-joined label cell (3rd segment)."""
     parts = label.split("<br>")
+    if len(parts) == 1:
+        return label  # new format: label IS description
     return parts[2] if len(parts) >= 3 else ""
 
 

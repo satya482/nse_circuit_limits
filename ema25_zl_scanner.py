@@ -303,16 +303,7 @@ def _table_rows(
         zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = "✓" if f.get("squeeze") else "—"
-        lbl = _LABELS.get(sym, "")
-        name_mcap_str = (names or {}).get(sym, "")
-        if " · " in name_mcap_str:
-            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-        else:
-            _name_part, _mcap_part = name_mcap_str, ""
-        _liq_str = f.get("liq_tag", "")
-        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
-        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-        lbl_cell = "<br>".join(_label_lines)
+        lbl_cell = _LABELS.get(sym, "")
         rows.append(
             f"| [{sym}]({tv}) "
             f"| {zl_d} "
@@ -346,6 +337,10 @@ def build_markdown(
         "",
         STATIC_HEADER,
         f"**ZLEMA25 Rising: {len(rising)}** &nbsp;|&nbsp; **ZLEMA25 Watch: {len(watch)}**",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in rising + watch),
+        "```",
         "",
         "### ZLEMA25 Rising",
     ]

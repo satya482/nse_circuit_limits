@@ -24,7 +24,7 @@ import scorer
 from data_loader import load_universe
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from ohlc_db import load_ohlc, load_ohlc_many, get_names, liq_tag
+from ohlc_db import load_ohlc, load_ohlc_many, get_names
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
@@ -106,17 +106,7 @@ def build_markdown(
         day_chg_str = (
             f"+{day_chg_pct:.2f}%" if day_chg_pct >= 0 else f"{day_chg_pct:.2f}%"
         )
-        lbl = _LABELS.get(c["symbol"], "")
-        sym = c["symbol"]
-        name_mcap_str = names.get(sym, "")
-        if " · " in name_mcap_str:
-            _name_part, _mcap_part = name_mcap_str.split(" · ", 1)
-        else:
-            _name_part, _mcap_part = name_mcap_str, ""
-        _liq_str = liq_tag(df)
-        _mcap_liq = r" \| ".join(p for p in [_mcap_part, _liq_str] if p)
-        _label_lines = [p for p in [_name_part, _mcap_liq, lbl] if p]
-        lbl_cell = "<br>".join(_label_lines)
+        lbl_cell = _LABELS.get(c["symbol"], "")
         lines.append(
             f"| {i} "
             f"| {tv_link(c['symbol'])} "
