@@ -94,7 +94,8 @@ def parse_wt_rows(content: str) -> list[dict]:
         if ls.startswith("|---") or ls.startswith("| ---"):
             continue
         # preserve empty cells (Label may be empty) — [1:-1] slice, not filter
-        parts = [p.strip() for p in ls.split("|")][1:-1]
+        # replace \| (escaped pipe inside label cell) before splitting on |
+        parts = [p.strip() for p in ls.replace(r"\|", "\x00").split("|")][1:-1]
         if len(parts) < 13:
             continue
         sym, wz_badge = _parse_sym_cell(parts[0])
@@ -128,7 +129,7 @@ def parse_wt_rows(content: str) -> list[dict]:
                 "symbol": sym,
                 "wz_badge": wz_badge,
                 "trap": parts[1],
-                "label": parts[2],
+                "label": parts[2].replace("\x00", "|"),
                 "signal": parts[3],
                 "rank": _sig_to_rank(parts[3]),
                 "earliness": parts[4],
@@ -225,9 +226,9 @@ def _tv_link(sym: str) -> str:
 
 
 def _desc_from_label(label: str) -> str:
-    """Extract description-only from a <br>-joined label cell (last segment)."""
+    """Extract description-only from a <br>-joined label cell (3rd segment)."""
     parts = label.split("<br>")
-    return parts[-1] if len(parts) > 1 else label
+    return parts[2] if len(parts) >= 3 else ""
 
 
 def _chg_cls(v: str) -> str:
