@@ -1,0 +1,94 @@
+//@version=6
+// ============================================================
+// Satya WT Weekly Zone Overlay
+// Add as a SEPARATE indicator on the daily price chart (overlay=true).
+// Replicates weekly WaveTrend via request.security and shades the
+// daily chart background when the weekly WT is in an active bull-cross
+// zone (weekly wt1 crossed above wt2, no bear cross since).
+//
+// Zone start: first daily bar AFTER the weekly bull cross candle closes
+//             (lookahead_off — no look-ahead bias; one-week visual delay).
+// Zone end:   first daily bar after the weekly bear cross candle closes.
+//
+// To shade from the exact cross week instead (display-only, no backtesting):
+//   change lookahead=barmerge.lookahead_off  →  barmerge.lookahead_on
+//
+// Companion indicator: Satya_WT_CROSS_LB_v2
+// Alert message format: "WT_WEEKLY_ZONE|{{ticker}}|zone_start|{{interval}}"
+// ============================================================
+
+indicator(
+    title     = "Satya WT Weekly Zone Overlay",
+    shorttitle= "Satya_WT_WklyZone",
+    overlay   = true,
+    max_labels_count = 500)
+
+// ════════════════════════════════════════════════════════════
+// INPUTS — keep n1/n2 in sync with Satya_WT_CROSS_LB_v2
+// ════════════════════════════════════════════════════════════
+
+n1         = input.int(10,  "Channel Length",  minval=1, group="WaveTrend (match v2)")
+n2         = input.int(21,  "Average Length",  minval=1, group="WaveTrend (match v2)")
+
+crossLevel = input.string(
+    "Any",
+    "Min cross level for zone start",
+    options=["Any", "Oversold L2 (wt2 ≤ -53)", "Oversold L1 (wt2 ≤ -60)"],
+    group="Zone Filter")
+
+zoneColor  = input.color(color.new(color.green, 85), "Zone background color", group="Display")
+showLabel  = input.bool(true,  "Show W↑ label on zone start bar",             group="Display")
+
+// ════════════════════════════════════════════════════════════
+// WEEKLY WAVETREND via request.security
+// ════════════════════════════════════════════════════════════
+
+f_wt() =>
+    ap  = hlc3
+    esa = ta.ema(ap, n1)
+    d   = ta.ema(math.abs(ap - esa), n1)
+    ci  = (ap - esa) / (0.015 * d)
+    wt1 = ta.ema(ci, n2)
+    wt2 = ta.sma(wt1, 4)
+    [wt1, wt2]
+
+[wt1_w, wt2_w] = request.security(
+    syminfo.tickerid, "W", f_wt(),
+    lookahead = barmerge.lookahead_off)
+
+// ════════════════════════════════════════════════════════════
+// CROSS CONDITIONS (weekly)
+// ════════════════════════════════════════════════════════════
+
+bullCrossAny_w = ta.crossover(wt1_w, wt2_w)
+bearCrossAny_w = ta.crossunder(wt1_w, wt2_w)
+
+bullCross_w = switch crossLevel
+    "Oversold L1 (wt2 ≤ -60)" => bullCrossAny_w and wt2_w <= -60
+    "Oversold L2 (wt2 ≤ -53)" => bullCrossAny_w and wt2_w <= -53
+    =>                            bullCrossAny_w
+
+// ════════════════════════════════════════════════════════════
+// ZONE STATE
+// ════════════════════════════════════════════════════════════
+
+var bool inZone = false
+if bullCross_w
+    inZone := true
+if bearCrossAny_w
+    inZone := false
+
+// ════════════════════════════════════════════════════════════
+// BACKGROUND + LABEL
+// ════════════════════════════════════════════════════════════
+
+bgcolor(inZone ? zoneColor : na, title = "Weekly WT Bull Zone")
+
+if showLabel and bullCross_w
+    label.new(
+        bar_index, high,
+        "W↑",
+        style     = label.style_label_up,
+        color     = color.new(color.green, 50),
+        textcolor = color.white,
+        size      = size.small)
