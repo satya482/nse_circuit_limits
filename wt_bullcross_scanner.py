@@ -170,6 +170,23 @@ def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
     return float(ratio.iloc[-1]), bool(ratio.iloc[-1] > ratio.iloc[-2])
 
 
+RVOL_FLAG = 8.0  # matches "Strong Start RVOL Dashboard.pine" default flag threshold
+SS_LOWMULT = 0.995  # day low must hold >= prev close x this (Pine parity)
+
+
+def _rvol_ss(df: pd.DataFrame) -> tuple[float, bool]:
+    """RVOL = today's volume / prior-20d avg volume; SS = gapped up and held.
+    Mirrors research/Strong Start RVOL Dashboard.pine calcDaily()/isStrongStart()."""
+    vol = df["volume"].astype(float)
+    avg_vol = vol.iloc[-21:-1].mean()
+    rvol = float(vol.iloc[-1] / avg_vol) if avg_vol > 0 else 0.0
+    today_open = float(df["open"].iloc[-1])
+    today_low = float(df["low"].iloc[-1])
+    prev_close = float(df["close"].iloc[-2])
+    strong_start = today_open > prev_close and today_low >= prev_close * SS_LOWMULT
+    return rvol, strong_start
+
+
 def _earliness(
     rs_state: str,
     zl_days: int,
@@ -301,6 +318,7 @@ def analyse(
         day_chg = (curr_close - prev_close) / prev_close * 100
 
         cavgc_val, cavgc_rising = _cavgc(c)
+        rvol, strong_start = _rvol_ss(df_raw)
         squeeze = _bb_kc_squeeze(df_raw)
         wz_in, wz_days = weekly_wt_zone(df_raw)
         earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
@@ -322,6 +340,8 @@ def analyse(
             "rs_pct": rs_pct,
             "cavgc": round(cavgc_val, 4),
             "cavgc_rising": cavgc_rising,
+            "rvol": round(rvol, 2),
+            "strong_start": strong_start,
             "earliness": earliness,
             "close": curr_close,
             "day_chg": day_chg,
@@ -369,6 +389,13 @@ def _row(
     extras = []
     if f.get("weekly_zone"):
         extras.append(f"W↑{f['weekly_zone_days']}d")
+    rvol, ss = f.get("rvol", 0.0), f.get("strong_start", False)
+    if ss and rvol >= RVOL_FLAG:
+        extras.append(f"🚀SS·{rvol:.0f}x")
+    elif ss:
+        extras.append("🚀SS")
+    elif rvol >= RVOL_FLAG:
+        extras.append(f"RVOL{rvol:.0f}x")
     if trend_syms and sym in trend_syms:
         extras.append("★")
     sym_cell = f"[{sym}]({tv})" + ("<br>" + " ".join(extras) if extras else "")

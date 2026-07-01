@@ -57,11 +57,13 @@ def _strip_md_link(s: str) -> str:
     return m.group(1) if m else s
 
 
-def _parse_sym_cell(s: str) -> tuple[str, str]:
-    """Return (symbol, weekly_zone_badge) from a symbol cell like '[SJVN](url)<br>W↑12d ★'."""
+def _parse_sym_cell(s: str) -> tuple[str, str, str]:
+    """Return (symbol, weekly_zone_badge, rvol_ss_badge) from a symbol cell
+    like '[SJVN](url)<br>W↑12d 🚀SS·9x ★'."""
     sym = _strip_md_link(s)
     wz_m = re.search(r"W↑\d+d", s)
-    return sym, (wz_m.group(0) if wz_m else "")
+    rvol_m = re.search(r"🚀SS(?:·\d+x)?|RVOL\d+x", s)
+    return sym, (wz_m.group(0) if wz_m else ""), (rvol_m.group(0) if rvol_m else "")
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
@@ -98,7 +100,7 @@ def parse_wt_rows(content: str) -> list[dict]:
         parts = [p.strip() for p in ls.replace(r"\|", "\x00").split("|")][1:-1]
         if len(parts) < 13:
             continue
-        sym, wz_badge = _parse_sym_cell(parts[0])
+        sym, wz_badge, rvol_badge = _parse_sym_cell(parts[0])
         if not sym or sym in ("Symbol", "#"):
             continue
         if sym in seen:
@@ -128,6 +130,7 @@ def parse_wt_rows(content: str) -> list[dict]:
             {
                 "symbol": sym,
                 "wz_badge": wz_badge,
+                "rvol_badge": rvol_badge,
                 "trap": parts[1],
                 "label": parts[2].replace("\x00", "|"),
                 "signal": parts[3],
@@ -290,9 +293,15 @@ def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
         trend_badge = f'<span class="trend-tag">{lbl}</span>'
     wz = r.get("wz_badge", "")
     wz_span = f'<br><span class="mu" style="font-size:9px">{wz}</span>' if wz else ""
+    rv = r.get("rvol_badge", "")
+    rv_span = (
+        f'<br><span style="font-size:9px;font-weight:700;color:var(--org,#e08300)">{rv}</span>'
+        if rv
+        else ""
+    )
     return (
         f"<tr>"
-        f'<td class="sym">{_tv_link(sym)}{wz_span}{trend_badge}</td>'
+        f'<td class="sym">{_tv_link(sym)}{wz_span}{rv_span}{trend_badge}</td>'
         f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
         f'<td class="lbl">{_desc_from_label(r["label"])}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
