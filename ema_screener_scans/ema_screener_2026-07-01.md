@@ -2,37 +2,13 @@
 
 _Criteria: EMA50 > EMA100 > EMA200 (full bullish stack) | MCap ₹800 Cr – ₹1 Lakh Cr_
 
-**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 11** &nbsp;|&nbsp; **Deletions: 11**
+**Total stocks in list: 500** &nbsp;|&nbsp; **Additions: 0** &nbsp;|&nbsp; **Deletions: 0**
 
-## ✅ Additions (11)
-| Symbol | Day Change % |
-|--------|:------------:|
-| [JSWINFRA](https://in.tradingview.com/chart/?symbol=NSE:JSWINFRA) | +2.58% |
-| [PRICOLLTD](https://in.tradingview.com/chart/?symbol=NSE:PRICOLLTD) | +2.32% |
-| [CENTENKA](https://in.tradingview.com/chart/?symbol=NSE:CENTENKA) | +1.99% |
-| [GODREJIND](https://in.tradingview.com/chart/?symbol=NSE:GODREJIND) | +1.93% |
-| [OLECTRA](https://in.tradingview.com/chart/?symbol=NSE:OLECTRA) | +0.85% |
-| [NXST.RR](https://in.tradingview.com/chart/?symbol=NSE:NXST.RR) | -0.59% |
-| [RELTD](https://in.tradingview.com/chart/?symbol=NSE:RELTD) | -0.64% |
-| [MAHLOG](https://in.tradingview.com/chart/?symbol=NSE:MAHLOG) | -0.67% |
-| [RUBYMILLS](https://in.tradingview.com/chart/?symbol=NSE:RUBYMILLS) | -1.54% |
-| [PRIZOR](https://in.tradingview.com/chart/?symbol=NSE:PRIZOR) | -2.00% |
-| [ARIHANT](https://in.tradingview.com/chart/?symbol=NSE:ARIHANT) | -7.37% |
+## ✅ Additions (0)
+_No new entries today_
 
-## ❌ Deletions (11)
-| Symbol | Last Day Change % |
-|--------|:----------------:|
-| [STYLEBAAZA](https://in.tradingview.com/chart/?symbol=NSE:STYLEBAAZA) | +4.98% |
-| [SGIL](https://in.tradingview.com/chart/?symbol=NSE:SGIL) | +4.51% |
-| [MENONBE](https://in.tradingview.com/chart/?symbol=NSE:MENONBE) | +2.25% |
-| [WAAREEENER](https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER) | +2.11% |
-| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | +2.08% |
-| [KICL](https://in.tradingview.com/chart/?symbol=NSE:KICL) | +0.92% |
-| [AVANTIFEED](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | -0.27% |
-| [PARIN](https://in.tradingview.com/chart/?symbol=NSE:PARIN) | -1.42% |
-| [SARDAEN](https://in.tradingview.com/chart/?symbol=NSE:SARDAEN) | -1.82% |
-| [BODALCHEM](https://in.tradingview.com/chart/?symbol=NSE:BODALCHEM) | -3.16% |
-| [HEALTHX](https://in.tradingview.com/chart/?symbol=NSE:HEALTHX) | -3.39% |
+## ❌ Deletions (0)
+_No exits today_
 
 ## 📋 Full List (500)
 | # | Symbol | Day Change % |
