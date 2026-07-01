@@ -381,6 +381,9 @@ def build_markdown(
                 f"| {cl} {em} |"
             )
 
+    if findings:
+        syms = list(dict.fromkeys(f["symbol"] for f in findings))
+        lines += ["", "```", ",".join(f"NSE:{s}" for s in syms), "```"]
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 

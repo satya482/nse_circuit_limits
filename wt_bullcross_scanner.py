@@ -466,7 +466,13 @@ def build_markdown(
             f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})"
         )
         lines += _HDR + [_row(f, circuit, names, trend_syms) for f in sqz_breaks]
-        lines.append("")
+        lines += [
+            "",
+            "```",
+            ",".join(f"NSE:{f['symbol']}" for f in sqz_breaks),
+            "```",
+            "",
+        ]
         lines.append("---")
         lines.append("")
 
@@ -482,6 +488,7 @@ def build_markdown(
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit, names, trend_syms) for f in group]
+            lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in group), "```"]
         else:
             lines.append("*No signals.*")
         lines.append("")

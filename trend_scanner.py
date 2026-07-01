@@ -529,6 +529,7 @@ def build_markdown(
         lines.append(f"### {emoji} {heading} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit, names) for f in group]
+            lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in group), "```"]
         else:
             lines.append("*No signals.*")
         lines.append("")

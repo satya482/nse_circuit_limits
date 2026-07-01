@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # WaveTrend Bull Cross Scan — 2026-07-01
-*Generated 2026-07-01 17:05 IST*
+*Generated 2026-07-01 17:43 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -94,6 +94,10 @@
 | [VMM](https://in.tradingview.com/chart/?symbol=NSE:VMM) | ✓ SAFE | Vishal Mega Mart<br>₹54K Cr \| →115Cr · 134Cr<br>Budget hypermarket chain selling apparel groceries electronics home goods | 📈 BULL_ANY_MID | 46 | ↓25 | ↓0.994 | ↓14d | SQ | -0.8% | -37.77/-39.53 | -1.12% | -% |
 | [NITINSPIN](https://in.tradingview.com/chart/?symbol=NSE:NITINSPIN) | ✓ SAFE | Nitin Spinners<br>₹3K Cr \| ↘6Cr · 8Cr<br>Cotton yarn and fabric manufacturer for apparel | 📈 BULL_ANY_MID | 40 | ↓92 | ↓1.001 | ↑23d | SQ | +13.7% | 51.57/50.87 | -1.77% | 20% |
 
+```
+NSE:CANHLIFE,NSE:RHIM,NSE:SAMMAANCAP,NSE:JUBLINGREA,NSE:TIPSMUSIC,NSE:AWFIS,NSE:VSTTILLERS,NSE:DALMIASUG,NSE:IKS,NSE:BEML,NSE:TIRUMALCHM,NSE:GRAUWEIL,NSE:MBAPL,NSE:BHARATWIRE,NSE:MOTHERSON,NSE:GREENPLY,NSE:SSWL,NSE:GPTHEALTH,NSE:LENSKART,NSE:SGMART,NSE:EMMVEE,NSE:CONFIPET,NSE:PATANJALI,NSE:FORCEMOT,NSE:UTIAMC,NSE:GANECOS,NSE:JUBLPHARMA,NSE:GHCL,NSE:PICCADIL,NSE:ORIENTELEC,NSE:SOLARWORLD,NSE:SHANTIGEAR,NSE:GANESHHOU,NSE:EPACK,NSE:KTKBANK,NSE:INDOTHAI,NSE:SANDHAR,NSE:MARATHON,NSE:EFCIL,NSE:SKIPPER,NSE:NIITMTS,NSE:IGIL,NSE:KINGFA,NSE:VESUVIUS,NSE:BALRAMCHIN,NSE:HIRECT,NSE:GUJTHEM,NSE:MAHSCOOTER,NSE:YATHARTH,NSE:PGHL,NSE:INDUSINDBK,NSE:COCHINSHIP,NSE:ELECON,NSE:VIJAYA,NSE:UBL,NSE:BIOCON,NSE:IMPAL,NSE:EXCELINDUS,NSE:GCSL,NSE:BANCOINDIA,NSE:IFBIND,NSE:SERVOTECH,NSE:SOMANYCERA,NSE:AVTNPL,NSE:VMM,NSE:NITINSPIN
+```
+
 ---
 
 ### 🔥 MAJOR — PPV confirmed (25)
@@ -125,12 +129,20 @@
 | [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br>W↑61d | ✓ SAFE | Aegis Logistics<br>₹41K Cr \| ↘340Cr · 423Cr<br>Bulk liquid terminals, oil gas chemical logistics India | ⚡ BULL_ANY_PPV | 0 | ↑96 | ↑1.129 | ↑32d | PV | +82.9% | 75.59/75.14 | +9.64% | 20% |
 | [QUESS](https://in.tradingview.com/chart/?symbol=NSE:QUESS)<br>W↑61d | ✓ SAFE | Quess Corp<br>₹4K Cr \| ↘12Cr · 32Cr<br>Staffing, facility management, IT services outsourcing | ⚡ BULL_ANY_PPV | 0 | ↑78 | ↑1.077 | ↑22d | PV | +32.3% | 58.78/52.67 | +5.78% | 20% |
 
+```
+NSE:TATACONSUM,NSE:MARUTI,NSE:GMDCLTD,NSE:ARSSBL,NSE:RITES,NSE:TARIL,NSE:PARACABLES,NSE:TVSSCS,NSE:IVALUE,NSE:SHREDIGCEM,NSE:RPGLIFE,NSE:DELHIVERY,NSE:JTLIND,NSE:SHREEJISPG,NSE:CEATLTD,NSE:EMIL,NSE:OPTIEMUS,NSE:PAGEIND,NSE:GREAVESCOT,NSE:VENUSPIPES,NSE:KAPSTON,NSE:TRIVENI,NSE:HUHTAMAKI,NSE:AEGISLOG,NSE:QUESS
+```
+
 ### 🟢 OVERSOLD — reversal from −53/−60 (3)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
 | [AVANTIFEED](https://in.tradingview.com/chart/?symbol=NSE:AVANTIFEED) | ✓ SAFE | Avanti Feeds<br>₹13K Cr \| →59Cr · 34Cr<br>Shrimp feed manufacturing and seafood export processing | 🟡 BULL_OS_L2 | 5 | ↓55 | ↑0.977 | ↓28d | — | -27.7% | -54.3/-54.42 | +0.88% | 20% 🟦 |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND) | ✓ SAFE | Jayaswal Neco Industr<br>₹8K Cr \| ↘22Cr · 19Cr<br>Steel castings and alloys for automotive and industrial equipment | 🟡 BULL_OS_L2 | 5 | ↓82 | ↑0.984 | ↓30d | — | -16.8% | -54.85/-55.63 | -0.31% | 20% 🟦 |
 | [INSECTICID](https://in.tradingview.com/chart/?symbol=NSE:INSECTICID) | ⚠ CAUTION | Insecticides (I)<br>₹2K Cr \| ↗2Cr · 1Cr | 🟡 BULL_OS_L2 | 5 | ↓23 | ↑0.979 | ↓36d | — | -6.4% | -59.05/-59.59 | -0.42% | 20% |
+
+```
+NSE:AVANTIFEED,NSE:JAYNECOIND,NSE:INSECTICID
+```
 
 ### 📈 MID-RANGE — any cross, WT2 > −53, no PPV (56)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
@@ -191,6 +203,10 @@
 | [KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL)<br>W↑61d ★ | ✓ SAFE | Kddl<br>₹4K Cr \| ↗20Cr · 9Cr<br>Watch dials, hands, precision components manufacturer, luxury retail | 📈 BULL_ANY_MID | 0 | ↑84 | ↑1.054 | ↑31d | — | +51.7% | 62.31/61.4 | +3.45% | 20% |
 | [XPROINDIA](https://in.tradingview.com/chart/?symbol=NSE:XPROINDIA)<br>W↑73d | ✓ SAFE | Xpro India<br>₹3K Cr \| ↘9Cr · 6Cr<br>Polymer films sheets plastic processing manufacturing | 📈 BULL_ANY_MID | 0 | ↑81 | ↑1.053 | ↑23d | — | +28.3% | 68.18/67.03 | +1.47% | 20% |
 | [TINNARUBR](https://in.tradingview.com/chart/?symbol=NSE:TINNARUBR)<br>W↑61d | ✓ SAFE | Tinna Rubber And Infr<br>₹2K Cr \| →8Cr · 4Cr<br>Waste tyre recycling to crumb rubber and steel products | 📈 BULL_ANY_MID | 0 | ↑77 | ↓1.032 | ↑28d | — | +29.4% | 60.87/60.84 | +0.14% | 20% |
+
+```
+NSE:NAVA,NSE:SHAREINDIA,NSE:PILANIINVS,NSE:JMFINANCIL,NSE:M&M,NSE:CESC,NSE:DLF,NSE:AZAD,NSE:V2RETAIL,NSE:HCG,NSE:RPEL,NSE:AWHCL,NSE:EIHOTEL,NSE:SHREECEM,NSE:INTERARCH,NSE:SUNTECK,NSE:WESTLIFE,NSE:SHADOWFAX,NSE:SUZLON,NSE:INDIGOPNTS,NSE:MAZDOCK,NSE:GROWW,NSE:BAJAJCON,NSE:SPARC,NSE:APOLLO,NSE:AMBUJACEM,NSE:INOXWIND,NSE:MANAPPURAM,NSE:DOMS,NSE:MANAKCOAT,NSE:AARTIPHARM,NSE:AEGISVOPAK,NSE:AWL,NSE:FIEMIND,NSE:PARADEEP,NSE:APOLLOTYRE,NSE:ROSSTECH,NSE:BDL,NSE:CRISIL,NSE:CAPACITE,NSE:NYKAA,NSE:MUTHOOTMF,NSE:FEDERALBNK,NSE:E2E,NSE:BLUEJET,NSE:NELCO,NSE:SENORES,NSE:RATEGAIN,NSE:MSTCLTD,NSE:JNKINDIA,NSE:YASHO,NSE:JAYBARMARU,NSE:ZOTA,NSE:KDDL,NSE:XPROINDIA,NSE:TINNARUBR
+```
 
 ---
 

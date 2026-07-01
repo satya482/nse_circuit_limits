@@ -351,12 +351,14 @@ def build_markdown(
     ]
     if rising:
         lines += hdr + _table_rows(rising, circuit, names)
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in rising), "```"]
     else:
         lines.append("*No ZLEMA25 rising stocks today.*")
 
     lines += ["", "### ZLEMA25 Watch *(pullback / flat)*"]
     if watch:
         lines += hdr + _table_rows(watch, circuit, names)
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in watch), "```"]
     else:
         lines.append("*No ZLEMA25 watch stocks today.*")
 

@@ -89,6 +89,7 @@ def build_markdown(
 
     hdr = "| # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |"
     sep = "|---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|"
+    lines += ["```", ",".join(f"NSE:{c['symbol']}" for c in candidates), "```", ""]
     lines += [hdr, sep]
 
     for i, c in enumerate(candidates, 1):

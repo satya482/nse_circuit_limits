@@ -407,6 +407,7 @@ def build_markdown(
 
     if sorted_f:
         lines += _HDR + [_row(f, circuit, names) for f in sorted_f]
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
     else:
         lines.append("*No signals.*")
 
@@ -439,7 +440,7 @@ def main() -> None:
 
     print(f"  Loaded {len(all_data)} equity stocks")
 
-    print(f"\nFetching circuit limits...")
+    print("\nFetching circuit limits...")
     circuit = get_circuit_limits()
 
     print(f"\nScanning {len(all_data)} stocks...")

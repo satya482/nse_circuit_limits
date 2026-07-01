@@ -337,6 +337,7 @@ def build_markdown(
     ]
     if findings:
         lines += _table_rows(findings, circuit, names)
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in findings), "```"]
     else:
         lines.append("*No uptrend start signals today.*")
 
