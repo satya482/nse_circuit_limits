@@ -469,8 +469,14 @@ def build_markdown(
         lines.append("---")
         lines.append("")
 
+    sqz_syms = {f["symbol"] for f in sqz_breaks}
     for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
-        group = [f for r in ranks for f in rank_groups.get(r, [])]
+        group = [
+            f
+            for r in ranks
+            for f in rank_groups.get(r, [])
+            if f["symbol"] not in sqz_syms
+        ]
         group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
