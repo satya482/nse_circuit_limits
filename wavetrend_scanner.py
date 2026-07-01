@@ -677,7 +677,9 @@ def weekly_wt_zone(
         return False, 0
 
     # ── 5. Count daily bars from Monday of the cross week (inclusive) ────────
-    # W-FRI label is Friday; Monday of that week = Friday - 4 calendar days.
+    # W-FRI label is Friday; subtract 4 days to get Monday of that week.
+    # If Monday is a holiday there's no row for it — count starts from first
+    # trading day on or after Monday, which is the correct behavior.
     cross_week_monday = last_bull - pd.Timedelta(days=4)
     days_in_zone = int((daily.index >= cross_week_monday).sum())
 
