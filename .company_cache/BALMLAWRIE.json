@@ -1,14 +1,11 @@
 {
   "symbol": "BALMLAWRIE",
   "name": "Balmer Lawrie & Co. Ltd.",
-  "trendlyne_description": "Balmer Lawrie & Company Ltd. is a Miniratna I Public Sector Enterprise under the Ministry of Petroleum and Natural Gas, Government of India. Established in 1867, the company has evolved from a partnership firm into a multi-technology, multi-l... Read More",
-  "screener_description": "Balmer Lawrie & Company Ltd is engaged in the business of Industrial Packaging, Greases & Lubricants, Leather Chemicals, Logistic Services and Infrastructure, Refinery & Oil Field and Travel & Vacation Services in India. [1]",
-  "combined_description": "Balmer Lawrie & Company Ltd. is a Miniratna I Public Sector Enterprise under the Ministry of Petroleum and Natural Gas, Government of India. Established in 1867, the company has evolved from a partnership firm into a multi-technology, multi-l... Read More Balmer Lawrie & Company Ltd is engaged in the business of Industrial Packaging, Greases & Lubricants, Leather Chemicals, Logistic Services and Infrastructure, Refinery & Oil Field and Travel & Vacation Services in India. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T08:05:58.104377+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Industrial packaging, lubricants, logistics, refinery services PSU"
+  "fetched_at": "2026-07-01T06:29:56.027943+00:00",
+  "sources": [],
+  "short_label": "Industrial oils lubricants specialty chemicals trading logistics"
 }

@@ -1,14 +1,11 @@
 {
   "symbol": "ETHOSLTD",
   "name": "Ethos Ltd.",
-  "trendlyne_description": "Ethos Ltd. is a leading luxury and premium watch retailer in India, operating a multi-brand retail network and providing an omnichannel shopping experience. The company serves as a critical bridge between global luxury brands and the growing Indian c... Read More",
-  "screener_description": "Ethos Limited (“Ethos”) was incorporated on November 5, 2007 and promoted by KDDL Limited. Ethos is India’s largest luxury and premium watch retail player",
-  "combined_description": "Ethos Ltd. is a leading luxury and premium watch retailer in India, operating a multi-brand retail network and providing an omnichannel shopping experience. The company serves as a critical bridge between global luxury brands and the growing Indian c... Read More Ethos Limited (“Ethos”) was incorporated on November 5, 2007 and promoted by KDDL Limited. Ethos is India’s largest luxury and premium watch retail player",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:58:56.596746+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Premium watch retail, multi-brand, affluent Indian consumers"
+  "fetched_at": "2026-07-01T06:23:28.340734+00:00",
+  "sources": [],
+  "short_label": "Insurance watches luxury segment Indian retail consumers"
 }

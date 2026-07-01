@@ -1,14 +1,11 @@
 {
   "symbol": "DCAL",
   "name": "Dishman Carbogen Amcis Ltd.",
-  "trendlyne_description": "Dishman Carbogen Amcis Limited (DCAL) is a fully integrated Contract Development and Manufacturing Organization (CDMO) providing end-to-end solutions for the pharmaceutical industry. The company offers a range of services from early-phase process res... Read More",
-  "screener_description": "Dishman Carbogen Amcis Ltd is engaged in Contract Research and Manufacturing Services (CRAMS) and manufacture and supply of marketable molecules such as specialty chemicals, vitamins & chemicals and disinfectants with presence in Switzerland, UK, Europe, China and other countries. [1]",
-  "combined_description": "Dishman Carbogen Amcis Limited (DCAL) is a fully integrated Contract Development and Manufacturing Organization (CDMO) providing end-to-end solutions for the pharmaceutical industry. The company offers a range of services from early-phase process res... Read More Dishman Carbogen Amcis Ltd is engaged in Contract Research and Manufacturing Services (CRAMS) and manufacture and supply of marketable molecules such as specialty chemicals, vitamins & chemicals and disinfectants with presence in Switzerland, UK, Europe, China and other countries. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T08:10:53.588540+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Pharmaceutical CDMO, APIs, specialty chemicals manufacturing"
+  "fetched_at": "2026-07-01T06:26:40.189667+00:00",
+  "sources": [],
+  "short_label": "Pharmaceutical contract manufacturing and API production"
 }

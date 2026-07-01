@@ -2,13 +2,13 @@
   "symbol": "ENGINERSIN",
   "name": "Engineers India Limited",
   "trendlyne_description": "Engineers India Limited (EIL) is a prominent engineering consultancy and technology-focused Engineering, Procurement, and Construction (EPC) company. Operating under the administrative control of the Ministry of Petroleum and Natural Gas, EIL serves ... Read More",
-  "screener_description": "EIL is a CPSU with majority ownership of the GoI operating under the administrative control of MoPNG. EIL provides consultancy and engineering services and undertakes turnkey contracts, which includes complete range of project services right from project conceptualization, planning, design, engineering, procurement, construction and commissioning as per client’s requirement and specifications and providing post-execution services for maintenance and monitoring the operation of plant in various industries. [1]",
-  "combined_description": "Engineers India Limited (EIL) is a prominent engineering consultancy and technology-focused Engineering, Procurement, and Construction (EPC) company. Operating under the administrative control of the Ministry of Petroleum and Natural Gas, EIL serves ... Read More EIL is a CPSU with majority ownership of the GoI operating under the administrative control of MoPNG. EIL provides consultancy and engineering services and undertakes turnkey contracts, which includes complete range of project services right from project conceptualization, planning, design, engineering, procurement, construction and commissioning as per client’s requirement and specifications and providing post-execution services for maintenance and monitoring the operation of plant in various industries. [1]",
+  "screener_description": "EIL is a CPSU with majority ownership of the GoI operating under the administrative control of MoPNG. The Co. provides consultancy and engineering services and undertakes turnkey contracts. [1]",
+  "combined_description": "Engineers India Limited (EIL) is a prominent engineering consultancy and technology-focused Engineering, Procurement, and Construction (EPC) company. Operating under the administrative control of the Ministry of Petroleum and Natural Gas, EIL serves ... Read More EIL is a CPSU with majority ownership of the GoI operating under the administrative control of MoPNG. The Co. provides consultancy and engineering services and undertakes turnkey contracts. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T06:44:54.999266+00:00",
+  "fetched_at": "2026-07-01T04:57:37.929242+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "EPC contractor, refinery design, oil gas infrastructure"
+  "short_label": "EPC services for oil gas refineries petrochemicals"
 }

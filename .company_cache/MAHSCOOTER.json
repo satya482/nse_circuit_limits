@@ -1,14 +1,11 @@
 {
   "symbol": "MAHSCOOTER",
   "name": "Maharashtra Scooters Ltd",
-  "trendlyne_description": "Maharashtra Scooters Ltd. (MSL) is a Bajaj Group company that has historically transitioned from a manufacturing-oriented business to its current primary status as an unregistered Core Investment Company (CIC). While it formerly operated in the a... Read More",
-  "screener_description": "Maharashtra Scooters Ltd. (MSL) is a manufacturing & and an unregistered core investment company. It is engaged in the business of manufacturing dies, Jigs, fixtures and die casting components primarily for the automobiles industry, etc. [1]",
-  "combined_description": "Maharashtra Scooters Ltd. (MSL) is a Bajaj Group company that has historically transitioned from a manufacturing-oriented business to its current primary status as an unregistered Core Investment Company (CIC). While it formerly operated in the a... Read More Maharashtra Scooters Ltd. (MSL) is a manufacturing & and an unregistered core investment company. It is engaged in the business of manufacturing dies, Jigs, fixtures and die casting components primarily for the automobiles industry, etc. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:53:44.871049+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Dies jigs fixtures die casting auto components manufacturer"
+  "fetched_at": "2026-07-01T06:29:08.663025+00:00",
+  "sources": [],
+  "short_label": "Two-wheeler scooters manufacturer, India domestic mass market"
 }

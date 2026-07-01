@@ -1,14 +1,11 @@
 {
   "symbol": "SUNTECK",
   "name": "Sunteck Realty Limited",
-  "trendlyne_description": "Sunteck Realty Ltd. is a prominent Mumbai-based real estate developer specializing in luxury and ultra-luxury residential projects. The company maintains a strong market position within the Mumbai Metropolitan Region (MMR) through a city-centric deve... Read More",
-  "screener_description": "Sunteck Realty Limited is a Mumbai-based real estate developer focused on developing premium residential and commercial properties across Mumbai Metropolitan Region (MMR). [1]",
-  "combined_description": "Sunteck Realty Ltd. is a prominent Mumbai-based real estate developer specializing in luxury and ultra-luxury residential projects. The company maintains a strong market position within the Mumbai Metropolitan Region (MMR) through a city-centric deve... Read More Sunteck Realty Limited is a Mumbai-based real estate developer focused on developing premium residential and commercial properties across Mumbai Metropolitan Region (MMR). [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:56:17.660819+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Luxury residential developer Mumbai Metropolitan Region MMR"
+  "fetched_at": "2026-07-01T06:32:02.505150+00:00",
+  "sources": [],
+  "short_label": "Residential real estate developer, Mumbai region, middle to premium"
 }

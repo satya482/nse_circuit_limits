@@ -1,14 +1,11 @@
 {
   "symbol": "TVSSCS",
   "name": "TVS Supply Chain Solutions Ltd.",
-  "trendlyne_description": "TVS Supply Chain Solutions Ltd. (TVS SCS) is a leading India-based multinational supply chain solutions provider, part of the TVS Mobility Group. The company specializes in managing complex supply chains across various industries, utilizing a tec... Read More",
-  "screener_description": "TVS Supply Chain Solutions provides supply chain management services for international organizations, government departments, and large and medium-sized businesses. [1]",
-  "combined_description": "TVS Supply Chain Solutions Ltd. (TVS SCS) is a leading India-based multinational supply chain solutions provider, part of the TVS Mobility Group. The company specializes in managing complex supply chains across various industries, utilizing a tec... Read More TVS Supply Chain Solutions provides supply chain management services for international organizations, government departments, and large and medium-sized businesses. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:56:53.503300+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Supply chain logistics management services automotive manufacturing sectors"
+  "fetched_at": "2026-07-01T06:27:47.799866+00:00",
+  "sources": [],
+  "short_label": "Third-party logistics provider for automotive manufacturers"
 }

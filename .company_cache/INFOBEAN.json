@@ -1,14 +1,11 @@
 {
   "symbol": "INFOBEAN",
   "name": "InfoBeans Technologies Ltd.",
-  "trendlyne_description": "InfoBeans Technologies Ltd. is a global AI-led software engineering company specializing in digital transformation and product engineering. Founded in 2000, the company provides end-to-end software development services, leveraging AI to solve complex... Read More",
-  "screener_description": "Incorporated in 2000, InfoBeans Technologies Ltd is in the business of software development services [1]",
-  "combined_description": "InfoBeans Technologies Ltd. is a global AI-led software engineering company specializing in digital transformation and product engineering. Founded in 2000, the company provides end-to-end software development services, leveraging AI to solve complex... Read More Incorporated in 2000, InfoBeans Technologies Ltd is in the business of software development services [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:55:00.883260+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "AI-powered software engineering, digital transformation, enterprise clients"
+  "fetched_at": "2026-07-01T06:27:23.132782+00:00",
+  "sources": [],
+  "short_label": "Software development and IT services for global enterprise clients"
 }

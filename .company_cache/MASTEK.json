@@ -1,14 +1,11 @@
 {
   "symbol": "MASTEK",
   "name": "Mastek Limited",
-  "trendlyne_description": "Mastek Ltd. is a global digital engineering and cloud transformation partner headquartered in Mumbai, India. Founded in 1982, the company provides enterprise-grade technology solutions, specializing in digital application engineering, Oracle Cloud im... Read More",
-  "screener_description": "Established in 1982, Mastek is a provider of vertically-focused enterprise technology solutions.  Having its presence in IT industry for almost 4 decades, Mastek Ltd has evolved from an IT solutions provider to Digital transformation partner. [1]",
-  "combined_description": "Mastek Ltd. is a global digital engineering and cloud transformation partner headquartered in Mumbai, India. Founded in 1982, the company provides enterprise-grade technology solutions, specializing in digital application engineering, Oracle Cloud im... Read More Established in 1982, Mastek is a provider of vertically-focused enterprise technology solutions.  Having its presence in IT industry for almost 4 decades, Mastek Ltd has evolved from an IT solutions provider to Digital transformation partner. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:49:59.081355+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Digital engineering and Oracle Cloud transformation services"
+  "fetched_at": "2026-07-01T06:32:21.879690+00:00",
+  "sources": [],
+  "short_label": "Digital transformation and software services for banking"
 }

@@ -5,10 +5,10 @@
   "screener_description": "Navkar Corporation provides cargo transit services across Container Freight Stations, Private Freight Terminal, Inland Container Depots and Multimodal Logistics Parks. [1]",
   "combined_description": "Navkar Corporation Limited is an integrated logistics service provider in India, operating across the specialized logistics value chain including Container Freight Stations (CFS), Inland Container Depots (ICD), and Private Freight Terminals (PFT). Th... Read More Navkar Corporation provides cargo transit services across Container Freight Stations, Private Freight Terminal, Inland Container Depots and Multimodal Logistics Parks. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:32:13.666383+00:00",
+  "fetched_at": "2026-07-01T06:10:55.938954+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Port logistics, container handling, cargo terminals"
+  "short_label": "Logistics terminals CFS ICD cargo handling ports"
 }

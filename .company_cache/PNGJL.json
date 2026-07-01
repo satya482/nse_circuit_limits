@@ -1,14 +1,11 @@
 {
   "symbol": "PNGJL",
   "name": "P N Gadgil Jewellers Limited",
-  "trendlyne_description": "P N Gadgil Jewellers Limited (PNG Jewellers) is a prominent heritage jewellery brand in India, primarily concentrated in Maharashtra. With a legacy dating back to 1832, the company has evolved from a single store in Sangli into a major organised reta... Read More",
-  "screener_description": "Established in 1832, P. N. G Jewellers Ltd is in the retail business of gold, silver, and diamond jewellery [1]",
-  "combined_description": "P N Gadgil Jewellers Limited (PNG Jewellers) is a prominent heritage jewellery brand in India, primarily concentrated in Maharashtra. With a legacy dating back to 1832, the company has evolved from a single store in Sangli into a major organised reta... Read More Established in 1832, P. N. G Jewellers Ltd is in the retail business of gold, silver, and diamond jewellery [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:02:37.210167+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Gold silver diamond jewellery retail Maharashtra heritage brand"
+  "fetched_at": "2026-07-01T06:22:35.930861+00:00",
+  "sources": [],
+  "short_label": "Gold jewelry retail with regional Maharashtra presence"
 }

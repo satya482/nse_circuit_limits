@@ -1,14 +1,11 @@
 {
   "symbol": "RGL",
   "name": "Renaissance Global Limited",
-  "trendlyne_description": "Renaissance Global Ltd. (RGL) is a vertically integrated jewellery specialist with over 30 years of experience in design, manufacturing, and global distribution. Headquartered in Mumbai, the company has evolved from a traditional B2B manufacturer int... Read More",
-  "screener_description": "Incorporated in 1989, Renaissance Global Ltd is a manufacturer of diamond studded Jewellery and trader of cut and polished diamonds [1]",
-  "combined_description": "Renaissance Global Ltd. (RGL) is a vertically integrated jewellery specialist with over 30 years of experience in design, manufacturing, and global distribution. Headquartered in Mumbai, the company has evolved from a traditional B2B manufacturer int... Read More Incorporated in 1989, Renaissance Global Ltd is a manufacturer of diamond studded Jewellery and trader of cut and polished diamonds [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:25:20.025811+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Diamond jewelry manufacturer and cut polished diamond trader"
+  "fetched_at": "2026-07-01T06:22:42.618425+00:00",
+  "sources": [],
+  "short_label": "Global recruitment and staffing services provider"
 }

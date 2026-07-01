@@ -1,14 +1,11 @@
 {
   "symbol": "JAIBALAJI",
   "name": "Jai Balaji Industries Limited",
-  "trendlyne_description": "Jai Balaji Industries Limited is a differentiated steel manufacturer with a business model centered on transitioning from commodity steel to high-margin, value-added products. The company operates as an integrated player, processing raw materials int... Read More",
-  "screener_description": "Incorporated in 1999, Jai Balaji Industries Limited is engaged in the manufacturing of Iron and Steel products [1]",
-  "combined_description": "Jai Balaji Industries Limited is a differentiated steel manufacturer with a business model centered on transitioning from commodity steel to high-margin, value-added products. The company operates as an integrated player, processing raw materials int... Read More Incorporated in 1999, Jai Balaji Industries Limited is engaged in the manufacturing of Iron and Steel products [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:12:32.702936+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Steel manufacturer transitioning commodity steel to value-added products"
+  "fetched_at": "2026-07-01T06:32:27.851426+00:00",
+  "sources": [],
+  "short_label": "Stainless steel tubes and pipes manufacturing for industrial applications"
 }

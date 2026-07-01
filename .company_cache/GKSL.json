@@ -1,14 +1,11 @@
 {
   "symbol": "GKSL",
   "name": "Gujarat Kidney & Super Speciality Ltd.",
-  "trendlyne_description": "Gujarat Kidney and Super Speciality Ltd. (GKSL) is a healthcare provider based in Vadodara, Gujarat, specializing in nephrology, urology, and other super-speciality medical services. The company operates a dedicated hospital facility that focuses on ... Read More",
-  "screener_description": "Incorporated in 2019, Gujarat Kidney and Super Speciality Limited specializes in providing multispeciality healthcare services. [1]",
-  "combined_description": "Gujarat Kidney and Super Speciality Ltd. (GKSL) is a healthcare provider based in Vadodara, Gujarat, specializing in nephrology, urology, and other super-speciality medical services. The company operates a dedicated hospital facility that focuses on ... Read More Incorporated in 2019, Gujarat Kidney and Super Speciality Limited specializes in providing multispeciality healthcare services. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:15:00.046170+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Nephrology urology hospital super-speciality healthcare Vadodara Gujarat"
+  "fetched_at": "2026-07-01T06:30:07.634227+00:00",
+  "sources": [],
+  "short_label": "Kidney transplant dialysis hospital network healthcare"
 }

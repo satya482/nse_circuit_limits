@@ -1,14 +1,11 @@
 {
   "symbol": "SCODATUBES",
   "name": "Scoda Tubes Ltd.",
-  "trendlyne_description": "Scoda Tubes Ltd. is an Indian manufacturer specializing in stainless steel pipes and tubes. The company produces a variety of high-grade steel products, including Austenitic, Martensitic, Duplex, and Super Duplex seamless and welded solutions. Scoda ... Read More",
-  "screener_description": "Scoda Tubes Ltd, established in 2008 in Gujarat, India, specializes in manufacturing stainless steel pipes and tubes, including seamless, welded, and U-tube variants. [1]",
-  "combined_description": "Scoda Tubes Ltd. is an Indian manufacturer specializing in stainless steel pipes and tubes. The company produces a variety of high-grade steel products, including Austenitic, Martensitic, Duplex, and Super Duplex seamless and welded solutions. Scoda ... Read More Scoda Tubes Ltd, established in 2008 in Gujarat, India, specializes in manufacturing stainless steel pipes and tubes, including seamless, welded, and U-tube variants. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:01:56.281551+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Stainless steel seamless welded pipes tubes manufacturing"
+  "fetched_at": "2026-07-01T06:22:48.523185+00:00",
+  "sources": [],
+  "short_label": "Seamless steel tubes manufacturing automotive and industrial applications"
 }

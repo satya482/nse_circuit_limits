@@ -1,13 +1,11 @@
 {
   "symbol": "ALGOQUANT",
   "name": "Algoquant Fintech Limited",
-  "trendlyne_description": "Algoquant Fintech Ltd. is a financial technology firm specializing in technology-driven trading and financial services. The company focuses on utilizing quantitative strategies and algorithmic trading to operate in the capital markets. It has undergo... Read More",
+  "trendlyne_description": "",
   "screener_description": "",
-  "combined_description": "Algoquant Fintech Ltd. is a financial technology firm specializing in technology-driven trading and financial services. The company focuses on utilizing quantitative strategies and algorithmic trading to operate in the capital markets. It has undergo... Read More",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T08:01:41.687099+00:00",
-  "sources": [
-    "trendlyne"
-  ],
-  "short_label": "Algorithmic trading platform, quantitative strategies, capital markets"
+  "fetched_at": "2026-07-01T06:22:24.582216+00:00",
+  "sources": [],
+  "short_label": "Algorithmic trading software for Indian equity markets"
 }

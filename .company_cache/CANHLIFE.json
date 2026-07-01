@@ -2,12 +2,13 @@
   "symbol": "CANHLIFE",
   "name": "Canara HSBC Life Insurance Company Limited",
   "trendlyne_description": "Canara HSBC Life Insurance Company Ltd. (CANHLIFE) is a prominent private life insurance provider in India, operating as a joint venture between major financial institutions. Established in 2007, the company leverages a bancassurance-led model to del... Read More",
-  "screener_description": "",
-  "combined_description": "Canara HSBC Life Insurance Company Ltd. (CANHLIFE) is a prominent private life insurance provider in India, operating as a joint venture between major financial institutions. Established in 2007, the company leverages a bancassurance-led model to del... Read More",
+  "screener_description": "Canara HSBC Life Insurance is an Indian life insurance company, headquartered in Gurugram. In 2008, Canara HSBC Life Insurance  was a JV between Canara Bank (51%), HSBC Insurance (Asia Pacific) Holdings Limited (26%) and PNB (23%). In 2022, the company renamed itself as Canara HSBC Life Insurance after the exit of its third partner, PNB. [1]",
+  "combined_description": "Canara HSBC Life Insurance Company Ltd. (CANHLIFE) is a prominent private life insurance provider in India, operating as a joint venture between major financial institutions. Established in 2007, the company leverages a bancassurance-led model to del... Read More Canara HSBC Life Insurance is an Indian life insurance company, headquartered in Gurugram. In 2008, Canara HSBC Life Insurance  was a JV between Canara Bank (51%), HSBC Insurance (Asia Pacific) Holdings Limited (26%) and PNB (23%). In 2022, the company renamed itself as Canara HSBC Life Insurance after the exit of its third partner, PNB. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T08:01:35.642775+00:00",
+  "fetched_at": "2026-07-01T06:19:32.449775+00:00",
   "sources": [
-    "trendlyne"
+    "trendlyne",
+    "screener"
   ],
-  "short_label": "Life insurance products through bank distribution channels"
+  "short_label": "Life insurance products for retail and corporate clients"
 }

@@ -1,14 +1,11 @@
 {
   "symbol": "SPMLINFRA",
   "name": "SPML Infra Limited",
-  "trendlyne_description": "SPML Infra Ltd. is an Indian infrastructure development company focused on water and power sectors. Founded in 1981 and headquartered in Kolkata, the company operates primarily as an Engineering, Procurement, and Construction (EPC) entity. SPML Infra... Read More",
-  "screener_description": "Incorporated in 1981, SPML Infra Ltd is in the business of infrastructure development [1]",
-  "combined_description": "SPML Infra Ltd. is an Indian infrastructure development company focused on water and power sectors. Founded in 1981 and headquartered in Kolkata, the company operates primarily as an Engineering, Procurement, and Construction (EPC) entity. SPML Infra... Read More Incorporated in 1981, SPML Infra Ltd is in the business of infrastructure development [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:52:59.365343+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Water and power EPC contractor for utilities"
+  "fetched_at": "2026-07-01T06:25:28.136581+00:00",
+  "sources": [],
+  "short_label": "Water infrastructure, treatment plants, municipal sewage systems"
 }

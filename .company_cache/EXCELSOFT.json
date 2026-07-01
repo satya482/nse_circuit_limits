@@ -1,14 +1,11 @@
 {
   "symbol": "EXCELSOFT",
   "name": "Excelsoft Technologies Limited",
-  "trendlyne_description": "Excelsoft Technologies Ltd. is a specialized education technology provider that focuses on creating digital learning and assessment solutions for the global education and corporate training sectors. The company operates at the intersection of domain ... Read More",
-  "screener_description": "Incorporated in 2000, Excelsoft Technologies Ltd is a software and SaaS company focused on digital learning and online assessment solutions, combining technology platforms, AI tools and professional services to support education and training globally [1]",
-  "combined_description": "Excelsoft Technologies Ltd. is a specialized education technology provider that focuses on creating digital learning and assessment solutions for the global education and corporate training sectors. The company operates at the intersection of domain ... Read More Incorporated in 2000, Excelsoft Technologies Ltd is a software and SaaS company focused on digital learning and online assessment solutions, combining technology platforms, AI tools and professional services to support education and training globally [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:38:00.251776+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "EdTech platform, digital learning, assessment solutions globally"
+  "fetched_at": "2026-07-01T06:28:06.278905+00:00",
+  "sources": [],
+  "short_label": "software testing services IT consulting offshore development"
 }

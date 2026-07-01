@@ -2,13 +2,13 @@
   "symbol": "CEMPRO",
   "name": "Cemindia Projects Ltd",
   "trendlyne_description": "Cemindia Projects Limited (formerly ITD Cementation India Limited) is a major Engineering, Procurement, and Construction (EPC) company in India, with a presence spanning over nine decades. The company specializes in heavy civil engineering and infras... Read More",
-  "screener_description": "ITD Cementation India Limited is engaged in the business of providing design, engineering, procurement and construction (EPC) services for infrastructure projects in India. [1]",
-  "combined_description": "Cemindia Projects Limited (formerly ITD Cementation India Limited) is a major Engineering, Procurement, and Construction (EPC) company in India, with a presence spanning over nine decades. The company specializes in heavy civil engineering and infras... Read More ITD Cementation India Limited is engaged in the business of providing design, engineering, procurement and construction (EPC) services for infrastructure projects in India. [1]",
+  "screener_description": "Cemindia Projects Ltd. is engaged in the business of providing design, engineering, procurement and construction (EPC) services for infrastructure projects in India. [1]",
+  "combined_description": "Cemindia Projects Limited (formerly ITD Cementation India Limited) is a major Engineering, Procurement, and Construction (EPC) company in India, with a presence spanning over nine decades. The company specializes in heavy civil engineering and infras... Read More Cemindia Projects Ltd. is engaged in the business of providing design, engineering, procurement and construction (EPC) services for infrastructure projects in India. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T06:47:18.005477+00:00",
+  "fetched_at": "2026-07-01T04:54:48.406657+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Heavy civil engineering construction EPC infrastructure projects"
+  "short_label": "Heavy civil infrastructure EPC construction projects India"
 }

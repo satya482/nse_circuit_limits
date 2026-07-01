@@ -1,14 +1,11 @@
 {
   "symbol": "GHCL",
   "name": "GHCL Limited",
-  "trendlyne_description": "GHCL Ltd. (GHCL) is a leading Indian chemical company primarily engaged in the manufacture and sale of Soda Ash (Anhydrous Sodium Carbonate), a critical raw material for industries such as glass, detergents, chemicals, and solar units. Founded in... Read More",
-  "screener_description": "GHCL Limited is a leading producer of soda ash in India and the total Soda Ash business contributes ~98.30% of total standalone revenue of the company. [1]",
-  "combined_description": "GHCL Ltd. (GHCL) is a leading Indian chemical company primarily engaged in the manufacture and sale of Soda Ash (Anhydrous Sodium Carbonate), a critical raw material for industries such as glass, detergents, chemicals, and solar units. Founded in... Read More GHCL Limited is a leading producer of soda ash in India and the total Soda Ash business contributes ~98.30% of total standalone revenue of the company. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:42:06.597511+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Soda ash producer for glass detergents chemicals solar"
+  "fetched_at": "2026-07-01T06:28:19.474528+00:00",
+  "sources": [],
+  "short_label": "Soda ash chlor-alkali chemicals industrial manufacturing"
 }

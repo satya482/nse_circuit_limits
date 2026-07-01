@@ -1,14 +1,11 @@
 {
   "symbol": "FLAIR",
   "name": "Flair Writing Industries Limited",
-  "trendlyne_description": "Flair Writing Industries Ltd (Flair) is an established player in the Indian writing instruments and stationery industry, with a history spanning over five decades. The company is among the top three organized players in India's writing instrument seg... Read More",
-  "screener_description": "Incorporated in 1976, Flair Writing Industries (Flair) is engaged in developing and manufacturing writing instruments and is among the Top 3 players in the overall writing instruments industry [1]",
-  "combined_description": "Flair Writing Industries Ltd (Flair) is an established player in the Indian writing instruments and stationery industry, with a history spanning over five decades. The company is among the top three organized players in India's writing instrument seg... Read More Incorporated in 1976, Flair Writing Industries (Flair) is engaged in developing and manufacturing writing instruments and is among the Top 3 players in the overall writing instruments industry [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:43:36.249720+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Ballpoint pens stationery manufacturer India schools office"
+  "fetched_at": "2026-07-01T06:23:00.412422+00:00",
+  "sources": [],
+  "short_label": "Ball pen manufacturer for retail consumer stationery market"
 }

@@ -1,14 +1,11 @@
 {
   "symbol": "KRSNAA",
   "name": "Krsnaa Diagnostics Limited",
-  "trendlyne_description": "Krsnaa Diagnostics Ltd. is a provider of comprehensive diagnostic services, specializing in radiology, pathology, and tele-radiology. The company operates primarily through a Public-Private Partnership (PPP) model, establishing diagnostic centers wit... Read More",
-  "screener_description": "Krsnaa Diagnostics Ltd provides a range of technology-enabled diagnostic services such as imaging, clinical laboratory, and teleradiology services to hospitals, medical colleges, and community health centers across India with an extensive network across non-metro and lower-tier cities and towns. [1]",
-  "combined_description": "Krsnaa Diagnostics Ltd. is a provider of comprehensive diagnostic services, specializing in radiology, pathology, and tele-radiology. The company operates primarily through a Public-Private Partnership (PPP) model, establishing diagnostic centers wit... Read More Krsnaa Diagnostics Ltd provides a range of technology-enabled diagnostic services such as imaging, clinical laboratory, and teleradiology services to hospitals, medical colleges, and community health centers across India with an extensive network across non-metro and lower-tier cities and towns. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:29:25.626488+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Radiology pathology diagnostics PPP hospital networks India"
+  "fetched_at": "2026-07-01T06:32:08.302601+00:00",
+  "sources": [],
+  "short_label": "Diagnostic imaging centers for patients across India"
 }

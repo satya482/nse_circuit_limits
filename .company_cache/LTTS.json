@@ -2,13 +2,13 @@
   "symbol": "LTTS",
   "name": "L&T Technology Services Ltd.",
   "trendlyne_description": "L&T Technology Services Limited (LTTS) is a global provider of Engineering and Research and Development (ER&D) services. A listed subsidiary of the Larsen & Toubro Group, the company provides design, development, and testing services across products ... Read More",
-  "screener_description": "LTTS is an engineering services provider incorporated in 2012, offers engineering,, research and development (ER&D) and digitalization solutions to companies in the areas such as Transportation, Industrial Products, Telecom and Hi-Tech, Medical Devices and Plant Engineering. LTTS’ customer base includes 69 Fortune 500 companies and 53 of the world’s top ER&D companies.The business also provides digital engineering advisory services.The company went public on September 23, 2016. LTTS has 296 global clients in 25+ countries. [1] [2] [3] [4] [5]",
-  "combined_description": "L&T Technology Services Limited (LTTS) is a global provider of Engineering and Research and Development (ER&D) services. A listed subsidiary of the Larsen & Toubro Group, the company provides design, development, and testing services across products ... Read More LTTS is an engineering services provider incorporated in 2012, offers engineering,, research and development (ER&D) and digitalization solutions to companies in the areas such as Transportation, Industrial Products, Telecom and Hi-Tech, Medical Devices and Plant Engineering. LTTS’ customer base includes 69 Fortune 500 companies and 53 of the world’s top ER&D companies.The business also provides digital engineering advisory services.The company went public on September 23, 2016. LTTS has 296 global clients in 25+ countries. [1] [2] [3] [4] [5]",
+  "screener_description": "Incorporated in 2012, L&T Technology Services is an engineering and technology services company, a subsidiary of Larsen & Toubro, providing design, development, testing, and maintenance services across products and processes. [1]",
+  "combined_description": "L&T Technology Services Limited (LTTS) is a global provider of Engineering and Research and Development (ER&D) services. A listed subsidiary of the Larsen & Toubro Group, the company provides design, development, and testing services across products ... Read More Incorporated in 2012, L&T Technology Services is an engineering and technology services company, a subsidiary of Larsen & Toubro, providing design, development, testing, and maintenance services across products and processes. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:02:51.010814+00:00",
+  "fetched_at": "2026-07-01T05:03:10.981816+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Engineering design development testing services manufacturing"
+  "short_label": "Engineering design development testing services global"
 }

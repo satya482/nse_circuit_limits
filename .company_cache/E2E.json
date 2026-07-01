@@ -1,14 +1,14 @@
 {
   "symbol": "E2E",
-  "name": "E2E Networks Ltd.",
+  "name": "E2E Networks Ltd",
   "trendlyne_description": "E2E Networks Ltd. (E2E) is an Indian hyperscale cloud infrastructure provider specializing in high-end computing services, particularly Artificial Intelligence (AI) and Graphics Processing Unit (GPU) based cloud solutions. The company operates in the... Read More",
   "screener_description": "E2E Networks is an Nse-listed AI-focused hyper scale cloud platform, offering advanced cloud GPUs and a comprehensive ecosystem of cloud technologies designed for the development and deployment of AI/ML applications. [1]",
   "combined_description": "E2E Networks Ltd. (E2E) is an Indian hyperscale cloud infrastructure provider specializing in high-end computing services, particularly Artificial Intelligence (AI) and Graphics Processing Unit (GPU) based cloud solutions. The company operates in the... Read More E2E Networks is an Nse-listed AI-focused hyper scale cloud platform, offering advanced cloud GPUs and a comprehensive ecosystem of cloud technologies designed for the development and deployment of AI/ML applications. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T06:45:08.768901+00:00",
+  "fetched_at": "2026-07-01T05:06:24.594029+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "GPU cloud infrastructure for AI model training deployment"
+  "short_label": "Cloud GPU infrastructure for AI and machine learning applications"
 }

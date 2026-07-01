@@ -1,14 +1,11 @@
 {
   "symbol": "INDOCO",
   "name": "Indoco Remedies Limited",
-  "trendlyne_description": "Indoco Remedies Ltd. is a fully integrated pharmaceutical company with a significant presence in both domestic and international markets. Established in 1947 and headquartered in Mumbai, India, the company operates across the entire pharmaceutical va... Read More",
-  "screener_description": "Indoco Remedies (Indoco) is a Mumbai-based pharmaceutical company that focuses on formulations with a presence in contract manufacturing and research. The Company is engaged in the manufacturing and marketing of pharmaceutical Formulations (Finished Dosage Forms) and Active Pharmaceutical Ingredients (APIs). [1]",
-  "combined_description": "Indoco Remedies Ltd. is a fully integrated pharmaceutical company with a significant presence in both domestic and international markets. Established in 1947 and headquartered in Mumbai, India, the company operates across the entire pharmaceutical va... Read More Indoco Remedies (Indoco) is a Mumbai-based pharmaceutical company that focuses on formulations with a presence in contract manufacturing and research. The Company is engaged in the manufacturing and marketing of pharmaceutical Formulations (Finished Dosage Forms) and Active Pharmaceutical Ingredients (APIs). [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:54:13.177432+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Pharma formulations manufacturer domestic international contract services"
+  "fetched_at": "2026-07-01T06:25:57.967886+00:00",
+  "sources": [],
+  "short_label": "Pharmaceutical manufacturer oral drugs dermatology gastrointestinal India"
 }

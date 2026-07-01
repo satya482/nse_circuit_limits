@@ -1,14 +1,11 @@
 {
   "symbol": "IRMENERGY",
   "name": "Irm Energy Limited",
-  "trendlyne_description": "IRM Energy Ltd. is a city gas distribution (CGD) company in India, primarily focused on developing and operating natural gas distribution networks. A part of the Cadila Pharmaceuticals group, the company serves a diverse customer base including i... Read More",
-  "screener_description": "Incorporated in 2015, IRM Energy Ltd is in the business of selling and distributing natural gas. [1]",
-  "combined_description": "IRM Energy Ltd. is a city gas distribution (CGD) company in India, primarily focused on developing and operating natural gas distribution networks. A part of the Cadila Pharmaceuticals group, the company serves a diverse customer base including i... Read More Incorporated in 2015, IRM Energy Ltd is in the business of selling and distributing natural gas. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T06:49:49.586602+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Natural gas distribution networks serving residential commercial industrial"
+  "fetched_at": "2026-07-01T06:27:35.536326+00:00",
+  "sources": [],
+  "short_label": "Renewable energy equipment manufacturer for industrial power generation"
 }

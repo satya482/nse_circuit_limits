@@ -1,14 +1,11 @@
 {
   "symbol": "INNOVACAP",
   "name": "Innova Captab Limited",
-  "trendlyne_description": "Innova Captab Ltd. is a vertically integrated pharmaceutical company with a presence across the entire value chain, including research and development (R&D), manufacturing, and marketing. The company operates in three primary business segments: Contr... Read More",
-  "screener_description": "Incorporated in January 2005, Innova Captab Ltd is a pharmaceutical company is an integrated pharmaceutical company in India with a presence across the pharmaceutical value chain. [1]",
-  "combined_description": "Innova Captab Ltd. is a vertically integrated pharmaceutical company with a presence across the entire value chain, including research and development (R&D), manufacturing, and marketing. The company operates in three primary business segments: Contr... Read More Incorporated in January 2005, Innova Captab Ltd is a pharmaceutical company is an integrated pharmaceutical company in India with a presence across the pharmaceutical value chain. [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:31:15.732090+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Pharma contract manufacturing API research development marketing"
+  "fetched_at": "2026-07-01T06:30:56.170756+00:00",
+  "sources": [],
+  "short_label": "Tablet manufacturing pharmaceuticals India generic drugs"
 }

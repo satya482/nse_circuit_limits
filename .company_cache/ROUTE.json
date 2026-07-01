@@ -1,14 +1,11 @@
 {
   "symbol": "ROUTE",
   "name": "Route Mobile, Ltd.",
-  "trendlyne_description": "Route Mobile Ltd. (RML) is a global cloud communications platform service provider, categorized under the Communications Platform as a Service (CPaaS) industry. Established in 2004 and headquartered in Mumbai, the company serves a diverse... Read More",
-  "screener_description": "Route Mobile Limited is a cloud communications platform service provider catering to enterprises, OTT players, and mobile network operators (MNOs). RML's portfolio comprises solutions in Business Messaging, Voice, Email, SMS filtering, analytics, and monetization. [1] Route Mobile Became a part of Proximus Group in May'24 [2]",
-  "combined_description": "Route Mobile Ltd. (RML) is a global cloud communications platform service provider, categorized under the Communications Platform as a Service (CPaaS) industry. Established in 2004 and headquartered in Mumbai, the company serves a diverse... Read More Route Mobile Limited is a cloud communications platform service provider catering to enterprises, OTT players, and mobile network operators (MNOs). RML's portfolio comprises solutions in Business Messaging, Voice, Email, SMS filtering, analytics, and monetization. [1] Route Mobile Became a part of Proximus Group in May'24 [2]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:04:39.372512+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Cloud messaging platform for enterprises and telecom operators"
+  "fetched_at": "2026-07-01T06:21:09.645912+00:00",
+  "sources": [],
+  "short_label": "SMS and messaging platform for enterprises and telecom"
 }

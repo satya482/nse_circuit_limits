@@ -1,14 +1,11 @@
 {
   "symbol": "VESUVIUS",
   "name": "Vesuvius India Ltd",
-  "trendlyne_description": "Vesuvius India Ltd. is a major player in the molten metal flow engineering and technology sector, primarily serving the steel and foundry industries. As a subsidiary of the UK-based Vesuvius plc, the company provides mission-critical consumable ceram... Read More",
-  "screener_description": "Incorporated in 1991, Vesuvius India Ltd manufactures and   trades refractory goods [1]",
-  "combined_description": "Vesuvius India Ltd. is a major player in the molten metal flow engineering and technology sector, primarily serving the steel and foundry industries. As a subsidiary of the UK-based Vesuvius plc, the company provides mission-critical consumable ceram... Read More Incorporated in 1991, Vesuvius India Ltd manufactures and   trades refractory goods [1]",
+  "trendlyne_description": "",
+  "screener_description": "",
+  "combined_description": "",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:09:53.840263+00:00",
-  "sources": [
-    "trendlyne",
-    "screener"
-  ],
-  "short_label": "Ceramic refractories for steel foundry molten metal flow"
+  "fetched_at": "2026-07-01T06:22:29.909400+00:00",
+  "sources": [],
+  "short_label": "Refractory products for steel foundry industrial processes"
 }

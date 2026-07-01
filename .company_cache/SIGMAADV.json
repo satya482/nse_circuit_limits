@@ -2,13 +2,13 @@
   "symbol": "SIGMAADV",
   "name": "Sigma Advanced Systems Limited",
   "trendlyne_description": "Sigma Advanced Systems Ltd. operates in the specialized high-technology sector of aerospace and defense, primarily as a developer and manufacturer of advanced electronic systems. The company functions as a key partner for major global and domestic ae... Read More",
-  "screener_description": "Incorporated in 1999, Megasoft Ltd is in the business of providing Telecom services [1]",
-  "combined_description": "Sigma Advanced Systems Ltd. operates in the specialized high-technology sector of aerospace and defense, primarily as a developer and manufacturer of advanced electronic systems. The company functions as a key partner for major global and domestic ae... Read More Incorporated in 1999, Megasoft Ltd is in the business of providing Telecom services [1]",
+  "screener_description": "Incorporated in 1999, Sigma Advanced Systems is a Hyderabad-based aerospace and defense manufacturing company [1]",
+  "combined_description": "Sigma Advanced Systems Ltd. operates in the specialized high-technology sector of aerospace and defense, primarily as a developer and manufacturer of advanced electronic systems. The company functions as a key partner for major global and domestic ae... Read More Incorporated in 1999, Sigma Advanced Systems is a Hyderabad-based aerospace and defense manufacturing company [1]",
   "screener_peers": [],
-  "fetched_at": "2026-05-10T07:33:33.089313+00:00",
+  "fetched_at": "2026-07-01T04:42:36.220056+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Aerospace defense electronics systems manufacturer, global partners"
+  "short_label": "Aerospace defense electronic systems manufacturer for global OEMs"
 }
