@@ -75,7 +75,7 @@ bullCross_w = switch crossLevel
 var bool inZone = false
 if bullCross_w
     inZone := true
-if bearCrossAny_w
+else if bearCrossAny_w
     inZone := false
 
 // ════════════════════════════════════════════════════════════
