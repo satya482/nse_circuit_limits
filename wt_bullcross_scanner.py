@@ -366,11 +366,12 @@ def _row(
 ) -> str:
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-    sym_label = sym
+    extras = []
     if f.get("weekly_zone"):
-        sym_label += f" W↑{f['weekly_zone_days']}d"
+        extras.append(f"W↑{f['weekly_zone_days']}d")
     if trend_syms and sym in trend_syms:
-        sym_label += " ★"
+        extras.append("★")
+    sym_cell = f"[{sym}]({tv})" + ("<br>" + " ".join(extras) if extras else "")
     cl, em = circuit.get(sym, ("20%", ""))
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
     zl_arrow = "↑" if f["zl_rising"] else "↓"
@@ -398,7 +399,7 @@ def _row(
     label_lines = [p for p in [name_part, mcap_liq, lbl] if p]
     lbl_cell = "<br>".join(label_lines)
     return (
-        f"| [{sym_label}]({tv}) "
+        f"| {sym_cell} "
         f"| {f.get('trap', 'n/a')} "
         f"| {lbl_cell} "
         f"| {emoji} {f['wt_signal']} "

@@ -57,6 +57,13 @@ def _strip_md_link(s: str) -> str:
     return m.group(1) if m else s
 
 
+def _parse_sym_cell(s: str) -> tuple[str, str]:
+    """Return (symbol, weekly_zone_badge) from a symbol cell like '[SJVN](url)<br>W↑12d ★'."""
+    sym = _strip_md_link(s)
+    wz_m = re.search(r"W↑\d+d", s)
+    return sym, (wz_m.group(0) if wz_m else "")
+
+
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
 # Table cols (13): Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit
 # parts indices:     0       1      2       3        4     5     6       7     8        9        10    11        12
@@ -90,7 +97,7 @@ def parse_wt_rows(content: str) -> list[dict]:
         parts = [p.strip() for p in ls.split("|")][1:-1]
         if len(parts) < 13:
             continue
-        sym = _strip_md_link(parts[0])
+        sym, wz_badge = _parse_sym_cell(parts[0])
         if not sym or sym in ("Symbol", "#"):
             continue
         if sym in seen:
@@ -119,6 +126,7 @@ def parse_wt_rows(content: str) -> list[dict]:
         rows.append(
             {
                 "symbol": sym,
+                "wz_badge": wz_badge,
                 "trap": parts[1],
                 "label": parts[2],
                 "signal": parts[3],
@@ -278,9 +286,11 @@ def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
     if trend_info and sym in trend_info:
         lbl = _TREND_TAG_LABEL.get(trend_info[sym], trend_info[sym])
         trend_badge = f'<span class="trend-tag">{lbl}</span>'
+    wz = r.get("wz_badge", "")
+    wz_span = f'<br><span class="mu" style="font-size:9px">{wz}</span>' if wz else ""
     return (
         f"<tr>"
-        f'<td class="sym">{_tv_link(sym)}{trend_badge}</td>'
+        f'<td class="sym">{_tv_link(sym)}{wz_span}{trend_badge}</td>'
         f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
         f'<td class="lbl">{_desc_from_label(r["label"])}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
