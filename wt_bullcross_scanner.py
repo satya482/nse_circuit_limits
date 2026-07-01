@@ -33,7 +33,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many, get_names, liq_tag
-from wavetrend_scanner import WaveTrendCalculator
+from wavetrend_scanner import WaveTrendCalculator, weekly_wt_zone
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
@@ -302,6 +302,7 @@ def analyse(
 
         cavgc_val, cavgc_rising = _cavgc(c)
         squeeze = _bb_kc_squeeze(df_raw)
+        wz_in, wz_days = weekly_wt_zone(df_raw)
         earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
 
         return {
@@ -315,6 +316,8 @@ def analyse(
             "zl_days": zl_days,
             "zl_pct": zl_pct,
             "squeeze": squeeze,
+            "weekly_zone": wz_in,
+            "weekly_zone_days": wz_days,
             "rs_state": rs,
             "rs_pct": rs_pct,
             "cavgc": round(cavgc_val, 4),
@@ -363,7 +366,11 @@ def _row(
 ) -> str:
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
-    sym_label = f"{sym} ★" if trend_syms and sym in trend_syms else sym
+    sym_label = sym
+    if f.get("weekly_zone"):
+        sym_label += f" W↑{f['weekly_zone_days']}d"
+    if trend_syms and sym in trend_syms:
+        sym_label += " ★"
     cl, em = circuit.get(sym, ("20%", ""))
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
     zl_arrow = "↑" if f["zl_rising"] else "↓"
@@ -443,6 +450,7 @@ def build_markdown(
         "| WT | WT1/WT2 oscillator values |",
         "| Sort | Rank desc → Erly desc (entry closest to move start floats up) |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
+        "| W↑Nd in Symbol | Days in weekly WT bull-cross zone (any cross; ends on weekly bear cross) |",
         "",
         "---",
         "",
