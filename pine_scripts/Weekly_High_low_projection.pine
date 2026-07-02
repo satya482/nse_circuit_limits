@@ -1,0 +1,251 @@
+//@version=6
+indicator("Satya Working Weekly High/Low - Current + Prev + 52 History Boxes", overlay = true, max_lines_count = 500, max_boxes_count = 500)
+
+//──────────────────── Inputs
+showCurrent      = input.bool(true,  "Show live current/previous week")
+showHistory      = input.bool(true,  "Show historical weeks")
+historyWeeks     = input.int(104,     "Historical weeks to keep", minval = 0, maxval = 260)
+hideOnWeekly     = input.bool(false, "Hide on weekly chart")
+
+showLines        = input.bool(false,  "Show lines")
+showBoxes        = input.bool(true,  "Show boxes")
+
+currHighColor    = input.color(color.lime, "Current week high color")
+currLowColor     = input.color(color.red,  "Current week low color")
+histHighColor    = input.color(color.new(color.lime, 70), "Historical high color")
+histLowColor     = input.color(color.new(color.red,  70), "Historical low color")
+lineWidth        = input.int(1, "Line width", minval = 1, maxval = 4)
+
+currentBoxBorder = input.color(color.new(color.aqua, 0),  "Current box border")
+currentBoxFill   = input.color(color.new(color.aqua, 88), "Current box fill")
+historyBoxBorder = input.color(color.new(color.aqua, 55), "Historical box border")
+historyBoxFill   = input.color(color.new(color.aqua, 92), "Historical box fill")
+
+currentBoxStyle  = input.string("Hollow", "Current box fill style", options = ["Filled", "Hollow"])
+historyBoxStyle  = input.string("Hollow", "Historical box fill style", options = ["Filled", "Hollow"])
+
+currentBoxBorderStyleOpt = input.string("Dotted",  "Current box border style", options = ["Solid", "Dashed", "Dotted"])
+historyBoxBorderStyleOpt = input.string("Dashed", "Historical box border style", options = ["Solid", "Dashed", "Dotted"])
+
+wkBoxBorder = input.color(color.new(color.yellow, 0),  "Current week box border")
+wkBoxFill   = input.color(color.new(color.yellow, 85), "Current week box fill")
+
+//──────────────────── Visibility
+canShow = not (hideOnWeekly and timeframe.isweekly)
+
+//──────────────────── Weekly series from HTF
+wHigh     = request.security(syminfo.tickerid, "W", high,       barmerge.gaps_off, barmerge.lookahead_off)
+wLow      = request.security(syminfo.tickerid, "W", low,        barmerge.gaps_off, barmerge.lookahead_off)
+wTime     = request.security(syminfo.tickerid, "W", time,       barmerge.gaps_off, barmerge.lookahead_off)
+wTimeClose = request.security(syminfo.tickerid, "W", time_close, barmerge.gaps_off, barmerge.lookahead_off)
+
+// New week detection on chart timeframe
+newWeek = ta.change(wTime) != 0
+
+//──────────────────── Helpers
+weekMs        = 7 * 24 * 60 * 60 * 1000
+nextWeekStart = wTimeClose
+nextWeekEnd   = wTimeClose + weekMs
+
+f_newLine(_x1, _y1, _x2, _y2, _col) =>
+    line.new(_x1, _y1, _x2, _y2, xloc = xloc.bar_time, extend = extend.none, color = _col, width = lineWidth)
+
+f_setOrCreateLine(_ln, _x1, _y1, _x2, _y2, _col) =>
+    line ln = _ln
+    if na(ln)
+        ln := f_newLine(_x1, _y1, _x2, _y2, _col)
+    else
+        line.set_x1(ln, _x1)
+        line.set_y1(ln, _y1)
+        line.set_x2(ln, _x2)
+        line.set_y2(ln, _y2)
+        line.set_color(ln, _col)
+        line.set_width(ln, lineWidth)
+    ln
+
+f_deleteLine(_ln) =>
+    if not na(_ln)
+        line.delete(_ln)
+
+f_deleteBox(_bx) =>
+    if not na(_bx)
+        box.delete(_bx)
+
+f_boxBg(_style, _fill) =>
+    _style == "Hollow" ? color.new(_fill, 100) : _fill
+
+f_borderStyle(_opt) =>
+    _opt == "Dashed" ? line.style_dashed :
+     _opt == "Dotted" ? line.style_dotted :
+     line.style_solid
+
+f_setOrCreateBox(box _bx, int _left, float _top, int _right, float _bottom, color _border, color _bg, string _fillStyle, string _borderStyleOpt) =>
+    box bx = _bx
+    bg = f_boxBg(_fillStyle, _bg)
+    brStyle = f_borderStyle(_borderStyleOpt)
+    if na(bx)
+        bx := box.new(left = _left, top = _top, right = _right, bottom = _bottom, xloc = xloc.bar_time, border_color = _border, border_style = brStyle, bgcolor = bg)
+    else
+        box.set_left(bx, _left)
+        box.set_top(bx, _top)
+        box.set_right(bx, _right)
+        box.set_bottom(bx, _bottom)
+        box.set_border_color(bx, _border)
+        box.set_border_style(bx, brStyle)
+        box.set_bgcolor(bx, bg)
+    bx
+
+f_deleteLineArray(array<line> arr) =>
+    sz = array.size(arr)
+    if sz > 0
+        for i = 0 to sz - 1
+            line.delete(array.get(arr, i))
+    array.clear(arr)
+
+f_deleteBoxArray(array<box> arr) =>
+    sz = array.size(arr)
+    if sz > 0
+        for i = 0 to sz - 1
+            box.delete(array.get(arr, i))
+    array.clear(arr)
+
+//──────────────────── Live objects
+var line currHighSeg1 = na
+var line currHighSeg2 = na
+var line currLowSeg1  = na
+var line currLowSeg2  = na
+
+var box  currBox      = na
+var box  prevBox      = na
+var box  wkBox        = na
+
+// Current week H/L tracked directly from daily bars — no HTF dependency
+var float wkHigh  = na
+var float wkLow   = na
+var int   wkStart = na
+
+// FIX 2: store prev week values at the week boundary, not inline via [1]
+// wTime[1] on Tue-Fri gives current week start (HTF gaps_off fills forward),
+// so reading it every bar produces wrong prevBox.left 4 of 5 trading days.
+var int   prevWkStart = na
+var int   prevWkEnd   = na
+var float prevWkHigh  = na
+var float prevWkLow   = na
+
+if newWeek
+    prevWkStart := wTime[1]
+    prevWkEnd   := wTimeClose[1]
+    prevWkHigh  := wHigh[1]
+    prevWkLow   := wLow[1]
+
+// Track current week H/L from daily bars directly
+// dayofweek[1] > dayofweek detects Mon (or first day after holiday): Fri=6 > Mon=2
+isNewTradingWeek = na(wkStart) or dayofweek[1] > dayofweek
+if isNewTradingWeek
+    wkStart := time
+    wkHigh  := high
+    wkLow   := low
+else
+    wkHigh  := math.max(wkHigh, high)
+    wkLow   := math.min(wkLow,  low)
+
+//──────────────────── Current + previous live drawing
+if canShow and showCurrent
+    if showLines
+        currHighSeg1 := f_setOrCreateLine(currHighSeg1, wTime,         wHigh, wTimeClose,      wHigh, currHighColor)
+        currHighSeg2 := f_setOrCreateLine(currHighSeg2, nextWeekStart, wHigh, nextWeekEnd, wHigh, currHighColor)
+        currLowSeg1  := f_setOrCreateLine(currLowSeg1,  wTime,         wLow,  wTimeClose,      wLow,  currLowColor)
+        currLowSeg2  := f_setOrCreateLine(currLowSeg2,  nextWeekStart, wLow,  nextWeekEnd, wLow,  currLowColor)
+    else
+        f_deleteLine(currHighSeg1), currHighSeg1 := na
+        f_deleteLine(currHighSeg2), currHighSeg2 := na
+        f_deleteLine(currLowSeg1),  currLowSeg1  := na
+        f_deleteLine(currLowSeg2),  currLowSeg2  := na
+
+    if showBoxes
+        if not na(prevWkStart) and not na(prevWkEnd) and not na(prevWkHigh) and not na(prevWkLow)
+            prevBox := f_setOrCreateBox(prevBox, prevWkStart, prevWkHigh, wTimeClose, prevWkLow, historyBoxBorder, historyBoxFill, historyBoxStyle, historyBoxBorderStyleOpt)
+        else
+            f_deleteBox(prevBox), prevBox := na
+
+        currBox := f_setOrCreateBox(currBox, wTime, wHigh, nextWeekEnd, wLow, currentBoxBorder, currentBoxFill, currentBoxStyle, currentBoxBorderStyleOpt)
+        if not na(wkStart)
+            wkBox := f_setOrCreateBox(wkBox, wkStart, wkHigh, time_close, wkLow, wkBoxBorder, wkBoxFill, currentBoxStyle, currentBoxBorderStyleOpt)
+    else
+        f_deleteBox(prevBox), prevBox := na
+        f_deleteBox(currBox), currBox := na
+        f_deleteBox(wkBox),   wkBox   := na
+else
+    f_deleteLine(currHighSeg1), currHighSeg1 := na
+    f_deleteLine(currHighSeg2), currHighSeg2 := na
+    f_deleteLine(currLowSeg1),  currLowSeg1  := na
+    f_deleteLine(currLowSeg2),  currLowSeg2  := na
+    f_deleteBox(prevBox), prevBox := na
+    f_deleteBox(currBox), currBox := na
+    f_deleteBox(wkBox),   wkBox   := na
+
+//──────────────────── Store completed weekly records
+var array<int>   weekStarts = array.new_int()
+var array<int>   weekEnds   = array.new_int()
+var array<float> weekHighs  = array.new_float()
+var array<float> weekLows   = array.new_float()
+
+if newWeek
+    completedStart = wTime[1]
+    completedEnd   = wTimeClose[1]
+    completedHigh  = wHigh[1]
+    completedLow   = wLow[1]
+
+    if not na(completedStart) and not na(completedEnd) and not na(completedHigh) and not na(completedLow)
+        array.push(weekStarts, completedStart)
+        array.push(weekEnds,   completedEnd)
+        array.push(weekHighs,  completedHigh)
+        array.push(weekLows,   completedLow)
+
+        maxKeep = historyWeeks + 2
+        while array.size(weekStarts) > maxKeep
+            array.shift(weekStarts)
+            array.shift(weekEnds)
+            array.shift(weekHighs)
+            array.shift(weekLows)
+
+//──────────────────── Historical objects
+var array<line> histLines = array.new_line()
+var array<box>  histBoxes = array.new_box()
+
+// Rebuild history only on last bar for stability
+if barstate.islast
+    f_deleteLineArray(histLines)
+    f_deleteBoxArray(histBoxes)
+
+    if canShow and showHistory and historyWeeks > 0
+        sz = array.size(weekStarts)
+        pairCount = math.min(historyWeeks, sz - 1)
+
+        if pairCount > 0
+            startIdx = sz - pairCount - 1
+            endIdx   = sz - 2  // FIX 1: was sz - 3, which skipped current week - 2
+
+            if endIdx >= startIdx
+                for i = startIdx to endIdx
+                    srcStart = array.get(weekStarts, i)
+                    srcEnd   = array.get(weekEnds,   i)
+                    srcHigh  = array.get(weekHighs,  i)
+                    srcLow   = array.get(weekLows,   i)
+                    nxtStart = array.get(weekStarts, i + 1)
+                    nxtEnd   = array.get(weekEnds,   i + 1)
+
+                    if showLines
+                        h1 = line.new(srcStart, srcHigh, srcEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
+                        h2 = line.new(nxtStart, srcHigh, nxtEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
+                        l1 = line.new(srcStart, srcLow,  srcEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
+                        l2 = line.new(nxtStart, srcLow,  nxtEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
+
+                        array.push(histLines, h1)
+                        array.push(histLines, h2)
+                        array.push(histLines, l1)
+                        array.push(histLines, l2)
+
+                    if showBoxes
+                        hb = box.new(left = srcStart, top = srcHigh, right = nxtEnd, bottom = srcLow, xloc = xloc.bar_time, border_color = historyBoxBorder, border_style = f_borderStyle(historyBoxBorderStyleOpt), bgcolor = f_boxBg(historyBoxStyle, historyBoxFill))
+                        array.push(histBoxes, hb)
