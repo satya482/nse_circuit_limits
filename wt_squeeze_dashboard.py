@@ -310,7 +310,7 @@ def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
         lbl = _TREND_TAG_LABEL.get(trend_info[sym], trend_info[sym])
         badges.append(f'<span style="font-weight:700;color:#86efac">{lbl}</span>')
     badge_line = (
-        f'<br><span style="font-size:9px;white-space:nowrap">{" · ".join(badges)}</span>'
+        f'<span style="display:block;font-size:9px;white-space:nowrap">{" · ".join(badges)}</span>'
         if badges
         else ""
     )
