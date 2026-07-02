@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NSE:RHIM — Investor Brief &amp; The Ledger | RHI Magnesita India Limited | Q4 FY26</title>
+<meta name="description" content="NSE Investor Brief and management-credibility Ledger for RHI Magnesita India Limited (RHIM), Q4 FY26 baseline. Refractories, steel-cycle tailwind, overcapacity price war, impairment audit.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root, [data-theme="light"] {
+  --ink:#1A1A2E; --paper:#F7F5F0; --card:#FFFFFF; --rule:#DDD8CE;
+  --text:#2A2A3A; --muted:#6B7280; --soft:#F0EDE8;
+  --amber:#C47B00; --amber-bg:#FFF7E6;
+  --green:#1D7A5B; --green-bg:#E8F5F0;
+  --red:#B03020; --red-bg:#FDF0EE;
+  --navy:#1E3A5F; --navy-bg:#EBF0F8;
+  --purple:#534AB7; --purple-bg:#F0EDFB;
+  --teal:#0E7490; --teal-bg:#E0F5FA;
+  --coral:#C05020; --coral-bg:#FDF0E8;
+  --blue:#378ADD; --blue-bg:#E8F1FB;
+  --hl-key-bg:#FFF176; --hl-num-bg:#E3F0FF; --hl-risk-bg:#FFF3CD; --hl-cat-bg:#E6F4EA;
+  --mast-ink:#1A1A2E; --mast-text:#F7F5F0;
+  --serif:'Playfair Display', Georgia, serif;
+  --sans:'DM Sans', system-ui, sans-serif;
+  --mono:'DM Mono', 'Courier New', monospace;
+}
+[data-theme="dark"] {
+  --ink:#ECE8DF; --paper:#15151F; --card:#1E1E2A; --rule:#3A3A4A;
+  --text:#D5D2CA; --muted:#9B98A8; --soft:#26263200;
+  --amber:#E8A33D; --amber-bg:#2E2410;
+  --green:#4DBF97; --green-bg:#10281F;
+  --red:#E36A5A; --red-bg:#301512;
+  --navy:#8FB2DF; --navy-bg:#141E2E;
+  --purple:#A79CF0; --purple-bg:#1E1A33;
+  --teal:#55BBD6; --teal-bg:#0E2530;
+  --coral:#E88558; --coral-bg:#2E1A10;
+  --blue:#6FAEE8; --blue-bg:#122236;
+  --hl-key-bg:#5A5210; --hl-num-bg:#1A2E48; --hl-risk-bg:#3A2E0E; --hl-cat-bg:#14301F;
+  --mast-ink:#0E0E16; --mast-text:#F0EDE5;
+}
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--sans); background:var(--paper); color:var(--text); font-size:15.5px; line-height:1.72; transition:background .25s,color .25s; }
+
+/* ── Utility bar ── */
+.util-bar { position:fixed; top:10px; right:12px; z-index:500; display:flex; gap:8px; }
+.util-btn { background:var(--card); color:var(--text); border:1.5px solid var(--rule); border-radius:6px; padding:7px 12px; font-family:var(--mono); font-size:11px; cursor:pointer; display:flex; align-items:center; gap:6px; }
+.util-btn:hover { border-color:var(--amber); color:var(--amber); }
+
+/* ── Quick-Scan Strip: ALWAYS EXPANDED ── */
+#quick-scan { position:sticky; top:0; z-index:400; background:var(--mast-ink); color:var(--mast-text); border-bottom:3px solid var(--amber); }
+#quick-scan .qs-head { padding:10px 26px 6px; font-family:var(--mono); font-size:10.5px; letter-spacing:2px; text-transform:uppercase; color:var(--amber); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; }
+#quick-scan ul { list-style:none; padding:0 26px 12px; margin:0; display:block; }
+#quick-scan li { font-size:12.8px; line-height:1.55; padding:4px 0; border-bottom:1px dotted rgba(255,255,255,0.12); color:#DAD5CB; }
+#quick-scan li:last-child { border-bottom:none; }
+#quick-scan .qs-tag { font-family:var(--mono); font-size:10.5px; letter-spacing:1px; color:#F0B94A; margin-right:8px; white-space:nowrap; }
+[data-theme="dark"] #quick-scan li { color:#C8C4BA; }
+
+/* ── Masthead ── */
+.masthead { background:var(--mast-ink); color:var(--mast-text); padding:54px 60px 42px; position:relative; overflow:hidden; }
+.masthead::before { content:''; position:absolute; top:0; right:0; width:360px; height:100%;
+  background:repeating-linear-gradient(-45deg, transparent 0, transparent 7px, rgba(255,255,255,0.03) 7px, rgba(255,255,255,0.03) 14px); }
+.mh-eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:2.5px; text-transform:uppercase; color:#F0B94A; margin-bottom:14px; }
+.masthead h1 { font-family:var(--serif); font-size:46px; font-weight:700; letter-spacing:-0.5px; line-height:1.12; max-width:760px; }
+.mh-sub { font-size:16.5px; color:#A8A098; margin-top:12px; max-width:640px; font-weight:300; }
+.mh-meta { margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
+.meta-chip { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:4px; padding:6px 13px; font-family:var(--mono); font-size:10.5px; letter-spacing:1px; color:#C8C0B0; }
+@media (max-width:680px){ .masthead{padding:40px 24px 32px;} .masthead h1{font-size:32px;} }
+
+/* ── Layout ── */
+.content { max-width:960px; margin:0 auto; padding:40px 34px 90px; }
+@media (max-width:680px){ .content{padding:28px 16px 70px;} body{font-size:15px;} }
+
+/* ── TOC ── */
+nav.toc { background:var(--card); border:1.5px solid var(--rule); border-radius:8px; padding:20px 24px; margin:8px 0 10px; }
+nav.toc .toc-label { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+nav.toc ol { list-style:none; columns:2; column-gap:28px; }
+@media (max-width:640px){ nav.toc ol{columns:1;} }
+nav.toc li { padding:4px 0; font-size:13.5px; break-inside:avoid; }
+nav.toc a { color:var(--text); text-decoration:none; border-bottom:1px dotted var(--rule); }
+nav.toc a:hover { color:var(--amber); border-bottom-color:var(--amber); }
+nav.toc .toc-num { font-family:var(--mono); font-size:11px; color:var(--amber); margin-right:8px; }
+
+/* ── Section headers ── */
+.sec-header { display:flex; align-items:flex-start; gap:16px; margin:56px 0 20px; padding-bottom:12px; border-bottom:2px solid var(--ink); }
+.sec-num { font-family:var(--serif); font-size:27px; font-weight:700; color:var(--amber); line-height:1; min-width:36px; }
+.sec-eyebrow { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); }
+.sec-title { font-family:var(--serif); font-size:22px; font-weight:700; line-height:1.22; color:var(--ink); }
+.sh-blue   { border-bottom-color:var(--blue); }   .sh-blue .sec-num{color:var(--blue);}
+.sh-teal   { border-bottom-color:var(--teal); }   .sh-teal .sec-num{color:var(--teal);}
+.sh-green  { border-bottom-color:var(--green); }  .sh-green .sec-num{color:var(--green);}
+.sh-navy   { border-bottom-color:var(--navy); }   .sh-navy .sec-num{color:var(--navy);}
+.sh-coral  { border-bottom-color:var(--coral); }  .sh-coral .sec-num{color:var(--coral);}
+.sh-purple { border-bottom-color:var(--purple); } .sh-purple .sec-num{color:var(--purple);}
+.sh-amber  { border-bottom-color:var(--amber); }
+.sh-red    { border-bottom-color:var(--red); }    .sh-red .sec-num{color:var(--red);}
+
+h3 { font-family:var(--serif); font-size:17px; font-weight:700; margin:24px 0 10px; color:var(--ink); }
+h3.c-blue{color:var(--blue);} h3.c-teal{color:var(--teal);} h3.c-green{color:var(--green);}
+h3.c-navy{color:var(--navy);} h3.c-coral{color:var(--coral);} h3.c-purple{color:var(--purple);} h3.c-amber{color:var(--amber);}
+p { margin-bottom:14px; }
+strong { font-weight:600; color:var(--ink); }
+
+.lead { font-size:16.5px; line-height:1.75; padding:18px 22px; border-left:4px solid var(--amber); background:var(--amber-bg); border-radius:0 6px 6px 0; margin-bottom:22px; color:var(--text); }
+.lead-blue{border-left-color:var(--blue); background:var(--blue-bg);}
+.lead-teal{border-left-color:var(--teal); background:var(--teal-bg);}
+.lead-green{border-left-color:var(--green); background:var(--green-bg);}
+.lead-navy{border-left-color:var(--navy); background:var(--navy-bg);}
+.lead-purple{border-left-color:var(--purple); background:var(--purple-bg);}
+
+.insight-box { background:var(--mast-ink); color:#F0EDE8; border-radius:8px; padding:26px 30px; margin:24px 0; }
+.insight-box .label { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:#F0B94A; margin-bottom:10px; }
+.insight-box p { color:#D0C8BC; font-size:15px; line-height:1.72; }
+.insight-box strong { color:#F7F5F0; }
+
+/* ── Highlights ── */
+.hl-key      { background:var(--hl-key-bg); padding:0 3px; border-radius:2px; font-weight:600; color:var(--ink); }
+.hl-number   { background:var(--hl-num-bg); padding:0 3px; border-radius:2px; font-family:var(--mono); font-size:0.94em; color:var(--ink); }
+.hl-risk     { background:var(--hl-risk-bg); padding:0 3px; border-radius:2px; border-left:3px solid var(--amber); color:var(--ink); }
+.hl-catalyst { background:var(--hl-cat-bg); padding:0 3px; border-radius:2px; border-left:3px solid var(--green); color:var(--ink); }
+
+.takeaway-pill { border-left:3px solid var(--amber); background:var(--card); border-top:1px solid var(--rule); border-right:1px solid var(--rule); border-bottom:1px solid var(--rule); border-radius:0 22px 22px 0; padding:11px 20px; margin:20px 0 6px; font-size:13.8px; font-weight:500; color:var(--ink); }
+.tp-blue{border-left-color:var(--blue);} .tp-teal{border-left-color:var(--teal);} .tp-green{border-left-color:var(--green);}
+.tp-navy{border-left-color:var(--navy);} .tp-coral{border-left-color:var(--coral);} .tp-purple{border-left-color:var(--purple);} .tp-red{border-left-color:var(--red);}
+.takeaway-pill .tp-label { font-family:var(--mono); font-size:9.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:2px; }
+
+/* ── Tables ── */
+.table-wrap { overflow-x:auto; margin:18px 0; }
+.data-table { width:100%; border-collapse:collapse; font-size:13px; background:var(--card); }
+.data-table caption { text-align:left; font-family:var(--mono); font-size:10.5px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); padding:6px 2px; }
+.data-table th { background:var(--mast-ink); color:#EDEDED; padding:9px 12px; text-align:left; font-family:var(--mono); font-size:10.5px; letter-spacing:0.5px; font-weight:500; }
+.data-table th.blue{background:var(--blue);} .data-table th.teal{background:var(--teal);} .data-table th.green{background:var(--green);}
+.data-table th.navy{background:var(--navy);} .data-table th.coral{background:var(--coral);} .data-table th.purple{background:var(--purple);}
+[data-theme="dark"] .data-table th { color:#0E0E16; }
+[data-theme="dark"] .data-table th[class=""] , [data-theme="dark"] .data-table th:not([class]) { background:#3A3A4E; color:#EDEDED; }
+.data-table td { padding:9px 12px; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.55; }
+.data-table tr:last-child td { border-bottom:none; }
+.data-table td.num { font-family:var(--mono); font-size:12.5px; white-space:nowrap; }
+.tag { display:inline-block; padding:2px 8px; border-radius:3px; font-family:var(--mono); font-size:10px; font-weight:500; white-space:nowrap; }
+.tag-green{background:var(--green-bg); color:var(--green);} .tag-amber{background:var(--amber-bg); color:var(--amber);}
+.tag-red{background:var(--red-bg); color:var(--red);} .tag-navy{background:var(--navy-bg); color:var(--navy);}
+.tag-purple{background:var(--purple-bg); color:var(--purple);} .tag-teal{background:var(--teal-bg); color:var(--teal);}
+.tag-coral{background:var(--coral-bg); color:var(--coral);} .tag-blue{background:var(--blue-bg); color:var(--blue);}
+
+/* ── Cards & rows ── */
+.card { background:var(--card); border:1.5px solid var(--rule); border-radius:8px; padding:20px 22px; margin:16px 0; }
+.card-accent { border-left:4px solid var(--amber); }
+.ca-blue{border-left-color:var(--blue);} .ca-teal{border-left-color:var(--teal);} .ca-green{border-left-color:var(--green);}
+.ca-navy{border-left-color:var(--navy);} .ca-coral{border-left-color:var(--coral);} .ca-purple{border-left-color:var(--purple);} .ca-red{border-left-color:var(--red);}
+.card .card-eyebrow { font-family:var(--mono); font-size:10px; letter-spacing:1.8px; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+.card h4 { font-family:var(--serif); font-size:16px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.stat-row { display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-bottom:1px solid var(--rule); font-size:13.5px; }
+.stat-row:last-child { border-bottom:none; }
+.stat-row .sr-label { color:var(--muted); }
+.stat-row .sr-val { font-family:var(--mono); font-size:12.8px; color:var(--ink); text-align:right; }
+.grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:16px 0; }
+.grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:16px 0; }
+@media (max-width:720px){ .grid-2,.grid-3{grid-template-columns:1fr;} }
+
+/* Risk rows */
+.risk-row { display:flex; gap:14px; padding:15px 0; border-bottom:1px solid var(--rule); align-items:flex-start; }
+.risk-row:last-child { border-bottom:none; }
+.risk-icon { color:var(--amber); font-size:19px; flex-shrink:0; margin-top:2px; }
+.risk-body .risk-name { font-weight:600; font-size:14.5px; color:var(--ink); margin-bottom:3px; }
+.risk-body .risk-what { font-size:13.5px; margin-bottom:4px; }
+.risk-body .risk-signal { font-size:12.5px; color:var(--muted); font-style:italic; }
+
+/* Watch signals */
+.watch-row { display:flex; gap:13px; padding:14px 0; border-bottom:1px solid var(--rule); align-items:flex-start; }
+.watch-row:last-child { border-bottom:none; }
+.watch-dot { width:10px; height:10px; border-radius:50%; background:var(--blue); flex-shrink:0; margin-top:7px; }
+.wd-teal{background:var(--teal);} .wd-green{background:var(--green);} .wd-amber{background:var(--amber);} .wd-purple{background:var(--purple);} .wd-navy{background:var(--navy);}
+.watch-body .watch-name { font-weight:600; font-size:14.5px; color:var(--ink); }
+.watch-body .watch-desc { font-size:13.5px; margin:2px 0 5px; }
+.watch-thresholds { font-family:var(--mono); font-size:11.5px; line-height:1.7; }
+.th-green{color:var(--green);} .th-amber{color:var(--amber);} .th-red{color:var(--red);}
+
+/* Verdict */
+.verdict-box { background:var(--amber-bg); border:1.5px solid var(--amber); border-radius:8px; padding:24px 28px; margin:32px 0; }
+.verdict-box .label { font-family:var(--mono); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--amber); margin-bottom:10px; }
+.verdict-box p { color:var(--ink); font-size:14.8px; line-height:1.72; }
+.stage-badge { display:inline-block; background:var(--amber); color:#fff; font-family:var(--mono); font-size:11px; letter-spacing:1px; padding:4px 12px; border-radius:4px; margin-bottom:10px; }
+
+/* Chain flow (Ledger) */
+.chain-flow { display:flex; align-items:stretch; gap:0; margin:24px 0; overflow-x:auto; padding-bottom:6px; }
+.chain-node { flex:1; min-width:112px; background:var(--card); border:1.5px solid var(--rule); padding:12px 10px; text-align:center; position:relative; }
+.chain-node:first-child{border-radius:6px 0 0 6px;} .chain-node:last-child{border-radius:0 6px 6px 0;}
+.chain-node::after { content:'→'; position:absolute; right:-12px; top:50%; transform:translateY(-50%); font-size:16px; color:var(--amber); z-index:2; background:var(--paper); padding:0 2px; }
+.chain-node:last-child::after{display:none;}
+.chain-num{font-family:var(--mono); font-size:10px; color:var(--muted); margin-bottom:4px;}
+.chain-label{font-size:12px; font-weight:600; color:var(--ink); line-height:1.3;}
+.chain-detail{font-size:11px; color:var(--muted); margin-top:4px; line-height:1.35;}
+.cn-ok{border-top:3px solid var(--green);} .cn-warn{border-top:3px solid var(--amber);} .cn-bad{border-top:3px solid var(--red);} .cn-neutral{border-top:3px solid var(--navy);}
+.chain-status{font-family:var(--mono); font-size:10px; margin-top:5px;}
+.cs-ok{color:var(--green);} .cs-warn{color:var(--amber);} .cs-bad{color:var(--red);} .cs-na{color:var(--muted);}
+
+/* Red flag cards */
+.redflag-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0; }
+@media (max-width:680px){ .redflag-grid{grid-template-columns:1fr;} }
+.redflag-card { border:1px solid var(--rule); border-radius:6px; padding:15px 17px; background:var(--card); }
+.rf-critical{border-left:3px solid var(--red);} .rf-warning{border-left:3px solid var(--amber);}
+.rf-watch{border-left:3px solid var(--navy);} .rf-clean{border-left:3px solid var(--green);}
+.redflag-name { font-family:var(--mono); font-size:11.5px; font-weight:600; display:flex; align-items:center; gap:7px; margin-bottom:6px; color:var(--ink); }
+.redflag-what { font-size:13px; margin-bottom:6px; line-height:1.55; }
+.redflag-signal { font-size:11.8px; color:var(--muted); font-style:italic; }
+
+/* Pillar cards */
+.pillars { display:grid; grid-template-columns:repeat(3,1fr); gap:13px; margin:20px 0; }
+@media (max-width:720px){ .pillars{grid-template-columns:1fr;} }
+.pillar-card { border:1.5px solid var(--rule); border-radius:8px; padding:16px; background:var(--card); }
+.pillar-name { font-family:var(--serif); font-size:14px; font-weight:700; margin-bottom:5px; color:var(--ink); }
+.pillar-desc { font-size:12.3px; color:var(--muted); line-height:1.55; }
+.pc-promise{border-top:3px solid var(--green);} .pc-tone{border-top:3px solid var(--amber);} .pc-exec{border-top:3px solid var(--coral);}
+.pc-capex{border-top:3px solid var(--teal);} .pc-margin{border-top:3px solid var(--blue);} .pc-capital{border-top:3px solid var(--navy);}
+
+/* Score */
+.score-hero { display:flex; gap:20px; align-items:center; background:var(--card); border:1.5px solid var(--rule); border-radius:8px; padding:22px 26px; margin:20px 0; flex-wrap:wrap; }
+.tier-badge { font-family:var(--serif); font-size:52px; font-weight:700; color:var(--amber); line-height:1; }
+.score-hero .score-sub { flex:1; min-width:240px; font-size:13.5px; }
+
+/* Charts */
+.chart-card { background:var(--card); border:1.5px solid var(--rule); border-radius:8px; padding:18px 20px; margin:20px 0; }
+.chart-card .chart-title { font-family:var(--mono); font-size:10.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); margin-bottom:12px; }
+.chart-box { position:relative; height:290px; }
+@media (max-width:640px){ .chart-box{height:240px;} }
+
+blockquote { border-left:3px solid var(--purple); padding:12px 18px; background:var(--purple-bg); border-radius:0 4px 4px 0; margin:18px 0; font-style:italic; color:var(--purple); font-size:13.8px; line-height:1.65; }
+ul.prose-list { list-style:none; padding:0; margin:0 0 14px; }
+ul.prose-list li { padding:5px 0 5px 18px; position:relative; font-size:13.8px; line-height:1.6; border-bottom:1px dotted var(--rule); }
+ul.prose-list li:last-child{border-bottom:none;}
+ul.prose-list li::before { content:'—'; position:absolute; left:0; color:var(--amber); font-weight:700; }
+.divider { border:none; border-top:1.5px solid var(--rule); margin:36px 0; }
+.small-note { font-size:12.3px; color:var(--muted); font-style:italic; }
+
+/* ── Highlight Index: ALWAYS EXPANDED ── */
+#highlight-index { background:var(--card); border:1.5px solid var(--rule); border-radius:8px; margin:40px 0 10px; padding:0; }
+#highlight-index summary { list-style:none; cursor:default; padding:16px 22px; font-family:var(--serif); font-size:17px; font-weight:700; color:var(--ink); border-bottom:1.5px solid var(--rule); }
+#highlight-index summary::-webkit-details-marker { display:none; }
+#highlight-index ol { padding:14px 22px 18px 44px; }
+#highlight-index li { font-size:13px; padding:5px 0; border-bottom:1px dotted var(--rule); line-height:1.55; }
+#highlight-index li:last-child{border-bottom:none;}
+#highlight-index li::marker { font-family:var(--mono); font-size:11px; color:var(--amber); }
+#highlight-index li[data-type="hl-key"]::after { content:' · KEY'; font-family:var(--mono); font-size:9.5px; color:var(--amber); }
+#highlight-index li[data-type="hl-number"]::after { content:' · NUMBER'; font-family:var(--mono); font-size:9.5px; color:var(--blue); }
+#highlight-index li[data-type="hl-risk"]::after { content:' · RISK'; font-family:var(--mono); font-size:9.5px; color:var(--red); }
+#highlight-index li[data-type="hl-catalyst"]::after { content:' · CATALYST'; font-family:var(--mono); font-size:9.5px; color:var(--green); }
+#highlight-index li[data-type="takeaway-pill"]::after { content:' · TAKEAWAY'; font-family:var(--mono); font-size:9.5px; color:var(--muted); }
+
+footer { background:var(--mast-ink); color:#8B8698; padding:26px 40px; font-family:var(--mono); font-size:10.5px; display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; margin-top:60px; }
+
+/* ── PRINT: force everything expanded & clean ── */
+@media print {
+  body { font-size:11px; background:#fff; color:#222; }
+  .util-bar, nav.toc { display:none !important; }
+  #quick-scan { position:static !important; }
+  #quick-scan ul, #quick-scan li { display:block !important; }
+  #highlight-index, #highlight-index ol { display:block !important; }
+  #highlight-index[open] ol, details[open] > * { display:block !important; }
+  details { display:block !important; }
+  details > summary { display:block !important; }
+  .masthead, #quick-scan, .insight-box, footer { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  .sec-header { page-break-after:avoid; }
+  .card, .redflag-card, .risk-row, .watch-row, .takeaway-pill, .verdict-box, .chart-card, .pillar-card, table { break-inside:avoid; }
+  .page-break { page-break-before:always; }
+  a { color:inherit; text-decoration:none; }
+  .chart-box { height:230px; }
+}
+</style>
+</head>
+<body>
+
+<div class="util-bar no-print" role="toolbar" aria-label="Page tools">
+  <button class="util-btn" id="themeToggle" type="button" aria-label="Toggle day and night mode"><i class="ti ti-moon" aria-hidden="true"></i><span id="themeLabel">Night</span></button>
+  <button class="util-btn" type="button" onclick="window.print()" aria-label="Print this brief"><i class="ti ti-printer" aria-hidden="true"></i>Print</button>
+</div>
+
+<!-- ══ QUICK-SCAN STRIP — always expanded ══ -->
+<section id="quick-scan" aria-label="Quick scan summary of this brief">
+  <div class="qs-head"><span>Quick Scan · NSE:RHIM · Q4 FY26 baseline</span><span>8 lines · always expanded</span></div>
+  <ul>
+    <li><span class="qs-tag">⚡ CONTEXT</span>India's steel capacity is climbing from 165 MT toward a policy target of 300 MT by FY31 — but rival refractory capacity (Calderys, Vesuvius, imports) is growing faster than demand, so the tailwind lifts volumes, not prices.</li>
+    <li><span class="qs-tag">🏭 MODEL</span>Refractories are ~2–3% of a steelmaker's cost and 100% of its uptime: a recurring consumable with a ~30% India market share, 700+ customers and full-line-service lock-in across 9 plants.</li>
+    <li><span class="qs-tag">🎯 INSIGHT</span>The ₹655 Cr goodwill impairment is an accounting confession that owning tonnage is no longer the moat — own captive mines plus 4PRO outcome contracts are the replacement moat.</li>
+    <li><span class="qs-tag">📊 NUMBERS</span>FY26 consolidated revenue ₹4,000 Cr (+9%, first time above ₹4,000 Cr); adjusted EBITDA margin 11.9% (−180 bps YoY); adjusted PAT ₹180 Cr (−10%); net cash balance sheet; CFO ₹409 Cr (+9%).</li>
+    <li><span class="qs-tag">🚧 TOP RISK</span>The overcapacity price war gets worse before it gets better: Calderys' largest-ever India greenfield (Odisha) only began ramping in late 2025 and will fill capacity "at any cost".</li>
+    <li><span class="qs-tag">👁 WATCH</span>Q1 FY27 print (~Aug 2026): revenue back above ₹1,000 Cr AND EBITDA margin ≥12.5% — the first checkpoint on the thrice-cut 13% full-year guide.</li>
+    <li><span class="qs-tag">💡 VERDICT</span>Reset chapter (mid-story): balance sheet is clean and cash-generative, but the margin narrative must be rebuilt from a guidance floor that slid 15–16% → 14% → 13% in twelve months.</li>
+    <li><span class="qs-tag">🗒 MGMT</span>Tier B− · Active flags: margin floor drift (critical), FY26 volume-outgrowth miss, serial goodwill impairment (3 in 4 years), one-time-eternal cost watch · Clean: net cash, zero dilution, zero promoter pledge.</li>
+  </ul>
+</section>
+
+<!-- ══ MASTHEAD ══ -->
+<header class="masthead">
+  <div class="mh-eyebrow">NSE Investor Brief + The Ledger · NSE:RHIM · Capital Goods — Electrodes &amp; Refractories · 02 July 2026</div>
+  <h1>RHI Magnesita India: the fire-lining monopoly that wrote off its own war chest</h1>
+  <p class="mh-sub">India's largest refractory maker crossed ₹4,000 crore in revenue, went net cash — and impaired the goodwill on its flagship acquisition for the third time in four years. This brief reads the two stories together.</p>
+  <div class="mh-meta">
+    <span class="meta-chip">CMP ₹376 · MCAP ₹7,769 CR</span>
+    <span class="meta-chip">Q4 FY26 BASELINE</span>
+    <span class="meta-chip">7 CHAPTERS + PORTER'S 5F</span>
+    <span class="meta-chip">LEDGER TIER B−</span>
+  </div>
+</header>
+
+<main class="content">
+
+<nav class="toc" aria-label="Table of contents">
+  <div class="toc-label">Contents</div>
+  <ol>
+    <li><span class="toc-num">01</span><a href="#ch1">Context — the 300-million-tonne furnace</a></li>
+    <li><span class="toc-num">02</span><a href="#ch2">Business model — selling uptime, not bricks</a></li>
+    <li><span class="toc-num">2B</span><a href="#ch2b">Porter's Five Forces</a></li>
+    <li><span class="toc-num">03</span><a href="#ch3">Vertical stories — steel, cement, solutions</a></li>
+    <li><span class="toc-num">04</span><a href="#ch4">Strategic insight — the impairment is the strategy</a></li>
+    <li><span class="toc-num">05</span><a href="#ch5">Numbers in context + capex timeline</a></li>
+    <li><span class="toc-num">06</span><a href="#ch6">Risk register</a></li>
+    <li><span class="toc-num">07</span><a href="#ch7">Watch signals</a></li>
+    <li><span class="toc-num">◆</span><a href="#verdict">Verdict — story stage</a></li>
+    <li><span class="toc-num">L</span><a href="#ledger">The Ledger — management credibility audit</a></li>
+    <li><span class="toc-num">📌</span><a href="#highlight-index">All highlights at a glance</a></li>
+  </ol>
+</nav>
+
+<!-- ══ CHAPTER 1 ══ -->
+<section id="ch1" aria-labelledby="ch1-title">
+<div class="sec-header sh-blue">
+  <div class="sec-num">01</div>
+  <div>
+    <div class="sec-eyebrow">Context · Why now</div>
+    <div class="sec-title" id="ch1-title">The 300-million-tonne furnace — a demand boom that everyone saw coming</div>
+  </div>
+</div>
+
+<p class="lead lead-blue">Every tonne of steel, cement, glass and aluminium made in India passes through a furnace lined with refractory material — heat-resistant bricks and mixes that survive temperatures above 1,200°C and get consumed in the process. India is the world's second-largest crude steel producer, and its National Steel Policy targets <span class="hl-number">300 million tonnes of steel capacity by FY2030-31 (from ~165 MT today) and 400 MT by FY2035-36</span>. Refractory demand is mechanically chained to that expansion.</p>
+
+<p>The near-term numbers support the story. India produced roughly 169 MT of crude steel in FY26 (up ~11%) and is projected to reach ~183 MT in FY27 (+8%), with capacity rising ~6% to ~248 MT. Steel consumption has doubled in a decade — from 77 MT in FY15 to 152 MT in FY25. The India refractories market is worth roughly USD 2.6–2.8 billion, with growth estimates ranging from ~3% CAGR (conservative, IMARC) to ~8.3% CAGR through 2030 (Grand View Research), and iron &amp; steel taking ~65% of demand. Management's own blended estimate on the Q4 call: end-industry volume growth of about 6% — steel ~8%, non-ferrous ~4%, cement in between.</p>
+
+<p>So why is the stock down ~22% over one year? Because the supply side saw the same forecast. <span class="hl-risk">Vesuvius commissioned 250,000 tonnes of new capacity at Visakhapatnam in late 2024; Calderys is ramping the largest greenfield refractory plant ever built in India (Odisha, five production lines, production from late 2025); Monolithisch is expanding; and Chinese import competition persists</span> — while RHIM itself added ~300,000 tonnes via the Dalmia acquisition in 2023. The result is an industry where demand grows 6% a year and capacity grows faster, producing what management bluntly calls "aggressive pricing behaviour" and competitors trying to "fill up their plant at any cost." The entire listed sector has de-rated in sympathy: RHIM −22%, Vesuvius India −21.6%, IFGL −32% over one year.</p>
+
+<p>The moment is interesting precisely because of this tension. The structural demand story is intact and government-anchored — infrastructure capex, urbanisation, supply-chain localisation. But FY26–FY28 is the digestion phase: the window where new capacity floods in ahead of the demand that justifies it, and where the companies with the strongest cost position, stickiest customer relationships and cleanest balance sheets take share from those who merely own kilns. That is the contest this brief evaluates RHIM against.</p>
+
+<div class="takeaway-pill tp-blue"><span class="tp-label">Chapter 1 takeaway</span>India's refractory demand grows ~6% a year toward the 300 MT steel target, but announced rival capacity grows faster through FY27 — volume tailwind, price headwind.</div>
+</section>
+
+<!-- ══ CHAPTER 2 ══ -->
+<section id="ch2" aria-labelledby="ch2-title">
+<div class="sec-header sh-teal">
+  <div class="sec-num">02</div>
+  <div>
+    <div class="sec-eyebrow">Business model · The flywheel</div>
+    <div class="sec-title" id="ch2-title">Selling uptime, not bricks</div>
+  </div>
+</div>
+
+<p>Strip away the metallurgy and RHIM's business is simple: it sells consumables that are a rounding error in the customer's cost sheet but catastrophic if they fail. Refractory linings are typically <span class="hl-key">around 2–3% of a steelmaker's production cost, yet a lining failure stops the entire furnace — so customers buy reliability first and price second, and switching suppliers means re-qualifying products inside a running plant</span>. That asymmetry is the root of the moat.</p>
+
+<p>RHIM is the Indian subsidiary (56.07% held) of RHI Magnesita N.V., the world's largest refractory group, which mines its own magnesite and dolomite and runs 35+ production sites globally. The Indian arm — formerly Orient Refractories — operates nine sites including Bhiwadi (Rajasthan), Visakhapatnam (Andhra Pradesh), Cuttack (Odisha) and the plants acquired from Dalmia Bharat Refractories, serving 700+ customers with roughly a 30% share of the Indian market. The product set spans the full furnace: slide gate plates, tundish nozzles, purging systems, magnesia-carbon bricks, castables and monolithics.</p>
+
+<h3 class="c-teal">The flywheel</h3>
+<p>Revenue compounds through consumption, not projects. Every tonne of steel poured erodes lining; every cement kiln campaign ends in a reline. The flywheel: install base → recurring consumption tied to customer tonnage → total refractory management (TRM) contracts where RHIM staff run the customer's entire refractory operation → deeper process data → higher-value solutions (robotics, digital monitoring, recycling) → harder to displace. The 4PRO platform is the formalisation of this last stage: performance-based long-term agreements bundling products with automation and CO₂-reduction services. Three 4PRO contracts were signed in January 2026 alone, and RHIM deployed India's first fully integrated robotic solution in caster operations during FY26, with two robots now running.</p>
+
+<h3 class="c-teal">What they can do that others cannot</h3>
+<ul class="prose-list">
+  <li>Parent-group access to captive magnesite mining and global R&amp;D — critical, since magnesia raw materials are globally scarce and USD-priced; mines are now being transferred into RHIM's own name at roughly half the market purchase cost.</li>
+  <li>Only player with full-line capability across shaped + unshaped + flow control + services at Indian scale — most rivals are strong in one niche (IFGL in flow control, Calderys in monolithics).</li>
+  <li>Balance-sheet depth to sign multi-year performance contracts and absorb startup costs that smaller rivals cannot carry.</li>
+</ul>
+
+<div class="takeaway-pill tp-teal"><span class="tp-label">Chapter 2 takeaway</span>A recurring-consumable business with qualification lock-in: 30% India share, 700+ customers, and a service layer (TRM/4PRO) that converts brick sales into multi-year contracts.</div>
+</section>
+
+<!-- ══ CHAPTER 2B ══ -->
+<section id="ch2b" aria-labelledby="ch2b-title">
+<div class="sec-header sh-purple">
+  <div class="sec-num">2B</div>
+  <div>
+    <div class="sec-eyebrow">Competitive structure</div>
+    <div class="sec-title" id="ch2b-title">Porter's Five Forces — where the pressure actually sits</div>
+  </div>
+</div>
+
+<div class="table-wrap">
+<table class="data-table">
+  <caption>Porter's Five Forces — RHI Magnesita India, FY26</caption>
+  <thead><tr><th scope="col">Force</th><th scope="col">Rating</th><th scope="col">Specific rationale</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Rivalry intensity</strong></td><td><span class="tag tag-red">HIGH</span></td><td>Calderys (largest-ever India greenfield, Odisha, ramping from late 2025), Vesuvius (+250 KT Vizag), IFGL, Monolithisch and Chinese imports are all adding tonnage into a ~6%-growth market. Management's own words: rivals "try to fill up their plant at any cost." Cement segment already lost share to price warfare.</td></tr>
+    <tr><td><strong>Buyer power</strong></td><td><span class="tag tag-amber">MEDIUM–HIGH</span></td><td>Customers are giants — JSW, Tata Steel, SAIL, UltraTech — with professional procurement. But refractories are ~2–3% of their cost and 100% of uptime; TRM contracts and in-plant qualification create real switching friction. RHIM extracted 1–3% price increases (double-digit in select lines) effective May 2026 even in a glutted market.</td></tr>
+    <tr><td><strong>Supplier power</strong></td><td><span class="tag tag-amber">MEDIUM → falling</span></td><td>Magnesia (fused magnesia, DBM) is China-dominated and USD-priced; Chinese energy costs and freight pushed input costs up in Feb–Mar 2026. Mitigant in progress: captive mines transferred into RHIM's own name at ~half market cost, plus parent-group raw material integration — a structural reduction of this force.</td></tr>
+    <tr><td><strong>Threat of new entrants</strong></td><td><span class="tag tag-amber">MEDIUM</span></td><td>A monolithics plant is cheap to build (see Monolithisch's rapid expansion); a full-line shaped + flow-control + services franchise is not. Customer qualification cycles run quarters-to-years per product per plant. Entry happens at the commodity end — which is exactly where the price war rages.</td></tr>
+    <tr><td><strong>Threat of substitutes</strong></td><td><span class="tag tag-green">VERY LOW</span></td><td>There is no substitute for refractory linings in >1,200°C processes. The only "substitute" is efficiency: longer campaign life reduces consumption per tonne — a threat RHIM monetises itself by selling the performance improvement via 4PRO.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p><strong>Synthesis:</strong> the two forces applying structural pressure are <strong>rivalry</strong> (a capacity glut that peaks through FY27) and <strong>supplier power</strong> (USD-priced Chinese magnesia in a depreciating-rupee world). RHIM's counter-moves map one-to-one: de-commoditisation via 4PRO against rivalry, and captive mining against supplier power. Whether those counters work at the promised pace is the central Ledger question.</p>
+
+<div class="takeaway-pill tp-purple"><span class="tp-label">Chapter 2B takeaway</span>Rivalry and input costs are the two structural squeezes; 4PRO contracts and captive mines are the named antidotes — both now testable quarter by quarter.</div>
+</section>
+
+<!-- ══ CHAPTER 3 ══ -->
+<section id="ch3" aria-labelledby="ch3-title">
+<div class="sec-header sh-blue">
+  <div class="sec-num">03</div>
+  <div>
+    <div class="sec-eyebrow">Vertical stories · One card per engine</div>
+    <div class="sec-title" id="ch3-title">Four engines, running at different speeds</div>
+  </div>
+</div>
+
+<div class="card card-accent ca-blue">
+  <div class="card-eyebrow">Vertical 1 · Steel &amp; ironmaking · ~3/4 of the franchise · Status: RUNNING + RAMPING</div>
+  <h4>The core: ladles, casters, and now coke ovens</h4>
+  <p>Steel is the anchor: FY26 growth came from ladle solutions, electric arc furnace projects, slide-gate flow control and the ironmaking push (MIP, COCO1 and PRA projects). The external catalyst is the National Steel Policy's 300 MT capacity target and ~8% steel output growth. The newest engine is <span class="hl-catalyst">a 30,000+ tonne coke-oven refractory order — two batteries for one of India's largest integrated steel producers — giving an 18-month secured order book, continuous kiln utilisation and fixed-cost absorption</span>. Management counts five more coke-oven batteries coming up in 2–3 years and conservatively expects to win at least two. Crucially, coke-oven bricks are fed by RHIM's newly-transferred captive mines, so this is share gain with a raw-material cost advantage attached.</p>
+</div>
+
+<div class="card card-accent ca-amber">
+  <div class="card-eyebrow">Vertical 2 · Cement &amp; lime · 11% of revenue (down from 13%) · Status: UNDER SIEGE</div>
+  <h4>The battlefield vertical</h4>
+  <p>Cement demand itself is fine — infrastructure spend, housing recovery, GST rationalisation. The problem is supply: rival capacity built over the last 18 months is now in production and being dumped into cement at marginal prices. RHIM's cement revenue share fell from 13% to 11% in FY26 as it walked away from loss-making volume ("we choose to do only the business that makes sense for us"). The counterplay is converting large cement customers from transactional brick supply to solution partnerships — early response described as very good, but unproven in the P&amp;L. Seasonality note: cement's strong season is May–September; October–January is lean, which dented Q4 volumes.</p>
+</div>
+
+<div class="card card-accent ca-teal">
+  <div class="card-eyebrow">Vertical 3 · Industrial non-cement (glass, non-ferrous, energy, petrochem) · Status: RESTARTING</div>
+  <h4>The project-cycle vertical, plus a new door into petrochemicals</h4>
+  <p>FY25/FY26 was described as the worst period for non-cement industrial project orders; that book is now rebuilding, with several conversions in hand. The structural addition is the <strong>Resco acquisition</strong>, which opens the petrochemical refractories segment for FY27 — a new end-industry with India's refinery and cracker capex as the external driver. Also in this bucket: the 51:49 recycling JV with Khemka (announced 25 June 2026) for a greenfield refractory-recycling facility in Odisha, expected Q3 2026 — circular-economy raw material at the doorstep of India's steel belt.</p>
+</div>
+
+<div class="card card-accent ca-purple">
+  <div class="card-eyebrow">Vertical 4 · 4PRO solutions &amp; automation · Status: RAMPING (margin story, not revenue line)</div>
+  <h4>The de-commoditisation engine</h4>
+  <p>4PRO bundles refractories with robotics, digital lining monitoring, scanning, process optimisation, recycling and CO₂ reduction into long-term performance agreements. Three contracts signed in January 2026; India's first fully-integrated caster robot deployed; two robots operational with more planned. The near-term P&amp;L effect is actually negative — startup costs (people, machines) hit other expenses before revenue arrives — but each signed contract converts commodity volume into annuity-like, spec-locked revenue. This vertical is small in rupees and central to the thesis.</p>
+</div>
+
+<div class="takeaway-pill tp-blue"><span class="tp-label">Chapter 3 takeaway</span>Steel/ironmaking carries FY27 (coke-oven order book + captive mines); cement is a managed retreat; petrochem and 4PRO are the optionality.</div>
+</section>
+
+<!-- ══ CHAPTER 4 ══ -->
+<section id="ch4" aria-labelledby="ch4-title">
+<div class="sec-header sh-amber">
+  <div class="sec-num">04</div>
+  <div>
+    <div class="sec-eyebrow">Strategic insight · The one thing</div>
+    <div class="sec-title" id="ch4-title">The impairment is the strategy, not the accident</div>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="label">⚡ The non-obvious insight</div>
+  <p>Read the ₹655 crore goodwill write-off not as a stumble but as a strategy memo. In 2023 RHIM paid up to buy <strong>capacity</strong> — the Dalmia plants — on the thesis that owning Indian tonnage ahead of the 300 MT steel boom was the moat. Three impairments in four years (~₹1,600 Cr cumulative) are management's own accounting admission that <strong>in a market where everyone can build tonnage, tonnage is not a moat</strong>. What the company is building instead is a two-sided replacement: on the cost side, captive mines transferred into its own name at roughly half the market price of magnesite — which flips raw-material inflation from a threat into a weapon, because input inflation raises industry prices while RHIM's own cost stays mined-in-house (the CEO's telling remark: "raw material price increase is good for the industry"). On the revenue side, 4PRO performance contracts that price uptime instead of bricks. <strong>The company the market is valuing is a brick maker in a price war; the company management is building is a mining-backed industrial-services annuity.</strong> The gap between those two descriptions closing — or not — is the whole investment case.</p>
+</div>
+
+<p>The corollary is a discipline test. A tonnage company defends every order; a solutions company walks away from bad business — which RHIM visibly did in cement (share of revenue 13% → 11%). If future quarters show volume defended at collapsing margins, the old thesis is secretly back. If margin recovers on flat-to-modest volume outgrowth, the new thesis is working.</p>
+
+<div class="takeaway-pill"><span class="tp-label">Chapter 4 takeaway</span>Watch whether RHIM behaves like a brick seller (defend volume, bleed margin) or a solutions-and-mining franchise (walk from bad business, rebuild margin) — the impairment says management chose the latter.</div>
+</section>
+
+<!-- ══ CHAPTER 5 ══ -->
+<section id="ch5" aria-labelledby="ch5-title">
+<div class="sec-header sh-green">
+  <div class="sec-num">05</div>
+  <div>
+    <div class="sec-eyebrow">Numbers in context · FY26 consolidated + standalone trend</div>
+    <div class="sec-title" id="ch5-title">Record revenue, compressed margin, fortress balance sheet</div>
+  </div>
+</div>
+
+<p class="lead lead-green">FY26 delivered <span class="hl-number">consolidated revenue of ₹4,000 Cr (+9% YoY) on shipments of 523 kilotons (+5%), adjusted EBITDA of ₹477 Cr at an 11.9% margin (down from 13.7%), adjusted PAT of ₹180 Cr (−10%), and operating cash flow of ₹409 Cr (+9%) — ending the year net cash</span>. Reported PAT is a large loss because of the Q4 goodwill impairment on the Dalmia assets; the operating business is profitable and strongly cash-generative.</p>
+
+<div class="grid-2">
+  <div class="card">
+    <div class="card-eyebrow">FY26 consolidated scorecard</div>
+    <div class="stat-row"><span class="sr-label">Revenue</span><span class="sr-val">₹4,000 Cr · +9% YoY (record)</span></div>
+    <div class="stat-row"><span class="sr-label">Shipment volume</span><span class="sr-val">523 KT · +5% YoY</span></div>
+    <div class="stat-row"><span class="sr-label">Adjusted EBITDA / margin</span><span class="sr-val">₹477 Cr · 11.9% (FY25: 13.7%)</span></div>
+    <div class="stat-row"><span class="sr-label">Adjusted PAT</span><span class="sr-val">₹180 Cr · −10% YoY</span></div>
+    <div class="stat-row"><span class="sr-label">Q4 FY26 revenue / adj EBITDA</span><span class="sr-val">₹932 Cr · ₹113 Cr (12.1%)</span></div>
+    <div class="stat-row"><span class="sr-label">Goodwill impairment (Q4, Dalmia)</span><span class="sr-val">~₹655 Cr non-cash</span></div>
+    <div class="stat-row"><span class="sr-label">CFO / Net debt</span><span class="sr-val">₹409 Cr (+9%) · NET CASH</span></div>
+  </div>
+  <div class="card">
+    <div class="card-eyebrow">Valuation &amp; quality (standalone ratios, Screener)</div>
+    <div class="stat-row"><span class="sr-label">CMP / Market cap</span><span class="sr-val">₹376 · ₹7,769 Cr</span></div>
+    <div class="stat-row"><span class="sr-label">52-week range</span><span class="sr-val">₹323 – ₹538 · 1-yr −22%</span></div>
+    <div class="stat-row"><span class="sr-label">PE on adjusted FY26 PAT</span><span class="sr-val">~43x (reported PE not meaningful)</span></div>
+    <div class="stat-row"><span class="sr-label">ROCE trajectory (standalone)</span><span class="sr-val">15% → 10% → 8% → 7% (FY23→FY26)</span></div>
+    <div class="stat-row"><span class="sr-label">Cash conversion cycle</span><span class="sr-val">102 days (FY25: 125) — improving</span></div>
+    <div class="stat-row"><span class="sr-label">Borrowings / Dividend yield</span><span class="sr-val">₹98 Cr (near debt-free) · 0.66%</span></div>
+    <div class="stat-row"><span class="sr-label">Promoter (RHI Magnesita NV) / pledge</span><span class="sr-val">56.07% steady since Mar-24 · zero pledge</span></div>
+  </div>
+</div>
+
+<div class="chart-card">
+  <div class="chart-title">Standalone quarterly revenue (₹ Cr) and operating margin % — 9 quarters</div>
+  <div class="chart-box"><canvas id="qtrChart" role="img" aria-label="Bar and line chart: quarterly standalone revenue rose from 736 crore in March 2024 to a peak of 903 crore in December 2025 before falling to 786 crore in March 2026, while operating margin declined from 17 percent to 9 percent over the same period."></canvas></div>
+</div>
+
+<div class="chart-card">
+  <div class="chart-title">Annual operating margin % (standalone) vs management EBITDA guidance — the drift made visible</div>
+  <div class="chart-box"><canvas id="marginChart" role="img" aria-label="Line chart: annual standalone operating margin fell from 19 percent in FY22 to 10 percent in FY26, while management margin guidance was cut from 15 to 16 percent, to 14 percent, to 13 percent across recent quarters."></canvas></div>
+</div>
+
+<h3 class="c-green">What the market is pricing in</h3>
+<p>At ~43x adjusted FY26 earnings — versus Vesuvius India at ~35x (mcap ₹9,295 Cr) and IFGL at ~30–33x (mcap ₹1,300 Cr) — the market is paying a leadership premium while the whole sector de-rates. Embedded in the price: successful delivery of the 13% FY27 margin guide (adjusted PAT rebuilding toward ₹260–280 Cr, which would bring the multiple to ~28–30x), volume outgrowth of market +2%, and no fourth impairment. <span class="hl-risk">That is a full price for a business currently earning 7% standalone ROCE in the middle of a capacity war — the margin recovery is not optional at this valuation, it is the valuation.</span></p>
+
+<h3 class="c-coral">Capex timeline card (mandatory)</h3>
+<div class="table-wrap">
+<table class="data-table">
+  <caption>Capex history + announced pipeline — RHIM is in harvest/optimise mode, not an investment supercycle</caption>
+  <thead><tr><th scope="col" class="coral">Year</th><th scope="col" class="coral">Capex</th><th scope="col" class="coral">Milestone / project</th><th scope="col" class="coral">Expected revenue impact</th><th scope="col" class="coral">Funding</th></tr></thead>
+  <tbody>
+    <tr><td class="num">FY23–FY24</td><td class="num">₹768 Cr + ₹650 Cr investing outflow</td><td>Dalmia Bharat Refractories (~300 KT capacity) + Hi-Tech acquisitions — the big inorganic bet</td><td>Delivered revenue (Dalmia line: ₹1,153 Cr FY26) but goodwill impaired thrice</td><td>Shares + internal; borrowings peaked ₹618 Cr FY23, repaid by FY25</td></tr>
+    <tr><td class="num">FY25</td><td class="num">~₹85 Cr net investing</td><td>Consolidation year; debt repayment</td><td>—</td><td>Internal accruals</td></tr>
+    <tr><td class="num">FY26</td><td class="num">~₹135 Cr earmarked (~₹100 Cr on Dalmia refurbishment)</td><td>Dalmia plant modernisation ("were in pathetic situation"), automation, robots 1–2</td><td>Dalmia EBITDA lifted from ~4% at acquisition to 10.8%</td><td>Internal accruals; net cash maintained</td></tr>
+    <tr><td class="num">FY27 (guided)</td><td class="num">₹150 Cr (₹40–50 Cr maintenance)</td><td>4PRO robotics build capex + structural growth capex + Bhiwadi/Jamshedpur; Khemka recycling JV (51%) live Q3 2026</td><td>Coke-oven order execution; recycling feedstock cost benefit</td><td>"Everything from our balance sheet" — internal accruals, no fundraise</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small-note">Red-flag check: capex (₹150 Cr, ~3.7% of revenue) is modest relative to an 18-month secured order book — capacity is not the constraint; pricing is. No sign of capex running ahead of visibility; if anything the company is deliberately under-building while rivals over-build.</p>
+
+<div class="takeaway-pill tp-green"><span class="tp-label">Chapter 5 takeaway</span>Management guided FY27 EBITDA margin to 13% with market+2% volume growth; at ~43x adjusted earnings, delivering that guide is the entire bull case.</div>
+</section>
+
+<!-- ══ CHAPTER 6 ══ -->
+<section id="ch6" aria-labelledby="ch6-title">
+<div class="sec-header sh-red">
+  <div class="sec-num">06</div>
+  <div>
+    <div class="sec-eyebrow">Risk register · Eyes open</div>
+    <div class="sec-title" id="ch6-title">Five specific ways this goes wrong</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="risk-row">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div class="risk-body">
+      <div class="risk-name">1 · The price war outlasts the guidance</div>
+      <div class="risk-what">Calderys' Odisha plant — the largest greenfield in Indian refractory history — only began production in late 2025 and will spend FY27 filling lines "at any cost," exactly when RHIM needs 1–3% price increases to stick. If realised pricing slips, the 13% margin guide fails for a fourth consecutive time.</div>
+      <div class="risk-signal">Signal: gross margin trend Q1–Q2 FY27; any new mention of "pricing pressure" offsetting announced hikes.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div class="risk-body">
+      <div class="risk-name">2 · A fourth impairment</div>
+      <div class="risk-what">~₹1,600 Cr has been written off in three tranches (FY23 ~₹649 Cr, FY24 ~₹309 Cr, FY26 ~₹655 Cr) against the 2023 acquisitions. Management now states "no further restructuring is required… with utmost confidence." Residual goodwill/investment value remains on the books (standalone investments ₹1,392 Cr); another export-demand or FX deterioration could force a fourth cut and destroy that specific promise.</div>
+      <div class="risk-signal">Signal: export volume commentary; INR/USD beyond ~₹90; any auditor emphasis-of-matter in H1 FY27.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div class="risk-body">
+      <div class="risk-name">3 · Magnesia cost squeeze with a lag</div>
+      <div class="risk-what">Fused magnesia and DBM costs rose on Chinese energy prices and freight (Middle East disruption), hitting Feb–Mar 2026 shipments; high-cost inventory is still flowing through the P&amp;L. Raw materials are USD-denominated against a depreciating rupee. The mines transfer mitigates this only for magnesite-based lines — alumina and imported grades remain exposed.</div>
+      <div class="risk-signal">Signal: raw-material-to-revenue ratio; inventory days (138 in FY26) failing to normalise; freight commentary.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div class="risk-body">
+      <div class="risk-name">4 · Coke-oven concentration and the 18-month cliff</div>
+      <div class="risk-what">The fixed-cost-absorption story for FY27 leans heavily on one 30,000+ tonne coke-oven order with one large customer. Post the 18-month book, continuity requires winning ≥2 of the 5 future batteries — a management expectation, not a contract. A loss to Chinese or domestic bidders re-opens the fixed-cost hole in ironmaking.</div>
+      <div class="risk-signal">Signal: new battery award announcements FY27–FY28; ironmaking segment commentary each call.</div>
+    </div>
+  </div>
+  <div class="risk-row">
+    <i class="ti ti-alert-triangle risk-icon" aria-hidden="true"></i>
+    <div class="risk-body">
+      <div class="risk-name">5 · Steel-cycle deceleration under the target</div>
+      <div class="risk-what">The 300 MT policy target is not a contract either: FY27 capacity growth is already moderating (~6%) as steelmakers turn cautious on margins and geopolitics, and RBI has trimmed GDP growth to 6.9%. Refractory demand follows actual furnace-hours, not policy documents — a steel capex pause flows straight into RHIM volumes with a one-quarter lag.</div>
+      <div class="risk-signal">Signal: India crude steel monthly run-rate vs the ~183 MT FY27 projection; customer capex deferral news.</div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill tp-red"><span class="tp-label">Chapter 6 takeaway</span>The top three risks — price war, fourth impairment, input costs — all compress the same line: the 13% margin guide has no slack for any of them.</div>
+</section>
+
+<!-- ══ CHAPTER 7 ══ -->
+<section id="ch7" aria-labelledby="ch7-title">
+<div class="sec-header sh-teal">
+  <div class="sec-num">07</div>
+  <div>
+    <div class="sec-eyebrow">Watch signals · Check within 5 minutes of each concall</div>
+    <div class="sec-title" id="ch7-title">Five dials for FY27</div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="watch-row">
+    <span class="watch-dot wd-green" aria-hidden="true"></span>
+    <div class="watch-body">
+      <div class="watch-name">1 · Quarterly EBITDA margin vs the 13% full-year guide</div>
+      <div class="watch-desc">The single most important dial. Management: full-year 13%, Q1 "stronger."</div>
+      <div class="watch-thresholds"><span class="th-green">GREEN: quarter ≥12.5%, trajectory to 13%+</span><br><span class="th-amber">AMBER: 11.5–12.5% with credible seasonal explanation</span><br><span class="th-red">RED: &lt;11.5% any quarter, or the annual guide cut below 13% — that would be the fourth reset</span></div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot wd-teal" aria-hidden="true"></span>
+    <div class="watch-body">
+      <div class="watch-name">2 · Volume outgrowth: RHIM shipments vs blended market growth</div>
+      <div class="watch-desc">Promise: market +2 pts (i.e., ~9% vs ~6–7% market). FY26 actual: market 6%, RHIM 5% — a miss of the same promise.</div>
+      <div class="watch-thresholds"><span class="th-green">GREEN: quarterly volume growth ≥ market +2 pts; Q1 revenue back above ₹1,000 Cr</span><br><span class="th-amber">AMBER: at par with market</span><br><span class="th-red">RED: below market for 2 consecutive quarters — share loss, not seasonality</span></div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot wd-amber" aria-hidden="true"></span>
+    <div class="watch-body">
+      <div class="watch-name">3 · Price-increase realisation (effective May 2026)</div>
+      <div class="watch-desc">1–3% announced (double-digit in select lines) against rising input costs; visible in gross margin.</div>
+      <div class="watch-thresholds"><span class="th-green">GREEN: gross margin flat-to-up QoQ despite magnesia inflation</span><br><span class="th-amber">AMBER: "partial realisation" language, gross margin −50 bps</span><br><span class="th-red">RED: gross margin down &gt;100 bps QoQ, or hikes rolled back — pass-through claim broken</span></div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot wd-navy" aria-hidden="true"></span>
+    <div class="watch-body">
+      <div class="watch-name">4 · Coke-oven pipeline conversion + mines benefit</div>
+      <div class="watch-desc">Execution of the 30,000 t order; wins among the 5 upcoming batteries; mining cost benefit appearing in ironmaking margins.</div>
+      <div class="watch-thresholds"><span class="th-green">GREEN: ≥1 new battery award by Q4 FY27; ironmaking margin commentary positive</span><br><span class="th-amber">AMBER: order executing, no new wins announced</span><br><span class="th-red">RED: battery award lost to competitor, or coke-oven order rescheduled by customer</span></div>
+    </div>
+  </div>
+  <div class="watch-row">
+    <span class="watch-dot wd-purple" aria-hidden="true"></span>
+    <div class="watch-body">
+      <div class="watch-name">5 · De-commoditisation proof: 4PRO count + cement share + no fourth impairment</div>
+      <div class="watch-desc">4PRO base = 3 contracts (Jan 2026); cement = 11% of revenue; Dalmia margin = 10.8%; "no further restructuring" pledged.</div>
+      <div class="watch-thresholds"><span class="th-green">GREEN: 4PRO count rising, cement share ≥11%, Dalmia margin ≥10.8%, zero exceptional items</span><br><span class="th-amber">AMBER: 4PRO static; cement share 10–11%</span><br><span class="th-red">RED: any new impairment/exceptional charge, or Dalmia margin back below 10% — the "restructuring done" promise breaks</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="takeaway-pill tp-teal"><span class="tp-label">Chapter 7 takeaway</span>One number rules FY27: quarterly EBITDA margin against 13% — every other signal explains why it did or didn't get there.</div>
+</section>
+
+<!-- ══ VERDICT ══ -->
+<section id="verdict" aria-labelledby="verdict-title">
+<div class="verdict-box">
+  <div class="label" id="verdict-title">Verdict · Story stage</div>
+  <span class="stage-badge">RESET CHAPTER — MID-STORY</span>
+  <p><strong>Tailwinds:</strong> the demand architecture is real and named — National Steel Policy's 300 MT capacity target, ~8% steel output growth, refinery/petrochem entry via Resco — but it is shared with a capacity-flooded supply side. <strong>Quality signal:</strong> split. Cash quality is excellent (CFO ₹409 Cr, net cash, CCC down to 102 days, zero pledge, zero dilution); earnings quality is bruised (margin 13.7% → 11.9%, standalone ROCE at 7%, third impairment). <strong>Near-term catalyst:</strong> the Q1 FY27 print (~Aug 2026) — management has staked credibility on a stronger-than-13% quarter with ₹1,000+ Cr revenue as price hikes land and the coke-oven order absorbs fixed cost. <strong>Valuation:</strong> ~43x adjusted FY26 earnings, a premium to Vesuvius (~35x) and IFGL (~30x); justified only if the 13% guide holds and PAT rebuilds toward ₹260 Cr+ — the recovery is already in the price. <strong>Story stage:</strong> mid-story, in a deliberate reset: the tonnage-acquisition thesis has been written off and a mining-plus-solutions thesis installed in its place. The next two quarters are the referendum — this is a "prove-it" holding, not a discovery story.</p>
+</div>
+</section>
+
+<hr class="divider">
+
+<!-- ═══════════════ THE LEDGER ═══════════════ -->
+<section id="ledger" aria-labelledby="ledger-title" class="page-break">
+<header class="masthead" style="border-radius:10px; padding:44px 48px 36px;">
+  <div class="mh-eyebrow">The Ledger · Management Credibility Audit · NSE:RHIM · Q4 FY26 calibration</div>
+  <h1 id="ledger-title" style="font-size:38px;">The Ledger: RHI Magnesita India</h1>
+  <p class="mh-sub">Promises made vs promises kept — six pillars, the chain of capital, active flags, and a credibility tier. Baseline built from the Q4 FY26 concall (30 May 2026) plus filings history.</p>
+  <div class="mh-meta">
+    <span class="meta-chip">TIER B− · WATCH</span>
+    <span class="meta-chip">4 ACTIVE FLAGS · 1 CRITICAL</span>
+    <span class="meta-chip">CAPITAL STRUCTURE: CLEAN</span>
+  </div>
+</header>
+
+<h3 class="c-amber" style="margin-top:34px;">L1 · The chain of capital — where RHIM's chain holds and where it broke</h3>
+<div class="chain-flow" role="list" aria-label="Chain of capital status for RHIM">
+  <div class="chain-node cn-ok" role="listitem"><div class="chain-num">①</div><div class="chain-label">Capex deployed</div><div class="chain-detail">₹135 Cr FY26, on plan, internal</div><div class="chain-status cs-ok">● HOLDING</div></div>
+  <div class="chain-node cn-ok" role="listitem"><div class="chain-num">②</div><div class="chain-label">Capacity created</div><div class="chain-detail">Dalmia refurb done; robots live</div><div class="chain-status cs-ok">● HOLDING</div></div>
+  <div class="chain-node cn-warn" role="listitem"><div class="chain-num">③</div><div class="chain-label">Utilisation ramp</div><div class="chain-detail">Vol +5% vs promised market+2 (~9%)</div><div class="chain-status cs-warn">⚠ BEHIND</div></div>
+  <div class="chain-node cn-bad" role="listitem"><div class="chain-num">④</div><div class="chain-label">Margin expansion</div><div class="chain-detail">13.7% → 11.9%; guide cut ×3</div><div class="chain-status cs-bad">✗ BROKEN — the break point</div></div>
+  <div class="chain-node cn-ok" role="listitem"><div class="chain-num">⑤</div><div class="chain-label">Cash flow improves</div><div class="chain-detail">CFO ₹409 Cr, +9%</div><div class="chain-status cs-ok">● HOLDING</div></div>
+  <div class="chain-node cn-ok" role="listitem"><div class="chain-num">⑥</div><div class="chain-label">Debt reduces</div><div class="chain-detail">Net cash achieved</div><div class="chain-status cs-ok">● DELIVERED</div></div>
+  <div class="chain-node cn-neutral" role="listitem"><div class="chain-num">⑦</div><div class="chain-label">New cycle self-funded</div><div class="chain-detail">FY27 ₹150 Cr from balance sheet</div><div class="chain-status cs-na">◌ CREDIBLE</div></div>
+</div>
+<p class="small-note">Unusual pattern: RHIM's chain breaks in the middle (link ④, margins) while both ends hold. Cash and capital discipline are genuinely strong — working-capital release funds the cash flow even as margins fall. The market prices the broken link; the Ledger's job is to test whether the FY27 repair mechanisms (price hikes, mines, coke-oven absorption, 4PRO) are real.</p>
+
+<h3 class="c-amber">L2 · Six-pillar framework — RHIM readings</h3>
+<div class="pillars">
+  <div class="pillar-card pc-promise"><div class="pillar-name">📋 Promise Register</div><div class="pillar-desc">10 tracked commitments extracted from the Q4 FY26 call — margin, volume, price, capex, coke-oven, impairment-finality. See table L3.</div></div>
+  <div class="pillar-card pc-tone"><div class="pillar-name">🔬 Tone Decoder</div><div class="pillar-desc">Confident, number-rich, but with an external-attribution habit: misses framed as geopolitics/FX/competition; impairment framed as "prudent view," not thesis failure. One direct refusal to quantify (ironmaking fixed-cost carve-out).</div></div>
+  <div class="pillar-card pc-exec"><div class="pillar-name">⚖️ Execution Delta</div><div class="pillar-desc">FY26 scorecard: revenue/cash/deleverage DELIVERED; volume-outgrowth MISS; margin guide DRIFTED (three cuts). Mixed record with a clear pattern — financial hygiene kept, P&amp;L ambition missed.</div></div>
+  <div class="pillar-card pc-capex"><div class="pillar-name">🏗️ Capex Timeline</div><div class="pillar-desc">Clean. Small, on-schedule, internally funded. No completion drift, no dark capex (₹135 Cr spend vs announced plans aligns). Khemka JV adds a Q3 2026 milestone to track.</div></div>
+  <div class="pillar-card pc-margin"><div class="pillar-name">📈 Margin Tracker</div><div class="pillar-desc">The problem pillar. Floor drift confirmed: 15–16% → 14% → 13% guidance across quarters, called out by an analyst on the call itself. Mechanisms now swapped to new, testable ones. See L4.</div></div>
+  <div class="pillar-card pc-capital"><div class="pillar-name">🏦 Capital Structure</div><div class="pillar-desc">Exemplary. Net cash, zero equity dilution since 2023 merger issuances, promoter 56.07% unchanged 9 quarters, zero pledge, CCC improved 125→102 days (no working-capital masking — genuine release).</div></div>
+</div>
+
+<h3 class="c-amber">L3 · Promise Register — Q4 FY26 concall extraction (baseline for FY27 tracking)</h3>
+<div class="table-wrap">
+<table class="data-table">
+  <caption>Every forward-looking commitment, tagged; status column updates each quarter</caption>
+  <thead><tr><th scope="col">#</th><th scope="col">Promise (management's framing)</th><th scope="col">Type</th><th scope="col">Deadline</th><th scope="col">Falsifiable test</th><th scope="col">Status at baseline</th></tr></thead>
+  <tbody>
+    <tr><td class="num">P1</td><td>"For next year 13% EBITDA… full year, please take the number as 13%"</td><td><span class="tag tag-green">Margin · Hard</span></td><td class="num">FY27</td><td>FY27 adjusted EBITDA margin ≥13.0%</td><td><span class="tag tag-navy">OPEN — 4th version of this guide</span></td></tr>
+    <tr><td class="num">P2</td><td>"Q1 we believe should be a stronger quarter" + revenue back to "1,000 plus"</td><td><span class="tag tag-red">Revenue · Hard</span></td><td class="num">Q1 FY27</td><td>Q1 revenue ≥₹1,000 Cr AND margin &gt;12.1% (Q4 level)</td><td><span class="tag tag-navy">OPEN — first checkpoint Aug 2026</span></td></tr>
+    <tr><td class="num">P3</td><td>Volume growth of market +2 pts ("if market grows 6–7%, we grow 9%")</td><td><span class="tag tag-red">Growth · Hard</span></td><td class="num">FY27</td><td>Shipment growth ≥ blended market +2 pts</td><td><span class="tag tag-amber">OPEN — identical FY26 promise MISSED (mkt 6%, RHIM 5%)</span></td></tr>
+    <tr><td class="num">P4</td><td>Price increases of 1–3% (double-digit in select lines) effective May 2026; "quite successful in receiving most"</td><td><span class="tag tag-green">Margin mechanism</span></td><td class="num">Q1–Q2 FY27</td><td>Gross margin holds/expands despite magnesia inflation</td><td><span class="tag tag-navy">OPEN</span></td></tr>
+    <tr><td class="num">P5</td><td>"No further restructuring is required… it is all cleaned… with utmost confidence"</td><td><span class="tag tag-purple">Balance-sheet finality</span></td><td class="num">Standing</td><td>Zero new impairment/exceptional restructuring charges</td><td><span class="tag tag-amber">OPEN — high-stakes: 3 prior impairments</span></td></tr>
+    <tr><td class="num">P6</td><td>Coke-oven: 18-month order book keeps lines full; expect ≥2 of the 5 upcoming batteries; "this will continue for next three, four years"</td><td><span class="tag tag-blue">Order book</span></td><td class="num">FY27–FY29</td><td>≥1 new battery award by end-FY27; ironmaking revenue sustained post-18-months</td><td><span class="tag tag-navy">OPEN</span></td></tr>
+    <tr><td class="num">P7</td><td>Mines transferred to own name → raw material at ~half market cost → "better margins"</td><td><span class="tag tag-green">Margin mechanism</span></td><td class="num">FY27</td><td>Ironmaking/basic-brick margin visibly improves; RM/revenue ratio falls in magnesite lines</td><td><span class="tag tag-navy">OPEN</span></td></tr>
+    <tr><td class="num">P8</td><td>Capex ₹150 Cr FY27 (₹40–50 Cr maintenance), "everything funded from our balance sheet"</td><td><span class="tag tag-teal">Capex + funding</span></td><td class="num">FY27</td><td>Cash-flow capex ≈₹150 Cr; zero new borrowings/fundraise</td><td><span class="tag tag-navy">OPEN — high prior credibility on this type</span></td></tr>
+    <tr><td class="num">P9</td><td>Petrochemical segment entry via Resco acquisition contributes in FY27</td><td><span class="tag tag-purple">New vertical</span></td><td class="num">FY27</td><td>Petrochem orders/revenue named in commentary</td><td><span class="tag tag-navy">OPEN</span></td></tr>
+    <tr><td class="num">P10</td><td>Dalmia assets: sustain double-digit EBITDA (10.8% FY26, from ~4% at acquisition); continue de-commoditising cement</td><td><span class="tag tag-green">Margin · Segment</span></td><td class="num">FY27</td><td>Dalmia margin ≥10.8%; cement share stabilises ≥11%</td><td><span class="tag tag-navy">OPEN</span></td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 class="c-amber">L4 · Margin Expansion Tracker — the guidance drift record</h3>
+<div class="table-wrap">
+<table class="data-table">
+  <caption>Stated margin guidance vs delivered — the floor-drift evidence chain</caption>
+  <thead><tr><th scope="col" class="green">When stated</th><th scope="col" class="green">Guidance / claim</th><th scope="col" class="green">What happened</th><th scope="col" class="green">Ledger reading</th></tr></thead>
+  <tbody>
+    <tr><td class="num">FY25 era</td><td>EBITDA margin ambition 15–16%</td><td>FY25 delivered 13.7%</td><td><span class="tag tag-amber">Reset 1</span></td></tr>
+    <tr><td class="num">Mid-FY26</td><td>Guide lowered to ~14%</td><td>H2 FY26 ran 11–12%</td><td><span class="tag tag-amber">Reset 2</span></td></tr>
+    <tr><td class="num">Q4 FY26 call (May 2026)</td><td>"13% for FY27, full year" — Q1 stronger</td><td>FY26 closed at 11.9%</td><td><span class="tag tag-red">Reset 3 — analyst asked directly: "Where do we see the end of this?"</span></td></tr>
+    <tr><td class="num">Mechanism swap</td><td>Old mechanisms: operating leverage + mix. New mechanisms: price hikes (May-26), captive-mine cost, coke-oven fixed-cost absorption, 4PRO realisation, non-cement project recovery</td><td>Untested as a bundle</td><td><span class="tag tag-navy">Testable from Q1 FY27 — each mechanism has a named signal in Ch.7</span></td></tr>
+  </tbody>
+</table>
+</div>
+<p class="small-note">Management's own defence, verbatim in spirit: without the initiatives, margins "might have gone to 11%, 10% also." That is a floor-drift statement — the reference point has moved from defending 15% to avoiding 10%. The FY27 test is whether 13% is a floor or the fourth ceiling.</p>
+
+<h3 class="c-amber">L5 · Capital Structure Tracker — the clean sheet</h3>
+<div class="grid-2">
+  <div class="card card-accent ca-green">
+    <div class="card-eyebrow">Verified clean · FY26</div>
+    <div class="stat-row"><span class="sr-label">Net debt / EBITDA</span><span class="sr-val">Net cash (from 0.1x)</span></div>
+    <div class="stat-row"><span class="sr-label">Gross borrowings</span><span class="sr-val">₹98 Cr (peak ₹618 Cr FY23 — repaid)</span></div>
+    <div class="stat-row"><span class="sr-label">Equity shares outstanding</span><span class="sr-val">Unchanged since FY24 — zero dilution</span></div>
+    <div class="stat-row"><span class="sr-label">Promoter holding / pledge</span><span class="sr-val">56.07% flat for 9 quarters · 0% pledged</span></div>
+    <div class="stat-row"><span class="sr-label">CFO / capex coverage</span><span class="sr-val">₹409 Cr vs ₹135 Cr ≈ 3.0x</span></div>
+    <div class="stat-row"><span class="sr-label">Working-capital masking check</span><span class="sr-val">None — CCC improved 125 → 102 days</span></div>
+  </div>
+  <div class="card card-accent ca-navy">
+    <div class="card-eyebrow">Historical context to carry forward</div>
+    <p style="font-size:13px;">Promoter holding fell 70.19% → 56.07% between FY22 and FY24 — but this was the acquisition share-swaps (Dalmia consideration) plus stake sale to restore minimum public shareholding, not distress selling; it has been rock-steady since. The capital-structure pillar is RHIM's strongest credibility asset: every funding claim made since FY24 ("internal accruals," "no big transactions") has been kept. This earns the benefit of the doubt on P8.</p>
+  </div>
+</div>
+
+<h3 class="c-amber">L6 · Active red flags — and what's explicitly clean</h3>
+<div class="redflag-grid">
+  <div class="redflag-card rf-critical">
+    <div class="redflag-name"><i class="ti ti-flag" aria-hidden="true" style="color:var(--red);"></i> FLOOR DRIFT — margin guidance <span class="tag tag-red">CRITICAL · ACTIVE</span></div>
+    <div class="redflag-what">Three consecutive downward resets of the "sustainable" EBITDA margin (15–16% → 14% → 13%) inside ~12 months, each attributed to external conditions. An analyst named the pattern live on the Q4 call.</div>
+    <div class="redflag-signal">Escalates to thesis-breaking if the 13% FY27 guide is cut. Resolves if two consecutive quarters print ≥12.5% with FY guide intact.</div>
+  </div>
+  <div class="redflag-card rf-warning">
+    <div class="redflag-name"><i class="ti ti-alert-triangle" aria-hidden="true" style="color:var(--amber);"></i> EXECUTION MISS — volume outgrowth <span class="tag tag-amber">WARNING · ACTIVE</span></div>
+    <div class="redflag-what">FY26 promise of market+2 pts volume growth delivered market−1 (5% vs 6%). The identical promise has been re-issued for FY27 without acknowledging the prior miss as a miss (framed as Q4 cement seasonality).</div>
+    <div class="redflag-signal">Watch Q1–Q2 FY27 shipment growth vs steel/cement output data. A second consecutive annual miss upgrades this to critical.</div>
+  </div>
+  <div class="redflag-card rf-warning">
+    <div class="redflag-name"><i class="ti ti-alert-triangle" aria-hidden="true" style="color:var(--amber);"></i> SERIAL IMPAIRMENT — capital allocation <span class="tag tag-amber">WARNING · ACTIVE</span></div>
+    <div class="redflag-what">Three goodwill/investment impairments in four fiscal years (~₹1,600 Cr cumulative) against the 2023 acquisitions — each presented as prudent and final. "No further restructuring, utmost confidence" is now a live, binary promise (P5).</div>
+    <div class="redflag-signal">Any fourth exceptional charge is an automatic tier downgrade. Conversely, four clean quarters materially rehabilitate this flag.</div>
+  </div>
+  <div class="redflag-card rf-watch">
+    <div class="redflag-name"><i class="ti ti-eye" aria-hidden="true" style="color:var(--navy);"></i> ONE-TIME ETERNAL + ATTRIBUTION SHIFT <span class="tag tag-navy">WATCH</span></div>
+    <div class="redflag-what">Q4 other-expenses included "one-off" legal/mines-transfer and acquisition-closure costs, alongside recurring 4PRO startup costs and "geopolitical" freight. Misses are consistently attributed externally (FX, Middle East, competition). Not yet a 3-quarter pattern — logged for counting.</div>
+    <div class="redflag-signal">Count "one-off/exceptional" mentions each quarter; 3+ consecutive appearances of the same category converts this to a warning flag.</div>
+  </div>
+  <div class="redflag-card rf-clean">
+    <div class="redflag-name"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--green);"></i> CAPITAL STRUCTURE <span class="tag tag-green">CLEAN</span></div>
+    <div class="redflag-what">No stealth dilution, no funding flips, no working-capital masking, no promoter pledge, no refinancing spin. Deleveraging promise delivered ahead of plan (net cash).</div>
+    <div class="redflag-signal">Standing verification each quarter via shareholding + pledging disclosures and cash-flow statement.</div>
+  </div>
+  <div class="redflag-card rf-clean">
+    <div class="redflag-name"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--green);"></i> CAPEX EXECUTION <span class="tag tag-green">CLEAN</span></div>
+    <div class="redflag-what">No completion drift, no budget inflation, no dark capex. Spend is modest, explained, and internally funded. Khemka recycling JV (Q3 2026 target) becomes the first dated milestone to track.</div>
+    <div class="redflag-signal">Khemka facility operational by Q3 2026 as announced = continued clean status.</div>
+  </div>
+</div>
+
+<h3 class="c-amber">L7 · Credibility score — seven dimensions</h3>
+<div class="score-hero">
+  <div class="tier-badge" aria-label="Credibility tier B minus">B−</div>
+  <div class="score-sub"><strong>Tier B− · Credible custodian, unreliable forecaster — WATCH status.</strong> The pattern is unusually clean to read: everything this management controls directly (cash, debt, dilution, capex, working capital) has been delivered, often early. Everything that depends on the market (margins, volume outgrowth, acquisition value) has been over-promised and reset. Trust the balance sheet commentary; discount the P&amp;L guidance by one notch until the 13% guide survives two quarters.</div>
+</div>
+<div class="table-wrap">
+<table class="data-table">
+  <thead><tr><th scope="col">Dimension</th><th scope="col">Weight</th><th scope="col">Reading</th><th scope="col">Evidence</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Promise hit rate</strong></td><td class="num">25%</td><td><span class="tag tag-amber">WEAK-MIXED</span></td><td>Delivered: revenue growth, CFO, net cash, Dalmia turnaround to 10.8%. Missed: margin guide ×3, FY26 volume outgrowth.</td></tr>
+    <tr><td><strong>Capex execution</strong></td><td class="num">20%</td><td><span class="tag tag-green">STRONG</span></td><td>On-budget, on-time, internally funded; no drift or dark capex detected.</td></tr>
+    <tr><td><strong>Margin mechanism fidelity</strong></td><td class="num">15%</td><td><span class="tag tag-red">NOT WORKING (old) / UNTESTED (new)</span></td><td>Operating-leverage/mix story failed at claimed pace; replaced by mines + price + coke-oven absorption — verifiable from Q1 FY27.</td></tr>
+    <tr><td><strong>Capital structure integrity</strong></td><td class="num">15%</td><td><span class="tag tag-green">CLEAN</span></td><td>Net cash, zero dilution, zero pledge, CCC genuinely improved.</td></tr>
+    <tr><td><strong>Specificity &amp; attribution</strong></td><td class="num">15%</td><td><span class="tag tag-amber">MIXED</span></td><td>Numbers freely given (segment revenue, margins, price-hike ranges); but misses externally attributed and impairment framed as prudence rather than thesis error.</td></tr>
+    <tr><td><strong>Q&amp;A quality</strong></td><td class="num">10%</td><td><span class="tag tag-amber">MIXED</span></td><td>Mostly direct; one explicit refusal (ironmaking fixed-cost carve-out: "we'll not do that"). The floor-drift question was answered with candour about the 10–11% counterfactual — revealing, if unflattering.</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3 class="c-amber">L8 · Brief integration map + the 8th line</h3>
+<div class="grid-3">
+  <div class="card"><div class="card-eyebrow">→ Ch.5 Numbers</div><p style="font-size:12.8px;">Margin guidance-vs-actual chart embedded; capex ledger carries status badges. Next quarter: append Q1 FY27 column, update P1–P4 status.</p></div>
+  <div class="card"><div class="card-eyebrow">→ Ch.6 Risks</div><p style="font-size:12.8px;">Risks 1, 2 and 4 are Ledger-derived (floor drift, fourth impairment, coke-oven concentration). Risk severity re-ranks if any flag escalates.</p></div>
+  <div class="card"><div class="card-eyebrow">→ Ch.7 Watch signals</div><p style="font-size:12.8px;">Signals 1, 3, 5 are direct Ledger tests of P1, P4, P5/P10. Green on all three for two quarters = tier upgrade path to B.</p></div>
+</div>
+<blockquote>Quick-Scan 8th line (live): 🗒 MGMT — Tier B− · Active flags: margin floor drift (critical), volume-outgrowth miss, serial goodwill impairment, one-time-eternal watch · Clean: capital structure, capex execution.</blockquote>
+</section>
+
+<!-- ══ HIGHLIGHT INDEX — always expanded ══ -->
+<details id="highlight-index" open aria-label="All highlights at a glance">
+  <summary>📌 All Highlights at a Glance</summary>
+  <ol><!-- auto-populated by script at load --></ol>
+</details>
+
+<p class="small-note" style="margin-top:18px;">Sources: RHI Magnesita India Q4 FY26 earnings call (30 May 2026, CMD Parmod Sagar &amp; CFO), BSE filings, Screener.in standalone financials, sector research (IMARC, Grand View, Mordor, BigMint). Figures cross-referenced; consolidated adjusted figures per management, standalone per exchange filings. This is a personal research brief, not investment advice. Baseline: Q4 FY26 · Next update trigger: Q1 FY27 results (~Aug 2026).</p>
+
+</main>
+
+<footer>
+  <span>NSE:RHIM · INVESTOR BRIEF + THE LEDGER · Q4 FY26</span>
+  <span>TIER B− · RESET CHAPTER</span>
+  <span>PERSONAL RESEARCH · 02 JUL 2026</span>
+</footer>
+
+<script>
+// ── Theme toggle with localStorage ──
+(function(){
+  const KEY='rhim-theme';
+  const root=document.documentElement;
+  const btn=document.getElementById('themeToggle');
+  const lbl=document.getElementById('themeLabel');
+  function apply(t){ root.setAttribute('data-theme',t); lbl.textContent = t==='light'?'Night':'Day';
+    btn.querySelector('i').className = t==='light'?'ti ti-moon':'ti ti-sun';
+    if(window._charts){ window._charts.forEach(c=>{ restyleChart(c); c.update(); }); } }
+  let saved='light';
+  try{ saved=localStorage.getItem(KEY)||'light'; }catch(e){}
+  apply(saved);
+  btn.addEventListener('click',()=>{ const t=root.getAttribute('data-theme')==='light'?'dark':'light';
+    try{ localStorage.setItem(KEY,t); }catch(e){} apply(t); });
+})();
+
+// ── Highlight index auto-populate ──
+document.addEventListener('DOMContentLoaded', () => {
+  const index = document.querySelector('#highlight-index ol');
+  if (!index) return;
+  document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+    const li = document.createElement('li');
+    let txt = el.textContent.trim().replace(/^\s*Chapter\s+\S+\s+takeaway\s*/i,'');
+    li.textContent = txt;
+    const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+  // keep quick-scan and index open always (defensive)
+  const hi=document.getElementById('highlight-index'); if(hi) hi.setAttribute('open','');
+});
+
+// ── Charts ──
+function cssVar(n){ return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+function restyleChart(c){
+  const ink=cssVar('--text'), rule=cssVar('--rule');
+  c.options.scales.x.ticks.color=ink; c.options.scales.x.grid.color=rule;
+  Object.keys(c.options.scales).forEach(k=>{ if(k!=='x'){ c.options.scales[k].ticks.color=ink; if(c.options.scales[k].grid) c.options.scales[k].grid.color=rule; }});
+  if(c.options.plugins.legend) c.options.plugins.legend.labels.color=ink;
+}
+window._charts=[];
+document.addEventListener('DOMContentLoaded', () => {
+  if(typeof Chart==='undefined') return;
+  const ink=cssVar('--text'), rule=cssVar('--rule');
+  const blue=cssVar('--blue'), amber=cssVar('--amber'), red=cssVar('--red'), green=cssVar('--green');
+
+  // Quarterly revenue + OPM (standalone, Screener)
+  const q=document.getElementById('qtrChart');
+  if(q){ window._charts.push(new Chart(q,{
+    data:{ labels:['Mar-24','Jun-24','Sep-24','Dec-24','Mar-25','Jun-25','Sep-25','Dec-25','Mar-26'],
+      datasets:[
+        {type:'bar',label:'Revenue ₹Cr (standalone)',data:[736,701,661,774,755,805,862,903,786],backgroundColor:blue+'B3',borderRadius:3,yAxisID:'y'},
+        {type:'line',label:'OPM %',data:[17,18,13,12,10,10,9,13,9],borderColor:amber,backgroundColor:amber,tension:0.3,pointRadius:4,yAxisID:'y1'}
+      ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{labels:{color:ink,font:{family:'DM Sans',size:11}}} },
+      scales:{ x:{ticks:{color:ink,font:{size:10}},grid:{color:rule}},
+        y:{position:'left',ticks:{color:ink,font:{size:10}},grid:{color:rule},title:{display:true,text:'₹ Cr',color:ink,font:{size:10}}},
+        y1:{position:'right',min:0,max:20,ticks:{color:ink,font:{size:10},callback:v=>v+'%'},grid:{drawOnChartArea:false}} } }
+  }));}
+
+  // Annual OPM vs guidance drift
+  const m=document.getElementById('marginChart');
+  if(m){ window._charts.push(new Chart(m,{
+    type:'line',
+    data:{ labels:['FY22','FY23','FY24','FY25','FY26','FY27E'],
+      datasets:[
+        {label:'Delivered OPM % (standalone)',data:[19,15,15,13,10,null],borderColor:blue,backgroundColor:blue,tension:0.25,pointRadius:4},
+        {label:'Guidance path (adj EBITDA %)',data:[null,null,15.5,14,13.7,13],borderColor:red,borderDash:[6,4],backgroundColor:red,tension:0.25,pointRadius:4},
+        {label:'FY27 guide: 13%',data:[null,null,null,null,11.9,13],borderColor:green,borderDash:[2,3],backgroundColor:green,pointRadius:4}
+      ]},
+    options:{ responsive:true, maintainAspectRatio:false,
+      plugins:{ legend:{labels:{color:ink,font:{family:'DM Sans',size:11}}} },
+      scales:{ x:{ticks:{color:ink,font:{size:10}},grid:{color:rule}},
+        y:{min:8,max:22,ticks:{color:ink,font:{size:10},callback:v=>v+'%'},grid:{color:rule}} } }
+  }));}
+});
+</script>
+</body>
+</html>
