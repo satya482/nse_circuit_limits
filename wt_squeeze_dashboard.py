@@ -57,13 +57,19 @@ def _strip_md_link(s: str) -> str:
     return m.group(1) if m else s
 
 
-def _parse_sym_cell(s: str) -> tuple[str, str, str]:
-    """Return (symbol, weekly_zone_badge, rvol_ss_badge) from a symbol cell
-    like '[SJVN](url)<br>W↑12d 🚀SS·9x ★'."""
+def _parse_sym_cell(s: str) -> tuple[str, str, str, bool]:
+    """Return (symbol, weekly_zone_badge, rvol_ss_badge, rs_weekly_gate) from a symbol
+    cell like '[SJVN](url)<br>📶W9 W↑12d 🚀SS·9x ★'."""
     sym = _strip_md_link(s)
     wz_m = re.search(r"W↑\d+d", s)
     rvol_m = re.search(r"🚀SS(?:·\d+x)?|RVOL\d+x", s)
-    return sym, (wz_m.group(0) if wz_m else ""), (rvol_m.group(0) if rvol_m else "")
+    rs_weekly_gate = "📶W9" in s
+    return (
+        sym,
+        (wz_m.group(0) if wz_m else ""),
+        (rvol_m.group(0) if rvol_m else ""),
+        rs_weekly_gate,
+    )
 
 
 # ── Parse WaveTrend markdown ──────────────────────────────────────────────────
@@ -100,7 +106,7 @@ def parse_wt_rows(content: str) -> list[dict]:
         parts = [p.strip() for p in ls.replace(r"\|", "\x00").split("|")][1:-1]
         if len(parts) < 13:
             continue
-        sym, wz_badge, rvol_badge = _parse_sym_cell(parts[0])
+        sym, wz_badge, rvol_badge, rs_weekly_gate = _parse_sym_cell(parts[0])
         if not sym or sym in ("Symbol", "#"):
             continue
         if sym in seen:
@@ -131,6 +137,7 @@ def parse_wt_rows(content: str) -> list[dict]:
                 "symbol": sym,
                 "wz_badge": wz_badge,
                 "rvol_badge": rvol_badge,
+                "rs_weekly_gate": rs_weekly_gate,
                 "trap": parts[1],
                 "label": parts[2].replace("\x00", "|"),
                 "signal": parts[3],
@@ -154,6 +161,7 @@ def parse_wt_rows(content: str) -> list[dict]:
         )
     rows.sort(
         key=lambda r: (
+            not r["rs_weekly_gate"],
             -r["rank"],
             -(
                 float(r["earliness"])
@@ -287,21 +295,28 @@ def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
     sym = r["symbol"]
     zl_cls = "pos" if r["zl_dir"] == "↑" else "neg"
     cavgc_cls = "pos" if r["cavgc"].startswith("↑") else "mu"
-    trend_badge = ""
+    badges = []
+    if r.get("rs_weekly_gate"):
+        badges.append('<span style="font-weight:700;color:#38bdf8">📶W9</span>')
+    wz = r.get("wz_badge", "")
+    if wz:
+        badges.append(f'<span class="mu">{wz}</span>')
+    rv = r.get("rvol_badge", "")
+    if rv:
+        badges.append(
+            f'<span style="font-weight:700;color:var(--org,#e08300)">{rv}</span>'
+        )
     if trend_info and sym in trend_info:
         lbl = _TREND_TAG_LABEL.get(trend_info[sym], trend_info[sym])
-        trend_badge = f'<span class="trend-tag">{lbl}</span>'
-    wz = r.get("wz_badge", "")
-    wz_span = f'<br><span class="mu" style="font-size:9px">{wz}</span>' if wz else ""
-    rv = r.get("rvol_badge", "")
-    rv_span = (
-        f'<br><span style="font-size:9px;font-weight:700;color:var(--org,#e08300)">{rv}</span>'
-        if rv
+        badges.append(f'<span style="font-weight:700;color:#86efac">{lbl}</span>')
+    badge_line = (
+        f'<br><span style="font-size:9px;white-space:nowrap">{" · ".join(badges)}</span>'
+        if badges
         else ""
     )
     return (
         f"<tr>"
-        f'<td class="sym">{_tv_link(sym)}{wz_span}{rv_span}{trend_badge}</td>'
+        f'<td class="sym">{_tv_link(sym)}{badge_line}</td>'
         f'<td style="font-size:10px;white-space:nowrap">{_trap_html(r.get("trap","n/a"))}</td>'
         f'<td class="lbl">{_desc_from_label(r["label"])}</td>'
         f'<td>{_rank_badge(r["rank"])}</td>'
@@ -407,12 +422,16 @@ def build_html(
     other_rows = [r for r in wt_rows if not r["squeeze"]]
     # Trend × WT confluence — all WT rows also in trend scanner, rank desc
     conf_rows = [r for r in wt_rows if r["symbol"] in trend_info]
+    # RS-Confirmed — informational subset, additive (every row also appears above/below)
+    rs_rows = [r for r in wt_rows if r["rs_state"] != "weak"]
     wt_html = [_wt_html_row(r, trend_info) for r in other_rows]
     sqz_html = [_wt_html_row(r, trend_info) for r in sqz_rows]
+    rs_html = [_wt_html_row(r, trend_info) for r in rs_rows]
     n_os_plus = sum(1 for r in wt_rows if r["rank"] >= 3)
     n_ppv = sum(1 for r in wt_rows if r["ppv"])
     n_sqz = len(sqz_rows)
     n_conf = len(conf_rows)
+    n_rs = len(rs_rows)
 
     conf_html = [_wt_html_row(r, trend_info) for r in conf_rows]
     conf_section = ""
@@ -432,6 +451,47 @@ def build_html(
   <table>
 {_TABLE_HDR}
     <tbody>{"".join(conf_html)}</tbody>
+  </table>
+</div>
+"""
+
+    wg_rows = [r for r in wt_rows if r["rs_weekly_gate"]]
+    wg_html = [_wt_html_row(r, trend_info) for r in wg_rows]
+    n_wg = len(wg_rows)
+    wg_section = ""
+    if wg_rows:
+        wg_section = f"""
+<div class="section" style="border:1px solid #38bdf8;border-radius:6px;padding:12px;background:#001a26">
+  <div class="stitle" style="color:#38bdf8;border-color:#38bdf8">
+    📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400
+    <span class="cnt" style="color:#38bdf8">({n_wg} of {len(wt_rows)})</span>
+    {_copy_btn(wg_rows)}
+  </div>
+  <p style="font-size:11px;color:#7dd3fc;margin-bottom:8px;opacity:.85">
+    Informational, not a filter — every row here also appears in its rank/squeeze section below.
+  </p>
+  <table>
+{_TABLE_HDR}
+    <tbody>{"".join(wg_html)}</tbody>
+  </table>
+</div>
+"""
+
+    rs_section = ""
+    if rs_rows:
+        rs_section = f"""
+<div class="section" style="border:1px solid #38bdf8;border-radius:6px;padding:12px;background:#001a26">
+  <div class="stitle" style="color:#38bdf8;border-color:#38bdf8">
+    📶 RS-CONFIRMED — RS strong or transitioning vs NIFTY MIDSML 400
+    <span class="cnt" style="color:#38bdf8">({n_rs} of {len(wt_rows)})</span>
+    {_copy_btn(rs_rows)}
+  </div>
+  <p style="font-size:11px;color:#7dd3fc;margin-bottom:8px;opacity:.85">
+    Informational, not a filter — every row here also appears in its rank/squeeze section below.
+  </p>
+  <table>
+{_TABLE_HDR}
+    <tbody>{"".join(rs_html)}</tbody>
   </table>
 </div>
 """
@@ -480,12 +540,16 @@ def build_html(
 <div class="bar">
   <div class="stat"><div class="sv grn">{n_conf}</div><div class="sl">🏆 Trend×WT</div></div>
   <div class="stat"><div class="sv gld">{n_sqz}</div><div class="sl">🎯 Squeeze Break</div></div>
+  <div class="stat"><div class="sv" style="color:#38bdf8">{n_wg}</div><div class="sl">📶 Weekly RS Gate</div></div>
+  <div class="stat"><div class="sv" style="color:#38bdf8">{n_rs}</div><div class="sl">RS-Confirmed</div></div>
   <div class="stat"><div class="sv ora">{len(wt_rows)}</div><div class="sl">WT Bull Cross</div></div>
   <div class="stat"><div class="sv grn">{n_os_plus}</div><div class="sl">Oversold+ (rank≥3)</div></div>
   <div class="stat"><div class="sv pur">{n_ppv}</div><div class="sl">PPV confirmed</div></div>
 </div>
 
+{wg_section}
 {conf_section}
+{rs_section}
 {sqz_section}
 <div class="section">
   <div class="stitle">

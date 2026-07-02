@@ -130,6 +130,36 @@ def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
         return "weak"
 
 
+def _rs_weekly_gate(df: pd.DataFrame, bench_series: pd.Series | None) -> bool:
+    """Daily RS Line > Weekly RS EMA9 AND Weekly RS EMA9 rising.
+    Mirrors ema25_zl_scanner.py's RS_MODE='weekly_ema9' gate — same weekly-resample +
+    EMA9 logic, kept in sync per CLAUDE.md Python↔Pine parity convention."""
+    if bench_series is None:
+        return False
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench = bench_series.reindex(stock_close.index)
+        valid = bench.notna()
+        if valid.sum() < 11:
+            return False
+        c_rs, idx_rs = stock_close[valid], bench[valid]
+        c_rs.index = pd.to_datetime(c_rs.index)
+        idx_rs.index = pd.to_datetime(idx_rs.index)
+        rs = (c_rs / idx_rs) * 1000
+        weekly_c = c_rs.resample("W").last().dropna()
+        weekly_idx = idx_rs.resample("W").last().dropna()
+        wk_common = weekly_c.index.intersection(weekly_idx.index)
+        if len(wk_common) < 12:
+            return False
+        wk_rs = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
+        wk_rs_e9 = _ema(wk_rs, 9)
+        return bool(
+            rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]
+        )
+    except Exception:
+        return False
+
+
 def _compute_rs_pct_map(all_data: dict, bench_series: pd.Series) -> dict[str, float]:
     """IBD-style RS percentile rank vs NIFTY MIDSML 400 across full universe.
     RS line = (stock_close / bench_close) * 1000; weighted 3m/6m/9m/12m return."""
@@ -307,6 +337,7 @@ def analyse(
             return None
 
         rs = _rs_state(df_raw, bench_series)
+        rs_weekly_gate = _rs_weekly_gate(df_raw, bench_series)
 
         c = df_raw["close"].astype(float)
         zl25 = _zlema(c, 25)
@@ -338,6 +369,7 @@ def analyse(
             "weekly_zone_days": wz_days,
             "rs_state": rs,
             "rs_pct": rs_pct,
+            "rs_weekly_gate": rs_weekly_gate,
             "cavgc": round(cavgc_val, 4),
             "cavgc_rising": cavgc_rising,
             "rvol": round(rvol, 2),
@@ -387,6 +419,8 @@ def _row(
     sym = f["symbol"]
     tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
     extras = []
+    if f.get("rs_weekly_gate"):
+        extras.append("📶W9")
     if f.get("weekly_zone"):
         extras.append(f"W↑{f['weekly_zone_days']}d")
     rvol, ss = f.get("rvol", 0.0), f.get("strong_start", False)
@@ -398,7 +432,9 @@ def _row(
         extras.append(f"RVOL{rvol:.0f}x")
     if trend_syms and sym in trend_syms:
         extras.append("★")
-    sym_cell = f"[{sym}]({tv})" + ("<br>" + " ".join(extras) if extras else "")
+    sym_cell = f"[{sym}]({tv})" + (
+        "<br><sub>" + " · ".join(extras) + "</sub>" if extras else ""
+    )
     cl, em = circuit.get(sym, ("20%", ""))
     zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
     zl_arrow = "↑" if f["zl_rising"] else "↓"
@@ -440,8 +476,15 @@ def build_markdown(
     trend_syms: set | None = None,
 ) -> str:
     names = names or {}
-    # Sort: rank desc, then earliness score desc within rank (closest to move start first)
-    sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
+    # Sort: weekly RS gate first (highest priority), then rank desc, then earliness desc
+    sorted_f = sorted(
+        findings,
+        key=lambda x: (
+            not x.get("rs_weekly_gate", False),
+            -x["wt_rank"],
+            -x["earliness"],
+        ),
+    )
 
     rank_groups: dict[int, list] = {}
     for f in sorted_f:
@@ -467,9 +510,11 @@ def build_markdown(
         "| ZL | ZLEMA25 direction + days since turn — e.g. ↑6d |",
         "| Flags | SQ=squeeze  PV=pocket-pivot  SQ·PV=both  —=neither |",
         "| WT | WT1/WT2 oscillator values |",
-        "| Sort | Rank desc → Erly desc (entry closest to move start floats up) |",
+        "| Sort | Weekly RS gate (📶W9) first → Rank desc → Erly desc |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
         "| W↑Nd in Symbol | Days in weekly WT bull-cross zone (any cross; ends on weekly bear cross) |",
+        "| RS-Confirmed table | Separate table below, rs_state ≠ weak — informational only, all signals still listed in category tables |",
+        "| 📶W9 in Symbol | Daily RS > Weekly RS EMA9 AND Weekly RS EMA9 rising (same gate as ema25_zl_scanner RS_MODE=weekly_ema9) — highest sort priority in every table |",
         "",
         "---",
         "",
@@ -480,6 +525,46 @@ def build_markdown(
         "```",
         "",
     ]
+
+    # Weekly RS Gate — highest priority table, top of file. RS >= Weekly RS EMA9 (rising).
+    # Additive, not a filter: every row here also appears in its rank/squeeze section below.
+    weekly_gate = [f for f in sorted_f if f.get("rs_weekly_gate", False)]
+    lines.append(
+        f"### 📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400 ({len(weekly_gate)})"
+    )
+    if weekly_gate:
+        lines += _HDR + [_row(f, circuit, names, trend_syms) for f in weekly_gate]
+        lines += [
+            "",
+            "```",
+            ",".join(f"NSE:{f['symbol']}" for f in weekly_gate),
+            "```",
+        ]
+    else:
+        lines.append("*No signals.*")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
+
+    # RS-Confirmed — informational subset, rs_state strong or transitioning today.
+    # Additive, not a filter: every row here also appears in its rank/squeeze section below.
+    rs_confirmed = [f for f in sorted_f if f.get("rs_state", "weak") != "weak"]
+    lines.append(
+        f"### 📶 RS-CONFIRMED — RS strong (↑) or transitioning (🔄) vs NIFTY MIDSML 400 ({len(rs_confirmed)})"
+    )
+    if rs_confirmed:
+        lines += _HDR + [_row(f, circuit, names, trend_syms) for f in rs_confirmed]
+        lines += [
+            "",
+            "```",
+            ",".join(f"NSE:{f['symbol']}" for f in rs_confirmed),
+            "```",
+        ]
+    else:
+        lines.append("*No signals.*")
+    lines.append("")
+    lines.append("---")
+    lines.append("")
 
     # Squeeze Breakout — highest conviction: WT cross firing inside active BB-KC squeeze
     sqz_breaks = [f for f in sorted_f if f["squeeze"]]
@@ -506,7 +591,13 @@ def build_markdown(
             for f in rank_groups.get(r, [])
             if f["symbol"] not in sqz_syms
         ]
-        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
+        group.sort(
+            key=lambda x: (
+                not x.get("rs_weekly_gate", False),
+                -x["wt_rank"],
+                -x["earliness"],
+            )
+        )
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit, names, trend_syms) for f in group]
@@ -529,7 +620,8 @@ def print_results(findings: list[dict]) -> None:
     print(f"  Total bull crosses: {len(findings)}")
     print(f"{'='*70}")
     sqz_breaks_c = sorted(
-        [f for f in findings if f["squeeze"]], key=lambda x: (-x["wt_rank"], x["wt1"])
+        [f for f in findings if f["squeeze"]],
+        key=lambda x: (not x.get("rs_weekly_gate", False), -x["wt_rank"], x["wt1"]),
     )
     if sqz_breaks_c:
         print(f"\n  ── 🎯 SQUEEZE BREAKOUT ({len(sqz_breaks_c)}) ──")
@@ -550,7 +642,13 @@ def print_results(findings: list[dict]) -> None:
         group = [f for f in findings if f["wt_rank"] in ranks]
         if not group:
             continue
-        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
+        group.sort(
+            key=lambda x: (
+                not x.get("rs_weekly_gate", False),
+                -x["wt_rank"],
+                -x["earliness"],
+            )
+        )
         print(f"\n  ── {emoji} {cat_name} ({len(group)}) ──")
         for f in group:
             ds = "+" if f["day_chg"] >= 0 else ""

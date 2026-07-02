@@ -96,6 +96,10 @@ Low-SQZ tier: weak same-day breadth but notable next-day bounce (only 2 pts — 
 - [ ] `net_thrust > +0.05` AND `sqz > 30` as composite entry filter — does it hold?
 - [ ] `total > 100` as overbought warning (market stretched) vs continuation signal?
 - [ ] Low-SQZ bounce: confirm n=2 finding with 6M data
+- [ ] RS-gate threshold (`rs_state != weak`): does the RS-Confirmed subset outperform the excluded-weak subset
+      on forward returns? 2026-07-02 split was 159 confirmed / 54 weak (75/25) on a 213-cross day — need
+      forward-return data across more days, not just same-day counts, to know if the gate adds signal or
+      just removes noise cosmetically.
 
 ---
 
