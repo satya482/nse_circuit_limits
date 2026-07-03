@@ -1,11 +1,12 @@
 # NSE Circuit Limit Dashboard
 
-_Last updated: 2026-07-02 16:24:23_
+_Last updated: 2026-07-03 16:25:42_
 
 Changes in your TradingView watchlist:
 
 | Date | Symbol | Name | From | To |
 |---|---|---|---|---|
+| 03-JUL-2026 | [**BLISSGVS**](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS) | BLISS GVS PHARMA LIMITED | 10% | 5% 🟥 Red |
 | 25-JUN-2026 | [**MTARTECH**](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH) | MTAR TECHNOLOGIES LIMITED | 10% | 5% 🟥 Red |
 | 22-JUN-2026 | [**PARAS**](https://in.tradingview.com/chart/?symbol=NSE:PARAS) | PARAS DEFENCE AND SPACE TECHNOLOGIES LIMITED | 20% | 10% 🟨 Yellow |
 | 22-JUN-2026 | [**MTARTECH**](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH) | MTAR TECHNOLOGIES LIMITED | 20% | 10% 🟨 Yellow |
