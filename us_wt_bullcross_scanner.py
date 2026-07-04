@@ -450,7 +450,7 @@ def build_html_dashboard(findings: list[dict]) -> str:
         f"<style>{_HTML_STYLE}</style></head><body>"
         f"{SEBI_HTML_BANNER}"
         f"<h1>US WaveTrend Bull Cross Scan — {TODAY}</h1>"
-        f"<div class='meta'>Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST · "
+        f"<div class='meta'>Generated {datetime.now(IST).strftime('%Y-%m-%d %H:%M')} IST · "
         f"{len(findings)} total signals</div>"
         f"{''.join(sections)}"
         f"{SEBI_HTML_FOOTER}"
