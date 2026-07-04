@@ -37,6 +37,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
+.\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
 # US WaveTrend Bull Cross Scanner — SEPARATE scheduled task, part of the existing
