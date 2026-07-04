@@ -84,10 +84,17 @@ def patch_md_file(path: Path, tagger) -> int:
 def _has_todays_delivery_data(today: str) -> bool:
     try:
         con = sqlite3.connect(DB_PATH)
-        row = con.execute("SELECT 1 FROM delivery WHERE date=? LIMIT 1", (today,)).fetchone()
-        con.close()
+        try:
+            row = con.execute("SELECT 1 FROM delivery WHERE date=? LIMIT 1", (today,)).fetchone()
+        finally:
+            con.close()
         return row is not None
-    except Exception:
+    except Exception as e:
+        # Missing table / corrupt DB should be visibly distinct from the normal
+        # "no delivery data yet" case -- otherwise a real upstream bug (e.g. the
+        # fetch script failing to create the table) silently looks identical to
+        # "just no data today" in the logs, indefinitely.
+        print(f"backfill_delivery_markers: WARNING - error checking delivery data: {e}", file=sys.stderr)
         return False
 
 

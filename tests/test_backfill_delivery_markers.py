@@ -1,4 +1,7 @@
-from backfill_delivery_markers import patch_md_file, patch_symbol_line
+import sqlite3
+
+import backfill_delivery_markers
+from backfill_delivery_markers import _has_todays_delivery_data, patch_md_file, patch_symbol_line
 
 
 def _tagger(spikes):
@@ -60,3 +63,35 @@ def test_patch_md_file_idempotent(tmp_path):
     assert n1 == 1
     assert n2 == 0
     assert content_once == content_twice
+
+
+def test_has_todays_delivery_data_true_when_row_for_today(tmp_path, monkeypatch):
+    db_path = tmp_path / "market.db"
+    con = sqlite3.connect(db_path)
+    con.execute("CREATE TABLE delivery (symbol TEXT, date TEXT, deliv_pct REAL)")
+    con.execute("INSERT INTO delivery VALUES ('RELIANCE', '2026-07-04', 55.0)")
+    con.commit()
+    con.close()
+    monkeypatch.setattr(backfill_delivery_markers, "DB_PATH", db_path)
+
+    assert _has_todays_delivery_data("2026-07-04") is True
+
+
+def test_has_todays_delivery_data_false_when_only_older_dates(tmp_path, monkeypatch):
+    db_path = tmp_path / "market.db"
+    con = sqlite3.connect(db_path)
+    con.execute("CREATE TABLE delivery (symbol TEXT, date TEXT, deliv_pct REAL)")
+    con.execute("INSERT INTO delivery VALUES ('RELIANCE', '2026-07-01', 55.0)")
+    con.commit()
+    con.close()
+    monkeypatch.setattr(backfill_delivery_markers, "DB_PATH", db_path)
+
+    assert _has_todays_delivery_data("2026-07-04") is False
+
+
+def test_has_todays_delivery_data_false_when_table_missing(tmp_path, monkeypatch):
+    db_path = tmp_path / "market.db"
+    sqlite3.connect(db_path).close()  # fresh, empty DB file -- no CREATE TABLE run
+    monkeypatch.setattr(backfill_delivery_markers, "DB_PATH", db_path)
+
+    assert _has_todays_delivery_data("2026-07-04") is False
