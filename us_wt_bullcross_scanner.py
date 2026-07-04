@@ -456,3 +456,104 @@ def build_html_dashboard(findings: list[dict]) -> str:
         f"{SEBI_HTML_FOOTER}"
         f"</body></html>"
     )
+
+
+# -- Watchlist & main ---------------------------------------------------------
+
+
+def get_watchlist() -> list[str]:
+    """Mirrors us_zl_squeeze_scanner.py's query exactly - must match fetch_us_data.py's
+    backfill universe or lookups return None for out-of-range symbols."""
+    _, df = (
+        Query()
+        .set_markets("america")
+        .select("name", "close")
+        .where(
+            col("exchange").isin(["NASDAQ", "NYSE"]),
+            col("type") == "stock",
+            col("typespecs").has(["common"]),
+            col("close") > 5,
+            col("market_cap_basic").between(MC_LOW, MC_HIGH),
+            col("average_volume_10d_calc") > 300_000,
+        )
+        .limit(3000)
+        .get_scanner_data()
+    )
+    return df["name"].tolist()
+
+
+def print_results(findings: list[dict]) -> None:
+    print(f"\n{'='*70}")
+    print(f"  US WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"  Total bull crosses: {len(findings)}")
+    print(f"{'='*70}")
+    for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
+        group = [f for f in findings if f["wt_rank"] in ranks]
+        if not group:
+            continue
+        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
+        print(f"\n  -- {emoji} {cat_name} ({len(group)}) --")
+        for f in group:
+            ds = "+" if f["day_chg"] >= 0 else ""
+            zl = "ZL^" if f["zl_rising"] else "ZLv"
+            sqz = "SQZ" if f["squeeze"] else "   "
+            ppv = "PPV" if f["wt_is_ppv"] else "   "
+            print(
+                f"  {f['symbol']:<8} {f['close']:>9.2f}  "
+                f"wt1:{f['wt1']:>7.2f}  {zl} {sqz} {ppv}  "
+                f"day:{ds}{f['day_chg']:.1f}%"
+            )
+    print()
+
+
+def main():
+    os.makedirs(SCANS_DIR, exist_ok=True)
+
+    print("\nLoading SPY benchmark from DB...")
+    bench_dict = load_ohlc_many([BENCH_SYM], lookback=400)
+    bench_df = bench_dict.get(BENCH_SYM)
+    if bench_df is None:
+        print("  ERROR: SPY not in DB. Run fetch_us_data.py first.")
+        return
+    bench_series = bench_df.set_index("date")["close"].astype(float)
+    print(f"  SPY: {len(bench_series)} days")
+
+    print("\nFetching watchlist from TradingView screener (US)...")
+    watchlist = get_watchlist()
+    print(f"  {len(watchlist)} stocks")
+
+    print("\nLoading OHLCV from SQLite (batch)...")
+    all_data = load_ohlc_many(watchlist, lookback=400)
+    print(f"  Loaded {len(all_data)} stocks")
+
+    print("\nComputing RS percentile ranks across universe...")
+    rs_pct_map = _compute_rs_pct_map(all_data, bench_series)
+    print(f"  RS ranks computed for {len(rs_pct_map)} stocks")
+
+    print(f"\nScanning {len(all_data)} stocks for WaveTrend bull crosses...")
+    calc = WaveTrendCalculator()
+    findings = []
+    for i, (sym, df_raw) in enumerate(all_data.items(), 1):
+        print(f"  {sym:<12} ({i}/{len(all_data)})   ", end="\r")
+        result = analyse(sym, df_raw, calc, bench_series, rs_pct=rs_pct_map.get(sym, 50.0))
+        if result:
+            findings.append(result)
+
+    print_results(findings)
+
+    md = build_markdown(findings)
+    with open(MD_LATEST, "w", encoding="utf-8") as fh:
+        fh.write(md)
+    with open(MD_DATED, "w", encoding="utf-8") as fh:
+        fh.write(md)
+    print(f"  Saved -> {MD_LATEST}")
+    print(f"  Saved -> {MD_DATED}")
+
+    html = build_html_dashboard(findings)
+    with open(HTML_DASHBOARD, "w", encoding="utf-8") as fh:
+        fh.write(html)
+    print(f"  Saved -> {HTML_DASHBOARD}")
+
+
+if __name__ == "__main__":
+    main()
