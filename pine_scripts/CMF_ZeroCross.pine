@@ -1,0 +1,37 @@
+//@version=6
+indicator("CMF Zero-Cross", shorttitle="CMF0", overlay=false)
+// Chaikin Money Flow (CMF) zero-line cross indicator.
+// Standalone oscillator pane — no companion overlay indicator.
+// Alert message format: CMF_ZERO_CROSS|{{ticker}}|bull|TF:{{interval}}  (or |bear|)
+// Python counterpart: ohlc_db.cmf_days() / cmf_tag() — same formula, same
+// zero-cross recency logic. Mirror any parameter change both places.
+
+cmfLen = input.int(20, "CMF Length", minval = 1)
+
+rangeVal = high - low
+mfm = rangeVal > 0 ? ((close - low) - (high - close)) / rangeVal : 0.0
+mfv = mfm * volume
+
+cmfLine = math.sum(mfv, cmfLen) / math.sum(volume, cmfLen)
+
+zero = 0.0
+bullCross = ta.crossover(cmfLine, zero)
+bearCross = ta.crossunder(cmfLine, zero)
+
+var int barsSinceCross = 0
+crossedNow = bullCross or bearCross
+barsSinceCross := crossedNow ? 0 : barsSinceCross + 1
+
+plot(cmfLine, "CMF", color = cmfLine >= 0 ? color.green : color.red, linewidth = 2)
+hline(0, "Zero Line", color = color.gray)
+
+if barstate.islast
+    label.new(
+         bar_index, cmfLine,
+         text = (cmfLine >= 0 ? "↑CMF" : "↓CMF") + str.tostring(barsSinceCross) + "d",
+         color = cmfLine >= 0 ? color.green : color.red,
+         style = label.style_label_left,
+         textcolor = color.white)
+
+alertcondition(bullCross, "CMF Bull Cross", "CMF_ZERO_CROSS|{{ticker}}|bull|TF:{{interval}}")
+alertcondition(bearCross, "CMF Bear Cross", "CMF_ZERO_CROSS|{{ticker}}|bear|TF:{{interval}}")
