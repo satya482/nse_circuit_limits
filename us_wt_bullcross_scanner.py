@@ -367,3 +367,92 @@ def build_markdown(findings: list[dict]) -> str:
         lines.append("")
 
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
+
+
+# -- HTML output ---------------------------------------------------------------
+
+
+_HTML_STYLE = """
+body{background:#0a0e14;color:#e8edf3;font-family:'Space Grotesk',system-ui,sans-serif;padding:20px;line-height:1.4}
+h1{font-size:20px;margin-bottom:4px}
+.meta{color:#6b7785;font-size:12px;margin-bottom:16px}
+h2{font-size:15px;margin:24px 0 8px;color:#e8edf3}
+table{border-collapse:collapse;width:100%;margin-bottom:12px;font-size:13px}
+th,td{padding:6px 10px;border-bottom:1px solid #1c2530;text-align:left}
+th{color:#6b7785;font-weight:600}
+a{color:#4d9de0;text-decoration:none}
+.empty{color:#6b7785;font-style:italic}
+"""
+
+
+def _html_table(rows: list[dict]) -> str:
+    if not rows:
+        return '<p class="empty">No signals in this category.</p>'
+    head = (
+        "<tr><th>Symbol</th><th>Signal</th><th>Erly</th><th>RS</th><th>C/AvgC</th>"
+        "<th>ZL</th><th>Flags</th><th>ZL Chg%</th><th>WT</th><th>Day Chg</th></tr>"
+    )
+    body = []
+    for f in rows:
+        sym = f["symbol"]
+        tv = f"https://www.tradingview.com/chart/?symbol={sym}"
+        zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+        zl_arrow = "↑" if f["zl_rising"] else "↓"
+        zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+        ds = "+" if f["day_chg"] >= 0 else ""
+        rs_emoji = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
+        cavgc_arrow = "↑" if f.get("cavgc_rising", False) else "↓"
+        sqz, ppv = f["squeeze"], f["wt_is_ppv"]
+        flags = "SQ·PV" if sqz and ppv else "SQ" if sqz else "PV" if ppv else "—"
+        emoji = _RANK_EMOJI.get(f["wt_rank"], "")
+        body.append(
+            "<tr>"
+            f'<td><a href="{tv}">{sym}</a></td>'
+            f"<td>{emoji} {f['wt_signal']}</td>"
+            f"<td>{f.get('earliness', 0.0):.0f}</td>"
+            f"<td>{rs_emoji}{f.get('rs_pct', 50.0):.0f}</td>"
+            f"<td>{cavgc_arrow}{f.get('cavgc', 1.0):.3f}</td>"
+            f"<td>{zl_arrow}{zl_d}</td>"
+            f"<td>{flags}</td>"
+            f"<td>{zl_p}</td>"
+            f"<td>{f['wt1']}/{f['wt2']}</td>"
+            f"<td>{ds}{f['day_chg']:.2f}%</td>"
+            "</tr>"
+        )
+    return f"<table>{head}{''.join(body)}</table>"
+
+
+def build_html_dashboard(findings: list[dict]) -> str:
+    sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
+    rank_groups: dict[int, list] = {}
+    for f in sorted_f:
+        rank_groups.setdefault(f["wt_rank"], []).append(f)
+
+    sqz_breaks = [f for f in sorted_f if f["squeeze"]]
+    sqz_syms = {f["symbol"] for f in sqz_breaks}
+
+    sections = []
+    if sqz_breaks:
+        sections.append(f"<h2>🎯 Squeeze Breakout ({len(sqz_breaks)})</h2>")
+        sections.append(_html_table(sqz_breaks))
+
+    for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
+        group = [
+            f for r in ranks for f in rank_groups.get(r, []) if f["symbol"] not in sqz_syms
+        ]
+        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
+        sections.append(f"<h2>{emoji} {cat_name} — {cat_desc} ({len(group)})</h2>")
+        sections.append(_html_table(group))
+
+    return (
+        f"<!doctype html><html><head><meta charset='utf-8'>"
+        f"<title>US WaveTrend Bull Cross — {TODAY}</title>"
+        f"<style>{_HTML_STYLE}</style></head><body>"
+        f"{SEBI_HTML_BANNER}"
+        f"<h1>US WaveTrend Bull Cross Scan — {TODAY}</h1>"
+        f"<div class='meta'>Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST · "
+        f"{len(findings)} total signals</div>"
+        f"{''.join(sections)}"
+        f"{SEBI_HTML_FOOTER}"
+        f"</body></html>"
+    )

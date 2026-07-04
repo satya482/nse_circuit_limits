@@ -268,3 +268,23 @@ def test_build_markdown_never_renumbers_rank_labels():
     from us_wt_bullcross_scanner import build_markdown
     md = build_markdown([_finding(wt_rank=5, wt_signal="BULL_OS_PPV")])
     assert "MAJOR" in md or "🔥" in md
+
+
+def test_build_html_dashboard_includes_disclaimer_banner_and_footer():
+    from us_wt_bullcross_scanner import build_html_dashboard
+    html = build_html_dashboard([_finding()])
+    assert "SEBI registered" in html
+    assert html.count("SEBI registered") >= 2  # banner + footer
+
+
+def test_build_html_dashboard_includes_symbol_and_is_valid_shell():
+    from us_wt_bullcross_scanner import build_html_dashboard
+    html = build_html_dashboard([_finding()])
+    assert "ABCD" in html
+    assert "<table" in html
+
+
+def test_build_html_dashboard_no_signals_case():
+    from us_wt_bullcross_scanner import build_html_dashboard
+    html = build_html_dashboard([])
+    assert "No signals" in html
