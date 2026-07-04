@@ -256,3 +256,111 @@ def analyse(
         }
     except Exception:
         return None
+
+
+# -- Markdown output ----------------------------------------------------------
+
+
+_RANK_EMOJI = {5: "🔥", 4: "⚡", 3: "🟢", 2: "🟡", 1: "📈"}
+_RS_EMOJI = {"transition": "🔄", "strong": "↑", "weak": "↓"}
+_CATEGORIES = [
+    ("🔥", "MAJOR", "PPV confirmed", [5, 4]),
+    ("🟢", "OVERSOLD", "reversal from -53/-60", [3, 2]),
+    ("📈", "MID-RANGE", "any cross, WT2 > -53, no PPV", [1]),
+]
+
+_HDR = [
+    "| Symbol | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg |",
+    "|--------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|",
+]
+
+
+def _row(f: dict) -> str:
+    sym = f["symbol"]
+    tv = f"https://www.tradingview.com/chart/?symbol={sym}"
+    zl_d = f"{f['zl_days']}d+" if f["zl_days"] >= ZL_TURN_CAP else f"{f['zl_days']}d"
+    zl_arrow = "↑" if f["zl_rising"] else "↓"
+    zl_cell = f"{zl_arrow}{zl_d}"
+    zl_p = f"+{f['zl_pct']:.1f}%" if f["zl_pct"] >= 0 else f"{f['zl_pct']:.1f}%"
+    ds = "+" if f["day_chg"] >= 0 else ""
+    rs_emoji = _RS_EMOJI.get(f.get("rs_state", "weak"), "↓")
+    rs_cell = f"{rs_emoji}{f.get('rs_pct', 50.0):.0f}"
+    cavgc_arrow = "↑" if f.get("cavgc_rising", False) else "↓"
+    cavgc_str = f"{cavgc_arrow}{f.get('cavgc', 1.0):.3f}"
+    erly = f"{f.get('earliness', 0.0):.0f}"
+    sqz, ppv = f["squeeze"], f["wt_is_ppv"]
+    flags = "SQ·PV" if sqz and ppv else "SQ" if sqz else "PV" if ppv else "—"
+    wt_cell = f"{f['wt1']}/{f['wt2']}"
+    emoji = _RANK_EMOJI.get(f["wt_rank"], "")
+    return (
+        f"| [{sym}]({tv}) "
+        f"| {emoji} {f['wt_signal']} "
+        f"| {erly} "
+        f"| {rs_cell} "
+        f"| {cavgc_str} "
+        f"| {zl_cell} "
+        f"| {flags} "
+        f"| {zl_p} "
+        f"| {wt_cell} "
+        f"| {ds}{f['day_chg']:.2f}% |"
+    )
+
+
+def build_markdown(findings: list[dict]) -> str:
+    sorted_f = sorted(findings, key=lambda x: (-x["wt_rank"], -x["earliness"]))
+    rank_groups: dict[int, list] = {}
+    for f in sorted_f:
+        rank_groups.setdefault(f["wt_rank"], []).append(f)
+    sqz_count = sum(1 for f in findings if f["squeeze"])
+
+    lines = [
+        f"# US WaveTrend Bull Cross Scan — {TODAY}",
+        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+        "",
+        "### Scan definition",
+        "| Filter | Value |",
+        "|--------|-------|",
+        "| Exchange | NYSE + NASDAQ common equity |",
+        "| Price | > $5 |",
+        "| Market cap | $300M - $10B |",
+        "| Avg 10d Volume | > 300K |",
+        "| RS benchmark | SPY (x100 scale) |",
+        "| RS filter | None - WT captures pre-RS-turn reversals |",
+        "| RS | transition/strong/weak state + IBD percentile vs SPY |",
+        "| C/AvgC | Close / EMA(10) ratio - rising = fresh momentum |",
+        "| Erly | Squeeze(40)+RS-transition(30)+ZL freshness(0-20)+C/AvgC freshness(0-10) |",
+        "| ZL | ZLEMA25 direction + days since turn |",
+        "| Flags | SQ=squeeze  PV=pocket-pivot  SQ·PV=both  —=neither |",
+        "| WT | WT1/WT2 oscillator values |",
+        "| Min rank | Any bull cross (rank >= 1) |",
+        "",
+        "---",
+        "",
+        f"**Total bull crosses today: {len(findings)}** - {sqz_count} inside active squeeze",
+        "",
+    ]
+
+    sqz_breaks = [f for f in sorted_f if f["squeeze"]]
+    if sqz_breaks:
+        lines.append(
+            f"### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze ({len(sqz_breaks)})"
+        )
+        lines += _HDR + [_row(f) for f in sqz_breaks]
+        lines.append("")
+        lines.append("---")
+        lines.append("")
+
+    sqz_syms = {f["symbol"] for f in sqz_breaks}
+    for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
+        group = [
+            f for r in ranks for f in rank_groups.get(r, []) if f["symbol"] not in sqz_syms
+        ]
+        group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
+        lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
+        if group:
+            lines += _HDR + [_row(f) for f in group]
+        else:
+            lines.append("*No signals.*")
+        lines.append("")
+
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER

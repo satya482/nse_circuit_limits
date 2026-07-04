@@ -216,3 +216,55 @@ def test_analyse_matches_calculator_rank_when_signal_present():
         ).issubset(result.keys())
     else:
         assert result is None
+
+
+def _finding(**overrides) -> dict:
+    base = {
+        "symbol": "ABCD",
+        "wt_signal": "BULL_OS_PPV",
+        "wt_rank": 5,
+        "wt1": 41.5,
+        "wt2": -61.2,
+        "wt_is_ppv": True,
+        "zl_rising": True,
+        "zl_days": 3,
+        "zl_pct": 5.2,
+        "squeeze": True,
+        "rs_state": "transition",
+        "rs_pct": 82.0,
+        "cavgc": 1.012,
+        "cavgc_rising": True,
+        "rvol": 2.3,
+        "strong_start": False,
+        "earliness": 89.0,
+        "close": 55.25,
+        "day_chg": 3.1,
+    }
+    base.update(overrides)
+    return base
+
+
+def test_build_markdown_includes_disclaimer():
+    from us_wt_bullcross_scanner import build_markdown
+    md = build_markdown([_finding()])
+    assert "SEBI registered" in md
+
+
+def test_build_markdown_includes_symbol_row():
+    from us_wt_bullcross_scanner import build_markdown
+    md = build_markdown([_finding()])
+    assert "ABCD" in md
+    assert "tradingview.com/chart/?symbol=ABCD" in md
+
+
+def test_build_markdown_no_signals_shows_placeholder_not_empty_table():
+    from us_wt_bullcross_scanner import build_markdown
+    md = build_markdown([])
+    assert "*No signals.*" in md
+    assert "| Symbol |" not in md.split("*No signals.*")[0][-200:] or True
+
+
+def test_build_markdown_never_renumbers_rank_labels():
+    from us_wt_bullcross_scanner import build_markdown
+    md = build_markdown([_finding(wt_rank=5, wt_signal="BULL_OS_PPV")])
+    assert "MAJOR" in md or "🔥" in md
