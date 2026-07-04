@@ -3,7 +3,14 @@ import numpy as np
 import pandas as pd
 import pytest
 
-from us_wt_bullcross_scanner import _ema, _zlema, _bb_kc_squeeze, _zl25_turn_stats
+from us_wt_bullcross_scanner import (
+    _ema,
+    _zlema,
+    _bb_kc_squeeze,
+    _zl25_turn_stats,
+    _rs_state,
+    _compute_rs_pct_map,
+)
 
 
 def _df(closes: list[float]) -> pd.DataFrame:
@@ -71,3 +78,45 @@ def test_zl25_turn_stats_caps_at_zl_turn_cap():
     closes = pd.Series(list(range(1, 101)), dtype=float)
     bars, pct = _zl25_turn_stats(zl25, closes)
     assert bars == 60  # ZL_TURN_CAP
+
+
+def _bench(prices: list[float]) -> pd.Series:
+    n = len(prices)
+    dates = pd.date_range("2024-01-01", periods=n, freq="B")
+    return pd.Series(prices, index=dates)
+
+
+def test_rs_state_returns_weak_with_no_benchmark():
+    df = _df([100.0] * 15)
+    assert _rs_state(df, None) == "weak"
+
+
+def test_rs_state_transition_when_rs_crosses_above_ema9():
+    # Stock flat while bench outperforms briefly then crashes -> RS was weak, now strong
+    closes = [100.0] * 15
+    df = _df(closes)
+    bench_prices = [100.0] * 12 + [120.0, 120.0, 80.0]  # bench +20%, then crashes to 80
+    bench = _bench(bench_prices)
+    state = _rs_state(df, bench)
+    assert state == "transition"
+
+
+def test_rs_state_weak_when_rs_stays_below_ema9():
+    closes = [100.0] * 15
+    df = _df(closes)
+    bench_prices = [100.0] * 13 + [100.0, 120.0]  # bench rallies -> RS drops today
+    bench = _bench(bench_prices)
+    assert _rs_state(df, bench) == "weak"
+
+
+def test_compute_rs_pct_map_ranks_higher_relative_return_higher():
+    n = 260
+    dates = pd.date_range("2023-01-01", periods=n, freq="B")
+    bench_close = pd.Series(np.linspace(100, 110, n), index=dates)  # bench +10%
+    strong = _df(list(np.linspace(100, 200, n)))  # stock +100%
+    strong["date"] = dates
+    weak = _df(list(np.linspace(100, 105, n)))  # stock +5%
+    weak["date"] = dates
+    all_data = {"STRONG": strong, "WEAK": weak}
+    pct = _compute_rs_pct_map(all_data, bench_close)
+    assert pct["STRONG"] > pct["WEAK"]

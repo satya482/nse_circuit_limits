@@ -102,3 +102,56 @@ def _zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
             return bars, round(pct, 2)
     cap_idx = max(0, n - ZL_TURN_CAP)
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
+
+
+def _rs_state(df: pd.DataFrame, bench_series: pd.Series | None) -> str:
+    """Returns 'transition' (weak->strong flip today), 'strong', or 'weak'."""
+    if bench_series is None or len(bench_series) < 11:
+        return "weak"
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench = bench_series.reindex(stock_close.index)
+        valid = bench.notna()
+        if valid.sum() < 11:
+            return "weak"
+        rs = (stock_close[valid] / bench[valid]) * RS_SCALE
+        rs_ema9 = rs.ewm(span=9, adjust=False).mean()
+        now_strong = bool(rs.iloc[-1] > rs_ema9.iloc[-1])
+        was_weak = bool(rs.iloc[-2] < rs_ema9.iloc[-2])
+        if was_weak and now_strong:
+            return "transition"
+        return "strong" if now_strong else "weak"
+    except Exception:
+        return "weak"
+
+
+def _compute_rs_pct_map(all_data: dict, bench_series: pd.Series) -> dict[str, float]:
+    """IBD-style RS percentile rank vs SPY. RS line = (close/SPY_close)*RS_SCALE;
+    weighted 3m/6m/9m/12m return. Scale cancels out in the ratio, so RS_SCALE
+    doesn't affect the resulting percentiles."""
+    WINDOWS = [63, 126, 189, 252]
+    WEIGHTS = [0.4, 0.2, 0.2, 0.2]
+    scores: dict[str, float] = {}
+    for sym, df in all_data.items():
+        if df is None or len(df) < 253:
+            continue
+        try:
+            stock_c = df.set_index("date")["close"].astype(float)
+            bench = bench_series.reindex(stock_c.index)
+            valid = bench.notna()
+            if valid.sum() < 253:
+                continue
+            rs_line = (stock_c[valid] / bench[valid]) * RS_SCALE
+            score = sum(
+                wt * (rs_line.iloc[-1] / rs_line.iloc[-w] - 1)
+                for w, wt in zip(WINDOWS, WEIGHTS)
+                if len(rs_line) >= w + 1
+            )
+            scores[sym] = score
+        except Exception:
+            continue
+    if not scores:
+        return {}
+    s = pd.Series(scores)
+    pct = s.rank(pct=True) * 100
+    return pct.round(1).to_dict()
