@@ -31,7 +31,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc, get_names, liq_tag
+from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -255,6 +255,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_pct": zl_pct,
             "squeeze": bb_kc_squeeze(raw),
             "liq_tag": liq_tag(raw),
+            "cmf_tag": cmf_tag(raw),
         }
     except Exception:
         return None
@@ -304,8 +305,10 @@ def _table_rows(
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = "✓" if f.get("squeeze") else "—"
         lbl_cell = _LABELS.get(sym, "")
+        cmf = f.get("cmf_tag", "")
+        sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{cmf}</sub>" if cmf else "")
         rows.append(
-            f"| [{sym}]({tv}) "
+            f"| {sym_cell} "
             f"| {zl_d} "
             f"| {zl_p} "
             f"| {lbl_cell} "
