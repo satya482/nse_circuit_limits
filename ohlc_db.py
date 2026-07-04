@@ -12,6 +12,7 @@ Rows are ordered oldest → newest.
 """
 
 import sqlite3
+from datetime import date
 from pathlib import Path
 
 import numpy as np
@@ -307,17 +308,23 @@ def deliv_tag(
     mult: float = DELIV_SPIKE_MULT,
     db_path: Path = DB_PATH,
 ) -> str:
-    """'' if no spike / insufficient data. 'DEL{today_pct:.0f}%(T-1)' if spike.
+    """'' if no spike / insufficient data. 'DEL{today_pct:.0f}%' if spike.
     Binary flag, NOT always-on (unlike cmf_tag) -- only appears on genuine spike
-    days. '(T-1)' is always accurate: bhavcopy for day T publishes after this
-    scanner's run, so the latest row in `delivery` is always at least 1 trading
-    day behind."""
+    days. The '(T-1)' suffix is appended only when the latest row in `delivery`
+    is older than today (the normal 4:xx PM scanner-run case, where bhavcopy for
+    day T hasn't published yet and delivery data lags by one session). When
+    `backfill_delivery_markers.py` runs later the same evening right after
+    fetch_delivery.py has written today's own row, the latest date IS today --
+    no lag -- so the suffix is omitted."""
     try:
         df = load_delivery(symbol, lookback=n + 1, db_path=db_path)
         result = deliv_spike(df, n=n, mult=mult)
         if result is None:
             return ""
         today_pct, _ = result
+        latest_date = df["date"].iloc[-1]
+        if pd.Timestamp(latest_date).normalize() == pd.Timestamp(date.today()):
+            return f"DEL{today_pct:.0f}%"
         return f"DEL{today_pct:.0f}%(T-1)"
     except Exception:
         return ""

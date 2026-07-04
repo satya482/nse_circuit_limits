@@ -17,7 +17,7 @@ BASE = Path(__file__).parent
 
 _SYM_RE = re.compile(r"^\|\s*\[([A-Z0-9&\-]+)\]\(")
 _SUB_RE = re.compile(r"<br><sub>(.*?)</sub>")
-_DEL_TOKEN_RE = re.compile(r"DEL\d+%\(T-1\)")
+_DEL_TOKEN_RE = re.compile(r"DEL\d+%(?:\(T-1\))?")
 
 SCANNER_MD_FILES = [
     ("wt_scans", "wt_bullcross_{date}.md", "wt_bullcross_latest.md"),

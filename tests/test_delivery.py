@@ -1,3 +1,5 @@
+import datetime
+
 import pandas as pd
 
 import ohlc_db
@@ -45,6 +47,17 @@ def test_deliv_tag_empty_when_no_spike(monkeypatch):
     df = _synthetic_delivery_df(baseline_pct=20.0, today_pct=22.0)
     monkeypatch.setattr(ohlc_db, "load_delivery", lambda symbol, lookback=21, db_path=None: df)
     assert deliv_tag("TEST") == ""
+
+
+def test_deliv_tag_no_suffix_when_latest_row_is_today(monkeypatch):
+    """When backfill_delivery_markers.py runs same-day right after fetch_delivery.py
+    writes today's row, the latest delivery date IS today -- no lag, no (T-1)."""
+    n = 20
+    dates = pd.date_range(end=datetime.date.today().isoformat(), periods=n + 1, freq="D")
+    pcts = [20.0] * n + [68.0]
+    df = pd.DataFrame({"date": dates, "deliv_pct": pcts})
+    monkeypatch.setattr(ohlc_db, "load_delivery", lambda symbol, lookback=21, db_path=None: df)
+    assert deliv_tag("TEST") == "DEL68%"
 
 
 def test_deliv_tag_empty_when_no_data(monkeypatch):

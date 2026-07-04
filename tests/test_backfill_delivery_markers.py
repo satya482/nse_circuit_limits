@@ -37,6 +37,24 @@ def test_patch_symbol_line_removes_stale_tag_when_no_longer_spiking():
     assert "<sub>" not in out
 
 
+def test_patch_symbol_line_adds_no_suffix_tag_no_existing_sub():
+    """deliv_tag can now emit a no-suffix tag (same-day backfill, zero lag)."""
+    line = "| [RELIANCE](https://tv.example/RELIANCE) | 3d | +1.2% |\n"
+    out = patch_symbol_line(line, _tagger({"RELIANCE": "DEL68%"}))
+    assert out.startswith(
+        "| [RELIANCE](https://tv.example/RELIANCE)<br><sub>DEL68%</sub>"
+    )
+
+
+def test_patch_symbol_line_replaces_suffixed_tag_with_no_suffix_tag():
+    """Idempotent re-patch: a stale DEL68%(T-1) token must be recognized and
+    replaced by a fresh no-suffix DEL68% token, not left duplicated."""
+    line = "| [RELIANCE](https://tv.example/RELIANCE)<br><sub>DEL68%(T-1)</sub> | 3d |\n"
+    out = patch_symbol_line(line, _tagger({"RELIANCE": "DEL68%"}))
+    assert "<sub>DEL68%</sub>" in out
+    assert "(T-1)" not in out
+
+
 def test_patch_symbol_line_handles_rs_highline_extra_bracket():
     line = "| [RELIANCE](https://tv.example/RELIANCE) [20% ] | 150.00 |\n"
     out = patch_symbol_line(line, _tagger({"RELIANCE": "DEL68%(T-1)"}))
