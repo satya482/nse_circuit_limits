@@ -26,16 +26,9 @@ import os
 from datetime import datetime, timezone, timedelta
 
 import pandas as pd
-from tradingview_screener import Query, col
 
-from us_ohlc_db import load_ohlc_many
 from wavetrend_scanner import WaveTrendCalculator
-from disclaimer import (
-    SEBI_MD_HEADER,
-    SEBI_MD_FOOTER,
-    SEBI_HTML_BANNER,
-    SEBI_HTML_FOOTER,
-)
+
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -198,3 +191,59 @@ def _earliness(
     elif cavgc_rising and cavgc < 1.03:
         score += 5
     return round(score, 1)
+
+
+def analyse(
+    symbol: str,
+    df_raw: pd.DataFrame,
+    calc: WaveTrendCalculator,
+    bench_series: pd.Series | None = None,
+    rs_pct: float = 50.0,
+) -> dict | None:
+    try:
+        if df_raw is None or len(df_raw) < 83:  # WaveTrendCalculator._min_bars floor
+            return None
+
+        sig = calc.get_signal(df_raw)
+        if sig.wt_signal_rank < MIN_RANK:
+            return None
+
+        rs = _rs_state(df_raw, bench_series)
+
+        c = df_raw["close"].astype(float)
+        zl25 = _zlema(c, 25)
+        zl_rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
+        zl_days, zl_pct = _zl25_turn_stats(zl25, c)
+
+        curr_close = float(c.iloc[-1])
+        prev_close = float(c.iloc[-2])
+        day_chg = (curr_close - prev_close) / prev_close * 100
+
+        cavgc_val, cavgc_rising = _cavgc(c)
+        rvol, strong_start = _rvol_ss(df_raw)
+        squeeze = _bb_kc_squeeze(df_raw)
+        earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
+
+        return {
+            "symbol": symbol,
+            "wt_signal": sig.wt_signal,
+            "wt_rank": sig.wt_signal_rank,
+            "wt1": round(sig.wt1, 2),
+            "wt2": round(sig.wt2, 2),
+            "wt_is_ppv": sig.wt_is_ppv,
+            "zl_rising": zl_rising,
+            "zl_days": zl_days,
+            "zl_pct": zl_pct,
+            "squeeze": squeeze,
+            "rs_state": rs,
+            "rs_pct": rs_pct,
+            "cavgc": round(cavgc_val, 4),
+            "cavgc_rising": cavgc_rising,
+            "rvol": round(rvol, 2),
+            "strong_start": strong_start,
+            "earliness": earliness,
+            "close": curr_close,
+            "day_chg": day_chg,
+        }
+    except Exception:
+        return None

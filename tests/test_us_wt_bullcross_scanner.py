@@ -1,8 +1,9 @@
 """tests/test_us_wt_bullcross_scanner.py"""
+
 import numpy as np
 import pandas as pd
-import pytest
 
+from wavetrend_scanner import WaveTrendCalculator
 from us_wt_bullcross_scanner import (
     _ema,
     _zlema,
@@ -13,6 +14,8 @@ from us_wt_bullcross_scanner import (
     _cavgc,
     _rvol_ss,
     _earliness,
+    analyse,
+    MIN_RANK,
 )
 
 
@@ -127,7 +130,10 @@ def test_compute_rs_pct_map_ranks_higher_relative_return_higher():
 
 def test_cavgc_rising_when_close_above_and_climbing_ema():
     # Flat then gap up — close moves above EMA and keeps rising
-    c = pd.Series([100.0] * 20 + [105.0, 110.0, 115.0, 120.0, 125.0, 130.0, 135.0, 140.0, 145.0, 150.0])
+    c = pd.Series(
+        [100.0] * 20
+        + [105.0, 110.0, 115.0, 120.0, 125.0, 130.0, 135.0, 140.0, 145.0, 150.0]
+    )
     ratio, rising = _cavgc(c)
     assert ratio > 1.0
     assert rising is True
@@ -168,3 +174,45 @@ def test_earliness_zero_with_no_bonuses():
         rs_state="weak", zl_days=60, cavgc=1.05, cavgc_rising=False, squeeze=False
     )
     assert score == 0
+
+
+def _bull_then_hold(n_decline=300, n_rise=150) -> np.ndarray:
+    rng = np.random.default_rng(42)
+    trend = np.concatenate(
+        [np.linspace(100, 30, n_decline), np.linspace(30, 90, n_rise)]
+    )
+    noise = rng.normal(0, 2.0, len(trend))
+    return np.clip(trend + noise, 1.0, None)
+
+
+def test_analyse_returns_none_with_insufficient_bars():
+    df = _df([100.0] * 50)
+    calc = WaveTrendCalculator()
+    assert analyse("TEST", df, calc) is None
+
+
+def test_analyse_returns_none_on_pure_decline_no_cross():
+    prices = list(np.linspace(100, 10, 400))
+    df = _df(prices)
+    calc = WaveTrendCalculator()
+    assert analyse("TEST", df, calc) is None
+
+
+def test_analyse_matches_calculator_rank_when_signal_present():
+    df = _df(list(_bull_then_hold()))
+    calc = WaveTrendCalculator()
+    sig = calc.get_signal(df.rename(columns=str.lower))
+    result = analyse("TEST", df, calc)
+    if sig.wt_signal_rank >= MIN_RANK:
+        assert result is not None
+        assert result["wt_rank"] == sig.wt_signal_rank
+        assert result["symbol"] == "TEST"
+        assert set(
+            [
+                "wt_signal", "wt1", "wt2", "wt_is_ppv", "zl_rising", "zl_days",
+                "zl_pct", "squeeze", "rs_state", "rs_pct", "cavgc", "cavgc_rising",
+                "rvol", "strong_start", "earliness", "close", "day_chg",
+            ]
+        ).issubset(result.keys())
+    else:
+        assert result is None
