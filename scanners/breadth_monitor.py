@@ -53,7 +53,38 @@ _CSV_COLUMNS = [
     "pct_above_sma200",
     "composite_score",
     "net_thrust",  # (up4 - dn4) / total_eligible; None when total_eligible < 2000
+    "wt_total_cross",  # WT bull-cross count for the day (source depends on wt_source)
+    "wt_os_frac",  # oversold-cross share of wt_total_cross (rank 2/3/5) — bounce-quality tilt
+    "wt_sqz_frac",  # squeeze-cross share of wt_total_cross — breakout-noise tilt
+    "wt_source",  # "live" (wt_bullcross_latest.md, gated universe) or "raw_est" (backfilled, ungated)
 ]
+
+
+WT_MD_LATEST = REPO_DIR / "wt_scans" / "wt_bullcross_latest.md"
+_WT_OS_RANKS = {2, 3, 5}  # OS_L2, OVERSOLD, OS_PPV — ranks that require an oversold cross
+
+
+def compute_wt_composition_today() -> dict | None:
+    """Today's WT signal composition from wt_bullcross_latest.md (gated live scanner).
+    Reuses wt_squeeze_dashboard.parse_wt_rows — same rank/squeeze parsing the dashboard
+    already does, so counts match what's visible in the scanner output.
+    Returns None if the file is missing or empty (e.g. non-trading day)."""
+    if not WT_MD_LATEST.exists():
+        return None
+    from wt_squeeze_dashboard import parse_wt_rows, read_file  # noqa: E402
+
+    rows = parse_wt_rows(read_file(str(WT_MD_LATEST)))
+    total = len(rows)
+    if total == 0:
+        return None
+    os_count = sum(1 for r in rows if r["rank"] in _WT_OS_RANKS)
+    sqz_count = sum(1 for r in rows if r["squeeze"])
+    return {
+        "wt_total_cross": total,
+        "wt_os_frac": round(os_count / total, 4),
+        "wt_sqz_frac": round(sqz_count / total, 4),
+        "wt_source": "live",
+    }
 
 
 def compute_daily_breadth(
@@ -282,6 +313,19 @@ def build_dashboard_html(
     sma20_js = _to_js(history_df["pct_above_sma20"])
     sma50_js = _to_js(history_df["pct_above_sma50"])
     sma200_js = _to_js(history_df["pct_above_sma200"])
+    wt_os_frac_js = _to_js(history_df.get("wt_os_frac", pd.Series(dtype=float)))
+    wt_sqz_frac_js = _to_js(history_df.get("wt_sqz_frac", pd.Series(dtype=float)))
+    wt_source_series = history_df.get("wt_source", pd.Series(dtype=object))
+    wt_source_json = __import__("json").dumps(
+        [None if pd.isna(v) else str(v) for v in wt_source_series]
+    )
+    # Last date still tagged "raw_est" — boundary for the estimate/live shading
+    _raw_est_dates = [
+        d
+        for d, s in zip(history_df["date"].tolist(), wt_source_series.tolist())
+        if s == "raw_est"
+    ]
+    wt_est_boundary = _raw_est_dates[-1] if _raw_est_dates else None
 
     # Nifty actual close prices — for dual-axis overlay on SMA breadth panel
     nifty_price_js = "[]"
@@ -345,6 +389,21 @@ def build_dashboard_html(
             if pd.notna(last.get("pct_above_sma200"))
             else "—"
         )
+        # WT signal composition — soft tilt, not a validated regime signal (see
+        # research/wt_breadth_correlation.md). Green = oversold-bounce-dominant,
+        # amber = squeeze-breakout-dominant, muted = no lean / no data.
+        os_f, sqz_f = last.get("wt_os_frac"), last.get("wt_sqz_frac")
+        if pd.notna(os_f) and pd.notna(sqz_f):
+            stat_wtcomp = f"OS {os_f:.0%} / SQ {sqz_f:.0%}"
+            if sqz_f > os_f + 0.10:
+                wtcomp_css = "amber"
+            elif os_f > sqz_f:
+                wtcomp_css = "bull"
+            else:
+                wtcomp_css = "muted"
+        else:
+            stat_wtcomp = "—"
+            wtcomp_css = "muted"
         # Current regime state + consecutive days
         last_r5 = last.get("ratio_5d")
         if pd.notna(last_r5) and last_r5 >= THRUST_THRESHOLD:
@@ -372,6 +431,8 @@ def build_dashboard_html(
         stat_r5 = stat_up4 = stat_dn4 = stat_sma = "—"
         stat_regime = "—"
         regime_css = "muted"
+        stat_wtcomp = "—"
+        wtcomp_css = "muted"
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -446,6 +507,7 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <div class="stat"><div class="stat-label">Up 4% Today</div><div class="stat-val bull" id="s-up4">{stat_up4}</div></div>
   <div class="stat"><div class="stat-label">Down 4% Today</div><div class="stat-val bear" id="s-dn4">{stat_dn4}</div></div>
   <div class="stat"><div class="stat-label">% Above SMA200</div><div class="stat-val amber" id="s-sma">{stat_sma}</div></div>
+  <div class="stat"><div class="stat-label">WT Composition (soft tilt)</div><div class="stat-val {wtcomp_css}" id="s-wtcomp" style="font-size:1.1rem">{stat_wtcomp}</div></div>
 </div>
 
 <div class="controls">
@@ -478,6 +540,17 @@ button.active{{background:#1fd98022;color:#1fd980;border-color:#1fd980}}
   <canvas id="c-ratio" height="220"></canvas>
 </div>
 
+<!-- Panel 4: WT signal composition — soft tilt, NOT a validated regime signal -->
+<div class="card">
+  <h2>WT Signal Composition — Oversold-bounce % (solid) vs Squeeze-breakout % (dashed) of daily bull crosses</h2>
+  <p class="meta" style="margin:0 0 10px">
+    Soft tilt only (research/wt_breadth_correlation.md) — high OS% historically leads better forward breadth,
+    high SQZ% leads worse, on a weak/reversible correlation. Shaded region = backfilled estimate (raw universe
+    rescan, pre-2026-06-08); solid region = live gated scanner (wt_bullcross_latest.md).
+  </p>
+  <canvas id="c-wtcomp" height="220"></canvas>
+</div>
+
 <!-- Panel 5: Mirrored thrust bars -->
 <div class="card">
   <h2>Daily 4% Movers — Up (green) vs Down (red)</h2>
@@ -507,7 +580,11 @@ const DATA = {{
   niftyPrice: {nifty_price_js},
   thrustBands: {thrust_bands_js},
   capBands:    {cap_bands_js},
+  wtOsFrac:  {wt_os_frac_js},
+  wtSqzFrac: {wt_sqz_frac_js},
+  wtSource:  {wt_source_json},
 }};
+const WT_EST_BOUNDARY = {__import__("json").dumps(wt_est_boundary)};
 
 const THRUST = {THRUST_THRESHOLD};
 const CAPITU = {CAPITULATION_THRESHOLD};
@@ -521,7 +598,7 @@ function setRange(n) {{
   _range = n;
   ['90','180','252','504','all'].forEach(k => document.getElementById('btn-' + k)?.classList.remove('active'));
   document.getElementById(n === 0 ? 'btn-all' : 'btn-' + n)?.classList.add('active');
-  [chartBars, chartRatio, chartSma200].forEach(ch => {{
+  [chartBars, chartRatio, chartSma200, chartWtComp].forEach(ch => {{
     ch.data.labels = sl(DATA.dates, n);
     ch.data.datasets.forEach((ds, i) => {{
       const key = ds._dataKey;
@@ -666,6 +743,19 @@ function buildAnnotations(type, n) {{
       dn200: {{ type: 'line', yMin: -200, yMax: -200, borderColor: 'rgba(255,85,119,0.7)', borderWidth: 1.5, borderDash: [3,2] }},
     }};
   }}
+  if (type === 'wtcomp') {{
+    const annot = {{ ...fy }};
+    if (WT_EST_BOUNDARY && dates.length && dates[0] <= WT_EST_BOUNDARY) {{
+      annot.estZone = {{
+        type: 'box', xMin: dates[0], xMax: WT_EST_BOUNDARY,
+        yMin: 0, yMax: 1,
+        backgroundColor: 'rgba(107,119,133,0.10)', borderWidth: 0,
+        label: {{ content: 'estimated (raw universe)', display: true, position: {{ x: 'start', y: 'start' }},
+                  color: 'rgba(107,119,133,0.8)', font: {{ size: 9 }}, backgroundColor: 'transparent' }},
+      }};
+    }}
+    return annot;
+  }}
   return {{}};
 }}
 
@@ -781,8 +871,31 @@ const chartSma200 = new Chart(document.getElementById('c-sma200'), {{
 }});
 chartSma200._type = 'sma200';
 
+// Panel 7: WT signal composition
+const chartWtComp = new Chart(document.getElementById('c-wtcomp'), {{
+  type: 'line',
+  data: {{
+    labels: sl(DATA.dates, 90),
+    datasets: [
+      {{ data: sl(DATA.wtOsFrac,  90), _dataKey: 'wtOsFrac',  borderColor: '#1fd980', borderWidth: 2, pointRadius: 0, fill: false, spanGaps: true, label: 'Oversold-cross %' }},
+      {{ data: sl(DATA.wtSqzFrac, 90), _dataKey: 'wtSqzFrac', borderColor: '#ffb454', borderWidth: 1.5, borderDash: [5,3], pointRadius: 0, fill: false, spanGaps: true, label: 'Squeeze-cross %' }},
+    ],
+  }},
+  options: {{
+    ...CHART_OPTS('wtcomp'),
+    plugins: {{
+      ...CHART_OPTS('wtcomp').plugins,
+      legend: {{ display: true, labels: {{ color: '#6b7785', boxWidth: 12, padding: 10 }} }},
+      tooltip: {{ ...CHART_OPTS('wtcomp').plugins.tooltip,
+        callbacks: {{ label: ctx => ` ${{ctx.dataset.label}}: ${{(ctx.parsed.y * 100).toFixed(1)}}%` }} }},
+    }},
+    scales: {{ ...CHART_OPTS('wtcomp').scales, y: {{ min: 0, max: 1, grid: {{ color: '#1a222d' }}, ticks: {{ color: '#6b7785', callback: v => (v * 100) + '%' }} }} }},
+  }},
+}});
+chartWtComp._type = 'wtcomp';
+
 // Synced crosshair — vertical line follows same date across all panels
-const _allCharts = [chartBars, chartRatio, chartSma200];
+const _allCharts = [chartBars, chartRatio, chartSma200, chartWtComp];
 _allCharts.forEach(function(ch) {{
   ch.canvas.style.cursor = 'crosshair';
   ch.canvas.addEventListener('mousemove', function(e) {{
@@ -1032,6 +1145,13 @@ def main() -> None:
         if row is None:
             print(f"  {today} is not a trading day in SQLite — no row written.")
         else:
+            wt_row = compute_wt_composition_today()
+            if wt_row:
+                row.update(wt_row)
+                print(
+                    f"  WT composition: total={wt_row['wt_total_cross']} "
+                    f"os_frac={wt_row['wt_os_frac']:.1%} sqz_frac={wt_row['wt_sqz_frac']:.1%}"
+                )
             update_breadth_history(str(HISTORY_PATH), row)
             print(
                 f"  up4={row['up4_count']} down4={row['down4_count']} ratio5d={row['ratio_5d']}"

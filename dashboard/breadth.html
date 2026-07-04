@@ -104,6 +104,17 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
   <canvas id="c-ratio" height="220"></canvas>
 </div>
 
+<!-- Panel 4: WT signal composition — soft tilt, NOT a validated regime signal -->
+<div class="card">
+  <h2>WT Signal Composition — Oversold-bounce % (solid) vs Squeeze-breakout % (dashed) of daily bull crosses</h2>
+  <p class="meta" style="margin:0 0 10px">
+    Soft tilt only (research/wt_breadth_correlation.md) — high OS% historically leads better forward breadth,
+    high SQZ% leads worse, on a weak/reversible correlation. Shaded region = backfilled estimate (raw universe
+    rescan, pre-2026-06-08); solid region = live gated scanner (wt_bullcross_latest.md).
+  </p>
+  <canvas id="c-wtcomp" height="220"></canvas>
+</div>
+
 <!-- Panel 5: Mirrored thrust bars -->
 <div class="card">
   <h2>Daily 4% Movers — Up (green) vs Down (red)</h2>
@@ -114,17 +125,6 @@ button.active{background:#1fd98022;color:#1fd980;border-color:#1fd980}
 <div class="card">
   <h2>Net Thrust Heatmap (Up4 − Down4) · Last 2 years</h2>
   <canvas id="heatmap-canvas"></canvas>
-</div>
-
-<!-- Panel 7: WT signal composition — soft tilt, NOT a validated regime signal -->
-<div class="card">
-  <h2>WT Signal Composition — Oversold-bounce % (solid) vs Squeeze-breakout % (dashed) of daily bull crosses</h2>
-  <p class="meta" style="margin:0 0 10px">
-    Soft tilt only (research/wt_breadth_correlation.md) — high OS% historically leads better forward breadth,
-    high SQZ% leads worse, on a weak/reversible correlation. Shaded region = backfilled estimate (raw universe
-    rescan, pre-2026-06-08); solid region = live gated scanner (wt_bullcross_latest.md).
-  </p>
-  <canvas id="c-wtcomp" height="220"></canvas>
 </div>
 
 <script>
