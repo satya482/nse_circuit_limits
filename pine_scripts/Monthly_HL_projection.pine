@@ -1,0 +1,262 @@
+//@version=6
+indicator("Satya Working Monthly High/Low - Current + Prev + History Boxes (Daily or Weekly chart)", overlay = true, max_lines_count = 500, max_boxes_count = 500)
+
+// Works on any sub-monthly chart (daily, weekly, intraday): projects monthly H/L boxes
+// forward one month. Monthly chart or above: unsupported, hidden.
+
+//──────────────────── Inputs
+showCurrent      = input.bool(true,  "Show live current/previous month")
+showHistory      = input.bool(true,  "Show historical months")
+historyMonths    = input.int(36,     "Historical months to keep", minval = 0, maxval = 240)
+
+showLines        = input.bool(false,  "Show lines")
+showBoxes        = input.bool(true,  "Show boxes")
+
+currHighColor    = input.color(color.lime, "Current month high color")
+currLowColor     = input.color(color.red,  "Current month low color")
+histHighColor    = input.color(color.new(color.lime, 70), "Historical high color")
+histLowColor     = input.color(color.new(color.red,  70), "Historical low color")
+lineWidth        = input.int(1, "Line width", minval = 1, maxval = 4)
+
+currentBoxBorder = input.color(color.new(color.aqua, 0),  "Current box border")
+currentBoxFill   = input.color(color.new(color.aqua, 88), "Current box fill")
+historyBoxBorder = input.color(color.new(color.aqua, 55), "Historical box border")
+historyBoxFill   = input.color(color.new(color.aqua, 92), "Historical box fill")
+
+currentBoxStyle  = input.string("Hollow", "Current box fill style", options = ["Filled", "Hollow"])
+historyBoxStyle  = input.string("Hollow", "Historical box fill style", options = ["Filled", "Hollow"])
+
+currentBoxBorderStyleOpt = input.string("Dotted",  "Current box border style", options = ["Solid", "Dashed", "Dotted"])
+historyBoxBorderStyleOpt = input.string("Dashed", "Historical box border style", options = ["Solid", "Dashed", "Dotted"])
+
+moBoxBorder = input.color(color.new(color.yellow, 0),  "Current-month-so-far box border")
+moBoxFill   = input.color(color.new(color.yellow, 85), "Current-month-so-far box fill")
+
+//──────────────────── Visibility
+// Monthly chart or above: nothing sane to project onto.
+canShow = not timeframe.ismonthly
+
+//──────────────────── Monthly series from HTF
+mHigh      = request.security(syminfo.tickerid, "M", high,       barmerge.gaps_off, barmerge.lookahead_off)
+mLow       = request.security(syminfo.tickerid, "M", low,        barmerge.gaps_off, barmerge.lookahead_off)
+mTime      = request.security(syminfo.tickerid, "M", time,       barmerge.gaps_off, barmerge.lookahead_off)
+mTimeClose = request.security(syminfo.tickerid, "M", time_close, barmerge.gaps_off, barmerge.lookahead_off)
+
+// New month detection on chart timeframe
+newMonth = ta.change(mTime) != 0
+
+//──────────────────── Helpers
+// Months vary 28-31 days — no fixed-ms offset like weeks. Calendar-aware month arithmetic.
+f_addMonths(_t, _n) =>
+    y = year(_t)
+    m = month(_t)
+    total = (m - 1) + _n
+    ny = y + total / 12
+    nm = total % 12 + 1
+    timestamp(ny, nm, 1, 0, 0)
+
+nextMonthStart = mTimeClose
+nextMonthEnd   = f_addMonths(mTimeClose, 1)
+
+f_newLine(_x1, _y1, _x2, _y2, _col) =>
+    line.new(_x1, _y1, _x2, _y2, xloc = xloc.bar_time, extend = extend.none, color = _col, width = lineWidth)
+
+f_setOrCreateLine(_ln, _x1, _y1, _x2, _y2, _col) =>
+    line ln = _ln
+    if na(ln)
+        ln := f_newLine(_x1, _y1, _x2, _y2, _col)
+    else
+        line.set_x1(ln, _x1)
+        line.set_y1(ln, _y1)
+        line.set_x2(ln, _x2)
+        line.set_y2(ln, _y2)
+        line.set_color(ln, _col)
+        line.set_width(ln, lineWidth)
+    ln
+
+f_deleteLine(_ln) =>
+    if not na(_ln)
+        line.delete(_ln)
+
+f_deleteBox(_bx) =>
+    if not na(_bx)
+        box.delete(_bx)
+
+f_boxBg(_style, _fill) =>
+    _style == "Hollow" ? color.new(_fill, 100) : _fill
+
+f_borderStyle(_opt) =>
+    _opt == "Dashed" ? line.style_dashed :
+     _opt == "Dotted" ? line.style_dotted :
+     line.style_solid
+
+f_setOrCreateBox(box _bx, int _left, float _top, int _right, float _bottom, color _border, color _bg, string _fillStyle, string _borderStyleOpt) =>
+    box bx = _bx
+    bg = f_boxBg(_fillStyle, _bg)
+    brStyle = f_borderStyle(_borderStyleOpt)
+    if na(bx)
+        bx := box.new(left = _left, top = _top, right = _right, bottom = _bottom, xloc = xloc.bar_time, border_color = _border, border_style = brStyle, bgcolor = bg)
+    else
+        box.set_left(bx, _left)
+        box.set_top(bx, _top)
+        box.set_right(bx, _right)
+        box.set_bottom(bx, _bottom)
+        box.set_border_color(bx, _border)
+        box.set_border_style(bx, brStyle)
+        box.set_bgcolor(bx, bg)
+    bx
+
+f_deleteLineArray(array<line> arr) =>
+    sz = array.size(arr)
+    if sz > 0
+        for i = 0 to sz - 1
+            line.delete(array.get(arr, i))
+    array.clear(arr)
+
+f_deleteBoxArray(array<box> arr) =>
+    sz = array.size(arr)
+    if sz > 0
+        for i = 0 to sz - 1
+            box.delete(array.get(arr, i))
+    array.clear(arr)
+
+//──────────────────── Live objects
+var line currHighSeg1 = na
+var line currHighSeg2 = na
+var line currLowSeg1  = na
+var line currLowSeg2  = na
+
+var box  currBox = na
+var box  prevBox = na
+var box  moBox   = na
+
+// Current month H/L tracked directly from chart bars (daily or weekly) — no HTF dependency
+var float moHigh  = na
+var float moLow   = na
+var int   moStart = na
+
+// Store prev month values at the month boundary, not inline via [1]
+// mTime[1] mid-month gives current month start (HTF gaps_off fills forward),
+// so reading it every bar produces wrong prevBox.left most of the time.
+var int   prevMoStart = na
+var int   prevMoEnd   = na
+var float prevMoHigh  = na
+var float prevMoLow   = na
+
+if newMonth
+    prevMoStart := mTime[1]
+    prevMoEnd   := mTimeClose[1]
+    prevMoHigh  := mHigh[1]
+    prevMoLow   := mLow[1]
+
+// New month on chart bars: calendar month/year change. Works whether chart bars are
+// daily or weekly — first bar whose date falls in a new month flips this.
+isNewTradingMonth = na(moStart) or month(time[1]) != month(time) or year(time[1]) != year(time)
+if isNewTradingMonth
+    moStart := time
+    moHigh  := high
+    moLow   := low
+else
+    moHigh  := math.max(moHigh, high)
+    moLow   := math.min(moLow,  low)
+
+//──────────────────── Current + previous live drawing
+if canShow and showCurrent
+    if showLines
+        currHighSeg1 := f_setOrCreateLine(currHighSeg1, mTime,          mHigh, mTimeClose,      mHigh, currHighColor)
+        currHighSeg2 := f_setOrCreateLine(currHighSeg2, nextMonthStart, mHigh, nextMonthEnd, mHigh, currHighColor)
+        currLowSeg1  := f_setOrCreateLine(currLowSeg1,  mTime,          mLow,  mTimeClose,      mLow,  currLowColor)
+        currLowSeg2  := f_setOrCreateLine(currLowSeg2,  nextMonthStart, mLow,  nextMonthEnd, mLow,  currLowColor)
+    else
+        f_deleteLine(currHighSeg1), currHighSeg1 := na
+        f_deleteLine(currHighSeg2), currHighSeg2 := na
+        f_deleteLine(currLowSeg1),  currLowSeg1  := na
+        f_deleteLine(currLowSeg2),  currLowSeg2  := na
+
+    if showBoxes
+        if not na(prevMoStart) and not na(prevMoEnd) and not na(prevMoHigh) and not na(prevMoLow)
+            prevBox := f_setOrCreateBox(prevBox, prevMoStart, prevMoHigh, mTimeClose, prevMoLow, historyBoxBorder, historyBoxFill, historyBoxStyle, historyBoxBorderStyleOpt)
+        else
+            f_deleteBox(prevBox), prevBox := na
+
+        currBox := f_setOrCreateBox(currBox, mTime, mHigh, nextMonthEnd, mLow, currentBoxBorder, currentBoxFill, currentBoxStyle, currentBoxBorderStyleOpt)
+        if not na(moStart)
+            moBox := f_setOrCreateBox(moBox, moStart, moHigh, time_close, moLow, moBoxBorder, moBoxFill, currentBoxStyle, currentBoxBorderStyleOpt)
+    else
+        f_deleteBox(prevBox), prevBox := na
+        f_deleteBox(currBox), currBox := na
+        f_deleteBox(moBox),   moBox   := na
+else
+    f_deleteLine(currHighSeg1), currHighSeg1 := na
+    f_deleteLine(currHighSeg2), currHighSeg2 := na
+    f_deleteLine(currLowSeg1),  currLowSeg1  := na
+    f_deleteLine(currLowSeg2),  currLowSeg2  := na
+    f_deleteBox(prevBox), prevBox := na
+    f_deleteBox(currBox), currBox := na
+    f_deleteBox(moBox),   moBox   := na
+
+//──────────────────── Store completed monthly records
+var array<int>   monthStarts = array.new_int()
+var array<int>   monthEnds   = array.new_int()
+var array<float> monthHighs  = array.new_float()
+var array<float> monthLows   = array.new_float()
+
+if newMonth
+    completedStart = mTime[1]
+    completedEnd   = mTimeClose[1]
+    completedHigh  = mHigh[1]
+    completedLow   = mLow[1]
+
+    if not na(completedStart) and not na(completedEnd) and not na(completedHigh) and not na(completedLow)
+        array.push(monthStarts, completedStart)
+        array.push(monthEnds,   completedEnd)
+        array.push(monthHighs,  completedHigh)
+        array.push(monthLows,   completedLow)
+
+        maxKeep = historyMonths + 2
+        while array.size(monthStarts) > maxKeep
+            array.shift(monthStarts)
+            array.shift(monthEnds)
+            array.shift(monthHighs)
+            array.shift(monthLows)
+
+//──────────────────── Historical objects
+var array<line> histLines = array.new_line()
+var array<box>  histBoxes = array.new_box()
+
+// Rebuild history only on last bar for stability
+if barstate.islast
+    f_deleteLineArray(histLines)
+    f_deleteBoxArray(histBoxes)
+
+    if canShow and showHistory and historyMonths > 0
+        sz = array.size(monthStarts)
+        pairCount = math.min(historyMonths, sz - 1)
+
+        if pairCount > 0
+            startIdx = sz - pairCount - 1
+            endIdx   = sz - 2
+
+            if endIdx >= startIdx
+                for i = startIdx to endIdx
+                    srcStart = array.get(monthStarts, i)
+                    srcEnd   = array.get(monthEnds,   i)
+                    srcHigh  = array.get(monthHighs,  i)
+                    srcLow   = array.get(monthLows,   i)
+                    nxtStart = array.get(monthStarts, i + 1)
+                    nxtEnd   = array.get(monthEnds,   i + 1)
+
+                    if showLines
+                        h1 = line.new(srcStart, srcHigh, srcEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
+                        h2 = line.new(nxtStart, srcHigh, nxtEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
+                        l1 = line.new(srcStart, srcLow,  srcEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
+                        l2 = line.new(nxtStart, srcLow,  nxtEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
+
+                        array.push(histLines, h1)
+                        array.push(histLines, h2)
+                        array.push(histLines, l1)
+                        array.push(histLines, l2)
+
+                    if showBoxes
+                        hb = box.new(left = srcStart, top = srcHigh, right = nxtEnd, bottom = srcLow, xloc = xloc.bar_time, border_color = historyBoxBorder, border_style = f_borderStyle(historyBoxBorderStyleOpt), bgcolor = f_boxBg(historyBoxStyle, historyBoxFill))
+                        array.push(histBoxes, hb)
