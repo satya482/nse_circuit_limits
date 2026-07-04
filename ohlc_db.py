@@ -14,6 +14,7 @@ Rows are ordered oldest → newest.
 import sqlite3
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 
 DB_PATH = Path(__file__).parent / ".ohlc_data" / "market.db"
@@ -199,6 +200,60 @@ def liq_tag(df: pd.DataFrame) -> str:
         avg_str = f"{avg10:.1f}Cr" if avg10 < 1 else f"{avg10:.0f}Cr"
         today_str = f"{today_cr:.1f}Cr" if today_cr < 1 else f"{today_cr:.0f}Cr"
         return f"{accel_arrow}{avg_str} · {today_str}"
+    except Exception:
+        return ""
+
+
+def cmf_days(df: pd.DataFrame, n: int = 20, cap: int = 30) -> tuple[bool, int] | None:
+    """Chaikin Money Flow zero-line-cross recency.
+    Returns (cmf_positive, bars_since_zero_cross), bars_ago capped at `cap`.
+    None if fewer than n + 2 bars.
+    No float equality: cross = sign flip via > / <= boundary, mirrors
+    zl25_stats()'s bars-ago scan pattern.
+    """
+    if len(df) < n + 2:
+        return None
+
+    high = df["high"].astype(float)
+    low = df["low"].astype(float)
+    close = df["close"].astype(float)
+    volume = df["volume"].astype(float)
+
+    range_ = high - low
+    mfm = np.where(range_ > 0, ((close - low) - (high - close)) / range_, 0.0)
+    mfv = pd.Series(mfm, index=df.index) * volume
+
+    cmf = (
+        mfv.rolling(n, min_periods=n).sum()
+        / volume.rolling(n, min_periods=n).sum()
+    ).dropna().reset_index(drop=True)
+
+    m = len(cmf)
+    if m < 2:
+        return None
+
+    cmf_positive = bool(cmf.iloc[-1] > 0)
+
+    limit = max(1, m - cap)
+    for i in range(m - 1, limit - 1, -1):
+        curr, prev = cmf.iloc[i], cmf.iloc[i - 1]
+        if cmf_positive and curr > 0 and prev <= 0:
+            return True, (m - 1) - i
+        if not cmf_positive and curr <= 0 and prev > 0:
+            return False, (m - 1) - i
+
+    return cmf_positive, cap
+
+
+def cmf_tag(df: pd.DataFrame, n: int = 20, cap: int = 30) -> str:
+    """Formats cmf_days() -> '↑CMF{d}d' / '↓CMF{d}d'. '' on None or error."""
+    try:
+        result = cmf_days(df, n=n, cap=cap)
+        if result is None:
+            return ""
+        positive, days = result
+        arrow = "↑" if positive else "↓"
+        return f"{arrow}CMF{days}d"
     except Exception:
         return ""
 
