@@ -32,7 +32,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag
+from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag, deliv_tag
 from wavetrend_scanner import WaveTrendCalculator, weekly_wt_zone
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
@@ -380,6 +380,7 @@ def analyse(
             "trap": _trap_label(fm),
             "liq_tag": liq_tag(df_raw),
             "cmf_tag": cmf_tag(df_raw),
+            "deliv_tag": deliv_tag(symbol),
         }
     except Exception:
         return None
@@ -435,6 +436,8 @@ def _row(
         extras.append("★")
     if f.get("cmf_tag"):
         extras.append(f["cmf_tag"])
+    if f.get("deliv_tag"):
+        extras.append(f["deliv_tag"])
     sym_cell = f"[{sym}]({tv})" + (
         "<br><sub>" + " · ".join(extras) + "</sub>" if extras else ""
     )
