@@ -484,7 +484,7 @@ def get_watchlist() -> list[str]:
 
 def print_results(findings: list[dict]) -> None:
     print(f"\n{'='*70}")
-    print(f"  US WaveTrend Bull Cross Scanner  |  {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"  US WaveTrend Bull Cross Scanner  |  {datetime.now(IST).strftime('%Y-%m-%d %H:%M')}")
     print(f"  Total bull crosses: {len(findings)}")
     print(f"{'='*70}")
     for emoji, cat_name, _cat_desc, ranks in _CATEGORIES:
