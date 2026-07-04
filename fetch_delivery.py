@@ -48,7 +48,7 @@ def parse_bhavcopy_csv(csv_text: str) -> pd.DataFrame:
             "deliv_pct": pd.to_numeric(df["DELIV_PER"], errors="coerce"),
         }
     )
-    return out.dropna(subset=["symbol"]).reset_index(drop=True)
+    return out.dropna(subset=["symbol", "ttl_trd_qty", "deliv_qty", "deliv_pct"]).reset_index(drop=True)
 
 
 def upsert_delivery(rows: pd.DataFrame, d: date, db_path: Path = DB_PATH) -> int:
