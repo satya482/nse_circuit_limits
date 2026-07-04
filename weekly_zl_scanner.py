@@ -25,7 +25,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag
+from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -243,6 +243,7 @@ def analyse(symbol: str) -> dict | None:
             "price_vs_zl": price_vs_zl,
             "liq_tag": liq_tag(daily),
             "cmf_tag": cmf_tag(daily),
+            "deliv_tag": deliv_tag(symbol),
         }
     except Exception:
         return None
@@ -299,8 +300,8 @@ def _table_rows(
         sqz = f"{f['sqz_weeks']}w" if f["sqz_on"] else "—"
         pvz = f["price_vs_zl"]
         _meta = _LABELS.get(sym, "")
-        cmf = f.get("cmf_tag", "")
-        sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{cmf}</sub>" if cmf else "")
+        extras = [t for t in (f.get("cmf_tag", ""), f.get("deliv_tag", "")) if t]
+        sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{' · '.join(extras)}</sub>" if extras else "")
         rows.append(
             f"| {sym_cell} "
             f"| {_meta} "
