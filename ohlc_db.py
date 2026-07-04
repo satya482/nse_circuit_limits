@@ -258,6 +258,71 @@ def cmf_tag(df: pd.DataFrame, n: int = 20, cap: int = 30) -> str:
         return ""
 
 
+DELIV_SPIKE_N = 20  # baseline window, trading days
+DELIV_SPIKE_MULT = 1.5  # today must exceed baseline * mult to count as spike
+
+
+def load_delivery(symbol: str, lookback: int = 60, db_path: Path = DB_PATH) -> pd.DataFrame | None:
+    """Return (date, deliv_pct) for one symbol from the `delivery` table, oldest-first.
+    None if symbol/table missing or DB error -- delivery data lags scanner runs by
+    design, so 'no data yet' is expected, not an error state."""
+    con = _connect(db_path)
+    if con is None:
+        return None
+    try:
+        df = pd.read_sql(
+            "SELECT date, deliv_pct FROM delivery WHERE symbol=? ORDER BY date DESC LIMIT ?",
+            con,
+            params=(symbol, lookback),
+        )
+        if df.empty:
+            return None
+        df["date"] = pd.to_datetime(df["date"])
+        return df.iloc[::-1].reset_index(drop=True)
+    except Exception:
+        return None
+    finally:
+        con.close()
+
+
+def deliv_spike(
+    df: pd.DataFrame, n: int = DELIV_SPIKE_N, mult: float = DELIV_SPIKE_MULT
+) -> tuple[float, float] | None:
+    """Returns (today_pct, baseline_pct) when today's deliv_pct exceeds the rolling
+    mean of the PRIOR n days by `mult`. Baseline strictly excludes today's row --
+    no look-ahead. None if no spike or fewer than n+1 rows."""
+    if df is None or len(df) < n + 1:
+        return None
+    pct = df["deliv_pct"].astype(float)
+    today_pct = float(pct.iloc[-1])
+    baseline_pct = float(pct.iloc[-(n + 1) : -1].mean())
+    if today_pct <= baseline_pct * mult:
+        return None
+    return today_pct, baseline_pct
+
+
+def deliv_tag(
+    symbol: str,
+    n: int = DELIV_SPIKE_N,
+    mult: float = DELIV_SPIKE_MULT,
+    db_path: Path = DB_PATH,
+) -> str:
+    """'' if no spike / insufficient data. 'DEL{today_pct:.0f}%(T-1)' if spike.
+    Binary flag, NOT always-on (unlike cmf_tag) -- only appears on genuine spike
+    days. '(T-1)' is always accurate: bhavcopy for day T publishes after this
+    scanner's run, so the latest row in `delivery` is always at least 1 trading
+    day behind."""
+    try:
+        df = load_delivery(symbol, lookback=n + 1, db_path=db_path)
+        result = deliv_spike(df, n=n, mult=mult)
+        if result is None:
+            return ""
+        today_pct, _ = result
+        return f"DEL{today_pct:.0f}%(T-1)"
+    except Exception:
+        return ""
+
+
 def get_liq_labels(
     symbols: list[str] | None = None,
     db_path: Path = DB_PATH,
