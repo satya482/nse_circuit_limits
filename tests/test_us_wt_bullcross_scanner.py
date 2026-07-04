@@ -261,7 +261,6 @@ def test_build_markdown_no_signals_shows_placeholder_not_empty_table():
     from us_wt_bullcross_scanner import build_markdown
     md = build_markdown([])
     assert "*No signals.*" in md
-    assert "| Symbol |" not in md.split("*No signals.*")[0][-200:] or True
 
 
 def test_build_markdown_never_renumbers_rank_labels():
