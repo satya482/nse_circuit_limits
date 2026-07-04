@@ -32,7 +32,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag
+from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 
@@ -412,6 +412,7 @@ def analyse(
             "tt_score": s2["tt_score"],
             "liq_tag": liq_tag(df_raw),
             "cmf_tag": cmf_tag(df_raw),
+            "deliv_tag": deliv_tag(symbol),
         }
 
     except Exception:
@@ -452,8 +453,8 @@ def _row(f: dict, circuit: dict, names: dict[str, str] | None = None) -> str:
     tt_cell = f"{'✅' if tt >= 7 else ''}{tt}/8"
     sma200_arrow = "↑" if f.get("sma200_up") else "↓"
     abv_low = f"{f['pct_above_low']:.0f}% {sma200_arrow}"
-    cmf = f.get("cmf_tag", "")
-    sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{cmf}</sub>" if cmf else "")
+    extras = [t for t in (f.get("cmf_tag", ""), f.get("deliv_tag", "")) if t]
+    sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{' · '.join(extras)}</sub>" if extras else "")
     return (
         f"| {sym_cell} "
         f"| {f.get('trap', 'n/a')} "
