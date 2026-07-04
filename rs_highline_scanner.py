@@ -16,7 +16,7 @@ from datetime import datetime
 import pandas as pd
 from tradingview_screener import Query, col
 
-from ohlc_db import load_ohlc_many, get_names, liq_tag
+from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -323,6 +323,7 @@ def analyse(
             "atr_pct": round(atr_p, 1),
             "earliness": earliness,
             "liq_tag": liq_tag(df),
+            "cmf_tag": cmf_tag(df),
         }
     except Exception:
         return None
@@ -353,9 +354,11 @@ def _row(f: dict, circuit: dict, names: dict[str, str]) -> str:
     ds = "+" if f["day_chg"] >= 0 else ""
     rs_icon = _RS_EMOJI.get(f["rs_state"], "↓")
     sqz = "●" if f["squeeze"] else "—"
+    cmf = f.get("cmf_tag", "")
+    sym_cell = f"[{sym}]({tv}) [{circuit_cell}]" + (f"<br><sub>{cmf}</sub>" if cmf else "")
 
     return (
-        f"| [{sym}]({tv}) [{circuit_cell}] "
+        f"| {sym_cell} "
         f"| {name_cell} "
         f"| {f['close']:.2f} "
         f"| {ds}{f['day_chg']:.2f}% "
