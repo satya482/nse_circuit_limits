@@ -27,15 +27,11 @@ from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 
-from tradingview_screener import Query, col
 
-from us_ohlc_db import load_ohlc_many
 from wavetrend_scanner import WaveTrendCalculator
 from disclaimer import (
     SEBI_MD_HEADER,
     SEBI_MD_FOOTER,
-    SEBI_HTML_BANNER,
-    SEBI_HTML_FOOTER,
 )
 
 
@@ -315,7 +311,7 @@ def build_markdown(findings: list[dict]) -> str:
 
     lines = [
         f"# US WaveTrend Bull Cross Scan — {TODAY}",
-        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+        f"*Generated {datetime.now(IST).strftime('%Y-%m-%d %H:%M')} IST*",
         "",
         "### Scan definition",
         "| Filter | Value |",
@@ -353,7 +349,10 @@ def build_markdown(findings: list[dict]) -> str:
     sqz_syms = {f["symbol"] for f in sqz_breaks}
     for emoji, cat_name, cat_desc, ranks in _CATEGORIES:
         group = [
-            f for r in ranks for f in rank_groups.get(r, []) if f["symbol"] not in sqz_syms
+            f
+            for r in ranks
+            for f in rank_groups.get(r, [])
+            if f["symbol"] not in sqz_syms
         ]
         group.sort(key=lambda x: (-x["wt_rank"], -x["earliness"]))
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
