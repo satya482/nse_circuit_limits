@@ -23,7 +23,7 @@ Output: us_wt_scans/us_wt_bullcross_latest.md
 
 import sys
 import os
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 from tradingview_screener import Query, col
@@ -41,7 +41,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "us_wt_scans")
-TODAY = datetime.now().strftime("%Y-%m-%d")
+IST = timezone(timedelta(hours=5, minutes=30))
+TODAY = datetime.now(IST).strftime("%Y-%m-%d")
 MD_LATEST = os.path.join(SCANS_DIR, "us_wt_bullcross_latest.md")
 MD_DATED = os.path.join(SCANS_DIR, f"us_wt_bullcross_{TODAY}.md")
 HTML_DASHBOARD = os.path.join(SCANS_DIR, "us_wt_bullcross_dashboard.html")
