@@ -27,7 +27,16 @@ from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 
+from tradingview_screener import Query, col
+
+from us_ohlc_db import load_ohlc_many
 from wavetrend_scanner import WaveTrendCalculator
+from disclaimer import (
+    SEBI_MD_HEADER,
+    SEBI_MD_FOOTER,
+    SEBI_HTML_BANNER,
+    SEBI_HTML_FOOTER,
+)
 
 
 sys.stdout.reconfigure(encoding="utf-8")
