@@ -32,6 +32,9 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
+# US WaveTrend Bull Cross Scanner — SEPARATE scheduled task, part of the existing
+# US scanner group (not run_all_scanners.ps1): fetch @4:40PM -> zl-squeeze @4:50PM -> this @5:00PM
+.\run_us_wt_bullcross_scanner.ps1
 
 # Breadth Monitor — SEPARATE scheduled task (NSE_BreadthMonitor), NOT part of NSE_AllScanners
 # Triggered by run_all_scanners.ps1 via Start-ScheduledTask at end (no wait, separate log)
@@ -203,6 +206,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
 | `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
+| `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
