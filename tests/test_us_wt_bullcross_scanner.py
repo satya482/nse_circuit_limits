@@ -10,6 +10,9 @@ from us_wt_bullcross_scanner import (
     _zl25_turn_stats,
     _rs_state,
     _compute_rs_pct_map,
+    _cavgc,
+    _rvol_ss,
+    _earliness,
 )
 
 
@@ -120,3 +123,48 @@ def test_compute_rs_pct_map_ranks_higher_relative_return_higher():
     all_data = {"STRONG": strong, "WEAK": weak}
     pct = _compute_rs_pct_map(all_data, bench_close)
     assert pct["STRONG"] > pct["WEAK"]
+
+
+def test_cavgc_rising_when_close_above_and_climbing_ema():
+    # Flat then gap up — close moves above EMA and keeps rising
+    c = pd.Series([100.0] * 20 + [105.0, 110.0, 115.0, 120.0, 125.0, 130.0, 135.0, 140.0, 145.0, 150.0])
+    ratio, rising = _cavgc(c)
+    assert ratio > 1.0
+    assert rising is True
+
+
+def test_cavgc_not_rising_on_falling_series():
+    c = pd.Series(np.linspace(110, 90, 30))
+    ratio, rising = _cavgc(c)
+    assert rising is False
+
+
+def test_rvol_ss_strong_start_true_on_gap_up_hold():
+    df = _df([100.0] * 21)
+    df.loc[df.index[-1], "open"] = 103.0
+    df.loc[df.index[-1], "low"] = 101.0
+    df.loc[df.index[-2], "close"] = 100.0
+    rvol, strong_start = _rvol_ss(df)
+    assert strong_start is True
+
+
+def test_rvol_ss_false_when_gap_fails_to_hold():
+    df = _df([100.0] * 21)
+    df.loc[df.index[-1], "open"] = 103.0
+    df.loc[df.index[-1], "low"] = 98.0  # broke below prev close
+    rvol, strong_start = _rvol_ss(df)
+    assert strong_start is False
+
+
+def test_earliness_maxes_out_with_all_bonuses():
+    score = _earliness(
+        rs_state="transition", zl_days=1, cavgc=1.005, cavgc_rising=True, squeeze=True
+    )
+    assert score == 40 + 30 + 19 + 10
+
+
+def test_earliness_zero_with_no_bonuses():
+    score = _earliness(
+        rs_state="weak", zl_days=60, cavgc=1.05, cavgc_rising=False, squeeze=False
+    )
+    assert score == 0

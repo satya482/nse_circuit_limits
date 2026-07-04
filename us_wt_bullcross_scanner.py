@@ -155,3 +155,46 @@ def _compute_rs_pct_map(all_data: dict, bench_series: pd.Series) -> dict[str, fl
     s = pd.Series(scores)
     pct = s.rank(pct=True) * 100
     return pct.round(1).to_dict()
+
+
+def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
+    """Close / EMA(close, length) ratio and whether it is rising."""
+    avg = c.ewm(span=length, adjust=False).mean()
+    ratio = c / avg
+    if pd.isna(ratio.iloc[-1]):
+        return 1.0, False
+    return float(ratio.iloc[-1]), bool(ratio.iloc[-1] > ratio.iloc[-2])
+
+
+def _rvol_ss(df: pd.DataFrame) -> tuple[float, bool]:
+    """RVOL = today's volume / prior-20d avg volume; SS = gapped up and held."""
+    vol = df["volume"].astype(float)
+    avg_vol = vol.iloc[-21:-1].mean()
+    rvol = float(vol.iloc[-1] / avg_vol) if avg_vol > 0 else 0.0
+    today_open = float(df["open"].iloc[-1])
+    today_low = float(df["low"].iloc[-1])
+    prev_close = float(df["close"].iloc[-2])
+    strong_start = today_open > prev_close and today_low >= prev_close * SS_LOWMULT
+    return rvol, strong_start
+
+
+def _earliness(
+    rs_state: str,
+    zl_days: int,
+    cavgc: float,
+    cavgc_rising: bool,
+    squeeze: bool,
+) -> float:
+    """Earliness score 0-100: how close to the START of a momentum move.
+    Squeeze(40) + RS-transition(30) + ZL freshness(0-20) + C/AvgC freshness(0-10)."""
+    score = 0.0
+    if squeeze:
+        score += 40
+    if rs_state == "transition":
+        score += 30
+    score += max(0, 20 - zl_days)
+    if cavgc_rising and 1.0 < cavgc < 1.015:
+        score += 10
+    elif cavgc_rising and cavgc < 1.03:
+        score += 5
+    return round(score, 1)
