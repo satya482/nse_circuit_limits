@@ -205,6 +205,25 @@ def liq_tag(df: pd.DataFrame) -> str:
         return ""
 
 
+def cmf_series(df: pd.DataFrame, n: int = 20) -> pd.Series:
+    """Raw Chaikin Money Flow series (rolling n-bar sum of money-flow-volume over
+    rolling n-bar sum of volume), index-reset, NaNs dropped. Empty if fewer than
+    n bars available. Factored out of cmf_days() so quality scoring (which needs
+    the raw value, not just sign+days-since-cross) shares one source of truth."""
+    high = df["high"].astype(float)
+    low = df["low"].astype(float)
+    close = df["close"].astype(float)
+    volume = df["volume"].astype(float)
+
+    range_ = high - low
+    mfm = np.where(range_ > 0, ((close - low) - (high - close)) / range_, 0.0)
+    mfv = pd.Series(mfm, index=df.index) * volume
+
+    return (
+        mfv.rolling(n, min_periods=n).sum() / volume.rolling(n, min_periods=n).sum()
+    ).dropna().reset_index(drop=True)
+
+
 def cmf_days(df: pd.DataFrame, n: int = 20, cap: int = 30) -> tuple[bool, int] | None:
     """Chaikin Money Flow zero-line-cross recency.
     Returns (cmf_positive, bars_since_zero_cross), bars_ago capped at `cap`.
@@ -215,20 +234,7 @@ def cmf_days(df: pd.DataFrame, n: int = 20, cap: int = 30) -> tuple[bool, int] |
     if len(df) < n + 2:
         return None
 
-    high = df["high"].astype(float)
-    low = df["low"].astype(float)
-    close = df["close"].astype(float)
-    volume = df["volume"].astype(float)
-
-    range_ = high - low
-    mfm = np.where(range_ > 0, ((close - low) - (high - close)) / range_, 0.0)
-    mfv = pd.Series(mfm, index=df.index) * volume
-
-    cmf = (
-        mfv.rolling(n, min_periods=n).sum()
-        / volume.rolling(n, min_periods=n).sum()
-    ).dropna().reset_index(drop=True)
-
+    cmf = cmf_series(df, n=n)
     m = len(cmf)
     if m < 2:
         return None
