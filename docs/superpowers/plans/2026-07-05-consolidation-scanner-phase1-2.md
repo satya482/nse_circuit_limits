@@ -313,9 +313,12 @@ git commit --no-verify -m "feat: add EMA compression + BB/KC squeeze indicators 
 ```python
 # append to tests/test_consolidation_indicators.py
 
-def _bench_series(n: int, val: float = 100.0) -> pd.DataFrame:
+def _bench_series(n: int, val: float = 100.0, start: str = "2024-01-01") -> pd.DataFrame:
+    """start MUST match the stock df's start date -- rs_metrics() aligns on
+    the 'date' column, and misaligned date ranges give a fully-empty aligned
+    series (rs_metrics correctly returns None on that, it isn't a bug)."""
     return pd.DataFrame({
-        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "date": pd.date_range(start, periods=n, freq="B"),
         "open": [val] * n, "high": [val] * n, "low": [val] * n,
         "close": [val] * n, "volume": [1_000_000.0] * n,
     })
@@ -374,22 +377,32 @@ def test_rs_metrics_char_1_declining_when_rs_falls_below_ema():
         "low": [c * 0.99 for c in stock_close], "close": stock_close,
         "volume": [1_000_000.0] * n,
     })
-    bench = _bench_series(n, 100.0)
+    bench = _bench_series(n, 100.0, start="2023-01-02")  # must match stock's date range
     metrics = indicators.rs_metrics(stock, bench)
     assert metrics is not None
     assert indicators.classify_rs_character(metrics) == "CHAR_1_DECLINING"
 
 
 def test_rs_metrics_char_4_rising_when_rs_climbs_price_flat():
+    """Stock price stays perfectly flat while the BENCHMARK declines -- RS =
+    stock/bench rises even though the stock itself never moves (the 'quiet
+    accumulation' case: price flat, RS grinding up). A rising stock price
+    instead (tried first) also trips price_20d_high and pushes rs_slope just
+    under RS_FLAT_THRESHOLD -- not a clean CHAR_4 case."""
     n = 260
-    stock_close = [100.0] * 200 + list(np.linspace(100.0, 103.0, n - 200))  # RS climbs, price ~flat
+    stock_close = [100.0] * n
     stock = pd.DataFrame({
         "date": pd.date_range("2023-01-02", periods=n, freq="B"),
         "open": stock_close, "high": [c * 1.01 for c in stock_close],
         "low": [c * 0.99 for c in stock_close], "close": stock_close,
         "volume": [1_000_000.0] * n,
     })
-    bench = _bench_series(n, 100.0)
+    bench_close = [100.0] * 200 + list(np.linspace(100.0, 90.0, n - 200))
+    bench = pd.DataFrame({
+        "date": pd.date_range("2023-01-02", periods=n, freq="B"),
+        "open": bench_close, "high": bench_close, "low": bench_close,
+        "close": bench_close, "volume": [1_000_000.0] * n,
+    })
     metrics = indicators.rs_metrics(stock, bench)
     assert metrics is not None
     assert indicators.classify_rs_character(metrics) == "CHAR_4_RISING"
