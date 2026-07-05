@@ -12,10 +12,21 @@ def _flat_df(n: int, price: float = 100.0, vol: float = 1_000_000.0) -> pd.DataF
     })
 
 
-def test_ema_compression_flat_series_spread_shrinks_to_near_zero():
-    df = indicators.ema_compression(_flat_df(300))
-    assert df["ema_spread"].iloc[-1] < df["ema_spread"].iloc[100]
-    assert df["spread_pct"].iloc[-1] < 0.001
+def test_ema_compression_spread_shrinks_as_ramp_flattens_out():
+    """A dead-flat series has spread=0 at every bar (nothing to shrink from) --
+    to observe convergence, start with a ramp that leaves EMAs spread apart,
+    then flatten and watch the spread decay toward zero."""
+    n = 300
+    prices = [50.0 + i * 2.0 for i in range(50)] + [150.0] * (n - 50)
+    df = pd.DataFrame({
+        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "open": prices, "high": [p * 1.01 for p in prices],
+        "low": [p * 0.99 for p in prices], "close": prices,
+        "volume": [1_000_000.0] * n,
+    })
+    df = indicators.ema_compression(df)
+    assert df["ema_spread"].iloc[-1] < df["ema_spread"].iloc[60]
+    assert df["spread_pct"].iloc[-1] < df["spread_pct"].iloc[60]
 
 
 def test_compression_duration_counts_consecutive_tail_bars():
@@ -66,13 +77,19 @@ def test_squeeze_gate_passes_on_flat_series():
     assert days >= 5
 
 
-def test_squeeze_gate_fails_on_volatile_series():
+def test_squeeze_gate_fails_on_trending_series():
+    """A steady linear ramp with near-zero daily range: BB width scales with the
+    *dispersion of closes across the window* (wide, for a ramp spanning a large
+    range), while KC width scales with *daily bar range* (narrow, since each
+    day's own high-low is tiny) -- BB ends up well outside KC, squeeze off.
+    (Alternating chop was tried first but widens ATR by the same reversal gap
+    that widens BB, so BB stays inside KC -- that's not a valid counter-example.)"""
     n = 300
-    prices = [100.0 + (10 if i % 2 == 0 else -10) for i in range(n)]  # violent chop, wide bands
+    prices = [100.0 + i * 1.0 for i in range(n)]
     df = pd.DataFrame({
         "date": pd.date_range("2024-01-01", periods=n, freq="B"),
-        "open": prices, "high": [p * 1.05 for p in prices],
-        "low": [p * 0.95 for p in prices], "close": prices,
+        "open": prices, "high": [p + 0.01 for p in prices],
+        "low": [p - 0.01 for p in prices], "close": prices,
         "volume": [1_000_000.0] * n,
     })
     df = indicators.bollinger_keltner(df)
