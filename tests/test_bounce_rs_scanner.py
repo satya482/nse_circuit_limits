@@ -150,3 +150,58 @@ def test_score_caps_rs_and_bounce():
     """RS component caps at 10, bounce component caps at 5."""
     capped = composite_score(rs_pct=50.0, ema_type="A", bounce_mag=10.0, setup_score=0)
     assert capped == 10.0 + 3.0 + 5.0 + 0
+
+
+from scanners.bounce_rs_scanner import run, OUTPUT_COLUMNS  # noqa: E402
+
+
+def _universe_df(symbols: list[str]) -> pd.DataFrame:
+    return pd.DataFrame({"symbol": symbols})
+
+
+def test_run_regime_guard_returns_empty(tmp_path, monkeypatch):
+    """No valid dip-bounce window as_of -> empty DataFrame with correct columns."""
+    csv_path = tmp_path / "breadth_history.csv"
+    dates = ["2026-06-01", "2026-06-02", "2026-06-03"]
+    _breadth_df(dates, [0.90, 0.85, 0.88]).assign(universe_tag="breadth_broad").to_csv(
+        csv_path, index=False
+    )
+    universe_df = _universe_df(["AA"])
+    result = run(universe_df, date(2026, 6, 3), breadth_csv_path=csv_path)
+    assert list(result.columns) == OUTPUT_COLUMNS
+    assert len(result) == 0
+
+
+def test_run_end_to_end_smoke(tmp_path, monkeypatch):
+    """Wiring smoke test: one qualifying stock flows through all 3 layers into output."""
+    csv_path = tmp_path / "breadth_history.csv"
+    dates = ["2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04"]
+    _breadth_df(dates, [0.90, 0.60, 0.55, 0.85]).assign(
+        universe_tag="breadth_broad", total_eligible=2000
+    ).to_csv(csv_path, index=False)
+
+    # 66 bars of history before the 4 breadth dates -> 70 total, clears MIN_BARS=60
+    long_dates = pd.date_range("2026-03-01", periods=66).strftime("%Y-%m-%d").tolist() + dates
+    aa_closes = [100 + i * 0.3 for i in range(len(long_dates))]  # steady uptrend, outperforms bench
+    bench_closes = [100 - i * 0.1 for i in range(len(long_dates))]
+
+    aa_df = _ohlc(long_dates, aa_closes)
+    aa_df.loc[aa_df.index[-1], "volume"] = 9_000_000  # trigger pocket pivot on last bar
+    bench_df = _ohlc(long_dates, bench_closes)
+
+    def fake_load_ohlc(symbol, lookback=260, db_path=None):
+        return aa_df if symbol == "AA" else None
+
+    def fake_load_ohlc_many(symbols, lookback=260, db_path=None):
+        return {"NIFTY MIDSML 400": bench_df}
+
+    monkeypatch.setattr("scanners.bounce_rs_scanner.ohlc_db.load_ohlc", fake_load_ohlc)
+    monkeypatch.setattr("scanners.bounce_rs_scanner.ohlc_db.load_ohlc_many", fake_load_ohlc_many)
+
+    universe_df = _universe_df(["AA"])
+    result = run(universe_df, date(2026, 6, 4), breadth_csv_path=csv_path)
+
+    assert list(result.columns) == OUTPUT_COLUMNS
+    assert len(result) == 1
+    assert result.iloc[0]["symbol"] == "AA"
+    assert result.iloc[0]["ema_type"] == "A"

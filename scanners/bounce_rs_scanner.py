@@ -189,3 +189,61 @@ def composite_score(
     ema_component = 3.0 if ema_type == "A" else 1.0
     bounce_component = min(bounce_mag * 5.0, 5.0)
     return round(rs_component + ema_component + bounce_component + setup_score, 4)
+
+
+def run(
+    universe_df: pd.DataFrame,
+    as_of: date,
+    breadth_csv_path: Path = DEFAULT_BREADTH_CSV,
+    db_path: Path = ohlc_db.DB_PATH,
+) -> pd.DataFrame:
+    """Bounce-RS Scanner entry point. Regime guard: returns an empty DataFrame
+    (never raises) when the market isn't in a dip-bounce window on as_of."""
+    breadth_df = pd.read_csv(breadth_csv_path)
+    breadth_df = breadth_df[breadth_df["universe_tag"] == "breadth_broad"]
+
+    dip_window = find_dip_bounce(breadth_df, as_of)
+    if dip_window is None:
+        print(f"Bounce-RS: no valid dip-bounce window as of {as_of.strftime('%Y-%m-%d')}")
+        return pd.DataFrame(columns=OUTPUT_COLUMNS)
+
+    bench_map = ohlc_db.load_ohlc_many([BENCH_SYM], lookback=OHLC_LOOKBACK, db_path=db_path)
+    bench_ohlc = bench_map.get(BENCH_SYM)
+    if bench_ohlc is None:
+        print(f"Bounce-RS: benchmark {BENCH_SYM} missing from DB")
+        return pd.DataFrame(columns=OUTPUT_COLUMNS)
+
+    rows = []
+    for symbol in universe_df["symbol"]:
+        ohlc = ohlc_db.load_ohlc(symbol, lookback=OHLC_LOOKBACK, db_path=db_path)
+        if ohlc is None or len(ohlc) < MIN_BARS:
+            continue
+        if ohlc["date"].iloc[0].strftime("%Y-%m-%d") > dip_window["dip_start"]:
+            continue  # history doesn't cover the full dip window
+
+        result = rs_and_ema_check(ohlc, bench_ohlc, dip_window["dip_start"], dip_window["dip_end"])
+        if result is None:
+            continue
+        rs_pct, ema_type = result
+
+        setup, setup_score = detect_setup(ohlc)
+        score = composite_score(rs_pct, ema_type, dip_window["bounce_mag"], setup_score)
+
+        rows.append({
+            "symbol": symbol,
+            "rs_during_dip_%": rs_pct,
+            "ema_type": ema_type,
+            "setup": setup,
+            "dip_low_ratio": dip_window["dip_low_ratio"],
+            "ratio_5d_now": dip_window["ratio_5d_now"],
+            "bounce_mag": dip_window["bounce_mag"],
+            "score": score,
+        })
+
+    if not rows:
+        return pd.DataFrame(columns=OUTPUT_COLUMNS)
+    return (
+        pd.DataFrame(rows, columns=OUTPUT_COLUMNS)
+        .sort_values("score", ascending=False)
+        .reset_index(drop=True)
+    )
