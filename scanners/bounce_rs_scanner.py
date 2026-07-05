@@ -80,3 +80,52 @@ def find_dip_bounce(breadth_df: pd.DataFrame, as_of: date) -> dict | None:
         "ratio_5d_now": round(current, 4),
         "bounce_mag": round(bounce_mag, 4),
     }
+
+
+def rs_and_ema_check(
+    ohlc: pd.DataFrame,
+    bench_ohlc: pd.DataFrame,
+    dip_start: str,
+    dip_end: str,
+) -> tuple[float, str] | None:
+    """RS filter + EMA20 dip-hold classification (Layer 2).
+
+    Returns (rs_pct, ema_type) with ema_type in {'A','B'}, or None if
+    RS_dip <= 0 or the stock broke EMA50 at any point during the dip (Type C).
+    """
+    dates = ohlc["date"].dt.strftime("%Y-%m-%d")
+    window_mask = (dates >= dip_start) & (dates <= dip_end)
+    window = ohlc[window_mask]
+    if len(window) < 2:
+        return None
+    stock_return = float(window["close"].iloc[-1]) / float(window["close"].iloc[0]) - 1
+
+    b_dates = bench_ohlc["date"].dt.strftime("%Y-%m-%d")
+    b_window = bench_ohlc[(b_dates >= dip_start) & (b_dates <= dip_end)]
+    if len(b_window) < 2:
+        return None
+    bench_return = float(b_window["close"].iloc[-1]) / float(b_window["close"].iloc[0]) - 1
+
+    rs_pct = (stock_return - bench_return) * 100
+    if rs_pct <= 0:
+        return None
+
+    close = ohlc["close"].astype(float)
+    ema20 = close.ewm(span=20, adjust=False).mean()
+    ema50 = close.ewm(span=50, adjust=False).mean()
+
+    close_in_dip = close[window_mask]
+    ema20_in_dip = ema20[window_mask]
+    ema50_in_dip = ema50[window_mask]
+
+    if (close_in_dip < ema50_in_dip).any():
+        return None  # Type C: broke EMA50 during dip
+
+    if (close_in_dip > ema20_in_dip).all():
+        ema_type = "A"
+    elif float(close.iloc[-1]) > float(ema20.iloc[-1]):
+        ema_type = "B"
+    else:
+        return None  # dipped below EMA20, hasn't reclaimed today
+
+    return round(rs_pct, 4), ema_type
