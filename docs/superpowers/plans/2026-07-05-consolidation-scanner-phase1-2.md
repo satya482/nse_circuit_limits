@@ -791,10 +791,17 @@ def test_spread_delta_crossover_false_when_already_positive():
 
 
 def test_ema_stage3_flag_requires_ten_prior_negative_bars():
-    s = pd.Series([-0.001] * 10 + [0.001])
+    """11 negative bars + the crossing bar = 12 elements, the function's own
+    minimum length (len < 12 short-circuits to False before the streak count
+    even runs) -- 10 negative bars alone (11 elements) would fail on length,
+    not on streak count, and wouldn't test the intended branch."""
+    s = pd.Series([-0.001] * 11 + [0.001])
     assert imminence.ema_stage3_flag(s) is True
-    s_short = pd.Series([-0.001] * 5 + [0.001])
-    assert imminence.ema_stage3_flag(s_short) is False
+    # long enough to pass the length gate, but the negative streak right before
+    # the cross is only 5 bars -- exercises the "streak < 10" rejection, not
+    # just the length gate
+    s_short_streak = pd.Series([0.002] * 6 + [-0.001] * 5 + [0.001])
+    assert imminence.ema_stage3_flag(s_short_streak) is False
 
 
 def test_bb_breathing_true_on_two_bar_tick_up_from_low_percentile():
@@ -822,6 +829,35 @@ def test_higher_low_true_when_todays_low_exceeds_prior_window_low():
     df.loc[df.index[-6:-1], "low"] = 95.0
     df.loc[df.index[-1], "low"] = 98.0
     assert imminence.higher_low(df, window=5) is True
+
+
+def test_wick_rejection_absorbed_true_on_long_upper_wick_reclaimed():
+    """Yesterday spiked to the range top with a long upper wick (rejected),
+    today closes back above yesterday's body top (absorbed, not confirmed)."""
+    n = 20
+    rows = []
+    for _ in range(n - 2):
+        rows.append({"open": 100.0, "high": 105.0, "low": 99.0, "close": 100.0})
+    # yesterday: body_top=101, wick=110-101=9, range=110-99=11, wick/range=0.82>0.3
+    rows.append({"open": 100.0, "high": 110.0, "low": 99.0, "close": 101.0})
+    # today: closes 101.5 >= yesterday's body_top (101) -> absorbed
+    rows.append({"open": 101.0, "high": 102.0, "low": 100.5, "close": 101.5})
+    df = pd.DataFrame(rows)
+    df["date"] = pd.date_range("2024-01-01", periods=n, freq="B")
+    assert imminence.wick_rejection_absorbed(df, age_bars=20) is True
+
+
+def test_wick_rejection_absorbed_false_when_not_reclaimed():
+    n = 20
+    rows = []
+    for _ in range(n - 2):
+        rows.append({"open": 100.0, "high": 105.0, "low": 99.0, "close": 100.0})
+    rows.append({"open": 100.0, "high": 110.0, "low": 99.0, "close": 101.0})
+    # today closes well below yesterday's body_top (101) -- not absorbed
+    rows.append({"open": 100.0, "high": 100.5, "low": 98.0, "close": 98.5})
+    df = pd.DataFrame(rows)
+    df["date"] = pd.date_range("2024-01-01", periods=n, freq="B")
+    assert imminence.wick_rejection_absorbed(df, age_bars=20) is False
 
 
 def test_signal3_weight_full_on_spike_half_without():
