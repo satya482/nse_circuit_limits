@@ -67,5 +67,13 @@ if ($gitResult) {
 }
 Log "=== BREADTH_MONITOR DONE ==="
 
+# ── Step 5: Bounce-RS scanner + dashboard rebuild ─────────────────────────────
+# Runs here (not at 4:40 PM) because today's ratio_5d row above must exist first.
+Log "--- Running Bounce-RS scanner ---"
+& "$ROOT\run_bounce_rs_scanner.ps1"
+Log "--- Rebuilding WT+Squeeze dashboard with fresh Bounce-RS data ---"
+& "$ROOT\run_wt_squeeze_dashboard.ps1"
+Log "=== BOUNCE_RS + DASHBOARD REBUILD DONE ==="
+
 # To register scheduled task (run once as admin):
 # schtasks /create /tn "NSE_BreadthMonitor" /tr "powershell.exe -NonInteractive -WindowStyle Hidden -ExecutionPolicy Bypass -File C:\Users\satya\nse_circuit_limits\run_breadth_monitor.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 17:30 /f
