@@ -173,6 +173,37 @@ def parse_wt_rows(content: str) -> list[dict]:
     return rows
 
 
+def parse_bounce_rs(content: str) -> list[dict]:
+    """Parse bounce_rs_scan_latest.md's 8-col table. '*No signals.*' or an
+    empty file both correctly yield []."""
+    rows = []
+    for line in content.splitlines():
+        ls = line.strip()
+        if not ls.startswith("|"):
+            continue
+        if ls.startswith("|---") or ls.startswith("| ---"):
+            continue
+        parts = [p.strip() for p in ls.split("|")][1:-1]
+        if len(parts) != 8:
+            continue
+        sym = _strip_md_link(parts[0])
+        if not sym or sym == "Symbol":
+            continue
+        rows.append(
+            {
+                "symbol": sym,
+                "rs_pct": parts[1],
+                "ema_type": parts[2],
+                "setup": parts[3],
+                "dip_low": parts[4],
+                "ratio_now": parts[5],
+                "bounce": parts[6],
+                "score": parts[7],
+            }
+        )
+    return rows
+
+
 def parse_trend_symbols(content: str) -> dict[str, str]:
     """Return {symbol: signal_tag} for every row in trend_scan_latest.md.
 
