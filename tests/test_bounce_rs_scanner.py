@@ -88,6 +88,26 @@ def test_ema_type_a_held_above_throughout():
     assert ema_type == "A"
 
 
+def test_ema_type_b_reclaimed():
+    """Stock dips below EMA20 at some point during dip window, but closes above EMA20
+    on the latest bar -> Type B. Stock also outperforms benchmark (positive RS)."""
+    dates = [f"2026-04-{d:02d}" for d in range(1, 31)] + [f"2026-05-{d:02d}" for d in range(1, 26)]
+    # Strong uptrend baseline (100 to 120), then pullback during dip window.
+    # In uptrend, EMA20 > EMA50, so a pullback can dip below EMA20 but stay above EMA50.
+    stock_closes = [100 + i * 0.4 for i in range(50)] + [120, 117, 116, 117, 120]
+    bench_closes = [100 + i * 0.2 for i in range(50)] + [118, 115, 114, 114, 114]
+
+    stock = _ohlc(dates, stock_closes)
+    bench = _ohlc(dates, bench_closes)
+
+    # dip window is dates[50:55] = "2026-05-21" to "2026-05-25" (indices 50-54)
+    result = rs_and_ema_check(stock, bench, dates[50], dates[54])
+    assert result is not None
+    rs_pct, ema_type = result
+    assert rs_pct > 0
+    assert ema_type == "B"
+
+
 def test_ema_type_c_excluded():
     """Stock breaks below EMA50 at some point during dip -> excluded (None),
     even though it still outperforms the benchmark on raw RS (bench falls harder,
