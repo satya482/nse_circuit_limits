@@ -9,11 +9,14 @@ hideOnWeekly     = input.bool(false, "Hide on weekly chart")
 
 showLines        = input.bool(false,  "Show lines")
 showBoxes        = input.bool(true,  "Show boxes")
+showClose        = input.bool(false, "Show weekly close line (extended to end of next week)")
 
 currHighColor    = input.color(color.lime, "Current week high color")
 currLowColor     = input.color(color.red,  "Current week low color")
 histHighColor    = input.color(color.new(color.lime, 70), "Historical high color")
 histLowColor     = input.color(color.new(color.red,  70), "Historical low color")
+closeColor       = input.color(color.orange, "Current week close color")
+histCloseColor   = input.color(color.new(color.orange, 70), "Historical close color")
 lineWidth        = input.int(1, "Line width", minval = 1, maxval = 4)
 
 currentBoxBorder = input.color(color.new(color.aqua, 0),  "Current box border")
@@ -36,6 +39,7 @@ canShow = not (hideOnWeekly and timeframe.isweekly)
 //──────────────────── Weekly series from HTF
 wHigh     = request.security(syminfo.tickerid, "W", high,       barmerge.gaps_off, barmerge.lookahead_off)
 wLow      = request.security(syminfo.tickerid, "W", low,        barmerge.gaps_off, barmerge.lookahead_off)
+wClose    = request.security(syminfo.tickerid, "W", close,      barmerge.gaps_off, barmerge.lookahead_off)
 wTime     = request.security(syminfo.tickerid, "W", time,       barmerge.gaps_off, barmerge.lookahead_off)
 wTimeClose = request.security(syminfo.tickerid, "W", time_close, barmerge.gaps_off, barmerge.lookahead_off)
 
@@ -118,6 +122,7 @@ var line currLowSeg2  = na
 var box  currBox      = na
 var box  prevBox      = na
 var box  wkBox        = na
+var line prevCloseLine = na
 
 // Current week H/L tracked directly from daily bars — no HTF dependency
 var float wkHigh  = na
@@ -131,12 +136,14 @@ var int   prevWkStart = na
 var int   prevWkEnd   = na
 var float prevWkHigh  = na
 var float prevWkLow   = na
+var float prevWkClose = na
 
 if newWeek
     prevWkStart := wTime[1]
     prevWkEnd   := wTimeClose[1]
     prevWkHigh  := wHigh[1]
     prevWkLow   := wLow[1]
+    prevWkClose := wClose[1]
 
 // Track current week H/L from daily bars directly
 // dayofweek[1] > dayofweek detects Mon (or first day after holiday): Fri=6 > Mon=2
@@ -162,6 +169,14 @@ if canShow and showCurrent
         f_deleteLine(currLowSeg1),  currLowSeg1  := na
         f_deleteLine(currLowSeg2),  currLowSeg2  := na
 
+    if showClose
+        if not na(prevWkStart) and not na(prevWkClose)
+            prevCloseLine := f_setOrCreateLine(prevCloseLine, prevWkStart, prevWkClose, wTimeClose, prevWkClose, closeColor)
+        else
+            f_deleteLine(prevCloseLine), prevCloseLine := na
+    else
+        f_deleteLine(prevCloseLine), prevCloseLine := na
+
     if showBoxes
         if not na(prevWkStart) and not na(prevWkEnd) and not na(prevWkHigh) and not na(prevWkLow)
             prevBox := f_setOrCreateBox(prevBox, prevWkStart, prevWkHigh, wTimeClose, prevWkLow, historyBoxBorder, historyBoxFill, historyBoxStyle, historyBoxBorderStyleOpt)
@@ -183,24 +198,28 @@ else
     f_deleteBox(prevBox), prevBox := na
     f_deleteBox(currBox), currBox := na
     f_deleteBox(wkBox),   wkBox   := na
+    f_deleteLine(prevCloseLine), prevCloseLine := na
 
 //──────────────────── Store completed weekly records
 var array<int>   weekStarts = array.new_int()
 var array<int>   weekEnds   = array.new_int()
 var array<float> weekHighs  = array.new_float()
 var array<float> weekLows   = array.new_float()
+var array<float> weekCloses = array.new_float()
 
 if newWeek
     completedStart = wTime[1]
     completedEnd   = wTimeClose[1]
     completedHigh  = wHigh[1]
     completedLow   = wLow[1]
+    completedClose = wClose[1]
 
     if not na(completedStart) and not na(completedEnd) and not na(completedHigh) and not na(completedLow)
         array.push(weekStarts, completedStart)
         array.push(weekEnds,   completedEnd)
         array.push(weekHighs,  completedHigh)
         array.push(weekLows,   completedLow)
+        array.push(weekCloses, completedClose)
 
         maxKeep = historyWeeks + 2
         while array.size(weekStarts) > maxKeep
@@ -208,6 +227,7 @@ if newWeek
             array.shift(weekEnds)
             array.shift(weekHighs)
             array.shift(weekLows)
+            array.shift(weekCloses)
 
 //──────────────────── Historical objects
 var array<line> histLines = array.new_line()
@@ -232,6 +252,7 @@ if barstate.islast
                     srcEnd   = array.get(weekEnds,   i)
                     srcHigh  = array.get(weekHighs,  i)
                     srcLow   = array.get(weekLows,   i)
+                    srcClose = array.get(weekCloses, i)
                     nxtStart = array.get(weekStarts, i + 1)
                     nxtEnd   = array.get(weekEnds,   i + 1)
 
@@ -245,6 +266,13 @@ if barstate.islast
                         array.push(histLines, h2)
                         array.push(histLines, l1)
                         array.push(histLines, l2)
+
+                    if showClose
+                        c1 = line.new(srcStart, srcClose, srcEnd, srcClose, xloc = xloc.bar_time, extend = extend.none, color = histCloseColor, width = lineWidth)
+                        c2 = line.new(nxtStart, srcClose, nxtEnd, srcClose, xloc = xloc.bar_time, extend = extend.none, color = histCloseColor, width = lineWidth)
+
+                        array.push(histLines, c1)
+                        array.push(histLines, c2)
 
                     if showBoxes
                         hb = box.new(left = srcStart, top = srcHigh, right = nxtEnd, bottom = srcLow, xloc = xloc.bar_time, border_color = historyBoxBorder, border_style = f_borderStyle(historyBoxBorderStyleOpt), bgcolor = f_boxBg(historyBoxStyle, historyBoxFill))
