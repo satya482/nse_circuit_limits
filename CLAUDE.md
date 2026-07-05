@@ -49,6 +49,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 # Fallback: 5:30 PM scheduled trigger if AllScanners didn't run
 # Self-contained: kite_auth + fetch_data.py --all + breadth_monitor.py + commit
 .\run_breadth_monitor.ps1       # fires after AllScanners (or 5:30 PM fallback)
+                                 #   -> trailing: run_bounce_rs_scanner.ps1, then re-run_wt_squeeze_dashboard.ps1
 ```
 
 **Weekly (manual, Monday AM before market open):**
@@ -174,6 +175,10 @@ Reads two scanner outputs, finds confluence, builds `wt_squeeze_dashboard.html`:
 - WT section has priority — sorted rank 5→1, deeper oversold first within same rank
 - Links back to `dashboard.html`
 
+Builds twice daily: 4:40 PM (`run_wt_squeeze_dashboard.ps1`, no Bounce-RS data yet) and again
+~5:30-5:35 PM (triggered by `run_breadth_monitor.ps1`'s trailing step, once today's breadth
+ratio and Bounce-RS scan are both available).
+
 ### Dashboard (`dashboard_generator.py`)
 
 Reads today's block from 6 markdown files (swing, momentum, weekly-RS, EMA25-ZL, EMA compression, circuit limits), cross-references symbols, builds `dashboard.html` with confluence scoring.
@@ -215,6 +220,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
+| `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
