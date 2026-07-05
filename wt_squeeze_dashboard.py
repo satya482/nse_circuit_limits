@@ -33,6 +33,7 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 
 WT_MD = os.path.join(BASE, "wt_scans", "wt_bullcross_latest.md")
 TREND_MD = os.path.join(BASE, "trend_scans", "trend_scan_latest.md")
+BOUNCE_RS_MD = os.path.join(BASE, "bounce_rs_scans", "bounce_rs_scan_latest.md")
 OUTPUT_HTML = os.path.join(BASE, "wt_squeeze_dashboard.html")
 
 _LABELS_FILE = os.path.join(BASE, "tools", "stock_labels.json")
@@ -202,6 +203,46 @@ def parse_bounce_rs(content: str) -> list[dict]:
             }
         )
     return rows
+
+
+_BOUNCE_RS_TABLE_HDR = """    <thead><tr>
+      <th>Symbol</th><th>RS Dip%</th><th>EMA Type</th><th>Setup</th>
+      <th>Dip Low</th><th>Ratio Now</th><th>Bounce</th><th>Score</th>
+    </tr></thead>"""
+
+
+def _bounce_rs_html_row(r: dict) -> str:
+    tv = f"https://in.tradingview.com/chart/?symbol=NSE:{r['symbol']}"
+    return (
+        f'<tr><td class="sym"><a href="{tv}" target="_blank">{r["symbol"]}</a></td>'
+        f'<td class="num">{r["rs_pct"]}</td>'
+        f'<td class="mu">{r["ema_type"]}</td>'
+        f'<td class="mu">{r["setup"]}</td>'
+        f'<td class="num">{r["dip_low"]}</td>'
+        f'<td class="num">{r["ratio_now"]}</td>'
+        f'<td class="num">{r["bounce"]}</td>'
+        f'<td class="num">{r["score"]}</td></tr>'
+    )
+
+
+def _bounce_rs_section_html(rows: list[dict]) -> str:
+    """Bounce-RS top-of-dashboard table. Empty string (section hidden entirely)
+    when rows is empty — a dip-bounce regime is rare, no permanent placeholder."""
+    if not rows:
+        return ""
+    rows_html = [_bounce_rs_html_row(r) for r in rows]
+    return f"""
+<div class="section" style="border:1px solid #f97316;border-radius:6px;padding:12px;background:#1a0f00">
+  <div class="stitle" style="color:#f97316;border-color:#f97316">
+    🔄 BOUNCE-RS — positive RS through breadth dip, bounce confirmed
+    <span class="cnt" style="color:#f97316">({len(rows)} stocks)</span>
+  </div>
+  <table>
+{_BOUNCE_RS_TABLE_HDR}
+    <tbody>{"".join(rows_html)}</tbody>
+  </table>
+</div>
+"""
 
 
 def parse_trend_symbols(content: str) -> dict[str, str]:
@@ -446,9 +487,14 @@ _TABLE_HDR = """    <thead><tr>
 
 
 def build_html(
-    today: str, now_str: str, wt_rows: list, trend_info: "dict | None" = None
+    today: str,
+    now_str: str,
+    wt_rows: list,
+    trend_info: "dict | None" = None,
+    bounce_rs_rows: "list | None" = None,
 ) -> str:
     trend_info = trend_info or {}
+    bounce_rs_section = _bounce_rs_section_html(bounce_rs_rows or [])
     sqz_rows = [r for r in wt_rows if r["squeeze"]]
     other_rows = [r for r in wt_rows if not r["squeeze"]]
     # Trend × WT confluence — all WT rows also in trend scanner, rank desc
@@ -567,7 +613,7 @@ def build_html(
   Flags = SQ (BB-KC squeeze ON) · PV (Pocket Pivot Volume) &nbsp;|&nbsp;
   Sorted: rank desc → earliness desc
 </div>
-
+{bounce_rs_section}
 <div class="bar">
   <div class="stat"><div class="sv grn">{n_conf}</div><div class="sl">🏆 Trend×WT</div></div>
   <div class="stat"><div class="sv gld">{n_sqz}</div><div class="sl">🎯 Squeeze Break</div></div>
@@ -633,7 +679,10 @@ def main():
         f"  Trend leaders   : {len(trend_info)}  |  Trend×WT confluence: {conf_count}"
     )
 
-    html = build_html(today, now_str, wt_rows, trend_info)
+    bounce_rs_rows = parse_bounce_rs(read_file(BOUNCE_RS_MD))
+    print(f"  Bounce-RS       : {len(bounce_rs_rows)}")
+
+    html = build_html(today, now_str, wt_rows, trend_info, bounce_rs_rows)
     with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
         f.write(html)
     print(f"  Written → {OUTPUT_HTML}")

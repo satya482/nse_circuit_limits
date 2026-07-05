@@ -4,6 +4,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from wt_squeeze_dashboard import parse_bounce_rs
+from wt_squeeze_dashboard import _bounce_rs_section_html, build_html  # noqa: E402
 
 
 def test_parse_bounce_rs_basic():
@@ -40,3 +41,48 @@ def test_parse_bounce_rs_multiple_rows_preserves_order():
     )
     rows = parse_bounce_rs(md)
     assert [r["symbol"] for r in rows] == ["AAA", "BBB"]
+
+
+_SAMPLE_ROW = {
+    "symbol": "SBIN",
+    "rs_pct": "8.23",
+    "ema_type": "A",
+    "setup": "POCKET_PIVOT",
+    "dip_low": "0.55",
+    "ratio_now": "0.85",
+    "bounce": "0.30",
+    "score": "14.50",
+}
+
+
+def test_bounce_rs_section_hidden_when_empty():
+    assert _bounce_rs_section_html([]) == ""
+
+
+def test_bounce_rs_section_shows_row_when_present():
+    html = _bounce_rs_section_html([_SAMPLE_ROW])
+    assert "SBIN" in html
+    assert "POCKET_PIVOT" in html
+    assert "(1 stocks)" in html
+
+
+def test_build_html_includes_bounce_rs_section_when_rows_present():
+    html = build_html(
+        "2026-07-05", "2026-07-05 17:35 IST", [], bounce_rs_rows=[_SAMPLE_ROW]
+    )
+    assert "BOUNCE-RS" in html
+    assert "SBIN" in html
+
+
+def test_build_html_omits_bounce_rs_section_when_no_rows():
+    html = build_html("2026-07-05", "2026-07-05 17:35 IST", [])
+    assert "BOUNCE-RS" not in html
+
+
+def test_build_html_bounce_rs_section_appears_before_wt_bar():
+    """Topmost placement: bounce-rs section text appears before the stat bar's
+    'WT Bull Cross' label, confirming it renders above every other section."""
+    html = build_html(
+        "2026-07-05", "2026-07-05 17:35 IST", [], bounce_rs_rows=[_SAMPLE_ROW]
+    )
+    assert html.index("BOUNCE-RS") < html.index("WT Bull Cross")
