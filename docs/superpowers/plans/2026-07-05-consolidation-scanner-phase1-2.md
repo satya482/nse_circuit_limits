@@ -1060,6 +1060,7 @@ def _gated_df(n: int) -> pd.DataFrame:
     })
     df = indicators.ema_compression(df)
     df = indicators.bollinger_keltner(df)
+    df = indicators.volume_exhaustion(df)
     return df
 
 
@@ -1094,6 +1095,27 @@ def test_consolidation_age_zero_when_gate_breaks_today():
 def test_cmf_negative_streak_counts_tail_bars_below_threshold():
     s = pd.Series([0.1, 0.1, -0.06, -0.07, -0.08])
     assert tiers.cmf_negative_streak(s, threshold=-0.05) == 3
+
+
+def test_quality_peak_drawdown_zero_on_stable_flat_series():
+    """A perfectly flat series has the same quality score at every bar in the
+    window -- peak equals today's score, drawdown is 0."""
+    df = _gated_df(300)
+    drawdown = tiers.quality_peak_drawdown(
+        df, age_bars=100, rs_char="CHAR_4_RISING", cmf=0.15, deliv_trend_label="RISING",
+    )
+    assert drawdown == 0.0
+
+
+def test_quality_peak_drawdown_positive_when_recent_bars_diverge():
+    """Widen bb_width_percentile on the last 5 bars only (simulating a recent
+    quality decline from an earlier peak) -- drawdown must be positive."""
+    df = _gated_df(300)
+    df.loc[df.index[-5:], "bb_width_percentile"] = 50.0
+    drawdown = tiers.quality_peak_drawdown(
+        df, age_bars=100, rs_char="CHAR_4_RISING", cmf=0.15, deliv_trend_label="RISING",
+    )
+    assert drawdown > 0.0
 
 
 def test_abandonment_reasons_flags_declining_rs_and_stale_age():
