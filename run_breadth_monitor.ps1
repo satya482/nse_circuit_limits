@@ -71,8 +71,14 @@ Log "=== BREADTH_MONITOR DONE ==="
 # Runs here (not at 4:40 PM) because today's ratio_5d row above must exist first.
 Log "--- Running Bounce-RS scanner ---"
 & "$ROOT\run_bounce_rs_scanner.ps1"
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: run_bounce_rs_scanner.ps1 failed (exit $LASTEXITCODE) ==="
+}
 Log "--- Rebuilding WT+Squeeze dashboard with fresh Bounce-RS data ---"
 & "$ROOT\run_wt_squeeze_dashboard.ps1"
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: run_wt_squeeze_dashboard.ps1 failed (exit $LASTEXITCODE) ==="
+}
 Log "=== BOUNCE_RS + DASHBOARD REBUILD DONE ==="
 
 # To register scheduled task (run once as admin):
