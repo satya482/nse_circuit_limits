@@ -1291,16 +1291,27 @@ from consolidation import consolidation_scanner as cs
 
 
 def _consolidating_df(n: int = 300) -> pd.DataFrame:
-    """Flat-enough series to pass both gates: constant price/volume, tiny noise
-    so rolling std isn't exactly zero (which would make BB width NaN-adjacent)."""
+    """A genuine volatility CONTRACTION: wider noise (std=0.5) for all but the
+    trailing 100 bars, then tight noise (std=0.03) for the trailing 100 --
+    passes both the EMA dual gate and the BB squeeze gate.
+
+    A uniform (homoskedastic) noise series was tried first and does NOT
+    reliably pass the squeeze gate: bb_width_percentile is a rank among the
+    trailing 252 bars, and with constant-variance noise there is no trend for
+    today's bar to rank low against -- it lands wherever i.i.d. sampling
+    happens to put it (verified: this produced bb_width_percentile ~60, gate
+    fails). Only an actual narrowing of realized volatility over time gives a
+    low, reliably-low percentile at the tail."""
     import numpy as np
     rng = np.random.default_rng(42)
-    noise = rng.normal(0, 0.05, n)
+    early_n = max(0, n - 100)
+    tight_n = n - early_n
+    noise = np.concatenate([rng.normal(0, 0.5, early_n), rng.normal(0, 0.03, tight_n)])
     close = [100.0 + x for x in noise]
     return pd.DataFrame({
         "date": pd.date_range("2023-06-01", periods=n, freq="B"),
-        "open": close, "high": [c + 0.3 for c in close],
-        "low": [c - 0.3 for c in close], "close": close,
+        "open": close, "high": [c + 0.05 for c in close],
+        "low": [c - 0.05 for c in close], "close": close,
         "volume": [1_000_000.0] * n,
     })
 
@@ -1390,7 +1401,8 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from ohlc_db import load_ohlc_many, cmf_series, load_delivery, deliv_spike
+import ohlc_db
+from ohlc_db import load_ohlc_many, cmf_series
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 from consolidation import indicators, quality, imminence, tiers
@@ -1469,8 +1481,8 @@ def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None) -> dic
     sig1 = bool(metrics["rs_52wk_high"] and not metrics["price_20d_high"])
     sig2 = imminence.spread_delta_crossover(df["spread_delta"])
     quiet_today = bool(df["quiet_accum_bar"].iloc[-1])
-    deliv_df = load_delivery(symbol, lookback=21)
-    deliv_spike_today = deliv_df is not None and deliv_spike(deliv_df) is not None
+    deliv_df = ohlc_db.load_delivery(symbol, lookback=21)
+    deliv_spike_today = deliv_df is not None and ohlc_db.deliv_spike(deliv_df) is not None
     sig3_wt = imminence.signal3_weight(quiet_today, deliv_spike_today)
     sig5 = imminence.higher_low(df)
     sig6 = imminence.wick_rejection_absorbed(df, age_bars)
@@ -1598,6 +1610,8 @@ if __name__ == "__main__":
 ```
 
 Note on Step 3's `analyse()`: `sig4` in `imminence_score()` reuses `bb_breathe` directly (spec's signal ④ and the standalone "BB breathing" component are the same underlying condition — see design doc's Section 2 note on intentional overlap in the spec's own composite scoring).
+
+Note on the `ohlc_db` import style: `load_delivery`/`deliv_spike` are called as `ohlc_db.load_delivery(...)`/`ohlc_db.deliv_spike(...)` (module-qualified), NOT `from ohlc_db import load_delivery, deliv_spike` (bare names), even though `load_ohlc_many`/`cmf_series` above them ARE bare-imported. This is deliberate, not an inconsistency to clean up: Step 1's test monkeypatches `ohlc_db.load_delivery`/`ohlc_db.deliv_spike` (patching the module's attribute), which only affects callers that look the function up on the module at call time (`ohlc_db.load_delivery(...)`) — a bare `from ohlc_db import load_delivery` binds a separate name in this module's namespace at import time that a later `monkeypatch.setattr(ohlc_db, ...)` does not touch, so the mock would silently not apply and the test would instead hit the real SQLite DB. `consolidation/quality.py`'s `deliv_trend()` already uses the module-qualified form for the same reason (it's tested the same way in Task 3) — this keeps both call sites consistent with how they're tested. Confirmed by hand: monkeypatching `ohlc_db.load_delivery` before calling a bare-imported reference to it returns the real (unmocked) value; calling it through `ohlc_db.load_delivery(...)` returns the mocked value.
 
 - [ ] **Step 4: Run tests to verify they pass**
 
