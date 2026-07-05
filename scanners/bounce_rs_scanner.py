@@ -129,3 +129,49 @@ def rs_and_ema_check(
         return None  # dipped below EMA20, hasn't reclaimed today
 
     return round(rs_pct, 4), ema_type
+
+
+def detect_setup(ohlc: pd.DataFrame) -> tuple[str, int]:
+    """Layer 3 setup trigger on today's bar. Always returns a pair;
+    ('NONE', 0) is a valid result, not an error."""
+    if len(ohlc) < POCKET_PIVOT_LB + 2:
+        return "NONE", 0
+
+    close = ohlc["close"].astype(float).reset_index(drop=True)
+    high = ohlc["high"].astype(float).reset_index(drop=True)
+    low = ohlc["low"].astype(float).reset_index(drop=True)
+    volume = ohlc["volume"].astype(float).reset_index(drop=True)
+    ema10 = close.ewm(span=10, adjust=False).mean()
+
+    n = len(close)
+    today_vol = volume.iloc[-1]
+    today_close = close.iloc[-1]
+    today_high = high.iloc[-1]
+    today_low = low.iloc[-1]
+    yesterday_high = high.iloc[-2]
+    yesterday_low = low.iloc[-2]
+
+    # Down-day volumes in the prior POCKET_PIVOT_LB bars (excluding today)
+    prior_closes = close.iloc[n - POCKET_PIVOT_LB - 1: n - 1].reset_index(drop=True)
+    prior_prev_closes = close.iloc[n - POCKET_PIVOT_LB - 2: n - 2].reset_index(drop=True)
+    prior_vols = volume.iloc[n - POCKET_PIVOT_LB - 1: n - 1].reset_index(drop=True)
+    down_mask = prior_closes < prior_prev_closes
+    down_vols = prior_vols[down_mask]
+    max_down_vol = float(down_vols.max()) if len(down_vols) else 0.0
+
+    is_pocket_pivot = today_vol > max_down_vol and today_close >= ema10.iloc[-1] * 0.99
+
+    today_range = today_high - today_low
+    other_ranges = (high - low).iloc[n - NR_PERIOD: n - 1]
+    is_nr7 = len(other_ranges) == NR_PERIOD - 1 and (today_range <= other_ranges).all()
+    is_inside = today_high < yesterday_high and today_low > yesterday_low
+
+    if is_pocket_pivot:
+        return "POCKET_PIVOT", 3
+    if is_nr7 and is_inside:
+        return "NR7_IB", 3
+    if is_nr7:
+        return "NR7", 2
+    if is_inside:
+        return "INSIDE_BAR", 1
+    return "NONE", 0

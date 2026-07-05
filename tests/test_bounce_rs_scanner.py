@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scanners.bounce_rs_scanner import find_dip_bounce, rs_and_ema_check  # noqa: E402
+from scanners.bounce_rs_scanner import find_dip_bounce, rs_and_ema_check, detect_setup  # noqa: E402
 
 
 def _breadth_df(dates: list[str], ratios: list[float], eligible: list[int] = None) -> pd.DataFrame:
@@ -118,3 +118,22 @@ def test_ema_type_c_excluded():
     bench = _ohlc(dates, [100 - i * 3 for i in range(20)])  # bench falls much harder -> RS still positive
     result = rs_and_ema_check(stock, bench, dates[15], dates[19])
     assert result is None
+
+
+def test_pocket_pivot_detection():
+    """Today's volume exceeds every down-day volume in the prior 10 bars,
+    and close is at/above EMA10*0.99 -> POCKET_PIVOT."""
+    dates = [f"2026-05-{d:02d}" for d in range(1, 14)]
+    closes = [100, 101, 99, 102, 98, 103, 97, 104, 96, 105, 95, 106, 107]
+    volumes = [1_000_000] * 12 + [5_000_000]  # today's volume dwarfs every prior down-day
+    df = pd.DataFrame({
+        "date": pd.to_datetime(dates),
+        "open": closes,
+        "high": [c * 1.01 for c in closes],
+        "low": [c * 0.99 for c in closes],
+        "close": closes,
+        "volume": volumes,
+    })
+    setup, score = detect_setup(df)
+    assert setup == "POCKET_PIVOT"
+    assert score == 3
