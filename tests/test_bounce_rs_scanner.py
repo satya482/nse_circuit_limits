@@ -7,7 +7,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from scanners.bounce_rs_scanner import find_dip_bounce, rs_and_ema_check, detect_setup  # noqa: E402
+from scanners.bounce_rs_scanner import find_dip_bounce, rs_and_ema_check, detect_setup, composite_score  # noqa: E402
 
 
 def _breadth_df(dates: list[str], ratios: list[float], eligible: list[int] = None) -> pd.DataFrame:
@@ -137,3 +137,16 @@ def test_pocket_pivot_detection():
     setup, score = detect_setup(df)
     assert setup == "POCKET_PIVOT"
     assert score == 3
+
+
+def test_score_ordering():
+    """Highest RS + Type A + Pocket Pivot ranks above a lower combo."""
+    strong = composite_score(rs_pct=8.0, ema_type="A", bounce_mag=0.10, setup_score=3)
+    weak = composite_score(rs_pct=1.0, ema_type="B", bounce_mag=0.05, setup_score=0)
+    assert strong > weak
+
+
+def test_score_caps_rs_and_bounce():
+    """RS component caps at 10, bounce component caps at 5."""
+    capped = composite_score(rs_pct=50.0, ema_type="A", bounce_mag=10.0, setup_score=0)
+    assert capped == 10.0 + 3.0 + 5.0 + 0

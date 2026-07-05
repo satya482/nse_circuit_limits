@@ -175,3 +175,17 @@ def detect_setup(ohlc: pd.DataFrame) -> tuple[str, int]:
     if is_inside:
         return "INSIDE_BAR", 1
     return "NONE", 0
+
+
+def composite_score(
+    rs_pct: float,
+    ema_type: str,
+    bounce_mag: float,
+    setup_score: int,
+) -> float:
+    """RS quality (0-10, capped) + EMA hold quality (1 or 3) +
+    breadth bounce (0-5, capped) + setup trigger (0-3)."""
+    rs_component = min(rs_pct, 10.0)
+    ema_component = 3.0 if ema_type == "A" else 1.0
+    bounce_component = min(bounce_mag * 5.0, 5.0)
+    return round(rs_component + ema_component + bounce_component + setup_score, 4)
