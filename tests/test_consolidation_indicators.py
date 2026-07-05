@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from consolidation import indicators
 
 
@@ -95,3 +96,98 @@ def test_squeeze_gate_fails_on_trending_series():
     df = indicators.bollinger_keltner(df)
     passes, _ = indicators.squeeze_gate(df)
     assert passes is False
+
+
+def _bench_series(n: int, val: float = 100.0, start: str = "2024-01-01") -> pd.DataFrame:
+    """start MUST match the stock df's start date -- rs_metrics() aligns on
+    the 'date' column, and misaligned date ranges give a fully-empty aligned
+    series (rs_metrics correctly returns None on that, it isn't a bug)."""
+    return pd.DataFrame({
+        "date": pd.date_range(start, periods=n, freq="B"),
+        "open": [val] * n, "high": [val] * n, "low": [val] * n,
+        "close": [val] * n, "volume": [1_000_000.0] * n,
+    })
+
+
+def test_volume_exhaustion_declining_volume_low_percentile():
+    n = 300
+    # elevated volume for first 100 bars, then steadily declining to multi-month lows
+    vol = [3_000_000.0] * 100 + list(np.linspace(3_000_000.0, 200_000.0, n - 100))
+    df = pd.DataFrame({
+        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "open": [100.0] * n, "high": [101.0] * n, "low": [99.0] * n,
+        "close": [100.0] * n, "volume": vol,
+    })
+    result = indicators.volume_exhaustion(df)
+    assert result["vol_percentile"].iloc[-1] < 20
+
+
+def test_volume_phase_c_on_multi_month_lows():
+    n = 300
+    vol = [3_000_000.0] * 100 + list(np.linspace(3_000_000.0, 200_000.0, n - 100))
+    df = pd.DataFrame({
+        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "open": [100.0] * n, "high": [101.0] * n, "low": [99.0] * n,
+        "close": [100.0] * n, "volume": vol,
+    })
+    df = indicators.volume_exhaustion(df)
+    assert indicators.volume_phase(df) == "PHASE_C"
+
+
+def test_quiet_accum_bar_flags_high_volume_flat_price():
+    n = 60
+    close = [100.0] * (n - 1) + [100.3]  # <1% move on the last bar
+    vol = [1_000_000.0] * (n - 1) + [2_000_000.0]  # 2x the 10-bar average
+    df = pd.DataFrame({
+        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "open": close, "high": [c * 1.005 for c in close],
+        "low": [c * 0.995 for c in close], "close": close, "volume": vol,
+    })
+    result = indicators.volume_exhaustion(df)
+    assert bool(result["quiet_accum_bar"].iloc[-1]) is True
+
+
+def test_rs_metrics_none_on_insufficient_history():
+    stock = _bench_series(30, 100.0)
+    bench = _bench_series(30, 100.0)
+    assert indicators.rs_metrics(stock, bench) is None
+
+
+def test_rs_metrics_char_1_declining_when_rs_falls_below_ema():
+    n = 260  # ~52 weeks
+    stock_close = [100.0] * 200 + list(np.linspace(100.0, 70.0, n - 200))  # stock falling vs flat bench
+    stock = pd.DataFrame({
+        "date": pd.date_range("2023-01-02", periods=n, freq="B"),
+        "open": stock_close, "high": [c * 1.01 for c in stock_close],
+        "low": [c * 0.99 for c in stock_close], "close": stock_close,
+        "volume": [1_000_000.0] * n,
+    })
+    bench = _bench_series(n, 100.0, start="2023-01-02")  # must match stock's date range
+    metrics = indicators.rs_metrics(stock, bench)
+    assert metrics is not None
+    assert indicators.classify_rs_character(metrics) == "CHAR_1_DECLINING"
+
+
+def test_rs_metrics_char_4_rising_when_rs_climbs_price_flat():
+    """Stock price stays perfectly flat while the BENCHMARK declines -- RS =
+    stock/bench rises even though the stock itself never moves (the 'quiet
+    accumulation' case: price flat, RS grinding up). A rising stock price
+    instead (tried first) also trips price_20d_high and pushes rs_slope just
+    under RS_FLAT_THRESHOLD -- not a clean CHAR_4 case."""
+    n = 260
+    stock_close = [100.0] * n
+    stock = pd.DataFrame({
+        "date": pd.date_range("2023-01-02", periods=n, freq="B"),
+        "open": stock_close, "high": [c * 1.01 for c in stock_close],
+        "low": [c * 0.99 for c in stock_close], "close": stock_close,
+        "volume": [1_000_000.0] * n,
+    })
+    bench_close = [100.0] * 200 + list(np.linspace(100.0, 90.0, n - 200))
+    bench = pd.DataFrame({
+        "date": pd.date_range("2023-01-02", periods=n, freq="B"),
+        "open": bench_close, "high": bench_close, "low": bench_close,
+        "close": bench_close, "volume": [1_000_000.0] * n,
+    })
+    metrics = indicators.rs_metrics(stock, bench)
+    assert metrics is not None
+    assert indicators.classify_rs_character(metrics) == "CHAR_4_RISING"
