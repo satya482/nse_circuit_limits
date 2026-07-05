@@ -172,6 +172,106 @@ def test_run_regime_guard_returns_empty(tmp_path, monkeypatch):
     assert len(result) == 0
 
 
+def test_detect_setup_remaining_branches():
+    """Table-driven test for NONE, INSIDE_BAR, NR7, NR7_IB branches.
+
+    NONE: today's range > all prior 6, and not inside yesterday.
+    INSIDE_BAR: today inside yesterday, but range not smallest of 7.
+    NR7: today's range is smallest of 7, but not inside yesterday.
+    NR7_IB: today's range is smallest of 7, and inside yesterday.
+
+    Base pattern: mixed up/down days (no extreme volume spike) to avoid
+    accidentally triggering POCKET_PIVOT. All volumes = 1M, so today_vol > max_down_vol
+    is false (max_down_vol = 1M, today_vol = 1M).
+    """
+    # Base: 13 bars with mixed up/down closes (steady range 2.0), all volumes 1M
+    base_dates = [f"2026-05-{d:02d}" for d in range(1, 14)]
+    base_closes = [100, 102, 101, 103, 100, 104, 98, 105, 96, 106, 95, 107, 100]
+    base_highs = [100 + 1.0, 102 + 1.0, 101 + 1.0, 103 + 1.0, 100 + 1.0, 104 + 1.0,
+                  98 + 1.0, 105 + 1.0, 96 + 1.0, 106 + 1.0, 95 + 1.0, 107 + 1.0, 100 + 1.0]
+    base_lows = [100 - 1.0, 102 - 1.0, 101 - 1.0, 103 - 1.0, 100 - 1.0, 104 - 1.0,
+                 98 - 1.0, 105 - 1.0, 96 - 1.0, 106 - 1.0, 95 - 1.0, 107 - 1.0, 100 - 1.0]
+
+    test_cases = [
+        (
+            "NONE",
+            # yesterday (idx 13): high=107.5, low=105, range=2.5
+            # today (idx 14): high=109, low=106, range=3 (NOT smallest, NOT inside)
+            # Ranges of indices 8-13: [2, 2, 2, 2, 2, 2.5]
+            # 3 > 2.5, so not NR7. high 109 > 107.5, so not inside.
+            pd.DataFrame({
+                "date": pd.to_datetime(base_dates + ["2026-05-14", "2026-05-15"]),
+                "open": base_closes + [106.5, 107.5],
+                "high": base_highs + [107.5, 109.0],
+                "low": base_lows + [105.0, 106.0],
+                "close": base_closes + [106.5, 107.5],
+                "volume": [1_000_000] * 15,
+            }),
+            "NONE",
+            0,
+        ),
+        (
+            "INSIDE_BAR",
+            # yesterday (idx 13): high=108.5, low=104.5, range=4
+            # today (idx 14): high=108, low=105, range=3
+            # Is inside: 108 < 108.5 and 105 > 104.5? Yes.
+            # Ranges of indices 8-13: [2, 2, 2, 2, 2, 4]
+            # 3 > 2 (not <= all), so not NR7. Is inside, so INSIDE_BAR.
+            pd.DataFrame({
+                "date": pd.to_datetime(base_dates + ["2026-05-14", "2026-05-15"]),
+                "open": base_closes + [106.5, 106.5],
+                "high": base_highs + [108.5, 108.0],
+                "low": base_lows + [104.5, 105.0],
+                "close": base_closes + [106.5, 106.5],
+                "volume": [1_000_000] * 15,
+            }),
+            "INSIDE_BAR",
+            1,
+        ),
+        (
+            "NR7",
+            # yesterday (idx 13): high=107.5, low=105.5, range=2
+            # today (idx 14): high=107.6, low=106.1, range=1.5
+            # Is inside: 107.6 < 107.5? No, so not inside.
+            # Ranges of indices 8-13: [2, 2, 2, 2, 2, 2]
+            # 1.5 <= 2 (all), so is NR7. Not inside, so NR7.
+            pd.DataFrame({
+                "date": pd.to_datetime(base_dates + ["2026-05-14", "2026-05-15"]),
+                "open": base_closes + [106.5, 106.85],
+                "high": base_highs + [107.5, 107.6],
+                "low": base_lows + [105.5, 106.1],
+                "close": base_closes + [106.5, 106.85],
+                "volume": [1_000_000] * 15,
+            }),
+            "NR7",
+            2,
+        ),
+        (
+            "NR7_IB",
+            # yesterday (idx 13): high=107.5, low=105.5, range=2
+            # today (idx 14): high=107.4, low=105.6, range=1.8
+            # Is inside: 107.4 < 107.5 and 105.6 > 105.5? Yes.
+            # Ranges of indices 8-13: [2, 2, 2, 2, 2, 2]
+            # 1.8 <= 2 (all), so is NR7. Is inside, so NR7_IB.
+            pd.DataFrame({
+                "date": pd.to_datetime(base_dates + ["2026-05-14", "2026-05-15"]),
+                "open": base_closes + [106.5, 106.5],
+                "high": base_highs + [107.5, 107.4],
+                "low": base_lows + [105.5, 105.6],
+                "close": base_closes + [106.5, 106.5],
+                "volume": [1_000_000] * 15,
+            }),
+            "NR7_IB",
+            3,
+        ),
+    ]
+
+    for name, df, expected_setup, expected_score in test_cases:
+        setup, score = detect_setup(df)
+        assert setup == expected_setup, f"{name}: expected setup={expected_setup}, got {setup}"
+        assert score == expected_score, f"{name}: expected score={expected_score}, got {score}"
+
+
 def test_run_end_to_end_smoke(tmp_path, monkeypatch):
     """Wiring smoke test: one qualifying stock flows through all 3 layers into output."""
     csv_path = tmp_path / "breadth_history.csv"
