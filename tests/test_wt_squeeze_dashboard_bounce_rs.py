@@ -3,8 +3,11 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
+import pandas as pd
 from wt_squeeze_dashboard import parse_bounce_rs
 from wt_squeeze_dashboard import _bounce_rs_section_html, build_html  # noqa: E402
+from run_bounce_rs_scanner import build_markdown  # noqa: E402
+from scanners.bounce_rs_scanner import OUTPUT_COLUMNS  # noqa: E402
 
 
 def test_parse_bounce_rs_basic():
@@ -86,3 +89,63 @@ def test_build_html_bounce_rs_section_appears_before_wt_bar():
         "2026-07-05", "2026-07-05 17:35 IST", [], bounce_rs_rows=[_SAMPLE_ROW]
     )
     assert html.index("BOUNCE-RS") < html.index("WT Bull Cross")
+
+
+def test_build_markdown_round_trips_through_parse_bounce_rs():
+    """Verify that build_markdown()'s real output parses back correctly
+    through parse_bounce_rs(), with no column misalignment or data loss."""
+    # Create a DataFrame with exact OUTPUT_COLUMNS and realistic sample data
+    df = pd.DataFrame(
+        [
+            {
+                "symbol": "SBIN",
+                "rs_during_dip_%": 8.23,
+                "ema_type": "A",
+                "setup": "POCKET_PIVOT",
+                "dip_low_ratio": 0.55,
+                "ratio_5d_now": 0.85,
+                "bounce_mag": 0.30,
+                "score": 14.50,
+            },
+            {
+                "symbol": "INFY",
+                "rs_during_dip_%": 2.67,
+                "ema_type": "B",
+                "setup": "NR7",
+                "dip_low_ratio": 0.62,
+                "ratio_5d_now": 0.78,
+                "bounce_mag": 0.16,
+                "score": 7.33,
+            },
+        ],
+        columns=OUTPUT_COLUMNS,
+    )
+
+    # Generate markdown using build_markdown()
+    md = build_markdown(df, "2026-07-05", "2026-07-05 17:35 IST")
+
+    # Parse it back using parse_bounce_rs()
+    parsed_rows = parse_bounce_rs(md)
+
+    # Assert row count preserved
+    assert len(parsed_rows) == 2
+
+    # Assert first row
+    assert parsed_rows[0]["symbol"] == "SBIN"
+    assert parsed_rows[0]["rs_pct"] == "8.23"
+    assert parsed_rows[0]["ema_type"] == "A"
+    assert parsed_rows[0]["setup"] == "POCKET_PIVOT"
+    assert parsed_rows[0]["dip_low"] == "0.55"
+    assert parsed_rows[0]["ratio_now"] == "0.85"
+    assert parsed_rows[0]["bounce"] == "0.30"
+    assert parsed_rows[0]["score"] == "14.50"
+
+    # Assert second row
+    assert parsed_rows[1]["symbol"] == "INFY"
+    assert parsed_rows[1]["rs_pct"] == "2.67"
+    assert parsed_rows[1]["ema_type"] == "B"
+    assert parsed_rows[1]["setup"] == "NR7"
+    assert parsed_rows[1]["dip_low"] == "0.62"
+    assert parsed_rows[1]["ratio_now"] == "0.78"
+    assert parsed_rows[1]["bounce"] == "0.16"
+    assert parsed_rows[1]["score"] == "7.33"
