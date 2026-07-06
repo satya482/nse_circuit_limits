@@ -47,3 +47,14 @@ def test_cmf_days_insufficient_bars_returns_none():
     df = pd.DataFrame(rows)
     assert cmf_days(df, n=20, cap=30) is None
     assert cmf_tag(df, n=20, cap=30) == ""
+
+
+def test_cmf_series_matches_cmf_days_internal_calc():
+    """Regression guard for the cmf_days() refactor: cmf_series()'s last value
+    must have the same sign cmf_days() would report as cmf_positive."""
+    from ohlc_db import cmf_series
+
+    df = _synthetic_cross_df()
+    series = cmf_series(df, n=5)
+    positive, _ = cmf_days(df, n=5, cap=30)
+    assert (series.iloc[-1] > 0) == positive

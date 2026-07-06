@@ -40,6 +40,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
+.\run_consolidation_scanner.ps1  # 4:35 PM — Consolidation Tracker: quality/imminence/tier scan
 # US WaveTrend Bull Cross Scanner — SEPARATE scheduled task, part of the existing
 # US scanner group (not run_all_scanners.ps1): fetch @4:40PM -> zl-squeeze @4:50PM -> this @5:00PM
 .\run_us_wt_bullcross_scanner.ps1
@@ -123,6 +124,29 @@ All thresholds live in `settings.yaml`. Pipeline:
 5. `price_vs_zl`: TOUCH (±1.5% of ZLEMA25 level) / ABOVE / BELOW — flags pullback entry zone
 6. `bb_kc_squeeze_info()` → squeeze column (informational, not a gate)
 7. Writes `weekly_zl_scans/weekly_zl_scans.md`; sorted TOUCH-first, then by `-consec_weeks`
+
+### Scanner pipeline — Consolidation Tracker (`consolidation/`)
+
+Phase 1+2 of `research/consolidation_capital_efficiency_spec.md` (full spec covers 7 phases;
+only indicators+quality+imminence+tiers+scanner are built — see
+`docs/superpowers/specs/2026-07-05-consolidation-scanner-phase1-2-design.md`).
+
+1. `indicators.py` — EMA compression (Sec 2.1), BB/KC squeeze (Sec 2.2), volume exhaustion
+   (Sec 2.3), RS character (Sec 2.4)
+2. `quality.py` — 0-100 quality score (Sec 3): BB depth + EMA stage + vol exhaustion +
+   RS character + CMF (reuses `ohlc_db.cmf_series()`) + delivery% trend (reuses
+   `ohlc_db.load_delivery()`)
+3. `imminence.py` — 0-100 imminence score + 6 pre-break signals (Sec 4)
+4. `tiers.py` — COLD/WARM/HOT tier lookup + stateless `consolidation_age`/quality-peak-drawdown
+   (backward-scan over historical OHLC, no DB) + abandonment checks (Sec 5)
+5. `consolidation_scanner.py` — `run(universe_df, as_of) -> pd.DataFrame`; own TradingView
+   universe query (mcap 1,000–5,00,000 Cr, price > ₹50, mirrors `wt_bullcross_scanner.py`);
+   writes `results/YYYY-MM-DD-consolidation.csv` (Layer 1 → future Pine Layer 2 contract) +
+   `consolidation_scans/consolidation_scan_latest.md`
+
+Gate: EMA dual gate AND BB squeeze gate only — volume/RS are scored, not filtered on.
+Out of scope for this phase: capital/time-stops/regime-throttle (Sec 6/8/9), catalyst
+calendar (Sec 7), PineScript companion (Sec 12), half-life backtest (Sec 10).
 
 ### Daily Gainers Brief (`daily_gainers_brief.py`)
 

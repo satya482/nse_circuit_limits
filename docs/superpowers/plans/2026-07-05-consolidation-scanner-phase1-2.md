@@ -52,10 +52,21 @@ def _flat_df(n: int, price: float = 100.0, vol: float = 1_000_000.0) -> pd.DataF
     })
 
 
-def test_ema_compression_flat_series_spread_shrinks_to_near_zero():
-    df = indicators.ema_compression(_flat_df(300))
-    assert df["ema_spread"].iloc[-1] < df["ema_spread"].iloc[100]
-    assert df["spread_pct"].iloc[-1] < 0.001
+def test_ema_compression_spread_shrinks_as_ramp_flattens_out():
+    """A dead-flat series has spread=0 at every bar (nothing to shrink from) --
+    to observe convergence, start with a ramp that leaves EMAs spread apart,
+    then flatten and watch the spread decay toward zero."""
+    n = 300
+    prices = [50.0 + i * 2.0 for i in range(50)] + [150.0] * (n - 50)
+    df = pd.DataFrame({
+        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "open": prices, "high": [p * 1.01 for p in prices],
+        "low": [p * 0.99 for p in prices], "close": prices,
+        "volume": [1_000_000.0] * n,
+    })
+    df = indicators.ema_compression(df)
+    assert df["ema_spread"].iloc[-1] < df["ema_spread"].iloc[60]
+    assert df["spread_pct"].iloc[-1] < df["spread_pct"].iloc[60]
 
 
 def test_compression_duration_counts_consecutive_tail_bars():
@@ -106,13 +117,19 @@ def test_squeeze_gate_passes_on_flat_series():
     assert days >= 5
 
 
-def test_squeeze_gate_fails_on_volatile_series():
+def test_squeeze_gate_fails_on_trending_series():
+    """A steady linear ramp with near-zero daily range: BB width scales with the
+    *dispersion of closes across the window* (wide, for a ramp spanning a large
+    range), while KC width scales with *daily bar range* (narrow, since each
+    day's own high-low is tiny) -- BB ends up well outside KC, squeeze off.
+    (Alternating chop was tried first but widens ATR by the same reversal gap
+    that widens BB, so BB stays inside KC -- that's not a valid counter-example.)"""
     n = 300
-    prices = [100.0 + (10 if i % 2 == 0 else -10) for i in range(n)]  # violent chop, wide bands
+    prices = [100.0 + i * 1.0 for i in range(n)]
     df = pd.DataFrame({
         "date": pd.date_range("2024-01-01", periods=n, freq="B"),
-        "open": prices, "high": [p * 1.05 for p in prices],
-        "low": [p * 0.95 for p in prices], "close": prices,
+        "open": prices, "high": [p + 0.01 for p in prices],
+        "low": [p - 0.01 for p in prices], "close": prices,
         "volume": [1_000_000.0] * n,
     })
     df = indicators.bollinger_keltner(df)
@@ -296,9 +313,12 @@ git commit --no-verify -m "feat: add EMA compression + BB/KC squeeze indicators 
 ```python
 # append to tests/test_consolidation_indicators.py
 
-def _bench_series(n: int, val: float = 100.0) -> pd.DataFrame:
+def _bench_series(n: int, val: float = 100.0, start: str = "2024-01-01") -> pd.DataFrame:
+    """start MUST match the stock df's start date -- rs_metrics() aligns on
+    the 'date' column, and misaligned date ranges give a fully-empty aligned
+    series (rs_metrics correctly returns None on that, it isn't a bug)."""
     return pd.DataFrame({
-        "date": pd.date_range("2024-01-01", periods=n, freq="B"),
+        "date": pd.date_range(start, periods=n, freq="B"),
         "open": [val] * n, "high": [val] * n, "low": [val] * n,
         "close": [val] * n, "volume": [1_000_000.0] * n,
     })
@@ -357,22 +377,32 @@ def test_rs_metrics_char_1_declining_when_rs_falls_below_ema():
         "low": [c * 0.99 for c in stock_close], "close": stock_close,
         "volume": [1_000_000.0] * n,
     })
-    bench = _bench_series(n, 100.0)
+    bench = _bench_series(n, 100.0, start="2023-01-02")  # must match stock's date range
     metrics = indicators.rs_metrics(stock, bench)
     assert metrics is not None
     assert indicators.classify_rs_character(metrics) == "CHAR_1_DECLINING"
 
 
 def test_rs_metrics_char_4_rising_when_rs_climbs_price_flat():
+    """Stock price stays perfectly flat while the BENCHMARK declines -- RS =
+    stock/bench rises even though the stock itself never moves (the 'quiet
+    accumulation' case: price flat, RS grinding up). A rising stock price
+    instead (tried first) also trips price_20d_high and pushes rs_slope just
+    under RS_FLAT_THRESHOLD -- not a clean CHAR_4 case."""
     n = 260
-    stock_close = [100.0] * 200 + list(np.linspace(100.0, 103.0, n - 200))  # RS climbs, price ~flat
+    stock_close = [100.0] * n
     stock = pd.DataFrame({
         "date": pd.date_range("2023-01-02", periods=n, freq="B"),
         "open": stock_close, "high": [c * 1.01 for c in stock_close],
         "low": [c * 0.99 for c in stock_close], "close": stock_close,
         "volume": [1_000_000.0] * n,
     })
-    bench = _bench_series(n, 100.0)
+    bench_close = [100.0] * 200 + list(np.linspace(100.0, 90.0, n - 200))
+    bench = pd.DataFrame({
+        "date": pd.date_range("2023-01-02", periods=n, freq="B"),
+        "open": bench_close, "high": bench_close, "low": bench_close,
+        "close": bench_close, "volume": [1_000_000.0] * n,
+    })
     metrics = indicators.rs_metrics(stock, bench)
     assert metrics is not None
     assert indicators.classify_rs_character(metrics) == "CHAR_4_RISING"
@@ -761,10 +791,17 @@ def test_spread_delta_crossover_false_when_already_positive():
 
 
 def test_ema_stage3_flag_requires_ten_prior_negative_bars():
-    s = pd.Series([-0.001] * 10 + [0.001])
+    """11 negative bars + the crossing bar = 12 elements, the function's own
+    minimum length (len < 12 short-circuits to False before the streak count
+    even runs) -- 10 negative bars alone (11 elements) would fail on length,
+    not on streak count, and wouldn't test the intended branch."""
+    s = pd.Series([-0.001] * 11 + [0.001])
     assert imminence.ema_stage3_flag(s) is True
-    s_short = pd.Series([-0.001] * 5 + [0.001])
-    assert imminence.ema_stage3_flag(s_short) is False
+    # long enough to pass the length gate, but the negative streak right before
+    # the cross is only 5 bars -- exercises the "streak < 10" rejection, not
+    # just the length gate
+    s_short_streak = pd.Series([0.002] * 6 + [-0.001] * 5 + [0.001])
+    assert imminence.ema_stage3_flag(s_short_streak) is False
 
 
 def test_bb_breathing_true_on_two_bar_tick_up_from_low_percentile():
@@ -792,6 +829,35 @@ def test_higher_low_true_when_todays_low_exceeds_prior_window_low():
     df.loc[df.index[-6:-1], "low"] = 95.0
     df.loc[df.index[-1], "low"] = 98.0
     assert imminence.higher_low(df, window=5) is True
+
+
+def test_wick_rejection_absorbed_true_on_long_upper_wick_reclaimed():
+    """Yesterday spiked to the range top with a long upper wick (rejected),
+    today closes back above yesterday's body top (absorbed, not confirmed)."""
+    n = 20
+    rows = []
+    for _ in range(n - 2):
+        rows.append({"open": 100.0, "high": 105.0, "low": 99.0, "close": 100.0})
+    # yesterday: body_top=101, wick=110-101=9, range=110-99=11, wick/range=0.82>0.3
+    rows.append({"open": 100.0, "high": 110.0, "low": 99.0, "close": 101.0})
+    # today: closes 101.5 >= yesterday's body_top (101) -> absorbed
+    rows.append({"open": 101.0, "high": 102.0, "low": 100.5, "close": 101.5})
+    df = pd.DataFrame(rows)
+    df["date"] = pd.date_range("2024-01-01", periods=n, freq="B")
+    assert imminence.wick_rejection_absorbed(df, age_bars=20) is True
+
+
+def test_wick_rejection_absorbed_false_when_not_reclaimed():
+    n = 20
+    rows = []
+    for _ in range(n - 2):
+        rows.append({"open": 100.0, "high": 105.0, "low": 99.0, "close": 100.0})
+    rows.append({"open": 100.0, "high": 110.0, "low": 99.0, "close": 101.0})
+    # today closes well below yesterday's body_top (101) -- not absorbed
+    rows.append({"open": 100.0, "high": 100.5, "low": 98.0, "close": 98.5})
+    df = pd.DataFrame(rows)
+    df["date"] = pd.date_range("2024-01-01", periods=n, freq="B")
+    assert imminence.wick_rejection_absorbed(df, age_bars=20) is False
 
 
 def test_signal3_weight_full_on_spike_half_without():
@@ -994,6 +1060,7 @@ def _gated_df(n: int) -> pd.DataFrame:
     })
     df = indicators.ema_compression(df)
     df = indicators.bollinger_keltner(df)
+    df = indicators.volume_exhaustion(df)
     return df
 
 
@@ -1028,6 +1095,27 @@ def test_consolidation_age_zero_when_gate_breaks_today():
 def test_cmf_negative_streak_counts_tail_bars_below_threshold():
     s = pd.Series([0.1, 0.1, -0.06, -0.07, -0.08])
     assert tiers.cmf_negative_streak(s, threshold=-0.05) == 3
+
+
+def test_quality_peak_drawdown_zero_on_stable_flat_series():
+    """A perfectly flat series has the same quality score at every bar in the
+    window -- peak equals today's score, drawdown is 0."""
+    df = _gated_df(300)
+    drawdown = tiers.quality_peak_drawdown(
+        df, age_bars=100, rs_char="CHAR_4_RISING", cmf=0.15, deliv_trend_label="RISING",
+    )
+    assert drawdown == 0.0
+
+
+def test_quality_peak_drawdown_positive_when_recent_bars_diverge():
+    """Widen bb_width_percentile on the last 5 bars only (simulating a recent
+    quality decline from an earlier peak) -- drawdown must be positive."""
+    df = _gated_df(300)
+    df.loc[df.index[-5:], "bb_width_percentile"] = 50.0
+    drawdown = tiers.quality_peak_drawdown(
+        df, age_bars=100, rs_char="CHAR_4_RISING", cmf=0.15, deliv_trend_label="RISING",
+    )
+    assert drawdown > 0.0
 
 
 def test_abandonment_reasons_flags_declining_rs_and_stale_age():
@@ -1203,16 +1291,27 @@ from consolidation import consolidation_scanner as cs
 
 
 def _consolidating_df(n: int = 300) -> pd.DataFrame:
-    """Flat-enough series to pass both gates: constant price/volume, tiny noise
-    so rolling std isn't exactly zero (which would make BB width NaN-adjacent)."""
+    """A genuine volatility CONTRACTION: wider noise (std=0.5) for all but the
+    trailing 100 bars, then tight noise (std=0.03) for the trailing 100 --
+    passes both the EMA dual gate and the BB squeeze gate.
+
+    A uniform (homoskedastic) noise series was tried first and does NOT
+    reliably pass the squeeze gate: bb_width_percentile is a rank among the
+    trailing 252 bars, and with constant-variance noise there is no trend for
+    today's bar to rank low against -- it lands wherever i.i.d. sampling
+    happens to put it (verified: this produced bb_width_percentile ~60, gate
+    fails). Only an actual narrowing of realized volatility over time gives a
+    low, reliably-low percentile at the tail."""
     import numpy as np
     rng = np.random.default_rng(42)
-    noise = rng.normal(0, 0.05, n)
+    early_n = max(0, n - 100)
+    tight_n = n - early_n
+    noise = np.concatenate([rng.normal(0, 0.5, early_n), rng.normal(0, 0.03, tight_n)])
     close = [100.0 + x for x in noise]
     return pd.DataFrame({
         "date": pd.date_range("2023-06-01", periods=n, freq="B"),
-        "open": close, "high": [c + 0.3 for c in close],
-        "low": [c - 0.3 for c in close], "close": close,
+        "open": close, "high": [c + 0.05 for c in close],
+        "low": [c - 0.05 for c in close], "close": close,
         "volume": [1_000_000.0] * n,
     })
 
@@ -1302,7 +1401,8 @@ import pandas as pd
 from tradingview_screener import Query, col
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from ohlc_db import load_ohlc_many, cmf_series, load_delivery, deliv_spike
+import ohlc_db
+from ohlc_db import load_ohlc_many, cmf_series
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 from consolidation import indicators, quality, imminence, tiers
@@ -1381,8 +1481,8 @@ def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None) -> dic
     sig1 = bool(metrics["rs_52wk_high"] and not metrics["price_20d_high"])
     sig2 = imminence.spread_delta_crossover(df["spread_delta"])
     quiet_today = bool(df["quiet_accum_bar"].iloc[-1])
-    deliv_df = load_delivery(symbol, lookback=21)
-    deliv_spike_today = deliv_df is not None and deliv_spike(deliv_df) is not None
+    deliv_df = ohlc_db.load_delivery(symbol, lookback=21)
+    deliv_spike_today = deliv_df is not None and ohlc_db.deliv_spike(deliv_df) is not None
     sig3_wt = imminence.signal3_weight(quiet_today, deliv_spike_today)
     sig5 = imminence.higher_low(df)
     sig6 = imminence.wick_rejection_absorbed(df, age_bars)
@@ -1510,6 +1610,8 @@ if __name__ == "__main__":
 ```
 
 Note on Step 3's `analyse()`: `sig4` in `imminence_score()` reuses `bb_breathe` directly (spec's signal ④ and the standalone "BB breathing" component are the same underlying condition — see design doc's Section 2 note on intentional overlap in the spec's own composite scoring).
+
+Note on the `ohlc_db` import style: `load_delivery`/`deliv_spike` are called as `ohlc_db.load_delivery(...)`/`ohlc_db.deliv_spike(...)` (module-qualified), NOT `from ohlc_db import load_delivery, deliv_spike` (bare names), even though `load_ohlc_many`/`cmf_series` above them ARE bare-imported. This is deliberate, not an inconsistency to clean up: Step 1's test monkeypatches `ohlc_db.load_delivery`/`ohlc_db.deliv_spike` (patching the module's attribute), which only affects callers that look the function up on the module at call time (`ohlc_db.load_delivery(...)`) — a bare `from ohlc_db import load_delivery` binds a separate name in this module's namespace at import time that a later `monkeypatch.setattr(ohlc_db, ...)` does not touch, so the mock would silently not apply and the test would instead hit the real SQLite DB. `consolidation/quality.py`'s `deliv_trend()` already uses the module-qualified form for the same reason (it's tested the same way in Task 3) — this keeps both call sites consistent with how they're tested. Confirmed by hand: monkeypatching `ohlc_db.load_delivery` before calling a bare-imported reference to it returns the real (unmocked) value; calling it through `ohlc_db.load_delivery(...)` returns the mocked value.
 
 - [ ] **Step 4: Run tests to verify they pass**
 
