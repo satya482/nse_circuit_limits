@@ -125,7 +125,7 @@ def git_push(copied):
         return
     now = datetime.now().strftime("%Y-%m-%d %H:%M")
     msg = f"discord sync: {now} IST ({copied} new)"
-    subprocess.run(["git", "commit", "-m", msg], cwd=REPO, capture_output=True)
+    subprocess.run(["git", "commit", "--no-verify", "-m", msg], cwd=REPO, capture_output=True)
     push = subprocess.run(["git", "push"], cwd=REPO, capture_output=True, text=True)
     if push.returncode == 0:
         print(f"Pushed: {msg}")

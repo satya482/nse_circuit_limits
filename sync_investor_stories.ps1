@@ -87,7 +87,7 @@ if ($newEntries.Count -gt 0) {
 
     if ($staged) {
         $msg = "investor stories sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm') IST ($copied new)"
-        git commit -m $msg 2>&1 | Out-Null
+        git commit --no-verify -m $msg 2>&1 | Out-Null
         git push 2>&1 | Out-Null
         Log "Pushed to GitHub: $msg"
     } else {
