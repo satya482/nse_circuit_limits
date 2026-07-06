@@ -94,6 +94,16 @@ def test_build_markdown_no_signals_writes_placeholder_not_empty():
     assert "SEBI registered" in md
 
 
+def test_action_for_red_regime_gates_deployment():
+    """RED regime blocks deployment for all non-NONE tiers; GREEN/NEUTRAL return normal action."""
+    assert cs.action_for("TIER_1_HOT", "RED") == "NO_DEPLOY"
+    assert cs.action_for("TIER_2_WARM", "RED") == "NO_DEPLOY"
+    assert cs.action_for("TIER_3_COLD", "RED") == "NO_DEPLOY"
+    assert cs.action_for("NONE", "RED") == "NONE"
+    assert cs.action_for("TIER_1_HOT", "GREEN") == "DEPLOY_ELIGIBLE"
+    assert cs.action_for("TIER_1_HOT", "NEUTRAL") == "DEPLOY_ELIGIBLE"
+
+
 def test_run_adds_regime_and_action_columns(tmp_path, monkeypatch):
     history_path = tmp_path / "breadth_history.csv"
     pd.DataFrame([
