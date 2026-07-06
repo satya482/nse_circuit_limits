@@ -163,8 +163,18 @@ every row with the day's `regime` + a tier-derived `action` (`DEPLOY_ELIGIBLE`/`
 `NONE`/`NO_DEPLOY`). `time_stops`/`slots` are available but not called from the daily scan —
 they operate on live position state this scanner doesn't track (no `signals.db`, by design).
 
-Out of scope for this phase: catalyst calendar (Sec 7), PineScript companion (Sec 12),
-half-life backtest (Sec 10).
+4. `catalyst_calendar.py` — `days_to_results()` (nearest scheduled "Financial Results"
+   board meeting, via NSE's `corporate-board-meetings` API) + `days_to_expiry()` (F&O
+   monthly expiry, pure calendar math — last Thursday of the month, not adjusted for
+   holidays). `days_to_index_rebal` explicitly skipped — no verifiable NSE API exists
+   for Nifty rebalance effective dates.
+
+`consolidation_scanner.py` fetches the next 21 days of board meetings once per run and
+stamps every row with `days_to_results` (None if nothing scheduled yet for that stock).
+`days_to_expiry` is available but not wired into the scanner output — it's calendar-wide,
+not per-symbol.
+
+Out of scope for this phase: PineScript companion (Sec 12), half-life backtest (Sec 10).
 
 ### Daily Gainers Brief (`daily_gainers_brief.py`)
 

@@ -22,6 +22,8 @@ from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from consolidation import indicators, quality, imminence, tiers
 from capital import regime_throttle
 from capital.regime_throttle import HISTORY_PATH
+from capital import catalyst_calendar
+from capital.catalyst_calendar import fetch_board_meetings
 
 IST = timezone(timedelta(hours=5, minutes=30))
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -36,7 +38,7 @@ MIN_BARS = 250
 COLUMNS = [
     "symbol", "quality", "imminence", "tier", "age_bars", "ema_stage",
     "vol_phase", "rs_char", "cmf", "deliv_trend", "prebreak_count",
-    "regime", "action",
+    "regime", "action", "days_to_results",
 ]
 _TIER_RANK = {"TIER_1_HOT": 3, "TIER_2_WARM": 2, "TIER_3_COLD": 1, "NONE": 0}
 
@@ -73,7 +75,10 @@ def get_universe() -> list[str]:
     return df["name"].tolist()
 
 
-def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None, regime: str) -> dict | None:
+def analyse(
+    symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None, regime: str,
+    board_meetings: list[dict], as_of: str,
+) -> dict | None:
     if df is None or len(df) < MIN_BARS or bench_df is None:
         return None
 
@@ -138,6 +143,7 @@ def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None, regime
         "prebreak_count": prebreak_count,
         "regime": regime,
         "action": action_for(tier_label, regime),
+        "days_to_results": catalyst_calendar.days_to_results(symbol, as_of, board_meetings),
     }
 
 
@@ -202,9 +208,14 @@ def run(universe_df: pd.DataFrame, as_of: str) -> pd.DataFrame:
     regime_info = regime_throttle.regime_for_date(as_of, history_path=HISTORY_PATH)
     regime = regime_info["regime"]
 
+    as_of_date = datetime.strptime(as_of, "%Y-%m-%d")
+    window_end = (as_of_date + timedelta(days=21)).strftime("%d-%m-%Y")
+    window_start = as_of_date.strftime("%d-%m-%Y")
+    board_meetings = fetch_board_meetings(window_start, window_end)
+
     rows = []
     for sym, sym_df in all_data.items():
-        result = analyse(sym, sym_df, bench_df, regime)
+        result = analyse(sym, sym_df, bench_df, regime, board_meetings, as_of)
         if result:
             rows.append(result)
 
