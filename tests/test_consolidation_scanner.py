@@ -43,12 +43,12 @@ def _bench_df(n: int = 300) -> pd.DataFrame:
 
 def test_analyse_returns_none_below_minimum_history():
     short_df = _consolidating_df(50)
-    result = cs.analyse("TEST", short_df, _bench_df(50))
+    result = cs.analyse("TEST", short_df, _bench_df(50), "GREEN")
     assert result is None
 
 
 def test_analyse_returns_none_without_benchmark():
-    result = cs.analyse("TEST", _consolidating_df(), None)
+    result = cs.analyse("TEST", _consolidating_df(), None, "GREEN")
     assert result is None
 
 
@@ -56,10 +56,12 @@ def test_analyse_returns_expected_columns_on_qualifying_stock(monkeypatch):
     import ohlc_db
     monkeypatch.setattr(ohlc_db, "load_delivery", lambda symbol, lookback=120, db_path=None: None)
     monkeypatch.setattr(ohlc_db, "deliv_spike", lambda df, n=20, mult=1.5: None)
-    result = cs.analyse("TEST", _consolidating_df(), _bench_df())
+    result = cs.analyse("TEST", _consolidating_df(), _bench_df(), "GREEN")
     assert result is not None
     assert set(result.keys()) == set(cs.COLUMNS)
     assert result["tier"] in ("NONE", "TIER_1_HOT", "TIER_2_WARM", "TIER_3_COLD")
+    assert result["regime"] == "GREEN"
+    assert result["action"] in {"DEPLOY_ELIGIBLE", "ARM", "WATCH", "NONE", "NO_DEPLOY"}
 
 
 def test_find_previous_csv_returns_most_recent_before_as_of(tmp_path, monkeypatch):
@@ -90,3 +92,26 @@ def test_build_markdown_no_signals_writes_placeholder_not_empty():
     md = cs.build_markdown([], "2026-07-05", {"promoted": [], "demoted": [], "abandoned": []})
     assert "No signals" in md
     assert "SEBI registered" in md
+
+
+def test_run_adds_regime_and_action_columns(tmp_path, monkeypatch):
+    history_path = tmp_path / "breadth_history.csv"
+    pd.DataFrame([
+        {"date": "2026-07-02", "universe_tag": "breadth_broad", "ratio_5d": 1.8, "pct_above_sma200": 65.0},
+    ]).to_csv(history_path, index=False)
+    monkeypatch.setattr(cs, "HISTORY_PATH", str(history_path))
+
+    def _fake_load_many(symbols, lookback=600):
+        out = {}
+        for sym in symbols:
+            out[sym] = _bench_df() if sym == cs.BENCH_SYM else _consolidating_df()
+        return out
+
+    monkeypatch.setattr(cs, "load_ohlc_many", _fake_load_many)
+    universe_df = pd.DataFrame({"symbol": ["TESTCO"]})
+    result_df = cs.run(universe_df, "2026-07-02")
+
+    assert "regime" in result_df.columns
+    assert "action" in result_df.columns
+    assert result_df["regime"].iloc[0] == "GREEN"
+    assert result_df["action"].iloc[0] in {"DEPLOY_ELIGIBLE", "ARM", "WATCH", "NONE"}

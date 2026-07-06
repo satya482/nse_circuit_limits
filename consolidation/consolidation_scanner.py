@@ -20,6 +20,8 @@ from ohlc_db import load_ohlc_many, cmf_series
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 from consolidation import indicators, quality, imminence, tiers
+from capital import regime_throttle
+from capital.regime_throttle import HISTORY_PATH
 
 IST = timezone(timedelta(hours=5, minutes=30))
 REPO_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -34,8 +36,22 @@ MIN_BARS = 250
 COLUMNS = [
     "symbol", "quality", "imminence", "tier", "age_bars", "ema_stage",
     "vol_phase", "rs_char", "cmf", "deliv_trend", "prebreak_count",
+    "regime", "action",
 ]
 _TIER_RANK = {"TIER_1_HOT": 3, "TIER_2_WARM": 2, "TIER_3_COLD": 1, "NONE": 0}
+
+_ACTION_BY_TIER = {
+    "TIER_1_HOT": "DEPLOY_ELIGIBLE",
+    "TIER_2_WARM": "ARM",
+    "TIER_3_COLD": "WATCH",
+    "NONE": "NONE",
+}
+
+
+def action_for(tier_label: str, regime: str) -> str:
+    if regime == "RED":
+        return "NO_DEPLOY" if tier_label != "NONE" else "NONE"
+    return _ACTION_BY_TIER[tier_label]
 
 
 def get_universe() -> list[str]:
@@ -57,7 +73,7 @@ def get_universe() -> list[str]:
     return df["name"].tolist()
 
 
-def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None) -> dict | None:
+def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None, regime: str) -> dict | None:
     if df is None or len(df) < MIN_BARS or bench_df is None:
         return None
 
@@ -120,6 +136,8 @@ def analyse(symbol: str, df: pd.DataFrame, bench_df: pd.DataFrame | None) -> dic
         "cmf": round(cmf_today, 3),
         "deliv_trend": deliv_trend_label or "UNKNOWN",
         "prebreak_count": prebreak_count,
+        "regime": regime,
+        "action": action_for(tier_label, regime),
     }
 
 
@@ -181,9 +199,12 @@ def run(universe_df: pd.DataFrame, as_of: str) -> pd.DataFrame:
     all_data = load_ohlc_many(symbols + [BENCH_SYM], lookback=600)
     bench_df = all_data.pop(BENCH_SYM, None)
 
+    regime_info = regime_throttle.regime_for_date(as_of, history_path=HISTORY_PATH)
+    regime = regime_info["regime"]
+
     rows = []
     for sym, sym_df in all_data.items():
-        result = analyse(sym, sym_df, bench_df)
+        result = analyse(sym, sym_df, bench_df, regime)
         if result:
             rows.append(result)
 

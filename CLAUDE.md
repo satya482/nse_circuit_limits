@@ -145,8 +145,26 @@ only indicators+quality+imminence+tiers+scanner are built — see
    `consolidation_scans/consolidation_scan_latest.md`
 
 Gate: EMA dual gate AND BB squeeze gate only — volume/RS are scored, not filtered on.
-Out of scope for this phase: capital/time-stops/regime-throttle (Sec 6/8/9), catalyst
-calendar (Sec 7), PineScript companion (Sec 12), half-life backtest (Sec 10).
+
+### Scanner pipeline — Capital rules (`capital/`)
+
+Phase 3 of the consolidation spec (Sec 6, 8, 9) — see `docs/superpowers/plans/2026-07-06-consolidation-scanner-phase3.md`.
+
+1. `regime_throttle.py` — GREEN/NEUTRAL/RED classification off `data/breadth_history.csv`
+   (`ratio_5d` + `pct_above_sma200` + its 5-row trend); returns `max_slots` + `time_stop_mode`
+2. `time_stops.py` — breakout entry trigger (close > range high, vol >= 2x vol_ma50,
+   delivery% >= baseline), ATR-capped stop price, fixed-₹15k position sizing, bar-3/5/10
+   time-stop ladder, opportunity-cost flags. Not yet wired to a live position tracker —
+   pure functions only, called once one exists.
+3. `slots.py` — DEPLOYED/ARMED/FREE slot capacity state machine (stateless, caller-owned list)
+
+`consolidation_scanner.py` calls `regime_throttle.regime_for_date()` once per run and stamps
+every row with the day's `regime` + a tier-derived `action` (`DEPLOY_ELIGIBLE`/`ARM`/`WATCH`/
+`NONE`/`NO_DEPLOY`). `time_stops`/`slots` are available but not called from the daily scan —
+they operate on live position state this scanner doesn't track (no `signals.db`, by design).
+
+Out of scope for this phase: catalyst calendar (Sec 7), PineScript companion (Sec 12),
+half-life backtest (Sec 10).
 
 ### Daily Gainers Brief (`daily_gainers_brief.py`)
 
