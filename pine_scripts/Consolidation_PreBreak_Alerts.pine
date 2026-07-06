@@ -1,0 +1,112 @@
+//@version=6
+indicator("Consolidation Pre-break Alerts", shorttitle="ConsolAlerts", overlay=true)
+// Consolidation Tracker Phase 6 companion (spec Sec 12) -- 6 pre-break alert
+// conditions, once-per-bar. Meant to run on Tier 1/2 stocks from the Python
+// scanner's daily output (spec Sec 10.5's daily loop). Duplicates the calc
+// block from Consolidation_Panel.pine -- this repo has no shared Pine library,
+// every .pine file here is self-contained (see pine_scripts/CMF_ZeroCross.pine,
+// pine_scripts/Monthly_HL_projection.pine for the same pattern).
+//
+// DELIBERATE DEVIATIONS (see Consolidation_Panel.pine's header for full detail):
+//   - RS character computed DAILY-NATIVE, not weekly-resampled.
+//   - Signal (3) quiet-accumulation-bar is VOLUME-ONLY -- no NSE delivery %
+//     confirmation available in Pine (spec Sec 12 explicitly accepts this:
+//     "no delivery % in TV -- volume-only version, note limitation").
+//
+// Companion: Consolidation_Panel.pine (visual quality/imminence/CMF panel)
+// Alert message format: CONSOL_PREBREAK|{{ticker}}|<signal_name>|TF:{{interval}}
+// Python counterpart: consolidation/imminence.py -- mirror any threshold
+// change both places (pine-script-conventions.md)
+
+benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark (verify resolves at paste-time)", group="RS")
+
+// ─────────────── EMA COMPRESSION (Sec 2.1) ───────────────
+ema50  = ta.ema(close, 50)
+ema100 = ta.ema(close, 100)
+ema200 = ta.ema(close, 200)
+
+emaHigh = math.max(ema50, math.max(ema100, ema200))
+emaLow  = math.min(ema50, math.min(ema100, ema200))
+emaSpread = emaHigh - emaLow
+spreadPct = ema200 != 0 ? emaSpread / ema200 : na
+spreadDelta = spreadPct - spreadPct[5]
+
+// ─────────────── BB WIDTH PERCENTILE (Sec 2.2, needed for signal 4 + range/age) ───────────────
+bbBasis = ta.sma(close, 20)
+bbStd = ta.stdev(close, 20)
+bbUpper = bbBasis + 2.0 * bbStd
+bbLower = bbBasis - 2.0 * bbStd
+bbWidth = bbUpper - bbLower
+bbWidthPct = ta.percentrank(bbWidth, 252)
+
+kcAtr = ta.sma(ta.tr, 20)
+kcBasis = ta.sma(close, 20)
+kcUpper = kcBasis + 1.5 * kcAtr
+kcLower = kcBasis - 1.5 * kcAtr
+squeezeOn = bbUpper < kcUpper and bbLower > kcLower
+
+atr50 = ta.sma(ta.tr, 50)
+spreadAtrRatio = atr50 != 0 ? emaSpread / atr50 : na
+EMA_ATR_GATE = 1.5
+EMA_PCT_GATE = 0.03
+emaGateOk = spreadAtrRatio < EMA_ATR_GATE and spreadPct < EMA_PCT_GATE
+
+var int squeezeBars = 0
+squeezeBars := squeezeOn ? squeezeBars + 1 : 0
+SQUEEZE_MIN_BARS = 5
+BB_WIDTH_PCT_MAX = 20.0
+squeezeGateOk = squeezeBars >= SQUEEZE_MIN_BARS and bbWidthPct <= BB_WIDTH_PCT_MAX
+
+// ponytail: ageBars fix — use sqOkRaw (raw squeeze condition without min-streak requirement)
+// to match Python consolidation_age() definition in tiers.py, not the gated squeezeGateOk
+sqOkRaw = squeezeOn and bbWidthPct <= BB_WIDTH_PCT_MAX
+
+var int ageBars = 0
+ageBars := (emaGateOk and sqOkRaw) ? ageBars + 1 : 0
+
+// ─────────────── QUIET ACCUMULATION (Sec 2.3, volume-only -- signal 3) ───────────────
+quietAccumBar = volume >= 1.5 * ta.sma(volume, 10) and math.abs(close / close[1] - 1) < 0.01
+
+// ─────────────── RS CHARACTER (Sec 2.4, DAILY-NATIVE -- signal 1) ───────────────
+benchClose = request.security(benchSymbol, timeframe.period, close, lookahead = barmerge.lookahead_off)
+rs = close / benchClose
+priceFlat = math.abs(close / close[20] - 1) < 0.05
+rs252High = ta.highest(rs, 252)
+rs52wkHigh = rs >= rs252High * 0.999
+price20dHigh = close >= ta.highest(close, 20) * 0.999
+
+// ─────────────── SIGNAL ①-⑥ ───────────────
+sig1_rsNewHigh = rs52wkHigh and not price20dHigh
+
+sig2_spreadDeltaCross = spreadDelta > 0 and spreadDelta[1] <= 0
+
+sig3_quietAccumVolOnly = quietAccumBar
+
+sig4_bbWidthBreathing = bbWidthPct[2] < 15 and bbWidthPct[1] > bbWidthPct[2] and bbWidthPct > bbWidthPct[1]
+
+sig5_higherLow = low > ta.lowest(low[1], 5)
+
+rangeHi = ta.highest(high, math.max(ageBars, 10))
+prevBodyTop = math.max(open[1], close[1])
+prevRange = high[1] - low[1]
+prevWick = high[1] - prevBodyTop
+nearTop = high[1] >= rangeHi * 0.98
+longWick = prevRange > 0 and prevWick > prevRange * 0.3
+absorbed = close >= prevBodyTop
+sig6_wickRejectionAbsorbed = nearTop and longWick and absorbed
+
+// ─────────────── VISUAL MARKERS (small, for the human — alerts are the real output) ───────────────
+plotshape(sig1_rsNewHigh, title="① RS New High", location=location.belowbar, style=shape.triangleup, color=color.blue, size=size.tiny)
+plotshape(sig2_spreadDeltaCross, title="② Spread Delta Cross", location=location.belowbar, style=shape.triangleup, color=color.purple, size=size.tiny)
+plotshape(sig3_quietAccumVolOnly, title="③ Quiet Accum (vol-only)", location=location.belowbar, style=shape.triangleup, color=color.gray, size=size.tiny)
+plotshape(sig4_bbWidthBreathing, title="④ BB Breathing", location=location.belowbar, style=shape.triangleup, color=color.orange, size=size.tiny)
+plotshape(sig5_higherLow, title="⑤ Higher Low", location=location.belowbar, style=shape.triangleup, color=color.green, size=size.tiny)
+plotshape(sig6_wickRejectionAbsorbed, title="⑥ Wick Rejection Absorbed", location=location.belowbar, style=shape.triangleup, color=color.red, size=size.tiny)
+
+// ─────────────── ALERTS ───────────────
+alertcondition(sig1_rsNewHigh, "① RS New High", "CONSOL_PREBREAK|{{ticker}}|rs_new_high|TF:{{interval}}")
+alertcondition(sig2_spreadDeltaCross, "② EMA Spread Delta Crossover", "CONSOL_PREBREAK|{{ticker}}|spread_delta_cross|TF:{{interval}}")
+alertcondition(sig3_quietAccumVolOnly, "③ Quiet Accumulation (volume-only)", "CONSOL_PREBREAK|{{ticker}}|quiet_accum_vol_only|TF:{{interval}}")
+alertcondition(sig4_bbWidthBreathing, "④ BB Width Breathing", "CONSOL_PREBREAK|{{ticker}}|bb_width_breathing|TF:{{interval}}")
+alertcondition(sig5_higherLow, "⑤ Higher Low In Range", "CONSOL_PREBREAK|{{ticker}}|higher_low|TF:{{interval}}")
+alertcondition(sig6_wickRejectionAbsorbed, "⑥ Wick Rejection Absorbed", "CONSOL_PREBREAK|{{ticker}}|wick_rejection_absorbed|TF:{{interval}}")
