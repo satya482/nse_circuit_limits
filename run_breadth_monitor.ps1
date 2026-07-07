@@ -8,6 +8,10 @@ $date    = Get-Date -Format "yyyy-MM-dd"
 $logFile = "$logDir\breadth_monitor_$date.log"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 
+if (-not $env:DISCORD_WEBHOOK_URL) {
+    $env:DISCORD_WEBHOOK_URL = [System.Environment]::GetEnvironmentVariable("DISCORD_WEBHOOK_URL", "User")
+}
+
 function Log($msg) {
     $line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $msg"
     $line | Tee-Object -FilePath $logFile -Append
@@ -44,6 +48,11 @@ if ($LASTEXITCODE -ne 0) {
     exit 1
 }
 Log "--- Breadth monitor complete ---"
+
+if (Test-Path "$ROOT\dashboard\breadth.html") {
+    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Breadth Monitor" "breadth.html generated successfully — $date" 2>&1 |
+        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+}
 
 # ── Step 4: Git commit + push ─────────────────────────────────────────────────
 Log "--- Git commit+push ---"

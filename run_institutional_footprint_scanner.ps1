@@ -3,10 +3,15 @@
 # delivery% is in SQLite. Also runnable standalone for manual/backfilled re-runs.
 # Logs: logs/institutional_footprint_scanner_YYYY-MM-DD.log
 
-$logDir  = "C:\Users\satya\nse_circuit_limits\logs"
+$ROOT    = "C:\Users\satya\nse_circuit_limits"
+$logDir  = "$ROOT\logs"
 $date    = Get-Date -Format "yyyy-MM-dd"
 $logFile = "$logDir\institutional_footprint_scanner_$date.log"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
+
+if (-not $env:DISCORD_WEBHOOK_URL) {
+    $env:DISCORD_WEBHOOK_URL = [System.Environment]::GetEnvironmentVariable("DISCORD_WEBHOOK_URL", "User")
+}
 
 function Log($msg) {
     $line = "[$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')] $msg"
@@ -22,6 +27,11 @@ try {
 } catch {
     Log "=== ERROR: $_ ==="
     exit 1
+}
+
+if (Test-Path "$ROOT\dashboard\footprint.html") {
+    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Institutional Footprint Scanner" "footprint.html dashboard generated successfully — $date" 2>&1 |
+        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 }
 
 Log "--- Git commit+push ---"
