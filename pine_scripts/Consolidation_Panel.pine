@@ -20,6 +20,8 @@ indicator("Consolidation Panel", shorttitle="ConsolPanel", overlay=false)
 // Companion: Consolidation_PreBreak_Alerts.pine (6 pre-break alertconditions)
 // Python counterpart: consolidation/quality.py, consolidation/imminence.py --
 // mirror any threshold change both places (pine-script-conventions.md)
+// Alert message format: N/A -- this is a visual panel, no alertcondition() calls
+// (alerts live in the companion Consolidation_PreBreak_Alerts.pine)
 
 benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark (verify resolves at paste-time)", group="RS")
 
@@ -99,3 +101,59 @@ rsPts = rsChar == "CHAR_4_RISING" or rsChar == "CHAR_5_RS_BREAKOUT" ? 20.0 : rsC
 cmfPts = cmf > 0.10 ? 15.0 : cmf > 0.05 ? 10.0 : cmf > 0 ? 6.0 : 0.0
 // deliv_pts fixed at 0 -- no TradingView delivery-% feed (see header deviations)
 qualityScore = bbPts + stagePts + volPts + rsPts + cmfPts
+
+// ─────────────── PRE-BREAK SIGNALS (Sec 4, mirrors Consolidation_PreBreak_Alerts.pine) ───────────────
+sig1_rsNewHigh = rs52wkHigh and not price20dHigh
+sig2_spreadDeltaCross = spreadDelta > 0 and spreadDelta[1] <= 0
+
+// signal3: no delivery feed in Pine -> capped at 0.5 weight instead of Python's 1.0
+sig3_wt = quietAccumBar ? 0.5 : 0.0
+
+sig4_bbWidthBreathing = bbWidthPct[2] < 15 and bbWidthPct[1] > bbWidthPct[2] and bbWidthPct > bbWidthPct[1]
+sig5_higherLow = low > ta.lowest(low[1], 5)
+
+rangeHi = ta.highest(high, math.max(ageBars, 10))
+rangeLo = ta.lowest(low, math.max(ageBars, 10))
+prevBodyTop = math.max(open[1], close[1])
+prevRange = high[1] - low[1]
+prevWick = high[1] - prevBodyTop
+nearTop = high[1] >= rangeHi * 0.98
+longWick = prevRange > 0 and prevWick > prevRange * 0.3
+absorbed = close >= prevBodyTop
+sig6_wickRejectionAbsorbed = nearTop and longWick and absorbed
+
+// ─────────────── STAGE 3 FLAG (fresh fanout after >=10 bars held negative) ───────────────
+var int negStreak = 0
+negStreak := spreadDelta <= 0 ? negStreak + 1 : 0
+stage3Flag = sig2_spreadDeltaCross and negStreak[1] >= 10
+
+// ─────────────── BB BREATHING FLAG (same formula as sig4, separate 15pt component per spec table) ───────────────
+bbBreathingFlag = sig4_bbWidthBreathing
+
+// ─────────────── RANGE POSITION ───────────────
+rangePos = rangeHi == rangeLo ? 0.0 : (close - rangeLo) / (rangeHi - rangeLo)
+
+// ─────────────── IMMINENCE SCORE (Sec 4) ───────────────
+prebreakCount = (sig1_rsNewHigh ? 1.0 : 0.0) + (sig2_spreadDeltaCross ? 1.0 : 0.0) + sig3_wt + (sig4_bbWidthBreathing ? 1.0 : 0.0) + (sig5_higherLow ? 1.0 : 0.0) + (sig6_wickRejectionAbsorbed ? 1.0 : 0.0)
+prebreakPts = prebreakCount / 6.0 * 30
+stage3Pts = stage3Flag ? 25.0 : 0.0
+rsBreakoutPts = isChar5 ? 20.0 : 0.0
+bbBreathingPts = bbBreathingFlag ? 15.0 : 0.0
+rangePts = rangePos >= 2.0 / 3.0 ? 10.0 : 0.0
+imminenceScore = prebreakPts + stage3Pts + rsBreakoutPts + bbBreathingPts + rangePts
+
+// ─────────────── VISUALS ───────────────
+plot(qualityScore, title="Quality", color=color.aqua, linewidth=2)
+plot(imminenceScore, title="Imminence", color=color.yellow, linewidth=2)
+
+hline(60, title="HOT Threshold (Imminence>=60)", color=color.orange, linestyle=hline.style_dashed)
+hline(80, title="Imminent (Imminence>=80)", color=color.red, linestyle=hline.style_dashed)
+
+bgColor = emaStage == "STAGE_1_CONVERGING" ? color.new(color.blue, 90) : emaStage == "STAGE_2_COMPRESSED" ? color.new(color.green, 90) : color.new(color.orange, 90)
+bgcolor(bgColor, title="EMA Stage")
+
+// CMF histogram, scaled *100 onto the same 0-100 pane (see header deviations) --
+// distinguishable from Quality/Imminence because it's the only series that can go negative
+cmfDisplay = cmf * 100
+plot(cmfDisplay, title="CMF x100", style=plot.style_columns, color=cmf >= 0 ? color.new(color.teal, 40) : color.new(color.maroon, 40))
+hline(0, title="Zero / CMF Baseline", color=color.gray)
