@@ -31,6 +31,7 @@ Updated 2026-07-07 by Claude Code, institutional footprint scanner follow-up (on
 - Closed the three items Codex left pending: `build_html()` → `dashboard/institutional_footprint.html` (dark cards, vanilla-JS filter, SEBI banner/footer); dated CSV snapshot per run as the Phase-5 signal-history store (no DB table yet, per spec); `run_institutional_footprint_scanner.ps1` added (6:20 PM, after delivery fetch), not yet registered as a scheduled task.
 - `CLAUDE.md` updated: run-schedule line, output-files table, architecture section for the scanner.
 - Still pending: schtasks registration, ICS threshold calibration/backtest — spec explicitly says wait for real signal quality first.
+- Wired `run_institutional_footprint_scanner.ps1` as a trailing step of `run_fetch_delivery.ps1` (needs today's delivery% first), test-run confirmed working end to end. Dashboard file renamed `dashboard/institutional_footprint.html` → `dashboard/footprint.html`.
 
 Always rerun `git status --short` before making changes because Claude Code and Codex may be working in parallel.
 

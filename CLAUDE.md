@@ -189,7 +189,7 @@ Full spec: `research/nse_institutional_footprint_plan_spec.md`. All 5 phases bui
    (DISTRIBUTION > BREAKOUT > MARKUP > BUILDING > SEED) + `assign_trade_action()` (regime-gated)
 5. Writes `institutional_footprint_scans/institutional_footprint_latest.md` + dated `.md`/`.csv`
    (CSV is the Phase 5 signal-history store — no DB table until cross-day queries need one) and
-   `dashboard/institutional_footprint.html` (dark-mode cards, vanilla-JS symbol/stage filter)
+   `dashboard/footprint.html` (dark-mode cards, vanilla-JS symbol/stage filter)
 
 ### Daily Gainers Brief (`daily_gainers_brief.py`)
 
@@ -289,7 +289,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 | `institutional_footprint_scans/institutional_footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
-| `dashboard/institutional_footprint.html` | `institutional_footprint_scanner.py` |
+| `dashboard/footprint.html` | `institutional_footprint_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 

@@ -50,7 +50,7 @@ tests/test_institutional_footprint.py
 Optional after MVP:
 
 ```text
-dashboard/institutional_footprint.html
+dashboard/footprint.html
 run_institutional_footprint_scanner.ps1
 ```
 
@@ -304,7 +304,7 @@ HTML is second phase, not MVP.
 If added, use one static file:
 
 ```text
-dashboard/institutional_footprint.html
+dashboard/footprint.html
 ```
 
 Requirements:

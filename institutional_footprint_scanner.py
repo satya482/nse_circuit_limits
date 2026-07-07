@@ -14,7 +14,7 @@ from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER, SEBI_MD_FOOTER, SEBI_
 SPARKLINE_BLOCKS = "▁▂▃▄▅▆▇█"
 BENCH_SYM = "NIFTY MIDSML 400"
 SCANS_DIR = "institutional_footprint_scans"
-DASHBOARD_PATH = os.path.join("dashboard", "institutional_footprint.html")
+DASHBOARD_PATH = os.path.join("dashboard", "footprint.html")
 MIN_BARS = 60
 
 

@@ -25,7 +25,7 @@ try {
 }
 
 Log "--- Git commit+push ---"
-& git -C C:\Users\satya\nse_circuit_limits add institutional_footprint_scans dashboard/institutional_footprint.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits add institutional_footprint_scans dashboard/footprint.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "[scan $date] institutional_footprint: scan run" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "--- Done ---"
