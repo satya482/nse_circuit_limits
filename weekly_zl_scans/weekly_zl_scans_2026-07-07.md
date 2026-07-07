@@ -27,7 +27,7 @@ NSE:POLICYBZR,NSE:SWIGGY,NSE:JUBLFOOD,NSE:AMBER,NSE:GLENMARK,NSE:HAVELLS,NSE:PET
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
 | [POLICYBZR](https://in.tradingview.com/chart/?symbol=NSE:POLICYBZR)<br><sub>↑CMF4d</sub> | Insurance and lending digital marketplace aggregator | 1w | TOUCH | 1w | +1.1% | +1.73% | 1608.00 | — | 20%  |
-| [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER)<br><sub>↓CMF8d</sub> | AC manufacturing and EMS for consumer appliances | 1w | TOUCH | 1w | +1.9% | +0.14% | 7625.00 | — | 20%  |
+| [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER)<br><sub>↓CMF8d · DEL44%</sub> | AC manufacturing and EMS for consumer appliances | 1w | TOUCH | 1w | +1.9% | +0.14% | 7625.00 | — | 20%  |
 | [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK)<br><sub>↓CMF30d</sub> | Pharma generics specialty OTC formulations global markets | 1w | TOUCH | 1w | +2.4% | -0.26% | 2264.90 | 3w | 20%  |
 | [PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET)<br><sub>↓CMF26d</sub> | LNG import regasification terminals serving Indian energy demand | 1w | TOUCH | 1w | +1.3% | +1.49% | 279.60 | — | 20%  |
 | [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA)<br><sub>↑CMF6d</sub> | Private bank retail lending deposit mobilization southern India | 1w | TOUCH | 1w | +4.3% | +0.07% | 304.35 | 2w | 20%  |
@@ -41,7 +41,7 @@ NSE:POLICYBZR,NSE:SWIGGY,NSE:JUBLFOOD,NSE:AMBER,NSE:GLENMARK,NSE:HAVELLS,NSE:PET
 | [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL)<br><sub>↓CMF30d</sub> | Toothpaste, toothbrush, mouthwash manufacturer for mass consumer | 1w | ABOVE | 1w | +1.5% | -0.12% | 2077.20 | — | 20%  |
 | [SUNDARMFIN](https://in.tradingview.com/chart/?symbol=NSE:SUNDARMFIN)<br><sub>↑CMF4d</sub> | Vehicle finance and equipment lending NBFC | 1w | ABOVE | 1w | +4.6% | +3.97% | 4784.00 | — | 20%  |
 | [SWANCORP](https://in.tradingview.com/chart/?symbol=NSE:SWANCORP)<br><sub>↓CMF30d</sub> | Textiles manufacturing, energy operations, real estate development conglomerate | 1w | ABOVE | 1w | +6.2% | -1.00% | 330.25 | 1w | 20%  |
-| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY)<br><sub>↑CMF2d · DEL88%(T-1)</sub> | AI loyalty platform SaaS for retail enterprises | 1w | ABOVE | 1w | +2.3% | +2.50% | 529.80 | 5w | 20%  |
+| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY)<br><sub>↑CMF2d</sub> | AI loyalty platform SaaS for retail enterprises | 1w | ABOVE | 1w | +2.3% | +2.50% | 529.80 | 5w | 20%  |
 | [JKPAPER](https://in.tradingview.com/chart/?symbol=NSE:JKPAPER)<br><sub>↓CMF21d</sub> | Copier paper, coated paper, packaging board manufacturer | 1w | ABOVE | 1w | +3.3% | +2.71% | 360.35 | 15w | 20%  |
 | [BLACKBUCK](https://in.tradingview.com/chart/?symbol=NSE:BLACKBUCK)<br><sub>↑CMF13d</sub> | Logistics Tech: Digital Trucking Platform, Payments, Marketplace | 1w | ABOVE | 1w | +3.9% | +1.62% | 570.30 | 17w | 20%  |
 | [GILLETTE](https://in.tradingview.com/chart/?symbol=NSE:GILLETTE)<br><sub>↓CMF30d</sub> | Razor blades shaving products oral care FMCG grooming personal hygiene | 1w | ABOVE | 1w | +3.3% | +1.13% | 7860.50 | 2w | 20%  |

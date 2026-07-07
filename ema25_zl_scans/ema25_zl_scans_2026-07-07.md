@@ -143,7 +143,7 @@ NSE:ITDC,NSE:LATENTVIEW,NSE:VINCOFE,NSE:NAZARA,NSE:TBZ,NSE:ASKAUTOLTD,NSE:CEIGAL
 | [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN)<br><sub>↓CMF1d</sub> | 6d | +8.4% | Sugar manufacturing distillery power cogeneration agricultural commodities | +0.11% | 571.65 | — | 20%  |
 | [DCXINDIA](https://in.tradingview.com/chart/?symbol=NSE:DCXINDIA)<br><sub>↓CMF23d</sub> | 6d | +4.4% | Defense aerospace cable harnesses electronics system integration manufacturing | -2.59% | 202.79 | — | 20%  |
 | [TVSSCS](https://in.tradingview.com/chart/?symbol=NSE:TVSSCS)<br><sub>↓CMF2d</sub> | 6d | +5.7% | Third-party logistics provider for automotive manufacturers | +0.84% | 139.28 | — | 10% 🟩 |
-| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↓CMF2d · DEL89%(T-1)</sub> | 7d | +9.3% | IT services digital transformation automation consulting | +0.98% | 541.00 | — | 20%  |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↓CMF2d</sub> | 7d | +9.3% | IT services digital transformation automation consulting | +0.98% | 541.00 | — | 20%  |
 | [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU)<br><sub>↓CMF0d</sub> | 7d | +11.9% | Residential real estate development Ahmedabad Gujarat region | +5.10% | 845.20 | — | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↓CMF16d</sub> | 7d | +13.0% | API and formulation manufacturer serving global pharma markets | +1.09% | 863.55 | — | 20%  |
 | [SPARC](https://in.tradingview.com/chart/?symbol=NSE:SPARC)<br><sub>↑CMF1d</sub> | 7d | +18.4% | Clinical-stage biotech developing novel therapeutic drugs globally | +1.77% | 266.34 | — | 10% 🟨 |
@@ -156,7 +156,7 @@ NSE:ITDC,NSE:LATENTVIEW,NSE:VINCOFE,NSE:NAZARA,NSE:TBZ,NSE:ASKAUTOLTD,NSE:CEIGAL
 | [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON)<br><sub>↓CMF22d</sub> | 7d | +7.2% | Hair oils and personal care products for Indian households | +0.09% | 620.25 | — | 20%  |
 | [USHAMART](https://in.tradingview.com/chart/?symbol=NSE:USHAMART)<br><sub>↑CMF1d</sub> | 7d | +7.2% | Wire ropes and steel wires, mining oil offshore elevators | -1.44% | 507.15 | — | 20%  |
 | [SGFIN](https://in.tradingview.com/chart/?symbol=NSE:SGFIN)<br><sub>↓CMF3d</sub> | 7d | +15.0% | Supply chain financing NBFC for logistics and trade | -0.21% | 675.30 | — | 20%  |
-| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY)<br><sub>↑CMF2d · DEL88%(T-1)</sub> | 8d | +6.4% | AI loyalty platform SaaS for retail enterprises | +2.50% | 529.80 | ✓ | 20%  |
+| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY)<br><sub>↑CMF2d</sub> | 8d | +6.4% | AI loyalty platform SaaS for retail enterprises | +2.50% | 529.80 | ✓ | 20%  |
 | [PAYTM](https://in.tradingview.com/chart/?symbol=NSE:PAYTM)<br><sub>↑CMF5d</sub> | 9d | +14.6% | Digital payments, fintech, consumer merchants | +2.28% | 1246.00 | — | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>↑CMF6d</sub> | 9d | +15.2% | Electric scooters, batteries, charging infrastructure, premium segment | +1.35% | 1140.60 | — | 20%  |
 | [NATCOPHARM](https://in.tradingview.com/chart/?symbol=NSE:NATCOPHARM)<br><sub>↑CMF0d</sub> | 9d | +10.1% | Generic oncology drugs, niche therapeutics, global markets | +5.60% | 984.15 | — | 20%  |
@@ -200,11 +200,11 @@ NSE:ITDC,NSE:LATENTVIEW,NSE:VINCOFE,NSE:NAZARA,NSE:TBZ,NSE:ASKAUTOLTD,NSE:CEIGAL
 | [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF11d</sub> | 16d | +15.3% | Sugar substitutes, glucose powders, health FMCG retail | -1.18% | 575.85 | — | 20%  |
 | [EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE)<br><sub>↓CMF21d</sub> | 16d | +8.1% | Oral tablets antibiotics contraceptives European Canadian markets | +0.46% | 1843.50 | — | 20%  |
 | [ESCORTS](https://in.tradingview.com/chart/?symbol=NSE:ESCORTS)<br><sub>↓CMF8d</sub> | 16d | +6.3% | Farm tractors, construction equipment, railway parts manufacturing | -0.12% | 2978.90 | — | 20%  |
-| [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF21d · DEL35%(T-1)</sub> | 16d | +30.5% | Water treatment EPC contractor, municipal and industrial clients | -3.72% | 402.55 | — | 10% 🟨 |
+| [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF21d · DEL39%</sub> | 16d | +30.5% | Water treatment EPC contractor, municipal and industrial clients | -3.72% | 402.55 | — | 10% 🟨 |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↑CMF16d</sub> | 17d | +37.9% | Online test prep and upskilling courses, competitive exams | +7.91% | 146.05 | — | 20%  |
 | [HFCL](https://in.tradingview.com/chart/?symbol=NSE:HFCL)<br><sub>↑CMF3d</sub> | 17d | +31.5% | Optical fiber cables, telecom equipment, defense infrastructure | +0.48% | 226.04 | — | 5% 🟥 |
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY)<br><sub>↑CMF9d</sub> | 17d | +17.6% | Express parcel delivery and freight logistics for e-commerce | -0.34% | 517.90 | — | 20%  |
-| [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP)<br><sub>↑CMF7d</sub> | 17d | +20.8% | Residential commercial real estate developer urban markets | -0.16% | 2043.10 | — | 20%  |
+| [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP)<br><sub>↑CMF7d · DEL61%</sub> | 17d | +20.8% | Residential commercial real estate developer urban markets | -0.16% | 2043.10 | — | 20%  |
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY)<br><sub>↑CMF15d</sub> | 17d | +17.5% | Premium residential office retail hospitality real estate Mumbai | -2.41% | 1906.40 | — | 20%  |
 | [EIEL](https://in.tradingview.com/chart/?symbol=NSE:EIEL)<br><sub>↓CMF2d</sub> | 17d | +24.8% | Water treatment plants design construction municipal sector | -3.74% | 231.49 | — | 20%  |
 | [SUNDARMFIN](https://in.tradingview.com/chart/?symbol=NSE:SUNDARMFIN)<br><sub>↑CMF4d</sub> | 17d | +15.0% | Vehicle finance and equipment lending NBFC | +3.97% | 4784.00 | — | 20%  |
@@ -291,7 +291,7 @@ NSE:ITDC,NSE:LATENTVIEW,NSE:VINCOFE,NSE:NAZARA,NSE:TBZ,NSE:ASKAUTOLTD,NSE:CEIGAL
 | [CGCL](https://in.tradingview.com/chart/?symbol=NSE:CGCL)<br><sub>↑CMF5d</sub> | 33d | +28.1% | NBFC lending MSMEs affordable housing construction finance | -2.03% | 237.47 | — | 20%  |
 | [IDFCFIRSTB](https://in.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB)<br><sub>↓CMF0d</sub> | 34d | +17.9% | Retail banking, consumer loans, deposits, digital services | -0.88% | 80.43 | — | 20%  |
 | [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO)<br><sub>↑CMF30d</sub> | 35d | +63.1% | RF microwave modules defense space telecom systems | -3.66% | 1782.20 | — | 20%  |
-| [JAYBARMARU](https://in.tradingview.com/chart/?symbol=NSE:JAYBARMARU)<br><sub>↑CMF30d · DEL63%(T-1)</sub> | 35d | +118.0% | Auto components supplier for Maruti Suzuki vehicles | +4.15% | 187.60 | — | 5% 🟥 |
+| [JAYBARMARU](https://in.tradingview.com/chart/?symbol=NSE:JAYBARMARU)<br><sub>↑CMF30d</sub> | 35d | +118.0% | Auto components supplier for Maruti Suzuki vehicles | +4.15% | 187.60 | — | 5% 🟥 |
 | [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br><sub>↑CMF18d</sub> | 36d | +101.7% | Bulk liquid terminals, oil gas chemical logistics India | -1.81% | 1383.70 | — | 10% 🟨 |
 | [PAISALO](https://in.tradingview.com/chart/?symbol=NSE:PAISALO)<br><sub>↑CMF22d</sub> | 36d | +49.6% | Microfinance loans to rural unbanked populations India | -3.47% | 69.54 | — | 20%  |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>↑CMF30d</sub> | 42d | +245.9% | Aerospace defense electronic systems manufacturer for global OEMs | +0.37% | 541.35 | — | 20%  |
@@ -310,7 +310,7 @@ NSE:ITDC,NSE:LATENTVIEW,NSE:VINCOFE,NSE:NAZARA,NSE:TBZ,NSE:ASKAUTOLTD,NSE:CEIGAL
 | [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>↓CMF3d</sub> | 3d | +2.1% | CCTV cameras surveillance systems manufacturing India security | -1.63% | 3552.60 | — | 5% 🟥 |
 | [EPACKPEB](https://in.tradingview.com/chart/?symbol=NSE:EPACKPEB)<br><sub>↑CMF17d</sub> | 5d | +3.6% | Steel prefab buildings manufacturing construction services India | -2.25% | 245.94 | — | 20%  |
 | [NIITLTD](https://in.tradingview.com/chart/?symbol=NSE:NIITLTD)<br><sub>↑CMF26d</sub> | 6d | +4.2% | Vocational skills training, IT certification, global workforce development | -6.58% | 100.27 | — | 20%  |
-| [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM)<br><sub>↑CMF30d · DEL31%(T-1)</sub> | 6d | +5.2% | EV charging infrastructure and critical power systems manufacturer | -2.70% | 163.89 | — | 20%  |
+| [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM)<br><sub>↑CMF30d · DEL30%</sub> | 6d | +5.2% | EV charging infrastructure and critical power systems manufacturer | -2.70% | 163.89 | — | 20%  |
 | [DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT)<br><sub>↓CMF1d</sub> | 6d | +2.0% | Fertilizers, crop nutrition, bulk chemicals, mining sector | -1.81% | 1576.20 | — | 20%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>↑CMF8d</sub> | 7d | +5.9% | Precision components aerospace defense nuclear clean energy | -4.25% | 7777.00 | — | 5% 🟥 |
 | [LAURUSLABS](https://in.tradingview.com/chart/?symbol=NSE:LAURUSLABS)<br><sub>↑CMF30d</sub> | 13d | +7.9% | High-potency APIs and generic antiretroviral manufacturing | -3.39% | 1477.40 | — | 20%  |
