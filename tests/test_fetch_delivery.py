@@ -1,7 +1,12 @@
 import sqlite3
 from datetime import date
 
-from fetch_delivery import parse_bhavcopy_csv, upsert_delivery
+from fetch_delivery import (
+    backfill_delivery_range,
+    parse_bhavcopy_csv,
+    progress_stats,
+    upsert_delivery,
+)
 
 
 _SAMPLE_CSV = """SYMBOL ,SERIES ,DATE1 ,PREV_CLOSE ,OPEN_PRICE ,HIGH_PRICE ,LOW_PRICE ,LAST_PRICE ,CLOSE_PRICE ,AVG_PRICE ,TTL_TRD_QNTY ,TURNOVER_LACS ,NO_OF_TRADES ,DELIV_QTY ,DELIV_PER
@@ -93,3 +98,74 @@ TATASTEEL ,EQ ,04-JUL-2026 ,140.00 ,141.00 ,143.00 ,139.00 ,142.00 ,142.00 ,141.
     count = con.execute("SELECT COUNT(*) FROM delivery").fetchone()[0]
     con.close()
     assert count == 2
+
+
+def test_backfill_delivery_range_records_done_and_failed_dates(tmp_path):
+    db_path = tmp_path / "test_market.db"
+
+    def fetcher(d):
+        if d == date(2026, 7, 6):
+            return _SAMPLE_CSV
+        raise RuntimeError("missing file")
+
+    stats = backfill_delivery_range(
+        date(2026, 7, 6),
+        date(2026, 7, 7),
+        db_path=db_path,
+        fetcher=fetcher,
+        emit=lambda _: None,
+    )
+
+    assert stats["total_dates"] == 2
+    assert stats["done_dates"] == 1
+    assert stats["failed_dates"] == 1
+    assert stats["pending_dates"] == 0
+    assert stats["rows_done"] == 2
+
+    con = sqlite3.connect(db_path)
+    rows = con.execute(
+        "SELECT date, status, rows FROM delivery_backfill_progress ORDER BY date"
+    ).fetchall()
+    con.close()
+    assert rows == [("2026-07-06", "done", 2), ("2026-07-07", "failed", 0)]
+
+
+def test_backfill_delivery_range_skips_existing_done_date_on_resume(tmp_path):
+    db_path = tmp_path / "test_market.db"
+    calls = []
+
+    def fetcher(d):
+        calls.append(d)
+        return _SAMPLE_CSV
+
+    backfill_delivery_range(
+        date(2026, 7, 6),
+        date(2026, 7, 6),
+        db_path=db_path,
+        fetcher=fetcher,
+        emit=lambda _: None,
+    )
+    stats = backfill_delivery_range(
+        date(2026, 7, 6),
+        date(2026, 7, 6),
+        db_path=db_path,
+        fetcher=fetcher,
+        emit=lambda _: None,
+    )
+
+    assert calls == [date(2026, 7, 6)]
+    assert stats["skipped_dates"] == 1
+    assert stats["done_dates"] == 1
+    assert stats["pending_dates"] == 0
+
+
+def test_progress_stats_counts_existing_delivery_rows_without_progress_table(tmp_path):
+    db_path = tmp_path / "test_market.db"
+    upsert_delivery(parse_bhavcopy_csv(_SAMPLE_CSV), date(2026, 7, 6), db_path=db_path)
+
+    stats = progress_stats(date(2026, 7, 6), date(2026, 7, 7), db_path=db_path)
+
+    assert stats["total_dates"] == 2
+    assert stats["done_dates"] == 1
+    assert stats["pending_dates"] == 1
+    assert stats["rows_done"] == 2
