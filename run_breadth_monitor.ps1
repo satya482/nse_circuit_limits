@@ -57,7 +57,8 @@ $r5   = [math]::Round([double]$last.ratio_5d, 2)
 
 if (Test-Path "$ROOT\dashboard\breadth.html") {
     & C:\Python313\python.exe "$ROOT\discord_alert.py" "Breadth Monitor" "breadth.html generated successfully — $date" `
-        --field "Up4=$up4" --field "Down4=$dn4" --field "Ratio5D=$r5" 2>&1 |
+        --field "Up4=$up4" --field "Down4=$dn4" --field "Ratio5D=$r5" `
+        --url "https://satya482.github.io/nse_circuit_limits/dashboard/breadth.html" 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 }
 

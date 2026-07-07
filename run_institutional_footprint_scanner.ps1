@@ -38,7 +38,8 @@ if ((Test-Path "$ROOT\dashboard\footprint.html") -and (Test-Path $csvPath)) {
     $build   = ($rows | Where-Object { $_.rating -eq "BUILDING" }).Count
 
     & C:\Python313\python.exe "$ROOT\discord_alert.py" "Institutional Footprint Scanner" "footprint.html dashboard generated successfully — $date" `
-        --field "Scanned=$total" --field "Elite=$elite" --field "Strong=$strong" --field "Building=$build" 2>&1 |
+        --field "Scanned=$total" --field "Elite=$elite" --field "Strong=$strong" --field "Building=$build" `
+        --url "https://satya482.github.io/nse_circuit_limits/dashboard/footprint.html" 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 }
 

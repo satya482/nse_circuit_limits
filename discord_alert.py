@@ -17,6 +17,7 @@ def send_discord_alert(
     message: str,
     color: int = 0x2EA44F,
     fields: Sequence[tuple[str, str]] | None = None,
+    url: str | None = None,
 ) -> bool:
     webhook_url = os.environ.get("DISCORD_WEBHOOK_URL", "")
     if not webhook_url:
@@ -28,6 +29,8 @@ def send_discord_alert(
         "color": color,
         "timestamp": datetime.now(timezone.utc).isoformat(),
     }
+    if url:
+        embed["url"] = url
     if fields:
         embed["fields"] = [{"name": k, "value": v, "inline": True} for k, v in fields]
 
@@ -44,11 +47,12 @@ if __name__ == "__main__":
         "--field", action="append", default=[], metavar="NAME=VALUE",
         help="Embed field, repeatable",
     )
+    parser.add_argument("--url", help="Makes the embed title a clickable link")
     args = parser.parse_args()
 
     fields = [tuple(f.split("=", 1)) for f in args.field]
     color = int(args.color, 16) if args.color else 0x2EA44F
-    if send_discord_alert(args.title, args.message, color, fields):
+    if send_discord_alert(args.title, args.message, color, fields, args.url):
         print("Discord alert sent.")
     else:
         print("Discord skipped — set DISCORD_WEBHOOK_URL to enable.")

@@ -46,3 +46,21 @@ def test_send_discord_alert_includes_fields_when_given(monkeypatch):
         {"name": "Up4", "value": "45", "inline": True},
         {"name": "Down4", "value": "84", "inline": True},
     ]
+
+
+def test_send_discord_alert_includes_url_when_given(monkeypatch):
+    monkeypatch.setenv("DISCORD_WEBHOOK_URL", "https://discord.example/webhook")
+    captured = {}
+
+    class FakeResponse:
+        status_code = 204
+
+    def fake_post(url, json, timeout):
+        captured["json"] = json
+        return FakeResponse()
+
+    monkeypatch.setattr("discord_alert.requests.post", fake_post)
+
+    send_discord_alert("Breadth Monitor", "ok", url="https://satya482.github.io/nse_circuit_limits/dashboard/breadth.html")
+
+    assert captured["json"]["embeds"][0]["url"] == "https://satya482.github.io/nse_circuit_limits/dashboard/breadth.html"
