@@ -32,6 +32,7 @@ Updated 2026-07-07 by Claude Code, institutional footprint scanner follow-up (on
 - `CLAUDE.md` updated: run-schedule line, output-files table, architecture section for the scanner.
 - Still pending: schtasks registration, ICS threshold calibration/backtest — spec explicitly says wait for real signal quality first.
 - Wired `run_institutional_footprint_scanner.ps1` as a trailing step of `run_fetch_delivery.ps1` (needs today's delivery% first), test-run confirmed working end to end. Dashboard file renamed `dashboard/institutional_footprint.html` → `dashboard/footprint.html`.
+- Output folder renamed `institutional_footprint_scans/` → `footprint_scans/`, files renamed `institutional_footprint_latest.md`/`institutional_footprint_YYYY-MM-DD.md`/`.csv` → `footprint_latest.md`/`footprint_YYYY-MM-DD.md`/`.csv`. `institutional_footprint_scanner.py` (script name) unchanged.
 
 Always rerun `git status --short` before making changes because Claude Code and Codex may be working in parallel.
 

@@ -187,7 +187,7 @@ Full spec: `research/nse_institutional_footprint_plan_spec.md`. All 5 phases bui
 3. `calculate_ics()` → 0-100 Institutional Campaign Score across delivery/volume/price/money-flow/RS
 4. `assign_rating()` (ELITE/STRONG/BUILDING/WATCH/IGNORE) + `assign_lifecycle()`
    (DISTRIBUTION > BREAKOUT > MARKUP > BUILDING > SEED) + `assign_trade_action()` (regime-gated)
-5. Writes `institutional_footprint_scans/institutional_footprint_latest.md` + dated `.md`/`.csv`
+5. Writes `footprint_scans/footprint_latest.md` + dated `.md`/`.csv`
    (CSV is the Phase 5 signal-history store — no DB table until cross-day queries need one) and
    `dashboard/footprint.html` (dark-mode cards, vanilla-JS symbol/stage filter)
 
@@ -288,7 +288,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
-| `institutional_footprint_scans/institutional_footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
+| `footprint_scans/footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
 | `dashboard/footprint.html` | `institutional_footprint_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)

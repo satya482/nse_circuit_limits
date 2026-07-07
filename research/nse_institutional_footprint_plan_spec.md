@@ -42,8 +42,8 @@ Create:
 
 ```text
 institutional_footprint_scanner.py
-institutional_footprint_scans/institutional_footprint_latest.md
-institutional_footprint_scans/institutional_footprint_YYYY-MM-DD.md
+footprint_scans/footprint_latest.md
+footprint_scans/footprint_YYYY-MM-DD.md
 tests/test_institutional_footprint.py
 ```
 
@@ -259,8 +259,8 @@ DISTRIBUTION > BREAKOUT > MARKUP > BUILDING > SEED
 One Markdown report is enough for MVP.
 
 ```text
-institutional_footprint_scans/institutional_footprint_latest.md
-institutional_footprint_scans/institutional_footprint_YYYY-MM-DD.md
+footprint_scans/footprint_latest.md
+footprint_scans/footprint_YYYY-MM-DD.md
 ```
 
 Sections:

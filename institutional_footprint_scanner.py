@@ -13,7 +13,7 @@ from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER, SEBI_MD_FOOTER, SEBI_
 
 SPARKLINE_BLOCKS = "▁▂▃▄▅▆▇█"
 BENCH_SYM = "NIFTY MIDSML 400"
-SCANS_DIR = "institutional_footprint_scans"
+SCANS_DIR = "footprint_scans"
 DASHBOARD_PATH = os.path.join("dashboard", "footprint.html")
 MIN_BARS = 60
 
@@ -468,8 +468,8 @@ def main() -> None:
     rows = run(pd.DataFrame({"symbol": get_universe()}), as_of)
 
     md = build_markdown(rows, as_of)
-    latest = os.path.join(SCANS_DIR, "institutional_footprint_latest.md")
-    dated = os.path.join(SCANS_DIR, f"institutional_footprint_{as_of}.md")
+    latest = os.path.join(SCANS_DIR, "footprint_latest.md")
+    dated = os.path.join(SCANS_DIR, f"footprint_{as_of}.md")
     with open(latest, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated, "w", encoding="utf-8") as fh:
@@ -481,7 +481,7 @@ def main() -> None:
     # ponytail: CSV snapshot is the signal-history store (spec Phase 5) — a real
     # DB table only if repeated cross-day queries over this history get painful.
     if not rows.empty:
-        rows.to_csv(os.path.join(SCANS_DIR, f"institutional_footprint_{as_of}.csv"), index=False)
+        rows.to_csv(os.path.join(SCANS_DIR, f"footprint_{as_of}.csv"), index=False)
 
 
 def _num(row: Mapping[str, object], key: str) -> float:
