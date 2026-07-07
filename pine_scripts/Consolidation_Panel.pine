@@ -1,0 +1,101 @@
+//@version=6
+indicator("Consolidation Panel", shorttitle="ConsolPanel", overlay=false)
+// Consolidation Tracker Phase 6 companion (spec Sec 12, Indicator 1) -- visual
+// quality/imminence oscillator + CMF sub-plot + EMA-stage background. Meant to
+// run on Tier 1/2 stocks from the Python scanner's daily output (spec Sec 10.5).
+// This repo has no shared Pine library -- every .pine file is self-contained
+// (see pine_scripts/CMF_ZeroCross.pine, Consolidation_PreBreak_Alerts.pine).
+//
+// DELIBERATE DEVIATIONS from consolidation/quality.py + imminence.py:
+//   - RS character computed DAILY-NATIVE, not weekly-resampled (matches the
+//     same deviation already declared in Consolidation_PreBreak_Alerts.pine).
+//   - Delivery-% has no TradingView feed -- deliv_trend contributes 0 points
+//     to Quality (Python: up to 10 pts) and signal3 (quiet accumulation) is
+//     capped at weight 0.5 instead of the delivery-confirmed 1.0 (spec Sec 12
+//     explicitly accepts this: "no delivery % in TV").
+//   - CMF is plotted as cmf*100 on the same 0-100 scaled pane as Quality/
+//     Imminence (TradingView's indicator() has one pane/one scale; this keeps
+//     everything in one panel per spec's "CMF histogram sub-plot" intent).
+//
+// Companion: Consolidation_PreBreak_Alerts.pine (6 pre-break alertconditions)
+// Python counterpart: consolidation/quality.py, consolidation/imminence.py --
+// mirror any threshold change both places (pine-script-conventions.md)
+
+benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark (verify resolves at paste-time)", group="RS")
+
+// ─────────────── EMA COMPRESSION (Sec 2.1) ───────────────
+ema50  = ta.ema(close, 50)
+ema100 = ta.ema(close, 100)
+ema200 = ta.ema(close, 200)
+
+emaHigh = math.max(ema50, math.max(ema100, ema200))
+emaLow  = math.min(ema50, math.min(ema100, ema200))
+emaSpread = emaHigh - emaLow
+spreadPct = ema200 != 0 ? emaSpread / ema200 : na
+spreadDelta = spreadPct - spreadPct[5]
+
+emaStage = spreadDelta < -0.001 ? "STAGE_1_CONVERGING" : spreadDelta > 0.001 ? "STAGE_3_DIVERGING" : "STAGE_2_COMPRESSED"
+
+// ─────────────── BB / KC SQUEEZE (Sec 2.2) ───────────────
+bbBasis = ta.sma(close, 20)
+bbStd = ta.stdev(close, 20)
+bbUpper = bbBasis + 2.0 * bbStd
+bbLower = bbBasis - 2.0 * bbStd
+bbWidth = bbUpper - bbLower
+bbWidthPct = ta.percentrank(bbWidth, 252)
+
+kcAtr = ta.sma(ta.tr, 20)
+kcBasis = ta.sma(close, 20)
+kcUpper = kcBasis + 1.5 * kcAtr
+kcLower = kcBasis - 1.5 * kcAtr
+squeezeOn = bbUpper < kcUpper and bbLower > kcLower
+
+atr50 = ta.sma(ta.tr, 50)
+spreadAtrRatio = atr50 != 0 ? emaSpread / atr50 : na
+EMA_ATR_GATE = 1.5
+EMA_PCT_GATE = 0.03
+emaGateOk = spreadAtrRatio < EMA_ATR_GATE and spreadPct < EMA_PCT_GATE
+
+BB_WIDTH_PCT_MAX = 20.0
+sqOkRaw = squeezeOn and bbWidthPct <= BB_WIDTH_PCT_MAX
+
+var int ageBars = 0
+ageBars := (emaGateOk and sqOkRaw) ? ageBars + 1 : 0
+
+// ─────────────── VOLUME EXHAUSTION (Sec 2.3) ───────────────
+volMa5 = ta.sma(volume, 5)
+volPercentile = ta.percentrank(volMa5, 252)
+quietAccumBar = volume >= 1.5 * ta.sma(volume, 10) and math.abs(close / close[1] - 1) < 0.01
+
+// ─────────────── RS CHARACTER (Sec 2.4, DAILY-NATIVE) ───────────────
+benchClose = request.security(benchSymbol, timeframe.period, close, lookahead = barmerge.lookahead_off)
+rs = close / benchClose
+rsEma9 = ta.ema(rs, 9)
+rsSlope = rs[20] != 0 ? rs / rs[20] - 1 : na
+aboveEma = rs > rsEma9
+priceFlat = math.abs(close / close[20] - 1) < 0.05
+rs252High = ta.highest(rs, 252)
+rs52wkHigh = rs >= rs252High * 0.999
+price20dHigh = close >= ta.highest(close, 20) * 0.999
+RS_FLAT_THRESHOLD = 0.01
+
+isChar5 = rs52wkHigh and priceFlat and not price20dHigh
+isChar4 = rsSlope > RS_FLAT_THRESHOLD and priceFlat
+isChar3 = aboveEma and math.abs(rsSlope) <= RS_FLAT_THRESHOLD
+isChar1 = not aboveEma and rsSlope < -RS_FLAT_THRESHOLD
+
+rsChar = isChar5 ? "CHAR_5_RS_BREAKOUT" : isChar4 ? "CHAR_4_RISING" : isChar3 ? "CHAR_3_HOLDING" : isChar1 ? "CHAR_1_DECLINING" : "CHAR_2_FLAT"
+
+// ─────────────── CMF (Sec 2.5) ───────────────
+mfm = (high - low) != 0 ? ((close - low) - (high - close)) / (high - low) : 0.0
+mfv = mfm * volume
+cmf = ta.sma(volume, 20) != 0 ? math.sum(mfv, 20) / math.sum(volume, 20) : na
+
+// ─────────────── QUALITY SCORE (Sec 3) ───────────────
+bbPts = math.max(0.0, (20 - bbWidthPct) * 1.0)
+stagePts = emaStage == "STAGE_2_COMPRESSED" ? 20.0 : emaStage == "STAGE_1_CONVERGING" ? 8.0 : 0.0
+volPts = math.max(0.0, (20 - volPercentile) * 0.75)
+rsPts = rsChar == "CHAR_4_RISING" or rsChar == "CHAR_5_RS_BREAKOUT" ? 20.0 : rsChar == "CHAR_3_HOLDING" ? 12.0 : rsChar == "CHAR_2_FLAT" ? 5.0 : 0.0
+cmfPts = cmf > 0.10 ? 15.0 : cmf > 0.05 ? 10.0 : cmf > 0 ? 6.0 : 0.0
+// deliv_pts fixed at 0 -- no TradingView delivery-% feed (see header deviations)
+qualityScore = bbPts + stagePts + volPts + rsPts + cmfPts
