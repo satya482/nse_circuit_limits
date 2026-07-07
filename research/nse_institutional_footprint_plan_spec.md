@@ -277,18 +277,17 @@ Watchlist, if a watchlist file already exists later
 Each row should show:
 
 ```text
-Symbol
-Name / liquidity tag if available
+Symbol (as TradingView link)
+Reason / Delivery tag (merged, right after Symbol)
 ICS
 Rating
 Stage
-Delivery tag
+Regime
+Action rank / Action
 RS percentile / trend
 CMF20
 Volume ratio
 Turnover
-Reason
-TradingView link
 ```
 
 Reason should be generated from the top 2-4 facts, for example:

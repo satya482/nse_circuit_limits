@@ -169,6 +169,31 @@ def test_build_markdown_sorts_by_action_rank_before_ics():
     assert md.index("AAA") < md.index("BBB")
 
 
+def test_build_markdown_merges_reason_and_delivery_after_symbol():
+    rows = [
+        {"symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": "DEL60% P100", "rs_percentile": 100, "rs_trend": "UP", "cmf20": 0.1, "volume_ratio": 2.0, "turnover_cr": 12.3, "regime": "GREEN", "action_rank": "A", "action": "WATCH_FOR_ENTRY", "reason": "Delivery P100"},
+    ]
+
+    md = build_markdown(rows, "2026-07-07")
+
+    header = next(line for line in md.splitlines() if line.startswith("| Symbol"))
+    assert header.split("|")[1:3] == [" Symbol ", " Reason / Delivery "]
+    assert "Delivery P100 · DEL60% P100" in md
+
+
+def test_build_markdown_handles_nan_delivery_tag_from_csv_reload():
+    rows = pd.DataFrame(
+        [
+            {"symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": float("nan"), "rs_percentile": 100, "rs_trend": "UP", "cmf20": 0.1, "volume_ratio": 2.0, "turnover_cr": 12.3, "regime": "GREEN", "action_rank": "A", "action": "WATCH_FOR_ENTRY", "reason": "RS leader"},
+        ]
+    )
+
+    md = build_markdown(rows, "2026-07-07")
+
+    assert "RS leader |" in md
+    assert "nan" not in md
+
+
 def test_build_markdown_omits_ignore_rows_by_default():
     rows = [
         {"symbol": "AAA", "ics": 56, "rating": "WATCH", "stage": "NONE", "delivery_tag": "", "rs_percentile": 50, "rs_trend": "UP", "cmf20": 0.1, "volume_ratio": 1.2, "turnover_cr": 10, "regime": "GREEN", "action_rank": "C", "action": "WATCHLIST", "reason": "CMF positive"},

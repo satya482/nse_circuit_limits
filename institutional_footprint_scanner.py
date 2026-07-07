@@ -340,18 +340,17 @@ def build_markdown(rows, as_of: str) -> str:
     else:
         cols = [
             "Symbol",
+            "Reason / Delivery",
             "ICS",
             "Rating",
             "Stage",
             "Regime",
             "Rank",
             "Action",
-            "Delivery",
             "RS",
             "CMF20",
             "Vol",
             "Turnover",
-            "Reason",
         ]
         lines.append("| " + " | ".join(cols) + " |")
         lines.append("|" + "---|" * len(cols))
@@ -364,18 +363,17 @@ def build_markdown(rows, as_of: str) -> str:
                 + " | ".join(
                     [
                         symbol,
+                        _reason_delivery(row),
                         f"{_num(row, 'ics'):.0f}",
                         str(row.get("rating", "")),
                         str(row.get("stage", "")),
                         str(row.get("regime", "")),
                         str(row.get("action_rank", "")),
                         str(row.get("action", "")),
-                        str(row.get("delivery_tag", "")),
                         rs,
                         f"{_num(row, 'cmf20'):.2f}",
                         f"{_num(row, 'volume_ratio'):.1f}x",
                         f"{_num(row, 'turnover_cr'):.1f}Cr",
-                        str(row.get("reason", "")),
                     ]
                 )
                 + " |"
@@ -515,6 +513,13 @@ def _reason(row: Mapping[str, object]) -> str:
     if _num(row, "rs_percentile") >= 90:
         reasons.append("RS leader")
     return ", ".join(reasons[:4]) or "No standout factor"
+
+
+def _reason_delivery(row: Mapping[str, object]) -> str:
+    reason = str(row.get("reason", ""))
+    tag = row.get("delivery_tag")
+    tag = "" if tag is None or pd.isna(tag) else str(tag)
+    return f"{reason} · {tag}" if tag else reason
 
 
 if __name__ == "__main__":
