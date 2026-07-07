@@ -12,10 +12,8 @@ historyMonths    = input.int(36,     "Historical months to keep", minval = 0, ma
 showLines        = input.bool(false,  "Show lines")
 showBoxes        = input.bool(true,  "Show boxes")
 
-currHighColor    = input.color(color.lime, "Current month high color")
-currLowColor     = input.color(color.red,  "Current month low color")
-histHighColor    = input.color(color.new(color.lime, 70), "Historical high color")
-histLowColor     = input.color(color.new(color.red,  70), "Historical low color")
+currCloseColor   = input.color(color.yellow, "Current month close color")
+histCloseColor   = input.color(color.new(color.yellow, 70), "Historical close color")
 lineWidth        = input.int(1, "Line width", minval = 1, maxval = 4)
 
 currentBoxBorder = input.color(color.new(color.aqua, 0),  "Current box border")
@@ -39,6 +37,7 @@ canShow = not timeframe.ismonthly
 //──────────────────── Monthly series from HTF
 mHigh      = request.security(syminfo.tickerid, "M", high,       barmerge.gaps_off, barmerge.lookahead_off)
 mLow       = request.security(syminfo.tickerid, "M", low,        barmerge.gaps_off, barmerge.lookahead_off)
+mClose     = request.security(syminfo.tickerid, "M", close,      barmerge.gaps_off, barmerge.lookahead_off)
 mTime      = request.security(syminfo.tickerid, "M", time,       barmerge.gaps_off, barmerge.lookahead_off)
 mTimeClose = request.security(syminfo.tickerid, "M", time_close, barmerge.gaps_off, barmerge.lookahead_off)
 
@@ -121,10 +120,8 @@ f_deleteBoxArray(array<box> arr) =>
     array.clear(arr)
 
 //──────────────────── Live objects
-var line currHighSeg1 = na
-var line currHighSeg2 = na
-var line currLowSeg1  = na
-var line currLowSeg2  = na
+var line currCloseSeg1 = na
+var line currCloseSeg2 = na
 
 var box  currBox = na
 var box  prevBox = na
@@ -142,12 +139,14 @@ var int   prevMoStart = na
 var int   prevMoEnd   = na
 var float prevMoHigh  = na
 var float prevMoLow   = na
+var float prevMoClose = na
 
 if newMonth
     prevMoStart := mTime[1]
     prevMoEnd   := mTimeClose[1]
     prevMoHigh  := mHigh[1]
     prevMoLow   := mLow[1]
+    prevMoClose := mClose[1]
 
 // New month on chart bars: calendar month/year change. Works whether chart bars are
 // daily or weekly — first bar whose date falls in a new month flips this.
@@ -163,15 +162,11 @@ else
 //──────────────────── Current + previous live drawing
 if canShow and showCurrent
     if showLines
-        currHighSeg1 := f_setOrCreateLine(currHighSeg1, mTime,          mHigh, mTimeClose,      mHigh, currHighColor)
-        currHighSeg2 := f_setOrCreateLine(currHighSeg2, nextMonthStart, mHigh, nextMonthEnd, mHigh, currHighColor)
-        currLowSeg1  := f_setOrCreateLine(currLowSeg1,  mTime,          mLow,  mTimeClose,      mLow,  currLowColor)
-        currLowSeg2  := f_setOrCreateLine(currLowSeg2,  nextMonthStart, mLow,  nextMonthEnd, mLow,  currLowColor)
+        currCloseSeg1 := f_setOrCreateLine(currCloseSeg1, mTime,          mClose, mTimeClose,   mClose, currCloseColor)
+        currCloseSeg2 := f_setOrCreateLine(currCloseSeg2, nextMonthStart, mClose, nextMonthEnd, mClose, currCloseColor)
     else
-        f_deleteLine(currHighSeg1), currHighSeg1 := na
-        f_deleteLine(currHighSeg2), currHighSeg2 := na
-        f_deleteLine(currLowSeg1),  currLowSeg1  := na
-        f_deleteLine(currLowSeg2),  currLowSeg2  := na
+        f_deleteLine(currCloseSeg1), currCloseSeg1 := na
+        f_deleteLine(currCloseSeg2), currCloseSeg2 := na
 
     if showBoxes
         if not na(prevMoStart) and not na(prevMoEnd) and not na(prevMoHigh) and not na(prevMoLow)
@@ -187,10 +182,8 @@ if canShow and showCurrent
         f_deleteBox(currBox), currBox := na
         f_deleteBox(moBox),   moBox   := na
 else
-    f_deleteLine(currHighSeg1), currHighSeg1 := na
-    f_deleteLine(currHighSeg2), currHighSeg2 := na
-    f_deleteLine(currLowSeg1),  currLowSeg1  := na
-    f_deleteLine(currLowSeg2),  currLowSeg2  := na
+    f_deleteLine(currCloseSeg1), currCloseSeg1 := na
+    f_deleteLine(currCloseSeg2), currCloseSeg2 := na
     f_deleteBox(prevBox), prevBox := na
     f_deleteBox(currBox), currBox := na
     f_deleteBox(moBox),   moBox   := na
@@ -200,18 +193,21 @@ var array<int>   monthStarts = array.new_int()
 var array<int>   monthEnds   = array.new_int()
 var array<float> monthHighs  = array.new_float()
 var array<float> monthLows   = array.new_float()
+var array<float> monthCloses = array.new_float()
 
 if newMonth
     completedStart = mTime[1]
     completedEnd   = mTimeClose[1]
     completedHigh  = mHigh[1]
     completedLow   = mLow[1]
+    completedClose = mClose[1]
 
     if not na(completedStart) and not na(completedEnd) and not na(completedHigh) and not na(completedLow)
         array.push(monthStarts, completedStart)
         array.push(monthEnds,   completedEnd)
         array.push(monthHighs,  completedHigh)
         array.push(monthLows,   completedLow)
+        array.push(monthCloses, completedClose)
 
         maxKeep = historyMonths + 2
         while array.size(monthStarts) > maxKeep
@@ -219,6 +215,7 @@ if newMonth
             array.shift(monthEnds)
             array.shift(monthHighs)
             array.shift(monthLows)
+            array.shift(monthCloses)
 
 //──────────────────── Historical objects
 var array<line> histLines = array.new_line()
@@ -243,19 +240,16 @@ if barstate.islast
                     srcEnd   = array.get(monthEnds,   i)
                     srcHigh  = array.get(monthHighs,  i)
                     srcLow   = array.get(monthLows,   i)
+                    srcClose = array.get(monthCloses, i)
                     nxtStart = array.get(monthStarts, i + 1)
                     nxtEnd   = array.get(monthEnds,   i + 1)
 
                     if showLines
-                        h1 = line.new(srcStart, srcHigh, srcEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
-                        h2 = line.new(nxtStart, srcHigh, nxtEnd, srcHigh, xloc = xloc.bar_time, extend = extend.none, color = histHighColor, width = lineWidth)
-                        l1 = line.new(srcStart, srcLow,  srcEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
-                        l2 = line.new(nxtStart, srcLow,  nxtEnd, srcLow,  xloc = xloc.bar_time, extend = extend.none, color = histLowColor,  width = lineWidth)
+                        c1 = line.new(srcStart, srcClose, srcEnd, srcClose, xloc = xloc.bar_time, extend = extend.none, color = histCloseColor, width = lineWidth)
+                        c2 = line.new(nxtStart, srcClose, nxtEnd, srcClose, xloc = xloc.bar_time, extend = extend.none, color = histCloseColor, width = lineWidth)
 
-                        array.push(histLines, h1)
-                        array.push(histLines, h2)
-                        array.push(histLines, l1)
-                        array.push(histLines, l2)
+                        array.push(histLines, c1)
+                        array.push(histLines, c2)
 
                     if showBoxes
                         hb = box.new(left = srcStart, top = srcHigh, right = nxtEnd, bottom = srcLow, xloc = xloc.bar_time, border_color = historyBoxBorder, border_style = f_borderStyle(historyBoxBorderStyleOpt), bgcolor = f_boxBg(historyBoxStyle, historyBoxFill))
