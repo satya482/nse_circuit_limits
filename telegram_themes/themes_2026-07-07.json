@@ -1,0 +1,49 @@
+{
+  "date": "2026-07-07",
+  "generated": "2026-07-07 16:01 IST",
+  "reports": [
+    {
+      "date": "2026-07-07",
+      "source": "20260707_1532.pdf",
+      "themes": [
+        "Aerospace Manufacturing",
+        "India Supply Chain Diversification",
+        "Consumer Electronics Contract Manufacturing",
+        "Geopolitical Shift from China to India",
+        "Production Linked Incentive (PLI) Scheme",
+        "Vertical Integration Advantage"
+      ],
+      "companies": [
+        {
+          "symbol": "AEQUS",
+          "name": "Aequs Limited",
+          "sentiment": "bullish",
+          "nse_code": "AEQUS",
+          "res_conf": 1.0,
+          "res_method": "exact"
+        }
+      ],
+      "key_points": [
+        "Aequs is India's only vertically-integrated aerospace SEZ supplying to Airbus, Boeing, Safran with USD889mn order book at 7.4x revenue coverage",
+        "Aerospace revenue grew 26.9% YoY to INR10.4bn in FY26 with 5,654 SKUs demonstrating deepened customer dependency",
+        "Consumer electronics segment (85% YoY growth) transitions from loss-making to breakeven trajectory with Apple veteran Ravi Kumar Assudani leading engineering",
+        "Management guides 25-30% aerospace EBITDA CAGR and 18-20% steady-state consumer EBITDA margin by FY29",
+        "Chinese aerospace companies demonstrate similar trajectory: Wuxi Hangya 23.2% sales CAGR, AVIC Xi'an scaled from 270 to 1,200 shipsets over 20 years",
+        "Two landmark state MoUs: INR19bn Tamil Nadu for aero-engine ecosystem and INR28.5bn Karnataka for expansion",
+        "30-year DCF valuation model reflects aircraft programme longevity (Boeing 737: 58 years, A320: 38 years) with 16% WACC and 3% terminal growth"
+      ],
+      "catalysts": [
+        "Consumer segment EBITDA breakeven by Q4FY27 at 40-50% utilisation",
+        "PLI income eligibility beginning FY27",
+        "Tamil Nadu integrated aero-engine ecosystem operationalization",
+        "OEM production rate recovery across Airbus and Boeing programmes",
+        "New aerospace part qualifications and SKU additions",
+        "Consumer electronics anchor customer (Apple) volume ramp-up"
+      ],
+      "time_horizon": "2Y+",
+      "conviction": "High",
+      "summary": "Aequs is initiating coverage with a BUY rating and INR444 price target (86% upside), representing India's only vertically-integrated aerospace precision manufacturer with a robust USD889mn order book supporting 42-84% sales/EBITDA CAGR through FY29. The aerospace business benefits from 20+ year aircraft programme life cycles providing exceptional revenue visibility, while the consumer electronics segment transitions from loss-making to profitable with Apple-linked contract manufacturing. Global OEM supply chain diversification away from China creates a structural tailwind for Indian aerospace manufacturers.",
+      "connection_narrative": "India is experiencing a structural supply chain realignment as global aerospace OEMs actively diversify sourcing away from China due to US sanctions on AVIC subsidiaries, creating genuine geopolitical urgency for India-based alternatives. Simultaneously, the Production Linked Incentive scheme beginning FY27 provides fiscal support for electronics manufacturing, while India's aero-engine ecosystem development through state MoUs creates a 10-15 year visibility for integrated component suppliers. Aequs benefits uniquely from this convergence: its vertically-integrated aerospace SEZ eliminates logistics friction compared to Chinese competitors while its NADCAP and DGCA certifications create irreplaceable qualifying barriers that take 18-36 months to surmount. The aerospace moat deepens with each new SKU added—5,654 parts create switching costs that make customer dependency mutual and durable. For consumer electronics, the appointment of Apple's 16-year manufacturing veteran signals genuine anchor customer commitment to the laptop and smartwatch enclosure opportunity, validated by Mattel's long-term toy agreement replacing Hasbro and PLI eligibility providing 8-15% margin uplift. The company's 30-year DCF valuation framework appropriately matches aircraft programme longevity where Boeing 737 and Airbus A320 have sustained 50+ year production runs, creating annuity-like cash flows once qualification hurdles are cleared. The single most critical catalyst is consumer segment achieving Q4FY27 breakeven as this proves utilisation ramp execution and validates management's long-term margin assumptions. The primary risk remains Boeing's production rate uncertainty and raw material supply chain fragility given 52-75 week lead times that could stretch working capital in high inflation scenarios."
+    }
+  ]
+}
