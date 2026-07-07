@@ -3,23 +3,20 @@
 # Repo Handoff
 
 Last reviewed by Codex: 2026-07-07.
+Last reviewed by Claude Code: 2026-07-07 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
 
-Observed on 2026-07-07 before this handoff was added:
+Updated 2026-07-07 by Claude Code, after merging `feat/consolidation-panel-pine` to `main` (pushed to origin, commits `ef160f7`, `4820956`):
 
-- Modified: `pine_scripts/Monthly_HL_projection.pine`
-  - Existing diff changes the script from current/historical monthly high-low projection lines to monthly close projection lines while keeping boxes.
-  - This appears to be in-progress user/Claude work. Do not revert without explicit instruction.
-- Untracked: `docs/superpowers/plans/2026-07-07-consolidation-panel-pine.md`
-  - Plan for `pine_scripts/Consolidation_Panel.pine`, a Pine v6 visual companion for the consolidation tracker.
-- Untracked: `research/consolidation_capital_efficiency_spec.md`
-  - Full consolidation and capital-efficiency system spec. It is referenced by `CLAUDE.md` and implementation plans.
-- New from this handoff: `AGENTS.md` and `HANDOFF.md`.
+- Working tree is clean as of this write — no pending modified/untracked files from this session.
+- `pine_scripts/Consolidation_Panel.pine` — **done**. Sec 12 Indicator 1 (Consolidation Tracker Phase 6, second of two Pine companions). Built via subagent-driven-development from `docs/superpowers/plans/2026-07-07-consolidation-panel-pine.md` (2 tasks, both task-reviewed + final whole-branch reviewed, verdict READY TO MERGE, no fixes needed). Companion to the already-existing `pine_scripts/Consolidation_PreBreak_Alerts.pine` (Indicator 2). Both Pine indicators for Sec 12 are now complete.
+- The previously-untracked `pine_scripts/Monthly_HL_projection.pine` diff (high/low projection lines → close projection lines), `research/consolidation_capital_efficiency_spec.md`, and `research/nse_institutional_footprint_plan_spec.md` are now committed to `main` (commit `4820956`), along with `AGENTS.md`/`HANDOFF.md` themselves.
+- Consolidation spec (`research/consolidation_capital_efficiency_spec.md`) remaining open items: Phase 7 `research/half_life_backtest.py` (not started — no `expected_annualized` ranking metric yet); wiring `capital/time_stops.py`/`capital/slots.py` to live positions (both exist but nothing calls them — needs a `signals.db` position tracker first, doesn't exist by design).
 
-Always rerun `git status --short` before making changes because Claude Code may be working in parallel.
+Always rerun `git status --short` before making changes because Claude Code and Codex may be working in parallel.
 
 ## High-Level Architecture
 
@@ -102,10 +99,10 @@ Typical sequence:
   - `capital/time_stops.py`
   - `capital/slots.py`
   - `capital/catalyst_calendar.py`
-- Phase 6 Pine work is planned but not complete in the observed worktree:
-  - `docs/superpowers/plans/2026-07-07-consolidation-panel-pine.md` defines `pine_scripts/Consolidation_Panel.pine`.
-  - Existing Pine companion alert script may already exist; inspect `pine_scripts/` before adding overlapping files.
-- Full spec is in `research/consolidation_capital_efficiency_spec.md`, currently untracked at the time of this handoff.
+- Phase 6 Pine work (Sec 12) is now **complete**: `pine_scripts/Consolidation_Panel.pine` (Indicator 1, merged 2026-07-07) + `pine_scripts/Consolidation_PreBreak_Alerts.pine` (Indicator 2, pre-existing).
+- Phase 7 (`research/half_life_backtest.py`) not started.
+- `capital/time_stops.py` / `capital/slots.py` exist but are not wired to any live position tracker (no `signals.db` yet, by design — see spec Sec 6/9).
+- Full spec is in `research/consolidation_capital_efficiency_spec.md`, now tracked on `main`.
 
 ## Quick Takeover Checklist
 
