@@ -38,6 +38,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
+.\run_institutional_footprint_scanner.ps1  # 6:20 PM — Institutional Footprint scanner (needs delivery% from above)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
 .\run_consolidation_scanner.ps1  # 4:35 PM — Consolidation Tracker: quality/imminence/tier scan
@@ -176,6 +177,20 @@ not per-symbol.
 
 Out of scope for this phase: PineScript companion (Sec 12), half-life backtest (Sec 10).
 
+### Scanner pipeline — Institutional Footprint (`institutional_footprint_scanner.py`)
+
+Full spec: `research/nse_institutional_footprint_plan_spec.md`. All 5 phases built.
+
+1. Own TradingView universe query (NSE common equity, mcap ₹1,000 Cr–₹5,00,000 Cr, price > ₹50)
+2. Per symbol: `load_ohlc_many()` + `ohlc_db.load_delivery()` → delivery percentile/z-score
+   (vs trailing 252-session window), price/volume/CMF/RS indicators
+3. `calculate_ics()` → 0-100 Institutional Campaign Score across delivery/volume/price/money-flow/RS
+4. `assign_rating()` (ELITE/STRONG/BUILDING/WATCH/IGNORE) + `assign_lifecycle()`
+   (DISTRIBUTION > BREAKOUT > MARKUP > BUILDING > SEED) + `assign_trade_action()` (regime-gated)
+5. Writes `institutional_footprint_scans/institutional_footprint_latest.md` + dated `.md`/`.csv`
+   (CSV is the Phase 5 signal-history store — no DB table until cross-day queries need one) and
+   `dashboard/institutional_footprint.html` (dark-mode cards, vanilla-JS symbol/stage filter)
+
 ### Daily Gainers Brief (`daily_gainers_brief.py`)
 
 1. Fetches NSE gainers + positive-change value stocks from two NSE API endpoints
@@ -273,6 +288,8 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
+| `institutional_footprint_scans/institutional_footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
+| `dashboard/institutional_footprint.html` | `institutional_footprint_scanner.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 

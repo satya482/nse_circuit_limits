@@ -1,0 +1,97 @@
+> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+## Institutional Footprint Scan - 2026-07-07
+
+| Symbol | ICS | Rating | Stage | Regime | Rank | Action | Delivery | RS | CMF20 | Vol | Turnover | Reason |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| [PSPPROJECT](https://in.tradingview.com/chart/?symbol=NSE:PSPPROJECT) | 72 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 94 FLAT | 0.15 | 6.0x | 98.3Cr | CMF positive, RS leader |
+| [SPARC](https://in.tradingview.com/chart/?symbol=NSE:SPARC) | 72 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 99 FLAT | 0.16 | 3.7x | 252.6Cr | CMF positive, RS leader |
+| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | 72 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 98 FLAT | 0.21 | 33.7x | 130.8Cr | CMF positive, RS leader |
+| [VERANDA](https://in.tradingview.com/chart/?symbol=NSE:VERANDA) | 72 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 96 FLAT | 0.09 | 6.2x | 52.0Cr | CMF positive, RS leader |
+| [AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK) | 70 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 94 UP | 0.50 | 7.5x | 310.2Cr | CMF positive, RS leader |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR) | 70 | BUILDING | NONE | NEUTRAL | B | WAIT | DEL76% █▄▅▅▆█▄▃█▄▇▂▂▁▁▃▂▂▄▇ | 81 FLAT | 0.31 | 15.4x | 9.9Cr | CMF positive |
+| [BHAGYANGR](https://in.tradingview.com/chart/?symbol=NSE:BHAGYANGR) | 70 | BUILDING | NONE | NEUTRAL | B | WAIT |  | 97 UP | 0.16 | 4.0x | 56.0Cr | CMF positive, RS leader |
+| [AMIRCHAND](https://in.tradingview.com/chart/?symbol=NSE:AMIRCHAND) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 78 UP | 0.25 | 2.3x | 31.8Cr | CMF positive |
+| [CREDITACC](https://in.tradingview.com/chart/?symbol=NSE:CREDITACC) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 84 UP | 0.33 | 1.8x | 91.6Cr | CMF positive |
+| [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 67 UP | 0.27 | 2.4x | 282.8Cr | CMF positive |
+| [KABRAEXTRU](https://in.tradingview.com/chart/?symbol=NSE:KABRAEXTRU) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 71 UP | 0.05 | 9.0x | 18.2Cr | CMF positive |
+| [LLOYDSENT](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENT) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 66 UP | 0.07 | 1.7x | 56.9Cr | CMF positive |
+| [PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 72 UP | 0.24 | 3.2x | 387.6Cr | CMF positive |
+| [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE) | 68 | WATCH | NONE | NEUTRAL | C | WAIT |  | 80 UP | 0.34 | 1.9x | 268.0Cr | CMF positive |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 99 FLAT | 0.73 | 2.7x | 1386.8Cr | CMF positive, RS leader |
+| [FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 91 FLAT | 0.24 | 6.7x | 54.1Cr | CMF positive, RS leader |
+| [MUNJALAU](https://in.tradingview.com/chart/?symbol=NSE:MUNJALAU) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 90 FLAT | 0.30 | 51.0x | 468.2Cr | CMF positive, RS leader |
+| [RUBYMILLS](https://in.tradingview.com/chart/?symbol=NSE:RUBYMILLS) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 98 FLAT | 0.45 | 14.9x | 46.5Cr | CMF positive, RS leader |
+| [SPANDANA](https://in.tradingview.com/chart/?symbol=NSE:SPANDANA) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 92 FLAT | 0.13 | 2.9x | 36.6Cr | CMF positive, RS leader |
+| [VENUSREM](https://in.tradingview.com/chart/?symbol=NSE:VENUSREM) | 66 | WATCH | NONE | NEUTRAL | C | WAIT |  | 100 FLAT | 0.43 | 1.8x | 44.3Cr | CMF positive, RS leader |
+| [DALMIASUG](https://in.tradingview.com/chart/?symbol=NSE:DALMIASUG) | 65 | WATCH | NONE | NEUTRAL | C | WAIT |  | 30 UP | 0.07 | 83.9x | 265.1Cr | CMF positive |
+| [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | 65 | WATCH | NONE | NEUTRAL | C | WAIT | DEL60% ▃▁▁▂▃▂▃▄▄▁▃▅▁▂▂▂▃▃▂█ | 89 FLAT | 0.01 | 2.8x | 289.2Cr | CMF positive |
+| [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) | 65 | WATCH | NONE | NEUTRAL | C | WAIT |  | 41 UP | 0.18 | 1.5x | 133.1Cr | CMF positive |
+| [ABCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:ABCAPITAL) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 66 FLAT | 0.13 | 1.5x | 262.3Cr | CMF positive |
+| [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 82 FLAT | 0.47 | 7.1x | 225.5Cr | CMF positive |
+| [DLF](https://in.tradingview.com/chart/?symbol=NSE:DLF) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 60 UP | 0.25 | 1.6x | 452.5Cr | CMF positive |
+| [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 75 FLAT | 0.30 | 12.5x | 5.1Cr | CMF positive |
+| [INOXGREEN](https://in.tradingview.com/chart/?symbol=NSE:INOXGREEN) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 70 UP | 0.21 | 2.2x | 66.4Cr | CMF positive |
+| [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 61 UP | 0.33 | 24.4x | 30.9Cr | CMF positive |
+| [RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 84 FLAT | 0.38 | 3.1x | 400.7Cr | CMF positive |
+| [SHREEPUSHK](https://in.tradingview.com/chart/?symbol=NSE:SHREEPUSHK) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 50 UP | 0.24 | 2.0x | 3.2Cr | CMF positive |
+| [SOTL](https://in.tradingview.com/chart/?symbol=NSE:SOTL) | 64 | WATCH | NONE | NEUTRAL | C | WAIT | DEL56% ▁▁▃▃▃▂▃▄▅▆▇▄▅▆▆▆▅▆▆█ | 96 FLAT | -0.26 | 6.5x | 113.1Cr | RS leader |
+| [TEXRAIL](https://in.tradingview.com/chart/?symbol=NSE:TEXRAIL) | 64 | WATCH | NONE | NEUTRAL | C | WAIT |  | 72 UP | 0.11 | 6.7x | 179.6Cr | CMF positive |
+| [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND) | 63 | WATCH | NONE | NEUTRAL | C | WAIT |  | 92 FLAT | 0.02 | 2.8x | 98.3Cr | CMF positive, RS leader |
+| [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY) | 62 | WATCH | NONE | NEUTRAL | C | WAIT |  | 67 UP | 0.29 | 1.4x | 374.2Cr | CMF positive |
+| [EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL) | 62 | WATCH | NONE | NEUTRAL | C | WAIT |  | 51 UP | 0.15 | 2.2x | 27.6Cr | CMF positive |
+| [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA) | 62 | WATCH | NONE | NEUTRAL | C | WAIT |  | 66 UP | 0.27 | 1.5x | 132.1Cr | CMF positive |
+| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | 62 | WATCH | NONE | NEUTRAL | C | WAIT |  | 70 UP | 0.20 | 2.7x | 76.3Cr | CMF positive |
+| [BLSE](https://in.tradingview.com/chart/?symbol=NSE:BLSE) | 61 | WATCH | NONE | NEUTRAL | C | WAIT |  | 95 FLAT | 0.05 | 4.2x | 98.2Cr | CMF positive, RS leader |
+| [TARSONS](https://in.tradingview.com/chart/?symbol=NSE:TARSONS) | 61 | WATCH | NONE | NEUTRAL | C | WAIT |  | 91 UP | 0.53 | 5.4x | 241.0Cr | CMF positive, RS leader |
+| [HFCL](https://in.tradingview.com/chart/?symbol=NSE:HFCL) | 60 | WATCH | NONE | NEUTRAL | C | WAIT |  | 100 FLAT | 0.18 | 1.1x | 647.8Cr | CMF positive, RS leader |
+| [LLOYDSENGG](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENGG) | 60 | WATCH | NONE | NEUTRAL | C | WAIT |  | 96 FLAT | 0.39 | 1.2x | 284.4Cr | CMF positive, RS leader |
+| [MANGLMCEM](https://in.tradingview.com/chart/?symbol=NSE:MANGLMCEM) | 60 | WATCH | NONE | NEUTRAL | C | WAIT |  | 42 UP | 0.02 | 1.8x | 9.9Cr | CMF positive |
+| [RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL) | 60 | WATCH | NONE | NEUTRAL | C | WAIT |  | 99 FLAT | 0.22 | 1.1x | 16.4Cr | CMF positive, RS leader |
+| [SOBHA](https://in.tradingview.com/chart/?symbol=NSE:SOBHA) | 60 | WATCH | NONE | NEUTRAL | C | WAIT |  | 40 UP | 0.01 | 6.5x | 95.3Cr | CMF positive |
+| [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV) | 59 | WATCH | NONE | NEUTRAL | C | WAIT |  | 39 UP | 0.16 | 1.7x | 381.8Cr | CMF positive |
+| [LODHA](https://in.tradingview.com/chart/?symbol=NSE:LODHA) | 59 | WATCH | NONE | NEUTRAL | C | WAIT |  | 65 UP | 0.00 | 2.0x | 398.9Cr | CMF positive |
+| [PICCADIL](https://in.tradingview.com/chart/?symbol=NSE:PICCADIL) | 59 | WATCH | NONE | NEUTRAL | C | WAIT |  | 50 UP | 0.20 | 3.2x | 36.7Cr | CMF positive |
+| [TTKPRESTIG](https://in.tradingview.com/chart/?symbol=NSE:TTKPRESTIG) | 59 | WATCH | NONE | NEUTRAL | C | WAIT |  | 75 UP | 0.30 | 2.3x | 16.7Cr | CMF positive |
+| [WELENT](https://in.tradingview.com/chart/?symbol=NSE:WELENT) | 59 | WATCH | NONE | NEUTRAL | C | WAIT |  | 77 FLAT | 0.01 | 1.7x | 34.8Cr | CMF positive |
+| [ADANIGREEN](https://in.tradingview.com/chart/?symbol=NSE:ADANIGREEN) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 90 FLAT | 0.09 | 1.6x | 797.6Cr | CMF positive, RS leader |
+| [BUTTERFLY](https://in.tradingview.com/chart/?symbol=NSE:BUTTERFLY) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 72 FLAT | 0.30 | 1.8x | 8.2Cr | CMF positive |
+| [DIGITIDE](https://in.tradingview.com/chart/?symbol=NSE:DIGITIDE) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 85 UP | 0.70 | 70.6x | 854.7Cr | CMF positive |
+| [EBGNG](https://in.tradingview.com/chart/?symbol=NSE:EBGNG) | 58 | WATCH | NONE | NEUTRAL | C | WAIT | DEL61% ▅▅█▁▂▇▆▅▇▆▄▄▄▂▂▅▂▄▅█ | 98 FLAT | 0.25 | 0.7x | 49.2Cr | CMF positive, RS leader |
+| [GHCLTEXTIL](https://in.tradingview.com/chart/?symbol=NSE:GHCLTEXTIL) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 85 FLAT | 0.26 | 3.0x | 17.3Cr | CMF positive |
+| [INDIANHUME](https://in.tradingview.com/chart/?symbol=NSE:INDIANHUME) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 62 UP | 0.14 | 3.6x | 19.4Cr | CMF positive |
+| [INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 73 FLAT | 0.28 | 2.3x | 502.6Cr | CMF positive |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 74 FLAT | 0.32 | 3.5x | 378.7Cr | CMF positive |
+| [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 76 FLAT | 0.28 | 16.2x | 49.5Cr | CMF positive |
+| [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR) | 58 | WATCH | NONE | NEUTRAL | C | WAIT | DEL82% ▄▄▃▅▃▅▃▁▄▅▄▃▄▃▃▅▄▄▂█ | 74 FLAT | 0.06 | 1.1x | 116.2Cr | CMF positive |
+| [RAIN](https://in.tradingview.com/chart/?symbol=NSE:RAIN) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 95 FLAT | -0.05 | 1.5x | 135.7Cr | RS leader |
+| [WELCORP](https://in.tradingview.com/chart/?symbol=NSE:WELCORP) | 58 | WATCH | NONE | NEUTRAL | C | WAIT |  | 84 FLAT | 0.38 | 10.4x | 1045.7Cr | CMF positive |
+| [DABUR](https://in.tradingview.com/chart/?symbol=NSE:DABUR) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 32 UP | 0.10 | 2.0x | 171.5Cr | CMF positive |
+| [ELECTHERM](https://in.tradingview.com/chart/?symbol=NSE:ELECTHERM) | 57 | WATCH | NONE | NEUTRAL | C | WAIT | DEL66% ▆▄▁▂▂▃▃▅▆▄▆▇▄▆▆▇▆▅▅█ | 98 FLAT | 0.36 | 0.8x | 15.3Cr | CMF positive, RS leader |
+| [ERIS](https://in.tradingview.com/chart/?symbol=NSE:ERIS) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 47 UP | 0.09 | 1.8x | 14.4Cr | CMF positive |
+| [GRAVITA](https://in.tradingview.com/chart/?symbol=NSE:GRAVITA) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 63 UP | 0.04 | 1.8x | 55.3Cr | CMF positive |
+| [HUBTOWN](https://in.tradingview.com/chart/?symbol=NSE:HUBTOWN) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 49 UP | 0.09 | 1.8x | 22.3Cr | CMF positive |
+| [NGLFINE](https://in.tradingview.com/chart/?symbol=NSE:NGLFINE) | 57 | WATCH | NONE | NEUTRAL | C | WAIT | DEL62% ▄▂▅▃▁▃▂▄▅▆▅█▄▂▂▄▆▇▅█ | 93 FLAT | 0.03 | 0.8x | 6.0Cr | CMF positive, RS leader |
+| [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 68 UP | 0.17 | 2.9x | 310.9Cr | CMF positive |
+| [PNGJL](https://in.tradingview.com/chart/?symbol=NSE:PNGJL) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 6 UP | 0.09 | 2.6x | 25.8Cr | CMF positive |
+| [RAYMONDREL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDREL) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 96 FLAT | 0.04 | 2.6x | 159.4Cr | CMF positive, RS leader |
+| [SUNTECK](https://in.tradingview.com/chart/?symbol=NSE:SUNTECK) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 24 UP | 0.17 | 1.5x | 15.0Cr | CMF positive |
+| [SUYOG](https://in.tradingview.com/chart/?symbol=NSE:SUYOG) | 57 | WATCH | NONE | NEUTRAL | C | WAIT |  | 70 UP | 0.03 | 1.9x | 7.7Cr | CMF positive |
+| [63MOONS](https://in.tradingview.com/chart/?symbol=NSE:63MOONS) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 39 UP | 0.05 | 4.8x | 35.7Cr | CMF positive |
+| [ANDHRSUGAR](https://in.tradingview.com/chart/?symbol=NSE:ANDHRSUGAR) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 16 UP | 0.03 | 24.1x | 80.8Cr | CMF positive |
+| [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 97 FLAT | 0.30 | 0.4x | 86.9Cr | CMF positive, RS leader |
+| [DODLA](https://in.tradingview.com/chart/?symbol=NSE:DODLA) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 47 UP | 0.05 | 4.2x | 5.8Cr | CMF positive |
+| [GANDHAR](https://in.tradingview.com/chart/?symbol=NSE:GANDHAR) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 90 FLAT | 0.18 | 1.0x | 22.7Cr | CMF positive, RS leader |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 98 FLAT | 0.22 | 1.0x | 47.3Cr | CMF positive, RS leader |
+| [JNKINDIA](https://in.tradingview.com/chart/?symbol=NSE:JNKINDIA) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 94 FLAT | 0.29 | 0.4x | 51.7Cr | CMF positive, RS leader |
+| [RELTD](https://in.tradingview.com/chart/?symbol=NSE:RELTD) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 79 UP | 0.33 | 1.1x | 22.5Cr | CMF positive |
+| [TEJASNET](https://in.tradingview.com/chart/?symbol=NSE:TEJASNET) | 56 | WATCH | NONE | NEUTRAL | C | WAIT | DEL31% ▄▃▃▁▂▅▃▂▃▃▆▄▃▄▄▇▃▆▇█ 3D | 90 FLAT | 0.09 | 0.4x | 138.5Cr | 3D high delivery, CMF positive, RS leader |
+| [TIL](https://in.tradingview.com/chart/?symbol=NSE:TIL) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 63 UP | 0.20 | 2.5x | 10.8Cr | CMF positive |
+| [VADILALIND](https://in.tradingview.com/chart/?symbol=NSE:VADILALIND) | 56 | WATCH | NONE | NEUTRAL | C | WAIT |  | 93 FLAT | 0.07 | 0.5x | 6.3Cr | CMF positive, RS leader |
+| [GANECOS](https://in.tradingview.com/chart/?symbol=NSE:GANECOS) | 55 | WATCH | NONE | NEUTRAL | C | WAIT |  | 49 UP | 0.40 | 3.3x | 61.2Cr | CMF positive |
+| [JUBLINGREA](https://in.tradingview.com/chart/?symbol=NSE:JUBLINGREA) | 55 | WATCH | NONE | NEUTRAL | C | WAIT |  | 16 UP | 0.18 | 1.8x | 34.5Cr | CMF positive |
+| [POLYCAB](https://in.tradingview.com/chart/?symbol=NSE:POLYCAB) | 55 | WATCH | NONE | NEUTRAL | C | WAIT |  | 82 FLAT | 0.02 | 4.3x | 1231.5Cr | CMF positive |
+| [UNOMINDA](https://in.tradingview.com/chart/?symbol=NSE:UNOMINDA) | 55 | WATCH | NONE | NEUTRAL | C | WAIT |  | 40 UP | 0.07 | 1.9x | 165.0Cr | CMF positive |
+| [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC) | 55 | WATCH | NONE | NEUTRAL | C | WAIT |  | 58 FLAT | 0.04 | 3.0x | 452.6Cr | CMF positive |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
