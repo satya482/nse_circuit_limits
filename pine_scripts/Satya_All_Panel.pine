@@ -1,0 +1,307 @@
+//@version=6
+indicator("Satya All Panel", shorttitle="SatyaPanel", overlay=false, max_labels_count=500)
+// Combined pane slot: WaveTrend, RS, consolidation scores, CMF, Float Trap table,
+// and compact status table. Every feature block is optional.
+
+// ----------------------------------------------------------------------------- Inputs
+gMaster = "Master"
+showWT = input.bool(true, "WaveTrend", group=gMaster)
+showRS = input.bool(true, "RS line", group=gMaster)
+showConsol = input.bool(true, "Consolidation quality / imminence", group=gMaster)
+showCMF = input.bool(true, "CMF", group=gMaster)
+showFloat = input.bool(true, "Float Trap Guard table", group=gMaster)
+showStatus = input.bool(true, "Compact status table", group=gMaster)
+
+gWT = "WaveTrend"
+n1 = input.int(10, "Channel Length", minval=1, group=gWT)
+n2 = input.int(21, "Average Length", minval=1, group=gWT)
+os1 = input.float(-60, "Deep oversold", group=gWT)
+os2 = input.float(-53, "Soft oversold", group=gWT)
+ob1 = input.float(60, "Deep overbought", group=gWT)
+ob2 = input.float(53, "Soft overbought", group=gWT)
+ppLen = input.int(10, "PPV down days", minval=1, maxval=50, group=gWT)
+
+gRS = "RS"
+benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark", group=gRS)
+rsScale = input.float(1.0, "RS display scale", minval=0.01, group=gRS)
+
+gCon = "Consolidation"
+conBench = input.symbol("NSE:NIFTYMIDSML400", "Consolidation RS Benchmark", group=gCon)
+
+gFloat1 = "Float Trap - Exit Sizing"
+i_position = input.float(500000, "Your Position Size (INR)", group=gFloat1, minval=10000, step=50000)
+i_flow_pct = input.float(10, "Max % of Daily Flow Used on Exit", group=gFloat1, minval=1, maxval=30)
+
+gFloat2 = "Float Trap - Thresholds"
+i_ff_grn = input.float(300, "FF MCAP green (Cr >=)", group=gFloat2)
+i_ff_yel = input.float(150, "FF MCAP yellow (Cr >=)", group=gFloat2)
+i_tr_grn = input.float(0.5, "FF Turn% green (% >=)", group=gFloat2)
+i_tr_yel = input.float(0.3, "FF Turn% yellow (% >=)", group=gFloat2)
+i_ft_grn = input.float(2.0, "Float x20d green (x >=)", group=gFloat2)
+i_ft_yel = input.float(1.0, "Float x20d yellow (x >=)", group=gFloat2)
+i_ex_safe = input.float(1.0, "Exit Days safe (<= d)", group=gFloat2)
+i_ex_warn = input.float(3.0, "Exit Days warn (<= d)", group=gFloat2)
+i_val_grn = input.float(50, "Today Value green (Cr >=)", group=gFloat2)
+i_val_yel = input.float(15, "Today Value yellow (Cr >=)", group=gFloat2)
+i_avgv_grn = input.float(50, "Avg10 Value green (Cr >=)", group=gFloat2)
+i_avgv_yel = input.float(15, "Avg10 Value yellow (Cr >=)", group=gFloat2)
+
+// ----------------------------------------------------------------------------- Helpers
+f_s(v, fmt, sfx) => na(v) ? "n/a" : str.tostring(v, fmt) + sfx
+f_asc(v, g, y) => na(v) ? color.gray : v >= g ? color.lime : v >= y ? color.yellow : color.red
+f_inv(v, s, w) => na(v) ? color.gray : v <= s ? color.lime : v <= w ? color.yellow : color.red
+
+f_wt() =>
+    ap = hlc3
+    esa = ta.ema(ap, n1)
+    d = ta.ema(math.abs(ap - esa), n1)
+    ci = d != 0 ? (ap - esa) / (0.015 * d) : 0.0
+    wt1 = ta.ema(ci, n2)
+    wt2 = ta.sma(wt1, 4)
+    [wt1, wt2]
+
+f_ppv(_len) =>
+    seen = 0
+    maxDownVol = 0.0
+    for i = 1 to 500
+        if seen >= _len
+            break
+        if not na(close[i + 1]) and close[i] < close[i + 1]
+            maxDownVol := math.max(maxDownVol, volume[i])
+            seen := seen + 1
+    close > close[1] and volume > maxDownVol and seen == _len
+
+// ----------------------------------------------------------------------------- WaveTrend + PPV
+[wt1, wt2] = f_wt()
+wtBullAny = ta.crossover(wt1, wt2)
+wtBearAny = ta.crossunder(wt1, wt2)
+wtBullDeep = wtBullAny and wt2 <= os1
+wtBullSoft = wtBullAny and wt2 <= os2
+wtBearDeep = wtBearAny and wt2 >= ob1
+wtBearSoft = wtBearAny and wt2 >= ob2
+ppv = f_ppv(ppLen)
+wtRank = wtBullDeep and ppv ? 5 : wtBullAny and ppv ? 4 : wtBullDeep ? 3 : wtBullSoft ? 2 : wtBullAny ? 1 : wtBearDeep ? -3 : wtBearSoft ? -2 : wtBearAny ? -1 : 0
+wtSig = wtRank == 5 ? "OS+PV" : wtRank == 4 ? "ANY+PV" : wtRank == 3 ? "OS" : wtRank == 2 ? "OS2" : wtRank == 1 ? "BULL" : wtRank < 0 ? "BEAR" : "NONE"
+
+plot(showWT ? wt1 : na, "WT1", color=color.aqua, linewidth=2)
+plot(showWT ? wt2 : na, "WT2", color=color.orange, linewidth=1)
+hline(0, "WT zero", color=color.gray)
+hline(ob1, "WT OB", color=color.new(color.red, 40), linestyle=hline.style_dashed)
+hline(os1, "WT OS", color=color.new(color.green, 40), linestyle=hline.style_dashed)
+plotshape(showWT and wtBullAny, "WT bull", shape.triangleup, location.bottom, color=color.lime, size=size.tiny)
+plotshape(showWT and wtBearAny, "WT bear", shape.triangledown, location.top, color=color.red, size=size.tiny)
+plotshape(showWT and ppv, "PPV", shape.circle, location.bottom, color=color.aqua, size=size.tiny)
+
+// ----------------------------------------------------------------------------- RS
+benchClose = request.security(benchSymbol, timeframe.period, close, lookahead=barmerge.lookahead_off)
+rsLine = close / benchClose * 1000
+rsEma9 = ta.ema(rsLine, 9)
+rsTransition = rsLine > rsEma9 and rsLine[1] <= rsEma9[1]
+rsStrong = rsLine > rsEma9
+rsDisplay = rsLine / rsScale
+rsEmaDisplay = rsEma9 / rsScale
+plot(showRS ? rsDisplay : na, "RS", color=rsStrong ? color.lime : color.red, linewidth=2)
+plot(showRS ? rsEmaDisplay : na, "RS EMA9", color=color.yellow, linewidth=1)
+plotshape(showRS and rsTransition, "RS transition", shape.diamond, location.bottom, color=color.blue, size=size.tiny)
+
+// ----------------------------------------------------------------------------- Consolidation panel
+ema50 = ta.ema(close, 50)
+ema100 = ta.ema(close, 100)
+ema200 = ta.ema(close, 200)
+emaHigh = math.max(ema50, math.max(ema100, ema200))
+emaLow = math.min(ema50, math.min(ema100, ema200))
+emaSpread = emaHigh - emaLow
+spreadPct = ema200 != 0 ? emaSpread / ema200 : na
+spreadDelta = spreadPct - spreadPct[5]
+emaStage = spreadDelta < -0.001 ? "CONV" : spreadDelta > 0.001 ? "DIV" : "COMP"
+
+bbBasis = ta.sma(close, 20)
+bbStd = ta.stdev(close, 20)
+bbUpper = bbBasis + 2.0 * bbStd
+bbLower = bbBasis - 2.0 * bbStd
+bbWidth = bbUpper - bbLower
+bbWidthPct = ta.percentrank(bbWidth, 252)
+kcAtr = ta.sma(ta.tr, 20)
+kcBasis = ta.sma(close, 20)
+kcUpper = kcBasis + 1.5 * kcAtr
+kcLower = kcBasis - 1.5 * kcAtr
+squeezeOn = bbUpper < kcUpper and bbLower > kcLower
+atr50 = ta.sma(ta.tr, 50)
+spreadAtrRatio = atr50 != 0 ? emaSpread / atr50 : na
+emaGateOk = spreadAtrRatio < 1.5 and spreadPct < 0.03
+sqOkRaw = squeezeOn and bbWidthPct <= 20.0
+var int ageBars = 0
+ageBars := emaGateOk and sqOkRaw ? ageBars + 1 : 0
+
+volMa5 = ta.sma(volume, 5)
+volPercentile = ta.percentrank(volMa5, 252)
+quietAccumBar = volume >= 1.5 * ta.sma(volume, 10) and math.abs(close / close[1] - 1) < 0.01
+
+conBenchClose = request.security(conBench, timeframe.period, close, lookahead=barmerge.lookahead_off)
+conRs = close / conBenchClose
+rsEma = ta.ema(conRs, 9)
+rsSlope = conRs[20] != 0 ? conRs / conRs[20] - 1 : na
+priceFlat = math.abs(close / close[20] - 1) < 0.05
+rs52wkHigh = conRs >= ta.highest(conRs, 252) * 0.999
+price20dHigh = close >= ta.highest(close, 20) * 0.999
+isChar5 = rs52wkHigh and priceFlat and not price20dHigh
+isChar4 = rsSlope > 0.01 and priceFlat
+isChar3 = conRs > rsEma and math.abs(rsSlope) <= 0.01
+isChar1 = not (conRs > rsEma) and rsSlope < -0.01
+rsChar = isChar5 ? "RS5" : isChar4 ? "RS4" : isChar3 ? "RS3" : isChar1 ? "RS1" : "RS2"
+
+mfm = (high - low) != 0 ? ((close - low) - (high - close)) / (high - low) : 0.0
+mfv = mfm * volume
+cmf = math.sum(volume, 20) != 0 ? math.sum(mfv, 20) / math.sum(volume, 20) : na
+
+bbPts = math.max(0.0, (20 - bbWidthPct) * 1.0)
+stagePts = emaStage == "COMP" ? 20.0 : emaStage == "CONV" ? 8.0 : 0.0
+volPts = math.max(0.0, (20 - volPercentile) * 0.75)
+rsPts = rsChar == "RS4" or rsChar == "RS5" ? 20.0 : rsChar == "RS3" ? 12.0 : rsChar == "RS2" ? 5.0 : 0.0
+cmfPts = cmf > 0.10 ? 15.0 : cmf > 0.05 ? 10.0 : cmf > 0 ? 6.0 : 0.0
+qualityScore = bbPts + stagePts + volPts + rsPts + cmfPts
+
+sig1 = rs52wkHigh and not price20dHigh
+sig2 = spreadDelta > 0 and spreadDelta[1] <= 0
+sig3wt = quietAccumBar ? 0.5 : 0.0
+sig4 = bbWidthPct[2] < 15 and bbWidthPct[1] > bbWidthPct[2] and bbWidthPct > bbWidthPct[1]
+sig5 = low > ta.lowest(low[1], 5)
+rangeHi = ta.highest(high, math.max(ageBars, 10))
+rangeLo = ta.lowest(low, math.max(ageBars, 10))
+prevBodyTop = math.max(open[1], close[1])
+prevRange = high[1] - low[1]
+prevWick = high[1] - prevBodyTop
+sig6 = high[1] >= rangeHi * 0.98 and prevRange > 0 and prevWick > prevRange * 0.3 and close >= prevBodyTop
+var int negStreak = 0
+negStreak := spreadDelta <= 0 ? negStreak + 1 : 0
+stage3Flag = sig2 and negStreak[1] >= 10
+rangePos = rangeHi == rangeLo ? 0.0 : (close - rangeLo) / (rangeHi - rangeLo)
+prebreakCount = (sig1 ? 1.0 : 0.0) + (sig2 ? 1.0 : 0.0) + sig3wt + (sig4 ? 1.0 : 0.0) + (sig5 ? 1.0 : 0.0) + (sig6 ? 1.0 : 0.0)
+imminenceScore = prebreakCount / 6.0 * 30 + (stage3Flag ? 25.0 : 0.0) + (isChar5 ? 20.0 : 0.0) + (sig4 ? 15.0 : 0.0) + (rangePos >= 2.0 / 3.0 ? 10.0 : 0.0)
+
+plot(showConsol ? qualityScore : na, "Quality", color=color.new(color.aqua, 0), linewidth=2)
+plot(showConsol ? imminenceScore : na, "Imminence", color=color.new(color.yellow, 0), linewidth=2)
+hline(60, "Hot", color=color.new(color.orange, 50), linestyle=hline.style_dashed)
+hline(80, "Imminent", color=color.new(color.red, 50), linestyle=hline.style_dashed)
+bgcolor(showConsol ? emaStage == "CONV" ? color.new(color.blue, 92) : emaStage == "COMP" ? color.new(color.green, 92) : color.new(color.orange, 92) : na)
+
+// CMF zero-cross feature
+cmfDisplay = cmf * 100
+cmfBull = ta.crossover(cmf, 0)
+cmfBear = ta.crossunder(cmf, 0)
+plot(showCMF ? cmfDisplay : na, "CMF x100", style=plot.style_columns, color=cmf >= 0 ? color.new(color.teal, 40) : color.new(color.maroon, 40))
+plotshape(showCMF and cmfBull, "CMF bull cross", shape.triangleup, location.bottom, color=color.green, size=size.tiny)
+plotshape(showCMF and cmfBear, "CMF bear cross", shape.triangledown, location.top, color=color.red, size=size.tiny)
+
+// ----------------------------------------------------------------------------- Float Trap Guard
+shares_out = request.financial(syminfo.tickerid, "TOTAL_SHARES_OUTSTANDING", "FQ")
+float_sh = request.financial(syminfo.tickerid, "FLOAT_SHARES_OUTSTANDING", "FY")
+have_float = not na(float_sh) and float_sh > 0
+have_shares = not na(shares_out) and shares_out > 0
+
+var float float_prev = na
+var int float_change_time = na
+if have_float and (na(float_prev) or float_sh != float_prev)
+    float_change_time := time
+    float_prev := float_sh
+float_age_days = na(float_change_time) ? na : (time - float_change_time) / 86400000.0
+float_stale = not na(float_age_days) and float_age_days > 270
+
+daily_val = close * volume
+avg20_val = ta.sma(daily_val, 20)
+avg10_val = ta.sma(daily_val, 10)
+avg20_vol = ta.sma(volume, 20)
+avg10_vol = ta.sma(volume, 10)
+val_today_cr = close * volume / 1e7
+val_avg10_cr = close * avg10_vol / 1e7
+val_ratio = val_avg10_cr > 0 ? val_today_cr / val_avg10_cr : na
+ff_mcap_cr = have_float ? (float_sh * close) / 1e7 : na
+float_pct = have_float and have_shares ? (float_sh / shares_out) * 100 : na
+ff_turn = have_float and ff_mcap_cr > 0 ? (avg20_val / (ff_mcap_cr * 1e7)) * 100 : na
+ft_20 = have_float ? (avg20_vol * 20) / float_sh : na
+exit_days = avg10_val > 0 ? i_position / (avg10_val * i_flow_pct / 100) : na
+vol_surge = avg20_vol > 0 ? volume / avg20_vol : na
+
+pts = 0
+pts := pts + (not na(ff_mcap_cr) ? ff_mcap_cr < i_ff_yel ? 2 : ff_mcap_cr < i_ff_grn ? 1 : 0 : 0)
+pts := pts + (not na(ff_turn) ? ff_turn < i_tr_yel ? 2 : ff_turn < i_tr_grn ? 1 : 0 : 0)
+pts := pts + (not na(exit_days) ? exit_days > i_ex_warn * 1.66 ? 2 : exit_days > i_ex_warn ? 1 : 0 : 0)
+pts := pts + (not na(ft_20) ? ft_20 < i_ft_yel ? 1 : 0 : 0)
+pts := pts + (not na(val_avg10_cr) ? val_avg10_cr < i_avgv_yel ? 2 : val_avg10_cr < i_avgv_grn ? 1 : 0 : 0)
+verdict = pts >= 5 ? "AVOID" : pts >= 3 ? "CAUTION" : "SAFE"
+v_col = pts >= 5 ? color.red : pts >= 3 ? color.yellow : color.lime
+
+c_ff = float_stale ? color.gray : f_asc(ff_mcap_cr, i_ff_grn, i_ff_yel)
+c_fp = float_stale ? color.gray : f_asc(float_pct, 30.0, 20.0)
+c_ft = float_stale ? color.gray : f_asc(ff_turn, i_tr_grn, i_tr_yel)
+c_ft20 = float_stale ? color.gray : f_asc(ft_20, i_ft_grn, i_ft_yel)
+c_ex = f_inv(exit_days, i_ex_safe, i_ex_warn)
+c_vs = na(vol_surge) ? color.gray : vol_surge >= 1.5 ? color.lime : vol_surge >= 0.7 ? color.white : color.gray
+c_val = f_asc(val_today_cr, i_val_grn, i_val_yel)
+c_avgv = f_asc(val_avg10_cr, i_avgv_grn, i_avgv_yel)
+c_vr = na(val_ratio) ? color.gray : val_ratio >= 1.5 ? color.lime : val_ratio >= 0.7 ? color.white : color.gray
+
+mcap_cr_display = (close * nz(shares_out, 0)) / 1e7
+t_val = "VAL " + f_s(val_today_cr, "#,###", "Cr")
+t_avgv = "AVG10 " + f_s(val_avg10_cr, "#,###", "Cr")
+t_vr = "V/A " + f_s(val_ratio, "#.##", "x")
+t_ff = "FFMC " + f_s(ff_mcap_cr, "#,###", "") + (float_stale ? "*" : "")
+t_fp = "FLS " + f_s(float_pct, "#.#", "%") + (float_stale ? "*" : "")
+t_ft = "TURN " + f_s(ff_turn, "#.##", "%") + (float_stale ? "*" : "")
+t_ft20 = "F20D " + f_s(ft_20, "#.##", "x") + (float_stale ? "*" : "")
+t_ex = "EXIT " + f_s(exit_days, "#.#", "d")
+t_vs = "VOL " + f_s(vol_surge, "#.##", "x")
+t_mc = "MCAP " + f_s(mcap_cr_display > 0 ? mcap_cr_display : na, "#,###", "")
+t_vd = verdict + " " + str.tostring(pts) + "pt"
+
+var table T = table.new(position.bottom_left, 8, 4, bgcolor=color.new(color.black, 100), border_width=0)
+if barstate.islast and showFloat
+    table.cell(T, 0, 0, t_val, bgcolor=color.new(c_val, 80), text_color=c_val, text_size=size.tiny)
+    table.cell(T, 1, 0, t_avgv, bgcolor=color.new(c_avgv, 80), text_color=c_avgv, text_size=size.tiny)
+    table.cell(T, 2, 0, t_vr, bgcolor=color.new(c_vr, 80), text_color=c_vr, text_size=size.tiny)
+    table.cell(T, 3, 0, t_ff, bgcolor=color.new(c_ff, 80), text_color=c_ff, text_size=size.tiny)
+    table.cell(T, 4, 0, t_fp, bgcolor=color.new(c_fp, 80), text_color=c_fp, text_size=size.tiny)
+    table.cell(T, 5, 0, t_ft, bgcolor=color.new(c_ft, 80), text_color=c_ft, text_size=size.tiny)
+    table.cell(T, 6, 0, t_ft20, bgcolor=color.new(c_ft20, 80), text_color=c_ft20, text_size=size.tiny)
+    table.cell(T, 7, 0, t_vd, bgcolor=color.new(v_col, 65), text_color=color.white, text_size=size.tiny)
+    table.cell(T, 0, 1, t_ex, bgcolor=color.new(c_ex, 80), text_color=c_ex, text_size=size.tiny)
+    table.cell(T, 1, 1, t_vs, bgcolor=color.new(c_vs, 80), text_color=c_vs, text_size=size.tiny)
+    table.cell(T, 2, 1, t_mc, bgcolor=color.new(color.silver, 85), text_color=color.silver, text_size=size.tiny)
+    for col = 3 to 7
+        table.cell(T, col, 1, "", bgcolor=color.new(color.black, 100), text_size=size.tiny)
+else if barstate.islast and not showFloat
+    for row = 0 to 3
+        for col = 0 to 7
+            table.cell(T, col, row, "", bgcolor=color.new(color.black, 100), text_color=color.new(color.black, 100), text_size=size.tiny)
+
+// ----------------------------------------------------------------------------- Compact status table
+rangeNow = high - low
+isInside = high < high[1] and low > low[1]
+isNr = rangeNow <= ta.lowest(high - low, 7)
+coil = isInside and isNr ? "NRIB" : isNr ? "NR" : isInside ? "IB" : "-"
+rsTxt = rsTransition ? "RS trans" : rsStrong ? "RS strong" : "RS weak"
+conTxt = str.tostring(math.round(qualityScore)) + "/" + str.tostring(math.round(imminenceScore))
+
+var table S = table.new(position.top_right, 5, 2, bgcolor=color.new(color.black, 85), border_width=1)
+if barstate.islast and showStatus
+    table.cell(S, 0, 0, "RS", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 1, 0, "WT", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 2, 0, "PPV", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 3, 0, "Coil", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 4, 0, "Q/I", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 0, 1, rsTxt, text_color=rsStrong ? color.lime : color.red, text_size=size.tiny)
+    table.cell(S, 1, 1, wtSig, text_color=wtRank > 0 ? color.lime : wtRank < 0 ? color.red : color.gray, text_size=size.tiny)
+    table.cell(S, 2, 1, ppv ? "YES" : "-", text_color=ppv ? color.aqua : color.gray, text_size=size.tiny)
+    table.cell(S, 3, 1, coil, text_color=coil == "NRIB" ? color.orange : color.gray, text_size=size.tiny)
+    table.cell(S, 4, 1, conTxt, text_color=imminenceScore >= 60 ? color.orange : color.silver, text_size=size.tiny)
+else if barstate.islast and not showStatus
+    for row = 0 to 1
+        for col = 0 to 4
+            table.cell(S, col, row, "", bgcolor=color.new(color.black, 100), text_color=color.new(color.black, 100), text_size=size.tiny)
+
+alertcondition(showWT and wtRank == 5, "WT Bull Deep + PPV", "SATYA_PANEL|{{ticker}}|BULL_OS_PPV|TF:{{interval}}")
+alertcondition(showWT and wtRank == 4, "WT Bull + PPV", "SATYA_PANEL|{{ticker}}|BULL_ANY_PPV|TF:{{interval}}")
+alertcondition(showWT and wtBullAny, "WT Bull Cross", "SATYA_PANEL|{{ticker}}|WT_BULL|TF:{{interval}}")
+alertcondition(showRS and rsTransition, "RS Transition", "SATYA_PANEL|{{ticker}}|RS_TRANSITION|TF:{{interval}}")
+alertcondition(showCMF and cmfBull, "CMF Bull Cross", "CMF_ZERO_CROSS|{{ticker}}|bull|TF:{{interval}}")
+alertcondition(showCMF and cmfBear, "CMF Bear Cross", "CMF_ZERO_CROSS|{{ticker}}|bear|TF:{{interval}}")

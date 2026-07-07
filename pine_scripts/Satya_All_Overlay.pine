@@ -1,0 +1,332 @@
+//@version=6
+indicator("Satya All Overlay", shorttitle="SatyaOverlay", overlay=true, max_lines_count=500, max_boxes_count=500, max_labels_count=500)
+// Combined overlay slot: EMA steplines, weekly/monthly projection boxes, WT/RS/PPV,
+// mini-coil, consolidation pre-break markers, and optional bar repainting.
+
+// ----------------------------------------------------------------------------- Inputs
+gMaster = "Master"
+showEma = input.bool(true, "EMA steplines", group=gMaster)
+showWeekly = input.bool(true, "Weekly projection boxes", group=gMaster)
+showMonthly = input.bool(true, "Monthly projection boxes", group=gMaster)
+showWkWtZone = input.bool(true, "Weekly WT zone background", group=gMaster)
+showSignals = input.bool(true, "WT / PPV / RS markers", group=gMaster)
+showMiniCoil = input.bool(true, "Mini coil markers", group=gMaster)
+showConsol = input.bool(true, "Consolidation pre-break markers + alerts", group=gMaster)
+paintBars = input.bool(true, "Repaint bars", group=gMaster)
+
+gEma = "EMA Steplines"
+ema10Col = input.color(color.new(color.white, 0), "EMA10", group=gEma)
+ema20Col = input.color(color.new(color.yellow, 0), "EMA20", group=gEma)
+ema50Col = input.color(color.new(color.aqua, 0), "EMA50", group=gEma)
+ema100Col = input.color(color.new(color.orange, 0), "EMA100", group=gEma)
+ema200Col = input.color(color.new(color.red, 0), "EMA200", group=gEma)
+emaWidth = input.int(1, "Width", minval=1, maxval=4, group=gEma)
+
+gProj = "Weekly / Monthly Projections"
+histWeeks = input.int(52, "Historical weeks", minval=0, maxval=120, group=gProj)
+histMonths = input.int(24, "Historical months", minval=0, maxval=120, group=gProj)
+projBoxes = input.bool(true, "Show boxes", group=gProj)
+projLines = input.bool(false, "Show close lines", group=gProj)
+wkBorder = input.color(color.new(color.aqua, 35), "Weekly border", group=gProj)
+wkFill = input.color(color.new(color.aqua, 92), "Weekly fill", group=gProj)
+moBorder = input.color(color.new(color.fuchsia, 35), "Monthly border", group=gProj)
+moFill = input.color(color.new(color.fuchsia, 93), "Monthly fill", group=gProj)
+liveBorder = input.color(color.new(color.yellow, 0), "Live period border", group=gProj)
+liveFill = input.color(color.new(color.yellow, 88), "Live period fill", group=gProj)
+
+gWT = "WaveTrend / RS / PPV"
+n1 = input.int(10, "WT Channel Length", minval=1, group=gWT)
+n2 = input.int(21, "WT Average Length", minval=1, group=gWT)
+os1 = input.float(-60, "WT deep oversold", group=gWT)
+os2 = input.float(-53, "WT soft oversold", group=gWT)
+ob1 = input.float(60, "WT deep overbought", group=gWT)
+ob2 = input.float(53, "WT soft overbought", group=gWT)
+ppLen = input.int(10, "PPV down days", minval=1, maxval=50, group=gWT)
+benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark", group=gWT)
+rsPaintWeak = input.bool(false, "Paint weak RS bars", group=gWT)
+wkZoneLevel = input.string("Any", "Weekly WT zone min cross", options=["Any", "Soft OS", "Deep OS"], group=gWT)
+wkZoneColor = input.color(color.new(color.green, 88), "Weekly WT zone color", group=gWT)
+
+gCoil = "Mini Coil"
+nrLen = input.int(7, "NR length", minval=2, maxval=20, group=gCoil)
+paintInside = input.bool(true, "Paint inside bars", group=gCoil)
+paintNr7 = input.bool(true, "Paint NR bars", group=gCoil)
+
+gCon = "Consolidation"
+conBench = input.symbol("NSE:NIFTYMIDSML400", "Consolidation RS Benchmark", group=gCon)
+showConLabels = input.bool(false, "Use labels instead of small markers", group=gCon)
+
+// ----------------------------------------------------------------------------- Helpers
+f_borderStyle() => line.style_dotted
+f_box(_left, _top, _right, _bottom, _border, _fill) =>
+    box.new(left=_left, top=_top, right=_right, bottom=_bottom, xloc=xloc.bar_time, border_color=_border, border_style=f_borderStyle(), bgcolor=_fill)
+
+f_clearBoxes(array<box> boxes) =>
+    sz = array.size(boxes)
+    if sz > 0
+        for i = 0 to sz - 1
+            box.delete(array.get(boxes, i))
+    array.clear(boxes)
+
+f_clearLines(array<line> lines) =>
+    sz = array.size(lines)
+    if sz > 0
+        for i = 0 to sz - 1
+            line.delete(array.get(lines, i))
+    array.clear(lines)
+
+f_wt() =>
+    ap = hlc3
+    esa = ta.ema(ap, n1)
+    d = ta.ema(math.abs(ap - esa), n1)
+    ci = d != 0 ? (ap - esa) / (0.015 * d) : 0.0
+    wt1 = ta.ema(ci, n2)
+    wt2 = ta.sma(wt1, 4)
+    [wt1, wt2]
+
+f_ppv(_len) =>
+    seen = 0
+    maxDownVol = 0.0
+    for i = 1 to 500
+        if seen >= _len
+            break
+        if not na(close[i + 1]) and close[i] < close[i + 1]
+            maxDownVol := math.max(maxDownVol, volume[i])
+            seen := seen + 1
+    close > close[1] and volume > maxDownVol and seen == _len
+
+f_addMonths(_t, _n) =>
+    y = year(_t)
+    m = month(_t)
+    total = (m - 1) + _n
+    ny = y + int(math.floor(total / 12))
+    nm = total % 12 + 1
+    timestamp(ny, nm, 1, 0, 0)
+
+// ----------------------------------------------------------------------------- EMA steplines
+plot(showEma ? ta.ema(close, 10) : na, "EMA10", color=ema10Col, linewidth=emaWidth, style=plot.style_stepline)
+plot(showEma ? ta.ema(close, 20) : na, "EMA20", color=ema20Col, linewidth=emaWidth, style=plot.style_stepline)
+plot(showEma ? ta.ema(close, 50) : na, "EMA50", color=ema50Col, linewidth=emaWidth, style=plot.style_stepline)
+plot(showEma ? ta.ema(close, 100) : na, "EMA100", color=ema100Col, linewidth=emaWidth, style=plot.style_stepline)
+plot(showEma ? ta.ema(close, 200) : na, "EMA200", color=ema200Col, linewidth=emaWidth, style=plot.style_stepline)
+
+// ----------------------------------------------------------------------------- Weekly projection
+wHigh = request.security(syminfo.tickerid, "W", high, barmerge.gaps_off, barmerge.lookahead_off)
+wLow = request.security(syminfo.tickerid, "W", low, barmerge.gaps_off, barmerge.lookahead_off)
+wClose = request.security(syminfo.tickerid, "W", close, barmerge.gaps_off, barmerge.lookahead_off)
+wTime = request.security(syminfo.tickerid, "W", time, barmerge.gaps_off, barmerge.lookahead_off)
+wTimeClose = request.security(syminfo.tickerid, "W", time_close, barmerge.gaps_off, barmerge.lookahead_off)
+newWeek = ta.change(wTime) != 0
+weekMs = 7 * 24 * 60 * 60 * 1000
+
+var array<int> wStarts = array.new_int()
+var array<int> wEnds = array.new_int()
+var array<float> wHighs = array.new_float()
+var array<float> wLows = array.new_float()
+var array<float> wCloses = array.new_float()
+if newWeek and not na(wTime[1]) and not na(wHigh[1])
+    array.push(wStarts, wTime[1])
+    array.push(wEnds, wTimeClose[1])
+    array.push(wHighs, wHigh[1])
+    array.push(wLows, wLow[1])
+    array.push(wCloses, wClose[1])
+    while array.size(wStarts) > histWeeks + 2
+        array.shift(wStarts), array.shift(wEnds), array.shift(wHighs), array.shift(wLows), array.shift(wCloses)
+
+var box wLive = na
+var array<box> wHistBoxes = array.new_box()
+var array<line> wHistLines = array.new_line()
+if barstate.islast
+    if not na(wLive)
+        box.delete(wLive)
+        wLive := na
+    f_clearBoxes(wHistBoxes)
+    f_clearLines(wHistLines)
+    if showWeekly and projBoxes
+        wLive := f_box(wTime, wHigh, wTimeClose + weekMs, wLow, liveBorder, liveFill)
+        sz = array.size(wStarts)
+        pairs = math.min(histWeeks, sz - 1)
+        if pairs > 0
+            for i = sz - pairs - 1 to sz - 2
+                left = array.get(wStarts, i)
+                right = array.get(wEnds, i + 1)
+                top = array.get(wHighs, i)
+                bot = array.get(wLows, i)
+                array.push(wHistBoxes, f_box(left, top, right, bot, wkBorder, wkFill))
+                if projLines
+                    c = array.get(wCloses, i)
+                    array.push(wHistLines, line.new(left, c, right, c, xloc=xloc.bar_time, color=wkBorder, style=line.style_dotted))
+
+// ----------------------------------------------------------------------------- Monthly projection
+mHigh = request.security(syminfo.tickerid, "M", high, barmerge.gaps_off, barmerge.lookahead_off)
+mLow = request.security(syminfo.tickerid, "M", low, barmerge.gaps_off, barmerge.lookahead_off)
+mClose = request.security(syminfo.tickerid, "M", close, barmerge.gaps_off, barmerge.lookahead_off)
+mTime = request.security(syminfo.tickerid, "M", time, barmerge.gaps_off, barmerge.lookahead_off)
+mTimeClose = request.security(syminfo.tickerid, "M", time_close, barmerge.gaps_off, barmerge.lookahead_off)
+newMonth = ta.change(mTime) != 0
+
+var array<int> mStarts = array.new_int()
+var array<int> mEnds = array.new_int()
+var array<float> mHighs = array.new_float()
+var array<float> mLows = array.new_float()
+var array<float> mCloses = array.new_float()
+if newMonth and not na(mTime[1]) and not na(mHigh[1])
+    array.push(mStarts, mTime[1])
+    array.push(mEnds, mTimeClose[1])
+    array.push(mHighs, mHigh[1])
+    array.push(mLows, mLow[1])
+    array.push(mCloses, mClose[1])
+    while array.size(mStarts) > histMonths + 2
+        array.shift(mStarts), array.shift(mEnds), array.shift(mHighs), array.shift(mLows), array.shift(mCloses)
+
+var box mLive = na
+var array<box> mHistBoxes = array.new_box()
+var array<line> mHistLines = array.new_line()
+if barstate.islast
+    if not na(mLive)
+        box.delete(mLive)
+        mLive := na
+    f_clearBoxes(mHistBoxes)
+    f_clearLines(mHistLines)
+    if showMonthly and projBoxes and not timeframe.ismonthly
+        mLive := f_box(mTime, mHigh, f_addMonths(mTimeClose, 1), mLow, liveBorder, color.new(liveFill, 5))
+        sz = array.size(mStarts)
+        pairs = math.min(histMonths, sz - 1)
+        if pairs > 0
+            for i = sz - pairs - 1 to sz - 2
+                left = array.get(mStarts, i)
+                right = array.get(mEnds, i + 1)
+                top = array.get(mHighs, i)
+                bot = array.get(mLows, i)
+                array.push(mHistBoxes, f_box(left, top, right, bot, moBorder, moFill))
+                if projLines
+                    c = array.get(mCloses, i)
+                    array.push(mHistLines, line.new(left, c, right, c, xloc=xloc.bar_time, color=moBorder, style=line.style_dashed))
+
+// ----------------------------------------------------------------------------- WaveTrend, PPV, RS, mini coil
+[wt1, wt2] = f_wt()
+wtBullAny = ta.crossover(wt1, wt2)
+wtBearAny = ta.crossunder(wt1, wt2)
+wtBullDeep = wtBullAny and wt2 <= os1
+wtBullSoft = wtBullAny and wt2 <= os2
+wtBearDeep = wtBearAny and wt2 >= ob1
+wtBearSoft = wtBearAny and wt2 >= ob2
+ppv = f_ppv(ppLen)
+wtRank = wtBullDeep and ppv ? 5 : wtBullAny and ppv ? 4 : wtBullDeep ? 3 : wtBullSoft ? 2 : wtBullAny ? 1 : wtBearDeep ? -3 : wtBearSoft ? -2 : wtBearAny ? -1 : 0
+
+benchClose = request.security(benchSymbol, timeframe.period, close, lookahead=barmerge.lookahead_off)
+rsLine = close / benchClose * 1000
+rsEma9 = ta.ema(rsLine, 9)
+rsTransition = rsLine > rsEma9 and rsLine[1] <= rsEma9[1]
+rsStrong = rsLine > rsEma9
+stockCloseW = request.security(syminfo.tickerid, "W", close, lookahead=barmerge.lookahead_off)
+benchCloseW = request.security(benchSymbol, "W", close, lookahead=barmerge.lookahead_off)
+rsWeekly = stockCloseW / benchCloseW * 1000
+rsWeeklyEma9 = ta.ema(rsWeekly, 9)
+rsWeeklyGate = rsLine > rsWeeklyEma9 and rsWeeklyEma9 > rsWeeklyEma9[1]
+
+rangeNow = high - low
+isInside = high < high[1] and low > low[1]
+isNr = rangeNow <= ta.lowest(high - low, nrLen)
+isMiniCoil = isInside and isNr
+
+// Weekly WT zone
+[wt1W, wt2W] = request.security(syminfo.tickerid, "W", f_wt(), lookahead=barmerge.lookahead_off)
+wkBullAny = ta.crossover(wt1W, wt2W)
+wkBearAny = ta.crossunder(wt1W, wt2W)
+wkBullZoneStart = wkZoneLevel == "Deep OS" ? wkBullAny and wt2W <= os1 : wkZoneLevel == "Soft OS" ? wkBullAny and wt2W <= os2 : wkBullAny
+var bool inWkWtZone = false
+if wkBullZoneStart
+    inWkWtZone := true
+else if wkBearAny
+    inWkWtZone := false
+bgcolor(showWkWtZone and inWkWtZone ? wkZoneColor : na, title="Weekly WT Bull Zone")
+
+// ----------------------------------------------------------------------------- Consolidation pre-break signals
+ema50 = ta.ema(close, 50)
+ema100 = ta.ema(close, 100)
+ema200 = ta.ema(close, 200)
+emaHigh = math.max(ema50, math.max(ema100, ema200))
+emaLow = math.min(ema50, math.min(ema100, ema200))
+emaSpread = emaHigh - emaLow
+spreadPct = ema200 != 0 ? emaSpread / ema200 : na
+spreadDelta = spreadPct - spreadPct[5]
+bbBasis = ta.sma(close, 20)
+bbStd = ta.stdev(close, 20)
+bbUpper = bbBasis + 2.0 * bbStd
+bbLower = bbBasis - 2.0 * bbStd
+bbWidth = bbUpper - bbLower
+bbWidthPct = ta.percentrank(bbWidth, 252)
+kcAtr = ta.sma(ta.tr, 20)
+kcBasis = ta.sma(close, 20)
+kcUpper = kcBasis + 1.5 * kcAtr
+kcLower = kcBasis - 1.5 * kcAtr
+squeezeOn = bbUpper < kcUpper and bbLower > kcLower
+atr50 = ta.sma(ta.tr, 50)
+spreadAtrRatio = atr50 != 0 ? emaSpread / atr50 : na
+emaGateOk = spreadAtrRatio < 1.5 and spreadPct < 0.03
+sqOkRaw = squeezeOn and bbWidthPct <= 20.0
+var int ageBars = 0
+ageBars := emaGateOk and sqOkRaw ? ageBars + 1 : 0
+quietAccumBar = volume >= 1.5 * ta.sma(volume, 10) and math.abs(close / close[1] - 1) < 0.01
+conBenchClose = request.security(conBench, timeframe.period, close, lookahead=barmerge.lookahead_off)
+conRs = close / conBenchClose
+priceFlat = math.abs(close / close[20] - 1) < 0.05
+rs52wkHigh = conRs >= ta.highest(conRs, 252) * 0.999
+price20dHigh = close >= ta.highest(close, 20) * 0.999
+sig1 = rs52wkHigh and not price20dHigh
+sig2 = spreadDelta > 0 and spreadDelta[1] <= 0
+sig3 = quietAccumBar
+sig4 = bbWidthPct[2] < 15 and bbWidthPct[1] > bbWidthPct[2] and bbWidthPct > bbWidthPct[1]
+sig5 = low > ta.lowest(low[1], 5)
+rangeHi = ta.highest(high, math.max(ageBars, 10))
+prevBodyTop = math.max(open[1], close[1])
+prevRange = high[1] - low[1]
+prevWick = high[1] - prevBodyTop
+sig6 = high[1] >= rangeHi * 0.98 and prevRange > 0 and prevWick > prevRange * 0.3 and close >= prevBodyTop
+
+// ----------------------------------------------------------------------------- Visuals and alerts
+plotshape(showSignals and wtBullDeep, "WT deep bull", shape.triangleup, location.belowbar, color.lime, size=size.tiny, text="WT")
+plotshape(showSignals and wtBullSoft and not wtBullDeep, "WT soft bull", shape.triangleup, location.belowbar, color.yellow, size=size.tiny, text="WT")
+plotshape(showSignals and ppv, "Pocket pivot", shape.circle, location.belowbar, color.aqua, size=size.tiny, text="PV")
+plotshape(showSignals and rsTransition, "RS transition", shape.diamond, location.abovebar, color.blue, size=size.tiny, text="RS")
+plotshape(showSignals and rsWeeklyGate, "Weekly RS gate", shape.square, location.abovebar, color.fuchsia, size=size.tiny, text="W9")
+
+plotshape(showMiniCoil and isMiniCoil, "Mini coil NR+inside", shape.square, location.belowbar, color.orange, size=size.tiny, text="MC")
+plotshape(showMiniCoil and isNr and not isInside, "NR bar", shape.circle, location.belowbar, color.gray, size=size.tiny, text="NR")
+plotshape(showMiniCoil and isInside and not isNr, "Inside bar", shape.circle, location.belowbar, color.silver, size=size.tiny, text="IB")
+
+plotshape(showConsol and not showConLabels and sig1, "Con 1 RS high", shape.triangleup, location.belowbar, color.blue, size=size.tiny, text="1")
+plotshape(showConsol and not showConLabels and sig2, "Con 2 spread", shape.triangleup, location.belowbar, color.purple, size=size.tiny, text="2")
+plotshape(showConsol and not showConLabels and sig3, "Con 3 quiet", shape.triangleup, location.belowbar, color.gray, size=size.tiny, text="3")
+plotshape(showConsol and not showConLabels and sig4, "Con 4 breath", shape.triangleup, location.belowbar, color.orange, size=size.tiny, text="4")
+plotshape(showConsol and not showConLabels and sig5, "Con 5 higher low", shape.triangleup, location.belowbar, color.green, size=size.tiny, text="5")
+plotshape(showConsol and not showConLabels and sig6, "Con 6 wick", shape.triangleup, location.belowbar, color.red, size=size.tiny, text="6")
+
+if showConsol and showConLabels and barstate.isconfirmed
+    txt = sig1 ? "C1" : sig2 ? "C2" : sig3 ? "C3" : sig4 ? "C4" : sig5 ? "C5" : sig6 ? "C6" : ""
+    if txt != ""
+        label.new(bar_index, low, txt, style=label.style_label_up, textcolor=color.white, color=color.new(color.black, 30), size=size.tiny)
+
+barCol = wtRank >= 4 ? color.aqua :
+     wtRank >= 2 ? color.lime :
+     wtRank == 1 ? color.yellow :
+     rsTransition ? color.blue :
+     rsStrong ? color.new(color.green, 0) :
+     isMiniCoil and paintNr7 ? color.orange :
+     isInside and paintInside ? color.silver :
+     isNr and paintNr7 ? color.gray :
+     rsPaintWeak ? color.new(color.red, 55) : na
+barcolor(paintBars ? barCol : na, title="Satya repaint bars")
+
+alertcondition(showSignals and wtRank == 5, "WT Bull Deep + PPV", "SATYA_OVERLAY|{{ticker}}|BULL_OS_PPV|TF:{{interval}}")
+alertcondition(showSignals and wtRank == 4, "WT Bull + PPV", "SATYA_OVERLAY|{{ticker}}|BULL_ANY_PPV|TF:{{interval}}")
+alertcondition(showSignals and wtBullAny, "WT Bull Cross", "SATYA_OVERLAY|{{ticker}}|WT_BULL|TF:{{interval}}")
+alertcondition(showSignals and ppv, "Pocket Pivot", "SATYA_OVERLAY|{{ticker}}|PPV|TF:{{interval}}")
+alertcondition(showMiniCoil and isMiniCoil, "Mini Coil NR Inside", "SATYA_OVERLAY|{{ticker}}|MINI_COIL|TF:{{interval}}")
+alertcondition(showConsol and sig1, "Consolidation 1 RS New High", "CONSOL_PREBREAK|{{ticker}}|rs_new_high|TF:{{interval}}")
+alertcondition(showConsol and sig2, "Consolidation 2 EMA Spread Delta", "CONSOL_PREBREAK|{{ticker}}|spread_delta_cross|TF:{{interval}}")
+alertcondition(showConsol and sig3, "Consolidation 3 Quiet Accum", "CONSOL_PREBREAK|{{ticker}}|quiet_accum_vol_only|TF:{{interval}}")
+alertcondition(showConsol and sig4, "Consolidation 4 BB Breathing", "CONSOL_PREBREAK|{{ticker}}|bb_width_breathing|TF:{{interval}}")
+alertcondition(showConsol and sig5, "Consolidation 5 Higher Low", "CONSOL_PREBREAK|{{ticker}}|higher_low|TF:{{interval}}")
+alertcondition(showConsol and sig6, "Consolidation 6 Wick Absorbed", "CONSOL_PREBREAK|{{ticker}}|wick_rejection_absorbed|TF:{{interval}}")
