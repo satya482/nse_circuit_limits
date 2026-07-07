@@ -49,8 +49,15 @@ if ($LASTEXITCODE -ne 0) {
 }
 Log "--- Breadth monitor complete ---"
 
+$csv  = Import-Csv "$ROOT\data\breadth_history.csv"
+$last = $csv | Select-Object -Last 1
+$up4  = $last.up4_count
+$dn4  = $last.down4_count
+$r5   = [math]::Round([double]$last.ratio_5d, 2)
+
 if (Test-Path "$ROOT\dashboard\breadth.html") {
-    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Breadth Monitor" "breadth.html generated successfully — $date" 2>&1 |
+    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Breadth Monitor" "breadth.html generated successfully — $date" `
+        --field "Up4=$up4" --field "Down4=$dn4" --field "Ratio5D=$r5" 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 }
 
@@ -58,11 +65,6 @@ if (Test-Path "$ROOT\dashboard\breadth.html") {
 Log "--- Git commit+push ---"
 $gitResult = & git -C $ROOT status --porcelain data/breadth_history.csv dashboard/breadth.html 2>&1
 if ($gitResult) {
-    $csv  = Import-Csv "$ROOT\data\breadth_history.csv"
-    $last = $csv | Select-Object -Last 1
-    $up4  = $last.up4_count
-    $dn4  = $last.down4_count
-    $r5   = [math]::Round([double]$last.ratio_5d, 2)
     $msg  = "[scan $date] breadth-monitor: up4=${up4} dn4=${dn4} ratio5d=$r5"
 
     & git -C $ROOT add data/breadth_history.csv dashboard/breadth.html 2>&1 |

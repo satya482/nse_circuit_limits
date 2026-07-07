@@ -29,8 +29,16 @@ try {
     exit 1
 }
 
-if (Test-Path "$ROOT\dashboard\footprint.html") {
-    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Institutional Footprint Scanner" "footprint.html dashboard generated successfully — $date" 2>&1 |
+$csvPath = "$ROOT\footprint_scans\footprint_$date.csv"
+if ((Test-Path "$ROOT\dashboard\footprint.html") -and (Test-Path $csvPath)) {
+    $rows    = Import-Csv $csvPath
+    $total   = $rows.Count
+    $elite   = ($rows | Where-Object { $_.rating -eq "ELITE" }).Count
+    $strong  = ($rows | Where-Object { $_.rating -eq "STRONG" }).Count
+    $build   = ($rows | Where-Object { $_.rating -eq "BUILDING" }).Count
+
+    & C:\Python313\python.exe "$ROOT\discord_alert.py" "Institutional Footprint Scanner" "footprint.html dashboard generated successfully — $date" `
+        --field "Scanned=$total" --field "Elite=$elite" --field "Strong=$strong" --field "Building=$build" 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 }
 
