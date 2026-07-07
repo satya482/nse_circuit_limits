@@ -1,0 +1,341 @@
+//@version=6
+indicator("NSE Delivery % — Bhavcopy", shorttitle="NSE·Deliv%",
+     overlay=false, max_bars_back=1000)
+
+// ══════════════════════════════════════════════════════════════════════════
+// NSE Delivery % — Bhavcopy Mapper  |  Pine Script v6
+//
+// Paste NSE equity bhavcopy rows into the CSV input.
+// The indicator auto-filters for the current chart symbol,
+// reads Date (col 2) and % Dly Qt to Traded Qty (col 14),
+// and plots a colour-coded delivery histogram.
+//
+// CSV format: standard NSE equity bhavcopy — quoted or unquoted.
+// Date formats supported: DD-MMM-YYYY (07-JAN-2025) | YYYY-MM-DD
+//
+// ALERT SETUP (one-time):
+//   Chart → Alerts → Create → condition "⚡ Any Delivery Signal"
+//   → enable Webhook → paste your endpoint URL
+//   All HIGH / LOW signals fire JSON payloads to that URL.
+// ══════════════════════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════════════════════
+// §1  INPUTS
+// ══════════════════════════════════════════════════════════════════════════
+
+// ── Bhavcopy CSV ──────────────────────────────────────────────────────────
+// Defval uses minimal unquoted format (12 commas after date puts Pct at col 14)
+// Paste full quoted bhavcopy rows here — header row is auto-skipped.
+i_csv = input.text_area(
+    defval  = 'RELIANCE,EQ,07-JAN-2025,,,,,,,,,,,,80.00\n'
+            + 'RELIANCE,EQ,08-JAN-2025,,,,,,,,,,,,45.50\n'
+            + 'RELIANCE,EQ,09-JAN-2025,,,,,,,,,,,,18.70',
+    title   = "NSE Bhavcopy rows (paste here)",
+    tooltip = "Paste NSE equity bhavcopy rows — header included or not, auto-skipped.\n"
+            + "Filter to this symbol's rows first for best performance.\n"
+            + "Quoted format: \"RELIANCE  \",\"EQ  \",\"07-JAN-2025  \",...,\"80.00  \"\n"
+            + "Unquoted:       RELIANCE,EQ,07-JAN-2025,,,,,,,,,,,,80.00\n"
+            + "Date: DD-MMM-YYYY  or  YYYY-MM-DD",
+    group   = "📥 Bhavcopy Data"
+)
+
+i_series = input.string("EQ", "Series filter (blank = all)",
+     tooltip = "Match only this series. EQ = regular equity. Leave blank to include all series.",
+     group   = "📥 Bhavcopy Data"
+)
+
+// ── Column indices (0-based, standard NSE equity bhavcopy) ────────────────
+i_cSym  = input.int(0,  "Symbol column #",   minval=0, maxval=30, group="⚙️ Column Map",
+     tooltip="0 = col A  (Symbol)")
+i_cSer  = input.int(1,  "Series column #",   minval=0, maxval=30, group="⚙️ Column Map",
+     tooltip="1 = col B  (Series)")
+i_cDate = input.int(2,  "Date column #",     minval=0, maxval=30, group="⚙️ Column Map",
+     tooltip="2 = col C  (Date)")
+i_cPct  = input.int(14, "Delivery% column #",minval=0, maxval=30, group="⚙️ Column Map",
+     tooltip="14 = col O  (% Dly Qt to Traded Qty)")
+
+// ── Thresholds ────────────────────────────────────────────────────────────
+i_hiThr = input.float(70.0, "High Delivery %",
+     minval=0.0, maxval=100.0, step=0.5, group="🎯 Thresholds")
+i_loThr = input.float(20.0, "Low  Delivery %",
+     minval=0.0, maxval=100.0, step=0.5, group="🎯 Thresholds")
+
+// ── Display ───────────────────────────────────────────────────────────────
+i_lbl  = input.bool(true,                    "Labels on signal bars", group="🎨 Display")
+i_bg   = input.bool(true,                    "Background highlight",  group="🎨 Display")
+i_tbl  = input.bool(true,                    "Info table",            group="🎨 Display")
+i_cHi  = input.color(color.new(#00C853, 0),  "High color",            group="🎨 Display")
+i_cLo  = input.color(color.new(#F44336, 0),  "Low color",             group="🎨 Display")
+i_cMid = input.color(color.new(#1976D2, 40), "Normal color",          group="🎨 Display")
+
+// ══════════════════════════════════════════════════════════════════════════
+// §2  STRING HELPERS
+//     Pine Script has no str.trim() or str.replace_all().
+//     While loops strip one occurrence per iteration.
+// ══════════════════════════════════════════════════════════════════════════
+
+// Remove ALL double-quote characters from s
+stripQ(s) =>
+    string r = s
+    int n = 0
+    while str.contains(r, '"') and n < 30
+        r := str.replace(r, '"', "")
+        n += 1
+    r
+
+// Remove ALL space characters from s
+stripS(s) =>
+    string r = s
+    int n = 0
+    while str.contains(r, " ") and n < 30
+        r := str.replace(r, " ", "")
+        n += 1
+    r
+
+// Strip both quotes and spaces (handles "RELIANCE  " → "RELIANCE")
+clean(s) => stripS(stripQ(s))
+
+// NSE three-letter month abbreviation → zero-padded number string
+monToNum(m) =>
+    m == "JAN" ? "01" : m == "FEB" ? "02" : m == "MAR" ? "03" :
+    m == "APR" ? "04" : m == "MAY" ? "05" : m == "JUN" ? "06" :
+    m == "JUL" ? "07" : m == "AUG" ? "08" : m == "SEP" ? "09" :
+    m == "OCT" ? "10" : m == "NOV" ? "11" : m == "DEC" ? "12" : na
+
+// Normalise bhavcopy date string → "YYYY-MM-DD"
+// Handles: DD-MMM-YYYY (07-JAN-2025)  and  YYYY-MM-DD (2025-01-07)
+normDate(raw) =>
+    d = clean(raw)
+    string r = na
+    // YYYY-MM-DD: length=10, separator "-" at positions 4 and 7
+    if str.length(d) == 10 and str.substring(d, 4, 5) == "-" and str.substring(d, 7, 8) == "-"
+        r := d
+    // DD-MMM-YYYY: split on "-", middle part is a month abbreviation
+    if na(r)
+        p = str.split(d, "-")
+        if array.size(p) == 3
+            dd = array.get(p, 0)
+            mn = str.upper(array.get(p, 1))
+            yr = array.get(p, 2)
+            mm = monToNum(mn)
+            if not na(mm) and str.length(yr) == 4
+                r := yr + "-" + mm + "-" + dd
+    r
+
+// ══════════════════════════════════════════════════════════════════════════
+// §3  CSV PARSING
+//     Runs ONCE on barstate.isfirst each full recalculation.
+//     Strips all double-quotes from each row (handles quoted bhavcopy),
+//     splits on comma, matches symbol + series, extracts date and pct.
+// ══════════════════════════════════════════════════════════════════════════
+
+var array<string> _D = array.new<string>()   // normalised dates  "YYYY-MM-DD"
+var array<float>  _V = array.new<float>()    // delivery %
+
+if barstate.isfirst
+    array.clear(_D)
+    array.clear(_V)
+    rows     = str.split(i_csv, "\n")
+    maxReqd  = math.max(i_cSym, math.max(i_cSer, math.max(i_cDate, i_cPct)))
+    ticker   = str.upper(syminfo.ticker)
+    serFilt  = str.upper(i_series)
+
+    for i = 0 to array.size(rows) - 1
+        row = array.get(rows, i)
+        row := str.replace(row, "\r", "")    // strip Windows CR
+        row := stripQ(row)                   // strip ALL double-quotes
+        if str.length(row) < 5
+            continue
+        cols = str.split(row, ",")
+        if array.size(cols) <= maxReqd       // insufficient columns
+            continue
+
+        // ── Symbol match ───────────────────────────────────────────────
+        sym = clean(array.get(cols, i_cSym))
+        if str.length(sym) == 0
+            continue
+        // Auto-skip header rows ("Symbol" field → SYMBOL after clean+upper)
+        if str.upper(sym) == "SYMBOL"
+            continue
+        if str.upper(sym) != ticker
+            continue
+
+        // ── Series filter (optional) ────────────────────────────────────
+        if str.length(serFilt) > 0
+            ser = str.upper(clean(array.get(cols, i_cSer)))
+            if ser != serFilt
+                continue
+
+        // ── Extract and store ────────────────────────────────────────────
+        nd  = normDate(array.get(cols, i_cDate))
+        val = str.tonumber(clean(array.get(cols, i_cPct)))
+        if not na(nd) and not na(val)
+            array.push(_D, nd)
+            array.push(_V, val)
+
+// ══════════════════════════════════════════════════════════════════════════
+// §4  PER-BAR LOOKUP
+//     Build bar's ISO date string, scan the parsed arrays for a match.
+//     First match wins (duplicate dates → first row in CSV used).
+// ══════════════════════════════════════════════════════════════════════════
+
+_mm    = month      < 10 ? "0" + str.tostring(month)      : str.tostring(month)
+_dd    = dayofmonth < 10 ? "0" + str.tostring(dayofmonth) : str.tostring(dayofmonth)
+barISO = str.tostring(year) + "-" + _mm + "-" + _dd       // "YYYY-MM-DD"
+
+float pct = na
+if array.size(_D) > 0
+    for i = 0 to array.size(_D) - 1
+        if array.get(_D, i) == barISO
+            pct := array.get(_V, i)
+            break
+
+// ══════════════════════════════════════════════════════════════════════════
+// §5  SIGNAL CLASSIFICATION
+// ══════════════════════════════════════════════════════════════════════════
+
+bool hasData = not na(pct)
+bool sigHi   = hasData and pct >= i_hiThr
+bool sigLo   = hasData and pct <= i_loThr
+bool sigMid  = hasData and not sigHi and not sigLo
+
+bCol = sigHi  ? i_cHi
+     : sigLo  ? i_cLo
+     : sigMid ? i_cMid
+     : color.new(color.gray, 80)
+
+// ══════════════════════════════════════════════════════════════════════════
+// §6  VISUALS
+// ══════════════════════════════════════════════════════════════════════════
+
+// — Histogram ——————————————————————————————————————————————————————————————
+plot(pct, "Delivery %", style=plot.style_columns, color=bCol)
+
+// — Reference lines ————————————————————————————————————————————————————————
+hline(i_hiThr, "High Thr",
+      color=color.new(#00C853, 50), linestyle=hline.style_dashed, linewidth=1)
+hline(i_loThr, "Low Thr",
+      color=color.new(#F44336, 50), linestyle=hline.style_dashed, linewidth=1)
+hline(50.0, "50% Mid",
+      color=color.new(color.gray, 70), linestyle=hline.style_dotted, linewidth=1)
+
+// — Background on signal bars ──────────────────────────────────────────────
+bgcolor(i_bg and sigHi ? color.new(i_cHi, 88) : na, title="High BG")
+bgcolor(i_bg and sigLo ? color.new(i_cLo, 88) : na, title="Low BG")
+
+// — Labels — only on HIGH / LOW bars to stay within 500-label limit ────────
+if i_lbl and (sigHi or sigLo) and barstate.isconfirmed
+    label.new(
+         bar_index, pct,
+         str.tostring(math.round(pct, 1)) + "%",
+         style     = sigHi ? label.style_label_up : label.style_label_down,
+         color     = color.new(bCol, 40),
+         textcolor = color.white,
+         size      = size.small
+    )
+
+// — Info table ————————————————————————————————————————————————————————————
+var table T = table.new(position.top_right, 2, 5,
+     bgcolor      = color.new(#0D1117, 75),
+     border_color = color.new(color.gray, 60),
+     border_width = 1, frame_width = 1,
+     frame_color  = color.new(color.gray, 50))
+
+if i_tbl and barstate.islast
+    // Row 0 — header (merged)
+    table.cell(T, 0, 0, "NSE  DELIVERY  %",
+         bgcolor=color.new(#1A237E, 30), text_color=color.white, text_size=size.small)
+    table.cell(T, 1, 0, "", bgcolor=color.new(#1A237E, 30))
+    table.merge_cells(T, 0, 0, 1, 0)
+
+    // Row 1 — date
+    table.cell(T, 0, 1, "Date",   text_color=color.gray,  text_size=size.small)
+    table.cell(T, 1, 1, barISO,   text_color=color.white, text_size=size.small)
+
+    // Row 2 — delivery %
+    table.cell(T, 0, 2, "Deliv %", text_color=color.gray, text_size=size.small)
+    table.cell(T, 1, 2,
+         hasData ? str.tostring(math.round(pct, 2)) + "%" : "—",
+         text_color=hasData ? bCol : color.gray, text_size=size.small)
+
+    // Row 3 — signal verdict
+    sigTxt = sigHi  ? "▲ HIGH"    : sigLo  ? "▼ LOW"
+           : sigMid ? "● NORMAL"  : "— NO DATA"
+    sigCol = sigHi  ? i_cHi       : sigLo  ? i_cLo
+           : sigMid ? i_cMid      : color.gray
+    table.cell(T, 0, 3, "Signal",  text_color=color.gray, text_size=size.small)
+    table.cell(T, 1, 3, sigTxt,    text_color=sigCol,     text_size=size.small)
+
+    // Row 4 — CSV row count (parse confirmation)
+    table.cell(T, 0, 4, "Rows loaded",
+         text_color=color.gray,               text_size=size.tiny)
+    table.cell(T, 1, 4, str.tostring(array.size(_D)),
+         text_color=color.new(color.white, 30), text_size=size.tiny)
+
+// ══════════════════════════════════════════════════════════════════════════
+// §7  ALERTS  — always on, no toggle
+//
+//  One-time TradingView setup:
+//    Chart → Alerts → + → Condition: "⚡ Any Delivery Signal"
+//    → Webhook URL: <your endpoint>
+//    → Frequency: Once per bar close
+//  Both HIGH and LOW signals route through this single alert.
+//
+//  Webhook JSON payloads
+//  ─────────────────────
+//  HIGH example:
+//  {
+//    "indicator"    : "NSE_DELIVERY",
+//    "signal"       : "HIGH_DELIVERY",
+//    "ticker"       : "RELIANCE",
+//    "exchange"     : "NSE",
+//    "date"         : "2025-01-07",
+//    "delivery_pct" : 80.00,
+//    "threshold_hi" : 70.0,
+//    "close"        : 2890.50
+//  }
+//
+//  LOW example:
+//  {
+//    "indicator"    : "NSE_DELIVERY",
+//    "signal"       : "LOW_DELIVERY",
+//    "ticker"       : "RELIANCE",
+//    "exchange"     : "NSE",
+//    "date"         : "2025-01-09",
+//    "delivery_pct" : 18.70,
+//    "threshold_lo" : 20.0,
+//    "close"        : 2840.25
+//  }
+// ══════════════════════════════════════════════════════════════════════════
+
+// ── alert() — dynamic JSON, fires at bar close on real-time bars ──────────
+if sigHi and barstate.isconfirmed
+    alert(
+        '{"indicator":"NSE_DELIVERY",'  +
+        '"signal":"HIGH_DELIVERY",'     +
+        '"ticker":"'    + syminfo.ticker                         + '",' +
+        '"exchange":"'  + syminfo.prefix                         + '",' +
+        '"date":"'      + barISO                                 + '",' +
+        '"delivery_pct":' + str.tostring(math.round(pct,   2))  + ',' +
+        '"threshold_hi":' + str.tostring(i_hiThr)               + ',' +
+        '"close":'        + str.tostring(math.round(close, 2))  + '}',
+        alert.freq_once_per_bar_close
+    )
+
+if sigLo and barstate.isconfirmed
+    alert(
+        '{"indicator":"NSE_DELIVERY",' +
+        '"signal":"LOW_DELIVERY",'     +
+        '"ticker":"'    + syminfo.ticker                         + '",' +
+        '"exchange":"'  + syminfo.prefix                         + '",' +
+        '"date":"'      + barISO                                 + '",' +
+        '"delivery_pct":' + str.tostring(math.round(pct,   2))  + ',' +
+        '"threshold_lo":' + str.tostring(i_loThr)               + ',' +
+        '"close":'        + str.tostring(math.round(close, 2))  + '}',
+        alert.freq_once_per_bar_close
+    )
+
+// ── alertcondition() — static messages for TradingView UI alert creation ──
+alertcondition(sigHi,          "🟢 High Delivery Day",   "NSE Delivery HIGH — webhook JSON payload fired")
+alertcondition(sigLo,          "🔴 Low Delivery Day",    "NSE Delivery LOW — webhook JSON payload fired")
+alertcondition(sigHi or sigLo, "⚡ Any Delivery Signal", "NSE Delivery signal — see webhook for JSON payload")
