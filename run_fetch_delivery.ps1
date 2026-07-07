@@ -28,5 +28,13 @@ $scanDate = Get-Date -Format "yyyy-MM-dd"
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "--- Done ---"
 
+# Runs here (not standalone) because it needs today's delivery% just fetched above.
+Log "--- Running Institutional Footprint scanner ---"
+& C:\Users\satya\nse_circuit_limits\run_institutional_footprint_scanner.ps1
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: run_institutional_footprint_scanner.ps1 failed (exit $LASTEXITCODE) ==="
+}
+Log "=== INSTITUTIONAL_FOOTPRINT DONE ==="
+
 # To register the scheduled task (run once as admin):
 # schtasks /create /tn "NSE_FetchDelivery" /tr "powershell -NonInteractive -File C:\Users\satya\nse_circuit_limits\run_fetch_delivery.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 18:15 /f

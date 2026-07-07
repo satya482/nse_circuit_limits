@@ -1,5 +1,6 @@
 # run_institutional_footprint_scanner.ps1 — Institutional Footprint Scanner
-# Run after 4:05 PM IST on trading days (after run_fetch_data.ps1 and run_fetch_delivery.ps1).
+# Triggered as a trailing step of run_fetch_delivery.ps1 (~6:15 PM), after today's
+# delivery% is in SQLite. Also runnable standalone for manual/backfilled re-runs.
 # Logs: logs/institutional_footprint_scanner_YYYY-MM-DD.log
 
 $logDir  = "C:\Users\satya\nse_circuit_limits\logs"

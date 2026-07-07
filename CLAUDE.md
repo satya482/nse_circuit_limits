@@ -38,7 +38,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
-.\run_institutional_footprint_scanner.ps1  # 6:20 PM — Institutional Footprint scanner (needs delivery% from above)
+                                 #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
 .\run_consolidation_scanner.ps1  # 4:35 PM — Consolidation Tracker: quality/imminence/tier scan
