@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NSE Delivery Formatter</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <h1>NSE Delivery Formatter</h1>
+      <p>
+        Convert NSE delivery CSV / bhavcopy data into TradingView-safe compact format:
+        <code>YYYYMMDD,Delivery%</code>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>1. Load CSV</h2>
+
+      <div class="grid">
+        <label class="fileBox">
+          <span>Upload NSE CSV</span>
+          <input id="fileInput" type="file" accept=".csv,.txt" />
+        </label>
+
+        <button id="sampleBtn" type="button">Load Sample</button>
+        <button id="clearBtn" type="button" class="secondary">Clear</button>
+      </div>
+
+      <textarea id="inputCsv" rows="11" spellcheck="false"
+        placeholder='Paste NSE CSV here. Example:
+Date,% Dly Qt to Traded Qty
+07-Jul-2026,22.02
+06-Jul-2026,30.82'></textarea>
+    </section>
+
+    <section class="card">
+      <h2>2. Column Settings</h2>
+
+      <div class="grid two">
+        <label>
+          Date column
+          <select id="dateColumn"></select>
+        </label>
+
+        <label>
+          Delivery % column
+          <select id="deliveryColumn"></select>
+        </label>
+      </div>
+
+      <p class="hint">
+        Auto-detect supports common NSE names like
+        <code>Date</code>, <code>DATE1</code>, <code>% Dly Qt to Traded Qty</code>.
+      </p>
+
+      <div class="actions">
+        <button id="convertBtn" type="button">Convert</button>
+        <button id="copyBtn" type="button" class="copy">Copy Output</button>
+        <button id="downloadBtn" type="button" class="secondary">Download TXT</button>
+      </div>
+
+      <div id="status" class="status">Ready.</div>
+    </section>
+
+    <section class="card">
+      <h2>3. TradingView Output</h2>
+
+      <textarea id="outputText" rows="14" spellcheck="false" readonly
+        placeholder="Converted output appears here..."></textarea>
+
+      <div class="stats">
+        <div><strong id="rowCount">0</strong><span>rows</span></div>
+        <div><strong id="rangeText">—</strong><span>date range</span></div>
+        <div><strong id="charCount">0</strong><span>chars</span></div>
+      </div>
+    </section>
+
+    <section class="card notes">
+      <h2>TradingView Paste Format</h2>
+      <pre>DateKey,Delivery%
+20260707,22.02
+20260706,30.82
+20260401,51.33</pre>
+      <p>
+        This numeric date format avoids TradingView Pine Script issues with
+        <code>Mar</code>/<code>Apr</code> month-name parsing.
+      </p>
+    </section>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
