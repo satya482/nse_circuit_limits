@@ -31,7 +31,7 @@ NSE:JINDRILL,NSE:MASTERTR,NSE:ICICIGI,NSE:SENCO,NSE:BHARTIHEXA,NSE:DPABHUSHAN,NS
 | [ASAHIINDIA](https://in.tradingview.com/chart/?symbol=NSE:ASAHIINDIA)<br><sub>↓CMF7d</sub> | Automotive and architectural glass solutions manufacturer | 1w | TOUCH | 1w | +0.3% | +0.66% | 876.45 | 4w | 20%  |
 | [RATNAMANI](https://in.tradingview.com/chart/?symbol=NSE:RATNAMANI)<br><sub>↓CMF30d</sub> | Stainless steel seamless welded pipes oil gas petrochemical power | 1w | TOUCH | 1w | +3.1% | -0.48% | 2590.50 | — | 20%  |
 | [JINDRILL](https://in.tradingview.com/chart/?symbol=NSE:JINDRILL)<br><sub>↑CMF0d</sub> | Offshore jack-up rigs drilling services oil gas sector | 1w | ABOVE | 1w | +8.6% | +11.26% | 601.05 | — | 20%  |
-| [MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR)<br><sub>↑CMF0d · DEL63%(T-1)</sub> |  | 1w | ABOVE | 1w | +5.6% | +7.00% | 80.51 | 1w | 20%  |
+| [MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR)<br><sub>↑CMF0d</sub> |  | 1w | ABOVE | 1w | +5.6% | +7.00% | 80.51 | 1w | 20%  |
 | [BHARTIHEXA](https://in.tradingview.com/chart/?symbol=NSE:BHARTIHEXA)<br><sub>↓CMF10d</sub> | Mobile, fixed-line, broadband services Rajasthan and Northeast circles | 1w | ABOVE | 1w | +4.5% | +1.31% | 1519.90 | 8w | 20%  |
 | [DPABHUSHAN](https://in.tradingview.com/chart/?symbol=NSE:DPABHUSHAN)<br><sub>↑CMF3d</sub> |  | 1w | ABOVE | 1w | +11.2% | +12.25% | 1076.05 | — | 20%  |
 | [RHIM](https://in.tradingview.com/chart/?symbol=NSE:RHIM)<br><sub>↓CMF4d</sub> | Refractory materials for steel furnaces above 1200°C | 1w | ABOVE | 1w | +1.6% | +1.60% | 390.35 | 2w | 20%  |

@@ -148,16 +148,16 @@ NSE:JINDRILL,NSE:BALAMINES,NSE:ORCHPHARMA,NSE:KIRLOSENG,NSE:ACUTAAS,NSE:ALKYLAMI
 | [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK)<br><sub>↑CMF8d</sub> | 16d | +10.7% | Steel pipes, forgings, tubes for automotive, industrial | -1.92% | 1453.60 | — | 20%  |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↑CMF12d</sub> | 17d | +40.8% | Precision aerospace components and consumer product manufacturing | +5.76% | 259.00 | — | 20% 🟦 |
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS)<br><sub>↑CMF4d</sub> | 17d | +11.0% | Differential assemblies and gears for electric vehicles | -1.36% | 662.05 | — | 20%  |
-| [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF22d · DEL39%(T-1)</sub> | 17d | +32.9% | Water treatment EPC contractor, municipal and industrial clients | +1.86% | 410.05 | — | 10% 🟨 |
+| [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF22d</sub> | 17d | +32.9% | Water treatment EPC contractor, municipal and industrial clients | +1.86% | 410.05 | — | 10% 🟨 |
 | [ALKEM](https://in.tradingview.com/chart/?symbol=NSE:ALKEM)<br><sub>↓CMF28d</sub> | 17d | +5.1% | Pharma manufacturer: branded generics, APIs, nutraceuticals India | -1.09% | 5606.00 | — | 20%  |
-| [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF12d</sub> | 17d | +12.1% | Sugar substitutes, glucose powders, health FMCG retail | -2.77% | 559.90 | — | 20%  |
+| [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF12d · DEL58%</sub> | 17d | +12.1% | Sugar substitutes, glucose powders, health FMCG retail | -2.77% | 559.90 | — | 20%  |
 | [IVALUE](https://in.tradingview.com/chart/?symbol=NSE:IVALUE)<br><sub>↓CMF11d</sub> | 17d | +22.1% | IT distribution, cloud solutions, enterprise digital transformation | +1.89% | 286.00 | — | 20%  |
 | [NIITMTS](https://in.tradingview.com/chart/?symbol=NSE:NIITMTS)<br><sub>↓CMF1d</sub> | 17d | +14.3% | IT training services corporate upskilling global | -0.10% | 244.35 | — | 20%  |
 | [ESCORTS](https://in.tradingview.com/chart/?symbol=NSE:ESCORTS)<br><sub>↓CMF9d</sub> | 17d | +4.2% | Farm tractors, construction equipment, railway parts manufacturing | -1.98% | 2919.80 | — | 20%  |
 | [GLAXO](https://in.tradingview.com/chart/?symbol=NSE:GLAXO)<br><sub>↑CMF13d</sub> | 17d | +13.6% | Pharmaceuticals manufacturing vaccines respiratory gastrointestinal antibiotics India | +0.18% | 2410.80 | — | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF0d</sub> | 18d | +37.0% | Online test prep and upskilling courses, competitive exams | -0.58% | 145.20 | — | 20%  |
 | [HFCL](https://in.tradingview.com/chart/?symbol=NSE:HFCL)<br><sub>↑CMF4d</sub> | 18d | +24.9% | Optical fiber cables, telecom equipment, defense infrastructure | -5.00% | 214.74 | — | 5% 🟥 |
-| [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP)<br><sub>↑CMF8d · DEL61%(T-1)</sub> | 18d | +17.0% | Residential commercial real estate developer urban markets | -3.11% | 1979.50 | — | 20%  |
+| [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP)<br><sub>↑CMF8d</sub> | 18d | +17.0% | Residential commercial real estate developer urban markets | -3.11% | 1979.50 | — | 20%  |
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY)<br><sub>↑CMF10d</sub> | 18d | +13.9% | Express parcel delivery and freight logistics for e-commerce | -3.11% | 501.80 | — | 20%  |
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY)<br><sub>↑CMF16d</sub> | 18d | +15.2% | Premium residential office retail hospitality real estate Mumbai | -1.90% | 1870.10 | — | 20%  |
 | [EIEL](https://in.tradingview.com/chart/?symbol=NSE:EIEL)<br><sub>↓CMF3d</sub> | 18d | +21.3% | Water treatment plants design construction municipal sector | -2.80% | 225.01 | — | 20%  |
@@ -182,7 +182,7 @@ NSE:JINDRILL,NSE:BALAMINES,NSE:ORCHPHARMA,NSE:KIRLOSENG,NSE:ACUTAAS,NSE:ALKYLAMI
 | [PGEL](https://in.tradingview.com/chart/?symbol=NSE:PGEL)<br><sub>↑CMF18d</sub> | 19d | +22.6% | EMS plastic moulding consumer electronics appliances manufacturing | -2.75% | 562.70 | — | 20%  |
 | [PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD)<br><sub>↑CMF5d</sub> | 19d | +16.7% | Retail malls, commercial offices, hospitality real estate developer | -2.53% | 2022.50 | — | 20%  |
 | [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>↑CMF6d</sub> | 19d | +17.2% | Stockbroking wealth management MSME lending insurance distribution financial services | -1.16% | 769.10 | — | 20%  |
-| [HOMEFIRST](https://in.tradingview.com/chart/?symbol=NSE:HOMEFIRST)<br><sub>↑CMF18d</sub> | 19d | +16.5% | Affordable housing loans for first-time home buyers | -0.82% | 1199.80 | — | 20%  |
+| [HOMEFIRST](https://in.tradingview.com/chart/?symbol=NSE:HOMEFIRST)<br><sub>↑CMF18d · DEL84%</sub> | 19d | +16.5% | Affordable housing loans for first-time home buyers | -0.82% | 1199.80 | — | 20%  |
 | [GREAVESCOT](https://in.tradingview.com/chart/?symbol=NSE:GREAVESCOT)<br><sub>↑CMF30d</sub> | 19d | +27.4% | Engine manufacturer, electric vehicles, agricultural power equipment | +1.18% | 224.57 | — | 20%  |
 | [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA)<br><sub>↑CMF22d</sub> | 19d | +22.4% | Wealth management, advisory, broking for high-net-worth individuals | -3.60% | 1848.10 | — | 20%  |
 | [ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS)<br><sub>↑CMF13d</sub> | 19d | +19.0% | Premium hotel chain operating Marriott Luxury Collection properties | -4.90% | 177.63 | — | 20%  |
@@ -301,7 +301,7 @@ NSE:JINDRILL,NSE:BALAMINES,NSE:ORCHPHARMA,NSE:KIRLOSENG,NSE:ACUTAAS,NSE:ALKYLAMI
 | [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND)<br><sub>↓CMF1d</sub> | 22d | +16.7% | Textiles apparel real estate FMCG engineering conglomerate | -2.42% | 595.55 | ✓ | 20%  |
 | [INOXGREEN](https://in.tradingview.com/chart/?symbol=NSE:INOXGREEN)<br><sub>↑CMF12d</sub> | 22d | +14.6% | Wind turbine operations maintenance services India | -4.28% | 195.84 | ✓ | 20%  |
 | [JTLIND](https://in.tradingview.com/chart/?symbol=NSE:JTLIND)<br><sub>↑CMF21d</sub> | 25d | +17.8% | ERW steel pipes manufacturing for infrastructure construction | -5.87% | 77.61 | ✓ | 20% 🟦 |
-| [INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA)<br><sub>↑CMF23d · DEL50%(T-1)</sub> | 26d | +29.2% | Cryogenic equipment manufacturer for LNG and industrial gas sectors | +3.85% | 1875.90 | ✓ | 20%  |
+| [INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA)<br><sub>↑CMF23d</sub> | 26d | +29.2% | Cryogenic equipment manufacturer for LNG and industrial gas sectors | +3.85% | 1875.90 | ✓ | 20%  |
 | [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE)<br><sub>↓CMF1d</sub> | 26d | +7.1% | Contract research manufacturing pharma biotech services | -0.02% | 1208.30 | ✓ | 20%  |
 | [MSTCLTD](https://in.tradingview.com/chart/?symbol=NSE:MSTCLTD)<br><sub>↑CMF24d</sub> | 32d | +52.5% | Steel scrap trading, e-commerce platform, government procurement auctions | -3.74% | 655.75 | — | 10% 🟨 |
 | [IDFCFIRSTB](https://in.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB)<br><sub>↓CMF1d</sub> | 35d | +14.1% | Retail banking, consumer loans, deposits, digital services | -3.25% | 77.82 | — | 20%  |
