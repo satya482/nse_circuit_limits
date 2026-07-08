@@ -9,6 +9,23 @@ disabled it for this repo — it hangs/is too slow in practice. **Always commit 
 here.** This is an explicit, standing exception to the default "never skip hooks" rule — it applies to
 this repo only, not others.
 
+## PowerShell scripts — ASCII only, no em dashes/curly quotes in strings
+
+Windows PowerShell 5.1 reads a `.ps1` file via the system codepage (Windows-1252) unless it has a
+UTF-8 BOM. This repo's `.ps1` files are plain UTF-8 **without** a BOM. A non-ASCII character
+(em dash `—`, curly quotes, etc.) inside a real string literal gets mis-decoded and corrupts the
+tokenizer's quote tracking — the whole script then fails to parse. Failure mode is silent: the
+scheduled task just shows `LastTaskResult` non-zero, the script's own log file is never even
+created (the parse error happens before the first line runs), and nothing posts to Discord.
+Comments (`# ...`) are safe; string literals are not.
+
+- Use plain ASCII (`-`, not `—`) in any string embedded in a `.ps1` file.
+- Before committing a `.ps1` change, run `tools\check_ps1_syntax.ps1` — parses every `.ps1` in the
+  repo and reports line/column of any syntax error. Catches this class of bug in seconds.
+- Root cause + incident: 2026-07-08, both `run_breadth_monitor.ps1` and
+  `run_institutional_footprint_scanner.ps1` silently no-op'd for a full day because commit
+  `be74fb0` added an em dash to a Discord alert message string in both files.
+
 ## SEBI Disclaimer — mandatory on every output file
 
 Every `.md` and `.html` file generated or created in this repo **must** include the SEBI disclaimer.
