@@ -6,11 +6,12 @@ indicator("Satya All Overlay", shorttitle="SatyaOverlay", overlay=true, max_line
 // ----------------------------------------------------------------------------- Inputs
 gMaster = "Master"
 showEma = input.bool(true, "EMA steplines", group=gMaster)
-showZlema25 = input.bool(true, "ZLEMA25 stepline", group=gMaster)
+showZlema25 = input.bool(false, "ZLEMA25 stepline", group=gMaster)
 showWeekly = input.bool(true, "Weekly projection boxes", group=gMaster)
 showMonthly = input.bool(true, "Monthly projection boxes", group=gMaster)
 showSignals = input.bool(true, "WT / PPV / RS markers", group=gMaster)
 showMiniCoilBox = input.bool(true, "Mini-coil boxes", group=gMaster)
+showBbKcSqueezeBg = input.bool(true, "BB/KC squeeze background", group=gMaster)
 paintBars = input.bool(true, "Repaint bars", group=gMaster)
 
 gEma = "EMA Steplines"
@@ -46,6 +47,9 @@ ob1 = input.float(60, "WT deep overbought", group=gWT)
 ob2 = input.float(53, "WT soft overbought", group=gWT)
 ppLen = input.int(10, "PPV down days", minval=1, maxval=50, group=gWT)
 benchSymbol = input.symbol("NSE:NIFTYMIDSML400", "RS Benchmark", group=gWT)
+
+gSqz = "BB/KC Squeeze"
+sqzBgColor = input.color(color.new(color.blue, 65), "Background", group=gSqz)
 
 gCoil = "Mini Coil Box"
 nrLen = input.int(7, "NR length", minval=2, maxval=20, group=gCoil)
@@ -229,6 +233,18 @@ rsWeekly = stockCloseW / benchCloseW * 1000
 rsWeeklyEma9 = ta.ema(rsWeekly, 9)
 rsWeeklyGate = rsLine > rsWeeklyEma9 and rsWeeklyEma9 > rsWeeklyEma9[1]
 
+// ----------------------------------------------------------------------------- BB/KC squeeze
+bbBasis = ta.sma(close, 20)
+bbStd = ta.stdev(close, 20, false)
+bbUpper = bbBasis + 2.0 * bbStd
+bbLower = bbBasis - 2.0 * bbStd
+sqzTr = math.max(high - low, math.max(math.abs(high - close[1]), math.abs(low - close[1])))
+kcAtr = ta.sma(sqzTr, 20)
+kcBasis = ta.sma(close, 20)
+kcUpper = kcBasis + 1.5 * kcAtr
+kcLower = kcBasis - 1.5 * kcAtr
+bbKcSqueeze = bbUpper < kcUpper and bbLower > kcLower
+
 // ----------------------------------------------------------------------------- Mini-coil box
 rangeNow = high - low
 isInside = high < high[1] and low > low[1]
@@ -243,12 +259,14 @@ if showMiniCoilBox and isMiniCoil
         box.delete(oldBx)
 
 // ----------------------------------------------------------------------------- Visuals and alerts
-plotshape(showSignals and wtBullAny, "WT bull cross", shape.triangleup, location.belowbar, color.white, size=size.tiny)
-plotshape(showSignals and wtBearAny, "WT bear cross", shape.triangledown, location.abovebar, color.yellow, size=size.tiny)
-plotshape(showSignals and ppv, "Pocket pivot", shape.circle, location.belowbar, color.blue, size=size.tiny)
-plotshape(showSignals and not rsStrong and not rsCrossDown, "RS down", shape.triangledown, location.abovebar, color.rgb(188, 85, 85), size=size.tiny)
+//plotshape(showSignals and wtBullAny, "WT bull cross", shape.triangleup, location.belowbar, color.white, size=size.tiny)
+//plotshape(showSignals and wtBearAny, "WT bear cross", shape.triangledown, location.abovebar, color.yellow, size=size.tiny)
+//plotshape(showSignals and ppv, "Pocket pivot", shape.circle, location.belowbar, color.blue, size=size.tiny)
+plotshape(showSignals and not rsStrong and not rsCrossDown, "RS down", shape.triangledown, location.abovebar, color.orange, size=size.tiny)
 plotshape(showSignals and rsCrossUp, "RS transition up", shape.triangleup, location.belowbar, color.green, size=size.tiny)
 plotshape(showSignals and rsCrossDown, "RS transition down", shape.triangledown, location.abovebar, color.red, size=size.tiny)
+
+bgcolor(showBbKcSqueezeBg and bbKcSqueeze ? sqzBgColor : na, title="BB/KC Squeeze")
 
 barCol = ppv ? color.blue :
      wtBullAny ? color.white :
