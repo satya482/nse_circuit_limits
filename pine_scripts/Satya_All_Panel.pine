@@ -275,28 +275,19 @@ else if barstate.islast and not showFloat
             table.cell(T, col, row, "", bgcolor=color.new(color.black, 100), text_color=color.new(color.black, 100), text_size=size.tiny)
 
 // ----------------------------------------------------------------------------- Compact status table
-rangeNow = high - low
-isInside = high < high[1] and low > low[1]
-isNr = rangeNow <= ta.lowest(high - low, 7)
-coil = isInside and isNr ? "NRIB" : isNr ? "NR" : isInside ? "IB" : "-"
-rsTxt = rsTransition ? "RS trans" : rsStrong ? "RS strong" : "RS weak"
 conTxt = str.tostring(math.round(qualityScore)) + "/" + str.tostring(math.round(imminenceScore))
 
-var table S = table.new(position.top_right, 5, 2, bgcolor=color.new(color.black, 85), border_width=1)
+var table S = table.new(position.top_right, 3, 2, bgcolor=color.new(color.black, 85), border_width=1)
 if barstate.islast and showStatus
-    table.cell(S, 0, 0, "RS", text_color=color.white, text_size=size.tiny)
-    table.cell(S, 1, 0, "WT", text_color=color.white, text_size=size.tiny)
-    table.cell(S, 2, 0, "PPV", text_color=color.white, text_size=size.tiny)
-    table.cell(S, 3, 0, "Coil", text_color=color.white, text_size=size.tiny)
-    table.cell(S, 4, 0, "Q/I", text_color=color.white, text_size=size.tiny)
-    table.cell(S, 0, 1, rsTxt, text_color=rsStrong ? color.lime : color.red, text_size=size.tiny)
-    table.cell(S, 1, 1, wtSig, text_color=wtRank > 0 ? color.lime : wtRank < 0 ? color.red : color.gray, text_size=size.tiny)
-    table.cell(S, 2, 1, ppv ? "YES" : "-", text_color=ppv ? color.aqua : color.gray, text_size=size.tiny)
-    table.cell(S, 3, 1, coil, text_color=coil == "NRIB" ? color.orange : color.gray, text_size=size.tiny)
-    table.cell(S, 4, 1, conTxt, text_color=imminenceScore >= 60 ? color.orange : color.silver, text_size=size.tiny)
+    table.cell(S, 0, 0, "WT", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 1, 0, "PPV", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 2, 0, "Q/I", text_color=color.white, text_size=size.tiny)
+    table.cell(S, 0, 1, wtSig, text_color=wtRank > 0 ? color.lime : wtRank < 0 ? color.red : color.gray, text_size=size.tiny)
+    table.cell(S, 1, 1, ppv ? "YES" : "-", text_color=ppv ? color.aqua : color.gray, text_size=size.tiny)
+    table.cell(S, 2, 1, conTxt, text_color=imminenceScore >= 60 ? color.orange : color.silver, text_size=size.tiny)
 else if barstate.islast and not showStatus
     for row = 0 to 1
-        for col = 0 to 4
+        for col = 0 to 2
             table.cell(S, col, row, "", bgcolor=color.new(color.black, 100), text_color=color.new(color.black, 100), text_size=size.tiny)
 
 alertcondition(showWT and wtRank == 5, "WT Bull Deep + PPV", "SATYA_PANEL|{{ticker}}|BULL_OS_PPV|TF:{{interval}}")
