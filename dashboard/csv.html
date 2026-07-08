@@ -4,37 +4,119 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>NSE Delivery CSV Formatter</title>
-  <link rel="stylesheet" href="../docs/styles.css" />
   <style>
-    .toplink{display:inline-block;color:#93c5fd;text-decoration:none;margin-bottom:10px}.toplink:hover{text-decoration:underline}
+    :root {
+      --bg: #0b1020;
+      --card: #121a2e;
+      --muted: #91a0b8;
+      --text: #edf3ff;
+      --line: #26324e;
+      --accent: #6ee7b7;
+      --accent2: #60a5fa;
+      --danger: #fb7185;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(circle at top, #18223f, var(--bg));
+      color: var(--text);
+    }
+    .wrap { width: min(1000px, calc(100% - 28px)); margin: 0 auto; padding: 24px 0 48px; }
+    .sebi {
+      border: 1px solid var(--line);
+      background: #07101f;
+      color: var(--muted);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .toplink { display: inline-block; color: #93c5fd; text-decoration: none; margin-bottom: 10px; }
+    .toplink:hover { text-decoration: underline; }
+    .hero { padding: 18px 4px 10px; }
+    h1 { font-size: clamp(28px, 5vw, 48px); margin: 0 0 8px; }
+    h2 { font-size: 18px; margin: 0 0 14px; }
+    p { color: var(--muted); line-height: 1.55; }
+    .card {
+      background: color-mix(in srgb, var(--card) 92%, white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      margin: 16px 0;
+      box-shadow: 0 16px 45px rgb(0 0 0 / 22%);
+    }
+    .grid { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: end; }
+    .grid.two { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 700px) {
+      .grid, .grid.two { grid-template-columns: 1fr; }
+    }
+    label { display: grid; gap: 8px; color: var(--muted); font-size: 14px; }
+    .fileBox { border: 1px dashed #445476; border-radius: 8px; padding: 12px; }
+    input[type="file"] { color: var(--muted); max-width: 100%; }
+    textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #08101f;
+      color: var(--text);
+      border-radius: 8px;
+      padding: 12px;
+      font: 13px/1.45 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }
+    textarea { margin-top: 12px; resize: vertical; }
+    button {
+      border: 0;
+      border-radius: 8px;
+      padding: 12px 16px;
+      background: var(--accent);
+      color: #052014;
+      font-weight: 800;
+      cursor: pointer;
+    }
+    button:hover { filter: brightness(1.05); }
+    button.secondary { background: #1f2b45; color: var(--text); border: 1px solid var(--line); }
+    button.copy { background: var(--accent2); color: #071426; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+    .status { margin-top: 12px; color: var(--muted); font-size: 14px; }
+    .status.error { color: var(--danger); }
+    .hint { margin: 10px 0 0; font-size: 14px; }
+    code, pre { background: #07101f; border: 1px solid var(--line); border-radius: 8px; }
+    code { padding: 2px 6px; }
+    pre { padding: 14px; overflow: auto; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 12px; }
+    .stats div { border: 1px solid var(--line); background: #0a1222; border-radius: 8px; padding: 12px; }
+    .stats strong { display: block; font-size: 18px; }
+    .stats span { color: var(--muted); font-size: 12px; }
+    .notes { margin-bottom: 0; }
   </style>
 </head>
 <body>
   <main class="wrap">
-    <a class="toplink" href="./breadth.html">← Back to Breadth Dashboard</a>
+    <div class="sebi">
+      Warning: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+    </div>
+    <a class="toplink" href="./breadth.html">Back to Breadth Dashboard</a>
 
     <section class="hero">
       <h1>NSE Delivery CSV Formatter</h1>
-      <p>
-        Convert NSE delivery CSV / bhavcopy data into TradingView-safe compact format:
-        <code>YYYYMMDD,Delivery%</code>
-      </p>
+      <p>Convert NSE delivery CSV or text bhavcopy data into TradingView-safe compact format: <code>YYYYMMDD,Delivery%</code></p>
     </section>
 
     <section class="card">
-      <h2>1. Load CSV</h2>
+      <h2>1. Load CSV/TXT</h2>
       <div class="grid">
         <label class="fileBox">
-          <span>Upload NSE CSV</span>
-          <input id="fileInput" type="file" accept=".csv,.txt" />
+          <span>Upload NSE CSV or TXT</span>
+          <input id="fileInput" type="file" accept=".csv,.txt,text/csv,text/plain" />
         </label>
         <button id="sampleBtn" type="button">Load Sample</button>
         <button id="clearBtn" type="button" class="secondary">Clear</button>
       </div>
-      <textarea id="inputCsv" rows="11" spellcheck="false" placeholder='Paste NSE CSV here. Example:
+      <textarea id="inputCsv" rows="11" spellcheck="false" placeholder="Paste NSE CSV/TXT here. Example:
 Date,% Dly Qt to Traded Qty
 07-Jul-2026,22.02
-06-Jul-2026,30.82'></textarea>
+06-Jul-2026,30.82"></textarea>
     </section>
 
     <section class="card">
@@ -43,10 +125,7 @@ Date,% Dly Qt to Traded Qty
         <label>Date column<select id="dateColumn"></select></label>
         <label>Delivery % column<select id="deliveryColumn"></select></label>
       </div>
-      <p class="hint">
-        Auto-detect supports common NSE names like
-        <code>Date</code>, <code>DATE1</code>, <code>% Dly Qt to Traded Qty</code>.
-      </p>
+      <p class="hint">Auto-detect supports common NSE names like <code>Date</code>, <code>DATE1</code>, and <code>% Dly Qt to Traded Qty</code>.</p>
       <div class="actions">
         <button id="convertBtn" type="button">Convert</button>
         <button id="copyBtn" type="button" class="copy">Copy Output</button>
@@ -60,7 +139,7 @@ Date,% Dly Qt to Traded Qty
       <textarea id="outputText" rows="14" spellcheck="false" readonly placeholder="Converted output appears here..."></textarea>
       <div class="stats">
         <div><strong id="rowCount">0</strong><span>rows</span></div>
-        <div><strong id="rangeText">—</strong><span>date range</span></div>
+        <div><strong id="rangeText">-</strong><span>date range</span></div>
         <div><strong id="charCount">0</strong><span>chars</span></div>
       </div>
     </section>
@@ -71,13 +150,267 @@ Date,% Dly Qt to Traded Qty
 20260707,22.02
 20260706,30.82
 20260401,51.33</pre>
-      <p>
-        This numeric date format avoids Pine Script issues with
-        <code>Mar</code>/<code>Apr</code> month-name parsing.
-      </p>
     </section>
+    <div class="sebi">
+      Warning: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+    </div>
   </main>
 
-  <script src="../docs/app.js"></script>
+  <script>
+    const inputCsv = document.getElementById("inputCsv");
+    const outputText = document.getElementById("outputText");
+    const fileInput = document.getElementById("fileInput");
+    const dateColumn = document.getElementById("dateColumn");
+    const deliveryColumn = document.getElementById("deliveryColumn");
+    const statusEl = document.getElementById("status");
+    const rowCountEl = document.getElementById("rowCount");
+    const rangeTextEl = document.getElementById("rangeText");
+    const charCountEl = document.getElementById("charCount");
+
+    const sample = `Date,% Dly Qt to Traded Qty
+07-Jul-2026,22.02
+06-Jul-2026,30.82
+03-Jul-2026,41.55
+30-Apr-2026,51.33
+01-Apr-2026,48.10
+30-Mar-2026,62.42
+02-Mar-2026,39.77`;
+
+    function setStatus(msg, isError = false) {
+      statusEl.textContent = msg;
+      statusEl.className = isError ? "status error" : "status";
+    }
+
+    function parseCsv(text) {
+      const rows = [];
+      let row = [];
+      let cell = "";
+      let quoted = false;
+
+      for (let i = 0; i < text.length; i++) {
+        const ch = text[i];
+        const next = text[i + 1];
+
+        if (ch === '"' && quoted && next === '"') {
+          cell += '"';
+          i++;
+        } else if (ch === '"') {
+          quoted = !quoted;
+        } else if ((ch === "," || ch === "\t") && !quoted) {
+          row.push(cell);
+          cell = "";
+        } else if ((ch === "\n" || ch === "\r") && !quoted) {
+          if (ch === "\r" && next === "\n") i++;
+          row.push(cell);
+          if (row.some(v => v.trim() !== "")) rows.push(row);
+          row = [];
+          cell = "";
+        } else {
+          cell += ch;
+        }
+      }
+
+      row.push(cell);
+      if (row.some(v => v.trim() !== "")) rows.push(row);
+      return rows;
+    }
+
+    function normalizeHeader(h) {
+      return String(h || "").toLowerCase().replace(/["'%._\-()]/g, " ").replace(/\s+/g, " ").trim();
+    }
+
+    function detectColumns(headers) {
+      const norm = headers.map(normalizeHeader);
+      let dateIdx = norm.findIndex(h => h === "date" || h === "date1" || h.includes("date"));
+      let delIdx = norm.findIndex(h =>
+        h.includes("dly qt to traded qty") ||
+        h.includes("delivery") ||
+        (h.includes("dly") && h.includes("traded")) ||
+        h.includes("deliv")
+      );
+
+      if (dateIdx < 0 && headers.length >= 1) dateIdx = 0;
+      if (delIdx < 0 && headers.length >= 2) delIdx = headers.length - 1;
+      return { dateIdx, delIdx };
+    }
+
+    function rebuildColumnDropdowns() {
+      const rows = parseCsv(inputCsv.value);
+      const headers = rows.length ? rows[0] : [];
+      dateColumn.innerHTML = "";
+      deliveryColumn.innerHTML = "";
+
+      if (!headers.length) {
+        const opt = new Option("No columns detected", "-1");
+        dateColumn.add(opt.cloneNode(true));
+        deliveryColumn.add(opt);
+        return;
+      }
+
+      headers.forEach((h, idx) => {
+        const label = `${idx}: ${String(h || "").trim() || "(blank)"}`;
+        dateColumn.add(new Option(label, String(idx)));
+        deliveryColumn.add(new Option(label, String(idx)));
+      });
+
+      const detected = detectColumns(headers);
+      dateColumn.value = String(detected.dateIdx);
+      deliveryColumn.value = String(detected.delIdx);
+    }
+
+    function parseNseDateToKey(value) {
+      const s = String(value || "").trim().replace(/^"|"$/g, "");
+      if (!s) return null;
+      if (/^\d{8}$/.test(s)) return s;
+
+      let m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (m) return `${m[1]}${m[2]}${m[3]}`;
+
+      m = s.match(/^(\d{1,2})-([A-Za-z]{3})-(\d{4})$/);
+      if (m) {
+        const months = { jan: "01", feb: "02", mar: "03", apr: "04", may: "05", jun: "06", jul: "07", aug: "08", sep: "09", oct: "10", nov: "11", dec: "12" };
+        const mm = months[m[2].toLowerCase()];
+        if (mm) return `${m[3]}${mm}${m[1].padStart(2, "0")}`;
+      }
+
+      const dt = new Date(s);
+      if (!Number.isNaN(dt.getTime())) {
+        return `${dt.getFullYear()}${String(dt.getMonth() + 1).padStart(2, "0")}${String(dt.getDate()).padStart(2, "0")}`;
+      }
+      return null;
+    }
+
+    function cleanNumber(value) {
+      const n = Number(String(value || "").trim().replace(/^"|"$/g, "").replace(/,/g, ""));
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function keyToIso(key) {
+      return `${key.slice(0, 4)}-${key.slice(4, 6)}-${key.slice(6, 8)}`;
+    }
+
+    function convert() {
+      const rows = parseCsv(inputCsv.value);
+      if (rows.length < 2) {
+        setStatus("Paste or upload CSV/TXT first.", true);
+        return;
+      }
+
+      const dIdx = Number(dateColumn.value);
+      const vIdx = Number(deliveryColumn.value);
+      if (dIdx < 0 || vIdx < 0) {
+        setStatus("Could not detect columns. Select them manually.", true);
+        return;
+      }
+
+      const out = [["DateKey", "Delivery%"]];
+      let skipped = 0;
+
+      for (let i = 1; i < rows.length; i++) {
+        const key = parseNseDateToKey(rows[i][dIdx]);
+        const val = cleanNumber(rows[i][vIdx]);
+        if (!key || val === null) {
+          skipped++;
+          continue;
+        }
+        out.push([key, String(Number(val.toFixed(2)))]);
+      }
+
+      const text = out.map(r => r.join(",")).join("\n");
+      outputText.value = text;
+
+      const dataRows = out.slice(1);
+      rowCountEl.textContent = String(dataRows.length);
+      charCountEl.textContent = String(text.length);
+      if (dataRows.length) {
+        const keys = dataRows.map(r => r[0]).sort();
+        rangeTextEl.textContent = `${keyToIso(keys[0])} to ${keyToIso(keys[keys.length - 1])}`;
+      } else {
+        rangeTextEl.textContent = "-";
+      }
+
+      setStatus(skipped ? `Converted ${dataRows.length} rows. Skipped ${skipped} invalid rows.` : `Converted ${dataRows.length} rows.`, skipped > 0);
+    }
+
+    function readFileAsText(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ""));
+        reader.onerror = () => reject(reader.error || new Error("Could not read file."));
+        reader.readAsText(file);
+      });
+    }
+
+    async function loadFile(file) {
+      const lowerName = file.name.toLowerCase();
+      if (!lowerName.endsWith(".csv") && !lowerName.endsWith(".txt")) {
+        setStatus("Upload a .csv or .txt file.", true);
+        fileInput.value = "";
+        return;
+      }
+
+      try {
+        const text = typeof file.text === "function" ? await file.text() : await readFileAsText(file);
+        inputCsv.value = text;
+        rebuildColumnDropdowns();
+        setStatus(`Loaded ${file.name}.`);
+      } catch (err) {
+        setStatus(err && err.message ? err.message : "Could not read file.", true);
+      }
+    }
+
+    async function copyOutput() {
+      if (!outputText.value.trim()) {
+        setStatus("Nothing to copy. Convert first.", true);
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(outputText.value);
+      } catch {
+        outputText.select();
+        document.execCommand("copy");
+      }
+      setStatus("Copied output to clipboard.");
+    }
+
+    function downloadOutput() {
+      if (!outputText.value.trim()) {
+        setStatus("Nothing to download. Convert first.", true);
+        return;
+      }
+      const blob = new Blob([outputText.value], { type: "text/plain;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "nse-delivery-tradingview.txt";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(a.href);
+    }
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files && fileInput.files[0];
+      if (file) loadFile(file);
+    });
+    inputCsv.addEventListener("input", rebuildColumnDropdowns);
+    document.getElementById("sampleBtn").addEventListener("click", () => {
+      inputCsv.value = sample;
+      rebuildColumnDropdowns();
+      convert();
+    });
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      inputCsv.value = "";
+      outputText.value = "";
+      rowCountEl.textContent = "0";
+      rangeTextEl.textContent = "-";
+      charCountEl.textContent = "0";
+      rebuildColumnDropdowns();
+      setStatus("Cleared.");
+    });
+    document.getElementById("convertBtn").addEventListener("click", convert);
+    document.getElementById("copyBtn").addEventListener("click", copyOutput);
+    document.getElementById("downloadBtn").addEventListener("click", downloadOutput);
+    rebuildColumnDropdowns();
+  </script>
 </body>
 </html>
