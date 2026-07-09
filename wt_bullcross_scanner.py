@@ -191,6 +191,68 @@ def _compute_rs_pct_map(all_data: dict, bench_series: pd.Series) -> dict[str, fl
     return pct.round(1).to_dict()
 
 
+CROSS_OS_THRESHOLD = -53.0  # matches WaveTrendCalculator.os_level2
+CROSS_OS_DEEP = -65.0  # deep OS — Phoenix territory
+CROSS_FLAT_BARS = 3
+CROSS_FLAT_RANGE = 8.0
+DIV_LOOKBACK = 10
+DIV_PRICE_TOLERANCE = 0.02
+
+
+def _rs_rising(df: pd.DataFrame, bench_series: pd.Series | None) -> bool:
+    """RS line (close/bench*1000) rising vs prior bar. Cheap trend proxy, distinct
+    from _rs_state()'s vs-EMA9 classification used for the weekly RS gate."""
+    if bench_series is None:
+        return False
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench = bench_series.reindex(stock_close.index)
+        valid = bench.notna()
+        if valid.sum() < 2:
+            return False
+        rs = (stock_close[valid] / bench[valid]) * 1000
+        return bool(rs.iloc[-1] > rs.iloc[-2])
+    except Exception:
+        return False
+
+
+def _divergence(wt2_hist: pd.Series, low_hist: pd.Series) -> bool:
+    """Bullish divergence: today's low is a lower low vs the prior OS trough
+    within DIV_LOOKBACK bars, while wt2 makes a higher low. No lookahead —
+    trough is searched strictly before today's bar."""
+    idx = len(wt2_hist) - 1
+    if idx < DIV_LOOKBACK:
+        return False
+    window_wt2 = wt2_hist.iloc[idx - DIV_LOOKBACK : idx]
+    window_low = low_hist.iloc[idx - DIV_LOOKBACK : idx]
+    trough_pos = int(window_wt2.values.argmin())
+    trough_low = float(window_low.iloc[trough_pos])
+    trough_wt2 = float(window_wt2.iloc[trough_pos])
+    price_lower_low = float(low_hist.iloc[idx]) < trough_low * (1 - DIV_PRICE_TOLERANCE)
+    wt2_higher_low = float(wt2_hist.iloc[idx]) > trough_wt2
+    return bool(price_lower_low and wt2_higher_low)
+
+
+def _classify_cross_type(
+    wt2_hist: pd.Series, above_ema50: bool, rs_rising: bool
+) -> str:
+    """Collapsed 4-way taxonomy (full 7-type tree in research/wt_cross_metadata_spec.md).
+    TRAP_DOOR checked first — structural context (RS+EMA50) overrides oscillator depth."""
+    if not rs_rising and not above_ema50:
+        return "TRAP_DOOR"
+
+    wt2_now = float(wt2_hist.iloc[-1])
+    if wt2_now > CROSS_OS_THRESHOLD:
+        return "GRIND"
+
+    pre_cross = wt2_hist.iloc[-(CROSS_FLAT_BARS + 1) : -1]
+    wt2_range = float(pre_cross.max() - pre_cross.min()) if len(pre_cross) else 0.0
+
+    if wt2_now < CROSS_OS_DEEP and wt2_range > CROSS_FLAT_RANGE:
+        return "PHOENIX"
+    return "SLINGSHOT"
+
+
 def _cavgc(c: pd.Series, length: int = 10) -> tuple[float, bool]:
     """Close / EMA(close, length) ratio and whether it is rising."""
     avg = c.ewm(span=length, adjust=False).mean()
@@ -354,6 +416,14 @@ def analyse(
         wz_in, wz_days = weekly_wt_zone(df_raw)
         earliness = _earliness(rs, zl_days, cavgc_val, cavgc_rising, squeeze)
 
+        ema50 = _ema(c, 50)
+        above_ema50 = bool(curr_close > ema50.iloc[-1]) if len(c) >= 50 else False
+        rs_rising = _rs_rising(df_raw, bench_series)
+        wt2_hist = calc.get_history(df_raw)["wt2"]
+        low_hist = df_raw["low"].astype(float)
+        divergence = _divergence(wt2_hist, low_hist)
+        cross_type = _classify_cross_type(wt2_hist, above_ema50, rs_rising)
+
         return {
             "symbol": symbol,
             "wt_signal": sig.wt_signal,
@@ -381,6 +451,8 @@ def analyse(
             "liq_tag": liq_tag(df_raw),
             "cmf_tag": cmf_tag(df_raw),
             "deliv_tag": deliv_tag(symbol),
+            "cross_type": cross_type,
+            "divergence": divergence,
         }
     except Exception:
         return None
@@ -438,6 +510,15 @@ def _row(
         extras.append(f["cmf_tag"])
     if f.get("deliv_tag"):
         extras.append(f["deliv_tag"])
+    ct = f.get("cross_type", "")
+    if ct == "TRAP_DOOR":
+        extras.append("⚠️TRAP")
+    elif ct == "PHOENIX":
+        extras.append("🔥PHX")
+    elif ct == "SLINGSHOT":
+        extras.append("🎯SLING")
+    if f.get("divergence"):
+        extras.append("÷DIV")
     sym_cell = f"[{sym}]({tv})" + (
         "<br><sub>" + " · ".join(extras) + "</sub>" if extras else ""
     )
@@ -519,6 +600,10 @@ def build_markdown(
         "| Sort | Weekly RS gate (📶W9) first → Rank desc → Erly desc |",
         "| Min rank | Any bull cross (rank ≥ 1) |",
         "| W↑Nd in Symbol | Days in weekly WT bull-cross zone (any cross; ends on weekly bear cross) |",
+        "| ⚠️TRAP in Symbol | RS falling AND price below EMA50 on the cross bar — structural context broken, treat as suspect |",
+        "| 🔥PHX in Symbol | Deep oversold (wt2 < -65) V-bottom cross — fast reversal, not a flat base |",
+        "| 🎯SLING in Symbol | Oversold cross off a flat multi-bar base (extended base breakout) |",
+        "| ÷DIV in Symbol | Bullish divergence — today's price low undercuts the prior 10-bar OS trough while wt2 makes a higher low |",
         "| RS-Confirmed table | Separate table below, rs_state ≠ weak — informational only, all signals still listed in category tables |",
         "| 📶W9 in Symbol | Daily RS > Weekly RS EMA9 AND Weekly RS EMA9 rising (same gate as ema25_zl_scanner RS_MODE=weekly_ema9) — highest sort priority in every table |",
         "",

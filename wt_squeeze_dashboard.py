@@ -108,6 +108,9 @@ def parse_wt_rows(content: str) -> list[dict]:
         if len(parts) < 13:
             continue
         sym, wz_badge, rvol_badge, rs_weekly_gate = _parse_sym_cell(parts[0])
+        ct_m = re.search(r"⚠️TRAP|🔥PHX|🎯SLING", parts[0])
+        cross_badge = ct_m.group(0) if ct_m else ""
+        divergence = "÷DIV" in parts[0]
         if not sym or sym in ("Symbol", "#"):
             continue
         if sym in seen:
@@ -138,6 +141,8 @@ def parse_wt_rows(content: str) -> list[dict]:
                 "symbol": sym,
                 "wz_badge": wz_badge,
                 "rvol_badge": rvol_badge,
+                "cross_badge": cross_badge,
+                "divergence": divergence,
                 "rs_weekly_gate": rs_weekly_gate,
                 "trap": parts[1],
                 "label": parts[2].replace("\x00", "|"),
@@ -381,6 +386,12 @@ def _wt_html_row(r: dict, trend_info: "dict | None" = None) -> str:
     if trend_info and sym in trend_info:
         lbl = _TREND_TAG_LABEL.get(trend_info[sym], trend_info[sym])
         badges.append(f'<span style="font-weight:700;color:#86efac">{lbl}</span>')
+    cb = r.get("cross_badge", "")
+    if cb:
+        cb_color = "#f85149" if "TRAP" in cb else ("#f97316" if "PHX" in cb else "#eab308")
+        badges.append(f'<span style="font-weight:700;color:{cb_color}">{cb}</span>')
+    if r.get("divergence"):
+        badges.append('<span style="font-weight:700;color:#a371f7">÷DIV</span>')
     badge_line = (
         f'<span style="display:block;font-size:9px;white-space:nowrap">{" · ".join(badges)}</span>'
         if badges
@@ -611,6 +622,7 @@ def build_html(
   Erly = earliness score (higher = earlier entry) &nbsp;|&nbsp;
   RS = 🔄transition / ↑strong / ↓weak vs NIFTY MIDSML 400 &nbsp;|&nbsp;
   Flags = SQ (BB-KC squeeze ON) · PV (Pocket Pivot Volume) &nbsp;|&nbsp;
+  ⚠️TRAP (RS falling + below EMA50, suspect) · 🔥PHX (deep OS V-bottom) · 🎯SLING (flat-base OS breakout) · ÷DIV (bullish divergence) &nbsp;|&nbsp;
   Sorted: rank desc → earliness desc
 </div>
 {bounce_rs_section}
