@@ -20,17 +20,17 @@ function Log($msg) {
 
 Log "=== INSTITUTIONAL_FOOTPRINT_SCANNER START ==="
 
-try {
-    & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\institutional_footprint_scanner.py 2>&1 |
-        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\institutional_footprint_scanner.py 2>&1 |
+    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+$scanExitCode = $LASTEXITCODE
+if ($scanExitCode -ne 0) {
+    Log "=== ERROR: institutional_footprint_scanner.py failed (exit $scanExitCode) ==="
+} else {
     Log "=== FINISHED exit=0 ==="
-} catch {
-    Log "=== ERROR: $_ ==="
-    exit 1
 }
 
 $csvPath = "$ROOT\footprint_scans\footprint_$date.csv"
-if ((Test-Path "$ROOT\dashboard\footprint.html") -and (Test-Path $csvPath)) {
+if ($scanExitCode -eq 0 -and (Test-Path "$ROOT\dashboard\footprint.html") -and (Test-Path $csvPath)) {
     $rows    = Import-Csv $csvPath
     $total   = $rows.Count
     $elite   = ($rows | Where-Object { $_.rating -eq "ELITE" }).Count
@@ -48,6 +48,8 @@ Log "--- Git commit+push ---"
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "[scan $date] institutional_footprint: scan run" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 Log "--- Done ---"
+
+exit $scanExitCode
 
 # To register the scheduled task (run once as admin):
 # schtasks /create /tn "NSE_InstitutionalFootprint" /tr "powershell -NonInteractive -File C:\Users\satya\nse_circuit_limits\run_institutional_footprint_scanner.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:45 /f
