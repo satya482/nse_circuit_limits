@@ -498,8 +498,9 @@ def build_html(rows, as_of: str) -> str:
         f'target="_blank">{row.get("symbol","")}</a><span class="ics">{_num(row,"ics"):.0f}</span></div>'
         f'<div class="tags">{row.get("rating","")} · {row.get("stage","")} · {row.get("action","")}</div>'
         f'<div class="del">{row.get("delivery_tag","")}</div>'
-        f'<div class="struct">{row.get("sector","")} ({_num(row,"sector_score"):.0f}) · {structure_tag(row)}</div>'
+        f'<div class="struct">{structure_tag(row)}</div>'
         f'<div class="reason">{row.get("reason","")}</div>'
+        f'<div class="sector">{row.get("sector","")} ({_num(row,"sector_score"):.0f})</div>'
         f"</div>"
         for row in records
     )
@@ -522,6 +523,7 @@ h1{{font-size:1.1rem}}
 .tags{{color:#8b949e;font-size:.85rem;margin-top:4px}}
 .del{{font-size:.85rem;margin-top:4px}}
 .struct{{font-size:.8rem;color:#8b949e;margin-top:2px}}
+.sector{{font-size:.75rem;color:#6e7681;margin-top:4px}}
 .reason{{font-size:.8rem;color:#8b949e;margin-top:4px}}
 .empty{{color:#8b949e}}
 </style></head>

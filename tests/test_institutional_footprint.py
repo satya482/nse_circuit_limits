@@ -167,7 +167,7 @@ def test_build_markdown_includes_sector_and_structure_columns():
     assert "ABS R3" in md
 
 
-def test_build_html_includes_struct_div():
+def test_build_html_includes_struct_and_sector_divs():
     rows = [
         {
             "symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": "",
@@ -178,8 +178,10 @@ def test_build_html_includes_struct_div():
 
     html = build_html(rows, "2026-07-07")
 
-    assert 'class="struct"' in html
-    assert "IT (80) · RECLAIM" in html
+    assert '<div class="struct">RECLAIM</div>' in html
+    assert '<div class="sector">IT (80)</div>' in html
+    # sector line comes after reason -> last line in the card
+    assert html.index('<div class="sector">') > html.index('<div class="reason">')
 
 
 def test_absorption_day_true_on_narrow_range_high_delivery_upper_close():
