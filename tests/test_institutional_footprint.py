@@ -2,6 +2,8 @@ import pytest
 import pandas as pd
 
 from institutional_footprint_scanner import (
+    absorption_day,
+    analyse_symbol,
     assign_lifecycle,
     assign_rating,
     assign_trade_action,
@@ -12,7 +14,11 @@ from institutional_footprint_scanner import (
     delivery_percentile,
     delivery_sparkline,
     delivery_zscore,
+    failed_breakdown_reclaim,
+    failed_breakout,
+    resistance_touch_count,
     run,
+    structure_tag,
 )
 
 
@@ -125,6 +131,129 @@ def _delivery(latest=45.0):
             "deliv_pct": [20.0] * 60 + [30.0] * 21 + [latest],
         }
     )
+
+
+def test_structure_tag_joins_active_flags_only():
+    row = {"absorption_day": True, "failed_breakdown_reclaim": False, "failed_breakout": True, "resistance_touches": 4}
+
+    assert structure_tag(row) == "ABS TRAP R4"
+
+
+def test_structure_tag_omits_resistance_below_threshold():
+    row = {"resistance_touches": 2}
+
+    assert structure_tag(row) == ""
+
+
+def test_structure_tag_empty_when_no_flags():
+    assert structure_tag({}) == ""
+
+
+def test_build_markdown_includes_sector_and_structure_columns():
+    rows = [
+        {
+            "symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": "",
+            "rs_percentile": 100, "rs_trend": "UP", "cmf20": 0.1, "volume_ratio": 2.0, "turnover_cr": 12.3,
+            "regime": "GREEN", "action_rank": "A", "action": "WATCH_FOR_ENTRY", "reason": "RS leader",
+            "sector": "Banking and Finance", "sector_score": 67.0,
+            "absorption_day": True, "resistance_touches": 3,
+        },
+    ]
+
+    md = build_markdown(rows, "2026-07-07")
+
+    assert "Sector" in md and "Structure" in md
+    assert "Banking and Finance (67)" in md
+    assert "ABS R3" in md
+
+
+def test_build_html_includes_struct_div():
+    rows = [
+        {
+            "symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": "",
+            "action_rank": "A", "action": "WATCH_FOR_ENTRY", "reason": "Delivery P100",
+            "sector": "IT", "sector_score": 80.0, "failed_breakdown_reclaim": True,
+        },
+    ]
+
+    html = build_html(rows, "2026-07-07")
+
+    assert 'class="struct"' in html
+    assert "IT (80) · RECLAIM" in html
+
+
+def test_absorption_day_true_on_narrow_range_high_delivery_upper_close():
+    close = pd.Series([100.0] * 19 + [100.8])
+    high = pd.Series([105.0] * 19 + [101.0])
+    low = pd.Series([95.0] * 19 + [100.0])
+
+    assert absorption_day(high, low, close, delivery_ratio=2.0) is True
+
+
+def test_absorption_day_false_when_delivery_not_elevated():
+    close = pd.Series([100.0] * 19 + [100.8])
+    high = pd.Series([105.0] * 19 + [101.0])
+    low = pd.Series([95.0] * 19 + [100.0])
+
+    assert absorption_day(high, low, close, delivery_ratio=1.0) is False
+
+
+def test_failed_breakdown_reclaim_true_when_support_broke_recovered_on_volume():
+    close = pd.Series([100.0] * 20 + [100.0, 90.0, 105.0])
+    low = pd.Series([99.0] * 20 + [99.0, 85.0, 104.0])
+
+    assert failed_breakdown_reclaim(close, low, volume_ratio=1.5) is True
+
+
+def test_failed_breakdown_reclaim_false_without_recovery():
+    close = pd.Series([100.0] * 20 + [100.0, 90.0, 88.0])
+    low = pd.Series([99.0] * 20 + [99.0, 85.0, 84.0])
+
+    assert failed_breakdown_reclaim(close, low, volume_ratio=1.5) is False
+
+
+def test_failed_breakdown_reclaim_false_without_volume_confirmation():
+    close = pd.Series([100.0] * 20 + [100.0, 90.0, 105.0])
+    low = pd.Series([99.0] * 20 + [99.0, 85.0, 104.0])
+
+    assert failed_breakdown_reclaim(close, low, volume_ratio=1.0) is False
+
+
+def test_failed_breakout_true_on_broken_resistance_with_long_wick():
+    close = pd.Series([100.0] * 20 + [110.0, 108.0])
+    high = pd.Series([101.0] * 20 + [111.0, 113.0])
+    low = pd.Series([99.0] * 20 + [99.0, 104.0])
+
+    assert failed_breakout(close, high, low, volume_ratio=2.0) is True
+
+
+def test_failed_breakout_false_when_volume_not_elevated():
+    close = pd.Series([100.0] * 20 + [110.0, 108.0])
+    high = pd.Series([101.0] * 20 + [111.0, 113.0])
+    low = pd.Series([99.0] * 20 + [99.0, 104.0])
+
+    assert failed_breakout(close, high, low, volume_ratio=1.0) is False
+
+
+def test_resistance_touch_count_counts_closes_near_60d_high():
+    close = pd.Series([100.0] * 80)
+
+    assert resistance_touch_count(close) == 20
+
+
+def test_resistance_touch_count_zero_with_insufficient_history():
+    close = pd.Series([100.0] * 40)
+
+    assert resistance_touch_count(close) == 0
+
+
+def test_analyse_symbol_exposes_todays_ohlc():
+    df = _ohlc()
+    row = analyse_symbol("AAA", df, _ohlc(-10), _delivery())
+
+    assert row["open"] == pytest.approx(float(df["open"].iloc[-1]))
+    assert row["high"] == pytest.approx(float(df["high"].iloc[-1]))
+    assert row["low"] == pytest.approx(float(df["low"].iloc[-1]))
 
 
 def test_run_scores_injected_universe_and_sorts_by_ics():

@@ -8,6 +8,7 @@ from datetime import date
 import pandas as pd
 
 import ohlc_db
+import sector_sync
 from capital import regime_throttle
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER, SEBI_MD_FOOTER, SEBI_MD_HEADER
 
@@ -83,6 +84,68 @@ def consecutive_high_delivery_days(
     return count
 
 
+def absorption_day(high: pd.Series, low: pd.Series, close: pd.Series, delivery_ratio: float) -> bool:
+    """Small range + high delivery + close resilient in upper half of the bar."""
+    if len(close) < 20:
+        return False
+
+    range_pct = (high - low) / close.replace(0, float("nan"))
+    window = range_pct.iloc[-20:]
+    today = float(window.iloc[-1])
+    threshold = float(window.quantile(0.2))
+
+    latest_close, latest_high, latest_low = float(close.iloc[-1]), float(high.iloc[-1]), float(low.iloc[-1])
+    upper_half = latest_high == latest_low or (latest_close - latest_low) >= (latest_high - latest_close)
+
+    return bool(today <= threshold and delivery_ratio >= 1.5 and upper_half)
+
+
+def failed_breakdown_reclaim(close: pd.Series, low: pd.Series, volume_ratio: float) -> bool:
+    """Support (20-day closing low, excluding today) broke intraday in last 3 bars, today reclaims it
+    on above-average volume (spec §7.4: "Delivery or volume above average" — without this gate any
+    routine dip-and-recover counts, ~21% of a 1300-symbol sample fired in a real-data smoke test)."""
+    if len(close) < 21:
+        return False
+
+    support = close.rolling(20, min_periods=20).min().shift(1)
+    if pd.isna(support.iloc[-1]):
+        return False
+
+    broke = any(pd.notna(support.iloc[i]) and low.iloc[i] < support.iloc[i] for i in range(-3, 0))
+    return bool(broke and volume_ratio >= 1.2 and float(close.iloc[-1]) > float(support.iloc[-1]))
+
+
+def failed_breakout(close: pd.Series, high: pd.Series, low: pd.Series, volume_ratio: float) -> bool:
+    """Resistance (20-day closing high, excluding today) broke in last 2 bars, today gives it back."""
+    if len(close) < 21:
+        return False
+
+    level = close.rolling(20, min_periods=20).max().shift(1)
+    if pd.isna(level.iloc[-1]):
+        return False
+
+    broke = any(pd.notna(level.iloc[i]) and close.iloc[i] > level.iloc[i] for i in range(-2, 0))
+    latest_high, latest_low, latest_close = float(high.iloc[-1]), float(low.iloc[-1]), float(close.iloc[-1])
+    wick_ratio = (latest_high - latest_close) / (latest_high - latest_low) if latest_high > latest_low else 0.0
+
+    return bool(broke and wick_ratio > 0.5 and volume_ratio >= 1.5 and latest_close <= float(level.iloc[-1]))
+
+
+def resistance_touch_count(close: pd.Series, window: int = 20) -> int:
+    """Closes within 1.5% of the 60-day closing high, over the last `window` bars."""
+    if len(close) < 60:
+        return 0
+
+    resistance = close.rolling(60, min_periods=60).max()
+    tail = min(window, len(close))
+    touches = 0
+    for i in range(-tail, 0):
+        r = resistance.iloc[i]
+        if pd.notna(r) and r > 0 and abs(float(close.iloc[i]) / float(r) - 1) <= 0.015:
+            touches += 1
+    return touches
+
+
 def assign_rating(ics: float) -> str:
     if ics >= 95:
         return "ELITE"
@@ -123,6 +186,11 @@ def calculate_ics(row: Mapping[str, object]) -> float:
     score += 8 if _num(row, "rs_percentile") >= 90 else 0
     score += 4 if row.get("rs_trend") == "UP" else 0
     score += 3 if row.get("outperform_benchmark_50d") else 0
+
+    score += 6 if row.get("absorption_day") else 0
+    score += 8 if row.get("failed_breakdown_reclaim") else 0
+    score += 6 if _num(row, "resistance_touches") >= 3 else 0
+    score -= 10 if row.get("failed_breakout") else 0
 
     return min(100.0, max(0.0, score))
 
@@ -165,6 +233,20 @@ def delivery_visual_tag(row: Mapping[str, object]) -> str:
         parts.append(f"Z{_num(row, 'delivery_zscore'):+.1f}")
     if _num(row, "consecutive_high_delivery_days") >= 2:
         parts.append(f"{int(_num(row, 'consecutive_high_delivery_days'))}D")
+    return " ".join(parts)
+
+
+def structure_tag(row: Mapping[str, object]) -> str:
+    parts = []
+    if row.get("absorption_day"):
+        parts.append("ABS")
+    if row.get("failed_breakdown_reclaim"):
+        parts.append("RECLAIM")
+    if row.get("failed_breakout"):
+        parts.append("TRAP")
+    touches = _num(row, "resistance_touches")
+    if touches >= 3:
+        parts.append(f"R{int(touches)}")
     return " ".join(parts)
 
 
@@ -211,13 +293,21 @@ def analyse_symbol(
         return None
 
     close = df["close"].astype(float)
+    high = df["high"].astype(float)
+    low = df["low"].astype(float)
     volume = df["volume"].astype(float)
     latest_close = float(close.iloc[-1])
     prev_close = float(close.iloc[-2])
+    latest_high = float(high.iloc[-1])
+    latest_low = float(low.iloc[-1])
+    latest_open = float(df["open"].astype(float).iloc[-1])
 
     row = {
         "symbol": symbol,
         "close": latest_close,
+        "open": latest_open,
+        "high": latest_high,
+        "low": latest_low,
         "price_down": latest_close < prev_close,
         "close_gt_ema20": latest_close > float(close.ewm(span=20, adjust=False).mean().iloc[-1]),
         "close_gt_ema50": latest_close > float(close.ewm(span=50, adjust=False).mean().iloc[-1]),
@@ -275,6 +365,11 @@ def analyse_symbol(
             }
         )
 
+    row["absorption_day"] = absorption_day(high, low, close, _num(row, "delivery_ratio"))
+    row["failed_breakdown_reclaim"] = failed_breakdown_reclaim(close, low, _num(row, "volume_ratio"))
+    row["failed_breakout"] = failed_breakout(close, high, low, _num(row, "volume_ratio"))
+    row["resistance_touches"] = resistance_touch_count(close)
+
     row["stock_return_20d"] = _return(close, 20)
     row["stock_return_50d"] = _return(close, 50)
     bench_close = bench_df["close"].astype(float)
@@ -320,7 +415,8 @@ def run(universe_df, as_of, ohlc_map=None, delivery_map=None, bench_df=None, reg
         row["action_rank"], row["action"] = assign_trade_action(row, regime)
         row["reason"] = _reason(row)
 
-    return pd.DataFrame(rows).sort_values(["action_rank", "ics", "rs_percentile"], ascending=[True, False, False]).reset_index(drop=True)
+    df = sector_sync.add_sector_scores(pd.DataFrame(rows))
+    return df.sort_values(["action_rank", "ics", "rs_percentile"], ascending=[True, False, False]).reset_index(drop=True)
 
 
 def build_markdown(rows, as_of: str) -> str:
@@ -351,6 +447,8 @@ def build_markdown(rows, as_of: str) -> str:
             "CMF20",
             "Vol",
             "Turnover",
+            "Sector",
+            "Structure",
         ]
         lines.append("| " + " | ".join(cols) + " |")
         lines.append("|" + "---|" * len(cols))
@@ -374,6 +472,8 @@ def build_markdown(rows, as_of: str) -> str:
                         f"{_num(row, 'cmf20'):.2f}",
                         f"{_num(row, 'volume_ratio'):.1f}x",
                         f"{_num(row, 'turnover_cr'):.1f}Cr",
+                        f"{row.get('sector', '')} ({_num(row, 'sector_score'):.0f})".strip(),
+                        structure_tag(row),
                     ]
                 )
                 + " |"
@@ -392,6 +492,7 @@ def build_html(rows, as_of: str) -> str:
         f'target="_blank">{row.get("symbol","")}</a><span class="ics">{_num(row,"ics"):.0f}</span></div>'
         f'<div class="tags">{row.get("rating","")} · {row.get("stage","")} · {row.get("action","")}</div>'
         f'<div class="del">{row.get("delivery_tag","")}</div>'
+        f'<div class="struct">{row.get("sector","")} ({_num(row,"sector_score"):.0f}) · {structure_tag(row)}</div>'
         f'<div class="reason">{row.get("reason","")}</div>'
         f"</div>"
         for row in records
@@ -414,6 +515,7 @@ h1{{font-size:1.1rem}}
 .ics{{color:#3fb950}}
 .tags{{color:#8b949e;font-size:.85rem;margin-top:4px}}
 .del{{font-size:.85rem;margin-top:4px}}
+.struct{{font-size:.8rem;color:#8b949e;margin-top:2px}}
 .reason{{font-size:.8rem;color:#8b949e;margin-top:4px}}
 .empty{{color:#8b949e}}
 </style></head>
