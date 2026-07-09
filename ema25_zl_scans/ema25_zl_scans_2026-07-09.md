@@ -63,7 +63,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [LALPATHLAB](https://in.tradingview.com/chart/?symbol=NSE:LALPATHLAB)<br><sub>↓CMF26d</sub> | 1d | +1.9% | Diagnostic testing, pathology labs, consumer healthcare | +1.88% | 1684.60 | ✓ | 20%  |
 | [JYOTHYLAB](https://in.tradingview.com/chart/?symbol=NSE:JYOTHYLAB)<br><sub>↓CMF30d</sub> | 1d | +6.6% | Fabric care, dish wash, personal care FMCG brands | +6.62% | 201.64 | — | 20%  |
 | [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML)<br><sub>↑CMF0d</sub> | 1d | +2.2% | Heavy equipment and defense vehicles manufacturing | +2.25% | 1816.10 | — | 20%  |
-| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF0d</sub> | 1d | +3.3% | IT services digital transformation automation consulting | +3.26% | 539.25 | — | 20%  |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF0d · DEL68%</sub> | 1d | +3.3% | IT services digital transformation automation consulting | +3.26% | 539.25 | — | 20%  |
 | [SMLMAH](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH)<br><sub>↓CMF25d</sub> | 1d | +5.3% | Light medium commercial vehicles manufacturing India | +5.26% | 4080.40 | ✓ | 20% 🟦 |
 | [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH)<br><sub>↓CMF30d</sub> | 1d | +3.9% | Animal health pharmaceuticals APIs formulations global markets | +3.86% | 281.05 | — | 20%  |
 | [JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE)<br><sub>↓CMF30d</sub> | 1d | +1.9% | Radial tyres for cars, trucks, two-wheelers | +1.93% | 404.70 | ✓ | 20%  |
@@ -90,7 +90,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [TEXRAIL](https://in.tradingview.com/chart/?symbol=NSE:TEXRAIL)<br><sub>↑CMF3d</sub> | 1d | +2.0% | Railway rolling stock and hydro-mechanical equipment manufacturer | +1.96% | 113.71 | — | 20%  |
 | [MANINDS](https://in.tradingview.com/chart/?symbol=NSE:MANINDS)<br><sub>↓CMF4d</sub> | 1d | +4.5% | Carbon steel line pipes manufacturer, oil gas infrastructure | +4.52% | 574.30 | ✓ | 20% 🟦 |
 | [LLOYDSENT](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENT)<br><sub>↑CMF4d</sub> | 1d | +4.6% | Steel trading, engineering solutions, real estate investments | +4.56% | 74.58 | — | 20%  |
-| [PANACEABIO](https://in.tradingview.com/chart/?symbol=NSE:PANACEABIO)<br><sub>↓CMF24d</sub> | 1d | +5.3% | Vaccine and pharmaceutical manufacturing biotech company | +5.26% | 555.20 | ✓ | 10% 🟨 |
+| [PANACEABIO](https://in.tradingview.com/chart/?symbol=NSE:PANACEABIO)<br><sub>↓CMF24d · DEL46%</sub> | 1d | +5.3% | Vaccine and pharmaceutical manufacturing biotech company | +5.26% | 555.20 | ✓ | 10% 🟨 |
 | [EIDPARRY](https://in.tradingview.com/chart/?symbol=NSE:EIDPARRY)<br><sub>↓CMF2d</sub> | 1d | +3.8% | Sugar production, nutraceuticals, ethanol, farm inputs | +3.77% | 749.20 | — | 20%  |
 | [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH)<br><sub>↓CMF21d</sub> | 1d | +4.8% | Aerospace defence electronics components manufacturer for aircraft systems | +4.75% | 1010.75 | — | 20%  |
 | [IFBIND](https://in.tradingview.com/chart/?symbol=NSE:IFBIND)<br><sub>↓CMF30d</sub> | 1d | +1.8% | Washing machines, dryers, automotive parts manufacturing | +1.77% | 1279.90 | ✓ | 20%  |
@@ -181,7 +181,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN)<br><sub>↓CMF3d</sub> | 8d | +7.7% | Sugar manufacturing distillery power cogeneration agricultural commodities | +1.18% | 567.45 | — | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↑CMF0d</sub> | 9d | +15.4% | API and formulation manufacturer serving global pharma markets | +2.62% | 882.05 | — | 20%  |
 | [SPARC](https://in.tradingview.com/chart/?symbol=NSE:SPARC)<br><sub>↑CMF3d</sub> | 9d | +23.4% | Clinical-stage biotech developing novel therapeutic drugs globally | +2.81% | 277.57 | — | 10% 🟨 |
-| [WEWORK](https://in.tradingview.com/chart/?symbol=NSE:WEWORK)<br><sub>↓CMF3d</sub> | 9d | +17.2% | Flexible office spaces for enterprises, startups, GCCs | +0.86% | 726.00 | — | 20%  |
+| [WEWORK](https://in.tradingview.com/chart/?symbol=NSE:WEWORK)<br><sub>↓CMF3d · DEL77%</sub> | 9d | +17.2% | Flexible office spaces for enterprises, startups, GCCs | +0.86% | 726.00 | — | 20%  |
 | [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON)<br><sub>↑CMF0d</sub> | 9d | +11.2% | Hair oils and personal care products for Indian households | +4.83% | 643.55 | — | 20%  |
 | [KSL](https://in.tradingview.com/chart/?symbol=NSE:KSL)<br><sub>↑CMF1d</sub> | 9d | +14.0% | Alloy steel long products for automotive and engineering sectors | +4.49% | 933.50 | — | 20%  |
 | [SGFIN](https://in.tradingview.com/chart/?symbol=NSE:SGFIN)<br><sub>↓CMF5d</sub> | 9d | +11.8% | Supply chain financing NBFC for logistics and trade | -1.91% | 656.30 | — | 20%  |
@@ -216,7 +216,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV)<br><sub>↑CMF0d</sub> | 17d | +12.2% | ERW steel pipes and structural tubes manufacturer | +4.21% | 119.19 | ✓ | 20%  |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↑CMF13d</sub> | 18d | +40.4% | Precision aerospace components and consumer product manufacturing | -0.34% | 258.13 | — | 20% 🟦 |
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS)<br><sub>↑CMF5d</sub> | 18d | +12.5% | Differential assemblies and gears for electric vehicles | +1.31% | 670.75 | — | 20%  |
-| [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF13d · DEL58%(T-1)</sub> | 18d | +14.4% | Sugar substitutes, glucose powders, health FMCG retail | +2.07% | 571.50 | — | 20%  |
+| [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF13d</sub> | 18d | +14.4% | Sugar substitutes, glucose powders, health FMCG retail | +2.07% | 571.50 | — | 20%  |
 | [ALKEM](https://in.tradingview.com/chart/?symbol=NSE:ALKEM)<br><sub>↓CMF29d</sub> | 18d | +5.9% | Pharma manufacturer: branded generics, APIs, nutraceuticals India | +0.76% | 5648.50 | — | 20%  |
 | [NIITMTS](https://in.tradingview.com/chart/?symbol=NSE:NIITMTS)<br><sub>↓CMF2d</sub> | 18d | +13.2% | IT training services corporate upskilling global | -0.92% | 242.10 | — | 20%  |
 | [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF23d</sub> | 18d | +35.9% | Water treatment EPC contractor, municipal and industrial clients | +2.26% | 419.30 | — | 10% 🟨 |
@@ -269,7 +269,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [UNICHEMLAB](https://in.tradingview.com/chart/?symbol=NSE:UNICHEMLAB)<br><sub>↑CMF0d</sub> | 23d | +82.3% | Pharma generics APIs contract manufacturing CMO | +13.60% | 650.60 | — | 20%  |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>↑CMF22d</sub> | 23d | +42.2% | APIs, formulations, home diagnostics for Indian patients | +3.39% | 60.96 | — | 20%  |
 | [SENORES](https://in.tradingview.com/chart/?symbol=NSE:SENORES)<br><sub>↑CMF8d</sub> | 23d | +41.0% | Complex generics manufacturer certified globally affordable quality | +0.70% | 1419.70 | — | 20%  |
-| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF1d</sub> | 23d | +25.9% | B2B travel tech platform connecting hotels airlines buyers globally | +1.05% | 1496.90 | ✓ | 20%  |
+| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF1d · DEL80%</sub> | 23d | +25.9% | B2B travel tech platform connecting hotels airlines buyers globally | +1.05% | 1496.90 | ✓ | 20%  |
 | [BLUEJET](https://in.tradingview.com/chart/?symbol=NSE:BLUEJET)<br><sub>↑CMF9d</sub> | 23d | +27.4% | Specialty pharma CDMO, niche chemistry, healthcare ingredients manufacturing | +2.10% | 574.50 | — | 20%  |
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH)<br><sub>↓CMF0d</sub> | 23d | +28.2% | Electrical meters, automation instruments, industrial testing equipment manufacturer | +0.28% | 652.60 | — | 20%  |
 | [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM)<br><sub>↑CMF11d</sub> | 23d | +11.4% | Branded generics formulations across India Asia Africa markets | +0.88% | 3307.60 | — | 20%  |
@@ -296,7 +296,7 @@ NSE:KALYANKJIL,NSE:KAYNES,NSE:INA,NSE:SYRMA,NSE:BORORENEW,NSE:LAURUSLABS,NSE:PRE
 | [STOVEKRAFT](https://in.tradingview.com/chart/?symbol=NSE:STOVEKRAFT)<br><sub>↑CMF21d</sub> | 36d | +46.6% | Kitchen appliances cookware retail consumer households | +1.91% | 797.40 | — | 20%  |
 | [MINDACORP](https://in.tradingview.com/chart/?symbol=NSE:MINDACORP)<br><sub>↑CMF0d</sub> | 36d | +36.4% | Automotive electromechanical components supplier global OEMs | +3.23% | 705.45 | — | 20%  |
 | [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO)<br><sub>↑CMF30d</sub> | 37d | +67.8% | RF microwave modules defense space telecom systems | +1.32% | 1833.10 | — | 20%  |
-| [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br><sub>↑CMF20d</sub> | 38d | +84.3% | Bulk liquid terminals, oil gas chemical logistics India | +1.50% | 1264.10 | — | 10% 🟨 |
+| [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br><sub>↑CMF20d · DEL34%</sub> | 38d | +84.3% | Bulk liquid terminals, oil gas chemical logistics India | +1.50% | 1264.10 | — | 10% 🟨 |
 | [PAISALO](https://in.tradingview.com/chart/?symbol=NSE:PAISALO)<br><sub>↑CMF24d</sub> | 38d | +55.8% | Microfinance loans to rural unbanked populations India | +2.81% | 72.40 | — | 20%  |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>↑CMF12d</sub> | 49d | +53.0% | Niche APIs formulations contract manufacturing pharma CDMO | +4.53% | 622.30 | — | 20%  |
 | [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH)<br><sub>↑CMF30d</sub> | 50d | +81.5% | Specialty polyester films, packaging, industrial applications | +1.47% | 6922.00 | — | 10% 🟨 |
