@@ -405,6 +405,12 @@ def run(universe_df, as_of, ohlc_map=None, delivery_map=None, bench_df=None, reg
     if not rows:
         return pd.DataFrame()
 
+    sector_map = (
+        dict(zip(universe_df["symbol"], universe_df["sector"]))
+        if "sector" in universe_df.columns
+        else None
+    )
+
     _rank_rs(rows)
     for row in rows:
         row["ics"] = calculate_ics(row)
@@ -415,7 +421,7 @@ def run(universe_df, as_of, ohlc_map=None, delivery_map=None, bench_df=None, reg
         row["action_rank"], row["action"] = assign_trade_action(row, regime)
         row["reason"] = _reason(row)
 
-    df = sector_sync.add_sector_scores(pd.DataFrame(rows))
+    df = sector_sync.add_sector_scores(pd.DataFrame(rows), sector_map)
     return df.sort_values(["action_rank", "ics", "rs_percentile"], ascending=[True, False, False]).reset_index(drop=True)
 
 
@@ -539,7 +545,10 @@ document.getElementById('q').addEventListener('input', function(e) {{
 """
 
 
-def get_universe() -> list[str]:
+def get_universe() -> pd.DataFrame:
+    """Returns `symbol`/`sector` — sector straight from the same TradingView query used
+    to build the universe, so coverage is 100% of what's scanned (a static sector CSV
+    join only covered ~69% of this universe in practice)."""
     from tradingview_screener import Query, col
 
     mc_low = 1_000 * 1_00_00_000
@@ -547,7 +556,7 @@ def get_universe() -> list[str]:
     _, df = (
         Query()
         .set_markets("india")
-        .select("name")
+        .select("name", "sector")
         .where(
             col("exchange") == "NSE",
             col("type") == "stock",
@@ -558,14 +567,14 @@ def get_universe() -> list[str]:
         .limit(2000)
         .get_scanner_data()
     )
-    return df["name"].tolist()
+    return df.rename(columns={"name": "symbol"})[["symbol", "sector"]]
 
 
 def main() -> None:
     as_of = date.today().isoformat()
     os.makedirs(SCANS_DIR, exist_ok=True)
     os.makedirs(os.path.dirname(DASHBOARD_PATH), exist_ok=True)
-    rows = run(pd.DataFrame({"symbol": get_universe()}), as_of)
+    rows = run(get_universe(), as_of)
 
     md = build_markdown(rows, as_of)
     latest = os.path.join(SCANS_DIR, "footprint_latest.md")

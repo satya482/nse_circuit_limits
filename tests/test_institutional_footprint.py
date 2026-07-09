@@ -274,6 +274,21 @@ def test_run_scores_injected_universe_and_sorts_by_ics():
     assert rows.iloc[0]["regime"] == "GREEN"
 
 
+def test_run_uses_sector_from_universe_df_when_present():
+    universe = pd.DataFrame({"symbol": ["AAA", "BBB"], "sector": ["Banking", "IT"]})
+    rows = run(
+        universe,
+        "2026-07-07",
+        ohlc_map={"AAA": _ohlc(10), "BBB": _ohlc(0)},
+        delivery_map={"AAA": _delivery(60), "BBB": _delivery(25)},
+        bench_df=_ohlc(-10),
+        regime_info={"regime": "GREEN", "max_slots": 6, "time_stop_mode": "standard"},
+    )
+
+    assert set(rows["sector"]) == {"Banking", "IT"}
+    assert "UNKNOWN" not in rows["sector"].tolist()
+
+
 def test_build_markdown_includes_disclaimer_and_ranked_rows():
     rows = [
         {"symbol": "AAA", "ics": 91, "rating": "STRONG", "stage": "MARKUP", "delivery_tag": "DEL60% P100", "rs_percentile": 100, "rs_trend": "UP", "cmf20": 0.1, "volume_ratio": 2.0, "turnover_cr": 12.3, "regime": "GREEN", "action_rank": "A", "action": "WATCH_FOR_ENTRY", "reason": "Delivery P100"},

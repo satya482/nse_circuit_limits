@@ -52,11 +52,16 @@ level. Negative score impact in `calculate_ics()`.
 `calculate_ics()` bonus (repeated tests without breakdown = building pressure).
 
 ### 5. Sector synchronization (one new module: `sector_sync.py`)
-Reads `sector`/`industry` columns already present in
-`NSE_500cr_15CrNotional10D_50rs_sector_industry.csv` (root CLAUDE.md stock universe file) —
-no new symbols table. One `groupby("sector")` over the scan's own output rows: `% close_gt_ema20`,
-`% rs_trend == UP`, `% ics >= 70`. Join back onto each row as `sector_score`. Runs once per scan,
-after `run()` produces all rows, before `build_markdown`/`build_html`.
+Sector comes straight from the same TradingView query `get_universe()` already runs to build
+the scan universe (`.select("name", "sector")`) — not the static
+`NSE_500cr_15CrNotional10D_50rs_sector_industry.csv`. The CSV join was tried first and only
+covered ~69% of the scanned universe (403/1295 rows landed `UNKNOWN`); switching to the live
+TradingView field brought that to 0/1295. No new symbols table, no new dependency — same
+`tradingview_screener` query already in use, one extra `.select()` column.
+
+One `groupby("sector")` over the scan's own output rows: `% close_gt_ema20`, `% rs_trend == UP`,
+`% ics >= 70`. Join back onto each row as `sector_score`. Runs once per scan, after `run()`
+produces all rows, before `build_markdown`/`build_html`.
 
 ## Output
 

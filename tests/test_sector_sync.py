@@ -1,10 +1,16 @@
 import pandas as pd
 
-from sector_sync import add_sector_scores, load_sector_map
+from sector_sync import add_sector_scores
 
 
-def test_load_sector_map_returns_empty_when_csv_missing():
-    assert load_sector_map("does_not_exist.csv") == {}
+def test_add_sector_scores_defaults_to_unknown_when_no_sector_map_given():
+    rows = pd.DataFrame(
+        [{"symbol": "ZZZ", "close_gt_ema20": False, "rs_trend": "FLAT", "ics": 20}]
+    )
+
+    result = add_sector_scores(rows)
+
+    assert result.iloc[0]["sector"] == "UNKNOWN"
 
 
 def test_add_sector_scores_returns_unchanged_when_rows_empty():
