@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # WaveTrend Bull Cross Scan — 2026-07-09
-*Generated 2026-07-09 15:44 IST*
+*Generated 2026-07-09 20:25 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -19,6 +19,10 @@
 | Sort | Weekly RS gate (📶W9) first → Rank desc → Erly desc |
 | Min rank | Any bull cross (rank ≥ 1) |
 | W↑Nd in Symbol | Days in weekly WT bull-cross zone (any cross; ends on weekly bear cross) |
+| ⚠️TRAP in Symbol | RS falling AND price below EMA50 on the cross bar — structural context broken, treat as suspect |
+| 🔥PHX in Symbol | Deep oversold (wt2 < -65) V-bottom cross — fast reversal, not a flat base |
+| 🎯SLING in Symbol | Oversold cross off a flat multi-bar base (extended base breakout) |
+| ÷DIV in Symbol | Bullish divergence — today's price low undercuts the prior 10-bar OS trough while wt2 makes a higher low |
 | RS-Confirmed table | Separate table below, rs_state ≠ weak — informational only, all signals still listed in category tables |
 | 📶W9 in Symbol | Daily RS > Weekly RS EMA9 AND Weekly RS EMA9 rising (same gate as ema25_zl_scanner RS_MODE=weekly_ema9) — highest sort priority in every table |
 
@@ -51,7 +55,7 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [GRPLTD](https://in.tradingview.com/chart/?symbol=NSE:GRPLTD)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF18d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 18 | ↑31 | ↑1.034 | ↑2d | PV | +6.2% | 20.61/13.61 | +2.30% | 20% |
 | [AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE)<br><sub>📶W9 · W↑14d · ↑CMF0d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 10 | ↑56 | ↑1.018 | ↑15d | PV | +9.2% | 26.87/24.24 | +1.62% | 20% |
 | [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF9d</sub> | ✓ SAFE | Steel pipes, forgings, tubes for automotive, industrial | ⚡ BULL_ANY_PPV | 3 | ↑86 | ↑1.049 | ↑17d | PV | +18.0% | 49.57/48.41 | +6.62% | 20% |
-| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ★ · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
+| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
 | [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>📶W9 · W↑19d · 🚀SS·9x · ↑CMF7d</sub> | ✓ SAFE | Stockbroking wealth management MSME lending insurance distribution financial services | ⚡ BULL_ANY_PPV | 0 | ↑62 | ↑1.071 | ↑20d | PV | +26.6% | 59.2/57.93 | +7.98% | 20% |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF14d</sub> | ✓ SAFE | Specialty chemicals for pharma agrochemical material science | ⚡ BULL_ANY_PPV | 0 | ↑94 | ↑1.087 | ↑27d | PV | +35.2% | 69.16/65.98 | +5.12% | 20% |
 | [EPACKPEB](https://in.tradingview.com/chart/?symbol=NSE:EPACKPEB)<br><sub>📶W9 · W↑72d · 🚀SS · ↑CMF19d</sub> | ✓ SAFE | Steel prefab buildings manufacturing construction services India | 📈 BULL_ANY_MID | 89 | 🔄50 | ↑1.049 | ↑1d | SQ | +7.5% | 28.31/27.93 | +7.55% | 20% |
@@ -67,7 +71,7 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [GLAXO](https://in.tradingview.com/chart/?symbol=NSE:GLAXO)<br><sub>📶W9 · W↑14d · ↑CMF14d</sub> | ✓ SAFE | Pharmaceuticals manufacturing vaccines respiratory gastrointestinal antibiotics India | 📈 BULL_ANY_MID | 7 | ↑27 | ↑1.018 | ↑18d | — | +15.0% | 34.71/32.79 | +1.23% | 20% |
 | [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE)<br><sub>📶W9 · W↑70d · ↑CMF12d</sub> | ✓ SAFE | Financial services: insurance, broking, SME lending | 📈 BULL_ANY_MID | 5 | ↑68 | ↑1.018 | ↑21d | — | +19.0% | 45.27/43.68 | +2.03% | 20% |
 | [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB)<br><sub>📶W9 · W↑67d · 🚀SS · ★ · ↓CMF2d</sub> | ✓ SAFE | Pharma APIs CDMO services domestic international markets | 📈 BULL_ANY_MID | 4 | ↑87 | ↑1.042 | ↑16d | — | +14.8% | 70.8/70.33 | +3.46% | 20% |
-| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ★ · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
+| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF18d</sub> | ✓ SAFE | Microfinance bank serving unbanked low-income borrowers | 📈 BULL_ANY_MID | 0 | ↑68 | ↑1.044 | ↑20d | — | +17.5% | 56.33/54.51 | +4.95% | 20% |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>📶W9 · W↑108d · 🚀SS · ↑CMF12d</sub> | ✓ SAFE | Niche APIs formulations contract manufacturing pharma CDMO | 📈 BULL_ANY_MID | 0 | ↑94 | ↑1.045 | ↑49d | — | +53.0% | 64.96/63.59 | +4.53% | 20% |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>📶W9 · ↑CMF23d</sub> | ✓ SAFE | Cloud TV platform for content distribution and monetization | 📈 BULL_ANY_MID | 0 | ↑50 | ↓1.063 | ↑21d | — | +42.5% | 61.37/59.03 | -0.59% | 20% |
@@ -99,7 +103,7 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [GRPLTD](https://in.tradingview.com/chart/?symbol=NSE:GRPLTD)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF18d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 18 | ↑31 | ↑1.034 | ↑2d | PV | +6.2% | 20.61/13.61 | +2.30% | 20% |
 | [AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE)<br><sub>📶W9 · W↑14d · ↑CMF0d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 10 | ↑56 | ↑1.018 | ↑15d | PV | +9.2% | 26.87/24.24 | +1.62% | 20% |
 | [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF9d</sub> | ✓ SAFE | Steel pipes, forgings, tubes for automotive, industrial | ⚡ BULL_ANY_PPV | 3 | ↑86 | ↑1.049 | ↑17d | PV | +18.0% | 49.57/48.41 | +6.62% | 20% |
-| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ★ · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
+| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
 | [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>📶W9 · W↑19d · 🚀SS·9x · ↑CMF7d</sub> | ✓ SAFE | Stockbroking wealth management MSME lending insurance distribution financial services | ⚡ BULL_ANY_PPV | 0 | ↑62 | ↑1.071 | ↑20d | PV | +26.6% | 59.2/57.93 | +7.98% | 20% |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF14d</sub> | ✓ SAFE | Specialty chemicals for pharma agrochemical material science | ⚡ BULL_ANY_PPV | 0 | ↑94 | ↑1.087 | ↑27d | PV | +35.2% | 69.16/65.98 | +5.12% | 20% |
 | [EPACKPEB](https://in.tradingview.com/chart/?symbol=NSE:EPACKPEB)<br><sub>📶W9 · W↑72d · 🚀SS · ↑CMF19d</sub> | ✓ SAFE | Steel prefab buildings manufacturing construction services India | 📈 BULL_ANY_MID | 89 | 🔄50 | ↑1.049 | ↑1d | SQ | +7.5% | 28.31/27.93 | +7.55% | 20% |
@@ -115,7 +119,7 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [GLAXO](https://in.tradingview.com/chart/?symbol=NSE:GLAXO)<br><sub>📶W9 · W↑14d · ↑CMF14d</sub> | ✓ SAFE | Pharmaceuticals manufacturing vaccines respiratory gastrointestinal antibiotics India | 📈 BULL_ANY_MID | 7 | ↑27 | ↑1.018 | ↑18d | — | +15.0% | 34.71/32.79 | +1.23% | 20% |
 | [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE)<br><sub>📶W9 · W↑70d · ↑CMF12d</sub> | ✓ SAFE | Financial services: insurance, broking, SME lending | 📈 BULL_ANY_MID | 5 | ↑68 | ↑1.018 | ↑21d | — | +19.0% | 45.27/43.68 | +2.03% | 20% |
 | [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB)<br><sub>📶W9 · W↑67d · 🚀SS · ★ · ↓CMF2d</sub> | ✓ SAFE | Pharma APIs CDMO services domestic international markets | 📈 BULL_ANY_MID | 4 | ↑87 | ↑1.042 | ↑16d | — | +14.8% | 70.8/70.33 | +3.46% | 20% |
-| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ★ · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
+| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF18d</sub> | ✓ SAFE | Microfinance bank serving unbanked low-income borrowers | 📈 BULL_ANY_MID | 0 | ↑68 | ↑1.044 | ↑20d | — | +17.5% | 56.33/54.51 | +4.95% | 20% |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>📶W9 · W↑108d · 🚀SS · ↑CMF12d</sub> | ✓ SAFE | Niche APIs formulations contract manufacturing pharma CDMO | 📈 BULL_ANY_MID | 0 | ↑94 | ↑1.045 | ↑49d | — | +53.0% | 64.96/63.59 | +4.53% | 20% |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>📶W9 · ↑CMF23d</sub> | ✓ SAFE | Cloud TV platform for content distribution and monetization | 📈 BULL_ANY_MID | 0 | ↑50 | ↓1.063 | ↑21d | — | +42.5% | 61.37/59.03 | -0.59% | 20% |
@@ -124,14 +128,14 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [CARRARO](https://in.tradingview.com/chart/?symbol=NSE:CARRARO)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Axles transmission systems agriculture construction equipment manufacturer | ⚡ BULL_ANY_PPV | 54 | 🔄66 | ↑1.029 | ↑1d | PV | +7.0% | -7.32/-7.78 | +6.96% | 20% |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>🚀SS · ↑CMF10d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 49 | 🔄3 | ↑1.033 | ↑1d | PV | +5.7% | -42.54/-49.08 | +5.74% | 20% |
 | [JYOTHYLAB](https://in.tradingview.com/chart/?symbol=NSE:JYOTHYLAB)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Fabric care, dish wash, personal care FMCG brands | ⚡ BULL_ANY_PPV | 49 | 🔄4 | ↑1.035 | ↑1d | PV | +6.6% | -45.69/-52.26 | +6.62% | 20% |
-| [LTM](https://in.tradingview.com/chart/?symbol=NSE:LTM)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 47 | 🔄4 | ↑1.007 | ↓13d | — | -3.6% | -56.4/-61.13 | +2.08% | 20% |
+| [LTM](https://in.tradingview.com/chart/?symbol=NSE:LTM)<br><sub>🚀SS · ↓CMF30d · 🎯SLING</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 47 | 🔄4 | ↑1.007 | ↓13d | — | -3.6% | -56.4/-61.13 | +2.08% | 20% |
 | [AWFIS](https://in.tradingview.com/chart/?symbol=NSE:AWFIS)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Flexible workspace operator for entrepreneurs and corporates | 📈 BULL_ANY_MID | 99 | 🔄2 | ↑1.011 | ↑1d | SQ | +2.6% | -11.98/-14.8 | +2.57% | 20% |
 | [DIVISLAB](https://in.tradingview.com/chart/?symbol=NSE:DIVISLAB)<br><sub>W↑56d · 🚀SS · ↓CMF4d</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 98 | 🔄55 | ↑1.013 | ↑2d | SQ | +3.2% | 2.18/-1.42 | +1.13% | 20% |
 | [JSLL](https://in.tradingview.com/chart/?symbol=NSE:JSLL)<br><sub>🚀SS · ↑CMF1d</sub> | ✓ SAFE | Ayurvedic hospitals and wellness clinics serving Indian patients | 📈 BULL_ANY_MID | 94 | 🔄24 | ↑1.022 | ↑1d | SQ | +5.0% | -36.71/-39.86 | +5.00% | 20% |
 | [APOLLOPIPE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOPIPE)<br><sub>↓CMF15d · DEL67%</sub> | ✓ SAFE | PVC pipes infrastructure water management agriculture | 📈 BULL_ANY_MID | 94 | 🔄82 | ↑1.018 | ↑1d | SQ | +4.2% | -40.56/-42.17 | +4.16% | 20% |
 | [GKSL](https://in.tradingview.com/chart/?symbol=NSE:GKSL)<br><sub>↓CMF30d</sub> | ✓ SAFE | Kidney transplant dialysis hospital network healthcare | 📈 BULL_ANY_MID | 69 | ↑50 | ↑1.012 | ↑1d | SQ | +1.3% | -4.99/-10.16 | +1.34% | 20% |
 | [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER)<br><sub>🚀SS · ↓CMF10d</sub> | ✓ SAFE | AC manufacturing and EMS for consumer appliances | 📈 BULL_ANY_MID | 59 | 🔄52 | ↑1.005 | ↑1d | — | +2.4% | -17.24/-19.21 | +2.38% | 20% |
-| [MUTHOOTFIN](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTFIN)<br><sub>🚀SS · ↓CMF1d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 51 | 🔄30 | ↑1.005 | ↓9d | — | -2.4% | -40.8/-42.17 | +3.40% | 20% |
+| [MUTHOOTFIN](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTFIN)<br><sub>🚀SS · ↓CMF1d · ÷DIV</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 51 | 🔄30 | ↑1.005 | ↓9d | — | -2.4% | -40.8/-42.17 | +3.40% | 20% |
 | [VIKRAMSOLR](https://in.tradingview.com/chart/?symbol=NSE:VIKRAMSOLR)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Solar PV module manufacturer, EPC services, renewable energy sector | 📈 BULL_ANY_MID | 46 | 🔄50 | ↑1.004 | ↓14d | — | -4.4% | -45.2/-45.34 | +5.21% | 20% |
 
 ```
@@ -184,7 +188,7 @@ NSE:GIPCL,NSE:JAYKAY,NSE:ARE&M,NSE:ASTERDM,NSE:INNOVACAP,NSE:PREMIERENE,NSE:PGHL
 | [GRPLTD](https://in.tradingview.com/chart/?symbol=NSE:GRPLTD)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF18d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 18 | ↑31 | ↑1.034 | ↑2d | PV | +6.2% | 20.61/13.61 | +2.30% | 20% |
 | [AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE)<br><sub>📶W9 · W↑14d · ↑CMF0d</sub> | ⚠ CAUTION |  | ⚡ BULL_ANY_PPV | 10 | ↑56 | ↑1.018 | ↑15d | PV | +9.2% | 26.87/24.24 | +1.62% | 20% |
 | [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF9d</sub> | ✓ SAFE | Steel pipes, forgings, tubes for automotive, industrial | ⚡ BULL_ANY_PPV | 3 | ↑86 | ↑1.049 | ↑17d | PV | +18.0% | 49.57/48.41 | +6.62% | 20% |
-| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ★ · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
+| [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>📶W9 · W↑70d · ↑CMF15d</sub> | ✓ SAFE | Health insurance policies, retail individuals, hospitals network | ⚡ BULL_ANY_PPV | 3 | ↑85 | ↑1.031 | ↑17d | PV | +15.6% | 54.31/52.82 | +3.26% | 20% |
 | [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>📶W9 · W↑19d · 🚀SS·9x · ↑CMF7d</sub> | ✓ SAFE | Stockbroking wealth management MSME lending insurance distribution financial services | ⚡ BULL_ANY_PPV | 0 | ↑62 | ↑1.071 | ↑20d | PV | +26.6% | 59.2/57.93 | +7.98% | 20% |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>📶W9 · W↑14d · 🚀SS · ↑CMF14d</sub> | ✓ SAFE | Specialty chemicals for pharma agrochemical material science | ⚡ BULL_ANY_PPV | 0 | ↑94 | ↑1.087 | ↑27d | PV | +35.2% | 69.16/65.98 | +5.12% | 20% |
 | [JKIL](https://in.tradingview.com/chart/?symbol=NSE:JKIL)<br><sub>W↑14d · 🚀SS · ↓CMF30d</sub> | ⚠ CAUTION | EPC contractor, urban transport infrastructure, roads and metro | ⚡ BULL_ANY_PPV | 59 | 🔄20 | ↑1.014 | ↑1d | PV | +3.7% | -2.03/-3.71 | +3.67% | 20% |
@@ -199,12 +203,12 @@ NSE:TCIEXP,NSE:KALYANKJIL,NSE:GRPLTD,NSE:AGARWALEYE,NSE:GOODLUCK,NSE:STARHEALTH,
 ### 🟢 OVERSOLD — reversal from −53/−60 (6)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [LTM](https://in.tradingview.com/chart/?symbol=NSE:LTM)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 47 | 🔄4 | ↑1.007 | ↓13d | — | -3.6% | -56.4/-61.13 | +2.08% | 20% |
-| [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>🚀SS · ↓CMF8d</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 5 | ↓50 | ↑0.995 | ↓22d | — | -9.7% | -60.32/-63.96 | +1.29% | 20% |
-| [JINDALSTEL](https://in.tradingview.com/chart/?symbol=NSE:JINDALSTEL)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 5 | ↓38 | ↑0.982 | ↓35d | — | -15.2% | -70.63/-73.17 | +0.98% | 20% |
-| [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE |  | 🟡 BULL_OS_L2 | 18 | ↓2 | ↑1.001 | ↓12d | — | -8.4% | -50.54/-55.6 | +0.59% | 20% |
-| [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Plastic pipes, packaging, industrial products manufacturer | 🟡 BULL_OS_L2 | 11 | ↓10 | ↑0.990 | ↓14d | — | -8.4% | -54.4/-55.08 | +1.54% | 20% |
-| [WAAREEENER](https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER)<br><sub>🚀SS · ↓CMF11d</sub> | ✓ SAFE | Solar photovoltaic modules manufacturer, renewable energy sector | 🟡 BULL_OS_L2 | 7 | ↓27 | ↑0.991 | ↓18d | — | -6.2% | -55.62/-55.9 | +1.42% | 20% |
+| [LTM](https://in.tradingview.com/chart/?symbol=NSE:LTM)<br><sub>🚀SS · ↓CMF30d · 🎯SLING</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 47 | 🔄4 | ↑1.007 | ↓13d | — | -3.6% | -56.4/-61.13 | +2.08% | 20% |
+| [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>🚀SS · ↓CMF8d · 🎯SLING</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 5 | ↓50 | ↑0.995 | ↓22d | — | -9.7% | -60.32/-63.96 | +1.29% | 20% |
+| [JINDALSTEL](https://in.tradingview.com/chart/?symbol=NSE:JINDALSTEL)<br><sub>🚀SS · ↓CMF30d · 🎯SLING</sub> | ✓ SAFE |  | 🟢 BULL_OVERSOLD | 5 | ↓38 | ↑0.982 | ↓35d | — | -15.2% | -70.63/-73.17 | +0.98% | 20% |
+| [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>🚀SS · ↓CMF30d · 🎯SLING</sub> | ✓ SAFE |  | 🟡 BULL_OS_L2 | 18 | ↓2 | ↑1.001 | ↓12d | — | -8.4% | -50.54/-55.6 | +0.59% | 20% |
+| [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND)<br><sub>🚀SS · ↓CMF30d · 🎯SLING</sub> | ✓ SAFE | Plastic pipes, packaging, industrial products manufacturer | 🟡 BULL_OS_L2 | 11 | ↓10 | ↑0.990 | ↓14d | — | -8.4% | -54.4/-55.08 | +1.54% | 20% |
+| [WAAREEENER](https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER)<br><sub>🚀SS · ↓CMF11d · ⚠️TRAP</sub> | ✓ SAFE | Solar photovoltaic modules manufacturer, renewable energy sector | 🟡 BULL_OS_L2 | 7 | ↓27 | ↑0.991 | ↓18d | — | -6.2% | -55.62/-55.9 | +1.42% | 20% |
 
 ```
 NSE:LTM,NSE:TATASTEEL,NSE:JINDALSTEL,NSE:INFY,NSE:SUPREMEIND,NSE:WAAREEENER
@@ -221,20 +225,20 @@ NSE:LTM,NSE:TATASTEEL,NSE:JINDALSTEL,NSE:INFY,NSE:SUPREMEIND,NSE:WAAREEENER
 | [GLAXO](https://in.tradingview.com/chart/?symbol=NSE:GLAXO)<br><sub>📶W9 · W↑14d · ↑CMF14d</sub> | ✓ SAFE | Pharmaceuticals manufacturing vaccines respiratory gastrointestinal antibiotics India | 📈 BULL_ANY_MID | 7 | ↑27 | ↑1.018 | ↑18d | — | +15.0% | 34.71/32.79 | +1.23% | 20% |
 | [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE)<br><sub>📶W9 · W↑70d · ↑CMF12d</sub> | ✓ SAFE | Financial services: insurance, broking, SME lending | 📈 BULL_ANY_MID | 5 | ↑68 | ↑1.018 | ↑21d | — | +19.0% | 45.27/43.68 | +2.03% | 20% |
 | [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB)<br><sub>📶W9 · W↑67d · 🚀SS · ★ · ↓CMF2d</sub> | ✓ SAFE | Pharma APIs CDMO services domestic international markets | 📈 BULL_ANY_MID | 4 | ↑87 | ↑1.042 | ↑16d | — | +14.8% | 70.8/70.33 | +3.46% | 20% |
-| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ★ · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
+| [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>📶W9 · W↑29d · 🚀SS · ↑CMF30d</sub> | ✓ SAFE | Knitted infant children's apparel manufacturer exporter textile | 📈 BULL_ANY_MID | 1 | ↑94 | ↑1.056 | ↑19d | — | +48.1% | 63.52/63.02 | +1.52% | 20% |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>📶W9 · W↑19d · 🚀SS · ↑CMF18d</sub> | ✓ SAFE | Microfinance bank serving unbanked low-income borrowers | 📈 BULL_ANY_MID | 0 | ↑68 | ↑1.044 | ↑20d | — | +17.5% | 56.33/54.51 | +4.95% | 20% |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>📶W9 · W↑108d · 🚀SS · ↑CMF12d</sub> | ✓ SAFE | Niche APIs formulations contract manufacturing pharma CDMO | 📈 BULL_ANY_MID | 0 | ↑94 | ↑1.045 | ↑49d | — | +53.0% | 64.96/63.59 | +4.53% | 20% |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>📶W9 · ↑CMF23d</sub> | ✓ SAFE | Cloud TV platform for content distribution and monetization | 📈 BULL_ANY_MID | 0 | ↑50 | ↓1.063 | ↑21d | — | +42.5% | 61.37/59.03 | -0.59% | 20% |
 | [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER)<br><sub>🚀SS · ↓CMF10d</sub> | ✓ SAFE | AC manufacturing and EMS for consumer appliances | 📈 BULL_ANY_MID | 59 | 🔄52 | ↑1.005 | ↑1d | — | +2.4% | -17.24/-19.21 | +2.38% | 20% |
-| [MUTHOOTFIN](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTFIN)<br><sub>🚀SS · ↓CMF1d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 51 | 🔄30 | ↑1.005 | ↓9d | — | -2.4% | -40.8/-42.17 | +3.40% | 20% |
+| [MUTHOOTFIN](https://in.tradingview.com/chart/?symbol=NSE:MUTHOOTFIN)<br><sub>🚀SS · ↓CMF1d · ÷DIV</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 51 | 🔄30 | ↑1.005 | ↓9d | — | -2.4% | -40.8/-42.17 | +3.40% | 20% |
 | [VIKRAMSOLR](https://in.tradingview.com/chart/?symbol=NSE:VIKRAMSOLR)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | Solar PV module manufacturer, EPC services, renewable energy sector | 📈 BULL_ANY_MID | 46 | 🔄50 | ↑1.004 | ↓14d | — | -4.4% | -45.2/-45.34 | +5.21% | 20% |
 | [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>🚀SS · ↓CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 27 | ↓41 | ↑1.006 | ↑3d | — | +1.5% | -0.82/-6.13 | +0.71% | 20% |
 | [ITC](https://in.tradingview.com/chart/?symbol=NSE:ITC)<br><sub>W↑14d · 🚀SS · ↑CMF6d</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 27 | ↓7 | ↑1.002 | ↑3d | — | +1.1% | 6.95/5.11 | +0.07% | 20% |
 | [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM)<br><sub>🚀SS · ↓CMF3d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 23 | ↓23 | ↑1.004 | ↓7d | — | -0.5% | -41.06/-43.01 | +1.64% | 20% |
-| [BPCL](https://in.tradingview.com/chart/?symbol=NSE:BPCL)<br><sub>W↑14d · ↓CMF5d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↓36 | ↓1.003 | ↑2d | — | +1.2% | 11.82/9.95 | -0.85% | 20% |
+| [BPCL](https://in.tradingview.com/chart/?symbol=NSE:BPCL)<br><sub>W↑14d · ↓CMF5d · ÷DIV</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↓36 | ↓1.003 | ↑2d | — | +1.2% | 11.82/9.95 | -0.85% | 20% |
 | [VBL](https://in.tradingview.com/chart/?symbol=NSE:VBL)<br><sub>🚀SS · ↓CMF10d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 16 | ↓67 | ↑1.004 | ↓14d | — | -1.2% | -13.92/-16.25 | +1.07% | 20% |
 | [WIPRO](https://in.tradingview.com/chart/?symbol=NSE:WIPRO)<br><sub>🚀SS · ↓CMF3d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 10 | ↓4 | ↑1.001 | ↓32d | — | -8.5% | -44.09/-47.74 | +1.03% | 20% |
-| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>🚀SS · ↓CMF8d</sub> | ✓ SAFE | Offshore drilling services, compression equipment, oil gas operations | 📈 BULL_ANY_MID | 6 | ↓43 | ↑0.989 | ↓19d | — | -8.3% | -48.43/-49.74 | +1.01% | 20% |
+| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>🚀SS · ↓CMF8d · ⚠️TRAP</sub> | ✓ SAFE | Offshore drilling services, compression equipment, oil gas operations | 📈 BULL_ANY_MID | 6 | ↓43 | ↑0.989 | ↓19d | — | -8.3% | -48.43/-49.74 | +1.01% | 20% |
 | [HINDALCO](https://in.tradingview.com/chart/?symbol=NSE:HINDALCO)<br><sub>🚀SS · ↓CMF15d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓67 | ↑0.984 | ↓31d | — | -9.0% | -43.92/-44.37 | +0.45% | 20% |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>🚀SS · ↓CMF3d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓50 | ↑0.994 | ↓24d | — | -4.0% | -45.22/-45.43 | +0.10% | 20% |
 
