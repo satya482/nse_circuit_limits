@@ -52,8 +52,8 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [SHADOWFAX](https://in.tradingview.com/chart/?symbol=NSE:SHADOWFAX)<br><sub>↓CMF3d</sub> | 1d | +4.5% | Fast delivery logistics platform for e-commerce merchants | +4.50% | 228.85 | ✓ | 20%  |
 | [BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND)<br><sub>↑CMF19d</sub> | 1d | +2.3% | Off-highway tires for agriculture, construction, mining sectors | +2.32% | 2252.90 | ✓ | 20%  |
 | [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM)<br><sub>↑CMF30d</sub> | 1d | +2.0% | PTFE fluorochemicals manufacturer specialty chemicals sector | +2.02% | 3941.50 | — | 20%  |
-| [AYE](https://in.tradingview.com/chart/?symbol=NSE:AYE)<br><sub>↑CMF6d</sub> | 1d | +1.4% | Micro-enterprise secured loans NBFC small business credit | +1.43% | 169.90 | — | 20%  |
-| [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES)<br><sub>↑CMF5d</sub> | 1d | +2.3% |  | +2.28% | 449.50 | ✓ | 20%  |
+| [AYE](https://in.tradingview.com/chart/?symbol=NSE:AYE)<br><sub>↑CMF6d · DEL77%</sub> | 1d | +1.4% | Micro-enterprise secured loans NBFC small business credit | +1.43% | 169.90 | — | 20%  |
+| [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES)<br><sub>↑CMF5d · DEL90%</sub> | 1d | +2.3% |  | +2.28% | 449.50 | ✓ | 20%  |
 | [JSFB](https://in.tradingview.com/chart/?symbol=NSE:JSFB)<br><sub>↓CMF4d</sub> | 1d | +4.1% | Small finance banking for low-income retail customers | +4.14% | 474.10 | ✓ | 20%  |
 | [EXICOM](https://in.tradingview.com/chart/?symbol=NSE:EXICOM)<br><sub>↑CMF30d</sub> | 1d | +6.0% | EV charging infrastructure and critical power systems manufacturer | +6.01% | 170.04 | ✓ | 20%  |
 | [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON)<br><sub>↓CMF6d</sub> | 1d | +2.3% | Electronics manufacturing services for high-complexity defense telecom products | +2.29% | 1768.10 | ✓ | 20%  |
@@ -87,29 +87,29 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [PPLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:PPLPHARMA)<br><sub>↑CMF5d</sub> | 2d | +5.4% | CDMO services, hospital generics, pharmaceutical manufacturing solutions | +3.01% | 177.16 | — | 20%  |
 | [IFBIND](https://in.tradingview.com/chart/?symbol=NSE:IFBIND)<br><sub>↑CMF0d</sub> | 2d | +9.8% | Washing machines, dryers, automotive parts manufacturing | +7.86% | 1380.50 | ✓ | 20%  |
 | [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL)<br><sub>↓CMF14d</sub> | 2d | +9.5% | BPO services healthcare banking financial services customers | +6.90% | 259.71 | ✓ | 20%  |
-| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>↑CMF20d</sub> | 2d | +10.1% | Dry bulk carrier operations for maritime cargo transport | +5.42% | 551.75 | — | 10% 🟩 |
+| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>↑CMF20d · DEL58%</sub> | 2d | +10.1% | Dry bulk carrier operations for maritime cargo transport | +5.42% | 551.75 | — | 10% 🟩 |
 | [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK)<br><sub>↑CMF3d</sub> | 2d | +7.1% | Small finance bank serving unbanked small entrepreneurs | +5.21% | 82.24 | ✓ | 20%  |
 | [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>↑CMF2d</sub> | 2d | +3.0% | CCTV cameras surveillance systems manufacturing India security | +0.50% | 3662.40 | ✓ | 5% 🟥 |
 | [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC)<br><sub>↓CMF30d</sub> | 2d | +9.8% | Retail credit to underserved households and small businesses | +5.67% | 325.30 | ✓ | 20%  |
 | [JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE)<br><sub>↓CMF30d</sub> | 2d | +3.3% | Radial tyres for cars, trucks, two-wheelers | +1.38% | 410.30 | ✓ | 20%  |
-| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF1d · DEL68%(T-1)</sub> | 2d | +5.4% | IT services digital transformation automation consulting | +2.04% | 550.25 | — | 20%  |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF1d · DEL75%</sub> | 2d | +5.4% | IT services digital transformation automation consulting | +2.04% | 550.25 | — | 20%  |
 | [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR)<br><sub>↓CMF2d</sub> | 2d | +4.7% | Fluorochemicals refrigerants specialty chemicals contract manufacturing | +0.30% | 7712.00 | ✓ | 20%  |
 | [BORORENEW](https://in.tradingview.com/chart/?symbol=NSE:BORORENEW)<br><sub>↑CMF27d</sub> | 2d | +7.7% | Solar glass manufacturer for photovoltaic modules India | -1.70% | 640.55 | — | 20%  |
 | [BLUESTARCO](https://in.tradingview.com/chart/?symbol=NSE:BLUESTARCO)<br><sub>↑CMF0d</sub> | 2d | +5.5% | AC manufacturing, refrigeration, MEP solutions for commercial buildings | +2.87% | 1662.00 | — | 20%  |
 | [REDINGTON](https://in.tradingview.com/chart/?symbol=NSE:REDINGTON)<br><sub>↑CMF16d</sub> | 2d | +4.4% | IT hardware software mobility distributor supply chain | +2.06% | 280.40 | — | 20%  |
 | [HDBFS](https://in.tradingview.com/chart/?symbol=NSE:HDBFS)<br><sub>↑CMF19d</sub> | 2d | +3.9% | Vehicle loans, personal loans, NBFC underserved markets | +2.80% | 755.45 | — | 20%  |
-| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d</sub> | 2d | +10.3% | Gurugram residential developer mid-premium affordable housing NCR | +4.96% | 848.85 | — | 20%  |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d · DEL28%</sub> | 2d | +10.3% | Gurugram residential developer mid-premium affordable housing NCR | +4.96% | 848.85 | — | 20%  |
 | [PGHL](https://in.tradingview.com/chart/?symbol=NSE:PGHL)<br><sub>↑CMF0d</sub> | 2d | +9.2% | Vitamins, minerals, supplements, and OTC pharmaceuticals manufacturer | +3.43% | 6839.00 | — | 20%  |
 | [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML)<br><sub>↑CMF1d</sub> | 2d | +4.9% | Heavy equipment and defense vehicles manufacturing | +2.56% | 1862.60 | — | 20%  |
 | [ELLEN](https://in.tradingview.com/chart/?symbol=NSE:ELLEN)<br><sub>↑CMF0d</sub> | 2d | +15.7% | Industrial oxygen nitrogen gases bulk packaged eastern southern | +10.00% | 294.25 | — | 20%  |
-| [MAHLIFE](https://in.tradingview.com/chart/?symbol=NSE:MAHLIFE)<br><sub>↑CMF10d</sub> | 2d | +5.5% | Residential and industrial real estate developer across India | +2.96% | 378.90 | — | 20%  |
+| [MAHLIFE](https://in.tradingview.com/chart/?symbol=NSE:MAHLIFE)<br><sub>↑CMF10d · DEL92%</sub> | 2d | +5.5% | Residential and industrial real estate developer across India | +2.96% | 378.90 | — | 20%  |
 | [SHAKTIPUMP](https://in.tradingview.com/chart/?symbol=NSE:SHAKTIPUMP)<br><sub>↓CMF4d</sub> | 2d | +2.2% | Solar submersible pumps agriculture irrigation water supply | +1.10% | 579.25 | — | 20%  |
 | [LLOYDSENT](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENT)<br><sub>↑CMF5d</sub> | 2d | +9.6% | Steel trading, engineering solutions, real estate investments | +4.83% | 78.18 | ✓ | 20%  |
 | [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH)<br><sub>↓CMF30d</sub> | 2d | +2.7% | Animal health pharmaceuticals APIs formulations global markets | -1.16% | 277.80 | — | 20%  |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA)<br><sub>↓CMF5d</sub> | 2d | +3.0% | Gaming platform, esports, mobile and console games, India and global | +0.16% | 304.30 | ✓ | 20%  |
 | [INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA)<br><sub>↑CMF25d</sub> | 2d | +5.4% | Cryogenic equipment manufacturer for LNG and industrial gas sectors | -1.41% | 1978.00 | ✓ | 20%  |
 | [VINCOFE](https://in.tradingview.com/chart/?symbol=NSE:VINCOFE)<br><sub>↓CMF22d</sub> | 2d | +4.3% | Instant coffee chicory production exporter beverage manufacturing | -0.98% | 161.55 | ✓ | 20%  |
-| [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH)<br><sub>↑CMF18d</sub> | 2d | +5.8% | IT hardware distributor connecting brands resellers retailers | +0.49% | 783.05 | — | 20%  |
+| [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH)<br><sub>↑CMF18d · DEL46%</sub> | 2d | +5.8% | IT hardware distributor connecting brands resellers retailers | +0.49% | 783.05 | — | 20%  |
 | [DALBHARAT](https://in.tradingview.com/chart/?symbol=NSE:DALBHARAT)<br><sub>↑CMF3d</sub> | 2d | +4.0% | Cement manufacturing, infrastructure, construction | +2.54% | 1786.50 | ✓ | 20%  |
 | [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA)<br><sub>↓CMF14d</sub> | 2d | +7.0% | NBFC gold loans MSMEs self-employed individuals retail finance | +3.14% | 159.34 | — | 20%  |
 | [LALPATHLAB](https://in.tradingview.com/chart/?symbol=NSE:LALPATHLAB)<br><sub>↓CMF27d</sub> | 2d | +2.4% | Diagnostic testing, pathology labs, consumer healthcare | +0.49% | 1692.80 | ✓ | 20%  |
@@ -187,8 +187,8 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [JUBLINGREA](https://in.tradingview.com/chart/?symbol=NSE:JUBLINGREA)<br><sub>↑CMF6d</sub> | 8d | +19.2% | Specialty chemicals and pharma ingredients for global markets | +0.95% | 722.30 | — | 20%  |
 | [RAYMONDREL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDREL)<br><sub>↓CMF0d</sub> | 8d | +12.6% | Premium residential projects Mumbai Metropolitan Region developer | +0.04% | 700.00 | — | 20% 🟦 |
 | [RITES](https://in.tradingview.com/chart/?symbol=NSE:RITES)<br><sub>↑CMF25d</sub> | 8d | +9.8% | Railway engineering consultancy, infrastructure design, transport projects | +1.74% | 226.62 | — | 20%  |
-| [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE)<br><sub>↑CMF0d</sub> | 8d | +6.5% | Life insurance products for retail and corporate clients | +2.19% | 144.50 | ✓ | 20%  |
-| [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL)<br><sub>↑CMF30d · DEL81%(T-1)</sub> | 8d | +21.2% | Casual dining chain, grilled meats, pan-India restaurant operations | +3.96% | 755.80 | — | 5% 🟥 |
+| [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE)<br><sub>↑CMF0d · DEL89%</sub> | 8d | +6.5% | Life insurance products for retail and corporate clients | +2.19% | 144.50 | ✓ | 20%  |
+| [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL)<br><sub>↑CMF30d</sub> | 8d | +21.2% | Casual dining chain, grilled meats, pan-India restaurant operations | +3.96% | 755.80 | — | 5% 🟥 |
 | [GANECOS](https://in.tradingview.com/chart/?symbol=NSE:GANECOS)<br><sub>↑CMF8d</sub> | 8d | +24.4% | PET waste recycling polyester fiber apparel textile manufacturers | -2.44% | 1108.70 | — | 20% 🟦 |
 | [TIPSMUSIC](https://in.tradingview.com/chart/?symbol=NSE:TIPSMUSIC)<br><sub>↑CMF1d</sub> | 8d | +11.6% | Music production distribution digital content monetization entertainment | +0.06% | 711.55 | — | 20%  |
 | [BLACKBUCK](https://in.tradingview.com/chart/?symbol=NSE:BLACKBUCK)<br><sub>↑CMF16d</sub> | 8d | +8.0% | Logistics Tech: Digital Trucking Platform, Payments, Marketplace | +3.09% | 578.90 | ✓ | 20%  |
@@ -210,7 +210,7 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON)<br><sub>↑CMF1d</sub> | 10d | +15.9% | Hair oils and personal care products for Indian households | +4.15% | 670.25 | — | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↑CMF1d</sub> | 10d | +16.4% | API and formulation manufacturer serving global pharma markets | +0.88% | 889.85 | — | 20%  |
 | [SPARC](https://in.tradingview.com/chart/?symbol=NSE:SPARC)<br><sub>↓CMF0d</sub> | 10d | +17.6% | Clinical-stage biotech developing novel therapeutic drugs globally | -4.67% | 264.60 | — | 10% 🟨 |
-| [WEWORK](https://in.tradingview.com/chart/?symbol=NSE:WEWORK)<br><sub>↓CMF4d · DEL77%(T-1)</sub> | 10d | +18.0% | Flexible office spaces for enterprises, startups, GCCs | +0.69% | 731.00 | — | 20%  |
+| [WEWORK](https://in.tradingview.com/chart/?symbol=NSE:WEWORK)<br><sub>↓CMF4d</sub> | 10d | +18.0% | Flexible office spaces for enterprises, startups, GCCs | +0.69% | 731.00 | — | 20%  |
 | [PAYTM](https://in.tradingview.com/chart/?symbol=NSE:PAYTM)<br><sub>↑CMF8d</sub> | 12d | +23.4% | Digital payments, fintech, consumer merchants | +6.25% | 1341.80 | — | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>↑CMF9d</sub> | 12d | +23.8% | Electric scooters, batteries, charging infrastructure, premium segment | +0.61% | 1225.80 | — | 20%  |
 | [SUVEN](https://in.tradingview.com/chart/?symbol=NSE:SUVEN)<br><sub>↑CMF6d</sub> | 12d | +40.5% | CNS drug development, neurodegenerative disorders focus, clinical stage | +3.20% | 357.85 | — | 20%  |
@@ -278,7 +278,7 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK)<br><sub>↑CMF20d</sub> | 23d | +47.7% | LPG liquid storage terminals third party logistics operator | +2.78% | 283.18 | — | 20%  |
 | [BLUEJET](https://in.tradingview.com/chart/?symbol=NSE:BLUEJET)<br><sub>↑CMF10d</sub> | 24d | +38.4% | Specialty pharma CDMO, niche chemistry, healthcare ingredients manufacturing | +8.62% | 624.05 | — | 20%  |
 | [UNICHEMLAB](https://in.tradingview.com/chart/?symbol=NSE:UNICHEMLAB)<br><sub>↑CMF1d</sub> | 24d | +79.0% | Pharma generics APIs contract manufacturing CMO | -1.82% | 638.75 | — | 20%  |
-| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF2d · DEL80%(T-1)</sub> | 24d | +26.6% | B2B travel tech platform connecting hotels airlines buyers globally | +0.53% | 1504.90 | ✓ | 20%  |
+| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF2d · DEL88%</sub> | 24d | +26.6% | B2B travel tech platform connecting hotels airlines buyers globally | +0.53% | 1504.90 | ✓ | 20%  |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>↑CMF23d</sub> | 24d | +42.8% | APIs, formulations, home diagnostics for Indian patients | +0.43% | 61.22 | — | 20%  |
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH)<br><sub>↓CMF1d</sub> | 24d | +30.1% | Electrical meters, automation instruments, industrial testing equipment manufacturer | +1.46% | 662.10 | — | 20%  |
 | [SENORES](https://in.tradingview.com/chart/?symbol=NSE:SENORES)<br><sub>↓CMF0d</sub> | 24d | +40.8% | Complex generics manufacturer certified globally affordable quality | -0.13% | 1417.80 | — | 20%  |
@@ -291,7 +291,7 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>↑CMF15d</sub> | 28d | +36.6% | Specialty chemicals for pharma agrochemical material science | +1.01% | 1500.80 | — | 20%  |
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK)<br><sub>↑CMF30d</sub> | 29d | +14.4% | Retail corporate banking Kerala-rooted expanding national branch network | +0.64% | 329.85 | ✓ | 20%  |
 | [AKUMS](https://in.tradingview.com/chart/?symbol=NSE:AKUMS)<br><sub>↓CMF2d</sub> | 29d | +33.8% | CDMO formulations development manufacturing Indian pharma companies | +6.65% | 701.95 | — | 20%  |
-| [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE)<br><sub>↑CMF25d</sub> | 30d | +61.9% | Used car marketplace, financing, dealer-to-consumer platform | +2.73% | 2809.90 | — | 20%  |
+| [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE)<br><sub>↑CMF25d · DEL59%</sub> | 30d | +61.9% | Used car marketplace, financing, dealer-to-consumer platform | +2.73% | 2809.90 | — | 20%  |
 | [INDSWFTLAB](https://in.tradingview.com/chart/?symbol=NSE:INDSWFTLAB)<br><sub>↑CMF1d</sub> | 31d | +82.8% | Macrolide antibiotics bulk drugs manufacturing pharma | +4.61% | 246.44 | — | 20%  |
 | [SKFINDUS](https://in.tradingview.com/chart/?symbol=NSE:SKFINDUS)<br><sub>↓CMF6d</sub> | 31d | +34.4% | Rolling bearings seals lubrication industrial machinery | -0.64% | 2810.00 | — | 20%  |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL)<br><sub>↓CMF1d</sub> | 33d | +71.9% | Gold ornaments silver diamond jewelry retail Tamil Nadu | -0.88% | 6540.50 | — | 10% 🟨 |
@@ -302,7 +302,7 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS)<br><sub>↑CMF25d</sub> | 36d | +105.7% | Cloud ERP software for aviation and manufacturing businesses | -3.79% | 805.60 | — | 10% 🟨 |
 | [MINDACORP](https://in.tradingview.com/chart/?symbol=NSE:MINDACORP)<br><sub>↑CMF1d</sub> | 37d | +35.1% | Automotive electromechanical components supplier global OEMs | -0.93% | 698.90 | — | 20%  |
 | [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO)<br><sub>↑CMF30d</sub> | 38d | +65.1% | RF microwave modules defense space telecom systems | -1.60% | 1803.70 | — | 20%  |
-| [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br><sub>↑CMF21d · DEL34%(T-1)</sub> | 39d | +81.7% | Bulk liquid terminals, oil gas chemical logistics India | -1.42% | 1246.10 | — | 10% 🟨 |
+| [AEGISLOG](https://in.tradingview.com/chart/?symbol=NSE:AEGISLOG)<br><sub>↑CMF21d</sub> | 39d | +81.7% | Bulk liquid terminals, oil gas chemical logistics India | -1.42% | 1246.10 | — | 10% 🟨 |
 | [PAISALO](https://in.tradingview.com/chart/?symbol=NSE:PAISALO)<br><sub>↑CMF25d</sub> | 39d | +57.6% | Microfinance loans to rural unbanked populations India | +1.16% | 73.24 | — | 20%  |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>↑CMF30d</sub> | 45d | +272.2% | Aerospace defense electronic systems manufacturer for global OEMs | +4.41% | 582.65 | — | 20%  |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>↑CMF13d</sub> | 50d | +54.2% | Niche APIs formulations contract manufacturing pharma CDMO | +0.78% | 627.15 | — | 20%  |
@@ -318,7 +318,7 @@ NSE:ZENSARTECH,NSE:NEWGEN,NSE:MRPL,NSE:BANDHANBNK,NSE:COFORGE,NSE:RBLBANK,NSE:ST
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>↑CMF8d</sub> | 7d | +5.9% | Precision components aerospace defense nuclear clean energy | -4.25% | 7777.00 | — | 5% 🟥 |
-| [PARAS](https://in.tradingview.com/chart/?symbol=NSE:PARAS)<br><sub>↑CMF23d · DEL31%(T-1)</sub> | 9d | +5.9% | Defence aerospace electronics manufacturing for Indian military space | +2.98% | 1253.10 | — | 10% 🟨 |
+| [PARAS](https://in.tradingview.com/chart/?symbol=NSE:PARAS)<br><sub>↑CMF23d</sub> | 9d | +5.9% | Defence aerospace electronics manufacturing for Indian military space | +2.98% | 1253.10 | — | 10% 🟨 |
 | [SCHNEIDER](https://in.tradingview.com/chart/?symbol=NSE:SCHNEIDER)<br><sub>↑CMF30d</sub> | 18d | +19.7% | Power distribution equipment manufacturing for electrical networks | -4.78% | 1414.20 | — | 10% 🟩 |
 | [MSTCLTD](https://in.tradingview.com/chart/?symbol=NSE:MSTCLTD)<br><sub>↑CMF26d</sub> | 34d | +56.0% | Steel scrap trading, e-commerce platform, government procurement auctions | -0.84% | 670.65 | ✓ | 10% 🟨 |
 | [KERNEX](https://in.tradingview.com/chart/?symbol=NSE:KERNEX)<br><sub>↑CMF30d</sub> | 35d | +59.6% | Railway safety systems and software developer for trains | +1.58% | 2157.50 | — | 20%  |

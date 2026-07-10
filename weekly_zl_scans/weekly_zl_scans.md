@@ -47,7 +47,7 @@ NSE:SWIGGY,NSE:PERSISTENT,NSE:MRPL,NSE:AMBER,NSE:RHIM,NSE:KFINTECH,NSE:HAPPSTMND
 | [ICICIGI](https://in.tradingview.com/chart/?symbol=NSE:ICICIGI)<br><sub>↑CMF4d</sub> | General insurance motor health property casualty India | 1w | ABOVE | 1w | +3.0% | +1.76% | 1826.20 | 9w | 20%  |
 | [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL)<br><sub>↓CMF14d</sub> | BPO services healthcare banking financial services customers | 1w | ABOVE | 1w | +8.1% | +6.90% | 259.71 | — | 20%  |
 | [ECLERX](https://in.tradingview.com/chart/?symbol=NSE:ECLERX)<br><sub>↑CMF5d</sub> | Legal document processing and financial analytics for global enterprises | 1w | ABOVE | 1w | +8.9% | +4.20% | 1621.70 | 3w | 20%  |
-| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d</sub> | Gurugram residential developer mid-premium affordable housing NCR | 1w | ABOVE | 1w | +12.0% | +4.96% | 848.85 | — | 20%  |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d · DEL28%</sub> | Gurugram residential developer mid-premium affordable housing NCR | 1w | ABOVE | 1w | +12.0% | +4.96% | 848.85 | — | 20%  |
 | [JINDRILL](https://in.tradingview.com/chart/?symbol=NSE:JINDRILL)<br><sub>↑CMF2d</sub> | Offshore jack-up rigs drilling services oil gas sector | 1w | ABOVE | 1w | +8.9% | -2.85% | 603.05 | — | 20%  |
 | [BUILDPRO](https://in.tradingview.com/chart/?symbol=NSE:BUILDPRO)<br><sub>↑CMF4d</sub> | Building materials retail distribution southern western India | 1w | ABOVE | 1w | +27.7% | +3.85% | 1245.20 | 4w | 20%  |
 | [CRISIL](https://in.tradingview.com/chart/?symbol=NSE:CRISIL)<br><sub>↓CMF5d</sub> | Credit ratings research risk advisory services financial sector | 1w | ABOVE | 1w | +2.0% | +1.05% | 4097.40 | 1w | 20%  |
