@@ -1,0 +1,162 @@
+//@version=6
+// Relative Leadership: RS line (stock/benchmark) vs its EMA21, plus a relative-
+// performance oscillator (% outperformance over N bars). Scores 0-5 combining
+// both; fires "strong leadership" when score crosses >=4. Separate pane
+// (overlay=false), no companion indicator.
+// Alert message format: SIGNAL_TYPE|{{ticker}}|description|TF:{{interval}}
+
+
+// How I would use it
+
+// Do not enter immediately on every RS turn-up.
+
+// Use the stages like this:
+
+// T: add the stock to an active watchlist.
+// RS: RS momentum is confirmed.
+// L: stock has moved into 21-bar benchmark outperformance.
+// STR: multiple leadership conditions now agree.
+// Your existing previous-high webhook: actual entry trigger.
+
+// The preferred setup is:
+
+// RS Turn Up
+// → RS above EMA 21
+// → Relative performance above zero
+// → Leadership score at least 4
+// → Price breaks previous high
+
+// The score helps avoid requiring every condition to occur on exactly the same candle. That is important because RS improvement commonly appears first, while price confirmation comes one or more candles later.
+
+// For swing trading, use this on the daily chart with 21 bars. For faster entries, use 13 bars, but expect more false signals.
+
+indicator("Satya RS elative Leadership", overlay=false)
+
+// =====================================================
+// Inputs
+// =====================================================
+benchmarkSym       = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+rsEmaLen           = input.int(21, "RS EMA Length", minval=1)
+shortEmaLen        = input.int(9, "Short RS EMA", minval=1)
+performanceLen     = input.int(21, "Relative Performance Lookback", minval=2)
+performanceSmooth  = input.int(5, "Performance Smoothing", minval=1)
+benchmarkEmaLen    = input.int(21, "Benchmark Trend EMA", minval=1)
+useBenchmarkFilter = input.bool(true, "Use Benchmark Trend Filter")
+
+// =====================================================
+// Price data
+// =====================================================
+stockClose     = request.security(syminfo.tickerid, timeframe.period, close, gaps=barmerge.gaps_off)
+benchmarkClose = request.security(benchmarkSym, timeframe.period, close, gaps=barmerge.gaps_off)
+
+// =====================================================
+// Traditional RS line
+// =====================================================
+rsLine  = stockClose / benchmarkClose * 1000
+rsEma21 = ta.ema(rsLine, rsEmaLen)
+rsEma9  = ta.ema(rsLine, shortEmaLen)
+
+// =====================================================
+// Relative Performance Oscillator
+// =====================================================
+// Example: stock return +8%, benchmark return +3% -> stock outperformed.
+stockReturn             = stockClose / stockClose[performanceLen]
+benchmarkReturn         = benchmarkClose / benchmarkClose[performanceLen]
+relativePerformance     = ((stockReturn / benchmarkReturn) - 1) * 100
+relativePerformanceEma  = ta.ema(relativePerformance, performanceSmooth)
+
+// =====================================================
+// Benchmark trend
+// =====================================================
+benchmarkEma          = ta.ema(benchmarkClose, benchmarkEmaLen)
+benchmarkBullish      = benchmarkClose > benchmarkEma
+benchmarkFilterPassed = not useBenchmarkFilter or benchmarkBullish
+
+// =====================================================
+// Relative-strength conditions
+// =====================================================
+rsRising     = rsLine > rsLine[1]
+rsTurnUp     = ta.crossover(rsLine, rsLine[1])
+rsCrossUp    = ta.crossover(rsLine, rsEma21)
+rsCrossDown  = ta.crossunder(rsLine, rsEma21)
+rsAboveEma   = rsLine > rsEma21
+shortRsBullish = rsEma9 > rsEma21
+rsEmaRising  = rsEma21 > rsEma21[1]
+
+// =====================================================
+// Relative leadership conditions
+// =====================================================
+outperforming      = relativePerformance > 0
+performanceRising  = relativePerformance > relativePerformance[1]
+leadershipCrossUp   = ta.crossover(relativePerformance, 0)
+leadershipCrossDown = ta.crossunder(relativePerformance, 0)
+
+// =====================================================
+// Relative Leadership Score: 0 to 5
+// =====================================================
+leadershipScore =
+     (rsAboveEma ? 1 : 0) +
+     (shortRsBullish ? 1 : 0) +
+     (rsEmaRising ? 1 : 0) +
+     (outperforming ? 1 : 0) +
+     (performanceRising ? 1 : 0)
+
+// New strong-leadership event
+strongLeadership =
+     leadershipScore >= 4 and
+     leadershipScore[1] < 4 and
+     benchmarkFilterPassed and
+     barstate.isconfirmed
+
+// =====================================================
+// Plots
+// =====================================================
+performanceColor = relativePerformance >= 0 ? color.lime : color.red
+
+plot(relativePerformance, title="Relative Performance %", color=performanceColor, linewidth=2)
+plot(relativePerformanceEma, title="Performance EMA", color=color.orange, linewidth=1)
+hline(0, title="Benchmark Performance", color=color.gray, linestyle=hline.style_dashed)
+
+// =====================================================
+// Markers
+// =====================================================
+plotshape(rsTurnUp, title="RS Turn Up", style=shape.circle, location=location.bottom,
+     color=color.aqua, size=size.tiny, text="T")
+
+plotshape(rsCrossUp, title="RS Cross Above EMA 21", style=shape.triangleup, location=location.bottom,
+     color=color.blue, size=size.tiny, text="RS")
+
+plotshape(leadershipCrossUp, title="Outperformance Cross", style=shape.diamond, location=location.bottom,
+     color=color.lime, size=size.tiny, text="L")
+
+plotshape(strongLeadership, title="Strong Relative Leadership", style=shape.triangleup, location=location.bottom,
+     color=color.fuchsia, size=size.small, text="STR")
+
+plotshape(leadershipCrossDown, title="Leadership Lost", style=shape.triangledown, location=location.top,
+     color=color.red, size=size.tiny)
+
+// =====================================================
+// Background regime
+// =====================================================
+strongRegime = leadershipScore >= 4
+weakRegime   = leadershipScore <= 1
+
+bgcolor(strongRegime ? color.new(color.green, 88) : weakRegime ? color.new(color.red, 90) : na)
+
+// =====================================================
+// Alerts
+// =====================================================
+alertcondition(rsTurnUp and barstate.isconfirmed, title="RS Turned Up",
+     message="RS_TURN_UP|{{ticker}}|RS turned upward vs NIFTYMIDSML400|TF:{{interval}}")
+
+alertcondition(rsCrossUp and barstate.isconfirmed, title="RS Crossed Above EMA 21",
+     message="RS_CROSS_UP|{{ticker}}|RS crossed above its 21 EMA|TF:{{interval}}")
+
+alertcondition(leadershipCrossUp and barstate.isconfirmed, title="New Relative Outperformance",
+     message="LEADERSHIP_CROSS_UP|{{ticker}}|Crossed into outperformance vs NIFTYMIDSML400|TF:{{interval}}")
+
+alertcondition(strongLeadership, title="Strong Relative Leadership",
+     message="STRONG_LEADERSHIP|{{ticker}}|Strong relative leadership detected vs NIFTYMIDSML400|TF:{{interval}}")
+
+alertcondition(rsCrossDown and barstate.isconfirmed, title="RS Weakness",
+     message="RS_CROSS_DOWN|{{ticker}}|RS crossed below its 21 EMA|TF:{{interval}}")

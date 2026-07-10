@@ -1,0 +1,197 @@
+//@version=6
+// RS Line (stock/benchmark) at chart resolution plus a true weekly RS EMA9:
+// a confirmed (non-repainting, lookahead_on + [1] offset trick) weekly value
+// and a live intra-week projection of where that EMA lands if the week
+// closed at the current price. Companion to "Satya RS elative Leadership".
+// Separate pane (overlay=false).
+// Alert message format: SIGNAL_TYPE|{{ticker}}|description|TF:{{interval}}
+// Live signals can reverse before Friday's close - use "Once Per Bar Close".
+indicator("Satya RS Line + Live Weekly RS", overlay=false, precision=4, dynamic_requests=true)
+
+// =====================================================
+// Inputs
+// =====================================================
+benchmarkSym    = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+rsScale         = input.float(1000.0, "RS Display Scale", minval=1.0)
+dailyEmaLen     = input.int(21, "Daily RS EMA Length", minval=1)
+shortEmaLen     = input.int(9, "Short RS EMA Length", minval=1)
+weeklyEmaLen    = input.int(9, "Weekly RS EMA Length", minval=1)
+weeklyNearPct   = input.float(1.0, "Weekly EMA Nearness %", minval=0.1, step=0.1)
+
+showDailyEma9          = input.bool(true, "Show Daily RS EMA 9")
+showConfirmedWeeklyEma = input.bool(true, "Show Confirmed Weekly EMA 9")
+showLiveWeeklyEma      = input.bool(true, "Show Live Projected Weekly EMA 9")
+showSignals            = input.bool(true, "Show Signal Markers")
+showRegimeBackground   = input.bool(true, "Show Weekly Regime Background")
+
+// =====================================================
+// Current chart-timeframe RS
+// =====================================================
+stockClose     = request.security(syminfo.tickerid, timeframe.period, close, gaps=barmerge.gaps_off)
+benchmarkClose = request.security(benchmarkSym, timeframe.period, close, gaps=barmerge.gaps_off)
+
+rsLine  = benchmarkClose != 0 ? stockClose / benchmarkClose * rsScale : na
+rsEma21 = ta.ema(rsLine, dailyEmaLen)
+rsEma9  = ta.ema(rsLine, shortEmaLen)
+
+// =====================================================
+// True weekly RS calculation
+//
+// weeklyBenchmarkClose is its own top-level weekly request. weeklyRsExpression
+// uses the bare `close` (not the stockClose variable) so that when it's
+// re-requested below at "1W" for syminfo.tickerid, Pine can recompute it
+// against that symbol's real weekly bars instead of replaying daily-repeated
+// chart-resolution values.
+// =====================================================
+weeklyBenchmarkClose = request.security(benchmarkSym, "1W", close, gaps=barmerge.gaps_off)
+weeklyRsExpression   = weeklyBenchmarkClose != 0 ? close / weeklyBenchmarkClose * rsScale : na
+
+// Previous completed week's RS. The [1] offset together with lookahead_on
+// returns a confirmed, non-repainting HTF value.
+weeklyRsConfirmed = request.security(syminfo.tickerid, "1W", weeklyRsExpression[1], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+
+// EMA 9 as of the previous completed week.
+weeklyEma9Confirmed = request.security(syminfo.tickerid, "1W", ta.ema(weeklyRsExpression, weeklyEmaLen)[1], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+
+// EMA 9 from two completed weeks ago. This gives a persistent confirmed
+// weekly slope condition on daily/intraday charts.
+weeklyEma9ConfirmedPrevious = request.security(syminfo.tickerid, "1W", ta.ema(weeklyRsExpression, weeklyEmaLen)[2], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+
+// =====================================================
+// Live running-week RS and projected Weekly EMA 9
+//
+// The latest stock/index ratio is the developing weekly RS close.
+// The projected EMA answers: where would Weekly EMA 9 finish if
+// the current week closed at the present price?
+// =====================================================
+weeklyRsLive = rsLine
+weeklyAlpha  = 2.0 / (weeklyEmaLen + 1.0)
+
+weeklyEma9Live = na(weeklyEma9Confirmed) ? na : weeklyAlpha * weeklyRsLive + (1.0 - weeklyAlpha) * weeklyEma9Confirmed
+
+// =====================================================
+// Daily RS conditions
+// =====================================================
+dailyRsRising     = rsLine > rsLine[1]
+dailyRsTurnUp     = ta.crossover(rsLine, rsLine[1])
+dailyRsCrossUp    = ta.crossover(rsLine, rsEma21)
+dailyRsCrossDown  = ta.crossunder(rsLine, rsEma21)
+dailyRsAboveEma21 = rsLine > rsEma21
+
+// =====================================================
+// Weekly RS conditions
+// =====================================================
+weeklyLiveAboveEma  = weeklyRsLive > weeklyEma9Live
+weeklyLiveEmaRising = weeklyEma9Live > weeklyEma9Confirmed
+weeklyLiveBullish   = weeklyLiveAboveEma and weeklyLiveEmaRising
+
+weeklyConfirmedAboveEma  = weeklyRsConfirmed > weeklyEma9Confirmed
+weeklyConfirmedEmaRising = weeklyEma9Confirmed > weeklyEma9ConfirmedPrevious
+weeklyConfirmedBullish   = weeklyConfirmedAboveEma and weeklyConfirmedEmaRising
+
+weeklyLiveCrossUp   = ta.crossover(weeklyRsLive, weeklyEma9Live)
+weeklyLiveCrossDown = ta.crossunder(weeklyRsLive, weeklyEma9Live)
+
+newWeek = timeframe.change("1W")
+weeklyConfirmedCrossUp   = newWeek and ta.crossover(weeklyRsConfirmed, weeklyEma9Confirmed)
+weeklyConfirmedCrossDown = newWeek and ta.crossunder(weeklyRsConfirmed, weeklyEma9Confirmed)
+
+weeklyDistancePct = not na(weeklyEma9Live) and weeklyEma9Live != 0 ? math.abs(weeklyRsLive - weeklyEma9Live) / math.abs(weeklyEma9Live) * 100 : na
+weeklyNearEma     = not na(weeklyDistancePct) and weeklyDistancePct <= weeklyNearPct
+
+weeklyBounceState =
+     weeklyNearEma and
+     weeklyRsLive > weeklyEma9Live and
+     weeklyRsLive > weeklyRsLive[1] and
+     weeklyLiveEmaRising
+
+weeklyBounce = weeklyBounceState and not weeklyBounceState[1]
+
+// Strong alignment for watchlist/price-confirmation use.
+strongRsAlignment =
+     weeklyLiveBullish and
+     dailyRsAboveEma21 and
+     dailyRsRising
+
+newStrongRsAlignment = strongRsAlignment and not strongRsAlignment[1]
+
+// =====================================================
+// Plots
+// =====================================================
+rsLineColor         = rsLine >= rsLine[1] ? color.blue : color.red
+rsEma21Color        = rsEma21 >= rsEma21[1] ? color.blue : color.red
+rsEma9Color         = rsEma9 >= rsEma9[1] ? color.aqua : color.purple
+weeklyLiveEmaColor  = weeklyLiveEmaRising ? color.white : color.gray
+
+plot(rsLine, title="RS Line / Live Weekly RS", color=rsLineColor, linewidth=2, style=plot.style_stepline)
+plot(rsEma21, title="Daily RS EMA 21", color=rsEma21Color, linewidth=1)
+plot(showDailyEma9 ? rsEma9 : na, title="Daily RS EMA 9", color=rsEma9Color, linewidth=1)
+plot(showLiveWeeklyEma ? weeklyEma9Live : na, title="Weekly RS EMA 9 - Live Projected", color=weeklyLiveEmaColor, linewidth=2)
+plot(showConfirmedWeeklyEma ? weeklyEma9Confirmed : na, title="Weekly RS EMA 9 - Confirmed", color=color.orange, linewidth=2, style=plot.style_stepline)
+
+// =====================================================
+// Signal markers
+// T   = Daily RS turned upward
+// D21 = Daily RS crossed above EMA 21
+// W   = Live weekly RS crossed above projected Weekly EMA 9
+// WB  = Live weekly RS bounced near projected Weekly EMA 9
+// WC  = Confirmed weekly cross, available at the new week
+// STR = Daily and live-weekly RS conditions aligned
+// =====================================================
+plotshape(showSignals and dailyRsTurnUp, title="Daily RS Turn Up", style=shape.circle, location=location.bottom,
+     color=color.aqua, size=size.tiny, text="T")
+
+plotshape(showSignals and dailyRsCrossUp, title="Daily RS Cross Above EMA 21", style=shape.triangleup, location=location.bottom,
+     color=color.blue, size=size.tiny, text="D21")
+
+plotshape(showSignals and weeklyLiveCrossUp, title="Live Weekly RS Cross Up", style=shape.triangleup, location=location.bottom,
+     color=color.white, size=size.small, text="W")
+
+plotshape(showSignals and weeklyBounce, title="Live Weekly RS Bounce", style=shape.diamond, location=location.bottom,
+     color=color.yellow, size=size.tiny, text="WB")
+
+plotshape(showSignals and weeklyConfirmedCrossUp, title="Confirmed Weekly RS Cross Up", style=shape.triangleup, location=location.bottom,
+     color=color.lime, size=size.small, text="WC")
+
+plotshape(showSignals and newStrongRsAlignment, title="Strong RS Alignment", style=shape.triangleup, location=location.bottom,
+     color=color.fuchsia, size=size.small, text="STR")
+
+plotshape(showSignals and weeklyLiveCrossDown, title="Live Weekly RS Cross Down", style=shape.triangledown, location=location.top,
+     color=color.gray, size=size.tiny, text="W")
+
+plotshape(showSignals and weeklyConfirmedCrossDown, title="Confirmed Weekly RS Cross Down", style=shape.triangledown, location=location.top,
+     color=color.red, size=size.tiny, text="WC")
+
+bgcolor(showRegimeBackground ? (weeklyConfirmedBullish ? color.new(color.green, 90) : weeklyLiveBullish ? color.new(color.teal, 92) : color.new(color.red, 94)) : na, title="Weekly RS Regime")
+
+// =====================================================
+// Alerts
+// For live signals, use Once Per Bar Close when creating the alert.
+// Live weekly conditions can reverse before Friday's weekly close.
+// =====================================================
+alertcondition(dailyRsTurnUp and barstate.isconfirmed, title="Daily RS Turned Up",
+     message="DAILY_RS_TURN_UP|{{ticker}}|Daily RS turned upward vs NIFTYMIDSML400|TF:{{interval}}")
+
+alertcondition(dailyRsCrossUp and barstate.isconfirmed, title="Daily RS Cross Above EMA 21",
+     message="DAILY_RS_CROSS_UP|{{ticker}}|Daily RS crossed above its EMA 21|TF:{{interval}}")
+
+alertcondition(dailyRsCrossDown and barstate.isconfirmed, title="Daily RS Cross Below EMA 21",
+     message="DAILY_RS_CROSS_DOWN|{{ticker}}|Daily RS crossed below its EMA 21|TF:{{interval}}")
+
+alertcondition(weeklyLiveCrossUp and barstate.isconfirmed, title="Live Weekly RS Cross Up",
+     message="WEEKLY_LIVE_CROSS_UP|{{ticker}}|Running-week RS crossed above projected Weekly EMA 9|TF:{{interval}}")
+
+alertcondition(weeklyLiveCrossDown and barstate.isconfirmed, title="Live Weekly RS Cross Down",
+     message="WEEKLY_LIVE_CROSS_DOWN|{{ticker}}|Running-week RS crossed below projected Weekly EMA 9|TF:{{interval}}")
+
+alertcondition(weeklyBounce and barstate.isconfirmed, title="Live Weekly RS Bounce",
+     message="WEEKLY_LIVE_BOUNCE|{{ticker}}|Running-week RS turned up near projected Weekly EMA 9|TF:{{interval}}")
+
+alertcondition(weeklyConfirmedCrossUp, title="Confirmed Weekly RS Cross Up",
+     message="WEEKLY_CONFIRMED_CROSS_UP|{{ticker}}|Completed-week RS crossed above confirmed Weekly EMA 9|TF:{{interval}}")
+
+alertcondition(weeklyConfirmedCrossDown, title="Confirmed Weekly RS Cross Down",
+     message="WEEKLY_CONFIRMED_CROSS_DOWN|{{ticker}}|Completed-week RS crossed below confirmed Weekly EMA 9|TF:{{interval}}")
+
+alertcondition(newStrongRsAlignment and barstate.isconfirmed, title="Strong RS Alignment",
+     message="STRONG_RS_ALIGNMENT|{{ticker}}|Live weekly and daily RS conditions bullishly aligned|TF:{{interval}}")
