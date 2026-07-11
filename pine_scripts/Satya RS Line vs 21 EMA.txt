@@ -1,0 +1,48 @@
+//@version=6
+indicator("Satya RS Line vs 21 EMA", overlay=false)
+
+/////RS alert
+// === Inputs ===
+//indexSym = input.symbol("NIFTYMIDSML400", "Index Symbol (NIFTYMIDSML400)")
+isNSE = str.contains(syminfo.ticker, "NSE") or str.contains(syminfo.prefix, "NSE")
+indexSym = isNSE ? "NIFTYMIDSML400" : "SPX"
+emaLen   = input.int(21, "RS EMA Length")
+
+// === Relative Strength Line ===
+stockClose  = request.security(syminfo.tickerid, timeframe.period, close)
+indexClose  = request.security(indexSym, timeframe.period, close)
+rsLine = (stockClose / indexClose) * 1000  // Scaled for visibility
+
+// === 21-day EMA of RS Line ===
+rsEma21 = ta.ema(rsLine, emaLen)
+rsEma9 = ta.ema(rsLine, 9)
+rsEma13 = ta.ema(rsLine, 13)
+rsWeeklyEma9 = request.security(syminfo.tickerid, "1W", ta.ema(rsLine, 9))
+rsBaseline = ta.ema(rsLine, 50)  // slow EMA as mid line; auto-scales per symbol, unlike a fixed hline
+
+// === Plots ===
+plot(rsLine, title="RS Line", color=rsLine > rsLine[1] ? color.blue : color.red, linewidth=1, style = plot.style_stepline)
+plot(rsEma21, title="RS EMA 21", color=rsEma21 > rsEma21[1]?color.blue : color.red, linewidth=1)
+//plot(rsEma13, title="RS EMA 13", color=rsEma13 > rsEma13[1]?color.lime : color.fuchsia, linewidth=1)
+plot(rsEma9, title="RS EMA 9", color=rsEma9 > rsEma9[1]?color.aqua : color.purple, linewidth=1)
+plot(rsWeeklyEma9, title="RS Week EMA 9", color=rsWeeklyEma9 > rsWeeklyEma9[1]?color.white : color.gray, linewidth=1, style = plot.style_stepline)
+plot(rsBaseline, title="RS Baseline (EMA50)", color=color.gray, linewidth=1, style=plot.style_line)
+
+// Crossover logic
+// bullCross = ta.crossover(rsLine, rsWeeklyEma9)    // 9 crosses above 21
+// plotshape(     bullCross,     title="Cross Above rsWeeklyEma9",     style=shape.cross,     location=location.belowbar,     color=color.white,     size=size.tiny)
+
+// === Crossover condition ===
+rsCrossUp = ta.crossover(rsLine, rsEma21)// and rsLine > rsEma21
+//rsCrossUpNormal = rsCrossUp and not isPPV
+//rsCrossUpPPV = rsCrossUp and isPPV
+
+// === Visual marker ===
+// plotshape(
+//     rsCrossUp ,
+//     title     = "Normal RS Line > EMA21",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.fuchsia,
+//     size      = size.tiny
+// )
