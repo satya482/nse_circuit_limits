@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIRZAINT — Mirza International Ltd | NSE Investor Brief FY26</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+:root{
+  --bg:#FDFCFA; --bg-card:#FFFFFF; --ink:#1B1B1F; --ink-soft:#4A4A52; --ink-faint:#7A7A82;
+  --border:#E6E3DD; --accent:#378ADD;
+  --c-tannery:#6B7280; --c-footwear:#378ADD; --c-garments:#BA7517; --c-overseas:#534AB7;
+  --amber:#BA7517; --green:#3B6D11;
+  --hl-key:#FFF176; --hl-number:#E3F0FF; --hl-risk:#FFF3CD; --hl-catalyst:#E6F4EA;
+  --font-display:'Bricolage Grotesque',sans-serif; --font-body:'DM Sans',sans-serif; --font-mono:'JetBrains Mono',monospace;
+  --radius:14px;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#15151A; --bg-card:#1E1E24; --ink:#EDEDF0; --ink-soft:#B8B8C0; --ink-faint:#83838C; --border:#33333C; }
+}
+html.dark-mode{ --bg:#15151A; --bg-card:#1E1E24; --ink:#EDEDF0; --ink-soft:#B8B8C0; --ink-faint:#83838C; --border:#33333C; }
+html.light-mode{ --bg:#FDFCFA; --bg-card:#FFFFFF; --ink:#1B1B1F; --ink-soft:#4A4A52; --ink-faint:#7A7A82; --border:#E6E3DD; }
+
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-body);line-height:1.65;font-size:17px;transition:background .2s,color .2s;}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:700;color:var(--ink);margin:0 0 .4em;}
+p{margin:0 0 1em;}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px;}
+a{color:var(--accent);}
+
+/* ---------- Quick Scan Strip (ALWAYS EXPANDED — non-collapsible, printer/TTS-friendly) ---------- */
+#quick-scan{position:sticky;top:0;z-index:100;background:var(--bg-card);background-image:linear-gradient(0deg, rgba(55,138,221,.06), rgba(55,138,221,.06));border-bottom:2px solid var(--accent);box-shadow:0 2px 10px rgba(0,0,0,.08);}
+#quick-scan .qs-inner{max-width:880px;margin:0 auto;padding:14px 24px;}
+#quick-scan .qs-title{font-family:var(--font-display);font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
+#qs-toggle{margin-left:auto;background:none;border:1px solid var(--border);color:var(--accent);font-family:var(--font-body);font-size:.72rem;font-weight:600;padding:2px 10px;border-radius:20px;cursor:pointer;display:flex;align-items:center;gap:4px;}
+#qs-toggle .arrow{display:inline-block;transition:transform .18s ease;}
+#quick-scan.collapsed #qs-toggle .arrow{transform:rotate(-90deg);}
+#quick-scan ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;}
+#quick-scan.collapsed ul{display:none;}
+#quick-scan li{font-size:.86rem;line-height:1.45;color:var(--ink-soft);}
+#quick-scan li b{color:var(--ink);font-family:var(--font-display);font-weight:700;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase;margin-right:6px;}
+@media(max-width:720px){ #quick-scan ul{grid-template-columns:1fr;} }
+
+/* ---------- Cover ---------- */
+.cover{padding:64px 0 40px;border-bottom:1px solid var(--border);}
+.eyebrow{font-family:var(--font-mono);font-size:.82rem;letter-spacing:.05em;color:var(--ink-faint);text-transform:uppercase;margin-bottom:16px;}
+.eyebrow span{color:var(--accent);font-weight:700;}
+.cover h1{font-size:2.5rem;line-height:1.12;}
+.cover .sub{font-size:1.2rem;color:var(--ink-soft);max-width:660px;}
+.cover-meta{display:flex;flex-wrap:wrap;gap:28px;margin-top:28px;}
+.cover-meta .m{font-size:.85rem;}
+.cover-meta .m b{display:block;font-family:var(--font-mono);font-size:1.05rem;color:var(--ink);}
+.cover-meta .m span{color:var(--ink-faint);}
+.toggle-row{margin-top:24px;}
+#theme-toggle{font-family:var(--font-body);font-size:.82rem;border:1px solid var(--border);background:var(--bg-card);color:var(--ink-soft);padding:6px 14px;border-radius:20px;cursor:pointer;}
+
+/* ---------- Chapters ---------- */
+.chapter{padding:56px 0;border-bottom:1px solid var(--border);}
+.chapter-head{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px;}
+.chapter-num{flex:0 0 auto;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:700;font-size:1.15rem;}
+.chapter-head .eb{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);}
+.chapter-head h2{font-size:1.7rem;margin-top:2px;}
+
+/* ---------- Inline highlights ---------- */
+.hl-key{background:var(--hl-key);padding:0 4px;border-radius:3px;font-weight:600;color:#1B1B1F;}
+.hl-number{background:var(--hl-number);padding:0 4px;border-radius:3px;font-family:var(--font-mono);color:#1B1B1F;}
+.hl-risk{background:var(--hl-risk);padding:0 4px;border-radius:3px;border-left:3px solid var(--amber);color:#1B1B1F;}
+.hl-catalyst{background:var(--hl-catalyst);padding:0 4px;border-radius:3px;border-left:3px solid var(--green);color:#1B1B1F;}
+
+/* ---------- Takeaway pill ---------- */
+.takeaway-pill{margin-top:20px;padding:14px 18px;background:var(--bg-card);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:10px;font-weight:600;font-size:.95rem;}
+
+/* ---------- Cards ---------- */
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:22px;margin-bottom:18px;}
+.card-accent{border-left:4px solid var(--accent);}
+.asset-card{border-radius:var(--radius);padding:24px;margin-bottom:22px;border:1px solid var(--border);border-top:5px solid var(--c);background:var(--bg-card);}
+.asset-card h3{display:flex;align-items:center;gap:10px;font-size:1.25rem;flex-wrap:wrap;}
+.asset-dot{width:12px;height:12px;border-radius:50%;background:var(--c);flex:0 0 auto;}
+.asset-tag{display:inline-block;font-family:var(--font-mono);font-size:.72rem;padding:2px 9px;border-radius:20px;background:color-mix(in srgb, var(--c) 16%, transparent);color:var(--c);font-weight:700;margin-left:auto;}
+.asset-meta{display:flex;gap:20px;flex-wrap:wrap;margin:12px 0;font-size:.84rem;color:var(--ink-faint);}
+.asset-meta b{color:var(--ink);font-family:var(--font-mono);}
+
+/* ---------- Stat rows ---------- */
+.stat-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--border);gap:16px;}
+.stat-row:last-child{border-bottom:none;}
+.stat-row .label{color:var(--ink-soft);font-size:.92rem;}
+.stat-row .value{font-family:var(--font-mono);font-weight:700;font-size:1rem;text-align:right;}
+.stat-row .value small{display:block;font-weight:400;color:var(--ink-faint);font-size:.76rem;font-family:var(--font-body);}
+
+/* ---------- Tables ---------- */
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.92rem;}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;}
+th{font-family:var(--font-display);font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-faint);}
+.pill{display:inline-block;padding:2px 10px;border-radius:20px;font-size:.76rem;font-weight:700;font-family:var(--font-mono);}
+.pill-high{background:#FDE2E1;color:#9C2B22;}
+.pill-med{background:#FFF3CD;color:#8A5A00;}
+.pill-low{background:#E6F4EA;color:#245A17;}
+
+/* ---------- Risk / Watch rows ---------- */
+.risk-row,.watch-row{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--border);}
+.risk-row:last-child,.watch-row:last-child{border-bottom:none;}
+.icon-amber{flex:0 0 auto;width:26px;height:26px;color:var(--amber);}
+.dot{flex:0 0 auto;width:10px;height:10px;border-radius:50%;background:var(--c,var(--accent));margin-top:7px;}
+.risk-row h4,.watch-row h4{margin:0 0 4px;font-size:1rem;font-family:var(--font-display);}
+
+/* ---------- Timeline ---------- */
+.timeline{border-left:2px solid var(--border);margin-left:8px;padding-left:24px;}
+.tl-item{position:relative;margin-bottom:22px;}
+.tl-item::before{content:'';position:absolute;left:-31px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);}
+.tl-year{font-family:var(--font-mono);font-weight:700;color:var(--accent);font-size:.9rem;}
+
+/* ---------- Ledger ---------- */
+.ledger-hero{background:linear-gradient(135deg,var(--accent),#66AEEE);color:#fff;border-radius:var(--radius);padding:32px;margin:24px 0;}
+.ledger-hero h3{color:#fff;font-size:1.5rem;}
+.tier-badge{display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:50%;background:#fff;color:var(--accent);font-family:var(--font-display);font-weight:800;font-size:1.8rem;float:right;}
+.pillar{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:16px;}
+.pillar h4{font-size:1.05rem;display:flex;align-items:center;gap:8px;}
+.pillar h4 .n{width:28px;height:28px;border-radius:8px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.85rem;font-family:var(--font-mono);}
+
+/* ---------- Verdict ---------- */
+.verdict{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:32px;}
+.verdict .vl{font-family:var(--font-mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+
+/* ---------- Highlight Index (ALWAYS EXPANDED) ---------- */
+#highlight-index{margin:40px 0;padding:24px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);}
+#highlight-index summary{font-family:var(--font-display);font-weight:700;font-size:1.1rem;cursor:default;pointer-events:none;list-style:none;}
+#highlight-index summary::-webkit-details-marker{display:none;}
+#highlight-index summary::marker{content:'';}
+#highlight-index ol{padding-left:20px;margin-top:16px;}
+#highlight-index li{margin-bottom:8px;font-size:.92rem;}
+#highlight-index li[data-type="hl-key"]{border-left:3px solid #E0C200;padding-left:10px;}
+#highlight-index li[data-type="hl-number"]{border-left:3px solid #4488CC;padding-left:10px;}
+#highlight-index li[data-type="hl-risk"]{border-left:3px solid var(--amber);padding-left:10px;}
+#highlight-index li[data-type="hl-catalyst"]{border-left:3px solid var(--green);padding-left:10px;}
+#highlight-index li[data-type="takeaway-pill"]{border-left:3px solid var(--accent);padding-left:10px;font-weight:600;}
+
+footer{padding:40px 0 80px;text-align:center;color:var(--ink-faint);font-size:.82rem;}
+
+.chart-wrap{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin:18px 0;}
+
+/* ---------- Print CSS: force everything expanded, strip sticky/dark chrome ---------- */
+@media print{
+  html{background:#fff !important;}
+  body{background:#fff !important;color:#000 !important;font-size:12pt;}
+  #quick-scan{position:static !important;box-shadow:none;border:1px solid #999;page-break-inside:avoid;}
+  #quick-scan.collapsed ul{display:grid !important;}
+  #qs-toggle{display:none !important;}
+  .toggle-row,#theme-toggle{display:none !important;}
+  details, #highlight-index, #highlight-index ol, #highlight-index li{display:block !important;}
+  details > *{display:block !important;}
+  .chapter{page-break-inside:avoid;border-bottom:1px solid #999;}
+  a{color:#000;text-decoration:underline;}
+  .card,.asset-card,.pillar,.verdict,.ledger-hero{border:1px solid #999 !important;box-shadow:none !important;background:#fff !important;color:#000 !important;}
+  .ledger-hero{background:#fff !important;}
+  .ledger-hero h3, .ledger-hero p, .ledger-hero .tier-badge{color:#000 !important;background:#fff !important;border:1px solid #000;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= QUICK SCAN STRIP — always expanded, non-collapsible ================= -->
+<div id="quick-scan">
+  <div class="qs-inner">
+    <div class="qs-title">📌 Quick Scan — read this first<button id="qs-toggle" aria-expanded="true" aria-controls="qs-list"><span class="arrow">▼</span> <span class="qs-toggle-label">Hide</span></button></div>
+    <ul id="qs-list">
+      <li><b>⚡ Context</b>India's leather and footwear exports are set to cross $6.5 billion in FY26, up 25% the prior year, backed by a ₹1,700 Crore government programme — a sector tailwind this specific exporter has structurally cut itself off from.</li>
+      <li><b>🏭 Model</b>Mirza International tans hides, stitches shoes, and ships them to global private-label retailers under other people's brand names — it gave up its own consumer brand, Redtape, in a 2023 demerger.</li>
+      <li><b>🎯 Insight</b>The "return to profitability" headline for FY26 rests on one large, loosely-explained one-off gain in a single quarter, while the underlying manufacturing business posted operating losses in the second half of the year and is now being studied for a further three-way break-up.</li>
+      <li><b>📊 Numbers</b>Standalone revenue fell to ₹517 Cr (FY26, -9.3% YoY) against a ₹1,386 Cr FY22 peak; ROCE has collapsed from a 20%+ historical band to under 1%, and consolidated FY26 result was roughly break-even only because of that one-off gain.</li>
+      <li><b>🚧 Top risk</b>A Section 132 income-tax search across 45+ company locations since September 2025 remains unresolved nearly a year later, with no written outcome yet disclosed.</li>
+      <li><b>👁 Watch</b>Whether Q1 FY27 continues the Q3/Q4 FY26 pattern of operating losses, or whether the decline actually stabilises once the one-off gain rolls out of the comparison base.</li>
+      <li><b>💡 Verdict</b>Late-chapter distress story: a debt-free balance sheet and a promoter quietly raising its stake are real positives, but they sit inside a shrinking, twice-restructured manufacturer under an unresolved tax search and a fresh credit downgrade.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ================= COVER ================= -->
+<div class="wrap cover">
+  <div class="eyebrow"><span>NSE: MIRZAINT</span> · BSE: 526642 · Leather &amp; Leather Products (Consumer Durables) · Investor Brief · 8 July 2026</div>
+  <h1>Mirza International: manufacturing what it no longer gets to sell</h1>
+  <p class="sub">Three years after demerging its most profitable asset — the Redtape consumer brand — India's oldest listed leather exporter is posting back-to-back quarterly losses, absorbing a credit downgrade and an unresolved income-tax search, losing the CFO who steered it for three decades, and now studying whether to break itself up again.</p>
+  <div class="cover-meta">
+    <div class="m"><b>₹35.6</b><span>Share price (7 Jul 2026)</span></div>
+    <div class="m"><b>~₹499 Cr</b><span>Market cap</span></div>
+    <div class="m"><b>₹517 Cr</b><span>FY26 standalone revenue</span></div>
+    <div class="m"><b>-₹0.6 Cr</b><span>FY26 consolidated net result</span></div>
+    <div class="m"><b>72.99%</b><span>Promoter holding (Mar 2026)</span></div>
+  </div>
+  <div class="toggle-row"><button id="theme-toggle">🌓 Toggle light / dark</button></div>
+</div>
+
+<!-- ================= CHAPTER 1 — CONTEXT ================= -->
+<div class="chapter" id="ch1">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">1</div>
+      <div><div class="eb">Context</div><h2>A sector growing 25% a year — and a company shrinking through it</h2></div>
+    </div>
+    <p>India's leather and footwear export industry is having a genuinely good run. According to the Council for Leather Exports, <span class="hl-number">the sector's exports jumped roughly 25% to $5.7 billion in FY25, and are on track to cross $6.5 billion in FY26</span> — with footwear alone accounting for close to half that mix. Commerce Minister Piyush Goyal has publicly urged the industry to target $15 billion in exports within five to six years. Backing that ambition is real government money: the Indian Footwear and Leather Development Programme (IFLDP) carries a ₹1,700 Crore outlay through March 2026, split across named sub-schemes — ₹500 Cr for Integrated Development of the Leather Sector, ₹500 Cr for Sustainable Technology and Environmental Promotion, ₹300 Cr for Mega Leather Footwear and Accessories Cluster Development, and ₹200 Cr for institutional facilities.</p>
+    <p>Mirza International is, on paper, exactly the kind of company that scheme was built for — a Kanpur/Unnao-origin, vertically integrated tannery-to-shoe manufacturer with over four decades of export relationships into the UK, US and Europe. Which is what makes its own numbers so jarring: standalone revenue has fallen from a peak of ₹1,386 Cr (FY22) to ₹517 Cr (FY26), and CRISIL's own rating rationale for the company cites "weak export demand" as a live risk in a year the broader export data was growing 25%. <span class="hl-key">Some of that gap is structural and self-inflicted, not demand-driven: in 2023 the company demerged its own consumer-facing brand, Redtape — which accounted for roughly 55% of pre-demerger sales and about half of profit — into a separately listed company, keeping for itself the lower-margin tannery and contract-manufacturing engine underneath it.</span> Now is a relevant moment to look closely because that engine, three years on, is showing consecutive quarterly operating losses, a fresh credit downgrade, an unresolved income-tax search, and a board-approved study (April 2026) to break the remaining company into three more pieces.</p>
+    <div class="takeaway-pill">India's leather/footwear exports are growing ~25% a year toward a $15B government-backed ambition; Mirza International removed itself from that story's most valuable layer in 2023 and is now shrinking inside what's left.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 2 — BUSINESS MODEL ================= -->
+<div class="chapter" id="ch2">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">2</div>
+      <div><div class="eb">The business model</div><h2>Hide to shoe, sold under someone else's name</h2></div>
+    </div>
+    <p>In plain terms, Mirza International buys raw hides, tans them into finished leather at its own tanneries in Kanpur and Unnao (Uttar Pradesh), cuts and stitches that leather into finished shoes at its own factories — including the Euro Footwear unit in Unnao — and ships the finished product to international retailers and brands under private-label and white-label arrangements. It also runs a smaller trading business in garments and accessories. What it does not do, since August 2023, is sell shoes under its own consumer brand: that business, Redtape, was demerged into a separately listed company, Redtape Limited, on a 1:1 share basis.</p>
+    <p>The loop that remains is a manufacturing one, not a brand one: hide and tanning-chemical input costs → in-house tanned leather (a genuine vertical-integration advantage few peers can replicate given the capital and environmental-compliance investment already sunk into the tanneries) → finished footwear manufactured to a buyer's specification → sold to long-standing private-label clients such as the Hush Puppies division of British Shoe Corporation, the Oliver Group (UK), and Clarks' Saxone brand (Australia). <span class="hl-key">The stickiness in this model comes from decades-old buyer relationships and tannery capacity, not from consumer loyalty — which means Mirza now competes on price and reliability as a supplier, in a segment its own credit rating agency describes as facing "weak export demand," rather than on brand economics.</span> International distribution has historically run through promoter-linked entities — Mirza UK Limited and, until a 2026 amalgamation, a Dubai (Jebel Ali Free Zone)-based entity called RTS Fashion Limited — a structure that has now been folded back into the listed parent, the second such consolidation in four years.</p>
+    <div class="takeaway-pill">Mirza kept the capital-intensive tannery-and-factory engine and gave away the higher-margin consumer brand — leaving a supplier business that competes on price, not on brand pull.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 2B — PORTER'S FIVE FORCES ================= -->
+<div class="chapter" id="ch2b">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">2B</div>
+      <div><div class="eb">Competitive structure</div><h2>Porter's Five Forces</h2></div>
+    </div>
+    <table>
+      <tr><th>Force</th><th>Rating</th><th>Rationale</th></tr>
+      <tr><td>Rivalry intensity</td><td><span class="pill pill-med">Medium</span></td><td>In branded retail, Mirza no longer competes directly — Bata India (₹15,693 Cr market cap, PE ~67x), Relaxo Footwears (₹8,637 Cr, PE ~45x) and Liberty Shoes (₹407 Cr, PE ~36x) now occupy that space, alongside Mirza's own former brand, Redtape. In pure manufacturing/export, Mirza competes against other Indian tanneries and footwear exporters and lower-cost Southeast Asian hubs on price and turnaround time, not on differentiated product.</td></tr>
+      <tr><td>Buyer power</td><td><span class="pill pill-high">High</span></td><td>Private-label buyers (British Shoe Corporation's Hush Puppies, Oliver Group UK, Clarks' Saxone) are large global retail groups that can and do shift sourcing between manufacturers; Mirza's historical reliance on promoter-linked distribution entities (Mirza UK, the former RTS Fashion Dubai entity) for market access adds an additional layer of buyer concentration risk that is not fully transparent from public disclosures.</td></tr>
+      <tr><td>Supplier power</td><td><span class="pill pill-med">Medium</span></td><td>Raw hide and tanning-chemical costs are globally traded commodities exposed to price volatility; in-house tanning (the Tannery Division) reduces dependence on external finished-leather suppliers but does not insulate the company from hide-price swings or chromium/tanning-agent input costs.</td></tr>
+      <tr><td>Threat of new entrants</td><td><span class="pill pill-low">Low</span></td><td>A functioning tannery requires large upfront capital plus mandatory Common Effluent Treatment Plant compliance — regulators shut roughly 300 Kanpur-Unnao tanneries in 2018-19 alone over untreated discharge into the Ganga. That environmental and capital barrier genuinely limits new tannery licensing in the region, even as it burdens existing operators like Mirza with ongoing compliance capex.</td></tr>
+      <tr><td>Threat of substitutes</td><td><span class="pill pill-high">High</span></td><td>Synthetic and "vegan" leather alternatives are gaining share globally on cost and sustainability positioning, and private-label buyers can redirect sourcing to non-leather-footwear factories with far lower capital and compliance barriers than a tannery-based supplier.</td></tr>
+    </table>
+    <p><b>Synthesis:</b> buyer power and threat of substitutes are the two highest-pressure forces — Mirza's genuine moat (tannery capital and environmental-compliance barriers to new entrants) does not protect it if its largest private-label buyers can simply redirect sourcing to synthetic-material or lower-cost suppliers instead.</p>
+    <div class="takeaway-pill">Mirza's real barrier to entry (tannery capex + compliance) sits on the supply side; the forces actually squeezing its margins — buyer power and substitutes — sit on the demand side, where that barrier offers no protection.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 3 — THE VERTICAL STORIES ================= -->
+<div class="chapter" id="ch3">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">3</div>
+      <div><div class="eb">The vertical stories</div><h2>Three divisions, soon to be studied as three companies</h2></div>
+    </div>
+
+    <div class="asset-card" style="--c:var(--c-tannery)">
+      <h3><span class="asset-dot"></span>Tannery Division<span class="asset-tag">Upstream · compliance-heavy</span></h3>
+      <p>Converts raw hides, wet blue and crust into finished leather at the company's Kanpur/Unnao facilities — the vertical-integration anchor of the whole business, and the single most capital- and compliance-intensive piece of it. The government's IFLDP scheme earmarks ₹500 Cr specifically for "Sustainable Technology and Environmental Promotion" — a sub-scheme this exact division is positioned to draw on, given the Common Effluent Treatment Plant obligations the wider Kanpur-Unnao tannery cluster has faced since regulators shut roughly 300 non-compliant tanneries in 2018-19.</p>
+      <p>This is also the division most exposed if the board's April 2026 segregation study proceeds: whichever entity inherits the Tannery Division likely inherits its environmental-compliance liabilities and capex obligations along with its vertical-integration value.</p>
+    </div>
+
+    <div class="asset-card" style="--c:var(--c-footwear)">
+      <h3><span class="asset-dot"></span>Footwear Manufacturing &amp; Private Label Export<span class="asset-tag">Core revenue engine</span></h3>
+      <p>Designs, manufactures and exports finished leather shoes to private-label and white-label clients across the UK, US and Europe — including long-standing relationships with the Hush Puppies division of British Shoe Corporation, the Oliver Group (UK) and Clarks' Saxone (Australia). This is the segment riding the sector's 25% export growth in principle, and the one CRISIL specifically flagged for "weak export demand" and narrowing operating margins (6.4% in FY25, down from 7.7%) in practice.</p>
+      <p><span class="hl-risk">The gap between the sector's own growth numbers and this division's margin compression is the clearest sign that Mirza's problem is company-specific execution and positioning, not a demand-side sector headwind.</span></p>
+    </div>
+
+    <div class="asset-card" style="--c:var(--c-garments)">
+      <h3><span class="asset-dot"></span>Garments / Accessories Trading<span class="asset-tag">Smallest, least differentiated</span></h3>
+      <p>A trading operation in garments and accessories with no tannery-style vertical-integration advantage behind it — the smallest and lowest-conviction of the three divisions the board is now studying for potential segregation. Its inclusion in the same restructuring conversation as the Tannery and Footwear divisions raises the obvious question of what a standalone version of this business would actually be worth on its own.</p>
+    </div>
+
+    <div class="asset-card" style="--c:var(--c-overseas)">
+      <h3><span class="asset-dot"></span>Overseas distribution structure<span class="asset-tag">Not a segment — a recurring pattern</span></h3>
+      <p>Marketing and distribution into the UK, US and Europe has historically run through promoter-linked entities — Mirza UK Limited, and until May 2026, a Jebel Ali Free Zone (Dubai)-based company called RTS Fashion Limited, which NCLT approved amalgamating into the listed parent (appointed date 1 April 2025, effective 1 May 2026) alongside settlement of a ₹7.27 Cr outstanding tax demand. This is the second time in four years a similarly-named "RTS" entity has been folded into or carved out of Mirza International — RTS Fashions Private Limited was amalgamated into the company as part of the very same 2023 scheme that demerged Redtape out. <span class="hl-catalyst">The pattern itself is a signal: this management team reaches for corporate restructuring — demergers, amalgamations, now a segregation study — as a recurring tool, not a one-off event.</span></p>
+    </div>
+    <div class="takeaway-pill">The board is studying a three-way split of Tannery, Footwear and Garments — the same restructuring playbook that produced the 2023 Redtape demerger, applied again to what's left behind.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 4 — STRATEGIC INSIGHT ================= -->
+<div class="chapter" id="ch4">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">4</div>
+      <div><div class="eb">The strategic insight</div><h2>A "return to profitability" built on one unexplained quarter</h2></div>
+    </div>
+    <p>The single most important thing to understand about Mirza International today is that <span class="hl-key">its FY26 "return to profitability" headline is real only on a full-year, standalone, exceptional-item-inclusive basis — and it obscures an operating business that got measurably worse every quarter in the second half of the year.</span> Standalone PAT of ₹2.13 Cr for FY26 (versus a ₹3.99 Cr loss in FY25) includes an exceptional/other-income gain of roughly ₹18.6 Cr booked substantially in the June 2025 quarter — a gain whose precise composition has not been clearly broken out in the public disclosures reviewed for this brief. Strip that one item out, and the underlying FY26 standalone result is a loss of roughly ₹16.5 Cr. The quarterly cadence tells the real story: a ₹17.67 Cr net profit in Q1 FY26 (flattered by that other-income spike), narrowing to ₹3.99 Cr in Q2, then losses of ₹7.83 Cr in Q3 and ₹11.69 Cr (standalone) / ₹13.22 Cr (consolidated) in Q4 — the widest quarterly loss of the year, on the lowest quarterly revenue in recent periods (₹102.56 Cr, down 13.24% sequentially).</p>
+    <p>Layer that quality-of-earnings problem onto three other facts landing in the same twelve months: a CRISIL downgrade of the company's ₹215 Cr bank facilities to BBB+/Negative from A-/Negative, citing subdued operating income and two straight years of margin decline; an Income Tax Department search-and-seizure operation under Section 132 across more than 45 locations in Uttar Pradesh, Delhi, Uttarakhand and Kolkata since September 2025, with no written outcome disclosed as of the FY26 results; and a board-approved study (25 April 2026) to segregate the remaining business into three separate legal entities — the same demerger playbook used on Redtape in 2023, now applied to what's left. <span class="hl-number">Revenue has fallen from ₹1,386 Cr (FY22) to ₹517 Cr (FY26) and ROCE has collapsed from a historical 20-25% band to under 1% — a decline that is only partly explained by the 2023 demerger itself, since the manufacturing core that remained has kept shrinking and losing margin every year since.</span></p>
+    <p>Put simply: this is not yet a turnaround story. It is a company still in the middle of disassembling itself, where each restructuring event changes what a shareholder actually owns, and where the one number that looked like good news this year needs an asterisk next to it.</p>
+    <div class="takeaway-pill">FY26's full-year profit exists only because of one large, unclearly-explained gain in a single quarter — the underlying business posted operating losses in both of the year's final two quarters.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 5 — NUMBERS ================= -->
+<div class="chapter" id="ch5">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">5</div>
+      <div><div class="eb">The numbers in context</div><h2>A decade-long margin collapse, not just a demerger effect</h2></div>
+    </div>
+    <div class="card card-accent">
+      <div class="stat-row"><span class="label">FY26 standalone revenue</span><span class="value">₹517.31 Cr <small>vs ₹570.25 Cr FY25, -9.3% YoY</small></span></div>
+      <div class="stat-row"><span class="label">FY26 standalone PAT</span><span class="value">₹2.13 Cr <small>includes ~₹18.6 Cr exceptional gain; ex-item, a loss</small></span></div>
+      <div class="stat-row"><span class="label">FY26 consolidated total income</span><span class="value">₹529.46 Cr</span></div>
+      <div class="stat-row"><span class="label">FY26 consolidated net result</span><span class="value">-₹0.57 Cr <small>vs -₹3.54 Cr FY25, near-breakeven only</small></span></div>
+      <div class="stat-row"><span class="label">Q4 FY26 (Mar 2026) result</span><span class="value">-₹11.69 Cr standalone / -₹13.22 Cr consol. <small>widest quarterly loss of the year</small></span></div>
+      <div class="stat-row"><span class="label">Revenue peak (FY22) vs FY26</span><span class="value">₹1,386 Cr → ₹517 Cr <small>-63% (includes 2023 demerger effect)</small></span></div>
+      <div class="stat-row"><span class="label">ROCE trend</span><span class="value">~20-25% (FY14-18) → 0.64% (latest) <small>near-total collapse</small></span></div>
+      <div class="stat-row"><span class="label">ROE (current / 3-yr avg)</span><span class="value">-1.08% / 2.33%</span></div>
+      <div class="stat-row"><span class="label">Debt position</span><span class="value">Almost debt-free <small>borrowings ₹18-42 Cr vs ₹453 Cr reserves</small></span></div>
+      <div class="stat-row"><span class="label">Contingent liabilities</span><span class="value">₹197 Cr <small>flagged in Screener's auto-analysis</small></span></div>
+      <div class="stat-row"><span class="label">Market cap (7 Jul 2026)</span><span class="value">~₹499 Cr <small>@ ~₹35.6/share</small></span></div>
+      <div class="stat-row"><span class="label">Price / Book</span><span class="value">~1.0x <small>book value ~₹34.8/share</small></span></div>
+      <div class="stat-row"><span class="label">Trailing PE (Mirza)</span><span class="value">~35-49x <small>on thin, exceptional-item-driven earnings</small></span></div>
+      <div class="stat-row"><span class="label">Peer PE — Liberty Shoes / Relaxo / Bata</span><span class="value">36.3x / 44.8x / 67.0x <small>on real operating profits</small></span></div>
+    </div>
+    <p><span class="hl-risk">The valuation is the number that should give an investor pause: Mirza trades in roughly the same PE neighbourhood as Liberty Shoes — a similarly-sized (~₹407 Cr market cap) but consistently profitable peer — despite negative ROE, a credit downgrade, an unresolved tax search, and a full-year "profit" that depends on one unexplained one-off item.</span> Working capital has also deteriorated versus the artificially low levels seen right around the 2023 demerger: cash conversion cycle has widened back out to roughly 122-135 days (inventory days ~134-141), a normalisation that itself consumes cash the operating business is no longer generating reliably.</p>
+
+    <div class="chart-wrap"><canvas id="revRoceChart" height="110"></canvas></div>
+
+    <h3>Investment / capex timeline (Chapter 5 sub-section)</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-year">FY22</div>Investing outflow ₹231 Cr — the largest in the dataset, ahead of the Redtape demerger scheme's appointed date (Jan 2022); revenue peaks at ₹1,386 Cr the same year.</div>
+      <div class="tl-item"><div class="tl-year">FY23</div>Redtape demerger scheme approved by NCLT (Feb 2023); Redtape Limited lists separately (Aug 2023, 1:1 ratio); Mirza's own standalone revenue base resets to ₹627 Cr; investing outflow falls to ₹39 Cr — a harvesting posture begins.</div>
+      <div class="tl-item"><div class="tl-year">FY24-FY25</div>Investing outflow stays modest (₹29 Cr, ₹33 Cr) — no major new capacity announced; revenue keeps drifting down (₹603 Cr → ₹570 Cr) and OPM compresses from 8% to 6.4%; CRISIL flags the two-year margin trend.</div>
+      <div class="tl-item"><div class="tl-year">FY26</div>RTS Fashion (Dubai) amalgamation completed (effective 1 May 2026), settling a ₹7.27 Cr tax demand; capital directed toward legal/restructuring costs and a segregation study rather than new capacity; CRISIL downgrades to BBB+/Negative.</div>
+      <div class="tl-item"><div class="tl-year">FY27 (to watch)</div>Outcome of the board's April 2026 segregation study is the real capital-allocation event to track — not a plant expansion, but whether Tannery, Footwear and Garments become three separately valued, separately liable entities.</div>
+    </div>
+    <p><b>Funding source:</b> internal accruals only — no debt-funded capex, no equity dilution. <b>Red flag check:</b> capex has stayed flat-to-declining through four straight years of revenue decline, consistent with a defensive, harvesting posture rather than a company investing its way back to growth — which raises the question of where growth is meant to come from if the segregation study doesn't unlock it.</p>
+    <div class="takeaway-pill">Capex has shrunk in step with revenue for four straight years — this is a company managing decline, not investing through it, while it studies breaking itself up again.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 6 — RISKS ================= -->
+<div class="chapter" id="ch6">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">6</div>
+      <div><div class="eb">Risks — eyes open</div><h2>Five specific ways this goes wrong</h2></div>
+    </div>
+    <div class="risk-row"><svg class="icon-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><h4>Unresolved income-tax search, nearly a year in</h4><p>The September 2025 Section 132 search across 45+ locations (Uttar Pradesh, Delhi, Uttarakhand, Kolkata) has produced no written communication of findings as of the FY26 results. Management's statement that it expects "no material adverse impact" is an assertion, not a resolved fact — auditors flagged it as a Key Audit Matter, meaning the eventual quantum, if any, is currently unquantifiable.</p></div>
+    </div>
+    <div class="risk-row"><svg class="icon-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><h4>Deepening quarterly operating losses</h4><p>Q3 and Q4 FY26 both posted operating losses on a sequentially shrinking revenue base (Q4 revenue down 13.24% QoQ to ₹102.56 Cr, the lowest quarterly figure in recent periods). The full-year "profit" narrative masks an H2 trend that, if it continues into FY27, would erase the year's technical gain entirely.</p></div>
+    </div>
+    <div class="risk-row"><svg class="icon-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><h4>Live negative credit outlook</h4><p>CRISIL's downgrade to BBB+/Negative on ₹215 Cr of bank facilities explicitly cites subdued operating income, margin decline over two fiscal years, weak export demand and high working-capital intensity — a negative outlook that leaves room for a further downgrade if FY27 doesn't stabilise.</p></div>
+    </div>
+    <div class="risk-row"><svg class="icon-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><h4>Serial corporate restructuring with undetermined terms</h4><p>Three reorganisations in four years — the 2023 Redtape demerger and RTS Fashions amalgamation, the 2026 RTS Fashion (Dubai) amalgamation, and the April 2026 board-approved study to segregate Tannery, Footwear and Garments into separate entities — mean shareholders are repeatedly being asked to hold a company whose corporate perimeter keeps changing, with the newest split's structure, ratios and tax treatment entirely undetermined.</p></div>
+    </div>
+    <div class="risk-row"><svg class="icon-amber" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L14.71 3.86a2 2 0 0 0-3.42 0z"/></svg>
+      <div><h4>Veteran CFO exit during the weakest results in years</h4><p>CFO V.T. Cherian's resignation (effective end-May 2026) lands in the same results cycle as the year's widest quarterly loss and the CRISIL downgrade. His successor is an internal promotee (General Manager since February 2024) rather than an external hire — a continuity choice that cuts both ways on a balance sheet now under active regulatory and rating-agency scrutiny.</p></div>
+    </div>
+    <div class="takeaway-pill">No single risk here is the whole story — it's that a tax search, a credit downgrade, a leadership exit and a corporate restructuring are all unresolved at the same time.</div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER 7 — WATCH SIGNALS ================= -->
+<div class="chapter" id="ch7">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">7</div>
+      <div><div class="eb">Watch signals</div><h2>Five things to check every quarter</h2></div>
+    </div>
+    <div class="watch-row"><div class="dot" style="--c:var(--c-footwear)"></div><div><h4>Q1 FY27 operating result</h4><p>The first quarter clean of the FY26 exceptional gain and the 2023 demerger's year-on-year comparison noise — does the Q3/Q4 FY26 operating-loss pattern continue, or does it stabilise?</p></div></div>
+    <div class="watch-row"><div class="dot" style="--c:var(--amber)"></div><div><h4>Any written outcome from the September 2025 IT search</h4><p>A formal demand notice or assessment order would finally quantify what is currently an unquantified contingent risk sitting alongside the ₹197 Cr of contingent liabilities already on the balance sheet.</p></div></div>
+    <div class="watch-row"><div class="dot" style="--c:var(--c-overseas)"></div><div><h4>Concrete terms of the segregation study</h4><p>Watch for a record date, entity structure, or NCLT filing following the 25 April 2026 board approval — and specifically whether the Tannery Division's environmental-compliance liabilities travel with it or stay with the parent.</p></div></div>
+    <div class="watch-row"><div class="dot" style="--c:var(--ink-faint)"></div><div><h4>Next CRISIL / ICRA rating action</h4><p>Whether the Negative outlook on the BBB+ rating is maintained, resolved, or cut further at the next review — the clearest external signal of whether FY27 is actually stabilising.</p></div></div>
+    <div class="watch-row"><div class="dot" style="--c:var(--c-tannery)"></div><div><h4>Disclosure of the ₹18.6 Cr exceptional item's composition</h4><p>If the FY26 annual report notes finally clarify what this one-off gain actually was, that materially changes how much of the "return to profitability" headline an investor should trust.</p></div></div>
+    <div class="takeaway-pill">The single most informative data point next quarter isn't revenue growth — it's whether the operating loss trend from H2 FY26 persists once the one-off gain is out of the base.</div>
+  </div>
+</div>
+
+<!-- ================= VERDICT ================= -->
+<div class="chapter" id="verdict">
+  <div class="wrap">
+    <div class="verdict">
+      <div class="vl">The Verdict</div>
+      <p>Mirza International sits inside a genuinely strong sector tailwind — Indian leather and footwear exports growing ~25% annually toward a government-backed $15 billion ambition — but it removed itself from that tailwind's most valuable layer when it demerged the Redtape brand in 2023, keeping the lower-margin manufacturing engine underneath. The quality signal in the financials is weak: ROCE has collapsed from a 20-25% historical band to under 1%, working capital has re-widened, and FY26's headline "return to profitability" depends entirely on one large, unclearly-explained one-off gain, while the underlying business posted operating losses in the year's final two quarters. Genuine positives exist — an almost debt-free balance sheet, no promoter share pledge, and a promoter stake that actually rose (71.27% to 72.99%) through the year's weakest results — but they sit alongside a live CRISIL downgrade, an unresolved income-tax search across 45+ locations, a departing 30-year CFO, and a board now studying a third corporate restructuring in four years. Valuation offers little comfort: Mirza trades near the same PE band as consistently profitable peers like Liberty Shoes, despite negative ROE and an earnings quality problem. This reads as a late-chapter distress story still being written — not yet a turnaround, and not yet resolved, with the next two quarters likely to determine which way it breaks.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= THE LEDGER ================= -->
+<div class="chapter" id="ledger">
+  <div class="wrap">
+    <div class="chapter-head">
+      <div class="chapter-num">L</div>
+      <div><div class="eb">Companion section</div><h2>The Ledger — management credibility tracker</h2></div>
+    </div>
+    <div class="ledger-hero">
+      <div class="tier-badge">C</div>
+      <h3>Composite Tier: C — Mixed, Watch Flags Active</h3>
+      <p>Genuine balance-sheet discipline (debt-free, no promoter pledge, rising promoter stake) and clean execution of the corporate actions management actually promised (the 2023 demerger, the 2026 RTS Fashion amalgamation), offset by a deteriorating operating core, an unresolved tax search, a credit downgrade, and a full-year profit figure that leans heavily on one unexplained one-off item.</p>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">1</span>Promise Register</h4>
+      <table>
+        <tr><th>Promise</th><th>Status</th></tr>
+        <tr><td>2023 Redtape demerger at 1:1 ratio, NCLT-approved</td><td><span class="pill pill-low">Delivered</span> — executed cleanly, listed Aug 2023</td></tr>
+        <tr><td>RTS Fashion (Dubai) amalgamation into parent</td><td><span class="pill pill-low">Delivered</span> — NCLT-approved 23 Apr 2026, effective 1 May 2026, on schedule</td></tr>
+        <tr><td>Address ₹7.27 Cr tax demand tied to RTS Fashion amalgamation</td><td><span class="pill pill-low">Delivered</span> — addressed via undertaking per filing</td></tr>
+        <tr><td>"No material adverse impact" from Sept 2025 IT search</td><td><span class="pill pill-med">Pending / unverified</span> — no written outcome disclosed as of FY26 results</td></tr>
+        <tr><td>Segregation of Tannery / Footwear / Garments into separate entities</td><td><span class="pill pill-med">Pending</span> — study stage only, approved 25 Apr 2026</td></tr>
+        <tr><td>Implicit promise: FY26 "return to profitability"</td><td><span class="pill pill-med">Mixed</span> — true only on a full-year basis via a large unexplained one-off item; operating trend worsened every quarter in H2</td></tr>
+      </table>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">2</span>Tone Decoder</h4>
+      <p>There is a real gap between the public framing of FY26 ("Mirza International returns to profitability") and the underlying quarterly cadence (losses of ₹7.83 Cr in Q3, ₹11.69-13.22 Cr in Q4) — a framing worth flagging even though it isn't necessarily misleading in a technical sense. Management's language on the income-tax search is appropriately careful — "no material adverse impact," "no written communication received" — but that caution has now persisted for roughly ten months without resolution. The CFO's departure was disclosed through a standard regulatory "cessation" filing with no further elaboration, unremarkable in form but notable given a 30+ year tenure ending in the same quarter as the year's largest loss.</p>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">3</span>Execution Delta</h4>
+      <p>On disclosed corporate actions, execution has been clean and on-time: the 2023 demerger and the 2026 RTS Fashion amalgamation both closed on their guided schedules. On the metric that actually matters — core operating profitability — the delta is negative: CRISIL's own prior rating had implicitly assumed stabilising margins, and the company undershot that assumption for two straight fiscal years, which is precisely what triggered the downgrade. Corporate-action delivery has been reliable; operating-performance delivery has not.</p>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">4</span>Capex / Investment Timeline Tracker</h4>
+      <p>See Chapter 5 timeline. Investing outflow has fallen from ₹231 Cr (FY22, pre-demerger) to roughly ₹29-33 Cr annually (FY24-25) and stayed at maintenance levels through FY26 — a harvesting, not growth, posture, funded entirely from internal accruals with no debt or dilution. Capital in FY26 was directed more toward restructuring and legal costs (the RTS Fashion tax settlement) than toward new capacity.</p>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">5</span>Margin Contraction Tracker <small style="font-weight:400;color:var(--ink-faint);">(reframed from Margin Expansion Tracker)</small></h4>
+      <p>There is no expansion to track here — only contraction. Operating margin has fallen from an 18% historical band (FY14-18) to roughly 6% in FY25, with two of four FY26 quarters posting outright operating losses. ROCE has fallen in step, from a 20-25% band down to 0.64% currently. This pillar exists in this brief specifically to make that direction of travel explicit rather than soften it.</p>
+    </div>
+
+    <div class="pillar">
+      <h4><span class="n">6</span>Capital Structure Tracker</h4>
+      <p>The balance sheet itself is the strongest part of this story: borrowings of just ₹18-42 Cr against ₹453 Cr of reserves, no promoter share pledge, and a promoter holding that actually rose from 71.27% to 72.99% during FY26 — the same year the business posted its weakest quarterly results in years. <span class="hl-catalyst">A promoter increasing their stake through a period of deteriorating operating performance and a credit downgrade is a genuine, if modest, positive signal worth tracking for continuation.</span> Set against that: Screener's auto-generated analysis flags ₹197 Cr of contingent liabilities, and the unresolved income-tax search could yet convert part of that contingency into an actual liability — the one capital-structure risk this tracker cannot yet quantify.</p>
+    </div>
+    <div class="takeaway-pill">Tier C: a genuinely clean, debt-free balance sheet and a promoter buying in through weakness are real strengths — but they don't yet offset a shrinking core business, an unresolved tax search, and a credit downgrade.</div>
+  </div>
+</div>
+
+<!-- ================= HIGHLIGHT INDEX — ALWAYS EXPANDED ================= -->
+<div class="wrap">
+  <details id="highlight-index" open>
+    <summary>📌 All Highlights at a Glance</summary>
+    <ol></ol>
+  </details>
+</div>
+
+<footer>
+  <div class="wrap">NSE Investor Brief · Mirza International Ltd (NSE: MIRZAINT, BSE: 526642) · Prepared 8 July 2026 · For research and educational purposes only, not investment advice · Sources: Screener.in, BSE/NSE regulatory filings and annual reports, CRISIL and ICRA rating rationales, Council for Leather Exports / DD News / World Footwear coverage, PIB/NSWS/Invest India on IFLDP, mirza.co.in and about.redtape.com investor filings, and company/market coverage via Whalesbook, ScanX, MarketsMojo, Business Standard, TipRanks, and mnacritique.mergersindia.com.</div>
+</footer>
+
+<script>
+// Safe localStorage wrapper — file:// (locally opened HTML) throws a SecurityError
+// on some browsers when localStorage is touched; never let that crash the rest of the page.
+function safeGet(k){ try{ return window.localStorage.getItem(k); }catch(e){ return null; } }
+function safeSet(k,v){ try{ window.localStorage.setItem(k,v); }catch(e){ /* ignore */ } }
+
+// Highlight Index auto-populate via DOM traversal (never hardcoded)
+// Runs first and independently so a failure anywhere else on the page can never suppress it.
+function populateHighlightIndex(){
+  try{
+    const index = document.querySelector('#highlight-index ol');
+    if (!index) return;
+    index.innerHTML = '';
+    document.querySelectorAll('.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill').forEach(el => {
+      const li = document.createElement('li');
+      li.textContent = el.textContent.trim();
+      const type = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+      li.setAttribute('data-type', type);
+      index.appendChild(li);
+    });
+  }catch(e){ console.error('Highlight index build failed:', e); }
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', populateHighlightIndex);
+} else {
+  populateHighlightIndex();
+}
+
+// Quick Scan collapse/expand toggle (screen-only — print CSS always forces it open, never affects TTS/print)
+try{
+  const qs = document.getElementById('quick-scan');
+  const qsToggle = document.getElementById('qs-toggle');
+  const qsLabel = qsToggle ? qsToggle.querySelector('.qs-toggle-label') : null;
+  if(qs && qsToggle){
+    function setQsState(collapsed){
+      qs.classList.toggle('collapsed', collapsed);
+      qsToggle.setAttribute('aria-expanded', String(!collapsed));
+      if(qsLabel) qsLabel.textContent = collapsed ? 'Show' : 'Hide';
+      safeSet('mirzaint-quickscan', collapsed ? 'collapsed' : 'open');
+    }
+    setQsState(safeGet('mirzaint-quickscan') === 'collapsed');
+    qsToggle.addEventListener('click', () => {
+      try{ setQsState(!qs.classList.contains('collapsed')); }catch(e){ console.error('Quick Scan toggle failed:', e); }
+    });
+  }
+}catch(e){ console.error('Quick Scan init failed:', e); }
+
+// Dark/light mode toggle with localStorage persistence (wrapped so it can never block other scripts)
+try{
+  const root=document.documentElement;
+  const saved=safeGet('mirzaint-theme');
+  if(saved==='dark') root.classList.add('dark-mode');
+  if(saved==='light') root.classList.add('light-mode');
+  const toggleBtn = document.getElementById('theme-toggle');
+  if(toggleBtn){
+    toggleBtn.addEventListener('click',()=>{
+      try{
+        if(root.classList.contains('dark-mode')){ root.classList.remove('dark-mode'); root.classList.add('light-mode'); safeSet('mirzaint-theme','light'); }
+        else { root.classList.remove('light-mode'); root.classList.add('dark-mode'); safeSet('mirzaint-theme','dark'); }
+      }catch(e){ console.error('Theme toggle failed:', e); }
+    });
+  }
+}catch(e){ console.error('Theme init failed:', e); }
+
+// Revenue vs ROCE chart (wrapped — a blocked/offline CDN load must not affect anything above)
+try{
+  window.addEventListener('load', () => {
+    try{
+      const ctx = document.getElementById('revRoceChart');
+      if(!ctx || !window.Chart) return;
+      new Chart(ctx, {
+        data: {
+          labels: ['FY18','FY20','FY22 (peak)','FY23 (demerger)','FY24','FY25','FY26'],
+          datasets: [
+            { type:'bar', label:'Standalone revenue (₹ Cr)', data:[972,1260,1386,627,603,570,517], backgroundColor:'#378ADD', yAxisID:'y' },
+            { type:'line', label:'ROCE (%)', data:[19,12,22,8,5,1,0.6], borderColor:'#D85A30', backgroundColor:'#D85A30', tension:.3, yAxisID:'y1' }
+          ]
+        },
+        options: {
+          responsive:true,
+          plugins:{ legend:{position:'bottom'}, title:{display:true,text:'Revenue collapse vs. ROCE collapse, FY18-FY26'} },
+          scales:{
+            y:{ beginAtZero:true, position:'left', title:{display:true,text:'₹ Crore'} },
+            y1:{ beginAtZero:true, position:'right', grid:{drawOnChartArea:false}, title:{display:true,text:'ROCE %'} }
+          }
+        }
+      });
+    }catch(e){ console.error('Chart render failed:', e); }
+  });
+}catch(e){ console.error('Chart init failed:', e); }
+</script>
+
+</body>
+</html>
