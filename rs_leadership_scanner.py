@@ -190,3 +190,258 @@ def _leadership_score(df: pd.DataFrame, bench: pd.Series) -> tuple[int, str]:
         rs_state = "weak"
 
     return score, rs_state
+
+
+# ── Watchlist ─────────────────────────────────────────────────────────────────
+
+
+def get_watchlist() -> list[str]:
+    """TV screener: NSE common equity passing price/MCap/EMA/notional filters.
+    Same filters as rs_highline_scanner.get_watchlist()."""
+    _, df = (
+        Query()
+        .set_markets("india")
+        .select("name", "close", "market_cap_basic", "Perf.W")
+        .where(
+            col("exchange") == "NSE",
+            col("type") == "stock",
+            col("typespecs").has(["common"]),
+            col("close") > 20,
+            col("Perf.W") > 3,
+            col("market_cap_basic").between(MC_LOW, MC_HIGH),
+            col("close") > col("EMA10"),
+            col("close") > col("EMA20"),
+            col("Value.Traded") > 200e6,
+        )
+        .limit(2000)
+        .get_scanner_data()
+    )
+    return df["name"].tolist()
+
+
+# ── Circuit limits ────────────────────────────────────────────────────────────
+
+_CIRCUIT_EMOJI = {
+    ("20", "10"): "\U0001f7e8",
+    ("10", "5"): "\U0001f7e5",
+    ("5", "10"): "\U0001f7e9",
+    ("10", "20"): "\U0001f7e6",
+}
+_NSE_CSV_PATHS = [
+    os.path.join(REPO_DIR, "nse.csv"),
+    r"C:\Users\satya\.gemini\antigravity\scratch\circuit_dashboard\nse.csv",
+]
+
+
+def get_circuit_limits() -> dict[str, tuple[str, str]]:
+    import csv
+
+    nse_csv = next((p for p in _NSE_CSV_PATHS if os.path.exists(p)), None)
+    if not nse_csv:
+        return {}
+    try:
+        latest: dict[str, dict] = {}
+        with open(nse_csv, encoding="utf-8-sig") as fh:
+            for raw in csv.DictReader(fh):
+                row = {k.strip(): v.strip() for k, v in raw.items()}
+                sym = row.get("SYMBOL", "")
+                dte = row.get("EFFECTIVE DATE", "")
+                frm = row.get("FROM", "")
+                to = row.get("TO", "")
+                if not sym or not dte:
+                    continue
+                try:
+                    parsed = datetime.strptime(dte, "%d-%b-%Y")
+                except ValueError:
+                    continue
+                if sym not in latest or parsed > latest[sym]["parsed"]:
+                    latest[sym] = {"parsed": parsed, "from": frm, "to": to}
+        return {
+            sym: (d["to"] + "%", _CIRCUIT_EMOJI.get((d["from"], d["to"]), ""))
+            for sym, d in latest.items()
+        }
+    except Exception:
+        return {}
+
+
+# ── Per-stock analysis ────────────────────────────────────────────────────────
+
+
+def analyse(symbol: str, df: pd.DataFrame, bench: pd.Series | None) -> dict | None:
+    try:
+        if df is None or len(df) < 30:
+            return None
+        if bench is None:
+            return None
+
+        signal, rel_perf, rel_perf_ema = _rs_leadership_signal(df, bench)
+        if not signal:
+            return None
+
+        score, rs_state = _leadership_score(df, bench)
+
+        c = df["close"].astype(float)
+        zl25 = _zlema(c, 25)
+        zl_rising = bool(zl25.iloc[-1] > zl25.iloc[-2])
+
+        curr_close = float(c.iloc[-1])
+        prev_close = float(c.iloc[-2])
+        day_chg = (curr_close - prev_close) / prev_close * 100
+
+        squeeze = _bb_kc_squeeze(df)
+
+        return {
+            "symbol": symbol,
+            "close": curr_close,
+            "day_chg": round(day_chg, 2),
+            "rel_perf": rel_perf,
+            "rel_perf_ema": rel_perf_ema,
+            "score": score,
+            "rs_state": rs_state,
+            "zl_rising": zl_rising,
+            "squeeze": squeeze,
+            "liq_tag": liq_tag(df),
+            "cmf_tag": cmf_tag(df),
+            "deliv_tag": deliv_tag(symbol),
+        }
+    except Exception:
+        return None
+
+
+# ── Markdown output ───────────────────────────────────────────────────────────
+
+_RS_EMOJI = {"transition": "\U0001f504", "strong": "↑", "weak": "↓"}
+
+_HDR = [
+    "| Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |",
+    "|--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|",
+]
+
+
+def _row(f: dict, circuit: dict, names: dict[str, str]) -> str:
+    sym = f["symbol"]
+    tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+    cl, em = circuit.get(sym, ("20%", ""))
+    circuit_cell = f"{cl} {em}".strip()
+
+    name_cell = _LABELS.get(sym, "")
+
+    zl_arrow = "↑" if f["zl_rising"] else "↓"
+    ds = "+" if f["day_chg"] >= 0 else ""
+    rp = "+" if f["rel_perf"] >= 0 else ""
+    rs_icon = _RS_EMOJI.get(f["rs_state"], "↓")
+    sqz = "●" if f["squeeze"] else "—"
+    extras = [t for t in (f.get("cmf_tag", ""), f.get("deliv_tag", "")) if t]
+    sym_cell = f"[{sym}]({tv}) [{circuit_cell}]" + (
+        f"<br><sub>{' · '.join(extras)}</sub>" if extras else ""
+    )
+
+    return (
+        f"| {sym_cell} "
+        f"| {name_cell} "
+        f"| {f['close']:.2f} "
+        f"| {ds}{f['day_chg']:.2f}% "
+        f"| {rp}{f['rel_perf']:.2f}% "
+        f"| {f['rel_perf_ema']:.2f} "
+        f"| {f['score']}/5 "
+        f"| {rs_icon} "
+        f"| {zl_arrow} "
+        f"| {sqz} "
+        f"| {f['liq_tag']} |"
+    )
+
+
+def build_markdown(findings: list[dict], circuit: dict, names: dict[str, str]) -> str:
+    sorted_f = sorted(findings, key=lambda x: (-x["score"], -x["rel_perf"]))
+    lines = [
+        f"## RS Leadership — {TODAY}",
+        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+        "",
+        "### Scan definition",
+        "| Filter | Value |",
+        "|--------|-------|",
+        "| Exchange | NSE common equity |",
+        "| Price | > ₹20 |",
+        "| 1W change | > 3% |",
+        "| Market cap | ₹800 Cr – ₹5 Lakh Cr |",
+        "| EMA10 / EMA20 | price above both |",
+        "| Notional 10D | > ₹20 Cr/day |",
+        "| Signal | Combined cross: RelPerf%>=0 AND its EMA rising, first alignment |",
+        "| Params | RS EMA Length=9, Short RS EMA=5, Perf Lookback=9, Perf Smoothing=5 |",
+        "| Benchmark | NIFTY MIDSML 400 (no trend filter applied) |",
+        "| Sort | Leadership score desc, then RelPerf% desc |",
+        "",
+        "---",
+        "",
+        f"**{len(findings)} signal{'s' if len(findings) != 1 else ''} "
+        f"— RS leadership combined cross today**",
+        "",
+        "```",
+        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        "```",
+        "",
+    ]
+
+    if sorted_f:
+        lines += _HDR + [_row(f, circuit, names) for f in sorted_f]
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
+    else:
+        lines.append("*No signals.*")
+
+    lines.append("")
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
+
+
+# ── Main ──────────────────────────────────────────────────────────────────────
+
+
+def main() -> None:
+    os.makedirs(SCANS_DIR, exist_ok=True)
+
+    print("\nFetching watchlist from TradingView screener...")
+    watchlist = get_watchlist()
+    print(f"  {len(watchlist)} stocks after screener filters")
+
+    print(f"\nLoading OHLCV + benchmark ({BENCH_SYM}) from SQLite...")
+    syms_to_load = watchlist + [BENCH_SYM]
+    all_data = load_ohlc_many(syms_to_load, lookback=400)
+
+    bench_df = all_data.pop(BENCH_SYM, None)
+    bench_series: pd.Series | None = (
+        bench_df.set_index("date")["close"].astype(float)
+        if bench_df is not None
+        else None
+    )
+    if bench_series is None:
+        print(f"  WARNING: {BENCH_SYM} not in SQLite — RS signal unavailable")
+
+    print(f"  Loaded {len(all_data)} equity stocks")
+
+    print("\nFetching circuit limits...")
+    circuit = get_circuit_limits()
+
+    print(f"\nScanning {len(all_data)} stocks...")
+    findings: list[dict] = []
+    for i, (sym, df_raw) in enumerate(all_data.items(), 1):
+        print(f"  {sym:<20} ({i}/{len(all_data)})   ", end="\r")
+        result = analyse(sym, df_raw, bench_series)
+        if result:
+            findings.append(result)
+    print()
+
+    print(f"\n  {len(findings)} RS leadership crosses found")
+
+    names = get_names([f["symbol"] for f in findings])
+    md = build_markdown(findings, circuit, names)
+
+    with open(MD_LATEST, "w", encoding="utf-8") as fh:
+        fh.write(md)
+    with open(MD_DATED, "w", encoding="utf-8") as fh:
+        fh.write(md)
+
+    print(f"  Saved → {MD_LATEST}")
+    print(f"  Saved → {MD_DATED}")
+
+
+if __name__ == "__main__":
+    main()

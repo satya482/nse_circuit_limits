@@ -157,6 +157,29 @@ def test_leadership_score_transition_on_fresh_cross_after_sustained_rise():
     assert score == 4
 
 
+def test_build_markdown_no_findings_has_no_signals_section():
+    md = m.build_markdown([], {}, {})
+    assert "*No signals.*" in md
+    assert "SEBI registered" in md
+
+
+def test_build_markdown_sorts_by_score_then_rel_perf():
+    findings = [
+        {
+            "symbol": "AAA", "close": 100.0, "day_chg": 1.0, "rel_perf": 2.0,
+            "rel_perf_ema": 1.5, "score": 3, "rs_state": "strong",
+            "zl_rising": True, "squeeze": False, "liq_tag": "", "cmf_tag": "", "deliv_tag": "",
+        },
+        {
+            "symbol": "BBB", "close": 50.0, "day_chg": -1.0, "rel_perf": 5.0,
+            "rel_perf_ema": 4.0, "score": 4, "rs_state": "transition",
+            "zl_rising": False, "squeeze": True, "liq_tag": "", "cmf_tag": "", "deliv_tag": "",
+        },
+    ]
+    md = m.build_markdown(findings, {}, {})
+    assert md.index("BBB") < md.index("AAA")
+
+
 if __name__ == "__main__":
     test_combined_cross_fires_when_both_conditions_first_align()
     test_no_fire_when_conditions_already_held_yesterday()
@@ -165,4 +188,6 @@ if __name__ == "__main__":
     test_leadership_score_strong_when_steadily_outperforming()
     test_leadership_score_weak_when_flat_and_matching_benchmark()
     test_leadership_score_transition_on_fresh_cross_after_sustained_rise()
+    test_build_markdown_no_findings_has_no_signals_section()
+    test_build_markdown_sorts_by_score_then_rel_perf()
     print("OK")
