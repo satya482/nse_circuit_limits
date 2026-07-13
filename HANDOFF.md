@@ -2,12 +2,22 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-07-07.
+Last reviewed by Codex: 2026-07-13.
 Last reviewed by Claude Code: 2026-07-07 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-13 by Codex, daily ZLEMA25 + weekly RS EMA9 backtest:
+
+- Added `backtest_daily_zlema25_weekly_rs.py`, a no-look-ahead local-OHLC backtest using `NIFTY MIDSML 400` as benchmark.
+- Entry: first daily ZLEMA25 turn-up while daily RS is above a rising partial-week RS EMA9. Exit: first daily ZLEMA25 downturn or weekly RS EMA9 no longer rising, at close.
+- Initial run covers TRIVENI, CARTRADE, and KIRLOSENG from 2021-08-20 through 2026-07-13.
+- Actual results: TRIVENI 48 completed trades / 27.08% win rate / -18.37% compounded return; CARTRADE 40 / 25.00% / 22.49%; KIRLOSENG 57 / 36.84% / 350.56%; combined 145 / 30.34% / 350.47%, with one open KIRLOSENG trade excluded from completed-trade statistics. The combined 350.47% compounded figure is a strategy-sequence diagnostic, not a realizable portfolio return, because trades across the three stocks overlap.
+- Outputs: `backtest_results/daily_zlema25_weekly_rs_trades.csv`, `daily_zlema25_weekly_rs_open.csv`, and disclaimer-compliant `daily_zlema25_weekly_rs_summary.md`.
+- Re-run: `python backtest_daily_zlema25_weekly_rs.py TRIVENI CARTRADE KIRLOSENG --start 2021-08-20 --end 2026-07-13`.
+- Verification: CSV arithmetic/holding-period assertions passed; focused tests passed 15/15 and the full suite passed 355/355 on 2026-07-13.
 
 Updated 2026-07-07 by Claude Code, after merging `feat/consolidation-panel-pine` to `main` (pushed to origin, commits `ef160f7`, `4820956`):
 
