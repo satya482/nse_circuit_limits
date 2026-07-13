@@ -158,6 +158,8 @@ parity convention).
 5. `new_entrant` = symbol wasn't in previous run's output (diff vs `rs_weekly_ema9_state.json`,
    mirrors `nse_ema_daily.py`'s diff pattern)
 6. Writes `rs_weekly_scans/rs_weekly_ema9_scans.md`; sorted by age ascending (newest first)
+7. Appends today's count to `rs_weekly_scans/rs_weekly_ema9_history.csv` (idempotent upsert
+   by date) and renders it as `dashboard/rs_weekly_ema9_history.html` (GitHub Pages)
 
 ### Scanner pipeline — Consolidation Tracker (`consolidation/`)
 
@@ -307,6 +309,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `ema25_zl_scans/ema25_zl_scans.md` | `ema25_zl_scanner.py` |
 | `weekly_zl_scans/weekly_zl_scans.md` | `weekly_zl_scanner.py` |
 | `rs_weekly_scans/rs_weekly_ema9_scans.md` | `rs_weekly_ema9_scanner.py` |
+| `rs_weekly_scans/rs_weekly_ema9_history.csv`, `dashboard/rs_weekly_ema9_history.html` | `rs_weekly_ema9_scanner.py` |
 | `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md` | `screener.py` |
 | `momentum_scans/momentum_scans.md` | `momentum_scanner.py` |
 | `momentum_scans/momentum_rs_weekly_scans.md` | `momentum_rs_weekly_scanner.py` |

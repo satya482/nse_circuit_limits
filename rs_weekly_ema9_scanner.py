@@ -41,7 +41,7 @@ TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_FILE = os.path.join(SCANS_DIR, "rs_weekly_ema9_scans.md")
 STATE_FILE = os.path.join(SCANS_DIR, "rs_weekly_ema9_state.json")
 HISTORY_FILE = os.path.join(SCANS_DIR, "rs_weekly_ema9_history.csv")
-HISTORY_HTML = os.path.join(SCANS_DIR, "rs_weekly_ema9_history.html")
+HISTORY_HTML = os.path.join(REPO_DIR, "dashboard", "rs_weekly_ema9_history.html")  # GitHub Pages
 
 MC_LOW = 800 * 1_00_00_000  # Rs800 Cr
 MC_HIGH = 1_00_000 * 1_00_00_000  # Rs1 Lakh Cr
@@ -508,6 +508,7 @@ def main():
     print(f"  Saved -> {dated_file}")
 
     history = update_history(TODAY, len(findings), new_count)
+    os.makedirs(os.path.dirname(HISTORY_HTML), exist_ok=True)
     with open(HISTORY_HTML, "w", encoding="utf-8") as fh:
         fh.write(build_history_html(history))
     print(f"  Saved -> {HISTORY_FILE}")
