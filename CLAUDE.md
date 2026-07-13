@@ -54,6 +54,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
+.\run_rs_leadership_scanner.ps1  # 4:30 PM — RS leadership combined-cross scanner (RelPerf%+EMA)
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
@@ -251,6 +252,23 @@ Full spec: `research/nse_institutional_footprint_plan_spec.md`. All 5 phases bui
 
 **No RS filter** is intentional: WT oversold signals fire before RS turns positive; filtering on RS would kill the best setups.
 
+### Scanner pipeline — RS Leadership (`rs_leadership_scanner.py`)
+
+Mirrors `pine_scripts/Satya RS Relative Leadership.txt`. Full design:
+`docs/superpowers/specs/2026-07-13-rs-leadership-scanner-design.md`.
+
+1. TV screener (same filters as `rs_highline_scanner.get_watchlist()`) -> watchlist
+2. `load_ohlc_many()` + NIFTY MIDSML 400 bench
+3. `_rs_leadership_signal()` -> combined cross: RelPerf% (9-bar lookback) >= 0
+   AND its 5-bar EMA rising, true today, NOT both true yesterday
+4. `_leadership_score()` -> 0-5 score + RS state (strong/weak/transition),
+   mirrors the .txt's `leadershipScore` formula
+5. Writes `rs_leadership_scans/rs_leadership_latest.md`, sorted score desc
+   then RelPerf% desc
+
+No benchmark-trend filter applied (explicit deviation from the Pine source's
+default-checked `useBenchmarkFilter` input).
+
 ### Scanner pipeline — Breadth Monitor (`scanners/breadth_monitor.py`)
 
 **Regime/timing layer — not a candidate-selection scanner.** Answers "is the market supportive?"
@@ -323,6 +341,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `.ohlc_data/data_manifest.csv` | `fetch_data.py` |
 | `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
+| `rs_leadership_scans/rs_leadership_latest.md`, `rs_leadership_scans/rs_leadership_YYYY-MM-DD.md` | `rs_leadership_scanner.py` |
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 | `footprint_scans/footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |

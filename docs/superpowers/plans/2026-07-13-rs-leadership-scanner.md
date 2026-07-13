@@ -81,26 +81,27 @@ def _bench_series(values, start="2024-01-01"):
 
 
 def test_combined_cross_fires_when_both_conditions_first_align():
-    n = 40
-    # Benchmark flat; stock flat then accelerates up in the last 10 bars so
-    # relative performance turns positive and its EMA turns up on the same
-    # recent bar, having been negative/falling before.
-    stock_closes = [100.0] * 25 + [100 + i * 1.5 for i in range(1, 16)]
-    bench_closes = [100.0] * n
+    # Benchmark flat; stock flat for 25 bars then a single up-day. Verified by
+    # hand (not just plausible): at n=26 this is exactly the first bar where
+    # (rel_perf>=0 AND rel_perf_ema rising) becomes true, having been false
+    # every prior bar (both conditions were flat/equal, not rising, before).
+    stock_closes = [100.0] * 25 + [101.5]
+    bench_closes = [100.0] * len(stock_closes)
     df = _df(stock_closes)
     bench = _bench_series(bench_closes)
     signal, rel_perf, rel_perf_ema = m._rs_leadership_signal(df, bench)
-    assert isinstance(signal, bool)
-    assert isinstance(rel_perf, float)
-    assert isinstance(rel_perf_ema, float)
+    assert signal is True
+    assert rel_perf == 1.5
+    assert rel_perf_ema == 0.5
 
 
 def test_no_fire_when_conditions_already_held_yesterday():
-    n = 60
-    # Stock has been outperforming steadily for a long stretch -- both
-    # conditions are true both today and yesterday, so no fresh cross.
-    stock_closes = [100 + i * 1.0 for i in range(n)]
-    bench_closes = [100.0] * n
+    # Benchmark flat; stock compounds 3%/day for 8 bars after 25 flat bars.
+    # Verified by hand: both today's and yesterday's bar already have
+    # rel_perf>=0 AND rel_perf_ema rising -- the pair aligned days ago, so
+    # this is not a fresh cross despite both conditions currently holding.
+    stock_closes = [100.0] * 25 + [100 * (1.03**i) for i in range(1, 9)]
+    bench_closes = [100.0] * len(stock_closes)
     df = _df(stock_closes)
     bench = _bench_series(bench_closes)
     signal, _, _ = m._rs_leadership_signal(df, bench)
@@ -108,17 +109,17 @@ def test_no_fire_when_conditions_already_held_yesterday():
 
 
 def test_no_fire_when_only_rel_perf_positive_ema_falling():
-    n = 40
-    # Stock spikes hard then flattens: relative performance stays positive
-    # but its EMA is falling (smoothing catching up to the spike ending).
-    stock_closes = [100.0] * 20 + [100 + i * 3.0 for i in range(1, 6)] + [115.0] * 14
-    bench_closes = [100.0] * n
+    # Stock spikes hard (5 bars of +3/day) then flattens for 7 bars. Verified
+    # by hand: on the last bar, rel_perf is clearly positive (~5.5, not a
+    # boundary value) but rel_perf_ema is falling as the spike ages out of
+    # the smoothing window -- exactly the "only one condition true" case.
+    stock_closes = [100.0] * 20 + [100 + i * 3.0 for i in range(1, 6)] + [115.0] * 7
+    bench_closes = [100.0] * len(stock_closes)
     df = _df(stock_closes)
     bench = _bench_series(bench_closes)
     signal, rel_perf, rel_perf_ema = m._rs_leadership_signal(df, bench)
-    # Whatever the state, if it fires, both conditions must actually hold today.
-    if signal:
-        assert rel_perf >= 0
+    assert signal is False
+    assert rel_perf > 0
 
 
 def test_insufficient_history_returns_false():
