@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
 import numpy as np
@@ -241,3 +242,202 @@ def summarize_trades(trades: pd.DataFrame, symbols: list[str]) -> pd.DataFrame:
             }
         )
     return pd.DataFrame(rows, columns=SUMMARY_COLUMNS)
+
+
+def run_backtest(
+    symbols: list[str], start: pd.Timestamp, end: pd.Timestamp
+) -> dict:
+    start = pd.Timestamp(start)
+    end = pd.Timestamp(end)
+    if pd.isna(start) or pd.isna(end):
+        raise ValueError("start and end dates must be valid")
+    if start > end:
+        raise ValueError("start date must be on or before end date")
+
+    benchmark = load_ohlc(BENCHMARK, lookback=10000)
+    if benchmark is None or benchmark.empty:
+        raise ValueError(f"benchmark OHLC data unavailable: {BENCHMARK}")
+    benchmark = benchmark.loc[pd.to_datetime(benchmark["date"]) <= end].copy()
+    if len(benchmark) < MIN_DAILY_BARS:
+        raise ValueError(f"benchmark OHLC history is insufficient: {BENCHMARK}")
+
+    requested_symbols = list(symbols)
+    completed_frames = []
+    open_frames = []
+    skipped = []
+    for symbol in requested_symbols:
+        stock = load_ohlc(symbol, lookback=10000)
+        if stock is None or stock.empty:
+            skipped.append({"symbol": symbol, "reason": "OHLC data unavailable"})
+            continue
+        stock = stock.loc[pd.to_datetime(stock["date"]) <= end].copy()
+        if len(stock) < MIN_DAILY_BARS:
+            skipped.append(
+                {"symbol": symbol, "reason": "Insufficient OHLC history"}
+            )
+            continue
+
+        frame = build_indicator_frame(stock, benchmark)
+        if (
+            len(frame) < MIN_DAILY_BARS
+            or not frame["weekly_rs_ema9"].notna().any()
+        ):
+            skipped.append(
+                {"symbol": symbol, "reason": "Insufficient OHLC history"}
+            )
+            continue
+        completed, opened = simulate_stock(symbol, frame, start, end)
+        completed_frames.append(completed)
+        open_frames.append(opened)
+
+    trades = (
+        pd.concat(completed_frames, ignore_index=True)[TRADE_COLUMNS]
+        if completed_frames
+        else pd.DataFrame(columns=TRADE_COLUMNS)
+    )
+    open_trades = (
+        pd.concat(open_frames, ignore_index=True)[OPEN_COLUMNS]
+        if open_frames
+        else pd.DataFrame(columns=OPEN_COLUMNS)
+    )
+    return {
+        "symbols": requested_symbols,
+        "start": start,
+        "end": end,
+        "trades": trades,
+        "open_trades": open_trades,
+        "summary": summarize_trades(trades, requested_symbols),
+        "skipped": skipped,
+    }
+
+
+def _format_markdown_value(value, column: str) -> str:
+    if pd.isna(value):
+        return "N/A"
+    if column.endswith("_date") or column in {"date", "start", "end"}:
+        return pd.Timestamp(value).strftime("%Y-%m-%d")
+    if column.endswith("_pct"):
+        return f"{float(value):.2f}"
+    if column in {
+        "entry_close",
+        "exit_close",
+        "last_close",
+        "average_holding_days",
+    }:
+        return f"{float(value):.2f}"
+    return str(value)
+
+
+def _markdown_table(frame: pd.DataFrame) -> str:
+    headers = [str(column) for column in frame.columns]
+    rows = [
+        [
+            _format_markdown_value(value, column).replace("|", "\\|")
+            for column, value in row.items()
+        ]
+        for _, row in frame.iterrows()
+    ]
+    lines = [
+        "| " + " | ".join(headers) + " |",
+        "| " + " | ".join("---" for _ in headers) + " |",
+    ]
+    lines.extend("| " + " | ".join(row) + " |" for row in rows)
+    return "\n".join(lines)
+
+
+def build_markdown(result: dict) -> str:
+    summary = result["summary"]
+    skipped = pd.DataFrame(result["skipped"], columns=["symbol", "reason"])
+    trades = result["trades"]
+    open_trades = result["open_trades"]
+    parts = [
+        SEBI_MD_HEADER.rstrip(),
+        "# Daily ZLEMA25 + Weekly RS EMA9 Backtest",
+        (
+            f"**Period:** {pd.Timestamp(result['start']):%Y-%m-%d} to "
+            f"{pd.Timestamp(result['end']):%Y-%m-%d}  \n"
+            f"**Symbols:** {', '.join(result['symbols'])}"
+        ),
+        "## Method",
+        (
+            "Enter at the close on a daily ZLEMA25 turn-up when daily RS is above "
+            "its no-look-ahead weekly EMA9 and that EMA9 is rising. Exit at the "
+            "close on the first ZLEMA25 downturn or when the weekly RS EMA9 is no "
+            "longer rising. Open trades are excluded from completed-trade statistics."
+        ),
+        "## Summary",
+        _markdown_table(summary),
+        "## Skipped Symbols",
+        _markdown_table(skipped) if not skipped.empty else "None.",
+        "## Completed Trades",
+        _markdown_table(trades) if not trades.empty else "No completed trades.",
+        "## Open Trades",
+        _markdown_table(open_trades) if not open_trades.empty else "No open trades.",
+        (
+            "> The combined compounded return is a strategy-sequence diagnostic, "
+            "not a realizable portfolio return, because trades in different stocks "
+            "may overlap."
+        ),
+        SEBI_MD_FOOTER.rstrip(),
+    ]
+    return "\n\n".join(parts) + "\n"
+
+
+def write_outputs(result: dict, output_dir: Path) -> tuple[Path, Path, Path]:
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
+    trades_path = output_dir / "daily_zlema25_weekly_rs_trades.csv"
+    open_path = output_dir / "daily_zlema25_weekly_rs_open.csv"
+    report_path = output_dir / "daily_zlema25_weekly_rs_summary.md"
+    result["trades"].to_csv(trades_path, index=False, date_format="%Y-%m-%d")
+    result["open_trades"].to_csv(open_path, index=False, date_format="%Y-%m-%d")
+    report_path.write_text(build_markdown(result), encoding="utf-8")
+    return trades_path, open_path, report_path
+
+
+def parse_args(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Backtest daily ZLEMA25 turns with weekly RS EMA9"
+    )
+    parser.add_argument(
+        "symbols",
+        nargs="+",
+        help="NSE symbols, for example TRIVENI CARTRADE KIRLOSENG",
+    )
+    parser.add_argument("--start", required=True, type=pd.Timestamp)
+    parser.add_argument("--end", required=True, type=pd.Timestamp)
+    parser.add_argument(
+        "--output-dir", type=Path, default=Path("backtest_results")
+    )
+    return parser.parse_args(argv)
+
+
+def main() -> int:
+    args = parse_args()
+    symbols = list(dict.fromkeys(symbol.upper() for symbol in args.symbols))
+    try:
+        result = run_backtest(symbols, args.start, args.end)
+        trades_path, open_path, report_path = write_outputs(
+            result, args.output_dir
+        )
+    except ValueError as exc:
+        print(f"Error: {exc}", file=sys.stderr)
+        return 2
+
+    combined = result["summary"].loc[
+        result["summary"]["symbol"] == "COMBINED"
+    ].iloc[0]
+    win_rate = (
+        "N/A"
+        if pd.isna(combined["win_rate_pct"])
+        else f"{combined['win_rate_pct']:.2f}%"
+    )
+    print(f"Completed trades CSV: {trades_path}")
+    print(f"Open trades CSV: {open_path}")
+    print(f"Markdown summary: {report_path}")
+    print(f"Combined: {int(combined['trades'])} trades, {win_rate} win rate")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

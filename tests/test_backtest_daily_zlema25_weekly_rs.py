@@ -112,3 +112,103 @@ def test_summary_counts_wins_zeros_and_compounds():
     assert row["zeros"] == 1
     assert row["win_rate_pct"] == pytest.approx(100 / 3)
     assert row["compounded_return_pct"] == pytest.approx(4.5)
+
+
+def _empty_result(symbols=None):
+    symbols = symbols or ["TEST"]
+    trades = pd.DataFrame(columns=m.TRADE_COLUMNS)
+    return {
+        "symbols": symbols,
+        "start": pd.Timestamp("2024-01-01"),
+        "end": pd.Timestamp("2024-12-31"),
+        "trades": trades,
+        "open_trades": pd.DataFrame(columns=m.OPEN_COLUMNS),
+        "summary": m.summarize_trades(trades, symbols),
+        "skipped": [],
+    }
+
+
+def test_build_markdown_has_disclaimer_and_open_section():
+    text = m.build_markdown(_empty_result())
+    assert "SEBI registered" in text
+    assert "Open Trades" in text
+    assert "TEST" in text
+    assert "combined compounded return is a strategy-sequence diagnostic" in text.lower()
+
+
+def test_write_outputs_always_writes_csv_headers(tmp_path):
+    trades_path, open_path, report_path = m.write_outputs(_empty_result(), tmp_path)
+    assert trades_path.name == "daily_zlema25_weekly_rs_trades.csv"
+    assert open_path.name == "daily_zlema25_weekly_rs_open.csv"
+    assert report_path.name == "daily_zlema25_weekly_rs_summary.md"
+    assert trades_path.read_text(encoding="utf-8").startswith("symbol,entry_date")
+    assert open_path.read_text(encoding="utf-8").startswith("symbol,entry_date")
+    assert "SEBI registered" in report_path.read_text(encoding="utf-8")
+
+
+def test_run_backtest_rejects_backwards_dates():
+    with pytest.raises(ValueError, match="start date"):
+        m.run_backtest(
+            ["TEST"], pd.Timestamp("2024-02-01"), pd.Timestamp("2024-01-01")
+        )
+
+
+def test_run_backtest_reports_missing_stock(monkeypatch):
+    benchmark = _ohlc([200.0 + i for i in range(80)])
+    calls = []
+
+    def fake_load(symbol, lookback=10000):
+        calls.append((symbol, lookback))
+        return benchmark if symbol == m.BENCHMARK else None
+
+    monkeypatch.setattr(m, "load_ohlc", fake_load)
+    result = m.run_backtest(
+        ["MISSING"], pd.Timestamp("2024-01-01"), pd.Timestamp("2024-12-31")
+    )
+    assert result["skipped"] == [
+        {"symbol": "MISSING", "reason": "OHLC data unavailable"}
+    ]
+    assert result["summary"]["symbol"].tolist() == ["MISSING", "COMBINED"]
+    assert calls == [(m.BENCHMARK, 10000), ("MISSING", 10000)]
+
+
+def test_run_backtest_requires_benchmark(monkeypatch):
+    monkeypatch.setattr(m, "load_ohlc", lambda symbol, lookback=10000: None)
+    with pytest.raises(ValueError, match="benchmark"):
+        m.run_backtest(
+            ["TEST"], pd.Timestamp("2024-01-01"), pd.Timestamp("2024-12-31")
+        )
+
+
+def test_run_backtest_reports_insufficient_stock(monkeypatch):
+    benchmark = _ohlc([200.0 + i for i in range(80)])
+    insufficient = _ohlc([100.0 + i for i in range(m.MIN_DAILY_BARS - 1)])
+    monkeypatch.setattr(
+        m,
+        "load_ohlc",
+        lambda symbol, lookback=10000: benchmark
+        if symbol == m.BENCHMARK
+        else insufficient,
+    )
+    result = m.run_backtest(
+        ["SHORT"], pd.Timestamp("2024-01-01"), pd.Timestamp("2024-12-31")
+    )
+    assert result["skipped"] == [
+        {"symbol": "SHORT", "reason": "Insufficient OHLC history"}
+    ]
+
+
+def test_main_returns_two_for_validation_errors(monkeypatch, capsys):
+    monkeypatch.setattr(
+        "sys.argv",
+        [
+            "backtest_daily_zlema25_weekly_rs.py",
+            "test",
+            "--start",
+            "2024-02-01",
+            "--end",
+            "2024-01-01",
+        ],
+    )
+    assert m.main() == 2
+    assert "start date" in capsys.readouterr().err
