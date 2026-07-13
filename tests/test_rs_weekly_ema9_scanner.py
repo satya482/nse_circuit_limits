@@ -5,6 +5,7 @@ import pandas as pd
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import rs_weekly_ema9_scanner as m
 from rs_weekly_ema9_scanner import weekly_rs_ema9_trend
 
 
@@ -44,8 +45,29 @@ def test_insufficient_history_returns_none():
     assert weekly_rs_ema9_trend(stock, bench) is None
 
 
+def test_history_upsert_is_idempotent_per_date():
+    orig_file = m.HISTORY_FILE
+    m.HISTORY_FILE = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)), "_scratch_history.csv"
+    )
+    try:
+        if os.path.exists(m.HISTORY_FILE):
+            os.remove(m.HISTORY_FILE)
+        m.update_history("2026-07-10", 500, 500)
+        m.update_history("2026-07-11", 520, 30)
+        h = m.update_history("2026-07-11", 525, 35)  # re-run same date overwrites, not duplicates
+        assert len(h) == 2
+        assert int(h[h["date"] == "2026-07-11"]["count"].iloc[0]) == 525
+        assert list(h["date"]) == sorted(h["date"])  # sorted ascending
+    finally:
+        if os.path.exists(m.HISTORY_FILE):
+            os.remove(m.HISTORY_FILE)
+        m.HISTORY_FILE = orig_file
+
+
 if __name__ == "__main__":
     test_rising_rs_gives_positive_slope()
     test_falling_rs_gives_negative_slope()
     test_insufficient_history_returns_none()
+    test_history_upsert_is_idempotent_per_date()
     print("OK")
