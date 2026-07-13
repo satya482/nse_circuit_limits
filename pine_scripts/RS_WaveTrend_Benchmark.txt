@@ -1,0 +1,410 @@
+//@version=6
+indicator("RS WaveTrend + Weekly RS 9 EMA", shorttitle="RS WT + W9", overlay=false, max_labels_count=500)
+
+//────────────────────────────────────────────────────────────
+// 1. INPUTS
+//────────────────────────────────────────────────────────────
+
+// Benchmark
+benchmarkSym = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+
+// Daily RS trend
+dailyRsEmaLen = input.int(21, "Daily RS EMA Length", minval=1)
+
+// WaveTrend
+wtChannelLen = input.int(10, "WaveTrend Channel Length", minval=1)
+
+wtAverageLen = input.int(21, "WaveTrend Average Length", minval=1)
+
+wtSignalLen = input.int(4, "WaveTrend Signal Length", minval=1)
+
+// Weekly RS
+weeklyRsEmaLen = input.int(9, "Weekly RS EMA Length", minval=1)
+
+weeklyMode = input.string("Confirmed week", "Weekly RS Mode", options=["Confirmed week", "Running week"])
+
+// Entry filters
+requireDailyRsAboveEma = input.bool(true, "Require Daily RS Above 21 EMA")
+
+requireDailyRsEmaRising = input.bool(true, "Require Daily RS EMA Rising")
+
+requireWeeklyRsFilter = input.bool(true, "Require Weekly RS Above Rising 9 EMA")
+
+requirePreviousHighBreak = input.bool(false, "Require Price Above Previous Candle High")
+
+requireCloseAbovePreviousHigh = input.bool(false, "Require Close Above Previous Candle High")
+
+requireVolumeConfirmation = input.bool(false, "Require Volume Confirmation")
+
+volumeLength = input.int(20, "Volume Average Length", minval=1)
+
+volumeMultiplier = input.float(1.20, "Volume Multiplier", minval=0.1, step=0.05)
+
+// WaveTrend quality filters
+requireWtRising = input.bool(true, "Require WaveTrend Rising")
+
+useMaximumEntryWt = input.bool(true, "Avoid Overextended WaveTrend Entries")
+
+maximumEntryWt = input.float(45.0, "Maximum WaveTrend for Fresh Entry", step=1.0)
+
+minimumWtLevel = input.float(-60.0, "Minimum WaveTrend Entry Level", step=1.0)
+
+// Display
+showCrossMarkers = input.bool(true, "Show WaveTrend Cross Markers")
+
+showQualifiedSignals = input.bool(true, "Show Qualified Entry Signals")
+
+showBackground = input.bool(false, "Highlight Bullish/Bearish Regime")
+
+showDashboard = input.bool(true, "Show Dashboard")
+
+showWtArea = input.bool(true, "Fill Between WaveTrend Lines")
+
+// Levels
+overboughtLevel1 = input.float(60.0, "Overbought Level")
+
+overboughtLevel2 = input.float(53.0, "Secondary Overbought Level")
+
+oversoldLevel1 = input.float(-60.0, "Oversold Level")
+
+oversoldLevel2 = input.float(-53.0, "Secondary Oversold Level")
+
+//────────────────────────────────────────────────────────────
+// 2. CURRENT-TIMEFRAME BENCHMARK
+//────────────────────────────────────────────────────────────
+
+benchmarkClose = request.security(benchmarkSym, timeframe.period, close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+
+validBenchmark = not na(benchmarkClose) and benchmarkClose != 0
+
+// Relative strength ratio
+dailyRsRaw = validBenchmark ? close / benchmarkClose : na
+
+// Normalize only for easier viewing.
+// WaveTrend itself does not require normalization.
+var float dailyRsBase = na
+
+if na(dailyRsBase) and not na(dailyRsRaw)
+    dailyRsBase := dailyRsRaw
+
+dailyRs = not na(dailyRsBase) and dailyRsBase != 0 ? dailyRsRaw / dailyRsBase * 100.0 : na
+
+//────────────────────────────────────────────────────────────
+// 3. DAILY RS 21 EMA
+//────────────────────────────────────────────────────────────
+
+dailyRsEma = ta.ema(dailyRs, dailyRsEmaLen)
+
+dailyRsAboveEma = dailyRs > dailyRsEma
+
+dailyRsBelowEma = dailyRs < dailyRsEma
+
+dailyRsEmaRising = dailyRsEma > dailyRsEma[1]
+
+dailyRsEmaFalling = dailyRsEma < dailyRsEma[1]
+
+dailyRsBullish = dailyRsAboveEma and dailyRsEmaRising
+
+dailyRsBearish = dailyRsBelowEma and dailyRsEmaFalling
+
+//────────────────────────────────────────────────────────────
+// 4. WEEKLY RS DATA
+//────────────────────────────────────────────────────────────
+
+// Running current-week closes
+weeklyStockCloseRunning = request.security(syminfo.tickerid, "W", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+
+weeklyBenchmarkCloseRunning = request.security(benchmarkSym, "W", close, gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+
+// Confirmed previous-week closes.
+// The one-bar offset with lookahead_on returns the last completed
+// weekly value consistently on historical and realtime bars.
+weeklyStockCloseConfirmed = request.security(syminfo.tickerid, "W", close[1], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+
+weeklyBenchmarkCloseConfirmed = request.security(benchmarkSym, "W", close[1], gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+
+weeklyRsRunning = not na(weeklyBenchmarkCloseRunning) and weeklyBenchmarkCloseRunning != 0 ? weeklyStockCloseRunning / weeklyBenchmarkCloseRunning : na
+
+weeklyRsConfirmed = not na(weeklyBenchmarkCloseConfirmed) and weeklyBenchmarkCloseConfirmed != 0 ? weeklyStockCloseConfirmed / weeklyBenchmarkCloseConfirmed : na
+
+//────────────────────────────────────────────────────────────
+// 5. TRUE WEEKLY RS 9 EMA
+//────────────────────────────────────────────────────────────
+
+// We update the EMA only once when a new week begins.
+// This prevents repeated weekly values from being treated as
+// separate daily observations.
+
+newWeek = timeframe.change("W")
+
+weeklyAlpha = 2.0 / (weeklyRsEmaLen + 1.0)
+
+var float weeklyRsEmaConfirmed = na
+var float previousWeeklyRsEma = na
+
+if newWeek and not na(weeklyRsConfirmed)
+    previousWeeklyRsEma := weeklyRsEmaConfirmed
+    weeklyRsEmaConfirmed := na(weeklyRsEmaConfirmed) ? weeklyRsConfirmed : weeklyAlpha * weeklyRsConfirmed + (1.0 - weeklyAlpha) * weeklyRsEmaConfirmed
+
+// Project what the weekly EMA would be using the live running week.
+weeklyRsEmaProjected = not na(weeklyRsRunning) and not na(weeklyRsEmaConfirmed) ? weeklyAlpha * weeklyRsRunning + (1.0 - weeklyAlpha) * weeklyRsEmaConfirmed : na
+
+confirmedWeeklyEmaRising = not na(previousWeeklyRsEma) and weeklyRsEmaConfirmed > previousWeeklyRsEma
+
+confirmedWeeklyEmaFalling = not na(previousWeeklyRsEma) and weeklyRsEmaConfirmed < previousWeeklyRsEma
+
+runningWeeklyEmaRising = not na(weeklyRsEmaProjected) and not na(weeklyRsEmaConfirmed) and weeklyRsEmaProjected > weeklyRsEmaConfirmed
+
+runningWeeklyEmaFalling = not na(weeklyRsEmaProjected) and not na(weeklyRsEmaConfirmed) and weeklyRsEmaProjected < weeklyRsEmaConfirmed
+
+selectedWeeklyRs = weeklyMode == "Running week" ? weeklyRsRunning : weeklyRsConfirmed
+
+selectedWeeklyRsEma = weeklyMode == "Running week" ? weeklyRsEmaProjected : weeklyRsEmaConfirmed
+
+selectedWeeklyEmaRising = weeklyMode == "Running week" ? runningWeeklyEmaRising : confirmedWeeklyEmaRising
+
+selectedWeeklyEmaFalling = weeklyMode == "Running week" ? runningWeeklyEmaFalling : confirmedWeeklyEmaFalling
+
+weeklyRsAboveEma = not na(selectedWeeklyRs) and not na(selectedWeeklyRsEma) and selectedWeeklyRs > selectedWeeklyRsEma
+
+weeklyRsBelowEma = not na(selectedWeeklyRs) and not na(selectedWeeklyRsEma) and selectedWeeklyRs < selectedWeeklyRsEma
+
+weeklyBullish = weeklyRsAboveEma and selectedWeeklyEmaRising
+
+weeklyBearish = weeklyRsBelowEma and selectedWeeklyEmaFalling
+
+//────────────────────────────────────────────────────────────
+// 6. WAVETREND APPLIED TO DAILY RS
+//────────────────────────────────────────────────────────────
+
+wtEsa = ta.ema(dailyRs, wtChannelLen)
+
+wtDeviation = ta.ema(math.abs(dailyRs - wtEsa), wtChannelLen)
+
+wtCommodityIndex = not na(wtDeviation) and wtDeviation > 0 ? (dailyRs - wtEsa) / (0.015 * wtDeviation) : na
+
+wt1 = ta.ema(wtCommodityIndex, wtAverageLen)
+
+wt2 = ta.sma(wt1, wtSignalLen)
+
+// WaveTrend states
+wtBullCross = ta.crossover(wt1, wt2)
+
+wtBearCross = ta.crossunder(wt1, wt2)
+
+wtAboveSignal = wt1 > wt2
+
+wtBelowSignal = wt1 < wt2
+
+wtRising = wt1 > wt1[1]
+
+wtFalling = wt1 < wt1[1]
+
+wtAboveZero = wt1 > 0
+
+wtBelowZero = wt1 < 0
+
+wtSpread = wt1 - wt2
+
+wtAcceleration = (wt1 - wt1[1]) > (wt1[1] - wt1[2])
+
+wtNotOverextended = not useMaximumEntryWt or wt1 <= maximumEntryWt
+
+wtAboveMinimum = wt1 >= minimumWtLevel
+
+wtQualityPass = (not requireWtRising or wtRising) and wtNotOverextended and wtAboveMinimum
+
+// Same WaveTrend transform as wt1/wt2, but fed with the weekly RS 9 EMA instead of dailyRs.
+wtWeeklyEsa = ta.ema(selectedWeeklyRsEma, wtChannelLen)
+
+wtWeeklyDeviation = ta.ema(math.abs(selectedWeeklyRsEma - wtWeeklyEsa), wtChannelLen)
+
+wtWeeklyCI = not na(wtWeeklyDeviation) and wtWeeklyDeviation > 0 ? (selectedWeeklyRsEma - wtWeeklyEsa) / (0.015 * wtWeeklyDeviation) : na
+
+wt1Weekly = ta.ema(wtWeeklyCI, wtAverageLen)
+
+wt2Weekly = ta.sma(wt1Weekly, wtSignalLen)
+
+wtWeeklyBullCross = ta.crossover(wt1Weekly, wt2Weekly)
+
+wtWeeklyBearCross = ta.crossunder(wt1Weekly, wt2Weekly)
+
+//────────────────────────────────────────────────────────────
+// 7. PRICE AND VOLUME CONFIRMATION
+//────────────────────────────────────────────────────────────
+
+previousHighBroken = high > high[1]
+
+closeAbovePreviousHigh = close > high[1]
+
+priceConfirmation = not requirePreviousHighBreak or previousHighBroken
+
+closeConfirmation = not requireCloseAbovePreviousHigh or closeAbovePreviousHigh
+
+volumeAverage = ta.sma(volume, volumeLength)
+
+volumeExpanded = volume > volumeAverage * volumeMultiplier
+
+volumeConfirmation = not requireVolumeConfirmation or volumeExpanded
+
+//────────────────────────────────────────────────────────────
+// 8. FILTERS AND SIGNALS
+//────────────────────────────────────────────────────────────
+
+dailyRsAboveFilter = not requireDailyRsAboveEma or dailyRsAboveEma
+
+dailyRsSlopeFilter = not requireDailyRsEmaRising or dailyRsEmaRising
+
+weeklyFilter = not requireWeeklyRsFilter or weeklyBullish
+
+basicBullCross = wtBullCross
+
+qualifiedBullSignal = wtBullCross and wtQualityPass and dailyRsAboveFilter and dailyRsSlopeFilter and weeklyFilter and priceConfirmation and closeConfirmation and volumeConfirmation
+
+// Earlier signal below zero
+earlyReversalSignal = qualifiedBullSignal and wt1 < 0
+
+// Continuation signal above zero
+continuationSignal = qualifiedBullSignal and wt1 >= 0
+
+// Strong bullish regime even when there is no fresh crossover
+strongBullishRegime = wtAboveSignal and wtAboveZero and dailyRsBullish and weeklyBullish
+
+strongBearishRegime = wtBelowSignal and wtBelowZero and dailyRsBearish and weeklyBearish
+
+// Exit / warning signal
+qualifiedBearSignal = wtBearCross and (dailyRsBelowEma or not weeklyBullish)
+
+// Optional price trigger occurring after momentum is already bullish
+priceBreakEntry = previousHighBroken and wtAboveSignal and wtRising and dailyRsAboveFilter and dailyRsSlopeFilter and weeklyFilter and volumeConfirmation and wtNotOverextended
+
+//────────────────────────────────────────────────────────────
+// 9. PLOTS
+//────────────────────────────────────────────────────────────
+
+wt1Plot = plot(wt1, title="RS WaveTrend", color=wtRising ? color.aqua : color.orange, linewidth=2)
+
+wt2Plot = plot(wt2, title="WaveTrend Signal", color=color.yellow, linewidth=2)
+
+plot(wt1Weekly, title="Weekly RS WaveTrend", color=color.teal, linewidth=2)
+
+plot(wt2Weekly, title="Weekly RS WaveTrend Signal", color=color.maroon, linewidth=2)
+
+fill(wt1Plot, wt2Plot, color=showWtArea ? wtAboveSignal ? color.new(color.green, 86) : color.new(color.red, 86) : na, title="WaveTrend Momentum Fill")
+
+hline(0, "Zero", color=color.gray, linestyle=hline.style_dashed)
+
+hline(overboughtLevel1, "Overbought", color=color.new(color.red, 30), linestyle=hline.style_dashed)
+
+hline(overboughtLevel2, "Secondary Overbought", color=color.new(color.red, 65), linestyle=hline.style_dotted)
+
+hline(oversoldLevel1, "Oversold", color=color.new(color.green, 30), linestyle=hline.style_dashed)
+
+hline(oversoldLevel2, "Secondary Oversold", color=color.new(color.green, 65), linestyle=hline.style_dotted)
+
+//────────────────────────────────────────────────────────────
+// 10. SIGNAL MARKERS
+//────────────────────────────────────────────────────────────
+
+// Raw WaveTrend crossover markers, plotted on the WT line itself
+plotshape(showCrossMarkers and wtBullCross ? wt1 : na, title="Bullish WT Cross", style=shape.circle, location=location.absolute, color=color.green, size=size.tiny)
+
+plotshape(showCrossMarkers and wtBearCross ? wt1 : na, title="Bearish WT Cross", style=shape.circle, location=location.absolute, color=color.red, size=size.tiny)
+
+// Weekly RS WaveTrend crossover markers, plotted on the weekly WT line itself
+plotshape(showCrossMarkers and wtWeeklyBullCross ? wt1Weekly : na, title="Bullish Weekly RS WT Cross", style=shape.circle, location=location.absolute, color=color.blue, size=size.tiny)
+
+plotshape(showCrossMarkers and wtWeeklyBearCross ? wt1Weekly : na, title="Bearish Weekly RS WT Cross", style=shape.circle, location=location.absolute, color=color.fuchsia, size=size.tiny)
+
+// Qualified reversal from below zero
+plotshape(showQualifiedSignals and earlyReversalSignal, title="Qualified Early Reversal", style=shape.triangleup, location=location.bottom, color=color.lime, size=size.small, text="REV")
+
+// Qualified continuation above zero
+plotshape(showQualifiedSignals and continuationSignal, title="Qualified Continuation", style=shape.diamond, location=location.bottom, color=color.blue, size=size.small, text="CONT")
+
+// Price breakout after WaveTrend is already bullish
+plotshape(showQualifiedSignals and priceBreakEntry and not qualifiedBullSignal, title="RS Momentum Price Break", style=shape.circle, location=location.bottom, color=color.fuchsia, size=size.tiny, text="PH")
+
+// Weekly bullish regime begins
+weeklyBullishStart = weeklyBullish and not weeklyBullish[1]
+
+plotshape(showQualifiedSignals and weeklyBullishStart, title="Weekly RS Bullish Regime", style=shape.square, location=location.bottom, color=color.green, size=size.tiny, text="W9")
+
+//────────────────────────────────────────────────────────────
+// 11. BACKGROUND REGIME
+//────────────────────────────────────────────────────────────
+
+backgroundColor = strongBullishRegime ? color.new(color.green, 90) : strongBearishRegime ? color.new(color.red, 90) : na
+
+bgcolor(showBackground ? backgroundColor : na, title="RS Regime Background")
+
+//────────────────────────────────────────────────────────────
+// 12. DATA WINDOW VALUES
+//────────────────────────────────────────────────────────────
+
+plot(dailyRs, title="Daily Normalized RS", display=display.data_window)
+
+plot(dailyRsEma, title="Daily RS EMA", display=display.data_window)
+
+plot(weeklyRsRunning, title="Running Weekly RS", display=display.data_window)
+
+plot(weeklyRsConfirmed, title="Confirmed Weekly RS", display=display.data_window)
+
+plot(weeklyRsEmaConfirmed, title="Confirmed Weekly RS 9 EMA", display=display.data_window)
+
+plot(weeklyRsEmaProjected, title="Projected Running Weekly RS 9 EMA", display=display.data_window)
+
+plot(volumeAverage, title="Volume Average", display=display.data_window)
+
+//────────────────────────────────────────────────────────────
+// 13. DASHBOARD
+//────────────────────────────────────────────────────────────
+
+var table dashboard = table.new(position.top_right, 2, 8, border_width=1)
+
+statusText(bool condition) => condition ? "BULLISH" : "BEARISH"
+
+statusColor(bool condition) => condition ? color.new(color.green, 15) : color.new(color.red, 15)
+
+passText(bool condition) => condition ? "PASS" : "FAIL"
+
+passColor(bool condition) => condition ? color.new(color.green, 15) : color.new(color.red, 15)
+
+if barstate.islast and showDashboard
+    table.cell(dashboard, 0, 0, "RS WaveTrend", text_color=color.white, bgcolor=color.new(color.blue, 35))
+    table.cell(dashboard, 1, 0, str.tostring(wt1, "#.##"), text_color=color.white, bgcolor=color.new(color.blue, 35))
+    table.cell(dashboard, 0, 1, "WT Momentum", text_color=color.white)
+    table.cell(dashboard, 1, 1, wtAboveSignal ? "UP" : "DOWN", text_color=color.white, bgcolor=statusColor(wtAboveSignal))
+    table.cell(dashboard, 0, 2, "Daily RS 21 EMA", text_color=color.white)
+    table.cell(dashboard, 1, 2, statusText(dailyRsBullish), text_color=color.white, bgcolor=statusColor(dailyRsBullish))
+    table.cell(dashboard, 0, 3, "Weekly RS 9 EMA", text_color=color.white)
+    table.cell(dashboard, 1, 3, statusText(weeklyBullish), text_color=color.white, bgcolor=statusColor(weeklyBullish))
+    table.cell(dashboard, 0, 4, "Weekly Mode", text_color=color.white)
+    table.cell(dashboard, 1, 4, weeklyMode, text_color=color.white, bgcolor=color.new(color.gray, 60))
+    table.cell(dashboard, 0, 5, "Price Trigger", text_color=color.white)
+    table.cell(dashboard, 1, 5, passText(priceConfirmation and closeConfirmation), text_color=color.white, bgcolor=passColor(priceConfirmation and closeConfirmation))
+    table.cell(dashboard, 0, 6, "Volume", text_color=color.white)
+    table.cell(dashboard, 1, 6, passText(volumeConfirmation), text_color=color.white, bgcolor=passColor(volumeConfirmation))
+    table.cell(dashboard, 0, 7, "Entry Setup", text_color=color.white)
+    table.cell(dashboard, 1, 7, qualifiedBullSignal ? "TRIGGERED" : strongBullishRegime ? "READY" : "WAIT", text_color=color.white, bgcolor=qualifiedBullSignal ? color.new(color.lime, 10) : strongBullishRegime ? color.new(color.orange, 20) : color.new(color.gray, 60))
+
+if barstate.islast and not showDashboard
+    table.clear(dashboard, 0, 0, 1, 7)
+
+//────────────────────────────────────────────────────────────
+// 14. ALERTS
+//────────────────────────────────────────────────────────────
+
+alertcondition(wtBullCross, title="RS WaveTrend Bullish Cross", message="RS WaveTrend bullish crossover on {{exchange}}:{{ticker}}")
+
+alertcondition(qualifiedBullSignal, title="Qualified RS WaveTrend Entry", message="Qualified RS WaveTrend entry: weekly RS, daily RS and momentum filters passed on {{exchange}}:{{ticker}}")
+
+alertcondition(earlyReversalSignal, title="RS WaveTrend Early Reversal", message="RS WaveTrend qualified reversal below zero on {{exchange}}:{{ticker}}")
+
+alertcondition(continuationSignal, title="RS WaveTrend Continuation", message="RS WaveTrend qualified continuation above zero on {{exchange}}:{{ticker}}")
+
+alertcondition(priceBreakEntry, title="RS Momentum Previous-High Break", message="Price broke the previous candle high while RS momentum conditions are bullish on {{exchange}}:{{ticker}}")
+
+alertcondition(weeklyBullishStart, title="Weekly RS 9 EMA Bullish Regime", message="Weekly RS moved into a bullish rising 9 EMA regime on {{exchange}}:{{ticker}}")
+
+alertcondition(qualifiedBearSignal, title="RS WaveTrend Bearish Warning", message="RS WaveTrend bearish crossover with weakening RS conditions on {{exchange}}:{{ticker}}")
