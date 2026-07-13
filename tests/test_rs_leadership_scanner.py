@@ -87,9 +87,72 @@ def test_insufficient_history_returns_false():
     assert math.isnan(rel_perf_ema)
 
 
+def test_leadership_score_strong_when_steadily_outperforming():
+    # Stock compounds +2%/day for 40 bars, benchmark flat. Verified by hand
+    # (python -c against m._leadership_score directly): rs_line is strictly
+    # increasing off a flat base, so it is above its own EMA(9) from the
+    # first rising bar onward and stays there through bar 40 -- an
+    # established uptrend, not a fresh cross. Actual output: (5, "strong").
+    stock_closes = [100 * (1.02**i) for i in range(40)]
+    bench_closes = [100.0] * len(stock_closes)
+    df = _df(stock_closes)
+    bench = _bench_series(bench_closes)
+    score, rs_state = m._leadership_score(df, bench)
+    assert rs_state == "strong"
+    assert score >= 3
+    assert score == 5
+
+
+def test_leadership_score_weak_when_flat_and_matching_benchmark():
+    # Stock identical to (flat) benchmark for the whole history. Verified by
+    # hand: rs_line = (sc/bc)*1000 is constant from bar 1, so its EMA(9)
+    # equals it exactly at every bar (no lag on a constant series) --
+    # rs_above_ema, short_rs_bullish, rs_ema_rising, outperforming (rel_perf
+    # == 0, not > 0), and performance_rising are all False. Actual output:
+    # (0, "weak").
+    n = 30
+    stock_closes = [100.0] * n
+    bench_closes = [100.0] * n
+    df = _df(stock_closes)
+    bench = _bench_series(bench_closes)
+    score, rs_state = m._leadership_score(df, bench)
+    assert rs_state == "weak"
+    assert score == 0
+
+
+def test_leadership_score_transition_on_fresh_cross_after_sustained_rise():
+    # Bench flat throughout. Stock: flat 15 bars, then declines 5 bars at
+    # -7%/day (drags rs_line below its EMA(9), building lag), then rises 9
+    # bars at +1%/day -- a genuine multi-day sustained uptrend, not a
+    # single-day blip. Verified by hand (python -c against
+    # m._leadership_score directly, dumping rs_line/rs_ema_long for the last
+    # two bars): rs_line stays below rs_ema_long through bar 28
+    # (753.33 < 755.68) and only overtakes it on the final bar, bar 29
+    # (760.86 > 756.71) -- a fresh cross on the most recent bar, deep into
+    # the 9-day rise rather than on day 1 of it. Actual output: (4,
+    # "transition"), with rs_ema_rising/outperforming/performance_rising
+    # all True and short_rs_bullish False.
+    decl_days, decl_rate, rise_days, rise_rate = 5, 0.93, 9, 1.01
+    stock_closes = [100.0] * 15
+    for _ in range(decl_days):
+        stock_closes.append(stock_closes[-1] * decl_rate)
+    base = stock_closes[14 + decl_days]
+    for i in range(1, rise_days + 1):
+        stock_closes.append(base * (rise_rate**i))
+    bench_closes = [100.0] * len(stock_closes)
+    df = _df(stock_closes)
+    bench = _bench_series(bench_closes)
+    score, rs_state = m._leadership_score(df, bench)
+    assert rs_state == "transition"
+    assert score == 4
+
+
 if __name__ == "__main__":
     test_combined_cross_fires_when_both_conditions_first_align()
     test_no_fire_when_conditions_already_held_yesterday()
     test_no_fire_when_only_rel_perf_positive_ema_falling()
     test_insufficient_history_returns_false()
+    test_leadership_score_strong_when_steadily_outperforming()
+    test_leadership_score_weak_when_flat_and_matching_benchmark()
+    test_leadership_score_transition_on_fresh_cross_after_sustained_rise()
     print("OK")

@@ -11,7 +11,7 @@ import sys
 import os
 import json
 from math import nan, isnan
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 from tradingview_screener import Query, col
@@ -25,7 +25,8 @@ REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "rs_leadership_scans")
 _LABELS_FILE = os.path.join(REPO_DIR, "tools", "stock_labels.json")
 
-TODAY = datetime.now().strftime("%Y-%m-%d")
+IST = timezone(timedelta(hours=5, minutes=30))
+TODAY = datetime.now(IST).strftime("%Y-%m-%d")
 MD_LATEST = os.path.join(SCANS_DIR, "rs_leadership_latest.md")
 MD_DATED = os.path.join(SCANS_DIR, f"rs_leadership_{TODAY}.md")
 
