@@ -355,7 +355,7 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict[str, str]) -
     sorted_f = sorted(findings, key=lambda x: (-x["score"], -x["rel_perf"]))
     lines = [
         f"## RS Leadership — {TODAY}",
-        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+        f"*Generated {datetime.now(IST).strftime('%Y-%m-%d %H:%M')} IST*",
         "",
         "### Scan definition",
         "| Filter | Value |",
