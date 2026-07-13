@@ -88,12 +88,22 @@ def test_insufficient_history_returns_false():
 
 
 def test_leadership_score_strong_when_steadily_outperforming():
-    # Stock compounds +2%/day for 40 bars, benchmark flat. Verified by hand
-    # (python -c against m._leadership_score directly): rs_line is strictly
+    # Stock's daily growth rate itself increases (1.01 + 0.0015*i per day,
+    # not a constant compounding rate) for 40 bars, benchmark flat. A constant
+    # daily rate gives a mathematically flat 9-day rel_perf (1.02**i /
+    # 1.02**(i-9) is identical for every i), which previously made
+    # performance_rising true only via ~1e-14 float rounding noise --
+    # fragile across pandas/numpy/BLAS builds. This fixture genuinely
+    # accelerates: rel_perf.iloc[-1]=72.56 vs rel_perf.iloc[-2]=70.38, a
+    # ~2.18 margin, verified by hand (python -c against
+    # m._rel_perf_series/m._leadership_score directly). rs_line is strictly
     # increasing off a flat base, so it is above its own EMA(9) from the
     # first rising bar onward and stays there through bar 40 -- an
     # established uptrend, not a fresh cross. Actual output: (5, "strong").
-    stock_closes = [100 * (1.02**i) for i in range(40)]
+    rates = [1.01 + 0.0015 * i for i in range(40)]
+    stock_closes = [100.0]
+    for r in rates[1:]:
+        stock_closes.append(stock_closes[-1] * r)
     bench_closes = [100.0] * len(stock_closes)
     df = _df(stock_closes)
     bench = _bench_series(bench_closes)
