@@ -260,6 +260,11 @@ def run_backtest(
     benchmark = benchmark.loc[pd.to_datetime(benchmark["date"]) <= end].copy()
     if len(benchmark) < MIN_DAILY_BARS:
         raise ValueError(f"benchmark OHLC history is insufficient: {BENCHMARK}")
+    benchmark_weeks = pd.to_datetime(benchmark["date"]).dt.to_period("W-SUN")
+    if benchmark_weeks.nunique() < MIN_WEEKLY_BARS:
+        raise ValueError(
+            f"benchmark weekly OHLC history is insufficient: {BENCHMARK}"
+        )
 
     requested_symbols = list(symbols)
     completed_frames = []

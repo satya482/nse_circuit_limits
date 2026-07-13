@@ -180,6 +180,22 @@ def test_run_backtest_requires_benchmark(monkeypatch):
         )
 
 
+def test_run_backtest_requires_nine_benchmark_weeks(monkeypatch):
+    benchmark = _ohlc([200.0 + i for i in range(30)])
+    stock = _ohlc([100.0 + i for i in range(80)])
+    monkeypatch.setattr(
+        m,
+        "load_ohlc",
+        lambda symbol, lookback=10000: benchmark
+        if symbol == m.BENCHMARK
+        else stock,
+    )
+    with pytest.raises(ValueError, match="benchmark.*weekly"):
+        m.run_backtest(
+            ["TEST"], pd.Timestamp("2024-01-01"), pd.Timestamp("2024-12-31")
+        )
+
+
 def test_run_backtest_reports_insufficient_stock(monkeypatch):
     benchmark = _ohlc([200.0 + i for i in range(80)])
     insufficient = _ohlc([100.0 + i for i in range(m.MIN_DAILY_BARS - 1)])
