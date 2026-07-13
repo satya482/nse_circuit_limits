@@ -35,7 +35,21 @@ indicator("Satya RS elative Leadership", overlay=false)
 // =====================================================
 // Inputs
 // =====================================================
-benchmarkSym       = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+
+
+//benchmarkSym       = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+// === Benchmark selection ===
+useAutoBenchmark = input.bool(true, "Auto-select Benchmark")
+manualBenchmark  = input.symbol("NSE:NIFTYMIDSML400", "Manual Benchmark")
+
+isNSE = syminfo.prefix == "NSE" or syminfo.prefix == "BSE"
+
+// NSE stocks → NIFTYMIDSML400
+// US stocks → SPY
+autoBenchmark = isNSE ? "NSE:NIFTYMIDSML400" : "AMEX:SPY"
+
+benchmarkSym = useAutoBenchmark ? autoBenchmark : manualBenchmark
+
 rsEmaLen           = input.int(21, "RS EMA Length", minval=1)
 shortEmaLen        = input.int(9, "Short RS EMA", minval=1)
 performanceLen     = input.int(21, "Relative Performance Lookback", minval=2)
@@ -113,15 +127,38 @@ strongLeadership =
 // =====================================================
 performanceColor = relativePerformance >= 0 ? color.lime : color.red
 
-plot(relativePerformance, title="Relative Performance %", color=performanceColor, linewidth=2)
-plot(relativePerformanceEma, title="Performance EMA", color=color.orange, linewidth=1)
+plot(relativePerformance, title="Relative Performance %", color=performanceColor, linewidth=1, style=plot.style_stepline)
+//plot(relativePerformanceEma, title="Performance EMA", color=color.orange, linewidth=1)
+performanceEmaColor =
+     relativePerformanceEma > relativePerformanceEma[1] ? color.blue :
+     relativePerformanceEma < relativePerformanceEma[1] ? color.purple :
+     color.gray
+
+plot(
+     relativePerformanceEma,
+     title="Performance EMA",
+     color=performanceEmaColor,
+     linewidth=2//,style=plot.style_stepline
+)
 hline(0, title="Benchmark Performance", color=color.gray, linestyle=hline.style_dashed)
+
+
+// Performance EMA changes from falling/flat to rising
+performanceEmaUptrendStart =
+     relativePerformanceEma > relativePerformanceEma[1] and
+     relativePerformanceEma[1] <= relativePerformanceEma[2] //and barstate.isconfirmed
+
+alertcondition(
+     performanceEmaUptrendStart,
+     title="RS Perf Uptrend",
+     message="{{ticker}} RS Perf UpTrend"
+)
 
 // =====================================================
 // Markers
 // =====================================================
-plotshape(rsTurnUp, title="RS Turn Up", style=shape.circle, location=location.bottom,
-     color=color.aqua, size=size.tiny, text="T")
+//plotshape(rsTurnUp, title="RS Turn Up", style=shape.circle, location=location.bottom,
+//     color=color.aqua, size=size.tiny, text="T")
 
 plotshape(rsCrossUp, title="RS Cross Above EMA 21", style=shape.triangleup, location=location.bottom,
      color=color.blue, size=size.tiny, text="RS")
@@ -141,7 +178,7 @@ plotshape(leadershipCrossDown, title="Leadership Lost", style=shape.triangledown
 strongRegime = leadershipScore >= 4
 weakRegime   = leadershipScore <= 1
 
-bgcolor(strongRegime ? color.new(color.green, 88) : weakRegime ? color.new(color.red, 90) : na)
+//bgcolor(strongRegime ? color.new(color.green, 88) : weakRegime ? color.new(color.red, 90) : na)
 
 // =====================================================
 // Alerts
