@@ -30,12 +30,12 @@ NSE:FINOPB,NSE:VOLTAS,NSE:HEG,NSE:ONESOURCE,NSE:BLUESTARCO,NSE:ICICIPRULI,NSE:AS
 | [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF14d</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.2% | +1.22% | 4134.70 | 19w | 20%  |
 | [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN)<br><sub>↓CMF9d</sub> | Software development and IT services for global enterprise clients | 1w | TOUCH | 1w | +2.8% | +2.80% | 167.85 | 1w | 20% 🟦 |
 | [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>↓CMF30d</sub> | Gold casting jewellery design manufacture retail sector | 1w | TOUCH | 1w | +0.3% | +0.34% | 212.82 | — | 20%  |
-| [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST)<br><sub>↓CMF25d</sub> |  | 1w | TOUCH | 1w | +2.8% | +2.79% | 1117.50 | 28w | 20%  |
+| [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST)<br><sub>↓CMF25d · DEL85%</sub> |  | 1w | TOUCH | 1w | +2.8% | +2.79% | 1117.50 | 28w | 20%  |
 | [KIOCL](https://in.tradingview.com/chart/?symbol=NSE:KIOCL)<br><sub>↓CMF23d</sub> | Iron ore pellets and pig iron manufacturing for steelmakers | 1w | TOUCH | 1w | +1.5% | +1.46% | 386.50 | — | 20%  |
 | [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>↓CMF30d</sub> | Sugar production and refining, ethanol byproducts, domestic market | 1w | TOUCH | 1w | +2.1% | +2.06% | 237.25 | 2w | 20%  |
 | [AUTOAXLES](https://in.tradingview.com/chart/?symbol=NSE:AUTOAXLES)<br><sub>↓CMF1d</sub> |  | 1w | TOUCH | 1w | +1.3% | +1.32% | 1797.10 | 1w | 20%  |
 | [MUKANDLTD](https://in.tradingview.com/chart/?symbol=NSE:MUKANDLTD)<br><sub>↓CMF20d</sub> |  | 1w | TOUCH | 1w | +2.2% | +2.24% | 135.85 | 43w | 20%  |
-| [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF24d · DEL66%(T-1)</sub> |  | 1w | ABOVE | 1w | +19.1% | +19.15% | 161.33 | — | 20% 🟦 |
+| [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF24d</sub> |  | 1w | ABOVE | 1w | +19.1% | +19.15% | 161.33 | — | 20% 🟦 |
 | [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS)<br><sub>↓CMF30d</sub> | AC units, commercial cooling, electro-mechanical project contracts | 1w | ABOVE | 1w | +4.9% | +4.88% | 1349.50 | 1w | 20%  |
 | [HEG](https://in.tradingview.com/chart/?symbol=NSE:HEG)<br><sub>↑CMF6d</sub> | Graphite electrodes for electric arc furnace steel production | 1w | ABOVE | 1w | +5.6% | +5.57% | 575.40 | — | 20%  |
 | [ONESOURCE](https://in.tradingview.com/chart/?symbol=NSE:ONESOURCE)<br><sub>↑CMF1d</sub> | Specialty pharma CDMO injectable biologics contract manufacturing | 1w | ABOVE | 1w | +2.8% | +2.83% | 1673.00 | — | 20% 🟦 |
@@ -63,7 +63,7 @@ NSE:FINOPB,NSE:VOLTAS,NSE:HEG,NSE:ONESOURCE,NSE:BLUESTARCO,NSE:ICICIPRULI,NSE:AS
 | [ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +3.4% | +3.37% | 832.85 | 25w | 20%  |
 | [HEXATRADEX](https://in.tradingview.com/chart/?symbol=NSE:HEXATRADEX)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +2.0% | +1.98% | 161.35 | 61w | 20%  |
 | [FINKURVE](https://in.tradingview.com/chart/?symbol=NSE:FINKURVE)<br><sub>↑CMF18d</sub> |  | 1w | ABOVE | 1w | +3.9% | +3.87% | 65.75 | 3w | 20%  |
-| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE)<br><sub>↓CMF4d · DEL58%(T-1)</sub> | Steam turbines for industrial power generation under 100MW | 1w | BELOW | 1w | +1.8% | +1.75% | 616.70 | — | 20%  |
+| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE)<br><sub>↓CMF4d</sub> | Steam turbines for industrial power generation under 100MW | 1w | BELOW | 1w | +1.8% | +1.75% | 616.70 | — | 20%  |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND)<br><sub>↓CMF30d</sub> | Steel castings and alloys for automotive and industrial equipment | 1w | BELOW | 1w | +2.7% | +2.68% | 93.93 | — | 20% 🟦 |
 | [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>↑CMF15d</sub> | Steel manufacturing integrated operations Eastern Uttar Pradesh mining | 1w | BELOW | 1w | +5.0% | +5.00% | 700.95 | — | 5% 🟥 |
 | [MAHASTEEL](https://in.tradingview.com/chart/?symbol=NSE:MAHASTEEL)<br><sub>↑CMF30d</sub> |  | 1w | BELOW | 1w | +2.1% | +2.08% | 881.65 | 3w | 20%  |

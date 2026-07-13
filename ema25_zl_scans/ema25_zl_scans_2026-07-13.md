@@ -26,7 +26,7 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [PINELABS](https://in.tradingview.com/chart/?symbol=NSE:PINELABS)<br><sub>↑CMF0d</sub> | 1d | +7.0% | POS terminals, payment processing, merchant financing ecosystem | +7.04% | 155.91 | — | 20%  |
-| [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF24d · DEL66%(T-1)</sub> | 1d | +19.1% |  | +19.15% | 161.33 | — | 20% 🟦 |
+| [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF24d</sub> | 1d | +19.1% |  | +19.15% | 161.33 | — | 20% 🟦 |
 | [BFUTILITIE](https://in.tradingview.com/chart/?symbol=NSE:BFUTILITIE)<br><sub>↑CMF0d</sub> | 1d | +16.2% | Wind power generation and infrastructure development company | +16.20% | 672.55 | — | 20%  |
 | [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS)<br><sub>↓CMF30d</sub> | 1d | +4.9% | AC units, commercial cooling, electro-mechanical project contracts | +4.88% | 1349.50 | — | 20%  |
 | [TATATECH](https://in.tradingview.com/chart/?symbol=NSE:TATATECH)<br><sub>↑CMF0d</sub> | 1d | +5.9% | Engineering services for automotive manufacturing digital transformation | +5.88% | 760.80 | — | 20%  |
@@ -117,11 +117,11 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL)<br><sub>↑CMF0d</sub> | 3d | +11.8% | BPO services healthcare banking financial services customers | +2.06% | 265.06 | — | 20%  |
 | [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML)<br><sub>↑CMF2d</sub> | 3d | +6.2% | Heavy equipment and defense vehicles manufacturing | +1.25% | 1885.90 | — | 20%  |
 | [LALPATHLAB](https://in.tradingview.com/chart/?symbol=NSE:LALPATHLAB)<br><sub>↓CMF28d</sub> | 3d | +4.3% | Diagnostic testing, pathology labs, consumer healthcare | +1.91% | 1725.10 | ✓ | 20%  |
-| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>↑CMF21d · DEL58%(T-1)</sub> | 3d | +13.9% | Dry bulk carrier operations for maritime cargo transport | +3.43% | 570.70 | — | 10% 🟩 |
+| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>↑CMF21d</sub> | 3d | +13.9% | Dry bulk carrier operations for maritime cargo transport | +3.43% | 570.70 | — | 10% 🟩 |
 | [EIDPARRY](https://in.tradingview.com/chart/?symbol=NSE:EIDPARRY)<br><sub>↑CMF0d</sub> | 3d | +8.7% | Sugar production, nutraceuticals, ethanol, farm inputs | +3.43% | 784.70 | — | 20%  |
 | [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>↑CMF3d</sub> | 3d | +2.4% | CCTV cameras surveillance systems manufacturing India security | -0.63% | 3639.40 | ✓ | 5% 🟥 |
 | [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC)<br><sub>↓CMF30d</sub> | 3d | +9.7% | Retail credit to underserved households and small businesses | -0.11% | 324.95 | — | 20%  |
-| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF2d · DEL75%(T-1)</sub> | 3d | +8.4% | IT services digital transformation automation consulting | +2.90% | 566.20 | — | 20%  |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT)<br><sub>↑CMF2d</sub> | 3d | +8.4% | IT services digital transformation automation consulting | +2.90% | 566.20 | — | 20%  |
 | [EPACKPEB](https://in.tradingview.com/chart/?symbol=NSE:EPACKPEB)<br><sub>↑CMF21d</sub> | 3d | +13.7% | Steel prefab buildings manufacturing construction services India | +5.05% | 278.50 | — | 20%  |
 | [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM)<br><sub>↓CMF21d</sub> | 3d | +4.5% | Private multi-specialty hospital chains India GCC markets | +0.74% | 814.90 | ✓ | 20%  |
 | [DAMCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:DAMCAPITAL)<br><sub>↓CMF30d</sub> | 3d | +11.3% | Investment banking, M&A advisory, equity capital markets | +5.58% | 161.97 | ✓ | 20%  |
@@ -134,12 +134,12 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [BRIGADE](https://in.tradingview.com/chart/?symbol=NSE:BRIGADE)<br><sub>↑CMF1d</sub> | 3d | +13.3% | Residential and commercial real estate developer, South India | -0.85% | 569.70 | — | 20%  |
 | [BORORENEW](https://in.tradingview.com/chart/?symbol=NSE:BORORENEW)<br><sub>↑CMF28d</sub> | 3d | +8.9% | Solar glass manufacturer for photovoltaic modules India | +1.05% | 647.30 | — | 20%  |
 | [HDBFS](https://in.tradingview.com/chart/?symbol=NSE:HDBFS)<br><sub>↑CMF20d</sub> | 3d | +4.0% | Vehicle loans, personal loans, NBFC underserved markets | +0.11% | 756.25 | — | 20%  |
-| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d · DEL28%(T-1)</sub> | 3d | +10.0% | Gurugram residential developer mid-premium affordable housing NCR | -0.28% | 846.50 | — | 20%  |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d</sub> | 3d | +10.0% | Gurugram residential developer mid-premium affordable housing NCR | -0.28% | 846.50 | — | 20%  |
 | [KSHINTL](https://in.tradingview.com/chart/?symbol=NSE:KSHINTL)<br><sub>↓CMF11d</sub> | 3d | +10.7% | Magnet winding wire manufacturer for motors and transformers | +2.59% | 872.00 | ✓ | 20%  |
 | [EQUITASBNK](https://in.tradingview.com/chart/?symbol=NSE:EQUITASBNK)<br><sub>↑CMF4d</sub> | 3d | +8.1% | Small finance bank serving unbanked small entrepreneurs | +1.01% | 83.07 | — | 20%  |
-| [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH)<br><sub>↑CMF19d · DEL46%(T-1)</sub> | 3d | +5.1% | IT hardware distributor connecting brands resellers retailers | -0.60% | 778.35 | ✓ | 20%  |
+| [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH)<br><sub>↑CMF19d · DEL50%</sub> | 3d | +5.1% | IT hardware distributor connecting brands resellers retailers | -0.60% | 778.35 | ✓ | 20%  |
 | [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH)<br><sub>↑CMF0d</sub> | 3d | +5.1% | Animal health pharmaceuticals APIs formulations global markets | +2.36% | 284.35 | — | 20%  |
-| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↓CMF24d · DEL92%(T-1)</sub> | 3d | +8.0% | Insurance watches luxury segment Indian retail consumers | +6.92% | 2649.00 | ✓ | 20%  |
+| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↓CMF24d</sub> | 3d | +8.0% | Insurance watches luxury segment Indian retail consumers | +6.92% | 2649.00 | ✓ | 20%  |
 | [ELLEN](https://in.tradingview.com/chart/?symbol=NSE:ELLEN)<br><sub>↑CMF1d</sub> | 3d | +16.4% | Industrial oxygen nitrogen gases bulk packaged eastern southern | +0.61% | 296.05 | — | 20%  |
 | [CRAMC](https://in.tradingview.com/chart/?symbol=NSE:CRAMC)<br><sub>↑CMF0d</sub> | 3d | +8.9% | Mutual funds and investment advisory for Indian retail investors | +4.62% | 264.70 | ✓ | 20%  |
 | [BEPL](https://in.tradingview.com/chart/?symbol=NSE:BEPL)<br><sub>↑CMF0d</sub> | 3d | +12.4% |  | +4.81% | 108.10 | — | 20%  |
@@ -195,7 +195,7 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [PNGJL](https://in.tradingview.com/chart/?symbol=NSE:PNGJL)<br><sub>↓CMF2d</sub> | 8d | +10.8% | Gold jewelry retail with regional Maharashtra presence | +1.75% | 598.35 | — | 10% 🟩 |
 | [CYIENTDLM](https://in.tradingview.com/chart/?symbol=NSE:CYIENTDLM)<br><sub>↑CMF6d</sub> | 8d | +13.2% | Electronics manufacturing design integration testing subsystems OEMs | -3.67% | 525.65 | — | 20%  |
 | [SWIGGY](https://in.tradingview.com/chart/?symbol=NSE:SWIGGY)<br><sub>↓CMF1d</sub> | 9d | +10.7% | Food delivery and quick commerce marketplace serving Indian consumers | -2.37% | 266.77 | — | 20%  |
-| [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE)<br><sub>↓CMF0d · DEL89%(T-1)</sub> | 9d | +8.1% | Life insurance products for retail and corporate clients | +1.45% | 146.60 | ✓ | 20%  |
+| [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE)<br><sub>↓CMF0d</sub> | 9d | +8.1% | Life insurance products for retail and corporate clients | +1.45% | 146.60 | ✓ | 20%  |
 | [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI)<br><sub>↑CMF4d</sub> | 9d | +22.7% | Job boards, real estate portals, matrimony platforms | -1.08% | 1191.05 | — | 20%  |
 | [UTIAMC](https://in.tradingview.com/chart/?symbol=NSE:UTIAMC)<br><sub>↑CMF0d</sub> | 9d | +10.1% | Mutual fund management, equity and debt schemes, retail investors | +2.36% | 1028.00 | — | 20%  |
 | [RAYMONDREL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDREL)<br><sub>↑CMF0d</sub> | 9d | +16.2% | Premium residential projects Mumbai Metropolitan Region developer | +3.25% | 722.75 | — | 20% 🟦 |
@@ -256,7 +256,7 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [CCL](https://in.tradingview.com/chart/?symbol=NSE:CCL)<br><sub>↓CMF5d</sub> | 18d | +10.3% | Instant coffee manufacturing and export global markets | +1.29% | 1229.70 | — | 20%  |
 | [GOODLUCK](https://in.tradingview.com/chart/?symbol=NSE:GOODLUCK)<br><sub>↑CMF11d</sub> | 19d | +24.0% | Steel pipes, forgings, tubes for automotive, industrial | +4.06% | 1629.40 | — | 20%  |
 | [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>↑CMF17d</sub> | 19d | +14.9% | Health insurance policies, retail individuals, hospitals network | -0.58% | 599.75 | — | 20%  |
-| [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↑CMF15d</sub> | 20d | +33.2% | Precision aerospace components and consumer product manufacturing | -1.87% | 245.00 | — | 20% 🟦 |
+| [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↑CMF15d · DEL52%</sub> | 20d | +33.2% | Precision aerospace components and consumer product manufacturing | -1.87% | 245.00 | — | 20% 🟦 |
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS)<br><sub>↑CMF7d</sub> | 20d | +12.5% | Differential assemblies and gears for electric vehicles | +0.34% | 670.85 | — | 20%  |
 | [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↑CMF25d</sub> | 20d | +43.0% | Water treatment EPC contractor, municipal and industrial clients | -3.71% | 441.15 | — | 10% 🟨 |
 | [ZYDUSWELL](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSWELL)<br><sub>↑CMF15d</sub> | 20d | +18.7% | Sugar substitutes, glucose powders, health FMCG retail | +0.03% | 592.65 | — | 20%  |
@@ -267,9 +267,9 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [KAJARIACER](https://in.tradingview.com/chart/?symbol=NSE:KAJARIACER)<br><sub>↑CMF19d</sub> | 21d | +14.2% | Ceramic vitrified tiles manufacturing building construction materials | +1.51% | 1236.40 | — | 20%  |
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY)<br><sub>↑CMF19d</sub> | 21d | +18.6% | Premium residential office retail hospitality real estate Mumbai | +0.02% | 1925.20 | — | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF3d</sub> | 21d | +34.7% | Online test prep and upskilling courses, competitive exams | -3.06% | 142.70 | — | 20%  |
-| [EIEL](https://in.tradingview.com/chart/?symbol=NSE:EIEL)<br><sub>↑CMF1d</sub> | 21d | +27.1% | Water treatment plants design construction municipal sector | -3.52% | 235.89 | — | 20%  |
+| [EIEL](https://in.tradingview.com/chart/?symbol=NSE:EIEL)<br><sub>↑CMF1d · DEL46%</sub> | 21d | +27.1% | Water treatment plants design construction municipal sector | -3.52% | 235.89 | — | 20%  |
 | [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL)<br><sub>↑CMF16d</sub> | 21d | +21.6% | Shock absorbers struts two wheeler four wheeler OEM aftermarket | +1.14% | 1265.00 | — | 20%  |
-| [JSWCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JSWCEMENT)<br><sub>↓CMF9d</sub> | 21d | +8.6% | Eco-friendly cement manufacturing for infrastructure construction projects | +0.05% | 138.29 | — | 20%  |
+| [JSWCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JSWCEMENT)<br><sub>↓CMF9d · DEL81%</sub> | 21d | +8.6% | Eco-friendly cement manufacturing for infrastructure construction projects | +0.05% | 138.29 | — | 20%  |
 | [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW)<br><sub>↑CMF15d</sub> | 21d | +26.1% | Dredging ships marine infrastructure repair refitting services | +0.53% | 2425.40 | — | 20%  |
 | [OPTIEMUS](https://in.tradingview.com/chart/?symbol=NSE:OPTIEMUS)<br><sub>↑CMF6d</sub> | 21d | +37.0% | Mobile handset distribution and telecom product manufacturing | +7.18% | 579.90 | — | 20%  |
 | [LTF](https://in.tradingview.com/chart/?symbol=NSE:LTF)<br><sub>↓CMF1d</sub> | 22d | +26.4% | NBFC retail lending home auto loans mortgages | +1.07% | 324.70 | — | 20%  |
@@ -281,7 +281,7 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE)<br><sub>↑CMF20d</sub> | 22d | +30.1% | Residential commercial retail hospitality real estate developer multi-city | -0.51% | 1724.30 | — | 20%  |
 | [GREAVESCOT](https://in.tradingview.com/chart/?symbol=NSE:GREAVESCOT)<br><sub>↑CMF30d</sub> | 22d | +48.7% | Engine manufacturer, electric vehicles, agricultural power equipment | -0.54% | 262.17 | — | 20%  |
 | [GNA](https://in.tradingview.com/chart/?symbol=NSE:GNA)<br><sub>↓CMF30d</sub> | 22d | +49.5% | Rear axles and drive shafts for commercial vehicles globally | +11.33% | 529.25 | — | 20%  |
-| [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>↑CMF9d</sub> | 22d | +25.0% | Stockbroking wealth management MSME lending insurance distribution financial services | -1.78% | 820.15 | — | 20%  |
+| [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN)<br><sub>↑CMF9d · DEL42%</sub> | 22d | +25.0% | Stockbroking wealth management MSME lending insurance distribution financial services | -1.78% | 820.15 | — | 20%  |
 | [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA)<br><sub>↑CMF25d</sub> | 22d | +27.1% | Wealth management, advisory, broking for high-net-worth individuals | -2.93% | 1919.70 | — | 20%  |
 | [NACLIND](https://in.tradingview.com/chart/?symbol=NSE:NACLIND)<br><sub>↑CMF16d</sub> | 22d | +52.5% | Agrochemical technicals formulations crop protection multinational domestic | +3.61% | 243.02 | — | 20% 🟦 |
 | [RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO)<br><sub>↑CMF17d</sub> | 22d | +17.3% | Spirits distiller alcohol beverages domestic Indian mass market | -0.69% | 4045.40 | — | -%  |
@@ -296,12 +296,12 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [IXIGO](https://in.tradingview.com/chart/?symbol=NSE:IXIGO)<br><sub>↑CMF30d</sub> | 22d | +32.5% | Rail flight bus hotel booking aggregator platform | +1.57% | 210.43 | — | 20%  |
 | [AADHARHFC](https://in.tradingview.com/chart/?symbol=NSE:AADHARHFC)<br><sub>↑CMF21d</sub> | 22d | +18.3% | Low-income housing finance loans India retail segment | +0.25% | 535.90 | — | 20% 🟦 |
 | [TRIVENI](https://in.tradingview.com/chart/?symbol=NSE:TRIVENI)<br><sub>↑CMF10d</sub> | 23d | +27.8% | Sugar ethanol distillery power transmission water treatment conglomerate | +3.19% | 477.15 | — | 20%  |
-| [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>↑CMF25d</sub> | 23d | +43.4% | Cloud TV platform for content distribution and monetization | +0.70% | 579.50 | — | 20%  |
+| [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>↑CMF25d · DEL72%</sub> | 23d | +43.4% | Cloud TV platform for content distribution and monetization | +0.70% | 579.50 | — | 20%  |
 | [AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK)<br><sub>↑CMF21d</sub> | 24d | +58.2% | LPG liquid storage terminals third party logistics operator | +7.11% | 303.30 | — | 20%  |
 | [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH)<br><sub>↑CMF30d</sub> | 25d | +127.8% | Optical fiber cables, telecom and power transmission infrastructure | +1.72% | 405.15 | — | 5% 🟥 |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>↑CMF24d</sub> | 25d | +45.3% | APIs, formulations, home diagnostics for Indian patients | +1.75% | 62.29 | — | 20%  |
 | [BLUEJET](https://in.tradingview.com/chart/?symbol=NSE:BLUEJET)<br><sub>↑CMF11d</sub> | 25d | +34.5% | Specialty pharma CDMO, niche chemistry, healthcare ingredients manufacturing | -2.84% | 606.30 | — | 20%  |
-| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF3d · DEL88%(T-1)</sub> | 25d | +26.5% | B2B travel tech platform connecting hotels airlines buyers globally | -0.05% | 1504.10 | ✓ | 20%  |
+| [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF3d</sub> | 25d | +26.5% | B2B travel tech platform connecting hotels airlines buyers globally | -0.05% | 1504.10 | ✓ | 20%  |
 | [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM)<br><sub>↑CMF13d</sub> | 25d | +15.2% | Branded generics formulations across India Asia Africa markets | +2.17% | 3421.40 | — | 20%  |
 | [SENORES](https://in.tradingview.com/chart/?symbol=NSE:SENORES)<br><sub>↓CMF1d</sub> | 25d | +42.5% | Complex generics manufacturer certified globally affordable quality | +1.25% | 1435.50 | — | 20%  |
 | [UNICHEMLAB](https://in.tradingview.com/chart/?symbol=NSE:UNICHEMLAB)<br><sub>↑CMF2d</sub> | 25d | +67.3% | Pharma generics APIs contract manufacturing CMO | -6.54% | 596.95 | — | 20%  |
@@ -313,7 +313,7 @@ NSE:PINELABS,NSE:FINOPB,NSE:BFUTILITIE,NSE:VOLTAS,NSE:TATATECH,NSE:RRKABEL,NSE:T
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>↑CMF16d</sub> | 29d | +32.2% | Specialty chemicals for pharma agrochemical material science | -3.20% | 1452.80 | — | 20%  |
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK)<br><sub>↑CMF30d</sub> | 30d | +15.4% | Retail corporate banking Kerala-rooted expanding national branch network | +0.80% | 332.50 | ✓ | 20%  |
 | [AKUMS](https://in.tradingview.com/chart/?symbol=NSE:AKUMS)<br><sub>↓CMF3d</sub> | 30d | +30.3% | CDMO formulations development manufacturing Indian pharma companies | -2.58% | 683.85 | — | 20%  |
-| [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE)<br><sub>↑CMF26d · DEL59%(T-1)</sub> | 31d | +61.3% | Used car marketplace, financing, dealer-to-consumer platform | -0.38% | 2799.30 | — | 20%  |
+| [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE)<br><sub>↑CMF26d</sub> | 31d | +61.3% | Used car marketplace, financing, dealer-to-consumer platform | -0.38% | 2799.30 | — | 20%  |
 | [INDSWFTLAB](https://in.tradingview.com/chart/?symbol=NSE:INDSWFTLAB)<br><sub>↑CMF2d</sub> | 32d | +76.3% | Macrolide antibiotics bulk drugs manufacturing pharma | -3.55% | 237.70 | — | 20%  |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL)<br><sub>↓CMF2d</sub> | 34d | +63.8% | Gold ornaments silver diamond jewelry retail Tamil Nadu | -4.70% | 6233.00 | — | 10% 🟨 |
 | [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>↑CMF24d</sub> | 36d | +71.9% | Condoms lubricants IVD kits sexual wellness global | -2.55% | 206.83 | — | 20%  |
