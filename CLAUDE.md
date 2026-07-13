@@ -58,6 +58,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks
+.\run_rs_weekly_ema9_scanner.ps1  # runs in NSE_AllScanners, after WeeklyZL — weekly RS EMA9 flat/rising trend list
 .\run_consolidation_scanner.ps1  # 4:35 PM — Consolidation Tracker: quality/imminence/tier scan
 # US WaveTrend Bull Cross Scanner — SEPARATE scheduled task, part of the existing
 # US scanner group (not run_all_scanners.ps1): fetch @4:40PM -> zl-squeeze @4:50PM -> this @5:00PM
@@ -142,6 +143,21 @@ All thresholds live in `settings.yaml`. Pipeline:
 5. `price_vs_zl`: TOUCH (±1.5% of ZLEMA25 level) / ABOVE / BELOW — flags pullback entry zone
 6. `bb_kc_squeeze_info()` → squeeze column (informational, not a gate)
 7. Writes `weekly_zl_scans/weekly_zl_scans.md`; sorted TOUCH-first, then by `-consec_weeks`
+
+### Scanner pipeline — Weekly RS EMA9 Trend (`rs_weekly_ema9_scanner.py`)
+
+"Trending universe" list — daily RS above weekly RS EMA9 AND that EMA9 flat/rising
+(same weekly-resample + EMA9 math as `ema25_zl_scanner.py` RS_MODE=weekly_ema9 /
+`wt_bullcross_scanner.py` `_rs_weekly_gate()`, kept in sync per CLAUDE.md Python↔Pine
+parity convention).
+
+1. TradingView screener → watchlist (MCap ₹800 Cr – ₹1 Lakh Cr, price > ₹50)
+2. `load_ohlc(symbol)` + benchmark (`NIFTY MIDSML 400`) → daily RS Line, weekly RS EMA9
+3. Keeps stock if daily RS > weekly RS EMA9 (today) AND weekly RS EMA9 this week ≥ last week
+4. `age` = consecutive trading days daily RS has stayed above the weekly RS EMA9
+5. `new_entrant` = symbol wasn't in previous run's output (diff vs `rs_weekly_ema9_state.json`,
+   mirrors `nse_ema_daily.py`'s diff pattern)
+6. Writes `rs_weekly_scans/rs_weekly_ema9_scans.md`; sorted by age ascending (newest first)
 
 ### Scanner pipeline — Consolidation Tracker (`consolidation/`)
 
@@ -290,6 +306,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `NSE_Circuit_Limits.md`, `index.html` | `main.py` |
 | `ema25_zl_scans/ema25_zl_scans.md` | `ema25_zl_scanner.py` |
 | `weekly_zl_scans/weekly_zl_scans.md` | `weekly_zl_scanner.py` |
+| `rs_weekly_scans/rs_weekly_ema9_scans.md` | `rs_weekly_ema9_scanner.py` |
 | `ema-compression-scanner/ema_compression_scans/ema_compression_latest.md` | `screener.py` |
 | `momentum_scans/momentum_scans.md` | `momentum_scanner.py` |
 | `momentum_scans/momentum_rs_weekly_scans.md` | `momentum_rs_weekly_scanner.py` |

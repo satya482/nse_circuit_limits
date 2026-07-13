@@ -371,6 +371,7 @@ def build_markdown(
                     f"| **{tag}** — {label} "
                     f"| {cl} {em} |"
                 )
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in entry_findings), "```"]
     else:
         lines.append("*No entry signals today.*")
 
@@ -410,6 +411,7 @@ def build_markdown(
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| {cl} {em} |"
             )
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in turning_findings), "```"]
     else:
         lines.append("*No ZLEMA25 turns today.*")
 
