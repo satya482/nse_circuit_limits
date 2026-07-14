@@ -9,6 +9,9 @@ $date    = Get-Date -Format "yyyy-MM-dd"
 $logFile = "$logDir\institutional_footprint_scanner_$date.log"
 New-Item -ItemType Directory -Force -Path $logDir | Out-Null
 
+# Scheduled task launches with cwd=System32; scanner uses repo-relative paths
+Set-Location $ROOT
+
 if (-not $env:DISCORD_WEBHOOK_URL) {
     $env:DISCORD_WEBHOOK_URL = [System.Environment]::GetEnvironmentVariable("DISCORD_WEBHOOK_URL", "User")
 }
