@@ -33,7 +33,7 @@ NSE:MCX,NSE:FINOPB,NSE:CONCOR,NSE:ORIENTTECH,NSE:SBICARD,NSE:BLUESTARCO,NSE:VOLT
 | [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>↓CMF30d</sub> | Gold casting jewellery design manufacture retail sector | 1w | TOUCH | 1w | +0.9% | +0.54% | 213.97 | — | 20%  |
 | [ICEMAKE](https://in.tradingview.com/chart/?symbol=NSE:ICEMAKE)<br><sub>↓CMF15d</sub> | Refrigeration equipment manufacturer for commercial cold storage operations | 1w | TOUCH | 1w | +2.9% | +2.82% | 786.25 | 16w | 20%  |
 | [MUKANDLTD](https://in.tradingview.com/chart/?symbol=NSE:MUKANDLTD)<br><sub>↓CMF21d</sub> |  | 1w | TOUCH | 1w | +2.9% | +0.64% | 136.72 | 43w | 20%  |
-| [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST)<br><sub>↓CMF26d · DEL85%(T-1)</sub> |  | 1w | TOUCH | 1w | +1.7% | -1.08% | 1105.40 | 28w | 20%  |
+| [JPOLYINVST](https://in.tradingview.com/chart/?symbol=NSE:JPOLYINVST)<br><sub>↓CMF26d</sub> |  | 1w | TOUCH | 1w | +1.7% | -1.08% | 1105.40 | 28w | 20%  |
 | [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN)<br><sub>↓CMF30d</sub> |  | 1w | TOUCH | 1w | +3.0% | +0.66% | 396.55 | 37w | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF25d</sub> |  | 1w | ABOVE | 1w | +30.3% | +9.34% | 176.40 | — | 20% 🟦 |
 | [CONCOR](https://in.tradingview.com/chart/?symbol=NSE:CONCOR)<br><sub>↑CMF15d</sub> | Rail container logistics and multimodal freight transport services | 1w | ABOVE | 1w | +6.3% | +6.29% | 493.15 | — | 20%  |
