@@ -8,6 +8,8 @@
 //     - Completed uptrends: silver label at the last rising bar of each segment
 //       ("12d | +18.4%"). All segments labeled, including 1-2 bar blips.
 //     - Current uptrend: live white label at the latest bar, updated per bar.
+//     - Turn-up candle (bar where ZLEMA25 starts rising) recolored yellow
+//       via barcolor() — toggle + color in inputs.
 //   % base = close of the candle immediately BEFORE the turn-up candle — same
 //   ZL Chg% reference as ema25_zl_scanner.py (see README "ZL Chg% reference").
 //
@@ -62,6 +64,11 @@ pctChangeFromStart = upTrend and not na(upStartPrice) ? ((close - upStartPrice) 
 
 // Plot ZLEMA
 plot(showZLEMA25 ? zlema25 : na, title="ZLEMA 25", color=zlemaColor25, linewidth=2)
+
+// Recolor the turn-up candle (bar where ZLEMA25 uptrend starts)
+paintTurnCandle = input.bool(true, "Paint ZLEMA25 turn-up candle")
+turnCandleColor = input.color(color.yellow, "Turn-up candle color")
+barcolor(paintTurnCandle and upTrendStart ? turnCandleColor : na, title="ZLEMA25 turn-up candle")
 
 // Live label for current uptrend
 var label statsLabel = na
