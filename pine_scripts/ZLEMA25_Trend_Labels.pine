@@ -1,0 +1,72 @@
+//@version=6
+// ─────────────────────────────────────────────────────────────────────────────
+// ZLEMA25 Trend Labels — overlay
+//
+// What it does:
+//   Plots ZLEMA25 (zero-lag EMA 25 of close) as a trend-riding line and labels
+//   every ZLEMA25 uptrend segment with its length in bars and % change:
+//     - Completed uptrends: silver label at the last rising bar of each segment
+//       ("12d | +18.4%"). All segments labeled, including 1-2 bar blips.
+//     - Current uptrend: live white label at the latest bar, updated per bar.
+//   % base = close of the candle immediately BEFORE the turn-up candle — same
+//   ZL Chg% reference as ema25_zl_scanner.py (see README "ZL Chg% reference").
+//
+// Companion: standalone overlay; pairs with any Satya_All_Panel setup.
+// Alerts: none.
+// ─────────────────────────────────────────────────────────────────────────────
+indicator("ZLEMA25 Trend Labels", overlay=true, max_labels_count=500)
+
+showZLEMA25 = input.bool(true, "ZLEMA 25")
+lengthZLEMA25 = input.int(25, "Zero Lag EMA Length")
+highlightMovementsZLEMA25 = input.bool(true, title="Highlight Movements ZLEMA25?")
+srcZLEMA25 = input(close, title="Source")
+lagZLEMA25 = math.floor((lengthZLEMA25 - 1) / 2)
+zlema25 = ta.ema(srcZLEMA25 + (srcZLEMA25 - srcZLEMA25[lagZLEMA25]), lengthZLEMA25)
+zlemaColor25 = highlightMovementsZLEMA25 ? (zlema25 > zlema25[1] ? color.white : color.red) : #6d1e7f
+upTrend = zlema25 > zlema25[1]
+downTrend = zlema25 < zlema25[1]
+
+// Detect start of uptrend
+upTrendStart = upTrend and not upTrend[1]
+
+// Store start price/bar only when uptrend begins
+var float upStartPrice = na
+var int upStartBar = na
+
+if upTrendStart
+    upStartPrice := close[1]
+    upStartBar := bar_index
+
+// Label every completed uptrend at its last rising bar.
+// Must run BEFORE the downTrend reset below, while start price/bar are still valid.
+// "not upTrend and upTrend[1]" also catches an exactly-flat ZLEMA (no float ==).
+upTrendEnd = not upTrend and upTrend[1]
+
+if upTrendEnd and not na(upStartBar) and not na(upStartPrice)
+    endDays = (bar_index - 1) - upStartBar
+    endPct = ((close[1] - upStartPrice) / upStartPrice) * 100
+    endText = str.tostring(endDays) + "d | " + str.tostring(endPct, "#.##") + "%"
+    label.new(bar_index - 1, high[1], endText,
+         style=label.style_label_down,
+         textcolor=color.silver,
+         color=color.new(color.black, 99))
+
+// Reset when trend is down
+if downTrend
+    upStartPrice := na
+    upStartBar := na
+
+// Stats only during uptrend
+daysFromStart = upTrend and not na(upStartBar) ? (bar_index - upStartBar) : na
+pctChangeFromStart = upTrend and not na(upStartPrice) ? ((close - upStartPrice) / upStartPrice) * 100 : na
+
+// Plot ZLEMA
+plot(showZLEMA25 ? zlema25 : na, title="ZLEMA 25", color=zlemaColor25, linewidth=2)
+
+// Live label for current uptrend
+var label statsLabel = na
+if barstate.islast
+    label.delete(statsLabel)
+    if upTrend and not na(daysFromStart) and not na(pctChangeFromStart)
+        statsText = "ZLEMA25\n" + str.tostring(daysFromStart) + "d | " + str.tostring(pctChangeFromStart, "#.##") + "%"
+        statsLabel := label.new(bar_index, high, statsText, style=label.style_label_down, textcolor=color.white, color=color.new(color.black, 99))
