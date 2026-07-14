@@ -335,6 +335,24 @@ def build_markdown(
         "|--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|",
     ]
 
+    # Single TV-importable watchlist: ###NAME entries become colored sections in TradingView
+    buckets = [
+        ("1 DAY", 1, 1),
+        ("2 DAYS", 2, 2),
+        ("3 DAYS", 3, 3),
+        ("4-5 DAYS", 4, 5),
+        ("6-10 DAYS", 6, 10),
+        ("11-15 DAYS", 11, 15),
+        ("15 DAYS+", 16, 10**9),
+    ]
+    wl_parts = []
+    for label, lo, hi in buckets:
+        syms = [f["symbol"] for f in rising if lo <= f["zl_days"] <= hi]
+        if syms:
+            wl_parts.append(f"###{label}," + ",".join(f"NSE:{s}" for s in syms))
+    if watch:
+        wl_parts.append("###WATCH," + ",".join(f"NSE:{f['symbol']}" for f in watch))
+
     lines = [
         f"# NSE EMA25 ZL Scan — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
@@ -342,8 +360,9 @@ def build_markdown(
         STATIC_HEADER,
         f"**ZLEMA25 Rising: {len(rising)}** &nbsp;|&nbsp; **ZLEMA25 Watch: {len(watch)}**",
         "",
+        "**TradingView watchlist** *(sectioned by ZL days since turn-up — paste into TV import)*",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in rising + watch),
+        ",".join(wl_parts),
         "```",
         "",
         "### ZLEMA25 Rising",
