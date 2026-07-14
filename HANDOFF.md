@@ -3,11 +3,16 @@
 # Repo Handoff
 
 Last reviewed by Codex: 2026-07-13.
-Last reviewed by Claude Code: 2026-07-07 (see "Current Worktree State" below).
+Last reviewed by Claude Code: 2026-07-14 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-14 by Claude Code, footprint scanner cwd fix (commit `2fad056`):
+
+- `run_institutional_footprint_scanner.ps1` now does `Set-Location $ROOT` before invoking python. The `NSE_FetchDelivery` scheduled task has no `WorkingDirectory`, so runs since 2026-07-10 started in `C:\Windows\System32` and died on `PermissionError: Access is denied: 'footprint_scans'` (scanner uses repo-relative paths). Last good output was `footprint_scans/footprint_2026-07-09.*`; tonight's 6:15 PM run is the real verification.
+- Known-but-unfixed: breadth monitor runs twice daily (AllScanners trailing trigger + unconditional 5:30 PM fallback trigger on `NSE_BreadthMonitor`). Harmless - history upsert is idempotent - just redundant compute.
 
 Updated 2026-07-13 by Codex, daily ZLEMA25 + weekly RS EMA9 backtest:
 
