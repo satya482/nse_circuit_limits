@@ -15,7 +15,8 @@ filtered by RS strength vs Nifty MidSmallcap 400.
 - **RS gate**: Daily RS line > Weekly RS EMA9 AND weekly RS EMA9 rising
 - **Signals**: ZLEMA25 Rising / Watch (pullback)
 - **Extras**: BB(20,2.0,SMA) inside KC(20,1.5,SMA) squeeze flag, days since last ZL turn-up, % gain since
-- **Output**: `ema25_zl_scans/ema25_zl_scans.md`
+- **Output**: `ema25_zl_scans/ema25_zl_scans.md` — includes copy-paste TradingView watchlist code blocks
+  bucketed by ZL days since turn-up (1d / 2d / 3d / 4-5d / 6-10d / 11-15d / 15d+, rising set only)
 
 ### 2. EMA Compression + BB Squeeze Scanner (`ema-compression-scanner/screener.py`)
 Finds stocks where EMA50/100/200 are converging (structural compression) AND

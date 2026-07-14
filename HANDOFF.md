@@ -9,6 +9,10 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-07-14 by Claude Code, EMA25 ZL watchlist buckets:
+
+- `ema25_zl_scanner.py` `build_markdown()` now appends a "TradingView Watchlists" section — fenced code blocks (GitHub copy button) of `NSE:SYM,...` bucketed by ZL days since turn-up: 1d / 2d / 3d / 4-5d / 6-10d / 11-15d / 15d+. Rising set only; empty buckets skipped. Today's output regenerated with the new section. README scanner entry updated.
+
 Updated 2026-07-14 by Claude Code, footprint scanner cwd fix (commit `2fad056`):
 
 - `run_institutional_footprint_scanner.ps1` now does `Set-Location $ROOT` before invoking python. The `NSE_FetchDelivery` scheduled task has no `WorkingDirectory`, so runs since 2026-07-10 started in `C:\Windows\System32` and died on `PermissionError: Access is denied: 'footprint_scans'` (scanner uses repo-relative paths). Last good output was `footprint_scans/footprint_2026-07-09.*`; tonight's 6:15 PM run is the real verification.

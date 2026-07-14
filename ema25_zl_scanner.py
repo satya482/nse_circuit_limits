@@ -361,6 +361,28 @@ def build_markdown(
     else:
         lines.append("*No ZLEMA25 watch stocks today.*")
 
+    lines += ["", "### TradingView Watchlists *(by ZL days since turn-up)*"]
+    buckets = [
+        ("1 day", 1, 1),
+        ("2 days", 2, 2),
+        ("3 days", 3, 3),
+        ("4-5 days", 4, 5),
+        ("6-10 days", 6, 10),
+        ("11-15 days", 11, 15),
+        ("15 days+", 16, 10**9),
+    ]
+    for label, lo, hi in buckets:
+        syms = [f["symbol"] for f in rising if lo <= f["zl_days"] <= hi]
+        if not syms:
+            continue
+        lines += [
+            "",
+            f"**{label}** ({len(syms)})",
+            "```",
+            ",".join(f"NSE:{s}" for s in syms),
+            "```",
+        ]
+
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
