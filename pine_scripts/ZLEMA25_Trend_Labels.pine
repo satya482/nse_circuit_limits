@@ -100,7 +100,7 @@ if barstate.islast
 // ── Stats box: ZLEMA25 + EMA20 current-uptrend age / % since trend start ────
 grpBox = "Stats Box"
 showStatsBox = input.bool(true, "Show stats box", group=grpBox)
-padAbove = input.int(0, "Empty rows above (push box down)", minval=0, group=grpBox)
+padAbove = input.int(4, "Empty rows above (push box down)", minval=0, group=grpBox)
 padBelow = input.int(0, "Empty rows below (push box up)", minval=0, group=grpBox)
 ema20Len = input.int(20, "EMA length (2nd row)", minval=1, group=grpBox)
 
@@ -128,7 +128,7 @@ if barstate.islast
     table.delete(statsBox)
     if showStatsBox
         statsBox := table.new(position.middle_right, 1, padAbove + 2 + padBelow)
-        cellBg = color.new(color.black, 30)
+        cellBg = color.new(color.black, 99)
         padBg = color.new(color.black, 100)
         // pad cells need " " (not "") — empty-text cells collapse to zero height
         if padAbove > 0
