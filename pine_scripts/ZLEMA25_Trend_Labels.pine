@@ -65,7 +65,7 @@ daysFromStart = upTrend and not na(upStartBar) ? (bar_index - upStartBar) : na
 pctChangeFromStart = upTrend and not na(upStartPrice) ? ((close - upStartPrice) / upStartPrice) * 100 : na
 
 // Plot ZLEMA
-plot(showZLEMA25 ? zlema25 : na, title="ZLEMA 25", color=zlemaColor25, linewidth=2)
+//plot(showZLEMA25 ? zlema25 : na, title="ZLEMA 25", color=zlemaColor25, linewidth=2)
 
 // WaveTrend (params mirror wavetrend_scanner.py: n1=10, n2=21, hlc3, wt2=SMA(wt1,4))
 wtN1 = input.int(10, "WT Channel Length")
@@ -80,7 +80,7 @@ wtBullCross = ta.crossover(wt1, wt2)
 
 // Recolor the turn-up candle: ZLEMA25 uptrend start AND WT bull cross within lookback
 paintTurnCandle = input.bool(true, "Paint ZLEMA25 turn-up candle")
-turnCandleColor = input.color(color.yellow, "Turn-up candle color")
+turnCandleColor = input.color(color.fuchsia, "Turn-up candle color")
 wtCrossLookback = input.int(3, "WT bull cross within N bars", minval=0)
 wtBullRecent = ta.barssince(wtBullCross) <= wtCrossLookback
 barcolor(paintTurnCandle and upTrendStart and wtBullRecent ? turnCandleColor : na, title="ZLEMA25 turn-up + WT bull cross candle")
