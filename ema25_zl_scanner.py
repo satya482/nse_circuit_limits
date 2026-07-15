@@ -33,6 +33,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from float_gate import float_metrics, passes_hard_gate, trap_label
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -124,8 +125,27 @@ def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
     return ZL_TURN_CAP, round((closes.iloc[-1] / closes.iloc[cap_idx] - 1) * 100, 2)
 
 
+RVOL_FLAG = 8.0  # matches wt_bullcross_scanner.py / Strong Start RVOL Dashboard.pine
+SS_LOWMULT = 0.995  # day low must hold >= prev close x this (Pine parity)
+
+
+def _rvol_ss(df: pd.DataFrame) -> tuple[float, bool]:
+    """RVOL = today's volume / prior-20d avg volume; SS = gapped up and held.
+    Mirrors wt_bullcross_scanner._rvol_ss() (Pine parity source there)."""
+    vol = df["volume"].astype(float)
+    avg_vol = vol.iloc[-21:-1].mean()
+    rvol = float(vol.iloc[-1] / avg_vol) if avg_vol > 0 else 0.0
+    today_open = float(df["open"].iloc[-1])
+    today_low = float(df["low"].iloc[-1])
+    prev_close = float(df["close"].iloc[-2])
+    strong_start = today_open > prev_close and today_low >= prev_close * SS_LOWMULT
+    return rvol, strong_start
+
+
 # ── Watchlist ──────────────────────────────────────────────────────────────────
-def get_watchlist() -> list[str]:
+def get_watchlist() -> tuple[list[str], dict[str, float]]:
+    """Returns (symbols, float_map) where float_map = {symbol: float_shares}.
+    Symbols with no TV float data are absent from float_map (gate then skipped)."""
     filters = [
         col("exchange") == "NSE",
         col("type") == "stock",
@@ -141,12 +161,18 @@ def get_watchlist() -> list[str]:
     _, df = (
         Query()
         .set_markets("india")
-        .select("name", "close", "EMA25", "Perf.W")
+        .select("name", "close", "EMA25", "Perf.W", "float_shares_outstanding")
         .where(*filters)
         .limit(500)
         .get_scanner_data()
     )
-    return df["name"].tolist()
+    float_map = {
+        row["name"]: float(row["float_shares_outstanding"])
+        for _, row in df.iterrows()
+        if pd.notna(row.get("float_shares_outstanding"))
+        and row["float_shares_outstanding"] > 0
+    }
+    return df["name"].tolist(), float_map
 
 
 # ── Circuit limits ─────────────────────────────────────────────────────────────
@@ -193,19 +219,25 @@ def get_circuit_limits() -> dict[str, tuple[str, str]]:
 
 
 # ── RS gate ────────────────────────────────────────────────────────────────────
+def _weekly_rs_gate(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+    """Daily RS Line > Weekly RS EMA9 AND Weekly RS EMA9 rising.
+    Mirrors wt_bullcross_scanner._rs_weekly_gate() — kept in sync per CLAUDE.md."""
+    weekly_c = c_rs.resample("W").last().dropna()
+    weekly_idx = idx_rs.resample("W").last().dropna()
+    wk_common = weekly_c.index.intersection(weekly_idx.index)
+    if len(wk_common) < 12:
+        return False
+    wk_rs = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
+    wk_rs_e9 = ema(wk_rs, 9)
+    return bool(
+        rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]
+    )
+
+
 def _rs_gate(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
     """Return True if the stock passes the active RS filter (RS_MODE)."""
     if RS_MODE == "weekly_ema9":
-        weekly_c = c_rs.resample("W").last().dropna()
-        weekly_idx = idx_rs.resample("W").last().dropna()
-        wk_common = weekly_c.index.intersection(weekly_idx.index)
-        if len(wk_common) < 12:
-            return False
-        wk_rs = (weekly_c.loc[wk_common] / weekly_idx.loc[wk_common]) * 1000
-        wk_rs_e9 = ema(wk_rs, 9)
-        return bool(
-            rs.iloc[-1] > wk_rs_e9.iloc[-1] and wk_rs_e9.iloc[-1] > wk_rs_e9.iloc[-2]
-        )
+        return _weekly_rs_gate(rs, c_rs, idx_rs)
     else:  # daily_ema21
         if len(rs) < 22:
             return False
@@ -214,7 +246,7 @@ def _rs_gate(rs: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> bool:
 
 
 # ── Stock analysis ─────────────────────────────────────────────────────────────
-def analyse(symbol: str, index_s: pd.Series) -> dict | None:
+def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | None:
     try:
         raw = load_ohlc(symbol)
         if raw is None or len(raw) < 60:
@@ -236,6 +268,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         if not _rs_gate(rs, c_rs, idx_rs):
             return None
 
+        fm = float_metrics(raw["close"], raw["volume"], float_shares or None)
+        if not passes_hard_gate(fm):
+            return None
+
         # ZLEMA25
         zl25 = zlema(c, 25)
         zl_rising = zl25.iloc[-1] > zl25.iloc[-2]
@@ -245,6 +281,7 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
         day_chg = (curr_close - prev_close) / prev_close * 100
 
         zl_days, zl_pct = zl25_turn_stats(zl25, c)
+        rvol, strong_start = _rvol_ss(raw)
 
         return {
             "symbol": symbol,
@@ -254,6 +291,10 @@ def analyse(symbol: str, index_s: pd.Series) -> dict | None:
             "zl_days": zl_days,
             "zl_pct": zl_pct,
             "squeeze": bb_kc_squeeze(raw),
+            "trap": trap_label(fm),
+            "rs_weekly_gate": _weekly_rs_gate(rs, c_rs, idx_rs),
+            "rvol": round(rvol, 2),
+            "strong_start": strong_start,
             "liq_tag": liq_tag(raw),
             "cmf_tag": cmf_tag(raw),
             "deliv_tag": deliv_tag(symbol),
@@ -279,10 +320,13 @@ STATIC_HEADER = """### Scan definition
 | RS filter | {rs_label} |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |
 | Squeeze | ✓ = BB(20,2.0,SMA) fully inside KC(20,1.5,SMA) on last bar |
+| Float gate | ⛔ AVOID dropped from scan · ✓ SAFE / ⚠ CAUTION shown under symbol (float_gate.py) |
+| Symbol tags | trap · liq (↗avg10Cr·todayCr) · 📶W9 weekly-RS gate · 🚀SS/RVOL{rvol_flag:.0f}x · CMF · DEL% |
 
 ---
 """.format(
     cap=ZL_TURN_CAP,
+    rvol_flag=RVOL_FLAG,
     rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE),
     w1="> 5%" if FILTER_1W_CHANGE else "off",
     ema25="Price > EMA25" if FILTER_PRICE_EMA25 else "off",
@@ -306,7 +350,25 @@ def _table_rows(
         ds = "+" if f["day_chg"] >= 0 else ""
         sqz = "✓" if f.get("squeeze") else "—"
         lbl_cell = _LABELS.get(sym, "")
-        extras = [t for t in (f.get("cmf_tag", ""), f.get("deliv_tag", "")) if t]
+        extras = []
+        trap = f.get("trap", "")
+        if trap and trap != "n/a":
+            extras.append(trap)
+        if f.get("liq_tag"):
+            extras.append(f["liq_tag"])
+        if f.get("rs_weekly_gate"):
+            extras.append("📶W9")
+        rvol, ss = f.get("rvol", 0.0), f.get("strong_start", False)
+        if ss and rvol >= RVOL_FLAG:
+            extras.append(f"🚀SS·{rvol:.0f}x")
+        elif ss:
+            extras.append("🚀SS")
+        elif rvol >= RVOL_FLAG:
+            extras.append(f"RVOL{rvol:.0f}x")
+        if f.get("cmf_tag"):
+            extras.append(f["cmf_tag"])
+        if f.get("deliv_tag"):
+            extras.append(f["deliv_tag"])
         sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{' · '.join(extras)}</sub>" if extras else "")
         rows.append(
             f"| {sym_cell} "
@@ -461,13 +523,15 @@ def main():
     print(f"  Circuit data: {len(circuit)} stocks with recent limit changes")
 
     print("\nFetching live watchlist from TradingView screener...")
-    watchlist = get_watchlist()
-    print(f"  Watchlist: {len(watchlist)} stocks  |  Scanning...\n")
+    watchlist, float_map = get_watchlist()
+    print(
+        f"  Watchlist: {len(watchlist)} stocks  |  float data for {len(float_map)}  |  Scanning...\n"
+    )
 
     findings = []
     for i, sym in enumerate(watchlist, 1):
         print(f"  {sym:<20} ({i}/{len(watchlist)})   ", end="\r")
-        result = analyse(sym, index_s)
+        result = analyse(sym, index_s, float_shares=float_map.get(sym, 0))
         if result:
             findings.append(result)
 

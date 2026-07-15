@@ -13,8 +13,12 @@ filtered by RS strength vs Nifty MidSmallcap 400.
 
 - **Watchlist**: TradingView screener — NSE common equity, price > ₹50, MCap ₹1,000–1,00,000 Cr, price > EMA25
 - **RS gate**: Daily RS line > Weekly RS EMA9 AND weekly RS EMA9 rising
+- **Float gate**: `float_gate.py` hard gate — ⛔ AVOID (thin free float / illiquid) dropped from scan;
+  ✓ SAFE / ⚠ CAUTION shown under the symbol (same gate as WT bull cross scanner)
 - **Signals**: ZLEMA25 Rising / Watch (pullback)
 - **Extras**: BB(20,2.0,SMA) inside KC(20,1.5,SMA) squeeze flag, days since last ZL turn-up, % gain since
+- **Symbol sub-line tags** (WT-scanner parity): float trap · liq (avg-10d/today traded ₹Cr) ·
+  📶W9 weekly-RS gate · 🚀SS / RVOL8x (strong start / volume surge) · CMF days · delivery% spike
 - **Output**: `ema25_zl_scans/ema25_zl_scans.md` — top of page has a single TV-importable watchlist
   with `###SECTION` separators by ZL days since turn-up (1d / 2d / 3d / 4-5d / 6-10d / 11-15d / 15d+ / WATCH);
   per-bucket copy blocks also repeated at bottom (rising set only)

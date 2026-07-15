@@ -3,11 +3,24 @@
 # Repo Handoff
 
 Last reviewed by Codex: 2026-07-13.
-Last reviewed by Claude Code: 2026-07-14 (see "Current Worktree State" below).
+Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-15 by Claude Code, EMA25 ZL scanner WT-parity symbol tags:
+
+- `ema25_zl_scanner.py` brought on par with `wt_bullcross_scanner.py` info density:
+  - Float trap hard gate (`float_gate.py`): watchlist now selects `float_shares_outstanding`,
+    `get_watchlist()` returns `(symbols, float_map)`, ⛔ AVOID stocks dropped from scan.
+  - Symbol sub-line extras (order): trap label (✓ SAFE / ⚠ CAUTION, n/a hidden) · `liq_tag`
+    (was computed but never rendered — dead data, now shown) · 📶W9 (weekly RS EMA9 gate,
+    via new `_weekly_rs_gate()` — extracted from `_rs_gate()`'s weekly branch, mirrors
+    `wt_bullcross_scanner._rs_weekly_gate()`) · 🚀SS / RVOL8x (`_rvol_ss()` copied from WT
+    scanner, Pine parity) · CMF · DEL% (already there).
+  - WT-specific columns NOT ported (cross-type, divergence, weekly WT zone, Erly, RS%, C/AvgC).
+  - Scan-definition header documents float gate + tag legend. README scanner entry updated.
 
 Updated 2026-07-14 by Claude Code, ZLEMA25 trend labels Pine:
 
