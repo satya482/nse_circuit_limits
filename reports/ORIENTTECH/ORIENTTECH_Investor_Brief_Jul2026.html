@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIENTTECH — NSE Investor Story · July 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+/* ===== ROOT DESIGN SYSTEM ===== */
+:root {
+  --ink:        #0D1B2A;
+  --paper:      #F4F6F9;
+  --white:      #FFFFFF;
+  --rule:       #DDE3EC;
+  --muted:      #94A3B8;
+  /* IT Infrastructure / primary */
+  --blue:       #2563EB;
+  --blue-dark:  #1E40AF;
+  --blue-bg:    #EFF6FF;
+  /* Cybersecurity / SOC */
+  --purple:     #7C3AED;
+  --purple-bg:  #F5F3FF;
+  /* Cloud */
+  --teal:       #0891B2;
+  --teal-bg:    #ECFEFF;
+  /* DaaS / recurring */
+  --green:      #059669;
+  --green-bg:   #ECFDF5;
+  /* Risk / warning */
+  --amber:      #D97706;
+  --amber-bg:   #FFFBEB;
+  /* Critical */
+  --red:        #DC2626;
+  --red-bg:     #FEF2F2;
+  /* Nav accent */
+  --navy:       #1E3A5F;
+  --navy-bg:    #EBF0F8;
+  /* Ledger */
+  --ledger-bg:  #0F172A;
+  --ledger-gold:#C47B00;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans:  'DM Sans', system-ui, sans-serif;
+  --mono:  'JetBrains Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+/* ===== DARK MODE ===== */
+body.dark {
+  --paper: #0D1B2A;
+  --ink: #E8EDF5;
+  --white: #152236;
+  --rule: #253348;
+  --muted: #64748B;
+  --blue-bg: #1E2E4A;
+  --purple-bg: #1E1A35;
+  --teal-bg: #0E2535;
+  --green-bg: #0C2316;
+  --amber-bg: #251D0A;
+  --red-bg: #2A0C0C;
+  --navy-bg: #0D1B35;
+}
+body.dark .masthead,
+body.dark .ledger-masthead { filter: brightness(0.9); }
+body.dark .stat-card,
+body.dark .chapter-card,
+body.dark .porter-row:nth-child(even),
+body.dark .risk-card,
+body.dark .watch-card,
+body.dark .ledger-card { background: #152236; }
+
+/* ===== PRINT ===== */
+@media print {
+  body { font-size: 11pt; background: white !important; }
+  .no-print, .control-bar { display: none !important; }
+  #quick-scan { position: static !important; box-shadow: none; }
+  #quick-scan details[open] summary::after { display: none; }
+  #quick-scan-content { display: block !important; }
+  .qs-line { display: flex !important; }
+  #highlight-index ol { display: block !important; }
+  .page-break { page-break-before: always; }
+  a { color: inherit; text-decoration: none; }
+  .masthead, .ledger-masthead { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ===== CONTROL BAR ===== */
+.control-bar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--ink); color: #EEF2FF;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 20px; gap: 12px; font-family: var(--mono); font-size: 10.5px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.cb-left { display: flex; align-items: center; gap: 10px; }
+.cb-ticker { color: var(--amber); font-weight: 600; letter-spacing: 1px; }
+.cb-right { display: flex; gap: 8px; }
+.cb-btn {
+  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+  color: #EEF2FF; padding: 4px 10px; border-radius: 3px; cursor: pointer;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 0.5px;
+  transition: background 0.15s;
+}
+.cb-btn:hover { background: rgba(255,255,255,0.15); }
+.cb-toc { font-size: 10px; color: #94A3B8; letter-spacing: 0.5px; }
+
+/* ===== QUICK-SCAN STRIP ===== */
+#quick-scan {
+  position: sticky; top: 36px; z-index: 150;
+  background: var(--ink); border-bottom: 2px solid var(--blue);
+  font-family: var(--sans); box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+}
+/* ALWAYS OPEN — strip is a non-collapsible div */
+#quick-scan-content { display: block; padding: 14px 20px 16px; }
+.qs-line {
+  display: flex; gap: 10px; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  align-items: flex-start; line-height: 1.45;
+}
+.qs-line:last-child { border-bottom: none; }
+.qs-icon { min-width: 24px; font-size: 13px; }
+.qs-label {
+  font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--amber); min-width: 80px; padding-top: 1px; flex-shrink: 0;
+}
+.qs-text { font-size: 13px; color: #CBD5E1; font-weight: 400; }
+.qs-text strong { color: #F8FAFC; font-weight: 600; }
+
+/* ===== MAIN LAYOUT ===== */
+.main-wrapper { max-width: 980px; margin: 0 auto; padding: 0 24px 100px; }
+
+/* ===== MASTHEAD ===== */
+.masthead {
+  background: linear-gradient(135deg, #0D1B2A 0%, #1E3A5F 60%, #1E40AF 100%);
+  color: #F8FAFC;
+  padding: 64px 60px 52px;
+  margin: 0 -24px;
+  position: relative; overflow: hidden;
+}
+.masthead::before {
+  content: '';
+  position: absolute; top: 0; right: 0; width: 45%; height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 8px, rgba(37,99,235,0.08) 8px, rgba(37,99,235,0.08) 16px);
+}
+.mh-eyebrow {
+  font-family: var(--mono); font-size: 10px; letter-spacing: 2.5px;
+  text-transform: uppercase; color: #60A5FA; margin-bottom: 14px;
+}
+.mh-h1 {
+  font-family: var(--serif); font-size: 52px; font-weight: 700;
+  letter-spacing: -1px; line-height: 1.08; margin-bottom: 6px;
+}
+.mh-h1 span { color: #60A5FA; }
+.mh-sub {
+  font-size: 16px; color: #94A3B8; margin-top: 8px;
+  max-width: 560px; font-weight: 300; line-height: 1.6;
+}
+.mh-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+.mh-chip {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 4px; padding: 5px 12px;
+  font-family: var(--mono); font-size: 10px; letter-spacing: 1px; color: #CBD5E1;
+}
+.mh-chip.accent { background: rgba(37,99,235,0.2); border-color: rgba(37,99,235,0.4); color: #93C5FD; }
+
+/* ===== CHAPTER HEADERS ===== */
+.ch-header {
+  display: flex; align-items: flex-start; gap: 18px;
+  margin: 56px 0 22px; padding-bottom: 14px;
+  border-bottom: 2.5px solid var(--blue);
+}
+.ch-num {
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--blue); color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  flex-shrink: 0;
+}
+.ch-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.ch-title { font-family: var(--serif); font-size: 22px; font-weight: 700; line-height: 1.2; margin-top: 2px; }
+
+.ch-header.purple .ch-num { background: var(--purple); }
+.ch-header.purple { border-bottom-color: var(--purple); }
+.ch-header.teal .ch-num { background: var(--teal); }
+.ch-header.teal { border-bottom-color: var(--teal); }
+.ch-header.green .ch-num { background: var(--green); }
+.ch-header.green { border-bottom-color: var(--green); }
+.ch-header.amber .ch-num { background: var(--amber); }
+.ch-header.amber { border-bottom-color: var(--amber); }
+.ch-header.red .ch-num { background: var(--red); }
+.ch-header.red { border-bottom-color: var(--red); }
+.ch-header.navy .ch-num { background: var(--navy); }
+.ch-header.navy { border-bottom-color: var(--navy); }
+
+/* ===== PROSE ===== */
+p { margin-bottom: 13px; color: #1E293B; line-height: 1.72; }
+body.dark p { color: #CBD5E1; }
+p:last-child { margin-bottom: 0; }
+strong { font-weight: 600; }
+.lead-block {
+  background: var(--blue-bg); border-left: 4px solid var(--blue);
+  border-radius: 0 6px 6px 0; padding: 16px 20px; margin-bottom: 18px;
+  font-size: 15.5px; color: var(--navy); line-height: 1.7;
+}
+.lead-block.purple { background: var(--purple-bg); border-color: var(--purple); }
+.lead-block.teal { background: var(--teal-bg); border-color: var(--teal); }
+.lead-block.green { background: var(--green-bg); border-color: var(--green); }
+.lead-block.amber { background: var(--amber-bg); border-color: var(--amber); color: #78350F; }
+.lead-block.red { background: var(--red-bg); border-color: var(--red); color: #7F1D1D; }
+
+/* ===== INSIGHT BOX ===== */
+.insight-box {
+  background: var(--ink); color: #F1F5F9;
+  border-radius: 8px; padding: 26px 30px; margin: 22px 0;
+}
+.ib-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: #60A5FA; margin-bottom: 10px; }
+.insight-box p { color: #CBD5E1; }
+.insight-box strong { color: #F8FAFC; }
+
+/* ===== HIGHLIGHTS ===== */
+.hl-key      { background: #FFF9C4; padding: 1px 4px; border-radius: 2px; font-weight: 600; }
+.hl-number   { background: var(--blue-bg); padding: 1px 4px; border-radius: 2px; font-family: var(--mono); font-size: 0.92em; }
+.hl-risk     { background: var(--amber-bg); padding: 1px 4px; border-radius: 2px; border-left: 3px solid var(--amber); }
+.hl-catalyst { background: var(--green-bg); padding: 1px 4px; border-radius: 2px; border-left: 3px solid var(--green); }
+
+/* ===== TAKEAWAY PILL ===== */
+.takeaway-pill {
+  background: var(--blue-bg); border-left: 3px solid var(--blue);
+  border-radius: 0 4px 4px 0; padding: 10px 14px; margin-top: 20px;
+  font-size: 13.5px; font-weight: 500; color: var(--navy);
+}
+body.dark .takeaway-pill { background: #1E2E4A; color: #93C5FD; }
+
+/* ===== STAT CARDS ===== */
+.stats-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 20px 0; }
+@media (max-width: 680px) { .stats-grid { grid-template-columns: repeat(2,1fr); } }
+.stat-card {
+  background: var(--white); border: 1.5px solid var(--rule); border-radius: 8px;
+  padding: 16px; text-align: center;
+}
+.stat-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.stat-value { font-family: var(--mono); font-size: 22px; font-weight: 600; color: var(--ink); line-height: 1.1; }
+.stat-sub { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+.stat-card.up .stat-value { color: var(--green); }
+.stat-card.down .stat-value { color: var(--red); }
+.stat-card.blue .stat-value { color: var(--blue); }
+.stat-card.amber .stat-value { color: var(--amber); }
+
+/* ===== TABLE ===== */
+.data-table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 18px 0; }
+.data-table th {
+  background: var(--ink); color: #EEF2FF; padding: 9px 12px;
+  text-align: left; font-family: var(--mono); font-size: 10px; letter-spacing: 0.8px; font-weight: 500;
+}
+.data-table td { padding: 9px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; color: #1E293B; line-height: 1.5; }
+body.dark .data-table td { color: #CBD5E1; }
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: rgba(37,99,235,0.03); }
+.data-table th.blue { background: var(--blue); }
+.data-table th.purple { background: var(--purple); }
+.data-table th.teal { background: var(--teal); }
+.data-table th.green { background: var(--green); }
+.data-table th.amber { background: var(--amber); }
+.data-table th.red { background: var(--red); }
+
+/* ===== TAG ===== */
+.tag { display: inline-block; padding: 2px 7px; border-radius: 3px; font-family: var(--mono); font-size: 10px; font-weight: 500; }
+.tag-blue   { background: var(--blue-bg); color: var(--blue); }
+.tag-purple { background: var(--purple-bg); color: var(--purple); }
+.tag-teal   { background: var(--teal-bg); color: var(--teal); }
+.tag-green  { background: var(--green-bg); color: var(--green); }
+.tag-amber  { background: var(--amber-bg); color: var(--amber); }
+.tag-red    { background: var(--red-bg); color: var(--red); }
+.tag-navy   { background: var(--navy-bg); color: var(--navy); }
+
+/* ===== PORTER'S FIVE FORCES ===== */
+.porter-table { width: 100%; border-collapse: collapse; margin: 18px 0; }
+.porter-row { display: grid; grid-template-columns: 180px 80px 1fr; gap: 0; border-bottom: 1px solid var(--rule); }
+.porter-row:last-child { border-bottom: none; }
+.porter-row:nth-child(even) { background: rgba(37,99,235,0.03); }
+.porter-cell { padding: 11px 14px; font-size: 13px; vertical-align: top; }
+.porter-force { font-weight: 600; font-size: 13px; color: var(--ink); }
+body.dark .porter-force { color: var(--paper); }
+.force-head { background: var(--ink); color: white; display: grid; grid-template-columns: 180px 80px 1fr; border-radius: 4px 4px 0 0; }
+.force-head .porter-cell { font-family: var(--mono); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; color: #94A3B8; }
+.rating-high { color: var(--red); font-weight: 700; font-family: var(--mono); font-size: 11px; }
+.rating-med  { color: var(--amber); font-weight: 700; font-family: var(--mono); font-size: 11px; }
+.rating-low  { color: var(--green); font-weight: 700; font-family: var(--mono); font-size: 11px; }
+
+/* ===== VERTICAL CARDS ===== */
+.verticals { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+@media (max-width: 620px) { .verticals { grid-template-columns: 1fr; } }
+.vert-card {
+  background: var(--white); border: 1.5px solid var(--rule); border-radius: 8px;
+  padding: 18px; border-top: 3px solid var(--blue);
+}
+.vert-card.purple { border-top-color: var(--purple); }
+.vert-card.teal { border-top-color: var(--teal); }
+.vert-card.green { border-top-color: var(--green); }
+.vert-card.amber { border-top-color: var(--amber); }
+.vert-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.vert-title { font-family: var(--serif); font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+.vert-ext { font-size: 12px; color: var(--blue); font-family: var(--mono); margin-bottom: 8px; display: block; }
+.vert-desc { font-size: 13px; color: #475569; line-height: 1.55; }
+body.dark .vert-desc { color: #94A3B8; }
+.vert-status {
+  margin-top: 10px; font-family: var(--mono); font-size: 10px; letter-spacing: 1px;
+  padding: 3px 8px; border-radius: 3px; display: inline-block;
+}
+.status-running { background: var(--green-bg); color: var(--green); }
+.status-ramp    { background: var(--amber-bg); color: var(--amber); }
+.status-proto   { background: var(--blue-bg); color: var(--blue); }
+
+/* ===== CAPEX TIMELINE ===== */
+.capex-card {
+  background: var(--white); border: 1.5px solid var(--rule); border-radius: 8px;
+  overflow: hidden; margin: 18px 0;
+}
+.capex-header {
+  background: var(--purple); color: white;
+  padding: 10px 16px; font-family: var(--mono); font-size: 10.5px;
+  letter-spacing: 1.2px; text-transform: uppercase; font-weight: 600;
+}
+.capex-row { display: grid; grid-template-columns: 90px 1fr 1fr 1fr 100px; border-bottom: 1px solid var(--rule); }
+.capex-row:last-child { border-bottom: none; }
+.capex-cell { padding: 10px 13px; font-size: 12.5px; border-right: 1px solid var(--rule); }
+.capex-cell:last-child { border-right: none; }
+.cc-label { font-family: var(--mono); font-size: 9.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 3px; }
+.cc-val { font-weight: 600; color: var(--ink); }
+.cc-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.tl-delivered { color: var(--green); font-family: var(--mono); font-size: 11px; }
+.tl-partial   { color: var(--amber); font-family: var(--mono); font-size: 11px; }
+.tl-delayed   { color: var(--red); font-family: var(--mono); font-size: 11px; }
+.capex-head-row { background: #F8FAFC; }
+body.dark .capex-head-row { background: #1E2E4A; }
+body.dark .capex-cell { color: #CBD5E1; }
+body.dark .cc-val { color: #F1F5F9; }
+
+/* ===== RISKS ===== */
+.risks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+@media (max-width: 620px) { .risks-grid { grid-template-columns: 1fr; } }
+.risk-card {
+  background: var(--white); border: 1px solid var(--rule); border-radius: 6px;
+  padding: 16px; border-left: 3px solid var(--amber);
+}
+.risk-card.critical { border-left-color: var(--red); }
+.risk-card.medium { border-left-color: var(--amber); }
+.risk-card.low { border-left-color: var(--blue); }
+.risk-name { font-family: var(--mono); font-size: 11px; font-weight: 600; color: var(--red); margin-bottom: 5px; display: flex; align-items: center; gap: 6px; }
+.risk-card.medium .risk-name { color: var(--amber); }
+.risk-card.low .risk-name { color: var(--blue); }
+.risk-what { font-size: 13px; color: #334155; line-height: 1.5; margin-bottom: 5px; }
+.risk-signal { font-size: 11.5px; color: var(--muted); font-style: italic; }
+body.dark .risk-what { color: #94A3B8; }
+
+/* ===== WATCH SIGNALS ===== */
+.watch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 18px 0; }
+@media (max-width: 620px) { .watch-grid { grid-template-columns: 1fr; } }
+.watch-card {
+  background: var(--white); border: 1px solid var(--rule); border-radius: 6px; padding: 16px;
+}
+.wc-num { width: 26px; height: 26px; background: var(--blue); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-family: var(--mono); font-size: 11px; font-weight: 700; margin-bottom: 8px; }
+.wc-metric { font-weight: 700; font-size: 13.5px; margin-bottom: 5px; }
+.wc-what { font-size: 13px; color: #475569; line-height: 1.5; margin-bottom: 8px; }
+.thresholds { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; }
+.thresh { font-family: var(--mono); font-size: 10px; padding: 4px 7px; border-radius: 3px; text-align: center; }
+.thresh.green { background: var(--green-bg); color: var(--green); }
+.thresh.amber { background: var(--amber-bg); color: var(--amber); }
+.thresh.red   { background: var(--red-bg); color: var(--red); }
+body.dark .wc-what { color: #94A3B8; }
+
+/* ===== VERDICT ===== */
+.verdict-box {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--navy) 100%);
+  color: white; border-radius: 10px; padding: 28px 32px; margin: 30px 0;
+}
+.vb-label { font-family: var(--mono); font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #93C5FD; margin-bottom: 12px; }
+.vb-stage { font-family: var(--mono); font-size: 12px; color: #FCD34D; margin-bottom: 10px; letter-spacing: 1px; }
+.vb-text { color: #CBD5E1; font-size: 14.5px; line-height: 1.75; }
+.vb-text strong { color: #F8FAFC; }
+
+/* ===== FINANCIAL CHART AREA ===== */
+.chart-wrap { background: var(--white); border: 1.5px solid var(--rule); border-radius: 8px; padding: 20px; margin: 18px 0; }
+.chart-title { font-family: var(--mono); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+
+/* ===== DIVIDER ===== */
+.divider { border: none; border-top: 1.5px solid var(--rule); margin: 36px 0; }
+.section-break { border: none; border-top: 3px solid var(--blue); margin: 48px 0; opacity: 0.4; }
+
+/* ===== HIGHLIGHT INDEX (ALWAYS OPEN) ===== */
+#highlight-index {
+  background: var(--white); border: 1.5px solid var(--rule); border-radius: 8px;
+  padding: 20px 24px; margin: 32px 0;
+}
+.hi-title {
+  font-family: var(--serif); font-size: 16px; font-weight: 700; margin-bottom: 14px;
+  display: flex; align-items: center; gap: 10px; color: var(--ink);
+}
+#highlight-index ol { padding-left: 22px; }
+#highlight-index li {
+  margin-bottom: 7px; font-size: 13px; color: #334155; line-height: 1.5;
+  padding: 4px 0; border-bottom: 1px dotted var(--rule);
+}
+#highlight-index li:last-child { border-bottom: none; }
+#highlight-index li[data-type="hl-key"] { color: var(--ink); font-weight: 600; }
+#highlight-index li[data-type="hl-risk"] { color: #92400E; }
+#highlight-index li[data-type="hl-catalyst"] { color: #065F46; }
+#highlight-index li[data-type="hl-number"] { font-family: var(--mono); font-size: 12px; color: var(--blue-dark); }
+#highlight-index li[data-type="takeaway-pill"] { color: var(--navy); font-style: italic; }
+body.dark #highlight-index li { color: #94A3B8; border-color: #253348; }
+
+/* ===== LEDGER SECTION ===== */
+.section-break-ledger {
+  margin: 60px -24px 0;
+  height: 8px;
+  background: linear-gradient(90deg, var(--ledger-gold) 0%, #7C3AED 100%);
+}
+.ledger-masthead {
+  background: var(--ledger-bg); color: #F1F5F9;
+  padding: 52px 60px 40px; margin: 0 -24px;
+  position: relative; overflow: hidden;
+}
+.ledger-masthead::before {
+  content: ''; position: absolute; top: 0; right: 0; width: 40%; height: 100%;
+  background: repeating-linear-gradient(-45deg, transparent 0, transparent 10px, rgba(196,123,0,0.06) 10px, rgba(196,123,0,0.06) 20px);
+}
+.lm-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--ledger-gold); margin-bottom: 12px; }
+.lm-h1 { font-family: var(--serif); font-size: 44px; font-weight: 700; letter-spacing: -0.5px; line-height: 1.1; }
+.lm-sub { font-size: 15px; color: #64748B; margin-top: 8px; max-width: 540px; }
+.lm-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+.lm-chip { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 4px; padding: 4px 11px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 1px; color: #94A3B8; }
+.lm-tier {
+  display: inline-block; padding: 5px 14px; border-radius: 4px; font-family: var(--mono);
+  font-size: 12px; font-weight: 700; letter-spacing: 1.5px; margin-top: 16px;
+}
+.tier-c { background: var(--amber); color: white; }
+.tier-b { background: #2563EB; color: white; }
+.tier-a { background: var(--green); color: white; }
+.tier-d { background: var(--red); color: white; }
+
+/* LEDGER section headers */
+.ledger-ch {
+  display: flex; align-items: flex-start; gap: 14px;
+  margin: 44px 0 18px; padding-bottom: 12px;
+  border-bottom: 2px solid var(--ledger-gold);
+}
+.ledger-ch .lch-num { font-family: var(--serif); font-size: 22px; font-weight: 700; color: var(--ledger-gold); min-width: 24px; }
+.ledger-ch .lch-eyebrow { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.ledger-ch .lch-title { font-family: var(--serif); font-size: 19px; font-weight: 700; margin-top: 2px; }
+
+/* CHAIN FLOW */
+.chain-flow { display: flex; overflow-x: auto; margin: 20px 0; gap: 0; }
+.chain-node {
+  flex: 1; min-width: 100px; background: var(--white);
+  border: 1.5px solid var(--rule); padding: 11px 8px; text-align: center;
+  position: relative; border-top: 3px solid var(--blue);
+}
+.chain-node:first-child { border-radius: 6px 0 0 6px; }
+.chain-node:last-child { border-radius: 0 6px 6px 0; }
+.chain-node::after {
+  content: '→'; position: absolute; right: -10px; top: 50%; transform: translateY(-50%);
+  font-size: 14px; color: var(--amber); z-index: 2; background: var(--paper); padding: 0 1px;
+}
+.chain-node:last-child::after { display: none; }
+.cn-num { font-family: var(--mono); font-size: 9.5px; color: var(--muted); margin-bottom: 3px; }
+.cn-label { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.2; }
+.cn-sub { font-size: 10.5px; color: var(--muted); margin-top: 3px; }
+.chain-node.broken { border-top-color: var(--red); background: var(--red-bg); }
+.chain-node.warn { border-top-color: var(--amber); background: var(--amber-bg); }
+body.dark .chain-node { background: #152236; }
+body.dark .chain-node.broken { background: #2A0C0C; }
+body.dark .chain-node.warn { background: #251D0A; }
+body.dark .cn-label { color: #E2E8F0; }
+
+/* PROMISE REGISTER */
+.promise-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 16px 0; }
+.promise-table th { background: var(--ledger-bg); color: #EEF2FF; padding: 8px 10px; text-align: left; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.5px; }
+.promise-table td { padding: 9px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; line-height: 1.5; color: #334155; }
+body.dark .promise-table td { color: #94A3B8; }
+.promise-table tr:last-child td { border-bottom: none; }
+.ps-delivered { color: var(--green); font-family: var(--mono); font-size: 10px; font-weight: 700; }
+.ps-partial   { color: var(--amber); font-family: var(--mono); font-size: 10px; font-weight: 700; }
+.ps-drift     { color: var(--red); font-family: var(--mono); font-size: 10px; font-weight: 700; }
+.ps-watch     { color: var(--blue); font-family: var(--mono); font-size: 10px; font-weight: 700; }
+.ps-miss      { color: var(--red); font-family: var(--mono); font-size: 10px; font-weight: 700; background: var(--red-bg); padding: 1px 4px; border-radius: 2px; }
+
+/* FLAG CARDS */
+.flag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 16px 0; }
+@media (max-width: 620px) { .flag-grid { grid-template-columns: 1fr; } }
+.flag-card { background: var(--white); border: 1px solid var(--rule); border-radius: 6px; padding: 14px 16px; }
+.flag-card.active { border-left: 3px solid var(--red); }
+.flag-card.warn   { border-left: 3px solid var(--amber); }
+.flag-card.watch  { border-left: 3px solid var(--blue); }
+.flag-name { font-family: var(--mono); font-size: 11px; font-weight: 700; margin-bottom: 4px; color: var(--red); display: flex; align-items: center; gap: 5px; }
+.flag-card.warn .flag-name { color: var(--amber); }
+.flag-card.watch .flag-name { color: var(--blue); }
+.flag-what { font-size: 12.5px; color: #475569; line-height: 1.5; }
+.flag-evidence { font-family: var(--mono); font-size: 10.5px; color: var(--muted); margin-top: 6px; font-style: italic; }
+body.dark .flag-what { color: #94A3B8; }
+body.dark .flag-card { background: #152236; }
+
+/* SCORE CARD */
+.score-card {
+  background: var(--ledger-bg); color: #F1F5F9;
+  border-radius: 8px; padding: 24px 28px; margin: 20px 0;
+}
+.sc-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ledger-gold); margin-bottom: 14px; }
+.sc-dims { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 580px) { .sc-dims { grid-template-columns: 1fr; } }
+.sc-dim { display: flex; flex-direction: column; gap: 4px; }
+.sc-dim-name { font-size: 12px; font-weight: 600; color: #E2E8F0; }
+.sc-dim-score { font-family: var(--mono); font-size: 12px; }
+.score-a { color: var(--green); }
+.score-b { color: #60A5FA; }
+.score-c { color: var(--amber); }
+.score-d { color: var(--red); }
+.sc-bar { height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; margin-top: 3px; }
+.sc-fill { height: 100%; border-radius: 2px; }
+.fill-a { background: var(--green); }
+.fill-b { background: #60A5FA; }
+.fill-c { background: var(--amber); }
+.fill-d { background: var(--red); }
+
+/* LEDGER VERDICT */
+.ledger-verdict {
+  background: linear-gradient(135deg, #0F172A 0%, #1E1A35 100%);
+  border: 1.5px solid var(--ledger-gold); border-radius: 8px;
+  padding: 24px 28px; margin: 24px 0;
+}
+.lv-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 2px; text-transform: uppercase; color: var(--ledger-gold); margin-bottom: 10px; }
+.lv-text { color: #CBD5E1; font-size: 14px; line-height: 1.75; }
+.lv-text strong { color: #F8FAFC; }
+
+/* LEDGER QUICK LINE */
+.ledger-strip-line {
+  background: rgba(196,123,0,0.1); border-left: 3px solid var(--ledger-gold);
+  border-radius: 0 4px 4px 0; padding: 10px 14px; margin: 16px 0;
+  font-size: 13px; color: #1E293B;
+}
+body.dark .ledger-strip-line { color: #CBD5E1; background: rgba(196,123,0,0.08); }
+.lsl-label { font-family: var(--mono); font-size: 9.5px; color: var(--ledger-gold); letter-spacing: 1px; text-transform: uppercase; }
+
+/* FOOTER */
+footer {
+  background: var(--ink); color: #475569;
+  padding: 22px 40px; margin: 0 -24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+  font-family: var(--mono); font-size: 10px;
+}
+footer span { letter-spacing: 0.5px; }
+
+/* ===== MISC ===== */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 14px 0; }
+@media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+.sub-label { font-family: var(--mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin: 20px 0 8px; }
+h3 { font-family: var(--serif); font-size: 17px; font-weight: 700; margin: 22px 0 10px; color: var(--ink); }
+body.dark h3 { color: var(--paper); }
+blockquote {
+  border-left: 3px solid var(--purple); padding: 12px 18px;
+  background: var(--purple-bg); border-radius: 0 4px 4px 0;
+  margin: 18px 0; font-style: italic; color: #4C1D95; font-size: 14px; line-height: 1.65;
+}
+body.dark blockquote { color: #C4B5FD; background: #1E1A35; }
+</style>
+</head>
+<body>
+
+<!-- CONTROL BAR -->
+<div class="control-bar no-print" role="navigation" aria-label="Document controls">
+  <div class="cb-left">
+    <span class="cb-ticker">NSE: ORIENTTECH</span>
+    <span class="cb-toc">Orient Technologies Limited · Investor Brief + The Ledger · July 2026</span>
+  </div>
+  <div class="cb-right">
+    <button class="cb-btn" onclick="toggleDark()" aria-label="Toggle dark mode">🌙 Night</button>
+    <button class="cb-btn" onclick="window.print()" aria-label="Print document">🖨 Print</button>
+  </div>
+</div>
+
+<!-- QUICK-SCAN STRIP — ALWAYS EXPANDED (non-collapsible div) -->
+<div id="quick-scan" role="region" aria-label="Quick scan summary">
+  <div id="quick-scan-content">
+    <div class="qs-line"><span class="qs-icon">⚡</span><span class="qs-label">CONTEXT</span><span class="qs-text">India cybersecurity market reaching <strong>$4.4 Bn by 2026</strong> (IDC, 13.1% CAGR); DPDPA full enforcement by May 2027 is a structural demand trigger for SOC and managed security services.</span></div>
+    <div class="qs-line"><span class="qs-icon">🏭</span><span class="qs-label">MODEL</span><span class="qs-text">End-to-end IT infrastructure integrator transitioning to <strong>subscription-led managed services</strong> (SOC, DaaS, cloud) — a value-accretive shift from low-margin hardware reselling that is still early-stage.</span></div>
+    <div class="qs-line"><span class="qs-icon">🎯</span><span class="qs-label">INSIGHT</span><span class="qs-text"><strong>The Turbe SOC facility is Orient's most strategically important asset</strong> — it either proves the managed-services thesis or confirms the company remains a hardware reseller with services window-dressing.</span></div>
+    <div class="qs-line"><span class="qs-icon">📊</span><span class="qs-label">NUMBERS</span><span class="qs-text">FY26 revenue <strong>₹871 Cr</strong> (+2.9% YoY) on the back of a 30.5% H1 — H2 FY26 collapsed on supply chain disruptions and loss of one large hyperscaler client. FY26 PAT: <strong>₹4.57 Cr</strong> (down ~91% YoY).</span></div>
+    <div class="qs-line"><span class="qs-icon">🚧</span><span class="qs-label">TOP RISK</span><span class="qs-text"><strong>CFO resigned effective June 2026</strong> — combined with still-undeployed IPO proceeds (₹43.75 Cr) and rising debtor days (101→126), this raises governance and capital-allocation questions at a critical transition moment.</span></div>
+    <div class="qs-line"><span class="qs-icon">👁</span><span class="qs-label">WATCH</span><span class="qs-text">SOC/DaaS revenue as % of total revenue each quarter — if it doesn't cross <strong>8–10% of revenue by Q3 FY27</strong>, the managed-services thesis is not materialising on schedule.</span></div>
+    <div class="qs-line"><span class="qs-icon">💡</span><span class="qs-label">VERDICT</span><span class="qs-text"><strong>Capex-Ramp Inflection / SOC-DaaS Transition Under Stress</strong> — the infrastructure is in place; the recurring revenue layer hasn't arrived. FY27 is the proof-of-concept year.</span></div>
+    <div class="qs-line"><span class="qs-icon">🗒</span><span class="qs-label">MGMT LEDGER</span><span class="qs-text"><strong>Tier C — Credibility Under Stress.</strong> Active flags: H2 Mirage, Revenue Concentration Miss, Guidance Withdrawal (order book), CFO Departure, Working Capital Masking, IPO Utilisation Delay.</span></div>
+  </div>
+</div>
+
+<div class="main-wrapper">
+
+<!-- MASTHEAD -->
+<div class="masthead" role="banner">
+  <div class="mh-eyebrow">NSE INVESTOR STORY · IT MANAGED SERVICES · JULY 2026</div>
+  <div class="mh-h1">Orient <span>Technologies</span></div>
+  <div class="mh-sub">From IT reseller to SOC-and-cloud managed services company — the transition is underway, the proof is still pending.</div>
+  <div class="mh-chips">
+    <span class="mh-chip">NSE: ORIENTTECH</span>
+    <span class="mh-chip">BSE: 544235</span>
+    <span class="mh-chip">Market Cap ₹1,210 Cr</span>
+    <span class="mh-chip accent">FY26 Revenue ₹871 Cr</span>
+    <span class="mh-chip">Founded 1997 · Listed Aug 2024</span>
+    <span class="mh-chip">IT Managed Services / Infrastructure</span>
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 1 — CONTEXT ===================== -->
+<div class="ch-header" role="region" aria-labelledby="ch1-title">
+  <div class="ch-num" aria-hidden="true">1</div>
+  <div>
+    <div class="ch-eyebrow">THE MACRO CONTEXT</div>
+    <div class="ch-title" id="ch1-title">Why India's cybersecurity wave is arriving right now</div>
+  </div>
+</div>
+
+<div class="lead-block" role="note">
+  India processed over 15 billion UPI transactions monthly in 2025 — and every one of those transactions is a target. As the attack surface of India's digital economy multiplies, so does the structural demand for enterprise-grade managed IT security. <strong>This is the market Orient Technologies is trying to enter at scale.</strong>
+</div>
+
+<p>Three structural forces are converging simultaneously in India's enterprise IT and cybersecurity market, creating a window for domestic managed services providers that may not reopen for a decade.</p>
+
+<p>First, the regulatory tide. <span class="hl-catalyst">The Digital Personal Data Protection Act (DPDPA) reaches full enforcement by May 2027</span>, mandating board-level accountability for data security and imposing penalties that make cybersecurity non-optional for every organization processing personal data — which is virtually every medium-to-large Indian enterprise. CERT-In's existing 6-hour breach reporting mandate is already forcing CISOs to maintain 24/7 Security Operations Centre (SOC) capabilities. The compliance-driven IT security market is, in the words of IDC, "budget-committed and policy-mandated."</p>
+
+<p>Second, the scale numbers are extraordinary. IDC projects India's total security spending at <span class="hl-number">USD 4.4 billion in 2026</span>, growing at 13.1% CAGR through 2029. The cybersecurity services sub-segment — the managed SOC, detection-and-response, endpoint protection layer — is the fastest-growing slice, estimated to grow at 18.6% CAGR to 2031 as talent shortages force enterprises to outsource security operations rather than build in-house. India's 63 million SMEs, most of which cannot afford a full-time CISO, are the underpenetrated growth frontier. <span class="hl-key">Managed security service providers who can serve mid-market enterprise clients at scale are positioned to capture a disproportionate share of a market that barely exists yet at this price point.</span></p>
+
+<p>Third, the hardware replacement cycle. India's rapid enterprise technology modernization — cloud migration, AI infrastructure, hyperconverged data centre buildouts — is driving a parallel spend wave in IT infrastructure (servers, storage, networking). The government's Digital India programme, backed by ₹14,903 Cr in public investment through 2026, has generated an estimated $283 billion in annual IT-ITeS revenue for the sector. Each new infrastructure deployment creates a multi-year services tail: maintenance, security monitoring, management contracts.</p>
+
+<p>Orient Technologies sits at the intersection of these three waves — it builds the infrastructure, secures it, and manages it. The question is whether it can capture the full-value chain or remain stuck at the lower-margin hardware end.</p>
+
+<div class="stats-grid">
+  <div class="stat-card blue">
+    <div class="stat-label">India Security Market 2026</div>
+    <div class="stat-value">$4.4B</div>
+    <div class="stat-sub">IDC · 13.1% CAGR to 2029</div>
+  </div>
+  <div class="stat-card blue">
+    <div class="stat-label">Managed SOC Services CAGR</div>
+    <div class="stat-value">18.6%</div>
+    <div class="stat-sub">India · to 2031 (Mordor)</div>
+  </div>
+  <div class="stat-card amber">
+    <div class="stat-label">DPDPA Full Enforcement</div>
+    <div class="stat-value">May '27</div>
+    <div class="stat-sub">Compliance demand trigger</div>
+  </div>
+  <div class="stat-card blue">
+    <div class="stat-label">Digital India Investment</div>
+    <div class="stat-value">₹14,903Cr</div>
+    <div class="stat-sub">2021–2026 government outlay</div>
+  </div>
+</div>
+
+<div class="takeaway-pill" role="note">
+  India's DPDPA enforcement, 63 million SME market, and IDC's 13.1% security spending CAGR create a structural demand floor for domestic managed security providers through at least FY30.
+</div>
+
+<!-- ===================== CHAPTER 2 — BUSINESS MODEL ===================== -->
+<div class="ch-header teal" role="region" aria-labelledby="ch2-title">
+  <div class="ch-num" aria-hidden="true">2</div>
+  <div>
+    <div class="ch-eyebrow">THE BUSINESS MODEL</div>
+    <div class="ch-title" id="ch2-title">IT backbone provider to the mid-market — with a managed-services overlay in progress</div>
+  </div>
+</div>
+
+<div class="lead-block teal">
+  Orient Technologies' core business is not software — it is the physical and operational nerve centre of enterprise IT. It puts the hardware in, connects it to the network, secures it, and increasingly, watches over it 24/7. Think of it as a full-service IT estate manager for companies that are too complex for a single SaaS tool and too cost-conscious to build their own IT department.
+</div>
+
+<p>Founded in 1997 as Orient Systems in Mumbai, the company spent its first two decades building expertise in one of the most unglamorous but indispensable corners of enterprise IT: making technology actually work for mid-market companies. It became a preferred integrator for OEM partners like Dell, Nutanix, Fortinet, AWS, and NetApp — meaning it can provision, configure, and support complex multi-vendor infrastructure environments that most smaller resellers cannot.</p>
+
+<p>The business operates across three segments, each at a different margin and growth profile:</p>
+
+<p><strong>IT Infrastructure Products and Services</strong> — the largest revenue segment. Orient sells, deploys, and integrates data centre solutions (servers, storage, HCI platforms using Nutanix), end-user computing (device deployment and management), and networking infrastructure (switches, routers, SD-WAN). This is the legacy business: still large, relatively low-margin, and under increasing competitive pressure from direct OEM sales and cloud migration. Clients include Coal India, Mazagon Dock, and Government of Maharashtra.</p>
+
+<p><strong>IT Enabled Services (ITeS)</strong> — the higher-value services layer. This segment includes managed services, multi-vendor support, IT facility management, and the two most strategically important new capabilities: the Network Operations Centre (NOC) and Security Operations Centre (SOC) launched in FY26 at the Turbe facility in Navi Mumbai. The SOC is powered by Securonix — a Tier-1 SIEM/SOAR platform — and offers 24/7 threat detection, digital forensics, and incident response. This is the segment Orient wants to grow as the margin-improvement engine.</p>
+
+<p><strong>Cloud and Data Management Services</strong> — the emerging third vertical. Orient handles cloud migration, workload management, DevOps, and data governance for enterprises moving from on-premises infrastructure to hybrid/multi-cloud environments. The DaaS (Device as a Service) model — hardware on subscription, bundled with management — belongs here. <span class="hl-key">DaaS is the single most financially important innovation in Orient's model: it converts a one-time hardware sale into a multi-year recurring revenue stream, and if it scales, it structurally improves the company's margin and cash flow profile.</span></p>
+
+<p>The flywheel: Orient installs the infrastructure (product revenue), earns ongoing maintenance and AMC contracts (sticky services revenue), and increasingly seeks to own the monitoring and security layer (SOC) that makes the infrastructure self-sustaining for the client. A client who has Orient managing their NOC, SOC, and cloud environment has very high switching costs — the depth of network knowledge accumulated over years of monitoring makes replacement extremely difficult and disruptive.</p>
+
+<p>As of July 2026, the company has 10 offices in India with 32 global franchises, international offices in Singapore and Dubai, and serves sectors including BFSI, pharma, government, ITES, manufacturing, real estate, and media. The FY27 order book stands at ₹400 Cr.</p>
+
+<div class="takeaway-pill teal" style="border-color: var(--teal);">
+  The value inflection comes when ITeS recurring services revenue (SOC/DaaS/managed services) exceeds 25–30% of total revenue, compressing seasonality and lifting margins structurally — that milestone is 2–3 years out on current trajectory.
+</div>
+
+<!-- ===================== CHAPTER 2B — PORTER'S ===================== -->
+<div class="ch-header purple" role="region" aria-labelledby="ch2b-title">
+  <div class="ch-num" aria-hidden="true">2B</div>
+  <div>
+    <div class="ch-eyebrow">COMPETITIVE STRUCTURE</div>
+    <div class="ch-title" id="ch2b-title">Porter's Five Forces — where the structural pressure concentrates</div>
+  </div>
+</div>
+
+<div class="force-head" role="row">
+  <div class="porter-cell">Force</div>
+  <div class="porter-cell">Rating</div>
+  <div class="porter-cell">Specific Evidence</div>
+</div>
+<div class="porter-row" role="row">
+  <div class="porter-cell porter-force">Rivalry Intensity</div>
+  <div class="porter-cell"><span class="rating-high">HIGH</span></div>
+  <div class="porter-cell" style="font-size:13px; color:#334155;">Dynacons Systems, Allied Digital, Kellton Tech, Xchanging Solutions operate in nearly identical geographic and product spaces. Larger players (TCS Technology Solutions, HCL Infosystems) compete for the same enterprise managed services contracts. Price-based rivalry for product sales is fierce; capability-based differentiation exists only in the services layer where OEM certifications and NOC/SOC facilities create a moat.</div>
+</div>
+<div class="porter-row" role="row">
+  <div class="porter-cell porter-force">Buyer Power</div>
+  <div class="porter-cell"><span class="rating-high">HIGH</span></div>
+  <div class="porter-cell" style="font-size:13px; color:#334155;">Orient lost one large hyperscaler cloud client in Q3 FY26, contributing directly to the H2 revenue collapse — a single client departure causing material quarterly loss is the textbook definition of buyer power. Debtor days expanded from 101 to 126 between FY25 and FY26, suggesting clients are increasingly pushing payment terms. Government and PSU clients (Coal India, Mazagon Dock) negotiate on procurement portals with price transparency.</div>
+</div>
+<div class="porter-row" role="row">
+  <div class="porter-cell porter-force">Supplier Power</div>
+  <div class="porter-cell"><span class="rating-med">MEDIUM</span></div>
+  <div class="porter-cell" style="font-size:13px; color:#334155;">OEM partners (Dell, Nutanix, Fortinet) are significantly larger companies that set pricing and allocation terms. The semiconductor shortage of H2 FY26 directly disrupted Orient's end-user computing and data-centre hardware supply — demonstrating how dependent the business is on upstream chip availability. However, Orient's certified-partner status with multiple OEMs provides some negotiating leverage and preferential allocation during shortages.</div>
+</div>
+<div class="porter-row" role="row">
+  <div class="porter-cell porter-force">Threat of New Entrants</div>
+  <div class="porter-cell"><span class="rating-med">MEDIUM</span></div>
+  <div class="porter-cell" style="font-size:13px; color:#334155;">Building a full-scale IT integration business requires capital (Orient deployed ₹120 Cr IPO proceeds on the Turbe facility), OEM certifications (typically 12–18 months per OEM), and client trust built over years. The South India acquisitions (Red Hut, Athena IT, AIT) show that regional MSPs exist but lack Orient's scale and OEM partnerships. New entrants in the product segment are easier; new entrants in managed SOC require significant upfront investment and Tier-1 platform licensing (e.g., Securonix).</div>
+</div>
+<div class="porter-row" role="row">
+  <div class="porter-cell porter-force">Threat of Substitutes</div>
+  <div class="porter-cell"><span class="rating-high">HIGH</span></div>
+  <div class="porter-cell" style="font-size:13px; color:#334155;">This is Orient's most structural risk: hyperscaler-native security offerings (AWS Security Hub, Microsoft Sentinel, Google Chronicle) and cloud-native security vendors (CrowdStrike, Zscaler, Palo Alto) increasingly offer enterprise-grade protection without requiring a local SOC or managed service provider. AI-powered, self-service security platforms are reducing the human-labour cost advantage Orient holds. Long-term, the question is whether managed SOC adds enough India-specific value to resist substitution by global SaaS security platforms.</div>
+</div>
+
+<div class="insight-box" role="complementary">
+  <div class="ib-label">⚡ Porter's Synthesis — The Two Pressure Points That Define the Investment Case</div>
+  <p><strong>Buyer Power and Threat of Substitutes</strong> are the two forces most likely to compress Orient's value over time. The H2 FY26 implosion demonstrated buyer power in action — a single large client departure creates a quarterly loss. The substitute threat is existential on a 5-year horizon: if hyperscalers and cloud-native security platforms disintermediate local SOC providers, Orient's entire services strategy becomes redundant. <strong>The investment thesis therefore rests entirely on Orient winning recurring managed services contracts faster than the substitute threat matures</strong> — a 3–5 year race the company must actively be winning by FY28.</p>
+</div>
+
+<p><strong>Moat Summary:</strong> Orient's most defensible assets are its 25+ years of OEM certification depth (especially Nutanix HCI, where it was a pioneer partner in India), its geographic density in Mumbai and now South India, and the Turbe SOC facility — the only tangible evidence that the managed-services transition is real. The moat is real but narrow, and it requires continuous investment to maintain against both large-cap IT service firms and nimble regional MSPs.</p>
+
+<div class="takeaway-pill" style="border-color: var(--purple);">
+  Buyer power and substitute threat are the two forces that most directly challenge Orient's transition — both demand faster services-revenue accumulation, not further product-sales growth.
+</div>
+
+<!-- ===================== CHAPTER 3 — VERTICALS ===================== -->
+<div class="ch-header green" role="region" aria-labelledby="ch3-title">
+  <div class="ch-num" aria-hidden="true">3</div>
+  <div>
+    <div class="ch-eyebrow">THE VERTICAL STORIES</div>
+    <div class="ch-title" id="ch3-title">Four growth vectors — from proven to nascent</div>
+  </div>
+</div>
+
+<div class="verticals">
+  <div class="vert-card blue">
+    <div class="vert-label">Vertical 1 · IT Infrastructure</div>
+    <div class="vert-title">Data Centre &amp; End-User Computing</div>
+    <span class="vert-ext">External Catalyst: AI-led enterprise data-centre modernisation · India cloud infra spend $24B by 2026</span>
+    <p class="vert-desc">The legacy core — servers, storage (NetApp), HCI (Nutanix), networking for corporate data centres and end-user device fleets. Orient's certified-partner depth with Dell and Nutanix gives it preferential access to enterprise-grade deployments. Client examples include Coal India and Mazagon Dock. Revenue in this vertical is large (majority of ₹871 Cr FY26 revenue) but lumpy — driven by project wins — and facing secular margin pressure as hyperscalers pull workloads to the cloud.</p>
+    <span class="vert-status status-running">● RUNNING</span>
+  </div>
+  <div class="vert-card purple">
+    <div class="vert-label">Vertical 2 · Cybersecurity &amp; SOC</div>
+    <div class="vert-title">Security Operations Centre — Turbe SDC</div>
+    <span class="vert-ext">External Catalyst: DPDPA May 2027 enforcement · CERT-In 6-hr reporting mandate · India cybersec market 14.5% CAGR</span>
+    <p class="vert-desc">The strategic engine. Orient's Turbe Service Delivery Centre (Navi Mumbai), launched H1 FY26, houses a 24/7 NOC and SOC powered by Securonix (an institutional-grade SIEM/SOAR platform). Capabilities include threat detection, digital forensics, cloud and endpoint security, and compliance monitoring. Orient also secured a ₹3.9 Cr cybersecurity contract from a leading energy-sector organization. The BFSI, pharma, and government sectors — all CERT-In regulated — are the primary targets. SOC revenue is initially modest but structurally high-margin and contractually recurring (3–5 year contracts typical).</p>
+    <span class="vert-status status-ramp">⚡ RAMPING</span>
+  </div>
+  <div class="vert-card teal">
+    <div class="vert-label">Vertical 3 · DaaS &amp; TOSS</div>
+    <div class="vert-title">Device as a Service + Tech Outsourcing</div>
+    <span class="vert-ext">External Catalyst: SME technology outsourcing demand · 63M SME market · Digital-India device penetration push</span>
+    <p class="vert-desc">DaaS (Device as a Service) is Orient's answer to the subscription economy: instead of selling a laptop or server, Orient leases the device bundled with management, support, and refresh cycles — converting a one-time hardware sale into a recurring subscription. TOSS (Technology Outsourcing Solutions as a Service) extends this to broader IT function outsourcing. Both models appeal to cost-conscious SMEs and mid-market enterprises that cannot afford dedicated IT staff. IPO proceeds (₹120 Cr fresh issue) were specifically earmarked for DaaS equipment procurement. As of July 2026, the DaaS fleet is being built out; revenue contribution remains nascent.</p>
+    <span class="vert-status status-ramp">⚡ RAMPING</span>
+  </div>
+  <div class="vert-card green">
+    <div class="vert-label">Vertical 4 · Cloud &amp; South India Expansion</div>
+    <div class="vert-title">Cloud Migration + Regional MSP Network</div>
+    <span class="vert-ext">External Catalyst: India cloud migration wave · South India enterprise IT demand · Bengaluru GCC ecosystem</span>
+    <p class="vert-desc">Orient acquired Red Hut Innovation (Bengaluru-based MSP and SD-WAN-as-a-Service provider) and minority stakes in Athena IT and AIT Internet Services in October 2025 — total investment ₹7.71 Cr. This gives Orient a South India beachhead, tapping into Bengaluru's GCC (Global Capability Centre) cluster and the 35.6% South India share of the cybersecurity market. The Government of Maharashtra cloud contract and a ₹60 Cr annual recurring revenue contract signed in FY26 demonstrate the cloud vertical's revenue potential. Orient has AWS partnership depth for cloud migration engagements.</p>
+    <span class="vert-status status-ramp">⚡ RAMPING</span>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-color: var(--green);">
+  Three of four verticals are in ramp mode simultaneously — the capital is deployed, but the revenue ramp velocity in SOC and DaaS will determine whether FY27 becomes the inflection year management is guiding for.
+</div>
+
+<!-- ===================== CHAPTER 4 — STRATEGIC INSIGHT ===================== -->
+<div class="ch-header amber" role="region" aria-labelledby="ch4-title">
+  <div class="ch-num" aria-hidden="true">4</div>
+  <div>
+    <div class="ch-eyebrow">THE STRATEGIC INSIGHT</div>
+    <div class="ch-title" id="ch4-title">The non-obvious truth about Orient's transition</div>
+  </div>
+</div>
+
+<div class="insight-box" role="complementary">
+  <div class="ib-label">🎯 THE ONE THING TO UNDERSTAND</div>
+  <p>Orient Technologies is not an IT company trying to become a cybersecurity company. <strong>It is a hardware reseller using IPO capital to buy itself a different valuation multiple.</strong> The entire transition narrative — SOC, DaaS, TOSS, managed services — is economically sound and strategically correct, but it also raises a valuation question: the company listed at a time when "managed IT services with cybersecurity exposure" commanded 30–50x earnings multiples, while traditional IT resellers trade at 10–15x. Orient is attempting to re-rate its valuation by changing its revenue mix before its customer base or competitive position has fully changed. The risk is that the hardware product business (the majority of current revenue) deteriorates faster than the services business ramps — creating an earnings air pocket that the market has not yet fully priced.</p>
+</div>
+
+<p>Here is the specific mechanism that makes this non-obvious: <span class="hl-key">Orient's Turbe SOC facility is simultaneously its most important asset and its most expensive liability.</span> The NOC/SOC infrastructure was funded by IPO proceeds earmarked specifically for this purpose — but the facility cost (depreciation doubled QoQ in Q4 FY26, rising to ₹6.37 Cr) is already running through the income statement while the managed services revenue the facility is supposed to generate has not yet meaningfully appeared. This is the classic "build it and they will come" capex risk: Orient has committed to the overhead of a world-class security operations infrastructure and is now racing to fill it with paying clients before the carrying cost erodes what remains of its profitability.</p>
+
+<p>The H2 FY26 collapse is instructive. Revenue in H1 FY26 grew 30.5% — Orient was firing on all cylinders. Then in Q3, two things happened simultaneously: global semiconductor shortages disrupted the product supply chain, and a large hyperscaler client was lost. The management team described this as "temporary" and "market-wide" — but the loss of a single large client causing a quarterly net loss tells you something structural about revenue concentration risk that "supply chain disruptions" cannot fully explain.</p>
+
+<p>The IPO proceeds situation adds a layer of concern. Of the ₹120 Cr raised in August 2024, <span class="hl-risk">₹43.75 Cr remained unutilised as of Q4 FY26 — nearly 20 months after the IPO — requiring shareholders to approve a timeline extension to March 2027.</span> This is not necessarily a red flag on its own, but it suggests that the capital deployment roadmap has been slower than management initially projected. Meanwhile, the CFO resigned effective June 25, 2026 — at precisely the moment the company needs experienced financial leadership to navigate the transition period.</p>
+
+<p>The strategic insight is ultimately this: Orient is a legitimate business building a real capability in a structurally attractive market. But <strong>it was priced in 2024 as if the transformation was already complete, and FY26's results revealed that it is not.</strong> The question for FY27 is not whether the thesis is right — it probably is — but whether management can execute the transition without burning through the remaining IPO capital or losing the anchor client relationships that keep the product business stable during the ramp.</p>
+
+<div class="takeaway-pill" style="border-color: var(--amber);">
+  Orient is paying for the future today — the Turbe SOC's depreciation is running before its revenues arrive; the FY27 investment thesis lives or dies on managed-services ramp velocity.
+</div>
+
+<!-- ===================== CHAPTER 5 — FINANCIALS ===================== -->
+<div class="ch-header navy" role="region" aria-labelledby="ch5-title">
+  <div class="ch-num" aria-hidden="true">5</div>
+  <div>
+    <div class="ch-eyebrow">THE NUMBERS IN CONTEXT</div>
+    <div class="ch-title" id="ch5-title">FY26: a tale of two halves — and what the market is still pricing in</div>
+  </div>
+</div>
+
+<div class="lead-block" style="border-color:var(--navy); background:var(--navy-bg);">
+  FY26 was Orient Technologies' most revealing year since listing — and not in a good way. A 30%+ H1 that suggested a growth compounder collided with an H2 that revealed supply-chain fragility, revenue concentration risk, and the earnings drag of a facilities buildout that hasn't yet generated proportional revenue.
+</div>
+
+<h3>Revenue &amp; Profitability Trajectory</h3>
+<table class="data-table" role="table" aria-label="Financial performance table">
+  <tr>
+    <th>METRIC</th>
+    <th class="blue">FY23</th>
+    <th class="blue">FY24</th>
+    <th class="blue">FY25</th>
+    <th class="blue">FY26</th>
+  </tr>
+  <tr>
+    <td><strong>Revenue (₹ Cr)</strong></td>
+    <td>535</td>
+    <td>~700</td>
+    <td>846</td>
+    <td><strong>871</strong></td>
+  </tr>
+  <tr>
+    <td>Revenue Growth YoY</td>
+    <td>—</td>
+    <td>~31%</td>
+    <td>~21%</td>
+    <td style="color:var(--amber);font-weight:600">+2.9%</td>
+  </tr>
+  <tr>
+    <td><strong>PAT (₹ Cr, consolidated)</strong></td>
+    <td>38.3</td>
+    <td>41.5</td>
+    <td>~50</td>
+    <td style="color:var(--red);font-weight:600"><strong>4.57</strong></td>
+  </tr>
+  <tr>
+    <td>PAT Margin</td>
+    <td>~7.2%</td>
+    <td>~5.9%</td>
+    <td>~5.9%</td>
+    <td style="color:var(--red);">0.52%</td>
+  </tr>
+  <tr>
+    <td>ROCE (H2 FY26)</td>
+    <td>~30%</td>
+    <td>~28%</td>
+    <td>~22%</td>
+    <td style="color:var(--red);">8.55% ▼ Record Low</td>
+  </tr>
+  <tr>
+    <td>Debtor Days</td>
+    <td>—</td>
+    <td>—</td>
+    <td>101</td>
+    <td style="color:var(--amber);">126 ▲</td>
+  </tr>
+  <tr>
+    <td>Promoter Holding</td>
+    <td>—</td>
+    <td>—</td>
+    <td>—</td>
+    <td>70.6%</td>
+  </tr>
+</table>
+
+<h3>Quarterly Decomposition — The H1/H2 Split</h3>
+<table class="data-table" role="table" aria-label="Quarterly performance breakdown">
+  <tr>
+    <th>QUARTER</th>
+    <th class="blue">Revenue (₹ Cr)</th>
+    <th class="blue">YoY / QoQ</th>
+    <th class="blue">PAT / Loss</th>
+    <th class="blue">Key Event</th>
+  </tr>
+  <tr>
+    <td>Q1 FY26</td>
+    <td>~212.6</td>
+    <td><span style="color:var(--green)">+43.7% YoY</span></td>
+    <td style="color:var(--green)">Profitable</td>
+    <td>Strong cloud and DaaS growth; H1 thesis holds</td>
+  </tr>
+  <tr>
+    <td>Q2 FY26</td>
+    <td>272.8</td>
+    <td><span style="color:var(--green)">+22.3% YoY</span></td>
+    <td style="color:var(--green)">₹14.17 Cr</td>
+    <td>New India Assurance ₹30.8 Cr AMC; Maharashtra VAT contract</td>
+  </tr>
+  <tr>
+    <td>Q3 FY26</td>
+    <td>198.2</td>
+    <td><span style="color:var(--red)">–4.2% YoY</span></td>
+    <td style="color:var(--red)">–₹14.9 Cr</td>
+    <td>Semiconductor shortage; hyperscaler client loss; SOC launch</td>
+  </tr>
+  <tr>
+    <td>Q4 FY26</td>
+    <td>184.1</td>
+    <td><span style="color:var(--red)">–8.0% QoQ</span></td>
+    <td style="color:var(--red)">–₹5.0 Cr</td>
+    <td>Depreciation doubles to ₹6.37 Cr; FY27 order book ₹400 Cr</td>
+  </tr>
+</table>
+
+<p><span class="hl-number">FY26 order book entering FY27: ₹400 Cr</span> — approximately 46% of FY26 revenue, providing meaningful but not full coverage for FY27. Management had originally targeted ₹600 Cr order book by H2 FY26, a miss of 33% on this key metric.</p>
+
+<h3>Capex Timeline — IPO Proceeds Deployment</h3>
+<div class="capex-card" role="region" aria-label="Capex timeline">
+  <div class="capex-header">📍 CAPEX PROGRAMME — IPO Proceeds (₹120 Cr Fresh Issue) + Turbe SDC Infrastructure</div>
+  <div class="capex-row capex-head-row">
+    <div class="capex-cell"><div class="cc-label">Milestone</div></div>
+    <div class="capex-cell"><div class="cc-label">Budget</div></div>
+    <div class="capex-cell"><div class="cc-label">Timeline</div></div>
+    <div class="capex-cell"><div class="cc-label">Revenue Unlock</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">Navi Mumbai Office (Turbhe MIDC)</div><div class="cc-sub">Plutonium Business Park acquisition</div></div>
+    <div class="capex-cell"><div class="cc-val">~₹76 Cr</div><div class="cc-sub">Of IPO fresh issue</div></div>
+    <div class="capex-cell"><div class="cc-val">Acquired Q3 FY25</div></div>
+    <div class="capex-cell"><div class="cc-val">Operational SDC base</div></div>
+    <div class="capex-cell"><div class="tl-delivered">✓ DELIVERED</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">NOC + SOC Setup (Turbe)</div><div class="cc-sub">Securonix-powered SDC</div></div>
+    <div class="capex-cell"><div class="cc-val">Partial IPO + accruals</div></div>
+    <div class="capex-cell"><div class="cc-val">Launched Q3 FY26</div></div>
+    <div class="capex-cell"><div class="cc-val">Recurring SOC contracts</div><div class="cc-sub">Revenue ramp: FY27</div></div>
+    <div class="capex-cell"><div class="tl-partial">⚡ COMMISSIONED — UTILISATION PENDING</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">DaaS Equipment Fleet</div><div class="cc-sub">Devices for subscription model</div></div>
+    <div class="capex-cell"><div class="cc-val">₹43.75 Cr remaining</div><div class="cc-sub">IPO proceeds (unutilised)</div></div>
+    <div class="capex-cell"><div class="cc-val">Extended to Mar 2027</div><div class="cc-sub">Was: FY26 original target</div></div>
+    <div class="capex-cell"><div class="cc-val">DaaS recurring revenue</div><div class="cc-sub">Timeline deferred</div></div>
+    <div class="capex-cell"><div class="tl-delayed">⚠ DRIFTED — 20 MONTHS POST-IPO</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">South India Acquisitions</div><div class="cc-sub">Red Hut + Athena IT + AIT</div></div>
+    <div class="capex-cell"><div class="cc-val">₹7.71 Cr</div><div class="cc-sub">From internal accruals</div></div>
+    <div class="capex-cell"><div class="cc-val">Oct 2025</div></div>
+    <div class="capex-cell"><div class="cc-val">South India enterprise revenue</div></div>
+    <div class="capex-cell"><div class="tl-delivered">✓ DELIVERED</div></div>
+  </div>
+</div>
+
+<p>The capex-to-revenue bridge: The Turbe SDC is live and commissioned. The depreciation surge (₹6.37 Cr in Q4 FY26, roughly 2x the prior quarter) is the first evidence that the asset is being put on the balance sheet. The management's FY27 assertion of ₹400 Cr order book is the partial revenue bridge — but the incremental SOC and DaaS revenue expected from the facility has not been specifically quantified in public guidance.</p>
+
+<h3>Valuation Context</h3>
+<table class="data-table" role="table" aria-label="Valuation comparison">
+  <tr>
+    <th>COMPANY</th>
+    <th class="blue">Market Cap (₹ Cr)</th>
+    <th class="blue">Revenue (₹ Cr)</th>
+    <th class="blue">Trailing PE</th>
+    <th class="blue">P/B</th>
+    <th class="blue">Commentary</th>
+  </tr>
+  <tr>
+    <td><strong>ORIENTTECH</strong></td>
+    <td><strong>~1,210</strong></td>
+    <td><strong>871</strong></td>
+    <td style="color:var(--red)"><strong>~250–400x</strong></td>
+    <td>3.5x</td>
+    <td>PAT collapsed to ₹4.57 Cr; PE is distorted</td>
+  </tr>
+  <tr>
+    <td>Allied Digital Services</td>
+    <td>~800</td>
+    <td>~800</td>
+    <td>~20–25x</td>
+    <td>~2.5x</td>
+    <td>Direct comparable; similar managed services mix</td>
+  </tr>
+  <tr>
+    <td>Dynacons Systems</td>
+    <td>~600</td>
+    <td>~600</td>
+    <td>~15–20x</td>
+    <td>~2x</td>
+    <td>Similar product-to-services mix; lower growth rate</td>
+  </tr>
+  <tr>
+    <td>Kellton Tech</td>
+    <td>~500</td>
+    <td>~500</td>
+    <td>~18x</td>
+    <td>~2x</td>
+    <td>IT services focus; profitable</td>
+  </tr>
+  <tr>
+    <td>Peer Median</td>
+    <td>—</td>
+    <td>—</td>
+    <td style="color:var(--green)">~23x</td>
+    <td>~2.5x</td>
+    <td>vs ORIENTTECH's ~250–400x trailing</td>
+  </tr>
+</table>
+
+<p><strong>What is the market pricing in?</strong> At ₹1,210 Cr market cap on ₹4.57 Cr FY26 PAT, the market is not valuing Orient on current earnings — it is valuing the company on an anticipated earnings recovery to ₹30–50 Cr PAT (pre-FY26 level or above) in FY27–FY28, combined with a managed-services premium multiple of 25–35x. <span class="hl-risk">At the current price, even a return to FY25 profitability (₹50 Cr PAT) with a 25x multiple gives a market cap of ₹1,250 Cr — barely above current levels. There is very little margin of safety at this price unless FY27 shows not just profitability recovery but actual managed-services revenue inflection.</span></p>
+
+<div class="takeaway-pill" style="border-color:var(--navy);">
+  The market is pricing full profitability recovery AND a managed-services premium; Orient must deliver both in FY27 to justify current valuations — either alone is insufficient.
+</div>
+
+<!-- ===================== CHAPTER 6 — RISKS ===================== -->
+<div class="ch-header red" role="region" aria-labelledby="ch6-title">
+  <div class="ch-num" aria-hidden="true">6</div>
+  <div>
+    <div class="ch-eyebrow">RISK REGISTER</div>
+    <div class="ch-title" id="ch6-title">Five specific risks that could derail the FY27 recovery thesis</div>
+  </div>
+</div>
+
+<div class="risks-grid">
+  <div class="risk-card critical">
+    <div class="risk-name"><i class="ti ti-user-off" aria-hidden="true"></i> CFO DEPARTURE — GOVERNANCE AT INFLECTION POINT</div>
+    <div class="risk-what">The CFO resigned effective June 25, 2026 — precisely when the company most needs experienced financial oversight. Orient is deploying IPO capital, onboarding acquired entities (Red Hut, Athena IT), and managing a debtors book that expanded by 25 days in FY26. An interim or new CFO unfamiliar with the capex programme could create errors in capital allocation or financial reporting quality.</div>
+    <div class="risk-signal">Watch signal: Who is appointed as CFO and by when. A prolonged vacancy (&gt;2 quarters) combined with further deterioration in debtor days would be a material escalation of this risk.</div>
+  </div>
+  <div class="risk-card critical">
+    <div class="risk-name"><i class="ti ti-chart-line-down" aria-hidden="true"></i> REVENUE CONCENTRATION — SINGLE CLIENT VULNERABILITY</div>
+    <div class="risk-what">The loss of one large hyperscaler cloud client in Q3 FY26 alone caused the company to swing from profitability to net losses. If the company's top-3 clients represent &gt;30% of revenue (not disclosed publicly), a single large contract non-renewal can materially impair a full-year earnings profile. The FY27 order book of ₹400 Cr is a partial hedge but does not fully address concentration risk.</div>
+    <div class="risk-signal">Watch signal: Segment-level revenue break in quarterly filings. If "large enterprise" category revenue remains flat or falls YoY in Q1 FY27, the product revenue base has not stabilised.</div>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-name"><i class="ti ti-cpu" aria-hidden="true"></i> SUPPLY CHAIN — SEMICONDUCTOR DEPENDENCE</div>
+    <div class="risk-what">Orient's product revenue is directly dependent on availability and pricing of semiconductor-intensive hardware (servers, storage, end-user devices). The H2 FY26 disruption (acute semiconductor shortages + AI-led data-centre demand driving up allocation to hyperscalers) was not a one-off: similar supply constraints are likely to recur as AI infrastructure buildout accelerates globally, diverting chip allocation toward hyperscalers at the expense of enterprise-grade hardware distributors and integrators.</div>
+    <div class="risk-signal">Watch signal: OEM delivery timelines for server/storage orders disclosed in concalls. Extended lead times (&gt;12 weeks) are the early warning signal for a repeat of H2 FY26 disruption.</div>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-name"><i class="ti ti-clock-off" aria-hidden="true"></i> IPO CAPITAL DEPLOYMENT — UTILISATION CLOCK RUNNING</div>
+    <div class="risk-what">₹43.75 Cr of IPO proceeds remain undeployed 20 months post-IPO, with shareholders approving an extension to March 2027. This is specifically earmarked for DaaS equipment. If the DaaS fleet is not deployed and revenue-generating by Q3 FY27, the company faces a second extension request or the prospect of re-purposing proceeds — both of which would further damage market confidence in the capital allocation discipline. CARE monitoring reports have so far shown NIL deviation.</div>
+    <div class="risk-signal">Watch signal: CARE monitoring agency quarterly report. DaaS revenue appearing in segmental disclosures is the green signal; a third IPO proceeds extension request would be a red flag.</div>
+  </div>
+  <div class="risk-card medium">
+    <div class="risk-name"><i class="ti ti-trending-down" aria-hidden="true"></i> WORKING CAPITAL DETERIORATION — DEBTOR DAY EXPANSION</div>
+    <div class="risk-what">Debtor days expanded from 101 to 126 between FY25 and FY26 — a 25-day increase. At ₹871 Cr revenue, 25 additional debtor days represents roughly ₹60 Cr of incremental working capital tied up in receivables. This is simultaneously a cash flow risk (higher working capital funding costs) and a credit risk signal (suggesting some customers are pushing payment terms). If FY27 revenue grows but debtors continue expanding, operating cash flow will remain negative despite revenue recovery.</div>
+    <div class="risk-signal">Watch signal: Debtor days in quarterly balance sheets. &gt;130 days in Q2 FY27 would indicate the FY26 working capital deterioration is structural, not transient.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill" style="border-color:var(--red);">
+  The CFO departure and revenue concentration vulnerability are the two risks with the highest near-term probability and impact — both require monitoring before and during Q1 FY27 results.
+</div>
+
+<!-- ===================== CHAPTER 7 — WATCH SIGNALS ===================== -->
+<div class="ch-header" role="region" aria-labelledby="ch7-title">
+  <div class="ch-num" aria-hidden="true">7</div>
+  <div>
+    <div class="ch-eyebrow">WATCH SIGNALS + VERDICT</div>
+    <div class="ch-title" id="ch7-title">What to check in five minutes, every quarter</div>
+  </div>
+</div>
+
+<div class="watch-grid">
+  <div class="watch-card">
+    <div class="wc-num" aria-hidden="true">W1</div>
+    <div class="wc-metric">SOC/DaaS Revenue Contribution</div>
+    <div class="wc-what">Quarterly managed services and recurring revenue as % of total revenue. This is the single most important metric — it tracks whether the transition is happening at the pace the investment thesis requires.</div>
+    <div class="thresholds">
+      <div class="thresh green">GREEN: &gt;8% by Q3 FY27</div>
+      <div class="thresh amber">AMBER: 4–8% by Q3 FY27</div>
+      <div class="thresh red">RED: &lt;4% by Q3 FY27</div>
+    </div>
+  </div>
+  <div class="watch-card">
+    <div class="wc-num" aria-hidden="true">W2</div>
+    <div class="wc-metric">EBITDA Margin Recovery</div>
+    <div class="wc-what">FY26 EBITDA margin collapsed. Management targets 9–10% long-term EBITDA margins. Track whether margin is recovering toward 6% (FY25 levels) as a first step before the 9–10% target becomes credible.</div>
+    <div class="thresholds">
+      <div class="thresh green">GREEN: &gt;6% in Q2 FY27</div>
+      <div class="thresh amber">AMBER: 4–6% in Q2 FY27</div>
+      <div class="thresh red">RED: &lt;4% in Q2 FY27</div>
+    </div>
+  </div>
+  <div class="watch-card">
+    <div class="wc-num" aria-hidden="true">W3</div>
+    <div class="wc-metric">CFO Appointment &amp; Financial Governance</div>
+    <div class="wc-what">Track the replacement CFO announcement and their background. A lateral hire from a services company is better than an internal promotion. Watch whether debtor days move directionally in the first 2 quarters of FY27.</div>
+    <div class="thresholds">
+      <div class="thresh green">GREEN: Experienced CFO + debtors &lt;120 days</div>
+      <div class="thresh amber">AMBER: Delay &gt;1 quarter + stable debtors</div>
+      <div class="thresh red">RED: No appointment by Q2 + debtors rise</div>
+    </div>
+  </div>
+  <div class="watch-card">
+    <div class="wc-num" aria-hidden="true">W4</div>
+    <div class="wc-metric">Order Book Trajectory</div>
+    <div class="wc-what">Orient entered FY27 with ₹400 Cr order book vs the ₹600 Cr target it set for H2 FY26 (miss of 33%). Track whether the order book grows toward ₹500 Cr by Q2 FY27, indicating that new managed services contracts are being signed.</div>
+    <div class="thresholds">
+      <div class="thresh green">GREEN: Order book &gt;₹500 Cr by Q2 FY27</div>
+      <div class="thresh amber">AMBER: ₹400–500 Cr through FY27</div>
+      <div class="thresh red">RED: Order book &lt;₹400 Cr — net decline</div>
+    </div>
+  </div>
+  <div class="watch-card">
+    <div class="wc-num" aria-hidden="true">W5</div>
+    <div class="wc-metric">IPO Proceeds Deployment (DaaS Fleet)</div>
+    <div class="wc-what">The ₹43.75 Cr of undeployed IPO proceeds must be deployed into DaaS equipment by March 2027 per the shareholder-approved extension. Watch CARE monitoring reports and any further extension requests. DaaS revenue should begin appearing in disclosures once the fleet is active.</div>
+    <div class="thresholds">
+      <div class="thresh green">GREEN: DaaS fleet deployed + revenue visible Q2 FY27</div>
+      <div class="thresh amber">AMBER: Fleet in procurement, DaaS revenue in Q3 FY27</div>
+      <div class="thresh red">RED: Third extension request filed OR redeployment of proceeds</div>
+    </div>
+  </div>
+</div>
+
+<!-- VERDICT -->
+<div class="verdict-box" role="region" aria-label="Investment verdict">
+  <div class="vb-label">📌 VERDICT — STORY STAGE &amp; INVESTMENT ASSESSMENT</div>
+  <div class="vb-stage">CAPEX-RAMP INFLECTION · SOC/DAAS TRANSITION UNDER STRESS · PROOF-OF-CONCEPT YEAR AHEAD</div>
+  <div class="vb-text">
+    <p>Orient Technologies sits at the most uncomfortable point in a company's transformation journey: it has made the bet (Turbe SDC, DaaS fleet, South India acquisitions) and is now waiting for the revenue to justify the investment. <strong>The structural tailwinds are real and powerful</strong> — DPDPA enforcement, India's 63 million SMEs needing affordable managed security, and the Digital India infrastructure wave all directly benefit Orient's service portfolio. The quality signal in the financials, however, is mixed: ROCE has fallen to record lows, debtor days are expanding, and consecutive quarterly losses in H2 FY26 reveal a business that is not yet generating returns on its invested capital. The near-term catalyst is not difficult to identify — a single large multi-year SOC or DaaS contract win, disclosed in the Q1 FY27 concall, could demonstrate that the Turbe facility is generating paying clients and cause a meaningful re-rating. <strong>The valuation, at ~250–400x trailing PE, is a bet on the future, not the present</strong> — it is pricing in a return to ₹50 Cr PAT on a managed-services multiple of 25x, which requires both the earnings recovery AND the business-mix shift to happen simultaneously. We are in the early-middle chapter of this transition story — the infrastructure has been built, but the recurring revenue flywheel has not yet engaged. This is a high-conviction opportunity only for investors willing to give management 2–3 quarters to demonstrate that FY26's H2 was an anomaly and not a structural deterioration.</p>
+  </div>
+</div>
+
+<!-- HIGHLIGHT INDEX — ALWAYS OPEN -->
+<div id="highlight-index" role="complementary" aria-label="All highlights at a glance">
+  <div class="hi-title">📌 All Highlights at a Glance</div>
+  <ol id="highlight-list" aria-label="Document highlights">
+    <!-- Auto-populated by JavaScript -->
+  </ol>
+</div>
+
+
+<!-- ============================================================ -->
+<!-- THE LEDGER — MANAGEMENT CREDIBILITY AUDIT                   -->
+<!-- ============================================================ -->
+</div><!-- end main-wrapper Chapter Content -->
+
+<div class="section-break-ledger" role="separator" aria-label="The Ledger section divider"></div>
+
+<div class="ledger-masthead" role="region" aria-labelledby="ledger-title">
+  <div class="lm-eyebrow">NSE EQUITY RESEARCH · COMPANION PERSONA · THE LEDGER v0.2</div>
+  <h2 class="lm-h1" id="ledger-title">The Ledger — <span style="color:var(--ledger-gold)">ORIENTTECH</span></h2>
+  <div class="lm-sub">Management promises, tone and execution — tracked quarter by quarter. Capex timelines · Margin expansion · Debt and capital raising.</div>
+  <div class="lm-chips">
+    <span class="lm-chip">BASELINED: Q4 FY26 (May 2026)</span>
+    <span class="lm-chip">QUARTERS TRACKED: Q2 FY26 → Q4 FY26</span>
+    <span class="lm-chip">ACTIVE FLAGS: 6</span>
+    <span class="lm-chip">CALIBRATION RUN: July 2026</span>
+  </div>
+  <div>
+    <span class="lm-tier tier-c" role="status" aria-label="Management credibility tier C">TIER C — CREDIBILITY UNDER STRESS</span>
+  </div>
+</div>
+
+<div class="main-wrapper">
+
+<!-- LEDGER CH L0 — THE CAPITAL CHAIN -->
+<div class="ledger-ch" role="region" aria-labelledby="lch0-title">
+  <div class="lch-num" aria-hidden="true">L0</div>
+  <div>
+    <div class="lch-eyebrow">THE CAPITAL CHAIN</div>
+    <div class="lch-title" id="lch0-title">Where Orient's chain is holding — and where it has broken</div>
+  </div>
+</div>
+
+<p>Every management team in Indian mid-cap technology is promising the same story: spend on capex → build capacity → win revenue → improve margins → reduce debt → next cycle. The Ledger checks each link independently for Orient Technologies as of July 2026.</p>
+
+<div class="chain-flow" role="region" aria-label="Capital chain analysis">
+  <div class="chain-node">
+    <div class="cn-num">①</div>
+    <div class="cn-label">Capex Deployed</div>
+    <div class="cn-sub">IPO proceeds + accruals → Turbe SDC commissioned</div>
+  </div>
+  <div class="chain-node warn">
+    <div class="cn-num">②</div>
+    <div class="cn-label">Capacity Created</div>
+    <div class="cn-sub">SDC live · DaaS fleet ₹43.75 Cr STILL PENDING</div>
+  </div>
+  <div class="chain-node broken">
+    <div class="cn-num">③</div>
+    <div class="cn-label">Utilisation Ramp</div>
+    <div class="cn-sub">SOC/DaaS revenue not yet visible at scale</div>
+  </div>
+  <div class="chain-node broken">
+    <div class="cn-num">④</div>
+    <div class="cn-label">Margin Expansion</div>
+    <div class="cn-sub">EBITDA margin collapsed; ROCE record low 8.55%</div>
+  </div>
+  <div class="chain-node broken">
+    <div class="cn-num">⑤</div>
+    <div class="cn-label">Cash Flow</div>
+    <div class="cn-sub">Operating CF turned negative in FY25; losses in H2 FY26</div>
+  </div>
+  <div class="chain-node">
+    <div class="cn-num">⑥</div>
+    <div class="cn-label">Debt Position</div>
+    <div class="cn-sub">D/EBITDA 0.18x historically; low debt but deteriorating CF</div>
+  </div>
+  <div class="chain-node">
+    <div class="cn-num">⑦</div>
+    <div class="cn-label">New Cycle</div>
+    <div class="cn-sub">Not applicable — still proving current cycle</div>
+  </div>
+</div>
+
+<p style="font-size:12.5px; color:var(--muted); font-style:italic; margin-top:8px;" role="note">Red nodes indicate the chain has broken at that link. The break at Link 3 (Utilisation Ramp) is the root cause — the Turbe SDC is commissioned but not yet generating proportional revenue. Everything downstream (margins, cash flow) is broken as a consequence.</p>
+
+<!-- LEDGER CH L1 — PROMISE REGISTER -->
+<div class="ledger-ch" role="region" aria-labelledby="lch1-title">
+  <div class="lch-num" aria-hidden="true">L1</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 1 · PROMISE REGISTER</div>
+    <div class="lch-title" id="lch1-title">Every forward-looking commitment — and what happened to each</div>
+  </div>
+</div>
+
+<table class="promise-table" role="table" aria-label="Promise register tracking">
+  <tr>
+    <th>PROMISE</th>
+    <th>CATEGORY</th>
+    <th>STATED (WHEN)</th>
+    <th>LATEST ACTUAL</th>
+    <th>STATUS</th>
+  </tr>
+  <tr>
+    <td>Over 30% YoY top-line growth for next 3 years</td>
+    <td><span class="tag tag-red">Revenue/Growth</span></td>
+    <td>Post-IPO FY25; reiterated Q1 FY26</td>
+    <td>FY26 actual: +2.9% YoY (H1 +30.5%, H2 collapsed)</td>
+    <td><span class="ps-partial">PARTIAL</span></td>
+  </tr>
+  <tr>
+    <td>SOC operational by mid-Q3 FY26</td>
+    <td><span class="tag tag-teal">Capex/Capacity</span></td>
+    <td>Q2 FY26 commentary</td>
+    <td>Turbe SDC launched Q3 FY26 with NOC+SOC+Securonix</td>
+    <td><span class="ps-delivered">DELIVERED</span></td>
+  </tr>
+  <tr>
+    <td>Order book to ₹600 Cr in H2 FY26</td>
+    <td><span class="tag tag-red">Revenue/Growth</span></td>
+    <td>Pre-IPO/early FY26 guidance</td>
+    <td>FY27 opening order book: ₹400 Cr (–33% vs target)</td>
+    <td><span class="ps-miss">MISS</span></td>
+  </tr>
+  <tr>
+    <td>EBITDA margin to improve to 9–10% long-term from 6–7%</td>
+    <td><span class="tag tag-green">Margin Expansion</span></td>
+    <td>Multiple concalls FY25–FY26</td>
+    <td>FY26 EBITDA margin estimated &lt;5%; H2 losses</td>
+    <td><span class="ps-drift">DRIFTED</span></td>
+  </tr>
+  <tr>
+    <td>IPO proceeds (₹120 Cr) deployed by FY26</td>
+    <td><span class="tag tag-teal">Capex/Capacity</span></td>
+    <td>IPO prospectus August 2024</td>
+    <td>₹43.75 Cr still unutilized; shareholders approved extension to Mar 2027</td>
+    <td><span class="ps-drift">DRIFTED — 20 MONTHS</span></td>
+  </tr>
+  <tr>
+    <td>No equity dilution post-IPO (implied by OFS structure)</td>
+    <td><span class="tag tag-navy">Capital Structure</span></td>
+    <td>IPO structure; no dilution commitments stated</td>
+    <td>1:10 bonus issue (Jan 2026) — capitalisation from securities premium, technically non-dilutive</td>
+    <td><span class="ps-delivered">DELIVERED (BONUS, NOT DILUTIVE)</span></td>
+  </tr>
+  <tr>
+    <td>Double-digit revenue growth to continue (Q2 FY26)</td>
+    <td><span class="tag tag-red">Revenue/Growth</span></td>
+    <td>Q2 FY26 management commentary</td>
+    <td>Q3: –4.2% YoY; Q4: –8% QoQ. Full year +2.9% — significantly below "double-digit"</td>
+    <td><span class="ps-miss">MISS</span></td>
+  </tr>
+  <tr>
+    <td>Cash flow positive status restored (from FY25 negative)</td>
+    <td><span class="tag tag-navy">Capital Structure</span></td>
+    <td>Q1 FY26 commentary</td>
+    <td>Operating CF remained under pressure through FY26; H2 losses worsened position</td>
+    <td><span class="ps-drift">DRIFT — NOT YET RESTORED</span></td>
+  </tr>
+  <tr>
+    <td>South India expansion and acquisition (Red Hut, Athena, AIT)</td>
+    <td><span class="tag tag-teal">Operational Milestone</span></td>
+    <td>H1 FY26 strategic guidance</td>
+    <td>Completed October 2025 for ₹7.71 Cr total</td>
+    <td><span class="ps-delivered">DELIVERED</span></td>
+  </tr>
+  <tr>
+    <td>DaaS contributing significantly to recurring revenue</td>
+    <td><span class="tag tag-green">Revenue/Growth</span></td>
+    <td>IPO prospectus; Q1 FY26 guidance</td>
+    <td>DaaS equipment not yet deployed as of Q4 FY26; ₹43.75 Cr still pending</td>
+    <td><span class="ps-drift">DRIFTED — STRUCTURAL</span></td>
+  </tr>
+</table>
+
+<p style="font-size:12.5px; color:var(--muted);" role="note">Tracking window: Q2 FY24 IPO preparation through Q4 FY26 audited results (May 2026). Hit rate on hard, falsifiable commitments: approximately 3 of 10 rows Delivered; 3 Partial; 4 Miss or Drifted.</p>
+
+<!-- LEDGER CH L2 — TONE DECODER -->
+<div class="ledger-ch" role="region" aria-labelledby="lch2-title">
+  <div class="lch-num" aria-hidden="true">L2</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 2 · TONE DECODER</div>
+    <div class="lch-title" id="lch2-title">How management speaks — and what the language trajectory reveals</div>
+  </div>
+</div>
+
+<table class="data-table" role="table" aria-label="Tone analysis across quarters">
+  <tr>
+    <th>QUARTER</th>
+    <th class="teal">CONFIDENCE SIGNALS</th>
+    <th class="amber">HEDGE/QUALIFIER SIGNALS</th>
+    <th class="teal">MISS ATTRIBUTION</th>
+    <th class="teal">TREND</th>
+  </tr>
+  <tr>
+    <td><strong>Q2 FY26</strong></td>
+    <td>"Consistent growth driven by execution capabilities," "strong double-digit growth to continue," "SOC nearing commercialization"</td>
+    <td>Minimal hedging — language is positive and unqualified</td>
+    <td>No misses to attribute; strong quarter</td>
+    <td style="color:var(--green)">High confidence, unhedged</td>
+  </tr>
+  <tr>
+    <td><strong>Q3 FY26</strong></td>
+    <td>"Continued to prioritize contractual commitments," "strategically important wins"</td>
+    <td>"Temporary margin pressure," "market-wide challenges," "supply chain headwinds affecting the industry"</td>
+    <td>Loss attributed to: (1) global semiconductor shortage, (2) large hyperscaler client loss — framed as external/temporary</td>
+    <td style="color:var(--amber)">Qualifier creep; attribution shift — misses externalized</td>
+  </tr>
+  <tr>
+    <td><strong>Q4 FY26</strong></td>
+    <td>"SOC and DaaS well positioned for recovery," "managed services focus remains core"</td>
+    <td>"Short-term headwinds," "margin normalization in progress," "recovery trajectory"</td>
+    <td>Consecutive loss in Q4 still attributed to supply chain; no acknowledgment of structural revenue concentration risk</td>
+    <td style="color:var(--red)">Guidance withdrawal on specific numbers; "recovery" language replacing hard targets</td>
+  </tr>
+</table>
+
+<div class="lead-block amber" role="note">
+  <strong>Tone Pattern Alert — Qualifier Creep + Attribution Shift:</strong> Management language moved from confident specificity (Q2: "30%+ growth for 3 years") to vague recovery framing (Q4: "short-term headwinds," "margin normalization in progress"). The Q3 and Q4 misses were consistently attributed to external factors (semiconductor shortages, hyperscaler client loss) without acknowledging the structural revenue concentration vulnerability this reveals. This is a classic Attribution Shift red flag.
+</div>
+
+<!-- LEDGER CH L3 — EXECUTION DELTA -->
+<div class="ledger-ch" role="region" aria-labelledby="lch3-title">
+  <div class="lch-num" aria-hidden="true">L3</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 3 · EXECUTION DELTA</div>
+    <div class="lch-title" id="lch3-title">Promise vs. reality — what was promised and what arrived</div>
+  </div>
+</div>
+
+<div class="two-col">
+  <div>
+    <div class="sub-label">Delivered on time / as promised</div>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--green); font-weight:700;">✓</span> Turbe SDC and SOC launched on schedule (mid-Q3 FY26 as guided)</li>
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--green); font-weight:700;">✓</span> South India acquisitions (Red Hut, Athena IT, AIT) completed October 2025</li>
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--green); font-weight:700;">✓</span> 1:10 bonus share issue completed (January 2026)</li>
+      <li style="padding:6px 0; font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--green); font-weight:700;">✓</span> H1 FY26 revenue growth of 30.5% YoY</li>
+    </ul>
+  </div>
+  <div>
+    <div class="sub-label">Missed / drifted</div>
+    <ul style="list-style:none; padding:0;">
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--red); font-weight:700;">✗</span> Full-year revenue growth (+2.9% vs 30%+ guided)</li>
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--red); font-weight:700;">✗</span> Order book of ₹600 Cr (achieved ₹400 Cr entering FY27)</li>
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--red); font-weight:700;">✗</span> IPO proceeds deployment (₹43.75 Cr deferred 20 months)</li>
+      <li style="padding:6px 0; border-bottom:1px dotted var(--rule); font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--red); font-weight:700;">✗</span> Cash flow restoration (remained negative)</li>
+      <li style="padding:6px 0; font-size:13px; color:#334155; display:flex; gap:8px;" role="listitem"><span style="color:var(--red); font-weight:700;">✗</span> EBITDA margin improvement (fell further from 6–7% baseline)</li>
+    </ul>
+  </div>
+</div>
+
+<!-- LEDGER CH L4 — CAPEX TIMELINE TRACKER -->
+<div class="ledger-ch" role="region" aria-labelledby="lch4-title">
+  <div class="lch-num" aria-hidden="true">L4</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 4 · CAPEX TIMELINE TRACKER</div>
+    <div class="lch-title" id="lch4-title">Project-level tracking — schedule, budget, and revenue unlock</div>
+  </div>
+</div>
+
+<div class="flag-grid">
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-clock-pause" aria-hidden="true"></i> SLOW PACING — DaaS FLEET</div>
+    <div class="flag-what">₹43.75 Cr of IPO proceeds designated for DaaS equipment procurement remained undeployed as of Q4 FY26 — 20 months after the August 2024 IPO. The original deployment target was FY26; shareholders approved an extension to March 2027.</div>
+    <div class="flag-evidence">Evidence: CARE monitoring report Q4 FY26 shows NIL deviation but confirms unutilised amount. Shareholders EGM approved extension March 2026.</div>
+  </div>
+  <div class="flag-card watch">
+    <div class="flag-name"><i class="ti ti-chart-line" aria-hidden="true"></i> PHANTOM REVENUE BRIDGE — SOC</div>
+    <div class="flag-what">The Turbe SOC facility was commissioned on schedule in Q3 FY26 with Securonix-powered capabilities. However, no specific SOC revenue contribution has been disclosed in concall or results commentary. The facility is live; the revenue from it is not yet visible in financials.</div>
+    <div class="flag-evidence">Evidence: Depreciation doubled to ₹6.37 Cr in Q4 FY26 (facility on balance sheet), but no SOC-specific revenue break disclosed. Watch for 2 quarters post-commissioning: Q1–Q2 FY27.</div>
+  </div>
+</div>
+
+<blockquote role="note">
+  The most important capex tracking question for FY27: does the Turbe SOC generate ₹20+ Cr of annual recurring managed security contracts by Q3 FY27? If not, ₹6 Cr per quarter of depreciation with no proportional revenue is the definition of "Phantom Revenue Bridge" — the second-most dangerous flag in the Ledger taxonomy.
+</blockquote>
+
+<!-- LEDGER CH L5 — MARGIN TRACKER -->
+<div class="ledger-ch" role="region" aria-labelledby="lch5-title">
+  <div class="lch-num" aria-hidden="true">L5</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 5 · MARGIN EXPANSION TRACKER</div>
+    <div class="lch-title" id="lch5-title">Management's margin mechanism — and whether it is working</div>
+  </div>
+</div>
+
+<div class="lead-block" role="note">
+  Orient's stated margin mechanism: <strong>Operating leverage</strong> (higher revenue absorbing fixed costs + Turbe SDC overhead) + <strong>Product Mix Shift</strong> (managed services/SOC replacing hardware reselling) + <strong>Cost Efficiency</strong> (scale benefits in OEM procurement and service delivery). The target: EBITDA margins expanding from 6–7% to 9–10% over "the medium term."
+</div>
+
+<table class="data-table" role="table" aria-label="Margin mechanism tracking">
+  <tr>
+    <th>MECHANISM</th>
+    <th class="green">MANAGEMENT'S CLAIM</th>
+    <th class="green">ACTUAL RESULT (FY26)</th>
+    <th class="green">FLAG STATUS</th>
+  </tr>
+  <tr>
+    <td><strong>Operating Leverage</strong></td>
+    <td>"Margins improve as revenue scales past ₹800–1,000 Cr run-rate"</td>
+    <td>Revenue at ₹871 Cr but margins collapsed, not improved. Fixed cost base (depreciation ₹6.37 Cr/quarter, overheads) grew faster than revenue in H2 FY26</td>
+    <td><span class="tag tag-red">MECHANISM FAILURE</span></td>
+  </tr>
+  <tr>
+    <td><strong>Product Mix Shift</strong></td>
+    <td>"Managed services and cybersecurity growing faster, lifting blended margin"</td>
+    <td>Mix shift aspirational — SOC and DaaS contribution not yet material. Product revenue still dominant and below FY25 pace in H2</td>
+    <td><span class="tag tag-amber">MIX DELAY LOOP — ACTIVE</span></td>
+  </tr>
+  <tr>
+    <td><strong>Input Cost / Supply Chain</strong></td>
+    <td>"Semiconductor disruptions are temporary; procurement normalizing"</td>
+    <td>Supply disruptions caused two consecutive loss-making quarters. Input cost normalisation claimed from Q1 FY27 onwards — needs verification</td>
+    <td><span class="tag tag-amber">ONE-TIME ETERNAL — 2 QUARTERS</span></td>
+  </tr>
+  <tr>
+    <td><strong>Floor Statement Integrity</strong></td>
+    <td>FY25: "6–7% EBITDA is our operating baseline, improving to 9–10%"</td>
+    <td>FY26 H2 implied EBITDA margin: Q3 approximately 1.4%, Q4 approximately 2.4%. The "6–7% floor" was breached significantly</td>
+    <td><span class="tag tag-red">FLOOR DRIFT — ACTIVE</span></td>
+  </tr>
+</table>
+
+<div class="flag-grid">
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-trending-down" aria-hidden="true"></i> FLOOR DRIFT — CONFIRMED</div>
+    <div class="flag-what">Management's stated "6–7% EBITDA baseline" was breached in both Q3 and Q4 FY26. The stated floor has drifted significantly downward. No formal reset of the margin floor guidance was announced — management continues to reference "9–10% long-term" without acknowledging the short-term collapse.</div>
+    <div class="flag-evidence">Q3 FY26 EBITDA ex-OI: ~1.4%. Q4 FY26: ~2.4%. Prior stated floor: 6–7%.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-trending-down" aria-hidden="true"></i> MIX DELAY LOOP — ACTIVE</div>
+    <div class="flag-what">The high-margin managed services / SOC segment was described as "growing strongly" and a "key driver" across multiple quarters — but its actual revenue contribution remains too small to have a measurable effect on blended EBITDA margins through FY26. The mix is not shifting at the speed required for the margin thesis to hold.</div>
+    <div class="flag-evidence">No specific SOC/DaaS revenue break disclosed in FY26 financials; blended margin collapsed despite claimed high-margin segment growth.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-trending-down" aria-hidden="true"></i> ONE-TIME ETERNAL — H2 FY26</div>
+    <div class="flag-what">Supply chain disruption described as "temporary" in Q3 was still impacting Q4 results. Two consecutive quarters of the same "one-time" disruption begins to look structural. Management maintained the "external/temporary" framing across both quarters without quantifying the specific inventory or revenue impact.</div>
+    <div class="flag-evidence">Q3: "temporary margin pressure from supply disruptions." Q4: "recovery trajectory in progress, headwinds continuing." 2 quarters = approaching structural classification.</div>
+  </div>
+</div>
+
+<!-- LEDGER CH L6 — CAPITAL STRUCTURE TRACKER -->
+<div class="ledger-ch" role="region" aria-labelledby="lch6-title">
+  <div class="lch-num" aria-hidden="true">L6</div>
+  <div>
+    <div class="lch-eyebrow">PILLAR 6 · CAPITAL STRUCTURE TRACKER</div>
+    <div class="lch-title" id="lch6-title">Debt discipline, dilution promises, and working capital integrity</div>
+  </div>
+</div>
+
+<table class="data-table" role="table" aria-label="Capital structure tracking">
+  <tr>
+    <th>DIMENSION</th>
+    <th class="navy">PROMISED / BASELINE</th>
+    <th class="navy">ACTUAL (FY26)</th>
+    <th class="navy">FLAG</th>
+  </tr>
+  <tr>
+    <td><strong>Gross Debt</strong></td>
+    <td>Near-zero debt — average D/EBITDA 0.18x historically (strong interest coverage 23x)</td>
+    <td>Finance costs rose to ₹2.17 Cr in Q4 FY26 — low absolute level, but directionally increasing as EBITDA collapsed</td>
+    <td><span class="tag tag-green">CLEAN — DEBT WELL MANAGED</span></td>
+  </tr>
+  <tr>
+    <td><strong>Equity Dilution</strong></td>
+    <td>No dilutive equity raise stated; IPO was part OFS (existing shareholders exiting)</td>
+    <td>1:10 bonus share issued Jan 2026 (capitalisation from securities premium — non-dilutive). No QIP or rights issue post-IPO. CEO acquired 2.6% stake from promoters via off-market transfer at market price</td>
+    <td><span class="tag tag-green">CLEAN — NO STEALTH DILUTION</span></td>
+  </tr>
+  <tr>
+    <td><strong>Working Capital</strong></td>
+    <td>Efficient working capital management implied by strong ROCE history</td>
+    <td>Debtor days expanded from 101 → 126 in FY26. FY25 saw ₹60 Cr working capital build-up, turning operating cash flow negative at –₹11 Cr</td>
+    <td><span class="tag tag-amber">WORKING CAPITAL MASKING — WATCH</span></td>
+  </tr>
+  <tr>
+    <td><strong>IPO Proceeds Deployment</strong></td>
+    <td>₹120 Cr to be deployed by FY26 into NOC/SOC and DaaS equipment</td>
+    <td>₹43.75 Cr (36.5% of fresh issue) still unutilised; extension approved to Mar 2027</td>
+    <td><span class="tag tag-amber">IPO UTILISATION DELAY — 20 MONTHS</span></td>
+  </tr>
+  <tr>
+    <td><strong>Promoter Pledge</strong></td>
+    <td>Not publicly disclosed; promoter holding 70.6% — a high-comfort baseline</td>
+    <td>No pledging reported in available sources; promoter holding fell 2.58% in last quarter (CEO acquisition via off-market transfer, not pledge)</td>
+    <td><span class="tag tag-green">NO PLEDGE FLAGS DETECTED</span></td>
+  </tr>
+  <tr>
+    <td><strong>CFO Continuity</strong></td>
+    <td>Post-IPO financial governance stability</td>
+    <td>CFO resigned effective June 25, 2026 — vacancy at a critical financial transition moment</td>
+    <td><span class="tag tag-red">CFO DEPARTURE — HIGH SEVERITY</span></td>
+  </tr>
+</table>
+
+<div class="flag-card active" style="margin-top:16px;" role="alert">
+  <div class="flag-name"><i class="ti ti-building-bank" aria-hidden="true"></i> CFO DEPARTURE — HIGHEST SEVERITY CAPITAL STRUCTURE FLAG</div>
+  <div class="flag-what">The CFO resigned effective June 25, 2026. This is not routine management attrition — it is a departure at precisely the moment when Orient is: (1) deploying remaining IPO proceeds, (2) integrating three recently acquired entities, (3) launching new service lines that require precise cost tracking, and (4) navigating a CARE monitoring process for IPO utilisation compliance. The combination of CFO vacancy and the existing working capital deterioration is the most material near-term governance risk in the ORIENTTECH story.</div>
+  <div class="flag-evidence">Source: Board approvals and corporate disclosures, June 2026. No replacement announced as of research date.</div>
+</div>
+
+<!-- LEDGER CH L7 — ACTIVE FLAGS MASTER LIST -->
+<div class="ledger-ch" role="region" aria-labelledby="lch7-title">
+  <div class="lch-num" aria-hidden="true">L7</div>
+  <div>
+    <div class="lch-eyebrow">ACTIVE FLAGS DASHBOARD</div>
+    <div class="lch-title" id="lch7-title">All six active flags — severity and resolution conditions</div>
+  </div>
+</div>
+
+<div class="flag-grid">
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-alert-triangle" aria-hidden="true"></i> H2 MIRAGE — CONFIRMED</div>
+    <div class="flag-what">H1 FY26: revenue +30.5% YoY, PAT positive. H2 FY26: consecutive losses in Q3 and Q4. Management attributed to external factors. H2 was structurally weaker than the strong H1 implied, and the shortfall was not disclosed proactively.</div>
+    <div class="flag-evidence">Resolution condition: Q1 + Q2 FY27 each profitable with positive EBITDA margins above 5%.</div>
+  </div>
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-alert-triangle" aria-hidden="true"></i> REVENUE CONCENTRATION MISS</div>
+    <div class="flag-what">Loss of one large hyperscaler cloud client in Q3 FY26 caused a quarterly net loss. Single-client departure causing a loss-quarter is textbook concentration risk. The order book guide of ₹600 Cr was missed by 33%.</div>
+    <div class="flag-evidence">Resolution condition: Order book &gt;₹500 Cr by Q2 FY27 with no single client &gt;15% of revenue.</div>
+  </div>
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-alert-triangle" aria-hidden="true"></i> GUIDANCE WITHDRAWAL</div>
+    <div class="flag-what">After the Q3 and Q4 misses, specific financial guidance (30%+ growth, ₹600 Cr order book) was replaced by directional/recovery language. No hard targets were restated for FY27 in the Q4 FY26 results commentary. This meets the definition of Guidance Withdrawal.</div>
+    <div class="flag-evidence">Resolution condition: Management provides a specific FY27 revenue or PAT target in the Q1 FY27 concall.</div>
+  </div>
+  <div class="flag-card active">
+    <div class="flag-name"><i class="ti ti-building-bank" aria-hidden="true"></i> CFO DEPARTURE</div>
+    <div class="flag-what">See L6 above. CFO resigned June 2026 with no announced replacement. Critical governance risk during capital deployment, integration, and CARE monitoring phases.</div>
+    <div class="flag-evidence">Resolution condition: Experienced CFO appointed within Q1 FY27, with clear mandate covering IPO compliance, integration, and debtors management.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-alert-triangle" aria-hidden="true"></i> WORKING CAPITAL MASKING</div>
+    <div class="flag-what">Debtor days expanded from 101 to 126 in FY26 while management described the balance sheet as "strong." The working capital build-up (estimated ₹60 Cr in FY25 alone) turned operating cash flow negative. Net cash position is being eroded by receivables expansion, not just capex deployment.</div>
+    <div class="flag-evidence">Resolution condition: Debtor days falling below 110 days in FY27. Operating cash flow returning to positive.</div>
+  </div>
+  <div class="flag-card warn">
+    <div class="flag-name"><i class="ti ti-alert-triangle" aria-hidden="true"></i> IPO UTILISATION DELAY</div>
+    <div class="flag-what">₹43.75 Cr of IPO proceeds (for DaaS equipment) remain undeployed 20 months post-IPO. The CARE monitoring agency confirms NIL deviation, but the original deployment commitment has been extended. The DaaS revenue that this equipment is supposed to generate is therefore also delayed by at least 12–18 months from original projections.</div>
+    <div class="flag-evidence">Resolution condition: CARE report Q1 or Q2 FY27 confirms deployment. DaaS revenue visible in quarterly financials.</div>
+  </div>
+</div>
+
+<!-- LEDGER CH L8 — CREDIBILITY SCORECARD -->
+<div class="ledger-ch" role="region" aria-labelledby="lch8-title">
+  <div class="lch-num" aria-hidden="true">L8</div>
+  <div>
+    <div class="lch-eyebrow">COMPOSITE CREDIBILITY SCORE</div>
+    <div class="lch-title" id="lch8-title">Seven-dimension scoring — Tier C justified by convergent failures</div>
+  </div>
+</div>
+
+<div class="score-card" role="region" aria-label="Credibility scorecard">
+  <div class="sc-label">MANAGEMENT CREDIBILITY COMPOSITE — ORIENTTECH · JULY 2026</div>
+  <div class="sc-dims">
+    <div class="sc-dim">
+      <div class="sc-dim-name">Promise Hit Rate (25%)</div>
+      <div class="sc-dim-score score-c">C — 30% hit rate on hard falsifiable targets</div>
+      <div class="sc-bar"><div class="sc-fill fill-c" style="width:30%"></div></div>
+    </div>
+    <div class="sc-dim">
+      <div class="sc-dim-name">Capex Execution Rate (20%)</div>
+      <div class="sc-dim-score score-b">B — SOC delivered on time; DaaS fleet delayed</div>
+      <div class="sc-bar"><div class="sc-fill fill-b" style="width:60%"></div></div>
+    </div>
+    <div class="sc-dim">
+      <div class="sc-dim-name">Margin Mechanism Fidelity (15%)</div>
+      <div class="sc-dim-score score-d">D — Mechanism Failure confirmed: operating leverage not working; Floor Drift; Mix Delay Loop</div>
+      <div class="sc-bar"><div class="sc-fill fill-d" style="width:15%"></div></div>
+    </div>
+    <div class="sc-dim">
+      <div class="sc-dim-name">Capital Structure Integrity (15%)</div>
+      <div class="sc-dim-score score-b">B — No dilution, low debt; CFO departure, working capital expansion are concerns</div>
+      <div class="sc-bar"><div class="sc-fill fill-b" style="width:55%"></div></div>
+    </div>
+    <div class="sc-dim">
+      <div class="sc-dim-name">Specificity &amp; Attribution (15%)</div>
+      <div class="sc-dim-score score-c">C — Misses externalized to supply chain; guidance withdrawal after Q3; attribution shift confirmed</div>
+      <div class="sc-bar"><div class="sc-fill fill-c" style="width:40%"></div></div>
+    </div>
+    <div class="sc-dim">
+      <div class="sc-dim-name">Q&amp;A Quality (10%)</div>
+      <div class="sc-dim-score score-c">C — Limited public concall data; no evidence of direct analyst engagement on hard questions</div>
+      <div class="sc-bar"><div class="sc-fill fill-c" style="width:45%"></div></div>
+    </div>
+  </div>
+  <div style="margin-top:18px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.1);">
+    <div class="sc-label">COMPOSITE TIER</div>
+    <div style="font-family:var(--mono); font-size:16px; color:var(--amber); font-weight:700; margin-top:6px;" role="status">TIER C — CREDIBILITY UNDER STRESS</div>
+    <div style="font-size:13px; color:#94A3B8; margin-top:8px; line-height:1.65;">Tier C is assigned when: (1) hard guidance is missed significantly in two or more consecutive quarters, (2) margin mechanisms are verifiably not working, (3) capital structure events introduce governance uncertainty, and (4) attribution shifts from internal ownership to external factors. Orient meets all four criteria as of Q4 FY26. A Tier B recovery requires: ≥2 quarters of PAT profitability, SOC revenue visible in disclosures, CFO appointment, and a return of specific (rather than directional) financial guidance.</div>
+  </div>
+</div>
+
+<!-- LEDGER VERDICT -->
+<div class="ledger-verdict" role="region" aria-labelledby="ledger-verdict-title">
+  <div class="lv-label" id="ledger-verdict-title">📋 THE LEDGER VERDICT — ORIENT TECHNOLOGIES · JULY 2026</div>
+  <div class="lv-text">
+    <p>Orient Technologies enters FY27 as a company whose narrative is intact but whose credibility is under stress. The six active flags — H2 Mirage, Revenue Concentration Miss, Guidance Withdrawal, CFO Departure, Working Capital Masking, and IPO Utilisation Delay — are not individually catastrophic, but their simultaneous appearance in a single fiscal year is a meaningful signal. <strong>This is not a management team that deceives; it is a management team that over-promised and has not yet caught up with its own ambition.</strong> The IPO was priced for a company that was already executing the managed-services transition; the FY26 results showed a company still in the early stages of that transition, with the product business exposed to semiconductor disruptions and client concentration risk that were not adequately flagged to investors. The most material near-term development to watch is not the order book or margin recovery — it is the CFO appointment. A strong, experienced CFO who can navigate the remaining IPO proceeds deployment, the integration of South India acquisitions, the debtors clean-up, and the CARE monitoring process is the single most important hire Orient can make in FY27. Until that appointment is confirmed, the governance dimension of this investment carries a higher risk premium than the financial dimension warrants. The Ledger will upgrade to Tier B when the CFO is appointed, debtors are below 115 days, and SOC revenue is explicitly disclosed in at least one quarterly result.</p>
+  </div>
+</div>
+
+<div class="ledger-strip-line" role="complementary">
+  <div class="lsl-label">🗒 MGMT QUICK LINE — FOR QUICK-SCAN REFERENCE</div>
+  <strong>TIER C — Credibility Under Stress.</strong> Active flags: H2 Mirage · Revenue Concentration Miss · Guidance Withdrawal · CFO Departure · Working Capital Masking · IPO Utilisation Delay. Next upgrade trigger: CFO appointment + SOC revenue disclosure + debtors &lt;115 days.
+</div>
+
+</div><!-- end main-wrapper Ledger -->
+
+<footer role="contentinfo">
+  <span>NSE INVESTOR STORY + THE LEDGER · NSE: ORIENTTECH · ORIENT TECHNOLOGIES LIMITED</span>
+  <span>RESEARCH DATE: JULY 2026 · CONFIDENTIAL / PERSONAL USE ONLY</span>
+  <span>NOT SEBI-REGISTERED INVESTMENT ADVICE</span>
+</footer>
+
+<script>
+/* ===== DARK MODE ===== */
+function toggleDark() {
+  document.body.classList.toggle('dark');
+  localStorage.setItem('orienttech_dark', document.body.classList.contains('dark'));
+}
+if (localStorage.getItem('orienttech_dark') === 'true') {
+  document.body.classList.add('dark');
+}
+
+/* ===== HIGHLIGHT INDEX AUTO-POPULATE ===== */
+document.addEventListener('DOMContentLoaded', () => {
+  const list = document.getElementById('highlight-list');
+  if (!list) return;
+  const selectors = '.hl-key, .hl-number, .hl-risk, .hl-catalyst, .takeaway-pill';
+  document.querySelectorAll(selectors).forEach(el => {
+    const li = document.createElement('li');
+    const text = el.textContent.trim();
+    if (text.length < 5) return;
+    li.textContent = text;
+    const cls = [...el.classList].find(c => c.startsWith('hl-') || c === 'takeaway-pill') || '';
+    li.setAttribute('data-type', cls);
+    list.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>
