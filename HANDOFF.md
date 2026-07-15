@@ -9,6 +9,15 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-07-15 by Claude Code, ZLEMA25 Trend Labels stats box (commit `c523062`):
+
+- `pine_scripts/ZLEMA25_Trend_Labels.pine` — new middle-right stats table: ZLEMA25 + EMA20
+  current-uptrend age (bars) and % since trend start; `—` when a line is not rising. EMA20
+  stats mirror the ZLEMA25 convention (% base = close of bar before turn-up bar). Vertical
+  nudge via "Empty rows above/below" pad inputs (pad cells use `" "` — empty text collapses
+  to zero height). Existing labels/barcolor untouched. Pending: user compile/visual check on
+  TradingView. Spec: `docs/superpowers/specs/2026-07-15-zlema25-stats-box-design.md`.
+
 Updated 2026-07-15 by Claude Code, EMA25 ZL scanner WT-parity symbol tags:
 
 - `ema25_zl_scanner.py` brought on par with `wt_bullcross_scanner.py` info density:
