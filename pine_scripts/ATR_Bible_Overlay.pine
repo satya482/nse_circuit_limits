@@ -131,3 +131,102 @@ plotshape(showExitWarn and dist3Day, "Distribution", style=shape.arrowdown, loca
 plotshape(showNseFlags and circuitSuspect, "Circuit Suspect", style=shape.circle, location=location.abovebar, color=#FF8800, text="⚡", size=size.small)
 plotshape(showNseFlags and specSuspect, "SPEC Suspect", style=shape.square, location=location.abovebar, color=#FF8800, text="₹", size=size.tiny)
 plotshape(showNseFlags and epSeason and not epSeason[1], "EP Season Open", style=shape.flag, location=location.top, color=#D29922, text="EP WIN", size=size.small)
+
+// ─────────────── ₹ FORMAT HELPER ───────────────
+fmtInr(float v) =>
+    str.format("₹{0,number,#,###.##}", v)
+
+// ─────────────── STOP / ENTRY / TARGET LINES (spec 4.4) ───────────────
+var line stopLine  = na
+var line entryLine = na
+var line t1Line    = na
+var line t2Line    = na
+var line t3Line    = na
+var label stopLbl  = na
+var label entryLbl = na
+var label t1Lbl    = na
+var label t2Lbl    = na
+var label t3Lbl    = na
+
+if barstate.islast
+    line.delete(stopLine)
+    line.delete(entryLine)
+    line.delete(t1Line)
+    line.delete(t2Line)
+    line.delete(t3Line)
+    label.delete(stopLbl)
+    label.delete(entryLbl)
+    label.delete(t1Lbl)
+    label.delete(t2Lbl)
+    label.delete(t3Lbl)
+    x2 = bar_index + lineExtendBars
+    if showStops or showTargets
+        entryLine := line.new(bar_index, ep, x2, ep, color=#E6EDF3, width=1, style=line.style_dashed)
+        entryLbl  := label.new(x2, ep, "ENTRY " + fmtInr(ep) + " · " + setupType, style=label.style_label_left, color=color.new(#21262D, 40), textcolor=#E6EDF3, size=size.small)
+    if showStops
+        stopLine := line.new(bar_index, stopLvl, x2, stopLvl, color=#F85149, width=2)
+        stopLbl  := label.new(x2, stopLvl, "STOP " + fmtInr(stopLvl) + " (−" + fmtInr(stopAmt) + " / share)", style=label.style_label_left, color=color.new(#2A1010, 40), textcolor=#F85149, size=size.small)
+    if showTargets
+        t1Line := line.new(bar_index, t1, x2, t1, color=#2D6A3F, width=1, style=line.style_dotted)
+        t1Lbl  := label.new(x2, t1, "T1 " + fmtInr(t1) + " · +3R · Sell 50%", style=label.style_label_left, color=color.new(#0D1F10, 40), textcolor=#2D6A3F, size=size.small)
+        t2Line := line.new(bar_index, t2, x2, t2, color=#3FB950, width=1, style=line.style_dashed)
+        t2Lbl  := label.new(x2, t2, "T2 " + fmtInr(t2) + " · +5R · Sell 25%", style=label.style_label_left, color=color.new(#0D1F10, 40), textcolor=#3FB950, size=size.small)
+        t3Line := line.new(bar_index, t3, x2, t3, color=#7FE09F, width=2)
+        t3Lbl  := label.new(x2, t3, "T3 " + fmtInr(t3) + " · +8R · Trail", style=label.style_label_left, color=color.new(#0D1F10, 40), textcolor=#7FE09F, size=size.small)
+
+// ─────────────── DASHBOARD TABLE (spec 4.6) ───────────────
+dashPosition = dashPos == "top_left" ? position.top_left : dashPos == "bottom_right" ? position.bottom_right : position.top_right
+var table dash = table.new(dashPosition, 2, 13, bgcolor=#0D1117, border_color=#30363D, border_width=1, frame_color=#58A6FF, frame_width=1)
+
+// Palette
+COL_HDR_BG    = #1C2128
+COL_HDR_TX    = #58A6FF
+COL_LBL_BG    = #161B22
+COL_LBL_TX    = #8B949E
+COL_SQZ_BG    = #1A4228
+COL_SQZ_TX    = #3FB950
+COL_OVR_BG    = #3D1A1A
+COL_OVR_TX    = #F85149
+COL_STOP_BG   = #2A1010
+COL_TGT_BG    = #0D1F10
+COL_NORM_BG   = #21262D
+COL_NORM_TX   = #E6EDF3
+COL_FLAG_BG   = #2A1A00
+COL_FLAG_TX   = #FF8800
+
+if barstate.islast and showDashboard
+    table.clear(dash, 0, 0, 1, 12)
+    inSqueeze = not na(cr) and cr < crBuild
+    overExt   = not na(cr) and cr > crDanger
+    crBg = inSqueeze ? COL_SQZ_BG : overExt ? COL_OVR_BG : COL_NORM_BG
+    crTx = inSqueeze ? COL_SQZ_TX : overExt ? COL_OVR_TX : COL_NORM_TX
+    table.cell(dash, 0, 0, "ATR BIBLE · " + setupType, bgcolor=COL_HDR_BG, text_color=COL_HDR_TX, text_size=size.small)
+    table.cell(dash, 1, 0, syminfo.ticker,             bgcolor=COL_HDR_BG, text_color=COL_HDR_TX, text_size=size.small)
+    table.cell(dash, 0, 1, "ATR(" + str.tostring(atrFast) + ")", bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 1, fmtInr(atr10),              bgcolor=COL_NORM_BG, text_color=COL_NORM_TX, text_size=size.small)
+    table.cell(dash, 0, 2, "ATR(" + str.tostring(atrSlow) + ")", bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 2, fmtInr(atr50),              bgcolor=COL_NORM_BG, text_color=COL_NORM_TX, text_size=size.small)
+    table.cell(dash, 0, 3, "CR",                       bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 3, (na(cr) ? "—" : str.format("{0,number,#.##}", cr)) + " · " + crState, bgcolor=crBg, text_color=crTx, text_size=size.small)
+    table.cell(dash, 0, 4, "VERDICT",                  bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 4, rajanVerdict,               bgcolor=crBg, text_color=crTx, text_size=size.small)
+    table.cell(dash, 0, 5, "STOP (−" + str.tostring(stopMult, "#.#") + "×ATR)", bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 5, fmtInr(stopLvl) + " / Risk " + fmtInr(stopAmt) + "/sh", bgcolor=COL_STOP_BG, text_color=COL_OVR_TX, text_size=size.small)
+    table.cell(dash, 0, 6, "POSITION SIZE",            bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 6, stopAmt > 0 ? str.tostring(shares) + " shares · " + fmtInr(posValue) : "INVALID SETUP", bgcolor=COL_NORM_BG, text_color=stopAmt > 0 ? COL_NORM_TX : COL_OVR_TX, text_size=size.small)
+    table.cell(dash, 0, 7, "T1 (3× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 7, fmtInr(t1) + " · " + str.tostring(rT1, "#.#") + "R · Sell 50%", bgcolor=COL_TGT_BG, text_color=#2D6A3F, text_size=size.small)
+    table.cell(dash, 0, 8, "T2 (5× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 8, fmtInr(t2) + " · " + str.tostring(rT2, "#.#") + "R · Sell 25%", bgcolor=COL_TGT_BG, text_color=#3FB950, text_size=size.small)
+    table.cell(dash, 0, 9, "T3 (8× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
+    table.cell(dash, 1, 9, fmtInr(t3) + " · " + str.tostring(rT3, "#.#") + "R · Trail", bgcolor=COL_TGT_BG, text_color=#7FE09F, text_size=size.small)
+    // NSE flag rows (spec 4.6) — only when detected and toggle on
+    if showNseFlags and circuitSuspect
+        table.cell(dash, 0, 10, "⚡ [CIRCUIT]", bgcolor=COL_FLAG_BG, text_color=COL_FLAG_TX, text_size=size.small)
+        table.cell(dash, 1, 10, "ATR unreliable today", bgcolor=COL_FLAG_BG, text_color=COL_FLAG_TX, text_size=size.small)
+    if showNseFlags and specSuspect
+        table.cell(dash, 0, 11, "[SPEC]", bgcolor=COL_FLAG_BG, text_color=COL_FLAG_TX, text_size=size.small)
+        table.cell(dash, 1, 11, "Low notional. Half size.", bgcolor=COL_FLAG_BG, text_color=COL_FLAG_TX, text_size=size.small)
+    if showNseFlags and epSeason
+        table.cell(dash, 0, 12, "[EP WIN]", bgcolor=COL_FLAG_BG, text_color=#D29922, text_size=size.small)
+        table.cell(dash, 1, 12, "Results season. Highest EP rate.", bgcolor=COL_FLAG_BG, text_color=#D29922, text_size=size.small)
