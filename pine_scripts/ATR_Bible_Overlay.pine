@@ -1,0 +1,133 @@
+//@version=6
+indicator("ATR Bible · Overlay [Rajan Mehta]",
+     shorttitle       = "ATRB-OV",
+     overlay          = true,
+     max_lines_count  = 10,
+     max_labels_count = 10)
+// ATR Bible suite, Script A (research/atr-bible-pinescript-spec.md).
+// Colors candles by ATR(10)/ATR(50) Compression Ratio state, draws stop /
+// entry / T1-T3 target lines with fixed-INR position sizing, dashboard table,
+// squeeze / exit / distribution signals, NSE flags (circuit / low-notional /
+// EP season). entryPx=0 -> live scan mode (lines follow close); entryPx>0 ->
+// trade mode (lines locked to entry).
+// Companion: pine_scripts/ATR_Bible_Panel.pine (run below chart; set Group 1
+// + Group 3 inputs identically in both).
+// Alert format: SIGNAL_TYPE|{{ticker}}|description|TF:{{interval}} — dynamic
+// values via {{plot("CR")}} etc. hidden plots. 7 alertconditions (Task 3).
+// DELIBERATE DEVIATIONS from the spec: v6 not v5 (repo rule); camelCase
+// inputs; pipe-delimited alerts; NSE-flag booleans not gated on the display
+// toggle (toggle gates display only, so alerts stay pure); table/lines
+// updated on barstate.islast only.
+
+// ─────────────── GROUP 1 · ATR CORE (match Panel) ───────────────
+atrFast = input.int(10, "ATR Fast Period", minval=1, group="ATR Core")
+atrSlow = input.int(50, "ATR Slow Period", minval=1, group="ATR Core")
+
+// ─────────────── GROUP 2 · POSITION SETUP ───────────────
+riskInr   = input.float(15000.0, "Risk Per Trade (₹)", minval=0.0, group="Position Setup")
+entryPx   = input.float(0.0, "Entry Price (0 = current close)", minval=0.0, group="Position Setup")
+setupType = input.string("1PB", "Setup Type", options=["VCP", "1PB", "GRIND", "3WT", "EP"], group="Position Setup")
+
+// ─────────────── GROUP 3 · CR THRESHOLDS (match Panel) ───────────────
+crExtreme  = input.float(0.50, "Extreme Squeeze Level", step=0.05, group="CR Thresholds")
+crBuild    = input.float(0.70, "Squeeze Building Level", step=0.05, group="CR Thresholds")
+crExpand   = input.float(1.00, "Expansion Start Level", step=0.05, group="CR Thresholds")
+crExtended = input.float(1.50, "Expanded Level", step=0.05, group="CR Thresholds")
+crDanger   = input.float(2.00, "Overextended / Danger Level", step=0.05, group="CR Thresholds")
+
+// ─────────────── GROUP 4 · DISPLAY ───────────────
+showDashboard     = input.bool(true,  "Show Dashboard Table", group="Display")
+showStops         = input.bool(true,  "Show Stop Line", group="Display")
+showTargets       = input.bool(true,  "Show T1 / T2 / T3 Lines", group="Display")
+showAtrCorridor   = input.bool(false, "Show ATR Noise Corridor", group="Display")
+colorCandles      = input.bool(true,  "Color Candles by CR State", group="Display")
+showSqueezeSignal = input.bool(true,  "Mark Squeeze Bars", group="Display")
+showExitWarn      = input.bool(true,  "Show Exit / Distribution Warnings", group="Display")
+showNseFlags      = input.bool(true,  "Show NSE Flags (Circuit, Spec, EP Window)", group="Display")
+dashPos           = input.string("top_right", "Dashboard Position", options=["top_right", "top_left", "bottom_right"], group="Display")
+lineExtendBars    = input.int(50, "Extend Lines (bars to the right)", minval=1, group="Display")
+
+// ─────────────── ATR CORE + CR STATE ───────────────
+atr10 = ta.atr(atrFast)
+atr50 = ta.atr(atrSlow)
+cr = atr50 > 0 ? atr10 / atr50 : na
+
+crState = na(cr) ? "WARMUP" :
+     cr < crExtreme  ? "EXTREME SQUEEZE" :
+     cr < crBuild    ? "SQUEEZE BUILDING" :
+     cr < crExpand   ? "NORMAL" :
+     cr < crExtended ? "EXPANDING" :
+     cr < crDanger   ? "EXPANDED" :
+     "OVEREXTENDED"
+
+rajanVerdict = na(cr) ? "WARMUP. WAIT FOR BARS." :
+     cr < crExtreme  ? "COILED. ENTER AT TRIGGER." :
+     cr < crBuild    ? "BUILDING. ADD TO WATCHLIST." :
+     cr < crExpand   ? "NORMAL. WAIT." :
+     cr < crExtended ? "BREAKING OUT. CONFIRM VOLUME." :
+     cr < crDanger   ? "LET IT RUN. TRAIL STOP." :
+     "DANGER ZONE. REDUCE OR EXIT."
+
+// ─────────────── STOP / TARGETS / SIZING ───────────────
+ep = entryPx > 0 ? entryPx : close
+stopMult = setupType == "VCP" ? 1.0 :
+     setupType == "3WT"   ? 1.0 :
+     setupType == "1PB"   ? 1.5 :
+     setupType == "GRIND" ? 2.0 :
+     2.5  // EP
+stopLvl = ep - stopMult * atr10
+stopAmt = ep - stopLvl
+t1 = ep + 3 * atr10
+t2 = ep + 5 * atr10
+t3 = ep + 8 * atr10
+rT1 = stopAmt > 0 ? (t1 - ep) / stopAmt : na
+rT2 = stopAmt > 0 ? (t2 - ep) / stopAmt : na
+rT3 = stopAmt > 0 ? (t3 - ep) / stopAmt : na
+shares = stopAmt > 0 ? math.floor(riskInr / stopAmt) : 0
+posValue = shares * ep
+
+// ─────────────── SQUEEZE / EXIT / DISTRIBUTION ───────────────
+volSma20 = ta.sma(volume, 20)
+star1 = cr < crExtreme
+star2 = volume < volSma20 * 0.50
+star3 = high < high[1] and low > low[1]
+squeeze3Star = star1 and star2 and star3
+squeeze1Star = star1 and not squeeze3Star
+
+atrExpandDown = (high - low) > atr10[1] * 1.5 and close < open
+dist3Day = atrExpandDown and atrExpandDown[1] and atrExpandDown[2] and close < close[1] and close[1] < close[2]
+
+// ─────────────── NSE FLAGS (pure booleans; toggles gate display only) ───────────────
+circuitSuspect = (high - low) < atr50 * 0.20
+specSuspect = volume * close < 150000000  // ₹15 Cr daily notional (approx)
+epSeason = month == 1 or month == 4 or month == 7 or month == 10
+
+// ─────────────── CANDLE COLORING (spec 4.1) ───────────────
+barCol = na(cr) ? na :
+     squeeze3Star    ? color.new(#00FF88, 0)  :
+     star1           ? color.new(#3FB950, 15) :
+     cr < crBuild    ? color.new(#58A6FF, 25) :
+     cr > crDanger   ? color.new(#F85149, 20) :
+     cr > crExtended ? color.new(#E8A020, 30) :
+     cr > crExpand   ? color.new(#D29922, 25) :
+     na
+barcolor(colorCandles ? barCol : na)
+
+// ─────────────── BACKGROUND (spec 4.2) ───────────────
+bgcolor(showSqueezeSignal and squeeze3Star ? color.new(#3FB950, 93) : na)
+bgcolor(showExitWarn and dist3Day ? color.new(#F85149, 82) : na)
+bgcolor(showExitWarn and atrExpandDown and not dist3Day ? color.new(#F85149, 88) : na)
+bgcolor(showNseFlags and epSeason ? color.new(#D29922, 96) : na)
+
+// ─────────────── ATR NOISE CORRIDOR (spec 4.3) ───────────────
+plot(showAtrCorridor ? close + atr10 : na, "ATR Upper", color=color.new(#58A6FF, 70), linewidth=1)
+plot(showAtrCorridor ? close - atr10 : na, "ATR Lower", color=color.new(#58A6FF, 70), linewidth=1)
+
+// ─────────────── SIGNALS (spec 4.5) ───────────────
+plotshape(showSqueezeSignal and squeeze3Star, "3-Star Squeeze", style=shape.triangleup, location=location.belowbar, color=#00FF88, text="★★★", size=size.normal)
+plotshape(showSqueezeSignal and squeeze1Star, "1-Star Squeeze", style=shape.triangleup, location=location.belowbar, color=#3FB950, text="★", size=size.small)
+plotshape(showExitWarn and atrExpandDown and not dist3Day, "Exit Warning", style=shape.xcross, location=location.abovebar, color=#F85149, text="⚠", size=size.small)
+plotshape(showExitWarn and dist3Day, "Distribution", style=shape.arrowdown, location=location.abovebar, color=#C03030, text="DIST", size=size.normal)
+plotshape(showNseFlags and circuitSuspect, "Circuit Suspect", style=shape.circle, location=location.abovebar, color=#FF8800, text="⚡", size=size.small)
+plotshape(showNseFlags and specSuspect, "SPEC Suspect", style=shape.square, location=location.abovebar, color=#FF8800, text="₹", size=size.tiny)
+plotshape(showNseFlags and epSeason and not epSeason[1], "EP Season Open", style=shape.flag, location=location.top, color=#D29922, text="EP WIN", size=size.small)
