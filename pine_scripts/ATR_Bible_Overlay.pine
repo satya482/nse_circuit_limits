@@ -68,6 +68,13 @@ rajanVerdict = na(cr) ? "WARMUP. WAIT FOR BARS." :
      cr < crDanger   ? "LET IT RUN. TRAIL STOP." :
      "DANGER ZONE. REDUCE OR EXIT."
 
+// ─────────────── NSE FLAGS ───────────────
+// Keep detection independent of showNseFlags so alerts remain active when
+// chart markers are hidden. Circuit-suspect bars invalidate ATR trade math.
+circuitSuspect = (high - low) < atr50 * 0.20
+specSuspect = volume * close < 150000000  // ₹15 Cr daily notional (approx)
+epSeason = month == 1 or month == 4 or month == 7 or month == 10
+
 // ─────────────── STOP / TARGETS / SIZING ───────────────
 ep = entryPx > 0 ? entryPx : close
 stopMult = setupType == "VCP" ? 1.0 :
@@ -75,16 +82,17 @@ stopMult = setupType == "VCP" ? 1.0 :
      setupType == "1PB"   ? 1.5 :
      setupType == "GRIND" ? 2.0 :
      2.5  // EP
-stopLvl = ep - stopMult * atr10
-stopAmt = ep - stopLvl
-t1 = ep + 3 * atr10
-t2 = ep + 5 * atr10
-t3 = ep + 8 * atr10
-rT1 = stopAmt > 0 ? (t1 - ep) / stopAmt : na
-rT2 = stopAmt > 0 ? (t2 - ep) / stopAmt : na
-rT3 = stopAmt > 0 ? (t3 - ep) / stopAmt : na
-shares = stopAmt > 0 ? math.floor(riskInr / stopAmt) : 0
-posValue = shares * ep
+tradeMathValid = not circuitSuspect and not na(atr10) and atr10 > 0 and ep > 0
+stopLvl = tradeMathValid ? ep - stopMult * atr10 : na
+stopAmt = tradeMathValid ? ep - stopLvl : na
+t1 = tradeMathValid ? ep + 3 * atr10 : na
+t2 = tradeMathValid ? ep + 5 * atr10 : na
+t3 = tradeMathValid ? ep + 8 * atr10 : na
+rT1 = tradeMathValid and stopAmt > 0 ? (t1 - ep) / stopAmt : na
+rT2 = tradeMathValid and stopAmt > 0 ? (t2 - ep) / stopAmt : na
+rT3 = tradeMathValid and stopAmt > 0 ? (t3 - ep) / stopAmt : na
+shares = tradeMathValid and stopAmt > 0 ? math.floor(riskInr / stopAmt) : 0
+posValue = tradeMathValid ? shares * ep : na
 
 // ─────────────── SQUEEZE / EXIT / DISTRIBUTION ───────────────
 volSma20 = ta.sma(volume, 20)
@@ -96,11 +104,6 @@ squeeze1Star = star1 and not squeeze3Star
 
 atrExpandDown = (high - low) > atr10[1] * 1.5 and close < open
 dist3Day = atrExpandDown and atrExpandDown[1] and atrExpandDown[2] and close < close[1] and close[1] < close[2]
-
-// ─────────────── NSE FLAGS (pure booleans; toggles gate display only) ───────────────
-circuitSuspect = (high - low) < atr50 * 0.20
-specSuspect = volume * close < 150000000  // ₹15 Cr daily notional (approx)
-epSeason = month == 1 or month == 4 or month == 7 or month == 10
 
 // ─────────────── CANDLE COLORING (spec 4.1) ───────────────
 barCol = na(cr) ? na :
@@ -160,13 +163,13 @@ if barstate.islast
     label.delete(t2Lbl)
     label.delete(t3Lbl)
     x2 = bar_index + lineExtendBars
-    if showStops or showTargets
+    if (showStops or showTargets) and tradeMathValid
         entryLine := line.new(bar_index, ep, x2, ep, color=#E6EDF3, width=1, style=line.style_dashed)
         entryLbl  := label.new(x2, ep, "ENTRY " + fmtInr(ep) + " · " + setupType, style=label.style_label_left, color=color.new(#21262D, 40), textcolor=#E6EDF3, size=size.small)
-    if showStops
+    if showStops and tradeMathValid
         stopLine := line.new(bar_index, stopLvl, x2, stopLvl, color=#F85149, width=2)
         stopLbl  := label.new(x2, stopLvl, "STOP " + fmtInr(stopLvl) + " (−" + fmtInr(stopAmt) + " / share)", style=label.style_label_left, color=color.new(#2A1010, 40), textcolor=#F85149, size=size.small)
-    if showTargets
+    if showTargets and tradeMathValid
         t1Line := line.new(bar_index, t1, x2, t1, color=#2D6A3F, width=1, style=line.style_dotted)
         t1Lbl  := label.new(x2, t1, "T1 " + fmtInr(t1) + " · +3R · Sell 50%", style=label.style_label_left, color=color.new(#0D1F10, 40), textcolor=#2D6A3F, size=size.small)
         t2Line := line.new(bar_index, t2, x2, t2, color=#3FB950, width=1, style=line.style_dashed)
@@ -194,6 +197,9 @@ COL_NORM_TX   = #E6EDF3
 COL_FLAG_BG   = #2A1A00
 COL_FLAG_TX   = #FF8800
 
+if barstate.islast and not showDashboard
+    table.clear(dash, 0, 0, 1, 12)
+
 if barstate.islast and showDashboard
     table.clear(dash, 0, 0, 1, 12)
     inSqueeze = not na(cr) and cr < crBuild
@@ -211,15 +217,15 @@ if barstate.islast and showDashboard
     table.cell(dash, 0, 4, "VERDICT",                  bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
     table.cell(dash, 1, 4, rajanVerdict,               bgcolor=crBg, text_color=crTx, text_size=size.small)
     table.cell(dash, 0, 5, "STOP (−" + str.tostring(stopMult, "#.#") + "×ATR)", bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
-    table.cell(dash, 1, 5, fmtInr(stopLvl) + " / Risk " + fmtInr(stopAmt) + "/sh", bgcolor=COL_STOP_BG, text_color=COL_OVR_TX, text_size=size.small)
+    table.cell(dash, 1, 5, tradeMathValid ? fmtInr(stopLvl) + " / Risk " + fmtInr(stopAmt) + "/sh" : "ATR UNRELIABLE - USE PIVOT", bgcolor=COL_STOP_BG, text_color=COL_OVR_TX, text_size=size.small)
     table.cell(dash, 0, 6, "POSITION SIZE",            bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
-    table.cell(dash, 1, 6, stopAmt > 0 ? str.tostring(shares) + " shares · " + fmtInr(posValue) : "INVALID SETUP", bgcolor=COL_NORM_BG, text_color=stopAmt > 0 ? COL_NORM_TX : COL_OVR_TX, text_size=size.small)
+    table.cell(dash, 1, 6, tradeMathValid ? str.tostring(shares) + " shares · " + fmtInr(posValue) : "ATR UNRELIABLE - NO SIZE", bgcolor=COL_NORM_BG, text_color=tradeMathValid ? COL_NORM_TX : COL_OVR_TX, text_size=size.small)
     table.cell(dash, 0, 7, "T1 (3× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
-    table.cell(dash, 1, 7, fmtInr(t1) + " · " + str.tostring(rT1, "#.#") + "R · Sell 50%", bgcolor=COL_TGT_BG, text_color=#2D6A3F, text_size=size.small)
+    table.cell(dash, 1, 7, tradeMathValid ? fmtInr(t1) + " · " + str.tostring(rT1, "#.#") + "R · Sell 50%" : "—", bgcolor=COL_TGT_BG, text_color=#2D6A3F, text_size=size.small)
     table.cell(dash, 0, 8, "T2 (5× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
-    table.cell(dash, 1, 8, fmtInr(t2) + " · " + str.tostring(rT2, "#.#") + "R · Sell 25%", bgcolor=COL_TGT_BG, text_color=#3FB950, text_size=size.small)
+    table.cell(dash, 1, 8, tradeMathValid ? fmtInr(t2) + " · " + str.tostring(rT2, "#.#") + "R · Sell 25%" : "—", bgcolor=COL_TGT_BG, text_color=#3FB950, text_size=size.small)
     table.cell(dash, 0, 9, "T3 (8× ATR)",              bgcolor=COL_LBL_BG, text_color=COL_LBL_TX, text_size=size.small)
-    table.cell(dash, 1, 9, fmtInr(t3) + " · " + str.tostring(rT3, "#.#") + "R · Trail", bgcolor=COL_TGT_BG, text_color=#7FE09F, text_size=size.small)
+    table.cell(dash, 1, 9, tradeMathValid ? fmtInr(t3) + " · " + str.tostring(rT3, "#.#") + "R · Trail" : "—", bgcolor=COL_TGT_BG, text_color=#7FE09F, text_size=size.small)
     // NSE flag rows (spec 4.6) — only when detected and toggle on
     if showNseFlags and circuitSuspect
         table.cell(dash, 0, 10, "⚡ [CIRCUIT]", bgcolor=COL_FLAG_BG, text_color=COL_FLAG_TX, text_size=size.small)
@@ -230,3 +236,33 @@ if barstate.islast and showDashboard
     if showNseFlags and epSeason
         table.cell(dash, 0, 12, "[EP WIN]", bgcolor=COL_FLAG_BG, text_color=#D29922, text_size=size.small)
         table.cell(dash, 1, 12, "Results season. Highest EP rate.", bgcolor=COL_FLAG_BG, text_color=#D29922, text_size=size.small)
+
+// ─────────────── HIDDEN PLOTS (alert placeholders) ───────────────
+plot(cr,      "CR",      display=display.none)
+plot(atr10,   "ATR10",   display=display.none)
+plot(stopLvl, "StopLvl", display=display.none)
+plot(shares,  "Shares",  display=display.none)
+
+// ─────────────── ALERTS (spec Sec 6; pipe format per repo convention) ───────────────
+// Set alerts to "Once Per Bar Close" in the TradingView alert dialog.
+alertcondition(ta.crossunder(cr, crExtreme),
+     "1 · Extreme Squeeze",
+     'SQUEEZE_EXTREME|{{ticker}}|CR {{plot("CR")}} dropped below extreme level, ATR10 {{plot("ATR10")}}, check chart for entry trigger|TF:{{interval}}')
+alertcondition(squeeze3Star,
+     "2 · 3-Star Squeeze (Max Conviction)",
+     'SQUEEZE_3STAR|{{ticker}}|CR {{plot("CR")}}, volume dried, inside bar - all 3 conditions. Stop {{plot("StopLvl")}}, shares {{plot("Shares")}}|TF:{{interval}}')
+alertcondition(ta.crossover(cr, crBuild) and cr[1] < crExtreme,
+     "3 · Expansion Starting",
+     'EXPANSION_START|{{ticker}}|CR {{plot("CR")}} rising from squeeze, ATR10 {{plot("ATR10")}}, confirm volume before entry|TF:{{interval}}')
+alertcondition(atrExpandDown and not atrExpandDown[1],
+     "4 · Exit Warning (ATR expand, down day)",
+     'EXIT_WARN|{{ticker}}|ATR expanded 1.5x+ on down close, institutional selling possible, check position|TF:{{interval}}')
+alertcondition(dist3Day and not dist3Day[1],
+     "5 · Distribution Confirmed (3-day)",
+     'DISTRIBUTION|{{ticker}}|3 consecutive days expanding ATR + lower closes. Exit all, do not average|TF:{{interval}}')
+alertcondition(ta.crossover(cr, crDanger),
+     "6 · Overextended (CR Danger)",
+     'OVEREXTENDED|{{ticker}}|CR {{plot("CR")}} above danger level, trail stops to 20-day MA, reduce|TF:{{interval}}')
+alertcondition(circuitSuspect and not circuitSuspect[1],
+     "7 · Circuit Suspect",
+     'CIRCUIT_SUSPECT|{{ticker}}|Range under 20% of ATR50, ATR unreliable today, use pivot structure for stops|TF:{{interval}}')

@@ -2,12 +2,20 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-07-13.
+Last reviewed by Codex: 2026-07-16.
 Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-16 by Codex, ATR Bible Pine suite takeover:
+
+- Resumed Claude Code's implementation plan at Task 3 after commits `3749514` and `4fff336` completed the overlay calculations, visuals, stop/target lines, and dashboard.
+- `pine_scripts/ATR_Bible_Overlay.pine` now has all 7 pipe-format alert conditions with hidden plot placeholders. Circuit-suspect bars suppress ATR-derived stop/target/sizing output, and disabling the dashboard clears its persistent table.
+- Added `pine_scripts/ATR_Bible_Panel.pine`: ATR(10)/ATR(50) lines and fill, CR state line and zones, ATR-delta histogram, and current verdict label.
+- Added `tests/test_atr_bible_pine.py` for suite structure, alert coverage, overlay/panel input parity, dashboard hiding, and circuit-day trade-math suppression. Focused result: 5/5 passed.
+- Added the required SEBI disclaimer to the source spec and implementation plan. Local static review is complete; final Pine syntax and visual behavior still require pasting both scripts into TradingView. The source spec remains untracked until this task is committed.
 
 Updated 2026-07-15 by Claude Code, ZLEMA25 Trend Labels stats box (commit `c523062`):
 

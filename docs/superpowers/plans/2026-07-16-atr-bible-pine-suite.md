@@ -1,3 +1,5 @@
+> **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # ATR Bible Pine Suite Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
@@ -488,3 +490,7 @@ git push
 - **Spec coverage:** Sec 1–3 → Task 1; Sec 4.1–4.5 → Task 1; Sec 4.4/4.6 → Task 2; Sec 6 → Task 3; Sec 5 → Task 4; Sec 7 principles embedded (verdict voice, zero mental math, setup-aware, live-scan vs trade mode via `entryPx`); Sec 8 exclusions honored (nothing extra built); Sec 9 edge cases: `atr50=0 → cr na` (guarded everywhere with `na(cr)`), `stopAmt<=0 → INVALID SETUP` (Task 2 row 6), warmup bars (WARMUP state).
 - **Known deviations (all in Global Constraints):** v6, camelCase, pipe alerts, pure flag booleans, `barstate.islast` gating, panel drops dead Group 2 inputs, hlines at default thresholds.
 - **Type consistency:** `fmtInr` defined Task 2, used Task 2 only (Task 4 inlines `str.format` — panel has no ₹ prices, only CR). Variable names identical across both files' shared calc blocks.
+
+---
+
+*Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*

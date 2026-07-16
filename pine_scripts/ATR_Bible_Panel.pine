@@ -1,0 +1,86 @@
+//@version=6
+indicator("ATR Bible · Panel [Rajan Mehta]",
+     shorttitle       = "ATRB-PNL",
+     overlay          = false,
+     max_labels_count = 10)
+// ATR Bible suite, Script B (research/atr-bible-pinescript-spec.md).
+// Volatility-structure panel: ATR(10)/ATR(50) lines with squeeze/expansion
+// fill, Compression Ratio line with state colors + threshold hlines + zone
+// backgrounds, TR-vs-ATR expansion histogram, plain-English verdict label.
+// Companion: pine_scripts/ATR_Bible_Overlay.pine (run on chart; set ATR Core
+// + CR Threshold inputs identically in both).
+// Alert message format: N/A - all 7 suite alerts live in the overlay script.
+// Deliberate deviations: v6 per repo convention; camelCase inputs; unused
+// position/risk inputs omitted because the panel contains no trade math.
+
+// ─────────────── ATR CORE (match Overlay) ───────────────
+atrFast = input.int(10, "ATR Fast Period", minval=1, group="ATR Core")
+atrSlow = input.int(50, "ATR Slow Period", minval=1, group="ATR Core")
+
+// ─────────────── CR THRESHOLDS (match Overlay) ───────────────
+crExtreme  = input.float(0.50, "Extreme Squeeze Level", step=0.05, group="CR Thresholds")
+crBuild    = input.float(0.70, "Squeeze Building Level", step=0.05, group="CR Thresholds")
+crExpand   = input.float(1.00, "Expansion Start Level", step=0.05, group="CR Thresholds")
+crExtended = input.float(1.50, "Expanded Level", step=0.05, group="CR Thresholds")
+crDanger   = input.float(2.00, "Overextended / Danger Level", step=0.05, group="CR Thresholds")
+
+// ─────────────── ATR CORE + CR (same math as Overlay) ───────────────
+atr10 = ta.atr(atrFast)
+atr50 = ta.atr(atrSlow)
+cr = atr50 > 0 ? atr10 / atr50 : na
+
+rajanVerdict = na(cr) ? "WARMUP. WAIT FOR BARS." :
+     cr < crExtreme  ? "COILED. ENTER AT TRIGGER." :
+     cr < crBuild    ? "BUILDING. ADD TO WATCHLIST." :
+     cr < crExpand   ? "NORMAL. WAIT." :
+     cr < crExtended ? "BREAKING OUT. CONFIRM VOLUME." :
+     cr < crDanger   ? "LET IT RUN. TRAIL STOP." :
+     "DANGER ZONE. REDUCE OR EXIT."
+
+// ─────────────── ATR LINES + FILL ───────────────
+atr10Plot = plot(atr10, "ATR(10) Tactical", color=#3FB950, linewidth=2)
+atr50Plot = plot(atr50, "ATR(50) Strategic", color=#58A6FF, linewidth=1)
+fill(atr10Plot, atr50Plot, color=atr10 < atr50 ? color.new(#3FB950, 85) : color.new(#F85149, 85))
+
+// ─────────────── CR LINE + ZONES ───────────────
+crColor = na(cr) ? #484F58 :
+     cr < crExtreme  ? #3FB950 :
+     cr < crBuild    ? #58A6FF :
+     cr < crExpand   ? #484F58 :
+     cr < crExtended ? #D29922 :
+     cr < crDanger   ? #E8A020 :
+     #F85149
+plot(cr, "Compression Ratio", color=crColor, linewidth=2)
+
+// hline prices must be constants, so these show the documented defaults.
+// CR colors and zone backgrounds continue to follow the configurable inputs.
+hline(0.50, "Extreme Squeeze", color=#3FB950, linestyle=hline.style_dashed)
+hline(0.70, "Squeeze Building", color=#58A6FF, linestyle=hline.style_dotted)
+hline(1.00, "Normal", color=#484F58, linestyle=hline.style_dotted)
+hline(1.50, "Expanded", color=#D29922, linestyle=hline.style_dotted)
+hline(2.00, "Overextended / Danger", color=#F85149, linestyle=hline.style_dashed)
+
+bgcolor(not na(cr) and cr < crExtreme ? color.new(#3FB950, 90) : na)
+bgcolor(not na(cr) and cr > crDanger ? color.new(#F85149, 90) : na)
+
+// ─────────────── ATR EXPANSION HISTOGRAM ───────────────
+atrDelta = ta.tr - atr10
+histColor = atrDelta > 0 and close < open ? #F85149 :
+     atrDelta > 0 ? #3FB950 :
+     #484F58
+plot(atrDelta, "ATR Delta", style=plot.style_histogram, color=histColor, linewidth=2)
+hline(0, "Zero", color=#30363D)
+
+// ─────────────── VERDICT LABEL ───────────────
+var label verdictLabel = na
+if barstate.islast
+    label.delete(verdictLabel)
+    verdictLabel := label.new(
+         bar_index, cr,
+         rajanVerdict + "\nCR: " + (na(cr) ? "—" : str.format("{0,number,#.##}", cr)),
+         style     = label.style_label_left,
+         color     = not na(cr) and cr < crExtreme ? color.new(#3FB950, 70) :
+                     not na(cr) and cr > crDanger ? color.new(#F85149, 70) :
+                     color.new(#21262D, 70),
+         textcolor = #E6EDF3,
+         size      = size.small)
