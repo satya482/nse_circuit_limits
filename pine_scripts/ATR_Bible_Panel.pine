@@ -1,5 +1,5 @@
 //@version=6
-indicator("ATR Bible · Panel [Rajan Mehta]",
+indicator("Satya ATR Bible Panel",
      shorttitle       = "ATRB-PNL",
      overlay          = false,
      max_labels_count = 10)

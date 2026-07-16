@@ -1,5 +1,5 @@
 //@version=6
-indicator("ATR Bible · Overlay [Rajan Mehta]",
+indicator("Satya ATR Bible Overlay",
      shorttitle       = "ATRB-OV",
      overlay          = true,
      max_lines_count  = 10,
