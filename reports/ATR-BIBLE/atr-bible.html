@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ATR BIBLE — Rajan Mehta | NSE Swing System</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0d1117; color: #e6edf3; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; min-height: 100vh; }
+
+/* Header + Tabs wrapper (sticky together) */
+.top-sticky { position: sticky; top: 0; z-index: 20; background: #0d1117; }
+.header { border-bottom: 1px solid #30363d; padding: 14px 16px; }
+.header-row1 { display: flex; align-items: baseline; gap: 10px; }
+.header-title { font-family: 'Courier New', monospace; font-size: 18px; font-weight: 700; color: #e6edf3; letter-spacing: 0.15em; }
+.header-sys { font-family: 'Courier New', monospace; font-size: 10px; color: #484f58; letter-spacing: 0.05em; }
+.header-desc { font-family: 'Courier New', monospace; font-size: 11px; color: #8b949e; margin-top: 2px; }
+.header-credit { font-family: 'Courier New', monospace; font-size: 11px; color: #58a6ff; margin-top: 1px; }
+
+/* Tab bar */
+.tab-bar-wrap { background: #161b22; border-bottom: 1px solid #30363d; overflow-x: auto; }
+.tab-bar { display: flex; gap: 4px; padding: 8px 12px; min-width: max-content; }
+.tab-btn { padding: 5px 12px; border-radius: 5px; border: none; cursor: pointer; font-family: 'Courier New', monospace; font-size: 11px; font-weight: 700; white-space: nowrap; background: #1c2128; color: #8b949e; transition: all 0.15s; }
+.tab-btn:hover { background: #21262d; color: #e6edf3; }
+.tab-btn.active { background: #58a6ff; color: #fff; }
+
+/* Sections */
+.section { display: none; padding: 16px 14px 48px; }
+.section.active { display: block; }
+
+/* Layout helpers */
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.stack-sm { display: flex; flex-direction: column; gap: 6px; }
+.stack-md { display: flex; flex-direction: column; gap: 8px; }
+.flex-row { display: flex; gap: 8px; align-items: flex-start; }
+.flex-row-center { display: flex; gap: 8px; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+
+/* Cards */
+.card { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 16px; }
+.inner { background: #21262d; border-radius: 6px; padding: 12px; }
+
+/* Section label */
+.slabel { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 700; color: #58a6ff; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; padding-bottom: 6px; border-bottom: 1px solid #30363d; }
+.slabel.g { color: #3fb950; } .slabel.r { color: #f85149; } .slabel.y { color: #d29922; } .slabel.p { color: #bc8cff; }
+
+/* Quote */
+.quote { border-left: 3px solid #d29922; padding: 8px 12px; background: #3d2a00; border-radius: 0 6px 6px 0; }
+.qt { font-family: 'Courier New', monospace; font-size: 12px; color: #d29922; font-style: italic; }
+.qa { font-family: 'Courier New', monospace; font-size: 11px; color: #484f58; margin-top: 4px; }
+
+/* Badges */
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-family: 'Courier New', monospace; font-size: 11px; font-weight: 700; white-space: nowrap; }
+.bg  { background: #1a4228; color: #3fb950; border: 1px solid #2d6a3f; }
+.br  { background: #3d1a1a; color: #f85149; border: 1px solid #6d2323; }
+.by  { background: #3d2a00; color: #d29922; border: 1px solid #6d4a00; }
+.bb  { background: #0d2149; color: #58a6ff; border: 1px solid #1a3a6d; }
+.bp  { background: #2a1f3d; color: #bc8cff; border: 1px solid #5c3a8a; }
+.bgr { background: #21262d; color: #8b949e; border: 1px solid #30363d; }
+
+/* Info boxes */
+.ibox { border-radius: 6px; padding: 10px 12px; font-family: 'Courier New', monospace; font-size: 12px; }
+.ig { background: #1a4228; border: 1px solid #2d6a3f; color: #3fb950; }
+.ir { background: #3d1a1a; border: 1px solid #6d2323; color: #f85149; }
+.iy { background: #3d2a00; border: 1px solid #6d4a00; color: #d29922; }
+.ib { background: #0d2149; border: 1px solid #1a3a6d; color: #58a6ff; }
+
+/* Rows */
+.row { display: flex; justify-content: space-between; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid #30363d; gap: 8px; font-family: 'Courier New', monospace; font-size: 12px; }
+.rl { color: #8b949e; flex-shrink: 0; }
+.rv { color: #e6edf3; font-weight: 700; text-align: right; }
+.rv.g { color: #3fb950; } .rv.r { color: #f85149; } .rv.b { color: #58a6ff; } .rv.y { color: #d29922; }
+
+/* Text helpers */
+.mono { font-family: 'Courier New', monospace; }
+.tg { color: #3fb950; } .tr { color: #f85149; } .ty { color: #d29922; } .tb { color: #58a6ff; } .tp { color: #bc8cff; }
+.tm { color: #8b949e; } .td { color: #484f58; } .tw { color: #e6edf3; }
+.bold { font-weight: 700; } .f11 { font-size: 11px; } .f12 { font-size: 12px; } .f13 { font-size: 13px; } .f14 { font-size: 14px; } .f18 { font-size: 18px; }
+
+/* Setup cards */
+.setup-card { background: #1c2128; border: 1px solid #30363d; border-radius: 8px; padding: 12px; }
+.sh { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.sa { font-family: 'Courier New', monospace; font-size: 12px; color: #8b949e; margin-bottom: 4px; }
+.sp { font-family: 'Courier New', monospace; font-size: 11px; color: #484f58; }
+.sa-l { color: #58a6ff; }
+
+/* Stop items */
+.si { background: #21262d; border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 4px; }
+.sih { display: flex; justify-content: space-between; align-items: center; }
+.sim { font-family: 'Courier New', monospace; font-weight: 700; font-size: 14px; color: #f85149; }
+.sia { font-family: 'Courier New', monospace; font-size: 11px; color: #8b949e; }
+
+/* Target items */
+.ti { background: #21262d; border-radius: 6px; padding: 10px; border-left: 3px solid #3fb950; }
+.tih { display: flex; justify-content: space-between; margin-bottom: 4px; }
+.til { font-family: 'Courier New', monospace; font-size: 12px; color: #3fb950; font-weight: 700; }
+.tim { font-family: 'Courier New', monospace; font-size: 14px; color: #3fb950; font-weight: 700; }
+.tia { font-family: 'Courier New', monospace; font-size: 12px; color: #d29922; }
+.tin { font-family: 'Courier New', monospace; font-size: 11px; color: #484f58; }
+
+/* Exit signals */
+.exit { background: #21262d; border-radius: 6px; padding: 10px; }
+.ex-d { border-left: 3px solid #f85149; }
+.ex-o { border-left: 3px solid #3fb950; }
+.ex-td { font-family: 'Courier New', monospace; font-size: 12px; color: #f85149; margin-bottom: 3px; }
+.ex-to { font-family: 'Courier New', monospace; font-size: 12px; color: #3fb950; margin-bottom: 3px; }
+.ex-a { font-family: 'Courier New', monospace; font-size: 11px; color: #8b949e; }
+
+/* CR scale */
+.cr-item { display: flex; gap: 10px; align-items: flex-start; }
+.cr-bw { width: 32px; flex-shrink: 0; margin-top: 5px; }
+.cr-b { height: 6px; border-radius: 3px; }
+.cr-l { font-family: 'Courier New', monospace; font-size: 11px; font-weight: 700; color: #e6edf3; margin-bottom: 2px; }
+.cr-d { font-family: 'Courier New', monospace; font-size: 11px; color: #8b949e; }
+
+/* Grid items */
+.gi { background: #21262d; border-radius: 6px; padding: 10px; }
+.gi-l { font-family: 'Courier New', monospace; font-size: 11px; color: #484f58; }
+.gi-v { font-family: 'Courier New', monospace; font-size: 13px; color: #e6edf3; font-weight: 700; margin-top: 2px; }
+
+/* VCP legs */
+.vl { display: flex; gap: 10px; font-family: 'Courier New', monospace; font-size: 12px; }
+.vll { color: #d29922; font-weight: 700; width: 20px; flex-shrink: 0; }
+
+/* Warning items */
+.wi { display: flex; gap: 8px; font-family: 'Courier New', monospace; font-size: 12px; color: #8b949e; }
+.wi-r { color: #f85149; flex-shrink: 0; }
+
+/* Entry items */
+.ei { display: flex; gap: 8px; font-family: 'Courier New', monospace; font-size: 12px; color: #e6edf3; }
+.ea { color: #3fb950; flex-shrink: 0; }
+
+/* Phase items */
+.phi { background: #21262d; border-radius: 6px; padding: 10px; }
+.phh { display: flex; gap: 8px; margin-bottom: 4px; }
+.phn { font-family: 'Courier New', monospace; font-size: 12px; color: #58a6ff; font-weight: 700; }
+.phw { font-family: 'Courier New', monospace; font-size: 12px; color: #484f58; }
+.phr { font-family: 'Courier New', monospace; font-size: 12px; color: #e6edf3; }
+
+/* Formula box */
+.fbox { background: #21262d; border-radius: 8px; padding: 16px; text-align: center; }
+
+/* NSE calendar */
+.ci { background: #21262d; border-radius: 6px; padding: 10px; }
+.cp { font-family: 'Courier New', monospace; font-size: 12px; color: #58a6ff; font-weight: 700; }
+.ca { font-family: 'Courier New', monospace; font-size: 11px; color: #d29922; margin-top: 2px; }
+.co { font-family: 'Courier New', monospace; font-size: 11px; color: #3fb950; }
+
+/* Cheat row */
+.cr { display: flex; justify-content: space-between; align-items: center; background: #21262d; border-radius: 6px; padding: 8px 10px; }
+
+/* Scrollbar */
+::-webkit-scrollbar { height: 4px; width: 4px; }
+::-webkit-scrollbar-track { background: #161b22; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 2px; }
+
+@media (max-width: 480px) { .header { padding: 12px 14px; } .section { padding: 12px 12px 40px; } }
+</style>
+</head>
+<body>
+
+<!-- TOP STICKY CONTAINER -->
+<div class="top-sticky">
+  <div class="header">
+    <div class="header-row1">
+      <span class="header-title">ATR BIBLE</span>
+      <span class="header-sys">NSE SWING SYSTEM</span>
+    </div>
+    <div class="header-desc">Contraction &middot; Expansion &middot; Entry &middot; Exit &middot; Squeeze &middot; Sizing</div>
+    <div class="header-credit">&mdash; Rajan Mehta, The Tape Reader</div>
+  </div>
+  <div class="tab-bar-wrap">
+    <div class="tab-bar">
+      <button class="tab-btn active" id="tab-0" onclick="showTab(0)">Core</button>
+      <button class="tab-btn" id="tab-1" onclick="showTab(1)">Setup Map</button>
+      <button class="tab-btn" id="tab-2" onclick="showTab(2)">Entry</button>
+      <button class="tab-btn" id="tab-3" onclick="showTab(3)">Stop</button>
+      <button class="tab-btn" id="tab-4" onclick="showTab(4)">Target</button>
+      <button class="tab-btn" id="tab-5" onclick="showTab(5)">Squeeze</button>
+      <button class="tab-btn" id="tab-6" onclick="showTab(6)">Sizing</button>
+      <button class="tab-btn" id="tab-7" onclick="showTab(7)">NSE</button>
+      <button class="tab-btn" id="tab-8" onclick="showTab(8)">Cheat Sheet</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ SECTION 0: CORE ═══════ -->
+<div class="section active" id="section-0"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;ATR doesn't tell you direction. It tells you energy. Energy always seeks release.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta, The Tape Reader</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Formula</div>
+    <div class="stack-md">
+      <div class="inner">
+        <div class="mono f12 tg">TR = max( H&minus;L, |H&minus;PC|, |L&minus;PC| )</div>
+        <div class="mono f11 tm" style="margin-top:4px">H = High &middot; L = Low &middot; PC = Previous Close</div>
+        <div class="mono f11 tm">Captures overnight gaps. Pure price volatility. No direction bias.</div>
+      </div>
+      <div class="inner">
+        <div class="mono f12 tg">ATR(n) = Wilder-smoothed EMA of TR over n periods</div>
+        <div class="mono f11 tm" style="margin-top:4px">This system: ATR(10) for stops/sizing &middot; ATR(50) for context</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">The Only Cycle That Matters</div>
+    <div style="display:flex; gap:8px; align-items:stretch;">
+      <div style="flex:1; background:#0d2149; border:1px solid #1a3a6d; border-radius:8px; padding:12px; text-align:center;">
+        <div class="mono bold f13 tb" style="margin-bottom:6px">CONTRACTION</div>
+        <div class="mono f11 tm">ATR shrinks</div>
+        <div class="mono f11 tm">Volume dries</div>
+        <div class="mono f11 tm">Pivots tighten</div>
+        <div class="mono f11 tm">Energy builds</div>
+      </div>
+      <div style="display:flex; align-items:center; color:#d29922; font-size:22px; font-weight:700;">&rarr;</div>
+      <div style="flex:1; background:#1a4228; border:1px solid #2d6a3f; border-radius:8px; padding:12px; text-align:center;">
+        <div class="mono bold f13 tg" style="margin-bottom:6px">EXPANSION</div>
+        <div class="mono f11 tm">ATR explodes</div>
+        <div class="mono f11 tm">Volume surges</div>
+        <div class="mono f11 tm">Candles lengthen</div>
+        <div class="mono f11 tm">Energy releases</div>
+      </div>
+    </div>
+    <div class="ibox iy" style="margin-top:10px;">Deeper contraction &rarr; larger expansion. Always. This is the only edge.</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Two Periods. Two Jobs.</div>
+    <div class="stack-md">
+      <div class="flex-row">
+        <span class="badge bg">ATR(10)</span>
+        <div>
+          <div class="mono f12 tw">Entry trigger &middot; Stop level &middot; Position sizing</div>
+          <div class="mono f11 tm">Sensitive to current structure. Your tactical tool.</div>
+        </div>
+      </div>
+      <div class="flex-row">
+        <span class="badge bb">ATR(50)</span>
+        <div>
+          <div class="mono f12 tw">Compression ratio &middot; Trend context</div>
+          <div class="mono f11 tm">Smooths noise. Your strategic lens.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">What ATR Cannot Do</div>
+    <div class="stack-sm">
+      <div class="wi"><span class="wi-r">&#x2717;</span>Tell direction &mdash; price structure and stage analysis do that</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Predict timing &mdash; only setup quality determines when</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Work in circuit-hit stocks &mdash; range is artificially capped</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Replace volume confirmation on breakout days</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Override stage analysis &mdash; Stage first, always</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 1: SETUP MAP ═══════ -->
+<div class="section" id="section-1"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;Every setup has an ATR fingerprint. Learn the fingerprint before you look at the price.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge bg">GRIND</span><span class="badge bg">BUY DIPS</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Stable to slightly declining on pullbacks. Consistent daily range.</div>
+    <div class="sp">Phase: Contraction maintained in Stage 2</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge bg">VCP</span><span class="badge bg">BUY BREAK</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Progressive compression &mdash; each leg 30&ndash;40% tighter than prior.</div>
+    <div class="sp">Phase: Deep contraction (CR &lt; 0.5)</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge bg">1PB</span><span class="badge bg">BUY RETEST</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Expanded on breakout &rarr; now contracting on pullback.</div>
+    <div class="sp">Phase: Contraction resuming after breakout</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge bg">3WT</span><span class="badge bg">BUY BREAK</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Multi-week extreme low. 3+ closes within 1&ndash;1.5% of each other.</div>
+    <div class="sp">Phase: Extreme contraction &mdash; institutional accumulation</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge by">EP</span><span class="badge by">1PB ONLY</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Explodes 3&ndash;5&times; on catalyst day. Settling in 3&ndash;10 days after.</div>
+    <div class="sp">Phase: Expansion then reset &mdash; buy the settle</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge bgr">BASE</span><span class="badge bgr">WAIT</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Erratic. No clear contraction direction yet.</div>
+    <div class="sp">Phase: Structure building &mdash; not ready</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge br">L3-L4</span><span class="badge br">AVOID</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Expands on down moves, contracts on bounces (distribution signature).</div>
+    <div class="sp">Phase: Distribution &mdash; wide &amp; loose candles</div>
+  </div>
+
+  <div class="setup-card">
+    <div class="sh"><span class="badge br">BROKEN</span><span class="badge br">NEVER</span></div>
+    <div class="sa"><span class="sa-l">ATR: </span>Expanding on distribution volume. Gap downs. No floor.</div>
+    <div class="sp">Phase: Stage 4 collapse</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">VCP Contraction Legs &mdash; The Math</div>
+    <div class="stack-md">
+      <div class="vl"><span class="vll">C1</span><span class="tw">Base peak ATR contracts 30&ndash;40%</span></div>
+      <div class="vl"><span class="vll">C2</span><span class="tw">C1 ATR contracts another 30&ndash;40%</span></div>
+      <div class="vl"><span class="vll">C3</span><span class="tw">C2 ATR &rarr; tightest pivot. This is the trigger zone.</span></div>
+      <div class="ibox ir">&#9888; If C3 range &gt; C2 range &mdash; it is not a VCP. It is distribution. Pass immediately.</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 2: ENTRY ═══════ -->
+<div class="section" id="section-2"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;You don't enter because the chart looks pretty. You enter because ATR is coiled and price has confirmed.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:10px;"><span class="badge bg">VCP</span></div>
+    <div class="stack-sm">
+      <div class="ei"><span class="ea">&rarr;</span>Entry: above C3 pivot high</div>
+      <div class="ei"><span class="ea">&rarr;</span>ATR check: ATR(10) must be &lt;70% of base-peak ATR</div>
+      <div class="ei"><span class="ea">&rarr;</span>Confirm: breakout candle &ge; 1&times; ATR &middot; volume above 20-day avg</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:10px;"><span class="badge bg">1PB</span></div>
+    <div class="stack-sm">
+      <div class="ei"><span class="ea">&rarr;</span>Entry: at 10-day or 20-day MA retest</div>
+      <div class="ei"><span class="ea">&rarr;</span>ATR check: pullback ATR &le; 50% of breakout-day ATR</div>
+      <div class="ei"><span class="ea">&rarr;</span>Confirm: retest candle closes in upper 30% of range</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:10px;"><span class="badge bg">GRIND</span></div>
+    <div class="stack-sm">
+      <div class="ei"><span class="ea">&rarr;</span>Entry: controlled pullback to 10-week MA</div>
+      <div class="ei"><span class="ea">&rarr;</span>ATR check: no ATR expansion on down days</div>
+      <div class="ei"><span class="ea">&rarr;</span>Confirm: holds 10-week MA by end of week</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:10px;"><span class="badge by">EP</span></div>
+    <div class="stack-sm">
+      <div class="ei"><span class="ea">&rarr;</span>Entry #1: gap open &mdash; only if holds for first 30 minutes</div>
+      <div class="ei"><span class="ea">&rarr;</span>Entry #2: first pullback to gap level (3&ndash;10 days later)</div>
+      <div class="ei"><span class="ea">&rarr;</span>ATR check: EP-day ATR must be &ge; 3&times; 10-day avg ATR</div>
+      <div class="ei ty"><span style="color:#d29922; flex-shrink:0;">&rarr;</span>Rule: if ATR already expanded 2&times; before you see it &mdash; skip</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div style="margin-bottom:10px;"><span class="badge bg">3WT</span></div>
+    <div class="stack-sm">
+      <div class="ei"><span class="ea">&rarr;</span>Entry: above 3-week tight range high</div>
+      <div class="ei"><span class="ea">&rarr;</span>ATR check: 3 closes within 1&ndash;1.5% = extreme contraction confirmed</div>
+      <div class="ei"><span class="ea">&rarr;</span>Confirm: breakout week closes &gt;2% above range on volume</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">Entry Invalidators &mdash; Hard Stops</div>
+    <div class="stack-md">
+      <div class="flex-row"><span class="badge br">CHASING</span><span class="mono f12 tm">ATR already expanded &gt;1.5&times; from squeeze low</span></div>
+      <div class="flex-row"><span class="badge br">WEAK BREAK</span><span class="mono f12 tm">Entry day candle range &lt; 0.5&times; ATR</span></div>
+      <div class="flex-row"><span class="badge br">NO CONFIRM</span><span class="mono f12 tm">Volume below 20-day avg on breakout day</span></div>
+      <div class="flex-row"><span class="badge br">EP FAIL</span><span class="mono f12 tm">Gap up but can't hold above gap within first candle</span></div>
+      <div class="flex-row"><span class="badge br">SKIP</span><span class="mono f12 tm">Stop requires &gt;&#8377;15,000 loss at any sane position size</span></div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 3: STOP ═══════ -->
+<div class="section" id="section-3"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;A stop placed by feel is a prayer. A stop placed by ATR is a plan.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Stop Multipliers by Setup</div>
+    <div class="stack-sm">
+      <div class="si"><div class="sih"><span class="badge bg">VCP</span><span class="sim">1.0&times; ATR(10)</span></div><div class="sia">Below C3 pivot (tightest contraction point)</div></div>
+      <div class="si"><div class="sih"><span class="badge bg">3WT</span><span class="sim">1.0&times; ATR(10)</span></div><div class="sia">Below 3-week tight range low</div></div>
+      <div class="si"><div class="sih"><span class="badge bg">1PB</span><span class="sim">1.5&times; ATR(10)</span></div><div class="sia">Below pullback low / 20-day MA</div></div>
+      <div class="si"><div class="sih"><span class="badge bg">GRIND</span><span class="sim">2.0&times; ATR(10)</span></div><div class="sia">Below 10-week MA</div></div>
+      <div class="si"><div class="sih"><span class="badge bg">EP</span><span class="sim">2.5&times; ATR(10)</span></div><div class="sia">Below gap fill level</div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">Worked Example</div>
+    <div class="inner">
+      <div class="mono f12 tm" style="margin-bottom:8px">Stock &#8377;500 &middot; ATR(10) = &#8377;12</div>
+      <div class="row"><span class="rl">VCP (1.0&times;)</span><span class="rv r">&#8377;488</span></div>
+      <div class="row"><span class="rl">3WT (1.0&times;)</span><span class="rv r">&#8377;488</span></div>
+      <div class="row"><span class="rl">1PB (1.5&times;)</span><span class="rv r">&#8377;482</span></div>
+      <div class="row"><span class="rl">GRIND (2.0&times;)</span><span class="rv r">&#8377;476</span></div>
+      <div class="row"><span class="rl">EP (2.5&times;)</span><span class="rv r">&#8377;470</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Trailing Stop Phases</div>
+    <div class="stack-sm">
+      <div class="phi"><div class="phh"><span class="phn">Phase 1</span><span class="phw">(Entry &rarr; T1)</span></div><div class="phr">Trail 1.5&times; ATR(10) below last pivot low</div></div>
+      <div class="phi"><div class="phh"><span class="phn">Phase 2</span><span class="phw">(T1 &rarr; T2)</span></div><div class="phr">Trail below 10-day MA</div></div>
+      <div class="phi"><div class="phh"><span class="phn">Phase 3</span><span class="phw">(T2 &rarr; end)</span></div><div class="phr">Trail below 20-day MA. Only structure break exits.</div></div>
+      <div class="ibox iy">ATR expands 1.5&times; on a down day closing in its lower 30% &rarr; exit that phase immediately.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">Stop Absolutes &mdash; Never Break These</div>
+    <div class="stack-sm">
+      <div class="wi"><span class="wi-r">&#9888;</span>Never place stop tighter than 1&times; ATR(10) &mdash; noise will stop you out</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>Never move the stop down after entry</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>If stock gaps below stop &mdash; accept the loss, do not average down</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>ATR expanding 2&times; on stop day = confirmed exit, no re-entry same week</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 4: TARGET ═══════ -->
+<div class="section" id="section-4"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;The market gives you levels. ATR gives you the confidence to hold through the noise. Take both.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Target Ladder &mdash; ATR Multiples from Entry</div>
+    <div class="stack-sm">
+      <div class="ti"><div class="tih"><span class="til">T1 &mdash; Initial</span><span class="tim">+3&times; ATR(10)</span></div><div class="flex-between"><span class="tia">Sell 50%</span><span class="tin">Trade is now free &mdash; R is locked</span></div></div>
+      <div class="ti"><div class="tih"><span class="til">T2 &mdash; Extension</span><span class="tim">+5&times; ATR(10)</span></div><div class="flex-between"><span class="tia">Sell 25%</span><span class="tin">Let momentum carry</span></div></div>
+      <div class="ti"><div class="tih"><span class="til">T3 &mdash; Home Run</span><span class="tim">+8&times; ATR(10)</span></div><div class="flex-between"><span class="tia">Trail rest</span><span class="tin">Prior pivot or open target</span></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">Example &mdash; &#8377;500 Entry &middot; ATR(10) = &#8377;12</div>
+    <div class="inner">
+      <div class="mono f12 tm" style="margin-bottom:8px">Stop: &#8377;488 (1&times;ATR) &middot; Risk (R) = &#8377;12</div>
+      <div class="row"><span class="rl">T1 +&#8377;36 (3&times;)</span><span class="rv g">&#8377;536 &middot; +7.2% &middot; 3R</span></div>
+      <div class="row"><span class="rl">T2 +&#8377;60 (5&times;)</span><span class="rv g">&#8377;560 &middot; +12% &middot; 5R</span></div>
+      <div class="row"><span class="rl">T3 +&#8377;96 (8&times;)</span><span class="rv g">&#8377;596 &middot; +19.2% &middot; 8R</span></div>
+      <div class="mono f11 tb" style="margin-top:8px">Min R:R at T1 = 3:1 &#10003; &mdash; clears the 2:1 system minimum</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">Exit Signals &mdash; ATR Distribution Tells</div>
+    <div class="stack-sm">
+      <div class="exit ex-d"><div class="ex-td">ATR expands 2&times; on a down day</div><div class="ex-a">&rarr; Reduce immediately</div></div>
+      <div class="exit ex-d"><div class="ex-td">3 consecutive days: expanding ATR + lower closes</div><div class="ex-a">&rarr; Exit all</div></div>
+      <div class="exit ex-d"><div class="ex-td">Gap down with ATR &gt;3&times; normal</div><div class="ex-a">&rarr; No hold. No average.</div></div>
+      <div class="exit ex-o"><div class="ex-to">ATR expands on up days, contracts on down days</div><div class="ex-a">&rarr; Hold &mdash; trend is healthy</div></div>
+      <div class="exit ex-o"><div class="ex-to">ATR contracting within Stage 2 slope</div><div class="ex-a">&rarr; GRIND intact &mdash; no change</div></div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 5: SQUEEZE ═══════ -->
+<div class="section" id="section-5"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;When ATR goes to sleep, the market is loading a gun. Your job is to know the moment before the trigger.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Compression Ratio (CR) &mdash; The Core Metric</div>
+    <div class="inner" style="text-align:center; margin-bottom:12px;">
+      <div class="mono f11 tm" style="margin-bottom:4px">Compression Ratio</div>
+      <div class="mono bold tw" style="font-size:18px;">ATR(10) &divide; ATR(50)</div>
+      <div class="mono f11 td" style="margin-top:4px">Calculate on daily bars</div>
+    </div>
+    <div class="stack-sm">
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#3fb950; width:10%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge bg">CR &lt; 0.5</span><span class="cr-l">EXTREME SQUEEZE</span></div><div class="cr-d">Maximum conviction. Enter at structure trigger. Full size.</div></div>
+      </div>
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#58a6ff; width:25%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge bb">CR 0.5&ndash;0.7</span><span class="cr-l">SQUEEZE BUILDING</span></div><div class="cr-d">VCP forming. Watchlist. Return in 1&ndash;2 weeks.</div></div>
+      </div>
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#484f58; width:45%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge bgr">CR 0.7&ndash;1.0</span><span class="cr-l" style="color:#8b949e">NORMAL</span></div><div class="cr-d">Standard volatility. No edge yet.</div></div>
+      </div>
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#d29922; width:60%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge by">CR 1.0&ndash;1.5</span><span class="cr-l ty">EXPANDING</span></div><div class="cr-d">Breakout underway. Late but acceptable for momentum.</div></div>
+      </div>
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#d29922; width:80%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge by">CR 1.5&ndash;2.0</span><span class="cr-l ty">EXPANDED</span></div><div class="cr-d">Wait for next base. Do not chase.</div></div>
+      </div>
+      <div class="cr-item">
+        <div class="cr-bw"><div class="cr-b" style="background:#f85149; width:100%;"></div></div>
+        <div><div class="flex-row-center" style="gap:6px; margin-bottom:2px;"><span class="badge br">CR &gt; 2.0</span><span class="cr-l tr">OVEREXTENDED</span></div><div class="cr-d">Reduce. Distribution risk is elevated.</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">3-Star Squeeze &mdash; Maximum Conviction</div>
+    <div class="stack-md">
+      <div class="mono f12 ty">&#9733;&nbsp;&nbsp;&nbsp; CR below 0.5 (ATR at multi-week or multi-month low)</div>
+      <div class="mono f12 ty">&#9733;&#9733;&nbsp; Volume drying up (below 50% of 20-day avg for 3+ days)</div>
+      <div class="mono f12 ty">&#9733;&#9733;&#9733; Inside candles (day's range inside prior day's range)</div>
+      <div class="ibox ig">All 3 present = maximum setup conviction. Full position size. Hard stop at 1&times; ATR.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Squeeze Duration &rarr; Move Magnitude</div>
+    <div class="row"><span class="rl">1&ndash;2 weeks</span><span class="rv g">3&ndash;5&times; ATR expansion</span></div>
+    <div class="row"><span class="rl">3&ndash;6 weeks</span><span class="rv g">5&ndash;8&times; ATR expansion</span></div>
+    <div class="row"><span class="rl">6&ndash;12 weeks</span><span class="rv g">8&ndash;15&times; ATR expansion</span></div>
+    <div class="row"><span class="rl">&gt;12 weeks (major base)</span><span class="rv g">15&ndash;30&times;+ ATR expansion</span></div>
+    <div class="mono f12 ty" style="margin-top:8px;">Time in base = energy stored = magnitude of move.</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">False Squeeze Flags</div>
+    <div class="stack-sm">
+      <div class="wi"><span class="wi-r">&#x2717;</span>Low ATR from circuit breaker hits &mdash; artificially capped range &rarr; [CIRCUIT]</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Low ATR with declining price slope &mdash; Stage 4 contraction, not VCP. Never buy.</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>Low ATR on sub-&#8377;15Cr daily notional &mdash; thin market &rarr; [SPEC]</div>
+      <div class="wi"><span class="wi-r">&#x2717;</span>CR low for &lt;5 days &mdash; not enough base time for genuine coiling</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 6: SIZING ═══════ -->
+<div class="section" id="section-6"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;ATR gives you the stop. The stop gives you the size. Never reverse this order.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">The Formula</div>
+    <div class="fbox">
+      <div class="mono f11 tm" style="margin-bottom:4px">Shares to buy</div>
+      <div class="mono bold tw f18" style="line-height:1.4;">&#8377;15,000 &divide; (Multiplier &times; ATR10)</div>
+      <div class="mono f11 td" style="margin-top:6px;">Multiplier = setup-specific stop multiplier (see Stop tab)</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">Worked Example &mdash; 1PB Setup</div>
+    <div class="inner">
+      <div class="mono f12 tm" style="margin-bottom:8px">Stock &#8377;500 &middot; ATR(10) &#8377;10 &middot; Setup: 1PB (1.5&times;)</div>
+      <div class="row"><span class="rl">Stop amount (1.5 &times; &#8377;10)</span><span class="rv r">&#8377;15</span></div>
+      <div class="row"><span class="rl">Shares (&#8377;15,000 &divide; &#8377;15)</span><span class="rv g">1,000 shares</span></div>
+      <div class="row"><span class="rl">Position value (1,000 &times; &#8377;500)</span><span class="rv b">&#8377;5,00,000</span></div>
+      <div class="row"><span class="rl">Stop level (&#8377;500 &minus; &#8377;15)</span><span class="rv r">&#8377;485</span></div>
+      <div class="row"><span class="rl">T1 (&#8377;500 + &#8377;30)</span><span class="rv g">&#8377;530 &rarr; 2R &#10003;</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Sizing Adjustments</div>
+    <div class="stack-md">
+      <div class="flex-row"><span class="badge bg">FULL SIZE</span><span class="mono f12 tm">3-star squeeze &mdash; maximum conviction</span></div>
+      <div class="flex-row"><span class="badge by">&minus;25% SIZE</span><span class="mono f12 tm">Non-F&amp;O name &mdash; overnight gap risk</span></div>
+      <div class="flex-row"><span class="badge by">&minus;30% SIZE</span><span class="mono f12 tm">EP setup &mdash; elevated post-catalyst ATR</span></div>
+      <div class="flex-row"><span class="badge br">HALF SIZE MAX</span><span class="mono f12 tm">SPEC name &mdash; sub-&#8377;15Cr notional</span></div>
+      <div class="flex-row"><span class="badge bb">USE ATR(20)</span><span class="mono f12 tm">Post-results period (ATR spike)</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">Sizing Hard Limits</div>
+    <div class="stack-sm">
+      <div class="wi"><span class="wi-r">&#9888;</span>Position value &gt;10&times; avg daily notional &rarr; size down &mdash; you are the market</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>ATR(10) &gt;5% of stock price &rarr; stop too wide &mdash; skip</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>Formula gives &lt;50 shares &rarr; stock too expensive for &#8377;15K risk &mdash; skip</div>
+      <div class="wi"><span class="wi-r">&#9888;</span>Never average into a losing ATR-based stop &mdash; ATR was right, not you</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 7: NSE ═══════ -->
+<div class="section" id="section-7"><div class="stack">
+
+  <div class="quote">
+    <div class="qt">&ldquo;Imported frameworks break on Indian rails. Know where ATR tells the truth and where it lies.&rdquo;</div>
+    <div class="qa">&mdash; Rajan Mehta</div>
+  </div>
+
+  <div class="card">
+    <div class="slabel r">&#9889; Circuit Breakers &mdash; ATR Killer</div>
+    <div class="stack-md">
+      <div class="mono f12 tw">When a stock hits circuit, H&minus;L is artificially capped. ATR <span class="tr">understates</span> true volatility. The coil looks tighter than it is.</div>
+      <div class="ibox ir">&ge;2 circuit days in past 20 sessions &rarr; mark [CIRCUIT]. Use prior pivot structure for stops, not ATR. Widen stop 50% minimum.</div>
+      <div class="mono f12 tm">Workaround: use avg H&minus;L of the non-circuit days only to estimate a clean ATR.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel y">F&amp;O vs Non-F&amp;O &mdash; Gap Risk</div>
+    <div class="stack-md">
+      <div class="flex-row"><span class="badge bg">F&amp;O</span><span class="mono f12 tm">ATR captures overnight gap risk via gap history. Standard sizing applies.</span></div>
+      <div class="flex-row"><span class="badge by">NON-F&amp;O</span><span class="mono f12 tm">News/block deal can gap 5&ndash;15% &mdash; multiples of ATR. This risk is not in ATR. Size down 25&ndash;30%.</span></div>
+      <div class="ibox iy">EP on Non-F&amp;O &rarr; always buy the first pullback (not the gap itself). Wait 3&ndash;5 days for ATR to settle.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Results Season &mdash; ATR Calendar</div>
+    <div class="stack-sm">
+      <div class="ci"><div class="cp">3&ndash;4 wks pre-results</div><div class="ca">ATR: contracts</div><div class="co">&rarr; VCP / 3WT setups form &mdash; build watchlist</div></div>
+      <div class="ci"><div class="cp">Results day</div><div class="ca">ATR: explodes 3&ndash;10&times;</div><div class="co">&rarr; EP triggered &mdash; confirm catalyst + volume</div></div>
+      <div class="ci"><div class="cp">1&ndash;3 wks post-results</div><div class="ca">ATR: normalizing</div><div class="co">&rarr; 1PB setups emerge</div></div>
+      <div class="ci"><div class="cp">4&ndash;8 wks post-results</div><div class="ca">ATR: stable in trend</div><div class="co">&rarr; GRIND phase &mdash; buy pullbacks to MAs</div></div>
+      <div class="mono f12 tb">EP Window: Jan / Apr / Jul / Oct &mdash; highest EP hit rate.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel p">Delivery % &mdash; ATR Confirmation</div>
+    <div class="mono f12 tm" style="margin-bottom:8px">On breakout days where ATR expands:</div>
+    <div class="stack-md">
+      <div class="flex-row"><span class="badge bg">&gt;50% Del</span><span class="mono f12 tm">Institutional footprint. ATR expansion is real. Full size.</span></div>
+      <div class="flex-row"><span class="badge by">30&ndash;50% Del</span><span class="mono f12 tm">Mixed. Use 75% size. Confirm next day before adding.</span></div>
+      <div class="flex-row"><span class="badge br">&lt;30% Del</span><span class="mono f12 tm">Retail noise. ATR expansion unreliable. Half size or skip.</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="slabel">Liquidity Floor</div>
+    <div class="stack-md">
+      <div class="mono f12 tw">Minimum: <span class="tg bold">&#8377;15 Cr / 10-day average notional</span></div>
+      <div class="mono f12 tm">Below this: one block trade distorts H&minus;L. ATR becomes noise, not signal.</div>
+      <div class="ibox ir">Below &#8377;15Cr/10d notional = SPEC regardless of chart structure. ATR unreliable. Half size maximum, or skip entirely.</div>
+    </div>
+  </div>
+
+</div></div>
+
+<!-- ═══════ SECTION 8: CHEAT SHEET ═══════ -->
+<div class="section" id="section-8">
+  <div class="mono f11 td" style="text-align:center; padding:8px 0; border-bottom:1px solid #30363d; margin-bottom:14px;">QUICK REFERENCE &mdash; ALL CRITICAL NUMBERS IN ONE PLACE</div>
+  <div class="stack">
+
+    <div class="card">
+      <div class="slabel">&#9889; Core Numbers</div>
+      <div class="grid2">
+        <div class="gi"><div class="gi-l">Stop/Size period</div><div class="gi-v">ATR(10)</div></div>
+        <div class="gi"><div class="gi-l">Context period</div><div class="gi-v">ATR(50)</div></div>
+        <div class="gi"><div class="gi-l">Compression ratio</div><div class="gi-v">ATR10 &divide; ATR50</div></div>
+        <div class="gi"><div class="gi-l">Squeeze trigger</div><div class="gi-v tg">CR &lt; 0.5</div></div>
+        <div class="gi"><div class="gi-l">Overextended</div><div class="gi-v tr">CR &gt; 2.0</div></div>
+        <div class="gi"><div class="gi-l">Fixed risk</div><div class="gi-v">&#8377;15,000</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="slabel">Stop Multipliers</div>
+      <div class="stack-sm">
+        <div class="cr"><span class="badge bg">VCP</span><span class="mono bold tr f14">1.0&times; ATR(10)</span></div>
+        <div class="cr"><span class="badge bg">3WT</span><span class="mono bold tr f14">1.0&times; ATR(10)</span></div>
+        <div class="cr"><span class="badge bg">1PB</span><span class="mono bold tr f14">1.5&times; ATR(10)</span></div>
+        <div class="cr"><span class="badge bg">GRIND</span><span class="mono bold tr f14">2.0&times; ATR(10)</span></div>
+        <div class="cr"><span class="badge bg">EP</span><span class="mono bold tr f14">2.5&times; ATR(10)</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="slabel g">Target Ladder</div>
+      <div class="stack-sm">
+        <div class="cr"><span class="mono f12 tm bold">T1</span><span class="mono bold tg f14">+3&times; ATR(10)</span><span class="mono f12 ty">Sell 50%</span></div>
+        <div class="cr"><span class="mono f12 tm bold">T2</span><span class="mono bold tg f14">+5&times; ATR(10)</span><span class="mono f12 ty">Sell 25%</span></div>
+        <div class="cr"><span class="mono f12 tm bold">T3</span><span class="mono bold tg f14">+8&times; ATR(10)</span><span class="mono f12 ty">Trail rest</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="slabel p">Sizing Formula</div>
+      <div class="fbox" style="padding:12px;">
+        <div class="mono bold tw f14">&#8377;15,000 &divide; (Mult &times; ATR10) = Shares</div>
+        <div class="mono f11 tm" style="margin-top:6px">Non-F&amp;O EP: &minus;25% &middot; SPEC: &minus;50% &middot; 3-Star: Full</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="slabel r">Exit Alarm Signals</div>
+      <div class="stack-sm">
+        <div class="flex-row-center"><span class="tr bold" style="flex-shrink:0; font-size:13px;">&#9888;</span><span class="mono f11 tr" style="flex:1;">ATR 2&times; on a down day</span><span class="mono f11 tm">Reduce now</span></div>
+        <div class="flex-row-center"><span class="tr bold" style="flex-shrink:0; font-size:13px;">&#9888;</span><span class="mono f11 tr" style="flex:1;">3 days expand + lower close</span><span class="mono f11 tm">Exit all</span></div>
+        <div class="flex-row-center"><span class="tr bold" style="flex-shrink:0; font-size:13px;">&#9888;</span><span class="mono f11 tr" style="flex:1;">Gap down &gt;3&times; ATR</span><span class="mono f11 tm">No hold ever</span></div>
+        <div class="flex-row-center"><span class="tg bold" style="flex-shrink:0; font-size:13px;">&#10003;</span><span class="mono f11 tg" style="flex:1;">ATR expands up, contracts down</span><span class="mono f11 tm">Hold</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="slabel">NSE Flags</div>
+      <div class="stack-md">
+        <div class="flex-row"><span class="badge br">[CIRCUIT]</span><span class="mono f12 tm">ATR unreliable &mdash; use pivot structure for stops</span></div>
+        <div class="flex-row"><span class="badge by">[NON-F&amp;O]</span><span class="mono f12 tm">Gap risk &mdash; size down 25%</span></div>
+        <div class="flex-row"><span class="badge br">[SPEC]</span><span class="mono f12 tm">&lt;&#8377;15Cr notional &mdash; half size maximum</span></div>
+        <div class="flex-row"><span class="badge bg">[EP WIN]</span><span class="mono f12 tm">Jan / Apr / Jul / Oct &mdash; highest EP rate</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showTab(n) {
+  for (var i = 0; i < 9; i++) {
+    document.getElementById('section-' + i).classList.remove('active');
+    document.getElementById('tab-' + i).classList.remove('active');
+  }
+  document.getElementById('section-' + n).classList.add('active');
+  document.getElementById('tab-' + n).classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
