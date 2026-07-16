@@ -26,7 +26,7 @@ NSE:BECTORFOOD,NSE:KAYNES,NSE:IEX,NSE:HEG,NSE:LTTS,NSE:SCHAEFFLER,NSE:VOLTAS,NSE
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF17d</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.1% | +0.30% | 4131.70 | 19w | 20%  |
+| [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF17d · DEL90%</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.1% | +0.30% | 4131.70 | 19w | 20%  |
 | [JSWDULUX](https://in.tradingview.com/chart/?symbol=NSE:JSWDULUX)<br><sub>↓CMF14d</sub> | Decorative and industrial paints manufacturing for buildings | 1w | TOUCH | 1w | +5.0% | +4.48% | 3080.20 | 2w | 20%  |
 | [HINDOILEXP](https://in.tradingview.com/chart/?symbol=NSE:HINDOILEXP)<br><sub>↓CMF30d</sub> | Crude oil natural gas exploration production onshore offshore | 1w | TOUCH | 1w | +2.4% | -1.44% | 157.34 | — | 20%  |
 | [ONESOURCE](https://in.tradingview.com/chart/?symbol=NSE:ONESOURCE)<br><sub>↑CMF4d</sub> | Specialty pharma CDMO injectable biologics contract manufacturing | 1w | TOUCH | 1w | +1.4% | +0.56% | 1649.20 | — | 20% 🟦 |
@@ -44,7 +44,7 @@ NSE:BECTORFOOD,NSE:KAYNES,NSE:IEX,NSE:HEG,NSE:LTTS,NSE:SCHAEFFLER,NSE:VOLTAS,NSE
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND)<br><sub>↑CMF0d</sub> | Plastic pipes, packaging, industrial products manufacturer | 1w | ABOVE | 1w | +6.1% | +1.88% | 3522.70 | — | 20%  |
 | [JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE)<br><sub>↓CMF30d</sub> | Radial tyres for cars, trucks, two-wheelers | 1w | ABOVE | 1w | +2.4% | +1.99% | 420.20 | 1w | 20%  |
 | [JSL](https://in.tradingview.com/chart/?symbol=NSE:JSL)<br><sub>↑CMF0d</sub> | Stainless steel flat products for automotive construction railways | 1w | ABOVE | 1w | +3.0% | +1.83% | 737.50 | 2w | 20%  |
-| [ACI](https://in.tradingview.com/chart/?symbol=NSE:ACI)<br><sub>↓CMF7d · DEL87%(T-1)</sub> | Bromine industrial salt potash specialty chemicals exporter | 1w | ABOVE | 1w | +4.1% | +0.98% | 549.15 | — | 20%  |
+| [ACI](https://in.tradingview.com/chart/?symbol=NSE:ACI)<br><sub>↓CMF7d</sub> | Bromine industrial salt potash specialty chemicals exporter | 1w | ABOVE | 1w | +4.1% | +0.98% | 549.15 | — | 20%  |
 | [CONCOR](https://in.tradingview.com/chart/?symbol=NSE:CONCOR)<br><sub>↑CMF17d</sub> | Rail container logistics and multimodal freight transport services | 1w | ABOVE | 1w | +5.7% | -0.53% | 490.30 | — | 20%  |
 | [DALBHARAT](https://in.tradingview.com/chart/?symbol=NSE:DALBHARAT)<br><sub>↑CMF1d</sub> | Cement manufacturing, infrastructure, construction | 1w | ABOVE | 1w | +2.5% | +0.31% | 1830.30 | — | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF27d</sub> |  | 1w | ABOVE | 1w | +16.9% | -7.34% | 158.24 | — | 20% 🟦 |
