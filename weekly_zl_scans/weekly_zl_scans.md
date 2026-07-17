@@ -26,7 +26,7 @@ NSE:FINOPB,NSE:BECTORFOOD,NSE:SBICARD,NSE:HEG,NSE:LTTS,NSE:DALBHARAT,NSE:BLUESTA
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF18d · DEL90%(T-1)</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.5% | +0.35% | 4146.10 | 19w | 20%  |
+| [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF18d</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.5% | +0.35% | 4146.10 | 19w | 20%  |
 | [ONESOURCE](https://in.tradingview.com/chart/?symbol=NSE:ONESOURCE)<br><sub>↑CMF5d</sub> | Specialty pharma CDMO injectable biologics contract manufacturing | 1w | TOUCH | 1w | +1.6% | +0.24% | 1653.20 | — | 20% 🟦 |
 | [RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR)<br><sub>↓CMF24d</sub> | Automotive gears and precision components for global OEMs | 1w | TOUCH | 1w | +5.8% | +1.01% | 1341.10 | 6w | 20% 🟦 |
 | [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>↓CMF30d</sub> | Gold casting jewellery design manufacture retail sector | 1w | TOUCH | 1w | +0.2% | -0.25% | 212.62 | — | 20%  |
@@ -36,7 +36,7 @@ NSE:FINOPB,NSE:BECTORFOOD,NSE:SBICARD,NSE:HEG,NSE:LTTS,NSE:DALBHARAT,NSE:BLUESTA
 | [ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI)<br><sub>↓CMF30d</sub> |  | 1w | TOUCH | 1w | +0.9% | -0.57% | 812.75 | 25w | 20%  |
 | [FINOPB](https://in.tradingview.com/chart/?symbol=NSE:FINOPB)<br><sub>↑CMF28d</sub> |  | 1w | ABOVE | 1w | +28.7% | +10.09% | 174.21 | — | 20% 🟦 |
 | [BECTORFOOD](https://in.tradingview.com/chart/?symbol=NSE:BECTORFOOD)<br><sub>↓CMF0d</sub> | Biscuits bakery products FMCG retail consumer branded foods | 1w | ABOVE | 1w | +11.4% | -1.87% | 188.63 | 2w | 20%  |
-| [SBICARD](https://in.tradingview.com/chart/?symbol=NSE:SBICARD)<br><sub>↑CMF3d</sub> | Credit card issuer, consumer lending, retail finance | 1w | ABOVE | 1w | +7.0% | +1.57% | 654.70 | — | 20%  |
+| [SBICARD](https://in.tradingview.com/chart/?symbol=NSE:SBICARD)<br><sub>↑CMF3d · DEL61%</sub> | Credit card issuer, consumer lending, retail finance | 1w | ABOVE | 1w | +7.0% | +1.57% | 654.70 | — | 20%  |
 | [HEG](https://in.tradingview.com/chart/?symbol=NSE:HEG)<br><sub>↑CMF10d</sub> | Graphite electrodes for electric arc furnace steel production | 1w | ABOVE | 1w | +7.8% | -3.47% | 587.35 | — | 20%  |
 | [LTTS](https://in.tradingview.com/chart/?symbol=NSE:LTTS)<br><sub>↑CMF2d</sub> | Engineering design development testing services global | 1w | ABOVE | 1w | +4.2% | -1.86% | 3415.30 | 8w | 20%  |
 | [DALBHARAT](https://in.tradingview.com/chart/?symbol=NSE:DALBHARAT)<br><sub>↑CMF2d</sub> | Cement manufacturing, infrastructure, construction | 1w | ABOVE | 1w | +2.0% | -0.39% | 1823.20 | — | 20%  |
