@@ -1,5 +1,6 @@
 import csv
 from io import StringIO
+from pathlib import Path
 
 import pytest
 import requests
@@ -208,3 +209,97 @@ def test_analyse_symbol_raises_contextual_error_for_bad_schema(monkeypatch):
 
     with pytest.raises(RuntimeError, match="BROKEN: analysis failed"):
         scanner.analyse_symbol("BROKEN")
+
+
+@pytest.mark.parametrize(
+    ("age", "bucket"),
+    [
+        (1, "1 DAY"),
+        (2, "2 DAYS"),
+        (3, "3 DAYS"),
+        (4, "4-5 DAYS"),
+        (5, "4-5 DAYS"),
+        (6, "6-10 DAYS"),
+        (10, "6-10 DAYS"),
+        (11, "11-15 DAYS"),
+        (15, "11-15 DAYS"),
+        (16, "15 DAYS+"),
+        (80, "15 DAYS+"),
+    ],
+)
+def test_age_bucket_boundaries(age, bucket):
+    assert scanner.age_bucket(age) == bucket
+
+
+def finding(symbol: str, direction: str, age: int) -> dict[str, object]:
+    return {
+        "symbol": symbol,
+        "status": "analysed",
+        "direction": direction,
+        "zl_age": age,
+        "zl_change_pct": 1.25,
+        "day_change_pct": 0.5,
+        "close": 100.0,
+        "squeeze": False,
+        "liq_tag": "",
+        "cmf_tag": "",
+        "deliv_tag": "",
+    }
+
+
+def test_tables_sort_by_age_then_symbol():
+    rows = [
+        finding("ZZZ", "up", 2),
+        finding("BBB", "up", 1),
+        finding("AAA", "up", 1),
+    ]
+
+    assert [
+        row["symbol"] for row in scanner.sort_findings(rows, "up")
+    ] == ["AAA", "BBB", "ZZZ"]
+
+
+def test_report_has_two_tables_and_symmetric_watchlists(monkeypatch):
+    monkeypatch.setattr(scanner, "load_labels", lambda: {"UP1": "Leader"})
+    results = [
+        finding("UP1", "up", 1),
+        finding("UP4", "up", 4),
+        finding("DN1", "down", 1),
+        finding("DN4", "down", 4),
+        {
+            "symbol": "FLAT",
+            "status": "analysed",
+            "direction": "flat",
+            "zl_age": 0,
+        },
+        {"symbol": "SKIP", "status": "skipped", "reason": "short"},
+    ]
+
+    report = scanner.build_markdown(
+        results,
+        {},
+        "cached CSV",
+        "2026-07-17 16:30 IST",
+    )
+
+    assert "### ZLEMA25 Uptrend Start and Age" in report
+    assert "### ZLEMA25 Downtrend Start and Age" in report
+    assert "###UP 1 DAY,NSE:UP1" in report
+    assert "###DOWN 1 DAY,NSE:DN1" in report
+    assert report.index("NSE:UP1") < report.index("NSE:UP4")
+    assert "Requested: 6" in report
+    assert "Analysed: 5" in report
+    assert "Skipped: 1" in report
+    assert "Flat: 1" in report
+    assert "Leader" in report
+    assert "SEBI registered" in report
+
+
+def test_write_report_atomic_replaces_target_without_temp_residue(tmp_path):
+    output = tmp_path / "report.md"
+    output.write_text("old", encoding="utf-8")
+
+    scanner.write_report_atomic("new\n", output)
+
+    assert output.read_text(encoding="utf-8") == "new\n"
+    assert not (tmp_path / "report.md.tmp").exists()
