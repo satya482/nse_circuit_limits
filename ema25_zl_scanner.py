@@ -6,7 +6,7 @@ Run after 4:20 PM IST on trading days (after run_fetch_data.ps1 completes).
 Watchlist filters (TradingView):
   - NSE common equity
   - Price > 50 INR
-  - Market cap 10B – 1T INR  (≈ 1,000 Cr – 1 Lakh Cr)
+  - Market cap 10B – 5T INR  (≈ 1,000 Cr – 5 Lakh Cr)
   - Price > EMA25
 
 RS filter — controlled by RS_MODE:
@@ -49,7 +49,7 @@ TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_FILE = os.path.join(SCANS_DIR, "ema25_zl_scans.md")
 
 MC_LOW = 1_000 * 1_00_00_000  # 1000 Cr  = 10B INR
-MC_HIGH = 1_00_000 * 1_00_00_000  # 1L Cr    = 1T INR
+MC_HIGH = 5_00_000 * 1_00_00_000  # 5L Cr    = 5T INR
 ZL_TURN_CAP = 60
 FILTER_1W_CHANGE = False  # True = require 1-week price change > 5%
 FILTER_PRICE_EMA25 = False  # True = require price > EMA25 (off by default: squeeze builds before reclaim)
@@ -315,7 +315,7 @@ STATIC_HEADER = """### Scan definition
 | Exchange | NSE common equity |
 | Price | > ₹50 |
 | 1-week change | {w1} |
-| Market cap | ₹1,000 Cr – ₹1 Lakh Cr |
+| Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
 | Price vs EMA25 | {ema25} |
 | RS filter | {rs_label} |
 | ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |

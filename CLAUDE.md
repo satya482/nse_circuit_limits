@@ -129,7 +129,7 @@ All thresholds live in `settings.yaml`. Pipeline:
 
 ### Scanner pipeline — EMA25 ZL (`ema25_zl_scanner.py`)
 
-1. TradingView screener → watchlist (price > EMA25, MCap 1,000–1,00,000 Cr)
+1. TradingView screener → watchlist (price > EMA25, MCap 1,000–5,00,000 Cr)
 2. `load_ohlc(symbol)` → RS gate: daily RS > weekly RS EMA9 AND EMA9 rising
 3. ZLEMA25 direction + `zl25_turn_stats()` → days since last turn-up, % gain
 4. `bb_kc_squeeze()` → BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar

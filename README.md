@@ -11,7 +11,7 @@ Runs automatically via Windows Task Scheduler.
 Identifies stocks where ZLEMA25 (Zero-Lag EMA 25) has recently turned up,
 filtered by RS strength vs Nifty MidSmallcap 400.
 
-- **Watchlist**: TradingView screener — NSE common equity, price > ₹50, MCap ₹1,000–1,00,000 Cr, price > EMA25
+- **Watchlist**: TradingView screener — NSE common equity, price > ₹50, MCap ₹1,000–5,00,000 Cr, price > EMA25
 - **RS gate**: Daily RS line > Weekly RS EMA9 AND weekly RS EMA9 rising
 - **Float gate**: `float_gate.py` hard gate — ⛔ AVOID (thin free float / illiquid) dropped from scan;
   ✓ SAFE / ⚠ CAUTION shown under the symbol (same gate as WT bull cross scanner)
