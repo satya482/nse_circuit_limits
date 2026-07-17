@@ -303,3 +303,58 @@ def test_write_report_atomic_replaces_target_without_temp_residue(tmp_path):
 
     assert output.read_text(encoding="utf-8") == "new\n"
     assert not (tmp_path / "report.md.tmp").exists()
+
+
+def test_main_writes_report_and_prints_counts(monkeypatch, tmp_path, capsys):
+    output = tmp_path / "nifty50.md"
+    rows = [finding("UP", "up", 1), finding("DOWN", "down", 2)]
+    monkeypatch.setattr(
+        scanner,
+        "load_nifty50_constituents",
+        lambda: (["DOWN", "UP"], "cached CSV"),
+    )
+    monkeypatch.setattr(
+        scanner,
+        "analyse_symbol",
+        lambda symbol: next(row for row in rows if row["symbol"] == symbol),
+    )
+    monkeypatch.setattr(scanner, "get_circuit_limits", lambda: {})
+    monkeypatch.setattr(scanner, "OUTPUT_FILE", output)
+
+    assert scanner.main() == 0
+
+    report = output.read_text(encoding="utf-8")
+    console = capsys.readouterr().out
+    assert "ZLEMA25 Uptrend Start and Age" in report
+    assert "ZLEMA25 Downtrend Start and Age" in report
+    assert "Requested: 2" in console
+    assert "Uptrend: 1" in console
+    assert "Downtrend: 1" in console
+
+
+def test_main_returns_one_without_report_on_fatal_error(monkeypatch, tmp_path, capsys):
+    output = tmp_path / "nifty50.md"
+
+    def fail():
+        raise RuntimeError("universe unavailable")
+
+    monkeypatch.setattr(scanner, "load_nifty50_constituents", fail)
+    monkeypatch.setattr(scanner, "OUTPUT_FILE", output)
+
+    assert scanner.main() == 1
+    assert not output.exists()
+    assert "universe unavailable" in capsys.readouterr().err
+
+
+def test_runner_and_orchestrator_contracts():
+    root = Path(__file__).resolve().parents[1]
+    runner = (root / "run_nifty50_zlema25_scanner.ps1").read_text(
+        encoding="utf-8"
+    )
+    orchestrator = (root / "run_all_scanners.ps1").read_text(encoding="utf-8")
+
+    assert "nifty50_zlema25_scanner.py" in runner
+    assert "nifty50_zlema25_scans/" in runner
+    assert "data/nifty50_constituents.csv" in runner
+    assert "commit --no-verify" in runner
+    assert 'Run-Scanner "NIFTY50_ZLEMA25"' in orchestrator

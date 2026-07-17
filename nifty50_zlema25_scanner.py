@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 from dataclasses import dataclass
+from datetime import datetime
 from io import StringIO
 import json
 import os
@@ -25,6 +26,7 @@ NSE_CONSTITUENTS_URL = (
     "https://nsearchives.nseindia.com/content/indices/ind_nifty50list.csv"
 )
 CACHE_FILE = REPO_DIR / "data" / "nifty50_constituents.csv"
+OUTPUT_FILE = REPO_DIR / "nifty50_zlema25_scans" / "nifty50_zlema25_scans.md"
 HTTP_HEADERS = {"User-Agent": "Mozilla/5.0"}
 LABELS_FILE = REPO_DIR / "tools" / "stock_labels.json"
 AGE_BUCKETS = (
@@ -345,3 +347,40 @@ def write_report_atomic(text: str, output_path: Path) -> None:
     tmp_path = output_path.with_suffix(output_path.suffix + ".tmp")
     tmp_path.write_text(text, encoding="utf-8", newline="\n")
     os.replace(tmp_path, output_path)
+
+
+def run_scan() -> tuple[list[dict[str, object]], str]:
+    symbols, source = load_nifty50_constituents()
+    return [analyse_symbol(symbol) for symbol in symbols], source
+
+
+def main() -> int:
+    try:
+        results, source = run_scan()
+        circuits = get_circuit_limits()
+        generated_at = datetime.now().strftime("%Y-%m-%d %H:%M IST")
+        report = build_markdown(results, circuits, source, generated_at)
+        write_report_atomic(report, OUTPUT_FILE)
+
+        analysed = [row for row in results if row.get("status") == "analysed"]
+        skipped = [row for row in results if row.get("status") == "skipped"]
+        uptrends = sort_findings(results, "up")
+        downtrends = sort_findings(results, "down")
+        flat = [row for row in analysed if row.get("direction") == "flat"]
+        print(
+            f"Requested: {len(results)}  Analysed: {len(analysed)}  "
+            f"Skipped: {len(skipped)}  Flat: {len(flat)}"
+        )
+        print(f"Uptrend: {len(uptrends)}  Downtrend: {len(downtrends)}")
+        print(f"Universe source: {source}")
+        for row in skipped:
+            print(f"Skipped {row['symbol']}: {row.get('reason', 'unknown reason')}")
+        print(f"Report: {OUTPUT_FILE}")
+        return 0
+    except Exception as exc:
+        print(f"NIFTY 50 ZLEMA25 scan failed: {exc}", file=sys.stderr)
+        return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
