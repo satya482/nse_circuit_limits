@@ -2,12 +2,22 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-07-16.
+Last reviewed by Codex: 2026-07-17.
 Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-17 by Codex, NIFTY 50 daily ZLEMA25 trend-age scanner:
+
+- Added `nifty50_zlema25_scanner.py`, a dedicated no-exclusion-gate scan of the current NIFTY 50 universe. It refreshes the official NSE constituent CSV, validates exactly 50 unique symbols, and falls back to the atomically cached `data/nifty50_constituents.csv`.
+- Daily ZLEMA25 uses the existing `ema25_zl_scanner.py` formula. Strict rising/falling slopes produce separate uptrend/downtrend tables; exact equality is flat. Age is the full consecutive trading-bar run, resets to `1d` at a direction change, and sorts ascending then by symbol.
+- Output `nifty50_zlema25_scans/nifty50_zlema25_scans.md` includes separate direction tables plus symmetric `1d`, `2d`, `3d`, `4-5d`, `6-10d`, `11-15d`, and `15d+` TradingView watchlists. Informational liquidity/CMF/delivery, squeeze, labels, and circuit columns never exclude a constituent.
+- Added `run_nifty50_zlema25_scanner.ps1` and registered `NIFTY50_ZLEMA25` in `run_all_scanners.ps1` immediately after `EMA25_ZL`. The runner stops on scanner failure and stages only the generated report plus validated constituent cache.
+- Added `tests/test_nifty50_zlema25_scanner.py`. Final verification: 32/32 focused scanner tests passed, 15/15 related daily-ZLEMA backtest regression tests passed, all PowerShell files parsed, and `git diff --check` was clean.
+- Live local-OHLC run on 2026-07-17 used `NSE refresh`: requested 50, analysed 50, skipped 0, flat 0, uptrend 25, downtrend 25. Rerun with `python nifty50_zlema25_scanner.py` after the normal OHLC refresh.
+- Feature commits: `c8b299d`, `a4b531f`, `deaa18e`, `aa8d864`; documentation/report handoff follows in the next commit. Design: `docs/superpowers/specs/2026-07-17-nifty50-zlema25-trend-scanner-design.md`; plan: `docs/superpowers/plans/2026-07-17-nifty50-zlema25-trend-scanner.md`.
 
 Updated 2026-07-16 by Codex, ATR Bible Pine suite takeover:
 

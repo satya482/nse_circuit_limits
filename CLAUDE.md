@@ -50,6 +50,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
 .\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
+.\run_nifty50_zlema25_scanner.ps1  # NIFTY 50 daily ZLEMA25 up/down trend age scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
@@ -83,6 +84,7 @@ Run any Python script directly for debugging:
 ```bash
 python fetch_data.py
 python ema25_zl_scanner.py
+python nifty50_zlema25_scanner.py
 python ema-compression-scanner/screener.py
 python dashboard_generator.py
 python wt_bullcross_scanner.py
@@ -134,6 +136,16 @@ All thresholds live in `settings.yaml`. Pipeline:
 3. ZLEMA25 direction + `zl25_turn_stats()` → days since last turn-up, % gain
 4. `bb_kc_squeeze()` → BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar
 5. Writes `ema25_zl_scans/ema25_zl_scans.md`
+
+### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
+
+1. Refreshes the official NSE NIFTY 50 constituent CSV and atomically caches the validated 50-symbol universe at `data/nifty50_constituents.csv`; uses the cache when NSE is unavailable.
+2. `load_ohlc(symbol)` loads daily bars for every constituent with no market-cap, price, RS, liquidity, or float exclusion gate.
+3. Reuses the EMA25 ZL formula from `ema25_zl_scanner.py`; strict positive slope is uptrend, strict negative slope is downtrend, and exact equality is flat.
+4. Trend age counts consecutive trading bars in the current direction (new direction = `1d`); ZL Chg% uses the close immediately before the turn bar.
+5. Writes `nifty50_zlema25_scans/nifty50_zlema25_scans.md` with separate uptrend/downtrend tables sorted youngest-first and symmetric `1d`, `2d`, `3d`, `4-5d`, `6-10d`, `11-15d`, and `15d+` TradingView buckets.
+
+Manual run: `python nifty50_zlema25_scanner.py`. Production runner: `run_nifty50_zlema25_scanner.ps1`; `run_all_scanners.ps1` invokes it immediately after the broad EMA25 ZL scanner.
 
 ### Scanner pipeline — Weekly ZL (`weekly_zl_scanner.py`)
 
