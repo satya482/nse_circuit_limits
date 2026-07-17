@@ -6,7 +6,15 @@ indicator("RS WaveTrend + Weekly RS 9 EMA", shorttitle="RS WT + W9", overlay=fal
 //────────────────────────────────────────────────────────────
 
 // Benchmark
-benchmarkSym = input.symbol("NSE:NIFTYMIDSML400", "Benchmark")
+// Nifty50 constituents (as of 2026-07-17) — TradingView tickers, so "-" and "&"
+// become "_" (M&M -> M_M, BAJAJ-AUTO -> BAJAJ_AUTO). Comma-delimited with leading/
+// trailing commas so str.contains matches whole tickers only (LT vs ULTRACEMCO).
+// Update manually on index rebalance.
+nifty50List = ",HDFCBANK,ICICIBANK,RELIANCE,BHARTIARTL,LT,SBIN,INFY,AXISBANK,M_M,KOTAKBANK,BAJFINANCE,ITC,TCS,ETERNAL,SUNPHARMA,TITAN,HINDUNILVR,MARUTI,NTPC,TATASTEEL,BEL,SHRIRAMFIN,HINDALCO,ULTRACEMCO,ADANIPORTS,POWERGRID,HCLTECH,ASIANPAINT,INDIGO,GRASIM,BAJAJ_AUTO,JSWSTEEL,BAJAJFINSV,COALINDIA,EICHERMOT,NESTLEIND,ONGC,TECHM,TRENT,ADANIENT,APOLLOHOSP,SBILIFE,MAXHEALTH,CIPLA,JIOFIN,DRREDDY,TATACONSUM,TMPV,HDFCLIFE,WIPRO,"
+isNifty50 = str.contains(nifty50List, "," + syminfo.ticker + ",")
+
+benchmarkInput = input.symbol("NSE:NIFTYMIDSML400", "Benchmark (non-Nifty50)")
+benchmarkSym   = isNifty50 ? "NSE:NIFTY" : benchmarkInput
 
 // Daily RS trend
 dailyRsEmaLen = input.int(21, "Daily RS EMA Length", minval=1)
@@ -282,13 +290,13 @@ priceBreakEntry = previousHighBroken and wtAboveSignal and wtRising and dailyRsA
 // 9. PLOTS
 //────────────────────────────────────────────────────────────
 
-wt1Plot = plot(wt1, title="RS WaveTrend", color=wtRising ? color.aqua : color.orange, linewidth=2)
+wt1Plot = plot(wt1, title="RS WaveTrend", color=wtRising ? color.lime : color.red, linewidth=1)
 
-wt2Plot = plot(wt2, title="WaveTrend Signal", color=color.yellow, linewidth=2)
+wt2Plot = plot(wt2, title="WaveTrend Signal", color=color.aqua, linewidth=1)
 
-plot(wt1Weekly, title="Weekly RS WaveTrend", color=color.teal, linewidth=2)
+plot(wt1Weekly, title="Weekly RS WaveTrend", color=color.white, linewidth=1)
 
-plot(wt2Weekly, title="Weekly RS WaveTrend Signal", color=color.maroon, linewidth=2)
+plot(wt2Weekly, title="Weekly RS WaveTrend Signal", color=color.blue, linewidth=1)
 
 fill(wt1Plot, wt2Plot, color=showWtArea ? wtAboveSignal ? color.new(color.green, 86) : color.new(color.red, 86) : na, title="WaveTrend Momentum Fill")
 
@@ -317,18 +325,18 @@ plotshape(showCrossMarkers and wtWeeklyBullCross ? wt1Weekly : na, title="Bullis
 plotshape(showCrossMarkers and wtWeeklyBearCross ? wt1Weekly : na, title="Bearish Weekly RS WT Cross", style=shape.circle, location=location.absolute, color=color.fuchsia, size=size.tiny)
 
 // Qualified reversal from below zero
-plotshape(showQualifiedSignals and earlyReversalSignal, title="Qualified Early Reversal", style=shape.triangleup, location=location.bottom, color=color.lime, size=size.small, text="REV")
+//plotshape(showQualifiedSignals and earlyReversalSignal, title="Qualified Early Reversal", style=shape.triangleup, location=location.bottom, color=color.lime, size=size.small, text="REV")
 
 // Qualified continuation above zero
-plotshape(showQualifiedSignals and continuationSignal, title="Qualified Continuation", style=shape.diamond, location=location.bottom, color=color.blue, size=size.small, text="CONT")
+//plotshape(showQualifiedSignals and continuationSignal, title="Qualified Continuation", style=shape.diamond, location=location.bottom, color=color.blue, size=size.small, text="CONT")
 
 // Price breakout after WaveTrend is already bullish
-plotshape(showQualifiedSignals and priceBreakEntry and not qualifiedBullSignal, title="RS Momentum Price Break", style=shape.circle, location=location.bottom, color=color.fuchsia, size=size.tiny, text="PH")
+//plotshape(showQualifiedSignals and priceBreakEntry and not qualifiedBullSignal, title="RS Momentum Price Break", style=shape.circle, location=location.bottom, color=color.fuchsia, size=size.tiny, text="PH")
 
 // Weekly bullish regime begins
 weeklyBullishStart = weeklyBullish and not weeklyBullish[1]
 
-plotshape(showQualifiedSignals and weeklyBullishStart, title="Weekly RS Bullish Regime", style=shape.square, location=location.bottom, color=color.green, size=size.tiny, text="W9")
+//plotshape(showQualifiedSignals and weeklyBullishStart, title="Weekly RS Bullish Regime", style=shape.square, location=location.bottom, color=color.green, size=size.tiny, text="W9")
 
 //────────────────────────────────────────────────────────────
 // 11. BACKGROUND REGIME
@@ -336,7 +344,7 @@ plotshape(showQualifiedSignals and weeklyBullishStart, title="Weekly RS Bullish 
 
 backgroundColor = strongBullishRegime ? color.new(color.green, 90) : strongBearishRegime ? color.new(color.red, 90) : na
 
-bgcolor(showBackground ? backgroundColor : na, title="RS Regime Background")
+//bgcolor(showBackground ? backgroundColor : na, title="RS Regime Background")
 
 //────────────────────────────────────────────────────────────
 // 12. DATA WINDOW VALUES
