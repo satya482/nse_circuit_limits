@@ -113,11 +113,26 @@ def bb_kc_squeeze(df: pd.DataFrame, kc_atr_wilder: bool = False) -> bool:
     )
 
 
-def zl25_turn_stats(zl25: pd.Series, closes: pd.Series) -> tuple[int, float]:
+def zl25_turn_stats(
+    zl25: pd.Series, closes: pd.Series, direction: str = "up"
+) -> tuple[int, float]:
+    if direction not in {"up", "down"}:
+        raise ValueError("direction must be 'up' or 'down'")
+
     n = len(zl25)
     limit = max(2, n - ZL_TURN_CAP)
     for i in range(n - 1, limit - 1, -1):
-        if zl25.iloc[i] > zl25.iloc[i - 1] and zl25.iloc[i - 1] <= zl25.iloc[i - 2]:
+        turned_up = (
+            zl25.iloc[i] > zl25.iloc[i - 1]
+            and zl25.iloc[i - 1] <= zl25.iloc[i - 2]
+        )
+        turned_down = (
+            zl25.iloc[i] < zl25.iloc[i - 1]
+            and zl25.iloc[i - 1] >= zl25.iloc[i - 2]
+        )
+        if (direction == "up" and turned_up) or (
+            direction == "down" and turned_down
+        ):
             bars = (n - 1) - i + 1
             pct = (closes.iloc[-1] / closes.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
@@ -275,12 +290,19 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
         # ZLEMA25
         zl25 = zlema(c, 25)
         zl_rising = zl25.iloc[-1] > zl25.iloc[-2]
+        if zl_rising:
+            zl_direction = "up"
+        elif zl25.iloc[-1] < zl25.iloc[-2]:
+            zl_direction = "down"
+        else:
+            zl_direction = "flat"
 
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
         day_chg = (curr_close - prev_close) / prev_close * 100
 
-        zl_days, zl_pct = zl25_turn_stats(zl25, c)
+        zl_days, zl_pct = zl25_turn_stats(zl25, c, "up")
+        zl_down_days, zl_down_pct = zl25_turn_stats(zl25, c, "down")
         rvol, strong_start = _rvol_ss(raw)
 
         return {
@@ -288,8 +310,11 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
             "close": curr_close,
             "day_chg": day_chg,
             "zl_rising": zl_rising,
+            "zl_direction": zl_direction,
             "zl_days": zl_days,
             "zl_pct": zl_pct,
+            "zl_down_days": zl_down_days,
+            "zl_down_pct": zl_down_pct,
             "squeeze": bb_kc_squeeze(raw),
             "trap": trap_label(fm),
             "rs_weekly_gate": _weekly_rs_gate(rs, c_rs, idx_rs),
@@ -309,10 +334,10 @@ _RS_FILTER_LABEL = {
     "weekly_ema9": "Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising",
 }
 
-STATIC_HEADER = """### Scan definition
+STATIC_HEADER_TEMPLATE = """### Scan definition
 | Filter | Value |
 |--------|-------|
-| Exchange | NSE common equity |
+| Exchange | {universe_label} |
 | Price | > ₹50 |
 | 1-week change | {w1} |
 | Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
@@ -325,12 +350,31 @@ STATIC_HEADER = """### Scan definition
 
 ---
 """.format(
+    universe_label="{universe_label}",
     cap=ZL_TURN_CAP,
     rvol_flag=RVOL_FLAG,
     rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE),
     w1="> 5%" if FILTER_1W_CHANGE else "off",
     ema25="Price > EMA25" if FILTER_PRICE_EMA25 else "off",
 )
+
+
+def _static_header(universe_label: str) -> str:
+    return STATIC_HEADER_TEMPLATE.format(universe_label=universe_label)
+
+
+STATIC_HEADER = _static_header("NSE common equity")
+
+
+_AGE_BUCKETS = [
+    ("1 DAY", 1, 1),
+    ("2 DAYS", 2, 2),
+    ("3 DAYS", 3, 3),
+    ("4-5 DAYS", 4, 5),
+    ("6-10 DAYS", 6, 10),
+    ("11-15 DAYS", 11, 15),
+    ("15 DAYS+", 16, 10**9),
+]
 
 
 def _table_rows(
@@ -383,10 +427,116 @@ def _table_rows(
     return rows
 
 
+def _directional_markdown(
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str],
+    title: str,
+    universe_label: str,
+    universe_stats: str | None,
+) -> str:
+    uptrend = sorted(
+        [f for f in findings if f.get("zl_direction") == "up"],
+        key=lambda x: (x["zl_days"], x["symbol"]),
+    )
+    downtrend = sorted(
+        [
+            {**f, "zl_days": f["zl_down_days"], "zl_pct": f["zl_down_pct"]}
+            for f in findings
+            if f.get("zl_direction") == "down"
+        ],
+        key=lambda x: (x["zl_days"], x["symbol"]),
+    )
+    flat_count = sum(f.get("zl_direction") == "flat" for f in findings)
+
+    hdr = [
+        "| Symbol | ZL Age | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |",
+        "|--------|-------:|--------:|-------|--------:|------:|:-------:|:-------:|",
+    ]
+    wl_parts = []
+    for prefix, rows in (("UP", uptrend), ("DOWN", downtrend)):
+        for label, lo, hi in _AGE_BUCKETS:
+            syms = [f["symbol"] for f in rows if lo <= f["zl_days"] <= hi]
+            if syms:
+                wl_parts.append(
+                    f"###{prefix} {label}," + ",".join(f"NSE:{s}" for s in syms)
+                )
+
+    lines = [
+        f"# {title}",
+        f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
+    ]
+    if universe_stats:
+        lines += [f"*Universe: {universe_stats}*"]
+    lines += [
+        "",
+        _static_header(universe_label),
+        f"**ZLEMA25 Uptrend: {len(uptrend)}** &nbsp;|&nbsp; "
+        f"**ZLEMA25 Downtrend: {len(downtrend)}** &nbsp;|&nbsp; **Flat: {flat_count}**",
+        "",
+        "**TradingView watchlist** *(sectioned by direction and ZL age — paste into TV import)*",
+        "```",
+        ",".join(wl_parts),
+        "```",
+        "",
+        "### ZLEMA25 Uptrend",
+    ]
+    if uptrend:
+        lines += hdr + _table_rows(uptrend, circuit, names)
+        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in uptrend), "```"]
+    else:
+        lines.append("*No ZLEMA25 uptrend stocks today.*")
+
+    lines += ["", "### ZLEMA25 Downtrend"]
+    if downtrend:
+        lines += hdr + _table_rows(downtrend, circuit, names)
+        lines += [
+            "",
+            "```",
+            ",".join(f"NSE:{f['symbol']}" for f in downtrend),
+            "```",
+        ]
+    else:
+        lines.append("*No ZLEMA25 downtrend stocks today.*")
+
+    for heading, rows in (("Uptrend", uptrend), ("Downtrend", downtrend)):
+        lines += ["", f"### TradingView Watchlists — {heading}"]
+        for label, lo, hi in _AGE_BUCKETS:
+            syms = [f["symbol"] for f in rows if lo <= f["zl_days"] <= hi]
+            if syms:
+                lines += [
+                    "",
+                    f"**{label.lower()}** ({len(syms)})",
+                    "```",
+                    ",".join(f"NSE:{s}" for s in syms),
+                    "```",
+                ]
+
+    return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
+
+
 def build_markdown(
-    findings: list[dict], circuit: dict[str, tuple], names: dict[str, str] | None = None
+    findings: list[dict],
+    circuit: dict[str, tuple],
+    names: dict[str, str] | None = None,
+    *,
+    title: str | None = None,
+    universe_label: str = "NSE common equity",
+    directional: bool = False,
+    universe_stats: str | None = None,
 ) -> str:
     names = names or {}
+    title = title or f"NSE EMA25 ZL Scan — {TODAY}"
+    if directional:
+        return _directional_markdown(
+            findings,
+            circuit,
+            names,
+            title,
+            universe_label,
+            universe_stats,
+        )
+
     rising = sorted([f for f in findings if f["zl_rising"]], key=lambda x: x["zl_days"])
     watch = sorted(
         [f for f in findings if not f["zl_rising"]], key=lambda x: x["zl_days"]
@@ -416,10 +566,10 @@ def build_markdown(
         wl_parts.append("###WATCH," + ",".join(f"NSE:{f['symbol']}" for f in watch))
 
     lines = [
-        f"# NSE EMA25 ZL Scan — {TODAY}",
+        f"# {title}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
-        STATIC_HEADER,
+        _static_header(universe_label),
         f"**ZLEMA25 Rising: {len(rising)}** &nbsp;|&nbsp; **ZLEMA25 Watch: {len(watch)}**",
         "",
         "**TradingView watchlist** *(sectioned by ZL days since turn-up — paste into TV import)*",
