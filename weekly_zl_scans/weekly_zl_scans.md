@@ -61,12 +61,12 @@ NSE:OIL,NSE:JSWENERGY,NSE:SDBL,NSE:BANKINDIA,NSE:COLPAL,NSE:IEX,NSE:RICOAUTO,NSE
 | [MAMATA](https://in.tradingview.com/chart/?symbol=NSE:MAMATA)<br><sub>↑CMF18d</sub> | Plastic bag pouch machine manufacturer for packaging industry | 1w | ABOVE | 1w | +2.5% | +2.55% | 396.15 | — | 20%  |
 | [EMUDHRA](https://in.tradingview.com/chart/?symbol=NSE:EMUDHRA)<br><sub>↓CMF30d</sub> | Digital signature certificates and cybersecurity authentication solutions | 1w | ABOVE | 1w | +2.3% | +2.27% | 458.25 | — | 20%  |
 | [HGINFRA](https://in.tradingview.com/chart/?symbol=NSE:HGINFRA)<br><sub>↓CMF1d</sub> | Road and highway construction EPC services India | 1w | ABOVE | 1w | +1.8% | +1.82% | 559.85 | — | 20%  |
-| [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL)<br><sub>↓CMF30d</sub> | Engineering services, digital transformation, automotive and aerospace clients | 1w | ABOVE | 1w | +4.1% | +4.07% | 824.65 | — | 20%  |
+| [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL)<br><sub>↓CMF30d · DEL79%</sub> | Engineering services, digital transformation, automotive and aerospace clients | 1w | ABOVE | 1w | +4.1% | +4.07% | 824.65 | — | 20%  |
 | [HITECH](https://in.tradingview.com/chart/?symbol=NSE:HITECH)<br><sub>↓CMF8d</sub> | ERW steel pipes tubes for construction infrastructure automotive | 1w | ABOVE | 1w | +1.4% | +1.45% | 87.28 | — | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [ALEMBICLTD](https://in.tradingview.com/chart/?symbol=NSE:ALEMBICLTD)<br><sub>↓CMF30d</sub> | Pharmaceutical manufacturer APIs generics India exports | 1w | ABOVE | 1w | +2.1% | +2.09% | 90.27 | — | 20%  |
 | [SHALBY](https://in.tradingview.com/chart/?symbol=NSE:SHALBY)<br><sub>↓CMF4d</sub> |  | 1w | ABOVE | 1w | +0.5% | +0.54% | 164.88 | — | 20%  |
-| [WEL](https://in.tradingview.com/chart/?symbol=NSE:WEL)<br><sub>↓CMF30d · DEL75%(T-1)</sub> | Electrical wiring devices and switchgear for residential commercial industrial | 1w | ABOVE | 1w | +0.7% | +0.68% | 101.95 | — | 20%  |
+| [WEL](https://in.tradingview.com/chart/?symbol=NSE:WEL)<br><sub>↓CMF30d</sub> | Electrical wiring devices and switchgear for residential commercial industrial | 1w | ABOVE | 1w | +0.7% | +0.68% | 101.95 | — | 20%  |
 
 ```
 NSE:OIL,NSE:JSWENERGY,NSE:SDBL,NSE:BANKINDIA,NSE:COLPAL,NSE:IEX,NSE:RICOAUTO,NSE:MRF,NSE:CAMS,NSE:RALLIS,NSE:BATAINDIA,NSE:KPIGREEN,NSE:ACC,NSE:AWL,NSE:V2RETAIL,NSE:LATENTVIEW,NSE:HERITGFOOD,NSE:MANYAVAR,NSE:HINDOILEXP,NSE:GILLETTE,NSE:MOL,NSE:ENTERO,NSE:INFOBEAN,NSE:GODREJAGRO,NSE:EPIGRAL,NSE:AJMERA,NSE:GRINFRA,NSE:MAMATA,NSE:MAITHANALL,NSE:EMUDHRA,NSE:HGINFRA,NSE:EXPLEOSOL,NSE:HITECH,NSE:BORANA,NSE:BALMLAWRIE,NSE:SVLL,NSE:MASFIN,NSE:ALEMBICLTD,NSE:SHALBY,NSE:WEL,NSE:BIL
