@@ -13,6 +13,11 @@ Log "=== NSE_FNO_ZLEMA25 START ==="
 try {
     & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\fno_zlema25_scanner.py 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    $pythonExit = $LASTEXITCODE
+    if ($pythonExit -ne 0) {
+        Log "=== ERROR: scanner exit=$pythonExit ==="
+        exit $pythonExit
+    }
     Log "=== FINISHED exit=0 ==="
 } catch {
     Log "=== ERROR: $_ ==="

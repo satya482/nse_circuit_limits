@@ -1,7 +1,10 @@
+from pathlib import Path
+
 import pandas as pd
 import pytest
 
 import ema25_zl_scanner as broad
+import fno_zlema25_scanner as scanner
 
 
 def test_downtrend_turn_stats_starts_at_one_day_and_uses_pre_turn_close():
@@ -132,3 +135,73 @@ def test_default_report_contract_remains_rising_and_watch():
     assert "| Exchange | NSE common equity |" in report
     assert "### ZLEMA25 Rising" in report
     assert "### ZLEMA25 Watch *(pullback / flat)*" in report
+
+
+def test_intersection_preserves_fno_order_and_never_adds_non_fno():
+    assert scanner.intersect_universe(
+        ["RELIANCE", "INFY", "RELIANCE", "TCS"],
+        ["TCS", "NOTFNO", "RELIANCE"],
+    ) == ["RELIANCE", "TCS"]
+
+
+def test_main_uses_fno_eligibility_intersection_and_shared_pipeline(
+    monkeypatch, tmp_path
+):
+    dates = pd.date_range("2026-07-01", periods=3, freq="D")
+    benchmark = pd.DataFrame({"date": dates, "close": [100.0, 101.0, 102.0]})
+    analysed = []
+    report_call = {}
+
+    monkeypatch.setattr(scanner, "get_fno_symbols", lambda: ["INFY", "TCS", "SBIN"])
+    monkeypatch.setattr(
+        scanner.broad,
+        "get_watchlist",
+        lambda: (["TCS", "OUTSIDE", "INFY"], {"INFY": 11.0, "TCS": 22.0}),
+    )
+    monkeypatch.setattr(scanner, "load_ohlc", lambda symbol: benchmark if symbol == "NIFTY MIDSML 400" else None)
+    monkeypatch.setattr(scanner.broad, "get_circuit_limits", lambda: {})
+
+    def fake_analyse(symbol, index_s, float_shares=0):
+        analysed.append((symbol, float_shares, list(index_s)))
+        return {"symbol": symbol}
+
+    def fake_build(findings, circuit, names, **kwargs):
+        report_call.update(
+            findings=findings,
+            circuit=circuit,
+            names=names,
+            kwargs=kwargs,
+        )
+        return "SEBI registered\nreport"
+
+    monkeypatch.setattr(scanner.broad, "analyse", fake_analyse)
+    monkeypatch.setattr(scanner.broad, "build_markdown", fake_build)
+    monkeypatch.setattr(scanner, "get_names", lambda symbols: {s: s for s in symbols})
+    monkeypatch.setattr(scanner, "SCANS_DIR", str(tmp_path))
+    monkeypatch.setattr(scanner, "MD_FILE", str(tmp_path / "fno_zlema25_scans.md"))
+    monkeypatch.setattr(scanner, "TODAY", "2026-07-20")
+
+    assert scanner.main() == 0
+    assert [(symbol, float_value) for symbol, float_value, _ in analysed] == [
+        ("INFY", 11.0),
+        ("TCS", 22.0),
+    ]
+    assert report_call["findings"] == [{"symbol": "INFY"}, {"symbol": "TCS"}]
+    assert report_call["kwargs"]["directional"] is True
+    assert report_call["kwargs"]["title"] == "NSE F&O ZLEMA25 Scan — 2026-07-20"
+    assert "3 NSE F&O stocks" in report_call["kwargs"]["universe_stats"]
+    assert "2 TradingView-eligible" in report_call["kwargs"]["universe_stats"]
+    assert (tmp_path / "fno_zlema25_scans.md").read_text(encoding="utf-8") == "SEBI registered\nreport"
+    assert (tmp_path / "fno_zlema25_scans_2026-07-20.md").exists()
+
+
+def test_runner_propagates_nonzero_python_exit_before_git_publish():
+    runner = (
+        Path(__file__).resolve().parents[1] / "run_fno_zlema25_scanner.ps1"
+    ).read_text(encoding="utf-8")
+
+    python_call = runner.index("fno_zlema25_scanner.py")
+    exit_check = runner.index("$LASTEXITCODE")
+    git_publish = runner.index('Log "--- Git commit+push ---"')
+
+    assert python_call < exit_check < git_publish
