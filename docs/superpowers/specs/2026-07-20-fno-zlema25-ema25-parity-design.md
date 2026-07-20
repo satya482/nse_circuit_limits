@@ -4,9 +4,9 @@
 
 ## Goal
 
-Bring `fno_zlema25_scanner.py` to behavioral and report parity with `ema25_zl_scanner.py` while keeping the NSE F&O universe, F&O report paths, and existing PowerShell runner.
+Bring `fno_zlema25_scanner.py` to gate, enrichment, and report-density parity with `ema25_zl_scanner.py` while keeping the NSE F&O universe, F&O report paths, and existing PowerShell runner.
 
-The finished scanner will answer the same question as the broad EMA25 ZL scanner—what eligible stocks have a rising ZLEMA25 and what stocks are in the pullback/flat watch state—but only for current NSE F&O stock underlyings.
+The finished scanner will classify eligible NSE F&O stock underlyings into current ZLEMA25 uptrends and downtrends, with direction-specific age and price change for both sides.
 
 ## Scope
 
@@ -15,7 +15,7 @@ The change includes:
 - Reusing the production analysis, gates, metadata, and Markdown presentation from `ema25_zl_scanner.py`.
 - Restricting candidates to the NSE `SECURITIES IN F&O` universe returned by `fno_universe.py`.
 - Preserving `fno_zlema25_scans/fno_zlema25_scans.md`, dated snapshots, and `run_fno_zlema25_scanner.ps1`.
-- Replacing the existing five-bar Uptrend Start and Downtrend Start report with ZLEMA25 Rising and Watch sections plus full age buckets.
+- Replacing the existing five-bar event report with current ZLEMA25 Uptrend and Downtrend tables plus symmetric age buckets.
 - Adding focused tests and updating `HANDOFF.md`.
 
 The change does not alter the broad `ema25_zl_scanner.py` default output, the NSE F&O universe-fetching policy, scheduled-task registration, or other scanners.
@@ -29,11 +29,11 @@ The change does not alter the broad `ema25_zl_scanner.py` default output, the NS
 - TradingView eligibility filters and float-share metadata.
 - Benchmark-relative-strength calculations and gates.
 - Float-trap hard gating and SAFE/CAUTION labels.
-- ZLEMA25 calculation, current Rising/Watch classification, age, and change percentage.
+- ZLEMA25 calculation and the established turn-age and change-percentage convention.
 - BB/KC squeeze, liquidity, weekly-RS, Strong Start/RVOL, CMF, delivery, company-label, and circuit-limit enrichment.
 - Table layout and TradingView watchlist bucketing.
 
-The shared report builder will accept minimal optional presentation values for the title and universe label. Its existing defaults must reproduce the current broad EMA25 ZL report unchanged.
+The shared analysis and report functions will accept minimal optional direction and presentation values. Existing defaults must reproduce the current broad EMA25 ZL report unchanged. The F&O mode adds direction-aware fields and renders Uptrend and Downtrend rather than changing the broad scanner's Rising and Watch contract.
 
 `fno_zlema25_scanner.py` becomes a thin orchestration adapter. It obtains the authoritative F&O symbols, intersects them with the broad scanner's TradingView-eligible symbols, calls the shared analyser for each remaining symbol, and asks the shared report builder for an F&O-labelled report.
 
@@ -69,12 +69,17 @@ EMA1 = EMA(close, 25)
 ZLEMA25 = 2 * EMA1 - EMA(EMA1, 25)
 ```
 
-Results are split exactly as the broad scanner splits them:
+Results are split by the current ZLEMA25 slope:
 
-- Rising: latest ZLEMA25 is greater than the preceding value.
-- Watch: latest ZLEMA25 is not greater than the preceding value.
+- Uptrend: latest ZLEMA25 is greater than the preceding value.
+- Downtrend: latest ZLEMA25 is less than the preceding value.
+- Flat: latest ZLEMA25 equals the preceding value; reported in the summary count and omitted from both directional tables.
 
-`ZL Days` and `ZL Chg%` retain the broad scanner's capped 60-bar turn-up semantics. The previous independent recent up-turn and down-turn searches are removed from the F&O workflow.
+For an uptrend, `ZL Age` searches backward for the latest non-positive-to-positive slope change. For a downtrend, it searches backward for the latest non-negative-to-negative slope change. Age includes the turning bar, so a direction that starts on the latest candle is `1d`.
+
+`ZL Chg%` compares the latest close with the close immediately before that direction's turning candle. Both ages retain the broad scanner's 60-bar cap; when no matching turn exists inside the window, the age displays `60d+` and change uses the oldest close in that window.
+
+The previous independent recent-event lists are removed: every analysed symbol belongs only to its current direction, except an exactly flat slope, which belongs to neither table.
 
 ## Report
 
@@ -85,14 +90,14 @@ The latest and dated report files remain:
 
 The report uses the standard Markdown SEBI header and footer and identifies the universe as NSE F&O underlyings sourced through `fno_universe.py`.
 
-Its content matches the broad scanner's information density:
+Its content matches the broad scanner's information density while adding symmetric direction reporting:
 
 - Scan-definition table with all active and inactive gates.
-- ZLEMA25 Rising and Watch counts.
-- One TradingView-importable watchlist sectioned into `1 DAY`, `2 DAYS`, `3 DAYS`, `4-5 DAYS`, `6-10 DAYS`, `11-15 DAYS`, `15 DAYS+`, and `WATCH`.
-- Rising and Watch tables with Symbol, ZL Days, ZL Chg%, Label, Day Chg, Close, Squeeze, and Circuit columns.
+- ZLEMA25 Uptrend, Downtrend, and Flat counts.
+- One TradingView-importable watchlist with direction-prefixed sections for `1 DAY`, `2 DAYS`, `3 DAYS`, `4-5 DAYS`, `6-10 DAYS`, `11-15 DAYS`, and `15 DAYS+`.
+- Uptrend and Downtrend tables with Symbol, ZL Age, ZL Chg%, Label, Day Chg, Close, Squeeze, and Circuit columns.
 - Symbol sub-tags for float-trap status, liquidity, weekly RS EMA9 confirmation, Strong Start/RVOL, CMF, and delivery when available.
-- Individual Rising watchlist copy blocks by ZLEMA age bucket.
+- Individual Uptrend and Downtrend watchlist copy blocks by ZLEMA age bucket.
 
 Rows keep the broad scanner's age-first ordering. The shared builder remains responsible for exact formatting so future presentation fixes benefit both reports.
 
@@ -113,7 +118,11 @@ Focused tests will prove:
 - Non-F&O TradingView results cannot enter the scan.
 - Price/market-cap-ineligible or metadata-missing F&O symbols do not bypass shared eligibility.
 - The adapter passes the shared float value and benchmark to the shared analyser.
-- The report uses the F&O title and universe label while retaining Rising/Watch tables, tags, columns, sectioned watchlists, and age buckets.
+- A fresh uptrend and fresh downtrend each report age `1d`.
+- Ongoing uptrends and downtrends increment their own ages and use the close before their respective turn for `ZL Chg%`.
+- Reversals move a symbol into only its new current-direction table and reset age to `1d`.
+- Exact flat slopes appear only in the Flat summary count.
+- The report uses the F&O title and universe label while rendering Uptrend/Downtrend tables, tags, columns, direction-prefixed sectioned watchlists, and symmetric age buckets.
 - The broad builder's default title and universe label remain unchanged.
 - Latest and dated report paths remain unchanged.
 - Generated Markdown includes the required `SEBI registered` disclaimer.
