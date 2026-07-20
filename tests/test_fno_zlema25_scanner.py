@@ -108,6 +108,7 @@ def test_directional_report_has_symmetric_tables_watchlists_and_flat_count():
     assert "# NSE F&O ZLEMA25 Scan — 2026-07-20" in report
     assert "NSE F&O underlyings eligible under broad EMA25 ZL filters" in report
     assert "209 NSE F&O stocks · 180 TradingView-eligible" in report
+    assert "Days since ZLEMA25 changed to the current direction" in report
     assert "ZLEMA25 Uptrend: 1" in report
     assert "ZLEMA25 Downtrend: 1" in report
     assert "Flat: 1" in report
@@ -192,6 +193,7 @@ def test_main_uses_fno_eligibility_intersection_and_shared_pipeline(
     assert "3 NSE F&O stocks" in report_call["kwargs"]["universe_stats"]
     assert "2 TradingView-eligible" in report_call["kwargs"]["universe_stats"]
     assert (tmp_path / "fno_zlema25_scans.md").read_text(encoding="utf-8") == "SEBI registered\nreport"
+    assert b"\r\n" not in (tmp_path / "fno_zlema25_scans.md").read_bytes()
     assert (tmp_path / "fno_zlema25_scans_2026-07-20.md").exists()
 
 

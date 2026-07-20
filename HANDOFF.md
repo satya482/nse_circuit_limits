@@ -2,12 +2,22 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-07-17.
+Last reviewed by Codex: 2026-07-20.
 Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-07-20 by Codex, NSE F&O ZLEMA25 EMA25-parity scanner:
+
+- Reworked `fno_zlema25_scanner.py` into a thin adapter over `ema25_zl_scanner.py`. The authoritative source remains NSE `SECURITIES IN F&O` through `fno_universe.py`; candidates are intersected with the broad TradingView price/market-cap eligibility list, so non-F&O symbols cannot enter.
+- F&O symbols now use the broad scanner's daily RS EMA21 gate, float hard gate, squeeze, SAFE/CAUTION, liquidity, weekly-RS, Strong Start/RVOL, CMF, delivery, labels, and circuit-limit enrichment.
+- The report now has exclusive current `ZLEMA25 Uptrend` and `ZLEMA25 Downtrend` tables. Each direction has its own capped 60-bar age and price change from the close before its turn; exact-flat slopes are counted separately. Both directions receive symmetric, direction-prefixed TradingView age buckets.
+- `ema25_zl_scanner.py` gained backward-compatible direction-aware turn statistics and optional directional report rendering. Its default broad Rising/Watch report contract remains unchanged.
+- `run_fno_zlema25_scanner.ps1` now checks `$LASTEXITCODE` and stops before git publish when Python fails. F&O report writes force LF line endings so tracked output passes `git diff --check` on Windows.
+- Live run on 2026-07-20: NSE endpoint returned 404 and the established stale cache fallback supplied 209 F&O symbols; 192 passed TradingView eligibility, 81 passed analysis gates, with 80 uptrends, 1 downtrend (`NUVAMA`, age `3d`), and 0 flat.
+- Verification: 9/9 focused F&O tests, 32/32 related NIFTY 50 scanner tests, full suite 401/401, PowerShell parse, live network/local-OHLC scan, and `git diff --check` passed. Design: `docs/superpowers/specs/2026-07-20-fno-zlema25-ema25-parity-design.md`; plan: `docs/superpowers/plans/2026-07-20-fno-zlema25-ema25-parity.md`.
 
 Updated 2026-07-17 by Codex, NIFTY 50 daily ZLEMA25 trend-age scanner:
 

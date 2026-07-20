@@ -10,6 +10,7 @@ that scanner.
 import os
 import sys
 from datetime import datetime
+from pathlib import Path
 
 import pandas as pd
 
@@ -100,10 +101,8 @@ def main() -> int:
         )
 
         dated_file = os.path.join(SCANS_DIR, f"fno_zlema25_scans_{TODAY}.md")
-        with open(MD_FILE, "w", encoding="utf-8") as handle:
-            handle.write(report)
-        with open(dated_file, "w", encoding="utf-8") as handle:
-            handle.write(report)
+        Path(MD_FILE).write_text(report, encoding="utf-8", newline="\n")
+        Path(dated_file).write_text(report, encoding="utf-8", newline="\n")
 
         uptrend = sum(finding.get("zl_direction") == "up" for finding in findings)
         downtrend = sum(finding.get("zl_direction") == "down" for finding in findings)

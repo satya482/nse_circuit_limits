@@ -343,7 +343,7 @@ STATIC_HEADER_TEMPLATE = """### Scan definition
 | Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
 | Price vs EMA25 | {ema25} |
 | RS filter | {rs_label} |
-| ZL Days / ZL Chg% | Days since ZLEMA25 last turned up · % price change since that bar (capped {cap}d) |
+| ZL Days / ZL Chg% | {zl_description} |
 | Squeeze | ✓ = BB(20,2.0,SMA) fully inside KC(20,1.5,SMA) on last bar |
 | Float gate | ⛔ AVOID dropped from scan · ✓ SAFE / ⚠ CAUTION shown under symbol (float_gate.py) |
 | Symbol tags | trap · liq (↗avg10Cr·todayCr) · 📶W9 weekly-RS gate · 🚀SS/RVOL{rvol_flag:.0f}x · CMF · DEL% |
@@ -351,6 +351,7 @@ STATIC_HEADER_TEMPLATE = """### Scan definition
 ---
 """.format(
     universe_label="{universe_label}",
+    zl_description="{zl_description}",
     cap=ZL_TURN_CAP,
     rvol_flag=RVOL_FLAG,
     rs_label=_RS_FILTER_LABEL.get(RS_MODE, RS_MODE),
@@ -359,8 +360,20 @@ STATIC_HEADER_TEMPLATE = """### Scan definition
 )
 
 
-def _static_header(universe_label: str) -> str:
-    return STATIC_HEADER_TEMPLATE.format(universe_label=universe_label)
+def _static_header(universe_label: str, directional: bool = False) -> str:
+    zl_description = (
+        f"Days since ZLEMA25 changed to the current direction · "
+        f"% price change since that bar (capped {ZL_TURN_CAP}d)"
+        if directional
+        else (
+            f"Days since ZLEMA25 last turned up · % price change since that bar "
+            f"(capped {ZL_TURN_CAP}d)"
+        )
+    )
+    return STATIC_HEADER_TEMPLATE.format(
+        universe_label=universe_label,
+        zl_description=zl_description,
+    )
 
 
 STATIC_HEADER = _static_header("NSE common equity")
@@ -470,7 +483,7 @@ def _directional_markdown(
         lines += [f"*Universe: {universe_stats}*"]
     lines += [
         "",
-        _static_header(universe_label),
+        _static_header(universe_label, directional=True),
         f"**ZLEMA25 Uptrend: {len(uptrend)}** &nbsp;|&nbsp; "
         f"**ZLEMA25 Downtrend: {len(downtrend)}** &nbsp;|&nbsp; **Flat: {flat_count}**",
         "",
