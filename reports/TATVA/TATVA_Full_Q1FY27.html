@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TATVA — Tatva Chintan Pharma Chem | NSE Investor Brief Q1 FY27</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root{
+  --ink:#0F1923;
+  --paper:#F6F4EE;
+  --rule:#DED9D0;
+  --amber:#B8741A;
+  --amber-bg:#FFF5E6;
+  --teal:#0C6E6A;
+  --teal-bg:#E3F5F4;
+  --navy:#1A2F5A;
+  --navy-bg:#EBF0FB;
+  --green:#1C6E40;
+  --green-bg:#E5F4EC;
+  --purple:#5340A0;
+  --purple-bg:#F0EDFB;
+  --coral:#B03820;
+  --coral-bg:#FBEEE9;
+  --gray:#6B7280;
+  --gray-light:#F0EDE8;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"DM Sans",system-ui,sans-serif;
+  --mono:"JetBrains Mono","Courier New",monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.72;}
+
+/* ===== PRINT & TTS ===== */
+@media print{
+  body{font-size:11px;background:white;}
+  .no-print{display:none!important;}
+  .quick-scan-strip{position:static!important;background:#1A2F5A!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .qs-content{display:block!important;}
+  #highlight-index{display:block!important;}
+  details{display:block;}
+  details[open] summary::after,details summary::after{display:none;}
+  .chapter{break-inside:avoid;}
+  .five-forces-table{break-inside:avoid;}
+  .capex-timeline{break-inside:avoid;}
+  .masthead{background:#0F1923!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* ===== DARK MODE ===== */
+body.night{background:#0F1923;color:#E8E4DC;}
+body.night .chapter-card,body.night .segment-card,body.night .risk-row,body.night .watch-row,body.night .forces-cell{background:#1A2535;border-color:#2A3545;}
+body.night .takeaway-pill{background:#1A2535;}
+body.night .stat-row{border-color:#2A3545;}
+
+/* ===== QUICK SCAN STRIP ===== */
+.quick-scan-strip{
+  position:sticky;top:0;z-index:200;
+  background:var(--navy);color:#EEE9DF;
+  border-bottom:2px solid var(--amber);
+  font-family:var(--mono);font-size:11px;
+}
+.qs-header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:7px 24px;cursor:pointer;
+}
+.qs-header-label{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);font-weight:600;}
+.qs-toggle{color:#A0B0C0;font-size:11px;}
+.qs-content{
+  display:block;
+  padding:10px 24px 12px;
+  border-top:1px solid rgba(255,255,255,0.1);
+  column-count:2;column-gap:40px;
+}
+@media(max-width:700px){.qs-content{column-count:1;}}
+.qs-line{
+  display:flex;align-items:flex-start;gap:8px;
+  padding:3px 0;border-bottom:1px dotted rgba(255,255,255,0.1);
+  line-height:1.45;break-inside:avoid;
+}
+.qs-line:last-child{border-bottom:none;}
+.qs-icon{flex-shrink:0;font-size:12px;padding-top:1px;}
+.qs-label{color:var(--amber);font-weight:600;min-width:70px;flex-shrink:0;font-size:10px;text-transform:uppercase;letter-spacing:1px;}
+.qs-text{color:#C8C0B4;font-size:10.5px;}
+
+/* ===== MASTHEAD ===== */
+.masthead{
+  background:var(--navy);color:#F0EDE8;
+  padding:56px 64px 44px;position:relative;overflow:hidden;
+}
+.masthead::before{
+  content:"";position:absolute;top:0;right:0;width:420px;height:100%;
+  background:repeating-linear-gradient(-45deg,transparent 0,transparent 7px,rgba(255,255,255,0.018) 7px,rgba(255,255,255,0.018) 14px);
+}
+.masthead::after{
+  content:"";position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--amber),var(--teal),var(--green));
+}
+.masthead-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);margin-bottom:14px;}
+.masthead-ticker{font-family:var(--serif);font-size:58px;font-weight:700;letter-spacing:-2px;line-height:1.0;}
+.masthead-name{font-size:18px;color:#A8B8C8;margin-top:6px;font-weight:300;}
+.masthead-tag{
+  display:inline-block;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);
+  border-radius:3px;padding:4px 10px;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;
+  color:#B8C8D8;margin:4px 6px 4px 0;
+}
+.masthead-meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:4px;}
+.night-toggle{
+  position:absolute;top:20px;right:24px;
+  background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  color:#C0D0E0;font-family:var(--mono);font-size:10px;padding:5px 12px;
+  border-radius:3px;cursor:pointer;z-index:10;
+}
+
+/* ===== LAYOUT ===== */
+.content{max-width:960px;margin:0 auto;padding:48px 40px 80px;}
+@media(max-width:700px){.content{padding:28px 18px 60px;}}
+
+/* ===== CHAPTER HEADERS ===== */
+.ch-header{display:flex;align-items:flex-start;gap:18px;margin:56px 0 22px;padding-bottom:14px;border-bottom:2.5px solid var(--ink);}
+.ch-num{
+  width:42px;height:42px;border-radius:50%;background:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-size:17px;font-weight:700;color:var(--amber);flex-shrink:0;
+}
+.ch-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;}
+.ch-title{font-family:var(--serif);font-size:23px;font-weight:700;line-height:1.2;}
+.ch-header.teal{border-bottom-color:var(--teal);}
+.ch-header.teal .ch-num{background:var(--teal);}
+.ch-header.green{border-bottom-color:var(--green);}
+.ch-header.green .ch-num{background:var(--green);}
+.ch-header.amber{border-bottom-color:var(--amber);}
+.ch-header.amber .ch-num{background:var(--amber);}
+.ch-header.coral{border-bottom-color:var(--coral);}
+.ch-header.coral .ch-num{background:var(--coral);}
+.ch-header.purple{border-bottom-color:var(--purple);}
+.ch-header.purple .ch-num{background:var(--purple);}
+
+/* ===== PROSE ===== */
+p{margin-bottom:14px;color:#2A2A3A;line-height:1.72;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600;}
+h3{font-family:var(--serif);font-size:16px;font-weight:700;margin:24px 0 10px;color:var(--ink);}
+
+/* ===== LEAD CARD ===== */
+.lead{font-size:16px;line-height:1.75;padding:18px 22px;border-left:4px solid var(--amber);background:var(--amber-bg);border-radius:0 6px 6px 0;margin-bottom:22px;color:#1A1A2E;}
+.lead-teal{border-left-color:var(--teal);background:var(--teal-bg);}
+.lead-green{border-left-color:var(--green);background:var(--green-bg);}
+.lead-navy{border-left-color:var(--navy);background:var(--navy-bg);}
+.lead-coral{border-left-color:var(--coral);background:var(--coral-bg);}
+.lead-purple{border-left-color:var(--purple);background:var(--purple-bg);}
+
+/* ===== INSIGHT BOX ===== */
+.insight-box{background:var(--ink);color:#EEE9DF;border-radius:8px;padding:26px 30px;margin:24px 0;}
+.insight-box .label{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.insight-box p{color:#C8C0B4;line-height:1.72;}
+.insight-box strong{color:#F0EDE8;}
+
+/* ===== SEGMENT CARDS ===== */
+.segment-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+@media(max-width:650px){.segment-grid{grid-template-columns:1fr;}}
+.segment-card{
+  border:1.5px solid var(--rule);border-radius:8px;
+  padding:18px 20px;background:white;
+}
+.seg-icon{font-size:22px;margin-bottom:8px;}
+.seg-title{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:5px;}
+.seg-pct{font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:3px;margin-left:6px;font-weight:600;}
+.seg-external{font-size:12px;color:var(--gray);font-style:italic;margin-bottom:8px;line-height:1.4;}
+.seg-status{font-family:var(--mono);font-size:9.5px;padding:2px 7px;border-radius:2px;display:inline-block;margin-top:6px;}
+.status-running{background:var(--green-bg);color:var(--green);}
+.status-ramping{background:var(--teal-bg);color:var(--teal);}
+.status-emerging{background:var(--purple-bg);color:var(--purple);}
+.status-pilot{background:var(--amber-bg);color:var(--amber);}
+
+/* ===== FIVE FORCES ===== */
+.five-forces-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:13px;}
+.five-forces-table th{background:var(--ink);color:#EEE9DF;padding:9px 14px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:1px;}
+.five-forces-table td{padding:10px 14px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;}
+.five-forces-table tr:last-child td{border-bottom:none;}
+.force-rating{font-family:var(--mono);font-size:10.5px;padding:3px 8px;border-radius:3px;font-weight:600;white-space:nowrap;}
+.rating-low{background:var(--green-bg);color:var(--green);}
+.rating-medium{background:var(--amber-bg);color:var(--amber);}
+.rating-high{background:var(--coral-bg);color:var(--coral);}
+
+/* ===== STAT ROWS ===== */
+.stat-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--rule);font-size:13.5px;}
+.stat-row:last-child{border-bottom:none;}
+.stat-label{color:var(--gray);}
+.stat-val{font-family:var(--mono);font-weight:600;color:var(--ink);}
+.stat-val.green{color:var(--green);}
+.stat-val.amber{color:var(--amber);}
+.stat-val.coral{color:var(--coral);}
+
+/* ===== QUARTERLY TABLE ===== */
+.q-table{width:100%;border-collapse:collapse;font-size:12.5px;margin:16px 0;overflow-x:auto;display:block;}
+.q-table th{background:var(--navy);color:#EEE;padding:8px 12px;text-align:right;font-family:var(--mono);font-size:10px;letter-spacing:0.5px;}
+.q-table th:first-child{text-align:left;}
+.q-table td{padding:7px 12px;border-bottom:1px solid var(--rule);text-align:right;color:#2A2A3A;}
+.q-table td:first-child{text-align:left;font-weight:500;}
+.q-table tr:nth-child(even) td{background:#FAFAF7;}
+.q-table tr.highlight td{background:var(--amber-bg);font-weight:600;}
+
+/* ===== CAPEX TIMELINE ===== */
+.capex-timeline{background:white;border:1.5px solid var(--rule);border-radius:8px;overflow:hidden;margin:20px 0;}
+.capex-header{background:var(--coral);color:white;padding:10px 18px;font-family:var(--mono);font-size:10px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;}
+.capex-row{display:grid;grid-template-columns:1fr 1.2fr 1.2fr 1fr 1.5fr 0.9fr;border-bottom:1px solid var(--rule);}
+.capex-row:last-child{border-bottom:none;}
+.capex-cell{padding:9px 14px;font-size:12px;border-right:1px solid var(--rule);}
+.capex-cell:last-child{border-right:none;}
+.capex-head{background:#F7F5F0;font-family:var(--mono);font-size:9.5px;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px;font-weight:600;}
+.status-ontrack{color:var(--green);font-family:var(--mono);font-size:10px;font-weight:600;}
+.status-drift{color:var(--amber);font-family:var(--mono);font-size:10px;font-weight:600;}
+.status-new{color:var(--teal);font-family:var(--mono);font-size:10px;font-weight:600;}
+@media(max-width:700px){.capex-row{grid-template-columns:1fr 1fr;}}
+
+/* ===== RISK REGISTER ===== */
+.risk-list{margin:16px 0;}
+.risk-row{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:14px 16px;border:1px solid var(--rule);border-radius:6px;
+  margin-bottom:10px;background:white;
+}
+.risk-icon{font-size:20px;flex-shrink:0;color:var(--amber);}
+.risk-title{font-weight:600;font-size:14px;margin-bottom:4px;}
+.risk-body{font-size:13px;color:#3A3A4A;line-height:1.55;}
+.risk-signal{font-family:var(--mono);font-size:10px;color:var(--gray);margin-top:5px;font-style:italic;}
+
+/* ===== WATCH SIGNALS ===== */
+.watch-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:600px){.watch-grid{grid-template-columns:1fr;}}
+.watch-row{background:white;border:1.5px solid var(--rule);border-radius:6px;padding:14px 16px;}
+.watch-metric{font-family:var(--mono);font-size:10.5px;color:var(--teal);font-weight:600;margin-bottom:5px;}
+.watch-title{font-weight:600;font-size:13.5px;margin-bottom:5px;}
+.watch-thresholds{margin-top:8px;}
+.threshold{font-size:11.5px;padding:2px 0;display:flex;gap:7px;align-items:flex-start;}
+.t-green::before{content:"●";color:var(--green);flex-shrink:0;}
+.t-amber::before{content:"●";color:var(--amber);flex-shrink:0;}
+.t-red::before{content:"●";color:var(--coral);flex-shrink:0;}
+
+/* ===== VERDICT ===== */
+.verdict-card{
+  background:var(--navy);color:#EEE9DF;
+  border-radius:10px;padding:30px 36px;margin:32px 0;
+  border-left:4px solid var(--amber);
+}
+.verdict-label{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:12px;}
+.verdict-stage{font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:12px;color:#F0EDE8;}
+.verdict-body{font-size:14.5px;line-height:1.75;color:#C8C0B4;}
+
+/* ===== HIGHLIGHT SYSTEM ===== */
+.hl-key{background:#FFF176;padding:0 3px;border-radius:2px;font-weight:600;}
+.hl-number{background:#E3F0FF;padding:0 3px;border-radius:2px;font-family:var(--mono);}
+.hl-risk{background:#FFF3CD;padding:0 3px;border-radius:2px;border-left:3px solid var(--amber);}
+.hl-catalyst{background:#E6F4EA;padding:0 3px;border-radius:2px;border-left:3px solid var(--green);}
+
+.takeaway-pill{
+  background:var(--gray-light);border-left:3px solid var(--amber);
+  border-radius:0 6px 6px 0;padding:10px 14px;margin:20px 0;
+  font-size:13.5px;font-weight:500;color:var(--ink);line-height:1.5;
+}
+
+/* ===== HIGHLIGHT INDEX ===== */
+.highlight-index-wrapper{
+  border:2px solid var(--amber);border-radius:8px;
+  overflow:hidden;margin:40px 0 20px;
+}
+.highlight-index-wrapper summary,
+.highlight-index-header{
+  background:var(--amber);color:white;
+  padding:12px 18px;font-family:var(--mono);font-size:10.5px;
+  letter-spacing:2px;text-transform:uppercase;font-weight:600;
+  cursor:pointer;list-style:none;display:block;
+}
+.highlight-index-wrapper ol{
+  padding:16px 22px 16px 38px;background:var(--amber-bg);
+}
+.highlight-index-wrapper ol li{font-size:13px;color:#2A2A3A;margin-bottom:6px;line-height:1.5;}
+
+/* ===== THE LEDGER SECTION ===== */
+.ledger-masthead{
+  background:#0A1628;color:#EEE9DF;
+  padding:40px 64px 32px;
+  border-top:4px solid var(--amber);
+}
+.ledger-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:3px;color:var(--amber);margin-bottom:10px;text-transform:uppercase;}
+.ledger-title{font-family:var(--serif);font-size:42px;font-weight:700;letter-spacing:-1px;}
+.ledger-sub{font-size:15px;color:#8090A4;margin-top:8px;}
+.ledger-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.ledger-chip{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:3px;padding:4px 10px;font-family:var(--mono);font-size:9px;letter-spacing:1px;color:#A8B8C8;}
+
+.ledger-content{max-width:960px;margin:0 auto;padding:44px 40px 60px;}
+@media(max-width:700px){.ledger-content{padding:28px 18px 40px;}}
+
+.pillar-header{
+  display:flex;align-items:flex-start;gap:16px;
+  margin:52px 0 18px;padding-bottom:12px;
+  border-bottom:2px solid;
+}
+.pillar-header.promise{border-bottom-color:var(--green);}
+.pillar-header.tone{border-bottom-color:var(--amber);}
+.pillar-header.exec{border-bottom-color:var(--coral);}
+.pillar-header.capex2{border-bottom-color:var(--teal);}
+.pillar-header.margin2{border-bottom-color:var(--green);}
+.pillar-header.capital{border-bottom-color:var(--navy);}
+.pillar-num{font-family:var(--serif);font-size:24px;font-weight:700;min-width:28px;line-height:1;}
+.pillar-num.promise{color:var(--green);}
+.pillar-num.tone{color:var(--amber);}
+.pillar-num.exec{color:var(--coral);}
+.pillar-num.capex2{color:var(--teal);}
+.pillar-num.margin2{color:var(--green);}
+.pillar-num.capital{color:var(--navy);}
+.pillar-eyebrow{font-family:var(--mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;}
+.pillar-title{font-family:var(--serif);font-size:20px;font-weight:700;line-height:1.2;}
+
+/* Promise register table */
+.promise-table{width:100%;border-collapse:collapse;font-size:12.5px;margin:16px 0;}
+.promise-table th{background:#0A1628;color:#EEE;padding:9px 12px;text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:0.5px;}
+.promise-table td{padding:9px 12px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;color:#2A2A3A;}
+.promise-table tr:last-child td{border-bottom:none;}
+.promise-table tr:nth-child(even) td{background:#FAFAF7;}
+.ptag{display:inline-block;padding:2px 7px;border-radius:3px;font-family:var(--mono);font-size:9.5px;font-weight:600;}
+.ptag-green{background:var(--green-bg);color:var(--green);}
+.ptag-amber{background:var(--amber-bg);color:var(--amber);}
+.ptag-teal{background:var(--teal-bg);color:var(--teal);}
+.ptag-coral{background:var(--coral-bg);color:var(--coral);}
+.ptag-navy{background:var(--navy-bg);color:var(--navy);}
+.ptag-gray{background:#F0EDE8;color:var(--gray);}
+
+/* Credibility score */
+.cred-score-box{
+  background:#0A1628;color:#EEE9DF;
+  border-radius:10px;padding:28px 32px;margin:24px 0;
+}
+.cred-tier{font-family:var(--serif);font-size:54px;font-weight:700;color:var(--amber);line-height:1;}
+.cred-tier-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-top:4px;}
+.cred-tier-desc{font-size:14px;color:#A8B8C8;margin-top:8px;}
+.cred-dims{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px;}
+@media(max-width:600px){.cred-dims{grid-template-columns:1fr;}}
+.cred-dim{background:rgba(255,255,255,0.05);border-radius:5px;padding:11px 14px;}
+.cred-dim-name{font-weight:600;font-size:12.5px;color:#EEE9DF;margin-bottom:4px;}
+.cred-dim-val{font-family:var(--mono);font-size:12px;font-weight:700;}
+.cred-dim-val.good{color:#5DD98C;}
+.cred-dim-val.watch{color:var(--amber);}
+.cred-dim-val.concern{color:#E06060;}
+
+/* Active flags */
+.flag-list{margin:16px 0;}
+.flag-item{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:12px 14px;border-radius:5px;margin-bottom:8px;
+  border:1px solid;
+}
+.flag-item.active{background:var(--coral-bg);border-color:var(--coral);}
+.flag-item.watch{background:var(--amber-bg);border-color:var(--amber);}
+.flag-item.green{background:var(--green-bg);border-color:var(--green);}
+.flag-icon{font-size:16px;flex-shrink:0;}
+.flag-name{font-family:var(--mono);font-size:10.5px;font-weight:600;margin-bottom:3px;}
+.flag-desc{font-size:12.5px;color:#2A2A3A;line-height:1.5;}
+
+/* Tone decoder bars */
+.tone-bar-wrap{margin:14px 0;}
+.tone-bar-label{font-size:12.5px;font-weight:600;margin-bottom:4px;display:flex;justify-content:space-between;}
+.tone-bar-bg{background:#E8E4DC;border-radius:3px;height:8px;position:relative;}
+.tone-bar-fill{height:8px;border-radius:3px;transition:width 0.4s;}
+
+/* Capital chain */
+.chain-flow{display:flex;align-items:stretch;gap:0;margin:20px 0;overflow-x:auto;}
+.chain-node{
+  flex:1;min-width:90px;background:white;
+  border:1.5px solid var(--rule);padding:10px 8px;
+  text-align:center;position:relative;
+}
+.chain-node:first-child{border-radius:6px 0 0 6px;}
+.chain-node:last-child{border-radius:0 6px 6px 0;}
+.chain-node::after{
+  content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);
+  font-size:15px;color:var(--amber);z-index:2;background:var(--paper);padding:0 2px;
+}
+.chain-node:last-child::after{display:none;}
+.chain-num{font-family:var(--mono);font-size:9.5px;color:var(--gray);margin-bottom:3px;}
+.chain-label{font-size:11px;font-weight:600;line-height:1.3;}
+.chain-node.ok{border-top:3px solid var(--green);}
+.chain-node.warn{border-top:3px solid var(--amber);}
+.chain-node.late{border-top:3px solid var(--coral);}
+.chain-node.tbd{border-top:3px solid var(--gray);}
+
+.divider{border:none;border-top:1.5px solid var(--rule);margin:32px 0;}
+
+footer{
+  background:var(--ink);color:#5A6A7A;
+  padding:20px 48px;font-family:var(--mono);font-size:9.5px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+}
+
+/* Peer comparison */
+.peer-table{width:100%;border-collapse:collapse;font-size:12.5px;margin:16px 0;}
+.peer-table th{background:var(--teal);color:white;padding:8px 12px;text-align:right;font-family:var(--mono);font-size:10px;}
+.peer-table th:first-child{text-align:left;}
+.peer-table td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:right;color:#2A2A3A;}
+.peer-table td:first-child{text-align:left;font-weight:500;}
+.peer-table tr.featured td{background:var(--teal-bg);font-weight:600;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:14px 0;}
+@media(max-width:620px){.two-col{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<!-- NIGHT MODE TOGGLE -->
+<button class="night-toggle no-print" onclick="document.body.classList.toggle('night');localStorage.setItem('tatva-night',document.body.classList.contains('night'))">
+  ☾ Night
+</button>
+
+<!-- ============================================================
+     QUICK SCAN STRIP
+     ============================================================ -->
+<div class="quick-scan-strip" role="complementary" aria-label="Quick Scan Summary">
+  <div class="qs-header" onclick="toggleQS()" aria-expanded="true" aria-controls="qscontent">
+    <span class="qs-header-label">⚡ Quick Scan — TATVA · July 2026</span>
+    <span class="qs-toggle" id="qs-arrow">▲ collapse</span>
+  </div>
+  <div class="qs-content" id="qscontent">
+    <div class="qs-line">
+      <span class="qs-icon">⚡</span>
+      <span class="qs-label">CONTEXT</span>
+      <span class="qs-text">Euro 7 emission norms from 2027 are the single biggest structural tailwind — SDAs for zeolites are mandated, and Tatva is early-positioned for Euro 7 unlike Euro 6.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🏭</span>
+      <span class="qs-label">MODEL</span>
+      <span class="qs-text">Complex quaternary salt chemistry that takes 8–10 years to qualify into a customer's process — once in, you cannot be switched out. Every segment is a captive-once-validated flywheel.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🎯</span>
+      <span class="qs-label">INSIGHT</span>
+      <span class="qs-text">Tatva's moat isn't the product — it's the validation lock-in. Replacing a SDA or semiconductor chemical in a manufactured product requires re-certifying the entire production process.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">📊</span>
+      <span class="qs-label">NUMBERS</span>
+      <span class="qs-text">FY26 revenue ₹506 Cr (+32% YoY). Q1 FY27 revenue ₹167 Cr (+43% YoY). EBITDA margin recovering: 9% FY25 → 18% FY26 → 19.3% Q1 FY27.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🚧</span>
+      <span class="qs-label">TOP RISK</span>
+      <span class="qs-text">Geopolitical raw material shock — amines and ammonia-derived inputs surged 30–40% after Iran tensions in Q4 FY26. Not all cost pass-throughs have been accepted by customers.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">👁</span>
+      <span class="qs-label">WATCH</span>
+      <span class="qs-text">EBITDA margin each quarter — management guided 20–22% for FY27. Q1 FY27 at 19.3% is slightly below floor; Q2 FY27 will confirm if operating leverage is arriving as guided.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">💡</span>
+      <span class="qs-label">VERDICT</span>
+      <span class="qs-text">Multi-Inflection Moment — four growth pillars (SDA/Euro 7, ESS, PASC Pharma, Semiconductor) converging simultaneously after 2-year downcycle. Early commercial phase with Jolva as next act.</span>
+    </div>
+    <div class="qs-line">
+      <span class="qs-icon">🗒</span>
+      <span class="qs-label">MGMT</span>
+      <span class="qs-text">Tier B — Credible with Active Flags. Honest on geopolitical headwinds, guidance delivered in Q1 FY27. Active flags: Working capital stretch (CCC 310 days), CFO/Capex 0.27 (funding flip risk).</span>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MASTHEAD
+     ============================================================ -->
+<div class="masthead" role="banner">
+  <div class="masthead-eyebrow">NSE EQUITY RESEARCH · INVESTOR BRIEF · SPECIALTY CHEMICALS · JULY 2026</div>
+  <div class="masthead-ticker">TATVA</div>
+  <div class="masthead-name">Tatva Chintan Pharma Chem Limited</div>
+  <div class="masthead-meta">
+    <span class="masthead-tag">NSE: TATVA · BSE: 543321</span>
+    <span class="masthead-tag">SPECIALTY CHEMICALS</span>
+    <span class="masthead-tag">SECTOR: CHEMICALS</span>
+    <span class="masthead-tag">Q1 FY27 · AS OF 21 JUL 2026</span>
+    <span class="masthead-tag">MKTCAP ~₹3,350 CR</span>
+    <span class="masthead-tag">DAHEJ · ANKLESHWAR · GUJARAT</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     CONTENT
+     ============================================================ -->
+<div class="content">
+
+<!-- ===== CHAPTER 1: CONTEXT ===== -->
+<div class="ch-header teal">
+  <div class="ch-num">1</div>
+  <div>
+    <div class="ch-eyebrow">Context · The Big Picture First</div>
+    <div class="ch-title">Four structural tailwinds reaching ignition simultaneously</div>
+  </div>
+</div>
+
+<div class="lead lead-teal">
+  Tatva Chintan spent two years in the wilderness — a post-COVID inventory destocking hangover crushed demand, PAT fell from ₹96 Cr in FY22 to ₹6 Cr in FY25, and the stock dropped to a multi-year low. The recovery underway in FY26-27 is not cyclical normalization. It is the simultaneous activation of four independent structural growth pillars that were seeded during those quiet years. That convergence is why Q1 FY27 just printed +43% revenue growth and the stock hit a 20% upper circuit.
+</div>
+
+<p>The first and most powerful tailwind is emission regulation. <span class="hl-key">The European Union's Euro 7 emission norms, beginning implementation in 2027, mandate stricter selective catalytic reduction in internal combustion engines — and zeolites are the backbone of those catalytic systems.</span> The global Structure Directing Agents market, which sits at <span class="hl-number">USD 672 million in 2026, is projected to grow at 7.7% CAGR to USD 1.32 billion by 2035</span> — almost entirely driven by tightening emission mandates across Europe, India (Bharat Stage VII preparation), and North America.</p>
+
+<p>The second tailwind is India's emergence as a global specialty chemical alternative to China. Indian specialty chemical companies are capturing redirected global supply chains as buyers deliberately reduce single-country dependency post-COVID. Tatva, with manufacturing in Dahej and Ankleshwar (both PCPIR zones), is a direct beneficiary — exports to 25+ countries including the US and Germany already contribute meaningfully to revenue.</p>
+
+<p>Third is the energy transition. <span class="hl-catalyst">Tatva's Electrolyte Salts and Solutions segment grew 1,378% year-on-year in Q4 FY26</span>, from near-zero to ₹13 Cr in a single quarter — driven by a customer ramping supercapacitor battery manufacturing. A second application (hybrid battery for a vehicle launching in mid-2028) is expected to begin commercial supply in Q3 FY27. The energy storage wave is beginning to reach Tatva's order book in measurable form.</p>
+
+<p>Fourth is semiconductor chemicals. Tatva has spent eight years building the chemistry capability to manufacture ultra-high purity chemical compounds (sub-1 part-per-billion impurity profiles) required in chip fabrication. The first plant-scale batch was dispatched for customer validation in Q1 FY27. Full commercialization is 2028-29, but this is a decade-long entry barrier that few Indian specialty chemical companies have even attempted.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--teal);">
+  Euro 7 (2027), energy storage ramp, pharma commercialization, and semiconductor validation — four independently-seeded pillars now activating within the same 18-month window.
+</div>
+
+<!-- ===== CHAPTER 2: BUSINESS MODEL ===== -->
+<div class="ch-header amber">
+  <div class="ch-num">2</div>
+  <div>
+    <div class="ch-eyebrow">Business Model · The Flywheel</div>
+    <div class="ch-title">214 products, four chemistry platforms, one common moat</div>
+  </div>
+</div>
+
+<div class="lead">
+  Tatva Chintan does not manufacture commodity chemicals. It manufactures chemicals that become embedded in customers' production processes through certification cycles — and once embedded, remain there permanently. The business model is to spend years qualifying into a customer's process, then collect near-captive revenues for the life of that product line.
+</div>
+
+<p>The company operates four business segments, all anchored in highly specialized quaternary organic salt chemistry. Structure Directing Agents (SDA) are templates used to engineer the molecular cage structure of zeolites — the catalytic material inside automotive catalytic converters and industrial refinery catalysts. Phase Transfer Catalysts (PTC) are used in pharmaceutical APIs, agrochemical synthesis, and specialty chemical manufacturing to transfer reactants between incompatible liquid phases more efficiently. Electrolyte Salts and Solutions (ESS) are high-purity ionic compounds for supercapacitor batteries and energy storage devices. The Pharma and Agro Intermediates and Specialty Chemicals (PASC) bucket covers complex organic synthesis intermediates including Glymes (Tatva is India's largest Glyme producer, globally ranked third).</p>
+
+<p><span class="hl-key">The common thread across all four segments is irreplaceability once validated. Replacing a Tatva SDA in a zeolite manufacturing process requires re-running the entire zeolite synthesis and automotive qualification cycle — a process that takes 18-36 months and costs millions in revalidation. This is not stickiness. It is structural lock-in.</span></p>
+
+<p>The flywheel: deep R&D investment (₹12.8 Cr spent in FY25, growing each year) seeding complex new molecules → long qualification cycles at tier-1 global chemical and automotive companies → certification → captive revenue stream for the product lifecycle → cash flow reinvested into R&D for the next molecule generation. The company has a 214-product portfolio built across 30 years. Revenue is exported to 25+ countries including Germany, the US, South Africa, and Japan.</p>
+
+<p>Manufacturing sits at Dahej (primary, in the PCPIR special economic zone) and Ankleshwar, both in Gujarat. The new Dahej block commissioned in Q4 FY26 pushed installed capacity toward a revenue potential of ₹850-900 Cr from the current facility alone. Jolva greenfield (₹265-270 Cr, Phase 1 from early 2028) then adds another ₹400-500 Cr ceiling. The Dahej-III announced in July 2026 (₹200 Cr, 344 KL, 21 months) is an additional tier of capacity.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber);">
+  Once Tatva's chemistry is certified into a customer's process, it cannot be swapped out without re-qualifying the entire production line — that's not competitive moat, that's regulatory adhesive.
+</div>
+
+<!-- ===== CHAPTER 2B: PORTER'S FIVE FORCES ===== -->
+<div class="ch-header" style="border-bottom-color:#5340A0;">
+  <div class="ch-num" style="background:#5340A0;">2B</div>
+  <div>
+    <div class="ch-eyebrow">Porter's Five Forces · Competitive Structure</div>
+    <div class="ch-title">A near-duopoly in SDA, oligopoly in PTC, first-mover in ESS</div>
+  </div>
+</div>
+
+<table class="five-forces-table" role="table" aria-label="Porter Five Forces Analysis">
+<thead>
+<tr>
+  <th>Force</th>
+  <th>Rating</th>
+  <th>Specific Analysis for TATVA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><strong>Rivalry Intensity</strong></td>
+  <td><span class="force-rating rating-low">LOW</span></td>
+  <td>SDA is a global near-duopoly: SACHEM Inc. (US, ~85% share) and Tatva (~15%). Competition is not price-based — it is qualification-based, and once qualified for a specific vehicle emission system, the supplier cannot be displaced. PTC has more players (Dishman, Delta Finochem, Pacific Organics) but Tatva is India's #1. ESS has no significant competitor in India for supercapacitor-grade electrolytes.</td>
+</tr>
+<tr>
+  <td><strong>Buyer Power</strong></td>
+  <td><span class="force-rating rating-low">LOW</span></td>
+  <td>Tatva serves global majors: Merck, Bayer, BASF-adjacent customers, tier-1 zeolite manufacturers, and battery companies. Customer concentration risk is limited by diversification across four segments. More importantly, buyers cannot switch suppliers without re-qualifying — giving Tatva significant pricing power on established products. Raw material cost pass-through was ~85-90% successful in the Q4 FY26 price shock, confirming buyer acceptance of pricing.</td>
+</tr>
+<tr>
+  <td><strong>Supplier Power</strong></td>
+  <td><span class="force-rating rating-medium">MEDIUM</span></td>
+  <td>Primary inputs are amines (ammonia-derived) and crude-linked chemicals. The Iran supply disruption in Q4 FY26 caused a 3-week amine shortage and 30-40% price increase. Tatva has multiple amine suppliers but limited geographic diversification for certain feedstocks. This is the principal vulnerability — a rare occasion where input cost shock cannot be fully passed through immediately, compressing margins temporarily.</td>
+</tr>
+<tr>
+  <td><strong>Threat of New Entrants</strong></td>
+  <td><span class="force-rating rating-low">LOW</span></td>
+  <td>SDA manufacturing requires a minimum 8-10 year qualification cycle with zeolite manufacturers and automotive OEMs. Tatva spent nearly that long qualifying its first semiconductor chemical. Greenfield entry into SDA is essentially impossible — you cannot replicate 15 years of customer relationships and validated processes from scratch. ESS requires ultra-high purity infrastructure costing hundreds of crores. Certification barriers are the highest in the industry.</td>
+</tr>
+<tr>
+  <td><strong>Threat of Substitutes</strong></td>
+  <td><span class="force-rating rating-low">LOW</span></td>
+  <td>Electric vehicle adoption is sometimes cited as a risk to SDA (fewer ICE engines). However, Euro 7 mandates continue through 2040 for commercial vehicles and hybrid EVs, and the hybrid vehicle wave actually increases the need for high-performance catalytic systems. ESS substitution (different battery chemistry) is a longer-term risk. No credible near-term substitute exists for Tatva's specific product categories.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="insight-box">
+  <div class="label">⚡ Five Forces Synthesis</div>
+  <p><strong>Supplier Power is the only meaningful structural pressure on Tatva Chintan.</strong> The company's SDA and ESS segments are shielded by certification barriers that effectively eliminate rivalry, buyer power, entrant threats, and substitutes over the medium term. The single vulnerability is the amine/ammonia supply chain, which sits outside India's control and demonstrated its fragility in Q4 FY26. Monitoring raw material concentration risk is the primary task for the Force framework — everything else is remarkably stable.</p>
+</div>
+
+<p>Moat summary: Tatva Chintan sits in a structural moat defined by multi-year qualification cycles (SDA, semiconductor), regulatory mandates that create captive demand (Euro 7, Bharat Stage emissions), and first-mover advantage in ESS (no Indian competitor for supercapacitor-grade electrolytes). The moat is widening, not narrowing, as Euro 7 timelines approach.</p>
+
+<div class="takeaway-pill" style="border-left-color:#5340A0;">
+  SDA operates in a global duopoly with SACHEM Inc. — Euro 7 is expanding the pie, and Tatva is positioned to take a larger slice than its current 15% share.
+</div>
+
+<!-- ===== CHAPTER 3: VERTICAL STORIES ===== -->
+<div class="ch-header green">
+  <div class="ch-num">3</div>
+  <div>
+    <div class="ch-eyebrow">Vertical Stories · One Card Per Segment</div>
+    <div class="ch-title">Four segments, four catalysts, one convergence moment</div>
+  </div>
+</div>
+
+<div class="segment-grid">
+
+  <div class="segment-card" style="border-top:3px solid var(--teal);">
+    <div class="seg-icon">⚗️</div>
+    <div class="seg-title">Structure Directing Agents (SDA) <span class="seg-pct" style="background:var(--teal-bg);color:var(--teal);">34% of Revenue</span></div>
+    <div class="seg-external">External catalyst: Euro 7 emission norms from 2027 — mandates higher-performance zeolite catalysts in automotive SCR systems. Global SDA market: USD 672 million in 2026, growing at 7.7% CAGR to USD 1.32 billion by 2035.</div>
+    <p style="font-size:13px;">Management guided 20% SDA growth in FY27, targeting ₹250-300 Cr revenue. The Euro 6 → Euro 7 transition is critical: Tatva was late for Euro 6 allocations, but for Euro 7 they have been working with zeolite manufacturers from the specification stage. Month-on-month uptick in Euro 7 orders expected from July-August 2026. SACHEM remains dominant but customers actively seek to maintain a second qualified supplier.</p>
+    <span class="seg-status status-running">● RUNNING — EURO 7 RAMP BEGINNING</span>
+  </div>
+
+  <div class="segment-card" style="border-top:3px solid var(--green);">
+    <div class="seg-icon">🔋</div>
+    <div class="seg-title">Electrolyte Salts &amp; Solutions (ESS) <span class="seg-pct" style="background:var(--green-bg);color:var(--green);">~8% of Revenue</span></div>
+    <div class="seg-external">External catalyst: Energy storage explosion — supercapacitors for grid storage, automotive start-stop systems, and hybrid EVs. India's largest ESS producer, no domestic competitor at commercial scale.</div>
+    <p style="font-size:13px;">From near-zero two years ago to 10% of revenue target by FY27 — management guided 8-10% of revenue from ESS, implying ₹55-65 Cr for FY27. A second application (hybrid battery vehicle, mass production mid-2028) begins commercial supply Q3 FY27. This segment has grown 15x in the past few years and the ramp has only just begun.</p>
+    <span class="seg-status status-ramping">● RAMPING — INFLECTION IN PROGRESS</span>
+  </div>
+
+  <div class="segment-card" style="border-top:3px solid var(--amber);">
+    <div class="seg-icon">🌿</div>
+    <div class="seg-title">Pharma &amp; Agro Intermediates (PASC) <span class="seg-pct" style="background:var(--amber-bg);color:var(--amber);">35% of Revenue</span></div>
+    <div class="seg-external">External catalyst: China+1 strategy accelerating, Indian agro chemical exports growing. Government's PLI for specialty chemicals supporting domestic capacity. Tatva's proprietary agro intermediates are import-substitute products with strong domestic and export demand.</div>
+    <p style="font-size:13px;">Management guided ₹70-75 Cr of entirely NEW pharma revenue in FY27 from three products moving from validation to commercial production. Two agro intermediate products from the new Dahej block are seeing stable demand with visibility through 2027. The Jolva plant (early 2028) will launch two additional high-potential agro intermediates using a novel in-house patented process that Tatva's MD described as "something exceptional we've never seen in any patent database."</p>
+    <span class="seg-status status-ramping">● PHARMA UNLOCK — COMMERCIAL FROM Q1 FY27</span>
+  </div>
+
+  <div class="segment-card" style="border-top:3px solid var(--purple);">
+    <div class="seg-icon">💾</div>
+    <div class="seg-title">Phase Transfer Catalysts (PTC) <span class="seg-pct" style="background:var(--purple-bg);color:var(--purple);">26% of Revenue</span></div>
+    <div class="seg-external">External catalyst: Global PTC market USD 1.43 billion in 2026, growing at 6.1% CAGR to USD 2.3 billion by 2034. India is the fastest-growing regional market at 7.3% CAGR, driven by pharmaceutical API manufacturing expansion.</div>
+    <p style="font-size:13px;">Tatva is India's leading PTC producer. Growth here is organic and steady — this is the "cash cow" that funds R&D into newer segments. Q4 FY26 PTC revenue was down 20% YoY but up 11% sequentially, suggesting the trough may be passed. Management expects consistent organic growth aligned with historical trends as green chemistry adoption widens.</p>
+    <span class="seg-status status-running">● RUNNING — ORGANIC GROWTH, TROUGH LIKELY PAST</span>
+  </div>
+
+</div>
+
+<div class="segment-card" style="border-top:3px solid var(--navy);margin-top:4px;">
+  <div class="seg-icon">🔬</div>
+  <div class="seg-title">Semiconductor Chemicals <span class="seg-pct" style="background:var(--navy-bg);color:var(--navy);">EMERGING</span></div>
+  <div class="seg-external">External catalyst: Global semiconductor chemicals market growing at 7%+ CAGR, driven by AI chip demand and FAB capacity expansion in Asia. India's semiconductor policy (₹76,000 Cr package) creating domestic incentives.</div>
+  <p style="font-size:13px;">Eight years of R&D. First plant-scale batch dispatched for customer validation in Q1 FY27 — ultra-high purity (sub-1 part-per-billion impurity profile). The supply chain: Tatva → Japanese/South Korean chemical integrators → Taiwan fabs. Validation timelines are notoriously slow (multiple rounds through different entities). Full commercialization by 2028-29. This segment, if successful, could be Tatva's highest-margin business by 2030.</p>
+  <span class="seg-status status-pilot">● FIRST DISPATCH — 8 YEARS IN THE MAKING</span>
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--green);">
+  Management now has revenue visibility through 2027 across ESS, PASC agro, PASC pharma, and SDA — four simultaneous growth drivers is structurally superior to the single-segment dependence of most specialty chemical peers.
+</div>
+
+<!-- ===== CHAPTER 4: STRATEGIC INSIGHT ===== -->
+<div class="ch-header coral">
+  <div class="ch-num">4</div>
+  <div>
+    <div class="ch-eyebrow">Strategic Insight · The One Thing to Understand</div>
+    <div class="ch-title">The 30-year patient investor playing a 100-year chemistry game</div>
+  </div>
+</div>
+
+<div class="insight-box">
+  <div class="label">💡 The Non-Obvious Insight</div>
+  <p><strong>Tatva Chintan does not compete on chemistry. It competes on time.</strong> Every high-value segment the company enters — SDAs, semiconductor chemicals, electrolyte salts — requires years of upfront qualification work with no revenue and no guarantee of success. The 8-year semiconductor journey that yielded its first dispatch in Q1 FY27 looked like a waste of resources for most of that period. The ESS segment looked like a curiosity (1% of revenue) until Q4 FY26 when it suddenly became 10%. <span class="hl-key">Tatva's most important competitive asset is its institutional willingness to plant seeds it won't harvest for a decade — and its ability to survive financially during that waiting period.</span></p>
+  <p>This means the balance sheet must be read differently. A company that plants 8-year seeds needs to maintain liquidity and operational resilience across business cycles. The FY23-FY25 downcycle was painful but Tatva survived without dilution, without abandoning R&D, and without losing customer relationships. The new greenfield announcements (Jolva, Dahej-III) coming precisely at the revenue recovery point suggest management is using the recovery to fund the next seed-planting cycle — for FY29+ growth.</p>
+</div>
+
+<p>There is a second insight embedded in the SDA duopoly structure. <span class="hl-catalyst">The Euro 7 transition is not just a demand increase for SDAs — it is a re-opening of the qualification window.</span> In Euro 6, Tatva was a late entrant, which is why it captures only 15% market share. In Euro 7, Tatva was there from the specification stage, working alongside zeolite manufacturers to design the catalyst chemistry. This means they have a plausible path to capturing 25-30% of new Euro 7 SDA volume, implying market share expansion within the SDA market itself — not just riding the wave.</p>
+
+<p>Finally, the semiconductor chemical initiative reveals Tatva's understanding of chemistry platform adjacency. The same ultra-high purity chemistry competence built for semiconductor chemicals reinforces the ESS electrolyte salt business (which also requires exceptional purity control). Investments in one segment are not isolated — they create technical spillovers that make the company more capable across all segments simultaneously.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--coral);">
+  Tatva's edge is the willingness to wait 8 years for a segment to pay off — that patience is itself the competitive barrier that most publicly-listed chemical companies cannot maintain under quarterly earnings pressure.
+</div>
+
+<!-- ===== CHAPTER 5: FINANCIALS ===== -->
+<div class="ch-header" style="border-bottom-color:var(--navy);">
+  <div class="ch-num" style="background:var(--navy);">5</div>
+  <div>
+    <div class="ch-eyebrow">Financials in Context · Numbers With Trajectory</div>
+    <div class="ch-title">A downcycle exit: margins rebuild, capex cycle accelerates</div>
+  </div>
+</div>
+
+<div class="lead lead-navy">
+  The FY23-FY25 period was a brutal downcycle driven by post-COVID inventory destocking that collapsed SDA demand. Revenue fell from ₹424 Cr to ₹383 Cr, PAT fell from ₹45 Cr to ₹6 Cr. FY26 was the decisive turn: revenue crossed ₹500 Cr, EBITDA margins recovered from 9% to 18%, and the company entered a new capex cycle. Q1 FY27 confirms the recovery is not a blip.
+</div>
+
+<h3>Five-Year Annual P&amp;L — Consolidated (₹ Crore)</h3>
+<table class="q-table" role="table" aria-label="Annual Financial Data">
+<thead>
+<tr>
+  <th>Metric</th>
+  <th>FY22</th>
+  <th>FY23</th>
+  <th>FY24</th>
+  <th>FY25</th>
+  <th>FY26</th>
+</tr>
+</thead>
+<tbody>
+<tr class="highlight">
+  <td>Revenue (₹ Cr)</td>
+  <td>434</td><td>424</td><td>394</td><td>383</td><td>506</td>
+</tr>
+<tr>
+  <td>EBITDA (₹ Cr)</td>
+  <td>109</td><td>61</td><td>69</td><td>35</td><td>93</td>
+</tr>
+<tr>
+  <td>EBITDA Margin %</td>
+  <td>25%</td><td>14%</td><td>17%</td><td>9%</td><td>18%</td>
+</tr>
+<tr>
+  <td>PAT (₹ Cr)</td>
+  <td>96</td><td>45</td><td>30</td><td>6</td><td>42</td>
+</tr>
+<tr>
+  <td>ROCE %</td>
+  <td>26%</td><td>9%</td><td>7%</td><td>1%</td><td>7%</td>
+</tr>
+<tr>
+  <td>Net Borrowings (₹ Cr)</td>
+  <td>120</td><td>170</td><td>14</td><td>36</td><td>120</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Quarterly Trend — Consolidated (₹ Crore)</h3>
+<table class="q-table" role="table" aria-label="Quarterly Financial Trend">
+<thead>
+<tr>
+  <th>Quarter</th>
+  <th>Q1 FY26</th>
+  <th>Q2 FY26</th>
+  <th>Q3 FY26</th>
+  <th>Q4 FY26</th>
+  <th>Q1 FY27</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Revenue (₹ Cr)</td>
+  <td>117</td><td>124</td><td>131</td><td>134</td><td><strong>167</strong></td>
+</tr>
+<tr>
+  <td>EBITDA (₹ Cr)</td>
+  <td>17</td><td>22</td><td>25</td><td>28</td><td><strong>32</strong></td>
+</tr>
+<tr>
+  <td>EBITDA %</td>
+  <td>14.8%</td><td>17.8%</td><td>19.1%</td><td>21%</td><td><strong>19.3%</strong></td>
+</tr>
+<tr>
+  <td>PAT (₹ Cr)</td>
+  <td>7</td><td>10</td><td>15</td><td>10</td><td><strong>16</strong></td>
+</tr>
+<tr class="highlight">
+  <td>Revenue YoY Growth</td>
+  <td>+12%</td><td>+49%</td><td>+53%</td><td>+24%</td><td><strong>+43%</strong></td>
+</tr>
+</tbody>
+</table>
+
+<h3>Balance Sheet Snapshot — FY26</h3>
+<div class="two-col">
+  <div>
+    <div class="stat-row"><span class="stat-label">Total Assets</span><span class="stat-val">₹1,004 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Fixed Assets + CWIP</span><span class="stat-val">₹634 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Total Equity</span><span class="stat-val">₹781 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Gross Borrowings</span><span class="stat-val amber">₹120 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">D/E Ratio</span><span class="stat-val green">0.15x</span></div>
+  </div>
+  <div>
+    <div class="stat-row"><span class="stat-label">Operating CFO FY26</span><span class="stat-val">₹31 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">Capex FY26</span><span class="stat-val amber">₹116 Cr</span></div>
+    <div class="stat-row"><span class="stat-label">CFO/Capex</span><span class="stat-val amber">0.27x</span></div>
+    <div class="stat-row"><span class="stat-label">Interest Coverage</span><span class="stat-val green">~31x</span></div>
+    <div class="stat-row"><span class="stat-label">Working Capital Days</span><span class="stat-val amber">92 days</span></div>
+  </div>
+</div>
+
+<h3>Peer Valuation Comparison (July 2026)</h3>
+<table class="peer-table" role="table" aria-label="Peer Valuation Comparison">
+<thead>
+<tr>
+  <th>Company</th>
+  <th>Mkt Cap (₹ Cr)</th>
+  <th>P/E (TTM)</th>
+  <th>Revenue (FY26)</th>
+  <th>EBITDA %</th>
+  <th>ROCE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="featured">
+  <td>TATVA (Tatva Chintan)</td>
+  <td>~3,350</td>
+  <td>~79x</td>
+  <td>₹506 Cr</td>
+  <td>18%</td>
+  <td>7%</td>
+</tr>
+<tr>
+  <td>Vinati Organics</td>
+  <td>~17,000</td>
+  <td>~45x</td>
+  <td>~₹2,000 Cr</td>
+  <td>26%</td>
+  <td>19%</td>
+</tr>
+<tr>
+  <td>PI Industries</td>
+  <td>~36,000</td>
+  <td>~35x</td>
+  <td>~₹8,500 Cr</td>
+  <td>22%</td>
+  <td>21%</td>
+</tr>
+<tr>
+  <td>Aarti Industries</td>
+  <td>~12,000</td>
+  <td>~40x</td>
+  <td>~₹6,800 Cr</td>
+  <td>17%</td>
+  <td>10%</td>
+</tr>
+<tr>
+  <td>Navin Fluorine</td>
+  <td>~11,000</td>
+  <td>~38x</td>
+  <td>~₹1,800 Cr</td>
+  <td>24%</td>
+  <td>15%</td>
+</tr>
+</tbody>
+</table>
+
+<p style="font-size:12.5px;color:var(--gray);"><em>Tatva at ~79x trailing PE is at a premium to peers (35-45x). The market is pricing in:</em> (1) the ESS surge continuing; (2) PASC pharma adding ₹70-75 Cr new revenue in FY27; (3) Jolva plant as next re-rating event from FY29. This is an early-stage compounder valuation, not a mature business multiple. The bet is that FY28 PAT of ₹100+ Cr makes the current price a 35x FY28E PE.</p>
+
+<h3>FY27 Guidance Summary (from Q4 FY26 Concall)</h3>
+<div class="stat-row"><span class="stat-label">Revenue Growth</span><span class="stat-val green">25% YoY (~₹630 Cr)</span></div>
+<div class="stat-row"><span class="stat-label">EBITDA Margin</span><span class="stat-val green">20–22%</span></div>
+<div class="stat-row"><span class="stat-label">SDA Revenue Target</span><span class="stat-val">₹250–300 Cr</span></div>
+<div class="stat-row"><span class="stat-label">ESS as % of Revenue</span><span class="stat-val">8–10%</span></div>
+<div class="stat-row"><span class="stat-label">PASC New Pharma Revenue</span><span class="stat-val">₹70–75 Cr (new addition)</span></div>
+<div class="stat-row"><span class="stat-label">ESS Hybrid Battery Supply</span><span class="stat-val">Q3 FY27 start</span></div>
+
+<div class="takeaway-pill" style="border-left-color:var(--navy);">
+  <span class="hl-number">Q1 FY27 revenue of ₹167 Cr already ahead of the ₹126 Cr run-rate implied by the 25% guidance</span> — management's guidance may prove conservative if all four segments fire simultaneously in H2 FY27.
+</div>
+
+<!-- CAPEX TIMELINE -->
+<h3 style="color:var(--coral);">⬡ Capex Timeline Card</h3>
+<div class="capex-timeline" role="table" aria-label="Capex Timeline">
+  <div class="capex-header">📍 CAPEX TRACKER — ALL ANNOUNCED PROJECTS</div>
+  <div class="capex-row">
+    <div class="capex-cell capex-head">Project</div>
+    <div class="capex-cell capex-head">Budget (₹ Cr)</div>
+    <div class="capex-cell capex-head">Timeline</div>
+    <div class="capex-cell capex-head">Spend-to-Date</div>
+    <div class="capex-cell capex-head">Revenue Unlock</div>
+    <div class="capex-cell capex-head">Status</div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><strong>Dahej New Block</strong><br><small style="color:var(--gray);">Brownfield, commissioned Q4 FY26</small></div>
+    <div class="capex-cell">~₹102 Cr</div>
+    <div class="capex-cell">Announced FY24<br>Commissioned Q4 FY26</div>
+    <div class="capex-cell">~₹100 Cr (complete)</div>
+    <div class="capex-cell">Raises Dahej peak to ₹850–900 Cr</div>
+    <div class="capex-cell"><span class="status-ontrack">● DELIVERED</span></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><strong>Jolva Greenfield Ph.1</strong><br><small style="color:var(--gray);">New site, Agro intermediates + MPP</small></div>
+    <div class="capex-cell">₹265–270 Cr</div>
+    <div class="capex-cell">Groundbreaking Q1 FY27<br>Commercial Q1 FY28</div>
+    <div class="capex-cell">FY27: ₹100 Cr<br>FY28: ₹175 Cr</div>
+    <div class="capex-cell">Phase 1: ₹400–500 Cr / yr</div>
+    <div class="capex-cell"><span class="status-drift">⚠ PLANNING — DELAYED ~1 QTR</span></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><strong>Dahej-III Greenfield</strong><br><small style="color:var(--gray);">Announced July 2026, NEW</small></div>
+    <div class="capex-cell">₹200 Cr</div>
+    <div class="capex-cell">21 months from Jul 2026<br>(~Apr 2028)</div>
+    <div class="capex-cell">₹0 (just announced)</div>
+    <div class="capex-cell">₹300 Cr mgmt estimate (344 KL capacity)</div>
+    <div class="capex-cell"><span class="status-new">● NEW — Q1 FY27 ANNOUNCEMENT</span></div>
+  </div>
+</div>
+<p style="font-size:12px;color:var(--gray);font-style:italic;">Total announced capex pipeline: ~₹465 Cr (Jolva) + ₹200 Cr (Dahej-III) = ₹665 Cr over FY27-FY28. Borrowing limit raised to ₹1,000 Cr from ₹300 Cr to fund this. CFO alone (~₹80-100 Cr guided for FY27) cannot fund this — debt will be needed. Monitoring is required.</p>
+
+<div class="takeaway-pill" style="border-left-color:var(--coral);">
+  Total capex pipeline of ₹665 Cr over 24 months is 1.3x FY26 revenue — bold but backed by ₹850-900 Cr Dahej ceiling plus ₹400-500 Cr Jolva revenue model at scale.
+</div>
+
+<!-- ===== CHAPTER 6: RISKS ===== -->
+<div class="ch-header amber">
+  <div class="ch-num">6</div>
+  <div>
+    <div class="ch-eyebrow">Risk Register · Eyes Open</div>
+    <div class="ch-title">Five specific, named risks — not generic disclaimers</div>
+  </div>
+</div>
+
+<div class="risk-list" role="list" aria-label="Risk Register">
+
+  <div class="risk-row" role="listitem">
+    <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+    <div>
+      <div class="risk-title">Risk 1 — Raw Material Geopolitical Shock (Amine/Ammonia)</div>
+      <div class="risk-body">Tatva's primary inputs — amines, quaternary nitrogen compounds, ammonia-derived feedstocks — have single-geography concentration in Middle East supply chains. The Iran-linked disruption in Q4 FY26 caused a 3-week supply stoppage and 30-40% price surge. While the situation has normalized and customers accepted most price increases, the vulnerability is structural. A repeat geopolitical shock could simultaneously disrupt supply and compress margins if customers resist pass-through on ongoing open orders.</div>
+      <div class="risk-signal">Signal: Monitor Global Amine Price Index (benzylamine, triethylamine, TBACl prices) monthly. A 25%+ spike sustained over two quarters = risk of margin miss below 18%.</div>
+    </div>
+  </div>
+
+  <div class="risk-row" role="listitem">
+    <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+    <div>
+      <div class="risk-title">Risk 2 — Jolva Capex / Revenue Bridge Slippage</div>
+      <div class="risk-body">The Jolva greenfield plant was originally targeted for groundbreaking in Q4 FY25, then Q1 FY26 (early 2026), and now Q1 FY27 (after detailed engineering optimization). Management has attributed the delay to a 4-6 week engineering rethink that reduced reactor count and optimized the design. While this is a defensible explanation, the pattern of one-quarter slippage each time is a mild credibility flag. The revenue unlock (₹400-500 Cr from Phase 1) is now expected from early 2028 — any further slip pushes FY29+ thesis.</div>
+      <div class="risk-signal">Signal: Groundbreaking announcement expected by July-August 2026. If not announced by September 2026, it's the third slip — escalate to active concern.</div>
+    </div>
+  </div>
+
+  <div class="risk-row" role="listitem">
+    <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+    <div>
+      <div class="risk-title">Risk 3 — Working Capital Stretch and Debt Accumulation</div>
+      <div class="risk-body">Cash Conversion Cycle expanded from 264 days (FY25) to 310 days (FY26) — an uncomfortable trend. Borrowings jumped from ₹36 Cr to ₹120 Cr, and CFO (₹31 Cr) covered only 27% of capex (₹116 Cr). With ₹665 Cr of new capex announced, borrowing will scale significantly — the limit was raised to ₹1,000 Cr. A specialty chemical company with a long cash conversion cycle and a large capex program can create a funding squeeze if revenue growth disappoints.</div>
+      <div class="risk-signal">Signal: Net debt-to-EBITDA above 2.5x would be concerning. Interest coverage below 5x would be a major flag given the current 31x cushion.</div>
+    </div>
+  </div>
+
+  <div class="risk-row" role="listitem">
+    <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+    <div>
+      <div class="risk-title">Risk 4 — EV Adoption Rate vs SDA Demand Timeline</div>
+      <div class="risk-body">A faster-than-expected shift to pure battery electric vehicles could reduce the installed base of ICE engines faster than Euro 7 zeolite demand ramps up. Tatva's SDA business is predicated on ICE vehicles — including hybrids — remaining dominant through 2040 in commercial vehicles and developing markets. A policy shock accelerating EV mandates in Europe or India could compress the Euro 7 demand window. Management has noted that Euro 7 covers commercial vehicles through 2040, providing a long runway, but the passenger car segment could narrow.</div>
+      <div class="risk-signal">Signal: Track EU passenger EV adoption rate annually. If above 45% by 2028, the Euro 7 catalyst demand tail is shorter than modeled.</div>
+    </div>
+  </div>
+
+  <div class="risk-row" role="listitem">
+    <div class="risk-icon" aria-hidden="true"><i class="ti ti-alert-triangle"></i></div>
+    <div>
+      <div class="risk-title">Risk 5 — Semiconductor Chemical Qualification Failure or Delay</div>
+      <div class="risk-body">Eight years of R&D leading to a first plant-scale batch in Q1 FY27 is impressive. But semiconductor chemical validation involves multiple rounds with integrators and fabs, each capable of rejecting the product. The purity requirement (below 1 part per trillion of certain impurities) is extraordinarily demanding, and any batch inconsistency during validation resets the clock. Even one round of rejection could delay commercialization from 2028 to 2030. The segment is a high-optionality call option, but it must be treated as such — not as a guaranteed revenue line.</div>
+      <div class="risk-signal">Signal: Quarterly updates on validation stage progress — "dispatched batch" vs "validation cleared" vs "commercial purchase order" are three very different milestones.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="takeaway-pill" style="border-left-color:var(--amber);">
+  The balance sheet risk (310-day CCC, ₹665 Cr capex pipeline, 27% CFO coverage) is the most immediate monitoring item — but with 31x interest coverage and zero dilution history, catastrophic scenarios are unlikely.
+</div>
+
+<!-- ===== CHAPTER 7: WATCH SIGNALS ===== -->
+<div class="ch-header" style="border-bottom-color:var(--teal);">
+  <div class="ch-num" style="background:var(--teal);">7</div>
+  <div>
+    <div class="ch-eyebrow">Watch Signals · Track These Every Quarter</div>
+    <div class="ch-title">Five falsifiable metrics with explicit thresholds</div>
+  </div>
+</div>
+
+<div class="watch-grid" role="list" aria-label="Watch Signals">
+
+  <div class="watch-row" role="listitem">
+    <div class="watch-metric">WATCH 1 · EBITDA MARGIN</div>
+    <div class="watch-title">Does margin reach the 20–22% guided floor?</div>
+    <p style="font-size:12.5px;">Management guided 20-22% EBITDA for FY27. Q4 FY26 achieved 21%. Q1 FY27 at 19.3% is slightly below. The test: does raw material cost normalization and operating leverage push margins above 20% by Q2-Q3 FY27?</p>
+    <div class="watch-thresholds">
+      <div class="threshold t-green">Green: EBITDA ≥20% for two consecutive quarters</div>
+      <div class="threshold t-amber">Amber: 17–20% — operating leverage not fully arriving</div>
+      <div class="threshold t-red">Red: Below 17% — raw material pass-through failing or volume shortfall</div>
+    </div>
+  </div>
+
+  <div class="watch-row" role="listitem">
+    <div class="watch-metric">WATCH 2 · ESS SEGMENT REVENUE</div>
+    <div class="watch-title">Does Electrolyte Salts sustain 8–10% of revenue in FY27?</div>
+    <p style="font-size:12.5px;">ESS grew 1,378% YoY in Q4 FY26 to ₹13 Cr. Management guided 8-10% of FY27 revenue (≈₹50-65 Cr for the year). The hybrid battery second application starts Q3 FY27 and is the key incremental event.</p>
+    <div class="watch-thresholds">
+      <div class="threshold t-green">Green: ESS quarterly revenue ≥₹12 Cr sustained through FY27</div>
+      <div class="threshold t-amber">Amber: ESS falls below ₹8 Cr in any quarter — ramp not stabilizing</div>
+      <div class="threshold t-red">Red: Hybrid battery Q3 FY27 commercial supply delayed</div>
+    </div>
+  </div>
+
+  <div class="watch-row" role="listitem">
+    <div class="watch-metric">WATCH 3 · JOLVA GROUNDBREAKING</div>
+    <div class="watch-title">Does Jolva break ground in Q1 FY27 as committed?</div>
+    <p style="font-size:12.5px;">Management said groundbreaking "within next 60 days" from mid-May 2026 — so by mid-July 2026. The new Dahej-III announcement (July 2026) has not explicitly superseded Jolva. Confirmation in Q2 FY27 concall is critical for the FY29 growth thesis.</p>
+    <div class="watch-thresholds">
+      <div class="threshold t-green">Green: Groundbreaking confirmed in Q1 FY27 — "Jolva civil construction underway"</div>
+      <div class="threshold t-amber">Amber: Delayed to Q2 FY27 — third slip, timeline credibility issue</div>
+      <div class="threshold t-red">Red: No update + focus shifts entirely to Dahej-III — Jolva effectively abandoned</div>
+    </div>
+  </div>
+
+  <div class="watch-row" role="listitem">
+    <div class="watch-metric">WATCH 4 · PASC PHARMA REVENUE</div>
+    <div class="watch-title">Does the ₹70–75 Cr pharma guidance materialize?</div>
+    <p style="font-size:12.5px;">Three pharma products: one already in commercial production (Q1 FY27), two more starting Q3 FY27. This is entirely NEW revenue with no prior baseline. Management has "clear visibility" but the campaign basis nature of production adds lumpiness risk.</p>
+    <div class="watch-thresholds">
+      <div class="threshold t-green">Green: PASC segment revenue exceeds ₹190 Cr in FY27 (≈₹120 Cr base + ₹70 Cr new pharma)</div>
+      <div class="threshold t-amber">Amber: PASC pharma contributes only ₹40-50 Cr — production delays</div>
+      <div class="threshold t-red">Red: Pharma revenue not broken out in segmental reporting — management obscuring delivery</div>
+    </div>
+  </div>
+
+  <div class="watch-row" role="listitem">
+    <div class="watch-metric">WATCH 5 · NET DEBT TRAJECTORY</div>
+    <div class="watch-title">Is debt scaling proportionally to revenue?</div>
+    <p style="font-size:12.5px;">With ₹665 Cr capex announced and borrowing limit raised to ₹1,000 Cr, net debt will increase. The test is whether debt growth is covered by EBITDA growth — i.e., net debt/EBITDA should stay below 2x even in the investment cycle.</p>
+    <div class="watch-thresholds">
+      <div class="threshold t-green">Green: Net Debt/EBITDA below 1.5x through FY28 capex cycle</div>
+      <div class="threshold t-amber">Amber: Net Debt/EBITDA approaching 2.5x — leverage increasing faster than earnings</div>
+      <div class="threshold t-red">Red: Equity dilution (QIP/rights) announced — balance sheet under stress</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== VERDICT ===== -->
+<div class="verdict-card" role="complementary" aria-label="Investment Verdict">
+  <div class="verdict-label">📌 VERDICT · JULY 2026</div>
+  <div class="verdict-stage">Multi-Inflection Moment — Post-Downcycle Compounder Entering Volume Phase</div>
+  <div class="verdict-body">
+    <p>Tatva Chintan's structural tailwinds are among the most specific and near-term in Indian specialty chemicals: Euro 7 emission norms (2027 European implementation), India's India-plus-one specialty chemical sourcing shift, energy storage electrolyte ramp, and a new pharma commercial cycle beginning simultaneously in FY27. These are not "sector themes" — they are company-specific order book events that management now has visibility into through calendar year 2027.</p>
+    <p>The quality signal from financials is mixed-positive: EBITDA margins rebuilding from a 9% trough to a Q4 FY26 peak of 21%, revenue up 43% YoY in Q1 FY27, PAT up 140% YoY. The weakness is on capital efficiency — ROCE at 7% remains well below the 25-26% peak of FY21-22, and the new ₹665 Cr capex pipeline will keep ROCE subdued through FY28. The near-term catalyst is Q2 FY27 concall confirming margin above 20% and Jolva groundbreaking. The re-rating catalyst beyond that is Jolva Phase 1 commercial production in early 2028 — at ₹400-500 Cr potential revenue, that is near a second Tatva in terms of scale. At ~79x trailing PE, the market is pricing in the FY27-28 earnings trajectory with minimal margin of safety — the valuation requires management to deliver on all four growth pillars. Worth monitoring closely; initiating or adding position size is better suited to any market correction that brings the multiple below 50x trailing.</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     HIGHLIGHT INDEX
+     ============================================================ -->
+<div class="highlight-index-wrapper">
+  <div class="highlight-index-header" id="highlight-index-header">📌 All Highlights at a Glance — Auto-Assembled</div>
+  <ol id="highlight-index-list"></ol>
+</div>
+
+
+</div><!-- end main content -->
+
+<!-- ============================================================
+     THE LEDGER — MANAGEMENT CREDIBILITY AUDIT
+     ============================================================ -->
+
+<!-- LEDGER MASTHEAD -->
+<div class="ledger-masthead" role="complementary" aria-label="The Ledger Management Credibility Audit">
+  <div class="ledger-eyebrow">COMPANION ANALYSIS · APPENDED TO NSE INVESTOR BRIEF</div>
+  <h2 class="ledger-title">The Ledger</h2>
+  <div class="ledger-sub">Management promises, tone & execution — tracked quarter by quarter. Promise Register · Tone Decoder · Execution Delta · Capex Timeline · Margin Mechanics · Capital Structure Integrity.</div>
+  <div class="ledger-chips">
+    <span class="ledger-chip">TATVA · TATVA CHINTAN PHARMA CHEM</span>
+    <span class="ledger-chip">Q4 FY26 + Q1 FY27 CALIBRATION</span>
+    <span class="ledger-chip">SOURCES: Q4 FY26 CONCALL TRANSCRIPT (16 MAY 2026)</span>
+    <span class="ledger-chip">SCREENER.IN · BSE FILINGS · NSE ARCHIVES</span>
+  </div>
+</div>
+
+<div class="ledger-content">
+
+<!-- CAPITAL CHAIN MAP -->
+<h3 style="font-family:var(--serif);font-size:18px;margin:0 0 14px;color:var(--ink);">The Capital Chain — Where Is Tatva in the Cycle?</h3>
+<div class="chain-flow" role="img" aria-label="Capital chain status">
+  <div class="chain-node ok"><div class="chain-num">①</div><div class="chain-label">Capex Deployed</div><div class="chain-num" style="margin-top:4px;color:var(--green);">DONE</div></div>
+  <div class="chain-node ok"><div class="chain-num">②</div><div class="chain-label">Capacity Created</div><div class="chain-num" style="margin-top:4px;color:var(--green);">DAHEJ LIVE</div></div>
+  <div class="chain-node warn"><div class="chain-num">③</div><div class="chain-label">Utilisation Ramp</div><div class="chain-num" style="margin-top:4px;color:var(--amber);">80-85%</div></div>
+  <div class="chain-node warn"><div class="chain-num">④</div><div class="chain-label">Margin Expansion</div><div class="chain-num" style="margin-top:4px;color:var(--amber);">19% → 21%?</div></div>
+  <div class="chain-node late"><div class="chain-num">⑤</div><div class="chain-label">Cash Flow Improves</div><div class="chain-num" style="margin-top:4px;color:var(--coral);">CFO LOW</div></div>
+  <div class="chain-node tbd"><div class="chain-num">⑥</div><div class="chain-label">Debt Reduces</div><div class="chain-num" style="margin-top:4px;color:var(--gray);">NEW CAPEX ↑</div></div>
+  <div class="chain-node tbd"><div class="chain-num">⑦</div><div class="chain-label">New Cycle</div><div class="chain-num" style="margin-top:4px;color:var(--gray);">JOLVA + D3</div></div>
+</div>
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;">Tatva is currently at Link 3-4: capacity has been created (Dahej block commissioned), utilisation is ramping (80-85%), margins are expanding (9%→21%) but cash flow hasn't yet improved (CFO ₹31 Cr vs Capex ₹116 Cr). The company is now committing the next capex cycle (Jolva + Dahej-III) before even reaching Link 5-6. This is aggressive but consistent with a management team seeding long-duration growth.</p>
+
+<!-- PILLAR 1: PROMISE REGISTER -->
+<div class="pillar-header promise">
+  <div class="pillar-num promise">P1</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 1 · Promise Register</div>
+    <div class="pillar-title">Forward commitments extracted from Q4 FY26 concall (May 16, 2026)</div>
+  </div>
+</div>
+
+<table class="promise-table" role="table" aria-label="Promise Register">
+<thead>
+<tr>
+  <th>Category</th>
+  <th>Promise</th>
+  <th>Source (Quote)</th>
+  <th>Conditionality</th>
+  <th>Timeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><span class="ptag ptag-green">Revenue/Growth</span></td>
+  <td>25% revenue growth in FY27</td>
+  <td>"We will growing the revenue by around 25%" — Ajesh Pillai, CFO</td>
+  <td>Low — explicitly maintained despite geopolitical concerns</td>
+  <td>FY27 full year</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-teal">Margin</span></td>
+  <td>EBITDA margin 20-22% for FY27</td>
+  <td>"EBITDA should be in the range of somewhere around 20% to 22%" — CFO</td>
+  <td>Low — "we stay with that even with geopolitical issues"</td>
+  <td>FY27 full year</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-navy">Segment</span></td>
+  <td>ESS at 8-10% of FY27 revenue</td>
+  <td>"Around 8% to 10% that we had already informed in last earning call" — CFO</td>
+  <td>Low — already guided and reiterated</td>
+  <td>FY27</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-navy">Segment</span></td>
+  <td>SDA target ₹250–300 Cr in FY27</td>
+  <td>"We should reach anywhere number between INR 250 crores to INR 300 crores" — MD</td>
+  <td>Low — Euro 7 orders beginning July-August 2026</td>
+  <td>FY27</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-navy">Segment</span></td>
+  <td>PASC pharma: ₹70–75 Cr new revenue FY27</td>
+  <td>"INR 70 crores, INR 75 crores is a fair estimate. That will be a completely new add-on" — MD</td>
+  <td>Low on first product; medium on two products starting Q3</td>
+  <td>FY27 (Q1 start, Q3 second batch)</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-coral">Capex</span></td>
+  <td>Jolva groundbreaking "within next 60 days" of mid-May 2026</td>
+  <td>"Within next 60 days, we should be breaking the ground" — MD</td>
+  <td>Medium — engineering detailing stage as of call</td>
+  <td>Mid-July 2026</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-coral">Capex</span></td>
+  <td>Jolva commercial production early 2028 (Jan-Mar 2028)</td>
+  <td>"Calendar year '28, early calendar year '28, January to March production" — MD</td>
+  <td>Medium — 18-20 months from groundbreaking</td>
+  <td>Q1 FY29</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-coral">Capex</span></td>
+  <td>FY27 capex ₹100 Cr, FY28 capex ₹175 Cr (Jolva)</td>
+  <td>"Current financial year INR 100 crores and INR 175 crores in the next" — MD</td>
+  <td>Low — now superseded by Dahej-III addition (further ₹200 Cr)</td>
+  <td>FY27-28</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-teal">Segment</span></td>
+  <td>Semiconductor — first plant-scale batch dispatched Q1 FY27</td>
+  <td>"Dispatch would happen in the current quarter" — MD (on Q4 FY26 call)</td>
+  <td>Low — confirmed delivered per Q1 FY27 reports</td>
+  <td>Q1 FY27 (delivered)</td>
+</tr>
+<tr>
+  <td><span class="ptag ptag-navy">Segment</span></td>
+  <td>ESS hybrid battery commercial supply Q3 FY27 (Nov-Dec 2026)</td>
+  <td>"We shall see a beginning of commercial business for this application in Q3" — MD</td>
+  <td>Medium — dependent on customer ramp pace</td>
+  <td>Q3 FY27</td>
+</tr>
+</tbody>
+</table>
+
+<!-- PILLAR 2: TONE DECODER -->
+<div class="pillar-header tone">
+  <div class="pillar-num tone">P2</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 2 · Tone Decoder</div>
+    <div class="pillar-title">Linguistic patterns from Q4 FY26 earnings call</div>
+  </div>
+</div>
+
+<p>The Q4 FY26 call tone is measured and credible. MD Chintan Shah was not on call in person (CFO delivered on his behalf) — which is a governance note worth tracking across future calls. However, Chintan Shah joined for the Q&A session and answered directly, specifically, and without deflection.</p>
+
+<div class="two-col">
+  <div>
+    <h3 style="font-size:14px;margin-bottom:12px;">Specificity Score</h3>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>Hard numbers given</span><span style="color:var(--green);font-family:var(--mono);">HIGH</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:82%;background:var(--green);"></div></div>
+    </div>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>Conditional qualifiers</span><span style="color:var(--amber);font-family:var(--mono);">MODERATE</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:45%;background:var(--amber);"></div></div>
+    </div>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>Evasion of hard questions</span><span style="color:var(--green);font-family:var(--mono);">LOW</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:15%;background:var(--coral);"></div></div>
+    </div>
+  </div>
+  <div>
+    <h3 style="font-size:14px;margin-bottom:12px;">Attribution Quality</h3>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>Owns misses/challenges</span><span style="color:var(--green);font-family:var(--mono);">GOOD</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:75%;background:var(--green);"></div></div>
+    </div>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>External blame deflection</span><span style="color:var(--green);font-family:var(--mono);">LOW</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:25%;background:var(--amber);"></div></div>
+    </div>
+    <div class="tone-bar-wrap">
+      <div class="tone-bar-label"><span>Repeated verbatim phrases</span><span style="color:var(--green);font-family:var(--mono);">LOW</span></div>
+      <div class="tone-bar-bg"><div class="tone-bar-fill" style="width:20%;background:var(--amber);"></div></div>
+    </div>
+  </div>
+</div>
+
+<p>Positive signals: MD Chintan Shah directly explained the PASC production challenges (photochlorination plant problems, new Dahej block teething issues) without minimizing them. He answered the dividend question honestly (acknowledging the debt vs dividend tension while explaining the 10% distribution policy). On the Jolva delay, he attributed it specifically to "4 to 6 weeks" of engineering optimization that reduced reactor count — a specific, falsifiable explanation rather than a generic "market conditions" excuse.</p>
+<p>Watch signal: The MD was not in the room for the opening address — an unusual governance note. CFO delivered opening remarks "on behalf of" the MD. Track whether this pattern repeats in future calls as it could indicate MD attention bandwidth constraints during the capex scaling phase.</p>
+
+<!-- PILLAR 3: EXECUTION DELTA -->
+<div class="pillar-header exec">
+  <div class="pillar-num exec">P3</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 3 · Execution Delta</div>
+    <div class="pillar-title">Q4 FY26 promises vs Q1 FY27 delivery — first scorecard</div>
+  </div>
+</div>
+
+<table class="promise-table" role="table" aria-label="Execution Delta">
+<thead>
+<tr>
+  <th>Promise</th>
+  <th>Guidance</th>
+  <th>Q1 FY27 Actual</th>
+  <th>Delta Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>FY27 Revenue Growth 25%</td>
+  <td>~₹630 Cr full year (₹126 Cr/quarter run rate)</td>
+  <td>₹167 Cr Q1 — 43% YoY growth</td>
+  <td><span class="ptag ptag-green">EXCEEDED Q1</span></td>
+</tr>
+<tr>
+  <td>EBITDA 20-22%</td>
+  <td>Floor 20%</td>
+  <td>19.3% Q1 FY27</td>
+  <td><span class="ptag ptag-amber">PARTIAL — 70 bps BELOW FLOOR</span></td>
+</tr>
+<tr>
+  <td>Semiconductor first dispatch Q1 FY27</td>
+  <td>Dispatch in Q1 FY27</td>
+  <td>Confirmed in Q1 FY27 report (20% upper circuit)</td>
+  <td><span class="ptag ptag-green">DELIVERED</span></td>
+</tr>
+<tr>
+  <td>Jolva groundbreaking "within 60 days" of mid-May</td>
+  <td>Mid-July 2026</td>
+  <td>Not confirmed publicly as of July 21, 2026 (new Dahej-III announced instead)</td>
+  <td><span class="ptag ptag-amber">WATCHING — POSSIBLE PARTIAL SHIFT</span></td>
+</tr>
+<tr>
+  <td>PASC pharma first product commercialization Q1 FY27</td>
+  <td>Commercialization beginning Q1 FY27</td>
+  <td>PASC segment 35% of Q1 FY27 revenue — evidence of delivery</td>
+  <td><span class="ptag ptag-green">ON TRACK</span></td>
+</tr>
+<tr>
+  <td>Overall FY27 capex ₹100 Cr + Jolva groundbreaking</td>
+  <td>₹100 Cr in FY27</td>
+  <td>Additional Dahej-III ₹200 Cr now approved — total FY27 capex likely higher</td>
+  <td><span class="ptag ptag-teal">EXPANDED — MORE THAN GUIDED</span></td>
+</tr>
+</tbody>
+</table>
+
+<!-- PILLAR 4: CAPEX TIMELINE TRACKER -->
+<div class="pillar-header capex2">
+  <div class="pillar-num capex2">P4</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 4 · Capex Timeline Tracker</div>
+    <div class="pillar-title">Project-level tracking: budgets, dates, funding sources</div>
+  </div>
+</div>
+
+<h3 style="color:var(--teal);">Dahej New Block — Project Summary</h3>
+<div class="stat-row"><span class="stat-label">Announced</span><span class="stat-val">Q2 FY24</span></div>
+<div class="stat-row"><span class="stat-label">Original budget</span><span class="stat-val">~₹100 Cr</span></div>
+<div class="stat-row"><span class="stat-label">Original completion</span><span class="stat-val">Q3 FY25</span></div>
+<div class="stat-row"><span class="stat-label">Actual completion</span><span class="stat-val amber">Q4 FY26 — drifted ~3 quarters</span></div>
+<div class="stat-row"><span class="stat-label">Stated funding</span><span class="stat-val">Internal accruals + minor debt</span></div>
+<div class="stat-row"><span class="stat-label">Actual funding</span><span class="stat-val amber">Net borrowings ₹79 Cr raised in FY26 (CFO/Capex = 0.27)</span></div>
+<div class="stat-row"><span class="stat-label">Status</span><span class="stat-val green">DELIVERED — Revenue unlocked, capacity at 80-85%</span></div>
+
+<p style="font-size:13px;margin-top:12px;">The Dahej block is the largest capex success. Completion drift was ~3 quarters, but management's explanation (production plant challenges in PASC which were eventually resolved, and detailed engineering adjustments) was specific and falsifiable. The funding mismatch (claimed "internal accruals," actually needed ₹79 Cr new borrowings) is a mild Funding Flip flag, though at 31x interest coverage the risk is manageable.</p>
+
+<h3 style="color:var(--teal);">Jolva Greenfield — Red Flag Assessment</h3>
+<table class="promise-table" role="table" aria-label="Jolva project tracking">
+<thead>
+<tr><th>Quarter</th><th>Stated Groundbreaking</th><th>Actual Status</th><th>Flag</th></tr>
+</thead>
+<tbody>
+<tr><td>Q4 FY24</td><td>Early 2026</td><td>Engineering begun</td><td><span class="ptag ptag-green">PLANNED</span></td></tr>
+<tr><td>Q2 FY26</td><td>Q3 FY26</td><td>Engineering delays — reactor count revision</td><td><span class="ptag ptag-amber">SLIP 1 — 1 quarter</span></td></tr>
+<tr><td>Q3 FY26</td><td>Q4 FY26</td><td>Further design refinement</td><td><span class="ptag ptag-amber">SLIP 2 — 1 quarter</span></td></tr>
+<tr><td>Q4 FY26</td><td>Mid-July 2026 ("60 days")</td><td>Dahej-III announced July 2026 instead</td><td><span class="ptag ptag-coral">SLIP 3 — WATCH</span></td></tr>
+</tbody>
+</table>
+
+<p style="font-size:13px;">Jolva has slipped across three consecutive quarters. Management consistently provides specific engineering rationale (reactor count optimization, design refinement), which distinguishes this from pure evasion. However, the pattern meets The Ledger's COMPLETION DRIFT flag threshold (same project, different completion date, 3+ consecutive quarters). The July 2026 Dahej-III announcement alongside Jolva warrants watching — management must clarify in Q2 FY27 call whether both projects are proceeding simultaneously or if Jolva is being deferred.</p>
+
+<!-- PILLAR 5: MARGIN EXPANSION TRACKER -->
+<div class="pillar-header margin2">
+  <div class="pillar-num margin2">P5</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 5 · Margin Expansion Tracker</div>
+    <div class="pillar-title">Is the stated mechanism actually working?</div>
+  </div>
+</div>
+
+<p>Management's stated mechanism for margin improvement is: (1) operating leverage as revenue scales past ₹500 Cr, (2) product mix shift as ESS and PASC pharma (higher-margin, differentiated products) grow as a share of revenue, (3) capacity utilisation improvement at the new Dahej block reducing fixed cost per unit.</p>
+
+<h3 style="color:var(--green);">Margin Trajectory — Quarterly</h3>
+<table class="q-table" role="table" aria-label="Margin Expansion Table">
+<thead>
+<tr>
+  <th>Quarter</th>
+  <th>Q2 FY25</th>
+  <th>Q3 FY25</th>
+  <th>Q4 FY25</th>
+  <th>Q1 FY26</th>
+  <th>Q2 FY26</th>
+  <th>Q3 FY26</th>
+  <th>Q4 FY26</th>
+  <th>Q1 FY27</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Revenue (₹ Cr)</td>
+  <td>86</td><td>83</td><td>108</td><td>117</td><td>124</td><td>131</td><td>134</td><td>167</td>
+</tr>
+<tr>
+  <td>EBITDA %</td>
+  <td>8%</td><td>7%</td><td>8%</td><td>15%</td><td>18%</td><td>19%</td><td>21%</td><td>19.3%</td>
+</tr>
+</tbody>
+</table>
+
+<p>The mechanism is working: EBITDA margins recovered from 7-8% trough to 18-21% as revenue scaled from ₹83 Cr to ₹167 Cr per quarter. The operating leverage thesis is validated. The Q1 FY27 dip from 21% to 19.3% is attributed to the geopolitical raw material cost spike (amines up 30-40%). The test for H2 FY27 is whether the cost pass-through completes and margins return to or exceed 21%.</p>
+
+<p>Green flag: <span class="hl-catalyst">The EBITDA recovery from 7% to 21% across 8 quarters is one of the fastest margin recoveries in Indian specialty chemicals</span> — this is the mechanism delivering as promised. The stated mix shift (ESS growing to 10%, pharma adding ₹70+ Cr) should structurally support margins at 20-22% if achieved.</p>
+
+<!-- PILLAR 6: CAPITAL STRUCTURE TRACKER -->
+<div class="pillar-header capital">
+  <div class="pillar-num capital">P6</div>
+  <div>
+    <div class="pillar-eyebrow">Pillar 6 · Capital Structure Tracker</div>
+    <div class="pillar-title">Debt trajectory, dilution claims, and funding source fidelity</div>
+  </div>
+</div>
+
+<table class="promise-table" role="table" aria-label="Capital Structure Tracker">
+<thead>
+<tr>
+  <th>Dimension</th>
+  <th>Management Claim</th>
+  <th>Actual (Balance Sheet)</th>
+  <th>Flag</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Capex Funding Source</td>
+  <td>Dahej block "from internal accruals"</td>
+  <td>CFO FY26: ₹31 Cr; Capex FY26: ₹116 Cr; Financing: +₹79 Cr — debt funded the gap</td>
+  <td><span class="ptag ptag-amber">FUNDING FLIP — MILD</span></td>
+</tr>
+<tr>
+  <td>Equity Dilution</td>
+  <td>No equity dilution mentioned or planned</td>
+  <td>Equity capital unchanged at ₹23 Cr. Promoter holding stable at 72.02%. No QIP/rights</td>
+  <td><span class="ptag ptag-green">CLEAN — NO DILUTION</span></td>
+</tr>
+<tr>
+  <td>Borrowing Trajectory</td>
+  <td>Debt-free-ish narrative historically</td>
+  <td>Borrowings: ₹14 Cr (FY24) → ₹36 Cr (FY25) → ₹120 Cr (FY26) → ₹1,000 Cr limit (FY27)</td>
+  <td><span class="ptag ptag-amber">WATCH — SCALING UPWARD</span></td>
+</tr>
+<tr>
+  <td>Promoter Pledge</td>
+  <td>Not mentioned — standard practice to not discuss</td>
+  <td>No significant pledge data in public disclosures; promoter holding stable at 72%</td>
+  <td><span class="ptag ptag-green">NO ACTIVE FLAG</span></td>
+</tr>
+<tr>
+  <td>Working Capital</td>
+  <td>Not specifically addressed in calls</td>
+  <td>CCC: 291 days (FY24) → 264 days (FY25) → 310 days (FY26). Screener note: improved to 92 WC days</td>
+  <td><span class="ptag ptag-amber">CCC STRETCHING — WATCH</span></td>
+</tr>
+<tr>
+  <td>Interest Coverage</td>
+  <td>Not specifically guided</td>
+  <td>EBITDA ₹93 Cr / Interest ₹3 Cr = 31x — very comfortable</td>
+  <td><span class="ptag ptag-green">EXCELLENT COVERAGE</span></td>
+</tr>
+</tbody>
+</table>
+
+<!-- ACTIVE FLAGS -->
+<h3 style="color:var(--coral);margin-top:24px;">Active Flags — Q1 FY27</h3>
+<div class="flag-list" role="list" aria-label="Active Risk Flags">
+
+  <div class="flag-item active" role="listitem">
+    <div class="flag-icon" aria-hidden="true"><i class="ti ti-tool" style="color:var(--coral);"></i></div>
+    <div>
+      <div class="flag-name">COMPLETION DRIFT — JOLVA GREENFIELD</div>
+      <div class="flag-desc">Jolva groundbreaking has slipped across three consecutive quarterly calls (Q3 FY26, Q4 FY26, Q4 FY26 call commitment of "60 days"). While management provides specific engineering rationale each time, the 3-quarter slip pattern meets the Ledger's Completion Drift threshold. The Q2 FY27 call must confirm physical groundbreaking has occurred.</div>
+    </div>
+  </div>
+
+  <div class="flag-item watch" role="listitem">
+    <div class="flag-icon" aria-hidden="true"><i class="ti ti-building-bank" style="color:var(--amber);"></i></div>
+    <div>
+      <div class="flag-name">FUNDING FLIP — MILD · CAPEX FUNDED BY DEBT DESPITE "ACCRUALS" CLAIM</div>
+      <div class="flag-desc">CFO/Capex of 0.27 in FY26 means 73% of the Dahej block capex was funded by incremental borrowings, despite management's earlier framing of "internal accruals." The borrowing limit being raised to ₹1,000 Cr (from ₹300 Cr) for the Dahej-III + Jolva cycle is a materially different capital structure conversation. No evidence of intentional concealment — but the framing could have been clearer.</div>
+    </div>
+  </div>
+
+  <div class="flag-item watch" role="listitem">
+    <div class="flag-icon" aria-hidden="true"><i class="ti ti-chart-line" style="color:var(--amber);"></i></div>
+    <div>
+      <div class="flag-name">MARGIN WATCH — Q1 FY27 BELOW GUIDANCE FLOOR</div>
+      <div class="flag-desc">EBITDA margin of 19.3% in Q1 FY27 is 70 basis points below the guided floor of 20%. Management attributes this to geopolitical input cost spike (amines) and asserts pass-through is happening gradually. If Q2 FY27 also prints below 20%, the margin thesis needs re-examination — particularly if the product mix shift to higher-margin segments (ESS, pharma) is not offsetting input cost pressure.</div>
+    </div>
+  </div>
+
+  <div class="flag-item green" role="listitem">
+    <div class="flag-icon" aria-hidden="true"><i class="ti ti-check" style="color:var(--green);"></i></div>
+    <div>
+      <div class="flag-name">RESOLVED — SEMICONDUCTOR FIRST DISPATCH DELIVERED Q1 FY27</div>
+      <div class="flag-desc">The semiconductor chemical first plant-scale batch was committed for Q1 FY27 dispatch — confirmed delivered. The stock's 20% upper circuit on July 20, 2026, validated this as a material positive. The flag moves from "watch" to "resolved" with active monitoring now on the validation progress timeline (next: integrator-level qualification → fab qualification → commercial PO, ~2028-29).</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- CREDIBILITY SCORE -->
+<div class="cred-score-box" role="complementary" aria-label="Management Credibility Score">
+  <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:16px;">
+    <div>
+      <div class="cred-tier">B</div>
+      <div class="cred-tier-label">Credible With Active Flags</div>
+    </div>
+    <div style="flex:1;min-width:220px;">
+      <div class="cred-tier-desc">Management is specific, owns challenges, and has demonstrated delivery on key commitments (semiconductor dispatch, Dahej block commissioning, margin recovery). Active flags: Jolva completion drift (3 quarters), mild funding flip on Dahej block capex, and EBITDA margin fractionally below guided floor in Q1 FY27. None of these are deal-breakers; all are trackable and falsifiable.</div>
+    </div>
+  </div>
+
+  <div class="cred-dims">
+    <div class="cred-dim">
+      <div class="cred-dim-name">Promise Hit Rate (4Q rolling)</div>
+      <div class="cred-dim-val good">~75% — Good</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">Semiconductor dispatch, Dahej commissioning, revenue growth — all delivered. EBITDA slightly below floor, Jolva slipped.</p>
+    </div>
+    <div class="cred-dim">
+      <div class="cred-dim-name">Capex Execution Rate</div>
+      <div class="cred-dim-val watch">Partial — ~3 Qtr Drift</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">Dahej block eventually delivered. Jolva has Completion Drift flag active. Detailed engineering rationale provided each time.</p>
+    </div>
+    <div class="cred-dim">
+      <div class="cred-dim-name">Margin Mechanism Fidelity</div>
+      <div class="cred-dim-val good">Working — at pace</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">EBITDA recovered from 7% → 21% across 8 quarters exactly as the operating leverage mechanism predicted. Q1 FY27 dip due to external input cost shock.</p>
+    </div>
+    <div class="cred-dim">
+      <div class="cred-dim-name">Capital Structure Integrity</div>
+      <div class="cred-dim-val watch">Flagged — Mild Issues</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">No dilution — positive. But CFO/Capex 0.27, CCC stretching to 310 days, and ₹1,000 Cr borrowing limit raise need monitoring. Not a crisis at 31x interest coverage.</p>
+    </div>
+    <div class="cred-dim">
+      <div class="cred-dim-name">Specificity & Attribution</div>
+      <div class="cred-dim-val good">High — Above Average</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">₹ figures given for almost every segment, capacity, and guidance. Misses acknowledged with specific explanation (amine prices, production challenges). No "market conditions" deflection.</p>
+    </div>
+    <div class="cred-dim">
+      <div class="cred-dim-name">Q&A Quality</div>
+      <div class="cred-dim-val good">Good — Direct Answers</div>
+      <p style="font-size:11.5px;color:#8090A4;margin-top:4px;">Hard questions on dividend, SDA duopoly, ESS quantification, and semiconductor timeline all answered directly. No analyst escalation patterns detected.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BRIEF INTEGRATION MAP -->
+<h3 style="color:var(--navy);margin-top:32px;">Ledger Integration with NSE Brief — Section Connections</h3>
+<div class="two-col">
+  <div style="background:white;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;">
+    <div style="font-family:var(--mono);font-size:9.5px;color:var(--gray);margin-bottom:5px;">CH. 5 · CAPEX TIMELINE</div>
+    <div style="font-weight:600;font-size:13.5px;margin-bottom:5px;">Jolva Completion Drift Active</div>
+    <div style="font-size:12.5px;color:var(--gray);">The Ledger Completion Drift flag maps directly to Risk #2 in Ch. 6 (Jolva capex slippage) and Watch Signal #3 (Jolva groundbreaking confirmation). All three sections are monitoring the same single point of failure.</div>
+  </div>
+  <div style="background:white;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;">
+    <div style="font-family:var(--mono);font-size:9.5px;color:var(--gray);margin-bottom:5px;">CH. 5 · BALANCE SHEET</div>
+    <div style="font-weight:600;font-size:13.5px;margin-bottom:5px;">Funding Flip + CCC Stretch</div>
+    <div style="font-size:12.5px;color:var(--gray);">Capital Structure flags connect to Risk #3 (working capital and debt) and Watch Signal #5 (net debt trajectory). The ₹1,000 Cr borrowing limit is the key parameter to track across upcoming quarters.</div>
+  </div>
+  <div style="background:white;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;">
+    <div style="font-family:var(--mono);font-size:9.5px;color:var(--gray);margin-bottom:5px;">CH. 7 · WATCH SIGNALS</div>
+    <div style="font-weight:600;font-size:13.5px;margin-bottom:5px;">Margin Watch Below Guided Floor</div>
+    <div style="font-size:12.5px;color:var(--gray);">Q1 FY27 EBITDA at 19.3% (below 20% floor) maps to Watch Signal #1 and the Margin Expansion Tracker. The specific mechanism being tested: does cost pass-through complete in Q2 FY27?</div>
+  </div>
+  <div style="background:white;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;">
+    <div style="font-family:var(--mono);font-size:9.5px;color:var(--gray);margin-bottom:5px;">CH. 3 · SEGMENT STORY</div>
+    <div style="font-weight:600;font-size:13.5px;margin-bottom:5px;">Semiconductor Dispatch Resolved</div>
+    <div style="font-size:12.5px;color:var(--gray);">The resolved flag on semiconductor first dispatch maps to ESS and PASC Semiconductor segment card in Ch. 3 and is the core catalyst for Q1 FY27's 20% upper circuit on July 20, 2026.</div>
+  </div>
+</div>
+
+</div><!-- end ledger-content -->
+
+<footer role="contentinfo">
+  <span>TATVA · TATVA CHINTAN PHARMA CHEM LTD · NSE INVESTOR BRIEF + THE LEDGER · Q1 FY27</span>
+  <span>DATA SOURCED: Q4 FY26 CONCALL TRANSCRIPT (16 MAY 2026) · BSE/NSE FILINGS · SCREENER.IN</span>
+  <span>FOR PERSONAL INVESTMENT RESEARCH ONLY · NOT INVESTMENT ADVICE · JULY 21, 2026</span>
+</footer>
+
+<script>
+// ===== NIGHT MODE RESTORE =====
+(function(){
+  if(localStorage.getItem('tatva-night')==='true') document.body.classList.add('night');
+})();
+
+// ===== QUICK SCAN TOGGLE =====
+function toggleQS(){
+  const c=document.getElementById('qscontent');
+  const a=document.getElementById('qs-arrow');
+  if(c.style.display==='none'){c.style.display='block';a.textContent='▲ collapse';}
+  else{c.style.display='none';a.textContent='▼ Quick Scan';}
+}
+
+// ===== HIGHLIGHT INDEX AUTO-POPULATE =====
+document.addEventListener('DOMContentLoaded',function(){
+  const list=document.getElementById('highlight-index-list');
+  if(!list)return;
+  const items=document.querySelectorAll('.hl-key,.hl-number,.hl-risk,.hl-catalyst,.takeaway-pill');
+  items.forEach(function(el){
+    const li=document.createElement('li');
+    li.textContent=el.textContent.trim();
+    const type=[...el.classList].find(c=>c.startsWith('hl-')||c==='takeaway-pill')||'';
+    li.setAttribute('data-type',type);
+    list.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>
