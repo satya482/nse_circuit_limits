@@ -37,7 +37,7 @@ NSE:DATAPATTNS,NSE:WAKEFIT,NSE:NETWEB,NSE:GULPOLY,NSE:OIL,NSE:PETRONET,NSE:CAMS,
 | [CLSEL](https://in.tradingview.com/chart/?symbol=NSE:CLSEL)<br><sub>↓CMF3d</sub> |  | 1w | TOUCH | 1w | +3.9% | +1.06% | 281.85 | — | 20%  |
 | [BORANA](https://in.tradingview.com/chart/?symbol=NSE:BORANA)<br><sub>↑CMF4d</sub> |  | 1w | TOUCH | 1w | +3.1% | -0.30% | 327.25 | 2w | 20%  |
 | [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS)<br><sub>↑CMF0d</sub> | Defense aerospace electronics systems design manufacturing | 1w | ABOVE | 1w | +17.1% | +12.70% | 4782.80 | — | 20%  |
-| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↑CMF9d · DEL91%(T-1)</sub> | Sleep mattresses furniture direct-to-consumer e-commerce home | 1w | ABOVE | 1w | +9.6% | +13.22% | 142.55 | — | 20%  |
+| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↑CMF9d</sub> | Sleep mattresses furniture direct-to-consumer e-commerce home | 1w | ABOVE | 1w | +9.6% | +13.22% | 142.55 | — | 20%  |
 | [HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS)<br><sub>↑CMF2d</sub> | Electrical goods, wiring, switches, cables, consumer focused | 1w | ABOVE | 1w | +1.7% | -0.86% | 1207.10 | 1w | 20%  |
 | [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL)<br><sub>↑CMF2d</sub> | Toothpaste, toothbrush, mouthwash manufacturer for mass consumer | 1w | ABOVE | 1w | +3.2% | +0.68% | 2107.10 | — | 20%  |
 | [UBL](https://in.tradingview.com/chart/?symbol=NSE:UBL)<br><sub>↑CMF0d</sub> | Beer manufacturer, India, consumer discretionary beverages | 1w | ABOVE | 1w | +6.8% | +1.89% | 1431.00 | — | 20%  |
@@ -60,7 +60,7 @@ NSE:DATAPATTNS,NSE:WAKEFIT,NSE:NETWEB,NSE:GULPOLY,NSE:OIL,NSE:PETRONET,NSE:CAMS,
 | [GREENPANEL](https://in.tradingview.com/chart/?symbol=NSE:GREENPANEL)<br><sub>↓CMF30d</sub> | MDF and plywood manufacturer for furniture construction | 1w | ABOVE | 1w | +1.2% | +0.31% | 197.62 | 5w | 20%  |
 | [EXCELINDUS](https://in.tradingview.com/chart/?symbol=NSE:EXCELINDUS)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.5% | +1.07% | 948.20 | 19w | 20%  |
 | [NSIL](https://in.tradingview.com/chart/?symbol=NSE:NSIL)<br><sub>↓CMF21d</sub> |  | 1w | ABOVE | 1w | +2.7% | +0.42% | 5556.00 | 3w | 20%  |
-| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF6d · DEL62%(T-1)</sub> |  | 1w | ABOVE | 1w | +4.5% | +4.77% | 308.60 | 61w | 20%  |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF6d · DEL78%</sub> |  | 1w | ABOVE | 1w | +4.5% | +4.77% | 308.60 | 61w | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB)<br><sub>↓CMF16d</sub> | High-performance computing systems manufacturer for AI and research | 1w | BELOW | 1w | +1.1% | +0.74% | 4288.70 | — | 20%  |
 | [GULPOLY](https://in.tradingview.com/chart/?symbol=NSE:GULPOLY)<br><sub>↓CMF13d</sub> | Polyol chemicals manufacturing for automotive foam applications | 1w | BELOW | 1w | +5.8% | +3.37% | 186.93 | — | 20%  |
