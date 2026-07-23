@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-07-22 15:40 IST*
+*Generated: 2026-07-23 15:40 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 31 · Downtrend: 19**
@@ -100,8 +100,8 @@ NSE:APOLLOHOSP,NSE:BAJFINANCE,NSE:ETERNAL,NSE:ICICIBANK,NSE:SUNPHARMA,NSE:TITAN
 | [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>↘338Cr · 214Cr · ↓CMF12d</sub> | 7d | -1.14% |  | +0.48% | 410.10 | ✓ | 20%  |
 | [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>↘132Cr · 134Cr · ↓CMF0d</sub> | 7d | -2.86% |  | -1.08% | 1080.10 | ✓ | 20%  |
 | [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>↘421Cr · 404Cr · ↓CMF20d</sub> | 7d | -2.03% |  | +0.48% | 187.31 | ✓ | 20%  |
-| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>↗393Cr · 263Cr · ↓CMF30d</sub> | 9d | -10.64% |  | -1.45% | 1205.40 | — | 20%  |
 | [MARUTI](https://in.tradingview.com/chart/?symbol=NSE:MARUTI)<br><sub>↘576Cr · 464Cr · ↑CMF0d</sub> | 9d | -2.26% |  | +0.90% | 13636.00 | — | 20%  |
+| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>↗440Cr · 781Cr · ↓CMF30d</sub> | 10d | -13.54% |  | -3.24% | 1166.30 | — | 20%  |
 | [HINDUNILVR](https://in.tradingview.com/chart/?symbol=NSE:HINDUNILVR)<br><sub>→357Cr · 221Cr · ↓CMF11d</sub> | 10d | -3.07% |  | +0.06% | 2141.00 | — | 20%  |
 | [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>↘349Cr · 138Cr · ↓CMF10d</sub> | 11d | -13.42% |  | -1.05% | 2895.20 | — | 20%  |
 | [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>↗1152Cr · 1867Cr · ↓CMF11d</sub> | 13d | -7.66% |  | +0.18% | 1258.20 | — | 20%  |
