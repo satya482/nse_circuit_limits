@@ -157,7 +157,7 @@ NSE:PIDILITIND,NSE:SHRIRAMFIN,NSE:MAHLIFE,NSE:WSTCSTPAPR,NSE:CARERATING,NSE:SURY
 | [GAIL](https://in.tradingview.com/chart/?symbol=NSE:GAIL)<br><sub>W↑68d · ↓CMF12d</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 68 | ↓51 | ↑1.005 | ↑2d | SQ | +1.3% | 0.89/-3.8 | +0.23% | 20% |
 | [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH)<br><sub>↓CMF2d</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 60 | ↑41 | ↑1.002 | ↓10d | SQ | +0.1% | -24.03/-24.04 | +0.55% | 20% |
 | [JAINREC](https://in.tradingview.com/chart/?symbol=NSE:JAINREC)<br><sub>↓CMF3d</sub> | ✓ SAFE | Non-ferrous metal recycling, lead copper aluminium alloys | 📈 BULL_ANY_MID | 58 | ↑50 | ↑0.997 | ↓7d | SQ | +2.1% | -44.16/-46.88 | +0.09% | 20% 🟦 |
-| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>W↑19d · ↓CMF7d · DEL78%(T-1) · ⚠️TRAP</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 58 | ↓28 | ↓0.963 | ↓2d | SQ | -1.2% | -17.35/-20.98 | -5.70% | 20% |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>W↑19d · ↓CMF7d · ⚠️TRAP</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 58 | ↓28 | ↓0.963 | ↓2d | SQ | -1.2% | -17.35/-20.98 | -5.70% | 20% |
 | [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>↓CMF20d · ÷DIV</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 57 | ↓44 | ↑1.000 | ↓8d | SQ | -0.3% | -49.16/-51.32 | +0.48% | 20% |
 
 ```

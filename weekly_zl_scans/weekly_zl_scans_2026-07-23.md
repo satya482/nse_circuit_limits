@@ -39,7 +39,7 @@ NSE:HEROMOTOCO,NSE:DATAPATTNS,NSE:OIL,NSE:HAVELLS,NSE:TARC,NSE:BAJAJCON,NSE:RICO
 | [HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS)<br><sub>↑CMF3d</sub> | Electrical goods, wiring, switches, cables, consumer focused | 1w | ABOVE | 1w | +1.9% | +0.23% | 1209.90 | 1w | 20%  |
 | [TARC](https://in.tradingview.com/chart/?symbol=NSE:TARC)<br><sub>↓CMF30d</sub> | Luxury residential properties Delhi NCR metropolitan region | 1w | ABOVE | 1w | +10.4% | +6.51% | 130.70 | 3w | 20%  |
 | [ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS)<br><sub>↓CMF8d</sub> | Infrastructure project management and consulting services provider | 1w | ABOVE | 1w | +10.7% | +3.38% | 122.19 | — | 20%  |
-| [WESTLIFE](https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE)<br><sub>↑CMF2d</sub> | McDonald's franchise operator West South India QSR | 1w | ABOVE | 1w | +4.1% | -4.57% | 477.80 | 11w | 20%  |
+| [WESTLIFE](https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE)<br><sub>↑CMF2d · DEL73%</sub> | McDonald's franchise operator West South India QSR | 1w | ABOVE | 1w | +4.1% | -4.57% | 477.80 | 11w | 20%  |
 | [MRF](https://in.tradingview.com/chart/?symbol=NSE:MRF)<br><sub>↑CMF2d</sub> | Rubber tyres for cars trucks two-wheelers tractors | 1w | ABOVE | 1w | +1.0% | -0.69% | 132030.00 | 2w | 20%  |
 | [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL)<br><sub>↑CMF3d</sub> | Toothpaste, toothbrush, mouthwash manufacturer for mass consumer | 1w | ABOVE | 1w | +2.1% | -1.01% | 2085.80 | — | 20%  |
 | [UBL](https://in.tradingview.com/chart/?symbol=NSE:UBL)<br><sub>↓CMF0d</sub> | Beer manufacturer, India, consumer discretionary beverages | 1w | ABOVE | 1w | +4.3% | -2.33% | 1397.70 | — | 20%  |
@@ -54,11 +54,11 @@ NSE:HEROMOTOCO,NSE:DATAPATTNS,NSE:OIL,NSE:HAVELLS,NSE:TARC,NSE:BAJAJCON,NSE:RICO
 | [MANYAVAR](https://in.tradingview.com/chart/?symbol=NSE:MANYAVAR)<br><sub>↓CMF2d</sub> | Wedding ethnic wear designer, multi-brand retailer India | 1w | ABOVE | 1w | +0.7% | -1.37% | 402.15 | — | 20%  |
 | [EMUDHRA](https://in.tradingview.com/chart/?symbol=NSE:EMUDHRA)<br><sub>↓CMF30d</sub> | Digital signature certificates and cybersecurity authentication solutions | 1w | ABOVE | 1w | +2.1% | -0.41% | 457.70 | — | 20%  |
 | [MAMATA](https://in.tradingview.com/chart/?symbol=NSE:MAMATA)<br><sub>↓CMF1d</sub> | Plastic bag pouch machine manufacturer for packaging industry | 1w | ABOVE | 1w | +2.8% | -0.20% | 397.15 | — | 20%  |
-| [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL)<br><sub>↓CMF30d · DEL82%(T-1)</sub> | Engineering services, digital transformation, automotive and aerospace clients | 1w | ABOVE | 1w | +2.7% | +1.62% | 814.10 | — | 20%  |
+| [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL)<br><sub>↓CMF30d</sub> | Engineering services, digital transformation, automotive and aerospace clients | 1w | ABOVE | 1w | +2.7% | +1.62% | 814.10 | — | 20%  |
 | [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.3% | +4.83% | 397.00 | 38w | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON)<br><sub>↓CMF8d</sub> | Hair oils and personal care products for Indian households | 1w | BELOW | 1w | +5.8% | +4.97% | 555.90 | — | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF7d</sub> | Aluminium ferroalloys manufacturing trading steel auto sector | 1w | BELOW | 1w | +5.1% | +1.96% | 90.34 | — | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF7d · DEL16%</sub> | Aluminium ferroalloys manufacturing trading steel auto sector | 1w | BELOW | 1w | +5.1% | +1.96% | 90.34 | — | 20% 🟦 |
 | [GULPOLY](https://in.tradingview.com/chart/?symbol=NSE:GULPOLY)<br><sub>↓CMF14d</sub> | Polyol chemicals manufacturing for automotive foam applications | 1w | BELOW | 1w | +5.6% | -0.19% | 186.57 | — | 20%  |
 
 ```
