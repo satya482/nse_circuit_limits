@@ -44,7 +44,7 @@ NSE:DATAPATTNS,NSE:GRAPHITE,NSE:IEX,NSE:HAVELLS,NSE:GUJALKALI,NSE:RICOAUTO,NSE:C
 | [SPLPETRO](https://in.tradingview.com/chart/?symbol=NSE:SPLPETRO)<br><sub>↓CMF5d</sub> | Specialty chemicals polymers packaging films manufacturing | 1w | ABOVE | 1w | +6.9% | +0.84% | 741.60 | 5w | 20%  |
 | [TARC](https://in.tradingview.com/chart/?symbol=NSE:TARC)<br><sub>↓CMF30d</sub> | Luxury residential properties Delhi NCR metropolitan region | 1w | ABOVE | 1w | +11.0% | +0.57% | 131.45 | 3w | 20%  |
 | [HERITGFOOD](https://in.tradingview.com/chart/?symbol=NSE:HERITGFOOD)<br><sub>↑CMF2d</sub> | Dairy products, renewable energy, animal feed manufacturer | 1w | ABOVE | 1w | +1.2% | +1.59% | 335.30 | — | 20%  |
-| [VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG)<br><sub>↓CMF30d · DEL88%(T-1)</sub> | Road freight logistics, express parcels, nationwide distribution network | 1w | ABOVE | 1w | +4.8% | +0.71% | 243.11 | 1w | 20%  |
+| [VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG)<br><sub>↓CMF30d</sub> | Road freight logistics, express parcels, nationwide distribution network | 1w | ABOVE | 1w | +4.8% | +0.71% | 243.11 | 1w | 20%  |
 | [HINDOILEXP](https://in.tradingview.com/chart/?symbol=NSE:HINDOILEXP)<br><sub>↓CMF30d</sub> | Crude oil natural gas exploration production onshore offshore | 1w | ABOVE | 1w | +4.2% | -3.26% | 162.04 | — | 20%  |
 | [GULPOLY](https://in.tradingview.com/chart/?symbol=NSE:GULPOLY)<br><sub>↓CMF15d</sub> | Polyol chemicals manufacturing for automotive foam applications | 1w | ABOVE | 1w | +10.4% | +4.58% | 195.12 | — | 20%  |
 | [ENTERO](https://in.tradingview.com/chart/?symbol=NSE:ENTERO)<br><sub>↑CMF9d</sub> | Pharmaceutical surgical products distributor hospitals clinics retail | 1w | ABOVE | 1w | +4.7% | +1.90% | 1229.60 | 2w | 20%  |
@@ -61,7 +61,7 @@ NSE:DATAPATTNS,NSE:GRAPHITE,NSE:IEX,NSE:HAVELLS,NSE:GUJALKALI,NSE:RICOAUTO,NSE:C
 | [EXCELINDUS](https://in.tradingview.com/chart/?symbol=NSE:EXCELINDUS)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +3.7% | +1.95% | 932.15 | 19w | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [BAJAJCON](https://in.tradingview.com/chart/?symbol=NSE:BAJAJCON)<br><sub>↓CMF9d</sub> | Hair oils and personal care products for Indian households | 1w | BELOW | 1w | +4.6% | -1.10% | 549.80 | — | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d · DEL16%(T-1)</sub> | Aluminium ferroalloys manufacturing trading steel auto sector | 1w | BELOW | 1w | +7.1% | +1.83% | 91.99 | — | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d · DEL18%</sub> | Aluminium ferroalloys manufacturing trading steel auto sector | 1w | BELOW | 1w | +7.1% | +1.83% | 91.99 | — | 20% 🟦 |
 
 ```
 NSE:DATAPATTNS,NSE:GRAPHITE,NSE:IEX,NSE:HAVELLS,NSE:GUJALKALI,NSE:RICOAUTO,NSE:COLPAL,NSE:EPIGRAL,NSE:BAJAJCON,NSE:UBL,NSE:ARIS,NSE:ASIANHOTNR,NSE:ARFIN,NSE:SPLPETRO,NSE:TARC,NSE:HERITGFOOD,NSE:VRLLOG,NSE:HINDOILEXP,NSE:GULPOLY,NSE:ENTERO,NSE:GODREJAGRO,NSE:NRAIL,NSE:EMUDHRA,NSE:MOL,NSE:GILLETTE,NSE:WEL,NSE:MANYAVAR,NSE:EFCIL,NSE:SHK,NSE:ANDHRSUGAR,NSE:MAMATA,NSE:SANOFICONR,NSE:EXCELINDUS,NSE:BORANA,NSE:CLSEL,NSE:SVLL
