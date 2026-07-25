@@ -50,6 +50,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
 .\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
+.\run_ema55_cross_scanner.ps1  # 4:28 PM — EMA55 cross watchlist (close crossed above EMA55, within +10% of it)
 .\run_nifty50_zlema25_scanner.ps1  # NIFTY 50 daily ZLEMA25 up/down trend age scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
@@ -136,6 +137,21 @@ All thresholds live in `settings.yaml`. Pipeline:
 3. ZLEMA25 direction + `zl25_turn_stats()` → days since last turn-up, % gain
 4. `bb_kc_squeeze()` → BB(20,2.0,SMA) inside KC(20,1.5,SMA) on last bar
 5. Writes `ema25_zl_scans/ema25_zl_scans.md`
+
+### Scanner pipeline — EMA55 Cross Watchlist (`ema55_cross_scanner.py`)
+
+Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watchlist()`
+(same mcap ₹1,000 Cr–5 Lakh Cr / price > ₹50 universe) and its float hard-gate.
+
+1. Per symbol: EMA55 via `ema25_zl_scanner.ema()`; keep only if `close` is currently
+   above EMA55 AND within +10% of it (drops off once too extended past the line, or
+   once it crosses back under — self-pruning watchlist)
+2. `ema55_cross_stats()` — bars since close last crossed above EMA55 (capped 60d) +
+   % price change since that bar; same backward-scan-with-cap shape as
+   `ema25_zl_scanner.zl25_turn_stats()`, just crossover-of-two-series instead of a
+   ZLEMA25 slope turn
+3. Writes `ema55_cross_scans/ema55_cross_scans.md` (dated + `_latest` equivalent as
+   the undated file), sorted by cross age ascending (freshest first)
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
@@ -337,6 +353,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 |------|-----------|
 | `NSE_Circuit_Limits.md`, `index.html` | `main.py` |
 | `ema25_zl_scans/ema25_zl_scans.md` | `ema25_zl_scanner.py` |
+| `ema55_cross_scans/ema55_cross_scans.md` | `ema55_cross_scanner.py` |
 | `weekly_zl_scans/weekly_zl_scans.md` | `weekly_zl_scanner.py` |
 | `rs_weekly_scans/rs_weekly_ema9_scans.md` | `rs_weekly_ema9_scanner.py` |
 | `rs_weekly_scans/rs_weekly_ema9_history.csv`, `dashboard/rs_weekly_ema9_history.html` | `rs_weekly_ema9_scanner.py` |
