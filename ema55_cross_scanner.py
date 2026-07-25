@@ -13,6 +13,10 @@ Signal (no RS gate — this is a pure price/EMA55 watch trigger):
   - reports days since EMA55 was last crossed (parity with ema25_zl_scanner's
     zl25_turn_stats — same backward-scan-with-cap pattern, but for a
     close/EMA55 crossover instead of a ZLEMA25 slope turn)
+  - also reports the EMA55 uptrend age itself (days since EMA55's 5-bar
+    slope last turned positive + % price change since) — a smoothed slope,
+    not a raw per-bar one, since a raw EMA55 slope-turn is mathematically
+    identical to the crossover above (see ema55_cross_stats docstring)
 
 Data source: .ohlc_data/market.db  (populated by fetch_data.py)
 Output:      ema55_cross_scans/ema55_cross_scans.md
@@ -54,12 +58,39 @@ _AGE_BUCKETS = [
 def ema55_cross_stats(close: pd.Series, ema55: pd.Series) -> tuple[int, float]:
     """Bars since close last crossed above ema55, and % price change since
     that bar. Same backward-scan-with-cap shape as ema25_zl_scanner's
-    zl25_turn_stats(), just crossover-of-two-series instead of slope-turn."""
+    zl25_turn_stats(), just crossover-of-two-series instead of slope-turn.
+
+    Note: for a plain EMA (unlike ZLEMA25), a per-bar slope-turn on ema55
+    itself is mathematically identical to this crossover, always — ema[i] is
+    a convex combination of ema[i-1] and close[i], so close[i] > ema[i-1] iff
+    close[i] > ema[i] iff ema[i] > ema[i-1]. ema55_trend_age() below uses a
+    5-bar-smoothed slope instead, which is a genuinely different signal.
+    """
     n = len(close)
     limit = max(2, n - CROSS_CAP)
     for i in range(n - 1, limit - 1, -1):
         crossed_up = close.iloc[i] > ema55.iloc[i] and close.iloc[i - 1] <= ema55.iloc[i - 1]
         if crossed_up:
+            bars = (n - 1) - i + 1
+            pct = (close.iloc[-1] / close.iloc[i - 1] - 1) * 100
+            return bars, round(pct, 2)
+    cap_idx = max(0, n - CROSS_CAP)
+    return CROSS_CAP, round((close.iloc[-1] / close.iloc[cap_idx] - 1) * 100, 2)
+
+
+TREND_LOOKBACK = 5  # bars for the smoothed EMA55 slope check
+
+
+def ema55_trend_age(ema55: pd.Series, close: pd.Series, lookback: int = TREND_LOOKBACK) -> tuple[int, float]:
+    """Bars since EMA55's lookback-bar slope (ema55[i] vs ema55[i-lookback])
+    last turned positive, and % price change since that bar. Smooths out the
+    single-day noise that makes a raw tick-to-tick EMA55 slope collapse into
+    ema55_cross_stats() (see its docstring)."""
+    slope = ema55 - ema55.shift(lookback)
+    n = len(slope)
+    limit = max(lookback + 2, n - CROSS_CAP)
+    for i in range(n - 1, limit - 1, -1):
+        if slope.iloc[i] > 0 and slope.iloc[i - 1] <= 0:
             bars = (n - 1) - i + 1
             pct = (close.iloc[-1] / close.iloc[i - 1] - 1) * 100
             return bars, round(pct, 2)
@@ -88,6 +119,7 @@ def analyse(symbol: str, float_shares: float = 0) -> dict | None:
             return None  # too extended past EMA55 to "monitor closely"
 
         cross_days, cross_pct = ema55_cross_stats(c, ema55)
+        trend_days, trend_pct = ema55_trend_age(ema55, c)
 
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
@@ -100,6 +132,8 @@ def analyse(symbol: str, float_shares: float = 0) -> dict | None:
             "band_pct": round(band_pct, 2),
             "cross_days": cross_days,
             "cross_pct": cross_pct,
+            "trend_days": trend_days,
+            "trend_pct": trend_pct,
             "trap": trap_label(fm),
             "liq_tag": liq_tag(raw),
             "cmf_tag": cmf_tag(raw),
@@ -118,6 +152,7 @@ STATIC_HEADER = f"""### Scan definition
 | Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
 | Signal | Close above EMA{EMA_PERIOD} and within +{BAND_PCT:.0f}% of it |
 | Cross Age / Chg% | Days since close last crossed above EMA{EMA_PERIOD} (capped {CROSS_CAP}d) · % price change since that bar |
+| Trend Age / Chg% | Days since EMA{EMA_PERIOD}'s {TREND_LOOKBACK}-bar slope last turned positive (capped {CROSS_CAP}d) · % price change since that bar |
 | Float gate | ⛔ AVOID dropped from scan · ✓ SAFE / ⚠ CAUTION shown under symbol (float_gate.py) |
 | Symbol tags | trap · liq (↗avg10Cr·todayCr) · CMF · DEL% |
 
@@ -133,6 +168,8 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
         cd = f"{f['cross_days']}d+" if f["cross_days"] >= CROSS_CAP else f"{f['cross_days']}d"
         cp = f"+{f['cross_pct']:.1f}%" if f["cross_pct"] >= 0 else f"{f['cross_pct']:.1f}%"
+        td = f"{f['trend_days']}d+" if f["trend_days"] >= CROSS_CAP else f"{f['trend_days']}d"
+        tp = f"+{f['trend_pct']:.1f}%" if f["trend_pct"] >= 0 else f"{f['trend_pct']:.1f}%"
         ds = "+" if f["day_chg"] >= 0 else ""
         extras = []
         trap = f.get("trap", "")
@@ -149,6 +186,8 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
             f"| {sym_cell} "
             f"| {cd} "
             f"| {cp} "
+            f"| {td} "
+            f"| {tp} "
             f"| +{f['band_pct']:.1f}% "
             f"| {ds}{f['day_chg']:.2f}% "
             f"| {f['close']:.2f} "
@@ -161,8 +200,8 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     rows = sorted(findings, key=lambda x: (x["cross_days"], x["symbol"]))
 
     hdr = [
-        "| Symbol | Cross Age | Chg% Since Cross | EMA55 Dist | Day Chg | Close | Circuit |",
-        "|--------|----------:|------------------:|-----------:|--------:|------:|:-------:|",
+        "| Symbol | Cross Age | Chg% Since Cross | Trend Age | Trend Chg% | EMA55 Dist | Day Chg | Close | Circuit |",
+        "|--------|----------:|------------------:|----------:|-----------:|-----------:|--------:|------:|:-------:|",
     ]
 
     wl_parts = []
