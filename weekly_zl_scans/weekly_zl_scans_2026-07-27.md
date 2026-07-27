@@ -100,7 +100,7 @@ NSE:KFINTECH,NSE:CONCOR,NSE:AUBANK,NSE:CAPILLARY,NSE:NETWEB,NSE:GODFRYPHLP,NSE:H
 | [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB)<br><sub>↓CMF19d</sub> | High-performance computing systems manufacturer for AI and research | 1w | BELOW | 1w | +5.0% | +4.96% | 4362.20 | — | 20%  |
 | [RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK)<br><sub>↓CMF7d</sub> | Private bank retail corporate lending deposit services | 1w | BELOW | 1w | +2.8% | +2.82% | 362.85 | — | 20%  |
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY)<br><sub>↑CMF23d</sub> | Express parcel delivery and freight logistics for e-commerce | 1w | BELOW | 1w | +1.6% | +1.61% | 470.00 | — | 20%  |
-| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE)<br><sub>↓CMF5d</sub> | Steam turbines for industrial power generation under 100MW | 1w | BELOW | 1w | +1.9% | +1.90% | 623.40 | — | 20%  |
+| [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE)<br><sub>↓CMF5d · DEL84%</sub> | Steam turbines for industrial power generation under 100MW | 1w | BELOW | 1w | +1.9% | +1.90% | 623.40 | — | 20%  |
 | [SAMMAANCAP](https://in.tradingview.com/chart/?symbol=NSE:SAMMAANCAP)<br><sub>↓CMF25d</sub> | Housing loans and loan against property NBFC | 1w | BELOW | 1w | +2.7% | +2.69% | 164.96 | — | 20%  |
 | [GAEL](https://in.tradingview.com/chart/?symbol=NSE:GAEL)<br><sub>↑CMF1d</sub> | Corn starch derivatives soya feed cotton yarn agro-processing | 1w | BELOW | 1w | +3.7% | +3.74% | 157.31 | — | 20%  |
 | [VIDYAWIRES](https://in.tradingview.com/chart/?symbol=NSE:VIDYAWIRES)<br><sub>↓CMF22d</sub> | Copper aluminum winding wires electrical power renewable energy | 1w | BELOW | 1w | +3.4% | +3.41% | 91.00 | — | 5% 🟥 |
