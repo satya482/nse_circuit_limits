@@ -91,7 +91,7 @@ NSE:WOCKPHARMA,NSE:MAHASTEEL
 ### 📈 ZL ENTRY — ZLEMA25 touch (RS pct ≥ 60, short-term transitioning) (2)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF0d · DEL16%(T-1)</sub> | ✓ SAFE | Aluminium ferroalloys manufacturing trading steel auto sector | 📈 ZLEMA25 touch · RS transitioning | 53 | ↓82 | ↓0.999 | 90% | 183% ↑ | ✅7/8 | 0.68x | ↑5d | +2.9% | -2.23% | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF0d</sub> | ✓ SAFE | Aluminium ferroalloys manufacturing trading steel auto sector | 📈 ZLEMA25 touch · RS transitioning | 53 | ↓82 | ↓0.999 | 90% | 183% ↑ | ✅7/8 | 0.68x | ↑5d | +2.9% | -2.23% | 20% 🟦 |
 | [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK)<br><sub>↑CMF3d</sub> | ✓ SAFE | Private bank, retail deposits, MSME lending, treasury operations | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 42 | ↓70 | ↓0.996 | 97% | 68% ↑ | ✅8/8 | 1.34x | ↑13d | +3.3% | -3.08% | 20%  |
 
 ```

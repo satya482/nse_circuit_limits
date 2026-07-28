@@ -80,7 +80,7 @@ NSE:SWIGGY,NSE:AFFLE,NSE:ASIANTILES,NSE:CUB,NSE:NETWEB,NSE:CONCOR,NSE:KFINTECH,N
 | [ANDHRAPAP](https://in.tradingview.com/chart/?symbol=NSE:ANDHRAPAP)<br><sub>↓CMF17d</sub> |  | 1w | ABOVE | 1w | +2.5% | +0.48% | 62.89 | 5w | 20%  |
 | [PURVA](https://in.tradingview.com/chart/?symbol=NSE:PURVA)<br><sub>↑CMF11d</sub> |  | 1w | ABOVE | 1w | +0.8% | -2.04% | 214.97 | — | 20%  |
 | [ALEMBICLTD](https://in.tradingview.com/chart/?symbol=NSE:ALEMBICLTD)<br><sub>↓CMF30d</sub> | Pharmaceutical manufacturer APIs generics India exports | 1w | ABOVE | 1w | +1.5% | -1.02% | 89.23 | — | 20%  |
-| [MEIL](https://in.tradingview.com/chart/?symbol=NSE:MEIL)<br><sub>↓CMF23d</sub> |  | 1w | ABOVE | 1w | +3.5% | -2.06% | 294.75 | — | 5%  |
+| [MEIL](https://in.tradingview.com/chart/?symbol=NSE:MEIL)<br><sub>↓CMF23d · DEL73%</sub> |  | 1w | ABOVE | 1w | +3.5% | -2.06% | 294.75 | — | 5%  |
 | [ALICON](https://in.tradingview.com/chart/?symbol=NSE:ALICON)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +6.0% | -0.61% | 674.30 | 4w | 20%  |
 | [RUSTOMJEE](https://in.tradingview.com/chart/?symbol=NSE:RUSTOMJEE)<br><sub>↑CMF0d</sub> | Residential property developer Mumbai Metropolitan Region premium | 1w | ABOVE | 1w | +2.4% | -0.04% | 409.45 | 5w | 20%  |
 | [BIL](https://in.tradingview.com/chart/?symbol=NSE:BIL)<br><sub>↑CMF1d</sub> |  | 1w | ABOVE | 1w | +6.7% | +4.43% | 778.85 | 17w | 20%  |
