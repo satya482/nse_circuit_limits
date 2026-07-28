@@ -8,10 +8,14 @@
 //     - Completed uptrends: silver label at the last rising bar of each segment
 //       ("12d | +18.4%"). All segments labeled, including 1-2 bar blips.
 //     - Current uptrend: live white label at the latest bar, updated per bar.
-//     - Stats box (middle-right table): ZLEMA25 + EMA20 current-uptrend age and
-//       % since trend start ("ZL25 12d | +8.4%"); dash when line not rising.
-//       Vertical nudge via "Empty rows above/below" inputs. EMA20 stats mirror
-//       the ZLEMA25 convention (base = close of bar before turn-up bar).
+//     - Stats box (middle-right table): ZLEMA25 + EMA20 + EMA55 current-uptrend
+//       age and % since trend start ("ZL25 12d | +8.4%"); dash when line not
+//       rising. Vertical nudge via "Empty rows above/below" inputs. EMA20/EMA55
+//       stats mirror the ZLEMA25 convention (base = close of bar before turn-up
+//       bar). EMA55 optionally gets completed-segment labels too (orange, below
+//       the bar, off by default via "Show EMA55 completed-segment labels") —
+//       raw-slope trend, equivalent to a close/EMA55 crossover (see
+//       ema55_cross_scanner.py).
 //     - Turn-up candle (bar where ZLEMA25 starts rising AND a WaveTrend bull
 //       cross fired within last N bars, default 3) recolored (default fuchsia) via
 //       barcolor() — toggle, color, WT lookback in inputs. WT params mirror
@@ -123,11 +127,47 @@ if emaDownTrend
 emaDaysFromStart = emaUpTrend and not na(emaStartBar) ? (bar_index - emaStartBar) : na
 emaPctFromStart = emaUpTrend and not na(emaStartPrice) ? ((close - emaStartPrice) / emaStartPrice) * 100 : na
 
+// EMA55 trend stats — same raw-slope convention as ZL25/EMA20 above.
+// Note (pine-script-conventions.md parity): for a plain EMA, raw slope-turn
+// == close crossing above the EMA, always (see ema55_cross_scanner.py
+// ema55_cross_stats() docstring) — this row fires same-day as that Python
+// crossover stat, not its 5-bar-smoothed ema55_trend_age().
+ema55Len = input.int(55, "EMA length (3rd row)", minval=1, group=grpBox)
+showEMA55Labels = input.bool(false, "Show EMA55 completed-segment labels", group=grpBox)
+ema55 = ta.ema(close, ema55Len)
+ema55UpTrend = ema55 > ema55[1]
+ema55DownTrend = ema55 < ema55[1]
+ema55UpTrendStart = ema55UpTrend and not ema55UpTrend[1]
+
+var float ema55StartPrice = na
+var int ema55StartBar = na
+if ema55UpTrendStart
+    ema55StartPrice := close[1]
+    ema55StartBar := bar_index
+
+// Label every completed EMA55 uptrend at its last rising bar (mirrors ZL25 block above).
+ema55UpTrendEnd = not ema55UpTrend and ema55UpTrend[1]
+if showEMA55Labels and ema55UpTrendEnd and not na(ema55StartBar) and not na(ema55StartPrice)
+    ema55EndDays = (bar_index - 1) - ema55StartBar
+    ema55EndPct = ((close[1] - ema55StartPrice) / ema55StartPrice) * 100
+    ema55EndText = str.tostring(ema55EndDays) + "d | " + str.tostring(ema55EndPct, "#.##") + "%"
+    label.new(bar_index - 1, low[1], ema55EndText,
+         style=label.style_label_up,
+         textcolor=color.orange,
+         color=color.new(color.black, 99))
+
+if ema55DownTrend
+    ema55StartPrice := na
+    ema55StartBar := na
+
+ema55DaysFromStart = ema55UpTrend and not na(ema55StartBar) ? (bar_index - ema55StartBar) : na
+ema55PctFromStart = ema55UpTrend and not na(ema55StartPrice) ? ((close - ema55StartPrice) / ema55StartPrice) * 100 : na
+
 var table statsBox = na
 if barstate.islast
     table.delete(statsBox)
     if showStatsBox
-        statsBox := table.new(position.middle_right, 1, padAbove + 2 + padBelow)
+        statsBox := table.new(position.middle_right, 1, padAbove + 3 + padBelow)
         cellBg = color.new(color.black, 99)
         padBg = color.new(color.black, 100)
         // pad cells need " " (not "") — empty-text cells collapse to zero height
@@ -136,8 +176,10 @@ if barstate.islast
                 table.cell(statsBox, 0, i, " ", text_size=size.small, bgcolor=padBg)
         zlText = not na(daysFromStart) and not na(pctChangeFromStart) ? "ZL25  " + str.tostring(daysFromStart) + "d | " + str.tostring(pctChangeFromStart, "#.##") + "%" : "ZL25  —"
         emaText = not na(emaDaysFromStart) and not na(emaPctFromStart) ? "EMA20 " + str.tostring(emaDaysFromStart) + "d | " + str.tostring(emaPctFromStart, "#.##") + "%" : "EMA20 —"
+        ema55Text = not na(ema55DaysFromStart) and not na(ema55PctFromStart) ? "EMA55 " + str.tostring(ema55DaysFromStart) + "d | " + str.tostring(ema55PctFromStart, "#.##") + "%" : "EMA55 —"
         table.cell(statsBox, 0, padAbove, zlText, text_color=color.white, text_size=size.small, text_halign=text.align_left, bgcolor=cellBg)
         table.cell(statsBox, 0, padAbove + 1, emaText, text_color=color.white, text_size=size.small, text_halign=text.align_left, bgcolor=cellBg)
+        table.cell(statsBox, 0, padAbove + 2, ema55Text, text_color=color.white, text_size=size.small, text_halign=text.align_left, bgcolor=cellBg)
         if padBelow > 0
             for i = 0 to padBelow - 1
-                table.cell(statsBox, 0, padAbove + 2 + i, " ", text_size=size.small, bgcolor=padBg)
+                table.cell(statsBox, 0, padAbove + 3 + i, " ", text_size=size.small, bgcolor=padBg)
