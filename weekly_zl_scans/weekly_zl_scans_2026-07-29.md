@@ -32,7 +32,7 @@ NSE:KAYNES,NSE:SWIGGY,NSE:NETWEB,NSE:ASIANTILES,NSE:DEVYANI,NSE:TEJASNET,NSE:HIN
 | [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK)<br><sub>↓CMF8d</sub> | Pharma generics specialty OTC formulations global markets | 1w | TOUCH | 1w | +3.2% | +3.53% | 2261.70 | 6w | 20%  |
 | [PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET)<br><sub>↓CMF30d</sub> | LNG import regasification terminals serving Indian energy demand | 1w | TOUCH | 1w | +0.9% | -0.25% | 277.10 | 3w | 20%  |
 | [MGL](https://in.tradingview.com/chart/?symbol=NSE:MGL)<br><sub>↓CMF15d</sub> | Natural gas distribution Mumbai Maharashtra residential industrial | 1w | TOUCH | 1w | +2.6% | +2.44% | 1105.00 | — | 20%  |
-| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO)<br><sub>↓CMF30d · DEL65%(T-1)</sub> | Palm soybean sunflower oil refining processing agribusiness | 1w | TOUCH | 1w | +6.3% | +5.89% | 223.20 | — | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO)<br><sub>↓CMF30d</sub> | Palm soybean sunflower oil refining processing agribusiness | 1w | TOUCH | 1w | +6.3% | +5.89% | 223.20 | — | 20%  |
 | [JSL](https://in.tradingview.com/chart/?symbol=NSE:JSL)<br><sub>↑CMF0d</sub> | Stainless steel flat products for automotive construction railways | 1w | TOUCH | 1w | +2.0% | +0.58% | 728.50 | 4w | 20%  |
 | [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA)<br><sub>↓CMF27d</sub> | NBFC gold loans MSMEs self-employed individuals retail finance | 1w | TOUCH | 1w | +3.0% | +2.62% | 155.06 | 1w | 20%  |
 | [SCHAEFFLER](https://in.tradingview.com/chart/?symbol=NSE:SCHAEFFLER)<br><sub>↓CMF26d</sub> | Precision bearings, engine systems, automotive and industrial components | 1w | TOUCH | 1w | +1.3% | +0.37% | 4159.80 | 21w | 20%  |
@@ -115,7 +115,7 @@ NSE:KAYNES,NSE:SWIGGY,NSE:NETWEB,NSE:ASIANTILES,NSE:DEVYANI,NSE:TEJASNET,NSE:HIN
 | [ALEMBICLTD](https://in.tradingview.com/chart/?symbol=NSE:ALEMBICLTD)<br><sub>↓CMF30d</sub> | Pharmaceutical manufacturer APIs generics India exports | 1w | ABOVE | 1w | +2.7% | +1.18% | 90.28 | — | 20%  |
 | [OMINFRAL](https://in.tradingview.com/chart/?symbol=NSE:OMINFRAL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +3.2% | -0.48% | 89.91 | 13w | 20%  |
 | [METROBRAND](https://in.tradingview.com/chart/?symbol=NSE:METROBRAND)<br><sub>↓CMF30d</sub> | Footwear accessories retail branded shoes family segments | 1w | ABOVE | 1w | +1.1% | +0.64% | 1032.60 | 11w | 20%  |
-| [MEIL](https://in.tradingview.com/chart/?symbol=NSE:MEIL)<br><sub>↓CMF24d · DEL73%(T-1)</sub> |  | 1w | ABOVE | 1w | +3.7% | +0.12% | 295.10 | — | 5%  |
+| [MEIL](https://in.tradingview.com/chart/?symbol=NSE:MEIL)<br><sub>↓CMF24d · DEL76%</sub> |  | 1w | ABOVE | 1w | +3.7% | +0.12% | 295.10 | — | 5%  |
 | [GPTINFRA](https://in.tradingview.com/chart/?symbol=NSE:GPTINFRA)<br><sub>↓CMF9d</sub> |  | 1w | ABOVE | 1w | +5.1% | -0.05% | 122.38 | — | 20%  |
 | [BIL](https://in.tradingview.com/chart/?symbol=NSE:BIL)<br><sub>↑CMF2d</sub> |  | 1w | ABOVE | 1w | +2.7% | -3.74% | 749.75 | 17w | 20%  |
 | [VENTIVE](https://in.tradingview.com/chart/?symbol=NSE:VENTIVE)<br><sub>↓CMF20d</sub> | Luxury hotel owner operator developer India resorts | 1w | ABOVE | 1w | +2.8% | +2.55% | 635.05 | 4w | 20%  |
