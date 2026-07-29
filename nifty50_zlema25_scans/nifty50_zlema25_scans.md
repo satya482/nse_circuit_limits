@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-07-28 15:40 IST*
+*Generated: 2026-07-29 15:41 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 30 · Downtrend: 20**
@@ -104,7 +104,7 @@ NSE:APOLLOHOSP,NSE:BAJFINANCE,NSE:ETERNAL,NSE:ICICIBANK,NSE:SUNPHARMA,NSE:TITAN
 | [HINDUNILVR](https://in.tradingview.com/chart/?symbol=NSE:HINDUNILVR)<br><sub>→357Cr · 221Cr · ↓CMF11d</sub> | 10d | -3.07% |  | +0.06% | 2141.00 | — | 20%  |
 | [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>↘349Cr · 138Cr · ↓CMF10d</sub> | 11d | -13.42% |  | -1.05% | 2895.20 | — | 20%  |
 | [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>↗1152Cr · 1867Cr · ↓CMF11d</sub> | 13d | -7.66% |  | +0.18% | 1258.20 | — | 20%  |
-| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>→303Cr · 244Cr · ↓CMF30d</sub> | 13d | -15.82% |  | -1.32% | 1135.60 | — | 20%  |
+| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>→297Cr · 146Cr · ↓CMF30d</sub> | 14d | -15.32% |  | +0.59% | 1142.30 | — | 20%  |
 | [LT](https://in.tradingview.com/chart/?symbol=NSE:LT)<br><sub>→929Cr · 536Cr · ↓CMF30d</sub> | 15d | -7.03% |  | +0.34% | 3852.00 | — | 20%  |
 | [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↘316Cr · 195Cr · ↓CMF23d</sub> | 24d | -15.17% |  | -0.76% | 333.90 | — | 20%  |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>↘205Cr · 199Cr · ↓CMF15d</sub> | 31d | -8.74% |  | +0.37% | 431.00 | — | 20%  |
