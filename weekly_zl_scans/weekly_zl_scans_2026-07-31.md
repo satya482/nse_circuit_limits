@@ -26,7 +26,7 @@ NSE:NETWEB,NSE:SWIGGY,NSE:KAYNES,NSE:SMLMAH,NSE:BALKRISIND,NSE:ASHOKLEY,NSE:VOLT
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB)<br><sub>↓CMF23d · DEL36%(T-1)</sub> | High-performance computing systems manufacturer for AI and research | 1w | TOUCH | 1w | +8.8% | +7.84% | 4524.00 | — | 20%  |
+| [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB)<br><sub>↓CMF23d</sub> | High-performance computing systems manufacturer for AI and research | 1w | TOUCH | 1w | +8.8% | +7.84% | 4524.00 | — | 20%  |
 | [VOLTAMP](https://in.tradingview.com/chart/?symbol=NSE:VOLTAMP)<br><sub>↓CMF30d</sub> | Oil and dry-type transformers for power distribution infrastructure | 1w | TOUCH | 1w | +8.1% | +6.68% | 9923.00 | — | 20%  |
 | [DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY)<br><sub>↑CMF27d</sub> | Express parcel delivery and freight logistics for e-commerce | 1w | TOUCH | 1w | +4.2% | +2.91% | 481.95 | — | 20%  |
 | [AUBANK](https://in.tradingview.com/chart/?symbol=NSE:AUBANK)<br><sub>↓CMF7d</sub> | Retail banking, microfinance, small-ticket consumer loans | 1w | TOUCH | 1w | +4.3% | +1.61% | 1047.30 | — | 20%  |
