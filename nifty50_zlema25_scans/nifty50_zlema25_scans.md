@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-07-30 15:40 IST*
+*Generated: 2026-07-31 15:41 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 30 · Downtrend: 20**
@@ -10,7 +10,7 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 
 **TradingView watchlist** *(sectioned by direction and trend age)*
 ```
-###UP 1 DAY,NSE:BHARTIARTL,NSE:HINDALCO,NSE:LT,NSE:TATASTEEL,NSE:TRENT,###UP 2 DAYS,NSE:APOLLOHOSP,NSE:CIPLA,###UP 3 DAYS,NSE:ASIANPAINT,NSE:BAJFINANCE,NSE:INDIGO,NSE:INFY,NSE:JSWSTEEL,NSE:MARUTI,NSE:NESTLEIND,NSE:SHRIRAMFIN,###UP 4-5 DAYS,NSE:ITC,NSE:KOTAKBANK,NSE:SBILIFE,NSE:WIPRO,###UP 6-10 DAYS,NSE:BAJAJFINSV,NSE:M&M,###UP 11-15 DAYS,NSE:EICHERMOT,NSE:TCS,NSE:ULTRACEMCO,###UP 15 DAYS+,NSE:ETERNAL,NSE:HCLTECH,NSE:ICICIBANK,NSE:SUNPHARMA,NSE:TECHM,NSE:TITAN,###DOWN 1 DAY,NSE:BAJAJ-AUTO,###DOWN 2 DAYS,NSE:HINDUNILVR,NSE:JIOFIN,NSE:NTPC,NSE:POWERGRID,NSE:TATACONSUM,###DOWN 3 DAYS,NSE:ONGC,###DOWN 4-5 DAYS,NSE:GRASIM,###DOWN 6-10 DAYS,NSE:ADANIENT,NSE:ADANIPORTS,NSE:HDFCBANK,NSE:HDFCLIFE,NSE:MAXHEALTH,NSE:RELIANCE,NSE:SBIN,###DOWN 11-15 DAYS,NSE:BEL,NSE:DRREDDY,###DOWN 15 DAYS+,NSE:AXISBANK,NSE:COALINDIA,NSE:TMPV
+###UP 1 DAY,NSE:BHARTIARTL,NSE:HINDALCO,NSE:LT,NSE:TATASTEEL,NSE:TRENT,###UP 2 DAYS,NSE:APOLLOHOSP,NSE:CIPLA,###UP 3 DAYS,NSE:ASIANPAINT,NSE:BAJFINANCE,NSE:INDIGO,NSE:INFY,NSE:JSWSTEEL,NSE:MARUTI,NSE:NESTLEIND,NSE:SHRIRAMFIN,###UP 4-5 DAYS,NSE:ITC,NSE:KOTAKBANK,NSE:SBILIFE,NSE:WIPRO,###UP 6-10 DAYS,NSE:BAJAJFINSV,NSE:M&M,###UP 11-15 DAYS,NSE:EICHERMOT,NSE:TCS,NSE:ULTRACEMCO,###UP 15 DAYS+,NSE:ETERNAL,NSE:HCLTECH,NSE:ICICIBANK,NSE:SUNPHARMA,NSE:TECHM,NSE:TITAN,###DOWN 1 DAY,NSE:BAJAJ-AUTO,###DOWN 2 DAYS,NSE:HINDUNILVR,NSE:JIOFIN,NSE:NTPC,NSE:POWERGRID,NSE:TATACONSUM,###DOWN 3 DAYS,NSE:ONGC,###DOWN 4-5 DAYS,NSE:GRASIM,###DOWN 6-10 DAYS,NSE:ADANIENT,NSE:ADANIPORTS,NSE:HDFCBANK,NSE:HDFCLIFE,NSE:MAXHEALTH,NSE:RELIANCE,NSE:SBIN,###DOWN 11-15 DAYS,NSE:BEL,###DOWN 15 DAYS+,NSE:AXISBANK,NSE:COALINDIA,NSE:DRREDDY,NSE:TMPV
 ```
 
 ### ZLEMA25 Uptrend Start and Age
@@ -105,7 +105,7 @@ NSE:ETERNAL,NSE:HCLTECH,NSE:ICICIBANK,NSE:SUNPHARMA,NSE:TECHM,NSE:TITAN
 | [HDFCBANK](https://in.tradingview.com/chart/?symbol=NSE:HDFCBANK)<br><sub>→2224Cr · 1505Cr · ↓CMF20d</sub> | 8d | -8.70% |  | +1.75% | 748.30 | — | 20%  |
 | [HDFCLIFE](https://in.tradingview.com/chart/?symbol=NSE:HDFCLIFE)<br><sub>↘140Cr · 66Cr · ↓CMF30d</sub> | 10d | -1.93% |  | -0.17% | 557.80 | ✓ | 20%  |
 | [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>→478Cr · 1261Cr · ↓CMF1d</sub> | 13d | -6.58% |  | -0.37% | 387.55 | — | 20%  |
-| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>→294Cr · 155Cr · ↓CMF30d</sub> | 15d | -15.14% |  | +0.22% | 1144.80 | — | 20%  |
+| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>→285Cr · 125Cr · ↓CMF30d</sub> | 16d | -14.89% |  | +0.29% | 1148.10 | — | 20%  |
 | [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>↗1275Cr · 1247Cr · ↓CMF17d</sub> | 19d | -9.31% |  | +1.01% | 1235.80 | — | 20%  |
 | [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↘233Cr · 237Cr · ↓CMF29d</sub> | 30d | -16.32% |  | +1.53% | 329.35 | — | 20%  |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>↗267Cr · 405Cr · ↓CMF21d</sub> | 37d | -13.25% |  | -0.11% | 409.70 | — | 20%  |
@@ -137,14 +137,14 @@ NSE:GRASIM
 NSE:ADANIENT,NSE:ADANIPORTS,NSE:HDFCBANK,NSE:HDFCLIFE,NSE:MAXHEALTH,NSE:RELIANCE,NSE:SBIN
 ```
 
-**11-15 DAYS** (2)
+**11-15 DAYS** (1)
 ```
-NSE:BEL,NSE:DRREDDY
+NSE:BEL
 ```
 
-**15 DAYS+** (3)
+**15 DAYS+** (4)
 ```
-NSE:AXISBANK,NSE:COALINDIA,NSE:TMPV
+NSE:AXISBANK,NSE:COALINDIA,NSE:DRREDDY,NSE:TMPV
 ```
 ---
 
