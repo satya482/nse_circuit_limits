@@ -2,13 +2,13 @@
   "symbol": "MMTC",
   "name": "MMTC Limited",
   "trendlyne_description": "MMTC Ltd. (Minerals and Metals Trading Corporation) is a Government of India enterprise and a prominent international trading company. Established in 1963, the company serves as a canalizing agency for the export of minerals like iron ore and man... Read More",
-  "screener_description": "MMTC, a public sector undertaking, was incorporated in 1963, to facilitate foreign trade in India and canalize the export and import of essential minerals and metals. It is under the administrative control of the Ministry of Commerce & Industry, and Government of India and is engaged in trading across minerals, metals, precious metals, agro products, fertilizers & chemicals and coal & hydrocarbons. [1]",
-  "combined_description": "MMTC Ltd. (Minerals and Metals Trading Corporation) is a Government of India enterprise and a prominent international trading company. Established in 1963, the company serves as a canalizing agency for the export of minerals like iron ore and man... Read More MMTC, a public sector undertaking, was incorporated in 1963, to facilitate foreign trade in India and canalize the export and import of essential minerals and metals. It is under the administrative control of the Ministry of Commerce & Industry, and Government of India and is engaged in trading across minerals, metals, precious metals, agro products, fertilizers & chemicals and coal & hydrocarbons. [1]",
+  "screener_description": "MMTC Limited is a Government of India enterprise incorporated in 1963 under the Ministry of Commerce & Industry. It focuses on statutory compliance, legacy matters and management of its assets and investments [1]",
+  "combined_description": "MMTC Ltd. (Minerals and Metals Trading Corporation) is a Government of India enterprise and a prominent international trading company. Established in 1963, the company serves as a canalizing agency for the export of minerals like iron ore and man... Read More MMTC Limited is a Government of India enterprise incorporated in 1963 under the Ministry of Commerce & Industry. It focuses on statutory compliance, legacy matters and management of its assets and investments [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T05:12:13.234784+00:00",
+  "fetched_at": "2026-08-01T05:28:11.193855+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Minerals metals export import trading PSU"
+  "short_label": "Government minerals and metals trading corporation"
 }

@@ -1,11 +1,14 @@
 {
   "symbol": "DHAMPURSUG",
   "name": "Dhampur Sugar Mills Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Dhampur Sugar Mills Ltd. is an integrated sugarcane processing company in India. The company operates a diversified business model that utilizes sugarcane as a primary raw material to produce sugar, ethanol, chemicals, power, and potable spirits. Wit... Read More",
+  "screener_description": "Incorporated in 1933, Dhampur Sugar Mills Ltd manufactures and sells sugar, chemicals, ethanol, and cogeneration of power. [1]",
+  "combined_description": "Dhampur Sugar Mills Ltd. is an integrated sugarcane processing company in India. The company operates a diversified business model that utilizes sugarcane as a primary raw material to produce sugar, ethanol, chemicals, power, and potable spirits. Wit... Read More Incorporated in 1933, Dhampur Sugar Mills Ltd manufactures and sells sugar, chemicals, ethanol, and cogeneration of power. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:26:10.817742+00:00",
-  "sources": [],
-  "short_label": "Sugar production, ethanol, power generation, agribusiness"
+  "fetched_at": "2026-08-01T06:16:12.811864+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Sugarcane processing: sugar, ethanol, chemicals, power generation"
 }

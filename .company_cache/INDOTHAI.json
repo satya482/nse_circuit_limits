@@ -1,11 +1,14 @@
 {
   "symbol": "INDOTHAI",
   "name": "Indo Thai Securities Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Indo Thai Securities Ltd. is an Indore-based financial services provider that serves a diverse clientele, including corporate clients, high-net-worth individuals (HNIs), and retail investors. Established as a flagship entity of the Indo Thai Group, t... Read More",
+  "screener_description": "Incorporated in 1995, Indo Thai Securities Ltd is in the business as stock and share brokers [1]",
+  "combined_description": "Indo Thai Securities Ltd. is an Indore-based financial services provider that serves a diverse clientele, including corporate clients, high-net-worth individuals (HNIs), and retail investors. Established as a flagship entity of the Indo Thai Group, t... Read More Incorporated in 1995, Indo Thai Securities Ltd is in the business as stock and share brokers [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:22:54.664152+00:00",
-  "sources": [],
-  "short_label": "Brokerage services for equity and derivative trading"
+  "fetched_at": "2026-08-01T05:02:53.167476+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Stock broker serving corporates HNIs retail investors"
 }

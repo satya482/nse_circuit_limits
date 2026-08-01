@@ -1,11 +1,14 @@
 {
   "symbol": "AIMTRON",
   "name": "Aimtron Electronics Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Aimtron Electronics Ltd. (AIMTRON) is an India-based provider of Electronic Manufacturing Services (EMS), specializing in high-precision Printed Circuit Board Assembly (PCBA) and design-led manufacturing. The company serves a diverse range of industr... Read More",
+  "screener_description": "Incorporated in 2011, Aimtron Electronics Ltd  is in the business of manufacturing Printed Circuit Boards (PCB) and also also provides services related to the designing of PCBs [1]",
+  "combined_description": "Aimtron Electronics Ltd. (AIMTRON) is an India-based provider of Electronic Manufacturing Services (EMS), specializing in high-precision Printed Circuit Board Assembly (PCBA) and design-led manufacturing. The company serves a diverse range of industr... Read More Incorporated in 2011, Aimtron Electronics Ltd  is in the business of manufacturing Printed Circuit Boards (PCB) and also also provides services related to the designing of PCBs [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:29:32.432741+00:00",
-  "sources": [],
-  "short_label": "Electronics manufacturing transformers power distribution equipment"
+  "fetched_at": "2026-08-01T06:28:12.075518+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "PCB assembly manufacturing for industrial electronics"
 }

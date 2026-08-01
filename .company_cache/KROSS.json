@@ -1,11 +1,14 @@
 {
   "symbol": "KROSS",
   "name": "Kross Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Kross Ltd. is a prominent manufacturer of high-performance, safety-critical components for the Medium and Heavy Commercial Vehicle (M&HCV) and farm equipment segments. With over three decades of experience, the company operates as a backward-integrat... Read More",
+  "screener_description": "Incorporated in 1991, Kross Ltd manufactures high performance and safety critical components for the commercial vehicle, tractor and trailer axle industry [1]",
+  "combined_description": "Kross Ltd. is a prominent manufacturer of high-performance, safety-critical components for the Medium and Heavy Commercial Vehicle (M&HCV) and farm equipment segments. With over three decades of experience, the company operates as a backward-integrat... Read More Incorporated in 1991, Kross Ltd manufactures high performance and safety critical components for the commercial vehicle, tractor and trailer axle industry [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:23:51.705818+00:00",
-  "sources": [],
-  "short_label": "Steel tubes and pipes manufacturing for construction automotive"
+  "fetched_at": "2026-08-01T06:16:39.938352+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Commercial vehicle axles and tractor components manufacturer"
 }

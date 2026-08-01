@@ -1,13 +1,14 @@
 {
   "symbol": "ROSSTECH",
   "name": "Rossell Techsys Limited",
-  "trendlyne_description": "",
+  "trendlyne_description": "Rossell Techsys Ltd. is an Indian company specializing in engineering and manufacturing for the global aerospace, defense, semiconductor, and space sectors. It operates as an independent entity following its demerger from Rossell India Limited in Aug... Read More",
   "screener_description": "Incorporated in 2020, Rossell Techsys Inc Ltd is in the business of aerospace and defence [1]",
-  "combined_description": "Incorporated in 2020, Rossell Techsys Inc Ltd is in the business of aerospace and defence [1]",
+  "combined_description": "Rossell Techsys Ltd. is an Indian company specializing in engineering and manufacturing for the global aerospace, defense, semiconductor, and space sectors. It operates as an independent entity following its demerger from Rossell India Limited in Aug... Read More Incorporated in 2020, Rossell Techsys Inc Ltd is in the business of aerospace and defence [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T05:44:08.574472+00:00",
+  "fetched_at": "2026-08-01T05:25:03.658447+00:00",
   "sources": [
+    "trendlyne",
     "screener"
   ],
-  "short_label": "Aerospace defence electronics components manufacturer for aircraft systems"
+  "short_label": "Precision aerospace defense components manufacturing global markets"
 }

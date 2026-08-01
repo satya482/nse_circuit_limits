@@ -1,11 +1,14 @@
 {
   "symbol": "ITDC",
   "name": "India Tourism Development Corp. Ltd.",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "India Tourism Development Corporation Ltd. (ITDC) is a Public Sector Undertaking (PSU) under the Ministry of Tourism, Government of India. The company plays a pivotal role in developing tourism infrastructure and providing diverse hospitality service... Read More",
+  "screener_description": "India Tourism Development Corporation Ltd is a Govt. of India undertaking and was established in October 1966, the company is running hotels, restaurants, providing transport facilities, engaged in production, distribution and sale of tourist publicity literature and providing entertainment and duty free shopping facilities to tourists. It has also diversified into consultancy, tourism, engineering projects, training/education in the tourism and hospitality sectors and event management. [1]",
+  "combined_description": "India Tourism Development Corporation Ltd. (ITDC) is a Public Sector Undertaking (PSU) under the Ministry of Tourism, Government of India. The company plays a pivotal role in developing tourism infrastructure and providing diverse hospitality service... Read More India Tourism Development Corporation Ltd is a Govt. of India undertaking and was established in October 1966, the company is running hotels, restaurants, providing transport facilities, engaged in production, distribution and sale of tourist publicity literature and providing entertainment and duty free shopping facilities to tourists. It has also diversified into consultancy, tourism, engineering projects, training/education in the tourism and hospitality sectors and event management. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:26:21.995800+00:00",
-  "sources": [],
-  "short_label": "Tourism infrastructure hotels resorts hospitality sector India"
+  "fetched_at": "2026-08-01T05:57:14.213054+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Govt tourism hotels restaurants transport hospitality services"
 }

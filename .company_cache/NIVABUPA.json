@@ -1,11 +1,14 @@
 {
   "symbol": "NIVABUPA",
   "name": "Niva Bupa Health Insurance Company Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Niva Bupa Health Insurance Company Ltd. (Niva Bupa), formerly known as Max Bupa, is a major standalone health insurance (SAHI) provider in India. It operates as a joint venture between the UK-based global healthcare group Bupa and **Fettle Tone L... Read More",
+  "screener_description": "Incorporated in 2008, Niva Bupa Health Insurance Ltd is a Tech driven leading health insurer in India. [1]",
+  "combined_description": "Niva Bupa Health Insurance Company Ltd. (Niva Bupa), formerly known as Max Bupa, is a major standalone health insurance (SAHI) provider in India. It operates as a joint venture between the UK-based global healthcare group Bupa and **Fettle Tone L... Read More Incorporated in 2008, Niva Bupa Health Insurance Ltd is a Tech driven leading health insurer in India. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:27:16.809370+00:00",
-  "sources": [],
-  "short_label": "Health insurance policies for Indian individuals families corporates"
+  "fetched_at": "2026-08-01T04:39:33.188722+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Health insurance policies for Indian individuals and families"
 }

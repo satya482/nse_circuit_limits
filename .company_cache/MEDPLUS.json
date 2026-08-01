@@ -1,11 +1,13 @@
 {
   "symbol": "MEDPLUS",
   "name": "MedPlus Health Services Ltd.",
-  "trendlyne_description": "",
+  "trendlyne_description": "Medplus Health Services Ltd. is a prominent retail pharmaceutical company in India, operating a large-scale network of pharmacy stores and diagnostic centers. Established with a focus on providing authentic medicines and wellness products, the compan... Read More",
   "screener_description": "",
-  "combined_description": "",
+  "combined_description": "Medplus Health Services Ltd. is a prominent retail pharmaceutical company in India, operating a large-scale network of pharmacy stores and diagnostic centers. Established with a focus on providing authentic medicines and wellness products, the compan... Read More",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T05:52:23.674379+00:00",
-  "sources": [],
-  "short_label": "Pharmacy retail and online medicine delivery platform"
+  "fetched_at": "2026-08-01T05:37:40.272734+00:00",
+  "sources": [
+    "trendlyne"
+  ],
+  "short_label": "Pharmacy retail chains, diagnostics, mass-market healthcare access"
 }

@@ -1,11 +1,14 @@
 {
   "symbol": "EUREKAFORB",
   "name": "Eureka Forbes Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Eureka Forbes Ltd. (EUREKAFORB) is a leading Indian health and hygiene technology company, recognized for pioneering the water purification and vacuum cleaning categories in India. The company operates in a fast-evolving consumer durables market, foc... Read More",
+  "screener_description": "Eureka Forbes Limited is India’s leading health and hygiene brand. Its product portfolio encompasses water purification, vacuum cleaning and air purification. [1]",
+  "combined_description": "Eureka Forbes Ltd. (EUREKAFORB) is a leading Indian health and hygiene technology company, recognized for pioneering the water purification and vacuum cleaning categories in India. The company operates in a fast-evolving consumer durables market, foc... Read More Eureka Forbes Limited is India’s leading health and hygiene brand. Its product portfolio encompasses water purification, vacuum cleaning and air purification. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:28:37.595610+00:00",
-  "sources": [],
-  "short_label": "Water purification systems and vacuum cleaners India"
+  "fetched_at": "2026-08-01T06:27:03.270434+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Water purification, vacuum cleaners, air purifiers, consumer durables"
 }

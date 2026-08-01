@@ -5,10 +5,10 @@
   "screener_description": "Central Depository Services Limited is a Market Infrastructure Institution (MII), part of the capital market structure, providing services to all market participants - exchanges, clearing corporations, depository participants (DPs), issuers and investors. It is a facilitator for holding of securities in the dematerialised form and an enabler for securities transactions. [1]",
   "combined_description": "Central Depository Services (India) Ltd. (CDSL) is a major Indian securities depository that facilitates the holding and transacting of securities in electronic form and enables settlement of trades on stock exchanges. As the first listed depository ... Read More Central Depository Services Limited is a Market Infrastructure Institution (MII), part of the capital market structure, providing services to all market participants - exchanges, clearing corporations, depository participants (DPs), issuers and investors. It is a facilitator for holding of securities in the dematerialised form and an enabler for securities transactions. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T04:35:05.295884+00:00",
+  "fetched_at": "2026-08-01T04:48:25.049555+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Electronic securities depository settlement infrastructure provider"
+  "short_label": "Electronic securities holding settlement infrastructure depository"
 }

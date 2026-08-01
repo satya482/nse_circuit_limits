@@ -1,11 +1,14 @@
 {
   "symbol": "APOLLOPIPE",
   "name": "Apollo Pipes Ltd.",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Apollo Pipes Ltd. is a major player in the Indian plastic piping industry, specializing in manufacturing and supplying a wide range of piping solutions. The company serves diverse sectors including agriculture, water management, construction, infrast... Read More",
+  "screener_description": "Apollo Pipes is engaged in manufacturing and trading of cPVC, uPVC, and HDPE pipes, PVC taps, fittings, water storage tank and solvent etc. It is among the top 10 leading piping solution providing Company in India. The products cater to an array of industrial applications such as Agriculture, Water Management, Construction,Infrastructure,and Telecom ducting segments.",
+  "combined_description": "Apollo Pipes Ltd. is a major player in the Indian plastic piping industry, specializing in manufacturing and supplying a wide range of piping solutions. The company serves diverse sectors including agriculture, water management, construction, infrast... Read More Apollo Pipes is engaged in manufacturing and trading of cPVC, uPVC, and HDPE pipes, PVC taps, fittings, water storage tank and solvent etc. It is among the top 10 leading piping solution providing Company in India. The products cater to an array of industrial applications such as Agriculture, Water Management, Construction,Infrastructure,and Telecom ducting segments.",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:25:22.025031+00:00",
-  "sources": [],
-  "short_label": "PVC pipes infrastructure water management agriculture"
+  "fetched_at": "2026-08-01T05:24:50.232314+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Plastic pipes CPVC UPVC HDPE agriculture construction water"
 }

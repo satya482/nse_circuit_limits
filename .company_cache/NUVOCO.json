@@ -1,11 +1,14 @@
 {
   "symbol": "NUVOCO",
   "name": "Nuvoco Vistas Corporation Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Nuvoco Vistas Corporation Ltd. (Nuvoco) is a major player in the Indian building materials industry and is the fifth-largest cement group in India by capacity. As part of the Nirma Group, the company operates primarily in the East and North Indian ma... Read More",
+  "screener_description": "Nuvoco Vista Corporation Ltd (NVCL) , is one of the largest cement companies and concrete manufacturers in India with a consolidated capacity of 25 MMTPA. It offers a diversified range of products such as cement, Ready-mix Concrete (RMX), and modern building materials i.e. adhesives, wall putty, dry plaster, cover blocks, and more. [1]",
+  "combined_description": "Nuvoco Vistas Corporation Ltd. (Nuvoco) is a major player in the Indian building materials industry and is the fifth-largest cement group in India by capacity. As part of the Nirma Group, the company operates primarily in the East and North Indian ma... Read More Nuvoco Vista Corporation Ltd (NVCL) , is one of the largest cement companies and concrete manufacturers in India with a consolidated capacity of 25 MMTPA. It offers a diversified range of products such as cement, Ready-mix Concrete (RMX), and modern building materials i.e. adhesives, wall putty, dry plaster, cover blocks, and more. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:23:17.251310+00:00",
-  "sources": [],
-  "short_label": "Cement manufacturer serving construction infrastructure projects"
+  "fetched_at": "2026-08-01T05:44:30.846610+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Cement and ready-mix concrete manufacturer, East-North India"
 }

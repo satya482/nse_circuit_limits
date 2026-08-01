@@ -1,11 +1,14 @@
 {
   "symbol": "NEPHROPLUS",
   "name": "Nephrocare Health Services Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Nephrocare Health Services Ltd. (NephroPlus) is a specialized healthcare provider focused on dialysis services, operating as an organized network across India and several international markets. The company partners with hospitals and government entit... Read More",
+  "screener_description": "Incorporated in 2010, Nephrocare Health Services Ltd. provides end-to-end dialysis care through a wide network of clinics across India and select international markets. [1]",
+  "combined_description": "Nephrocare Health Services Ltd. (NephroPlus) is a specialized healthcare provider focused on dialysis services, operating as an organized network across India and several international markets. The company partners with hospitals and government entit... Read More Incorporated in 2010, Nephrocare Health Services Ltd. provides end-to-end dialysis care through a wide network of clinics across India and select international markets. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:24:20.693533+00:00",
-  "sources": [],
-  "short_label": "Dialysis treatment centers for kidney disease patients"
+  "fetched_at": "2026-08-01T06:11:56.044898+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Dialysis center chain serving kidney disease patients India"
 }

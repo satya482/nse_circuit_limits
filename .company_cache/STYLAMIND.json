@@ -1,11 +1,14 @@
 {
   "symbol": "STYLAMIND",
   "name": "Stylam Industries Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Stylam Industries Ltd. is a leading manufacturer of decorative laminates and solid surface solutions, serving both residential and commercial sectors. Operating as a recognized Star Export House by the Government of India, the company maintains a sig... Read More",
+  "screener_description": "Stylam Industries is engaged in the manufacturing of decorative laminates under the brand name “STYLAM” and exports its products primarily to European and South East Asian countries. It manufactures a wide range of high-quality decorative laminates, specialty surfaces, PU+ lacquer coating, solid surfaces and compact laminates. [1]",
+  "combined_description": "Stylam Industries Ltd. is a leading manufacturer of decorative laminates and solid surface solutions, serving both residential and commercial sectors. Operating as a recognized Star Export House by the Government of India, the company maintains a sig... Read More Stylam Industries is engaged in the manufacturing of decorative laminates under the brand name “STYLAM” and exports its products primarily to European and South East Asian countries. It manufactures a wide range of high-quality decorative laminates, specialty surfaces, PU+ lacquer coating, solid surfaces and compact laminates. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:31:20.392352+00:00",
-  "sources": [],
-  "short_label": "Laminate sheets decorative surfaces building construction"
+  "fetched_at": "2026-08-01T06:01:53.350754+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Decorative laminates and surfaces for residential commercial interiors"
 }
