@@ -187,6 +187,10 @@ weakRegime   = leadershipScore <= 1
 
 //bgcolor(strongRegime ? color.new(color.green, 88) : weakRegime ? color.new(color.red, 90) : na)
 
+// Relative Performance above its EMA, and that EMA currently rising
+perfAboveRisingEma = relativePerformance > relativePerformanceEma and relativePerformanceEma > relativePerformanceEma[1]
+bgcolor(perfAboveRisingEma ? color.new(color.lime, 85) : na, title="Perf > Rising Perf EMA")
+
 // =====================================================
 // Alerts
 // =====================================================

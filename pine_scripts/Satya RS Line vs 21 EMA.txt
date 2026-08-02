@@ -28,13 +28,27 @@ rsEma13 = ta.ema(rsLine, 13)
 rsWeeklyEma9 = request.security(syminfo.tickerid, "1W", ta.ema(rsLine, 9))
 rsBaseline = ta.ema(rsLine, 50)  // slow EMA as mid line; auto-scales per symbol, unlike a fixed hline
 
+// === Background: RS EMA9 (daily) above weekly RS EMA9, weekly EMA9 flat/rising ===
+weeklyEma9Rising = rsWeeklyEma9 >= rsWeeklyEma9[1]
+rsAboveWeeklyEma9 = rsEma9 > rsWeeklyEma9 and weeklyEma9Rising
+bgcolor(rsAboveWeeklyEma9 ? color.new(color.teal, 85) : na, title="RS EMA9 > Weekly EMA9 (rising)")
+
+// === Background: RS line crossed latest RS-down high line ===
+// lastRsDownHigh = rsLine level of the most recent bar where rsLine was declining
+// (mirrors rs_highline_scanner.py's backward scan, done forward via running state)
+var float lastRsDownHigh = na
+if rsLine < rsLine[1]
+    lastRsDownHigh := rsLine
+rsDownCross = not na(lastRsDownHigh) and ta.crossover(rsLine, lastRsDownHigh)
+//bgcolor(rsDownCross ? color.new(color.orange, 70) : na, title="RS crossed last RS-down high")
+
 // === Plots ===
 plot(rsLine, title="RS Line", color=rsLine > rsLine[1] ? color.blue : color.red, linewidth=1, style = plot.style_stepline)
 plot(rsEma21, title="RS EMA 21", color=rsEma21 > rsEma21[1]?color.blue : color.red, linewidth=1)
 //plot(rsEma13, title="RS EMA 13", color=rsEma13 > rsEma13[1]?color.lime : color.fuchsia, linewidth=1)
 plot(rsEma9, title="RS EMA 9", color=rsEma9 > rsEma9[1]?color.aqua : color.purple, linewidth=1)
 plot(rsWeeklyEma9, title="RS Week EMA 9", color=rsWeeklyEma9 > rsWeeklyEma9[1]?color.white : color.gray, linewidth=1, style = plot.style_stepline)
-plot(rsBaseline, title="RS Baseline (EMA50)", color=color.gray, linewidth=1, style=plot.style_line)
+//plot(rsBaseline, title="RS Baseline (EMA50)", color=color.gray, linewidth=1, style=plot.style_line)
 
 // Crossover logic
 // bullCross = ta.crossover(rsLine, rsWeeklyEma9)    // 9 crosses above 21

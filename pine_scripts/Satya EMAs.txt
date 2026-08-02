@@ -1,0 +1,1326 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © satya_markets
+
+//@version=6
+indicator("Satya EMAs", overlay=true)
+import TradingView/ta/12
+
+
+isIndiaStock = (syminfo.prefix == "NSE") and syminfo.type == "stock"
+inIndiaCashSession = not na(time(timeframe.period, "0915-1530", "Asia/Kolkata"))
+isIndiaEquityOpenHours = isIndiaStock and inIndiaCashSession
+
+// // zero lags ema 13-close as trending riding
+// showZLEMA13 = input.bool(false, "ZLEMA 13")
+// lengthZLEMA13 = input.int(13,  "Zero Lag EMA Length")
+// highlightMovementsZLEMA13 = input.bool(true,title="Highlight Movements ZLEMA13?")
+// srcZLEMA13 = input(close, title="Source")
+// lagZLEMA13 = math.floor((lengthZLEMA13 - 1) / 2)
+// zlema13 = ta.ema(srcZLEMA13 + (srcZLEMA13 - srcZLEMA13[lagZLEMA13]), lengthZLEMA13)
+// zlemaColor13 = highlightMovementsZLEMA13 ? (zlema13 > zlema13[1] ? color.aqua : color.black ): #6d1e7f
+// zlema13Up = zlema13 > zlema13[1]
+// zlema13Crossover = ta.crossover(close, zlema13)
+// zlema13Crossunder = ta.crossunder(close, zlema13)
+
+// zlema13EntrySignalCrossOver = zlema13Up and zlema13Crossover
+// zlema13EntrySignalCrossUnder = zlema13Up and zlema13Crossunder
+
+// alertcondition( isIndiaEquityOpenHours and zlema13EntrySignalCrossOver ,     title="ZLEMA13 Up CrossOver Entry",     message="ZLEMA13 Up CrossOver Entry")
+// alertcondition( isIndiaEquityOpenHours and zlema13EntrySignalCrossUnder ,     title="ZLEMA13 Up CrossUNDER Entry",     message="ZLEMA13 Up CrossUNDER Entry")
+
+
+// plot(showZLEMA13?zlema13:na, title="Zero Lag ema 13", color=zlemaColor13, style=plot.style_stepline, linewidth=1)
+
+// alertcondition(isIndiaEquityOpenHours and  zlema13 > zlema13[1] and close > zlema13,     title="ZLEMA13 up",     message="Above ZLEMA13")
+// alertcondition(isIndiaEquityOpenHours and zlema13 < zlema13[1] and close < zlema13,     title="ZLEMA13 Down",     message="BELOW ZLEMA13 - EXIT")
+// alertcondition(isIndiaEquityOpenHours and zlema13 > zlema13[1] and close == zlema13,     title="ZLEMA13 Up TOUCH Entry",     message="ZLEMA13 Up TOUCH Entry")
+// alertcondition(isIndiaEquityOpenHours and zlema13 > zlema13[1] and close == zlema13[1],     title="ZLEMA13[1] Up TOUCH Entry",     message="ZLEMA13[1] Up TOUCH Entry")
+
+
+// if barstate.islast
+//     level = zlema13[2]
+//     line.new(bar_index[2], level, bar_index+3, level, extend=extend.none, color=color.green, width=1, style=line.style_solid)
+//     // for i = 0 to 4
+//     //     lbl = label.new(bar_index - i, high[i], text="ZLEMA25: " + str.tostring(zlema25[i], "#.##"), color=color.new(color.blue, 80), textcolor=color.white, style=label.style_label_down, size=size.small)
+
+
+// zero lags ema 25-close as trending riding
+showZLEMA25 = input.bool(false, "ZLEMA 25")
+lengthZLEMA25 = input.int(25,  "Zero Lag EMA Length")
+highlightMovementsZLEMA25 = input.bool(true,title="Highlight Movements ZLEMA25?")
+srcZLEMA25 = input(close, title="Source")
+lagZLEMA25 = math.floor((lengthZLEMA25 - 1) / 2)
+zlema25 = ta.ema(srcZLEMA25 + (srcZLEMA25 - srcZLEMA25[lagZLEMA25]), lengthZLEMA25)
+zlemaColor25 = highlightMovementsZLEMA25 ? (zlema25 > zlema25[1] ? color.white : color.red ): #6d1e7f
+
+zlema25Up = zlema25 > zlema25[1]
+zlema25Crossover = ta.crossover(close, zlema25)
+zlema25Crossunder = ta.crossunder(close, zlema25)
+
+zlema25EntrySignalCrossOver = zlema25Up and zlema25Crossover
+zlema25EntrySignalCrossUnder = zlema25Up and zlema25Crossunder
+zlema25BarsSinceCrossver = ta.barssince(zlema25Crossover) <= 3
+
+alertcondition(isIndiaEquityOpenHours and  zlema25EntrySignalCrossOver ,     title="ZLEMA25 Up CrossOver Entry",     message="ZLEMA25 Up CrossOver Entry")
+alertcondition(isIndiaEquityOpenHours and  zlema25EntrySignalCrossUnder ,     title="ZLEMA25 Up CrossUNDER Entry",     message="ZLEMA25 Up CrossUNDER Entry")
+
+plot(showZLEMA25?zlema25:na, title="Zero Lag ema 25", color=zlemaColor25, style=plot.style_stepline, linewidth=1)
+alertcondition(isIndiaEquityOpenHours and zlema25 > zlema25[1] and zlema25[1] > zlema25[2] and zlema25Crossover, title="ZLEMA25 Up 2 days", message="Above ZLEMA25")
+alertcondition(isIndiaEquityOpenHours and zlema25 < zlema25[1] and zlema25Crossunder, title="ZLEMA25 Down", message="BELOW ZLEMA25 - EXIT")
+alertcondition(isIndiaEquityOpenHours and zlema25 > zlema25[1] and low <= zlema25 and close >= zlema25, title="ZLEMA25 Up TOUCH Entry", message="ZLEMA25 Up TOUCH Entry")
+// Price crossed above ZLEMA within last 3 bars AND ZLEMA just turned up
+alertcondition(isIndiaEquityOpenHours and zlema25 > zlema25[1] and zlema25[1] <= zlema25[2] and zlema25BarsSinceCrossver, title="ZLEMA25 Uptrend Start", message="ZLEMA25 Uptrend Start - Price Cross Above")
+alertcondition(isIndiaEquityOpenHours and zlema25 > zlema25[1] and low <= zlema25[1] and close >= zlema25[1], title="ZLEMA25[1] Up TOUCH Entry", message="ZLEMA25[1] Up TOUCH Entry")// ZLEMA25 pullback touch entry — fixed
+
+
+alertcondition(
+    isIndiaEquityOpenHours
+    and zlema25 > zlema25[1]                        // ZLEMA25 still rising
+    and low <= zlema25[2]                           // low touched ZLEMA25[2]
+    and close >= zlema25[2],                        // but closed at or above it
+    title="ZLEMA25[2] Up TOUCH Entry",
+    message="ZLEMA25[2] Up TOUCH Entry"
+)
+
+alertcondition(
+    isIndiaEquityOpenHours 
+    and zlema25 > zlema25[1] 
+    and zlema25[1] <= zlema25[2] 
+    and (close - zlema25) / zlema25 < 0.02,
+    title="ZLEMA25 Uptrend Start - Tight Entry 2% above ZLEMA25",
+    message="ZLEMA25 Uptrend Start - Tight Entry 2% above ZLEMA25")
+
+// Buy at previous day zlema25[1] and zlema25[1] > zlema25[2] 
+prevzlema25EntrySignal = close <= zlema25[1]*1.01 and zlema25[1] > zlema25[2]
+//alertcondition(isIndiaEquityOpenHours and prevzlema25EntrySignal,     title="ZLEMA25[1] Up TOUCH Entry",     message="ZLEMA25[1] Up TOUCH Entry")
+if barstate.islast
+    level = zlema25[2]
+    line.new(bar_index[2], level, bar_index+3, level, extend=extend.none, color=color.blue, width=1, style=line.style_solid)
+    // for i = 0 to 4
+    //     lbl = label.new(bar_index - i, high[i], text="ZLEMA25: " + str.tostring(zlema25[i], "#.##"), color=color.new(color.blue, 80), textcolor=color.white, style=label.style_label_down, size=size.small)
+
+
+// Trend definition
+upTrend = zlema25 > zlema25[1]
+downTrend = zlema25 < zlema25[1]
+
+// Detect start of uptrend
+upTrendStart = upTrend and not upTrend[1]
+
+// Store start price/bar only when uptrend begins
+var float upStartPrice = na
+var int upStartBar = na
+
+if upTrendStart
+    upStartPrice := close[1]
+    upStartBar := bar_index
+
+// Reset when trend is down
+if downTrend
+    upStartPrice := na
+    upStartBar := na
+
+// Stats only during uptrend
+daysFromStart = upTrend and not na(upStartBar) ? (bar_index - upStartBar) : na
+pctChangeFromStart = upTrend and not na(upStartPrice) ? ((close - upStartPrice) / upStartPrice) * 100 : na
+
+// Plot ZLEMA
+//plot(zlema25, title="ZLEMA 25", color=color.orange, linewidth=2)
+
+// Optional label
+var label statsLabel = na
+if barstate.islast
+    label.delete(statsLabel)
+    if upTrend and not na(daysFromStart) and not na(pctChangeFromStart)
+        statsText = "ZLEMA25\n" + str.tostring(daysFromStart) + "d | " + str.tostring(pctChangeFromStart, "#.##") + "%"
+        statsLabel := label.new(bar_index, high, statsText, style=label.style_label_down, textcolor=color.white, color=color.new(color.black, 99))
+
+bgcolor(upTrend ? color.new(color.white, 85) : na, title="ZLEMA25 Uptrend BG")
+ema20 = ta.ema(close, 20)
+ema20Up = ema20 > ema20[1]
+bgcolor(ema20Up ? color.new(color.lime, 85) : na, title="EMA20 Uptrend BG")
+
+// Optional alert
+alertcondition(isIndiaEquityOpenHours and upTrendStart, title="ZLEMA25 Uptrend Start", message="ZLEMA25 uptrend started on {{ticker}} ({{interval}})")
+
+showema10 = input.bool(false, "EMA 10")
+ema10 = ta.ema(close, 10)
+plot(showema10? ema10:na, title="ema10",  color=ema10 > ema10[1] ? color.new(color.gray,60) : color.new(color.black, 99), linewidth=1, style=plot.style_stepline)
+
+
+ema25 = ta.ema(close, 25)
+//plot(ema25, title="ema25",  color=ema25 > ema25[1] ? color.new(color.lime,0) : color.new(color.white, 99), linewidth=2, style=plot.style_stepline)
+
+
+ema25Up = ema25 > ema25[1]
+ema25Crossover = ta.crossover(close, ema25)
+ema25Crossunder = ta.crossunder(close, ema25)
+ema25EntrySignalCrossOver = ema25Up and ema25Crossover
+ema25EntrySignalCrossUnder = ema25Up and ema25Crossunder
+// alertcondition( isIndiaEquityOpenHours and ema25EntrySignalCrossOver ,     title="EMA25 Up CrossOver Entry",     message="EMA25 Up CrossOver Entry")
+// alertcondition(isIndiaEquityOpenHours and  ema25EntrySignalCrossUnder ,     title="EMA25 Up CrossUNDER Entry",     message="EMA25 Up CrossUNDER Entry")
+
+ema50 = ta.ema(close, 50)
+ema50Up = ema50 > ema50[1]
+ema50Crossover = ta.crossover(close, ema50)
+ema50Crossunder = ta.crossunder(close, ema50)
+ema50EntrySignalCrossOver = ema50Up and ema50Crossover
+ema50EntrySignalCrossUnder = ema50Up and ema50Crossunder
+// alertcondition( isIndiaEquityOpenHours and ema50EntrySignalCrossOver ,     title="ema50 Up CrossOver Entry",     message="ema50 Up CrossOver Entry")
+// alertcondition( isIndiaEquityOpenHours and ema50EntrySignalCrossUnder ,     title="ema50 Up CrossUNDER Entry",     message="ema50 Up CrossUNDER Entry")
+
+ema100 = ta.ema(close, 100)
+ema100Up = ema100 > ema100[1]
+ema100Crossover = ta.crossover(close, ema100)
+ema100Crossunder = ta.crossunder(close, ema100)
+ema100EntrySignalCrossOver = ema100Up and ema100Crossover
+ema100EntrySignalCrossUnder = ema100Up and ema100Crossunder
+// alertcondition(isIndiaEquityOpenHours and  ema100EntrySignalCrossOver ,     title="ema100 Up CrossOver Entry",     message="ema100 Up CrossOver Entry")
+// alertcondition( isIndiaEquityOpenHours and ema100EntrySignalCrossUnder ,     title="ema100 Up CrossUNDER Entry",     message="ema100 Up CrossUNDER Entry")
+
+alertcondition(isIndiaEquityOpenHours and ema25 > ema25[1] and low <= ema25 and close >= ema25, title="EMA25 Up TOUCH Entry", message="EMA25 Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema50 > ema50[1] and low <= ema50 and close >= ema50, title="EMA50 Up TOUCH Entry", message="EMA50 Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema100 > ema100[1] and low <= ema100 and close >= ema100, title="EMA100 Up TOUCH Entry", message="EMA100 Up TOUCH Entry")
+
+
+alertcondition(isIndiaEquityOpenHours and ema25 > ema25[1] and low <= ema25[1] and close >= ema25[1], title="EMA25[1] Up TOUCH Entry", message="EMA25[1] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema25 > ema25[1] and low <= ema25[2] and close >= ema25[2], title="EMA25[2] Up TOUCH Entry", message="EMA25[2] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema25 > ema25[1] and ema25[1] <= ema25[2] and (close - ema25) / ema25 < 0.02, title="EMA25 Uptrend Start - Tight Entry 2% above EMA25", message="EMA25 Uptrend Start - Tight Entry 2% above EMA25")
+
+alertcondition(isIndiaEquityOpenHours and ema50 > ema50[1] and low <= ema50[1] and close >= ema50[1], title="EMA50[1] Up TOUCH Entry", message="EMA50[1] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema50 > ema50[1] and low <= ema50[2] and close >= ema50[2], title="EMA50[2] Up TOUCH Entry", message="EMA50[2] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema50 > ema50[1] and ema50[1] <= ema50[2] and (close - ema50) / ema50 < 0.02, title="EMA50 Uptrend Start - Tight Entry 2% above EMA50", message="EMA50 Uptrend Start - Tight Entry 2% above EMA50")
+
+alertcondition(isIndiaEquityOpenHours and ema100 > ema100[1] and low <= ema100[1] and close >= ema100[1], title="EMA100[1] Up TOUCH Entry", message="EMA100[1] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema100 > ema100[1] and low <= ema100[2] and close >= ema100[2], title="EMA100[2] Up TOUCH Entry", message="EMA100[2] Up TOUCH Entry")
+alertcondition(isIndiaEquityOpenHours and ema100 > ema100[1] and ema100[1] <= ema100[2] and (close - ema100) / ema100 < 0.02, title="EMA100 Uptrend Start - Tight Entry 2% above EMA100", message="EMA100 Uptrend Start - Tight Entry 2% above EMA100")
+
+alertcondition(
+    isIndiaEquityOpenHours 
+    and ema25 > ema25[1] 
+    and ema25[1] <= ema25[2] 
+    and (close - ema25) / ema25 < 0.02,
+    title="ema25 Uptrend Start - Tight Entry 2% above ema25",
+    message="ema25 Uptrend Start - Tight Entry 2% above ema25")
+alertcondition(
+    isIndiaEquityOpenHours 
+    and ema50 > ema50[1] 
+    and ema50[1] <= ema50[2] 
+    and (close - ema50) / ema50 < 0.02,
+     title="ema50 Uptrend Start - Tight Entry 2% above ema50",
+    message="ema50 Uptrend Start - Tight Entry 2% above ema50")
+
+alertcondition(
+    isIndiaEquityOpenHours 
+    and ema100 > ema100[1] 
+    and ema100[1] <= ema100[2] 
+    and (close - ema100) / ema100 < 0.02,
+    title="ema100 Uptrend Start - Tight Entry 2% above ema100",
+    message="ema100 Uptrend Start - Tight Entry 2% above ema100")
+
+// // zero lags ema 14-close as trending riding
+// showZLEMA21 = input.bool(false, "ZLEMA 21")
+// lengthZLEMA21 = input.int(21,  "Zero Lag EMA Length")
+// highlightMovementsZLEMA21 = input.bool(true,title="Highlight Movements ZLEMA21?")
+// srcZLEMA21 = input(close, title="Source")
+// lagZLEMA21 = math.floor((lengthZLEMA21 - 1) / 2)
+// zlema21 = ta.ema(srcZLEMA21 + (srcZLEMA21 - srcZLEMA21[lagZLEMA21]), lengthZLEMA21)
+// zlemaColor21 = highlightMovementsZLEMA21 ? (zlema21 > zlema21[1] ? color.new(#06dfeb, 0) : color.new(color.gray, 85) ): #6d1e7f
+// plot(showZLEMA21?zlema21:na, title="Zero Lag ema 21", color=zlemaColor21, style=plot.style_stepline, linewidth=2)
+// // alertcondition(isIndiaEquityOpenHours and zlema21 > zlema21[1] and close > zlema21,     title="ZLEMA21 up",     message="Above ZLEMA21")
+// // alertcondition(isIndiaEquityOpenHours and zlema21 < zlema21[1] and close < zlema21,     title="ZLEMA21 Down",     message="BELOW ZLEMA21 - EXIT")
+
+
+// // double - ema 100
+// demaLength = input.int(100, minval=1)
+// demaSrc = input(close, title="Source")
+// e1 = ta.ema(demaSrc, demaLength)
+// e2 = ta.ema(e1, demaLength)
+// DEMA = 2 * e1 - e2
+// //plot(dema, title="DEMA", color=color.rgb(189, 15, 15), linewidth = 1)
+// DEMAhighlightMovements = input.bool(true,title="DEMA Highlight Movements ?")
+// DemaColor = DEMAhighlightMovements ? (DEMA > DEMA[1] ? color.new(color.blue,80) : color.new(color.purple, 80) ): #6d1e7f
+// showDEMA = input.bool(false, "DEMA 100")
+// plot(showDEMA? DEMA:na, title="Double ema", color=DemaColor, style=plot.style_stepline, linewidth=2)
+// alertcondition(isIndiaEquityOpenHours and DEMA > DEMA[1] ,     title="DoubleEMA100 up",     message="DoubleEMA100 up")
+
+// dema100crossUp = ta.crossover(close, DEMA) and DEMA > DEMA[1] and close > DEMA
+// BreachDema100CrossUp = ta.crossunder(close, DEMA)// and DEMA > DEMA[1]
+
+// dema100crossDown = ta.crossunder(close, DEMA) and DEMA < DEMA[1] and close < DEMA
+// BreachDema100CrossDown = ta.crossover(close, DEMA)// and DEMA < DEMA[1]
+
+
+// //============================
+// //Triple EMA 100
+// temaLength = input.int(100, minval=1)
+// ema1 = ta.ema(close, temaLength)
+// ema2 = ta.ema(ema1, temaLength)
+// ema3 = ta.ema(ema2, temaLength)
+// TEMA = 3 * (ema1 - ema2) + ema3
+// TEMAhighlightMovements = input.bool(true,title="TEMA Highlight Movements ?")
+// TemaColor = TEMAhighlightMovements ? (TEMA > TEMA[1] ? color.new(color.lime,0) : color.new(color.purple, 0) ): #6d1e7f
+// //plot(TEMA, title="Triple ema", color=TemaColor, style=plot.style_stepline, linewidth=2)
+
+// alertcondition(isIndiaEquityOpenHours and TEMA > TEMA[1] ,     title="TripleEMA100 up",     message="TripleEMA100 up")
+
+// tema100crossUp = ta.crossover(close, TEMA) //and TEMA > TEMA[1]
+// BreachTema100CrossUp = ta.crossunder(close, TEMA)// and TEMA > TEMA[1]
+// tema100crossdown = ta.crossunder(close, TEMA) //and TEMA > TEMA[1]
+
+// plotshape(
+//     dema100crossUp , // and DEMA > DEMA[1],
+//     title     = "DEMA100 crossup",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.rgb(19, 3, 248),
+//     size      = size.normal
+// )
+
+// plotshape(
+//     dema100crossDown, // and DEMA > DEMA[1],
+//     title     = "BREACH DEMA100",
+//     style     = shape.flag,
+//     location  = location.abovebar,
+//     color     = color.white,
+//     size      = size.tiny
+// )
+
+// plotshape(
+//     tema100crossUp,  //and TEMA > TEMA[1],
+//     title     = "TEMA100 crossUp",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.lime,
+//     size      = size.tiny
+// )
+
+// plotshape(
+//     tema100crossdown, // and TEMA > TEMA[1],
+//     title     = "BREACH TEMA100",
+//     style     = shape.xcross,
+//     location  = location.abovebar,
+//     color     = color.lime,
+//     size      = size.tiny
+// )
+
+
+// Alert condition (constant message string)
+// alertcondition(
+//     isIndiaEquityOpenHours and dema100crossUp,
+//     title   = "Above DEMA100",
+//     message = "{{ticker}} {{interval}} Above DEMA100 "
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and BreachDema100CrossUp,
+//     title   = "BREACH Above DEMA100",
+//     message = "BREACH Above DEMA100 {{ticker}} ({{interval}})."
+// )
+
+
+
+// alertcondition(
+//     isIndiaEquityOpenHours and dema100crossDown,
+//     title   = "Below DEMA100",
+//     message = " {{ticker}} ({{interval}}) Below DEMA100"
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and BreachDema100CrossDown,
+//     title   = "BREACH Below DEMA100",
+//     message = "BREACH Below DEMA100 {{ticker}} ({{interval}})."
+// )
+
+//==============Pocket Pivot Volume===========================
+//=== Inputs ===
+ppLen      = input.int(10, "Pocket Pivot lookback (trading days)", minval=1)
+maLen      = input.int(50, "Volume MA length (for context only)",  minval=1)
+showVma    = input.bool(true, "Show volume moving average")
+showPPBars = input.bool(true, "Highlight Pocket Pivot bars")
+
+//=== Basic volume + up/down day ===
+isUp   = close > close[1]
+isDown = close < close[1]
+
+// 50‑period volume MA (for visual context, like original script)
+vma = ta.sma(volume, maLen)
+
+//=== Highest down‑day volume in last N trading days ===
+// We only consider bars where `isDown` was true.
+// Walk back bar‑by‑bar until we've seen `ppLen` down days or run out of history.
+var float maxDownVol = na
+var int   seen       = 0
+maxDownVol := 0.0
+seen       := 0
+
+for i = 1 to 500  // safety cap
+    if seen >= ppLen
+        break
+    if isDown[i]
+        maxDownVol := math.max(maxDownVol, volume[i])
+        seen += 1
+
+//=== Pocket Pivot condition ===
+// Up bar + today’s volume > highest down‑day volume of last N down days
+isPPV = isUp and volume > maxDownVol and seen == ppLen
+
+//=== Plot volume ===
+baseColor = color.new(color.gray, 70)
+ppvColor  = color.new(color.blue, 0)
+
+// plot(
+//     showPPBars and isPPV ? volume : volume,
+//     title     = "Volume",
+//     style     = plot.style_columns,
+//     color     = showPPBars and isPPV ? ppvColor : baseColor
+// )
+
+// Optional volume MA like the reference script
+// plot(
+//     showVma ? vma : na,
+//     title   = "Volume MA",
+//     color   = color.new(color.white, 0),
+//     linewidth = 1
+// )
+
+//Optional marker on PPV bars
+// plotshape(
+//     isPPV,
+//     title    = "Pocket Pivot Marker",
+//     style    = shape.circle,
+//     location = location.top,
+//     color    = ppvColor,
+//     size     = size.small
+// )
+
+// Alert: Pocket Pivot Volume detected
+// alertcondition(
+//     isIndiaEquityOpenHours and isPPV,
+//     title   = "Pocket Pivot Volume",
+//     message = "Pocket Pivot Volume detected: up bar volume > highest down-day volume of last PP lookback on {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and dema100crossUp and isPPV,
+//     title   = "DEMA100 crossup and PocketPivotVolume",
+//     message = "Pocket Pivot Volume detected: up bar volume > highest down-day volume of last PP lookback on {{ticker}} ({{interval}})."
+// )
+
+
+// //Optional visual marker
+// showDEMA100CrossUP_PPV = input.bool(false, "showDEMA100CrossUP_PPV")
+// plotshape(
+//     showDEMA100CrossUP_PPV and dema100crossUp and isPPV,
+//     title     = "DEMA100 crossup and PocketPivotVolume",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.blue,
+//     size      = size.normal
+// )
+
+
+
+// // Midpoint of candle body
+// bodyMid = (open + close) / 2.0
+
+// // Plot a small horizontal segment at body midpoint
+// // Continuous stepline at the body midpoint
+// // plot(
+// //     bodyMid,
+// //     title     = "Body Midpoint Stepline",
+// //     style     = plot.style_stepline,
+// //     color     = color.black,
+// //     linewidth = 2
+// // )
+
+
+// // Normal EMA lengths for cross over
+fastLen = input.int(9,  "Fast EMA Length")
+midLen = input.int(15, "Mid EMA Length")
+slowLen = input.int(21, "Slow EMA Length")
+EMA1Len = input.int(200, "Custom EMA Length")
+
+// // EMAs
+fastEma = ta.ema(close, fastLen)
+
+slowEma = ta.ema(close, slowLen)
+midEma = ta.ema(close, midLen)
+EMA1 = ta.ema(close, EMA1Len)
+
+
+
+
+// //plot(midEma, title="Mid EMA (15)",  color=color.new(color.orange, 0), linewidth=1)
+// ////plot(slowEma, title="Slow EMA (21)", color=color.new(color.red,   0), linewidth=1)
+// //plot(EMA1, title="custom EMA", color=color.new(color.white,   0), linewidth=1)
+
+// // Crossover logic
+// bullCrossema = ta.crossover(fastEma, slowEma)    // 9 crosses above 21
+// bearCrossema = ta.crossunder(fastEma, slowEma)   // 9 crosses below 21
+
+// // Yellow dot exactly at crossover bar (on price)
+// // plotshape(     bullCrossema,     title="Bullish Cross Dot",     style=shape.cross,     location=location.belowbar,     color=color.white,     size=size.small)
+// // plotshape(     bearCrossema,     title="Bearish Cross Dot",     style=shape.cross,     location=location.abovebar,     color=color.white,     size=size.small)
+
+// // // Alert conditions
+// // alertcondition(  isIndiaEquityOpenHours and    bullCrossema,     title="Bullish 9/21 EMA Crossover",     message="Bullish: 9 EMA crossed ABOVE 21 EMA on {{ticker}} ({{interval}})")
+// // alertcondition(  isIndiaEquityOpenHours and    bearCrossema,     title="Bearish 9/21 EMA Crossover",     message="Bearish: 9 EMA crossed BELOW 21 EMA on {{ticker}} ({{interval}})")
+// // alertcondition(  isIndiaEquityOpenHours and    bullCrossema or bearCrossema,     title="Both 9/21 EMA Cross",     message="9/21 EMA CROSS {{ticker}} ({{interval}})")
+
+
+// //======
+
+// // Length for both EMAs
+// len = input.int(100, "EMA Length", minval=1)
+
+// // Gap threshold (as % of price)
+// gapThreshold = input.float(0.1, "Max gap before crossover (%)", step=0.01, minval=0)
+
+// // Triple EMA (TEMA) and Double EMA (DEMA)
+// tema100 = ta.tema(close, len)
+// dema100 = ta.dema(close, len)
+
+// // Plot both EMAs
+// //plot(tema100, title="TEMA 100",   color=color.new(color.blue,  0), linewidth=2)
+// //plot(dema100, title="DEMA 100",   color=color.new(color.red,   0), linewidth=2)
+
+// // Gap between EMAs (absolute % difference)
+// gapPct = math.abs(tema100 - dema100) / close * 100.0
+
+// // Crossover condition WITH small gap filter
+// temaCrossUp = ta.crossover(tema100, dema100) and gapPct < gapThreshold and close > tema100 and close > dema100 and tema100 > tema100[1] and dema100 > dema100[1]
+
+// simpleTemaDemaCrossOver = ta.crossover(tema100, dema100) and tema100 > dema100 and close > tema100 and close > dema100 and tema100 > tema100[1] and dema100 > dema100[1]
+
+
+// Visual marker
+// plotshape(
+//     temaCrossUp,
+//     title     = "TEMA100 > DEMA100 (Small Gap)",
+//     style     = shape.circle,
+//     location  = location.belowbar,
+//     color     = color.blue,
+//     size      = size.small
+// )
+
+// Optional: background color for small gap periods
+// bgcolor(
+//     gapPct < gapThreshold   and tema100 >= dema100 and tema100 > tema100[1] and dema100 > dema100[1] and close > tema100 and close > dema100 ? color.new(color.green, 80) : na,
+//     title = "Small Gap Zone"
+// )
+
+// bgcolor (
+
+// simpleTemaDemaCrossOver  ? color.new(color.blue, 80) : na,
+
+// title  = "TemaDemaCrossOver"
+// )
+// Alert condition
+// alertcondition(
+//     isIndiaEquityOpenHours and temaCrossUp,
+//     title   = "TEMA100 Crosses Up DEMA100 (Small Gap)",
+//     message = "TEMA100 crossed ABOVE DEMA100 with gap < {{plot_0}}% on {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and simpleTemaDemaCrossOver,
+//     title   = "Simple TEMA100 CrossOver DEMA100",
+//     message = "{{ticker}} {{interval}} TEMA100 crossOver DEMA100"
+// )
+// alertcondition(
+//     isIndiaEquityOpenHours and (DEMA > DEMA[1] and isPPV and close > DEMA) or temaCrossUp,
+//     title   = "DEMA UP && PocketPivotVolume",
+//     message = "{{ticker}} {{interval}} DEMA UP && PPV"
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and simpleTemaDemaCrossOver or temaCrossUp,
+//     title   = "Any TEMA100 CrossOver DEMA100",
+//     message = "{{ticker}} {{interval}} TEMA100 crossOver DEMA100"
+// )
+
+vwma20 = ta.vwma(close, 20)
+showVWMA20 = input.bool(false, "VWMA 20")
+plot(showVWMA20?vwma20:na, title="VWMA 20", style     = plot.style_stepline,
+    color     = vwma20 > vwma20[1] ? color.new(color.lime, 40) : color.new(color.red, 40),
+    linewidth = 2)
+
+crossUp    = ta.crossover(close, vwma20)    // Price crosses above VWMA20
+closeAbove = close > vwma20                 // Close above VWMA20
+
+// Combined signal (cross + close above)
+vwma20cross = crossUp and closeAbove
+vmwaSignal = vwma20cross  and vwma20 > vwma20[1] //and isPPV
+// White flag marker on signal bar
+
+// Alert condition
+// alertcondition(
+//     isIndiaEquityOpenHours and vmwaSignal,
+//     title   = "Price Crossed Above VWMA20 + Close Above",
+//     message = "Price crossed ABOVE VWMA20 and closed above it on {{ticker}} ({{interval}})."
+// )
+
+// // Alert condition
+// alertcondition(
+//     isIndiaEquityOpenHours and vmwaSignal and close > DEMA and DEMA > DEMA[1],
+//     title   = "VWMA DEMA UP",
+//     message = "VWMA DEMA UP on {{ticker}} ({{interval}})."
+// )
+vwma20PPV = vwma20 > vwma20[1] and isPPV and close > vwma20
+alertcondition(
+   isIndiaEquityOpenHours and  vwma20PPV,
+    title   = "PPV on VWMA DEMA",
+    message = "PPV on VWMA DEMA {{ticker}} ({{interval}})."
+)
+
+showVWMA20Triangle = input.bool(false, "showVWMA20Triangle")
+plotshape(
+    showVWMA20Triangle and vwma20PPV,
+    title     = "PPV on VWMA DEMA",
+    style     = shape.triangleup,
+    location  = location.belowbar,
+    color     = color.new(color.white, 0),
+    size      = size.tiny
+)
+
+
+/////RS alert
+// === Inputs ===
+//indexSym = input.symbol("NIFTYMIDSML400", "Index Symbol (NIFTYMIDSML400)")
+isNSE = str.contains(syminfo.ticker, "NSE") or str.contains(syminfo.prefix, "NSE")
+indexSym = isNSE ? "NIFTYMIDSML400" : "SPX"
+emaLen   = input.int(21, "RS EMA Length")
+
+// === Relative Strength Line ===
+//stockClose  = request.security(syminfo.tickerid, timeframe.period, close)
+indexClose  = request.security(indexSym, timeframe.period, close)
+//rsLine = (stockClose / indexClose) * 1000  // Scaled for visibility
+rsLine = (close / indexClose) * 1000  // Scaled for visibility
+
+rsEma9 = ta.ema(rsLine, 9)
+
+rsWeak=rsLine<rsEma9
+priceBelowEma9=close<ta.ema(close,9)
+exitSignal=rsWeak// and priceBelowEma9
+
+rsStrong= rsLine > rsEma9
+priceAboveEma9=close>ta.ema(close,9)
+entrySignal = rsStrong and priceAboveEma9
+
+plotshape(exitSignal,title="RS Exit",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,85),size=size.tiny)
+//bgcolor(exitSignal ? color.new(color.red,95) : na,title="RS Exit Background")
+
+
+//bgcolor(entrySignal ? color.new(color.blue,95) : na,title="RS Entry Background")
+
+// RS Transition: Weak → Strong
+rsWasWeak=rsLine[1]<rsEma9[1]
+rsNowStrong=rsLine>rsEma9
+transition=rsWasWeak and rsNowStrong
+
+ema9crossUp = ta.crossover(close, fastEma)
+RSgreenshoots = (rsNowStrong and ema9crossUp) or (ema9crossUp and isPPV)
+//plotshape(RSgreenshoots,title="RS Strong Transition",style=shape.triangleup,location=location.belowbar,color=color.new(color.lime,0),size=size.small)
+bgcolor(transition ? color.new(color.blue,85) : na,title="RS Transition")
+plotshape(transition,title="RS Weak→Strong",style=shape.triangleup,location=location.belowbar,color=color.new(color.lime,0),size=size.tiny)
+
+alertcondition(isIndiaEquityOpenHours and transition,title="RS Weak→Strong",message=" {{ticker}} RS WEAK-->STRONG")
+alertcondition(isIndiaEquityOpenHours and RSgreenshoots,title="RS GreenShoots",message=" {{ticker}} RS GreenShoots")
+alertcondition(isIndiaEquityOpenHours and transition and zlema25 > zlema25[1] and close > zlema25 ,title="RS Weak→Strong + ZLEMA25 UP",message=" {{ticker}} RS WEAK-->STRONG + ZLEMA25 UP")
+//ZLEMA25 crossover
+ZLEMA25crossUp = ta.crossover(close, zlema25) and zlema25 > zlema25[1]
+alertcondition(isIndiaEquityOpenHours and transition or ZLEMA25crossUp ,title="RS Weak→Strong -OR- ZLEMA25 UP",message=" {{ticker}} RS WEAK-->STRONG -OR- ZLEMA25 UP")
+alertcondition(isIndiaEquityOpenHours and ZLEMA25crossUp ,title="ZLEMA25 Crossing UP",message=" {{ticker}} ZLEMA25 Crossing UP")
+
+// RS Transition: Strong → Weak
+rsWasStrong = rsLine[1] > rsEma9[1]
+rsNowWeak = rsLine < rsEma9
+transitionToWeak = rsWasStrong and rsNowWeak
+alertcondition(isIndiaEquityOpenHours and transitionToWeak and zlema25 < zlema25[1] and close < zlema25 ,title="RS Poor-SHORT",message=" {{ticker}} RS Poor-SHORT+ZLEMA25 down")
+plotshape(transitionToWeak,title="RS Poor-SHORT",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,0),size=size.tiny)
+bgcolor(transitionToWeak ? color.new(color.red,85) : na,title="RS Poor-SHORT")
+
+
+
+// RS Down→Up Transition Line Alert", shorttitle="RS Trend Turn
+//===================================================
+
+// // RS downtrend condition
+// rsDownToday = rsLine < rsLine[1]
+
+// // Persistent storage for latest level and line
+// var float storedLevel = na
+// var line activeLine = na
+
+// // Update only when current RS is down
+// if rsDownToday
+//     storedLevel := high
+    
+//     if not na(activeLine)
+//         line.delete(activeLine)
+    
+//     activeLine := line.new(
+//          x1 = bar_index,
+//          y1 = storedLevel,
+//          x2 = bar_index + 5,
+//          y2 = storedLevel,
+//          extend = extend.none,
+//          color = color.new(color.aqua, 0),
+//          width = 2,
+//          style = line.style_solid
+//      )
+
+// // Alert only on latest stored level
+// storedLevelCrossver = ta.crossover(close, storedLevel)
+// priceMeetsLevel = not na(storedLevel) and storedLevelCrossver
+
+// alertcondition(
+//     isIndiaEquityOpenHours and  priceMeetsLevel,
+//      title = "Close crossed latest RS-down high line",
+//      message = "Close crossed above latest RS-down stored high line on {{ticker}} at {{close}}"
+// )
+//================================================================
+
+// RS state
+rsDownToday = rsLine < rsLine[1]
+rsUpToday   = rsLine > rsLine[1]
+
+// Persistent storage for latest levels and lines
+var float latestRsHigh = na
+var float latestRsLow  = na
+var line latestRsHighLine = na
+var line latestRsLowLine  = na
+
+// Update latest RS-down high line
+if rsDownToday
+    latestRsHigh := high
+    if not na(latestRsHighLine)
+        line.delete(latestRsHighLine)
+    latestRsHighLine := line.new(
+         x1 = bar_index,
+         y1 = latestRsHigh,
+         x2 = bar_index + 5,
+         y2 = latestRsHigh,
+         extend = extend.right,
+         color = color.new(color.aqua,70),
+         width = 1,
+         style = line.style_solid
+     )
+
+// // Update latest RS-up low line
+// if rsUpToday
+//     latestRsLow := low
+//     if not na(latestRsLowLine)
+//         line.delete(latestRsLowLine)
+//     latestRsLowLine := line.new(
+//          x1 = bar_index,
+//          y1 = latestRsLow,
+//          x2 = bar_index + 5,
+//          y2 = latestRsLow,
+//          extend = extend.right,
+//          color = color.new(color.fuchsia, 0),
+//          width = 2,
+//          style = line.style_solid
+//      )
+
+// Raw cross conditions, calculated every bar
+latestRsHighCrossOver_ = ta.crossover(close, latestRsHigh)
+latestRsLowCrossUnder_ = ta.crossunder(close, latestRsLow)
+
+// Final conditions
+closeCrossedLatestRsHigh = not na(latestRsHigh) and latestRsHighCrossOver_
+closeCrossedLatestRsLow  = not na(latestRsLow) and latestRsLowCrossUnder_
+
+// Alerts
+alertcondition(isIndiaEquityOpenHours and closeCrossedLatestRsHigh, title="Close crossed latest RS high line", message="Close crossed above latest RS high line on {{ticker}} at {{close}}")
+alertcondition(isIndiaEquityOpenHours and closeCrossedLatestRsLow, title="Close crossed latest RS low line", message="Close crossed below latest RS low line on {{ticker}} at {{close}}")
+
+
+
+
+
+//===============================================================
+
+// === 21-day EMA of RS Line ===
+// rsEma21 = ta.ema(rsLine, emaLen)
+// rsEma45 = ta.ema(rsLine, 45) // 9 ema on week TF = 9*5 = 45 on day TF
+
+// rs9CrossUp = ta.crossover(rsLine,rsEma9)
+// rs21CrossUp = ta.crossover(rsLine,rsEma21)
+// rs45CrossUp = ta.crossover(rsLine,rsEma45)
+// plotshape(rs9CrossUp and rs21CrossUp and rsEma9 > rsEma9[1] and rsEma21 > rsEma21[1] ,title="RS9_21 Entry",style=shape.diamond,location=location.belowbar,color=color.new(color.white,0),size=size.tiny)
+// plotshape(rs9CrossUp and rs21CrossUp and rs45CrossUp and rsEma9 > rsEma9[1] and rsEma21 > rsEma21[1] ,title="RS9_21_45 Entry",style=shape.cross,location=location.belowbar,color=color.new(color.white,0),size=size.small)
+
+// alertcondition(isIndiaEquityOpenHours and rs9CrossUp and rs21CrossUp and rsEma9 > rsEma9[1] and rsEma21 > rsEma21[1],title="RS9_21 single shot crossup",message=" {{ticker}} RS9_21 single shot crossup")
+
+
+// rs921CrossUp = ta.crossover(rsEma9,rsEma21)
+// plotshape(rs921CrossUp ,title="RS9_21_Crossup Entry",style=shape.xcross,location=location.abovebar,color=color.new(color.white,0),size=size.tiny)
+
+//plotshape(transition and entrySignal and rsLine >=rsEma21 and rsEma45 >= rsEma45[1],title="RS45 Entry",style=shape.triangleup,location=location.belowbar,color=color.new(color.white,0),size=size.small)
+//plotshape( rsStrong and ema9crossUp and rsLine >=rsEma21 and rsEma45 > rsEma45[1],title="RS21 Entry",style=shape.triangleup,location=location.belowbar,color=color.new(color.blue,0),size=size.tiny)
+
+// // RS weekly 9 EMA
+// rsWeeklyEma9 = request.security(syminfo.tickerid, "1W", ta.ema(rsLine, 9))
+// rsCrossUpWeeklyEma9 = ta.crossover(rsLine, rsWeeklyEma9)
+// plotshape(
+//     rsCrossUpWeeklyEma9,
+//     title     = "RS Above RSWeeklyEMA9",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.blue,
+//     size      = size.small
+// )
+// alertcondition(
+//    isIndiaEquityOpenHours and  rsCrossUpWeeklyEma9,
+//     title   = "RS Above RSWeeklyEMA9",
+//     message = "{{ticker}} {{interval}} RS Above RSWeeklyEMA9"
+// )
+
+// === Plots ===
+//plot(rsLine, title="RS Line", color=rsLine > rsLine[1] ? color.blue : color.red, linewidth=3, style = plot.style_stepline)
+//plot(rsEma21, title="RS EMA 21", color=rsEma21 > rsEma21[1]?color.blue : color.red, linewidth=2)
+
+// // Zero line for reference
+// hline(0, "Zero Line", color=color.gray, linestyle=hline.style_dashed)
+
+// === Crossover condition ===
+// rsCrossUp = ta.crossover(rsLine, rsEma21)// and rsLine > rsEma21
+// rsCrossUpNormal = rsCrossUp and not isPPV and close > fastEma // fastEma is 9
+// rsCrossUpPPV = rsCrossUp and isPPV and close > fastEma // fastEma is 9
+
+
+// rsEma921CrossUp = ta.crossover(rsEma9, rsEma21)
+
+// plotshape(
+//     rsEma921CrossUp and rsEma9> rsEma9[1] and rsEma21 > rsEma21[1] ,
+//     title     = "RS 9/21 crossUp",
+//     style     = shape.xcross,
+//     location  = location.belowbar,
+//     color     = color.white,
+//     size      = size.tiny
+// )
+
+// === Visual marker ===
+// plotshape(
+//     rsCrossUpNormal ,
+//     title     = "Normal RS Line > EMA21",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.fuchsia,
+//     size      = size.tiny
+// )
+// plotshape(
+//     rsCrossUpPPV,
+//     title     = "RS Line > EMA21 with PPV",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.aqua,
+//     size      = size.tiny
+// )
+
+// === Background highlight ===
+//bgcolor(rsCrossUp ? color.new(color.green, 85) : na, title="RS Cross Up")
+
+// === Alert ===
+
+// alertcondition(
+//     isIndiaEquityOpenHours and rsCrossUpNormal,
+//     title   = "Normal RS up",
+//     message = "Normal RS up {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and rsCrossUpPPV,
+//     title   = "Relative Strength UP with PPV",
+//     message = "Relative Strength on with PPV {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//     isIndiaEquityOpenHours and rsCrossUpPPV or vwma20PPV,
+//     title   = "RS_PPV or VWMA20_PPV",
+//     message = "RS_PPV or VWMA20_PPV on {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//    isIndiaEquityOpenHours and  rsCrossUpPPV or rsCrossUpNormal,
+//     title   = "RS ALL",
+//     message = "RS ALL on {{ticker}} ({{interval}})."
+// )
+
+// alertcondition(
+//    isIndiaEquityOpenHours and  rsCrossUpNormal or isPPV,
+//     title   = "RS or PPV on WeeklyVWMA20",
+//     message = "{{ticker}} RS or PPV on AboveWeeklyVWMA20 "
+// )
+
+// alertcondition(
+//    isIndiaEquityOpenHours and  rsCrossUp or isPPV,
+//     title   = "Any RS or PPV on AboveWeeklyVWMA20",
+//     message = "{{ticker}} Any RS or PPV on AboveWeeklyVWMA20 "
+// )
+
+// Trend detection (VWMA slope)
+uptrend   = vwma20 > vwma20[1]
+downtrend = vwma20 < vwma20[1]
+
+// Percentage difference: (high - VWMA20) / VWMA20 * 100
+highPctDist = vwma20 != 0 and close > close[1]? (high - vwma20) / vwma20 * 100 : 0
+// Dot conditions
+orangeDot = highPctDist >= 15.0 and highPctDist < 25.0  // 10-15%
+redDot    = highPctDist >= 25.0                          // 15%+
+
+// Orange dot (10-15%)
+// plotshape(
+//     orangeDot,
+//     title     = "10-15% Above VWMA20",
+//     style     = shape.circle,
+//     location  = location.abovebar,
+//     color     = color.orange,
+//     size      = size.tiny
+// )
+
+// // Red dot (15%+)
+// plotshape(
+//     redDot,
+//     title     = "15%+ Above VWMA20",
+//     style     = shape.circle,
+//     location  = location.abovebar,
+//     color     = color.red,
+//     size      = size.tiny
+// )
+
+// if orangeDot or redDot
+//     label.new(
+//         bar_index, high,
+//         text="+" + str.tostring(highPctDist, "#.##") + "%",
+//         style=orangeDot ? label.style_label_down : label.style_label_down,
+//         color=orangeDot ? color.new(color.orange, 20) : color.new(color.red, 20),
+//         textcolor=color.white,
+//         size=size.tiny
+//     )
+
+
+
+// // === Weekly VWMA20 ===
+// weeklyVWMA20 = request.security(syminfo.tickerid, "1W", ta.vwma(close, 20))
+
+// // === Trend detection (Weekly VWMA slope) ===
+// weeklyUptrend   = weeklyVWMA20 > weeklyVWMA20[1]
+// weeklyDowntrend = weeklyVWMA20 < weeklyVWMA20[1]
+
+// //=== Dotted stepline: Aqua uptrend, Purple downtrend ===
+// priceAboveWeeklyVWMA20 = close > weeklyVWMA20
+// showweeklyVWMA20 = input.bool(false, "weeklyVWMA20")
+// plot(
+//     showweeklyVWMA20?weeklyVWMA20:na,
+//     title     = "Weekly VWMA20 Stepline",
+//     style     = plot.style_stepline,
+//     color     = priceAboveWeeklyVWMA20 ? color.new(color.aqua, 0) : color.new(color.purple, 0),
+//     linewidth = 1
+// )
+
+// === Condition: Daily price above Weekly VWMA20 ===
+
+
+// === Aqua circle on daily chart when condition is true ===
+// plotshape(
+//     priceAboveWeeklyVWMA20,
+//     title     = "Daily Price > Weekly VWMA20",
+//     style     = shape.circle,
+//     location  = location.belowbar,
+//     color     = color.aqua,
+//     size      = size.small
+// )
+
+// // === Background highlight (optional) ===
+// showBg = input.bool(false, "AboveWeeklyVWMA20 bgColor")
+// bgcolor(showBg and priceAboveWeeklyVWMA20 ? color.new(color.aqua, 92) : na, title="Price Above Weekly VWMA20")
+
+// // === Alert ===
+// alertcondition(
+//     isIndiaEquityOpenHours and priceAboveWeeklyVWMA20,
+//     title   = "Daily Price Above Weekly VWMA20",
+//     message = "Daily close ABOVE Weekly VWMA20 on {{ticker}}."
+// )
+
+
+// // === Weekly VWMA10 ===
+// weeklyVWMA10 = request.security(syminfo.tickerid, "1W", ta.vwma(close, 10))
+
+// // === Trend detection (Weekly VWMA slope) ===
+// weeklyVWMA10Uptrend   = weeklyVWMA10 > weeklyVWMA10[1]
+// weeklyVWMA10Downtrend = weeklyVWMA10 < weeklyVWMA10[1]
+
+// // === Condition: Daily price above Weekly VWMA20 ===
+// priceAboveWeeklyVWMA10 = close > weeklyVWMA10
+
+
+// // === Dotted stepline: Aqua uptrend, Purple downtrend ===
+// showweeklyVWMA10 = input.bool(false, "weeklyVWMA10")
+// plot(
+//     showweeklyVWMA10?weeklyVWMA10:na,
+//     title     = "Weekly VWMA10 Stepline",
+//     style     = plot.style_stepline,
+//     color     = priceAboveWeeklyVWMA10 ? color.new(color.lime, 0) : color.new(color.red, 0),
+//     linewidth = 1
+// )
+
+
+// // === Aqua circle on daily chart when condition is true ===
+// // plotshape(
+// //     priceAboveWeeklyVWMA,
+// //     title     = "Daily Price > Weekly VWMA20",
+// //     style     = shape.circle,
+// //     location  = location.belowbar,
+// //     color     = color.aqua,
+// //     size      = size.small
+// // )
+
+// === Background highlight (optional) ===
+// showBgVWM10 = input.bool(false, "AboveWeeklyVWMA10 bgColor")
+// bgcolor(showBgVWM10 and priceAboveWeeklyVWMA10 ? color.new(color.lime, 92) : na, title="Price Above Weekly VWMA10")
+
+// // === Alert ===
+// alertcondition(
+//    isIndiaEquityOpenHours and  priceAboveWeeklyVWMA10,
+//     title   = "Daily Price Above Weekly VWMA10",
+//     message = "Daily close ABOVE Weekly VWMA10 on {{ticker}}."
+// )
+
+
+
+// // === 25mins VWMA20 ===
+// VWMA20_25Mins = request.security(syminfo.tickerid, "25", ta.vwma(close, 20))
+// // === Trend detection (VWMA20_25Mins VWMA slope) ===
+// VWMA20_25Mins_Uptrend   = VWMA20_25Mins > VWMA20_25Mins[1]
+// VWMA20_25Mins_Downtrend = VWMA20_25Mins < VWMA20_25Mins[1]
+// // === Dotted stepline: Aqua uptrend, Purple downtrend ===
+
+// showVWMA20_25Mins = input.bool(false, "Show VWMA20_25Mins")
+// plot(
+//     showVWMA20_25Mins ? VWMA20_25Mins : na,
+//     title     = "VWMA20_25Mins_Trend",
+//     style     = plot.style_stepline,
+//     color     = VWMA20_25Mins_Uptrend ? color.new(color.aqua, 0) : color.new(color.purple, 0),
+//     linewidth = 3
+// )
+
+// // === 5mins VWMA20 ===
+// VWMA20_5Mins = request.security(syminfo.tickerid, "5", ta.vwma(close, 20))
+
+// // === Trend detection (VWMA20_5Mins VWMA slope) ===
+// VWMA20_5Mins_Uptrend   = VWMA20_5Mins > VWMA20_5Mins[1]
+// VWMA20_5Mins_Downtrend = VWMA20_5Mins < VWMA20_5Mins[1]
+// // === Dotted stepline: Aqua uptrend, Purple downtrend ===
+
+// showVWMA20_5Mins = input.bool(false, "Show VWMA20_5Mins")
+// plot(
+//     showVWMA20_5Mins ? VWMA20_5Mins : na,
+//     title     = "VWMA20_5Mins_Trend",
+//     style     = plot.style_stepline,
+//     color     = VWMA20_5Mins_Uptrend ? color.new(color.aqua, 0) : color.new(color.purple, 0),
+//     linewidth = 2
+// )
+
+// minInsideBars = input.int(2, "Minimum Inside Bars", minval=2)
+// showBreakout = input.bool(true, "Show Breakout Signal")
+// coilBoxColor = input.color(color.new(color.gray, 90), "Coil Box Color")
+// coilBorderColor = input.color(color.new(color.gray, 0), "Coil Border Color")
+// motherUpColor = input.color(color.new(color.white, 0), "Mother Up Bar Color")
+// motherDownColor = input.color(color.new(color.black, 0), "Mother Down Bar Color")
+
+// var box coilBox = na
+// var float coilHigh = na
+// var float coilLow = na
+// var int coilStart = na
+// var int coilEnd = na
+// var bool coilActive = false
+
+// isCoil(len) =>
+//     mbHigh = high[len]
+//     mbLow = low[len]
+//     ok = true
+//     for i = 0 to len - 1
+//         ok := ok and high[i] <= mbHigh and low[i] >= mbLow
+//     ok
+
+// coilFound = isCoil(minInsideBars)
+// motherBarIndex = bar_index - minInsideBars
+
+// if coilFound
+//     coilHigh := high[minInsideBars]
+//     coilLow := low[minInsideBars]
+//     coilStart := motherBarIndex
+//     coilEnd := bar_index+10
+//     coilActive := true
+//     if not na(coilBox)
+//         box.delete(coilBox)
+//     coilBox := box.new(left=coilStart, top=coilHigh, right=coilEnd, bottom=coilLow, bgcolor=coilBoxColor, border_color=coilBorderColor)
+
+// //barcolor(bar_index == motherBarIndex ? (close[minInsideBars] >= open[minInsideBars] ? motherUpColor : motherDownColor) : na)
+
+// coilHighCrossover = ta.crossover(close, coilHigh)
+// coilLowCrossunder = ta.crossunder(close, coilLow)
+// coilLowCrossover = ta.crossover(close, coilLow)
+
+// breakoutUp = coilActive and coilHighCrossover
+// breakdownLow = coilActive and coilLowCrossunder
+// breakoutLow = coilActive and coilLowCrossover
+// alertcondition(isIndiaEquityOpenHours and breakoutUp, title="Mini Coil Breakout Up", message="Mini Coil breakout above mother bar high on {{ticker}}")
+// alertcondition(isIndiaEquityOpenHours and breakdownLow, title="Mini Coil Breakdown Low", message="Price breached mother bar low on {{ticker}}")
+// alertcondition(isIndiaEquityOpenHours and breakdownLow, title="Mini Coil BreakOut Low", message="Price breakout above mother bar low on {{ticker}}")
+
+
+
+//+++++
+
+
+minInsideBars = input.int(2, "Minimum Inside Bars", minval=2)
+showBreakout = input.bool(true, "Show Breakout Signal")
+coilBoxColor = input.color(color.new(color.gray, 90), "Coil Box Color")
+coilBorderColor = input.color(color.new(color.gray, 0), "Coil Border Color")
+motherUpColor = input.color(color.new(color.white, 0), "Mother Up Bar Color")
+motherDownColor = input.color(color.new(color.black, 0), "Mother Down Bar Color")
+extendBars = input.int(10, "Box Extend Bars", minval=1)
+lookbackDays = input.int(365, "Lookback Days", minval=30)
+
+var box[] coilBoxes = array.new_box()
+var int[] coilStarts = array.new_int()
+var int[] coilEnds = array.new_int()
+var float[] coilHighs = array.new_float()
+var float[] coilLows = array.new_float()
+
+var float coilHigh = na
+var float coilLow = na
+var int coilStart = na
+var int coilEnd = na
+var bool coilActive = false
+
+isCoil(len) =>
+    mbHigh = high[len]
+    mbLow = low[len]
+    ok = true
+    for i = 0 to len - 1
+        ok := ok and high[i] <= mbHigh and low[i] >= mbLow
+    ok
+
+cutoffTime = timenow - lookbackDays * 24 * 60 * 60 * 1000
+coilFound = bar_index >= minInsideBars and isCoil(minInsideBars)
+motherBarIndex = bar_index - minInsideBars
+motherBarTime = time[minInsideBars]
+
+if coilFound and motherBarTime >= cutoffTime
+    newHigh = high[minInsideBars]
+    newLow = low[minInsideBars]
+    newStart = motherBarIndex
+    newEnd = bar_index + extendBars
+    isOverlap = array.size(coilStarts) > 0 and newStart <= array.get(coilEnds, array.size(coilEnds) - 1)
+    if isOverlap
+        lastBox = array.get(coilBoxes, array.size(coilBoxes) - 1)
+        box.delete(lastBox)
+        array.pop(coilBoxes)
+        array.pop(coilStarts)
+        array.pop(coilEnds)
+        array.pop(coilHighs)
+        array.pop(coilLows)
+    newBox = box.new(left=newStart, top=newHigh, right=newEnd, bottom=newLow, bgcolor=coilBoxColor, border_color=coilBorderColor)
+    array.push(coilBoxes, newBox)
+    array.push(coilStarts, newStart)
+    array.push(coilEnds, newEnd)
+    array.push(coilHighs, newHigh)
+    array.push(coilLows, newLow)
+    coilHigh := newHigh
+    coilLow := newLow
+    coilStart := newStart
+    coilEnd := newEnd
+    coilActive := true
+
+barcolor(bar_index == motherBarIndex ? (close[minInsideBars] >= open[minInsideBars] ? motherUpColor : motherDownColor) : na)
+
+coilHighCrossover_ = ta.crossover(close, coilHigh)
+coilLowCrossunder_ = ta.crossunder(close, coilLow)
+coilLowCrossover_ = ta.crossover(close, coilLow)
+coilHighCrossover = coilActive and not na(coilHigh) and coilHighCrossover_
+coilLowCrossunder = coilActive and not na(coilLow) and coilLowCrossunder_
+coilLowCrossover = coilActive and not na(coilLow) and coilLowCrossover_
+
+breakoutUp = coilHighCrossover
+breakdownLow = coilLowCrossunder
+breakoutLow = coilLowCrossover
+
+//plotshape(showBreakout and breakoutUp, title="Mini Coil Breakout Up", style=shape.triangleup, color=color.new(color.white, 100), text="BO", textcolor=color.blue, size=size.tiny)
+//plotshape(showBreakout and breakdownLow, title="Mini Coil Breakdown Low", style=shape.triangledown, location=location.belowbar, color=color.new(color.white, 100), size=size.tiny, text="BD", textcolor=color.red)
+//plotshape(showBreakout and breakoutLow, title="Mini Coil Breakout Low", style=shape.circle, location=location.belowbar, color=color.new(color.white, 100), size=size.tiny, text="LB", textcolor=color.lime)
+
+
+// alertcondition(isIndiaEquityOpenHours and breakoutUp, title="Mini Coil Breakout Up", message="Mini Coil breakout above mother bar high on {{ticker}}")
+// alertcondition(isIndiaEquityOpenHours and breakdownLow, title="Mini Coil Breakdown Low", message="Price breached mother bar low on {{ticker}}")
+alertcondition(isIndiaEquityOpenHours and breakoutLow, title="Mini Coil BreakOut Low", message="Price breakout above mother bar low on {{ticker}}")
+
+motherLowTouchBounce = coilActive and not na(coilLow) and low <= coilLow and close >= coilLow
+//plotshape(showBreakout and motherLowTouchBounce, title="Mother Candle Low TOUCH Bounce", style=shape.labelup, location=location.belowbar, color=color.new(color.white, 100), text="LB", textcolor=color.blue, size=size.tiny)
+alertcondition(isIndiaEquityOpenHours and motherLowTouchBounce, title="Mother Candle Low TOUCH Bounce", message="Price touched mother candle low and bounced on {{ticker}}")
+
+//+++++
+
+
+
+// // 1) Trend condition: ZLEMA rising now and previous 2 bars
+// zlemaUptrend = zlema25 > zlema25[1] and zlema25[1] > zlema25[2]
+
+// // 2) Previous bar/day context
+// prevBarAbove = close[1] > zlema25[1]
+
+// // 3) Current bar touches and bounces from ZLEMA
+// touchToday   = low <= zlema25
+// bounceToday  = touchToday and close > zlema25 and close > open
+
+// // 4) Tight entry: close within 1% above ZLEMA
+// //tightEntry   = close >= zlema25 and close <= zlema25 * 1.01
+
+// // 5) Final condition
+// buyCondition = isIndiaEquityOpenHours and zlemaUptrend and prevBarAbove and bounceToday// and tightEntry
+
+// // // Plot touch markers for analysis
+// // plotshape(
+// //      touchToday,
+// //      title="Touch ZLEMA",
+// //      style=shape.circle,
+// //      location=location.belowbar,
+// //      color=color.orange,
+// //      size=size.tiny
+// // )
+
+// // Plot all current + previous valid signals for backtesting
+// plotshape(
+//      buyCondition,
+//      title="ZLEMA Buy Signal",
+//      text="BUY",
+//      style=shape.triangleup,
+//      location=location.belowbar,
+//      color=color.rgb(157, 0, 230),
+//      textcolor=color.white,
+//      size=size.small
+// )
+
+// // Highlight bars where condition is true
+// //barcolor(buyCondition ? color.lime : na)
+// //bgcolor(buyCondition ? color.new(color.green, 90) : na)
+
+// // Show only the latest live signal as label
+// var label lastSignal = na
+// if barstate.islast and buyCondition
+//     label.delete(lastSignal)
+//     lastSignal := label.new(
+//          bar_index,
+//          low,
+//          "ZLEMA Bounce\n<=1% Entry",
+//          style=label.style_label_up,
+//          color=color.lime,
+//          textcolor=color.black
+//     )
+
+// // Alert
+// alertcondition(
+//      buyCondition,
+//      title="ZLEMA25 Uptrend Touch Bounce",
+//      message="ZLEMA25 rising, previous bar above ZLEMA25, touched and bounced, entry within 1%, during India market hours"
+// )
+
+
+// Inputs
+showHighLine   = input.bool(true, "Show 2 Days Back High Line")
+showMidLine    = input.bool(true, "Show 3 Days Back Mid Line")
+highLineColor  = input.color(color.blue, "2 Days Back High Color")
+midLineColor   = input.color(color.orange, "3 Days Back Mid Color")
+lineWidth      = input.int(1, "Line Width", minval=1, maxval=5)
+
+// Detect new day
+newDay = timeframe.change("D")
+
+// Current day tracking
+var float curDayHigh = na
+var float curDayLow  = na
+
+// Completed daily values
+var float[] dayHighArr = array.new_float()
+var float[] dayLowArr  = array.new_float()
+
+if barstate.isfirst
+    curDayHigh := high
+    curDayLow := low
+
+if newDay
+    array.push(dayHighArr, curDayHigh)
+    array.push(dayLowArr, curDayLow)
+
+    curDayHigh := high
+    curDayLow := low
+else
+    curDayHigh := na(curDayHigh) ? high : math.max(curDayHigh, high)
+    curDayLow  := na(curDayLow)  ? low  : math.min(curDayLow, low)
+
+// Levels
+twoDaysBackHigh = array.size(dayHighArr) >= 2 ? array.get(dayHighArr, array.size(dayHighArr) - 2) : na
+threeDaysBackHigh = array.size(dayHighArr) >= 3 ? array.get(dayHighArr, array.size(dayHighArr) - 3) : na
+threeDaysBackLow  = array.size(dayLowArr)  >= 3 ? array.get(dayLowArr,  array.size(dayLowArr)  - 3) : na
+threeDaysBackMid  = not na(threeDaysBackHigh) and not na(threeDaysBackLow) ? (threeDaysBackHigh + threeDaysBackLow) / 2.0 : na
+
+// Store the bar where level becomes available/calculated
+var int twoDaysBackCalcBar = na
+var int threeDaysBackCalcBar = na
+
+if newDay
+    if not na(twoDaysBackHigh)
+        twoDaysBackCalcBar := bar_index-2
+    if not na(threeDaysBackMid)
+        threeDaysBackCalcBar := bar_index-3
+
+// Persistent lines
+var line highLine = na
+var line midLine = na
+
+// Draw lines starting exactly from the calculation bar
+if newDay
+    if not na(highLine)
+        line.delete(highLine)
+    if not na(midLine)
+        line.delete(midLine)
+
+    if showHighLine and not na(twoDaysBackHigh) and not na(twoDaysBackCalcBar)
+        highLine := line.new(
+             x1 = twoDaysBackCalcBar,
+             y1 = twoDaysBackHigh,
+             x2 = bar_index + 1,
+             y2 = twoDaysBackHigh,
+             extend = extend.right,
+             color = highLineColor,
+             width = lineWidth,
+             style = line.style_solid)
+
+    if showMidLine and not na(threeDaysBackMid) and not na(threeDaysBackCalcBar)
+        midLine := line.new(
+             x1 = threeDaysBackCalcBar,
+             y1 = threeDaysBackMid,
+             x2 = bar_index + 1,
+             y2 = threeDaysBackMid,
+             extend = extend.right,
+             color = midLineColor,
+             width = lineWidth,
+             style = line.style_dashed)
+
+// Alerts
+crossAbove2DayBackHigh_ = ta.crossover(close, twoDaysBackHigh)
+touch3DayBackMidBounce_ = low <= threeDaysBackMid and close >= threeDaysBackMid
+
+crossAbove2DayBackHigh = not na(twoDaysBackHigh) and crossAbove2DayBackHigh_
+touch3DayBackMidBounce = not na(threeDaysBackMid) and touch3DayBackMidBounce_
+
+alertcondition(crossAbove2DayBackHigh, title="Close crossed 2 days back high", message="Close crossed above 2 days back high on {{ticker}} at {{close}}")
+alertcondition(touch3DayBackMidBounce, title="3 days back mid touch bounce", message="Price touched 3 days back midpoint and bounced on {{ticker}} at {{close}}")
+
+// // Optional markers
+// plotshape(crossAbove2DayBackHigh, title="2DB High Break", style=shape.labelup, location=location.abovebar, color=color.new(color.white, 100), text="2DH", textcolor=color.aqua, size=size.tiny)
+// plotshape(touch3DayBackMidBounce, title="3DB Mid Bounce", style=shape.labelup, location=location.belowbar, color=color.new(color.white, 100), text="MID", textcolor=color.orange, size=size.tiny)
