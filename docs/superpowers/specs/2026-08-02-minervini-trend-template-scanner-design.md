@@ -110,3 +110,31 @@ CLAUDE.md updates required:
   requested, can follow as a separate task once this scanner has run and its
   output format is confirmed against real data.
 - Scored/partial-pass variant — explicitly rejected in favor of strict gate.
+
+## Addendum (2026-08-02): Age + additions/deletions
+
+Added after the first live run, same design session.
+
+**Age** — consecutive trading days ALL 9 checks (8 SMA/52wk + RS gate) have
+held true together, walking backward from today. Computed by vectorizing the
+per-bar check math (`_checks_series()`, `_sma_pass_series()`,
+`_rs_pass_series()`) across the full close history instead of just
+`.iloc[-1]`, then doing the same backward-walk-count loop
+`rs_weekly_ema9_scanner.weekly_rs_ema9_trend()` uses for its own age field.
+No state file needed — self-contained per run. Capped at `AGE_CAP = 400` bars
+(matches `load_ohlc()`'s default lookback, so age can never claim more history
+than was actually loaded). `trend_template_checks()` is now implemented as
+`{k: bool(v.iloc[-1]) for k, v in _checks_series(close).items()}` so the
+single-day and whole-history code paths can't drift apart.
+
+**Additions/deletions** — new `minervini_scans/minervini_trend_state.json`
+persists today's qualifying symbol set (mirrors
+`rs_weekly_ema9_scanner.py`'s `load_previous()`/`save_current()`). Rendered as
+one table with two side-by-side columns (`| Additions | Deletions |`) at the
+top of the output file, right after the generated-timestamp line and before
+the scan-definition table. Shorter column blank-padded; both-empty shows
+`*(none)* | *(none)*` rather than omitting the table.
+
+Output table gained one column: `Age` (right after `%above 52wk-low`). Sort
+order is unchanged — still `%off 52wk-high` descending, not age — this was an
+additive change only.

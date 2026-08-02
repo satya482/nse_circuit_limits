@@ -22,6 +22,14 @@ Strict AND-gate, all 9 checks must pass (Mark Minervini's Trend Template):
 
 No partial-score output -- binary qualify list.
 
+Age: consecutive trading days ALL 9 checks have held true together, walking
+back through OHLC history (no state file needed, see trend_template_age()).
+
+Additions/deletions: today's qualifying symbols diffed against the previous
+run's (state persisted in minervini_trend_state.json, mirrors
+rs_weekly_ema9_scanner.py's diff pattern) -- shown as a 2-column table at the
+top of the output.
+
 Data source: .ohlc_data/market.db (populated by fetch_data.py)
 Output:      minervini_scans/minervini_trend_latest.md
              minervini_scans/minervini_trend_YYYY-MM-DD.md
@@ -29,6 +37,7 @@ Output:      minervini_scans/minervini_trend_latest.md
 
 import sys
 import os
+import json
 from datetime import datetime
 
 import pandas as pd
@@ -44,9 +53,11 @@ REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "minervini_scans")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_LATEST = os.path.join(SCANS_DIR, "minervini_trend_latest.md")
+STATE_FILE = os.path.join(SCANS_DIR, "minervini_trend_state.json")
 BENCH_SYM = "NIFTY MIDSML 400"
 LOOKBACK_52WK = 252
 MIN_BARS = 260  # 52wk window + buffer
+AGE_CAP = 400  # bars to walk back before giving up (matches load_ohlc's default lookback)
 
 
 # ── Trend template criteria ─────────────────────────────────────────────────
@@ -54,34 +65,90 @@ def sma(s: pd.Series, n: int) -> pd.Series:
     return s.rolling(n, min_periods=n).mean()
 
 
-def trend_template_checks(close: pd.Series) -> dict:
-    """8 SMA/52wk checks (criterion 9 -- RS gate -- is separate, needs the
-    benchmark series, see _weekly_rs_gate reuse in analyse())."""
+def _checks_series(close: pd.Series) -> dict:
+    """Per-bar boolean series for each of the 8 SMA/52wk checks (criterion 9 --
+    RS gate -- is separate, see _rs_pass_series). NaN comparisons evaluate
+    False, so bars without enough warmup history are naturally excluded.
+    Shared by trend_template_checks() (today only) and trend_template_age()
+    (whole history) so both use identical logic -- no drift between them."""
     sma50 = sma(close, 50)
     sma150 = sma(close, 150)
     sma200 = sma(close, 200)
-    c = close.iloc[-1]
-
-    window = close.iloc[-LOOKBACK_52WK:]
-    wk_low = window.min()
-    wk_high = window.max()
+    wk_low = close.rolling(LOOKBACK_52WK, min_periods=LOOKBACK_52WK).min()
+    wk_high = close.rolling(LOOKBACK_52WK, min_periods=LOOKBACK_52WK).max()
 
     return {
-        "above_sma150": bool(c > sma150.iloc[-1]),
-        "above_sma200": bool(c > sma200.iloc[-1]),
-        "sma150_above_sma200": bool(sma150.iloc[-1] > sma200.iloc[-1]),
-        "sma200_trending_up": bool(sma200.iloc[-1] > sma200.iloc[-21]),
-        "sma50_above_150_200": bool(
-            sma50.iloc[-1] > sma150.iloc[-1] and sma50.iloc[-1] > sma200.iloc[-1]
-        ),
-        "above_sma50": bool(c > sma50.iloc[-1]),
-        "above_52wk_low_30pct": bool(c >= 1.30 * wk_low),
-        "within_25pct_of_52wk_high": bool(c >= 0.75 * wk_high),
+        "above_sma150": close > sma150,
+        "above_sma200": close > sma200,
+        "sma150_above_sma200": sma150 > sma200,
+        # sma200.iloc[-1] > sma200.iloc[-21] compares today to 20 bars back
+        # (iloc[-21] is the 21st-from-last element, i.e. 20 positions before
+        # iloc[-1]) -- shift(20) reproduces that same relationship at every bar.
+        "sma200_trending_up": sma200 > sma200.shift(20),
+        "sma50_above_150_200": (sma50 > sma150) & (sma50 > sma200),
+        "above_sma50": close > sma50,
+        "above_52wk_low_30pct": close >= 1.30 * wk_low,
+        "within_25pct_of_52wk_high": close >= 0.75 * wk_high,
     }
+
+
+def trend_template_checks(close: pd.Series) -> dict:
+    """8 SMA/52wk checks for the last bar only (criterion 9 -- RS gate -- is
+    separate, needs the benchmark series, see _weekly_rs_gate reuse in
+    analyse())."""
+    return {k: bool(v.iloc[-1]) for k, v in _checks_series(close).items()}
 
 
 def passes_trend_template(checks: dict) -> bool:
     return all(checks.values())
+
+
+def _sma_pass_series(close: pd.Series) -> pd.Series:
+    """AND of all 8 SMA/52wk checks, per bar."""
+    series = list(_checks_series(close).values())
+    out = series[0]
+    for s in series[1:]:
+        out = out & s
+    return out
+
+
+def _rs_pass_series(c_rs: pd.Series, idx_rs: pd.Series) -> pd.Series:
+    """Per-day version of ema25_zl_scanner._weekly_rs_gate(): daily RS Line >
+    weekly RS EMA9 (forward-filled to daily) AND weekly RS EMA9 strictly
+    rising vs the prior week (also forward-filled). Mirrors
+    rs_weekly_ema9_scanner.weekly_rs_ema9_trend()'s daily-alignment approach."""
+    daily_rs = (c_rs / idx_rs) * 1000
+    wk_c = c_rs.resample("W").last().dropna()
+    wk_idx = idx_rs.resample("W").last().dropna()
+    common = wk_c.index.intersection(wk_idx.index)
+    if len(common) < 12:
+        return pd.Series(False, index=daily_rs.index)
+    wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
+    wk_rs_e9 = base.ema(wk_rs, 9)
+    wk_rising = wk_rs_e9 > wk_rs_e9.shift(1)
+
+    wk_e9_daily = wk_rs_e9.reindex(daily_rs.index, method="ffill")
+    wk_rising_daily = (
+        wk_rising.astype(float).reindex(daily_rs.index, method="ffill").fillna(0.0).astype(bool)
+    )
+    return (daily_rs > wk_e9_daily) & wk_rising_daily
+
+
+def trend_template_age(close: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> int:
+    """Consecutive trading days ALL 9 checks (8 SMA/52wk + RS gate) have held
+    true, walking backward from today. Same backward-walk shape as
+    rs_weekly_ema9_scanner.weekly_rs_ema9_trend()'s age loop, capped at
+    AGE_CAP bars."""
+    sma_pass = _sma_pass_series(close)
+    rs_pass = _rs_pass_series(c_rs, idx_rs)
+    combined = sma_pass.reindex(rs_pass.index).fillna(False) & rs_pass
+
+    age = 0
+    for v in reversed(combined.values):
+        if not v or age >= AGE_CAP:
+            break
+        age += 1
+    return age
 
 
 # ── Stock analysis ──────────────────────────────────────────────────────────
@@ -112,6 +179,8 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
         if not base._weekly_rs_gate(rs, c_rs, idx_rs):
             return None
 
+        age = trend_template_age(c, c_rs, idx_rs)
+
         window = c.iloc[-LOOKBACK_52WK:]
         curr_close = c.iloc[-1]
         prev_close = c.iloc[-2]
@@ -122,6 +191,7 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
             "day_chg": (curr_close - prev_close) / prev_close * 100,
             "off_high_pct": (curr_close / window.max() - 1) * 100,
             "above_low_pct": (curr_close / window.min() - 1) * 100,
+            "age": age,
             "trap": trap_label(fm),
             "liq_tag": liq_tag(raw),
             "cmf_tag": cmf_tag(raw),
@@ -129,6 +199,23 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
         }
     except Exception:
         return None
+
+
+# ── Previous-run state (additions/deletions diff, mirrors
+#    rs_weekly_ema9_scanner.py's load_previous/save_current) ───────────────────
+def load_previous() -> set:
+    if not os.path.exists(STATE_FILE):
+        return set()
+    try:
+        with open(STATE_FILE, encoding="utf-8") as f:
+            return set(json.load(f))
+    except Exception:
+        return set()
+
+
+def save_current(symbols: list[str]) -> None:
+    with open(STATE_FILE, "w", encoding="utf-8") as f:
+        json.dump(sorted(symbols), f, indent=2)
 
 
 # ── Markdown ─────────────────────────────────────────────────────────────────
@@ -140,11 +227,34 @@ STATIC_HEADER = """### Scan definition
 | Market cap | Rs 1,000 Cr - Rs 5 Lakh Cr |
 | Criteria (all must pass) | close > SMA50 > SMA150 > SMA200 stack, SMA200 rising 21d, close within 25% of 52wk high, close >= 30% above 52wk low, RS gate |
 | RS gate | Daily RS Line > Weekly RS EMA9, Weekly RS EMA9 rising (RS = close/NIFTY MIDSML 400 x 1000) |
+| Age | Consecutive trading days all 9 checks (incl. RS gate) have held true together, capped at {AGE_CAP}d |
 | Float gate | AVOID dropped from scan, SAFE/CAUTION shown under symbol (float_gate.py) |
 | Symbol tags | trap - liq (avg10Cr-todayCr) - CMF - DEL% |
 
 ---
-"""
+""".format(AGE_CAP=AGE_CAP)
+
+
+def _diff_table(additions: list[str], deletions: list[str]) -> list[str]:
+    """One table, two side-by-side columns: symbols added / dropped vs the
+    previous run (state persisted in minervini_trend_state.json)."""
+    lines = [
+        "### Additions / Deletions vs previous run",
+        "| Additions | Deletions |",
+        "|-----------|-----------|",
+    ]
+    n = max(len(additions), len(deletions))
+    if n == 0:
+        lines.append("| *(none)* | *(none)* |")
+    else:
+        for i in range(n):
+            a = additions[i] if i < len(additions) else ""
+            d = deletions[i] if i < len(deletions) else ""
+            a_cell = f"[{a}](https://in.tradingview.com/chart/?symbol=NSE:{a})" if a else ""
+            d_cell = f"[{d}](https://in.tradingview.com/chart/?symbol=NSE:{d})" if d else ""
+            lines.append(f"| {a_cell} | {d_cell} |")
+    lines.append("")
+    return lines
 
 
 def _table_rows(findings: list[dict]) -> list[str]:
@@ -171,6 +281,7 @@ def _table_rows(findings: list[dict]) -> list[str]:
             f"| {f['close']:.2f} "
             f"| {oh} "
             f"| {al} "
+            f"| {f.get('age', 0)}d "
             f"| SMA-OK "
             f"| RS-OK "
             f"| {ds}{f['day_chg']:.2f}% |"
@@ -178,18 +289,25 @@ def _table_rows(findings: list[dict]) -> list[str]:
     return rows
 
 
-def build_markdown(findings: list[dict]) -> str:
+def build_markdown(
+    findings: list[dict],
+    additions: list[str] | None = None,
+    deletions: list[str] | None = None,
+) -> str:
     rows = sorted(findings, key=lambda x: x["off_high_pct"], reverse=True)
 
     hdr = [
-        "| Symbol | Close | %off 52wk-high | %above 52wk-low | SMA stack | RS gate | Day chg% |",
-        "|--------|------:|----------------:|------------------:|:---------:|:-------:|--------:|",
+        "| Symbol | Close | %off 52wk-high | %above 52wk-low | Age | SMA stack | RS gate | Day chg% |",
+        "|--------|------:|----------------:|------------------:|----:|:---------:|:-------:|--------:|",
     ]
 
     lines = [
         f"# Minervini Trend Template Scan - {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
+    ]
+    lines += _diff_table(additions or [], deletions or [])
+    lines += [
         STATIC_HEADER,
         f"**Qualifying: {len(rows)}**",
         "",
@@ -220,6 +338,8 @@ def main():
     index_s = bench_df.set_index("date")["close"].astype(float)
     index_s.index = pd.to_datetime(index_s.index)
 
+    previous_syms = load_previous()
+
     findings = []
     for i, sym in enumerate(watchlist, 1):
         print(f"  {sym:<20} ({i}/{len(watchlist)})   ", end="\r")
@@ -227,14 +347,18 @@ def main():
         if result:
             findings.append(result)
 
-    print(f"\n  Qualifying: {len(findings)}")
+    current_syms = {f["symbol"] for f in findings}
+    additions = sorted(current_syms - previous_syms)
+    deletions = sorted(previous_syms - current_syms)
+    print(f"\n  Qualifying: {len(findings)}  |  +{len(additions)} additions  -{len(deletions)} deletions")
 
     dated_file = os.path.join(SCANS_DIR, f"minervini_trend_{TODAY}.md")
-    md = build_markdown(findings)
+    md = build_markdown(findings, additions, deletions)
     with open(MD_LATEST, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:
         fh.write(md)
+    save_current(list(current_syms))
     print(f"  Saved -> {MD_LATEST}")
     print(f"  Saved -> {dated_file}")
 
