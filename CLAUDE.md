@@ -57,6 +57,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_wt_bullcross_scanner.ps1  # 4:30 PM — WaveTrend bull cross scanner
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_rs_leadership_scanner.ps1  # 4:30 PM — RS leadership combined-cross scanner (RelPerf%+EMA)
+.\run_minervini_trend_scanner.ps1  # 4:30 PM — Minervini Trend Template scanner (strict SMA50/150/200 + 52wk + RS gate)
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
@@ -297,6 +298,16 @@ Mirrors `pine_scripts/Satya RS Relative Leadership.txt`. Full design:
 No benchmark-trend filter applied (explicit deviation from the Pine source's
 default-checked `useBenchmarkFilter` input).
 
+### Scanner pipeline — Minervini Trend Template (`minervini_trend_scanner.py`)
+
+Full design: `docs/superpowers/specs/2026-08-02-minervini-trend-template-scanner-design.md`.
+
+1. Reuses `ema25_zl_scanner.get_watchlist()` for universe (NSE common equity, MCap ₹1,000 Cr – ₹5 Lakh Cr, price > ₹50) and float hard-gate
+2. `load_ohlc(symbol)` -> `trend_template_checks()`: strict AND-gate on 8 SMA50/150/200-stack and 52wk high/low checks
+3. Reuses `ema25_zl_scanner._weekly_rs_gate()` as criterion 9 (RS Rating proxy — daily RS Line > weekly RS EMA9, weekly RS EMA9 rising)
+4. No partial-score output — binary qualify list only, sorted by %off 52wk-high descending (closest to high first)
+5. Writes `minervini_scans/minervini_trend_latest.md` + dated `.md`
+
 ### Scanner pipeline — Breadth Monitor (`scanners/breadth_monitor.py`)
 
 **Regime/timing layer — not a candidate-selection scanner.** Answers "is the market supportive?"
@@ -371,6 +382,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `data/breadth_history.csv`, `dashboard/breadth.html` | `scanners/breadth_monitor.py` |
 | `rs_highline_scans/rs_highline_latest.md`, `rs_highline_scans/rs_highline_YYYY-MM-DD.md` | `rs_highline_scanner.py` |
 | `rs_leadership_scans/rs_leadership_latest.md`, `rs_leadership_scans/rs_leadership_YYYY-MM-DD.md` | `rs_leadership_scanner.py` |
+| `minervini_scans/minervini_trend_latest.md`, dated `.md` | `minervini_trend_scanner.py` |
 | `us_wt_scans/us_wt_bullcross_latest.md`, `us_wt_scans/us_wt_bullcross_YYYY-MM-DD.md`, `us_wt_scans/us_wt_bullcross_dashboard.html` | `us_wt_bullcross_scanner.py` |
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 | `footprint_scans/footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
