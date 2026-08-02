@@ -52,6 +52,7 @@ else { OrcLog "--- SKIP EMA_Compression (not found) ---" }
 Run-Scanner "WT_BullCross"         "$ROOT\run_wt_bullcross_scanner.ps1"
 Run-Scanner "RS_HighLine"          "$ROOT\run_rs_highline_scanner.ps1"
 Run-Scanner "RS_Leadership"        "$ROOT\run_rs_leadership_scanner.ps1"
+Run-Scanner "MinerviniTrend"       "$ROOT\run_minervini_trend_scanner.ps1"
 Run-Scanner "WT_SqueezeDash"       "$ROOT\run_wt_squeeze_dashboard.ps1"
 Run-Scanner "TrendScanner"         "$ROOT\run_trend_scanner.ps1"
 Run-Scanner "TrendDashboard"       "$ROOT\run_trend_dashboard.ps1"
