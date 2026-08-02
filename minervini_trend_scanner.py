@@ -294,7 +294,7 @@ def build_markdown(
     additions: list[str] | None = None,
     deletions: list[str] | None = None,
 ) -> str:
-    rows = sorted(findings, key=lambda x: x["off_high_pct"], reverse=True)
+    rows = sorted(findings, key=lambda x: x.get("age", 0))
 
     hdr = [
         "| Symbol | Close | %off 52wk-high | %above 52wk-low | Age | SMA stack | RS gate | Day chg% |",

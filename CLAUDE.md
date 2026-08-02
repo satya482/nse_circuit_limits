@@ -305,7 +305,7 @@ Full design: `docs/superpowers/specs/2026-08-02-minervini-trend-template-scanner
 1. Reuses `ema25_zl_scanner.get_watchlist()` for universe (NSE common equity, MCap ₹1,000 Cr – ₹5 Lakh Cr, price > ₹50) and float hard-gate
 2. `load_ohlc(symbol)` -> `trend_template_checks()`: strict AND-gate on 8 SMA50/150/200-stack and 52wk high/low checks
 3. Reuses `ema25_zl_scanner._weekly_rs_gate()` as criterion 9 (RS Rating proxy — daily RS Line > weekly RS EMA9, weekly RS EMA9 rising)
-4. No partial-score output — binary qualify list only, sorted by %off 52wk-high descending (closest to high first)
+4. No partial-score output — binary qualify list only, sorted by Age ascending (newest entries into the trend first)
 5. `trend_template_age()` -> Age column: consecutive trading days all 9 checks have held true together (vectorized backward walk, no state file)
 6. Additions/deletions vs previous run (state in `minervini_scans/minervini_trend_state.json`, mirrors `rs_weekly_ema9_scanner.py`) shown as a 2-column table at the top of the output
 7. Writes `minervini_scans/minervini_trend_latest.md` + dated `.md`

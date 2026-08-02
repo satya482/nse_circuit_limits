@@ -135,6 +135,8 @@ top of the output file, right after the generated-timestamp line and before
 the scan-definition table. Shorter column blank-padded; both-empty shows
 `*(none)* | *(none)*` rather than omitting the table.
 
-Output table gained one column: `Age` (right after `%above 52wk-low`). Sort
-order is unchanged — still `%off 52wk-high` descending, not age — this was an
-additive change only.
+Output table gained one column: `Age` (right after `%above 52wk-low`).
+
+**2026-08-02, later same day:** sort order changed from `%off 52wk-high`
+descending to `Age` ascending (newest entries into the trend first) —
+explicit user request.
