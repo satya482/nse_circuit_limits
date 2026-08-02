@@ -608,8 +608,9 @@ rsStrong= rsLine > rsEma9
 priceAboveEma9=close>ta.ema(close,9)
 entrySignal = rsStrong and priceAboveEma9
 
-plotshape(exitSignal,title="RS Exit",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,85),size=size.tiny)
+//plotshape(exitSignal,title="RS Exit",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,85),size=size.tiny)
 //bgcolor(exitSignal ? color.new(color.red,95) : na,title="RS Exit Background")
+plotchar(exitSignal,title="RS Exit",char='.',location=location.abovebar,color=color.new(color.red,85),size=size.tiny)
 
 
 //bgcolor(entrySignal ? color.new(color.blue,95) : na,title="RS Entry Background")
@@ -622,8 +623,9 @@ transition=rsWasWeak and rsNowStrong
 ema9crossUp = ta.crossover(close, fastEma)
 RSgreenshoots = (rsNowStrong and ema9crossUp) or (ema9crossUp and isPPV)
 //plotshape(RSgreenshoots,title="RS Strong Transition",style=shape.triangleup,location=location.belowbar,color=color.new(color.lime,0),size=size.small)
-bgcolor(transition ? color.new(color.blue,85) : na,title="RS Transition")
-plotshape(transition,title="RS Weak→Strong",style=shape.triangleup,location=location.belowbar,color=color.new(color.lime,0),size=size.tiny)
+//bgcolor(transition ? color.new(color.blue,85) : na,title="RS Transition")
+//plotshape(transition,title="RS Weak→Strong",style=shape.triangleup,location=location.belowbar,color=color.new(color.lime,0),size=size.tiny)
+plotchar(transition,title="RS Weak→Strong",char='.',location=location.belowbar,color=color.new(color.lime,0),size=size.tiny)
 
 alertcondition(isIndiaEquityOpenHours and transition,title="RS Weak→Strong",message=" {{ticker}} RS WEAK-->STRONG")
 alertcondition(isIndiaEquityOpenHours and RSgreenshoots,title="RS GreenShoots",message=" {{ticker}} RS GreenShoots")
@@ -638,8 +640,10 @@ rsWasStrong = rsLine[1] > rsEma9[1]
 rsNowWeak = rsLine < rsEma9
 transitionToWeak = rsWasStrong and rsNowWeak
 alertcondition(isIndiaEquityOpenHours and transitionToWeak and zlema25 < zlema25[1] and close < zlema25 ,title="RS Poor-SHORT",message=" {{ticker}} RS Poor-SHORT+ZLEMA25 down")
-plotshape(transitionToWeak,title="RS Poor-SHORT",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,0),size=size.tiny)
-bgcolor(transitionToWeak ? color.new(color.red,85) : na,title="RS Poor-SHORT")
+//plotshape(transitionToWeak,title="RS Poor-SHORT",style=shape.triangledown,location=location.abovebar,color=color.new(color.red,0),size=size.tiny)
+plotchar(transitionToWeak,title="RS Poor-SHORT",char='.',location=location.abovebar,color=color.new(color.red,0),size=size.tiny)
+
+//bgcolor(transitionToWeak ? color.new(color.red,85) : na,title="RS Poor-SHORT")
 
 
 
