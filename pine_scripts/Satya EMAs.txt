@@ -135,10 +135,10 @@ if barstate.islast
         statsText = "ZLEMA25\n" + str.tostring(daysFromStart) + "d | " + str.tostring(pctChangeFromStart, "#.##") + "%"
         statsLabel := label.new(bar_index, high, statsText, style=label.style_label_down, textcolor=color.white, color=color.new(color.black, 99))
 
-bgcolor(upTrend ? color.new(color.white, 85) : na, title="ZLEMA25 Uptrend BG")
+//bgcolor(upTrend ? color.new(color.white, 85) : na, title="ZLEMA25 Uptrend BG")
 ema20 = ta.ema(close, 20)
 ema20Up = ema20 > ema20[1]
-bgcolor(ema20Up ? color.new(color.lime, 85) : na, title="EMA20 Uptrend BG")
+//bgcolor(ema20Up ? color.new(color.lime, 85) : na, title="EMA20 Uptrend BG")
 
 // Optional alert
 alertcondition(isIndiaEquityOpenHours and upTrendStart, title="ZLEMA25 Uptrend Start", message="ZLEMA25 uptrend started on {{ticker}} ({{interval}})")
