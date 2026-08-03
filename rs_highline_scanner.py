@@ -18,6 +18,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -405,14 +406,14 @@ def build_markdown(
         f"— RS high-line cross today**",
         "",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        tv_csv(f"NSE:{f['symbol']}" for f in sorted_f),
         "```",
         "",
     ]
 
     if sorted_f:
         lines += _HDR + [_row(f, circuit, names) for f in sorted_f]
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
     else:
         lines.append("*No signals.*")
 

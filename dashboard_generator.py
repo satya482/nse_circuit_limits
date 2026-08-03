@@ -12,6 +12,7 @@ import json
 from datetime import datetime, timezone, timedelta
 from collections import defaultdict
 from disclaimer import SEBI_HTML_FOOTER
+from tv_watchlist import tv_csv
 
 try:
     from ohlc_db import get_names as _get_names, get_liq_labels as _get_liq_labels
@@ -564,10 +565,10 @@ def _copy_btn(rows, key: str = "symbol") -> str:
     if not rows:
         return ""
     if isinstance(rows[0], str):
-        syms = ",".join(f"NSE:{s}" for s in rows)
+        syms = tv_csv(f"NSE:{s}" for s in rows)
         n = len(rows)
     else:
-        syms = ",".join(f"NSE:{r[key]}" for r in rows if r.get(key))
+        syms = tv_csv(f"NSE:{r[key]}" for r in rows if r.get(key))
         n = sum(1 for r in rows if r.get(key))
     return f'<button class="copy-btn" data-syms="{syms}">📋 TV ({n})</button>'
 
@@ -1198,7 +1199,7 @@ def build_html(
         if _s not in _seen:
             _seen.add(_s)
             all_tv_syms.append(_s)
-    all_tv_csv = ",".join(f"NSE:{s}" for s in all_tv_syms)
+    all_tv_csv = tv_csv(f"NSE:{s}" for s in all_tv_syms)
 
     return (
         f"""<!DOCTYPE html>

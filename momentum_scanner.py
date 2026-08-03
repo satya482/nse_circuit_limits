@@ -38,6 +38,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import get_names
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -349,7 +350,7 @@ def build_markdown(
         "*(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*",
         "",
         "```",
-        ",".join(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
+        tv_csv(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
         "```",
         "",
         "| Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |",
@@ -379,7 +380,7 @@ def build_markdown(
 
     if findings:
         syms = list(dict.fromkeys(f["symbol"] for f in findings))
-        lines += ["", "```", ",".join(f"NSE:{s}" for s in syms), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{s}" for s in syms), "```"]
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 

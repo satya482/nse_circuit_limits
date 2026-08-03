@@ -22,6 +22,7 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 from disclaimer import SEBI_HTML_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -333,7 +334,7 @@ def _trend_row(r: dict, group: str) -> str:
 def _copy_btn(rows: list) -> str:
     if not rows:
         return ""
-    syms = ",".join(f"NSE:{r['symbol']}" for r in rows)
+    syms = tv_csv(f"NSE:{r['symbol']}" for r in rows)
     return (
         f'<button class="copy-btn" data-syms="{syms}">'
         f"📋 Copy TV List ({len(rows)})</button>"

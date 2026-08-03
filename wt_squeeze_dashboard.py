@@ -14,6 +14,7 @@ import re
 import os
 import sys
 from disclaimer import SEBI_HTML_FOOTER
+from tv_watchlist import tv_csv
 import json
 from datetime import datetime, timezone, timedelta
 
@@ -425,7 +426,7 @@ def _rows_or_empty(rows_html: list[str], cols: int, msg: str) -> str:
 
 
 def _tv_watchlist_csv(rows: list[dict]) -> str:
-    return ",".join(f"NSE:{r['symbol']}" for r in rows)
+    return tv_csv(f"NSE:{r['symbol']}" for r in rows)
 
 
 def _copy_btn(rows: list[dict]) -> str:

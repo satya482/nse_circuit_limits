@@ -35,6 +35,7 @@ from tradingview_screener import Query, col
 from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -504,7 +505,7 @@ def build_markdown(
         f"**Opportunities: {len(findings)}** · {leader_count} full LEADER_ZL (all 3 conditions)",
         "",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in findings),
+        tv_csv(f"NSE:{f['symbol']}" for f in findings),
         "```",
         "",
     ]
@@ -528,7 +529,7 @@ def build_markdown(
         lines.append(f"### {emoji} {heading} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit, names) for f in group]
-            lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in group), "```"]
+            lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in group), "```"]
         else:
             lines.append("*No signals.*")
         lines.append("")

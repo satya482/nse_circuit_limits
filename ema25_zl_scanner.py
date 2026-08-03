@@ -34,6 +34,7 @@ from tradingview_screener import Query, col
 from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -472,7 +473,7 @@ def _directional_markdown(
             syms = [f["symbol"] for f in rows if lo <= f["zl_days"] <= hi]
             if syms:
                 wl_parts.append(
-                    f"###{prefix} {label}," + ",".join(f"NSE:{s}" for s in syms)
+                    f"###{prefix} {label}," + tv_csv(f"NSE:{s}" for s in syms)
                 )
 
     lines = [
@@ -496,7 +497,7 @@ def _directional_markdown(
     ]
     if uptrend:
         lines += hdr + _table_rows(uptrend, circuit, names)
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in uptrend), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in uptrend), "```"]
     else:
         lines.append("*No ZLEMA25 uptrend stocks today.*")
 
@@ -506,7 +507,7 @@ def _directional_markdown(
         lines += [
             "",
             "```",
-            ",".join(f"NSE:{f['symbol']}" for f in downtrend),
+            tv_csv(f"NSE:{f['symbol']}" for f in downtrend),
             "```",
         ]
     else:
@@ -521,7 +522,7 @@ def _directional_markdown(
                     "",
                     f"**{label.lower()}** ({len(syms)})",
                     "```",
-                    ",".join(f"NSE:{s}" for s in syms),
+                    tv_csv(f"NSE:{s}" for s in syms),
                     "```",
                 ]
 
@@ -574,9 +575,9 @@ def build_markdown(
     for label, lo, hi in buckets:
         syms = [f["symbol"] for f in rising if lo <= f["zl_days"] <= hi]
         if syms:
-            wl_parts.append(f"###{label}," + ",".join(f"NSE:{s}" for s in syms))
+            wl_parts.append(f"###{label}," + tv_csv(f"NSE:{s}" for s in syms))
     if watch:
-        wl_parts.append("###WATCH," + ",".join(f"NSE:{f['symbol']}" for f in watch))
+        wl_parts.append("###WATCH," + tv_csv(f"NSE:{f['symbol']}" for f in watch))
 
     lines = [
         f"# {title}",
@@ -594,14 +595,14 @@ def build_markdown(
     ]
     if rising:
         lines += hdr + _table_rows(rising, circuit, names)
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in rising), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rising), "```"]
     else:
         lines.append("*No ZLEMA25 rising stocks today.*")
 
     lines += ["", "### ZLEMA25 Watch *(pullback / flat)*"]
     if watch:
         lines += hdr + _table_rows(watch, circuit, names)
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in watch), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in watch), "```"]
     else:
         lines.append("*No ZLEMA25 watch stocks today.*")
 
@@ -623,7 +624,7 @@ def build_markdown(
             "",
             f"**{label}** ({len(syms)})",
             "```",
-            ",".join(f"NSE:{s}" for s in syms),
+            tv_csv(f"NSE:{s}" for s in syms),
             "```",
         ]
 

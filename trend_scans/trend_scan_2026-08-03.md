@@ -48,7 +48,7 @@ NSE:KERNEX,NSE:MPSLTD,NSE:HUHTAMAKI,NSE:HIRECT,NSE:TATVA,NSE:TMB,NSE:GABRIEL,NSE
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA)<br><sub>↓CMF10d</sub> | ✓ SAFE | Precision forged machined components for auto and industrial | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 83 | ↑97 | ↑1.050 | 100% | 179% ↑ | ✅8/8 | 0.69x | ↑2d | +6.7% | +3.16% | 20%  |
 | [RPTECH](https://in.tradingview.com/chart/?symbol=NSE:RPTECH)<br><sub>↑CMF1d</sub> | ✓ SAFE | ICT distributor, IT peripherals, reseller network | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 76 | ↑98 | ↑1.096 | 100% | 217% ↑ | ✅8/8 | 2.12x | ↑3d | +14.2% | +6.01% | 20%  |
-| [BLSE](https://in.tradingview.com/chart/?symbol=NSE:BLSE)<br><sub>↑CMF23d · DEL47%(T-1)</sub> | ✓ SAFE | Digital services for government and banking reach rural India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 76 | ↑90 | ↓1.042 | 100% | 133% ↑ | ✅7/8 | 0.68x | ↑7d | +13.8% | -0.29% | 20%  |
+| [BLSE](https://in.tradingview.com/chart/?symbol=NSE:BLSE)<br><sub>↑CMF23d · DEL60%</sub> | ✓ SAFE | Digital services for government and banking reach rural India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 76 | ↑90 | ↓1.042 | 100% | 133% ↑ | ✅7/8 | 0.68x | ↑7d | +13.8% | -0.29% | 20%  |
 | [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO)<br><sub>↓CMF2d</sub> | ✓ SAFE | RF Microwave modules defense space telecom systems | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑94 | ↓1.034 | 99% | 116% ↑ | ✅8/8 | 2.97x | ↑2d | +7.1% | -0.69% | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Pharmaceutical formulations suppositories tablets capsules syrups India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑99 | ↓1.048 | 97% | 312% ↑ | ✅8/8 | 0.65x | ↑60d+ | +108.7% | +0.68% | 5% 🟥 |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>↑CMF30d</sub> | ✓ SAFE | Aerospace defense electronics systems manufacturer for global OEMs | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 74 | ↑100 | ↑1.059 | 98% | 566% ↑ | ✅8/8 | 0.73x | ↑49d | +263.4% | +1.60% | 20%  |
@@ -113,7 +113,7 @@ NSE:INDOBORAX,NSE:APOLLO,NSE:ROSSTECH,NSE:PFOCUS,NSE:ARVIND,NSE:PRECWIRE,NSE:VIY
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [AEROFLEX](https://in.tradingview.com/chart/?symbol=NSE:AEROFLEX)<br><sub>↓CMF16d</sub> | ✓ SAFE | Stainless steel corrugated hoses assemblies fittings industrial flow | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 58 | ↓95 | ↓1.004 | 84% | 172% ↑ | ✅7/8 | 0.65x | ↑2d | +1.1% | -0.93% | 10% 🟨 |
 | [STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL)<br><sub>↓CMF19d</sub> | ⚠ CAUTION |  | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 44 | ↓65 | ↓1.010 | 91% | 45% ↑ | ✅8/8 | 1.32x | ↑3d | +2.6% | -1.58% | 20%  |
-| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM)<br><sub>↑CMF30d</sub> | ✓ SAFE | Gold loan NBFC serving unbanked retail customers | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 41 | ↓64 | ↓1.015 | 98% | 47% ↑ | ✅8/8 | 2.27x | ↑11d | +12.2% | -1.84% | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM)<br><sub>↑CMF30d · DEL60%</sub> | ✓ SAFE | Gold loan NBFC serving unbanked retail customers | 📈 ZLEMA25 touch · RS transitioning · EMA20 ↑ | 41 | ↓64 | ↓1.015 | 98% | 47% ↑ | ✅8/8 | 2.27x | ↑11d | +12.2% | -1.84% | 20%  |
 
 ```
 NSE:AEROFLEX,NSE:STEL,NSE:MANAPPURAM

@@ -46,6 +46,7 @@ import ema25_zl_scanner as base
 from ohlc_db import load_ohlc, load_ohlc_many, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -315,7 +316,7 @@ def build_markdown(
     ]
     if rows:
         lines += hdr + _table_rows(rows)
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in rows), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```"]
     else:
         lines.append("*No signals.*")
 

@@ -27,6 +27,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -330,13 +331,13 @@ def build_markdown(
         f"## UPTREND START — {len(findings)} stocks",
         "",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in findings),
+        tv_csv(f"NSE:{f['symbol']}" for f in findings),
         "```",
         "",
     ]
     if findings:
         lines += _table_rows(findings, circuit, names)
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in findings), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in findings), "```"]
     else:
         lines.append("*No uptrend start signals today.*")
 

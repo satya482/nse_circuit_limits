@@ -36,6 +36,7 @@ import pandas as pd
 from tradingview_screener import Query, col
 from ohlc_db import get_names, get_liq_labels
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -371,7 +372,7 @@ def build_markdown(
                     f"| **{tag}** — {label} "
                     f"| {cl} {em} |"
                 )
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in entry_findings), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in entry_findings), "```"]
     else:
         lines.append("*No entry signals today.*")
 
@@ -411,7 +412,7 @@ def build_markdown(
                 f"| {ds}{f['day_chg']:.2f}% "
                 f"| {cl} {em} |"
             )
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in turning_findings), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in turning_findings), "```"]
     else:
         lines.append("*No ZLEMA25 turns today.*")
 

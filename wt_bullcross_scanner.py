@@ -36,6 +36,7 @@ from ohlc_db import load_ohlc_many, get_names, liq_tag, cmf_tag, deliv_tag
 from wavetrend_scanner import WaveTrendCalculator, weekly_wt_zone
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -612,7 +613,7 @@ def build_markdown(
         f"**Total bull crosses today: {len(findings)}** · {sqz_count} inside active squeeze",
         "",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        tv_csv(f"NSE:{f['symbol']}" for f in sorted_f),
         "```",
         "",
     ]
@@ -628,7 +629,7 @@ def build_markdown(
         lines += [
             "",
             "```",
-            ",".join(f"NSE:{f['symbol']}" for f in weekly_gate),
+            tv_csv(f"NSE:{f['symbol']}" for f in weekly_gate),
             "```",
         ]
     else:
@@ -648,7 +649,7 @@ def build_markdown(
         lines += [
             "",
             "```",
-            ",".join(f"NSE:{f['symbol']}" for f in rs_confirmed),
+            tv_csv(f"NSE:{f['symbol']}" for f in rs_confirmed),
             "```",
         ]
     else:
@@ -667,7 +668,7 @@ def build_markdown(
         lines += [
             "",
             "```",
-            ",".join(f"NSE:{f['symbol']}" for f in sqz_breaks),
+            tv_csv(f"NSE:{f['symbol']}" for f in sqz_breaks),
             "```",
             "",
         ]
@@ -692,7 +693,7 @@ def build_markdown(
         lines.append(f"### {emoji} {cat_name} — {cat_desc} ({len(group)})")
         if group:
             lines += _HDR + [_row(f, circuit, names, trend_syms) for f in group]
-            lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in group), "```"]
+            lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in group), "```"]
         else:
             lines.append("*No signals.*")
         lines.append("")

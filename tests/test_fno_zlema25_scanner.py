@@ -114,8 +114,8 @@ def test_directional_report_has_symmetric_tables_watchlists_and_flat_count():
     assert "Flat: 1" in report
     assert "### ZLEMA25 Uptrend" in report
     assert "### ZLEMA25 Downtrend" in report
-    assert "###UP 1 DAY,NSE:UPSYM" in report
-    assert "###DOWN 2 DAYS,NSE:DOWNSYM" in report
+    assert "###UP 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:UPSYM" in report
+    assert "###DOWN 2 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:DOWNSYM" in report
     assert "| DOWNSYM" not in report
     assert "[DOWNSYM]" in report
     assert "| 2d | -4.0% |" in report

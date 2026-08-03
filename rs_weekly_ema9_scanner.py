@@ -32,6 +32,7 @@ from tradingview_screener import Query, col
 
 from ohlc_db import load_ohlc, load_ohlc_many, get_names, liq_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER, SEBI_HTML_BANNER, SEBI_HTML_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -424,7 +425,7 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict | None = Non
         f"&nbsp;|&nbsp; **{len(new_f)} new entrant{'s' if len(new_f) != 1 else ''}**",
         "",
         "```",
-        ",".join(f"NSE:{f['symbol']}" for f in sorted_f),
+        tv_csv(f"NSE:{f['symbol']}" for f in sorted_f),
         "```",
         "",
     ]
@@ -457,7 +458,7 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict | None = Non
                 f"| {f['close']:.2f} "
                 f"| {cl} {em} |"
             )
-        lines += ["", "```", ",".join(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in sorted_f), "```"]
     else:
         lines.append("*No signals.*")
 

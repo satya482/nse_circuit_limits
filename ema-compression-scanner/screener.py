@@ -28,6 +28,7 @@ from ohlc_db import load_ohlc, load_ohlc_many, get_names
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 BASE_DIR = Path(__file__).parent
 SETTINGS_FILE = BASE_DIR / "settings.yaml"
@@ -89,7 +90,7 @@ def build_markdown(
 
     hdr = "| # | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Sector | Close | Comp Days | Sqz Days | ZL | Score |"
     sep = "|---|--------|--------:|---------:|-------|--------:|--------|-------|-----------|----------|----|-------|"
-    lines += ["```", ",".join(f"NSE:{c['symbol']}" for c in candidates), "```", ""]
+    lines += ["```", tv_csv(f"NSE:{c['symbol']}" for c in candidates), "```", ""]
     lines += [hdr, sep]
 
     for i, c in enumerate(candidates, 1):

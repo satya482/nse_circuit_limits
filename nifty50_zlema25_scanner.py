@@ -19,6 +19,7 @@ import requests
 from ema25_zl_scanner import bb_kc_squeeze, get_circuit_limits, zlema
 from disclaimer import SEBI_MD_FOOTER, SEBI_MD_HEADER
 from ohlc_db import cmf_tag, deliv_tag, liq_tag, load_ohlc
+from tv_watchlist import tv_csv
 
 
 REPO_DIR = Path(__file__).resolve().parent
@@ -203,7 +204,7 @@ def _watchlist_parts(
         )
         if symbols:
             parts.append(
-                f"###{prefix} {label}," + ",".join(f"NSE:{symbol}" for symbol in symbols)
+                f"###{prefix} {label}," + tv_csv(f"NSE:{symbol}" for symbol in symbols)
             )
     return parts
 
@@ -268,7 +269,7 @@ def _direction_section(
             "",
             f"**{label}** ({len(symbols)})",
             "```",
-            ",".join(f"NSE:{symbol}" for symbol in symbols),
+            tv_csv(f"NSE:{symbol}" for symbol in symbols),
             "```",
         ]
     return lines

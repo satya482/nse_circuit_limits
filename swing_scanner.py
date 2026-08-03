@@ -32,6 +32,7 @@ from tradingview_screener import Query, col
 from float_gate import float_metrics, passes_hard_gate, trap_label as _trap_label
 from ohlc_db import get_names, get_liq_labels
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -355,7 +356,7 @@ def build_markdown(
         "*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*",
         "",
         "```",
-        ",".join(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
+        tv_csv(f"NSE:{s}" for s in dict.fromkeys(f["symbol"] for f in findings)),
         "```",
         "",
         "| Symbol | Trap | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |",
@@ -390,7 +391,7 @@ def build_markdown(
 
     if findings:
         syms = list(dict.fromkeys(f["symbol"] for f in findings))
-        lines += ["", "```", ",".join(f"NSE:{s}" for s in syms), "```"]
+        lines += ["", "```", tv_csv(f"NSE:{s}" for s in syms), "```"]
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
 
