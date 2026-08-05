@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-08-04 15:42 IST*
+*Generated: 2026-08-05 15:42 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 31 · Downtrend: 19**
@@ -43,7 +43,7 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 | [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>↘344Cr · 404Cr · ↑CMF2d</sub> | 11d | +7.10% |  | -0.51% | 7796.00 | — | 20%  |
 | [TCS](https://in.tradingview.com/chart/?symbol=NSE:TCS)<br><sub>↘1027Cr · 1741Cr · ↑CMF1d</sub> | 13d | +17.93% |  | +1.75% | 2440.00 | — | 20%  |
 | [ULTRACEMCO](https://in.tradingview.com/chart/?symbol=NSE:ULTRACEMCO)<br><sub>↗438Cr · 336Cr · ↑CMF7d</sub> | 15d | +5.60% |  | +0.28% | 11989.00 | — | 20%  |
-| [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM)<br><sub>↗524Cr · 358Cr · ↑CMF1d · DEL75%(T-1)</sub> | 17d | +16.91% |  | +0.56% | 1644.40 | — | 20%  |
+| [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM)<br><sub>↗524Cr · 358Cr · ↑CMF1d</sub> | 17d | +16.91% |  | +0.56% | 1644.40 | — | 20%  |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>↘515Cr · 407Cr · ↑CMF3d</sub> | 19d | +24.39% |  | +1.70% | 1341.00 | — | 20%  |
 | [SUNPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SUNPHARMA)<br><sub>→497Cr · 533Cr · ↑CMF4d</sub> | 30d | +10.37% |  | +0.55% | 1987.50 | — | 20%  |
 | [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>↘349Cr · 405Cr · ↑CMF6d</sub> | 33d | +20.62% |  | +0.11% | 4855.00 | — | 20%  |
@@ -105,8 +105,8 @@ NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:HCLTECH,NSE:ICICIBANK,NSE:SUNPHARMA,NS
 | [HDFCBANK](https://in.tradingview.com/chart/?symbol=NSE:HDFCBANK)<br><sub>→2224Cr · 1505Cr · ↓CMF20d</sub> | 8d | -8.70% |  | +1.75% | 748.30 | — | 20%  |
 | [HDFCLIFE](https://in.tradingview.com/chart/?symbol=NSE:HDFCLIFE)<br><sub>↘140Cr · 66Cr · ↓CMF30d</sub> | 10d | -1.93% |  | -0.17% | 557.80 | ✓ | 20%  |
 | [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>→478Cr · 1261Cr · ↓CMF1d</sub> | 13d | -6.58% |  | -0.37% | 387.55 | — | 20%  |
-| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>↘291Cr · 254Cr · ↑CMF0d</sub> | 18d | -13.08% | Generic drugs and APIs for global markets | -0.63% | 1172.60 | — | 20%  |
 | [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>↗1275Cr · 1247Cr · ↓CMF17d</sub> | 19d | -9.31% |  | +1.01% | 1235.80 | — | 20%  |
+| [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>↘289Cr · 221Cr · ↑CMF1d</sub> | 19d | -12.82% | Generic drugs and APIs for global markets | +0.29% | 1176.00 | — | 20%  |
 | [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↘233Cr · 237Cr · ↓CMF29d</sub> | 30d | -16.32% |  | +1.53% | 329.35 | — | 20%  |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>↗267Cr · 405Cr · ↓CMF21d</sub> | 37d | -13.25% |  | -0.11% | 409.70 | — | 20%  |
 
