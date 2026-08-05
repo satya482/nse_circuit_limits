@@ -173,7 +173,7 @@ Place `NSE_500cr_15CrNotional10D_50rs_sector_industry.csv` in the repo root (git
 | Trading-day gaps | Integer position-index diff, not calendar days (handles NSE holidays) |
 | DB columns | All lowercase: `date`, `open`, `high`, `low`, `close`, `volume` |
 | Kite quote close | `last_price` = today's close; `ohlc.close` = previous day |
-| TV watchlist copy blocks | Every scanner's ```NSE:SYM,...``` copy-paste block (`tv_watchlist.tv_csv()`) leads with the two benchmark indices `NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400` |
+| TV watchlist copy blocks | Every scanner's ```NSE:SYM,...``` copy-paste block (`tv_watchlist.tv_csv()`) leads with `NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!`; the 3 scanners with a top combined multi-bucket block (`ema25_zl`, `ema55_cross`, `nifty50_zlema25`) additionally get explicit `###INDICES` / `###COMMODITIES` TV-import sections there (`tv_watchlist.tv_top_sections()`) |
 
 ---
 

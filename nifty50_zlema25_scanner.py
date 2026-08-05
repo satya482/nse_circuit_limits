@@ -19,7 +19,7 @@ import requests
 from ema25_zl_scanner import bb_kc_squeeze, get_circuit_limits, zlema
 from disclaimer import SEBI_MD_FOOTER, SEBI_MD_HEADER
 from ohlc_db import cmf_tag, deliv_tag, liq_tag, load_ohlc
-from tv_watchlist import tv_csv
+from tv_watchlist import tv_csv, tv_top_sections
 
 
 REPO_DIR = Path(__file__).resolve().parent
@@ -309,7 +309,7 @@ def build_markdown(
         "",
         "**TradingView watchlist** *(sectioned by direction and trend age)*",
         "```",
-        ",".join(watchlist),
+        ",".join(tv_top_sections() + watchlist),
         "```",
     ]
     lines += _direction_section(

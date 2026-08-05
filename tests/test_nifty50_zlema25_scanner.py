@@ -284,8 +284,16 @@ def test_report_has_two_tables_and_symmetric_watchlists(monkeypatch):
 
     assert "### ZLEMA25 Uptrend Start and Age" in report
     assert "### ZLEMA25 Downtrend Start and Age" in report
-    assert "###UP 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:UP1" in report
-    assert "###DOWN 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:DN1" in report
+    assert (
+        "###UP 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,"
+        "MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,NSE:UP1"
+    ) in report
+    assert (
+        "###DOWN 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,"
+        "MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,NSE:DN1"
+    ) in report
+    assert "###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400" in report
+    assert "###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!" in report
     assert report.index("NSE:UP1") < report.index("NSE:UP4")
     assert "Requested: 6" in report
     assert "Analysed: 5" in report

@@ -34,7 +34,7 @@ from tradingview_screener import Query, col
 from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
-from tv_watchlist import tv_csv
+from tv_watchlist import tv_csv, tv_top_sections
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -490,7 +490,7 @@ def _directional_markdown(
         "",
         "**TradingView watchlist** *(sectioned by direction and ZL age — paste into TV import)*",
         "```",
-        ",".join(wl_parts),
+        ",".join(tv_top_sections() + wl_parts),
         "```",
         "",
         "### ZLEMA25 Uptrend",
@@ -588,7 +588,7 @@ def build_markdown(
         "",
         "**TradingView watchlist** *(sectioned by ZL days since turn-up — paste into TV import)*",
         "```",
-        ",".join(wl_parts),
+        ",".join(tv_top_sections() + wl_parts),
         "```",
         "",
         "### ZLEMA25 Rising",
