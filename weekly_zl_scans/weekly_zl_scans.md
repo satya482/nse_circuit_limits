@@ -155,7 +155,7 @@ NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:CELLO,NSE:HINDCOPPER,NSE:RBA,NSE:KEI,N
 | [TDPOWERSYS](https://in.tradingview.com/chart/?symbol=NSE:TDPOWERSYS)<br><sub>↑CMF4d</sub> | AC generators electric motors power generation equipment | 1w | BELOW | 1w | +6.3% | +6.60% | 1201.90 | — | 20%  |
 | [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS)<br><sub>↓CMF7d</sub> | Pharmaceutical intermediates and specialty chemicals manufacturer | 1w | BELOW | 1w | +5.7% | +1.81% | 3282.80 | — | 20%  |
 | [TRITURBINE](https://in.tradingview.com/chart/?symbol=NSE:TRITURBINE)<br><sub>↓CMF12d</sub> | Steam turbines for industrial power generation up to 100MW | 1w | BELOW | 1w | +3.6% | +0.75% | 623.45 | — | 20%  |
-| [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS)<br><sub>↓CMF7d · DEL62%(T-1)</sub> | ERP software, HCM, aerospace supply chain management | 1w | BELOW | 1w | +7.0% | +5.00% | 621.70 | — | 10% 🟨 |
+| [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS)<br><sub>↓CMF7d · DEL51%</sub> | ERP software, HCM, aerospace supply chain management | 1w | BELOW | 1w | +7.0% | +5.00% | 621.70 | — | 10% 🟨 |
 | [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS)<br><sub>↓CMF9d</sub> | Steel aluminum wheels automotive commercial vehicles tractors | 1w | BELOW | 1w | +1.4% | +1.48% | 1429.60 | — | 20%  |
 | [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↑CMF5d</sub> | VFX animation post-production services entertainment studios | 1w | BELOW | 1w | +4.4% | -1.02% | 299.70 | — | 5%  |
 | [SEAMECLTD](https://in.tradingview.com/chart/?symbol=NSE:SEAMECLTD)<br><sub>↓CMF10d</sub> | Diving support vessels, subsea engineering, offshore oil and gas | 1w | BELOW | 1w | +3.2% | +1.97% | 1509.70 | 7w | 20%  |
