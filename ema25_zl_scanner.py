@@ -34,7 +34,7 @@ from tradingview_screener import Query, col
 from ohlc_db import load_ohlc, get_names, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
-from tv_watchlist import tv_csv, tv_top_sections
+from tv_watchlist import tv_csv, tv_csv_flat, tv_top_sections
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -473,7 +473,7 @@ def _directional_markdown(
             syms = [f["symbol"] for f in rows if lo <= f["zl_days"] <= hi]
             if syms:
                 wl_parts.append(
-                    f"###{prefix} {label}," + tv_csv(f"NSE:{s}" for s in syms)
+                    f"###{prefix} {label}," + tv_csv_flat(f"NSE:{s}" for s in syms)
                 )
 
     lines = [
@@ -575,9 +575,9 @@ def build_markdown(
     for label, lo, hi in buckets:
         syms = [f["symbol"] for f in rising if lo <= f["zl_days"] <= hi]
         if syms:
-            wl_parts.append(f"###{label}," + tv_csv(f"NSE:{s}" for s in syms))
+            wl_parts.append(f"###{label}," + tv_csv_flat(f"NSE:{s}" for s in syms))
     if watch:
-        wl_parts.append("###WATCH," + tv_csv(f"NSE:{f['symbol']}" for f in watch))
+        wl_parts.append("###WATCH," + tv_csv_flat(f"NSE:{f['symbol']}" for f in watch))
 
     lines = [
         f"# {title}",
