@@ -143,7 +143,7 @@
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA)<br><sub>↓CMF7d</sub> | Diagnostic imaging centers for patients across India | 1w | ABOVE | 1w | +6.2% | -0.28% | 559.90 | 4w | 20%  |
 | [GREENPANEL](https://in.tradingview.com/chart/?symbol=NSE:GREENPANEL)<br><sub>↓CMF30d</sub> | MDF and plywood manufacturer for furniture construction | 1w | ABOVE | 1w | +4.8% | +1.44% | 202.27 | 7w | 20%  |
 | [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU)<br><sub>↓CMF22d</sub> | Residential real estate development Ahmedabad Gujarat region | 1w | ABOVE | 1w | +2.9% | -2.17% | 761.85 | — | 20%  |
-| [SURAJEST](https://in.tradingview.com/chart/?symbol=NSE:SURAJEST)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +4.1% | -0.63% | 204.06 | — | 20%  |
+| [SURAJEST](https://in.tradingview.com/chart/?symbol=NSE:SURAJEST)<br><sub>↓CMF30d · DEL90%</sub> |  | 1w | ABOVE | 1w | +4.1% | -0.63% | 204.06 | — | 20%  |
 | [NSIL](https://in.tradingview.com/chart/?symbol=NSE:NSIL)<br><sub>↑CMF1d</sub> |  | 1w | ABOVE | 1w | +3.5% | -0.06% | 5711.50 | 5w | 20%  |
 | [BHARATRAS](https://in.tradingview.com/chart/?symbol=NSE:BHARATRAS)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +7.4% | -0.72% | 1375.30 | 1w | 20%  |
 | [SRHHYPOLTD](https://in.tradingview.com/chart/?symbol=NSE:SRHHYPOLTD)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.8% | +5.02% | 512.65 | — | 20%  |
@@ -159,7 +159,7 @@
 | [FINCABLES](https://in.tradingview.com/chart/?symbol=NSE:FINCABLES)<br><sub>↓CMF15d</sub> | Electrical cables manufacturer for residential industrial infrastructure | 1w | BELOW | 1w | +4.8% | +3.13% | 1034.75 | — | 20%  |
 | [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS)<br><sub>↓CMF8d</sub> | Pharmaceutical intermediates and specialty chemicals manufacturer | 1w | BELOW | 1w | +5.0% | -0.68% | 3260.60 | — | 20%  |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND)<br><sub>↓CMF30d</sub> | Steel casting and alloys for automotive, industrial machinery | 1w | BELOW | 1w | +7.6% | +0.87% | 92.57 | — | 20% 🟦 |
-| [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS)<br><sub>↓CMF8d · DEL51%(T-1)</sub> | ERP software, HCM, aerospace supply chain management | 1w | BELOW | 1w | +7.8% | +0.77% | 626.50 | — | 10% 🟨 |
+| [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS)<br><sub>↓CMF8d</sub> | ERP software, HCM, aerospace supply chain management | 1w | BELOW | 1w | +7.8% | +0.77% | 626.50 | — | 10% 🟨 |
 | [NIBE](https://in.tradingview.com/chart/?symbol=NSE:NIBE)<br><sub>↓CMF15d</sub> | Defense aerospace components manufacturer renewable energy sector | 1w | BELOW | 1w | +3.0% | +1.70% | 1420.90 | — | 10% 🟨 |
 | [BORORENEW](https://in.tradingview.com/chart/?symbol=NSE:BORORENEW)<br><sub>↓CMF5d</sub> | Solar panel glass manufacturing India photovoltaic energy | 1w | BELOW | 1w | +0.2% | -0.47% | 556.80 | — | 20%  |
 | [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN)<br><sub>↓CMF30d</sub> | Product engineering services for semiconductor automotive consumer electronics | 1w | BELOW | 1w | +5.8% | -2.79% | 1917.10 | — | 5% 🟥 |
