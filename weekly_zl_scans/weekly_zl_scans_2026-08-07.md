@@ -129,7 +129,7 @@
 | [EXPLEOSOL](https://in.tradingview.com/chart/?symbol=NSE:EXPLEOSOL)<br><sub>↓CMF30d</sub> | Software testing QA services banking financial sector | 1w | ABOVE | 1w | +4.2% | +1.91% | 836.75 | 2w | 20%  |
 | [EKC](https://in.tradingview.com/chart/?symbol=NSE:EKC)<br><sub>↓CMF14d</sub> | High-pressure seamless steel cylinders for industrial gases | 1w | ABOVE | 1w | +5.5% | +0.92% | 112.68 | 19w | 20%  |
 | [VEEDOL](https://in.tradingview.com/chart/?symbol=NSE:VEEDOL)<br><sub>↓CMF30d</sub> | Automotive industrial lubricants manufacturing marketing India global | 1w | ABOVE | 1w | +7.0% | +0.50% | 1497.30 | — | 20%  |
-| [SURAJEST](https://in.tradingview.com/chart/?symbol=NSE:SURAJEST)<br><sub>↓CMF30d · DEL90%(T-1)</sub> |  | 1w | ABOVE | 1w | +2.9% | -1.20% | 201.61 | — | 20%  |
+| [SURAJEST](https://in.tradingview.com/chart/?symbol=NSE:SURAJEST)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +2.9% | -1.20% | 201.61 | — | 20%  |
 | [KIOCL](https://in.tradingview.com/chart/?symbol=NSE:KIOCL)<br><sub>↓CMF30d</sub> | Iron ore pellets and pig iron manufacturer for steel mills | 1w | ABOVE | 1w | +7.2% | -0.68% | 391.75 | 2w | 20%  |
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA)<br><sub>↑CMF0d</sub> | Diagnostic imaging centers for patients across India | 1w | ABOVE | 1w | +6.3% | +0.17% | 560.85 | 4w | 20%  |
 | [PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU)<br><sub>↑CMF0d</sub> |  | 1w | ABOVE | 1w | +6.9% | +4.35% | 296.05 | 43w | 20%  |
