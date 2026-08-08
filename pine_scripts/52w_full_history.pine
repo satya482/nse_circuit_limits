@@ -1,0 +1,34 @@
+// @version=6
+// 52W Full History — plots rolling 52-week high/low, shows a small table with
+// close's % distance from each ((close-high)/high, (close-low)/low).
+// No companion indicator. Alert message format: none (visual-only indicator).
+indicator("52W Full History", shorttitle="52W Hist", overlay=true)
+
+autoBars   = input.bool(true, "Auto Bars Back (per timeframe)", tooltip="Daily=260, Weekly=52, Monthly=12, scaled by TF multiplier. Intraday falls back to manual value below.")
+manualBars = input.int(260, "Manual Bars Back (used if auto off, or on intraday TFs)", minval=2)
+
+barsPerYear = timeframe.isweekly ? 52 : timeframe.ismonthly ? 12 : timeframe.isdaily ? 260 : na
+barsBack = autoBars and not na(barsPerYear) ? math.max(2, math.round(barsPerYear / timeframe.multiplier)) : manualBars
+rowOffset  = input.int(0, "Table Row Offset (+down / -up)", tooltip="Shifts table vertically by adding blank rows above (positive) the two data rows.")
+
+// rolling 52-week series on every bar
+highest260 = ta.highest(high, barsBack)
+lowest260  = ta.lowest(low, barsBack)
+wk52High = bar_index >= barsBack - 1 ? highest260 : na
+wk52Low  = bar_index >= barsBack - 1 ? lowest260  : na
+
+plot(wk52High, "52W High", color=color.new(color.blue, 40), linewidth=1, style=plot.style_stepline)
+plot(wk52Low,  "52W Low",  color=color.new(color.purple, 40),   linewidth=1, style=plot.style_stepline)
+
+pctFromHigh = not na(wk52High) ? (close - wk52High) / wk52High * 100 : na
+pctFromLow  = not na(wk52Low)  ? (close - wk52Low)  / wk52Low  * 100 : na
+
+var table t = table.new(position.middle_right, 1, 2 + math.abs(rowOffset), border_width=1)
+
+if barstate.islast
+    table.clear(t, 0, 0, 0, 2 + math.abs(rowOffset) - 1)
+    blankBefore = rowOffset > 0 ? rowOffset : 0
+    for i = 0 to blankBefore - 1
+        table.cell(t, 0, i, "")
+    table.cell(t, 0, blankBefore,     "↓ 52W H: " + str.tostring(pctFromHigh, "#.##") + "%", text_color=color.aqua, text_size=size.tiny)
+    table.cell(t, 0, blankBefore + 1, "↑ 52W L: " + str.tostring(pctFromLow,  "#.##") + "%", text_color=color.green,  text_size=size.tiny)
