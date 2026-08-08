@@ -1,0 +1,55 @@
+// @version=6
+// Minervini Trend Template Age -- computes Mark Minervini's Trend Template
+// SMA/52-week structure gate (8 checks: SMA50>150>200 stack + rising SMA200
+// + 52wk high/low range) and shows a small table with the qualifying age
+// (consecutive bars all 8 checks have held true together). Mirrors the 8
+// SMA/52wk checks in minervini_trend_scanner.py's _checks_series() --
+// criterion 9 (RS Line vs weekly RS EMA9 benchmark gate) is intentionally
+// excluded here to avoid a request.security() call and repaint risk; this
+// is a pure price/SMA overlay. No companion indicator. Alert message
+// format: none (visual-only indicator).
+indicator("Minervini Trend Template Age", shorttitle="Minervini Age", overlay=true)
+
+autoScale = input.bool(true, "Auto-scale SMA/52wk lengths by timeframe", tooltip="Daily lengths (50/150/200/252/20) scale down on weekly (/5) and monthly (/21) charts, further divided by timeframe multiplier. Off = use raw daily lengths unscaled (only meaningful on daily charts).")
+rowOffset = input.int(8, "Table Row Offset (+down / -up)", tooltip="Shifts table vertically by adding blank rows above (positive) or reserving rows below (negative).")
+
+barsPerUnit = timeframe.isweekly ? 5 : timeframe.ismonthly ? 21 : timeframe.isdaily ? 1 : na
+scaleLen(n) =>
+    autoScale and not na(barsPerUnit) ? math.max(2, math.round(n / (barsPerUnit * timeframe.multiplier))) : n
+
+len50    = scaleLen(50)
+len150   = scaleLen(150)
+len200   = scaleLen(200)
+len52wk  = scaleLen(252)
+lenMonth = scaleLen(20)  // matches minervini_trend_scanner.py's shift(20) for "SMA200 vs 21 trading days ago"
+
+sma50  = ta.sma(close, len50)
+sma150 = ta.sma(close, len150)
+sma200 = ta.sma(close, len200)
+wk52High = ta.highest(close, len52wk)
+wk52Low  = ta.lowest(close, len52wk)
+
+aboveSma150           = close > sma150
+aboveSma200           = close > sma200
+sma150AboveSma200     = sma150 > sma200
+sma200TrendingUp      = sma200 > sma200[lenMonth]
+sma50AboveBoth        = sma50 > sma150 and sma50 > sma200
+aboveSma50            = close > sma50
+above52wkLow30Pct     = close >= 1.30 * wk52Low
+within25PctOf52wkHigh = close >= 0.75 * wk52High
+
+passesTrendTemplate = aboveSma150 and aboveSma200 and sma150AboveSma200 and sma200TrendingUp and sma50AboveBoth and aboveSma50 and above52wkLow30Pct and within25PctOf52wkHigh
+
+var int trendAge = 0
+trendAge := passesTrendTemplate ? trendAge[1] + 1 : 0
+
+var table t = table.new(position.middle_right, 1, 1 + math.abs(rowOffset), border_width=1)
+
+if barstate.islast
+    table.clear(t, 0, 0, 0, math.abs(rowOffset))
+    blankBefore = rowOffset > 0 ? rowOffset : 0
+    for i = 0 to blankBefore - 1
+        table.cell(t, 0, i, "")
+    ageLabel = passesTrendTemplate ? "Minervini: " + str.tostring(trendAge) + "d" : "Minervini: --"
+    bgColor = passesTrendTemplate ? color.green : color.red
+    table.cell(t, 0, blankBefore, ageLabel, bgcolor=bgColor, text_color=color.white, text_size=size.small)
