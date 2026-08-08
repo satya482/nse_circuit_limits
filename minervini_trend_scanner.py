@@ -315,8 +315,8 @@ def build_markdown(
         "### Trend Template Qualifiers",
     ]
     if rows:
+        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```", ""]
         lines += hdr + _table_rows(rows)
-        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```"]
     else:
         lines.append("*No signals.*")
 
