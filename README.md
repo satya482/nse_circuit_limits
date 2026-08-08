@@ -173,7 +173,7 @@ Place `NSE_500cr_15CrNotional10D_50rs_sector_industry.csv` in the repo root (git
 | Trading-day gaps | Integer position-index diff, not calendar days (handles NSE holidays) |
 | DB columns | All lowercase: `date`, `open`, `high`, `low`, `close`, `volume` |
 | Kite quote close | `last_price` = today's close; `ohlc.close` = previous day |
-| TV watchlist copy blocks | Every standalone scanner watchlist block (`tv_watchlist.tv_csv()`) is a self-contained TV-import list with explicit `###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400` / `###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!` / `###WATCHLIST,<stocks>` sections. Blocks that already carry their own external `###LABEL,` (the per-bucket groups in `ema25_zl`, `ema55_cross`, `nifty50_zlema25`, plus those 3 files' one top combined multi-bucket block) use `tv_csv_flat()` instead — same benchmarks, no nested section markers |
+| TV watchlist copy blocks | Every standalone scanner watchlist block (`tv_watchlist.tv_csv()`) is a self-contained TV-import list with explicit `###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400` / `###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!` / `###WATCHLIST,<stocks>` sections. Blocks that already carry their own external `###LABEL,` (the per-bucket groups in `ema25_zl`, `ema55_cross`, `nifty50_zlema25`, plus those 3 files' one top combined multi-bucket block) use `tv_csv_flat()` instead — same benchmarks, no nested section markers |
 
 ---
 
