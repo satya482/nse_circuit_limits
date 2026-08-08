@@ -46,7 +46,7 @@ import ema25_zl_scanner as base
 from ohlc_db import load_ohlc, load_ohlc_many, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
-from tv_watchlist import tv_csv
+from tv_watchlist import tv_csv, tv_csv_flat, tv_top_sections
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -326,7 +326,19 @@ def build_markdown(
         "### Trend Template Qualifiers",
     ]
     if rows:
-        lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```", ""]
+        wl_parts = []
+        for label, lo, hi in AGE_BUCKETS:
+            syms = sorted(f["symbol"] for f in rows if lo <= f.get("age", 0) <= hi)
+            if syms:
+                wl_parts.append(f"###{label}," + tv_csv_flat(f"NSE:{s}" for s in syms))
+        lines += [
+            "",
+            "**TradingView watchlist** *(sectioned by trend age — paste into TV import)*",
+            "```",
+            ",".join(tv_top_sections() + wl_parts),
+            "```",
+            "",
+        ]
         lines += hdr + _table_rows(rows)
         lines += ["", "### By Trend Age"]
         for label, lo, hi in AGE_BUCKETS:
