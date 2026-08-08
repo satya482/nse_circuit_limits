@@ -60,6 +60,17 @@ LOOKBACK_52WK = 252
 MIN_BARS = 260  # 52wk window + buffer
 AGE_CAP = 400  # bars to walk back before giving up (matches load_ohlc's default lookback)
 
+# Wider than ema25_zl_scanner/nifty50_zlema25_scanner's day-granularity _AGE_BUCKETS:
+# minervini's 9-check AND-gate age runs weeks-to-months once qualified, not days.
+AGE_BUCKETS = [
+    ("<2 WEEKS", 0, 10),  # age=0 seen in practice -- see trend_template_age() RS-gate mismatch note
+    ("2-4 WEEKS", 11, 21),
+    ("1-2 MONTHS", 22, 42),
+    ("2-3 MONTHS", 43, 63),
+    ("3-6 MONTHS", 64, 126),
+    ("6+ MONTHS", 127, AGE_CAP),
+]
+
 
 # ── Trend template criteria ─────────────────────────────────────────────────
 def sma(s: pd.Series, n: int) -> pd.Series:
@@ -317,6 +328,17 @@ def build_markdown(
     if rows:
         lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```", ""]
         lines += hdr + _table_rows(rows)
+        lines += ["", "### By Trend Age"]
+        for label, lo, hi in AGE_BUCKETS:
+            syms = sorted(f["symbol"] for f in rows if lo <= f.get("age", 0) <= hi)
+            if syms:
+                lines += [
+                    "",
+                    f"**{label}** ({len(syms)})",
+                    "```",
+                    tv_csv(f"NSE:{s}" for s in syms),
+                    "```",
+                ]
     else:
         lines.append("*No signals.*")
 

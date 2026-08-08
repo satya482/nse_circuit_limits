@@ -308,7 +308,8 @@ Full design: `docs/superpowers/specs/2026-08-02-minervini-trend-template-scanner
 4. No partial-score output — binary qualify list only, sorted by Age ascending (newest entries into the trend first)
 5. `trend_template_age()` -> Age column: consecutive trading days all 9 checks have held true together (vectorized backward walk, no state file)
 6. Additions/deletions vs previous run (state in `minervini_scans/minervini_trend_state.json`, mirrors `rs_weekly_ema9_scanner.py`) shown as a 2-column table at the top of the output
-7. Writes `minervini_scans/minervini_trend_latest.md` + dated `.md`
+7. "By Trend Age" section groups qualifiers into wider buckets than `ema25_zl_scanner`/`nifty50_zlema25_scanner`'s day-granularity `_AGE_BUCKETS` (`<2 WEEKS` / `2-4 WEEKS` / `1-2 MONTHS` / `2-3 MONTHS` / `3-6 MONTHS` / `6+ MONTHS`, see `AGE_BUCKETS` in `minervini_trend_scanner.py`) since the 9-check AND-gate age runs weeks-to-months once qualified, not days — each bucket gets its own TV watchlist copy block
+8. Writes `minervini_scans/minervini_trend_latest.md` + dated `.md`
 
 ### Scanner pipeline — Breadth Monitor (`scanners/breadth_monitor.py`)
 
