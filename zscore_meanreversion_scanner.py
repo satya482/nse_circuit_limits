@@ -13,6 +13,9 @@ Output:      zscore_scans/zscore_meanreversion_scans.md
 
 import pandas as pd
 
+from ohlc_db import load_ohlc, liq_tag, cmf_tag, deliv_tag
+from float_gate import float_metrics, passes_hard_gate, trap_label
+
 
 ZSCORE_LEN = 55
 Z_THRESHOLD = -3.0
@@ -41,6 +44,48 @@ def zscore_zone_days(
         days += 1
     turning_up = bool(n >= 3 and z.iloc[-1] > z.iloc[-2] > z.iloc[-3])
     return days, turning_up
+
+
+def analyse(symbol: str, float_shares: float = 0) -> dict | None:
+    try:
+        raw = load_ohlc(symbol)
+        if raw is None or len(raw) < ZSCORE_LEN:
+            return None
+
+        fm = float_metrics(raw["close"], raw["volume"], float_shares or None)
+        if not passes_hard_gate(fm):
+            return None
+
+        c = raw["close"].astype(float)
+        z = zscore(c)
+
+        if pd.isna(z.iloc[-1]) or z.iloc[-1] > Z_THRESHOLD:
+            return None  # not oversold
+
+        sma55 = c.rolling(ZSCORE_LEN, min_periods=ZSCORE_LEN).mean().iloc[-1]
+        dist_pct = (c.iloc[-1] / sma55 - 1) * 100
+        zone_days, turning_up = zscore_zone_days(z)
+
+        curr_close = c.iloc[-1]
+        prev_close = c.iloc[-2]
+        day_chg = (curr_close - prev_close) / prev_close * 100
+
+        return {
+            "symbol": symbol,
+            "z": round(z.iloc[-1], 2),
+            "close": curr_close,
+            "sma55": round(sma55, 2),
+            "dist_pct": round(dist_pct, 2),
+            "day_chg": day_chg,
+            "turning_up": turning_up,
+            "zone_days": zone_days,
+            "trap": trap_label(fm),
+            "liq_tag": liq_tag(raw),
+            "cmf_tag": cmf_tag(raw),
+            "deliv_tag": deliv_tag(symbol),
+        }
+    except Exception:
+        return None
 
 
 if __name__ == "__main__":
