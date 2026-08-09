@@ -90,3 +90,35 @@ def test_analyse_returns_dict_when_oversold(monkeypatch):
     assert result["z"] <= mod.Z_THRESHOLD
     assert result["close"] == 54.0
     assert "dist_pct" in result and "zone_days" in result and "turning_up" in result
+
+
+def test_zscore_and_zone_days_smoke():
+    import zscore_meanreversion_scanner as mod
+    s = pd.Series([100.0] * 55 + [80.0])
+    z = mod.zscore(s)
+    assert not pd.isna(z.iloc[-1])
+    days, turning_up = mod.zscore_zone_days(pd.Series([-1.0, -3.5, -3.2, -3.1]))
+    assert days == 3 and turning_up is True
+
+
+def test_build_markdown_no_signals_writes_placeholder():
+    import zscore_meanreversion_scanner as mod
+
+    md = mod.build_markdown([], {})
+    assert "No signals." in md
+    assert "SEBI registered" in md  # disclaimer present
+
+
+def test_build_markdown_sorts_most_extreme_first():
+    import zscore_meanreversion_scanner as mod
+
+    findings = [
+        {"symbol": "AAA", "z": -3.1, "close": 100.0, "sma55": 110.0, "dist_pct": -9.0,
+         "day_chg": -1.0, "turning_up": False, "zone_days": 2,
+         "trap": "n/a", "liq_tag": "", "cmf_tag": "", "deliv_tag": ""},
+        {"symbol": "BBB", "z": -4.5, "close": 50.0, "sma55": 60.0, "dist_pct": -16.6,
+         "day_chg": 0.5, "turning_up": True, "zone_days": 5,
+         "trap": "n/a", "liq_tag": "", "cmf_tag": "", "deliv_tag": ""},
+    ]
+    md = mod.build_markdown(findings, {})
+    assert md.index("BBB") < md.index("AAA")  # -4.5 more extreme than -3.1, listed first
