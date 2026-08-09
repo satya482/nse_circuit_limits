@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE Z-Score Mean Reversion Scanner (SD3-) - 2026-08-09
-*Generated 2026-08-09 11:13 IST*
+*Generated 2026-08-09 11:19 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,11 +18,6 @@
 ---
 
 **Oversold candidates: 3**
-
-**TradingView watchlist**
-```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:POWERGRID,NSE:LICHSGFIN,NSE:RATNAMANI
-```
 
 ### SD3- Oversold Candidates
 | Symbol | Z-Score | Zone Age | Turning Up | Close | SMA55 | Dist% | Day Chg | Circuit |
