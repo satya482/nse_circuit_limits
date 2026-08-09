@@ -21,7 +21,7 @@ from ohlc_db import load_ohlc, liq_tag, cmf_tag, deliv_tag
 from float_gate import float_metrics, passes_hard_gate, trap_label
 import ema25_zl_scanner as base
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
-from tv_watchlist import tv_csv, tv_csv_flat, tv_top_sections
+from tv_watchlist import tv_csv
 
 sys.stdout.reconfigure(encoding="utf-8")
 
@@ -155,7 +155,7 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
 
 
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
-    rows = sorted(findings, key=lambda x: x["z"])  # most negative (most extreme) first
+    rows = sorted(findings, key=lambda x: (x["z"], x["symbol"]))  # most negative (most extreme) first
 
     hdr = [
         "| Symbol | Z-Score | Zone Age | Turning Up | Close | SMA55 | Dist% | Day Chg | Circuit |",
@@ -168,11 +168,6 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         "",
         STATIC_HEADER,
         f"**Oversold candidates: {len(rows)}**",
-        "",
-        "**TradingView watchlist**",
-        "```",
-        ",".join(tv_top_sections() + ([tv_csv_flat(f"NSE:{f['symbol']}" for f in rows)] if rows else [])),
-        "```",
         "",
         "### SD3- Oversold Candidates",
     ]

@@ -88,7 +88,7 @@ def test_analyse_returns_dict_when_oversold(monkeypatch):
     assert result is not None
     assert result["symbol"] == "FOO"
     assert result["z"] <= mod.Z_THRESHOLD
-    assert result["close"] == 54.0
+    assert abs(result["close"] - 54.0) < 1e-9
     assert "dist_pct" in result and "zone_days" in result and "turning_up" in result
 
 
