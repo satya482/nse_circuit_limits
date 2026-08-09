@@ -1,3 +1,5 @@
+import statistics
+
 import pandas as pd
 from zscore_meanreversion_scanner import zscore, zscore_zone_days
 
@@ -7,9 +9,10 @@ def test_zscore_matches_pine_formula():
     closes = [100.0] * 55 + [80.0]
     s = pd.Series(closes)
     z = zscore(s, len=55)
-    # sma of last 55 bars ending at the new bar = mean(54 x 100, 1 x 80) != 100
-    sma = s.rolling(55, min_periods=55).mean().iloc[-1]
-    sd = s.rolling(55, min_periods=55).std().iloc[-1]
+    # Independent calculation: last 55 closes, population stdev (ddof=0, matching Pine)
+    window = closes[-55:]
+    sma = sum(window) / len(window)
+    sd = statistics.pstdev(window)
     expected = (80.0 - sma) / sd
     assert abs(z.iloc[-1] - expected) < 1e-9
     assert pd.isna(z.iloc[53])  # not enough bars yet (need 55)

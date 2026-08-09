@@ -21,7 +21,7 @@ ZONE_CAP = 60  # bars to scan back for zone-age before giving up
 
 def zscore(close: pd.Series, len: int = ZSCORE_LEN) -> pd.Series:
     sma = close.rolling(len, min_periods=len).mean()
-    sd = close.rolling(len, min_periods=len).std()
+    sd = close.rolling(len, min_periods=len).std(ddof=0)
     return (close - sma) / sd
 
 
