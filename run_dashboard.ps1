@@ -24,6 +24,10 @@ Log "--- Git commit+push ---"
 & git -C $workDir add NSE_Circuit_Limits.md index.html nse.csv 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C $workDir commit --no-verify -m "dashboard $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C $workDir push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
+    exit 1
+}
 Log "--- Done ---"
 
 # Scheduled task (run once as admin):

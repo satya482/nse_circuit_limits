@@ -24,6 +24,10 @@ $scanDate = Get-Date -Format "yyyy-MM-dd"
 & git -C C:\Users\satya\nse_circuit_limits add rs_leadership_scans/ 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "[scan $scanDate] rs-leadership: scan complete" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
+    exit 1
+}
 Log "--- Done ---"
 
 # To register the scheduled task (run once as admin):

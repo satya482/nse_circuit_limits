@@ -46,6 +46,10 @@ Log "--- Git commit+push ---"
 & git -C $workDir add telegram_themes/ 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C $workDir commit --no-verify -m "telegram themes $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C $workDir push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+if ($LASTEXITCODE -ne 0) {
+    Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
+    exit 1
+}
 Log "=== Telegram_Ingest DONE ==="
 
 # To register the scheduled task (run once as admin):

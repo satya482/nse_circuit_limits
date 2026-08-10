@@ -89,6 +89,10 @@ if ($newEntries.Count -gt 0) {
         $msg = "investor stories sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm') IST ($copied new)"
         git commit --no-verify -m $msg 2>&1 | Out-Null
         git push 2>&1 | Out-Null
+        if ($LASTEXITCODE -ne 0) {
+            Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
+            exit 1
+        }
         Log "Pushed to GitHub: $msg"
     } else {
         Log "Nothing new to commit."
