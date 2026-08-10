@@ -16,9 +16,9 @@ Strict AND-gate, all 9 checks must pass (Mark Minervini's Trend Template):
   6. close > SMA50
   7. close >= 1.30 x 52-week low
   8. close >= 0.75 x 52-week high (within 25% of it)
-  9. RS strength: daily RS line > weekly RS EMA9, weekly RS EMA9 rising
-     (reused from ema25_zl_scanner._weekly_rs_gate() -- RS Rating proxy,
-     see docs/superpowers/specs/2026-08-02-minervini-trend-template-scanner-design.md)
+  9. RS strength: weekly RS EMA9 flat or rising (see _weekly_rs_ema9_gate();
+     deliberately does NOT require RS Line above the EMA9, unlike
+     ema25_zl_scanner._weekly_rs_gate())
 
 No partial-score output -- binary qualify list.
 
@@ -63,7 +63,7 @@ AGE_CAP = 400  # bars to walk back before giving up (matches load_ohlc's default
 # Wider than ema25_zl_scanner/nifty50_zlema25_scanner's day-granularity _AGE_BUCKETS:
 # minervini's 9-check AND-gate age runs weeks-to-months once qualified, not days.
 AGE_BUCKETS = [
-    ("<2 WEEKS", 0, 10),  # age=0 seen in practice -- see trend_template_age() RS-gate mismatch note
+    ("<2 WEEKS", 0, 10),  # age=0 seen in practice
     ("2-4 WEEKS", 11, 21),
     ("1-2 MONTHS", 22, 42),
     ("2-3 MONTHS", 43, 63),
@@ -106,7 +106,7 @@ def _checks_series(close: pd.Series) -> dict:
 
 def trend_template_checks(close: pd.Series) -> dict:
     """8 SMA/52wk checks for the last bar only (criterion 9 -- RS gate -- is
-    separate, needs the benchmark series, see _weekly_rs_gate reuse in
+    separate, needs the benchmark series, see _weekly_rs_ema9_gate() call in
     analyse())."""
     return {k: bool(v.iloc[-1]) for k, v in _checks_series(close).items()}
 
@@ -124,10 +124,23 @@ def _sma_pass_series(close: pd.Series) -> pd.Series:
     return out
 
 
+def _weekly_rs_ema9_gate(c_rs: pd.Series, idx_rs: pd.Series) -> bool:
+    """Weekly RS EMA9 flat or rising vs prior week. Unlike
+    ema25_zl_scanner._weekly_rs_gate(), does NOT require daily RS Line above
+    the EMA9 -- only the EMA9's own slope."""
+    wk_c = c_rs.resample("W").last().dropna()
+    wk_idx = idx_rs.resample("W").last().dropna()
+    common = wk_c.index.intersection(wk_idx.index)
+    if len(common) < 12:
+        return False
+    wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
+    wk_rs_e9 = base.ema(wk_rs, 9)
+    return bool(wk_rs_e9.iloc[-1] >= wk_rs_e9.iloc[-2])
+
+
 def _rs_pass_series(c_rs: pd.Series, idx_rs: pd.Series) -> pd.Series:
-    """Per-day version of ema25_zl_scanner._weekly_rs_gate(): daily RS Line >
-    weekly RS EMA9 (forward-filled to daily) AND weekly RS EMA9 strictly
-    rising vs the prior week (also forward-filled). Mirrors
+    """Per-day version of _weekly_rs_ema9_gate(): weekly RS EMA9 flat/rising
+    vs prior week (forward-filled to daily). Mirrors
     rs_weekly_ema9_scanner.weekly_rs_ema9_trend()'s daily-alignment approach."""
     daily_rs = (c_rs / idx_rs) * 1000
     wk_c = c_rs.resample("W").last().dropna()
@@ -137,13 +150,14 @@ def _rs_pass_series(c_rs: pd.Series, idx_rs: pd.Series) -> pd.Series:
         return pd.Series(False, index=daily_rs.index)
     wk_rs = (wk_c.loc[common] / wk_idx.loc[common]) * 1000
     wk_rs_e9 = base.ema(wk_rs, 9)
-    wk_rising = wk_rs_e9 > wk_rs_e9.shift(1)
+    wk_flat_or_rising = wk_rs_e9 >= wk_rs_e9.shift(1)
 
-    wk_e9_daily = wk_rs_e9.reindex(daily_rs.index, method="ffill")
-    wk_rising_daily = (
-        wk_rising.astype(float).reindex(daily_rs.index, method="ffill").fillna(0.0).astype(bool)
+    return (
+        wk_flat_or_rising.astype(float)
+        .reindex(daily_rs.index, method="ffill")
+        .fillna(0.0)
+        .astype(bool)
     )
-    return (daily_rs > wk_e9_daily) & wk_rising_daily
 
 
 def trend_template_age(close: pd.Series, c_rs: pd.Series, idx_rs: pd.Series) -> int:
@@ -187,8 +201,7 @@ def analyse(symbol: str, index_s: pd.Series, float_shares: float = 0) -> dict | 
             return None
         c_rs = c.loc[common]
         idx_rs = index_s.loc[common]
-        rs = (c_rs / idx_rs) * 1000
-        if not base._weekly_rs_gate(rs, c_rs, idx_rs):
+        if not _weekly_rs_ema9_gate(c_rs, idx_rs):
             return None
 
         age = trend_template_age(c, c_rs, idx_rs)

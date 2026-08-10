@@ -47,6 +47,7 @@ SCANNER_KEYWORDS = {
 PAGES = "https://satya482.github.io/nse_circuit_limits"
 
 SCANNER_MD_LINKS_STATIC = {
+    "GitHub Push": f"{REPO}/commits/main",
     "Swing Scanner": f"{BLOB}/swing_scans/swing_scans.md",
     "Momentum Scanner": f"{BLOB}/momentum_scans/momentum_scans.md",
     "Weekly RS Scanner": f"{BLOB}/momentum_scans/momentum_rs_weekly_scans.md",
@@ -82,6 +83,25 @@ def get_today_commits() -> str:
         cwd=BASE,
     )
     return r.stdout.lower()
+
+
+def get_push_status() -> tuple[bool, str]:
+    """Local commits existing is not the same as them being on GitHub - a
+    rejected push (non-fast-forward etc) leaves commits stuck locally with
+    no signal anywhere else. Check the ahead-count against the upstream
+    remote-tracking ref, which only advances on a successful push."""
+    r = subprocess.run(
+        ["git", "rev-list", "--count", "@{u}..HEAD"],
+        capture_output=True,
+        text=True,
+        cwd=BASE,
+    )
+    if r.returncode != 0:
+        return False, "unknown (git error)"
+    ahead = int(r.stdout.strip())
+    if ahead == 0:
+        return True, "in sync with GitHub"
+    return False, f"{ahead} commit(s) not pushed to GitHub"
 
 
 def read_file(path: str) -> str:
@@ -324,6 +344,11 @@ def main():
 
     status = {name: keyword in commits for name, keyword in SCANNER_KEYWORDS.items()}
     details = get_scan_details(today)
+
+    pushed_ok, push_detail = get_push_status()
+    status = {"GitHub Push": pushed_ok, **status}
+    details = {"GitHub Push": push_detail, **details}
+
     all_ok = all(status.values())
 
     print(f"\nNSE Scanner Status — {today}")

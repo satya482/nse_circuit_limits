@@ -42,7 +42,7 @@ TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_FILE = os.path.join(SCANS_DIR, "ema55_cross_scans.md")
 
 EMA_PERIOD = 55
-BAND_PCT = 10.0  # keep listed while close is within +BAND_PCT% of EMA55
+BAND_PCT = 20.0  # keep listed while close is within +BAND_PCT% of EMA55
 CROSS_CAP = 60  # bars to scan back for the last cross-up before giving up
 
 _AGE_BUCKETS = [

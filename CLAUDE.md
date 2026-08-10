@@ -50,7 +50,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
 .\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
-.\run_ema55_cross_scanner.ps1  # 4:28 PM — EMA55 cross watchlist (close crossed above EMA55, within +10% of it)
+.\run_ema55_cross_scanner.ps1  # 4:28 PM — EMA55 cross watchlist (close crossed above EMA55, within +20% of it)
 .\run_nifty50_zlema25_scanner.ps1  # NIFTY 50 daily ZLEMA25 up/down trend age scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
@@ -145,7 +145,7 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
 (same mcap ₹1,000 Cr–5 Lakh Cr / price > ₹50 universe) and its float hard-gate.
 
 1. Per symbol: EMA55 via `ema25_zl_scanner.ema()`; keep only if `close` is currently
-   above EMA55 AND within +10% of it (drops off once too extended past the line, or
+   above EMA55 AND within +20% of it (drops off once too extended past the line, or
    once it crosses back under — self-pruning watchlist)
 2. `ema55_cross_stats()` — bars since close last crossed above EMA55 (capped 60d) +
    % price change since that bar; same backward-scan-with-cap shape as
@@ -304,7 +304,7 @@ Full design: `docs/superpowers/specs/2026-08-02-minervini-trend-template-scanner
 
 1. Reuses `ema25_zl_scanner.get_watchlist()` for universe (NSE common equity, MCap ₹1,000 Cr – ₹5 Lakh Cr, price > ₹50) and float hard-gate
 2. `load_ohlc(symbol)` -> `trend_template_checks()`: strict AND-gate on 8 SMA50/150/200-stack and 52wk high/low checks
-3. Reuses `ema25_zl_scanner._weekly_rs_gate()` as criterion 9 (RS Rating proxy — daily RS Line > weekly RS EMA9, weekly RS EMA9 rising)
+3. Criterion 9 (RS strength): `minervini_trend_scanner._weekly_rs_ema9_gate()` — weekly RS EMA9 flat or rising; deliberately does NOT require RS Line above the EMA9 (unlike `ema25_zl_scanner._weekly_rs_gate()`)
 4. No partial-score output — binary qualify list only, sorted by Age ascending (newest entries into the trend first)
 5. `trend_template_age()` -> Age column: consecutive trading days all 9 checks have held true together (vectorized backward walk, no state file)
 6. Additions/deletions vs previous run (state in `minervini_scans/minervini_trend_state.json`, mirrors `rs_weekly_ema9_scanner.py`) shown as a 2-column table at the top of the output
