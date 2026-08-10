@@ -6,7 +6,14 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import ema25_zl_scanner as base
-from ema55_cross_scanner import ema55_cross_stats, ema55_trend_age
+from ema55_cross_scanner import (
+    ema55_cross_stats,
+    ema55_trend_age,
+    build_union,
+    _symbols_from_tv_block,
+    _load_union_source,
+    TODAY,
+)
 
 
 def test_cross_up_detected_at_correct_age():
@@ -47,8 +54,86 @@ def test_trend_age_diverges_from_cross_age_on_a_whipsaw():
     assert trend_days > cross_days
 
 
+def test_build_union_groups_by_confluence_descending():
+    source_sets = {
+        "EMA55 Cross": {"A", "B", "C"},
+        "EMA25 ZL": {"A", "B", "D"},
+        "Minervini": {"A", "E"},
+    }
+    groups = build_union(source_sets)
+    assert groups[0] == ("ALL 3", ["A"])
+    assert groups[1] == ("2 OF 3", ["B"])
+    assert groups[2] == ("1 ONLY", ["C", "D", "E"])
+
+
+def test_build_union_omits_empty_groups():
+    # nothing appears in all 3 -> no "ALL 3" group emitted
+    source_sets = {
+        "EMA55 Cross": {"A"},
+        "EMA25 ZL": {"B"},
+        "Minervini": {"C"},
+    }
+    groups = build_union(source_sets)
+    labels = [label for label, _ in groups]
+    assert "ALL 3" not in labels
+    assert groups == [("1 ONLY", ["A", "B", "C"])]
+
+
+def test_build_union_degrades_with_fewer_sources():
+    # one upstream source missing -> relabel to 2-way confluence, not 3-way
+    source_sets = {"EMA55 Cross": {"A", "B"}, "EMA25 ZL": {"A", "C"}}
+    groups = build_union(source_sets)
+    assert groups == [("ALL 2", ["A"]), ("1 ONLY", ["B", "C"])]
+
+
+def test_build_union_returns_empty_for_single_source():
+    assert build_union({"EMA55 Cross": {"A", "B"}}) == []
+
+
+def test_symbols_from_tv_block_skips_anchors_and_labelled_sections():
+    md = (
+        "intro text\n"
+        "```\n"
+        "###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,"
+        "###1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:FOO,NSE:BAR,"
+        "###WATCH,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:BAZ\n"
+        "```\n"
+        "outro text\n"
+    )
+    syms = _symbols_from_tv_block(md, {"INDICES", "COMMODITIES", "WATCH"})
+    assert syms == {"FOO", "BAR"}
+
+
+def test_load_union_source_missing_file(tmp_path):
+    missing = tmp_path / "does_not_exist.md"
+    syms, note = _load_union_source(str(missing), set(), "Test Source")
+    assert syms is None
+    assert "not found" in note
+
+
+def test_load_union_source_stale_date(tmp_path):
+    stale = tmp_path / "stale.md"
+    stale.write_text("# Some Scan - 2000-01-01\n```\n###1 DAY,NSE:FOO\n```\n", encoding="utf-8")
+    syms, note = _load_union_source(str(stale), set(), "Test Source")
+    assert syms is None
+    assert "stale" in note
+
+
+def test_load_union_source_fresh_file(tmp_path):
+    fresh = tmp_path / "fresh.md"
+    fresh.write_text(f"# Some Scan - {TODAY}\n```\n###1 DAY,NSE:FOO\n```\n", encoding="utf-8")
+    syms, note = _load_union_source(str(fresh), set(), "Test Source")
+    assert syms == {"FOO"}
+    assert note is None
+
+
 if __name__ == "__main__":
     test_cross_up_detected_at_correct_age()
     test_no_cross_within_cap_returns_cap_sentinel()
     test_trend_age_diverges_from_cross_age_on_a_whipsaw()
+    test_build_union_groups_by_confluence_descending()
+    test_build_union_omits_empty_groups()
+    test_build_union_degrades_with_fewer_sources()
+    test_build_union_returns_empty_for_single_source()
+    test_symbols_from_tv_block_skips_anchors_and_labelled_sections()
     print("ok")

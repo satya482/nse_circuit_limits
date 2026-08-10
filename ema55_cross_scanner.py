@@ -24,6 +24,7 @@ Output:      ema55_cross_scans/ema55_cross_scans.md
 
 import sys
 import os
+import re
 from datetime import datetime
 
 import pandas as pd
@@ -40,6 +41,13 @@ REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 SCANS_DIR = os.path.join(REPO_DIR, "ema55_cross_scans")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MD_FILE = os.path.join(SCANS_DIR, "ema55_cross_scans.md")
+
+# Union watchlist sources -- read-only, parsed from their already-written
+# TV-paste blocks (see build_union / _load_union_source). Requires
+# run_all_scanners.ps1 to run EMA55_Cross AFTER both of these so today's
+# files already exist.
+EMA25_ZL_MD = os.path.join(REPO_DIR, "ema25_zl_scans", "ema25_zl_scans.md")
+MINERVINI_MD = os.path.join(REPO_DIR, "minervini_scans", "minervini_trend_latest.md")
 
 EMA_PERIOD = 55
 BAND_PCT = 20.0  # keep listed while close is within +BAND_PCT% of EMA55
@@ -97,6 +105,92 @@ def ema55_trend_age(ema55: pd.Series, close: pd.Series, lookback: int = TREND_LO
             return bars, round(pct, 2)
     cap_idx = max(0, n - CROSS_CAP)
     return CROSS_CAP, round((close.iloc[-1] / close.iloc[cap_idx] - 1) * 100, 2)
+
+
+# ── Union watchlist ──────────────────────────────────────────────────────────
+def _symbols_from_tv_block(md: str, skip_labels: set[str]) -> set[str]:
+    """Pull equity symbols out of a scanner md's TV-paste block (the first
+    fenced ``` block, always the one right after "TradingView watchlist" in
+    every scanner that has one). Skips index/commodity anchor sections and
+    any caller-specified section labels (e.g. EMA25 ZL's "WATCH" section,
+    which is a near-miss list, not the actual signal)."""
+    m = re.search(r"```\n(.*?)\n```", md, re.S)
+    if not m:
+        return set()
+    syms: set[str] = set()
+    for section in m.group(1).split("###")[1:]:
+        label, _, rest = section.partition(",")
+        if label.strip().upper() in skip_labels:
+            continue
+        for tok in rest.split(","):
+            tok = tok.strip()
+            if tok.startswith("NSE:") and tok[4:] not in ("NIFTYSMLCAP250", "NIFTYMIDSML400"):
+                syms.add(tok[4:])
+    return syms
+
+
+def _load_union_source(path: str, skip_labels: set[str], name: str) -> tuple[set[str] | None, str | None]:
+    """Returns (symbols, None) if today's file exists and is fresh, else
+    (None, reason) so the caller can drop this source and say why."""
+    if not os.path.exists(path):
+        return None, f"{name} data unavailable (file not found)"
+    with open(path, encoding="utf-8") as fh:
+        md = fh.read()
+    if not re.search(rf"^#\s.*{re.escape(TODAY)}", md, re.MULTILINE):
+        return None, f"{name} data unavailable for today's union (stale)"
+    return _symbols_from_tv_block(md, skip_labels), None
+
+
+def build_union(source_sets: dict[str, set[str]]) -> list[tuple[str, list[str]]]:
+    """Group the union of all symbols by how many of the given sources
+    flagged each one, descending confluence first. Empty groups omitted.
+    Degrades to fewer/relabeled groups automatically if source_sets has
+    fewer than 3 entries (a source was dropped as stale/missing upstream)."""
+    n = len(source_sets)
+    if n < 2:
+        return []
+    all_syms = set().union(*source_sets.values())
+    by_count: dict[int, list[str]] = {}
+    for s in sorted(all_syms):
+        c = sum(1 for syms in source_sets.values() if s in syms)
+        by_count.setdefault(c, []).append(s)
+
+    result = []
+    for c in range(n, 0, -1):
+        syms = by_count.get(c)
+        if not syms:
+            continue
+        label = f"ALL {n}" if c == n else ("1 ONLY" if c == 1 else f"{c} OF {n}")
+        result.append((label, syms))
+    return result
+
+
+def build_union_section(union_groups: list[tuple[str, list[str]]], notes: list[str]) -> list[str]:
+    lines = [
+        "### Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template",
+        "*(sectioned by confluence — how many of the scanners flagged the symbol today)*",
+        "",
+    ]
+    if notes:
+        lines.append(f"*({'; '.join(notes)})*")
+        lines.append("")
+    if not union_groups:
+        lines += ["*No union data available today.*", "", "---", ""]
+        return lines
+
+    counts_line = " &nbsp;|&nbsp; ".join(f"**{label}: {len(syms)}**" for label, syms in union_groups)
+    wl_parts = [f"###{label}," + tv_csv_flat(f"NSE:{s}" for s in syms) for label, syms in union_groups]
+    lines += [
+        counts_line,
+        "",
+        "```",
+        ",".join(tv_top_sections() + wl_parts),
+        "```",
+        "",
+        "---",
+        "",
+    ]
+    return lines
 
 
 def analyse(symbol: str, float_shares: float = 0) -> dict | None:
@@ -211,10 +305,25 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         if syms:
             wl_parts.append(f"###{label}," + tv_csv_flat(f"NSE:{s}" for s in syms))
 
+    ema25_syms, ema25_note = _load_union_source(
+        EMA25_ZL_MD, {"INDICES", "COMMODITIES", "WATCH"}, "EMA25 ZL"
+    )
+    minervini_syms, minervini_note = _load_union_source(
+        MINERVINI_MD, {"INDICES", "COMMODITIES"}, "Minervini"
+    )
+    source_sets = {"EMA55 Cross": {f["symbol"] for f in rows}}
+    if ema25_syms is not None:
+        source_sets["EMA25 ZL"] = ema25_syms
+    if minervini_syms is not None:
+        source_sets["Minervini"] = minervini_syms
+    union_notes = [n for n in (ema25_note, minervini_note) if n]
+    union_groups = build_union(source_sets)
+
     lines = [
         f"# NSE EMA{EMA_PERIOD} Cross Watchlist — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
+        *build_union_section(union_groups, union_notes),
         STATIC_HEADER,
         f"**On watch: {len(rows)}**",
         "",

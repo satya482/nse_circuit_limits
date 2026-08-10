@@ -50,7 +50,6 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_dashboard.ps1           # 4:10 PM — circuit limits dashboard (main.py)
 .\run_daily_gainers_brief.ps1 # 4:15 PM — daily top-gainers HTML brief
 .\run_ema25_zl_scanner.ps1   # 4:25 PM — EMA25 ZL scanner
-.\run_ema55_cross_scanner.ps1  # 4:28 PM — EMA55 cross watchlist (close crossed above EMA55, within +20% of it)
 .\run_nifty50_zlema25_scanner.ps1  # NIFTY 50 daily ZLEMA25 up/down trend age scanner
 .\run_momentum_scanner.ps1    # momentum scanner
 .\ema-compression-scanner\run_scanner.ps1  # 4:35 PM — EMA compression scanner
@@ -58,6 +57,8 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_rs_highline_scanner.ps1    # 4:30 PM — RS high-line cross scanner
 .\run_rs_leadership_scanner.ps1  # 4:30 PM — RS leadership combined-cross scanner (RelPerf%+EMA)
 .\run_minervini_trend_scanner.ps1  # 4:30 PM — Minervini Trend Template scanner (strict SMA50/150/200 + 52wk + RS gate)
+.\run_ema55_cross_scanner.ps1  # ~4:32 PM — runs AFTER MinerviniTrend (moved, was 4:28 PM before EMA25/Minervini)
+                                 #   so it can build the union watchlist below; close crossed above EMA55, within +20% of it
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
@@ -153,6 +154,18 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
    ZLEMA25 slope turn
 3. Writes `ema55_cross_scans/ema55_cross_scans.md` (dated + `_latest` equivalent as
    the undated file), sorted by cross age ascending (freshest first)
+4. `build_union()` — prepends a "Union Watchlist" section at the top of the md,
+   grouping symbols by how many of {EMA25 ZL, EMA55 Cross, Minervini Trend
+   Template} flagged them today (`ALL 3` / `2 OF 3` / `1 ONLY`, empty groups
+   omitted). Reads the other two scanners' already-written `_latest.md` files
+   read-only, parsing symbols straight out of their existing TV-paste blocks
+   (`_symbols_from_tv_block()`) rather than importing their internals — EMA25
+   ZL's "WATCH" section is excluded (near-miss only, not the Rising signal).
+   `_load_union_source()` checks each file's title line carries today's date
+   before trusting it; a missing/stale source is dropped with a note instead
+   of blocking the union. **Requires `run_all_scanners.ps1` to run EMA55_Cross
+   after MinerviniTrend** (moved there specifically for this — see run order
+   above) so both upstream files exist same-run.
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
