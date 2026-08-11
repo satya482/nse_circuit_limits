@@ -57,7 +57,7 @@
 | [DHANUKA](https://in.tradingview.com/chart/?symbol=NSE:DHANUKA)<br><sub>↑CMF6d</sub> | Herbicides insecticides fungicides manufacturing for Indian farmers | 1w | ABOVE | 1w | +1.9% | +2.45% | 1040.40 | 1w | 20%  |
 | [SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF)<br><sub>↑CMF1d</sub> | Civil construction contractor for infrastructure projects | 1w | ABOVE | 1w | +10.3% | +1.13% | 263.49 | — | 20%  |
 | [AFSL](https://in.tradingview.com/chart/?symbol=NSE:AFSL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +4.8% | +4.72% | 210.74 | 33w | 20%  |
-| [GOCOLORS](https://in.tradingview.com/chart/?symbol=NSE:GOCOLORS)<br><sub>↓CMF30d</sub> | Women's branded bottoms retailer, design to retail operations | 1w | ABOVE | 1w | +0.3% | -1.90% | 323.00 | — | 20%  |
+| [GOCOLORS](https://in.tradingview.com/chart/?symbol=NSE:GOCOLORS)<br><sub>↓CMF30d · DEL50%</sub> | Women's branded bottoms retailer, design to retail operations | 1w | ABOVE | 1w | +0.3% | -1.90% | 323.00 | — | 20%  |
 | [LIKHITHA](https://in.tradingview.com/chart/?symbol=NSE:LIKHITHA)<br><sub>↑CMF0d</sub> |  | 1w | ABOVE | 1w | +9.8% | +7.49% | 243.59 | — | 5% 🟥 |
 | [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES)<br><sub>↓CMF6d</sub> |  | 1w | ABOVE | 1w | +7.4% | +1.23% | 426.65 | — | 20%  |
 | [INDOSTAR](https://in.tradingview.com/chart/?symbol=NSE:INDOSTAR)<br><sub>↓CMF14d</sub> | NBFC lending commercial vehicles SME infrastructure | 1w | ABOVE | 1w | +8.3% | +2.66% | 248.55 | — | 20%  |
