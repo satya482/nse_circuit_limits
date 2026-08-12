@@ -7,9 +7,9 @@ Watchlist filters (TradingView, reused from ema25_zl_scanner.py):
   - NSE common equity, price > 50 INR, market cap 1,000 Cr - 5 Lakh Cr
 
 Signal (no RS gate — this is a pure price/EMA55 watch trigger):
-  - close currently above EMA55
-  - close within +10% of EMA55 (drops off once too extended, or once it
-    crosses back under — keeps the list to stocks worth watching closely)
+  - close within -10% to +20% of EMA55 (below-EMA55 stocks included as
+    "approaching" watches; drops off once too extended above, or once it
+    falls more than 10% under — keeps the list to stocks worth watching closely)
   - reports days since EMA55 was last crossed (parity with ema25_zl_scanner's
     zl25_turn_stats — same backward-scan-with-cap pattern, but for a
     close/EMA55 crossover instead of a ZLEMA25 slope turn)
@@ -51,6 +51,7 @@ MINERVINI_MD = os.path.join(REPO_DIR, "minervini_scans", "minervini_trend_latest
 
 EMA_PERIOD = 55
 BAND_PCT = 20.0  # keep listed while close is within +BAND_PCT% of EMA55
+BELOW_BAND_PCT = 10.0  # also keep listed while close is up to -BELOW_BAND_PCT% under EMA55 (approaching)
 CROSS_CAP = 60  # bars to scan back for the last cross-up before giving up
 
 _AGE_BUCKETS = [
@@ -206,12 +207,9 @@ def analyse(symbol: str, float_shares: float = 0) -> dict | None:
         c = raw["close"].astype(float)
         ema55 = base.ema(c, EMA_PERIOD)
 
-        if c.iloc[-1] <= ema55.iloc[-1]:
-            return None  # not currently above EMA55
-
         band_pct = (c.iloc[-1] / ema55.iloc[-1] - 1) * 100
-        if band_pct > BAND_PCT:
-            return None  # too extended past EMA55 to "monitor closely"
+        if band_pct > BAND_PCT or band_pct < -BELOW_BAND_PCT:
+            return None  # too extended past EMA55, or too far below to be "approaching"
 
         cross_days, cross_pct = ema55_cross_stats(c, ema55)
         trend_days, trend_pct = ema55_trend_age(ema55, c)
@@ -245,7 +243,7 @@ STATIC_HEADER = f"""### Scan definition
 | Exchange | NSE common equity |
 | Price | > ₹50 |
 | Market cap | ₹1,000 Cr – ₹5 Lakh Cr |
-| Signal | Close above EMA{EMA_PERIOD} and within +{BAND_PCT:.0f}% of it |
+| Signal | Close within -{BELOW_BAND_PCT:.0f}% to +{BAND_PCT:.0f}% of EMA{EMA_PERIOD} |
 | Cross Age / Chg% | Days since close last crossed above EMA{EMA_PERIOD} (capped {CROSS_CAP}d) · % price change since that bar |
 | Trend Age / Chg% | Days since EMA{EMA_PERIOD}'s {TREND_LOOKBACK}-bar slope last turned positive (capped {CROSS_CAP}d) · % price change since that bar |
 | Float gate | ⛔ AVOID dropped from scan · ✓ SAFE / ⚠ CAUTION shown under symbol (float_gate.py) |
@@ -265,6 +263,7 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
         cp = f"+{f['cross_pct']:.1f}%" if f["cross_pct"] >= 0 else f"{f['cross_pct']:.1f}%"
         td = f"{f['trend_days']}d+" if f["trend_days"] >= CROSS_CAP else f"{f['trend_days']}d"
         tp = f"+{f['trend_pct']:.1f}%" if f["trend_pct"] >= 0 else f"{f['trend_pct']:.1f}%"
+        bd = "+" if f["band_pct"] >= 0 else ""
         ds = "+" if f["day_chg"] >= 0 else ""
         extras = []
         trap = f.get("trap", "")
@@ -283,7 +282,7 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
             f"| {cp} "
             f"| {td} "
             f"| {tp} "
-            f"| +{f['band_pct']:.1f}% "
+            f"| {bd}{f['band_pct']:.1f}% "
             f"| {ds}{f['day_chg']:.2f}% "
             f"| {f['close']:.2f} "
             f"| {cl} {em} |"

@@ -58,7 +58,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_rs_leadership_scanner.ps1  # 4:30 PM — RS leadership combined-cross scanner (RelPerf%+EMA)
 .\run_minervini_trend_scanner.ps1  # 4:30 PM — Minervini Trend Template scanner (strict SMA50/150/200 + 52wk + RS gate)
 .\run_ema55_cross_scanner.ps1  # ~4:32 PM — runs AFTER MinerviniTrend (moved, was 4:28 PM before EMA25/Minervini)
-                                 #   so it can build the union watchlist below; close crossed above EMA55, within +20% of it
+                                 #   so it can build the union watchlist below; close within -10% to +20% of EMA55
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
@@ -145,9 +145,10 @@ All thresholds live in `settings.yaml`. Pipeline:
 Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watchlist()`
 (same mcap ₹1,000 Cr–5 Lakh Cr / price > ₹50 universe) and its float hard-gate.
 
-1. Per symbol: EMA55 via `ema25_zl_scanner.ema()`; keep only if `close` is currently
-   above EMA55 AND within +20% of it (drops off once too extended past the line, or
-   once it crosses back under — self-pruning watchlist)
+1. Per symbol: EMA55 via `ema25_zl_scanner.ema()`; keep only if `close` is within
+   -10% to +20% of EMA55 (below-EMA stocks included as "approaching" watches;
+   drops off once too extended above, or once it falls more than 10% under —
+   self-pruning watchlist)
 2. `ema55_cross_stats()` — bars since close last crossed above EMA55 (capped 60d) +
    % price change since that bar; same backward-scan-with-cap shape as
    `ema25_zl_scanner.zl25_turn_stats()`, just crossover-of-two-series instead of a
