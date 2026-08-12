@@ -25,7 +25,7 @@
 ### 🏆 LEADER ZL — ZLEMA25 touch + RS holds + volume dry-up (15)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>↓CMF2d · DEL64%(T-1)</sub> | ✓ SAFE | Precision heat exchangers for HVAC refrigeration equipment makers | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 84 | ↑89 | ↑1.080 | 100% | 123% ↑ | ✅8/8 | 🔵0.51x | ↑2d | +21.7% | +3.43% | 5%  |
+| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>↓CMF2d · DEL57%</sub> | ✓ SAFE | Precision heat exchangers for HVAC refrigeration equipment makers | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 84 | ↑89 | ↑1.080 | 100% | 123% ↑ | ✅8/8 | 🔵0.51x | ↑2d | +21.7% | +3.43% | 5%  |
 | [CNL](https://in.tradingview.com/chart/?symbol=NSE:CNL)<br><sub>↑CMF22d</sub> | ✓ SAFE | IT and lifestyle products distributor for retailers | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 83 | ↑94 | ↑1.107 | 100% | 129% ↑ | ✅8/8 | 🔵0.24x | ↑48d | +91.4% | +8.22% | 20%  |
 | [RRKABEL](https://in.tradingview.com/chart/?symbol=NSE:RRKABEL)<br><sub>↓CMF2d</sub> | ✓ SAFE | Wires cables residential commercial industrial infrastructure segments | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 80 | ↑93 | ↓1.029 | 99% | 139% ↑ | ✅8/8 | 🔵0.33x | ↑18d | +21.6% | -0.82% | 20%  |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>↓CMF0d</sub> | ✓ SAFE | Specialty chemicals for pharma, agro, materials | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 78 | ↑92 | ↓1.024 | 99% | 121% ↑ | ✅8/8 | 🔵0.39x | ↑13d | +13.0% | -1.32% | 20%  |
@@ -104,7 +104,7 @@
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS)<br><sub>↑CMF15d</sub> | ✓ SAFE | Defense aerospace electronics systems manufacturing | 🔵 Bounce EMA50 · RS holds | 77 | 🔄78 | ↑1.014 | 92% | 106% ↑ | ✅8/8 | 🔵0.47x | ↑1d | +2.3% | +2.26% | 20%  |
 | [AEROFLEX](https://in.tradingview.com/chart/?symbol=NSE:AEROFLEX)<br><sub>↑CMF0d</sub> | ✓ SAFE | Stainless steel corrugated hoses assemblies fittings industrial flow | 🔵 Bounce EMA50 · RS holds | 72 | 🔄95 | ↑1.028 | 87% | 181% ↑ | ✅8/8 | 0.88x | ↑1d | +5.7% | +5.65% | 10% 🟨 |
-| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF0d · DEL29%(T-1)</sub> | ✓ SAFE | Govt tourism hotels restaurants transport hospitality services | 🔵 Bounce EMA50 · RS holds | 60 | 🔄63 | ↑1.021 | 91% | 95% ↑ | ✅7/8 | 1.06x | ↑1d | +6.6% | +6.56% | 20% 🟦 |
+| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF0d</sub> | ✓ SAFE | Govt tourism hotels restaurants transport hospitality services | 🔵 Bounce EMA50 · RS holds | 60 | 🔄63 | ↑1.021 | 91% | 95% ↑ | ✅7/8 | 1.06x | ↑1d | +6.6% | +6.56% | 20% 🟦 |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DATAPATTNS,NSE:AEROFLEX,NSE:ITDC

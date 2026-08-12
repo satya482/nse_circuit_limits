@@ -60,11 +60,11 @@
 | [SURAKSHA](https://in.tradingview.com/chart/?symbol=NSE:SURAKSHA)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +8.3% | +4.69% | 270.35 | — | 20%  |
 | [SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF)<br><sub>↑CMF2d</sub> | Civil construction contractor for infrastructure projects | 1w | ABOVE | 1w | +5.6% | -4.24% | 252.31 | — | 20%  |
 | [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES)<br><sub>↓CMF7d</sub> |  | 1w | ABOVE | 1w | +5.9% | -1.41% | 420.65 | — | 20%  |
-| [GOCOLORS](https://in.tradingview.com/chart/?symbol=NSE:GOCOLORS)<br><sub>↓CMF30d · DEL50%(T-1)</sub> | Women's branded bottoms retailer, design to retail operations | 1w | ABOVE | 1w | +0.4% | +0.11% | 323.35 | — | 20%  |
+| [GOCOLORS](https://in.tradingview.com/chart/?symbol=NSE:GOCOLORS)<br><sub>↓CMF30d</sub> | Women's branded bottoms retailer, design to retail operations | 1w | ABOVE | 1w | +0.4% | +0.11% | 323.35 | — | 20%  |
 | [INDOSTAR](https://in.tradingview.com/chart/?symbol=NSE:INDOSTAR)<br><sub>↓CMF15d</sub> | NBFC lending commercial vehicles SME infrastructure | 1w | ABOVE | 1w | +7.4% | -0.82% | 246.50 | — | 20%  |
 | [AFSL](https://in.tradingview.com/chart/?symbol=NSE:AFSL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +6.4% | +1.46% | 213.82 | 33w | 20%  |
 | [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE)<br><sub>↓CMF11d</sub> | Hindi TV serials films digital content production streaming | 1w | ABOVE | 1w | +6.2% | +0.26% | 91.00 | — | 20%  |
-| [OMINFRAL](https://in.tradingview.com/chart/?symbol=NSE:OMINFRAL)<br><sub>↓CMF30d · DEL59%(T-1)</sub> |  | 1w | ABOVE | 1w | +1.1% | +2.35% | 88.29 | 15w | 20%  |
+| [OMINFRAL](https://in.tradingview.com/chart/?symbol=NSE:OMINFRAL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +1.1% | +2.35% | 88.29 | 15w | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK)<br><sub>↑CMF0d</sub> | Public sector bank retail corporate wholesale lending | 1w | BELOW | 1w | +4.6% | +3.70% | 81.87 | — | 20%  |
 | [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA)<br><sub>↓CMF11d</sub> | Wealth advisory, portfolio management, institutional and HNI clients | 1w | BELOW | 1w | +3.3% | -0.59% | 1696.70 | — | 20%  |
