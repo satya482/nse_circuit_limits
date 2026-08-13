@@ -25,7 +25,7 @@
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL) [20%]<br><sub>↑CMF19d · DEL51%(T-1)</sub> | Coal pitch and advanced carbon materials manufacturer | 778.15 | +2.07% | 777.50 | +0.08% | 🔄 | ↑2d | 2d | +3.0% | ● | 3.1% | 93 | ↘274Cr · 278Cr |
+| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL) [20%]<br><sub>↑CMF19d</sub> | Coal pitch and advanced carbon materials manufacturer | 778.15 | +2.07% | 777.50 | +0.08% | 🔄 | ↑2d | 2d | +3.0% | ● | 3.1% | 93 | ↘274Cr · 278Cr |
 | [SARDAEN](https://in.tradingview.com/chart/?symbol=NSE:SARDAEN) [20%]<br><sub>↑CMF0d</sub> | Steel ferroalloys power producer Chhattisgarh integrated | 523.30 | +6.92% | 499.75 | +4.71% | 🔄 | ↑1d | 1d | +6.9% | ● | 3.4% | 89 | ↗138Cr · 1232Cr |
 | [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA) [20%]<br><sub>↓CMF13d</sub> | Digital beauty personal care brands millennial consumers | 479.45 | +2.58% | 477.00 | +0.51% | 🔄 | ↑9d | 9d | +6.7% | ● | 3.1% | 86 | ↗47Cr · 121Cr |
 | [EDELWEISS](https://in.tradingview.com/chart/?symbol=NSE:EDELWEISS) [20%]<br><sub>↑CMF0d</sub> | Diversified financial services: credit, assets, insurance, investments | 124.88 | +5.03% | 120.30 | +3.81% | 🔄 | ↑8d | 8d | +7.3% | ● | 3.5% | 82 | ↗52Cr · 126Cr |
