@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEEPINDS — NSE Investor Brief + The Ledger | Q1 FY27</title>
+<meta name="description" content="Deep Industries Limited (DEEPINDS) — Full investor brief covering business model, financials, strategic insight, risks and management credibility audit.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+:root{
+  --ink:#1A1A2E;--paper:#F7F5F0;--rule:#DDD8CE;
+  --amber:#C47B00;--amber-bg:#FFF7E6;
+  --green:#1D7A5B;--green-bg:#E8F5F0;
+  --red:#B03020;--red-bg:#FDF0EE;
+  --navy:#1E3A5F;--navy-bg:#EBF0F8;
+  --teal:#0E7490;--teal-bg:#E0F5FA;
+  --coral:#C05020;--coral-bg:#FDF0E8;
+  --purple:#5340A0;--purple-bg:#F0EDFB;
+  --gray:#6B7280;--gray-light:#F0EDE8;
+  --oil:#0E4A60;--oil-bg:#E0F0F7;
+  --gold:#A07020;--gold-bg:#FFF3D0;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'DM Sans',system-ui,sans-serif;
+  --mono:'DM Mono','Courier New',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.7;}
+body.night{--paper:#0F1117;--ink:#E8E0D4;--rule:#2A2A3E;--gray-light:#1A1A2E;--paper-card:#161622;}
+
+/* ── PRINT ── */
+@media print{
+  body{font-size:11px;background:#fff;color:#000;}
+  .no-print{display:none!important;}
+  .theme-toggle{display:none!important;}
+  .quick-scan{position:static!important;background:#1A1A2E!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .quick-scan-body{display:block!important;max-height:none!important;overflow:visible!important;}
+  #highlight-index{display:block!important;}
+  #highlight-index ol{display:block!important;}
+  .highlight-details{display:block!important;}
+  details[open] summary::after{content:none;}
+  section,article,.card,.risk-card,.watch-card,.ledger-section{break-inside:avoid;}
+  .masthead{background:#1A1A2E!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  a{color:inherit;text-decoration:none;}
+  .qs-label{color:var(--amber)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+}
+
+/* ── QUICK SCAN STRIP (always visible, non-collapsible) ── */
+.quick-scan{
+  position:sticky;top:0;z-index:200;
+  background:var(--ink);color:#F0EDE8;
+  border-bottom:3px solid var(--amber);
+}
+.quick-scan-inner{max-width:1000px;margin:0 auto;padding:0 28px;}
+.qs-header{display:flex;align-items:center;justify-content:space-between;padding:8px 0 6px;}
+.qs-title{font-family:var(--mono);font-size:10px;letter-spacing:2px;color:var(--amber);text-transform:uppercase;}
+.qs-badge{font-family:var(--mono);font-size:9px;background:var(--amber);color:#fff;padding:2px 7px;border-radius:2px;}
+.quick-scan-body{padding:8px 0 12px;display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;}
+@media(max-width:700px){.quick-scan-body{grid-template-columns:1fr;}}
+.qs-line{display:flex;align-items:flex-start;gap:8px;font-size:12px;line-height:1.5;padding:3px 0;}
+.qs-label{font-family:var(--mono);font-size:9.5px;letter-spacing:1px;text-transform:uppercase;color:var(--amber);min-width:70px;flex-shrink:0;margin-top:1px;}
+.qs-text{color:#D0C8BC;}
+
+/* ── MASTHEAD ── */
+.masthead{
+  background:var(--oil);color:#F0EDE8;
+  padding:48px 48px 36px;
+  position:relative;overflow:hidden;
+}
+.masthead::before{
+  content:'';position:absolute;top:0;right:0;width:320px;height:100%;
+  background:repeating-linear-gradient(-45deg,transparent 0,transparent 8px,rgba(255,255,255,.03) 8px,rgba(255,255,255,.03) 16px);
+}
+.mh-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.mh-ticker{font-family:var(--serif);font-size:52px;font-weight:700;letter-spacing:-2px;line-height:1;}
+.mh-name{font-size:17px;color:#A8A098;margin-top:6px;font-weight:300;}
+.mh-tagline{font-size:13.5px;color:#C0B8A8;margin-top:4px;font-style:italic;}
+.mh-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.mh-chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:3px;padding:5px 13px;font-family:var(--mono);font-size:10px;letter-spacing:1px;color:#B8B0A0;}
+.mh-chip.accent{background:var(--amber);color:#fff;border-color:var(--amber);}
+
+/* ── LAYOUT ── */
+.content{max-width:1000px;margin:0 auto;padding:40px 36px 80px;}
+
+/* ── SECTION HEADERS ── */
+.sec-hdr{display:flex;align-items:flex-start;gap:16px;margin:56px 0 22px;padding-bottom:14px;border-bottom:2.5px solid var(--ink);}
+.sec-num{font-family:var(--serif);font-size:28px;font-weight:700;color:var(--amber);line-height:1;min-width:34px;}
+.sec-eyebrow{font-family:var(--mono);font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:2px;}
+.sec-title{font-family:var(--serif);font-size:22px;font-weight:700;line-height:1.25;}
+.sec-hdr.teal{border-bottom-color:var(--teal);}.sec-hdr.teal .sec-num{color:var(--teal);}
+.sec-hdr.oil{border-bottom-color:var(--oil);}.sec-hdr.oil .sec-num{color:var(--oil);}
+.sec-hdr.amber{border-bottom-color:var(--amber);}.sec-hdr.amber .sec-num{color:var(--amber);}
+.sec-hdr.coral{border-bottom-color:var(--coral);}.sec-hdr.coral .sec-num{color:var(--coral);}
+.sec-hdr.green{border-bottom-color:var(--green);}.sec-hdr.green .sec-num{color:var(--green);}
+.sec-hdr.navy{border-bottom-color:var(--navy);}.sec-hdr.navy .sec-num{color:var(--navy);}
+.sec-hdr.gold{border-bottom-color:var(--gold);}.sec-hdr.gold .sec-num{color:var(--gold);}
+
+/* ── PROSE ── */
+p{margin-bottom:14px;color:#2A2A3A;}
+body.night p{color:#C0B8A8;}
+p:last-child{margin-bottom:0;}
+strong{font-weight:600;}
+h3{font-family:var(--serif);font-size:17px;font-weight:700;margin:24px 0 10px;color:var(--ink);}
+body.night h3{color:#E0D8CC;}
+
+/* ── LEAD BOX ── */
+.lead{font-size:15.5px;line-height:1.75;padding:17px 22px;border-left:4px solid var(--amber);background:var(--amber-bg);border-radius:0 6px 6px 0;margin-bottom:22px;}
+.lead.teal{border-left-color:var(--teal);background:var(--teal-bg);}
+.lead.oil{border-left-color:var(--oil);background:var(--oil-bg);}
+.lead.green{border-left-color:var(--green);background:var(--green-bg);}
+.lead.navy{border-left-color:var(--navy);background:var(--navy-bg);}
+
+/* ── INSIGHT BOX ── */
+.insight-box{background:var(--ink);color:#F0EDE8;border-radius:8px;padding:26px 30px;margin:24px 0;}
+.insight-box .ib-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.insight-box p{color:#D0C8BC;font-size:15px;line-height:1.7;}
+.insight-box strong{color:#F0EDE8;}
+
+/* ── HIGHLIGHTS ── */
+.hl-key{background:#FFF176;padding:0 3px;border-radius:2px;font-weight:600;}
+.hl-number{background:#E3F0FF;padding:0 3px;border-radius:2px;font-family:var(--mono);}
+.hl-risk{background:#FFF3CD;padding:0 3px;border-radius:2px;border-left:3px solid var(--amber);}
+.hl-catalyst{background:#E6F4EA;padding:0 3px;border-radius:2px;border-left:3px solid var(--green);}
+
+/* ── TAKEAWAY PILL ── */
+.takeaway-pill{border-left:3px solid var(--amber);background:var(--amber-bg);padding:10px 16px;border-radius:0 6px 6px 0;font-size:13px;font-weight:600;color:var(--amber);margin-top:22px;margin-bottom:6px;}
+.takeaway-pill.teal{border-left-color:var(--teal);background:var(--teal-bg);color:var(--teal);}
+.takeaway-pill.oil{border-left-color:var(--oil);background:var(--oil-bg);color:var(--oil);}
+.takeaway-pill.green{border-left-color:var(--green);background:var(--green-bg);color:var(--green);}
+.takeaway-pill.navy{border-left-color:var(--navy);background:var(--navy-bg);color:var(--navy);}
+.takeaway-pill.coral{border-left-color:var(--coral);background:var(--coral-bg);color:var(--coral);}
+
+/* ── TABLES ── */
+.data-table{width:100%;border-collapse:collapse;font-size:13px;margin:18px 0;}
+.data-table th{background:var(--ink);color:#EEE;padding:9px 12px;text-align:left;font-family:var(--mono);font-size:10px;letter-spacing:.5px;font-weight:500;}
+.data-table th.teal{background:var(--teal);}
+.data-table th.oil{background:var(--oil);}
+.data-table th.green{background:var(--green);}
+.data-table th.navy{background:var(--navy);}
+.data-table th.amber{background:var(--amber);}
+.data-table th.coral{background:var(--coral);}
+.data-table td{padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top;color:#2A2A3A;line-height:1.5;}
+.data-table tr:last-child td{border-bottom:none;}
+.data-table tr:nth-child(even) td{background:#FAFAF7;}
+
+/* ── TAGS ── */
+.tag{display:inline-block;padding:2px 7px;border-radius:3px;font-family:var(--mono);font-size:10px;font-weight:500;}
+.tag-oil{background:var(--oil-bg);color:var(--oil);}
+.tag-green{background:var(--green-bg);color:var(--green);}
+.tag-amber{background:var(--amber-bg);color:var(--amber);}
+.tag-red{background:var(--red-bg);color:var(--red);}
+.tag-navy{background:var(--navy-bg);color:var(--navy);}
+.tag-teal{background:var(--teal-bg);color:var(--teal);}
+.tag-coral{background:var(--coral-bg);color:var(--coral);}
+.tag-gold{background:var(--gold-bg);color:var(--gold);}
+
+/* ── PORTER 5 FORCES ── */
+.porter-table{width:100%;border-collapse:collapse;margin:18px 0;}
+.porter-table th{background:var(--oil);color:#fff;padding:9px 14px;font-family:var(--mono);font-size:10px;letter-spacing:1px;}
+.porter-table td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top;font-size:13px;color:#2A2A3A;line-height:1.55;}
+.porter-table tr:last-child td{border-bottom:none;}
+.porter-table tr:nth-child(even) td{background:#F8F6F2;}
+.rating-low{color:var(--green);font-weight:700;font-family:var(--mono);font-size:11px;}
+.rating-medium{color:var(--amber);font-weight:700;font-family:var(--mono);font-size:11px;}
+.rating-high{color:var(--red);font-weight:700;font-family:var(--mono);font-size:11px;}
+
+/* ── VERTICAL CARDS ── */
+.vert-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:20px 0;}
+@media(max-width:680px){.vert-grid{grid-template-columns:1fr;}}
+.vert-card{border:1.5px solid var(--rule);border-radius:8px;padding:18px;background:#fff;}
+.vc-stripe{width:100%;height:4px;border-radius:4px 4px 0 0;margin:-18px -18px 14px;width:calc(100% + 36px);}
+.vc-status{font-family:var(--mono);font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;margin-bottom:7px;}
+.vc-title{font-family:var(--serif);font-size:15px;font-weight:700;margin-bottom:6px;}
+.vc-metric{font-family:var(--mono);font-size:11.5px;color:var(--oil);margin-bottom:8px;font-weight:500;}
+.vc-desc{font-size:12.5px;color:var(--gray);line-height:1.55;}
+
+/* ── STAT ROWS ── */
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0;}
+@media(max-width:600px){.stat-grid{grid-template-columns:1fr 1fr;}}
+.stat-card{background:#fff;border:1.5px solid var(--rule);border-radius:6px;padding:14px 16px;text-align:center;}
+.stat-label{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:4px;}
+.stat-val{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--ink);}
+.stat-delta{font-size:11px;color:var(--green);margin-top:3px;font-weight:600;}
+.stat-delta.neg{color:var(--red);}
+.stat-delta.warn{color:var(--amber);}
+
+/* ── CAPEX TIMELINE ── */
+.capex-card{background:#fff;border:1.5px solid var(--rule);border-radius:8px;overflow:hidden;margin:20px 0;}
+.capex-header{background:var(--oil);color:#fff;padding:10px 16px;font-family:var(--mono);font-size:10.5px;letter-spacing:1px;text-transform:uppercase;font-weight:600;}
+.capex-row{display:grid;grid-template-columns:0.7fr 1fr 1.3fr 1.2fr 0.8fr;border-bottom:1px solid var(--rule);}
+.capex-row:last-child{border-bottom:none;}
+.capex-row.header{background:#F2F0EB;}
+.capex-cell{padding:10px 14px;font-size:12.5px;border-right:1px solid var(--rule);color:#2A2A3A;}
+.capex-cell:last-child{border-right:none;}
+.cc-label{font-family:var(--mono);font-size:9px;color:var(--gray);text-transform:uppercase;margin-bottom:3px;}
+.cc-val{font-weight:600;color:var(--ink);}
+.cc-sub{font-size:11px;color:var(--gray);margin-top:2px;}
+.status-on-track{color:var(--green);font-family:var(--mono);font-size:10.5px;}
+.status-drift{color:var(--amber);font-family:var(--mono);font-size:10.5px;}
+.status-miss{color:var(--red);font-family:var(--mono);font-size:10.5px;}
+.status-planned{color:var(--navy);font-family:var(--mono);font-size:10.5px;}
+@media(max-width:700px){
+  .capex-row{grid-template-columns:1fr 1fr;}
+  .capex-cell{border-right:none;border-bottom:1px solid var(--rule);}
+}
+
+/* ── RISK CARDS ── */
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0;}
+@media(max-width:650px){.risk-grid{grid-template-columns:1fr;}}
+.risk-card{border:1px solid var(--rule);border-radius:6px;padding:16px 18px;background:#fff;}
+.risk-card.high{border-left:3px solid var(--red);}
+.risk-card.medium{border-left:3px solid var(--amber);}
+.rc-name{font-family:var(--mono);font-size:11px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:7px;}
+.rc-what{font-size:13px;color:#2A2A3A;margin-bottom:6px;line-height:1.55;}
+.rc-signal{font-size:11.5px;color:var(--gray);font-style:italic;line-height:1.45;}
+
+/* ── WATCH SIGNALS ── */
+.watch-list{list-style:none;margin:14px 0;}
+.watch-item{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid var(--rule);}
+.watch-item:last-child{border-bottom:none;}
+.wi-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:6px;}
+.wi-dot.green{background:var(--green);}
+.wi-dot.amber{background:var(--amber);}
+.wi-dot.red{background:var(--red);}
+.wi-dot.oil{background:var(--oil);}
+.wi-dot.navy{background:var(--navy);}
+.wi-metric{font-weight:600;font-size:13.5px;margin-bottom:3px;}
+.wi-desc{font-size:12.5px;color:var(--gray);line-height:1.55;}
+.wi-threshold{font-family:var(--mono);font-size:11px;color:var(--navy);margin-top:5px;background:var(--navy-bg);padding:3px 8px;border-radius:3px;display:inline-block;}
+
+/* ── VERDICT ── */
+.verdict-box{background:var(--oil-bg);border:2px solid var(--oil);border-radius:8px;padding:24px 28px;margin:36px 0;}
+.verdict-box .vl-label{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--oil);margin-bottom:10px;}
+.verdict-box p{color:var(--ink);font-size:14.5px;line-height:1.75;}
+
+/* ── THEME TOGGLE ── */
+.theme-toggle{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--ink);color:#F0EDE8;border:none;border-radius:50%;width:44px;height:44px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(0,0,0,.3);}
+
+/* ── DIVIDER ── */
+.divider{border:none;border-top:1.5px solid var(--rule);margin:40px 0;}
+
+/* ── LEDGER ── */
+.ledger-masthead{background:#1A1A2E;color:#F0EDE8;padding:36px 48px;position:relative;overflow:hidden;margin-top:60px;}
+.ledger-masthead::before{content:'';position:absolute;top:0;right:0;width:280px;height:100%;background:repeating-linear-gradient(-45deg,transparent 0,transparent 6px,rgba(255,255,255,.03) 6px,rgba(255,255,255,.03) 12px);}
+.lm-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);margin-bottom:10px;}
+.lm-h1{font-family:var(--serif);font-size:40px;font-weight:700;line-height:1.1;letter-spacing:-1px;}
+.lm-sub{font-size:14px;color:#A8A098;margin-top:8px;font-weight:300;}
+.lm-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+.lm-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:3px;padding:5px 12px;font-family:var(--mono);font-size:9.5px;letter-spacing:1px;color:#C8C0B0;}
+
+/* Tier badge */
+.tier-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;border-radius:4px;font-family:var(--mono);font-size:12px;font-weight:600;margin:8px 0;}
+.tier-a{background:var(--green-bg);color:var(--green);border:1.5px solid var(--green);}
+.tier-b{background:var(--amber-bg);color:var(--amber);border:1.5px solid var(--amber);}
+.tier-c{background:var(--red-bg);color:var(--red);border:1.5px solid var(--red);}
+
+/* Promise register */
+.promise-table{width:100%;border-collapse:collapse;font-size:12px;margin:14px 0;}
+.promise-table th{background:var(--ink);color:#EEE;padding:8px 11px;font-family:var(--mono);font-size:9.5px;letter-spacing:.5px;}
+.promise-table td{padding:8px 11px;border-bottom:1px solid var(--rule);vertical-align:top;line-height:1.5;color:#2A2A3A;}
+.promise-table tr:last-child td{border-bottom:none;}
+.promise-table tr:nth-child(even) td{background:#FAFAF7;}
+.ps-delivered{color:var(--green);font-family:var(--mono);font-size:10px;font-weight:600;}
+.ps-on-track{color:var(--teal);font-family:var(--mono);font-size:10px;font-weight:600;}
+.ps-partial{color:var(--amber);font-family:var(--mono);font-size:10px;font-weight:600;}
+.ps-drifted{color:var(--coral);font-family:var(--mono);font-size:10px;font-weight:600;}
+.ps-miss{color:var(--red);font-family:var(--mono);font-size:10px;font-weight:600;}
+.ps-watch{color:var(--navy);font-family:var(--mono);font-size:10px;font-weight:600;}
+
+/* Red flags in ledger */
+.flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+@media(max-width:650px){.flag-grid{grid-template-columns:1fr;}}
+.flag-card{border:1px solid var(--rule);border-radius:6px;padding:14px 16px;background:#fff;}
+.flag-card.critical{border-left:3px solid var(--red);}
+.flag-card.warning{border-left:3px solid var(--amber);}
+.flag-card.watch{border-left:3px solid var(--navy);}
+.flag-card.resolved{border-left:3px solid var(--green);opacity:.7;}
+.fc-name{font-family:var(--mono);font-size:11px;font-weight:600;margin-bottom:5px;display:flex;align-items:center;gap:6px;}
+.fc-body{font-size:12.5px;color:#2A2A3A;line-height:1.5;}
+.fc-evidence{font-size:11px;color:var(--gray);font-style:italic;margin-top:4px;}
+
+/* Credibility score bar */
+.score-bar-wrap{margin:8px 0 4px;}
+.score-bar-label{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;margin-bottom:4px;}
+.score-bar{height:8px;background:#E8E5DF;border-radius:4px;overflow:hidden;}
+.score-bar-fill{height:100%;border-radius:4px;}
+
+/* Highlight index — always expanded */
+.highlight-details{margin:30px 0 10px;}
+.highlight-details-summary{font-family:var(--serif);font-size:17px;font-weight:700;cursor:pointer;padding:12px 16px;background:var(--ink);color:#F0EDE8;border-radius:6px;display:block;}
+.hi-list{list-style:none;padding:14px 0;border:1.5px solid var(--rule);border-radius:0 0 6px 6px;}
+.hi-list li{padding:8px 16px;border-bottom:1px solid var(--rule);font-size:13px;line-height:1.5;color:#2A2A3A;}
+.hi-list li:last-child{border-bottom:none;}
+.hi-list li::before{margin-right:8px;}
+.hi-list [data-type="hl-key"]::before{content:'🔑 ';}
+.hi-list [data-type="hl-number"]::before{content:'📊 ';}
+.hi-list [data-type="hl-risk"]::before{content:'⚠️ ';}
+.hi-list [data-type="hl-catalyst"]::before{content:'🚀 ';}
+.hi-list [data-type="takeaway-pill"]::before{content:'💡 ';}
+
+/* Margin tracker */
+.margin-row{display:flex;gap:14px;padding:12px 0;border-bottom:1px solid var(--rule);align-items:flex-start;}
+.margin-row:last-child{border-bottom:none;}
+.mr-type{min-width:150px;}
+.mr-what{flex:1;font-size:13px;line-height:1.5;color:#2A2A3A;}
+.mr-signal{min-width:160px;font-size:12px;color:var(--gray);font-style:italic;}
+
+/* Capital tracker */
+.capital-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0;}
+@media(max-width:600px){.capital-grid{grid-template-columns:1fr;}}
+.cap-card{background:#fff;border:1px solid var(--rule);border-radius:6px;padding:14px 16px;}
+.cap-label{font-family:var(--mono);font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--gray);margin-bottom:5px;}
+.cap-val{font-weight:600;font-size:14px;color:var(--ink);margin-bottom:3px;}
+.cap-note{font-size:11.5px;color:var(--gray);line-height:1.45;}
+
+footer{background:var(--ink);color:#6B7280;padding:22px 48px;font-family:var(--mono);font-size:10px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;}
+</style>
+</head>
+<body>
+
+
+<nav class="quick-scan" role="navigation" aria-label="Quick scan summary">
+  <div class="quick-scan-inner">
+    <div class="qs-header">
+      <span class="qs-title">⚡ DEEPINDS Quick Scan</span>
+      <span class="qs-badge">Q1 FY27 · Aug 2026</span>
+    </div>
+    <div class="quick-scan-body" role="list" aria-label="Seven key highlights">
+      <div class="qs-line" role="listitem"><span class="qs-label">CONTEXT</span><span class="qs-text">India oilfield services market doubling to US$3.7B by 2030 at 12.4% CAGR; ONGC planning 100-plus mature-field Production Enhancement Contract rounds</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">MODEL</span><span class="qs-text">Charter-hire base income (₹891 Cr FY26 revenue, 44% EBITDA) augmented by asymmetric PEC upside: 64% share of incremental production revenue above baseline</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">INSIGHT</span><span class="qs-text">Deep is not a service contractor — it is a co-operator of ONGC's ageing fields; Rajahmundry PEC is the qualifying credential for 100-plus future ONGC contracts</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">NUMBERS</span><span class="qs-text">FY26 revenue +55% to ₹891 Cr, pre-exceptional PAT ₹336 Cr; Q1 FY27 revenue +40% to ₹279 Cr; order book ₹3,047 Cr = 2.8x FY27 guidance</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">TOP RISK</span><span class="qs-text">PSU collection lag: 197-day debtor days and ₹160 Cr Dolphin legacy receivables still under arbitration; two consecutive years of exceptional write-offs</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">WATCH</span><span class="qs-text">PEC incremental production commencement at Rajahmundry — guided October 2026; any slip beyond December 2026 puts ₹500 Cr FY28 PAT in serious doubt</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">VERDICT</span><span class="qs-text">Mid-chapter — charter-hire base is strong, PEC ramp is the hinge event; FY28 is the year the story either proves out or resets</span></div>
+      <div class="qs-line" role="listitem"><span class="qs-label">MGMT</span><span class="qs-text">Tier B · Credible with watch-flags · Active: PEC delay (Mori-5), two-year exceptional pattern, 197-day debtors</span></div>
+    </div>
+  </div>
+</nav>
+
+
+<header class="masthead" role="banner" aria-label="Company identification">
+  <div class="mh-eyebrow">NSE EQUITY RESEARCH · OIL AND GAS FIELD SERVICES · AUGUST 2026</div>
+  <h1 class="mh-ticker">DEEPINDS</h1>
+  <div class="mh-name">Deep Industries Limited</div>
+  <div class="mh-tagline">India's only integrated onshore-and-offshore oil and gas service provider</div>
+  <div class="mh-chips">
+    <span class="mh-chip accent">Q1 FY27 BRIEF</span>
+    <span class="mh-chip">NSE: DEEPINDS</span>
+    <span class="mh-chip">BSE: 543288</span>
+    <span class="mh-chip">MKT CAP ≈ ₹3,820 CR</span>
+    <span class="mh-chip">OIL &amp; GAS FIELD SERVICES</span>
+    <span class="mh-chip">CMD: PARAS SAVLA</span>
+    <span class="mh-chip">CFO: ROHAN SHAH</span>
+  </div>
+</header>
+
+<main class="content" role="main">
+
+
+<article aria-labelledby="ch1-title">
+<div class="sec-hdr oil">
+  <div class="sec-num">1</div>
+  <div>
+    <div class="sec-eyebrow">CONTEXT</div>
+    <h2 class="sec-title" id="ch1-title">Why India's ageing oilfields make this company interesting right now</h2>
+  </div>
+</div>
+
+<div class="lead oil">
+  India imports 85 percent of its crude oil — a chronic strategic vulnerability that becomes acute every time the Middle East ignites. The government's answer is not just to find new fields; it is to squeeze far more out of the ageing fields it already owns. That policy imperative is the primary tailwind behind Deep Industries.
+</div>
+
+<p>India's domestic crude production has been in long-term decline. Output slipped to 29.4 million tonnes in 2025, intensifying pressure on policymakers and upstream operators alike. The natural decline rate in legacy fields in Assam and Gujarat exceeds 5 percent annually without active intervention. Rather than waiting for new discoveries — which take a decade to develop — the Directorate General of Hydrocarbons has pivoted toward Enhanced Oil Recovery and Production Enhancement Contracts as the faster route to marginal production gains.</p>
+
+<p>ONGC, which manages the bulk of India's producing acreage, responded in kind. The national oil company earmarked <span class="hl-catalyst">USD 8.6 billion across 2024–25 for Krishna-Godavari deepwater developments and mature-field enhanced recovery programs</span> — a capex-heavy commitment that flows directly into the order books of domestic oil-field service companies. In March 2026, the government announced a historic deep-sea drilling campaign: USD 385 million allocated for four exploratory wells across Andaman, Mahanadi, Saurashtra, and Bengal basins, with BP's technical expertise engaged for the Mumbai High revival. This is not incremental tinkering — it is an upstream mobilisation.</p>
+
+<p>The Indian Oilfield Services Market — the universe of companies providing drilling, compression, workover, and field management to E&amp;P operators — was valued at USD 1.84 billion in 2024 and is projected to reach <span class="hl-number">USD 3.74 billion by 2030, compounding at 12.4 percent annually</span>. Government policy is the accelerant: ONGC's Production Enhancement Contract program is designed to extend to over 100 mature assets, with Rajahmundry being the template round. The company that executes the first PEC credibly writes the qualifying rulebook for every subsequent round.</p>
+
+<div class="takeaway-pill oil">India's 85% crude import bill and ONGC's 100-plus PEC pipeline create a multi-year structural demand floor for proven domestic oil-field service providers.</div>
+</article>
+
+
+<article aria-labelledby="ch2-title">
+<div class="sec-hdr oil">
+  <div class="sec-num">2</div>
+  <div>
+    <div class="sec-eyebrow">BUSINESS MODEL</div>
+    <h2 class="sec-title" id="ch2-title">The flywheel: from compressor rental to field operator</h2>
+  </div>
+</div>
+
+<p>Deep Industries started life in 1991 renting gas compressors to ONGC on a daily-hire basis. Over three decades, that single service line compounded into four verticals covering more than 70 percent of the post-exploration oil-and-gas services value chain. The evolution is not random — it follows a deliberate logic: every capability added reduces customer reliance on third parties, deepens the relationship moat, and justifies larger, longer contracts.</p>
+
+<h3>The four verticals — plain English</h3>
+
+<p><strong>Natural Gas Services:</strong> Deep deploys gas compression units, gas dehydration equipment, and gas processing facilities at client well sites on a charter-hire basis. Revenue is a fixed monthly rental — it does not fluctuate with gas prices or production volumes. The company operates India's largest fleet of over 80 natural gas compression units ranging from 200 to 1,680 horsepower. This is the predictable, cash-generative base that funds expansion.</p>
+
+<p><strong>Integrated Project Management Services:</strong> Deep provides complete wellbore solutions — drilling rigs, workover rigs, cementing, well-logging, hydrofracturing, and coiled tubing — as a bundled package. Clients get one contractor accountable for the entire operation. As of Q1 FY27, Deep operates 20 rigs (6 drilling, 14 workover), all at 100 percent utilisation. India's rig market is tightening as ONGC outsources more drilling from its own ageing fleet — <span class="hl-catalyst">Deep's 100 percent utilisation with more rigs on order signals that demand is outpacing supply</span>.</p>
+
+<p><strong>Production Enhancement Contracts:</strong> The game-changing move. Deep takes operational control of an ONGC mature field and earns 64 percent of every incremental barrel of gas produced above the baseline. This converts Deep from a line-item in ONGC's cost budget into a participant in ONGC's production account. The current contract — ₹1,402 crore over 15 years at Rajahmundry — generates revenue that scales with performance, not just deployment.</p>
+
+<p><strong>Offshore Services:</strong> Deep acquired a 75 percent stake in Dolphin Offshore Enterprises through the NCLT insolvency process in 2022. Dolphin's primary active asset is Prabha, a DP2 accommodation barge — essentially a floating hotel for workers on offshore platforms. This positions Deep to capture India's emerging deepwater and offshore services spend. Fleet expansion requires firm contracts before capital is committed.</p>
+
+<p>The flywheel: charter-hire income funds rig additions → more rigs win larger integrated contracts → IPMS track record qualifies Deep for PEC bids → PEC margins fund offshore scaling → Dolphin builds a second revenue stream without cannibalising the onshore base. <span class="hl-key">Each vertical feeds the next, and the entire structure rests on the 30-year ONGC relationship that no new entrant can replicate in under a decade.</span></p>
+
+<div class="takeaway-pill oil">Deep's business model is a staircase from low-risk charter hire to high-margin PEC operations — each step funded by the cash flows of the one below it.</div>
+</article>
+
+
+<article aria-labelledby="ch2b-title">
+<div class="sec-hdr oil">
+  <div class="sec-num">2B</div>
+  <div>
+    <div class="sec-eyebrow">COMPETITIVE STRUCTURE</div>
+    <h2 class="sec-title" id="ch2b-title">Porter's Five Forces</h2>
+  </div>
+</div>
+
+<table class="porter-table" role="table" aria-label="Porter Five Forces analysis for Deep Industries">
+  <thead>
+    <tr>
+      <th style="width:18%">FORCE</th>
+      <th style="width:12%">RATING</th>
+      <th>SPECIFIC RATIONALE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rivalry Intensity</strong></td>
+      <td><span class="rating-low">LOW–MED</span></td>
+      <td>No single competitor matches Deep's integrated onshore-offshore offering. Jindal Drilling and Asian Energy Services compete in IPMS; South West Pinnacle in well services; Aban Offshore in the offshore segment. None has a PEC contract with ONGC. The charter-hire gas compression market is near-oligopolistic with Deep holding the largest fleet. Competition is capability-based, not purely price-based.</td>
+    </tr>
+    <tr>
+      <td><strong>Buyer Power</strong></td>
+      <td><span class="rating-high">HIGH</span></td>
+      <td>ONGC accounts for approximately 40 percent of consolidated revenue (reduced from higher historical levels). PSU procurement is via competitive tender with price as a key parameter. Debtor days of 197 are a direct consequence — ONGC pays slowly and Deep cannot push back without risking the relationship. Buyer power is structurally high and unlikely to change; the mitigation is diversification to private E&amp;P (Vedanta, GSPL) and overseas clients.</td>
+    </tr>
+    <tr>
+      <td><strong>Supplier Power</strong></td>
+      <td><span class="rating-medium">MEDIUM</span></td>
+      <td>Gas compressors and rig machinery are globally sourced; some specialised components carry single-source risk. However, Deep owns its fleet outright, so ongoing supplier dependency is limited to maintenance parts and fuel. For PEC operations, the risk is different — subsurface performance depends on geological factors beyond any vendor's control.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of New Entrants</strong></td>
+      <td><span class="rating-low">LOW</span></td>
+      <td>Capital requirements are substantial (a fleet of 20 rigs plus 80-plus compressors implies hundreds of crores of capital employed). ONGC qualification takes 3–5 years of track record. The PEC segment requires a specific credential that no entrant currently possesses. Dolphin Offshore was acquired at insolvency pricing — that opportunity window has closed. A new entrant replicating Deep's integrated offering from scratch would take at minimum a decade.</td>
+    </tr>
+    <tr>
+      <td><strong>Threat of Substitutes</strong></td>
+      <td><span class="rating-medium">MEDIUM</span></td>
+      <td>In the long run (post-2035), accelerating energy transition reduces hydrocarbons demand; this is a real but slow-moving risk. In the medium term, the substitute for Deep's services is ONGC deploying its own aging rig fleet — but ONGC has been consistently reducing its own operational workforce and outsourcing more, not less. Global services majors such as SLB could theoretically bid for ONGC contracts, but their cost structures are uncompetitive for India's onshore mid-size market.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:13px;color:var(--gray);font-style:italic;margin-top:10px;"><strong>Two forces dominate Deep's structural risk:</strong> Buyer power (ONGC's payment behaviour and contract terms) is the primary ongoing operating risk, driving the 197-day debtor problem. The threat of substitutes — energy transition displacing hydrocarbons — is the long-horizon existential risk. Both are known and manageable within the current 5-year investment window.</p>
+
+<div class="takeaway-pill oil">Buyer power (ONGC) is the dominant structural pressure; the antidote is revenue diversification to private E&amp;P and overseas clients, already in progress.</div>
+</article>
+
+
+<article aria-labelledby="ch3-title">
+<div class="sec-hdr teal">
+  <div class="sec-num">3</div>
+  <div>
+    <div class="sec-eyebrow">VERTICAL STORIES</div>
+    <h2 class="sec-title" id="ch3-title">Four verticals — each with a different external catalyst</h2>
+  </div>
+</div>
+
+<div class="vert-grid">
+  <div class="vert-card" role="article" aria-label="Natural Gas Services vertical">
+    <div class="vc-stripe" style="background:#0E7490;"></div>
+    <div class="vc-status" style="color:#0E7490;">● RUNNING — CASH GENERATIVE</div>
+    <div class="vc-title">Natural Gas Services</div>
+    <div class="vc-metric">80-plus compressors · 44–45% EBITDA margin</div>
+    <div class="vc-desc">Charter hire of gas compressors, dehydration units, and gas processing facilities. Fixed monthly revenue regardless of production volumes. External catalyst: India's City Gas Distribution expansion, rising industrial gas demand, and NGL recovery programs. Revenue is recurring and sticky — ONGC rarely switches compression providers mid-contract due to the cost and risk of equipment changeover. This vertical is the financial anchor of the business.</div>
+  </div>
+  <div class="vert-card" role="article" aria-label="IPMS drilling and workover vertical">
+    <div class="vc-stripe" style="background:#C47B00;"></div>
+    <div class="vc-status" style="color:#C47B00;">● RUNNING — 100% RIG UTILISATION</div>
+    <div class="vc-title">Integrated Project Management Services</div>
+    <div class="vc-metric">20 rigs · 6 drilling, 14 workover · 3 new rigs on order</div>
+    <div class="vc-desc">Full wellbore solutions — drilling, workover, cementing, logging, hydrofracturing — bundled as one contract. External catalyst: ONGC's rig outsourcing program as its own fleet ages; government's new 50-block bid round (December 2025). All 20 rigs deployed at 100 percent utilisation as of Q1 FY27. Three additional workover rigs on order indicate management is capacity-constrained, not demand-constrained. Day-rate revenue rises with rig count.</div>
+  </div>
+  <div class="vert-card" role="article" aria-label="Production Enhancement Contract vertical">
+    <div class="vc-stripe" style="background:#1D7A5B;"></div>
+    <div class="vc-status" style="color:#1D7A5B;">🚀 RAMPING — INCREMENTAL FROM OCT 2026</div>
+    <div class="vc-title">Production Enhancement Contracts</div>
+    <div class="vc-metric">₹1,402 Cr · 15 years · ONGC Rajahmundry asset</div>
+    <div class="vc-desc">Deep operates ONGC's Rajahmundry mature gas field and earns 64 percent of incremental production revenue above a contractually agreed baseline. Field taken over April 2025; baseline production running. Incremental production (the upside revenue) expected from October 2026, delayed 5–6 months by the Mori-5 well incident in January 2026. External catalyst: ONGC's stated plan for 100-plus PEC rounds across its mature asset portfolio. Management guidance: more than ₹150 crore of revenue from this contract alone in FY28.</div>
+  </div>
+  <div class="vert-card" role="article" aria-label="Offshore Services via Dolphin Offshore">
+    <div class="vc-stripe" style="background:#1E3A5F;"></div>
+    <div class="vc-status" style="color:#1E3A5F;">◑ EARLY STAGE — PRABHA BARGE ACTIVE</div>
+    <div class="vc-title">Offshore Services (Dolphin Offshore)</div>
+    <div class="vc-metric">75% stake · Prabha DP2 barge · arbitration-supported receivables</div>
+    <div class="vc-desc">Deep acquired Dolphin Offshore via the NCLT insolvency process in 2022/23 at distressed pricing. The primary active asset is Prabha, a Dynamic Positioning Class 2 accommodation barge that serves as a floating operational base for offshore workers. External catalyst: India's ₹80,000 crore deepwater exploration package, ONGC-BP technical partnership for Mumbai High revival, March 2026 deep-sea drilling campaign. Fleet expansion committed only after securing firm contracts. This vertical is optionality, not a current earnings driver.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill teal">Four verticals at four different maturity stages: Gas Services cash-funds rig additions; rigs build PEC credentials; PEC opens offshore; offshore will fund the next cycle.</div>
+</article>
+
+
+<article aria-labelledby="ch4-title">
+<div class="sec-hdr amber">
+  <div class="sec-num">4</div>
+  <div>
+    <div class="sec-eyebrow">STRATEGIC INSIGHT</div>
+    <h2 class="sec-title" id="ch4-title">The non-obvious truth: Rajahmundry is not a contract, it is a franchise</h2>
+  </div>
+</div>
+
+<div class="insight-box" role="note" aria-label="Core strategic insight">
+  <div class="ib-label">⚡ THE ONE THING TO UNDERSTAND</div>
+  <p>Every oilfield service company tells you it is a "critical partner" to ONGC. Deep Industries has done something structurally different: <strong>it has moved from ONGC's vendor list to ONGC's production account.</strong> Under the Production Enhancement Contract at Rajahmundry, Deep earns 64 percent of every cubic meter of gas produced above the baseline — the same line in ONGC's P&amp;L where ONGC books its own revenue. The better Deep runs the field, the more both parties earn. That is not a service contract; that is a co-ownership of upside.</p>
+</div>
+
+<p>The deeper strategic implication is what most investors miss. ONGC has publicly stated its intention to extend PEC structures to over 100 mature assets across its portfolio. These mature fields are spread across Gujarat, Andhra Pradesh, Assam, and Rajasthan — decades-old assets where ONGC's operational attention has been stretched thin by its massive offshore commitments. Each new PEC round will require bidders to demonstrate prior PEC execution experience.</p>
+
+<p><span class="hl-key">Deep's 15-year contract at Rajahmundry is not just ₹1,402 crore of revenue — it is the only PEC credential in the Indian private oilfield services sector.</span> No other company has taken operational control of an ONGC mature field under this contract structure. Every quarter Deep delivers production above the baseline at Rajahmundry, the gap between Deep and every other potential bidder in the next PEC round widens. The Rajahmundry contract is a moat-building exercise disguised as a revenue line.</p>
+
+<p>The parallel with how SLB and Halliburton built their global dominance is instructive — they moved from equipment rental to production management in mature fields globally, and the credential flywheel drove decades of contract wins. Deep is running the same playbook in India, 30 years after the global majors ran it internationally, in a market those majors find too small and operationally complex to contest directly.</p>
+
+<p>There is also a second-order implication for valuation. A charter-hire business is valued as a capital-light rental company — 8 to 12 times EBITDA. A production operator with 15-year contracted revenue streams and upside participation should trade at materially higher multiples. The market has not yet made this reclassification fully. <span class="hl-catalyst">If Deep delivers the Rajahmundry PEC at or above guided production levels through FY27, the re-rating trigger is the announcement of the next PEC contract win.</span></p>
+
+<div class="takeaway-pill amber">Deep's PEC at Rajahmundry functions as both a revenue stream and a credentialing moat — it is the qualifying ticket for ONGC's 100-plus future PEC rounds that no competitor currently holds.</div>
+</article>
+
+
+<article aria-labelledby="ch5-title">
+<div class="sec-hdr green">
+  <div class="sec-num">5</div>
+  <div>
+    <div class="sec-eyebrow">THE NUMBERS IN CONTEXT</div>
+    <h2 class="sec-title" id="ch5-title">Financials: accelerating trajectory, two exceptional items to decode</h2>
+  </div>
+</div>
+
+<div class="lead green">
+  The headline PAT numbers for FY25 and FY26 are distorted by large non-cash exceptional write-offs from the Kandla and Dolphin acquisitions. The pre-exceptional numbers tell a more accurate operating story: a business compounding pre-exceptional PAT at over 200 percent YoY from a cleaned-up base.
+</div>
+
+<h3>Revenue and profitability trajectory</h3>
+
+<div class="stat-grid" role="list" aria-label="Key financial metrics">
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">FY26 Revenue</div>
+    <div class="stat-val">₹891 Cr</div>
+    <div class="stat-delta">+55% YoY</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">FY26 EBITDA</div>
+    <div class="stat-val">₹425 Cr</div>
+    <div class="stat-delta">44% margin · +61% YoY</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">Pre-Excep. PAT FY26</div>
+    <div class="stat-val">₹336 Cr</div>
+    <div class="stat-delta">+244% vs FY25 pre-excep.</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">Q1 FY27 Revenue</div>
+    <div class="stat-val">₹279 Cr</div>
+    <div class="stat-delta">+40% YoY</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">Q1 FY27 EBITDA</div>
+    <div class="stat-val">₹132 Cr</div>
+    <div class="stat-delta">43.6% margin</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">Order Book (Jun 26)</div>
+    <div class="stat-val">₹3,047 Cr</div>
+    <div class="stat-delta">+2.8x FY27 guidance</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">CFO (FY26)</div>
+    <div class="stat-val">₹270 Cr</div>
+    <div class="stat-delta">+29% YoY</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">D/E Ratio</div>
+    <div class="stat-val">0.10x</div>
+    <div class="stat-delta">Near debt-free balance sheet</div>
+  </div>
+  <div class="stat-card" role="listitem">
+    <div class="stat-label">Debtors (days)</div>
+    <div class="stat-val">197</div>
+    <div class="stat-delta warn">⚠ High — PSU collection lag</div>
+  </div>
+</div>
+
+<p>The EBITDA margin contraction in Q4 FY26 (32.9 percent, down sharply from the 9M average of 49.5 percent) is a red flag worth investigating. The full-year 44 percent margin was pulled down by a weak fourth quarter. Management has not explicitly explained the Q4 margin compression; the most likely factors are higher Q4 employee and overhead costs from Kandla integration, plus the Mori-5 incident response costs. <span class="hl-risk">Q1 FY27's margin of 43.6 percent is a partial recovery — the management guidance of 44–45 percent full-year requires strong H2 performance to sustain.</span></p>
+
+<h3>Revenue trend and guidance</h3>
+<table class="data-table" aria-label="Annual revenue and profitability trend">
+  <thead><tr>
+    <th>YEAR</th><th class="green">REVENUE (CR)</th><th class="green">EBITDA (CR)</th>
+    <th class="green">EBITDA %</th><th class="green">PRE-EXCEP PAT (CR)</th>
+    <th class="green">EXCEPTIONAL (CR)</th><th class="green">REPORTED PAT (CR)</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>FY24 (est.)</td><td>~₹415</td><td>~₹165</td><td>~40%</td><td>~₹90</td><td>—</td><td>~₹90</td></tr>
+    <tr><td>FY25 (actual)</td><td>₹576</td><td>₹264</td><td>45.8%</td><td>~₹98</td><td>₹(251)</td><td>₹(79)</td></tr>
+    <tr><td>FY26 (actual)</td><td>₹891</td><td>₹425</td><td>44.0%</td><td>₹336</td><td>₹(208)</td><td>₹197</td></tr>
+    <tr><td>FY27E (mgmt)</td><td>₹1,100</td><td>~₹484</td><td>44–45%</td><td>~₹350</td><td>Nil</td><td>~₹350</td></tr>
+    <tr><td>FY28E (mgmt)</td><td>~₹1,375</td><td>~₹607</td><td>44–45%</td><td>~₹500</td><td>Nil</td><td>~₹500</td></tr>
+  </tbody>
+</table>
+<p style="font-size:11.5px;color:var(--gray);font-style:italic;">FY24 estimates based on implied 5-year CAGR of 36.8 percent. FY25 and FY26 are audited consolidated figures. FY27E and FY28E are management guidance as stated in Q4 FY26 and Q1 FY27 earnings calls.</p>
+
+<h3>Capex timeline — where the money is going</h3>
+
+<div class="capex-card" role="region" aria-label="Capital expenditure timeline">
+  <div class="capex-header">📍 CAPEX DEPLOYMENT TRACKER · FY25–FY28</div>
+  <div class="capex-row header">
+    <div class="capex-cell"><div class="cc-label">Period</div></div>
+    <div class="capex-cell"><div class="cc-label">Budget (guided)</div></div>
+    <div class="capex-cell"><div class="cc-label">Key projects</div></div>
+    <div class="capex-cell"><div class="cc-label">Revenue unlock expected</div></div>
+    <div class="capex-cell"><div class="cc-label">Status</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY25</div></div>
+    <div class="capex-cell"><div class="cc-val">~₹120–150 Cr (est.)</div><div class="cc-sub">Fleet + acquisitions</div></div>
+    <div class="capex-cell"><div class="cc-val">New workover rigs; Dolphin revival; Kandla integration</div></div>
+    <div class="capex-cell"><div class="cc-val">FY26 consolidated revenue base</div></div>
+    <div class="capex-cell"><div class="status-on-track">● DELIVERED</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY26</div></div>
+    <div class="capex-cell"><div class="cc-val">Not explicitly guided</div></div>
+    <div class="capex-cell"><div class="cc-val">PEC field commissioning at Rajahmundry; Prabha barge deployment</div></div>
+    <div class="capex-cell"><div class="cc-val">PEC baseline production from Q1 FY27; Prabha generating revenue</div></div>
+    <div class="capex-cell"><div class="status-on-track">● DELIVERED</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY27 (planned)</div></div>
+    <div class="capex-cell"><div class="cc-val">₹250–300 Cr</div><div class="cc-sub">₹150 Cr for PEC</div></div>
+    <div class="capex-cell"><div class="cc-val">PEC subsurface capex (Mori-5 remediation + new well); 3 workover rigs; gas processing plants</div></div>
+    <div class="capex-cell"><div class="cc-val">PEC incremental production from Oct 2026; rig additions = +₹20–30 Cr annualised</div></div>
+    <div class="capex-cell"><div class="status-drift">⚠ IN PROGRESS · WATCH PEC PACE</div></div>
+  </div>
+  <div class="capex-row">
+    <div class="capex-cell"><div class="cc-val">FY28+ (conditional)</div></div>
+    <div class="capex-cell"><div class="cc-val">TBD — offshore fleet</div></div>
+    <div class="capex-cell"><div class="cc-val">New offshore vessels / barges for Dolphin; possible second PEC contract</div></div>
+    <div class="capex-cell"><div class="cc-val">Dolphin revenue scaling; PEC Round 2 incremental ₹150+ Cr</div></div>
+    <div class="capex-cell"><div class="status-planned">○ CONDITIONAL ON ORDERS</div></div>
+  </div>
+</div>
+
+<p>Funding source: Management guided FY27 capex of ₹250–300 crore to be funded through a combination of internal accruals and debt. FY26 CFO was ₹270 crore — roughly equal to the FY27 capex plan. The CFO-to-capex ratio will be close to 1x; any shortfall will require incremental term borrowing despite management's preference for internal funding. This gap is worth watching (see Ledger section).</p>
+
+<h3>Valuation in context</h3>
+<table class="data-table" aria-label="Valuation metrics and peer comparison">
+  <thead><tr>
+    <th class="oil">METRIC</th><th class="oil">DEEPINDS (FY26 PRE-EXCEP.)</th><th class="oil">DEEPINDS FY27E</th><th class="oil">DEEPINDS FY28E</th><th class="oil">PEER CONTEXT</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>Market Cap</td><td>₹3,820 Cr</td><td>₹3,820 Cr</td><td>₹3,820 Cr</td><td>—</td></tr>
+    <tr><td>P/E (trailing / forward)</td><td>11.4x (pre-exceptional)</td><td>10.9x</td><td>7.6x</td><td>Jindal Drilling: ~8.6x; Indian oilfield services: 10–15x</td></tr>
+    <tr><td>EV/EBITDA</td><td>~9.1x (FY26)</td><td>~8.0x (FY27E)</td><td>~6.4x (FY28E)</td><td>Global OFS comps: 6–10x</td></tr>
+    <tr><td>Revenue CAGR (5-yr actual)</td><td>36.8% (vs 15.5% industry avg)</td><td>—</td><td>—</td><td>Industry avg: 15.5%</td></tr>
+  </tbody>
+</table>
+<p>The market is pricing in growth delivery — at 10.9x FY27E PAT, a 40 percent earnings growth rate still leaves Deep at less than 0.3x PEG ratio. The market is not expensive; it is sceptical of the PEC ramp delivering on time. A clean PEC production commencement in Q3 FY27 and a second PEC contract announcement would de-risk the FY28 target significantly and could re-rate the multiple toward 15–18x forward earnings.</p>
+
+<div class="takeaway-pill green">At 10.9x FY27E PAT, the market is pricing growth scepticism rather than growth failure — PEC delivery de-risks this materially.</div>
+</article>
+
+
+<article aria-labelledby="ch6-title">
+<div class="sec-hdr coral">
+  <div class="sec-num">6</div>
+  <div>
+    <div class="sec-eyebrow">RISKS — EYES OPEN</div>
+    <h2 class="sec-title" id="ch6-title">Five concrete risks worth tracking each quarter</h2>
+  </div>
+</div>
+
+<div class="risk-grid">
+  <div class="risk-card high" role="article" aria-label="Risk one: ONGC concentration and PSU collections">
+    <div class="rc-name"><i class="ti ti-alert-triangle" style="color:var(--red);" aria-hidden="true"></i> ONGC CONCENTRATION + PSU COLLECTIONS</div>
+    <div class="rc-what">ONGC still represents roughly 40 percent of consolidated revenue despite diversification efforts. PSU payment cycles are structural: debtor days of 197 reflect ONGC's own cash management, not commercial disputes. If ONGC delays payments for a sustained period, Deep's working capital deteriorates. Worse, any reduction in ONGC's capex budget — triggered by a sustained oil price decline or policy change — directly hits Deep's order inflow.</div>
+    <div class="rc-signal"><strong>Signal:</strong> Debtor days rising above 220 over two consecutive quarters; or ONGC publicly reducing upstream capex guidance by more than 20 percent. Also watch the ₹160 Cr Dolphin legacy receivables — any write-off would be a third consecutive exceptional charge.</div>
+  </div>
+  <div class="risk-card high" role="article" aria-label="Risk two: PEC execution and well integrity">
+    <div class="rc-name"><i class="ti ti-alert-triangle" style="color:var(--red);" aria-hidden="true"></i> PEC EXECUTION AND WELL INTEGRITY RISK</div>
+    <div class="rc-what">The Mori-5 gas leak in January 2026 already delayed PEC incremental production by 5–6 months. Operating a mature field means encountering aged wellbore infrastructure, unpredictable subsurface conditions, and occasional integrity failures. Each such incident halts incremental production (and therefore Deep's revenue share) until remediation is complete. If a well is abandoned rather than repaired, the overall PEC production profile disappoints.</div>
+    <div class="rc-signal"><strong>Signal:</strong> No incremental production by December 2026; or management language in Q3 FY27 concall shifts to "field performance review" rather than production commencement confirmation. Track barrels-of-gas-equivalent produced above baseline each quarter post-October 2026.</div>
+  </div>
+  <div class="risk-card medium" role="article" aria-label="Risk three: exceptional item tail from Dolphin legacy receivables">
+    <div class="rc-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> THIRD EXCEPTIONAL ITEM — DOLPHIN TAIL</div>
+    <div class="rc-what">FY25 saw ₹251 crore of exceptional write-offs; FY26 saw ₹208 crore. Management's position is that FY26 was the final clean-up of Kandla legacy receivables. However, Dolphin Offshore still carries approximately ₹160 crore of legacy trade receivables supported by arbitration awards. If arbitration outcomes disappoint or are delayed, these could be written off — marking a third consecutive year of "one-time" exceptional charges. Three in a row would trigger significant credibility downgrade.</div>
+    <div class="rc-signal"><strong>Signal:</strong> Any mention of "arbitration proceedings" or "receivable reassessment" in Q2–Q4 FY27 concalls. Track the Dolphin receivable figure in quarterly balance sheet disclosures. Any reduction not matched by cash receipt is a warning sign.</div>
+  </div>
+  <div class="risk-card medium" role="article" aria-label="Risk four: oil price and ONGC capex sensitivity">
+    <div class="rc-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> OIL PRICE SENSITIVITY (INDIRECT)</div>
+    <div class="rc-what">Deep's own revenues are not directly linked to commodity prices — charter hire and day rates are contractual. But ONGC's willingness to spend on upstream capex correlates with oil price levels. A sustained fall below USD 60 per barrel could constrain ONGC's discretionary contracting spend, slow new tender awards, and extend award timelines for the second PEC round. The ongoing global oil price volatility triggered by Middle East disruption is a background risk to the tender pipeline.</div>
+    <div class="rc-signal"><strong>Signal:</strong> Brent crude sustaining below USD 65/barrel for two consecutive quarters; or ONGC announcing a capex reduction in its annual guidance. Track Deep's bid pipeline — management reported ₹500–600 crore pipeline in Q1 FY27, excluding three large opportunities; any shrinkage is a leading indicator.</div>
+  </div>
+  <div class="risk-card medium" role="article" aria-label="Risk five: offshore fleet scaling and capital allocation">
+    <div class="rc-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> OFFSHORE FLEET SCALING — LUMPY CAPEX RISK</div>
+    <div class="rc-what">The Dolphin Offshore growth story requires deploying additional vessels and barges — each unit costing tens of crores. Management has stated capex will only follow firm contracts, which is disciplined. But offshore contract timelines are notoriously unpredictable, subject to ONGC tender delays and environmental clearances. If Deep commits capital for offshore expansion and the contracts are delayed, the cash drag could compress reported returns significantly.</div>
+    <div class="rc-signal"><strong>Signal:</strong> Any offshore capex commitment without a named, signed deployment contract; or Dolphin Offshore reporting net losses for two consecutive quarters post the initial revival phase.</div>
+  </div>
+</div>
+
+<div class="takeaway-pill coral">The single most important risk to monitor is PEC well integrity at Rajahmundry — one more incident can push the ₹500 Cr FY28 PAT target beyond reach.</div>
+</article>
+
+
+<article aria-labelledby="ch7-title">
+<div class="sec-hdr navy">
+  <div class="sec-num">7</div>
+  <div>
+    <div class="sec-eyebrow">WATCH SIGNALS</div>
+    <h2 class="sec-title" id="ch7-title">Five metrics to check every quarter — within five minutes of reading the concall</h2>
+  </div>
+</div>
+
+<ul class="watch-list" role="list" aria-label="Five quarterly watch metrics">
+  <li class="watch-item" role="listitem">
+    <div class="wi-dot green"></div>
+    <div>
+      <div class="wi-metric">1. PEC incremental production commencement</div>
+      <div class="wi-desc">Has Deep started producing gas above the baseline at Rajahmundry? Management guided October 2026 (after 5–6 month Mori-5 delay). This single metric validates or invalidates the entire FY28 PAT thesis. Ask specifically: "How many cubic metres per day of incremental production are we generating?" Not "when do we expect production to begin" — that has already slipped once.</div>
+      <div class="wi-threshold">Green: Incremental production confirmed in Q3 FY27 concall · Red: Any further delay language beyond Dec 2026</div>
+    </div>
+  </li>
+  <li class="watch-item" role="listitem">
+    <div class="wi-dot amber"></div>
+    <div>
+      <div class="wi-metric">2. Debtor days trajectory</div>
+      <div class="wi-desc">Standing at 197 days — among the highest for any profitable listed Indian services company. The Dolphin arbitration award recovery (₹160 Cr) would bring this down structurally. If debtor days continue rising without explicit PSU policy explanation, it signals either growing customer disputes or deepening working capital stress. Track both gross receivables and days in quarterly balance sheets.</div>
+      <div class="wi-threshold">Green: Debtor days below 180 · Amber: 180–220 days · Red: Above 220 days for two consecutive quarters</div>
+    </div>
+  </li>
+  <li class="watch-item" role="listitem">
+    <div class="wi-dot oil" style="background:var(--oil);"></div>
+    <div>
+      <div class="wi-metric">3. Order book replenishment rate</div>
+      <div class="wi-desc">In Q1 FY27, new orders of ₹319 Cr exceeded executions of ₹279 Cr — a net positive ₹40 Cr addition to the order book. This rate must be sustained for the FY27 and FY28 guidance to be credible. If the replenishment rate turns negative (executing more than winning), the order book begins its own depletion countdown and FY28 visibility shrinks. Also watch the composition — more PEC-type contracts versus pure day-rate contracts improves the revenue quality.</div>
+      <div class="wi-threshold">Green: New orders greater than executions each quarter · Red: Two consecutive quarters of net order book decline</div>
+    </div>
+  </li>
+  <li class="watch-item" role="listitem">
+    <div class="wi-dot amber"></div>
+    <div>
+      <div class="wi-metric">4. EBITDA margin quarterly trend</div>
+      <div class="wi-desc">Q4 FY26 saw an unexplained compression to 32.9 percent from a 9M average of 49.5 percent. Q1 FY27 recovered to 43.6 percent — still slightly below the 44–45 percent annual guidance range. Management needs to sustain 44-plus percent each quarter (not just annually) to demonstrate that the Q4 FY26 margin drop was a one-off rather than structural overhead accumulation from the Kandla integration.</div>
+      <div class="wi-threshold">Green: Quarterly EBITDA margin above 44% · Amber: 40–44% · Red: Below 40% for two consecutive quarters</div>
+    </div>
+  </li>
+  <li class="watch-item" role="listitem">
+    <div class="wi-dot navy" style="background:var(--navy);"></div>
+    <div>
+      <div class="wi-metric">5. Dolphin legacy receivable recovery</div>
+      <div class="wi-desc">The ₹160 crore outstanding from Dolphin Offshore, supported by arbitration awards, has not been recovered as of Q1 FY27 (management received ₹86 crore from Prabha Energy loans by Q1 FY27, but Dolphin receivables are separate). If recovered, it is a balance sheet cleanup signal and working capital positive. If written off, it triggers the third exceptional charge — and a significant credibility downgrade under The Ledger framework.</div>
+      <div class="wi-threshold">Green: ₹160 Cr recovered in cash · Amber: Arbitration timeline extended · Red: Partial or full write-off announced</div>
+    </div>
+  </li>
+</ul>
+
+<div class="takeaway-pill navy">The single most time-critical metric is Watch Signal 1 — PEC incremental production. Every other metric follows from whether that hinge event occurs on schedule.</div>
+</article>
+
+
+<article aria-labelledby="verdict-title">
+<div class="sec-hdr gold">
+  <div class="sec-num">★</div>
+  <div>
+    <div class="sec-eyebrow">VERDICT</div>
+    <h2 class="sec-title" id="verdict-title">Story assessment: mid-chapter, hinge event pending</h2>
+  </div>
+</div>
+
+<div class="verdict-box" role="complementary" aria-label="Analyst verdict on Deep Industries">
+  <div class="vl-label">💡 VERDICT — Q1 FY27</div>
+  <p>Deep Industries is at the most interesting — and most risky — inflection point in its 35-year history. Two structural tailwinds are undeniable: India's 85 percent crude import dependency creates a government-mandated demand floor for domestic upstream activity, and the India Oilfield Services market is compounding at 12.4 percent CAGR toward USD 3.74 billion by 2030. The quality signal in the financials is compelling: a 44 percent EBITDA margin sustained over multiple quarters, near-zero net debt, and a revenue CAGR of 36.8 percent over five years that is more than double the industry average. The near-term catalyst is clearly defined — the October 2026 commencement of PEC incremental production at Rajahmundry. If that event occurs on schedule and Deep begins reporting gas volumes above baseline, it validates the entire thesis: the company is not just a contractor to ONGC, it is an operator of ONGC's assets, and the credential moat for 100-plus future PEC rounds belongs exclusively to Deep. Valuation at 10.9x FY27E PAT is attractive for a business growing PAT at 40-plus percent — the market is pricing execution scepticism, not structural failure. Where are we in the story? Solidly mid-chapter. The charter-hire base is mature and cash-generative. The PEC ramp is the hinge event that either confirms a multi-year re-rating or delays it. The offshore optionality via Dolphin is a genuine free option — it was acquired at distressed pricing and has not yet been capitalised into the valuation. Two things investors must watch: the Dolphin legacy receivables (a potential third exceptional charge) and the Q4 FY26 margin contraction story (unexplained and worth a direct concall question). The brief is compelling; the execution risk is real; the catalyst is imminent.</p>
+</div>
+</article>
+
+
+<div id="highlight-index" class="highlight-details" role="complementary" aria-label="All highlights at a glance">
+  <div class="highlight-details-summary">📌 All Highlights at a Glance</div>
+  <ol class="hi-list" id="hi-list" aria-label="Compiled highlights from all chapters">
+    <!-- Auto-populated by JS -->
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     THE LEDGER — MANAGEMENT CREDIBILITY AUDIT · DEEPINDS · Q1 FY27
+     ═══════════════════════════════════════════════════════════════════════════ -->
+
+<section aria-labelledby="ledger-main-title">
+
+<div class="ledger-masthead" role="banner">
+  <div class="lm-eyebrow">THE LEDGER · COMPANION AUDIT · DEEPINDS</div>
+  <h2 class="lm-h1" id="ledger-main-title">Management Credibility Audit</h2>
+  <div class="lm-sub">Promise register · Tone analysis · Execution delta · Capex timelines · Margin mechanics · Capital structure — tracked quarter by quarter</div>
+  <div class="lm-chips">
+    <span class="lm-chip">BASELINE: Q4 FY26 CONCALL (MAY 15, 2026)</span>
+    <span class="lm-chip">UPDATED: Q1 FY27 CONCALL (JULY 29, 2026)</span>
+    <span class="lm-chip">CREDIBILITY TIER: B</span>
+    <span class="lm-chip">CMD: PARAS SAVLA · CFO: ROHAN SHAH</span>
+  </div>
+</div>
+
+<div class="content" style="padding-top:36px;">
+
+<!-- CREDIBILITY TIER SCORECARD -->
+<div class="sec-hdr amber">
+  <div class="sec-num">L1</div>
+  <div>
+    <div class="sec-eyebrow">COMPOSITE SCORE</div>
+    <div class="sec-title">Credibility Tier and Dimension Scores</div>
+  </div>
+</div>
+
+<p>Deep Industries' management presents a mixed credibility picture: strong on revenue delivery and tone, watchable on capex execution (PEC delay acknowledged), and flagged on recurring exceptional charges and working capital management. The composite tier is <strong>B — Credible with Active Watch-Flags</strong>.</p>
+
+<div style="margin:18px 0 12px;">
+  <span class="tier-badge tier-b" aria-label="Credibility Tier B — Credible with Watch Flags">
+    <i class="ti ti-circle-check" aria-hidden="true"></i> TIER B — CREDIBLE WITH WATCH FLAGS
+  </span>
+</div>
+
+<table class="data-table" aria-label="Six dimension credibility score breakdown">
+  <thead><tr>
+    <th class="amber">DIMENSION</th><th class="amber">SCORE</th><th class="amber">WEIGHT</th><th class="amber">RATIONALE</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td><strong>Promise Hit Rate</strong></td>
+      <td><span class="tag tag-green">75%</span></td>
+      <td>25%</td>
+      <td>Revenue and EBITDA margin broadly delivered. PEC milestone drifted (Oct 2026 vs Apr 2026 original). Standalone revenue guidance for FY27 partially on track. One hard miss: PEC incremental production timing.</td>
+    </tr>
+    <tr>
+      <td><strong>Capex Execution Rate</strong></td>
+      <td><span class="tag tag-amber">65%</span></td>
+      <td>20%</td>
+      <td>Fleet additions (rigs, compressors) delivered on time. PEC subsurface capex delayed due to Mori-5 incident — completion drift of 5–6 months. Budget for FY27 PEC capex (₹150 Cr) is firm-order-backed, which is positive discipline.</td>
+    </tr>
+    <tr>
+      <td><strong>Margin Mechanism Fidelity</strong></td>
+      <td><span class="tag tag-amber">70%</span></td>
+      <td>15%</td>
+      <td>Operating leverage is working at the stated pace for Q1–Q3 FY26. Q4 FY26 margin compression (32.9%) is unexplained and concerning. Q1 FY27 partial recovery to 43.6% is reassuring but guidance (44–45%) requires sustained delivery.</td>
+    </tr>
+    <tr>
+      <td><strong>Capital Structure Integrity</strong></td>
+      <td><span class="tag tag-amber">70%</span></td>
+      <td>15%</td>
+      <td>No stealth dilution. Near-zero net debt. However, two consecutive years of large exceptional items from acquired entities (Kandla, Dolphin) are a yellow flag. CFO-to-FY27 capex ratio will be close to 1x — funding flip risk is live if PEC capex accelerates.</td>
+    </tr>
+    <tr>
+      <td><strong>Specificity and Attribution</strong></td>
+      <td><span class="tag tag-green">80%</span></td>
+      <td>15%</td>
+      <td>Management provides specific numerical guidance (₹1,100 Cr FY27, ₹500 Cr FY28 PAT, ₹250–300 Cr capex). The Mori-5 delay was acknowledged directly and specifically. The Q4 margin compression remains unexplained — a deduction.</td>
+    </tr>
+    <tr>
+      <td><strong>Q and A Quality</strong></td>
+      <td><span class="tag tag-green">75%</span></td>
+      <td>10%</td>
+      <td>CFO Rohan Shah answered detailed questions on PEC volume expectations (2.5–3.0 lakh cubic metres per day target), Prabha Energy loan recovery (₹86 Cr YTD), and capex breakdown. No evasion on the Mori-5 delay. One gap: Q4 margin compression not addressed proactively.</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin:20px 0;">
+  <div class="score-bar-wrap" aria-label="Composite credibility score 73 percent">
+    <div class="score-bar-label"><span>Composite Score</span><span style="font-weight:700;">73%</span></div>
+    <div class="score-bar"><div class="score-bar-fill" style="width:73%;background:var(--amber);"></div></div>
+  </div>
+  <div class="score-bar-wrap" aria-label="Promise hit rate 75 percent">
+    <div class="score-bar-label"><span>Promise Hit Rate</span><span>75%</span></div>
+    <div class="score-bar"><div class="score-bar-fill" style="width:75%;background:var(--green);"></div></div>
+  </div>
+  <div class="score-bar-wrap" aria-label="Capex execution rate 65 percent">
+    <div class="score-bar-label"><span>Capex Execution Rate</span><span>65%</span></div>
+    <div class="score-bar"><div class="score-bar-fill" style="width:65%;background:var(--amber);"></div></div>
+  </div>
+  <div class="score-bar-wrap" aria-label="Margin mechanism fidelity 70 percent">
+    <div class="score-bar-label"><span>Margin Mechanism Fidelity</span><span>70%</span></div>
+    <div class="score-bar"><div class="score-bar-fill" style="width:70%;background:var(--amber);"></div></div>
+  </div>
+</div>
+
+<!-- PROMISE REGISTER -->
+<div class="sec-hdr teal">
+  <div class="sec-num">L2</div>
+  <div>
+    <div class="sec-eyebrow">PILLAR 1+3 · PROMISE REGISTER + EXECUTION DELTA</div>
+    <div class="sec-title">All forward-looking commitments — status as of Q1 FY27</div>
+  </div>
+</div>
+
+<p>Extracted from Q4 FY26 earnings call (May 15, 2026) and Q1 FY27 earnings call (July 29, 2026). Each promise is tagged by type, conditionality, and current execution status.</p>
+
+<table class="promise-table" aria-label="Promise register with execution status">
+  <thead><tr>
+    <th>PROMISE</th><th>SOURCE</th><th>TYPE</th><th>ORIGINAL CLAIM</th><th>STATUS Q1 FY27</th><th>NOTES</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>FY27 revenue</td><td>Q4FY26 concall</td><td><span class="tag tag-amber">Hard Guidance</span></td>
+      <td>₹1,100 Cr</td>
+      <td><span class="ps-on-track">ON TRACK</span></td>
+      <td>Q1 annualises to ₹1,116 Cr. Within guidance range.</td>
+    </tr>
+    <tr>
+      <td>Revenue growth FY27–28</td><td>Q4FY26 concall</td><td><span class="tag tag-amber">Directional</span></td>
+      <td>25–30% per annum</td>
+      <td><span class="ps-on-track">ON TRACK</span></td>
+      <td>Q1 FY27 +40% — ahead of guidance pace.</td>
+    </tr>
+    <tr>
+      <td>EBITDA margin FY27</td><td>Q4FY26 concall</td><td><span class="tag tag-amber">Hard Guidance</span></td>
+      <td>44–45%</td>
+      <td><span class="ps-partial">PARTIAL</span></td>
+      <td>Q1 FY27: 43.6%. Just below guidance. H2 contribution from PEC needed to sustain. Watch Q4 FY27 margin — FY26 Q4 was anomalous at 32.9%.</td>
+    </tr>
+    <tr>
+      <td>FY27 capex</td><td>Q4FY26 concall</td><td><span class="tag tag-navy">Financial</span></td>
+      <td>₹250–300 Cr (₹150 Cr for PEC)</td>
+      <td><span class="ps-on-track">ON TRACK</span></td>
+      <td>PEC capex of ₹150 Cr committed by March 2027. Fleet additions progressing.</td>
+    </tr>
+    <tr>
+      <td>PEC incremental production start</td><td>Q4FY26 concall</td><td><span class="tag tag-teal">Milestone</span></td>
+      <td>H2 FY27 (originally H2 FY26)</td>
+      <td><span class="ps-drifted">DRIFTED</span></td>
+      <td>Mori-5 incident (January 2026) caused 5–6 month delay. Now guided October 2026. This is the second timeline slip on PEC start — original was H2 FY26, then reguided to H1 FY27, now October 2026. Approaching pattern territory.</td>
+    </tr>
+    <tr>
+      <td>PEC FY28 revenue</td><td>Q1FY27 concall</td><td><span class="tag tag-amber">Hard Guidance</span></td>
+      <td>More than ₹150 Cr from PEC alone</td>
+      <td><span class="ps-watch">FORWARD — WATCH</span></td>
+      <td>Linked to 2.5–3.0 lakh cubic metres per day incremental volume. Not verifiable until H2 FY27 data available.</td>
+    </tr>
+    <tr>
+      <td>FY28 PAT target</td><td>Q1FY27 concall (Jul 29)</td><td><span class="tag tag-amber">Hard Guidance</span></td>
+      <td>~₹500 Cr</td>
+      <td><span class="ps-watch">FORWARD — WATCH</span></td>
+      <td>Ambitious — implies 43% PAT growth from FY27E. Requires PEC ramp + offshore scaling + margin maintenance. High credibility weight given specificity.</td>
+    </tr>
+    <tr>
+      <td>Standalone revenue growth FY27</td><td>Q1FY27 concall</td><td><span class="tag tag-amber">Directional</span></td>
+      <td>18–20% YoY</td>
+      <td><span class="ps-watch">WATCH</span></td>
+      <td>Q1 FY27 standalone revenue was flat at ₹171 Cr due to merger-related adjustments with Kandla. Underlying growth is positive but reported standalone number distorted. Track Q2 FY27 standalone for clean comparison.</td>
+    </tr>
+    <tr>
+      <td>No further exceptional items</td><td>Q4FY26 concall (implied)</td><td><span class="tag tag-red">Capital</span></td>
+      <td>Kandla write-off is final; no more exceptional charges guided</td>
+      <td><span class="ps-watch">WATCH</span></td>
+      <td>Dolphin legacy receivables of ₹160 Cr still outstanding. Not an explicit promise but an implied commitment — any further write-off is a credibility break.</td>
+    </tr>
+    <tr>
+      <td>Capex from internal accruals</td><td>Q4FY26 concall</td><td><span class="tag tag-navy">Capital</span></td>
+      <td>"Funded through internal accruals and debt"</td>
+      <td><span class="ps-watch">WATCH — FUNDING FLIP RISK</span></td>
+      <td>FY26 CFO: ₹270 Cr. FY27 capex: ₹250–300 Cr. Ratio close to 1x. If PEC subsurface work is front-loaded, net debt will rise despite "internal accruals" language. Track CFO-to-capex ratio quarterly.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TONE DECODER -->
+<div class="sec-hdr amber">
+  <div class="sec-num">L3</div>
+  <div>
+    <div class="sec-eyebrow">PILLAR 2 — TONE DECODER</div>
+    <div class="sec-title">Linguistic patterns across Q4 FY26 and Q1 FY27 concalls</div>
+  </div>
+</div>
+
+<p>Analysis based on management commentary extracted from Q4 FY26 (May 15, 2026) and Q1 FY27 (July 29, 2026) earnings call summaries. Audio recordings are published but text transcripts were not separately filed.</p>
+
+<div class="capital-grid">
+  <div class="cap-card">
+    <div class="cap-label">Confidence Level</div>
+    <div class="cap-val" style="color:var(--green);">HIGH on core business</div>
+    <div class="cap-note">Management used specific numerical language throughout: "₹500 Cr PAT in FY28," "2.5–3.0 lakh cubic metres per day," "₹86 crore recovered from Prabha Energy." This degree of specificity signals internal visibility, not aspiration. Positive signal.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Attribution on Misses</div>
+    <div class="cap-val" style="color:var(--amber);">PARTIAL — PEC delay owned, Q4 margin not</div>
+    <div class="cap-note">The Mori-5 delay was attributed specifically and transparently. However, the Q4 FY26 margin compression from 43–49% to 32.9% was not proactively explained in management commentary reviewed. This is a Specificity deduction — a miss that went unaddressed.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Qualifier Trajectory</div>
+    <div class="cap-val" style="color:var(--amber);">CREEPING on PEC timing</div>
+    <div class="cap-note">PEC start was "H2 FY26" → "H1 FY27" → "October 2026." Each shift added a quarter of delay. The conditional language on offshore ("only after securing firm contracts") is disciplined; the PEC timeline language is beginning to exhibit qualifier creep. Not yet a critical flag — one more delay would make it systemic.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Bullishness Calibration</div>
+    <div class="cap-val" style="color:var(--amber);">AGGRESSIVE on FY28</div>
+    <div class="cap-note">The ₹500 Cr FY28 PAT guidance raised on July 29, 2026 is ambitious: it requires 43 percent YoY PAT growth from FY27E, contingent on full PEC ramp, continued IPMS growth, and offshore contribution. Management is bullish by design — this is a credibility bet on execution. If delivered, it is exceptional; if missed, the guidance was premature.</div>
+  </div>
+</div>
+
+<!-- CAPEX TIMELINE TRACKER -->
+<div class="sec-hdr" style="border-bottom-color:var(--coral);">
+  <div class="sec-num" style="color:var(--coral);">L4</div>
+  <div>
+    <div class="sec-eyebrow">PILLAR 4 — CAPEX TIMELINE TRACKER</div>
+    <div class="sec-title">Project-level tracking: announced amounts, drift, revenue bridge</div>
+  </div>
+</div>
+
+<table class="promise-table" aria-label="Capex project timeline tracker">
+  <thead><tr>
+    <th>PROJECT</th><th>ANNOUNCED</th><th>BUDGET</th><th>ORIGINAL DATE</th><th>CURRENT DATE</th><th>DRIFT</th><th>REVENUE UNLOCK</th><th>STATUS</th>
+  </tr></thead>
+  <tbody>
+    <tr>
+      <td>PEC Rajahmundry — subsurface capex (Mori-5 + new well)</td>
+      <td>Q2 FY25 (Sep 2024 contract award)</td>
+      <td>₹150 Cr by Mar 2027</td>
+      <td>H2 FY26 (Oct 2025)</td>
+      <td>H2 FY27 (Oct 2026)</td>
+      <td style="color:var(--amber);">+12 months</td>
+      <td>₹150+ Cr in FY28 (management guided)</td>
+      <td><span class="status-drift">⚠ 2-QTR DRIFT · MORI-5</span></td>
+    </tr>
+    <tr>
+      <td>Three new workover rigs (fleet expansion)</td>
+      <td>Q4 FY25</td>
+      <td>~₹60–90 Cr (est.)</td>
+      <td>FY26 delivery</td>
+      <td>On order — Q1/Q2 FY27</td>
+      <td style="color:var(--amber);">~1 quarter</td>
+      <td>+₹20–30 Cr annualised day-rate revenue</td>
+      <td><span class="status-drift">⚠ MINOR SLIP · ON ORDER</span></td>
+    </tr>
+    <tr>
+      <td>Gas compression + processing plants expansion</td>
+      <td>FY27 ongoing</td>
+      <td>Part of ₹100–150 Cr non-PEC capex</td>
+      <td>FY27</td>
+      <td>FY27</td>
+      <td style="color:var(--green);">None</td>
+      <td>Incremental charter hire revenue</td>
+      <td><span class="status-on-track">● ON TRACK</span></td>
+    </tr>
+    <tr>
+      <td>Dolphin Offshore fleet expansion (conditional)</td>
+      <td>FY28 target</td>
+      <td>TBD — post-contract</td>
+      <td>Conditional on firm orders</td>
+      <td>No commitment yet</td>
+      <td style="color:var(--green);">N/A</td>
+      <td>Offshore revenue scaling</td>
+      <td><span class="status-planned">○ CONDITIONAL — DISCIPLINED</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<p style="font-size:12.5px;color:var(--gray);font-style:italic;"><strong>Capex Pacing Check (FY27):</strong> Guided ₹250–300 Cr for full FY27 vs ₹270 Cr CFO in FY26. If PEC capex (₹150 Cr) is deployed in H2 FY27 (as expected), the H1 pace will be light and H2 will be concentrated — making the CFO-to-capex ratio close across the year. Watch net borrowings in the Q2 and Q3 FY27 cash flow statements to detect any funding flip.</p>
+
+<p><strong>Dark Capex Check:</strong> No unexplained capex detected. All major expenditure lines align with disclosed projects. The FY25 exceptional items (₹251 Cr) and FY26 exceptional items (₹208 Cr) appear as acquisition-related adjustments, not undisclosed capex. No dark capex flag raised.</p>
+
+<!-- MARGIN EXPANSION TRACKER -->
+<div class="sec-hdr" style="border-bottom-color:var(--green);">
+  <div class="sec-num" style="color:var(--green);">L5</div>
+  <div>
+    <div class="sec-eyebrow">PILLAR 5 — MARGIN EXPANSION TRACKER</div>
+    <div class="sec-title">Stated mechanism vs actual delivery</div>
+  </div>
+</div>
+
+<p>Management's stated mechanism for margin maintenance and improvement is threefold: (1) operating leverage as revenue scales toward ₹1,100 Cr; (2) PEC contributing above-40 percent margins as production ramps; (3) gas compression volume growth maintaining the 44–45 percent charter-hire margin floor.</p>
+
+<div class="margin-row">
+  <div class="mr-type"><span class="tag tag-green">Operating Leverage</span></div>
+  <div class="mr-what"><strong>Claim:</strong> As revenue scales from ₹576 Cr (FY25) to ₹1,100 Cr (FY27E), fixed overhead is absorbed, pushing EBITDA margin from 45.8% toward 44–45% on a much larger base.<br><strong>Test:</strong> 9M FY26 EBITDA margin was 49.5% — leverage clearly working. Full-year 44% was pulled down by Q4 compression. Q1 FY27 at 43.6% — leverage partially working. The mechanism is real but Q4 FY26 data point is an unresolved anomaly.</div>
+  <div class="mr-signal"><strong>Verdict: WORKING · WATCH Q4 REPEAT</strong><br>The mechanism is valid. The Q4 FY26 anomaly (32.9%) must be explained and resolved in Q4 FY27 for full confidence.</div>
+</div>
+<div class="margin-row">
+  <div class="mr-type"><span class="tag tag-amber">PEC Mix Shift</span></div>
+  <div class="mr-what"><strong>Claim:</strong> PEC revenue, once ramped, carries above-40% EBITDA margins and improves blended margin.<br><strong>Test:</strong> Not yet testable — PEC incremental production has not started as of Q1 FY27. PEC baseline production is running but carries lower margins than the upside-sharing incremental component. The real test begins October 2026.</div>
+  <div class="mr-signal"><strong>Verdict: UNTESTABLE · H2 FY27 KEY</strong><br>This mechanism is the single most important margin driver that is not yet in the numbers.</div>
+</div>
+<div class="margin-row">
+  <div class="mr-type"><span class="tag tag-teal">Charter Hire Floor</span></div>
+  <div class="mr-what"><strong>Claim:</strong> Gas compression charter hire maintains 44–45% EBITDA baseline. Charter hire contracts are multi-year with fixed day rates — margin is structurally protected.<br><strong>Test:</strong> Margin data for natural gas services segment specifically not separately disclosed in available information. The blended 44% margin for the business validates the floor claim at the consolidated level.</div>
+  <div class="mr-signal"><strong>Verdict: WORKING · STRUCTURAL</strong><br>Consistent with 30-year history of charter hire operations. No evidence of pricing pressure from ONGC in this segment.</div>
+</div>
+
+<h3>Quarterly margin trend</h3>
+<table class="data-table" aria-label="Quarterly EBITDA margin trend">
+  <thead><tr>
+    <th class="green">QUARTER</th><th class="green">REVENUE (CR)</th><th class="green">EBITDA (CR)</th><th class="green">EBITDA MARGIN %</th><th class="green">NOTE</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>Q1 FY26</td><td>₹200</td><td>~₹96</td><td>~48%</td><td>Strong operating leverage quarter</td></tr>
+    <tr><td>Q2 FY26</td><td>₹221</td><td>₹110</td><td>47.6%</td><td>9M FY26 average: 49.5%</td></tr>
+    <tr><td>Q3 FY26</td><td>₹221</td><td>₹112</td><td>~50.7%</td><td>Highest quarterly margin in history (estimated)</td></tr>
+    <tr><td>Q4 FY26</td><td>₹249</td><td>₹89</td><td><strong style="color:var(--red);">32.9%</strong></td><td>⚠ Sharp compression — UNEXPLAINED. Ledger Flag raised.</td></tr>
+    <tr><td>Q1 FY27</td><td>₹279</td><td>₹132</td><td>43.6%</td><td>Recovery but below 44–45% guidance midpoint. PEC not yet contributing.</td></tr>
+    <tr><td>FY27 Full Year (guided)</td><td>₹1,100</td><td>~₹484</td><td>44–45%</td><td>Requires H2 FY27 margin above 44% to hit full-year target.</td></tr>
+  </tbody>
+</table>
+
+<p><strong>Flag: H2 MIRAGE WATCH (Yellow).</strong> Management's language suggests margin improvement is "H2-weighted" as PEC kicks in from October 2026. If Q4 FY27 also shows margin compression (a pattern of Q4 weakness), that would trigger a H2 Mirage flag. Currently insufficient data for a confirmed flag — one more data point required.</p>
+
+<!-- CAPITAL STRUCTURE TRACKER -->
+<div class="sec-hdr" style="border-bottom-color:var(--navy);">
+  <div class="sec-num" style="color:var(--navy);">L6</div>
+  <div>
+    <div class="sec-eyebrow">PILLAR 6 — CAPITAL STRUCTURE TRACKER</div>
+    <div class="sec-title">Debt, dilution, working capital — promises vs reality</div>
+  </div>
+</div>
+
+<div class="capital-grid">
+  <div class="cap-card">
+    <div class="cap-label">Gross Debt (latest)</div>
+    <div class="cap-val">~₹205 Cr</div>
+    <div class="cap-note">Debt-to-equity of 10.1%. Interest coverage at 360x — effectively debt-free from a servicing standpoint. No debt-reduction promise was made by management; current levels are comfortable. Watch FY27 net borrowings as ₹250–300 Cr capex is deployed against ₹270 Cr CFO base.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Equity Dilution</div>
+    <div class="cap-val" style="color:var(--green);">None Detected</div>
+    <div class="cap-note">No QIP, rights issue, or preferential allotment in the reporting period. ESOP 2026 scheme approved (15 lakh options) — minor dilutive but standard and disclosed. No "no dilution needed" explicit claim was found in available concall summaries, so no stealth dilution flag is raised.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Working Capital — Debtors</div>
+    <div class="cap-val" style="color:var(--red);">197 Days ⚠</div>
+    <div class="cap-note">Structurally elevated due to PSU payment cycles. This is not a promise break — management has never explicitly guided debtor days — but it is an ongoing financial risk. The ₹160 Cr Dolphin receivables (supported by arbitration awards) and ₹86 Cr recovered from Prabha Energy YTD suggest the underlying working capital trend is improving but slowly. Track net cash conversion cycle quarterly.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">CFO / Capex Coverage</div>
+    <div class="cap-val" style="color:var(--amber);">~0.9x (FY27E)</div>
+    <div class="cap-note">FY26 CFO of ₹270 Cr vs FY27 capex plan of ₹250–300 Cr. Coverage is tight. Management guided "internal accruals plus debt." If PEC capex (₹150 Cr) is concentrated in Q3–Q4, CFO-to-capex coverage for H2 FY27 specifically may be below 1x. Track Q3 FY27 net borrowings.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Promoter Pledge</div>
+    <div class="cap-val" style="color:var(--green);">Not flagged</div>
+    <div class="cap-note">No promoter pledge disclosures flagged in available filings. Promoters: Paras S Savla and Rupesh K Savla (family shareholding entity). Note: CFO Rohan Shah is also listed as a promoter — the combination of operational executive and promoter-category holder is an unusual governance structure worth noting.</div>
+  </div>
+  <div class="cap-card">
+    <div class="cap-label">Exceptional Items Pattern</div>
+    <div class="cap-val" style="color:var(--red);">2 Consecutive Years ⚠</div>
+    <div class="cap-note">FY25: ₹251 Cr exceptional loss (Kandla and Dolphin acquisition cleanup). FY26: ₹208 Cr exceptional loss (Kandla legacy receivable write-off). Management says FY26 is final. Dolphin legacy receivables (₹160 Cr) remain the tail risk for a potential FY27 exceptional charge — which would make it three consecutive years and trigger a credibility tier downgrade.</div>
+  </div>
+</div>
+
+<!-- ACTIVE RED FLAGS -->
+<div class="sec-hdr coral">
+  <div class="sec-num">L7</div>
+  <div>
+    <div class="sec-eyebrow">ACTIVE FLAGS — AS OF Q1 FY27</div>
+    <div class="sec-title">Red flags detected, with triggering evidence</div>
+  </div>
+</div>
+
+<div class="flag-grid">
+  <div class="flag-card warning" role="article" aria-label="Active flag: PEC completion drift">
+    <div class="fc-name"><i class="ti ti-tool" style="color:var(--coral);" aria-hidden="true"></i> COMPLETION DRIFT — PEC (YELLOW)</div>
+    <div class="fc-body">PEC incremental production start has slipped from H2 FY26 to H1 FY27 to October 2026 — a cumulative 12-month drift over three concall cycles. The cause (Mori-5 gas leak) is specific and credible. Not yet systemic. <strong>One further delay (beyond December 2026) elevates this to a critical flag.</strong></div>
+    <div class="fc-evidence">Evidence: Q4 FY25 concall guidance was "H2 FY26"; Q1–Q3 FY26 referenced "H1 FY27"; Q4 FY26 reguided to "October 2026" citing Mori-5 incident.</div>
+  </div>
+  <div class="flag-card warning" role="article" aria-label="Active flag: Two-year exceptional pattern">
+    <div class="fc-name"><i class="ti ti-alert-triangle" style="color:var(--amber);" aria-hidden="true"></i> ONE-TIME ETERNAL — EXCEPTIONAL ITEMS (YELLOW)</div>
+    <div class="fc-body">Two consecutive years of "non-recurring" exceptional charges: ₹251 Cr (FY25) and ₹208 Cr (FY26). Management described each as a "final cleanup." ₹160 Cr of Dolphin legacy receivables remains on the balance sheet. If FY27 carries another exceptional charge, this flag becomes critical and the credibility tier drops to C.</div>
+    <div class="fc-evidence">Evidence: FY25 annual report exceptional items table; FY26 press release explicitly calling out ₹208.28 Cr write-off; Q1 FY27 call noted ₹160 Cr Dolphin receivables still outstanding.</div>
+  </div>
+  <div class="flag-card warning" role="article" aria-label="Active flag: Q4 margin compression unexplained">
+    <div class="fc-name"><i class="ti ti-trending-down" style="color:var(--amber);" aria-hidden="true"></i> Q4 MARGIN ANOMALY — FLOOR DRIFT WATCH (YELLOW)</div>
+    <div class="fc-body">Q4 FY26 EBITDA margin compressed sharply to 32.9% from a 9M average of 49.5% — a 1,660 bps decline. No explicit management explanation found for the Q4 specific compression in available concall summaries. Q1 FY27 partial recovery to 43.6% is encouraging, but the root cause of Q4 is unresolved. If Q4 FY27 shows similar weakness, it becomes a confirmed H2 Mirage pattern.</div>
+    <div class="fc-evidence">Evidence: Q4 FY26 financial results showing ₹88.53 Cr EBITDA on ₹248.71 Cr revenue (32.93% margin) vs 9M FY26 margin of 49.5%.</div>
+  </div>
+  <div class="flag-card watch" role="article" aria-label="Watch flag: High debtor days">
+    <div class="fc-name"><i class="ti ti-building-bank" style="color:var(--navy);" aria-hidden="true"></i> HIGH DEBTORS — STRUCTURAL PSU LAG (WATCH)</div>
+    <div class="fc-body">197-day debtor days is a structural consequence of PSU payment cycles. Not a promise break — management has not explicitly guided debtor day reduction. However, combined with ₹160 Cr outstanding Dolphin receivables, the company's balance sheet carries significant locked-up cash. If PSU payment delays worsen (e.g., ONGC budget squeeze), working capital could deteriorate rapidly from an already elevated base.</div>
+    <div class="fc-evidence">Evidence: Screener.in reported debtor days of 197 days. Q1 FY27 concall noted ₹86 Cr received from Prabha Energy loans YTD — a positive sign that some receivable recovery is occurring.</div>
+  </div>
+  <div class="flag-card watch" role="article" aria-label="Watch flag: CFO capex funding flip risk">
+    <div class="fc-name"><i class="ti ti-coins" style="color:var(--navy);" aria-hidden="true"></i> FUNDING FLIP WATCH — FY27 CAPEX (WATCH)</div>
+    <div class="fc-body">FY26 CFO of ₹270 Cr is approximately equal to the FY27 capex plan of ₹250–300 Cr. Management's language ("internal accruals plus debt") leaves room for debt funding, but if the split is predominantly debt, it contradicts the implied "internally funded" narrative. Track net new borrowings in each quarterly cash flow statement through FY27.</div>
+    <div class="fc-evidence">Evidence: Q4 FY26 concall guidance of ₹250–300 Cr capex; FY26 audited CFO of ₹270 Cr. No explicit "internal accruals only" claim was made — therefore this is a Watch, not a confirmed flag.</div>
+  </div>
+  <div class="flag-card resolved" role="article" aria-label="Resolved flag: Kandla exceptional item">
+    <div class="fc-name"><i class="ti ti-circle-check" style="color:var(--green);" aria-hidden="true"></i> KANDLA LEGACY RECEIVABLES (RESOLVED FY26)</div>
+    <div class="fc-body">The ₹208.28 Cr Kandla exceptional write-off was the second large write-off from the Kandla acquisition. Management stated this completes the Kandla receivable cleanup. The auditors (Mahendra N. Shah and Co.) issued an unmodified opinion on the FY26 results. The flag is marked resolved for Kandla specifically.</div>
+    <div class="fc-evidence">Resolved: FY26 annual results confirmed full write-off with auditor sign-off. Dolphin receivables remain as a separate, ongoing watch item.</div>
+  </div>
+</div>
+
+<!-- VERDICT LEDGER -->
+<div class="verdict-box" style="border-color:var(--amber);background:var(--amber-bg);" role="complementary" aria-label="Ledger audit verdict">
+  <div class="vl-label">🗒 LEDGER VERDICT — Q1 FY27</div>
+  <p><strong>Tier B — Credible with Active Watch-Flags.</strong> Deep Industries' management has demonstrated solid revenue and EBITDA delivery over the FY26 cycle, and the Q4 FY26 earnings call carried specific, numerical forward guidance (₹500 Cr FY28 PAT, ₹150 Cr PEC revenue, ₹2.5–3.0 lakh cubic metres per day volume target) that reflects genuine operational visibility rather than aspiration. The PEC delay (Mori-5) was disclosed transparently with a specific alternative date — that is Tier A behaviour. What prevents Tier A is the pattern of consecutive exceptional charges (two years, large values, "final" each time) and the unexplained Q4 FY26 margin compression. Both are resolvable — the first by no FY27 exceptional, and the second by a direct Q4 FY27 explanation. A Tier A rating is achievable by Q3 FY27 if: PEC incremental production commences, no further exceptional items are booked, and Q4 FY27 margin holds above 40%. A Tier C downgrade would occur if: a third exceptional charge is announced, PEC start slips past December 2026, or debtor days exceed 220 for two consecutive quarters.</p>
+</div>
+
+</div><!-- end ledger content -->
+</section>
+
+<!-- CLOSING TAGS + SCRIPTS -->
+</main>
+
+<footer role="contentinfo">
+  <span>DEEPINDS · NSE INVESTOR BRIEF + THE LEDGER · Q1 FY27</span>
+  <span>COMPILED: AUGUST 2026 · BASED ON Q4 FY26 AND Q1 FY27 CONCALL SUMMARIES</span>
+  <span>INTERNAL RESEARCH USE ONLY · NOT INVESTMENT ADVICE</span>
+</footer>
+
+<button class="theme-toggle no-print" id="themeToggle" aria-label="Toggle day or night mode" title="Toggle day/night mode">🌙</button>
+
+<script>
+// ── THEME TOGGLE ─────────────────────────────────────────────────────────────
+(function(){
+  var saved = localStorage.getItem('deepinds-theme');
+  if(saved==='night'){document.body.classList.add('night');document.getElementById('themeToggle').textContent='☀️';}
+  document.getElementById('themeToggle').addEventListener('click',function(){
+    var isNight = document.body.classList.toggle('night');
+    localStorage.setItem('deepinds-theme', isNight?'night':'day');
+    this.textContent = isNight ? '☀️' : '🌙';
+  });
+})();
+
+// ── HIGHLIGHT INDEX AUTO-POPULATION ─────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', function(){
+  var index = document.getElementById('hi-list');
+  if(!index) return;
+  var items = document.querySelectorAll('.hl-key,.hl-number,.hl-risk,.hl-catalyst,.takeaway-pill');
+  if(items.length === 0){
+    var empty = document.createElement('li');
+    empty.textContent = 'Highlights will appear here after page render.';
+    index.appendChild(empty);
+    return;
+  }
+  items.forEach(function(el){
+    var li = document.createElement('li');
+    li.textContent = el.textContent.trim();
+    var type = Array.from(el.classList).find(function(c){ return c.startsWith('hl-') || c==='takeaway-pill'; }) || '';
+    li.setAttribute('data-type', type);
+    index.appendChild(li);
+  });
+});
+</script>
+</body>
+</html>
