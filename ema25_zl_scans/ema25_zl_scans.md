@@ -75,7 +75,7 @@
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY)<br><sub>⚠ CAUTION · ↗59Cr · 48Cr · 📶W9 · ↑CMF1d</sub> | 2d | +2.6% | Premium residential commercial retail real estate Mumbai | +0.00% | 1846.00 | — | 20%  |
 | [GODREJAGRO](https://in.tradingview.com/chart/?symbol=NSE:GODREJAGRO)<br><sub>✓ SAFE · ↗13Cr · 47Cr · 📶W9 · 🚀SS · ↑CMF1d</sub> | 2d | +5.1% | Animal feed, crop protection, oil palm processing | +3.26% | 580.50 | — | 20%  |
 | [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP)<br><sub>✓ SAFE · ↗69Cr · 43Cr · 📶W9 · ↓CMF8d</sub> | 2d | +4.5% | Ibuprofen APIs and specialty chemicals global producer | -0.27% | 165.58 | — | 20%  |
-| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA)<br><sub>✓ SAFE · ↗69Cr · 39Cr · 📶W9 · ↑CMF29d</sub> | 2d | +2.2% | Music label, films, TV shows, Indian entertainment content IP owner | -0.82% | 527.30 | ✓ | 20%  |
+| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA)<br><sub>✓ SAFE · ↗69Cr · 39Cr · 📶W9 · ↑CMF29d · DEL54%</sub> | 2d | +2.2% | Music label, films, TV shows, Indian entertainment content IP owner | -0.82% | 527.30 | ✓ | 20%  |
 | [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>✓ SAFE · ↗61Cr · 39Cr · 📶W9 · ↑CMF30d</sub> | 2d | +1.8% | Dry bulk ship operator maritime logistics cargo transport | -0.22% | 653.40 | — | 10% 🟩 |
 | [NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN)<br><sub>✓ SAFE · →37Cr · 39Cr · 📶W9 · ↓CMF13d</sub> | 2d | +6.6% | Bromine lithium specialty chemicals pharma agrochemicals engineering | +3.09% | 2204.90 | ✓ | 20%  |
 | [EIMCOELECO](https://in.tradingview.com/chart/?symbol=NSE:EIMCOELECO)<br><sub>✓ SAFE · ↗8Cr · 36Cr · 📶W9 · 🚀SS·9x · ↑CMF0d</sub> | 2d | +11.7% | Underground mining equipment manufacturer for coal sector | +5.89% | 2005.50 | — | 20%  |
@@ -102,7 +102,7 @@
 | [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>✓ SAFE · ↗438Cr · 100Cr · 📶W9 · ↑CMF21d</sub> | 4d | +6.6% | Crude oil refining, petroleum products, lubricant additives | -1.48% | 1321.90 | — | 20%  |
 | [INDIGO](https://in.tradingview.com/chart/?symbol=NSE:INDIGO)<br><sub>✓ SAFE · →530Cr · 252Cr · 📶W9 · ↑CMF30d</sub> | 4d | +3.1% |  | -1.31% | 5329.50 | — | 20%  |
 | [GUJENERGY](https://in.tradingview.com/chart/?symbol=NSE:GUJENERGY)<br><sub>✓ SAFE · ↗72Cr · 98Cr · ↓CMF30d</sub> | 4d | +6.6% | Compressed natural gas distribution to vehicles and households | -0.51% | 282.95 | ✓ | 5%  |
-| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>✓ SAFE · ↘78Cr · 60Cr · 📶W9 · 🚀SS · ↓CMF4d · DEL100%(T-1)</sub> | 4d | +34.2% | Precision heat exchangers for HVAC refrigeration equipment makers | +5.00% | 1468.30 | — | 5%  |
+| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>✓ SAFE · ↘78Cr · 60Cr · 📶W9 · 🚀SS · ↓CMF4d</sub> | 4d | +34.2% | Precision heat exchangers for HVAC refrigeration equipment makers | +5.00% | 1468.30 | — | 5%  |
 | [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL)<br><sub>✓ SAFE · ↘170Cr · 58Cr · 📶W9 · ↓CMF0d</sub> | 4d | +4.7% | Crude oil refining, petrochemicals production, domestic fuel supply | -2.20% | 170.54 | ✓ | 20%  |
 | [BANKINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANKINDIA)<br><sub>✓ SAFE · ↘93Cr · 56Cr · ↑CMF2d</sub> | 4d | +2.2% | Public sector bank, retail corporate MSME lending deposits | -0.53% | 144.10 | — | 20%  |
 | [EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL)<br><sub>✓ SAFE · ↗54Cr · 48Cr · 📶W9 · ↓CMF2d</sub> | 4d | +6.8% | Laminated plastic tubes for cosmetics pharma food | -1.07% | 244.60 | — | 20%  |
@@ -261,7 +261,7 @@
 | [UNITDSPR](https://in.tradingview.com/chart/?symbol=NSE:UNITDSPR)<br><sub>✓ SAFE · ↘111Cr · 81Cr · 📶W9 · ↑CMF30d</sub> | 17d | +11.5% | Whisky rum vodka gin spirits manufacturer India consumer | +0.79% | 1534.00 | — | 20%  |
 | [PRICOLLTD](https://in.tradingview.com/chart/?symbol=NSE:PRICOLLTD)<br><sub>✓ SAFE · →61Cr · 43Cr · 📶W9 · ↑CMF30d</sub> | 17d | +30.9% | Automotive instrument clusters and precision components for OEMs | +3.54% | 792.05 | — | 20%  |
 | [RKFORGE](https://in.tradingview.com/chart/?symbol=NSE:RKFORGE)<br><sub>✓ SAFE · ↘132Cr · 30Cr · 📶W9 · ↑CMF21d</sub> | 19d | +30.3% | Forged automotive railway components manufacturer precision engineering | -0.10% | 732.60 | — | 20%  |
-| [THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE)<br><sub>✓ SAFE · ↘79Cr · 79Cr · 📶W9 · 🚀SS · ↓CMF15d</sub> | 20d | +19.9% | Thyrocare Technologies Ltd
+| [THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE)<br><sub>✓ SAFE · ↘79Cr · 79Cr · 📶W9 · 🚀SS · ↓CMF15d · DEL68%</sub> | 20d | +19.9% | Thyrocare Technologies Ltd
 
 Diagnostic pathology and radiology services for hospitals | +2.98% | 624.05 | — | 20%  |
 | [E2E](https://in.tradingview.com/chart/?symbol=NSE:E2E)<br><sub>✓ SAFE · ↗167Cr · 204Cr · ↑CMF14d</sub> | 20d | +55.8% | GPU cloud infrastructure for AI and machine learning workloads | +4.75% | 602.80 | — | 20%  |
@@ -285,7 +285,7 @@ Diagnostic pathology and radiology services for hospitals | +2.98% | 624.05 | �
 | [PPLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:PPLPHARMA)<br><sub>✓ SAFE · ↘133Cr · 236Cr · 📶W9 · ↑CMF30d</sub> | 27d | +22.9% | Contract pharma manufacturing, drug development, global healthcare | -2.84% | 206.64 | — | 20%  |
 | [HAPPYFORGE](https://in.tradingview.com/chart/?symbol=NSE:HAPPYFORGE)<br><sub>✓ SAFE · ↗38Cr · 45Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 28d | +39.7% | Heavy forged components supplier to automotive and industrial OEMs | +4.08% | 2089.60 | — | 20%  |
 | [LENSKART](https://in.tradingview.com/chart/?symbol=NSE:LENSKART)<br><sub>✓ SAFE · ↘180Cr · 271Cr · 📶W9 · ↑CMF0d</sub> | 30d | +15.9% | Eyewear design manufacturing retail omnichannel direct consumer | +2.24% | 584.75 | — | 20%  |
-| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘138Cr · 65Cr · 📶W9 · ↑CMF20d · DEL46%(T-1)</sub> | 30d | +104.3% | Drone systems manufacturer, defense and civil applications | +4.99% | 820.85 | — | 5% 🟥 |
+| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘138Cr · 65Cr · 📶W9 · ↑CMF20d · DEL46%</sub> | 30d | +104.3% | Drone systems manufacturer, defense and civil applications | +4.99% | 820.85 | — | 5% 🟥 |
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL)<br><sub>✓ SAFE · ↘89Cr · 61Cr · 📶W9 · ↑CMF0d</sub> | 32d | +27.3% | NBFC retail lending home gold MSME microfinance | -0.75% | 631.15 | — | 20%  |
 | [CYIENTDLM](https://in.tradingview.com/chart/?symbol=NSE:CYIENTDLM)<br><sub>✓ SAFE · ↘42Cr · 27Cr · 📶W9 · ↑CMF30d</sub> | 32d | +50.1% | Electronics manufacturing design integration testing subsystems defense aerospace | -4.33% | 696.65 | — | 20%  |
 | [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI)<br><sub>✓ SAFE · →336Cr · 141Cr · 📶W9 · ↑CMF4d</sub> | 33d | +38.3% | Job portal, real estate classifieds, matrimonial matchmaking platform | -1.05% | 1343.00 | — | 20%  |

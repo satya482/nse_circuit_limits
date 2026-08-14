@@ -83,7 +83,7 @@
 | [SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF)<br><sub>↑CMF4d</sub> | Civil construction contractor for infrastructure projects | 1w | ABOVE | 1w | +4.7% | -0.26% | 250.10 | — | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
 | [AFSL](https://in.tradingview.com/chart/?symbol=NSE:AFSL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +1.8% | -3.56% | 204.67 | 33w | 20%  |
-| [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL)<br><sub>↓CMF12d · DEL56%(T-1)</sub> | Gold silver diamond jewelry retail Tamil Nadu consumer | 1w | BELOW | 1w | +2.9% | +2.98% | 5427.00 | — | 10% 🟨 |
+| [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL)<br><sub>↓CMF12d</sub> | Gold silver diamond jewelry retail Tamil Nadu consumer | 1w | BELOW | 1w | +2.9% | +2.98% | 5427.00 | — | 10% 🟨 |
 | [ATLANTAELE](https://in.tradingview.com/chart/?symbol=NSE:ATLANTAELE)<br><sub>↓CMF30d</sub> | High-voltage transformers for power generation transmission distribution | 1w | BELOW | 1w | +4.6% | +1.93% | 1680.80 | — | 5% 🟥 |
 | [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN)<br><sub>↓CMF25d</sub> | Explosives propellants detonators defense space mining manufacturing | 1w | BELOW | 1w | +1.7% | -0.78% | 651.90 | — | 20%  |
 | [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS)<br><sub>↓CMF16d</sub> | Steel aluminum wheels automotive commercial vehicles tractors | 1w | BELOW | 1w | +3.5% | +6.06% | 1435.60 | — | 20%  |
