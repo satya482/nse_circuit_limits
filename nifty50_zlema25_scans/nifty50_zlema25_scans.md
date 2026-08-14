@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-08-13 15:41 IST*
+*Generated: 2026-08-14 15:41 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 34 · Downtrend: 16**
@@ -97,7 +97,7 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 | [SUNPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SUNPHARMA)<br><sub>↗600Cr · 349Cr · ↑CMF10d</sub> | 2d | -0.73% |  | +0.49% | 1949.60 | ✓ | 20%  |
 | [HINDUNILVR](https://in.tradingview.com/chart/?symbol=NSE:HINDUNILVR)<br><sub>↗550Cr · 225Cr · ↓CMF23d</sub> | 3d | -2.48% |  | -0.01% | 2085.00 | — | 20%  |
 | [POWERGRID](https://in.tradingview.com/chart/?symbol=NSE:POWERGRID)<br><sub>→264Cr · 480Cr · ↑CMF9d</sub> | 3d | -5.61% |  | -3.85% | 270.90 | — | 20%  |
-| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>→170Cr · 291Cr · ↓CMF13d</sub> | 8d | -9.91% | Tertiary quaternary hospitals Delhi NCR North India patient care | -3.95% | 1013.30 | — | 20%  |
+| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗196Cr · 409Cr · ↓CMF14d</sub> | 9d | -10.33% | Tertiary quaternary hospitals Delhi NCR North India patient care | -0.46% | 1008.60 | — | 20%  |
 | [ONGC](https://in.tradingview.com/chart/?symbol=NSE:ONGC)<br><sub>→292Cr · 316Cr · ↓CMF5d</sub> | 9d | -4.57% |  | -1.17% | 237.40 | — | 20%  |
 | [ADANIENT](https://in.tradingview.com/chart/?symbol=NSE:ADANIENT)<br><sub>↘307Cr · 251Cr · ↓CMF0d</sub> | 12d | -4.84% |  | -0.79% | 3026.00 | — | 20%  |
 | [ADANIPORTS](https://in.tradingview.com/chart/?symbol=NSE:ADANIPORTS)<br><sub>↗462Cr · 206Cr · ↓CMF23d</sub> | 12d | -8.47% |  | -0.24% | 1696.00 | — | 20%  |
