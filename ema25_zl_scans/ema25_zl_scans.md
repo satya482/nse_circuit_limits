@@ -46,7 +46,7 @@
 | [ASIANENE](https://in.tradingview.com/chart/?symbol=NSE:ASIANENE)<br><sub>✓ SAFE · →23Cr · 76Cr · 📶W9 · ↑CMF13d</sub> | 1d | +13.6% | Oilfield seismic data acquisition operations maintenance services | +13.58% | 425.25 | — | 20%  |
 | [PGEL](https://in.tradingview.com/chart/?symbol=NSE:PGEL)<br><sub>✓ SAFE · ↗178Cr · 65Cr · 📶W9 · ↑CMF3d</sub> | 1d | +2.2% | Electronics manufacturing plastic molding appliances consumer goods | +2.16% | 614.00 | — | 20%  |
 | [PANAMAPET](https://in.tradingview.com/chart/?symbol=NSE:PANAMAPET)<br><sub>✓ SAFE · ↗104Cr · 55Cr · 📶W9 · ↓CMF3d</sub> | 1d | +0.9% | Specialty petroleum products manufacturer serves pharma cosmetics rubber textiles | +0.93% | 487.10 | — | 10% 🟨 |
-| [SKFINDUS](https://in.tradingview.com/chart/?symbol=NSE:SKFINDUS)<br><sub>⚠ CAUTION · ↗13Cr · 52Cr · 📶W9 · ↓CMF30d</sub> | 1d | +2.1% | Bearings seals mechatronics lubrication industrial machinery | +2.07% | 2740.00 | ✓ | 20%  |
+| [SKFINDUS](https://in.tradingview.com/chart/?symbol=NSE:SKFINDUS)<br><sub>⚠ CAUTION · ↗13Cr · 52Cr · 📶W9 · ↓CMF30d · DEL93%</sub> | 1d | +2.1% | Bearings seals mechatronics lubrication industrial machinery | +2.07% | 2740.00 | ✓ | 20%  |
 | [BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND)<br><sub>✓ SAFE · ↘53Cr · 46Cr · 📶W9 · 🚀SS · ↑CMF12d</sub> | 1d | +1.8% | Off-highway tires for agriculture, construction, mining sectors | +1.84% | 2407.20 | — | 20%  |
 | [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN)<br><sub>✓ SAFE · →23Cr · 43Cr · 🚀SS · ↓CMF26d</sub> | 1d | +3.2% | Explosives propellants detonators defense space mining manufacturing | +3.18% | 672.65 | ✓ | 20%  |
 | [IGIL](https://in.tradingview.com/chart/?symbol=NSE:IGIL)<br><sub>✓ SAFE · ↘19Cr · 39Cr · ↑CMF12d</sub> | 1d | +2.7% | Diamond gemstone jewellery certification grading laboratory services | +2.67% | 355.15 | — | 20%  |
@@ -89,7 +89,7 @@
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>✓ SAFE · ↗81Cr · 31Cr · 📶W9 · ↓CMF0d</sub> | 3d | +5.0% | Precision aerospace components and consumer goods manufacturing | -0.06% | 249.39 | — | 20% 🟦 |
 | [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP)<br><sub>✓ SAFE · ↗67Cr · 30Cr · 📶W9 · ↓CMF9d</sub> | 3d | +1.8% | Ibuprofen APIs and specialty chemicals global producer | -2.60% | 161.28 | — | 20%  |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS)<br><sub>✓ SAFE · ↘117Cr · 571Cr · 📶W9 · ↓CMF17d</sub> | 4d | +7.5% | Broking wealth management home finance retail institutions | +5.68% | 955.00 | — | 20%  |
-| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL)<br><sub>✓ SAFE · ↘267Cr · 253Cr · 📶W9 · ↓CMF0d</sub> | 4d | +4.2% | Coal pitch and advanced carbon materials manufacturer | +0.81% | 787.40 | ✓ | 20%  |
+| [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL)<br><sub>✓ SAFE · ↘267Cr · 253Cr · 📶W9 · ↓CMF0d · DEL53%</sub> | 4d | +4.2% | Coal pitch and advanced carbon materials manufacturer | +0.81% | 787.40 | ✓ | 20%  |
 | [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS)<br><sub>✓ SAFE · ↘279Cr · 173Cr · 📶W9 · 🚀SS · ↑CMF18d</sub> | 4d | +3.1% | Defense aerospace electronics systems manufacturing | +1.64% | 4528.70 | ✓ | 20%  |
 | [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM)<br><sub>✓ SAFE · ↗166Cr · 133Cr · 📶W9 · ↓CMF0d</sub> | 4d | +6.6% | PTFE and fluorochemicals manufacturing chemicals sector | -0.64% | 4707.50 | ✓ | 20%  |
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND)<br><sub>✓ SAFE · →64Cr · 118Cr · 📶W9 · 🚀SS · ↑CMF19d</sub> | 4d | +4.5% | Plastic pipes, packaging, industrial products manufacturer | +0.87% | 3590.00 | ✓ | 20%  |
@@ -103,11 +103,11 @@
 | [PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET)<br><sub>⚠ CAUTION · ↘45Cr · 29Cr · ↑CMF12d</sub> | 4d | +1.7% | LNG import terminal operator serving Indian energy demand | -0.28% | 281.80 | ✓ | 20%  |
 | [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>✓ SAFE · ↗446Cr · 297Cr · 📶W9 · ↑CMF22d</sub> | 5d | +11.5% | Crude oil refining, petroleum products, lubricant additives | +4.58% | 1382.40 | — | 20%  |
 | [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL)<br><sub>✓ SAFE · ↘180Cr · 183Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 5d | +8.7% | Crude oil refining, petrochemicals production, domestic fuel supply | +3.88% | 177.15 | — | 20%  |
-| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>✓ SAFE · ↘89Cr · 149Cr · 📶W9 · 🚀SS · ↓CMF5d</sub> | 5d | +40.7% | Precision heat exchangers for HVAC refrigeration equipment makers | +4.86% | 1539.70 | — | 5%  |
+| [KRN](https://in.tradingview.com/chart/?symbol=NSE:KRN)<br><sub>✓ SAFE · ↘89Cr · 149Cr · 📶W9 · 🚀SS · ↓CMF5d · DEL60%</sub> | 5d | +40.7% | Precision heat exchangers for HVAC refrigeration equipment makers | +4.86% | 1539.70 | — | 5%  |
 | [DMART](https://in.tradingview.com/chart/?symbol=NSE:DMART)<br><sub>✓ SAFE · ↘161Cr · 142Cr · ↓CMF6d</sub> | 5d | +3.9% |  | -0.43% | 4052.50 | — | 20%  |
 | [BANKINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANKINDIA)<br><sub>✓ SAFE · ↘87Cr · 70Cr · ↓CMF0d</sub> | 5d | +1.9% | Public sector bank, retail corporate MSME lending deposits | -0.24% | 143.75 | — | 20%  |
 | [SJS](https://in.tradingview.com/chart/?symbol=NSE:SJS)<br><sub>✓ SAFE · ↗66Cr · 67Cr · 📶W9 · 🚀SS · ↓CMF0d</sub> | 5d | +6.8% | Decorative graphics manufacturer for automotive and appliances | +0.08% | 2534.50 | — | 20%  |
-| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER)<br><sub>✓ SAFE · ↘106Cr · 65Cr · 📶W9 · 🚀SS · ↓CMF4d · DEL61%(T-1)</sub> | 5d | +23.7% | High-voltage electrical equipment manufacturer for power infrastructure | +4.27% | 1302.60 | — | 5% 🟥 |
+| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER)<br><sub>✓ SAFE · ↘106Cr · 65Cr · 📶W9 · 🚀SS · ↓CMF4d</sub> | 5d | +23.7% | High-voltage electrical equipment manufacturer for power infrastructure | +4.27% | 1302.60 | — | 5% 🟥 |
 | [KAJARIACER](https://in.tradingview.com/chart/?symbol=NSE:KAJARIACER)<br><sub>✓ SAFE · →38Cr · 46Cr · 📶W9 · ↑CMF0d</sub> | 5d | +5.7% | Ceramic and vitrified tiles manufacturer for construction | -0.14% | 1251.60 | — | 20%  |
 | [EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL)<br><sub>✓ SAFE · ↗57Cr · 44Cr · 📶W9 · ↓CMF3d</sub> | 5d | +6.1% | Laminated plastic tubes for cosmetics pharma food | -0.66% | 242.99 | — | 20%  |
 | [ARE&M](https://in.tradingview.com/chart/?symbol=NSE:ARE&M)<br><sub>✓ SAFE · ↗191Cr · 35Cr · 📶W9 · ↓CMF2d</sub> | 5d | +5.3% | Lead-acid batteries automotive industrial energy storage | -0.03% | 945.70 | — | 20%  |
@@ -291,7 +291,7 @@
 | [LENSKART](https://in.tradingview.com/chart/?symbol=NSE:LENSKART)<br><sub>✓ SAFE · ↘180Cr · 271Cr · 📶W9 · ↑CMF0d</sub> | 30d | +15.9% | Eyewear design manufacturing retail omnichannel direct consumer | +2.24% | 584.75 | — | 20%  |
 | [ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD)<br><sub>✓ SAFE · ↗207Cr · 32Cr · 📶W9 · ↑CMF17d</sub> | 30d | +43.1% | Two-wheeler braking systems manufacturer India safety-critical | +0.70% | 649.20 | — | 20%  |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>⚠ CAUTION · ↘272Cr · 131Cr · 📶W9 · ↑CMF15d</sub> | 31d | +26.3% |  | -0.64% | 1361.30 | — | 20%  |
-| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘129Cr · 33Cr · 📶W9 · ↑CMF21d · DEL46%(T-1)</sub> | 31d | +97.9% | Drone systems manufacturer, defense and civil applications | -3.14% | 795.10 | — | 5% 🟥 |
+| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘129Cr · 33Cr · 📶W9 · ↑CMF21d · DEL54%</sub> | 31d | +97.9% | Drone systems manufacturer, defense and civil applications | -3.14% | 795.10 | — | 5% 🟥 |
 | [DIVISLAB](https://in.tradingview.com/chart/?symbol=NSE:DIVISLAB)<br><sub>✓ SAFE · →498Cr · 283Cr · 📶W9 · ↑CMF17d</sub> | 32d | +29.5% |  | -0.29% | 8475.00 | — | 20%  |
 | [UFLEX](https://in.tradingview.com/chart/?symbol=NSE:UFLEX)<br><sub>✓ SAFE · ↘27Cr · 219Cr · 📶W9 · 🚀SS · ↑CMF18d</sub> | 33d | +38.7% | Flexible packaging films, laminates for food beverage | +19.99% | 586.05 | — | 20%  |
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL)<br><sub>✓ SAFE · ↘76Cr · 47Cr · 📶W9 · ↑CMF1d</sub> | 33d | +27.1% | NBFC retail lending home gold MSME microfinance | -0.17% | 630.05 | — | 20%  |
@@ -310,8 +310,8 @@
 ### ZLEMA25 Watch *(pullback / flat)*
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
-| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA)<br><sub>✓ SAFE · ↗70Cr · 39Cr · 📶W9 · ↑CMF30d · DEL54%(T-1)</sub> | 3d | +1.4% | Music label, films, TV shows, Indian entertainment content IP owner | -0.74% | 523.40 | ✓ | 20%  |
-| [ECLERX](https://in.tradingview.com/chart/?symbol=NSE:ECLERX)<br><sub>✓ SAFE · ↘44Cr · 32Cr · 📶W9 · ↑CMF30d</sub> | 3d | +2.1% | BPM automation analytics for Fortune 2000 financial services retail | -2.54% | 1848.90 | ✓ | 20%  |
+| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA)<br><sub>✓ SAFE · ↗70Cr · 39Cr · 📶W9 · ↑CMF30d · DEL60%</sub> | 3d | +1.4% | Music label, films, TV shows, Indian entertainment content IP owner | -0.74% | 523.40 | ✓ | 20%  |
+| [ECLERX](https://in.tradingview.com/chart/?symbol=NSE:ECLERX)<br><sub>✓ SAFE · ↘44Cr · 32Cr · 📶W9 · ↑CMF30d · DEL62%</sub> | 3d | +2.1% | BPM automation analytics for Fortune 2000 financial services retail | -2.54% | 1848.90 | ✓ | 20%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>✓ SAFE · ↗2251Cr · 944Cr · 📶W9 · ↑CMF8d</sub> | 7d | +5.9% | Precision components manufacturing defense aerospace nuclear energy | -4.25% | 7777.00 | — | 5% 🟥 |
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN)<br><sub>✓ SAFE · ↘108Cr · 58Cr · 📶W9 · ↑CMF30d</sub> | 20d | +20.6% | NBFC auto tractor financing rural semi-urban retail | -0.31% | 388.90 | — | 20%  |
 | [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV)<br><sub>⚠ CAUTION · →318Cr · 188Cr · 📶W9 · ↑CMF30d</sub> | 21d | +9.1% |  | -0.91% | 2006.60 | — | 20%  |
