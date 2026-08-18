@@ -169,7 +169,7 @@ def build_union(source_sets: dict[str, set[str]]) -> list[tuple[str, list[str]]]
 
 def build_union_section(union_groups: list[tuple[str, list[str]]], notes: list[str]) -> list[str]:
     lines = [
-        "### Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner",
+        "### 🟢 Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner",
         "*(sectioned by confluence — how many of the scanners flagged the symbol today)*",
         "",
     ]
@@ -254,9 +254,6 @@ STATIC_HEADER = f"""### Scan definition
 """
 
 
-UNION_ROW_BG = "#c6f6c6"  # light green — row is also flagged by >=1 other union source
-
-
 def _table_rows(findings: list[dict], circuit: dict[str, tuple], confluence_syms: set[str]) -> list[str]:
     rows = []
     for f in findings:
@@ -279,20 +276,18 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple], confluence_syms
             extras.append(f["cmf_tag"])
         if f.get("deliv_tag"):
             extras.append(f["deliv_tag"])
-        sym_cell = f'<a href="{tv}">{sym}</a>' + (f"<br><sub>{' · '.join(extras)}</sub>" if extras else "")
-        bg = f' style="background-color:{UNION_ROW_BG}"' if sym in confluence_syms else ""
+        marker = "🟢 " if sym in confluence_syms else ""
+        sym_cell = f"{marker}[{sym}]({tv})" + (f"<br><sub>{' · '.join(extras)}</sub>" if extras else "")
         rows.append(
-            f"<tr{bg}>"
-            f"<td>{sym_cell}</td>"
-            f"<td>{cd}</td>"
-            f"<td>{cp}</td>"
-            f"<td>{td}</td>"
-            f"<td>{tp}</td>"
-            f"<td>{bd}{f['band_pct']:.1f}%</td>"
-            f"<td>{ds}{f['day_chg']:.2f}%</td>"
-            f"<td>{f['close']:.2f}</td>"
-            f"<td>{cl} {em}</td>"
-            f"</tr>"
+            f"| {sym_cell} "
+            f"| {cd} "
+            f"| {cp} "
+            f"| {td} "
+            f"| {tp} "
+            f"| {bd}{f['band_pct']:.1f}% "
+            f"| {ds}{f['day_chg']:.2f}% "
+            f"| {f['close']:.2f} "
+            f"| {cl} {em} |"
         )
     return rows
 
@@ -300,11 +295,10 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple], confluence_syms
 def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     rows = sorted(findings, key=lambda x: (x["cross_days"], x["symbol"]))
 
-    hdr_html = (
-        "<tr><th>Symbol</th><th>Cross Age</th><th>Chg% Since Cross</th>"
-        "<th>Trend Age</th><th>Trend Chg%</th><th>EMA55 Dist</th>"
-        "<th>Day Chg</th><th>Close</th><th>Circuit</th></tr>"
-    )
+    hdr = [
+        "| Symbol | Cross Age | Chg% Since Cross | Trend Age | Trend Chg% | EMA55 Dist | Day Chg | Close | Circuit |",
+        "|--------|----------:|------------------:|----------:|-----------:|-----------:|--------:|------:|:-------:|",
+    ]
 
     wl_parts = []
     for label, lo, hi in _AGE_BUCKETS:
@@ -351,13 +345,10 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             *(syms for label, syms in union_groups if label != "1 ONLY")
         ) if union_groups else set()
         lines += [
-            f"*(rows shaded {UNION_ROW_BG} are also flagged by >=1 other Union Watchlist source)*",
+            "*(🟢 marks stocks also flagged by >=1 other Union Watchlist source)*",
             "",
-            "<table>",
-            hdr_html,
-            *_table_rows(rows, circuit, confluence_syms),
-            "</table>",
         ]
+        lines += hdr + _table_rows(rows, circuit, confluence_syms)
         lines += ["", "```", tv_csv(f"NSE:{f['symbol']}" for f in rows), "```"]
     else:
         lines.append("*No signals.*")
