@@ -37,7 +37,7 @@
 | [GUJTHEM](https://in.tradingview.com/chart/?symbol=NSE:GUJTHEM)<br><sub>↓CMF30d</sub> | Fermentation-based APIs for pharma formulation manufacturers | 1w | TOUCH | 1w | +6.5% | +5.71% | 371.30 | 1w | 20%  |
 | [REFEX](https://in.tradingview.com/chart/?symbol=NSE:REFEX)<br><sub>↓CMF24d</sub> | Refrigerant gases, coal trading, ash handling services | 1w | TOUCH | 1w | +0.7% | -1.09% | 299.45 | — | 20%  |
 | [GALAPREC](https://in.tradingview.com/chart/?symbol=NSE:GALAPREC)<br><sub>↓CMF21d</sub> | Precision fasteners and springs for renewable energy | 1w | TOUCH | 1w | +5.9% | +4.09% | 1059.60 | — | 20%  |
-| [GREENPLY](https://in.tradingview.com/chart/?symbol=NSE:GREENPLY)<br><sub>↓CMF30d</sub> | Plywood MDF panels manufacturing building construction interiors | 1w | TOUCH | 1w | +2.4% | +0.44% | 287.55 | — | 20%  |
+| [GREENPLY](https://in.tradingview.com/chart/?symbol=NSE:GREENPLY)<br><sub>↓CMF30d · DEL85%</sub> | Plywood MDF panels manufacturing building construction interiors | 1w | TOUCH | 1w | +2.4% | +0.44% | 287.55 | — | 20%  |
 | [SPMLINFRA](https://in.tradingview.com/chart/?symbol=NSE:SPMLINFRA)<br><sub>↓CMF7d</sub> | Water power EPC projects municipal industrial clients | 1w | TOUCH | 1w | +2.0% | -1.28% | 194.47 | 3w | 20%  |
 | [SWELECTES](https://in.tradingview.com/chart/?symbol=NSE:SWELECTES)<br><sub>↑CMF6d</sub> | Solar EPC and power conditioning solutions provider | 1w | TOUCH | 1w | +1.1% | -0.93% | 623.85 | 2w | 20%  |
 | [LGBBROSLTD](https://in.tradingview.com/chart/?symbol=NSE:LGBBROSLTD)<br><sub>↓CMF29d</sub> | Transmission chains sprockets metal parts automotive industrial | 1w | TOUCH | 1w | +0.4% | +0.02% | 1603.10 | — | 20%  |
