@@ -37,7 +37,7 @@
 | [GUJTHEM](https://in.tradingview.com/chart/?symbol=NSE:GUJTHEM)<br><sub>↓CMF30d</sub> | Fermentation-based APIs for pharma formulation manufacturers | 1w | TOUCH | 1w | +6.8% | +0.27% | 372.30 | 1w | 20%  |
 | [SPMLINFRA](https://in.tradingview.com/chart/?symbol=NSE:SPMLINFRA)<br><sub>↓CMF8d</sub> | Water power EPC projects municipal industrial clients | 1w | TOUCH | 1w | +2.6% | +0.56% | 195.56 | 3w | 20%  |
 | [LGBBROSLTD](https://in.tradingview.com/chart/?symbol=NSE:LGBBROSLTD)<br><sub>↓CMF30d</sub> | Transmission chains sprockets metal parts automotive industrial | 1w | TOUCH | 1w | +0.4% | -0.01% | 1603.00 | — | 20%  |
-| [GREENPLY](https://in.tradingview.com/chart/?symbol=NSE:GREENPLY)<br><sub>↓CMF30d · DEL85%(T-1)</sub> | Plywood MDF panels manufacturing building construction interiors | 1w | TOUCH | 1w | +1.1% | -1.27% | 283.90 | — | 20%  |
+| [GREENPLY](https://in.tradingview.com/chart/?symbol=NSE:GREENPLY)<br><sub>↓CMF30d</sub> | Plywood MDF panels manufacturing building construction interiors | 1w | TOUCH | 1w | +1.1% | -1.27% | 283.90 | — | 20%  |
 | [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL)<br><sub>↑CMF1d</sub> |  | 1w | TOUCH | 1w | +2.6% | -1.21% | 1096.00 | 42w | 20%  |
 | [TIINDIA](https://in.tradingview.com/chart/?symbol=NSE:TIINDIA)<br><sub>↑CMF1d</sub> | Automotive tubes, chains, cast products for vehicles | 1w | ABOVE | 1w | +8.3% | +0.07% | 2961.00 | 1w | 20%  |
 | [EMSLIMITED](https://in.tradingview.com/chart/?symbol=NSE:EMSLIMITED)<br><sub>↓CMF2d</sub> | Water treatment infrastructure EPC contractor India municipalities | 1w | ABOVE | 1w | +8.9% | +5.11% | 394.95 | — | 10% 🟨 |

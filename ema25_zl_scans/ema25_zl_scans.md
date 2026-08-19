@@ -104,7 +104,7 @@
 | [JINDALSAW](https://in.tradingview.com/chart/?symbol=NSE:JINDALSAW)<br><sub>✓ SAFE · →30Cr · 30Cr · 📶W9 · ↑CMF30d</sub> | 4d | +1.6% | Welded steel pipes for oil gas infrastructure applications | +0.02% | 268.70 | — | 20%  |
 | [SUDARSCHEM](https://in.tradingview.com/chart/?symbol=NSE:SUDARSCHEM)<br><sub>✓ SAFE · ↗90Cr · 30Cr · 📶W9 · 🚀SS · ↑CMF3d</sub> | 4d | +7.8% | Organic inorganic pigments colorants chemicals manufacturing | +0.38% | 1134.90 | — | 20%  |
 | [IFCI](https://in.tradingview.com/chart/?symbol=NSE:IFCI)<br><sub>✓ SAFE · ↗211Cr · 521Cr · 📶W9 · 🚀SS · ↑CMF6d</sub> | 5d | +11.1% | Industrial lending to manufacturing and infrastructure projects | +0.39% | 81.68 | — | 20%  |
-| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT)<br><sub>✓ SAFE · ↘55Cr · 182Cr · 📶W9 · 🚀SS · ↓CMF11d · DEL83%(T-1)</sub> | 5d | +6.4% | Engineering services, product design, aerospace and industrial manufacturing | +4.19% | 894.50 | ✓ | 20%  |
+| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT)<br><sub>✓ SAFE · ↘55Cr · 182Cr · 📶W9 · 🚀SS · ↓CMF11d</sub> | 5d | +6.4% | Engineering services, product design, aerospace and industrial manufacturing | +4.19% | 894.50 | ✓ | 20%  |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>✓ SAFE · ↗96Cr · 140Cr · 📶W9 · ↑CMF1d</sub> | 5d | +10.8% | Precision aerospace components and consumer goods manufacturing | +1.50% | 263.00 | — | 20% 🟦 |
 | [GRSE](https://in.tradingview.com/chart/?symbol=NSE:GRSE)<br><sub>✓ SAFE · ↗161Cr · 126Cr · ↓CMF0d</sub> | 5d | +2.4% | Warship construction for Indian Navy and Coast Guard | -1.45% | 2638.30 | ✓ | 20%  |
 | [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY)<br><sub>✓ SAFE · ↗119Cr · 115Cr · 📶W9 · ↑CMF0d</sub> | 5d | +3.9% | Premium residential commercial retail real estate Mumbai | +0.63% | 1869.70 | — | 20%  |
@@ -161,7 +161,7 @@
 | [ASHOKLEY](https://in.tradingview.com/chart/?symbol=NSE:ASHOKLEY)<br><sub>✓ SAFE · ↗396Cr · 283Cr · 📶W9 · ↑CMF7d</sub> | 11d | +13.1% | Heavy trucks buses medium commercial vehicles India | +0.75% | 175.31 | — | 20%  |
 | [MAZDOCK](https://in.tradingview.com/chart/?symbol=NSE:MAZDOCK)<br><sub>✓ SAFE · ↗296Cr · 282Cr · 📶W9 · ↑CMF6d</sub> | 11d | +11.4% | Defence warships submarines naval military shipbuilding PSU | +0.46% | 2582.90 | — | 20%  |
 | [CHOLAFIN](https://in.tradingview.com/chart/?symbol=NSE:CHOLAFIN)<br><sub>✓ SAFE · ↘260Cr · 113Cr · 📶W9 · ↑CMF8d</sub> | 11d | +6.3% |  | -2.21% | 1885.30 | — | 20%  |
-| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>✓ SAFE · ↗104Cr · 76Cr · 📶W9 · ↓CMF13d</sub> | 11d | +9.4% | Specialty chemicals and intermediates for pharmaceuticals cosmetics | -0.58% | 527.05 | — | 20%  |
+| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>✓ SAFE · ↗104Cr · 76Cr · 📶W9 · ↓CMF13d · DEL65%</sub> | 11d | +9.4% | Specialty chemicals and intermediates for pharmaceuticals cosmetics | -0.58% | 527.05 | — | 20%  |
 | [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON)<br><sub>✓ SAFE · ↗114Cr · 64Cr · 📶W9 · ↑CMF30d</sub> | 11d | +20.6% | Complex generic formulations manufacturing specialty pharmaceuticals | -0.29% | 1798.80 | — | 20%  |
 | [NIACL](https://in.tradingview.com/chart/?symbol=NSE:NIACL)<br><sub>✓ SAFE · ↘25Cr · 52Cr · 📶W9 · 🚀SS · ↑CMF10d</sub> | 11d | +8.1% | General insurance policies for individuals and businesses | +0.87% | 185.68 | — | 20%  |
 | [INDIANB](https://in.tradingview.com/chart/?symbol=NSE:INDIANB)<br><sub>✓ SAFE · →160Cr · 64Cr · 📶W9 · ↑CMF14d</sub> | 11d | +8.0% |  | -0.45% | 893.00 | — | 20%  |
@@ -177,7 +177,7 @@
 | [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING)<br><sub>✓ SAFE · ↘104Cr · 147Cr · 📶W9 · ↑CMF30d</sub> | 13d | +11.5% | Housing loans for individuals and properties | +2.46% | 1174.00 | — | 20%  |
 | [UNIONBANK](https://in.tradingview.com/chart/?symbol=NSE:UNIONBANK)<br><sub>✓ SAFE · →261Cr · 318Cr · 📶W9 · 🚀SS · ↑CMF25d</sub> | 13d | +11.0% |  | +0.11% | 186.70 | — | 20%  |
 | [RBA](https://in.tradingview.com/chart/?symbol=NSE:RBA)<br><sub>✓ SAFE · ↘192Cr · 131Cr · 📶W9 · ↑CMF11d</sub> | 13d | +51.6% | Burger King franchisee operating QSR chain India Indonesia | -4.97% | 101.06 | — | 20%  |
-| [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO)<br><sub>✓ SAFE · ↘116Cr · 105Cr · 📶W9 · ↓CMF11d · DEL80%(T-1)</sub> | 13d | +14.2% | Home services marketplace connecting customers beauty repairs cleaning | +1.97% | 147.83 | — | 20%  |
+| [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO)<br><sub>✓ SAFE · ↘116Cr · 105Cr · 📶W9 · ↓CMF11d</sub> | 13d | +14.2% | Home services marketplace connecting customers beauty repairs cleaning | +1.97% | 147.83 | — | 20%  |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>✓ SAFE · ↗316Cr · 94Cr · 📶W9 · ↑CMF11d</sub> | 13d | +55.0% | APIs, diagnostics, generic pharma for consumers | -0.02% | 88.42 | — | 20%  |
 | [MARKSANS](https://in.tradingview.com/chart/?symbol=NSE:MARKSANS)<br><sub>✓ SAFE · ↗334Cr · 84Cr · 📶W9 · ↑CMF5d</sub> | 13d | +26.6% | Generic pharma formulations for regulated Western markets | +0.15% | 327.00 | — | 20%  |
 | [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL)<br><sub>✓ SAFE · ↗109Cr · 74Cr · 📶W9 · ↑CMF8d</sub> | 13d | +9.8% | Precision metal castings aerospace defense oil gas marine | -1.60% | 19475.00 | — | 20%  |
@@ -243,7 +243,7 @@
 | [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · ↗1220Cr · 962Cr · 📶W9 · ↑CMF30d</sub> | 19d | +36.5% | Condoms lubricants IVD kits sexual wellness healthcare | +0.19% | 284.56 | — | 20%  |
 | [TVSMOTOR](https://in.tradingview.com/chart/?symbol=NSE:TVSMOTOR)<br><sub>✓ SAFE · ↘431Cr · 236Cr · 📶W9 · ↑CMF14d</sub> | 19d | +20.2% |  | -0.64% | 4314.50 | — | 20%  |
 | [RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO)<br><sub>✓ SAFE · ↘149Cr · 123Cr · 📶W9 · ↑CMF10d</sub> | 19d | +15.5% | Whiskey brandy rum producer spirits beverages India | -0.78% | 4696.00 | — | -%  |
-| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>✓ SAFE · ↘35Cr · 42Cr · 📶W9 · ↑CMF13d</sub> | 19d | +45.2% | Oil gas compression drilling workover field services provider | -7.05% | 667.35 | — | 20%  |
+| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>✓ SAFE · ↘35Cr · 42Cr · 📶W9 · ↑CMF13d · DEL59%</sub> | 19d | +45.2% | Oil gas compression drilling workover field services provider | -7.05% | 667.35 | — | 20%  |
 | [E2E](https://in.tradingview.com/chart/?symbol=NSE:E2E)<br><sub>✓ SAFE · ↗167Cr · 204Cr · ↑CMF14d</sub> | 20d | +55.8% | GPU cloud infrastructure for AI and machine learning workloads | +4.75% | 602.80 | — | 20%  |
 | [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX)<br><sub>✓ SAFE · ↘33Cr · 37Cr · 📶W9 · ↑CMF18d</sub> | 20d | +21.0% | Multiplex cinema chains exhibiting films to Indian audiences | +0.23% | 1200.90 | — | 20%  |
 | [PNB](https://in.tradingview.com/chart/?symbol=NSE:PNB)<br><sub>✓ SAFE · ↘177Cr · 128Cr · 📶W9 · 🚀SS · ↑CMF19d</sub> | 21d | +11.6% |  | -0.14% | 117.42 | — | 20%  |
@@ -300,7 +300,7 @@
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>✓ SAFE · ↗2251Cr · 944Cr · 📶W9 · ↑CMF8d</sub> | 7d | +5.9% | Precision components manufacturing defense aerospace nuclear energy | -4.25% | 7777.00 | — | 5% 🟥 |
 | [CONCOR](https://in.tradingview.com/chart/?symbol=NSE:CONCOR)<br><sub>✓ SAFE · ↘86Cr · 37Cr · 📶W9 · ↑CMF30d</sub> | 7d | +2.5% | Rail container logistics, ports, multimodal transport | -0.75% | 514.35 | — | 20%  |
 | [ARE&M](https://in.tradingview.com/chart/?symbol=NSE:ARE&M)<br><sub>✓ SAFE · ↗172Cr · 28Cr · 📶W9 · ↑CMF1d</sub> | 7d | +3.4% | Lead-acid batteries automotive industrial energy storage | -0.77% | 928.55 | — | 20%  |
-| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL)<br><sub>✓ SAFE · ↘819Cr · 393Cr · 📶W9 · ↓CMF3d · DEL33%(T-1)</sub> | 10d | +4.5% | Gold jewellery retail, pan-India stores, consumer luxury | -1.06% | 595.20 | ✓ | 20%  |
+| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL)<br><sub>✓ SAFE · ↘819Cr · 393Cr · 📶W9 · ↓CMF3d</sub> | 10d | +4.5% | Gold jewellery retail, pan-India stores, consumer luxury | -1.06% | 595.20 | ✓ | 20%  |
 | [PINELABS](https://in.tradingview.com/chart/?symbol=NSE:PINELABS)<br><sub>✓ SAFE · →340Cr · 150Cr · 📶W9 · ↑CMF12d</sub> | 10d | +7.0% | Payment terminals and merchant fintech solutions India Southeast Asia | -1.37% | 157.99 | — | 20%  |
 | [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE)<br><sub>✓ SAFE · ↘49Cr · 43Cr · 📶W9 · ↑CMF7d</sub> | 11d | -0.8% | Online auto marketplace connecting buyers sellers and financiers | -0.68% | 2783.50 | ✓ | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>✓ SAFE · ↘518Cr · 243Cr · 📶W9 · ↑CMF30d</sub> | 16d | +19.6% | Electric scooters, batteries, charging network, premium segment | -1.88% | 1438.20 | — | 20%  |
@@ -308,7 +308,7 @@
 | [TATATECH](https://in.tradingview.com/chart/?symbol=NSE:TATATECH)<br><sub>✓ SAFE · ↗307Cr · 74Cr · 📶W9 · ↑CMF9d</sub> | 17d | +13.9% | Engineering services, product development, automotive manufacturing sector | -2.78% | 812.55 | — | 20%  |
 | [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV)<br><sub>⚠ CAUTION · →318Cr · 188Cr · 📶W9 · ↑CMF30d</sub> | 21d | +9.1% |  | -0.91% | 2006.60 | — | 20%  |
 | [M&MFIN](https://in.tradingview.com/chart/?symbol=NSE:M&MFIN)<br><sub>✓ SAFE · ↘101Cr · 90Cr · 📶W9 · ↑CMF30d</sub> | 22d | +20.8% | NBFC auto tractor financing rural semi-urban retail | +0.88% | 389.60 | — | 20%  |
-| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘292Cr · 54Cr · 📶W9 · ↓CMF1d</sub> | 44d | +62.0% | Diamond gold platinum studded jewellery omni-channel retail | -0.51% | 816.20 | ✓ | 20%  |
+| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘292Cr · 54Cr · 📶W9 · ↓CMF1d · DEL21%</sub> | 44d | +62.0% | Diamond gold platinum studded jewellery omni-channel retail | -0.51% | 816.20 | ✓ | 20%  |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:LALPATHLAB,NSE:BLUEJET,NSE:INDUSINDBK,NSE:BATAINDIA,NSE:MTARTECH,NSE:CONCOR,NSE:ARE&M,NSE:KALYANKJIL,NSE:PINELABS,NSE:CARTRADE,NSE:ATHERENERG,NSE:RBLBANK,NSE:TATATECH,NSE:BAJAJFINSV,NSE:M&MFIN,NSE:BLUESTONE
