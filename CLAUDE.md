@@ -60,6 +60,8 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks (must run BEFORE EMA55_Cross, see below)
 .\run_ema55_cross_scanner.ps1  # ~4:32 PM — runs AFTER MinerviniTrend and TrendScanner (moved, was 4:28 PM before EMA25/Minervini)
                                  #   so it can build the union watchlist below; close within -10% to +20% of EMA55
+.\run_union_chart_dashboard.ps1  # ~4:32 PM -- runs AFTER EMA55_Cross (needs its union watchlist)
+                                   #   interactive candlestick+volume charts for every union symbol
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
@@ -168,6 +170,26 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
    union. **Requires `run_all_scanners.ps1` to run EMA55_Cross after
    MinerviniTrend and TrendScanner** (both moved there specifically for
    this — see run order above) so all three upstream files exist same-run.
+
+### Scanner pipeline — Union Watchlist Chart Dashboard (`union_chart_dashboard.py`)
+
+Full design: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`.
+
+1. Reads today's union watchlist symbols + confluence tier straight from
+   `ema55_cross_scans/ema55_cross_scans.md`'s union tv-paste block
+   (`parse_union_tiers`/`load_todays_union`) — aborts with nothing written
+   if that file is missing or not dated today (no stale publish)
+2. `load_ohlc_many(symbols, lookback=250)` — only DB entry point, per repo
+   convention; symbols with <130 bars skipped (count logged, not silent)
+3. `build_chart_data()` — OHLCV per symbol as a plain `[date,o,h,l,c,v]`
+   array, no server-side EMA (computed client-side so the live period
+   control needs no regenerate)
+4. `build_html()` — one self-contained HTML file: vendored
+   `lightweight-charts.js`, a global control bar (candle up/down color,
+   EMA periods, symbol/tier filter), and a card grid (one chart per
+   symbol) that lazy-constructs each chart via `IntersectionObserver` as
+   it scrolls into view (required at ~500 symbols to keep first paint fast)
+5. Writes `dashboard/union_charts.html`
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
@@ -405,6 +427,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 | `footprint_scans/footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
 | `dashboard/footprint.html` | `institutional_footprint_scanner.py` |
+| `dashboard/union_charts.html` | `union_chart_dashboard.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
