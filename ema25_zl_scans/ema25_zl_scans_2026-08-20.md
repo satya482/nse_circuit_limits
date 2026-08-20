@@ -147,7 +147,7 @@
 | [EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL)<br><sub>✓ SAFE · ↗97Cr · 175Cr · 📶W9 · 🚀SS · ↓CMF6d</sub> | 8d | +18.0% | Laminated plastic tubes for cosmetics pharma food | +7.70% | 270.10 | — | 20%  |
 | [ENRIN](https://in.tradingview.com/chart/?symbol=NSE:ENRIN)<br><sub>✓ SAFE · ↗414Cr · 65Cr · 📶W9 · ↑CMF7d</sub> | 8d | +10.2% |  | -0.60% | 3584.00 | — | 20%  |
 | [FRACTAL](https://in.tradingview.com/chart/?symbol=NSE:FRACTAL)<br><sub>✓ SAFE · ↘31Cr · 44Cr · 🚀SS · ↑CMF4d</sub> | 8d | +6.1% | AI analytics solutions for Fortune 500 enterprises globally | +3.07% | 859.60 | ✓ | 20%  |
-| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER)<br><sub>✓ SAFE · ↘70Cr · 41Cr · 📶W9 · ↓CMF7d · DEL64%(T-1)</sub> | 8d | +26.8% | High-voltage electrical equipment manufacturer for power infrastructure | +3.06% | 1334.90 | — | 5% 🟥 |
+| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER)<br><sub>✓ SAFE · ↘70Cr · 41Cr · 📶W9 · ↓CMF7d</sub> | 8d | +26.8% | High-voltage electrical equipment manufacturer for power infrastructure | +3.06% | 1334.90 | — | 5% 🟥 |
 | [AFFLE](https://in.tradingview.com/chart/?symbol=NSE:AFFLE)<br><sub>✓ SAFE · ↘35Cr · 36Cr · 📶W9 · 🚀SS · ↑CMF23d</sub> | 8d | +8.5% | Mobile advertising platform, consumer intelligence, app monetization | +2.11% | 1729.50 | — | 20%  |
 | [MANALIPETC](https://in.tradingview.com/chart/?symbol=NSE:MANALIPETC)<br><sub>✓ SAFE · ↗19Cr · 34Cr · 📶W9 · 🚀SS · ↓CMF17d</sub> | 8d | +20.8% |  | +6.77% | 77.73 | — | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX)<br><sub>✓ SAFE · ↗1008Cr · 1226Cr · 📶W9 · 🚀SS · ↑CMF6d</sub> | 9d | +18.5% | Commodity futures trading exchange platform India | +5.15% | 3126.00 | — | 20%  |
@@ -178,7 +178,7 @@
 | [BLACKBUCK](https://in.tradingview.com/chart/?symbol=NSE:BLACKBUCK)<br><sub>✓ SAFE · →42Cr · 71Cr · 📶W9 · ↑CMF1d</sub> | 12d | +15.5% | Digital truck logistics platform payments telematics marketplace financing | +2.39% | 631.05 | — | 20%  |
 | [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON)<br><sub>✓ SAFE · ↗112Cr · 53Cr · 📶W9 · ↑CMF30d</sub> | 12d | +18.1% | Complex generic formulations manufacturing specialty pharmaceuticals | -2.12% | 1760.60 | — | 20%  |
 | [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA)<br><sub>✓ SAFE · →65Cr · 44Cr · 📶W9 · 🚀SS · ↑CMF7d</sub> | 12d | +5.2% | NBFC consumer loans MSME financing general insurance | +0.15% | 494.05 | — | 20%  |
-| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>✓ SAFE · →93Cr · 39Cr · 📶W9 · ↓CMF14d · DEL65%(T-1)</sub> | 12d | +8.0% | Specialty chemicals and intermediates for pharmaceuticals cosmetics | -1.33% | 520.05 | — | 20%  |
+| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>✓ SAFE · →93Cr · 39Cr · 📶W9 · ↓CMF14d</sub> | 12d | +8.0% | Specialty chemicals and intermediates for pharmaceuticals cosmetics | -1.33% | 520.05 | — | 20%  |
 | [HINDALCO](https://in.tradingview.com/chart/?symbol=NSE:HINDALCO)<br><sub>✓ SAFE · ↗650Cr · 340Cr · 📶W9 · ↑CMF5d</sub> | 13d | +10.6% |  | -0.97% | 1036.05 | — | 20%  |
 | [UNIONBANK](https://in.tradingview.com/chart/?symbol=NSE:UNIONBANK)<br><sub>✓ SAFE · →261Cr · 318Cr · 📶W9 · 🚀SS · ↑CMF25d</sub> | 13d | +11.0% |  | +0.11% | 186.70 | — | 20%  |
 | [TDPOWERSYS](https://in.tradingview.com/chart/?symbol=NSE:TDPOWERSYS)<br><sub>✓ SAFE · ↗368Cr · 167Cr · 📶W9 · ↑CMF15d</sub> | 13d | +35.5% | AC generators electric motors power generation equipment | -2.47% | 1507.50 | — | 20%  |
@@ -258,7 +258,7 @@
 | [DEVYANI](https://in.tradingview.com/chart/?symbol=NSE:DEVYANI)<br><sub>✓ SAFE · →135Cr · 107Cr · 📶W9 · 🚀SS · ↑CMF13d</sub> | 20d | +34.5% | Yum Brands QSR franchisee, KFC Dominos Pizza Hut operator | +3.42% | 147.79 | — | 20%  |
 | [E2E](https://in.tradingview.com/chart/?symbol=NSE:E2E)<br><sub>✓ SAFE · ↗167Cr · 204Cr · ↑CMF14d</sub> | 20d | +55.8% | GPU cloud infrastructure for AI and machine learning workloads | +4.75% | 602.80 | — | 20%  |
 | [BLSE](https://in.tradingview.com/chart/?symbol=NSE:BLSE)<br><sub>✓ SAFE · ↘17Cr · 48Cr · 📶W9 · ↑CMF30d</sub> | 20d | +21.9% | Digital services for government and banking reach rural India | +2.23% | 321.10 | — | 20%  |
-| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>✓ SAFE · ↘34Cr · 34Cr · 📶W9 · ↑CMF14d · DEL59%(T-1)</sub> | 20d | +43.3% | Oil gas compression drilling workover field services provider | -1.33% | 658.45 | — | 20%  |
+| [DEEPINDS](https://in.tradingview.com/chart/?symbol=NSE:DEEPINDS)<br><sub>✓ SAFE · ↘34Cr · 34Cr · 📶W9 · ↑CMF14d</sub> | 20d | +43.3% | Oil gas compression drilling workover field services provider | -1.33% | 658.45 | — | 20%  |
 | [PNB](https://in.tradingview.com/chart/?symbol=NSE:PNB)<br><sub>✓ SAFE · ↘177Cr · 128Cr · 📶W9 · 🚀SS · ↑CMF19d</sub> | 21d | +11.6% |  | -0.14% | 117.42 | — | 20%  |
 | [M&M](https://in.tradingview.com/chart/?symbol=NSE:M&M)<br><sub>⚠ CAUTION · ↘726Cr · 330Cr · 📶W9 · ↑CMF10d</sub> | 22d | +11.0% |  | -0.17% | 3422.40 | — | 20%  |
 | [HAL](https://in.tradingview.com/chart/?symbol=NSE:HAL)<br><sub>✓ SAFE · ↗738Cr · 760Cr · 📶W9 · ↑CMF26d</sub> | 22d | +13.5% |  | +1.43% | 5015.80 | — | 20%  |
@@ -291,7 +291,7 @@
 | [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>⚠ CAUTION · ↗618Cr · 285Cr · 📶W9 · 🚀SS · ↑CMF18d</sub> | 45d | +25.9% |  | +0.09% | 5068.40 | — | 20%  |
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS)<br><sub>✓ SAFE · ↘179Cr · 232Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 48d | +37.8% | Precision forged automotive components, electric mobility tech supplier | -0.19% | 821.90 | — | 20%  |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>✓ SAFE · ↘89Cr · 171Cr · 📶W9 · 🚀SS · ↓CMF0d</sub> | 50d | +35.0% | Microfinance bank serving unbanked low-income borrowers retail lending | +0.18% | 71.93 | ✓ | 20%  |
-| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>✓ SAFE · ↘29Cr · 47Cr · 📶W9 · ↑CMF30d · DEL100%(T-1)</sub> | 53d | +324.5% | Aerospace defense electronics systems manufacturer for global OEMs | -3.89% | 664.45 | — | 20%  |
+| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>✓ SAFE · ↘29Cr · 47Cr · 📶W9 · ↑CMF30d</sub> | 53d | +324.5% | Aerospace defense electronics systems manufacturer for global OEMs | -3.89% | 664.45 | — | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>✓ SAFE · →52Cr · 21Cr · 📶W9 · ↑CMF30d</sub> | 60d+ | +108.7% | Pharmaceutical formulations suppositories tablets capsules syrups India | +0.68% | 527.10 | — | 5% 🟥 |
 
 ```
@@ -312,7 +312,7 @@
 | [EXIDEIND](https://in.tradingview.com/chart/?symbol=NSE:EXIDEIND)<br><sub>✓ SAFE · ↘149Cr · 106Cr · 📶W9 · ↑CMF30d</sub> | 17d | +9.6% | Lead acid batteries automotive industrial power backup | +1.00% | 464.10 | — | 20%  |
 | [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV)<br><sub>⚠ CAUTION · →318Cr · 188Cr · 📶W9 · ↑CMF30d</sub> | 21d | +9.1% |  | -0.91% | 2006.60 | — | 20%  |
 | [UNITDSPR](https://in.tradingview.com/chart/?symbol=NSE:UNITDSPR)<br><sub>⚠ CAUTION · ↘63Cr · 39Cr · 📶W9 · ↑CMF30d</sub> | 23d | +10.1% | Whisky rum vodka gin spirits manufacturer India consumer | -0.37% | 1515.30 | — | 20%  |
-| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘248Cr · 52Cr · 📶W9 · 🚀SS · ↑CMF0d · DEL21%(T-1)</sub> | 45d | +63.0% | Diamond gold platinum studded jewellery omni-channel retail | +0.65% | 821.50 | ✓ | 20%  |
+| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘248Cr · 52Cr · 📶W9 · 🚀SS · ↑CMF0d · DEL18%</sub> | 45d | +63.0% | Diamond gold platinum studded jewellery omni-channel retail | +0.65% | 821.50 | ✓ | 20%  |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:LALPATHLAB,NSE:LLOYDSENGG,NSE:RPTECH,NSE:KARURVYSYA,NSE:MTARTECH,NSE:ARE&M,NSE:KALYANKJIL,NSE:SYRMA,NSE:EXIDEIND,NSE:BAJAJFINSV,NSE:UNITDSPR,NSE:BLUESTONE

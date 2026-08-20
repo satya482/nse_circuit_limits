@@ -61,7 +61,7 @@
 | [KCP](https://in.tradingview.com/chart/?symbol=NSE:KCP)<br><sub>↓CMF19d</sub> | Cement sugar heavy engineering power hospitality conglomerate | 1w | ABOVE | 1w | +5.7% | +9.04% | 165.08 | 2w | 20%  |
 | [SKFINDIA](https://in.tradingview.com/chart/?symbol=NSE:SKFINDIA)<br><sub>↓CMF30d</sub> | Bearings seals lubrication automotive industrial machinery | 1w | ABOVE | 1w | +1.8% | -1.72% | 1601.70 | — | 20%  |
 | [ROSSARI](https://in.tradingview.com/chart/?symbol=NSE:ROSSARI)<br><sub>↓CMF24d</sub> | Specialty chemicals for textiles, home care, personal care | 1w | ABOVE | 1w | +1.7% | +3.11% | 511.70 | 2w | 20%  |
-| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF20d</sub> | Sleep mattresses, furniture, home goods direct-to-consumer | 1w | ABOVE | 1w | +12.4% | +2.59% | 136.55 | 3w | 20%  |
+| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF20d · DEL41%</sub> | Sleep mattresses, furniture, home goods direct-to-consumer | 1w | ABOVE | 1w | +12.4% | +2.59% | 136.55 | 3w | 20%  |
 | [PENIND](https://in.tradingview.com/chart/?symbol=NSE:PENIND)<br><sub>↑CMF0d</sub> | Engineering components, PEB systems, hydraulics for infrastructure | 1w | ABOVE | 1w | +7.1% | +3.20% | 163.29 | 5w | 20%  |
 | [PICCADIL](https://in.tradingview.com/chart/?symbol=NSE:PICCADIL)<br><sub>↑CMF3d</sub> | Sugar production and premium spirits for Indian consumers | 1w | ABOVE | 1w | +10.5% | +0.50% | 709.40 | — | 20%  |
 | [JUNIPER](https://in.tradingview.com/chart/?symbol=NSE:JUNIPER)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +6.3% | +3.75% | 205.21 | 12w | 20%  |
