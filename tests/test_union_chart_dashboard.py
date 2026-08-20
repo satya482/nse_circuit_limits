@@ -111,3 +111,39 @@ def test_build_chart_data_sorted_by_symbol():
     tiers = {"ZEBRA": "1 ONLY", "APEX": "ALL 4"}
     records, _ = build_chart_data(ohlc_map, tiers, min_bars=130)
     assert [r["symbol"] for r in records] == ["APEX", "ZEBRA"]
+
+
+from union_chart_dashboard import build_html
+
+
+def test_build_html_contains_disclaimer():
+    html = build_html([], "2026-08-20")
+    assert "SEBI registered" in html
+
+
+def test_build_html_contains_vendor_script_tag():
+    html = build_html([], "2026-08-20")
+    assert 'src="vendor/lightweight-charts.js"' in html
+
+
+def test_build_html_no_records_shows_empty_state():
+    html = build_html([], "2026-08-20")
+    assert "No signals" in html
+
+
+def test_build_html_embeds_symbol_data_and_cards():
+    records = [{"symbol": "FOO", "tier": "ALL 4", "bars": [["2025-01-01", 1.0, 2.0, 0.5, 1.5, 100.0]]}]
+    html = build_html(records, "2026-08-20")
+    assert '"FOO"' in html
+    assert '"ALL 4"' in html
+    assert 'data-symbol="FOO"' in html
+    assert 'id="chart-FOO"' in html
+
+
+def test_build_html_has_interactive_controls():
+    html = build_html([], "2026-08-20")
+    assert 'id="upColor"' in html
+    assert 'id="downColor"' in html
+    assert 'id="emaPeriods"' in html
+    assert "IntersectionObserver" in html
+    assert "computeEMA" in html
