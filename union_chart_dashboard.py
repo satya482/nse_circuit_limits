@@ -65,3 +65,28 @@ def load_todays_union(md_path: str, today: str) -> tuple[dict[str, str] | None, 
     if not tiers:
         return None, f"{md_path} has no union watchlist data"
     return tiers, None
+
+
+def build_chart_data(ohlc_map: dict, tiers: dict[str, str], min_bars: int = MIN_BARS) -> tuple[list[dict], int]:
+    """Returns (records, skipped_count), records sorted by symbol.
+    Skips symbols missing from ohlc_map or with fewer than min_bars rows."""
+    records = []
+    skipped = 0
+    for symbol, tier in sorted(tiers.items()):
+        df = ohlc_map.get(symbol)
+        if df is None or len(df) < min_bars:
+            skipped += 1
+            continue
+        bars = [
+            [
+                row.date.strftime("%Y-%m-%d"),
+                float(row.open),
+                float(row.high),
+                float(row.low),
+                float(row.close),
+                float(row.volume),
+            ]
+            for row in df.itertuples(index=False)
+        ]
+        records.append({"symbol": symbol, "tier": tier, "bars": bars})
+    return records, skipped

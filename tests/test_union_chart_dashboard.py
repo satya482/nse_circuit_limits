@@ -60,3 +60,54 @@ def test_load_todays_union_fresh_returns_tiers(tmp_path):
     tiers, err = load_todays_union(str(p), "2026-08-20")
     assert err is None
     assert tiers == {"FOO": "ALL 4", "BAR": "ALL 4", "BAZ": "1 ONLY", "QUX": "1 ONLY"}
+
+
+import pandas as pd
+from union_chart_dashboard import build_chart_data
+
+
+def _fixture_df(n_rows: int) -> pd.DataFrame:
+    dates = pd.date_range("2025-01-01", periods=n_rows, freq="D")
+    return pd.DataFrame({
+        "date": dates,
+        "open": [100.0 + i for i in range(n_rows)],
+        "high": [101.0 + i for i in range(n_rows)],
+        "low": [99.0 + i for i in range(n_rows)],
+        "close": [100.5 + i for i in range(n_rows)],
+        "volume": [1000 + i for i in range(n_rows)],
+    })
+
+
+def test_build_chart_data_keeps_symbol_with_enough_bars():
+    ohlc_map = {"FOO": _fixture_df(200)}
+    tiers = {"FOO": "ALL 4"}
+    records, skipped = build_chart_data(ohlc_map, tiers, min_bars=130)
+    assert skipped == 0
+    assert len(records) == 1
+    assert records[0]["symbol"] == "FOO"
+    assert records[0]["tier"] == "ALL 4"
+    assert records[0]["bars"][0] == ["2025-01-01", 100.0, 101.0, 99.0, 100.5, 1000.0]
+    assert len(records[0]["bars"]) == 200
+
+
+def test_build_chart_data_skips_symbol_below_bar_floor():
+    ohlc_map = {"FOO": _fixture_df(200), "BAR": _fixture_df(50)}
+    tiers = {"FOO": "ALL 4", "BAR": "1 ONLY"}
+    records, skipped = build_chart_data(ohlc_map, tiers, min_bars=130)
+    assert skipped == 1
+    assert [r["symbol"] for r in records] == ["FOO"]
+
+
+def test_build_chart_data_skips_symbol_missing_from_ohlc_map():
+    ohlc_map = {"FOO": _fixture_df(200)}
+    tiers = {"FOO": "ALL 4", "MISSING": "1 ONLY"}
+    records, skipped = build_chart_data(ohlc_map, tiers, min_bars=130)
+    assert skipped == 1
+    assert [r["symbol"] for r in records] == ["FOO"]
+
+
+def test_build_chart_data_sorted_by_symbol():
+    ohlc_map = {"ZEBRA": _fixture_df(150), "APEX": _fixture_df(150)}
+    tiers = {"ZEBRA": "1 ONLY", "APEX": "ALL 4"}
+    records, _ = build_chart_data(ohlc_map, tiers, min_bars=130)
+    assert [r["symbol"] for r in records] == ["APEX", "ZEBRA"]
