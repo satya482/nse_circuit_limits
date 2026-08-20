@@ -60,7 +60,7 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_trend_scanner.ps1         # 4:35 PM — Trend scanner: leaders in pullbacks (must run BEFORE EMA55_Cross, see below)
 .\run_ema55_cross_scanner.ps1  # ~4:32 PM — runs AFTER MinerviniTrend and TrendScanner (moved, was 4:28 PM before EMA25/Minervini)
                                  #   so it can build the union watchlist below; close within -10% to +20% of EMA55
-.\run_union_chart_dashboard.ps1  # ~4:32 PM -- runs AFTER EMA55_Cross (needs its union watchlist)
+.\run_union_chart_dashboard.ps1  # ~4:34 PM -- runs AFTER EMA55_Cross (needs its union watchlist)
                                    #   interactive candlestick+volume charts for every union symbol
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
@@ -190,6 +190,14 @@ Full design: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`
    symbol) that lazy-constructs each chart via `IntersectionObserver` as
    it scrolls into view (required at ~500 symbols to keep first paint fast)
 5. Writes `dashboard/union_charts.html`
+
+Measured daily footprint: ~7.2MB raw HTML (~2.2MB gzipped) for ~500 charted
+symbols at the default 250-bar lookback -- a deliberate tradeoff (full union
+coverage + full EMA200 warmup window) accepted knowingly, not an oversight.
+If repo growth from this becomes a problem, the cheapest lever is trimming
+`LOOKBACK` in `union_chart_dashboard.py` (though it can't drop far below the
+default EMA period of 200 without EMA lines silently going blank for shorter
+lookbacks -- `computeEMA` returns all-null before `period` bars are available).
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 

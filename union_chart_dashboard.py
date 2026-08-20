@@ -28,6 +28,7 @@ MIN_BARS = 130
 LOOKBACK = 250
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
+TIER_LABEL_RE = re.compile(r"^(ALL \d+|\d+ OF \d+|1 ONLY)$")
 
 
 def parse_union_tiers(md_text: str) -> dict[str, str]:
@@ -35,7 +36,10 @@ def parse_union_tiers(md_text: str) -> dict[str, str]:
     in ema55_cross_scans.md (the Union Watchlist block, at the top of the
     file). Mirrors ema55_cross_scanner._symbols_from_tv_block's section-split
     and anchor-exclusion logic, but keeps the tier label per symbol instead
-    of discarding it into a flat set."""
+    of discarding it into a flat set. Sections whose label isn't a real
+    confluence tier (ALL n / n OF n / 1 ONLY) are dropped -- this guards
+    against silently harvesting the wrong fenced block (e.g. EMA55's own
+    cross-age TV block) on days the union section renders no fence at all."""
     m = re.search(r"```\n(.*?)\n```", md_text, re.S)
     if not m:
         return {}
@@ -43,7 +47,7 @@ def parse_union_tiers(md_text: str) -> dict[str, str]:
     for section in m.group(1).split("###")[1:]:
         label, _, rest = section.partition(",")
         label = label.strip()
-        if label.upper() in SKIP_LABELS:
+        if label.upper() in SKIP_LABELS or not TIER_LABEL_RE.match(label):
             continue
         for tok in rest.split(","):
             tok = tok.strip()
@@ -268,10 +272,16 @@ def main() -> None:
     records, skipped = build_chart_data(ohlc_map, tiers)
     print(f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped (< {MIN_BARS} bars)")
 
+    if tiers and not records:
+        print("[union_chart_dashboard] SKIP: 0 symbols charted (OHLC data unavailable) -- not overwriting existing dashboard")
+        return
+
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     html = build_html(records, TODAY)
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as fh:
+    tmp_path = OUTPUT_PATH + ".tmp"
+    with open(tmp_path, "w", encoding="utf-8") as fh:
         fh.write(html)
+    os.replace(tmp_path, OUTPUT_PATH)
 
 
 if __name__ == "__main__":

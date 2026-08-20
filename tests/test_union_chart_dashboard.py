@@ -191,3 +191,71 @@ def test_main_skips_write_when_stale(tmp_path, monkeypatch, capsys):
     assert not output_path.exists()
     out = capsys.readouterr().out
     assert "stale" in out
+
+
+EMA55_CROSS_AGE_MD_NO_UNION = """> disclaimer text
+# NSE EMA55 Cross Watchlist -- 2026-08-20
+*Generated 2026-08-20 15:47 IST*
+
+### Union Watchlist
+*No union data available today.*
+
+---
+### Scan definition
+...
+
+**On watch: 3**
+
+**TradingView watchlist**
+```
+###1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:FOO,###2 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,NSE:BAR
+```
+"""
+
+
+def test_parse_union_tiers_ignores_non_tier_labels():
+    tiers = parse_union_tiers(EMA55_CROSS_AGE_MD_NO_UNION)
+    assert tiers == {}
+
+
+def test_load_todays_union_no_union_section_reports_no_data(tmp_path):
+    p = tmp_path / "ema55_cross_scans.md"
+    p.write_text(EMA55_CROSS_AGE_MD_NO_UNION, encoding="utf-8")
+    tiers, err = load_todays_union(str(p), "2026-08-20")
+    assert tiers is None
+    assert "no union watchlist data" in err
+
+
+def test_main_skips_write_when_all_ohlc_missing(tmp_path, monkeypatch, capsys):
+    union_md = tmp_path / "ema55_cross_scans.md"
+    union_md.write_text(UNION_MD_FRESH, encoding="utf-8")
+    output_path = tmp_path / "dashboard" / "union_charts.html"
+
+    monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
+    monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
+    monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+    monkeypatch.setattr(ucd, "load_ohlc_many", lambda symbols, lookback=250: {})
+
+    ucd.main()
+
+    assert not output_path.exists()
+    out = capsys.readouterr().out
+    assert "0 charted" in out
+    assert "not overwriting" in out
+
+
+def test_main_does_not_clobber_existing_dashboard_when_ohlc_missing(tmp_path, monkeypatch):
+    union_md = tmp_path / "ema55_cross_scans.md"
+    union_md.write_text(UNION_MD_FRESH, encoding="utf-8")
+    output_path = tmp_path / "dashboard" / "union_charts.html"
+    output_path.parent.mkdir(parents=True)
+    output_path.write_text("PREVIOUS GOOD DASHBOARD", encoding="utf-8")
+
+    monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
+    monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
+    monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+    monkeypatch.setattr(ucd, "load_ohlc_many", lambda symbols, lookback=250: {})
+
+    ucd.main()
+
+    assert output_path.read_text(encoding="utf-8") == "PREVIOUS GOOD DASHBOARD"
