@@ -147,3 +147,47 @@ def test_build_html_has_interactive_controls():
     assert 'id="emaPeriods"' in html
     assert "IntersectionObserver" in html
     assert "computeEMA" in html
+
+
+import union_chart_dashboard as ucd
+
+
+def test_main_writes_html_with_expected_symbols(tmp_path, monkeypatch, capsys):
+    union_md = tmp_path / "ema55_cross_scans.md"
+    union_md.write_text(UNION_MD_FRESH, encoding="utf-8")
+    output_path = tmp_path / "dashboard" / "union_charts.html"
+
+    monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
+    monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
+    monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+
+    def fake_load_ohlc_many(symbols, lookback=250):
+        return {sym: _fixture_df(200) for sym in symbols}
+
+    monkeypatch.setattr(ucd, "load_ohlc_many", fake_load_ohlc_many)
+
+    ucd.main()
+
+    assert output_path.exists()
+    html = output_path.read_text(encoding="utf-8")
+    assert '"FOO"' in html
+    assert '"BAR"' in html
+    assert "SEBI registered" in html
+    out = capsys.readouterr().out
+    assert "4 charted" in out
+
+
+def test_main_skips_write_when_stale(tmp_path, monkeypatch, capsys):
+    union_md = tmp_path / "ema55_cross_scans.md"
+    union_md.write_text(UNION_MD_STALE, encoding="utf-8")
+    output_path = tmp_path / "dashboard" / "union_charts.html"
+
+    monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
+    monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
+    monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+
+    ucd.main()
+
+    assert not output_path.exists()
+    out = capsys.readouterr().out
+    assert "stale" in out

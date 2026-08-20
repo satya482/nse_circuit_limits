@@ -256,3 +256,23 @@ h1{{font-size:1.1rem}}
 </script>
 </body></html>
 """
+
+
+def main() -> None:
+    tiers, err = load_todays_union(EMA55_MD, TODAY)
+    if err:
+        print(f"[union_chart_dashboard] SKIP: {err}")
+        return
+
+    ohlc_map = load_ohlc_many(list(tiers.keys()), lookback=LOOKBACK)
+    records, skipped = build_chart_data(ohlc_map, tiers)
+    print(f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped (< {MIN_BARS} bars)")
+
+    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    html = build_html(records, TODAY)
+    with open(OUTPUT_PATH, "w", encoding="utf-8") as fh:
+        fh.write(html)
+
+
+if __name__ == "__main__":
+    main()
