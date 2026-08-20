@@ -8,7 +8,10 @@ $root = Split-Path -Parent $PSScriptRoot
 $failed = $false
 
 Get-ChildItem -Path $root -Filter *.ps1 -Recurse -ErrorAction SilentlyContinue |
-    Where-Object { $_.FullName -notmatch '\\\.claude\\worktrees\\' } |
+    Where-Object {
+        $relative = $_.FullName.Substring($root.Length)
+        $relative -notmatch '\\\.claude\\worktrees\\'
+    } |
     ForEach-Object {
         $errors = $null; $tokens = $null
         [System.Management.Automation.Language.Parser]::ParseFile($_.FullName, [ref]$tokens, [ref]$errors) | Out-Null
