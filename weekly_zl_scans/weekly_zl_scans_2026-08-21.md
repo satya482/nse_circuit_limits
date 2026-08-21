@@ -50,7 +50,7 @@
 | [RIIL](https://in.tradingview.com/chart/?symbol=NSE:RIIL)<br><sub>↑CMF0d</sub> | Pipeline infrastructure for oil and petrochemicals transport | 1w | ABOVE | 1w | +5.7% | +6.55% | 786.10 | 2w | 20%  |
 | [SHANTIGEAR](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGEAR)<br><sub>↑CMF17d</sub> |  | 1w | ABOVE | 1w | +16.8% | +19.99% | 464.25 | — | 20%  |
 | [ICICIPRULI](https://in.tradingview.com/chart/?symbol=NSE:ICICIPRULI)<br><sub>↑CMF21d</sub> | Life insurance policies individuals groups pensions health coverage | 1w | ABOVE | 1w | +1.1% | +2.59% | 515.00 | 4w | 20%  |
-| [PARAGMILK](https://in.tradingview.com/chart/?symbol=NSE:PARAGMILK)<br><sub>↓CMF30d · DEL77%(T-1)</sub> | Cow milk processing and dairy products FMCG | 1w | ABOVE | 1w | +7.0% | +8.44% | 225.50 | 3w | 20%  |
+| [PARAGMILK](https://in.tradingview.com/chart/?symbol=NSE:PARAGMILK)<br><sub>↓CMF30d</sub> | Cow milk processing and dairy products FMCG | 1w | ABOVE | 1w | +7.0% | +8.44% | 225.50 | 3w | 20%  |
 | [BRIGADE](https://in.tradingview.com/chart/?symbol=NSE:BRIGADE)<br><sub>↑CMF27d</sub> | Residential apartments, commercial offices, South India real estate | 1w | ABOVE | 1w | +8.1% | +2.17% | 639.30 | — | 20%  |
 | [DWARKESH](https://in.tradingview.com/chart/?symbol=NSE:DWARKESH)<br><sub>↑CMF2d</sub> |  | 1w | ABOVE | 1w | +28.9% | -3.16% | 53.63 | 8w | 20%  |
 | [MANGLMCEM](https://in.tradingview.com/chart/?symbol=NSE:MANGLMCEM)<br><sub>↑CMF1d</sub> | Cement manufacturing Northern Central India construction materials | 1w | ABOVE | 1w | +14.7% | +4.70% | 1027.95 | — | 20%  |
@@ -61,7 +61,7 @@
 | [MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR)<br><sub>↓CMF11d</sub> |  | 1w | ABOVE | 1w | +8.4% | +8.96% | 84.99 | 7w | 20%  |
 | [JMFINANCIL](https://in.tradingview.com/chart/?symbol=NSE:JMFINANCIL)<br><sub>↓CMF30d</sub> | Investment banking, mortgages, distressed debt, asset management | 1w | ABOVE | 1w | +1.4% | -0.71% | 128.24 | 2w | 20%  |
 | [WONDERLA](https://in.tradingview.com/chart/?symbol=NSE:WONDERLA)<br><sub>↑CMF0d</sub> | Theme parks and resort hospitality for leisure tourism | 1w | ABOVE | 1w | +10.9% | +5.94% | 519.20 | — | 20%  |
-| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF21d · DEL41%(T-1)</sub> | Sleep mattresses, furniture, home goods direct-to-consumer | 1w | ABOVE | 1w | +15.7% | +2.93% | 140.55 | 3w | 20%  |
+| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF21d</sub> | Sleep mattresses, furniture, home goods direct-to-consumer | 1w | ABOVE | 1w | +15.7% | +2.93% | 140.55 | 3w | 20%  |
 | [DCMSHRIRAM](https://in.tradingview.com/chart/?symbol=NSE:DCMSHRIRAM)<br><sub>↓CMF30d</sub> | Fertiliser, chemicals, cement manufacturing for agriculture and industry | 1w | ABOVE | 1w | +5.6% | +0.22% | 1082.10 | — | 20%  |
 | [ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS)<br><sub>↓CMF25d</sub> | Hotel properties operator across luxury segment brands | 1w | ABOVE | 1w | +0.0% | -0.69% | 164.98 | — | 20%  |
 | [JYOTHYLAB](https://in.tradingview.com/chart/?symbol=NSE:JYOTHYLAB)<br><sub>↑CMF7d</sub> | Home care and personal care products for Indian households | 1w | ABOVE | 1w | +2.8% | -1.68% | 204.95 | — | 20%  |
