@@ -33,6 +33,8 @@ historyBoxBorderStyleOpt = input.string("Dashed", "Historical box border style",
 wkBoxBorder = input.color(color.new(color.yellow, 0),  "Current week box border")
 wkBoxFill   = input.color(color.new(color.yellow, 85), "Current week box fill")
 
+alertOnPrevCloseCross = input.bool(true, "Alert: close crosses above prev week close")
+
 //──────────────────── Visibility
 canShow = not (hideOnWeekly and timeframe.isweekly)
 
@@ -123,6 +125,7 @@ var box  currBox      = na
 var box  prevBox      = na
 var box  wkBox        = na
 var line prevCloseLine = na
+var line wkCloseProj   = na
 
 // Current week H/L tracked directly from daily bars — no HTF dependency
 var float wkHigh  = na
@@ -145,9 +148,17 @@ if newWeek
     prevWkLow   := wLow[1]
     prevWkClose := wClose[1]
 
+//──────────────────── Alert: close crossing above previous week's close
+crossPrevWkClose = not na(prevWkClose) and ta.crossover(close, prevWkClose)
+alertcondition(crossPrevWkClose and alertOnPrevCloseCross, title = "Close Crossover Prev Week Close", message = "WEEKLY_CLOSE_CROSS|{{ticker}}|close crossed above previous week close|TF:{{interval}}")
+
 // Track current week H/L from daily bars directly
 // dayofweek[1] > dayofweek detects Mon (or first day after holiday): Fri=6 > Mon=2
 isNewTradingWeek = na(wkStart) or dayofweek[1] > dayofweek
+
+// Last trading day of week: plain dayofweek==Friday check on today's own bar (no future-bar read,
+// so no look-ahead) — will misfire a day early on rare Friday-holiday weeks, accepted tradeoff
+isLastTradingDayOfWeek = dayofweek == dayofweek.friday
 if isNewTradingWeek
     wkStart := time
     wkHigh  := high
@@ -174,8 +185,14 @@ if canShow and showCurrent
             prevCloseLine := f_setOrCreateLine(prevCloseLine, prevWkStart, prevWkClose, wTimeClose, prevWkClose, closeColor)
         else
             f_deleteLine(prevCloseLine), prevCloseLine := na
+
+        // On Friday (week's close finalized), project this week's close 2 weeks forward.
+        // Only updated on Friday bars so it doesn't jump around mid-week on unfinished wClose.
+        if isLastTradingDayOfWeek
+            wkCloseProj := f_setOrCreateLine(wkCloseProj, wTimeClose, wClose, wTimeClose + 2 * weekMs, wClose, closeColor)
     else
         f_deleteLine(prevCloseLine), prevCloseLine := na
+        f_deleteLine(wkCloseProj),   wkCloseProj   := na
 
     if showBoxes
         if not na(prevWkStart) and not na(prevWkEnd) and not na(prevWkHigh) and not na(prevWkLow)
@@ -199,6 +216,7 @@ else
     f_deleteBox(currBox), currBox := na
     f_deleteBox(wkBox),   wkBox   := na
     f_deleteLine(prevCloseLine), prevCloseLine := na
+    f_deleteLine(wkCloseProj),   wkCloseProj   := na
 
 //──────────────────── Store completed weekly records
 var array<int>   weekStarts = array.new_int()
