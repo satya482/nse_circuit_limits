@@ -51,6 +51,12 @@ def ema(s: pd.Series, n: int) -> pd.Series:
     return s.ewm(span=n, adjust=False).mean()
 
 
+def write_text_lf(path: os.PathLike | str, content: str) -> None:
+    """Write generated text with stable LF endings on Windows."""
+    with open(path, "w", encoding="utf-8", newline="\n") as fh:
+        fh.write(content)
+
+
 def weekly_rs_ema9_trend(stock_close: pd.Series, bench_close: pd.Series) -> dict | None:
     """Pure function: weekly RS = stock/bench * 1000, EMA9 of that, slope of last two
     weekly bars, and age = consecutive weekly EMA9 transitions that are flat or rising.
@@ -159,8 +165,7 @@ def load_previous() -> set:
 
 
 def save_current(symbols: list[str]) -> None:
-    with open(STATE_FILE, "w", encoding="utf-8") as f:
-        json.dump(sorted(symbols), f, indent=2)
+    write_text_lf(STATE_FILE, json.dumps(sorted(symbols), indent=2) + "\n")
 
 
 # ── History (remembers daily counts, mirrors breadth_monitor.py's upsert pattern) ──
@@ -185,7 +190,7 @@ def update_history(date: str, count: int, new_count: int) -> pd.DataFrame:
         ignore_index=True,
     )
     hist = hist.sort_values("date").reset_index(drop=True)
-    hist.to_csv(HISTORY_FILE, index=False)
+    hist.to_csv(HISTORY_FILE, index=False, lineterminator="\n")
     return hist
 
 
@@ -267,7 +272,7 @@ summary {{ cursor:pointer; color:var(--text-secondary); font-size:13px; margin-t
 <div class="wrap">
   <div class="card">
     <h1>Weekly RS EMA9 Trend — Count History</h1>
-    <p class="sub">Stocks currently above a flat/rising weekly RS EMA9 (NSE common equity, Rs800 Cr - Rs1 Lakh Cr). Remembers every prior run.</p>
+    <p class="sub">Stocks with a flat/rising weekly RS EMA9 (NSE common equity, Rs1,000 Cr - Rs5 Lakh Cr). Remembers every prior run.</p>
     <div class="hero-row">
       <div class="hero">{latest['count'] if latest else 0}</div>
       <div class="delta {'up' if delta > 0 else 'down' if delta < 0 else 'flat'}">{delta_sign}{delta} vs prior day</div>
@@ -405,11 +410,11 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict | None = Non
         "|--------|-------|",
         "| Exchange | NSE common equity |",
         "| Price | > Rs50 |",
-        "| Market cap | Rs800 Cr - Rs1 Lakh Cr |",
+        "| Market cap | Rs1,000 Cr - Rs5 Lakh Cr |",
         "| Timeframe | Weekly (daily OHLC resampled; current partial week included) |",
-        "| Trend condition | Daily RS Line above weekly RS EMA9 AND that EMA9 flat or rising vs last week |",
+        "| Trend condition | weekly RS EMA9 flat or rising vs last week |",
         "| RS Line | (stock_close / NIFTY MIDSML 400 close) x 1000 |",
-        "| Age | Consecutive trading days RS Line has stayed above the weekly RS EMA9 |",
+        "| Age | Consecutive weekly EMA9 transitions that stayed flat or rising |",
         "| New | Not present in the previous run's output |",
         "| Sort | Age ascending — newest entries into the trend first |",
         "",
@@ -430,7 +435,7 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict | None = Non
         ]
     if sorted_f:
         lines += [
-            "| Symbol | New | Age(d) | Trend | RS EMA9 | Day Chg | Close | Circuit |",
+            "| Symbol | New | Age(w) | Trend | RS EMA9 | Day Chg | Close | Circuit |",
             "|--------|:---:|-------:|:-----:|--------:|--------:|------:|:-------:|",
         ]
         for f in sorted_f:
@@ -445,7 +450,7 @@ def build_markdown(findings: list[dict], circuit: dict, names: dict | None = Non
             lines.append(
                 f"| {sym_cell} "
                 f"| {new_tag} "
-                f"| {f['age']}d "
+                f"| {f['age']}w "
                 f"| {trend_tag} "
                 f"| {f['rs_ema9']:.2f} "
                 f"| {ds}{f['day_chg']:.2f}% "
@@ -494,18 +499,15 @@ def main():
     dated_file = os.path.join(SCANS_DIR, f"rs_weekly_ema9_scans_{TODAY}.md")
     names = get_names([f["symbol"] for f in findings])
     md = build_markdown(findings, circuit, names)
-    with open(MD_FILE, "w", encoding="utf-8") as fh:
-        fh.write(md)
-    with open(dated_file, "w", encoding="utf-8") as fh:
-        fh.write(md)
+    write_text_lf(MD_FILE, md)
+    write_text_lf(dated_file, md)
     save_current([f["symbol"] for f in findings])
     print(f"  Saved -> {MD_FILE}")
     print(f"  Saved -> {dated_file}")
 
     history = update_history(TODAY, len(findings), new_count)
     os.makedirs(os.path.dirname(HISTORY_HTML), exist_ok=True)
-    with open(HISTORY_HTML, "w", encoding="utf-8") as fh:
-        fh.write(build_history_html(history))
+    write_text_lf(HISTORY_HTML, build_history_html(history))
     print(f"  Saved -> {HISTORY_FILE}")
     print(f"  Saved -> {HISTORY_HTML}")
 

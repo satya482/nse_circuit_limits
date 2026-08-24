@@ -9,6 +9,15 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-24 by Codex, weekly RS EMA9 slope-only scanner:
+
+- `rs_weekly_ema9_scanner.py` now qualifies stocks solely when weekly RS EMA9 is flat or rising versus the prior week within `SLOPE_EPS`; daily RS no longer has to be above the weekly EMA9.
+- Trend age is now the consecutive number of non-falling weekly EMA9 transitions, reported as `Age(w)`. The current partial week remains included.
+- The TradingView universe now matches the EMA55 market-cap range: NSE common equity, price above Rs50, market cap Rs1,000 Cr through Rs5 lakh Cr. EMA55 signal and float gates were not added.
+- Existing latest/dated reports, state, history CSV/HTML, PowerShell runner, and `RS_WeeklyEMA9` orchestration entry remain in place.
+- Verification on 2026-08-24: focused weekly-RS tests 9/9, full suite 460/460, and a live TradingView/local-OHLC run completed over 1,426 watchlist stocks with 597 qualifying and 46 new entrants.
+- Live output: `rs_weekly_scans/rs_weekly_ema9_scans.md` and `rs_weekly_scans/rs_weekly_ema9_scans_2026-08-24.md`.
+
 Updated 2026-07-20 by Codex, NSE F&O ZLEMA25 EMA25-parity scanner:
 
 - Reworked `fno_zlema25_scanner.py` into a thin adapter over `ema25_zl_scanner.py`. The authoritative source remains NSE `SECURITIES IN F&O` through `fno_universe.py`; candidates are intersected with the broad TradingView price/market-cap eligibility list, so non-F&O symbols cannot enter.

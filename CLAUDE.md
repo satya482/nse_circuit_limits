@@ -221,15 +221,13 @@ Manual run: `python nifty50_zlema25_scanner.py`. Production runner: `run_nifty50
 
 ### Scanner pipeline — Weekly RS EMA9 Trend (`rs_weekly_ema9_scanner.py`)
 
-"Trending universe" list — daily RS above weekly RS EMA9 AND that EMA9 flat/rising
-(same weekly-resample + EMA9 math as `ema25_zl_scanner.py` RS_MODE=weekly_ema9 /
-`wt_bullcross_scanner.py` `_rs_weekly_gate()`, kept in sync per CLAUDE.md Python↔Pine
-parity convention).
+"Trending universe" list — weekly RS EMA9 flat/rising, independent of whether the
+daily RS Line is above or below the EMA9. The current partial week is included.
 
-1. TradingView screener → watchlist (MCap ₹800 Cr – ₹1 Lakh Cr, price > ₹50)
+1. TradingView screener → watchlist (same market-cap range as EMA55: ₹1,000 Cr – ₹5 Lakh Cr, price > ₹50; no EMA55 signal or float gate)
 2. `load_ohlc(symbol)` + benchmark (`NIFTY MIDSML 400`) → daily RS Line, weekly RS EMA9
-3. Keeps stock if daily RS > weekly RS EMA9 (today) AND weekly RS EMA9 this week ≥ last week
-4. `age` = consecutive trading days daily RS has stayed above the weekly RS EMA9
+3. Keeps stock if weekly RS EMA9 this week ≥ last week within `SLOPE_EPS`; falling EMA9 slopes are excluded
+4. `age` = consecutive weekly EMA9 transitions that have stayed flat or rising, including the current partial week
 5. `new_entrant` = symbol wasn't in previous run's output (diff vs `rs_weekly_ema9_state.json`,
    mirrors `nse_ema_daily.py`'s diff pattern)
 6. Writes `rs_weekly_scans/rs_weekly_ema9_scans.md`; sorted by age ascending (newest first)
