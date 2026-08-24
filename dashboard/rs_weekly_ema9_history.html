@@ -60,8 +60,8 @@ summary { cursor:pointer; color:var(--text-secondary); font-size:13px; margin-to
     <h1>Weekly RS EMA9 Trend — Count History</h1>
     <p class="sub">Stocks with a flat/rising weekly RS EMA9 (NSE common equity, Rs1,000 Cr - Rs5 Lakh Cr). Remembers every prior run.</p>
     <div class="hero-row">
-      <div class="hero">597</div>
-      <div class="delta up">+13 vs prior day</div>
+      <div class="hero">590</div>
+      <div class="delta up">+6 vs prior day</div>
     </div>
     <div class="chart-box">
       <svg id="chart" viewBox="0 0 860 280" preserveAspectRatio="none"></svg>
@@ -72,7 +72,7 @@ summary { cursor:pointer; color:var(--text-secondary); font-size:13px; margin-to
       <table>
         <thead><tr><th>Date</th><th class="num">Count</th><th class="num">New</th></tr></thead>
         <tbody>
-<tr><td>2026-08-24</td><td class='num'>597</td><td class='num'>46</td></tr>
+<tr><td>2026-08-24</td><td class='num'>590</td><td class='num'>46</td></tr>
 <tr><td>2026-08-21</td><td class='num'>584</td><td class='num'>55</td></tr>
 <tr><td>2026-08-20</td><td class='num'>565</td><td class='num'>50</td></tr>
 <tr><td>2026-08-19</td><td class='num'>554</td><td class='num'>43</td></tr>
@@ -109,7 +109,7 @@ summary { cursor:pointer; color:var(--text-secondary); font-size:13px; margin-to
   </div>
 </div>
 <script>
-const data = [{"date": "2026-07-13", "count": 650}, {"date": "2026-07-14", "count": 619}, {"date": "2026-07-15", "count": 623}, {"date": "2026-07-16", "count": 621}, {"date": "2026-07-17", "count": 613}, {"date": "2026-07-20", "count": 614}, {"date": "2026-07-21", "count": 589}, {"date": "2026-07-22", "count": 588}, {"date": "2026-07-23", "count": 613}, {"date": "2026-07-24", "count": 641}, {"date": "2026-07-27", "count": 618}, {"date": "2026-07-28", "count": 579}, {"date": "2026-07-29", "count": 574}, {"date": "2026-07-30", "count": 549}, {"date": "2026-07-31", "count": 571}, {"date": "2026-08-03", "count": 572}, {"date": "2026-08-04", "count": 601}, {"date": "2026-08-05", "count": 615}, {"date": "2026-08-06", "count": 641}, {"date": "2026-08-07", "count": 606}, {"date": "2026-08-10", "count": 587}, {"date": "2026-08-11", "count": 562}, {"date": "2026-08-12", "count": 528}, {"date": "2026-08-13", "count": 544}, {"date": "2026-08-14", "count": 554}, {"date": "2026-08-17", "count": 542}, {"date": "2026-08-18", "count": 557}, {"date": "2026-08-19", "count": 554}, {"date": "2026-08-20", "count": 565}, {"date": "2026-08-21", "count": 584}, {"date": "2026-08-24", "count": 597}];
+const data = [{"date": "2026-07-13", "count": 650}, {"date": "2026-07-14", "count": 619}, {"date": "2026-07-15", "count": 623}, {"date": "2026-07-16", "count": 621}, {"date": "2026-07-17", "count": 613}, {"date": "2026-07-20", "count": 614}, {"date": "2026-07-21", "count": 589}, {"date": "2026-07-22", "count": 588}, {"date": "2026-07-23", "count": 613}, {"date": "2026-07-24", "count": 641}, {"date": "2026-07-27", "count": 618}, {"date": "2026-07-28", "count": 579}, {"date": "2026-07-29", "count": 574}, {"date": "2026-07-30", "count": 549}, {"date": "2026-07-31", "count": 571}, {"date": "2026-08-03", "count": 572}, {"date": "2026-08-04", "count": 601}, {"date": "2026-08-05", "count": 615}, {"date": "2026-08-06", "count": 641}, {"date": "2026-08-07", "count": 606}, {"date": "2026-08-10", "count": 587}, {"date": "2026-08-11", "count": 562}, {"date": "2026-08-12", "count": 528}, {"date": "2026-08-13", "count": 544}, {"date": "2026-08-14", "count": 554}, {"date": "2026-08-17", "count": 542}, {"date": "2026-08-18", "count": 557}, {"date": "2026-08-19", "count": 554}, {"date": "2026-08-20", "count": 565}, {"date": "2026-08-21", "count": 584}, {"date": "2026-08-24", "count": 590}];
 const svg = document.getElementById('chart');
 const tooltip = document.getElementById('tooltip');
 const W = 860, H = 280, PAD_L = 40, PAD_R = 10, PAD_T = 10, PAD_B = 24;
