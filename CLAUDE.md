@@ -159,17 +159,18 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
    the undated file), sorted by cross age ascending (freshest first)
 4. `build_union()` — prepends a "Union Watchlist" section at the top of the md,
    grouping symbols by how many of {EMA25 ZL, EMA55 Cross, Minervini Trend
-   Template, Trend Scanner} flagged them today (`ALL 4` / `3 OF 4` / ... /
-   `1 ONLY`, empty groups omitted). Reads the other three scanners'
+   Template, Trend Scanner, Weekly RS EMA9} flagged them today (`ALL 5` /
+   `4 OF 5` / ... / `1 ONLY`, empty groups omitted). Reads the other four scanners'
    already-written `_latest.md` files read-only, parsing symbols straight out
    of their existing TV-paste blocks (`_symbols_from_tv_block()`) rather than
    importing their internals — EMA25 ZL's "WATCH" section is excluded
-   (near-miss only, not the Rising signal). `_load_union_source()` checks
+   (near-miss only, not the Rising signal), while the complete qualifying
+   Weekly RS EMA9 watchlist is included. `_load_union_source()` checks
    each file's title line carries today's date before trusting it; a
    missing/stale source is dropped with a note instead of blocking the
    union. **Requires `run_all_scanners.ps1` to run EMA55_Cross after
    MinerviniTrend and TrendScanner** (both moved there specifically for
-   this — see run order above) so all three upstream files exist same-run.
+   this — see run order above) so all four upstream files exist same-run.
 
 ### Scanner pipeline — Union Watchlist Chart Dashboard (`union_chart_dashboard.py`)
 

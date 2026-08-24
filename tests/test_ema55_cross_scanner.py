@@ -6,10 +6,12 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 import ema25_zl_scanner as base
+import ema55_cross_scanner as scanner
 from ema55_cross_scanner import (
     ema55_cross_stats,
     ema55_trend_age,
     build_union,
+    build_union_section,
     _symbols_from_tv_block,
     _load_union_source,
     TODAY,
@@ -84,6 +86,41 @@ def test_build_union_degrades_with_fewer_sources():
     source_sets = {"EMA55 Cross": {"A", "B"}, "EMA25 ZL": {"A", "C"}}
     groups = build_union(source_sets)
     assert groups == [("ALL 2", ["A"]), ("1 ONLY", ["B", "C"])]
+
+
+def test_build_union_uses_five_source_tiers():
+    source_sets = {
+        "EMA55 Cross": {"ALL5", "FOUR"},
+        "EMA25 ZL": {"ALL5", "FOUR"},
+        "Minervini": {"ALL5", "FOUR"},
+        "Trend": {"ALL5", "FOUR"},
+        "Weekly RS EMA9": {"ALL5", "WEEKLY_ONLY"},
+    }
+    assert build_union(source_sets) == [
+        ("ALL 5", ["ALL5"]),
+        ("4 OF 5", ["FOUR"]),
+        ("1 ONLY", ["WEEKLY_ONLY"]),
+    ]
+
+
+def test_union_section_names_weekly_rs_ema9_as_fifth_source():
+    section = "\n".join(build_union_section([("ALL 5", ["FOO"])], []))
+    assert "EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner + Weekly RS EMA9" in section
+
+
+def test_build_markdown_loads_weekly_rs_ema9_source(monkeypatch):
+    loaded_names = []
+
+    def fake_load(path, skip_labels, name):
+        loaded_names.append(name)
+        return {"FOO"}, None
+
+    monkeypatch.setattr(scanner, "_load_union_source", fake_load)
+    report = scanner.build_markdown([], {})
+
+    assert "Weekly RS EMA9" in loaded_names
+    assert "Weekly RS EMA9" in report
+    assert "4 OF 5" in report
 
 
 def test_build_union_returns_empty_for_single_source():

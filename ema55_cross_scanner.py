@@ -44,11 +44,12 @@ MD_FILE = os.path.join(SCANS_DIR, "ema55_cross_scans.md")
 
 # Union watchlist sources -- read-only, parsed from their already-written
 # TV-paste blocks (see build_union / _load_union_source). Requires
-# run_all_scanners.ps1 to run EMA55_Cross AFTER all three of these so today's
+# run_all_scanners.ps1 to run EMA55_Cross AFTER all four of these so today's
 # files already exist.
 EMA25_ZL_MD = os.path.join(REPO_DIR, "ema25_zl_scans", "ema25_zl_scans.md")
 MINERVINI_MD = os.path.join(REPO_DIR, "minervini_scans", "minervini_trend_latest.md")
 TREND_MD = os.path.join(REPO_DIR, "trend_scans", "trend_scan_latest.md")
+RS_WEEKLY_EMA9_MD = os.path.join(REPO_DIR, "rs_weekly_scans", "rs_weekly_ema9_scans.md")
 
 EMA_PERIOD = 55
 BAND_PCT = 20.0  # keep listed while close is within +BAND_PCT% of EMA55
@@ -169,7 +170,7 @@ def build_union(source_sets: dict[str, set[str]]) -> list[tuple[str, list[str]]]
 
 def build_union_section(union_groups: list[tuple[str, list[str]]], notes: list[str]) -> list[str]:
     lines = [
-        "### 🟢 Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner",
+        "### 🟢 Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner + Weekly RS EMA9",
         "*(sectioned by confluence — how many of the scanners flagged the symbol today)*",
         "",
     ]
@@ -315,6 +316,9 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     trend_syms, trend_note = _load_union_source(
         TREND_MD, {"INDICES", "COMMODITIES"}, "Trend"
     )
+    weekly_rs_syms, weekly_rs_note = _load_union_source(
+        RS_WEEKLY_EMA9_MD, {"INDICES", "COMMODITIES"}, "Weekly RS EMA9"
+    )
     source_sets = {"EMA55 Cross": {f["symbol"] for f in rows}}
     if ema25_syms is not None:
         source_sets["EMA25 ZL"] = ema25_syms
@@ -322,7 +326,11 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         source_sets["Minervini"] = minervini_syms
     if trend_syms is not None:
         source_sets["Trend"] = trend_syms
-    union_notes = [n for n in (ema25_note, minervini_note, trend_note) if n]
+    if weekly_rs_syms is not None:
+        source_sets["Weekly RS EMA9"] = weekly_rs_syms
+    union_notes = [
+        n for n in (ema25_note, minervini_note, trend_note, weekly_rs_note) if n
+    ]
     union_groups = build_union(source_sets)
 
     lines = [

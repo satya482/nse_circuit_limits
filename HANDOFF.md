@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-24 by Codex, five-source EMA55 union watchlist:
+
+- `ema55_cross_scanner.py` now reads the complete qualifying list from `rs_weekly_scans/rs_weekly_ema9_scans.md` as a fifth equal confluence source alongside EMA25 ZL, EMA55 Cross, Minervini Trend Template, and Trend Scanner.
+- The union heading names Weekly RS EMA9 and dynamic tiers now render as `ALL 5` / `4 OF 5` / `3 OF 5` / `2 OF 5` / `1 ONLY` when all sources are fresh; the established stale/missing-source degradation remains unchanged.
+- The existing scheduler order already runs `RS_WeeklyEMA9` before `EMA55_Cross`, so no PowerShell change was needed. Current Weekly RS parsing returned all 597 qualifying symbols.
+- Verification on 2026-08-24: focused EMA55 tests 14/14, full suite 463/463, and `git diff --check` passed. The tracked EMA55 report was not regenerated because EMA25 ZL, Minervini, and Trend outputs were stale before today's scheduled scans; the next normal pipeline run will write a genuine five-source union.
+
 Updated 2026-08-24 by Codex, weekly RS EMA9 slope-only scanner:
 
 - `rs_weekly_ema9_scanner.py` now qualifies stocks solely when weekly RS EMA9 is flat or rising versus the prior week within `SLOPE_EPS`; daily RS no longer has to be above the weekly EMA9.
