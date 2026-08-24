@@ -23,7 +23,9 @@ def test_rising_rs_gives_positive_slope():
     assert out is not None
     assert out["slope"] > 0
     assert out["rising"] is True
-    assert out["age"] > 0  # price steadily above its own lagging EMA9
+    weekly_rs = (stock.resample("W").last() / bench.resample("W").last()) * 1000
+    expected_age = len(weekly_rs.ewm(span=9, adjust=False).mean().diff().dropna())
+    assert out["age"] == expected_age
 
 
 def test_falling_rs_gives_negative_slope():
@@ -35,7 +37,41 @@ def test_falling_rs_gives_negative_slope():
     assert out is not None
     assert out["slope"] < 0
     assert out["rising"] is False
-    assert out["age"] == 0  # price steadily below its own lagging EMA9
+    assert out["age"] == 0
+
+
+def test_flat_weekly_ema9_has_weekly_age_even_when_daily_rs_is_not_above():
+    n = 400
+    dates = pd.date_range("2024-01-01", periods=n, freq="D")
+    stock = pd.Series([100.0] * n, index=dates)
+    bench = pd.Series([100.0] * n, index=dates)
+
+    out = weekly_rs_ema9_trend(stock, bench)
+
+    assert out is not None
+    assert out["slope"] == 0.0
+    assert out["rising"] is False
+    assert out["age"] > 0
+
+
+def test_analyse_keeps_flat_weekly_ema9_without_daily_rs_above(monkeypatch):
+    n = 400
+    dates = pd.date_range("2024-01-01", periods=n, freq="D")
+    daily = pd.DataFrame({"date": dates, "close": [100.0] * n})
+    bench = pd.Series([100.0] * n, index=dates)
+    monkeypatch.setattr(m, "load_ohlc", lambda symbol, lookback: daily)
+    monkeypatch.setattr(m, "liq_tag", lambda frame: "")
+
+    out = m.analyse("FLATRS", bench)
+
+    assert out is not None
+    assert out["rising"] is False
+    assert out["age"] > 0
+
+
+def test_market_cap_range_matches_ema55_scanner():
+    assert m.MC_LOW == 1_000 * 1_00_00_000
+    assert m.MC_HIGH == 5_00_000 * 1_00_00_000
 
 
 def test_insufficient_history_returns_none():

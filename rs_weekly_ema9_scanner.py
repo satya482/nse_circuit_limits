@@ -1,21 +1,18 @@
 #!/usr/bin/env python3
 """
 NSE Weekly RS EMA9 Trend Scanner — trending universe
-Stocks where the weekly RS Line (stock / NIFTY MIDSML 400) is currently above its
-weekly EMA9, and that EMA9 is flat or rising (current partial week included, per
-to_weekly convention).
+Stocks where the weekly RS EMA9 (stock / NIFTY MIDSML 400) is flat or rising
+(current partial week included, per to_weekly convention).
 
 Trend condition: weekly RS EMA9 this week >= last week (flat or rising kept, falling excluded)
-Above condition: today's daily RS Line > this week's weekly RS EMA9
-
-Age = consecutive trading days daily RS Line has stayed above the weekly RS EMA9
-(walks back from today, resets on any day it dipped below).
+Age = consecutive weekly transitions the weekly RS EMA9 has stayed flat or rising
+(walks back from the current partial week, resets when the EMA9 falls).
 
 New entrants = symbols in today's output that weren't in the previous run's output
 (state persisted in rs_weekly_ema9_state.json, mirrors nse_ema_daily.py's diff pattern).
 
-Watchlist: NSE common equity, price > Rs50, MCap Rs800 Cr - Rs1 Lakh Cr
-(mirrors weekly_zl_scanner.py)
+Watchlist: NSE common equity, price > Rs50, MCap Rs1,000 Cr - Rs5 Lakh Cr
+(same market-cap range as ema55_cross_scanner.py)
 
 Output: rs_weekly_scans/rs_weekly_ema9_scans.md + rs_weekly_ema9_scans_YYYY-MM-DD.md
 sorted by age ascending (newest entries into the trend first).
@@ -44,8 +41,8 @@ STATE_FILE = os.path.join(SCANS_DIR, "rs_weekly_ema9_state.json")
 HISTORY_FILE = os.path.join(SCANS_DIR, "rs_weekly_ema9_history.csv")
 HISTORY_HTML = os.path.join(REPO_DIR, "dashboard", "rs_weekly_ema9_history.html")  # GitHub Pages
 
-MC_LOW = 800 * 1_00_00_000  # Rs800 Cr
-MC_HIGH = 1_00_000 * 1_00_00_000  # Rs1 Lakh Cr
+MC_LOW = 1_000 * 1_00_00_000  # Rs1,000 Cr
+MC_HIGH = 5_00_000 * 1_00_00_000  # Rs5 Lakh Cr
 BENCH_SYM = "NIFTY MIDSML 400"
 SLOPE_EPS = 1e-6  # ponytail: avoids float == 0.0 for "flat" classification
 
@@ -56,9 +53,9 @@ def ema(s: pd.Series, n: int) -> pd.Series:
 
 def weekly_rs_ema9_trend(stock_close: pd.Series, bench_close: pd.Series) -> dict | None:
     """Pure function: weekly RS = stock/bench * 1000, EMA9 of that, slope of last two
-    weekly bars, and age = consecutive trading days daily RS has stayed above the
-    (daily-forward-filled) weekly EMA9. Returns None if not enough overlapping history,
-    else {"rs_ema9": float, "slope": float, "rising": bool, "age": int}."""
+    weekly bars, and age = consecutive weekly EMA9 transitions that are flat or rising.
+    Returns None if not enough overlapping history, else
+    {"rs_ema9": float, "slope": float, "rising": bool, "age": int}."""
     bench = bench_close.reindex(stock_close.index)
     valid = bench.notna() & stock_close.notna()
     if valid.sum() < 70:
@@ -66,7 +63,6 @@ def weekly_rs_ema9_trend(stock_close: pd.Series, bench_close: pd.Series) -> dict
     c_rs, idx_rs = stock_close[valid], bench[valid]
     c_rs.index = pd.to_datetime(c_rs.index)
     idx_rs.index = pd.to_datetime(idx_rs.index)
-    daily_rs = (c_rs / idx_rs) * 1000
     wk_c = c_rs.resample("W").last().dropna()
     wk_idx = idx_rs.resample("W").last().dropna()
     common = wk_c.index.intersection(wk_idx.index)
@@ -76,13 +72,11 @@ def weekly_rs_ema9_trend(stock_close: pd.Series, bench_close: pd.Series) -> dict
     rs_ema9 = ema(wk_rs, 9)
     if len(rs_ema9) < 2:
         return None
-    slope = float(rs_ema9.iloc[-1] - rs_ema9.iloc[-2])
-
-    wk_ema9_daily = rs_ema9.reindex(daily_rs.index, method="ffill")
-    above = (daily_rs > wk_ema9_daily) & wk_ema9_daily.notna()
+    slopes = rs_ema9.diff().dropna()
+    slope = float(slopes.iloc[-1])
     age = 0
-    for v in reversed(above.values):
-        if not v:
+    for weekly_slope in reversed(slopes.to_numpy()):
+        if weekly_slope < -SLOPE_EPS:
             break
         age += 1
 
@@ -376,7 +370,7 @@ def analyse(symbol: str, bench_close: pd.Series) -> dict | None:
             return None
         stock_close = daily.set_index("date")["close"].astype(float)
         trend = weekly_rs_ema9_trend(stock_close, bench_close)
-        # Trending universe: currently above weekly RS EMA9 AND that EMA9 flat/rising
+        # Trending universe: weekly RS EMA9 is flat or rising.
         if trend is None or trend["slope"] < -SLOPE_EPS or trend["age"] < 1:
             return None
 
