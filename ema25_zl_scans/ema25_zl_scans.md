@@ -51,7 +51,7 @@
 | [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC)<br><sub>✓ SAFE · →17Cr · 27Cr · ↓CMF30d</sub> | 1d | +2.6% | Non-bank lender financing underserved households and SMEs | +2.57% | 291.65 | ✓ | 20%  |
 | [ICRA](https://in.tradingview.com/chart/?symbol=NSE:ICRA)<br><sub>✓ SAFE · ↘19Cr · 26Cr · 🚀SS · ↑CMF11d</sub> | 1d | +2.8% | Credit ratings agency serving Indian capital markets debt securities | +2.80% | 5106.50 | — | 20%  |
 | [FMGOETZE](https://in.tradingview.com/chart/?symbol=NSE:FMGOETZE)<br><sub>✓ SAFE · ↗113Cr · 1109Cr · 📶W9 · 🚀SS·432x · ↑CMF0d</sub> | 2d | +13.1% | Pistons, rings, valves for domestic and export auto OEMs | +10.50% | 534.10 | — | 20%  |
-| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL)<br><sub>✓ SAFE · ↘521Cr · 720Cr · 📶W9 · ↓CMF7d · DEL28%(T-1)</sub> | 2d | +1.5% | Gold jewellery retail, pan-India stores, consumer luxury | +0.76% | 612.60 | ✓ | 20%  |
+| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL)<br><sub>✓ SAFE · ↘521Cr · 720Cr · 📶W9 · ↓CMF7d</sub> | 2d | +1.5% | Gold jewellery retail, pan-India stores, consumer luxury | +0.76% | 612.60 | ✓ | 20%  |
 | [AWL](https://in.tradingview.com/chart/?symbol=NSE:AWL)<br><sub>✓ SAFE · ↗86Cr · 328Cr · 📶W9 · 🚀SS · ↓CMF17d</sub> | 2d | +6.7% | Edible oils wheat flour rice pulses sugar FMCG | +3.49% | 200.64 | ✓ | 20%  |
 | [LODHA](https://in.tradingview.com/chart/?symbol=NSE:LODHA)<br><sub>✓ SAFE · ↘135Cr · 178Cr · 📶W9 · ↑CMF30d</sub> | 2d | +2.1% | Residential and commercial real estate development, Mumbai Pune Bangalore | -0.34% | 1235.80 | — | 20%  |
 | [CGCL](https://in.tradingview.com/chart/?symbol=NSE:CGCL)<br><sub>✓ SAFE · ↗108Cr · 283Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 2d | +7.0% | NBFC lending MSMEs affordable housing construction finance | +2.28% | 239.67 | ✓ | 20%  |
@@ -146,7 +146,7 @@
 | [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT)<br><sub>✓ SAFE · ↗119Cr · 461Cr · 📶W9 · ↑CMF3d</sub> | 9d | +16.5% | Engineering services, product design, aerospace and industrial manufacturing | +7.70% | 979.05 | — | 20%  |
 | [IFCI](https://in.tradingview.com/chart/?symbol=NSE:IFCI)<br><sub>✓ SAFE · ↗273Cr · 411Cr · 📶W9 · 🚀SS · ↑CMF10d</sub> | 9d | +13.2% | Industrial lending to manufacturing and infrastructure projects | +0.93% | 83.25 | — | 20%  |
 | [GODREJAGRO](https://in.tradingview.com/chart/?symbol=NSE:GODREJAGRO)<br><sub>✓ SAFE · ↗37Cr · 213Cr · 📶W9 · RVOL17x · ↑CMF8d</sub> | 9d | +10.5% | Animal feed, crop protection, oil palm processing | +6.52% | 610.10 | — | 20%  |
-| [DLF](https://in.tradingview.com/chart/?symbol=NSE:DLF)<br><sub>✓ SAFE · →215Cr · 340Cr · 📶W9 · ↓CMF6d · DEL67%(T-1)</sub> | 9d | +5.2% |  | +0.85% | 683.85 | — | 20%  |
+| [DLF](https://in.tradingview.com/chart/?symbol=NSE:DLF)<br><sub>✓ SAFE · →215Cr · 340Cr · 📶W9 · ↓CMF6d</sub> | 9d | +5.2% |  | +0.85% | 683.85 | — | 20%  |
 | [HAPPSTMNDS](https://in.tradingview.com/chart/?symbol=NSE:HAPPSTMNDS)<br><sub>✓ SAFE · ↗126Cr · 72Cr · 📶W9 · ↑CMF2d</sub> | 9d | +14.3% | Digital transformation IT services for enterprises globally | +2.22% | 445.95 | — | 20%  |
 | [KFINTECH](https://in.tradingview.com/chart/?symbol=NSE:KFINTECH)<br><sub>✓ SAFE · ↗125Cr · 68Cr · 📶W9 · ↑CMF21d</sub> | 9d | +4.8% | Registrar transfer agent digital services capital markets | -0.40% | 966.00 | ✓ | 20%  |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>✓ SAFE · →85Cr · 48Cr · 📶W9 · ↓CMF2d</sub> | 9d | +7.7% | Precision aerospace components and consumer goods manufacturing | +0.18% | 255.75 | — | 20% 🟦 |
@@ -200,7 +200,7 @@
 | [HYUNDAI](https://in.tradingview.com/chart/?symbol=NSE:HYUNDAI)<br><sub>✓ SAFE · ↘118Cr · 102Cr · 📶W9 · ↑CMF12d</sub> | 17d | +11.9% |  | -0.18% | 2186.00 | — | 20%  |
 | [APLAPOLLO](https://in.tradingview.com/chart/?symbol=NSE:APLAPOLLO)<br><sub>✓ SAFE · ↘103Cr · 131Cr · 📶W9 · ↑CMF18d</sub> | 17d | +17.6% | Structural steel tubes manufacturer for construction infrastructure | -0.27% | 2139.30 | — | 20%  |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>✓ SAFE · ↘100Cr · 103Cr · 📶W9 · ↑CMF1d</sub> | 17d | +41.0% | Niche APIs formulations contract manufacturing pharma | +0.67% | 861.55 | — | 20%  |
-| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · →280Cr · 90Cr · 📶W9 · ↑CMF21d · DEL32%(T-1)</sub> | 17d | +45.2% | Stainless steel fasteners tubes pipes solar mounting components | -2.91% | 263.43 | — | 20%  |
+| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · →280Cr · 90Cr · 📶W9 · ↑CMF21d · DEL31%</sub> | 17d | +45.2% | Stainless steel fasteners tubes pipes solar mounting components | -2.91% | 263.43 | — | 20%  |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>✓ SAFE · ↘277Cr · 84Cr · 📶W9 · ↑CMF15d</sub> | 17d | +64.6% | APIs, diagnostics, generic pharma for consumers | -1.39% | 93.90 | — | 20%  |
 | [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING)<br><sub>✓ SAFE · ↘94Cr · 79Cr · 📶W9 · ↑CMF30d</sub> | 17d | +12.2% | Housing loans for individuals and properties | +1.46% | 1182.00 | — | 20%  |
 | [KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL)<br><sub>✓ SAFE · ↗66Cr · 65Cr · 📶W9 · ↑CMF1d</sub> | 17d | +20.5% | Basmati rice production processing export global markets | -3.38% | 423.00 | — | 20%  |
@@ -215,7 +215,7 @@
 | [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS)<br><sub>✓ SAFE · →306Cr · 247Cr · 📶W9 · ↑CMF16d</sub> | 18d | +23.7% | Cables, transformers, specialty chemicals for power infrastructure | +1.77% | 17001.00 | — | 20%  |
 | [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD)<br><sub>✓ SAFE · ↘89Cr · 121Cr · 📶W9 · 🚀SS · ↓CMF15d</sub> | 18d | +32.0% | Gold jewelry manufacturer supplying retailers and boutiques | +5.55% | 842.30 | — | 20%  |
 | [VOLTAMP](https://in.tradingview.com/chart/?symbol=NSE:VOLTAMP)<br><sub>✓ SAFE · ↘52Cr · 66Cr · 📶W9 · ↓CMF0d</sub> | 18d | +18.0% | Power and distribution transformers for utilities and industrial infrastructure | -2.82% | 10974.00 | — | 20%  |
-| [DECNGOLD](https://in.tradingview.com/chart/?symbol=NSE:DECNGOLD)<br><sub>✓ SAFE · ↘68Cr · 48Cr · 📶W9 · ↑CMF13d</sub> | 18d | +22.3% | Gold mining and exploration, transitioning to production operations | -5.68% | 232.97 | — | 20%  |
+| [DECNGOLD](https://in.tradingview.com/chart/?symbol=NSE:DECNGOLD)<br><sub>✓ SAFE · ↘68Cr · 48Cr · 📶W9 · ↑CMF13d · DEL57%</sub> | 18d | +22.3% | Gold mining and exploration, transitioning to production operations | -5.68% | 232.97 | — | 20%  |
 | [KRISHANA](https://in.tradingview.com/chart/?symbol=NSE:KRISHANA)<br><sub>✓ SAFE · ↘18Cr · 32Cr · ↑CMF0d</sub> | 18d | +12.0% | Phosphatic fertilizers manufacturing for Indian agriculture sector | +1.02% | 201.72 | — | 20%  |
 | [UNIMECH](https://in.tradingview.com/chart/?symbol=NSE:UNIMECH)<br><sub>✓ SAFE · ↘31Cr · 25Cr · 📶W9 · ↑CMF7d</sub> | 18d | +25.6% | Precision aerospace components, tooling, ground support equipment | -1.73% | 1473.50 | — | 10% 🟩 |
 | [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA)<br><sub>✓ SAFE · →39Cr · 24Cr · 📶W9 · ↑CMF3d</sub> | 18d | +18.5% | Luxury hotel ownership operation management across India | +0.95% | 554.90 | — | 20%  |
@@ -224,7 +224,7 @@
 | [SHADOWFAX](https://in.tradingview.com/chart/?symbol=NSE:SHADOWFAX)<br><sub>✓ SAFE · ↘153Cr · 54Cr · 📶W9 · ↑CMF22d</sub> | 19d | +19.3% | Last-mile delivery logistics for e-commerce platforms India | -1.84% | 257.78 | — | 20%  |
 | [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON)<br><sub>✓ SAFE · →116Cr · 42Cr · 📶W9 · ↑CMF14d</sub> | 19d | +25.9% | Complex electronics manufacturing solutions for defense aerospace telecom | -0.37% | 2111.50 | — | 20%  |
 | [TIIL](https://in.tradingview.com/chart/?symbol=NSE:TIIL)<br><sub>✓ SAFE · ↗55Cr · 31Cr · 📶W9 · ↓CMF7d</sub> | 19d | +35.8% | Drum closures, scaffolding systems, textiles manufacturing | +0.40% | 3454.90 | — | 20%  |
-| [KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL)<br><sub>✓ SAFE · ↘30Cr · 28Cr · 📶W9 · 🚀SS · ↓CMF14d · DEL71%(T-1)</sub> | 19d | +25.6% | Watch dials, hands, luxury components manufacturing retail | +1.97% | 3924.60 | — | 20%  |
+| [KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL)<br><sub>✓ SAFE · ↘30Cr · 28Cr · 📶W9 · 🚀SS · ↓CMF14d</sub> | 19d | +25.6% | Watch dials, hands, luxury components manufacturing retail | +1.97% | 3924.60 | — | 20%  |
 | [NATIONALUM](https://in.tradingview.com/chart/?symbol=NSE:NATIONALUM)<br><sub>✓ SAFE · →391Cr · 153Cr · 📶W9 · ↑CMF9d</sub> | 20d | +18.9% | Bauxite mining, alumina refining, aluminium smelting operations | -1.36% | 397.80 | — | 20%  |
 | [LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS)<br><sub>✓ SAFE · ↗212Cr · 115Cr · 📶W9 · ↑CMF23d</sub> | 20d | +20.4% | Specialty rice and rice-based foods FMCG global | -2.88% | 445.80 | — | 20%  |
 | [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO)<br><sub>✓ SAFE · ↗27Cr · 64Cr · 📶W9 · ↓CMF30d</sub> | 20d | +19.9% | Edible oils refining, palm soybean sunflower processing, food sector | +3.61% | 252.85 | — | 20%  |
@@ -242,7 +242,7 @@
 | [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>✓ SAFE · ↗95Cr · 67Cr · 📶W9 · ↑CMF7d</sub> | 22d | +24.9% | Gold casting jewellery manufacturing, retail and wholesale distribution | -2.42% | 263.96 | — | 20%  |
 | [TI](https://in.tradingview.com/chart/?symbol=NSE:TI)<br><sub>✓ SAFE · →91Cr · 67Cr · 📶W9 · ↑CMF15d</sub> | 22d | +30.1% | Brandy and IMFL manufacturer, dominant South Indian spirits market | -0.67% | 574.70 | — | 20%  |
 | [360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE)<br><sub>✓ SAFE · ↘95Cr · 65Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 22d | +9.8% | Wealth management advisory distribution lending ultra-high-net-worth individuals | +1.70% | 1210.00 | ✓ | 20%  |
-| [UNOMINDA](https://in.tradingview.com/chart/?symbol=NSE:UNOMINDA)<br><sub>✓ SAFE · ↘83Cr · 58Cr · 📶W9 · ↑CMF17d · DEL77%(T-1)</sub> | 22d | +11.2% | Auto parts supplier, OEM components, Indian vehicles | +0.17% | 1253.40 | — | 20%  |
+| [UNOMINDA](https://in.tradingview.com/chart/?symbol=NSE:UNOMINDA)<br><sub>✓ SAFE · ↘83Cr · 58Cr · 📶W9 · ↑CMF17d</sub> | 22d | +11.2% | Auto parts supplier, OEM components, Indian vehicles | +0.17% | 1253.40 | — | 20%  |
 | [BRIGADE](https://in.tradingview.com/chart/?symbol=NSE:BRIGADE)<br><sub>✓ SAFE · ↗45Cr · 53Cr · 📶W9 · ↑CMF29d</sub> | 22d | +25.8% | Residential apartments, commercial offices, South India real estate | +1.04% | 660.90 | — | 20%  |
 | [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER)<br><sub>✓ SAFE · ↘34Cr · 36Cr · 📶W9 · ↓CMF9d</sub> | 22d | +14.5% | Specialty chemicals for pharma, agro, materials | -2.03% | 1633.90 | — | 20%  |
 | [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM)<br><sub>✓ SAFE · ↘42Cr · 28Cr · 📶W9 · ↑CMF24d</sub> | 22d | +13.6% | Contract research and specialty ingredients manufacturing for pharma | -0.98% | 874.70 | — | 20%  |
@@ -262,7 +262,7 @@
 | [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD)<br><sub>✓ SAFE · →240Cr · 278Cr · 📶W9 · 🚀SS · ↑CMF22d</sub> | 32d | +82.3% | Tourism sector lending, hotels resorts restaurants amusement parks | +5.76% | 137.02 | — | 20%  |
 | [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK)<br><sub>✓ SAFE · ↘111Cr · 93Cr · 📶W9 · ↑CMF23d</sub> | 33d | +24.9% | Private bank retail corporate MSME lending treasury services | +0.41% | 334.60 | — | 20%  |
 | [HEG](https://in.tradingview.com/chart/?symbol=NSE:HEG)<br><sub>✓ SAFE · ↗141Cr · 78Cr · 📶W9 · ↑CMF7d</sub> | 33d | +40.3% | Graphite electrodes for electric arc furnace steel production | -0.17% | 721.55 | — | 20%  |
-| [GSPCROP](https://in.tradingview.com/chart/?symbol=NSE:GSPCROP)<br><sub>✓ SAFE · →20Cr · 60Cr · 📶W9 · ↑CMF28d · DEL37%(T-1)</sub> | 33d | +60.2% | Fungicides insecticides pesticides agrochemicals formulation manufacturing | +0.46% | 627.90 | ✓ | 20%  |
+| [GSPCROP](https://in.tradingview.com/chart/?symbol=NSE:GSPCROP)<br><sub>✓ SAFE · →20Cr · 60Cr · 📶W9 · ↑CMF28d</sub> | 33d | +60.2% | Fungicides insecticides pesticides agrochemicals formulation manufacturing | +0.46% | 627.90 | ✓ | 20%  |
 | [LENSKART](https://in.tradingview.com/chart/?symbol=NSE:LENSKART)<br><sub>✓ SAFE · ↗596Cr · 681Cr · 📶W9 · 🚀SS · ↓CMF3d</sub> | 36d | +24.5% | Eyewear design manufacturing retail omnichannel direct consumer | +3.36% | 628.00 | — | 20%  |
 | [DIVISLAB](https://in.tradingview.com/chart/?symbol=NSE:DIVISLAB)<br><sub>✓ SAFE · ↘280Cr · 207Cr · 📶W9 · ↑CMF23d</sub> | 38d | +29.9% |  | -1.13% | 8500.00 | — | 20%  |
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL)<br><sub>✓ SAFE · ↗216Cr · 552Cr · 📶W9 · ↑CMF4d</sub> | 39d | +34.4% | NBFC retail lending home gold MSME microfinance | -4.33% | 666.25 | — | 20%  |
@@ -279,7 +279,7 @@
 ### ZLEMA25 Watch *(pullback / flat)*
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
-| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘180Cr · 33Cr · 📶W9 · ↓CMF2d · DEL26%(T-1)</sub> | 3d | -1.3% | Diamond gold platinum studded jewellery omni-channel retail | -1.33% | 810.65 | ✓ | 20%  |
+| [BLUESTONE](https://in.tradingview.com/chart/?symbol=NSE:BLUESTONE)<br><sub>✓ SAFE · ↘180Cr · 33Cr · 📶W9 · ↓CMF2d · DEL26%</sub> | 3d | -1.3% | Diamond gold platinum studded jewellery omni-channel retail | -1.33% | 810.65 | ✓ | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>✓ SAFE · ↘348Cr · 153Cr · 📶W9 · ↑CMF30d</sub> | 4d | +0.1% | Electric scooters, batteries, charging network, premium segment | -0.94% | 1439.40 | — | 20%  |
 | [RATEGAIN](https://in.tradingview.com/chart/?symbol=NSE:RATEGAIN)<br><sub>✓ SAFE · ↘42Cr · 35Cr · 📶W9 · ↓CMF13d</sub> | 4d | +1.7% | SaaS platform for hotel revenue and distribution management | -1.67% | 946.05 | ✓ | 20%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>✓ SAFE · ↗2251Cr · 944Cr · 📶W9 · ↑CMF8d</sub> | 7d | +5.9% | Precision components manufacturing defense aerospace nuclear energy | -4.25% | 7777.00 | — | 5% 🟥 |
@@ -291,7 +291,7 @@
 | [PNB](https://in.tradingview.com/chart/?symbol=NSE:PNB)<br><sub>✓ SAFE · ↗171Cr · 120Cr · 📶W9 · ↑CMF25d</sub> | 27d | +9.7% |  | -1.00% | 115.38 | — | 20%  |
 | [RRKABEL](https://in.tradingview.com/chart/?symbol=NSE:RRKABEL)<br><sub>✓ SAFE · ↘96Cr · 90Cr · 📶W9 · ↓CMF11d</sub> | 27d | +22.1% | Wires cables residential commercial industrial infrastructure segments | -2.39% | 2801.20 | — | 20%  |
 | [PPLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:PPLPHARMA)<br><sub>✓ SAFE · ↘84Cr · 36Cr · 📶W9 · ↓CMF1d</sub> | 34d | +23.6% | Contract pharma manufacturing, drug development, global healthcare | -1.63% | 207.71 | — | 20%  |
-| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘57Cr · 25Cr · 📶W9 · ↓CMF0d · DEL65%(T-1)</sub> | 37d | +96.3% | Drone systems manufacturer, defense and civil applications | -0.96% | 788.80 | ✓ | 5% 🟥 |
+| [IDEAFORGE](https://in.tradingview.com/chart/?symbol=NSE:IDEAFORGE)<br><sub>✓ SAFE · ↘57Cr · 25Cr · 📶W9 · ↓CMF0d</sub> | 37d | +96.3% | Drone systems manufacturer, defense and civil applications | -0.96% | 788.80 | ✓ | 5% 🟥 |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BLUESTONE,NSE:ATHERENERG,NSE:RATEGAIN,NSE:MTARTECH,NSE:FLUOROCHEM,NSE:SEDEMAC,NSE:SANSERA,NSE:UNITDSPR,NSE:RKFORGE,NSE:PNB,NSE:RRKABEL,NSE:PPLPHARMA,NSE:IDEAFORGE
