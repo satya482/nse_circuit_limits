@@ -34,7 +34,7 @@ coil-box annotations.
 - Retain all 250 bars in the page for EMA200 warm-up and backward panning in
   Interactive mode.
 - Set each newly constructed chart's initial viewport to the latest six
-  calendar months.
+  calendar months of candles plus 15 blank future logical slots.
 - Users may pan farther back into the retained history after enabling
   Interactive mode.
 - Continue requiring at least 130 bars for a symbol to be included.
@@ -219,8 +219,10 @@ Add one page-level `Fixed / Interactive` flip switch, defaulting to `Fixed`.
 
 In Fixed mode:
 
-- Set the visible time range from the latest bar back exactly six calendar
-  months.
+- Show historical candles from the latest bar back exactly six calendar months,
+  plus 15 blank logical trading slots to the right of the latest bar. These
+  future slots display the complete active coil-box projection and contain no
+  fabricated OHLCV.
 - Disable horizontal panning, mouse-wheel scaling, drag scaling, and pinch
   zoom.
 - Leave vertical page scrolling available even when a gesture starts over a
@@ -234,8 +236,9 @@ In Interactive mode:
 - Retain the 250 loaded bars as the maximum history available for backward pan.
 
 Switching from Interactive back to Fixed immediately resets every initialized
-chart to the latest six-calendar-month range and disables further pan/zoom.
-Charts initialized later use the currently selected mode.
+chart to the latest six-calendar-month history plus 15 blank future slots and
+disables further pan/zoom. Charts initialized later use the currently selected
+mode.
 
 ## Failure Handling and Output Integrity
 
@@ -264,7 +267,8 @@ Add focused Python tests for:
 - Mother high/low box coordinates, 15-trading-bar duration, and overlapping-box
   replacement.
 - Annotation serialization into chart records.
-- Retaining 250 bars while configuring the initial six-calendar-month viewport.
+- Retaining 250 bars while configuring the initial six-calendar-month history
+  plus 15 blank future logical slots without fabricated OHLCV.
 - EMA colors, hidden last-value/price-line labels, and the visibility switch.
 - Volume hidden by default, its flip switch, Pocket Pivot independence from
   histogram visibility, price expansion while hidden, and price/volume scale
@@ -276,8 +280,9 @@ Add focused Python tests for:
 - Default industry grouping, headings, within-industry day-change sorting, flat
   modes, empty-heading filtering, and preserving initialized charts during DOM
   reorder.
-- Fixed mode as the default, exact six-calendar-month range, disabled pan/zoom,
-  Interactive-mode gestures, and reset when returning to Fixed.
+- Fixed mode as the default, exact six-calendar-month candle history plus 15
+  blank future slots, disabled pan/zoom, Interactive-mode gestures, and reset
+  when returning to Fixed.
 - Responsive auto-fit grid and touch-option configuration.
 - Existing stale-input, no-OHLC, atomic-write, and disclaimer safeguards.
 
