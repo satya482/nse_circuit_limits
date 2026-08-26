@@ -25,16 +25,41 @@ are lazily initialized on the client.
 
 `union_chart_dashboard.py` remains the generator and continues reading OHLCV
 through `ohlc_db.load_ohlc_many()`. Each output record retains the existing
-symbol, tier, and bars fields and adds candle-color and coil-box annotations.
+symbol, tier, and bars fields and adds day-change, industry, candle-color, and
+coil-box annotations.
 
 ## Data Window
 
 - Load 250 daily trading bars per symbol, as today.
-- Retain all 250 bars in the page for EMA200 warm-up and backward panning.
+- Retain all 250 bars in the page for EMA200 warm-up and backward panning in
+  Interactive mode.
 - Set each newly constructed chart's initial viewport to the latest six
   calendar months.
-- Users may pan farther back into the retained history.
+- Users may pan farther back into the retained history after enabling
+  Interactive mode.
 - Continue requiring at least 130 bars for a symbol to be included.
+
+Current-day percentage change uses the latest two available completed daily
+candles: `(latest_close / previous_close - 1) * 100`. Store the unrounded value
+for sorting and display it rounded to two decimal places.
+
+## TradingView Industry Classification
+
+Refresh symbol-to-industry mappings from TradingView during each dashboard run,
+using TradingView's `industry` field. Make one NSE common-equity query selecting
+`name` and `industry`, then retain the current union symbols rather than relying
+on the March 2026 static universe CSV.
+
+Overlay every non-empty live classification onto the prior cache. After a
+successful non-empty response, atomically store the merged mapping and refresh
+date in `.union_chart_cache/industries.json`. Add `.union_chart_cache/` to
+`.gitignore`; the downloaded cache is local runtime data and must not be
+committed.
+
+If TradingView is unavailable or returns an unusable response, use the last
+successful cache. If neither live data nor a cached classification exists for a
+symbol, assign `Unclassified`. Industry refresh failure must not prevent OHLC
+charts from being generated.
 
 ## Pocket Pivot Candle Repaint
 
@@ -141,19 +166,19 @@ Use the selected adaptive card grid:
   device model.
 - Desktop widths: an auto-fitting multi-column grid.
 - The page remains vertically scrollable at every width.
-- A vertical swipe over a chart scrolls the page.
-- A horizontal swipe over a chart pans through time.
-- A pinch gesture over a chart zooms the time scale.
-- Desktop mouse-wheel input scrolls the page; chart dragging pans time.
+- A vertical swipe over a chart scrolls the page in both chart modes.
+- Horizontal pan and pinch zoom are available only in Interactive mode.
+- Desktop mouse-wheel input scrolls the page in both modes; chart dragging pans
+  time only in Interactive mode.
 
 Use `repeat(auto-fit, minmax(min(100%, 320px), 1fr))` for the grid and a
 `600px`-and-narrower breakpoint that forces one column. Card and chart sizes
 must be based on container width so tablet portrait, split-screen, and
 landscape layouts reflow without reload.
 
-Configure chart touch handling so vertical touch-drag does not belong to the
-chart, horizontal touch-drag pans the time scale, and pinch scaling remains
-enabled. This preserves page scrolling even when a gesture begins over a chart.
+Configure chart touch handling so vertical touch-drag never belongs to the
+chart. Toggle horizontal touch-drag, mouse drag, and pinch scaling when the
+Fixed/Interactive control changes.
 
 Keep `IntersectionObserver` lazy construction. Off-screen cards are not
 instantiated until they approach the viewport, which remains necessary for a
@@ -164,6 +189,54 @@ a compact arrangement at narrow widths. It retains symbol/tier filtering,
 up/down candle color controls, EMA periods, and the new EMA visibility switch.
 It also includes the volume visibility flip switch, initially off.
 
+## Card Sorting and Industry Grouping
+
+Add a client-side sort selector with three modes:
+
+1. `Industry groups` — the default. Render named industry headings in
+   alphabetical order, followed by `Unclassified` last. Within each group,
+   order cards by current-day percentage change descending, then symbol
+   ascending as the deterministic tie-breaker.
+2. `Day change: highest first` — one flat grid ordered by day change descending,
+   then symbol ascending.
+3. `Day change: lowest first` — one flat grid ordered by day change ascending,
+   then symbol ascending.
+
+Sorting and regrouping happen immediately in the browser and do not regenerate
+the page. Moving an already initialized card must preserve its chart instance.
+Industry names appear only as group headings in `Industry groups` mode; do not
+show an industry tag or line inside individual cards in either flat mode.
+The existing symbol/tier filter continues to apply after sorting; hide an
+industry heading when all cards in that group are filtered out.
+
+Every card header displays the current-day percentage change rounded to two
+decimal places. Positive values are green, negative values are red, and exact
+zero is muted/neutral.
+
+## Fixed and Interactive Chart Modes
+
+Add one page-level `Fixed / Interactive` flip switch, defaulting to `Fixed`.
+
+In Fixed mode:
+
+- Set the visible time range from the latest bar back exactly six calendar
+  months.
+- Disable horizontal panning, mouse-wheel scaling, drag scaling, and pinch
+  zoom.
+- Leave vertical page scrolling available even when a gesture starts over a
+  chart.
+
+In Interactive mode:
+
+- Enable horizontal mouse/touch panning and pinch zoom.
+- Keep vertical touch-drag assigned to page scrolling and keep the desktop
+  mouse wheel assigned to page scrolling.
+- Retain the 250 loaded bars as the maximum history available for backward pan.
+
+Switching from Interactive back to Fixed immediately resets every initialized
+chart to the latest six-calendar-month range and disables further pan/zoom.
+Charts initialized later use the currently selected mode.
+
 ## Failure Handling and Output Integrity
 
 - Preserve the fresh-union-report check. A stale or missing input causes a
@@ -171,6 +244,9 @@ It also includes the volume visibility flip switch, initially off.
 - Continue skipping and counting symbols with missing or insufficient OHLCV.
 - Treat a per-symbol annotation calculation failure as a skipped symbol and
   report it; do not emit a partially annotated record for that symbol.
+- Treat TradingView industry refresh failure as non-fatal: use the last good
+  cache and fall back to `Unclassified` per symbol.
+- Write the industry cache atomically and never commit it.
 - If no requested symbols can be charted, retain the previous good dashboard.
 - Continue writing the HTML through a temporary file followed by atomic
   replacement.
@@ -193,6 +269,15 @@ Add focused Python tests for:
 - Volume hidden by default, its flip switch, Pocket Pivot independence from
   histogram visibility, price expansion while hidden, and price/volume scale
   separation while visible.
+- Day-change calculation, two-decimal display, sign coloring, deterministic
+  ascending/descending ordering, and tie-breaking.
+- Live TradingView industry mapping, atomic cache refresh, stale-cache fallback,
+  and `Unclassified` placement last.
+- Default industry grouping, headings, within-industry day-change sorting, flat
+  modes, empty-heading filtering, and preserving initialized charts during DOM
+  reorder.
+- Fixed mode as the default, exact six-calendar-month range, disabled pan/zoom,
+  Interactive-mode gestures, and reset when returning to Fixed.
 - Responsive auto-fit grid and touch-option configuration.
 - Existing stale-input, no-OHLC, atomic-write, and disclaimer safeguards.
 
@@ -206,8 +291,9 @@ Verification sequence:
 5. Manually verify Pocket Pivot, WaveTrend, and coil examples against the Pine
    scripts.
 6. Manually test phone, tablet portrait, tablet landscape/split-screen, and
-   desktop widths, including vertical scrolling, horizontal panning, pinch
-   zoom, orientation reflow, EMA switching, default-hidden volume, volume
+   desktop widths, including orientation reflow, sorting/regrouping, day-change
+   display, Fixed/Interactive switching, vertical scrolling in both modes,
+   Interactive pan/pinch, EMA switching, default-hidden volume, volume
    switching, price expansion, and volume separation.
 7. Run `git diff --check` before commit or publish.
 
@@ -219,6 +305,7 @@ Verification sequence:
 | `tests/test_union_chart_dashboard.py` | Focused signal, serialization, HTML, and safety tests |
 | `dashboard/union_charts.html` | Regenerated verified dashboard |
 | `CLAUDE.md` | Document the enhanced chart contract if operating details materially change |
+| `.gitignore` | Exclude the local TradingView industry cache |
 
 No new runtime package is required. The existing vendored TradingView
 Lightweight Charts library remains the renderer.
