@@ -50,6 +50,36 @@ def test_resolve_industries_uses_cache_when_live_fetch_fails(tmp_path):
         "BBB": "Unclassified",
     }
 
+
+def test_resolve_industries_writes_empty_cache_after_successful_empty_fetch(tmp_path):
+    cache = tmp_path / "industries.json"
+    result = resolve_industries(
+        {"AAA"},
+        str(cache),
+        "2026-08-26",
+        fetcher=lambda symbols: {},
+    )
+    assert result == {"AAA": "Unclassified"}
+    saved = json.loads(cache.read_text(encoding="utf-8"))
+    assert saved == {"as_of": "2026-08-26", "industries": {}}
+    assert not (tmp_path / "industries.json.tmp").exists()
+
+
+def test_resolve_industries_handles_malformed_cache_shapes(tmp_path):
+    for payload in ("not json", [], None, {"industries": None}, {"industries": {"AAA": None}}):
+        cache = tmp_path / "industries.json"
+        if isinstance(payload, str):
+            cache.write_text(payload, encoding="utf-8")
+        else:
+            cache.write_text(json.dumps(payload), encoding="utf-8")
+        result = resolve_industries(
+            {"AAA", "BBB"},
+            str(cache),
+            "2026-08-26",
+            fetcher=lambda symbols: {},
+        )
+        assert result == {"AAA": "Unclassified", "BBB": "Unclassified"}
+
 UNION_MD_FRESH = """> disclaimer text
 # NSE EMA55 Cross Watchlist -- 2026-08-20
 *Generated 2026-08-20 15:47 IST*

@@ -61,20 +61,38 @@ def resolve_industries(symbols, cache_path, as_of, fetcher=fetch_tradingview_ind
     cached = {}
     try:
         with open(cache_path, encoding="utf-8") as fh:
-            cached = json.load(fh).get("industries", {})
+            payload = json.load(fh)
+        raw_cached = payload.get("industries", {}) if isinstance(payload, dict) else {}
+        if isinstance(raw_cached, dict):
+            cached = {
+                key.strip(): value.strip()
+                for key, value in raw_cached.items()
+                if isinstance(key, str)
+                and key.strip()
+                and isinstance(value, str)
+                and value.strip()
+            }
     except (FileNotFoundError, OSError, ValueError, TypeError):
         cached = {}
     try:
-        live = {k: v for k, v in fetcher(set(symbols)).items() if k and v}
-        if live:
-            merged = {**cached, **live}
-            os.makedirs(os.path.dirname(cache_path), exist_ok=True)
-            tmp = cache_path + ".tmp"
-            with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
-                json.dump({"as_of": as_of, "industries": dict(sorted(merged.items()))}, fh)
-                fh.write("\n")
-            os.replace(tmp, cache_path)
-            cached = merged
+        live = {
+            key.strip(): value.strip()
+            for key, value in fetcher(set(symbols)).items()
+            if isinstance(key, str)
+            and key.strip()
+            and isinstance(value, str)
+            and value.strip()
+        }
+        merged = {**cached, **live}
+        cache_dir = os.path.dirname(cache_path)
+        if cache_dir:
+            os.makedirs(cache_dir, exist_ok=True)
+        tmp = cache_path + ".tmp"
+        with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+            json.dump({"as_of": as_of, "industries": dict(sorted(merged.items()))}, fh)
+            fh.write("\n")
+        os.replace(tmp, cache_path)
+        cached = merged
     except Exception as exc:
         print(f"[union_chart_dashboard] industry refresh fallback: {exc}")
     return {symbol: cached.get(symbol, "Unclassified") for symbol in sorted(symbols)}
