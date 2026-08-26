@@ -253,8 +253,24 @@ def build_chart_data(
 _JS_TEMPLATE = """
 const CHART_DATA = __DATA_JSON__;
 const chartsBySymbol = {};
-const dataBySymbol = {};
-CHART_DATA.forEach(function(r) { dataBySymbol[r.symbol] = r.bars; });
+const recordBySymbol = {};
+const SIGNAL_COLORS = { ppv: "#2962ff", wt_bull: "#ffffff", wt_bear: "#fdd835" };
+const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
+const uiState = { emaVisible: true, volumeVisible: false, interactive: false };
+CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
+
+function candleData(record) {
+  return record.bars.map(function(b, i) {
+    const point = { time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] };
+    const color = SIGNAL_COLORS[(record.signals || [])[i]];
+    if (color) {
+      point.color = color;
+      point.borderColor = color;
+      point.wickColor = color;
+    }
+    return point;
+  });
+}
 
 function computeEMA(closes, period) {
   const k = 2 / (period + 1);
@@ -285,10 +301,61 @@ function emaLineData(bars, closes, period) {
   }).filter(Boolean);
 }
 
+function addEmaSeries(entry, periods) {
+  if (!uiState.emaVisible) return [];
+  const closes = entry.record.bars.map(function(b) { return b[4]; });
+  return periods.map(function(period, index) {
+    const line = entry.chart.addLineSeries({
+      color: EMA_COLORS[index % EMA_COLORS.length],
+      lineWidth: 1,
+      lastValueVisible: false,
+      priceLineVisible: false,
+    });
+    line.setData(emaLineData(entry.record.bars, closes, period));
+    return line;
+  });
+}
+
+function rebuildEmas(entry) {
+  entry.emaSeries.forEach(function(line) { entry.chart.removeSeries(line); });
+  entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+}
+
+function applyVolumeState(entry) {
+  entry.volumeSeries.applyOptions({ visible: uiState.volumeVisible });
+  entry.chart.priceScale("right").applyOptions({
+    scaleMargins: uiState.volumeVisible
+      ? { top: 0.05, bottom: 0.25 }
+      : { top: 0.05, bottom: 0.05 },
+  });
+  entry.chart.priceScale("").applyOptions({
+    scaleMargins: { top: 0.78, bottom: 0.00 },
+  });
+}
+
+function redrawCoils(entry) {
+  entry.coilLayer.replaceChildren();
+  (entry.record.coil_boxes || []).forEach(function(box) {
+    const left = entry.chart.timeScale().logicalToCoordinate(box.start_index);
+    const right = entry.chart.timeScale().logicalToCoordinate(box.end_index);
+    const top = entry.candleSeries.priceToCoordinate(box.high);
+    const bottom = entry.candleSeries.priceToCoordinate(box.low);
+    if ([left, right, top, bottom].some(function(v) { return v === null; })) return;
+    const rect = document.createElement("div");
+    rect.className = "coil-box";
+    rect.style.left = Math.min(left, right) + "px";
+    rect.style.width = Math.abs(right - left) + "px";
+    rect.style.top = Math.min(top, bottom) + "px";
+    rect.style.height = Math.abs(bottom - top) + "px";
+    entry.coilLayer.appendChild(rect);
+  });
+}
+
 function buildChart(symbol) {
   const el = document.getElementById('chart-' + symbol);
   if (!el || chartsBySymbol[symbol]) return;
-  const bars = dataBySymbol[symbol];
+  const record = recordBySymbol[symbol];
+  const bars = record.bars;
   const chart = LightweightCharts.createChart(el, {
     height: 220,
     layout: { background: { color: '#161b22' }, textColor: '#8b949e' },
@@ -300,45 +367,55 @@ function buildChart(symbol) {
     upColor: upColor, downColor: downColor, borderVisible: false,
     wickUpColor: upColor, wickDownColor: downColor,
   });
-  candleSeries.setData(bars.map(function(b) {
-    return { time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] };
-  }));
+  candleSeries.setData(candleData(record));
   const volumeSeries = chart.addHistogramSeries({
     priceFormat: { type: 'volume' }, priceScaleId: '', color: '#30363d',
   });
   volumeSeries.setData(bars.map(function(b) { return { time: b[0], value: b[5] }; }));
-  const closes = bars.map(function(b) { return b[4]; });
-  const emaSeries = getEmaPeriods().map(function(period) {
-    const line = chart.addLineSeries({ lineWidth: 1 });
-    line.setData(emaLineData(bars, closes, period));
-    return line;
-  });
-  chartsBySymbol[symbol] = { chart: chart, candleSeries: candleSeries, volumeSeries: volumeSeries, emaSeries: emaSeries };
+  const entry = {
+    chart: chart,
+    candleSeries: candleSeries,
+    volumeSeries: volumeSeries,
+    emaSeries: [],
+    coilLayer: el.parentElement.querySelector('.coil-layer'),
+    record: record,
+  };
+  chartsBySymbol[symbol] = entry;
+  entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+  applyVolumeState(entry);
+  redrawCoils(entry);
+  chart.timeScale().subscribeVisibleLogicalRangeChange(function() { redrawCoils(entry); });
+  new ResizeObserver(function() { redrawCoils(entry); }).observe(el);
 }
 
 function applyControls() {
   const upColor = document.getElementById('upColor').value;
   const downColor = document.getElementById('downColor').value;
-  const periods = getEmaPeriods();
   Object.keys(chartsBySymbol).forEach(function(symbol) {
     const entry = chartsBySymbol[symbol];
     entry.candleSeries.applyOptions({
       upColor: upColor, downColor: downColor, wickUpColor: upColor, wickDownColor: downColor,
     });
-    entry.emaSeries.forEach(function(line) { entry.chart.removeSeries(line); });
-    const bars = dataBySymbol[symbol];
-    const closes = bars.map(function(b) { return b[4]; });
-    entry.emaSeries = periods.map(function(period) {
-      const line = entry.chart.addLineSeries({ lineWidth: 1 });
-      line.setData(emaLineData(bars, closes, period));
-      return line;
-    });
+    rebuildEmas(entry);
+    redrawCoils(entry);
   });
 }
 
 document.getElementById('upColor').addEventListener('input', applyControls);
 document.getElementById('downColor').addEventListener('input', applyControls);
 document.getElementById('emaPeriods').addEventListener('change', applyControls);
+document.getElementById('emaVisible').addEventListener('change', function(e) {
+  uiState.emaVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) { rebuildEmas(chartsBySymbol[symbol]); });
+});
+document.getElementById('volumeVisible').addEventListener('change', function(e) {
+  uiState.volumeVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    applyVolumeState(entry);
+    redrawCoils(entry);
+  });
+});
 
 document.getElementById('q').addEventListener('input', function(e) {
   const q = e.target.value.toLowerCase();
@@ -369,7 +446,7 @@ def build_html(records: list[dict], as_of: str) -> str:
             f'<div class="card" data-q="{r["symbol"]} {r["tier"]}" data-symbol="{r["symbol"]}">'
             f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{r["symbol"]}" '
             f'target="_blank">{r["symbol"]}</a><span class="tier">{r["tier"]}</span></div>'
-            f'<div class="chart" id="chart-{r["symbol"]}"></div>'
+            f'<div class="chart-wrap"><div class="chart" id="chart-{r["symbol"]}"></div><div class="coil-layer"></div></div>'
             f"</div>"
             for r in records
         )
@@ -393,7 +470,16 @@ h1{{font-size:1.1rem}}
 .hdr{{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}}
 .hdr a{{color:#58a6ff;text-decoration:none}}
 .tier{{font-size:.7rem;color:#8b949e;border:1px solid #30363d;border-radius:4px;padding:1px 6px}}
+.switch-row{{cursor:pointer}}
+.switch-row input{{position:absolute;opacity:0}}
+.switch{{width:30px;height:16px;border-radius:10px;background:#30363d;position:relative}}
+.switch::after{{content:"";width:12px;height:12px;border-radius:50%;background:#8b949e;position:absolute;top:2px;left:2px;transition:left .15s}}
+.switch-row input:checked + .switch{{background:#238636}}
+.switch-row input:checked + .switch::after{{left:16px;background:#fff}}
+.chart-wrap{{height:220px;position:relative;overflow:hidden}}
 .chart{{height:220px}}
+.coil-layer{{position:absolute;inset:0;pointer-events:none}}
+.coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .empty{{color:#8b949e}}
 </style></head>
 <body>
@@ -403,6 +489,9 @@ h1{{font-size:1.1rem}}
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
   <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
+  <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible" checked><span class="switch"></span></label>
+  <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
+  <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
 </div>
 <input id="q" placeholder="Filter by symbol / tier">
 <div id="grid">

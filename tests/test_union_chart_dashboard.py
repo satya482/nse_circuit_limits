@@ -238,6 +238,27 @@ def test_build_html_has_interactive_controls():
     assert "computeEMA" in html
 
 
+def test_build_html_has_layer_switches_and_fixed_signal_colors():
+    html = build_html([], "2026-08-26")
+    assert 'id="emaVisible"' in html
+    assert 'id="volumeVisible"' in html
+    assert 'id="chartMode"' in html
+    assert "volumeVisible: false" in html
+    assert "interactive: false" in html
+    assert 'ppv: "#2962ff"' in html
+    assert 'wt_bull: "#ffffff"' in html
+    assert 'wt_bear: "#fdd835"' in html
+    assert "lastValueVisible: false" in html
+    assert "priceLineVisible: false" in html
+
+
+def test_build_html_separates_volume_and_price_scales():
+    html = build_html([], "2026-08-26")
+    assert "bottom: 0.05" in html
+    assert "bottom: 0.25" in html
+    assert "top: 0.78" in html
+
+
 import union_chart_dashboard as ucd
 
 
