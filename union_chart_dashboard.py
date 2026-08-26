@@ -16,6 +16,7 @@ import json
 import os
 import re
 from datetime import datetime
+from html import escape as _escape
 
 from ohlc_db import load_ohlc_many
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER
@@ -259,6 +260,37 @@ const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
 const uiState = { emaVisible: true, volumeVisible: false, interactive: false };
 CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
+function fixedLogicalRange(record) {
+  const last = record.bars[record.bars.length - 1][0];
+  const cutoff = new Date(last + "T00:00:00Z");
+  cutoff.setUTCMonth(cutoff.getUTCMonth() - 6);
+  const cutoffText = cutoff.toISOString().slice(0, 10);
+  const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
+  return {
+    from: firstIndex >= 0 ? firstIndex : 0,
+    to: record.bars.length - 1 + 15,
+  };
+}
+
+function applyChartMode(entry) {
+  entry.chart.applyOptions({
+    handleScroll: {
+      mouseWheel: false,
+      pressedMouseMove: uiState.interactive,
+      horzTouchDrag: uiState.interactive,
+      vertTouchDrag: false,
+    },
+    handleScale: {
+      axisPressedMouseMove: uiState.interactive,
+      mouseWheel: false,
+      pinch: uiState.interactive,
+    },
+  });
+  if (!uiState.interactive) {
+    entry.chart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
+  }
+}
+
 function candleData(record) {
   return record.bars.map(function(b, i) {
     const point = { time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] };
@@ -357,7 +389,7 @@ function buildChart(symbol) {
   const record = recordBySymbol[symbol];
   const bars = record.bars;
   const chart = LightweightCharts.createChart(el, {
-    height: 220,
+    height: el.clientHeight,
     layout: { background: { color: '#161b22' }, textColor: '#8b949e' },
     grid: { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
   });
@@ -385,7 +417,11 @@ function buildChart(symbol) {
   applyVolumeState(entry);
   redrawCoils(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { redrawCoils(entry); });
-  new ResizeObserver(function() { redrawCoils(entry); }).observe(el);
+  new ResizeObserver(function() {
+    chart.applyOptions({ width: el.clientWidth });
+    redrawCoils(entry);
+  }).observe(el);
+  applyChartMode(entry);
 }
 
 function applyControls() {
@@ -420,13 +456,57 @@ document.getElementById('volumeVisible').addEventListener('change', function(e) 
     redrawCoils(entry);
   });
 });
-
-document.getElementById('q').addEventListener('input', function(e) {
-  const q = e.target.value.toLowerCase();
-  document.querySelectorAll('#grid .card').forEach(function(c) {
-    c.style.display = c.dataset.q.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+document.getElementById('chartMode').addEventListener('change', function(e) {
+  uiState.interactive = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    applyChartMode(chartsBySymbol[symbol]);
   });
 });
+
+function cardCompare(a, b, direction) {
+  const delta = Number(a.dataset.dayChange) - Number(b.dataset.dayChange);
+  if (delta !== 0) return direction * delta;
+  return a.dataset.symbol.localeCompare(b.dataset.symbol);
+}
+
+function applySortAndFilter() {
+  const mode = document.getElementById("sortMode").value;
+  const query = document.getElementById("q").value.toLowerCase();
+  const cards = Array.from(document.querySelectorAll("#grid .card"));
+  const fragment = document.createDocumentFragment();
+  document.querySelectorAll("#grid .industry-heading").forEach(function(h) { h.remove(); });
+  cards.forEach(function(card) {
+    card.hidden = card.dataset.q.toLowerCase().indexOf(query) === -1;
+  });
+  if (mode === "industry") {
+    const groups = {};
+    cards.forEach(function(card) {
+      (groups[card.dataset.industry] ||= []).push(card);
+    });
+    Object.keys(groups).sort(function(a, b) {
+      if (a === "Unclassified") return 1;
+      if (b === "Unclassified") return -1;
+      return a.localeCompare(b);
+    }).forEach(function(industry) {
+      const heading = document.createElement("h2");
+      heading.className = "industry-heading";
+      heading.textContent = industry;
+      const groupCards = groups[industry].sort(function(a, b) { return cardCompare(a, b, -1); });
+      heading.hidden = groupCards.every(function(card) { return card.hidden; });
+      fragment.appendChild(heading);
+      groupCards.forEach(function(card) { fragment.appendChild(card); });
+    });
+  } else {
+    const direction = mode === "day-desc" ? -1 : 1;
+    cards.sort(function(a, b) { return cardCompare(a, b, direction); })
+      .forEach(function(card) { fragment.appendChild(card); });
+  }
+  document.getElementById("grid").appendChild(fragment);
+}
+
+document.getElementById('sortMode').addEventListener('change', applySortAndFilter);
+document.getElementById('q').addEventListener('input', applySortAndFilter);
+applySortAndFilter();
 
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
@@ -446,14 +526,23 @@ def build_html(records: list[dict], as_of: str) -> str:
     js = _JS_TEMPLATE.replace("__DATA_JSON__", data_json)
 
     if records:
-        cards = "\n".join(
-            f'<div class="card" data-q="{r["symbol"]} {r["tier"]}" data-symbol="{r["symbol"]}">'
-            f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{r["symbol"]}" '
-            f'target="_blank">{r["symbol"]}</a><span class="tier">{r["tier"]}</span></div>'
-            f'<div class="chart-wrap"><div class="chart" id="chart-{r["symbol"]}"></div><div class="coil-layer"></div></div>'
-            f"</div>"
-            for r in records
-        )
+        cards = []
+        for r in records:
+            change = float(r["day_change"])
+            change_class = "gain" if change > 0 else "loss" if change < 0 else "flat"
+            change_text = f"{change:+.2f}%" if change else "0.00%"
+            cards.append(
+                f'<div class="card" data-q="{_escape(r["symbol"])} {_escape(r["tier"])}" '
+                f'data-symbol="{_escape(r["symbol"])}" '
+                f'data-industry="{_escape(r["industry"])}" data-day-change="{change}">'
+                f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{_escape(r["symbol"])}" '
+                f'target="_blank">{_escape(r["symbol"])}</a>'
+                f'<span class="day-change {change_class}">{change_text}</span>'
+                f'<span class="tier">{_escape(r["tier"])}</span></div>'
+                f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
+                f'<div class="coil-layer"></div></div></div>'
+            )
+        cards = "\n".join(cards)
     else:
         cards = '<p class="empty">No signals.</p>'
 
@@ -465,26 +554,30 @@ def build_html(records: list[dict], as_of: str) -> str:
 :root{{color-scheme:dark}}
 body{{background:#0d1117;color:#e6edf3;font-family:system-ui,sans-serif;margin:0;padding:12px}}
 h1{{font-size:1.1rem}}
-#controls{{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;margin:8px 0}}
+#controls{{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;margin:8px 0}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
-#grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}}
+#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:10px}}
+.industry-heading{{grid-column:1/-1;margin:14px 0 0}}
 .card{{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px}}
 .hdr{{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}}
 .hdr a{{color:#58a6ff;text-decoration:none}}
 .tier{{font-size:.7rem;color:#8b949e;border:1px solid #30363d;border-radius:4px;padding:1px 6px}}
+.day-change{{font-size:.8rem;margin-left:auto;margin-right:8px}}
+.day-change.gain{{color:#3fb950}}.day-change.loss{{color:#f85149}}.day-change.flat{{color:#8b949e}}
 .switch-row{{cursor:pointer}}
 .switch-row input{{position:absolute;opacity:0}}
 .switch{{width:30px;height:16px;border-radius:10px;background:#30363d;position:relative}}
 .switch::after{{content:"";width:12px;height:12px;border-radius:50%;background:#8b949e;position:absolute;top:2px;left:2px;transition:left .15s}}
 .switch-row input:checked + .switch{{background:#238636}}
 .switch-row input:checked + .switch::after{{left:16px;background:#fff}}
-.chart-wrap{{height:220px;position:relative;overflow:hidden}}
-.chart{{height:220px}}
+.chart-wrap{{position:relative;overflow:hidden}}
+.chart{{height:clamp(240px,42vw,320px)}}
 .coil-layer{{position:absolute;inset:0;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .empty{{color:#8b949e}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:290px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}
@@ -496,6 +589,11 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible" checked><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
+  <label>Sort <select id="sortMode">
+    <option value="industry" selected>Industry groups</option>
+    <option value="day-desc">Day change: highest first</option>
+    <option value="day-asc">Day change: lowest first</option>
+  </select></label>
 </div>
 <input id="q" placeholder="Filter by symbol / tier">
 <div id="grid">

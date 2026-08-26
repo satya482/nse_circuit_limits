@@ -221,12 +221,43 @@ def test_build_html_no_records_shows_empty_state():
 
 
 def test_build_html_embeds_symbol_data_and_cards():
-    records = [{"symbol": "FOO", "tier": "ALL 4", "bars": [["2025-01-01", 1.0, 2.0, 0.5, 1.5, 100.0]]}]
+    records = [{
+        "symbol": "FOO", "tier": "ALL 4", "industry": "Software",
+        "day_change": 1.0,
+        "bars": [["2025-01-01", 1.0, 2.0, 0.5, 1.5, 100.0]],
+        "signals": [None], "coil_boxes": [],
+    }]
     html = build_html(records, "2026-08-20")
     assert '"FOO"' in html
     assert '"ALL 4"' in html
     assert 'data-symbol="FOO"' in html
     assert 'id="chart-FOO"' in html
+
+
+def test_build_html_renders_day_change_and_sort_metadata():
+    records = [{
+        "symbol": "FOO", "tier": "ALL 5", "industry": "Software",
+        "day_change": 2.3456,
+        "bars": [["2026-08-25", 1, 2, 0.5, 1.5, 100]],
+        "signals": [None], "coil_boxes": [],
+    }]
+    html = build_html(records, "2026-08-26")
+    assert 'data-industry="Software"' in html
+    assert 'data-day-change="2.3456"' in html
+    assert "+2.35%" in html
+    assert 'id="sortMode"' in html
+    assert '<option value="industry" selected>' in html
+    assert '<option value="day-desc">' in html
+    assert '<option value="day-asc">' in html
+
+
+def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
+    html = build_html([], "2026-08-26")
+    assert "repeat(auto-fit,minmax(min(100%,320px),1fr))" in html.replace(" ", "")
+    assert "vertTouchDrag: false" in html
+    assert "setVisibleLogicalRange" in html
+    assert "setUTCMonth" in html
+    assert "Unclassified" in html
 
 
 def test_build_html_has_interactive_controls():
