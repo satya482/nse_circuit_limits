@@ -37,7 +37,7 @@
 | [GLAXO](https://in.tradingview.com/chart/?symbol=NSE:GLAXO) [20%]<br><sub>↑CMF25d</sub> | Pharmaceuticals manufacturing vaccines antibiotics consumer health products India | 3034.40 | +2.40% | 2989.40 | +1.51% | ↑ | ↑15d | 15d | +18.1% | — | 3.1% | 5 | ↗86Cr · 34Cr |
 | [KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL) [20%]<br><sub>↑CMF2d</sub> | Basmati rice production processing export global markets | 447.40 | +5.77% | 436.00 | +2.61% | ↑ | ↑18d | 18d | +27.4% | — | 4.3% | 2 | ↗82Cr · 124Cr |
 | [KENNAMET](https://in.tradingview.com/chart/?symbol=NSE:KENNAMET) [20%]<br><sub>↑CMF13d</sub> | Cutting tools and wear-resistant solutions for manufacturing | 4325.50 | +4.68% | 4241.90 | +1.97% | ↑ | ↑18d | 18d | +53.3% | — | 4.7% | 2 | ↗40Cr · 27Cr |
-| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV) [20%]<br><sub>↓CMF0d · DEL100%(T-1)</sub> | Aerospace defense electronics systems manufacturer for global OEMs | 727.30 | +4.99% | 695.95 | +4.50% | ↑ | ↑57d | 57d | +364.7% | — | 5.4% | 0 | ↘28Cr · 53Cr |
+| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV) [20%]<br><sub>↓CMF0d</sub> | Aerospace defense electronics systems manufacturer for global OEMs | 727.30 | +4.99% | 695.95 | +4.50% | ↑ | ↑57d | 57d | +364.7% | — | 5.4% | 0 | ↘28Cr · 53Cr |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GVT&D,NSE:KAYNES,NSE:CPPLUS,NSE:VISL,NSE:CORDELIA,NSE:VOGL,NSE:WABAG,NSE:JINDALSAW,NSE:JYOTICNC,NSE:GLAXO,NSE:KRBL,NSE:KENNAMET,NSE:SIGMAADV

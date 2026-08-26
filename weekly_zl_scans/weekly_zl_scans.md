@@ -65,7 +65,7 @@
 | [ORIENTCEM](https://in.tradingview.com/chart/?symbol=NSE:ORIENTCEM)<br><sub>↓CMF2d</sub> | Cement manufacturing and distribution for construction sector | 1w | ABOVE | 1w | +2.2% | +2.79% | 134.48 | 8w | 20%  |
 | [SUNTECK](https://in.tradingview.com/chart/?symbol=NSE:SUNTECK)<br><sub>↓CMF25d</sub> | Luxury residential developer Mumbai Metropolitan Region premium projects | 1w | ABOVE | 1w | +5.3% | -0.61% | 312.10 | 7w | 20%  |
 | [ZUARI](https://in.tradingview.com/chart/?symbol=NSE:ZUARI)<br><sub>↓CMF30d</sub> | Fertilizer manufacturer for Indian farmers and agriculture sector | 1w | ABOVE | 1w | +4.1% | +0.99% | 234.30 | 6w | 20%  |
-| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +2.9% | +2.46% | 306.70 | 66w | 20%  |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF30d · DEL95%</sub> |  | 1w | ABOVE | 1w | +2.9% | +2.46% | 306.70 | 66w | 20%  |
 | [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF13d</sub> | Road EPC contractor, highways and railways infrastructure | 1w | ABOVE | 1w | +4.0% | +0.35% | 905.20 | 16w | 20%  |
 | [SUNDROP](https://in.tradingview.com/chart/?symbol=NSE:SUNDROP)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +2.2% | +0.27% | 660.75 | 16w | 20%  |
 | [ZUARIIND](https://in.tradingview.com/chart/?symbol=NSE:ZUARIIND)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +7.2% | -2.01% | 275.90 | 12w | 20%  |
