@@ -232,7 +232,7 @@ class WaveTrendCalculator:
             ap = (df["high"] + df["low"] + df["close"]) / 3
         esa = self._ema(ap, n1)
         d = self._ema((ap - esa).abs(), n1)
-        ci = (ap - esa) / (0.015 * d)
+        ci = ((ap - esa) / (0.015 * d)).mask(d.eq(0), 0.0)
         tci = self._ema(ci, n2)
 
         df["wt1"] = tci

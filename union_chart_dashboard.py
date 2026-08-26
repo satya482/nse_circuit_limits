@@ -18,6 +18,8 @@ import re
 from datetime import datetime
 from html import escape as _escape
 
+import pandas as pd
+
 from ohlc_db import load_ohlc_many
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER
 from wavetrend_scanner import WaveTrendCalculator
@@ -51,8 +53,12 @@ def fetch_tradingview_industries(symbols: set[str]) -> dict[str, str]:
     )
     result = {}
     for row in df.to_dict("records"):
-        symbol = str(row.get("name") or "").strip()
-        industry = str(row.get("industry") or "").strip()
+        raw_symbol = row.get("name")
+        raw_industry = row.get("industry")
+        if pd.isna(raw_symbol) or pd.isna(raw_industry):
+            continue
+        symbol = str(raw_symbol).strip()
+        industry = str(raw_industry).strip()
         if symbol in symbols and industry:
             result[symbol] = industry
     return result
@@ -84,6 +90,8 @@ def resolve_industries(symbols, cache_path, as_of, fetcher=fetch_tradingview_ind
             and isinstance(value, str)
             and value.strip()
         }
+        if not live:
+            raise ValueError("TradingView returned no usable industry classifications")
         merged = {**cached, **live}
         cache_dir = os.path.dirname(cache_path)
         if cache_dir:
@@ -262,14 +270,24 @@ CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
 function fixedLogicalRange(record) {
   const last = record.bars[record.bars.length - 1][0];
-  const cutoff = new Date(last + "T00:00:00Z");
-  cutoff.setUTCMonth(cutoff.getUTCMonth() - 6);
-  const cutoffText = cutoff.toISOString().slice(0, 10);
+  const cutoffText = sixMonthCutoff(last);
   const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
   return {
     from: firstIndex >= 0 ? firstIndex : 0,
     to: record.bars.length - 1 + 15,
   };
+}
+
+function sixMonthCutoff(last) {
+  const current = new Date(last + "T00:00:00Z");
+  const sourceDay = current.getUTCDate();
+  const targetMonthIndex = current.getUTCMonth() - 6;
+  const targetYear = current.getUTCFullYear() + Math.floor(targetMonthIndex / 12);
+  const targetMonth = ((targetMonthIndex % 12) + 12) % 12;
+  const lastDay = new Date(Date.UTC(targetYear, targetMonth + 1, 0)).getUTCDate();
+  return new Date(
+    Date.UTC(targetYear, targetMonth, Math.min(sourceDay, lastDay))
+  ).toISOString().slice(0, 10);
 }
 
 function applyChartMode(entry) {
@@ -281,7 +299,7 @@ function applyChartMode(entry) {
       vertTouchDrag: false,
     },
     handleScale: {
-      axisPressedMouseMove: uiState.interactive,
+      axisPressedMouseMove: false,
       mouseWheel: false,
       pinch: uiState.interactive,
     },
@@ -418,7 +436,7 @@ function buildChart(symbol) {
   redrawCoils(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { redrawCoils(entry); });
   new ResizeObserver(function() {
-    chart.applyOptions({ width: el.clientWidth });
+    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
     redrawCoils(entry);
   }).observe(el);
   applyChartMode(entry);
@@ -522,7 +540,12 @@ document.querySelectorAll('#grid .card').forEach(function(c) { observer.observe(
 
 
 def build_html(records: list[dict], as_of: str) -> str:
-    data_json = json.dumps(records)
+    data_json = (
+        json.dumps(records)
+        .replace("&", r"\u0026")
+        .replace("<", r"\u003c")
+        .replace(">", r"\u003e")
+    )
     js = _JS_TEMPLATE.replace("__DATA_JSON__", data_json)
 
     if records:
@@ -625,7 +648,7 @@ def main() -> None:
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     html = build_html(records, TODAY)
     tmp_path = OUTPUT_PATH + ".tmp"
-    with open(tmp_path, "w", encoding="utf-8") as fh:
+    with open(tmp_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)
     os.replace(tmp_path, OUTPUT_PATH)
 

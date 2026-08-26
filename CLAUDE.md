@@ -174,7 +174,8 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
 
 ### Scanner pipeline — Union Watchlist Chart Dashboard (`union_chart_dashboard.py`)
 
-Full design: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`.
+Full designs: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`
+and `docs/superpowers/specs/2026-08-26-union-chart-signal-overlays-design.md`.
 
 Operating contract:
 

@@ -1,7 +1,10 @@
 import json
+import inspect
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
+import pandas as pd
 import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -11,6 +14,7 @@ from union_chart_dashboard import (
     compute_pocket_pivot_flags,
     compute_signal_kinds,
     compute_wavetrend_kinds,
+    fetch_tradingview_industries,
     load_todays_union,
     parse_union_tiers,
     resolve_industries,
@@ -53,18 +57,75 @@ def test_resolve_industries_uses_cache_when_live_fetch_fails(tmp_path):
     }
 
 
-def test_resolve_industries_writes_empty_cache_after_successful_empty_fetch(tmp_path):
+def test_resolve_industries_preserves_cache_after_empty_live_fetch(tmp_path):
+    cache = tmp_path / "industries.json"
+    original = json.dumps(
+        {"as_of": "2026-08-25", "industries": {"AAA": "Steel"}}
+    )
+    cache.write_text(original, encoding="utf-8")
+    result = resolve_industries(
+        {"AAA", "BBB"},
+        str(cache),
+        "2026-08-26",
+        fetcher=lambda symbols: {},
+    )
+    assert result == {"AAA": "Steel", "BBB": "Unclassified"}
+    assert cache.read_text(encoding="utf-8") == original
+    assert not (tmp_path / "industries.json.tmp").exists()
+
+
+def test_resolve_industries_does_not_create_cache_for_unusable_live_mapping(tmp_path):
     cache = tmp_path / "industries.json"
     result = resolve_industries(
         {"AAA"},
         str(cache),
         "2026-08-26",
-        fetcher=lambda symbols: {},
+        fetcher=lambda symbols: {"AAA": pd.NA},
     )
     assert result == {"AAA": "Unclassified"}
-    saved = json.loads(cache.read_text(encoding="utf-8"))
-    assert saved == {"as_of": "2026-08-26", "industries": {}}
-    assert not (tmp_path / "industries.json.tmp").exists()
+    assert not cache.exists()
+
+
+def test_fetch_tradingview_industries_rejects_nan_and_na_before_string_conversion(
+    monkeypatch,
+):
+    class FakeColumn:
+        def __eq__(self, _other):
+            return self
+
+        def has(self, _values):
+            return self
+
+    class FakeQuery:
+        def set_markets(self, *_args):
+            return self
+
+        def select(self, *_args):
+            return self
+
+        def where(self, *_args):
+            return self
+
+        def limit(self, *_args):
+            return self
+
+        def get_scanner_data(self):
+            return 4, pd.DataFrame(
+                [
+                    {"name": "GOOD", "industry": "Software"},
+                    {"name": float("nan"), "industry": "Banks"},
+                    {"name": "BAD_NAN", "industry": float("nan")},
+                    {"name": "BAD_NA", "industry": pd.NA},
+                ]
+            )
+
+    monkeypatch.setitem(
+        sys.modules,
+        "tradingview_screener",
+        SimpleNamespace(Query=FakeQuery, col=lambda _name: FakeColumn()),
+    )
+    symbols = {"GOOD", "nan", "<NA>", "BAD_NAN", "BAD_NA"}
+    assert fetch_tradingview_industries(symbols) == {"GOOD": "Software"}
 
 
 def test_resolve_industries_handles_malformed_cache_shapes(tmp_path):
@@ -139,7 +200,6 @@ def test_load_todays_union_fresh_returns_tiers(tmp_path):
     assert tiers == {"FOO": "ALL 4", "BAR": "ALL 4", "BAZ": "1 ONLY", "QUX": "1 ONLY"}
 
 
-import pandas as pd
 from union_chart_dashboard import build_chart_data
 
 
@@ -234,6 +294,24 @@ def test_build_html_embeds_symbol_data_and_cards():
     assert 'id="chart-FOO"' in html
 
 
+def test_build_html_escapes_script_context_json_and_preserves_data():
+    hostile = "</script><script>alert(1)</script>&"
+    records = [{
+        "symbol": hostile, "tier": "1 ONLY", "industry": "Software",
+        "day_change": 0.0,
+        "bars": [["2026-08-25", 1, 2, 0.5, 1.5, 100]],
+        "signals": [None], "coil_boxes": [],
+    }]
+    html = build_html(records, "2026-08-26")
+    assert hostile not in html
+    assert r"\u003c/script\u003e\u003cscript\u003ealert(1)" in html
+    assert r"\u0026" in html
+    payload = html.split("const CHART_DATA = ", 1)[1].split(
+        ";\nconst chartsBySymbol", 1
+    )[0]
+    assert json.loads(payload)[0]["symbol"] == hostile
+
+
 def test_build_html_renders_day_change_and_sort_metadata():
     records = [{
         "symbol": "FOO", "tier": "ALL 5", "industry": "Software",
@@ -256,8 +334,29 @@ def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     assert "repeat(auto-fit,minmax(min(100%,320px),1fr))" in html.replace(" ", "")
     assert "vertTouchDrag: false" in html
     assert "setVisibleLogicalRange" in html
-    assert "setUTCMonth" in html
+    assert "setUTCMonth" not in html
     assert "Unclassified" in html
+
+
+def test_fixed_range_clamps_month_end_six_calendar_months():
+    html = build_html([], "2026-08-26")
+    assert "function sixMonthCutoff(last)" in html
+    assert "Math.min(sourceDay, lastDay)" in html
+    assert "sixMonthCutoff(last)" in html
+
+    def reference(last):
+        year, month, day = map(int, last.split("-"))
+        target = year * 12 + month - 1 - 6
+        target_year, target_month_zero = divmod(target, 12)
+        next_month = target_year * 12 + target_month_zero + 1
+        next_year, next_month_zero = divmod(next_month, 12)
+        from datetime import date, timedelta
+        last_day = (date(next_year, next_month_zero + 1, 1) - timedelta(days=1)).day
+        return date(target_year, target_month_zero + 1, min(day, last_day)).isoformat()
+
+    assert reference("2025-08-31") == "2025-02-28"
+    assert reference("2024-08-31") == "2024-02-29"
+    assert reference("2026-03-31") == "2025-09-30"
 
 
 def test_build_html_has_interactive_controls():
@@ -299,6 +398,17 @@ def test_build_html_ema_visibility_redraws_coils_after_rebuild():
     assert "rebuildEmas(entry);\n    redrawCoils(entry);" in ema_handler
 
 
+def test_build_html_disables_price_axis_drag_and_resizes_both_dimensions():
+    html = build_html([], "2026-08-26")
+    assert "axisPressedMouseMove: false" in html
+    resize_handler = html.split("new ResizeObserver(function() {", 1)[1].split(
+        "}).observe(el);", 1
+    )[0]
+    assert "width: el.clientWidth" in resize_handler
+    assert "height: el.clientHeight" in resize_handler
+    assert resize_handler.index("chart.applyOptions") < resize_handler.index("redrawCoils(entry)")
+
+
 import union_chart_dashboard as ucd
 
 
@@ -330,6 +440,23 @@ def test_main_writes_html_with_expected_symbols(tmp_path, monkeypatch, capsys):
     assert "SEBI registered" in html
     out = capsys.readouterr().out
     assert "4 charted" in out
+
+
+def test_main_opens_temp_html_with_explicit_lf_newlines():
+    assert 'newline="\\n"' in inspect.getsource(ucd.main)
+
+
+def test_union_dashboard_runner_checks_python_exit_before_git_add():
+    runner = (Path(__file__).parent.parent / "run_union_chart_dashboard.ps1").read_text(
+        encoding="utf-8"
+    )
+    pipeline = runner.index("ForEach-Object", runner.index("union_chart_dashboard.py"))
+    capture = runner.index("$pythonExit = $LASTEXITCODE", pipeline)
+    check = runner.index("if ($pythonExit -ne 0)", capture)
+    exit_native = runner.index("exit $pythonExit", check)
+    git_add = runner.index(" add dashboard/union_charts.html")
+    assert pipeline < capture < check < exit_native < git_add
+    assert "try {" not in runner[runner.index("union_chart_dashboard.py"):git_add]
 
 
 def test_main_skips_write_when_stale(tmp_path, monkeypatch, capsys):
@@ -472,6 +599,16 @@ def test_wavetrend_kinds_match_existing_calculator_for_all_bars():
         "NONE": None,
     }).tolist()
     assert compute_wavetrend_kinds(df) == expected
+
+
+def test_wavetrend_flat_startup_matches_zero_deviation_pine_golden():
+    result = WaveTrendCalculator(n1=2, n2=2).calc_from_series(
+        pd.Series([100.0] * 8)
+    )
+    assert result["wt1"].tolist() == [0.0] * 8
+    assert result["wt2"].iloc[:3].isna().all()
+    assert result["wt2"].iloc[3:].tolist() == [0.0] * 5
+    assert result["cross_type"].tolist() == ["NONE"] * 8
 
 
 def test_wavetrend_kind_overrides_pocket_pivot(monkeypatch):
