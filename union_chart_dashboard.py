@@ -406,7 +406,11 @@ document.getElementById('downColor').addEventListener('input', applyControls);
 document.getElementById('emaPeriods').addEventListener('change', applyControls);
 document.getElementById('emaVisible').addEventListener('change', function(e) {
   uiState.emaVisible = e.target.checked;
-  Object.keys(chartsBySymbol).forEach(function(symbol) { rebuildEmas(chartsBySymbol[symbol]); });
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildEmas(entry);
+    redrawCoils(entry);
+  });
 });
 document.getElementById('volumeVisible').addEventListener('change', function(e) {
   uiState.volumeVisible = e.target.checked;

@@ -259,6 +259,15 @@ def test_build_html_separates_volume_and_price_scales():
     assert "top: 0.78" in html
 
 
+def test_build_html_ema_visibility_redraws_coils_after_rebuild():
+    html = build_html([], "2026-08-26")
+    ema_handler = html.split(
+        "document.getElementById('emaVisible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('volumeVisible')", 1)[0]
+    assert "rebuildEmas(entry);\n    redrawCoils(entry);" in ema_handler
+
+
 import union_chart_dashboard as ucd
 
 
