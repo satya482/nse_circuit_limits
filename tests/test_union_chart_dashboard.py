@@ -2,6 +2,8 @@ import json
 import sys
 from pathlib import Path
 
+import pytest
+
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from union_chart_dashboard import (
@@ -153,16 +155,28 @@ def _fixture_df(n_rows: int) -> pd.DataFrame:
     })
 
 
-def test_build_chart_data_keeps_symbol_with_enough_bars():
+def test_build_chart_data_enriches_record_with_metadata_and_annotations(monkeypatch):
     ohlc_map = {"FOO": _fixture_df(200)}
-    tiers = {"FOO": "ALL 4"}
-    records, skipped = build_chart_data(ohlc_map, tiers, min_bars=130)
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_signal_kinds",
+        lambda df: [None] * 199 + ["ppv"],
+    )
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_coil_boxes",
+        lambda df: [{"start_index": 180, "end_index": 197, "high": 300.0, "low": 290.0}],
+    )
+    records, skipped = build_chart_data(
+        ohlc_map,
+        {"FOO": "ALL 4"},
+        industries={"FOO": "Software"},
+        min_bars=130,
+    )
+    record = records[0]
     assert skipped == 0
-    assert len(records) == 1
-    assert records[0]["symbol"] == "FOO"
-    assert records[0]["tier"] == "ALL 4"
-    assert records[0]["bars"][0] == ["2025-01-01", 100.0, 101.0, 99.0, 100.5, 1000.0]
-    assert len(records[0]["bars"]) == 200
+    assert record["industry"] == "Software"
+    assert record["day_change"] == pytest.approx((299.5 / 298.5 - 1) * 100)
+    assert record["signals"][-1] == "ppv"
+    assert record["coil_boxes"][0]["end_index"] == 197
 
 
 def test_build_chart_data_skips_symbol_below_bar_floor():
@@ -235,6 +249,11 @@ def test_main_writes_html_with_expected_symbols(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
     monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
     monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+    monkeypatch.setattr(
+        ucd,
+        "resolve_industries",
+        lambda symbols, cache_path, as_of: {sym: "Test Industry" for sym in symbols},
+    )
 
     def fake_load_ohlc_many(symbols, lookback=250):
         return {sym: _fixture_df(200) for sym in symbols}
@@ -309,6 +328,11 @@ def test_main_skips_write_when_all_ohlc_missing(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
     monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
     monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+    monkeypatch.setattr(
+        ucd,
+        "resolve_industries",
+        lambda symbols, cache_path, as_of: {sym: "Test Industry" for sym in symbols},
+    )
     monkeypatch.setattr(ucd, "load_ohlc_many", lambda symbols, lookback=250: {})
 
     ucd.main()
@@ -329,6 +353,11 @@ def test_main_does_not_clobber_existing_dashboard_when_ohlc_missing(tmp_path, mo
     monkeypatch.setattr(ucd, "EMA55_MD", str(union_md))
     monkeypatch.setattr(ucd, "OUTPUT_PATH", str(output_path))
     monkeypatch.setattr(ucd, "TODAY", "2026-08-20")
+    monkeypatch.setattr(
+        ucd,
+        "resolve_industries",
+        lambda symbols, cache_path, as_of: {sym: "Test Industry" for sym in symbols},
+    )
     monkeypatch.setattr(ucd, "load_ohlc_many", lambda symbols, lookback=250: {})
 
     ucd.main()

@@ -205,9 +205,15 @@ def load_todays_union(md_path: str, today: str) -> tuple[dict[str, str] | None, 
     return tiers, None
 
 
-def build_chart_data(ohlc_map: dict, tiers: dict[str, str], min_bars: int = MIN_BARS) -> tuple[list[dict], int]:
+def build_chart_data(
+    ohlc_map: dict,
+    tiers: dict[str, str],
+    industries: dict[str, str] | None = None,
+    min_bars: int = MIN_BARS,
+) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
     Skips symbols missing from ohlc_map or with fewer than min_bars rows."""
+    industries = industries or {}
     records = []
     skipped = 0
     for symbol, tier in sorted(tiers.items()):
@@ -215,18 +221,32 @@ def build_chart_data(ohlc_map: dict, tiers: dict[str, str], min_bars: int = MIN_
         if df is None or len(df) < min_bars:
             skipped += 1
             continue
-        bars = [
-            [
-                row.date.strftime("%Y-%m-%d"),
-                float(row.open),
-                float(row.high),
-                float(row.low),
-                float(row.close),
-                float(row.volume),
+        try:
+            bars = [
+                [
+                    row.date.strftime("%Y-%m-%d"),
+                    float(row.open),
+                    float(row.high),
+                    float(row.low),
+                    float(row.close),
+                    float(row.volume),
+                ]
+                for row in df.itertuples(index=False)
             ]
-            for row in df.itertuples(index=False)
-        ]
-        records.append({"symbol": symbol, "tier": tier, "bars": bars})
+            previous_close = bars[-2][4]
+            day_change = (bars[-1][4] / previous_close - 1) * 100
+            records.append({
+                "symbol": symbol,
+                "tier": tier,
+                "industry": industries.get(symbol, "Unclassified"),
+                "day_change": day_change,
+                "bars": bars,
+                "signals": compute_signal_kinds(df),
+                "coil_boxes": compute_coil_boxes(df),
+            })
+        except Exception as exc:
+            skipped += 1
+            print(f"[union_chart_dashboard] skip {symbol}: annotation failure: {exc}")
     return records, skipped
 
 
@@ -402,8 +422,9 @@ def main() -> None:
         print(f"[union_chart_dashboard] SKIP: {err}")
         return
 
+    industries = resolve_industries(tiers.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(tiers.keys()), lookback=LOOKBACK)
-    records, skipped = build_chart_data(ohlc_map, tiers)
+    records, skipped = build_chart_data(ohlc_map, tiers, industries=industries)
     print(f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped (< {MIN_BARS} bars)")
 
     if tiers and not records:
