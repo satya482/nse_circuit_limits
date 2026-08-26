@@ -31,3 +31,4 @@ telegram_themes/.today_messages.json
 
 .code-index/
 .worktrees/
+.union_chart_cache/

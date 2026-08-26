@@ -24,12 +24,60 @@ from wavetrend_scanner import WaveTrendCalculator
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 EMA55_MD = os.path.join(REPO_DIR, "ema55_cross_scans", "ema55_cross_scans.md")
 OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "union_charts.html")
+INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
 LOOKBACK = 250
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
 TIER_LABEL_RE = re.compile(r"^(ALL \d+|\d+ OF \d+|1 ONLY)$")
+
+
+def fetch_tradingview_industries(symbols: set[str]) -> dict[str, str]:
+    from tradingview_screener import Query, col
+
+    _, df = (
+        Query()
+        .set_markets("india")
+        .select("name", "industry")
+        .where(
+            col("exchange") == "NSE",
+            col("type") == "stock",
+            col("typespecs").has(["common"]),
+        )
+        .limit(5000)
+        .get_scanner_data()
+    )
+    result = {}
+    for row in df.to_dict("records"):
+        symbol = str(row.get("name") or "").strip()
+        industry = str(row.get("industry") or "").strip()
+        if symbol in symbols and industry:
+            result[symbol] = industry
+    return result
+
+
+def resolve_industries(symbols, cache_path, as_of, fetcher=fetch_tradingview_industries):
+    cached = {}
+    try:
+        with open(cache_path, encoding="utf-8") as fh:
+            cached = json.load(fh).get("industries", {})
+    except (FileNotFoundError, OSError, ValueError, TypeError):
+        cached = {}
+    try:
+        live = {k: v for k, v in fetcher(set(symbols)).items() if k and v}
+        if live:
+            merged = {**cached, **live}
+            os.makedirs(os.path.dirname(cache_path), exist_ok=True)
+            tmp = cache_path + ".tmp"
+            with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+                json.dump({"as_of": as_of, "industries": dict(sorted(merged.items()))}, fh)
+                fh.write("\n")
+            os.replace(tmp, cache_path)
+            cached = merged
+    except Exception as exc:
+        print(f"[union_chart_dashboard] industry refresh fallback: {exc}")
+    return {symbol: cached.get(symbol, "Unclassified") for symbol in sorted(symbols)}
 
 
 def compute_pocket_pivot_flags(df, pp_len: int = 10) -> list[bool]:

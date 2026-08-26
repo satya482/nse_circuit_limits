@@ -1,3 +1,4 @@
+import json
 import sys
 from pathlib import Path
 
@@ -10,8 +11,44 @@ from union_chart_dashboard import (
     compute_wavetrend_kinds,
     load_todays_union,
     parse_union_tiers,
+    resolve_industries,
 )
 from wavetrend_scanner import WaveTrendCalculator
+
+
+def test_resolve_industries_merges_live_values_and_writes_cache(tmp_path):
+    cache = tmp_path / "industries.json"
+    cache.write_text(
+        json.dumps({"as_of": "2026-08-25", "industries": {"OLD": "Banks"}}),
+        encoding="utf-8",
+    )
+    result = resolve_industries(
+        {"OLD", "NEW", "MISS"},
+        str(cache),
+        "2026-08-26",
+        fetcher=lambda symbols: {"NEW": "Software"},
+    )
+    assert result == {"OLD": "Banks", "NEW": "Software", "MISS": "Unclassified"}
+    saved = json.loads(cache.read_text(encoding="utf-8"))
+    assert saved["as_of"] == "2026-08-26"
+    assert saved["industries"] == {"NEW": "Software", "OLD": "Banks"}
+    assert not (tmp_path / "industries.json.tmp").exists()
+
+
+def test_resolve_industries_uses_cache_when_live_fetch_fails(tmp_path):
+    cache = tmp_path / "industries.json"
+    cache.write_text(
+        json.dumps({"as_of": "2026-08-25", "industries": {"AAA": "Steel"}}),
+        encoding="utf-8",
+    )
+
+    def fail(_symbols):
+        raise RuntimeError("TradingView unavailable")
+
+    assert resolve_industries({"AAA", "BBB"}, str(cache), "2026-08-26", fail) == {
+        "AAA": "Steel",
+        "BBB": "Unclassified",
+    }
 
 UNION_MD_FRESH = """> disclaimer text
 # NSE EMA55 Cross Watchlist -- 2026-08-20
