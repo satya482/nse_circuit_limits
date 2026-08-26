@@ -9,6 +9,14 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-26 by Codex, Union Watchlist Chart Dashboard signal integration:
+
+- `union_chart_dashboard.py` renders historical PPV, WaveTrend bull/bear, and Satya EMA two-inside-bar coil annotations; it defaults to TradingView-industry grouping and supports current-day highest/lowest flat sorts with a local industry-cache fallback.
+- The dashboard defaults to its fixed six-month view, with page-level Interactive, EMA, and default-off Volume controls; its grid adapts from one phone column through tablet to auto-fit desktop while page scrolling remains available over charts.
+- Verification: 36/36 focused union-dashboard tests, 33/33 related WaveTrend tests, and 478/478 full-suite tests passed on 2026-08-26 (five pre-existing pandas FutureWarnings in breadth-monitor tests). `git diff --check` is recorded below after the final documentation and artifact checks.
+- Live dashboard generation was not run against upstream scanners: `ema55_cross_scans/ema55_cross_scans.md` is dated 2026-08-25 while the run date is 2026-08-26. `python union_chart_dashboard.py` issued its established stale-input `SKIP` and preserved the existing artifact rather than publishing stale data. The existing `dashboard/union_charts.html` was 10,802,959 bytes at 2026-08-26 13:45 IST and carries the 2026-08-25 title date.
+- Industry status for this handoff is not refreshed live because stale union input exits before OHLC/industry lookup. Static generation and deterministic tests cover the cache fallback. Manual browser/device checks remain pending: phone/tablet/desktop layout and scroll behavior, interactive pan/pinch, fixed-mode reset/future slots, reorder persistence, EMA/volume visibility, and visual signal/coil rendering.
+
 Updated 2026-08-24 by Codex, five-source EMA55 union watchlist:
 
 - `ema55_cross_scanner.py` now reads the complete qualifying list from `rs_weekly_scans/rs_weekly_ema9_scans.md` as a fifth equal confluence source alongside EMA25 ZL, EMA55 Cross, Minervini Trend Template, and Trend Scanner.
