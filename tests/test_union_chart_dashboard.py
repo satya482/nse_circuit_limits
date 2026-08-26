@@ -3,7 +3,15 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from union_chart_dashboard import parse_union_tiers, load_todays_union
+from union_chart_dashboard import (
+    compute_coil_boxes,
+    compute_pocket_pivot_flags,
+    compute_signal_kinds,
+    compute_wavetrend_kinds,
+    load_todays_union,
+    parse_union_tiers,
+)
+from wavetrend_scanner import WaveTrendCalculator
 
 UNION_MD_FRESH = """> disclaimer text
 # NSE EMA55 Cross Watchlist -- 2026-08-20
@@ -259,3 +267,88 @@ def test_main_does_not_clobber_existing_dashboard_when_ohlc_missing(tmp_path, mo
     ucd.main()
 
     assert output_path.read_text(encoding="utf-8") == "PREVIOUS GOOD DASHBOARD"
+
+
+def _ohlcv(closes, volumes, highs=None, lows=None):
+    n = len(closes)
+    highs = highs or [c + 1.0 for c in closes]
+    lows = lows or [c - 1.0 for c in closes]
+    return pd.DataFrame({
+        "date": pd.date_range("2026-01-01", periods=n, freq="D"),
+        "open": closes,
+        "high": highs,
+        "low": lows,
+        "close": closes,
+        "volume": volumes,
+    })
+
+
+def test_pocket_pivot_uses_most_recent_ten_down_days_not_ten_bars():
+    closes = [100.0]
+    volumes = [100.0]
+    for i in range(1, 22):
+        closes.append(closes[-1] - 1 if i % 2 else closes[-1] + 2)
+        volumes.append(100.0 + i)
+    closes.append(closes[-1] + 1)
+    volumes.append(1000.0)
+    flags = compute_pocket_pivot_flags(_ohlcv(closes, volumes))
+    assert flags[-1] is True
+
+
+def test_pocket_pivot_requires_ten_prior_down_days_and_strictly_higher_volume():
+    few = _ohlcv([10, 9, 10, 9, 10, 11], [1, 10, 1, 20, 1, 100])
+    assert compute_pocket_pivot_flags(few)[-1] is False
+
+    closes = [20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 11]
+    volumes = [1, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 100]
+    assert compute_pocket_pivot_flags(_ohlcv(closes, volumes))[-1] is False
+
+
+def test_wavetrend_kinds_match_existing_calculator_for_all_bars():
+    closes = [100 + ((i % 14) - 7) * 2 + i * 0.05 for i in range(100)]
+    df = _ohlcv(closes, [1000.0] * len(closes))
+    expected = WaveTrendCalculator().calc_from_series(
+        (df["high"] + df["low"] + df["close"]) / 3
+    )["cross_type"].map({
+        "BULL_CROSS": "wt_bull",
+        "BEAR_CROSS": "wt_bear",
+        "NONE": None,
+    }).tolist()
+    assert compute_wavetrend_kinds(df) == expected
+
+
+def test_wavetrend_kind_overrides_pocket_pivot(monkeypatch):
+    df = _ohlcv([10, 11, 12], [10, 20, 30])
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_pocket_pivot_flags",
+        lambda frame: [False, False, True],
+    )
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_wavetrend_kinds",
+        lambda frame: [None, None, "wt_bull"],
+    )
+    assert compute_signal_kinds(df) == [None, None, "wt_bull"]
+
+
+def test_coil_box_uses_mother_range_and_fifteen_bars_after_confirmation():
+    df = _ohlcv(
+        [10, 10, 10],
+        [100, 100, 100],
+        highs=[12, 11, 11.5],
+        lows=[8, 9, 8.5],
+    )
+    assert compute_coil_boxes(df) == [
+        {"start_index": 0, "end_index": 17, "high": 12.0, "low": 8.0}
+    ]
+
+
+def test_new_overlapping_coil_replaces_previous_box():
+    df = _ohlcv(
+        [10, 10, 10, 10],
+        [100] * 4,
+        highs=[12, 11.5, 11, 10.5],
+        lows=[8, 8.5, 9, 9.5],
+    )
+    assert compute_coil_boxes(df) == [
+        {"start_index": 1, "end_index": 18, "high": 11.5, "low": 8.5}
+    ]

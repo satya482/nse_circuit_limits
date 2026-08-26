@@ -19,6 +19,7 @@ from datetime import datetime
 
 from ohlc_db import load_ohlc_many
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER
+from wavetrend_scanner import WaveTrendCalculator
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 EMA55_MD = os.path.join(REPO_DIR, "ema55_cross_scans", "ema55_cross_scans.md")
@@ -29,6 +30,73 @@ LOOKBACK = 250
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
 TIER_LABEL_RE = re.compile(r"^(ALL \d+|\d+ OF \d+|1 ONLY)$")
+
+
+def compute_pocket_pivot_flags(df, pp_len: int = 10) -> list[bool]:
+    close = df["close"].astype(float).tolist()
+    volume = df["volume"].astype(float).tolist()
+    flags = [False] * len(df)
+    for i in range(1, len(df)):
+        if close[i] <= close[i - 1]:
+            continue
+        down_volumes = []
+        for j in range(i - 1, 0, -1):
+            if close[j] < close[j - 1]:
+                down_volumes.append(volume[j])
+                if len(down_volumes) == pp_len:
+                    break
+        flags[i] = (
+            len(down_volumes) == pp_len
+            and volume[i] > max(down_volumes)
+        )
+    return flags
+
+
+def compute_wavetrend_kinds(df) -> list[str | None]:
+    hlc3 = (
+        df["high"].astype(float)
+        + df["low"].astype(float)
+        + df["close"].astype(float)
+    ) / 3
+    cross_type = WaveTrendCalculator().calc_from_series(hlc3)["cross_type"]
+    mapping = {"BULL_CROSS": "wt_bull", "BEAR_CROSS": "wt_bear", "NONE": None}
+    return cross_type.map(mapping).tolist()
+
+
+def compute_signal_kinds(df) -> list[str | None]:
+    kinds = ["ppv" if flag else None for flag in compute_pocket_pivot_flags(df)]
+    for i, wt_kind in enumerate(compute_wavetrend_kinds(df)):
+        if wt_kind is not None:
+            kinds[i] = wt_kind
+    return kinds
+
+
+def compute_coil_boxes(
+    df,
+    min_inside: int = 2,
+    extend_bars: int = 15,
+) -> list[dict]:
+    high = df["high"].astype(float).tolist()
+    low = df["low"].astype(float).tolist()
+    boxes = []
+    for confirm in range(min_inside, len(df)):
+        mother = confirm - min_inside
+        contained = all(
+            high[i] <= high[mother] and low[i] >= low[mother]
+            for i in range(mother + 1, confirm + 1)
+        )
+        if not contained:
+            continue
+        box = {
+            "start_index": mother,
+            "end_index": confirm + extend_bars,
+            "high": high[mother],
+            "low": low[mother],
+        }
+        if boxes and box["start_index"] <= boxes[-1]["end_index"]:
+            boxes.pop()
+        boxes.append(box)
+    return boxes
 
 
 def parse_union_tiers(md_text: str) -> dict[str, str]:
