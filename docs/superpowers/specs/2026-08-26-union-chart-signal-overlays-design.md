@@ -118,11 +118,18 @@ or other indicator may add a label to a price candle or the price scale.
 
 ## Price and Volume Separation
 
-Volume must never cover price candles, EMA lines, or mini-coil boxes. Give the
-price scale a `bottom` margin of `0.25`. Give the overlay volume scale a `top`
-margin of `0.78` and a `bottom` margin of `0.00`. This reserves 22 percent for
-volume and leaves a three-percent gap between the price and volume regions.
-The two regions remain visually aligned on the same time axis.
+Add a page-level flip switch for volume visibility. Volume is hidden by default
+because Pocket Pivot candles already expose the relevant volume signals. Pocket
+Pivot detection and repainting remain active when the histogram is hidden.
+
+When volume is hidden, remove its series from view and give the price scale a
+`bottom` margin of `0.05`, allowing price to use almost the complete chart.
+When volume is enabled, it must never cover price candles, EMA lines, or
+mini-coil boxes. Give the price scale a `bottom` margin of `0.25`; give the
+overlay volume scale a `top` margin of `0.78` and a `bottom` margin of `0.00`.
+This reserves 22 percent for volume and leaves a three-percent gap between the
+price and volume regions. The two regions remain visually aligned on the same
+time axis.
 
 ## Responsive Layout and Touch Behavior
 
@@ -155,6 +162,7 @@ dashboard containing hundreds of symbols.
 The control bar remains available while scrolling and wraps or collapses into
 a compact arrangement at narrow widths. It retains symbol/tier filtering,
 up/down candle color controls, EMA periods, and the new EMA visibility switch.
+It also includes the volume visibility flip switch, initially off.
 
 ## Failure Handling and Output Integrity
 
@@ -182,7 +190,9 @@ Add focused Python tests for:
 - Annotation serialization into chart records.
 - Retaining 250 bars while configuring the initial six-calendar-month viewport.
 - EMA colors, hidden last-value/price-line labels, and the visibility switch.
-- Price/volume scale separation.
+- Volume hidden by default, its flip switch, Pocket Pivot independence from
+  histogram visibility, price expansion while hidden, and price/volume scale
+  separation while visible.
 - Responsive auto-fit grid and touch-option configuration.
 - Existing stale-input, no-OHLC, atomic-write, and disclaimer safeguards.
 
@@ -197,7 +207,8 @@ Verification sequence:
    scripts.
 6. Manually test phone, tablet portrait, tablet landscape/split-screen, and
    desktop widths, including vertical scrolling, horizontal panning, pinch
-   zoom, orientation reflow, EMA switching, and volume separation.
+   zoom, orientation reflow, EMA switching, default-hidden volume, volume
+   switching, price expansion, and volume separation.
 7. Run `git diff --check` before commit or publish.
 
 ## Files Expected to Change During Implementation
