@@ -639,7 +639,10 @@ def main() -> None:
     industries = resolve_industries(tiers.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(tiers.keys()), lookback=LOOKBACK)
     records, skipped = build_chart_data(ohlc_map, tiers, industries=industries)
-    print(f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped (< {MIN_BARS} bars)")
+    print(
+        f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped "
+        f"(insufficient OHLCV or annotation failure)"
+    )
 
     if tiers and not records:
         print("[union_chart_dashboard] SKIP: 0 symbols charted (OHLC data unavailable) -- not overwriting existing dashboard")
