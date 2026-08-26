@@ -16,19 +16,162 @@ import json
 import os
 import re
 from datetime import datetime
+from html import escape as _escape
+
+import pandas as pd
 
 from ohlc_db import load_ohlc_many
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER
+from wavetrend_scanner import WaveTrendCalculator
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 EMA55_MD = os.path.join(REPO_DIR, "ema55_cross_scans", "ema55_cross_scans.md")
 OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "union_charts.html")
+INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
 LOOKBACK = 250
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
 TIER_LABEL_RE = re.compile(r"^(ALL \d+|\d+ OF \d+|1 ONLY)$")
+
+
+def fetch_tradingview_industries(symbols: set[str]) -> dict[str, str]:
+    from tradingview_screener import Query, col
+
+    _, df = (
+        Query()
+        .set_markets("india")
+        .select("name", "industry")
+        .where(
+            col("exchange") == "NSE",
+            col("type") == "stock",
+            col("typespecs").has(["common"]),
+        )
+        .limit(5000)
+        .get_scanner_data()
+    )
+    result = {}
+    for row in df.to_dict("records"):
+        raw_symbol = row.get("name")
+        raw_industry = row.get("industry")
+        if pd.isna(raw_symbol) or pd.isna(raw_industry):
+            continue
+        symbol = str(raw_symbol).strip()
+        industry = str(raw_industry).strip()
+        if symbol in symbols and industry:
+            result[symbol] = industry
+    return result
+
+
+def resolve_industries(symbols, cache_path, as_of, fetcher=fetch_tradingview_industries):
+    cached = {}
+    try:
+        with open(cache_path, encoding="utf-8") as fh:
+            payload = json.load(fh)
+        raw_cached = payload.get("industries", {}) if isinstance(payload, dict) else {}
+        if isinstance(raw_cached, dict):
+            cached = {
+                key.strip(): value.strip()
+                for key, value in raw_cached.items()
+                if isinstance(key, str)
+                and key.strip()
+                and isinstance(value, str)
+                and value.strip()
+            }
+    except (FileNotFoundError, OSError, ValueError, TypeError):
+        cached = {}
+    try:
+        live = {
+            key.strip(): value.strip()
+            for key, value in fetcher(set(symbols)).items()
+            if isinstance(key, str)
+            and key.strip()
+            and isinstance(value, str)
+            and value.strip()
+        }
+        if not live:
+            raise ValueError("TradingView returned no usable industry classifications")
+        merged = {**cached, **live}
+        cache_dir = os.path.dirname(cache_path)
+        if cache_dir:
+            os.makedirs(cache_dir, exist_ok=True)
+        tmp = cache_path + ".tmp"
+        with open(tmp, "w", encoding="utf-8", newline="\n") as fh:
+            json.dump({"as_of": as_of, "industries": dict(sorted(merged.items()))}, fh)
+            fh.write("\n")
+        os.replace(tmp, cache_path)
+        cached = merged
+    except Exception as exc:
+        print(f"[union_chart_dashboard] industry refresh fallback: {exc}")
+    return {symbol: cached.get(symbol, "Unclassified") for symbol in sorted(symbols)}
+
+
+def compute_pocket_pivot_flags(df, pp_len: int = 10) -> list[bool]:
+    close = df["close"].astype(float).tolist()
+    volume = df["volume"].astype(float).tolist()
+    flags = [False] * len(df)
+    for i in range(1, len(df)):
+        if close[i] <= close[i - 1]:
+            continue
+        down_volumes = []
+        for j in range(i - 1, 0, -1):
+            if close[j] < close[j - 1]:
+                down_volumes.append(volume[j])
+                if len(down_volumes) == pp_len:
+                    break
+        flags[i] = (
+            len(down_volumes) == pp_len
+            and volume[i] > max(down_volumes)
+        )
+    return flags
+
+
+def compute_wavetrend_kinds(df) -> list[str | None]:
+    hlc3 = (
+        df["high"].astype(float)
+        + df["low"].astype(float)
+        + df["close"].astype(float)
+    ) / 3
+    cross_type = WaveTrendCalculator().calc_from_series(hlc3)["cross_type"]
+    mapping = {"BULL_CROSS": "wt_bull", "BEAR_CROSS": "wt_bear", "NONE": None}
+    return cross_type.map(mapping).tolist()
+
+
+def compute_signal_kinds(df) -> list[str | None]:
+    kinds = ["ppv" if flag else None for flag in compute_pocket_pivot_flags(df)]
+    for i, wt_kind in enumerate(compute_wavetrend_kinds(df)):
+        if wt_kind is not None:
+            kinds[i] = wt_kind
+    return kinds
+
+
+def compute_coil_boxes(
+    df,
+    min_inside: int = 2,
+    extend_bars: int = 15,
+) -> list[dict]:
+    high = df["high"].astype(float).tolist()
+    low = df["low"].astype(float).tolist()
+    boxes = []
+    for confirm in range(min_inside, len(df)):
+        mother = confirm - min_inside
+        contained = all(
+            high[i] <= high[mother] and low[i] >= low[mother]
+            for i in range(mother + 1, confirm + 1)
+        )
+        if not contained:
+            continue
+        box = {
+            "start_index": mother,
+            "end_index": confirm + extend_bars,
+            "high": high[mother],
+            "low": low[mother],
+        }
+        if boxes and box["start_index"] <= boxes[-1]["end_index"]:
+            boxes.pop()
+        boxes.append(box)
+    return boxes
 
 
 def parse_union_tiers(md_text: str) -> dict[str, str]:
@@ -71,9 +214,15 @@ def load_todays_union(md_path: str, today: str) -> tuple[dict[str, str] | None, 
     return tiers, None
 
 
-def build_chart_data(ohlc_map: dict, tiers: dict[str, str], min_bars: int = MIN_BARS) -> tuple[list[dict], int]:
+def build_chart_data(
+    ohlc_map: dict,
+    tiers: dict[str, str],
+    industries: dict[str, str] | None = None,
+    min_bars: int = MIN_BARS,
+) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
     Skips symbols missing from ohlc_map or with fewer than min_bars rows."""
+    industries = industries or {}
     records = []
     skipped = 0
     for symbol, tier in sorted(tiers.items()):
@@ -81,26 +230,97 @@ def build_chart_data(ohlc_map: dict, tiers: dict[str, str], min_bars: int = MIN_
         if df is None or len(df) < min_bars:
             skipped += 1
             continue
-        bars = [
-            [
-                row.date.strftime("%Y-%m-%d"),
-                float(row.open),
-                float(row.high),
-                float(row.low),
-                float(row.close),
-                float(row.volume),
+        try:
+            bars = [
+                [
+                    row.date.strftime("%Y-%m-%d"),
+                    float(row.open),
+                    float(row.high),
+                    float(row.low),
+                    float(row.close),
+                    float(row.volume),
+                ]
+                for row in df.itertuples(index=False)
             ]
-            for row in df.itertuples(index=False)
-        ]
-        records.append({"symbol": symbol, "tier": tier, "bars": bars})
+            previous_close = bars[-2][4]
+            day_change = (bars[-1][4] / previous_close - 1) * 100
+            records.append({
+                "symbol": symbol,
+                "tier": tier,
+                "industry": industries.get(symbol, "Unclassified"),
+                "day_change": day_change,
+                "bars": bars,
+                "signals": compute_signal_kinds(df),
+                "coil_boxes": compute_coil_boxes(df),
+            })
+        except Exception as exc:
+            skipped += 1
+            print(f"[union_chart_dashboard] skip {symbol}: annotation failure: {exc}")
     return records, skipped
 
 
 _JS_TEMPLATE = """
 const CHART_DATA = __DATA_JSON__;
 const chartsBySymbol = {};
-const dataBySymbol = {};
-CHART_DATA.forEach(function(r) { dataBySymbol[r.symbol] = r.bars; });
+const recordBySymbol = {};
+const SIGNAL_COLORS = { ppv: "#2962ff", wt_bull: "#ffffff", wt_bear: "#fdd835" };
+const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
+const uiState = { emaVisible: true, volumeVisible: false, interactive: false };
+CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
+
+function fixedLogicalRange(record) {
+  const last = record.bars[record.bars.length - 1][0];
+  const cutoffText = sixMonthCutoff(last);
+  const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
+  return {
+    from: firstIndex >= 0 ? firstIndex : 0,
+    to: record.bars.length - 1 + 15,
+  };
+}
+
+function sixMonthCutoff(last) {
+  const current = new Date(last + "T00:00:00Z");
+  const sourceDay = current.getUTCDate();
+  const targetMonthIndex = current.getUTCMonth() - 6;
+  const targetYear = current.getUTCFullYear() + Math.floor(targetMonthIndex / 12);
+  const targetMonth = ((targetMonthIndex % 12) + 12) % 12;
+  const lastDay = new Date(Date.UTC(targetYear, targetMonth + 1, 0)).getUTCDate();
+  return new Date(
+    Date.UTC(targetYear, targetMonth, Math.min(sourceDay, lastDay))
+  ).toISOString().slice(0, 10);
+}
+
+function applyChartMode(entry) {
+  entry.chart.applyOptions({
+    handleScroll: {
+      mouseWheel: false,
+      pressedMouseMove: uiState.interactive,
+      horzTouchDrag: uiState.interactive,
+      vertTouchDrag: false,
+    },
+    handleScale: {
+      axisPressedMouseMove: false,
+      mouseWheel: false,
+      pinch: uiState.interactive,
+    },
+  });
+  if (!uiState.interactive) {
+    entry.chart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
+  }
+}
+
+function candleData(record) {
+  return record.bars.map(function(b, i) {
+    const point = { time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] };
+    const color = SIGNAL_COLORS[(record.signals || [])[i]];
+    if (color) {
+      point.color = color;
+      point.borderColor = color;
+      point.wickColor = color;
+    }
+    return point;
+  });
+}
 
 function computeEMA(closes, period) {
   const k = 2 / (period + 1);
@@ -131,12 +351,63 @@ function emaLineData(bars, closes, period) {
   }).filter(Boolean);
 }
 
+function addEmaSeries(entry, periods) {
+  if (!uiState.emaVisible) return [];
+  const closes = entry.record.bars.map(function(b) { return b[4]; });
+  return periods.map(function(period, index) {
+    const line = entry.chart.addLineSeries({
+      color: EMA_COLORS[index % EMA_COLORS.length],
+      lineWidth: 1,
+      lastValueVisible: false,
+      priceLineVisible: false,
+    });
+    line.setData(emaLineData(entry.record.bars, closes, period));
+    return line;
+  });
+}
+
+function rebuildEmas(entry) {
+  entry.emaSeries.forEach(function(line) { entry.chart.removeSeries(line); });
+  entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+}
+
+function applyVolumeState(entry) {
+  entry.volumeSeries.applyOptions({ visible: uiState.volumeVisible });
+  entry.chart.priceScale("right").applyOptions({
+    scaleMargins: uiState.volumeVisible
+      ? { top: 0.05, bottom: 0.25 }
+      : { top: 0.05, bottom: 0.05 },
+  });
+  entry.chart.priceScale("").applyOptions({
+    scaleMargins: { top: 0.78, bottom: 0.00 },
+  });
+}
+
+function redrawCoils(entry) {
+  entry.coilLayer.replaceChildren();
+  (entry.record.coil_boxes || []).forEach(function(box) {
+    const left = entry.chart.timeScale().logicalToCoordinate(box.start_index);
+    const right = entry.chart.timeScale().logicalToCoordinate(box.end_index);
+    const top = entry.candleSeries.priceToCoordinate(box.high);
+    const bottom = entry.candleSeries.priceToCoordinate(box.low);
+    if ([left, right, top, bottom].some(function(v) { return v === null; })) return;
+    const rect = document.createElement("div");
+    rect.className = "coil-box";
+    rect.style.left = Math.min(left, right) + "px";
+    rect.style.width = Math.abs(right - left) + "px";
+    rect.style.top = Math.min(top, bottom) + "px";
+    rect.style.height = Math.abs(bottom - top) + "px";
+    entry.coilLayer.appendChild(rect);
+  });
+}
+
 function buildChart(symbol) {
   const el = document.getElementById('chart-' + symbol);
   if (!el || chartsBySymbol[symbol]) return;
-  const bars = dataBySymbol[symbol];
+  const record = recordBySymbol[symbol];
+  const bars = record.bars;
   const chart = LightweightCharts.createChart(el, {
-    height: 220,
+    height: el.clientHeight,
     layout: { background: { color: '#161b22' }, textColor: '#8b949e' },
     grid: { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
   });
@@ -146,52 +417,114 @@ function buildChart(symbol) {
     upColor: upColor, downColor: downColor, borderVisible: false,
     wickUpColor: upColor, wickDownColor: downColor,
   });
-  candleSeries.setData(bars.map(function(b) {
-    return { time: b[0], open: b[1], high: b[2], low: b[3], close: b[4] };
-  }));
+  candleSeries.setData(candleData(record));
   const volumeSeries = chart.addHistogramSeries({
     priceFormat: { type: 'volume' }, priceScaleId: '', color: '#30363d',
   });
   volumeSeries.setData(bars.map(function(b) { return { time: b[0], value: b[5] }; }));
-  const closes = bars.map(function(b) { return b[4]; });
-  const emaSeries = getEmaPeriods().map(function(period) {
-    const line = chart.addLineSeries({ lineWidth: 1 });
-    line.setData(emaLineData(bars, closes, period));
-    return line;
-  });
-  chartsBySymbol[symbol] = { chart: chart, candleSeries: candleSeries, volumeSeries: volumeSeries, emaSeries: emaSeries };
+  const entry = {
+    chart: chart,
+    candleSeries: candleSeries,
+    volumeSeries: volumeSeries,
+    emaSeries: [],
+    coilLayer: el.parentElement.querySelector('.coil-layer'),
+    record: record,
+  };
+  chartsBySymbol[symbol] = entry;
+  entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+  applyVolumeState(entry);
+  redrawCoils(entry);
+  chart.timeScale().subscribeVisibleLogicalRangeChange(function() { redrawCoils(entry); });
+  new ResizeObserver(function() {
+    chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
+    redrawCoils(entry);
+  }).observe(el);
+  applyChartMode(entry);
 }
 
 function applyControls() {
   const upColor = document.getElementById('upColor').value;
   const downColor = document.getElementById('downColor').value;
-  const periods = getEmaPeriods();
   Object.keys(chartsBySymbol).forEach(function(symbol) {
     const entry = chartsBySymbol[symbol];
     entry.candleSeries.applyOptions({
       upColor: upColor, downColor: downColor, wickUpColor: upColor, wickDownColor: downColor,
     });
-    entry.emaSeries.forEach(function(line) { entry.chart.removeSeries(line); });
-    const bars = dataBySymbol[symbol];
-    const closes = bars.map(function(b) { return b[4]; });
-    entry.emaSeries = periods.map(function(period) {
-      const line = entry.chart.addLineSeries({ lineWidth: 1 });
-      line.setData(emaLineData(bars, closes, period));
-      return line;
-    });
+    rebuildEmas(entry);
+    redrawCoils(entry);
   });
 }
 
 document.getElementById('upColor').addEventListener('input', applyControls);
 document.getElementById('downColor').addEventListener('input', applyControls);
 document.getElementById('emaPeriods').addEventListener('change', applyControls);
-
-document.getElementById('q').addEventListener('input', function(e) {
-  const q = e.target.value.toLowerCase();
-  document.querySelectorAll('#grid .card').forEach(function(c) {
-    c.style.display = c.dataset.q.toLowerCase().indexOf(q) !== -1 ? '' : 'none';
+document.getElementById('emaVisible').addEventListener('change', function(e) {
+  uiState.emaVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildEmas(entry);
+    redrawCoils(entry);
   });
 });
+document.getElementById('volumeVisible').addEventListener('change', function(e) {
+  uiState.volumeVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    applyVolumeState(entry);
+    redrawCoils(entry);
+  });
+});
+document.getElementById('chartMode').addEventListener('change', function(e) {
+  uiState.interactive = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    applyChartMode(chartsBySymbol[symbol]);
+  });
+});
+
+function cardCompare(a, b, direction) {
+  const delta = Number(a.dataset.dayChange) - Number(b.dataset.dayChange);
+  if (delta !== 0) return direction * delta;
+  return a.dataset.symbol.localeCompare(b.dataset.symbol);
+}
+
+function applySortAndFilter() {
+  const mode = document.getElementById("sortMode").value;
+  const query = document.getElementById("q").value.toLowerCase();
+  const cards = Array.from(document.querySelectorAll("#grid .card"));
+  const fragment = document.createDocumentFragment();
+  document.querySelectorAll("#grid .industry-heading").forEach(function(h) { h.remove(); });
+  cards.forEach(function(card) {
+    card.hidden = card.dataset.q.toLowerCase().indexOf(query) === -1;
+  });
+  if (mode === "industry") {
+    const groups = {};
+    cards.forEach(function(card) {
+      (groups[card.dataset.industry] ||= []).push(card);
+    });
+    Object.keys(groups).sort(function(a, b) {
+      if (a === "Unclassified") return 1;
+      if (b === "Unclassified") return -1;
+      return a.localeCompare(b);
+    }).forEach(function(industry) {
+      const heading = document.createElement("h2");
+      heading.className = "industry-heading";
+      heading.textContent = industry;
+      const groupCards = groups[industry].sort(function(a, b) { return cardCompare(a, b, -1); });
+      heading.hidden = groupCards.every(function(card) { return card.hidden; });
+      fragment.appendChild(heading);
+      groupCards.forEach(function(card) { fragment.appendChild(card); });
+    });
+  } else {
+    const direction = mode === "day-desc" ? -1 : 1;
+    cards.sort(function(a, b) { return cardCompare(a, b, direction); })
+      .forEach(function(card) { fragment.appendChild(card); });
+  }
+  document.getElementById("grid").appendChild(fragment);
+}
+
+document.getElementById('sortMode').addEventListener('change', applySortAndFilter);
+document.getElementById('q').addEventListener('input', applySortAndFilter);
+applySortAndFilter();
 
 const observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
@@ -207,18 +540,32 @@ document.querySelectorAll('#grid .card').forEach(function(c) { observer.observe(
 
 
 def build_html(records: list[dict], as_of: str) -> str:
-    data_json = json.dumps(records)
+    data_json = (
+        json.dumps(records)
+        .replace("&", r"\u0026")
+        .replace("<", r"\u003c")
+        .replace(">", r"\u003e")
+    )
     js = _JS_TEMPLATE.replace("__DATA_JSON__", data_json)
 
     if records:
-        cards = "\n".join(
-            f'<div class="card" data-q="{r["symbol"]} {r["tier"]}" data-symbol="{r["symbol"]}">'
-            f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{r["symbol"]}" '
-            f'target="_blank">{r["symbol"]}</a><span class="tier">{r["tier"]}</span></div>'
-            f'<div class="chart" id="chart-{r["symbol"]}"></div>'
-            f"</div>"
-            for r in records
-        )
+        cards = []
+        for r in records:
+            change = float(r["day_change"])
+            change_class = "gain" if change > 0 else "loss" if change < 0 else "flat"
+            change_text = f"{change:+.2f}%" if change else "0.00%"
+            cards.append(
+                f'<div class="card" data-q="{_escape(r["symbol"])} {_escape(r["tier"])}" '
+                f'data-symbol="{_escape(r["symbol"])}" '
+                f'data-industry="{_escape(r["industry"])}" data-day-change="{change}">'
+                f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{_escape(r["symbol"])}" '
+                f'target="_blank">{_escape(r["symbol"])}</a>'
+                f'<span class="day-change {change_class}">{change_text}</span>'
+                f'<span class="tier">{_escape(r["tier"])}</span></div>'
+                f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
+                f'<div class="coil-layer"></div></div></div>'
+            )
+        cards = "\n".join(cards)
     else:
         cards = '<p class="empty">No signals.</p>'
 
@@ -230,17 +577,30 @@ def build_html(records: list[dict], as_of: str) -> str:
 :root{{color-scheme:dark}}
 body{{background:#0d1117;color:#e6edf3;font-family:system-ui,sans-serif;margin:0;padding:12px}}
 h1{{font-size:1.1rem}}
-#controls{{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;margin:8px 0}}
+#controls{{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;margin:8px 0}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
-#grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:10px}}
+#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:10px}}
+.industry-heading{{grid-column:1/-1;margin:14px 0 0}}
 .card{{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px}}
 .hdr{{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}}
 .hdr a{{color:#58a6ff;text-decoration:none}}
 .tier{{font-size:.7rem;color:#8b949e;border:1px solid #30363d;border-radius:4px;padding:1px 6px}}
-.chart{{height:220px}}
+.day-change{{font-size:.8rem;margin-left:auto;margin-right:8px}}
+.day-change.gain{{color:#3fb950}}.day-change.loss{{color:#f85149}}.day-change.flat{{color:#8b949e}}
+.switch-row{{cursor:pointer}}
+.switch-row input{{position:absolute;opacity:0}}
+.switch{{width:30px;height:16px;border-radius:10px;background:#30363d;position:relative}}
+.switch::after{{content:"";width:12px;height:12px;border-radius:50%;background:#8b949e;position:absolute;top:2px;left:2px;transition:left .15s}}
+.switch-row input:checked + .switch{{background:#238636}}
+.switch-row input:checked + .switch::after{{left:16px;background:#fff}}
+.chart-wrap{{position:relative;overflow:hidden}}
+.chart{{height:clamp(240px,42vw,320px)}}
+.coil-layer{{position:absolute;inset:0;pointer-events:none}}
+.coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .empty{{color:#8b949e}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:290px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}
@@ -249,6 +609,14 @@ h1{{font-size:1.1rem}}
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
   <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
+  <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible" checked><span class="switch"></span></label>
+  <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
+  <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
+  <label>Sort <select id="sortMode">
+    <option value="industry" selected>Industry groups</option>
+    <option value="day-desc">Day change: highest first</option>
+    <option value="day-asc">Day change: lowest first</option>
+  </select></label>
 </div>
 <input id="q" placeholder="Filter by symbol / tier">
 <div id="grid">
@@ -268,9 +636,13 @@ def main() -> None:
         print(f"[union_chart_dashboard] SKIP: {err}")
         return
 
+    industries = resolve_industries(tiers.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(tiers.keys()), lookback=LOOKBACK)
-    records, skipped = build_chart_data(ohlc_map, tiers)
-    print(f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped (< {MIN_BARS} bars)")
+    records, skipped = build_chart_data(ohlc_map, tiers, industries=industries)
+    print(
+        f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped "
+        f"(insufficient OHLCV or annotation failure)"
+    )
 
     if tiers and not records:
         print("[union_chart_dashboard] SKIP: 0 symbols charted (OHLC data unavailable) -- not overwriting existing dashboard")
@@ -279,7 +651,7 @@ def main() -> None:
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
     html = build_html(records, TODAY)
     tmp_path = OUTPUT_PATH + ".tmp"
-    with open(tmp_path, "w", encoding="utf-8") as fh:
+    with open(tmp_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)
     os.replace(tmp_path, OUTPUT_PATH)
 

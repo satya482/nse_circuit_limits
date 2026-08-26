@@ -10,14 +10,14 @@ function Log($msg) {
 
 Log "=== NSE_UNION_CHART_DASHBOARD START ==="
 
-try {
-    & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\union_chart_dashboard.py 2>&1 |
-        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    Log "=== FINISHED exit=0 ==="
-} catch {
-    Log "=== ERROR: $_ ==="
-    exit 1
+& C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\union_chart_dashboard.py 2>&1 |
+    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+$pythonExit = $LASTEXITCODE
+if ($pythonExit -ne 0) {
+    Log "=== ERROR: dashboard generation FAILED (exit $pythonExit) ==="
+    exit $pythonExit
 }
+Log "=== FINISHED exit=0 ==="
 
 Log "--- Git commit+push ---"
 & git -C C:\Users\satya\nse_circuit_limits add dashboard/union_charts.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }

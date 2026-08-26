@@ -174,31 +174,18 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
 
 ### Scanner pipeline — Union Watchlist Chart Dashboard (`union_chart_dashboard.py`)
 
-Full design: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`.
+Full designs: `docs/superpowers/specs/2026-08-20-union-chart-dashboard-design.md`
+and `docs/superpowers/specs/2026-08-26-union-chart-signal-overlays-design.md`.
 
-1. Reads today's union watchlist symbols + confluence tier straight from
-   `ema55_cross_scans/ema55_cross_scans.md`'s union tv-paste block
-   (`parse_union_tiers`/`load_todays_union`) — aborts with nothing written
-   if that file is missing or not dated today (no stale publish)
-2. `load_ohlc_many(symbols, lookback=250)` — only DB entry point, per repo
-   convention; symbols with <130 bars skipped (count logged, not silent)
-3. `build_chart_data()` — OHLCV per symbol as a plain `[date,o,h,l,c,v]`
-   array, no server-side EMA (computed client-side so the live period
-   control needs no regenerate)
-4. `build_html()` — one self-contained HTML file: vendored
-   `lightweight-charts.js`, a global control bar (candle up/down color,
-   EMA periods, symbol/tier filter), and a card grid (one chart per
-   symbol) that lazy-constructs each chart via `IntersectionObserver` as
-   it scrolls into view (required at ~500 symbols to keep first paint fast)
-5. Writes `dashboard/union_charts.html`
+Operating contract:
 
-Measured daily footprint: ~7.2MB raw HTML (~2.2MB gzipped) for ~500 charted
-symbols at the default 250-bar lookback -- a deliberate tradeoff (full union
-coverage + full EMA200 warmup window) accepted knowingly, not an oversight.
-If repo growth from this becomes a problem, the cheapest lever is trimming
-`LOOKBACK` in `union_chart_dashboard.py` (though it can't drop far below the
-default EMA period of 200 without EMA lines silently going blank for shorter
-lookbacks -- `computeEMA` returns all-null before `period` bars are available).
+- Server-computed historical PPV, WaveTrend bull/bear, and Satya EMAs two-inside-bar coil annotations.
+- Default TradingView-industry grouping with current-day highest/lowest sort modes and cached industry fallback.
+- Fixed six-month view by default; page-level Interactive, EMA, and default-off volume switches.
+- Adaptive one-column phone, auto-adjusting tablet, and auto-fit desktop grid; vertical page scroll remains enabled over charts.
+
+`main()` writes only `dashboard/union_charts.html` after confirming the union report is dated today; it leaves the prior dashboard intact for stale or missing inputs. `run_union_chart_dashboard.ps1` stages only that HTML file, while `.union_chart_cache/` remains local.
+
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
@@ -434,7 +421,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `bounce_rs_scans/bounce_rs_scan_latest.md` | `run_bounce_rs_scanner.py` |
 | `footprint_scans/footprint_latest.md`, dated `.md`/`.csv` | `institutional_footprint_scanner.py` |
 | `dashboard/footprint.html` | `institutional_footprint_scanner.py` |
-| `dashboard/union_charts.html` | `union_chart_dashboard.py` |
+| `dashboard/union_charts.html` (local `.union_chart_cache/` excluded) | `union_chart_dashboard.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 
