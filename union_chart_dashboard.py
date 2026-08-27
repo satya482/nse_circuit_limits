@@ -263,7 +263,7 @@ _JS_TEMPLATE = """
 const CHART_DATA = __DATA_JSON__;
 const chartsBySymbol = {};
 const recordBySymbol = {};
-const SIGNAL_COLORS = { ppv: "#2962ff", wt_bull: "#ffffff", wt_bear: "#fdd835" };
+const SIGNAL_COLORS = { ppv: "#2962ff", wt_bull: "#76ff03", wt_bear: "#fdd835" };
 const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
 const uiState = {
   emaVisible: false,

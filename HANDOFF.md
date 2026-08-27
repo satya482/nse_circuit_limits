@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-27 by Codex, compact WaveTrend repaint colors:
+
+- Union-chart WaveTrend bull-cross candles now repaint lime `#76FF03`; bear-cross candles remain yellow `#FDD835` for stronger compact-chart separation.
+- WaveTrend calculations, WaveTrend-over-Pocket-Pivot precedence, and all other overlays are unchanged.
+- TDD evidence: the focused color contract failed against the old white bull mapping and passed after the one-line source change; all 53 union-dashboard tests and all 495 repository tests passed (five pre-existing pandas FutureWarnings).
+- The artifact received a renderer-only update. Its 2026-08-27 title, embedded-data SHA-256 `3df30913702616bc5ff1010aa43fd95d6fd4122e93dc8e4056b0e9cf2b1476bd`, 749 records, and 3,958 coil boxes are unchanged.
+
 Updated 2026-08-27 by Codex, Union Chart mobile layout and ZLEMA25 overlay:
 
 - `union_chart_dashboard.py` now starts with the configurable EMA group hidden and adds an independent, default-off `ZLEMA25` switch. ZLEMA25 uses the Satya/Pine lag-adjusted close formula (`lag = 12`) with recursive EMA seeding, a step line, white rising segments, and red flat/falling segments.

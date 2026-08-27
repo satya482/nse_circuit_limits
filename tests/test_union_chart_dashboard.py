@@ -430,7 +430,7 @@ def test_build_html_has_layer_switches_and_fixed_signal_colors():
     assert "volumeVisible: false" in html
     assert "interactive: false" in html
     assert 'ppv: "#2962ff"' in html
-    assert 'wt_bull: "#ffffff"' in html
+    assert 'wt_bull: "#76ff03"' in html
     assert 'wt_bear: "#fdd835"' in html
     assert "lastValueVisible: false" in html
     assert "priceLineVisible: false" in html
