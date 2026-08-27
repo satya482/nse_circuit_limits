@@ -68,7 +68,7 @@
 | [BLKASHYAP](https://in.tradingview.com/chart/?symbol=NSE:BLKASHYAP)<br><sub>↑CMF1d</sub> | EPC contractor building high-rise residential commercial complexes | 1w | ABOVE | 1w | +7.5% | +2.39% | 56.47 | 26w | 20%  |
 | [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF14d</sub> | Road EPC contractor, highways and railways infrastructure | 1w | ABOVE | 1w | +2.3% | -1.63% | 890.40 | 16w | 20%  |
 | [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↓CMF18d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +5.6% | +4.12% | 227.31 | 16w | 20%  |
-| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF30d · DEL95%(T-1)</sub> |  | 1w | ABOVE | 1w | +4.6% | +1.74% | 312.05 | 65w | 20%  |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↓CMF30d · DEL96%</sub> |  | 1w | ABOVE | 1w | +4.6% | +1.74% | 312.05 | 65w | 20%  |
 | [SHREDIGCEM](https://in.tradingview.com/chart/?symbol=NSE:SHREDIGCEM)<br><sub>↑CMF2d</sub> |  | 1w | ABOVE | 1w | +7.6% | +3.49% | 77.91 | 3w | 20%  |
 | [ZUARIIND](https://in.tradingview.com/chart/?symbol=NSE:ZUARIIND)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.3% | -1.83% | 270.85 | 12w | 20%  |
 | [ZUARI](https://in.tradingview.com/chart/?symbol=NSE:ZUARI)<br><sub>↓CMF30d</sub> | Fertilizer manufacturer for Indian farmers and agriculture sector | 1w | ABOVE | 1w | +2.6% | -1.48% | 230.83 | 6w | 20%  |
