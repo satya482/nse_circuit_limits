@@ -14,11 +14,13 @@ tablet, and desktop use by:
 2. enlarging chart cards so six months of candles are easier to read on tablets
    and desktops;
 3. moving the clickable symbol to the right side of each card header for easier
-   right-thumb access.
+   right-thumb access;
+4. adding an independently optional ZLEMA25 overlay matching the Satya EMAs
+   Pine calculation and direction colors.
 
 This design modifies the existing `dashboard/union_charts.html` generator. It
-does not create another dashboard, change union membership, change indicator
-calculations, or reduce the fixed six-month display range.
+does not create another dashboard, change union membership, or reduce the fixed
+six-month display range.
 
 ## Selected Approach
 
@@ -33,6 +35,9 @@ initialization and Lightweight Charts behavior.
 - Change the card header to three stable alignment zones: percentage on the
   left, tier in the center, and clickable symbol on the right.
 - Change EMA state and markup so every page load starts with EMAs off.
+- Add a separate ZLEMA25 switch that also starts off on every page load.
+- Compute ZLEMA25 client-side from the already embedded closes, avoiding any
+  increase in the OHLCV payload.
 
 The alternatives were rejected as follows:
 
@@ -150,6 +155,7 @@ Change page-level client state from EMA-visible to EMA-hidden:
 ```javascript
 const uiState = {
   emaVisible: false,
+  zlema25Visible: false,
   volumeVisible: false,
   interactive: false,
 };
@@ -170,9 +176,44 @@ Turning EMAs off removes their series and redraws the coil overlays. Volume
 remains off by default and retains its independent switch and non-overlapping
 scale margins.
 
+## Optional ZLEMA25 Overlay
+
+Add a page-level `ZLEMA25` flip switch independent of the existing `EMAs`
+switch. Render it without `checked`, and do not persist its state. Every page
+load starts with ZLEMA25 hidden regardless of the EMA switch state.
+
+Match the active Satya EMAs Pine calculation exactly for period 25:
+
+```text
+lag = floor((25 - 1) / 2) = 12
+adjusted[i] = close[i] + (close[i] - close[i - lag])
+zlema25 = EMA(adjusted, 25)
+```
+
+Values before index 12 are unavailable. The EMA accumulator starts at the
+first available adjusted value, matching Pine's recursive `ta.ema` seed, then
+uses `alpha = 2 / (25 + 1)` for subsequent values.
+
+Render ZLEMA25 as one Lightweight Charts step line with per-point direction
+color:
+
+- white (`#ffffff`) when the current value is strictly greater than the prior
+  ZLEMA25 value;
+- red (`#ff0000`) for the first available value and whenever it is flat or
+  falling;
+- line width 1;
+- `lastValueVisible: false` and `priceLineVisible: false`.
+
+Toggling ZLEMA25 must add or remove only its own series, redraw coil overlays
+through the existing Chrome-safe scheduled redraw path, and preserve the
+current Fixed/Interactive, EMA, and Volume states. Changing EMA periods or EMA
+visibility must not create, remove, or recolor ZLEMA25.
+
 ## Accessibility
 
 - Keep visible text beside every switch.
+- Keep `EMAs` and `ZLEMA25` as separately named switches so their independent
+  states are unambiguous.
 - Do not communicate percentage direction by color alone; retain the plus or
   minus sign.
 - Keep the symbol as a semantic link with its existing destination and
@@ -192,7 +233,12 @@ Update focused HTML contract tests to verify:
 - grid minimum width is 440px;
 - chart height uses the 330-400px adaptive range;
 - the phone breakpoint remains one column with 330px chart height;
-- the symbol tap target has a minimum 44px height.
+- the symbol tap target has a minimum 44px height;
+- `uiState.zlema25Visible` is `false` and its checkbox is unchecked;
+- ZLEMA25 uses lag 12, the Pine-style recursive EMA seed, step-line rendering,
+  white rising points, red flat/falling points, and hidden price labels;
+- the ZLEMA25 handler rebuilds only ZLEMA25 and schedules a coil redraw;
+- EMA changes remain independent of ZLEMA25.
 
 Retain regression coverage for:
 
@@ -204,6 +250,7 @@ Retain regression coverage for:
 - industry and daily-change sorting;
 - default-hidden volume and price/volume scale separation;
 - EMA toggling and coil redraw ordering;
+- Chrome-safe deferred coil redraw and explicit overlay stacking;
 - SEBI banner and footer presence.
 
 ## Generation and Verification
@@ -217,10 +264,11 @@ After implementation:
 4. Generate `dashboard/union_charts.html` only when the union input is dated
    today.
 5. Verify the generated page contains the new EMA default, header order, and
-   responsive CSS.
+   responsive CSS plus the independent default-off ZLEMA25 switch.
 6. Check phone, tablet portrait, tablet landscape, and desktop viewport sizes.
 7. Confirm vertical page scrolling, Fixed/Interactive behavior, sorting, EMA
-   toggling, volume separation, signal candle colors, and coil alignment.
+   toggling, ZLEMA25 toggling and colors, volume separation, signal candle
+   colors, and coil alignment.
 
 If today's union data is stale or unavailable, preserve the previous good
 dashboard rather than publishing a stale replacement.
@@ -229,6 +277,10 @@ dashboard rather than publishing a stale replacement.
 
 - Every page load begins with EMA overlays off and the EMA switch unchecked.
 - Users can enable and disable EMAs without losing chart mode or coil alignment.
+- Every page load begins with ZLEMA25 off and its independent switch unchecked.
+- Enabling ZLEMA25 renders the Satya Pine-equivalent period-25 step line in
+  white when rising and red when flat/falling, without showing price labels.
+- EMA and ZLEMA25 controls do not alter each other's state or series.
 - Adaptive cards use a 440px preferred minimum and 330-400px chart height.
 - Phones show one full-width 330px-high chart without horizontal scrolling.
 - The full six-month fixed range plus 15 blank future slots remains visible on
