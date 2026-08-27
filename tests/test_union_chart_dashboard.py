@@ -398,6 +398,30 @@ def test_build_html_ema_visibility_redraws_coils_after_rebuild():
     assert "rebuildEmas(entry);\n    redrawCoils(entry);" in ema_handler
 
 
+def test_build_html_defers_coil_redraw_until_after_chrome_layout():
+    html = build_html([], "2026-08-27")
+    scheduler = html.split("function scheduleCoilRedraw(entry) {", 1)[1].split(
+        "function buildChart(symbol)", 1
+    )[0]
+    assert scheduler.count("requestAnimationFrame") >= 2
+    assert (
+        "subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); })"
+        in html
+    )
+    resize_handler = html.split("new ResizeObserver(function() {", 1)[1].split(
+        "}).observe(el);", 1
+    )[0]
+    assert "scheduleCoilRedraw(entry);" in resize_handler
+
+
+def test_build_html_places_coil_overlay_above_chrome_chart_canvas():
+    compact = "".join(build_html([], "2026-08-27").split())
+    assert (
+        ".coil-layer{position:absolute;inset:0;z-index:2;pointer-events:none}"
+        in compact
+    )
+
+
 def test_build_html_disables_price_axis_drag_and_resizes_both_dimensions():
     html = build_html([], "2026-08-26")
     assert "axisPressedMouseMove: false" in html
@@ -406,7 +430,9 @@ def test_build_html_disables_price_axis_drag_and_resizes_both_dimensions():
     )[0]
     assert "width: el.clientWidth" in resize_handler
     assert "height: el.clientHeight" in resize_handler
-    assert resize_handler.index("chart.applyOptions") < resize_handler.index("redrawCoils(entry)")
+    assert resize_handler.index("chart.applyOptions") < resize_handler.index(
+        "scheduleCoilRedraw(entry)"
+    )
 
 
 import union_chart_dashboard as ucd

@@ -26,7 +26,7 @@ h1{font-size:1.1rem}
 .switch-row input:checked + .switch::after{left:16px;background:#fff}
 .chart-wrap{position:relative;overflow:hidden}
 .chart{height:clamp(240px,42vw,320px)}
-.coil-layer{position:absolute;inset:0;pointer-events:none}
+.coil-layer{position:absolute;inset:0;z-index:2;pointer-events:none}
 .coil-box{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}
 .empty{color:#8b949e}
 @media(max-width:600px){#grid{grid-template-columns:1fr}.chart{height:290px}}
@@ -962,6 +962,16 @@ function redrawCoils(entry) {
   });
 }
 
+function scheduleCoilRedraw(entry) {
+  if (entry.coilFrame !== null) cancelAnimationFrame(entry.coilFrame);
+  entry.coilFrame = requestAnimationFrame(function() {
+    entry.coilFrame = requestAnimationFrame(function() {
+      entry.coilFrame = null;
+      redrawCoils(entry);
+    });
+  });
+}
+
 function buildChart(symbol) {
   const el = document.getElementById('chart-' + symbol);
   if (!el || chartsBySymbol[symbol]) return;
@@ -988,17 +998,18 @@ function buildChart(symbol) {
     candleSeries: candleSeries,
     volumeSeries: volumeSeries,
     emaSeries: [],
+    coilFrame: null,
     coilLayer: el.parentElement.querySelector('.coil-layer'),
     record: record,
   };
   chartsBySymbol[symbol] = entry;
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
   applyVolumeState(entry);
-  redrawCoils(entry);
-  chart.timeScale().subscribeVisibleLogicalRangeChange(function() { redrawCoils(entry); });
+  scheduleCoilRedraw(entry);
+  chart.timeScale().subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); });
   new ResizeObserver(function() {
     chart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
-    redrawCoils(entry);
+    scheduleCoilRedraw(entry);
   }).observe(el);
   applyChartMode(entry);
 }

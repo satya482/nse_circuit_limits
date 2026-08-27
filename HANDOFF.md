@@ -2,12 +2,19 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-07-20.
+Last reviewed by Codex: 2026-08-27.
 Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-08-27 by Codex, Chrome inside-bar coil rendering fix:
+
+- `union_chart_dashboard.py` now defers coil overlays for two animation frames after initial chart creation, visible-range changes, and resizing so Chrome has settled its time and price scales before coordinate conversion.
+- The coil overlay has an explicit `z-index: 2`, keeping its high/low box above the Lightweight Charts canvases without intercepting pointer or touch input.
+- TDD evidence: both new Chrome layout/stacking contracts failed before the implementation and passed after it; all 46 focused union-dashboard tests and all 488 repository tests passed (five pre-existing pandas FutureWarnings in breadth-monitor tests). `git diff --check` passed.
+- The union report is dated 2026-08-26, so no market-data regeneration was attempted on 2026-08-27. The existing 2026-08-26 dashboard artifact received only the renderer patch and retains all 768 records and 4,056 computed coil boxes.
 
 Updated 2026-08-26 by Codex, Union Watchlist Chart Dashboard signal integration:
 
