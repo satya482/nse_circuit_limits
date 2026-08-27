@@ -1,5 +1,7 @@
 import json
 import inspect
+import shutil
+import subprocess
 import sys
 from pathlib import Path
 from types import SimpleNamespace
@@ -280,6 +282,20 @@ def test_build_html_no_records_shows_empty_state():
     assert "No signals" in html
 
 
+def _chart_record(
+    symbol="FOO", tier="ALL 5", industry="Software", day_change=2.3456
+):
+    return {
+        "symbol": symbol,
+        "tier": tier,
+        "industry": industry,
+        "day_change": day_change,
+        "bars": [["2026-08-25", 1, 2, 0.5, 1.5, 100]],
+        "signals": [None],
+        "coil_boxes": [],
+    }
+
+
 def test_build_html_embeds_symbol_data_and_cards():
     records = [{
         "symbol": "FOO", "tier": "ALL 4", "industry": "Software",
@@ -330,12 +346,50 @@ def test_build_html_renders_day_change_and_sort_metadata():
 
 
 def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
-    html = build_html([], "2026-08-26")
-    assert "repeat(auto-fit,minmax(min(100%,320px),1fr))" in html.replace(" ", "")
-    assert "vertTouchDrag: false" in html
+    html = build_html([], "2026-08-27")
+    compact = "".join(html.split())
+    assert "repeat(auto-fit,minmax(min(100%,440px),1fr))" in compact
+    assert ".chart{height:clamp(330px,38vw,400px)}" in compact
+    assert (
+        "@media(max-width:600px){#grid{grid-template-columns:1fr}"
+        ".chart{height:330px}}" in compact
+    )
+    assert "vertTouchDrag:false" in compact
     assert "setVisibleLogicalRange" in html
+    assert "fitContent(" not in html
     assert "setUTCMonth" not in html
     assert "Unclassified" in html
+
+
+def test_build_html_starts_with_emas_hidden_and_switch_unchecked():
+    html = build_html([], "2026-08-27")
+    assert "emaVisible: false" in html
+    label_start = html.index("<span>EMAs</span>")
+    input_start = html.index("<input", label_start)
+    ema_input = html[input_start : html.index(">", input_start) + 1]
+    assert "checked" not in ema_input
+    assert "localStorage" not in html
+    assert "sessionStorage" not in html
+
+
+def test_build_html_orders_change_tier_and_symbol_for_right_thumb_access():
+    html = build_html([_chart_record()], "2026-08-27")
+    header = html.split('<div class="hdr">', 1)[1].split("</div>", 1)[0]
+    assert header.index('class="day-change gain"') < header.index('class="tier"')
+    assert header.index('class="tier"') < header.index('class="symbol-link"')
+    assert 'href="https://in.tradingview.com/chart/?symbol=NSE:FOO"' in header
+    assert 'target="_blank"' in header
+
+
+def test_build_html_has_centered_header_and_44px_symbol_target():
+    compact = "".join(build_html([], "2026-08-27").split())
+    assert (
+        ".hdr{display:grid;grid-template-columns:1frauto1fr;align-items:center"
+        in compact
+    )
+    assert ".day-change{justify-self:start" in compact
+    assert ".tier{justify-self:center" in compact
+    assert ".symbol-link{justify-self:end;min-height:44px" in compact
 
 
 def test_fixed_range_clamps_month_end_six_calendar_months():
@@ -380,6 +434,79 @@ def test_build_html_has_layer_switches_and_fixed_signal_colors():
     assert 'wt_bear: "#fdd835"' in html
     assert "lastValueVisible: false" in html
     assert "priceLineVisible: false" in html
+
+
+def test_build_html_starts_with_zlema25_hidden_and_switch_unchecked():
+    html = build_html([], "2026-08-27")
+    assert "zlema25Visible: false" in html
+    label_start = html.index("<span>ZLEMA25</span>")
+    input_start = html.index("<input", label_start)
+    zlema_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="zlema25Visible"' in zlema_input
+    assert "checked" not in zlema_input
+
+
+def test_build_html_configures_zlema25_as_hidden_label_step_line():
+    html = build_html([], "2026-08-27")
+    rebuild = html.split("function rebuildZlema25(entry) {", 1)[1].split(
+        "function applyVolumeState(entry)", 1
+    )[0]
+    assert "LightweightCharts.LineType.WithSteps" in rebuild
+    assert "lineWidth: 1" in rebuild
+    assert "lastValueVisible: false" in rebuild
+    assert "priceLineVisible: false" in rebuild
+    assert "document.getElementById('zlema25Visible')" in html
+
+
+def _run_generated_js_function(html, start_marker, end_marker, expression):
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("Node.js is required for generated JavaScript parity tests")
+    function_source = start_marker + html.split(start_marker, 1)[1].split(
+        end_marker, 1
+    )[0]
+    completed = subprocess.run(
+        [
+            node,
+            "-e",
+            function_source + "\nconsole.log(JSON.stringify(" + expression + "));",
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return json.loads(completed.stdout)
+
+
+def test_generated_zlema25_matches_pine_recursive_ema_seed():
+    html = build_html([], "2026-08-27")
+    closes = list(range(1, 41))
+    values = _run_generated_js_function(
+        html,
+        "function computeZlema25(closes) {",
+        "function zlema25LineData(record)",
+        f"computeZlema25({json.dumps(closes)})",
+    )
+    assert values[:12] == [None] * 12
+    assert values[12] == pytest.approx(25.0)
+    assert values[13] == pytest.approx(25.076923076923077)
+    assert values[-1] == pytest.approx(41.38230658545096)
+
+
+def test_zlema25_toggle_is_independent_and_schedules_coil_redraw():
+    html = build_html([], "2026-08-27")
+    ema_handler = html.split(
+        "document.getElementById('emaVisible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('zlema25Visible')", 1)[0]
+    zlema_handler = html.split(
+        "document.getElementById('zlema25Visible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('volumeVisible')", 1)[0]
+    assert "rebuildZlema25" not in ema_handler
+    assert "rebuildEmas" not in zlema_handler
+    assert "rebuildZlema25(entry);" in zlema_handler
+    assert "scheduleCoilRedraw(entry);" in zlema_handler
 
 
 def test_build_html_separates_volume_and_price_scales():

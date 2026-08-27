@@ -265,7 +265,12 @@ const chartsBySymbol = {};
 const recordBySymbol = {};
 const SIGNAL_COLORS = { ppv: "#2962ff", wt_bull: "#ffffff", wt_bear: "#fdd835" };
 const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
-const uiState = { emaVisible: true, volumeVisible: false, interactive: false };
+const uiState = {
+  emaVisible: false,
+  zlema25Visible: false,
+  volumeVisible: false,
+  interactive: false,
+};
 CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
 function fixedLogicalRange(record) {
@@ -351,6 +356,36 @@ function emaLineData(bars, closes, period) {
   }).filter(Boolean);
 }
 
+function computeZlema25(closes) {
+  const period = 25;
+  const lag = Math.floor((period - 1) / 2);
+  const alpha = 2 / (period + 1);
+  const out = new Array(closes.length).fill(null);
+  let previous = null;
+  for (let i = lag; i < closes.length; i++) {
+    const adjusted = closes[i] + (closes[i] - closes[i - lag]);
+    previous = previous === null
+      ? adjusted
+      : alpha * adjusted + (1 - alpha) * previous;
+    out[i] = previous;
+  }
+  return out;
+}
+
+function zlema25LineData(record) {
+  const values = computeZlema25(record.bars.map(function(b) { return b[4]; }));
+  return record.bars.map(function(bar, index) {
+    if (values[index] === null) return null;
+    const rising = index > 0 && values[index - 1] !== null
+      && values[index] > values[index - 1];
+    return {
+      time: bar[0],
+      value: values[index],
+      color: rising ? "#ffffff" : "#ff0000",
+    };
+  }).filter(Boolean);
+}
+
 function addEmaSeries(entry, periods) {
   if (!uiState.emaVisible) return [];
   const closes = entry.record.bars.map(function(b) { return b[4]; });
@@ -369,6 +404,22 @@ function addEmaSeries(entry, periods) {
 function rebuildEmas(entry) {
   entry.emaSeries.forEach(function(line) { entry.chart.removeSeries(line); });
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+}
+
+function rebuildZlema25(entry) {
+  if (entry.zlema25Series !== null) {
+    entry.chart.removeSeries(entry.zlema25Series);
+    entry.zlema25Series = null;
+  }
+  if (!uiState.zlema25Visible) return;
+  const line = entry.chart.addLineSeries({
+    lineWidth: 1,
+    lineType: LightweightCharts.LineType.WithSteps,
+    lastValueVisible: false,
+    priceLineVisible: false,
+  });
+  line.setData(zlema25LineData(entry.record));
+  entry.zlema25Series = line;
 }
 
 function applyVolumeState(entry) {
@@ -437,12 +488,14 @@ function buildChart(symbol) {
     candleSeries: candleSeries,
     volumeSeries: volumeSeries,
     emaSeries: [],
+    zlema25Series: null,
     coilFrame: null,
     coilLayer: el.parentElement.querySelector('.coil-layer'),
     record: record,
   };
   chartsBySymbol[symbol] = entry;
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
+  rebuildZlema25(entry);
   applyVolumeState(entry);
   scheduleCoilRedraw(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); });
@@ -475,6 +528,14 @@ document.getElementById('emaVisible').addEventListener('change', function(e) {
     const entry = chartsBySymbol[symbol];
     rebuildEmas(entry);
     redrawCoils(entry);
+  });
+});
+document.getElementById('zlema25Visible').addEventListener('change', function(e) {
+  uiState.zlema25Visible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildZlema25(entry);
+    scheduleCoilRedraw(entry);
   });
 });
 document.getElementById('volumeVisible').addEventListener('change', function(e) {
@@ -569,10 +630,10 @@ def build_html(records: list[dict], as_of: str) -> str:
                 f'<div class="card" data-q="{_escape(r["symbol"])} {_escape(r["tier"])}" '
                 f'data-symbol="{_escape(r["symbol"])}" '
                 f'data-industry="{_escape(r["industry"])}" data-day-change="{change}">'
-                f'<div class="hdr"><a href="https://in.tradingview.com/chart/?symbol=NSE:{_escape(r["symbol"])}" '
-                f'target="_blank">{_escape(r["symbol"])}</a>'
-                f'<span class="day-change {change_class}">{change_text}</span>'
-                f'<span class="tier">{_escape(r["tier"])}</span></div>'
+                f'<div class="hdr"><span class="day-change {change_class}">{change_text}</span>'
+                f'<span class="tier">{_escape(r["tier"])}</span>'
+                f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol=NSE:{_escape(r["symbol"])}" '
+                f'target="_blank" rel="noopener noreferrer">{_escape(r["symbol"])}</a></div>'
                 f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
                 f'<div class="coil-layer"></div></div></div>'
             )
@@ -592,13 +653,14 @@ h1{{font-size:1.1rem}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
-#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:10px}}
+#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:10px}}
 .industry-heading{{grid-column:1/-1;margin:14px 0 0}}
 .card{{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px}}
-.hdr{{display:flex;justify-content:space-between;align-items:center;font-weight:600;margin-bottom:6px}}
-.hdr a{{color:#58a6ff;text-decoration:none}}
-.tier{{font-size:.7rem;color:#8b949e;border:1px solid #30363d;border-radius:4px;padding:1px 6px}}
-.day-change{{font-size:.8rem;margin-left:auto;margin-right:8px}}
+.hdr{{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-weight:600;margin-bottom:6px}}
+.symbol-link{{justify-self:end;min-height:44px;display:inline-flex;align-items:center;padding-left:12px;color:#58a6ff;text-decoration:none}}
+.symbol-link:focus-visible{{outline:2px solid #58a6ff;outline-offset:2px}}
+.tier{{justify-self:center;font-size:.7rem;color:#8b949e;border:1px solid #30363d;border-radius:4px;padding:1px 6px}}
+.day-change{{justify-self:start;font-size:.8rem}}
 .day-change.gain{{color:#3fb950}}.day-change.loss{{color:#f85149}}.day-change.flat{{color:#8b949e}}
 .switch-row{{cursor:pointer}}
 .switch-row input{{position:absolute;opacity:0}}
@@ -607,11 +669,11 @@ h1{{font-size:1.1rem}}
 .switch-row input:checked + .switch{{background:#238636}}
 .switch-row input:checked + .switch::after{{left:16px;background:#fff}}
 .chart-wrap{{position:relative;overflow:hidden}}
-.chart{{height:clamp(240px,42vw,320px)}}
+.chart{{height:clamp(330px,38vw,400px)}}
 .coil-layer{{position:absolute;inset:0;z-index:2;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .empty{{color:#8b949e}}
-@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:290px}}}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:330px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}
@@ -620,7 +682,8 @@ h1{{font-size:1.1rem}}
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
   <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
-  <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible" checked><span class="switch"></span></label>
+  <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible"><span class="switch"></span></label>
+  <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">

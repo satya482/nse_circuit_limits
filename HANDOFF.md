@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-27 by Codex, Union Chart mobile layout and ZLEMA25 overlay:
+
+- `union_chart_dashboard.py` now starts with the configurable EMA group hidden and adds an independent, default-off `ZLEMA25` switch. ZLEMA25 uses the Satya/Pine lag-adjusted close formula (`lag = 12`) with recursive EMA seeding, a step line, white rising segments, and red flat/falling segments.
+- Chart cards now use a 440px auto-fit minimum and a 330-400px responsive chart height. Card headers place the daily percentage at left, tier in the center, and a 44px-high TradingView symbol link at right for phone/tablet thumb access.
+- TDD evidence: eight targeted contracts failed before implementation and passed afterward; all 53 union-dashboard tests and all 495 repository tests passed (five pre-existing pandas FutureWarnings in breadth-monitor tests).
+- `ema55_cross_scans/ema55_cross_scans.md` remains dated 2026-08-26, so the generator correctly skipped a live-data refresh on 2026-08-27. The 2026-08-26 dashboard artifact received only the renderer update; its embedded data SHA-256 remains `504fdf09f307069087470c106ba32bcd6f23bbb611f2c36d363dab7ef063a74a`, with 768 records and 4,056 coil boxes.
+
 Updated 2026-08-27 by Codex, Chrome inside-bar coil rendering fix:
 
 - `union_chart_dashboard.py` now defers coil overlays for two animation frames after initial chart creation, visible-range changes, and resizing so Chrome has settled its time and price scales before coordinate conversion.
