@@ -4,9 +4,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Make union chart cards larger and easier to use across phones, tablets, and desktops, start every page load with EMAs hidden, and place the clickable symbol at the right edge of each card header.
+**Goal:** Make union chart cards larger and easier to use across phones, tablets, and desktops, start every page load with EMAs hidden, place the clickable symbol at the right edge, and add an independent Pine-parity ZLEMA25 overlay.
 
-**Architecture:** Keep `union_chart_dashboard.py` as the sole HTML generator and make only HTML-template, CSS, and initial UI-state changes. Protect the behavior with generated-HTML contract tests in `tests/test_union_chart_dashboard.py`; preserve lazy chart creation, explicit six-month logical ranges, resize-driven coil redraws, sorting, and stale-input safeguards.
+**Architecture:** Keep `union_chart_dashboard.py` as the sole HTML generator and compute ZLEMA25 client-side from the already embedded closes. Protect layout/defaults with generated-HTML contracts and execute the generated ZLEMA function with Node for golden-value parity; preserve lazy chart creation, explicit six-month logical ranges, Chrome-safe scheduled coil redraws, sorting, and stale-input safeguards.
 
 **Tech Stack:** Python 3.13, pytest, vanilla JavaScript/CSS, TradingView Lightweight Charts 4.1.3, PowerShell.
 
@@ -14,12 +14,14 @@
 
 - Modify the existing `dashboard/union_charts.html` artifact; do not create a parallel dashboard.
 - Every page load starts with EMAs off; do not persist EMA visibility in local storage, session storage, cookies, or URL parameters.
+- Add a separate ZLEMA25 switch that starts off on every page load and does not alter EMA visibility.
+- ZLEMA25 uses lag 12 and Pine's recursive EMA seed, renders as a width-1 step line, colors rising points `#ffffff` and first/flat/falling points `#ff0000`, and hides last-value and price-line labels.
 - Keep volume off by default and independent from EMA visibility.
 - Preserve the explicit six-calendar-month fixed range plus 15 blank future logical slots; never fabricate future OHLCV or call `fitContent()`.
 - Preserve vertical page scrolling over charts and automatic one/two-column tablet reflow.
 - Use a 440px preferred grid minimum, `clamp(330px, 38vw, 400px)` chart height, and a one-column 330px phone layout at 600px or below.
 - Render percentage left, tier centered, and the TradingView symbol link right; give the symbol a minimum 44px-high tap target.
-- Preserve existing EMA colors, hidden EMA price labels, volume/price scale separation, coil redraw ordering, signal candle colors, sorting, filtering, and interaction modes.
+- Preserve existing EMA colors, hidden EMA price labels, volume/price scale separation, Chrome-safe double-animation-frame coil redraw and `z-index: 2`, signal candle colors, sorting, filtering, and interaction modes.
 - Generate `dashboard/union_charts.html` only from a union report dated today; stale input must leave the previous dashboard byte-for-byte unchanged.
 - Every new or generated Markdown/HTML file must contain `SEBI registered`; continue using `SEBI_HTML_BANNER` and `SEBI_HTML_FOOTER` in the generator.
 - Preserve the user's existing `.ohlc_data/data_manifest.csv` modification and untracked `.superpowers/` directory.
@@ -29,9 +31,9 @@
 
 ## File Structure
 
-- Modify `tests/test_union_chart_dashboard.py`: generated-HTML contracts for default EMA state, header order/accessibility, and responsive CSS.
-- Modify `union_chart_dashboard.py`: initial UI state, EMA checkbox markup, card-header markup/classes, and adaptive CSS.
-- Modify `dashboard/union_charts.html` only when `ema55_cross_scans/ema55_cross_scans.md` is dated today and normal generation succeeds.
+- Modify `tests/test_union_chart_dashboard.py`: generated-HTML contracts for default EMA/ZLEMA states, header order/accessibility, responsive CSS, ZLEMA controls, and Node-executed calculation parity.
+- Modify `union_chart_dashboard.py`: initial UI state, EMA/ZLEMA controls and series, card-header markup/classes, and adaptive CSS.
+- Modify `dashboard/union_charts.html` through normal generation only when `ema55_cross_scans/ema55_cross_scans.md` is dated today. With stale input, a renderer-only artifact patch is permitted only when the embedded `CHART_DATA` bytes and displayed as-of date remain unchanged.
 - Modify `HANDOFF.md` after verification to record the completed behavior, test evidence, and whether the tracked dashboard was refreshed or preserved.
 
 ### Task 1: Add failing HTML contract tests
@@ -206,7 +208,7 @@ Run:
 python -m pytest tests/test_union_chart_dashboard.py -v --basetemp=.pytest_tmp/union-card-layout-focused
 ```
 
-Expected: all union dashboard tests pass. The previous handoff recorded 44 tests; the exact new total may be higher after adding these contracts, but there must be zero failures.
+Expected: all union dashboard tests pass. The current suite has 46 tests before the layout/ZLEMA additions; the exact new total will be higher, with zero failures.
 
 - [ ] **Step 6: Inspect the focused diff**
 
@@ -232,7 +234,209 @@ git commit --no-verify -m "feat(charts): enlarge mobile-friendly cards"
 
 Expected staged names: only `union_chart_dashboard.py` and `tests/test_union_chart_dashboard.py`.
 
-### Task 3: Verify, conditionally regenerate, and document the handoff
+### Task 3: Add the independent Pine-parity ZLEMA25 overlay
+
+**Files:**
+- Modify: `tests/test_union_chart_dashboard.py`
+- Modify: `union_chart_dashboard.py`
+
+**Interfaces:**
+- Consumes: each record's existing `bars` array and close at `bar[4]`.
+- Produces: `computeZlema25(closes) -> Array<number | null>`, `zlema25LineData(record) -> Array<{time, value, color}>`, and `rebuildZlema25(entry) -> void`.
+- Adds `uiState.zlema25Visible: boolean`, `entry.zlema25Series`, and checkbox ID `zlema25Visible`.
+
+- [ ] **Step 1: Add failing state, control, and rendering contracts**
+
+Add:
+
+```python
+def test_build_html_starts_with_zlema25_hidden_and_switch_unchecked():
+    html = build_html([], "2026-08-27")
+    assert "zlema25Visible: false" in html
+    label_start = html.index("<span>ZLEMA25</span>")
+    input_start = html.index("<input", label_start)
+    zlema_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="zlema25Visible"' in zlema_input
+    assert "checked" not in zlema_input
+
+
+def test_build_html_configures_zlema25_as_hidden_label_step_line():
+    html = build_html([], "2026-08-27")
+    rebuild = html.split("function rebuildZlema25(entry) {", 1)[1].split(
+        "function applyVolumeState(entry)", 1
+    )[0]
+    assert "LightweightCharts.LineType.WithSteps" in rebuild
+    assert "lineWidth: 1" in rebuild
+    assert "lastValueVisible: false" in rebuild
+    assert "priceLineVisible: false" in rebuild
+    assert 'document.getElementById(\'zlema25Visible\')' in html
+```
+
+- [ ] **Step 2: Add a Node-executed ZLEMA golden-value test**
+
+Add `shutil` and `subprocess` imports, then add:
+
+```python
+def _run_generated_js_function(html, start_marker, end_marker, expression):
+    node = shutil.which("node")
+    if node is None:
+        pytest.skip("Node.js is required for generated JavaScript parity tests")
+    function_source = start_marker + html.split(start_marker, 1)[1].split(
+        end_marker, 1
+    )[0]
+    completed = subprocess.run(
+        [node, "-e", function_source + "\nconsole.log(JSON.stringify(" + expression + "));"],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    return json.loads(completed.stdout)
+
+
+def test_generated_zlema25_matches_pine_recursive_ema_seed():
+    html = build_html([], "2026-08-27")
+    closes = list(range(1, 41))
+    values = _run_generated_js_function(
+        html,
+        "function computeZlema25(closes) {",
+        "function zlema25LineData(record)",
+        f"computeZlema25({json.dumps(closes)})",
+    )
+    assert values[:12] == [None] * 12
+    assert values[12] == pytest.approx(25.0)
+    assert values[13] == pytest.approx(25.076923076923077)
+    assert values[-1] == pytest.approx(41.38230658545096)
+```
+
+The last expected value is generated from the same independent recurrence: adjusted closes are `2 * close[i] - close[i - 12]`, the first adjusted value seeds the EMA, and subsequent values use alpha `1 / 13`.
+
+- [ ] **Step 3: Run the ZLEMA tests and verify intended failure**
+
+Run:
+
+```powershell
+python -m pytest tests/test_union_chart_dashboard.py -k "zlema25" -v -p no:cacheprovider --basetemp=.pytest_tmp/zlema25-red
+```
+
+Expected: failures because the ZLEMA state, switch, functions, and series do not exist; no Python syntax or Node invocation error.
+
+- [ ] **Step 4: Implement the Pine-parity calculation and colored data**
+
+Add after `emaLineData`:
+
+```javascript
+function computeZlema25(closes) {
+  const period = 25;
+  const lag = Math.floor((period - 1) / 2);
+  const alpha = 2 / (period + 1);
+  const out = new Array(closes.length).fill(null);
+  let previous = null;
+  for (let i = lag; i < closes.length; i++) {
+    const adjusted = closes[i] + (closes[i] - closes[i - lag]);
+    previous = previous === null
+      ? adjusted
+      : alpha * adjusted + (1 - alpha) * previous;
+    out[i] = previous;
+  }
+  return out;
+}
+
+function zlema25LineData(record) {
+  const values = computeZlema25(record.bars.map(function(b) { return b[4]; }));
+  return record.bars.map(function(bar, index) {
+    if (values[index] === null) return null;
+    const rising = index > 0
+      && values[index - 1] !== null
+      && values[index] > values[index - 1];
+    return {
+      time: bar[0],
+      value: values[index],
+      color: rising ? "#ffffff" : "#ff0000",
+    };
+  }).filter(Boolean);
+}
+```
+
+- [ ] **Step 5: Implement independent series lifecycle and state**
+
+Extend initial state:
+
+```javascript
+const uiState = {
+  emaVisible: false,
+  zlema25Visible: false,
+  volumeVisible: false,
+  interactive: false,
+};
+```
+
+Add before `applyVolumeState`:
+
+```javascript
+function rebuildZlema25(entry) {
+  if (entry.zlema25Series !== null) {
+    entry.chart.removeSeries(entry.zlema25Series);
+    entry.zlema25Series = null;
+  }
+  if (!uiState.zlema25Visible) return;
+  const line = entry.chart.addLineSeries({
+    lineWidth: 1,
+    lineType: LightweightCharts.LineType.WithSteps,
+    lastValueVisible: false,
+    priceLineVisible: false,
+  });
+  line.setData(zlema25LineData(entry.record));
+  entry.zlema25Series = line;
+}
+```
+
+Add `zlema25Series: null` to each chart entry and call `rebuildZlema25(entry)` once during chart creation after assigning `chartsBySymbol[symbol]`.
+
+- [ ] **Step 6: Add the independent switch and handler**
+
+Add control markup after the EMA switch:
+
+```html
+<label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
+```
+
+Add the handler after the EMA handler:
+
+```javascript
+document.getElementById('zlema25Visible').addEventListener('change', function(e) {
+  uiState.zlema25Visible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildZlema25(entry);
+    scheduleCoilRedraw(entry);
+  });
+});
+```
+
+Do not call `rebuildZlema25` from `applyControls` or the EMA handler; this preserves control independence.
+
+- [ ] **Step 7: Run ZLEMA and focused dashboard tests**
+
+Run:
+
+```powershell
+python -m pytest tests/test_union_chart_dashboard.py -k "zlema25" -v -p no:cacheprovider --basetemp=.pytest_tmp/zlema25-green
+python -m pytest tests/test_union_chart_dashboard.py -v -p no:cacheprovider --basetemp=.pytest_tmp/union-layout-zlema-focused
+```
+
+Expected: every selected and focused union-dashboard test passes, including the Node-executed golden calculation and Chrome coil regressions.
+
+- [ ] **Step 8: Commit the independent overlay**
+
+Run:
+
+```powershell
+git add -- union_chart_dashboard.py tests/test_union_chart_dashboard.py
+git diff --cached --check
+git commit --no-verify -m "feat(charts): add optional ZLEMA25"
+```
+
+### Task 4: Verify, conditionally regenerate, and document the handoff
 
 **Files:**
 - Modify: `dashboard/union_charts.html` only if today's union report is fresh.
@@ -281,7 +485,7 @@ Expected fresh case: output reports a nonzero charted count and the hash changes
 Run this only when Step 3 generated the page:
 
 ```powershell
-rg -n "emaVisible: false|id=\"emaVisible\"|min\(100%,440px\)|clamp\(330px,38vw,400px\)|class=\"symbol-link\"|SEBI registered" dashboard/union_charts.html
+rg -n "emaVisible: false|zlema25Visible: false|id=\"emaVisible\"|id=\"zlema25Visible\"|min\(100%,440px\)|clamp\(330px,38vw,400px\)|class=\"symbol-link\"|computeZlema25|LineType.WithSteps|SEBI registered" dashboard/union_charts.html
 git diff --check -- dashboard/union_charts.html
 ```
 
@@ -301,7 +505,7 @@ Open `http://localhost:8000/dashboard/union_charts.html` and check:
 - 768x1024 tablet portrait: automatic one-column layout where two 440px cards cannot fit.
 - 1024x768 tablet landscape: automatic two-column layout.
 - 1440x900 desktop: adaptive multi-column cards with chart height within 330-400px.
-- Every viewport: six months plus 15 blank future slots remain visible in Fixed mode; EMA and Volume start off; the symbol link is easy to tap and opens TradingView; enabling/disabling EMA preserves colors and coil alignment; Interactive pan/pinch and return to Fixed work; volume never covers price candles; industry/day-change sorting and filtering still work.
+- Every viewport: six months plus 15 blank future slots remain visible in Fixed mode; EMA, ZLEMA25, and Volume start off; the symbol link is easy to tap and opens TradingView; EMA20/50/200 and ZLEMA25 toggle independently; ZLEMA25 is a white-rising/red-flat-or-falling step line; toggling either overlay preserves coil alignment; Interactive pan/pinch and return to Fixed work; volume never covers price candles; industry/day-change sorting and filtering still work.
 
 Stop the server with `Ctrl+C` after the checks.
 
@@ -309,10 +513,11 @@ Stop the server with `Ctrl+C` after the checks.
 
 Add a dated entry near the top of `HANDOFF.md` with four exact bullets:
 
-- State that EMA starts hidden, cards use a 440px adaptive minimum and 330-400px height, and the header order is percentage/tier/symbol with a 44px symbol target.
+- State that EMA and ZLEMA25 start hidden, cards use a 440px adaptive minimum and 330-400px height, and the header order is percentage/tier/symbol with a 44px symbol target.
+- Record the independent ZLEMA25 switch, Pine-parity lag/seed, step-line direction colors, and hidden price labels.
 - State that fixed-range, scroll, tablet reflow, sorting, volume separation, signal candles, and coil behavior were preserved.
 - Record the exact focused and full pytest pass counts, warning count, `git diff --check` result, and each completed manual viewport check.
-- Record either the fresh report date plus generated chart count, or the stale report date plus the matching before/after SHA256 values that prove preservation.
+- Record either the fresh report date plus generated chart count, or the stale report date plus matching extracted `CHART_DATA` SHA256 values proving that a renderer-only artifact patch preserved all market data.
 
 - [ ] **Step 7: Commit only the verified handoff and optional artifact**
 
