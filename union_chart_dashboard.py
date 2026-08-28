@@ -273,6 +273,7 @@ const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
 const uiState = {
   emaVisible: false,
   zlema25Visible: false,
+  high52wVisible: false,
   volumeVisible: false,
   interactive: false,
 };
@@ -391,6 +392,24 @@ function zlema25LineData(record) {
   }).filter(Boolean);
 }
 
+const HIGH52W_PERIOD = 260; // daily bars, matches pine_scripts/52w_full_history.pine's auto-bars daily=260
+
+function computeHigh52w(highs, period) {
+  const out = new Array(highs.length).fill(null);
+  for (let i = period - 1; i < highs.length; i++) {
+    out[i] = Math.max.apply(null, highs.slice(i - period + 1, i + 1));
+  }
+  return out;
+}
+
+function high52wLineData(record) {
+  const highs = record.bars.map(function(b) { return b[2]; });
+  const values = computeHigh52w(highs, HIGH52W_PERIOD);
+  return record.bars.map(function(bar, index) {
+    return values[index] === null ? null : { time: bar[0], value: values[index] };
+  }).filter(Boolean);
+}
+
 function addEmaSeries(entry, periods) {
   if (!uiState.emaVisible) return [];
   const closes = entry.record.bars.map(function(b) { return b[4]; });
@@ -425,6 +444,23 @@ function rebuildZlema25(entry) {
   });
   line.setData(zlema25LineData(entry.record));
   entry.zlema25Series = line;
+}
+
+function rebuildHigh52w(entry) {
+  if (entry.high52wSeries !== null) {
+    entry.chart.removeSeries(entry.high52wSeries);
+    entry.high52wSeries = null;
+  }
+  if (!uiState.high52wVisible) return;
+  const line = entry.chart.addLineSeries({
+    color: "#2962ff",
+    lineWidth: 1,
+    lineType: LightweightCharts.LineType.WithSteps,
+    lastValueVisible: false,
+    priceLineVisible: false,
+  });
+  line.setData(high52wLineData(entry.record));
+  entry.high52wSeries = line;
 }
 
 function applyVolumeState(entry) {
@@ -494,6 +530,7 @@ function buildChart(symbol) {
     volumeSeries: volumeSeries,
     emaSeries: [],
     zlema25Series: null,
+    high52wSeries: null,
     coilFrame: null,
     coilLayer: el.parentElement.querySelector('.coil-layer'),
     record: record,
@@ -501,6 +538,7 @@ function buildChart(symbol) {
   chartsBySymbol[symbol] = entry;
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
   rebuildZlema25(entry);
+  rebuildHigh52w(entry);
   applyVolumeState(entry);
   scheduleCoilRedraw(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); });
@@ -540,6 +578,14 @@ document.getElementById('zlema25Visible').addEventListener('change', function(e)
   Object.keys(chartsBySymbol).forEach(function(symbol) {
     const entry = chartsBySymbol[symbol];
     rebuildZlema25(entry);
+    scheduleCoilRedraw(entry);
+  });
+});
+document.getElementById('high52wVisible').addEventListener('change', function(e) {
+  uiState.high52wVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildHigh52w(entry);
     scheduleCoilRedraw(entry);
   });
 });
@@ -701,6 +747,7 @@ h1{{font-size:1.1rem}}
   <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
   <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
+  <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">

@@ -509,6 +509,60 @@ def test_zlema25_toggle_is_independent_and_schedules_coil_redraw():
     assert "scheduleCoilRedraw(entry);" in zlema_handler
 
 
+def test_build_html_starts_with_high52w_hidden_and_switch_unchecked():
+    html = build_html([], "2026-08-27")
+    assert "high52wVisible: false" in html
+    label_start = html.index("<span>52W High</span>")
+    input_start = html.index("<input", label_start)
+    high52w_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="high52wVisible"' in high52w_input
+    assert "checked" not in high52w_input
+
+
+def test_build_html_configures_high52w_as_blue_step_line():
+    html = build_html([], "2026-08-27")
+    rebuild = html.split("function rebuildHigh52w(entry) {", 1)[1].split(
+        "function applyVolumeState(entry)", 1
+    )[0]
+    assert "LightweightCharts.LineType.WithSteps" in rebuild
+    assert "lastValueVisible: false" in rebuild
+    assert "priceLineVisible: false" in rebuild
+    assert "document.getElementById('high52wVisible')" in html
+
+
+def test_generated_high52w_matches_rolling_max_of_high():
+    html = build_html([], "2026-08-27")
+    highs = [10, 20, 15, 12, 11, 25, 24]
+    values = _run_generated_js_function(
+        html,
+        "function computeHigh52w(highs, period) {",
+        "function high52wLineData(record)",
+        f"computeHigh52w({json.dumps(highs)}, 3)",
+    )
+    assert values[:2] == [None, None]
+    assert values[2] == 20
+    assert values[3] == 20
+    assert values[4] == 15
+    assert values[5] == 25
+    assert values[6] == 25
+
+
+def test_high52w_toggle_is_independent_and_schedules_coil_redraw():
+    html = build_html([], "2026-08-27")
+    zlema_handler = html.split(
+        "document.getElementById('zlema25Visible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('high52wVisible')", 1)[0]
+    high52w_handler = html.split(
+        "document.getElementById('high52wVisible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('volumeVisible')", 1)[0]
+    assert "rebuildHigh52w" not in zlema_handler
+    assert "rebuildZlema25" not in high52w_handler
+    assert "rebuildHigh52w(entry);" in high52w_handler
+    assert "scheduleCoilRedraw(entry);" in high52w_handler
+
+
 def test_build_html_separates_volume_and_price_scales():
     html = build_html([], "2026-08-26")
     assert "bottom: 0.05" in html
