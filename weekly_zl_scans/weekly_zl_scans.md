@@ -64,7 +64,7 @@
 | [GKENERGY](https://in.tradingview.com/chart/?symbol=NSE:GKENERGY)<br><sub>↓CMF30d</sub> | Solar agricultural pump systems EPC services PM-KUSUM | 1w | ABOVE | 1w | +12.3% | -0.85% | 138.46 | 2w | 10% 🟩 |
 | [PENIND](https://in.tradingview.com/chart/?symbol=NSE:PENIND)<br><sub>↓CMF4d</sub> | Engineering components, PEB systems, hydraulics for infrastructure | 1w | ABOVE | 1w | +2.2% | +0.86% | 162.28 | 6w | 20%  |
 | [HINDOILEXP](https://in.tradingview.com/chart/?symbol=NSE:HINDOILEXP)<br><sub>↓CMF13d</sub> | Crude oil natural gas exploration production onshore offshore | 1w | ABOVE | 1w | +4.1% | -0.47% | 162.66 | 3w | 20%  |
-| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↑CMF0d · DEL96%(T-1)</sub> |  | 1w | ABOVE | 1w | +6.0% | +1.25% | 315.95 | 65w | 20%  |
+| [ASIANHOTNR](https://in.tradingview.com/chart/?symbol=NSE:ASIANHOTNR)<br><sub>↑CMF0d · DEL97%</sub> |  | 1w | ABOVE | 1w | +6.0% | +1.25% | 315.95 | 65w | 20%  |
 | [MARATHON](https://in.tradingview.com/chart/?symbol=NSE:MARATHON)<br><sub>↑CMF4d</sub> | Luxury residential and commercial property developer Mumbai region | 1w | ABOVE | 1w | +19.6% | -1.68% | 421.55 | — | 20%  |
 | [MEIL](https://in.tradingview.com/chart/?symbol=NSE:MEIL)<br><sub>↓CMF26d</sub> |  | 1w | ABOVE | 1w | +5.1% | +5.14% | 299.40 | — | 5%  |
 | [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↓CMF19d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +7.2% | +1.44% | 230.58 | 16w | 20%  |
