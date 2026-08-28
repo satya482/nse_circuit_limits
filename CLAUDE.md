@@ -168,7 +168,13 @@ Pure price/EMA55 watch trigger, no RS gate — reuses `ema25_zl_scanner.get_watc
    Weekly RS EMA9 watchlist is included. `_load_union_source()` checks
    each file's title line carries today's date before trusting it; a
    missing/stale source is dropped with a note instead of blocking the
-   union. **Requires `run_all_scanners.ps1` to run EMA55_Cross after
+   union. Before confluence tiers, the inclusive Union applies the
+   fail-open liquidity gate `Avg Volume 30D × latest completed close ≥ ₹10 Cr`:
+   verified below-threshold symbols are excluded, while symbols with
+   missing, stale, short, or invalid OHLCV are retained and listed as
+   unverified. This does not change standalone EMA55 or upstream scanner
+   eligibility; the Union dashboard inherits the filtered tier fence.
+   **Requires `run_all_scanners.ps1` to run EMA55_Cross after
    MinerviniTrend and TrendScanner** (both moved there specifically for
    this — see run order above) so all four upstream files exist same-run.
 
