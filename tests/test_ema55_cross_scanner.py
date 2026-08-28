@@ -86,6 +86,7 @@ def test_filter_union_sources_retains_and_sorts_unverified_histories():
 def test_filter_union_sources_treats_nonpositive_close_and_nonnumeric_volume_as_unverified():
     zero_close = _liquidity_df(close=0.0)
     bad_volume = _liquidity_df()
+    bad_volume["volume"] = bad_volume["volume"].astype(object)
     bad_volume.loc[bad_volume.index[0], "volume"] = "unknown"
     sources = {"EMA55 Cross": {"ZERO", "TEXT"}, "Trend": {"ZERO", "TEXT"}}
 
