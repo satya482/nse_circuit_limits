@@ -41,7 +41,7 @@ h1{font-size:1.1rem}
   <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
   <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
-  <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"><span class="switch"></span></label>
+  <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible" checked><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">
@@ -387,7 +387,7 @@ const EMA_COLORS = ["#00bcd4", "#ff9800", "#e040fb", "#8bc34a", "#ff5252"];
 const uiState = {
   emaVisible: false,
   zlema25Visible: false,
-  high52wVisible: false,
+  high52wVisible: true,
   volumeVisible: false,
   interactive: false,
 };

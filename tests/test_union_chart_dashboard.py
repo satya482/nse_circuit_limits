@@ -519,6 +519,16 @@ def test_build_html_starts_with_high52w_hidden_and_switch_unchecked():
     assert "checked" not in high52w_input
 
 
+def test_build_html_high52w_default_visible_true_starts_checked_and_shown():
+    html = build_html([], "2026-08-27", high52w_default_visible=True)
+    assert "high52wVisible: true" in html
+    label_start = html.index("<span>52W High</span>")
+    input_start = html.index("<input", label_start)
+    high52w_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="high52wVisible"' in high52w_input
+    assert "checked" in high52w_input
+
+
 def test_build_html_configures_high52w_as_blue_step_line():
     html = build_html([], "2026-08-27")
     rebuild = html.split("function rebuildHigh52w(entry) {", 1)[1].split(
