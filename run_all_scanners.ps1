@@ -55,6 +55,7 @@ Run-Scanner "MinerviniTrend"       "$ROOT\run_minervini_trend_scanner.ps1"
 Run-Scanner "TrendScanner"         "$ROOT\run_trend_scanner.ps1"
 Run-Scanner "EMA55_Cross"          "$ROOT\run_ema55_cross_scanner.ps1"
 Run-Scanner "UnionChartDashboard"  "$ROOT\run_union_chart_dashboard.ps1"
+Run-Scanner "TVWatchlistDashboard" "$ROOT\run_tradingview_watchlist_dashboard.ps1"
 Run-Scanner "WT_SqueezeDash"       "$ROOT\run_wt_squeeze_dashboard.ps1"
 Run-Scanner "TrendDashboard"       "$ROOT\run_trend_dashboard.ps1"
 

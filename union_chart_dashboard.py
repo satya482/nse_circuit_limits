@@ -219,10 +219,14 @@ def build_chart_data(
     tiers: dict[str, str],
     industries: dict[str, str] | None = None,
     min_bars: int = MIN_BARS,
+    symbol_exchange: dict[str, str] | None = None,
 ) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
-    Skips symbols missing from ohlc_map or with fewer than min_bars rows."""
+    Skips symbols missing from ohlc_map or with fewer than min_bars rows.
+    symbol_exchange optionally maps symbol -> TV exchange prefix (defaults
+    to NSE) for building exchange-qualified TradingView chart links."""
     industries = industries or {}
+    symbol_exchange = symbol_exchange or {}
     records = []
     skipped = 0
     for symbol, tier in sorted(tiers.items()):
@@ -247,6 +251,7 @@ def build_chart_data(
             records.append({
                 "symbol": symbol,
                 "tier": tier,
+                "tv_symbol": f"{symbol_exchange.get(symbol, 'NSE')}:{symbol}",
                 "industry": industries.get(symbol, "Unclassified"),
                 "day_change": day_change,
                 "bars": bars,
@@ -559,6 +564,8 @@ function cardCompare(a, b, direction) {
   return a.dataset.symbol.localeCompare(b.dataset.symbol);
 }
 
+const GROUP_SORT = "__GROUP_SORT__";
+
 function applySortAndFilter() {
   const mode = document.getElementById("sortMode").value;
   const query = document.getElementById("q").value.toLowerCase();
@@ -581,7 +588,11 @@ function applySortAndFilter() {
       const heading = document.createElement("h2");
       heading.className = "industry-heading";
       heading.textContent = industry;
-      const groupCards = groups[industry].sort(function(a, b) { return cardCompare(a, b, -1); });
+      const groupCards = groups[industry].sort(function(a, b) {
+        return GROUP_SORT === "alpha"
+          ? a.dataset.symbol.localeCompare(b.dataset.symbol)
+          : cardCompare(a, b, -1);
+      });
       heading.hidden = groupCards.every(function(card) { return card.hidden; });
       fragment.appendChild(heading);
       groupCards.forEach(function(card) { fragment.appendChild(card); });
@@ -611,14 +622,19 @@ document.querySelectorAll('#grid .card').forEach(function(c) { observer.observe(
 """
 
 
-def build_html(records: list[dict], as_of: str) -> str:
+def build_html(
+    records: list[dict],
+    as_of: str,
+    title: str = "Union Watchlist Charts",
+    group_sort: str = "day-desc",
+) -> str:
     data_json = (
         json.dumps(records)
         .replace("&", r"\u0026")
         .replace("<", r"\u003c")
         .replace(">", r"\u003e")
     )
-    js = _JS_TEMPLATE.replace("__DATA_JSON__", data_json)
+    js = _JS_TEMPLATE.replace("__DATA_JSON__", data_json).replace("__GROUP_SORT__", group_sort)
 
     if records:
         cards = []
@@ -626,13 +642,14 @@ def build_html(records: list[dict], as_of: str) -> str:
             change = float(r["day_change"])
             change_class = "gain" if change > 0 else "loss" if change < 0 else "flat"
             change_text = f"{change:+.2f}%" if change else "0.00%"
+            tv_symbol = r.get("tv_symbol") or f"NSE:{r['symbol']}"
             cards.append(
                 f'<div class="card" data-q="{_escape(r["symbol"])} {_escape(r["tier"])}" '
                 f'data-symbol="{_escape(r["symbol"])}" '
                 f'data-industry="{_escape(r["industry"])}" data-day-change="{change}">'
                 f'<div class="hdr"><span class="day-change {change_class}">{change_text}</span>'
                 f'<span class="tier">{_escape(r["tier"])}</span>'
-                f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol=NSE:{_escape(r["symbol"])}" '
+                f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol={_escape(tv_symbol)}" '
                 f'target="_blank" rel="noopener noreferrer">{_escape(r["symbol"])}</a></div>'
                 f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
                 f'<div class="coil-layer"></div></div></div>'
@@ -643,7 +660,7 @@ def build_html(records: list[dict], as_of: str) -> str:
 
     return f"""<!doctype html>
 <html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Union Watchlist Charts - {as_of}</title>
+<title>{title} - {as_of}</title>
 <script src="vendor/lightweight-charts.js"></script>
 <style>
 :root{{color-scheme:dark}}
@@ -677,7 +694,7 @@ h1{{font-size:1.1rem}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}
-<h1>Union Watchlist Charts - {as_of}</h1>
+<h1>{title} - {as_of}</h1>
 <div id="controls">
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
