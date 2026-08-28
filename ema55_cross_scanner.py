@@ -25,12 +25,14 @@ Output:      ema55_cross_scans/ema55_cross_scans.md
 import sys
 import os
 import re
+import math
 from datetime import datetime
 
+import numpy as np
 import pandas as pd
 
 import ema25_zl_scanner as base
-from ohlc_db import load_ohlc, liq_tag, cmf_tag, deliv_tag
+from ohlc_db import load_ohlc, load_ohlc_many, liq_tag, cmf_tag, deliv_tag
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 from float_gate import float_metrics, passes_hard_gate, trap_label
 from tv_watchlist import tv_csv, tv_csv_flat, tv_top_sections
@@ -142,6 +144,64 @@ def _load_union_source(path: str, skip_labels: set[str], name: str) -> tuple[set
     if not re.search(rf"^#\s.*{re.escape(TODAY)}", md, re.MULTILINE):
         return None, f"{name} data unavailable for today's union (stale)"
     return _symbols_from_tv_block(md, skip_labels), None
+
+
+UNION_LIQUIDITY_LOOKBACK = 30
+UNION_LIQUIDITY_MIN_CR = 10.0
+
+
+def average_traded_value_cr(df: pd.DataFrame, report_date: str) -> float | None:
+    """Return 30-session average volume times latest close in crore rupees.
+
+    None means the threshold cannot be verified from complete, current, valid data.
+    """
+    try:
+        if df is None or len(df) < UNION_LIQUIDITY_LOOKBACK:
+            return None
+        bars = df.iloc[-UNION_LIQUIDITY_LOOKBACK:]
+        latest_date = pd.to_datetime(bars["date"].iloc[-1], errors="coerce")
+        expected_date = pd.to_datetime(report_date, errors="coerce")
+        if pd.isna(latest_date) or pd.isna(expected_date):
+            return None
+        if latest_date.normalize() != expected_date.normalize():
+            return None
+
+        close = pd.to_numeric(bars["close"], errors="coerce")
+        volume = pd.to_numeric(bars["volume"], errors="coerce")
+        latest_close = float(close.iloc[-1])
+        if not pd.notna(latest_close) or not math.isfinite(latest_close) or latest_close <= 0:
+            return None
+        if volume.isna().any() or not np.isfinite(volume.to_numpy(dtype=float)).all():
+            return None
+        if (volume < 0).any():
+            return None
+        return float(volume.mean() * latest_close / 10_000_000)
+    except Exception:
+        return None
+
+
+def filter_union_sources(
+    source_sets: dict[str, set[str]],
+    ohlc_map: dict[str, pd.DataFrame],
+    report_date: str,
+    threshold_cr: float = UNION_LIQUIDITY_MIN_CR,
+) -> tuple[dict[str, set[str]], list[str], list[str]]:
+    """Filter copied Union source sets, retaining candidates with unverified OHLCV."""
+    allowed: set[str] = set()
+    excluded: list[str] = []
+    unverified: list[str] = []
+    candidates = sorted(set().union(*source_sets.values())) if source_sets else []
+    for symbol in candidates:
+        value_cr = average_traded_value_cr(ohlc_map.get(symbol), report_date)
+        if value_cr is None:
+            allowed.add(symbol)
+            unverified.append(symbol)
+        elif value_cr >= threshold_cr:
+            allowed.add(symbol)
+        else:
+            excluded.append(symbol)
+    filtered = {name: set(symbols) & allowed for name, symbols in source_sets.items()}
+    return filtered, excluded, unverified
 
 
 def build_union(source_sets: dict[str, set[str]]) -> list[tuple[str, list[str]]]:

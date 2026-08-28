@@ -1,4 +1,5 @@
 import sys
+import math
 from pathlib import Path
 
 import pandas as pd
@@ -8,6 +9,8 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 import ema25_zl_scanner as base
 import ema55_cross_scanner as scanner
 from ema55_cross_scanner import (
+    average_traded_value_cr,
+    filter_union_sources,
     ema55_cross_stats,
     ema55_trend_age,
     build_union,
@@ -16,6 +19,107 @@ from ema55_cross_scanner import (
     _load_union_source,
     TODAY,
 )
+
+
+def _liquidity_df(
+    *,
+    rows: int = 30,
+    close: float = 100.0,
+    volume: float = 1_000_000.0,
+    end: str = TODAY,
+) -> pd.DataFrame:
+    return pd.DataFrame(
+        {
+            "date": pd.bdate_range(end=end, periods=rows),
+            "close": [close] * rows,
+            "volume": [volume] * rows,
+        }
+    )
+
+
+def test_average_traded_value_uses_30_session_sma_and_latest_close():
+    df = _liquidity_df(close=200.0, volume=50_000.0)
+    df.loc[df.index[0], "volume"] = 0.0
+
+    expected = ((29 * 50_000.0) / 30) * 200.0 / 10_000_000
+    assert math.isclose(average_traded_value_cr(df, TODAY), expected)
+
+
+def test_filter_union_sources_includes_exact_ten_crore_and_excludes_below():
+    sources = {"EMA55 Cross": {"EXACT", "LOW"}, "Trend": {"EXACT", "LOW"}}
+    ohlc = {
+        "EXACT": _liquidity_df(close=100.0, volume=1_000_000.0),
+        "LOW": _liquidity_df(close=100.0, volume=999_999.0),
+    }
+
+    filtered, excluded, unverified = filter_union_sources(sources, ohlc, TODAY)
+
+    assert filtered == {"EMA55 Cross": {"EXACT"}, "Trend": {"EXACT"}}
+    assert excluded == ["LOW"]
+    assert unverified == []
+
+
+def test_filter_union_sources_retains_and_sorts_unverified_histories():
+    stale = _liquidity_df(end="2000-01-31")
+    invalid_close = _liquidity_df()
+    invalid_close.loc[invalid_close.index[-1], "close"] = float("nan")
+    negative_volume = _liquidity_df()
+    negative_volume.loc[negative_volume.index[3], "volume"] = -1
+    sources = {
+        "EMA55 Cross": {"STALE", "MISSING", "SHORT"},
+        "Trend": {"BAD_CLOSE", "BAD_VOLUME"},
+    }
+    ohlc = {
+        "STALE": stale,
+        "SHORT": _liquidity_df(rows=29),
+        "BAD_CLOSE": invalid_close,
+        "BAD_VOLUME": negative_volume,
+    }
+
+    filtered, excluded, unverified = filter_union_sources(sources, ohlc, TODAY)
+
+    assert filtered == sources
+    assert excluded == []
+    assert unverified == ["BAD_CLOSE", "BAD_VOLUME", "MISSING", "SHORT", "STALE"]
+
+
+def test_filter_union_sources_treats_nonpositive_close_and_nonnumeric_volume_as_unverified():
+    zero_close = _liquidity_df(close=0.0)
+    bad_volume = _liquidity_df()
+    bad_volume.loc[bad_volume.index[0], "volume"] = "unknown"
+    sources = {"EMA55 Cross": {"ZERO", "TEXT"}, "Trend": {"ZERO", "TEXT"}}
+
+    filtered, excluded, unverified = filter_union_sources(
+        sources, {"ZERO": zero_close, "TEXT": bad_volume}, TODAY
+    )
+
+    assert filtered == sources
+    assert excluded == []
+    assert unverified == ["TEXT", "ZERO"]
+
+
+def test_filter_union_sources_does_not_mutate_inputs_and_recalculates_tiers():
+    sources = {
+        "EMA55 Cross": {"LIQUID", "LOW"},
+        "EMA25 ZL": {"LIQUID", "LOW", "ONLY"},
+        "Trend": {"LIQUID", "ONLY"},
+    }
+    original = {name: set(symbols) for name, symbols in sources.items()}
+    ohlc = {
+        "LIQUID": _liquidity_df(),
+        "LOW": _liquidity_df(volume=50_000.0),
+        "ONLY": _liquidity_df(),
+    }
+
+    filtered, excluded, unverified = filter_union_sources(sources, ohlc, TODAY)
+
+    assert sources == original
+    assert excluded == ["LOW"]
+    assert unverified == []
+    assert build_union(filtered) == [
+        ("ALL 3", ["LIQUID"]),
+        ("2 OF 3", ["ONLY"]),
+    ]
 
 
 def test_cross_up_detected_at_correct_age():
