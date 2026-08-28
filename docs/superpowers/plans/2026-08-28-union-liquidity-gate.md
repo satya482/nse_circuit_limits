@@ -58,7 +58,7 @@ def _liquidity_df(
     *,
     rows: int = 30,
     close: float = 100.0,
-    volume: float = 100_000.0,
+    volume: float = 1_000_000.0,
     end: str = TODAY,
 ) -> pd.DataFrame:
     return pd.DataFrame(
@@ -81,8 +81,8 @@ def test_average_traded_value_uses_30_session_sma_and_latest_close():
 def test_filter_union_sources_includes_exact_ten_crore_and_excludes_below():
     sources = {"EMA55 Cross": {"EXACT", "LOW"}, "Trend": {"EXACT", "LOW"}}
     ohlc = {
-        "EXACT": _liquidity_df(close=100.0, volume=100_000.0),
-        "LOW": _liquidity_df(close=100.0, volume=99_999.0),
+        "EXACT": _liquidity_df(close=100.0, volume=1_000_000.0),
+        "LOW": _liquidity_df(close=100.0, volume=999_999.0),
     }
 
     filtered, excluded, unverified = filter_union_sources(sources, ohlc, TODAY)
