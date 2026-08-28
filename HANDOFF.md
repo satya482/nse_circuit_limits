@@ -2,7 +2,7 @@
 
 # Repo Handoff
 
-Last reviewed by Codex: 2026-08-27.
+Last reviewed by Codex: 2026-08-28.
 Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
