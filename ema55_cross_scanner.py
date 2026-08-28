@@ -228,7 +228,14 @@ def build_union(source_sets: dict[str, set[str]]) -> list[tuple[str, list[str]]]
     return result
 
 
-def build_union_section(union_groups: list[tuple[str, list[str]]], notes: list[str]) -> list[str]:
+def build_union_section(
+    union_groups: list[tuple[str, list[str]]],
+    notes: list[str],
+    excluded_symbols: list[str] | None = None,
+    unverified_symbols: list[str] | None = None,
+) -> list[str]:
+    excluded_symbols = sorted(excluded_symbols or [])
+    unverified_symbols = sorted(unverified_symbols or [])
     lines = [
         "### 🟢 Union Watchlist — EMA25 ZL + EMA55 Cross + Minervini Trend Template + Trend Scanner + Weekly RS EMA9",
         "*(sectioned by confluence — how many of the scanners flagged the symbol today)*",
@@ -237,6 +244,16 @@ def build_union_section(union_groups: list[tuple[str, list[str]]], notes: list[s
     if notes:
         lines.append(f"*({'; '.join(notes)})*")
         lines.append("")
+    lines += [
+        f"**Liquidity gate:** Avg Volume 30D × latest close ≥ ₹{UNION_LIQUIDITY_MIN_CR:g} Cr "
+        f"· **Excluded below threshold: {len(excluded_symbols)}**",
+        "",
+    ]
+    if unverified_symbols:
+        lines += [
+            f"⚠️ **Liquidity unverified (retained): {', '.join(unverified_symbols)}**",
+            "",
+        ]
     if not union_groups:
         lines += ["*No union data available today.*", "", "---", ""]
         return lines
@@ -391,13 +408,30 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
     union_notes = [
         n for n in (ema25_note, minervini_note, trend_note, weekly_rs_note) if n
     ]
-    union_groups = build_union(source_sets)
+    excluded_symbols: list[str] = []
+    unverified_symbols: list[str] = []
+    filtered_source_sets = source_sets
+    if len(source_sets) >= 2:
+        candidates = sorted(set().union(*source_sets.values()))
+        try:
+            ohlc_map = load_ohlc_many(candidates, lookback=UNION_LIQUIDITY_LOOKBACK)
+        except Exception:
+            ohlc_map = {}
+        filtered_source_sets, excluded_symbols, unverified_symbols = filter_union_sources(
+            source_sets, ohlc_map, TODAY
+        )
+    union_groups = build_union(filtered_source_sets)
 
     lines = [
         f"# NSE EMA{EMA_PERIOD} Cross Watchlist — {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
-        *build_union_section(union_groups, union_notes),
+        *build_union_section(
+            union_groups,
+            union_notes,
+            excluded_symbols=excluded_symbols,
+            unverified_symbols=unverified_symbols,
+        ),
         STATIC_HEADER,
         f"**On watch: {len(rows)}**",
         "",

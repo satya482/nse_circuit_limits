@@ -269,6 +269,103 @@ def test_load_union_source_fresh_file(tmp_path):
     assert note is None
 
 
+def test_union_section_reports_liquidity_exclusions_and_unverified_symbols():
+    section = "\n".join(
+        build_union_section(
+            [("ALL 2", ["LIQUID"])],
+            [],
+            excluded_symbols=["LOW"],
+            unverified_symbols=["BETA", "ALPHA"],
+        )
+    )
+
+    assert "Avg Volume 30D × latest close ≥ ₹10 Cr" in section
+    assert "Excluded below threshold: 1" in section
+    assert "Liquidity unverified (retained): ALPHA, BETA" in section
+    assert section.index("Liquidity unverified") < section.index("```")
+
+
+def test_build_markdown_filters_union_with_one_sorted_batch_load(monkeypatch):
+    def fake_source(path, skip_labels, name):
+        return {"LIQUID", "LOW", "MISSING"}, None
+
+    calls = []
+
+    def fake_many(symbols, lookback):
+        calls.append((symbols, lookback))
+        return {
+            "LIQUID": _liquidity_df(),
+            "LOW": _liquidity_df(volume=50_000.0),
+        }
+
+    monkeypatch.setattr(scanner, "_load_union_source", fake_source)
+    monkeypatch.setattr(scanner, "load_ohlc_many", fake_many)
+
+    report = scanner.build_markdown([], {})
+
+    assert calls == [(["LIQUID", "LOW", "MISSING"], 30)]
+    union_block = report.split("### Scan definition", 1)[0]
+    assert "NSE:LIQUID" in union_block
+    assert "NSE:MISSING" in union_block
+    assert "NSE:LOW" not in union_block
+    assert "Excluded below threshold: 1" in union_block
+    assert "Liquidity unverified (retained): MISSING" in union_block
+
+
+def test_build_markdown_skips_liquidity_load_with_only_ema55_source(monkeypatch):
+    monkeypatch.setattr(scanner, "_load_union_source", lambda *args: (None, "stale"))
+
+    def unexpected_load(*args, **kwargs):
+        raise AssertionError("load_ohlc_many must not run for one source")
+
+    monkeypatch.setattr(scanner, "load_ohlc_many", unexpected_load)
+    monkeypatch.setattr(scanner, "_table_rows", lambda *args: ["| EMA55ONLY |"])
+
+    report = scanner.build_markdown([{"symbol": "EMA55ONLY", "cross_days": 1}], {})
+
+    assert "No union data available today" in report
+
+
+def test_build_markdown_retains_candidates_when_batch_load_fails(monkeypatch):
+    monkeypatch.setattr(
+        scanner, "_load_union_source", lambda *args: ({"EMA55SYM", "UPSTREAM"}, None)
+    )
+    monkeypatch.setattr(
+        scanner,
+        "load_ohlc_many",
+        lambda *args, **kwargs: (_ for _ in ()).throw(RuntimeError("db down")),
+    )
+    monkeypatch.setattr(scanner, "_table_rows", lambda *args: ["| EMA55SYM |"])
+    finding = {"symbol": "EMA55SYM", "cross_days": 1}
+
+    report = scanner.build_markdown([finding], {})
+    union_block, standalone = report.split("### Scan definition", 1)
+
+    assert "NSE:EMA55SYM" in union_block
+    assert "NSE:UPSTREAM" in union_block
+    assert "Liquidity unverified (retained): EMA55SYM, UPSTREAM" in union_block
+    assert "EMA55SYM" in standalone
+
+
+def test_low_liquidity_symbol_is_removed_only_from_union(monkeypatch):
+    monkeypatch.setattr(scanner, "_load_union_source", lambda *args: ({"LOW"}, None))
+    monkeypatch.setattr(
+        scanner,
+        "load_ohlc_many",
+        lambda *args, **kwargs: {"LOW": _liquidity_df(volume=50_000.0)},
+    )
+    monkeypatch.setattr(scanner, "_table_rows", lambda *args: ["| LOW |"])
+    finding = {"symbol": "LOW", "cross_days": 1}
+
+    report = scanner.build_markdown([finding], {})
+    union_block, standalone = report.split("### Scan definition", 1)
+
+    assert "NSE:LOW" not in union_block
+    assert "Excluded below threshold: 1" in union_block
+    assert "| LOW |" in standalone
+    assert "NSE:LOW" in standalone
+
+
 if __name__ == "__main__":
     test_cross_up_detected_at_correct_age()
     test_no_cross_within_cap_returns_cap_sentinel()
