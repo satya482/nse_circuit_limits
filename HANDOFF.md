@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-08-28 by Codex, Union Watchlist 30-day liquidity gate production verification:
+
+- The inclusive Union Watchlist now applies `Avg Volume 30D × latest close >= ₹10 Cr` before confluence tiers are calculated; standalone scanner eligibility and output remain unchanged.
+- Missing, stale, short, or invalid OHLCV remains fail-open and is named in the Union warning; verified symbols below the threshold are excluded.
+- Verification: 77/77 focused EMA55/dashboard tests and 505/505 full-suite tests passed; the full suite emitted the five established pandas `FutureWarning`s in `breadth_monitor` tests. `git diff --check` passed.
+- Existing EMA55 report and Union dashboard artifacts were preserved: all four upstream source headings are `2026-08-27`, not the required `2026-08-28`, and `ohlc_db.latest_date()` returned `None` in this worktree. No live scanner or dashboard generation was run and no generated artifact changed.
+
 Updated 2026-08-27 by Codex, compact WaveTrend repaint colors:
 
 - Union-chart WaveTrend bull-cross candles now repaint lime `#76FF03`; bear-cross candles remain yellow `#FDD835` for stronger compact-chart separation.
