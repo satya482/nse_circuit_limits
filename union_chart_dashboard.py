@@ -360,22 +360,26 @@ function applyChartMode(entry) {
   }
 }
 
-const RS_MARKER_COLORS = { rs_weak_to_strong: "lime", rs_strong_to_weak: "red" };
-const RS_MARKER_POSITIONS = { rs_weak_to_strong: "belowBar", rs_strong_to_weak: "aboveBar" };
+const RS_DOT_COLORS = { rs_weak_to_strong: "lime", rs_strong_to_weak: "red" };
+const RS_DOT_WIDTH_FRACTION = 0.6; // dot diameter as a fraction of bar spacing -- reads no wider than the candle body
 
-function rsMarkers(record) {
-  const markers = [];
+function rsDotGeometry(record, dotSize, xForIndex, yForPrice) {
+  const dots = [];
   (record.rs_signals || []).forEach(function(kind, i) {
     if (!kind) return;
-    markers.push({
-      time: record.bars[i][0],
-      position: RS_MARKER_POSITIONS[kind],
-      color: RS_MARKER_COLORS[kind],
-      shape: "circle",
-      size: 0.5,
+    const bar = record.bars[i];
+    const x = xForIndex(i);
+    const y = yForPrice(kind === "rs_weak_to_strong" ? bar[3] : bar[2]);
+    if (x === null || y === null) return;
+    dots.push({
+      left: x - dotSize / 2,
+      top: kind === "rs_weak_to_strong" ? y + 2 : y - dotSize - 2,
+      width: dotSize,
+      height: dotSize,
+      color: RS_DOT_COLORS[kind],
     });
   });
-  return markers;
+  return dots;
 }
 
 function candleData(record) {
@@ -573,6 +577,30 @@ function redrawCoils(entry) {
     rect.style.height = Math.abs(bottom - top) + "px";
     entry.coilLayer.appendChild(rect);
   });
+  redrawRsDots(entry);
+}
+
+function redrawRsDots(entry) {
+  const spacing = Math.abs(
+    entry.chart.timeScale().logicalToCoordinate(1) - entry.chart.timeScale().logicalToCoordinate(0)
+  );
+  const dotSize = Math.max(2, spacing * RS_DOT_WIDTH_FRACTION);
+  const dots = rsDotGeometry(
+    entry.record,
+    dotSize,
+    function(i) { return entry.chart.timeScale().logicalToCoordinate(i); },
+    function(p) { return entry.candleSeries.priceToCoordinate(p); }
+  );
+  dots.forEach(function(g) {
+    const dot = document.createElement("div");
+    dot.className = "rs-dot";
+    dot.style.left = g.left + "px";
+    dot.style.top = g.top + "px";
+    dot.style.width = g.width + "px";
+    dot.style.height = g.height + "px";
+    dot.style.background = g.color;
+    entry.coilLayer.appendChild(dot);
+  });
 }
 
 function scheduleCoilRedraw(entry) {
@@ -602,7 +630,6 @@ function buildChart(symbol) {
     wickUpColor: upColor, wickDownColor: downColor,
   });
   candleSeries.setData(candleData(record));
-  candleSeries.setMarkers(rsMarkers(record));
   const volumeSeries = chart.addHistogramSeries({
     priceFormat: { type: 'volume' }, priceScaleId: '', color: '#30363d',
   });
@@ -823,6 +850,7 @@ h1{{font-size:1.1rem}}
 .chart{{height:clamp(380px,44vw,520px)}}
 .coil-layer{{position:absolute;inset:0;z-index:2;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
+.rs-dot{{position:absolute;border-radius:50%}}
 .empty{{color:#8b949e}}
 @media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:380px}}}}
 </style></head>

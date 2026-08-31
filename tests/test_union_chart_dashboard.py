@@ -671,7 +671,7 @@ def test_high52wlinedata_extends_15_weekdays_flat_at_last_value():
     assert all(p["value"] == last_real_value for p in points[1:])
 
 
-def test_rs_markers_builds_belowbar_lime_and_abovebar_red_circles():
+def test_rs_dot_geometry_sizes_below_low_and_above_high():
     html = build_html([], "2026-08-27")
     record = {
         "bars": [
@@ -681,41 +681,57 @@ def test_rs_markers_builds_belowbar_lime_and_abovebar_red_circles():
         ],
         "rs_signals": [None, "rs_weak_to_strong", "rs_strong_to_weak"],
     }
-    markers = _run_generated_js_function(
+    dots = _run_generated_js_function(
         html,
-        "const RS_MARKER_COLORS",
-        "function buildChart(symbol)",
-        f"rsMarkers({json.dumps(record)})",
+        "const RS_DOT_COLORS",
+        "function redrawRsDots(entry)",
+        "rsDotGeometry("
+        f"{json.dumps(record)}, 6, "
+        "function(i) { return i * 10; }, "
+        "function(p) { return 100 - p; }"
+        ")",
     )
-    assert len(markers) == 2
-    assert markers[0] == {
-        "time": "2026-01-02", "position": "belowBar", "color": "lime",
-        "shape": "circle", "size": 0.5,
-    }
-    assert markers[1] == {
-        "time": "2026-01-03", "position": "aboveBar", "color": "red",
-        "shape": "circle", "size": 0.5,
-    }
+    assert dots == [
+        {"left": 7, "top": 101.5, "width": 6, "height": 6, "color": "lime"},
+        {"left": 17, "top": 90, "width": 6, "height": 6, "color": "red"},
+    ]
 
 
-def test_rs_markers_skips_missing_rs_signals_field():
+def test_rs_dot_geometry_skips_off_chart_coordinates():
+    html = build_html([], "2026-08-27")
+    record = {
+        "bars": [["2026-01-01", 1, 2, 0.5, 1.5, 100]],
+        "rs_signals": ["rs_weak_to_strong"],
+    }
+    dots = _run_generated_js_function(
+        html,
+        "const RS_DOT_COLORS",
+        "function redrawRsDots(entry)",
+        f"rsDotGeometry({json.dumps(record)}, 6, function(i) {{ return null; }}, function(p) {{ return 1; }})",
+    )
+    assert dots == []
+
+
+def test_rs_dot_geometry_skips_missing_rs_signals_field():
     html = build_html([], "2026-08-27")
     record = {"bars": [["2026-01-01", 1, 2, 0.5, 1.5, 100]]}
-    markers = _run_generated_js_function(
+    dots = _run_generated_js_function(
         html,
-        "const RS_MARKER_COLORS",
-        "function buildChart(symbol)",
-        f"rsMarkers({json.dumps(record)})",
+        "const RS_DOT_COLORS",
+        "function redrawRsDots(entry)",
+        f"rsDotGeometry({json.dumps(record)}, 6, function(i) {{ return 0; }}, function(p) {{ return 0; }})",
     )
-    assert markers == []
+    assert dots == []
 
 
-def test_build_chart_wires_rs_markers_onto_candle_series():
+def test_redraw_coils_draws_rs_dots_sized_to_bar_spacing():
     html = build_html([], "2026-08-27")
-    build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(
-        "function applyControls()", 1
+    redraw_coils_body = html.split("function redrawCoils(entry) {", 1)[1].split(
+        "function scheduleCoilRedraw(entry)", 1
     )[0]
-    assert "candleSeries.setMarkers(rsMarkers(record));" in build_chart_body
+    assert "redrawRsDots(entry);" in redraw_coils_body
+    assert "RS_DOT_WIDTH_FRACTION" in html
+    assert ".rs-dot{" in "".join(html.split())
 
 
 def test_generated_high52w_matches_rolling_max_of_high():
