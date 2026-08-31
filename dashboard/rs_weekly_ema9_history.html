@@ -60,18 +60,19 @@ summary { cursor:pointer; color:var(--text-secondary); font-size:13px; margin-to
     <h1>Weekly RS EMA9 Trend — Count History</h1>
     <p class="sub">Stocks with a flat/rising weekly RS EMA9 (NSE common equity, Rs1,000 Cr - Rs5 Lakh Cr). Remembers every prior run.</p>
     <div class="hero-row">
-      <div class="hero">555</div>
-      <div class="delta up">+5 vs prior day</div>
+      <div class="hero">561</div>
+      <div class="delta up">+6 vs prior day</div>
     </div>
     <div class="chart-box">
       <svg id="chart" viewBox="0 0 860 280" preserveAspectRatio="none"></svg>
       <div id="tooltip"></div>
     </div>
     <details>
-      <summary>Table view (35 days)</summary>
+      <summary>Table view (36 days)</summary>
       <table>
         <thead><tr><th>Date</th><th class="num">Count</th><th class="num">New</th></tr></thead>
         <tbody>
+<tr><td>2026-08-31</td><td class='num'>561</td><td class='num'>52</td></tr>
 <tr><td>2026-08-28</td><td class='num'>555</td><td class='num'>35</td></tr>
 <tr><td>2026-08-27</td><td class='num'>550</td><td class='num'>35</td></tr>
 <tr><td>2026-08-26</td><td class='num'>575</td><td class='num'>45</td></tr>
@@ -113,7 +114,7 @@ summary { cursor:pointer; color:var(--text-secondary); font-size:13px; margin-to
   </div>
 </div>
 <script>
-const data = [{"date": "2026-07-13", "count": 650}, {"date": "2026-07-14", "count": 619}, {"date": "2026-07-15", "count": 623}, {"date": "2026-07-16", "count": 621}, {"date": "2026-07-17", "count": 613}, {"date": "2026-07-20", "count": 614}, {"date": "2026-07-21", "count": 589}, {"date": "2026-07-22", "count": 588}, {"date": "2026-07-23", "count": 613}, {"date": "2026-07-24", "count": 641}, {"date": "2026-07-27", "count": 618}, {"date": "2026-07-28", "count": 579}, {"date": "2026-07-29", "count": 574}, {"date": "2026-07-30", "count": 549}, {"date": "2026-07-31", "count": 571}, {"date": "2026-08-03", "count": 572}, {"date": "2026-08-04", "count": 601}, {"date": "2026-08-05", "count": 615}, {"date": "2026-08-06", "count": 641}, {"date": "2026-08-07", "count": 606}, {"date": "2026-08-10", "count": 587}, {"date": "2026-08-11", "count": 562}, {"date": "2026-08-12", "count": 528}, {"date": "2026-08-13", "count": 544}, {"date": "2026-08-14", "count": 554}, {"date": "2026-08-17", "count": 542}, {"date": "2026-08-18", "count": 557}, {"date": "2026-08-19", "count": 554}, {"date": "2026-08-20", "count": 565}, {"date": "2026-08-21", "count": 584}, {"date": "2026-08-24", "count": 590}, {"date": "2026-08-25", "count": 568}, {"date": "2026-08-26", "count": 575}, {"date": "2026-08-27", "count": 550}, {"date": "2026-08-28", "count": 555}];
+const data = [{"date": "2026-07-13", "count": 650}, {"date": "2026-07-14", "count": 619}, {"date": "2026-07-15", "count": 623}, {"date": "2026-07-16", "count": 621}, {"date": "2026-07-17", "count": 613}, {"date": "2026-07-20", "count": 614}, {"date": "2026-07-21", "count": 589}, {"date": "2026-07-22", "count": 588}, {"date": "2026-07-23", "count": 613}, {"date": "2026-07-24", "count": 641}, {"date": "2026-07-27", "count": 618}, {"date": "2026-07-28", "count": 579}, {"date": "2026-07-29", "count": 574}, {"date": "2026-07-30", "count": 549}, {"date": "2026-07-31", "count": 571}, {"date": "2026-08-03", "count": 572}, {"date": "2026-08-04", "count": 601}, {"date": "2026-08-05", "count": 615}, {"date": "2026-08-06", "count": 641}, {"date": "2026-08-07", "count": 606}, {"date": "2026-08-10", "count": 587}, {"date": "2026-08-11", "count": 562}, {"date": "2026-08-12", "count": 528}, {"date": "2026-08-13", "count": 544}, {"date": "2026-08-14", "count": 554}, {"date": "2026-08-17", "count": 542}, {"date": "2026-08-18", "count": 557}, {"date": "2026-08-19", "count": 554}, {"date": "2026-08-20", "count": 565}, {"date": "2026-08-21", "count": 584}, {"date": "2026-08-24", "count": 590}, {"date": "2026-08-25", "count": 568}, {"date": "2026-08-26", "count": 575}, {"date": "2026-08-27", "count": 550}, {"date": "2026-08-28", "count": 555}, {"date": "2026-08-31", "count": 561}];
 const svg = document.getElementById('chart');
 const tooltip = document.getElementById('tooltip');
 const W = 860, H = 280, PAD_L = 40, PAD_R = 10, PAD_T = 10, PAD_B = 24;
