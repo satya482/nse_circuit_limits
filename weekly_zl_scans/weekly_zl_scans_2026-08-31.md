@@ -27,8 +27,8 @@
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
 | [CAMS](https://in.tradingview.com/chart/?symbol=NSE:CAMS)<br><sub>↑CMF0d</sub> | Mutual fund registrar and transfer agent services | 1w | TOUCH | 1w | +2.6% | +2.62% | 782.00 | 4w | 20%  |
-| [PREMIERENE](https://in.tradingview.com/chart/?symbol=NSE:PREMIERENE)<br><sub>↑CMF0d</sub> | Solar cells modules manufacturer high efficiency photovoltaic | 1w | TOUCH | 1w | +2.2% | +2.21% | 1036.30 | 4w | 20%  |
-| [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE)<br><sub>↓CMF16d · DEL86%(T-1)</sub> | Financial services holding: insurance, broking, SME lending | 1w | TOUCH | 1w | +4.2% | +4.18% | 242.80 | — | 20%  |
+| [PREMIERENE](https://in.tradingview.com/chart/?symbol=NSE:PREMIERENE)<br><sub>↑CMF0d · DEL68%</sub> | Solar cells modules manufacturer high efficiency photovoltaic | 1w | TOUCH | 1w | +2.2% | +2.21% | 1036.30 | 4w | 20%  |
+| [RELIGARE](https://in.tradingview.com/chart/?symbol=NSE:RELIGARE)<br><sub>↓CMF16d</sub> | Financial services holding: insurance, broking, SME lending | 1w | TOUCH | 1w | +4.2% | +4.18% | 242.80 | — | 20%  |
 | [MANKIND](https://in.tradingview.com/chart/?symbol=NSE:MANKIND)<br><sub>↓CMF30d</sub> | Pharma formulations acute chronic diseases consumer health | 1w | TOUCH | 1w | +1.5% | +1.52% | 2419.20 | 1w | 20%  |
 | [SPLPETRO](https://in.tradingview.com/chart/?symbol=NSE:SPLPETRO)<br><sub>↑CMF0d</sub> | Polystyrene and styrenics polymers manufacturer for packaging | 1w | TOUCH | 1w | +4.0% | +4.02% | 729.05 | 11w | 20%  |
 | [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>↓CMF3d</sub> | Apparel manufacturer for global fashion brands and retailers | 1w | TOUCH | 1w | +1.7% | +1.71% | 780.90 | — | 20% 🟦 |
