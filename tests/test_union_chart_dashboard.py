@@ -724,6 +724,34 @@ def test_rs_dot_geometry_skips_missing_rs_signals_field():
     assert dots == []
 
 
+def test_build_html_starts_with_rs_dots_hidden_and_switch_unchecked():
+    html = build_html([], "2026-08-27")
+    assert "rsVisible: false" in html
+    label_start = html.index("<span>RS Transitions</span>")
+    input_start = html.index("<input", label_start)
+    rs_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="rsVisible"' in rs_input
+    assert "checked" not in rs_input
+
+
+def test_rs_dots_toggle_schedules_redraw():
+    html = build_html([], "2026-08-27")
+    rs_handler = html.split(
+        "document.getElementById('rsVisible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("document.getElementById('volumeVisible')", 1)[0]
+    assert "uiState.rsVisible = e.target.checked;" in rs_handler
+    assert "scheduleCoilRedraw(entry);" in rs_handler
+
+
+def test_redraw_rs_dots_returns_without_drawing_when_hidden():
+    html = build_html([], "2026-08-27")
+    redraw_rs_dots_body = html.split("function redrawRsDots(entry) {", 1)[1].split(
+        "function scheduleCoilRedraw(entry)", 1
+    )[0]
+    assert "if (!uiState.rsVisible) return;" in redraw_rs_dots_body
+
+
 def test_redraw_coils_draws_rs_dots_sized_to_bar_spacing():
     html = build_html([], "2026-08-27")
     redraw_coils_body = html.split("function redrawCoils(entry) {", 1)[1].split(

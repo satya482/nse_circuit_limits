@@ -314,6 +314,7 @@ const uiState = {
   emaVisible: false,
   zlema25Visible: false,
   high52wVisible: __HIGH52W_DEFAULT__,
+  rsVisible: false,
   volumeVisible: false,
   interactive: false,
 };
@@ -581,6 +582,7 @@ function redrawCoils(entry) {
 }
 
 function redrawRsDots(entry) {
+  if (!uiState.rsVisible) return;
   const spacing = Math.abs(
     entry.chart.timeScale().logicalToCoordinate(1) - entry.chart.timeScale().logicalToCoordinate(0)
   );
@@ -688,6 +690,13 @@ document.getElementById('zlema25Visible').addEventListener('change', function(e)
   Object.keys(chartsBySymbol).forEach(function(symbol) {
     const entry = chartsBySymbol[symbol];
     rebuildZlema25(entry);
+    scheduleCoilRedraw(entry);
+  });
+});
+document.getElementById('rsVisible').addEventListener('change', function(e) {
+  uiState.rsVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
     scheduleCoilRedraw(entry);
   });
 });
@@ -864,6 +873,7 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
   <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"{" checked" if high52w_default_visible else ""}><span class="switch"></span></label>
+  <label class="switch-row"><span>RS Transitions</span><input type="checkbox" id="rsVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">
