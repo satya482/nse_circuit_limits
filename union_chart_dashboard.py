@@ -30,7 +30,7 @@ OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "union_charts.html")
 INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
-LOOKBACK = 600  # >= 9mo default view (~190 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
+LOOKBACK = 600  # >= 6mo default view (~126 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 BENCH_SYM = "NIFTY MIDSML 400"
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
@@ -320,7 +320,7 @@ const uiState = {
 };
 CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
-const DEFAULT_VIEW_MONTHS = 9;
+const DEFAULT_VIEW_MONTHS = 6;
 
 function fixedLogicalRange(record) {
   const last = record.bars[record.bars.length - 1][0];

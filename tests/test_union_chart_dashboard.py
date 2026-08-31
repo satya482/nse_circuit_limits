@@ -484,9 +484,9 @@ def test_fixed_range_clamps_month_end_generic_months_offset():
     assert reference("2024-02-29", 9) == "2023-05-29"
 
 
-def test_default_view_months_is_nine():
+def test_default_view_months_is_six():
     html = build_html([], "2026-08-26")
-    assert "const DEFAULT_VIEW_MONTHS = 9;" in html
+    assert "const DEFAULT_VIEW_MONTHS = 6;" in html
 
 
 def test_build_html_has_interactive_controls():
