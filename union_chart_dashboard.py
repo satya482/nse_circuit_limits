@@ -31,6 +31,7 @@ INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
 LOOKBACK = 250
+BENCH_SYM = "NIFTY MIDSML 400"
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
 TIER_LABEL_RE = re.compile(r"^(ALL \d+|\d+ OF \d+|1 ONLY)$")
@@ -146,6 +147,38 @@ def compute_signal_kinds(df) -> list[str | None]:
     return kinds
 
 
+RS_EMA_PERIOD = 9
+
+
+def compute_rs_transition_kinds(df, bench_df) -> list[str | None]:
+    """Daily RS Line (close / NIFTY MIDSML 400 close * 1000) crossing its own
+    9-EMA -- parity with pine_scripts/Satya EMAs.txt's transition/
+    transitionToWeak. Fail-open: missing or too-short benchmark data returns
+    all-None so the chart still renders without this overlay."""
+    n = len(df)
+    none_kinds: list[str | None] = [None] * n
+    if bench_df is None or len(bench_df) < RS_EMA_PERIOD + 2:
+        return none_kinds
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench_close = bench_df.set_index("date")["close"].astype(float)
+        rs_line = (stock_close / bench_close.reindex(stock_close.index).ffill()) * 1000
+        rs_ema9 = rs_line.ewm(span=RS_EMA_PERIOD, adjust=False).mean()
+        prev_rs = rs_line.shift(1)
+        prev_ema = rs_ema9.shift(1)
+        crossover = (rs_line > rs_ema9) & (prev_rs <= prev_ema)
+        crossunder = (rs_line < rs_ema9) & (prev_rs >= prev_ema)
+    except Exception:
+        return none_kinds
+    kinds: list[str | None] = list(none_kinds)
+    for i in range(n):
+        if bool(crossover.iloc[i]):
+            kinds[i] = "rs_weak_to_strong"
+        elif bool(crossunder.iloc[i]):
+            kinds[i] = "rs_strong_to_weak"
+    return kinds
+
+
 def compute_coil_boxes(
     df,
     min_inside: int = 2,
@@ -220,11 +253,15 @@ def build_chart_data(
     industries: dict[str, str] | None = None,
     min_bars: int = MIN_BARS,
     symbol_exchange: dict[str, str] | None = None,
+    bench_df=None,
 ) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
     Skips symbols missing from ohlc_map or with fewer than min_bars rows.
     symbol_exchange optionally maps symbol -> TV exchange prefix (defaults
-    to NSE) for building exchange-qualified TradingView chart links."""
+    to NSE) for building exchange-qualified TradingView chart links.
+    bench_df (NIFTY MIDSML 400 OHLC) optionally enables per-bar RS Line vs
+    its 9-EMA crossover/crossunder tagging (rs_signals); omitted or None
+    yields an all-None rs_signals array so the chart still renders."""
     industries = industries or {}
     symbol_exchange = symbol_exchange or {}
     records = []
@@ -257,6 +294,9 @@ def build_chart_data(
                 "bars": bars,
                 "signals": compute_signal_kinds(df),
                 "coil_boxes": compute_coil_boxes(df),
+                "rs_signals": compute_rs_transition_kinds(
+                    df, bench_df if symbol_exchange.get(symbol, "NSE") == "NSE" else None
+                ),
             })
         except Exception as exc:
             skipped += 1
@@ -281,7 +321,7 @@ CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
 function fixedLogicalRange(record) {
   const last = record.bars[record.bars.length - 1][0];
-  const cutoffText = sixMonthCutoff(last);
+  const cutoffText = oneYearCutoff(last);
   const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
   return {
     from: firstIndex >= 0 ? firstIndex : 0,
@@ -289,10 +329,10 @@ function fixedLogicalRange(record) {
   };
 }
 
-function sixMonthCutoff(last) {
+function oneYearCutoff(last) {
   const current = new Date(last + "T00:00:00Z");
   const sourceDay = current.getUTCDate();
-  const targetMonthIndex = current.getUTCMonth() - 6;
+  const targetMonthIndex = current.getUTCMonth() - 12;
   const targetYear = current.getUTCFullYear() + Math.floor(targetMonthIndex / 12);
   const targetMonth = ((targetMonthIndex % 12) + 12) % 12;
   const lastDay = new Date(Date.UTC(targetYear, targetMonth + 1, 0)).getUTCDate();
@@ -318,6 +358,23 @@ function applyChartMode(entry) {
   if (!uiState.interactive) {
     entry.chart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
   }
+}
+
+const RS_MARKER_COLORS = { rs_weak_to_strong: "lime", rs_strong_to_weak: "red" };
+const RS_MARKER_POSITIONS = { rs_weak_to_strong: "belowBar", rs_strong_to_weak: "aboveBar" };
+
+function rsMarkers(record) {
+  const markers = [];
+  (record.rs_signals || []).forEach(function(kind, i) {
+    if (!kind) return;
+    markers.push({
+      time: record.bars[i][0],
+      position: RS_MARKER_POSITIONS[kind],
+      color: RS_MARKER_COLORS[kind],
+      shape: "circle",
+    });
+  });
+  return markers;
 }
 
 function candleData(record) {
@@ -544,6 +601,7 @@ function buildChart(symbol) {
     wickUpColor: upColor, wickDownColor: downColor,
   });
   candleSeries.setData(candleData(record));
+  candleSeries.setMarkers(rsMarkers(record));
   const volumeSeries = chart.addHistogramSeries({
     priceFormat: { type: 'volume' }, priceScaleId: '', color: '#30363d',
   });
@@ -805,7 +863,8 @@ def main() -> None:
 
     industries = resolve_industries(tiers.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(tiers.keys()), lookback=LOOKBACK)
-    records, skipped = build_chart_data(ohlc_map, tiers, industries=industries)
+    bench_df = load_ohlc_many([BENCH_SYM], lookback=LOOKBACK).get(BENCH_SYM)
+    records, skipped = build_chart_data(ohlc_map, tiers, industries=industries, bench_df=bench_df)
     print(
         f"[union_chart_dashboard] {len(records)} charted, {skipped} skipped "
         f"(insufficient OHLCV or annotation failure)"

@@ -23,7 +23,7 @@ import requests
 from ohlc_db import load_ohlc_many
 from us_ohlc_db import load_ohlc_many as load_us_ohlc_many
 from tv_watchlist import INDEX_WATCHLIST_SYMBOLS, COMMODITY_WATCHLIST_SYMBOLS
-from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE
+from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE, BENCH_SYM
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 WATCHLIST_URL = "https://in.tradingview.com/watchlists/156673583/"
@@ -99,8 +99,10 @@ def main() -> None:
 
     industries = resolve_industries(exchange_map.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_all_ohlc(exchange_map)
+    bench_df = load_ohlc_many([BENCH_SYM], lookback=LOOKBACK).get(BENCH_SYM)
     records, skipped_ohlc = build_chart_data(
         ohlc_map, exchange_map, industries=industries, symbol_exchange=exchange_map,
+        bench_df=bench_df,
     )
     print(
         f"[tradingview_watchlist_dashboard] {len(records)} charted, {skipped_ohlc} skipped "

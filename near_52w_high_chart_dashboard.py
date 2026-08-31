@@ -17,7 +17,7 @@ import re
 from datetime import datetime
 
 from ohlc_db import load_ohlc_many
-from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE
+from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE, BENCH_SYM
 from near_52w_high_scanner import _PCT_BUCKETS_ORDER
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -73,7 +73,10 @@ def main() -> None:
 
     industries = resolve_industries(buckets.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(buckets.keys()), lookback=LOOKBACK)
-    records, skipped = build_chart_data(ohlc_map, buckets, industries=industries, min_bars=MIN_BARS)
+    bench_df = load_ohlc_many([BENCH_SYM], lookback=LOOKBACK).get(BENCH_SYM)
+    records, skipped = build_chart_data(
+        ohlc_map, buckets, industries=industries, min_bars=MIN_BARS, bench_df=bench_df,
+    )
     print(
         f"[near_52w_high_chart_dashboard] {len(records)} charted, {skipped} skipped "
         f"(insufficient OHLCV or annotation failure)"

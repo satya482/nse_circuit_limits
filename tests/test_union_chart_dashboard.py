@@ -202,7 +202,46 @@ def test_load_todays_union_fresh_returns_tiers(tmp_path):
     assert tiers == {"FOO": "ALL 4", "BAR": "ALL 4", "BAZ": "1 ONLY", "QUX": "1 ONLY"}
 
 
-from union_chart_dashboard import build_chart_data
+from union_chart_dashboard import build_chart_data, compute_rs_transition_kinds
+
+
+def _rs_test_dfs():
+    """12 flat bars (rsLine==rsEma9 exactly, no signal), then a big jump up
+    (crossover), held flat (no re-fire), then a crash down (crossunder)."""
+    closes = [100.0] * 12 + [300.0] * 5 + [50.0]
+    dates = pd.date_range("2025-01-01", periods=len(closes), freq="D")
+    df = pd.DataFrame({
+        "date": dates,
+        "open": closes, "high": closes, "low": closes, "close": closes,
+        "volume": [1000.0] * len(closes),
+    })
+    bench_df = pd.DataFrame({
+        "date": dates,
+        "close": [100.0] * len(closes),
+    })
+    return df, bench_df
+
+
+def test_compute_rs_transition_kinds_flags_crossover_and_crossunder():
+    df, bench_df = _rs_test_dfs()
+    kinds = compute_rs_transition_kinds(df, bench_df)
+    assert len(kinds) == len(df)
+    assert kinds[:12] == [None] * 12
+    assert kinds[12] == "rs_weak_to_strong"
+    assert kinds[13:17] == [None] * 4
+    assert kinds[17] == "rs_strong_to_weak"
+
+
+def test_compute_rs_transition_kinds_none_bench_returns_all_none():
+    df, _ = _rs_test_dfs()
+    kinds = compute_rs_transition_kinds(df, None)
+    assert kinds == [None] * len(df)
+
+
+def test_compute_rs_transition_kinds_short_bench_returns_all_none():
+    df, bench_df = _rs_test_dfs()
+    kinds = compute_rs_transition_kinds(df, bench_df.iloc[:3])
+    assert kinds == [None] * len(df)
 
 
 def _fixture_df(n_rows: int) -> pd.DataFrame:
@@ -255,6 +294,37 @@ def test_build_chart_data_skips_symbol_missing_from_ohlc_map():
     records, skipped = build_chart_data(ohlc_map, tiers, min_bars=130)
     assert skipped == 1
     assert [r["symbol"] for r in records] == ["FOO"]
+
+
+def test_build_chart_data_includes_rs_signals_when_bench_df_given(monkeypatch):
+    ohlc_map = {"FOO": _fixture_df(200)}
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_rs_transition_kinds",
+        lambda df, bench_df: [None] * 199 + ["rs_weak_to_strong"],
+    )
+    records, _ = build_chart_data(
+        ohlc_map, {"FOO": "ALL 4"}, min_bars=130, bench_df=_fixture_df(200),
+    )
+    assert records[0]["rs_signals"][-1] == "rs_weak_to_strong"
+
+
+def test_build_chart_data_skips_rs_signals_for_non_nse_symbol(monkeypatch):
+    ohlc_map = {"AAPL": _fixture_df(200)}
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_rs_transition_kinds",
+        lambda df, bench_df: [None] * 199 + ["rs_weak_to_strong"] if bench_df is not None else [None] * 200,
+    )
+    records, _ = build_chart_data(
+        ohlc_map, {"AAPL": "ALL 4"}, min_bars=130,
+        bench_df=_fixture_df(200), symbol_exchange={"AAPL": "NASDAQ"},
+    )
+    assert records[0]["rs_signals"] == [None] * 200
+
+
+def test_build_chart_data_rs_signals_all_none_without_bench_df():
+    ohlc_map = {"FOO": _fixture_df(200)}
+    records, _ = build_chart_data(ohlc_map, {"FOO": "ALL 4"}, min_bars=130)
+    assert records[0]["rs_signals"] == [None] * 200
 
 
 def test_build_chart_data_sorted_by_symbol():
@@ -392,15 +462,15 @@ def test_build_html_has_centered_header_and_44px_symbol_target():
     assert ".symbol-link{justify-self:end;min-height:44px" in compact
 
 
-def test_fixed_range_clamps_month_end_six_calendar_months():
+def test_fixed_range_clamps_month_end_twelve_calendar_months():
     html = build_html([], "2026-08-26")
-    assert "function sixMonthCutoff(last)" in html
+    assert "function oneYearCutoff(last)" in html
     assert "Math.min(sourceDay, lastDay)" in html
-    assert "sixMonthCutoff(last)" in html
+    assert "oneYearCutoff(last)" in html
 
     def reference(last):
         year, month, day = map(int, last.split("-"))
-        target = year * 12 + month - 1 - 6
+        target = year * 12 + month - 1 - 12
         target_year, target_month_zero = divmod(target, 12)
         next_month = target_year * 12 + target_month_zero + 1
         next_year, next_month_zero = divmod(next_month, 12)
@@ -408,9 +478,10 @@ def test_fixed_range_clamps_month_end_six_calendar_months():
         last_day = (date(next_year, next_month_zero + 1, 1) - timedelta(days=1)).day
         return date(target_year, target_month_zero + 1, min(day, last_day)).isoformat()
 
-    assert reference("2025-08-31") == "2025-02-28"
-    assert reference("2024-08-31") == "2024-02-29"
-    assert reference("2026-03-31") == "2025-09-30"
+    assert reference("2025-08-31") == "2024-08-31"
+    assert reference("2024-08-31") == "2023-08-31"
+    assert reference("2025-02-28") == "2024-02-28"
+    assert reference("2024-02-29") == "2023-02-28"
 
 
 def test_build_html_has_interactive_controls():
@@ -598,6 +669,51 @@ def test_high52wlinedata_extends_15_weekdays_flat_at_last_value():
     assert len(points) == (260 - 259) + 15  # 1 real rolling-max point + 15 extension
     last_real_value = points[0]["value"]
     assert all(p["value"] == last_real_value for p in points[1:])
+
+
+def test_rs_markers_builds_belowbar_lime_and_abovebar_red_circles():
+    html = build_html([], "2026-08-27")
+    record = {
+        "bars": [
+            ["2026-01-01", 1, 2, 0.5, 1.5, 100],
+            ["2026-01-02", 1, 2, 0.5, 1.5, 100],
+            ["2026-01-03", 1, 2, 0.5, 1.5, 100],
+        ],
+        "rs_signals": [None, "rs_weak_to_strong", "rs_strong_to_weak"],
+    }
+    markers = _run_generated_js_function(
+        html,
+        "const RS_MARKER_COLORS",
+        "function buildChart(symbol)",
+        f"rsMarkers({json.dumps(record)})",
+    )
+    assert len(markers) == 2
+    assert markers[0] == {
+        "time": "2026-01-02", "position": "belowBar", "color": "lime", "shape": "circle",
+    }
+    assert markers[1] == {
+        "time": "2026-01-03", "position": "aboveBar", "color": "red", "shape": "circle",
+    }
+
+
+def test_rs_markers_skips_missing_rs_signals_field():
+    html = build_html([], "2026-08-27")
+    record = {"bars": [["2026-01-01", 1, 2, 0.5, 1.5, 100]]}
+    markers = _run_generated_js_function(
+        html,
+        "const RS_MARKER_COLORS",
+        "function buildChart(symbol)",
+        f"rsMarkers({json.dumps(record)})",
+    )
+    assert markers == []
+
+
+def test_build_chart_wires_rs_markers_onto_candle_series():
+    html = build_html([], "2026-08-27")
+    build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(
+        "function applyControls()", 1
+    )[0]
+    assert "candleSeries.setMarkers(rsMarkers(record));" in build_chart_body
 
 
 def test_generated_high52w_matches_rolling_max_of_high():

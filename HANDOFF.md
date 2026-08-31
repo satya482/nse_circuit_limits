@@ -3,11 +3,18 @@
 # Repo Handoff
 
 Last reviewed by Codex: 2026-08-28.
-Last reviewed by Claude Code: 2026-07-15 (see "Current Worktree State" below).
+Last reviewed by Claude Code: 2026-08-31 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-08-31 by Claude Code, RS transition markers + 1-year default chart view:
+
+- `union_chart_dashboard.py`'s shared renderer (used by `union_charts.html`, `charts.html`, `near_52w_high_charts.html`) gained `compute_rs_transition_kinds(df, bench_df)`: daily RS Line (`close / NIFTY MIDSML 400 close * 1000`) crossing its own 9-EMA, parity with `pine_scripts/Satya EMAs.txt`'s `transition`/`transitionToWeak`. Rendered as Lightweight Charts native markers (lime circle below-bar on weak->strong, red circle above-bar on strong->weak), always-on (no toggle, matches PPV/WT precedent and the pine script's unconditional plot). Fail-open on missing/short benchmark data (all-None, chart still renders); on the mixed-exchange `charts.html`, RS signals are skipped for non-NSE symbols (NIFTY MIDSML 400 isn't a meaningful benchmark for US stocks) via `symbol_exchange`.
+- `build_chart_data()` gained an optional `bench_df` param -> new `rs_signals` field per record (parallel to `signals`, independent of the PPV/WT candle-recolor system). All 3 dashboards' `main()` now load `NIFTY MIDSML 400` (`BENCH_SYM`) via `load_ohlc_many` and pass it through.
+- Renamed `sixMonthCutoff` -> `oneYearCutoff` (6 -> 12 month offset): the default visible chart window is now the trailing 12 months instead of 6, so the 52W-High blue line's flat history is actually visible instead of mostly cropped off. Underlying loaded OHLCV range (LOOKBACK, 250-400 bars depending on dashboard) was already >= 1 year on 2 of 3 pages and unchanged.
+- TDD: 9 new focused tests (Python crossover/crossunder logic + fail-open paths, Node-executed JS marker-building/wiring, cutoff-rename). Full suite 544/544 passing. Live-verified on `charts.html` (194 charted) and `near_52w_high_charts.html` (316 charted); `union_charts.html` regeneration was skipped this session because its upstream `ema55_cross_scans.md` was stale (3 days old) -- code path already covered by the same shared-renderer tests, will pick up on next scheduled run.
 
 Updated 2026-08-28 by Codex, Union Watchlist 30-day liquidity gate production verification:
 
