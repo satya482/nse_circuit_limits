@@ -24,7 +24,7 @@ REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 MD_FILE = os.path.join(REPO_DIR, "near_52w_high_scans", "near_52w_high_scans.md")
 OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "near_52w_high_charts.html")
 TODAY = datetime.now().strftime("%Y-%m-%d")
-LOOKBACK = 600  # >= 1yr visible window (~252 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
+LOOKBACK = 600  # >= 9mo default view (~190 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 MIN_BARS = 260
 _VALID_BUCKETS = set(_PCT_BUCKETS_ORDER)
 

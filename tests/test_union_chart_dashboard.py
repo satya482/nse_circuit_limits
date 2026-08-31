@@ -462,15 +462,15 @@ def test_build_html_has_centered_header_and_44px_symbol_target():
     assert ".symbol-link{justify-self:end;min-height:44px" in compact
 
 
-def test_fixed_range_clamps_month_end_twelve_calendar_months():
+def test_fixed_range_clamps_month_end_generic_months_offset():
     html = build_html([], "2026-08-26")
-    assert "function oneYearCutoff(last)" in html
+    assert "function monthsCutoff(last, months)" in html
     assert "Math.min(sourceDay, lastDay)" in html
-    assert "oneYearCutoff(last)" in html
+    assert "monthsCutoff(last, DEFAULT_VIEW_MONTHS)" in html
 
-    def reference(last):
+    def reference(last, months):
         year, month, day = map(int, last.split("-"))
-        target = year * 12 + month - 1 - 12
+        target = year * 12 + month - 1 - months
         target_year, target_month_zero = divmod(target, 12)
         next_month = target_year * 12 + target_month_zero + 1
         next_year, next_month_zero = divmod(next_month, 12)
@@ -478,10 +478,15 @@ def test_fixed_range_clamps_month_end_twelve_calendar_months():
         last_day = (date(next_year, next_month_zero + 1, 1) - timedelta(days=1)).day
         return date(target_year, target_month_zero + 1, min(day, last_day)).isoformat()
 
-    assert reference("2025-08-31") == "2024-08-31"
-    assert reference("2024-08-31") == "2023-08-31"
-    assert reference("2025-02-28") == "2024-02-28"
-    assert reference("2024-02-29") == "2023-02-28"
+    assert reference("2025-08-31", 12) == "2024-08-31"
+    assert reference("2024-08-31", 12) == "2023-08-31"
+    assert reference("2025-02-28", 9) == "2024-05-28"
+    assert reference("2024-02-29", 9) == "2023-05-29"
+
+
+def test_default_view_months_is_nine():
+    html = build_html([], "2026-08-26")
+    assert "const DEFAULT_VIEW_MONTHS = 9;" in html
 
 
 def test_build_html_has_interactive_controls():

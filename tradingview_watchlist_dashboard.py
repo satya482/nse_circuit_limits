@@ -29,7 +29,7 @@ REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 WATCHLIST_URL = "https://in.tradingview.com/watchlists/156673583/"
 OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "charts.html")
 TODAY = datetime.now().strftime("%Y-%m-%d")
-LOOKBACK = 600  # >= 1yr visible window (~252 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
+LOOKBACK = 600  # >= 9mo default view (~190 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 SUPPORTED_EXCHANGES = {"NSE", "NASDAQ", "AMEX"}
 SKIP_SYMBOLS = set(INDEX_WATCHLIST_SYMBOLS + COMMODITY_WATCHLIST_SYMBOLS)
 _INIT_DATA_RE = re.compile(

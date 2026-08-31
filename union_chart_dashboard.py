@@ -30,7 +30,7 @@ OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "union_charts.html")
 INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
-LOOKBACK = 600  # >= 1yr visible window (~252 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
+LOOKBACK = 600  # >= 9mo default view (~190 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 BENCH_SYM = "NIFTY MIDSML 400"
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
@@ -320,9 +320,11 @@ const uiState = {
 };
 CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
+const DEFAULT_VIEW_MONTHS = 9;
+
 function fixedLogicalRange(record) {
   const last = record.bars[record.bars.length - 1][0];
-  const cutoffText = oneYearCutoff(last);
+  const cutoffText = monthsCutoff(last, DEFAULT_VIEW_MONTHS);
   const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
   return {
     from: firstIndex >= 0 ? firstIndex : 0,
@@ -330,10 +332,10 @@ function fixedLogicalRange(record) {
   };
 }
 
-function oneYearCutoff(last) {
+function monthsCutoff(last, months) {
   const current = new Date(last + "T00:00:00Z");
   const sourceDay = current.getUTCDate();
-  const targetMonthIndex = current.getUTCMonth() - 12;
+  const targetMonthIndex = current.getUTCMonth() - months;
   const targetYear = current.getUTCFullYear() + Math.floor(targetMonthIndex / 12);
   const targetMonth = ((targetMonthIndex % 12) + 12) % 12;
   const lastDay = new Date(Date.UTC(targetYear, targetMonth + 1, 0)).getUTCDate();
