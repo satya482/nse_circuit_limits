@@ -540,6 +540,66 @@ def test_build_html_configures_high52w_as_blue_step_line():
     assert "document.getElementById('high52wVisible')" in html
 
 
+def test_next_weekday_skips_saturday_and_sunday():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function nextWeekday(dateStr) {",
+        "function extendFlatWeekdays",
+        'nextWeekday("2024-01-05")',
+    )
+    assert result == "2024-01-08"
+
+
+def test_next_weekday_plain_weekday_increments_by_one():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function nextWeekday(dateStr) {",
+        "function extendFlatWeekdays",
+        'nextWeekday("2024-01-08")',
+    )
+    assert result == "2024-01-09"
+
+
+def test_extend_flat_weekdays_appends_15_points_holding_last_value():
+    html = build_html([], "2026-08-27")
+    points = _run_generated_js_function(
+        html,
+        "function nextWeekday(dateStr) {",
+        "function high52wLineData(record)",
+        'extendFlatWeekdays([{"time": "2024-01-05", "value": 42}], 15)',
+    )
+    assert len(points) == 16
+    assert all(p["value"] == 42 for p in points[1:])
+    assert points[1]["time"] == "2024-01-08"
+    assert points[-1]["time"] == "2024-01-26"
+    assert all(
+        pd_to_weekday(p["time"]) not in ("Saturday", "Sunday") for p in points[1:]
+    )
+
+
+def pd_to_weekday(date_str):
+    import datetime
+    return datetime.date.fromisoformat(date_str).strftime("%A")
+
+
+def test_high52wlinedata_extends_15_weekdays_flat_at_last_value():
+    html = build_html([], "2026-08-27")
+    dates = list(pd.bdate_range("2025-01-06", periods=260).strftime("%Y-%m-%d"))
+    bars = [[d, 100.0, 100.0 + i, 99.0, 100.0, 1000.0] for i, d in enumerate(dates)]
+    record = {"bars": bars}
+    points = _run_generated_js_function(
+        html,
+        "const HIGH52W_PERIOD = 260;",
+        "function addEmaSeries(entry, periods)",
+        f"high52wLineData({json.dumps(record)})",
+    )
+    assert len(points) == (260 - 259) + 15  # 1 real rolling-max point + 15 extension
+    last_real_value = points[0]["value"]
+    assert all(p["value"] == last_real_value for p in points[1:])
+
+
 def test_generated_high52w_matches_rolling_max_of_high():
     html = build_html([], "2026-08-27")
     highs = [10, 20, 15, 12, 11, 25, 24]

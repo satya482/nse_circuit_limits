@@ -402,12 +402,36 @@ function computeHigh52w(highs, period) {
   return out;
 }
 
+function nextWeekday(dateStr) {
+  const d = new Date(dateStr + "T00:00:00Z");
+  d.setUTCDate(d.getUTCDate() + 1);
+  while (d.getUTCDay() === 0 || d.getUTCDay() === 6) {
+    d.setUTCDate(d.getUTCDate() + 1);
+  }
+  return d.toISOString().slice(0, 10);
+}
+
+const HIGH52W_EXTEND_DAYS = 15; // project the last known 52w-high flat this many weekdays forward
+
+function extendFlatWeekdays(points, count) {
+  if (points.length === 0) return points;
+  const last = points[points.length - 1];
+  const extended = points.slice();
+  let cursor = last.time;
+  for (let i = 0; i < count; i++) {
+    cursor = nextWeekday(cursor);
+    extended.push({ time: cursor, value: last.value });
+  }
+  return extended;
+}
+
 function high52wLineData(record) {
   const highs = record.bars.map(function(b) { return b[2]; });
   const values = computeHigh52w(highs, HIGH52W_PERIOD);
-  return record.bars.map(function(bar, index) {
+  const points = record.bars.map(function(bar, index) {
     return values[index] === null ? null : { time: bar[0], value: values[index] };
   }).filter(Boolean);
+  return extendFlatWeekdays(points, HIGH52W_EXTEND_DAYS);
 }
 
 function addEmaSeries(entry, periods) {
