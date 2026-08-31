@@ -30,7 +30,7 @@ OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "union_charts.html")
 INDUSTRY_CACHE = os.path.join(REPO_DIR, ".union_chart_cache", "industries.json")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 MIN_BARS = 130
-LOOKBACK = 250
+LOOKBACK = 600  # >= 1yr visible window (~252 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 BENCH_SYM = "NIFTY MIDSML 400"
 SKIP_LABELS = {"INDICES", "COMMODITIES"}
 INDEX_ANCHORS = {"NIFTYSMLCAP250", "NIFTYMIDSML400"}
@@ -372,6 +372,7 @@ function rsMarkers(record) {
       position: RS_MARKER_POSITIONS[kind],
       color: RS_MARKER_COLORS[kind],
       shape: "circle",
+      size: 0.5,
     });
   });
   return markers;
@@ -803,7 +804,7 @@ h1{{font-size:1.1rem}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
-#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:10px}}
+#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:10px}}
 .industry-heading{{grid-column:1/-1;margin:14px 0 0}}
 .card{{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px}}
 .hdr{{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-weight:600;margin-bottom:6px}}
@@ -819,11 +820,11 @@ h1{{font-size:1.1rem}}
 .switch-row input:checked + .switch{{background:#238636}}
 .switch-row input:checked + .switch::after{{left:16px;background:#fff}}
 .chart-wrap{{position:relative;overflow:hidden}}
-.chart{{height:clamp(330px,38vw,400px)}}
+.chart{{height:clamp(380px,44vw,520px)}}
 .coil-layer{{position:absolute;inset:0;z-index:2;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .empty{{color:#8b949e}}
-@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:330px}}}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:380px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}

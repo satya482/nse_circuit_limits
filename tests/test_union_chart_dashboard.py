@@ -418,11 +418,11 @@ def test_build_html_renders_day_change_and_sort_metadata():
 def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     html = build_html([], "2026-08-27")
     compact = "".join(html.split())
-    assert "repeat(auto-fit,minmax(min(100%,440px),1fr))" in compact
-    assert ".chart{height:clamp(330px,38vw,400px)}" in compact
+    assert "repeat(auto-fit,minmax(min(100%,520px),1fr))" in compact
+    assert ".chart{height:clamp(380px,44vw,520px)}" in compact
     assert (
         "@media(max-width:600px){#grid{grid-template-columns:1fr}"
-        ".chart{height:330px}}" in compact
+        ".chart{height:380px}}" in compact
     )
     assert "vertTouchDrag:false" in compact
     assert "setVisibleLogicalRange" in html
@@ -689,10 +689,12 @@ def test_rs_markers_builds_belowbar_lime_and_abovebar_red_circles():
     )
     assert len(markers) == 2
     assert markers[0] == {
-        "time": "2026-01-02", "position": "belowBar", "color": "lime", "shape": "circle",
+        "time": "2026-01-02", "position": "belowBar", "color": "lime",
+        "shape": "circle", "size": 0.5,
     }
     assert markers[1] == {
-        "time": "2026-01-03", "position": "aboveBar", "color": "red", "shape": "circle",
+        "time": "2026-01-03", "position": "aboveBar", "color": "red",
+        "shape": "circle", "size": 0.5,
     }
 
 
