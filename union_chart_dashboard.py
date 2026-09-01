@@ -624,8 +624,8 @@ function buildChart(symbol) {
   const bars = record.bars;
   const chart = LightweightCharts.createChart(el, {
     height: el.clientHeight,
-    layout: { background: { color: '#161b22' }, textColor: '#8b949e' },
-    grid: { vertLines: { color: '#21262d' }, horzLines: { color: '#21262d' } },
+    layout: { background: { color: '#000000' }, textColor: '#8b949e' },
+    grid: { vertLines: { visible: false }, horzLines: { visible: false } },
   });
   const upColor = document.getElementById('upColor').value;
   const downColor = document.getElementById('downColor').value;
@@ -842,7 +842,7 @@ h1{{font-size:1.1rem}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
-#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:10px}}
+#grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,640px),1fr));gap:10px}}
 .industry-heading{{grid-column:1/-1;margin:14px 0 0}}
 .card{{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:8px}}
 .hdr{{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;font-weight:600;margin-bottom:6px}}

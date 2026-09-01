@@ -415,10 +415,20 @@ def test_build_html_renders_day_change_and_sort_metadata():
     assert '<option value="day-asc">' in html
 
 
+def test_build_html_chart_background_pure_black_no_grid_lines():
+    html = build_html([], "2026-08-27")
+    build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(
+        "const upColor", 1
+    )[0]
+    assert "background: { color: '#000000' }" in build_chart_body
+    assert "vertLines: { visible: false }" in build_chart_body
+    assert "horzLines: { visible: false }" in build_chart_body
+
+
 def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     html = build_html([], "2026-08-27")
     compact = "".join(html.split())
-    assert "repeat(auto-fit,minmax(min(100%,520px),1fr))" in compact
+    assert "repeat(auto-fit,minmax(min(100%,640px),1fr))" in compact
     assert ".chart{height:clamp(380px,44vw,520px)}" in compact
     assert (
         "@media(max-width:600px){#grid{grid-template-columns:1fr}"
