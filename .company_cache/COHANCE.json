@@ -2,13 +2,13 @@
   "symbol": "COHANCE",
   "name": "Cohance Lifesciences Ltd",
   "trendlyne_description": "Cohance Lifesciences Ltd. is a global technology-driven Contract Development and Manufacturing Organisation (CDMO) providing end-to-end solutions across a molecule's lifecycle. The company specialises in high-value services ranging from early-stage d... Read More",
-  "screener_description": "Hyderabad based CDMO company that offers services to leading global pharmaceutical and fine chemical majors in their NCE development endeavours. From process research & development to late-stage clinical and commercial manufacturing we are committed to provide customers with products fulfilling customer needs and expectations. [1]",
-  "combined_description": "Cohance Lifesciences Ltd. is a global technology-driven Contract Development and Manufacturing Organisation (CDMO) providing end-to-end solutions across a molecule's lifecycle. The company specialises in high-value services ranging from early-stage d... Read More Hyderabad based CDMO company that offers services to leading global pharmaceutical and fine chemical majors in their NCE development endeavours. From process research & development to late-stage clinical and commercial manufacturing we are committed to provide customers with products fulfilling customer needs and expectations. [1]",
+  "screener_description": "Cohance Lifesciences is a Hyderabad-based CDMO operating across pharmaceutical development, manufacturing, APIs, formulations and specialty chemicals. The company states that it features among the Top 20 CDMOs globally; its Pharma CDMO business works with 19 of the top 20 global innovators, while the API portfolio ranks among the top three suppliers in 8 of its top 10 molecules. [1] [2]",
+  "combined_description": "Cohance Lifesciences Ltd. is a global technology-driven Contract Development and Manufacturing Organisation (CDMO) providing end-to-end solutions across a molecule's lifecycle. The company specialises in high-value services ranging from early-stage d... Read More Cohance Lifesciences is a Hyderabad-based CDMO operating across pharmaceutical development, manufacturing, APIs, formulations and specialty chemicals. The company states that it features among the Top 20 CDMOs globally; its Pharma CDMO business works with 19 of the top 20 global innovators, while the API portfolio ranks among the top three suppliers in 8 of its top 10 molecules. [1] [2]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T06:02:14.978369+00:00",
+  "fetched_at": "2026-09-01T04:36:31.565300+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Pharmaceutical contract manufacturing development across drug lifecycle"
+  "short_label": "Pharmaceutical CDMO development manufacturing APIs formulations specialty chemicals"
 }

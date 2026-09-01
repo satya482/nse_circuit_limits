@@ -2,13 +2,13 @@
   "symbol": "INDSWFTLAB",
   "name": "Ind-Swift Laboratories Ltd.",
   "trendlyne_description": "Ind-Swift Laboratories Ltd. (ISLL) is a significant player in the global pharmaceutical industry, historically recognized for its leadership in the Macrolide Antibiotic sector. Based in Chandigarh, the company has recently undergone a major struc... Read More",
-  "screener_description": "Incorporated in 1995, Ind-Swift Laboratories Ltd is in the business of Bulk Drugs & Pharmaceuticals [1]",
-  "combined_description": "Ind-Swift Laboratories Ltd. (ISLL) is a significant player in the global pharmaceutical industry, historically recognized for its leadership in the Macrolide Antibiotic sector. Based in Chandigarh, the company has recently undergone a major struc... Read More Incorporated in 1995, Ind-Swift Laboratories Ltd is in the business of Bulk Drugs & Pharmaceuticals [1]",
+  "screener_description": "Incorporated in 1995, Ind-Swift Laboratories Ltd is a pharmaceutical company focused on finished dosage formulations (FDF). Co. manufactures tablets, capsules, ointments, injectables, liquids and dry syrups across therapies including gynaecology, paediatrics, cardiology, diabetology and dermatology. Operations span domestic formulations and international markets through own brands, contract manufacturing and out-licensing. [1]",
+  "combined_description": "Ind-Swift Laboratories Ltd. (ISLL) is a significant player in the global pharmaceutical industry, historically recognized for its leadership in the Macrolide Antibiotic sector. Based in Chandigarh, the company has recently undergone a major struc... Read More Incorporated in 1995, Ind-Swift Laboratories Ltd is a pharmaceutical company focused on finished dosage formulations (FDF). Co. manufactures tablets, capsules, ointments, injectables, liquids and dry syrups across therapies including gynaecology, paediatrics, cardiology, diabetology and dermatology. Operations span domestic formulations and international markets through own brands, contract manufacturing and out-licensing. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T05:52:22.546410+00:00",
+  "fetched_at": "2026-09-01T05:34:32.736776+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Macrolide antibiotics bulk drug manufacturer for global pharma markets"
+  "short_label": "Pharma company making tablets capsules injectables antibiotics"
 }

@@ -5,10 +5,10 @@
   "screener_description": "IDBI Bank is engaged in the business of Monetary intermediation of commercial banks, saving banks, postal savings bank and discount houses.",
   "combined_description": "IDBI Bank Ltd. (IDBI) is a major Indian financial institution providing a full spectrum of banking services to retail, MSME, agricultural, and corporate clients. Originally established as a development financial institution, it has evolved into a uni... Read More IDBI Bank is engaged in the business of Monetary intermediation of commercial banks, saving banks, postal savings bank and discount houses.",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T05:11:20.540097+00:00",
+  "fetched_at": "2026-09-01T05:05:55.500671+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Retail banking, loans, deposits, corporate lending"
+  "short_label": "Retail corporate MSME lending deposit bank"
 }

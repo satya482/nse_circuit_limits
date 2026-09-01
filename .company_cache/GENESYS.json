@@ -2,13 +2,13 @@
   "symbol": "GENESYS",
   "name": "Genesys International Corporation Limited",
   "trendlyne_description": "Genesys International Corporation Ltd. is a provider of advanced geospatial content and digital twin solutions. The company operates in the geospatial information systems (GIS) industry, specializing in the creation of comprehensive 3D city data and ... Read More",
-  "screener_description": "Genesys International Corporation Ltd is engaged in providing Geographical Information Services comprising of photogrammetry, remote sensing, cartography, data conversion, terrestrial and 3D geo-content including location navigation mapping and other computer based related services. [1]",
-  "combined_description": "Genesys International Corporation Ltd. is a provider of advanced geospatial content and digital twin solutions. The company operates in the geospatial information systems (GIS) industry, specializing in the creation of comprehensive 3D city data and ... Read More Genesys International Corporation Ltd is engaged in providing Geographical Information Services comprising of photogrammetry, remote sensing, cartography, data conversion, terrestrial and 3D geo-content including location navigation mapping and other computer based related services. [1]",
+  "screener_description": "Genesys International Corporation Ltd provides end-to-end geospatial data capture, processing, analytics, platforms and APIs. Its proprietary content spans pan-India 2D navigation/HD maps, street imagery and 3D digital twins for urban governance, infrastructure, utilities, mobility and location intelligence in India and overseas. [1]",
+  "combined_description": "Genesys International Corporation Ltd. is a provider of advanced geospatial content and digital twin solutions. The company operates in the geospatial information systems (GIS) industry, specializing in the creation of comprehensive 3D city data and ... Read More Genesys International Corporation Ltd provides end-to-end geospatial data capture, processing, analytics, platforms and APIs. Its proprietary content spans pan-India 2D navigation/HD maps, street imagery and 3D digital twins for urban governance, infrastructure, utilities, mobility and location intelligence in India and overseas. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T06:16:47.100817+00:00",
+  "fetched_at": "2026-09-01T05:40:09.470574+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "3D geospatial mapping data urban infrastructure government defense"
+  "short_label": "3D geospatial data maps digital twins urban infrastructure"
 }

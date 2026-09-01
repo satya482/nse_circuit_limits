@@ -1,11 +1,14 @@
 {
   "symbol": "INDOSTAR",
   "name": "IndoStar Capital Finance Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Indostar Capital Finance Ltd. is a non-banking financial company (NBFC) specializing in retail lending solutions across India. The company focuses on underserved segments through products such as used and new commercial vehicle (CV) finance and small... Read More",
+  "screener_description": "Incorporated in July 2009, ICFL is registered with the Reserve Bank of India (RBI) as a systemically-important non-deposit taking NBFC. [1]",
+  "combined_description": "Indostar Capital Finance Ltd. is a non-banking financial company (NBFC) specializing in retail lending solutions across India. The company focuses on underserved segments through products such as used and new commercial vehicle (CV) finance and small... Read More Incorporated in July 2009, ICFL is registered with the Reserve Bank of India (RBI) as a systemically-important non-deposit taking NBFC. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:32:33.738544+00:00",
-  "sources": [],
-  "short_label": "NBFC lending commercial vehicles SME infrastructure"
+  "fetched_at": "2026-09-01T06:12:27.985676+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Commercial vehicle finance NBFC underserved retail markets"
 }

@@ -1,11 +1,14 @@
 {
   "symbol": "REPCOHOME",
   "name": "Repco Home Finance Ltd.",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Repco Home Finance Ltd. (RHFL) is a housing finance company primarily engaged in providing loans for the purchase and construction of residential houses. It operates as a subsidiary of the Repatriates Cooperative Finance and Development Bank Limited ... Read More",
+  "screener_description": "Established in April 2000, Repco Home Finance Ltd. is a registered housing finance company. It is a subsidiary of the Repatriates Cooperative Finance and Development Bank Limited(Repco Bank). [1] [2]",
+  "combined_description": "Repco Home Finance Ltd. (RHFL) is a housing finance company primarily engaged in providing loans for the purchase and construction of residential houses. It operates as a subsidiary of the Repatriates Cooperative Finance and Development Bank Limited ... Read More Established in April 2000, Repco Home Finance Ltd. is a registered housing finance company. It is a subsidiary of the Repatriates Cooperative Finance and Development Bank Limited(Repco Bank). [1] [2]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:29:26.110686+00:00",
-  "sources": [],
-  "short_label": "Home loans for salaried and self-employed individuals"
+  "fetched_at": "2026-09-01T06:13:57.670675+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Housing loans for residential property purchase construction"
 }

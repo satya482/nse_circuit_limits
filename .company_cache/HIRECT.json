@@ -1,14 +1,14 @@
 {
   "symbol": "HIRECT",
-  "name": "Hind Rectifiers Limited",
+  "name": "Hirect Limited",
   "trendlyne_description": "For over six decades, Hind Rectifiers Limited (Hirect) has been a significant player in India's power conversion and railway electrification landscape. Established in 1958 in collaboration with Westinghouse Brake & Signal Co. Ltd., UK, the compan... Read More",
   "screener_description": "HRL  manufactures power electronic equipment such as converters, inverters, propulsion system, rectifiers and railway transformation equipment like traction transformer for locomotive, motors, various types of panels for locomotive  switch board cabinet, regulated battery charger,  inverters and modular pantry. The manufacturing facilities are in Mumbai and Nasik, Maharashtra, and Dehradun, Uttarakhand, and its registered office is in Mumbai.",
   "combined_description": "For over six decades, Hind Rectifiers Limited (Hirect) has been a significant player in India's power conversion and railway electrification landscape. Established in 1958 in collaboration with Westinghouse Brake & Signal Co. Ltd., UK, the compan... Read More HRL  manufactures power electronic equipment such as converters, inverters, propulsion system, rectifiers and railway transformation equipment like traction transformer for locomotive, motors, various types of panels for locomotive  switch board cabinet, regulated battery charger,  inverters and modular pantry. The manufacturing facilities are in Mumbai and Nasik, Maharashtra, and Dehradun, Uttarakhand, and its registered office is in Mumbai.",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T05:24:01.360883+00:00",
+  "fetched_at": "2026-09-01T06:04:40.458955+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Power electronics converters rectifiers railway traction equipment manufacturing"
+  "short_label": "Power electronics and traction transformers for Indian railways"
 }

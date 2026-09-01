@@ -2,13 +2,13 @@
   "symbol": "KSL",
   "name": "Kalyani Steels Ltd",
   "trendlyne_description": "Kalyani Steels Ltd. (KSL) is a prominent Indian manufacturer of premium alloy steel long products, primarily catering to high-precision engineering sectors. A key member of the multi-billion dollar Kalyani Group, the company operates as a specialized... Read More",
-  "screener_description": "Kalyani Steels Ltd, a part of Kalyani Group, is primarily engaged in the business of manufacture and sale of Iron and Steel Products. [1] [2]",
-  "combined_description": "Kalyani Steels Ltd. (KSL) is a prominent Indian manufacturer of premium alloy steel long products, primarily catering to high-precision engineering sectors. A key member of the multi-billion dollar Kalyani Group, the company operates as a specialized... Read More Kalyani Steels Ltd, a part of Kalyani Group, is primarily engaged in the business of manufacture and sale of Iron and Steel Products. [1] [2]",
+  "screener_description": "Kalyani Steels Ltd, a Kalyani Group specialty-steel company, manufactures forging and engineering-quality carbon /alloy-steel long products through the blast-furnace route. Its integrated Ginigera, Karnataka plant supplies critical grades for automotive, bearings, energy, oil & gas, engineering, seamless tube, defence and railway applications, with group forging companies as key customers. [1]",
+  "combined_description": "Kalyani Steels Ltd. (KSL) is a prominent Indian manufacturer of premium alloy steel long products, primarily catering to high-precision engineering sectors. A key member of the multi-billion dollar Kalyani Group, the company operates as a specialized... Read More Kalyani Steels Ltd, a Kalyani Group specialty-steel company, manufactures forging and engineering-quality carbon /alloy-steel long products through the blast-furnace route. Its integrated Ginigera, Karnataka plant supplies critical grades for automotive, bearings, energy, oil & gas, engineering, seamless tube, defence and railway applications, with group forging companies as key customers. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:03:02.810912+00:00",
+  "fetched_at": "2026-09-01T06:15:35.379437+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Alloy steel long products for automotive and engineering sectors"
+  "short_label": "Alloy steel long products for precision engineering applications"
 }

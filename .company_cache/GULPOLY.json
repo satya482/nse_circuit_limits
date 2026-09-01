@@ -1,11 +1,14 @@
 {
   "symbol": "GULPOLY",
   "name": "Gulshan Polyols Limited",
-  "trendlyne_description": "",
-  "screener_description": "",
-  "combined_description": "",
+  "trendlyne_description": "Gulshan Polyols Limited (GPL) is a diversified manufacturing company in India specializing in the production of grain-based chemicals, bio-fuels, and mineral-based products. The company operates across three primary business segments: **Ethanol (Bio-... Read More",
+  "screener_description": "Incorporated in 1981, Gulshan Polyols Ltd is a manufacturer of Ethanol and other speciality chemicals. [1]",
+  "combined_description": "Gulshan Polyols Limited (GPL) is a diversified manufacturing company in India specializing in the production of grain-based chemicals, bio-fuels, and mineral-based products. The company operates across three primary business segments: **Ethanol (Bio-... Read More Incorporated in 1981, Gulshan Polyols Ltd is a manufacturer of Ethanol and other speciality chemicals. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-07-01T06:32:15.083992+00:00",
-  "sources": [],
-  "short_label": "Polyol chemicals manufacturing for automotive foam applications"
+  "fetched_at": "2026-09-01T06:05:39.931106+00:00",
+  "sources": [
+    "trendlyne",
+    "screener"
+  ],
+  "short_label": "Ethanol bio-fuels specialty chemicals grain-based manufacturing India"
 }

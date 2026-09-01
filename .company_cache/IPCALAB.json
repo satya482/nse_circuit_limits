@@ -2,13 +2,13 @@
   "symbol": "IPCALAB",
   "name": "IPCA Laboratories Limited",
   "trendlyne_description": "Ipca Laboratories Ltd. is a vertically integrated pharmaceutical company with a significant global presence, specializing in the manufacturing of Active Pharmaceutical Ingredients (APIs) and Finished Dosage Forms (FDFs). The company maintains a stron... Read More",
-  "screener_description": "Ipca Laboratories is engaged in the manufacturing and marketing of pharmaceuticals.(Source : 201903 Annual Report Page No: 68)",
-  "combined_description": "Ipca Laboratories Ltd. is a vertically integrated pharmaceutical company with a significant global presence, specializing in the manufacturing of Active Pharmaceutical Ingredients (APIs) and Finished Dosage Forms (FDFs). The company maintains a stron... Read More Ipca Laboratories is engaged in the manufacturing and marketing of pharmaceuticals.(Source : 201903 Annual Report Page No: 68)",
+  "screener_description": "Ipca Laboratories is an integrated pharmaceutical company manufacturing branded and generic formulations, APIs and intermediates. Indian branded formulations are its core profit engine, complemented by formulation exports across Europe, Africa, the Americas, Asia, CIS and Australasia. The consolidated business includes Unichem Laboratories and its US, Brazil, Europe and South Africa operations. [1]",
+  "combined_description": "Ipca Laboratories Ltd. is a vertically integrated pharmaceutical company with a significant global presence, specializing in the manufacturing of Active Pharmaceutical Ingredients (APIs) and Finished Dosage Forms (FDFs). The company maintains a stron... Read More Ipca Laboratories is an integrated pharmaceutical company manufacturing branded and generic formulations, APIs and intermediates. Indian branded formulations are its core profit engine, complemented by formulation exports across Europe, Africa, the Americas, Asia, CIS and Australasia. The consolidated business includes Unichem Laboratories and its US, Brazil, Europe and South Africa operations. [1]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T05:22:23.991931+00:00",
+  "fetched_at": "2026-09-01T05:06:02.824051+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Pharma APIs finished dosage forms global markets"
+  "short_label": "Pharma APIs formulations branded generics domestic exports"
 }

@@ -2,13 +2,13 @@
   "symbol": "DEEDEV",
   "name": "DEE Development Engineers Limited",
   "trendlyne_description": "DEE Development Engineers Limited (DDEL) is a specialist engineering company providing advanced process piping solutions for high-pressure and high-temperature applications. It serves critical industrial sectors, including oil and gas, power (thermal... Read More",
-  "screener_description": "Incorporated in 1988, DEE Development Engineers Ltd specializes in the design, engineering, and fabrication of complex piping systems, pressure vessels, and heat exchangers [1]",
-  "combined_description": "DEE Development Engineers Limited (DDEL) is a specialist engineering company providing advanced process piping solutions for high-pressure and high-temperature applications. It serves critical industrial sectors, including oil and gas, power (thermal... Read More Incorporated in 1988, DEE Development Engineers Ltd specializes in the design, engineering, and fabrication of complex piping systems, pressure vessels, and heat exchangers [1]",
+  "screener_description": "DEE Development Engineers Ltd is a design -led engineering and manufacturing company supplying specialised high-pressure process piping systems, pipe spools, fittings and bends, modular skids, pressure vessels and heavy-fabrication products. It serves power -including nuclear - oil & gas, refining, petrochemical, chemical and fertiliser industries, with manufacturing operations in India and Thailand. [1] [2]",
+  "combined_description": "DEE Development Engineers Limited (DDEL) is a specialist engineering company providing advanced process piping solutions for high-pressure and high-temperature applications. It serves critical industrial sectors, including oil and gas, power (thermal... Read More DEE Development Engineers Ltd is a design -led engineering and manufacturing company supplying specialised high-pressure process piping systems, pipe spools, fittings and bends, modular skids, pressure vessels and heavy-fabrication products. It serves power -including nuclear - oil & gas, refining, petrochemical, chemical and fertiliser industries, with manufacturing operations in India and Thailand. [1] [2]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T06:13:46.278895+00:00",
+  "fetched_at": "2026-09-01T05:10:10.923316+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Process piping systems oil gas power thermal"
+  "short_label": "High-pressure piping systems for oil gas power"
 }

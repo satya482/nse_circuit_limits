@@ -715,6 +715,10 @@
     "id": "224",
     "slug": "bsl-ltd"
   },
+  "BURNPUR": {
+    "id": "226",
+    "slug": "burnpur-cement-ltd"
+  },
   "BUTTERFLY": {
     "id": "227",
     "slug": "butterfly-gandhimathi-appliances-ltd"
@@ -1082,6 +1086,10 @@
   "DRREDDY": {
     "id": "346",
     "slug": "dr-reddy-s-laboratories-ltd"
+  },
+  "DSKULKARNI": {
+    "id": "347",
+    "slug": "ds-kulkarni-developers-ltd"
   },
   "DSSL": {
     "id": "348",
@@ -1729,7 +1737,7 @@
   },
   "HIRECT": {
     "id": "562",
-    "slug": "hind-rectifiers-ltd"
+    "slug": "hirect-ltd"
   },
   "BOSCH-HCIL": {
     "id": "563",
@@ -2074,10 +2082,6 @@
   "JAYSREETEA": {
     "id": "664",
     "slug": "jay-shree-tea-industries-ltd"
-  },
-  "JBCHEPHARM": {
-    "id": "665",
-    "slug": "j-b-chemicals-pharmaceuticals-ltd"
   },
   "JBMA": {
     "id": "667",
@@ -4133,7 +4137,7 @@
   },
   "TAKE": {
     "id": "1346",
-    "slug": "take-solutions-ltd"
+    "slug": "take-ltd"
   },
   "TALBROAUTO": {
     "id": "1347",
@@ -4674,10 +4678,6 @@
   "WINDMACHIN": {
     "id": "1523",
     "slug": "windsor-machines-ltd"
-  },
-  "WINSOME": {
-    "id": "1524",
-    "slug": "winsome-yarns-ltd"
   },
   "WIPRO": {
     "id": "1526",
@@ -5579,7 +5579,7 @@
     "id": "2164",
     "slug": "kaycee-industries-ltd"
   },
-  "KHATJUNKER": {
+  "INDOKEM": {
     "id": "2165",
     "slug": "indokem-ltd"
   },
@@ -5587,7 +5587,7 @@
     "id": "2166",
     "slug": "panasonic-energy-india-company-ltd"
   },
-  "PERMAGNET": {
+  "PERMAGN": {
     "id": "2167",
     "slug": "permanent-magnets-ltd"
   },
@@ -5671,13 +5671,13 @@
     "id": "2191",
     "slug": "galada-power-telecommunications-ltd"
   },
-  "IBRIGST": {
+  "AZADIND": {
     "id": "2193",
     "slug": "azad-india-mobility-ltd"
   },
   "INLCM": {
     "id": "2194",
-    "slug": "indian-link-chain-manufacturer-ltd"
+    "slug": "rrp-electronics-india-ltd"
   },
   "INVPRECQ": {
     "id": "2195",
@@ -5711,7 +5711,7 @@
     "id": "2204",
     "slug": "welcast-steels-ltd"
   },
-  "AUTOCORP": {
+  "ACGL": {
     "id": "2205",
     "slug": "automobile-corporation-of-goa-ltd"
   },
@@ -5727,7 +5727,7 @@
     "id": "2209",
     "slug": "jainex-aamcol-ltd"
   },
-  "ALFREDHERB": {
+  "ALFREDHE": {
     "id": "2210",
     "slug": "alfred-herbert-india-ltd"
   },
@@ -5754,6 +5754,10 @@
   "LXMIATO": {
     "id": "2217",
     "slug": "lakshmi-engineering-and-warehousing-ltd"
+  },
+  "LYNMC": {
+    "id": "2218",
+    "slug": "lynx-machinery-commercials-ltd"
   },
   "MIRCH": {
     "id": "2219",
@@ -5830,6 +5834,10 @@
   "JOSTS": {
     "id": "2247",
     "slug": "jost-s-engineering-company-ltd"
+  },
+  "MPCOSEMB": {
+    "id": "2248",
+    "slug": "mipco-seamless-rings-gujarat-ltd"
   },
   "ROLCOEN": {
     "id": "2249",
@@ -5971,7 +5979,7 @@
     "id": "2298",
     "slug": "mysore-petro-chemicals-ltd"
   },
-  "TUTICORALK": {
+  "TUTIALKA": {
     "id": "2299",
     "slug": "tuticorin-alkali-chemicals-fertilizers-ltd"
   },
@@ -6055,15 +6063,11 @@
     "id": "2329",
     "slug": "polson-ltd"
   },
-  "SAGRSOY-B": {
-    "id": "2332",
-    "slug": "signature-green-corporation-ltd"
-  },
   "ORIBEVER": {
     "id": "2333",
     "slug": "orient-beverages-ltd"
   },
-  "SREERAYALK": {
+  "TGVSL": {
     "id": "2334",
     "slug": "tgv-sraac-ltd"
   },
@@ -6399,6 +6403,10 @@
     "id": "2437",
     "slug": "parshwanath-corporation-ltd"
   },
+  "SURYAKR": {
+    "id": "2438",
+    "slug": "rajvi-logitrade-ltd"
+  },
   "MILLENNIUM": {
     "id": "2439",
     "slug": "millennium-online-solutions-india-ltd"
@@ -6559,7 +6567,7 @@
     "id": "2491",
     "slug": "standard-capital-markets-ltd"
   },
-  "PARSHINV": {
+  "YOGI": {
     "id": "2492",
     "slug": "yogi-ltd"
   },
@@ -6755,7 +6763,7 @@
     "id": "2564",
     "slug": "aravali-securities-finance-ltd"
   },
-  "CRESSAN": {
+  "CRSL": {
     "id": "2569",
     "slug": "cressanda-railway-solutions-ltd"
   },
@@ -6807,6 +6815,10 @@
     "id": "2584",
     "slug": "betex-india-ltd"
   },
+  "GYTRIPA": {
+    "id": "2585",
+    "slug": "virya-resources-ltd"
+  },
   "POLYTEX": {
     "id": "2586",
     "slug": "polytex-india-ltd"
@@ -6835,7 +6847,7 @@
     "id": "2594",
     "slug": "sita-enterprises-ltd"
   },
-  "UNIMOVR": {
+  "MANBRO": {
     "id": "2595",
     "slug": "manbro-industries-ltd"
   },
@@ -6883,7 +6895,7 @@
     "id": "2608",
     "slug": "amforge-industries-ltd"
   },
-  "ABCGAS": {
+  "ONIXSOLAR": {
     "id": "2609",
     "slug": "onix-solar-energy-ltd"
   },
@@ -6967,7 +6979,7 @@
     "id": "2637",
     "slug": "gujarat-containers-ltd"
   },
-  "PANCHMSTEL": {
+  "PANCHMAHQ": {
     "id": "2638",
     "slug": "panchmahal-steel-ltd"
   },
@@ -7147,7 +7159,7 @@
     "id": "2696",
     "slug": "omnitex-industries-india-ltd"
   },
-  "OBRSESY": {
+  "ONEGLOBAL": {
     "id": "2697",
     "slug": "one-global-service-provider-ltd"
   },
@@ -7223,7 +7235,7 @@
     "id": "2717",
     "slug": "winsome-textile-industries-ltd"
   },
-  "SAINTGOBAIN": {
+  "SEKURITIND": {
     "id": "2722",
     "slug": "saint-gobain-sekurit-india-ltd"
   },
@@ -7299,7 +7311,7 @@
     "id": "2744",
     "slug": "pcs-technology-ltd"
   },
-  "SPICELEC": {
+  "SPELS": {
     "id": "2745",
     "slug": "spel-semiconductor-ltd"
   },
@@ -7523,10 +7535,6 @@
     "id": "2812",
     "slug": "transglobe-foods-ltd"
   },
-  "PIONAGR": {
-    "id": "2814",
-    "slug": "pioneer-agro-extracts-ltd"
-  },
   "VIRATCRA": {
     "id": "2816",
     "slug": "virat-crane-industries-ltd"
@@ -7609,7 +7617,7 @@
   },
   "SOURCEIND": {
     "id": "2841",
-    "slug": "source-industries-india-ltd"
+    "slug": "arka-defence-locomotives-ltd"
   },
   "ADVLIFE": {
     "id": "2843",
@@ -7759,7 +7767,7 @@
     "id": "2883",
     "slug": "yuken-india-ltd"
   },
-  "PORRITSPEN": {
+  "VOITHPAPR": {
     "id": "2884",
     "slug": "voith-paper-fabrics-india-ltd"
   },
@@ -7795,7 +7803,7 @@
     "id": "2892",
     "slug": "hle-glascoat-ltd"
   },
-  "TANEJAERO": {
+  "TANAA": {
     "id": "2893",
     "slug": "taneja-aerospace-aviation-ltd"
   },
@@ -7899,7 +7907,7 @@
     "id": "2920",
     "slug": "thrive-future-habitats-ltd"
   },
-  "MEDICAPS": {
+  "MEDICAPQ": {
     "id": "2922",
     "slug": "medicaps-ltd"
   },
@@ -7987,7 +7995,7 @@
     "id": "2950",
     "slug": "lotus-chocolate-company-ltd"
   },
-  "PACIFICIND": {
+  "PACIFICI": {
     "id": "2951",
     "slug": "pacific-industries-ltd"
   },
@@ -8007,7 +8015,7 @@
     "id": "2955",
     "slug": "krypton-industries-ltd"
   },
-  "NETWORK": {
+  "SWISSMLTRY": {
     "id": "2956",
     "slug": "swiss-military-consumer-goods-ltd"
   },
@@ -8351,7 +8359,7 @@
     "id": "3058",
     "slug": "parker-agrochem-exports-ltd"
   },
-  "RELISH": {
+  "SHUKRAPHAR": {
     "id": "3059",
     "slug": "shukra-pharmaceuticals-ltd"
   },
@@ -8366,10 +8374,6 @@
   "ARCHITORG": {
     "id": "3062",
     "slug": "archit-organosys-ltd"
-  },
-  "SIKOZY": {
-    "id": "3063",
-    "slug": "sikozy-realtors-ltd"
   },
   "INDOAMIN": {
     "id": "3064",
@@ -8531,10 +8535,6 @@
     "id": "3110",
     "slug": "royal-cushion-vinyl-products-ltd"
   },
-  "BLOOM": {
-    "id": "3113",
-    "slug": "bloom-dekor-ltd"
-  },
   "MORGAN": {
     "id": "3114",
     "slug": "morgan-ventures-ltd"
@@ -8579,7 +8579,7 @@
     "id": "3126",
     "slug": "cindrella-hotels-ltd"
   },
-  "RPIL": {
+  "HAMPTON": {
     "id": "3127",
     "slug": "hampton-sky-realty-ltd"
   },
@@ -8675,7 +8675,7 @@
     "id": "3154",
     "slug": "square-four-projects-india-ltd"
   },
-  "SCANPGEOM": {
+  "SGLRES": {
     "id": "3156",
     "slug": "sgl-resources-ltd"
   },
@@ -8763,7 +8763,7 @@
     "id": "3185",
     "slug": "garnet-construction-ltd"
   },
-  "BRIGHTBROS": {
+  "BRIGHTBR": {
     "id": "3186",
     "slug": "bright-brothers-ltd"
   },
@@ -8907,10 +8907,6 @@
     "id": "3226",
     "slug": "stylam-industries-ltd"
   },
-  "WOODSVILA": {
-    "id": "3228",
-    "slug": "woodsvilla-ltd"
-  },
   "TRANSFIN": {
     "id": "3229",
     "slug": "last-mile-enterprises-ltd"
@@ -8958,6 +8954,10 @@
   "AADIIND": {
     "id": "3240",
     "slug": "aadi-industries-ltd"
+  },
+  "SANTOSHF": {
+    "id": "3241",
+    "slug": "santosh-fine-fab-ltd"
   },
   "SREEJAYA": {
     "id": "3242",
@@ -9078,6 +9078,10 @@
   "ODYSSEY": {
     "id": "3276",
     "slug": "odyssey-technologies-ltd"
+  },
+  "SPSINT": {
+    "id": "3277",
+    "slug": "vk-global-industries-ltd"
   },
   "RSCINT": {
     "id": "3278",
@@ -9443,10 +9447,6 @@
     "id": "3384",
     "slug": "agarwal-fortune-india-ltd"
   },
-  "KLGCAP": {
-    "id": "3385",
-    "slug": "klg-capital-services-ltd"
-  },
   "DYNAMICP": {
     "id": "3387",
     "slug": "dynamic-portfolio-management-services-ltd"
@@ -9539,10 +9539,6 @@
     "id": "3421",
     "slug": "erp-soft-systems-ltd"
   },
-  "RRSECUR": {
-    "id": "3422",
-    "slug": "rr-securities-ltd"
-  },
   "INTETHR": {
     "id": "3423",
     "slug": "integrated-thermoplastic-ltd"
@@ -9619,11 +9615,15 @@
     "id": "3446",
     "slug": "libord-securities-ltd"
   },
+  "BHATEXT": {
+    "id": "3447",
+    "slug": "bharat-textiles-proofing-industries-ltd"
+  },
   "REGAL": {
     "id": "3448",
     "slug": "regal-entertainment-consultants-ltd"
   },
-  "TOBUENT": {
+  "EBIX": {
     "id": "3449",
     "slug": "ebix-ltd"
   },
@@ -10035,6 +10035,10 @@
     "id": "3576",
     "slug": "tuni-textile-mills-ltd"
   },
+  "KIRANPR": {
+    "id": "3577",
+    "slug": "kiran-print-pack-ltd"
+  },
   "NARPROP": {
     "id": "3578",
     "slug": "narendra-properties-ltd"
@@ -10343,10 +10347,6 @@
     "id": "3680",
     "slug": "menon-pistons-ltd"
   },
-  "PRISMFN": {
-    "id": "3682",
-    "slug": "prism-finance-ltd"
-  },
   "GREENCREST": {
     "id": "3683",
     "slug": "greencrest-financial-services-ltd"
@@ -10383,7 +10383,7 @@
     "id": "3691",
     "slug": "pfl-infotech-ltd"
   },
-  "TOWASOK": {
+  "SHRADDHA": {
     "id": "3692",
     "slug": "shraddha-prime-projects-ltd"
   },
@@ -10455,7 +10455,7 @@
     "id": "3714",
     "slug": "asian-star-company-ltd"
   },
-  "ORVENPR": {
+  "ORIRAIL": {
     "id": "3717",
     "slug": "oriental-rail-infrastructure-ltd"
   },
@@ -10482,10 +10482,6 @@
   "ANJANIFIN": {
     "id": "3724",
     "slug": "anjani-finance-ltd"
-  },
-  "RAHME": {
-    "id": "3727",
-    "slug": "tacent-projects-ltd"
   },
   "REXNORD": {
     "id": "3728",
@@ -10554,10 +10550,6 @@
   "IITLPROJ": {
     "id": "3751",
     "slug": "iitl-projects-ltd"
-  },
-  "HARIGOV": {
-    "id": "3752",
-    "slug": "popees-baby-care-india-ltd"
   },
   "CHLOGIST": {
     "id": "3754",
@@ -10695,7 +10687,7 @@
     "id": "3797",
     "slug": "h-s-india-ltd"
   },
-  "SUNSHINE": {
+  "532154": {
     "id": "3798",
     "slug": "johnson-pharmacare-ltd"
   },
@@ -10903,7 +10895,7 @@
     "id": "3863",
     "slug": "dynemic-products-ltd"
   },
-  "MONNETPRO": {
+  "MPDL": {
     "id": "3864",
     "slug": "mpdl-ltd"
   },
@@ -11103,10 +11095,6 @@
     "id": "3933",
     "slug": "vinayak-polycon-international-ltd"
   },
-  "JOINTECAED": {
-    "id": "3934",
-    "slug": "jointeca-education-solutions-ltd"
-  },
   "SRGHFL": {
     "id": "3935",
     "slug": "srg-housing-finance-ltd"
@@ -11141,7 +11129,7 @@
   },
   "PANKAJPOLY": {
     "id": "3946",
-    "slug": "cdg-petchem-ltd"
+    "slug": "jujhar-logistics-ltd"
   },
   "COVIDH": {
     "id": "3948",
@@ -11158,6 +11146,10 @@
   "COMFINCAP": {
     "id": "3955",
     "slug": "comfort-fincap-ltd"
+  },
+  "BMAL": {
+    "id": "3957",
+    "slug": "bothra-metals-alloys-ltd"
   },
   "LAKHOTIA": {
     "id": "3958",
@@ -11319,6 +11311,10 @@
     "id": "4018",
     "slug": "b-c-power-controls-ltd"
   },
+  "KCSL": {
+    "id": "4019",
+    "slug": "karnimata-cold-storage-ltd"
+  },
   "RACE": {
     "id": "4020",
     "slug": "race-eco-chain-ltd"
@@ -11347,7 +11343,7 @@
     "id": "4029",
     "slug": "haria-apparels-ltd"
   },
-  "JOONKTOLL": {
+  "VASUPRADA": {
     "id": "4030",
     "slug": "shri-vasuprada-plantations-ltd"
   },
@@ -11451,6 +11447,10 @@
     "id": "4064",
     "slug": "fruition-venture-ltd"
   },
+  "BHANDERI": {
+    "id": "4067",
+    "slug": "bhanderi-infracon-ltd"
+  },
   "CAREWELL": {
     "id": "4068",
     "slug": "zinema-media-and-entertainment-ltd"
@@ -11467,7 +11467,7 @@
     "id": "4072",
     "slug": "vishal-fabrics-ltd"
   },
-  "OJASASSET": {
+  "TOYAMSL": {
     "id": "4073",
     "slug": "toyam-sports-ltd"
   },
@@ -11499,7 +11499,7 @@
     "id": "4081",
     "slug": "sirohia-sons-ltd"
   },
-  "NAYSAA": {
+  "MIIL": {
     "id": "4082",
     "slug": "meghna-infracon-infrastructure-ltd"
   },
@@ -11675,10 +11675,6 @@
     "id": "4137",
     "slug": "vintage-coffee-and-beverages-ltd"
   },
-  "RAFL": {
-    "id": "4138",
-    "slug": "raghuvansh-agrofarms-ltd"
-  },
   "COSYN": {
     "id": "4139",
     "slug": "cosyn-ltd"
@@ -11719,7 +11715,7 @@
     "id": "4149",
     "slug": "concord-drugs-ltd"
   },
-  "MANVIJAY": {
+  "WARDINMOBI": {
     "id": "4150",
     "slug": "wardwizard-innovations-mobility-ltd"
   },
@@ -11842,10 +11838,6 @@
   "SUJALA": {
     "id": "4185",
     "slug": "sujala-trading-holdings-ltd"
-  },
-  "JAINMARMO": {
-    "id": "4186",
-    "slug": "jain-marmo-industries-ltd"
   },
   "BFFL": {
     "id": "4187",
@@ -11987,10 +11979,6 @@
     "id": "4229",
     "slug": "chemiesynth-vapi-ltd"
   },
-  "JEL": {
-    "id": "4231",
-    "slug": "jyotirgamya-enterprises-ltd"
-  },
   "STARDELTA": {
     "id": "4233",
     "slug": "star-delta-transformers-ltd"
@@ -12003,10 +11991,6 @@
     "id": "4236",
     "slug": "samsrita-labs-ltd"
   },
-  "PECOS": {
-    "id": "4237",
-    "slug": "pecos-hotels-pubs-ltd"
-  },
   "MSL": {
     "id": "4239",
     "slug": "mangalam-seeds-ltd"
@@ -12015,7 +11999,7 @@
     "id": "4241",
     "slug": "symbiox-investment-trading-co-ltd"
   },
-  "AKSPINTEX": {
+  "SUNRAKSHAK": {
     "id": "4244",
     "slug": "sunrakshakk-industries-india-ltd"
   },
@@ -12075,6 +12059,10 @@
     "id": "4265",
     "slug": "mallcom-india-ltd"
   },
+  "PJL": {
+    "id": "4266",
+    "slug": "patdiam-jewellery-ltd"
+  },
   "VAL": {
     "id": "4267",
     "slug": "naksh-precious-metals-ltd"
@@ -12103,10 +12091,6 @@
     "id": "4275",
     "slug": "tejnaksh-healthcare-ltd"
   },
-  "BRIPORT": {
-    "id": "4277",
-    "slug": "brilliant-portfolios-ltd"
-  },
   "RFSL": {
     "id": "4278",
     "slug": "richfield-financial-services-ltd"
@@ -12123,7 +12107,7 @@
     "id": "4282",
     "slug": "typhoon-financial-services-ltd"
   },
-  "APUNKA": {
+  "PANORAMA": {
     "id": "4283",
     "slug": "panorama-studios-international-ltd"
   },
@@ -12201,7 +12185,7 @@
   },
   "FMEC": {
     "id": "4310",
-    "slug": "f-mec-international-financial-services-ltd"
+    "slug": "dhvija-finance-ltd"
   },
   "DDIL": {
     "id": "4311",
@@ -12319,9 +12303,13 @@
     "id": "4352",
     "slug": "darjeeling-industries-ltd"
   },
-  "ADVIK": {
+  "ADVIKCA": {
     "id": "4353",
     "slug": "advik-capital-ltd"
+  },
+  "KDML": {
+    "id": "4356",
+    "slug": "khemani-distributors-marketing-ltd"
   },
   "UMIYA": {
     "id": "4357",
@@ -12347,6 +12335,10 @@
     "id": "4365",
     "slug": "raghav-productivity-enhancers-ltd"
   },
+  "FRANKLIN": {
+    "id": "4366",
+    "slug": "franklin-leasing-finance-ltd"
+  },
   "LANCER": {
     "id": "4367",
     "slug": "lancer-container-lines-ltd"
@@ -12358,10 +12350,6 @@
   "HALDER": {
     "id": "4371",
     "slug": "halder-venture-ltd"
-  },
-  "GHUSHINE": {
-    "id": "4372",
-    "slug": "ghushine-fintrrade-ocean-ltd"
   },
   "BAJAJHCARE": {
     "id": "4373",
@@ -12427,17 +12415,9 @@
     "id": "4409",
     "slug": "lords-mark-industries-ltd"
   },
-  "ZSWASTSA": {
-    "id": "4410",
-    "slug": "e-e-enterprises-ltd"
-  },
   "ANANDPROJ": {
     "id": "4412",
     "slug": "anand-projects-ltd"
-  },
-  "KSHITIJ": {
-    "id": "4416",
-    "slug": "manglam-global-corporations-ltd"
   },
   "ELCIDIN": {
     "id": "4417",
@@ -12469,7 +12449,11 @@
   },
   "RISHYRN": {
     "id": "4449",
-    "slug": "rishab-special-yarns-ltd"
+    "slug": "impera-worldwide-ltd"
+  },
+  "IDM": {
+    "id": "4450",
+    "slug": "international-data-management-ltd"
   },
   "INTEGSW": {
     "id": "4451",
@@ -12483,9 +12467,17 @@
     "id": "4454",
     "slug": "sarda-proteins-ltd"
   },
+  "SHVSUIT": {
+    "id": "4455",
+    "slug": "shiva-suitings-ltd"
+  },
   "BAPACK": {
     "id": "4457",
     "slug": "b-a-packaging-india-ltd"
+  },
+  "PURITY": {
+    "id": "4458",
+    "slug": "purity-flex-pack-ltd"
   },
   "BIJHANS": {
     "id": "4460",
@@ -12499,6 +12491,10 @@
     "id": "4464",
     "slug": "ace-engitech-ltd"
   },
+  "HARAFIN": {
+    "id": "4467",
+    "slug": "haryana-financial-corporation"
+  },
   "MAYURFL": {
     "id": "4468",
     "slug": "mayur-floorings-ltd"
@@ -12510,10 +12506,6 @@
   "SICL": {
     "id": "4472",
     "slug": "suvidha-infraestate-corporation-ltd"
-  },
-  "HIRAUTO": {
-    "id": "4473",
-    "slug": "hira-automobiles-ltd"
   },
   "TRINITYLEA": {
     "id": "4474",
@@ -12687,10 +12679,6 @@
     "id": "4736",
     "slug": "digjam-ltd"
   },
-  "ASYL": {
-    "id": "4738",
-    "slug": "advance-syntex-ltd"
-  },
   "HUIL": {
     "id": "4739",
     "slug": "hindusthan-insulators-industries-ltd"
@@ -12711,7 +12699,7 @@
     "id": "4743",
     "slug": "kwality-pharmaceuticals-ltd"
   },
-  "BULL": {
+  "EASTWEST": {
     "id": "4744",
     "slug": "east-west-freight-carriers-ltd"
   },
@@ -12726,6 +12714,10 @@
   "ECS": {
     "id": "4748",
     "slug": "ecs-biztech-ltd"
+  },
+  "SHIVAEXPO": {
+    "id": "4750",
+    "slug": "shiva-granito-export-ltd"
   },
   "BLS": {
     "id": "4751",
@@ -12998,6 +12990,10 @@
   "MITSU": {
     "id": "61515",
     "slug": "mitsu-chem-plast-ltd"
+  },
+  "RSTL": {
+    "id": "61516",
+    "slug": "riddhi-steel-and-tube-ltd"
   },
   "RADHIKAJWE": {
     "id": "61517",
@@ -13327,6 +13323,10 @@
     "id": "82260",
     "slug": "retro-green-revolution-ltd"
   },
+  "BANSISONS": {
+    "id": "82261",
+    "slug": "novyra-pharmachem-ltd"
+  },
   "517286": {
     "id": "82274",
     "slug": "rnit-ai-solutions-ltd"
@@ -13343,7 +13343,7 @@
     "id": "82283",
     "slug": "standard-surfactants-ltd"
   },
-  "539991": {
+  "CFEL": {
     "id": "82333",
     "slug": "confidence-futuristic-energetech-ltd"
   },
@@ -13434,10 +13434,6 @@
   "SPRING": {
     "id": "82444",
     "slug": "variman-global-enterprises-ltd"
-  },
-  "FRONTLINE": {
-    "id": "82445",
-    "slug": "frontline-financial-services-ltd"
   },
   "DUGAR": {
     "id": "82448",
@@ -13563,7 +13559,7 @@
     "id": "82623",
     "slug": "shamrock-industrial-company-ltd"
   },
-  "GROMO": {
+  "PRISMX": {
     "id": "82627",
     "slug": "prismx-global-ventures-ltd"
   },
@@ -13655,6 +13651,14 @@
     "id": "82802",
     "slug": "boston-commerce-ltd"
   },
+  "OCTAWARE": {
+    "id": "82804",
+    "slug": "octaware-technologies-ltd"
+  },
+  "OLYMPIC": {
+    "id": "82819",
+    "slug": "olympic-management-financial-services-ltd"
+  },
   "SINDU": {
     "id": "82821",
     "slug": "ghv-infra-projects-ltd"
@@ -13690,6 +13694,10 @@
   "SHIVAMILLS": {
     "id": "82918",
     "slug": "shiva-mills-ltd"
+  },
+  "RITHWIK": {
+    "id": "82926",
+    "slug": "rithwik-facility-management-services-ltd"
   },
   "SAIANAND": {
     "id": "82933",
@@ -13783,6 +13791,10 @@
     "id": "83084",
     "slug": "diggi-multitrade-ltd"
   },
+  "WESTERN": {
+    "id": "83087",
+    "slug": "western-ministil-ltd"
+  },
   "SHAKTI": {
     "id": "83099",
     "slug": "shakti-press-ltd"
@@ -13823,10 +13835,6 @@
     "id": "83167",
     "slug": "the-yamuna-syndicate-ltd"
   },
-  "505100": {
-    "id": "83275",
-    "slug": "india-radiators-ltd"
-  },
   "519064": {
     "id": "83277",
     "slug": "khandelwal-extractions-ltd"
@@ -13843,7 +13851,7 @@
     "id": "83289",
     "slug": "the-indian-wood-products-company-ltd"
   },
-  "519234": {
+  "SIEL": {
     "id": "83297",
     "slug": "superior-industrial-enterprises-ltd"
   },
@@ -13935,7 +13943,7 @@
     "id": "83377",
     "slug": "salem-erode-investments-ltd"
   },
-  "522235": {
+  "MINALIND": {
     "id": "83379",
     "slug": "minal-industries-ltd"
   },
@@ -13987,7 +13995,7 @@
     "id": "83433",
     "slug": "starlineps-enterprises-ltd"
   },
-  "540080": {
+  "DHATRE": {
     "id": "83434",
     "slug": "dhatre-udyog-ltd"
   },
@@ -14018,10 +14026,6 @@
   "512115": {
     "id": "83468",
     "slug": "rose-merc-ltd"
-  },
-  "501110": {
-    "id": "83471",
-    "slug": "sunrise-industrial-traders-ltd"
   },
   "540259": {
     "id": "83472",
@@ -14071,7 +14075,7 @@
     "id": "83522",
     "slug": "sharma-east-india-hospitals-medical-research-ltd"
   },
-  "509960": {
+  "UPHOT": {
     "id": "83523",
     "slug": "u-p-hotels-ltd"
   },
@@ -14147,6 +14151,10 @@
     "id": "87724",
     "slug": "ice-make-refrigeration-ltd"
   },
+  "AHIMSA": {
+    "id": "87726",
+    "slug": "ahimsa-industries-ltd"
+  },
   "GOYALALUM": {
     "id": "87727",
     "slug": "goyal-aluminiums-ltd"
@@ -14207,7 +14215,7 @@
     "id": "87747",
     "slug": "hindcon-chemicals-ltd"
   },
-  "541096": {
+  "BPLPHARMA": {
     "id": "87748",
     "slug": "bharat-parenterals-ltd"
   },
@@ -14419,6 +14427,10 @@
     "id": "87810",
     "slug": "madhav-copper-ltd"
   },
+  "TRANSWIND": {
+    "id": "87811",
+    "slug": "transwind-infrastructures-ltd"
+  },
   "AIRAN": {
     "id": "87812",
     "slug": "airan-ltd"
@@ -14442,6 +14454,10 @@
   "PASHUPATI": {
     "id": "87818",
     "slug": "pashupati-cotspin-ltd"
+  },
+  "541196": {
+    "id": "87819",
+    "slug": "lex-nimble-solutions-ltd"
   },
   "DPABHUSHAN": {
     "id": "87820",
@@ -14527,6 +14543,10 @@
     "id": "87846",
     "slug": "kapston-services-ltd"
   },
+  "KALYANI": {
+    "id": "87847",
+    "slug": "kalyani-commercials-ltd"
+  },
   "TARACHAND": {
     "id": "87849",
     "slug": "tara-chand-infralogistic-solutions-ltd"
@@ -14571,6 +14591,10 @@
     "id": "87860",
     "slug": "obcl-ltd"
   },
+  "MPTODAY": {
+    "id": "87861",
+    "slug": "madhya-pradesh-today-media-ltd"
+  },
   "OMFURN": {
     "id": "87863",
     "slug": "omfurn-india-ltd"
@@ -14595,10 +14619,6 @@
     "id": "87871",
     "slug": "jet-freight-logistics-ltd"
   },
-  "PARAMPARA": {
-    "id": "87872",
-    "slug": "parampara-dairy-delights-ltd"
-  },
   "SHRENIK": {
     "id": "87873",
     "slug": "shrenik-ltd"
@@ -14614,6 +14634,10 @@
   "GICL": {
     "id": "87878",
     "slug": "globe-international-carriers-ltd"
+  },
+  "VASA": {
+    "id": "87879",
+    "slug": "vasa-retail-and-overseas-ltd"
   },
   "SILLYMONKS": {
     "id": "87880",
@@ -14767,10 +14791,6 @@
     "id": "97145",
     "slug": "latteys-industries-ltd"
   },
-  "AURIGROW": {
-    "id": "97146",
-    "slug": "auri-grow-india-ltd"
-  },
   "E2E": {
     "id": "97147",
     "slug": "e2e-networks-ltd"
@@ -14794,10 +14814,6 @@
   "FOCUS": {
     "id": "97163",
     "slug": "focus-lighting-and-fixtures-ltd"
-  },
-  "539819": {
-    "id": "97164",
-    "slug": "mudra-financial-services-ltd"
   },
   "WORTHPERI": {
     "id": "97165",
@@ -14863,7 +14879,7 @@
     "id": "103643",
     "slug": "fratelli-vineyards-ltd"
   },
-  "541778": {
+  "DEEP": {
     "id": "103644",
     "slug": "deep-polymers-ltd"
   },
@@ -15063,6 +15079,10 @@
     "id": "118444",
     "slug": "diksha-greens-ltd"
   },
+  "DRSDILIP": {
+    "id": "118812",
+    "slug": "drs-dilip-roadlines-ltd"
+  },
   "542176": {
     "id": "119247",
     "slug": "aryan-shares-stock-brokers-ltd"
@@ -15155,9 +15175,9 @@
     "id": "130024",
     "slug": "kranti-industries-ltd"
   },
-  "542477": {
-    "id": "130214",
-    "slug": "glaam-up-jwel-ltd"
+  "MINDPOOL": {
+    "id": "130114",
+    "slug": "mindpool-technologies-ltd"
   },
   "ANUP": {
     "id": "130216",
@@ -15194,10 +15214,6 @@
   "MSTCLTD": {
     "id": "138917",
     "slug": "mstc-ltd"
-  },
-  "531286": {
-    "id": "139057",
-    "slug": "adhata-global-ltd"
   },
   "EMBASSY": {
     "id": "139325",
@@ -15475,7 +15491,7 @@
     "id": "179983",
     "slug": "easun-capital-markets-ltd"
   },
-  "14095022": {
+  "ASSAMENT": {
     "id": "180357",
     "slug": "assam-entrade-ltd"
   },
@@ -15486,10 +15502,6 @@
   "ARTEMISMED": {
     "id": "182406",
     "slug": "artemis-medicare-services-ltd"
-  },
-  "13192710": {
-    "id": "182669",
-    "slug": "tranway21-technologies-ltd"
   },
   "SUMICHEM": {
     "id": "182906",
@@ -15542,6 +15554,10 @@
   "POWERINDIA": {
     "id": "202203",
     "slug": "hitachi-energy-india-ltd"
+  },
+  "13110301": {
+    "id": "204314",
+    "slug": "nirmitee-robotics-india-ltd"
   },
   "11290566": {
     "id": "219554",
@@ -15775,6 +15791,10 @@
     "id": "436155",
     "slug": "mtar-technologies-ltd"
   },
+  "13192829": {
+    "id": "438982",
+    "slug": "adjia-technologies-ltd"
+  },
   "EASEMYTRIP": {
     "id": "440808",
     "slug": "easy-trip-planners-ltd"
@@ -15831,7 +15851,7 @@
     "id": "454004",
     "slug": "siddhika-coatings-ltd"
   },
-  "16691671": {
+  "EKI": {
     "id": "454005",
     "slug": "eki-energy-services-ltd"
   },
@@ -15842,10 +15862,6 @@
   "VMARCIND": {
     "id": "456045",
     "slug": "v-marc-india-ltd"
-  },
-  "11290577": {
-    "id": "456782",
-    "slug": "artemis-adr-marketplace-ltd"
   },
   "SUVIDHAA": {
     "id": "457974",
@@ -15918,10 +15934,6 @@
   "CLEAN": {
     "id": "580869",
     "slug": "clean-science-technology-ltd"
-  },
-  "11251159": {
-    "id": "581796",
-    "slug": "aa-plus-tradelink-ltd"
   },
   "ETERNAL": {
     "id": "589490",
@@ -16078,6 +16090,10 @@
   "DYNAMIC": {
     "id": "676913",
     "slug": "dynamic-services-security-ltd"
+  },
+  "DESTINY": {
+    "id": "676914",
+    "slug": "destiny-logistics-infra-ltd"
   },
   "13192884": {
     "id": "678051",
@@ -16403,6 +16419,10 @@
     "id": "875301",
     "slug": "le-merite-exports-ltd"
   },
+  "11570151": {
+    "id": "875302",
+    "slug": "shashwat-furnishing-solutions-ltd"
+  },
   "16550649": {
     "id": "875303",
     "slug": "global-longlife-hospital-and-research-ltd"
@@ -16410,6 +16430,10 @@
   "15070572": {
     "id": "876018",
     "slug": "nanavati-ventures-ltd"
+  },
+  "17170016": {
+    "id": "876020",
+    "slug": "fone4-communications-india-ltd"
   },
   "HEXAGON": {
     "id": "877859",
@@ -16478,6 +16502,10 @@
   "11290611": {
     "id": "929173",
     "slug": "goel-food-products-ltd"
+  },
+  "16030592": {
+    "id": "929174",
+    "slug": "scarnose-international-ltd"
   },
   "MODIS": {
     "id": "939989",
@@ -17011,10 +17039,6 @@
     "id": "1394503",
     "slug": "bright-outdoor-media-ltd"
   },
-  "VELS": {
-    "id": "1394504",
-    "slug": "vels-film-international-ltd"
-  },
   "NIRMAN": {
     "id": "1395859",
     "slug": "nirman-agri-genetics-ltd"
@@ -17471,9 +17495,9 @@
     "id": "1677302",
     "slug": "quest-flow-controls-ltd"
   },
-  "KEL": {
+  "VISDEM": {
     "id": "1677303",
-    "slug": "kundan-edifice-ltd"
+    "slug": "visdem-technosys-ltd"
   },
   "543976": {
     "id": "1678457",
@@ -17643,7 +17667,7 @@
     "id": "1721831",
     "slug": "akanksha-power-and-infrastructure-ltd"
   },
-  "543993": {
+  "ARCL": {
     "id": "1726704",
     "slug": "arcl-organics-ltd"
   },
@@ -17698,6 +17722,10 @@
   "16550712": {
     "id": "1769049",
     "slug": "kk-shah-hospitals-ltd"
+  },
+  "17200019": {
+    "id": "1769973",
+    "slug": "intelligent-supply-chain-infrastructure-trust"
   },
   "11040288": {
     "id": "1770395",
@@ -18542,6 +18570,10 @@
   "VRAJ": {
     "id": "2367957",
     "slug": "vraj-iron-steel-ltd"
+  },
+  "VISAMAN": {
+    "id": "2369959",
+    "slug": "visaman-global-sales-ltd"
   },
   "DTL": {
     "id": "2373509",
@@ -19493,7 +19525,7 @@
   },
   "13521230": {
     "id": "2896032",
-    "slug": "fabtech-technologies-cleanrooms-ltd"
+    "slug": "fabtech-cleanrooms-ltd"
   },
   "15110516": {
     "id": "2896659",
@@ -19607,7 +19639,7 @@
     "id": "2956218",
     "slug": "itc-hotels-ltd"
   },
-  "544346": {
+  "RRECL": {
     "id": "2958309",
     "slug": "rdb-real-estate-constructions-ltd"
   },
@@ -21095,10 +21127,6 @@
     "id": "3368591",
     "slug": "e-to-e-transportation-infrastructure-ltd"
   },
-  "890229": {
-    "id": "3371006",
-    "slug": "annvrridhhi-ventures-ltd-partly-paidup"
-  },
   "16550809": {
     "id": "3373994",
     "slug": "modern-diagnostic-research-centre-ltd"
@@ -21150,10 +21178,6 @@
   "890231": {
     "id": "3394391",
     "slug": "anirit-ventures-ltd-partly-paidup"
-  },
-  "KRISHPP": {
-    "id": "3394392",
-    "slug": "krishival-foods-ltd-partly-paidup"
   },
   "17410002": {
     "id": "3394800",
@@ -21395,10 +21419,6 @@
     "id": "3480687",
     "slug": "citius-transnet-investment-trust"
   },
-  "PRABHAPP1": {
-    "id": "3481168",
-    "slug": "prabha-energy-ltd-partly-paidup"
-  },
   "15200392": {
     "id": "3483310",
     "slug": "mehul-telecom-ltd"
@@ -21575,6 +21595,10 @@
     "id": "3552136",
     "slug": "shreedhar-spinners-ltd"
   },
+  "11330380": {
+    "id": "3552885",
+    "slug": "dhanwel-hybrid-seeds-ltd"
+  },
   "CSM": {
     "id": "3553797",
     "slug": "csm-technologies-ltd"
@@ -21698,6 +21722,166 @@
   "544831": {
     "id": "3594206",
     "slug": "meenakshi-india-ltd"
+  },
+  "15620069": {
+    "id": "3594641",
+    "slug": "advance-technoforge-ltd"
+  },
+  "PROPSHOP": {
+    "id": "3594642",
+    "slug": "propshop-events-and-exhibitions-ltd"
+  },
+  "13560177": {
+    "id": "3596596",
+    "slug": "poojaa-precision-engg-ltd"
+  },
+  "17180147": {
+    "id": "3596597",
+    "slug": "fusion-klassroom-edutech-ltd"
+  },
+  "14620278": {
+    "id": "3598301",
+    "slug": "dhaval-packaging-ltd"
+  },
+  "MANIPALHOS": {
+    "id": "3598302",
+    "slug": "manipal-health-enterprises-ltd"
+  },
+  "JNPR": {
+    "id": "3598988",
+    "slug": "juniper-green-energy-ltd"
+  },
+  "12520289": {
+    "id": "3599844",
+    "slug": "h-r-hygiene-products-ltd"
+  },
+  "MVELECTRO": {
+    "id": "3599845",
+    "slug": "mv-electrosystems-ltd"
+  },
+  "13150454": {
+    "id": "3601459",
+    "slug": "g-v-electricals-ltd"
+  },
+  "16692074": {
+    "id": "3601460",
+    "slug": "oneindig-technologies-ltd"
+  },
+  "ARDEE": {
+    "id": "3604135",
+    "slug": "ardee-industries-ltd"
+  },
+  "13240277": {
+    "id": "3604137",
+    "slug": "aegeus-technologies-ltd"
+  },
+  "ANAWIL": {
+    "id": "3604138",
+    "slug": "anawil-wire-engineering-ltd"
+  },
+  "17270052": {
+    "id": "3607120",
+    "slug": "lapl-automotive-ltd"
+  },
+  "TECHNOCRAF": {
+    "id": "3607933",
+    "slug": "technocraft-ventures-ltd"
+  },
+  "OPTIMYSTIX": {
+    "id": "3607935",
+    "slug": "optimystix-entertainment-india-ltd"
+  },
+  "LEAPIND": {
+    "id": "3610833",
+    "slug": "leap-india-ltd"
+  },
+  "DHOOTTRANS": {
+    "id": "3612273",
+    "slug": "dhoot-transmission-ltd"
+  },
+  "MOLBIO": {
+    "id": "3613192",
+    "slug": "molbio-diagnostics-ltd"
+  },
+  "MILKYMIST": {
+    "id": "3613900",
+    "slug": "milky-mist-dairy-food-ltd"
+  },
+  "PRAMODINI": {
+    "id": "3613901",
+    "slug": "pramodini-medicare-ltd"
+  },
+  "544855": {
+    "id": "3615770",
+    "slug": "prima-innovation-ltd"
+  },
+  "FASCINATE": {
+    "id": "3615771",
+    "slug": "fascinate-textiles-ltd"
+  },
+  "SHIPROCKET": {
+    "id": "3615772",
+    "slug": "shiprocket-ltd"
+  },
+  "BLEL": {
+    "id": "3617158",
+    "slug": "behari-lal-engineering-ltd"
+  },
+  "17440019": {
+    "id": "3617159",
+    "slug": "sham-foam-ltd"
+  },
+  "11290722": {
+    "id": "3619117",
+    "slug": "q-t-foods-ltd"
+  },
+  "CREDENT": {
+    "id": "3620905",
+    "slug": "credent-connect-n-care-ltd"
+  },
+  "SKYTECH": {
+    "id": "3621782",
+    "slug": "skytech-infinite-platform-ltd"
+  },
+  "SHANKESH": {
+    "id": "3621783",
+    "slug": "shankesh-jewellers-ltd"
+  },
+  "LALITHAA": {
+    "id": "3621784",
+    "slug": "lalithaa-jewellery-mart-ltd"
+  },
+  "14095777": {
+    "id": "3622606",
+    "slug": "ens-enterprises-ltd"
+  },
+  "SUNSHINE": {
+    "id": "3622608",
+    "slug": "sunshine-pictures-ltd"
+  },
+  "16692061": {
+    "id": "3622609",
+    "slug": "technocrats-plasma-systems-ltd"
+  },
+  "HORIZONIND": {
+    "id": "3624151",
+    "slug": "horizon-industrial-parks-ltd"
+  },
+  "GAJA": {
+    "id": "3625755",
+    "slug": "gaja-alternative-asset-management-ltd"
+  },
+  "11251298": {
+    "id": "3627230",
+    "slug": "mopshop-distribution-ltd"
+  },
+  "TEMPSENS": {
+    "id": "3628847",
+    "slug": "tempsens-instruments-india-ltd"
+  },
+  "AUGMONT": {
+    "id": "3631826",
+    "slug": "augmont-enterprises-ltd"
   },
   "CONTINENTAL-WAREHOUSING-IPO": {
     "id": "53220",
@@ -21911,7 +22095,7 @@
     "id": "755076",
     "slug": "chemspec-chemicals-ltd"
   },
-  "13192899": {
+  "ESDS": {
     "id": "758705",
     "slug": "esds-software-solution-ltd"
   },
@@ -22011,7 +22195,7 @@
     "id": "3363906",
     "slug": "phytochem-remedies-india-ltd"
   },
-  "16691467": {
+  "SKYWAYS": {
     "id": "3448664",
     "slug": "skyways-air-services-ltd"
   },
@@ -22183,10 +22367,6 @@
     "id": "3460533",
     "slug": "wealth-company-asset-management-holdings-pvt-ltd"
   },
-  "11330380": {
-    "id": "3552885",
-    "slug": "dhanwel-hybrid-seeds-ltd"
-  },
   "SPGCL": {
     "id": "3555469",
     "slug": "sri-priyanka-geo-commex-ltd"
@@ -22195,73 +22375,81 @@
     "id": "3556536",
     "slug": "twinkle-papers-ltd"
   },
-  "15620069": {
-    "id": "3594641",
-    "slug": "advance-technoforge-ltd"
+  "ABH": {
+    "id": "3630501",
+    "slug": "abh-healthcare-ltd"
   },
-  "PROPSHOP": {
-    "id": "3594642",
-    "slug": "propshop-events-and-exhibitions-ltd"
+  "SUMAX": {
+    "id": "3631825",
+    "slug": "sumax-engineering-ltd"
   },
-  "13560177": {
-    "id": "3596596",
-    "slug": "poojaa-precision-engg-ltd"
+  "MADHURKNIT": {
+    "id": "3631827",
+    "slug": "madhur-knit-crafts-ltd"
   },
-  "17180147": {
-    "id": "3596597",
-    "slug": "fusion-klassroom-edutech-ltd"
+  "13193331": {
+    "id": "3632800",
+    "slug": "kwick-forensic-solutions-ltd"
   },
-  "14620278": {
-    "id": "3598301",
-    "slug": "dhaval-packaging-ltd"
+  "SYMBIOTEC": {
+    "id": "3633466",
+    "slug": "symbiotec-pharmalab-ltd"
   },
-  "MANIPALHOS": {
-    "id": "3598302",
-    "slug": "manipal-health-enterprises-ltd"
+  "HTEL": {
+    "id": "3633467",
+    "slug": "hy-tech-engineers-ltd"
   },
-  "JNPR": {
-    "id": "3598988",
-    "slug": "juniper-green-energy-ltd"
+  "ANNU": {
+    "id": "3634954",
+    "slug": "annu-projects-ltd"
   },
-  "12520289": {
-    "id": "3599844",
-    "slug": "h-r-hygiene-products-ltd"
+  "MOMSBELIEF": {
+    "id": "3635810",
+    "slug": "rays-of-belief-ltd"
   },
-  "MVELECTRO": {
-    "id": "3599845",
-    "slug": "mv-electrosystems-ltd"
+  "LUMINO": {
+    "id": "3636541",
+    "slug": "lumino-industries-ltd"
   },
-  "13150454": {
-    "id": "3601459",
-    "slug": "g-v-electricals-ltd"
+  "SHANTIINOR": {
+    "id": "3639857",
+    "slug": "shanti-inorganics-ltd"
   },
-  "16692074": {
-    "id": "3601460",
-    "slug": "oneindig-technologies-ltd"
+  "PRIORITY": {
+    "id": "3639859",
+    "slug": "priority-jewels-ltd"
   },
-  "ARDEE": {
-    "id": "3604135",
-    "slug": "ardee-industries-ltd"
+  "16692012": {
+    "id": "3639860",
+    "slug": "paluck-technologies-ltd"
   },
-  "13240277": {
-    "id": "3604137",
-    "slug": "aegeus-technologies-ltd"
+  "17340005": {
+    "id": "3639861",
+    "slug": "complete-sports-and-management-india-ltd"
   },
-  "ANAWIL": {
-    "id": "3604138",
-    "slug": "anawil-wire-engineering-ltd"
+  "ASHUTOSH": {
+    "id": "3641383",
+    "slug": "ashutosh-fibre-ltd"
   },
-  "17270052": {
-    "id": "3607120",
-    "slug": "lapl-automotive-ltd"
+  "17440012": {
+    "id": "3641385",
+    "slug": "phychem-technologies-ltd"
   },
-  "11625833": {
-    "id": "3607933",
-    "slug": "technocraft-ventures-ltd"
+  "PERNIASPOP": {
+    "id": "3642016",
+    "slug": "purple-style-labs-ltd"
   },
-  "17040894": {
-    "id": "3607935",
-    "slug": "optimystix-entertainment-india-ltd"
+  "DEEPA": {
+    "id": "3643492",
+    "slug": "deepa-jewellers-ltd"
+  },
+  "11330376": {
+    "id": "3644155",
+    "slug": "farm-peace-ltd"
+  },
+  "17090220": {
+    "id": "3648643",
+    "slug": "fly-hi-maritime-travels-ltd"
   },
   "NIFTY": {
     "id": "1887",
@@ -23178,5 +23366,25 @@
   "NIFTYBOND2033": {
     "id": "3511115",
     "slug": "nifty-bharat-bond-index-april-2033"
+  },
+  "1215": {
+    "id": "3612203",
+    "slug": "bse-largemid-60-40-stable-dividend-50-index"
+  },
+  "1214": {
+    "id": "3612204",
+    "slug": "bse-insurance"
+  },
+  "1217": {
+    "id": "3612205",
+    "slug": "bse-housing-finance-index"
+  },
+  "1213": {
+    "id": "3622446",
+    "slug": "bse-midcap-150-momentum-30"
+  },
+  "1216": {
+    "id": "3622447",
+    "slug": "bse-midsmall-private-banks"
   }
 }
