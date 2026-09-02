@@ -187,7 +187,10 @@ Operating contract:
 
 - Server-computed historical PPV, WaveTrend bull/bear, and Satya EMAs two-inside-bar coil annotations.
 - Default TradingView-industry grouping with current-day highest/lowest sort modes and cached industry fallback.
-- Fixed six-month view by default; page-level Interactive, EMA, and default-off volume switches.
+- Fixed six-month view by default; page-level Interactive, EMA, 52W High, RS Transitions, RS Pane, and default-off volume switches.
+- 52W High overlay (blue stepline, `pine_scripts/52w_full_history.pine` parity) extends 15 weekdays into the future, flat at the last value.
+- RS Transitions: candle-width DOM dots (lime weak->strong / red strong->weak) marking daily RS Line vs its 9-EMA crossovers, default off.
+- RS Pane: a second synced chart per card showing RS Line + EMA9 + EMA21 + Weekly EMA9 (`pine_scripts/Satya RS Line vs 21 EMA.txt` parity), default on.
 - Adaptive one-column phone, auto-adjusting tablet, and auto-fit desktop grid; vertical page scroll remains enabled over charts.
 
 `main()` writes only `dashboard/union_charts.html` after confirming the union report is dated today; it leaves the prior dashboard intact for stale or missing inputs. `run_union_chart_dashboard.ps1` stages only that HTML file, while `.union_chart_cache/` remains local.

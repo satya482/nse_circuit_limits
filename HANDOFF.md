@@ -3,11 +3,19 @@
 # Repo Handoff
 
 Last reviewed by Codex: 2026-08-28.
-Last reviewed by Claude Code: 2026-08-31 (see "Current Worktree State" below).
+Last reviewed by Claude Code: 2026-09-02 (see "Current Worktree State" below).
 
 This repository is a Windows-first scanner and dashboard suite for NSE and US equities. It is actively maintained by multiple agents, especially Claude Code and Codex. Treat this file as the neutral takeover map; `CLAUDE.md` remains the deeper scanner operations manual.
 
 ## Current Worktree State
+
+Updated 2026-09-02 by Claude Code, RS sub-pane (Line + EMA9 + EMA21 + Weekly EMA9):
+
+- `union_chart_dashboard.py`'s shared renderer gained a second, synced chart instance per card (Lightweight Charts v4.1.3 bundled has no native multi-pane support, so this is a separate `createChart` in a new `.rs-pane-wrap` div below the price chart, one-way time-scale synced from the main chart via `subscribeVisibleLogicalRangeChange`). Plots 4 series -- pine parity with `pine_scripts/Satya RS Line vs 21 EMA.txt`: raw RS Line (blue/red stepline), RS EMA9 (aqua/purple), RS EMA21 (blue/red), Weekly RS EMA9 (white/gray stepline, flat within each week, stepping at week boundaries). Benchmark uniformly NIFTY MIDSML 400 (not the pine script's hardcoded Nifty50-vs-rest special case, by design decision -- avoids a manually-maintained constituent list).
+- `compute_rs_pane_series(df, bench_df)`: refactored the bench-alignment logic shared with `compute_rs_transition_kinds` into `_daily_rs_line()`. `_weekly_rs_ema9_per_bar()` vectorizes the weekly-resample-then-broadcast-to-daily-bars step via `groupby(PeriodIndex(freq="W")).last()` -> `ewm` -> `reindex`. New `record["rs_pane"]` field (dict of 4 arrays, or `None` fail-open when no benchmark).
+- New "RS Pane" toggle, **default ON** (only overlay defaulted on besides 52W High) -- the chart instance always builds alongside the main chart (mirrors the volume-series precedent: always created, toggle only flips `.hidden` on the wrapper div; a `ResizeObserver` already on the wrapper self-heals sizing when un-hidden, so no manual resize call needed in the toggle handler).
+- TDD: 10 Python tests (hand-verified weekly-EMA-step-at-boundary fixture: 2 business weeks, flat within each, ewm across the boundary) + 6 Node-executed JS tests. Full suite 566/566. Live-verified on `charts.html` (199/199 NSE records carry valid, correctly-sized `rs_pane` data).
+- Also this session (separate commits, same day): 52W-High line extended 15 weekdays flat into the future; RS Transitions dots switched from the library's `setMarkers` (uncontrollable pixel size) to a DOM-overlay sized directly from live bar spacing, now behind its own toggle (default off); chart canvas backgrounds set pure black with grid lines removed; card min-width bumped to 640px; default chart view walked down 12mo -> 9mo -> 6mo chasing candle-compression feedback.
 
 Updated 2026-08-31 by Claude Code, RS transition markers + 1-year default chart view:
 

@@ -148,6 +148,20 @@ def compute_signal_kinds(df) -> list[str | None]:
 
 
 RS_EMA_PERIOD = 9
+RS_EMA21_PERIOD = 21
+
+
+def _daily_rs_line(df, bench_df, min_bars: int) -> pd.Series | None:
+    """Aligned daily RS Line (close / bench close * 1000), indexed by date.
+    None if bench_df is missing, too short, or misaligned (fail-open)."""
+    if bench_df is None or len(bench_df) < min_bars:
+        return None
+    try:
+        stock_close = df.set_index("date")["close"].astype(float)
+        bench_close = bench_df.set_index("date")["close"].astype(float)
+        return (stock_close / bench_close.reindex(stock_close.index).ffill()) * 1000
+    except Exception:
+        return None
 
 
 def compute_rs_transition_kinds(df, bench_df) -> list[str | None]:
@@ -157,19 +171,14 @@ def compute_rs_transition_kinds(df, bench_df) -> list[str | None]:
     all-None so the chart still renders without this overlay."""
     n = len(df)
     none_kinds: list[str | None] = [None] * n
-    if bench_df is None or len(bench_df) < RS_EMA_PERIOD + 2:
+    rs_line = _daily_rs_line(df, bench_df, min_bars=RS_EMA_PERIOD + 2)
+    if rs_line is None:
         return none_kinds
-    try:
-        stock_close = df.set_index("date")["close"].astype(float)
-        bench_close = bench_df.set_index("date")["close"].astype(float)
-        rs_line = (stock_close / bench_close.reindex(stock_close.index).ffill()) * 1000
-        rs_ema9 = rs_line.ewm(span=RS_EMA_PERIOD, adjust=False).mean()
-        prev_rs = rs_line.shift(1)
-        prev_ema = rs_ema9.shift(1)
-        crossover = (rs_line > rs_ema9) & (prev_rs <= prev_ema)
-        crossunder = (rs_line < rs_ema9) & (prev_rs >= prev_ema)
-    except Exception:
-        return none_kinds
+    rs_ema9 = rs_line.ewm(span=RS_EMA_PERIOD, adjust=False).mean()
+    prev_rs = rs_line.shift(1)
+    prev_ema = rs_ema9.shift(1)
+    crossover = (rs_line > rs_ema9) & (prev_rs <= prev_ema)
+    crossunder = (rs_line < rs_ema9) & (prev_rs >= prev_ema)
     kinds: list[str | None] = list(none_kinds)
     for i in range(n):
         if bool(crossover.iloc[i]):
@@ -177,6 +186,38 @@ def compute_rs_transition_kinds(df, bench_df) -> list[str | None]:
         elif bool(crossunder.iloc[i]):
             kinds[i] = "rs_strong_to_weak"
     return kinds
+
+
+def _weekly_rs_ema9_per_bar(dates, rs_line: pd.Series) -> list[float | None]:
+    """Weekly EMA9 of the RS Line (resample W-SUN, matching the rest of the
+    repo's weekly-RS convention), broadcast back onto every daily bar in its
+    week -- flat within a completed week, stepping at the week boundary
+    (pine's request.security(..., "1W", ...) rendered on a daily chart)."""
+    weekly_index = pd.PeriodIndex(pd.to_datetime(dates).to_numpy(), freq="W")
+    by_week = pd.Series(rs_line.to_numpy(), index=weekly_index)
+    weekly_last = by_week.groupby(level=0).last()
+    weekly_ema9 = weekly_last.ewm(span=RS_EMA_PERIOD, adjust=False).mean()
+    per_bar = weekly_ema9.reindex(weekly_index).to_numpy()
+    return [None if pd.isna(v) else float(v) for v in per_bar]
+
+
+def compute_rs_pane_series(df, bench_df) -> dict[str, list[float | None]] | None:
+    """RS Line + RS EMA9 + RS EMA21 + Weekly RS EMA9, parallel arrays aligned
+    to df's bars -- pine parity with pine_scripts/Satya RS Line vs 21 EMA.txt.
+    None if bench_df is missing/too short (fail-open, no sub-pane shown)."""
+    rs_line = _daily_rs_line(df, bench_df, min_bars=5)
+    if rs_line is None:
+        return None
+
+    def _to_list(s: pd.Series) -> list[float | None]:
+        return [None if pd.isna(v) else float(v) for v in s.to_numpy()]
+
+    return {
+        "rs_line": _to_list(rs_line),
+        "rs_ema9": _to_list(rs_line.ewm(span=RS_EMA_PERIOD, adjust=False).mean()),
+        "rs_ema21": _to_list(rs_line.ewm(span=RS_EMA21_PERIOD, adjust=False).mean()),
+        "rs_weekly_ema9": _weekly_rs_ema9_per_bar(df["date"], rs_line),
+    }
 
 
 def compute_coil_boxes(
@@ -297,6 +338,9 @@ def build_chart_data(
                 "rs_signals": compute_rs_transition_kinds(
                     df, bench_df if symbol_exchange.get(symbol, "NSE") == "NSE" else None
                 ),
+                "rs_pane": compute_rs_pane_series(
+                    df, bench_df if symbol_exchange.get(symbol, "NSE") == "NSE" else None
+                ),
             })
         except Exception as exc:
             skipped += 1
@@ -315,6 +359,7 @@ const uiState = {
   zlema25Visible: false,
   high52wVisible: __HIGH52W_DEFAULT__,
   rsVisible: false,
+  rsPaneVisible: true,
   volumeVisible: false,
   interactive: false,
 };
@@ -647,12 +692,15 @@ function buildChart(symbol) {
     high52wSeries: null,
     coilFrame: null,
     coilLayer: el.parentElement.querySelector('.coil-layer'),
+    rsChart: null,
+    rsPaneWrap: document.getElementById('rspanewrap-' + symbol),
     record: record,
   };
   chartsBySymbol[symbol] = entry;
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
   rebuildZlema25(entry);
   rebuildHigh52w(entry);
+  buildRsPane(entry);
   applyVolumeState(entry);
   scheduleCoilRedraw(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); });
@@ -661,6 +709,51 @@ function buildChart(symbol) {
     scheduleCoilRedraw(entry);
   }).observe(el);
   applyChartMode(entry);
+}
+
+function rsLineDirectionalData(bars, values, upColor, downColor) {
+  return bars.map(function(bar, i) {
+    const v = values[i];
+    if (v === null || v === undefined) return null;
+    const prev = values[i - 1];
+    const rising = i > 0 && prev !== null && prev !== undefined && v > prev;
+    return { time: bar[0], value: v, color: rising ? upColor : downColor };
+  }).filter(Boolean);
+}
+
+function buildRsPane(entry) {
+  if (!entry.record.rs_pane) return;
+  const el = document.getElementById('rspane-' + entry.record.symbol);
+  if (!el) return;
+  const pane = entry.record.rs_pane;
+  const bars = entry.record.bars;
+  const rsChart = LightweightCharts.createChart(el, {
+    height: el.clientHeight,
+    layout: { background: { color: '#000000' }, textColor: '#8b949e' },
+    grid: { vertLines: { visible: false }, horzLines: { visible: false } },
+  });
+  const rsLineSeries = rsChart.addLineSeries({
+    lineWidth: 1, lineType: LightweightCharts.LineType.WithSteps,
+    lastValueVisible: false, priceLineVisible: false,
+  });
+  rsLineSeries.setData(rsLineDirectionalData(bars, pane.rs_line, "#2962ff", "#ef5350"));
+  const ema9Series = rsChart.addLineSeries({ lineWidth: 1, lastValueVisible: false, priceLineVisible: false });
+  ema9Series.setData(rsLineDirectionalData(bars, pane.rs_ema9, "#00e5ff", "#aa00ff"));
+  const ema21Series = rsChart.addLineSeries({ lineWidth: 1, lastValueVisible: false, priceLineVisible: false });
+  ema21Series.setData(rsLineDirectionalData(bars, pane.rs_ema21, "#2962ff", "#ef5350"));
+  const weeklyEma9Series = rsChart.addLineSeries({
+    lineWidth: 1, lineType: LightweightCharts.LineType.WithSteps,
+    lastValueVisible: false, priceLineVisible: false,
+  });
+  weeklyEma9Series.setData(rsLineDirectionalData(bars, pane.rs_weekly_ema9, "#ffffff", "#787b86"));
+  rsChart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
+  entry.chart.timeScale().subscribeVisibleLogicalRangeChange(function(range) {
+    if (range) rsChart.timeScale().setVisibleLogicalRange(range);
+  });
+  new ResizeObserver(function() {
+    rsChart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
+  }).observe(el);
+  entry.rsChart = rsChart;
 }
 
 function applyControls() {
@@ -708,6 +801,13 @@ document.getElementById('high52wVisible').addEventListener('change', function(e)
     const entry = chartsBySymbol[symbol];
     rebuildHigh52w(entry);
     scheduleCoilRedraw(entry);
+  });
+});
+document.getElementById('rsPaneVisible').addEventListener('change', function(e) {
+  uiState.rsPaneVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    if (entry.rsPaneWrap) entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;
   });
 });
 document.getElementById('volumeVisible').addEventListener('change', function(e) {
@@ -824,7 +924,10 @@ def build_html(
                 f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol={_escape(tv_symbol)}" '
                 f'target="_blank" rel="noopener noreferrer">{_escape(r["symbol"])}</a></div>'
                 f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
-                f'<div class="coil-layer"></div></div></div>'
+                f'<div class="coil-layer"></div></div>'
+                f'<div class="rs-pane-wrap" id="rspanewrap-{_escape(r["symbol"])}">'
+                f'<div class="rs-pane" id="rspane-{_escape(r["symbol"])}"></div></div>'
+                f'</div>'
             )
         cards = "\n".join(cards)
     else:
@@ -862,8 +965,10 @@ h1{{font-size:1.1rem}}
 .coil-layer{{position:absolute;inset:0;z-index:2;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .rs-dot{{position:absolute;border-radius:50%}}
+.rs-pane-wrap{{height:150px;margin-top:6px}}
+.rs-pane{{width:100%;height:100%}}
 .empty{{color:#8b949e}}
-@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:380px}}}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:380px}}.rs-pane-wrap{{height:120px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}
@@ -876,6 +981,7 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
   <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"{" checked" if high52w_default_visible else ""}><span class="switch"></span></label>
   <label class="switch-row"><span>RS Transitions</span><input type="checkbox" id="rsVisible"><span class="switch"></span></label>
+  <label class="switch-row"><span>RS Pane</span><input type="checkbox" id="rsPaneVisible" checked><span class="switch"></span></label>
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">

@@ -202,7 +202,22 @@ def test_load_todays_union_fresh_returns_tiers(tmp_path):
     assert tiers == {"FOO": "ALL 4", "BAR": "ALL 4", "BAZ": "1 ONLY", "QUX": "1 ONLY"}
 
 
-from union_chart_dashboard import build_chart_data, compute_rs_transition_kinds
+from union_chart_dashboard import build_chart_data, compute_rs_transition_kinds, compute_rs_pane_series
+
+
+def _rs_pane_test_dfs():
+    """2 full business weeks (Mon-Fri): week1 close=10 flat, week2 close=20
+    flat, bench=100 flat throughout -- so rsLine steps cleanly 100 -> 200 at
+    the week boundary, making the weekly-EMA broadcast easy to hand-verify."""
+    dates = pd.bdate_range("2025-01-06", periods=10)
+    closes = [10.0] * 5 + [20.0] * 5
+    df = pd.DataFrame({
+        "date": dates,
+        "open": closes, "high": closes, "low": closes, "close": closes,
+        "volume": [1000.0] * len(closes),
+    })
+    bench_df = pd.DataFrame({"date": dates, "close": [100.0] * len(closes)})
+    return df, bench_df
 
 
 def _rs_test_dfs():
@@ -242,6 +257,53 @@ def test_compute_rs_transition_kinds_short_bench_returns_all_none():
     df, bench_df = _rs_test_dfs()
     kinds = compute_rs_transition_kinds(df, bench_df.iloc[:3])
     assert kinds == [None] * len(df)
+
+
+def test_compute_rs_pane_series_returns_four_parallel_arrays():
+    df, bench_df = _rs_pane_test_dfs()
+    pane = compute_rs_pane_series(df, bench_df)
+    assert set(pane.keys()) == {"rs_line", "rs_ema9", "rs_ema21", "rs_weekly_ema9"}
+    for key in pane:
+        assert len(pane[key]) == len(df)
+
+
+def test_compute_rs_pane_series_rs_line_matches_close_over_bench():
+    df, bench_df = _rs_pane_test_dfs()
+    pane = compute_rs_pane_series(df, bench_df)
+    assert pane["rs_line"][:5] == pytest.approx([100.0] * 5)
+    assert pane["rs_line"][5:] == pytest.approx([200.0] * 5)
+
+
+def test_compute_rs_pane_series_ema9_seeds_at_first_value():
+    df, bench_df = _rs_pane_test_dfs()
+    pane = compute_rs_pane_series(df, bench_df)
+    assert pane["rs_ema9"][0] == pytest.approx(100.0)
+    assert pane["rs_ema9"][5] == pytest.approx(120.0)  # 0.2*200 + 0.8*100
+
+
+def test_compute_rs_pane_series_ema21_seeds_at_first_value():
+    df, bench_df = _rs_pane_test_dfs()
+    pane = compute_rs_pane_series(df, bench_df)
+    assert pane["rs_ema21"][0] == pytest.approx(100.0)
+
+
+def test_compute_rs_pane_series_weekly_ema9_is_flat_within_each_week_and_steps_at_boundary():
+    df, bench_df = _rs_pane_test_dfs()
+    pane = compute_rs_pane_series(df, bench_df)
+    week1 = pane["rs_weekly_ema9"][:5]
+    week2 = pane["rs_weekly_ema9"][5:]
+    assert week1 == pytest.approx([100.0] * 5)  # first week seeds the weekly EMA
+    assert week2 == pytest.approx([120.0] * 5)  # 0.2*200 + 0.8*100, flat all of week 2
+
+
+def test_compute_rs_pane_series_none_bench_returns_none():
+    df, _ = _rs_pane_test_dfs()
+    assert compute_rs_pane_series(df, None) is None
+
+
+def test_compute_rs_pane_series_short_bench_returns_none():
+    df, bench_df = _rs_pane_test_dfs()
+    assert compute_rs_pane_series(df, bench_df.iloc[:3]) is None
 
 
 def _fixture_df(n_rows: int) -> pd.DataFrame:
@@ -306,6 +368,38 @@ def test_build_chart_data_includes_rs_signals_when_bench_df_given(monkeypatch):
         ohlc_map, {"FOO": "ALL 4"}, min_bars=130, bench_df=_fixture_df(200),
     )
     assert records[0]["rs_signals"][-1] == "rs_weak_to_strong"
+
+
+def test_build_chart_data_includes_rs_pane_when_bench_df_given(monkeypatch):
+    ohlc_map = {"FOO": _fixture_df(200)}
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_rs_pane_series",
+        lambda df, bench_df: {"rs_line": [1.0] * 200, "rs_ema9": [1.0] * 200,
+                               "rs_ema21": [1.0] * 200, "rs_weekly_ema9": [1.0] * 200},
+    )
+    records, _ = build_chart_data(
+        ohlc_map, {"FOO": "ALL 4"}, min_bars=130, bench_df=_fixture_df(200),
+    )
+    assert records[0]["rs_pane"]["rs_line"][0] == 1.0
+
+
+def test_build_chart_data_rs_pane_none_for_non_nse_symbol(monkeypatch):
+    ohlc_map = {"AAPL": _fixture_df(200)}
+    monkeypatch.setattr(
+        "union_chart_dashboard.compute_rs_pane_series",
+        lambda df, bench_df: {"rs_line": [1.0] * 200} if bench_df is not None else None,
+    )
+    records, _ = build_chart_data(
+        ohlc_map, {"AAPL": "ALL 4"}, min_bars=130,
+        bench_df=_fixture_df(200), symbol_exchange={"AAPL": "NASDAQ"},
+    )
+    assert records[0]["rs_pane"] is None
+
+
+def test_build_chart_data_rs_pane_none_without_bench_df():
+    ohlc_map = {"FOO": _fixture_df(200)}
+    records, _ = build_chart_data(ohlc_map, {"FOO": "ALL 4"}, min_bars=130)
+    assert records[0]["rs_pane"] is None
 
 
 def test_build_chart_data_skips_rs_signals_for_non_nse_symbol(monkeypatch):
@@ -432,7 +526,7 @@ def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     assert ".chart{height:clamp(380px,44vw,520px)}" in compact
     assert (
         "@media(max-width:600px){#grid{grid-template-columns:1fr}"
-        ".chart{height:380px}}" in compact
+        ".chart{height:380px}.rs-pane-wrap{height:120px}}" in compact
     )
     assert "vertTouchDrag:false" in compact
     assert "setVisibleLogicalRange" in html
@@ -775,6 +869,79 @@ def test_redraw_coils_draws_rs_dots_sized_to_bar_spacing():
     assert "redrawRsDots(entry);" in redraw_coils_body
     assert "RS_DOT_WIDTH_FRACTION" in html
     assert ".rs-dot{" in "".join(html.split())
+
+
+def test_build_html_rs_pane_switch_checked_by_default():
+    html = build_html([], "2026-08-27")
+    assert "rsPaneVisible: true" in html
+    label_start = html.index("<span>RS Pane</span>")
+    input_start = html.index("<input", label_start)
+    rs_pane_input = html[input_start : html.index(">", input_start) + 1]
+    assert 'id="rsPaneVisible"' in rs_pane_input
+    assert "checked" in rs_pane_input
+
+
+def test_rs_line_directional_data_colors_by_direction_and_skips_nulls():
+    html = build_html([], "2026-08-27")
+    bars = [
+        ["2026-01-01", 1, 2, 0.5, 1.5, 100],
+        ["2026-01-02", 1, 2, 0.5, 1.5, 100],
+        ["2026-01-03", 1, 2, 0.5, 1.5, 100],
+        ["2026-01-04", 1, 2, 0.5, 1.5, 100],
+    ]
+    values = [10, None, 15, 12]
+    points = _run_generated_js_function(
+        html,
+        "function rsLineDirectionalData(bars, values, upColor, downColor) {",
+        "function buildRsPane(entry)",
+        f'rsLineDirectionalData({json.dumps(bars)}, {json.dumps(values)}, "up", "down")',
+    )
+    assert points == [
+        {"time": "2026-01-01", "value": 10, "color": "down"},
+        {"time": "2026-01-03", "value": 15, "color": "down"},
+        {"time": "2026-01-04", "value": 12, "color": "down"},
+    ]
+
+
+def test_rs_line_directional_data_marks_rising_point_up_colored():
+    html = build_html([], "2026-08-27")
+    bars = [["2026-01-01", 1, 2, 0.5, 1.5, 100], ["2026-01-02", 1, 2, 0.5, 1.5, 100]]
+    values = [10, 20]
+    points = _run_generated_js_function(
+        html,
+        "function rsLineDirectionalData(bars, values, upColor, downColor) {",
+        "function buildRsPane(entry)",
+        f'rsLineDirectionalData({json.dumps(bars)}, {json.dumps(values)}, "up", "down")',
+    )
+    assert points[1]["color"] == "up"
+
+
+def test_build_chart_wires_rs_pane_build_and_sync():
+    html = build_html([], "2026-08-27")
+    build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(
+        "\nfunction applyControls()", 1
+    )[0]
+    assert "buildRsPane(entry);" in build_chart_body
+
+
+def test_build_rs_pane_returns_early_without_rs_pane_data():
+    html = build_html([], "2026-08-27")
+    build_rs_pane_body = html.split("function buildRsPane(entry) {", 1)[1].split(
+        "\nfunction applyControls()", 1
+    )[0]
+    assert "if (!entry.record.rs_pane) return;" in build_rs_pane_body
+    assert "subscribeVisibleLogicalRangeChange" in build_rs_pane_body
+    assert "ResizeObserver" in build_rs_pane_body
+
+
+def test_rs_pane_toggle_hides_wrap_without_rebuilding():
+    html = build_html([], "2026-08-27")
+    handler = html.split(
+        "document.getElementById('rsPaneVisible').addEventListener('change', function(e) {",
+        1,
+    )[1].split("</script>", 1)[0]
+    assert "uiState.rsPaneVisible = e.target.checked;" in handler
+    assert "entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;" in handler
 
 
 def test_generated_high52w_matches_rolling_max_of_high():
