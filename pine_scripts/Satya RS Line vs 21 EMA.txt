@@ -1,4 +1,8 @@
 //@version=6
+// Satya RS Line vs 21 EMA
+// Plots RS Line (stock/benchmark) vs its 9/13/21/200 EMAs and weekly RS EMA9.
+// No companion overlay indicator. Separate pane (overlay=false).
+// Alert message format: SIGNAL_TYPE|{{ticker}}|description|TF:{{interval}}
 indicator("Satya RS Line vs 21 EMA", overlay=false)
 
 /////RS alert
@@ -27,7 +31,7 @@ rsEma9 = ta.ema(rsLine, 9)
 rsEma13 = ta.ema(rsLine, 13)
 rsWeeklyEma9 = request.security(syminfo.tickerid, "1W", ta.ema(rsLine, 9))
 rsBaseline = ta.ema(rsLine, 50)  // slow EMA as mid line; auto-scales per symbol, unlike a fixed hline
-
+rsEma200 = ta.ema(rsLine, 200)
 // === Background: RS EMA9 (daily) above weekly RS EMA9, weekly EMA9 flat/rising ===
 weeklyEma9Rising = rsWeeklyEma9 >= rsWeeklyEma9[1]
 rsAboveWeeklyEma9 = rsEma9 > rsWeeklyEma9 and weeklyEma9Rising
@@ -49,6 +53,7 @@ plot(rsEma21, title="RS EMA 21", color=rsEma21 > rsEma21[1]?color.blue : color.r
 plot(rsEma9, title="RS EMA 9", color=rsEma9 > rsEma9[1]?color.aqua : color.purple, linewidth=1)
 plot(rsWeeklyEma9, title="RS Week EMA 9", color=rsWeeklyEma9 > rsWeeklyEma9[1]?color.white : color.gray, linewidth=1, style = plot.style_stepline)
 //plot(rsBaseline, title="RS Baseline (EMA50)", color=color.gray, linewidth=1, style=plot.style_line)
+plot(rsEma200, title="RS Baseline (EMA200)", color=color.yellow, linewidth=1, style=plot.style_line)
 
 // Crossover logic
 // bullCross = ta.crossover(rsLine, rsWeeklyEma9)    // 9 crosses above 21
@@ -68,3 +73,13 @@ rsCrossUp = ta.crossover(rsLine, rsEma21)// and rsLine > rsEma21
 //     color     = color.fuchsia,
 //     size      = size.tiny
 // )
+
+// === RS EMA9 / RS EMA21 turn from falling-or-flat to rising ===
+rsEma9UptrendStart  = rsEma9 > rsEma9[1] and rsEma9[1] <= rsEma9[2]
+rsEma21UptrendStart = rsEma21 > rsEma21[1] and rsEma21[1] <= rsEma21[2]
+
+alertcondition(rsEma9UptrendStart and barstate.isconfirmed, title="RS EMA9 Uptrend Start",
+     message="RS_EMA9_UPTREND_START|{{ticker}}|RS EMA9 turned upward|TF:{{interval}}")
+
+alertcondition(rsEma21UptrendStart and barstate.isconfirmed, title="RS EMA21 Uptrend Start",
+     message="RS_EMA21_UPTREND_START|{{ticker}}|RS EMA21 turned upward|TF:{{interval}}")
