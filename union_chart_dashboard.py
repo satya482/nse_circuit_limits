@@ -721,6 +721,16 @@ function rsLineDirectionalData(bars, values, upColor, downColor) {
   }).filter(Boolean);
 }
 
+function crosshairPriceFor(param, series) {
+  if (!param.seriesData) return 0;
+  const d = param.seriesData.get(series);
+  if (d === undefined) return 0;
+  if (typeof d === "number") return d;
+  if (typeof d.close === "number") return d.close;
+  if (typeof d.value === "number") return d.value;
+  return 0;
+}
+
 function buildRsPane(entry) {
   if (!entry.record.rs_pane) return;
   const el = document.getElementById('rspane-' + entry.record.symbol);
@@ -731,6 +741,10 @@ function buildRsPane(entry) {
     height: el.clientHeight,
     layout: { background: { color: '#000000' }, textColor: '#8b949e' },
     grid: { vertLines: { visible: false }, horzLines: { visible: false } },
+    handleScroll: {
+      mouseWheel: false, pressedMouseMove: false, horzTouchDrag: false, vertTouchDrag: false,
+    },
+    handleScale: { axisPressedMouseMove: false, mouseWheel: false, pinch: false },
   });
   const rsLineSeries = rsChart.addLineSeries({
     lineWidth: 1, lineType: LightweightCharts.LineType.WithSteps,
@@ -749,6 +763,27 @@ function buildRsPane(entry) {
   rsChart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
   entry.chart.timeScale().subscribeVisibleLogicalRangeChange(function(range) {
     if (range) rsChart.timeScale().setVisibleLogicalRange(range);
+  });
+  let crosshairSyncing = false;
+  entry.chart.subscribeCrosshairMove(function(param) {
+    if (crosshairSyncing) return;
+    crosshairSyncing = true;
+    if (param.time === undefined) {
+      rsChart.clearCrosshairPosition();
+    } else {
+      rsChart.setCrosshairPosition(crosshairPriceFor(param, entry.candleSeries), param.time, rsLineSeries);
+    }
+    crosshairSyncing = false;
+  });
+  rsChart.subscribeCrosshairMove(function(param) {
+    if (crosshairSyncing) return;
+    crosshairSyncing = true;
+    if (param.time === undefined) {
+      entry.chart.clearCrosshairPosition();
+    } else {
+      entry.chart.setCrosshairPosition(crosshairPriceFor(param, rsLineSeries), param.time, entry.candleSeries);
+    }
+    crosshairSyncing = false;
   });
   new ResizeObserver(function() {
     rsChart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
@@ -968,7 +1003,7 @@ h1{{font-size:1.1rem}}
 .rs-pane-wrap{{margin-top:6px}}
 .rs-pane{{width:100%;height:100%}}
 .empty{{color:#8b949e}}
-@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart,.rs-pane-wrap{{height:380px}}}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart,.rs-pane-wrap{{height:320px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}

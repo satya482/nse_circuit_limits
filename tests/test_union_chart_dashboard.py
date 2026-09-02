@@ -526,7 +526,7 @@ def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     assert ".chart,.rs-pane-wrap{height:clamp(380px,44vw,520px)}" in compact
     assert (
         "@media(max-width:600px){#grid{grid-template-columns:1fr}"
-        ".chart,.rs-pane-wrap{height:380px}}" in compact
+        ".chart,.rs-pane-wrap{height:320px}}" in compact
     )
     assert "vertTouchDrag:false" in compact
     assert "setVisibleLogicalRange" in html
@@ -914,6 +914,79 @@ def test_rs_line_directional_data_marks_rising_point_up_colored():
         f'rsLineDirectionalData({json.dumps(bars)}, {json.dumps(values)}, "up", "down")',
     )
     assert points[1]["color"] == "up"
+
+
+def test_build_rs_pane_is_always_non_interactive():
+    html = build_html([], "2026-08-27")
+    build_rs_pane_body = html.split("function buildRsPane(entry) {", 1)[1].split(
+        "\nfunction applyControls()", 1
+    )[0]
+    create_call = build_rs_pane_body.split("LightweightCharts.createChart(el, {", 1)[1].split(
+        "});", 1
+    )[0]
+    assert "mouseWheel: false" in create_call
+    assert "pressedMouseMove: false" in create_call
+    assert "horzTouchDrag: false" in create_call
+    assert "vertTouchDrag: false" in create_call
+    assert "axisPressedMouseMove: false" in create_call
+    assert "pinch: false" in create_call
+
+
+def test_crosshair_price_for_extracts_close_from_candlestick_shape():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function crosshairPriceFor(param, series) {",
+        "function buildRsPane(entry)",
+        'crosshairPriceFor({ seriesData: new Map([["s", { open: 1, high: 2, low: 0.5, close: 1.7 }]]) }, "s")',
+    )
+    assert result == 1.7
+
+
+def test_crosshair_price_for_extracts_value_from_line_shape():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function crosshairPriceFor(param, series) {",
+        "function buildRsPane(entry)",
+        'crosshairPriceFor({ seriesData: new Map([["s", { value: 42.5 }]]) }, "s")',
+    )
+    assert result == 42.5
+
+
+def test_crosshair_price_for_extracts_plain_number():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function crosshairPriceFor(param, series) {",
+        "function buildRsPane(entry)",
+        'crosshairPriceFor({ seriesData: new Map([["s", 7]]) }, "s")',
+    )
+    assert result == 7
+
+
+def test_crosshair_price_for_defaults_to_zero_when_missing():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function crosshairPriceFor(param, series) {",
+        "function buildRsPane(entry)",
+        'crosshairPriceFor({ seriesData: new Map() }, "s")',
+    )
+    assert result == 0
+
+
+def test_build_rs_pane_syncs_crosshair_both_directions():
+    html = build_html([], "2026-08-27")
+    build_rs_pane_body = html.split("function buildRsPane(entry) {", 1)[1].split(
+        "\nfunction applyControls()", 1
+    )[0]
+    assert "entry.chart.subscribeCrosshairMove(function(param) {" in build_rs_pane_body
+    assert "rsChart.subscribeCrosshairMove(function(param) {" in build_rs_pane_body
+    assert "rsChart.setCrosshairPosition(" in build_rs_pane_body
+    assert "entry.chart.setCrosshairPosition(" in build_rs_pane_body
+    assert "rsChart.clearCrosshairPosition()" in build_rs_pane_body
+    assert "entry.chart.clearCrosshairPosition()" in build_rs_pane_body
 
 
 def test_build_rs_pane_colors_weekly_ema9_lime_in_uptrend():
