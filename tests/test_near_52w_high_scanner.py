@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+import pytest
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -11,6 +12,10 @@ from near_52w_high_scanner import (
     passes_gate,
     bucket_for,
     build_markdown,
+    read_new_listings,
+    dedupe_new_listings,
+    analyse_new_listing,
+    NEW_LISTING_LABEL,
     BAND_PCT,
 )
 
@@ -108,3 +113,66 @@ def test_build_markdown_sorts_closest_to_high_first():
 def test_build_markdown_no_signals_writes_placeholder_not_empty_table():
     md = build_markdown([], {})
     assert "*No signals.*" in md
+
+
+def test_read_new_listings_skips_blank_lines_and_comments(tmp_path):
+    p = tmp_path / "new_listings.txt"
+    p.write_text("# manual watchlist\nFOO\n\n  bar  \n# note\nBAZ\n", encoding="utf-8")
+    assert read_new_listings(str(p)) == ["FOO", "BAR", "BAZ"]
+
+
+def test_read_new_listings_missing_file_returns_empty():
+    assert read_new_listings("/no/such/file.txt") == []
+
+
+def test_dedupe_new_listings_drops_already_qualified():
+    result = dedupe_new_listings(["FOO", "BAR"], already_qualified={"BAR"})
+    assert result == ["FOO"]
+
+
+def test_dedupe_new_listings_drops_duplicate_entries():
+    result = dedupe_new_listings(["FOO", "FOO", "BAR"], already_qualified=set())
+    assert result == ["FOO", "BAR"]
+
+
+def _new_listing_df(n_rows: int) -> pd.DataFrame:
+    dates = pd.date_range("2026-08-01", periods=n_rows, freq="D")
+    closes = [100.0 + i for i in range(n_rows)]
+    return pd.DataFrame({
+        "date": dates, "open": closes, "high": closes, "low": closes,
+        "close": closes, "volume": [5000.0] * n_rows,
+    })
+
+
+def test_analyse_new_listing_no_gate_short_history_still_included(monkeypatch):
+    monkeypatch.setattr("near_52w_high_scanner.load_ohlc", lambda symbol: _new_listing_df(10))
+    result = analyse_new_listing("FRESHIPO")
+    assert result["symbol"] == "FRESHIPO"
+    assert result["bucket"] == NEW_LISTING_LABEL
+    assert result["days_tracked"] == 10
+    assert result["day_chg"] == pytest.approx((109.0 / 108.0 - 1) * 100)
+
+
+def test_analyse_new_listing_too_short_returns_none(monkeypatch):
+    monkeypatch.setattr("near_52w_high_scanner.load_ohlc", lambda symbol: _new_listing_df(1))
+    assert analyse_new_listing("FRESHIPO") is None
+
+
+def test_analyse_new_listing_missing_ohlc_returns_none(monkeypatch):
+    monkeypatch.setattr("near_52w_high_scanner.load_ohlc", lambda symbol: None)
+    assert analyse_new_listing("FRESHIPO") is None
+
+
+def test_build_markdown_includes_new_listings_section():
+    new_listings = [{
+        "symbol": "FRESHIPO", "close": 109.0, "day_chg": 0.93, "days_tracked": 10,
+        "bucket": NEW_LISTING_LABEL, "liq_tag": "", "cmf_tag": "", "deliv_tag": "",
+    }]
+    md = build_markdown([], {}, new_listings=new_listings)
+    assert "FRESHIPO" in md
+    assert "### New Listings" in md
+
+
+def test_build_markdown_new_listings_empty_writes_placeholder():
+    md = build_markdown([], {}, new_listings=[])
+    assert "*No new listings tracked.*" in md

@@ -1,0 +1,7 @@
+# Manual new-IPO / recent-listing watchlist for near_52w_high_scanner.py.
+# One NSE symbol per line, no NSE: prefix (matches ohlc_db convention).
+# Blank lines and lines starting with # are ignored.
+# Remove a symbol here once you no longer want it tracked -- the scanner
+# has no listing-date data, so it won't age these out automatically. A
+# symbol that starts qualifying on its own via the normal near-52w-high
+# gate is auto-dropped from this section to avoid showing it twice.

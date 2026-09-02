@@ -3,7 +3,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from near_52w_high_chart_dashboard import parse_near_52w_buckets, load_todays_near_52w
+from near_52w_high_chart_dashboard import (
+    parse_near_52w_buckets,
+    load_todays_near_52w,
+    split_buckets_by_kind,
+)
+from near_52w_high_scanner import NEW_LISTING_LABEL
 
 MD_FRESH = """> disclaimer
 
@@ -28,6 +33,29 @@ def test_parse_near_52w_buckets_skips_index_and_commodity_anchors():
 
 def test_parse_near_52w_buckets_no_fenced_block_returns_empty():
     assert parse_near_52w_buckets("# nothing here") == {}
+
+
+def test_parse_near_52w_buckets_recognizes_new_listing_label():
+    md = MD_FRESH.replace(
+        "###20-30%,NSE:BAZ",
+        f"###20-30%,NSE:BAZ,###{NEW_LISTING_LABEL},NSE:FRESHIPO",
+    )
+    buckets = parse_near_52w_buckets(md)
+    assert buckets["FRESHIPO"] == NEW_LISTING_LABEL
+
+
+def test_split_buckets_by_kind_separates_new_listings():
+    buckets = {"FOO": "AT/NEW HIGH", "BAR": "0-10%", "FRESHIPO": NEW_LISTING_LABEL}
+    normal, new_listing = split_buckets_by_kind(buckets)
+    assert normal == {"FOO": "AT/NEW HIGH", "BAR": "0-10%"}
+    assert new_listing == {"FRESHIPO": NEW_LISTING_LABEL}
+
+
+def test_split_buckets_by_kind_empty_new_listings():
+    buckets = {"FOO": "AT/NEW HIGH"}
+    normal, new_listing = split_buckets_by_kind(buckets)
+    assert normal == {"FOO": "AT/NEW HIGH"}
+    assert new_listing == {}
 
 
 def test_load_todays_near_52w_missing_file(tmp_path):

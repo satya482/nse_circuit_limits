@@ -18,7 +18,7 @@ from datetime import datetime
 
 from ohlc_db import load_ohlc_many
 from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE, BENCH_SYM
-from near_52w_high_scanner import _PCT_BUCKETS_ORDER
+from near_52w_high_scanner import _PCT_BUCKETS_ORDER, NEW_LISTING_LABEL
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 MD_FILE = os.path.join(REPO_DIR, "near_52w_high_scans", "near_52w_high_scans.md")
@@ -26,7 +26,16 @@ OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "near_52w_high_charts.html")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 LOOKBACK = 600  # >= 6mo default view (~126 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
 MIN_BARS = 260
-_VALID_BUCKETS = set(_PCT_BUCKETS_ORDER)
+NEW_LISTING_MIN_BARS = 5  # just enough bars for a candlestick chart to render; new listings have no 260-bar floor
+_VALID_BUCKETS = set(_PCT_BUCKETS_ORDER) | {NEW_LISTING_LABEL}
+
+
+def split_buckets_by_kind(buckets: dict[str, str]) -> tuple[dict[str, str], dict[str, str]]:
+    """Splits into (normal_pct_buckets, new_listing_buckets) -- the two need
+    different min_bars floors when charting."""
+    normal = {s: label for s, label in buckets.items() if label != NEW_LISTING_LABEL}
+    new_listing = {s: label for s, label in buckets.items() if label == NEW_LISTING_LABEL}
+    return normal, new_listing
 
 
 def parse_near_52w_buckets(md_text: str) -> dict[str, str]:
@@ -71,12 +80,20 @@ def main() -> None:
         print(f"[near_52w_high_chart_dashboard] SKIP: {err}")
         return
 
+    normal_buckets, new_listing_buckets = split_buckets_by_kind(buckets)
     industries = resolve_industries(buckets.keys(), INDUSTRY_CACHE, TODAY)
     ohlc_map = load_ohlc_many(list(buckets.keys()), lookback=LOOKBACK)
     bench_df = load_ohlc_many([BENCH_SYM], lookback=LOOKBACK).get(BENCH_SYM)
     records, skipped = build_chart_data(
-        ohlc_map, buckets, industries=industries, min_bars=MIN_BARS, bench_df=bench_df,
+        ohlc_map, normal_buckets, industries=industries, min_bars=MIN_BARS, bench_df=bench_df,
     )
+    if new_listing_buckets:
+        nl_records, nl_skipped = build_chart_data(
+            ohlc_map, new_listing_buckets, industries=industries,
+            min_bars=NEW_LISTING_MIN_BARS, bench_df=bench_df,
+        )
+        records += nl_records
+        skipped += nl_skipped
     print(
         f"[near_52w_high_chart_dashboard] {len(records)} charted, {skipped} skipped "
         f"(insufficient OHLCV or annotation failure)"

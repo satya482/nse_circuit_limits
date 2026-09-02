@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-09-02 by Claude Code, manual new-listings watchlist in near_52w_high:
+
+- `new_listings.txt` (repo root, git-tracked, empty starter with format comments): one NSE symbol per line, user-maintained by hand -- no listing-date data exists anywhere reliable (TradingView's `ipo_date` field is unpopulated for every NSE stock, verified live), so this is deliberately not automated.
+- `near_52w_high_scanner.py`: after the normal gated watchlist pass, reads this file, drops symbols already qualifying on their own (`dedupe_new_listings`, prevents double-listing once a stock ages into a real bucket), and adds each remaining one to a new always-shown "New Listings" section via `analyse_new_listing()` -- no gate at all (no 260-bar floor, no 30%-band, no EMA200 check), just close/day-change/bars-tracked/circuit. New `NEW_LISTING_LABEL = "NEW LISTING"` bucket, included in both the top TV-paste block and its own bottom copy-block, same pattern as the pct-distance buckets.
+- `near_52w_high_chart_dashboard.py`: new listings need a much lower bar floor to actually render as a chart (5 bars vs the page's normal 260). `split_buckets_by_kind()` separates the parsed buckets, and `build_chart_data()` is called twice (normal min_bars=260, new-listing min_bars=5) with results merged before `build_html()`. The "NEW LISTING" bucket label reuses the existing badge-rendering path with no new dashboard rendering code.
+- TDD: 17 new tests (scanner: read/dedupe/analyse/markdown-section; dashboard: bucket-split/label-recognition). Full suite 589/589. Live end-to-end verified with a real short-history symbol (MEESHO, 181 bars) added temporarily -- scanner listed it, dashboard charted it with the correct badge and bar count -- then reverted `new_listings.txt` to its empty starter state before commit.
+
 Updated 2026-09-02 by Claude Code, RS sub-pane (Line + EMA9 + EMA21 + Weekly EMA9):
 
 - `union_chart_dashboard.py`'s shared renderer gained a second, synced chart instance per card (Lightweight Charts v4.1.3 bundled has no native multi-pane support, so this is a separate `createChart` in a new `.rs-pane-wrap` div below the price chart, one-way time-scale synced from the main chart via `subscribeVisibleLogicalRangeChange`). Plots 4 series -- pine parity with `pine_scripts/Satya RS Line vs 21 EMA.txt`: raw RS Line (blue/red stepline), RS EMA9 (aqua/purple), RS EMA21 (blue/red), Weekly RS EMA9 (white/gray stepline, flat within each week, stepping at week boundaries). Benchmark uniformly NIFTY MIDSML 400 (not the pine script's hardcoded Nifty50-vs-rest special case, by design decision -- avoids a manually-maintained constituent list).

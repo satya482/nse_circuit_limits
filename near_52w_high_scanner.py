@@ -45,6 +45,9 @@ MIN_BARS = 260
 
 _PCT_BUCKETS_ORDER = ["AT/NEW HIGH", "0-10%", "10-20%", "20-30%"]
 
+NEW_LISTING_LABEL = "NEW LISTING"
+NEW_LISTINGS_FILE = os.path.join(REPO_DIR, "new_listings.txt")
+
 
 def high52w_stats(high: pd.Series, close: pd.Series, period: int = HIGH52W_PERIOD) -> tuple[float, float]:
     """Returns (high_52w, pct_from_high) using the latest `period` bars.
@@ -114,6 +117,61 @@ def analyse(symbol: str, float_shares: float = 0) -> dict | None:
         return None
 
 
+# -- New listings (manual watchlist, no signal gate) -------------------------
+def read_new_listings(path: str) -> list[str]:
+    """Plain symbol-per-line manual watchlist; blank lines and #-comments
+    skipped. Missing file -> empty list (fail-open, nothing to track yet)."""
+    if not os.path.exists(path):
+        return []
+    symbols = []
+    with open(path, encoding="utf-8") as fh:
+        for line in fh:
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            symbols.append(line.upper())
+    return symbols
+
+
+def dedupe_new_listings(new_listing_symbols: list[str], already_qualified: set[str]) -> list[str]:
+    """Drops manual-list symbols already showing up via the normal gated
+    pass, so a stock that ages into a real bucket on its own isn't shown
+    twice. Also drops duplicate entries within the manual list itself."""
+    seen = set()
+    result = []
+    for sym in new_listing_symbols:
+        if sym in already_qualified or sym in seen:
+            continue
+        seen.add(sym)
+        result.append(sym)
+    return result
+
+
+def analyse_new_listing(symbol: str) -> dict | None:
+    """No gate at all -- just whatever's computable from however little
+    history exists. None only when OHLC is unusable (missing / <2 bars)."""
+    try:
+        raw = load_ohlc(symbol)
+        if raw is None or len(raw) < 2:
+            return None
+        close = raw["close"].astype(float)
+        curr_close = close.iloc[-1]
+        prev_close = close.iloc[-2]
+        day_chg = (curr_close - prev_close) / prev_close * 100
+        return {
+            "symbol": symbol,
+            "close": curr_close,
+            "day_chg": day_chg,
+            "days_tracked": len(raw),
+            "bucket": NEW_LISTING_LABEL,
+            "liq_tag": liq_tag(raw),
+            "cmf_tag": cmf_tag(raw),
+            "deliv_tag": deliv_tag(symbol),
+        }
+    except Exception:
+        return None
+
+
 # -- Markdown -----------------------------------------------------------------
 STATIC_HEADER = f"""### Scan definition
 | Filter | Value |
@@ -164,7 +222,35 @@ def _table_rows(findings: list[dict], circuit: dict[str, tuple]) -> list[str]:
     return rows
 
 
-def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
+def _new_listing_rows(entries: list[dict], circuit: dict[str, tuple]) -> list[str]:
+    rows = []
+    for f in entries:
+        sym = f["symbol"]
+        cl, em = circuit.get(sym, ("20%", ""))
+        tv = f"https://in.tradingview.com/chart/?symbol=NSE:{sym}"
+        ds = "+" if f["day_chg"] >= 0 else ""
+        extras = []
+        if f.get("liq_tag"):
+            extras.append(f["liq_tag"])
+        if f.get("cmf_tag"):
+            extras.append(f["cmf_tag"])
+        if f.get("deliv_tag"):
+            extras.append(f["deliv_tag"])
+        sym_cell = f"[{sym}]({tv})" + (f"<br><sub>{' - '.join(extras)}</sub>" if extras else "")
+        rows.append(
+            f"| {sym_cell} "
+            f"| {f['close']:.2f} "
+            f"| {ds}{f['day_chg']:.2f}% "
+            f"| {f['days_tracked']}d "
+            f"| {cl} {em} |"
+        )
+    return rows
+
+
+def build_markdown(
+    findings: list[dict], circuit: dict[str, tuple], new_listings: list[dict] | None = None,
+) -> str:
+    new_listings = new_listings or []
     rows = sorted(findings, key=lambda x: (-x["pct_from_high"], x["symbol"]))
 
     hdr = [
@@ -177,6 +263,10 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
         syms = [f["symbol"] for f in rows if f["bucket"] == label]
         if syms:
             wl_parts.append(f"###{label}," + tv_csv_flat(f"NSE:{s}" for s in syms))
+    if new_listings:
+        wl_parts.append(
+            f"###{NEW_LISTING_LABEL}," + tv_csv_flat(f"NSE:{f['symbol']}" for f in new_listings)
+        )
 
     lines = [
         f"# NSE Near-52W-High Watchlist - {TODAY}",
@@ -214,6 +304,29 @@ def build_markdown(findings: list[dict], circuit: dict[str, tuple]) -> str:
             tv_csv(f"NSE:{s}" for s in syms),
             "```",
         ]
+    if new_listings:
+        lines += [
+            "",
+            f"**{NEW_LISTING_LABEL}** ({len(new_listings)})",
+            "```",
+            tv_csv(f"NSE:{f['symbol']}" for f in new_listings),
+            "```",
+        ]
+
+    lines += [
+        "",
+        "### New Listings",
+        "*(manual watchlist from `new_listings.txt` -- no signal gate, informational only)*",
+        "",
+    ]
+    if new_listings:
+        nl_hdr = [
+            "| Symbol | Close | Day Chg | Days Tracked | Circuit |",
+            "|--------|------:|--------:|-------------:|:-------:|",
+        ]
+        lines += nl_hdr + _new_listing_rows(sorted(new_listings, key=lambda x: x["symbol"]), circuit)
+    else:
+        lines.append("*No new listings tracked.*")
 
     return SEBI_MD_HEADER + "\n".join(lines) + SEBI_MD_FOOTER
 
@@ -241,8 +354,17 @@ def main():
 
     print(f"\n  On watch: {len(findings)}")
 
+    already_qualified = {f["symbol"] for f in findings}
+    manual_symbols = dedupe_new_listings(read_new_listings(NEW_LISTINGS_FILE), already_qualified)
+    new_listings = []
+    for sym in manual_symbols:
+        result = analyse_new_listing(sym)
+        if result:
+            new_listings.append(result)
+    print(f"  New listings tracked: {len(new_listings)}")
+
     dated_file = os.path.join(SCANS_DIR, f"near_52w_high_scans_{TODAY}.md")
-    md = build_markdown(findings, circuit)
+    md = build_markdown(findings, circuit, new_listings=new_listings)
     with open(MD_FILE, "w", encoding="utf-8") as fh:
         fh.write(md)
     with open(dated_file, "w", encoding="utf-8") as fh:
