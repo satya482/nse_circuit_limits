@@ -916,6 +916,17 @@ def test_rs_line_directional_data_marks_rising_point_up_colored():
     assert points[1]["color"] == "up"
 
 
+def test_build_rs_pane_colors_weekly_ema9_lime_in_uptrend():
+    html = build_html([], "2026-08-27")
+    build_rs_pane_body = html.split("function buildRsPane(entry) {", 1)[1].split(
+        "\nfunction applyControls()", 1
+    )[0]
+    assert (
+        'rsLineDirectionalData(bars, pane.rs_weekly_ema9, "lime", "#787b86")'
+        in build_rs_pane_body
+    )
+
+
 def test_build_chart_wires_rs_pane_build_and_sync():
     html = build_html([], "2026-08-27")
     build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(

@@ -745,7 +745,7 @@ function buildRsPane(entry) {
     lineWidth: 1, lineType: LightweightCharts.LineType.WithSteps,
     lastValueVisible: false, priceLineVisible: false,
   });
-  weeklyEma9Series.setData(rsLineDirectionalData(bars, pane.rs_weekly_ema9, "#ffffff", "#787b86"));
+  weeklyEma9Series.setData(rsLineDirectionalData(bars, pane.rs_weekly_ema9, "lime", "#787b86"));
   rsChart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
   entry.chart.timeScale().subscribeVisibleLogicalRangeChange(function(range) {
     if (range) rsChart.timeScale().setVisibleLogicalRange(range);
