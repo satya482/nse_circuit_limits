@@ -1028,6 +1028,51 @@ def test_rs_pane_toggle_hides_wrap_without_rebuilding():
     assert "entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;" in handler
 
 
+def test_industry_name_compare_sorts_alpha_with_unclassified_last():
+    html = build_html([], "2026-08-27")
+    result = _run_generated_js_function(
+        html,
+        "function industryNameCompare(a, b) {",
+        "function uniqueSortedIndustries",
+        '["Unclassified", "Banks", "Software"].sort(industryNameCompare)',
+    )
+    assert result == ["Banks", "Software", "Unclassified"]
+
+
+def test_unique_sorted_industries_dedupes_and_sorts():
+    html = build_html([], "2026-08-27")
+    records = [
+        {"industry": "Software"}, {"industry": "Banks"}, {"industry": "Software"},
+        {"industry": "Unclassified"},
+    ]
+    result = _run_generated_js_function(
+        html,
+        "function industryNameCompare(a, b) {",
+        "function initIndustryJump",
+        f"uniqueSortedIndustries({json.dumps(records)})",
+    )
+    assert result == ["Banks", "Software", "Unclassified"]
+
+
+def test_build_html_has_industry_jump_dropdown_with_placeholder():
+    html = build_html([], "2026-08-27")
+    assert '<select id="industryJump">' in html
+    assert '<option value="">Jump to industry' in html
+    assert "initIndustryJump()" in html
+
+
+def test_industry_jump_handler_switches_sort_mode_and_scrolls():
+    html = build_html([], "2026-08-27")
+    handler = html.split(
+        "document.getElementById('industryJump').addEventListener('change', function(e) {",
+        1,
+    )[1].split("</script>", 1)[0]
+    assert "sortMode').value = 'industry'" in handler or 'sortMode").value = "industry"' in handler
+    assert "applySortAndFilter();" in handler
+    assert "scrollIntoView(" in handler
+    assert "e.target.value = '';" in handler or 'e.target.value = "";' in handler
+
+
 def test_generated_high52w_matches_rolling_max_of_high():
     html = build_html([], "2026-08-27")
     highs = [10, 20, 15, 12, 11, 25, 24]

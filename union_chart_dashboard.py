@@ -868,6 +868,42 @@ function cardCompare(a, b, direction) {
 
 const GROUP_SORT = "__GROUP_SORT__";
 
+function industryNameCompare(a, b) {
+  if (a === "Unclassified") return 1;
+  if (b === "Unclassified") return -1;
+  return a.localeCompare(b);
+}
+
+function uniqueSortedIndustries(records) {
+  return Array.from(new Set(records.map(function(r) { return r.industry; }))).sort(industryNameCompare);
+}
+
+function initIndustryJump() {
+  const select = document.getElementById('industryJump');
+  uniqueSortedIndustries(CHART_DATA).forEach(function(name) {
+    const opt = document.createElement('option');
+    opt.value = name;
+    opt.textContent = name;
+    select.appendChild(opt);
+  });
+}
+initIndustryJump();
+
+document.getElementById('industryJump').addEventListener('change', function(e) {
+  const target = e.target.value;
+  if (!target) return;
+  document.getElementById('sortMode').value = 'industry';
+  applySortAndFilter();
+  const headings = document.querySelectorAll('#grid .industry-heading');
+  for (let i = 0; i < headings.length; i++) {
+    if (headings[i].textContent === target) {
+      headings[i].scrollIntoView({ behavior: 'smooth', block: 'start' });
+      break;
+    }
+  }
+  e.target.value = '';
+});
+
 function applySortAndFilter() {
   const mode = document.getElementById("sortMode").value;
   const query = document.getElementById("q").value.toLowerCase();
@@ -882,11 +918,7 @@ function applySortAndFilter() {
     cards.forEach(function(card) {
       (groups[card.dataset.industry] ||= []).push(card);
     });
-    Object.keys(groups).sort(function(a, b) {
-      if (a === "Unclassified") return 1;
-      if (b === "Unclassified") return -1;
-      return a.localeCompare(b);
-    }).forEach(function(industry) {
+    Object.keys(groups).sort(industryNameCompare).forEach(function(industry) {
       const heading = document.createElement("h2");
       heading.className = "industry-heading";
       heading.textContent = industry;
@@ -1023,6 +1055,9 @@ h1{{font-size:1.1rem}}
     <option value="industry" selected>Industry groups</option>
     <option value="day-desc">Day change: highest first</option>
     <option value="day-asc">Day change: lowest first</option>
+  </select></label>
+  <label>Jump <select id="industryJump">
+    <option value="">Jump to industry...</option>
   </select></label>
 </div>
 <input id="q" placeholder="Filter by symbol / tier">
