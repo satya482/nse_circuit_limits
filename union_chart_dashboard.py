@@ -961,14 +961,14 @@ h1{{font-size:1.1rem}}
 .switch-row input:checked + .switch{{background:#238636}}
 .switch-row input:checked + .switch::after{{left:16px;background:#fff}}
 .chart-wrap{{position:relative;overflow:hidden}}
-.chart{{height:clamp(380px,44vw,520px)}}
+.chart,.rs-pane-wrap{{height:clamp(380px,44vw,520px)}}
 .coil-layer{{position:absolute;inset:0;z-index:2;pointer-events:none}}
 .coil-box{{position:absolute;box-sizing:border-box;border:1px solid #808080;background:rgba(128,128,128,.10)}}
 .rs-dot{{position:absolute;border-radius:50%}}
-.rs-pane-wrap{{height:150px;margin-top:6px}}
+.rs-pane-wrap{{margin-top:6px}}
 .rs-pane{{width:100%;height:100%}}
 .empty{{color:#8b949e}}
-@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart{{height:380px}}.rs-pane-wrap{{height:120px}}}}
+@media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart,.rs-pane-wrap{{height:380px}}}}
 </style></head>
 <body>
 {SEBI_HTML_BANNER}

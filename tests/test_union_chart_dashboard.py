@@ -523,10 +523,10 @@ def test_build_html_has_fixed_mode_and_adaptive_touch_contract():
     html = build_html([], "2026-08-27")
     compact = "".join(html.split())
     assert "repeat(auto-fit,minmax(min(100%,640px),1fr))" in compact
-    assert ".chart{height:clamp(380px,44vw,520px)}" in compact
+    assert ".chart,.rs-pane-wrap{height:clamp(380px,44vw,520px)}" in compact
     assert (
         "@media(max-width:600px){#grid{grid-template-columns:1fr}"
-        ".chart{height:380px}.rs-pane-wrap{height:120px}}" in compact
+        ".chart,.rs-pane-wrap{height:380px}}" in compact
     )
     assert "vertTouchDrag:false" in compact
     assert "setVisibleLogicalRange" in html
