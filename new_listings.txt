@@ -5,3 +5,10 @@
 # has no listing-date data, so it won't age these out automatically. A
 # symbol that starts qualifying on its own via the normal near-52w-high
 # gate is auto-dropped from this section to avoid showing it twice.
+BLUESTONE
+INDOMIM
+MILKYMIST
+TEMPSENS
+AUGMONT
+GAJA
+SYMBIOTEC
