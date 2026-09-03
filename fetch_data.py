@@ -492,6 +492,25 @@ def main() -> None:
     if needs_delta:
         delta_update(kite, instruments_df, needs_delta, con)
 
+    # 3. Post-fetch gap check — anything still stale means backfill() failed
+    # for it (API error, or Kite genuinely has no data e.g. a halted stock).
+    # Surface it instead of leaving a silent gap for the next run to hide.
+    post_status = get_symbol_status(con)
+    still_stale = sorted(
+        s
+        for s in all_symbols
+        if s in post_status
+        and (today_date - date.fromisoformat(post_status[s][0])).days > STALE_GAP_DAYS
+    )
+    if still_stale:
+        print(
+            f"\n  WARN: {len(still_stale)} symbol(s) still stale after fetch "
+            f"(last_date > {STALE_GAP_DAYS}d old) — check Kite API errors above:",
+            file=sys.stderr,
+        )
+        for s in still_stale:
+            print(f"    {s}: last_date={post_status[s][0]}", file=sys.stderr)
+
     write_manifest(con)
 
     # Breadth universe: 10yr extended backfill — only with --all flag
