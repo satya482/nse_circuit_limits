@@ -40,6 +40,7 @@ ENV_PATH = REPO_DIR / "ema-compression-scanner" / ".env"
 
 LOOKBACK_DAYS = 400  # calendar days for historical backfill (~280 trading bars)
 MIN_ROWS = 200  # symbols below this trigger a backfill
+STALE_GAP_DAYS = 5  # calendar days; beyond a long weekend, route to backfill() not delta_update()
 BATCH_SIZE = 50  # max instruments per quote() call (larger batches trigger Cloudflare rate-limit)
 BATCH_SLEEP = 3  # seconds between batches
 BATCH_RETRY_WAIT = 30  # seconds to wait before retrying a failed batch
@@ -452,15 +453,31 @@ def main() -> None:
 
     # 2. Determine what each symbol needs
     status = get_symbol_status(con)
-    today = date.today().isoformat()
+    today_date = date.today()
+    today = today_date.isoformat()
 
+    def stale_days(sym: str) -> int:
+        return (today_date - date.fromisoformat(status[sym][0])).days
+
+    # delta_update() only appends a single "today" row via quote() — it cannot
+    # backfill a gap. A symbol can go stale for reasons other than a fresh
+    # listing (e.g. temporarily dropping out of the TV mcap screener and
+    # re-entering later), so anything idle more than a long weekend needs the
+    # real historical_data() backfill instead, regardless of existing row count.
     needs_backfill = [
-        s for s in all_symbols if s not in status or status[s][1] < MIN_ROWS
+        s
+        for s in all_symbols
+        if s not in status
+        or status[s][1] < MIN_ROWS
+        or stale_days(s) > STALE_GAP_DAYS
     ]
     needs_delta = [
         s
         for s in all_symbols
-        if s in status and status[s][1] >= MIN_ROWS and status[s][0] < today
+        if s in status
+        and status[s][1] >= MIN_ROWS
+        and status[s][0] < today
+        and stale_days(s) <= STALE_GAP_DAYS
     ]
     up_to_date = len(all_symbols) - len(needs_backfill) - len(needs_delta)
 
