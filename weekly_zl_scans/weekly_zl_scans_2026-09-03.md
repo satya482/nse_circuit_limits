@@ -26,7 +26,7 @@
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF30d</sub> | Online test prep and upskilling courses for competitive exams | 1w | TOUCH | 1w | +1.4% | +4.32% | 121.01 | — | 20%  |
+| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF30d · DEL55%</sub> | Online test prep and upskilling courses for competitive exams | 1w | TOUCH | 1w | +1.4% | +4.32% | 121.01 | — | 20%  |
 | [BANKINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANKINDIA)<br><sub>↑CMF8d</sub> | Public sector bank retail corporate MSME lending | 1w | TOUCH | 1w | +0.7% | +1.33% | 145.00 | 8w | 20%  |
 | [HDBFS](https://in.tradingview.com/chart/?symbol=NSE:HDBFS)<br><sub>↓CMF30d</sub> | Vehicle loans and personal finance for underbanked consumers | 1w | TOUCH | 1w | +2.1% | +2.70% | 693.45 | — | 20%  |
 | [TIMETECHNO](https://in.tradingview.com/chart/?symbol=NSE:TIMETECHNO)<br><sub>↓CMF13d</sub> | Polymer packaging, automotive parts, industrial composites manufacturer | 1w | TOUCH | 1w | +1.6% | +0.71% | 189.36 | — | 20%  |
