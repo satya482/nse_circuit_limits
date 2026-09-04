@@ -200,17 +200,20 @@ Operating contract:
 
 ### Scanner pipeline — IPO Listings (`ipo_scanner.py`, `ipo_chart_dashboard.py`)
 
-Manual watchlist tracker for recent IPOs, no signal gate — mirrors `near_52w_high_scanner.py`'s
-"New Listings" section but as its own standalone pipeline (the IPO list is far larger and
-turns over faster).
+Manual watchlist tracker for recent IPOs — mirrors `near_52w_high_scanner.py`'s "New Listings"
+section but as its own standalone pipeline (the IPO list is far larger and turns over faster).
+`ipo_scans.md` stays gate-free (informational source list); the chart dashboard applies a
+weekly-RS gate on top of it.
 
 1. `ipo_listings.txt` — one NSE symbol per line, `#`-comments/blank lines ignored
 2. `ipo_scanner.py` reuses `near_52w_high_scanner.read_new_listings()` / `analyse_new_listing()` /
    `_new_listing_rows()` (no gate — just close/day-chg/days-tracked/circuit/liq/CMF/delivery tags);
    writes `ipo_scans/ipo_scans.md` (dated + `_latest`-equivalent undated file)
 3. `ipo_chart_dashboard.py` parses the `###IPO` TV-paste section out of `ipo_scans.md`, loads OHLC,
-   and reuses `union_chart_dashboard.py`'s renderer (`min_bars=5` — new listings have no 260-bar
-   floor); writes `dashboard/ipo.html`
+   then filters to symbols passing `minervini_trend_scanner._weekly_rs_ema9_gate()` (weekly RS
+   EMA9 vs NIFTY MIDSML 400 flat or rising; excludes anything under ~12 weeks of history — not
+   enough to judge a trend) before charting via `union_chart_dashboard.py`'s renderer (`min_bars=5`
+   — new listings have no 260-bar floor); writes `dashboard/ipo.html`
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
