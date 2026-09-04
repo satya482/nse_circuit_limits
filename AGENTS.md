@@ -28,6 +28,31 @@ This file is the repo-wide handoff contract for Codex, Claude Code, and any othe
 - Do not run live data fetchers or scanner orchestration unless the user expects network/Kite/NSE access and local credentials to be used.
 - Pine scripts cannot be fully tested locally; validate syntax and behavior manually in TradingView when required by the relevant plan.
 
+## Watchlist Symbol Additions
+
+When asked to add symbol(s) to the manual watchlists (phrasing like "add X to new listings",
+"track this IPO", "add SYM to the watchlist", or a pasted list of tickers to track), update
+**both** `new_listings.txt` and `ipo_listings.txt` together — they're read by
+`near_52w_high_scanner.py` / `ipo_scanner.py` with no OHLC or gate requirement, so appending
+blind (no `market.db` validation) is correct, not sloppy.
+
+1. Normalize each symbol: strip an `NSE:` prefix, uppercase, trim whitespace.
+2. Per file, skip symbols already present (case-insensitive, ignoring blank lines and
+   `#`-comments) — don't create a no-op diff on a file where everything's already tracked.
+   Don't touch the comment header block or reorder existing lines.
+3. Append new symbols one per line. Both files have historically been saved without a
+   trailing newline — check for one and add it before your first new line, or you'll
+   concatenate onto the last existing symbol.
+4. Stage only the two watchlist files (`git add new_listings.txt ipo_listings.txt`), never
+   `git add -A` — something else may be mid-edit in this repo.
+5. `git commit --no-verify -m "Add SYM1, SYM2 to new_listings.txt, ipo_listings.txt"` (name
+   whichever file(s) actually changed), then `git push` immediately.
+6. If push fails non-fast-forward, `git pull --rebase` and push again; stop and show the user
+   on a real conflict rather than resolving it silently.
+
+Claude Code also has this as the `ipo-add` skill (`~/.claude/skills/ipo-add/SKILL.md`) — same
+procedure, kept in sync with this section.
+
 ## Shared-Agent Coordination
 
 - Before starting: capture current `git status --short`.
