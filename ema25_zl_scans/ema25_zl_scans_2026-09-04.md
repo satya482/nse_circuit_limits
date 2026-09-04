@@ -35,7 +35,7 @@
 | [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>⚠ CAUTION · →965Cr · 1501Cr · 📶W9 · ↑CMF3d</sub> | 1d | +1.2% |  | +1.22% | 1147.60 | — | 20%  |
 | [PURVA](https://in.tradingview.com/chart/?symbol=NSE:PURVA)<br><sub>✓ SAFE · ↘44Cr · 401Cr · 📶W9 · 🚀SS·12x · ↓CMF19d</sub> | 1d | +9.3% | Residential real estate developer metro cities apartments villas | +9.30% | 230.72 | ✓ | 20%  |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>⚠ CAUTION · →273Cr · 520Cr · 📶W9 · 🚀SS · ↓CMF4d</sub> | 1d | +3.0% |  | +3.04% | 1352.10 | — | 20%  |
-| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · ↘353Cr · 239Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 1d | +1.1% | Condoms lubricants IVD kits sexual wellness global | +1.14% | 283.15 | ✓ | 20%  |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · ↘353Cr · 239Cr · 📶W9 · 🚀SS · ↑CMF30d · DEL46%</sub> | 1d | +1.1% | Condoms lubricants IVD kits sexual wellness global | +1.14% | 283.15 | ✓ | 20%  |
 | [HEG](https://in.tradingview.com/chart/?symbol=NSE:HEG)<br><sub>✓ SAFE · →118Cr · 187Cr · 📶W9 · ↑CMF15d</sub> | 1d | +2.9% | Graphite electrodes for electric arc furnace steel production | +2.94% | 728.25 | ✓ | 20%  |
 | [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>✓ SAFE · →172Cr · 175Cr · 🚀SS · ↓CMF12d</sub> | 1d | +1.5% | Defense electronics assembly testing solutions for mission systems | +1.47% | 388.90 | ✓ | 20% 🟦 |
 | [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL)<br><sub>✓ SAFE · ↗215Cr · 138Cr · 📶W9 · 🚀SS · ↑CMF12d</sub> | 1d | +1.2% | NBFC lending home loans gold MSME retail segments | +1.20% | 651.15 | — | 20%  |
@@ -63,7 +63,7 @@
 | [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>✓ SAFE · ↘16Cr · 37Cr · 🚀SS · ↓CMF7d</sub> | 1d | +2.8% | Apparel manufacturer for global fashion brands and retailers | +2.81% | 789.20 | ✓ | 20% 🟦 |
 | [ACI](https://in.tradingview.com/chart/?symbol=NSE:ACI)<br><sub>✓ SAFE · ↗36Cr · 32Cr · 🚀SS · ↓CMF25d</sub> | 1d | +1.8% | Bromine, industrial salt, potash producer, chemical exports | +1.82% | 504.20 | ✓ | 20%  |
 | [ARTEMISMED](https://in.tradingview.com/chart/?symbol=NSE:ARTEMISMED)<br><sub>✓ SAFE · ↘10Cr · 29Cr · 📶W9 · 🚀SS · ↓CMF7d</sub> | 1d | +4.0% | Tertiary care hospital operator, multi-specialty healthcare delivery Gurgaon | +4.05% | 332.80 | ✓ | 20%  |
-| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>✓ SAFE · ↘208Cr · 785Cr · 📶W9 · 🚀SS · ↓CMF30d · DEL55%(T-1)</sub> | 2d | +9.3% | Online test prep and upskilling courses for competitive exams | +4.74% | 126.74 | ✓ | 20%  |
+| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>✓ SAFE · ↘208Cr · 785Cr · 📶W9 · 🚀SS · ↓CMF30d</sub> | 2d | +9.3% | Online test prep and upskilling courses for competitive exams | +4.74% | 126.74 | ✓ | 20%  |
 | [SKIPPER](https://in.tradingview.com/chart/?symbol=NSE:SKIPPER)<br><sub>✓ SAFE · ↗116Cr · 598Cr · 📶W9 · RVOL12x · ↑CMF12d</sub> | 2d | +10.0% | Steel towers, polymer pipes, infrastructure EPC projects | +8.08% | 591.10 | ✓ | 20%  |
 | [RML](https://in.tradingview.com/chart/?symbol=NSE:RML)<br><sub>✓ SAFE · ↗32Cr · 284Cr · 📶W9 · 🚀SS·79x · ↑CMF1d</sub> | 2d | +17.4% | Automotive steering components and metal castings supplier | +14.95% | 1295.90 | — | 20%  |
 | [ANANTRAJ](https://in.tradingview.com/chart/?symbol=NSE:ANANTRAJ)<br><sub>✓ SAFE · ↗219Cr · 262Cr · 📶W9 · ↑CMF1d</sub> | 2d | +6.2% | Real estate developer IT parks hospitality residential Delhi-NCR | -0.45% | 625.45 | ✓ | 20%  |
@@ -87,7 +87,7 @@
 | [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM)<br><sub>✓ SAFE · ↘189Cr · 91Cr · ↓CMF18d</sub> | 2d | +3.4% | Multi-specialty hospitals and clinics, India healthcare | -0.16% | 785.75 | — | 20%  |
 | [RAIN](https://in.tradingview.com/chart/?symbol=NSE:RAIN)<br><sub>✓ SAFE · →91Cr · 86Cr · 📶W9 · ↓CMF20d</sub> | 2d | +4.9% | Calcined coke, cement, advanced materials production globally | +1.89% | 215.72 | ✓ | 20%  |
 | [CMPDI](https://in.tradingview.com/chart/?symbol=NSE:CMPDI)<br><sub>✓ SAFE · →43Cr · 65Cr · 📶W9 · ↑CMF1d</sub> | 2d | +9.2% | Coal mine planning design consultancy subsidiary CIL | +2.05% | 243.60 | — | 20%  |
-| [CARERATING](https://in.tradingview.com/chart/?symbol=NSE:CARERATING)<br><sub>⚠ CAUTION · ↗15Cr · 62Cr · 📶W9 · ↓CMF24d</sub> | 2d | +3.3% | Credit rating agency for corporate debt securities | +1.74% | 1738.20 | ✓ | 20%  |
+| [CARERATING](https://in.tradingview.com/chart/?symbol=NSE:CARERATING)<br><sub>⚠ CAUTION · ↗15Cr · 62Cr · 📶W9 · ↓CMF24d · DEL88%</sub> | 2d | +3.3% | Credit rating agency for corporate debt securities | +1.74% | 1738.20 | ✓ | 20%  |
 | [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>✓ SAFE · ↘23Cr · 60Cr · 📶W9 · ↑CMF0d</sub> | 2d | +9.5% | VFX animation post-production services for film television | +5.32% | 307.00 | — | 5%  |
 | [KSHINTL](https://in.tradingview.com/chart/?symbol=NSE:KSHINTL)<br><sub>✓ SAFE · ↘28Cr · 59Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 2d | +14.2% | Magnet winding wire manufacturer for motors and transformers | +6.04% | 1088.00 | — | 20%  |
 | [SCI](https://in.tradingview.com/chart/?symbol=NSE:SCI)<br><sub>✓ SAFE · ↗79Cr · 53Cr · 🚀SS · ↓CMF20d</sub> | 2d | +2.5% | Cargo and tanker shipping for domestic and international trade | +0.14% | 295.35 | ✓ | 20%  |

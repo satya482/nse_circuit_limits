@@ -44,7 +44,7 @@
 | [RELTD](https://in.tradingview.com/chart/?symbol=NSE:RELTD)<br><sub>↓CMF17d</sub> | Solar power plants, EV charging, sugar trading conglomerate | 1w | TOUCH | 1w | +2.9% | +1.39% | 161.37 | — | 20%  |
 | [ROTO](https://in.tradingview.com/chart/?symbol=NSE:ROTO)<br><sub>↓CMF20d</sub> | Progressive cavity pumps for wastewater and sugar industries | 1w | TOUCH | 1w | +0.8% | +1.99% | 65.03 | — | 20%  |
 | [JINDALPOLY](https://in.tradingview.com/chart/?symbol=NSE:JINDALPOLY)<br><sub>↑CMF3d</sub> |  | 1w | TOUCH | 1w | +5.7% | -1.66% | 672.35 | 5w | 20%  |
-| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF30d · DEL55%(T-1)</sub> | Online test prep and upskilling courses for competitive exams | 1w | ABOVE | 1w | +6.2% | +4.74% | 126.74 | — | 20%  |
+| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↓CMF30d</sub> | Online test prep and upskilling courses for competitive exams | 1w | ABOVE | 1w | +6.2% | +4.74% | 126.74 | — | 20%  |
 | [SPLPETRO](https://in.tradingview.com/chart/?symbol=NSE:SPLPETRO)<br><sub>↑CMF4d</sub> | Polystyrene and styrenics polymer manufacturing for packaging | 1w | ABOVE | 1w | +10.0% | +6.23% | 771.05 | 11w | 20%  |
 | [IGL](https://in.tradingview.com/chart/?symbol=NSE:IGL)<br><sub>↓CMF30d</sub> | CNG piped gas distribution Delhi NCR sectors | 1w | ABOVE | 1w | +7.1% | +5.77% | 158.04 | — | 20%  |
 | [HIKAL](https://in.tradingview.com/chart/?symbol=NSE:HIKAL)<br><sub>↑CMF1d</sub> | Hikal manufactures active pharmaceutical ingredients and crop protection chemicals globally | 1w | ABOVE | 1w | +8.8% | -7.51% | 222.30 | — | 20%  |
