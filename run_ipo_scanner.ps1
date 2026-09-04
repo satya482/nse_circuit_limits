@@ -29,5 +29,4 @@ if ($LASTEXITCODE -ne 0) {
 }
 Log "--- Done ---"
 
-# To register the scheduled task (run once as admin):
-# schtasks /create /tn "NSE_IPOScanner" /tr "powershell -NonInteractive -File C:\Users\satya\nse_circuit_limits\run_ipo_scanner.ps1" /sc WEEKLY /d MON,TUE,WED,THU,FRI /st 16:22 /f
+# Run via run_all_scanners.ps1 (Run-Scanner "IPOScanner") -- no standalone scheduled task.

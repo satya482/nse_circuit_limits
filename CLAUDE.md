@@ -65,8 +65,9 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
 .\run_fetch_delivery.ps1        # 6:15 PM — NSE bhavcopy delivery% fetch + same-day marker backfill
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
-.\run_ipo_scanner.ps1           # 4:22 PM — IPO listings tracker (no gate, informational)
-.\run_ipo_chart_dashboard.ps1   # 4:38 PM — runs AFTER IPOScanner; candlestick+volume charts for IPO watchlist
+# IPO listings tracker + chart dashboard -- no standalone schedule, runs inside
+# run_all_scanners.ps1 (Run-Scanner "IPOScanner" after Near52WHigh, "IPOChartDashboard"
+# after Near52WHighChartDash)
 .\run_rs_weekly_ema9_scanner.ps1  # runs in NSE_AllScanners, after WeeklyZL — weekly RS EMA9 flat/rising trend list
 .\run_consolidation_scanner.ps1  # 4:35 PM — Consolidation Tracker: quality/imminence/tier scan
 # US WaveTrend Bull Cross Scanner — SEPARATE scheduled task, part of the existing
@@ -209,7 +210,7 @@ turns over faster).
    writes `ipo_scans/ipo_scans.md` (dated + `_latest`-equivalent undated file)
 3. `ipo_chart_dashboard.py` parses the `###IPO` TV-paste section out of `ipo_scans.md`, loads OHLC,
    and reuses `union_chart_dashboard.py`'s renderer (`min_bars=5` — new listings have no 260-bar
-   floor); writes `dashboard/ipo_charts.html`
+   floor); writes `dashboard/ipo.html`
 
 ### Scanner pipeline — NIFTY 50 ZLEMA25 Trend (`nifty50_zlema25_scanner.py`)
 
@@ -447,7 +448,7 @@ Fetches `nseindia.com/api/eqsurvactions` → parses CSV → generates `index.htm
 | `dashboard/footprint.html` | `institutional_footprint_scanner.py` |
 | `dashboard/union_charts.html` (local `.union_chart_cache/` excluded) | `union_chart_dashboard.py` |
 | `ipo_scans/ipo_scans.md`, dated `.md` | `ipo_scanner.py` |
-| `dashboard/ipo_charts.html` | `ipo_chart_dashboard.py` |
+| `dashboard/ipo.html` | `ipo_chart_dashboard.py` |
 
 ## Environment (`.env` inside `ema-compression-scanner/`)
 

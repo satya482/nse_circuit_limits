@@ -20,7 +20,7 @@ from union_chart_dashboard import build_chart_data, build_html, resolve_industri
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
 MD_FILE = os.path.join(REPO_DIR, "ipo_scans", "ipo_scans.md")
-OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "ipo_charts.html")
+OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "ipo.html")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 LOOKBACK = 600
 MIN_BARS = 5  # newly listed stocks; just enough bars for a candlestick chart to render
