@@ -1,0 +1,85 @@
+//@version=6
+// Satya Weekly RS Line vs 21 EMA
+// Daily chart TF (works on any intraday/daily chart), but every RS series (RS Line,
+// EMA9, EMA21, EMA200) is computed on the 1W timeframe via request.security and
+// plotted stepped on the daily chart. Current (incomplete) week's value repaints
+// intrabar/intraweek by design (no lookahead_off) - matches upstream convention.
+// No companion overlay indicator. Separate pane (overlay=false).
+// Alert message format: SIGNAL_TYPE|{{ticker}}|description|TF:{{interval}}
+indicator("Satya Weekly RS Line vs 21 EMA", overlay=false)
+
+/////RS alert
+// === Inputs ===
+//indexSym = input.symbol("NIFTYMIDSML400", "Index Symbol (NIFTYMIDSML400)")
+isNSE = str.contains(syminfo.ticker, "NSE") or str.contains(syminfo.prefix, "NSE")
+
+// Nifty50 constituents (as of 2026-07-17) — TradingView tickers, so "-" and "&"
+// become "_" (M&M -> M_M, BAJAJ-AUTO -> BAJAJ_AUTO). Comma-delimited with leading/
+// trailing commas so str.contains matches whole tickers only (LT vs ULTRACEMCO).
+// Update manually on index rebalance.
+nifty50List = ",HDFCBANK,ICICIBANK,RELIANCE,BHARTIARTL,LT,SBIN,INFY,AXISBANK,M_M,KOTAKBANK,BAJFINANCE,ITC,TCS,ETERNAL,SUNPHARMA,TITAN,HINDUNILVR,MARUTI,NTPC,TATASTEEL,BEL,SHRIRAMFIN,HINDALCO,ULTRACEMCO,ADANIPORTS,POWERGRID,HCLTECH,ASIANPAINT,INDIGO,GRASIM,BAJAJ_AUTO,JSWSTEEL,BAJAJFINSV,COALINDIA,EICHERMOT,NESTLEIND,ONGC,TECHM,TRENT,ADANIENT,APOLLOHOSP,SBILIFE,MAXHEALTH,CIPLA,JIOFIN,DRREDDY,TATACONSUM,TMPV,HDFCLIFE,WIPRO,"
+isNifty50 = str.contains(nifty50List, "," + syminfo.ticker + ",")
+
+indexSym = isNifty50 ? "NIFTY" : isNSE ? "NIFTYMIDSML400" : "SPX"
+emaLen   = input.int(21, "RS EMA Length")
+weeklyTF = "1W"
+
+// === Relative Strength Line (chart-TF close ratio, resampled to weekly) ===
+stockClose  = request.security(syminfo.tickerid, timeframe.period, close)
+indexClose  = request.security(indexSym, timeframe.period, close)
+rsLineSrc = (stockClose / indexClose) * 1000  // Scaled for visibility
+
+// === All RS series computed on 1W, plotted stepped on the daily chart ===
+[rsLine, rsEma21, rsEma9, rsEma13, rsBaseline, rsEma200] = request.security(syminfo.tickerid, weeklyTF,
+     [rsLineSrc, ta.ema(rsLineSrc, emaLen), ta.ema(rsLineSrc, 9), ta.ema(rsLineSrc, 13), ta.ema(rsLineSrc, 50), ta.ema(rsLineSrc, 200)])
+
+// === Background: weekly RS EMA9 above weekly RS EMA21, weekly EMA21 flat/rising ===
+weeklyEma21Rising = rsEma21 >= rsEma21[1]
+rsAboveWeeklyEma21 = rsEma9 > rsEma21 and weeklyEma21Rising
+bgcolor(rsAboveWeeklyEma21 ? color.new(color.teal, 85) : na, title="Weekly RS EMA9 > Weekly RS EMA21 (rising)")
+
+// === Background: RS line crossed latest RS-down high line ===
+// lastRsDownHigh = rsLine level of the most recent bar where rsLine was declining
+// (mirrors rs_highline_scanner.py's backward scan, done forward via running state)
+var float lastRsDownHigh = na
+if rsLine < rsLine[1]
+    lastRsDownHigh := rsLine
+rsDownCross = not na(lastRsDownHigh) and ta.crossover(rsLine, lastRsDownHigh)
+//bgcolor(rsDownCross ? color.new(color.orange, 70) : na, title="RS crossed last RS-down high")
+
+// === Plots ===
+plot(rsLine, title="RS Line (Weekly)", color=rsLine > rsLine[1] ? color.blue : color.red, linewidth=1, style = plot.style_stepline)
+plot(rsEma21, title="RS EMA 21 (Weekly)", color=rsEma21 > rsEma21[1]?color.blue : color.red, linewidth=1, style = plot.style_stepline)
+//plot(rsEma13, title="RS EMA 13 (Weekly)", color=rsEma13 > rsEma13[1]?color.lime : color.fuchsia, linewidth=1)
+plot(rsEma9, title="RS EMA 9 (Weekly)", color=rsEma9 > rsEma9[1]?color.aqua : color.purple, linewidth=1, style = plot.style_stepline)
+//plot(rsBaseline, title="RS Baseline (EMA50, Weekly)", color=color.gray, linewidth=1, style=plot.style_line)
+plot(rsEma200, title="RS Baseline (EMA200, Weekly)", color=color.yellow, linewidth=1, style=plot.style_stepline)
+
+// Crossover logic
+// bullCross = ta.crossover(rsLine, rsWeeklyEma9)    // 9 crosses above 21
+// plotshape(     bullCross,     title="Cross Above rsWeeklyEma9",     style=shape.cross,     location=location.belowbar,     color=color.white,     size=size.tiny)
+
+// === Crossover condition ===
+rsCrossUp = ta.crossover(rsLine, rsEma21)// and rsLine > rsEma21
+//rsCrossUpNormal = rsCrossUp and not isPPV
+//rsCrossUpPPV = rsCrossUp and isPPV
+
+// === Visual marker ===
+// plotshape(
+//     rsCrossUp ,
+//     title     = "Normal RS Line > EMA21",
+//     style     = shape.triangleup,
+//     location  = location.belowbar,
+//     color     = color.fuchsia,
+//     size      = size.tiny
+// )
+
+// === RS EMA9 / RS EMA21 turn from falling-or-flat to rising ===
+rsEma9UptrendStart  = rsEma9 > rsEma9[1] and rsEma9[1] <= rsEma9[2]
+rsEma21UptrendStart = rsEma21 > rsEma21[1] and rsEma21[1] <= rsEma21[2]
+
+alertcondition(rsEma9UptrendStart and barstate.isconfirmed, title="RS EMA9 Uptrend Start (Weekly)",
+     message="RS_EMA9_UPTREND_START|{{ticker}}|Weekly RS EMA9 turned upward|TF:{{interval}}")
+
+alertcondition(rsEma21UptrendStart and barstate.isconfirmed, title="RS EMA21 Uptrend Start (Weekly)",
+     message="RS_EMA21_UPTREND_START|{{ticker}}|Weekly RS EMA21 turned upward|TF:{{interval}}")
