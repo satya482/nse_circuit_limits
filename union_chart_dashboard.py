@@ -701,6 +701,7 @@ function buildChart(symbol) {
   rebuildZlema25(entry);
   rebuildHigh52w(entry);
   buildRsPane(entry);
+  if (entry.rsPaneWrap) entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;
   applyVolumeState(entry);
   scheduleCoilRedraw(entry);
   chart.timeScale().subscribeVisibleLogicalRangeChange(function() { scheduleCoilRedraw(entry); });

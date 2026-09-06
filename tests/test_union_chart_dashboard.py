@@ -1006,6 +1006,7 @@ def test_build_chart_wires_rs_pane_build_and_sync():
         "\nfunction applyControls()", 1
     )[0]
     assert "buildRsPane(entry);" in build_chart_body
+    assert "if (entry.rsPaneWrap) entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;" in build_chart_body
 
 
 def test_build_rs_pane_returns_early_without_rs_pane_data():
