@@ -36,7 +36,7 @@
 | [CREST](https://in.tradingview.com/chart/?symbol=NSE:CREST)<br><sub>↑CMF30d</sub> |  | 1w | TOUCH | 1w | +3.2% | +3.25% | 370.65 | 5w | 20%  |
 | [AFSL](https://in.tradingview.com/chart/?symbol=NSE:AFSL)<br><sub>↓CMF30d</sub> |  | 1w | TOUCH | 1w | +0.3% | +0.35% | 202.78 | 37w | 20%  |
 | [SUPREMEIND](https://in.tradingview.com/chart/?symbol=NSE:SUPREMEIND)<br><sub>↓CMF8d</sub> | Plastic pipes, packaging, industrial products manufacturer | 1w | ABOVE | 1w | +3.5% | +3.54% | 3598.00 | 8w | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | ABOVE | 1w | +9.2% | +9.20% | 95.27 | 7w | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d · DEL42%</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | ABOVE | 1w | +9.2% | +9.20% | 95.27 | 7w | 20% 🟦 |
 | [JUBLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:JUBLPHARMA)<br><sub>↑CMF4d</sub> | Radiopharmaceuticals, allergy therapy, contract pharmaceutical manufacturing | 1w | ABOVE | 1w | +2.8% | +2.79% | 950.30 | 4w | 20%  |
 | [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d</sub> | Residential real estate developer NCR affordable mid-segment housing | 1w | ABOVE | 1w | +0.4% | +0.43% | 799.95 | 9w | 20%  |
 | [GMBREW](https://in.tradingview.com/chart/?symbol=NSE:GMBREW)<br><sub>↓CMF30d</sub> | Country liquor and IMFL manufacturer Maharashtra spirits sector | 1w | ABOVE | 1w | +2.3% | +2.34% | 941.40 | 4w | 20%  |

@@ -170,7 +170,7 @@
 | [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV)<br><sub>✓ SAFE · ↘16Cr · 32Cr · 📶W9 · ↑CMF3d</sub> | 7d | +7.6% | ERW steel pipes, tubes, structural hollow sections manufacturer | +3.76% | 133.53 | — | 20%  |
 | [JINDWORLD](https://in.tradingview.com/chart/?symbol=NSE:JINDWORLD)<br><sub>✓ SAFE · ↗325Cr · 549Cr · 📶W9 · ↑CMF4d</sub> | 8d | +68.0% |  | +1.76% | 58.52 | — | 20%  |
 | [SIEMENS](https://in.tradingview.com/chart/?symbol=NSE:SIEMENS)<br><sub>✓ SAFE · →173Cr · 126Cr · 📶W9 · ↓CMF1d</sub> | 8d | +3.9% |  | +0.00% | 4030.00 | ✓ | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>✓ SAFE · →13Cr · 45Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 8d | +13.1% | Aluminium ferroalloys manufacturing trading steel auto sectors | +9.20% | 95.27 | — | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>✓ SAFE · →13Cr · 45Cr · 📶W9 · 🚀SS · ↑CMF0d · DEL42%</sub> | 8d | +13.1% | Aluminium ferroalloys manufacturing trading steel auto sectors | +9.20% | 95.27 | — | 20% 🟦 |
 | [MOSCHIP](https://in.tradingview.com/chart/?symbol=NSE:MOSCHIP)<br><sub>✓ SAFE · ↗67Cr · 43Cr · ↑CMF7d</sub> | 8d | +3.4% | Fabless chipmaker, ASICs, mixed-signal IP for defense consumer automotive | +0.18% | 212.60 | — | 20%  |
 | [INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA)<br><sub>✓ SAFE · ↗174Cr · 35Cr · 📶W9 · ↑CMF8d</sub> | 8d | +15.8% | Cryogenic equipment manufacturer for LNG, industrial gas, scientific applications | -0.73% | 2231.40 | — | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>✓ SAFE · ↗1147Cr · 606Cr · 📶W9 · ↑CMF30d</sub> | 9d | +11.1% | Premium electric scooters, charging network, urban mobility | +0.97% | 1599.30 | — | 20%  |
@@ -244,7 +244,7 @@
 | [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH)<br><sub>✓ SAFE · →292Cr · 255Cr · 📶W9 · ↑CMF30d</sub> | 25d | +127.8% | Optical fiber cables telecom power transmission infrastructure | +1.72% | 405.15 | — | 5% 🟥 |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>✓ SAFE · →296Cr · 257Cr · 📶W9 · 🚀SS · ↑CMF24d</sub> | 26d | +108.4% | APIs, branded generics, home diagnostics for patients | +4.52% | 118.88 | — | 20%  |
 | [APLAPOLLO](https://in.tradingview.com/chart/?symbol=NSE:APLAPOLLO)<br><sub>✓ SAFE · ↗196Cr · 157Cr · 📶W9 · ↑CMF27d</sub> | 26d | +21.7% | Structural steel tubes manufacturer serving construction infrastructure | -1.56% | 2215.00 | — | 20%  |
-| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · ↘164Cr · 113Cr · 📶W9 · ↑CMF30d</sub> | 26d | +69.0% | Stainless steel washers tubes pipes solar mounting components | +0.56% | 306.45 | — | 20%  |
+| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · ↘164Cr · 113Cr · 📶W9 · ↑CMF30d · DEL36%</sub> | 26d | +69.0% | Stainless steel washers tubes pipes solar mounting components | +0.56% | 306.45 | — | 20%  |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>✓ SAFE · →141Cr · 102Cr · 📶W9 · ↑CMF2d</sub> | 26d | +53.7% | Niche APIs formulations contract manufacturing pharma | -2.56% | 939.50 | — | 20%  |
 | [MARKSANS](https://in.tradingview.com/chart/?symbol=NSE:MARKSANS)<br><sub>✓ SAFE · ↘81Cr · 94Cr · 📶W9 · 🚀SS · ↑CMF18d</sub> | 26d | +29.7% | Generic pharma formulations for regulated global markets | +2.54% | 335.05 | — | 20%  |
 | [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO)<br><sub>✓ SAFE · ↘192Cr · 84Cr · 📶W9 · ↑CMF11d</sub> | 26d | +36.1% | Home services marketplace connecting customers with vetted professionals | -2.78% | 176.06 | — | 20%  |
@@ -282,7 +282,7 @@
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [SUNPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SUNPHARMA)<br><sub>⚠ CAUTION · →312Cr · 670Cr · ↓CMF0d</sub> | 2d | +0.4% |  | -2.91% | 1927.00 | — | 20%  |
 | [MOTHERSON](https://in.tradingview.com/chart/?symbol=NSE:MOTHERSON)<br><sub>✓ SAFE · ↘184Cr · 213Cr · 📶W9 · ↑CMF23d</sub> | 2d | -0.4% |  | -3.33% | 165.00 | — | 20%  |
-| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · ↘321Cr · 155Cr · 📶W9 · ↑CMF30d · DEL46%(T-1)</sub> | 2d | +0.4% | Condoms lubricants IVD kits sexual wellness global | -0.78% | 280.95 | ✓ | 20%  |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · ↘321Cr · 155Cr · 📶W9 · ↑CMF30d</sub> | 2d | +0.4% | Condoms lubricants IVD kits sexual wellness global | -0.78% | 280.95 | ✓ | 20%  |
 | [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH)<br><sub>✓ SAFE · ↗414Cr · 59Cr · ↓CMF8d</sub> | 2d | +1.2% | Animal health APIs and formulations for global markets | -0.83% | 263.65 | ✓ | 20%  |
 | [BAJAJHLDNG](https://in.tradingview.com/chart/?symbol=NSE:BAJAJHLDNG)<br><sub>⚠ CAUTION · →48Cr · 48Cr · 📶W9 · ↓CMF2d</sub> | 2d | +0.2% |  | -2.40% | 11365.00 | ✓ | 20%  |
 | [NETWEB](https://in.tradingview.com/chart/?symbol=NSE:NETWEB)<br><sub>✓ SAFE · ↘901Cr · 503Cr · 📶W9 · ↓CMF1d</sub> | 3d | +0.9% | Supercomputing systems and AI infrastructure design manufacturer | -0.69% | 5157.00 | ✓ | 20%  |
@@ -301,7 +301,7 @@
 | [NYKAA](https://in.tradingview.com/chart/?symbol=NSE:NYKAA)<br><sub>✓ SAFE · →143Cr · 143Cr · 📶W9 · ↑CMF17d</sub> | 10d | +0.7% | Beauty and fashion e-commerce platform for urban consumers | +0.06% | 332.70 | — | 20%  |
 | [ECLERX](https://in.tradingview.com/chart/?symbol=NSE:ECLERX)<br><sub>✓ SAFE · ↗62Cr · 32Cr · 📶W9 · ↑CMF1d</sub> | 10d | +3.6% | Legal document processing, BPM automation, financial services outsourcing | -0.89% | 1888.80 | — | 20%  |
 | [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA)<br><sub>⚠ CAUTION · ↗66Cr · 42Cr · 📶W9 · ↓CMF14d</sub> | 12d | +2.3% | Private bank retail deposits lending commercial operations | -2.05% | 341.70 | — | 20%  |
-| [SWIGGY](https://in.tradingview.com/chart/?symbol=NSE:SWIGGY)<br><sub>✓ SAFE · ↗958Cr · 656Cr · 📶W9 · ↓CMF8d · DEL81%(T-1)</sub> | 13d | +1.5% | Food delivery and quick commerce platform for urban consumers | +0.13% | 276.45 | ✓ | 20%  |
+| [SWIGGY](https://in.tradingview.com/chart/?symbol=NSE:SWIGGY)<br><sub>✓ SAFE · ↗958Cr · 656Cr · 📶W9 · ↓CMF8d</sub> | 13d | +1.5% | Food delivery and quick commerce platform for urban consumers | +0.13% | 276.45 | ✓ | 20%  |
 | [SAIL](https://in.tradingview.com/chart/?symbol=NSE:SAIL)<br><sub>✓ SAFE · ↗639Cr · 611Cr · 📶W9 · ↑CMF19d</sub> | 14d | +10.4% | Integrated steel producer for construction automotive infrastructure | -4.52% | 187.90 | — | 20%  |
 | [WABAG](https://in.tradingview.com/chart/?symbol=NSE:WABAG)<br><sub>✓ SAFE · ↗145Cr · 78Cr · 📶W9 · ↓CMF0d</sub> | 15d | +5.8% | Water treatment plants industrial municipal sectors | +0.13% | 2008.00 | — | 20%  |
 | [ASTRAL](https://in.tradingview.com/chart/?symbol=NSE:ASTRAL)<br><sub>✓ SAFE · →260Cr · 111Cr · ↓CMF5d</sub> | 19d | +5.1% | Plastic pipes, fittings, tanks, bathware for construction | +0.36% | 1498.20 | — | 20%  |
