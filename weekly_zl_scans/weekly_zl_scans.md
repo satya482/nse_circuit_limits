@@ -52,7 +52,7 @@
 | [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>↑CMF11d</sub> | Specialty chemicals and intermediates manufacturer for pharmaceuticals | 1w | BELOW | 1w | +2.4% | +2.65% | 503.70 | 4w | 20%  |
 | [STARHEALTH](https://in.tradingview.com/chart/?symbol=NSE:STARHEALTH)<br><sub>↑CMF20d</sub> | Health insurance provider, retail customers, India | 1w | BELOW | 1w | +2.6% | +1.09% | 572.10 | — | 20%  |
 | [EPACKPEB](https://in.tradingview.com/chart/?symbol=NSE:EPACKPEB)<br><sub>↓CMF17d</sub> | Steel prefab buildings manufacturing and installation services | 1w | BELOW | 1w | +1.2% | +1.54% | 234.00 | — | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF1d · DEL42%(T-1)</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | BELOW | 1w | +4.7% | -4.10% | 91.36 | 7w | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF1d · DEL48%</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | BELOW | 1w | +4.7% | -4.10% | 91.36 | 7w | 20% 🟦 |
 | [GALAPREC](https://in.tradingview.com/chart/?symbol=NSE:GALAPREC)<br><sub>↑CMF2d</sub> | Precision fasteners and springs for renewable energy | 1w | BELOW | 1w | +3.0% | +1.69% | 1054.90 | — | 20%  |
 
 ```

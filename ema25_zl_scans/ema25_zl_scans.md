@@ -250,7 +250,7 @@
 | [MARKSANS](https://in.tradingview.com/chart/?symbol=NSE:MARKSANS)<br><sub>✓ SAFE · ↘93Cr · 171Cr · 📶W9 · ↑CMF19d</sub> | 27d | +30.0% | Generic pharma formulations for regulated global markets | +0.25% | 335.90 | ✓ | 20%  |
 | [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO)<br><sub>✓ SAFE · ↘169Cr · 79Cr · 📶W9 · ↑CMF12d</sub> | 27d | +32.8% | Home services marketplace connecting customers with vetted professionals | -2.44% | 171.77 | — | 20%  |
 | [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED)<br><sub>✓ SAFE · ↗139Cr · 69Cr · 📶W9 · 🚀SS · ↑CMF3d</sub> | 27d | +57.0% | Niche APIs formulations contract manufacturing pharma | +2.17% | 959.90 | — | 20%  |
-| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · ↘155Cr · 62Cr · 📶W9 · ↑CMF30d · DEL36%(T-1)</sub> | 27d | +64.2% | Stainless steel washers tubes pipes solar mounting components | -2.82% | 297.80 | — | 20%  |
+| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE · ↘155Cr · 62Cr · 📶W9 · ↑CMF30d · DEL43%</sub> | 27d | +64.2% | Stainless steel washers tubes pipes solar mounting components | -2.82% | 297.80 | — | 20%  |
 | [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL)<br><sub>✓ SAFE · →123Cr · 56Cr · 📶W9 · ↑CMF22d</sub> | 27d | +33.8% | Precision metal components aerospace defense oil-gas marine | -0.11% | 23730.00 | — | 20%  |
 | [JINDALSTEL](https://in.tradingview.com/chart/?symbol=NSE:JINDALSTEL)<br><sub>⚠ CAUTION · ↗104Cr · 58Cr · 📶W9 · ↓CMF0d</sub> | 27d | +10.8% |  | -3.76% | 1148.00 | — | 20%  |
 | [SBCL](https://in.tradingview.com/chart/?symbol=NSE:SBCL)<br><sub>✓ SAFE · ↗49Cr · 39Cr · 📶W9 · ↓CMF1d</sub> | 28d | +50.2% | Bimetal strips and shunt resistors for appliances and industrial controls | +1.20% | 1105.20 | ✓ | 20%  |
@@ -292,7 +292,7 @@
 | [PNB](https://in.tradingview.com/chart/?symbol=NSE:PNB)<br><sub>✓ SAFE · ↘127Cr · 124Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 6d | -0.6% |  | +0.41% | 114.70 | ✓ | 20%  |
 | [INDIANB](https://in.tradingview.com/chart/?symbol=NSE:INDIANB)<br><sub>✓ SAFE · ↘78Cr · 136Cr · 📶W9 · ↑CMF26d</sub> | 6d | +1.1% |  | -2.52% | 876.10 | ✓ | 20%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>✓ SAFE · ↗2251Cr · 944Cr · 📶W9 · ↑CMF8d</sub> | 7d | +5.9% | Precision components manufacturer defense aerospace nuclear clean energy | -4.25% | 7777.00 | — | 5% 🟥 |
-| [COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE)<br><sub>✓ SAFE · ↘39Cr · 83Cr · 📶W9 · 🚀SS · ↓CMF2d</sub> | 7d | +0.4% | Pharmaceutical CDMO development manufacturing APIs formulations specialty chemicals | +0.46% | 451.60 | ✓ | 20%  |
+| [COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE)<br><sub>✓ SAFE · ↘39Cr · 83Cr · 📶W9 · 🚀SS · ↓CMF2d · DEL67%</sub> | 7d | +0.4% | Pharmaceutical CDMO development manufacturing APIs formulations specialty chemicals | +0.46% | 451.60 | ✓ | 20%  |
 | [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA)<br><sub>✓ SAFE · ↘43Cr · 48Cr · 📶W9 · 🚀SS · ↑CMF17d</sub> | 7d | +1.1% | Digital beauty and personal care brands targeting millennials | +1.52% | 476.05 | ✓ | 20%  |
 | [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS)<br><sub>✓ SAFE · ↘124Cr · 91Cr · 📶W9 · ↑CMF1d</sub> | 9d | +1.1% | Differential assemblies and gears for electric vehicles | +2.03% | 804.00 | ✓ | 20%  |
 | [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>✓ SAFE · ↗1153Cr · 381Cr · 📶W9 · ↑CMF30d</sub> | 10d | +9.6% | Premium electric scooters, charging network, urban mobility | -1.33% | 1578.00 | — | 20%  |
@@ -304,7 +304,7 @@
 | [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC)<br><sub>✓ SAFE · ↘61Cr · 106Cr · 📶W9 · 🚀SS · ↓CMF0d</sub> | 24d | +9.0% | Defense simulation systems, counter-drone tech, armed forces | +1.69% | 1825.00 | — | 20%  |
 | [UNIONBANK](https://in.tradingview.com/chart/?symbol=NSE:UNIONBANK)<br><sub>✓ SAFE · ↘149Cr · 123Cr · 📶W9 · ↑CMF30d</sub> | 25d | +9.6% |  | -2.29% | 184.31 | ✓ | 20%  |
 | [DECNGOLD](https://in.tradingview.com/chart/?symbol=NSE:DECNGOLD)<br><sub>✓ SAFE · ↘25Cr · 29Cr · 📶W9 · ↓CMF3d</sub> | 28d | +17.4% | Gold exploration and mining transitioning to active production | +3.50% | 223.55 | — | 20%  |
-| [CONCORDBIO](https://in.tradingview.com/chart/?symbol=NSE:CONCORDBIO)<br><sub>✓ SAFE · ↘18Cr · 30Cr · 📶W9 · ↑CMF0d</sub> | 30d | +17.1% | Fermentation APIs immunosuppressants oncology biopharmaceutical manufacturer | +1.89% | 1470.50 | — | 20%  |
+| [CONCORDBIO](https://in.tradingview.com/chart/?symbol=NSE:CONCORDBIO)<br><sub>✓ SAFE · ↘18Cr · 30Cr · 📶W9 · ↑CMF0d · DEL69%</sub> | 30d | +17.1% | Fermentation APIs immunosuppressants oncology biopharmaceutical manufacturer | +1.89% | 1470.50 | — | 20%  |
 | [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>⚠ CAUTION · ↘254Cr · 220Cr · 📶W9 · ↑CMF30d</sub> | 57d | +25.0% |  | -1.41% | 5030.50 | ✓ | 20%  |
 
 ```
