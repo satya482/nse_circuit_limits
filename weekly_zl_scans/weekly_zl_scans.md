@@ -50,7 +50,7 @@
 | [EVEREADY](https://in.tradingview.com/chart/?symbol=NSE:EVEREADY)<br><sub>↑CMF2d</sub> | Dry cells batteries flashlights consumer household products | 1w | ABOVE | 1w | +15.2% | +4.81% | 366.20 | 2w | 20%  |
 | [UTIAMC](https://in.tradingview.com/chart/?symbol=NSE:UTIAMC)<br><sub>↑CMF0d</sub> | Mutual fund investment management for Indian retail investors | 1w | ABOVE | 1w | +4.6% | +2.28% | 921.45 | — | 20%  |
 | [JUBLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:JUBLPHARMA)<br><sub>↑CMF7d</sub> | Radiopharmaceuticals, allergy therapy, contract pharmaceutical manufacturing | 1w | ABOVE | 1w | +10.9% | +0.65% | 1025.65 | 4w | 20%  |
-| [PRSMJOHNSN](https://in.tradingview.com/chart/?symbol=NSE:PRSMJOHNSN)<br><sub>↓CMF30d · DEL67%(T-1)</sub> | Cement tiles sanitaryware RMC residential commercial construction | 1w | ABOVE | 1w | +3.7% | +2.46% | 115.22 | — | 20%  |
+| [PRSMJOHNSN](https://in.tradingview.com/chart/?symbol=NSE:PRSMJOHNSN)<br><sub>↓CMF30d</sub> | Cement tiles sanitaryware RMC residential commercial construction | 1w | ABOVE | 1w | +3.7% | +2.46% | 115.22 | — | 20%  |
 | [TSFINV](https://in.tradingview.com/chart/?symbol=NSE:TSFINV)<br><sub>↑CMF0d</sub> | Airport food outlets, duty-free retail, travel hospitality operations | 1w | ABOVE | 1w | +9.0% | +4.32% | 441.15 | — | 20%  |
 | [NESCO](https://in.tradingview.com/chart/?symbol=NSE:NESCO)<br><sub>↓CMF12d</sub> | IT parks, exhibitions, industrial machinery manufacturing, Mumbai | 1w | ABOVE | 1w | +4.2% | -0.52% | 1091.20 | — | 20%  |
 | [BAJAJELEC](https://in.tradingview.com/chart/?symbol=NSE:BAJAJELEC)<br><sub>↓CMF16d</sub> | Electrical appliances fans lighting wiring for homes | 1w | ABOVE | 1w | +2.0% | -0.60% | 337.75 | — | 20%  |
@@ -61,7 +61,7 @@
 | [DODLA](https://in.tradingview.com/chart/?symbol=NSE:DODLA)<br><sub>↓CMF8d</sub> | Milk, curd, ghee processor South India consumer | 1w | ABOVE | 1w | +2.2% | -0.62% | 1090.10 | 13w | 20%  |
 | [KOTHARIPET](https://in.tradingview.com/chart/?symbol=NSE:KOTHARIPET)<br><sub>↓CMF14d</sub> |  | 1w | ABOVE | 1w | +9.7% | -3.37% | 143.21 | 4w | 20%  |
 | [SVLL](https://in.tradingview.com/chart/?symbol=NSE:SVLL)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +5.7% | +4.07% | 590.00 | — | 5%  |
-| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF21d · DEL41%(T-1)</sub> | Hotel operations, tours, catering for domestic tourism sector | 1w | BELOW | 1w | +3.1% | +5.55% | 664.60 | — | 20% 🟦 |
+| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF21d</sub> | Hotel operations, tours, catering for domestic tourism sector | 1w | BELOW | 1w | +3.1% | +5.55% | 664.60 | — | 20% 🟦 |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>↓CMF15d</sub> | Microfinance bank serving low-income retail borrowers India | 1w | BELOW | 1w | +3.2% | +3.74% | 66.52 | — | 20%  |
 | [OMNI](https://in.tradingview.com/chart/?symbol=NSE:OMNI)<br><sub>↓CMF2d</sub> | Precision components and automation systems for industrial manufacturers | 1w | BELOW | 1w | +6.5% | +4.13% | 560.00 | — | 20% 🟦 |
 | [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL)<br><sub>↓CMF30d</sub> | Aroma chemicals fragrance ingredients terpenes global export manufacturer | 1w | BELOW | 1w | +3.8% | -1.20% | 3495.60 | — | 20%  |
