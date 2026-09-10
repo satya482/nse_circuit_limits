@@ -49,7 +49,7 @@ if ($scanExitCode -eq 0 -and (Test-Path "$ROOT\dashboard\footprint.html") -and (
 Log "--- Git commit+push ---"
 & git -C C:\Users\satya\nse_circuit_limits add footprint_scans dashboard/footprint.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "[scan $date] institutional_footprint: scan run" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-& git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+. "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"; Push-GitWithRetry -RepoPath "C:\Users\satya\nse_circuit_limits" -LogFile $logFile
 if ($LASTEXITCODE -ne 0) {
     Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
     exit 1

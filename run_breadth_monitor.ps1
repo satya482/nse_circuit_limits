@@ -72,8 +72,8 @@ if ($gitResult) {
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
     & git -C $ROOT commit --no-verify -m $msg 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-    & git -C $ROOT push 2>&1 |
-        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    . "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"
+    Push-GitWithRetry -RepoPath $ROOT -LogFile $logFile
     if ($LASTEXITCODE -ne 0) {
         Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
         exit 1

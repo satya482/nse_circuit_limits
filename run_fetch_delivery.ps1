@@ -25,7 +25,7 @@ Log "--- Git commit+push ---"
 $scanDate = Get-Date -Format "yyyy-MM-dd"
 & git -C C:\Users\satya\nse_circuit_limits add wt_scans/ ema25_zl_scans/ weekly_zl_scans/ trend_scans/ rs_highline_scans/ wt_squeeze_dashboard.html dashboard.html trend_dashboard.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "[scan $scanDate] delivery backfill: symbol markers updated" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-& git -C C:\Users\satya\nse_circuit_limits push 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+. "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"; Push-GitWithRetry -RepoPath "C:\Users\satya\nse_circuit_limits" -LogFile $logFile
 if ($LASTEXITCODE -ne 0) {
     Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
     exit 1

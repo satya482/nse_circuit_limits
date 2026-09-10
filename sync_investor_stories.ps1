@@ -88,7 +88,8 @@ if ($newEntries.Count -gt 0) {
     if ($staged) {
         $msg = "investor stories sync: $(Get-Date -Format 'yyyy-MM-dd HH:mm') IST ($copied new)"
         git commit --no-verify -m $msg 2>&1 | Out-Null
-        git push 2>&1 | Out-Null
+        . "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"
+        Push-GitWithRetry -RepoPath $repo -LogFile $logFile
         if ($LASTEXITCODE -ne 0) {
             Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
             exit 1

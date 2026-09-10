@@ -43,8 +43,8 @@ Log "--- Git commit manifest ---"
     ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "data: manifest $date" 2>&1 |
     ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
-& git -C C:\Users\satya\nse_circuit_limits push 2>&1 |
-    ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+. "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"
+Push-GitWithRetry -RepoPath "C:\Users\satya\nse_circuit_limits" -LogFile $logFile
 if ($LASTEXITCODE -ne 0) {
     Log "=== ERROR: git push FAILED (exit $LASTEXITCODE) - commits NOT on GitHub, check for non-fast-forward ==="
     exit 1
