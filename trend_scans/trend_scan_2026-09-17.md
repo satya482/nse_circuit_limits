@@ -74,7 +74,7 @@
 | [AUROPHARMA](https://in.tradingview.com/chart/?symbol=NSE:AUROPHARMA)<br><sub>↑CMF30d</sub> | ⚠ CAUTION | Generic drugs and APIs for global markets | 🔵 Bounce EMA50 · RS holds | 70 | ↑65 | ↑1.013 | 98% | 58% ↑ | ✅8/8 | 0.78x | ↑1d | +2.9% | +2.86% | 20%  |
 | [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA)<br><sub>↓CMF6d</sub> | ⚠ CAUTION | Diagnostic imaging and pathology labs, Southern India healthcare | 🔵 Bounce EMA50 · RS holds | 69 | 🔄72 | ↑1.015 | 99% | 75% ↑ | ✅8/8 | 1.11x | ↑1d | +4.7% | +4.71% | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↑CMF5d</sub> | ✓ SAFE | APIs, formulation intermediates, finished pharma drugs manufacturer | 🔵 Bounce EMA50 · RS holds | 66 | 🔄70 | ↑0.999 | 96% | 69% ↑ | ✅8/8 | 1.31x | ↑1d | +4.2% | +4.16% | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d</sub> | ✓ SAFE | Aluminium ferroalloys manufacturing trading steel auto sectors | 🔵 Bounce EMA50 · RS holds | 61 | 🔄64 | ↑1.017 | 89% | 106% ↑ | ✅8/8 | 0.90x | ↑1d | +6.3% | +6.29% | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↑CMF0d · DEL31%</sub> | ✓ SAFE | Aluminium ferroalloys manufacturing trading steel auto sectors | 🔵 Bounce EMA50 · RS holds | 61 | 🔄64 | ↑1.017 | 89% | 106% ↑ | ✅8/8 | 0.90x | ↑1d | +6.3% | +6.29% | 20% 🟦 |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MANGLMCEM,NSE:AUROPHARMA,NSE:VIJAYA,NSE:GRANULES,NSE:ARFIN

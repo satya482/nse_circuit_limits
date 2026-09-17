@@ -89,7 +89,7 @@
 | [SMLMAH](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH)<br><sub>✓ SAFE · ↗75Cr · 30Cr · 📶W9 · 🚀SS · ↑CMF9d</sub> | 1d | +4.2% | Light medium commercial vehicles manufacturing Japan partnership | +4.17% | 6220.50 | — | 20% 🟦 |
 | [LUMAXTECH](https://in.tradingview.com/chart/?symbol=NSE:LUMAXTECH)<br><sub>✓ SAFE · ↘24Cr · 31Cr · 📶W9 · ↑CMF4d</sub> | 1d | +3.9% | Automotive lamps, plastic parts, chassis for vehicles | +3.92% | 2018.00 | ✓ | 20%  |
 | [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA)<br><sub>⚠ CAUTION · →22Cr · 30Cr · 📶W9 · ↓CMF6d</sub> | 1d | +4.7% | Diagnostic imaging and pathology labs, Southern India healthcare | +4.71% | 1506.10 | ✓ | 20%  |
-| [SONATSOFTW](https://in.tradingview.com/chart/?symbol=NSE:SONATSOFTW)<br><sub>✓ SAFE · ↗47Cr · 28Cr · ↓CMF13d</sub> | 1d | +1.7% | IT services, cloud modernization, enterprise digital transformation | +1.72% | 281.65 | — | 20%  |
+| [SONATSOFTW](https://in.tradingview.com/chart/?symbol=NSE:SONATSOFTW)<br><sub>✓ SAFE · ↗47Cr · 28Cr · ↓CMF13d · DEL59%</sub> | 1d | +1.7% | IT services, cloud modernization, enterprise digital transformation | +1.72% | 281.65 | — | 20%  |
 | [SAPPHIRE](https://in.tradingview.com/chart/?symbol=NSE:SAPPHIRE)<br><sub>✓ SAFE · ↘13Cr · 27Cr · 📶W9 · ↓CMF7d</sub> | 1d | +4.4% | KFC Pizza Hut franchisee quick service restaurants India | +4.44% | 233.24 | — | 20%  |
 | [IZMO](https://in.tradingview.com/chart/?symbol=NSE:IZMO)<br><sub>✓ SAFE · ↘11Cr · 25Cr · 📶W9 · 🚀SS · ↓CMF30d</sub> | 1d | +3.8% | Automotive digital retail and marketing technology solutions | +3.78% | 913.25 | — | 20%  |
 | [PTC](https://in.tradingview.com/chart/?symbol=NSE:PTC)<br><sub>✓ SAFE · ↘18Cr · 24Cr · 🚀SS · ↓CMF11d</sub> | 1d | +2.6% | Power trading platform connecting generators utilities consumers | +2.61% | 155.93 | ✓ | 20%  |
@@ -228,7 +228,7 @@
 | [STYLEBAAZA](https://in.tradingview.com/chart/?symbol=NSE:STYLEBAAZA)<br><sub>✓ SAFE · ↘26Cr · 55Cr · 📶W9 · ↓CMF1d</sub> | 7d | +0.2% | Value fashion apparel retailer eastern India families | +4.23% | 388.05 | ✓ | 5%  |
 | [MTARTECH](https://in.tradingview.com/chart/?symbol=NSE:MTARTECH)<br><sub>✓ SAFE · ↗2251Cr · 944Cr · 📶W9 · ↑CMF8d</sub> | 7d | +5.9% | Precision components manufacturer defense aerospace nuclear clean energy | -4.25% | 7777.00 | — | 5% 🟥 |
 | [TATACAP](https://in.tradingview.com/chart/?symbol=NSE:TATACAP)<br><sub>⚠ CAUTION · ↘28Cr · 18Cr · 📶W9 · ↑CMF5d</sub> | 7d | -0.5% |  | -0.03% | 363.05 | ✓ | 20%  |
-| [HCG](https://in.tradingview.com/chart/?symbol=NSE:HCG)<br><sub>⚠ CAUTION · →11Cr · 35Cr · 📶W9 · 🚀SS · ↓CMF8d</sub> | 7d | -0.5% | Oncology hospital network, fertility services, India | +1.93% | 687.15 | ✓ | 20%  |
+| [HCG](https://in.tradingview.com/chart/?symbol=NSE:HCG)<br><sub>⚠ CAUTION · →11Cr · 35Cr · 📶W9 · 🚀SS · ↓CMF8d · DEL91%</sub> | 7d | -0.5% | Oncology hospital network, fertility services, India | +1.93% | 687.15 | ✓ | 20%  |
 | [EIEL](https://in.tradingview.com/chart/?symbol=NSE:EIEL)<br><sub>✓ SAFE · ↗52Cr · 30Cr · ↓CMF29d</sub> | 7d | +1.8% | Water treatment infrastructure design construction operations govt contracts | +2.45% | 199.64 | — | 20%  |
 | [MOTHERSON](https://in.tradingview.com/chart/?symbol=NSE:MOTHERSON)<br><sub>⚠ CAUTION · →198Cr · 93Cr · 📶W9 · ↓CMF3d</sub> | 8d | -0.9% |  | +0.20% | 164.17 | — | 20%  |
 | [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB)<br><sub>✓ SAFE · →92Cr · 43Cr · 📶W9 · ↓CMF3d</sub> | 8d | -0.9% | Pharma APIs and CDMO services for global markets | +0.18% | 22665.00 | ✓ | 20%  |
@@ -267,7 +267,7 @@
 | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN)<br><sub>✓ SAFE · ↘45Cr · 26Cr · 📶W9 · ↑CMF30d</sub> | 17d | +5.4% | Precision auto parts manufacturing for powertrains and aluminum | -0.93% | 10937.00 | — | 20%  |
 | [ICICIAMC](https://in.tradingview.com/chart/?symbol=NSE:ICICIAMC)<br><sub>✓ SAFE · ↘137Cr · 41Cr · ↑CMF4d</sub> | 18d | -1.7% |  | +0.22% | 3040.20 | — | 20%  |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA)<br><sub>✓ SAFE · ↘38Cr · 46Cr · 📶W9 · ↑CMF30d</sub> | 18d | +4.2% | Gaming platform, esports, mobile and console games India | +3.25% | 362.55 | ✓ | 20%  |
-| [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL)<br><sub>✓ SAFE · ↘47Cr · 114Cr · 📶W9 · ↑CMF27d · DEL100%(T-1)</sub> | 19d | +34.8% | Glass-lined reactors and process equipment for pharma chemicals | -4.99% | 401.45 | — | 5% 🟥 |
+| [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL)<br><sub>✓ SAFE · ↘47Cr · 114Cr · 📶W9 · ↑CMF27d</sub> | 19d | +34.8% | Glass-lined reactors and process equipment for pharma chemicals | -4.99% | 401.45 | — | 5% 🟥 |
 | [ENGINERSIN](https://in.tradingview.com/chart/?symbol=NSE:ENGINERSIN)<br><sub>✓ SAFE · ↘56Cr · 41Cr · 📶W9 · 🚀SS · ↑CMF30d</sub> | 20d | +11.2% | Oil gas refinery EPC consultancy infrastructure projects | +1.19% | 263.75 | — | 20%  |
 | [BLUEJET](https://in.tradingview.com/chart/?symbol=NSE:BLUEJET)<br><sub>✓ SAFE · →24Cr · 31Cr · 📶W9 · ↓CMF30d</sub> | 20d | -4.5% | Specialty pharma ingredients and CDMO manufacturing | +0.56% | 568.20 | ✓ | 20%  |
 | [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK)<br><sub>✓ SAFE · ↘81Cr · 55Cr · 📶W9 · ↑CMF20d</sub> | 21d | +7.5% | Generics, specialty drugs, OTC pharma, global markets | +0.25% | 2416.00 | ✓ | 20%  |
