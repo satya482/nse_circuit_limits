@@ -9,6 +9,37 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-09-18 by Codex, US weekly near-52-week-high charts:
+
+- `us_near_52w_high_chart_dashboard.py` selects the existing US universe (NYSE/NASDAQ
+  common stocks, $300M-$10B, price > $5, average 10-day volume > 300K), loads via
+  `us_ohlc_db`, and aggregates Monday-labelled weekly OHLCV including partial weeks.
+- Eligibility: 52 observed weeks, close within 30% of rolling 52-week HIGH and
+  strictly above weekly EMA40. SPY is informational RS, not an inclusion gate.
+  No NSE float filters or manual new-listings list applies.
+- Outputs: `dashboard/us_near_52w_high_charts.html` and
+  `us_near_52w_high_scans/us_near_52w_high_scans.md`. Page shows actual US price date,
+  generation date, weekly changes, weekly TradingView links, and existing chart
+  layers. EMA40 is available in the EMA controls. Existing ~2-year history means
+  EMA200 weekly is unavailable until 200 weekly bars exist; no fabricated history.
+- Shared renderer adds opt-in weekly presentation and cross-exchange RS support;
+  daily dashboards retain their defaults. Weekly EMA overlays match pandas
+  `ewm(adjust=False)` used in selection.
+- `run_all_scanners.ps1` runs `US_Near52WWeekly` immediately after successful
+  `US_FetchData`. New runner publishes only its two outputs. US fetch runner now
+  propagates Python failures. Existing enabled `NSE_AllScanners` task points at
+  this orchestrator, weekdays 15:35 IST; no separate scheduled task was added.
+- Run manually: `python us_near_52w_high_chart_dashboard.py` (live TradingView
+  membership, existing local US prices). Missing/stale SPY or total missing stock
+  data fails without replacing the page. `exchange-calendars` validates the latest
+  completed NYSE session across holidays, US time zones and early closes.
+  Stocks lacking the SPY reference session
+  are excluded. Valid zero qualifiers writes an empty current page.
+- Verified: 138 focused / 614 full tests passed, PowerShell syntax passed. Real run
+  charted 588 of 1,458 universe stocks through 2026-09-17. Browser visual check was
+  unavailable (no connected browser); embedded data and Node tests were verified.
+
+
 Updated 2026-09-02 by Claude Code, manual new-listings watchlist in near_52w_high:
 
 - `new_listings.txt` (repo root, git-tracked, empty starter with format comments): one NSE symbol per line, user-maintained by hand -- no listing-date data exists anywhere reliable (TradingView's `ipo_date` field is unpopulated for every NSE stock, verified live), so this is deliberately not automated.

@@ -65,6 +65,11 @@ Run-Scanner "TrendDashboard"       "$ROOT\run_trend_dashboard.ps1"
 
 Run-Scanner "CircuitLimits"        "$ROOT\run_dashboard.ps1"
 Run-Scanner "US_FetchData"         "$ROOT\run_us_fetch_data.ps1"
+if ($results[-1].Status -eq "PASS") {
+    Run-Scanner "US_Near52WWeekly" "$ROOT\run_us_near_52w_high_chart_dashboard.ps1"
+} else {
+    OrcLog "--- SKIP US_Near52WWeekly (US data refresh failed) ---"
+}
 Run-Scanner "US_ZL_Squeeze"        "$ROOT\run_us_zl_squeeze_scanner.ps1"
 Run-Scanner "Dashboard"            "$ROOT\run_dashboard_generator.ps1"
 Run-Scanner "CatalystBot"          "$ROOT\run_catalyst_bot.ps1"

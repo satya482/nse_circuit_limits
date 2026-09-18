@@ -13,6 +13,11 @@ Log "=== US_FETCH_DATA START ==="
 try {
     & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\fetch_us_data.py 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    $pythonExit = $LASTEXITCODE
+    if ($pythonExit -ne 0) {
+        Log "=== ERROR: US data refresh FAILED (exit $pythonExit) ==="
+        exit $pythonExit
+    }
     Log "=== FINISHED exit=0 ==="
 } catch {
     Log "=== ERROR: $_ ==="

@@ -295,6 +295,7 @@ def build_chart_data(
     min_bars: int = MIN_BARS,
     symbol_exchange: dict[str, str] | None = None,
     bench_df=None,
+    rs_for_all_exchanges: bool = False,
 ) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
     Skips symbols missing from ohlc_map or with fewer than min_bars rows.
@@ -302,7 +303,8 @@ def build_chart_data(
     to NSE) for building exchange-qualified TradingView chart links.
     bench_df (NIFTY MIDSML 400 OHLC) optionally enables per-bar RS Line vs
     its 9-EMA crossover/crossunder tagging (rs_signals); omitted or None
-    yields an all-None rs_signals array so the chart still renders."""
+    yields an all-None rs_signals array so the chart still renders.
+    rs_for_all_exchanges explicitly enables the supplied benchmark for US charts."""
     industries = industries or {}
     symbol_exchange = symbol_exchange or {}
     records = []
@@ -336,10 +338,10 @@ def build_chart_data(
                 "signals": compute_signal_kinds(df),
                 "coil_boxes": compute_coil_boxes(df),
                 "rs_signals": compute_rs_transition_kinds(
-                    df, bench_df if symbol_exchange.get(symbol, "NSE") == "NSE" else None
+                    df, bench_df if rs_for_all_exchanges or symbol_exchange.get(symbol, "NSE") == "NSE" else None
                 ),
                 "rs_pane": compute_rs_pane_series(
-                    df, bench_df if symbol_exchange.get(symbol, "NSE") == "NSE" else None
+                    df, bench_df if rs_for_all_exchanges or symbol_exchange.get(symbol, "NSE") == "NSE" else None
                 ),
             })
         except Exception as exc:
@@ -365,7 +367,7 @@ const uiState = {
 };
 CHART_DATA.forEach(function(r) { recordBySymbol[r.symbol] = r; });
 
-const DEFAULT_VIEW_MONTHS = 6;
+const DEFAULT_VIEW_MONTHS = __VIEW_MONTHS__;
 
 function fixedLogicalRange(record) {
   const last = record.bars[record.bars.length - 1][0];
@@ -373,7 +375,7 @@ function fixedLogicalRange(record) {
   const firstIndex = record.bars.findIndex(function(bar) { return bar[0] >= cutoffText; });
   return {
     from: firstIndex >= 0 ? firstIndex : 0,
-    to: record.bars.length - 1 + 15,
+    to: record.bars.length - 1 + __RIGHT_PADDING__,
   };
 }
 
@@ -447,6 +449,15 @@ function computeEMA(closes, period) {
   const k = 2 / (period + 1);
   const out = new Array(closes.length).fill(null);
   if (closes.length < period) return out;
+  if (__EMA_FROM_FIRST__) {
+    // Weekly selection uses pandas ewm(adjust=False), seeded at the first close.
+    let previous = closes[0];
+    for (let i = 0; i < closes.length; i++) {
+      if (i > 0) previous = closes[i] * k + previous * (1 - k);
+      if (i >= period - 1) out[i] = previous;
+    }
+    return out;
+  }
   let sma = 0;
   for (let i = 0; i < period; i++) sma += closes[i];
   sma /= period;
@@ -502,7 +513,7 @@ function zlema25LineData(record) {
   }).filter(Boolean);
 }
 
-const HIGH52W_PERIOD = 260; // daily bars, matches pine_scripts/52w_full_history.pine's auto-bars daily=260
+const HIGH52W_PERIOD = __HIGH52W_PERIOD__; // 260 daily bars or 52 weekly bars
 
 function computeHigh52w(highs, period) {
   const out = new Array(highs.length).fill(null);
@@ -521,7 +532,7 @@ function nextWeekday(dateStr) {
   return d.toISOString().slice(0, 10);
 }
 
-const HIGH52W_EXTEND_DAYS = 15; // project the last known 52w-high flat this many weekdays forward
+const HIGH52W_EXTEND_DAYS = __RIGHT_PADDING__; // project in chart bars
 
 function extendFlatWeekdays(points, count) {
   if (points.length === 0) return points;
@@ -529,7 +540,13 @@ function extendFlatWeekdays(points, count) {
   const extended = points.slice();
   let cursor = last.time;
   for (let i = 0; i < count; i++) {
-    cursor = nextWeekday(cursor);
+    if (__WEEKLY__) {
+      const d = new Date(cursor + "T00:00:00Z");
+      d.setUTCDate(d.getUTCDate() + 7);
+      cursor = d.toISOString().slice(0, 10);
+    } else {
+      cursor = nextWeekday(cursor);
+    }
     extended.push({ time: cursor, value: last.value });
   }
   return extended;
@@ -963,6 +980,8 @@ def build_html(
     title: str = "Union Watchlist Charts",
     group_sort: str = "day-desc",
     high52w_default_visible: bool = False,
+    weekly: bool = False,
+    subtitle: str = "",
 ) -> str:
     data_json = (
         json.dumps(records)
@@ -973,9 +992,18 @@ def build_html(
     js = (
         _JS_TEMPLATE.replace("__DATA_JSON__", data_json)
         .replace("__GROUP_SORT__", group_sort)
+        .replace("__HIGH52W_PERIOD__", "52" if weekly else "260")
+        .replace("__VIEW_MONTHS__", "24" if weekly else "6")
+        .replace("__EMA_FROM_FIRST__", "true" if weekly else "false")
+        .replace("__WEEKLY__", "true" if weekly else "false")
+        .replace("__RIGHT_PADDING__", "3" if weekly else "15")
         .replace("__HIGH52W_DEFAULT__", "true" if high52w_default_visible else "false")
     )
 
+    change_label = "Week" if weekly else "Day"
+    interval_query = "&amp;interval=W" if weekly else ""
+    ema_periods = "20,40,50,200" if weekly else "20,50,200"
+    subtitle_html = f'<p class="subtitle">{_escape(subtitle)}</p>' if subtitle else ""
     if records:
         cards = []
         for r in records:
@@ -989,7 +1017,7 @@ def build_html(
                 f'data-industry="{_escape(r["industry"])}" data-day-change="{change}">'
                 f'<div class="hdr"><span class="day-change {change_class}">{change_text}</span>'
                 f'<span class="tier">{_escape(r["tier"])}</span>'
-                f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol={_escape(tv_symbol)}" '
+                f'<a class="symbol-link" href="https://in.tradingview.com/chart/?symbol={_escape(tv_symbol)}{interval_query}" '
                 f'target="_blank" rel="noopener noreferrer">{_escape(r["symbol"])}</a></div>'
                 f'<div class="chart-wrap"><div class="chart" id="chart-{_escape(r["symbol"])}"></div>'
                 f'<div class="coil-layer"></div></div>'
@@ -1041,10 +1069,11 @@ h1{{font-size:1.1rem}}
 <body>
 {SEBI_HTML_BANNER}
 <h1>{title} - {as_of}</h1>
+{subtitle_html}
 <div id="controls">
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
-  <label>EMAs <input type="text" id="emaPeriods" value="20,50,200"></label>
+  <label>EMAs <input type="text" id="emaPeriods" value="{ema_periods}"></label>
   <label class="switch-row"><span>EMAs</span><input type="checkbox" id="emaVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>ZLEMA25</span><input type="checkbox" id="zlema25Visible"><span class="switch"></span></label>
   <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"{" checked" if high52w_default_visible else ""}><span class="switch"></span></label>
@@ -1054,8 +1083,8 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">
     <option value="industry" selected>Industry groups</option>
-    <option value="day-desc">Day change: highest first</option>
-    <option value="day-asc">Day change: lowest first</option>
+    <option value="day-desc">{change_label} change: highest first</option>
+    <option value="day-asc">{change_label} change: lowest first</option>
   </select></label>
   <label>Jump <select id="industryJump">
     <option value="">Jump to industry...</option>
