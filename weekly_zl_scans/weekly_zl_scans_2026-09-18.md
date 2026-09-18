@@ -41,7 +41,7 @@
 | [IGARASHI](https://in.tradingview.com/chart/?symbol=NSE:IGARASHI)<br><sub>↓CMF30d</sub> | DC motors manufacturing for global automotive sector | 1w | TOUCH | 1w | +4.4% | +0.83% | 432.35 | — | 20%  |
 | [GULFOILLUB](https://in.tradingview.com/chart/?symbol=NSE:GULFOILLUB)<br><sub>↑CMF0d</sub> | Automotive lubricants manufacturing distribution Indian commercial vehicles | 1w | TOUCH | 1w | +0.9% | +0.57% | 1070.10 | — | 20%  |
 | [LIKHITHA](https://in.tradingview.com/chart/?symbol=NSE:LIKHITHA)<br><sub>↑CMF7d</sub> |  | 1w | TOUCH | 1w | +1.7% | -0.83% | 220.78 | — | 5% 🟥 |
-| [DISAQ](https://in.tradingview.com/chart/?symbol=NSE:DISAQ)<br><sub>↑CMF2d · DEL68%(T-1)</sub> |  | 1w | TOUCH | 1w | +2.4% | +0.88% | 12062.00 | 3w | 20%  |
+| [DISAQ](https://in.tradingview.com/chart/?symbol=NSE:DISAQ)<br><sub>↑CMF2d · DEL62%</sub> |  | 1w | TOUCH | 1w | +2.4% | +0.88% | 12062.00 | 3w | 20%  |
 | [TATACHEM](https://in.tradingview.com/chart/?symbol=NSE:TATACHEM)<br><sub>↓CMF30d</sub> | Soda ash alkali chemicals specialty products manufacturer global | 1w | ABOVE | 1w | +13.2% | -11.04% | 693.25 | — | 20%  |
 | [BBTC](https://in.tradingview.com/chart/?symbol=NSE:BBTC)<br><sub>↑CMF16d</sub> | Teak trading, plantations, timber, diversified conglomerate, legacy Indian | 1w | ABOVE | 1w | +6.2% | +8.05% | 1512.10 | 11w | 20%  |
 | [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA)<br><sub>↑CMF0d</sub> | NBFC consumer loans MSME financing general insurance | 1w | ABOVE | 1w | +7.7% | +10.77% | 479.40 | — | 20%  |
@@ -72,7 +72,7 @@
 | [GRPLTD](https://in.tradingview.com/chart/?symbol=NSE:GRPLTD)<br><sub>↑CMF3d</sub> |  | 1w | ABOVE | 1w | +4.3% | +1.84% | 2008.20 | 28w | 20%  |
 | [BELRISE](https://in.tradingview.com/chart/?symbol=NSE:BELRISE)<br><sub>↑CMF0d</sub> | Metal chassis polymer components suspension systems automotive | 1w | BELOW | 1w | +5.3% | +4.71% | 240.18 | 1w | 20%  |
 | [CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO)<br><sub>↓CMF9d</sub> | Heavy civil engineering and infrastructure construction EPC services | 1w | BELOW | 1w | +1.5% | +0.67% | 1263.50 | — | 5% 🟥 |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF0d · DEL31%(T-1)</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | BELOW | 1w | +4.2% | +1.98% | 89.62 | 8w | 20% 🟦 |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF0d · DEL35%</sub> | Aluminium ferroalloys manufacturing trading steel auto sectors | 1w | BELOW | 1w | +4.2% | +1.98% | 89.62 | 8w | 20% 🟦 |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↓CMF19d</sub> | Precision aerospace components manufacturing for global aircraft OEMs | 1w | BELOW | 1w | +1.8% | +0.38% | 230.81 | — | 20% 🟦 |
 | [IZMO](https://in.tradingview.com/chart/?symbol=NSE:IZMO)<br><sub>↑CMF0d</sub> | Automotive digital retail and marketing technology solutions | 1w | BELOW | 1w | +3.0% | +2.31% | 934.35 | — | 20%  |
 | [SANGHVIMOV](https://in.tradingview.com/chart/?symbol=NSE:SANGHVIMOV)<br><sub>↓CMF12d</sub> | Heavy crane rentals for industrial construction projects | 1w | BELOW | 1w | +1.0% | +2.63% | 430.70 | — | 20%  |
