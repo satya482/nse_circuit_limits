@@ -26,7 +26,7 @@ from tv_watchlist import INDEX_WATCHLIST_SYMBOLS, COMMODITY_WATCHLIST_SYMBOLS
 from union_chart_dashboard import build_chart_data, build_html, resolve_industries, INDUSTRY_CACHE, BENCH_SYM
 
 REPO_DIR = os.path.dirname(os.path.abspath(__file__))
-WATCHLIST_URL = "https://in.tradingview.com/watchlists/156673583/"
+WATCHLIST_URL = "https://in.tradingview.com/watchlists/156673566/"
 OUTPUT_PATH = os.path.join(REPO_DIR, "dashboard", "charts.html")
 TODAY = datetime.now().strftime("%Y-%m-%d")
 LOOKBACK = 600  # >= 6mo default view (~126 bars) + HIGH52W_PERIOD (260) warmup, so the 52W High line covers the entire default view
