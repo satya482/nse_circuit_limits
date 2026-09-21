@@ -201,6 +201,17 @@ def _weekly_rs_ema9_per_bar(dates, rs_line: pd.Series) -> list[float | None]:
     return [None if pd.isna(v) else float(v) for v in per_bar]
 
 
+def compute_wt_pane_series(df) -> dict:
+    """Price WaveTrend from Satya_All_Panel.pine, aligned to every OHLC bar."""
+    wt = WaveTrendCalculator().calc_from_series((df['high'] + df['low'] + df['close']) / 3)
+    return {
+        name: [None if pd.isna(v) else float(v) for v in wt[name]]
+        for name in ('wt1', 'wt2')
+    } | {'crosses': wt['cross_type'].map({
+        'BULL_CROSS': 'wt_bull', 'BEAR_CROSS': 'wt_bear', 'NONE': None,
+    }).tolist()}
+
+
 def compute_rs_pane_series(df, bench_df) -> dict[str, list[float | None]] | None:
     """RS Line + RS EMA9 + RS EMA21 + Weekly RS EMA9, parallel arrays aligned
     to df's bars -- pine parity with pine_scripts/Satya RS Line vs 21 EMA.txt.
@@ -296,6 +307,7 @@ def build_chart_data(
     symbol_exchange: dict[str, str] | None = None,
     bench_df=None,
     rs_for_all_exchanges: bool = False,
+    include_wt_pane: bool = False,
 ) -> tuple[list[dict], int]:
     """Returns (records, skipped_count), records sorted by symbol.
     Skips symbols missing from ohlc_map or with fewer than min_bars rows.
@@ -335,6 +347,7 @@ def build_chart_data(
                 "industry": industries.get(symbol, "Unclassified"),
                 "day_change": day_change,
                 "bars": bars,
+                **({"wt_pane": compute_wt_pane_series(df)} if include_wt_pane else {}),
                 "signals": compute_signal_kinds(df),
                 "coil_boxes": compute_coil_boxes(df),
                 "rs_signals": compute_rs_transition_kinds(
@@ -718,6 +731,7 @@ function buildChart(symbol) {
   rebuildZlema25(entry);
   rebuildHigh52w(entry);
   buildRsPane(entry);
+  buildWtPane(entry);
   if (entry.rsPaneWrap) entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;
   applyVolumeState(entry);
   scheduleCoilRedraw(entry);
@@ -778,6 +792,12 @@ function buildRsPane(entry) {
     lastValueVisible: false, priceLineVisible: false,
   });
   weeklyEma9Series.setData(rsLineDirectionalData(bars, pane.rs_weekly_ema9, "lime", "#787b86"));
+  if (entry.record.wt_pane) {
+    // Preserve missing benchmark dates so all three panes share logical indexes.
+    [rsLineSeries, ema9Series, ema21Series, weeklyEma9Series].forEach(function(series) {
+      series.setData(alignPaneDates(bars, series.data()));
+    });
+  }
   rsChart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
   entry.chart.timeScale().subscribeVisibleLogicalRangeChange(function(range) {
     if (range) rsChart.timeScale().setVisibleLogicalRange(range);
@@ -807,6 +827,100 @@ function buildRsPane(entry) {
     rsChart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
   }).observe(el);
   entry.rsChart = rsChart;
+  entry.rsLineSeries = rsLineSeries;
+}
+
+function alignPaneDates(bars, points) {
+  const byTime = new Map(points.map(function(point) { return [point.time, point]; }));
+  return bars.map(function(bar) { return byTime.get(bar[0]) || { time: bar[0] }; });
+}
+
+function syncWtCrosshair(entry, wtSeries) {
+  const bars = entry.record.bars;
+  const indexByTime = new Map(bars.map(function(bar, i) { return [bar[0], i]; }));
+  const targets = [
+    { chart: entry.chart, series: entry.candleSeries, values: bars.map(function(bar) { return bar[4]; }) },
+    { chart: entry.wtChart, series: wtSeries, values: entry.record.wt_pane.wt1 },
+  ];
+  if (entry.rsChart) targets.push({ chart: entry.rsChart, series: entry.rsLineSeries, values: entry.record.rs_pane.rs_line });
+  let syncing = false;
+  targets.forEach(function(source) {
+    source.chart.subscribeCrosshairMove(function(param) {
+      if (syncing) return;
+      syncing = true;
+      try {
+        const i = indexByTime.get(param.time);
+        targets.forEach(function(target) {
+          if (target === source) return;
+          const value = i === undefined ? null : target.values[i];
+          if (value === null || value === undefined) target.chart.clearCrosshairPosition();
+          else target.chart.setCrosshairPosition(value, param.time, target.series);
+        });
+      } finally { syncing = false; }
+    });
+  });
+}
+
+function alignWtPaneAxes(entry) {
+  const charts = [entry.chart, entry.rsChart, entry.wtChart].filter(Boolean);
+  const width = Math.max(60, ...charts.map(function(chart) { return chart.priceScale('right').width(); }));
+  if (width === entry.wtAxisWidth) return;
+  entry.wtAxisWidth = width;
+  charts.forEach(function(chart) { chart.priceScale('right').applyOptions({ minimumWidth: width }); });
+}
+
+function buildWtPane(entry) {
+  if (!entry.record.wt_pane) return;
+  const el = document.getElementById('wtpane-' + entry.record.symbol);
+  if (!el) return;
+  const pane = entry.record.wt_pane;
+  const bars = entry.record.bars;
+  const wtChart = LightweightCharts.createChart(el, {
+    height: el.clientHeight,
+    layout: { background: { color: '#000000' }, textColor: '#8b949e' },
+    grid: { vertLines: { visible: false }, horzLines: { visible: false } },
+    handleScroll: false, handleScale: false,
+  });
+  const wt1 = wtChart.addLineSeries({ color: '#00ffff', lineWidth: 2, lastValueVisible: false, priceLineVisible: false,
+    autoscaleInfoProvider: function(base) {
+      const info = base();
+      if (!info) return { priceRange: { minValue: -60, maxValue: 60 } };
+      return { ...info, priceRange: {
+        minValue: Math.min(-60, info.priceRange.minValue), maxValue: Math.max(60, info.priceRange.maxValue),
+      } };
+    },
+  });
+  const wt2 = wtChart.addLineSeries({ color: '#ff9800', lineWidth: 1, lastValueVisible: false, priceLineVisible: false });
+  [wt1, wt2].forEach(function(series, index) {
+    series.setData(bars.map(function(bar, i) {
+      const value = pane[index === 0 ? 'wt1' : 'wt2'][i];
+      return value === null ? { time: bar[0] } : { time: bar[0], value: value };
+    }));
+  });
+  [0, 53, 60, -53, -60].forEach(function(level) {
+    wt1.createPriceLine({ price: level, color: level === 0 ? '#787b86' : level > 0 ? '#ef5350' : '#4caf50',
+      lineWidth: 1, lineStyle: level === 0 ? LightweightCharts.LineStyle.Solid : LightweightCharts.LineStyle.Dashed,
+      axisLabelVisible: true });
+  });
+  wt2.setMarkers(bars.flatMap(function(bar, i) {
+    const kind = pane.crosses[i];
+    if (!kind) return [];
+    const bull = kind === 'wt_bull';
+    return [{ time: bar[0], position: bull ? 'belowBar' : 'aboveBar',
+      color: bull ? '#00ff00' : '#ff0000', shape: bull ? 'arrowUp' : 'arrowDown', size: 1 }];
+  }));
+  wtChart.timeScale().setVisibleLogicalRange(fixedLogicalRange(entry.record));
+  entry.chart.timeScale().subscribeVisibleLogicalRangeChange(function(range) {
+    if (range) wtChart.timeScale().setVisibleLogicalRange(range);
+    requestAnimationFrame(function() { alignWtPaneAxes(entry); });
+  });
+  new ResizeObserver(function() {
+    wtChart.applyOptions({ width: el.clientWidth, height: el.clientHeight });
+    requestAnimationFrame(function() { alignWtPaneAxes(entry); });
+  }).observe(el);
+  entry.wtChart = wtChart;
+  syncWtCrosshair(entry, wt1);
+  requestAnimationFrame(function() { alignWtPaneAxes(entry); });
 }
 
 function applyControls() {
@@ -982,6 +1096,7 @@ def build_html(
     high52w_default_visible: bool = False,
     weekly: bool = False,
     subtitle: str = "",
+    wt_pane_enabled: bool = False,
 ) -> str:
     data_json = (
         json.dumps(records)
@@ -1004,6 +1119,14 @@ def build_html(
     interval_query = "&amp;interval=W" if weekly else ""
     ema_periods = "20,40,50,200" if weekly else "20,50,200"
     subtitle_html = f'<p class="subtitle">{_escape(subtitle)}</p>' if subtitle else ""
+    wt_control = ('<label class="switch-row"><span>WT Pane</span><input type="checkbox" '
+                  'id="wtPaneVisible" checked><span class="switch"></span></label>') if wt_pane_enabled else ""
+    wt_script = """
+document.getElementById('wtPaneVisible').addEventListener('change', function(e) {
+  document.querySelectorAll('.wt-pane-wrap').forEach(function(wrap) { wrap.hidden = !e.target.checked; });
+});
+""" if wt_pane_enabled else ""
+    js += wt_script
     if records:
         cards = []
         for r in records:
@@ -1011,6 +1134,14 @@ def build_html(
             change_class = "gain" if change > 0 else "loss" if change < 0 else "flat"
             change_text = f"{change:+.2f}%" if change else "0.00%"
             tv_symbol = r.get("tv_symbol") or f"NSE:{r['symbol']}"
+            wt_card = (
+                f'<div class="wt-pane-wrap rs-pane-wrap" id="wtpanewrap-{_escape(r["symbol"])}">'
+                '<div class="wt-legend"><span style="color:#00ffff">WT1 (10,21)</span> / '
+                '<span style="color:#ff9800">WT2 (4)</span> · '
+                '<span style="color:#00ff00">▲ Bull cross</span> / '
+                '<span style="color:#ff0000">▼ Bear cross</span></div>'
+                f'<div class="wt-pane" id="wtpane-{_escape(r["symbol"])}"></div></div>'
+            ) if wt_pane_enabled and r.get('wt_pane') else ""
             cards.append(
                 f'<div class="card" data-q="{_escape(r["symbol"])} {_escape(r["tier"])}" '
                 f'data-symbol="{_escape(r["symbol"])}" '
@@ -1023,6 +1154,7 @@ def build_html(
                 f'<div class="coil-layer"></div></div>'
                 f'<div class="rs-pane-wrap" id="rspanewrap-{_escape(r["symbol"])}">'
                 f'<div class="rs-pane" id="rspane-{_escape(r["symbol"])}"></div></div>'
+                f'{wt_card}'
                 f'</div>'
             )
         cards = "\n".join(cards)
@@ -1063,6 +1195,8 @@ h1{{font-size:1.1rem}}
 .rs-dot{{position:absolute;border-radius:50%}}
 .rs-pane-wrap{{margin-top:6px}}
 .rs-pane{{width:100%;height:100%}}
+.wt-pane{{width:100%;height:calc(100% - 24px)}}
+.wt-legend{{height:24px;font-size:12px;line-height:24px}}
 .empty{{color:#8b949e}}
 @media(max-width:600px){{#grid{{grid-template-columns:1fr}}.chart,.rs-pane-wrap{{height:320px}}}}
 </style></head>
@@ -1079,6 +1213,7 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>52W High</span><input type="checkbox" id="high52wVisible"{" checked" if high52w_default_visible else ""}><span class="switch"></span></label>
   <label class="switch-row"><span>RS Transitions</span><input type="checkbox" id="rsVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>RS Pane</span><input type="checkbox" id="rsPaneVisible" checked><span class="switch"></span></label>
+  {wt_control}
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">

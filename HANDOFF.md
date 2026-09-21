@@ -9,6 +9,23 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-09-21 by Codex, TradingView watchlist WaveTrend pane:
+
+- `tradingview_watchlist_dashboard.py` uses shared watchlist `156673566` and opts
+  into a default-visible WT pane below RS in `dashboard/charts.html`.
+- The pane reuses `WaveTrendCalculator` with price HLC3, EMA10/EMA21/SMA4, matching
+  `pine_scripts/Satya_All_Panel.pine`. WT1 is aqua, WT2 orange; all bull/bear
+  crosses appear as lime/red arrows. Reference levels are 0, +/-53 and +/-60;
+  no histogram. The independent WT Pane toggle hides/restores existing panes.
+- Price/RS/WT crosshairs synchronize using each series' value at the selected
+  date. WT follows price logical ranges; shared axis widths align the panes.
+  WT autoscaling includes +/-60 while preserving wider indicator extremes.
+- Shared data/rendering options default off for other dashboard callers.
+  Existing `NSE_AllScanners` integration regenerates/publishes the WT pane daily.
+- Verification includes independent Pine-formula tests, flat-price warmup,
+  generated JavaScript tests for levels, markers, crosshairs, axes and toggles.
+  Browser visual inspection is pending because no browser is connected.
+
 Updated 2026-09-18 by Codex, US weekly near-52-week-high charts:
 
 - `us_near_52w_high_chart_dashboard.py` selects the existing US universe (NYSE/NASDAQ
