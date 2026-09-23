@@ -36,7 +36,7 @@
 | [TIMKEN](https://in.tradingview.com/chart/?symbol=NSE:TIMKEN)<br><sub>↑CMF0d</sub> | Tapered roller bearings manufacturing industrial motion transmission | 1w | TOUCH | 1w | +5.2% | +3.44% | 3287.90 | — | 20%  |
 | [CARRARO](https://in.tradingview.com/chart/?symbol=NSE:CARRARO)<br><sub>↑CMF1d</sub> | Axles transmissions agricultural tractors construction equipment | 1w | TOUCH | 1w | +5.7% | +2.27% | 554.60 | 9w | 20%  |
 | [BANSALWIRE](https://in.tradingview.com/chart/?symbol=NSE:BANSALWIRE)<br><sub>↓CMF30d</sub> | Steel and stainless steel wire manufacturer India | 1w | TOUCH | 1w | +1.7% | +0.21% | 315.90 | 7w | 20%  |
-| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>↓CMF12d</sub> | Sugar manufacturer ethanol producer cogeneration power generation | 1w | TOUCH | 1w | +2.3% | +3.14% | 266.35 | — | 20%  |
+| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>↓CMF12d · DEL49%</sub> | Sugar manufacturer ethanol producer cogeneration power generation | 1w | TOUCH | 1w | +2.3% | +3.14% | 266.35 | — | 20%  |
 | [INDIANHUME](https://in.tradingview.com/chart/?symbol=NSE:INDIANHUME)<br><sub>↓CMF22d</sub> |  | 1w | TOUCH | 1w | +0.3% | -0.45% | 366.25 | — | 20%  |
 | [GANECOS](https://in.tradingview.com/chart/?symbol=NSE:GANECOS)<br><sub>↑CMF5d</sub> | PET waste recycling, polyester fiber manufacturing, textile supply | 1w | TOUCH | 1w | +3.5% | +3.83% | 1036.60 | — | 20% 🟦 |
 | [POLYPLEX](https://in.tradingview.com/chart/?symbol=NSE:POLYPLEX)<br><sub>↓CMF24d</sub> | BOPET and BOPP films for flexible packaging | 1w | TOUCH | 1w | +3.5% | +2.34% | 1117.10 | — | 20%  |
