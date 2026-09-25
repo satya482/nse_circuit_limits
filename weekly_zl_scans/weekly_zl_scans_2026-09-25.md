@@ -39,7 +39,7 @@
 | [FMGOETZE](https://in.tradingview.com/chart/?symbol=NSE:FMGOETZE)<br><sub>↓CMF0d</sub> | Pistons rings valves powertrain components automotive suppliers | 1w | TOUCH | 1w | +8.2% | +3.02% | 482.60 | — | 20%  |
 | [SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN)<br><sub>↑CMF1d</sub> | Microfinance loans for rural underserved borrowers | 1w | TOUCH | 1w | +7.9% | +4.64% | 236.65 | — | 20%  |
 | [ARVSMART](https://in.tradingview.com/chart/?symbol=NSE:ARVSMART)<br><sub>↓CMF12d</sub> | Residential commercial real estate development urban markets India | 1w | TOUCH | 1w | +11.6% | -1.40% | 614.05 | 10w | 20%  |
-| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF30d</sub> | Hotel operations, tours, catering for domestic tourism sector | 1w | TOUCH | 1w | +3.2% | -0.88% | 679.70 | — | 20% 🟦 |
+| [ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC)<br><sub>↓CMF30d · DEL39%</sub> | Hotel operations, tours, catering for domestic tourism sector | 1w | TOUCH | 1w | +3.2% | -0.88% | 679.70 | — | 20% 🟦 |
 | [GANECOS](https://in.tradingview.com/chart/?symbol=NSE:GANECOS)<br><sub>↑CMF7d</sub> | PET waste recycling, polyester fiber manufacturing, textile supply | 1w | TOUCH | 1w | +2.6% | +1.44% | 1028.60 | — | 20% 🟦 |
 | [BANSALWIRE](https://in.tradingview.com/chart/?symbol=NSE:BANSALWIRE)<br><sub>↓CMF30d</sub> | Steel and stainless steel wire manufacturer India | 1w | TOUCH | 1w | +3.5% | -0.60% | 321.40 | 7w | 20%  |
 | [ARKADE](https://in.tradingview.com/chart/?symbol=NSE:ARKADE)<br><sub>↓CMF11d</sub> | Premium residential commercial projects Mumbai region | 1w | TOUCH | 1w | +5.6% | +0.60% | 125.48 | — | 20%  |
@@ -58,7 +58,7 @@
 | [IDBI](https://in.tradingview.com/chart/?symbol=NSE:IDBI)<br><sub>↓CMF13d</sub> | Retail corporate MSME lending deposit bank | 1w | ABOVE | 1w | +1.6% | +2.18% | 84.40 | — | 20% 🟦 |
 | [LLOYDSENT](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENT)<br><sub>↑CMF2d</sub> | Steel trading, engineering solutions, real estate investments | 1w | ABOVE | 1w | +15.7% | +5.41% | 79.67 | 4w | 20%  |
 | [SUNFLAG](https://in.tradingview.com/chart/?symbol=NSE:SUNFLAG)<br><sub>↑CMF2d</sub> | Alloy steel producer serving automotive and engineering industries | 1w | ABOVE | 1w | +19.0% | +3.49% | 410.65 | 3w | 10% 🟨 |
-| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>↑CMF0d · DEL54%(T-1)</sub> | Sugar manufacturer ethanol producer cogeneration power generation | 1w | ABOVE | 1w | +12.6% | +12.75% | 293.15 | — | 20%  |
+| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>↑CMF0d</sub> | Sugar manufacturer ethanol producer cogeneration power generation | 1w | ABOVE | 1w | +12.6% | +12.75% | 293.15 | — | 20%  |
 | [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY)<br><sub>↑CMF4d</sub> | AI loyalty platform SaaS for retail enterprises | 1w | ABOVE | 1w | +23.8% | +5.62% | 599.45 | 16w | 20%  |
 | [PATANJALI](https://in.tradingview.com/chart/?symbol=NSE:PATANJALI)<br><sub>↑CMF30d</sub> | Edible oils, soybean processing, consumer cooking oil products | 1w | ABOVE | 1w | +10.1% | -0.22% | 403.95 | — | 20%  |
 | [JAMNAAUTO](https://in.tradingview.com/chart/?symbol=NSE:JAMNAAUTO)<br><sub>↑CMF13d</sub> | Tapered parabolic leaf springs commercial vehicles suspension systems | 1w | ABOVE | 1w | +10.5% | -0.14% | 138.20 | 12w | 20%  |
@@ -67,7 +67,7 @@
 | [SUNTV](https://in.tradingview.com/chart/?symbol=NSE:SUNTV)<br><sub>↑CMF3d</sub> | Regional Tamil broadcaster, entertainment content, South India | 1w | ABOVE | 1w | +13.6% | +0.10% | 513.20 | 1w | 20%  |
 | [TRANSRAILL](https://in.tradingview.com/chart/?symbol=NSE:TRANSRAILL)<br><sub>↑CMF3d</sub> | Transmission poles and power distribution infrastructure EPC | 1w | ABOVE | 1w | +14.8% | +1.13% | 469.25 | — | 20%  |
 | [ELECON](https://in.tradingview.com/chart/?symbol=NSE:ELECON)<br><sub>↑CMF2d</sub> | Industrial gears power transmission material handling equipment manufacturer | 1w | ABOVE | 1w | +8.8% | -0.19% | 458.25 | — | 20%  |
-| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d</sub> | Residential real estate developer NCR affordable mid-segment housing | 1w | ABOVE | 1w | +4.2% | +0.54% | 788.85 | 11w | 20%  |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE)<br><sub>↓CMF30d · DEL16%</sub> | Residential real estate developer NCR affordable mid-segment housing | 1w | ABOVE | 1w | +4.2% | +0.54% | 788.85 | 11w | 20%  |
 | [GMRP&UI](https://in.tradingview.com/chart/?symbol=NSE:GMRP&UI)<br><sub>↑CMF0d</sub> | Power generation, airports, highways, urban infrastructure developer | 1w | ABOVE | 1w | +11.2% | +1.25% | 102.68 | — | 20%  |
 | [NTPCGREEN](https://in.tradingview.com/chart/?symbol=NSE:NTPCGREEN)<br><sub>↑CMF1d</sub> | Solar and wind power projects for grid distribution | 1w | ABOVE | 1w | +5.6% | -2.05% | 93.47 | — | 20%  |
 | [JMFINANCIL](https://in.tradingview.com/chart/?symbol=NSE:JMFINANCIL)<br><sub>↑CMF1d</sub> | Investment banking mortgage lending distressed credit asset management | 1w | ABOVE | 1w | +1.1% | +0.51% | 127.68 | 4w | 20%  |
