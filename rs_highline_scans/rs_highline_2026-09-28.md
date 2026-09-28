@@ -26,7 +26,7 @@
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
 | [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL) [5% 🟥]<br><sub>↑CMF30d</sub> | Glass-lined reactors and process equipment for pharma chemicals | 422.65 | +4.99% | 412.20 | +2.54% | 🔄 | ↑1d | 1d | +5.0% | — | 4.9% | 54 | ↘34Cr · 41Cr |
-| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO) [20% 🟦]<br><sub>↑CMF0d</sub> | Defense electronics assembly testing solutions for mission systems | 408.30 | +3.21% | 401.30 | +1.74% | ↑ | ↑5d | 5d | +5.9% | — | 4.4% | 20 | ↗359Cr · 470Cr |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO) [20% 🟦]<br><sub>↑CMF0d · DEL46%</sub> | Defense electronics assembly testing solutions for mission systems | 408.30 | +3.21% | 401.30 | +1.74% | ↑ | ↑5d | 5d | +5.9% | — | 4.4% | 20 | ↗359Cr · 470Cr |
 | [GODIGIT](https://in.tradingview.com/chart/?symbol=NSE:GODIGIT) [20%]<br><sub>↑CMF2d</sub> | Digital motor health travel property insurance platform | 263.25 | +3.76% | 255.90 | +2.87% | ↑ | ↑3d | 3d | +7.5% | — | 3.7% | 17 | ↗41Cr · 114Cr |
 | [ELECON](https://in.tradingview.com/chart/?symbol=NSE:ELECON) [20%]<br><sub>↑CMF3d</sub> | Industrial gears power transmission material handling equipment manufacturer | 480.75 | +4.91% | 463.50 | +3.72% | ↑ | ↑5d | 5d | +16.3% | — | 4.2% | 15 | ↗199Cr · 323Cr |
 

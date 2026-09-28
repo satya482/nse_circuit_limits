@@ -92,7 +92,7 @@
 | [DIVGIITTS](https://in.tradingview.com/chart/?symbol=NSE:DIVGIITTS)<br><sub>↓CMF16d</sub> | ✓ SAFE | Automotive drivetrain components, transfer cases, all-terrain vehicles | 🔵 Bounce EMA50 · RS holds | 70 | ↑86 | ↑1.048 | 94% | 110% ↑ | ✅8/8 | 1.11x | ↑1d | +5.5% | +5.54% | 20%  |
 | [INDOBORAX](https://in.tradingview.com/chart/?symbol=NSE:INDOBORAX)<br><sub>↑CMF0d</sub> | ✓ SAFE | Boron lithium chemicals manufacturer serving industrial pharmaceutical sectors | 🔵 Bounce EMA50 · RS holds | 69 | 🔄86 | ↑1.021 | 92% | 110% ↑ | ✅8/8 | 5.15x | ↑1d | +6.1% | +6.13% | 20%  |
 | [AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK)<br><sub>↑CMF18d</sub> | ✓ SAFE | LPG and liquid storage terminals operator, logistics | 🔵 Bounce EMA50 · RS holds | 65 | 🔄66 | ↑1.002 | 94% | 85% ↑ | ✅8/8 | 0.89x | ↑1d | +3.8% | +3.84% | 20%  |
-| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↑CMF0d</sub> | ✓ SAFE | Defense electronics assembly testing solutions for mission systems | 🔵 Bounce EMA50 · RS holds | 59 | ↑64 | ↑1.026 | 91% | 124% ↑ | ✅8/8 | 0.88x | ↑5d | +5.9% | +3.21% | 20% 🟦 |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↑CMF0d · DEL46%</sub> | ✓ SAFE | Defense electronics assembly testing solutions for mission systems | 🔵 Bounce EMA50 · RS holds | 59 | ↑64 | ↑1.026 | 91% | 124% ↑ | ✅8/8 | 0.88x | ↑5d | +5.9% | +3.21% | 20% 🟦 |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DIVGIITTS,NSE:INDOBORAX,NSE:AEGISVOPAK,NSE:APOLLO
