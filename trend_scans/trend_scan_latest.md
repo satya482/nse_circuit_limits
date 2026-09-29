@@ -81,7 +81,7 @@
 | [SOMANYCERA](https://in.tradingview.com/chart/?symbol=NSE:SOMANYCERA)<br><sub>↑CMF12d</sub> | ✓ SAFE | Ceramic tiles sanitaryware bath fittings residential commercial construction | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 58 | ↑65 | ↓1.028 | 99% | 81% ↑ | ✅8/8 | 1.36x | ↑9d | +10.6% | -1.00% | 20%  |
 | [JNKINDIA](https://in.tradingview.com/chart/?symbol=NSE:JNKINDIA)<br><sub>↑CMF0d</sub> | ✓ SAFE | EPC contractor, heating equipment, waste gas systems, oil-gas-petrochemical | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 57 | ↑71 | ↑1.063 | 83% | 122% ↑ | ✅8/8 | 2.37x | ↑1d | +7.6% | +7.56% | 20% 🟦 |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS)<br><sub>↓CMF18d</sub> | ⚠ CAUTION |  | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 56 | ↑70 | ↑1.031 | 81% | 157% ↑ | ✅7/8 | 1.02x | ↑1d | +4.4% | +4.39% | 5%  |
-| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↑CMF1d · DEL46%(T-1)</sub> | ✓ SAFE | Defense electronics assembly testing solutions for mission systems | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 55 | ↑61 | ↓1.010 | 90% | 121% ↑ | ✅8/8 | 0.90x | ↑6d | +4.5% | -1.40% | 20% 🟦 |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↑CMF1d</sub> | ✓ SAFE | Defense electronics assembly testing solutions for mission systems | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 55 | ↑61 | ↓1.010 | 90% | 121% ↑ | ✅8/8 | 0.90x | ↑6d | +4.5% | -1.40% | 20% 🟦 |
 | [THANGAMAYL](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL)<br><sub>↑CMF6d</sub> | ✓ SAFE | Gold silver diamond jewellery retail Tamil Nadu consumer | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 52 | ↑75 | ↑1.018 | 71% | 167% ↑ | ✅7/8 | 0.93x | ↑1d | +3.9% | +3.85% | 10% 🟨 |
 
 ```
@@ -91,7 +91,7 @@
 ### 🔵 EMA SUPPORT — EMA50/100/200 bounce + RS holds (16)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>↑CMF4d</sub> | ✓ SAFE | Condoms lubricants IVD kits sexual wellness global | 🔵 Bounce EMA50 · RS holds | 77 | ↑99 | ↑1.057 | 98% | 570% ↑ | ✅8/8 | 1.11x | ↑1d | +8.9% | +8.88% | 20%  |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>↑CMF4d · DEL55%</sub> | ✓ SAFE | Condoms lubricants IVD kits sexual wellness global | 🔵 Bounce EMA50 · RS holds | 77 | ↑99 | ↑1.057 | 98% | 570% ↑ | ✅8/8 | 1.11x | ↑1d | +8.9% | +8.88% | 20%  |
 | [RRKABEL](https://in.tradingview.com/chart/?symbol=NSE:RRKABEL)<br><sub>↓CMF19d</sub> | ✓ SAFE | Copper wires cables for residential commercial industrial infrastructure | 🔵 Bounce EMA50 · RS holds | 76 | ↑81 | ↑1.015 | 86% | 107% ↑ | ✅7/8 | 🔵0.37x | ↑1d | +2.6% | +2.58% | 20%  |
 | [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING)<br><sub>↑CMF0d</sub> | ✓ SAFE | Textile yarns and fabrics production for apparel makers | 🔵 Bounce EMA50 · RS holds | 75 | ↑87 | ↑1.007 | 92% | 166% ↑ | ✅7/8 | 0.71x | ↑1d | +2.3% | +2.29% | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↑CMF13d</sub> | ✓ SAFE | APIs, formulation intermediates, finished pharma drugs manufacturer | 🔵 Bounce EMA50 · RS holds | 73 | ↑62 | ↑1.003 | 95% | 68% ↑ | ✅8/8 | 🔵0.49x | ↑1d | +1.8% | +1.80% | 20%  |
