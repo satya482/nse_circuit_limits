@@ -49,7 +49,7 @@
 | [AMRUTANJAN](https://in.tradingview.com/chart/?symbol=NSE:AMRUTANJAN)<br><sub>↓CMF30d</sub> | Ayurvedic balm pain relief and OTC consumer healthcare products | 1w | ABOVE | 1w | +1.7% | +1.88% | 514.75 | 14w | 20%  |
 | [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +2.8% | +1.33% | 152.00 | 5w | 20% 🟦 |
 | [MAXIND](https://in.tradingview.com/chart/?symbol=NSE:MAXIND)<br><sub>↑CMF3d</sub> |  | 1w | ABOVE | 1w | +8.3% | +0.37% | 160.83 | 20w | 20%  |
-| [LGHL](https://in.tradingview.com/chart/?symbol=NSE:LGHL)<br><sub>↑CMF0d</sub> |  | 1w | ABOVE | 1w | +9.3% | +11.93% | 200.04 | — | 20%  |
+| [LGHL](https://in.tradingview.com/chart/?symbol=NSE:LGHL)<br><sub>↑CMF0d · DEL50%</sub> |  | 1w | ABOVE | 1w | +9.3% | +11.93% | 200.04 | — | 20%  |
 | [CONTROLPR](https://in.tradingview.com/chart/?symbol=NSE:CONTROLPR)<br><sub>↑CMF27d</sub> | Coding marking machines for pharma food packaging manufacturers | 1w | ABOVE | 1w | +2.6% | -0.19% | 607.35 | 23w | 20%  |
 | [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH)<br><sub>↓CMF3d</sub> |  | 1w | ABOVE | 1w | +8.7% | +2.29% | 907.85 | — | 20%  |
 | [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING)<br><sub>↓CMF10d</sub> | Housing loans for retail homebuyers and property | 1w | BELOW | 1w | +2.3% | +1.99% | 1120.00 | — | 20%  |
