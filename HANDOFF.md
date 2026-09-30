@@ -9,6 +9,18 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-09-30 by Codex, Darvas price overlay:
+
+- `dashboard/charts.html` has a default-on Darvas Box toggle for green top and red
+  bottom lines, fixed length 5, matching `pine_scripts/Darvas_Box.pine`.
+- Shared renderer computes from embedded OHLC bars; `darvas_enabled=True` opts
+  in from `tradingview_watchlist_dashboard.py`. Other dashboards default off
+  without exposing the control. No lines before first confirmation.
+- Existing page regenerated from its embedded records, preserving its date and
+  prices without fetching data. Node tests cover confirmation, equal highs,
+  restart timing, frozen boundaries, and toggling both lines without duplicates.
+
+
 Updated 2026-09-21 by Codex, TradingView watchlist WaveTrend pane:
 
 - `tradingview_watchlist_dashboard.py` uses shared watchlist `156673566` and opts

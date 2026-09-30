@@ -373,6 +373,7 @@ const uiState = {
   emaVisible: false,
   zlema25Visible: false,
   high52wVisible: __HIGH52W_DEFAULT__,
+  darvasVisible: __DARVAS_ENABLED__,
   rsVisible: false,
   rsPaneVisible: true,
   volumeVisible: false,
@@ -627,6 +628,44 @@ function rebuildHigh52w(entry) {
   entry.high52wSeries = line;
 }
 
+function darvasLineData(bars) {
+  const top = [], bottom = [];
+  let newHighIndex = null, newHigh = null, topBox = null, bottomBox = null;
+  bars.forEach(function(bar, i) {
+    const previous = bars.slice(Math.max(0, i - 5), i);
+    if (previous.length && bar[2] > Math.max(...previous.map(b => b[2]))) {
+      newHighIndex = i;
+      newHigh = bar[2];
+    }
+    const k2 = Math.max(...bars.slice(Math.max(0, i - 3), i + 1).map(b => b[2]));
+    const k3 = Math.max(...bars.slice(Math.max(0, i - 2), i + 1).map(b => b[2]));
+    if (newHighIndex !== null && i - newHighIndex === 3 && k3 < k2) {
+      topBox = newHigh;
+      bottomBox = Math.min(...bars.slice(Math.max(0, i - 4), i + 1).map(b => b[3]));
+    }
+    top.push(topBox === null ? { time: bar[0] } : { time: bar[0], value: topBox });
+    bottom.push(bottomBox === null ? { time: bar[0] } : { time: bar[0], value: bottomBox });
+  });
+  return { top: top, bottom: bottom };
+}
+
+function rebuildDarvas(entry) {
+  entry.darvasSeries.forEach(function(line) { entry.chart.removeSeries(line); });
+  entry.darvasSeries = [];
+  if (!uiState.darvasVisible) return;
+  const data = darvasLineData(entry.record.bars);
+  entry.darvasSeries = ['top', 'bottom'].map(function(side, i) {
+    const line = entry.chart.addLineSeries({
+      color: i === 0 ? '#008000' : '#ff0000',
+      lineWidth: 1,
+      lastValueVisible: false,
+      priceLineVisible: false,
+    });
+    line.setData(data[side]);
+    return line;
+  });
+}
+
 function applyVolumeState(entry) {
   entry.volumeSeries.applyOptions({ visible: uiState.volumeVisible });
   entry.chart.priceScale("right").applyOptions({
@@ -720,6 +759,7 @@ function buildChart(symbol) {
     emaSeries: [],
     zlema25Series: null,
     high52wSeries: null,
+    darvasSeries: [],
     coilFrame: null,
     coilLayer: el.parentElement.querySelector('.coil-layer'),
     rsChart: null,
@@ -730,6 +770,7 @@ function buildChart(symbol) {
   entry.emaSeries = addEmaSeries(entry, getEmaPeriods());
   rebuildZlema25(entry);
   rebuildHigh52w(entry);
+  rebuildDarvas(entry);
   buildRsPane(entry);
   buildWtPane(entry);
   if (entry.rsPaneWrap) entry.rsPaneWrap.hidden = !uiState.rsPaneVisible;
@@ -970,6 +1011,16 @@ document.getElementById('high52wVisible').addEventListener('change', function(e)
     scheduleCoilRedraw(entry);
   });
 });
+const darvasControl = document.getElementById('darvasVisible');
+if (darvasControl) darvasControl.addEventListener('change', function(e) {
+  uiState.darvasVisible = e.target.checked;
+  Object.keys(chartsBySymbol).forEach(function(symbol) {
+    const entry = chartsBySymbol[symbol];
+    rebuildDarvas(entry);
+    scheduleCoilRedraw(entry);
+  });
+});
+
 document.getElementById('rsPaneVisible').addEventListener('change', function(e) {
   uiState.rsPaneVisible = e.target.checked;
   Object.keys(chartsBySymbol).forEach(function(symbol) {
@@ -1097,6 +1148,7 @@ def build_html(
     weekly: bool = False,
     subtitle: str = "",
     wt_pane_enabled: bool = False,
+    darvas_enabled: bool = False,
 ) -> str:
     data_json = (
         json.dumps(records)
@@ -1113,9 +1165,12 @@ def build_html(
         .replace("__WEEKLY__", "true" if weekly else "false")
         .replace("__RIGHT_PADDING__", "3" if weekly else "15")
         .replace("__HIGH52W_DEFAULT__", "true" if high52w_default_visible else "false")
+        .replace("__DARVAS_ENABLED__", "true" if darvas_enabled else "false")
     )
 
     change_label = "Week" if weekly else "Day"
+    darvas_control = ('<label class="switch-row"><span>Darvas Box</span><input type="checkbox" '
+                      'id="darvasVisible" checked><span class="switch"></span></label>') if darvas_enabled else ""
     interval_query = "&amp;interval=W" if weekly else ""
     ema_periods = "20,40,50,200" if weekly else "20,50,200"
     subtitle_html = f'<p class="subtitle">{_escape(subtitle)}</p>' if subtitle else ""
@@ -1214,6 +1269,7 @@ h1{{font-size:1.1rem}}
   <label class="switch-row"><span>RS Transitions</span><input type="checkbox" id="rsVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>RS Pane</span><input type="checkbox" id="rsPaneVisible" checked><span class="switch"></span></label>
   {wt_control}
+  {darvas_control}
   <label class="switch-row"><span>Volume</span><input type="checkbox" id="volumeVisible"><span class="switch"></span></label>
   <label class="switch-row"><span>Interactive</span><input type="checkbox" id="chartMode"><span class="switch"></span></label>
   <label>Sort <select id="sortMode">
