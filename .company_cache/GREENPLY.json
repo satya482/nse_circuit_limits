@@ -2,13 +2,13 @@
   "symbol": "GREENPLY",
   "name": "Greenply Industries Ltd",
   "trendlyne_description": "Greenply Industries Ltd. is a major player in the Indian interior infrastructure industry, specializing in the manufacturing and marketing of plywood, Medium Density Fiberboard (MDF), and allied products. With a heritage spanning over four decades, t... Read More",
-  "screener_description": "Established in 1990, [1] Greenply Industries Limited is amongst the leading plywood manufacturers in India with a 26% share of the organized market. Greenply offers a wide range of panel products including plywood, block boards, decorative veneers, doors, and film-faced plywood, among others. [2]",
-  "combined_description": "Greenply Industries Ltd. is a major player in the Indian interior infrastructure industry, specializing in the manufacturing and marketing of plywood, Medium Density Fiberboard (MDF), and allied products. With a heritage spanning over four decades, t... Read More Established in 1990, [1] Greenply Industries Limited is amongst the leading plywood manufacturers in India with a 26% share of the organized market. Greenply offers a wide range of panel products including plywood, block boards, decorative veneers, doors, and film-faced plywood, among others. [2]",
+  "screener_description": "Greenply Industries Ltd is an interior-infrastructure company with products spanning plywood and blockboards, MDF and pre-laminated MDF, decorative veneers, flush and PVC/WPC doors, specialty plywood, HDF flooring and furniture fittings. The group sells predominantly in India through a pan-India trade network. [1] [2]",
+  "combined_description": "Greenply Industries Ltd. is a major player in the Indian interior infrastructure industry, specializing in the manufacturing and marketing of plywood, Medium Density Fiberboard (MDF), and allied products. With a heritage spanning over four decades, t... Read More Greenply Industries Ltd is an interior-infrastructure company with products spanning plywood and blockboards, MDF and pre-laminated MDF, decorative veneers, flush and PVC/WPC doors, specialty plywood, HDF flooring and furniture fittings. The group sells predominantly in India through a pan-India trade network. [1] [2]",
   "screener_peers": [],
-  "fetched_at": "2026-08-01T06:28:47.594843+00:00",
+  "fetched_at": "2026-10-01T04:43:25.705983+00:00",
   "sources": [
     "trendlyne",
     "screener"
   ],
-  "short_label": "Plywood MDF panels manufacturing building construction interiors"
+  "short_label": "Plywood MDF doors flooring for residential commercial construction"
 }
