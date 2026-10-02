@@ -114,7 +114,7 @@ def main() -> None:
         return
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    html = build_html(records, TODAY, title="TradingView Watchlist Charts", group_sort="alpha", wt_pane_enabled=True, darvas_enabled=True)
+    html = build_html(records, TODAY, title="TradingView Watchlist Charts", group_sort="alpha", wt_pane_enabled=True, darvas_enabled=True, high52w_default_visible=True)
     tmp_path = OUTPUT_PATH + ".tmp"
     with open(tmp_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)

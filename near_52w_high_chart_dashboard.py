@@ -104,7 +104,7 @@ def main() -> None:
         return
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    html = build_html(records, TODAY, title="Near 52W High Charts", high52w_default_visible=True)
+    html = build_html(records, TODAY, title="Near 52W High Charts", high52w_default_visible=True, darvas_enabled=True)
     tmp_path = OUTPUT_PATH + ".tmp"
     with open(tmp_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)

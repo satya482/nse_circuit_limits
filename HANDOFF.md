@@ -9,6 +9,13 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-02 by Codex, chart overlay defaults:
+
+- `tradingview_watchlist_dashboard.py` enables 52W High by default in `dashboard/charts.html`.
+- `near_52w_high_chart_dashboard.py` enables the shared default-on Darvas Box overlay, matching `charts.html` (length 5, green top/red bottom).
+- Refreshed the public TradingView watchlist and Near-52W-High scanner report, then regenerated both pages using local OHLC history.
+
+
 Updated 2026-09-30 by Codex, Darvas price overlay:
 
 - `dashboard/charts.html` has a default-on Darvas Box toggle for green top and red
