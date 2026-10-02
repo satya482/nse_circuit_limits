@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-10-01 15:41 IST*
+*Generated: 2026-10-02 15:42 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 11 · Downtrend: 39**
@@ -77,15 +77,15 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 | [LT](https://in.tradingview.com/chart/?symbol=NSE:LT)<br><sub>→542Cr · 465Cr · ↓CMF11d</sub> | 2d | -1.32% |  | +0.51% | 3878.00 | — | 20%  |
 | [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>→640Cr · 833Cr · ↓CMF8d</sub> | 4d | -2.30% |  | +2.93% | 1221.30 | — | 20%  |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>→307Cr · 186Cr · ↓CMF21d</sub> | 4d | -1.64% |  | +1.32% | 1260.00 | — | 20%  |
-| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗315Cr · 514Cr · ↑CMF0d</sub> | 4d | -9.77% | Tertiary quaternary hospital network Delhi NCR North India | +1.20% | 940.95 | — | 20%  |
 | [BHARTIARTL](https://in.tradingview.com/chart/?symbol=NSE:BHARTIARTL)<br><sub>→1004Cr · 822Cr · ↓CMF26d</sub> | 5d | -5.51% |  | -0.38% | 1789.00 | — | 20%  |
+| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗304Cr · 0.0Cr · ↑CMF1d</sub> | 5d | -9.77% | Tertiary quaternary hospital network Delhi NCR North India | +0.00% | 940.95 | — | 20%  |
 | [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>→186Cr · 279Cr · ↓CMF28d</sub> | 5d | -5.63% |  | -1.29% | 2665.10 | — | 20%  |
 | [KOTAKBANK](https://in.tradingview.com/chart/?symbol=NSE:KOTAKBANK)<br><sub>→475Cr · 701Cr · ↓CMF4d</sub> | 6d | -3.65% |  | -0.79% | 401.80 | — | 20%  |
 | [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↗349Cr · 650Cr · ↓CMF21d</sub> | 6d | -7.87% |  | -1.63% | 290.20 | — | 20%  |
 | [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE)<br><sub>↘1236Cr · 1426Cr · ↓CMF30d</sub> | 9d | -5.79% |  | +0.13% | 3188.00 | ✓ | 20%  |
 | [NTPC](https://in.tradingview.com/chart/?symbol=NSE:NTPC)<br><sub>↘229Cr · 193Cr · ↓CMF7d</sub> | 9d | -2.16% |  | -0.12% | 326.20 | ✓ | 20%  |
-| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>↗128Cr · 175Cr · ↓CMF30d</sub> | 9d | -5.59% | Tea, coffee, salt brands for Indian households and global markets | +0.79% | 957.00 | — | 20%  |
 | [GRASIM](https://in.tradingview.com/chart/?symbol=NSE:GRASIM)<br><sub>↘212Cr · 240Cr · ↑CMF30d</sub> | 10d | -3.89% |  | +0.74% | 3190.00 | — | 20%  |
+| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>→109Cr · 0.0Cr · ↓CMF30d</sub> | 10d | -5.59% | Tea, coffee, salt brands for Indian households and global markets | +0.00% | 957.00 | — | 20%  |
 | [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>→357Cr · 233Cr · ↓CMF8d</sub> | 12d | -4.35% |  | +0.18% | 392.70 | — | 20%  |
 | [RELIANCE](https://in.tradingview.com/chart/?symbol=NSE:RELIANCE)<br><sub>→1351Cr · 1534Cr · ↓CMF14d</sub> | 13d | -6.48% |  | +0.45% | 1224.70 | — | 20%  |
 | [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>→917Cr · 994Cr · ↓CMF13d</sub> | 16d | -12.39% |  | -1.55% | 998.80 | — | 20%  |
