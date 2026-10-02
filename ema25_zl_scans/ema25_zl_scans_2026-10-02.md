@@ -81,7 +81,7 @@
 | [EBGNG](https://in.tradingview.com/chart/?symbol=NSE:EBGNG)<br><sub>✓ SAFE · ↘48Cr · 0.0Cr · 📶W9 · ↑CMF0d</sub> | 4d | +4.8% | Refurbished laptops desktops electronics retail distribution | +0.00% | 704.70 | ✓ | 5% 🟥 |
 | [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB)<br><sub>✓ SAFE · ↗85Cr · 0.0Cr · 📶W9 · ↑CMF3d</sub> | 4d | +4.0% | Microfinance bank serving low-income retail borrowers India | +0.00% | 65.60 | ✓ | 20%  |
 | [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF)<br><sub>✓ SAFE · ↗13Cr · 0.0Cr · 📶W9 · ↓CMF2d</sub> | 4d | +8.5% | Surfactants specialty chemicals for detergents cosmetics | +0.00% | 2376.90 | — | 20%  |
-| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW)<br><sub>✓ SAFE · ↗47Cr · 0.0Cr · 📶W9 · ↑CMF4d · DEL59%(T-1)</sub> | 4d | +2.5% | Dredging, marine craft repair, maritime infrastructure engineering | +0.00% | 2950.10 | ✓ | 20%  |
+| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW)<br><sub>✓ SAFE · ↗47Cr · 0.0Cr · 📶W9 · ↑CMF4d</sub> | 4d | +2.5% | Dredging, marine craft repair, maritime infrastructure engineering | +0.00% | 2950.10 | ✓ | 20%  |
 | [ITC](https://in.tradingview.com/chart/?symbol=NSE:ITC)<br><sub>⚠ CAUTION · ↘291Cr · 162Cr · 📶W9 · ↓CMF30d</sub> | 5d | +2.5% |  | +0.32% | 268.85 | ✓ | 20%  |
 | [DLF](https://in.tradingview.com/chart/?symbol=NSE:DLF)<br><sub>✓ SAFE · →239Cr · 241Cr · 📶W9 · 🚀SS · ↑CMF3d</sub> | 5d | +5.7% |  | +1.57% | 680.90 | — | 20%  |
 | [DMART](https://in.tradingview.com/chart/?symbol=NSE:DMART)<br><sub>⚠ CAUTION · ↗199Cr · 112Cr · 📶W9 · 🚀SS · ↑CMF5d</sub> | 5d | +1.9% |  | +0.88% | 3820.90 | — | 20%  |
@@ -174,12 +174,12 @@
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [GAIL](https://in.tradingview.com/chart/?symbol=NSE:GAIL)<br><sub>⚠ CAUTION · ↘95Cr · 92Cr · 📶W9 · ↑CMF30d</sub> | 2d | +0.0% |  | -0.49% | 173.00 | ✓ | 20%  |
-| [ADANIGREEN](https://in.tradingview.com/chart/?symbol=NSE:ADANIGREEN)<br><sub>✓ SAFE · ↘154Cr · 183Cr · ↑CMF14d · DEL67%(T-1)</sub> | 3d | -2.0% |  | +1.62% | 1255.00 | ✓ | 20%  |
+| [ADANIGREEN](https://in.tradingview.com/chart/?symbol=NSE:ADANIGREEN)<br><sub>✓ SAFE · ↘154Cr · 183Cr · ↑CMF14d · DEL67%</sub> | 3d | -2.0% |  | +1.62% | 1255.00 | ✓ | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX)<br><sub>✓ SAFE · →588Cr · 0.0Cr · 📶W9 · 🚀SS · ↓CMF4d</sub> | 3d | -0.9% | Commodity futures exchange, price discovery, risk management platform | +0.00% | 3204.00 | ✓ | 20%  |
 | [HEROMOTOCO](https://in.tradingview.com/chart/?symbol=NSE:HEROMOTOCO)<br><sub>✓ SAFE · ↘240Cr · 330Cr · 📶W9 · ↓CMF18d</sub> | 3d | -1.0% | Two-wheeler motorcycles scooters domestic India mass market | -2.69% | 5245.00 | ✓ | 20%  |
 | [JSWSTEEL](https://in.tradingview.com/chart/?symbol=NSE:JSWSTEEL)<br><sub>⚠ CAUTION · →167Cr · 128Cr · 📶W9 · ↓CMF3d</sub> | 3d | +0.3% |  | -0.20% | 1270.70 | — | 20%  |
 | [BANKBARODA](https://in.tradingview.com/chart/?symbol=NSE:BANKBARODA)<br><sub>✓ SAFE · ↘122Cr · 58Cr · 🚀SS · ↑CMF3d</sub> | 3d | +0.4% |  | +0.39% | 235.22 | ✓ | 20%  |
-| [JKCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JKCEMENT)<br><sub>⚠ CAUTION · ↗32Cr · 0.0Cr · 📶W9 · ↓CMF30d · DEL85%(T-1)</sub> | 3d | +2.6% | Cement manufacturing construction materials India domestic markets | +0.00% | 4952.00 | — | 20%  |
+| [JKCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JKCEMENT)<br><sub>⚠ CAUTION · ↗32Cr · 0.0Cr · 📶W9 · ↓CMF30d · DEL85%</sub> | 3d | +2.6% | Cement manufacturing construction materials India domestic markets | +0.00% | 4952.00 | — | 20%  |
 | [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK)<br><sub>✓ SAFE · →56Cr · 0.0Cr · 📶W9 · ↓CMF1d</sub> | 3d | -0.8% | Private bank retail corporate MSME lending treasury services | +0.00% | 321.60 | — | 20%  |
 | [HSCL](https://in.tradingview.com/chart/?symbol=NSE:HSCL)<br><sub>✓ SAFE · ↘107Cr · 0.0Cr · 📶W9 · ↓CMF8d</sub> | 3d | -0.4% | Coal pitch and carbon materials for industrial applications | +0.00% | 665.15 | ✓ | 20%  |
 | [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD)<br><sub>✓ SAFE · ↗214Cr · 0.0Cr · 📶W9 · ↓CMF11d</sub> | 3d | -0.1% | Tourism sector financing for hotels restaurants amusement parks | +0.00% | 138.79 | ✓ | 20%  |
@@ -292,7 +292,7 @@
 | [MANORAMA](https://in.tradingview.com/chart/?symbol=NSE:MANORAMA)<br><sub>✓ SAFE · ↘28Cr · 0.0Cr · 📶W9 · ↓CMF0d</sub> | 22d | +3.7% | Specialty fats from tree seeds, chocolate cosmetics | +0.00% | 1880.30 | — | 20%  |
 | [IGL](https://in.tradingview.com/chart/?symbol=NSE:IGL)<br><sub>⚠ CAUTION · ↗24Cr · 0.0Cr · ↓CMF0d</sub> | 22d | -3.5% | CNG piped gas distribution Delhi NCR sectors | +0.00% | 142.79 | — | 20%  |
 | [REDINGTON](https://in.tradingview.com/chart/?symbol=NSE:REDINGTON)<br><sub>✓ SAFE · ↘136Cr · 0.0Cr · 📶W9 · ↑CMF8d</sub> | 23d | +13.8% | IT hardware software mobility products distribution channel partners | +0.00% | 397.95 | ✓ | 20%  |
-| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>✓ SAFE · ↘159Cr · 0.0Cr · 📶W9 · ↑CMF22d · DEL21%(T-1)</sub> | 23d | +39.6% | Oil and gas exploration production Indian subcontinent hydrocarbon resources | +0.00% | 1106.50 | ✓ | 5% 🟥 |
+| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>✓ SAFE · ↘159Cr · 0.0Cr · 📶W9 · ↑CMF22d</sub> | 23d | +39.6% | Oil and gas exploration production Indian subcontinent hydrocarbon resources | +0.00% | 1106.50 | ✓ | 5% 🟥 |
 | [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT)<br><sub>✓ SAFE · →191Cr · 0.0Cr · 📶W9 · ↓CMF13d</sub> | 24d | -4.1% | Digital engineering services, cloud modernization, enterprise software | +0.00% | 5367.00 | ✓ | 20%  |
 | [MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS)<br><sub>✓ SAFE · →87Cr · 0.0Cr · 📶W9 · ↓CMF16d</sub> | 24d | -7.3% | IT services, cloud and cognitive transformation, enterprise clients | +0.00% | 2250.20 | — | 20%  |
 | [GRAPHITE](https://in.tradingview.com/chart/?symbol=NSE:GRAPHITE)<br><sub>✓ SAFE · ↘104Cr · 0.0Cr · 📶W9 · ↑CMF17d</sub> | 24d | +11.9% | Graphite electrodes for electric arc furnace steel making | +0.00% | 786.15 | — | 20%  |

@@ -42,7 +42,7 @@
 | [DAMCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:DAMCAPITAL)<br><sub>↑CMF4d</sub> | Investment banking, M&A advisory, capital markets solutions | 1w | ABOVE | 1w | +6.1% | +0.00% | 146.56 | 14w | 20%  |
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA)<br><sub>↓CMF11d</sub> | Diagnostic imaging centers for patients across India | 1w | ABOVE | 1w | +1.2% | +0.00% | 554.85 | 12w | 20%  |
 | [CONTROLPR](https://in.tradingview.com/chart/?symbol=NSE:CONTROLPR)<br><sub>↑CMF29d</sub> | Coding marking machines for pharma food packaging manufacturers | 1w | ABOVE | 1w | +4.4% | +0.00% | 618.00 | 23w | 20%  |
-| [LGHL](https://in.tradingview.com/chart/?symbol=NSE:LGHL)<br><sub>↑CMF2d · DEL71%(T-1)</sub> |  | 1w | ABOVE | 1w | +19.9% | +0.00% | 219.47 | — | 20%  |
+| [LGHL](https://in.tradingview.com/chart/?symbol=NSE:LGHL)<br><sub>↑CMF2d · DEL71%</sub> |  | 1w | ABOVE | 1w | +19.9% | +0.00% | 219.47 | — | 20%  |
 | [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS)<br><sub>↑CMF2d</sub> |  | 1w | ABOVE | 1w | +13.5% | +0.00% | 804.65 | — | 5%  |
 | [MAXIND](https://in.tradingview.com/chart/?symbol=NSE:MAXIND)<br><sub>↑CMF5d</sub> |  | 1w | ABOVE | 1w | +9.7% | +0.00% | 162.78 | 20w | 20%  |
 | [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH)<br><sub>↓CMF5d</sub> |  | 1w | ABOVE | 1w | +6.6% | +0.00% | 889.95 | — | 20%  |
