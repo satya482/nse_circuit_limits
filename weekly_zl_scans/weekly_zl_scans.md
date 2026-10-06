@@ -37,7 +37,7 @@
 | [USHAMART](https://in.tradingview.com/chart/?symbol=NSE:USHAMART)<br><sub>↑CMF9d</sub> | Wire ropes for mining, offshore, elevators, infrastructure | 1w | TOUCH | 1w | +5.1% | +1.21% | 516.70 | 8w | 20%  |
 | [NAVA](https://in.tradingview.com/chart/?symbol=NSE:NAVA)<br><sub>↓CMF30d</sub> | Ferroalloys manganese producer mining power generation | 1w | TOUCH | 1w | +4.1% | +3.29% | 575.00 | 3w | 20%  |
 | [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA)<br><sub>↑CMF12d</sub> | NBFC consumer loans MSME financing general insurance | 1w | TOUCH | 1w | +6.2% | +1.88% | 460.45 | — | 20%  |
-| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↑CMF1d</sub> | Luxury watch retail, multi-brand, Indian affluent consumers | 1w | TOUCH | 1w | +3.5% | +0.73% | 2621.20 | — | 20%  |
+| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↑CMF1d · DEL83%</sub> | Luxury watch retail, multi-brand, Indian affluent consumers | 1w | TOUCH | 1w | +3.5% | +0.73% | 2621.20 | — | 20%  |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND)<br><sub>↓CMF0d</sub> | Ferrous castings, steel alloys, integrated mining to foundry | 1w | TOUCH | 1w | +3.5% | +3.79% | 94.45 | 3w | 20% 🟦 |
 | [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC)<br><sub>↓CMF1d</sub> | Retail lending platform for underserved households and MSMEs | 1w | TOUCH | 1w | +3.3% | +3.02% | 298.20 | 7w | 20%  |
 | [KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL)<br><sub>↓CMF11d</sub> | Basmati rice processing and export for domestic and global markets | 1w | TOUCH | 1w | +3.5% | +1.83% | 389.15 | — | 20%  |
