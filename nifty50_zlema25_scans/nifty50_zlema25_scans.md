@@ -1,64 +1,44 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-10-05 15:41 IST*
+*Generated: 2026-10-06 15:41 IST*
 *Universe source: NSE refresh*
 
-**Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 11 · Downtrend: 39**
+**Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 6 · Downtrend: 44**
 
 Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consecutive trading bars, with a new direction starting at 1d.
 
 **TradingView watchlist** *(sectioned by direction and trend age)*
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###UP 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ULTRACEMCO,###UP 2 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:CIPLA,###UP 3 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:POWERGRID,###UP 4-5 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:COALINDIA,NSE:ITC,NSE:TATASTEEL,###UP 6-10 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:APOLLOHOSP,NSE:DRREDDY,NSE:HDFCBANK,NSE:SBILIFE,###UP 15 DAYS+,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ADANIPORTS,###DOWN 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:BAJAJ-AUTO,NSE:ETERNAL,NSE:ONGC,###DOWN 2 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ADANIENT,NSE:BAJFINANCE,NSE:HDFCLIFE,NSE:HINDALCO,NSE:INDIGO,NSE:JSWSTEEL,NSE:LT,###DOWN 4-5 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:AXISBANK,NSE:BHARTIARTL,NSE:HCLTECH,NSE:TRENT,###DOWN 6-10 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:BSE,NSE:GRASIM,NSE:KOTAKBANK,NSE:MAXHEALTH,NSE:NTPC,NSE:TMPV,###DOWN 11-15 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:BEL,NSE:RELIANCE,NSE:TATACONSUM,###DOWN 15 DAYS+,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ASIANPAINT,NSE:BAJAJFINSV,NSE:EICHERMOT,NSE:HINDUNILVR,NSE:ICICIBANK,NSE:INFY,NSE:JIOFIN,NSE:M&M,NSE:MARUTI,NSE:NESTLEIND,NSE:SBIN,NSE:SHRIRAMFIN,NSE:SUNPHARMA,NSE:TCS,NSE:TECHM,NSE:TITAN
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###UP 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ADANIPORTS,NSE:COALINDIA,NSE:ITC,NSE:TATACONSUM,###UP 3 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:KOTAKBANK,###UP 6-10 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:DRREDDY,###DOWN 1 DAY,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:BAJAJ-AUTO,NSE:ETERNAL,NSE:HDFCBANK,NSE:INFY,###DOWN 2 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:INDIGO,###DOWN 3 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ADANIENT,NSE:SBILIFE,NSE:SUNPHARMA,NSE:TATASTEEL,###DOWN 4-5 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:APOLLOHOSP,NSE:CIPLA,NSE:POWERGRID,NSE:ULTRACEMCO,###DOWN 6-10 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:AXISBANK,NSE:BAJFINANCE,NSE:BHARTIARTL,NSE:HCLTECH,NSE:HDFCLIFE,NSE:HINDALCO,NSE:JSWSTEEL,NSE:LT,NSE:MAXHEALTH,NSE:ONGC,NSE:TRENT,###DOWN 11-15 DAYS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:BSE,NSE:GRASIM,NSE:NTPC,NSE:TMPV,###DOWN 15 DAYS+,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ASIANPAINT,NSE:BAJAJFINSV,NSE:BEL,NSE:EICHERMOT,NSE:HINDUNILVR,NSE:ICICIBANK,NSE:JIOFIN,NSE:M&M,NSE:MARUTI,NSE:NESTLEIND,NSE:RELIANCE,NSE:SBIN,NSE:SHRIRAMFIN,NSE:TCS,NSE:TECHM,NSE:TITAN
 ```
 
 ### ZLEMA25 Uptrend Start and Age
 
 | Symbol | ZL Age | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|-------:|--------:|-------|--------:|------:|:-------:|:-------:|
-| [ULTRACEMCO](https://in.tradingview.com/chart/?symbol=NSE:ULTRACEMCO)<br><sub>→291Cr · 210Cr · ↓CMF15d</sub> | 1d | +0.90% |  | +0.90% | 11156.00 | — | 20%  |
-| [CIPLA](https://in.tradingview.com/chart/?symbol=NSE:CIPLA)<br><sub>↗154Cr · 162Cr · ↑CMF7d</sub> | 2d | +1.37% |  | +0.21% | 1402.00 | — | 20%  |
-| [POWERGRID](https://in.tradingview.com/chart/?symbol=NSE:POWERGRID)<br><sub>→237Cr · 160Cr · ↓CMF29d</sub> | 3d | +1.24% |  | +1.07% | 269.25 | ✓ | 20%  |
-| [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>↘274Cr · 199Cr · ↑CMF3d</sub> | 4d | +2.58% |  | +0.81% | 425.40 | — | 20%  |
-| [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>↘468Cr · 293Cr · ↓CMF5d</sub> | 4d | +2.39% |  | -0.12% | 187.79 | ✓ | 20%  |
-| [ITC](https://in.tradingview.com/chart/?symbol=NSE:ITC)<br><sub>↘291Cr · 162Cr · ↓CMF30d</sub> | 5d | +2.50% |  | +0.32% | 268.85 | ✓ | 20%  |
-| [APOLLOHOSP](https://in.tradingview.com/chart/?symbol=NSE:APOLLOHOSP)<br><sub>→268Cr · 386Cr · ↓CMF1d</sub> | 7d | +2.23% |  | +0.02% | 8890.00 | ✓ | 20%  |
-| [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE)<br><sub>→191Cr · 177Cr · ↓CMF22d</sub> | 7d | +2.87% |  | -0.47% | 1746.70 | — | 20%  |
+| [ADANIPORTS](https://in.tradingview.com/chart/?symbol=NSE:ADANIPORTS)<br><sub>→361Cr · 468Cr · ↑CMF17d</sub> | 1d | +2.29% |  | +2.29% | 1777.60 | — | 20%  |
+| [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>→306Cr · 321Cr · ↑CMF8d</sub> | 1d | +1.38% |  | +1.38% | 426.20 | ✓ | 20%  |
+| [ITC](https://in.tradingview.com/chart/?symbol=NSE:ITC)<br><sub>↗385Cr · 1297Cr · ↓CMF30d</sub> | 1d | +4.65% |  | +4.65% | 267.80 | ✓ | 20%  |
+| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>↗121Cr · 88Cr · ↓CMF30d</sub> | 1d | +2.33% | Tea, coffee, salt brands for Indian households and global markets | +2.33% | 976.00 | — | 20%  |
+| [KOTAKBANK](https://in.tradingview.com/chart/?symbol=NSE:KOTAKBANK)<br><sub>↗955Cr · 884Cr · ↓CMF1d</sub> | 3d | +2.59% |  | -0.44% | 416.50 | ✓ | 20%  |
 | [DRREDDY](https://in.tradingview.com/chart/?symbol=NSE:DRREDDY)<br><sub>↗292Cr · 609Cr · ↓CMF15d</sub> | 9d | +9.27% | Generics, APIs, biosimilars for global emerging markets | +2.02% | 1245.70 | — | 20%  |
-| [HDFCBANK](https://in.tradingview.com/chart/?symbol=NSE:HDFCBANK)<br><sub>→2292Cr · 1402Cr · ↓CMF30d</sub> | 10d | +6.00% |  | +0.89% | 735.40 | — | 20%  |
-| [ADANIPORTS](https://in.tradingview.com/chart/?symbol=NSE:ADANIPORTS)<br><sub>↘288Cr · 157Cr · ↑CMF12d</sub> | 16d | +6.95% |  | +0.20% | 1788.90 | — | 20%  |
 
 #### Uptrend TradingView Watchlists by Age
 
-**1 DAY** (1)
+**1 DAY** (4)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ULTRACEMCO
-```
-
-**2 DAYS** (1)
-```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CIPLA
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ADANIPORTS,NSE:COALINDIA,NSE:ITC,NSE:TATACONSUM
 ```
 
 **3 DAYS** (1)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:POWERGRID
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:KOTAKBANK
 ```
 
-**4-5 DAYS** (3)
+**6-10 DAYS** (1)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:COALINDIA,NSE:ITC,NSE:TATASTEEL
-```
-
-**6-10 DAYS** (4)
-```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:APOLLOHOSP,NSE:DRREDDY,NSE:HDFCBANK,NSE:SBILIFE
-```
-
-**15 DAYS+** (1)
-```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ADANIPORTS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DRREDDY
 ```
 
 ### ZLEMA25 Downtrend Start and Age
@@ -67,74 +47,84 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 |--------|-------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [BAJAJ-AUTO](https://in.tradingview.com/chart/?symbol=NSE:BAJAJ-AUTO)<br><sub>↘311Cr · 241Cr · ↑CMF2d</sub> | 1d | -1.85% |  | -1.85% | 9483.00 | — | 20%  |
 | [ETERNAL](https://in.tradingview.com/chart/?symbol=NSE:ETERNAL)<br><sub>→662Cr · 842Cr · ↑CMF30d</sub> | 1d | -0.74% |  | -0.74% | 328.50 | — | 20%  |
-| [ONGC](https://in.tradingview.com/chart/?symbol=NSE:ONGC)<br><sub>→256Cr · 114Cr · ↓CMF30d</sub> | 1d | -1.56% |  | -1.56% | 235.26 | ✓ | 20%  |
-| [ADANIENT](https://in.tradingview.com/chart/?symbol=NSE:ADANIENT)<br><sub>↘310Cr · 163Cr · ↓CMF18d</sub> | 2d | -2.62% |  | +0.51% | 2914.90 | — | 20%  |
-| [BAJFINANCE](https://in.tradingview.com/chart/?symbol=NSE:BAJFINANCE)<br><sub>→641Cr · 536Cr · ↓CMF13d</sub> | 2d | -4.43% |  | +1.53% | 997.00 | — | 20%  |
-| [HDFCLIFE](https://in.tradingview.com/chart/?symbol=NSE:HDFCLIFE)<br><sub>↗300Cr · 224Cr · ↑CMF1d</sub> | 2d | -5.57% |  | +0.63% | 530.20 | — | 20%  |
-| [HINDALCO](https://in.tradingview.com/chart/?symbol=NSE:HINDALCO)<br><sub>↗390Cr · 236Cr · ↓CMF9d</sub> | 2d | -2.70% |  | -0.54% | 976.70 | — | 20%  |
-| [INDIGO](https://in.tradingview.com/chart/?symbol=NSE:INDIGO)<br><sub>→317Cr · 199Cr · ↑CMF16d</sub> | 2d | -1.66% |  | +1.12% | 4945.00 | — | 20%  |
-| [JSWSTEEL](https://in.tradingview.com/chart/?symbol=NSE:JSWSTEEL)<br><sub>→167Cr · 128Cr · ↓CMF3d</sub> | 2d | -2.09% |  | -0.20% | 1270.70 | — | 20%  |
-| [LT](https://in.tradingview.com/chart/?symbol=NSE:LT)<br><sub>→542Cr · 465Cr · ↓CMF11d</sub> | 2d | -1.32% |  | +0.51% | 3878.00 | — | 20%  |
-| [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>→640Cr · 833Cr · ↓CMF8d</sub> | 4d | -2.30% |  | +2.93% | 1221.30 | — | 20%  |
-| [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>→307Cr · 186Cr · ↓CMF21d</sub> | 4d | -1.64% |  | +1.32% | 1260.00 | — | 20%  |
-| [BHARTIARTL](https://in.tradingview.com/chart/?symbol=NSE:BHARTIARTL)<br><sub>→1004Cr · 822Cr · ↓CMF26d</sub> | 5d | -5.51% |  | -0.38% | 1789.00 | — | 20%  |
-| [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>→186Cr · 279Cr · ↓CMF28d</sub> | 5d | -5.63% |  | -1.29% | 2665.10 | — | 20%  |
-| [KOTAKBANK](https://in.tradingview.com/chart/?symbol=NSE:KOTAKBANK)<br><sub>→475Cr · 701Cr · ↓CMF4d</sub> | 6d | -3.65% |  | -0.79% | 401.80 | — | 20%  |
-| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗306Cr · 287Cr · ↑CMF2d</sub> | 6d | -12.06% | Tertiary quaternary hospital network Delhi NCR North India | -2.55% | 917.00 | — | 20%  |
-| [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↗349Cr · 650Cr · ↓CMF21d</sub> | 6d | -7.87% |  | -1.63% | 290.20 | — | 20%  |
-| [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE)<br><sub>↘1236Cr · 1426Cr · ↓CMF30d</sub> | 9d | -5.79% |  | +0.13% | 3188.00 | ✓ | 20%  |
-| [NTPC](https://in.tradingview.com/chart/?symbol=NSE:NTPC)<br><sub>↘229Cr · 193Cr · ↓CMF7d</sub> | 9d | -2.16% |  | -0.12% | 326.20 | ✓ | 20%  |
-| [GRASIM](https://in.tradingview.com/chart/?symbol=NSE:GRASIM)<br><sub>↘212Cr · 240Cr · ↑CMF30d</sub> | 10d | -3.89% |  | +0.74% | 3190.00 | — | 20%  |
-| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>→116Cr · 147Cr · ↓CMF30d</sub> | 11d | -5.91% | Tea, coffee, salt brands for Indian households and global markets | -0.34% | 953.75 | — | 20%  |
-| [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>→357Cr · 233Cr · ↓CMF8d</sub> | 12d | -4.35% |  | +0.18% | 392.70 | — | 20%  |
-| [RELIANCE](https://in.tradingview.com/chart/?symbol=NSE:RELIANCE)<br><sub>→1351Cr · 1534Cr · ↓CMF14d</sub> | 13d | -6.48% |  | +0.45% | 1224.70 | — | 20%  |
-| [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>→917Cr · 994Cr · ↓CMF13d</sub> | 16d | -12.39% |  | -1.55% | 998.80 | — | 20%  |
-| [SUNPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SUNPHARMA)<br><sub>→285Cr · 123Cr · ↓CMF6d</sub> | 16d | -4.14% |  | +0.10% | 1851.80 | — | 20%  |
-| [TCS](https://in.tradingview.com/chart/?symbol=NSE:TCS)<br><sub>↗708Cr · 678Cr · ↓CMF14d</sub> | 16d | -11.37% |  | -0.29% | 2081.00 | — | 20%  |
-| [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM)<br><sub>→267Cr · 142Cr · ↓CMF2d</sub> | 16d | -4.47% |  | +0.49% | 1550.50 | — | 20%  |
-| [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV)<br><sub>↗130Cr · 247Cr · ↓CMF6d</sub> | 18d | -12.42% |  | +0.44% | 1770.00 | — | 20%  |
-| [ICICIBANK](https://in.tradingview.com/chart/?symbol=NSE:ICICIBANK)<br><sub>↘1036Cr · 1413Cr · ↓CMF12d</sub> | 18d | -8.69% | Retail corporate SME banking loans deposits investments | -0.51% | 1327.70 | — | 20%  |
-| [NESTLEIND](https://in.tradingview.com/chart/?symbol=NSE:NESTLEIND)<br><sub>→163Cr · 47Cr · ↓CMF4d</sub> | 18d | -9.32% |  | +0.44% | 1357.00 | — | 20%  |
-| [SBIN](https://in.tradingview.com/chart/?symbol=NSE:SBIN)<br><sub>→707Cr · 361Cr · ↓CMF16d</sub> | 18d | -7.38% |  | +0.34% | 981.80 | — | 20%  |
-| [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>↗309Cr · 174Cr · ↑CMF30d</sub> | 18d | -4.53% |  | +0.81% | 4871.50 | — | 20%  |
-| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>↘223Cr · 143Cr · ↓CMF18d</sub> | 19d | -8.74% |  | +0.22% | 7355.00 | — | 20%  |
-| [SHRIRAMFIN](https://in.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN)<br><sub>→405Cr · 259Cr · ↓CMF8d</sub> | 21d | -11.35% |  | +0.07% | 990.70 | — | 20%  |
-| [M&M](https://in.tradingview.com/chart/?symbol=NSE:M&M)<br><sub>→602Cr · 608Cr · ↓CMF19d</sub> | 22d | -12.00% |  | +1.59% | 3030.00 | — | 20%  |
-| [ASIANPAINT](https://in.tradingview.com/chart/?symbol=NSE:ASIANPAINT)<br><sub>→122Cr · 99Cr · ↑CMF30d</sub> | 30d | -11.20% |  | +2.27% | 2447.00 | — | 20%  |
+| [HDFCBANK](https://in.tradingview.com/chart/?symbol=NSE:HDFCBANK)<br><sub>↗2445Cr · 4427Cr · ↓CMF30d</sub> | 1d | -2.25% |  | -2.25% | 705.00 | — | 20%  |
+| [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>→1006Cr · 1130Cr · ↓CMF18d</sub> | 1d | -1.55% |  | -1.55% | 1019.00 | — | 20%  |
+| [INDIGO](https://in.tradingview.com/chart/?symbol=NSE:INDIGO)<br><sub>→269Cr · 194Cr · ↑CMF21d</sub> | 2d | -0.98% |  | +0.10% | 4935.00 | ✓ | 20%  |
+| [ADANIENT](https://in.tradingview.com/chart/?symbol=NSE:ADANIENT)<br><sub>→426Cr · 503Cr · ↑CMF3d</sub> | 3d | -3.93% |  | +1.40% | 2856.10 | — | 20%  |
+| [SBILIFE](https://in.tradingview.com/chart/?symbol=NSE:SBILIFE)<br><sub>↗264Cr · 223Cr · ↑CMF1d</sub> | 3d | -1.11% |  | -0.34% | 1715.70 | — | 20%  |
+| [SUNPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SUNPHARMA)<br><sub>→300Cr · 217Cr · ↓CMF11d</sub> | 3d | -4.69% |  | -1.30% | 1777.60 | — | 20%  |
+| [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL)<br><sub>↘425Cr · 339Cr · ↓CMF10d</sub> | 3d | -5.63% |  | -0.33% | 177.41 | ✓ | 20%  |
+| [APOLLOHOSP](https://in.tradingview.com/chart/?symbol=NSE:APOLLOHOSP)<br><sub>↗539Cr · 680Cr · ↓CMF3d</sub> | 5d | -10.01% |  | -1.64% | 8000.00 | — | 20%  |
+| [CIPLA](https://in.tradingview.com/chart/?symbol=NSE:CIPLA)<br><sub>→137Cr · 139Cr · ↑CMF0d</sub> | 5d | -5.09% |  | -1.00% | 1330.60 | — | 20%  |
+| [POWERGRID](https://in.tradingview.com/chart/?symbol=NSE:POWERGRID)<br><sub>→253Cr · 179Cr · ↓CMF30d</sub> | 5d | -4.70% |  | +0.81% | 256.60 | — | 20%  |
+| [ULTRACEMCO](https://in.tradingview.com/chart/?symbol=NSE:ULTRACEMCO)<br><sub>→344Cr · 333Cr · ↓CMF20d</sub> | 5d | -2.61% |  | +1.45% | 10865.00 | — | 20%  |
+| [ONGC](https://in.tradingview.com/chart/?symbol=NSE:ONGC)<br><sub>→230Cr · 418Cr · ↓CMF2d</sub> | 6d | -6.00% |  | +1.03% | 224.66 | — | 20%  |
+| [BAJFINANCE](https://in.tradingview.com/chart/?symbol=NSE:BAJFINANCE)<br><sub>↗747Cr · 1186Cr · ↓CMF18d</sub> | 7d | -6.93% |  | +2.38% | 970.90 | — | 20%  |
+| [HDFCLIFE](https://in.tradingview.com/chart/?symbol=NSE:HDFCLIFE)<br><sub>→273Cr · 174Cr · ↑CMF6d</sub> | 7d | -4.84% |  | +0.02% | 534.30 | — | 20%  |
+| [HINDALCO](https://in.tradingview.com/chart/?symbol=NSE:HINDALCO)<br><sub>→391Cr · 398Cr · ↓CMF14d</sub> | 7d | -6.25% |  | -0.08% | 941.10 | — | 20%  |
+| [JSWSTEEL](https://in.tradingview.com/chart/?symbol=NSE:JSWSTEEL)<br><sub>→175Cr · 121Cr · ↓CMF8d</sub> | 7d | -5.09% |  | -0.10% | 1231.80 | — | 20%  |
+| [LT](https://in.tradingview.com/chart/?symbol=NSE:LT)<br><sub>→630Cr · 843Cr · ↓CMF16d</sub> | 7d | -5.00% |  | +1.08% | 3733.40 | — | 20%  |
+| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗314Cr · 217Cr · ↑CMF3d</sub> | 7d | -13.45% | Tertiary quaternary hospital network Delhi NCR North India | -1.58% | 902.50 | — | 20%  |
+| [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK)<br><sub>↗720Cr · 883Cr · ↓CMF1d</sub> | 9d | -2.08% |  | +0.57% | 1224.00 | — | 20%  |
+| [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>→356Cr · 446Cr · ↓CMF26d</sub> | 9d | -6.38% |  | -3.52% | 1199.30 | ✓ | 20%  |
+| [BHARTIARTL](https://in.tradingview.com/chart/?symbol=NSE:BHARTIARTL)<br><sub>→1092Cr · 1205Cr · ↓CMF2d</sub> | 10d | -6.51% |  | +1.66% | 1770.00 | — | 20%  |
+| [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>↗218Cr · 202Cr · ↓CMF30d</sub> | 10d | -8.64% |  | +0.00% | 2580.00 | — | 20%  |
+| [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↗359Cr · 384Cr · ↓CMF26d</sub> | 11d | -8.52% |  | +3.13% | 288.15 | — | 20%  |
+| [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE)<br><sub>↗2416Cr · 2119Cr · ↑CMF3d</sub> | 14d | -6.36% |  | +4.03% | 3168.80 | — | 20%  |
+| [NTPC](https://in.tradingview.com/chart/?symbol=NSE:NTPC)<br><sub>→255Cr · 295Cr · ↓CMF12d</sub> | 14d | -3.72% |  | +1.87% | 321.00 | — | 20%  |
+| [GRASIM](https://in.tradingview.com/chart/?symbol=NSE:GRASIM)<br><sub>↘193Cr · 73Cr · ↓CMF1d</sub> | 15d | -10.49% |  | +0.30% | 2971.00 | — | 20%  |
+| [BEL](https://in.tradingview.com/chart/?symbol=NSE:BEL)<br><sub>→354Cr · 405Cr · ↓CMF13d</sub> | 17d | -6.69% |  | +0.00% | 383.10 | — | 20%  |
+| [RELIANCE](https://in.tradingview.com/chart/?symbol=NSE:RELIANCE)<br><sub>↗1661Cr · 1577Cr · ↓CMF19d</sub> | 18d | -9.22% |  | +1.80% | 1188.70 | — | 20%  |
+| [TCS](https://in.tradingview.com/chart/?symbol=NSE:TCS)<br><sub>→679Cr · 1069Cr · ↓CMF19d</sub> | 21d | -10.35% |  | +1.45% | 2105.00 | — | 20%  |
+| [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM)<br><sub>→286Cr · 499Cr · ↓CMF7d</sub> | 21d | -5.61% |  | -0.07% | 1532.00 | ✓ | 20%  |
+| [BAJAJFINSV](https://in.tradingview.com/chart/?symbol=NSE:BAJAJFINSV)<br><sub>↗176Cr · 180Cr · ↓CMF11d</sub> | 23d | -14.00% |  | +0.31% | 1738.00 | — | 20%  |
+| [ICICIBANK](https://in.tradingview.com/chart/?symbol=NSE:ICICIBANK)<br><sub>→1295Cr · 1675Cr · ↓CMF17d</sub> | 23d | -8.31% | Retail corporate SME banking loans deposits investments | +1.72% | 1333.20 | — | 20%  |
+| [NESTLEIND](https://in.tradingview.com/chart/?symbol=NSE:NESTLEIND)<br><sub>↘133Cr · 210Cr · ↓CMF9d</sub> | 23d | -13.20% |  | -0.67% | 1298.90 | — | 20%  |
+| [SBIN](https://in.tradingview.com/chart/?symbol=NSE:SBIN)<br><sub>→877Cr · 756Cr · ↓CMF21d</sub> | 23d | -9.59% |  | +0.44% | 958.30 | — | 20%  |
+| [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>↗352Cr · 320Cr · ↓CMF4d</sub> | 23d | -10.00% |  | +1.69% | 4592.10 | — | 20%  |
+| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>→274Cr · 259Cr · ↓CMF23d</sub> | 24d | -12.33% |  | +2.10% | 7065.00 | — | 20%  |
+| [SHRIRAMFIN](https://in.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN)<br><sub>→413Cr · 466Cr · ↓CMF13d</sub> | 26d | -13.49% |  | +2.30% | 966.70 | — | 20%  |
+| [M&M](https://in.tradingview.com/chart/?symbol=NSE:M&M)<br><sub>↗730Cr · 906Cr · ↓CMF24d</sub> | 27d | -17.13% |  | -0.23% | 2853.30 | — | 20%  |
 | [JIOFIN](https://in.tradingview.com/chart/?symbol=NSE:JIOFIN)<br><sub>→239Cr · 325Cr · ↓CMF23d</sub> | 32d | -14.42% |  | -0.80% | 218.73 | — | 20%  |
-| [MARUTI](https://in.tradingview.com/chart/?symbol=NSE:MARUTI)<br><sub>↘422Cr · 339Cr · ↓CMF20d</sub> | 33d | -14.37% |  | +0.68% | 12071.00 | — | 20%  |
-| [HINDUNILVR](https://in.tradingview.com/chart/?symbol=NSE:HINDUNILVR)<br><sub>→226Cr · 134Cr · ↓CMF21d</sub> | 38d | -9.27% |  | +0.33% | 1939.90 | — | 20%  |
+| [ASIANPAINT](https://in.tradingview.com/chart/?symbol=NSE:ASIANPAINT)<br><sub>→146Cr · 203Cr · ↓CMF0d</sub> | 35d | -14.24% |  | -1.83% | 2363.00 | — | 20%  |
+| [MARUTI](https://in.tradingview.com/chart/?symbol=NSE:MARUTI)<br><sub>→502Cr · 857Cr · ↓CMF25d</sub> | 38d | -18.33% |  | +1.12% | 11513.00 | — | 20%  |
+| [HINDUNILVR](https://in.tradingview.com/chart/?symbol=NSE:HINDUNILVR)<br><sub>→226Cr · 169Cr · ↓CMF26d</sub> | 43d | -13.96% |  | +0.19% | 1839.50 | — | 20%  |
 
 #### Downtrend TradingView Watchlists by Age
 
-**1 DAY** (3)
+**1 DAY** (4)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BAJAJ-AUTO,NSE:ETERNAL,NSE:ONGC
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BAJAJ-AUTO,NSE:ETERNAL,NSE:HDFCBANK,NSE:INFY
 ```
 
-**2 DAYS** (7)
+**2 DAYS** (1)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ADANIENT,NSE:BAJFINANCE,NSE:HDFCLIFE,NSE:HINDALCO,NSE:INDIGO,NSE:JSWSTEEL,NSE:LT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:INDIGO
+```
+
+**3 DAYS** (4)
+```
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ADANIENT,NSE:SBILIFE,NSE:SUNPHARMA,NSE:TATASTEEL
 ```
 
 **4-5 DAYS** (4)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:AXISBANK,NSE:BHARTIARTL,NSE:HCLTECH,NSE:TRENT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:APOLLOHOSP,NSE:CIPLA,NSE:POWERGRID,NSE:ULTRACEMCO
 ```
 
-**6-10 DAYS** (6)
+**6-10 DAYS** (11)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BSE,NSE:GRASIM,NSE:KOTAKBANK,NSE:MAXHEALTH,NSE:NTPC,NSE:TMPV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:AXISBANK,NSE:BAJFINANCE,NSE:BHARTIARTL,NSE:HCLTECH,NSE:HDFCLIFE,NSE:HINDALCO,NSE:JSWSTEEL,NSE:LT,NSE:MAXHEALTH,NSE:ONGC,NSE:TRENT
 ```
 
-**11-15 DAYS** (3)
+**11-15 DAYS** (4)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BEL,NSE:RELIANCE,NSE:TATACONSUM
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BSE,NSE:GRASIM,NSE:NTPC,NSE:TMPV
 ```
 
 **15 DAYS+** (16)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ASIANPAINT,NSE:BAJAJFINSV,NSE:EICHERMOT,NSE:HINDUNILVR,NSE:ICICIBANK,NSE:INFY,NSE:JIOFIN,NSE:M&M,NSE:MARUTI,NSE:NESTLEIND,NSE:SBIN,NSE:SHRIRAMFIN,NSE:SUNPHARMA,NSE:TCS,NSE:TECHM,NSE:TITAN
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ASIANPAINT,NSE:BAJAJFINSV,NSE:BEL,NSE:EICHERMOT,NSE:HINDUNILVR,NSE:ICICIBANK,NSE:JIOFIN,NSE:M&M,NSE:MARUTI,NSE:NESTLEIND,NSE:RELIANCE,NSE:SBIN,NSE:SHRIRAMFIN,NSE:TCS,NSE:TECHM,NSE:TITAN
 ```
 ---
 
