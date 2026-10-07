@@ -66,6 +66,8 @@ All scanners are triggered by PowerShell scripts that log to `logs/` and auto-co
                                  #   -> trailing: run_institutional_footprint_scanner.ps1 (needs today's delivery%)
 .\run_wt_squeeze_dashboard.ps1  # 4:40 PM — WT + Squeeze combined dashboard (after both above)
 # IPO listings tracker + chart dashboard -- no standalone schedule, runs inside
+# IPOWatchlistUpdate reads NSE upcoming-issues (series EQ only) into both watchlists
+# before FetchData, once per weekday via the existing 15:35 IST orchestrator.
 # run_all_scanners.ps1 (Run-Scanner "IPOScanner" after Near52WHigh, "IPOChartDashboard"
 # after Near52WHighChartDash)
 .\run_rs_weekly_ema9_scanner.ps1  # runs in NSE_AllScanners, after WeeklyZL — weekly RS EMA9 flat/rising trend list
@@ -205,7 +207,10 @@ section but as its own standalone pipeline (the IPO list is far larger and turns
 `ipo_scans.md` stays gate-free (informational source list); the chart dashboard applies a
 weekly-RS gate on top of it.
 
-1. `ipo_listings.txt` — one NSE symbol per line, `#`-comments/blank lines ignored
+1. `ipo_listings.txt` — one NSE symbol per line, `#`-comments/blank lines ignored.
+   `ipo_watchlist_updater.py` appends NSE EQ issues from the upcoming-issues IPO
+   feed to both this file and `new_listings.txt` before the daily data fetch;
+   existing entries are retained, and manual additions remain supported.
 2. `ipo_scanner.py` reuses `near_52w_high_scanner.read_new_listings()` / `analyse_new_listing()` /
    `_new_listing_rows()` (no gate — just close/day-chg/days-tracked/circuit/liq/CMF/delivery tags);
    writes `ipo_scans/ipo_scans.md` (dated + `_latest`-equivalent undated file)

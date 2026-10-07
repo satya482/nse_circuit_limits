@@ -33,7 +33,7 @@ def build_markdown(entries: list[dict], circuit: dict[str, tuple]) -> str:
         f"# NSE IPO Listings Watchlist - {TODAY}",
         f"*Generated {datetime.now().strftime('%Y-%m-%d %H:%M')} IST*",
         "",
-        "*(manual watchlist from `ipo_listings.txt` -- no signal gate, informational only)*",
+        "*(watchlist from `ipo_listings.txt`, with daily NSE EQ IPO additions -- no signal gate, informational only)*",
         "",
         f"**Tracked: {len(entries)}**",
         "",

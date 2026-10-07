@@ -9,6 +9,18 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-07 by Codex, daily NSE EQ IPO discovery:
+
+- `ipo_watchlist_updater.py` reads the public NSE upcoming-issues IPO JSON feed,
+  filters strictly on `series == EQ`, and appends missing symbols to both
+  `new_listings.txt` and `ipo_listings.txt`, preserving manual entries and headers.
+- `run_all_scanners.ps1` runs `run_ipo_watchlist_updater.ps1` before FetchData
+  on the existing weekday 15:35 IST schedule. Fetch/parse failures mark this step
+  failed but the remaining pipeline continues with the existing lists.
+- The runner commits only the two watchlists when changed and pushes immediately.
+  No automatic removals or historical IPO backfill. Today's live feed had no EQ
+  issues; both lists were unchanged. Ten focused tests and PowerShell syntax pass.
+
 Updated 2026-10-07 by Codex, IPO chart parity:
 
 - `ipo_chart_dashboard.py` matches `charts.html` with alphabetical industry grouping
