@@ -1,15 +1,38 @@
-study("DARVAS BOX", overlay=true, shorttitle="DARVAS")
-boxp = input(5, "BOX LENGTH")
+//@version=6
+indicator("DARVAS BOX", overlay=true, shorttitle="DARVAS", max_lines_count=2)
+boxp = input.int(5, "BOX LENGTH", minval=3)
 
-LL = lowest(low, boxp)
-k1 = highest(high, boxp)
-k2 = highest(high, boxp-1)
-k3 = highest(high, boxp-2)
+LL = ta.lowest(low, boxp)
+k1 = ta.highest(high, boxp)
+k2 = ta.highest(high, boxp-1)
+k3 = ta.highest(high, boxp-2)
 
-NH = valuewhen(high > k1[1], high, 0)
+newHigh = high > k1[1]
+NH = ta.valuewhen(newHigh, high, 0)
 box1 = k3 < k2
-TopBox = valuewhen(barssince(high > k1[1]) == boxp-2 and box1, NH, 0)
-BottomBox = valuewhen(barssince(high > k1[1]) == boxp-2 and box1, LL, 0)
+confirmed = ta.barssince(newHigh) == boxp-2 and box1
+TopBox = ta.valuewhen(confirmed, NH, 0)
+BottomBox = ta.valuewhen(confirmed, LL, 0)
 
-plot(TopBox, linewidth=1, color=green, title="TBbox")
-plot(BottomBox, linewidth=1, color=red, title="BBbox")
+plot(TopBox, linewidth=1, color=color.green, title="TBbox")
+plot(BottomBox, linewidth=1, color=color.red, title="BBbox")
+
+// Project the current levels five bars ahead (five trading days on a daily chart).
+// Reuse two lines so historical projections do not accumulate.
+var line topProjection = line.new(na, na, na, na, color=color.green, width=1)
+var line bottomProjection = line.new(na, na, na, na, color=color.red, width=1)
+if barstate.islast
+    line.set_xy1(topProjection, bar_index, TopBox)
+    line.set_xy2(topProjection, bar_index + 5, TopBox)
+    line.set_xy1(bottomProjection, bar_index, BottomBox)
+    line.set_xy2(bottomProjection, bar_index + 5, BottomBox)
+
+// On realtime bars, close is the latest traded price.
+// Select Once Per Bar when creating alerts to trigger before candle close.
+// Require unchanged levels so a newly confirmed box alone cannot cause an alert.
+topPriceCross = ta.cross(close, TopBox)
+bottomPriceCross = ta.cross(close, BottomBox)
+topCross = topPriceCross and not na(TopBox[1]) and TopBox == TopBox[1]
+bottomCross = bottomPriceCross and not na(BottomBox[1]) and BottomBox == BottomBox[1]
+alertcondition(topCross, "Price Crosses Box Top", 'DARVAS TOP CROSS | {{exchange}}:{{ticker}} | Price: {{close}} | Top: {{plot("TBbox")}} | TF: {{interval}}')
+alertcondition(bottomCross, "Price Crosses Box Bottom", 'DARVAS BOTTOM CROSS | {{exchange}}:{{ticker}} | Price: {{close}} | Bottom: {{plot("BBbox")}} | TF: {{interval}}')
