@@ -37,7 +37,7 @@
 | [PAGEIND](https://in.tradingview.com/chart/?symbol=NSE:PAGEIND)<br><sub>↑CMF2d</sub> | Jockey apparel manufacturing, distribution, India South Asia | 1w | TOUCH | 1w | +2.5% | -1.05% | 37570.00 | — | 20%  |
 | [ALKYLAMINE](https://in.tradingview.com/chart/?symbol=NSE:ALKYLAMINE)<br><sub>↑CMF1d</sub> | Aliphatic amines manufacturer pharma agrochemical water treatment | 1w | TOUCH | 1w | +10.2% | -2.21% | 1918.90 | 4w | 20%  |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND)<br><sub>↑CMF0d</sub> | Ferrous castings, steel alloys, integrated mining to foundry | 1w | TOUCH | 1w | +4.3% | +0.84% | 95.24 | 3w | 20% 🟦 |
-| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↓CMF0d · DEL83%(T-1)</sub> | Luxury watch retail, multi-brand, Indian affluent consumers | 1w | TOUCH | 1w | +4.1% | +0.52% | 2634.80 | — | 20%  |
+| [ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD)<br><sub>↓CMF0d</sub> | Luxury watch retail, multi-brand, Indian affluent consumers | 1w | TOUCH | 1w | +4.1% | +0.52% | 2634.80 | — | 20%  |
 | [BALUFORGE](https://in.tradingview.com/chart/?symbol=NSE:BALUFORGE)<br><sub>↓CMF0d</sub> | Precision forged crankshafts and components for automotive | 1w | TOUCH | 1w | +3.8% | -3.69% | 507.50 | — | 20% 🟦 |
 | [CLEANMAX](https://in.tradingview.com/chart/?symbol=NSE:CLEANMAX)<br><sub>↓CMF30d</sub> | Solar energy systems for commercial industrial facilities | 1w | TOUCH | 1w | +7.0% | -0.24% | 1387.50 | 6w | 20%  |
 | [LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS)<br><sub>↓CMF5d</sub> | Rice and rice products FMCG global consumer foods | 1w | TOUCH | 1w | +4.8% | +2.46% | 418.20 | — | 20%  |
