@@ -9,6 +9,14 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-07 by Codex, IPO chart parity:
+
+- `ipo_chart_dashboard.py` matches `charts.html` with alphabetical industry grouping
+  and default-visible WaveTrend pane, Darvas Box overlay, and 52W High line.
+- IPO symbol source, weekly RS EMA9 gate, and five-bar minimum remain unchanged.
+- Regenerated `dashboard/ipo.html` (66 symbols) and `dashboard/charts.html`
+  (152 symbols) from local OHLC history; focused renderer checks: 117 passed.
+
 Updated 2026-10-02 by Codex, chart overlay defaults:
 
 - `tradingview_watchlist_dashboard.py` enables 52W High by default in `dashboard/charts.html`.

@@ -13,7 +13,7 @@ filtered view of it.
 
 Data source: .ohlc_data/market.db (via ohlc_db.load_ohlc_many)
 Symbol source: ipo_scans/ipo_scans.md (TV-paste block)
-Output: dashboard/ipo_charts.html
+Output: dashboard/ipo.html
 """
 
 import os
@@ -107,6 +107,7 @@ def main() -> None:
     industries = resolve_industries(gated_symbols, INDUSTRY_CACHE, TODAY)
     records, skipped = build_chart_data(
         ohlc_map, tiers, industries=industries, min_bars=MIN_BARS, bench_df=bench_df,
+        include_wt_pane=True,
     )
     print(f"[ipo_chart_dashboard] {len(records)} charted, {skipped} skipped (insufficient OHLCV or annotation failure)")
 
@@ -115,7 +116,10 @@ def main() -> None:
         return
 
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
-    html = build_html(records, TODAY, title="IPO Listings Charts", high52w_default_visible=False)
+    html = build_html(
+        records, TODAY, title="IPO Listings Charts", group_sort="alpha",
+        wt_pane_enabled=True, darvas_enabled=True, high52w_default_visible=True,
+    )
     tmp_path = OUTPUT_PATH + ".tmp"
     with open(tmp_path, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(html)
