@@ -1150,6 +1150,10 @@ def build_html(
     wt_pane_enabled: bool = False,
     darvas_enabled: bool = False,
 ) -> str:
+    price_data_date = max(
+        (r['bars'][-1][0] for r in records if r.get('bars')),
+        default='unavailable',
+    )
     data_json = (
         json.dumps(records)
         .replace("&", r"\u0026")
@@ -1226,6 +1230,7 @@ body{{background:#0d1117;color:#e6edf3;font-family:system-ui,sans-serif;margin:0
 h1{{font-size:1.1rem}}
 #controls{{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px;margin:8px 0}}
 #controls label{{font-size:.85rem;color:#8b949e;display:flex;align-items:center;gap:4px}}
+.chart-summary{{font-size:.85rem;font-weight:600;display:flex;flex-wrap:wrap;gap:4px 12px}}
 #controls input[type=text]{{background:#0d1117;color:#e6edf3;border:1px solid #30363d;border-radius:4px;padding:4px 6px;width:120px}}
 #q{{width:100%;box-sizing:border-box;padding:8px;margin:8px 0;background:#161b22;color:#e6edf3;border:1px solid #30363d;border-radius:6px}}
 #grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,640px),1fr));gap:10px}}
@@ -1260,6 +1265,7 @@ h1{{font-size:1.1rem}}
 <h1>{title} - {as_of}</h1>
 {subtitle_html}
 <div id="controls">
+  <span class="chart-summary"><span>Symbols: {len(records)}</span><span>Price data: {_escape(price_data_date)}</span></span>
   <label>Up color <input type="color" id="upColor" value="#26a69a"></label>
   <label>Down color <input type="color" id="downColor" value="#ef5350"></label>
   <label>EMAs <input type="text" id="emaPeriods" value="{ema_periods}"></label>

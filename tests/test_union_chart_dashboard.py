@@ -509,6 +509,27 @@ def test_build_html_renders_day_change_and_sort_metadata():
     assert '<option value="day-asc">' in html
 
 
+def test_controls_show_total_symbols_and_latest_price_date():
+    first = _chart_record()
+    second = _chart_record()
+    second['symbol'] = 'SECOND'
+    first['bars'] = [['2026-10-05', 100, 101, 99, 100, 1000]]
+    second['bars'] = [['2026-10-06', 100, 101, 99, 100, 1000]]
+    html = build_html([first, second], '2026-10-07')
+    controls = html.split('<div id="controls">', 1)[1].split('</div>', 1)[0]
+    assert 'Symbols: 2' in controls
+    assert 'Price data: 2026-10-06' in controls
+    assert 'Price data: 2026-10-07' not in controls
+    assert controls.index('Symbols: 2') < controls.index('Up color')
+
+
+def test_empty_controls_do_not_claim_generation_date_as_price_date():
+    html = build_html([], '2026-10-07')
+    controls = html.split('<div id="controls">', 1)[1].split('</div>', 1)[0]
+    assert 'Symbols: 0' in controls
+    assert 'Price data: unavailable' in controls
+
+
 def test_build_html_chart_background_pure_black_no_grid_lines():
     html = build_html([], "2026-08-27")
     build_chart_body = html.split("function buildChart(symbol) {", 1)[1].split(

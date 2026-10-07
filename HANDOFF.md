@@ -9,6 +9,15 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-07 by Codex, fixed chart-header summary:
+
+- The shared chart renderer shows total charted symbols and the latest embedded
+  candle date in the sticky Up/Down color controls bar. The date is price-data
+  freshness, not dashboard generation time; empty pages show `unavailable`.
+- Updated `dashboard/ipo.html`, `dashboard/charts.html`, and
+  `dashboard/near_52w_high_charts.html` without changing embedded records.
+  Focused renderer checks: 119 passed.
+
 Updated 2026-10-07 by Codex, daily NSE EQ IPO discovery:
 
 - `ipo_watchlist_updater.py` reads the public NSE upcoming-issues IPO JSON feed,
