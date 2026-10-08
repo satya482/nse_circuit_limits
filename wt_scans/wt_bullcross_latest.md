@@ -37,7 +37,7 @@
 ### 📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400 (25)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · DEL71%(T-1) · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
+| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
 | [BHEL](https://in.tradingview.com/chart/?symbol=NSE:BHEL)<br><sub>📶W9 · 🚀SS · ↑CMF30d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 64 | ↑88 | ↑1.016 | ↑1d | SQ·PV | +1.6% | -7.84/-16.13 | +1.64% | 20% |
 | [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN)<br><sub>📶W9 · 🚀SS · ↓CMF6d</sub> | ✓ SAFE | Residential mortgage loans for home purchase and construction | ⚡ BULL_ANY_PPV | 54 | 🔄54 | ↑1.019 | ↑1d | PV | +4.2% | -21.25/-21.7 | +4.19% | 20% |
 | [VEDL](https://in.tradingview.com/chart/?symbol=NSE:VEDL)<br><sub>📶W9 · 🚀SS · ↑CMF19d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 54 | 🔄3 | ↑1.022 | ↑1d | PV | +4.1% | -36.44/-42.32 | +4.14% | 20% |
@@ -72,7 +72,7 @@
 ### 📶 RS-CONFIRMED — RS strong (↑) or transitioning (🔄) vs NIFTY MIDSML 400 (34)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · DEL71%(T-1) · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
+| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
 | [BHEL](https://in.tradingview.com/chart/?symbol=NSE:BHEL)<br><sub>📶W9 · 🚀SS · ↑CMF30d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 64 | ↑88 | ↑1.016 | ↑1d | SQ·PV | +1.6% | -7.84/-16.13 | +1.64% | 20% |
 | [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN)<br><sub>📶W9 · 🚀SS · ↓CMF6d</sub> | ✓ SAFE | Residential mortgage loans for home purchase and construction | ⚡ BULL_ANY_PPV | 54 | 🔄54 | ↑1.019 | ↑1d | PV | +4.2% | -21.25/-21.7 | +4.19% | 20% |
 | [VEDL](https://in.tradingview.com/chart/?symbol=NSE:VEDL)<br><sub>📶W9 · 🚀SS · ↑CMF19d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 54 | 🔄3 | ↑1.022 | ↑1d | PV | +4.1% | -36.44/-42.32 | +4.14% | 20% |
@@ -116,7 +116,7 @@
 ### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze (12)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · DEL71%(T-1) · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
+| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>📶W9 · RVOL11x · ↓CMF30d · ÷DIV</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 89 | 🔄50 | ↑1.038 | ↑1d | SQ·PV | +6.8% | 18.92/14.02 | +6.83% | 20% 🟦 |
 | [BHEL](https://in.tradingview.com/chart/?symbol=NSE:BHEL)<br><sub>📶W9 · 🚀SS · ↑CMF30d</sub> | ✓ SAFE |  | ⚡ BULL_ANY_PPV | 64 | ↑88 | ↑1.016 | ↑1d | SQ·PV | +1.6% | -7.84/-16.13 | +1.64% | 20% |
 | [EXCELINDUS](https://in.tradingview.com/chart/?symbol=NSE:EXCELINDUS)<br><sub>📶W9 · ↓CMF16d · 🎯SLING</sub> | ⚠ CAUTION |  | 🟡 BULL_OS_L2 | 70 | 🔄50 | ↓0.989 | ↓37d | SQ | -6.8% | -54.83/-55.69 | -0.56% | 20% |
 | [SRF](https://in.tradingview.com/chart/?symbol=NSE:SRF)<br><sub>📶W9 · ↓CMF30d</sub> | ⚠ CAUTION | Technical textiles, films, chemicals for automotive, industrial, packaging | 📈 BULL_ANY_MID | 86 | 🔄37 | ↑1.002 | ↓14d | SQ | -1.1% | -41.0/-43.83 | +1.02% | 20% |

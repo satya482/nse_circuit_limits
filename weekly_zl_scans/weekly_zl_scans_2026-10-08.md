@@ -52,7 +52,7 @@
 | [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST)<br><sub>↑CMF4d</sub> | Ductile grey iron castings commercial vehicle tractor sectors | 1w | ABOVE | 1w | +16.9% | -3.26% | 141.52 | — | 20%  |
 | [KRISHNADEF](https://in.tradingview.com/chart/?symbol=NSE:KRISHNADEF)<br><sub>↑CMF3d</sub> | Defense equipment and dairy machinery manufacturer, engineering sector | 1w | ABOVE | 1w | +24.0% | -0.10% | 1240.80 | — | 20%  |
 | [JAIBALAJI](https://in.tradingview.com/chart/?symbol=NSE:JAIBALAJI)<br><sub>↑CMF1d</sub> | Steel manufacturer, value-added products, automotive and appliances | 1w | ABOVE | 1w | +11.2% | +1.84% | 68.61 | 3w | 5%  |
-| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>↓CMF30d · DEL71%(T-1)</sub> |  | 1w | ABOVE | 1w | +4.0% | +6.83% | 153.25 | 6w | 20% 🟦 |
+| [KOTIC](https://in.tradingview.com/chart/?symbol=NSE:KOTIC)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +4.0% | +6.83% | 153.25 | 6w | 20% 🟦 |
 | [DALMIASUG](https://in.tradingview.com/chart/?symbol=NSE:DALMIASUG)<br><sub>↑CMF3d</sub> | Sugar processing, distillery, power generation, agro-industrial | 1w | ABOVE | 1w | +8.1% | -4.18% | 428.95 | — | 20%  |
 | [FAIRCHEMOR](https://in.tradingview.com/chart/?symbol=NSE:FAIRCHEMOR)<br><sub>↓CMF30d</sub> | Oleo chemicals and nutraceutical intermediates for paints cosmetics | 1w | ABOVE | 1w | +9.0% | +2.42% | 720.90 | — | 20%  |
 | [VMART](https://in.tradingview.com/chart/?symbol=NSE:VMART)<br><sub>↑CMF2d</sub> | Affordable apparel retail chain serving tier II III IV cities | 1w | ABOVE | 1w | +8.7% | +0.61% | 811.15 | — | 20%  |
