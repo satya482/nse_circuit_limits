@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS High-Line Cross — 2026-10-09
-*Generated 2026-10-09 15:45 IST*
+## RS High-Line Cross — 2026-10-15
+*Generated 2026-10-15 18:00 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,29 +17,27 @@
 
 ---
 
-**12 signals — RS high-line cross today**
+**10 signals — RS high-line cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:COFORGE,NSE:CUB,NSE:CYIENT,NSE:ZENSARTECH,NSE:SGMART,NSE:TARIL,NSE:COLPAL,NSE:BSE,NSE:PERSISTENT,NSE:MPHASIS,NSE:GALAXYSURF,NSE:SHADOWFAX
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:TATACOMM,NSE:RITES,NSE:SAMMAANCAP,NSE:CEMPRO,NSE:BLS,NSE:GALLANTT,NSE:ZENTEC,NSE:SOUTHBANK,NSE:ANGELONE,NSE:SKYGOLD
 ```
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE) [20%]<br><sub>↓CMF0d</sub> | IT services, digital transformation, financial and travel sectors | 1867.90 | +2.95% | 1857.90 | +0.54% | ↑ | ↑1d | 1d | +3.0% | ● | 3.4% | 64 | →380Cr · 430Cr |
-| [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) [20%]<br><sub>↑CMF0d</sub> | Private bank serving SMEs, MSMEs, retail customers South India | 231.42 | +5.16% | 226.30 | +2.26% | ↑ | ↑1d | 1d | +5.2% | ● | 3.8% | 64 | ↗70Cr · 85Cr |
-| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT) [20%]<br><sub>↑CMF7d</sub> | Engineering services, design, manufacturing digital transformation | 1158.80 | +6.83% | 1129.50 | +2.59% | ↑ | ↑1d | 1d | +6.8% | ● | 4.7% | 59 | ↗124Cr · 490Cr |
-| [ZENSARTECH](https://in.tradingview.com/chart/?symbol=NSE:ZENSARTECH) [20%]<br><sub>↓CMF30d</sub> | Digital solutions and IT services for global enterprises | 448.55 | +1.53% | 446.45 | +0.47% | ↑ | ↑6d | 6d | +3.3% | ● | 3.7% | 59 | ↘64Cr · 75Cr |
-| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↓CMF22d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 775.60 | +4.32% | 757.20 | +2.43% | ↑ | ↑1d | 1d | +4.3% | ● | 4.3% | 59 | ↗19Cr · 24Cr |
-| [TARIL](https://in.tradingview.com/chart/?symbol=NSE:TARIL) [20%]<br><sub>↓CMF30d</sub> | Power transformers, furnace transformers, electrical equipment manufacturing | 290.65 | +2.79% | 288.20 | +0.85% | ↑ | ↑7d | 7d | +7.6% | ● | 4.7% | 58 | ↗239Cr · 68Cr |
-| [COLPAL](https://in.tradingview.com/chart/?symbol=NSE:COLPAL) [20%]<br><sub>↑CMF0d</sub> | Toothpaste, toothbrush, mouthwash maker for mass consumers | 1817.80 | +4.73% | 1800.90 | +0.94% | 🔄 | ↑1d | 1d | +4.7% | — | 3.2% | 54 | →111Cr · 654Cr |
-| [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE) [20%]<br><sub>↑CMF3d</sub> |  | 3168.80 | +4.03% | 3139.00 | +0.95% | 🔄 | ↓15d | 15d | -4.2% | — | 3.6% | 45 | ↗2416Cr · 2119Cr |
-| [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT) [20%]<br><sub>↓CMF18d</sub> | Digital engineering services, cloud modernization, enterprise software | 5770.00 | +5.52% | 5553.50 | +3.90% | ↑ | ↑5d | 5d | +7.5% | — | 3.1% | 15 | →242Cr · 446Cr |
-| [MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS) [20%]<br><sub>↓CMF21d</sub> | IT services, cloud and cognitive transformation, enterprise clients | 2360.00 | +2.46% | 2317.70 | +1.83% | ↑ | ↑5d | 5d | +4.9% | — | 3.1% | 15 | ↗137Cr · 178Cr |
-| [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF) [20%]<br><sub>↓CMF7d</sub> | Surfactants specialty chemicals for detergents cosmetics | 2502.20 | +3.97% | 2449.00 | +2.17% | ↑ | ↑9d | 9d | +14.2% | — | 4.2% | 11 | ↗19Cr · 24Cr |
-| [SHADOWFAX](https://in.tradingview.com/chart/?symbol=NSE:SHADOWFAX) [20%]<br><sub>↑CMF27d</sub> | Digital commerce logistics network, express delivery, asset-light model | 295.90 | +3.68% | 291.90 | +1.37% | ↑ | ↑14d | 14d | +18.1% | — | 4.0% | 6 | →141Cr · 169Cr |
+| [TATACOMM](https://in.tradingview.com/chart/?symbol=NSE:TATACOMM) [20%]<br><sub>↑CMF5d</sub> | Global telecom, voice data internet, enterprise managed services | 1749.70 | +5.47% | 1698.70 | +3.00% | 🔄 | ↑1d | 1d | +5.5% | ● | 4.2% | 89 | ↗126Cr · 890Cr |
+| [RITES](https://in.tradingview.com/chart/?symbol=NSE:RITES) [20%]<br><sub>↑CMF11d</sub> | Railway engineering consultancy and transport infrastructure design | 211.80 | +5.50% | 200.80 | +5.48% | 🔄 | ↑1d | 1d | +5.5% | ● | 3.7% | 89 | ↘52Cr · 420Cr |
+| [SAMMAANCAP](https://in.tradingview.com/chart/?symbol=NSE:SAMMAANCAP) [20%]<br><sub>↓CMF30d</sub> | Housing finance and loan against property NBFC | 135.40 | +2.03% | 134.80 | +0.45% | 🔄 | ↑1d | 1d | +2.0% | — | 3.5% | 59 | ↗68Cr · 197Cr |
+| [CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO) [5% 🟥]<br><sub>↓CMF16d</sub> | Heavy civil engineering and infrastructure construction EPC services | 1220.00 | +5.77% | 1179.00 | +3.48% | 🔄 | ↑1d | 1d | +5.8% | — | 5.2% | 49 | ↗64Cr · 249Cr |
+| [BLS](https://in.tradingview.com/chart/?symbol=NSE:BLS) [20%]<br><sub>↓CMF17d</sub> | Visa passport consular outsourcing for governments globally | 225.50 | +2.46% | 221.60 | +1.76% | ↑ | ↑2d | 2d | +3.0% | — | 3.4% | 23 | ↗38Cr · 283Cr |
+| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT) [5% 🟥]<br><sub>↑CMF3d</sub> | Integrated steel manufacturing with mining operations eastern India | 619.80 | +9.18% | 586.00 | +5.77% | ↑ | ↑4d | 4d | +23.0% | — | 6.2% | 16 | ↗360Cr · 1760Cr |
+| [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC) [20%]<br><sub>↑CMF2d</sub> | Defense simulation systems, counter-drone tech, armed forces | 1701.00 | +3.13% | 1683.90 | +1.02% | ↑ | ↑4d | 4d | +11.3% | — | 3.8% | 16 | →45Cr · 46Cr |
+| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK) [20%]<br><sub>↑CMF16d</sub> |  | 51.50 | +3.75% | 49.70 | +3.62% | ↑ | ↑5d | 5d | +11.0% | — | 3.7% | 15 | →92Cr · 395Cr |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) [20%]<br><sub>↑CMF2d</sub> | Retail brokerage app offering stocks commodities currencies | 313.50 | +2.43% | 310.40 | +1.00% | ↑ | ↑8d | 8d | +9.9% | — | 3.3% | 12 | ↗203Cr · 362Cr |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) [20%]<br><sub>↑CMF5d</sub> | Gold jewelry manufacturer selling to retail jewelers B2B | 1008.35 | +4.20% | 987.85 | +2.08% | ↑ | ↑13d | 13d | +26.5% | — | 4.4% | 7 | ↗212Cr · 337Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:COFORGE,NSE:CUB,NSE:CYIENT,NSE:ZENSARTECH,NSE:SGMART,NSE:TARIL,NSE:COLPAL,NSE:BSE,NSE:PERSISTENT,NSE:MPHASIS,NSE:GALAXYSURF,NSE:SHADOWFAX
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:TATACOMM,NSE:RITES,NSE:SAMMAANCAP,NSE:CEMPRO,NSE:BLS,NSE:GALLANTT,NSE:ZENTEC,NSE:SOUTHBANK,NSE:ANGELONE,NSE:SKYGOLD
 ```
 
 ---
