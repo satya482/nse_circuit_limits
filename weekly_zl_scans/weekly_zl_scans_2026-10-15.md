@@ -31,7 +31,7 @@
 | [PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD)<br><sub>↓CMF12d</sub> | Retail malls, offices, hotels, mixed-use real estate developer | 1w | TOUCH | 1w | +6.1% | +1.94% | 1924.00 | — | 20%  |
 | [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA)<br><sub>↑CMF3d</sub> | NBFC gold loans MSMEs self-employed individuals retail finance | 1w | TOUCH | 1w | +7.2% | -1.91% | 156.89 | 12w | 20%  |
 | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN)<br><sub>↑CMF1d</sub> | Precision auto parts manufacturing for powertrains and aluminum | 1w | TOUCH | 1w | +7.6% | -0.37% | 10956.00 | — | 20%  |
-| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>↑CMF2d</sub> | Specialty chemicals and intermediates manufacturer for pharmaceuticals | 1w | TOUCH | 1w | +10.0% | +1.67% | 506.20 | 9w | 20%  |
+| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>↑CMF2d · DEL67%</sub> | Specialty chemicals and intermediates manufacturer for pharmaceuticals | 1w | TOUCH | 1w | +10.0% | +1.67% | 506.20 | 9w | 20%  |
 | [NIACL](https://in.tradingview.com/chart/?symbol=NSE:NIACL)<br><sub>↑CMF3d</sub> | General insurance underwriting and claims across India | 1w | TOUCH | 1w | +12.7% | -1.42% | 182.76 | — | 20%  |
 | [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML)<br><sub>↑CMF7d</sub> | Heavy equipment manufacturing for mining construction defense railways | 1w | TOUCH | 1w | +1.8% | -3.29% | 1928.00 | — | 20%  |
 | [MUFIN](https://in.tradingview.com/chart/?symbol=NSE:MUFIN)<br><sub>↑CMF2d</sub> | EV financing NBFC for electric vehicle ecosystem | 1w | TOUCH | 1w | +6.9% | -0.59% | 139.37 | 3w | 20%  |
