@@ -1,3 +1,5 @@
+> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+
 # NSE Circuit Limit Dashboard
 
 _Last updated: 2026-10-15 18:04:09_
@@ -33,3 +35,7 @@ Changes in your TradingView watchlist:
 | 03-AUG-2026 | [**THANGAMAYL**](https://in.tradingview.com/chart/?symbol=NSE:THANGAMAYL) | THANGAMAYIL JEWELLERY LIMITED | 10% | 5% 🟥 Red |
 | 03-AUG-2026 | [**SMLMAH**](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH) | SML MAHINDRA LIMITED | 20% | 10% 🟨 Yellow |
 | 27-JUL-2026 | [**DIACABS**](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | DIAMOND POWER INFRASTRUCTURE LIMITED | 10% | 5% 🟥 Red |
+
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
