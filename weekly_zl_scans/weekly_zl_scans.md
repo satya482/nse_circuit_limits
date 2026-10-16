@@ -29,7 +29,7 @@
 | [TATACOMM](https://in.tradingview.com/chart/?symbol=NSE:TATACOMM)<br><sub>↓CMF0d</sub> | Global telecom, voice data internet, enterprise managed services | 1w | TOUCH | 1w | +5.2% | -0.39% | 1742.80 | — | 20%  |
 | [IDBI](https://in.tradingview.com/chart/?symbol=NSE:IDBI)<br><sub>↑CMF3d</sub> | Retail corporate MSME lending deposit bank | 1w | TOUCH | 1w | +1.2% | +1.26% | 84.12 | 2w | 20%  |
 | [SHRIPISTON](https://in.tradingview.com/chart/?symbol=NSE:SHRIPISTON)<br><sub>↓CMF10d</sub> | Pistons rings valves manufacturer automotive OEM export | 1w | TOUCH | 1w | +8.1% | +6.68% | 4629.90 | — | 20%  |
-| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>↑CMF3d · DEL67%(T-1)</sub> | Specialty chemicals and intermediates manufacturer for pharmaceuticals | 1w | TOUCH | 1w | +9.3% | -0.63% | 503.00 | 9w | 20%  |
+| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND)<br><sub>↑CMF3d</sub> | Specialty chemicals and intermediates manufacturer for pharmaceuticals | 1w | TOUCH | 1w | +9.3% | -0.63% | 503.00 | 9w | 20%  |
 | [PNGJL](https://in.tradingview.com/chart/?symbol=NSE:PNGJL)<br><sub>↓CMF12d</sub> | Gold silver diamond jewellery retail Maharashtra heritage brand | 1w | TOUCH | 1w | +0.6% | +2.02% | 603.35 | — | 20%  |
 | [JSL](https://in.tradingview.com/chart/?symbol=NSE:JSL)<br><sub>↑CMF30d</sub> | Stainless steel flat products manufacturer automotive railways construction | 1w | TOUCH | 1w | +3.9% | +2.02% | 736.55 | 7w | 20%  |
 | [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML)<br><sub>↓CMF0d</sub> | Heavy equipment manufacturing for mining construction defense railways | 1w | TOUCH | 1w | +3.9% | +2.10% | 1968.50 | — | 20%  |
@@ -82,9 +82,9 @@
 | [SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF)<br><sub>↑CMF0d</sub> | Civil construction contractor for infrastructure projects | 1w | ABOVE | 1w | +12.1% | +5.48% | 275.84 | 9w | 20%  |
 | [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN)<br><sub>↑CMF0d</sub> | AI-driven software engineering, digital transformation, enterprise clients | 1w | ABOVE | 1w | +7.6% | +3.10% | 168.05 | 12w | 20%  |
 | [SEJALLTD](https://in.tradingview.com/chart/?symbol=NSE:SEJALLTD)<br><sub>↑CMF21d</sub> |  | 1w | ABOVE | 1w | +29.8% | -7.01% | 870.35 | 5w | 20%  |
-| [GRMOVER](https://in.tradingview.com/chart/?symbol=NSE:GRMOVER)<br><sub>↑CMF4d</sub> | Basmati rice milling processing domestic export markets | 1w | ABOVE | 1w | +18.2% | +1.06% | 94.61 | — | 20% 🟦 |
+| [GRMOVER](https://in.tradingview.com/chart/?symbol=NSE:GRMOVER)<br><sub>↑CMF4d · DEL35%</sub> | Basmati rice milling processing domestic export markets | 1w | ABOVE | 1w | +18.2% | +1.06% | 94.61 | — | 20% 🟦 |
 | [GAEL](https://in.tradingview.com/chart/?symbol=NSE:GAEL)<br><sub>↑CMF5d</sub> | Corn starch soya derivatives feed edible oils processing | 1w | ABOVE | 1w | +6.5% | +1.13% | 174.14 | 10w | 20%  |
-| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF21d · DEL72%(T-1)</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +4.7% | +2.99% | 137.61 | — | 20%  |
+| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF21d</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +4.7% | +2.99% | 137.61 | — | 20%  |
 | [ELECTCAST](https://in.tradingview.com/chart/?symbol=NSE:ELECTCAST)<br><sub>↑CMF13d</sub> | Ductile iron pipes fittings water infrastructure manufacturing | 1w | ABOVE | 1w | +2.0% | +0.42% | 76.70 | 4w | 20%  |
 | [CRISIL](https://in.tradingview.com/chart/?symbol=NSE:CRISIL)<br><sub>↑CMF30d</sub> | Credit ratings research risk advisory financial markets | 1w | ABOVE | 1w | +2.8% | +3.28% | 4547.90 | — | 20%  |
 | [RIIL](https://in.tradingview.com/chart/?symbol=NSE:RIIL)<br><sub>↓CMF20d</sub> | Pipeline infrastructure for petroleum products transportation | 1w | ABOVE | 1w | +6.9% | -0.17% | 730.75 | — | 20%  |
@@ -109,7 +109,7 @@
 | [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK)<br><sub>↓CMF8d</sub> | Retail corporate banking Kerala-headquartered private sector bank | 1w | BELOW | 1w | +2.4% | +2.02% | 338.00 | — | 20%  |
 | [PARAS](https://in.tradingview.com/chart/?symbol=NSE:PARAS)<br><sub>↓CMF2d</sub> | Defence electronics and space hardware manufacturing for military government | 1w | BELOW | 1w | +2.4% | +3.09% | 1298.90 | — | 20% 🟦 |
 | [SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY)<br><sub>↓CMF22d</sub> | Precision plastic injection molded components for automotive OEMs | 1w | BELOW | 1w | +1.5% | +0.98% | 3109.70 | 4w | 20%  |
-| [PPLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:PPLPHARMA)<br><sub>↓CMF17d · DEL75%(T-1)</sub> | CDMO and critical care generics pharma manufacturing | 1w | BELOW | 1w | +0.4% | +1.92% | 197.73 | — | 20%  |
+| [PPLPHARMA](https://in.tradingview.com/chart/?symbol=NSE:PPLPHARMA)<br><sub>↓CMF17d</sub> | CDMO and critical care generics pharma manufacturing | 1w | BELOW | 1w | +0.4% | +1.92% | 197.73 | — | 20%  |
 | [CGCL](https://in.tradingview.com/chart/?symbol=NSE:CGCL)<br><sub>↓CMF12d</sub> | NBFC lending MSMEs affordable housing construction finance | 1w | BELOW | 1w | +2.4% | +0.24% | 247.56 | — | 20%  |
 | [VOLTAMP](https://in.tradingview.com/chart/?symbol=NSE:VOLTAMP)<br><sub>↓CMF11d</sub> | Power and distribution transformers for industrial infrastructure | 1w | BELOW | 1w | +3.1% | +2.13% | 10622.00 | — | 20%  |
 | [RISHABH](https://in.tradingview.com/chart/?symbol=NSE:RISHABH)<br><sub>↓CMF9d</sub> | Electrical meters, automation instruments, industrial measurement solutions | 1w | BELOW | 1w | +1.2% | +1.82% | 686.35 | — | 20%  |
