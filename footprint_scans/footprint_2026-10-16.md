@@ -1,0 +1,96 @@
+> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+## Institutional Footprint Scan - 2026-10-16
+
+| Symbol | Reason / Delivery | ICS | Rating | Stage | Regime | Rank | Action | RS | CMF20 | Vol | Turnover | Sector | Structure |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | CMF positive, RS leader | 80 | BUILDING | NONE | NEUTRAL | B | WAIT | 99 FLAT | 0.35 | 5.9x | 69.3Cr | Process Industries (33) | RECLAIM R6 |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD) | CMF positive, RS leader | 78 | BUILDING | NONE | NEUTRAL | B | WAIT | 98 FLAT | 0.26 | 1.7x | 268.3Cr | Consumer Durables (38) | R9 |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO) | CMF positive | 74 | BUILDING | NONE | NEUTRAL | B | WAIT | 78 UP | 0.08 | 2.1x | 605.6Cr | Electronic Technology (28) | R3 |
+| [SHYAMMETL](https://in.tradingview.com/chart/?symbol=NSE:SHYAMMETL) | CMF positive, RS leader | 73 | BUILDING | NONE | NEUTRAL | B | WAIT | 90 FLAT | 0.06 | 1.7x | 115.5Cr | Producer Manufacturing (24) | R8 |
+| [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT) | CMF positive, RS leader | 72 | BUILDING | NONE | NEUTRAL | B | WAIT | 90 FLAT | 0.17 | 6.0x | 55.2Cr | Consumer Services (35) |  |
+| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV) | CMF positive, RS leader | 72 | BUILDING | NONE | NEUTRAL | B | WAIT | 100 FLAT | 0.09 | 1.7x | 72.0Cr | Technology Services (44) | R13 |
+| [SOLARA](https://in.tradingview.com/chart/?symbol=NSE:SOLARA) | RS leader | 72 | BUILDING | NONE | NEUTRAL | B | WAIT | 96 FLAT | -0.15 | 22.2x | 396.8Cr | Health Technology (20) | RECLAIM R3 |
+| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW) | Delivery P96, CMF positive, RS leader | 70 | BUILDING | BUILDING | NEUTRAL | B | WAIT | 94 FLAT | 0.17 | 0.7x | 34.4Cr | Producer Manufacturing (24) | R5 |
+| [MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS) | Delivery P97, CMF positive | 70 | BUILDING | BREAKOUT | NEUTRAL | B | WAIT | 67 UP | 0.12 | 2.5x | 320.6Cr | Technology Services (44) |  |
+| [TEXINFRA](https://in.tradingview.com/chart/?symbol=NSE:TEXINFRA) | CMF positive | 70 | BUILDING | NONE | NEUTRAL | B | WAIT | 86 FLAT | 0.20 | 1.5x | 8.0Cr | Utilities (34) | R4 |
+| [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL) | CMF positive | 70 | BUILDING | BUILDING | NEUTRAL | B | WAIT | 84 FLAT | 0.08 | 2.2x | 7.8Cr | Non-Energy Minerals (34) | RECLAIM R5 |
+| [INVPRECQ](https://in.tradingview.com/chart/?symbol=NSE:INVPRECQ) | CMF positive, RS leader | 69 | WATCH | NONE | NEUTRAL | C | WAIT | 98 FLAT | 0.28 | 2.3x | 2.7Cr | Producer Manufacturing (24) | R4 |
+| [CYIENTDLM](https://in.tradingview.com/chart/?symbol=NSE:CYIENTDLM) | CMF positive, RS leader | 68 | WATCH | NONE | NEUTRAL | C | WAIT | 94 FLAT | 0.26 | 8.4x | 343.4Cr | Electronic Technology (28) | RECLAIM R7 |
+| [HBLENGINE](https://in.tradingview.com/chart/?symbol=NSE:HBLENGINE) | CMF positive | 68 | WATCH | NONE | NEUTRAL | C | WAIT | 87 FLAT | 0.50 | 26.5x | 3259.1Cr | Producer Manufacturing (24) | RECLAIM R3 |
+| [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND) | CMF positive | 68 | WATCH | NONE | NEUTRAL | C | WAIT | 82 UP | 0.06 | 5.8x | 174.0Cr | Non-Energy Minerals (34) |  |
+| [TBZ](https://in.tradingview.com/chart/?symbol=NSE:TBZ) | CMF positive, RS leader | 68 | WATCH | NONE | NEUTRAL | C | WAIT | 100 FLAT | 0.48 | 0.2x | 58.6Cr | Consumer Durables (38) | R15 |
+| [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL) | CMF positive, RS leader | 68 | WATCH | NONE | NEUTRAL | C | WAIT | 99 FLAT | 0.30 | 0.7x | 9.0Cr | Consumer Services (35) | R5 |
+| [AARTIIND](https://in.tradingview.com/chart/?symbol=NSE:AARTIIND) | Delivery P100, CMF positive | 67 | WATCH | SEED | NEUTRAL | C | WAIT | 65 UP | 0.09 | 2.3x | 67.3Cr | Process Industries (33) |  |
+| [AVTNPL](https://in.tradingview.com/chart/?symbol=NSE:AVTNPL) | CMF positive, RS leader | 67 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.15 | 1.9x | 23.5Cr | Consumer Non-Durables (35) | R7 |
+| [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL) | Delivery P93, CMF positive | 66 | WATCH | NONE | NEUTRAL | C | WAIT | 89 FLAT | 0.15 | 1.0x | 11.9Cr | Industrial Services (35) | R4 |
+| [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) | Delivery P99, CMF positive | 66 | WATCH | NONE | NEUTRAL | C | WAIT | 80 FLAT | 0.13 | 1.0x | 13.7Cr | Process Industries (33) | R12 |
+| [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS) | Delivery P93, CMF positive, RS leader | 65 | WATCH | SEED | NEUTRAL | C | WAIT | 99 FLAT | 0.21 | 0.4x | 20.7Cr | Health Technology (20) | R8 |
+| [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS) | Delivery P91, CMF positive, RS leader | 65 | WATCH | SEED | NEUTRAL | C | WAIT | 98 FLAT | 0.18 | 0.3x | 101.4Cr | Producer Manufacturing (24) | R11 |
+| [DYNAMATECH](https://in.tradingview.com/chart/?symbol=NSE:DYNAMATECH) | Delivery P96, CMF positive, RS leader | 65 | WATCH | SEED | NEUTRAL | C | WAIT | 91 FLAT | 0.18 | 0.7x | 27.0Cr | Producer Manufacturing (24) | R14 |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 81 FLAT | 0.17 | 1.5x | 27.9Cr | Finance (29) |  |
+| [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 63 UP | 0.11 | 1.9x | 1048.0Cr | Technology Services (44) |  |
+| [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 66 UP | 0.24 | 4.2x | 393.0Cr | Finance (29) |  |
+| [JINDALSAW](https://in.tradingview.com/chart/?symbol=NSE:JINDALSAW) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 84 FLAT | 0.18 | 2.7x | 108.5Cr | Non-Energy Minerals (34) |  |
+| [KABRAEXTRU](https://in.tradingview.com/chart/?symbol=NSE:KABRAEXTRU) | CMF positive, RS leader | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 100 FLAT | 0.35 | 0.6x | 17.8Cr | Producer Manufacturing (24) | R10 |
+| [LLOYDSENGG](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENGG) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 64 UP | 0.19 | 2.0x | 294.2Cr | Industrial Services (35) | R5 |
+| [NITINSPIN](https://in.tradingview.com/chart/?symbol=NSE:NITINSPIN) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 86 FLAT | 0.09 | 7.7x | 36.5Cr | Process Industries (33) |  |
+| [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL) | CMF positive, RS leader | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 94 FLAT | 0.23 | 0.5x | 30.9Cr | Producer Manufacturing (24) | R5 |
+| [RGL](https://in.tradingview.com/chart/?symbol=NSE:RGL) | CMF positive, RS leader | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 94 FLAT | 0.17 | 0.5x | 5.8Cr | Consumer Durables (38) | R4 |
+| [TIPSMUSIC](https://in.tradingview.com/chart/?symbol=NSE:TIPSMUSIC) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 88 FLAT | 0.27 | 10.6x | 333.7Cr | Consumer Services (35) | R3 |
+| [VHL](https://in.tradingview.com/chart/?symbol=NSE:VHL) | CMF positive | 64 | WATCH | NONE | NEUTRAL | C | WAIT | 76 UP | 0.31 | 1.4x | 0.4Cr | Finance (29) | R8 |
+| [AIIL](https://in.tradingview.com/chart/?symbol=NSE:AIIL) | CMF positive | 63 | WATCH | NONE | NEUTRAL | C | WAIT | 55 UP | 0.12 | 4.3x | 39.7Cr | Finance (29) |  |
+| [IRISDOREME](https://in.tradingview.com/chart/?symbol=NSE:IRISDOREME) | CMF positive | 63 | WATCH | NONE | NEUTRAL | C | WAIT | 89 FLAT | 0.08 | 2.6x | 10.8Cr | Consumer Non-Durables (35) | RECLAIM R5 |
+| [ONEPOINT](https://in.tradingview.com/chart/?symbol=NSE:ONEPOINT) | CMF positive, RS leader | 63 | WATCH | NONE | NEUTRAL | C | WAIT | 97 UP | 0.13 | 0.2x | 10.5Cr | Commercial Services (39) | R19 |
+| [RAMBHAJO](https://in.tradingview.com/chart/?symbol=NSE:RAMBHAJO) | CMF positive, RS leader | 63 | WATCH | NONE | NEUTRAL | C | WAIT | 100 FLAT | 0.20 | 0.4x | 14.7Cr | Consumer Durables (38) | R10 |
+| [WSTCSTPAPR](https://in.tradingview.com/chart/?symbol=NSE:WSTCSTPAPR) | CMF positive, RS leader | 63 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.24 | 3.1x | 221.0Cr | Producer Manufacturing (24) | R3 |
+| [JUSTDIAL](https://in.tradingview.com/chart/?symbol=NSE:JUSTDIAL) | CMF positive | 62 | WATCH | NONE | NEUTRAL | C | WAIT | 75 UP | 0.29 | 5.1x | 35.9Cr | Technology Services (44) |  |
+| [MVGJL](https://in.tradingview.com/chart/?symbol=NSE:MVGJL) | RS leader | 62 | WATCH | NONE | NEUTRAL | C | WAIT | 95 FLAT | -0.02 | 4.1x | 31.2Cr | Retail Trade (29) | R5 |
+| [PAUSHAKLTD](https://in.tradingview.com/chart/?symbol=NSE:PAUSHAKLTD) | RS leader | 62 | WATCH | NONE | NEUTRAL | C | WAIT | 91 FLAT | -0.14 | 3.7x | 70.3Cr | Process Industries (33) |  |
+| [SUNTV](https://in.tradingview.com/chart/?symbol=NSE:SUNTV) | CMF positive, RS leader | 62 | WATCH | NONE | NEUTRAL | C | WAIT | 94 UP | 0.13 | 0.2x | 35.5Cr | Consumer Services (35) | R14 |
+| [TECHM](https://in.tradingview.com/chart/?symbol=NSE:TECHM) | CMF positive | 62 | WATCH | NONE | NEUTRAL | C | WAIT | 62 UP | 0.11 | 3.8x | 1410.0Cr | Technology Services (44) |  |
+| [AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA) | CMF positive | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 75 UP | 0.33 | 5.9x | 19.9Cr | Finance (29) |  |
+| [GODREJAGRO](https://in.tradingview.com/chart/?symbol=NSE:GODREJAGRO) | No standout factor | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 88 FLAT | -0.10 | 1.7x | 18.1Cr | Process Industries (33) | RECLAIM |
+| [PNGSREVA](https://in.tradingview.com/chart/?symbol=NSE:PNGSREVA) | CMF positive, RS leader | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 95 UP | 0.07 | 1.1x | 96.1Cr | Consumer Durables (38) | R5 |
+| [SANATHAN](https://in.tradingview.com/chart/?symbol=NSE:SANATHAN) | CMF positive | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 88 FLAT | 0.09 | 0.8x | 7.5Cr | Process Industries (33) | R11 |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | No standout factor | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 85 FLAT | -0.04 | 1.9x | 30.8Cr | Utilities (34) |  |
+| [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD) | CMF positive, RS leader | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 99 FLAT | 0.37 | 1.0x | 248.6Cr | Consumer Durables (38) | R11 |
+| [TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI) | CMF positive | 60 | WATCH | NONE | NEUTRAL | C | WAIT | 69 UP | 0.31 | 2.3x | 509.6Cr | Technology Services (44) |  |
+| [GANDHAR](https://in.tradingview.com/chart/?symbol=NSE:GANDHAR) | CMF positive, RS leader | 59 | WATCH | NONE | NEUTRAL | C | WAIT | 91 FLAT | 0.22 | 0.5x | 11.5Cr | Process Industries (33) | R10 |
+| [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN) | CMF positive | 59 | WATCH | NONE | NEUTRAL | C | WAIT | 65 UP | 0.02 | 2.2x | 13.4Cr | Technology Services (44) |  |
+| [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) | CMF positive | 59 | WATCH | NONE | NEUTRAL | C | WAIT | 78 FLAT | 0.05 | 7.5x | 637.9Cr | Finance (29) |  |
+| [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB) | CMF positive, RS leader | 59 | WATCH | NONE | NEUTRAL | C | WAIT | 100 FLAT | 0.13 | 1.0x | 230.1Cr | Health Technology (20) | R11 |
+| [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX) | CMF positive, RS leader | 59 | WATCH | NONE | NEUTRAL | C | WAIT | 91 FLAT | 0.13 | 0.8x | 91.2Cr | Consumer Services (35) | R7 |
+| [COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE) | Delivery P96 · DEL73% ▅▆▅▁▃▄▄█▄▄▇▆▆▅▅▅▆▅▂█ P96 Z+1.8 | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 74 UP | -0.01 | 0.6x | 35.4Cr | Health Technology (20) | ABS |
+| [MASTEK](https://in.tradingview.com/chart/?symbol=NSE:MASTEK) | CMF positive | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 65 UP | 0.07 | 1.6x | 27.1Cr | Technology Services (44) |  |
+| [OPTIEMUS](https://in.tradingview.com/chart/?symbol=NSE:OPTIEMUS) | CMF positive, RS leader | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.36 | 0.3x | 48.1Cr | Distribution Services (25) | R3 |
+| [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND) | CMF positive, RS leader | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 99 FLAT | 0.14 | 0.2x | 58.2Cr | Process Industries (33) | R10 |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH) | CMF positive, RS leader | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.27 | 0.2x | 10.0Cr | Electronic Technology (28) | R9 |
+| [SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF) | CMF positive | 58 | WATCH | NONE | NEUTRAL | C | WAIT | 88 FLAT | 0.09 | 3.1x | 16.0Cr | Industrial Services (35) |  |
+| [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 93 FLAT | 0.05 | 0.2x | 20.3Cr | Consumer Non-Durables (35) | R10 |
+| [AEROPLANE](https://in.tradingview.com/chart/?symbol=NSE:AEROPLANE) | CMF positive | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 88 UP | 0.17 | 1.5x | 30.3Cr | Process Industries (33) | R12 |
+| [DELTACORP](https://in.tradingview.com/chart/?symbol=NSE:DELTACORP) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 94 UP | 0.06 | 0.2x | 39.5Cr | Consumer Services (35) | R7 |
+| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.43 | 0.6x | 22.3Cr | Finance (29) | R20 |
+| [PARAGMILK](https://in.tradingview.com/chart/?symbol=NSE:PARAGMILK) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 92 FLAT | 0.12 | 1.6x | 88.2Cr | Consumer Non-Durables (35) | R5 |
+| [RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 97 FLAT | 0.03 | 1.7x | 26.6Cr | Process Industries (33) |  |
+| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 98 FLAT | 0.10 | 0.9x | 121.6Cr | Non-Energy Minerals (34) | R10 |
+| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 93 FLAT | 0.37 | 0.9x | 65.1Cr | Transportation (24) | R20 |
+| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK) | CMF positive | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 82 UP | 0.31 | 2.0x | 189.1Cr | Finance (29) | TRAP R5 |
+| [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 100 FLAT | 0.45 | 0.8x | 255.4Cr | Technology Services (44) | R17 |
+| [WAAREEENER](https://in.tradingview.com/chart/?symbol=NSE:WAAREEENER) | Delivery P100 · DEL69% ▃▃▆▄▃▂▄▃▃▃▃▃▃▃▄▂▄▁▄█ P100 Z+3.7 | 57 | WATCH | BREAKOUT | NEUTRAL | C | WAIT | 50 UP | -0.01 | 1.9x | 305.2Cr | Electronic Technology (28) |  |
+| [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS) | CMF positive, RS leader | 57 | WATCH | NONE | NEUTRAL | C | WAIT | 99 FLAT | 0.04 | 0.5x | 22.5Cr | Producer Manufacturing (24) | R3 |
+| [ZYDUSLIFE](https://in.tradingview.com/chart/?symbol=NSE:ZYDUSLIFE) | Delivery P93, CMF positive | 57 | WATCH | SEED | NEUTRAL | C | WAIT | 68 UP | 0.00 | 0.7x | 127.9Cr | Health Technology (20) | R3 |
+| [AXISBANK](https://in.tradingview.com/chart/?symbol=NSE:AXISBANK) | CMF positive | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 70 UP | 0.12 | 1.4x | 1110.9Cr | Finance (29) |  |
+| [BAJAJHLDNG](https://in.tradingview.com/chart/?symbol=NSE:BAJAJHLDNG) | No standout factor | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 60 UP | -0.04 | 2.0x | 88.2Cr | Finance (29) | RECLAIM |
+| [GRMOVER](https://in.tradingview.com/chart/?symbol=NSE:GRMOVER) | CMF positive · DEL35% ▆▄▄▄▄▄▄▂▄▃▂▃▃▃▁▃█▁▅▆ P79 Z+0.6 | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 76 UP | 0.18 | 0.8x | 12.6Cr | Process Industries (33) | R3 |
+| [IMPAL](https://in.tradingview.com/chart/?symbol=NSE:IMPAL) | No standout factor | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 51 UP | -0.28 | 1.8x | 0.4Cr | Distribution Services (25) | RECLAIM |
+| [INDHOTEL](https://in.tradingview.com/chart/?symbol=NSE:INDHOTEL) | No standout factor | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 63 UP | -0.09 | 1.4x | 366.2Cr | Consumer Services (35) | RECLAIM R3 |
+| [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT) | CMF positive | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 76 FLAT | 0.18 | 4.5x | 1261.0Cr | Technology Services (44) |  |
+| [SHRINGARMS](https://in.tradingview.com/chart/?symbol=NSE:SHRINGARMS) | CMF positive, RS leader | 56 | WATCH | NONE | NEUTRAL | C | WAIT | 95 UP | 0.54 | 0.7x | 123.6Cr | Consumer Durables (38) | R4 |
+| [VINCOFE](https://in.tradingview.com/chart/?symbol=NSE:VINCOFE) | Delivery P98, RS leader | 56 | WATCH | SEED | NEUTRAL | C | WAIT | 90 FLAT | -0.03 | 0.6x | 12.8Cr | Distribution Services (25) | R4 |
+| [FINCABLES](https://in.tradingview.com/chart/?symbol=NSE:FINCABLES) | CMF positive, RS leader | 55 | WATCH | NONE | NEUTRAL | C | WAIT | 95 FLAT | 0.08 | 0.5x | 36.8Cr | Producer Manufacturing (24) | R10 |
+| [HUHTAMAKI](https://in.tradingview.com/chart/?symbol=NSE:HUHTAMAKI) | CMF positive | 55 | WATCH | NONE | NEUTRAL | C | WAIT | 26 UP | 0.12 | 7.2x | 14.3Cr | Process Industries (33) | RECLAIM |
+| [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) | CMF positive, RS leader | 55 | WATCH | NONE | NEUTRAL | C | WAIT | 90 FLAT | 0.05 | 1.0x | 75.2Cr | Technology Services (44) | R12 |
+| [VALIANTORG](https://in.tradingview.com/chart/?symbol=NSE:VALIANTORG) | CMF positive, RS leader | 55 | WATCH | NONE | NEUTRAL | C | WAIT | 99 FLAT | 0.18 | 0.4x | 2.9Cr | Process Industries (33) | R7 |
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
