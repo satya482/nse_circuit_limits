@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-10-15
-*Generated 2026-10-15 18:07 IST*
+# US ZL Squeeze Scan — 2026-10-16
+*Generated 2026-10-16 15:56 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,15 +18,26 @@
 
 ---
 
-**5 stocks: ZLEMA25 Rising + Squeeze ON**
+**16 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [WAY](https://www.tradingview.com/chart/?symbol=WAY) | 26.87 | +2.17% | 1.7x | 3d | 7d | +8.3% | ✓ | ✓ | ✓ |
-| [FTRE](https://www.tradingview.com/chart/?symbol=FTRE) | 21.34 | +2.01% | 1.8x | 3d | 8d | +10.0% | ✓ | ✓ | ✓ |
-| [MSGS](https://www.tradingview.com/chart/?symbol=MSGS) | 404.10 | -0.01% | 1.7x | 11d | 1d | +0.2% | ✓ | ✓ | — |
-| [SDRL](https://www.tradingview.com/chart/?symbol=SDRL) | 46.98 | -4.12% | 1.7x | 1d | 3d | +3.0% | ✓ | ✓ | — |
-| [MD](https://www.tradingview.com/chart/?symbol=MD) | 27.06 | +1.69% | 1.5x | 53d | 4d | +4.8% | ✓ | ✓ | — |
+| [VSTM](https://www.tradingview.com/chart/?symbol=VSTM) | 9.23 | +19.71% | 4.1x | 15d | 0d | +19.7% | ✓ | ✓ | ✓ |
+| [DUOL](https://www.tradingview.com/chart/?symbol=DUOL) | 148.93 | +6.58% | 1.6x | 10d | 0d | +6.6% | ✓ | ✓ | ✓ |
+| [PEGA](https://www.tradingview.com/chart/?symbol=PEGA) | 35.95 | +6.27% | 2.6x | 2d | 0d | +6.3% | ✓ | ✓ | ✓ |
+| [MH](https://www.tradingview.com/chart/?symbol=MH) | 14.20 | +7.09% | 2.0x | 6d | 6d | +9.4% | ✓ | ✓ | ✓ |
+| [KNSA](https://www.tradingview.com/chart/?symbol=KNSA) | 79.94 | +1.40% | 2.8x | 36d | 7d | +4.8% | ✓ | ✓ | ✓ |
+| [FTRE](https://www.tradingview.com/chart/?symbol=FTRE) | 22.75 | +6.58% | 1.7x | 4d | 9d | +17.2% | ✓ | ✓ | ✓ |
+| [HIMS](https://www.tradingview.com/chart/?symbol=HIMS) | 29.38 | +5.99% | 1.6x | 17d | 0d | +6.0% | ✓ | ✓ | — |
+| [FVRR](https://www.tradingview.com/chart/?symbol=FVRR) | 8.86 | +3.63% | 1.6x | 3d | 0d | +3.6% | ✓ | ✓ | — |
+| [EEFT](https://www.tradingview.com/chart/?symbol=EEFT) | 65.54 | +2.76% | 1.5x | 1d | 0d | +2.8% | ✓ | ✓ | — |
+| [BTE](https://www.tradingview.com/chart/?symbol=BTE) | 5.16 | +1.57% | 1.7x | 21d | 2d | +6.0% | ✓ | ✓ | — |
+| [CMC](https://www.tradingview.com/chart/?symbol=CMC) | 65.37 | +0.12% | 2.0x | 6d | 2d | +2.0% | ✓ | ✓ | — |
+| [ENR](https://www.tradingview.com/chart/?symbol=ENR) | 22.00 | +0.36% | 1.9x | 3d | 2d | +3.9% | ✓ | ✓ | — |
+| [LTC](https://www.tradingview.com/chart/?symbol=LTC) | 43.34 | +0.32% | 1.6x | 12d | 3d | +2.1% | ✓ | ✓ | — |
+| [RVLV](https://www.tradingview.com/chart/?symbol=RVLV) | 23.21 | +7.45% | 1.7x | 12d | 8d | +11.9% | ✓ | ✓ | — |
+| [FND](https://www.tradingview.com/chart/?symbol=FND) | 45.76 | +3.48% | 1.6x | 13d | 0d | +3.5% | ✓ | — | — |
+| [TNDM](https://www.tradingview.com/chart/?symbol=TNDM) | 16.52 | +3.19% | 2.0x | 6d | 0d | +3.2% | ✓ | — | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
