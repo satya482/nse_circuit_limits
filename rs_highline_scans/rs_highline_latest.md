@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS High-Line Cross — 2026-10-19
-*Generated 2026-10-19 15:44 IST*
+## RS High-Line Cross — 2026-10-20
+*Generated 2026-10-20 15:45 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,20 +17,13 @@
 
 ---
 
-**2 signals — RS high-line cross today**
+**0 signals — RS high-line cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GALLANTT,NSE:SOUTHBANK
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,
 ```
 
-| Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
-|--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT) [20% 🟦]<br><sub>↑CMF5d</sub> | Integrated steel manufacturing with mining operations eastern India | 626.20 | +2.76% | 626.00 | +0.03% | ↑ | ↑6d | 6d | +24.3% | — | 7.0% | 14 | ↗487Cr · 1085Cr |
-| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK) [20%]<br><sub>↑CMF18d</sub> |  | 54.26 | +5.46% | 52.50 | +3.35% | ↑ | ↑7d | 7d | +17.0% | — | 3.9% | 13 | ↗143Cr · 318Cr |
-
-```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GALLANTT,NSE:SOUTHBANK
-```
+*No signals.*
 
 ---
 
