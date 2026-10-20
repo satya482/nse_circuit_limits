@@ -1,12 +1,12 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Swing Scan — 2026-10-19
-*Generated 2026-10-19 15:39 IST*
+# NSE Swing Scan — 2026-10-20
+*Generated 2026-10-20 15:39 IST*
 
-**Entry Opportunities: 49**
+**Entry Opportunities: 56**
 *(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:IIFLCAPS,NSE:SAREGAMA,NSE:DPABHUSHAN,NSE:WHEELS,NSE:ONEPOINT,NSE:ABDL,NSE:CEIGALL,NSE:DCBBANK,NSE:TBZ,NSE:PVRINOX,NSE:NAZARA,NSE:HFCL,NSE:KMEW,NSE:AVADHSUGAR,NSE:SGMART,NSE:PETRONET,NSE:CARERATING,NSE:VENKEYS,NSE:DALMIASUG,NSE:STOVEKRAFT,NSE:MUFIN,NSE:IIFL,NSE:FINEORG,NSE:SANATHAN,NSE:63MOONS,NSE:NIBE,NSE:TFCILTD,NSE:SWANDEF,NSE:UNITEDPOLY,NSE:JINDALSAW,NSE:AVTNPL,NSE:STYLEBAAZA,NSE:RAIN,NSE:COFORGE,NSE:FEDERALBNK,NSE:BLUSPRING,NSE:BBOX,NSE:HUHTAMAKI,NSE:THELEELA,NSE:JAYNECOIND,NSE:PREMEXPLN,NSE:RPSGVENT,NSE:STYLAMIND,NSE:MANAPPURAM,NSE:CUB,NSE:TNPETRO,NSE:CARTRADE,NSE:PARACABLES
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:IIFLCAPS,NSE:SAREGAMA,NSE:DPABHUSHAN,NSE:WHEELS,NSE:ONEPOINT,NSE:ABDL,NSE:CEIGALL,NSE:DCBBANK,NSE:TBZ,NSE:PVRINOX,NSE:NAZARA,NSE:RBZJEWEL,NSE:HFCL,NSE:KMEW,NSE:AVADHSUGAR,NSE:SGMART,NSE:PETRONET,NSE:CARERATING,NSE:VENKEYS,NSE:DALMIASUG,NSE:STOVEKRAFT,NSE:MUFIN,NSE:IIFL,NSE:FINEORG,NSE:SANATHAN,NSE:63MOONS,NSE:NIBE,NSE:TFCILTD,NSE:SWANDEF,NSE:UNITEDPOLY,NSE:JINDALSAW,NSE:AVTNPL,NSE:STYLEBAAZA,NSE:RAIN,NSE:COFORGE,NSE:FEDERALBNK,NSE:BLUSPRING,NSE:BBOX,NSE:HUHTAMAKI,NSE:THELEELA,NSE:JAYNECOIND,NSE:ANGELONE,NSE:PREMEXPLN,NSE:RPSGVENT,NSE:GOCLCORP,NSE:STYLAMIND,NSE:MANAPPURAM,NSE:INDIGRID,NSE:CUB,NSE:TNPETRO,NSE:VRLLOG,NSE:CARTRADE,NSE:INDNIPPON,NSE:PARACABLES,NSE:J&KBANK
 ```
 
 | Symbol | Trap | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |
@@ -20,12 +20,13 @@
 | [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS) | ✓ SAFE | 5d | +10.5% | Steel aluminum wheels automotive commercial tractors mining | 100% | 🔵0.64x | -0.54% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟨 |
 | [ONEPOINT](https://in.tradingview.com/chart/?symbol=NSE:ONEPOINT) | ✓ SAFE | 21d | +49.1% | BPM services: customer care, technical support, back-office processing | 98% | 🔵0.41x | -1.28% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | ✓ SAFE | 25d | +22.5% | Spirits manufacturer, IMFL exporter, Indian domestic and export markets | 99% | 🔵0.44x | -1.16% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL) | ✓ SAFE | 4d | +7.2% | EPC contractor highways bridges tunnels rail infrastructure | 100% | 0.78x | +0.60% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL) | ✓ SAFE | 4d | +7.2% | EPC contractor highways bridges tunnels rail infrastructure | 100% | 0.79x | +0.60% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK) | ✓ SAFE | 5d | +3.2% | Secured lending to retail, MSME, agricultural sectors | 92% | 🔵0.60x | +0.29% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK) | ✓ SAFE | 5d | +3.2% | Secured lending to retail, MSME, agricultural sectors | 92% | 🔵0.60x | +0.29% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [TBZ](https://in.tradingview.com/chart/?symbol=NSE:TBZ) | ✓ SAFE | 5d | +29.1% | Gold diamond jewelry retail wedding occasion wear | 100% | 0.75x | +1.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5% 🟥 |
 | [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX) | ✓ SAFE | 8d | +12.2% | Multiplex cinema exhibition chain, entertainment venues | 100% | 🔵0.63x | +0.08% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) | ✓ SAFE | 5d | +7.0% | Gaming platform, esports, mobile and console games India | 97% | 0.72x | -3.34% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [RBZJEWEL](https://in.tradingview.com/chart/?symbol=NSE:RBZJEWEL) | ⚠ CAUTION | 1d | +10.2% |  | 100% | 1.28x | +4.95% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
 | [HFCL](https://in.tradingview.com/chart/?symbol=NSE:HFCL) | ✓ SAFE | 1d | +10.2% | Optical fiber cables and telecom equipment manufacturer | 99% | 1.31x | +5.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW) | ✓ SAFE | 13d | +15.5% | Dredging, marine craft repair, maritime infrastructure engineering | 99% | 🔵0.60x | -0.11% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR) | ✓ SAFE | 10d | +29.2% | Sugar cane processing, ethanol, power generation | 99% | 🔵0.59x | -0.79% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
@@ -60,21 +61,30 @@
 | [HUHTAMAKI](https://in.tradingview.com/chart/?symbol=NSE:HUHTAMAKI) | ✓ SAFE | 1d | +5.3% | Flexible packaging solutions for food beverage consumer goods | 74% | 4.48x | -1.31% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | ✓ SAFE | 12d | +16.7% | Luxury hotel chains five-star properties Indian metros | 100% | 2.60x | +1.05% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [JAYNECOIND](https://in.tradingview.com/chart/?symbol=NSE:JAYNECOIND) | ✓ SAFE | 5d | +7.2% | Ferrous castings, steel alloys, integrated mining to foundry | 85% | 2.40x | -2.62% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) | ✓ SAFE | 9d | +6.2% | Retail brokerage app offering stocks commodities currencies | 86% | 2.04x | +0.97% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) | ✓ SAFE | 9d | +6.2% | Retail brokerage app offering stocks commodities currencies | 86% | 2.04x | +0.97% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) | ✓ SAFE | 9d | +6.2% | Retail brokerage app offering stocks commodities currencies | 86% | 2.04x | +0.97% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) | ✓ SAFE | 27d | +4.5% | Explosives propellants detonators defense space mining | 86% | 1.10x | +0.21% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
 | [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT) | ✓ SAFE | 8d | +6.7% | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 80% | 1.19x | +2.47% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
 | [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT) | ✓ SAFE | 8d | +6.7% | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 80% | 1.19x | +2.47% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
 | [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT) | ✓ SAFE | 8d | +6.7% | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 80% | 1.19x | +2.47% | **DEEP PULLBACK** — Bounce from EMA100 | 20% 🟦 |
 | [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT) | ✓ SAFE | 8d | +6.7% | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 80% | 1.19x | +2.47% | **DEEP PULLBACK** — Bounce from EMA200 | 20% 🟦 |
+| [GOCLCORP](https://in.tradingview.com/chart/?symbol=NSE:GOCLCORP) | ✓ SAFE | 0d | +1.0% | Explosives manufacturing, detonators, mining infrastructure services | 87% | 🔵0.59x | +0.96% | **PRIMARY** — ZLEMA25 touch | 20%  |
+| [GOCLCORP](https://in.tradingview.com/chart/?symbol=NSE:GOCLCORP) | ✓ SAFE | 0d | +1.0% | Explosives manufacturing, detonators, mining infrastructure services | 87% | 🔵0.59x | +0.96% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 | [STYLAMIND](https://in.tradingview.com/chart/?symbol=NSE:STYLAMIND) | ✓ SAFE | 3d | +0.7% | Decorative laminates solid surfaces residential commercial | 88% | 🔵0.58x | -1.96% | **PRIMARY** — ZLEMA25 touch | 20%  |
-| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 5d | +1.5% | Gold loans, NBFC, retail credit, unbanked customers | 86% | 🔵0.50x | -1.36% | **PRIMARY** — ZLEMA25 touch | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 5d | +1.5% | Gold loans, NBFC, retail credit, unbanked customers | 86% | 🔵0.51x | -1.36% | **PRIMARY** — ZLEMA25 touch | 20%  |
+| [INDIGRID](https://in.tradingview.com/chart/?symbol=NSE:INDIGRID) | ⚠ CAUTION | 0d | +0.5% | Power transmission and renewable energy assets operator | 96% | 1.12x | +0.50% | **PRIMARY** — ZLEMA25 touch | 20%  |
 | [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) | ⚠ CAUTION | 1d | +3.1% | Private bank serving SMEs, MSMEs, retail customers South India | 97% | 🔵0.43x | +1.57% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [TNPETRO](https://in.tradingview.com/chart/?symbol=NSE:TNPETRO) | ✓ SAFE | 0d | +2.3% | Petrochemical intermediates for detergents and industrial chemicals | 91% | 0.71x | +2.33% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG) | ⚠ CAUTION | 0d | +2.3% | Full truck load transport, LTL, bus operations, logistics | 94% | 1.86x | +2.26% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [CARTRADE](https://in.tradingview.com/chart/?symbol=NSE:CARTRADE) | ✓ SAFE | 1d | +2.3% | Used car marketplace and financing platform India | 93% | 0.96x | +0.71% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [INDNIPPON](https://in.tradingview.com/chart/?symbol=NSE:INDNIPPON) | ✓ SAFE | 0d | +5.2% | Two-wheeler ignition systems manufacturer for automotive sector | 89% | 1.94x | +5.21% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 | [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) | ✓ SAFE | 1d | +17.1% | Power telecom railway cables manufacturer | 89% | 4.53x | +9.40% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
 | [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) | ✓ SAFE | 1d | +17.1% | Power telecom railway cables manufacturer | 89% | 4.53x | +9.40% | **DEEP PULLBACK** — Bounce from EMA100 | 20% 🟦 |
+| [J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK) | ✓ SAFE | 0d | +3.7% | Retail corporate banking services Jammu Kashmir Ladakh regions | 72% | 0.90x | +3.74% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:IIFLCAPS,NSE:SAREGAMA,NSE:DPABHUSHAN,NSE:WHEELS,NSE:ONEPOINT,NSE:ABDL,NSE:CEIGALL,NSE:DCBBANK,NSE:TBZ,NSE:PVRINOX,NSE:NAZARA,NSE:HFCL,NSE:KMEW,NSE:AVADHSUGAR,NSE:SGMART,NSE:PETRONET,NSE:CARERATING,NSE:VENKEYS,NSE:DALMIASUG,NSE:STOVEKRAFT,NSE:MUFIN,NSE:IIFL,NSE:FINEORG,NSE:SANATHAN,NSE:63MOONS,NSE:NIBE,NSE:TFCILTD,NSE:SWANDEF,NSE:UNITEDPOLY,NSE:JINDALSAW,NSE:AVTNPL,NSE:STYLEBAAZA,NSE:RAIN,NSE:COFORGE,NSE:FEDERALBNK,NSE:BLUSPRING,NSE:BBOX,NSE:HUHTAMAKI,NSE:THELEELA,NSE:JAYNECOIND,NSE:PREMEXPLN,NSE:RPSGVENT,NSE:STYLAMIND,NSE:MANAPPURAM,NSE:CUB,NSE:TNPETRO,NSE:CARTRADE,NSE:PARACABLES
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:IIFLCAPS,NSE:SAREGAMA,NSE:DPABHUSHAN,NSE:WHEELS,NSE:ONEPOINT,NSE:ABDL,NSE:CEIGALL,NSE:DCBBANK,NSE:TBZ,NSE:PVRINOX,NSE:NAZARA,NSE:RBZJEWEL,NSE:HFCL,NSE:KMEW,NSE:AVADHSUGAR,NSE:SGMART,NSE:PETRONET,NSE:CARERATING,NSE:VENKEYS,NSE:DALMIASUG,NSE:STOVEKRAFT,NSE:MUFIN,NSE:IIFL,NSE:FINEORG,NSE:SANATHAN,NSE:63MOONS,NSE:NIBE,NSE:TFCILTD,NSE:SWANDEF,NSE:UNITEDPOLY,NSE:JINDALSAW,NSE:AVTNPL,NSE:STYLEBAAZA,NSE:RAIN,NSE:COFORGE,NSE:FEDERALBNK,NSE:BLUSPRING,NSE:BBOX,NSE:HUHTAMAKI,NSE:THELEELA,NSE:JAYNECOIND,NSE:ANGELONE,NSE:PREMEXPLN,NSE:RPSGVENT,NSE:GOCLCORP,NSE:STYLAMIND,NSE:MANAPPURAM,NSE:INDIGRID,NSE:CUB,NSE:TNPETRO,NSE:VRLLOG,NSE:CARTRADE,NSE:INDNIPPON,NSE:PARACABLES,NSE:J&KBANK
 ```
 ---
 
