@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS Leadership — 2026-10-20
-*Generated 2026-10-20 15:45 IST*
+## RS Leadership — 2026-10-21
+*Generated 2026-10-21 15:45 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -21,18 +21,18 @@
 **4 signals — RS leadership combined cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BAJAJHLDNG,NSE:EICHERMOT,NSE:INDHOTEL,NSE:DLF
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:HEXT,NSE:FRACTAL,NSE:INDIACEM,NSE:INDHOTEL
 ```
 
 | Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |
 |--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|
-| [BAJAJHLDNG](https://in.tradingview.com/chart/?symbol=NSE:BAJAJHLDNG) [20%]<br><sub>↓CMF14d</sub> |  | 11225.00 | +4.19% | +4.86% | 2.09 | 5/5 | 🔄 | ↑ | — | →44Cr · 88Cr |
-| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT) [20%]<br><sub>↓CMF30d</sub> |  | 7231.50 | +2.10% | +4.12% | 0.75 | 5/5 | 🔄 | ↑ | — | ↗304Cr · 298Cr |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT) [20%]<br><sub>↓CMF17d</sub> | IT services, digital transformation, automation, enterprise clients | 604.60 | +5.28% | +19.72% | 17.16 | 5/5 | ↑ | ↑ | — | ↗230Cr · 164Cr |
+| [FRACTAL](https://in.tradingview.com/chart/?symbol=NSE:FRACTAL) [20%]<br><sub>↑CMF4d</sub> | AI analytics solutions for global Fortune 500 enterprises | 794.10 | +11.53% | +14.28% | 4.09 | 5/5 | 🔄 | ↑ | — | ↗129Cr · 1089Cr |
+| [INDIACEM](https://in.tradingview.com/chart/?symbol=NSE:INDIACEM) [20%]<br><sub>↑CMF0d</sub> | Cement manufacturing and sales South India construction | 329.80 | +12.04% | +13.36% | 4.41 | 5/5 | 🔄 | ↑ | — | ↗108Cr · 941Cr |
 | [INDHOTEL](https://in.tradingview.com/chart/?symbol=NSE:INDHOTEL) [20%]<br><sub>↓CMF11d</sub> | Luxury and midscale hotel brands across Asia Pacific | 742.05 | +2.30% | +2.97% | 1.71 | 5/5 | ↑ | ↑ | ● | ↘202Cr · 366Cr |
-| [DLF](https://in.tradingview.com/chart/?symbol=NSE:DLF) [20%]<br><sub>↑CMF1d</sub> |  | 668.55 | +0.25% | +2.22% | 2.16 | 5/5 | ↑ | ↑ | — | →226Cr · 160Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BAJAJHLDNG,NSE:EICHERMOT,NSE:INDHOTEL,NSE:DLF
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:HEXT,NSE:FRACTAL,NSE:INDIACEM,NSE:INDHOTEL
 ```
 
 ---
