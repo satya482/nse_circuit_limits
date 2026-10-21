@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Weekly ZL Scan — 2026-10-20
-*Generated 2026-10-20 15:43 IST*
+# NSE Weekly ZL Scan — 2026-10-21
+*Generated 2026-10-21 15:43 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,32 +18,26 @@
 
 ---
 
-## UPTREND START — 15 stocks
+## UPTREND START — 9 stocks
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:JAICORPLTD,NSE:PLATIND,NSE:ANGELONE,NSE:PARACABLES,NSE:SYNGENE,NSE:INDNIPPON,NSE:MARSONS,NSE:APOLLOTYRE,NSE:CCAVENUE,NSE:MIDWESTLTD,NSE:EIHOTEL,NSE:RPSGVENT,NSE:TMB,NSE:QUICKHEAL,NSE:BALAJITELE
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:JAICORPLTD,NSE:IPCALAB,NSE:PARACABLES,NSE:CCAVENUE,NSE:PLATIND,NSE:MIDWESTLTD,NSE:BALAJITELE,NSE:INDNIPPON
 ```
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE)<br><sub>↑CMF0d</sub> | Retail brokerage app offering stocks commodities currencies | 1w | TOUCH | 1w | +1.0% | +0.00% | 302.90 | — | 20%  |
-| [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT)<br><sub>↓CMF30d</sub> | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 1w | TOUCH | 1w | +2.5% | +0.00% | 889.00 | 5w | 20% 🟦 |
-| [JAICORPLTD](https://in.tradingview.com/chart/?symbol=NSE:JAICORPLTD)<br><sub>↑CMF3d</sub> | Plastic processing, steel, spinning yarn manufacturing | 1w | ABOVE | 1w | +7.5% | +0.00% | 98.86 | — | 20%  |
-| [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF3d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +11.6% | +0.00% | 228.06 | 24w | 20%  |
-| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES)<br><sub>↑CMF2d</sub> | Power telecom railway cables manufacturer | 1w | ABOVE | 1w | +9.4% | +0.00% | 66.21 | 6w | 20% 🟦 |
-| [SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE)<br><sub>↑CMF21d</sub> | Contract research development manufacturing pharma biotech | 1w | ABOVE | 1w | +3.0% | +0.00% | 397.50 | — | 20%  |
-| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF19d</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +0.3% | +0.29% | 123.36 | 3w | 20%  |
-| [APOLLOTYRE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOTYRE)<br><sub>↓CMF30d</sub> | Radial tyres for cars trucks farm vehicles | 1w | ABOVE | 1w | +1.9% | +0.00% | 416.75 | 2w | 20%  |
-| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +772.8% | +0.81% | 130.05 | — | 20%  |
-| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +10.0% | +0.00% | 1129.35 | — | 20%  |
-| [EIHOTEL](https://in.tradingview.com/chart/?symbol=NSE:EIHOTEL)<br><sub>↓CMF3d</sub> | Luxury hotels, resorts, flight catering operations | 1w | ABOVE | 1w | +0.9% | +0.00% | 304.85 | — | 20%  |
-| [QUICKHEAL](https://in.tradingview.com/chart/?symbol=NSE:QUICKHEAL)<br><sub>↑CMF3d</sub> | Cybersecurity software consumer enterprise India | 1w | ABOVE | 1w | +4.5% | +0.00% | 151.55 | — | 20%  |
-| [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE)<br><sub>↓CMF3d</sub> | TV serials films digital content production entertainment | 1w | ABOVE | 1w | +2.0% | +0.00% | 92.64 | 5w | 20%  |
-| [INDNIPPON](https://in.tradingview.com/chart/?symbol=NSE:INDNIPPON)<br><sub>↓CMF28d</sub> | Two-wheeler ignition systems manufacturer for automotive sector | 1w | BELOW | 1w | +5.2% | +0.00% | 1213.80 | — | 20%  |
-| [TMB](https://in.tradingview.com/chart/?symbol=NSE:TMB)<br><sub>↓CMF16d</sub> | Regional private bank serving retail agriculture MSME segments | 1w | BELOW | 1w | +1.3% | +0.00% | 868.35 | — | 20%  |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF27d</sub> | Pharma APIs formulations branded generics domestic exports | 1w | TOUCH | 1w | +4.7% | +5.75% | 1918.90 | — | 20%  |
+| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES)<br><sub>↑CMF3d</sub> | Power telecom railway cables manufacturer | 1w | TOUCH | 1w | +6.9% | -2.27% | 64.71 | 6w | 20% 🟦 |
+| [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI)<br><sub>↑CMF7d</sub> | Wealth management for high-net-worth individuals, personalized investments | 1w | ABOVE | 1w | +1.9% | +1.67% | 2200.00 | — | -%  |
+| [JAICORPLTD](https://in.tradingview.com/chart/?symbol=NSE:JAICORPLTD)<br><sub>↑CMF4d</sub> | Plastic processing, steel, spinning yarn manufacturing | 1w | ABOVE | 1w | +7.6% | +0.14% | 99.00 | — | 20%  |
+| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +729.9% | -4.91% | 123.66 | — | 20%  |
+| [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF4d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +13.3% | +1.53% | 231.55 | 24w | 20%  |
+| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +10.8% | +0.70% | 1137.20 | — | 20%  |
+| [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE)<br><sub>↓CMF4d</sub> | TV serials films digital content production entertainment | 1w | ABOVE | 1w | +3.1% | +1.09% | 93.65 | 5w | 20%  |
+| [INDNIPPON](https://in.tradingview.com/chart/?symbol=NSE:INDNIPPON)<br><sub>↑CMF0d</sub> | Two-wheeler ignition systems manufacturer for automotive sector | 1w | BELOW | 1w | +1.7% | -3.37% | 1172.90 | — | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:JAICORPLTD,NSE:PLATIND,NSE:ANGELONE,NSE:PARACABLES,NSE:SYNGENE,NSE:INDNIPPON,NSE:MARSONS,NSE:APOLLOTYRE,NSE:CCAVENUE,NSE:MIDWESTLTD,NSE:EIHOTEL,NSE:RPSGVENT,NSE:TMB,NSE:QUICKHEAL,NSE:BALAJITELE
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:JAICORPLTD,NSE:IPCALAB,NSE:PARACABLES,NSE:CCAVENUE,NSE:PLATIND,NSE:MIDWESTLTD,NSE:BALAJITELE,NSE:INDNIPPON
 ```
 ---
 
