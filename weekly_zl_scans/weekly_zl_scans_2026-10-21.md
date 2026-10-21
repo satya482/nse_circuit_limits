@@ -30,7 +30,7 @@
 | [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES)<br><sub>↑CMF3d</sub> | Power telecom railway cables manufacturer | 1w | TOUCH | 1w | +6.9% | -2.27% | 64.71 | 6w | 20% 🟦 |
 | [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI)<br><sub>↑CMF7d</sub> | Wealth management for high-net-worth individuals, personalized investments | 1w | ABOVE | 1w | +1.9% | +1.67% | 2200.00 | — | -%  |
 | [JAICORPLTD](https://in.tradingview.com/chart/?symbol=NSE:JAICORPLTD)<br><sub>↑CMF4d</sub> | Plastic processing, steel, spinning yarn manufacturing | 1w | ABOVE | 1w | +7.6% | +0.14% | 99.00 | — | 20%  |
-| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +729.9% | -4.91% | 123.66 | — | 20%  |
+| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d · DEL77%</sub> |  | 1w | ABOVE | 1w | +729.9% | -4.91% | 123.66 | — | 20%  |
 | [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF4d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +13.3% | +1.53% | 231.55 | 24w | 20%  |
 | [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +10.8% | +0.70% | 1137.20 | — | 20%  |
 | [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE)<br><sub>↓CMF4d</sub> | TV serials films digital content production entertainment | 1w | ABOVE | 1w | +3.1% | +1.09% | 93.65 | 5w | 20%  |

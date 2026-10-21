@@ -73,7 +73,7 @@
 | [BERGEPAINT](https://in.tradingview.com/chart/?symbol=NSE:BERGEPAINT)<br><sub>📶W9 · W↑3d · ↑CMF10d</sub> | ⚠ CAUTION | Decorative and industrial paints for buildings and factories | 📈 BULL_ANY_MID | 17 | ↑50 | ↑1.010 | ↑13d | — | +5.0% | 24.83/24.81 | +1.11% | 20% |
 | [SMARTWORKS](https://in.tradingview.com/chart/?symbol=NSE:SMARTWORKS)<br><sub>↓CMF15d · 🎯SLING</sub> | ✓ SAFE | Managed workspace solutions for enterprises and GCCs | ⚡ BULL_ANY_PPV | 35 | 🔄59 | ↑0.999 | ↓24d | PV | -8.7% | -52.24/-54.61 | +2.22% | 20% |
 | [JSWSTEEL](https://in.tradingview.com/chart/?symbol=NSE:JSWSTEEL)<br><sub>↑CMF0d · 🔥PHX</sub> | ⚠ CAUTION |  | 🟢 BULL_OVERSOLD | 42 | 🔄54 | ↑0.992 | ↓13d | — | -5.3% | -64.43/-65.64 | +2.00% | 20% |
-| [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF0d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION | Road EPC contractor, highways and railways infrastructure | 🟡 BULL_OS_L2 | 58 | ↑25 | ↑0.993 | ↓7d | SQ | -0.6% | -56.03/-57.01 | -0.08% | 20% |
+| [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF0d · 🎯SLING · ÷DIV · DEL79%</sub> | ⚠ CAUTION | Road EPC contractor, highways and railways infrastructure | 🟡 BULL_OS_L2 | 58 | ↑25 | ↑0.993 | ↓7d | SQ | -0.6% | -56.03/-57.01 | -0.08% | 20% |
 | [BPCL](https://in.tradingview.com/chart/?symbol=NSE:BPCL)<br><sub>↑CMF1d · 🎯SLING</sub> | ⚠ CAUTION |  | 🟡 BULL_OS_L2 | 41 | 🔄38 | ↑1.001 | ↓19d | — | -4.4% | -53.92/-57.54 | +1.19% | 20% |
 | [GUJENERGY](https://in.tradingview.com/chart/?symbol=NSE:GUJENERGY)<br><sub>W↑3d · ↓CMF30d · 🎯SLING</sub> | ⚠ CAUTION | Piped natural gas distribution to households and industries | 🟡 BULL_OS_L2 | 35 | 🔄4 | ↑0.994 | ↓36d | — | -12.7% | -54.68/-56.0 | +0.88% | 20% |
 | [ERIS](https://in.tradingview.com/chart/?symbol=NSE:ERIS)<br><sub>↓CMF30d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION | Oral branded drugs for chronic diseases, domestic India | 🟡 BULL_OS_L2 | 35 | 🔄18 | ↑0.991 | ↓34d | — | -12.8% | -58.78/-59.92 | +1.42% | 20% |
@@ -95,7 +95,7 @@
 | [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL)<br><sub>📶W9 · 🚀SS · ↓CMF30d</sub> | ✓ SAFE | Gold and studded jewellery retail across India and Middle East | 📈 BULL_ANY_MID | 87 | 🔄79 | ↑1.000 | ↓8d | SQ | +0.5% | -25.71/-27.61 | +1.03% | 20% |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>📶W9 · 🚀SS · ↑CMF13d</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 69 | ↑55 | ↑1.003 | ↑1d | SQ | +0.2% | -10.03/-10.31 | +0.20% | 20% |
 | [TATVA](https://in.tradingview.com/chart/?symbol=NSE:TATVA)<br><sub>📶W9 · W↑23d · RVOL9x · ↓CMF0d · ÷DIV</sub> | ✓ SAFE | Specialty chemicals: catalysts, electrolytes, pharma intermediates | 📈 BULL_ANY_MID | 40 | ↑85 | ↓1.000 | ↑26d | SQ | +22.1% | 53.84/53.6 | -0.70% | 20% |
-| [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF0d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION | Road EPC contractor, highways and railways infrastructure | 🟡 BULL_OS_L2 | 58 | ↑25 | ↑0.993 | ↓7d | SQ | -0.6% | -56.03/-57.01 | -0.08% | 20% |
+| [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA)<br><sub>↓CMF0d · 🎯SLING · ÷DIV · DEL79%</sub> | ⚠ CAUTION | Road EPC contractor, highways and railways infrastructure | 🟡 BULL_OS_L2 | 58 | ↑25 | ↑0.993 | ↓7d | SQ | -0.6% | -56.03/-57.01 | -0.08% | 20% |
 | [AHLUCONT](https://in.tradingview.com/chart/?symbol=NSE:AHLUCONT)<br><sub>W↑3d · ↓CMF30d</sub> | ⚠ CAUTION | Engineering contractor, infrastructure, roads, buildings, metro projects | 📈 BULL_ANY_MID | 99 | 🔄3 | ↑1.009 | ↑1d | SQ | +2.2% | -26.23/-27.69 | +2.16% | 20% |
 
 ```
