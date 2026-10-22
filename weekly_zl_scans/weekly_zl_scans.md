@@ -29,8 +29,8 @@
 | [IGIL](https://in.tradingview.com/chart/?symbol=NSE:IGIL)<br><sub>↑CMF0d</sub> | Diamond gemstone jewelry certification grading India global | 1w | ABOVE | 1w | +8.1% | +10.00% | 353.20 | 1w | 20%  |
 | [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI)<br><sub>↑CMF8d</sub> | Wealth management for high-net-worth individuals, personalized investments | 1w | ABOVE | 1w | +2.9% | +1.05% | 2223.00 | — | -%  |
 | [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF5d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +19.2% | +5.16% | 243.49 | 24w | 20%  |
-| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF21d · DEL65%(T-1)</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +0.6% | +2.61% | 123.69 | 3w | 20%  |
-| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d · DEL77%(T-1)</sub> |  | 1w | ABOVE | 1w | +684.8% | -5.43% | 116.94 | — | 20%  |
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF21d · DEL61%</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +0.6% | +2.61% | 123.69 | 3w | 20%  |
+| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +684.8% | -5.43% | 116.94 | — | 20%  |
 | [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +7.2% | -3.19% | 1100.95 | — | 20%  |
 | [JSWHL](https://in.tradingview.com/chart/?symbol=NSE:JSWHL)<br><sub>↑CMF15d</sub> | Steel conglomerate investment holding company financing subsidiaries | 1w | ABOVE | 1w | +0.2% | +0.42% | 11344.00 | 2w | 20% 🟦 |
 | [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF28d</sub> | Pharma APIs formulations branded generics domestic exports | 1w | BELOW | 1w | +3.9% | -0.80% | 1903.50 | — | 20%  |
