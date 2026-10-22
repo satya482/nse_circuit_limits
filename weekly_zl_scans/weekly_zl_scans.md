@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Weekly ZL Scan — 2026-10-21
-*Generated 2026-10-21 15:43 IST*
+# NSE Weekly ZL Scan — 2026-10-22
+*Generated 2026-10-22 15:43 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,26 +18,25 @@
 
 ---
 
-## UPTREND START — 9 stocks
+## UPTREND START — 8 stocks
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:JAICORPLTD,NSE:IPCALAB,NSE:PARACABLES,NSE:CCAVENUE,NSE:PLATIND,NSE:MIDWESTLTD,NSE:BALAJITELE,NSE:INDNIPPON
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:IGIL,NSE:ANANDRATHI,NSE:IPCALAB,NSE:PLATIND,NSE:MARSONS,NSE:CCAVENUE,NSE:MIDWESTLTD,NSE:JSWHL
 ```
 
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
-| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF27d</sub> | Pharma APIs formulations branded generics domestic exports | 1w | TOUCH | 1w | +4.7% | +5.75% | 1918.90 | — | 20%  |
-| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES)<br><sub>↑CMF3d</sub> | Power telecom railway cables manufacturer | 1w | TOUCH | 1w | +6.9% | -2.27% | 64.71 | 6w | 20% 🟦 |
-| [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI)<br><sub>↑CMF7d</sub> | Wealth management for high-net-worth individuals, personalized investments | 1w | ABOVE | 1w | +1.9% | +1.67% | 2200.00 | — | -%  |
-| [JAICORPLTD](https://in.tradingview.com/chart/?symbol=NSE:JAICORPLTD)<br><sub>↑CMF4d</sub> | Plastic processing, steel, spinning yarn manufacturing | 1w | ABOVE | 1w | +7.6% | +0.14% | 99.00 | — | 20%  |
-| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d · DEL77%</sub> |  | 1w | ABOVE | 1w | +729.9% | -4.91% | 123.66 | — | 20%  |
-| [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF4d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +13.3% | +1.53% | 231.55 | 24w | 20%  |
-| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +10.8% | +0.70% | 1137.20 | — | 20%  |
-| [BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE)<br><sub>↓CMF4d</sub> | TV serials films digital content production entertainment | 1w | ABOVE | 1w | +3.1% | +1.09% | 93.65 | 5w | 20%  |
-| [INDNIPPON](https://in.tradingview.com/chart/?symbol=NSE:INDNIPPON)<br><sub>↑CMF0d</sub> | Two-wheeler ignition systems manufacturer for automotive sector | 1w | BELOW | 1w | +1.7% | -3.37% | 1172.90 | — | 20%  |
+| [IGIL](https://in.tradingview.com/chart/?symbol=NSE:IGIL)<br><sub>↑CMF0d</sub> | Diamond gemstone jewelry certification grading India global | 1w | ABOVE | 1w | +8.1% | +10.00% | 353.20 | 1w | 20%  |
+| [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI)<br><sub>↑CMF8d</sub> | Wealth management for high-net-worth individuals, personalized investments | 1w | ABOVE | 1w | +2.9% | +1.05% | 2223.00 | — | -%  |
+| [PLATIND](https://in.tradingview.com/chart/?symbol=NSE:PLATIND)<br><sub>↑CMF5d</sub> | Specialty chemicals manufacturing for automotive and industrial applications | 1w | ABOVE | 1w | +19.2% | +5.16% | 243.49 | 24w | 20%  |
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF21d · DEL65%(T-1)</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +0.6% | +2.61% | 123.69 | 3w | 20%  |
+| [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE)<br><sub>↓CMF30d · DEL77%(T-1)</sub> |  | 1w | ABOVE | 1w | +684.8% | -5.43% | 116.94 | — | 20%  |
+| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↓CMF30d</sub> | Granite mining processing export natural stones rare earth | 1w | ABOVE | 1w | +7.2% | -3.19% | 1100.95 | — | 20%  |
+| [JSWHL](https://in.tradingview.com/chart/?symbol=NSE:JSWHL)<br><sub>↑CMF15d</sub> | Steel conglomerate investment holding company financing subsidiaries | 1w | ABOVE | 1w | +0.2% | +0.42% | 11344.00 | 2w | 20% 🟦 |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF28d</sub> | Pharma APIs formulations branded generics domestic exports | 1w | BELOW | 1w | +3.9% | -0.80% | 1903.50 | — | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ANANDRATHI,NSE:JAICORPLTD,NSE:IPCALAB,NSE:PARACABLES,NSE:CCAVENUE,NSE:PLATIND,NSE:MIDWESTLTD,NSE:BALAJITELE,NSE:INDNIPPON
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:IGIL,NSE:ANANDRATHI,NSE:IPCALAB,NSE:PLATIND,NSE:MARSONS,NSE:CCAVENUE,NSE:MIDWESTLTD,NSE:JSWHL
 ```
 ---
 
