@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE ZL Squeeze Scan — 2026-10-22
-*Generated 2026-10-22 15:42 IST*
+# NSE ZL Squeeze Scan — 2026-10-23
+*Generated 2026-10-23 15:42 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -15,54 +15,44 @@
 
 ---
 
-**44 stocks: ZLEMA25 Rising + Squeeze ON**
+**34 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Label | Sqz Days | ZL Days | ZL Chg% | Close | Day Chg | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 | Circuit |
 |--------|-------|---------:|--------:|--------:|------:|--------:|:-------:|:--------:|:--------------:|:-------:|
-| [KOLTEPATIL](https://in.tradingview.com/chart/?symbol=NSE:KOLTEPATIL) |  | 31d | 1d | +3.4% | 431.40 | +3.39% | ✓ | ✓ | ✓ | 20%  |
-| [MAHLIFE](https://in.tradingview.com/chart/?symbol=NSE:MAHLIFE) | Residential and industrial real estate development across India | 24d | 1d | +3.1% | 351.30 | +3.10% | ✓ | ✓ | ✓ | 20%  |
-| [VADILALIND](https://in.tradingview.com/chart/?symbol=NSE:VADILALIND) | Ice cream and frozen desserts manufacturer, Indian consumer market | 15d | 1d | +1.8% | 7207.50 | +1.76% | ✓ | ✓ | ✓ | 20%  |
-| [DSSL](https://in.tradingview.com/chart/?symbol=NSE:DSSL) | IT infrastructure, system integration, networking, managed cloud services | 13d | 1d | +6.3% | 1020.90 | +6.29% | ✓ | ✓ | ✓ | 20%  |
-| [CASTROLIND](https://in.tradingview.com/chart/?symbol=NSE:CASTROLIND) | Automotive and industrial lubricants manufacturer serving India | 7d | 1d | +0.6% | 197.38 | +0.61% | ✓ | ✓ | ✓ | 20%  |
-| [ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS) | Hotel chain, premium and mid-market segments, Indian travelers | 7d | 1d | +3.6% | 161.83 | +3.62% | ✓ | ✓ | ✓ | 20%  |
-| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY) | AI loyalty platforms serve enterprise retail globally | 6d | 1d | +2.2% | 547.80 | +2.17% | ✓ | ✓ | ✓ | 20%  |
-| [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN) | Product engineering, semiconductors, automotive, consumer electronics | 6d | 1d | +6.1% | 1717.20 | +6.08% | ✓ | ✓ | ✓ | 10% 🟩 |
-| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) | Pharmaceutical intermediates and specialty chemicals manufacturer globally | 5d | 1d | +2.0% | 3215.30 | +2.00% | ✓ | ✓ | ✓ | 20%  |
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | Luxury hotel chains five-star properties Indian metros | 1d | 1d | +1.7% | 595.65 | +1.73% | ✓ | ✓ | ✓ | 20%  |
+| [VENTIVE](https://in.tradingview.com/chart/?symbol=NSE:VENTIVE) | Luxury hotel owner operator developer India resorts | 39d | 1d | +1.8% | 556.65 | +1.77% | ✓ | ✓ | ✓ | 20%  |
+| [ACI](https://in.tradingview.com/chart/?symbol=NSE:ACI) | Bromine, industrial salt, potash specialty chemicals exporter | 16d | 1d | +3.9% | 478.45 | +3.86% | ✓ | ✓ | ✓ | 20%  |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | Building materials B2B marketplace connecting manufacturers suppliers traders | 14d | 1d | +5.3% | 796.80 | +5.30% | ✓ | ✓ | ✓ | 20%  |
+| [REGAAL](https://in.tradingview.com/chart/?symbol=NSE:REGAAL) | Maize starch processor serving food beverage pharmaceutical industries | 7d | 1d | +2.8% | 88.43 | +2.80% | ✓ | ✓ | ✓ | 20%  |
+| [JINDALPHOT](https://in.tradingview.com/chart/?symbol=NSE:JINDALPHOT) | Holding company investing in photography and electronics group | 6d | 1d | +2.0% | 1055.70 | +2.00% | ✓ | ✓ | ✓ | 20%  |
+| [SSWL](https://in.tradingview.com/chart/?symbol=NSE:SSWL) | Steel and alloy wheel rims manufacturer for automobiles | 3d | 1d | +20.0% | 468.75 | +19.99% | ✓ | ✓ | ✓ | 20%  |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | Specialty polyester films for packaging and industrial applications | 2d | 1d | +5.6% | 7034.00 | +5.62% | ✓ | ✓ | ✓ | 20% 🟦 |
+| [PDSL](https://in.tradingview.com/chart/?symbol=NSE:PDSL) | Apparel sourcing design manufacturing distribution global fashion supply chain | 2d | 1d | +2.8% | 341.90 | +2.80% | ✓ | ✓ | ✓ | 20%  |
+| [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) | Gaming platform, esports, mobile and console games India | 1d | 1d | +3.7% | 402.15 | +3.66% | ✓ | ✓ | ✓ | 20%  |
+| [KOLTEPATIL](https://in.tradingview.com/chart/?symbol=NSE:KOLTEPATIL) |  | 32d | 2d | +9.8% | 458.30 | +6.24% | ✓ | ✓ | ✓ | 20%  |
 | [SWARAJ](https://in.tradingview.com/chart/?symbol=NSE:SWARAJ) | Cotton synthetic fabric manufacturer for apparel and textiles | 14d | 2d | +2.6% | 377.10 | +1.22% | ✓ | ✓ | ✓ | 5%  |
-| [JAINREC](https://in.tradingview.com/chart/?symbol=NSE:JAINREC) | Non-ferrous metal recycling, lead copper aluminium alloys | 12d | 2d | +1.4% | 289.60 | +0.26% | ✓ | ✓ | ✓ | 20%  |
-| [UDS](https://in.tradingview.com/chart/?symbol=NSE:UDS) | Facilities management and business support services provider | 5d | 2d | +1.5% | 212.52 | +0.02% | ✓ | ✓ | ✓ | 20%  |
-| [TCI](https://in.tradingview.com/chart/?symbol=NSE:TCI) | Multimodal logistics freight transport supply chain solutions | 4d | 2d | +1.8% | 874.05 | +1.49% | ✓ | ✓ | ✓ | 20%  |
-| [JSWHL](https://in.tradingview.com/chart/?symbol=NSE:JSWHL) | Steel conglomerate investment holding company financing subsidiaries | 38d | 5d | +1.1% | 11344.00 | +0.42% | ✓ | ✓ | ✓ | 20% 🟦 |
-| [INDUSTOWER](https://in.tradingview.com/chart/?symbol=NSE:INDUSTOWER) | Telecom tower infrastructure operator serving mobile networks | 36d | 5d | +1.3% | 381.70 | +0.71% | ✓ | ✓ | ✓ | 20%  |
-| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA) | Music IP owner, film production, digital content distribution | 30d | 5d | +3.5% | 508.90 | -0.29% | ✓ | ✓ | ✓ | 20%  |
-| [CRISIL](https://in.tradingview.com/chart/?symbol=NSE:CRISIL) | Credit ratings research risk advisory financial markets | 13d | 5d | +8.5% | 4777.20 | +4.16% | ✓ | ✓ | ✓ | 20%  |
-| [KANSAINER](https://in.tradingview.com/chart/?symbol=NSE:KANSAINER) | Paint manufacturer industrial coatings decorative segment India | 10d | 5d | +2.4% | 183.23 | -0.81% | ✓ | ✓ | ✓ | 20%  |
-| [EMAMILTD](https://in.tradingview.com/chart/?symbol=NSE:EMAMILTD) | Personal care healthcare FMCG creams balms oils Indian consumers | 2d | 5d | +0.8% | 377.30 | +0.03% | ✓ | ✓ | ✓ | 20%  |
-| [COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE) | Pharmaceutical CDMO development manufacturing APIs formulations specialty chemicals | 41d | 6d | +1.9% | 453.85 | -1.72% | ✓ | ✓ | ✓ | 20%  |
-| [ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI) | Wealth management for high-net-worth individuals, personalized investments | 6d | 6d | +5.0% | 2223.00 | +1.05% | ✓ | ✓ | ✓ | -%  |
-| [NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO) | Cement and ready-mix concrete manufacturer East North India | 2d | 6d | +5.2% | 337.70 | +1.78% | ✓ | ✓ | ✓ | 20%  |
-| [BATAINDIA](https://in.tradingview.com/chart/?symbol=NSE:BATAINDIA) | Footwear manufacturing retail consumer discretionary mass market | 8d | 7d | +3.5% | 636.50 | +0.86% | ✓ | ✓ | ✓ | 20%  |
-| [STOVEKRAFT](https://in.tradingview.com/chart/?symbol=NSE:STOVEKRAFT) | Kitchen appliances and cookware manufacturing, retail, brands | 27d | 8d | +5.2% | 841.40 | +0.16% | ✓ | ✓ | ✓ | 20%  |
-| [RALLIS](https://in.tradingview.com/chart/?symbol=NSE:RALLIS) | Agrochemicals, seeds, crop nutrients for Indian farmers | 17d | 9d | +2.8% | 203.60 | -0.34% | ✓ | ✓ | ✓ | 20%  |
-| [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) | Explosives propellants detonators defense space mining | 3d | 33d | +4.4% | 692.50 | +0.00% | ✓ | ✓ | ✓ | 20%  |
-| [MAMATA](https://in.tradingview.com/chart/?symbol=NSE:MAMATA) | Plastic bag pouch making machines flexible packaging sector | 33d | 1d | +1.6% | 398.95 | +1.60% | ✓ | ✓ | — | 20%  |
-| [RELAXO](https://in.tradingview.com/chart/?symbol=NSE:RELAXO) | Footwear manufacturer slippers sandals shoes mass market | 7d | 1d | +1.0% | 291.35 | +0.99% | ✓ | ✓ | — | 20%  |
-| [PNBGILTS](https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS) | Government securities underwriting and debt market trading | 5d | 1d | +3.7% | 73.26 | +3.66% | ✓ | ✓ | — | 20%  |
-| [SUNTECK](https://in.tradingview.com/chart/?symbol=NSE:SUNTECK) | Luxury residential developer MMR premium apartments commercial | 2d | 1d | +5.3% | 282.50 | +5.29% | ✓ | ✓ | — | 20%  |
-| [EFCIL](https://in.tradingview.com/chart/?symbol=NSE:EFCIL) | Managed office spaces, integrated building services, corporate real estate | 2d | 1d | +6.1% | 175.50 | +6.11% | ✓ | ✓ | — | 20%  |
-| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | Pharma formulations women's health cardiology pain management domestic | 2d | 1d | +1.1% | 2043.80 | +1.13% | ✓ | ✓ | — | 20%  |
-| [GREENLAM](https://in.tradingview.com/chart/?symbol=NSE:GREENLAM) | Laminate sheets and decorative veneers for furniture makers | 2d | 1d | +2.2% | 217.15 | +2.24% | ✓ | ✓ | — | 20%  |
-| [SOBHA](https://in.tradingview.com/chart/?symbol=NSE:SOBHA) | Luxury residential developer backward integrated construction operations | 20d | 2d | +1.7% | 1196.10 | -1.30% | ✓ | ✓ | — | 20%  |
-| [GODREJCP](https://in.tradingview.com/chart/?symbol=NSE:GODREJCP) | Household insecticides, personal care, emerging markets FMCG | 2d | 2d | +1.6% | 860.20 | +0.14% | ✓ | ✓ | — | 20%  |
-| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB) | Pharma APIs formulations branded generics domestic exports | 2d | 2d | +4.9% | 1903.50 | -0.80% | ✓ | ✓ | — | 20%  |
-| [INDIACEM](https://in.tradingview.com/chart/?symbol=NSE:INDIACEM) | Cement manufacturing and sales South India construction | 1d | 2d | +12.7% | 331.75 | +0.59% | ✓ | ✓ | — | 20%  |
-| [FAZE3Q](https://in.tradingview.com/chart/?symbol=NSE:FAZE3Q) |  | 9d | 4d | +2.8% | 429.40 | -0.57% | ✓ | ✓ | — | 20% 🟦 |
-| [BANKINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANKINDIA) | Public sector bank retail corporate MSME lending | 2d | 4d | +2.9% | 136.20 | -1.33% | ✓ | ✓ | — | 20%  |
-| [NAVNETEDUL](https://in.tradingview.com/chart/?symbol=NSE:NAVNETEDUL) | Educational books stationery publisher state boards students | 14d | 5d | +2.0% | 123.48 | -1.05% | ✓ | ✓ | — | 20%  |
-| [AADHARHFC](https://in.tradingview.com/chart/?symbol=NSE:AADHARHFC) | Low-income housing loans, retail, affordable home buyers | 6d | 6d | +4.0% | 459.30 | +1.57% | ✓ | ✓ | — | 20%  |
-| [JSWCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | Green cement manufacturer for infrastructure construction projects | 7d | 7d | +1.6% | 114.69 | -0.05% | ✓ | ✓ | — | 20%  |
-| [SHREECEM](https://in.tradingview.com/chart/?symbol=NSE:SHREECEM) | Cement manufacturer, lowest cost producer, construction materials | 14d | 8d | +2.1% | 22330.00 | +0.09% | ✓ | ✓ | — | 20%  |
+| [CAPILLARY](https://in.tradingview.com/chart/?symbol=NSE:CAPILLARY) | AI loyalty platforms serve enterprise retail globally | 7d | 2d | +6.6% | 571.45 | +4.32% | ✓ | ✓ | ✓ | 20%  |
+| [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN) | Product engineering, semiconductors, automotive, consumer electronics | 7d | 2d | +10.5% | 1788.30 | +4.14% | ✓ | ✓ | ✓ | 10% 🟩 |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | Refines crude oil, produces petroleum products, lubricants | 1d | 2d | +2.6% | 1475.60 | +1.51% | ✓ | ✓ | ✓ | 20%  |
+| [KPL](https://in.tradingview.com/chart/?symbol=NSE:KPL) | Pharma manufacturer finished dosages domestic international markets | 1d | 2d | +3.4% | 3548.00 | -1.99% | ✓ | ✓ | ✓ | 20%  |
+| [JAINREC](https://in.tradingview.com/chart/?symbol=NSE:JAINREC) | Non-ferrous metal recycling, lead copper aluminium alloys | 13d | 3d | +1.2% | 289.20 | -0.14% | ✓ | ✓ | ✓ | 20%  |
+| [CRISIL](https://in.tradingview.com/chart/?symbol=NSE:CRISIL) | Credit ratings research risk advisory financial markets | 14d | 6d | +7.9% | 4751.10 | -0.55% | ✓ | ✓ | ✓ | 20%  |
+| [KANSAINER](https://in.tradingview.com/chart/?symbol=NSE:KANSAINER) | Paint manufacturer industrial coatings decorative segment India | 11d | 6d | +1.2% | 181.20 | -1.11% | ✓ | ✓ | ✓ | 20%  |
+| [BATAINDIA](https://in.tradingview.com/chart/?symbol=NSE:BATAINDIA) | Footwear manufacturing retail consumer discretionary mass market | 9d | 8d | +3.0% | 633.85 | -0.42% | ✓ | ✓ | ✓ | 20%  |
+| [KSCL](https://in.tradingview.com/chart/?symbol=NSE:KSCL) | Hybrid seeds for field crops vegetables agriculture | 1d | 9d | +3.9% | 730.05 | -0.33% | ✓ | ✓ | ✓ | 20%  |
+| [TTKPRESTIG](https://in.tradingview.com/chart/?symbol=NSE:TTKPRESTIG) | Pressure cookers, cookware, kitchen appliances for households | 14d | 1d | +2.6% | 520.30 | +2.58% | ✓ | ✓ | — | 20%  |
+| [GRINFRA](https://in.tradingview.com/chart/?symbol=NSE:GRINFRA) | Road EPC contractor, highways and railways infrastructure | 13d | 1d | +3.6% | 788.40 | +3.61% | ✓ | ✓ | — | 20%  |
+| [CSBBANK](https://in.tradingview.com/chart/?symbol=NSE:CSBBANK) | Private bank SME retail NRI lending Kerala focus | 2d | 1d | +2.0% | 311.80 | +1.96% | ✓ | ✓ | — | 20%  |
+| [GICRE](https://in.tradingview.com/chart/?symbol=NSE:GICRE) | Reinsurance provider, domestic market leader, risk transfer | 1d | 1d | +1.3% | 323.75 | +1.28% | ✓ | ✓ | — | 20%  |
+| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | Pharma formulations women's health cardiology pain management domestic | 3d | 2d | +1.5% | 2051.10 | +0.36% | ✓ | ✓ | — | 20%  |
+| [ORIENTCEM](https://in.tradingview.com/chart/?symbol=NSE:ORIENTCEM) | Cement manufacturing for construction infrastructure projects | 1d | 2d | +1.9% | 115.98 | -0.78% | ✓ | ✓ | — | 20%  |
+| [SAMHI](https://in.tradingview.com/chart/?symbol=NSE:SAMHI) | Branded hotel acquisition and asset management platform Marriott IHG Hyatt | 1d | 2d | +3.9% | 152.85 | +1.57% | ✓ | ✓ | — | 20%  |
+| [GODREJCP](https://in.tradingview.com/chart/?symbol=NSE:GODREJCP) | Household insecticides, personal care, emerging markets FMCG | 3d | 3d | +1.1% | 856.35 | -0.45% | ✓ | ✓ | — | 20%  |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB) | Pharma APIs formulations branded generics domestic exports | 3d | 3d | +7.7% | 1953.30 | +2.62% | ✓ | ✓ | — | 20%  |
+| [INDIACEM](https://in.tradingview.com/chart/?symbol=NSE:INDIACEM) | Cement manufacturing and sales South India construction | 2d | 3d | +7.3% | 315.80 | -4.81% | ✓ | ✓ | — | 20%  |
+| [AMBUJACEM](https://in.tradingview.com/chart/?symbol=NSE:AMBUJACEM) | Cement manufacturer, construction materials, infrastructure demand | 1d | 6d | +2.8% | 358.90 | -1.13% | ✓ | ✓ | — | 20%  |
+| [JLHL](https://in.tradingview.com/chart/?symbol=NSE:JLHL) | Tertiary hospital chain Mumbai west India multi-specialty care | 1d | 6d | +3.0% | 244.00 | +0.39% | ✓ | ✓ | — | 20%  |
+| [JSWCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JSWCEMENT) | Green cement manufacturer for infrastructure construction projects | 8d | 8d | +3.6% | 116.98 | +2.00% | ✓ | ✓ | — | 20%  |
+| [SHREECEM](https://in.tradingview.com/chart/?symbol=NSE:SHREECEM) | Cement manufacturer, lowest cost producer, construction materials | 15d | 9d | +4.0% | 22735.00 | +1.81% | ✓ | ✓ | — | 20%  |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
