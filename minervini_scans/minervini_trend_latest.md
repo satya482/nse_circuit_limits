@@ -1,27 +1,23 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# Minervini Trend Template Scan - 2026-10-22
-*Generated 2026-10-22 15:46 IST*
+# Minervini Trend Template Scan - 2026-10-23
+*Generated 2026-10-23 15:47 IST*
 
 ### Additions / Deletions vs previous run
 | Additions | Deletions |
 |-----------|-----------|
-| [INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN) | [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN) |
-| [OPTIEMUS](https://in.tradingview.com/chart/?symbol=NSE:OPTIEMUS) | [CCAVENUE](https://in.tradingview.com/chart/?symbol=NSE:CCAVENUE) |
-| [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT) | [FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX) |
-| [TBZ](https://in.tradingview.com/chart/?symbol=NSE:TBZ) | [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL) |
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) | [IIFLCAPS](https://in.tradingview.com/chart/?symbol=NSE:IIFLCAPS) |
-|  | [LLOYDSENGG](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENGG) |
-|  | [MANINDS](https://in.tradingview.com/chart/?symbol=NSE:MANINDS) |
-|  | [MARINE](https://in.tradingview.com/chart/?symbol=NSE:MARINE) |
-|  | [NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN) |
-|  | [ONEPOINT](https://in.tradingview.com/chart/?symbol=NSE:ONEPOINT) |
-|  | [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) |
-|  | [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) |
-|  | [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) |
-|  | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV) |
-|  | [TATVA](https://in.tradingview.com/chart/?symbol=NSE:TATVA) |
-|  | [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR) |
-|  | [WELCORP](https://in.tradingview.com/chart/?symbol=NSE:WELCORP) |
+| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS) | [63MOONS](https://in.tradingview.com/chart/?symbol=NSE:63MOONS) |
+| [GANDHAR](https://in.tradingview.com/chart/?symbol=NSE:GANDHAR) | [BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX) |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) |
+| [IIFLCAPS](https://in.tradingview.com/chart/?symbol=NSE:IIFLCAPS) | [DYNAMATECH](https://in.tradingview.com/chart/?symbol=NSE:DYNAMATECH) |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB) | [INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN) |
+| [KOLTEPATIL](https://in.tradingview.com/chart/?symbol=NSE:KOLTEPATIL) | [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) |
+| [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN) | [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT) |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH) | [PAISALO](https://in.tradingview.com/chart/?symbol=NSE:PAISALO) |
+| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) | [TBZ](https://in.tradingview.com/chart/?symbol=NSE:TBZ) |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) |
+|  | [TIPSMUSIC](https://in.tradingview.com/chart/?symbol=NSE:TIPSMUSIC) |
+|  | [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) |
+|  | [WSTCSTPAPR](https://in.tradingview.com/chart/?symbol=NSE:WSTCSTPAPR) |
 
 ### Scan definition
 | Filter | Value |
@@ -37,94 +33,91 @@
 
 ---
 
-**Qualifying: 51**
+**Qualifying: 48**
 
 ### Trend Template Qualifiers
 
 **TradingView watchlist** *(sectioned by trend age — paste into TV import)*
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###<2 WEEKS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:63MOONS,NSE:ADANIGREEN,NSE:BHEL,NSE:CHENNPETRO,NSE:COFORGE,NSE:CRAFTSMAN,NSE:DELTACORP,NSE:FEDERALBNK,NSE:HAL,NSE:INDGN,NSE:KARURVYSYA,NSE:KROSS,NSE:PAYTM,NSE:SOLARINDS,NSE:SOUTHBANK,NSE:TIPSMUSIC,###2-4 WEEKS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ABDL,NSE:ADANIPORTS,NSE:AXISCADES,NSE:BBOX,NSE:CPPLUS,NSE:CUPID,NSE:HFCL,NSE:PVRINOX,NSE:SHYAMMETL,###1-2 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:DIACABS,NSE:GCSL,NSE:OPTIEMUS,NSE:ORIENTHOT,NSE:PAISALO,NSE:PTCIL,NSE:SBC,NSE:SHREEJISPG,NSE:STLTECH,NSE:TBZ,NSE:WHEELS,###2-3 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:DYNAMATECH,NSE:EBGNG,NSE:MOREPENLAB,NSE:RAYMOND,NSE:SHANTIGOLD,NSE:THELEELA,NSE:WELSPUNLIV,###3-6 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:KMEW,NSE:LAURUSLABS,NSE:NAZARA,NSE:RATNAVEER,NSE:SSWL,NSE:TFCILTD,NSE:WSTCSTPAPR,###6+ MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:SKYGOLD
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###<2 WEEKS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ADANIGREEN,NSE:ANTELOPUS,NSE:BHEL,NSE:CHENNPETRO,NSE:COFORGE,NSE:DELTACORP,NSE:FEDERALBNK,NSE:GRWRHITECH,NSE:HAL,NSE:IIFLCAPS,NSE:IPCALAB,NSE:KOLTEPATIL,NSE:KROSS,NSE:PAYTM,NSE:SGMART,NSE:SOLARINDS,###2-4 WEEKS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:ABDL,NSE:ADANIPORTS,NSE:AXISCADES,NSE:CPPLUS,NSE:CUPID,NSE:HFCL,NSE:PVRINOX,NSE:SHYAMMETL,NSE:SOUTHBANK,###1-2 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:DIACABS,NSE:GCSL,NSE:OPTIEMUS,NSE:PREMEXPLN,NSE:PTCIL,NSE:SBC,NSE:SHREEJISPG,NSE:STLTECH,NSE:WHEELS,###2-3 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:EBGNG,NSE:MOREPENLAB,NSE:RAYMOND,NSE:ROSSTECH,NSE:SAMBHV,NSE:SHANTIGOLD,###3-6 MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:GANDHAR,NSE:KMEW,NSE:LAURUSLABS,NSE:NAZARA,NSE:RATNAVEER,NSE:SSWL,NSE:TFCILTD,###6+ MONTHS,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,NSE:SKYGOLD
 ```
 
 | Symbol | Close | %off 52wk-high | %above 52wk-low | Age | SMA stack | RS gate | Day chg% |
 |--------|------:|----------------:|------------------:|----:|:---------:|:-------:|--------:|
+| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>✓ SAFE . →53Cr · 362Cr . ↑CMF30d</sub> | 1136.40 | -9.9% | +216.1% | 0d | SMA-OK | RS-OK | +13.00% |
 | [ADANIGREEN](https://in.tradingview.com/chart/?symbol=NSE:ADANIGREEN)<br><sub>✓ SAFE . ↗421Cr · 123Cr . ↓CMF9d</sub> | 1303.00 | -18.8% | +68.6% | 0d | SMA-OK | RS-OK | -1.17% |
-| [INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN)<br><sub>✓ SAFE . ↘13Cr · 23Cr . ↓CMF18d</sub> | 588.10 | -4.1% | +38.9% | 1d | SMA-OK | RS-OK | +1.31% |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>⚠ CAUTION . →47Cr · 62Cr . ↓CMF29d</sub> | 1953.30 | -2.8% | +54.0% | 0d | SMA-OK | RS-OK | +2.62% |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH)<br><sub>✓ SAFE . ↗76Cr · 173Cr . ↑CMF22d</sub> | 7034.00 | -5.1% | +160.1% | 1d | SMA-OK | RS-OK | +5.62% |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART)<br><sub>✓ SAFE . ↗28Cr · 62Cr . ↓CMF30d</sub> | 796.80 | -5.4% | +149.5% | 1d | SMA-OK | RS-OK | +5.30% |
+| [KOLTEPATIL](https://in.tradingview.com/chart/?symbol=NSE:KOLTEPATIL)<br><sub>✓ SAFE . ↘9Cr · 41Cr . ↓CMF10d</sub> | 458.30 | -11.3% | +54.9% | 1d | SMA-OK | RS-OK | +6.24% |
 | [HAL](https://in.tradingview.com/chart/?symbol=NSE:HAL)<br><sub>✓ SAFE . →310Cr · 386Cr . ↓CMF28d</sub> | 4908.00 | -3.7% | +40.7% | 3d | SMA-OK | RS-OK | -0.51% |
-| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>✓ SAFE . ↘314Cr · 706Cr . ↑CMF11d</sub> | 1453.70 | -10.6% | +94.7% | 4d | SMA-OK | RS-OK | +1.06% |
 | [PAYTM](https://in.tradingview.com/chart/?symbol=NSE:PAYTM)<br><sub>✓ SAFE . ↗877Cr · 454Cr . ↑CMF30d</sub> | 1706.40 | -7.8% | +77.9% | 4d | SMA-OK | RS-OK | -0.35% |
-| [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK)<br><sub>✓ SAFE . ↗338Cr · 277Cr . ↑CMF3d</sub> | 347.80 | -6.4% | +52.9% | 4d | SMA-OK | RS-OK | +1.10% |
-| [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN)<br><sub>⚠ CAUTION . →47Cr · 56Cr . ↑CMF6d</sub> | 10998.00 | -7.2% | +70.6% | 4d | SMA-OK | RS-OK | +0.08% |
-| [63MOONS](https://in.tradingview.com/chart/?symbol=NSE:63MOONS)<br><sub>✓ SAFE . ↗66Cr · 30Cr . ↓CMF19d</sub> | 867.25 | -6.9% | +84.4% | 4d | SMA-OK | RS-OK | -0.96% |
-| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE)<br><sub>✓ SAFE . →413Cr · 671Cr . ↓CMF5d</sub> | 1908.80 | -5.3% | +77.7% | 5d | SMA-OK | RS-OK | -2.16% |
+| [IIFLCAPS](https://in.tradingview.com/chart/?symbol=NSE:IIFLCAPS)<br><sub>✓ SAFE . →16Cr · 32Cr . ↓CMF5d</sub> | 342.10 | -13.5% | +40.1% | 4d | SMA-OK | RS-OK | -0.71% |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>✓ SAFE . ↘388Cr · 946Cr . ↑CMF12d</sub> | 1475.60 | -9.3% | +91.7% | 5d | SMA-OK | RS-OK | +1.51% |
+| [FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK)<br><sub>✓ SAFE . ↗350Cr · 365Cr . ↑CMF4d</sub> | 340.90 | -8.3% | +49.9% | 5d | SMA-OK | RS-OK | -1.98% |
 | [SOLARINDS](https://in.tradingview.com/chart/?symbol=NSE:SOLARINDS)<br><sub>✓ SAFE . ↘314Cr · 262Cr . ↓CMF18d</sub> | 19996.00 | -11.0% | +69.9% | 5d | SMA-OK | RS-OK | -0.86% |
-| [DELTACORP](https://in.tradingview.com/chart/?symbol=NSE:DELTACORP)<br><sub>✓ SAFE . ↘44Cr · 54Cr . ↓CMF0d</sub> | 76.25 | -10.7% | +54.5% | 5d | SMA-OK | RS-OK | +3.70% |
-| [KROSS](https://in.tradingview.com/chart/?symbol=NSE:KROSS)<br><sub>✓ SAFE . ↗124Cr · 201Cr . ↓CMF3d</sub> | 294.55 | -1.0% | +86.1% | 8d | SMA-OK | RS-OK | +5.84% |
-| [TIPSMUSIC](https://in.tradingview.com/chart/?symbol=NSE:TIPSMUSIC)<br><sub>✓ SAFE . ↗99Cr · 50Cr . ↑CMF8d</sub> | 723.25 | -6.3% | +49.3% | 9d | SMA-OK | RS-OK | -3.31% |
+| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE)<br><sub>✓ SAFE . →435Cr · 673Cr . ↓CMF6d</sub> | 1900.50 | -5.7% | +77.0% | 6d | SMA-OK | RS-OK | -0.43% |
+| [DELTACORP](https://in.tradingview.com/chart/?symbol=NSE:DELTACORP)<br><sub>✓ SAFE . ↘37Cr · 33Cr . ↓CMF1d</sub> | 73.01 | -14.5% | +48.0% | 6d | SMA-OK | RS-OK | -4.25% |
+| [KROSS](https://in.tradingview.com/chart/?symbol=NSE:KROSS)<br><sub>✓ SAFE . ↗151Cr · 259Cr . ↑CMF0d</sub> | 306.55 | 0.0% | +93.7% | 9d | SMA-OK | RS-OK | +4.07% |
 | [BHEL](https://in.tradingview.com/chart/?symbol=NSE:BHEL)<br><sub>✓ SAFE . ↗724Cr · 1018Cr . ↑CMF30d</sub> | 433.10 | -6.7% | +87.5% | 10d | SMA-OK | RS-OK | -6.66% |
-| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK)<br><sub>✓ SAFE . ↗158Cr · 144Cr . ↑CMF21d</sub> | 55.75 | 0.0% | +65.9% | 10d | SMA-OK | RS-OK | +1.42% |
-| [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA)<br><sub>✓ SAFE . ↗233Cr · 119Cr . ↑CMF5d</sub> | 356.05 | -3.8% | +47.7% | 10d | SMA-OK | RS-OK | -1.00% |
-| [SHYAMMETL](https://in.tradingview.com/chart/?symbol=NSE:SHYAMMETL)<br><sub>✓ SAFE . ↗58Cr · 44Cr . ↑CMF7d</sub> | 1200.00 | -2.2% | +57.6% | 13d | SMA-OK | RS-OK | +0.37% |
-| [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES)<br><sub>✓ SAFE . ↘28Cr · 30Cr . ↑CMF30d</sub> | 1961.30 | -15.0% | +78.1% | 13d | SMA-OK | RS-OK | -0.48% |
-| [BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX)<br><sub>✓ SAFE . ↗127Cr · 102Cr . ↓CMF5d</sub> | 885.00 | -17.9% | +97.9% | 14d | SMA-OK | RS-OK | -1.32% |
+| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK)<br><sub>✓ SAFE . ↗157Cr · 145Cr . ↑CMF22d</sub> | 52.57 | -5.7% | +56.5% | 11d | SMA-OK | RS-OK | -5.70% |
+| [AXISCADES](https://in.tradingview.com/chart/?symbol=NSE:AXISCADES)<br><sub>✓ SAFE . ↘28Cr · 38Cr . ↑CMF30d</sub> | 1917.40 | -16.9% | +74.1% | 14d | SMA-OK | RS-OK | -2.24% |
+| [SHYAMMETL](https://in.tradingview.com/chart/?symbol=NSE:SHYAMMETL)<br><sub>✓ SAFE . ↗56Cr · 32Cr . ↑CMF8d</sub> | 1131.30 | -7.8% | +48.6% | 14d | SMA-OK | RS-OK | -5.73% |
 | [ADANIPORTS](https://in.tradingview.com/chart/?symbol=NSE:ADANIPORTS)<br><sub>✓ SAFE . ↗729Cr · 383Cr . ↑CMF22d</sub> | 1746.60 | -7.3% | +34.0% | 17d | SMA-OK | RS-OK | -0.12% |
-| [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX)<br><sub>✓ SAFE . ↘90Cr · 127Cr . ↑CMF26d</sub> | 1419.90 | 0.0% | +54.6% | 17d | SMA-OK | RS-OK | +0.14% |
-| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE . ↘552Cr · 672Cr . ↑CMF21d</sub> | 320.05 | -12.6% | +585.3% | 18d | SMA-OK | RS-OK | -6.07% |
 | [HFCL](https://in.tradingview.com/chart/?symbol=NSE:HFCL)<br><sub>✓ SAFE . ↘364Cr · 386Cr . ↑CMF20d</sub> | 226.27 | -10.0% | +271.2% | 18d | SMA-OK | RS-OK | -4.38% |
-| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>✓ SAFE . ↗173Cr · 79Cr . ↓CMF2d</sub> | 3904.60 | -12.1% | +197.2% | 19d | SMA-OK | RS-OK | +0.01% |
-| [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL)<br><sub>✓ SAFE . ↘49Cr · 26Cr . ↓CMF0d</sub> | 698.90 | -6.6% | +81.9% | 19d | SMA-OK | RS-OK | +0.59% |
-| [OPTIEMUS](https://in.tradingview.com/chart/?symbol=NSE:OPTIEMUS)<br><sub>✓ SAFE . ↘31Cr · 29Cr . ↑CMF30d</sub> | 724.95 | -18.5% | +147.6% | 24d | SMA-OK | RS-OK | -1.00% |
-| [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL)<br><sub>✓ SAFE . →71Cr · 51Cr . ↑CMF11d</sub> | 24745.00 | -3.8% | +68.0% | 26d | SMA-OK | RS-OK | -1.47% |
+| [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX)<br><sub>✓ SAFE . ↘85Cr · 56Cr . ↑CMF27d</sub> | 1395.70 | -1.7% | +51.9% | 18d | SMA-OK | RS-OK | -1.70% |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE . ↘484Cr · 590Cr . ↑CMF22d</sub> | 306.45 | -16.3% | +556.2% | 19d | SMA-OK | RS-OK | -4.25% |
+| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>✓ SAFE . ↗145Cr · 103Cr . ↓CMF3d</sub> | 3798.00 | -14.5% | +189.0% | 20d | SMA-OK | RS-OK | -2.73% |
+| [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL)<br><sub>✓ SAFE . →46Cr · 65Cr . ↓CMF1d</sub> | 672.65 | -10.2% | +75.1% | 20d | SMA-OK | RS-OK | -3.76% |
+| [OPTIEMUS](https://in.tradingview.com/chart/?symbol=NSE:OPTIEMUS)<br><sub>✓ SAFE . ↘28Cr · 32Cr . ↑CMF30d</sub> | 673.70 | -24.3% | +130.1% | 25d | SMA-OK | RS-OK | -7.07% |
+| [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL)<br><sub>✓ SAFE . →68Cr · 82Cr . ↑CMF12d</sub> | 23455.00 | -8.8% | +59.3% | 27d | SMA-OK | RS-OK | -5.21% |
 | [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH)<br><sub>✓ SAFE . →292Cr · 255Cr . ↑CMF30d</sub> | 405.15 | 0.0% | +560.0% | 28d | SMA-OK | RS-OK | +1.72% |
-| [TBZ](https://in.tradingview.com/chart/?symbol=NSE:TBZ)<br><sub>✓ SAFE . ↘113Cr · 59Cr . ↑CMF19d</sub> | 665.35 | 0.0% | +496.7% | 29d | SMA-OK | RS-OK | +4.99% |
-| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL)<br><sub>✓ SAFE . →27Cr · 22Cr . ↑CMF30d</sub> | 723.80 | -2.2% | +228.3% | 31d | SMA-OK | RS-OK | +1.74% |
-| [PAISALO](https://in.tradingview.com/chart/?symbol=NSE:PAISALO)<br><sub>✓ SAFE . ↘63Cr · 48Cr . ↓CMF3d</sub> | 79.34 | -15.1% | +156.2% | 34d | SMA-OK | RS-OK | -0.45% |
+| [PREMEXPLN](https://in.tradingview.com/chart/?symbol=NSE:PREMEXPLN)<br><sub>✓ SAFE . ↗20Cr · 45Cr . ↑CMF12d</sub> | 687.40 | -15.0% | +80.2% | 30d | SMA-OK | RS-OK | -0.74% |
+| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL)<br><sub>✓ SAFE . ↗28Cr · 40Cr . ↑CMF30d</sub> | 726.20 | -1.9% | +225.6% | 32d | SMA-OK | RS-OK | +0.33% |
 | [DIACABS](https://in.tradingview.com/chart/?symbol=NSE:DIACABS)<br><sub>✓ SAFE . ↗363Cr · 101Cr . ↑CMF9d</sub> | 322.85 | -4.3% | +173.7% | 37d | SMA-OK | RS-OK | -0.35% |
-| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>✓ SAFE . →81Cr · 100Cr . ↑CMF30d</sub> | 788.85 | -6.1% | +232.0% | 39d | SMA-OK | RS-OK | +1.22% |
-| [SBC](https://in.tradingview.com/chart/?symbol=NSE:SBC)<br><sub>✓ SAFE . ↘94Cr · 75Cr . ↑CMF2d</sub> | 62.12 | -3.7% | +165.7% | 39d | SMA-OK | RS-OK | -1.30% |
-| [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT)<br><sub>✓ SAFE . ↗20Cr · 60Cr . ↑CMF7d</sub> | 154.30 | 0.0% | +88.1% | 39d | SMA-OK | RS-OK | +4.70% |
-| [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS)<br><sub>✓ SAFE . ↘23Cr · 23Cr . ↑CMF6d</sub> | 2108.70 | -14.0% | +195.3% | 41d | SMA-OK | RS-OK | -3.95% |
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA)<br><sub>✓ SAFE . ↗52Cr · 55Cr . ↓CMF5d</sub> | 595.65 | -4.4% | +52.9% | 48d | SMA-OK | RS-OK | +1.73% |
+| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>✓ SAFE . →80Cr · 104Cr . ↑CMF30d</sub> | 776.60 | -7.5% | +226.8% | 40d | SMA-OK | RS-OK | -1.55% |
+| [SBC](https://in.tradingview.com/chart/?symbol=NSE:SBC)<br><sub>✓ SAFE . ↘89Cr · 78Cr . ↓CMF0d</sub> | 61.05 | -5.3% | +161.1% | 40d | SMA-OK | RS-OK | -1.72% |
+| [WHEELS](https://in.tradingview.com/chart/?symbol=NSE:WHEELS)<br><sub>✓ SAFE . →27Cr · 48Cr . ↑CMF7d</sub> | 2157.80 | -12.0% | +202.2% | 42d | SMA-OK | RS-OK | +2.33% |
 | [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB)<br><sub>✓ SAFE . ↗253Cr · 230Cr . ↑CMF30d</sub> | 129.55 | -11.9% | +284.6% | 48d | SMA-OK | RS-OK | -5.13% |
-| [EBGNG](https://in.tradingview.com/chart/?symbol=NSE:EBGNG)<br><sub>✓ SAFE . →51Cr · 227Cr . ↓CMF4d</sub> | 673.75 | -7.9% | +177.8% | 49d | SMA-OK | RS-OK | +0.50% |
-| [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND)<br><sub>✓ SAFE . ↘78Cr · 91Cr . ↓CMF0d . DEL32%(T-1)</sub> | 1085.70 | -16.5% | +237.3% | 49d | SMA-OK | RS-OK | -0.29% |
-| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV)<br><sub>✓ SAFE . ↘51Cr · 52Cr . ↓CMF4d</sub> | 213.94 | -10.5% | +97.5% | 50d | SMA-OK | RS-OK | +0.90% |
-| [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>✓ SAFE . ↘140Cr · 76Cr . ↑CMF21d</sub> | 394.30 | -6.9% | +151.7% | 51d | SMA-OK | RS-OK | -1.23% |
-| [DYNAMATECH](https://in.tradingview.com/chart/?symbol=NSE:DYNAMATECH)<br><sub>✓ SAFE . ↘25Cr · 30Cr . ↑CMF29d</sub> | 12591.00 | -12.7% | +64.0% | 54d | SMA-OK | RS-OK | -1.53% |
-| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE . ↘125Cr · 37Cr . ↓CMF3d</sub> | 326.30 | -6.9% | +148.5% | 66d | SMA-OK | RS-OK | -2.63% |
-| [SSWL](https://in.tradingview.com/chart/?symbol=NSE:SSWL)<br><sub>✓ SAFE . ↘25Cr · 32Cr . ↑CMF13d . DEL57%(T-1)</sub> | 390.65 | -8.0% | +129.2% | 68d | SMA-OK | RS-OK | -0.24% |
-| [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD)<br><sub>✓ SAFE . →194Cr · 211Cr . ↓CMF25d</sub> | 150.67 | -6.3% | +172.8% | 69d | SMA-OK | RS-OK | +0.31% |
-| [WSTCSTPAPR](https://in.tradingview.com/chart/?symbol=NSE:WSTCSTPAPR)<br><sub>✓ SAFE . ↗157Cr · 145Cr . ↑CMF30d</sub> | 824.65 | -12.3% | +116.3% | 74d | SMA-OK | RS-OK | +6.41% |
-| [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA)<br><sub>✓ SAFE . →62Cr · 71Cr . ↓CMF0d</sub> | 387.95 | -7.2% | +78.2% | 76d | SMA-OK | RS-OK | -2.75% |
-| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW)<br><sub>✓ SAFE . ↘36Cr · 37Cr . ↑CMF18d</sub> | 3129.10 | -6.5% | +184.0% | 94d | SMA-OK | RS-OK | +0.29% |
+| [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND)<br><sub>✓ SAFE . ↘72Cr · 82Cr . ↓CMF1d</sub> | 1063.40 | -18.2% | +230.4% | 50d | SMA-OK | RS-OK | -2.05% |
+| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV)<br><sub>✓ SAFE . ↘38Cr · 42Cr . ↑CMF25d</sub> | 157.23 | -8.8% | +91.0% | 50d | SMA-OK | RS-OK | -1.77% |
+| [EBGNG](https://in.tradingview.com/chart/?symbol=NSE:EBGNG)<br><sub>✓ SAFE . →53Cr · 41Cr . ↓CMF5d</sub> | 682.50 | -6.7% | +181.4% | 50d | SMA-OK | RS-OK | +1.30% |
+| [SHANTIGOLD](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGOLD)<br><sub>✓ SAFE . ↘106Cr · 131Cr . ↑CMF22d</sub> | 368.50 | -12.9% | +135.3% | 52d | SMA-OK | RS-OK | -6.54% |
+| [ROSSTECH](https://in.tradingview.com/chart/?symbol=NSE:ROSSTECH)<br><sub>✓ SAFE . ↘19Cr · 50Cr . ↑CMF28d</sub> | 1402.60 | -13.5% | +144.4% | 55d | SMA-OK | RS-OK | +3.23% |
+| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>✓ SAFE . →134Cr · 232Cr . ↓CMF4d</sub> | 330.70 | -5.6% | +151.9% | 67d | SMA-OK | RS-OK | +1.35% |
+| [SSWL](https://in.tradingview.com/chart/?symbol=NSE:SSWL)<br><sub>✓ SAFE . ↗120Cr · 933Cr . ↑CMF14d</sub> | 468.75 | 0.0% | +175.0% | 69d | SMA-OK | RS-OK | +19.99% |
+| [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD)<br><sub>✓ SAFE . ↘164Cr · 145Cr . ↓CMF26d</sub> | 147.57 | -8.2% | +167.1% | 70d | SMA-OK | RS-OK | -2.06% |
+| [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA)<br><sub>✓ SAFE . →72Cr · 133Cr . ↑CMF0d</sub> | 402.15 | -3.8% | +84.8% | 77d | SMA-OK | RS-OK | +3.66% |
+| [KMEW](https://in.tradingview.com/chart/?symbol=NSE:KMEW)<br><sub>✓ SAFE . ↘33Cr · 46Cr . ↑CMF19d</sub> | 3149.70 | -5.9% | +177.2% | 95d | SMA-OK | RS-OK | +0.66% |
+| [GANDHAR](https://in.tradingview.com/chart/?symbol=NSE:GANDHAR)<br><sub>✓ SAFE . →22Cr · 36Cr . ↑CMF25d</sub> | 293.00 | -5.8% | +150.9% | 96d | SMA-OK | RS-OK | -0.68% |
 | [LAURUSLABS](https://in.tradingview.com/chart/?symbol=NSE:LAURUSLABS)<br><sub>✓ SAFE . →281Cr · 165Cr . ↑CMF1d</sub> | 2020.00 | -2.4% | +131.4% | 112d | SMA-OK | RS-OK | -0.83% |
-| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD)<br><sub>✓ SAFE . ↗197Cr · 111Cr . ↑CMF10d</sub> | 1043.05 | -1.7% | +246.0% | 133d | SMA-OK | RS-OK | -0.24% |
+| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD)<br><sub>✓ SAFE . →194Cr · 200Cr . ↑CMF11d</sub> | 1046.85 | -1.3% | +247.2% | 134d | SMA-OK | RS-OK | +0.36% |
 
 ### By Trend Age
 
 **<2 WEEKS** (16)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:63MOONS,NSE:ADANIGREEN,NSE:BHEL,NSE:CHENNPETRO,NSE:COFORGE,NSE:CRAFTSMAN,NSE:DELTACORP,NSE:FEDERALBNK,NSE:HAL,NSE:INDGN,NSE:KARURVYSYA,NSE:KROSS,NSE:PAYTM,NSE:SOLARINDS,NSE:SOUTHBANK,NSE:TIPSMUSIC
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ADANIGREEN,NSE:ANTELOPUS,NSE:BHEL,NSE:CHENNPETRO,NSE:COFORGE,NSE:DELTACORP,NSE:FEDERALBNK,NSE:GRWRHITECH,NSE:HAL,NSE:IIFLCAPS,NSE:IPCALAB,NSE:KOLTEPATIL,NSE:KROSS,NSE:PAYTM,NSE:SGMART,NSE:SOLARINDS
 ```
 
 **2-4 WEEKS** (9)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ABDL,NSE:ADANIPORTS,NSE:AXISCADES,NSE:BBOX,NSE:CPPLUS,NSE:CUPID,NSE:HFCL,NSE:PVRINOX,NSE:SHYAMMETL
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ABDL,NSE:ADANIPORTS,NSE:AXISCADES,NSE:CPPLUS,NSE:CUPID,NSE:HFCL,NSE:PVRINOX,NSE:SHYAMMETL,NSE:SOUTHBANK
 ```
 
-**1-2 MONTHS** (11)
+**1-2 MONTHS** (9)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DIACABS,NSE:GCSL,NSE:OPTIEMUS,NSE:ORIENTHOT,NSE:PAISALO,NSE:PTCIL,NSE:SBC,NSE:SHREEJISPG,NSE:STLTECH,NSE:TBZ,NSE:WHEELS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DIACABS,NSE:GCSL,NSE:OPTIEMUS,NSE:PREMEXPLN,NSE:PTCIL,NSE:SBC,NSE:SHREEJISPG,NSE:STLTECH,NSE:WHEELS
 ```
 
-**2-3 MONTHS** (7)
+**2-3 MONTHS** (6)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:DYNAMATECH,NSE:EBGNG,NSE:MOREPENLAB,NSE:RAYMOND,NSE:SHANTIGOLD,NSE:THELEELA,NSE:WELSPUNLIV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:EBGNG,NSE:MOREPENLAB,NSE:RAYMOND,NSE:ROSSTECH,NSE:SAMBHV,NSE:SHANTIGOLD
 ```
 
 **3-6 MONTHS** (7)
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:KMEW,NSE:LAURUSLABS,NSE:NAZARA,NSE:RATNAVEER,NSE:SSWL,NSE:TFCILTD,NSE:WSTCSTPAPR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GANDHAR,NSE:KMEW,NSE:LAURUSLABS,NSE:NAZARA,NSE:RATNAVEER,NSE:SSWL,NSE:TFCILTD
 ```
 
 **6+ MONTHS** (1)
