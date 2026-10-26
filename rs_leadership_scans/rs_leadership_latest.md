@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS Leadership — 2026-10-23
-*Generated 2026-10-23 15:46 IST*
+## RS Leadership — 2026-10-26
+*Generated 2026-10-26 15:44 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,20 +18,19 @@
 
 ---
 
-**3 signals — RS leadership combined cross today**
+**2 signals — RS leadership combined cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CYIENT,NSE:SGMART,NSE:INDHOTEL
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ATHERENERG,NSE:MRPL
 ```
 
 | Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |
 |--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|
-| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT) [20%]<br><sub>↑CMF17d</sub> | Engineering services, design, manufacturing digital transformation | 1233.00 | +7.81% | +13.50% | 8.35 | 5/5 | ↑ | ↑ | — | ↗296Cr · 2452Cr |
-| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↓CMF30d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 796.80 | +5.30% | +10.75% | 5.72 | 5/5 | ↑ | ↑ | ● | ↗28Cr · 62Cr |
-| [INDHOTEL](https://in.tradingview.com/chart/?symbol=NSE:INDHOTEL) [20%]<br><sub>↓CMF11d</sub> | Luxury and midscale hotel brands across Asia Pacific | 742.05 | +2.30% | +2.97% | 1.71 | 5/5 | ↑ | ↑ | ● | ↘202Cr · 366Cr |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) [-%]<br><sub>↑CMF0d</sub> | Premium electric scooters, charging network, urban mobility | 1575.00 | +14.13% | +11.52% | 4.59 | 5/5 | 🔄 | ↑ | ● | ↘399Cr · 1437Cr |
+| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) [20%]<br><sub>↑CMF0d</sub> | Crude oil refining, petrochemicals, fuel production for domestic markets | 182.61 | +12.55% | +9.89% | 3.08 | 5/5 | 🔄 | ↑ | ● | ↗432Cr · 2081Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CYIENT,NSE:SGMART,NSE:INDHOTEL
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ATHERENERG,NSE:MRPL
 ```
 
 ---
