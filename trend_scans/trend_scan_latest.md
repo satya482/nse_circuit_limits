@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# Trend Scanner — 2026-10-23
-*Generated 2026-10-23 15:47 IST*
+# Trend Scanner — 2026-10-26
+*Generated 2026-10-26 15:45 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -16,47 +16,54 @@
 
 ---
 
-**Opportunities: 18** · 0 full LEADER_ZL (all 3 conditions)
+**Opportunities: 25** · 0 full LEADER_ZL (all 3 conditions)
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SSWL,NSE:BLISSGVS,NSE:SGMART,NSE:MODISONLTD,NSE:GRWRHITECH,NSE:UFBL,NSE:NAZARA,NSE:SKYGOLD,NSE:ANTELOPUS,NSE:KROSS,NSE:CHENNPETRO,NSE:KABRAEXTRU,NSE:IPCALAB,NSE:NINSYS,NSE:TIRUPATIFL,NSE:CONSOFINVT,NSE:ORIENTHOT,NSE:JINDALPOLY
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BLISSGVS,NSE:MODISONLTD,NSE:UFBL,NSE:SGMART,NSE:ATHERENERG,NSE:GRWRHITECH,NSE:CYIENT,NSE:CHENNPETRO,NSE:ACUTAAS,NSE:KABRAEXTRU,NSE:APOLLO,NSE:GNA,NSE:NINSYS,NSE:TIRUPATIFL,NSE:IPCALAB,NSE:RBA,NSE:TEXINFRA,NSE:YASHO,NSE:KROSS,NSE:ORIENTHOT,NSE:CONSOFINVT,NSE:GESHIP,NSE:GRANULES,NSE:COFORGE,NSE:PARACABLES
 ```
 
 ### 🏆 LEADER ZL — ZLEMA25 touch + RS holds + volume dry-up (0)
 *No signals.*
 
-### 🟢 ZL PULLBACK — ZLEMA25 touch + RS holds (11)
+### 🟢 ZL PULLBACK — ZLEMA25 touch + RS holds (14)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Pharmaceutical formulations suppositories capsules tablets syrups India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑99 | ↓1.048 | 97% | 312% ↑ | ✅8/8 | 0.65x | ↑60d+ | +108.7% | +0.68% | 20%  |
 | [MODISONLTD](https://in.tradingview.com/chart/?symbol=NSE:MODISONLTD)<br><sub>↑CMF22d</sub> | ✓ SAFE | Electrical contact materials for switchgear industries LV MV HV | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑98 | ↑1.075 | 99% | 349% ↑ | ✅8/8 | 0.83x | ↑24d | +84.5% | +5.00% | 5% 🟥 |
 | [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL)<br><sub>↑CMF6d</sub> | ✓ SAFE | Casual dining restaurants, grilled meats, India regional expansion | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑99 | ↑1.061 | 100% | 366% ↑ | ✅8/8 | 1.25x | ↑8d | +19.9% | +1.62% | 20%  |
-| [SKYGOLD](https://in.tradingview.com/chart/?symbol=NSE:SKYGOLD)<br><sub>↑CMF11d</sub> | ✓ SAFE | Gold jewelry manufacturer selling to retail jewelers B2B | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 70 | ↑98 | ↓1.039 | 99% | 247% ↑ | ✅8/8 | 0.93x | ↑19d | +31.4% | +0.36% | 20%  |
-| [KROSS](https://in.tradingview.com/chart/?symbol=NSE:KROSS)<br><sub>↑CMF0d</sub> | ✓ SAFE | Commercial vehicle axle components manufacturer | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 68 | ↑89 | ↑1.086 | 100% | 94% ↑ | ✅8/8 | 2.19x | ↑8d | +25.7% | +4.07% | 20%  |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART)<br><sub>↑CMF0d</sub> | ✓ SAFE | Building materials B2B marketplace connecting manufacturers suppliers traders | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 71 | ↑90 | ↓1.031 | 95% | 150% ↑ | ✅8/8 | 2.24x | ↑2d | +5.7% | +0.36% | 20%  |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH)<br><sub>↑CMF23d</sub> | ✓ SAFE | Specialty polyester films for packaging and industrial applications | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 70 | ↑88 | ↓1.007 | 94% | 158% ↑ | ✅8/8 | 3.64x | ↑2d | +4.8% | -0.81% | 20% 🟦 |
+| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT)<br><sub>↑CMF18d</sub> | ✓ SAFE | Engineering services, design, manufacturing digital transformation | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 69 | ↑75 | ↓1.048 | 100% | 65% ↑ | ✅7/8 | 4.07x | ↑2d | +8.7% | +0.80% | 20%  |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>↑CMF13d</sub> | ✓ SAFE | Refines crude oil, produces petroleum products, lubricants | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 68 | ↑86 | ↑1.038 | 94% | 98% ↑ | ✅8/8 | 1.51x | ↑3d | +5.8% | +3.10% | 20%  |
 | [KABRAEXTRU](https://in.tradingview.com/chart/?symbol=NSE:KABRAEXTRU)<br><sub>↑CMF30d</sub> | ✓ SAFE | Plastic extrusion machinery, lithium-ion battery packs manufacturer | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 66 | ↑99 | ↓1.044 | 93% | 341% ↑ | ✅8/8 | 1.05x | ↑9d | +27.3% | -2.92% | 5% 🟥 |
-| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF29d</sub> | ⚠ CAUTION | Pharma APIs formulations branded generics domestic exports | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 66 | ↑73 | ↑1.028 | 97% | 54% ↑ | ✅8/8 | 1.71x | ↑3d | +7.7% | +2.62% | 20%  |
-| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS)<br><sub>↑CMF17d</sub> | ⚠ CAUTION |  | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 64 | ↑91 | ↓1.022 | 96% | 206% ↑ | ✅8/8 | 1.36x | ↑19d | +24.1% | -3.04% | 20%  |
+| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS)<br><sub>↑CMF18d</sub> | ⚠ CAUTION |  | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 64 | ↑90 | ↑1.023 | 96% | 208% ↑ | ✅8/8 | 1.28x | ↑20d | +24.8% | +0.62% | 20%  |
 | [TIRUPATIFL](https://in.tradingview.com/chart/?symbol=NSE:TIRUPATIFL)<br><sub>↑CMF16d</sub> | ✓ SAFE | Carbon steel forged flanges and components for oil gas automotive | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 64 | ↑92 | ↓1.071 | 95% | 147% ↑ | ✅8/8 | 1.65x | ↑27d | +77.8% | -4.99% | 2%  |
-| [CONSOFINVT](https://in.tradingview.com/chart/?symbol=NSE:CONSOFINVT)<br><sub>↑CMF9d</sub> | n/a |  | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 62 | ↑77 | ↑1.072 | 100% | 90% ↑ | ✅8/8 | 1.49x | ↑11d | +29.3% | +4.66% | 5%  |
-| [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT)<br><sub>↑CMF8d</sub> | ✓ SAFE | Taj-branded luxury hotel operator serving Southern India tourism | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 61 | ↑76 | ↓1.025 | 98% | 85% ↑ | ✅8/8 | 2.47x | ↑9d | +9.1% | -1.65% | 20%  |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB)<br><sub>↓CMF30d</sub> | ⚠ CAUTION | Pharma APIs formulations branded generics domestic exports | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 63 | ↑70 | ↓1.017 | 96% | 52% ↑ | ✅8/8 | 1.39x | ↑4d | +6.8% | -0.75% | 20%  |
+| [KROSS](https://in.tradingview.com/chart/?symbol=NSE:KROSS)<br><sub>↑CMF1d</sub> | ✓ SAFE | Commercial vehicle axle components manufacturer | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 62 | ↑86 | ↓1.018 | 94% | 82% ↑ | ✅8/8 | 1.97x | ↑9d | +18.4% | -5.82% | 20%  |
+| [ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT)<br><sub>↑CMF9d</sub> | ✓ SAFE | Taj-branded luxury hotel operator serving Southern India tourism | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 62 | ↑78 | ↑1.035 | 100% | 88% ↑ | ✅8/8 | 2.26x | ↑10d | +11.1% | +1.82% | 20%  |
+| [CONSOFINVT](https://in.tradingview.com/chart/?symbol=NSE:CONSOFINVT)<br><sub>↑CMF9d</sub> | n/a |  | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 62 | ↑76 | ↑1.072 | 100% | 90% ↑ | ✅8/8 | 1.49x | ↑11d | +29.3% | +4.66% | 5%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BLISSGVS,NSE:MODISONLTD,NSE:UFBL,NSE:SKYGOLD,NSE:KROSS,NSE:KABRAEXTRU,NSE:IPCALAB,NSE:NINSYS,NSE:TIRUPATIFL,NSE:CONSOFINVT,NSE:ORIENTHOT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BLISSGVS,NSE:MODISONLTD,NSE:UFBL,NSE:SGMART,NSE:GRWRHITECH,NSE:CYIENT,NSE:CHENNPETRO,NSE:KABRAEXTRU,NSE:NINSYS,NSE:TIRUPATIFL,NSE:IPCALAB,NSE:KROSS,NSE:ORIENTHOT,NSE:CONSOFINVT
 ```
 
-### 🔵 EMA SUPPORT — EMA50/100/200 bounce + RS holds (7)
+### 🔵 EMA SUPPORT — EMA50/100/200 bounce + RS holds (11)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [SSWL](https://in.tradingview.com/chart/?symbol=NSE:SSWL)<br><sub>↑CMF14d</sub> | ✓ SAFE | Steel and alloy wheel rims manufacturer for automobiles | 🔵 Bounce EMA50 · RS holds | 78 | 🔄96 | ↑1.128 | 100% | 175% ↑ | ✅8/8 | 3.55x | ↑1d | +20.0% | +19.99% | 20%  |
-| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART)<br><sub>↓CMF30d</sub> | ✓ SAFE | Building materials B2B marketplace connecting manufacturers suppliers traders | 🔵 Bounce EMA50 · RS holds | 72 | ↑91 | ↑1.035 | 95% | 150% ↑ | ✅8/8 | 1.58x | ↑1d | +5.3% | +5.30% | 20%  |
-| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH)<br><sub>↑CMF22d</sub> | ✓ SAFE | Specialty polyester films for packaging and industrial applications | 🔵 Bounce EMA50 · RS holds | 72 | 🔄89 | ↑1.017 | 95% | 160% ↑ | ✅8/8 | 3.60x | ↑1d | +5.6% | +5.62% | 20% 🟦 |
-| [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA)<br><sub>↑CMF0d</sub> | ✓ SAFE | Gaming platform, esports, mobile and console games India | 🔵 Bounce EMA50 · RS holds | 71 | 🔄84 | ↑1.010 | 96% | 85% ↑ | ✅8/8 | 1.26x | ↑1d | +3.7% | +3.66% | 20%  |
-| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 🔵 Bounce EMA50 · RS holds | 70 | 🔄92 | ↑1.077 | 90% | 216% ↑ | ✅8/8 | 2.48x | ↑1d | +13.0% | +13.00% | 20%  |
-| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO)<br><sub>↑CMF12d</sub> | ✓ SAFE | Refines crude oil, produces petroleum products, lubricants | 🔵 Bounce EMA50 · RS holds | 67 | ↑86 | ↑1.015 | 91% | 92% ↑ | ✅8/8 | 1.27x | ↑2d | +2.6% | +1.51% | 20%  |
-| [JINDALPOLY](https://in.tradingview.com/chart/?symbol=NSE:JINDALPOLY)<br><sub>↑CMF7d</sub> | ✓ SAFE |  | 🔵 Bounce EMA50 · RS holds | 53 | ↑78 | ↑1.075 | 73% | 101% ↑ | ✅7/8 | 6.01x | ↑1d | +11.2% | +11.23% | 20% 🟦 |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG)<br><sub>↑CMF0d</sub> | ✓ SAFE | Premium electric scooters, charging network, urban mobility | 🔵 Bounce EMA50 · RS holds | 71 | 🔄93 | ↑1.075 | 91% | 162% ↑ | ✅8/8 | 1.56x | ↑1d | +14.1% | +14.13% | -%  |
+| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS)<br><sub>↑CMF0d</sub> | ✓ SAFE | Pharmaceutical intermediates and specialty chemicals manufacturer globally | 🔵 Bounce EMA50 · RS holds | 66 | ↑82 | ↑1.042 | 91% | 109% ↑ | ✅8/8 | 1.70x | ↑1d | +6.7% | +6.73% | 20%  |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↓CMF3d</sub> | ✓ SAFE | Defense electronics assembly testing solutions for mission systems | 🔵 Bounce EMA50 · RS holds | 66 | 🔄78 | ↑1.019 | 91% | 126% ↑ | ✅8/8 | 2.64x | ↑1d | +9.7% | +9.65% | 20%  |
+| [GNA](https://in.tradingview.com/chart/?symbol=NSE:GNA)<br><sub>↑CMF0d</sub> | ✓ SAFE | Rear axles and drive shafts for commercial vehicles | 🔵 Bounce EMA50 · RS holds | 65 | ↑80 | ↑1.038 | 90% | 88% ↑ | ✅8/8 | 2.11x | ↑1d | +8.1% | +8.06% | 20%  |
+| [RBA](https://in.tradingview.com/chart/?symbol=NSE:RBA)<br><sub>↑CMF2d</sub> | ✓ SAFE | Burger King franchisee operating QSR restaurants India Indonesia | 🔵 Bounce EMA50 · RS holds | 63 | ↑80 | ↑1.019 | 86% | 60% ↑ | ✅7/8 | 1.63x | ↑1d | +4.1% | +4.14% | 20% 🟦 |
+| [TEXINFRA](https://in.tradingview.com/chart/?symbol=NSE:TEXINFRA)<br><sub>↓CMF1d</sub> | ✓ SAFE |  | 🔵 Bounce EMA50 · RS holds | 63 | 🔄60 | ↑1.009 | 96% | 47% ↑ | ✅8/8 | 1.98x | ↑1d | +5.2% | +5.16% | 20%  |
+| [YASHO](https://in.tradingview.com/chart/?symbol=NSE:YASHO)<br><sub>↓CMF13d</sub> | ✓ SAFE | Specialty chemicals manufacturer: antioxidants, aroma, rubber additives | 🔵 Bounce EMA100 · RS holds | 62 | 🔄97 | ↑1.033 | 77% | 223% ↑ | ✅7/8 | 2.26x | ↑1d | +13.2% | +13.18% | 20% 🟦 |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>↓CMF7d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 🔵 Bounce EMA50 · RS holds | 60 | ↑62 | ↑1.010 | 89% | 46% ↑ | ✅7/8 | 0.91x | ↑1d | +2.4% | +2.39% | 20%  |
+| [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↓CMF1d</sub> | ✓ SAFE | APIs, formulation intermediates, finished pharma drugs manufacturer | 🔵 Bounce EMA100 · RS holds | 60 | ↑63 | ↑1.009 | 90% | 54% ↑ | ✅7/8 | 1.04x | ↑1d | +3.2% | +3.25% | 20%  |
+| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE)<br><sub>↓CMF7d</sub> | ✓ SAFE | IT services, digital transformation, financial and travel sectors | 🔵 Bounce EMA50 · RS holds | 58 | ↑69 | ↑1.036 | 99% | 86% ↑ | ✅8/8 | 1.69x | ↑12d | +9.8% | +4.87% | 20%  |
+| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES)<br><sub>↑CMF6d</sub> | ✓ SAFE | Power telecom railway cables manufacturer | 🔵 Bounce EMA200 · RS holds | 56 | 🔄72 | ↑0.991 | 80% | 109% ↑ | ✅7/8 | 1.06x | ↑1d | +3.4% | +3.43% | 20% 🟦 |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SSWL,NSE:SGMART,NSE:GRWRHITECH,NSE:NAZARA,NSE:ANTELOPUS,NSE:CHENNPETRO,NSE:JINDALPOLY
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ATHERENERG,NSE:ACUTAAS,NSE:APOLLO,NSE:GNA,NSE:RBA,NSE:TEXINFRA,NSE:YASHO,NSE:GESHIP,NSE:GRANULES,NSE:COFORGE,NSE:PARACABLES
 ```
 
 ### 📈 ZL ENTRY — ZLEMA25 touch (RS pct ≥ 60, short-term transitioning) (0)
