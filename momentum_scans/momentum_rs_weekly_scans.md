@@ -1,40 +1,55 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Momentum Scan (Weekly RS) — 2026-10-26
-*Generated 2026-10-26 15:40 IST*
+# NSE Momentum Scan (Weekly RS) — 2026-10-27
+*Generated 2026-10-27 15:40 IST*
 
-**Entry Signals: 8** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 3**
+**Entry Signals: 11** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 10**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
 
 ### Entry Signals
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |
 |--------|--------:|--------:|-------|--------:|--------|:-------:|
-| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | 1d | +4.7% | Chennai Petroleum Corp Lt<br>₹22K Cr \| ↘440Cr · 603Cr<br>Refines crude oil, produces petroleum products, lubricants | +3.10% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS) | 1d | +18.2% | Antelopus Selan Enrgy<br>₹4K Cr \| ↗65Cr · 125Cr<br>Oil and gas exploration production Indian subcontinent hydrocarbon resources | +4.61% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB) | 1d | +1.8% | Ipca Laboratories<br>₹49K Cr \| ↗50Cr · 64Cr<br>Pharma APIs formulations branded generics domestic exports | -0.75% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | 0d | +12.6% | Mrpl<br>₹28K Cr \| ↗432Cr · 2081Cr<br>Crude oil refining, petrochemicals, fuel production for domestic markets | +12.55% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
-| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | 0d | +12.6% | Mrpl<br>₹28K Cr \| ↗432Cr · 2081Cr<br>Crude oil refining, petrochemicals, fuel production for domestic markets | +12.55% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
-| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | 0d | +12.6% | Mrpl<br>₹28K Cr \| ↗432Cr · 2081Cr<br>Crude oil refining, petrochemicals, fuel production for domestic markets | +12.55% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
-| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) | 0d | +14.1% | Ather Energy<br>₹55K Cr \| ↘399Cr · 1437Cr<br>Premium electric scooters, charging network, urban mobility | +14.13% | **DEEP PULLBACK** — Bounce from EMA50 | -%  |
-| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) | 0d | +14.1% | Ather Energy<br>₹55K Cr \| ↘399Cr · 1437Cr<br>Premium electric scooters, charging network, urban mobility | +14.13% | **DEEP PULLBACK** — Bounce from EMA100 | -%  |
-| [GNA](https://in.tradingview.com/chart/?symbol=NSE:GNA) | 0d | +8.1% | Gna Axles<br>₹2K Cr \| →26Cr · 77Cr<br>Rear axles and drive shafts for commercial vehicles | +8.06% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
-| [GNA](https://in.tradingview.com/chart/?symbol=NSE:GNA) | 0d | +8.1% | Gna Axles<br>₹2K Cr \| →26Cr · 77Cr<br>Rear axles and drive shafts for commercial vehicles | +8.06% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
-| [BETA](https://in.tradingview.com/chart/?symbol=NSE:BETA) | 2d | +18.8% | Beta Drugs<br>₹2K Cr \| ↗24Cr · 15Cr<br>Oncology drug manufacturer for cancer treatment domestic export | +4.40% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
-| [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN) | 2d | +13.3% | Sasken Technologies<br>₹3K Cr \| ↗16Cr · 8Cr<br>Product engineering, semiconductors, automotive, consumer electronics | +2.56% | **DEEP PULLBACK** — Bounce from EMA50 | 10% 🟩 |
-| [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN) | 2d | +13.3% | Sasken Technologies<br>₹3K Cr \| ↗16Cr · 8Cr<br>Product engineering, semiconductors, automotive, consumer electronics | +2.56% | **DEEP PULLBACK** — Bounce from EMA100 | 10% 🟩 |
+| [CHENNPETRO](https://in.tradingview.com/chart/?symbol=NSE:CHENNPETRO) | 2d | +8.3% | Chennai Petroleum Corp Lt<br>₹23K Cr \| ↘466Cr · 340Cr<br>Refines crude oil, produces petroleum products, lubricants | +3.44% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +5.2% | Privi Speciality Che<br>₹13K Cr \| ↘26Cr · 61Cr<br>Aroma chemicals fragrance ingredients terpenes global export manufacturer | +5.20% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +5.2% | Privi Speciality Che<br>₹13K Cr \| ↘26Cr · 61Cr<br>Aroma chemicals fragrance ingredients terpenes global export manufacturer | +5.20% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +5.2% | Privi Speciality Che<br>₹13K Cr \| ↘26Cr · 61Cr<br>Aroma chemicals fragrance ingredients terpenes global export manufacturer | +5.20% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +5.2% | Privi Speciality Che<br>₹13K Cr \| ↘26Cr · 61Cr<br>Aroma chemicals fragrance ingredients terpenes global export manufacturer | +5.20% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
+| [SOUTHBANK](https://in.tradingview.com/chart/?symbol=NSE:SOUTHBANK) | 11d | +17.1% | The South Indian Bank<br>₹14K Cr \| ↗165Cr · 60Cr | +3.06% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [IPCALAB](https://in.tradingview.com/chart/?symbol=NSE:IPCALAB) | 2d | +4.1% | Ipca Laboratories<br>₹49K Cr \| →48Cr · 37Cr<br>Pharma APIs formulations branded generics domestic exports | +2.18% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) | 0d | +2.8% | Sai Life Sciences<br>₹31K Cr \| →56Cr · 34Cr<br>CRDMO drug discovery manufacturing pharma biotech | +2.83% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) | 0d | +2.8% | Sai Life Sciences<br>₹31K Cr \| →56Cr · 34Cr<br>CRDMO drug discovery manufacturing pharma biotech | +2.83% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | 0d | +5.4% | Corona Remedies<br>₹12K Cr \| ↗6Cr · 8Cr<br>Pharma formulations women's health cardiology pain management domestic | +5.42% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | 0d | +5.4% | Corona Remedies<br>₹12K Cr \| ↗6Cr · 8Cr<br>Pharma formulations women's health cardiology pain management domestic | +5.42% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [MANKIND](https://in.tradingview.com/chart/?symbol=NSE:MANKIND) | 0d | +8.2% | Mankind Pharma<br>₹95K Cr \| ↗222Cr · 758Cr<br>Pharma formulations acute chronic diseases consumer healthcare | +8.24% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [MANKIND](https://in.tradingview.com/chart/?symbol=NSE:MANKIND) | 0d | +8.2% | Mankind Pharma<br>₹95K Cr \| ↗222Cr · 758Cr<br>Pharma formulations acute chronic diseases consumer healthcare | +8.24% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [MANKIND](https://in.tradingview.com/chart/?symbol=NSE:MANKIND) | 0d | +8.2% | Mankind Pharma<br>₹95K Cr \| ↗222Cr · 758Cr<br>Pharma formulations acute chronic diseases consumer healthcare | +8.24% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
+| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) | 1d | +13.7% | Paramount Comm<br>₹2K Cr \| ↗66Cr · 270Cr<br>Power telecom railway cables manufacturer | +9.91% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
+| [MAHLOG](https://in.tradingview.com/chart/?symbol=NSE:MAHLOG) | 0d | +11.3% | Mahindra Logistic<br>₹4K Cr \| ↗69Cr · 206Cr<br>Integrated logistics supply chain solutions automotive consumer goods | +11.29% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [MAHLOG](https://in.tradingview.com/chart/?symbol=NSE:MAHLOG) | 0d | +11.3% | Mahindra Logistic<br>₹4K Cr \| ↗69Cr · 206Cr<br>Integrated logistics supply chain solutions automotive consumer goods | +11.29% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON) | 0d | +8.3% | Avalon Technologies<br>₹13K Cr \| →88Cr · 127Cr<br>Electronics manufacturing services, precision box-build solutions, industrial | +8.32% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON) | 0d | +8.3% | Avalon Technologies<br>₹13K Cr \| →88Cr · 127Cr<br>Electronics manufacturing services, precision box-build solutions, industrial | +8.32% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 0d | +3.4% | Vijaya Diagnostic Cen<br>₹14K Cr \| ↗20Cr · 16Cr<br>Diagnostic imaging and pathology labs, Southern India healthcare | +3.36% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 0d | +3.4% | Vijaya Diagnostic Cen<br>₹14K Cr \| ↗20Cr · 16Cr<br>Diagnostic imaging and pathology labs, Southern India healthcare | +3.36% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CHENNPETRO,NSE:ANTELOPUS,NSE:IPCALAB,NSE:MRPL,NSE:ATHERENERG,NSE:GNA,NSE:BETA,NSE:SASKEN
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CHENNPETRO,NSE:PRIVISCL,NSE:SOUTHBANK,NSE:IPCALAB,NSE:SAILIFE,NSE:CORONA,NSE:MANKIND,NSE:PARACABLES,NSE:MAHLOG,NSE:AVALON,NSE:VIJAYA
 ```
 
 ### ZLEMA25 Turning Up *(low-risk early entries)*
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit |
 |--------|--------:|--------:|-------|--------:|:-------:|
-| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) | 0d | +14.1% | Ather Energy<br>₹55K Cr \| ↘399Cr · 1437Cr<br>Premium electric scooters, charging network, urban mobility | +14.13% | -%  |
-| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) | 0d | +12.6% | Mrpl<br>₹28K Cr \| ↗432Cr · 2081Cr<br>Crude oil refining, petrochemicals, fuel production for domestic markets | +12.55% | 20%  |
-| [GNA](https://in.tradingview.com/chart/?symbol=NSE:GNA) | 0d | +8.1% | Gna Axles<br>₹2K Cr \| →26Cr · 77Cr<br>Rear axles and drive shafts for commercial vehicles | +8.06% | 20%  |
+| [MAHLOG](https://in.tradingview.com/chart/?symbol=NSE:MAHLOG) | 0d | +11.3% | Mahindra Logistic<br>₹4K Cr \| ↗69Cr · 206Cr<br>Integrated logistics supply chain solutions automotive consumer goods | +11.29% | 20%  |
+| [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS) | 0d | +8.9% | Sona Blw Precision Frgs L<br>₹49K Cr \| ↗303Cr · 1625Cr<br>Differential assemblies and gears for electric vehicles | +8.95% | 20%  |
+| [AVALON](https://in.tradingview.com/chart/?symbol=NSE:AVALON) | 0d | +8.3% | Avalon Technologies<br>₹13K Cr \| →88Cr · 127Cr<br>Electronics manufacturing services, precision box-build solutions, industrial | +8.32% | 20%  |
+| [MANKIND](https://in.tradingview.com/chart/?symbol=NSE:MANKIND) | 0d | +8.2% | Mankind Pharma<br>₹95K Cr \| ↗222Cr · 758Cr<br>Pharma formulations acute chronic diseases consumer healthcare | +8.24% | 20%  |
+| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) | 0d | +5.4% | Corona Remedies<br>₹12K Cr \| ↗6Cr · 8Cr<br>Pharma formulations women's health cardiology pain management domestic | +5.42% | 20%  |
+| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) | 0d | +5.2% | Privi Speciality Che<br>₹13K Cr \| ↘26Cr · 61Cr<br>Aroma chemicals fragrance ingredients terpenes global export manufacturer | +5.20% | 20%  |
+| [STLTECH](https://in.tradingview.com/chart/?symbol=NSE:STLTECH) | 0d | +5.0% | →292Cr · 255Cr<br>Optical fiber cables telecom power transmission infrastructure | +5.00% | 20%  |
+| [MOREPENLAB](https://in.tradingview.com/chart/?symbol=NSE:MOREPENLAB) | 0d | +4.9% | ↗253Cr · 230Cr<br>APIs, branded generics, home diagnostics for patients | +4.90% | 5% 🟥 |
+| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 0d | +3.4% | Vijaya Diagnostic Cen<br>₹14K Cr \| ↗20Cr · 16Cr<br>Diagnostic imaging and pathology labs, Southern India healthcare | +3.36% | 20%  |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) | 0d | +2.8% | Sai Life Sciences<br>₹31K Cr \| →56Cr · 34Cr<br>CRDMO drug discovery manufacturing pharma biotech | +2.83% | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ATHERENERG,NSE:MRPL,NSE:GNA
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MAHLOG,NSE:SONACOMS,NSE:AVALON,NSE:MANKIND,NSE:CORONA,NSE:PRIVISCL,NSE:STLTECH,NSE:MOREPENLAB,NSE:VIJAYA,NSE:SAILIFE
 ```
 ---
 
