@@ -27,7 +27,7 @@
 | Symbol | Company | Consec | Price vs ZL | ZL Weeks | ZL Chg% | Day Chg | Close | Sqz | Circuit |
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
 | [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO)<br><sub>↓CMF4d</sub> | Defense electronics assembly testing solutions for mission systems | 1w | TOUCH | 1w | +13.5% | +3.53% | 425.40 | 6w | 20%  |
-| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF18d</sub> | VFX animation post-production services for film television | 1w | TOUCH | 1w | +9.6% | +9.04% | 299.15 | — | 20%  |
+| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF18d · DEL20%</sub> | VFX animation post-production services for film television | 1w | TOUCH | 1w | +9.6% | +9.04% | 299.15 | — | 20%  |
 | [NYKAA](https://in.tradingview.com/chart/?symbol=NSE:NYKAA)<br><sub>↑CMF10d</sub> | Beauty and fashion e-commerce platform for urban consumers | 1w | TOUCH | 1w | +6.3% | +2.90% | 339.40 | 1w | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↑CMF30d</sub> | Online test prep and upskilling courses for competitive exams | 1w | TOUCH | 1w | +8.3% | +4.05% | 129.89 | 3w | 20%  |
 | [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI)<br><sub>↓CMF30d</sub> | Online classifieds: recruitment, real estate, matrimony, education | 1w | TOUCH | 1w | +2.5% | +1.65% | 1216.30 | — | 20%  |
@@ -70,22 +70,22 @@
 | [WHIRLPOOL](https://in.tradingview.com/chart/?symbol=NSE:WHIRLPOOL)<br><sub>↓CMF2d</sub> | Kitchen laundry appliances manufacturer domestic consumer segment | 1w | ABOVE | 1w | +7.2% | +5.44% | 847.05 | 6w | 20%  |
 | [RBA](https://in.tradingview.com/chart/?symbol=NSE:RBA)<br><sub>↑CMF3d</sub> | Burger King franchisee operating QSR restaurants India Indonesia | 1w | ABOVE | 1w | +8.7% | +4.37% | 95.92 | — | 20% 🟦 |
 | [ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS)<br><sub>↑CMF19d</sub> | Digital procurement platform connecting construction material suppliers builders | 1w | ABOVE | 1w | +7.8% | +4.52% | 140.91 | — | 20%  |
-| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF24d · DEL58%(T-1)</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +5.2% | +5.88% | 125.10 | 4w | 20%  |
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF24d</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +5.2% | +5.88% | 125.10 | 4w | 20%  |
 | [ZOTA](https://in.tradingview.com/chart/?symbol=NSE:ZOTA)<br><sub>↑CMF0d</sub> | Pharma manufacturer: tablets, syrups, Ayurveda, OTC products | 1w | ABOVE | 1w | +3.0% | +7.10% | 1280.00 | — | 20%  |
 | [SDBL](https://in.tradingview.com/chart/?symbol=NSE:SDBL)<br><sub>↓CMF19d</sub> | Beer and spirits manufacturer for Indian consumer market | 1w | ABOVE | 1w | +5.7% | +8.21% | 72.86 | 5w | 20%  |
 | [KRISHNADEF](https://in.tradingview.com/chart/?symbol=NSE:KRISHNADEF)<br><sub>↑CMF16d</sub> | Defense equipment and dairy machinery manufacturer, engineering sector | 1w | ABOVE | 1w | +4.5% | +5.16% | 1172.50 | — | 20%  |
 | [GILLETTE](https://in.tradingview.com/chart/?symbol=NSE:GILLETTE)<br><sub>↑CMF26d</sub> | Razor blades shaving cream oral care FMCG grooming | 1w | ABOVE | 1w | +1.4% | +0.85% | 7318.00 | — | 20%  |
 | [SANOFI](https://in.tradingview.com/chart/?symbol=NSE:SANOFI)<br><sub>↓CMF30d</sub> | Pharmaceutical diabetes cardiology CNS medicines India | 1w | ABOVE | 1w | +10.9% | +7.79% | 3075.00 | — | 20%  |
 | [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN)<br><sub>↓CMF30d</sub> | Product engineering, semiconductors, automotive, consumer electronics | 1w | ABOVE | 1w | +6.5% | +3.83% | 1904.40 | — | 10% 🟩 |
-| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF21d</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +1.1% | +1.65% | 251.95 | 20w | 20%  |
+| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF21d · DEL47%</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +1.1% | +1.65% | 251.95 | 20w | 20%  |
 | [MANAKCOAT](https://in.tradingview.com/chart/?symbol=NSE:MANAKCOAT)<br><sub>↑CMF1d</sub> | Pre-painted steel coils and sheets manufacturing for construction | 1w | ABOVE | 1w | +6.2% | +6.84% | 128.22 | 2w | 20%  |
-| [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH)<br><sub>↑CMF2d</sub> |  | 1w | ABOVE | 1w | +7.0% | +7.91% | 901.35 | — | 20%  |
+| [WEALTH](https://in.tradingview.com/chart/?symbol=NSE:WEALTH)<br><sub>↑CMF2d · DEL98%</sub> |  | 1w | ABOVE | 1w | +7.0% | +7.91% | 901.35 | — | 20%  |
 | [WCIL](https://in.tradingview.com/chart/?symbol=NSE:WCIL)<br><sub>↑CMF28d</sub> |  | 1w | ABOVE | 1w | +2.6% | +0.76% | 93.37 | — | 20%  |
 | [LGBBROSLTD](https://in.tradingview.com/chart/?symbol=NSE:LGBBROSLTD)<br><sub>↓CMF16d</sub> | Transmission chains sprockets metal parts automotive industrial | 1w | ABOVE | 1w | +6.3% | +5.00% | 1747.70 | — | 20%  |
 | [CHEMPLASTS](https://in.tradingview.com/chart/?symbol=NSE:CHEMPLASTS)<br><sub>↑CMF30d</sub> | PVC resin and specialty chemicals for pharma and agro | 1w | ABOVE | 1w | +3.6% | -0.29% | 189.71 | 4w | 20%  |
 | [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF28d</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +3.9% | +3.13% | 137.54 | 2w | 20%  |
 | [JINDALPHOT](https://in.tradingview.com/chart/?symbol=NSE:JINDALPHOT)<br><sub>↑CMF0d</sub> | Holding company investing in photography and electronics group | 1w | ABOVE | 1w | +5.6% | +1.13% | 1114.40 | 18w | 20%  |
-| [HLEGLAS](https://in.tradingview.com/chart/?symbol=NSE:HLEGLAS)<br><sub>↓CMF4d</sub> | Glass-lined equipment manufacturer for pharma chemicals processing | 1w | ABOVE | 1w | +10.2% | +5.00% | 409.70 | — | 5% 🟥 |
+| [HLEGLAS](https://in.tradingview.com/chart/?symbol=NSE:HLEGLAS)<br><sub>↓CMF4d · DEL93%</sub> | Glass-lined equipment manufacturer for pharma chemicals processing | 1w | ABOVE | 1w | +10.2% | +5.00% | 409.70 | — | 5% 🟥 |
 | [SWELECTES](https://in.tradingview.com/chart/?symbol=NSE:SWELECTES)<br><sub>↑CMF12d</sub> | Solar EPC and power conditioning solutions provider | 1w | ABOVE | 1w | +2.6% | +0.82% | 610.90 | 12w | 20%  |
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX)<br><sub>↑CMF0d</sub> | Commodity futures exchange, price discovery, risk management platform | 1w | BELOW | 1w | +5.5% | +2.41% | 3186.80 | — | 20%  |
 | [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR)<br><sub>↑CMF0d</sub> | Specialty fluorochemicals refrigerants organic synthesis pharmaceutical | 1w | BELOW | 1w | +7.6% | +7.73% | 8254.00 | — | 20%  |
@@ -122,7 +122,7 @@
 | [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES)<br><sub>↓CMF18d</sub> | Premium residential commercial property developer Delhi NCR | 1w | BELOW | 1w | +8.5% | +2.89% | 510.95 | — | 20%  |
 | [STEELCAS](https://in.tradingview.com/chart/?symbol=NSE:STEELCAS)<br><sub>↑CMF1d</sub> | Steel alloy castings for heavy engineering OEMs | 1w | BELOW | 1w | +7.5% | +5.18% | 349.95 | 1w | 20%  |
 | [OCCLLTD](https://in.tradingview.com/chart/?symbol=NSE:OCCLLTD)<br><sub>↓CMF4d</sub> | Insoluble sulphur vulcanizing agent manufacturer rubber tires | 1w | BELOW | 1w | +6.6% | +3.61% | 172.72 | — | 20%  |
-| [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL)<br><sub>↓CMF12d</sub> | Glass-lined reactors and process equipment for pharma chemicals | 1w | BELOW | 1w | +10.2% | +4.99% | 368.40 | — | 20%  |
+| [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL)<br><sub>↓CMF12d · DEL100%</sub> | Glass-lined reactors and process equipment for pharma chemicals | 1w | BELOW | 1w | +10.2% | +4.99% | 368.40 | — | 20%  |
 | [ELANTAS](https://in.tradingview.com/chart/?symbol=NSE:ELANTAS)<br><sub>↑CMF30d</sub> |  | 1w | BELOW | 1w | +3.8% | +1.94% | 12909.00 | — | 20%  |
 | [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN)<br><sub>↓CMF5d</sub> | Underwater services marine operations offshore oil gas construction | 1w | BELOW | 1w | +6.4% | +4.49% | 589.35 | — | 20% 🟦 |
 | [CNL](https://in.tradingview.com/chart/?symbol=NSE:CNL)<br><sub>↓CMF30d</sub> | IT and mobile products distribution, B2B channel | 1w | BELOW | 1w | +5.8% | +2.07% | 1092.60 | — | 20%  |

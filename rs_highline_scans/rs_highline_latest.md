@@ -26,7 +26,7 @@
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
 | [APLAPOLLO](https://in.tradingview.com/chart/?symbol=NSE:APLAPOLLO) [20%]<br><sub>↑CMF30d</sub> | Structural steel tubes manufacturer serving construction infrastructure | 2213.90 | +6.55% | 2147.80 | +3.08% | ↑ | ↑1d | 1d | +6.5% | ● | 3.1% | 59 | ↗144Cr · 459Cr |
-| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS) [20%]<br><sub>↓CMF18d</sub> | VFX animation post-production services for film television | 299.15 | +9.04% | 282.10 | +6.04% | ↑ | ↑1d | 1d | +9.0% | ● | 5.7% | 59 | ↘110Cr · 171Cr |
+| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS) [20%]<br><sub>↓CMF18d · DEL20%</sub> | VFX animation post-production services for film television | 299.15 | +9.04% | 282.10 | +6.04% | ↑ | ↑1d | 1d | +9.0% | ● | 5.7% | 59 | ↘110Cr · 171Cr |
 | [SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA) [20%]<br><sub>↑CMF1d</sub> | Precision forged machined components two-wheeler four-wheeler OEM | 4290.60 | +3.45% | 4159.00 | +3.16% | ↑ | ↑1d | 1d | +3.5% | ● | 4.5% | 59 | →81Cr · 81Cr |
 | [BATAINDIA](https://in.tradingview.com/chart/?symbol=NSE:BATAINDIA) [20%]<br><sub>↑CMF7d</sub> | Footwear manufacturing retail consumer discretionary mass market | 662.40 | +6.09% | 634.05 | +4.47% | ↑ | ↑1d | 1d | +6.1% | ● | 3.8% | 59 | ↗19Cr · 78Cr |
 | [BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND) [20%]<br><sub>↑CMF3d</sub> | Off-highway tires for agriculture construction mining sectors | 2144.30 | +1.65% | 2129.00 | +0.72% | ↑ | ↑4d | 4d | +5.1% | — | 3.0% | 21 | ↗65Cr · 66Cr |
@@ -37,7 +37,7 @@
 | [LTTS](https://in.tradingview.com/chart/?symbol=NSE:LTTS) [20%]<br><sub>↑CMF10d</sub> | Engineering R&D services for automotive semiconductor industrial | 4174.20 | +3.43% | 4050.00 | +3.07% | ↑ | ↑13d | 13d | +31.4% | — | 4.5% | 7 | ↗485Cr · 155Cr |
 | [BHARTIHEXA](https://in.tradingview.com/chart/?symbol=NSE:BHARTIHEXA) [20%]<br><sub>↑CMF14d</sub> | Mobile telecom operator Rajasthan Northeast circles consumer | 1665.90 | +2.23% | 1642.70 | +1.41% | ↑ | ↑15d | 15d | +20.1% | — | 3.3% | 5 | ↘27Cr · 24Cr |
 | [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX) [20%]<br><sub>↑CMF29d</sub> | Multiplex cinema exhibition chain, entertainment venues | 1464.00 | +4.22% | 1427.20 | +2.58% | ↑ | ↑16d | 16d | +18.9% | — | 3.4% | 4 | ↘81Cr · 157Cr |
-| [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL) [20%]<br><sub>↓CMF10d</sub> | BPM services for healthcare insurance banking finance | 298.75 | +2.22% | 294.35 | +1.49% | ↑ | ↑16d | 16d | +16.1% | — | 3.9% | 4 | ↘54Cr · 38Cr |
+| [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL) [20%]<br><sub>↓CMF10d · DEL46%</sub> | BPM services for healthcare insurance banking finance | 298.75 | +2.22% | 294.35 | +1.49% | ↑ | ↑16d | 16d | +16.1% | — | 3.9% | 4 | ↘54Cr · 38Cr |
 | [MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS) [20%]<br><sub>↑CMF10d</sub> | IT services, cloud and cognitive transformation, enterprise clients | 2618.40 | +2.38% | 2601.40 | +0.65% | ↑ | ↑17d | 17d | +16.4% | — | 3.6% | 3 | →186Cr · 121Cr |
 
 ```
