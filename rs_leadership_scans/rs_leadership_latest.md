@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS Leadership — 2026-10-27
-*Generated 2026-10-27 15:46 IST*
+## RS Leadership — 2026-10-28
+*Generated 2026-10-28 15:46 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,21 +18,25 @@
 
 ---
 
-**4 signals — RS leadership combined cross today**
+**8 signals — RS leadership combined cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MPHASIS,NSE:PVRINOX,NSE:APLAPOLLO,NSE:STAR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:FSL,NSE:SAREGAMA,NSE:LUMAXTECH,NSE:EBGNG,NSE:SBFC,NSE:PGEL,NSE:BSE,NSE:ANURAS
 ```
 
 | Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |
 |--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|
-| [MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS) [20%]<br><sub>↑CMF10d</sub> | IT services, cloud and cognitive transformation, enterprise clients | 2618.40 | +2.38% | +12.24% | 11.16 | 5/5 | ↑ | ↑ | — | →186Cr · 121Cr |
-| [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX) [20%]<br><sub>↑CMF29d</sub> | Multiplex cinema exhibition chain, entertainment venues | 1464.00 | +4.22% | +10.66% | 8.86 | 5/5 | ↑ | ↑ | — | ↘81Cr · 157Cr |
-| [APLAPOLLO](https://in.tradingview.com/chart/?symbol=NSE:APLAPOLLO) [20%]<br><sub>↑CMF30d</sub> | Structural steel tubes manufacturer serving construction infrastructure | 2213.90 | +6.55% | +7.00% | 2.91 | 5/5 | ↑ | ↑ | ● | ↗144Cr · 459Cr |
-| [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR) [20%]<br><sub>↑CMF0d</sub> | Niche finished dosage pharma formulations global markets | 1093.30 | +5.83% | +5.21% | 0.13 | 5/5 | ↑ | ↑ | — | →29Cr · 86Cr |
+| [FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL) [20%]<br><sub>↓CMF11d · DEL46%(T-1)</sub> | BPM services for healthcare insurance banking finance | 307.95 | +3.08% | +12.72% | 9.98 | 5/5 | ↑ | ↑ | — | ↘47Cr · 71Cr |
+| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA) [20%]<br><sub>↑CMF15d</sub> | Music IP owner, film production, digital content distribution | 523.95 | +2.84% | +10.19% | 6.26 | 5/5 | ↑ | ↑ | ● | ↗17Cr · 51Cr |
+| [LUMAXTECH](https://in.tradingview.com/chart/?symbol=NSE:LUMAXTECH) [20%]<br><sub>↑CMF2d</sub> | Automotive lamps, plastic parts, chassis for vehicles | 2043.10 | +6.95% | +10.03% | 6.32 | 5/5 | ↑ | ↑ | ● | →37Cr · 113Cr |
+| [EBGNG](https://in.tradingview.com/chart/?symbol=NSE:EBGNG) [20% 🟦]<br><sub>↓CMF8d</sub> | Refurbished laptops desktops electronics retail distribution | 723.25 | +0.44% | +7.45% | 4.75 | 5/5 | ↑ | ↑ | ● | ↗56Cr · 20Cr |
+| [SBFC](https://in.tradingview.com/chart/?symbol=NSE:SBFC) [20%]<br><sub>↑CMF0d</sub> | MSME secured lending, gold loans, underserved borrowers | 90.49 | +9.63% | +6.64% | 0.36 | 5/5 | ↑ | ↑ | — | ↗23Cr · 126Cr |
+| [PGEL](https://in.tradingview.com/chart/?symbol=NSE:PGEL) [20%]<br><sub>↑CMF1d</sub> | Plastic injection moulding electronics manufacturing services provider | 536.40 | +7.16% | +5.81% | 0.86 | 5/5 | ↑ | ↑ | — | ↗119Cr · 664Cr |
+| [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE) [20%]<br><sub>↑CMF16d</sub> |  | 3217.90 | -1.44% | +3.50% | 3.13 | 5/5 | ↑ | ↓ | — | ↘1007Cr · 632Cr |
+| [ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS) [20%]<br><sub>↑CMF4d</sub> | Specialty chemical manufacturing for pharmaceuticals agrochemicals | 1151.40 | +1.93% | +2.63% | 1.22 | 5/5 | ↑ | ↑ | ● | ↗47Cr · 33Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MPHASIS,NSE:PVRINOX,NSE:APLAPOLLO,NSE:STAR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:FSL,NSE:SAREGAMA,NSE:LUMAXTECH,NSE:EBGNG,NSE:SBFC,NSE:PGEL,NSE:BSE,NSE:ANURAS
 ```
 
 ---
