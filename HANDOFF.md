@@ -9,6 +9,38 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-28 by Codex, multi-period RS leaders:
+
+- `rs_leaders_scanner.py` ranks the Weekly RS EMA9 / EMA55 universe (NSE common
+  equities, price > Rs50, market cap Rs1,000 crore to Rs5 lakh crore) over
+  5/21/63/126 NIFTY MIDSML 400 benchmark sessions. Ratio-relative return is ranked
+  per period; percentile >=90 plus positive RS qualifies as leadership. Average
+  ties determine percentiles; competition ties determine ranks.
+- `rs_leaders_scans/rs_leaders_latest.md` contains 4/4 through 1/4 leader groups,
+  per-period TradingView blocks, top-25 previews, full rankings and exclusions.
+  `dashboard/rs_leaders.html` provides numeric sorting, search, period/overlap
+  filters, industry, 30-bar turnover and rank changes. No EMA/liquidity gate.
+- `rs_leaders_scans/rs_leaders_latest.json` retains prior report ranks. Same-date
+  reruns preserve the previous price-date baseline. Missing sessions yield N/A
+  per window; stale stocks are excluded. Missing/invalid/stale benchmark, empty
+  universe or no usable stock data fails before replacing outputs. Production
+  requires 127 benchmark sessions; benchmark must match the latest DB date and
+  be no more than four calendar days old. Display actual price date, including
+  on weekends/holidays. Prices are not independently corporate-action audited.
+- `run_rs_leaders_scanner.ps1` runs after RS_WeeklyEMA9 in `run_all_scanners.ps1`,
+  propagates Python failures, and commits/pushes only its three outputs through
+  the existing git retry helper. Manual generation: `python rs_leaders_scanner.py`
+  (public TradingView universe request, existing local OHLC; no Kite fetch).
+- Initial live run: price date 2026-10-28, universe 1,442, ranked 1,266; exclusions
+  119 stale, 48 missing, 9 insufficient history. Leaders: 127/114/112/104 by
+  period; 12 stocks qualified for 4/4. Final full-suite check: 651 passed (five
+  existing pandas warnings); 12 focused tests include Node sorting/filter checks.
+  PowerShell parser passed. Actual generated dashboard verified: all 1,266 ranks
+  match stored state; period/group filters, search and numeric sorting passed in
+  Node. Browser visual preview unavailable. Existing breadth CSV and IPO scanner
+  edits preserved. NSE_AllScanners enabled weekday 15:35 task verified to invoke
+  this runner; no separate scheduled task is needed.
+
 Updated 2026-10-07 by Codex, fixed chart-header summary:
 
 - The shared chart renderer shows total charted symbols and the latest embedded
