@@ -9,6 +9,40 @@ This repository is a Windows-first scanner and dashboard suite for NSE and US eq
 
 ## Current Worktree State
 
+Updated 2026-10-28 by Codex, weekly RS EMA21 + WT1 uptrend scanner:
+
+- `weekly_rs_wt_scanner.py` uses the same NSE universe query as RS Leaders:
+  common equity, price > Rs50, market cap Rs1,000 crore to Rs5 lakh crore.
+  Aggregate weekly OHLCV first, including the developing week. Require both
+  weekly EMA21(stock close / NIFTY MIDSML 400 close * 1000) and weekly price
+  WaveTrend WT1 (HLC3, channel EMA10, smoothing EMA21) strictly above their prior
+  weekly values. Use the existing WaveTrendCalculator and adjust=False EMA.
+- No 52-week-high proximity, daily EMA200, float, liquidity, WT zero-line or
+  WT2 gate. No manual-list bypass. Minimum 22 observed weekly bars, with up to
+  1,500 daily bars loaded via ohlc_db. Weekly candles use their actual final
+  observed session as the date, including partial weeks, so chart freshness
+  matches actual price data. Missing/invalid prices, stale stocks, or missing
+  sessions against benchmark history are named in the report's exclusion list.
+- Outputs: `weekly_rs_wt_scans/weekly_rs_wt_scans.md` (all qualifiers, indicator
+  values, slopes, TradingView block) and `dashboard/weekly_rs_wt.html` (weekly
+  industry-grouped candles with RS EMA21 and WT panes). The shared renderer is
+  reused unchanged; 52W High is an optional hidden overlay, never a scan gate.
+- `run_weekly_rs_wt_scanner.ps1` is called after RS_Leaders in NSE_AllScanners.
+  It propagates scanner failures, commits only these two outputs, and uses the
+  standard push retry helper. No new scheduled task. Manual generation:
+  `python weekly_rs_wt_scanner.py` (public TradingView query, local OHLC only).
+  Invalid/missing/stale benchmark (more than four calendar days old or behind
+  latest DB date), empty universe, no usable stock histories, or a qualifying
+  chart-render failure preserves prior outputs. Valid zero qualifiers clears
+  both artifacts with a current empty report/dashboard.
+- Live test: prices 2026-10-28; universe 1,442; evaluated 996; qualified 87;
+  excluded 446 (266 session gaps/mismatch, 119 stale, 48 missing, 6 invalid OHLC,
+  7 short histories). All 87 report/chart symbols and positive indicator slopes
+  verified; 38 qualifiers have WT1 below zero. 19 new focused tests; 670 total
+  tests passed with five pre-existing pandas warnings. PowerShell parser and
+  generated chart JavaScript syntax passed. Browser preview was unavailable in
+  this session. Existing breadth CSV, IPO scanner and .superpowers edits retained.
+
 Updated 2026-10-28 by Codex, multi-period RS leaders:
 
 - `rs_leaders_scanner.py` ranks the Weekly RS EMA9 / EMA55 universe (NSE common

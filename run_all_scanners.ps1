@@ -45,6 +45,7 @@ Run-Scanner "InsideBarScanner"     "$ROOT\run_inside_bar_scanner.ps1"
 Run-Scanner "WeeklyZL"             "$ROOT\run_weekly_zl_scanner.ps1"
 Run-Scanner "RS_WeeklyEMA9"        "$ROOT\run_rs_weekly_ema9_scanner.ps1"
 Run-Scanner "RS_Leaders"           "$ROOT\run_rs_leaders_scanner.ps1"
+Run-Scanner "Weekly_RS_WT"         "$ROOT\run_weekly_rs_wt_scanner.ps1"
 
 $comp = "$ROOT\ema-compression-scanner\run_scanner.ps1"
 if (Test-Path $comp) { Run-Scanner "EMA_Compression" $comp }
