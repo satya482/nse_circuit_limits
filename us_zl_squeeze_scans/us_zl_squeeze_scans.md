@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-10-28
-*Generated 2026-10-28 15:53 IST*
+# US ZL Squeeze Scan — 2026-10-29
+*Generated 2026-10-29 16:04 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,31 +18,24 @@
 
 ---
 
-**21 stocks: ZLEMA25 Rising + Squeeze ON**
+**14 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [RDNT](https://www.tradingview.com/chart/?symbol=RDNT) | 73.54 | +4.98% | 2.7x | 7d | 0d | +5.0% | ✓ | ✓ | ✓ |
-| [ARLO](https://www.tradingview.com/chart/?symbol=ARLO) | 13.05 | +5.41% | 1.5x | 5d | 0d | +5.4% | ✓ | ✓ | ✓ |
-| [SXC](https://www.tradingview.com/chart/?symbol=SXC) | 10.59 | +7.95% | 1.8x | 2d | 0d | +8.0% | ✓ | ✓ | ✓ |
-| [GRAL](https://www.tradingview.com/chart/?symbol=GRAL) | 150.61 | +7.65% | 2.0x | 5d | 2d | +18.5% | ✓ | ✓ | ✓ |
-| [FSUN](https://www.tradingview.com/chart/?symbol=FSUN) | 40.09 | +0.73% | 2.8x | 18d | 3d | +4.2% | ✓ | ✓ | ✓ |
-| [AEO](https://www.tradingview.com/chart/?symbol=AEO) | 19.42 | +3.24% | 1.5x | 4d | 3d | +11.7% | ✓ | ✓ | ✓ |
-| [JMSB](https://www.tradingview.com/chart/?symbol=JMSB) | 23.34 | -0.13% | 1.9x | 50d | 4d | +2.4% | ✓ | ✓ | ✓ |
-| [GLBE](https://www.tradingview.com/chart/?symbol=GLBE) | 41.55 | -0.69% | 1.5x | 10d | 6d | +7.0% | ✓ | ✓ | ✓ |
-| [ST](https://www.tradingview.com/chart/?symbol=ST) | 42.32 | +4.01% | 1.6x | 29d | 0d | +4.0% | ✓ | ✓ | — |
-| [BEAM](https://www.tradingview.com/chart/?symbol=BEAM) | 24.90 | +4.67% | 1.6x | 16d | 0d | +4.7% | ✓ | ✓ | — |
-| [MNRO](https://www.tradingview.com/chart/?symbol=MNRO) | 14.16 | +5.59% | 1.6x | 7d | 0d | +5.6% | ✓ | ✓ | — |
-| [BEP](https://www.tradingview.com/chart/?symbol=BEP) | 29.27 | +2.49% | 1.8x | 6d | 0d | +2.5% | ✓ | ✓ | — |
-| [NP](https://www.tradingview.com/chart/?symbol=NP) | 29.47 | +3.88% | 1.6x | 4d | 0d | +3.9% | ✓ | ✓ | — |
-| [KEX](https://www.tradingview.com/chart/?symbol=KEX) | 137.06 | +1.80% | 1.6x | 3d | 0d | +1.8% | ✓ | ✓ | — |
-| [WSC](https://www.tradingview.com/chart/?symbol=WSC) | 17.65 | +7.16% | 1.7x | 2d | 1d | +8.6% | ✓ | ✓ | — |
-| [ORN](https://www.tradingview.com/chart/?symbol=ORN) | 9.15 | +4.21% | 1.9x | 1d | 1d | +5.0% | ✓ | ✓ | — |
-| [HP](https://www.tradingview.com/chart/?symbol=HP) | 39.70 | -0.28% | 2.1x | 6d | 2d | +6.9% | ✓ | ✓ | — |
-| [ILPT](https://www.tradingview.com/chart/?symbol=ILPT) | 7.38 | +3.58% | 2.6x | 3d | 3d | +6.7% | ✓ | ✓ | — |
-| [MWA](https://www.tradingview.com/chart/?symbol=MWA) | 22.44 | -0.09% | 1.8x | 10d | 7d | +3.6% | ✓ | ✓ | — |
-| [EAT](https://www.tradingview.com/chart/?symbol=EAT) | 196.72 | +4.65% | 2.0x | 5d | 0d | +4.7% | ✓ | — | — |
-| [OBDC](https://www.tradingview.com/chart/?symbol=OBDC) | 10.16 | +1.91% | 1.9x | 1d | 0d | +1.9% | ✓ | — | — |
+| [SXC](https://www.tradingview.com/chart/?symbol=SXC) | 10.63 | +0.38% | 1.6x | 3d | 1d | +8.4% | ✓ | ✓ | ✓ |
+| [KRNT](https://www.tradingview.com/chart/?symbol=KRNT) | 18.15 | -0.27% | 1.6x | 3d | 3d | +5.1% | ✓ | ✓ | ✓ |
+| [HLI](https://www.tradingview.com/chart/?symbol=HLI) | 137.38 | +3.80% | 1.7x | 13d | 6d | +8.1% | ✓ | ✓ | ✓ |
+| [FWRD](https://www.tradingview.com/chart/?symbol=FWRD) | 17.54 | +15.85% | 1.6x | 13d | 0d | +15.8% | ✓ | ✓ | — |
+| [BEAM](https://www.tradingview.com/chart/?symbol=BEAM) | 28.78 | +15.58% | 2.9x | 17d | 1d | +21.0% | ✓ | ✓ | — |
+| [KEX](https://www.tradingview.com/chart/?symbol=KEX) | 146.07 | +6.57% | 2.0x | 4d | 1d | +8.5% | ✓ | ✓ | — |
+| [AMBA](https://www.tradingview.com/chart/?symbol=AMBA) | 66.27 | -1.27% | 1.7x | 1d | 3d | +5.0% | ✓ | ✓ | — |
+| [AAT](https://www.tradingview.com/chart/?symbol=AAT) | 21.63 | +1.93% | 1.7x | 1d | 4d | +5.7% | ✓ | ✓ | — |
+| [CWK](https://www.tradingview.com/chart/?symbol=CWK) | 12.62 | +4.56% | 1.7x | 7d | 5d | +9.6% | ✓ | ✓ | — |
+| [LAZ](https://www.tradingview.com/chart/?symbol=LAZ) | 38.47 | +0.79% | 1.5x | 13d | 6d | +8.0% | ✓ | ✓ | — |
+| [DHC](https://www.tradingview.com/chart/?symbol=DHC) | 7.80 | +0.52% | 1.6x | 4d | 6d | +5.8% | ✓ | ✓ | — |
+| [CAL](https://www.tradingview.com/chart/?symbol=CAL) | 12.96 | -0.15% | 1.7x | 26d | 9d | +5.9% | — | ✓ | ✓ |
+| [PRG](https://www.tradingview.com/chart/?symbol=PRG) | 30.88 | +4.29% | 2.8x | 7d | 0d | +4.3% | ✓ | — | — |
+| [BSM](https://www.tradingview.com/chart/?symbol=BSM) | 14.86 | +0.41% | 1.9x | 2d | 3d | +1.0% | — | ✓ | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
