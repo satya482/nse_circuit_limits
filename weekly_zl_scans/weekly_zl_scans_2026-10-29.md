@@ -54,7 +54,7 @@
 | [UDS](https://in.tradingview.com/chart/?symbol=NSE:UDS)<br><sub>↑CMF18d</sub> | Facilities management and business support services provider | 1w | TOUCH | 1w | +5.2% | -1.54% | 205.45 | 1w | 20%  |
 | [SURAKSHA](https://in.tradingview.com/chart/?symbol=NSE:SURAKSHA)<br><sub>↓CMF6d</sub> | Pathology radiology diagnostic centers East India healthcare | 1w | TOUCH | 1w | +6.8% | +2.52% | 319.55 | — | 20%  |
 | [GUFICBIO](https://in.tradingview.com/chart/?symbol=NSE:GUFICBIO)<br><sub>↑CMF1d</sub> | Pharmaceutical APIs and formulations manufacturer for generic drugs | 1w | TOUCH | 1w | +6.9% | -1.17% | 418.80 | 3w | 20%  |
-| [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO)<br><sub>↑CMF0d · DEL73%(T-1)</sub> | Poultry livestock vaccines manufacturer animal healthcare sector | 1w | TOUCH | 1w | +12.2% | +2.85% | 2307.60 | 2w | 20%  |
+| [HESTERBIO](https://in.tradingview.com/chart/?symbol=NSE:HESTERBIO)<br><sub>↑CMF0d</sub> | Poultry livestock vaccines manufacturer animal healthcare sector | 1w | TOUCH | 1w | +12.2% | +2.85% | 2307.60 | 2w | 20%  |
 | [DOLPHIN](https://in.tradingview.com/chart/?symbol=NSE:DOLPHIN)<br><sub>↑CMF1d</sub> | Underwater services marine operations offshore oil gas construction | 1w | TOUCH | 1w | +11.7% | +4.06% | 619.05 | — | 20% 🟦 |
 | [TTKHLTCARE](https://in.tradingview.com/chart/?symbol=NSE:TTKHLTCARE)<br><sub>↓CMF2d</sub> | Consumer healthcare OTC brands medical devices condom foods | 1w | TOUCH | 1w | +10.4% | +2.65% | 1049.10 | 1w | 20%  |
 | [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS)<br><sub>↑CMF3d</sub> | Pharmaceutical intermediates and specialty chemicals manufacturer globally | 1w | ABOVE | 1w | +26.7% | +7.19% | 3976.70 | 6w | 20%  |
@@ -104,7 +104,7 @@
 | [SUDARCOLOR](https://in.tradingview.com/chart/?symbol=NSE:SUDARCOLOR)<br><sub>↓CMF0d</sub> |  | 1w | ABOVE | 1w | +17.4% | -6.02% | 402.15 | 12w | 20%  |
 | [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA)<br><sub>↑CMF5d</sub> | Pharma formulations women's health cardiology pain management domestic | 1w | ABOVE | 1w | +8.1% | +0.76% | 2217.40 | 1w | 20%  |
 | [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>↓CMF26d</sub> | Power and distribution transformer manufacturer for infrastructure | 1w | ABOVE | 1w | +4.8% | +2.11% | 124.57 | 4w | 20%  |
-| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF23d</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +1.3% | +0.08% | 252.40 | 20w | 20%  |
+| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF23d · DEL38%</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +1.3% | +0.08% | 252.40 | 20w | 20%  |
 | [CHEMPLASTS](https://in.tradingview.com/chart/?symbol=NSE:CHEMPLASTS)<br><sub>↑CMF30d</sub> | PVC resin and specialty chemicals for pharma and agro | 1w | ABOVE | 1w | +9.9% | +2.54% | 201.38 | 4w | 20%  |
 | [GNRL](https://in.tradingview.com/chart/?symbol=NSE:GNRL)<br><sub>↓CMF15d</sub> | Oil gas exploration trading natural resources sector | 1w | ABOVE | 1w | +13.4% | +12.26% | 99.80 | 9w | 20%  |
 | [WCIL](https://in.tradingview.com/chart/?symbol=NSE:WCIL)<br><sub>↑CMF30d</sub> |  | 1w | ABOVE | 1w | +7.1% | +2.74% | 97.43 | — | 20%  |
@@ -114,7 +114,7 @@
 | [SDBL](https://in.tradingview.com/chart/?symbol=NSE:SDBL)<br><sub>↓CMF21d</sub> | Beer and spirits manufacturer for Indian consumer market | 1w | ABOVE | 1w | +4.5% | -0.72% | 72.00 | 5w | 20%  |
 | [UNIECOM](https://in.tradingview.com/chart/?symbol=NSE:UNIECOM)<br><sub>↓CMF7d</sub> | Omnichannel commerce platform software for Indian retailers | 1w | ABOVE | 1w | +9.5% | -0.87% | 83.33 | 17w | 20%  |
 | [NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST)<br><sub>↑CMF19d</sub> | Ductile grey iron castings commercial vehicle tractor sectors | 1w | ABOVE | 1w | +10.2% | -0.99% | 131.29 | 1w | 20%  |
-| [ANDHRAPAP](https://in.tradingview.com/chart/?symbol=NSE:ANDHRAPAP)<br><sub>↓CMF15d · DEL72%(T-1)</sub> |  | 1w | ABOVE | 1w | +9.6% | +3.39% | 68.25 | — | 20%  |
+| [ANDHRAPAP](https://in.tradingview.com/chart/?symbol=NSE:ANDHRAPAP)<br><sub>↓CMF15d</sub> |  | 1w | ABOVE | 1w | +9.6% | +3.39% | 68.25 | — | 20%  |
 | [ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI)<br><sub>↑CMF12d</sub> |  | 1w | ABOVE | 1w | +4.9% | +0.06% | 810.10 | 40w | 20%  |
 | [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↓CMF30d</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +2.8% | +0.27% | 136.12 | 2w | 20%  |
 | [ORICONENT](https://in.tradingview.com/chart/?symbol=NSE:ORICONENT)<br><sub>↓CMF23d</sub> |  | 1w | ABOVE | 1w | +9.0% | +0.66% | 54.66 | 5w | 20%  |
@@ -125,7 +125,7 @@
 | [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX)<br><sub>↑CMF2d</sub> | Commodity futures exchange, price discovery, risk management platform | 1w | BELOW | 1w | +7.0% | +1.58% | 3231.00 | — | 20%  |
 | [PARAS](https://in.tradingview.com/chart/?symbol=NSE:PARAS)<br><sub>↑CMF1d</sub> | Defence electronics and space hardware manufacturing for military government | 1w | BELOW | 1w | +12.9% | +2.08% | 1329.70 | 2w | 20% 🟦 |
 | [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR)<br><sub>↑CMF2d</sub> | Specialty fluorochemicals refrigerants organic synthesis pharmaceutical | 1w | BELOW | 1w | +7.7% | -2.83% | 8260.50 | — | 20%  |
-| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF20d</sub> | VFX animation post-production services for film television | 1w | BELOW | 1w | +7.3% | -1.23% | 292.65 | — | 20%  |
+| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF20d · DEL22%</sub> | VFX animation post-production services for film television | 1w | BELOW | 1w | +7.3% | -1.23% | 292.65 | — | 20%  |
 | [ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR)<br><sub>↓CMF9d</sub> | Solar and wind power plants for Indian utilities | 1w | BELOW | 1w | +11.8% | +1.13% | 415.80 | — | 20% 🟦 |
 | [CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO)<br><sub>↓CMF26d</sub> | Heavy civil engineering and infrastructure construction EPC services | 1w | BELOW | 1w | +12.0% | +4.65% | 1287.40 | — | 10% 🟩 |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS)<br><sub>↑CMF2d</sub> | Retail brokerage, wealth management, asset management, home finance | 1w | BELOW | 1w | +6.5% | +1.87% | 986.10 | — | 20%  |
@@ -135,7 +135,7 @@
 | [HUHTAMAKI](https://in.tradingview.com/chart/?symbol=NSE:HUHTAMAKI)<br><sub>↑CMF0d</sub> | Flexible packaging solutions for food beverage consumer goods | 1w | BELOW | 1w | +13.1% | +4.26% | 239.35 | — | 20%  |
 | [MARKSANS](https://in.tradingview.com/chart/?symbol=NSE:MARKSANS)<br><sub>↓CMF15d</sub> | Generic pharma formulations for regulated global markets | 1w | BELOW | 1w | +9.9% | +3.33% | 315.35 | — | 20%  |
 | [FCL](https://in.tradingview.com/chart/?symbol=NSE:FCL)<br><sub>↓CMF9d</sub> | Textile auxiliaries and specialty chemicals manufacturer | 1w | BELOW | 1w | +4.2% | +2.36% | 51.19 | — | 20% 🟦 |
-| [MUFIN](https://in.tradingview.com/chart/?symbol=NSE:MUFIN)<br><sub>↑CMF0d</sub> | EV financing NBFC for electric vehicle ecosystem | 1w | BELOW | 1w | +4.2% | +2.23% | 134.03 | 5w | 20%  |
+| [MUFIN](https://in.tradingview.com/chart/?symbol=NSE:MUFIN)<br><sub>↑CMF0d · DEL54%</sub> | EV financing NBFC for electric vehicle ecosystem | 1w | BELOW | 1w | +4.2% | +2.23% | 134.03 | 5w | 20%  |
 | [MANINDS](https://in.tradingview.com/chart/?symbol=NSE:MANINDS)<br><sub>↓CMF6d</sub> | Large-diameter welded steel pipes, energy infrastructure, global exports | 1w | BELOW | 1w | +7.6% | +3.20% | 802.45 | — | 20%  |
 | [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER)<br><sub>↓CMF10d</sub> | High-voltage electrical equipment and power quality systems manufacturer | 1w | BELOW | 1w | +9.6% | +5.15% | 1430.80 | — | 10% 🟩 |
 | [IOLCP](https://in.tradingview.com/chart/?symbol=NSE:IOLCP)<br><sub>↓CMF10d</sub> | Ibuprofen producer, APIs, specialty chemicals, global export | 1w | BELOW | 1w | +12.7% | +2.39% | 184.93 | — | 20%  |
