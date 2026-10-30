@@ -86,7 +86,7 @@
 | [GRMOVER](https://in.tradingview.com/chart/?symbol=NSE:GRMOVER)<br><sub>↑CMF14d</sub> | Basmati rice milling processing domestic export markets | 1w | ABOVE | 1w | +3.3% | -1.88% | 90.51 | 2w | 20% 🟦 |
 | [FDC](https://in.tradingview.com/chart/?symbol=NSE:FDC)<br><sub>↓CMF1d</sub> | Pharma APIs formulations domestic India manufacturing | 1w | ABOVE | 1w | +11.3% | -0.04% | 377.00 | — | 20%  |
 | [CEIGALL](https://in.tradingview.com/chart/?symbol=NSE:CEIGALL)<br><sub>↑CMF30d</sub> | EPC contractor highways bridges tunnels rail infrastructure | 1w | ABOVE | 1w | +7.5% | -0.54% | 390.20 | — | 20%  |
-| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF24d · DEL38%(T-1)</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +0.7% | -0.61% | 250.85 | 20w | 20%  |
+| [RSYSTEMS](https://in.tradingview.com/chart/?symbol=NSE:RSYSTEMS)<br><sub>↑CMF24d · DEL38%</sub> | Digital product engineering AI solutions for enterprises | 1w | ABOVE | 1w | +0.7% | -0.61% | 250.85 | 20w | 20%  |
 | [PGHL](https://in.tradingview.com/chart/?symbol=NSE:PGHL)<br><sub>↑CMF2d</sub> | Vitamins minerals supplements pharmaceuticals consumer health | 1w | ABOVE | 1w | +13.1% | +2.85% | 5670.50 | — | 20%  |
 | [ORICONENT](https://in.tradingview.com/chart/?symbol=NSE:ORICONENT)<br><sub>↓CMF24d</sub> |  | 1w | ABOVE | 1w | +12.4% | +3.13% | 56.37 | 5w | 20%  |
 | [SDBL](https://in.tradingview.com/chart/?symbol=NSE:SDBL)<br><sub>↓CMF22d</sub> | Beer and spirits manufacturer for Indian consumer market | 1w | ABOVE | 1w | +5.1% | +0.60% | 72.43 | 5w | 20%  |

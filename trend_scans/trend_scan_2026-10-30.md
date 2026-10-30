@@ -40,7 +40,7 @@
 ### 🟢 ZL PULLBACK — ZLEMA25 touch + RS holds (30)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL)<br><sub>↑CMF30d</sub> | ✓ SAFE | SEBI-registered merchant banker providing corporate finance advisory services | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 79 | ↑97 | ↑1.033 | 100% | 236% ↑ | ✅8/8 | 0.66x | ↑7d | +7.9% | +0.75% | 20%  |
+| [GCSL](https://in.tradingview.com/chart/?symbol=NSE:GCSL)<br><sub>↑CMF30d · DEL51%</sub> | ✓ SAFE | SEBI-registered merchant banker providing corporate finance advisory services | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 79 | ↑97 | ↑1.033 | 100% | 236% ↑ | ✅8/8 | 0.66x | ↑7d | +7.9% | +0.75% | 20%  |
 | [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER)<br><sub>↑CMF0d</sub> | ✓ SAFE | Stainless steel washers tubes pipes solar mounting components | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 77 | ↑97 | ↑1.045 | 100% | 174% ↑ | ✅8/8 | 0.91x | ↑4d | +8.3% | +2.10% | 20%  |
 | [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD)<br><sub>↑CMF3d</sub> | ✓ SAFE | Tourism sector financing for hotels restaurants amusement parks | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑96 | ↓1.018 | 98% | 186% ↑ | ✅8/8 | 0.85x | ↑5d | +7.0% | -1.09% | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Pharmaceutical formulations suppositories capsules tablets syrups India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑98 | ↓1.048 | 97% | 312% ↑ | ✅8/8 | 0.65x | ↑60d+ | +108.7% | +0.68% | 20%  |
