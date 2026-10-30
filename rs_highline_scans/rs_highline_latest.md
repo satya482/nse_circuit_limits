@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS High-Line Cross — 2026-10-29
-*Generated 2026-10-29 15:56 IST*
+## RS High-Line Cross — 2026-10-30
+*Generated 2026-10-30 15:50 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,29 +17,35 @@
 
 ---
 
-**12 signals — RS high-line cross today**
+**18 signals — RS high-line cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GESHIP,NSE:WESTLIFE,NSE:SGMART,NSE:SEDEMAC,NSE:GRINDWELL,NSE:GVT&D,NSE:ZENSARTECH,NSE:MCX,NSE:ACUTAAS,NSE:ITCHOTELS,NSE:BSOFT,NSE:LTTS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:WELSPUNLIV,NSE:SHAILY,NSE:BEML,NSE:ABCAPITAL,NSE:VEDPOWER,NSE:VOGL,NSE:MANIPALHOS,NSE:KARAMTARA,NSE:SHILPAMED,NSE:AETHER,NSE:AJANTPHARM,NSE:RUBICON,NSE:NAVINFLUOR,NSE:SONACOMS,NSE:SAILIFE,NSE:ATHERENERG,NSE:COFORGE,NSE:PERSISTENT
 ```
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP) [20%]<br><sub>↑CMF2d</sub> | Crude oil tankers, offshore drilling vessels, shipping services | 1618.80 | +3.78% | 1577.90 | +2.59% | ↑ | ↑4d | 4d | +8.2% | ● | 3.2% | 56 | →106Cr · 216Cr |
-| [WESTLIFE](https://in.tradingview.com/chart/?symbol=NSE:WESTLIFE) [20%]<br><sub>↓CMF6d</sub> | McDonald's franchise operator West South India QSR | 610.35 | +2.45% | 608.00 | +0.39% | ↑ | ↑4d | 4d | +7.5% | ● | 5.9% | 56 | ↗70Cr · 21Cr |
-| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↑CMF3d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 864.55 | +7.67% | 805.00 | +7.40% | ↑ | ↑5d | 5d | +14.2% | ● | 6.1% | 55 | ↗117Cr · 643Cr |
-| [SEDEMAC](https://in.tradingview.com/chart/?symbol=NSE:SEDEMAC) [20%]<br><sub>↓CMF2d</sub> | Engine control electronics for automotive and off-highway vehicles | 3200.00 | +3.49% | 3147.90 | +1.66% | 🔄 | ↑1d | 1d | +3.5% | — | 3.9% | 54 | ↘38Cr · 63Cr |
-| [GRINDWELL](https://in.tradingview.com/chart/?symbol=NSE:GRINDWELL) [20%]<br><sub>↑CMF0d</sub> | Abrasives ceramics plastics manufacturing industrial applications | 1955.20 | +5.62% | 1868.90 | +4.62% | 🔄 | ↑1d | 1d | +5.6% | — | 4.0% | 49 | →9Cr · 50Cr |
-| [GVT&D](https://in.tradingview.com/chart/?symbol=NSE:GVT&D) [20%]<br><sub>↑CMF1d</sub> |  | 3980.00 | +5.01% | 3812.60 | +4.39% | 🔄 | ↓14d | 14d | -6.2% | — | 4.1% | 46 | ↗351Cr · 485Cr |
-| [ZENSARTECH](https://in.tradingview.com/chart/?symbol=NSE:ZENSARTECH) [20%]<br><sub>↑CMF2d</sub> | Digital solutions and IT services for global enterprises | 537.30 | +8.11% | 501.80 | +7.07% | 🔄 | ↑20d | 20d | +23.7% | — | 4.4% | 30 | →106Cr · 466Cr |
-| [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) [20%]<br><sub>↑CMF2d</sub> | Commodity futures exchange, price discovery, risk management platform | 3231.00 | +1.58% | 3208.00 | +0.72% | ↑ | ↑1d | 1d | +1.6% | — | 3.2% | 24 | ↘382Cr · 457Cr |
-| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) [20%]<br><sub>↑CMF3d</sub> | Pharmaceutical intermediates and specialty chemicals manufacturer globally | 3976.70 | +7.19% | 3975.00 | +0.04% | ↑ | ↑4d | 4d | +26.7% | — | 5.7% | 16 | ↗525Cr · 1168Cr |
-| [ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS) [20%]<br><sub>↓CMF2d</sub> | Hotel chain, premium and mid-market segments, Indian travelers | 169.32 | +2.56% | 168.10 | +0.73% | ↑ | ↑4d | 4d | +8.4% | — | 4.0% | 16 | ↗100Cr · 91Cr |
-| [BSOFT](https://in.tradingview.com/chart/?symbol=NSE:BSOFT) [20%]<br><sub>↑CMF12d</sub> | IT services, digital transformation, cloud computing consulting | 342.50 | +11.89% | 309.85 | +10.54% | ↑ | ↑13d | 13d | +25.5% | — | 5.2% | 7 | ↗271Cr · 2171Cr |
-| [LTTS](https://in.tradingview.com/chart/?symbol=NSE:LTTS) [20%]<br><sub>↑CMF12d</sub> | Engineering R&D services for automotive semiconductor industrial | 4182.60 | +2.31% | 4151.80 | +0.74% | ↑ | ↑15d | 15d | +31.7% | — | 4.2% | 5 | ↗492Cr · 120Cr |
+| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) [20%]<br><sub>↓CMF10d</sub> | Home textiles manufacturer, flooring, global export focus | 219.08 | +3.26% | 218.76 | +0.15% | 🔄 | ↑1d | 1d | +3.3% | ● | 5.3% | 99 | ↗99Cr · 613Cr |
+| [SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY) [20%]<br><sub>↑CMF4d</sub> | Precision plastic injection molded components for automotive OEMs | 3169.80 | +3.71% | 3100.00 | +2.25% | 🔄 | ↑2d | 2d | +4.0% | ● | 4.8% | 88 | ↗47Cr · 113Cr |
+| [BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML) [20%]<br><sub>↑CMF5d</sub> | Heavy equipment manufacturing for mining construction defense railways | 1988.60 | +0.64% | 1982.30 | +0.32% | ↑ | ↑4d | 4d | +7.8% | ● | 3.6% | 61 | →40Cr · 32Cr |
+| [ABCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:ABCAPITAL) [20%]<br><sub>↑CMF0d</sub> | NBFC financing insurance brokerage retail corporate customers | 369.45 | +3.10% | 366.40 | +0.83% | 🔄 | ↑1d | 1d | +3.1% | — | 3.3% | 54 | ↘108Cr · 327Cr |
+| [VEDPOWER](https://in.tradingview.com/chart/?symbol=NSE:VEDPOWER) [20%]<br><sub>↑CMF21d</sub> |  | 33.06 | +14.39% | 29.15 | +13.41% | 🔄 | ↑1d | 1d | +14.4% | — | 5.8% | 49 | →143Cr · 986Cr |
+| [VOGL](https://in.tradingview.com/chart/?symbol=NSE:VOGL) [20%]<br><sub>↓CMF1d</sub> |  | 30.00 | +7.95% | 28.28 | +6.08% | 🔄 | ↑1d | 1d | +8.0% | — | 5.9% | 49 | ↗109Cr · 690Cr |
+| [MANIPALHOS](https://in.tradingview.com/chart/?symbol=NSE:MANIPALHOS) [20%]<br><sub>↓CMF30d</sub> | Multispecialty hospital network tertiary quaternary care across India | 668.30 | +4.75% | 653.30 | +2.30% | 🔄 | ↑1d | 1d | +4.8% | — | 4.0% | 49 | →56Cr · 110Cr |
+| [KARAMTARA](https://in.tradingview.com/chart/?symbol=NSE:KARAMTARA) [20%]<br><sub>↑CMF30d</sub> | Solar mounting structures and trackers manufacturer, renewable energy | 375.00 | +6.85% | 359.75 | +4.24% | 🔄 | ↑1d | 1d | +6.8% | — | 6.3% | 49 | ↘26Cr · 43Cr |
+| [SHILPAMED](https://in.tradingview.com/chart/?symbol=NSE:SHILPAMED) [20%]<br><sub>↓CMF10d</sub> | Niche APIs formulations contract manufacturing pharma | 955.60 | +2.14% | 949.80 | +0.61% | ↑ | ↑2d | 2d | +2.5% | — | 4.9% | 18 | ↗89Cr · 86Cr |
+| [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) [20%]<br><sub>↑CMF2d</sub> | Specialty chemicals for pharma, agro, materials | 1616.20 | +2.23% | 1603.90 | +0.77% | ↑ | ↑3d | 3d | +5.1% | — | 5.3% | 17 | ↗84Cr · 365Cr |
+| [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM) [20%]<br><sub>↓CMF22d</sub> | Branded generic pharmaceuticals formulations across India Asia Africa | 3508.80 | +1.42% | 3467.00 | +1.21% | ↑ | ↑3d | 3d | +4.6% | — | 3.7% | 17 | ↗57Cr · 334Cr |
+| [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON) [20%]<br><sub>↑CMF5d</sub> | Complex generics and specialty formulations for global pharma | 1610.50 | +3.28% | 1589.90 | +1.30% | ↑ | ↑3d | 3d | +6.7% | — | 4.2% | 17 | →28Cr · 32Cr |
+| [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR) [20%]<br><sub>↑CMF3d</sub> | Specialty fluorochemicals refrigerants organic synthesis pharmaceutical | 8680.00 | +5.08% | 8564.50 | +1.35% | ↑ | ↑4d | 4d | +13.3% | — | 3.8% | 16 | ↗152Cr · 338Cr |
+| [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS) [20%]<br><sub>↑CMF4d</sub> | Differential assemblies and gears for electric vehicles | 890.50 | +1.93% | 885.80 | +0.53% | ↑ | ↑4d | 4d | +13.9% | — | 3.7% | 16 | ↗369Cr · 306Cr |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) [20%]<br><sub>↑CMF0d</sub> | CRDMO drug discovery manufacturing pharma biotech | 1557.50 | +4.13% | 1504.90 | +3.50% | ↑ | ↑4d | 4d | +7.8% | — | 3.3% | 16 | ↘62Cr · 197Cr |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) [-%]<br><sub>↑CMF4d</sub> | Premium electric scooters, charging network, urban mobility | 1756.00 | +5.59% | 1679.90 | +4.53% | ↑ | ↑5d | 5d | +27.2% | — | 4.9% | 15 | ↗762Cr · 1391Cr |
+| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE) [20%]<br><sub>↑CMF3d</sub> | IT services, digital transformation, financial and travel sectors | 2045.00 | +4.23% | 1978.50 | +3.36% | ↑ | ↑16d | 16d | +12.7% | — | 3.8% | 4 | ↗591Cr · 1252Cr |
+| [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT) [20%]<br><sub>↑CMF10d</sub> | Digital engineering services, cloud modernization, enterprise software | 6048.00 | +2.86% | 5905.50 | +2.41% | ↑ | ↑20d | 20d | +12.7% | — | 3.2% | 0 | →449Cr · 670Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GESHIP,NSE:WESTLIFE,NSE:SGMART,NSE:SEDEMAC,NSE:GRINDWELL,NSE:GVT&D,NSE:ZENSARTECH,NSE:MCX,NSE:ACUTAAS,NSE:ITCHOTELS,NSE:BSOFT,NSE:LTTS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:WELSPUNLIV,NSE:SHAILY,NSE:BEML,NSE:ABCAPITAL,NSE:VEDPOWER,NSE:VOGL,NSE:MANIPALHOS,NSE:KARAMTARA,NSE:SHILPAMED,NSE:AETHER,NSE:AJANTPHARM,NSE:RUBICON,NSE:NAVINFLUOR,NSE:SONACOMS,NSE:SAILIFE,NSE:ATHERENERG,NSE:COFORGE,NSE:PERSISTENT
 ```
 
 ---
