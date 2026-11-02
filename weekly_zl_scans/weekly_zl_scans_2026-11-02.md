@@ -82,7 +82,7 @@
 | [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN)<br><sub>↑CMF13d</sub> | Precision auto parts manufacturing for powertrains and aluminum | 1w | BELOW | 1w | +2.3% | +2.33% | 10510.00 | — | 20%  |
 | [TIMEX](https://in.tradingview.com/chart/?symbol=NSE:TIMEX)<br><sub>↓CMF9d</sub> | Watches manufacturing trading retail consumer fashion | 1w | BELOW | 1w | +6.5% | +6.46% | 643.00 | — | 20%  |
 | [TEXINFRA](https://in.tradingview.com/chart/?symbol=NSE:TEXINFRA)<br><sub>↑CMF0d</sub> |  | 1w | BELOW | 1w | +3.1% | +3.14% | 116.49 | 3w | 20%  |
-| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d · DEL42%(T-1)</sub> | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 1w | BELOW | 1w | +0.5% | +0.52% | 1002.65 | — | 20%  |
+| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d</sub> | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 1w | BELOW | 1w | +0.5% | +0.52% | 1002.65 | — | 20%  |
 | [TBOTEK](https://in.tradingview.com/chart/?symbol=NSE:TBOTEK)<br><sub>↓CMF25d</sub> | B2B travel booking platform connecting hotels airlines agents | 1w | BELOW | 1w | +4.0% | +4.00% | 1593.50 | — | 20%  |
 | [ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD)<br><sub>↓CMF26d</sub> | Two-wheeler braking systems manufacturer India | 1w | BELOW | 1w | +3.8% | +3.81% | 587.90 | — | 20%  |
 | [GRINDWELL](https://in.tradingview.com/chart/?symbol=NSE:GRINDWELL)<br><sub>↑CMF2d</sub> | Abrasives ceramics plastics manufacturing industrial applications | 1w | BELOW | 1w | +4.8% | +4.81% | 1969.00 | 7w | 20%  |

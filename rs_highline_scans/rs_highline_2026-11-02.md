@@ -25,7 +25,7 @@
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) [20%]<br><sub>↑CMF5d</sub> | Crude oil refining, petrochemicals, fuel production for domestic markets | 177.47 | +2.49% | 174.60 | +1.64% | 🔄 | ↑1d | 1d | +2.5% | ● | 5.4% | 99 | ↗382Cr · 194Cr |
+| [MRPL](https://in.tradingview.com/chart/?symbol=NSE:MRPL) [20%]<br><sub>↑CMF5d · DEL33%</sub> | Crude oil refining, petrochemicals, fuel production for domestic markets | 177.47 | +2.49% | 174.60 | +1.64% | 🔄 | ↑1d | 1d | +2.5% | ● | 5.4% | 99 | ↗382Cr · 194Cr |
 | [INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN) [20%]<br><sub>↓CMF0d</sub> | Digital commercialization services for global pharma companies | 619.40 | +5.56% | 599.00 | +3.41% | 🔄 | ↑1d | 1d | +5.6% | ● | 3.6% | 89 | ↗35Cr · 120Cr |
 | [IEX](https://in.tradingview.com/chart/?symbol=NSE:IEX) [20%]<br><sub>↑CMF0d</sub> | Electricity trading platform, renewable energy certificates | 107.52 | +6.56% | 104.90 | +2.50% | 🔄 | ↑1d | 1d | +6.6% | ● | 3.5% | 89 | →42Cr · 85Cr |
 | [TATACOMM](https://in.tradingview.com/chart/?symbol=NSE:TATACOMM) [20%]<br><sub>↑CMF10d</sub> | Global telecom, voice data internet, enterprise managed services | 1755.50 | +4.78% | 1713.90 | +2.43% | 🔄 | ↑1d | 1d | +4.8% | ● | 3.8% | 89 | ↘39Cr · 56Cr |
@@ -38,7 +38,7 @@
 | [GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP) [20%]<br><sub>↑CMF3d</sub> | Residential commercial township development Indian real estate | 1631.50 | +4.05% | 1611.90 | +1.22% | ↑ | ↑5d | 5d | +7.0% | ● | 3.4% | 55 | ↗120Cr · 159Cr |
 | [NH](https://in.tradingview.com/chart/?symbol=NSE:NH) [20%]<br><sub>↑CMF4d</sub> | Affordable cardiac surgery and multispecialty hospitals across India | 1834.20 | +6.63% | 1732.50 | +5.87% | ↑ | ↑5d | 5d | +10.3% | ● | 3.2% | 55 | →30Cr · 127Cr |
 | [CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN) [20%]<br><sub>↓CMF30d</sub> | Stockbroking wealth management MSME lending insurance distribution financial services | 751.15 | +4.13% | 739.40 | +1.59% | ↑ | ↑5d | 5d | +7.6% | ● | 3.2% | 55 | ↗53Cr · 98Cr |
-| [KIMS](https://in.tradingview.com/chart/?symbol=NSE:KIMS) [20%]<br><sub>↑CMF0d · DEL82%(T-1)</sub> | Multispecialty hospital chain South India urban patients | 720.90 | +2.72% | 718.65 | +0.31% | ↑ | ↑5d | 5d | +7.7% | ● | 3.2% | 55 | →28Cr · 23Cr |
+| [KIMS](https://in.tradingview.com/chart/?symbol=NSE:KIMS) [20%]<br><sub>↑CMF0d</sub> | Multispecialty hospital chain South India urban patients | 720.90 | +2.72% | 718.65 | +0.31% | ↑ | ↑5d | 5d | +7.7% | ● | 3.2% | 55 | →28Cr · 23Cr |
 | [ABCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:ABCAPITAL) [20%]<br><sub>↑CMF0d</sub> | NBFC financing insurance brokerage retail corporate customers | 369.45 | +3.10% | 366.40 | +0.83% | 🔄 | ↑1d | 1d | +3.1% | — | 3.3% | 54 | ↘108Cr · 327Cr |
 | [ENRIN](https://in.tradingview.com/chart/?symbol=NSE:ENRIN) [-%]<br><sub>↓CMF11d</sub> |  | 2910.00 | +3.81% | 2859.80 | +1.76% | 🔄 | ↑1d | 1d | +3.8% | — | 3.8% | 54 | ↘106Cr · 119Cr |
 | [JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE) [20%]<br><sub>↓CMF30d</sub> | Automobile tyres for cars trucks two-wheelers manufacturing | 323.45 | +7.17% | 312.15 | +3.62% | 🔄 | ↑1d | 1d | +7.2% | — | 3.5% | 54 | →14Cr · 28Cr |
@@ -60,7 +60,7 @@
 | [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG) [20%]<br><sub>↑CMF30d</sub> | Dry bulk carrier operations maritime logistics shipping services | 873.65 | +3.60% | 850.00 | +2.78% | ↑ | ↑6d | 6d | +12.5% | — | 3.3% | 14 | ↗111Cr · 79Cr |
 | [ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS) [20%]<br><sub>↓CMF4d</sub> | Hotel chain, premium and mid-market segments, Indian travelers | 170.48 | +1.98% | 168.10 | +1.42% | ↑ | ↑6d | 6d | +9.1% | — | 3.7% | 14 | ↗109Cr · 56Cr |
 | [MSUMI](https://in.tradingview.com/chart/?symbol=NSE:MSUMI) [20%]<br><sub>↑CMF8d</sub> |  | 38.78 | +10.36% | 35.81 | +8.29% | ↑ | ↑15d | 15d | +15.9% | — | 4.0% | 5 | ↗99Cr · 692Cr |
-| [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT) [20%]<br><sub>↑CMF10d</sub> | Digital engineering services, cloud modernization, enterprise software | 6048.00 | +2.86% | 5905.50 | +2.41% | ↑ | ↑20d | 20d | +12.7% | — | 3.2% | 0 | →449Cr · 670Cr |
+| [PERSISTENT](https://in.tradingview.com/chart/?symbol=NSE:PERSISTENT) [20%]<br><sub>↑CMF10d · DEL65%</sub> | Digital engineering services, cloud modernization, enterprise software | 6048.00 | +2.86% | 5905.50 | +2.41% | ↑ | ↑20d | 20d | +12.7% | — | 3.2% | 0 | →449Cr · 670Cr |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MRPL,NSE:INDGN,NSE:IEX,NSE:TATACOMM,NSE:NATIONALUM,NSE:TORNTPOWER,NSE:LEMONTREE,NSE:FORCEMOT,NSE:HONASA,NSE:CHENNPETRO,NSE:GODREJPROP,NSE:NH,NSE:CHOICEIN,NSE:KIMS,NSE:ABCAPITAL,NSE:ENRIN,NSE:JKTYRE,NSE:DIXON,NSE:ENGINERSIN,NSE:DELHIVERY,NSE:AFFLE,NSE:ITI,NSE:KIRLOSBROS,NSE:NBCC,NSE:GVT&D,NSE:SHYAMMETL,NSE:HBLENGINE,NSE:RKFORGE,NSE:MAXHEALTH,NSE:ZENTEC,NSE:NUVAMA,NSE:ALIVUS,NSE:SHREEJISPG,NSE:ITCHOTELS,NSE:MSUMI,NSE:PERSISTENT
