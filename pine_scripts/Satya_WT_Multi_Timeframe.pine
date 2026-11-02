@@ -89,12 +89,12 @@ plot(showW and showAreas ? w1 - w2 : na, "Weekly WT1 - WT2", color=color.new(wee
 plot(showM and showAreas ? m1 - m2 : na, "Monthly WT1 - WT2", color=color.new(monthlyColor, areaTransparency), style=plot.style_area)
 
 // In direction mode, increasing widths also distinguish D/W/M pairs.
-plot(showD ? d1 : na, "Daily WT1", color=lineColor(d1, dPrev1, dailyColor, true), linewidth=2, style=plot.style_stepline)
-plot(showD ? d2 : na, "Daily WT2", color=lineColor(d2, dPrev2, dailyColor, false), linewidth=1, style=plot.style_stepline)
-plot(showW ? w1 : na, "Weekly WT1", color=lineColor(w1, wPrev1, weeklyColor, true), linewidth=3, style=plot.style_stepline)
-plot(showW ? w2 : na, "Weekly WT2", color=lineColor(w2, wPrev2, weeklyColor, false), linewidth=2, style=plot.style_stepline)
-plot(showM ? m1 : na, "Monthly WT1", color=lineColor(m1, mPrev1, monthlyColor, true), linewidth=4, style=plot.style_stepline)
-plot(showM ? m2 : na, "Monthly WT2", color=lineColor(m2, mPrev2, monthlyColor, false), linewidth=3, style=plot.style_stepline)
+plot(showD ? d1 : na, "Daily WT1", color=lineColor(d1, dPrev1, dailyColor, true), linewidth=1)//, style=plot.style_stepline)
+plot(showD ? d2 : na, "Daily WT2", color=lineColor(d2, dPrev2, dailyColor, false), linewidth=1)//, style=plot.style_stepline)
+plot(showW ? w1 : na, "Weekly WT1", color=lineColor(w1, wPrev1, weeklyColor, true), linewidth=1, style=plot.style_stepline)
+plot(showW ? w2 : na, "Weekly WT2", color=lineColor(w2, wPrev2, weeklyColor, false), linewidth=1, style=plot.style_stepline)
+plot(showM ? m1 : na, "Monthly WT1", color=lineColor(m1, mPrev1, monthlyColor, true), linewidth=1, style=plot.style_stepline)
+plot(showM ? m2 : na, "Monthly WT2", color=lineColor(m2, mPrev2, monthlyColor, false), linewidth=1, style=plot.style_stepline)
 
 // Shape distinguishes timeframe; green/red distinguishes cross direction.
 plotshape(showD and showCrosses and dPulse ? d2 : na, title="Daily cross", style=shape.circle, location=location.absolute, color=dCross > 0 ? color.lime : color.red, size=size.tiny, text="D", textcolor=color.white)
