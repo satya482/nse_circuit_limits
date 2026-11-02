@@ -1,0 +1,106 @@
+//@version=6
+// WaveTrend calculation by LazyBear; multi-timeframe adaptation for Satya.
+// I am not a SEBI registered investment advisor. Educational use only.
+// Developing mode can repaint. Closed mode displays the previous completed
+// source candle from the beginning of the next source period (no backdating).
+indicator("Satya WaveTrend D/W/M [LazyBear]", shorttitle="SWT_DWM", overlay=false, precision=3)
+
+n1 = input.int(10, "Channel length", minval=1, group="Calculation")
+n2 = input.int(21, "Average length", minval=1, group="Calculation")
+signalLength = input.int(4, "WT2 SMA length", minval=1, group="Calculation")
+candleMode = input.string("Developing", "Source candles", options=["Developing", "Closed only"], group="Calculation", tooltip="Developing values and crosses can change until the source candle closes and after a chart reload. Closed only uses the previous completed daily/weekly/monthly candle.")
+closedOnly = candleMode == "Closed only"
+
+showD = input.bool(true, "Daily", group="Timeframes")
+showW = input.bool(true, "Weekly", group="Timeframes")
+showM = input.bool(true, "Monthly", group="Timeframes")
+colorMode = input.string("Timeframe", "Line color mode", options=["Timeframe", "Direction"], group="Colors")
+dailyColor = input.color(color.blue, "Daily", group="Colors")
+weeklyColor = input.color(color.orange, "Weekly", group="Colors")
+monthlyColor = input.color(color.purple, "Monthly", group="Colors")
+wt1Up = input.color(#00E676, "WT1 rising", group="Colors")
+wt1Down = input.color(#FF1744, "WT1 falling / flat", group="Colors")
+wt2Up = input.color(#00B0FF, "WT2 rising", group="Colors")
+wt2Down = input.color(#FF9100, "WT2 falling / flat", group="Colors")
+
+levelMode = input.string("All", "Reference levels", options=["All", "Zero only", "Hidden"], group="Levels")
+ob1 = input.float(60, "Overbought L1", group="Levels")
+ob2 = input.float(53, "Overbought L2", group="Levels")
+os1 = input.float(-60, "Oversold L1", group="Levels")
+os2 = input.float(-53, "Oversold L2", group="Levels")
+
+showCrosses = input.bool(true, "Show WT1/WT2 crosses", group="Extras")
+showAreas = input.bool(true, "Show WT1 minus WT2 areas", group="Extras")
+areaTransparency = input.int(85, "Area transparency", minval=0, maxval=100, group="Extras")
+paintCandles = input.bool(true, "Color price candles on crosses", group="Extras")
+paintTimeframe = input.string("Daily", "Candle coloring timeframe", options=["Daily", "Weekly", "Monthly"], group="Extras", tooltip="Independent of timeframe plot visibility. Bull cross = white; bear cross = yellow.")
+
+if not (timeframe.isintraday or (timeframe.isdaily and timeframe.multiplier == 1))
+    runtime.error("Use this indicator on intraday or 1-day charts.")
+
+// Everything, including slopes and crosses, is evaluated inside the source
+// timeframe. Comparing chart-bar WT values would give incorrect slopes when
+// higher-timeframe values repeat across multiple chart candles.
+waveTrend(int offset) =>
+    ap = hlc3
+    esa = ta.ema(ap, n1)
+    deviation = ta.ema(math.abs(ap - esa), n1)
+    ci = deviation > 0 ? (ap - esa) / (0.015 * deviation) : 0.0
+    wt1 = ta.ema(ci, n2)
+    wt2 = ta.sma(wt1, signalLength)
+    bull = ta.crossover(wt1, wt2)
+    bear = ta.crossunder(wt1, wt2)
+    crossDirection = bull ? 1 : bear ? -1 : 0
+    [wt1[offset], wt2[offset], wt1[offset + 1], wt2[offset + 1], crossDirection[offset], time[offset]]
+
+getWT(string sourceTimeframe) =>
+    if closedOnly
+        // Offset EVERY tuple element before enabling lookahead.
+        request.security(syminfo.tickerid, sourceTimeframe, waveTrend(1), gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+    else
+        request.security(syminfo.tickerid, sourceTimeframe, waveTrend(0), gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+
+[d1, d2, dPrev1, dPrev2, dCross, dTime] = getWT("1D")
+[w1, w2, wPrev1, wPrev2, wCross, wTime] = getWT("1W")
+[m1, m2, mPrev1, mPrev2, mCross, mTime] = getWT("1M")
+
+lineColor(float value, float previous, color base, bool firstLine) =>
+    colorMode == "Timeframe" ? color.new(base, firstLine ? 0 : 40) : (value > previous ? (firstLine ? wt1Up : wt2Up) : (firstLine ? wt1Down : wt2Down))
+
+// One marker/color pulse when a source cross becomes available, rather than
+// duplicating a mapped source cross on every intraday candle. A developing
+// cross can disappear or recur while its source candle is still open.
+crossPulse(int direction, int sourceTime) =>
+    direction != 0 and not na(sourceTime[1]) and (sourceTime != sourceTime[1] or direction != direction[1])
+
+dPulse = crossPulse(dCross, dTime)
+wPulse = crossPulse(wCross, wTime)
+mPulse = crossPulse(mCross, mTime)
+
+hline(0, "Zero", color=color.gray, display=levelMode != "Hidden" ? display.all : display.none)
+hline(ob1, "Overbought L1", color=color.red, display=levelMode == "All" ? display.all : display.none)
+hline(ob2, "Overbought L2", color=color.new(color.red, 45), display=levelMode == "All" ? display.all : display.none)
+hline(os1, "Oversold L1", color=color.green, display=levelMode == "All" ? display.all : display.none)
+hline(os2, "Oversold L2", color=color.new(color.green, 45), display=levelMode == "All" ? display.all : display.none)
+
+// Draw translucent areas first, beneath the six WT lines.
+plot(showD and showAreas ? d1 - d2 : na, "Daily WT1 - WT2", color=color.new(dailyColor, areaTransparency), style=plot.style_area)
+plot(showW and showAreas ? w1 - w2 : na, "Weekly WT1 - WT2", color=color.new(weeklyColor, areaTransparency), style=plot.style_area)
+plot(showM and showAreas ? m1 - m2 : na, "Monthly WT1 - WT2", color=color.new(monthlyColor, areaTransparency), style=plot.style_area)
+
+// In direction mode, increasing widths also distinguish D/W/M pairs.
+plot(showD ? d1 : na, "Daily WT1", color=lineColor(d1, dPrev1, dailyColor, true), linewidth=2, style=plot.style_stepline)
+plot(showD ? d2 : na, "Daily WT2", color=lineColor(d2, dPrev2, dailyColor, false), linewidth=1, style=plot.style_stepline)
+plot(showW ? w1 : na, "Weekly WT1", color=lineColor(w1, wPrev1, weeklyColor, true), linewidth=3, style=plot.style_stepline)
+plot(showW ? w2 : na, "Weekly WT2", color=lineColor(w2, wPrev2, weeklyColor, false), linewidth=2, style=plot.style_stepline)
+plot(showM ? m1 : na, "Monthly WT1", color=lineColor(m1, mPrev1, monthlyColor, true), linewidth=4, style=plot.style_stepline)
+plot(showM ? m2 : na, "Monthly WT2", color=lineColor(m2, mPrev2, monthlyColor, false), linewidth=3, style=plot.style_stepline)
+
+// Shape distinguishes timeframe; green/red distinguishes cross direction.
+plotshape(showD and showCrosses and dPulse ? d2 : na, title="Daily cross", style=shape.circle, location=location.absolute, color=dCross > 0 ? color.lime : color.red, size=size.tiny, text="D", textcolor=color.white)
+plotshape(showW and showCrosses and wPulse ? w2 : na, title="Weekly cross", style=shape.diamond, location=location.absolute, color=wCross > 0 ? color.lime : color.red, size=size.tiny, text="W", textcolor=color.white)
+plotshape(showM and showCrosses and mPulse ? m2 : na, title="Monthly cross", style=shape.square, location=location.absolute, color=mCross > 0 ? color.lime : color.red, size=size.tiny, text="M", textcolor=color.white)
+
+paintPulse = paintTimeframe == "Daily" ? dPulse : paintTimeframe == "Weekly" ? wPulse : mPulse
+paintDirection = paintTimeframe == "Daily" ? dCross : paintTimeframe == "Weekly" ? wCross : mCross
+barcolor(paintCandles and paintPulse ? (paintDirection > 0 ? color.white : color.yellow) : na, title="WT cross candle color")
