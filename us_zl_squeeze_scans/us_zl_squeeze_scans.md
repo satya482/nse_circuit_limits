@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-10-30
-*Generated 2026-10-30 15:59 IST*
+# US ZL Squeeze Scan — 2026-11-02
+*Generated 2026-11-02 15:56 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,34 +18,30 @@
 
 ---
 
-**24 stocks: ZLEMA25 Rising + Squeeze ON**
+**20 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [HNI](https://www.tradingview.com/chart/?symbol=HNI) | 47.91 | +2.20% | 1.6x | 21d | 0d | +2.2% | ✓ | ✓ | ✓ |
-| [CRI](https://www.tradingview.com/chart/?symbol=CRI) | 33.38 | +7.54% | 1.7x | 6d | 0d | +7.5% | ✓ | ✓ | ✓ |
-| [OMCL](https://www.tradingview.com/chart/?symbol=OMCL) | 36.88 | +2.59% | 1.7x | 1d | 0d | +2.6% | ✓ | ✓ | ✓ |
-| [WNC](https://www.tradingview.com/chart/?symbol=WNC) | 13.26 | -4.05% | 2.6x | 1d | 3d | +3.0% | ✓ | ✓ | ✓ |
-| [INGM](https://www.tradingview.com/chart/?symbol=INGM) | 28.61 | +0.74% | 1.8x | 19d | 6d | +5.7% | ✓ | ✓ | ✓ |
-| [ATEC](https://www.tradingview.com/chart/?symbol=ATEC) | 11.37 | -0.70% | 2.8x | 1d | 7d | +9.2% | ✓ | ✓ | ✓ |
-| [SAIA](https://www.tradingview.com/chart/?symbol=SAIA) | 343.07 | +5.68% | 2.3x | 30d | 0d | +5.7% | ✓ | ✓ | — |
-| [FSS](https://www.tradingview.com/chart/?symbol=FSS) | 115.21 | +1.55% | 2.2x | 24d | 0d | +1.6% | ✓ | ✓ | — |
-| [FVRR](https://www.tradingview.com/chart/?symbol=FVRR) | 9.05 | +12.00% | 4.3x | 13d | 0d | +12.0% | ✓ | ✓ | — |
-| [ORN](https://www.tradingview.com/chart/?symbol=ORN) | 9.11 | +9.76% | 2.0x | 3d | 0d | +9.8% | ✓ | ✓ | — |
-| [BBW](https://www.tradingview.com/chart/?symbol=BBW) | 27.48 | +9.18% | 2.1x | 6d | 1d | +11.9% | ✓ | ✓ | — |
-| [SUPN](https://www.tradingview.com/chart/?symbol=SUPN) | 41.84 | +1.85% | 1.9x | 1d | 1d | +2.1% | ✓ | ✓ | — |
-| [TSLX](https://www.tradingview.com/chart/?symbol=TSLX) | 17.62 | +1.73% | 1.6x | 1d | 1d | +2.4% | ✓ | ✓ | — |
-| [PTCT](https://www.tradingview.com/chart/?symbol=PTCT) | 64.46 | +2.28% | 1.5x | 2d | 2d | +5.5% | ✓ | ✓ | — |
-| [BDC](https://www.tradingview.com/chart/?symbol=BDC) | 107.48 | +0.77% | 1.9x | 1d | 2d | +4.4% | ✓ | ✓ | — |
-| [CTRI](https://www.tradingview.com/chart/?symbol=CTRI) | 21.54 | +2.67% | 1.6x | 11d | 3d | +11.4% | ✓ | ✓ | — |
-| [LXU](https://www.tradingview.com/chart/?symbol=LXU) | 11.12 | +8.07% | 2.0x | 9d | 3d | +12.4% | ✓ | ✓ | — |
-| [CLB](https://www.tradingview.com/chart/?symbol=CLB) | 10.40 | -0.86% | 1.5x | 8d | 3d | +4.9% | ✓ | ✓ | — |
-| [WHD](https://www.tradingview.com/chart/?symbol=WHD) | 65.49 | +1.79% | 2.2x | 8d | 4d | +8.5% | ✓ | ✓ | — |
-| [AN](https://www.tradingview.com/chart/?symbol=AN) | 169.34 | +3.14% | 1.8x | 9d | 5d | +10.7% | ✓ | ✓ | — |
-| [KFII](https://www.tradingview.com/chart/?symbol=KFII) | 10.73 | +0.09% | 5.4x | 1d | 24d | +0.7% | ✓ | ✓ | — |
-| [LXFR](https://www.tradingview.com/chart/?symbol=LXFR) | 17.27 | +0.12% | 4.2x | 28d | 0d | +0.1% | — | ✓ | — |
-| [NEXN](https://www.tradingview.com/chart/?symbol=NEXN) | 8.87 | +3.74% | 1.9x | 17d | 0d | +3.7% | ✓ | — | — |
-| [TBBK](https://www.tradingview.com/chart/?symbol=TBBK) | 50.52 | +0.20% | 1.5x | 17d | 9d | +3.1% | ✓ | — | — |
+| [PAYO](https://www.tradingview.com/chart/?symbol=PAYO) | 7.15 | +0.42% | 1.8x | 73d | 0d | +0.4% | ✓ | ✓ | ✓ |
+| [OMCL](https://www.tradingview.com/chart/?symbol=OMCL) | 36.65 | -0.62% | 1.5x | 2d | 1d | +1.9% | ✓ | ✓ | ✓ |
+| [AMPH](https://www.tradingview.com/chart/?symbol=AMPH) | 27.72 | +2.93% | 1.7x | 10d | 2d | +8.4% | ✓ | ✓ | ✓ |
+| [FCRS](https://www.tradingview.com/chart/?symbol=FCRS) | 10.23 | +0.00% | 4.9x | 1d | 5d | +0.3% | ✓ | ✓ | ✓ |
+| [WKC](https://www.tradingview.com/chart/?symbol=WKC) | 37.34 | +0.35% | 1.9x | 40d | 7d | +3.9% | ✓ | ✓ | ✓ |
+| [INGM](https://www.tradingview.com/chart/?symbol=INGM) | 28.40 | -0.73% | 1.8x | 20d | 7d | +4.9% | ✓ | ✓ | ✓ |
+| [AMTB](https://www.tradingview.com/chart/?symbol=AMTB) | 29.94 | +0.13% | 1.6x | 43d | 8d | +5.0% | ✓ | ✓ | ✓ |
+| [LEA](https://www.tradingview.com/chart/?symbol=LEA) | 118.44 | +0.90% | 1.8x | 14d | 0d | +0.9% | ✓ | ✓ | — |
+| [CLBK](https://www.tradingview.com/chart/?symbol=CLBK) | 11.04 | +2.89% | 2.0x | 1d | 0d | +2.9% | ✓ | ✓ | — |
+| [CBT](https://www.tradingview.com/chart/?symbol=CBT) | 74.43 | +0.79% | 1.8x | 1d | 0d | +0.8% | ✓ | ✓ | — |
+| [SAIA](https://www.tradingview.com/chart/?symbol=SAIA) | 344.61 | +0.45% | 1.5x | 31d | 1d | +6.2% | ✓ | ✓ | — |
+| [JAN](https://www.tradingview.com/chart/?symbol=JAN) | 28.52 | +0.00% | 2.0x | 7d | 1d | +4.2% | ✓ | ✓ | — |
+| [FOUR](https://www.tradingview.com/chart/?symbol=FOUR) | 40.03 | +1.99% | 1.5x | 2d | 1d | +5.0% | ✓ | ✓ | — |
+| [STUB](https://www.tradingview.com/chart/?symbol=STUB) | 5.78 | -0.69% | 1.9x | 1d | 1d | +3.2% | ✓ | ✓ | — |
+| [SUPN](https://www.tradingview.com/chart/?symbol=SUPN) | 41.92 | +0.19% | 2.7x | 2d | 2d | +2.3% | ✓ | ✓ | — |
+| [HTGC](https://www.tradingview.com/chart/?symbol=HTGC) | 16.59 | -1.83% | 2.1x | 4d | 3d | +1.1% | ✓ | ✓ | — |
+| [INDV](https://www.tradingview.com/chart/?symbol=INDV) | 35.37 | +0.34% | 1.7x | 1d | 3d | +2.3% | ✓ | ✓ | — |
+| [ERII](https://www.tradingview.com/chart/?symbol=ERII) | 6.96 | -2.25% | 1.6x | 15d | 4d | +4.2% | ✓ | ✓ | — |
+| [FHI](https://www.tradingview.com/chart/?symbol=FHI) | 58.48 | +0.81% | 1.8x | 16d | 6d | +4.3% | ✓ | ✓ | — |
+| [FND](https://www.tradingview.com/chart/?symbol=FND) | 47.59 | -5.46% | 1.9x | 1d | 6d | +5.5% | ✓ | ✓ | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
