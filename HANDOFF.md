@@ -2,6 +2,18 @@
 
 # Repo Handoff
 
+Updated 2026-11-03 by Codex, daily ZLEMA25 uptrend price projection:
+
+- `pine_scripts/ZLEMA25_Uptrend_Price.pine` is a standalone indicator with an aqua dashed line
+  and price label on 1D charts for any symbol, from the latest bar to 14 calendar
+  days ahead. Fixed close-based ZLEMA25 (lag 12), independent of legacy source,
+  length and WaveTrend settings. The first tick above `(prior ZLEMA + close[12]) / 2`
+  is the daily close needed for a rising slope. Updates daily; intraday status is
+  provisional. This is a current threshold, not a future-price forecast.
+- Four local formula/projection checks pass in `tests/test_zlema25_trigger_pine.py`.
+  TradingView compilation and visual verification remain pending. Unrelated
+  existing worktree changes preserved. Publication requested by the user.
+
 Last reviewed by Codex: 2026-08-28.
 Last reviewed by Claude Code: 2026-09-02 (see "Current Worktree State" below).
 

@@ -1,0 +1,29 @@
+//@version=6
+// Daily ZLEMA25 rising-slope close threshold for any stock on a 1D chart.
+// Educational use only. Consult a SEBI registered investment advisor.
+indicator("Daily ZLEMA25 Uptrend Price", overlay=true, max_lines_count=1, max_labels_count=1)
+
+// Daily close trigger, fixed ZLEMA25/close regardless of the legacy source inputs.
+// Z[t] = alpha * (2 * close[t] - close[t-12]) + (1-alpha) * Z[t-1].
+// Z[t] > Z[t-1] iff close[t] > (Z[t-1] + close[t-12]) / 2.
+// This is today's slope threshold, not a forecast of future daily thresholds.
+showDailyTurnPrice = input.bool(true, "Daily ZLEMA25 uptrend price (1D chart only)")
+dailyTurnColor = input.color(color.aqua, "Daily uptrend price line color")
+dailyCloseZlema = ta.ema(2 * close - close[12], 25)
+dailyTurnBoundary = (dailyCloseZlema[1] + close[12]) / 2
+// Equality means flat: select the first tradable tick strictly ABOVE the boundary.
+dailyTurnPrice = (math.floor(dailyTurnBoundary / syminfo.mintick) + 1) * syminfo.mintick
+var line dailyTurnLine = na
+var label dailyTurnLabel = na
+if barstate.islast
+    line.delete(dailyTurnLine)
+    label.delete(dailyTurnLabel)
+    if showDailyTurnPrice and timeframe.isdaily and timeframe.multiplier == 1 and not na(dailyTurnPrice)
+        projectionEnd = time + 14 * 24 * 60 * 60 * 1000
+        dailyTurnLine := line.new(time, dailyTurnPrice, projectionEnd, dailyTurnPrice,
+             xloc=xloc.bar_time, color=dailyTurnColor, style=line.style_dashed, width=2)
+        dailyTurnText = "Daily ZL25 rising: close >= " + str.tostring(dailyTurnPrice, format.mintick)
+        dailyTurnLabel := label.new(projectionEnd, dailyTurnPrice, dailyTurnText,
+             xloc=xloc.bar_time, style=label.style_label_left,
+             textcolor=dailyTurnColor, color=color.new(color.black, 85),
+             tooltip="Today's daily close threshold. Updates each daily bar. Intraday signals are provisional until the daily candle closes. Fixed length 25, source close; independent of WaveTrend.")
