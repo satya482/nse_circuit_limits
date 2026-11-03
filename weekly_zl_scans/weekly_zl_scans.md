@@ -82,7 +82,7 @@
 | [EMAMILTD](https://in.tradingview.com/chart/?symbol=NSE:EMAMILTD)<br><sub>↑CMF9d</sub> | Personal care healthcare FMCG creams balms oils Indian consumers | 1w | ABOVE | 1w | +6.2% | +2.63% | 382.00 | — | 20%  |
 | [INFOBEAN](https://in.tradingview.com/chart/?symbol=NSE:INFOBEAN)<br><sub>↑CMF1d</sub> | AI-driven software engineering, digital transformation, enterprise clients | 1w | ABOVE | 1w | +20.9% | +7.37% | 165.98 | 15w | 20%  |
 | [JAIBALAJI](https://in.tradingview.com/chart/?symbol=NSE:JAIBALAJI)<br><sub>↑CMF19d</sub> | Steel manufacturer, value-added products, automotive and appliances | 1w | ABOVE | 1w | +13.3% | +2.98% | 69.70 | 7w | 10% 🟩 |
-| [EXCELSOFT](https://in.tradingview.com/chart/?symbol=NSE:EXCELSOFT)<br><sub>↑CMF4d · DEL68%(T-1)</sub> | EdTech software for schools, universities, corporate training | 1w | ABOVE | 1w | +2.4% | +4.24% | 79.85 | 5w | 20%  |
+| [EXCELSOFT](https://in.tradingview.com/chart/?symbol=NSE:EXCELSOFT)<br><sub>↑CMF4d</sub> | EdTech software for schools, universities, corporate training | 1w | ABOVE | 1w | +2.4% | +4.24% | 79.85 | 5w | 20%  |
 | [BATAINDIA](https://in.tradingview.com/chart/?symbol=NSE:BATAINDIA)<br><sub>↑CMF12d</sub> | Footwear manufacturing retail consumer discretionary mass market | 1w | ABOVE | 1w | +3.4% | +1.89% | 649.80 | — | 20%  |
 | [BBL](https://in.tradingview.com/chart/?symbol=NSE:BBL)<br><sub>↑CMF16d</sub> | Transformers motors drives industrial equipment manufacturing | 1w | ABOVE | 1w | +5.5% | +1.64% | 2459.80 | — | 20%  |
 | [LUXIND](https://in.tradingview.com/chart/?symbol=NSE:LUXIND)<br><sub>↓CMF2d</sub> | Innerwear and hosiery manufacturer for Indian consumer market | 1w | ABOVE | 1w | +3.5% | +0.09% | 1162.20 | 2w | 20% 🟦 |
@@ -102,7 +102,7 @@
 | [FRONTSP](https://in.tradingview.com/chart/?symbol=NSE:FRONTSP)<br><sub>↓CMF26d</sub> | Railway suspension springs and forgings manufacturer | 1w | ABOVE | 1w | +5.5% | +3.73% | 1347.30 | 6w | 20%  |
 | [JAGRAN](https://in.tradingview.com/chart/?symbol=NSE:JAGRAN)<br><sub>↑CMF1d</sub> | Hindi newspapers, magazines, radio, digital, outdoor advertising | 1w | ABOVE | 1w | +3.9% | +0.06% | 64.38 | 4w | 20%  |
 | [SWELECTES](https://in.tradingview.com/chart/?symbol=NSE:SWELECTES)<br><sub>↑CMF17d</sub> | Solar EPC and power conditioning solutions provider | 1w | ABOVE | 1w | +4.8% | +0.77% | 612.00 | 13w | 20%  |
-| [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN)<br><sub>↑CMF0d · DEL46%(T-1)</sub> | Sugar production, ethanol distillery, power cogeneration | 1w | BELOW | 1w | +11.1% | +9.15% | 654.80 | — | 20%  |
+| [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN)<br><sub>↑CMF0d</sub> | Sugar production, ethanol distillery, power cogeneration | 1w | BELOW | 1w | +11.1% | +9.15% | 654.80 | — | 20%  |
 | [SHAREINDIA](https://in.tradingview.com/chart/?symbol=NSE:SHAREINDIA)<br><sub>↓CMF12d</sub> | Equity broking fintech algorithmic trading retail investors | 1w | BELOW | 1w | +4.7% | +8.19% | 184.17 | — | 20%  |
 | [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM)<br><sub>↓CMF0d</sub> | PTFE manufacturer, fluorochemicals, industrial polymers globally | 1w | BELOW | 1w | +5.1% | +3.23% | 4463.90 | — | 20%  |
 | [YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH)<br><sub>↑CMF0d</sub> | Multi-specialty hospital chain serving Delhi-NCR trauma and acute care | 1w | BELOW | 1w | +5.9% | +4.63% | 981.85 | — | 20%  |
@@ -115,7 +115,7 @@
 | [ROLEXRINGS](https://in.tradingview.com/chart/?symbol=NSE:ROLEXRINGS)<br><sub>↓CMF3d</sub> | Forged bearing rings automotive components precision supplier | 1w | BELOW | 1w | +3.8% | +1.39% | 168.76 | — | 20%  |
 | [MANORAMA](https://in.tradingview.com/chart/?symbol=NSE:MANORAMA)<br><sub>↓CMF2d</sub> | Specialty fats from tree seeds, chocolate cosmetics | 1w | BELOW | 1w | +2.5% | +1.30% | 1841.20 | — | 20%  |
 | [SOTL](https://in.tradingview.com/chart/?symbol=NSE:SOTL)<br><sub>↑CMF4d</sub> | Specialty lubricants transformer oils petroleum refining chemicals | 1w | BELOW | 1w | +7.4% | +3.84% | 697.45 | — | 20%  |
-| [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF)<br><sub>↓CMF24d</sub> | Surfactants specialty chemicals for detergents cosmetics | 1w | BELOW | 1w | +6.2% | +4.35% | 2246.60 | — | 20%  |
+| [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF)<br><sub>↓CMF24d · DEL74%</sub> | Surfactants specialty chemicals for detergents cosmetics | 1w | BELOW | 1w | +6.2% | +4.35% | 2246.60 | — | 20%  |
 | [ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD)<br><sub>↓CMF27d</sub> | Two-wheeler braking systems manufacturer India | 1w | BELOW | 1w | +4.7% | +0.86% | 592.95 | — | 20%  |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>↓CMF18d</sub> | Cloud SaaS platform for broadcast streaming content monetization | 1w | BELOW | 1w | +4.7% | +3.72% | 561.25 | 2w | 20%  |
 | [MAYURUNIQ](https://in.tradingview.com/chart/?symbol=NSE:MAYURUNIQ)<br><sub>↑CMF19d</sub> | Synthetic leather manufacturer for automotive footwear upholstery | 1w | BELOW | 1w | +5.3% | +3.20% | 753.55 | 7w | 20%  |
