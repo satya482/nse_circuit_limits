@@ -31,5 +31,5 @@ if barstate.islast
         dailyTurnLabel := label.new(projectionEnd, dailyTurnPrice,
              "ZL25 UP " + targetText + " >= " + str.tostring(dailyTurnPrice, format.mintick),
              xloc=xloc.bar_time, style=label.style_label_left,
-             textcolor=dailyTurnColor, color=color.new(color.black, 85),
+             textcolor=dailyTurnColor, size=size.tiny,color=color.new(color.black, 85),
              tooltip="Minimum close needed for the first rising ZLEMA25 candle after a flat/falling candle. Hidden when the last confirmed slope is already rising. Updates after every daily close; the 14-day extension is a visual guide, not a fixed two-week forecast.")
