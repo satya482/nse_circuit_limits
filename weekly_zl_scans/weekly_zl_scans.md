@@ -28,7 +28,7 @@
 |--------|---------|-------:|:-----------:|---------:|--------:|--------:|------:|:---:|:-------:|
 | [VINCOFE](https://in.tradingview.com/chart/?symbol=NSE:VINCOFE)<br><sub>↑CMF0d</sub> | Instant coffee chicory manufacturing export beverages | 1w | TOUCH | 1w | +16.1% | +9.99% | 168.73 | 1w | 20%  |
 | [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN)<br><sub>↑CMF1d</sub> | Sugar production, ethanol distillery, power cogeneration | 1w | TOUCH | 1w | +14.3% | +2.88% | 673.65 | — | 20%  |
-| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF24d · DEL23%(T-1)</sub> | VFX animation post-production services for film television | 1w | TOUCH | 1w | +6.1% | +5.53% | 305.55 | — | 20%  |
+| [PFOCUS](https://in.tradingview.com/chart/?symbol=NSE:PFOCUS)<br><sub>↓CMF24d · DEL22%</sub> | VFX animation post-production services for film television | 1w | TOUCH | 1w | +6.1% | +5.53% | 305.55 | — | 20%  |
 | [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS)<br><sub>↓CMF3d</sub> | Retail brokerage, wealth management, asset management, home finance | 1w | TOUCH | 1w | +7.5% | +0.30% | 1013.00 | — | 20%  |
 | [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM)<br><sub>↑CMF8d</sub> | Contract research development manufacturing biotech pharma | 1w | TOUCH | 1w | +7.2% | +3.96% | 888.30 | — | 20%  |
 | [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM)<br><sub>↑CMF0d</sub> | PTFE manufacturer, fluorochemicals, industrial polymers globally | 1w | TOUCH | 1w | +8.6% | +3.35% | 4613.30 | — | 20%  |
@@ -49,7 +49,7 @@
 | [STYLEBAAZA](https://in.tradingview.com/chart/?symbol=NSE:STYLEBAAZA)<br><sub>↓CMF7d</sub> | Value fashion apparel retailer eastern India families | 1w | TOUCH | 1w | +6.7% | +4.75% | 376.25 | — | 10% 🟩 |
 | [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN)<br><sub>↓CMF1d</sub> | Aluminium ferroalloys manufacturing trading steel auto sector | 1w | TOUCH | 1w | +5.2% | -1.68% | 94.16 | 15w | 20%  |
 | [LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS)<br><sub>↑CMF5d</sub> | Rice and rice products FMCG global consumer foods | 1w | TOUCH | 1w | +8.1% | -0.11% | 410.10 | — | 20%  |
-| [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF)<br><sub>↓CMF25d · DEL74%(T-1)</sub> | Surfactants specialty chemicals for detergents cosmetics | 1w | TOUCH | 1w | +7.2% | +0.91% | 2267.10 | — | 20%  |
+| [GALAXYSURF](https://in.tradingview.com/chart/?symbol=NSE:GALAXYSURF)<br><sub>↓CMF25d</sub> | Surfactants specialty chemicals for detergents cosmetics | 1w | TOUCH | 1w | +7.2% | +0.91% | 2267.10 | — | 20%  |
 | [TNPETRO](https://in.tradingview.com/chart/?symbol=NSE:TNPETRO)<br><sub>↓CMF27d</sub> | Petrochemical intermediates for detergents and industrial chemicals | 1w | TOUCH | 1w | +4.3% | +0.87% | 119.77 | — | 20%  |
 | [SKMEGGPROD](https://in.tradingview.com/chart/?symbol=NSE:SKMEGGPROD)<br><sub>↑CMF2d</sub> | Egg powder production export bakery food processing | 1w | TOUCH | 1w | +19.3% | +7.82% | 230.77 | — | 20%  |
 | [IKS](https://in.tradingview.com/chart/?symbol=NSE:IKS)<br><sub>↓CMF11d</sub> | Healthcare IT platform optimizing provider revenue operations US | 1w | TOUCH | 1w | +2.7% | +1.19% | 1750.40 | 7w | 20%  |
@@ -102,7 +102,7 @@
 | [BECTORFOOD](https://in.tradingview.com/chart/?symbol=NSE:BECTORFOOD)<br><sub>↓CMF0d</sub> | Premium biscuits and bakery products for Indian households | 1w | ABOVE | 1w | +14.6% | -0.01% | 208.16 | — | 20%  |
 | [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE)<br><sub>↑CMF2d</sub> | Real estate developer residential commercial retail hospitality warehouses | 1w | ABOVE | 1w | +8.7% | +2.80% | 1580.00 | — | 20%  |
 | [MAPMYINDIA](https://in.tradingview.com/chart/?symbol=NSE:MAPMYINDIA)<br><sub>↓CMF30d</sub> | Digital maps geospatial software location intelligence platforms | 1w | ABOVE | 1w | +12.8% | +5.37% | 896.70 | — | 20%  |
-| [TARIL](https://in.tradingview.com/chart/?symbol=NSE:TARIL)<br><sub>↑CMF2d · DEL49%(T-1)</sub> | Power transformers, furnace transformers, electrical equipment manufacturing | 1w | ABOVE | 1w | +6.5% | +5.31% | 317.55 | — | 20%  |
+| [TARIL](https://in.tradingview.com/chart/?symbol=NSE:TARIL)<br><sub>↑CMF2d</sub> | Power transformers, furnace transformers, electrical equipment manufacturing | 1w | ABOVE | 1w | +6.5% | +5.31% | 317.55 | — | 20%  |
 | [PRINCEPIPE](https://in.tradingview.com/chart/?symbol=NSE:PRINCEPIPE)<br><sub>↑CMF17d</sub> | Polymer pipes fittings manufacturer residential commercial infrastructure | 1w | ABOVE | 1w | +16.2% | +7.92% | 297.75 | 13w | 20%  |
 | [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC)<br><sub>↑CMF16d</sub> | Defense simulation systems, counter-drone tech, armed forces | 1w | ABOVE | 1w | +8.9% | +1.08% | 1729.10 | 1w | 20%  |
 | [KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL)<br><sub>↑CMF1d</sub> | Basmati rice processing and export for domestic and global markets | 1w | ABOVE | 1w | +18.4% | +1.79% | 408.65 | — | 20%  |
