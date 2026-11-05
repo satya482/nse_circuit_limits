@@ -1,0 +1,49 @@
+//@version=6
+// I am not a SEBI registered investment advisor. Educational use only.
+// Weekly adaptation of Darvas_Box.pine; apply to a standard 1-day chart.
+indicator("Weekly Darvas Box on Daily", shorttitle="W DARVAS", overlay=true, max_lines_count=2)
+
+boxp = input.int(5, "Box length (weeks)", minval=3)
+candleMode = input.string("Completed weeks", "Weekly candles", options=["Completed weeks", "Developing week"], tooltip="Completed weeks uses the previous closed weekly box from the start of the next week. Developing week can change during the week and after reloading; historical values update at weekly close.")
+closedOnly = candleMode == "Completed weeks"
+
+if not (timeframe.isdaily and timeframe.multiplier == 1)
+    runtime.error("Use this indicator on a 1-day chart so projections span 15 daily bars.")
+
+// Run ALL Darvas calculations inside the weekly request, not on repeated
+// weekly values mapped onto daily bars. Preserve the original box rules.
+weeklyDarvas(int offset) =>
+    LL = ta.lowest(low, boxp)
+    k1 = ta.highest(high, boxp)
+    k2 = ta.highest(high, boxp - 1)
+    k3 = ta.highest(high, boxp - 2)
+    newHigh = high > k1[1]
+    NH = ta.valuewhen(newHigh, high, 0)
+    box1 = k3 < k2
+    confirmed = ta.barssince(newHigh) == boxp - 2 and box1
+    TopBox = ta.valuewhen(confirmed, NH, 0)
+    BottomBox = ta.valuewhen(confirmed, LL, 0)
+    [TopBox[offset], BottomBox[offset]]
+
+getWeeklyBox() =>
+    if closedOnly
+        // Offset both results in weekly context before enabling lookahead.
+        // This exposes completed levels next week without future data leakage.
+        request.security(syminfo.tickerid, "1W", weeklyDarvas(1), gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_on)
+    else
+        request.security(syminfo.tickerid, "1W", weeklyDarvas(0), gaps=barmerge.gaps_off, lookahead=barmerge.lookahead_off)
+
+[weeklyTop, weeklyBottom] = getWeeklyBox()
+
+plot(weeklyTop, title="Weekly box top", color=color.green, linewidth=1, style=plot.style_stepline)
+plot(weeklyBottom, title="Weekly box bottom", color=color.red, linewidth=1, style=plot.style_stepline)
+
+// Reuse exactly two lines. Bar indices count trading bars, not calendar days.
+// Levels stay na until the first weekly box has been confirmed.
+var line topProjection = line.new(na, na, na, na, xloc=xloc.bar_index, color=color.green, width=1)
+var line bottomProjection = line.new(na, na, na, na, xloc=xloc.bar_index, color=color.red, width=1)
+if barstate.islast
+    line.set_xy1(topProjection, bar_index, weeklyTop)
+    line.set_xy2(topProjection, bar_index + 15, weeklyTop)
+    line.set_xy1(bottomProjection, bar_index, weeklyBottom)
+    line.set_xy2(bottomProjection, bar_index + 15, weeklyBottom)

@@ -2,6 +2,16 @@
 
 # Repo Handoff
 
+Updated 2026-11-05 by Codex, weekly Darvas projection:
+
+- `pine_scripts/Weekly_Darvas_Box.pine` applies the existing Darvas rules in
+  weekly context (default length 5 weeks) to a 1-day chart. Completed weeks
+  is the default; a developing-week toggle allows repainting values.
+- Historical green/red step lines and two reusable projections extending
+  15 daily bars ahead; no alerts. Original `Darvas_Box.pine` unchanged.
+- Local source checks completed; TradingView compilation and visual validation
+  remain pending. User authorized commit and push on 2026-11-05.
+
 Updated 2026-11-03 by Codex, upcoming first daily ZLEMA25 turn-up price:
 
 - `pine_scripts/ZLEMA25_Uptrend_Price.pine` is a standalone 1D indicator for
