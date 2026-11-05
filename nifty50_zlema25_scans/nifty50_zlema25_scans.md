@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-11-04 15:44 IST*
+*Generated: 2026-11-05 15:43 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 42 · Downtrend: 8**
@@ -40,10 +40,10 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 | [TITAN](https://in.tradingview.com/chart/?symbol=NSE:TITAN)<br><sub>↘288Cr · 253Cr · ↓CMF23d</sub> | 3d | +2.98% |  | +0.69% | 4467.00 | — | 20%  |
 | [APOLLOHOSP](https://in.tradingview.com/chart/?symbol=NSE:APOLLOHOSP)<br><sub>↘397Cr · 421Cr · ↑CMF13d</sub> | 4d | +8.18% |  | -0.23% | 8428.50 | — | 20%  |
 | [LT](https://in.tradingview.com/chart/?symbol=NSE:LT)<br><sub>↗908Cr · 768Cr · ↑CMF2d</sub> | 4d | +7.08% |  | +1.37% | 3924.70 | — | 20%  |
-| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗452Cr · 372Cr · ↓CMF22d</sub> | 4d | +8.93% | Tertiary quaternary hospital network Delhi NCR North India | +3.53% | 927.15 | — | 20%  |
 | [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>→369Cr · 291Cr · ↑CMF18d</sub> | 4d | +7.85% |  | +0.82% | 3042.00 | — | 20%  |
 | [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>→280Cr · 241Cr · ↑CMF3d</sub> | 5d | +1.11% |  | -0.58% | 7178.00 | — | 20%  |
 | [MARUTI](https://in.tradingview.com/chart/?symbol=NSE:MARUTI)<br><sub>→515Cr · 462Cr · ↑CMF3d</sub> | 5d | +3.57% |  | +1.96% | 11620.00 | ✓ | 20%  |
+| [MAXHEALTH](https://in.tradingview.com/chart/?symbol=NSE:MAXHEALTH)<br><sub>↗462Cr · 359Cr · ↓CMF23d</sub> | 5d | +9.50% | Tertiary quaternary hospital network Delhi NCR North India | +0.52% | 932.00 | — | 20%  |
 | [POWERGRID](https://in.tradingview.com/chart/?symbol=NSE:POWERGRID)<br><sub>→240Cr · 238Cr · ↑CMF1d</sub> | 5d | +7.37% |  | +0.08% | 265.20 | — | 20%  |
 | [ADANIPORTS](https://in.tradingview.com/chart/?symbol=NSE:ADANIPORTS)<br><sub>↘537Cr · 253Cr · ↑CMF30d</sub> | 6d | +8.12% |  | -0.22% | 1846.00 | — | 20%  |
 | [BSE](https://in.tradingview.com/chart/?symbol=NSE:BSE)<br><sub>↘945Cr · 681Cr · ↑CMF22d</sub> | 6d | +8.27% |  | -0.75% | 3484.00 | — | 20%  |
