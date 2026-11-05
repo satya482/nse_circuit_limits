@@ -26,7 +26,7 @@
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [BLUSPRING](https://in.tradingview.com/chart/?symbol=NSE:BLUSPRING)<br><sub>↑CMF30d</sub> | ✓ SAFE | Infrastructure management services for commercial facilities operations | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 84 | ↑96 | ↑1.081 | 97% | 271% ↑ | ✅8/8 | 🔵0.52x | ↑2d | +15.8% | +6.85% | 20% 🟦 |
-| [IRISDOREME](https://in.tradingview.com/chart/?symbol=NSE:IRISDOREME)<br><sub>↑CMF1d</sub> | ✓ SAFE | Infant children apparel manufacturer integrated production India | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 76 | 🔄82 | ↑1.037 | 90% | 113% ↑ | ✅7/8 | 🔵0.43x | ↑2d | +5.9% | +2.97% | 20%  |
+| [IRISDOREME](https://in.tradingview.com/chart/?symbol=NSE:IRISDOREME)<br><sub>↑CMF1d · DEL58%</sub> | ✓ SAFE | Infant children apparel manufacturer integrated production India | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 76 | 🔄82 | ↑1.037 | 90% | 113% ↑ | ✅7/8 | 🔵0.43x | ↑2d | +5.9% | +2.97% | 20%  |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BLUSPRING,NSE:IRISDOREME
@@ -36,7 +36,7 @@
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Pharmaceutical formulations suppositories capsules tablets syrups India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑98 | ↓1.048 | 97% | 312% ↑ | ✅8/8 | 0.65x | ↑60d+ | +108.7% | +0.68% | 20%  |
-| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM)<br><sub>↑CMF30d · DEL87%(T-1)</sub> | ✓ SAFE | Injection moulded electrical components OEM for automotive applications | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑98 | ↓1.056 | 100% | 302% ↑ | ✅8/8 | 1.84x | ↑7d | +14.6% | -0.26% | 5%  |
+| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM)<br><sub>↑CMF30d · DEL70%</sub> | ✓ SAFE | Injection moulded electrical components OEM for automotive applications | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑98 | ↓1.056 | 100% | 302% ↑ | ✅8/8 | 1.84x | ↑7d | +14.6% | -0.26% | 5%  |
 | [MODISONLTD](https://in.tradingview.com/chart/?symbol=NSE:MODISONLTD)<br><sub>↑CMF22d</sub> | ✓ SAFE | Electrical contact materials for switchgear industries LV MV HV | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑98 | ↑1.075 | 99% | 349% ↑ | ✅8/8 | 0.83x | ↑24d | +84.5% | +5.00% | 5% 🟥 |
 | [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS)<br><sub>↑CMF0d</sub> | ✓ SAFE | CCTV cameras surveillance systems IP networks security | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | 🔄94 | ↑1.050 | 94% | 204% ↑ | ✅8/8 | 1.05x | ↑2d | +7.5% | +4.27% | 10% 🟩 |
 | [UFBL](https://in.tradingview.com/chart/?symbol=NSE:UFBL)<br><sub>↑CMF6d</sub> | ✓ SAFE | Casual dining restaurants, grilled meats, India regional expansion | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑99 | ↑1.061 | 100% | 366% ↑ | ✅8/8 | 1.25x | ↑8d | +19.9% | +1.62% | 20%  |
