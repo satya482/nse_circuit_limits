@@ -128,7 +128,7 @@
 | [BLACKBUCK](https://in.tradingview.com/chart/?symbol=NSE:BLACKBUCK)<br><sub>↓CMF20d · ÷DIV</sub> | ✓ SAFE | Digital trucking platform: loads, payments, telematics, financing | 📈 BULL_ANY_MID | 10 | ↓48 | ↑1.008 | ↓23d | — | -6.5% | -51.84/-52.84 | +3.06% | 20% |
 | [HDFCLIFE](https://in.tradingview.com/chart/?symbol=NSE:HDFCLIFE)<br><sub>↑CMF25d · ⚠️TRAP</sub> | ⚠ CAUTION |  | 📈 BULL_ANY_MID | 8 | ↓29 | ↓0.991 | ↓12d | — | -4.4% | -34.34/-35.72 | -0.90% | 20% |
 | [EVONILE](https://in.tradingview.com/chart/?symbol=NSE:EVONILE)<br><sub>↑CMF1d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓50 | ↑1.000 | ↓20d | — | -11.5% | -50.58/-52.84 | +2.71% | 20% |
-| [SMCGLOBAL](https://in.tradingview.com/chart/?symbol=NSE:SMCGLOBAL)<br><sub>↓CMF4d · DEL44%(T-1)</sub> | ✓ SAFE | Stocks, commodities, currencies brokerage, retail and institutional clients | 📈 BULL_ANY_MID | 5 | ↓86 | ↑0.995 | ↓33d | — | +13.8% | -24.35/-25.01 | +0.39% | 20% |
+| [SMCGLOBAL](https://in.tradingview.com/chart/?symbol=NSE:SMCGLOBAL)<br><sub>↓CMF4d · DEL42%</sub> | ✓ SAFE | Stocks, commodities, currencies brokerage, retail and institutional clients | 📈 BULL_ANY_MID | 5 | ↓86 | ↑0.995 | ↓33d | — | +13.8% | -24.35/-25.01 | +0.39% | 20% |
 | [POLICYBZR](https://in.tradingview.com/chart/?symbol=NSE:POLICYBZR)<br><sub>↓CMF4d · ⚠️TRAP</sub> | ✓ SAFE | Online insurance and lending marketplace aggregator platform | 📈 BULL_ANY_MID | 0 | ↓2 | ↓0.987 | ↓34d | — | -46.1% | -47.73/-48.76 | -0.51% | 20% |
 
 ```
