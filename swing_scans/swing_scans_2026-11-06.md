@@ -1,0 +1,82 @@
+> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+# NSE Swing Scan — 2026-11-06
+*Generated 2026-11-06 15:40 IST*
+
+**Entry Opportunities: 45**
+*(Leader filter: ≥70% of 52W high · RS filter: RS > EMA9 & EMA21 + weekly RS EMA9 rising)*
+
+```
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SSWL,NSE:KARURVYSYA,NSE:KTKBANK,NSE:AARTIPHARM,NSE:SWARAJ,NSE:NEOGEN,NSE:KOPRAN,NSE:GRWRHITECH,NSE:SGMART,NSE:FEDFINA,NSE:PGIL,NSE:PARACABLES,NSE:IGPL,NSE:CPPLUS,NSE:JAMNAAUTO,NSE:JASH,NSE:UNIMECH,NSE:APOLLO,NSE:GHCLTEXTIL,NSE:SANSERA,NSE:GALAPREC,NSE:SPECTRUM,NSE:MACPOWER,NSE:SONACOMS,NSE:MAGADSUGAR,NSE:GLENMARK,NSE:TCPLPACK,NSE:WELSPUNLIV,NSE:ALIVUS,NSE:NUVAMA,NSE:SMSPHARMA,NSE:PVRINOX,NSE:RUBICON,NSE:GOKULAGRO,NSE:ARIS,NSE:SAKAR,NSE:URBANCO,NSE:ZENTEC,NSE:LTFOODS,NSE:KALYANKJIL,NSE:PIRAMALFIN,NSE:ACE,NSE:IIFL,NSE:NORTHARC,NSE:MANAPPURAM
+```
+
+| Symbol | Trap | ZL Days | ZL Chg% | Label | 52W% | Vol | Day Chg | Signal | Circuit |
+|--------|:----:|--------:|--------:|-------|-----:|:---:|--------:|--------|:-------:|
+| [SSWL](https://in.tradingview.com/chart/?symbol=NSE:SSWL) | ✓ SAFE | 10d | +38.7% | Steel and alloy wheel rims manufacturer for automobiles | 100% | 🔵0.17x | +1.67% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) | ✓ SAFE | 1d | +7.6% | Private bank retail deposits lending commercial operations | 100% | 0.68x | +2.65% | **STRONG** — ZLEMA25 touch + EMA20 rising | -%  |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) | ✓ SAFE | 1d | +2.6% | Private bank retail corporate MSME lending treasury services | 93% | 🔵0.64x | -1.47% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [AARTIPHARM](https://in.tradingview.com/chart/?symbol=NSE:AARTIPHARM) | ✓ SAFE | 4d | +6.5% | API manufacturer for pharma and nutraceutical companies | 95% | 🔵0.60x | +0.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SWARAJ](https://in.tradingview.com/chart/?symbol=NSE:SWARAJ) | n/a | 8d | +11.6% | Cotton synthetic fabric manufacturer for apparel and textiles | 95% | 🔵0.44x | +1.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+| [NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN) | ✓ SAFE | 1d | +12.1% | Bromine lithium specialty chemicals pharma agri-chem | 95% | 0.79x | +5.84% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [KOPRAN](https://in.tradingview.com/chart/?symbol=NSE:KOPRAN) | ✓ SAFE | 1d | +4.9% | APIs and formulations manufacturer serving global pharma | 90% | 0.73x | -1.15% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH) | ✓ SAFE | 3d | +9.9% | Specialty polyester films for packaging and industrial applications | 100% | 0.83x | +0.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) | ✓ SAFE | 10d | +13.5% | Building materials B2B marketplace connecting manufacturers suppliers traders | 95% | 🔵0.43x | -4.33% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | ✓ SAFE | 2d | +3.9% | NBFC gold loans MSMEs self-employed individuals retail finance | 89% | 0.74x | -1.51% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | ✓ SAFE | 2d | +3.9% | NBFC gold loans MSMEs self-employed individuals retail finance | 89% | 0.74x | -1.51% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [FEDFINA](https://in.tradingview.com/chart/?symbol=NSE:FEDFINA) | ✓ SAFE | 2d | +3.9% | NBFC gold loans MSMEs self-employed individuals retail finance | 89% | 0.74x | -1.51% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) | ✓ SAFE | 4d | +12.3% | Apparel manufacturer, exports to global fashion brands | 100% | 1.77x | +0.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) | ✓ SAFE | 4d | +12.3% | Apparel manufacturer, exports to global fashion brands | 100% | 1.77x | +0.00% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) | ✓ SAFE | 3d | +5.3% | Power telecom railway cables manufacturer | 86% | 0.82x | -6.11% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
+| [IGPL](https://in.tradingview.com/chart/?symbol=NSE:IGPL) | ✓ SAFE | 3d | +8.2% | Phthalic anhydride producer for dyes polyester resins | 97% | 3.23x | +0.88% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS) | ✓ SAFE | 2d | +6.5% | CCTV cameras surveillance systems IP networks security | 93% | 1.73x | -0.94% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
+| [JAMNAAUTO](https://in.tradingview.com/chart/?symbol=NSE:JAMNAAUTO) | ✓ SAFE | 1d | +6.7% | Tapered parabolic leaf springs commercial vehicles suspension systems | 90% | 1.40x | +1.22% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [JAMNAAUTO](https://in.tradingview.com/chart/?symbol=NSE:JAMNAAUTO) | ✓ SAFE | 1d | +6.7% | Tapered parabolic leaf springs commercial vehicles suspension systems | 90% | 1.40x | +1.22% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [JASH](https://in.tradingview.com/chart/?symbol=NSE:JASH) | ✓ SAFE | 1d | +7.8% | Water pumping equipment, treatment plants, infrastructure engineering | 90% | 2.66x | +0.49% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [JASH](https://in.tradingview.com/chart/?symbol=NSE:JASH) | ✓ SAFE | 1d | +7.8% | Water pumping equipment, treatment plants, infrastructure engineering | 90% | 2.66x | +0.49% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [UNIMECH](https://in.tradingview.com/chart/?symbol=NSE:UNIMECH) | ✓ SAFE | 2d | +7.3% | Precision aerospace components, tooling, defense manufacturing | 93% | 1.14x | -3.74% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [APOLLO](https://in.tradingview.com/chart/?symbol=NSE:APOLLO) | ✓ SAFE | 2d | +3.1% | Defense electronics assembly testing solutions for mission systems | 92% | 1.01x | -4.83% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GHCLTEXTIL](https://in.tradingview.com/chart/?symbol=NSE:GHCLTEXTIL) | ✓ SAFE | 2d | +6.1% | Cotton yarn spinning apparel and home textiles manufacturer | 91% | 2.89x | -2.11% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA) | ✓ SAFE | 3d | +4.0% | Precision forged machined components two-wheeler four-wheeler OEM | 93% | 1.51x | -2.46% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GALAPREC](https://in.tradingview.com/chart/?symbol=NSE:GALAPREC) | ✓ SAFE | 4d | +12.2% | Precision fasteners and springs for renewable energy | 94% | 1.38x | +1.50% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM) | ✓ SAFE | 7d | +19.1% | Injection moulded electrical components OEM for automotive applications | 100% | 1.95x | +3.93% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5%  |
+| [MACPOWER](https://in.tradingview.com/chart/?symbol=NSE:MACPOWER) | ✓ SAFE | 7d | +20.8% | CNC turning centers and lathe machines for manufacturing | 100% | 1.13x | +0.32% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SONACOMS](https://in.tradingview.com/chart/?symbol=NSE:SONACOMS) | ✓ SAFE | 8d | +15.1% | Differential assemblies and gears for electric vehicles | 98% | 0.93x | -1.67% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [MAGADSUGAR](https://in.tradingview.com/chart/?symbol=NSE:MAGADSUGAR) | ⚠ CAUTION | 3d | +5.3% |  | 88% | 1.11x | -4.44% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | ✓ SAFE | 8d | +16.4% | Generics, specialty drugs, OTC pharma, global markets | 100% | 2.63x | +4.36% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | ✓ SAFE | 8d | +16.4% | Generics, specialty drugs, OTC pharma, global markets | 100% | 2.63x | +4.36% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK) | ✓ SAFE | 7d | +10.1% |  | 97% | 1.53x | -2.80% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) | ✓ SAFE | 5d | +13.7% | Home textiles manufacturer, flooring, global export focus | 91% | 1.45x | -4.75% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ALIVUS](https://in.tradingview.com/chart/?symbol=NSE:ALIVUS) | ✓ SAFE | 8d | +17.3% | Specialized APIs for chronic disease treatments globally | 97% | 2.52x | -1.11% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA) | ✓ SAFE | 7d | +9.3% | Wealth management advisory, broking, trading for HNI UHNIs | 93% | 1.05x | -1.35% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SMSPHARMA](https://in.tradingview.com/chart/?symbol=NSE:SMSPHARMA) | ✓ SAFE | 8d | +19.3% | Vertically integrated API and intermediates manufacturer for pharma sector | 95% | 1.47x | -3.51% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX) | ✓ SAFE | 21d | +25.3% | Multiplex cinema exhibition chain, entertainment venues | 99% | 1.22x | -1.00% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON) | ✓ SAFE | 7d | +9.9% | Complex generics and specialty formulations for global pharma | 89% | 1.53x | -4.67% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | ✓ SAFE | 8d | +14.9% | Edible oils palm soybean sunflower processing Gujarat manufacturer | 89% | 1.04x | +0.53% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | ✓ SAFE | 8d | +14.9% | Edible oils palm soybean sunflower processing Gujarat manufacturer | 89% | 1.04x | +0.53% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [GOKULAGRO](https://in.tradingview.com/chart/?symbol=NSE:GOKULAGRO) | ✓ SAFE | 8d | +14.9% | Edible oils palm soybean sunflower processing Gujarat manufacturer | 89% | 1.04x | +0.53% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS) | ✓ SAFE | 8d | +10.1% | Digital procurement platform connecting construction material suppliers builders | 88% | 1.27x | -0.85% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SAKAR](https://in.tradingview.com/chart/?symbol=NSE:SAKAR) | ✓ SAFE | 2d | +3.3% | Pharma manufacturing across therapeutic segments Ahmedabad | 82% | 0.68x | -3.97% | **PRIMARY** — ZLEMA25 touch | 20% 🟦 |
+| [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO) | ✓ SAFE | 5d | +8.2% | Home services marketplace connecting customers with vetted professionals | 87% | 🔵0.53x | -0.25% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC) | ✓ SAFE | 4d | +8.3% | Defense simulation systems, counter-drone tech, armed forces | 86% | 0.68x | -0.21% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC) | ✓ SAFE | 4d | +8.3% | Defense simulation systems, counter-drone tech, armed forces | 86% | 0.68x | -0.21% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS) | ⚠ CAUTION | 3d | +6.8% | Rice and rice products FMCG global consumer foods | 92% | 0.92x | +1.12% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS) | ⚠ CAUTION | 3d | +6.8% | Rice and rice products FMCG global consumer foods | 92% | 0.92x | +1.12% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL) | ✓ SAFE | 2d | +16.2% | Gold and studded jewellery retail across India and Middle East | 94% | 2.24x | +5.49% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [PIRAMALFIN](https://in.tradingview.com/chart/?symbol=NSE:PIRAMALFIN) | ⚠ CAUTION | 2d | +13.0% | Housing loans retail customers construction property lending NBFC | 94% | 1.38x | +1.99% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [PIRAMALFIN](https://in.tradingview.com/chart/?symbol=NSE:PIRAMALFIN) | ⚠ CAUTION | 2d | +13.0% | Housing loans retail customers construction property lending NBFC | 94% | 1.38x | +1.99% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | ✓ SAFE | 2d | +11.2% | Mobile cranes, material handling equipment for construction sector | 93% | 1.43x | +3.55% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | ✓ SAFE | 2d | +11.2% | Mobile cranes, material handling equipment for construction sector | 93% | 1.43x | +3.55% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | ✓ SAFE | 2d | +15.6% | NBFC lending home loans gold MSME retail segments | 90% | 1.66x | +3.52% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) | ✓ SAFE | 2d | +15.6% | NBFC lending home loans gold MSME retail segments | 90% | 1.66x | +3.52% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC) | ✓ SAFE | 2d | +9.1% | Retail lending platform for underserved households and MSMEs | 88% | 1.71x | +1.19% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC) | ✓ SAFE | 2d | +9.1% | Retail lending platform for underserved households and MSMEs | 88% | 1.71x | +1.19% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [NORTHARC](https://in.tradingview.com/chart/?symbol=NSE:NORTHARC) | ✓ SAFE | 2d | +9.1% | Retail lending platform for underserved households and MSMEs | 88% | 1.71x | +1.19% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 3d | +8.9% | Gold loans, NBFC, retail credit, unbanked customers | 88% | 1.56x | -0.18% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 3d | +8.9% | Gold loans, NBFC, retail credit, unbanked customers | 88% | 1.56x | -0.18% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [MANAPPURAM](https://in.tradingview.com/chart/?symbol=NSE:MANAPPURAM) | ✓ SAFE | 3d | +8.9% | Gold loans, NBFC, retail credit, unbanked customers | 88% | 1.56x | -0.18% | **DEEP PULLBACK** — Bounce from EMA200 | 20%  |
+
+```
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SSWL,NSE:KARURVYSYA,NSE:KTKBANK,NSE:AARTIPHARM,NSE:SWARAJ,NSE:NEOGEN,NSE:KOPRAN,NSE:GRWRHITECH,NSE:SGMART,NSE:FEDFINA,NSE:PGIL,NSE:PARACABLES,NSE:IGPL,NSE:CPPLUS,NSE:JAMNAAUTO,NSE:JASH,NSE:UNIMECH,NSE:APOLLO,NSE:GHCLTEXTIL,NSE:SANSERA,NSE:GALAPREC,NSE:SPECTRUM,NSE:MACPOWER,NSE:SONACOMS,NSE:MAGADSUGAR,NSE:GLENMARK,NSE:TCPLPACK,NSE:WELSPUNLIV,NSE:ALIVUS,NSE:NUVAMA,NSE:SMSPHARMA,NSE:PVRINOX,NSE:RUBICON,NSE:GOKULAGRO,NSE:ARIS,NSE:SAKAR,NSE:URBANCO,NSE:ZENTEC,NSE:LTFOODS,NSE:KALYANKJIL,NSE:PIRAMALFIN,NSE:ACE,NSE:IIFL,NSE:NORTHARC,NSE:MANAPPURAM
+```
+---
+
+*⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
