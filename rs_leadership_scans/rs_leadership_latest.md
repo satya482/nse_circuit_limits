@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS Leadership — 2026-11-05
-*Generated 2026-11-05 15:51 IST*
+## RS Leadership — 2026-11-06
+*Generated 2026-11-06 15:50 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,72 +18,55 @@
 
 ---
 
-**55 signals — RS leadership combined cross today**
+**38 signals — RS leadership combined cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:THELEELA,NSE:MOTILALOFS,NSE:ASHOKLEY,NSE:JKTYRE,NSE:ULTRACEMCO,NSE:FORTIS,NSE:POONAWALLA,NSE:AIIL,NSE:ZENSARTECH,NSE:360ONE,NSE:TECHNOE,NSE:ASAHIINDIA,NSE:ASKAUTOLTD,NSE:WELENT,NSE:BALKRISIND,NSE:IIFL,NSE:AUROPHARMA,NSE:PIRAMALFIN,NSE:JUBLFOOD,NSE:MAHABANK,NSE:SHYAMMETL,NSE:HONASA,NSE:INOXWIND,NSE:HYUNDAI,NSE:TATASTEEL,NSE:HDFCAMC,NSE:COROMANDEL,NSE:TATAPOWER,NSE:CHOLAHLDNG,NSE:SOBHA,NSE:DEVYANI,NSE:CAMS,NSE:SBIFUNDS,NSE:ADANIPOWER,NSE:IREDA,NSE:ATGL,NSE:CPPLUS,NSE:RAMCOCEM,NSE:INDIACEM,NSE:KALYANKJIL,NSE:DOMS,NSE:IRCON,NSE:INDUSINDBK,NSE:ABCAPITAL,NSE:APOLLOTYRE,NSE:GROWW,NSE:ZFCVINDIA,NSE:TORNTPOWER,NSE:JINDALSAW,NSE:WOCKPHARMA,NSE:BLS,NSE:JIOFIN,NSE:HUDCO,NSE:LICHSGFIN,NSE:BANDHANBNK
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAILIFE,NSE:CORONA,NSE:GLENMARK,NSE:NHPC,NSE:SYNGENE,NSE:ULTRACEMCO,NSE:PHOENIXLTD,NSE:MCX,NSE:HAVELLS,NSE:GLAND,NSE:ANTHEM,NSE:CROMPTON,NSE:YATHARTH,NSE:OBEROIRLTY,NSE:KARURVYSYA,NSE:HYUNDAI,NSE:GPIL,NSE:TATASTEEL,NSE:HDFCAMC,NSE:MGL,NSE:RBLBANK,NSE:SBICARD,NSE:SBIFUNDS,NSE:ADANIPOWER,NSE:SUNDARMFIN,NSE:IDFCFIRSTB,NSE:ABCAPITAL,NSE:BALRAMCHIN,NSE:ELGIEQUIP,NSE:GROWW,NSE:MRF,NSE:SIGNATURE,NSE:UJJIVANSFB,NSE:JIOFIN,NSE:AUBANK,NSE:HDBFS,NSE:CONCOR,NSE:KTKBANK
 ```
 
 | Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |
 |--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|
-| [THELEELA](https://in.tradingview.com/chart/?symbol=NSE:THELEELA) [20%]<br><sub>↓CMF15d</sub> | Luxury hotel chains five-star properties Indian metros | 689.75 | +3.96% | +10.69% | 8.68 | 5/5 | ↑ | ↑ | — | →55Cr · 58Cr |
-| [MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS) [20%]<br><sub>↑CMF0d</sub> | Retail brokerage, wealth management, asset management, home finance | 1095.00 | +8.09% | +9.70% | 2.13 | 5/5 | ↑ | ↑ | — | ↗149Cr · 325Cr |
-| [ASHOKLEY](https://in.tradingview.com/chart/?symbol=NSE:ASHOKLEY) [20%]<br><sub>↑CMF0d</sub> | Commercial vehicles trucks buses heavy transport | 170.21 | +10.50% | +8.91% | 4.26 | 5/5 | ↑ | ↑ | — | ↗405Cr · 1686Cr |
-| [JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE) [20%]<br><sub>↑CMF0d</sub> | Automobile tyres for cars trucks two-wheelers manufacturing | 361.95 | +8.74% | +8.59% | 1.28 | 5/5 | ↑ | ↑ | — | ↗29Cr · 120Cr |
+| [SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE) [20%]<br><sub>↑CMF5d</sub> | CRDMO drug discovery manufacturing pharma biotech | 1785.10 | +11.95% | +16.22% | 10.84 | 5/5 | ↑ | ↑ | — | ↗314Cr · 2361Cr |
+| [CORONA](https://in.tradingview.com/chart/?symbol=NSE:CORONA) [20%]<br><sub>↑CMF11d</sub> | Pharma formulations women's health cardiology pain management domestic | 2441.10 | +2.58% | +12.52% | 10.91 | 5/5 | ↑ | ↑ | — | ↗16Cr · 35Cr |
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) [20%]<br><sub>↑CMF4d</sub> | Generics, specialty drugs, OTC pharma, global markets | 2590.00 | +4.36% | +9.49% | 8.22 | 5/5 | ↑ | ↑ | — | ↗303Cr · 1304Cr |
+| [NHPC](https://in.tradingview.com/chart/?symbol=NSE:NHPC) [20%]<br><sub>↑CMF8d</sub> | Hydroelectric and renewable power generation for utilities | 82.08 | +1.84% | +9.46% | 8.16 | 5/5 | ↑ | ↑ | — | ↗143Cr · 188Cr |
+| [SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE) [20%]<br><sub>↑CMF30d</sub> | Contract research development manufacturing pharma biotech | 417.30 | +0.77% | +9.12% | 6.99 | 5/5 | 🔄 | ↑ | — | ↗185Cr · 43Cr |
 | [ULTRACEMCO](https://in.tradingview.com/chart/?symbol=NSE:ULTRACEMCO) [20%]<br><sub>↑CMF2d</sub> |  | 11329.00 | +2.57% | +7.96% | 6.91 | 5/5 | ↑ | ↑ | — | →317Cr · 244Cr |
-| [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS) [20%]<br><sub>↑CMF3d</sub> | Multi-specialty hospitals, diagnostics, quaternary care delivery | 819.80 | +3.69% | +6.66% | 5.64 | 5/5 | ↑ | ↑ | — | →113Cr · 144Cr |
-| [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA) [20%]<br><sub>↑CMF4d</sub> | NBFC consumer loans MSME financing general insurance | 474.95 | +1.16% | +6.66% | 5.48 | 5/5 | ↑ | ↑ | — | →240Cr · 83Cr |
-| [AIIL](https://in.tradingview.com/chart/?symbol=NSE:AIIL) [20%]<br><sub>↑CMF30d</sub> | NBFC providing investment loans advances securities financing | 569.60 | +10.40% | +6.35% | -0.52 | 5/5 | 🔄 | ↑ | — | ↗15Cr · 76Cr |
-| [ZENSARTECH](https://in.tradingview.com/chart/?symbol=NSE:ZENSARTECH) [20%]<br><sub>↑CMF7d</sub> | Digital solutions and IT services for global enterprises | 565.75 | +6.14% | +6.29% | 5.57 | 5/5 | 🔄 | ↑ | — | ↗129Cr · 135Cr |
-| [360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE) [20%]<br><sub>↓CMF30d</sub> | Wealth management and advisory services for ultra-high-net-worth individuals | 1140.90 | +6.76% | +6.13% | 1.04 | 5/5 | ↑ | ↑ | — | ↗123Cr · 210Cr |
-| [TECHNOE](https://in.tradingview.com/chart/?symbol=NSE:TECHNOE) [20%]<br><sub>↓CMF30d</sub> | Power infrastructure EPC transmission distribution generation projects | 942.75 | +6.60% | +6.04% | -1.65 | 5/5 | ↑ | ↑ | — | ↗36Cr · 136Cr |
-| [ASAHIINDIA](https://in.tradingview.com/chart/?symbol=NSE:ASAHIINDIA) [20%]<br><sub>↑CMF6d</sub> | Automotive and architectural glass solutions manufacturer | 1020.80 | +3.80% | +5.87% | 4.88 | 5/5 | ↑ | ↑ | — | ↗29Cr · 80Cr |
-| [ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD) [20%]<br><sub>↑CMF0d</sub> | Two-wheeler braking systems manufacturer India | 627.70 | +8.31% | +5.71% | 3.90 | 5/5 | 🔄 | ↑ | — | ↗20Cr · 88Cr |
-| [WELENT](https://in.tradingview.com/chart/?symbol=NSE:WELENT) [20%]<br><sub>↑CMF0d</sub> | Infrastructure development roads water pipelines oil gas projects | 722.05 | +6.61% | +5.64% | -2.35 | 5/5 | ↑ | ↑ | — | ↗19Cr · 78Cr |
-| [BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND) [20%]<br><sub>↑CMF10d</sub> | Off-highway tires for agriculture construction mining sectors | 2401.90 | +7.05% | +5.59% | 4.90 | 5/5 | ↑ | ↑ | — | ↗74Cr · 260Cr |
-| [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) [20%]<br><sub>↑CMF1d</sub> | NBFC lending home loans gold MSME retail segments | 604.50 | +4.55% | +5.46% | -2.20 | 5/5 | ↑ | ↑ | — | →120Cr · 270Cr |
-| [AUROPHARMA](https://in.tradingview.com/chart/?symbol=NSE:AUROPHARMA) [20%]<br><sub>↑CMF8d</sub> | Generic drugs and APIs for global markets | 1785.00 | +4.69% | +5.34% | 4.26 | 5/5 | ↑ | ↑ | — | ↗205Cr · 553Cr |
-| [PIRAMALFIN](https://in.tradingview.com/chart/?symbol=NSE:PIRAMALFIN) [20%]<br><sub>↑CMF3d</sub> | Housing loans retail customers construction property lending NBFC | 2119.60 | +8.91% | +4.88% | -0.71 | 5/5 | ↑ | ↑ | — | →73Cr · 160Cr |
-| [JUBLFOOD](https://in.tradingview.com/chart/?symbol=NSE:JUBLFOOD) [20%]<br><sub>↑CMF1d</sub> | Domino's Pizza franchise operator serving Indian quick-service restaurant market | 456.50 | +5.01% | +4.80% | 4.00 | 5/5 | ↑ | ↑ | — | ↗107Cr · 195Cr |
-| [MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK) [-%]<br><sub>↑CMF7d</sub> | Public sector bank, retail corporate lending, deposit mobilization | 85.10 | +6.90% | +4.79% | 1.55 | 5/5 | 🔄 | ↑ | — | ↗150Cr · 274Cr |
-| [SHYAMMETL](https://in.tradingview.com/chart/?symbol=NSE:SHYAMMETL) [20%]<br><sub>↑CMF17d</sub> | Steel long products, ferro alloys, pellets, power generation | 1270.00 | +3.13% | +4.12% | 1.51 | 5/5 | ↑ | ↑ | — | →50Cr · 78Cr |
-| [HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA) [20%]<br><sub>↑CMF0d</sub> | Digital beauty and personal care brands targeting millennials | 481.75 | +4.33% | +3.48% | 2.45 | 5/5 | 🔄 | ↑ | — | →32Cr · 55Cr |
-| [INOXWIND](https://in.tradingview.com/chart/?symbol=NSE:INOXWIND) [20%]<br><sub>↑CMF0d</sub> | Wind turbine manufacturer for renewable energy utilities | 65.70 | +3.46% | +3.41% | -2.80 | 5/5 | ↑ | ↑ | — | ↗91Cr · 82Cr |
+| [PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD) [20%]<br><sub>↑CMF1d</sub> | Retail malls, offices, hotels, mixed-use real estate developer | 2154.90 | +1.36% | +7.05% | 6.40 | 5/5 | ↑ | ↑ | — | ↘87Cr · 66Cr |
+| [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) [20%]<br><sub>↑CMF8d</sub> | Commodity futures exchange, price discovery, risk management platform | 3528.00 | +4.81% | +6.68% | 5.06 | 5/5 | 🔄 | ↑ | — | ↗979Cr · 1459Cr |
+| [HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS) [20%]<br><sub>↑CMF8d</sub> | Electrical equipment, wiring, switchgear, consumer appliances | 1128.00 | +5.61% | +5.10% | -0.90 | 5/5 | 🔄 | ↑ | — | →104Cr · 298Cr |
+| [GLAND](https://in.tradingview.com/chart/?symbol=NSE:GLAND) [20%]<br><sub>↑CMF30d</sub> | Generic injectables manufacturer for global regulated markets | 3169.30 | +0.77% | +4.86% | 4.56 | 5/5 | 🔄 | ↑ | — | ↗123Cr · 112Cr |
+| [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) [20%]<br><sub>↑CMF10d</sub> | Contract research development manufacturing biotech pharma | 915.55 | +0.22% | +4.77% | 4.74 | 5/5 | ↑ | ↑ | — | →33Cr · 46Cr |
+| [CROMPTON](https://in.tradingview.com/chart/?symbol=NSE:CROMPTON) [20%]<br><sub>↑CMF0d</sub> | Fans, lighting, water pumps, home electrical appliances | 215.66 | +4.42% | +4.63% | -0.31 | 5/5 | 🔄 | ↑ | — | ↘104Cr · 334Cr |
+| [YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH) [20%]<br><sub>↑CMF3d</sub> | Multi-specialty hospital chain serving Delhi-NCR trauma and acute care | 1026.95 | -0.03% | +4.33% | 3.19 | 5/5 | ↑ | ↑ | — | →39Cr · 21Cr |
+| [OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY) [20%]<br><sub>↑CMF4d</sub> | Premium residential and commercial property developer Mumbai | 1739.00 | -0.13% | +3.43% | 1.32 | 5/5 | ↑ | ↑ | — | →60Cr · 48Cr |
+| [KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA) [20%]<br><sub>↓CMF7d</sub> | Private bank retail deposits lending commercial operations | 370.05 | +2.65% | +3.11% | -0.85 | 5/5 | ↑ | ↑ | ● | ↘105Cr · 133Cr |
 | [HYUNDAI](https://in.tradingview.com/chart/?symbol=NSE:HYUNDAI) [20%]<br><sub>↓CMF20d</sub> |  | 1985.80 | +3.91% | +3.09% | 0.85 | 5/5 | ↑ | ↑ | — | ↗170Cr · 146Cr |
+| [GPIL](https://in.tradingview.com/chart/?symbol=NSE:GPIL) [20%]<br><sub>↓CMF29d</sub> | Iron ore mining, pellets, sponge iron, steel production | 208.95 | +0.89% | +3.08% | -0.44 | 5/5 | ↑ | ↑ | — | ↗27Cr · 27Cr |
 | [TATASTEEL](https://in.tradingview.com/chart/?symbol=NSE:TATASTEEL) [20%]<br><sub>↑CMF0d</sub> |  | 176.70 | +5.43% | +3.04% | 1.19 | 5/5 | 🔄 | ↑ | ● | →355Cr · 501Cr |
 | [HDFCAMC](https://in.tradingview.com/chart/?symbol=NSE:HDFCAMC) [20%]<br><sub>↑CMF3d</sub> | Mutual funds and portfolio management for retail investors | 2379.50 | +3.03% | +2.80% | 1.75 | 5/5 | ↑ | ↑ | ● | ↘165Cr · 122Cr |
-| [COROMANDEL](https://in.tradingview.com/chart/?symbol=NSE:COROMANDEL) [20%]<br><sub>↑CMF8d</sub> | Phosphatic fertilizers, agri-inputs, Indian farmers | 1900.00 | +3.43% | +2.58% | 0.99 | 5/5 | ↑ | ↑ | — | →32Cr · 75Cr |
-| [TATAPOWER](https://in.tradingview.com/chart/?symbol=NSE:TATAPOWER) [20%]<br><sub>↑CMF12d</sub> |  | 355.50 | +3.03% | +2.43% | 1.94 | 5/5 | ↑ | ↑ | ● | →157Cr · 180Cr |
-| [CHOLAHLDNG](https://in.tradingview.com/chart/?symbol=NSE:CHOLAHLDNG) [20%]<br><sub>↓CMF0d</sub> | NBFC lending, insurance, investment holding company | 1412.70 | +2.76% | +2.41% | 1.99 | 5/5 | 🔄 | ↑ | — | ↗26Cr · 74Cr |
-| [SOBHA](https://in.tradingview.com/chart/?symbol=NSE:SOBHA) [20%]<br><sub>↑CMF10d</sub> | Luxury residential developer backward integrated construction operations | 1291.90 | +8.75% | +2.12% | -1.26 | 5/5 | ↑ | ↑ | ● | ↘25Cr · 127Cr |
-| [DEVYANI](https://in.tradingview.com/chart/?symbol=NSE:DEVYANI) [20%]<br><sub>↑CMF0d</sub> | Yum Brands franchisee, QSR operator, KFC Dominos Pizza Hut | 129.21 | +8.87% | +2.10% | 0.39 | 5/5 | 🔄 | ↑ | ● | ↗30Cr · 128Cr |
-| [CAMS](https://in.tradingview.com/chart/?symbol=NSE:CAMS) [20%]<br><sub>↓CMF4d</sub> | Mutual fund registry, transfer agent, investor servicing platform | 715.35 | +2.89% | +2.08% | 0.53 | 5/5 | ↑ | ↑ | — | ↗135Cr · 153Cr |
+| [MGL](https://in.tradingview.com/chart/?symbol=NSE:MGL) [20%]<br><sub>↑CMF27d</sub> | Natural gas distribution Mumbai Maharashtra households industries | 1129.60 | +2.13% | +2.57% | 1.28 | 5/5 | ↑ | ↑ | — | ↗27Cr · 45Cr |
+| [RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK) [20%]<br><sub>↓CMF18d</sub> | Retail and corporate banking services for Indian businesses and consumers | 379.00 | +1.77% | +2.33% | -0.87 | 5/5 | ↑ | ↑ | — | ↘141Cr · 92Cr |
+| [SBICARD](https://in.tradingview.com/chart/?symbol=NSE:SBICARD) [20%]<br><sub>↑CMF1d</sub> | Credit card issuer, consumer lending, retail banking sector | 585.00 | +0.00% | +2.26% | -1.36 | 5/5 | ↑ | ↑ | — | ↗71Cr · 56Cr |
 | [SBIFUNDS](https://in.tradingview.com/chart/?symbol=NSE:SBIFUNDS) [20%]<br><sub>↑CMF3d</sub> |  | 498.85 | +3.15% | +1.90% | -1.36 | 5/5 | ↑ | ↑ | — | →84Cr · 89Cr |
 | [ADANIPOWER](https://in.tradingview.com/chart/?symbol=NSE:ADANIPOWER) [20%]<br><sub>↑CMF5d</sub> |  | 194.85 | +3.10% | +1.89% | 1.20 | 5/5 | ↑ | ↑ | — | →399Cr · 295Cr |
-| [IREDA](https://in.tradingview.com/chart/?symbol=NSE:IREDA) [20%]<br><sub>↓CMF30d</sub> | Renewable energy financing, solar wind projects, India | 110.15 | +3.92% | +1.89% | -0.69 | 5/5 | ↑ | ↑ | — | ↗59Cr · 77Cr |
-| [ATGL](https://in.tradingview.com/chart/?symbol=NSE:ATGL) [20%]<br><sub>↓CMF14d</sub> | City gas distributor supplying natural gas to households and vehicles | 581.60 | +1.93% | +1.88% | -0.77 | 5/5 | ↑ | ↑ | — | ↗36Cr · 37Cr |
-| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS) [10% 🟩]<br><sub>↑CMF0d</sub> | CCTV cameras surveillance systems IP networks security | 4170.50 | +4.27% | +1.85% | -0.51 | 5/5 | 🔄 | ↑ | — | ↘111Cr · 214Cr |
-| [RAMCOCEM](https://in.tradingview.com/chart/?symbol=NSE:RAMCOCEM) [20%]<br><sub>↓CMF11d</sub> | Cement producer, RMC, dry mortar for construction | 811.65 | +5.27% | +1.81% | -2.21 | 5/5 | ↑ | ↑ | — | ↗23Cr · 26Cr |
-| [INDIACEM](https://in.tradingview.com/chart/?symbol=NSE:INDIACEM) [20%]<br><sub>↓CMF10d</sub> | Cement manufacturing and sales South India construction | 346.55 | +4.26% | +1.78% | 1.33 | 5/5 | ↑ | ↑ | — | ↘61Cr · 23Cr |
-| [KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL) [20%]<br><sub>↓CMF30d</sub> | Gold and studded jewellery retail across India and Middle East | 560.00 | +5.85% | +1.45% | -3.60 | 5/5 | ↑ | ↑ | — | →244Cr · 333Cr |
-| [DOMS](https://in.tradingview.com/chart/?symbol=NSE:DOMS) [20%]<br><sub>↓CMF15d · DEL77%(T-1)</sub> | Pencils pens erasers notebooks stationery school student market | 2049.90 | +4.05% | +1.45% | -3.54 | 5/5 | ↑ | ↑ | — | ↗17Cr · 28Cr |
-| [IRCON](https://in.tradingview.com/chart/?symbol=NSE:IRCON) [20%]<br><sub>↓CMF17d</sub> | Railway infrastructure construction and engineering services | 106.75 | +3.36% | +1.43% | -0.84 | 5/5 | ↑ | ↑ | — | ↘30Cr · 68Cr |
-| [INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK) [20%]<br><sub>↑CMF0d</sub> | Vehicle finance and retail banking for mass market | 911.45 | +5.35% | +1.24% | -0.07 | 5/5 | 🔄 | ↑ | — | →246Cr · 732Cr |
+| [SUNDARMFIN](https://in.tradingview.com/chart/?symbol=NSE:SUNDARMFIN) [20%]<br><sub>↑CMF1d</sub> | Vehicle and equipment finance NBFC retail lending | 4214.70 | -0.18% | +1.63% | -1.55 | 5/5 | ↑ | ↑ | — | ↗30Cr · 26Cr |
+| [IDFCFIRSTB](https://in.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB) [20%]<br><sub>↑CMF0d</sub> | Retail banking, consumer lending, deposit mobilization, India | 77.33 | -0.60% | +1.42% | -1.07 | 5/5 | ↑ | ↑ | — | ↗167Cr · 171Cr |
 | [ABCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:ABCAPITAL) [20%]<br><sub>↑CMF0d</sub> | NBFC financing insurance brokerage retail corporate customers | 369.45 | +3.10% | +1.23% | -1.42 | 5/5 | 🔄 | ↑ | — | ↘108Cr · 327Cr |
-| [APOLLOTYRE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOTYRE) [20%]<br><sub>↓CMF30d</sub> | Radial tyres for cars trucks farm vehicles | 418.85 | +4.09% | +1.13% | -1.92 | 5/5 | ↑ | ↑ | — | ↗37Cr · 165Cr |
+| [BALRAMCHIN](https://in.tradingview.com/chart/?symbol=NSE:BALRAMCHIN) [20%]<br><sub>↑CMF3d</sub> | Sugar production, ethanol distillery, power cogeneration | 670.30 | -1.21% | +0.86% | -2.77 | 5/5 | ↑ | ↑ | — | ↗107Cr · 45Cr |
+| [ELGIEQUIP](https://in.tradingview.com/chart/?symbol=NSE:ELGIEQUIP) [20%]<br><sub>↑CMF0d</sub> | Air compressors automotive equipment industrial machinery sector | 556.90 | +1.79% | +0.73% | -0.66 | 5/5 | 🔄 | ↑ | — | ↗27Cr · 146Cr |
 | [GROWW](https://in.tradingview.com/chart/?symbol=NSE:GROWW) [20%]<br><sub>↑CMF11d</sub> |  | 196.50 | +2.60% | +0.68% | 0.38 | 5/5 | ↑ | ↑ | ● | ↘325Cr · 560Cr |
-| [ZFCVINDIA](https://in.tradingview.com/chart/?symbol=NSE:ZFCVINDIA) [20%]<br><sub>↑CMF15d</sub> | Braking systems control tech commercial vehicles India | 2309.10 | +7.97% | +0.42% | -0.35 | 5/5 | 🔄 | ↑ | ● | →14Cr · 31Cr |
-| [TORNTPOWER](https://in.tradingview.com/chart/?symbol=NSE:TORNTPOWER) [20%]<br><sub>↑CMF16d</sub> | Power generation transmission distribution utility Gujarat Maharashtra | 1265.40 | +2.51% | +0.40% | 0.13 | 5/5 | ↑ | ↑ | — | ↘27Cr · 41Cr |
-| [JINDALSAW](https://in.tradingview.com/chart/?symbol=NSE:JINDALSAW) [20%]<br><sub>↑CMF17d</sub> | SAW pipes, DI pipes, seamless steel tubes manufacturer | 259.07 | +2.31% | +3.51% | -5.57 | 4/5 | ↑ | ↑ | — | ↘38Cr · 29Cr |
-| [WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA) [20%]<br><sub>↑CMF0d</sub> | Pharma manufacturer: injectables, orals, topicals, anti-infectives | 1989.70 | +4.78% | +2.43% | 0.46 | 4/5 | 🔄 | ↑ | — | ↗150Cr · 326Cr |
-| [BLS](https://in.tradingview.com/chart/?symbol=NSE:BLS) [20%]<br><sub>↓CMF30d</sub> | Visa passport consular outsourcing for governments globally | 226.87 | +4.68% | +1.06% | -1.00 | 4/5 | 🔄 | ↑ | ● | ↘29Cr · 67Cr |
+| [MRF](https://in.tradingview.com/chart/?symbol=NSE:MRF) [20%]<br><sub>↑CMF1d</sub> | Tyre manufacturer for cars trucks two-wheelers tractors | 125295.00 | -0.50% | +0.44% | -1.31 | 5/5 | ↑ | ↑ | — | ↗49Cr · 46Cr |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE) [20%]<br><sub>↑CMF0d · DEL36%(T-1)</sub> | Residential real estate developer NCR affordable mid-segment housing | 747.85 | +2.07% | +0.09% | -1.71 | 5/5 | 🔄 | ↑ | ● | ↗27Cr · 85Cr |
+| [UJJIVANSFB](https://in.tradingview.com/chart/?symbol=NSE:UJJIVANSFB) [-%]<br><sub>↓CMF23d</sub> | Microfinance bank serving low-income retail borrowers India | 59.24 | +1.42% | +1.35% | -5.49 | 4/5 | 🔄 | ↑ | — | →110Cr · 92Cr |
 | [JIOFIN](https://in.tradingview.com/chart/?symbol=NSE:JIOFIN) [20%]<br><sub>↑CMF0d</sub> |  | 212.75 | +4.03% | +0.90% | -0.64 | 4/5 | 🔄 | ↑ | — | →278Cr · 368Cr |
-| [HUDCO](https://in.tradingview.com/chart/?symbol=NSE:HUDCO) [20%]<br><sub>↓CMF30d</sub> | Housing finance and urban infrastructure development CPSE | 158.03 | +3.25% | +0.38% | -3.20 | 4/5 | ↑ | ↑ | — | ↗51Cr · 92Cr |
-| [LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN) [20%]<br><sub>↓CMF0d</sub> | Residential mortgage loans for home purchase and construction | 529.00 | +1.73% | +0.13% | -0.51 | 4/5 | ↑ | ↑ | — | →121Cr · 234Cr |
-| [BANDHANBNK](https://in.tradingview.com/chart/?symbol=NSE:BANDHANBNK) [20%]<br><sub>↑CMF0d</sub> | Retail banking microfinance roots underbanked segments India | 161.75 | +2.46% | +0.09% | -2.15 | 2/5 | ↓ | ↑ | — | →176Cr · 220Cr |
+| [AUBANK](https://in.tradingview.com/chart/?symbol=NSE:AUBANK) [20%]<br><sub>↑CMF1d</sub> | Small finance bank serving underserved retail borrowers | 931.80 | -0.98% | +0.89% | -4.75 | 4/5 | ↑ | ↑ | — | ↗311Cr · 176Cr |
+| [HDBFS](https://in.tradingview.com/chart/?symbol=NSE:HDBFS) [20%]<br><sub>↓CMF27d</sub> | Vehicle loans and personal finance for underbanked consumers | 534.75 | +0.55% | +0.58% | -1.66 | 4/5 | ↑ | ↑ | — | ↘50Cr · 79Cr |
+| [CONCOR](https://in.tradingview.com/chart/?symbol=NSE:CONCOR) [20%]<br><sub>↓CMF30d</sub> | Rail container logistics, port management, multimodal freight | 439.80 | -0.24% | +0.54% | -1.31 | 4/5 | ↑ | ↑ | — | ↗66Cr · 22Cr |
+| [KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK) [20%]<br><sub>↑CMF3d</sub> | Private bank retail corporate MSME lending treasury services | 318.90 | -1.47% | +0.07% | -2.43 | 4/5 | ↑ | ↑ | — | →61Cr · 23Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:THELEELA,NSE:MOTILALOFS,NSE:ASHOKLEY,NSE:JKTYRE,NSE:ULTRACEMCO,NSE:FORTIS,NSE:POONAWALLA,NSE:AIIL,NSE:ZENSARTECH,NSE:360ONE,NSE:TECHNOE,NSE:ASAHIINDIA,NSE:ASKAUTOLTD,NSE:WELENT,NSE:BALKRISIND,NSE:IIFL,NSE:AUROPHARMA,NSE:PIRAMALFIN,NSE:JUBLFOOD,NSE:MAHABANK,NSE:SHYAMMETL,NSE:HONASA,NSE:INOXWIND,NSE:HYUNDAI,NSE:TATASTEEL,NSE:HDFCAMC,NSE:COROMANDEL,NSE:TATAPOWER,NSE:CHOLAHLDNG,NSE:SOBHA,NSE:DEVYANI,NSE:CAMS,NSE:SBIFUNDS,NSE:ADANIPOWER,NSE:IREDA,NSE:ATGL,NSE:CPPLUS,NSE:RAMCOCEM,NSE:INDIACEM,NSE:KALYANKJIL,NSE:DOMS,NSE:IRCON,NSE:INDUSINDBK,NSE:ABCAPITAL,NSE:APOLLOTYRE,NSE:GROWW,NSE:ZFCVINDIA,NSE:TORNTPOWER,NSE:JINDALSAW,NSE:WOCKPHARMA,NSE:BLS,NSE:JIOFIN,NSE:HUDCO,NSE:LICHSGFIN,NSE:BANDHANBNK
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAILIFE,NSE:CORONA,NSE:GLENMARK,NSE:NHPC,NSE:SYNGENE,NSE:ULTRACEMCO,NSE:PHOENIXLTD,NSE:MCX,NSE:HAVELLS,NSE:GLAND,NSE:ANTHEM,NSE:CROMPTON,NSE:YATHARTH,NSE:OBEROIRLTY,NSE:KARURVYSYA,NSE:HYUNDAI,NSE:GPIL,NSE:TATASTEEL,NSE:HDFCAMC,NSE:MGL,NSE:RBLBANK,NSE:SBICARD,NSE:SBIFUNDS,NSE:ADANIPOWER,NSE:SUNDARMFIN,NSE:IDFCFIRSTB,NSE:ABCAPITAL,NSE:BALRAMCHIN,NSE:ELGIEQUIP,NSE:GROWW,NSE:MRF,NSE:SIGNATURE,NSE:UJJIVANSFB,NSE:JIOFIN,NSE:AUBANK,NSE:HDBFS,NSE:CONCOR,NSE:KTKBANK
 ```
 
 ---
