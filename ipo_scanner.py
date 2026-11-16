@@ -37,6 +37,11 @@ def build_markdown(entries: list[dict], circuit: dict[str, tuple]) -> str:
         "",
         f"**Tracked: {len(entries)}**",
         "",
+        "**TradingView watchlist** *(paste into TV import)*",
+        "```",
+        tv_csv((f"NSE:{f['symbol']}" for f in entries), label="IPO"),
+        "```",
+        "",
     ]
     if entries:
         hdr = [
