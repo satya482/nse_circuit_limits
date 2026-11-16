@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS High-Line Cross — 2026-11-06
-*Generated 2026-11-06 15:50 IST*
+## RS High-Line Cross — 2026-11-16
+*Generated 2026-11-16 09:58 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,40 +17,32 @@
 
 ---
 
-**23 signals — RS high-line cross today**
+**15 signals — RS high-line cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:JAINREC,NSE:PARADEEP,NSE:GROWW,NSE:ABCAPITAL,NSE:ABB,NSE:CROMPTON,NSE:WABAG,NSE:HAVELLS,NSE:MCX,NSE:HINDZINC,NSE:SHREEJISPG,NSE:HYUNDAI,NSE:VEDL,NSE:UNITDSPR,NSE:MARICO,NSE:LINDEINDIA,NSE:FORCEMOT,NSE:APLLTD,NSE:CHOLAHLDNG,NSE:SIEMENS,NSE:GLENMARK,NSE:SHRIRAMFIN,NSE:NAVINFLUOR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:NEULANDLAB,NSE:DATAPATTNS,NSE:GROWW,NSE:ENRIN,NSE:ASTRAMICRO,NSE:ACUTAAS,NSE:SGMART,NSE:CUPID,NSE:VIYASH,NSE:SAMMAANCAP,NSE:GLAND,NSE:POWERINDIA,NSE:DEEPAKFERT,NSE:SAREGAMA,NSE:ATHERENERG
 ```
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [JAINREC](https://in.tradingview.com/chart/?symbol=NSE:JAINREC) [20%]<br><sub>↑CMF1d</sub> | Non-ferrous metal recycling, lead copper aluminium alloys | 286.50 | +2.23% | 285.30 | +0.42% | 🔄 | ↑1d | 1d | +2.2% | ● | 4.0% | 94 | ↗21Cr · 22Cr |
-| [PARADEEP](https://in.tradingview.com/chart/?symbol=NSE:PARADEEP) [20%]<br><sub>↑CMF7d</sub> | Phosphate fertilizer manufacturer for Indian agriculture sector | 142.32 | +2.51% | 141.20 | +0.79% | 🔄 | ↑2d | 2d | +3.7% | ● | 4.9% | 93 | ↗64Cr · 39Cr |
+| [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB) [20%]<br><sub>↑CMF3d</sub> | Pharma APIs and CDMO services for global markets | 20322.00 | +3.16% | 19750.00 | +2.90% | 🔄 | ↑3d | 3d | +3.8% | ● | 4.2% | 92 | ↗144Cr · 260Cr |
+| [DATAPATTNS](https://in.tradingview.com/chart/?symbol=NSE:DATAPATTNS) [20%]<br><sub>↑CMF3d</sub> | Defense aerospace electronics systems manufacturer for military platforms | 4025.00 | +6.83% | 3935.20 | +2.28% | ↓ | ↑1d | 1d | +6.8% | ● | 5.7% | 64 | ↗373Cr · 1475Cr |
 | [GROWW](https://in.tradingview.com/chart/?symbol=NSE:GROWW) [20%]<br><sub>↑CMF11d</sub> |  | 196.50 | +2.60% | 193.21 | +1.70% | ↑ | ↑4d | 4d | +5.3% | ● | 3.2% | 61 | ↘325Cr · 560Cr |
-| [ABCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:ABCAPITAL) [20%]<br><sub>↑CMF0d</sub> | NBFC financing insurance brokerage retail corporate customers | 369.45 | +3.10% | 366.40 | +0.83% | 🔄 | ↑1d | 1d | +3.1% | — | 3.3% | 54 | ↘108Cr · 327Cr |
-| [ABB](https://in.tradingview.com/chart/?symbol=NSE:ABB) [20%]<br><sub>↑CMF2d</sub> |  | 6570.00 | +2.45% | 6493.50 | +1.18% | 🔄 | ↓10d | 10d | -3.4% | — | 3.4% | 50 | ↗206Cr · 103Cr |
-| [CROMPTON](https://in.tradingview.com/chart/?symbol=NSE:CROMPTON) [20%]<br><sub>↑CMF0d</sub> | Fans, lighting, water pumps, home electrical appliances | 215.66 | +4.42% | 209.60 | +2.89% | 🔄 | ↑3d | 3d | +8.9% | — | 4.1% | 47 | ↘104Cr · 334Cr |
-| [WABAG](https://in.tradingview.com/chart/?symbol=NSE:WABAG) [20%]<br><sub>↑CMF0d</sub> | Water treatment plants industrial municipal sectors | 1988.20 | +6.57% | 1910.00 | +4.09% | 🔄 | ↑3d | 3d | +10.8% | — | 4.1% | 47 | ↗116Cr · 317Cr |
-| [HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS) [20%]<br><sub>↑CMF8d</sub> | Electrical equipment, wiring, switchgear, consumer appliances | 1128.00 | +5.61% | 1092.90 | +3.21% | 🔄 | ↑4d | 4d | +9.7% | — | 3.1% | 46 | →104Cr · 298Cr |
-| [MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX) [20%]<br><sub>↑CMF8d</sub> | Commodity futures exchange, price discovery, risk management platform | 3528.00 | +4.81% | 3425.70 | +2.99% | 🔄 | ↑5d | 5d | +10.6% | — | 4.2% | 45 | ↗979Cr · 1459Cr |
-| [HINDZINC](https://in.tradingview.com/chart/?symbol=NSE:HINDZINC) [20%]<br><sub>↓CMF25d</sub> |  | 518.00 | +2.41% | 510.35 | +1.50% | 🔄 | ↓25d | 25d | -11.8% | — | 3.2% | 40 | ↗246Cr · 103Cr |
-| [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG) [20%]<br><sub>↑CMF30d</sub> | Dry bulk carrier operations maritime logistics shipping services | 884.55 | +2.40% | 868.00 | +1.91% | 🔄 | ↑10d | 10d | +13.9% | — | 3.2% | 40 | →102Cr · 56Cr |
-| [HYUNDAI](https://in.tradingview.com/chart/?symbol=NSE:HYUNDAI) [20%]<br><sub>↓CMF20d</sub> |  | 1985.80 | +3.91% | 1939.10 | +2.41% | ↑ | ↑1d | 1d | +3.9% | — | 3.2% | 19 | ↗170Cr · 146Cr |
-| [VEDL](https://in.tradingview.com/chart/?symbol=NSE:VEDL) [20%]<br><sub>↑CMF0d</sub> |  | 257.35 | +4.23% | 248.10 | +3.73% | ↑ | ↑3d | 3d | +8.2% | — | 3.2% | 17 | →304Cr · 360Cr |
-| [UNITDSPR](https://in.tradingview.com/chart/?symbol=NSE:UNITDSPR) [20%]<br><sub>↑CMF3d</sub> | Whisky rum vodka gin spirits manufacturer India | 1380.90 | +2.58% | 1348.20 | +2.43% | ↑ | ↑3d | 3d | +7.1% | — | 3.1% | 17 | ↗171Cr · 90Cr |
-| [MARICO](https://in.tradingview.com/chart/?symbol=NSE:MARICO) [20%]<br><sub>↑CMF5d</sub> |  | 868.60 | +8.77% | 805.60 | +7.82% | ↑ | ↑4d | 4d | +12.9% | — | 3.0% | 16 | ↗266Cr · 1210Cr |
-| [LINDEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LINDEINDIA) [20%]<br><sub>↑CMF2d</sub> | Industrial medical gases cryogenic plants manufacturing India | 6859.00 | +8.73% | 6488.00 | +5.72% | ↑ | ↑4d | 4d | +19.1% | — | 4.9% | 16 | ↗47Cr · 206Cr |
-| [FORCEMOT](https://in.tradingview.com/chart/?symbol=NSE:FORCEMOT) [20%]<br><sub>↑CMF8d</sub> | Commercial vehicles and auto components, light CVs | 18968.00 | +3.19% | 18841.00 | +0.67% | ↑ | ↑6d | 6d | +12.5% | — | 3.8% | 14 | ↗186Cr · 281Cr |
-| [APLLTD](https://in.tradingview.com/chart/?symbol=NSE:APLLTD) [20%]<br><sub>↑CMF7d</sub> | Generics and APIs manufacturer serving global pharma markets | 965.15 | +8.02% | 936.95 | +3.01% | ↑ | ↑7d | 7d | +23.3% | — | 4.9% | 13 | ↗88Cr · 228Cr |
-| [CHOLAHLDNG](https://in.tradingview.com/chart/?symbol=NSE:CHOLAHLDNG) [20%]<br><sub>↓CMF1d</sub> | NBFC lending, insurance, investment holding company | 1454.60 | +2.97% | 1414.90 | +2.81% | ↑ | ↑7d | 7d | +11.5% | — | 4.1% | 13 | ↗35Cr · 111Cr |
-| [SIEMENS](https://in.tradingview.com/chart/?symbol=NSE:SIEMENS) [20%]<br><sub>↓CMF27d</sub> |  | 3391.20 | +2.67% | 3349.00 | +1.26% | ↓ | ↓13d | 13d | -9.4% | — | 3.2% | 12 | →74Cr · 43Cr |
-| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) [20%]<br><sub>↑CMF4d</sub> | Generics, specialty drugs, OTC pharma, global markets | 2590.00 | +4.36% | 2542.20 | +1.88% | ↑ | ↑9d | 9d | +16.4% | — | 4.2% | 11 | ↗303Cr · 1304Cr |
-| [SHRIRAMFIN](https://in.tradingview.com/chart/?symbol=NSE:SHRIRAMFIN) [20%]<br><sub>↑CMF0d</sub> |  | 862.05 | +4.73% | 841.00 | +2.50% | ↓ | ↓14d | 14d | -7.2% | — | 3.9% | 11 | ↗549Cr · 659Cr |
-| [NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR) [20%]<br><sub>↑CMF8d</sub> | Specialty fluorochemicals refrigerants organic synthesis pharmaceutical | 9010.00 | +1.87% | 8937.00 | +0.82% | ↑ | ↑9d | 9d | +17.6% | — | 3.5% | 11 | ↗234Cr · 198Cr |
+| [ENRIN](https://in.tradingview.com/chart/?symbol=NSE:ENRIN) [-%]<br><sub>↓CMF11d</sub> |  | 2910.00 | +3.81% | 2859.80 | +1.76% | 🔄 | ↑1d | 1d | +3.8% | — | 3.8% | 54 | ↘106Cr · 119Cr |
+| [ASTRAMICRO](https://in.tradingview.com/chart/?symbol=NSE:ASTRAMICRO) [20%]<br><sub>↓CMF11d</sub> | RF microwave modules defense space telecom systems | 1659.70 | +6.54% | 1600.00 | +3.73% | 🔄 | ↑1d | 1d | +6.5% | — | 3.7% | 49 | →45Cr · 58Cr |
+| [ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS) [20%]<br><sub>↑CMF10d</sub> | Pharmaceutical intermediates and specialty chemicals manufacturer globally | 3882.60 | +2.54% | 3860.00 | +0.59% | 🔄 | ↑11d | 11d | +23.7% | — | 4.7% | 39 | ↗525Cr · 171Cr |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↑CMF10d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 902.45 | +5.04% | 900.90 | +0.17% | 🔄 | ↑12d | 12d | +19.3% | — | 4.9% | 38 | ↗112Cr · 36Cr |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID) [20%]<br><sub>↓CMF2d</sub> | Condoms lubricants IVD kits sexual wellness global | 342.85 | +1.17% | 342.00 | +0.25% | ↓ | ↑6d | 6d | +5.6% | — | 3.8% | 19 | ↘318Cr · 164Cr |
+| [VIYASH](https://in.tradingview.com/chart/?symbol=NSE:VIYASH) [20%]<br><sub>↑CMF0d</sub> | Animal health APIs and formulations for global markets | 237.51 | +3.50% | 232.40 | +2.20% | ↑ | ↑4d | 4d | +8.2% | — | 4.1% | 16 | →44Cr · 56Cr |
+| [SAMMAANCAP](https://in.tradingview.com/chart/?symbol=NSE:SAMMAANCAP) [20%]<br><sub>↓CMF0d</sub> | Housing finance and loan against property NBFC | 134.67 | +1.81% | 133.00 | +1.26% | ↑ | ↑4d | 4d | +12.2% | — | 4.2% | 16 | →88Cr · 78Cr |
+| [GLAND](https://in.tradingview.com/chart/?symbol=NSE:GLAND) [20%]<br><sub>↑CMF30d</sub> | Generic injectables manufacturer for global regulated markets | 3302.40 | +4.20% | 3208.60 | +2.92% | ↑ | ↑9d | 9d | +11.6% | — | 3.4% | 11 | ↗192Cr · 805Cr |
+| [POWERINDIA](https://in.tradingview.com/chart/?symbol=NSE:POWERINDIA) [20%]<br><sub>↓CMF2d</sub> |  | 27965.00 | +2.72% | 27850.00 | +0.41% | ↓ | ↓15d | 15d | -8.6% | — | 3.9% | 10 | →360Cr · 231Cr |
+| [DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT) [20%]<br><sub>↓CMF13d</sub> | Fertilizers, bulk chemicals, mining solutions for agriculture | 1177.30 | +1.90% | 1159.80 | +1.51% | ↓ | ↓25d | 25d | -9.3% | — | 4.2% | 10 | ↘24Cr · 13Cr |
+| [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA) [20%]<br><sub>↑CMF23d</sub> | Music IP owner, film production, digital content distribution | 647.80 | +4.54% | 640.00 | +1.22% | ↑ | ↑10d | 10d | +32.5% | — | 4.9% | 10 | ↗255Cr · 58Cr |
+| [ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG) [-%]<br><sub>↑CMF10d</sub> | Premium electric scooters, charging network, urban mobility | 1859.80 | +2.09% | 1828.90 | +1.69% | ↑ | ↑11d | 11d | +34.8% | — | 4.2% | 9 | ↗804Cr · 322Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:JAINREC,NSE:PARADEEP,NSE:GROWW,NSE:ABCAPITAL,NSE:ABB,NSE:CROMPTON,NSE:WABAG,NSE:HAVELLS,NSE:MCX,NSE:HINDZINC,NSE:SHREEJISPG,NSE:HYUNDAI,NSE:VEDL,NSE:UNITDSPR,NSE:MARICO,NSE:LINDEINDIA,NSE:FORCEMOT,NSE:APLLTD,NSE:CHOLAHLDNG,NSE:SIEMENS,NSE:GLENMARK,NSE:SHRIRAMFIN,NSE:NAVINFLUOR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:NEULANDLAB,NSE:DATAPATTNS,NSE:GROWW,NSE:ENRIN,NSE:ASTRAMICRO,NSE:ACUTAAS,NSE:SGMART,NSE:CUPID,NSE:VIYASH,NSE:SAMMAANCAP,NSE:GLAND,NSE:POWERINDIA,NSE:DEEPAKFERT,NSE:SAREGAMA,NSE:ATHERENERG
 ```
 
 ---
