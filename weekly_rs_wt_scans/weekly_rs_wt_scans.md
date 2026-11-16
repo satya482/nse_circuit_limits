@@ -4,7 +4,7 @@
 
 Price data: 2026-11-16. Current developing week included; signals can change before the week closes. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Weekly RS = stock close / NIFTY MIDSML 400 close x 1000; EMA21 uses adjust=False. Weekly WT1 uses HLC3, EMA10 channel and EMA21 smoothing, matching the existing WaveTrend calculator. Both latest weekly values must be strictly greater than their previous weekly values. Minimum 22 weekly bars; all available history up to 1500 daily bars. Flat slopes do not qualify. No daily EMA200, 52-week-high, float, liquidity, WT1 zero-line or WT2 gate. No manual-list bypass. All qualifiers are shown.
 
-Universe: 1460 | Evaluated: 1002 | Qualified: 271 | Excluded: 458
+Universe: 1459 | Evaluated: 1001 | Qualified: 271 | Excluded: 458
 
 [Weekly chart dashboard](../dashboard/weekly_rs_wt.html)
 
@@ -479,7 +479,7 @@ Universe: 1460 | Evaluated: 1002 | Qualified: 271 | Excluded: 458
 - INDOKEM: missing sessions or benchmark history mismatch
 - INDOMIM: missing sessions or benchmark history mismatch
 - INDOTECH: missing sessions or benchmark history mismatch
-- INDPRUD: missing latest benchmark session
+- INDPRUD: missing sessions or benchmark history mismatch
 - INDUSINVIT: missing OHLC history
 - INDUSTOWER: missing sessions or benchmark history mismatch
 - INFY: missing sessions or benchmark history mismatch
