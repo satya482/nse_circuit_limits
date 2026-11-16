@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # WaveTrend Bull Cross Scan — 2026-11-16
-*Generated 2026-11-16 10:56 IST*
+*Generated 2026-11-16 15:47 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -93,7 +93,7 @@
 | [SUPRIYA](https://in.tradingview.com/chart/?symbol=NSE:SUPRIYA)<br><sub>↓CMF18d · ⚠️TRAP</sub> | ✓ SAFE | API manufacturer, antihistamine analgesic anaesthetic pharma exports | 🟢 BULL_OVERSOLD | 16 | ↓15 | ↑0.904 | ↓9d | — | -24.9% | -66.05/-66.14 | -0.99% | 20% |
 | [HIRECT](https://in.tradingview.com/chart/?symbol=NSE:HIRECT)<br><sub>↓CMF30d · ⚠️TRAP · ÷DIV</sub> | ✓ SAFE | Power electronics and traction transformers for Indian railways | 🟢 BULL_OVERSOLD | 0 | ↓42 | ↓0.954 | ↓42d | — | -28.0% | -65.79/-67.16 | -2.40% | 20% |
 | [THERMAX](https://in.tradingview.com/chart/?symbol=NSE:THERMAX)<br><sub>↓CMF6d · ⚠️TRAP</sub> | ✓ SAFE | Industrial boilers, cooling systems, power equipment, pollution control | 🟡 BULL_OS_L2 | 16 | ↓9 | ↑0.960 | ↓9d | — | -12.6% | -56.86/-56.88 | -0.74% | 20% |
-| [NSIL](https://in.tradingview.com/chart/?symbol=NSE:NSIL)<br><sub>↓CMF30d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION |  | 🟡 BULL_OS_L2 | 15 | ↓27 | ↑0.991 | ↓10d | — | -4.0% | -54.96/-55.26 | +1.98% | 20% |
+| [NSIL](https://in.tradingview.com/chart/?symbol=NSE:NSIL)<br><sub>↓CMF30d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION |  | 🟡 BULL_OS_L2 | 15 | ↓27 | ↑0.991 | ↓10d | — | -4.0% | -54.96/-55.26 | +1.98% | 5% |
 | [WELCORP](https://in.tradingview.com/chart/?symbol=NSE:WELCORP)<br><sub>↓CMF9d · ⚠️TRAP</sub> | ✓ SAFE | Large-diameter pipes, steel products, infrastructure | 🟡 BULL_OS_L2 | 6 | ↓97 | ↓0.976 | ↓14d | — | -11.0% | -55.55/-56.84 | -1.27% | 20% |
 | [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d · ⚠️TRAP</sub> | ✓ SAFE | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 🟡 BULL_OS_L2 | 3 | ↓85 | ↓0.952 | ↓17d | — | -15.2% | -57.1/-58.0 | -2.19% | 20% |
 
