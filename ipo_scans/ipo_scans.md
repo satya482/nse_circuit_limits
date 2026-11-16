@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE IPO Listings Watchlist - 2026-11-16
-*Generated 2026-11-16 10:58 IST*
+*Generated 2026-11-16 15:49 IST*
 
 *(watchlist from `ipo_listings.txt`, with daily NSE EQ IPO additions -- no signal gate, informational only)*
 
@@ -19,23 +19,23 @@
 | [ADVENTHTL](https://in.tradingview.com/chart/?symbol=NSE:ADVENTHTL)<br><sub>→0.9Cr · 2Cr - ↓CMF0d</sub> | 117.41 | -2.35% | 246d | 20%  |
 | [AEQUS](https://in.tradingview.com/chart/?symbol=NSE:AEQUS)<br><sub>↘62Cr · 14Cr - ↑CMF14d</sub> | 240.13 | -1.43% | 233d | 20%  |
 | [AEROPLANE](https://in.tradingview.com/chart/?symbol=NSE:AEROPLANE)<br><sub>↘16Cr · 1Cr - ↓CMF1d</sub> | 236.94 | -2.55% | 155d | 10% 🟩 |
-| [AGL](https://in.tradingview.com/chart/?symbol=NSE:AGL)<br><sub>↗6Cr · 5Cr - ↑CMF1d</sub> | 13.29 | -1.63% | 90d | 20% 🟦 |
+| [AGL](https://in.tradingview.com/chart/?symbol=NSE:AGL)<br><sub>↗6Cr · 5Cr - ↑CMF1d</sub> | 13.29 | -1.63% | 90d | 20%  |
 | [AHCL](https://in.tradingview.com/chart/?symbol=NSE:AHCL)<br><sub>↘9Cr · 2Cr - ↓CMF5d</sub> | 26.71 | -0.85% | 302d | 5% 🟥 |
 | [ALPINETEX](https://in.tradingview.com/chart/?symbol=NSE:ALPINETEX)<br><sub>↘0.2Cr · 0.2Cr - ↓CMF25d</sub> | 43.16 | +1.77% | 78d | 20%  |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>↗24Cr · 1Cr - ↓CMF27d</sub> | 546.20 | -0.15% | 203d | 20%  |
-| [AMANTA](https://in.tradingview.com/chart/?symbol=NSE:AMANTA)<br><sub>↗11Cr · 2Cr - ↑CMF2d</sub> | 218.97 | -6.61% | 294d | 5%  |
+| [AMANTA](https://in.tradingview.com/chart/?symbol=NSE:AMANTA)<br><sub>↗11Cr · 2Cr - ↑CMF2d</sub> | 218.97 | -6.61% | 294d | 20%  |
 | [ANNU](https://in.tradingview.com/chart/?symbol=NSE:ANNU)<br><sub>→1Cr · 1.0Cr - ↓CMF26d</sub> | 41.98 | +1.18% | 47d | 20%  |
 | [ARDEE](https://in.tradingview.com/chart/?symbol=NSE:ARDEE)<br><sub>→7Cr · 2Cr - ↓CMF19d</sub> | 42.83 | -0.14% | 66d | 20%  |
 | [ARSSBL](https://in.tradingview.com/chart/?symbol=NSE:ARSSBL)<br><sub>↘5Cr · 1Cr - ↑CMF1d</sub> | 502.15 | -1.14% | 282d | 20%  |
 | [ASTAR](https://in.tradingview.com/chart/?symbol=NSE:ASTAR)<br><sub>↘0.0Cr · 0.0Cr - ↑CMF6d</sub> | 646.75 | -2.02% | 132d | 20% 🟦 |
-| [ATLANTAELE](https://in.tradingview.com/chart/?symbol=NSE:ATLANTAELE)<br><sub>↘16Cr · 1Cr - ↓CMF23d</sub> | 1498.00 | -1.55% | 283d | 10% 🟩 |
+| [ATLANTAELE](https://in.tradingview.com/chart/?symbol=NSE:ATLANTAELE)<br><sub>↘16Cr · 1Cr - ↓CMF23d</sub> | 1498.00 | -1.55% | 283d | 20%  |
 | [AUGMONT](https://in.tradingview.com/chart/?symbol=NSE:AUGMONT)<br><sub>↗45Cr · 6Cr - ↓CMF7d</sub> | 936.65 | -2.04% | 53d | 5% 🟥 |
 | [AYE](https://in.tradingview.com/chart/?symbol=NSE:AYE)<br><sub>↘12Cr · 1Cr - ↓CMF30d</sub> | 157.70 | -0.81% | 185d | 20%  |
 | [BETA](https://in.tradingview.com/chart/?symbol=NSE:BETA)<br><sub>↘3Cr · 0.5Cr - ↑CMF17d</sub> | 1806.90 | -0.58% | 400d | 20%  |
 | [BHARATCOAL](https://in.tradingview.com/chart/?symbol=NSE:BHARATCOAL)<br><sub>↘10Cr · 3Cr - ↓CMF21d</sub> | 31.12 | -1.33% | 205d | 20%  |
 | [BLEL](https://in.tradingview.com/chart/?symbol=NSE:BLEL)<br><sub>↘7Cr · 8Cr - ↓CMF8d</sub> | 433.90 | -4.25% | 61d | 20%  |
 | [BLSPOLY](https://in.tradingview.com/chart/?symbol=NSE:BLSPOLY)<br><sub>→614Cr · 109Cr</sub> | 264.28 | -2.56% | 10d | 20%  |
-| [BMWVENTLTD](https://in.tradingview.com/chart/?symbol=NSE:BMWVENTLTD)<br><sub>↘0.6Cr · 0.6Cr - ↑CMF21d</sub> | 64.74 | +0.81% | 274d | 20%  |
+| [BMWVENTLTD](https://in.tradingview.com/chart/?symbol=NSE:BMWVENTLTD)<br><sub>↘0.6Cr · 0.6Cr - ↑CMF21d</sub> | 64.74 | +0.81% | 274d | 10% 🟨 |
 | [BONFIG](https://in.tradingview.com/chart/?symbol=NSE:BONFIG)<br><sub>↘87Cr · 73Cr</sub> | 788.95 | -0.70% | 17d | 20%  |
 | [BUILDPRO](https://in.tradingview.com/chart/?symbol=NSE:BUILDPRO)<br><sub>→14Cr · 2Cr - ↑CMF7d</sub> | 194.67 | +4.06% | 210d | 20%  |
 | [CANHLIFE](https://in.tradingview.com/chart/?symbol=NSE:CANHLIFE)<br><sub>↗12Cr · 1Cr - ↑CMF2d</sub> | 131.88 | -2.17% | 270d | 20%  |
@@ -73,7 +73,7 @@
 | [GROWW](https://in.tradingview.com/chart/?symbol=NSE:GROWW)<br><sub>↗890Cr · 859Cr - ↑CMF17d</sub> | 224.95 | +1.48% | 247d | 20%  |
 | [GSPCROP](https://in.tradingview.com/chart/?symbol=NSE:GSPCROP)<br><sub>↘10Cr · 2Cr - ↓CMF30d</sub> | 433.25 | -1.24% | 160d | 20%  |
 | [HDFIRE](https://in.tradingview.com/chart/?symbol=NSE:HDFIRE)<br><sub>↘30Cr · 9Cr</sub> | 303.75 | -1.52% | 19d | 20%  |
-| [HEXAGON](https://in.tradingview.com/chart/?symbol=NSE:HEXAGON)<br><sub>→3Cr · 1Cr - ↓CMF8d</sub> | 58.70 | -2.02% | 98d | 5%  |
+| [HEXAGON](https://in.tradingview.com/chart/?symbol=NSE:HEXAGON)<br><sub>→3Cr · 1Cr - ↓CMF8d</sub> | 58.70 | -2.02% | 98d | 20%  |
 | [HORIZONIND](https://in.tradingview.com/chart/?symbol=NSE:HORIZONIND)<br><sub>↘13Cr · 4Cr - ↓CMF30d</sub> | 47.71 | +1.08% | 58d | 20%  |
 | [HTEL](https://in.tradingview.com/chart/?symbol=NSE:HTEL)<br><sub>↘6Cr · 4Cr - ↓CMF24d</sub> | 76.77 | +0.20% | 50d | 20%  |
 | [IBULLSLTD](https://in.tradingview.com/chart/?symbol=NSE:IBULLSLTD)<br><sub>↗58Cr · 12Cr - ↓CMF6d</sub> | 29.27 | -3.14% | 371d | 20%  |
@@ -99,20 +99,20 @@
 | [LASERPOWER](https://in.tradingview.com/chart/?symbol=NSE:LASERPOWER)<br><sub>↘10Cr · 3Cr - ↓CMF30d</sub> | 204.19 | -3.24% | 85d | 20%  |
 | [LCL](https://in.tradingview.com/chart/?symbol=NSE:LCL)<br><sub>→19Cr · 2Cr - ↓CMF8d</sub> | 500.30 | -1.74% | 75d | 20%  |
 | [LEAPIND](https://in.tradingview.com/chart/?symbol=NSE:LEAPIND)<br><sub>↗22Cr · 6Cr - ↑CMF3d - DEL70%(T-1)</sub> | 122.80 | -5.55% | 64d | 20%  |
-| [LEMERITE](https://in.tradingview.com/chart/?symbol=NSE:LEMERITE)<br><sub>→0.4Cr · 0.3Cr - ↑CMF22d</sub> | 21.14 | +1.68% | 400d | 10% 🟩 |
+| [LEMERITE](https://in.tradingview.com/chart/?symbol=NSE:LEMERITE)<br><sub>→0.4Cr · 0.3Cr - ↑CMF22d</sub> | 21.14 | +1.68% | 400d | 5% 🟥 |
 | [LENSKART](https://in.tradingview.com/chart/?symbol=NSE:LENSKART)<br><sub>↗359Cr · 180Cr - ↑CMF4d</sub> | 727.00 | -0.06% | 249d | 20%  |
 | [LGEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LGEINDIA)<br><sub>↗74Cr · 112Cr - ↓CMF2d</sub> | 1745.40 | +0.96% | 266d | 20%  |
 | [LUMINO](https://in.tradingview.com/chart/?symbol=NSE:LUMINO)<br><sub>↗35Cr · 8Cr - ↓CMF7d</sub> | 100.22 | -1.88% | 50d | 20%  |
 | [MANIPALHOS](https://in.tradingview.com/chart/?symbol=NSE:MANIPALHOS)<br><sub>→65Cr · 37Cr - ↓CMF0d</sub> | 667.05 | -2.11% | 71d | 20%  |
 | [MEESHO](https://in.tradingview.com/chart/?symbol=NSE:MEESHO)<br><sub>→308Cr · 537Cr - ↑CMF2d</sub> | 257.07 | +1.16% | 229d | 20%  |
-| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↘5Cr · 1Cr - ↑CMF4d</sub> | 1052.30 | -1.04% | 256d | 20%  |
+| [MIDWESTLTD](https://in.tradingview.com/chart/?symbol=NSE:MIDWESTLTD)<br><sub>↘5Cr · 1Cr - ↑CMF4d</sub> | 1052.30 | -1.04% | 256d | 5% 🟥 |
 | [MILKYMIST](https://in.tradingview.com/chart/?symbol=NSE:MILKYMIST)<br><sub>↘248Cr · 294Cr - ↑CMF30d</sub> | 310.90 | -2.00% | 27d | 5% 🟥 |
 | [MOLBIO](https://in.tradingview.com/chart/?symbol=NSE:MOLBIO)<br><sub>→117Cr · 41Cr - ↓CMF14d</sub> | 1501.20 | +0.54% | 63d | 20%  |
 | [MVELECTRO](https://in.tradingview.com/chart/?symbol=NSE:MVELECTRO)<br><sub>→80Cr · 14Cr - ↓CMF14d - DEL24%(T-1)</sub> | 756.45 | -1.59% | 70d | 20% 🟦 |
 | [MWL](https://in.tradingview.com/chart/?symbol=NSE:MWL)<br><sub>↗9Cr · 2Cr - ↓CMF18d</sub> | 39.97 | +0.88% | 400d | 20%  |
 | [NEPHROPLUS](https://in.tradingview.com/chart/?symbol=NSE:NEPHROPLUS)<br><sub>↗8Cr · 4Cr - ↑CMF13d</sub> | 627.40 | -3.63% | 227d | 20%  |
-| [OMFREIGHT](https://in.tradingview.com/chart/?symbol=NSE:OMFREIGHT)<br><sub>↗1Cr · 7Cr - ↑CMF30d</sub> | 122.25 | +8.66% | 264d | 20%  |
-| [OMNI](https://in.tradingview.com/chart/?symbol=NSE:OMNI)<br><sub>↗237Cr · 31Cr - ↑CMF9d</sub> | 685.00 | +2.85% | 163d | 20%  |
+| [OMFREIGHT](https://in.tradingview.com/chart/?symbol=NSE:OMFREIGHT)<br><sub>↗1Cr · 7Cr - ↑CMF30d</sub> | 122.25 | +8.66% | 264d | 5%  |
+| [OMNI](https://in.tradingview.com/chart/?symbol=NSE:OMNI)<br><sub>↗237Cr · 31Cr - ↑CMF9d</sub> | 685.00 | +2.85% | 163d | 5%  |
 | [OMPOWER](https://in.tradingview.com/chart/?symbol=NSE:OMPOWER)<br><sub>↘2Cr · 2Cr - ↓CMF22d</sub> | 123.66 | -0.49% | 142d | 20%  |
 | [ORKLAINDIA](https://in.tradingview.com/chart/?symbol=NSE:ORKLAINDIA)<br><sub>↗5Cr · 0.7Cr - ↑CMF7d</sub> | 550.95 | -0.83% | 258d | 20%  |
 | [PACEDIGITK](https://in.tradingview.com/chart/?symbol=NSE:PACEDIGITK)<br><sub>↘9Cr · 1Cr - ↓CMF30d</sub> | 156.77 | -0.56% | 279d | 20%  |
@@ -121,7 +121,7 @@
 | [PINELABS](https://in.tradingview.com/chart/?symbol=NSE:PINELABS)<br><sub>↘206Cr · 44Cr - ↓CMF26d</sub> | 171.37 | -2.87% | 252d | 20%  |
 | [PIRAMALFIN](https://in.tradingview.com/chart/?symbol=NSE:PIRAMALFIN)<br><sub>↘68Cr · 3Cr - ↑CMF10d</sub> | 2103.90 | -0.72% | 257d | 20%  |
 | [PNGSREVA](https://in.tradingview.com/chart/?symbol=NSE:PNGSREVA)<br><sub>↘10Cr · 3Cr - ↑CMF6d</sub> | 613.85 | -0.98% | 174d | 20%  |
-| [POWERICA](https://in.tradingview.com/chart/?symbol=NSE:POWERICA)<br><sub>↘7Cr · 0.5Cr - ↓CMF16d</sub> | 467.05 | -0.89% | 155d | 10% 🟩 |
+| [POWERICA](https://in.tradingview.com/chart/?symbol=NSE:POWERICA)<br><sub>↘7Cr · 0.5Cr - ↓CMF16d</sub> | 467.05 | -0.89% | 155d | 20%  |
 | [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL)<br><sub>↗105Cr · 11Cr - ↓CMF7d</sub> | 130.46 | -0.85% | 250d | 20%  |
 | [RAMBHAJO](https://in.tradingview.com/chart/?symbol=NSE:RAMBHAJO)<br><sub>↘9Cr · 4Cr - ↑CMF22d - DEL83%(T-1)</sub> | 330.90 | -4.67% | 86d | 5% 🟥 |
 | [RSL](https://in.tradingview.com/chart/?symbol=NSE:RSL)<br><sub>↗5Cr · 0.3Cr - ↓CMF29d - DEL76%(T-1)</sub> | 165.58 | -0.86% | 163d | 20%  |
@@ -134,7 +134,7 @@
 | [SHADOWFAX](https://in.tradingview.com/chart/?symbol=NSE:SHADOWFAX)<br><sub>↘82Cr · 8Cr - ↑CMF30d</sub> | 282.80 | -0.42% | 199d | 20%  |
 | [SHANKESH](https://in.tradingview.com/chart/?symbol=NSE:SHANKESH)<br><sub>↘11Cr · 2Cr - ↓CMF17d</sub> | 88.85 | -1.08% | 57d | 20%  |
 | [SHIPROCKET](https://in.tradingview.com/chart/?symbol=NSE:SHIPROCKET)<br><sub>↗43Cr · 4Cr - ↓CMF8d</sub> | 126.15 | -1.60% | 61d | 20%  |
-| [SHIVAUM](https://in.tradingview.com/chart/?symbol=NSE:SHIVAUM)<br><sub>→3Cr · 0.0Cr - ↓CMF9d</sub> | 552.70 | -0.25% | 400d | 20% 🟦 |
+| [SHIVAUM](https://in.tradingview.com/chart/?symbol=NSE:SHIVAUM)<br><sub>→3Cr · 0.0Cr - ↓CMF9d</sub> | 552.70 | -0.25% | 400d | 20%  |
 | [SHRINGARMS](https://in.tradingview.com/chart/?symbol=NSE:SHRINGARMS)<br><sub>↗33Cr · 3Cr - ↑CMF0d - DEL44%(T-1)</sub> | 306.35 | -0.49% | 291d | 10% 🟨 |
 | [SINGERIND](https://in.tradingview.com/chart/?symbol=NSE:SINGERIND)<br><sub>↘3Cr · 11Cr - ↑CMF16d</sub> | 92.63 | +1.98% | 159d | 20%  |
 | [SKFINDUS](https://in.tradingview.com/chart/?symbol=NSE:SKFINDUS)<br><sub>↘5Cr · 1Cr - ↓CMF30d</sub> | 2448.60 | -2.50% | 236d | 20%  |
@@ -157,7 +157,7 @@
 | [TRUALT](https://in.tradingview.com/chart/?symbol=NSE:TRUALT)<br><sub>↘6Cr · 1.0Cr - ↓CMF6d</sub> | 345.85 | -2.01% | 280d | 20%  |
 | [TURTLEMINT](https://in.tradingview.com/chart/?symbol=NSE:TURTLEMINT)<br><sub>↘2Cr · 0.3Cr - ↓CMF30d</sub> | 67.38 | +4.99% | 98d | 5% 🟥 |
 | [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO)<br><sub>↘56Cr · 10Cr - ↑CMF3d</sub> | 168.87 | +0.03% | 291d | 20%  |
-| [UTLSOLAR](https://in.tradingview.com/chart/?symbol=NSE:UTLSOLAR)<br><sub>↗10Cr · 4Cr - ↓CMF22d</sub> | 345.70 | -0.39% | 248d | 10% 🟩 |
+| [UTLSOLAR](https://in.tradingview.com/chart/?symbol=NSE:UTLSOLAR)<br><sub>↗10Cr · 4Cr - ↓CMF22d</sub> | 345.70 | -0.39% | 248d | 20%  |
 | [VAML](https://in.tradingview.com/chart/?symbol=NSE:VAML)<br><sub>↘154Cr · 118Cr - ↑CMF2d</sub> | 379.80 | -0.68% | 103d | 20%  |
 | [VEDPOWER](https://in.tradingview.com/chart/?symbol=NSE:VEDPOWER)<br><sub>↘111Cr · 42Cr - ↑CMF1d</sub> | 35.71 | +2.26% | 107d | 20%  |
 | [VIDYAWIRES](https://in.tradingview.com/chart/?symbol=NSE:VIDYAWIRES)<br><sub>↗15Cr · 2Cr - ↓CMF18d</sub> | 76.45 | -1.00% | 233d | 10% 🟩 |
