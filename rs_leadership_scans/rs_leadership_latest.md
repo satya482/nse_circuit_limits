@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 ## RS Leadership — 2026-11-16
-*Generated 2026-11-16 10:57 IST*
+*Generated 2026-11-16 15:47 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,15 +18,16 @@
 
 ---
 
-**16 signals — RS leadership combined cross today**
+**20 signals — RS leadership combined cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAREGAMA,NSE:IREDA,NSE:BELRISE,NSE:SGMART,NSE:BANKBARODA,NSE:ATHERENERG,NSE:MAXHEALTH,NSE:IDFCFIRSTB,NSE:ENRIN,NSE:TITAGARH,NSE:GVT&D,NSE:ITC,NSE:NAZARA,NSE:APLAPOLLO,NSE:KANOHAR,NSE:GALLANTT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAREGAMA,NSE:IIFL,NSE:IREDA,NSE:BELRISE,NSE:SGMART,NSE:BANKBARODA,NSE:ATHERENERG,NSE:MAXHEALTH,NSE:IDFCFIRSTB,NSE:ENRIN,NSE:TITAGARH,NSE:GVT&D,NSE:ITC,NSE:NAZARA,NSE:QPOWER,NSE:KANOHAR,NSE:VARROC,NSE:GRAPHITE,NSE:PNBHOUSING,NSE:GODREJCP
 ```
 
 | Symbol | Name | Close | 1D% | RelPerf% | PerfEMA | Score | RS | ZL | Sqz | Liq |
 |--------|------|------:|----:|---------:|--------:|------:|:--:|:--:|:---:|-----|
 | [SAREGAMA](https://in.tradingview.com/chart/?symbol=NSE:SAREGAMA) [20%]<br><sub>↑CMF28d</sub> | Music IP owner, film production, digital content distribution | 673.45 | +3.06% | +14.15% | 13.32 | 5/5 | ↑ | ↑ | — | ↗265Cr · 60Cr |
+| [IIFL](https://in.tradingview.com/chart/?symbol=NSE:IIFL) [20%]<br><sub>↑CMF8d</sub> | NBFC lending home loans gold MSME retail segments | 641.60 | +0.08% | +12.90% | 11.56 | 5/5 | ↑ | ↑ | — | ↗340Cr · 49Cr |
 | [IREDA](https://in.tradingview.com/chart/?symbol=NSE:IREDA) [20%]<br><sub>↑CMF6d</sub> | Renewable energy financing, solar wind projects, India | 117.25 | -0.89% | +9.22% | 9.20 | 5/5 | ↑ | ↑ | — | ↗119Cr · 17Cr |
 | [BELRISE](https://in.tradingview.com/chart/?symbol=NSE:BELRISE) [20%]<br><sub>↑CMF0d</sub> | Metal chassis polymer components suspension systems automotive | 240.26 | +11.64% | +7.83% | 0.77 | 5/5 | 🔄 | ↑ | — | ↗135Cr · 863Cr |
 | [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↑CMF15d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 999.00 | +6.11% | +7.41% | 3.68 | 5/5 | ↑ | ↑ | — | ↘41Cr · 56Cr |
@@ -39,12 +40,15 @@
 | [GVT&D](https://in.tradingview.com/chart/?symbol=NSE:GVT&D) [20%]<br><sub>↑CMF15d</sub> |  | 4350.90 | -1.56% | +2.38% | -0.07 | 5/5 | ↑ | ↑ | — | →369Cr · 132Cr |
 | [ITC](https://in.tradingview.com/chart/?symbol=NSE:ITC) [20%]<br><sub>↑CMF15d</sub> |  | 293.25 | +2.89% | +2.03% | 1.52 | 5/5 | ↑ | ↑ | — | →577Cr · 317Cr |
 | [NAZARA](https://in.tradingview.com/chart/?symbol=NSE:NAZARA) [20%]<br><sub>↑CMF16d</sub> | Gaming platform, esports, mobile and console games India | 424.35 | -0.25% | +1.30% | -0.96 | 5/5 | ↑ | ↑ | ● | ↘41Cr · 8Cr |
-| [APLAPOLLO](https://in.tradingview.com/chart/?symbol=NSE:APLAPOLLO) [20%]<br><sub>↑CMF30d</sub> | Structural steel tubes manufacturer serving construction infrastructure | 2286.80 | +1.56% | +1.23% | -1.69 | 5/5 | ↑ | ↑ | — | ↘133Cr · 163Cr |
+| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER) [10% 🟩]<br><sub>↓CMF22d</sub> | High-voltage electrical equipment and power quality systems manufacturer | 1523.10 | +2.83% | +1.22% | -0.20 | 5/5 | ↑ | ↑ | ● | ↘40Cr · 14Cr |
 | [KANOHAR](https://in.tradingview.com/chart/?symbol=NSE:KANOHAR) [20%]<br><sub>↓CMF9d</sub> | Transformer manufacturer for power transmission railways renewables | 1081.00 | +3.42% | +0.60% | 0.58 | 5/5 | ↑ | ↑ | ● | →256Cr · 87Cr |
-| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT) [20% 🟦]<br><sub>↑CMF0d</sub> | Integrated steel manufacturing with mining operations eastern India | 566.25 | +7.87% | +2.58% | -4.54 | 4/5 | 🔄 | ↑ | — | ↘32Cr · 113Cr |
+| [VARROC](https://in.tradingview.com/chart/?symbol=NSE:VARROC) [20%]<br><sub>↑CMF18d</sub> | Automotive electrical components two-wheeler three-wheeler segments | 830.90 | -0.93% | +0.31% | -1.12 | 5/5 | ↑ | ↑ | ● | ↗18Cr · 5Cr |
+| [GRAPHITE](https://in.tradingview.com/chart/?symbol=NSE:GRAPHITE) [20%]<br><sub>↑CMF8d</sub> | Graphite electrodes for electric arc furnace steel making | 789.40 | -1.32% | +0.26% | -0.48 | 5/5 | ↑ | ↑ | — | →63Cr · 9Cr |
+| [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING) [20%]<br><sub>↓CMF12d</sub> | Housing loans for retail homebuyers and property | 1128.20 | +0.98% | +1.14% | -1.34 | 4/5 | 🔄 | ↑ | — | ↘63Cr · 6Cr |
+| [GODREJCP](https://in.tradingview.com/chart/?symbol=NSE:GODREJCP) [20%]<br><sub>↑CMF20d</sub> | Household insecticides, personal care, emerging markets FMCG | 873.30 | +0.29% | +0.27% | -0.67 | 4/5 | 🔄 | ↑ | — | ↘85Cr · 7Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAREGAMA,NSE:IREDA,NSE:BELRISE,NSE:SGMART,NSE:BANKBARODA,NSE:ATHERENERG,NSE:MAXHEALTH,NSE:IDFCFIRSTB,NSE:ENRIN,NSE:TITAGARH,NSE:GVT&D,NSE:ITC,NSE:NAZARA,NSE:APLAPOLLO,NSE:KANOHAR,NSE:GALLANTT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAREGAMA,NSE:IIFL,NSE:IREDA,NSE:BELRISE,NSE:SGMART,NSE:BANKBARODA,NSE:ATHERENERG,NSE:MAXHEALTH,NSE:IDFCFIRSTB,NSE:ENRIN,NSE:TITAGARH,NSE:GVT&D,NSE:ITC,NSE:NAZARA,NSE:QPOWER,NSE:KANOHAR,NSE:VARROC,NSE:GRAPHITE,NSE:PNBHOUSING,NSE:GODREJCP
 ```
 
 ---
