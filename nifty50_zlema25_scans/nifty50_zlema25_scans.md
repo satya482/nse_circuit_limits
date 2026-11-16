@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-11-16 10:50 IST*
+*Generated: 2026-11-16 15:40 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 39 · Downtrend: 11**
