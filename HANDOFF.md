@@ -2,6 +2,25 @@
 
 # Repo Handoff
 
+Updated 2026-11-16 by Codex, vacation recovery and scheduler settings:
+
+- Windows resume events confirm sleep from 2026-11-09 15:38 IST to
+  2026-11-16 09:26 IST. The November 9 orchestrator resumed on November 16;
+  RS Leaders and Weekly RS/WT rejected the stale November 9 benchmark.
+- Refreshed breadth instrument tokens and recovered 3,115 November 6-13
+  candles across 3,114 active/breadth/manual-list instruments. Final audit:
+  2,722 complete, 392 with Kite source-only gaps (356 INAV, 36 others),
+  zero unexplained local gaps. November 8 was an observed trading session.
+- Restored breadth-history rows for November 8, 9, 11, 12 and 13; regenerated
+  today's breadth dashboard and Bounce-RS. Intraday November 16 prices
+  remain provisional. Recovery evidence is local in logs/recovery_2026-11-16.json.
+- User approved enabling NSE_AllScanners WakeToRun and StartWhenAvailable;
+  both verified true after an administrator update. Existing weekday
+  15:35 IST schedule and IgnoreNew multiple-instance policy preserved.
+- Fresh production rerun completed 2026-11-16 11:04 IST: 36 passed, 0 failed
+  in 18m44s (logs/all_scanners_2026-11-16.log).
+
+
 Updated 2026-11-05 by Codex, weekly Darvas projection:
 
 - `pine_scripts/Weekly_Darvas_Box.pine` applies the existing Darvas rules in
