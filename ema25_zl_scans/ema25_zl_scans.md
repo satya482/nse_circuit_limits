@@ -29,7 +29,7 @@
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Close | Squeeze | Circuit |
 |--------|--------:|--------:|-------|--------:|------:|:-------:|:-------:|
 | [BELRISE](https://in.tradingview.com/chart/?symbol=NSE:BELRISE)<br><sub>✓ SAFE · ↗260Cr · 2122Cr · 📶W9 · 🚀SS·33x · ↑CMF0d</sub> | 1d | +9.2% | Metal chassis polymer components suspension systems automotive | +9.24% | 235.09 | — | 20%  |
-| [MVELECTRO](https://in.tradingview.com/chart/?symbol=NSE:MVELECTRO)<br><sub>✓ SAFE · ↗179Cr · 918Cr · 📶W9 · RVOL9x · ↑CMF0d · DEL24%(T-1)</sub> | 1d | +8.7% | Railway electrical systems and propulsion equipment manufacturer | +8.68% | 835.35 | — | 20% 🟦 |
+| [MVELECTRO](https://in.tradingview.com/chart/?symbol=NSE:MVELECTRO)<br><sub>✓ SAFE · ↗179Cr · 918Cr · 📶W9 · RVOL9x · ↑CMF0d</sub> | 1d | +8.7% | Railway electrical systems and propulsion equipment manufacturer | +8.68% | 835.35 | — | 20% 🟦 |
 | [YATRA](https://in.tradingview.com/chart/?symbol=NSE:YATRA)<br><sub>✓ SAFE · ↗68Cr · 543Cr · 📶W9 · RVOL46x · ↑CMF0d</sub> | 1d | +20.0% | Online travel bookings for leisure and corporate travelers | +19.99% | 93.75 | — | 20%  |
 | [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA)<br><sub>⚠ CAUTION · ↗32Cr · 123Cr · 📶W9 · ↑CMF16d</sub> | 1d | +5.5% | Diagnostic imaging and pathology labs, Southern India healthcare | +5.49% | 1487.50 | ✓ | 20%  |
 | [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>✓ SAFE · ↗40Cr · 83Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 1d | +5.6% | Apparel manufacturer for global fashion brands and retailers | +5.57% | 713.95 | — | 20%  |
@@ -155,7 +155,7 @@
 | [JYOTICNC](https://in.tradingview.com/chart/?symbol=NSE:JYOTICNC)<br><sub>✓ SAFE · ↗148Cr · 40Cr · 📶W9 · ↑CMF8d</sub> | 10d | +13.9% | CNC machining centers for aerospace defense auto manufacturing | -0.07% | 1072.40 | — | 20%  |
 | [APOLLOTYRE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOTYRE)<br><sub>⚠ CAUTION · ↗40Cr · 40Cr · 📶W9 · ↓CMF30d</sub> | 10d | +9.1% | Radial tyres for cars trucks farm vehicles | +1.05% | 425.20 | — | 20%  |
 | [ROLEXRINGS](https://in.tradingview.com/chart/?symbol=NSE:ROLEXRINGS)<br><sub>✓ SAFE · ↗107Cr · 31Cr · 📶W9 · ↑CMF8d</sub> | 10d | +25.8% | Forged bearing rings automotive components precision supplier | -1.87% | 209.36 | — | 20%  |
-| [RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL)<br><sub>✓ SAFE · ↗27Cr · 29Cr · 📶W9 · ↑CMF21d · DEL72%(T-1)</sub> | 10d | +19.2% | Silica ramming mass manufacturer for induction furnaces | +1.59% | 1977.20 | — | 20% 🟦 |
+| [RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL)<br><sub>✓ SAFE · ↗27Cr · 29Cr · 📶W9 · ↑CMF21d</sub> | 10d | +19.2% | Silica ramming mass manufacturer for induction furnaces | +1.59% | 1977.20 | — | 20% 🟦 |
 | [CHEMPLASTS](https://in.tradingview.com/chart/?symbol=NSE:CHEMPLASTS)<br><sub>✓ SAFE · ↗53Cr · 29Cr · 📶W9 · ↑CMF7d</sub> | 10d | +24.6% | PVC resin and specialty chemicals for pharma and agro | +3.55% | 245.28 | — | 20%  |
 | [LINDEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LINDEINDIA)<br><sub>⚠ CAUTION · ↗51Cr · 27Cr · 📶W9 · ↑CMF8d</sub> | 10d | +20.0% | Industrial medical gases cryogenic plants manufacturing India | +0.89% | 6911.50 | — | 20%  |
 | [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID)<br><sub>✓ SAFE · →512Cr · 599Cr · 📶W9 · ↑CMF2d</sub> | 11d | +11.5% | Condoms lubricants IVD kits sexual wellness global | -4.21% | 361.90 | — | 20%  |
@@ -223,7 +223,7 @@
 | [TRENT](https://in.tradingview.com/chart/?symbol=NSE:TRENT)<br><sub>✓ SAFE · ↘233Cr · 141Cr · 📶W9 · 🚀SS · ↑CMF28d</sub> | 14d | +13.6% |  | +1.22% | 3203.70 | — | 20%  |
 | [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM)<br><sub>⚠ CAUTION · ↗102Cr · 111Cr · 📶W9 · 🚀SS · ↑CMF0d</sub> | 14d | +13.2% | Multi-specialty hospitals and clinics, India healthcare | +3.81% | 750.00 | — | 20%  |
 | [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS)<br><sub>✓ SAFE · →132Cr · 91Cr · 📶W9 · ↑CMF14d</sub> | 14d | +21.8% | AC units, refrigeration, EPC projects, cooling systems | +1.72% | 1152.60 | — | 20%  |
-| [SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE)<br><sub>✓ SAFE · ↘42Cr · 85Cr · 📶W9 · ↑CMF30d</sub> | 14d | +20.5% | Contract research development manufacturing pharma biotech | -0.70% | 441.20 | — | 20%  |
+| [SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE)<br><sub>✓ SAFE · ↘42Cr · 85Cr · 📶W9 · ↑CMF30d · DEL79%</sub> | 14d | +20.5% | Contract research development manufacturing pharma biotech | -0.70% | 441.20 | — | 20%  |
 | [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>⚠ CAUTION · ↘34Cr · 69Cr · 📶W9 · 🚀SS · ↑CMF17d</sub> | 14d | +16.5% | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | +4.54% | 1211.00 | — | 20%  |
 | [DHOOTTRANS](https://in.tradingview.com/chart/?symbol=NSE:DHOOTTRANS)<br><sub>✓ SAFE · ↗131Cr · 63Cr · 📶W9 · ↑CMF8d</sub> | 14d | +9.2% | Automotive wiring harnesses and electrical systems manufacturer | -2.12% | 1603.80 | — | 20%  |
 | [NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA)<br><sub>✓ SAFE · ↗63Cr · 39Cr · 📶W9 · ↑CMF30d</sub> | 14d | +10.0% | Wealth management advisory, broking, trading for HNI UHNIs | +0.68% | 1860.40 | — | 20%  |
