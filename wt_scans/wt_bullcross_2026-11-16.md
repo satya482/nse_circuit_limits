@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # WaveTrend Bull Cross Scan — 2026-11-16
-*Generated 2026-11-16 15:47 IST*
+*Generated 2026-11-16 16:23 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -28,96 +28,105 @@
 
 ---
 
-**Total bull crosses today: 21** · 3 inside active squeeze
+**Total bull crosses today: 23** · 5 inside active squeeze
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SIGMAADV,NSE:GALLANTT,NSE:KPRMILL,NSE:TCPLPACK,NSE:EICHERMOT,NSE:SUPRIYA,NSE:HIRECT,NSE:THERMAX,NSE:NSIL,NSE:WELCORP,NSE:ANTELOPUS,NSE:AJANTPHARM,NSE:APOLLOPIPE,NSE:DEEDEV,NSE:GOKEX,NSE:FORTIS,NSE:SJS,NSE:GESHIP,NSE:APARINDS,NSE:JUBLCPL,NSE:STAR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MARSONS,NSE:KPRMILL,NSE:SIGMAADV,NSE:GOKEX,NSE:TATACONSUM,NSE:GESHIP,NSE:TCPLPACK,NSE:EICHERMOT,NSE:TATACHEM,NSE:GALLANTT,NSE:FORTIS,NSE:RESPONIND,NSE:HIRECT,NSE:GANESHHOU,NSE:THERMAX,NSE:NSIL,NSE:ANTELOPUS,NSE:WELCORP,NSE:AJANTPHARM,NSE:DEEDEV,NSE:RPSGVENT,NSE:SJS,NSE:APARINDS
 ```
 
-### 📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400 (5)
+### 📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400 (8)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Power and distribution transformer manufacturer for infrastructure | ⚡ BULL_ANY_PPV | 37 | 🔄50 | ↑1.077 | ↑13d | PV | +33.9% | 43.3/42.54 | +10.78% | 20% |
+| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | ⚡ BULL_ANY_PPV | 36 | 🔄76 | ↑1.046 | ↑14d | PV | +16.5% | 32.3/27.97 | +4.54% | 20% |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>📶W9 · W↑59d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Aerospace defense electronics manufacturing for global OEMs | ⚡ BULL_ANY_PPV | 0 | ↑100 | ↑1.130 | ↑58d | PV | +387.9% | 70.19/69.53 | +5.00% | 20% |
-| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>📶W9 · ↑CMF0d</sub> | ✓ SAFE | Integrated steel manufacturing with mining operations eastern India | 📈 BULL_ANY_MID | 49 | 🔄42 | ↑1.050 | ↑1d | — | +7.9% | -23.08/-29.66 | +7.87% | 20% 🟦 |
-| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | 📈 BULL_ANY_MID | 36 | 🔄74 | ↑1.034 | ↑14d | — | +14.9% | 30.59/27.54 | +3.11% | 20% |
-| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK)<br><sub>📶W9 · W↑11d · ★ · ↑CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↓89 | ↓1.010 | ↑2d | — | +3.4% | 32.91/32.29 | -1.33% | 20% |
-| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>📶W9 · W↑11d · ↑CMF13d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓60 | ↓1.011 | ↑15d | — | +7.5% | 47.36/45.84 | -0.21% | 20% |
+| [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>📶W9 · W↑1d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Apparel manufacturer for global fashion brands and retailers | 📈 BULL_ANY_MID | 49 | 🔄33 | ↑1.037 | ↑1d | — | +5.6% | -3.46/-7.08 | +5.57% | 20% |
+| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>📶W9 · W↑21d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Tea, coffee, salt brands for Indian households and global markets | 📈 BULL_ANY_MID | 35 | 🔄55 | ↑1.037 | ↑15d | — | +19.3% | 47.97/47.29 | +3.57% | 20% |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>📶W9 · ↑CMF1d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 📈 BULL_ANY_MID | 23 | ↑76 | ↑1.026 | ↑2d | — | +5.8% | -10.66/-16.09 | +0.98% | 20% |
+| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK)<br><sub>📶W9 · W↑11d · ★ · ↑CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↑89 | ↓1.012 | ↑2d | — | +3.6% | 33.1/32.34 | -1.07% | 20% |
+| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>📶W9 · W↑11d · ↑CMF13d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓60 | ↓1.007 | ↑15d | — | +7.0% | 46.27/45.57 | -0.67% | 20% |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SIGMAADV,NSE:GALLANTT,NSE:KPRMILL,NSE:TCPLPACK,NSE:EICHERMOT
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MARSONS,NSE:KPRMILL,NSE:SIGMAADV,NSE:GOKEX,NSE:TATACONSUM,NSE:GESHIP,NSE:TCPLPACK,NSE:EICHERMOT
 ```
 
 ---
 
-### 📶 RS-CONFIRMED — RS strong (↑) or transitioning (🔄) vs NIFTY MIDSML 400 (6)
+### 📶 RS-CONFIRMED — RS strong (↑) or transitioning (🔄) vs NIFTY MIDSML 400 (10)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Power and distribution transformer manufacturer for infrastructure | ⚡ BULL_ANY_PPV | 37 | 🔄50 | ↑1.077 | ↑13d | PV | +33.9% | 43.3/42.54 | +10.78% | 20% |
+| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | ⚡ BULL_ANY_PPV | 36 | 🔄76 | ↑1.046 | ↑14d | PV | +16.5% | 32.3/27.97 | +4.54% | 20% |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>📶W9 · W↑59d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Aerospace defense electronics manufacturing for global OEMs | ⚡ BULL_ANY_PPV | 0 | ↑100 | ↑1.130 | ↑58d | PV | +387.9% | 70.19/69.53 | +5.00% | 20% |
-| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>📶W9 · ↑CMF0d</sub> | ✓ SAFE | Integrated steel manufacturing with mining operations eastern India | 📈 BULL_ANY_MID | 49 | 🔄42 | ↑1.050 | ↑1d | — | +7.9% | -23.08/-29.66 | +7.87% | 20% 🟦 |
-| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | 📈 BULL_ANY_MID | 36 | 🔄74 | ↑1.034 | ↑14d | — | +14.9% | 30.59/27.54 | +3.11% | 20% |
-| [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>W↑1d · 🚀SS · ↓CMF3d</sub> | ✓ SAFE | Apparel manufacturer for global fashion brands and retailers | 📈 BULL_ANY_MID | 54 | 🔄30 | ↑1.026 | ↑1d | — | +4.2% | -4.32/-7.29 | +4.19% | 20% |
-| [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS)<br><sub>W↑11d · ↑CMF10d</sub> | ⚠ CAUTION | Multi-specialty hospitals, diagnostics, quaternary care delivery | 📈 BULL_ANY_MID | 53 | 🔄23 | ↑1.020 | ↑2d | — | +3.7% | 5.84/4.88 | +3.20% | 20% |
-| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>↓CMF0d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 📈 BULL_ANY_MID | 18 | ↑75 | ↓1.017 | ↑2d | — | +4.6% | -11.76/-16.37 | -0.09% | 20% |
+| [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>📶W9 · W↑1d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Apparel manufacturer for global fashion brands and retailers | 📈 BULL_ANY_MID | 49 | 🔄33 | ↑1.037 | ↑1d | — | +5.6% | -3.46/-7.08 | +5.57% | 20% |
+| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>📶W9 · W↑21d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Tea, coffee, salt brands for Indian households and global markets | 📈 BULL_ANY_MID | 35 | 🔄55 | ↑1.037 | ↑15d | — | +19.3% | 47.97/47.29 | +3.57% | 20% |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>📶W9 · ↑CMF1d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 📈 BULL_ANY_MID | 23 | ↑76 | ↑1.026 | ↑2d | — | +5.8% | -10.66/-16.09 | +0.98% | 20% |
+| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK)<br><sub>📶W9 · W↑11d · ★ · ↑CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↑89 | ↓1.012 | ↑2d | — | +3.6% | 33.1/32.34 | -1.07% | 20% |
+| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>↓CMF2d</sub> | ✓ SAFE | Integrated steel manufacturing with mining operations eastern India | ⚡ BULL_ANY_PPV | 54 | 🔄35 | ↑1.015 | ↑1d | PV | +3.5% | -25.34/-30.22 | +3.46% | 20% 🟦 |
+| [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS)<br><sub>W↑11d · ↑CMF10d</sub> | ⚠ CAUTION | Multi-specialty hospitals, diagnostics, quaternary care delivery | ⚡ BULL_ANY_PPV | 48 | 🔄27 | ↑1.036 | ↑2d | PV | +5.7% | 9.0/5.67 | +5.13% | 20% |
+| [SJS](https://in.tradingview.com/chart/?symbol=NSE:SJS)<br><sub>↓CMF7d</sub> | ✓ SAFE | Decorative graphics manufacturing for automotive consumer electronics appliances | 📈 BULL_ANY_MID | 53 | 🔄57 | ↑1.014 | ↑7d | — | +3.5% | 5.59/3.53 | +1.52% | 20% |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SIGMAADV,NSE:GALLANTT,NSE:KPRMILL,NSE:GOKEX,NSE:FORTIS,NSE:GESHIP
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MARSONS,NSE:KPRMILL,NSE:SIGMAADV,NSE:GOKEX,NSE:TATACONSUM,NSE:GESHIP,NSE:TCPLPACK,NSE:GALLANTT,NSE:FORTIS,NSE:SJS
 ```
 
 ---
 
-### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze (3)
+### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze (5)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM)<br><sub>↓CMF30d</sub> | ✓ SAFE | Branded generic pharmaceuticals formulations across India Asia Africa | 📈 BULL_ANY_MID | 69 | ↓69 | ↑1.011 | ↑1d | SQ | +2.7% | -23.06/-24.16 | +2.73% | 20% |
-| [APOLLOPIPE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOPIPE)<br><sub>↑CMF12d</sub> | ✓ SAFE | PVC HDPE pipes agriculture water construction infrastructure | 📈 BULL_ANY_MID | 69 | ↓76 | ↑1.002 | ↑1d | SQ | +0.7% | -22.52/-22.72 | +0.67% | 20% |
-| [DEEDEV](https://in.tradingview.com/chart/?symbol=NSE:DEEDEV)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | High-pressure piping systems for oil gas power | 📈 BULL_ANY_MID | 62 | ↓95 | ↑0.999 | ↓3d | SQ | +0.1% | -24.73/-27.16 | +2.60% | 10% 🟩 |
+| [TATACHEM](https://in.tradingview.com/chart/?symbol=NSE:TATACHEM)<br><sub>W↑5d · ↓CMF30d</sub> | ✓ SAFE | Soda ash alkali chemicals specialty products manufacturer global | ⚡ BULL_ANY_PPV | 68 | ↓29 | ↑1.008 | ↑2d | SQ·PV | +1.4% | -7.15/-12.33 | +1.02% | 20% |
+| [GANESHHOU](https://in.tradingview.com/chart/?symbol=NSE:GANESHHOU)<br><sub>↓CMF30d · 🎯SLING</sub> | ✓ SAFE | Residential real estate development Ahmedabad Gujarat region | 🟡 BULL_OS_L2 | 69 | ↓21 | ↑1.004 | ↑1d | SQ | +2.3% | -57.15/-59.07 | +2.31% | 20% |
+| [AJANTPHARM](https://in.tradingview.com/chart/?symbol=NSE:AJANTPHARM)<br><sub>↓CMF30d</sub> | ✓ SAFE | Branded generic pharmaceuticals formulations across India Asia Africa | 📈 BULL_ANY_MID | 69 | ↓69 | ↑1.008 | ↑1d | SQ | +2.3% | -23.73/-24.33 | +2.33% | 20% |
+| [DEEDEV](https://in.tradingview.com/chart/?symbol=NSE:DEEDEV)<br><sub>🚀SS · ↓CMF30d</sub> | ✓ SAFE | High-pressure piping systems for oil gas power | 📈 BULL_ANY_MID | 62 | ↓94 | ↑0.997 | ↓3d | SQ | -0.1% | -25.95/-27.47 | +2.41% | 10% 🟩 |
+| [RPSGVENT](https://in.tradingview.com/chart/?symbol=NSE:RPSGVENT)<br><sub>W↑5d · RVOL90x · ↓CMF30d</sub> | ✓ SAFE | Diversified holding company IT services BPM FMCG Ayurveda real estate sports | 📈 BULL_ANY_MID | 56 | ↓56 | ↑0.990 | ↓9d | SQ | +2.2% | 15.15/13.69 | -0.03% | 20% 🟦 |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:AJANTPHARM,NSE:APOLLOPIPE,NSE:DEEDEV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:TATACHEM,NSE:GANESHHOU,NSE:AJANTPHARM,NSE:DEEDEV,NSE:RPSGVENT
 ```
 
 ---
 
-### 🔥 MAJOR — PPV confirmed (1)
+### 🔥 MAJOR — PPV confirmed (5)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
+| [MARSONS](https://in.tradingview.com/chart/?symbol=NSE:MARSONS)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Power and distribution transformer manufacturer for infrastructure | ⚡ BULL_ANY_PPV | 37 | 🔄50 | ↑1.077 | ↑13d | PV | +33.9% | 43.3/42.54 | +10.78% | 20% |
+| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | ⚡ BULL_ANY_PPV | 36 | 🔄76 | ↑1.046 | ↑14d | PV | +16.5% | 32.3/27.97 | +4.54% | 20% |
 | [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV)<br><sub>📶W9 · W↑59d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Aerospace defense electronics manufacturing for global OEMs | ⚡ BULL_ANY_PPV | 0 | ↑100 | ↑1.130 | ↑58d | PV | +387.9% | 70.19/69.53 | +5.00% | 20% |
+| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>↓CMF2d</sub> | ✓ SAFE | Integrated steel manufacturing with mining operations eastern India | ⚡ BULL_ANY_PPV | 54 | 🔄35 | ↑1.015 | ↑1d | PV | +3.5% | -25.34/-30.22 | +3.46% | 20% 🟦 |
+| [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS)<br><sub>W↑11d · ↑CMF10d</sub> | ⚠ CAUTION | Multi-specialty hospitals, diagnostics, quaternary care delivery | ⚡ BULL_ANY_PPV | 48 | 🔄27 | ↑1.036 | ↑2d | PV | +5.7% | 9.0/5.67 | +5.13% | 20% |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SIGMAADV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:MARSONS,NSE:KPRMILL,NSE:SIGMAADV,NSE:GALLANTT,NSE:FORTIS
 ```
 
 ### 🟢 OVERSOLD — reversal from −53/−60 (6)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [SUPRIYA](https://in.tradingview.com/chart/?symbol=NSE:SUPRIYA)<br><sub>↓CMF18d · ⚠️TRAP</sub> | ✓ SAFE | API manufacturer, antihistamine analgesic anaesthetic pharma exports | 🟢 BULL_OVERSOLD | 16 | ↓15 | ↑0.904 | ↓9d | — | -24.9% | -66.05/-66.14 | -0.99% | 20% |
-| [HIRECT](https://in.tradingview.com/chart/?symbol=NSE:HIRECT)<br><sub>↓CMF30d · ⚠️TRAP · ÷DIV</sub> | ✓ SAFE | Power electronics and traction transformers for Indian railways | 🟢 BULL_OVERSOLD | 0 | ↓42 | ↓0.954 | ↓42d | — | -28.0% | -65.79/-67.16 | -2.40% | 20% |
-| [THERMAX](https://in.tradingview.com/chart/?symbol=NSE:THERMAX)<br><sub>↓CMF6d · ⚠️TRAP</sub> | ✓ SAFE | Industrial boilers, cooling systems, power equipment, pollution control | 🟡 BULL_OS_L2 | 16 | ↓9 | ↑0.960 | ↓9d | — | -12.6% | -56.86/-56.88 | -0.74% | 20% |
+| [RESPONIND](https://in.tradingview.com/chart/?symbol=NSE:RESPONIND)<br><sub>↓CMF28d · 🎯SLING</sub> | ✓ SAFE | PVC flooring and polymer products manufacturer for global markets | 🟢 BULL_OVERSOLD | 5 | ↓10 | ↑0.975 | ↓37d | — | -14.9% | -64.08/-64.16 | -0.30% | 20% |
+| [HIRECT](https://in.tradingview.com/chart/?symbol=NSE:HIRECT)<br><sub>↓CMF30d · ⚠️TRAP · ÷DIV</sub> | ✓ SAFE | Power electronics and traction transformers for Indian railways | 🟢 BULL_OVERSOLD | 0 | ↓40 | ↓0.942 | ↓42d | — | -29.1% | -66.51/-67.34 | -3.92% | 20% |
+| [THERMAX](https://in.tradingview.com/chart/?symbol=NSE:THERMAX)<br><sub>↓CMF6d · ⚠️TRAP</sub> | ✓ SAFE | Industrial boilers, cooling systems, power equipment, pollution control | 🟡 BULL_OS_L2 | 16 | ↓9 | ↑0.961 | ↓9d | — | -12.5% | -56.83/-56.88 | -0.63% | 20% |
 | [NSIL](https://in.tradingview.com/chart/?symbol=NSE:NSIL)<br><sub>↓CMF30d · 🎯SLING · ÷DIV</sub> | ⚠ CAUTION |  | 🟡 BULL_OS_L2 | 15 | ↓27 | ↑0.991 | ↓10d | — | -4.0% | -54.96/-55.26 | +1.98% | 5% |
-| [WELCORP](https://in.tradingview.com/chart/?symbol=NSE:WELCORP)<br><sub>↓CMF9d · ⚠️TRAP</sub> | ✓ SAFE | Large-diameter pipes, steel products, infrastructure | 🟡 BULL_OS_L2 | 6 | ↓97 | ↓0.976 | ↓14d | — | -11.0% | -55.55/-56.84 | -1.27% | 20% |
-| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d · ⚠️TRAP</sub> | ✓ SAFE | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 🟡 BULL_OS_L2 | 3 | ↓85 | ↓0.952 | ↓17d | — | -15.2% | -57.1/-58.0 | -2.19% | 20% |
+| [ANTELOPUS](https://in.tradingview.com/chart/?symbol=NSE:ANTELOPUS)<br><sub>↑CMF30d · 🎯SLING</sub> | ✓ SAFE | Oil and gas exploration production Indian subcontinent hydrocarbon resources | 🟡 BULL_OS_L2 | 8 | ↓89 | ↑0.991 | ↓17d | — | -11.1% | -55.01/-57.48 | +2.62% | 20% |
+| [WELCORP](https://in.tradingview.com/chart/?symbol=NSE:WELCORP)<br><sub>↓CMF9d · ⚠️TRAP</sub> | ✓ SAFE | Large-diameter pipes, steel products, infrastructure | 🟡 BULL_OS_L2 | 6 | ↓97 | ↓0.979 | ↓14d | — | -10.7% | -55.44/-56.81 | -0.88% | 20% |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SUPRIYA,NSE:HIRECT,NSE:THERMAX,NSE:NSIL,NSE:WELCORP,NSE:ANTELOPUS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:RESPONIND,NSE:HIRECT,NSE:THERMAX,NSE:NSIL,NSE:ANTELOPUS,NSE:WELCORP
 ```
 
-### 📈 MID-RANGE — any cross, WT2 > −53, no PPV (11)
+### 📈 MID-RANGE — any cross, WT2 > −53, no PPV (7)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [GALLANTT](https://in.tradingview.com/chart/?symbol=NSE:GALLANTT)<br><sub>📶W9 · ↑CMF0d</sub> | ✓ SAFE | Integrated steel manufacturing with mining operations eastern India | 📈 BULL_ANY_MID | 49 | 🔄42 | ↑1.050 | ↑1d | — | +7.9% | -23.08/-29.66 | +7.87% | 20% 🟦 |
-| [KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL)<br><sub>📶W9 · W↑11d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Yarn, fabric, apparel manufacturing, sugar, ethanol, renewable energy | 📈 BULL_ANY_MID | 36 | 🔄74 | ↑1.034 | ↑14d | — | +14.9% | 30.59/27.54 | +3.11% | 20% |
-| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK)<br><sub>📶W9 · W↑11d · ★ · ↑CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↓89 | ↓1.010 | ↑2d | — | +3.4% | 32.91/32.29 | -1.33% | 20% |
-| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>📶W9 · W↑11d · ↑CMF13d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓60 | ↓1.011 | ↑15d | — | +7.5% | 47.36/45.84 | -0.21% | 20% |
-| [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>W↑1d · 🚀SS · ↓CMF3d</sub> | ✓ SAFE | Apparel manufacturer for global fashion brands and retailers | 📈 BULL_ANY_MID | 54 | 🔄30 | ↑1.026 | ↑1d | — | +4.2% | -4.32/-7.29 | +4.19% | 20% |
-| [FORTIS](https://in.tradingview.com/chart/?symbol=NSE:FORTIS)<br><sub>W↑11d · ↑CMF10d</sub> | ⚠ CAUTION | Multi-specialty hospitals, diagnostics, quaternary care delivery | 📈 BULL_ANY_MID | 53 | 🔄23 | ↑1.020 | ↑2d | — | +3.7% | 5.84/4.88 | +3.20% | 20% |
-| [SJS](https://in.tradingview.com/chart/?symbol=NSE:SJS)<br><sub>↓CMF7d</sub> | ✓ SAFE | Decorative graphics manufacturing for automotive consumer electronics appliances | 📈 BULL_ANY_MID | 23 | ↓54 | ↑1.005 | ↑7d | — | +2.3% | 3.67/3.05 | +0.35% | 20% |
-| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>↓CMF0d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 📈 BULL_ANY_MID | 18 | ↑75 | ↓1.017 | ↑2d | — | +4.6% | -11.76/-16.37 | -0.09% | 20% |
-| [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS)<br><sub>↓CMF23d · ⚠️TRAP</sub> | ✓ SAFE | Power cables, transformers oils, specialty chemicals globally | 📈 BULL_ANY_MID | 11 | ↓78 | ↓0.981 | ↓9d | — | -7.1% | -44.9/-46.29 | -1.66% | 20% |
-| [JUBLCPL](https://in.tradingview.com/chart/?symbol=NSE:JUBLCPL)<br><sub>↑CMF10d</sub> | ⚠ CAUTION | Agri nutrients, polymers, chemicals manufacturer for farms and industry | 📈 BULL_ANY_MID | 9 | ↓28 | ↑0.993 | ↓16d | — | +0.7% | -30.75/-30.88 | -0.03% | 20% |
-| [STAR](https://in.tradingview.com/chart/?symbol=NSE:STAR)<br><sub>↑CMF14d · ⚠️TRAP</sub> | ✓ SAFE | Niche finished dosage pharma formulations global markets | 📈 BULL_ANY_MID | 5 | ↓57 | ↓0.990 | ↓15d | — | -2.6% | -36.56/-38.07 | -0.82% | 20% |
+| [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>📶W9 · W↑1d · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Apparel manufacturer for global fashion brands and retailers | 📈 BULL_ANY_MID | 49 | 🔄33 | ↑1.037 | ↑1d | — | +5.6% | -3.46/-7.08 | +5.57% | 20% |
+| [TATACONSUM](https://in.tradingview.com/chart/?symbol=NSE:TATACONSUM)<br><sub>📶W9 · W↑21d · 🚀SS · ↑CMF17d</sub> | ⚠ CAUTION | Tea, coffee, salt brands for Indian households and global markets | 📈 BULL_ANY_MID | 35 | 🔄55 | ↑1.037 | ↑15d | — | +19.3% | 47.97/47.29 | +3.57% | 20% |
+| [GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP)<br><sub>📶W9 · ↑CMF1d</sub> | ✓ SAFE | Crude oil tankers, offshore drilling vessels, shipping services | 📈 BULL_ANY_MID | 23 | ↑76 | ↑1.026 | ↑2d | — | +5.8% | -10.66/-16.09 | +0.98% | 20% |
+| [TCPLPACK](https://in.tradingview.com/chart/?symbol=NSE:TCPLPACK)<br><sub>📶W9 · W↑11d · ★ · ↑CMF0d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 18 | ↑89 | ↓1.012 | ↑2d | — | +3.6% | 33.1/32.34 | -1.07% | 20% |
+| [EICHERMOT](https://in.tradingview.com/chart/?symbol=NSE:EICHERMOT)<br><sub>📶W9 · W↑11d · ↑CMF13d</sub> | ✓ SAFE |  | 📈 BULL_ANY_MID | 5 | ↓60 | ↓1.007 | ↑15d | — | +7.0% | 46.27/45.57 | -0.67% | 20% |
+| [SJS](https://in.tradingview.com/chart/?symbol=NSE:SJS)<br><sub>↓CMF7d</sub> | ✓ SAFE | Decorative graphics manufacturing for automotive consumer electronics appliances | 📈 BULL_ANY_MID | 53 | 🔄57 | ↑1.014 | ↑7d | — | +3.5% | 5.59/3.53 | +1.52% | 20% |
+| [APARINDS](https://in.tradingview.com/chart/?symbol=NSE:APARINDS)<br><sub>↓CMF23d</sub> | ✓ SAFE | Power cables, transformers oils, specialty chemicals globally | 📈 BULL_ANY_MID | 21 | ↓80 | ↑1.003 | ↓9d | — | -4.5% | -43.11/-45.84 | +1.12% | 20% |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GALLANTT,NSE:KPRMILL,NSE:TCPLPACK,NSE:EICHERMOT,NSE:GOKEX,NSE:FORTIS,NSE:SJS,NSE:GESHIP,NSE:APARINDS,NSE:JUBLCPL,NSE:STAR
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:GOKEX,NSE:TATACONSUM,NSE:GESHIP,NSE:TCPLPACK,NSE:EICHERMOT,NSE:SJS,NSE:APARINDS
 ```
 
 ---
