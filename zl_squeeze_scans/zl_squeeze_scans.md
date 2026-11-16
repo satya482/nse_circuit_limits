@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NSE ZL Squeeze Scan — 2026-11-16
-*Generated 2026-11-16 10:51 IST*
+*Generated 2026-11-16 15:41 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -59,8 +59,8 @@
 | [SHANTIGEAR](https://in.tradingview.com/chart/?symbol=NSE:SHANTIGEAR) | Precision gears and gearboxes for industrial machinery | 4d | 4d | +5.5% | 523.20 | -1.35% | ✓ | — | — | 5% 🟥 |
 | [RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS) | ERP software, HCM, aviation, manufacturing, cloud | 3d | 4d | +4.0% | 550.10 | -0.61% | ✓ | — | — | 10% 🟩 |
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA) | Diagnostic imaging centers for patients across India | 3d | 4d | +5.6% | 521.25 | -1.42% | ✓ | ✓ | — | 20%  |
-| [EPIGRAL](https://in.tradingview.com/chart/?symbol=NSE:EPIGRAL) | Chlor-alkali and specialty chemicals for industrial applications | 2d | 4d | +5.9% | 943.15 | -0.79% | ✓ | — | — | 20%  |
 | [FERMENTA](https://in.tradingview.com/chart/?symbol=NSE:FERMENTA) | Vitamin D3 and enzyme APIs for pharma, nutraceuticals | 2d | 4d | +8.4% | 466.10 | -1.69% | ✓ | — | — | 20%  |
+| [EPIGRAL](https://in.tradingview.com/chart/?symbol=NSE:EPIGRAL) | Chlor-alkali and specialty chemicals for industrial applications | 2d | 4d | +5.9% | 943.15 | -0.79% | ✓ | — | — | 20%  |
 | [GPTINFRA](https://in.tradingview.com/chart/?symbol=NSE:GPTINFRA) |  | 2d | 4d | +3.4% | 115.75 | -0.34% | ✓ | — | — | 20%  |
 | [EIHAHOTELS](https://in.tradingview.com/chart/?symbol=NSE:EIHAHOTELS) |  | 39d | 5d | +4.0% | 294.45 | +0.98% | ✓ | — | — | 20%  |
 | [PARAS](https://in.tradingview.com/chart/?symbol=NSE:PARAS) | Defence electronics and space hardware manufacturing for military government | 16d | 5d | +3.4% | 1291.30 | -0.15% | ✓ | — | — | 20% 🟦 |
@@ -74,7 +74,7 @@
 | [FINEORG](https://in.tradingview.com/chart/?symbol=NSE:FINEORG) | Oleochemical specialty additives food plastics cosmetics coatings | 2d | 6d | +5.3% | 5345.00 | +0.86% | ✓ | — | — | 20%  |
 | [AMNPLST](https://in.tradingview.com/chart/?symbol=NSE:AMNPLST) | Organic chemicals amines solvents fertilizers manufacturer | 2d | 6d | +12.1% | 161.90 | +7.12% | ✓ | ✓ | — | 20%  |
 | [GOODYEAR](https://in.tradingview.com/chart/?symbol=NSE:GOODYEAR) |  | 24d | 8d | +5.8% | 706.00 | -1.53% | ✓ | ✓ | — | 20%  |
-| [SYSTMTXC](https://in.tradingview.com/chart/?symbol=NSE:SYSTMTXC) |  | 14d | 9d | +6.5% | 78.80 | +1.47% | — | ✓ | ✓ | 2%  |
+| [SYSTMTXC](https://in.tradingview.com/chart/?symbol=NSE:SYSTMTXC) |  | 14d | 9d | +6.5% | 78.80 | +1.47% | — | ✓ | ✓ | 5%  |
 | [NATCOPHARM](https://in.tradingview.com/chart/?symbol=NSE:NATCOPHARM) | Generic oncology drugs, complex formulations, global pharma markets | 13d | 9d | +5.5% | 824.80 | +1.77% | ✓ | ✓ | — | 20%  |
 | [CANTABIL](https://in.tradingview.com/chart/?symbol=NSE:CANTABIL) | Apparel design manufacturing retail through exclusive brand stores | 2d | 9d | +6.1% | 261.30 | +0.29% | — | — | ✓ | 20%  |
 | [PARACABLES](https://in.tradingview.com/chart/?symbol=NSE:PARACABLES) | Power telecom railway cables manufacturer | 5d | 10d | +6.0% | 64.57 | -3.29% | — | — | ✓ | 20% 🟦 |
