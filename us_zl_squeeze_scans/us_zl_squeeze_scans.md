@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-11-16
-*Generated 2026-11-16 16:29 IST*
+# US ZL Squeeze Scan — 2026-11-17
+*Generated 2026-11-17 15:59 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,17 +18,16 @@
 
 ---
 
-**7 stocks: ZLEMA25 Rising + Squeeze ON**
+**6 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [KLAR](https://www.tradingview.com/chart/?symbol=KLAR) | 13.80 | +8.58% | 2.4x | 10d | 0d | +8.6% | ✓ | ✓ | ✓ |
-| [TXNM](https://www.tradingview.com/chart/?symbol=TXNM) | 58.87 | +0.09% | 2.9x | 25d | 2d | +1.3% | ✓ | ✓ | ✓ |
-| [TRMK](https://www.tradingview.com/chart/?symbol=TRMK) | 47.88 | +0.08% | 4.7x | 9d | 4d | +7.0% | ✓ | ✓ | ✓ |
-| [YSWY](https://www.tradingview.com/chart/?symbol=YSWY) | 24.84 | +1.85% | 1.6x | 2d | 0d | +1.9% | — | ✓ | ✓ |
-| [ERAS](https://www.tradingview.com/chart/?symbol=ERAS) | 15.66 | -0.76% | 1.7x | 28d | 4d | +18.0% | ✓ | ✓ | — |
-| [MBX](https://www.tradingview.com/chart/?symbol=MBX) | 55.94 | +2.62% | 1.6x | 9d | 4d | +15.4% | ✓ | ✓ | — |
-| [ITG](https://www.tradingview.com/chart/?symbol=ITG) | 5.68 | +7.17% | 2.0x | 4d | 1d | +10.7% | ✓ | — | — |
+| [MSGE](https://www.tradingview.com/chart/?symbol=MSGE) | 79.91 | +0.53% | 1.9x | 39d | 1d | +1.4% | ✓ | ✓ | ✓ |
+| [KLAR](https://www.tradingview.com/chart/?symbol=KLAR) | 13.63 | -1.23% | 2.6x | 11d | 1d | +7.2% | ✓ | ✓ | ✓ |
+| [PAYO](https://www.tradingview.com/chart/?symbol=PAYO) | 7.20 | +0.00% | 2.1x | 83d | 4d | +0.7% | ✓ | ✓ | ✓ |
+| [DMRA](https://www.tradingview.com/chart/?symbol=DMRA) | 22.50 | +4.14% | 2.4x | 1d | 0d | +4.1% | ✓ | ✓ | — |
+| [BXDC](https://www.tradingview.com/chart/?symbol=BXDC) | 16.74 | +0.30% | 4.4x | 10d | 5d | +4.6% | ✓ | ✓ | — |
+| [QVCG](https://www.tradingview.com/chart/?symbol=QVCG) | 8.36 | +4.76% | 2.9x | 1d | 1d | +7.7% | ✓ | — | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
