@@ -69,7 +69,7 @@
 | [IVALUE](https://in.tradingview.com/chart/?symbol=NSE:IVALUE)<br><sub>↑CMF7d</sub> | IT distributor hybrid cloud solutions enterprise security | 1w | ABOVE | 1w | +13.0% | +6.05% | 237.07 | — | 20%  |
 | [SAFARI](https://in.tradingview.com/chart/?symbol=NSE:SAFARI)<br><sub>↑CMF8d</sub> | Luggage and travel bags manufacturer for domestic and international consumers | 1w | ABOVE | 1w | +4.3% | +1.82% | 1402.40 | — | 20%  |
 | [EUREKAFORB](https://in.tradingview.com/chart/?symbol=NSE:EUREKAFORB)<br><sub>↑CMF14d</sub> | Water purification, vacuum cleaners, air purifiers for households | 1w | ABOVE | 1w | +4.0% | +3.58% | 386.60 | — | 20%  |
-| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↑CMF9d</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +0.5% | +0.46% | 135.63 | 5w | 20%  |
+| [WAKEFIT](https://in.tradingview.com/chart/?symbol=NSE:WAKEFIT)<br><sub>↑CMF9d · DEL87%</sub> | Direct-to-consumer sleep products, mattresses, furniture | 1w | ABOVE | 1w | +0.5% | +0.46% | 135.63 | 5w | 20%  |
 | [JKLAKSHMI](https://in.tradingview.com/chart/?symbol=NSE:JKLAKSHMI)<br><sub>↑CMF4d</sub> | Integrated cement manufacturer serving construction across regions | 1w | ABOVE | 1w | +3.1% | +0.92% | 515.90 | — | 20%  |
 | [DSSL](https://in.tradingview.com/chart/?symbol=NSE:DSSL)<br><sub>↓CMF30d</sub> | IT infrastructure, system integration, networking, managed cloud services | 1w | ABOVE | 1w | +5.9% | -3.00% | 1115.40 | — | 20%  |
 | [MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR)<br><sub>↓CMF30d</sub> |  | 1w | ABOVE | 1w | +4.1% | +3.05% | 82.44 | 20w | 20%  |

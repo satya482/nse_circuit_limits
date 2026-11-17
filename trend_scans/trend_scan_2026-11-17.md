@@ -49,7 +49,7 @@
 ### 🟢 ZL PULLBACK — ZLEMA25 touch + RS holds (28)
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
-| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM)<br><sub>↑CMF30d · DEL76%(T-1)</sub> | ✓ SAFE | Injection moulded electrical components OEM for automotive applications | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑99 | ↓1.034 | 98% | 334% ↑ | ✅8/8 | 0.67x | ↑15d | +23.8% | -1.86% | 20%  |
+| [SPECTRUM](https://in.tradingview.com/chart/?symbol=NSE:SPECTRUM)<br><sub>↑CMF30d</sub> | ✓ SAFE | Injection moulded electrical components OEM for automotive applications | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑99 | ↓1.034 | 98% | 334% ↑ | ✅8/8 | 0.67x | ↑15d | +23.8% | -1.86% | 20%  |
 | [SHREEJISPG](https://in.tradingview.com/chart/?symbol=NSE:SHREEJISPG)<br><sub>↑CMF30d</sub> | ✓ SAFE | Dry bulk carrier operations maritime logistics shipping services | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑96 | ↓1.024 | 100% | 207% ↑ | ✅8/8 | 0.67x | ↑17d | +17.2% | -0.50% | 20%  |
 | [BLISSGVS](https://in.tradingview.com/chart/?symbol=NSE:BLISSGVS)<br><sub>↑CMF30d</sub> | ✓ SAFE | Pharmaceutical formulations suppositories capsules tablets syrups India | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 75 | ↑98 | ↓1.048 | 97% | 312% ↑ | ✅8/8 | 0.65x | ↑60d+ | +108.7% | +0.68% | 20%  |
 | [RAYMOND](https://in.tradingview.com/chart/?symbol=NSE:RAYMOND)<br><sub>↑CMF3d</sub> | ✓ SAFE | Textiles apparel real estate FMCG engineering diversified conglomerate | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 72 | ↑98 | ↑1.068 | 94% | 280% ↑ | ✅8/8 | 0.95x | ↑4d | +11.8% | +3.22% | 10% 🟨 |
@@ -75,7 +75,7 @@
 | [LLOYDSENGG](https://in.tradingview.com/chart/?symbol=NSE:LLOYDSENGG)<br><sub>↓CMF17d</sub> | ✓ SAFE | Heavy equipment manufacturing for oil gas power plants | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 57 | 🔄63 | ↑1.015 | 86% | 132% ↑ | ✅7/8 | 1.03x | ↑1d | +1.7% | +1.68% | 20%  |
 | [CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO)<br><sub>↑CMF1d</sub> | ✓ SAFE | Heavy civil engineering and infrastructure construction EPC services | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 55 | 🔄84 | ↑1.033 | 82% | 165% ↑ | ✅8/8 | 0.89x | ↑16d | +19.5% | +4.14% | 10% 🟩 |
 | [SMLMAH](https://in.tradingview.com/chart/?symbol=NSE:SMLMAH)<br><sub>↓CMF30d</sub> | ✓ SAFE | Light medium commercial vehicles manufacturing Japan partnership | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 54 | 🔄62 | ↑1.033 | 78% | 93% ↑ | ✅7/8 | 0.88x | ↑1d | +5.0% | +5.00% | 5% 🟥 |
-| [BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX)<br><sub>↓CMF23d</sub> | ✓ SAFE | Digital infrastructure integration, managed services, enterprise networks | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 53 | ↑70 | ↓1.028 | 82% | 99% ↑ | ✅7/8 | 2.21x | ↑5d | +9.2% | -1.24% | 20% 🟦 |
+| [BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX)<br><sub>↓CMF23d · DEL48%</sub> | ✓ SAFE | Digital infrastructure integration, managed services, enterprise networks | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 53 | ↑70 | ↓1.028 | 82% | 99% ↑ | ✅7/8 | 2.21x | ↑5d | +9.2% | -1.24% | 20% 🟦 |
 | [WELENT](https://in.tradingview.com/chart/?symbol=NSE:WELENT)<br><sub>↓CMF7d</sub> | ✓ SAFE | Infrastructure development roads water pipelines oil gas projects | 🟢 ZLEMA25 touch · RS holds · EMA20 ↑ | 47 | 🔄62 | ↑1.015 | 85% | 69% ↑ | ✅7/8 | 1.12x | ↑10d | +11.4% | +1.32% | 20%  |
 
 ```
