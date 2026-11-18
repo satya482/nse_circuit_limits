@@ -32,7 +32,7 @@
 | [J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK)<br><sub>↓CMF30d</sub> | Retail corporate banking services Jammu Kashmir Ladakh regions | 1w | TOUCH | 1w | +2.6% | +0.63% | 140.83 | — | 20%  |
 | [ORCHPHARMA](https://in.tradingview.com/chart/?symbol=NSE:ORCHPHARMA)<br><sub>↓CMF30d</sub> | Cephalosporin antibiotics APIs and finished formulations manufacturer | 1w | TOUCH | 1w | +8.1% | +2.70% | 955.95 | 7w | 20%  |
 | [COMSYN](https://in.tradingview.com/chart/?symbol=NSE:COMSYN)<br><sub>↓CMF30d</sub> | Synthetic bags and flexible packaging for agriculture industry | 1w | TOUCH | 1w | +6.1% | +0.03% | 259.97 | — | 20% 🟦 |
-| [VMART](https://in.tradingview.com/chart/?symbol=NSE:VMART)<br><sub>↑CMF7d</sub> | Affordable apparel retail chain serving tier II III IV cities | 1w | TOUCH | 1w | +1.5% | -0.85% | 783.80 | 6w | 20%  |
+| [VMART](https://in.tradingview.com/chart/?symbol=NSE:VMART)<br><sub>↑CMF7d · DEL83%</sub> | Affordable apparel retail chain serving tier II III IV cities | 1w | TOUCH | 1w | +1.5% | -0.85% | 783.80 | 6w | 20%  |
 | [EVEREADY](https://in.tradingview.com/chart/?symbol=NSE:EVEREADY)<br><sub>↑CMF0d</sub> | Dry cells batteries flashlights consumer household products | 1w | TOUCH | 1w | +3.2% | +1.29% | 326.25 | — | 20%  |
 | [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING)<br><sub>↓CMF13d</sub> | Textile yarns and fabrics production for apparel makers | 1w | TOUCH | 1w | +7.5% | -1.26% | 217.57 | 6w | 20%  |
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK)<br><sub>↓CMF30d</sub> | Two-wheeler three-wheeler off-highway tyres manufacturer exporter | 1w | TOUCH | 1w | +3.5% | -1.98% | 4485.40 | — | 20%  |
@@ -40,7 +40,7 @@
 | [SPAL](https://in.tradingview.com/chart/?symbol=NSE:SPAL)<br><sub>↑CMF0d</sub> | Knitted children's garments manufacturer for global export | 1w | TOUCH | 1w | +4.3% | -0.69% | 933.35 | — | 20%  |
 | [AYMSYNTEX](https://in.tradingview.com/chart/?symbol=NSE:AYMSYNTEX)<br><sub>↓CMF30d</sub> | Polyester nylon filament yarn textiles manufacturing | 1w | TOUCH | 1w | +4.8% | +0.63% | 275.08 | 4w | 20%  |
 | [GRPLTD](https://in.tradingview.com/chart/?symbol=NSE:GRPLTD)<br><sub>↓CMF26d</sub> |  | 1w | TOUCH | 1w | +3.4% | -0.84% | 1899.30 | 37w | 20%  |
-| [INDOCO](https://in.tradingview.com/chart/?symbol=NSE:INDOCO)<br><sub>↑CMF0d · DEL70%(T-1)</sub> | Pharmaceutical formulations manufacturing domestic and international markets | 1w | ABOVE | 1w | +5.8% | +7.57% | 242.01 | 15w | 20%  |
+| [INDOCO](https://in.tradingview.com/chart/?symbol=NSE:INDOCO)<br><sub>↑CMF0d</sub> | Pharmaceutical formulations manufacturing domestic and international markets | 1w | ABOVE | 1w | +5.8% | +7.57% | 242.01 | 15w | 20%  |
 | [FIRSTCRY](https://in.tradingview.com/chart/?symbol=NSE:FIRSTCRY)<br><sub>↑CMF1d</sub> | Mothers babies kids products e-commerce retail platform | 1w | ABOVE | 1w | +9.4% | -1.97% | 175.44 | — | 20%  |
 | [SUBROS](https://in.tradingview.com/chart/?symbol=NSE:SUBROS)<br><sub>↑CMF0d</sub> | AC compressors, radiators for cars, commercial vehicles | 1w | ABOVE | 1w | +12.9% | +13.10% | 693.25 | — | 20%  |
 | [DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT)<br><sub>↑CMF2d</sub> | Fertilizers, bulk chemicals, mining solutions for agriculture | 1w | ABOVE | 1w | +17.3% | +2.55% | 1480.50 | — | 20%  |
@@ -67,7 +67,7 @@
 | [GICRE](https://in.tradingview.com/chart/?symbol=NSE:GICRE)<br><sub>↑CMF22d</sub> | Reinsurance provider, domestic market leader, risk transfer | 1w | ABOVE | 1w | +0.1% | -1.02% | 338.65 | — | 20%  |
 | [EUREKAFORB](https://in.tradingview.com/chart/?symbol=NSE:EUREKAFORB)<br><sub>↑CMF15d</sub> | Water purification, vacuum cleaners, air purifiers for households | 1w | ABOVE | 1w | +7.7% | +3.58% | 400.45 | — | 20%  |
 | [KSCL](https://in.tradingview.com/chart/?symbol=NSE:KSCL)<br><sub>↑CMF15d</sub> | Hybrid seeds for field crops vegetables agriculture | 1w | ABOVE | 1w | +2.2% | +4.32% | 744.30 | — | 20%  |
-| [GREENPANEL](https://in.tradingview.com/chart/?symbol=NSE:GREENPANEL)<br><sub>↑CMF5d · DEL87%(T-1)</sub> | MDF and plywood manufacturer for furniture construction | 1w | ABOVE | 1w | +3.0% | +3.20% | 154.74 | — | 20%  |
+| [GREENPANEL](https://in.tradingview.com/chart/?symbol=NSE:GREENPANEL)<br><sub>↑CMF5d</sub> | MDF and plywood manufacturer for furniture construction | 1w | ABOVE | 1w | +3.0% | +3.20% | 154.74 | — | 20%  |
 | [SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN)<br><sub>↓CMF30d</sub> | Product engineering, semiconductors, automotive, consumer electronics | 1w | ABOVE | 1w | +7.8% | +1.54% | 1864.40 | 2w | 10% 🟩 |
 | [IVALUE](https://in.tradingview.com/chart/?symbol=NSE:IVALUE)<br><sub>↑CMF8d</sub> | IT distributor hybrid cloud solutions enterprise security | 1w | ABOVE | 1w | +11.4% | -1.46% | 233.61 | — | 20%  |
 | [JKLAKSHMI](https://in.tradingview.com/chart/?symbol=NSE:JKLAKSHMI)<br><sub>↑CMF5d</sub> | Integrated cement manufacturer serving construction across regions | 1w | ABOVE | 1w | +0.3% | -2.77% | 501.60 | — | 20%  |
