@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-11-18
-*Generated 2026-11-18 15:58 IST*
+# US ZL Squeeze Scan — 2026-11-19
+*Generated 2026-11-19 15:56 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -22,14 +22,14 @@
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [KLAR](https://www.tradingview.com/chart/?symbol=KLAR) | 14.27 | +4.70% | 3.6x | 12d | 2d | +12.3% | ✓ | ✓ | ✓ |
-| [TXNM](https://www.tradingview.com/chart/?symbol=TXNM) | 58.93 | -0.02% | 3.4x | 27d | 4d | +1.4% | ✓ | ✓ | ✓ |
-| [UNFI](https://www.tradingview.com/chart/?symbol=UNFI) | 51.99 | +7.44% | 1.7x | 8d | 6d | +13.0% | ✓ | ✓ | ✓ |
-| [OMF](https://www.tradingview.com/chart/?symbol=OMF) | 56.84 | +3.76% | 3.2x | 12d | 0d | +3.8% | ✓ | ✓ | — |
-| [SA](https://www.tradingview.com/chart/?symbol=SA) | 26.28 | +7.27% | 3.2x | 6d | 0d | +7.3% | ✓ | ✓ | — |
-| [RARE](https://www.tradingview.com/chart/?symbol=RARE) | 16.70 | +5.03% | 1.6x | 3d | 0d | +5.0% | ✓ | ✓ | — |
-| [QVCG](https://www.tradingview.com/chart/?symbol=QVCG) | 9.01 | +7.78% | 3.3x | 2d | 2d | +16.1% | ✓ | ✓ | — |
-| [BXDC](https://www.tradingview.com/chart/?symbol=BXDC) | 16.58 | -0.96% | 2.0x | 11d | 6d | +3.6% | ✓ | ✓ | — |
+| [OCTV](https://www.tradingview.com/chart/?symbol=OCTV) | 21.30 | +2.55% | 1.8x | 6d | 0d | +2.5% | ✓ | ✓ | ✓ |
+| [CNX](https://www.tradingview.com/chart/?symbol=CNX) | 36.64 | +2.89% | 1.8x | 1d | 0d | +2.9% | ✓ | ✓ | ✓ |
+| [CAKE](https://www.tradingview.com/chart/?symbol=CAKE) | 120.05 | +7.23% | 1.7x | 11d | 1d | +9.4% | ✓ | ✓ | ✓ |
+| [KLAR](https://www.tradingview.com/chart/?symbol=KLAR) | 14.45 | +1.26% | 1.8x | 13d | 3d | +13.7% | ✓ | ✓ | ✓ |
+| [PRTA](https://www.tradingview.com/chart/?symbol=PRTA) | 8.35 | +1.09% | 1.7x | 30d | 0d | +1.1% | ✓ | ✓ | — |
+| [VITL](https://www.tradingview.com/chart/?symbol=VITL) | 9.60 | +13.61% | 1.6x | 1d | 0d | +13.6% | ✓ | ✓ | — |
+| [OMF](https://www.tradingview.com/chart/?symbol=OMF) | 57.48 | +1.13% | 3.4x | 13d | 1d | +4.9% | ✓ | ✓ | — |
+| [SA](https://www.tradingview.com/chart/?symbol=SA) | 25.55 | -2.78% | 2.5x | 7d | 1d | +4.3% | ✓ | ✓ | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
