@@ -39,7 +39,7 @@
 | [BOROLTD](https://in.tradingview.com/chart/?symbol=NSE:BOROLTD)<br><sub>↑CMF15d</sub> | ✓ SAFE | Laboratory glassware, kitchenware, opalware manufacturer | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 72 | ↑68 | ↓1.020 | 96% | 52% ↑ | ✅8/8 | 🔵0.17x | ↑16d | +37.0% | -2.58% | 20%  |
 | [LUMAXTECH](https://in.tradingview.com/chart/?symbol=NSE:LUMAXTECH)<br><sub>↑CMF19d</sub> | ✓ SAFE | Automotive lamps, plastic parts, chassis for vehicles | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 72 | ↑76 | ↓1.015 | 97% | 81% ↑ | ✅8/8 | 🔵0.37x | ↑19d | +26.1% | -0.30% | 20%  |
 | [VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG)<br><sub>↓CMF30d</sub> | ✓ SAFE | Full truck load transport, LTL, bus operations, logistics | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 72 | ↑66 | ↓1.023 | 100% | 48% ↑ | ✅8/8 | 🔵0.31x | ↑15d | +31.0% | -0.22% | 20%  |
-| [MODIS](https://in.tradingview.com/chart/?symbol=NSE:MODIS)<br><sub>↑CMF11d · DEL71%(T-1)</sub> | ✓ SAFE |  | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 71 | ↑63 | ↓1.024 | 99% | 57% ↑ | ✅8/8 | 🔵0.26x | ↑12d | +16.6% | -0.43% | 20%  |
+| [MODIS](https://in.tradingview.com/chart/?symbol=NSE:MODIS)<br><sub>↑CMF11d</sub> | ✓ SAFE |  | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 71 | ↑63 | ↓1.024 | 99% | 57% ↑ | ✅8/8 | 🔵0.26x | ↑12d | +16.6% | -0.43% | 20%  |
 | [APLLTD](https://in.tradingview.com/chart/?symbol=NSE:APLLTD)<br><sub>↑CMF17d</sub> | ✓ SAFE | Generics and APIs manufacturer serving global pharma markets | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 70 | ↑69 | ↓1.024 | 98% | 61% ↑ | ✅8/8 | 🔵0.38x | ↑17d | +33.0% | -0.82% | 20%  |
 | [VSSL](https://in.tradingview.com/chart/?symbol=NSE:VSSL)<br><sub>↓CMF18d</sub> | ✓ SAFE | Special alloy steel bars automotive suppliers | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 68 | ↑66 | ↓1.014 | 92% | 82% ↑ | ✅8/8 | 🔵0.23x | ↑13d | +8.7% | +0.11% | 20%  |
 | [INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN)<br><sub>↓CMF14d</sub> | ✓ SAFE | Digital commercialization services for global pharma companies | 🏆 ZLEMA25 touch · RS holds · vol dry-up · EMA20 ↑ | 66 | 🔄62 | ↑1.020 | 99% | 55% ↑ | ✅8/8 | 🔵0.50x | ↑15d | +12.1% | +1.90% | 20%  |
@@ -87,7 +87,7 @@
 | Symbol | Trap | Label | Signal | Score | RS | C/AvgC | 52W% | AbvLow | S2 | Vol | ZL | ZL Chg% | Day Chg | Circuit |
 |--------|:----:|-------|--------|------:|:--:|-------:|-----:|-------:|:--:|:---:|:--:|--------:|--------:|:-------:|
 | [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR)<br><sub>↓CMF12d</sub> | ✓ SAFE | Sugar cane processing, ethanol, power generation | 🔵 Bounce EMA50 · RS holds | 73 | ↑94 | ↓1.008 | 85% | 174% ↑ | ✅8/8 | 0.70x | ↑1d | +0.0% | +0.02% | 20% 🟦 |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL)<br><sub>↑CMF0d · DEL64%(T-1)</sub> | ✓ SAFE |  | 🔵 Bounce EMA50 · RS holds | 62 | 🔄86 | ↑1.074 | 82% | 120% ↑ | ✅7/8 | 5.94x | ↑1d | +20.0% | +20.00% | 20% 🟦 |
+| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL)<br><sub>↑CMF0d</sub> | ✓ SAFE |  | 🔵 Bounce EMA50 · RS holds | 62 | 🔄86 | ↑1.074 | 82% | 120% ↑ | ✅7/8 | 5.94x | ↑1d | +20.0% | +20.00% | 20% 🟦 |
 
 ```
 ###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:AVADHSUGAR,NSE:OAL

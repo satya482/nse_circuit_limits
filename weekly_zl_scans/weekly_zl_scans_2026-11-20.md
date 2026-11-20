@@ -59,7 +59,7 @@
 | [GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX)<br><sub>↑CMF4d</sub> | Apparel manufacturer for global fashion brands and retailers | 1w | ABOVE | 1w | +12.0% | +2.57% | 757.60 | — | 20%  |
 | [ACC](https://in.tradingview.com/chart/?symbol=NSE:ACC)<br><sub>↑CMF18d</sub> | Cement and ready-mix concrete for construction infrastructure | 1w | ABOVE | 1w | +4.7% | +0.66% | 1277.00 | — | 20%  |
 | [J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK)<br><sub>↑CMF0d</sub> | Retail corporate banking services Jammu Kashmir Ladakh regions | 1w | ABOVE | 1w | +9.1% | +2.18% | 149.73 | — | 20%  |
-| [SAFARI](https://in.tradingview.com/chart/?symbol=NSE:SAFARI)<br><sub>↑CMF11d · DEL86%(T-1)</sub> | Luggage and travel bags manufacturer for domestic and international consumers | 1w | ABOVE | 1w | +6.8% | +2.19% | 1435.80 | — | 20%  |
+| [SAFARI](https://in.tradingview.com/chart/?symbol=NSE:SAFARI)<br><sub>↑CMF11d</sub> | Luggage and travel bags manufacturer for domestic and international consumers | 1w | ABOVE | 1w | +6.8% | +2.19% | 1435.80 | — | 20%  |
 | [DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT)<br><sub>↑CMF4d</sub> | Fertilizers, bulk chemicals, mining solutions for agriculture | 1w | ABOVE | 1w | +13.9% | -0.88% | 1437.20 | — | 20%  |
 | [TTKHLTCARE](https://in.tradingview.com/chart/?symbol=NSE:TTKHLTCARE)<br><sub>↑CMF3d</sub> | Consumer healthcare OTC brands medical devices condom foods | 1w | ABOVE | 1w | +18.3% | +5.48% | 1110.15 | 4w | 20%  |
 | [SRF](https://in.tradingview.com/chart/?symbol=NSE:SRF)<br><sub>↑CMF21d</sub> | Technical textiles, films, chemicals for automotive, industrial, packaging | 1w | ABOVE | 1w | +1.6% | +0.04% | 2514.80 | — | 20%  |
@@ -88,9 +88,9 @@
 | [TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK)<br><sub>↓CMF30d</sub> | Two-wheeler three-wheeler off-highway tyres manufacturer exporter | 1w | ABOVE | 1w | +7.0% | +0.65% | 4638.70 | — | 20%  |
 | [IVALUE](https://in.tradingview.com/chart/?symbol=NSE:IVALUE)<br><sub>↑CMF10d</sub> | IT distributor hybrid cloud solutions enterprise security | 1w | ABOVE | 1w | +12.3% | +0.02% | 235.52 | — | 20%  |
 | [EIHAHOTELS](https://in.tradingview.com/chart/?symbol=NSE:EIHAHOTELS)<br><sub>↓CMF18d</sub> |  | 1w | ABOVE | 1w | +0.5% | +1.45% | 293.10 | 2w | 20%  |
-| [SHOPERSTOP](https://in.tradingview.com/chart/?symbol=NSE:SHOPERSTOP)<br><sub>↑CMF5d · DEL60%(T-1)</sub> | Department store operator, fashion beauty retail, urban consumers | 1w | ABOVE | 1w | +5.9% | +0.78% | 380.05 | 10w | 20%  |
+| [SHOPERSTOP](https://in.tradingview.com/chart/?symbol=NSE:SHOPERSTOP)<br><sub>↑CMF5d · DEL65%</sub> | Department store operator, fashion beauty retail, urban consumers | 1w | ABOVE | 1w | +5.9% | +0.78% | 380.05 | 10w | 20%  |
 | [SRM](https://in.tradingview.com/chart/?symbol=NSE:SRM)<br><sub>↑CMF4d</sub> | Road and bridge construction for J&K infrastructure projects | 1w | ABOVE | 1w | +4.8% | -1.30% | 424.30 | — | 20%  |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL)<br><sub>↑CMF0d · DEL64%(T-1)</sub> |  | 1w | BELOW | 1w | +8.9% | +20.00% | 516.70 | — | 20% 🟦 |
+| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL)<br><sub>↑CMF0d</sub> |  | 1w | BELOW | 1w | +8.9% | +20.00% | 516.70 | — | 20% 🟦 |
 | [ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND)<br><sub>↓CMF22d</sub> | Textiles denim apparel retail vertically integrated manufacturing | 1w | BELOW | 1w | +3.6% | +0.25% | 526.00 | 8w | 20%  |
 | [AMAGI](https://in.tradingview.com/chart/?symbol=NSE:AMAGI)<br><sub>↓CMF30d</sub> | Cloud SaaS platform for broadcast streaming content monetization | 1w | BELOW | 1w | +5.1% | +0.04% | 575.00 | 4w | 20%  |
 | [SETL](https://in.tradingview.com/chart/?symbol=NSE:SETL)<br><sub>↑CMF6d</sub> | Glass-lined reactors and process equipment for pharma chemicals | 1w | BELOW | 1w | +1.2% | -1.28% | 357.50 | — | 20%  |

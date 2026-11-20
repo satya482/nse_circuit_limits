@@ -41,7 +41,7 @@
 | [UPL](https://in.tradingview.com/chart/?symbol=NSE:UPL) [20%]<br><sub>↑CMF18d</sub> | Agrochemicals pesticides seeds fertilizers global agribusiness | 571.95 | +0.38% | 571.00 | +0.17% | ↑ | ↑13d | 13d | +10.4% | — | 3.2% | 7 | →160Cr · 115Cr |
 | [INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK) [20%]<br><sub>↑CMF6d</sub> | Vehicle finance and retail banking for mass market | 1003.00 | +8.59% | 926.65 | +8.24% | ↑ | ↑14d | 14d | +19.6% | — | 3.4% | 6 | ↗466Cr · 1919Cr |
 | [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) [20%]<br><sub>↑CMF17d</sub> | Apparel manufacturer, exports to global fashion brands | 1435.50 | +2.24% | 1421.70 | +0.97% | ↑ | ↑15d | 15d | +20.4% | — | 5.4% | 5 | ↗37Cr · 50Cr |
-| [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA) [20%]<br><sub>↑CMF15d · DEL74%(T-1)</sub> | NBFC consumer loans MSME financing general insurance | 518.40 | +2.70% | 508.20 | +2.01% | ↑ | ↑17d | 17d | +28.6% | — | 3.5% | 3 | ↘100Cr · 346Cr |
+| [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA) [20%]<br><sub>↑CMF15d</sub> | NBFC consumer loans MSME financing general insurance | 518.40 | +2.70% | 508.20 | +2.01% | ↑ | ↑17d | 17d | +28.6% | — | 3.5% | 3 | ↘100Cr · 346Cr |
 | [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM) [20%]<br><sub>↑CMF4d</sub> | Multi-specialty hospitals and clinics, India healthcare | 779.30 | +5.41% | 750.60 | +3.82% | ↑ | ↑18d | 18d | +17.6% | — | 3.8% | 2 | ↗102Cr · 208Cr |
 | [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↑CMF19d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 1097.05 | +8.57% | 1040.20 | +5.47% | ↑ | ↑21d | 21d | +45.0% | — | 4.6% | 0 | ↘72Cr · 206Cr |
 
