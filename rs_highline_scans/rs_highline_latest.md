@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-## RS High-Line Cross — 2026-11-19
-*Generated 2026-11-19 15:48 IST*
+## RS High-Line Cross — 2026-11-20
+*Generated 2026-11-20 15:47 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -17,38 +17,36 @@
 
 ---
 
-**21 signals — RS high-line cross today**
+**19 signals — RS high-line cross today**
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PWL,NSE:TATATECH,NSE:PRIVISCL,NSE:AMBER,NSE:TATACHEM,NSE:BLUESTARCO,NSE:GABRIEL,NSE:KWIL,NSE:HORIZONIND,NSE:QPOWER,NSE:GPPL,NSE:AEGISVOPAK,NSE:WOCKPHARMA,NSE:NEOGEN,NSE:GPIL,NSE:FLUOROCHEM,NSE:AARTIPHARM,NSE:ASAHIINDIA,NSE:URBANCO,NSE:VOLTAS,NSE:MINDACORP
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BRIGADE,NSE:VIJAYA,NSE:THYROCARE,NSE:NUVOCO,NSE:ANGELONE,NSE:EIHOTEL,NSE:WELSPUNLIV,NSE:JLHL,NSE:AIAENG,NSE:MAXESTATES,NSE:CUB,NSE:SIGNATURE,NSE:MFSL,NSE:UPL,NSE:INDUSINDBK,NSE:PGIL,NSE:POONAWALLA,NSE:ASTERDM,NSE:SGMART
 ```
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [PWL](https://in.tradingview.com/chart/?symbol=NSE:PWL) [20%]<br><sub>↓CMF10d</sub> | Online test prep and upskilling courses for competitive exams | 136.21 | +6.31% | 134.78 | +1.06% | 🔄 | ↑1d | 1d | +6.3% | ● | 4.7% | 89 | ↗155Cr · 822Cr |
-| [TATATECH](https://in.tradingview.com/chart/?symbol=NSE:TATATECH) [20%]<br><sub>↑CMF0d</sub> | Engineering services, product development, automotive manufacturing sector | 703.75 | +7.16% | 668.70 | +5.24% | 🔄 | ↑1d | 1d | +7.2% | ● | 3.5% | 89 | ↗84Cr · 601Cr |
-| [PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL) [20%]<br><sub>↓CMF15d</sub> | Aroma chemicals fragrance ingredients terpenes global export manufacturer | 3535.00 | +2.81% | 3465.00 | +2.02% | ↑ | ↑3d | 3d | +5.1% | ● | 3.5% | 57 | ↘38Cr · 83Cr |
-| [AMBER](https://in.tradingview.com/chart/?symbol=NSE:AMBER) [20%]<br><sub>↑CMF4d</sub> | Room air conditioner manufacturing and electronics contract services provider | 6697.00 | +7.38% | 6330.00 | +5.80% | 🔄 | ↑1d | 1d | +7.4% | — | 5.0% | 49 | ↗456Cr · 802Cr |
-| [TATACHEM](https://in.tradingview.com/chart/?symbol=NSE:TATACHEM) [20%]<br><sub>↓CMF30d</sub> | Soda ash alkali chemicals specialty products manufacturer global | 650.05 | +2.43% | 649.00 | +0.16% | ↑ | ↑5d | 5d | +7.7% | — | 3.3% | 15 | →137Cr · 117Cr |
-| [BLUESTARCO](https://in.tradingview.com/chart/?symbol=NSE:BLUESTARCO) [20%]<br><sub>↑CMF17d</sub> | AC units, refrigeration, MEP projects for commercial facilities | 1764.00 | +8.77% | 1661.90 | +6.14% | ↑ | ↑6d | 6d | +12.8% | — | 3.9% | 14 | ↗116Cr · 544Cr |
-| [GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL) [20%]<br><sub>↑CMF5d</sub> | Shock absorbers and struts for two-wheeler and four-wheeler OEMs | 1585.10 | +6.30% | 1552.70 | +2.09% | ↑ | ↑6d | 6d | +12.6% | — | 4.9% | 14 | ↗190Cr · 250Cr |
-| [KWIL](https://in.tradingview.com/chart/?symbol=NSE:KWIL) [20%]<br><sub>↑CMF13d</sub> |  | 44.44 | +7.11% | 42.65 | +4.20% | ↑ | ↑7d | 7d | +18.3% | — | 4.8% | 13 | ↗69Cr · 142Cr |
-| [HORIZONIND](https://in.tradingview.com/chart/?symbol=NSE:HORIZONIND) [20%]<br><sub>↓CMF30d</sub> | Industrial parks and logistics real estate developer operator | 48.66 | +3.86% | 47.20 | +3.09% | ↑ | ↑7d | 7d | +13.2% | — | 4.4% | 13 | ↘16Cr · 43Cr |
-| [QPOWER](https://in.tradingview.com/chart/?symbol=NSE:QPOWER) [10% 🟩]<br><sub>↓CMF25d</sub> | High-voltage electrical equipment and power quality systems manufacturer | 1619.10 | +4.72% | 1588.00 | +1.96% | ↑ | ↑9d | 9d | +18.8% | — | 4.5% | 11 | ↘47Cr · 64Cr |
-| [GPPL](https://in.tradingview.com/chart/?symbol=NSE:GPPL) [20%]<br><sub>↑CMF0d</sub> | Container and breakbulk cargo port operations Gujarat coast | 178.28 | +2.04% | 176.29 | +1.13% | ↑ | ↑10d | 10d | +10.5% | — | 3.3% | 10 | ↗31Cr · 55Cr |
-| [AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK) [20%]<br><sub>↑CMF4d</sub> | LPG and liquid storage terminals operator, logistics | 284.65 | +1.58% | 282.32 | +0.83% | ↑ | ↑10d | 10d | +20.3% | — | 4.3% | 10 | ↗27Cr · 22Cr |
-| [WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA) [20%]<br><sub>↑CMF10d</sub> | Pharma manufacturer: injectables, orals, topicals, anti-infectives | 2187.00 | +7.91% | 2059.60 | +6.19% | ↑ | ↑11d | 11d | +15.2% | — | 4.0% | 9 | →154Cr · 535Cr |
-| [NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN) [20%]<br><sub>↑CMF5d</sub> | Bromine lithium specialty chemicals pharma agri-chem | 2888.50 | +3.90% | 2796.00 | +3.31% | ↑ | ↑11d | 11d | +27.1% | — | 4.9% | 9 | →55Cr · 54Cr |
-| [GPIL](https://in.tradingview.com/chart/?symbol=NSE:GPIL) [20%]<br><sub>↑CMF3d</sub> | Iron ore mining, pellets, sponge iron, steel production | 228.40 | +3.27% | 223.50 | +2.19% | ↑ | ↑12d | 12d | +18.5% | — | 4.2% | 8 | ↗41Cr · 117Cr |
-| [FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM) [20%]<br><sub>↑CMF11d</sub> | PTFE manufacturer, fluorochemicals, industrial polymers globally | 4978.60 | +3.28% | 4872.40 | +2.18% | ↑ | ↑13d | 13d | +15.1% | — | 3.7% | 7 | →60Cr · 149Cr |
-| [AARTIPHARM](https://in.tradingview.com/chart/?symbol=NSE:AARTIPHARM) [20%]<br><sub>↑CMF13d</sub> | API manufacturer for pharma and nutraceutical companies | 1024.60 | +1.11% | 1023.80 | +0.08% | ↑ | ↑14d | 14d | +17.4% | — | 4.4% | 6 | →68Cr · 51Cr |
-| [ASAHIINDIA](https://in.tradingview.com/chart/?symbol=NSE:ASAHIINDIA) [20%]<br><sub>↑CMF16d</sub> | Automotive and architectural glass solutions manufacturer | 1192.05 | +3.00% | 1168.00 | +2.06% | ↑ | ↑14d | 14d | +31.7% | — | 3.1% | 6 | →28Cr · 38Cr |
-| [URBANCO](https://in.tradingview.com/chart/?symbol=NSE:URBANCO) [20%]<br><sub>↑CMF6d</sub> | Home services marketplace connecting customers with vetted professionals | 176.05 | +1.92% | 173.15 | +1.67% | ↑ | ↑15d | 15d | +20.4% | — | 4.5% | 5 | ↗224Cr · 447Cr |
-| [VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS) [20%]<br><sub>↑CMF17d</sub> | AC units, refrigeration, EPC projects, cooling systems | 1237.00 | +9.03% | 1146.00 | +7.94% | ↑ | ↑17d | 17d | +30.7% | — | 3.9% | 3 | ↗195Cr · 771Cr |
-| [MINDACORP](https://in.tradingview.com/chart/?symbol=NSE:MINDACORP) [20%]<br><sub>↑CMF15d</sub> | Automotive components mechatronics electronics OEM supplier | 753.20 | +5.46% | 740.00 | +1.78% | ↑ | ↑17d | 17d | +23.5% | — | 3.9% | 3 | ↘19Cr · 55Cr |
+| [BRIGADE](https://in.tradingview.com/chart/?symbol=NSE:BRIGADE) [20%]<br><sub>↑CMF0d</sub> | Residential apartments, office spaces, South India developer | 578.35 | +2.15% | 577.00 | +0.23% | ↑ | ↑4d | 4d | +6.7% | ● | 3.4% | 56 | ↘19Cr · 33Cr |
+| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) [20%]<br><sub>↑CMF20d</sub> | Diagnostic imaging and pathology labs, Southern India healthcare | 1572.30 | +4.08% | 1553.70 | +1.20% | ↑ | ↑5d | 5d | +11.5% | ● | 4.0% | 55 | ↗43Cr · 85Cr |
+| [THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE) [20%]<br><sub>↓CMF15d</sub> | Diagnostic labs thyroid tests affordable pathology services | 528.45 | +4.67% | 513.00 | +3.01% | ↑ | ↑8d | 8d | +8.9% | ● | 4.1% | 52 | →66Cr · 481Cr |
+| [NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO) [20%]<br><sub>↓CMF24d</sub> | Cement and ready-mix concrete manufacturer East North India | 358.50 | +2.96% | 352.95 | +1.57% | ↑ | ↑15d | 15d | +11.9% | ● | 3.2% | 45 | ↗40Cr · 352Cr |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) [20%]<br><sub>↓CMF3d</sub> | Retail brokerage app offering stocks commodities currencies | 348.30 | +3.52% | 346.00 | +0.66% | 🔄 | ↑14d | 14d | +20.1% | — | 4.6% | 41 | ↗527Cr · 320Cr |
+| [EIHOTEL](https://in.tradingview.com/chart/?symbol=NSE:EIHOTEL) [20%]<br><sub>↑CMF1d</sub> | Luxury hotels, resorts, flight catering operations | 334.15 | +7.79% | 314.00 | +6.42% | 🔄 | ↑15d | 15d | +16.7% | — | 3.7% | 35 | ↗28Cr · 171Cr |
+| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) [20%]<br><sub>↑CMF14d</sub> | Home textiles manufacturer, flooring, global export focus | 268.78 | +6.18% | 262.16 | +2.53% | 🔄 | ↑16d | 16d | +26.7% | — | 5.3% | 34 | ↘157Cr · 571Cr |
+| [JLHL](https://in.tradingview.com/chart/?symbol=NSE:JLHL) [20%]<br><sub>↑CMF12d</sub> | Tertiary hospital chain Mumbai west India multi-specialty care | 317.40 | +12.87% | 291.35 | +8.94% | 🔄 | ↑26d | 26d | +34.0% | — | 4.9% | 30 | ↗61Cr · 594Cr |
+| [AIAENG](https://in.tradingview.com/chart/?symbol=NSE:AIAENG) [20%]<br><sub>↓CMF13d</sub> | High-chrome mill internals for cement mining grinding operations | 3433.50 | +3.17% | 3345.00 | +2.65% | ↑ | ↑3d | 3d | +5.9% | — | 3.1% | 17 | ↘42Cr · 36Cr |
+| [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES) [20%]<br><sub>↑CMF6d</sub> | Premium residential commercial property developer Delhi NCR | 602.75 | +4.16% | 583.85 | +3.24% | ↑ | ↑10d | 10d | +20.0% | — | 3.9% | 10 | ↗7Cr · 25Cr |
+| [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) [-%]<br><sub>↑CMF0d</sub> | Private bank serving SMEs, MSMEs, retail customers South India | 248.80 | +6.25% | 234.23 | +6.22% | ↑ | ↑12d | 12d | +16.5% | — | 3.7% | 8 | →110Cr · 501Cr |
+| [SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE) [20%]<br><sub>↑CMF7d</sub> | Residential real estate developer NCR affordable mid-segment housing | 859.40 | +1.21% | 859.00 | +0.05% | ↑ | ↑12d | 12d | +21.5% | — | 4.0% | 8 | ↗58Cr · 32Cr |
+| [MFSL](https://in.tradingview.com/chart/?symbol=NSE:MFSL) [20%]<br><sub>↑CMF6d</sub> | Life insurance distribution and investment holding company | 1435.10 | +2.58% | 1432.80 | +0.16% | ↑ | ↑13d | 13d | +21.1% | — | 3.3% | 7 | →174Cr · 291Cr |
+| [UPL](https://in.tradingview.com/chart/?symbol=NSE:UPL) [20%]<br><sub>↑CMF18d</sub> | Agrochemicals pesticides seeds fertilizers global agribusiness | 571.95 | +0.38% | 571.00 | +0.17% | ↑ | ↑13d | 13d | +10.4% | — | 3.2% | 7 | →160Cr · 115Cr |
+| [INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK) [20%]<br><sub>↑CMF6d</sub> | Vehicle finance and retail banking for mass market | 1003.00 | +8.59% | 926.65 | +8.24% | ↑ | ↑14d | 14d | +19.6% | — | 3.4% | 6 | ↗466Cr · 1919Cr |
+| [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) [20%]<br><sub>↑CMF17d</sub> | Apparel manufacturer, exports to global fashion brands | 1435.50 | +2.24% | 1421.70 | +0.97% | ↑ | ↑15d | 15d | +20.4% | — | 5.4% | 5 | ↗37Cr · 50Cr |
+| [POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA) [20%]<br><sub>↑CMF15d · DEL74%(T-1)</sub> | NBFC consumer loans MSME financing general insurance | 518.40 | +2.70% | 508.20 | +2.01% | ↑ | ↑17d | 17d | +28.6% | — | 3.5% | 3 | ↘100Cr · 346Cr |
+| [ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM) [20%]<br><sub>↑CMF4d</sub> | Multi-specialty hospitals and clinics, India healthcare | 779.30 | +5.41% | 750.60 | +3.82% | ↑ | ↑18d | 18d | +17.6% | — | 3.8% | 2 | ↗102Cr · 208Cr |
+| [SGMART](https://in.tradingview.com/chart/?symbol=NSE:SGMART) [20%]<br><sub>↑CMF19d</sub> | Building materials B2B marketplace connecting manufacturers suppliers traders | 1097.05 | +8.57% | 1040.20 | +5.47% | ↑ | ↑21d | 21d | +45.0% | — | 4.6% | 0 | ↘72Cr · 206Cr |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PWL,NSE:TATATECH,NSE:PRIVISCL,NSE:AMBER,NSE:TATACHEM,NSE:BLUESTARCO,NSE:GABRIEL,NSE:KWIL,NSE:HORIZONIND,NSE:QPOWER,NSE:GPPL,NSE:AEGISVOPAK,NSE:WOCKPHARMA,NSE:NEOGEN,NSE:GPIL,NSE:FLUOROCHEM,NSE:AARTIPHARM,NSE:ASAHIINDIA,NSE:URBANCO,NSE:VOLTAS,NSE:MINDACORP
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:BRIGADE,NSE:VIJAYA,NSE:THYROCARE,NSE:NUVOCO,NSE:ANGELONE,NSE:EIHOTEL,NSE:WELSPUNLIV,NSE:JLHL,NSE:AIAENG,NSE:MAXESTATES,NSE:CUB,NSE:SIGNATURE,NSE:MFSL,NSE:UPL,NSE:INDUSINDBK,NSE:PGIL,NSE:POONAWALLA,NSE:ASTERDM,NSE:SGMART
 ```
 
 ---
