@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-11-19
-*Generated 2026-11-19 15:56 IST*
+# US ZL Squeeze Scan — 2026-11-20
+*Generated 2026-11-20 15:58 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,18 +18,12 @@
 
 ---
 
-**8 stocks: ZLEMA25 Rising + Squeeze ON**
+**2 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [OCTV](https://www.tradingview.com/chart/?symbol=OCTV) | 21.30 | +2.55% | 1.8x | 6d | 0d | +2.5% | ✓ | ✓ | ✓ |
-| [CNX](https://www.tradingview.com/chart/?symbol=CNX) | 36.64 | +2.89% | 1.8x | 1d | 0d | +2.9% | ✓ | ✓ | ✓ |
-| [CAKE](https://www.tradingview.com/chart/?symbol=CAKE) | 120.05 | +7.23% | 1.7x | 11d | 1d | +9.4% | ✓ | ✓ | ✓ |
-| [KLAR](https://www.tradingview.com/chart/?symbol=KLAR) | 14.45 | +1.26% | 1.8x | 13d | 3d | +13.7% | ✓ | ✓ | ✓ |
-| [PRTA](https://www.tradingview.com/chart/?symbol=PRTA) | 8.35 | +1.09% | 1.7x | 30d | 0d | +1.1% | ✓ | ✓ | — |
-| [VITL](https://www.tradingview.com/chart/?symbol=VITL) | 9.60 | +13.61% | 1.6x | 1d | 0d | +13.6% | ✓ | ✓ | — |
-| [OMF](https://www.tradingview.com/chart/?symbol=OMF) | 57.48 | +1.13% | 3.4x | 13d | 1d | +4.9% | ✓ | ✓ | — |
-| [SA](https://www.tradingview.com/chart/?symbol=SA) | 25.55 | -2.78% | 2.5x | 7d | 1d | +4.3% | ✓ | ✓ | — |
+| [SPNT](https://www.tradingview.com/chart/?symbol=SPNT) | 26.27 | +1.35% | 2.2x | 1d | 0d | +1.4% | ✓ | ✓ | ✓ |
+| [CTKB](https://www.tradingview.com/chart/?symbol=CTKB) | 6.32 | +6.76% | 1.7x | 3d | 1d | +10.9% | ✓ | ✓ | ✓ |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
