@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-11-20
-*Generated 2026-11-20 15:58 IST*
+# US ZL Squeeze Scan — 2026-11-23
+*Generated 2026-11-23 15:57 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,12 +18,13 @@
 
 ---
 
-**2 stocks: ZLEMA25 Rising + Squeeze ON**
+**3 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [SPNT](https://www.tradingview.com/chart/?symbol=SPNT) | 26.27 | +1.35% | 2.2x | 1d | 0d | +1.4% | ✓ | ✓ | ✓ |
-| [CTKB](https://www.tradingview.com/chart/?symbol=CTKB) | 6.32 | +6.76% | 1.7x | 3d | 1d | +10.9% | ✓ | ✓ | ✓ |
+| [VOR](https://www.tradingview.com/chart/?symbol=VOR) | 19.19 | +3.62% | 2.1x | 24d | 0d | +3.6% | ✓ | ✓ | ✓ |
+| [KVYO](https://www.tradingview.com/chart/?symbol=KVYO) | 22.24 | +4.41% | 1.7x | 4d | 0d | +4.4% | ✓ | ✓ | ✓ |
+| [MATW](https://www.tradingview.com/chart/?symbol=MATW) | 19.39 | +0.10% | 2.6x | 1d | 2d | +4.5% | ✓ | ✓ | — |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
