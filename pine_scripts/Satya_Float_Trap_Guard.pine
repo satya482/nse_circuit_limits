@@ -1,0 +1,194 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © satya_markets
+
+//@version=6
+// Float Trap Guard — NSE small/midcap swing risk screen
+// Shows free-float tradability metrics so you never get trapped on exit.
+// Companion to any fundamental bar — add as separate indicator.
+
+indicator("Satya Float Trap Guard", overlay = false, max_lines_count = 0, max_boxes_count = 0, max_labels_count = 0)
+
+// ── INPUTS ────────────────────────────────────────────────────────────────────
+var G1 = "Exit Sizing (personalised)"
+i_position  = input.float(500000, "Your Position Size (₹)",             group = G1, minval = 10000, step = 50000,
+              tooltip = "How much INR you plan to deploy. Drives Exit Days calculation.")
+i_flow_pct  = input.float(10,     "Max % of Daily Flow Used on Exit",   group = G1, minval = 1, maxval = 30,
+              tooltip = "If 10%, your exit consumes at most 10% of average daily traded value per session.")
+
+var G2 = "Thresholds"
+i_ff_grn    = input.float(300,  "FF MCAP green (Cr ≥)",    group = G2)
+i_ff_yel    = input.float(150,  "FF MCAP yellow (Cr ≥)",   group = G2)
+i_tr_grn    = input.float(0.5,  "FF Turn% green (% ≥)",    group = G2)
+i_tr_yel    = input.float(0.3,  "FF Turn% yellow (% ≥)",   group = G2)
+i_ft_grn    = input.float(2.0,  "Float×20d green (× ≥)",   group = G2)
+i_ft_yel    = input.float(1.0,  "Float×20d yellow (× ≥)",  group = G2)
+i_ex_safe   = input.float(1.0,  "Exit Days safe (≤ d)",    group = G2)
+i_ex_warn   = input.float(3.0,  "Exit Days warn (≤ d)",    group = G2)
+i_val_grn   = input.float(50,   "Today Value green (Cr ≥)",  group = G2)
+i_val_yel   = input.float(15,   "Today Value yellow (Cr ≥)", group = G2)
+i_avgv_grn  = input.float(50,   "Avg10 Value green (Cr ≥)",  group = G2)
+i_avgv_yel  = input.float(15,   "Avg10 Value yellow (Cr ≥)", group = G2)
+
+// ── FUNDAMENTALS ──────────────────────────────────────────────────────────────
+// FLOAT_SHARES_OUTSTANDING only publishes at "FY" (annual) on TradingView —
+// treat float-derived chips as "last known," not live.
+// No institutional/promoter/FII-DII ownership field exists in request.financial();
+// that data has to come from your external scanner/CSV pipeline, not Pine.
+// Daily range metrics displayed in the first table row.
+G_RANGE = "ADR% / ATR / LoD distance"
+show_adrp = input.bool(true, "Show ADR%", group = G_RANGE)
+show_atr = input.bool(false, "Show ATR", group = G_RANGE)
+show_atrp = input.bool(true, "Show ATR%", group = G_RANGE)
+show_lod_dist = input.bool(true, "Show LoD dist.", group = G_RANGE)
+adrp_len = input.int(20, "ADR% Length", minval = 1, group = G_RANGE, tooltip = "The number of daily bars used in the calculation of the ADR%")
+atr_len = input.int(14, "ATR Length", minval = 1, group = G_RANGE, tooltip = "The number of daily bars used in the calculation of the ATR")
+bg_col = input.color(#00000000, "Background Color", group = G_RANGE)
+show_empty_row = input.bool(false, "Add an empty row above the displayed values", group = G_RANGE, tooltip = "Keeps pane icons from overlapping the table text when hovering the pane.")
+
+// Evaluate all components inside the daily context, including ATR denominators.
+f_daily_range() =>
+    daily_atr = ta.atr(atr_len)
+    daily_adrp = 100 * (ta.sma(high / low, adrp_len) - 1)
+    daily_atrp = close > 0 ? 100 * daily_atr / close : na
+    daily_lod_dist = daily_atr > 0 ? 100 * (close - low) / daily_atr : na
+    [daily_adrp, daily_atr, daily_atrp, daily_lod_dist]
+
+[adrp, atr_value, atrp, lod_dist] = request.security(syminfo.tickerid, "D", f_daily_range(), gaps = barmerge.gaps_off, lookahead = barmerge.lookahead_off)
+show_range = not timeframe.isweekly and not timeframe.ismonthly
+
+shares_out = request.financial(syminfo.tickerid, "TOTAL_SHARES_OUTSTANDING", "FQ")
+float_sh   = request.financial(syminfo.tickerid, "FLOAT_SHARES_OUTSTANDING", "FY")
+
+have_float  = not na(float_sh) and float_sh > 0
+have_shares = not na(shares_out) and shares_out > 0
+
+// Staleness tracking — FLOAT_SHARES_OUTSTANDING only refreshes ~once a year.
+// We log the bar-time whenever the reported float value actually changes, so we
+// can flag chips that are running on an old annual figure. Caveat: if your
+// chart's history doesn't go back far enough to capture the last real change,
+// this will underestimate age rather than overestimate it.
+var float float_prev        = na
+var int   float_change_time = na
+if have_float and (na(float_prev) or float_sh != float_prev)
+    float_change_time := time
+    float_prev        := float_sh
+float_age_days = na(float_change_time) ? na : (time - float_change_time) / 86400000.0
+float_stale    = not na(float_age_days) and float_age_days > 270
+
+// ── PRICE / VOLUME BASE ───────────────────────────────────────────────────────
+daily_val  = close * volume
+avg20_val  = ta.sma(daily_val, 20)
+avg10_val  = ta.sma(daily_val, 10)
+avg20_vol  = ta.sma(volume, 20)
+avg10_vol  = ta.sma(volume, 10)
+
+// ── TRADED VALUE (absolute, not float-relative) ──────────────────────────────
+// Pure ₹ size of activity — complements the float-relative chips below, since
+// a stock can score well on float ratios while still being too thin in absolute
+// rupee terms to take meaningful size in.
+val_today_cr = close * volume    / 1e7
+val_avg10_cr = close * avg10_vol / 1e7
+val_ratio    = val_avg10_cr > 0 ? val_today_cr / val_avg10_cr : na
+
+// ── DERIVED FLOAT METRICS ─────────────────────────────────────────────────────
+ff_mcap_cr  = have_float ? (float_sh * close) / 1e7       : na
+float_pct   = have_float and have_shares ? (float_sh / shares_out) * 100 : na
+ff_turn     = have_float and ff_mcap_cr > 0 ? (avg20_val / (ff_mcap_cr * 1e7)) * 100 : na
+ft_20       = have_float ? (avg20_vol * 20) / float_sh     : na
+exit_days   = avg10_val > 0 ? i_position / (avg10_val * i_flow_pct / 100) : na
+vol_surge   = avg20_vol > 0 ? volume / avg20_vol           : na
+
+// ── TRAP SCORE (0–9 danger points) ───────────────────────────────────────────
+// Each red condition = 2 pts, yellow = 1 pt. ≥5 = AVOID, 3–4 = CAUTION, <3 = SAFE.
+// Float-relative checks can look clean even when the stock is just too thin in
+// absolute ₹ terms to deploy real size into — the AVG10 value check catches that.
+pts = 0
+pts := pts + (not na(ff_mcap_cr) ? ff_mcap_cr < i_ff_yel ? 2 : ff_mcap_cr < i_ff_grn ? 1 : 0 : 0)
+pts := pts + (not na(ff_turn)    ? ff_turn    < i_tr_yel ? 2 : ff_turn    < i_tr_grn ? 1 : 0 : 0)
+pts := pts + (not na(exit_days)  ? exit_days  > i_ex_warn * 1.66 ? 2 : exit_days > i_ex_warn ? 1 : 0 : 0)
+pts := pts + (not na(ft_20)      ? ft_20      < i_ft_yel ? 1 : 0 : 0)
+pts := pts + (not na(val_avg10_cr) ? val_avg10_cr < i_avgv_yel ? 2 : val_avg10_cr < i_avgv_grn ? 1 : 0 : 0)
+
+verdict = pts >= 5 ? "⛔ AVOID" : pts >= 3 ? "⚠ CAUTION" : "✓ SAFE"
+v_col   = pts >= 5 ? color.red   : pts >= 3 ? color.yellow : color.lime
+
+// ── COLOR HELPERS ─────────────────────────────────────────────────────────────
+f_asc(v, g, y)  => na(v) ? color.gray : v >= g ? color.lime : v >= y ? color.yellow : color.red
+f_inv(v, s, w)  => na(v) ? color.gray : v <= s ? color.lime : v <= w ? color.yellow : color.red
+
+c_ff   = float_stale ? color.gray : f_asc(ff_mcap_cr, i_ff_grn, i_ff_yel)
+c_fp   = float_stale ? color.gray : f_asc(float_pct,  30.0, 20.0)
+c_ft   = float_stale ? color.gray : f_asc(ff_turn,    i_tr_grn, i_tr_yel)
+c_ft20 = float_stale ? color.gray : f_asc(ft_20,      i_ft_grn, i_ft_yel)
+c_ex   = f_inv(exit_days,  i_ex_safe, i_ex_warn)
+c_vs   = na(vol_surge) ? color.gray : vol_surge >= 1.5 ? color.lime : vol_surge >= 0.7 ? color.white : color.gray
+c_val  = f_asc(val_today_cr, i_val_grn,  i_val_yel)
+c_avgv = f_asc(val_avg10_cr, i_avgv_grn, i_avgv_yel)
+c_vr   = na(val_ratio) ? color.gray : val_ratio >= 1.5 ? color.lime : val_ratio >= 0.7 ? color.white : color.gray
+
+// ── FORMAT HELPER ─────────────────────────────────────────────────────────────
+f_s(v, fmt, sfx) => na(v) ? "n/a" : str.tostring(v, fmt) + sfx
+
+// ── CHIP TEXT (label + value merged into one cell) ───────────────────────────
+mcap_cr_display = (close * nz(shares_out, 0)) / 1e7
+
+t_ff   = "FFMC " + f_s(ff_mcap_cr, "#,###", "") + (float_stale ? "*" : "")
+t_fp   = "FLS "   + f_s(float_pct,  "#.#",   "%") + (float_stale ? "*" : "")
+t_ft   = "TURN "  + f_s(ff_turn,    "#.##",  "%") + (float_stale ? "*" : "")
+t_ft20 = "F20D " + f_s(ft_20,      "#.##",  "×") + (float_stale ? "*" : "")
+t_ex   = "EXIT "  + f_s(exit_days,  "#.#",   "d")
+t_vs   = "VOL "   + f_s(vol_surge,  "#.##",  "×")
+t_mc   = "MCAP "  + f_s(mcap_cr_display > 0 ? mcap_cr_display : na, "#,###", "")
+t_vd   = verdict + " " + str.tostring(pts) + "pt"
+t_val  = "VAL "   + f_s(val_today_cr, "#,###", "Cr")
+t_avgv = "AVG10 " + f_s(val_avg10_cr, "#,###", "Cr")
+t_vr   = "V/A "   + f_s(val_ratio,    "#.##",  "×")
+
+// ── TABLE — value row + condensed chip row, both above the watermark ────────
+var table T = table.new(
+  position.bottom_left, 8, 6,
+  bgcolor      = color.new(color.black, 100),
+  border_color = color.new(color.gray, 100),
+  border_width = 0,
+  frame_color  = color.new(color.gray, 100),
+  frame_width  = 0)
+
+if barstate.islast
+    // Clear first, so disabled metrics and timeframe changes leave no stale cells.
+    table.clear(T, 0, 0, 7, 5)
+    value_row = show_empty_row ? 1 : 0
+    chip_row = value_row + 1
+    if show_empty_row
+        table.cell(T, 0, 0, " ", bgcolor = bg_col, text_size = size.tiny)
+    if show_range
+        range_col = 3
+        if show_adrp
+            table.cell(T, range_col, value_row, "ADR% " + f_s(adrp, "0.00", "%"), bgcolor = color.new(c_val, 80), text_color = c_val, text_size = size.tiny)
+            range_col += 1
+        if show_atr
+            table.cell(T, range_col, value_row, "ATR " + f_s(atr_value, "0.00", ""), bgcolor = color.new(c_val, 80), text_color = c_val, text_size = size.tiny)
+            range_col += 1
+        if show_atrp
+            table.cell(T, range_col, value_row, "ATR% " + f_s(atrp, "0.00", "%"), bgcolor = color.new(c_val, 80), text_color = c_val, text_size = size.tiny)
+            range_col += 1
+        if show_lod_dist
+            table.cell(T, range_col, value_row, "LoD dist. " + f_s(lod_dist, "0", "%"), bgcolor = color.new(c_val, 80), text_color = c_val, text_size = size.tiny)
+
+    // First row: traded value followed by daily range metrics.
+    table.cell(T, 0, value_row, t_val,  bgcolor = color.new(c_val,  80), text_color = c_val,  text_size = size.tiny)
+    table.cell(T, 1, value_row, t_avgv, bgcolor = color.new(c_avgv, 80), text_color = c_avgv, text_size = size.tiny)
+    table.cell(T, 2, value_row, t_vr,   bgcolor = color.new(c_vr,   80), text_color = c_vr,   text_size = size.tiny)
+
+    // Second row: existing float chips.
+    table.cell(T, 0, chip_row, t_ff,   bgcolor = color.new(c_ff,   80), text_color = c_ff,         text_size = size.tiny)
+    table.cell(T, 1, chip_row, t_fp,   bgcolor = color.new(c_fp,   80), text_color = c_fp,         text_size = size.tiny)
+    table.cell(T, 2, chip_row, t_ft,   bgcolor = color.new(c_ft,   80), text_color = c_ft,         text_size = size.tiny)
+    table.cell(T, 3, chip_row, t_ft20, bgcolor = color.new(c_ft20, 80), text_color = c_ft20,       text_size = size.tiny)
+    table.cell(T, 4, chip_row, t_ex,   bgcolor = color.new(c_ex,   80), text_color = c_ex,         text_size = size.tiny)
+    table.cell(T, 5, chip_row, t_vs,   bgcolor = color.new(c_vs,   80), text_color = c_vs,         text_size = size.tiny)
+    table.cell(T, 6, chip_row, t_mc,   bgcolor = color.new(color.silver, 85), text_color = color.silver, text_size = size.tiny)
+    table.cell(T, 7, chip_row, t_vd,   bgcolor = color.new(v_col,  65), text_color = color.white, text_size = size.tiny, text_halign = text.align_center)
+
+
+// Minimal plot to keep pane alive
+plot(na, display = display.none)

@@ -2,6 +2,20 @@
 
 # Repo Handoff
 
+Updated 2026-11-24 by Codex, standalone Float Trap Guard:
+
+- Added `pine_scripts/Satya_Float_Trap_Guard.pine` from the user-provided standalone
+  script. First row places daily ADR%, ATR, ATR%, and LoD distance beside
+  VAL/AVG10/V/A, with individual visibility toggles and optional spacer above.
+  New cells use the existing tiny font, VAL text color and 80%-transparent
+  matching backgrounds; their colors follow VAL thresholds.
+  LoD distance is expressed as a percentage of daily ATR.
+- ADR%, ATR%, and LoD distance default on; ATR defaults off. Range metrics are hidden
+  on weekly/monthly charts. Existing float chips stay on the following row;
+  original risk scoring and pane placement are preserved.
+- Local source checks passed. TradingView compilation and visual validation remain
+  pending. User approved the appearance and authorized commit/push on 2026-11-24.
+
 Updated 2026-11-16 by Codex, vacation recovery and scheduler settings:
 
 - Windows resume events confirm sleep from 2026-11-09 15:38 IST to
