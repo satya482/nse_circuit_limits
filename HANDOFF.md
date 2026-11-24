@@ -12,7 +12,8 @@ Updated 2026-11-24 by Codex, standalone Float Trap Guard:
   LoD distance is expressed as a percentage of daily ATR.
 - ADR%, ATR%, and LoD distance default on; ATR defaults off. Range metrics are hidden
   on weekly/monthly charts. Existing float chips stay on the following row;
-  original risk scoring and pane placement are preserved.
+  second row begins MCAP, verdict/points, FFMC, FLS, TURN, F20D, EXIT, VOL.
+  Original risk scoring and pane placement are preserved.
 - Local source checks passed. TradingView compilation and visual validation remain
   pending. User approved the appearance and authorized commit/push on 2026-11-24.
 

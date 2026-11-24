@@ -179,15 +179,15 @@ if barstate.islast
     table.cell(T, 1, value_row, t_avgv, bgcolor = color.new(c_avgv, 80), text_color = c_avgv, text_size = size.tiny)
     table.cell(T, 2, value_row, t_vr,   bgcolor = color.new(c_vr,   80), text_color = c_vr,   text_size = size.tiny)
 
-    // Second row: existing float chips.
-    table.cell(T, 0, chip_row, t_ff,   bgcolor = color.new(c_ff,   80), text_color = c_ff,         text_size = size.tiny)
-    table.cell(T, 1, chip_row, t_fp,   bgcolor = color.new(c_fp,   80), text_color = c_fp,         text_size = size.tiny)
-    table.cell(T, 2, chip_row, t_ft,   bgcolor = color.new(c_ft,   80), text_color = c_ft,         text_size = size.tiny)
-    table.cell(T, 3, chip_row, t_ft20, bgcolor = color.new(c_ft20, 80), text_color = c_ft20,       text_size = size.tiny)
-    table.cell(T, 4, chip_row, t_ex,   bgcolor = color.new(c_ex,   80), text_color = c_ex,         text_size = size.tiny)
-    table.cell(T, 5, chip_row, t_vs,   bgcolor = color.new(c_vs,   80), text_color = c_vs,         text_size = size.tiny)
-    table.cell(T, 6, chip_row, t_mc,   bgcolor = color.new(color.silver, 85), text_color = color.silver, text_size = size.tiny)
-    table.cell(T, 7, chip_row, t_vd,   bgcolor = color.new(v_col,  65), text_color = color.white, text_size = size.tiny, text_halign = text.align_center)
+    // Second row: market cap and safety score first, followed by float chips.
+    table.cell(T, 0, chip_row, t_mc,   bgcolor = color.new(color.silver, 85), text_color = color.silver, text_size = size.tiny)
+    table.cell(T, 1, chip_row, t_vd,   bgcolor = color.new(v_col,  65), text_color = color.white, text_size = size.tiny, text_halign = text.align_center)
+    table.cell(T, 2, chip_row, t_ff,   bgcolor = color.new(c_ff,   80), text_color = c_ff,         text_size = size.tiny)
+    table.cell(T, 3, chip_row, t_fp,   bgcolor = color.new(c_fp,   80), text_color = c_fp,         text_size = size.tiny)
+    table.cell(T, 4, chip_row, t_ft,   bgcolor = color.new(c_ft,   80), text_color = c_ft,         text_size = size.tiny)
+    table.cell(T, 5, chip_row, t_ft20, bgcolor = color.new(c_ft20, 80), text_color = c_ft20,       text_size = size.tiny)
+    table.cell(T, 6, chip_row, t_ex,   bgcolor = color.new(c_ex,   80), text_color = c_ex,         text_size = size.tiny)
+    table.cell(T, 7, chip_row, t_vs,   bgcolor = color.new(c_vs,   80), text_color = c_vs,         text_size = size.tiny)
 
 
 // Minimal plot to keep pane alive
