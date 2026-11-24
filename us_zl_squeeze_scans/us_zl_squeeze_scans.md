@@ -1,6 +1,6 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# US ZL Squeeze Scan — 2026-11-23
-*Generated 2026-11-23 15:57 IST*
+# US ZL Squeeze Scan — 2026-11-24
+*Generated 2026-11-24 15:57 IST*
 
 ### Scan definition
 | Filter | Value |
@@ -18,13 +18,18 @@
 
 ---
 
-**3 stocks: ZLEMA25 Rising + Squeeze ON**
+**8 stocks: ZLEMA25 Rising + Squeeze ON**
 
 | Symbol | Close | Day Chg | Rel Vol | Sqz Days | ZL Days | ZL Chg% | RS_EMA9 | RS_EMA21 | Weekly-RS_EMA9 |
 |--------|------:|--------:|--------:|---------:|--------:|--------:|:-------:|:--------:|:--------------:|
-| [VOR](https://www.tradingview.com/chart/?symbol=VOR) | 19.19 | +3.62% | 2.1x | 24d | 0d | +3.6% | ✓ | ✓ | ✓ |
-| [KVYO](https://www.tradingview.com/chart/?symbol=KVYO) | 22.24 | +4.41% | 1.7x | 4d | 0d | +4.4% | ✓ | ✓ | ✓ |
-| [MATW](https://www.tradingview.com/chart/?symbol=MATW) | 19.39 | +0.10% | 2.6x | 1d | 2d | +4.5% | ✓ | ✓ | — |
+| [OCTV](https://www.tradingview.com/chart/?symbol=OCTV) | 21.26 | +5.04% | 1.8x | 9d | 0d | +5.0% | ✓ | ✓ | ✓ |
+| [CCC](https://www.tradingview.com/chart/?symbol=CCC) | 7.72 | +0.78% | 2.2x | 5d | 0d | +0.8% | ✓ | ✓ | ✓ |
+| [EROK](https://www.tradingview.com/chart/?symbol=EROK) | 21.22 | +7.72% | 17.0x | 4d | 0d | +7.7% | ✓ | ✓ | ✓ |
+| [ZGN](https://www.tradingview.com/chart/?symbol=ZGN) | 13.91 | +3.19% | 1.5x | 3d | 0d | +3.2% | ✓ | ✓ | ✓ |
+| [VOR](https://www.tradingview.com/chart/?symbol=VOR) | 19.97 | +4.06% | 2.2x | 25d | 1d | +7.8% | ✓ | ✓ | ✓ |
+| [CBLL](https://www.tradingview.com/chart/?symbol=CBLL) | 29.29 | +6.94% | 2.0x | 12d | 1d | +13.8% | ✓ | ✓ | ✓ |
+| [MATW](https://www.tradingview.com/chart/?symbol=MATW) | 20.22 | +4.28% | 1.5x | 2d | 3d | +8.9% | ✓ | ✓ | ✓ |
+| [DMRA](https://www.tradingview.com/chart/?symbol=DMRA) | 23.35 | +0.56% | 1.5x | 6d | 5d | +8.1% | ✓ | ✓ | ✓ |
 ---
 
 *⚠️ Disclaimer: I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.*
