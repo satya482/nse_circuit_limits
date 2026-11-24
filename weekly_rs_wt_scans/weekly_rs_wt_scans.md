@@ -1,10 +1,10 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 
-# Weekly RS EMA21 + WT1 Uptrend — 2026-11-23
+# Weekly RS EMA21 + WT1 Uptrend — 2026-11-24
 
-Price data: 2026-11-23. Current developing week included; signals can change before the week closes. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Weekly RS = stock close / NIFTY MIDSML 400 close x 1000; EMA21 uses adjust=False. Weekly WT1 uses HLC3, EMA10 channel and EMA21 smoothing, matching the existing WaveTrend calculator. Both latest weekly values must be strictly greater than their previous weekly values. Minimum 22 weekly bars; all available history up to 1500 daily bars. Flat slopes do not qualify. No daily EMA200, 52-week-high, float, liquidity, WT1 zero-line or WT2 gate. No manual-list bypass. All qualifiers are shown.
+Price data: 2026-11-24. Current developing week included; signals can change before the week closes. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Weekly RS = stock close / NIFTY MIDSML 400 close x 1000; EMA21 uses adjust=False. Weekly WT1 uses HLC3, EMA10 channel and EMA21 smoothing, matching the existing WaveTrend calculator. Both latest weekly values must be strictly greater than their previous weekly values. Minimum 22 weekly bars; all available history up to 1500 daily bars. Flat slopes do not qualify. No daily EMA200, 52-week-high, float, liquidity, WT1 zero-line or WT2 gate. No manual-list bypass. All qualifiers are shown.
 
-Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
+Universe: 1439 | Evaluated: 990 | Qualified: 235 | Excluded: 449
 
 [Weekly chart dashboard](../dashboard/weekly_rs_wt.html)
 
@@ -256,12 +256,12 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 
 ## Excluded data
 
-- 3BBLACKBIO: missing sessions or benchmark history mismatch
+- 3BBLACKBIO: missing latest benchmark session
 - AARTIPHARM: missing sessions or benchmark history mismatch
 - ABB: missing latest benchmark session
 - ABCAPITAL: missing latest benchmark session
 - ACCENTMIC: missing OHLC history
-- ACGL: missing sessions or benchmark history mismatch
+- ACGL: missing latest benchmark session
 - ADANIENSOL: missing latest benchmark session
 - ADANIENT: missing latest benchmark session
 - ADANIGREEN: missing latest benchmark session
@@ -269,9 +269,9 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - ADANIPOWER: missing latest benchmark session
 - ADVAIT: missing sessions or benchmark history mismatch
 - AEQUS: missing sessions or benchmark history mismatch
-- AEROPLANE: missing sessions or benchmark history mismatch
+- AEROPLANE: missing latest benchmark session
 - AIMTRON: missing OHLC history
-- AKCAPIT: missing sessions or benchmark history mismatch
+- AKCAPIT: missing latest benchmark session
 - ALGOQUANT: missing sessions or benchmark history mismatch
 - ALIVUS: missing sessions or benchmark history mismatch
 - ALLTIME: missing sessions or benchmark history mismatch
@@ -282,22 +282,21 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - ANAWIL: missing OHLC history
 - ANONDITA: missing OHLC history
 - ANZEN: missing OHLC history
-- AONESTEELS: missing sessions or benchmark history mismatch
+- AONESTEELS: missing latest benchmark session
 - APOLLOHOSP: missing latest benchmark session
-- ARCIL: missing sessions or benchmark history mismatch
+- ARCIL: missing latest benchmark session
 - ARSSBL: missing sessions or benchmark history mismatch
-- ARYAMAN: missing sessions or benchmark history mismatch
-- ASHIKAG: missing sessions or benchmark history mismatch
+- ARYAMAN: missing latest benchmark session
+- ASHIKAG: missing latest benchmark session
 - ASIANENE: missing sessions or benchmark history mismatch
 - ASIANPAINT: missing latest benchmark session
-- ASTAR: missing latest benchmark session
 - ATLANTAELE: missing sessions or benchmark history mismatch
-- AUGMONT: missing sessions or benchmark history mismatch
+- AUGMONT: missing latest benchmark session
 - AUROPHARMA: missing latest benchmark session
 - AVADHSUGAR: missing sessions or benchmark history mismatch
 - AWL: missing sessions or benchmark history mismatch
 - AXISBANK: missing latest benchmark session
-- AYE: missing sessions or benchmark history mismatch
+- AYE: missing latest benchmark session
 - BAFNAPH: missing OHLC history
 - BAGMANE.RR: missing OHLC history
 - BAJAJFINSV: missing latest benchmark session
@@ -307,27 +306,27 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - BANKBARODA: missing latest benchmark session
 - BANKINDIA: inconsistent OHLC prices
 - BEL: missing latest benchmark session
-- BELDING: missing sessions or benchmark history mismatch
-- BENARAS: missing sessions or benchmark history mismatch
-- BENGALASM: missing sessions or benchmark history mismatch
+- BELDING: missing latest benchmark session
+- BENARAS: missing latest benchmark session
+- BENGALASM: missing latest benchmark session
 - BETA: missing sessions or benchmark history mismatch
 - BGRENERGY: missing OHLC history
 - BHAGERIA: missing sessions or benchmark history mismatch
 - BHARATFORG: missing sessions or benchmark history mismatch
 - BHEL: missing latest benchmark session
 - BIRET.RR: missing OHLC history
-- BLEL: missing sessions or benchmark history mismatch
-- BLIL: missing sessions or benchmark history mismatch
+- BLEL: missing latest benchmark session
+- BLIL: missing latest benchmark session
 - BLISSGVS: missing latest benchmark session
-- BLSPOLY: insufficient history: need 22 weekly bars
+- BLSPOLY: missing latest benchmark session
 - BLUESTONE: missing sessions or benchmark history mismatch
 - BODALCHEM: missing latest benchmark session
-- BONDADA: insufficient history: need 22 weekly bars
-- BONFIG: insufficient history: need 22 weekly bars
+- BONDADA: missing latest benchmark session
+- BONFIG: missing latest benchmark session
 - BOSCHLTD: missing latest benchmark session
 - BOSCH_HCIL: missing OHLC history
 - BPCL: missing latest benchmark session
-- BPLPHARMA: missing sessions or benchmark history mismatch
+- BPLPHARMA: missing latest benchmark session
 - BRITANNIA: missing latest benchmark session
 - BSE: missing latest benchmark session
 - BUILDPRO: missing sessions or benchmark history mismatch
@@ -336,19 +335,19 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - CAPILLARY: missing sessions or benchmark history mismatch
 - CAPINVIT: missing OHLC history
 - CCAVENUE: missing sessions or benchmark history mismatch
-- CEINSYS: missing sessions or benchmark history mismatch
+- CEINSYS: missing latest benchmark session
 - CGPOWER: missing latest benchmark session
 - CHOLAFIN: missing latest benchmark session
 - CIPLA: missing latest benchmark session
-- CLEANMAX: missing sessions or benchmark history mismatch
-- CMLL: missing sessions or benchmark history mismatch
-- CMPDI: missing sessions or benchmark history mismatch
-- CMRGREEN: missing sessions or benchmark history mismatch
+- CLEANMAX: missing latest benchmark session
+- CMLL: missing latest benchmark session
+- CMPDI: missing latest benchmark session
+- CMRGREEN: missing latest benchmark session
 - COALINDIA: missing latest benchmark session
-- COCKERILL: missing sessions or benchmark history mismatch
+- COCKERILL: missing latest benchmark session
 - COMSYN: missing sessions or benchmark history mismatch
 - CONSOFINVT: missing sessions or benchmark history mismatch
-- CORDELIA: missing sessions or benchmark history mismatch
+- CORDELIA: missing latest benchmark session
 - CORONA: missing sessions or benchmark history mismatch
 - CPPLUS: missing sessions or benchmark history mismatch
 - CRAMC: missing sessions or benchmark history mismatch
@@ -356,12 +355,12 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - CUMMINSIND: missing latest benchmark session
 - DANISH: missing OHLC history
 - DBREALTY: missing sessions or benchmark history mismatch
-- DECNGOLD: missing sessions or benchmark history mismatch
+- DECNGOLD: missing latest benchmark session
 - DEEDEV: missing sessions or benchmark history mismatch
-- DEEPA: missing sessions or benchmark history mismatch
-- DHOOTTRANS: missing sessions or benchmark history mismatch
+- DEEPA: missing latest benchmark session
+- DHOOTTRANS: missing latest benchmark session
 - DIACABS: missing sessions or benchmark history mismatch
-- DISAQ: missing sessions or benchmark history mismatch
+- DISAQ: missing latest benchmark session
 - DIVISLAB: missing latest benchmark session
 - DLF: missing latest benchmark session
 - DMART: missing latest benchmark session
@@ -371,35 +370,35 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - DRAGARWQ: missing latest benchmark session
 - DRREDDY: missing latest benchmark session
 - E2E: missing sessions or benchmark history mismatch
-- EDELALTS: insufficient history: need 22 weekly bars
+- EDELALTS: missing latest benchmark session
 - EFCIL: missing sessions or benchmark history mismatch
 - EICHERMOT: missing latest benchmark session
-- ELANTAS: missing sessions or benchmark history mismatch
-- ELEVATE: missing sessions or benchmark history mismatch
+- ELANTAS: missing latest benchmark session
+- ELEVATE: missing latest benchmark session
 - ELPROINTL: missing latest benchmark session
 - EMBASSY.RR: missing OHLC history
 - EMIL: missing sessions or benchmark history mismatch
 - EMMVEE: missing sessions or benchmark history mismatch
 - ENRIN: missing latest benchmark session
 - EPACKPEB: missing sessions or benchmark history mismatch
-- ESDS: missing sessions or benchmark history mismatch
+- ESDS: missing latest benchmark session
 - ETERNAL: missing latest benchmark session
 - EUROPRATIK: missing sessions or benchmark history mismatch
-- EVONILE: missing sessions or benchmark history mismatch
-- FEDDERSHOL: missing sessions or benchmark history mismatch
-- FERMENTA: missing sessions or benchmark history mismatch
+- EVONILE: missing latest benchmark session
+- FEDDERSHOL: missing latest benchmark session
+- FERMENTA: missing latest benchmark session
 - FORCEMOT: missing sessions or benchmark history mismatch
-- FRACTAL: missing sessions or benchmark history mismatch
-- FREDUN: missing sessions or benchmark history mismatch
-- FRONTSP: missing sessions or benchmark history mismatch
+- FRACTAL: missing latest benchmark session
+- FREDUN: missing latest benchmark session
+- FRONTSP: missing latest benchmark session
 - FUSION: missing sessions or benchmark history mismatch
-- FUSIONCX: insufficient history: need 22 weekly bars
+- FUSIONCX: missing latest benchmark session
 - GAIL: missing latest benchmark session
-- GAJA: missing sessions or benchmark history mismatch
+- GAJA: missing latest benchmark session
 - GCSL: missing sessions or benchmark history mismatch
 - GKENERGY: missing sessions or benchmark history mismatch
 - GKSL: missing sessions or benchmark history mismatch
-- GLASSWALL: missing sessions or benchmark history mismatch
+- GLASSWALL: missing latest benchmark session
 - GLAXO: inconsistent OHLC prices
 - GMRAIRPORT: missing latest benchmark session
 - GODREJCP: missing sessions or benchmark history mismatch
@@ -407,44 +406,45 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - GRASIM: missing latest benchmark session
 - GRAUWEIL: missing sessions or benchmark history mismatch
 - GROWW: missing latest benchmark session
-- GSPCROP: missing sessions or benchmark history mismatch
-- GSPLTRANS: missing sessions or benchmark history mismatch
+- GSPCROP: missing latest benchmark session
+- GSPLTRANS: missing latest benchmark session
 - GUJENERGY: missing sessions or benchmark history mismatch
 - GVT&D: missing latest benchmark session
-- GYFTR: missing sessions or benchmark history mismatch
+- GYFTR: missing latest benchmark session
 - HAL: missing latest benchmark session
-- HAWKINCOOK: missing sessions or benchmark history mismatch
+- HAWKINCOOK: missing latest benchmark session
 - HCLTECH: missing latest benchmark session
 - HDFCAMC: missing latest benchmark session
 - HDFCLIFE: missing latest benchmark session
-- HDFIRE: insufficient history: need 22 weekly bars
+- HDFIRE: missing latest benchmark session
 - HEGAM: missing sessions or benchmark history mismatch
 - HEROMOTOCO: missing latest benchmark session
-- HEROMOTORS: missing sessions or benchmark history mismatch
+- HEROMOTORS: missing latest benchmark session
 - HFCL: missing latest benchmark session
 - HINDALCO: missing latest benchmark session
 - HINDUNILVR: missing latest benchmark session
 - HINDZINC: missing latest benchmark session
+- HMT: missing OHLC history
 - HOMEFIRST: missing sessions or benchmark history mismatch
 - HYUNDAI: missing latest benchmark session
 - ICICIAMC: missing latest benchmark session
 - ICICILIFE: missing sessions or benchmark history mismatch
 - IDEAFORGE: missing sessions or benchmark history mismatch
-- INA: missing sessions or benchmark history mismatch
+- INA: missing latest benchmark session
 - INDHOTEL: missing latest benchmark session
 - INDIAGLYCO: missing sessions or benchmark history mismatch
 - INDIANB: missing latest benchmark session
 - INDIGO: missing latest benchmark session
 - INDIGOPNTS: missing sessions or benchmark history mismatch
 - INDIGRID: missing OHLC history
-- INDOKEM: missing sessions or benchmark history mismatch
-- INDOMIM: missing sessions or benchmark history mismatch
+- INDOKEM: missing latest benchmark session
+- INDOMIM: missing latest benchmark session
 - INDOTECH: missing sessions or benchmark history mismatch
-- INDPRUD: missing sessions or benchmark history mismatch
+- INDPRUD: missing latest benchmark session
 - INDUSINVIT: missing OHLC history
 - INDUSTOWER: missing latest benchmark session
 - INFY: missing latest benchmark session
-- INVPRECQ: missing sessions or benchmark history mismatch
+- INVPRECQ: missing latest benchmark session
 - IOC: missing latest benchmark session
 - IRFC: missing latest benchmark session
 - IRISDOREME: missing sessions or benchmark history mismatch
@@ -457,42 +457,43 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - JINDALSTEL: missing latest benchmark session
 - JIOFIN: missing latest benchmark session
 - JKPAPER: inconsistent OHLC prices
-- JNPR: missing sessions or benchmark history mismatch
+- JKSHAH: missing OHLC history
+- JNPR: missing latest benchmark session
 - JSLL: missing sessions or benchmark history mismatch
 - JSWCEMENT: missing sessions or benchmark history mismatch
 - JSWENERGY: missing sessions or benchmark history mismatch
 - JSWSTEEL: missing latest benchmark session
-- JYOTIRES: missing sessions or benchmark history mismatch
+- JYOTIRES: missing latest benchmark session
 - KABRAEXTRU: missing latest benchmark session
-- KAMAHOLD: missing sessions or benchmark history mismatch
-- KANOHAR: missing sessions or benchmark history mismatch
+- KAMAHOLD: missing latest benchmark session
+- KANOHAR: missing latest benchmark session
 - KAPSTON: missing sessions or benchmark history mismatch
-- KARAMTARA: missing sessions or benchmark history mismatch
+- KARAMTARA: missing latest benchmark session
 - KENNAMET: missing sessions or benchmark history mismatch
-- KHAZANCHI: insufficient history: need 22 weekly bars
+- KHAZANCHI: missing latest benchmark session
 - KICL: missing latest benchmark session
 - KIRLFER: missing sessions or benchmark history mismatch
-- KISSHT: missing sessions or benchmark history mismatch
+- KISSHT: missing latest benchmark session
 - KLBRENG_B: missing OHLC history
-- KMCSHIL: missing sessions or benchmark history mismatch
-- KNACK: missing sessions or benchmark history mismatch
+- KMCSHIL: missing latest benchmark session
+- KNACK: missing latest benchmark session
 - KODYTECH: missing OHLC history
 - KOPRAN: missing sessions or benchmark history mismatch
-- KOTIC: missing sessions or benchmark history mismatch
+- KOTIC: missing latest benchmark session
 - KOVAI: missing sessions or benchmark history mismatch
-- KPL: missing sessions or benchmark history mismatch
+- KPL: missing latest benchmark session
 - KRISHNADEF: missing sessions or benchmark history mismatch
 - KRN: missing sessions or benchmark history mismatch
 - KRT.RR: missing OHLC history
 - KSHINTL: missing sessions or benchmark history mismatch
-- KUSUMGAR: missing sessions or benchmark history mismatch
-- LALITHAA: missing sessions or benchmark history mismatch
-- LASERPOWER: missing sessions or benchmark history mismatch
+- KUSUMGAR: missing latest benchmark session
+- LALITHAA: missing latest benchmark session
+- LASERPOWER: missing latest benchmark session
 - LATENTVIEW: missing sessions or benchmark history mismatch
 - LAURUSLABS: missing latest benchmark session
-- LCCPROJECT: missing sessions or benchmark history mismatch
-- LCL: missing sessions or benchmark history mismatch
-- LEAPIND: missing sessions or benchmark history mismatch
+- LCCPROJECT: missing latest benchmark session
+- LCL: missing latest benchmark session
+- LEAPIND: missing latest benchmark session
 - LENSKART: missing latest benchmark session
 - LGEINDIA: missing latest benchmark session
 - LGHL: missing latest benchmark session
@@ -500,16 +501,16 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - LODHA: missing latest benchmark session
 - LOTUSDEV: missing sessions or benchmark history mismatch
 - LTM: missing latest benchmark session
-- LUMINO: missing sessions or benchmark history mismatch
+- LUMINO: missing latest benchmark session
 - LUPIN: missing sessions or benchmark history mismatch
 - M&M: missing latest benchmark session
 - MAHASTEEL: missing latest benchmark session
 - MAHSCOOTER: missing sessions or benchmark history mismatch
-- MANIPALHOS: missing sessions or benchmark history mismatch
+- MANIPALHOS: missing latest benchmark session
 - MANKIND: missing latest benchmark session
 - MARICO: missing latest benchmark session
 - MARINE: missing sessions or benchmark history mismatch
-- MARSONS: missing sessions or benchmark history mismatch
+- MARSONS: missing latest benchmark session
 - MARUTI: missing latest benchmark session
 - MAXHEALTH: missing latest benchmark session
 - MAZDOCK: missing sessions or benchmark history mismatch
@@ -519,28 +520,28 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - MEESHO: missing latest benchmark session
 - MENONBE: missing sessions or benchmark history mismatch
 - MIDWESTLTD: missing latest benchmark session
-- MIIL: missing sessions or benchmark history mismatch
-- MILKYMIST: missing sessions or benchmark history mismatch
+- MIIL: missing latest benchmark session
+- MILKYMIST: missing latest benchmark session
 - MINDSPACE.RR: missing OHLC history
 - MMP: missing sessions or benchmark history mismatch
 - MODISONLTD: missing latest benchmark session
-- MOLBIO: missing sessions or benchmark history mismatch
-- MONEYVIEW: missing sessions or benchmark history mismatch
+- MOLBIO: missing latest benchmark session
+- MONEYVIEW: missing latest benchmark session
 - MONOLITH: missing OHLC history
 - MOREPENLAB: missing latest benchmark session
 - MOTHERSON: missing latest benchmark session
-- MPIMANIPAL: missing sessions or benchmark history mismatch
+- MPIMANIPAL: missing latest benchmark session
 - MTARTECH: missing sessions or benchmark history mismatch
 - MUTHOOTFIN: missing latest benchmark session
-- MVELECTRO: missing sessions or benchmark history mismatch
+- MVELECTRO: missing latest benchmark session
 - NAM_INDIA: missing OHLC history
 - NDRAUTO: missing sessions or benchmark history mismatch
 - NEPHROPLUS: missing sessions or benchmark history mismatch
 - NESTLEIND: missing latest benchmark session
 - NHIT: missing OHLC history
 - NINSYS: missing sessions or benchmark history mismatch
-- NIRLON: missing sessions or benchmark history mismatch
-- NITTAGELA: missing sessions or benchmark history mismatch
+- NIRLON: missing latest benchmark session
+- NITTAGELA: missing latest benchmark session
 - NPST: missing sessions or benchmark history mismatch
 - NRAIL: missing sessions or benchmark history mismatch
 - NRL: missing sessions or benchmark history mismatch
@@ -553,16 +554,16 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - OMNI: missing latest benchmark session
 - ONGC: missing latest benchmark session
 - ORIANA: missing OHLC history
-- ORIENTCABL: missing sessions or benchmark history mismatch
+- ORIENTCABL: missing latest benchmark session
 - ORKLAINDIA: missing sessions or benchmark history mismatch
 - PACEDIGITK: missing sessions or benchmark history mismatch
-- PANORAMA: missing sessions or benchmark history mismatch
-- PARASHLTH: insufficient history: need 22 weekly bars
+- PANORAMA: missing latest benchmark session
+- PARASHLTH: missing latest benchmark session
 - PARKHOSPS: missing sessions or benchmark history mismatch
 - PAUSHAKLTD: missing sessions or benchmark history mismatch
 - PAYTM: missing latest benchmark session
-- PCCL: missing OHLC history
-- PERNIASPOP: missing sessions or benchmark history mismatch
+- PERMAGN: missing latest benchmark session
+- PERNIASPOP: missing latest benchmark session
 - PERSISTENT: missing latest benchmark session
 - PFC: missing latest benchmark session
 - PFOCUS: missing sessions or benchmark history mismatch
@@ -572,14 +573,14 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - PIRAMALFIN: missing sessions or benchmark history mismatch
 - PIXTRANS: missing sessions or benchmark history mismatch
 - PNB: missing latest benchmark session
-- PNGSREVA: missing sessions or benchmark history mismatch
+- PNGSREVA: missing latest benchmark session
 - POCL: missing sessions or benchmark history mismatch
 - POLYCAB: missing latest benchmark session
 - POWERGRID: missing latest benchmark session
-- POWERICA: missing sessions or benchmark history mismatch
+- POWERICA: missing latest benchmark session
 - POWERINDIA: missing latest benchmark session
-- PRADPME: missing sessions or benchmark history mismatch
-- PRASOLCHEM: missing sessions or benchmark history mismatch
+- PRADPME: missing latest benchmark session
+- PRASOLCHEM: missing latest benchmark session
 - PRIZOR: missing OHLC history
 - PWL: missing sessions or benchmark history mismatch
 - QPOWER: missing sessions or benchmark history mismatch
@@ -587,63 +588,63 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - RAMBHAJO: missing latest benchmark session
 - REGAAL: missing sessions or benchmark history mismatch
 - RELINFRA: missing OHLC history
-- RENTOMOJO: missing sessions or benchmark history mismatch
-- RIR: missing sessions or benchmark history mismatch
+- RENTOMOJO: missing latest benchmark session
+- RIR: missing latest benchmark session
 - RISHABH: inconsistent OHLC prices
 - ROTO: missing sessions or benchmark history mismatch
-- RSL: missing sessions or benchmark history mismatch
+- RSL: missing latest benchmark session
 - RUBICON: missing sessions or benchmark history mismatch
 - RUBYMILLS: missing sessions or benchmark history mismatch
-- RUNWALENTR: missing sessions or benchmark history mismatch
+- RUNWALENTR: missing latest benchmark session
 - SAATVIKGL: missing sessions or benchmark history mismatch
 - SAHANA: missing OHLC history
-- SAIPARENT: missing sessions or benchmark history mismatch
+- SAIPARENT: missing latest benchmark session
 - SALSTEEL: missing sessions or benchmark history mismatch
 - SBIFUNDS: missing latest benchmark session
 - SBILIFE: missing latest benchmark session
-- SEDEMAC: missing sessions or benchmark history mismatch
-- SEIL: missing sessions or benchmark history mismatch
+- SEDEMAC: missing latest benchmark session
+- SEIL: missing latest benchmark session
 - SEITINVIT: missing OHLC history
 - SEJALLTD: missing sessions or benchmark history mismatch
-- SFCTECH: insufficient history: need 22 weekly bars
+- SFCTECH: missing latest benchmark session
 - SGFIN: missing sessions or benchmark history mismatch
 - SGMART: missing sessions or benchmark history mismatch
 - SHADOWFAX: missing sessions or benchmark history mismatch
-- SHANKESH: missing sessions or benchmark history mismatch
+- SHANKESH: missing latest benchmark session
 - SHILCTECH: missing sessions or benchmark history mismatch
-- SHIPROCKET: missing sessions or benchmark history mismatch
+- SHIPROCKET: missing latest benchmark session
 - SHREEJISPG: missing sessions or benchmark history mismatch
 - SHREMINVIT: missing OHLC history
 - SHRINGARMS: missing sessions or benchmark history mismatch
 - SHRIPISTON: missing sessions or benchmark history mismatch
 - SHRIRAMFIN: missing latest benchmark session
-- SHUKRAMED: missing sessions or benchmark history mismatch
+- SHUKRAMED: missing latest benchmark session
 - SIEMENS: missing latest benchmark session
 - SIGMAADV: missing latest benchmark session
-- SIKA: missing sessions or benchmark history mismatch
+- SIKA: missing latest benchmark session
 - SILVERTUC: missing sessions or benchmark history mismatch
 - SKFINDUS: missing sessions or benchmark history mismatch
-- SKYWAYS: missing sessions or benchmark history mismatch
-- SMT: insufficient history: need 22 weekly bars
+- SKYWAYS: missing latest benchmark session
+- SMT: missing latest benchmark session
 - SOLARINDS: missing latest benchmark session
 - SPECTRUM: missing sessions or benchmark history mismatch
 - SPMLINFRA: missing sessions or benchmark history mismatch
-- SSRETAIL: missing sessions or benchmark history mismatch
+- SSRETAIL: missing latest benchmark session
 - STALLION: missing sessions or benchmark history mismatch
 - STARHEALTH: missing sessions or benchmark history mismatch
-- STEAMHOUSE: missing sessions or benchmark history mismatch
+- STEAMHOUSE: missing latest benchmark session
 - STLTECH: missing latest benchmark session
 - STUDDS: missing sessions or benchmark history mismatch
 - STYL: missing sessions or benchmark history mismatch
 - STYLEBAAZA: missing sessions or benchmark history mismatch
 - SUDEEPPHRM: missing sessions or benchmark history mismatch
 - SUNPHARMA: missing latest benchmark session
-- SUNRAKSHAK: missing sessions or benchmark history mismatch
-- SUNSHINE: missing sessions or benchmark history mismatch
+- SUNRAKSHAK: missing latest benchmark session
+- SUNSHINE: missing latest benchmark session
 - SWANDEF: missing OHLC history
-- SYMBIOTEC: missing sessions or benchmark history mismatch
+- SYMBIOTEC: missing latest benchmark session
 - SYSTMTXC: missing sessions or benchmark history mismatch
-- TAALTECH: missing sessions or benchmark history mismatch
+- TAALTECH: missing latest benchmark session
 - TARC: missing sessions or benchmark history mismatch
 - TATACAP: missing latest benchmark session
 - TATACONSUM: missing latest benchmark session
@@ -651,29 +652,29 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - TATASTEEL: missing latest benchmark session
 - TBZ: missing latest benchmark session
 - TECHM: missing latest benchmark session
-- TECHNOCRAF: missing sessions or benchmark history mismatch
-- TECHNVISN: missing sessions or benchmark history mismatch
-- TEMPSENS: missing sessions or benchmark history mismatch
+- TECHNOCRAF: missing latest benchmark session
+- TECHNVISN: missing latest benchmark session
+- TEMPSENS: missing latest benchmark session
 - TENNIND: missing sessions or benchmark history mismatch
-- TGVSL: missing sessions or benchmark history mismatch
+- TGVSL: missing latest benchmark session
 - THEJO: missing sessions or benchmark history mismatch
 - TIL: missing sessions or benchmark history mismatch
-- TIMEX: missing sessions or benchmark history mismatch
+- TIMEX: missing latest benchmark session
 - TITAN: missing latest benchmark session
 - TMCV: missing latest benchmark session
 - TMPV: missing sessions or benchmark history mismatch
-- TONBO: insufficient history: need 22 weekly bars
+- TONBO: missing latest benchmark session
 - TORNTPHARM: missing latest benchmark session
 - TRENT: missing latest benchmark session
 - TRUALT: missing sessions or benchmark history mismatch
-- TURTLEMINT: missing sessions or benchmark history mismatch
+- TURTLEMINT: missing latest benchmark session
 - TVSHLTD: missing sessions or benchmark history mismatch
 - TVSMOTOR: missing latest benchmark session
 - UEL: missing sessions or benchmark history mismatch
 - UFBL: missing sessions or benchmark history mismatch
 - UGROCAP: inconsistent OHLC prices
 - ULTRACEMCO: missing latest benchmark session
-- ULTRAMAR: missing sessions or benchmark history mismatch
+- ULTRAMAR: missing latest benchmark session
 - UNIONBANK: missing latest benchmark session
 - UNITDSPR: missing latest benchmark session
 - UNITEDPOLY: missing sessions or benchmark history mismatch
@@ -681,7 +682,7 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - UTLSOLAR: missing sessions or benchmark history mismatch
 - UTSSAV: missing OHLC history
 - VAML: missing latest benchmark session
-- VARMORA: missing sessions or benchmark history mismatch
+- VARMORA: missing latest benchmark session
 - VBL: missing latest benchmark session
 - VEDL: missing sessions or benchmark history mismatch
 - VENUSREM: missing sessions or benchmark history mismatch
@@ -693,16 +694,16 @@ Universe: 1440 | Evaluated: 992 | Qualified: 235 | Excluded: 448
 - VIKRAN: missing sessions or benchmark history mismatch
 - VINYAS: missing OHLC history
 - VMARCIND: missing OHLC history
-- VOEPL: missing sessions or benchmark history mismatch
+- VOEPL: missing latest benchmark session
 - WAKEFIT: missing sessions or benchmark history mismatch
 - WALCHANNAG: missing sessions or benchmark history mismatch
 - WEL: missing sessions or benchmark history mismatch
 - WEWORK: missing sessions or benchmark history mismatch
 - WIPRO: missing latest benchmark session
-- WPIL: missing sessions or benchmark history mismatch
-- XTRANET: missing sessions or benchmark history mismatch
-- ZETWERK: insufficient history: need 22 weekly bars
-- ZSARACOM: missing sessions or benchmark history mismatch
+- WPIL: missing latest benchmark session
+- XTRANET: missing latest benchmark session
+- ZETWERK: missing latest benchmark session
+- ZSARACOM: missing latest benchmark session
 - ZYDUSLIFE: missing latest benchmark session
 
 
