@@ -1,0 +1,88 @@
+// This Pine Script® code is subject to the terms of the Mozilla Public License 2.0 at https://mozilla.org/MPL/2.0/
+// © satya_markets
+
+//@version=6
+indicator("Satya ATR Volatility Envelope", overlay=true, max_bars_back=500)
+
+// === Inputs ===
+atrLen = input.int(14, "ATR Length", minval=1, group="ATR")
+atrMult = input.float(1.5, "ATR Multiplier", minval=0.1, step=0.1, group="ATR")
+expLookback = input.int(5, "ATR Expansion Lookback", minval=1, group="ATR")
+
+basisType = input.string("EMA", "Basis MA Type", options=["EMA", "SMA", "WMA", "VWMA"], group="Basis")
+basisLen = input.int(20, "Basis MA Length", minval=1, group="Basis")
+
+showFill = input.bool(false, "Fill Envelope", group="Display")
+showReleaseMarkers = input.bool(false, "Show Squeeze Release Markers", group="Display")
+
+// === Basis MA ===
+getMA(src, len, maType) =>
+    switch maType
+        "EMA"  => ta.ema(src, len)
+        "SMA"  => ta.sma(src, len)
+        "WMA"  => ta.wma(src, len)
+        "VWMA" => ta.vwma(src, len)
+
+basis = getMA(close, basisLen, basisType)
+
+// === ATR & envelope bands ===
+atrVal = ta.atr(atrLen)
+upper = basis + atrVal * atrMult
+lower = basis - atrVal * atrMult
+
+// === Expansion / contraction state ===
+atrAvg = ta.sma(atrVal, expLookback)
+isExpanding = atrVal > atrAvg
+
+// === Band colors: white rising, grey falling or flat ===
+upperColor = upper > upper[1] ? color.white : color.gray
+lowerColor = lower > lower[1] ? color.white : color.gray
+
+// === Plots ===
+pUpper = plot(upper, "Upper Band", color=upperColor, linewidth=1)
+pLower = plot(lower, "Lower Band", color=lowerColor, linewidth=1)
+
+fill(pUpper, pLower,
+     color=showFill ? color.new(isExpanding ? color.white : color.gray, 90) : na,
+     title="Envelope Fill")
+
+// === Breakout & squeeze-release logic ===
+bullBreakout = ta.crossover(close, upper) and isExpanding
+bearBreakout = ta.crossunder(close, lower) and isExpanding
+squeezeRelease = isExpanding and not isExpanding[1]
+
+plotshape(
+     showReleaseMarkers and squeezeRelease and close > basis,
+     "Vol Expansion (Bull bias)",
+     style=shape.triangleup,
+     location=location.belowbar,
+     color=color.lime,
+     size=size.tiny)
+
+plotshape(
+     showReleaseMarkers and squeezeRelease and close < basis,
+     "Vol Expansion (Bear bias)",
+     style=shape.triangledown,
+     location=location.abovebar,
+     color=color.red,
+     size=size.tiny)
+
+// === Webhook-ready alerts ===
+webhookMsg(action) =>
+    '{"ticker":"' + syminfo.ticker + '","exchange":"' + syminfo.prefix + '","action":"' + action + '","price":' + str.tostring(close) + ',"atr":' + str.tostring(atrVal) + ',"time":"' + str.format_time(time, "yyyy-MM-dd'T'HH:mm:ssZ") + '"}'
+
+if bullBreakout
+    alert(webhookMsg("atr_bull_breakout"), alert.freq_once_per_bar_close)
+
+if bearBreakout
+    alert(webhookMsg("atr_bear_breakout"), alert.freq_once_per_bar_close)
+
+alertcondition(
+     bullBreakout,
+     title="ATR Bull Breakout",
+     message="Price broke above ATR upper band on volatility expansion")
+
+alertcondition(
+     bearBreakout,
+     title="ATR Bear Breakout",
+     message="Price broke below ATR lower band on volatility expansion")

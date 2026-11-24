@@ -2,6 +2,14 @@
 
 # Repo Handoff
 
+Updated 2026-11-24 by Codex, ATR volatility envelope:
+
+- Added `pine_scripts/Satya_ATR_Volatility_Envelope.pine` from the user-provided
+  script. Each band is white when rising, grey when falling or flat. Original
+  basis options, ATR settings, optional fill/markers and breakout alerts remain.
+- Local source checks passed; TradingView compilation/visual validation pending.
+  User authorized saving and pushing this and any other local Pine changes.
+
 Updated 2026-11-24 by Codex, standalone Float Trap Guard:
 
 - Added `pine_scripts/Satya_Float_Trap_Guard.pine` from the user-provided standalone
