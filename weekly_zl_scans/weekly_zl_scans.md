@@ -42,7 +42,7 @@
 | [ABLBL](https://in.tradingview.com/chart/?symbol=NSE:ABLBL)<br><sub>↑CMF12d</sub> | Premium western apparel brands, Indian retail consumer market | 1w | ABOVE | 1w | +3.9% | +0.00% | 78.52 | — | 20%  |
 | [PGHL](https://in.tradingview.com/chart/?symbol=NSE:PGHL)<br><sub>↑CMF19d</sub> | Vitamins minerals supplements pharmaceuticals consumer health | 1w | ABOVE | 1w | +2.4% | +0.00% | 5725.00 | — | 20%  |
 | [SURYAROSNI](https://in.tradingview.com/chart/?symbol=NSE:SURYAROSNI)<br><sub>↑CMF3d</sub> | Steel pipes, GI products, lighting fixtures for infrastructure | 1w | ABOVE | 1w | +1.3% | +0.00% | 215.92 | — | 20%  |
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF10d · DEL85%(T-1)</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +2.3% | +0.00% | 245.95 | — | 20%  |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF10d · DEL85%</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +2.3% | +0.00% | 245.95 | — | 20%  |
 | [DOLATALGO](https://in.tradingview.com/chart/?symbol=NSE:DOLATALGO)<br><sub>↑CMF15d</sub> | Algorithmic trading platform and liquidity provision NSE member | 1w | ABOVE | 1w | +5.4% | +0.00% | 67.46 | — | 20%  |
 | [KRSNAA](https://in.tradingview.com/chart/?symbol=NSE:KRSNAA)<br><sub>↑CMF15d</sub> | Diagnostic imaging centers for patients across India | 1w | ABOVE | 1w | +1.2% | +0.00% | 525.30 | 20w | 20%  |
 | [MAHSCOOTER](https://in.tradingview.com/chart/?symbol=NSE:MAHSCOOTER)<br><sub>↑CMF4d</sub> | Dies, jigs, fixtures, die casting automotive components manufacturer | 1w | ABOVE | 1w | +0.5% | +0.00% | 12502.00 | — | 5%  |
