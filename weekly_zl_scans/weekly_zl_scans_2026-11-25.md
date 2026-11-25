@@ -55,7 +55,7 @@
 | [ABLBL](https://in.tradingview.com/chart/?symbol=NSE:ABLBL)<br><sub>↑CMF13d</sub> | Premium western apparel brands, Indian retail consumer market | 1w | ABOVE | 1w | +5.8% | +1.88% | 80.00 | — | 20%  |
 | [MAHSCOOTER](https://in.tradingview.com/chart/?symbol=NSE:MAHSCOOTER)<br><sub>↑CMF5d</sub> | Dies, jigs, fixtures, die casting automotive components manufacturer | 1w | ABOVE | 1w | +1.5% | +1.00% | 12627.00 | — | 5%  |
 | [LAOPALA](https://in.tradingview.com/chart/?symbol=NSE:LAOPALA)<br><sub>↑CMF6d</sub> | Opalware and crystalware tableware manufacturer for Indian households | 1w | ABOVE | 1w | +1.2% | +1.18% | 158.80 | — | 20%  |
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF11d · DEL85%(T-1)</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +0.5% | -1.72% | 241.71 | — | 20%  |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF11d</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +0.5% | -1.72% | 241.71 | — | 20%  |
 | [DOLATALGO](https://in.tradingview.com/chart/?symbol=NSE:DOLATALGO)<br><sub>↑CMF16d</sub> | Algorithmic trading platform and liquidity provision NSE member | 1w | ABOVE | 1w | +6.7% | +1.19% | 68.26 | — | 20%  |
 | [GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES)<br><sub>↑CMF13d</sub> | APIs, formulation intermediates, finished pharma drugs manufacturer | 1w | BELOW | 1w | +2.2% | +0.36% | 840.80 | 7w | 20%  |
 | [NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB)<br><sub>↑CMF15d</sub> | Pharma APIs and CDMO services for global markets | 1w | BELOW | 1w | +1.6% | +2.03% | 20968.00 | — | 20%  |
