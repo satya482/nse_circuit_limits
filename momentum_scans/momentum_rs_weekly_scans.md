@@ -1,44 +1,38 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Momentum Scan (Weekly RS) — 2026-11-24
-*Generated 2026-11-24 15:40 IST*
+# NSE Momentum Scan (Weekly RS) — 2026-11-25
+*Generated 2026-11-25 15:40 IST*
 
-**Entry Signals: 17** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 1**
+**Entry Signals: 12** &nbsp;|&nbsp; **ZLEMA25 Turning Up: 1**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · Daily RS > Weekly RS EMA9 · Weekly RS EMA9 rising)*
 
 ### Entry Signals
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |
 |--------|--------:|--------:|-------|--------:|--------|:-------:|
-| [COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE) | 4d | +6.6% | Coforge<br>₹95K Cr \| ↗612Cr · 0.0Cr<br>IT services, digital transformation, financial and travel sectors | +2.66% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) | 15d | +27.6% | Welspun Living<br>₹26K Cr \| ↘174Cr · 0.0Cr<br>Home textiles manufacturer, flooring, global export focus | +0.74% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SGFIN](https://in.tradingview.com/chart/?symbol=NSE:SGFIN) | 18d | +24.8% | Sg Finserve<br>₹5K Cr \| ↗68Cr · 0.0Cr<br>Supply chain financing NBFC for logistics and trade | -4.06% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [STYLEBAAZA](https://in.tradingview.com/chart/?symbol=NSE:STYLEBAAZA) | 12d | +40.1% | Baazar Style Retail<br>₹4K Cr \| ↗178Cr · 0.0Cr<br>Value fashion apparel retailer eastern India families | +0.64% | **STRONG** — ZLEMA25 touch + EMA20 rising | 5% 🟥 |
-| [PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING) | 9d | +7.3% | Pnb Housing Fin<br>₹31K Cr \| ↘67Cr · 0.0Cr<br>Housing loans for retail homebuyers and property | -0.93% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 1d | +22.8% | Oriental Aromatics<br>₹2K Cr \| ↗35Cr · 0.0Cr | +2.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 1d | +22.8% | Oriental Aromatics<br>₹2K Cr \| ↗35Cr · 0.0Cr | +2.30% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
-| [SUDEEPPHRM](https://in.tradingview.com/chart/?symbol=NSE:SUDEEPPHRM) | 17d | +22.3% | Sudeep Pharma<br>₹14K Cr \| ↘29Cr · 0.0Cr<br>Calcium phosphate excipients pharma food nutrition | +4.91% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
-| [TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD) | 19d | +17.6% | Tourism Finance Corp. Of<br>₹8K Cr \| ↘108Cr · 0.0Cr<br>Tourism sector financing for hotels restaurants amusement parks | +0.97% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING) | 8d | +21.1% | Sportking India<br>₹3K Cr \| ↘15Cr · 0.0Cr<br>Textile yarns and fabrics production for apparel makers | +8.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT) | 1d | +4.5% | Cyient<br>₹12K Cr \| →56Cr · 0.0Cr<br>Engineering services, design, manufacturing digital transformation | +0.43% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL) | 10d | +14.8% | Allied Blend N Distils L<br>₹23K Cr \| ↗65Cr · 0.0Cr<br>Spirits manufacturer, IMFL exporter, Indian domestic and export markets | +1.08% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [FINEORG](https://in.tradingview.com/chart/?symbol=NSE:FINEORG) | 9d | +10.4% | Fine Organic Ind.<br>₹17K Cr \| →11Cr · 0.0Cr<br>Oleochemical specialty additives food plastics cosmetics coatings | +2.08% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SIGMAADV](https://in.tradingview.com/chart/?symbol=NSE:SIGMAADV) | 4d | +7.5% | ↘33Cr · 72Cr<br>Aerospace defense electronics manufacturing for global OEMs | +2.13% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SOMANYCERA](https://in.tradingview.com/chart/?symbol=NSE:SOMANYCERA) | 3d | +3.7% | Somany Ceramics<br>₹2K Cr \| ↘6Cr · 0.0Cr<br>Ceramic tiles sanitaryware bath fittings residential commercial construction | +0.60% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SOMANYCERA](https://in.tradingview.com/chart/?symbol=NSE:SOMANYCERA) | 3d | +3.7% | Somany Ceramics<br>₹2K Cr \| ↘6Cr · 0.0Cr<br>Ceramic tiles sanitaryware bath fittings residential commercial construction | +0.60% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
-| [MMP](https://in.tradingview.com/chart/?symbol=NSE:MMP) | 3d | +5.5% | Mmp Industries<br>₹1K Cr \| ↘2Cr · 0.0Cr<br>Aluminium powder manufacturer for industrial coatings paints | +0.75% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [AVTNPL](https://in.tradingview.com/chart/?symbol=NSE:AVTNPL) | 4d | +4.9% | Avt Natural Products<br>₹2K Cr \| ↗15Cr · 0.0Cr<br>Plant extract manufacturer for food beverage nutrition | -1.34% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SALSTEEL](https://in.tradingview.com/chart/?symbol=NSE:SALSTEEL) | 5d | +5.4% | S.A.L. Steel<br>₹1K Cr \| →4Cr · 0.0Cr<br>Sponge iron and ferroalloys manufacturer serving domestic steel mills | -1.76% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS) | 19d | +41.2% | Arisinfra Solutions<br>₹1K Cr \| ↗82Cr · 302Cr<br>Digital procurement platform connecting construction material suppliers builders | +14.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 6d | +15.4% | Vijaya Diagnostic Cen<br>₹16K Cr \| ↗59Cr · 139Cr<br>Diagnostic imaging and pathology labs, Southern India healthcare | +3.50% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) | 12d | +15.7% | City Union Bank<br>₹24K Cr \| ↗124Cr · 120Cr<br>Private bank serving SMEs, MSMEs, retail customers South India | +0.59% | **STRONG** — ZLEMA25 touch + EMA20 rising | -%  |
+| [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) | 9d | +12.2% | Craftsman Automation<br>₹31K Cr \| ↘42Cr · 53Cr<br>Precision auto parts manufacturing for powertrains and aluminum | +1.03% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) | 14d | +15.9% | Anthem Biosciences<br>₹54K Cr \| ↘31Cr · 43Cr<br>Contract research development manufacturing biotech pharma | +1.13% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT) | 2d | +3.6% | Cyient<br>₹12K Cr \| →48Cr · 33Cr<br>Engineering services, design, manufacturing digital transformation | -0.80% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) | 15d | +21.4% | Pearl Global Ind<br>₹14K Cr \| ↗36Cr · 30Cr<br>Apparel manufacturer, exports to global fashion brands | -2.49% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX) | 9d | +19.1% | Filatex India<br>₹5K Cr \| ↗44Cr · 33Cr<br>Polyester yarn and chip manufacturer for textiles | +3.58% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE) | 19d | +21.2% | Dr Agarwals Health Care L<br>₹17K Cr \| ↘12Cr · 24Cr<br>Eye care surgery and diagnostics across India Africa | +4.65% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 2d | +22.3% | Oriental Aromatics<br>₹2K Cr \| ↗36Cr · 15Cr | -0.38% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
+| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 2d | +22.3% | Oriental Aromatics<br>₹2K Cr \| ↗36Cr · 15Cr | -0.38% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
+| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 4d | +6.7% | Nintec Systems<br>₹2K Cr \| ↘0.6Cr · 0.4Cr | +0.74% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [KOPRAN](https://in.tradingview.com/chart/?symbol=NSE:KOPRAN) | 0d | +9.1% | Kopran<br>₹1K Cr \| ↗51Cr · 377Cr<br>APIs and formulations manufacturer serving global pharma | +9.11% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:COFORGE,NSE:WELSPUNLIV,NSE:SGFIN,NSE:STYLEBAAZA,NSE:PNBHOUSING,NSE:OAL,NSE:SUDEEPPHRM,NSE:TFCILTD,NSE:SPORTKING,NSE:CYIENT,NSE:ABDL,NSE:FINEORG,NSE:SIGMAADV,NSE:SOMANYCERA,NSE:MMP,NSE:AVTNPL,NSE:SALSTEEL
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ARIS,NSE:VIJAYA,NSE:CUB,NSE:CRAFTSMAN,NSE:ANTHEM,NSE:CYIENT,NSE:PGIL,NSE:FILATEX,NSE:AGARWALEYE,NSE:OAL,NSE:NINSYS,NSE:KOPRAN
 ```
 
 ### ZLEMA25 Turning Up *(low-risk early entries)*
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Circuit |
 |--------|--------:|--------:|-------|--------:|:-------:|
-| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) | 0d | +11.9% | Sambhv Steel Tubes<br>₹5K Cr \| ↗59Cr · 0.0Cr<br>ERW steel pipes, tubes, structural hollow sections manufacturer | +11.92% | 20%  |
+| [KOPRAN](https://in.tradingview.com/chart/?symbol=NSE:KOPRAN) | 0d | +9.1% | Kopran<br>₹1K Cr \| ↗51Cr · 377Cr<br>APIs and formulations manufacturer serving global pharma | +9.11% | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:SAMBHV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:KOPRAN
 ```
 ---
 
