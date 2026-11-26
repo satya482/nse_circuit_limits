@@ -37,7 +37,7 @@
 ### 📶 WEEKLY RS GATE — RS ≥ Weekly RS EMA9 (rising) vs NIFTY MIDSML 400 (48)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d · DEL87%</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
 | [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Sugar cane processing, ethanol, power generation | ⚡ BULL_ANY_PPV | 94 | 🔄98 | ↑1.029 | ↑1d | SQ·PV | +5.9% | -6.97/-13.55 | +5.92% | 20% 🟦 |
 | [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG)<br><sub>📶W9 · 🚀SS·79x · ↑CMF0d</sub> | ✓ SAFE | Sugarcane processing: sugar, ethanol, chemicals, power generation | ⚡ BULL_ANY_PPV | 89 | 🔄85 | ↑1.085 | ↑1d | SQ·PV | +13.2% | -25.8/-37.21 | +13.21% | 20% |
 | [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>📶W9 · W↑44d · 🚀SS·10x · ↑CMF3d</sub> | ✓ SAFE | Sugar manufacturer ethanol producer cogeneration power generation | ⚡ BULL_ANY_PPV | 89 | 🔄96 | ↑1.060 | ↑1d | SQ·PV | +10.3% | 6.78/3.82 | +10.30% | 20% |
@@ -95,7 +95,7 @@
 ### 📶 RS-CONFIRMED — RS strong (↑) or transitioning (🔄) vs NIFTY MIDSML 400 (82)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d · DEL87%</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
 | [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Sugar cane processing, ethanol, power generation | ⚡ BULL_ANY_PPV | 94 | 🔄98 | ↑1.029 | ↑1d | SQ·PV | +5.9% | -6.97/-13.55 | +5.92% | 20% 🟦 |
 | [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG)<br><sub>📶W9 · 🚀SS·79x · ↑CMF0d</sub> | ✓ SAFE | Sugarcane processing: sugar, ethanol, chemicals, power generation | ⚡ BULL_ANY_PPV | 89 | 🔄85 | ↑1.085 | ↑1d | SQ·PV | +13.2% | -25.8/-37.21 | +13.21% | 20% |
 | [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>📶W9 · W↑44d · 🚀SS·10x · ↑CMF3d</sub> | ✓ SAFE | Sugar manufacturer ethanol producer cogeneration power generation | ⚡ BULL_ANY_PPV | 89 | 🔄96 | ↑1.060 | ↑1d | SQ·PV | +10.3% | 6.78/3.82 | +10.30% | 20% |
@@ -187,7 +187,7 @@
 ### 🎯 SQUEEZE BREAKOUT — WT cross inside active BB-KC squeeze (40)
 | Symbol | Trap | Label | Signal | Erly | RS | C/AvgC | ZL | Flags | ZL Chg% | WT | Day Chg | Circuit |
 |--------|:----:|-------|--------|-----:|:--:|-------:|:--:|:-----:|--------:|:--:|--------:|:-------:|
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>📶W9 · W↑29d · RVOL9x · ↓CMF12d · DEL87%</sub> | ✓ SAFE | Ballpoint pens and stationery manufacturing for students and offices | ⚡ BULL_ANY_PPV | 99 | 🔄31 | ↑1.007 | ↑1d | SQ·PV | +1.6% | 14.62/13.5 | +1.61% | 20% |
 | [AVADHSUGAR](https://in.tradingview.com/chart/?symbol=NSE:AVADHSUGAR)<br><sub>📶W9 · 🚀SS · ↑CMF0d</sub> | ✓ SAFE | Sugar cane processing, ethanol, power generation | ⚡ BULL_ANY_PPV | 94 | 🔄98 | ↑1.029 | ↑1d | SQ·PV | +5.9% | -6.97/-13.55 | +5.92% | 20% 🟦 |
 | [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG)<br><sub>📶W9 · 🚀SS·79x · ↑CMF0d</sub> | ✓ SAFE | Sugarcane processing: sugar, ethanol, chemicals, power generation | ⚡ BULL_ANY_PPV | 89 | 🔄85 | ↑1.085 | ↑1d | SQ·PV | +13.2% | -25.8/-37.21 | +13.21% | 20% |
 | [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR)<br><sub>📶W9 · W↑44d · 🚀SS·10x · ↑CMF3d</sub> | ✓ SAFE | Sugar manufacturer ethanol producer cogeneration power generation | ⚡ BULL_ANY_PPV | 89 | 🔄96 | ↑1.060 | ↑1d | SQ·PV | +10.3% | 6.78/3.82 | +10.30% | 20% |

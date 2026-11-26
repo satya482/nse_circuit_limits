@@ -55,7 +55,7 @@
 | [ABSLAMC](https://in.tradingview.com/chart/?symbol=NSE:ABSLAMC)<br><sub>↑CMF1d</sub> | Mutual funds, portfolio management, asset management finance | 1w | ABOVE | 1w | +6.1% | +3.49% | 992.15 | — | 20%  |
 | [ITI](https://in.tradingview.com/chart/?symbol=NSE:ITI)<br><sub>↑CMF18d</sub> | Telecom equipment manufacturing, cables, defense electronics | 1w | ABOVE | 1w | +4.0% | -0.84% | 255.44 | — | 20%  |
 | [GUJENERGY](https://in.tradingview.com/chart/?symbol=NSE:GUJENERGY)<br><sub>↓CMF30d</sub> | Piped natural gas distribution to households and industries | 1w | ABOVE | 1w | +5.3% | +1.31% | 238.30 | — | 20%  |
-| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF12d</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +2.2% | +1.61% | 245.61 | — | 20%  |
+| [FLAIR](https://in.tradingview.com/chart/?symbol=NSE:FLAIR)<br><sub>↓CMF12d · DEL87%</sub> | Ballpoint pens and stationery manufacturing for students and offices | 1w | ABOVE | 1w | +2.2% | +1.61% | 245.61 | — | 20%  |
 | [SARDAEN](https://in.tradingview.com/chart/?symbol=NSE:SARDAEN)<br><sub>↑CMF1d</sub> | Steel ferroalloys power producer Chhattisgarh integrated | 1w | ABOVE | 1w | +2.4% | +0.67% | 479.95 | — | 20%  |
 | [CERA](https://in.tradingview.com/chart/?symbol=NSE:CERA)<br><sub>↓CMF30d</sub> | Sanitaryware faucets wellness products for Indian residential construction | 1w | ABOVE | 1w | +3.3% | +1.61% | 5219.10 | — | 20%  |
 | [CHALET](https://in.tradingview.com/chart/?symbol=NSE:CHALET)<br><sub>↑CMF9d</sub> | Luxury hotel operator, metro properties, high-end hospitality | 1w | ABOVE | 1w | +5.0% | -1.14% | 865.10 | 7w | 20%  |

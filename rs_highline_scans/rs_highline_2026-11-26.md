@@ -25,7 +25,7 @@
 
 | Symbol | Name | Close | 1D% | RS-High | Above% | RS | ZL | ZL-days | ZL+% | Sqz | ATR% | Early | Liq |
 |--------|------|------:|----:|--------:|-------:|:--:|:--:|--------:|-----:|:---:|-----:|------:|-----|
-| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT) [20%]<br><sub>↓CMF13d · DEL76%(T-1)</sub> | IT services, digital transformation, automation, enterprise clients | 502.15 | +2.59% | 497.85 | +0.86% | ↑ | ↑1d | 1d | +2.6% | ● | 3.3% | 64 | →24Cr · 63Cr |
+| [HEXT](https://in.tradingview.com/chart/?symbol=NSE:HEXT) [20%]<br><sub>↓CMF13d</sub> | IT services, digital transformation, automation, enterprise clients | 502.15 | +2.59% | 497.85 | +0.86% | ↑ | ↑1d | 1d | +2.6% | ● | 3.3% | 64 | →24Cr · 63Cr |
 | [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON) [20%]<br><sub>↑CMF24d</sub> | Complex generics and specialty formulations for global pharma | 1851.70 | +8.19% | 1775.00 | +4.32% | ↑ | ↑2d | 2d | +10.5% | ● | 4.9% | 58 | ↘31Cr · 91Cr |
 | [LAURUSLABS](https://in.tradingview.com/chart/?symbol=NSE:LAURUSLABS) [20%]<br><sub>↑CMF20d</sub> | Generic APIs and antiretroviral drugs global manufacturer | 2370.70 | +3.32% | 2320.00 | +2.19% | 🔄 | ↑1d | 1d | +3.3% | — | 3.5% | 54 | →717Cr · 457Cr |
 | [SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY) [20%]<br><sub>↑CMF0d</sub> | Precision plastic injection molded components for automotive OEMs | 3379.60 | +16.33% | 3036.30 | +11.31% | 🔄 | ↑1d | 1d | +16.3% | — | 5.1% | 49 | ↗99Cr · 780Cr |
