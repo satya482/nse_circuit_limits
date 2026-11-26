@@ -1,0 +1,1131 @@
+{
+  "changes": {
+    "added": [
+      "ABB",
+      "ACGL",
+      "ADANIENSOL",
+      "ADANIENT",
+      "ADANIGREEN",
+      "ADANIPORTS",
+      "ADANIPOWER",
+      "AFSL",
+      "AKCAPIT",
+      "ALLDIGI",
+      "ALLTIME",
+      "ALPEXSOLAR",
+      "ANANTAM",
+      "ANDHRAPAP",
+      "AONESTEELS",
+      "APOLLOHOSP",
+      "ARYAMAN",
+      "ASALCBR",
+      "ASIANPAINT",
+      "AUTOAXLES",
+      "AXISBANK",
+      "BAFNAPH",
+      "BAJAJFINSV",
+      "BAJAJHLDNG",
+      "BAJEL",
+      "BANARISUG",
+      "BANKBARODA",
+      "BEL",
+      "BELDING",
+      "BENARAS",
+      "BENGALASM",
+      "BHARATCOAL",
+      "BHARATRAS",
+      "BHEL",
+      "BIL",
+      "BLIL",
+      "BLSPOLY",
+      "BONDADA",
+      "BOSCHLTD",
+      "BPCL",
+      "BRIGHOTEL",
+      "BRITANNIA",
+      "BSE",
+      "BUTTERFLY",
+      "CANBK",
+      "CAPINVIT",
+      "CENTRALBK",
+      "CGPOWER",
+      "CHOLAFIN",
+      "CIPLA",
+      "COALINDIA",
+      "CONSOFINVT",
+      "CUMMINSIND",
+      "DBCORP",
+      "DCAL",
+      "DDEVPLSTIK",
+      "DHANBANK",
+      "DISAQ",
+      "DIVISLAB",
+      "DLF",
+      "DMART",
+      "DPEL",
+      "DRAGARWQ",
+      "DVL",
+      "EDELALTS",
+      "EICHERMOT",
+      "EIHAHOTELS",
+      "ELANTAS",
+      "ELEVATE",
+      "ESAFSFB",
+      "ETERNAL",
+      "EVEREADY",
+      "EVONILE",
+      "EXCELINDUS",
+      "FAZE3Q",
+      "FUSIONCX",
+      "GAIL",
+      "GANDHITUBE",
+      "GOODYEAR",
+      "GPTINFRA",
+      "GRANDOAK",
+      "GRASIM",
+      "GRAUWEIL",
+      "GROWW",
+      "GSPLTRANS",
+      "GVT&D",
+      "HAL",
+      "HAWKINCOOK",
+      "HCLTECH",
+      "HDFCLIFE",
+      "HDFIRE",
+      "HEIDELBERG",
+      "HINDALCO",
+      "HINDWAREAP",
+      "HINDZINC",
+      "HMAAGRO",
+      "HMT",
+      "HONDAPOWER",
+      "HYUNDAI",
+      "IBULLSLTD",
+      "ICICIAMC",
+      "IFGLEXPOR",
+      "IMPAL",
+      "INDIANB",
+      "INDIANHUME",
+      "INDIGO",
+      "INDIQUBE",
+      "INDOKEM",
+      "INDPRUD",
+      "INFY",
+      "INSECTICID",
+      "INVPRECQ",
+      "IOB",
+      "IOC",
+      "IPL",
+      "ITC",
+      "JINDALPOLY",
+      "JINDALSTEL",
+      "JINDWORLD",
+      "JIOFIN",
+      "JISLJALEQS",
+      "JSWSTEEL",
+      "JYOTIRES",
+      "KAMAHOLD",
+      "KAMDHENU",
+      "KHAZANCHI",
+      "KICL",
+      "KKCL",
+      "KODYTECH",
+      "KOLTEPATIL",
+      "KOTIC",
+      "KRSNAA",
+      "KWIL",
+      "LGEINDIA",
+      "LGHL",
+      "LINCOLN",
+      "LTM",
+      "M&M",
+      "MARICO",
+      "MARUTI",
+      "MASTERTR",
+      "MATRIMONY",
+      "MONARCH",
+      "MOTHERSON",
+      "MSPL",
+      "MSUMI",
+      "NESTLEIND",
+      "NINSYS",
+      "NRAIL",
+      "NSIL",
+      "NTPC",
+      "OAL",
+      "OLAELEC",
+      "ONGC",
+      "PANORAMA",
+      "PARKHOTELS",
+      "PERMAGN",
+      "PERNIASPOP",
+      "PFC",
+      "PIDILITIND",
+      "PILANIINVS",
+      "PLATIND",
+      "PNB",
+      "POLYCAB",
+      "POWERGRID",
+      "POWERINDIA",
+      "PRIMESECU",
+      "RTNINDIA",
+      "RUBYMILLS",
+      "SAGILITY",
+      "SBILIFE",
+      "SEJALLTD",
+      "SFCTECH",
+      "SHALBY",
+      "SHRIRAMFIN",
+      "SHUKRAMED",
+      "SIEMENS",
+      "SIGACHI",
+      "SOLARINDS",
+      "STEL",
+      "STLNETWORK",
+      "STUDDS",
+      "SUMMITSEC",
+      "SUNCLAY",
+      "SUNDROP",
+      "SUNPHARMA",
+      "SUNRAKSHAK",
+      "SYSTMTXC",
+      "TATACAP",
+      "TATAPOWER",
+      "TATASTEEL",
+      "TCPLPACK",
+      "TECHM",
+      "TECHNVISN",
+      "TEXINFRA",
+      "TGVSL",
+      "TITAN",
+      "TMCV",
+      "TORNTPHARM",
+      "TRENT",
+      "TTML",
+      "TVSMOTOR",
+      "ULTRACEMCO",
+      "UNIONBANK",
+      "VAML",
+      "VBL",
+      "VEDPOWER",
+      "VHL",
+      "VHLTD",
+      "VINYAS",
+      "VOGL",
+      "WIPRO",
+      "YUKEN",
+      "ZSARACOM"
+    ],
+    "removed": [],
+    "moved": [
+      {
+        "symbol": "AADHARHFC",
+        "from": "group_0001",
+        "to": "singleton_0193"
+      },
+      {
+        "symbol": "AAVAS",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "ABCAPITAL",
+        "from": "group_0003",
+        "to": "group_0005"
+      },
+      {
+        "symbol": "ABREL",
+        "from": "group_0005",
+        "to": "singleton_0197"
+      },
+      {
+        "symbol": "ABSLAMC",
+        "from": "singleton_0006",
+        "to": "group_0005"
+      },
+      {
+        "symbol": "ACC",
+        "from": "singleton_0007",
+        "to": "group_0081"
+      },
+      {
+        "symbol": "ACMESOLAR",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "AEGISLOG",
+        "from": "group_0137",
+        "to": "singleton_0248"
+      },
+      {
+        "symbol": "AEGISVOPAK",
+        "from": "group_0137",
+        "to": "singleton_0252"
+      },
+      {
+        "symbol": "AGARWALEYE",
+        "from": "singleton_0025",
+        "to": "group_0083"
+      },
+      {
+        "symbol": "AIIL",
+        "from": "group_0003",
+        "to": "singleton_0253"
+      },
+      {
+        "symbol": "AJMERA",
+        "from": "group_0008",
+        "to": "singleton_0263"
+      },
+      {
+        "symbol": "ALIVUS",
+        "from": "singleton_0035",
+        "to": "group_0106"
+      },
+      {
+        "symbol": "ALKYLAMINE",
+        "from": "singleton_0036",
+        "to": "group_0116"
+      },
+      {
+        "symbol": "AMBER",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "AMBUJACEM",
+        "from": "group_0013",
+        "to": "singleton_0267"
+      },
+      {
+        "symbol": "ANONDITA",
+        "from": "group_0016",
+        "to": "singleton_0277"
+      },
+      {
+        "symbol": "ANTELOPUS",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "ANZEN",
+        "from": "group_0019",
+        "to": "singleton_0283"
+      },
+      {
+        "symbol": "APTUS",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "ARFIN",
+        "from": "singleton_0055",
+        "to": "group_0148"
+      },
+      {
+        "symbol": "ARKADE",
+        "from": "group_0008",
+        "to": "group_0149"
+      },
+      {
+        "symbol": "ARMANFIN",
+        "from": "group_0003",
+        "to": "singleton_0300"
+      },
+      {
+        "symbol": "ARSSBL",
+        "from": "singleton_0059",
+        "to": "group_0000"
+      },
+      {
+        "symbol": "ARTEMISMED",
+        "from": "singleton_0060",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "ARVINDFASN",
+        "from": "group_0139",
+        "to": "group_0136"
+      },
+      {
+        "symbol": "ASHIANA",
+        "from": "singleton_0067",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "ASHOKA",
+        "from": "group_0007",
+        "to": "singleton_0306"
+      },
+      {
+        "symbol": "ASHOKLEY",
+        "from": "group_0021",
+        "to": "singleton_0312"
+      },
+      {
+        "symbol": "ASTERDM",
+        "from": "group_0022",
+        "to": "singleton_0319"
+      },
+      {
+        "symbol": "ATUL",
+        "from": "group_0025",
+        "to": "singleton_0327"
+      },
+      {
+        "symbol": "AVADHSUGAR",
+        "from": "singleton_0081",
+        "to": "group_0031"
+      },
+      {
+        "symbol": "AYE",
+        "from": "group_0003",
+        "to": "singleton_0335"
+      },
+      {
+        "symbol": "BAJAJHCARE",
+        "from": "group_0010",
+        "to": "group_0150"
+      },
+      {
+        "symbol": "BALAMINES",
+        "from": "singleton_0092",
+        "to": "group_0116"
+      },
+      {
+        "symbol": "BEML",
+        "from": "group_0032",
+        "to": "group_0151"
+      },
+      {
+        "symbol": "BEPL",
+        "from": "group_0033",
+        "to": "singleton_0453"
+      },
+      {
+        "symbol": "BERGEPAINT",
+        "from": "group_0034",
+        "to": "singleton_0455"
+      },
+      {
+        "symbol": "BFINVEST",
+        "from": "singleton_0106",
+        "to": "group_0003"
+      },
+      {
+        "symbol": "BHARATSE",
+        "from": "group_0036",
+        "to": "singleton_0485"
+      },
+      {
+        "symbol": "BIKAJI",
+        "from": "singleton_0114",
+        "to": "group_0028"
+      },
+      {
+        "symbol": "BLKASHYAP",
+        "from": "group_0038",
+        "to": "singleton_0502"
+      },
+      {
+        "symbol": "BLS",
+        "from": "group_0039",
+        "to": "singleton_0504"
+      },
+      {
+        "symbol": "BLSE",
+        "from": "group_0039",
+        "to": "singleton_0507"
+      },
+      {
+        "symbol": "BLUEJET",
+        "from": "group_0009",
+        "to": "group_0152"
+      },
+      {
+        "symbol": "BOMDYEING",
+        "from": "singleton_0125",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "BONFIG",
+        "from": "group_0140",
+        "to": "singleton_0516"
+      },
+      {
+        "symbol": "CAMPUS",
+        "from": "singleton_0132",
+        "to": "group_0153"
+      },
+      {
+        "symbol": "CAMS",
+        "from": "group_0042",
+        "to": "singleton_0551"
+      },
+      {
+        "symbol": "CAPACITE",
+        "from": "group_0038",
+        "to": "singleton_0576"
+      },
+      {
+        "symbol": "CCL",
+        "from": "singleton_0140",
+        "to": "group_0154"
+      },
+      {
+        "symbol": "CESC",
+        "from": "singleton_0146",
+        "to": "group_0155"
+      },
+      {
+        "symbol": "CHALET",
+        "from": "singleton_0147",
+        "to": "group_0156"
+      },
+      {
+        "symbol": "COHANCE",
+        "from": "singleton_0161",
+        "to": "group_0009"
+      },
+      {
+        "symbol": "COSMOFIRST",
+        "from": "singleton_0168",
+        "to": "group_0157"
+      },
+      {
+        "symbol": "CRAMC",
+        "from": "singleton_0171",
+        "to": "group_0043"
+      },
+      {
+        "symbol": "CSBBANK",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "CUB",
+        "from": "group_0052",
+        "to": "singleton_0596"
+      },
+      {
+        "symbol": "CYIENT",
+        "from": "singleton_0176",
+        "to": "group_0158"
+      },
+      {
+        "symbol": "CYIENTDLM",
+        "from": "singleton_0177",
+        "to": "group_0158"
+      },
+      {
+        "symbol": "DCBBANK",
+        "from": "group_0052",
+        "to": "group_0160"
+      },
+      {
+        "symbol": "DIVGIITTS",
+        "from": "group_0058",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "DIXON",
+        "from": "group_0059",
+        "to": "singleton_0617"
+      },
+      {
+        "symbol": "DPABHUSHAN",
+        "from": "singleton_0202",
+        "to": "group_0060"
+      },
+      {
+        "symbol": "EBGNG",
+        "from": "singleton_0208",
+        "to": "group_0161"
+      },
+      {
+        "symbol": "EIHOTEL",
+        "from": "singleton_0214",
+        "to": "group_0162"
+      },
+      {
+        "symbol": "EMIL",
+        "from": "singleton_0224",
+        "to": "group_0161"
+      },
+      {
+        "symbol": "EPACK",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "EPACKPEB",
+        "from": "group_0065",
+        "to": "singleton_0666"
+      },
+      {
+        "symbol": "FIVESTAR",
+        "from": "group_0003",
+        "to": "singleton_0713"
+      },
+      {
+        "symbol": "FORCEMOT",
+        "from": "group_0142",
+        "to": "singleton_0737"
+      },
+      {
+        "symbol": "FSL",
+        "from": "singleton_0256",
+        "to": "group_0155"
+      },
+      {
+        "symbol": "GALAPREC",
+        "from": "singleton_0882",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "GARUDA",
+        "from": "group_0038",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "GCSL",
+        "from": "singleton_0268",
+        "to": "group_0089"
+      },
+      {
+        "symbol": "GEOJITFSL",
+        "from": "group_0022",
+        "to": "singleton_0771"
+      },
+      {
+        "symbol": "GLENMARK",
+        "from": "group_0143",
+        "to": "singleton_0778"
+      },
+      {
+        "symbol": "GNFC",
+        "from": "group_0075",
+        "to": "group_0111"
+      },
+      {
+        "symbol": "GPIL",
+        "from": "singleton_0291",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "GRINFRA",
+        "from": "group_0007",
+        "to": "singleton_0814"
+      },
+      {
+        "symbol": "GRSE",
+        "from": "group_0032",
+        "to": "group_0151"
+      },
+      {
+        "symbol": "GSFC",
+        "from": "group_0075",
+        "to": "group_0111"
+      },
+      {
+        "symbol": "HEXT",
+        "from": "singleton_0316",
+        "to": "group_0165"
+      },
+      {
+        "symbol": "HIKAL",
+        "from": "singleton_0318",
+        "to": "group_0106"
+      },
+      {
+        "symbol": "HINDOILEXP",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "HUHTAMAKI",
+        "from": "group_0144",
+        "to": "singleton_0911"
+      },
+      {
+        "symbol": "ICICIGI",
+        "from": "group_0043",
+        "to": "singleton_0914"
+      },
+      {
+        "symbol": "IDBI",
+        "from": "group_0052",
+        "to": "singleton_0915"
+      },
+      {
+        "symbol": "IFBIND",
+        "from": "singleton_0336",
+        "to": "group_0166"
+      },
+      {
+        "symbol": "IMAGICAA",
+        "from": "group_0086",
+        "to": "singleton_0917"
+      },
+      {
+        "symbol": "INDIASHLTR",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "INDRAMEDCO",
+        "from": "singleton_0353",
+        "to": "group_0147"
+      },
+      {
+        "symbol": "INFOBEAN",
+        "from": "singleton_0356",
+        "to": "group_0169"
+      },
+      {
+        "symbol": "INTERARCH",
+        "from": "group_0065",
+        "to": "singleton_0922"
+      },
+      {
+        "symbol": "ITI",
+        "from": "singleton_0364",
+        "to": "group_0032"
+      },
+      {
+        "symbol": "J&KBANK",
+        "from": "singleton_0368",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "JAGRAN",
+        "from": "singleton_0369",
+        "to": "group_0159"
+      },
+      {
+        "symbol": "JKPAPER",
+        "from": "singleton_0378",
+        "to": "group_0131"
+      },
+      {
+        "symbol": "JNPR",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "JSWENERGY",
+        "from": "group_0096",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "JUNIPER",
+        "from": "singleton_0391",
+        "to": "group_0156"
+      },
+      {
+        "symbol": "KALYANKJIL",
+        "from": "singleton_0396",
+        "to": "group_0060"
+      },
+      {
+        "symbol": "KANSAINER",
+        "from": "group_0034",
+        "to": "singleton_0930"
+      },
+      {
+        "symbol": "KARURVYSYA",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "KFINTECH",
+        "from": "group_0042",
+        "to": "singleton_0931"
+      },
+      {
+        "symbol": "KOVAI",
+        "from": "singleton_0414",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "KPEL",
+        "from": "group_0103",
+        "to": "singleton_0935"
+      },
+      {
+        "symbol": "KPIGREEN",
+        "from": "group_0103",
+        "to": "singleton_0936"
+      },
+      {
+        "symbol": "KRBL",
+        "from": "singleton_0417",
+        "to": "group_0006"
+      },
+      {
+        "symbol": "KTKBANK",
+        "from": "group_0052",
+        "to": "group_0160"
+      },
+      {
+        "symbol": "LCCPROJECT",
+        "from": "singleton_0433",
+        "to": "group_0168"
+      },
+      {
+        "symbol": "M&MFIN",
+        "from": "group_0051",
+        "to": "singleton_0943"
+      },
+      {
+        "symbol": "MEDANTA",
+        "from": "singleton_0469",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "METROBRAND",
+        "from": "group_0139",
+        "to": "singleton_0947"
+      },
+      {
+        "symbol": "MMTC",
+        "from": "singleton_0484",
+        "to": "group_0101"
+      },
+      {
+        "symbol": "MODISONLTD",
+        "from": "singleton_0889",
+        "to": "group_0100"
+      },
+      {
+        "symbol": "MOTILALOFS",
+        "from": "singleton_0494",
+        "to": "group_0003"
+      },
+      {
+        "symbol": "MWL",
+        "from": "singleton_0505",
+        "to": "group_0173"
+      },
+      {
+        "symbol": "NAZARA",
+        "from": "group_0143",
+        "to": "singleton_0948"
+      },
+      {
+        "symbol": "NDRAUTO",
+        "from": "group_0058",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "NTPCGREEN",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "OIL",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "ONESOURCE",
+        "from": "group_0009",
+        "to": "group_0152"
+      },
+      {
+        "symbol": "ORIENTCEM",
+        "from": "group_0013",
+        "to": "singleton_0953"
+      },
+      {
+        "symbol": "PERSISTENT",
+        "from": "singleton_0566",
+        "to": "group_0164"
+      },
+      {
+        "symbol": "PGEL",
+        "from": "group_0059",
+        "to": "singleton_0959"
+      },
+      {
+        "symbol": "PIXTRANS",
+        "from": "group_0140",
+        "to": "singleton_0961"
+      },
+      {
+        "symbol": "PNBGILTS",
+        "from": "singleton_0577",
+        "to": "group_0174"
+      },
+      {
+        "symbol": "POWERMECH",
+        "from": "group_0145",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "PRAKASH",
+        "from": "singleton_0590",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "PRESTIGE",
+        "from": "group_0146",
+        "to": "singleton_0965"
+      },
+      {
+        "symbol": "RAJRATAN",
+        "from": "group_0031",
+        "to": "singleton_0967"
+      },
+      {
+        "symbol": "RBLBANK",
+        "from": "singleton_0630",
+        "to": "group_0052"
+      },
+      {
+        "symbol": "RELAXO",
+        "from": "singleton_0635",
+        "to": "group_0153"
+      },
+      {
+        "symbol": "RELTD",
+        "from": "group_0066",
+        "to": "singleton_0968"
+      },
+      {
+        "symbol": "RICOAUTO",
+        "from": "singleton_0642",
+        "to": "group_0148"
+      },
+      {
+        "symbol": "ROUTE",
+        "from": "singleton_0652",
+        "to": "group_0175"
+      },
+      {
+        "symbol": "RSL",
+        "from": "singleton_0658",
+        "to": "group_0173"
+      },
+      {
+        "symbol": "RUNWALENTR",
+        "from": "group_0146",
+        "to": "singleton_0971"
+      },
+      {
+        "symbol": "SAIL",
+        "from": "singleton_0667",
+        "to": "group_0093"
+      },
+      {
+        "symbol": "SENCO",
+        "from": "singleton_0692",
+        "to": "group_0105"
+      },
+      {
+        "symbol": "SHANTIGEAR",
+        "from": "group_0122",
+        "to": "singleton_0975"
+      },
+      {
+        "symbol": "SHAREINDIA",
+        "from": "group_0138",
+        "to": "singleton_0976"
+      },
+      {
+        "symbol": "SHILCTECH",
+        "from": "singleton_0703",
+        "to": "group_0024"
+      },
+      {
+        "symbol": "SHYAMMETL",
+        "from": "singleton_0714",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "SJS",
+        "from": "singleton_0724",
+        "to": "group_0163"
+      },
+      {
+        "symbol": "SMLMAH",
+        "from": "group_0021",
+        "to": "singleton_0980"
+      },
+      {
+        "symbol": "SOBHA",
+        "from": "singleton_0728",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "SOMANYCERA",
+        "from": "group_0129",
+        "to": "singleton_0982"
+      },
+      {
+        "symbol": "SOUTHBANK",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "SPARC",
+        "from": "group_0130",
+        "to": "singleton_0983"
+      },
+      {
+        "symbol": "SPECTRUM",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "SSRETAIL",
+        "from": "singleton_0738",
+        "to": "group_0176"
+      },
+      {
+        "symbol": "STYLAMIND",
+        "from": "singleton_0745",
+        "to": "group_0167"
+      },
+      {
+        "symbol": "STYRENIX",
+        "from": "group_0033",
+        "to": "singleton_0985"
+      },
+      {
+        "symbol": "SUVEN",
+        "from": "group_0130",
+        "to": "singleton_0989"
+      },
+      {
+        "symbol": "TANLA",
+        "from": "singleton_0769",
+        "to": "group_0175"
+      },
+      {
+        "symbol": "TARC",
+        "from": "singleton_0770",
+        "to": "group_0149"
+      },
+      {
+        "symbol": "TARSONS",
+        "from": "group_0142",
+        "to": "singleton_0991"
+      },
+      {
+        "symbol": "TCI",
+        "from": "group_0124",
+        "to": "singleton_0993"
+      },
+      {
+        "symbol": "TECHNOE",
+        "from": "group_0099",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "TIINDIA",
+        "from": "group_0122",
+        "to": "singleton_0999"
+      },
+      {
+        "symbol": "TMPV",
+        "from": "singleton_0902",
+        "to": "group_0133"
+      },
+      {
+        "symbol": "TORNTPOWER",
+        "from": "group_0096",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "TTKPRESTIG",
+        "from": "group_0134",
+        "to": "singleton_1002"
+      },
+      {
+        "symbol": "UFLEX",
+        "from": "group_0144",
+        "to": "singleton_1004"
+      },
+      {
+        "symbol": "UTLSOLAR",
+        "from": "singleton_0823",
+        "to": "group_0041"
+      },
+      {
+        "symbol": "UTTAMSUGAR",
+        "from": "singleton_0824",
+        "to": "group_0055"
+      },
+      {
+        "symbol": "VADILALIND",
+        "from": "singleton_0826",
+        "to": "group_0171"
+      },
+      {
+        "symbol": "VARMORA",
+        "from": "group_0129",
+        "to": "singleton_1006"
+      },
+      {
+        "symbol": "VEDL",
+        "from": "singleton_0905",
+        "to": "group_0177"
+      },
+      {
+        "symbol": "VIKRAN",
+        "from": "group_0145",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "VINCOFE",
+        "from": "singleton_0841",
+        "to": "group_0154"
+      },
+      {
+        "symbol": "VINDHYATEL",
+        "from": "singleton_0842",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "VMART",
+        "from": "singleton_0845",
+        "to": "group_0176"
+      },
+      {
+        "symbol": "VOEPL",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "WHIRLPOOL",
+        "from": "group_0134",
+        "to": "singleton_1010"
+      },
+      {
+        "symbol": "WONDERLA",
+        "from": "group_0086",
+        "to": "singleton_1011"
+      }
+    ]
+  },
+  "group_updated": "2026-11-26",
+  "weekly": "2026-W48",
+  "description_failures": [
+    "BAGMANE.RR",
+    "BAJAJ_AUTO",
+    "BIRET.RR",
+    "BOSCH_HCIL",
+    "EMBASSY.RR",
+    "JAYKAYPP.E1",
+    "JKSHAH",
+    "KLBRENG_B",
+    "KRT.RR",
+    "MINDSPACE.RR",
+    "NAM_INDIA",
+    "NXST.RR"
+  ],
+  "monthly": "2026-11",
+  "descriptions_updated": "2026-11-26"
+}

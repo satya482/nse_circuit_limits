@@ -31,9 +31,11 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.cluster import DBSCAN
 
-sys.stdout.reconfigure(encoding="utf-8")
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = Path(__file__).parent.parent
+sys.path.insert(0, str(REPO_DIR))
 CACHE_DIR = REPO_DIR / ".company_cache"
 TOOLS_DIR = Path(__file__).parent
 OVERRIDES_FILE = TOOLS_DIR / "peer_group_overrides.json"
@@ -116,13 +118,13 @@ def embed_similarity(texts_a: list[str], texts_b: list[str]) -> list[float]:
     if model is None:
         return [0.5] * len(texts_a)  # neutral fallback: let TFIDF midpoint decide
 
-    all_texts = texts_a + texts_b
+    all_texts = list(dict.fromkeys(texts_a + texts_b))
     embeddings = model.encode(all_texts, show_progress_bar=False, batch_size=64)
-    emb_a = embeddings[: len(texts_a)]
-    emb_b = embeddings[len(texts_a) :]
+    by_text = dict(zip(all_texts, embeddings))
 
     sims = []
-    for a, b in zip(emb_a, emb_b):
+    for ta, tb in zip(texts_a, texts_b):
+        a, b = by_text[ta], by_text[tb]
         norm = np.linalg.norm(a) * np.linalg.norm(b)
         sims.append(float(np.dot(a, b) / norm) if norm > 0 else 0.0)
     return sims
@@ -259,10 +261,55 @@ def auto_label(descriptions: list[str], max_words: int = 4) -> str:
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 
-def main():
+def assemble_groups(symbols, descs, names, labels, overrides, previous):
+    """Retain group identities by overlap and preserve explicit symbol overrides."""
+    old = previous.get('groups', {})
+    old_for_symbol = {s: gid for gid, g in old.items() for s in g['members']}
+    clusters = {}
+    for i, label in enumerate(labels):
+        key = ('singleton', symbols[i]) if label == -1 else ('cluster', int(label))
+        clusters.setdefault(key, []).append(i)
+    used = set()
+    reserved = set(old) | {v for k, v in overrides.items() if not k.startswith('_')}
+    members = {}
+    next_id = 0
+    # Match larger overlaps first, independent of DBSCAN's arbitrary label numbers.
+    ordered = sorted(clusters.items(), key=lambda item: -len(item[1]))
+    for key, indices in ordered:
+        candidates = Counter(old_for_symbol[symbols[i]] for i in indices if symbols[i] in old_for_symbol)
+        candidates = {gid: n for gid, n in candidates.items()
+                      if gid not in used and gid.startswith('singleton_') == (key[0] == 'singleton')}
+        if candidates:
+            gid = max(candidates, key=lambda gid: (candidates[gid], gid))
+        else:
+            prefix = 'singleton_' if key[0] == 'singleton' else 'group_'
+            while f'{prefix}{next_id:04d}' in reserved or f'{prefix}{next_id:04d}' in used:
+                next_id += 1
+            gid = f'{prefix}{next_id:04d}'
+            next_id += 1
+        used.add(gid)
+        for i in indices:
+            assigned = overrides.get(symbols[i], gid)
+            members.setdefault(assigned, []).append(i)
+    groups, mapping = {}, {}
+    for gid, indices in members.items():
+        indices.sort()
+        syms = [symbols[i] for i in indices]
+        label = old.get(gid, {}).get('label') or (auto_label([descs[i] for i in indices]) if len(indices) > 1 else names[indices[0]])
+        groups[gid] = {'label': label, 'members': syms, 'size': len(syms)}
+        mapping.update({s: gid for s in syms})
+    return groups, mapping
+
+
+def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--min-desc-len", type=int, default=MIN_DESC_LEN)
-    args = parser.parse_args()
+    parser.add_argument('--universe', type=Path, default=TOOLS_DIR / 'sector_rotation_universe.json')
+    args = parser.parse_args(argv)
+
+    from cluster_membership import load_universe, atomic_json
+    universe = load_universe(args.universe)
+    eligible = {s['symbol'] for s in universe['stocks']}
 
     print("Loading company descriptions from cache...")
     cache = load_cache()
@@ -275,6 +322,8 @@ def main():
     # Filter stocks with usable descriptions
     symbols, descs, names = [], [], []
     for sym, entry in sorted(cache.items()):
+        if sym not in eligible:
+            continue
         combined = entry.get("combined_description", "").strip()
         if len(combined) >= args.min_desc_len:
             symbols.append(sym)
@@ -282,8 +331,11 @@ def main():
             names.append(entry.get("name", sym))
 
     print(
-        f"  Loaded {len(symbols)} stocks with descriptions (skipped {len(cache) - len(symbols)} short/empty)"
+        f"  Loaded {len(symbols)} eligible stocks with descriptions (excluded {len(cache) - len(symbols)} cached entries)"
     )
+    if len(symbols) < 2:
+        print('ERROR: Fewer than two usable descriptions; previous groups preserved')
+        return 1
 
     print("Building TF-IDF matrix...")
     vec, matrix = build_tfidf(symbols, descs)
@@ -303,48 +355,23 @@ def main():
     overrides: dict[str, str] = {}
     if OVERRIDES_FILE.exists():
         overrides = json.loads(OVERRIDES_FILE.read_text(encoding="utf-8"))
+        overrides = {k: v for k, v in overrides.items() if not k.startswith('_')}
         print(f"  Loaded {len(overrides)} manual overrides")
 
-    # Build group structures
-    group_members: dict[str, list[int]] = {}
-    sym_to_group: dict[str, str] = {}
-    next_singleton = 0
-
-    for idx, (sym, label) in enumerate(zip(symbols, labels)):
-        if sym in overrides:
-            gid = overrides[sym]
-        elif label == -1:
-            gid = f"singleton_{next_singleton:04d}"
-            next_singleton += 1
-        else:
-            gid = f"group_{label:04d}"
-        group_members.setdefault(gid, []).append(idx)
-        sym_to_group[sym] = gid
-
-    # Build group output
-    groups = {}
-    for gid, idxs in group_members.items():
-        member_descs = [descs[i] for i in idxs]
-        member_syms = [symbols[i] for i in idxs]
-        label_str = auto_label(member_descs) if len(idxs) > 1 else names[idxs[0]]
-        groups[gid] = {
-            "label": label_str,
-            "members": member_syms,
-            "size": len(member_syms),
-        }
+    previous = json.loads(OUT_FILE.read_text(encoding='utf-8')) if OUT_FILE.exists() else {}
+    overrides = {k: v for k, v in overrides.items() if not k.startswith('_')}
+    groups, sym_to_group = assemble_groups(symbols, descs, names, labels, overrides, previous)
 
     output = {
         "version": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         "n_stocks": len(symbols),
         "n_groups": len(groups),
-        "n_singletons": next_singleton,
+        "n_singletons": sum(g['size'] == 1 for g in groups.values()),
         "groups": groups,
         "stock_to_group": sym_to_group,
     }
 
-    OUT_FILE.write_text(
-        json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8"
-    )
+    atomic_json(OUT_FILE, output)
     print(f"Written: {OUT_FILE}  ({len(groups)} groups, {len(symbols)} stocks)")
 
     # Show largest groups as a sanity check

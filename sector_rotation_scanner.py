@@ -2,7 +2,7 @@
 """
 Sector Rotation Scanner — daily, run after fetch_data.py (4:45 PM IST).
 
-Reads peer_groups.json (built monthly by tools/peer_group_builder.py) and
+Reads peer_groups.json (maintained weekly by tools/peer_group_builder.py) and
 OHLC data from market.db to produce two signals per peer group:
 
   Signal A — Group RS trend:  avg RS of group vs 20 trading days ago
@@ -14,10 +14,13 @@ Output: sector_rotation_scans/sector_rotation_latest.md
 """
 
 import json
+import math
 import sys
 from datetime import datetime
 from pathlib import Path
 from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
+from cluster_membership import (load_universe, eligible_groups, read_cache, build_coverage,
+                                atomic_json, read_json, STATE_FILE, COVERAGE_FILE)
 
 _LABELS_FILE = Path(__file__).parent / "tools" / "stock_labels.json"
 _LABELS: dict = (
@@ -28,7 +31,8 @@ _LABELS: dict = (
 
 import pandas as pd
 
-sys.stdout.reconfigure(encoding="utf-8")
+if __name__ == '__main__':
+    sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = Path(__file__).parent
 SCANS_DIR = REPO_DIR / "sector_rotation_scans"
@@ -112,7 +116,8 @@ def main():
         return 1
 
     groups_data = json.loads(GROUPS_FILE.read_text(encoding="utf-8"))
-    groups = groups_data["groups"]
+    universe = load_universe(require_today=True)
+    groups = eligible_groups(groups_data, universe)
     # Only non-singleton groups with enough members
     active_groups = {
         gid: g
@@ -124,7 +129,7 @@ def main():
     )
 
     all_symbols = list({sym for g in active_groups.values() for sym in g["members"]})
-    all_symbols_with_bm = all_symbols + [BENCHMARK]
+    all_symbols_with_bm = [s['symbol'] for s in universe['stocks']] + [BENCHMARK]
 
     print(f"Loading OHLC for {len(all_symbols)} stocks + benchmark...")
     ohlc = load_ohlc_many(all_symbols_with_bm, lookback=LOOKBACK)
@@ -133,6 +138,17 @@ def main():
     if bm_df is None or bm_df.empty:
         print("ERROR: Benchmark not in DB. Run fetch_data.py first.")
         return 1
+
+    # Never let stale or incomplete IPO history contribute to current breadth.
+    coverage = build_coverage(universe, groups_data, read_cache(), ohlc)
+    current_date = bm_df['date'].max()
+    ohlc = {s: df for s, df in ohlc.items()
+            if df is not None and not df.empty and df['date'].max() == current_date
+            and df['close'].gt(0).all() and df['close'].map(math.isfinite).all()}
+    state = read_json(STATE_FILE, {})
+    coverage['changes'] = state.get('changes', {})
+    coverage['descriptions_updated'] = state.get('descriptions_updated', '')
+    coverage['description_failures'] = state.get('description_failures', [])
 
     # Compute RS for each stock
     print("Computing RS lines...")
@@ -255,6 +271,8 @@ def main():
 
         # ── ZL Breadth + Cluster ─────────────────────────────────────────────
         zl_members = [s for s in valid_syms if s in zl_map]
+        if len(zl_members) < MIN_GROUP:
+            continue
         zl_rising_syms = [s for s in zl_members if zl_map[s]["rising"]]
         breadth_pct = len(zl_rising_syms) / len(zl_members) if zl_members else 0.0
         avg_zl_days = (
@@ -452,6 +470,7 @@ def main():
     MD_FILE.write_text(md, encoding="utf-8")
     dated_file = SCANS_DIR / f"sector_rotation_{TODAY}.md"
     dated_file.write_text(md, encoding="utf-8")
+    atomic_json(COVERAGE_FILE, coverage)
     print(f"Written: {MD_FILE}  +  {dated_file.name}")
     print(f"  Rotating In:  {len(rot_in)} groups")
     print(f"  Rotating Out: {len(rot_out)} groups")

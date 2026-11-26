@@ -48,3 +48,24 @@ def test_pipeline_refreshes_source_then_page_before_dashboard():
     assert pipeline.index('Run-Scanner "SectorRotation"') < pipeline.index('Run-Scanner "Dashboard"')
     assert runner.index('sector_rotation_scanner.py') < runner.index('cluster_dashboard.py') < runner.index('--- Git commit+push ---')
     assert 'add sector_rotation_scans/ cluster.html' in runner
+
+
+def test_pending_members_and_maintenance_changes_are_visible():
+    coverage = {'eligible': 10, 'ready': 7, 'discovered_at': '2026-11-26',
+                'groups_updated': '2026-11-23', 'pending': [
+                    {'symbol': 'NEWIPO', 'name': '<New>', 'reason': 'Awaiting weekly group assignment'}],
+                'changes': {'added': ['NEWIPO'], 'removed': ['OLD'],
+                            'moved': [{'symbol': 'SHIFT', 'from': 'A', 'to': 'B'}]}}
+    page = cluster.build_html(report(1), coverage)
+    assert 'NEWIPO' in page and 'Awaiting weekly group assignment' in page
+    assert '&lt;New&gt;' in page
+    assert '10 eligible' in page and '7 ready' in page
+    assert 'OLD' in page and 'SHIFT' in page
+
+
+def test_daily_discovery_is_before_price_fetch_and_maintenance_before_scan():
+    root = Path(__file__).resolve().parents[1]
+    pipeline = (root / 'run_all_scanners.ps1').read_text()
+    runner = (root / 'run_sector_rotation.ps1').read_text()
+    assert pipeline.index('Run-Scanner "ClusterDiscovery"') < pipeline.index('Run-Scanner "FetchData"')
+    assert runner.index('cluster_membership.py') < runner.index('sector_rotation_scanner.py')

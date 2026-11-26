@@ -3,16 +3,18 @@
 import re
 from html import escape
 from pathlib import Path
+from datetime import datetime
 
 from dashboard_generator import parse_sector_rotation
 from disclaimer import SEBI_HTML_BANNER, SEBI_HTML_FOOTER
+from cluster_membership import read_json, COVERAGE_FILE, IST
 
 ROOT = Path(__file__).resolve().parent
 SOURCE = ROOT / "sector_rotation_scans" / "sector_rotation_latest.md"
 OUTPUT = ROOT / "cluster.html"
 
 
-def build_html(content: str) -> str:
+def build_html(content: str, coverage: dict | None = None) -> str:
     date = re.search(r"^# Sector Rotation .+?(\d{4}-\d{2}-\d{2})", content, re.M)
     if not date or "## ZL Breadth per Group" not in content:
         raise ValueError("Sector rotation report has no dated ZL breadth section")
@@ -25,6 +27,32 @@ def build_html(content: str) -> str:
     if not groups:
         rows = '<tr><td colspan="7">No groups with ≥40% ZL rising.</td></tr>'
     title = f"ZL Breadth per Group ({len(groups)} groups ≥40% rising)"
+    coverage_html = ''
+    if coverage is not None:
+        pending = coverage['pending']
+        pending_rows = ''.join('<tr>' + ''.join(f'<td>{escape(str(row[key]))}</td>'
+                               for key in ('symbol', 'name', 'reason')) + '</tr>' for row in pending)
+        changes = coverage.get('changes', {})
+        added = ', '.join(changes.get('added', [])) or 'None'
+        removed = ', '.join(changes.get('removed', [])) or 'None'
+        moved = '; '.join(f"{r['symbol']}: {r['from']} → {r['to']}" for r in changes.get('moved', [])) or 'None'
+        discovered = coverage.get('discovered_at', '')
+        try:
+            discovered = datetime.fromisoformat(discovered).astimezone(IST).strftime('%Y-%m-%d %H:%M IST')
+        except ValueError:
+            pass
+        retry = ', '.join(coverage.get('description_failures', [])) or 'None'
+        coverage_html = f'''<section aria-label="Universe coverage">
+<h2>Universe coverage</h2>
+<p>NSE common equities including IPOs · Price &gt;₹25 · Market cap ₹1,000 crore–₹5 lakh crore</p>
+<p>{coverage['eligible']} eligible · {coverage['ready']} ready · {len(pending)} pending</p>
+<p class="meta">Price data: {escape(coverage.get('price_date', ''))}</p>
+<p class="meta">Discovered: {escape(discovered)} · Groups updated: {escape(coverage.get('groups_updated', ''))} · Descriptions refreshed: {escape(coverage.get('descriptions_updated') or 'Pending')}</p>
+<details><summary>Description fetches awaiting retry ({len(coverage.get('description_failures', []))})</summary><p>{escape(retry)}</p></details>
+<details><summary>Pending stocks ({len(pending)})</summary>
+<div class="table-wrap"><table aria-label="Pending stocks"><thead><tr><th>Symbol</th><th>Company</th><th>Reason</th></tr></thead><tbody>{pending_rows or '<tr><td colspan="3">None</td></tr>'}</tbody></table></div></details>
+<details><summary>Last weekly membership changes</summary>
+<p>Added: {escape(added)}</p><p>Removed: {escape(removed)}</p><p>Moved: {escape(moved)}</p></details></section>'''
     return f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,13 +73,14 @@ td:nth-child(6){{color:#e3b341}}td:first-child{{min-width:180px;font-weight:600}
 <div class="table-wrap"><table aria-label="ZL Breadth per Group">
 <thead><tr><th scope="col">Group</th><th scope="col">ZL Rising</th><th scope="col">Breadth</th><th scope="col">Avg ZL Days</th><th scope="col">Avg ZL Chg%</th><th scope="col">⚡ Cluster</th><th scope="col">Members</th></tr></thead>
 <tbody>{rows}</tbody></table></div>
+{coverage_html}
 {SEBI_HTML_FOOTER}
 </main></body></html>
 '''
 
 
 def generate(source: Path = SOURCE, output: Path = OUTPUT) -> None:
-    page = build_html(source.read_text(encoding="utf-8"))
+    page = build_html(source.read_text(encoding="utf-8"), read_json(COVERAGE_FILE))
     temporary = output.with_suffix('.html.tmp')
     temporary.write_text(page, encoding="utf-8")
     temporary.replace(output)

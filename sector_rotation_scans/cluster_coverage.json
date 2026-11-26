@@ -1,0 +1,6855 @@
+{
+  "discovered_at": "2026-11-26T11:12:18.808429+00:00",
+  "groups_updated": "2026-11-26",
+  "price_date": "2026-11-26",
+  "eligible": 1477,
+  "ready": 333,
+  "pending": [
+    {
+      "symbol": "3BBLACKBIO",
+      "name": "3B BlackBio Dx Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "3MINDIA",
+      "name": "3M India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "5PAISA",
+      "name": "5paisa Capital Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "63MOONS",
+      "name": "63 Moons Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AADHARHFC",
+      "name": "Aadhar Housing Finance Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AARTIDRUGS",
+      "name": "Aarti Drugs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AARTIIND",
+      "name": "AARTI Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AARTIPHARM",
+      "name": "Aarti Pharmalabs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ABB",
+      "name": "ABB India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ABBOTINDIA",
+      "name": "Abbott India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ABREL",
+      "name": "Aditya Birla Real Estate Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACC",
+      "name": "ACC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACCELYA",
+      "name": "Accelya Solutions India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACCENTMIC",
+      "name": "Accent Microcell Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACE",
+      "name": "Action Construction Equipment Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACGL",
+      "name": "Automobile Corporation of Goa Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACI",
+      "name": "Archean Chemical Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ACUTAAS",
+      "name": "Acutaas Chemicals Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADANIENSOL",
+      "name": "Adani Energy Solutions Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADANIENT",
+      "name": "Adani Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADANIGREEN",
+      "name": "Adani Green Energy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADANIPORTS",
+      "name": "Adani Ports & Special Economic Zone Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADANIPOWER",
+      "name": "Adani Power Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADFFOODS",
+      "name": "ADF Foods Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADOR",
+      "name": "Ador Welding Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADVAIT",
+      "name": "Advait Energy Transitions Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ADVENZYMES",
+      "name": "Advanced Enzyme Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AEGISLOG",
+      "name": "Aegis Logistics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AEGISVOPAK",
+      "name": "Aegis Vopak Terminals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AEQUS",
+      "name": "Aequs Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AEROENTER",
+      "name": "Aeroflex Enterprises Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AEROFLEX",
+      "name": "Aeroflex Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AETHER",
+      "name": "Aether Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AFFLE",
+      "name": "Affle 3i Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AGARWALEYE",
+      "name": "Dr. Agarwal's Health Care Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AGI",
+      "name": "AGI Greenpac Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AGIIL",
+      "name": "Agi Infra Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AHLUCONT",
+      "name": "Ahluwalia Contracts (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AIAENG",
+      "name": "AIA Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AIIL",
+      "name": "Authum Investment & Infrastucture Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AIMTRON",
+      "name": "Aimtron Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AJANTPHARM",
+      "name": "Ajanta Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AJAXENGG",
+      "name": "Ajax Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AJMERA",
+      "name": "Ajmera Realty & Infra India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AKCAPIT",
+      "name": "A. K. Capital Services Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALGOQUANT",
+      "name": "Algoquant Fintech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALICON",
+      "name": "Alicon Castalloy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALIVUS",
+      "name": "Alivus Life Sciences Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALKYLAMINE",
+      "name": "Alkyl Amines Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALLDIGI",
+      "name": "Alldigi Tech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALLTIME",
+      "name": "All Time Plastics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ALPEXSOLAR",
+      "name": "Alpex Solar Ltd.",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "AMAGI",
+      "name": "Amagi Media Labs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AMBUJACEM",
+      "name": "Ambuja Cements Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AMRUTANJAN",
+      "name": "Amrutanjan Health Care Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANANTAM",
+      "name": "Anantam Highways Trust",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "ANAWIL",
+      "name": "Anawil Wire & Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANDHRAPAP",
+      "name": "Andhra Paper Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANDHRSUGAR",
+      "name": "Andhra Sugars Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANGELONE",
+      "name": "Angel One Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANONDITA",
+      "name": "Anondita Medicare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANUP",
+      "name": "Anup Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANURAS",
+      "name": "Anupam Rasayan India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ANZEN",
+      "name": "Anzen India Energy Yield Plus Trust Units",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AONESTEELS",
+      "name": "A-One Steels India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APARINDS",
+      "name": "APAR Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APCOTEXIND",
+      "name": "Apcotex Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APLAPOLLO",
+      "name": "APL Apollo Tubes Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APOLLO",
+      "name": "Apollo Micro Systems Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APOLLOHOSP",
+      "name": "Apollo Hospitals Enterprise Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APOLLOPIPE",
+      "name": "Apollo Pipes Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "APOLLOTYRE",
+      "name": "Apollo Tyres Limited.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARCIL",
+      "name": "Asset Reconstruction Company (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARDEE",
+      "name": "Ardee Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARE&M",
+      "name": "Amara Raja Energy & Mobility Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARFIN",
+      "name": "Arfin India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARIS",
+      "name": "ArisInfra Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARKADE",
+      "name": "Arkade Developers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARMANFIN",
+      "name": "Arman Financial Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARVSMART",
+      "name": "Arvind SmartSpaces Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ARYAMAN",
+      "name": "Aryaman Financial Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASAHIINDIA",
+      "name": "Asahi India Glass Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASHAPURMIN",
+      "name": "Ashapura Minechem Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASHOKA",
+      "name": "Ashoka Buildcon Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASHOKLEY",
+      "name": "Ashok Leyland Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASIANENE",
+      "name": "Asian Energy Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASIANHOTNR",
+      "name": "Asian Hotels (North) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASIANPAINT",
+      "name": "Asian Paints Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASIANTILES",
+      "name": "Asian Granito India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASKAUTOLTD",
+      "name": "ASK Automotive Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASTEC",
+      "name": "Astec Lifesciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASTERDM",
+      "name": "Aster DM Quality Care Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASTRAL",
+      "name": "Astral Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASTRAMICRO",
+      "name": "Astra Microwave Products Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ASTRAZEN",
+      "name": "AstraZeneca Pharma India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ATHERENERG",
+      "name": "Ather Energy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ATUL",
+      "name": "Atul Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ATULAUTO",
+      "name": "Atul Auto Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AUGMONT",
+      "name": "Augmont Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AURIONPRO",
+      "name": "Aurionpro Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AURUM",
+      "name": "Aurum Proptech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AUTOAXLES",
+      "name": "Automotive Axles Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVADHSUGAR",
+      "name": "Avadh Sugar & Energy Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVALON",
+      "name": "Avalon Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVANTEL",
+      "name": "Avantel Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVANTIFEED",
+      "name": "Avanti Feeds Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVL",
+      "name": "Aditya Vision Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AVTNPL",
+      "name": "AVT Natural Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AWFIS",
+      "name": "Awfis Space Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AWL",
+      "name": "AWL Agri Business Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AXISBANK",
+      "name": "Axis Bank Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AYE",
+      "name": "Aye Finance Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "AYMSYNTEX",
+      "name": "AYM Syntex Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BAFNAPH",
+      "name": "Bafna Pharmaceuticals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BAGMANE.RR",
+      "name": "Bagmane Prime Office REIT",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "BAJAJFINSV",
+      "name": "Bajaj Finserv Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BAJAJHCARE",
+      "name": "Bajaj Healthcare Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BAJAJ_AUTO",
+      "name": "Bajaj Auto Limited",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "BAJEL",
+      "name": "Bajel Projects Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALAJITELE",
+      "name": "Balaji Telefilms Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALAMINES",
+      "name": "Balaji Amines Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALKRISIND",
+      "name": "Balkrishna Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALMLAWRIE",
+      "name": "Balmer Lawrie & Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALRAMCHIN",
+      "name": "Balrampur Chini Mills Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BALUFORGE",
+      "name": "Balu Forge Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BANARISUG",
+      "name": "Bannari Amman Sugars Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BANCOINDIA",
+      "name": "Banco Products (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BANKBARODA",
+      "name": "Bank of Baroda",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BANSALWIRE",
+      "name": "Bansal Wire Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BASF",
+      "name": "BASF India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BATAINDIA",
+      "name": "Bata India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BAYERCROP",
+      "name": "Bayer Cropscience India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BBL",
+      "name": "Bharat Bijlee Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BBOX",
+      "name": "Black Box Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BBTC",
+      "name": "Bombay Burmah Trading Corp. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BDL",
+      "name": "Bharat Dynamics Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BEL",
+      "name": "Bharat Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BELDING",
+      "name": "Belding India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BELRISE",
+      "name": "Belrise Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BEML",
+      "name": "BEML Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BENARAS",
+      "name": "Benares Hotels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BENGALASM",
+      "name": "Bengal & Assam Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BEPL",
+      "name": "Bhansali Engineering Polymers Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BERGEPAINT",
+      "name": "Berger Paints India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BETA",
+      "name": "Beta Drugs Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BFUTILITIE",
+      "name": "BF Utilities Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BGRENERGY",
+      "name": "BGR Energy Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHAGCHEM",
+      "name": "Bhagiradha Chemicals & Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHAGERIA",
+      "name": "Bhageria Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHARATCOAL",
+      "name": "Bharat Coking Coal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHARATFORG",
+      "name": "Bharat Forge Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHARATRAS",
+      "name": "Bharat Rasayan Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHARATSE",
+      "name": "Bharat Seats Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHARTIHEXA",
+      "name": "Bharti Hexacom Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BHEL",
+      "name": "Bharat Heavy Electricals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BIL",
+      "name": "Bhartiya International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BIOCON",
+      "name": "Biocon Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BIRET.RR",
+      "name": "Brookfield India Real Estate Trust",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "BIRLACORPN",
+      "name": "Birla Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLACKBUCK",
+      "name": "Blackbuck Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLEL",
+      "name": "Behari Lal Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLIL",
+      "name": "Balmer Lawrie Investments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLISSGVS",
+      "name": "Bliss GVS Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLKASHYAP",
+      "name": "B.L. Kashyap & Sons Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLS",
+      "name": "BLS International Services Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLSE",
+      "name": "BLS E-Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLSPOLY",
+      "name": "BLS Polymers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLUEDART",
+      "name": "Blue Dart Express Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLUEJET",
+      "name": "Blue Jet Healthcare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLUESTARCO",
+      "name": "Blue Star Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLUESTONE",
+      "name": "Bluestone Jewellery and Lifestyle Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BLUSPRING",
+      "name": "Bluspring Enterprises Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BODALCHEM",
+      "name": "Bodal Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BONDADA",
+      "name": "Bondada Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BONFIG",
+      "name": "Bonfiglioli Transmissions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BOROLTD",
+      "name": "Borosil Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BOSCHLTD",
+      "name": "Bosch Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BOSCH_HCIL",
+      "name": "Bosch Home Comfort India Ltd",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "BPLPHARMA",
+      "name": "Bharat Parenterals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BRIGADE",
+      "name": "Brigade Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BRIGHOTEL",
+      "name": "Brigade Hotel Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BRITANNIA",
+      "name": "Britannia Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BSE",
+      "name": "BSE Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BSOFT",
+      "name": "Birlasoft Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BUILDPRO",
+      "name": "Shankara Buildpro Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "BUTTERFLY",
+      "name": "Butterfly Gandhimathi Appliances Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAMLINFINE",
+      "name": "Camlin Fine Sciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAMPUS",
+      "name": "Campus Activewear Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAMS",
+      "name": "Computer Age Management Services Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CANBK",
+      "name": "Canara Bank",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CANTABIL",
+      "name": "Cantabil Retail India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAPACITE",
+      "name": "Capacit'e Infraprojects Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAPILLARY",
+      "name": "Capillary Technologies India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CAPINVIT",
+      "name": "Capital Infra Trust",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "CAPLIPOINT",
+      "name": "Caplin Point Laboratories Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CARBORUNIV",
+      "name": "Carborundum Universal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CARERATING",
+      "name": "CARE Ratings Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CARRARO",
+      "name": "Carraro India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CARTRADE",
+      "name": "CarTrade Tech Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CARYSIL",
+      "name": "Carysil Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CASTROLIND",
+      "name": "Castrol India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CCAVENUE",
+      "name": "AvenuesAI Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CCL",
+      "name": "CCL Products (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CDSL",
+      "name": "Central Depository Services (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CEATLTD",
+      "name": "CEAT Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CEINSYS",
+      "name": "Ceinsys Tech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CELLO",
+      "name": "Cello World Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CENTENKA",
+      "name": "Century Enka Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CENTUM",
+      "name": "Centum Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CERA",
+      "name": "Cera Sanitaryware Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CESC",
+      "name": "CESC Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CGPOWER",
+      "name": "CG Power & Industrial Solutions Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CHALET",
+      "name": "Chalet Hotels Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CHAMBLFERT",
+      "name": "Chambal Fertilisers & Chemicals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CHEMPLASTS",
+      "name": "Chemplast Sanmar Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CHOICEIN",
+      "name": "Choice International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CIEINDIA",
+      "name": "CIE Automotive India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CIPLA",
+      "name": "Cipla Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CLEAN",
+      "name": "Clean Science & Technology Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CLEANMAX",
+      "name": "Clean Max Enviro Energy Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CMLL",
+      "name": "Caliber Mining and Logistics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CMPDI",
+      "name": "Central Mine Planning & Design Institute Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CMRGREEN",
+      "name": "CMR Green Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CMSINFO",
+      "name": "CMS Info Systems Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CNL",
+      "name": "Creative Newtech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "COCKERILL",
+      "name": "John Cockerill India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "COFORGE",
+      "name": "Coforge Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "COMSYN",
+      "name": "Commercial Syn Bags Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CONFIPET",
+      "name": "Confidence Petroleum India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CORDELIA",
+      "name": "Waterways Leisure Tourism Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "COROMANDEL",
+      "name": "Coromandel International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CORONA",
+      "name": "Corona Remedies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "COSMOFIRST",
+      "name": "Cosmo First Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CPPLUS",
+      "name": "Aditya Infotech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CRAFTSMAN",
+      "name": "Craftsman Automation Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CRISIL",
+      "name": "CRISIL Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CRIZAC",
+      "name": "Crizac Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CROMPTON",
+      "name": "Crompton Greaves Consumer Electricals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CUB",
+      "name": "City Union Bank Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CUBEINVIT",
+      "name": "CUBE HIGHWAYS TRUST Units",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "CUMMINSIND",
+      "name": "Cummins India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CUPID",
+      "name": "Cupid Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CYIENT",
+      "name": "Cyient Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CYIENTDLM",
+      "name": "Cyient DLM Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DALBHARAT",
+      "name": "Dalmia Bharat Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DALMIASUG",
+      "name": "Dalmia Bharat Sugar & Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DAMCAPITAL",
+      "name": "DAM Capital Advisors Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DANISH",
+      "name": "Danish Power Ltd.",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "DATAMATICS",
+      "name": "Datamatics Global Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DATAPATTNS",
+      "name": "Data Patterns (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DBCORP",
+      "name": "DB Corp. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DBREALTY",
+      "name": "Valor Estate Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DCBBANK",
+      "name": "DCB Bank Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DCMSHRIRAM",
+      "name": "DCM Shriram Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DCW",
+      "name": "DCW Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DCXINDIA",
+      "name": "DCX Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DDEVPLSTIK",
+      "name": "Ddev Plastiks Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DECNGOLD",
+      "name": "Deccan Gold Mines Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DEEDEV",
+      "name": "DEE Development Engineers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DEEPA",
+      "name": "Deepa Jewellers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DEEPAKFERT",
+      "name": "Deepak Fertilisers and Petrochemicals Corporation Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DEEPAKNTR",
+      "name": "Deepak Nitrite Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DEEPINDS",
+      "name": "Deep Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DELHIVERY",
+      "name": "Delhivery Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DELTACORP",
+      "name": "Delta Corp. Ltd. (India)",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DHANUKA",
+      "name": "Dhanuka Agritech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DHOOTTRANS",
+      "name": "Dhoot Transmission Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DIACABS",
+      "name": "Diamond Power Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DIFFNKG",
+      "name": "Diffusion Engineers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DISAQ",
+      "name": "DISA India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DIXON",
+      "name": "Dixon Technologies (India) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DLF",
+      "name": "DLF Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DLINKINDIA",
+      "name": "D-Link (India) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DMART",
+      "name": "Avenue Supermarts Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DODLA",
+      "name": "Dodla Dairy Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DOLATALGO",
+      "name": "Dolat Algotech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DOLLAR",
+      "name": "Dollar Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DOLPHIN",
+      "name": "Dolphin Offshore Enterprises India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DOMS",
+      "name": "DOMS Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DPABHUSHAN",
+      "name": "D. P. Abhushan Ltd.",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "DPEL",
+      "name": "Divine Power Energy Ltd.",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "DRAGARWQ",
+      "name": "Dr. Agarwal'S Eye Hospital Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DREDGECORP",
+      "name": "Dredging Corporation of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DRREDDY",
+      "name": "Dr. Reddy's Laboratories Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DSSL",
+      "name": "Dynacons Systems & Solutions Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DVL",
+      "name": "Dhunseri Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "DYCL",
+      "name": "Dynamic Cables Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "E2E",
+      "name": "E2E Networks Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EBGNG",
+      "name": "Gng Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ECLERX",
+      "name": "eClerx Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EDELALTS",
+      "name": "EAAA India Alternatives Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EDELWEISS",
+      "name": "Edelweiss Financial Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EFCIL",
+      "name": "EFC (I) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EICHERMOT",
+      "name": "Eicher Motors Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EIDPARRY",
+      "name": "E.I.D.-Parry (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EIEL",
+      "name": "Enviro Infra Engineers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EIHAHOTELS",
+      "name": "EIH Associated Hotels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EIHOTEL",
+      "name": "EIH Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EIMCOELECO",
+      "name": "Eimco Elecon (India) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EKC",
+      "name": "Everest Kanto Cylinder Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELANTAS",
+      "name": "ELANTAS Beck India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELECON",
+      "name": "Elecon Engineering Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELECTCAST",
+      "name": "Electrosteel Castings Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELEVATE",
+      "name": "Elevate Campuses Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELGIEQUIP",
+      "name": "ELGI Equipments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ELLEN",
+      "name": "Ellenbarrie Industrial Gases Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EMBASSY.RR",
+      "name": "Embassy Office Parks REIT",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "EMBDL",
+      "name": "Embassy Developments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EMCURE",
+      "name": "Emcure Pharmaceuticals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EMIL",
+      "name": "Electronics Mart India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EMSLIMITED",
+      "name": "EMS Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EMUDHRA",
+      "name": "eMudhra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ENGINERSIN",
+      "name": "Engineers India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ENRIN",
+      "name": "Siemens Energy India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ENTERO",
+      "name": "Entero Healthcare Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EPACKPEB",
+      "name": "Epack Prefab Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EPIGRAL",
+      "name": "Epigral Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ERIS",
+      "name": "Eris Lifesciences Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ESABINDIA",
+      "name": "Esab India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ESCORTS",
+      "name": "Escorts Kubota Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ESDS",
+      "name": "ESDS Software Solution Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ETERNAL",
+      "name": "Eternal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ETHOSLTD",
+      "name": "Ethos Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EUREKAFORB",
+      "name": "Eureka Forbes Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EUROPRATIK",
+      "name": "Euro Pratik Sales Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EVEREADY",
+      "name": "Eveready Industries India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EVONILE",
+      "name": "Evonile Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EXCELINDUS",
+      "name": "Excel Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EXIDEIND",
+      "name": "Exide Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "EXPLEOSOL",
+      "name": "Expleo Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FACT",
+      "name": "Fertilizers & Chemicals Travancore Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FAZE3Q",
+      "name": "Faze Three Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FCL",
+      "name": "Fineotex Chemical Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FEDDERSHOL",
+      "name": "Fedders Holding Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FEDERALBNK",
+      "name": "Federal Bank Ltd. (India)",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FERMENTA",
+      "name": "Fermenta Biotech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FIEMIND",
+      "name": "Fiem Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FILATEX",
+      "name": "Filatex India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FINCABLES",
+      "name": "Finolex Cables Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FINEORG",
+      "name": "Fine Organic Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FINPIPE",
+      "name": "Finolex Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FIRSTCRY",
+      "name": "Brainbees Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FIVESTAR",
+      "name": "Five-Star Business Finance Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FLAIR",
+      "name": "Flair Writing Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FLUOROCHEM",
+      "name": "Gujarat Fluorochemicals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FMGOETZE",
+      "name": "Federal-Mogul Goetze (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FORCEMOT",
+      "name": "Force Motors Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FOSECOIND",
+      "name": "Foseco India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FRACTAL",
+      "name": "Fractal Analytics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FREDUN",
+      "name": "Fredun Pharmaceuticals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FRONTSP",
+      "name": "Frontier Springs Limited.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FSL",
+      "name": "Firstsource Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "FUSIONCX",
+      "name": "Fusion CX Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GABRIEL",
+      "name": "Gabriel India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GAEL",
+      "name": "Gujarat Ambuja Exports Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GAJA",
+      "name": "Gaja Alternative Asset Management Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GALAXYSURF",
+      "name": "Galaxy Surfactants Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GALLANTT",
+      "name": "Gallantt Ispat Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GANDHAR",
+      "name": "Gandhar Oil Refinery (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GANDHITUBE",
+      "name": "Gandhi Special Tubes Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GANECOS",
+      "name": "Ganesha Ecosphere Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GANESHHOU",
+      "name": "Ganesh Housing Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GARFIBRES",
+      "name": "Garware Technical Fibres Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GATEWAY",
+      "name": "Gateway Distriparks Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GCSL",
+      "name": "Gretex Corporate Services Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GENESYS",
+      "name": "Genesys International Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GENUSPOWER",
+      "name": "Genus Power Infrastructures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GEOJITFSL",
+      "name": "Geojit Financial Services Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GESHIP",
+      "name": "Great Eastern Shipping Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GICRE",
+      "name": "General Insurance Corporation of India",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GIPCL",
+      "name": "Gujarat Industries Power Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GKSL",
+      "name": "Gujarat Kidney & Super Speciality Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GLAND",
+      "name": "Gland Pharma Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GLASSWALL",
+      "name": "Glass Wall Systems (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GLAXO",
+      "name": "GlaxoSmithKline Pharmaceuticals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GLENMARK",
+      "name": "Glenmark Pharmaceuticals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GMDCLTD",
+      "name": "Gujarat Mineral Development Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GMMPFAUDLR",
+      "name": "GMM Pfaudler Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GMRAIRPORT",
+      "name": "GMR Airports Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GMRP&UI",
+      "name": "GMR Power and Urban Infra Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GNA",
+      "name": "GNA Axles Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOCLCORP",
+      "name": "GOCL Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOCOLORS",
+      "name": "Go Fashion (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GODIGIT",
+      "name": "Go Digit General Insurance Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GODREJAGRO",
+      "name": "Godrej Agrovet Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GODREJCP",
+      "name": "Godrej Consumer Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GODREJIND",
+      "name": "Godrej Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GODREJPROP",
+      "name": "Godrej Properties Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOKEX",
+      "name": "Gokaldas Exports Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOKULAGRO",
+      "name": "Gokul Agro Resources Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOLDIAM",
+      "name": "Goldiam International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOODLUCK",
+      "name": "Goodluck India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GOODYEAR",
+      "name": "Goodyear India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GPPL",
+      "name": "Gujarat Pipavav Port Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GPTHEALTH",
+      "name": "GPT Healthcare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GPTINFRA",
+      "name": "GPT Infraprojects Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRAPHITE",
+      "name": "Graphite India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRASIM",
+      "name": "Grasim Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRAUWEIL",
+      "name": "Grauer & Weil India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GREAVESCOT",
+      "name": "Greaves Cotton Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GREENLAM",
+      "name": "Greenlam Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRINDWELL",
+      "name": "Grindwell Norton Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRINFRA",
+      "name": "G R Infraprojects Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRMOVER",
+      "name": "GRM Overseas Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GROWW",
+      "name": "Billionbrains Garage Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRSE",
+      "name": "Garden Reach Shipbuilders & Engineers Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GRWRHITECH",
+      "name": "Garware Hi-Tech Films Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GSPCROP",
+      "name": "GSP Crop Science Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GSPLTRANS",
+      "name": "GSPL Transmission Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GUJALKALI",
+      "name": "Gujarat Alkalies & Chemicals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GULFOILLUB",
+      "name": "Gulf Oil Lubricants India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GVPIL",
+      "name": "GE Power India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "GVT&D",
+      "name": "GE Vernova T&D India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HAPPSTMNDS",
+      "name": "Happiest Minds Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HARSHA",
+      "name": "Harsha Engineers International Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HATSUN",
+      "name": "Hatsun Agro Product Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HAWKINCOOK",
+      "name": "Hawkins Cookers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HBLENGINE",
+      "name": "HBL Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HCG",
+      "name": "HealthCare Global Enterprises Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HCLTECH",
+      "name": "HCL Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HDFCAMC",
+      "name": "HDFC Asset Management Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HDFCLIFE",
+      "name": "HDFC Life Insurance Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HDFIRE",
+      "name": "HD Fire Protect Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HEGAM",
+      "name": "HEG Advanced Materials Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HEIDELBERG",
+      "name": "Heidelbergcement India Limited.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HERITGFOOD",
+      "name": "Heritage Foods Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HEROMOTOCO",
+      "name": "Hero Motocorp Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HEROMOTORS",
+      "name": "Hero Motors Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HESTERBIO",
+      "name": "Hester Biosciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HEXT",
+      "name": "Hexaware Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HFCL",
+      "name": "HFCL Limited",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "HGS",
+      "name": "Hinduja Global Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HIKAL",
+      "name": "Hikal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HINDALCO",
+      "name": "Hindalco Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HINDWAREAP",
+      "name": "Hindware Home Innovation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HINDZINC",
+      "name": "Hindustan Zinc Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HIRECT",
+      "name": "Hirect Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HLEGLAS",
+      "name": "HLE Glascoat Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HMAAGRO",
+      "name": "HMA Agro Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HMT",
+      "name": "HMT Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HONASA",
+      "name": "Honasa Consumer Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HONAUT",
+      "name": "Honeywell Automation India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HONDAPOWER",
+      "name": "Honda India Power Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HORIZONIND",
+      "name": "Horizon Industrial Parks Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HPL",
+      "name": "HPL Electric & Power Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HSCL",
+      "name": "Himadri Speciality Chemical Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HUHTAMAKI",
+      "name": "Huhtamaki India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HYUNDAI",
+      "name": "Hyundai Motor India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IBULLSLTD",
+      "name": "Indiabulls Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ICEMAKE",
+      "name": "Ice Make Refrigeration Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ICICIGI",
+      "name": "ICICI Lombard General Insurance Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ICIL",
+      "name": "Indo Count Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ICRA",
+      "name": "ICRA Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IDBI",
+      "name": "IDBI Bank Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IDEAFORGE",
+      "name": "Ideaforge Technology Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IDFCFIRSTB",
+      "name": "IDFC First Bank Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IEX",
+      "name": "Indian Energy Exchange Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IFBIND",
+      "name": "IFB Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IFGLEXPOR",
+      "name": "IFGL Refractories Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IGARASHI",
+      "name": "Igarashi Motors India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IGIL",
+      "name": "International Gemological Institute Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IGPL",
+      "name": "IG Petrochemicals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IKIO",
+      "name": "IKIO Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IKS",
+      "name": "Inventurus Knowledge Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IMAGICAA",
+      "name": "Imagicaaworld Entertainment Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IMFA",
+      "name": "Indian Metals & Ferro Alloys Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IMPAL",
+      "name": "India Motor Parts & Accessories Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDGN",
+      "name": "Indegene Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIACEM",
+      "name": "India Cements Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIAGLYCO",
+      "name": "India Glycols Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIAMART",
+      "name": "IndiaMART InterMESH Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIANHUME",
+      "name": "Indian Hume Pipe Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIGO",
+      "name": "InterGlobe Aviation Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIGOPNTS",
+      "name": "Indigo Paints Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDIGRID",
+      "name": "IndiGrid Infrastructure Trust",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "INDNIPPON",
+      "name": "India Nippon Electricals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDOBORAX",
+      "name": "Indo Borax & Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDOCO",
+      "name": "Indoco Remedies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDOKEM",
+      "name": "Indokem Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDOMIM",
+      "name": "INDO-MIM Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDORAMA",
+      "name": "Indo Rama Synthetics (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDRAMEDCO",
+      "name": "Indraprastha Medical Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDSWFTLAB",
+      "name": "Ind-Swift Laboratories Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDUSINDBK",
+      "name": "IndusInd Bank Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INDUSINVIT",
+      "name": "Indus Infra Trust",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "INDUSTOWER",
+      "name": "Indus Towers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INFOBEAN",
+      "name": "InfoBeans Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INFY",
+      "name": "Infosys Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INGERRAND",
+      "name": "Ingersoll-Rand (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INOXINDIA",
+      "name": "INOX India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INSECTICID",
+      "name": "Insecticides (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INTELLECT",
+      "name": "Intellect Design Arena Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INTERARCH",
+      "name": "Interarch Building Solutions Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "INVPRECQ",
+      "name": "Investment & Precision Castings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IOB",
+      "name": "Indian Overseas Bank",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IOLCP",
+      "name": "IOL Chemicals & Pharmaceuticals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IONEXCHANG",
+      "name": "Ion Exchange (India) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IPL",
+      "name": "India Pesticides Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IRISDOREME",
+      "name": "Iris Clothings Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ISGEC",
+      "name": "ISGEC Heavy Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ITC",
+      "name": "ITC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ITCHOTELS",
+      "name": "ITC Hotels Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IVALUE",
+      "name": "Ivalue Infosolutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IXIGO",
+      "name": "Le Travenues Technology Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "IZMO",
+      "name": "IZMO Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAGRAN",
+      "name": "Jagran Prakashan Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAGSNPHARM",
+      "name": "Jagsonpal Pharmaceuticals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAIBALAJI",
+      "name": "Jai Balaji Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAICORPLTD",
+      "name": "Jai Corp Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAMNAAUTO",
+      "name": "Jamna Auto Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JASH",
+      "name": "Jash Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAYBARMARU",
+      "name": "Jay Bharat Maruti Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAYKAY",
+      "name": "Jaykay Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JAYKAYPP.E1",
+      "name": "Jaykay Enterprises Limited TEMP",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "JAYNECOIND",
+      "name": "Jayaswal Neco Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JBMA",
+      "name": "JBM Auto Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JGCHEM",
+      "name": "JG Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JINDALPHOT",
+      "name": "Jindal Photo Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JINDALPOLY",
+      "name": "Jindal Poly Films Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JINDRILL",
+      "name": "Jindal Drilling & Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JIOFIN",
+      "name": "Jio Financial Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JISLJALEQS",
+      "name": "Jain Irrigation Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JKPAPER",
+      "name": "JK Paper Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JKSHAH",
+      "name": "J.K. Shah Commerce Education Ltd.",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "JLHL",
+      "name": "Jupiter Life Line Hospitals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JMFINANCIL",
+      "name": "JM Financial Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JSL",
+      "name": "Jindal Stainless Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JSLL",
+      "name": "Jeena Sikho Lifecare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JSWDULUX",
+      "name": "JSW Dulux Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JSWINFRA",
+      "name": "JSW Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JTEKTINDIA",
+      "name": "JTEKT India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUBLCPL",
+      "name": "Jubilant Agri and Consumer Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUBLFOOD",
+      "name": "Jubilant Foodworks Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUBLINGREA",
+      "name": "Jubilant Ingrevia Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUBLPHARMA",
+      "name": "Jubilant Pharmova Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUNIPER",
+      "name": "Juniper Hotels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JUSTDIAL",
+      "name": "Just Dial Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JWL",
+      "name": "Jupiter Wagons Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JYOTICNC",
+      "name": "Jyoti Cnc Automation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "JYOTIRES",
+      "name": "Jyoti Resins & Adhesives Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KABRAEXTRU",
+      "name": "Kabra ExtrusionTechnik Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KAJARIACER",
+      "name": "Kajaria Ceramics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KALAMANDIR",
+      "name": "Sai Silks (Kalamandir) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KALYANKJIL",
+      "name": "Kalyan Jewellers India Ltd.",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "KAMDHENU",
+      "name": "Kamdhenu Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KANOHAR",
+      "name": "Kanohar Electricals Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KANSAINER",
+      "name": "Kansai Nerolac Paints Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KAPSTON",
+      "name": "Kapston Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KARAMTARA",
+      "name": "Karamtara Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KAYNES",
+      "name": "Kaynes Technology India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KCP",
+      "name": "KCP Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KDDL",
+      "name": "KDDL Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KEC",
+      "name": "KEC International Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KEI",
+      "name": "KEI Industries Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "KENNAMET",
+      "name": "Kennametal India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KERNEX",
+      "name": "Kernex Microsystems India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KFINTECH",
+      "name": "Kfin Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KHAZANCHI",
+      "name": "Khazanchi Jewellers Ltd.",
+      "reason": "Insufficient price history (minimum 30 trading bars)"
+    },
+    {
+      "symbol": "KIMS",
+      "name": "Krishna Institute of Medical Sciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KINGFA",
+      "name": "Kingfa Science & Technology (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KIRIINDUS",
+      "name": "Kiri Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KISSHT",
+      "name": "Onemi Technology Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KITEX",
+      "name": "Kitex Garments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KKCL",
+      "name": "Kewal Kiran Clothing Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KLBRENG_B",
+      "name": "Kilburn Engineering Ltd",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "KMCSHIL",
+      "name": "KMC Speciality Hospitals (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KMEW",
+      "name": "Knowledge Marine & Engineering Works Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KNACK",
+      "name": "Knack Packaging Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KNRCON",
+      "name": "KNR Constructions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KODYTECH",
+      "name": "Kody Technolab Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KOLTEPATIL",
+      "name": "Kolte-Patil Developers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KOTIC",
+      "name": "Kothari Industrial Corp. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KPEL",
+      "name": "K.P. Energy Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KPIGREEN",
+      "name": "KPI Green Energy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KPIL",
+      "name": "Kalpataru Projects International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KPITTECH",
+      "name": "KPIT Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KPRMILL",
+      "name": "K.P.R. Mill Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KRISHANA",
+      "name": "Krishana Phoschem Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KRISHNADEF",
+      "name": "Krishna Defence and Allied Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KRN",
+      "name": "Krn Heat Exchanger and Refrigeration Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KROSS",
+      "name": "Kross Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KRSNAA",
+      "name": "Krsnaa Diagnostics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KRT.RR",
+      "name": "Knowledge Realty Trust",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "KSB",
+      "name": "KSB Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KSCL",
+      "name": "Kaveri Seed Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KSHINTL",
+      "name": "KSH International Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KSL",
+      "name": "Kalyani Steels Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KTKBANK",
+      "name": "Karnataka Bank Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KUSUMGAR",
+      "name": "Kusumgar Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "KWIL",
+      "name": "Kwality Walls (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LALITHAA",
+      "name": "Lalithaa Jewellery Mart Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "LALPATHLAB",
+      "name": "Dr. Lal PathLabs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LANDMARK",
+      "name": "Landmark Cars Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LAOPALA",
+      "name": "La Opala RG Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LASERPOWER",
+      "name": "Laser Power & Infra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LATENTVIEW",
+      "name": "Latent View Analytics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LAXMIDENTL",
+      "name": "Laxmi Dental Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LCCPROJECT",
+      "name": "LCC Projects Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LCL",
+      "name": "Lohia Corp Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LEAPIND",
+      "name": "LEAP India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LEMONTREE",
+      "name": "Lemon Tree Hotels Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LENSKART",
+      "name": "Lenskart Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LGBBROSLTD",
+      "name": "L.G. Balakrishnan & Bros Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LGEINDIA",
+      "name": "LG Electronics India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LGHL",
+      "name": "Laxmi Goldorna House Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LINCOLN",
+      "name": "Lincoln Pharmaceuticals Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LINDEINDIA",
+      "name": "Linde India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LLOYDSENGG",
+      "name": "Lloyds Engineering Works Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LLOYDSENT",
+      "name": "Lloyds Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LMW",
+      "name": "LMW Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LTFOODS",
+      "name": "LT Foods Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LTM",
+      "name": "LTM Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LTTS",
+      "name": "L&T Technology Services Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LUMAXIND",
+      "name": "Lumax Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LUMAXTECH",
+      "name": "Lumax Auto Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LUMINO",
+      "name": "Lumino Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LUPIN",
+      "name": "Lupin Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LUXIND",
+      "name": "Lux Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "LXCHEM",
+      "name": "Laxmi Organic Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "M&M",
+      "name": "Mahindra & Mahindra Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "M&MFIN",
+      "name": "Mahindra & Mahindra Financial Services Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MACPOWER",
+      "name": "Macpower CNC Machines Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHABANK",
+      "name": "Bank of Maharashtra",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHASTEEL",
+      "name": "Mahamaya Steel Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHLIFE",
+      "name": "Mahindra Lifespace Developers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHLOG",
+      "name": "Mahindra Logistics Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHSCOOTER",
+      "name": "Maharashtra Scooters Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAHSEAMLES",
+      "name": "Maharashtra Seamless Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAITHANALL",
+      "name": "Maithan Alloys Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANAKCOAT",
+      "name": "Manaksia Coated Metals & Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANGLMCEM",
+      "name": "Mangalam Cement Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANIPALHOS",
+      "name": "Manipal Health Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANKIND",
+      "name": "Mankind Pharma Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANORAMA",
+      "name": "Manorama Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MANYAVAR",
+      "name": "Vedant Fashions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAPMYINDIA",
+      "name": "C.E. Info Systems Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MARICO",
+      "name": "Marico Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MARINE",
+      "name": "Marine Electricals (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MARKSANS",
+      "name": "Marksans Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MARUTI",
+      "name": "Maruti Suzuki India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MASTEK",
+      "name": "Mastek Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MASTERTR",
+      "name": "Master Trust Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MATRIMONY",
+      "name": "Matrimony.com Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MAYURUNIQ",
+      "name": "Mayur Uniquoters Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MBAPL",
+      "name": "Madhya Bharat Agro Products Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MBEL",
+      "name": "M & B Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MCX",
+      "name": "Multi Commodity Exchange of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MEDIASSIST",
+      "name": "Medi Assist Healthcare Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MEDPLUS",
+      "name": "MedPlus Health Services Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MEESHO",
+      "name": "Meesho Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MENONBE",
+      "name": "Menon Bearings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "METROBRAND",
+      "name": "Metro Brands Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "METROPOLIS",
+      "name": "Metropolis Healthcare Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MFSL",
+      "name": "Max Financial Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MHRIL",
+      "name": "Mahindra Holidays & Resorts India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MICEL",
+      "name": "MIC Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MIDHANI",
+      "name": "Mishra Dhatu Nigam Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MIDWESTLTD",
+      "name": "Midwest Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MIIL",
+      "name": "Meghna Infracon Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MILKYMIST",
+      "name": "Milky Mist Dairy Food Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MINDACORP",
+      "name": "Minda Corp. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MINDSPACE.RR",
+      "name": "Mindspace Business Parks REIT",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "MMFL",
+      "name": "MM Forgings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MMP",
+      "name": "MMP Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MOBIKWIK",
+      "name": "One Mobikwik Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MODISONLTD",
+      "name": "Modison Limited",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "MOL",
+      "name": "Meghmani Organics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MOLBIO",
+      "name": "Molbio Diagnostics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MOLDTKPAC",
+      "name": "Mold Tek Packaging Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MONEYVIEW",
+      "name": "Moneyview Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MONOLITH",
+      "name": "Monolithisch India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MONTECARLO",
+      "name": "Monte Carlo Fashions Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MOREPENLAB",
+      "name": "Morepen Laboratories Limited",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "MOSCHIP",
+      "name": "Moschip Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MOTHERSON",
+      "name": "Samvardhana Motherson International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MPHASIS",
+      "name": "Mphasis Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MPIMANIPAL",
+      "name": "Manipal Payment and Identity Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MPSLTD",
+      "name": "MPS Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MRF",
+      "name": "MRF Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MSTCLTD",
+      "name": "MSTC Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MSUMI",
+      "name": "Motherson Sumi Wiring India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MTARTECH",
+      "name": "MTAR Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MUFIN",
+      "name": "Mufin Green Finance Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MUKANDLTD",
+      "name": "Mukand Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MVELECTRO",
+      "name": "Mv Electrosystems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "MWL",
+      "name": "Mangalam Worldwide Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NACLIND",
+      "name": "NACL Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAM_INDIA",
+      "name": "Nippon Life India Asset Management Ltd.",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "NATCOPHARM",
+      "name": "NATCO Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAUKRI",
+      "name": "Info Edge India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAVA",
+      "name": "Nava Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAVINFLUOR",
+      "name": "Navin Fluorine International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAVKARCORP",
+      "name": "Navkar Corporation Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAVNETEDUL",
+      "name": "Navneet Education Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NAZARA",
+      "name": "Nazara Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NCC",
+      "name": "NCC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NELCAST",
+      "name": "Nelcast Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NELCO",
+      "name": "Nelco Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NEOGEN",
+      "name": "Neogen Chemicals Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NEPHROPLUS",
+      "name": "Nephrocare Health Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NESCO",
+      "name": "NESCO Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NETWEB",
+      "name": "Netweb Technologies India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NEWGEN",
+      "name": "Newgen Software Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NH",
+      "name": "Narayana Hrudayalaya Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NHIT",
+      "name": "National Highways Infra Trust Units",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "NHPC",
+      "name": "NHPC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NIACL",
+      "name": "New India Assurance Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NIBE",
+      "name": "Nibe Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NIITMTS",
+      "name": "NIIT Learning Systems Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NILKAMAL",
+      "name": "Nilkamal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NINSYS",
+      "name": "NINtec Systems Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NIRLON",
+      "name": "Nirlon Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NITCO",
+      "name": "Nitco Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NITTAGELA",
+      "name": "Nitta Gelatin India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NIVABUPA",
+      "name": "Niva Bupa Health Insurance Company Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NLCINDIA",
+      "name": "NLC India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NOCIL",
+      "name": "NOCIL Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NORTHARC",
+      "name": "Northern Arc Capital Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NPST",
+      "name": "Network People Services Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NRAIL",
+      "name": "NR Agarwal Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NRBBEARING",
+      "name": "NRB Bearings Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NUCLEUS",
+      "name": "Nucleus Software Exports Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NUVOCO",
+      "name": "Nuvoco Vistas Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "NXST.RR",
+      "name": "Nexus Select Trust",
+      "reason": "Awaiting company description"
+    },
+    {
+      "symbol": "NYKAA",
+      "name": "FSN E-Commerce Ventures Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OAL",
+      "name": "Oriental Aromatics Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OBEROIRLTY",
+      "name": "Oberoi Realty Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OBSCP",
+      "name": "OBSC Perfection Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OFSS",
+      "name": "Oracle Financial Services Software Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OLAELEC",
+      "name": "Ola Electric Mobility Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OLECTRA",
+      "name": "Olectra Greentech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OMAXE",
+      "name": "Omaxe Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OMNI",
+      "name": "Omnitech Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ONEPOINT",
+      "name": "One Point One Solutions Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ONESOURCE",
+      "name": "OneSource Specialty Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OPTIEMUS",
+      "name": "Optiemus Infracom Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ORIANA",
+      "name": "Oriana Power Limited",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "ORIENTCABL",
+      "name": "Orient Cables (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ORIENTCEM",
+      "name": "Orient Cement Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ORIENTELEC",
+      "name": "Orient Electric Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "OSWALPUMPS",
+      "name": "Oswal Pumps Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PACEDIGITK",
+      "name": "Pace Digitek Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PAGEIND",
+      "name": "Page Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PANACEABIO",
+      "name": "Panacea Biotec Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PANAMAPET",
+      "name": "Panama Petrochem Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PANORAMA",
+      "name": "Panorama Studios International Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARACABLES",
+      "name": "Paramount Communications Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARADEEP",
+      "name": "Paradeep Phosphates Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARAGMILK",
+      "name": "Parag Milk Foods Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARAS",
+      "name": "Paras Defence & Space Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARASHLTH",
+      "name": "Paras Healthcare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARKHOSPS",
+      "name": "Park Medi World Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PARKHOTELS",
+      "name": "Apeejay Surrendra Park Hotels Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PASHUPATI",
+      "name": "Pashupati Cotspin Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PAUSHAKLTD",
+      "name": "Paushak Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PAYTM",
+      "name": "One 97 Communications Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PCBL",
+      "name": "PCBL Chemical Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PDSL",
+      "name": "PDS Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PENIND",
+      "name": "Pennar Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PERMAGN",
+      "name": "Permanent Magnets Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PERNIASPOP",
+      "name": "Purple Style Labs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PERSISTENT",
+      "name": "Persistent Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PETRONET",
+      "name": "Petronet Lng Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PFC",
+      "name": "Power Finance Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PFIZER",
+      "name": "PFIZER LIMITED",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PFOCUS",
+      "name": "Prime Focus Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PGEL",
+      "name": "PG Electroplast Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PGHH",
+      "name": "Procter & Gamble Hygiene & Health Care Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PGHL",
+      "name": "Procter & Gamble Health Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PGIL",
+      "name": "Pearl Global Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PHOENIXLTD",
+      "name": "Phoenix Mills Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PICCADIL",
+      "name": "Piccadily Agro Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PIDILITIND",
+      "name": "Pidilite Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PIIND",
+      "name": "PI Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PINELABS",
+      "name": "Pine Labs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PIRAMALFIN",
+      "name": "Piramal Finance Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PITTIENG",
+      "name": "Pitti Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PIXTRANS",
+      "name": "PIX Transmissions Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PLATIND",
+      "name": "Platinum Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PNB",
+      "name": "Punjab National Bank",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PNBGILTS",
+      "name": "PNB Gilts Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PNCINFRA",
+      "name": "PNC Infratech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PNGJL",
+      "name": "P N Gadgil Jewellers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PNGSREVA",
+      "name": "PNGS Reva Diamond Jewellery Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POKARNA",
+      "name": "Pokarna Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POLICYBZR",
+      "name": "PB Fintech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POLYMED",
+      "name": "Poly Medicure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POLYPLEX",
+      "name": "Polyplex Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POWERGRID",
+      "name": "Power Grid Corporation of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POWERICA",
+      "name": "Powerica Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "POWERINDIA",
+      "name": "Hitachi Energy India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PPLPHARMA",
+      "name": "Piramal Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRABHA",
+      "name": "Prabha Energy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRADPME",
+      "name": "Pradeep Metals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRAJIND",
+      "name": "PRAJ Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRASOLCHEM",
+      "name": "Prasol Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRECWIRE",
+      "name": "Precision Wires India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PREMEXPLN",
+      "name": "Premier Explosives Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRESTIGE",
+      "name": "Prestige Estates Projects Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRICOLLTD",
+      "name": "Pricol Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRIMESECU",
+      "name": "Prime Securities Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRINCEPIPE",
+      "name": "Prince Pipes And Fittings Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRIVISCL",
+      "name": "Privi Speciality Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRIZOR",
+      "name": "Prizor Viztech Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PROTEAN",
+      "name": "Protean eGov Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRSMJOHNSN",
+      "name": "Prism Johnson Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PRUDENT",
+      "name": "Prudent Corporate Advisory Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PSPPROJECT",
+      "name": "PSP Projects Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PTC",
+      "name": "PTC India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PTCIL",
+      "name": "PTC Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PUNJABCHEM",
+      "name": "Punjab Chemicals & Crop Protection Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PURVA",
+      "name": "Puravankara Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PVP",
+      "name": "PVP Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PVRINOX",
+      "name": "PVR Inox Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PWL",
+      "name": "PhysicsWallah Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "QPOWER",
+      "name": "Quality Power Electrical Equipments Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "QUADFUTURE",
+      "name": "Quadrant Future Tek Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "QUESS",
+      "name": "Quess Corp. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAIN",
+      "name": "Rain Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAINBOW",
+      "name": "Rainbow Childrens Medicare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAJESHEXPO",
+      "name": "Rajesh Exports Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAJRATAN",
+      "name": "Rajratan Global Wire Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RALLIS",
+      "name": "Rallis India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMBHAJO",
+      "name": "Advit Jewels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMCOCEM",
+      "name": "Ramco Cements Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMCOIND",
+      "name": "Ramco Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMCOSYS",
+      "name": "Ramco Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMKY",
+      "name": "Ramky Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAMRAT",
+      "name": "Ram Ratna Wires Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RANEHOLDIN",
+      "name": "Rane Holdings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RATEGAIN",
+      "name": "RateGain Travel Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RATNAMANI",
+      "name": "Ratnamani Metals & Tubes Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RATNAVEER",
+      "name": "Ratnaveer Precision Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAYMOND",
+      "name": "Raymond Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RAYMONDLSL",
+      "name": "Raymond Lifestyle Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "REDINGTON",
+      "name": "Redington Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "REDTAPE",
+      "name": "Redtape Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "REFEX",
+      "name": "Refex Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "REGAAL",
+      "name": "Regaal Resources Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RELAXO",
+      "name": "Relaxo Footwears Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RELIGARE",
+      "name": "Religare Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RELINFRA",
+      "name": "Reliance Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RELTD",
+      "name": "Ravindra Energy Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RENTOMOJO",
+      "name": "Rentomojo Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RESPONIND",
+      "name": "Responsive Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RGL",
+      "name": "Renaissance Global Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RHIM",
+      "name": "RHI Magnesita India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RICOAUTO",
+      "name": "Rico Auto Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RIIL",
+      "name": "Reliance Industrial Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RIR",
+      "name": "RIR Power Electronics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RISHABH",
+      "name": "Rishabh Instruments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RITES",
+      "name": "RITES Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RKFORGE",
+      "name": "Ramkrishna Forgings Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RML",
+      "name": "Rane (Madras) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ROSSARI",
+      "name": "Rossari Biotech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ROSSTECH",
+      "name": "Rossell Techsys Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ROTO",
+      "name": "Roto Pumps Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ROUTE",
+      "name": "Route Mobile, Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RPEL",
+      "name": "Raghav Productivity Enhancers Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RPGLIFE",
+      "name": "RPG Life Sciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RPSGVENT",
+      "name": "RPSG Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RPTECH",
+      "name": "Rashi Peripherals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RRKABEL",
+      "name": "RR Kabel Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RSL",
+      "name": "Rajputana Stainless Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RSYSTEMS",
+      "name": "R Systems International Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RTNINDIA",
+      "name": "RattanIndia Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RUBICON",
+      "name": "Rubicon Research Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RUBYMILLS",
+      "name": "Ruby Mills Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RUNWALENTR",
+      "name": "Runwal Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "RVNL",
+      "name": "Rail Vikas Nigam Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAFARI",
+      "name": "Safari Industries (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAGCEM",
+      "name": "Sagar Cements Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAGILITY",
+      "name": "Sagility Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAHANA",
+      "name": "Sahana System Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAIPARENT",
+      "name": "Sai Parenterals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAKAR",
+      "name": "Sakar Healthcare Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAKSOFT",
+      "name": "Saksoft Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SALSTEEL",
+      "name": "S.A.L. Steel Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAMHI",
+      "name": "Samhi Hotels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANATHAN",
+      "name": "Sanathan Textiles Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANDHAR",
+      "name": "Sandhar Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANDUMA",
+      "name": "Sandur Manganese & Iron Ores Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANGAMIND",
+      "name": "Sangam (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANGHVIMOV",
+      "name": "Sanghvi Movers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANOFI",
+      "name": "Sanofi India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANOFICONR",
+      "name": "Sanofi Consumer Healthcare India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SANSTAR",
+      "name": "Sanstar Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAPPHIRE",
+      "name": "Sapphire Foods India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SARDAEN",
+      "name": "Sarda Energy & Minerals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SAREGAMA",
+      "name": "Saregama India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SASKEN",
+      "name": "Sasken Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SBC",
+      "name": "SBC Exports Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SBCL",
+      "name": "Shivalik Bimetal Controls Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SBICARD",
+      "name": "SBI Cards & Payment Services Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SBIFUNDS",
+      "name": "SBI Funds Management Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SCHAEFFLER",
+      "name": "Schaeffler India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SCHNEIDER",
+      "name": "Schneider Electric Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SCI",
+      "name": "Shipping Corporation of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SCILAL",
+      "name": "Shipping Corporation of India Land and Assets Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SEAMECLTD",
+      "name": "SEAMEC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SEDEMAC",
+      "name": "SEDEMAC Mechatronics Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SEIL",
+      "name": "Shanti Educational Initiatives Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SEITINVIT",
+      "name": "Sustainable Energy Infra Trust",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "SEJALLTD",
+      "name": "Sejal Glass Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SENCO",
+      "name": "Senco Gold Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "SESHAPAPER",
+      "name": "Seshasayee Paper & Boards Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SETL",
+      "name": "Standard Engineering Technology Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SFCTECH",
+      "name": "SFC Environmental Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SFL",
+      "name": "Sheela Foam Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SGFIN",
+      "name": "SG Finserve Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SGMART",
+      "name": "SG Mart Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHADOWFAX",
+      "name": "Shadowfax Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHAILY",
+      "name": "Shaily Engineering Plastics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHAKTIPUMP",
+      "name": "Shakti Pumps (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHANKESH",
+      "name": "Shankesh Jewellers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHANTIGEAR",
+      "name": "Shanthi Gears Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHANTIGOLD",
+      "name": "Shanti Gold International Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "SHARDACROP",
+      "name": "Sharda Cropchem Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHARDAMOTR",
+      "name": "Sharda Motor Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHAREINDIA",
+      "name": "Share India Securities Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHILPAMED",
+      "name": "Shilpa Medicare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHIPROCKET",
+      "name": "Shiprocket Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHK",
+      "name": "S H Kelkar and Company Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHOPERSTOP",
+      "name": "Shoppers Stop Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHREECEM",
+      "name": "Shree Cement Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHREEJISPG",
+      "name": "Shreeji Shipping Global Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHREEPUSHK",
+      "name": "Shree Pushkar Chemicals & Fertilisers Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHREMINVIT",
+      "name": "Shrem Infra Invest Private Limited",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "SHRINGARMS",
+      "name": "Shringar House Of Mangalsutra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHRIPISTON",
+      "name": "SPR Auto Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHRIRAMPPS",
+      "name": "Shriram Properties Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SHUKRAMED",
+      "name": "Shukra Medtech Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIEMENS",
+      "name": "Siemens Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIGACHI",
+      "name": "Sigachi Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIGMAADV",
+      "name": "Sigma Advanced Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIGNATURE",
+      "name": "Signatureglobal (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIGNPOST",
+      "name": "Signpost India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIKA",
+      "name": "Sika Interplant Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SILVERTUC",
+      "name": "Silver Touch Technologies Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIMPLEXINF",
+      "name": "Simplex Infrastructures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIRCA",
+      "name": "Sirca Paints India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIS",
+      "name": "SIS Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SIYSIL",
+      "name": "Siyaram Silk Mills Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SJS",
+      "name": "S.J.S. Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SKFINDIA",
+      "name": "SKF India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SKFINDUS",
+      "name": "SKF India (Industrial) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SKMEGGPROD",
+      "name": "SKM Egg Products Export (India) Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SKYGOLD",
+      "name": "Sky Gold and Diamonds Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "SKYWAYS",
+      "name": "Skyways Air Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SMCGLOBAL",
+      "name": "SMC Global Securities Ltd. (India)",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SMLMAH",
+      "name": "SML Mahindra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SMT",
+      "name": "Sahajanand Medical Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SOLARA",
+      "name": "Solara Active Pharma Sciences Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SOLARINDS",
+      "name": "Solar Industries India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SOMANYCERA",
+      "name": "Somany Ceramics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SONACOMS",
+      "name": "Sona BLW Precision Forgings Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SONATSOFTW",
+      "name": "Sonata Software Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SOTL",
+      "name": "Savita Oil Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPAL",
+      "name": "S.P. Apparels Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPARC",
+      "name": "Sun Pharma Advanced Research Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPIC",
+      "name": "Southern Petrochemical Industries Corporation Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPLPETRO",
+      "name": "Supreme Petrochem Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPMLINFRA",
+      "name": "SPML Infra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SPORTKING",
+      "name": "Sportking India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SRF",
+      "name": "Srf Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SSRETAIL",
+      "name": "SS Retail Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SSWL",
+      "name": "Steel Strips Wheels Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STALLION",
+      "name": "Stallion India Fluorochemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STARCEMENT",
+      "name": "Star Cement Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STARHEALTH",
+      "name": "Star Health & Allied Insurance Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STEAMHOUSE",
+      "name": "Steamhouse India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STEELCAS",
+      "name": "Steelcast Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STLNETWORK",
+      "name": "STL Networks Limited",
+      "reason": "Peer group needs 3 members with usable price history"
+    },
+    {
+      "symbol": "STLTECH",
+      "name": "Sterlite Technologies Limited",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "STOVEKRAFT",
+      "name": "Stove Kraft Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STUDDS",
+      "name": "Studds Accessories Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STYL",
+      "name": "Seshaasai Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STYLAMIND",
+      "name": "Stylam Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STYLEBAAZA",
+      "name": "Baazar Style Retail Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "STYRENIX",
+      "name": "Styrenix Performance Materials Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUBROS",
+      "name": "Subros Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUDARSCHEM",
+      "name": "Sudarshan Chemical Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUDEEPPHRM",
+      "name": "Sudeep Pharma Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SULA",
+      "name": "Sula Vineyards Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUMICHEM",
+      "name": "Sumitomo Chemical India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNCLAY",
+      "name": "Sundaram-Clayton Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNDRMFAST",
+      "name": "Sundram Fasteners Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNFLAG",
+      "name": "Sunflag Iron & Steel Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNPHARMA",
+      "name": "Sun Pharmaceutical Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNRAKSHAK",
+      "name": "Sunrakshakk Industries India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNSHINE",
+      "name": "Sunshine Pictures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUNTV",
+      "name": "Sun TV Network Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUPRAJIT",
+      "name": "Suprajit Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUPREMEIND",
+      "name": "Supreme Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SURAKSHA",
+      "name": "Suraksha Diagnostic Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SURYAROSNI",
+      "name": "Surya Roshni Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SUVEN",
+      "name": "Suven Life Sciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SWANCORP",
+      "name": "Swan Corp Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SWANDEF",
+      "name": "Swan Defence and Heavy Industries Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SWARAJENG",
+      "name": "Swaraj Engines Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SWIGGY",
+      "name": "Swiggy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SYMBIOTEC",
+      "name": "Symbiotec Pharmalab Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SYMPHONY",
+      "name": "Symphony Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SYRMA",
+      "name": "Syrma SGS Technology Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SYSTMTXC",
+      "name": "Systematix Corporate Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TAALTECH",
+      "name": "TAAL Tech Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TALBROAUTO",
+      "name": "Talbros Automotive Components Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TANLA",
+      "name": "Tanla Platforms Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TARC",
+      "name": "TARC Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TARSONS",
+      "name": "Tarsons Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TASTYBITE",
+      "name": "Tasty Bite Eatables Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TATACHEM",
+      "name": "Tata Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TATACONSUM",
+      "name": "Tata Consumer Products Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TATAELXSI",
+      "name": "Tata Elxsi Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TATASTEEL",
+      "name": "Tata Steel Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TATVA",
+      "name": "Tatva Chintan Pharma Chem Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TBOTEK",
+      "name": "TBO Tek Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TBZ",
+      "name": "Tribhovandas Bhimji Zaveri Limited",
+      "reason": "Stale price history"
+    },
+    {
+      "symbol": "TCI",
+      "name": "Transport Corporation of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TCIEXP",
+      "name": "TCI Express Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TCPLPACK",
+      "name": "TCPL Packaging Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TDPOWERSYS",
+      "name": "TD Power Systems Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEAMLEASE",
+      "name": "TeamLease Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TECHM",
+      "name": "Tech Mahindra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TECHNOCRAF",
+      "name": "Technocraft Ventures Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TECHNVISN",
+      "name": "TechNVision Ventures Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEGA",
+      "name": "Tega Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEJASNET",
+      "name": "Tejas Networks Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEMPSENS",
+      "name": "Tempsens Instruments (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TENNIND",
+      "name": "Tenneco Clean Air India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEXINFRA",
+      "name": "Texmaco Infrastructure & Holdings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TEXRAIL",
+      "name": "Texmaco Rail & Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TFCILTD",
+      "name": "Tourism Finance Corporation of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TGVSL",
+      "name": "TGV SRAAC Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THANGAMAYL",
+      "name": "Thangamayil Jewellery Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THEJO",
+      "name": "Thejo Engineering Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THELEELA",
+      "name": "Leela Palaces Hotels & Resorts Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THERMAX",
+      "name": "Thermax Limited.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THOMASCOOK",
+      "name": "Thomas Cook (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "THYROCARE",
+      "name": "Thyrocare Technologies Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIIL",
+      "name": "Technocraft Industries (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIINDIA",
+      "name": "Tube Investments of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIMETECHNO",
+      "name": "Time Technoplast Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIMEX",
+      "name": "Timex Group India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIMKEN",
+      "name": "Timken India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TINNARUBR",
+      "name": "Tinna Rubber & Infrastructure Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIPSMUSIC",
+      "name": "Tips Music Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TIRUMALCHM",
+      "name": "Thirumalai Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TITAGARH",
+      "name": "Titagarh Rail Systems Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TITAN",
+      "name": "Titan Company Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TMB",
+      "name": "Tamilnad Mercantile Bank Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TONBO",
+      "name": "Tonbo Imaging India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRANSRAILL",
+      "name": "Transrail Lighting Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRAVELFOOD",
+      "name": "Travel Food Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRENT",
+      "name": "Trent Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRITURBINE",
+      "name": "Triveni Turbine Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRIVENI",
+      "name": "Triveni Engineering and Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TRUALT",
+      "name": "Trualt Bioenergy Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TTKHLTCARE",
+      "name": "TTK Healthcare Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TTKPRESTIG",
+      "name": "TTK Prestige Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TURTLEMINT",
+      "name": "Turtlemint Fintech Solutions Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TVSHLTD",
+      "name": "TVS Holdings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TVSMOTOR",
+      "name": "TVS Motor Company Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TVSSCS",
+      "name": "TVS Supply Chain Solutions Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "TVSSRICHAK",
+      "name": "TVS Srichakra Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UDS",
+      "name": "Updater Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UFBL",
+      "name": "United Foodbrands Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UFLEX",
+      "name": "UFlex Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UGROCAP",
+      "name": "Ugro Capital Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ULTRACEMCO",
+      "name": "UltraTech Cement Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ULTRAMAR",
+      "name": "Ultramarine & Pigments Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UNIPARTS",
+      "name": "Uniparts India Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UNITDSPR",
+      "name": "United Spirits Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UNIVCABLES",
+      "name": "Universal Cables Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UPL",
+      "name": "UPL Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "URBANCO",
+      "name": "Urban Company Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "USHAMART",
+      "name": "Usha Martin Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UTIAMC",
+      "name": "UTI Asset Management Co. Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "UTSSAV",
+      "name": "Utssav CZ Gold Jewels Limited",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "V2RETAIL",
+      "name": "V2 Retail Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VADILALIND",
+      "name": "Vadilal Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VAIBHAVGBL",
+      "name": "Vaibhav Global Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VAML",
+      "name": "Vedanta Aluminium Metal Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VARMORA",
+      "name": "Varmora Granito Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VARROC",
+      "name": "Varroc Engineering Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VBL",
+      "name": "Varun Beverages Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VEDL",
+      "name": "Vedanta Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VEDPOWER",
+      "name": "Vedanta Power Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VEEDOL",
+      "name": "Veedol Corp. Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VENKEYS",
+      "name": "Venky's (India) Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VENTIVE",
+      "name": "Ventive Hospitality Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VENUSPIPES",
+      "name": "Venus Pipes & Tubes Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VENUSREM",
+      "name": "Venus Remedies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VERTIS",
+      "name": "Vertis Infrastructure Trust Units",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VESUVIUS",
+      "name": "Vesuvius India Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VGUARD",
+      "name": "V-Guard Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VHL",
+      "name": "Vardhman Holdings Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VHLTD",
+      "name": "Viceroy Hotels Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VIDHIING",
+      "name": "Vidhi Specialty Food Ingredients Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VIDYAWIRES",
+      "name": "Vidya Wires Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VIJAYA",
+      "name": "Vijaya Diagnostic Centre Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VIMTALABS",
+      "name": "Vimta Labs Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VINATIORGA",
+      "name": "Vinati Organics Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VINCOFE",
+      "name": "Vintage Coffee and Beverages Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VINYAS",
+      "name": "Vinyas Innovative Technologies Limited",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "VIPIND",
+      "name": "V.I.P.INDUSTRIES LTD.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VISHNU",
+      "name": "Vishnu Chemicals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VMARCIND",
+      "name": "V-Marc India Limited",
+      "reason": "Missing price history"
+    },
+    {
+      "symbol": "VMART",
+      "name": "V-Mart Retail Ltd",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VMM",
+      "name": "Vishal Mega Mart Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VOLTAMP",
+      "name": "Voltamp Transformers Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VOLTAS",
+      "name": "Voltas Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VRLLOG",
+      "name": "VRL Logistics Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VSSL",
+      "name": "Vardhman Special Steels Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VSTIND",
+      "name": "VST Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VSTTILLERS",
+      "name": "VST Tillers Tractors Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "VTL",
+      "name": "Vardhman Textiles Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WABAG",
+      "name": "VA Tech Wabag Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WAKEFIT",
+      "name": "Wakefit Innovations Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WALCHANNAG",
+      "name": "Walchandnagar Industries Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WEL",
+      "name": "Wonder Electricals Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WENDT",
+      "name": "WENDT India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WHEELS",
+      "name": "Wheels India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WHIRLPOOL",
+      "name": "Whirlpool Of India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WINDMACHIN",
+      "name": "Windsor Machines Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WIPRO",
+      "name": "Wipro Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WOCKPHARMA",
+      "name": "Wockhardt Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WONDERLA",
+      "name": "Wonderla Holidays Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WPIL",
+      "name": "WPIL Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "WSTCSTPAPR",
+      "name": "West Coast Paper Mills Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "XPROINDIA",
+      "name": "XPRO India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "XTRANET",
+      "name": "Xtranet Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "YASHO",
+      "name": "Yasho Industries Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "YATRA",
+      "name": "Yatra Online Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "YUKEN",
+      "name": "Yuken India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZAGGLE",
+      "name": "Zaggle Prepaid Ocean Services Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZEEL",
+      "name": "Zee Entertainment Enterprises Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZENSARTECH",
+      "name": "Zensar Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZENTEC",
+      "name": "Zen Technologies Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZETWERK",
+      "name": "Zetwerk Manufacturing Businesses Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZFCVINDIA",
+      "name": "ZF Commercial Vehicle Control Systems India Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZOTA",
+      "name": "Zota Health Care Ltd.",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZYDUSLIFE",
+      "name": "Zydus Lifesciences Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ZYDUSWELL",
+      "name": "Zydus Wellness Limited",
+      "reason": "No suitable peer group (minimum 3 members)"
+    }
+  ],
+  "changes": {
+    "added": [
+      "ABB",
+      "ACGL",
+      "ADANIENSOL",
+      "ADANIENT",
+      "ADANIGREEN",
+      "ADANIPORTS",
+      "ADANIPOWER",
+      "AFSL",
+      "AKCAPIT",
+      "ALLDIGI",
+      "ALLTIME",
+      "ALPEXSOLAR",
+      "ANANTAM",
+      "ANDHRAPAP",
+      "AONESTEELS",
+      "APOLLOHOSP",
+      "ARYAMAN",
+      "ASALCBR",
+      "ASIANPAINT",
+      "AUTOAXLES",
+      "AXISBANK",
+      "BAFNAPH",
+      "BAJAJFINSV",
+      "BAJAJHLDNG",
+      "BAJEL",
+      "BANARISUG",
+      "BANKBARODA",
+      "BEL",
+      "BELDING",
+      "BENARAS",
+      "BENGALASM",
+      "BHARATCOAL",
+      "BHARATRAS",
+      "BHEL",
+      "BIL",
+      "BLIL",
+      "BLSPOLY",
+      "BONDADA",
+      "BOSCHLTD",
+      "BPCL",
+      "BRIGHOTEL",
+      "BRITANNIA",
+      "BSE",
+      "BUTTERFLY",
+      "CANBK",
+      "CAPINVIT",
+      "CENTRALBK",
+      "CGPOWER",
+      "CHOLAFIN",
+      "CIPLA",
+      "COALINDIA",
+      "CONSOFINVT",
+      "CUMMINSIND",
+      "DBCORP",
+      "DCAL",
+      "DDEVPLSTIK",
+      "DHANBANK",
+      "DISAQ",
+      "DIVISLAB",
+      "DLF",
+      "DMART",
+      "DPEL",
+      "DRAGARWQ",
+      "DVL",
+      "EDELALTS",
+      "EICHERMOT",
+      "EIHAHOTELS",
+      "ELANTAS",
+      "ELEVATE",
+      "ESAFSFB",
+      "ETERNAL",
+      "EVEREADY",
+      "EVONILE",
+      "EXCELINDUS",
+      "FAZE3Q",
+      "FUSIONCX",
+      "GAIL",
+      "GANDHITUBE",
+      "GOODYEAR",
+      "GPTINFRA",
+      "GRANDOAK",
+      "GRASIM",
+      "GRAUWEIL",
+      "GROWW",
+      "GSPLTRANS",
+      "GVT&D",
+      "HAL",
+      "HAWKINCOOK",
+      "HCLTECH",
+      "HDFCLIFE",
+      "HDFIRE",
+      "HEIDELBERG",
+      "HINDALCO",
+      "HINDWAREAP",
+      "HINDZINC",
+      "HMAAGRO",
+      "HMT",
+      "HONDAPOWER",
+      "HYUNDAI",
+      "IBULLSLTD",
+      "ICICIAMC",
+      "IFGLEXPOR",
+      "IMPAL",
+      "INDIANB",
+      "INDIANHUME",
+      "INDIGO",
+      "INDIQUBE",
+      "INDOKEM",
+      "INDPRUD",
+      "INFY",
+      "INSECTICID",
+      "INVPRECQ",
+      "IOB",
+      "IOC",
+      "IPL",
+      "ITC",
+      "JINDALPOLY",
+      "JINDALSTEL",
+      "JINDWORLD",
+      "JIOFIN",
+      "JISLJALEQS",
+      "JSWSTEEL",
+      "JYOTIRES",
+      "KAMAHOLD",
+      "KAMDHENU",
+      "KHAZANCHI",
+      "KICL",
+      "KKCL",
+      "KODYTECH",
+      "KOLTEPATIL",
+      "KOTIC",
+      "KRSNAA",
+      "KWIL",
+      "LGEINDIA",
+      "LGHL",
+      "LINCOLN",
+      "LTM",
+      "M&M",
+      "MARICO",
+      "MARUTI",
+      "MASTERTR",
+      "MATRIMONY",
+      "MONARCH",
+      "MOTHERSON",
+      "MSPL",
+      "MSUMI",
+      "NESTLEIND",
+      "NINSYS",
+      "NRAIL",
+      "NSIL",
+      "NTPC",
+      "OAL",
+      "OLAELEC",
+      "ONGC",
+      "PANORAMA",
+      "PARKHOTELS",
+      "PERMAGN",
+      "PERNIASPOP",
+      "PFC",
+      "PIDILITIND",
+      "PILANIINVS",
+      "PLATIND",
+      "PNB",
+      "POLYCAB",
+      "POWERGRID",
+      "POWERINDIA",
+      "PRIMESECU",
+      "RTNINDIA",
+      "RUBYMILLS",
+      "SAGILITY",
+      "SBILIFE",
+      "SEJALLTD",
+      "SFCTECH",
+      "SHALBY",
+      "SHRIRAMFIN",
+      "SHUKRAMED",
+      "SIEMENS",
+      "SIGACHI",
+      "SOLARINDS",
+      "STEL",
+      "STLNETWORK",
+      "STUDDS",
+      "SUMMITSEC",
+      "SUNCLAY",
+      "SUNDROP",
+      "SUNPHARMA",
+      "SUNRAKSHAK",
+      "SYSTMTXC",
+      "TATACAP",
+      "TATAPOWER",
+      "TATASTEEL",
+      "TCPLPACK",
+      "TECHM",
+      "TECHNVISN",
+      "TEXINFRA",
+      "TGVSL",
+      "TITAN",
+      "TMCV",
+      "TORNTPHARM",
+      "TRENT",
+      "TTML",
+      "TVSMOTOR",
+      "ULTRACEMCO",
+      "UNIONBANK",
+      "VAML",
+      "VBL",
+      "VEDPOWER",
+      "VHL",
+      "VHLTD",
+      "VINYAS",
+      "VOGL",
+      "WIPRO",
+      "YUKEN",
+      "ZSARACOM"
+    ],
+    "removed": [],
+    "moved": [
+      {
+        "symbol": "AADHARHFC",
+        "from": "group_0001",
+        "to": "singleton_0193"
+      },
+      {
+        "symbol": "AAVAS",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "ABCAPITAL",
+        "from": "group_0003",
+        "to": "group_0005"
+      },
+      {
+        "symbol": "ABREL",
+        "from": "group_0005",
+        "to": "singleton_0197"
+      },
+      {
+        "symbol": "ABSLAMC",
+        "from": "singleton_0006",
+        "to": "group_0005"
+      },
+      {
+        "symbol": "ACC",
+        "from": "singleton_0007",
+        "to": "group_0081"
+      },
+      {
+        "symbol": "ACMESOLAR",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "AEGISLOG",
+        "from": "group_0137",
+        "to": "singleton_0248"
+      },
+      {
+        "symbol": "AEGISVOPAK",
+        "from": "group_0137",
+        "to": "singleton_0252"
+      },
+      {
+        "symbol": "AGARWALEYE",
+        "from": "singleton_0025",
+        "to": "group_0083"
+      },
+      {
+        "symbol": "AIIL",
+        "from": "group_0003",
+        "to": "singleton_0253"
+      },
+      {
+        "symbol": "AJMERA",
+        "from": "group_0008",
+        "to": "singleton_0263"
+      },
+      {
+        "symbol": "ALIVUS",
+        "from": "singleton_0035",
+        "to": "group_0106"
+      },
+      {
+        "symbol": "ALKYLAMINE",
+        "from": "singleton_0036",
+        "to": "group_0116"
+      },
+      {
+        "symbol": "AMBER",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "AMBUJACEM",
+        "from": "group_0013",
+        "to": "singleton_0267"
+      },
+      {
+        "symbol": "ANONDITA",
+        "from": "group_0016",
+        "to": "singleton_0277"
+      },
+      {
+        "symbol": "ANTELOPUS",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "ANZEN",
+        "from": "group_0019",
+        "to": "singleton_0283"
+      },
+      {
+        "symbol": "APTUS",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "ARFIN",
+        "from": "singleton_0055",
+        "to": "group_0148"
+      },
+      {
+        "symbol": "ARKADE",
+        "from": "group_0008",
+        "to": "group_0149"
+      },
+      {
+        "symbol": "ARMANFIN",
+        "from": "group_0003",
+        "to": "singleton_0300"
+      },
+      {
+        "symbol": "ARSSBL",
+        "from": "singleton_0059",
+        "to": "group_0000"
+      },
+      {
+        "symbol": "ARTEMISMED",
+        "from": "singleton_0060",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "ARVINDFASN",
+        "from": "group_0139",
+        "to": "group_0136"
+      },
+      {
+        "symbol": "ASHIANA",
+        "from": "singleton_0067",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "ASHOKA",
+        "from": "group_0007",
+        "to": "singleton_0306"
+      },
+      {
+        "symbol": "ASHOKLEY",
+        "from": "group_0021",
+        "to": "singleton_0312"
+      },
+      {
+        "symbol": "ASTERDM",
+        "from": "group_0022",
+        "to": "singleton_0319"
+      },
+      {
+        "symbol": "ATUL",
+        "from": "group_0025",
+        "to": "singleton_0327"
+      },
+      {
+        "symbol": "AVADHSUGAR",
+        "from": "singleton_0081",
+        "to": "group_0031"
+      },
+      {
+        "symbol": "AYE",
+        "from": "group_0003",
+        "to": "singleton_0335"
+      },
+      {
+        "symbol": "BAJAJHCARE",
+        "from": "group_0010",
+        "to": "group_0150"
+      },
+      {
+        "symbol": "BALAMINES",
+        "from": "singleton_0092",
+        "to": "group_0116"
+      },
+      {
+        "symbol": "BEML",
+        "from": "group_0032",
+        "to": "group_0151"
+      },
+      {
+        "symbol": "BEPL",
+        "from": "group_0033",
+        "to": "singleton_0453"
+      },
+      {
+        "symbol": "BERGEPAINT",
+        "from": "group_0034",
+        "to": "singleton_0455"
+      },
+      {
+        "symbol": "BFINVEST",
+        "from": "singleton_0106",
+        "to": "group_0003"
+      },
+      {
+        "symbol": "BHARATSE",
+        "from": "group_0036",
+        "to": "singleton_0485"
+      },
+      {
+        "symbol": "BIKAJI",
+        "from": "singleton_0114",
+        "to": "group_0028"
+      },
+      {
+        "symbol": "BLKASHYAP",
+        "from": "group_0038",
+        "to": "singleton_0502"
+      },
+      {
+        "symbol": "BLS",
+        "from": "group_0039",
+        "to": "singleton_0504"
+      },
+      {
+        "symbol": "BLSE",
+        "from": "group_0039",
+        "to": "singleton_0507"
+      },
+      {
+        "symbol": "BLUEJET",
+        "from": "group_0009",
+        "to": "group_0152"
+      },
+      {
+        "symbol": "BOMDYEING",
+        "from": "singleton_0125",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "BONFIG",
+        "from": "group_0140",
+        "to": "singleton_0516"
+      },
+      {
+        "symbol": "CAMPUS",
+        "from": "singleton_0132",
+        "to": "group_0153"
+      },
+      {
+        "symbol": "CAMS",
+        "from": "group_0042",
+        "to": "singleton_0551"
+      },
+      {
+        "symbol": "CAPACITE",
+        "from": "group_0038",
+        "to": "singleton_0576"
+      },
+      {
+        "symbol": "CCL",
+        "from": "singleton_0140",
+        "to": "group_0154"
+      },
+      {
+        "symbol": "CESC",
+        "from": "singleton_0146",
+        "to": "group_0155"
+      },
+      {
+        "symbol": "CHALET",
+        "from": "singleton_0147",
+        "to": "group_0156"
+      },
+      {
+        "symbol": "COHANCE",
+        "from": "singleton_0161",
+        "to": "group_0009"
+      },
+      {
+        "symbol": "COSMOFIRST",
+        "from": "singleton_0168",
+        "to": "group_0157"
+      },
+      {
+        "symbol": "CRAMC",
+        "from": "singleton_0171",
+        "to": "group_0043"
+      },
+      {
+        "symbol": "CSBBANK",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "CUB",
+        "from": "group_0052",
+        "to": "singleton_0596"
+      },
+      {
+        "symbol": "CYIENT",
+        "from": "singleton_0176",
+        "to": "group_0158"
+      },
+      {
+        "symbol": "CYIENTDLM",
+        "from": "singleton_0177",
+        "to": "group_0158"
+      },
+      {
+        "symbol": "DCBBANK",
+        "from": "group_0052",
+        "to": "group_0160"
+      },
+      {
+        "symbol": "DIVGIITTS",
+        "from": "group_0058",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "DIXON",
+        "from": "group_0059",
+        "to": "singleton_0617"
+      },
+      {
+        "symbol": "DPABHUSHAN",
+        "from": "singleton_0202",
+        "to": "group_0060"
+      },
+      {
+        "symbol": "EBGNG",
+        "from": "singleton_0208",
+        "to": "group_0161"
+      },
+      {
+        "symbol": "EIHOTEL",
+        "from": "singleton_0214",
+        "to": "group_0162"
+      },
+      {
+        "symbol": "EMIL",
+        "from": "singleton_0224",
+        "to": "group_0161"
+      },
+      {
+        "symbol": "EPACK",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "EPACKPEB",
+        "from": "group_0065",
+        "to": "singleton_0666"
+      },
+      {
+        "symbol": "FIVESTAR",
+        "from": "group_0003",
+        "to": "singleton_0713"
+      },
+      {
+        "symbol": "FORCEMOT",
+        "from": "group_0142",
+        "to": "singleton_0737"
+      },
+      {
+        "symbol": "FSL",
+        "from": "singleton_0256",
+        "to": "group_0155"
+      },
+      {
+        "symbol": "GALAPREC",
+        "from": "singleton_0882",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "GARUDA",
+        "from": "group_0038",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "GCSL",
+        "from": "singleton_0268",
+        "to": "group_0089"
+      },
+      {
+        "symbol": "GEOJITFSL",
+        "from": "group_0022",
+        "to": "singleton_0771"
+      },
+      {
+        "symbol": "GLENMARK",
+        "from": "group_0143",
+        "to": "singleton_0778"
+      },
+      {
+        "symbol": "GNFC",
+        "from": "group_0075",
+        "to": "group_0111"
+      },
+      {
+        "symbol": "GPIL",
+        "from": "singleton_0291",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "GRINFRA",
+        "from": "group_0007",
+        "to": "singleton_0814"
+      },
+      {
+        "symbol": "GRSE",
+        "from": "group_0032",
+        "to": "group_0151"
+      },
+      {
+        "symbol": "GSFC",
+        "from": "group_0075",
+        "to": "group_0111"
+      },
+      {
+        "symbol": "HEXT",
+        "from": "singleton_0316",
+        "to": "group_0165"
+      },
+      {
+        "symbol": "HIKAL",
+        "from": "singleton_0318",
+        "to": "group_0106"
+      },
+      {
+        "symbol": "HINDOILEXP",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "HUHTAMAKI",
+        "from": "group_0144",
+        "to": "singleton_0911"
+      },
+      {
+        "symbol": "ICICIGI",
+        "from": "group_0043",
+        "to": "singleton_0914"
+      },
+      {
+        "symbol": "IDBI",
+        "from": "group_0052",
+        "to": "singleton_0915"
+      },
+      {
+        "symbol": "IFBIND",
+        "from": "singleton_0336",
+        "to": "group_0166"
+      },
+      {
+        "symbol": "IMAGICAA",
+        "from": "group_0086",
+        "to": "singleton_0917"
+      },
+      {
+        "symbol": "INDIASHLTR",
+        "from": "group_0001",
+        "to": "group_0030"
+      },
+      {
+        "symbol": "INDRAMEDCO",
+        "from": "singleton_0353",
+        "to": "group_0147"
+      },
+      {
+        "symbol": "INFOBEAN",
+        "from": "singleton_0356",
+        "to": "group_0169"
+      },
+      {
+        "symbol": "INTERARCH",
+        "from": "group_0065",
+        "to": "singleton_0922"
+      },
+      {
+        "symbol": "ITI",
+        "from": "singleton_0364",
+        "to": "group_0032"
+      },
+      {
+        "symbol": "J&KBANK",
+        "from": "singleton_0368",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "JAGRAN",
+        "from": "singleton_0369",
+        "to": "group_0159"
+      },
+      {
+        "symbol": "JKPAPER",
+        "from": "singleton_0378",
+        "to": "group_0131"
+      },
+      {
+        "symbol": "JNPR",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "JSWENERGY",
+        "from": "group_0096",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "JUNIPER",
+        "from": "singleton_0391",
+        "to": "group_0156"
+      },
+      {
+        "symbol": "KALYANKJIL",
+        "from": "singleton_0396",
+        "to": "group_0060"
+      },
+      {
+        "symbol": "KANSAINER",
+        "from": "group_0034",
+        "to": "singleton_0930"
+      },
+      {
+        "symbol": "KARURVYSYA",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "KFINTECH",
+        "from": "group_0042",
+        "to": "singleton_0931"
+      },
+      {
+        "symbol": "KOVAI",
+        "from": "singleton_0414",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "KPEL",
+        "from": "group_0103",
+        "to": "singleton_0935"
+      },
+      {
+        "symbol": "KPIGREEN",
+        "from": "group_0103",
+        "to": "singleton_0936"
+      },
+      {
+        "symbol": "KRBL",
+        "from": "singleton_0417",
+        "to": "group_0006"
+      },
+      {
+        "symbol": "KTKBANK",
+        "from": "group_0052",
+        "to": "group_0160"
+      },
+      {
+        "symbol": "LCCPROJECT",
+        "from": "singleton_0433",
+        "to": "group_0168"
+      },
+      {
+        "symbol": "M&MFIN",
+        "from": "group_0051",
+        "to": "singleton_0943"
+      },
+      {
+        "symbol": "MEDANTA",
+        "from": "singleton_0469",
+        "to": "group_0035"
+      },
+      {
+        "symbol": "METROBRAND",
+        "from": "group_0139",
+        "to": "singleton_0947"
+      },
+      {
+        "symbol": "MMTC",
+        "from": "singleton_0484",
+        "to": "group_0101"
+      },
+      {
+        "symbol": "MODISONLTD",
+        "from": "singleton_0889",
+        "to": "group_0100"
+      },
+      {
+        "symbol": "MOTILALOFS",
+        "from": "singleton_0494",
+        "to": "group_0003"
+      },
+      {
+        "symbol": "MWL",
+        "from": "singleton_0505",
+        "to": "group_0173"
+      },
+      {
+        "symbol": "NAZARA",
+        "from": "group_0143",
+        "to": "singleton_0948"
+      },
+      {
+        "symbol": "NDRAUTO",
+        "from": "group_0058",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "NTPCGREEN",
+        "from": "group_0095",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "OIL",
+        "from": "group_0017",
+        "to": "group_0049"
+      },
+      {
+        "symbol": "ONESOURCE",
+        "from": "group_0009",
+        "to": "group_0152"
+      },
+      {
+        "symbol": "ORIENTCEM",
+        "from": "group_0013",
+        "to": "singleton_0953"
+      },
+      {
+        "symbol": "PERSISTENT",
+        "from": "singleton_0566",
+        "to": "group_0164"
+      },
+      {
+        "symbol": "PGEL",
+        "from": "group_0059",
+        "to": "singleton_0959"
+      },
+      {
+        "symbol": "PIXTRANS",
+        "from": "group_0140",
+        "to": "singleton_0961"
+      },
+      {
+        "symbol": "PNBGILTS",
+        "from": "singleton_0577",
+        "to": "group_0174"
+      },
+      {
+        "symbol": "POWERMECH",
+        "from": "group_0145",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "PRAKASH",
+        "from": "singleton_0590",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "PRESTIGE",
+        "from": "group_0146",
+        "to": "singleton_0965"
+      },
+      {
+        "symbol": "RAJRATAN",
+        "from": "group_0031",
+        "to": "singleton_0967"
+      },
+      {
+        "symbol": "RBLBANK",
+        "from": "singleton_0630",
+        "to": "group_0052"
+      },
+      {
+        "symbol": "RELAXO",
+        "from": "singleton_0635",
+        "to": "group_0153"
+      },
+      {
+        "symbol": "RELTD",
+        "from": "group_0066",
+        "to": "singleton_0968"
+      },
+      {
+        "symbol": "RICOAUTO",
+        "from": "singleton_0642",
+        "to": "group_0148"
+      },
+      {
+        "symbol": "ROUTE",
+        "from": "singleton_0652",
+        "to": "group_0175"
+      },
+      {
+        "symbol": "RSL",
+        "from": "singleton_0658",
+        "to": "group_0173"
+      },
+      {
+        "symbol": "RUNWALENTR",
+        "from": "group_0146",
+        "to": "singleton_0971"
+      },
+      {
+        "symbol": "SAIL",
+        "from": "singleton_0667",
+        "to": "group_0093"
+      },
+      {
+        "symbol": "SENCO",
+        "from": "singleton_0692",
+        "to": "group_0105"
+      },
+      {
+        "symbol": "SHANTIGEAR",
+        "from": "group_0122",
+        "to": "singleton_0975"
+      },
+      {
+        "symbol": "SHAREINDIA",
+        "from": "group_0138",
+        "to": "singleton_0976"
+      },
+      {
+        "symbol": "SHILCTECH",
+        "from": "singleton_0703",
+        "to": "group_0024"
+      },
+      {
+        "symbol": "SHYAMMETL",
+        "from": "singleton_0714",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "SJS",
+        "from": "singleton_0724",
+        "to": "group_0163"
+      },
+      {
+        "symbol": "SMLMAH",
+        "from": "group_0021",
+        "to": "singleton_0980"
+      },
+      {
+        "symbol": "SOBHA",
+        "from": "singleton_0728",
+        "to": "group_0037"
+      },
+      {
+        "symbol": "SOMANYCERA",
+        "from": "group_0129",
+        "to": "singleton_0982"
+      },
+      {
+        "symbol": "SOUTHBANK",
+        "from": "group_0052",
+        "to": "group_0014"
+      },
+      {
+        "symbol": "SPARC",
+        "from": "group_0130",
+        "to": "singleton_0983"
+      },
+      {
+        "symbol": "SPECTRUM",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "SSRETAIL",
+        "from": "singleton_0738",
+        "to": "group_0176"
+      },
+      {
+        "symbol": "STYLAMIND",
+        "from": "singleton_0745",
+        "to": "group_0167"
+      },
+      {
+        "symbol": "STYRENIX",
+        "from": "group_0033",
+        "to": "singleton_0985"
+      },
+      {
+        "symbol": "SUVEN",
+        "from": "group_0130",
+        "to": "singleton_0989"
+      },
+      {
+        "symbol": "TANLA",
+        "from": "singleton_0769",
+        "to": "group_0175"
+      },
+      {
+        "symbol": "TARC",
+        "from": "singleton_0770",
+        "to": "group_0149"
+      },
+      {
+        "symbol": "TARSONS",
+        "from": "group_0142",
+        "to": "singleton_0991"
+      },
+      {
+        "symbol": "TCI",
+        "from": "group_0124",
+        "to": "singleton_0993"
+      },
+      {
+        "symbol": "TECHNOE",
+        "from": "group_0099",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "TIINDIA",
+        "from": "group_0122",
+        "to": "singleton_0999"
+      },
+      {
+        "symbol": "TMPV",
+        "from": "singleton_0902",
+        "to": "group_0133"
+      },
+      {
+        "symbol": "TORNTPOWER",
+        "from": "group_0096",
+        "to": "group_0094"
+      },
+      {
+        "symbol": "TTKPRESTIG",
+        "from": "group_0134",
+        "to": "singleton_1002"
+      },
+      {
+        "symbol": "UFLEX",
+        "from": "group_0144",
+        "to": "singleton_1004"
+      },
+      {
+        "symbol": "UTLSOLAR",
+        "from": "singleton_0823",
+        "to": "group_0041"
+      },
+      {
+        "symbol": "UTTAMSUGAR",
+        "from": "singleton_0824",
+        "to": "group_0055"
+      },
+      {
+        "symbol": "VADILALIND",
+        "from": "singleton_0826",
+        "to": "group_0171"
+      },
+      {
+        "symbol": "VARMORA",
+        "from": "group_0129",
+        "to": "singleton_1006"
+      },
+      {
+        "symbol": "VEDL",
+        "from": "singleton_0905",
+        "to": "group_0177"
+      },
+      {
+        "symbol": "VIKRAN",
+        "from": "group_0145",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "VINCOFE",
+        "from": "singleton_0841",
+        "to": "group_0154"
+      },
+      {
+        "symbol": "VINDHYATEL",
+        "from": "singleton_0842",
+        "to": "group_0007"
+      },
+      {
+        "symbol": "VMART",
+        "from": "singleton_0845",
+        "to": "group_0176"
+      },
+      {
+        "symbol": "VOEPL",
+        "from": "group_0012",
+        "to": "group_0027"
+      },
+      {
+        "symbol": "WHIRLPOOL",
+        "from": "group_0134",
+        "to": "singleton_1010"
+      },
+      {
+        "symbol": "WONDERLA",
+        "from": "group_0086",
+        "to": "singleton_1011"
+      }
+    ]
+  },
+  "descriptions_updated": "2026-11-26",
+  "description_failures": [
+    "BAGMANE.RR",
+    "BAJAJ_AUTO",
+    "BIRET.RR",
+    "BOSCH_HCIL",
+    "EMBASSY.RR",
+    "JAYKAYPP.E1",
+    "JKSHAH",
+    "KLBRENG_B",
+    "KRT.RR",
+    "MINDSPACE.RR",
+    "NAM_INDIA",
+    "NXST.RR"
+  ]
+}

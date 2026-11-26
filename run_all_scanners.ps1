@@ -33,6 +33,7 @@ function Run-Scanner($Name, $ScriptPath) {
 OrcLog "=== NSE_AllScanners START ==="
 
 Run-Scanner "IPOWatchlistUpdate"    "$ROOT\run_ipo_watchlist_updater.ps1"
+Run-Scanner "ClusterDiscovery"     "$ROOT\run_cluster_discovery.ps1"
 Run-Scanner "FetchData"            "$ROOT\run_fetch_data.ps1"
 Run-Scanner "EMAScreener"          "$ROOT\run_ema_screener.ps1"
 Run-Scanner "SwingScanner"         "$ROOT\run_swing_scanner.ps1"

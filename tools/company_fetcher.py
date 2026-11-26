@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Monthly company description fetcher.
-Phase 1a: pull universe from TradingView screener (price >=50, MCap 800cr-1lakh cr).
+Phase 1a: discover NSE common equities (price >25, MCap 1000cr-5lakh cr).
 Phase 1b: fetch descriptions from trendlyne.com + screener.in, cache as JSON.
 
 Usage:
@@ -24,18 +24,20 @@ import requests
 from bs4 import BeautifulSoup
 from tradingview_screener import Query, col
 
-sys.stdout.reconfigure(encoding="utf-8")
+if __name__ == "__main__":
+    sys.stdout.reconfigure(encoding="utf-8")
 
 REPO_DIR = Path(__file__).parent.parent
+sys.path.insert(0, str(REPO_DIR))
 CACHE_DIR = REPO_DIR / ".company_cache"
 TOOLS_DIR = Path(__file__).parent
 ID_MAP_FILE = TOOLS_DIR / "trendlyne_id_map.json"
 UNIVERSE_OUT = TOOLS_DIR / "sector_rotation_universe.json"
 
 STALE_DAYS = 30
-MC_LOW = 800 * 1_00_00_000  # 800 Cr in rupees
-MC_HIGH = 1_00_000 * 1_00_00_000  # 1 Lakh Cr in rupees
-MIN_PRICE = 50
+MC_LOW = 1000 * 10_000_000
+MC_HIGH = 500000 * 10_000_000
+MIN_PRICE = 25
 
 HEADERS = {
     "User-Agent": (
@@ -52,33 +54,41 @@ HEADERS = {
 def fetch_universe() -> list[dict]:
     """Return list of {symbol, name} from TradingView screener."""
     print("Fetching universe from TradingView screener...")
-    _, df = (
-        Query()
-        .set_markets("india")
-        .select("name", "description", "market_cap_basic", "close")
-        .where(
-            col("exchange").isin(["NSE"]),
-            col("type") == "stock",
-            col("close") >= MIN_PRICE,
-            col("market_cap_basic").between(MC_LOW, MC_HIGH),
+    from cluster_membership import atomic_json, is_eligible
+
+    stocks = {}
+    offset = 0
+    expected = None
+    while True:
+        total, df = (
+            Query().set_markets("india")
+            .select("name", "description", "market_cap_basic", "close")
+            .where(col("exchange") == "NSE", col("type") == "stock",
+                   col("typespecs").has(["common"]), col("close") > MIN_PRICE,
+                   col("market_cap_basic").between(MC_LOW, MC_HIGH))
+            .order_by("name").offset(offset).limit(offset + 1000)
+            .get_scanner_data(timeout=45)
         )
-        .limit(1000)
-        .get_scanner_data()
-    )
-    stocks = [
-        {"symbol": row["name"], "name": row.get("description", row["name"])}
-        for _, row in df.iterrows()
-    ]
+        if expected is None:
+            expected = total
+        if total != expected or not total or df.empty:
+            raise ValueError("Empty or changing cluster universe; previous snapshot preserved")
+        for _, row in df.iterrows():
+            entry = {"symbol": str(row["name"]).strip().upper(),
+                     "name": str(row.get("description", row["name"])),
+                     "price": float(row["close"]), "market_cap": float(row["market_cap_basic"])}
+            if not entry["symbol"] or not is_eligible(entry) or entry["symbol"] in stocks:
+                raise ValueError("Invalid or duplicate cluster universe row")
+            stocks[entry["symbol"]] = entry
+        offset += len(df)
+        if offset >= expected:
+            break
+    if len(stocks) != expected:
+        raise ValueError("Incomplete cluster universe; previous snapshot preserved")
+    stocks = sorted(stocks.values(), key=lambda row: row["symbol"])
     print(f"  Universe: {len(stocks)} stocks")
 
-    UNIVERSE_OUT.write_text(
-        json.dumps(
-            {"fetched_at": _now_iso(), "count": len(stocks), "stocks": stocks},
-            indent=2,
-            ensure_ascii=False,
-        ),
-        encoding="utf-8",
-    )
+    atomic_json(UNIVERSE_OUT, {"fetched_at": _now_iso(), "count": len(stocks), "stocks": stocks})
     return stocks
 
 
@@ -128,8 +138,8 @@ def fetch_trendlyne(symbol: str, id_map: dict) -> str:
             return ""
         soup = BeautifulSoup(resp.text, "html.parser")
 
-        # Primary selector (confirmed working)
-        el = soup.select_one("span.abt-desc-wrapper")
+        # Support both legacy CSS and the current generated CSS-module prefix.
+        el = soup.select_one('span.abt-desc-wrapper, span[class$="__abt-desc-wrapper"]')
         if el:
             return el.get_text(separator=" ", strip=True)
 
@@ -224,6 +234,13 @@ def fetch_and_cache(symbol: str, name: str, id_map: dict) -> dict:
 
     combined = _combine(tl_desc, sc_desc)
 
+    path = _cache_path(symbol)
+    if len(combined.strip()) < 40 and path.exists():
+        previous = json.loads(path.read_text(encoding="utf-8"))
+        if len(previous.get("combined_description", "").strip()) >= 40:
+            print("fetch failed; retained previous description")
+            return previous
+
     entry = {
         "symbol": symbol,
         "name": name,
@@ -235,8 +252,8 @@ def fetch_and_cache(symbol: str, name: str, id_map: dict) -> dict:
         "sources": sources,
     }
 
-    path = _cache_path(symbol)
-    path.write_text(json.dumps(entry, indent=2, ensure_ascii=False), encoding="utf-8")
+    from cluster_membership import atomic_json
+    atomic_json(path, entry)
 
     status = f"trendlyne={bool(tl_desc)} screener={bool(sc_desc)}"
     print(status)

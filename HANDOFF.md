@@ -2,6 +2,51 @@
 
 # Repo Handoff
 
+Updated 2026-11-26 by Codex, cluster universe and membership maintenance:
+
+- Approved cluster universe: all NSE common equities including IPOs, price
+  strictly > Rs25, market cap Rs1,000 crore to Rs5 lakh crore inclusive.
+  `tools/company_fetcher.py` paginates discovery without a stock-count cap;
+  empty/incomplete/invalid responses preserve the previous snapshot.
+- `run_cluster_discovery.ps1` now runs before FetchData in NSE_AllScanners.
+  Shared OHLC collection includes all discovered cluster symbols, including
+  those above the old Rs1 lakh crore ceiling and new same-day instruments.
+- `cluster_membership.py` performs due weekly membership updates and monthly
+  existing-description refreshes before SectorRotation. Successful ISO weeks
+  and calendar months are recorded in `data/cluster_membership_state.json`.
+  First successful run of a new period catches up after a missed schedule.
+  Failed existing-description refreshes retain good cache and remain due;
+  successful per-symbol timestamps avoid repeating completed work on retry.
+- Peer building uses only eligible descriptions, retains group identities by
+  overlap and applies manual overrides. Daily sector scans enforce the current
+  eligible membership and require >=3 usable, current histories per group.
+- `sector_rotation_scans/cluster_coverage.json` drives the page's coverage,
+  pending-stock reasons, description retries, membership changes and dates.
+  Company caches stay local. Monthly runner now checks native Python exits and
+  uses the same maintenance logic; its existing schedule remains unchanged.
+- Full external refresh completed 2026-11-26, verified by native exit 0 and
+  `CLUSTER_FULL_REFRESH_FINISHED` in `logs/cluster_full_refresh_2026-11-26.log`.
+  Discovered 1,477 eligible stocks; 1,465 have usable descriptions (initially
+  1,251). Rebuilt 1,066 groups including singletons; 56 groups have >=3 members.
+  Current local page: 29 qualifying breadth groups, 333 evaluable stocks and
+  1,144 pending (1,103 lacking suitable groups, 12 needing descriptions,
+  29 with price-history/peer-history gaps). HTML/report/pending parity passed.
+- Monitoring caught a changed Trendlyne CSS-module class prefix. Updated the
+  description selector, tested current and legacy layouts (22 focused tests
+  passed), and verified a live description. Restarted only our fetch process,
+  retaining cached progress. Both sources worked afterward. The log's single
+  NativeCommandError entry is a model-download warning; final process exit 0.
+- Weekly and monthly state now record successful 2026-W48 / 2026-11 completion.
+  Twelve symbols remain in description_failures; some are TradingView aliases
+  (e.g. BAJAJ_AUTO, NAM_INDIA), and others are special-series instruments.
+  These remain visible as pending; symbol normalization/classification should
+  be investigated before treating them as genuine description-source gaps.
+  Prior monthly log
+  ended mid-list without a completion marker; the daily retry path now offers
+  recovery independent of that standalone monthly task.
+- User authorized publishing the follow-up implementation and refreshed
+  outputs on 2026-11-26. Company caches, logs and unrelated files stay local.
+
 Updated 2026-11-26 by Codex, standalone cluster dashboard:
 
 - `cluster_dashboard.py` reads the sector-rotation report through the existing

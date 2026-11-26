@@ -96,6 +96,16 @@ def init_db(con: sqlite3.Connection) -> None:
 
 
 # ── TVScreener universe ────────────────────────────────────────────────────────
+def get_cluster_universe() -> tuple[set[str], dict[str, float]]:
+    """Include every eligible cluster member in shared price-data collection."""
+    from cluster_membership import SOURCE, load_universe
+    if not SOURCE.exists():
+        return set(), {}
+    universe = load_universe(SOURCE)
+    caps = {s['symbol']: s['market_cap'] / 10_000_000 for s in universe['stocks']}
+    return set(caps), caps
+
+
 def get_tv_universe() -> tuple[set[str], dict[str, float]]:
     """Return (symbols, {symbol: market_cap_cr}) from TradingView screener."""
     print("  Fetching universe from TradingView screener...")
@@ -119,6 +129,9 @@ def get_tv_universe() -> tuple[set[str], dict[str, float]]:
         for _, row in df.iterrows()
         if row["market_cap_basic"] and row["market_cap_basic"] > 0
     }
+    cluster_symbols, cluster_caps = get_cluster_universe()
+    symbols.update(cluster_symbols)
+    mcaps.update(cluster_caps)
     print(f"  TVScreener universe: {len(symbols)} stocks")
     return symbols, mcaps
 
@@ -132,7 +145,11 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
     row = con.execute(
         "SELECT COUNT(*) FROM instruments WHERE last_updated=?", (today,)
     ).fetchone()
-    if row[0] > 0:
+    cluster_symbols, _ = get_cluster_universe()
+    cached_symbols = {r[0] for r in con.execute(
+        'SELECT tradingsymbol FROM instruments WHERE last_updated=?', (today,)
+    ).fetchall()}
+    if row[0] > 0 and cluster_symbols.issubset(cached_symbols):
         print("  Instruments already fetched today, loading from DB...")
         return pd.read_sql(
             "SELECT * FROM instruments WHERE last_updated=?", con, params=(today,)
@@ -150,7 +167,7 @@ def refresh_instruments(kite, con: sqlite3.Connection) -> pd.DataFrame:
         (raw["exchange"] == "NSE")
         & (raw["segment"] == "NSE")
         & (raw["instrument_type"] == "EQ")
-        & no_dash
+        & (no_dash | raw['tradingsymbol'].isin(cluster_symbols))
         & raw["tradingsymbol"].isin(tv_symbols)
     ].copy()
 
