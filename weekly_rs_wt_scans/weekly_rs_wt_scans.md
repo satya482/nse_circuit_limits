@@ -1,254 +1,255 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 
-# Weekly RS EMA21 + WT1 Uptrend — 2026-11-25
+# Weekly RS EMA21 + WT1 Uptrend — 2026-11-26
 
-Price data: 2026-11-25. Current developing week included; signals can change before the week closes. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Weekly RS = stock close / NIFTY MIDSML 400 close x 1000; EMA21 uses adjust=False. Weekly WT1 uses HLC3, EMA10 channel and EMA21 smoothing, matching the existing WaveTrend calculator. Both latest weekly values must be strictly greater than their previous weekly values. Minimum 22 weekly bars; all available history up to 1500 daily bars. Flat slopes do not qualify. No daily EMA200, 52-week-high, float, liquidity, WT1 zero-line or WT2 gate. No manual-list bypass. All qualifiers are shown.
+Price data: 2026-11-26. Current developing week included; signals can change before the week closes. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Weekly RS = stock close / NIFTY MIDSML 400 close x 1000; EMA21 uses adjust=False. Weekly WT1 uses HLC3, EMA10 channel and EMA21 smoothing, matching the existing WaveTrend calculator. Both latest weekly values must be strictly greater than their previous weekly values. Minimum 22 weekly bars; all available history up to 1500 daily bars. Flat slopes do not qualify. No daily EMA200, 52-week-high, float, liquidity, WT1 zero-line or WT2 gate. No manual-list bypass. All qualifiers are shown.
 
-Universe: 1438 | Evaluated: 990 | Qualified: 231 | Excluded: 448
+Universe: 1436 | Evaluated: 990 | Qualified: 232 | Excluded: 446
 
 [Weekly chart dashboard](../dashboard/weekly_rs_wt.html)
 
 ## TradingView watchlist
 
 ```text
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WEEKLY RS21 WT1 UP,NSE:360ONE,NSE:AARTIDRUGS,NSE:ABBOTINDIA,NSE:ABDL,NSE:ABREL,NSE:ACE,NSE:ACMESOLAR,NSE:ACUTAAS,NSE:AEGISVOPAK,NSE:AFFLE,NSE:AGARWALEYE,NSE:AGIIL,NSE:AJAXENGG,NSE:AJMERA,NSE:ALEMBICLTD,NSE:ALICON,NSE:ALLDIGI,NSE:ANANDRATHI,NSE:ANGELONE,NSE:ANTHEM,NSE:ANURAS,NSE:APLLTD,NSE:APOLLOTYRE,NSE:ARIS,NSE:ARTEMISMED,NSE:ARVIND,NSE:ARVSMART,NSE:ASAHIINDIA,NSE:ASHOKA,NSE:ASKAUTOLTD,NSE:ASTERDM,NSE:ATHERENERG,NSE:AUBANK,NSE:AUTOAXLES,NSE:BALAJITELE,NSE:BALKRISIND,NSE:BALUFORGE,NSE:BANCOINDIA,NSE:BBOX,NSE:BECTORFOOD,NSE:BELRISE,NSE:BLUESTARCO,NSE:BOROLTD,NSE:CAPITALSFB,NSE:CDSL,NSE:CEATLTD,NSE:CELLO,NSE:CEMPRO,NSE:CHALET,NSE:CHEMPLASTS,NSE:COFORGE,NSE:COHANCE,NSE:COROMANDEL,NSE:CRAFTSMAN,NSE:CUB,NSE:CYIENT,NSE:DABUR,NSE:DAMCAPITAL,NSE:DCBBANK,NSE:DEEPAKFERT,NSE:DELHIVERY,NSE:DIXON,NSE:DOLATALGO,NSE:DOMS,NSE:DVL,NSE:EIHOTEL,NSE:EMAMILTD,NSE:EMCURE,NSE:ENDURANCE,NSE:EPL,NSE:ERIS,NSE:ETHOSLTD,NSE:EXCELINDUS,NSE:FAZE3Q,NSE:FDC,NSE:FEDERALBNK,NSE:FIEMIND,NSE:FILATEX,NSE:FINEORG,NSE:FLUOROCHEM,NSE:FSL,NSE:GABRIEL,NSE:GESHIP,NSE:GHCL,NSE:GHCLTEXTIL,NSE:GLAND,NSE:GLENMARK,NSE:GODREJPROP,NSE:GOKEX,NSE:GOPAL,NSE:GPPL,NSE:GRANULES,NSE:GRAPHITE,NSE:GREAVESCOT,NSE:GRWRHITECH,NSE:GULFOILLUB,NSE:HAVELLS,NSE:HIKAL,NSE:HINDOILEXP,NSE:HINDPETRO,NSE:HITECH,NSE:HONASA,NSE:HUBTOWN,NSE:ICICIGI,NSE:ICIL,NSE:IDFCFIRSTB,NSE:IGIL,NSE:INDGN,NSE:INDUSINDBK,NSE:INOXINDIA,NSE:IREDA,NSE:ISGEC,NSE:ITCHOTELS,NSE:ITDC,NSE:IXIGO,NSE:J&KBANK,NSE:JAYBARMARU,NSE:JINDALPHOT,NSE:JKCEMENT,NSE:JKLAKSHMI,NSE:JKTYRE,NSE:JSWINFRA,NSE:KAJARIACER,NSE:KALAMANDIR,NSE:KALYANKJIL,NSE:KANSAINER,NSE:KARURVYSYA,NSE:KDDL,NSE:KFINTECH,NSE:KIMS,NSE:KPRMILL,NSE:KRBL,NSE:KTKBANK,NSE:LALPATHLAB,NSE:LEMONTREE,NSE:LICHSGFIN,NSE:LINDEINDIA,NSE:LTF,NSE:LTFOODS,NSE:LTTS,NSE:LUMAXTECH,NSE:MAHABANK,NSE:MARATHON,NSE:MASTERTR,NSE:MAXESTATES,NSE:MCX,NSE:METROPOLIS,NSE:MINDACORP,NSE:MOTILALOFS,NSE:MPHASIS,NSE:MRF,NSE:NAUKRI,NSE:NAVINFLUOR,NSE:NELCAST,NSE:NEOGEN,NSE:NEULANDLAB,NSE:NH,NSE:NITINSPIN,NSE:NUVOCO,NSE:OBEROIRLTY,NSE:ONESOURCE,NSE:ORCHPHARMA,NSE:ORIENTELEC,NSE:ORIENTHOT,NSE:PARAGMILK,NSE:PATANJALI,NSE:PDSL,NSE:PETRONET,NSE:PGEL,NSE:PGHL,NSE:PHOENIXLTD,NSE:PNBGILTS,NSE:PNBHOUSING,NSE:POLYMED,NSE:POONAWALLA,NSE:PRESTIGE,NSE:PRIMESECU,NSE:PRIVISCL,NSE:PROTEAN,NSE:PVRINOX,NSE:RACLGEAR,NSE:RADICO,NSE:RAMCOIND,NSE:RAMKY,NSE:RATNAVEER,NSE:RAYMONDREL,NSE:RBLBANK,NSE:REPCOHOME,NSE:RKFORGE,NSE:SAFARI,NSE:SAILIFE,NSE:SAMBHV,NSE:SANGAMIND,NSE:SANSERA,NSE:SASKEN,NSE:SATIN,NSE:SHARDAMOTR,NSE:SHREECEM,NSE:SIGNATURE,NSE:SIMPLEXINF,NSE:SMARTWORKS,NSE:SPORTKING,NSE:STEL,NSE:STYLAMIND,NSE:SUNTECK,NSE:SUNTV,NSE:SYNGENE,NSE:TANLA,NSE:TATACHEM,NSE:TATAELXSI,NSE:TEXRAIL,NSE:THOMASCOOK,NSE:THYROCARE,NSE:TI,NSE:TIMETECHNO,NSE:TSFINV,NSE:TTKHLTCARE,NSE:TVSSCS,NSE:TVSSRICHAK,NSE:UNOMINDA,NSE:VIJAYA,NSE:VOLTAS,NSE:VRLLOG,NSE:WELSPUNLIV,NSE:WINDMACHIN,NSE:WOCKPHARMA,NSE:XPROINDIA,NSE:YATHARTH,NSE:ZENSARTECH,NSE:ZENTEC,NSE:ZOTA
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WEEKLY RS21 WT1 UP,NSE:360ONE,NSE:5PAISA,NSE:AARTIDRUGS,NSE:ABBOTINDIA,NSE:ABDL,NSE:ABREL,NSE:ABSLAMC,NSE:ACE,NSE:ACMESOLAR,NSE:ACUTAAS,NSE:AEGISVOPAK,NSE:AETHER,NSE:AFFLE,NSE:AGARWALEYE,NSE:AGIIL,NSE:AJAXENGG,NSE:AJMERA,NSE:ALEMBICLTD,NSE:ALICON,NSE:ALLDIGI,NSE:ANANDRATHI,NSE:ANGELONE,NSE:ANTHEM,NSE:ANURAS,NSE:APLLTD,NSE:APOLLOTYRE,NSE:ARIS,NSE:ARVSMART,NSE:ASAHIINDIA,NSE:ASKAUTOLTD,NSE:ASTERDM,NSE:ATHERENERG,NSE:AUTOAXLES,NSE:BALAJITELE,NSE:BALKRISIND,NSE:BALUFORGE,NSE:BANCOINDIA,NSE:BBOX,NSE:BECTORFOOD,NSE:BELRISE,NSE:BEML,NSE:BLUESTARCO,NSE:BOROLTD,NSE:BRIGADE,NSE:CAMS,NSE:CAPITALSFB,NSE:CDSL,NSE:CEATLTD,NSE:CELLO,NSE:CEMPRO,NSE:CHALET,NSE:CHEMPLASTS,NSE:CHOICEIN,NSE:COHANCE,NSE:COROMANDEL,NSE:CRAFTSMAN,NSE:CUB,NSE:CYIENT,NSE:DABUR,NSE:DAMCAPITAL,NSE:DCBBANK,NSE:DEEPAKFERT,NSE:DELHIVERY,NSE:DOMS,NSE:DVL,NSE:EIHOTEL,NSE:EMAMILTD,NSE:EMCURE,NSE:ENDURANCE,NSE:EPL,NSE:ERIS,NSE:ETHOSLTD,NSE:EXCELINDUS,NSE:FAZE3Q,NSE:FEDERALBNK,NSE:FILATEX,NSE:FINEORG,NSE:FLUOROCHEM,NSE:FSL,NSE:GABRIEL,NSE:GESHIP,NSE:GHCLTEXTIL,NSE:GLAND,NSE:GLENMARK,NSE:GODREJPROP,NSE:GOKEX,NSE:GOPAL,NSE:GPPL,NSE:GRANULES,NSE:GRAPHITE,NSE:GREAVESCOT,NSE:GRWRHITECH,NSE:GULFOILLUB,NSE:HAVELLS,NSE:HIKAL,NSE:HINDOILEXP,NSE:HINDPETRO,NSE:HITECH,NSE:HONASA,NSE:HUBTOWN,NSE:ICICIGI,NSE:ICIL,NSE:IDFCFIRSTB,NSE:IGIL,NSE:INDGN,NSE:INDUSINDBK,NSE:INOXINDIA,NSE:IREDA,NSE:ISGEC,NSE:ITCHOTELS,NSE:ITDC,NSE:IXIGO,NSE:J&KBANK,NSE:JAYBARMARU,NSE:JINDALPHOT,NSE:JKCEMENT,NSE:JKLAKSHMI,NSE:JSWINFRA,NSE:JWL,NSE:JYOTICNC,NSE:KAJARIACER,NSE:KALAMANDIR,NSE:KALYANKJIL,NSE:KDDL,NSE:KFINTECH,NSE:KIMS,NSE:KPRMILL,NSE:KRBL,NSE:KTKBANK,NSE:LALPATHLAB,NSE:LEMONTREE,NSE:LICHSGFIN,NSE:LINDEINDIA,NSE:LTFOODS,NSE:LTTS,NSE:LUMAXTECH,NSE:MAHABANK,NSE:MARATHON,NSE:MASTERTR,NSE:MAXESTATES,NSE:MCX,NSE:METROPOLIS,NSE:MFSL,NSE:MINDACORP,NSE:MOTILALOFS,NSE:MPHASIS,NSE:NAUKRI,NSE:NAVINFLUOR,NSE:NELCAST,NSE:NEOGEN,NSE:NEULANDLAB,NSE:NH,NSE:NITINSPIN,NSE:NUVAMA,NSE:NUVOCO,NSE:OBEROIRLTY,NSE:ORCHPHARMA,NSE:ORIENTELEC,NSE:ORIENTHOT,NSE:PARAGMILK,NSE:PATANJALI,NSE:PDSL,NSE:PETRONET,NSE:PGEL,NSE:PHOENIXLTD,NSE:PNBGILTS,NSE:PNBHOUSING,NSE:POONAWALLA,NSE:PRESTIGE,NSE:PRIMESECU,NSE:PRIVISCL,NSE:PROTEAN,NSE:RACLGEAR,NSE:RADICO,NSE:RAMCOIND,NSE:RAMCOSYS,NSE:RAMKY,NSE:RATNAVEER,NSE:RAYMONDREL,NSE:RBLBANK,NSE:REPCOHOME,NSE:RKFORGE,NSE:RPEL,NSE:RUSTOMJEE,NSE:SAFARI,NSE:SAILIFE,NSE:SAMBHV,NSE:SANGAMIND,NSE:SANGHVIMOV,NSE:SANSERA,NSE:SASKEN,NSE:SATIN,NSE:SHAILY,NSE:SHARDAMOTR,NSE:SHREECEM,NSE:SIGNATURE,NSE:SIMPLEXINF,NSE:SMARTWORKS,NSE:SOBHA,NSE:SPORTKING,NSE:STEL,NSE:STYLAMIND,NSE:SUNTECK,NSE:SUNTV,NSE:SYNGENE,NSE:TANLA,NSE:TATACHEM,NSE:TATAELXSI,NSE:TEXRAIL,NSE:TFCILTD,NSE:THOMASCOOK,NSE:THYROCARE,NSE:TI,NSE:TIMETECHNO,NSE:TSFINV,NSE:TTKHLTCARE,NSE:TVSSCS,NSE:TVSSRICHAK,NSE:UNOMINDA,NSE:UTTAMSUGAR,NSE:VIJAYA,NSE:VMART,NSE:VOLTAS,NSE:VRLLOG,NSE:WELSPUNLIV,NSE:WINDMACHIN,NSE:WOCKPHARMA,NSE:XPROINDIA,NSE:YATHARTH,NSE:ZENSARTECH,NSE:ZENTEC,NSE:ZOTA
 ```
 
 ## All qualifying stocks
 
 | Symbol | Close | Week % | RS EMA21 | Previous | RS slope | WT1 | Previous WT1 | WT1 slope | Weeks |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| [NSE:360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE&interval=W) | 1165.20 | -3.55 | 53.8670 | 53.6469 | +0.2200 | 11.0961 | 5.1414 | +5.9547 | 316 |
-| [NSE:AARTIDRUGS](https://in.tradingview.com/chart/?symbol=NSE:AARTIDRUGS&interval=W) | 487.90 | +0.70 | 20.9611 | 20.7095 | +0.2516 | 49.5725 | 47.3990 | +2.1735 | 316 |
-| [NSE:ABBOTINDIA](https://in.tradingview.com/chart/?symbol=NSE:ABBOTINDIA&interval=W) | 26765.00 | +0.90 | 1287.2409 | 1287.1763 | +0.0646 | -10.8765 | -16.2149 | +5.3385 | 316 |
-| [NSE:ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL&interval=W) | 807.20 | +1.62 | 33.2599 | 32.7018 | +0.5581 | 68.1823 | 64.8973 | +3.2850 | 126 |
-| [NSE:ABREL](https://in.tradingview.com/chart/?symbol=NSE:ABREL&interval=W) | 1282.90 | +5.54 | 59.4579 | 59.2306 | +0.2273 | -26.0915 | -34.9372 | +8.8457 | 316 |
-| [NSE:ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE&interval=W) | 1190.35 | +1.71 | 53.7167 | 53.3606 | +0.3561 | 34.3879 | 32.8291 | +1.5587 | 316 |
-| [NSE:ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR&interval=W) | 416.70 | +2.79 | 19.0201 | 18.9171 | +0.1031 | 34.3350 | 34.0957 | +0.2393 | 107 |
-| [NSE:ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS&interval=W) | 3993.00 | +4.16 | 167.3198 | 164.8382 | +2.4817 | 53.3871 | 52.2413 | +1.1458 | 272 |
-| [NSE:AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK&interval=W) | 278.13 | -4.20 | 12.9884 | 12.9489 | +0.0395 | 13.6217 | 10.9230 | +2.6987 | 78 |
-| [NSE:AFFLE](https://in.tradingview.com/chart/?symbol=NSE:AFFLE&interval=W) | 1636.70 | +2.33 | 74.2759 | 73.8279 | +0.4479 | 4.0602 | -2.8048 | +6.8651 | 316 |
-| [NSE:AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE&interval=W) | 576.20 | +4.12 | 24.6197 | 24.3091 | +0.3106 | 39.6570 | 32.2641 | +7.3929 | 95 |
-| [NSE:AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL&interval=W) | 307.16 | +0.45 | 14.1055 | 14.0380 | +0.0675 | -15.8471 | -23.0099 | +7.1629 | 124 |
-| [NSE:AJAXENGG](https://in.tradingview.com/chart/?symbol=NSE:AJAXENGG&interval=W) | 608.70 | +0.37 | 27.7570 | 27.6037 | +0.1533 | 21.1982 | 11.4693 | +9.7289 | 93 |
-| [NSE:AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA&interval=W) | 160.92 | +7.79 | 6.3672 | 6.2296 | +0.1376 | 36.1977 | 23.9277 | +12.2699 | 316 |
-| [NSE:ALEMBICLTD](https://in.tradingview.com/chart/?symbol=NSE:ALEMBICLTD&interval=W) | 103.54 | -4.93 | 4.7815 | 4.7614 | +0.0201 | 26.3316 | 25.0711 | +1.2605 | 316 |
-| [NSE:ALICON](https://in.tradingview.com/chart/?symbol=NSE:ALICON&interval=W) | 1009.60 | -6.15 | 40.1927 | 39.3540 | +0.8388 | 65.2862 | 61.7083 | +3.5779 | 316 |
-| [NSE:ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI&interval=W) | 832.10 | +0.46 | 39.4214 | 39.3596 | +0.0618 | 1.3596 | -3.8133 | +5.1729 | 316 |
-| [NSE:ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI&interval=W) | 2380.00 | +0.18 | 112.1647 | 111.9290 | +0.2357 | 20.0747 | 15.9623 | +4.1124 | 259 |
-| [NSE:ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE&interval=W) | 349.15 | +0.24 | 15.1125 | 14.9437 | +0.1688 | 21.4496 | 15.6074 | +5.8422 | 316 |
-| [NSE:ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM&interval=W) | 968.20 | +1.80 | 42.2134 | 41.7759 | +0.4375 | 42.8356 | 38.8462 | +3.9894 | 71 |
-| [NSE:ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS&interval=W) | 1316.60 | -0.96 | 59.8198 | 59.4665 | +0.3533 | -9.6349 | -19.5269 | +9.8920 | 297 |
-| [NSE:APLLTD](https://in.tradingview.com/chart/?symbol=NSE:APLLTD&interval=W) | 1030.45 | -1.01 | 42.3728 | 41.6517 | +0.7211 | 45.5425 | 41.6975 | +3.8450 | 316 |
-| [NSE:APOLLOTYRE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOTYRE&interval=W) | 437.35 | +4.67 | 20.2625 | 20.1842 | +0.0782 | -8.8295 | -17.5894 | +8.7599 | 316 |
-| [NSE:ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS&interval=W) | 190.30 | +15.35 | 6.9154 | 6.6912 | +0.2242 | 60.9174 | 49.0667 | +11.8507 | 75 |
-| [NSE:ARTEMISMED](https://in.tradingview.com/chart/?symbol=NSE:ARTEMISMED&interval=W) | 323.20 | -5.16 | 15.0250 | 14.9723 | +0.0527 | 29.7376 | 28.2888 | +1.4488 | 316 |
-| [NSE:ARVIND](https://in.tradingview.com/chart/?symbol=NSE:ARVIND&interval=W) | 523.05 | -0.56 | 24.8516 | 24.8199 | +0.0317 | 2.6902 | -1.0596 | +3.7499 | 316 |
-| [NSE:ARVSMART](https://in.tradingview.com/chart/?symbol=NSE:ARVSMART&interval=W) | 617.75 | -2.32 | 29.4503 | 29.4229 | +0.0275 | 6.4101 | 2.1323 | +4.2777 | 316 |
-| [NSE:ASAHIINDIA](https://in.tradingview.com/chart/?symbol=NSE:ASAHIINDIA&interval=W) | 1195.30 | +2.72 | 47.9186 | 46.9589 | +0.9597 | 57.5219 | 51.0165 | +6.5054 | 316 |
-| [NSE:ASHOKA](https://in.tradingview.com/chart/?symbol=NSE:ASHOKA&interval=W) | 114.63 | +3.33 | 5.4788 | 5.4751 | +0.0037 | -32.7735 | -43.2970 | +10.5235 | 316 |
-| [NSE:ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD&interval=W) | 636.80 | +0.94 | 28.4564 | 28.2379 | +0.2185 | 37.1422 | 36.6935 | +0.4487 | 159 |
-| [NSE:ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM&interval=W) | 774.70 | -0.59 | 35.9043 | 35.7670 | +0.1373 | -3.0762 | -12.0333 | +8.9571 | 316 |
-| [NSE:ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG&interval=W) | 1871.90 | -3.28 | 74.7321 | 73.1980 | +1.5341 | 68.0324 | 67.6312 | +0.4013 | 82 |
-| [NSE:AUBANK](https://in.tradingview.com/chart/?symbol=NSE:AUBANK&interval=W) | 1006.05 | +2.15 | 48.1659 | 48.1415 | +0.0244 | -20.3948 | -26.3683 | +5.9735 | 316 |
-| [NSE:AUTOAXLES](https://in.tradingview.com/chart/?symbol=NSE:AUTOAXLES&interval=W) | 1751.60 | -0.77 | 83.0723 | 82.9511 | +0.1212 | -17.0014 | -23.8609 | +6.8595 | 316 |
-| [NSE:BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE&interval=W) | 98.30 | +1.97 | 4.5109 | 4.4890 | +0.0219 | 7.0768 | 0.6093 | +6.4675 | 316 |
-| [NSE:BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND&interval=W) | 2357.00 | -0.29 | 108.5243 | 108.0352 | +0.4891 | 3.5280 | -3.4862 | +7.0141 | 316 |
-| [NSE:BALUFORGE](https://in.tradingview.com/chart/?symbol=NSE:BALUFORGE&interval=W) | 506.15 | -1.85 | 24.1832 | 24.1660 | +0.0172 | 1.8878 | 1.0423 | +0.8455 | 135 |
-| [NSE:BANCOINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANCOINDIA&interval=W) | 690.70 | -2.17 | 30.9013 | 30.6679 | +0.2334 | 6.0150 | -2.0962 | +8.1112 | 316 |
-| [NSE:BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX&interval=W) | 857.30 | -4.36 | 40.1168 | 40.0033 | +0.1135 | 26.0970 | 25.7066 | +0.3904 | 316 |
-| [NSE:BECTORFOOD](https://in.tradingview.com/chart/?symbol=NSE:BECTORFOOD&interval=W) | 219.97 | -0.69 | 10.2142 | 10.1772 | +0.0370 | 1.0622 | -3.7120 | +4.7742 | 310 |
-| [NSE:BELRISE](https://in.tradingview.com/chart/?symbol=NSE:BELRISE&interval=W) | 241.68 | +2.26 | 11.0205 | 10.9596 | +0.0609 | 2.8300 | -5.3859 | +8.2160 | 79 |
-| [NSE:BLUESTARCO](https://in.tradingview.com/chart/?symbol=NSE:BLUESTARCO&interval=W) | 1821.50 | +1.70 | 78.7254 | 77.8332 | +0.8922 | 21.9431 | 7.4725 | +14.4706 | 316 |
-| [NSE:BOROLTD](https://in.tradingview.com/chart/?symbol=NSE:BOROLTD&interval=W) | 316.70 | -3.18 | 13.3638 | 13.1763 | +0.1875 | 62.9917 | 61.9107 | +1.0810 | 316 |
-| [NSE:CAPITALSFB](https://in.tradingview.com/chart/?symbol=NSE:CAPITALSFB&interval=W) | 288.50 | +0.93 | 13.5221 | 13.4861 | +0.0360 | -6.3143 | -13.7134 | +7.3991 | 146 |
-| [NSE:CDSL](https://in.tradingview.com/chart/?symbol=NSE:CDSL&interval=W) | 1413.00 | -1.19 | 65.0704 | 64.7784 | +0.2921 | 8.7639 | 2.6668 | +6.0971 | 316 |
-| [NSE:CEATLTD](https://in.tradingview.com/chart/?symbol=NSE:CEATLTD&interval=W) | 3579.40 | +1.03 | 166.2531 | 165.6550 | +0.5982 | -6.6293 | -14.8785 | +8.2491 | 316 |
-| [NSE:CELLO](https://in.tradingview.com/chart/?symbol=NSE:CELLO&interval=W) | 378.25 | +2.23 | 17.7153 | 17.6668 | +0.0485 | -7.4032 | -15.7875 | +8.3843 | 160 |
-| [NSE:CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO&interval=W) | 1414.70 | -0.08 | 60.4674 | 59.7068 | +0.7606 | 24.5798 | 16.6803 | +7.8995 | 316 |
-| [NSE:CHALET](https://in.tradingview.com/chart/?symbol=NSE:CHALET&interval=W) | 875.05 | +6.20 | 40.5352 | 40.3781 | +0.1571 | 2.4741 | -7.3318 | +9.8059 | 316 |
-| [NSE:CHEMPLASTS](https://in.tradingview.com/chart/?symbol=NSE:CHEMPLASTS&interval=W) | 250.45 | +0.16 | 10.3215 | 10.1486 | +0.1730 | 22.0516 | 13.7950 | +8.2565 | 275 |
-| [NSE:COFORGE](https://in.tradingview.com/chart/?symbol=NSE:COFORGE&interval=W) | 2060.00 | -1.28 | 90.3852 | 89.5114 | +0.8739 | 60.1074 | 59.1928 | +0.9146 | 316 |
-| [NSE:COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE&interval=W) | 489.55 | +5.89 | 21.9122 | 21.7478 | +0.1644 | 36.7041 | 22.6530 | +14.0511 | 316 |
-| [NSE:COROMANDEL](https://in.tradingview.com/chart/?symbol=NSE:COROMANDEL&interval=W) | 1940.00 | -2.81 | 92.4998 | 92.4149 | +0.0850 | -17.1279 | -24.4141 | +7.2863 | 316 |
-| [NSE:CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN&interval=W) | 11769.00 | +0.39 | 509.1432 | 503.4270 | +5.7162 | 51.8693 | 46.7211 | +5.1483 | 297 |
-| [NSE:CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB&interval=W) | 247.00 | -0.72 | 11.1850 | 11.1150 | +0.0700 | 13.9352 | 2.8751 | +11.0601 | 316 |
-| [NSE:CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT&interval=W) | 1151.20 | -0.37 | 52.1618 | 51.8386 | +0.3232 | 38.1156 | 37.0920 | +1.0235 | 316 |
-| [NSE:DABUR](https://in.tradingview.com/chart/?symbol=NSE:DABUR&interval=W) | 430.00 | +9.39 | 19.4141 | 19.2864 | +0.1277 | -26.1984 | -43.2851 | +17.0867 | 316 |
-| [NSE:DAMCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:DAMCAPITAL&interval=W) | 147.55 | +1.84 | 7.0530 | 7.0483 | +0.0047 | -23.0386 | -31.5619 | +8.5232 | 101 |
-| [NSE:DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK&interval=W) | 241.64 | +3.47 | 10.1358 | 9.9867 | +0.1492 | 48.1806 | 41.4096 | +6.7710 | 316 |
-| [NSE:DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT&interval=W) | 1388.60 | -3.38 | 64.7902 | 64.5875 | +0.2027 | -20.7839 | -28.7708 | +7.9869 | 316 |
-| [NSE:DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY&interval=W) | 462.00 | +0.68 | 21.1572 | 21.0499 | +0.1073 | -13.6143 | -23.1482 | +9.5339 | 236 |
-| [NSE:DIXON](https://in.tradingview.com/chart/?symbol=NSE:DIXON&interval=W) | 12978.00 | -1.08 | 618.4912 | 617.8924 | +0.5989 | -2.1590 | -6.9324 | +4.7734 | 316 |
-| [NSE:DOLATALGO](https://in.tradingview.com/chart/?symbol=NSE:DOLATALGO&interval=W) | 68.26 | +6.69 | 3.2319 | 3.2267 | +0.0053 | -37.7023 | -48.5298 | +10.8275 | 316 |
-| [NSE:DOMS](https://in.tradingview.com/chart/?symbol=NSE:DOMS&interval=W) | 2217.30 | +3.04 | 103.3093 | 102.9710 | +0.3383 | -39.5410 | -52.2179 | +12.6770 | 154 |
-| [NSE:DVL](https://in.tradingview.com/chart/?symbol=NSE:DVL&interval=W) | 294.45 | -4.63 | 13.5223 | 13.4577 | +0.0646 | 46.3465 | 45.9162 | +0.4302 | 316 |
-| [NSE:EIHOTEL](https://in.tradingview.com/chart/?symbol=NSE:EIHOTEL&interval=W) | 340.25 | +1.83 | 15.1168 | 14.9913 | +0.1255 | 6.6054 | -5.4284 | +12.0338 | 316 |
-| [NSE:EMAMILTD](https://in.tradingview.com/chart/?symbol=NSE:EMAMILTD&interval=W) | 427.55 | +1.27 | 19.3178 | 19.1923 | +0.1255 | -9.2368 | -21.4393 | +12.2025 | 316 |
-| [NSE:EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE&interval=W) | 2313.50 | -1.04 | 96.7732 | 95.3183 | +1.4549 | 53.5674 | 50.8220 | +2.7455 | 125 |
-| [NSE:ENDURANCE](https://in.tradingview.com/chart/?symbol=NSE:ENDURANCE&interval=W) | 2642.20 | +3.17 | 124.9412 | 124.7215 | +0.2197 | -11.7491 | -17.4249 | +5.6758 | 316 |
-| [NSE:EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL&interval=W) | 235.90 | +0.30 | 11.2687 | 11.2604 | +0.0082 | -2.2003 | -4.5097 | +2.3093 | 316 |
-| [NSE:ERIS](https://in.tradingview.com/chart/?symbol=NSE:ERIS&interval=W) | 1304.30 | -0.98 | 62.4447 | 62.4131 | +0.0316 | -27.1759 | -34.0389 | +6.8629 | 316 |
-| [NSE:ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD&interval=W) | 2754.40 | +1.48 | 127.7642 | 127.2869 | +0.4773 | 18.6135 | 16.4647 | +2.1488 | 235 |
-| [NSE:EXCELINDUS](https://in.tradingview.com/chart/?symbol=NSE:EXCELINDUS&interval=W) | 986.35 | -0.20 | 46.3491 | 46.2379 | +0.1112 | 0.2278 | -4.6276 | +4.8555 | 316 |
-| [NSE:FAZE3Q](https://in.tradingview.com/chart/?symbol=NSE:FAZE3Q&interval=W) | 557.00 | -5.22 | 24.2052 | 23.9455 | +0.2597 | 3.7130 | -2.1242 | +5.8372 | 211 |
-| [NSE:FDC](https://in.tradingview.com/chart/?symbol=NSE:FDC&interval=W) | 372.40 | -1.36 | 17.8403 | 17.8324 | +0.0079 | 4.6372 | 1.5017 | +3.1355 | 316 |
-| [NSE:FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK&interval=W) | 356.20 | -4.63 | 16.4500 | 16.3811 | +0.0690 | 41.9695 | 37.9827 | +3.9868 | 316 |
-| [NSE:FIEMIND](https://in.tradingview.com/chart/?symbol=NSE:FIEMIND&interval=W) | 2074.80 | -2.92 | 98.7447 | 98.6356 | +0.1091 | -11.0421 | -16.7974 | +5.7553 | 316 |
-| [NSE:FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX&interval=W) | 111.88 | +0.95 | 4.3700 | 4.2686 | +0.1014 | 57.6072 | 55.1715 | +2.4358 | 316 |
-| [NSE:FINEORG](https://in.tradingview.com/chart/?symbol=NSE:FINEORG&interval=W) | 5582.50 | +1.71 | 251.5004 | 249.7883 | +1.7120 | 48.8064 | 41.7737 | +7.0328 | 316 |
-| [NSE:FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM&interval=W) | 4731.80 | -4.07 | 214.7135 | 213.4162 | +1.2973 | 39.7355 | 35.9455 | +3.7901 | 316 |
-| [NSE:FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL&interval=W) | 288.90 | +2.65 | 13.3670 | 13.3136 | +0.0534 | 35.0672 | 34.7035 | +0.3637 | 316 |
-| [NSE:GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL&interval=W) | 1501.80 | -3.72 | 66.9047 | 66.3688 | +0.5359 | 54.6261 | 53.5329 | +1.0932 | 316 |
-| [NSE:GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP&interval=W) | 1548.00 | +1.07 | 71.5161 | 71.2190 | +0.2971 | 32.1068 | 29.0852 | +3.0216 | 316 |
-| [NSE:GHCL](https://in.tradingview.com/chart/?symbol=NSE:GHCL&interval=W) | 430.70 | -3.25 | 20.7014 | 20.6990 | +0.0023 | -23.8352 | -30.8982 | +7.0630 | 316 |
-| [NSE:GHCLTEXTIL](https://in.tradingview.com/chart/?symbol=NSE:GHCLTEXTIL&interval=W) | 146.21 | +1.84 | 6.0104 | 5.9079 | +0.1025 | 51.6861 | 44.9988 | +6.6873 | 181 |
-| [NSE:GLAND](https://in.tradingview.com/chart/?symbol=NSE:GLAND&interval=W) | 3348.40 | +0.50 | 140.6809 | 138.6370 | +2.0439 | 65.2715 | 64.1040 | +1.1675 | 315 |
-| [NSE:GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK&interval=W) | 2719.00 | +2.68 | 116.6555 | 115.2376 | +1.4178 | 43.4262 | 38.3680 | +5.0582 | 316 |
-| [NSE:GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP&interval=W) | 1920.00 | -0.53 | 87.1144 | 86.5871 | +0.5273 | -3.6024 | -10.9692 | +7.3668 | 316 |
-| [NSE:GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX&interval=W) | 767.70 | +1.33 | 35.3201 | 35.1580 | +0.1620 | -17.2082 | -27.1696 | +9.9614 | 316 |
-| [NSE:GOPAL](https://in.tradingview.com/chart/?symbol=NSE:GOPAL&interval=W) | 270.41 | +1.72 | 12.8032 | 12.7823 | +0.0209 | -27.6972 | -39.0238 | +11.3266 | 142 |
-| [NSE:GPPL](https://in.tradingview.com/chart/?symbol=NSE:GPPL&interval=W) | 174.24 | -0.73 | 7.9813 | 7.9410 | +0.0403 | 40.9765 | 37.3962 | +3.5803 | 316 |
-| [NSE:GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES&interval=W) | 840.80 | +2.21 | 39.6713 | 39.5927 | +0.0787 | 3.6143 | -0.7340 | +4.3483 | 316 |
-| [NSE:GRAPHITE](https://in.tradingview.com/chart/?symbol=NSE:GRAPHITE&interval=W) | 794.45 | +3.78 | 36.1092 | 35.8973 | +0.2118 | 28.9159 | 26.9325 | +1.9834 | 316 |
-| [NSE:GREAVESCOT](https://in.tradingview.com/chart/?symbol=NSE:GREAVESCOT&interval=W) | 309.44 | +15.33 | 10.6402 | 10.2153 | +0.4250 | 35.4871 | 21.8235 | +13.6636 | 316 |
-| [NSE:GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH&interval=W) | 7628.00 | -1.94 | 337.2657 | 334.2876 | +2.9781 | 49.7055 | 47.6667 | +2.0388 | 252 |
-| [NSE:GULFOILLUB](https://in.tradingview.com/chart/?symbol=NSE:GULFOILLUB&interval=W) | 1150.30 | +0.09 | 52.7996 | 52.5446 | +0.2551 | 26.3184 | 18.2057 | +8.1127 | 316 |
-| [NSE:HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS&interval=W) | 1196.40 | -1.21 | 56.1091 | 55.9631 | +0.1460 | -15.6447 | -24.3953 | +8.7506 | 316 |
-| [NSE:HIKAL](https://in.tradingview.com/chart/?symbol=NSE:HIKAL&interval=W) | 225.79 | +2.28 | 10.4851 | 10.4471 | +0.0380 | 10.4491 | 5.5017 | +4.9474 | 316 |
-| [NSE:HINDOILEXP](https://in.tradingview.com/chart/?symbol=NSE:HINDOILEXP&interval=W) | 220.48 | +1.69 | 8.5009 | 8.2901 | +0.2108 | 32.3416 | 21.4413 | +10.9003 | 316 |
-| [NSE:HINDPETRO](https://in.tradingview.com/chart/?symbol=NSE:HINDPETRO&interval=W) | 391.00 | -1.35 | 17.9932 | 17.9111 | +0.0821 | -6.8262 | -14.8371 | +8.0109 | 316 |
-| [NSE:HITECH](https://in.tradingview.com/chart/?symbol=NSE:HITECH&interval=W) | 82.45 | +9.29 | 3.7545 | 3.7333 | +0.0213 | -25.1753 | -38.7730 | +13.5977 | 316 |
-| [NSE:HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA&interval=W) | 536.45 | +2.10 | 22.4439 | 22.1070 | +0.3369 | 43.4647 | 35.1612 | +8.3034 | 160 |
-| [NSE:HUBTOWN](https://in.tradingview.com/chart/?symbol=NSE:HUBTOWN&interval=W) | 194.20 | +13.77 | 8.8402 | 8.7898 | +0.0504 | -27.5747 | -38.9489 | +11.3742 | 316 |
-| [NSE:ICICIGI](https://in.tradingview.com/chart/?symbol=NSE:ICICIGI&interval=W) | 1736.60 | +0.03 | 80.6300 | 80.3368 | +0.2932 | 1.2777 | -8.5548 | +9.8324 | 316 |
-| [NSE:ICIL](https://in.tradingview.com/chart/?symbol=NSE:ICIL&interval=W) | 580.70 | +0.08 | 22.0642 | 21.4764 | +0.5878 | 66.2580 | 61.7013 | +4.5567 | 316 |
-| [NSE:IDFCFIRSTB](https://in.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB&interval=W) | 87.47 | +0.24 | 3.9025 | 3.8718 | +0.0306 | 9.9265 | 1.4845 | +8.4420 | 316 |
-| [NSE:IGIL](https://in.tradingview.com/chart/?symbol=NSE:IGIL&interval=W) | 432.50 | +2.44 | 18.0497 | 17.7736 | +0.2761 | 26.6763 | 21.9944 | +4.6819 | 102 |
-| [NSE:INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN&interval=W) | 653.55 | -0.62 | 28.6684 | 28.3905 | +0.2779 | 63.8711 | 62.1293 | +1.7418 | 133 |
-| [NSE:INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK&interval=W) | 973.70 | -2.92 | 45.1321 | 44.9601 | +0.1721 | -3.2242 | -11.7849 | +8.5607 | 316 |
-| [NSE:INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA&interval=W) | 2137.30 | +0.78 | 95.1652 | 94.3974 | +0.7678 | 22.9821 | 17.4013 | +5.5809 | 154 |
-| [NSE:IREDA](https://in.tradingview.com/chart/?symbol=NSE:IREDA&interval=W) | 124.75 | -5.28 | 5.6627 | 5.6287 | +0.0340 | -19.5339 | -31.3774 | +11.8436 | 157 |
-| [NSE:ISGEC](https://in.tradingview.com/chart/?symbol=NSE:ISGEC&interval=W) | 1021.85 | +2.66 | 44.4065 | 43.9301 | +0.4763 | 30.1029 | 24.5632 | +5.5397 | 291 |
-| [NSE:ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS&interval=W) | 186.50 | +1.22 | 8.1886 | 8.1100 | +0.0786 | 25.8788 | 16.5535 | +9.3253 | 96 |
-| [NSE:ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC&interval=W) | 664.20 | +1.00 | 31.3821 | 31.3243 | +0.0578 | -3.7279 | -8.6040 | +4.8761 | 316 |
-| [NSE:IXIGO](https://in.tradingview.com/chart/?symbol=NSE:IXIGO&interval=W) | 175.95 | +3.38 | 8.1127 | 8.0774 | +0.0354 | -16.0331 | -24.4505 | +8.4174 | 128 |
-| [NSE:J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK&interval=W) | 155.32 | +3.73 | 6.8550 | 6.7932 | +0.0619 | -11.7156 | -21.3917 | +9.6761 | 316 |
-| [NSE:JAYBARMARU](https://in.tradingview.com/chart/?symbol=NSE:JAYBARMARU&interval=W) | 128.09 | -1.00 | 6.0984 | 6.0919 | +0.0065 | -2.3582 | -6.6692 | +4.3109 | 316 |
-| [NSE:JINDALPHOT](https://in.tradingview.com/chart/?symbol=NSE:JINDALPHOT&interval=W) | 1111.90 | -0.09 | 52.9517 | 52.8966 | +0.0551 | 8.8107 | 5.7009 | +3.1098 | 316 |
-| [NSE:JKCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JKCEMENT&interval=W) | 5559.70 | +2.22 | 252.1465 | 250.6088 | +1.5377 | -6.5501 | -18.0569 | +11.5068 | 316 |
-| [NSE:JKLAKSHMI](https://in.tradingview.com/chart/?symbol=NSE:JKLAKSHMI&interval=W) | 535.20 | +1.78 | 25.5313 | 25.5092 | +0.0222 | -40.5344 | -51.2654 | +10.7310 | 316 |
-| [NSE:JKTYRE](https://in.tradingview.com/chart/?symbol=NSE:JKTYRE&interval=W) | 366.55 | -0.52 | 17.6156 | 17.6134 | +0.0022 | -30.3835 | -39.0035 | +8.6200 | 316 |
-| [NSE:JSWINFRA](https://in.tradingview.com/chart/?symbol=NSE:JSWINFRA&interval=W) | 357.65 | +4.81 | 16.1157 | 16.0063 | +0.1094 | 29.6586 | 23.4264 | +6.2323 | 165 |
-| [NSE:KAJARIACER](https://in.tradingview.com/chart/?symbol=NSE:KAJARIACER&interval=W) | 1206.00 | +0.46 | 57.5431 | 57.4943 | +0.0488 | 5.7574 | 4.2703 | +1.4871 | 316 |
-| [NSE:KALAMANDIR](https://in.tradingview.com/chart/?symbol=NSE:KALAMANDIR&interval=W) | 98.65 | +11.70 | 4.2308 | 4.1792 | +0.0516 | -21.6648 | -33.1000 | +11.4352 | 166 |
-| [NSE:KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL&interval=W) | 636.35 | -0.37 | 27.3161 | 26.9857 | +0.3304 | 31.8512 | 28.5683 | +3.2829 | 297 |
-| [NSE:KANSAINER](https://in.tradingview.com/chart/?symbol=NSE:KANSAINER&interval=W) | 202.49 | +2.30 | 9.4464 | 9.4167 | +0.0297 | -13.3916 | -20.3125 | +6.9210 | 316 |
-| [NSE:KARURVYSYA](https://in.tradingview.com/chart/?symbol=NSE:KARURVYSYA&interval=W) | 378.75 | +0.46 | 16.6980 | 16.5453 | +0.1527 | 64.6478 | 63.8606 | +0.7872 | 316 |
-| [NSE:KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL&interval=W) | 4531.20 | -1.94 | 184.7836 | 181.4586 | +3.3250 | 60.3870 | 55.6526 | +4.7344 | 316 |
-| [NSE:KFINTECH](https://in.tradingview.com/chart/?symbol=NSE:KFINTECH&interval=W) | 934.00 | -0.10 | 43.8488 | 43.7395 | +0.1094 | 1.9167 | -3.4401 | +5.3567 | 205 |
-| [NSE:KIMS](https://in.tradingview.com/chart/?symbol=NSE:KIMS&interval=W) | 788.95 | -0.84 | 36.3945 | 36.2377 | +0.1568 | -5.1232 | -15.4908 | +10.3676 | 283 |
-| [NSE:KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL&interval=W) | 1173.00 | -1.54 | 53.8466 | 53.5870 | +0.2596 | 31.2356 | 27.3475 | +3.8880 | 316 |
-| [NSE:KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL&interval=W) | 418.95 | -2.80 | 19.0198 | 18.9059 | +0.1139 | 24.4460 | 19.8042 | +4.6418 | 316 |
-| [NSE:KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK&interval=W) | 339.80 | -0.85 | 15.2312 | 15.1193 | +0.1119 | 49.5240 | 49.4718 | +0.0522 | 316 |
-| [NSE:LALPATHLAB](https://in.tradingview.com/chart/?symbol=NSE:LALPATHLAB&interval=W) | 2028.30 | +1.11 | 91.2974 | 90.6673 | +0.6301 | 49.8152 | 46.3840 | +3.4311 | 316 |
-| [NSE:LEMONTREE](https://in.tradingview.com/chart/?symbol=NSE:LEMONTREE&interval=W) | 124.80 | -2.15 | 5.5812 | 5.5388 | +0.0424 | 29.2375 | 21.4453 | +7.7923 | 316 |
-| [NSE:LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN&interval=W) | 598.00 | -2.75 | 26.5732 | 26.3530 | +0.2202 | 15.8270 | 6.7575 | +9.0695 | 316 |
-| [NSE:LINDEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LINDEINDIA&interval=W) | 6950.00 | +5.75 | 316.6469 | 314.8693 | +1.7776 | -17.9537 | -27.0705 | +9.1168 | 316 |
-| [NSE:LTF](https://in.tradingview.com/chart/?symbol=NSE:LTF&interval=W) | 283.95 | +4.36 | 13.5782 | 13.5697 | +0.0085 | -19.1023 | -25.0958 | +5.9936 | 316 |
-| [NSE:LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS&interval=W) | 423.10 | -2.15 | 20.0314 | 19.9987 | +0.0327 | 9.6194 | 6.8215 | +2.7979 | 316 |
-| [NSE:LTTS](https://in.tradingview.com/chart/?symbol=NSE:LTTS&interval=W) | 4178.00 | +2.34 | 182.7226 | 180.8910 | +1.8316 | 34.3059 | 31.8962 | +2.4097 | 316 |
-| [NSE:LUMAXTECH](https://in.tradingview.com/chart/?symbol=NSE:LUMAXTECH&interval=W) | 2386.40 | +2.41 | 96.9378 | 95.1486 | +1.7892 | 51.6222 | 48.6499 | +2.9722 | 316 |
-| [NSE:MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK&interval=W) | 98.71 | -0.74 | 4.1222 | 4.0594 | +0.0628 | 37.7671 | 28.7703 | +8.9967 | 316 |
-| [NSE:MARATHON](https://in.tradingview.com/chart/?symbol=NSE:MARATHON&interval=W) | 438.00 | -1.27 | 19.9535 | 19.8412 | +0.1122 | 0.2978 | -7.2969 | +7.5947 | 316 |
-| [NSE:MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR&interval=W) | 87.98 | +1.46 | 4.0319 | 4.0117 | +0.0202 | -8.8784 | -18.8528 | +9.9744 | 107 |
-| [NSE:MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES&interval=W) | 614.35 | +1.92 | 25.2887 | 24.8614 | +0.4273 | 42.0654 | 36.1317 | +5.9338 | 161 |
-| [NSE:MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX&interval=W) | 3565.00 | +0.85 | 156.3334 | 154.8126 | +1.5208 | 51.4691 | 50.7151 | +0.7540 | 316 |
-| [NSE:METROPOLIS](https://in.tradingview.com/chart/?symbol=NSE:METROPOLIS&interval=W) | 566.80 | +0.14 | 26.8649 | 26.8241 | +0.0409 | 16.5368 | 13.7938 | +2.7430 | 316 |
-| [NSE:MINDACORP](https://in.tradingview.com/chart/?symbol=NSE:MINDACORP&interval=W) | 717.85 | -4.20 | 32.8557 | 32.6870 | +0.1686 | 17.3426 | 12.3051 | +5.0374 | 316 |
-| [NSE:MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS&interval=W) | 1230.10 | +2.03 | 50.1624 | 49.2596 | +0.9028 | 56.5134 | 53.1129 | +3.4005 | 316 |
-| [NSE:MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS&interval=W) | 2532.90 | +4.67 | 117.4158 | 116.9695 | +0.4463 | 25.3532 | 22.4570 | +2.8962 | 316 |
-| [NSE:MRF](https://in.tradingview.com/chart/?symbol=NSE:MRF&interval=W) | 128740.00 | -1.64 | 6185.8559 | 6184.9661 | +0.8898 | -20.3121 | -28.5621 | +8.2500 | 316 |
-| [NSE:NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI&interval=W) | 1220.00 | +3.59 | 58.2348 | 58.1879 | +0.0470 | -6.3361 | -7.3278 | +0.9918 | 316 |
-| [NSE:NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR&interval=W) | 9956.00 | -1.20 | 414.4560 | 407.9949 | +6.4610 | 67.3101 | 64.2196 | +3.0906 | 316 |
-| [NSE:NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST&interval=W) | 146.46 | +0.11 | 6.5236 | 6.4712 | +0.0524 | 24.4607 | 21.5314 | +2.9293 | 316 |
-| [NSE:NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN&interval=W) | 2729.80 | -6.52 | 113.9342 | 112.1922 | +1.7419 | 62.7538 | 61.2742 | +1.4797 | 316 |
-| [NSE:NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB&interval=W) | 20968.00 | +1.58 | 981.8787 | 979.1721 | +2.7066 | 10.2484 | 9.6062 | +0.6422 | 316 |
-| [NSE:NH](https://in.tradingview.com/chart/?symbol=NSE:NH&interval=W) | 2003.70 | +3.09 | 90.0742 | 89.4402 | +0.6340 | -2.0844 | -13.0476 | +10.9632 | 316 |
-| [NSE:NITINSPIN](https://in.tradingview.com/chart/?symbol=NSE:NITINSPIN&interval=W) | 688.60 | -2.28 | 29.8052 | 29.4723 | +0.3329 | 66.5458 | 64.9556 | +1.5902 | 316 |
-| [NSE:NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO&interval=W) | 363.35 | +1.35 | 16.3540 | 16.2410 | +0.1130 | 35.6471 | 26.9246 | +8.7225 | 275 |
-| [NSE:OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY&interval=W) | 1868.50 | +1.38 | 85.6595 | 85.2345 | +0.4250 | 5.2229 | -3.5676 | +8.7905 | 316 |
-| [NSE:ONESOURCE](https://in.tradingview.com/chart/?symbol=NSE:ONESOURCE&interval=W) | 1602.60 | -0.42 | 76.0917 | 75.9894 | +0.1023 | -9.4792 | -15.0038 | +5.5246 | 97 |
-| [NSE:ORCHPHARMA](https://in.tradingview.com/chart/?symbol=NSE:ORCHPHARMA&interval=W) | 950.90 | -0.99 | 44.5765 | 44.4585 | +0.1179 | -3.5947 | -7.0608 | +3.4661 | 316 |
-| [NSE:ORIENTELEC](https://in.tradingview.com/chart/?symbol=NSE:ORIENTELEC&interval=W) | 196.89 | -2.00 | 8.9533 | 8.9012 | +0.0521 | 17.1261 | 13.0549 | +4.0712 | 316 |
-| [NSE:ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT&interval=W) | 179.54 | -0.24 | 7.2605 | 7.1226 | +0.1379 | 72.7239 | 71.6190 | +1.1049 | 316 |
-| [NSE:PARAGMILK](https://in.tradingview.com/chart/?symbol=NSE:PARAGMILK&interval=W) | 338.40 | +0.43 | 13.3184 | 13.0219 | +0.2965 | 55.7572 | 52.8329 | +2.9243 | 316 |
-| [NSE:PATANJALI](https://in.tradingview.com/chart/?symbol=NSE:PATANJALI&interval=W) | 407.05 | +0.71 | 18.9718 | 18.9103 | +0.0615 | 6.9337 | 1.9429 | +4.9909 | 316 |
-| [NSE:PDSL](https://in.tradingview.com/chart/?symbol=NSE:PDSL&interval=W) | 418.95 | +2.61 | 17.7278 | 17.4846 | +0.2431 | 34.3766 | 28.2657 | +6.1108 | 316 |
-| [NSE:PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET&interval=W) | 327.00 | -0.65 | 14.4536 | 14.3255 | +0.1281 | 75.7572 | 73.5306 | +2.2266 | 316 |
-| [NSE:PGEL](https://in.tradingview.com/chart/?symbol=NSE:PGEL&interval=W) | 584.00 | -0.80 | 26.6190 | 26.4708 | +0.1482 | 3.9494 | -4.5073 | +8.4567 | 316 |
-| [NSE:PGHL](https://in.tradingview.com/chart/?symbol=NSE:PGHL&interval=W) | 5713.00 | +2.21 | 273.8648 | 273.7612 | +0.1035 | -5.7816 | -10.8770 | +5.0954 | 316 |
-| [NSE:PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD&interval=W) | 2285.50 | +0.01 | 97.2456 | 95.9727 | +1.2729 | 49.6249 | 43.6376 | +5.9873 | 316 |
-| [NSE:PNBGILTS](https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS&interval=W) | 79.91 | -3.64 | 3.8142 | 3.8111 | +0.0031 | -9.1189 | -16.1993 | +7.0804 | 316 |
-| [NSE:PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING&interval=W) | 1183.30 | -0.67 | 53.9446 | 53.6453 | +0.2994 | 29.9474 | 23.0054 | +6.9421 | 316 |
-| [NSE:POLYMED](https://in.tradingview.com/chart/?symbol=NSE:POLYMED&interval=W) | 1636.80 | +0.07 | 78.5516 | 78.5308 | +0.0208 | -4.4468 | -7.5132 | +3.0664 | 316 |
-| [NSE:POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA&interval=W) | 513.45 | -0.95 | 22.6084 | 22.3986 | +0.2098 | 25.1340 | 16.3044 | +8.8296 | 316 |
-| [NSE:PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE&interval=W) | 1685.10 | +0.30 | 75.0253 | 74.4194 | +0.6059 | 14.0010 | 6.7769 | +7.2241 | 316 |
-| [NSE:PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU&interval=W) | 304.75 | +0.28 | 14.2229 | 14.1788 | +0.0441 | 31.8755 | 29.6190 | +2.2565 | 316 |
-| [NSE:PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL&interval=W) | 3651.60 | +2.41 | 166.9037 | 166.0232 | +0.8805 | 9.2283 | -2.7781 | +12.0065 | 316 |
-| [NSE:PROTEAN](https://in.tradingview.com/chart/?symbol=NSE:PROTEAN&interval=W) | 681.60 | -3.40 | 30.3956 | 30.1554 | +0.2402 | 25.8595 | 22.0258 | +3.8338 | 95 |
-| [NSE:PVRINOX](https://in.tradingview.com/chart/?symbol=NSE:PVRINOX&interval=W) | 1709.30 | +3.46 | 66.1283 | 64.5162 | +1.6120 | 75.3983 | 74.8562 | +0.5422 | 316 |
-| [NSE:RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR&interval=W) | 1595.40 | +3.96 | 71.6556 | 71.1443 | +0.5112 | 26.9238 | 23.5605 | +3.3633 | 105 |
-| [NSE:RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO&interval=W) | 4699.00 | +0.73 | 209.2804 | 207.5976 | +1.6828 | 38.3279 | 33.6301 | +4.6977 | 316 |
-| [NSE:RAMCOIND](https://in.tradingview.com/chart/?symbol=NSE:RAMCOIND&interval=W) | 316.45 | +2.63 | 15.0982 | 15.0853 | +0.0129 | -10.4908 | -14.3431 | +3.8524 | 316 |
-| [NSE:RAMKY](https://in.tradingview.com/chart/?symbol=NSE:RAMKY&interval=W) | 380.10 | -1.18 | 17.4502 | 17.3663 | +0.0840 | -23.6353 | -31.1102 | +7.4749 | 316 |
-| [NSE:RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER&interval=W) | 404.55 | +9.26 | 14.9504 | 14.4988 | +0.4516 | 71.1991 | 70.9187 | +0.2804 | 168 |
-| [NSE:RAYMONDREL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDREL&interval=W) | 606.75 | -2.51 | 29.0793 | 29.0677 | +0.0116 | 0.8383 | -1.2954 | +2.1337 | 74 |
-| [NSE:RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK&interval=W) | 390.45 | -1.97 | 18.4647 | 18.4324 | +0.0323 | 22.5927 | 21.1664 | +1.4264 | 316 |
-| [NSE:REPCOHOME](https://in.tradingview.com/chart/?symbol=NSE:REPCOHOME&interval=W) | 363.40 | -3.68 | 17.4567 | 17.4537 | +0.0030 | -20.7646 | -27.2676 | +6.5030 | 316 |
-| [NSE:RKFORGE](https://in.tradingview.com/chart/?symbol=NSE:RKFORGE&interval=W) | 745.75 | +0.00 | 33.1948 | 32.9259 | +0.2689 | 40.0893 | 38.4751 | +1.6142 | 316 |
-| [NSE:SAFARI](https://in.tradingview.com/chart/?symbol=NSE:SAFARI&interval=W) | 1537.80 | +7.10 | 69.7536 | 69.3293 | +0.4243 | -41.1674 | -54.6432 | +13.4757 | 316 |
-| [NSE:SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE&interval=W) | 1799.30 | -0.08 | 74.2582 | 73.0261 | +1.2321 | 64.2831 | 63.8271 | +0.4560 | 102 |
-| [NSE:SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV&interval=W) | 171.66 | +8.60 | 7.1289 | 7.0158 | +0.1131 | 64.4465 | 63.9718 | +0.4747 | 74 |
-| [NSE:SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND&interval=W) | 691.10 | +2.58 | 29.3831 | 28.9959 | +0.3872 | 61.7235 | 54.9018 | +6.8217 | 316 |
-| [NSE:SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA&interval=W) | 4708.50 | -1.87 | 195.1673 | 192.0275 | +3.1398 | 66.4090 | 65.5231 | +0.8859 | 271 |
-| [NSE:SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN&interval=W) | 1845.50 | +0.08 | 86.1500 | 85.8848 | +0.2652 | -9.8929 | -17.9223 | +8.0294 | 316 |
-| [NSE:SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN&interval=W) | 252.91 | -1.27 | 11.3847 | 11.3062 | +0.0785 | 37.4033 | 36.2173 | +1.1860 | 316 |
-| [NSE:SHARDAMOTR](https://in.tradingview.com/chart/?symbol=NSE:SHARDAMOTR&interval=W) | 998.05 | +2.33 | 43.8965 | 43.4837 | +0.4128 | 23.0268 | 16.5399 | +6.4868 | 316 |
-| [NSE:SHREECEM](https://in.tradingview.com/chart/?symbol=NSE:SHREECEM&interval=W) | 25245.00 | -0.90 | 1175.2319 | 1171.2803 | +3.9515 | 0.8912 | -6.2647 | +7.1559 | 316 |
-| [NSE:SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE&interval=W) | 847.10 | -1.43 | 38.1356 | 37.8730 | +0.2625 | -17.5183 | -32.4697 | +14.9515 | 166 |
-| [NSE:SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF&interval=W) | 295.40 | -1.45 | 12.8311 | 12.6928 | +0.1383 | 47.5523 | 43.9295 | +3.6228 | 316 |
-| [NSE:SMARTWORKS](https://in.tradingview.com/chart/?symbol=NSE:SMARTWORKS&interval=W) | 517.25 | -0.59 | 24.0219 | 23.9351 | +0.0867 | 23.0059 | 19.7565 | +3.2495 | 72 |
-| [NSE:SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING&interval=W) | 235.85 | +6.58 | 9.8098 | 9.6559 | +0.1539 | 33.2362 | 22.1853 | +11.0509 | 223 |
-| [NSE:STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL&interval=W) | 639.55 | +3.79 | 27.7703 | 27.4699 | +0.3004 | 20.8339 | 15.3325 | +5.5013 | 316 |
-| [NSE:STYLAMIND](https://in.tradingview.com/chart/?symbol=NSE:STYLAMIND&interval=W) | 3245.70 | -0.21 | 154.1217 | 153.9161 | +0.2056 | 0.7772 | -1.2244 | +2.0016 | 278 |
-| [NSE:SUNTECK](https://in.tradingview.com/chart/?symbol=NSE:SUNTECK&interval=W) | 316.75 | -0.06 | 14.6257 | 14.5641 | +0.0616 | -10.3347 | -20.2651 | +9.9304 | 316 |
-| [NSE:SUNTV](https://in.tradingview.com/chart/?symbol=NSE:SUNTV&interval=W) | 616.25 | -11.23 | 27.9860 | 27.8193 | +0.1667 | 30.8110 | 29.4046 | +1.4064 | 316 |
-| [NSE:SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE&interval=W) | 451.75 | +0.01 | 20.1376 | 19.9776 | +0.1600 | 2.4627 | -5.9781 | +8.4408 | 316 |
-| [NSE:TANLA](https://in.tradingview.com/chart/?symbol=NSE:TANLA&interval=W) | 649.50 | -1.68 | 28.2275 | 27.9250 | +0.3025 | 37.8582 | 36.4690 | +1.3892 | 316 |
-| [NSE:TATACHEM](https://in.tradingview.com/chart/?symbol=NSE:TATACHEM&interval=W) | 663.10 | +3.72 | 31.3217 | 31.2631 | +0.0586 | -31.7697 | -41.7605 | +9.9908 | 316 |
-| [NSE:TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI&interval=W) | 3819.40 | -0.79 | 181.9805 | 181.8002 | +0.1803 | -8.3098 | -13.7377 | +5.4278 | 316 |
-| [NSE:TEXRAIL](https://in.tradingview.com/chart/?symbol=NSE:TEXRAIL&interval=W) | 112.58 | +1.09 | 5.3756 | 5.3715 | +0.0042 | 2.4119 | -2.2912 | +4.7030 | 316 |
-| [NSE:THOMASCOOK](https://in.tradingview.com/chart/?symbol=NSE:THOMASCOOK&interval=W) | 149.60 | +30.47 | 5.2253 | 5.0280 | +0.1973 | 7.9553 | -10.3087 | +18.2640 | 316 |
-| [NSE:THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE&interval=W) | 538.20 | +1.85 | 25.0356 | 24.9495 | +0.0862 | -8.2037 | -14.8663 | +6.6626 | 316 |
-| [NSE:TI](https://in.tradingview.com/chart/?symbol=NSE:TI&interval=W) | 558.30 | +2.87 | 24.9883 | 24.8006 | +0.1876 | 21.7422 | 16.6049 | +5.1373 | 316 |
-| [NSE:TIMETECHNO](https://in.tradingview.com/chart/?symbol=NSE:TIMETECHNO&interval=W) | 196.11 | +2.10 | 8.8799 | 8.8243 | +0.0557 | -5.1678 | -13.7337 | +8.5659 | 316 |
-| [NSE:TSFINV](https://in.tradingview.com/chart/?symbol=NSE:TSFINV&interval=W) | 429.40 | +0.95 | 20.3165 | 20.2819 | +0.0346 | -2.4475 | -7.9744 | +5.5269 | 316 |
-| [NSE:TTKHLTCARE](https://in.tradingview.com/chart/?symbol=NSE:TTKHLTCARE&interval=W) | 1066.90 | -3.90 | 48.9924 | 48.7579 | +0.2345 | 3.1829 | -4.0981 | +7.2810 | 316 |
-| [NSE:TVSSCS](https://in.tradingview.com/chart/?symbol=NSE:TVSSCS&interval=W) | 127.18 | -5.00 | 6.0357 | 6.0273 | +0.0084 | -10.0478 | -15.2869 | +5.2391 | 171 |
-| [NSE:TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK&interval=W) | 4531.10 | -2.32 | 212.8707 | 212.3549 | +0.5158 | 13.0224 | 10.4494 | +2.5730 | 316 |
-| [NSE:UNOMINDA](https://in.tradingview.com/chart/?symbol=NSE:UNOMINDA&interval=W) | 1375.00 | -0.36 | 59.2854 | 58.5977 | +0.6877 | 25.1423 | 19.5605 | +5.5818 | 316 |
-| [NSE:VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA&interval=W) | 1627.70 | +3.52 | 69.5053 | 68.6236 | +0.8817 | 40.6484 | 29.1193 | +11.5291 | 272 |
-| [NSE:VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS&interval=W) | 1232.40 | -0.21 | 56.5952 | 56.3247 | +0.2706 | -30.3058 | -42.2471 | +11.9414 | 316 |
-| [NSE:VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG&interval=W) | 328.00 | -3.69 | 14.1043 | 13.9365 | +0.1678 | 40.4945 | 36.7755 | +3.7190 | 316 |
-| [NSE:WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV&interval=W) | 276.57 | +2.90 | 10.4367 | 10.1495 | +0.2871 | 72.8844 | 70.8754 | +2.0090 | 316 |
-| [NSE:WINDMACHIN](https://in.tradingview.com/chart/?symbol=NSE:WINDMACHIN&interval=W) | 302.60 | -5.79 | 14.3650 | 14.3454 | +0.0196 | 4.8198 | -8.2380 | +13.0579 | 316 |
-| [NSE:WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA&interval=W) | 2078.00 | -4.87 | 95.5717 | 95.1299 | +0.4418 | 27.4755 | 23.9453 | +3.5301 | 316 |
-| [NSE:XPROINDIA](https://in.tradingview.com/chart/?symbol=NSE:XPROINDIA&interval=W) | 1174.80 | -3.74 | 56.1358 | 56.0965 | +0.0394 | -5.9221 | -10.2967 | +4.3745 | 316 |
-| [NSE:YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH&interval=W) | 1080.80 | -1.14 | 47.2841 | 46.8119 | +0.4722 | 53.5464 | 51.1347 | +2.4117 | 173 |
-| [NSE:ZENSARTECH](https://in.tradingview.com/chart/?symbol=NSE:ZENSARTECH&interval=W) | 533.00 | +0.75 | 24.6472 | 24.5472 | +0.1000 | 10.7483 | 7.7357 | +3.0127 | 316 |
-| [NSE:ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC&interval=W) | 1715.00 | +2.03 | 81.4062 | 81.2945 | +0.1117 | -1.8159 | -4.2880 | +2.4720 | 316 |
-| [NSE:ZOTA](https://in.tradingview.com/chart/?symbol=NSE:ZOTA&interval=W) | 1320.90 | +2.55 | 61.7438 | 61.5623 | +0.1816 | 11.4510 | 9.0349 | +2.4161 | 316 |
+| [NSE:360ONE](https://in.tradingview.com/chart/?symbol=NSE:360ONE&interval=W) | 1210.00 | +0.16 | 54.0432 | 53.6469 | +0.3962 | 12.0762 | 5.1414 | +6.9348 | 315 |
+| [NSE:5PAISA](https://in.tradingview.com/chart/?symbol=NSE:5PAISA&interval=W) | 342.25 | +0.65 | 16.4011 | 16.4005 | +0.0006 | 0.9588 | -1.7880 | +2.7468 | 315 |
+| [NSE:AARTIDRUGS](https://in.tradingview.com/chart/?symbol=NSE:AARTIDRUGS&interval=W) | 491.85 | +1.52 | 20.9703 | 20.7095 | +0.2608 | 50.1466 | 47.3990 | +2.7476 | 315 |
+| [NSE:ABBOTINDIA](https://in.tradingview.com/chart/?symbol=NSE:ABBOTINDIA&interval=W) | 27300.00 | +2.92 | 1289.1349 | 1287.1763 | +1.9587 | -7.6870 | -16.2149 | +8.5280 | 315 |
+| [NSE:ABDL](https://in.tradingview.com/chart/?symbol=NSE:ABDL&interval=W) | 820.30 | +3.27 | 33.3038 | 32.7018 | +0.6020 | 68.6382 | 64.8973 | +3.7409 | 126 |
+| [NSE:ABREL](https://in.tradingview.com/chart/?symbol=NSE:ABREL&interval=W) | 1288.30 | +5.98 | 59.4604 | 59.2306 | +0.2299 | -25.3157 | -34.9372 | +9.6215 | 315 |
+| [NSE:ABSLAMC](https://in.tradingview.com/chart/?symbol=NSE:ABSLAMC&interval=W) | 992.15 | +6.06 | 47.3817 | 47.3637 | +0.0180 | -32.5357 | -38.9906 | +6.4549 | 268 |
+| [NSE:ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE&interval=W) | 1295.00 | +10.65 | 54.1533 | 53.3606 | +0.7927 | 38.9176 | 32.8291 | +6.0885 | 315 |
+| [NSE:ACMESOLAR](https://in.tradingview.com/chart/?symbol=NSE:ACMESOLAR&interval=W) | 415.80 | +2.57 | 19.0094 | 18.9171 | +0.0923 | 34.2140 | 34.0957 | +0.1183 | 107 |
+| [NSE:ACUTAAS](https://in.tradingview.com/chart/?symbol=NSE:ACUTAAS&interval=W) | 4079.90 | +6.43 | 167.6333 | 164.8382 | +2.7951 | 54.4909 | 52.2413 | +2.2495 | 272 |
+| [NSE:AEGISVOPAK](https://in.tradingview.com/chart/?symbol=NSE:AEGISVOPAK&interval=W) | 276.71 | -4.69 | 12.9777 | 12.9489 | +0.0287 | 13.2618 | 10.9230 | +2.3387 | 78 |
+| [NSE:AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER&interval=W) | 1700.80 | +4.97 | 75.5040 | 74.9011 | +0.6030 | 36.3344 | 35.1181 | +1.2162 | 235 |
+| [NSE:AFFLE](https://in.tradingview.com/chart/?symbol=NSE:AFFLE&interval=W) | 1627.70 | +1.77 | 74.2099 | 73.8279 | +0.3820 | 3.9123 | -2.8048 | +6.7172 | 315 |
+| [NSE:AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE&interval=W) | 572.60 | +3.47 | 24.5946 | 24.3091 | +0.2855 | 39.9615 | 32.2641 | +7.6975 | 95 |
+| [NSE:AGIIL](https://in.tradingview.com/chart/?symbol=NSE:AGIIL&interval=W) | 307.40 | +0.53 | 14.1015 | 14.0380 | +0.0635 | -15.8352 | -23.0099 | +7.1747 | 124 |
+| [NSE:AJAXENGG](https://in.tradingview.com/chart/?symbol=NSE:AJAXENGG&interval=W) | 596.00 | -1.72 | 27.6917 | 27.6037 | +0.0880 | 19.6881 | 11.4693 | +8.2188 | 93 |
+| [NSE:AJMERA](https://in.tradingview.com/chart/?symbol=NSE:AJMERA&interval=W) | 163.20 | +9.32 | 6.3745 | 6.2296 | +0.1449 | 36.4073 | 23.9277 | +12.4796 | 315 |
+| [NSE:ALEMBICLTD](https://in.tradingview.com/chart/?symbol=NSE:ALEMBICLTD&interval=W) | 105.58 | -3.06 | 4.7887 | 4.7614 | +0.0273 | 26.8053 | 25.0711 | +1.7342 | 315 |
+| [NSE:ALICON](https://in.tradingview.com/chart/?symbol=NSE:ALICON&interval=W) | 983.90 | -8.54 | 40.0642 | 39.3540 | +0.7103 | 64.5524 | 61.7083 | +2.8441 | 315 |
+| [NSE:ALLDIGI](https://in.tradingview.com/chart/?symbol=NSE:ALLDIGI&interval=W) | 830.50 | +0.27 | 39.4008 | 39.3596 | +0.0412 | 1.5326 | -3.8133 | +5.3459 | 315 |
+| [NSE:ANANDRATHI](https://in.tradingview.com/chart/?symbol=NSE:ANANDRATHI&interval=W) | 2410.00 | +1.44 | 112.2565 | 111.9290 | +0.3275 | 21.0674 | 15.9623 | +5.1051 | 259 |
+| [NSE:ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE&interval=W) | 358.00 | +2.78 | 15.1454 | 14.9437 | +0.2017 | 22.4629 | 15.6074 | +6.8554 | 315 |
+| [NSE:ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM&interval=W) | 975.50 | +2.57 | 42.2294 | 41.7759 | +0.4535 | 43.3450 | 38.8462 | +4.4988 | 71 |
+| [NSE:ANURAS](https://in.tradingview.com/chart/?symbol=NSE:ANURAS&interval=W) | 1324.50 | -0.37 | 59.8327 | 59.4665 | +0.3662 | -9.4634 | -19.5269 | +10.0634 | 297 |
+| [NSE:APLLTD](https://in.tradingview.com/chart/?symbol=NSE:APLLTD&interval=W) | 1018.80 | -2.13 | 42.3052 | 41.6517 | +0.6535 | 45.3626 | 41.6975 | +3.6651 | 315 |
+| [NSE:APOLLOTYRE](https://in.tradingview.com/chart/?symbol=NSE:APOLLOTYRE&interval=W) | 426.15 | +1.99 | 20.2065 | 20.1842 | +0.0223 | -10.0541 | -17.5894 | +7.5352 | 315 |
+| [NSE:ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS&interval=W) | 185.94 | +12.71 | 6.8932 | 6.6912 | +0.2020 | 61.1378 | 49.0667 | +12.0710 | 75 |
+| [NSE:ARVSMART](https://in.tradingview.com/chart/?symbol=NSE:ARVSMART&interval=W) | 631.55 | -0.13 | 29.5004 | 29.4229 | +0.0775 | 6.6073 | 2.1323 | +4.4750 | 315 |
+| [NSE:ASAHIINDIA](https://in.tradingview.com/chart/?symbol=NSE:ASAHIINDIA&interval=W) | 1189.85 | +2.26 | 47.8753 | 46.9589 | +0.9164 | 57.5294 | 51.0165 | +6.5129 | 315 |
+| [NSE:ASKAUTOLTD](https://in.tradingview.com/chart/?symbol=NSE:ASKAUTOLTD&interval=W) | 634.85 | +0.63 | 28.4375 | 28.2379 | +0.1996 | 37.2545 | 36.6935 | +0.5610 | 159 |
+| [NSE:ASTERDM](https://in.tradingview.com/chart/?symbol=NSE:ASTERDM&interval=W) | 768.30 | -1.41 | 35.8637 | 35.7670 | +0.0967 | -4.0198 | -12.0333 | +8.0134 | 315 |
+| [NSE:ATHERENERG](https://in.tradingview.com/chart/?symbol=NSE:ATHERENERG&interval=W) | 1906.00 | -1.52 | 74.8501 | 73.1980 | +1.6521 | 68.2807 | 67.6312 | +0.6496 | 82 |
+| [NSE:AUTOAXLES](https://in.tradingview.com/chart/?symbol=NSE:AUTOAXLES&interval=W) | 1739.50 | -1.46 | 82.9909 | 82.9511 | +0.0398 | -17.2929 | -23.8609 | +6.5679 | 315 |
+| [NSE:BALAJITELE](https://in.tradingview.com/chart/?symbol=NSE:BALAJITELE&interval=W) | 101.41 | +5.20 | 4.5228 | 4.4890 | +0.0339 | 9.2024 | 0.6093 | +8.5931 | 315 |
+| [NSE:BALKRISIND](https://in.tradingview.com/chart/?symbol=NSE:BALKRISIND&interval=W) | 2327.80 | -1.52 | 108.3585 | 108.0352 | +0.3233 | 3.0367 | -3.4862 | +6.5229 | 315 |
+| [NSE:BALUFORGE](https://in.tradingview.com/chart/?symbol=NSE:BALUFORGE&interval=W) | 528.90 | +2.56 | 24.2741 | 24.1660 | +0.1081 | 3.8479 | 1.0423 | +2.8056 | 135 |
+| [NSE:BANCOINDIA](https://in.tradingview.com/chart/?symbol=NSE:BANCOINDIA&interval=W) | 678.50 | -3.90 | 30.8368 | 30.6679 | +0.1689 | 5.2821 | -2.0962 | +7.3783 | 315 |
+| [NSE:BBOX](https://in.tradingview.com/chart/?symbol=NSE:BBOX&interval=W) | 853.50 | -4.79 | 40.0862 | 40.0033 | +0.0829 | 25.9320 | 25.7066 | +0.2254 | 315 |
+| [NSE:BECTORFOOD](https://in.tradingview.com/chart/?symbol=NSE:BECTORFOOD&interval=W) | 227.02 | +2.49 | 10.2413 | 10.1772 | +0.0642 | 2.4887 | -3.7120 | +6.2007 | 310 |
+| [NSE:BELRISE](https://in.tradingview.com/chart/?symbol=NSE:BELRISE&interval=W) | 241.07 | +2.01 | 11.0139 | 10.9596 | +0.0543 | 2.8833 | -5.3859 | +8.2693 | 79 |
+| [NSE:BEML](https://in.tradingview.com/chart/?symbol=NSE:BEML&interval=W) | 2040.20 | -0.59 | 94.6638 | 94.3498 | +0.3140 | 40.4446 | 40.2311 | +0.2135 | 315 |
+| [NSE:BLUESTARCO](https://in.tradingview.com/chart/?symbol=NSE:BLUESTARCO&interval=W) | 1780.20 | -0.60 | 78.5157 | 77.8332 | +0.6824 | 21.3396 | 7.4725 | +13.8671 | 315 |
+| [NSE:BOROLTD](https://in.tradingview.com/chart/?symbol=NSE:BOROLTD&interval=W) | 314.80 | -3.76 | 13.3503 | 13.1763 | +0.1741 | 62.7489 | 61.9107 | +0.8383 | 315 |
+| [NSE:BRIGADE](https://in.tradingview.com/chart/?symbol=NSE:BRIGADE&interval=W) | 628.50 | +8.67 | 28.9084 | 28.7863 | +0.1221 | -22.7268 | -33.5581 | +10.8314 | 315 |
+| [NSE:CAMS](https://in.tradingview.com/chart/?symbol=NSE:CAMS&interval=W) | 745.90 | +2.93 | 35.0277 | 34.9547 | +0.0730 | -18.6840 | -25.7541 | +7.0702 | 315 |
+| [NSE:CAPITALSFB](https://in.tradingview.com/chart/?symbol=NSE:CAPITALSFB&interval=W) | 287.60 | +0.61 | 13.5135 | 13.4861 | +0.0274 | -5.6036 | -13.7134 | +8.1098 | 146 |
+| [NSE:CDSL](https://in.tradingview.com/chart/?symbol=NSE:CDSL&interval=W) | 1441.00 | +0.77 | 65.1694 | 64.7784 | +0.3910 | 9.4642 | 2.6668 | +6.7974 | 315 |
+| [NSE:CEATLTD](https://in.tradingview.com/chart/?symbol=NSE:CEATLTD&interval=W) | 3539.70 | -0.09 | 166.0216 | 165.6550 | +0.3666 | -6.9906 | -14.8785 | +7.8878 | 315 |
+| [NSE:CELLO](https://in.tradingview.com/chart/?symbol=NSE:CELLO&interval=W) | 378.20 | +2.22 | 17.7089 | 17.6668 | +0.0421 | -7.4083 | -15.7875 | +8.3792 | 160 |
+| [NSE:CEMPRO](https://in.tradingview.com/chart/?symbol=NSE:CEMPRO&interval=W) | 1425.00 | +0.64 | 60.4891 | 59.7068 | +0.7823 | 24.7385 | 16.6803 | +8.0582 | 315 |
+| [NSE:CHALET](https://in.tradingview.com/chart/?symbol=NSE:CHALET&interval=W) | 865.10 | +4.99 | 40.4775 | 40.3781 | +0.0994 | 1.8732 | -7.3318 | +9.2049 | 315 |
+| [NSE:CHEMPLASTS](https://in.tradingview.com/chart/?symbol=NSE:CHEMPLASTS&interval=W) | 252.20 | +0.86 | 10.3251 | 10.1486 | +0.1765 | 22.1538 | 13.7950 | +8.3587 | 275 |
+| [NSE:CHOICEIN](https://in.tradingview.com/chart/?symbol=NSE:CHOICEIN&interval=W) | 760.70 | +4.46 | 36.0949 | 36.0577 | +0.0372 | -13.7929 | -19.4836 | +5.6907 | 243 |
+| [NSE:COHANCE](https://in.tradingview.com/chart/?symbol=NSE:COHANCE&interval=W) | 502.60 | +8.72 | 21.9611 | 21.7478 | +0.2133 | 37.6355 | 22.6530 | +14.9825 | 315 |
+| [NSE:COROMANDEL](https://in.tradingview.com/chart/?symbol=NSE:COROMANDEL&interval=W) | 1942.30 | -2.69 | 92.4782 | 92.4149 | +0.0633 | -17.0907 | -24.4141 | +7.3234 | 315 |
+| [NSE:CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN&interval=W) | 11860.00 | +1.17 | 509.3474 | 503.4270 | +5.9204 | 52.6337 | 46.7211 | +5.9127 | 297 |
+| [NSE:CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB&interval=W) | 239.00 | -3.94 | 11.1461 | 11.1150 | +0.0311 | 12.5076 | 2.8751 | +9.6325 | 315 |
+| [NSE:CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT&interval=W) | 1149.10 | -0.55 | 52.1338 | 51.8386 | +0.2952 | 38.0574 | 37.0920 | +0.9654 | 315 |
+| [NSE:DABUR](https://in.tradingview.com/chart/?symbol=NSE:DABUR&interval=W) | 418.50 | +6.46 | 19.3570 | 19.2864 | +0.0705 | -27.0939 | -43.2851 | +16.1911 | 315 |
+| [NSE:DAMCAPITAL](https://in.tradingview.com/chart/?symbol=NSE:DAMCAPITAL&interval=W) | 149.42 | +3.13 | 7.0588 | 7.0483 | +0.0104 | -22.4784 | -31.5619 | +9.0835 | 101 |
+| [NSE:DCBBANK](https://in.tradingview.com/chart/?symbol=NSE:DCBBANK&interval=W) | 227.17 | -2.72 | 10.0688 | 9.9867 | +0.0821 | 45.9797 | 41.4096 | +4.5701 | 315 |
+| [NSE:DEEPAKFERT](https://in.tradingview.com/chart/?symbol=NSE:DEEPAKFERT&interval=W) | 1442.30 | +0.35 | 65.0015 | 64.5875 | +0.4140 | -19.4854 | -28.7708 | +9.2854 | 315 |
+| [NSE:DELHIVERY](https://in.tradingview.com/chart/?symbol=NSE:DELHIVERY&interval=W) | 460.50 | +0.35 | 21.1431 | 21.0499 | +0.0933 | -13.6951 | -23.1482 | +9.4530 | 236 |
+| [NSE:DOMS](https://in.tradingview.com/chart/?symbol=NSE:DOMS&interval=W) | 2299.50 | +6.86 | 103.6313 | 102.9710 | +0.6603 | -36.9955 | -52.2179 | +15.2224 | 154 |
+| [NSE:DVL](https://in.tradingview.com/chart/?symbol=NSE:DVL&interval=W) | 296.70 | -3.90 | 13.5273 | 13.4577 | +0.0696 | 46.5658 | 45.9162 | +0.6495 | 315 |
+| [NSE:EIHOTEL](https://in.tradingview.com/chart/?symbol=NSE:EIHOTEL&interval=W) | 332.70 | -0.43 | 15.0783 | 14.9913 | +0.0871 | 6.2259 | -5.4284 | +11.6542 | 315 |
+| [NSE:EMAMILTD](https://in.tradingview.com/chart/?symbol=NSE:EMAMILTD&interval=W) | 421.70 | -0.12 | 19.2854 | 19.1923 | +0.0930 | -9.6306 | -21.4393 | +11.8087 | 315 |
+| [NSE:EMCURE](https://in.tradingview.com/chart/?symbol=NSE:EMCURE&interval=W) | 2329.10 | -0.37 | 96.8033 | 95.3183 | +1.4850 | 53.6838 | 50.8220 | +2.8618 | 125 |
+| [NSE:ENDURANCE](https://in.tradingview.com/chart/?symbol=NSE:ENDURANCE&interval=W) | 2696.80 | +5.31 | 125.1360 | 124.7215 | +0.4145 | -10.3070 | -17.4249 | +7.1179 | 315 |
+| [NSE:EPL](https://in.tradingview.com/chart/?symbol=NSE:EPL&interval=W) | 235.72 | +0.22 | 11.2640 | 11.2604 | +0.0036 | -2.2536 | -4.5097 | +2.2561 | 315 |
+| [NSE:ERIS](https://in.tradingview.com/chart/?symbol=NSE:ERIS&interval=W) | 1302.80 | -1.09 | 62.4169 | 62.4131 | +0.0037 | -27.2111 | -34.0389 | +6.8277 | 315 |
+| [NSE:ETHOSLTD](https://in.tradingview.com/chart/?symbol=NSE:ETHOSLTD&interval=W) | 2774.60 | +2.23 | 127.8072 | 127.2869 | +0.5203 | 18.8974 | 16.4647 | +2.4327 | 235 |
+| [NSE:EXCELINDUS](https://in.tradingview.com/chart/?symbol=NSE:EXCELINDUS&interval=W) | 990.80 | +0.25 | 46.3524 | 46.2379 | +0.1145 | 0.3860 | -4.6276 | +5.0136 | 315 |
+| [NSE:FAZE3Q](https://in.tradingview.com/chart/?symbol=NSE:FAZE3Q&interval=W) | 550.85 | -6.26 | 24.1693 | 23.9455 | +0.2238 | 3.5646 | -2.1242 | +5.6888 | 211 |
+| [NSE:FEDERALBNK](https://in.tradingview.com/chart/?symbol=NSE:FEDERALBNK&interval=W) | 356.85 | -4.46 | 16.4470 | 16.3811 | +0.0660 | 42.0417 | 37.9827 | +4.0590 | 315 |
+| [NSE:FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX&interval=W) | 110.05 | -0.70 | 4.3602 | 4.2686 | +0.0915 | 57.4119 | 55.1715 | +2.2405 | 315 |
+| [NSE:FINEORG](https://in.tradingview.com/chart/?symbol=NSE:FINEORG&interval=W) | 5557.50 | +1.26 | 251.3002 | 249.7883 | +1.5118 | 49.1683 | 41.7737 | +7.3947 | 315 |
+| [NSE:FLUOROCHEM](https://in.tradingview.com/chart/?symbol=NSE:FLUOROCHEM&interval=W) | 4781.20 | -3.07 | 214.8514 | 213.4162 | +1.4352 | 40.0735 | 35.9455 | +4.1280 | 315 |
+| [NSE:FSL](https://in.tradingview.com/chart/?symbol=NSE:FSL&interval=W) | 289.15 | +2.74 | 13.3634 | 13.3136 | +0.0498 | 35.1073 | 34.7035 | +0.4038 | 315 |
+| [NSE:GABRIEL](https://in.tradingview.com/chart/?symbol=NSE:GABRIEL&interval=W) | 1537.30 | -1.44 | 67.0349 | 66.3688 | +0.6661 | 55.3598 | 53.5329 | +1.8269 | 315 |
+| [NSE:GESHIP](https://in.tradingview.com/chart/?symbol=NSE:GESHIP&interval=W) | 1531.20 | -0.03 | 71.4176 | 71.2190 | +0.1986 | 31.5507 | 29.0852 | +2.4655 | 315 |
+| [NSE:GHCLTEXTIL](https://in.tradingview.com/chart/?symbol=NSE:GHCLTEXTIL&interval=W) | 146.08 | +1.75 | 6.0074 | 5.9079 | +0.0995 | 51.6677 | 44.9988 | +6.6689 | 181 |
+| [NSE:GLAND](https://in.tradingview.com/chart/?symbol=NSE:GLAND&interval=W) | 3370.80 | +1.17 | 140.7238 | 138.6370 | +2.0867 | 65.4196 | 64.1040 | +1.3156 | 315 |
+| [NSE:GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK&interval=W) | 2740.20 | +3.48 | 116.7034 | 115.2376 | +1.4658 | 43.7372 | 38.3680 | +5.3692 | 315 |
+| [NSE:GODREJPROP](https://in.tradingview.com/chart/?symbol=NSE:GODREJPROP&interval=W) | 2004.30 | +3.84 | 87.4504 | 86.5871 | +0.8633 | -2.2442 | -10.9692 | +8.7249 | 315 |
+| [NSE:GOKEX](https://in.tradingview.com/chart/?symbol=NSE:GOKEX&interval=W) | 737.25 | -2.69 | 35.1748 | 35.1580 | +0.0168 | -18.5879 | -27.1696 | +8.5817 | 315 |
+| [NSE:GOPAL](https://in.tradingview.com/chart/?symbol=NSE:GOPAL&interval=W) | 269.51 | +1.38 | 12.7948 | 12.7823 | +0.0125 | -27.8342 | -39.0238 | +11.1896 | 142 |
+| [NSE:GPPL](https://in.tradingview.com/chart/?symbol=NSE:GPPL&interval=W) | 178.28 | +1.57 | 7.9960 | 7.9410 | +0.0550 | 42.3077 | 37.3962 | +4.9116 | 315 |
+| [NSE:GRANULES](https://in.tradingview.com/chart/?symbol=NSE:GRANULES&interval=W) | 833.15 | +1.28 | 39.6243 | 39.5927 | +0.0316 | 2.9805 | -0.7340 | +3.7145 | 315 |
+| [NSE:GRAPHITE](https://in.tradingview.com/chart/?symbol=NSE:GRAPHITE&interval=W) | 791.75 | +3.42 | 36.0844 | 35.8973 | +0.1871 | 29.0029 | 26.9325 | +2.0704 | 315 |
+| [NSE:GREAVESCOT](https://in.tradingview.com/chart/?symbol=NSE:GREAVESCOT&interval=W) | 325.79 | +21.42 | 10.7064 | 10.2153 | +0.4911 | 36.5603 | 21.8235 | +14.7368 | 315 |
+| [NSE:GRWRHITECH](https://in.tradingview.com/chart/?symbol=NSE:GRWRHITECH&interval=W) | 7447.50 | -4.26 | 336.3543 | 334.2876 | +2.0668 | 48.3258 | 47.6667 | +0.6592 | 252 |
+| [NSE:GULFOILLUB](https://in.tradingview.com/chart/?symbol=NSE:GULFOILLUB&interval=W) | 1149.80 | +0.04 | 52.7787 | 52.5446 | +0.2341 | 26.3019 | 18.2057 | +8.0961 | 315 |
+| [NSE:HAVELLS](https://in.tradingview.com/chart/?symbol=NSE:HAVELLS&interval=W) | 1181.00 | -2.48 | 56.0224 | 55.9631 | +0.0593 | -16.0138 | -24.3953 | +8.3815 | 315 |
+| [NSE:HIKAL](https://in.tradingview.com/chart/?symbol=NSE:HIKAL&interval=W) | 228.33 | +3.43 | 10.4925 | 10.4471 | +0.0453 | 12.0334 | 5.5017 | +6.5317 | 315 |
+| [NSE:HINDOILEXP](https://in.tradingview.com/chart/?symbol=NSE:HINDOILEXP&interval=W) | 213.01 | -1.76 | 8.4647 | 8.2901 | +0.1747 | 31.8537 | 21.4413 | +10.4123 | 315 |
+| [NSE:HINDPETRO](https://in.tradingview.com/chart/?symbol=NSE:HINDPETRO&interval=W) | 385.65 | -2.70 | 17.9635 | 17.9111 | +0.0524 | -7.2827 | -14.8371 | +7.5544 | 315 |
+| [NSE:HITECH](https://in.tradingview.com/chart/?symbol=NSE:HITECH&interval=W) | 82.39 | +9.21 | 3.7529 | 3.7333 | +0.0197 | -25.1904 | -38.7730 | +13.5826 | 315 |
+| [NSE:HONASA](https://in.tradingview.com/chart/?symbol=NSE:HONASA&interval=W) | 533.25 | +1.49 | 22.4212 | 22.1070 | +0.3142 | 43.2966 | 35.1612 | +8.1354 | 160 |
+| [NSE:HUBTOWN](https://in.tradingview.com/chart/?symbol=NSE:HUBTOWN&interval=W) | 215.04 | +25.98 | 8.9278 | 8.7898 | +0.1381 | -23.2013 | -38.9489 | +15.7476 | 315 |
+| [NSE:ICICIGI](https://in.tradingview.com/chart/?symbol=NSE:ICICIGI&interval=W) | 1740.00 | +0.23 | 80.6165 | 80.3368 | +0.2797 | 1.0003 | -8.5548 | +9.5550 | 315 |
+| [NSE:ICIL](https://in.tradingview.com/chart/?symbol=NSE:ICIL&interval=W) | 590.05 | +1.69 | 22.0954 | 21.4764 | +0.6191 | 66.2669 | 61.7013 | +4.5656 | 315 |
+| [NSE:IDFCFIRSTB](https://in.tradingview.com/chart/?symbol=NSE:IDFCFIRSTB&interval=W) | 86.71 | -0.63 | 3.8977 | 3.8718 | +0.0259 | 9.6988 | 1.4845 | +8.2143 | 315 |
+| [NSE:IGIL](https://in.tradingview.com/chart/?symbol=NSE:IGIL&interval=W) | 423.20 | +0.24 | 18.0021 | 17.7736 | +0.2285 | 26.0293 | 21.9944 | +4.0348 | 102 |
+| [NSE:INDGN](https://in.tradingview.com/chart/?symbol=NSE:INDGN&interval=W) | 657.60 | -0.01 | 28.6754 | 28.3905 | +0.2849 | 64.1034 | 62.1293 | +1.9742 | 133 |
+| [NSE:INDUSINDBK](https://in.tradingview.com/chart/?symbol=NSE:INDUSINDBK&interval=W) | 966.10 | -3.68 | 45.0831 | 44.9601 | +0.1230 | -3.5597 | -11.7849 | +8.2253 | 315 |
+| [NSE:INOXINDIA](https://in.tradingview.com/chart/?symbol=NSE:INOXINDIA&interval=W) | 2162.80 | +1.99 | 95.2414 | 94.3974 | +0.8440 | 23.7335 | 17.4013 | +6.3323 | 154 |
+| [NSE:IREDA](https://in.tradingview.com/chart/?symbol=NSE:IREDA&interval=W) | 127.00 | -3.57 | 5.6705 | 5.6287 | +0.0418 | -19.3759 | -31.3774 | +12.0016 | 157 |
+| [NSE:ISGEC](https://in.tradingview.com/chart/?symbol=NSE:ISGEC&interval=W) | 1028.30 | +3.31 | 44.4179 | 43.9301 | +0.4877 | 30.4258 | 24.5632 | +5.8625 | 291 |
+| [NSE:ITCHOTELS](https://in.tradingview.com/chart/?symbol=NSE:ITCHOTELS&interval=W) | 186.10 | +1.00 | 8.1838 | 8.1100 | +0.0738 | 25.8255 | 16.5535 | +9.2720 | 96 |
+| [NSE:ITDC](https://in.tradingview.com/chart/?symbol=NSE:ITDC&interval=W) | 655.30 | -0.36 | 31.3325 | 31.3243 | +0.0082 | -4.6406 | -8.6040 | +3.9633 | 315 |
+| [NSE:IXIGO](https://in.tradingview.com/chart/?symbol=NSE:IXIGO&interval=W) | 171.04 | +0.49 | 8.0885 | 8.0774 | +0.0111 | -16.7204 | -24.4505 | +7.7301 | 128 |
+| [NSE:J&KBANK](https://in.tradingview.com/chart/?symbol=NSE:J&KBANK&interval=W) | 162.82 | +8.74 | 6.8852 | 6.7932 | +0.0920 | -9.9392 | -21.3917 | +11.4525 | 315 |
+| [NSE:JAYBARMARU](https://in.tradingview.com/chart/?symbol=NSE:JAYBARMARU&interval=W) | 127.57 | -1.40 | 6.0940 | 6.0919 | +0.0021 | -2.5031 | -6.6692 | +4.1661 | 315 |
+| [NSE:JINDALPHOT](https://in.tradingview.com/chart/?symbol=NSE:JINDALPHOT&interval=W) | 1110.10 | -0.25 | 52.9257 | 52.8966 | +0.0291 | 8.7212 | 5.7009 | +3.0203 | 315 |
+| [NSE:JKCEMENT](https://in.tradingview.com/chart/?symbol=NSE:JKCEMENT&interval=W) | 5463.80 | +0.46 | 251.6377 | 250.6088 | +1.0289 | -7.1252 | -18.0569 | +10.9317 | 315 |
+| [NSE:JKLAKSHMI](https://in.tradingview.com/chart/?symbol=NSE:JKLAKSHMI&interval=W) | 536.45 | +2.02 | 25.5280 | 25.5092 | +0.0189 | -40.4693 | -51.2654 | +10.7961 | 315 |
+| [NSE:JSWINFRA](https://in.tradingview.com/chart/?symbol=NSE:JSWINFRA&interval=W) | 365.65 | +7.15 | 16.1447 | 16.0063 | +0.1384 | 31.4303 | 23.4264 | +8.0040 | 165 |
+| [NSE:JWL](https://in.tradingview.com/chart/?symbol=NSE:JWL&interval=W) | 238.69 | +24.82 | 10.9754 | 10.9287 | +0.0467 | -57.5429 | -67.7860 | +10.2430 | 315 |
+| [NSE:JYOTICNC](https://in.tradingview.com/chart/?symbol=NSE:JYOTICNC&interval=W) | 1050.35 | -0.20 | 46.4263 | 46.0338 | +0.3926 | 37.6065 | 36.8754 | +0.7311 | 150 |
+| [NSE:KAJARIACER](https://in.tradingview.com/chart/?symbol=NSE:KAJARIACER&interval=W) | 1223.40 | +1.91 | 57.5992 | 57.4943 | +0.1049 | 8.2281 | 4.2703 | +3.9578 | 315 |
+| [NSE:KALAMANDIR](https://in.tradingview.com/chart/?symbol=NSE:KALAMANDIR&interval=W) | 96.72 | +9.51 | 4.2208 | 4.1792 | +0.0416 | -21.9357 | -33.1000 | +11.1644 | 166 |
+| [NSE:KALYANKJIL](https://in.tradingview.com/chart/?symbol=NSE:KALYANKJIL&interval=W) | 639.80 | +0.17 | 27.3207 | 26.9857 | +0.3350 | 31.9512 | 28.5683 | +3.3830 | 297 |
+| [NSE:KDDL](https://in.tradingview.com/chart/?symbol=NSE:KDDL&interval=W) | 4511.10 | -2.37 | 184.6219 | 181.4586 | +3.1634 | 60.3074 | 55.6526 | +4.6548 | 315 |
+| [NSE:KFINTECH](https://in.tradingview.com/chart/?symbol=NSE:KFINTECH&interval=W) | 995.00 | +6.43 | 44.0994 | 43.7395 | +0.3599 | 5.9600 | -3.4401 | +9.4000 | 205 |
+| [NSE:KIMS](https://in.tradingview.com/chart/?symbol=NSE:KIMS&interval=W) | 781.95 | -1.72 | 36.3511 | 36.2377 | +0.1134 | -5.8614 | -15.4908 | +9.6294 | 283 |
+| [NSE:KPRMILL](https://in.tradingview.com/chart/?symbol=NSE:KPRMILL&interval=W) | 1190.50 | -0.07 | 53.9037 | 53.5870 | +0.3167 | 31.7787 | 27.3475 | +4.4311 | 315 |
+| [NSE:KRBL](https://in.tradingview.com/chart/?symbol=NSE:KRBL&interval=W) | 417.30 | -3.18 | 19.0058 | 18.9059 | +0.0999 | 24.0161 | 19.8042 | +4.2118 | 315 |
+| [NSE:KTKBANK](https://in.tradingview.com/chart/?symbol=NSE:KTKBANK&interval=W) | 339.70 | -0.88 | 15.2252 | 15.1193 | +0.1059 | 49.5148 | 49.4718 | +0.0430 | 315 |
+| [NSE:LALPATHLAB](https://in.tradingview.com/chart/?symbol=NSE:LALPATHLAB&interval=W) | 2037.90 | +1.59 | 91.3061 | 90.6673 | +0.6388 | 50.0040 | 46.3840 | +3.6200 | 315 |
+| [NSE:LEMONTREE](https://in.tradingview.com/chart/?symbol=NSE:LEMONTREE&interval=W) | 123.35 | -3.29 | 5.5728 | 5.5388 | +0.0340 | 28.7045 | 21.4453 | +7.2592 | 315 |
+| [NSE:LICHSGFIN](https://in.tradingview.com/chart/?symbol=NSE:LICHSGFIN&interval=W) | 596.25 | -3.03 | 26.5558 | 26.3530 | +0.2028 | 15.7080 | 6.7575 | +8.9505 | 315 |
+| [NSE:LINDEINDIA](https://in.tradingview.com/chart/?symbol=NSE:LINDEINDIA&interval=W) | 6998.50 | +6.49 | 316.7446 | 314.8693 | +1.8753 | -17.7735 | -27.0705 | +9.2970 | 315 |
+| [NSE:LTFOODS](https://in.tradingview.com/chart/?symbol=NSE:LTFOODS&interval=W) | 423.60 | -2.04 | 20.0267 | 19.9987 | +0.0280 | 9.6729 | 6.8215 | +2.8514 | 315 |
+| [NSE:LTTS](https://in.tradingview.com/chart/?symbol=NSE:LTTS&interval=W) | 4245.20 | +3.99 | 182.9471 | 180.8910 | +2.0561 | 34.6175 | 31.8962 | +2.7213 | 315 |
+| [NSE:LUMAXTECH](https://in.tradingview.com/chart/?symbol=NSE:LUMAXTECH&interval=W) | 2336.20 | +0.25 | 96.6800 | 95.1486 | +1.5314 | 51.2617 | 48.6499 | +2.6117 | 315 |
+| [NSE:MAHABANK](https://in.tradingview.com/chart/?symbol=NSE:MAHABANK&interval=W) | 94.20 | -5.28 | 4.1009 | 4.0594 | +0.0415 | 36.2274 | 28.7703 | +7.4571 | 315 |
+| [NSE:MARATHON](https://in.tradingview.com/chart/?symbol=NSE:MARATHON&interval=W) | 437.90 | -1.30 | 19.9459 | 19.8412 | +0.1046 | 0.3492 | -7.2969 | +7.6461 | 315 |
+| [NSE:MASTERTR](https://in.tradingview.com/chart/?symbol=NSE:MASTERTR&interval=W) | 90.06 | +3.86 | 4.0395 | 4.0117 | +0.0278 | -6.8129 | -18.8528 | +12.0399 | 107 |
+| [NSE:MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES&interval=W) | 615.65 | +2.14 | 25.2843 | 24.8614 | +0.4229 | 42.1054 | 36.1317 | +5.9738 | 161 |
+| [NSE:MCX](https://in.tradingview.com/chart/?symbol=NSE:MCX&interval=W) | 3835.00 | +8.49 | 157.4518 | 154.8126 | +2.6392 | 54.8015 | 50.7151 | +4.0863 | 315 |
+| [NSE:METROPOLIS](https://in.tradingview.com/chart/?symbol=NSE:METROPOLIS&interval=W) | 580.30 | +2.53 | 26.9145 | 26.8241 | +0.0904 | 19.9715 | 13.7938 | +6.1777 | 315 |
+| [NSE:MFSL](https://in.tradingview.com/chart/?symbol=NSE:MFSL&interval=W) | 1453.70 | +1.30 | 69.6107 | 69.6030 | +0.0077 | -44.3076 | -55.8962 | +11.5886 | 315 |
+| [NSE:MINDACORP](https://in.tradingview.com/chart/?symbol=NSE:MINDACORP&interval=W) | 708.90 | -5.39 | 32.8049 | 32.6870 | +0.1179 | 16.8137 | 12.3051 | +4.5086 | 315 |
+| [NSE:MOTILALOFS](https://in.tradingview.com/chart/?symbol=NSE:MOTILALOFS&interval=W) | 1215.25 | +0.80 | 50.0776 | 49.2596 | +0.8180 | 56.4472 | 53.1129 | +3.3343 | 315 |
+| [NSE:MPHASIS](https://in.tradingview.com/chart/?symbol=NSE:MPHASIS&interval=W) | 2510.00 | +3.72 | 117.2746 | 116.9695 | +0.3051 | 25.6909 | 22.4570 | +3.2339 | 315 |
+| [NSE:NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI&interval=W) | 1229.00 | +4.36 | 58.2541 | 58.1879 | +0.0662 | -5.3064 | -7.3278 | +2.0214 | 315 |
+| [NSE:NAVINFLUOR](https://in.tradingview.com/chart/?symbol=NSE:NAVINFLUOR&interval=W) | 10270.00 | +1.92 | 415.6616 | 407.9949 | +7.6667 | 67.9110 | 64.2196 | +3.6914 | 315 |
+| [NSE:NELCAST](https://in.tradingview.com/chart/?symbol=NSE:NELCAST&interval=W) | 144.04 | -1.54 | 6.5107 | 6.4712 | +0.0394 | 23.8292 | 21.5314 | +2.2978 | 315 |
+| [NSE:NEOGEN](https://in.tradingview.com/chart/?symbol=NSE:NEOGEN&interval=W) | 2750.50 | -5.81 | 113.9798 | 112.1922 | +1.7875 | 62.8802 | 61.2742 | +1.6061 | 315 |
+| [NSE:NEULANDLAB](https://in.tradingview.com/chart/?symbol=NSE:NEULANDLAB&interval=W) | 21119.00 | +2.31 | 982.1940 | 979.1721 | +3.0220 | 10.7947 | 9.6062 | +1.1884 | 315 |
+| [NSE:NH](https://in.tradingview.com/chart/?symbol=NSE:NH&interval=W) | 1982.20 | +1.98 | 89.9478 | 89.4402 | +0.5076 | -2.3600 | -13.0476 | +10.6876 | 315 |
+| [NSE:NITINSPIN](https://in.tradingview.com/chart/?symbol=NSE:NITINSPIN&interval=W) | 676.45 | -4.01 | 29.7410 | 29.4723 | +0.2687 | 65.6983 | 64.9556 | +0.7427 | 315 |
+| [NSE:NUVAMA](https://in.tradingview.com/chart/?symbol=NSE:NUVAMA&interval=W) | 1854.80 | +1.87 | 84.5878 | 84.1550 | +0.4329 | 27.4207 | 26.4178 | +1.0029 | 166 |
+| [NSE:NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO&interval=W) | 359.50 | +0.28 | 16.3312 | 16.2410 | +0.0903 | 35.2324 | 26.9246 | +8.3078 | 275 |
+| [NSE:OBEROIRLTY](https://in.tradingview.com/chart/?symbol=NSE:OBEROIRLTY&interval=W) | 1905.20 | +3.37 | 85.7889 | 85.2345 | +0.5544 | 6.3944 | -3.5676 | +9.9620 | 315 |
+| [NSE:ORCHPHARMA](https://in.tradingview.com/chart/?symbol=NSE:ORCHPHARMA&interval=W) | 981.15 | +2.16 | 44.6928 | 44.4585 | +0.2342 | -2.1362 | -7.0608 | +4.9246 | 315 |
+| [NSE:ORIENTELEC](https://in.tradingview.com/chart/?symbol=NSE:ORIENTELEC&interval=W) | 188.31 | -6.27 | 8.9127 | 8.9012 | +0.0115 | 14.8612 | 13.0549 | +1.8062 | 315 |
+| [NSE:ORIENTHOT](https://in.tradingview.com/chart/?symbol=NSE:ORIENTHOT&interval=W) | 177.85 | -1.18 | 7.2502 | 7.1226 | +0.1276 | 72.4017 | 71.6190 | +0.7827 | 315 |
+| [NSE:PARAGMILK](https://in.tradingview.com/chart/?symbol=NSE:PARAGMILK&interval=W) | 315.44 | -6.38 | 13.2128 | 13.0219 | +0.1909 | 54.0452 | 52.8329 | +1.2124 | 315 |
+| [NSE:PATANJALI](https://in.tradingview.com/chart/?symbol=NSE:PATANJALI&interval=W) | 405.40 | +0.30 | 18.9580 | 18.9103 | +0.0476 | 6.8195 | 1.9429 | +4.8767 | 315 |
+| [NSE:PDSL](https://in.tradingview.com/chart/?symbol=NSE:PDSL&interval=W) | 411.05 | +0.67 | 17.6865 | 17.4846 | +0.2019 | 33.9915 | 28.2657 | +5.7258 | 315 |
+| [NSE:PETRONET](https://in.tradingview.com/chart/?symbol=NSE:PETRONET&interval=W) | 326.45 | -0.82 | 14.4459 | 14.3255 | +0.1204 | 75.7345 | 73.5306 | +2.2039 | 315 |
+| [NSE:PGEL](https://in.tradingview.com/chart/?symbol=NSE:PGEL&interval=W) | 567.25 | -3.64 | 26.5365 | 26.4708 | +0.0657 | 2.4739 | -4.5073 | +6.9812 | 315 |
+| [NSE:PHOENIXLTD](https://in.tradingview.com/chart/?symbol=NSE:PHOENIXLTD&interval=W) | 2291.00 | +0.25 | 97.2322 | 95.9727 | +1.2595 | 49.7016 | 43.6376 | +6.0640 | 315 |
+| [NSE:PNBGILTS](https://in.tradingview.com/chart/?symbol=NSE:PNBGILTS&interval=W) | 82.30 | -0.76 | 3.8233 | 3.8111 | +0.0122 | -8.0812 | -16.1993 | +8.1181 | 315 |
+| [NSE:PNBHOUSING](https://in.tradingview.com/chart/?symbol=NSE:PNBHOUSING&interval=W) | 1171.00 | -1.70 | 53.8717 | 53.6453 | +0.2264 | 29.4823 | 23.0054 | +6.4769 | 315 |
+| [NSE:POONAWALLA](https://in.tradingview.com/chart/?symbol=NSE:POONAWALLA&interval=W) | 508.60 | -1.89 | 22.5788 | 22.3986 | +0.1803 | 24.5007 | 16.3044 | +8.1963 | 315 |
+| [NSE:PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE&interval=W) | 1832.10 | +9.05 | 75.6384 | 74.4194 | +1.2190 | 17.6202 | 6.7769 | +10.8433 | 315 |
+| [NSE:PRIMESECU](https://in.tradingview.com/chart/?symbol=NSE:PRIMESECU&interval=W) | 297.25 | -2.19 | 14.1853 | 14.1788 | +0.0064 | 30.6193 | 29.6190 | +1.0004 | 315 |
+| [NSE:PRIVISCL](https://in.tradingview.com/chart/?symbol=NSE:PRIVISCL&interval=W) | 3643.90 | +2.20 | 166.8105 | 166.0232 | +0.7873 | 9.1347 | -2.7781 | +11.9128 | 315 |
+| [NSE:PROTEAN](https://in.tradingview.com/chart/?symbol=NSE:PROTEAN&interval=W) | 693.25 | -1.75 | 30.4352 | 30.1554 | +0.2798 | 26.1988 | 22.0258 | +4.1730 | 95 |
+| [NSE:RACLGEAR](https://in.tradingview.com/chart/?symbol=NSE:RACLGEAR&interval=W) | 1608.20 | +4.79 | 71.6853 | 71.1443 | +0.5409 | 27.4477 | 23.5605 | +3.8872 | 105 |
+| [NSE:RADICO](https://in.tradingview.com/chart/?symbol=NSE:RADICO&interval=W) | 4671.00 | +0.13 | 209.0815 | 207.5976 | +1.4839 | 38.1037 | 33.6301 | +4.4736 | 315 |
+| [NSE:RAMCOIND](https://in.tradingview.com/chart/?symbol=NSE:RAMCOIND&interval=W) | 316.35 | +2.59 | 15.0926 | 15.0853 | +0.0073 | -10.5059 | -14.3431 | +3.8372 | 315 |
+| [NSE:RAMCOSYS](https://in.tradingview.com/chart/?symbol=NSE:RAMCOSYS&interval=W) | 575.15 | +7.37 | 27.2477 | 27.2153 | +0.0324 | -19.2457 | -22.7333 | +3.4875 | 315 |
+| [NSE:RAMKY](https://in.tradingview.com/chart/?symbol=NSE:RAMKY&interval=W) | 373.40 | -2.92 | 17.4148 | 17.3663 | +0.0485 | -24.0376 | -31.1102 | +7.0726 | 315 |
+| [NSE:RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER&interval=W) | 405.00 | +9.39 | 14.9457 | 14.4988 | +0.4469 | 71.3438 | 70.9187 | +0.4250 | 168 |
+| [NSE:RAYMONDREL](https://in.tradingview.com/chart/?symbol=NSE:RAYMONDREL&interval=W) | 619.05 | -0.53 | 29.1230 | 29.0677 | +0.0553 | 1.4150 | -1.2954 | +2.7104 | 74 |
+| [NSE:RBLBANK](https://in.tradingview.com/chart/?symbol=NSE:RBLBANK&interval=W) | 389.25 | -2.27 | 18.4531 | 18.4324 | +0.0207 | 22.4585 | 21.1664 | +1.2922 | 315 |
+| [NSE:REPCOHOME](https://in.tradingview.com/chart/?symbol=NSE:REPCOHOME&interval=W) | 374.85 | -0.65 | 17.5006 | 17.4537 | +0.0469 | -19.5865 | -27.2676 | +7.6811 | 315 |
+| [NSE:RKFORGE](https://in.tradingview.com/chart/?symbol=NSE:RKFORGE&interval=W) | 787.85 | +5.65 | 33.3661 | 32.9259 | +0.4402 | 42.4287 | 38.4751 | +3.9536 | 315 |
+| [NSE:RPEL](https://in.tradingview.com/chart/?symbol=NSE:RPEL&interval=W) | 1903.80 | +2.67 | 78.8252 | 77.5812 | +1.2440 | 56.6469 | 56.5400 | +0.1069 | 121 |
+| [NSE:RUSTOMJEE](https://in.tradingview.com/chart/?symbol=NSE:RUSTOMJEE&interval=W) | 387.45 | +6.25 | 18.0263 | 17.9715 | +0.0548 | -28.1660 | -40.7272 | +12.5611 | 210 |
+| [NSE:SAFARI](https://in.tradingview.com/chart/?symbol=NSE:SAFARI&interval=W) | 1563.70 | +8.91 | 69.8413 | 69.3293 | +0.5120 | -40.8282 | -54.6432 | +13.8150 | 315 |
+| [NSE:SAILIFE](https://in.tradingview.com/chart/?symbol=NSE:SAILIFE&interval=W) | 1812.60 | +0.66 | 74.2868 | 73.0261 | +1.2607 | 64.4054 | 63.8271 | +0.5783 | 102 |
+| [NSE:SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV&interval=W) | 174.04 | +10.11 | 7.1365 | 7.0158 | +0.1207 | 64.7249 | 63.9718 | +0.7531 | 74 |
+| [NSE:SANGAMIND](https://in.tradingview.com/chart/?symbol=NSE:SANGAMIND&interval=W) | 676.05 | +0.34 | 29.3062 | 28.9959 | +0.3103 | 61.0575 | 54.9018 | +6.1557 | 315 |
+| [NSE:SANGHVIMOV](https://in.tradingview.com/chart/?symbol=NSE:SANGHVIMOV&interval=W) | 396.65 | +6.83 | 19.0055 | 19.0046 | +0.0009 | -18.7468 | -21.7759 | +3.0292 | 315 |
+| [NSE:SANSERA](https://in.tradingview.com/chart/?symbol=NSE:SANSERA&interval=W) | 4685.80 | -2.35 | 194.9914 | 192.0275 | +2.9639 | 66.3105 | 65.5231 | +0.7874 | 271 |
+| [NSE:SASKEN](https://in.tradingview.com/chart/?symbol=NSE:SASKEN&interval=W) | 1915.40 | +3.87 | 86.4245 | 85.8848 | +0.5397 | -8.1571 | -17.9223 | +9.7652 | 315 |
+| [NSE:SATIN](https://in.tradingview.com/chart/?symbol=NSE:SATIN&interval=W) | 255.19 | -0.38 | 11.3905 | 11.3062 | +0.0843 | 37.6570 | 36.2173 | +1.4397 | 315 |
+| [NSE:SHAILY](https://in.tradingview.com/chart/?symbol=NSE:SHAILY&interval=W) | 3379.60 | +8.29 | 148.7256 | 147.3968 | +1.3287 | 21.3778 | 13.6427 | +7.7351 | 243 |
+| [NSE:SHARDAMOTR](https://in.tradingview.com/chart/?symbol=NSE:SHARDAMOTR&interval=W) | 974.45 | -0.09 | 43.7773 | 43.4837 | +0.2936 | 22.4684 | 16.5399 | +5.9285 | 315 |
+| [NSE:SHREECEM](https://in.tradingview.com/chart/?symbol=NSE:SHREECEM&interval=W) | 25335.00 | -0.55 | 1175.2114 | 1171.2803 | +3.9311 | 0.9995 | -6.2647 | +7.2642 | 315 |
+| [NSE:SIGNATURE](https://in.tradingview.com/chart/?symbol=NSE:SIGNATURE&interval=W) | 856.30 | -0.36 | 38.1618 | 37.8730 | +0.2888 | -18.6765 | -32.4697 | +13.7932 | 166 |
+| [NSE:SIMPLEXINF](https://in.tradingview.com/chart/?symbol=NSE:SIMPLEXINF&interval=W) | 296.70 | -1.02 | 12.8320 | 12.6928 | +0.1391 | 47.6625 | 43.9295 | +3.7331 | 315 |
+| [NSE:SMARTWORKS](https://in.tradingview.com/chart/?symbol=NSE:SMARTWORKS&interval=W) | 518.85 | -0.28 | 24.0204 | 23.9351 | +0.0853 | 23.1244 | 19.7565 | +3.3679 | 72 |
+| [NSE:SOBHA](https://in.tradingview.com/chart/?symbol=NSE:SOBHA&interval=W) | 1289.80 | +2.17 | 61.6010 | 61.5780 | +0.0230 | -20.4217 | -26.9279 | +6.5061 | 315 |
+| [NSE:SPORTKING](https://in.tradingview.com/chart/?symbol=NSE:SPORTKING&interval=W) | 230.78 | +4.29 | 9.7838 | 9.6559 | +0.1279 | 32.6896 | 22.1853 | +10.5043 | 223 |
+| [NSE:STEL](https://in.tradingview.com/chart/?symbol=NSE:STEL&interval=W) | 620.25 | +0.66 | 27.6758 | 27.4699 | +0.2058 | 20.2052 | 15.3325 | +4.8727 | 315 |
+| [NSE:STYLAMIND](https://in.tradingview.com/chart/?symbol=NSE:STYLAMIND&interval=W) | 3298.40 | +1.41 | 154.2983 | 153.9161 | +0.3822 | 2.1607 | -1.2244 | +3.3851 | 278 |
+| [NSE:SUNTECK](https://in.tradingview.com/chart/?symbol=NSE:SUNTECK&interval=W) | 328.80 | +3.74 | 14.6730 | 14.5641 | +0.1089 | -8.3165 | -20.2651 | +11.9486 | 315 |
+| [NSE:SUNTV](https://in.tradingview.com/chart/?symbol=NSE:SUNTV&interval=W) | 651.10 | -6.21 | 28.1278 | 27.8193 | +0.3085 | 31.3958 | 29.4046 | +1.9912 | 315 |
+| [NSE:SYNGENE](https://in.tradingview.com/chart/?symbol=NSE:SYNGENE&interval=W) | 444.00 | -1.70 | 20.0964 | 19.9776 | +0.1188 | 2.0915 | -5.9781 | +8.0696 | 315 |
+| [NSE:TANLA](https://in.tradingview.com/chart/?symbol=NSE:TANLA&interval=W) | 624.70 | -5.43 | 28.1088 | 27.9250 | +0.1838 | 36.5991 | 36.4690 | +0.1301 | 315 |
+| [NSE:TATACHEM](https://in.tradingview.com/chart/?symbol=NSE:TATACHEM&interval=W) | 664.95 | +4.01 | 31.3189 | 31.2631 | +0.0558 | -31.5046 | -41.7605 | +10.2559 | 315 |
+| [NSE:TATAELXSI](https://in.tradingview.com/chart/?symbol=NSE:TATAELXSI&interval=W) | 3860.70 | +0.28 | 182.0981 | 181.8002 | +0.2978 | -8.0255 | -13.7377 | +5.7122 | 315 |
+| [NSE:TEXRAIL](https://in.tradingview.com/chart/?symbol=NSE:TEXRAIL&interval=W) | 118.05 | +6.00 | 5.3976 | 5.3715 | +0.0262 | 4.6585 | -2.2912 | +6.9496 | 315 |
+| [NSE:TFCILTD](https://in.tradingview.com/chart/?symbol=NSE:TFCILTD&interval=W) | 174.94 | +1.80 | 6.7323 | 6.5669 | +0.1654 | 71.2408 | 71.1965 | +0.0443 | 315 |
+| [NSE:THOMASCOOK](https://in.tradingview.com/chart/?symbol=NSE:THOMASCOOK&interval=W) | 134.64 | +17.43 | 5.1577 | 5.0280 | +0.1297 | 6.7714 | -10.3087 | +17.0801 | 315 |
+| [NSE:THYROCARE](https://in.tradingview.com/chart/?symbol=NSE:THYROCARE&interval=W) | 520.75 | -1.46 | 24.9508 | 24.9495 | +0.0013 | -9.7253 | -14.8663 | +5.1410 | 315 |
+| [NSE:TI](https://in.tradingview.com/chart/?symbol=NSE:TI&interval=W) | 550.20 | +1.37 | 24.9438 | 24.8006 | +0.1432 | 21.3003 | 16.6049 | +4.6954 | 315 |
+| [NSE:TIMETECHNO](https://in.tradingview.com/chart/?symbol=NSE:TIMETECHNO&interval=W) | 199.46 | +3.85 | 8.8913 | 8.8243 | +0.0670 | -3.6021 | -13.7337 | +10.1316 | 315 |
+| [NSE:TSFINV](https://in.tradingview.com/chart/?symbol=NSE:TSFINV&interval=W) | 428.95 | +0.85 | 20.3075 | 20.2819 | +0.0256 | -2.2746 | -7.9744 | +5.6998 | 315 |
+| [NSE:TTKHLTCARE](https://in.tradingview.com/chart/?symbol=NSE:TTKHLTCARE&interval=W) | 1029.90 | -7.23 | 48.8137 | 48.7579 | +0.0558 | 1.5168 | -4.0981 | +5.6149 | 315 |
+| [NSE:TVSSCS](https://in.tradingview.com/chart/?symbol=NSE:TVSSCS&interval=W) | 126.23 | -5.71 | 6.0295 | 6.0273 | +0.0022 | -10.4118 | -15.2869 | +4.8751 | 171 |
+| [NSE:TVSSRICHAK](https://in.tradingview.com/chart/?symbol=NSE:TVSSRICHAK&interval=W) | 4557.30 | -1.75 | 212.9108 | 212.3549 | +0.5559 | 13.2174 | 10.4494 | +2.7680 | 315 |
+| [NSE:UNOMINDA](https://in.tradingview.com/chart/?symbol=NSE:UNOMINDA&interval=W) | 1390.00 | +0.72 | 59.3283 | 58.5977 | +0.7306 | 25.3378 | 19.5605 | +5.7773 | 315 |
+| [NSE:UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR&interval=W) | 381.80 | +7.31 | 15.1815 | 14.8694 | +0.3121 | 58.4981 | 58.3500 | +0.1482 | 315 |
+| [NSE:VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA&interval=W) | 1587.10 | +0.94 | 69.3018 | 68.6236 | +0.6781 | 39.9201 | 29.1193 | +10.8008 | 272 |
+| [NSE:VMART](https://in.tradingview.com/chart/?symbol=NSE:VMART&interval=W) | 774.80 | +1.87 | 37.0915 | 37.0864 | +0.0051 | 2.3960 | 1.9200 | +0.4760 | 315 |
+| [NSE:VOLTAS](https://in.tradingview.com/chart/?symbol=NSE:VOLTAS&interval=W) | 1215.50 | -1.58 | 56.5014 | 56.3247 | +0.1768 | -30.5831 | -42.2471 | +11.6640 | 315 |
+| [NSE:VRLLOG](https://in.tradingview.com/chart/?symbol=NSE:VRLLOG&interval=W) | 314.90 | -7.53 | 14.0419 | 13.9365 | +0.1054 | 38.9864 | 36.7755 | +2.2109 | 315 |
+| [NSE:WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV&interval=W) | 280.35 | +4.30 | 10.4486 | 10.1495 | +0.2991 | 73.3444 | 70.8754 | +2.4690 | 315 |
+| [NSE:WINDMACHIN](https://in.tradingview.com/chart/?symbol=NSE:WINDMACHIN&interval=W) | 308.25 | -4.03 | 14.3847 | 14.3454 | +0.0392 | 5.3109 | -8.2380 | +13.5490 | 315 |
+| [NSE:WOCKPHARMA](https://in.tradingview.com/chart/?symbol=NSE:WOCKPHARMA&interval=W) | 2233.70 | +2.26 | 96.2163 | 95.1299 | +1.0864 | 30.3165 | 23.9453 | +6.3712 | 315 |
+| [NSE:XPROINDIA](https://in.tradingview.com/chart/?symbol=NSE:XPROINDIA&interval=W) | 1184.80 | -2.92 | 56.1602 | 56.0965 | +0.0637 | -5.8127 | -10.2967 | +4.4840 | 315 |
+| [NSE:YATHARTH](https://in.tradingview.com/chart/?symbol=NSE:YATHARTH&interval=W) | 1079.45 | -1.26 | 47.2606 | 46.8119 | +0.4487 | 53.0906 | 51.1347 | +1.9559 | 173 |
+| [NSE:ZENSARTECH](https://in.tradingview.com/chart/?symbol=NSE:ZENSARTECH&interval=W) | 554.50 | +4.81 | 24.7322 | 24.5472 | +0.1850 | 12.0690 | 7.7357 | +4.3333 | 315 |
+| [NSE:ZENTEC](https://in.tradingview.com/chart/?symbol=NSE:ZENTEC&interval=W) | 1768.10 | +5.19 | 81.6095 | 81.2945 | +0.3151 | 0.8271 | -4.2880 | +5.1151 | 315 |
+| [NSE:ZOTA](https://in.tradingview.com/chart/?symbol=NSE:ZOTA&interval=W) | 1314.50 | +2.06 | 61.6944 | 61.5623 | +0.1321 | 11.8635 | 9.0349 | +2.8286 | 315 |
 
 ## Excluded data
 
@@ -417,7 +418,6 @@ Universe: 1438 | Evaluated: 990 | Qualified: 231 | Excluded: 448
 - HEROMOTORS: missing sessions or benchmark history mismatch
 - HFCL: missing latest benchmark session
 - HINDALCO: missing latest benchmark session
-- HINDUNILVR: missing latest benchmark session
 - HINDZINC: missing latest benchmark session
 - HMT: missing OHLC history
 - HOMEFIRST: missing sessions or benchmark history mismatch
@@ -666,7 +666,7 @@ Universe: 1438 | Evaluated: 990 | Qualified: 231 | Excluded: 448
 - TVSHLTD: missing sessions or benchmark history mismatch
 - TVSMOTOR: missing latest benchmark session
 - UEL: missing sessions or benchmark history mismatch
-- UFBL: missing sessions or benchmark history mismatch
+- UFBL: missing latest benchmark session
 - UGROCAP: inconsistent OHLC prices
 - ULTRACEMCO: missing latest benchmark session
 - ULTRAMAR: missing sessions or benchmark history mismatch
@@ -686,7 +686,6 @@ Universe: 1438 | Evaluated: 990 | Qualified: 231 | Excluded: 448
 - VHLTD: missing OHLC history
 - VIDYAWIRES: missing sessions or benchmark history mismatch
 - VIKRAMSOLR: missing sessions or benchmark history mismatch
-- VIKRAN: missing sessions or benchmark history mismatch
 - VINYAS: missing OHLC history
 - VMARCIND: missing OHLC history
 - VOEPL: missing sessions or benchmark history mismatch
