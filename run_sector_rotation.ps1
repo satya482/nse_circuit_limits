@@ -13,6 +13,10 @@ Log "=== SECTOR_ROTATION START ==="
 try {
     & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\sector_rotation_scanner.py 2>&1 |
         ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    if ($LASTEXITCODE -ne 0) { throw "Sector rotation scanner failed (exit $LASTEXITCODE)" }
+    & C:\Python313\python.exe C:\Users\satya\nse_circuit_limits\cluster_dashboard.py 2>&1 |
+        ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+    if ($LASTEXITCODE -ne 0) { throw "Cluster dashboard failed (exit $LASTEXITCODE)" }
     Log "=== FINISHED exit=0 ==="
 } catch {
     Log "=== ERROR: $_ ==="
@@ -20,7 +24,7 @@ try {
 }
 
 Log "--- Git commit+push ---"
-& git -C C:\Users\satya\nse_circuit_limits add sector_rotation_scans/ 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
+& git -C C:\Users\satya\nse_circuit_limits add sector_rotation_scans/ cluster.html 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 & git -C C:\Users\satya\nse_circuit_limits commit --no-verify -m "sector-rotation scan $date" 2>&1 | ForEach-Object { $_ | Tee-Object -FilePath $logFile -Append }
 . "C:\Users\satya\nse_circuit_limits\git_helpers.ps1"; Push-GitWithRetry -RepoPath "C:\Users\satya\nse_circuit_limits" -LogFile $logFile
 if ($LASTEXITCODE -ne 0) {

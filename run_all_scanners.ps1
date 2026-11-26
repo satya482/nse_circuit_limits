@@ -74,6 +74,7 @@ if ($results[-1].Status -eq "PASS") {
     OrcLog "--- SKIP US_Near52WWeekly (US data refresh failed) ---"
 }
 Run-Scanner "US_ZL_Squeeze"        "$ROOT\run_us_zl_squeeze_scanner.ps1"
+Run-Scanner "SectorRotation"       "$ROOT\run_sector_rotation.ps1"
 Run-Scanner "Dashboard"            "$ROOT\run_dashboard_generator.ps1"
 Run-Scanner "CatalystBot"          "$ROOT\run_catalyst_bot.ps1"
 Run-Scanner "ScanStatusMailer"     "$ROOT\run_scan_status_mailer.ps1"

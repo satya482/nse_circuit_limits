@@ -1,33 +1,28 @@
-﻿> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
+> ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 
-# Sector Rotation — 2026-06-17
+# Sector Rotation — 2026-11-26
 
-Universe: 238 stocks  |  Active groups: 37  |  Rotating In: 6  |  Rotating Out: 1
-
-## High-Conviction (Rotating Group + Rising Leader)
-
-| Symbol | Label | Peer Group | RS Rank (now / 4w ago) | Group RS 4W |
-|--------|-------|-----------|------------------------|-------------|
-| **KIRLOSBROS** | Pumps turbines fluid systems infrastructure agriculture power | Kirloskar Group | 2 / 3 of 4 | +12.2% |
-| **SENORES** | Complex generics manufacturing pharma specialty therapeutics focus | Pharmaceuticals Research | 2 / 3 of 3 | +9.1% |
-| **KEC** | Power transmission, railways, infrastructure engineering contractor | Engineering Procurement | 3 / 4 of 6 | +9.1% |
+Universe: 295 stocks  |  Active groups: 52  |  Rotating In: 4  |  Rotating Out: 6
 
 ## Rotating In
 
 | Group | Size | RS Change (4W) | Leaders | Top by RS |
 |-------|------|----------------|---------|-----------|
-| Serving Diverse | 4 | +14.6% | — | SHILCTECH, INDOTECH, MARSONS, SANSTAR |
-| Kirloskar Group | 4 | +12.2% | KIRLOSBROS↑ | KIRLOSENG, KIRLOSBROS, KIRLPNU, KIRLFER |
-| Public Enterprise | 3 | +9.2% | — | CHENNPETRO, HINDPETRO, MRPL |
-| Engineering Procurement | 8 | +9.1% | — | CEMPRO, HGINFRA, JKIL, DBL |
-| Engineering Procurement | 6 | +9.1% | KEC↑ | POWERMECH, KPIL, KEC, TRANSRAILL |
-| Pharmaceuticals Research | 3 | +9.1% | SENORES↑ | KPL, SENORES, STAR |
+| Aditya Birla | 3 | +13.5% | — | ABREL, ABLBL, ABFRL |
+| Contract Research | 3 | +11.2% | — | SAILIFE, ANTHEM, SYNGENE |
+| Real Estate | 3 | +10.1% | — | MAXHEALTH, MAXESTATES, ANANTRAJ |
+| Private Bank | 3 | +8.9% | — | KTKBANK, CUB, DCBBANK |
 
 ## Rotating Out
 
 | Group | Size | RS Change (4W) | Laggards |
 |-------|------|----------------|---------|
-| Wealth Management | 3 | -25.9% | — |
+| Power Distribution | 4 | -21.1% | — |
+| Exploration Development | 4 | -18.0% | BALMLAWRIE↓ |
+| Welspun World | 4 | -14.9% | — |
+| Operating Asset | 3 | -13.7% | — |
+| Electric Vehicle | 4 | -11.8% | EXICOM↓ |
+| Public Enterprise | 3 | -11.2% | — |
 
 ## ZL Breadth per Group
 
@@ -35,37 +30,31 @@ _Groups where ≥40% of members have ZLEMA25 rising. ⚡ = coordinated cluster (
 
 | Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members |
 |-------|-----------|---------|------------|-------------|---------|---------|
-| Banking Financial | 23/23 | ▲ 100% | 7d | +11.3% | ⚡ IIFLCAPS, FEDFINA, FIVESTAR, HDBFS, JSWHL, MANAPPURAM, SBFC, SUNDARMFIN, TATAINVEST, ABCAPITAL, AIIL, ARMANFIN, AYE, CHOLAHLDNG, IFCI, LTF, POONAWALLA, SAMMAANCAP | ABCAPITAL, AIIL, ARMANFIN, ASHIKA, AYE, CGCL +17 |
-| Public Enterprise | 11/16 | ▲ 69% | 3d | +4.1% | ⚡ COCHINSHIP, CONCOR, SJVN, HEMIPROP, HUDCO, IRCON, IREDA, MOIL, RAILTEL, NBCC, RECLTD | COCHINSHIP, CONCOR, HEMIPROP, HUDCO, IRCON, IREDA +5 |
-| Housing Finance | 8/10 | ▲ 80% | 4d | +6.7% | ⚡ AADHARHFC, APTUS, BAJAJHFL, HOMEFIRST, LICHSGFIN, REPCOHOME, AAVAS, CANFINHOME | AADHARHFC, AAVAS, APTUS, BAJAJHFL, CANFINHOME, HOMEFIRST +2 |
-| Real Estate | 7/9 | ▲ 78% | 3d | +7.8% | ⚡ KALPATARU, LOTUSDEV, ARKADE, AJMERA, LODHA, RAYMONDREL, SUNTECK | AJMERA, ARKADE, KALPATARU, LODHA, LOTUSDEV, RAYMONDREL +1 |
-| Microfinance Institution | 6/6 | ▲ 100% | 3d | +7.9% | ⚡ SPANDANA, M&MFIN, SATIN, CREDITACC, FUSION, MUTHOOTMF | CREDITACC, FUSION, M&MFIN, MUTHOOTMF, SATIN, SPANDANA |
-| Small Finance | 6/7 | ▲ 86% | 4d | +7.6% | ⚡ AUBANK, BANDHANBNK, EQUITASBNK, SURYODAY, UJJIVANSFB, CAPITALSFB | AUBANK, BANDHANBNK, CAPITALSFB, EQUITASBNK, SURYODAY, UJJIVANSFB |
-| Solar Photovoltaic | 9/13 | ▲ 69% | 6d | +10.0% | ⚡ SOLEX, WAAREEENER, WAAREERTL, BORORENEW, SWSOLAR, VIKRAMSOLR | BORORENEW, EMMVEE, GKENERGY, SAATVIKGL, SOLEX, SWSOLAR +3 |
-| Engineering Procurement | 6/6 | ▲ 100% | 7d | +9.2% | ⚡ VIKRAN, TRANSRAILL, KEC, KPIL | BAJEL, KEC, KPIL, POWERMECH, TRANSRAILL, VIKRAN |
-| Public Undertaking | 4/4 | ▲ 100% | 3d | +5.4% | ⚡ BEML, GRSE, MAZDOCK, ITDC | BEML, GRSE, ITDC, MAZDOCK |
-| Kirloskar Group | 4/4 | ▲ 100% | 4d | +11.0% | ⚡ KIRLPNU, KIRLFER, KIRLOSBROS, KIRLOSENG | KIRLFER, KIRLOSBROS, KIRLOSENG, KIRLPNU |
-| Private Bank | 5/6 | ▲ 83% | 5d | +5.9% | ⚡ BANKINDIA, CSBBANK, DCBBANK, KARURVYSYA | BANKINDIA, CSBBANK, DCBBANK, KARURVYSYA, KTKBANK |
-| Steel Pipes | 5/6 | ▲ 83% | 4d | +4.9% | ⚡ SAMBHV, RATNAMANI, HITECH, VENUSPIPES | HITECH, JTLIND, RATNAMANI, SAMBHV, VENUSPIPES |
-| City Distribution | 4/5 | ▲ 80% | 4d | +7.2% | ⚡ GUJGASLTD, IRMENERGY, IGL, MGL | GUJGASLTD, IGL, IRMENERGY, MGL |
-| Engineering Procurement | 6/8 | ▲ 75% | 7d | +11.6% | ⚡ DBL, HGINFRA, JKIL, ASHOKA | ASHOKA, CEIGALL, CEMPRO, DBL, HGINFRA, JKIL |
-| Original Equipment | 6/9 | ▲ 67% | 3d | +7.4% | ⚡ AXISCADES, AZAD, DYNAMATECH, HAPPYFORGE | AXISCADES, AZAD, DYNAMATECH, HAPPYFORGE, RACLGEAR, UNIMECH |
-| Consumer Goods | 6/12 | ↑ 50% | 4d | +5.5% | ⚡ GILLETTE, EMAMILTD, JYOTHYLAB, EPL | BAJAJCON, BECTORFOOD, EMAMILTD, EPL, GILLETTE, JYOTHYLAB |
-| Quick Service | 3/3 | ▲ 100% | 3d | +1.9% | ⚡ DEVYANI, WESTLIFE, RBA | DEVYANI, RBA, WESTLIFE |
-| Ferrous Metals | 3/3 | ▲ 100% | 2d | +4.5% | ⚡ JAINREC, POCL, GRAVITA | GRAVITA, JAINREC, POCL |
-| Made Foreign | 6/7 | ▲ 86% | 4d | +6.1% | ⚡ GMBREW, RADICO, UBL | ABDL, GLOBUSSPR, GMBREW, RADICO, SDBL, UBL |
-| Cement Manufacturer | 3/4 | ▲ 75% | 3d | +8.7% | ⚡ JKCEMENT, JSWCEMENT, JKTYRE | JKCEMENT, JKTYRE, JSWCEMENT |
-| Life Insurance | 3/3 | ▲ 100% | 4d | +3.9% | ⚡ ICICIGI, ICICIPRULI | CANHLIFE, ICICIGI, ICICIPRULI |
-| Wind Energy | 3/3 | ▲ 100% | 5d | +10.2% | ⚡ INOXWIND, SUZLON | INOXGREEN, INOXWIND, SUZLON |
-| Welspun World | 3/3 | ▲ 100% | 7d | +5.7% | ⚡ WELCORP, WELSPUNLIV | WELCORP, WELENT, WELSPUNLIV |
-| Wealth Management | 2/3 | ▲ 67% | 4d | +10.6% | ⚡ 360ONE, NUVAMA | 360ONE, NUVAMA |
-| Aditya Birla | 2/3 | ▲ 67% | 2d | +4.8% | ⚡ ABFRL, ABREL | ABFRL, ABREL |
-| Engineering Procurement | 2/3 | ▲ 67% | 3d | +3.4% | ⚡ CAPACITE, GARUDA | CAPACITE, GARUDA |
-| Power Producer | 2/3 | ▲ 67% | 1d | +1.0% | ⚡ KPEL, KPIGREEN | KPEL, KPIGREEN |
-| Iron Mining | 2/4 | ↑ 50% | 3d | +6.1% | ⚡ ORISSAMINE, KIOCL | KIOCL, ORISSAMINE |
-| Value Chain | 3/3 | ▲ 100% | 21d | +36.7% | — | ALKEM, INNOVACAP, ORCHPHARMA |
-| Public Enterprise | 3/3 | ▲ 100% | 10d | +11.3% | — | CHENNPETRO, HINDPETRO, MRPL |
-| Pharmaceuticals Research | 3/3 | ▲ 100% | 14d | +26.9% | — | KPL, SENORES, STAR |
+| Small Finance | 5/7 | ▲ 71% | 14d | +8.3% | ⚡ AUBANK, BANDHANBNK, CAPITALSFB, UJJIVANSFB | AUBANK, BANDHANBNK, CAPITALSFB, JSFB, UJJIVANSFB |
+| Original Equipment | 4/9 | ↑ 44% | 17d | +16.3% | ⚡ DYNAMATECH, RACLGEAR, ENDURANCE, UNOMINDA | DYNAMATECH, ENDURANCE, RACLGEAR, UNOMINDA |
+| Made Foreign | 7/7 | ▲ 100% | 10d | +8.7% | ⚡ ABDL, GMBREW, RADICO | ABDL, GLOBUSSPR, GMBREW, RADICO, SDBL, TI +1 |
+| Consumer Goods | 9/14 | ▲ 64% | 9d | +9.4% | ⚡ EPL, HNDFDS, JYOTHYLAB | BECTORFOOD, COLPAL, DABUR, EMAMILTD, EPL, GOPAL +3 |
+| Housing Finance | 5/10 | ↑ 50% | 10d | +8.3% | ⚡ PNBHOUSING, CANFINHOME, LICHSGFIN | AADHARHFC, APTUS, CANFINHOME, LICHSGFIN, PNBHOUSING |
+| Active Pharmaceutical | 8/19 | ↑ 42% | 10d | +10.8% | ⚡ KOPRAN, LAURUSLABS, UNICHEMLAB | APLLTD, AUROPHARMA, BAJAJHCARE, GRANULES, JBCHEPHARM, KOPRAN +2 |
+| Aditya Birla | 3/3 | ▲ 100% | 7d | +11.7% | ⚡ ABFRL, ABLBL | ABFRL, ABLBL, ABREL |
+| Contract Research | 3/3 | ▲ 100% | 21d | +23.0% | ⚡ SYNGENE, SAILIFE | ANTHEM, SAILIFE, SYNGENE |
+| Cement Manufacturer | 4/4 | ▲ 100% | 20d | +16.3% | ⚡ JKCEMENT, JKTYRE | JKCEMENT, JKLAKSHMI, JKTYRE, JSWCEMENT |
+| Welspun World | 3/4 | ▲ 75% | 8d | +12.8% | ⚡ WELSPLSOL, WELENT | WELENT, WELSPLSOL, WELSPUNLIV |
+| Real Estate | 7/10 | ▲ 70% | 12d | +15.6% | ⚡ RUSTOMJEE, AJMERA | AJMERA, HUBTOWN, LODHA, MARATHON, RAYMONDREL, RUSTOMJEE +1 |
+| Real Estate | 2/3 | ▲ 67% | 14d | +22.3% | ⚡ MAXESTATES, MAXHEALTH | MAXESTATES, MAXHEALTH |
+| Private Bank | 2/3 | ▲ 67% | 15d | +21.6% | ⚡ CUB, DCBBANK | CUB, DCBBANK |
+| City Distribution | 2/4 | ↑ 50% | 14d | +7.2% | ⚡ IRMENERGY, IGL | IGL, IRMENERGY |
+| Life Insurance | 3/3 | ▲ 100% | 5d | +7.6% | — | CANHLIFE, ICICIGI, ICICIPRULI |
+| Wealth Management | 2/3 | ▲ 67% | 24d | +13.8% | — | 360ONE, ANANDRATHI |
+| Basmati Rice | 2/3 | ▲ 67% | 13d | +11.6% | — | AEROPLANE, AMIRCHAND |
+| Bank Evolved | 2/3 | ▲ 67% | 16d | +15.2% | — | BANKINDIA, KARURVYSYA |
+| Steel Pipes | 2/3 | ▲ 67% | 11d | +15.1% | — | HITECH, SAMBHV |
+| Hotels Ihcl | 2/3 | ▲ 67% | 30d | +28.2% | — | INDHOTEL, ORIENTHOT |
+| Development Manufacturing | 3/5 | ▲ 60% | 13d | +7.8% | — | AKUMS, NEULANDLAB, ONESOURCE |
+| Original Design | 2/4 | ↑ 50% | 4d | +5.9% | — | AMBER, VOEPL |
+| Ferrous Metals | 2/4 | ↑ 50% | 11d | +7.0% | — | GRAVITA, NRL |
+| Engineering Procurement | 4/9 | ↑ 44% | 14d | +13.0% | — | AFCONS, ASHOKA, CEMPRO, JKIL |
+| Kirloskar Group | 2/5 | ↑ 40% | 3d | +2.6% | — | KIRLFER, KIRLOSENG |
 
 ---
 

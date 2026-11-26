@@ -17,6 +17,7 @@ import json
 import sys
 from datetime import datetime
 from pathlib import Path
+from disclaimer import SEBI_MD_HEADER, SEBI_MD_FOOTER
 
 _LABELS_FILE = Path(__file__).parent / "tools" / "stock_labels.json"
 _LABELS: dict = (
@@ -447,7 +448,7 @@ def main():
             "",
         ]
 
-    md = "\n".join(lines)
+    md = SEBI_MD_HEADER + "\n" + "\n".join(lines).rstrip() + "\n" + SEBI_MD_FOOTER
     MD_FILE.write_text(md, encoding="utf-8")
     dated_file = SCANS_DIR / f"sector_rotation_{TODAY}.md"
     dated_file.write_text(md, encoding="utf-8")

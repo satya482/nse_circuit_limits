@@ -2,6 +2,20 @@
 
 # Repo Handoff
 
+Updated 2026-11-26 by Codex, standalone cluster dashboard:
+
+- `cluster_dashboard.py` reads the sector-rotation report through the existing
+  dashboard parser and writes root `cluster.html`: all >=40% rising groups,
+  seven existing columns, source report date and coordinated-cluster markers.
+  No 20-row cap. Invalid/missing input preserves the previous page.
+- `NSE_AllScanners` now runs `run_sector_rotation.ps1` before Dashboard. That
+  runner refreshes the local-data sector scan, generates the cluster page,
+  checks Python exit codes, then includes `cluster.html` in its output commit.
+  Existing task verified weekdays at 15:35 IST. No new scheduled task.
+- Local run: 25 qualifying groups; four focused tests and PowerShell syntax
+  checks passed. Browser host unavailable; HTML/report parity verified.
+  User authorized publishing only these changes on 2026-11-26.
+
 Updated 2026-11-24 by Codex, ATR volatility envelope:
 
 - Added `pine_scripts/Satya_ATR_Volatility_Envelope.pine` from the user-provided
