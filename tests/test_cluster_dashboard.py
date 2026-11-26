@@ -1,6 +1,8 @@
 from pathlib import Path
 
 import pytest
+import shutil
+import subprocess
 
 import cluster_dashboard as cluster
 
@@ -20,6 +22,42 @@ def test_full_table_and_source_date():
     assert '2026-11-25' in page
     assert '⚡ A, B' in page
     assert 'SEBI registered' in page
+
+
+def test_sorting_buttons_and_numeric_order():
+    page = cluster.build_html(report(2))
+    assert page.count('data-sort-column=') == 7
+    assert 'aria-sort="none"' in page
+    assert 'Click a column heading to sort' in page
+    node = shutil.which('node')
+    assert node, 'Node is required to validate dashboard sorting'
+    script = page.split('<script>')[1].split('</script>')[0]
+    check = '''
+const assert = require('node:assert/strict');
+assert.equal(clusterSortValue('↑ 80%', 2), 80);
+assert.equal(clusterSortValue('-10.5%', 4), -10.5);
+assert.equal(clusterSortValue('12/20', 1), 12);
+assert.equal(clusterSortValue('3d', 3), 3);
+assert.equal(clusterSortValue('—', 3), null);
+function row(values) { return { cells: values.map(textContent => ({textContent})) }; }
+const rows = [row(['Nine','9/12','↑ 9%','9d','+9%','—','Z']),
+              row(['Eighty','80/100','▲ 80%','80d','+80%','⚡ A','A']),
+              row(['Missing','—','—','—','—','—','—'])];
+const buttons = [];
+const headers = Array.from({length:7},()=>({setAttribute(k,v){this[k]=v;}}));
+const tbody = { rows, append(...sorted){ this.rows = sorted; } };
+const table = {tBodies:[tbody], tHead:{rows:[{cells:headers}]}, dataset:{},
+               querySelectorAll(){return buttons;}};
+sortClusterTable(table, 2);
+assert.deepEqual(tbody.rows.map(r=>r.cells[0].textContent), ['Nine','Eighty','Missing']);
+sortClusterTable(table, 2);
+assert.deepEqual(tbody.rows.map(r=>r.cells[0].textContent), ['Eighty','Nine','Missing']);
+assert.equal(headers[2]['aria-sort'],'descending');
+sortClusterTable(table, 4);
+assert.equal(headers[2]['aria-sort'],'none');
+'''
+    result = subprocess.run([node, '-e', 'global.document={querySelectorAll:()=>[]};\n' + script + check], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
 
 
 def test_empty_and_escaped_content():

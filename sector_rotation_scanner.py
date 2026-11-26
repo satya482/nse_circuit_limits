@@ -433,9 +433,7 @@ def main():
         for z in zl_breadth:
             cluster_str = ", ".join(z["cluster_syms"]) if z["cluster_syms"] else "—"
             cluster_flag = "⚡ " + cluster_str if z["cluster_syms"] else "—"
-            rising_str = ", ".join(z["rising_syms"][:6])
-            if len(z["rising_syms"]) > 6:
-                rising_str += f" +{len(z['rising_syms']) - 6}"
+            rising_str = ", ".join(z["rising_syms"])
             avg_days_str = (
                 f"{z['avg_zl_days']:.0f}d" if z["avg_zl_days"] is not None else "—"
             )

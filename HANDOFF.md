@@ -2,6 +2,16 @@
 
 # Repo Handoff
 
+Updated 2026-11-26 by Codex, cluster sorting and expanded members:
+
+- Every cluster table header toggles ascending/descending sorting; counts,
+  percentages and days sort numerically, missing values stay last. Header
+  buttons support keyboard activation and expose aria-sort state.
+- Sector reports now retain every rising member rather than a six-symbol
+  preview; cluster.html displays all of them. All 29 rows' member counts match
+  their ZL Rising numerator. Ten focused Python/Node tests passed; review found
+  no concrete bugs. Existing scheduled generation retains these changes.
+
 Updated 2026-11-26 by Codex, cluster universe and membership maintenance:
 
 - Approved cluster universe: all NSE common equities including IPOs, price
