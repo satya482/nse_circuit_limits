@@ -1,32 +1,32 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Momentum Scan — 2026-11-25
-*Generated 2026-11-25 15:40 IST*
+# NSE Momentum Scan — 2026-11-26
+*Generated 2026-11-26 15:41 IST*
 
 **Entry Opportunities: 12**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ARIS,NSE:VIJAYA,NSE:CUB,NSE:CRAFTSMAN,NSE:ANTHEM,NSE:CYIENT,NSE:NUVOCO,NSE:PGIL,NSE:FILATEX,NSE:AGARWALEYE,NSE:OAL,NSE:NINSYS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PRESTIGE,NSE:ACE,NSE:ANGELONE,NSE:WELSPUNLIV,NSE:CRAFTSMAN,NSE:RUBICON,NSE:SUDEEPPHRM,NSE:CPPLUS,NSE:SAMBHV,NSE:ARFIN,NSE:NINSYS,NSE:NAUKRI
 ```
 
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |
 |--------|--------:|--------:|-------|--------:|--------|:-------:|
-| [ARIS](https://in.tradingview.com/chart/?symbol=NSE:ARIS) | 19d | +41.2% | Digital procurement platform connecting construction material suppliers builders | +14.09% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [VIJAYA](https://in.tradingview.com/chart/?symbol=NSE:VIJAYA) | 6d | +15.4% | Diagnostic imaging and pathology labs, Southern India healthcare | +3.50% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [CUB](https://in.tradingview.com/chart/?symbol=NSE:CUB) | 12d | +15.7% | Private bank serving SMEs, MSMEs, retail customers South India | +0.59% | **STRONG** — ZLEMA25 touch + EMA20 rising | -%  |
-| [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) | 9d | +12.2% | Precision auto parts manufacturing for powertrains and aluminum | +1.03% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) | 14d | +15.9% | Contract research development manufacturing biotech pharma | +1.13% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [CYIENT](https://in.tradingview.com/chart/?symbol=NSE:CYIENT) | 2d | +3.6% | Engineering services, design, manufacturing digital transformation | -0.80% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [NUVOCO](https://in.tradingview.com/chart/?symbol=NSE:NUVOCO) | 15d | +13.4% | Cement and ready-mix concrete manufacturer East North India | +2.02% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [PGIL](https://in.tradingview.com/chart/?symbol=NSE:PGIL) | 15d | +21.4% | Apparel manufacturer, exports to global fashion brands | -2.49% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [FILATEX](https://in.tradingview.com/chart/?symbol=NSE:FILATEX) | 9d | +19.1% | Polyester yarn and chip manufacturer for textiles | +3.58% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [AGARWALEYE](https://in.tradingview.com/chart/?symbol=NSE:AGARWALEYE) | 19d | +21.2% | Eye care surgery and diagnostics across India Africa | +4.65% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 2d | +22.3% |  | -0.38% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20% 🟦 |
-| [OAL](https://in.tradingview.com/chart/?symbol=NSE:OAL) | 2d | +22.3% |  | -0.38% | **DEEP PULLBACK** — Bounce from EMA50 | 20% 🟦 |
-| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 4d | +6.7% |  | +0.74% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE) | 18d | +31.6% | Real estate developer residential commercial retail hospitality warehouses | +8.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | 14d | +23.3% | Mobile cranes, material handling equipment for construction sector | +8.79% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) | 15d | +23.4% | Retail brokerage app offering stocks commodities currencies | +2.53% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) | 17d | +32.1% | Home textiles manufacturer, flooring, global export focus | +1.37% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) | 10d | +13.0% | Precision auto parts manufacturing for powertrains and aluminum | +0.77% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON) | 19d | +22.7% | Complex generics and specialty formulations for global pharma | +8.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [SUDEEPPHRM](https://in.tradingview.com/chart/?symbol=NSE:SUDEEPPHRM) | 19d | +27.4% | Calcium phosphate excipients pharma food nutrition | +4.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
+| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS) | 2d | +5.2% | CCTV cameras surveillance systems IP networks security | +0.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
+| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) | 2d | +10.1% | ERW steel pipes, tubes, structural hollow sections manufacturer | +1.39% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN) | 1d | +4.4% | Aluminium ferroalloys manufacturing trading steel auto sector | +0.43% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 5d | +7.7% |  | +0.89% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI) | 2d | +4.4% | Online classifieds: recruitment, real estate, matrimony, education | +0.74% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI) | 2d | +4.4% | Online classifieds: recruitment, real estate, matrimony, education | +0.74% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:ARIS,NSE:VIJAYA,NSE:CUB,NSE:CRAFTSMAN,NSE:ANTHEM,NSE:CYIENT,NSE:NUVOCO,NSE:PGIL,NSE:FILATEX,NSE:AGARWALEYE,NSE:OAL,NSE:NINSYS
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PRESTIGE,NSE:ACE,NSE:ANGELONE,NSE:WELSPUNLIV,NSE:CRAFTSMAN,NSE:RUBICON,NSE:SUDEEPPHRM,NSE:CPPLUS,NSE:SAMBHV,NSE:ARFIN,NSE:NINSYS,NSE:NAUKRI
 ```
 ---
 
