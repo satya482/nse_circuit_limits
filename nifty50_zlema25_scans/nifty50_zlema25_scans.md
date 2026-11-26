@@ -1,7 +1,7 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 # NIFTY 50 ZLEMA25 Trend Scan
 
-*Generated: 2026-11-25 15:41 IST*
+*Generated: 2026-11-26 15:42 IST*
 *Universe source: NSE refresh*
 
 **Requested: 50 · Analysed: 50 · Skipped: 0 · Flat: 0 · Uptrend: 36 · Downtrend: 14**
@@ -92,8 +92,8 @@ Daily ZLEMA25 direction is based on strict day-over-day slope. Age counts consec
 | [ONGC](https://in.tradingview.com/chart/?symbol=NSE:ONGC)<br><sub>→316Cr · 274Cr · ↑CMF19d</sub> | 5d | -1.82% |  | -0.27% | 222.85 | ✓ | 20%  |
 | [COALINDIA](https://in.tradingview.com/chart/?symbol=NSE:COALINDIA)<br><sub>→393Cr · 315Cr · ↓CMF5d</sub> | 6d | -5.33% |  | -2.05% | 382.00 | — | 20%  |
 | [INFY](https://in.tradingview.com/chart/?symbol=NSE:INFY)<br><sub>↘972Cr · 1362Cr · ↑CMF28d</sub> | 7d | -4.15% |  | +0.49% | 1103.40 | — | 20%  |
-| [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↗403Cr · 329Cr · ↓CMF7d</sub> | 8d | -8.80% |  | +1.20% | 262.10 | — | 20%  |
 | [HCLTECH](https://in.tradingview.com/chart/?symbol=NSE:HCLTECH)<br><sub>→400Cr · 543Cr · ↓CMF5d</sub> | 9d | -3.03% |  | +1.48% | 1364.30 | — | 20%  |
+| [TMPV](https://in.tradingview.com/chart/?symbol=NSE:TMPV)<br><sub>↗401Cr · 157Cr · ↓CMF8d</sub> | 9d | -8.84% |  | -0.04% | 262.00 | — | 20%  |
 
 #### Downtrend TradingView Watchlists by Age
 
