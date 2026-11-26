@@ -61,3 +61,23 @@ def test_report_expands_every_rising_member(monkeypatch, tmp_path):
     monkeypatch.setattr(scanner, 'load_ohlc_many', lambda members, **kwargs: {s: bars.copy() for s in members})
     assert scanner.main() == 0
     assert ', '.join(symbols) in scanner.MD_FILE.read_text(encoding='utf-8')
+
+
+def test_weekly_breadth_includes_members_with_falling_zl(monkeypatch, tmp_path):
+    setup_scan(monkeypatch, tmp_path)
+    original_load = scanner.load_ohlc_many
+    def histories(members, **kwargs):
+        result = original_load(members, **kwargs)
+        for symbol, frame in result.items():
+            frame = frame.copy()
+            frame['symbol'] = symbol
+            if symbol == 'B':
+                frame['close'] = frame['close'].to_numpy()[::-1]
+            result[symbol] = frame
+        return result
+    monkeypatch.setattr(scanner, 'load_ohlc_many', histories)
+    monkeypatch.setattr(scanner, 'weekly_rs_above_ema9', lambda frame, bench: frame['symbol'].iloc[0] in ['A', 'B'])
+    assert scanner.main() == 0
+    report = scanner.MD_FILE.read_text(encoding='utf-8')
+    assert '| Test peers | 2/3 |' in report
+    assert '| 2/3 | 66.7% | 0 |' in report

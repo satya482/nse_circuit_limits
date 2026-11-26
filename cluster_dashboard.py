@@ -17,7 +17,7 @@ SORT_SCRIPT = r'''
 function clusterSortValue(text, column) {
   text = text.trim();
   if (!text || text === '—') return null;
-  if ([1, 2, 3, 4].includes(column)) {
+  if ([1, 2, 3, 4, 7, 8, 9].includes(column)) {
     const match = text.match(/[+-]?\d+(?:\.\d+)?/);
     return match ? Number(match[0]) : null;
   }
@@ -28,7 +28,7 @@ function sortClusterTable(table, column) {
   const direction = table.dataset.sortColumn === String(column) &&
                     table.dataset.sortDirection === 'ascending' ? 'descending' : 'ascending';
   const sign = direction === 'ascending' ? 1 : -1;
-  const rows = Array.from(tbody.rows).filter(row => row.cells.length === 7)
+  const rows = Array.from(tbody.rows).filter(row => row.cells.length === table.tHead.rows[0].cells.length)
     .map((row, index) => ({ row, index, value: clusterSortValue(row.cells[column].textContent, column) }));
   rows.sort((a, b) => {
     if (a.value === null || b.value === null) {
@@ -56,17 +56,19 @@ def build_html(content: str, coverage: dict | None = None) -> str:
     if not date or "## ZL Breadth per Group" not in content:
         raise ValueError("Sector rotation report has no dated ZL breadth section")
     groups = parse_sector_rotation(content)[3]
-    columns = ("label", "zl_rising", "breadth", "avg_days", "avg_pct", "cluster", "members")
+    columns = ("label", "zl_rising", "breadth", "avg_days", "avg_pct", "cluster", "members",
+               "weekly_rs_count", "weekly_rs_pct", "weekly_rs_unavailable")
     headers = ''.join(
         f'<th scope="col" aria-sort="none"><button type="button" data-sort-column="{i}">{label}</button></th>'
-        for i, label in enumerate(('Group', 'ZL Rising', 'Breadth', 'Avg ZL Days', 'Avg ZL Chg%', '⚡ Cluster', 'Members'))
+        for i, label in enumerate(('Group', 'ZL Rising', 'Breadth', 'Avg ZL Days', 'Avg ZL Chg%', '⚡ Cluster', 'Members',
+                                   'RS > W EMA9', 'RS Breadth %', 'RS Unavailable'))
     )
     rows = "\n".join(
         '<tr data-group>' + ''.join(f'<td>{escape(group[key])}</td>' for key in columns) + '</tr>'
         for group in groups
     )
     if not groups:
-        rows = '<tr><td colspan="7">No groups with ≥40% ZL rising.</td></tr>'
+        rows = '<tr><td colspan="10">No groups with ≥40% ZL rising.</td></tr>'
     title = f"ZL Breadth per Group ({len(groups)} groups ≥40% rising)"
     coverage_html = ''
     if coverage is not None:
@@ -116,6 +118,9 @@ td:nth-child(6){{color:#e3b341}}td:first-child{{min-width:180px;font-weight:600}
 <p class="meta">Source report: {date.group(1)} · All qualifying groups shown</p>
 <p>⚡ = coordinated cluster (≥2 members turned ZL within ±2 bars).</p>
 <p class="meta">Click a column heading to sort; click again to reverse. Members lists every rising stock.</p>
+<p class="meta">Weekly RS uses the current developing week: stock / NIFTY MIDSML 400 × 1000 &gt; its EMA9.
+RS count is above / evaluated across all eligible group members; RS breadth is the percentage of evaluated members above EMA9.
+Unavailable means missing, stale or invalid data, or fewer than nine matched weekly closes. Developing values can change during the week.</p>
 <div class="table-wrap"><table aria-label="ZL Breadth per Group" data-sortable>
 <thead><tr>{headers}</tr></thead>
 <tbody>{rows}</tbody></table></div>

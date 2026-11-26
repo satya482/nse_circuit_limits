@@ -105,6 +105,41 @@ def rs_at(rs: pd.Series, bars_back: int) -> float | None:
     return float(rs.iloc[-(bars_back + 1)])
 
 
+def weekly_rs_above_ema9(stock_df, bm_df) -> bool | None:
+    """Developing weekly close ratio vs EMA9, with nine matched weekly closes."""
+    if stock_df is None or bm_df is None or stock_df.empty or bm_df.empty:
+        return None
+    if stock_df['date'].max() != bm_df['date'].max():
+        return None
+    def weekly(frame):
+        dates = pd.to_datetime(frame['date'])
+        values = pd.to_numeric(frame['close'], errors='coerce')
+        data = pd.DataFrame({'close': values.to_numpy(), 'session': dates.to_numpy()},
+                            index=pd.DatetimeIndex(dates)).sort_index()
+        data.loc[~data['close'].map(lambda x: math.isfinite(x) and x > 0), 'close'] = float('nan')
+        return data.resample('W-FRI').agg({
+            'close': lambda values: values.iloc[-1] if len(values) else float('nan'),
+            'session': 'last',
+        })
+    bench = weekly(bm_df)
+    stock = weekly(stock_df).reindex(bench.index)
+    valid = stock['session'].eq(bench['session']) & stock['close'].gt(0) & bench['close'].gt(0)
+    # An unavailable week breaks the EMA warmup rather than silently bridging gaps.
+    invalid = [i for i, good in enumerate(valid) if not good]
+    start = invalid[-1] + 1 if invalid else 0
+    rs = (stock['close'] / bench['close'] * 1000).iloc[start:]
+    if len(rs) < 9:
+        return None
+    return bool(rs.iloc[-1] > _ema(rs, 9).iloc[-1])
+
+
+def group_weekly_rs(members, states):
+    evaluated = sum(states.get(s) is not None for s in members)
+    above = sum(states.get(s) is True for s in members)
+    return {'above': above, 'evaluated': evaluated, 'unavailable': len(members) - evaluated,
+            'pct': 100 * above / evaluated if evaluated else None}
+
+
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 
@@ -149,6 +184,13 @@ def main():
     coverage['changes'] = state.get('changes', {})
     coverage['descriptions_updated'] = state.get('descriptions_updated', '')
     coverage['description_failures'] = state.get('description_failures', [])
+
+    # Keep the existing 60-bar daily indicators unchanged; weekly EMA uses long history.
+    weekly_ohlc = load_ohlc_many(all_symbols + [BENCHMARK], lookback=1500)
+    weekly_benchmark = weekly_ohlc.get(BENCHMARK)
+    weekly_states = {s: weekly_rs_above_ema9(weekly_ohlc.get(s), weekly_benchmark) for s in all_symbols}
+    coverage['weekly_rs'] = {gid: group_weekly_rs(g['members'], weekly_states)
+                             for gid, g in active_groups.items()}
 
     # Compute RS for each stock
     print("Computing RS lines...")
@@ -320,6 +362,7 @@ def main():
                     "avg_zl_pct": avg_zl_pct,
                     "cluster_syms": cluster_syms,
                     "rising_syms": zl_rising_syms,
+                    "weekly_rs": coverage['weekly_rs'][gid],
                 }
             )
 
@@ -427,10 +470,17 @@ def main():
             "_Groups where ≥40% of members have ZLEMA25 rising. "
             "⚡ = coordinated cluster (≥2 members turned ZL within ±2 bars)._",
             "",
-            "| Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members |",
-            "|-------|-----------|---------|------------|-------------|---------|---------|",
+            "Weekly RS: developing week; stock / NIFTY MIDSML 400 × 1000 > its weekly EMA9 (adjust=False). "
+            "RS count = above / evaluated across all eligible group members; RS % uses evaluated members. "
+            "RS unavailable includes missing/stale/invalid data or fewer than nine matched weekly closes.",
+            "",
+            "| Group | ZL Rising | Breadth | Avg ZL Days | Avg ZL Chg% | Cluster | Members | RS > W EMA9 | RS Breadth% | RS Unavailable |",
+            "|-------|-----------|---------|------------|-------------|---------|---------|-------------|-------------|----------------|",
         ]
         for z in zl_breadth:
+            weekly_rs = z['weekly_rs']
+            rs_count = f"{weekly_rs['above']}/{weekly_rs['evaluated']}" if weekly_rs['evaluated'] else '—'
+            rs_pct = f"{weekly_rs['pct']:.1f}%" if weekly_rs['pct'] is not None else '—'
             cluster_str = ", ".join(z["cluster_syms"]) if z["cluster_syms"] else "—"
             cluster_flag = "⚡ " + cluster_str if z["cluster_syms"] else "—"
             rising_str = ", ".join(z["rising_syms"])
@@ -453,7 +503,7 @@ def main():
                 f"| {avg_days_str} "
                 f"| {avg_pct_str} "
                 f"| {cluster_flag} "
-                f"| {rising_str} |"
+                f"| {rising_str} | {rs_count} | {rs_pct} | {weekly_rs['unavailable']} |"
             )
         lines.append("")
     else:

@@ -652,6 +652,9 @@ def parse_sector_rotation(content: str) -> tuple[list, list, list, list]:
                     "avg_pct": cols[4],
                     "cluster": cols[5],
                     "members": cols[6],
+                    "weekly_rs_count": cols[7] if len(cols) >= 10 else '—',
+                    "weekly_rs_pct": cols[8] if len(cols) >= 10 else '—',
+                    "weekly_rs_unavailable": cols[9] if len(cols) >= 10 else '—',
                 }
             )
 

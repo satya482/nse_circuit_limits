@@ -6851,5 +6851,343 @@
     "MINDSPACE.RR",
     "NAM_INDIA",
     "NXST.RR"
-  ]
+  ],
+  "weekly_rs": {
+    "group_0003": {
+      "above": 6,
+      "evaluated": 25,
+      "unavailable": 15,
+      "pct": 24.0
+    },
+    "group_0032": {
+      "above": 2,
+      "evaluated": 19,
+      "unavailable": 1,
+      "pct": 10.526315789473685
+    },
+    "group_0010": {
+      "above": 5,
+      "evaluated": 15,
+      "unavailable": 3,
+      "pct": 33.333333333333336
+    },
+    "group_0027": {
+      "above": 9,
+      "evaluated": 15,
+      "unavailable": 3,
+      "pct": 60.0
+    },
+    "group_0094": {
+      "above": 6,
+      "evaluated": 12,
+      "unavailable": 5,
+      "pct": 50.0
+    },
+    "group_0028": {
+      "above": 9,
+      "evaluated": 16,
+      "unavailable": 1,
+      "pct": 56.25
+    },
+    "group_0041": {
+      "above": 1,
+      "evaluated": 12,
+      "unavailable": 3,
+      "pct": 8.333333333333334
+    },
+    "group_0007": {
+      "above": 2,
+      "evaluated": 12,
+      "unavailable": 0,
+      "pct": 16.666666666666668
+    },
+    "group_0049": {
+      "above": 2,
+      "evaluated": 6,
+      "unavailable": 5,
+      "pct": 33.333333333333336
+    },
+    "group_0004": {
+      "above": 4,
+      "evaluated": 8,
+      "unavailable": 0,
+      "pct": 50.0
+    },
+    "group_0019": {
+      "above": 0,
+      "evaluated": 0,
+      "unavailable": 8,
+      "pct": null
+    },
+    "group_0026": {
+      "above": 1,
+      "evaluated": 7,
+      "unavailable": 1,
+      "pct": 14.285714285714286
+    },
+    "group_0008": {
+      "above": 5,
+      "evaluated": 6,
+      "unavailable": 2,
+      "pct": 83.33333333333333
+    },
+    "group_0024": {
+      "above": 0,
+      "evaluated": 4,
+      "unavailable": 3,
+      "pct": 0.0
+    },
+    "group_0023": {
+      "above": 1,
+      "evaluated": 5,
+      "unavailable": 1,
+      "pct": 20.0
+    },
+    "group_0001": {
+      "above": 4,
+      "evaluated": 6,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0009": {
+      "above": 2,
+      "evaluated": 5,
+      "unavailable": 0,
+      "pct": 40.0
+    },
+    "group_0136": {
+      "above": 2,
+      "evaluated": 5,
+      "unavailable": 0,
+      "pct": 40.0
+    },
+    "group_0052": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 2,
+      "pct": 66.66666666666667
+    },
+    "group_0043": {
+      "above": 0,
+      "evaluated": 2,
+      "unavailable": 3,
+      "pct": 0.0
+    },
+    "group_0051": {
+      "above": 1,
+      "evaluated": 5,
+      "unavailable": 0,
+      "pct": 20.0
+    },
+    "group_0014": {
+      "above": 4,
+      "evaluated": 5,
+      "unavailable": 0,
+      "pct": 80.0
+    },
+    "group_0102": {
+      "above": 0,
+      "evaluated": 5,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0133": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 2,
+      "pct": 0.0
+    },
+    "group_0000": {
+      "above": 3,
+      "evaluated": 4,
+      "unavailable": 0,
+      "pct": 75.0
+    },
+    "group_0005": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 1,
+      "pct": 66.66666666666667
+    },
+    "group_0111": {
+      "above": 0,
+      "evaluated": 4,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0080": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 1,
+      "pct": 0.0
+    },
+    "group_0093": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 1,
+      "pct": 0.0
+    },
+    "group_0101": {
+      "above": 0,
+      "evaluated": 4,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0135": {
+      "above": 1,
+      "evaluated": 3,
+      "unavailable": 1,
+      "pct": 33.333333333333336
+    },
+    "group_0030": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0006": {
+      "above": 1,
+      "evaluated": 2,
+      "unavailable": 1,
+      "pct": 50.0
+    },
+    "group_0011": {
+      "above": 1,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 33.333333333333336
+    },
+    "group_0015": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0018": {
+      "above": 3,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 100.0
+    },
+    "group_0035": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0037": {
+      "above": 1,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 33.333333333333336
+    },
+    "group_0029": {
+      "above": 1,
+      "evaluated": 2,
+      "unavailable": 1,
+      "pct": 50.0
+    },
+    "group_0048": {
+      "above": 1,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 33.333333333333336
+    },
+    "group_0127": {
+      "above": 0,
+      "evaluated": 1,
+      "unavailable": 2,
+      "pct": 0.0
+    },
+    "group_0054": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0055": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0060": {
+      "above": 1,
+      "evaluated": 1,
+      "unavailable": 2,
+      "pct": 100.0
+    },
+    "group_0066": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0069": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0073": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0084": {
+      "above": 1,
+      "evaluated": 1,
+      "unavailable": 2,
+      "pct": 100.0
+    },
+    "group_0085": {
+      "above": 2,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 66.66666666666667
+    },
+    "group_0087": {
+      "above": 1,
+      "evaluated": 2,
+      "unavailable": 1,
+      "pct": 50.0
+    },
+    "group_0128": {
+      "above": 1,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 33.333333333333336
+    },
+    "group_0090": {
+      "above": 0,
+      "evaluated": 3,
+      "unavailable": 0,
+      "pct": 0.0
+    },
+    "group_0100": {
+      "above": 0,
+      "evaluated": 1,
+      "unavailable": 2,
+      "pct": 0.0
+    },
+    "group_0104": {
+      "above": 0,
+      "evaluated": 2,
+      "unavailable": 1,
+      "pct": 0.0
+    },
+    "group_0105": {
+      "above": 0,
+      "evaluated": 1,
+      "unavailable": 2,
+      "pct": 0.0
+    },
+    "group_0123": {
+      "above": 0,
+      "evaluated": 2,
+      "unavailable": 1,
+      "pct": 0.0
+    }
+  }
 }

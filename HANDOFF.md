@@ -2,6 +2,22 @@
 
 # Repo Handoff
 
+Updated 2026-11-26 by Codex, cluster developing weekly RS breadth:
+
+- Each cluster row adds sortable RS > W EMA9 (above/evaluated), RS Breadth %
+  and RS Unavailable. Evaluate all eligible members of that group, including
+  those with falling ZL. Percentages exclude unavailable members; the page
+  explains the denominator and separately reports the unavailable count.
+- Weekly RS = stock weekly close / NIFTY MIDSML 400 weekly close * 1000.
+  Current developing week included; require strict RS > EMA9(adjust=False),
+  at least nine consecutive weekly closes with matching actual final sessions.
+  Missing/stale/invalid/short histories are unavailable, not below EMA9.
+- Weekly history is loaded separately (1,500 bars). The existing 60-bar ZL
+  calculation and all seven original fields in all 29 rows were verified
+  unchanged. This adds annotations, not a scan gate. Extended report parser
+  retains compatibility with legacy seven-column data (RS shown unavailable).
+- Generation uses the existing SectorRotation runner in NSE_AllScanners.
+
 Updated 2026-11-26 by Codex, cluster sorting and expanded members:
 
 - Every cluster table header toggles ascending/descending sorting; counts,

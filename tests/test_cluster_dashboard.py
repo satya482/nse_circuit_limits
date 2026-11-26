@@ -26,7 +26,7 @@ def test_full_table_and_source_date():
 
 def test_sorting_buttons_and_numeric_order():
     page = cluster.build_html(report(2))
-    assert page.count('data-sort-column=') == 7
+    assert page.count('data-sort-column=') == 10
     assert 'aria-sort="none"' in page
     assert 'Click a column heading to sort' in page
     node = shutil.which('node')
@@ -39,12 +39,15 @@ assert.equal(clusterSortValue('-10.5%', 4), -10.5);
 assert.equal(clusterSortValue('12/20', 1), 12);
 assert.equal(clusterSortValue('3d', 3), 3);
 assert.equal(clusterSortValue('—', 3), null);
+assert.equal(clusterSortValue('12/20', 7), 12);
+assert.equal(clusterSortValue('66.7%', 8), 66.7);
+assert.equal(clusterSortValue('3', 9), 3);
 function row(values) { return { cells: values.map(textContent => ({textContent})) }; }
-const rows = [row(['Nine','9/12','↑ 9%','9d','+9%','—','Z']),
-              row(['Eighty','80/100','▲ 80%','80d','+80%','⚡ A','A']),
-              row(['Missing','—','—','—','—','—','—'])];
+const rows = [row(['Nine','9/12','↑ 9%','9d','+9%','—','Z','9/100','9%','9']),
+              row(['Eighty','80/100','▲ 80%','80d','+80%','⚡ A','A','80/100','80%','80']),
+              row(['Missing','—','—','—','—','—','—','—','—','—'])];
 const buttons = [];
-const headers = Array.from({length:7},()=>({setAttribute(k,v){this[k]=v;}}));
+const headers = Array.from({length:10},()=>({setAttribute(k,v){this[k]=v;}}));
 const tbody = { rows, append(...sorted){ this.rows = sorted; } };
 const table = {tBodies:[tbody], tHead:{rows:[{cells:headers}]}, dataset:{},
                querySelectorAll(){return buttons;}};
@@ -55,9 +58,21 @@ assert.deepEqual(tbody.rows.map(r=>r.cells[0].textContent), ['Eighty','Nine','Mi
 assert.equal(headers[2]['aria-sort'],'descending');
 sortClusterTable(table, 4);
 assert.equal(headers[2]['aria-sort'],'none');
+sortClusterTable(table, 8);
+assert.deepEqual(tbody.rows.map(r=>r.cells[0].textContent), ['Nine','Eighty','Missing']);
+sortClusterTable(table, 8);
+assert.deepEqual(tbody.rows.map(r=>r.cells[0].textContent), ['Eighty','Nine','Missing']);
 '''
     result = subprocess.run([node, '-e', 'global.document={querySelectorAll:()=>[]};\n' + script + check], capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
+
+
+def test_weekly_rs_report_fields_and_legacy_fallback():
+    content = report(1).replace('| A, B |', '| A, B | 2/3 | 66.7% | 1 |')
+    page = cluster.build_html(content)
+    assert '<td>2/3</td><td>66.7%</td><td>1</td>' in page
+    legacy = cluster.build_html(report(1))
+    assert '<td>—</td><td>—</td><td>—</td>' in legacy
 
 
 def test_empty_and_escaped_content():
