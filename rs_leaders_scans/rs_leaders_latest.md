@@ -1,354 +1,343 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 
 
-# RS Leaders — 2026-11-26
+# RS Leaders — 2026-11-27
 
-Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Benchmark: NIFTY MIDSML 400. Windows: 5 / 21 / 63 / 126 benchmark trading sessions. RS% = 100 x [(stock end/start)/(benchmark end/start) - 1]. Leader: percentile >=90 and RS% >0. Percentiles use average ties on a 0-100 scale (singleton=100); ranks use competition ties. Missing sessions/history show N/A per period; stale stocks are excluded. Rank change is previous available report rank minus current rank; baseline price date: 2026-11-25. Turnover is mean daily close x volume over 30 observed bars, in crore. No EMA or liquidity gate. Returns use local price history, not total returns; corporate-action adjustments have not been independently audited.
+Price data: 2026-11-27. Universe: 1437; ranked: 1143; excluded: 294. NSE common equities; price > Rs50; market cap Rs1,000 crore to Rs5 lakh crore. Benchmark: NIFTY MIDSML 400. Windows: 5 / 21 / 63 / 126 benchmark trading sessions. RS% = 100 x [(stock end/start)/(benchmark end/start) - 1]. Leader: percentile >=90 and RS% >0. Percentiles use average ties on a 0-100 scale (singleton=100); ranks use competition ties. Missing sessions/history show N/A per period; stale stocks are excluded. Rank change is previous available report rank minus current rank; baseline price date: 2026-11-26. Turnover is mean daily close x volume over 30 observed bars, in crore. No EMA or liquidity gate. Returns use local price history, not total returns; corporate-action adjustments have not been independently audited.
 
-## 4/4 leadership (10)
+## 4/4 leadership (9)
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 4 OF 4,NSE:ACE,NSE:AJMERA,NSE:ARIS,NSE:GREAVESCOT,NSE:MAXESTATES,NSE:MCX,NSE:RATNAVEER,NSE:THOMASCOOK,NSE:UTTAMSUGAR,NSE:WELSPUNLIV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 4 OF 4,NSE:ABDL,NSE:ACE,NSE:ARIS,NSE:CUPID,NSE:EIMCOELECO,NSE:GREAVESCOT,NSE:RAYMOND,NSE:THOMASCOOK,NSE:WELSPUNLIV
 
 ```
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ACE | Trucks/Construction/Farm Machinery | 1295.00 | 46.36 | 4 | 4 | 9.20 | 9.23 | 98.51 | 18 | +371 | 26.61 | 18.98 | 98.07 | 23 | +130 | 16.61 | 21.07 | 92.63 | 82 | +128 | 49.35 | 45.26 | 95.01 | 53 | +48 |
-| AJMERA | Real Estate Development | 163.20 | 27.56 | 4 | 4 | 22.27 | 22.30 | 99.91 | 2 | +2 | 21.97 | 14.62 | 95.96 | 47 | -18 | 39.61 | 44.95 | 98.91 | 13 | +4 | 45.55 | 41.56 | 94.15 | 62 | +19 |
-| ARIS | Packaged Software | 185.94 | 37.07 | 4 | 4 | 17.70 | 17.73 | 99.56 | 6 | -4 | 31.45 | 23.53 | 98.95 | 13 | -4 | 30.70 | 35.69 | 97.73 | 26 | +12 | 62.79 | 58.33 | 96.93 | 33 | -1 |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| MAXESTATES | Real Estate Development | 615.65 | 5.25 | 4 | 4 | 6.39 | 6.42 | 96.33 | 43 | -3 | 19.40 | 12.20 | 94.29 | 66 | +1 | 20.13 | 24.72 | 94.45 | 62 | +35 | 36.78 | 33.03 | 91.07 | 94 | -7 |
-| MCX | Investment Banks/Brokers | 3835.00 | 753.14 | 4 | 4 | 5.21 | 5.24 | 94.31 | 66 | +540 | 20.57 | 13.30 | 94.99 | 58 | +164 | 12.79 | 17.11 | 90.90 | 101 | +72 | 35.34 | 31.63 | 90.21 | 103 | +81 |
-| RATNAVEER | Steel | 405.00 | 115.01 | 4 | 4 | 10.32 | 10.35 | 98.78 | 15 | +5 | 17.36 | 10.28 | 91.30 | 100 | +22 | 32.34 | 37.41 | 98.27 | 20 | -5 | 141.55 | 134.93 | 99.81 | 3 | +1 |
-| THOMASCOOK | Other Consumer Services | 134.64 | 94.52 | 4 | 4 | 18.72 | 18.75 | 99.65 | 5 | -4 | 49.78 | 40.75 | 99.91 | 2 | +0 | 24.76 | 29.53 | 96.00 | 45 | -31 | 47.24 | 43.21 | 94.63 | 57 | -23 |
-| UTTAMSUGAR | Agricultural Commodities/Milling | 381.80 | 15.56 | 4 | 4 | 3.79 | 3.82 | 90.90 | 105 | +613 | 20.92 | 13.63 | 95.43 | 53 | +362 | 22.34 | 27.02 | 95.36 | 52 | +28 | 65.49 | 60.95 | 97.22 | 30 | +24 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
+| ABDL | Beverages: Alcoholic | 838.00 | 41.83 | 4 | 4 | 5.50 | 5.71 | 92.03 | 92 | +130 | 17.99 | 11.54 | 92.88 | 82 | +25 | 35.77 | 39.55 | 97.81 | 25 | -6 | 46.54 | 42.94 | 94.15 | 62 | +8 |
+| ACE | Trucks/Construction/Farm Machinery | 1325.70 | 49.56 | 4 | 4 | 13.27 | 13.50 | 99.21 | 10 | +8 | 29.08 | 22.02 | 98.59 | 17 | +6 | 21.20 | 24.57 | 94.72 | 59 | +23 | 52.55 | 48.79 | 95.11 | 52 | +1 |
+| ARIS | Packaged Software | 187.36 | 37.05 | 4 | 4 | 13.57 | 13.79 | 99.30 | 9 | -3 | 30.88 | 23.72 | 98.86 | 14 | -1 | 42.28 | 46.24 | 99.09 | 11 | +15 | 62.92 | 58.91 | 96.74 | 35 | -2 |
+| CUPID | Household/Personal Care | 389.50 | 428.72 | 4 | 4 | 6.52 | 6.73 | 94.40 | 65 | +164 | 21.66 | 15.00 | 96.31 | 43 | +49 | 41.61 | 45.55 | 99.00 | 12 | +9 | 192.66 | 185.46 | 100.00 | 1 | +0 |
+| EIMCOELECO | Trucks/Construction/Farm Machinery | 2647.50 | 6.02 | 4 | 4 | 7.00 | 7.21 | 95.01 | 58 | +353 | 20.78 | 14.17 | 95.78 | 49 | +25 | 20.70 | 24.06 | 94.26 | 64 | +27 | 72.18 | 67.95 | 97.98 | 22 | +6 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| RAYMOND | Textiles | 1278.60 | 71.53 | 4 | 4 | 6.67 | 6.87 | 94.57 | 63 | +413 | 16.04 | 9.68 | 90.06 | 114 | +92 | 101.26 | 106.86 | 100.00 | 1 | +0 | 145.06 | 139.03 | 99.81 | 3 | +2 |
+| THOMASCOOK | Other Consumer Services | 127.51 | 96.94 | 4 | 4 | 11.21 | 11.42 | 98.60 | 17 | -12 | 44.31 | 36.41 | 99.82 | 3 | -1 | 20.62 | 23.98 | 94.17 | 65 | -20 | 38.34 | 34.94 | 91.84 | 86 | -29 |
+| WELSPUNLIV | Consumer Sundries | 285.52 | 234.64 | 4 | 4 | 6.23 | 6.44 | 93.70 | 73 | -60 | 34.57 | 27.21 | 99.47 | 7 | +10 | 43.90 | 47.91 | 99.18 | 10 | -2 | 97.89 | 93.02 | 98.94 | 12 | +0 |
 
-## 3/4 leadership (19)
+## 3/4 leadership (31)
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 3 OF 4,NSE:ABDL,NSE:ANGELONE,NSE:APLLTD,NSE:BOROLTD,NSE:CUPID,NSE:EIMCOELECO,NSE:EMCURE,NSE:GMMPFAUDLR,NSE:HUBTOWN,NSE:ICIL,NSE:KALAMANDIR,NSE:KDDL,NSE:MANAKCOAT,NSE:MOTILALOFS,NSE:NAVINFLUOR,NSE:NEOGEN,NSE:PRESTIGE,NSE:SAILIFE,NSE:SAMBHV
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 3 OF 4,NSE:AGARWALEYE,NSE:AJMERA,NSE:ALICON,NSE:ANGELONE,NSE:APLLTD,NSE:BEML,NSE:BIL,NSE:BOROLTD,NSE:FILATEX,NSE:GHCLTEXTIL,NSE:GLENMARK,NSE:GMMPFAUDLR,NSE:HUBTOWN,NSE:ICIL,NSE:JLHL,NSE:KALYANKJIL,NSE:KDDL,NSE:MANAKCOAT,NSE:MAXESTATES,NSE:MCX,NSE:MOTILALOFS,NSE:NAVINFLUOR,NSE:NEOGEN,NSE:PRESTIGE,NSE:RATNAVEER,NSE:RAYMONDREL,NSE:RKFORGE,NSE:SAILIFE,NSE:SAMBHV,NSE:UTTAMSUGAR,NSE:WEL
 
 ```
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ABDL | Beverages: Alcoholic | 820.30 | 40.81 | 3 | 4 | 1.50 | 1.53 | 80.66 | 222 | +72 | 16.82 | 9.77 | 90.69 | 107 | +16 | 32.65 | 37.72 | 98.36 | 19 | +5 | 43.36 | 39.43 | 93.38 | 70 | -14 |
-| ANGELONE | Investment Banks/Brokers | 358.00 | 300.12 | 3 | 4 | 6.41 | 6.43 | 96.41 | 42 | +111 | 22.41 | 15.03 | 96.49 | 41 | +20 | 24.78 | 29.56 | 96.09 | 44 | +19 | 6.95 | 4.01 | 64.11 | 375 | +71 |
-| APLLTD | Pharmaceuticals: Major | 1018.80 | 46.37 | 3 | 4 | -2.93 | -2.91 | 35.87 | 734 | -149 | 30.15 | 22.30 | 98.68 | 16 | -5 | 22.03 | 26.69 | 95.27 | 53 | -18 | 40.81 | 36.95 | 92.51 | 79 | -9 |
-| BOROLTD | Miscellaneous Manufacturing | 314.80 | 37.20 | 3 | 4 | -6.24 | -6.21 | 10.94 | 1019 | -313 | 30.60 | 22.72 | 98.77 | 15 | -1 | 28.04 | 32.94 | 97.00 | 34 | -9 | 40.95 | 37.09 | 92.61 | 78 | -14 |
-| CUPID | Household/Personal Care | 371.10 | 421.26 | 3 | 4 | 1.41 | 1.44 | 80.05 | 229 | +88 | 17.98 | 10.86 | 92.00 | 92 | +49 | 32.32 | 37.38 | 98.18 | 21 | +7 | 185.90 | 178.07 | 100.00 | 1 | +0 |
-| EIMCOELECO | Trucks/Construction/Farm Machinery | 2547.60 | 5.94 | 3 | 4 | -0.41 | -0.38 | 64.13 | 411 | -1 | 18.92 | 11.75 | 93.59 | 74 | +29 | 16.04 | 20.48 | 91.81 | 91 | -7 | 67.02 | 62.45 | 97.41 | 28 | +0 |
-| EMCURE | Pharmaceuticals: Major | 2329.10 | 49.63 | 3 | 4 | -0.67 | -0.64 | 61.59 | 440 | +83 | 24.22 | 16.73 | 97.10 | 34 | +6 | 25.54 | 30.34 | 96.45 | 40 | +4 | 36.95 | 33.20 | 91.17 | 93 | +11 |
-| GMMPFAUDLR | Industrial Machinery | 1249.10 | 21.57 | 3 | 4 | 6.97 | 7.00 | 96.85 | 37 | +304 | -0.34 | -6.35 | 38.05 | 706 | +171 | 19.82 | 24.41 | 94.36 | 63 | +12 | 62.74 | 58.28 | 96.83 | 34 | +12 |
-| HUBTOWN | Real Estate Development | 215.04 | 69.32 | 3 | 4 | 22.06 | 22.09 | 99.74 | 4 | +2 | 24.78 | 17.25 | 97.36 | 31 | -14 | 17.96 | 22.47 | 93.54 | 72 | +139 | 4.66 | 1.79 | 60.56 | 412 | +167 |
-| ICIL | Textiles | 590.05 | 44.96 | 3 | 4 | 2.44 | 2.47 | 86.35 | 157 | +174 | 37.83 | 29.52 | 99.56 | 6 | +1 | 25.69 | 30.50 | 96.63 | 38 | -17 | 71.20 | 66.51 | 97.89 | 23 | +2 |
-| KALAMANDIR | Apparel/Footwear Retail | 96.72 | 18.96 | 3 | 4 | 7.43 | 7.46 | 97.29 | 32 | -23 | 46.26 | 37.44 | 99.82 | 3 | +1 | 12.67 | 16.98 | 90.54 | 105 | +2 | -8.64 | -11.15 | 38.20 | 645 | -26 |
-| KDDL | Other Consumer Specialties | 4511.10 | 43.25 | 3 | 4 | -3.60 | -3.58 | 28.70 | 816 | +221 | 19.76 | 12.53 | 94.46 | 64 | +13 | 14.80 | 19.19 | 91.63 | 93 | -10 | 62.12 | 57.68 | 96.45 | 38 | -1 |
-| MANAKCOAT | Steel | 160.46 | 21.70 | 3 | 4 | 0.08 | 0.11 | 68.85 | 357 | +601 | 21.06 | 13.76 | 95.61 | 51 | +25 | 31.06 | 36.08 | 97.91 | 24 | +18 | 53.10 | 48.90 | 95.49 | 48 | +11 |
-| MOTILALOFS | Investment Managers | 1215.25 | 156.92 | 3 | 4 | 0.40 | 0.43 | 72.44 | 316 | +74 | 25.54 | 17.97 | 97.63 | 28 | -5 | 16.53 | 20.98 | 92.54 | 83 | -19 | 42.04 | 38.15 | 93.09 | 73 | -4 |
-| NAVINFLUOR | Chemicals: Specialty | 10270.00 | 194.67 | 3 | 4 | 0.66 | 0.68 | 74.28 | 295 | +482 | 20.81 | 13.52 | 95.34 | 54 | +9 | 18.38 | 22.91 | 93.81 | 69 | +3 | 45.97 | 41.97 | 94.24 | 61 | +12 |
-| NEOGEN | Chemicals: Specialty | 2750.50 | 41.26 | 3 | 4 | -4.78 | -4.75 | 19.25 | 924 | -286 | 21.12 | 13.82 | 95.69 | 50 | -18 | 24.95 | 29.73 | 96.18 | 43 | +4 | 44.67 | 40.71 | 93.76 | 66 | -5 |
-| PRESTIGE | Real Estate Development | 1832.10 | 113.60 | 3 | 4 | 10.70 | 10.73 | 98.86 | 14 | +224 | 31.60 | 23.66 | 99.03 | 12 | +75 | 12.19 | 16.48 | 89.99 | 111 | +73 | 36.15 | 32.42 | 90.50 | 100 | +110 |
-| SAILIFE | Miscellaneous Commercial Services | 1812.60 | 251.42 | 3 | 4 | 1.35 | 1.38 | 79.79 | 232 | +103 | 21.88 | 14.53 | 95.87 | 48 | +8 | 24.18 | 28.93 | 95.81 | 47 | +9 | 59.32 | 54.96 | 96.07 | 42 | -4 |
-| SAMBHV | Steel | 174.04 | 45.95 | 3 | 4 | 7.78 | 7.81 | 97.73 | 27 | +24 | 5.20 | -1.14 | 62.30 | 430 | +154 | 36.06 | 41.27 | 98.64 | 16 | +4 | 64.76 | 60.25 | 97.12 | 31 | +2 |
+| AGARWALEYE | Medical/Nursing Services | 581.35 | 11.86 | 3 | 4 | 5.05 | 5.26 | 90.89 | 105 | +7 | 18.96 | 12.45 | 93.84 | 71 | -11 | 14.28 | 17.46 | 90.16 | 109 | +5 | 25.02 | 21.94 | 83.11 | 177 | +13 |
+| AJMERA | Real Estate Development | 160.48 | 27.29 | 3 | 4 | 7.50 | 7.71 | 95.80 | 49 | -47 | 16.41 | 10.04 | 90.77 | 106 | -59 | 38.74 | 42.60 | 98.63 | 16 | -3 | 35.24 | 31.92 | 89.73 | 108 | -46 |
+| ALICON | Auto Parts: OEM | 1018.15 | 18.79 | 3 | 4 | -5.35 | -5.17 | 7.09 | 1062 | -274 | 18.42 | 11.94 | 93.32 | 77 | +100 | 54.35 | 58.64 | 99.73 | 4 | +2 | 54.93 | 51.12 | 95.59 | 47 | +8 |
+| ANGELONE | Investment Banks/Brokers | 376.00 | 324.28 | 3 | 4 | 7.95 | 8.16 | 96.32 | 43 | -1 | 28.04 | 21.03 | 98.33 | 20 | +21 | 33.55 | 37.26 | 97.72 | 26 | +18 | 11.34 | 8.60 | 70.15 | 312 | +63 |
+| APLLTD | Pharmaceuticals: Major | 1013.40 | 46.70 | 3 | 4 | -2.65 | -2.46 | 23.03 | 880 | -146 | 27.50 | 20.52 | 98.15 | 22 | -6 | 20.09 | 23.43 | 93.99 | 67 | -14 | 37.40 | 34.02 | 91.07 | 94 | -15 |
+| BEML | Trucks/Construction/Farm Machinery | 2346.10 | 151.69 | 3 | 4 | 14.31 | 14.53 | 99.47 | 7 | +324 | 18.74 | 12.24 | 93.76 | 72 | +414 | 19.08 | 22.39 | 93.72 | 70 | +137 | 35.06 | 31.73 | 89.64 | 109 | +152 |
+| BIL | Consumer Sundries | 1047.20 | 1.43 | 3 | 4 | 8.80 | 9.01 | 97.29 | 32 | +403 | 2.25 | -3.35 | 50.84 | 560 | +200 | 18.27 | 21.56 | 93.35 | 74 | +1 | 44.94 | 41.37 | 93.76 | 66 | +1 |
+| BOROLTD | Miscellaneous Manufacturing | 310.90 | 37.32 | 3 | 4 | -4.95 | -4.77 | 8.58 | 1045 | -26 | 30.25 | 23.12 | 98.77 | 15 | +0 | 28.55 | 32.13 | 96.90 | 35 | -1 | 40.06 | 36.62 | 92.80 | 76 | +2 |
+| FILATEX | Textiles | 112.57 | 24.63 | 3 | 4 | 1.57 | 1.77 | 74.26 | 295 | +200 | 20.06 | 13.49 | 95.07 | 57 | +63 | 52.66 | 56.91 | 99.64 | 5 | +2 | 133.35 | 127.61 | 99.62 | 5 | +1 |
+| GHCLTEXTIL | Textiles | 150.86 | 10.47 | 3 | 4 | 5.08 | 5.28 | 91.07 | 103 | +32 | 21.09 | 14.47 | 95.95 | 47 | +21 | 7.41 | 10.40 | 83.33 | 184 | -16 | 56.49 | 52.64 | 95.87 | 44 | +6 |
+| GLENMARK | Pharmaceuticals: Major | 2834.90 | 195.92 | 3 | 4 | 7.06 | 7.27 | 95.10 | 57 | +14 | 21.20 | 14.57 | 96.04 | 46 | +23 | 14.75 | 17.95 | 90.71 | 103 | +26 | 30.01 | 26.81 | 86.95 | 137 | +34 |
+| GMMPFAUDLR | Industrial Machinery | 1242.50 | 21.60 | 3 | 4 | 5.64 | 5.84 | 92.56 | 86 | -49 | -4.14 | -9.39 | 22.60 | 881 | -175 | 14.64 | 17.83 | 90.53 | 105 | -42 | 58.95 | 55.04 | 96.35 | 39 | -5 |
+| HUBTOWN | Real Estate Development | 214.54 | 79.16 | 3 | 4 | 25.69 | 25.94 | 100.00 | 1 | +3 | 16.67 | 10.28 | 91.47 | 98 | -67 | 18.97 | 22.28 | 93.53 | 72 | +0 | 5.90 | 3.29 | 62.96 | 387 | +25 |
+| ICIL | Textiles | 591.60 | 45.31 | 3 | 4 | 1.96 | 2.16 | 77.50 | 258 | -101 | 31.67 | 24.46 | 99.03 | 12 | -6 | 36.49 | 40.29 | 98.09 | 22 | +16 | 77.60 | 73.23 | 98.46 | 17 | +6 |
+| JLHL | Hospital/Nursing Management | 345.30 | 48.18 | 3 | 4 | 8.79 | 9.00 | 97.11 | 34 | +19 | 32.76 | 25.49 | 99.30 | 9 | +110 | 17.79 | 21.07 | 92.99 | 78 | +235 | -73.75 | -74.39 | 0.29 | 1040 | +0 |
+| KALYANKJIL | Specialty Stores | 659.50 | 796.61 | 3 | 4 | 3.26 | 3.46 | 84.94 | 173 | +596 | 28.06 | 21.05 | 98.42 | 19 | +10 | 15.10 | 18.30 | 90.98 | 100 | +88 | 82.13 | 77.65 | 98.66 | 15 | +2 |
+| KDDL | Other Consumer Specialties | 4520.40 | 43.59 | 3 | 4 | -2.17 | -1.98 | 28.46 | 818 | -2 | 17.10 | 10.69 | 91.91 | 93 | -29 | 16.58 | 19.83 | 92.08 | 88 | +5 | 53.44 | 49.66 | 95.30 | 50 | -12 |
+| MANAKCOAT | Steel | 165.68 | 23.79 | 3 | 4 | 5.18 | 5.39 | 91.51 | 98 | +259 | 12.07 | 5.93 | 83.20 | 192 | -141 | 37.54 | 41.37 | 98.45 | 18 | +6 | 56.51 | 52.66 | 95.97 | 43 | +5 |
+| MAXESTATES | Real Estate Development | 608.00 | 5.43 | 3 | 4 | 0.87 | 1.07 | 68.21 | 364 | -321 | 17.35 | 10.93 | 92.08 | 91 | -25 | 20.87 | 24.24 | 94.44 | 62 | +0 | 37.90 | 34.51 | 91.36 | 91 | +3 |
+| MCX | Investment Banks/Brokers | 3900.00 | 769.31 | 3 | 4 | 10.33 | 10.54 | 98.16 | 22 | +44 | 20.71 | 14.10 | 95.51 | 52 | +6 | 18.07 | 21.36 | 93.26 | 75 | +26 | 34.78 | 31.47 | 89.44 | 111 | -8 |
+| MOTILALOFS | Investment Managers | 1222.15 | 162.32 | 3 | 4 | 1.37 | 1.57 | 72.33 | 317 | -1 | 23.94 | 17.15 | 97.27 | 32 | -4 | 20.29 | 23.64 | 94.08 | 66 | +17 | 41.91 | 38.42 | 93.19 | 72 | +1 |
+| NAVINFLUOR | Chemicals: Specialty | 10456.50 | 200.37 | 3 | 4 | 3.77 | 3.97 | 87.04 | 149 | +146 | 26.58 | 19.66 | 97.89 | 25 | +29 | 21.08 | 24.45 | 94.54 | 61 | +8 | 47.47 | 43.84 | 94.43 | 59 | +2 |
+| NEOGEN | Chemicals: Specialty | 2870.90 | 40.33 | 3 | 4 | -1.69 | -1.50 | 34.68 | 747 | +177 | 26.94 | 19.99 | 97.98 | 24 | +26 | 33.29 | 37.00 | 97.63 | 27 | +16 | 52.47 | 48.72 | 95.01 | 53 | +13 |
+| PRESTIGE | Real Estate Development | 1796.70 | 120.35 | 3 | 4 | 6.95 | 7.16 | 94.83 | 60 | -46 | 24.86 | 18.02 | 97.63 | 28 | -16 | 14.44 | 17.62 | 90.44 | 106 | +5 | 32.42 | 29.16 | 88.68 | 119 | -19 |
+| RATNAVEER | Steel | 398.30 | 123.42 | 3 | 4 | 7.58 | 7.79 | 95.88 | 48 | -33 | 12.88 | 6.70 | 84.87 | 173 | -73 | 36.71 | 40.51 | 98.18 | 21 | -1 | 133.58 | 127.83 | 99.71 | 4 | -1 |
+| RAYMONDREL | Real Estate Development | 651.60 | 31.40 | 3 | 4 | 4.70 | 4.91 | 90.02 | 115 | +531 | 20.18 | 13.60 | 95.25 | 55 | +128 | 26.10 | 29.61 | 95.90 | 46 | +38 | 7.49 | 4.84 | 64.40 | 372 | +45 |
+| RKFORGE | Metal Fabrication | 781.25 | 78.32 | 3 | 4 | 4.76 | 4.97 | 90.28 | 112 | +38 | 16.22 | 9.86 | 90.33 | 111 | -62 | 3.67 | 6.55 | 77.05 | 253 | -56 | 38.85 | 35.43 | 92.23 | 82 | -8 |
+| SAILIFE | Miscellaneous Commercial Services | 1806.10 | 250.07 | 3 | 4 | 0.30 | 0.50 | 61.47 | 441 | -209 | 20.75 | 14.14 | 95.69 | 50 | -2 | 18.97 | 22.28 | 93.62 | 71 | -24 | 55.79 | 51.96 | 95.78 | 45 | -3 |
+| SAMBHV | Steel | 177.30 | 42.79 | 3 | 4 | 12.17 | 12.39 | 98.86 | 14 | +13 | 11.28 | 5.19 | 80.04 | 228 | +202 | 39.68 | 43.57 | 98.82 | 14 | +2 | 67.96 | 63.83 | 97.31 | 29 | +2 |
+| UTTAMSUGAR | Agricultural Commodities/Milling | 390.65 | 15.97 | 3 | 4 | 9.79 | 10.01 | 97.81 | 26 | +79 | 8.30 | 2.38 | 71.86 | 321 | -268 | 31.84 | 35.51 | 97.54 | 28 | +24 | 68.28 | 64.14 | 97.41 | 28 | +2 |
+| WEL | Electronic Equipment/Instruments | 93.14 | 1.68 | 3 | 4 | 12.37 | 12.59 | 98.95 | 13 | -2 | 31.96 | 24.74 | 99.12 | 11 | +7 | 15.22 | 18.42 | 91.07 | 99 | +184 | 0.20 | -2.26 | 54.03 | 480 | +26 |
 
-## 2/4 leadership (81)
+## 2/4 leadership (71)
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 2 OF 4,NSE:AARTIPHARM,NSE:ABREL,NSE:AEGISLOG,NSE:AEGISVOPAK,NSE:AGARWALEYE,NSE:ALICON,NSE:ANTHEM,NSE:ARMANFIN,NSE:ASAHIINDIA,NSE:BANKINDIA,NSE:BECTORFOOD,NSE:BIL,NSE:BRIGADE,NSE:CEMPRO,NSE:CHEMPLASTS,NSE:CNL,NSE:COMSYN,NSE:CPPLUS,NSE:DOMS,NSE:EIHOTEL,NSE:ENDURANCE,NSE:FAZE3Q,NSE:FILATEX,NSE:FORCEMOT,NSE:GHCLTEXTIL,NSE:GLAND,NSE:GLENMARK,NSE:GODREJPROP,NSE:HEGAM,NSE:HINDOILEXP,NSE:HITECH,NSE:INDORAMA,NSE:J&KBANK,NSE:JKLAKSHMI,NSE:JSWINFRA,NSE:JWL,NSE:KALYANKJIL,NSE:KOPRAN,NSE:KROSS,NSE:LINDEINDIA,NSE:LTTS,NSE:MAHABANK,NSE:MASTERTR,NSE:MFSL,NSE:MMFL,NSE:NINSYS,NSE:OAL,NSE:OBEROIRLTY,NSE:OPTIEMUS,NSE:ORIENTHOT,NSE:PARAGMILK,NSE:PDSL,NSE:PHOENIXLTD,NSE:POLICYBZR,NSE:PTCIL,NSE:PVRINOX,NSE:RAYMOND,NSE:RKFORGE,NSE:ROSSTECH,NSE:RUBICON,NSE:SAFARI,NSE:SANSERA,NSE:SAREGAMA,NSE:SBC,NSE:SBCL,NSE:SHREEJISPG,NSE:SMSPHARMA,NSE:SSWL,NSE:STYLEBAAZA,NSE:SUDEEPPHRM,NSE:SUNTECK,NSE:SWSOLAR,NSE:TEXRAIL,NSE:TFCILTD,NSE:THELEELA,NSE:TIMETECHNO,NSE:UNIMECH,NSE:WEL,NSE:WHEELS,NSE:WOCKPHARMA,NSE:ZENSARTECH
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 2 OF 4,NSE:AARTIPHARM,NSE:ABSLAMC,NSE:ACUTAAS,NSE:AEGISLOG,NSE:AEGISVOPAK,NSE:AETHER,NSE:AKUMS,NSE:ASAHIINDIA,NSE:BALAJITELE,NSE:BLUSPRING,NSE:BRIGADE,NSE:CHEMPLASTS,NSE:COMSYN,NSE:CPPLUS,NSE:DALMIASUG,NSE:DHAMPURSUG,NSE:DOMS,NSE:EMCURE,NSE:ENTERO,NSE:GATEWAY,NSE:GEOJITFSL,NSE:GLAND,NSE:GOKEX,NSE:HEGAM,NSE:HINDOILEXP,NSE:HITECH,NSE:IDEAFORGE,NSE:J&KBANK,NSE:JWL,NSE:KALAMANDIR,NSE:KRISHNADEF,NSE:KROSS,NSE:LINDEINDIA,NSE:MAHABANK,NSE:MARINE,NSE:MASTERTR,NSE:MMFL,NSE:NINSYS,NSE:ONEPOINT,NSE:OPTIEMUS,NSE:ORIENTHOT,NSE:PARAGMILK,NSE:PDSL,NSE:POLICYBZR,NSE:PTCIL,NSE:PVRINOX,NSE:RACLGEAR,NSE:ROSSTECH,NSE:RUBICON,NSE:SAFARI,NSE:SANATHAN,NSE:SANSERA,NSE:SAREGAMA,NSE:SBC,NSE:SBCL,NSE:SHREEJISPG,NSE:SHRINGARMS,NSE:SMSPHARMA,NSE:SPORTKING,NSE:SSWL,NSE:STYLEBAAZA,NSE:SUNTECK,NSE:SWSOLAR,NSE:TEXRAIL,NSE:TFCILTD,NSE:THELEELA,NSE:UNIMECH,NSE:WAAREERTL,NSE:WELCORP,NSE:WHEELS,NSE:WOCKPHARMA
 
 ```
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| AARTIPHARM | Pharmaceuticals: Major | 1022.15 | 57.44 | 2 | 4 | -0.24 | -0.21 | 65.44 | 396 | -110 | 15.90 | 8.91 | 89.46 | 121 | +16 | 20.91 | 25.53 | 94.90 | 57 | -3 | 64.37 | 59.87 | 97.02 | 32 | +3 |
-| ABREL | Textiles | 1288.30 | 35.37 | 2 | 4 | 5.10 | 5.13 | 94.05 | 69 | +82 | 22.25 | 14.88 | 96.22 | 44 | +37 | -4.96 | -1.32 | 59.24 | 449 | +70 | 2.67 | -0.14 | 57.68 | 442 | -33 |
-| AEGISLOG | Wholesale Distributors | 1211.20 | 149.56 | 2 | 4 | 3.59 | 3.62 | 90.46 | 110 | +198 | 2.39 | -3.78 | 51.23 | 556 | +151 | -4.22 | -0.56 | 60.78 | 432 | +99 | 59.26 | 54.90 | 95.97 | 43 | +1 |
-| AEGISVOPAK | Air Freight/Couriers | 276.71 | 18.88 | 2 | 4 | -2.79 | -2.76 | 37.53 | 715 | -213 | 19.37 | 12.18 | 94.20 | 67 | +23 | 2.96 | 6.90 | 76.98 | 254 | -17 | 43.37 | 39.44 | 93.47 | 69 | -3 |
-| AGARWALEYE | Medical/Nursing Services | 572.60 | 11.16 | 2 | 4 | 3.53 | 3.55 | 90.29 | 112 | -16 | 20.51 | 13.24 | 94.82 | 60 | -2 | 11.57 | 15.84 | 89.72 | 114 | -12 | 23.34 | 19.96 | 81.86 | 190 | +18 |
-| ALICON | Auto Parts: OEM | 983.90 | 18.60 | 2 | 4 | -3.40 | -3.37 | 31.15 | 788 | -511 | 13.05 | 6.23 | 84.53 | 177 | -70 | 47.87 | 53.52 | 99.55 | 6 | +0 | 49.27 | 45.18 | 94.82 | 55 | -5 |
-| ANTHEM | Biotechnology | 975.50 | 35.74 | 2 | 4 | 4.13 | 4.16 | 92.48 | 87 | -21 | 17.23 | 10.16 | 91.04 | 103 | +39 | 9.23 | 13.41 | 86.08 | 154 | +11 | 30.01 | 26.45 | 87.04 | 136 | +10 |
-| ARMANFIN | Finance/Rental/Leasing | 1658.60 | 6.59 | 2 | 4 | 6.57 | 6.60 | 96.76 | 38 | +135 | 20.12 | 12.88 | 94.64 | 62 | +84 | -16.26 | -13.06 | 24.39 | 832 | +109 | 5.51 | 2.62 | 61.71 | 400 | +67 |
-| ASAHIINDIA | Home Furnishings | 1189.85 | 21.41 | 2 | 4 | -0.18 | -0.16 | 66.14 | 388 | -243 | 29.46 | 21.65 | 98.42 | 19 | -4 | 24.98 | 29.76 | 96.27 | 42 | -2 | 31.69 | 28.08 | 88.00 | 126 | -13 |
-| BANKINDIA | Major Banks | 160.29 | 150.38 | 2 | 4 | -0.99 | -0.97 | 58.79 | 472 | -187 | 20.61 | 13.34 | 95.08 | 57 | -3 | 13.21 | 17.54 | 91.08 | 99 | +31 | 14.56 | 11.42 | 72.74 | 285 | -35 |
-| BECTORFOOD | Food: Specialty/Candy | 227.02 | 22.85 | 2 | 4 | 4.44 | 4.47 | 93.09 | 80 | +182 | 24.85 | 17.32 | 97.45 | 30 | +56 | 0.05 | 3.88 | 69.88 | 332 | +125 | 32.80 | 29.16 | 88.68 | 119 | +31 |
-| BIL | Consumer Sundries | 1002.90 | 1.40 | 2 | 4 | -0.58 | -0.56 | 62.03 | 435 | +110 | -1.47 | -7.42 | 33.30 | 760 | +96 | 17.68 | 22.19 | 93.27 | 75 | +16 | 43.81 | 39.87 | 93.67 | 67 | +42 |
-| BRIGADE | Real Estate Development | 628.50 | 31.46 | 2 | 4 | 11.00 | 11.03 | 99.04 | 12 | +100 | 16.75 | 9.71 | 90.42 | 110 | +263 | -4.17 | -0.50 | 61.06 | 429 | +115 | -3.93 | -6.56 | 47.70 | 546 | +101 |
-| CEMPRO | Engineering & Construction | 1425.00 | 52.25 | 2 | 4 | 3.37 | 3.40 | 89.76 | 118 | -11 | 15.83 | 8.85 | 89.28 | 123 | -22 | 16.27 | 20.72 | 92.36 | 85 | +40 | 39.04 | 35.23 | 91.75 | 87 | +12 |
-| CHEMPLASTS | Chemicals: Major Diversified | 252.20 | 20.73 | 2 | 4 | 0.87 | 0.90 | 76.47 | 270 | +53 | 28.41 | 20.67 | 98.33 | 20 | -8 | 42.87 | 48.34 | 99.27 | 9 | +7 | 21.57 | 18.23 | 80.23 | 207 | +38 |
-| CNL | Electronics Distributors | 1295.60 | 4.95 | 2 | 4 | -6.72 | -6.70 | 8.40 | 1048 | -370 | 19.76 | 12.54 | 94.55 | 63 | -27 | 1.25 | 5.12 | 72.88 | 299 | -150 | 105.67 | 100.03 | 99.23 | 9 | +0 |
-| COMSYN | Containers/Packaging | 276.35 | 16.24 | 2 | 3 | 7.68 | 7.71 | 97.64 | 28 | +13 | 31.35 | 23.42 | 98.86 | 14 | +4 | -6.98 | -3.43 | 53.23 | 515 | -172 | N/A | N/A | N/A | N/A | N/A |
-| CPPLUS | Electronics/Appliances | 4235.00 | 95.27 | 2 | 4 | 5.26 | 5.29 | 94.49 | 64 | -16 | 6.43 | 0.02 | 66.70 | 380 | +24 | 18.76 | 23.30 | 93.99 | 67 | +0 | 25.70 | 22.25 | 83.30 | 175 | -50 |
-| DOMS | Office Equipment/Supplies | 2299.50 | 11.10 | 2 | 4 | 9.28 | 9.31 | 98.60 | 17 | +5 | 23.73 | 16.27 | 96.92 | 36 | +44 | 3.00 | 6.94 | 77.16 | 252 | +35 | 6.72 | 3.80 | 63.72 | 379 | +75 |
-| EIHOTEL | Hotels/Resorts/Cruise lines | 332.70 | 15.02 | 2 | 4 | 7.32 | 7.35 | 97.20 | 33 | -8 | 13.84 | 6.98 | 86.38 | 156 | -40 | 17.85 | 22.36 | 93.45 | 73 | +21 | 14.61 | 11.47 | 72.94 | 283 | -44 |
-| ENDURANCE | Metal Fabrication | 2696.80 | 24.37 | 2 | 4 | 3.97 | 4.00 | 91.95 | 93 | -56 | 17.32 | 10.25 | 91.21 | 101 | +29 | -6.07 | -2.48 | 55.78 | 487 | +109 | 2.33 | -0.47 | 57.29 | 446 | +54 |
-| FAZE3Q | Textiles | 550.85 | 15.95 | 2 | 4 | -6.19 | -6.16 | 11.11 | 1017 | +74 | 33.33 | 25.29 | 99.30 | 9 | +1 | 12.99 | 17.32 | 90.99 | 100 | +4 | 2.75 | -0.06 | 57.87 | 440 | +18 |
-| FILATEX | Textiles | 110.05 | 23.96 | 2 | 4 | -1.14 | -1.11 | 56.78 | 495 | -224 | 16.03 | 9.03 | 89.54 | 120 | +0 | 46.40 | 52.00 | 99.45 | 7 | +3 | 127.89 | 121.65 | 99.52 | 6 | -3 |
-| FORCEMOT | Motor Vehicles | 20362.00 | 142.23 | 2 | 4 | -0.40 | -0.37 | 64.30 | 409 | -159 | 19.12 | 11.93 | 93.94 | 70 | +32 | 16.18 | 20.63 | 91.99 | 89 | -20 | 16.34 | 13.15 | 75.34 | 258 | +18 |
-| GHCLTEXTIL | Textiles | 146.08 | 10.02 | 2 | 4 | 2.89 | 2.92 | 88.28 | 135 | -93 | 19.18 | 11.99 | 94.11 | 68 | -17 | 8.39 | 12.54 | 84.80 | 168 | -46 | 52.25 | 48.07 | 95.30 | 50 | +2 |
-| GLAND | Pharmaceuticals: Major | 3370.80 | 121.84 | 2 | 4 | 2.37 | 2.39 | 86.00 | 161 | -28 | 10.55 | 3.89 | 78.65 | 244 | -55 | 16.81 | 21.27 | 92.81 | 80 | -3 | 51.00 | 46.86 | 95.11 | 52 | +6 |
-| GLENMARK | Pharmaceuticals: Major | 2740.20 | 192.45 | 2 | 4 | 5.05 | 5.08 | 93.88 | 71 | +110 | 19.14 | 11.95 | 94.02 | 69 | +2 | 10.49 | 14.72 | 88.35 | 129 | +29 | 26.04 | 22.59 | 83.69 | 171 | +5 |
-| GODREJPROP | Real Estate Development | 2004.30 | 119.52 | 2 | 4 | 6.56 | 6.58 | 96.68 | 39 | +163 | 26.29 | 18.68 | 97.89 | 25 | +30 | -0.52 | 3.29 | 69.06 | 341 | +110 | 17.57 | 14.35 | 76.49 | 246 | +69 |
-| HEGAM | Electronic Components | 280.99 | 98.35 | 2 | 2 | 6.25 | 6.28 | 95.98 | 47 | +743 | 22.84 | 15.43 | 96.75 | 38 | +31 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| HINDOILEXP | Integrated Oil | 213.01 | 40.91 | 2 | 4 | -0.69 | -0.67 | 60.98 | 447 | +340 | 39.16 | 30.77 | 99.65 | 5 | +1 | 31.44 | 36.47 | 98.00 | 23 | -5 | 25.51 | 22.07 | 83.21 | 176 | -32 |
-| HITECH | Steel | 82.39 | 14.40 | 2 | 4 | 7.97 | 8.00 | 97.99 | 24 | -7 | 27.95 | 20.24 | 98.24 | 21 | +1 | 4.36 | 8.35 | 79.89 | 222 | +77 | -6.07 | -8.64 | 43.95 | 585 | -34 |
-| INDORAMA | Textiles | 74.14 | 3.73 | 2 | 4 | -3.46 | -3.44 | 30.27 | 798 | -254 | 0.01 | -6.02 | 40.25 | 681 | +141 | 12.47 | 16.77 | 90.17 | 109 | -38 | 69.35 | 64.71 | 97.70 | 25 | -6 |
-| J&KBANK | Regional Banks | 162.82 | 55.49 | 2 | 4 | 11.12 | 11.15 | 99.21 | 10 | +5 | 33.65 | 25.59 | 99.38 | 8 | +22 | 10.25 | 14.47 | 87.81 | 135 | +91 | 9.53 | 6.53 | 66.99 | 345 | -4 |
-| JKLAKSHMI | Construction Materials | 536.45 | 7.65 | 2 | 4 | 3.94 | 3.97 | 91.78 | 95 | -48 | 16.75 | 9.71 | 90.51 | 109 | +29 | 1.05 | 4.91 | 72.25 | 306 | +28 | -11.65 | -14.07 | 32.25 | 707 | -19 |
-| JSWINFRA | Engineering & Construction | 365.65 | 63.53 | 2 | 4 | 8.45 | 8.48 | 98.16 | 22 | +52 | 16.15 | 9.15 | 89.72 | 118 | +79 | 7.54 | 11.66 | 84.08 | 176 | +36 | 35.28 | 31.57 | 90.12 | 104 | +32 |
-| JWL | Trucks/Construction/Farm Machinery | 238.69 | 169.75 | 2 | 4 | 22.10 | 22.14 | 99.83 | 3 | +9 | 31.84 | 23.89 | 99.12 | 11 | +17 | -0.77 | 3.02 | 68.33 | 349 | +223 | -14.86 | -17.19 | 25.43 | 778 | +105 |
-| KALYANKJIL | Specialty Stores | 639.80 | 778.23 | 2 | 4 | -3.21 | -3.18 | 32.81 | 769 | -103 | 25.45 | 17.89 | 97.54 | 29 | -8 | 6.46 | 10.53 | 82.98 | 188 | +45 | 81.25 | 76.28 | 98.46 | 17 | -1 |
-| KOPRAN | Pharmaceuticals: Major | 281.16 | 24.98 | 2 | 3 | 5.28 | 5.31 | 94.58 | 63 | -42 | 11.37 | 4.66 | 80.84 | 219 | -90 | 29.07 | 34.01 | 97.27 | 31 | -23 | N/A | N/A | N/A | N/A | N/A |
-| KROSS | Auto Parts: OEM | 272.60 | 65.32 | 2 | 4 | -4.50 | -4.48 | 21.70 | 896 | +119 | -7.50 | -13.08 | 14.85 | 970 | +21 | 28.16 | 33.06 | 97.09 | 33 | +8 | 43.00 | 39.08 | 93.28 | 71 | +12 |
-| LINDEINDIA | Chemicals: Specialty | 6998.50 | 29.04 | 2 | 4 | 3.80 | 3.83 | 91.08 | 103 | +176 | 22.26 | 14.88 | 96.31 | 43 | -1 | 9.60 | 13.79 | 86.81 | 146 | +28 | -1.58 | -4.27 | 51.34 | 508 | -33 |
-| LTTS | Miscellaneous Commercial Services | 4245.20 | 187.74 | 2 | 4 | 5.18 | 5.21 | 94.14 | 68 | +145 | 3.84 | -2.42 | 57.29 | 487 | +172 | 17.65 | 22.15 | 93.18 | 76 | -6 | 28.67 | 25.15 | 85.99 | 147 | +78 |
-| MAHABANK | Major Banks | 94.20 | 158.47 | 2 | 4 | -3.86 | -3.83 | 25.81 | 849 | -675 | 17.82 | 10.72 | 91.74 | 95 | -56 | 14.78 | 19.17 | 91.54 | 94 | -28 | 18.19 | 14.95 | 77.16 | 239 | -66 |
-| MASTERTR | Investment Banks/Brokers | 90.06 | 2.89 | 2 | 4 | 6.07 | 6.09 | 95.54 | 52 | -2 | 18.08 | 10.96 | 92.18 | 90 | +18 | 9.47 | 13.66 | 86.72 | 147 | +32 | 11.01 | 7.97 | 69.00 | 324 | +31 |
-| MFSL | Life/Health Insurance | 1453.70 | 135.74 | 2 | 4 | 3.91 | 3.94 | 91.51 | 98 | +144 | 18.71 | 11.55 | 93.32 | 77 | +27 | -7.59 | -4.06 | 51.68 | 532 | -5 | -6.79 | -9.34 | 42.42 | 601 | +51 |
-| MMFL | Metal Fabrication | 602.10 | 21.05 | 2 | 4 | -6.77 | -6.74 | 8.05 | 1052 | +27 | 24.72 | 17.20 | 97.28 | 32 | +11 | -7.38 | -3.84 | 52.32 | 525 | -52 | 37.01 | 33.26 | 91.27 | 92 | +4 |
-| NINSYS | Packaged Software | 984.80 | 0.93 | 2 | 3 | 5.34 | 5.37 | 94.75 | 61 | +25 | 14.05 | 7.17 | 86.73 | 152 | +86 | 37.93 | 43.20 | 98.82 | 14 | +5 | N/A | N/A | N/A | N/A | N/A |
-| OAL | Chemicals: Specialty | 504.45 | 16.69 | 2 | 4 | 17.15 | 17.18 | 99.48 | 7 | -4 | -18.99 | -23.88 | 1.85 | 1118 | -23 | 8.74 | 12.90 | 85.44 | 161 | -2 | 62.25 | 57.81 | 96.64 | 36 | -10 |
-| OBEROIRLTY | Real Estate Development | 1905.20 | 64.22 | 2 | 4 | 5.26 | 5.29 | 94.40 | 65 | +58 | 19.00 | 11.82 | 93.67 | 73 | +74 | 1.99 | 5.89 | 74.89 | 277 | +31 | 16.36 | 13.17 | 75.43 | 257 | +59 |
-| OPTIEMUS | Electronics Distributors | 755.35 | 27.77 | 2 | 4 | -7.34 | -7.31 | 6.12 | 1074 | +46 | 2.68 | -3.51 | 52.72 | 539 | +107 | 31.56 | 36.59 | 98.09 | 22 | +12 | 82.45 | 77.45 | 98.56 | 16 | +2 |
-| ORIENTHOT | Hotels/Resorts/Cruise lines | 177.85 | 13.19 | 2 | 4 | 0.49 | 0.51 | 73.32 | 306 | -154 | 11.49 | 4.77 | 81.46 | 212 | -36 | 27.93 | 32.82 | 96.91 | 35 | -9 | 75.95 | 71.13 | 98.08 | 21 | -4 |
-| PARAGMILK | Food: Meat/Fish/Dairy | 315.44 | 80.19 | 2 | 4 | -8.17 | -8.14 | 4.37 | 1094 | -910 | 31.87 | 23.92 | 99.21 | 10 | -2 | 23.98 | 28.73 | 95.63 | 49 | -40 | 29.29 | 25.75 | 86.28 | 144 | -69 |
-| PDSL | Apparel/Footwear | 411.05 | 26.96 | 2 | 4 | -0.62 | -0.59 | 61.85 | 437 | -298 | 22.46 | 15.08 | 96.57 | 40 | -14 | 11.67 | 15.94 | 89.81 | 113 | -7 | 35.53 | 31.81 | 90.40 | 101 | -17 |
-| PHOENIXLTD | Real Estate Development | 2291.00 | 99.89 | 2 | 4 | 2.39 | 2.42 | 86.26 | 158 | -29 | 20.62 | 13.35 | 95.17 | 56 | +16 | 20.58 | 25.19 | 94.72 | 59 | +3 | 33.95 | 30.27 | 89.54 | 110 | +0 |
-| POLICYBZR | Internet Software/Services | 1170.00 | 359.03 | 2 | 4 | 15.27 | 15.30 | 99.39 | 8 | +16 | 18.42 | 11.28 | 92.97 | 81 | +161 | -37.60 | -35.21 | 0.91 | 1090 | +1 | -25.88 | -27.91 | 10.17 | 937 | +46 |
-| PTCIL | Metal Fabrication | 24875.00 | 43.54 | 2 | 4 | 4.32 | 4.35 | 92.83 | 83 | +96 | 3.62 | -2.62 | 56.33 | 498 | +103 | 12.49 | 16.79 | 90.35 | 107 | +31 | 31.48 | 27.88 | 87.81 | 128 | +37 |
-| PVRINOX | Movies/Entertainment | 1638.20 | 126.84 | 2 | 4 | -3.57 | -3.54 | 28.87 | 814 | -375 | 13.35 | 6.51 | 85.24 | 169 | -52 | 35.65 | 40.84 | 98.54 | 17 | -6 | 67.35 | 62.77 | 97.50 | 27 | -6 |
-| RAYMOND | Textiles | 1183.20 | 67.18 | 2 | 4 | -1.01 | -0.98 | 58.44 | 476 | +155 | 11.61 | 4.88 | 81.99 | 206 | +70 | 87.26 | 94.42 | 100.00 | 1 | +0 | 129.77 | 123.47 | 99.62 | 5 | +2 |
-| RKFORGE | Metal Fabrication | 787.85 | 78.27 | 2 | 4 | 2.65 | 2.68 | 86.96 | 150 | +480 | 21.26 | 13.95 | 95.78 | 49 | +26 | 5.95 | 10.00 | 82.17 | 197 | +129 | 41.98 | 38.09 | 92.99 | 74 | +50 |
-| ROSSTECH | Telecommunications Equipment | 1454.40 | 16.18 | 2 | 4 | -6.64 | -6.61 | 8.84 | 1043 | +30 | 2.49 | -3.69 | 51.67 | 551 | +196 | 31.03 | 36.05 | 97.82 | 25 | +7 | 35.44 | 31.73 | 90.31 | 102 | +29 |
-| RUBICON | Biotechnology | 1851.70 | 31.69 | 2 | 3 | 7.51 | 7.54 | 97.46 | 30 | +120 | 18.40 | 11.26 | 92.88 | 82 | +98 | 1.76 | 5.66 | 73.98 | 287 | +157 | N/A | N/A | N/A | N/A | N/A |
-| SAFARI | Other Consumer Specialties | 1563.70 | 12.94 | 2 | 4 | 11.30 | 11.33 | 99.30 | 9 | +2 | 27.54 | 19.85 | 98.15 | 22 | +11 | 3.49 | 7.45 | 78.16 | 241 | +23 | -0.64 | -3.36 | 52.59 | 495 | +69 |
-| SANSERA | Auto Parts: OEM | 4685.80 | 84.40 | 2 | 4 | -0.74 | -0.72 | 60.54 | 452 | -351 | 8.72 | 2.16 | 72.76 | 311 | -25 | 16.62 | 21.08 | 92.72 | 81 | -29 | 60.76 | 56.35 | 96.26 | 40 | -1 |
-| SAREGAMA | Movies/Entertainment | 620.95 | 104.15 | 2 | 4 | -7.49 | -7.47 | 5.69 | 1079 | -3 | 18.51 | 11.37 | 93.15 | 79 | -30 | 29.39 | 34.34 | 97.45 | 29 | +8 | 34.32 | 30.64 | 89.64 | 109 | -4 |
-| SBC | Wholesale Distributors | 68.35 | 77.37 | 2 | 4 | -0.20 | -0.18 | 65.70 | 393 | -23 | 4.38 | -1.91 | 59.23 | 465 | +58 | 62.16 | 68.36 | 99.82 | 3 | +0 | 86.04 | 80.94 | 98.66 | 15 | +0 |
-| SBCL | Other Metals/Minerals | 1002.50 | 23.99 | 2 | 4 | 3.61 | 3.64 | 90.55 | 109 | +595 | -3.52 | -9.34 | 25.75 | 846 | +110 | -6.31 | -2.72 | 55.14 | 494 | +137 | 38.49 | 34.69 | 91.55 | 89 | +62 |
-| SHREEJISPG | Other Transportation | 910.65 | 74.85 | 2 | 4 | 0.48 | 0.51 | 73.14 | 308 | +19 | 8.37 | 1.84 | 71.79 | 322 | +7 | 41.27 | 46.68 | 99.18 | 10 | +3 | 96.81 | 91.42 | 99.04 | 11 | +0 |
-| SMSPHARMA | Pharmaceuticals: Major | 485.85 | 27.51 | 2 | 4 | 0.93 | 0.96 | 77.52 | 258 | +248 | 2.19 | -3.97 | 50.18 | 568 | -198 | 30.66 | 35.66 | 97.63 | 27 | -4 | 36.28 | 32.55 | 90.79 | 97 | +35 |
-| SSWL | Auto Parts: OEM | 474.25 | 143.46 | 2 | 4 | -13.52 | -13.50 | 0.87 | 1134 | -33 | -9.94 | -15.37 | 9.31 | 1033 | -97 | 55.16 | 61.10 | 99.73 | 4 | -2 | 118.35 | 112.36 | 99.42 | 7 | -2 |
-| STYLEBAAZA | Apparel/Footwear Retail | 514.80 | 83.74 | 2 | 3 | -1.80 | -1.78 | 48.03 | 595 | +309 | 44.18 | 35.49 | 99.74 | 4 | +1 | 28.43 | 33.34 | 97.18 | 32 | +7 | N/A | N/A | N/A | N/A | N/A |
-| SUDEEPPHRM | Pharmaceuticals: Other | 1302.60 | 29.94 | 2 | 2 | 7.47 | 7.50 | 97.38 | 31 | +89 | 16.41 | 9.39 | 90.07 | 114 | -68 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SUNTECK | Real Estate Development | 328.80 | 26.11 | 2 | 4 | 4.95 | 4.98 | 93.70 | 73 | +159 | 20.79 | 13.51 | 95.25 | 55 | +128 | 8.60 | 12.76 | 85.17 | 164 | +64 | 16.84 | 13.64 | 75.82 | 253 | +83 |
-| SWSOLAR | Engineering & Construction | 170.50 | 23.29 | 2 | 4 | 8.81 | 8.84 | 98.25 | 21 | +33 | 18.30 | 11.16 | 92.62 | 85 | +4 | -9.95 | -6.50 | 43.40 | 623 | +125 | -12.45 | -14.85 | 30.71 | 723 | -16 |
-| TEXRAIL | Trucks/Construction/Farm Machinery | 118.05 | 23.98 | 2 | 4 | 6.39 | 6.42 | 96.24 | 44 | +94 | 17.11 | 10.05 | 90.95 | 104 | +113 | 8.35 | 12.50 | 84.71 | 169 | +73 | 14.78 | 11.63 | 73.13 | 281 | +77 |
-| TFCILTD | Finance/Rental/Leasing | 174.94 | 161.68 | 2 | 4 | 2.80 | 2.83 | 87.75 | 141 | +52 | 11.47 | 4.75 | 81.37 | 213 | +2 | 25.03 | 29.81 | 96.36 | 41 | +5 | 130.46 | 124.14 | 99.71 | 4 | +2 |
-| THELEELA | Hotels/Resorts/Cruise lines | 685.85 | 35.40 | 2 | 4 | -1.41 | -1.38 | 53.37 | 534 | +43 | 13.33 | 6.49 | 85.15 | 170 | -12 | 20.24 | 24.84 | 94.54 | 61 | -11 | 61.68 | 57.25 | 96.35 | 39 | -12 |
-| TIMETECHNO | Containers/Packaging | 199.46 | 49.80 | 2 | 4 | 3.94 | 3.97 | 91.86 | 94 | +50 | 23.19 | 15.76 | 96.84 | 37 | +42 | 6.55 | 10.63 | 83.17 | 186 | +11 | 16.46 | 13.27 | 75.53 | 256 | +28 |
-| UNIMECH | Industrial Machinery | 1759.40 | 34.76 | 2 | 4 | -5.26 | -5.23 | 16.10 | 960 | -95 | 7.40 | 0.93 | 69.07 | 353 | +229 | 18.08 | 22.60 | 93.63 | 71 | +17 | 68.72 | 64.10 | 97.60 | 26 | -6 |
-| WEL | Electronic Equipment/Instruments | 91.47 | 1.52 | 2 | 4 | 11.06 | 11.09 | 99.13 | 11 | +3 | 29.80 | 21.97 | 98.51 | 18 | +9 | 1.84 | 5.73 | 74.34 | 283 | +427 | -1.40 | -4.10 | 51.54 | 506 | +91 |
-| WHEELS | Auto Parts: OEM | 2108.50 | 22.58 | 2 | 4 | -5.25 | -5.23 | 16.27 | 958 | +153 | -6.52 | -12.16 | 16.87 | 947 | +46 | 36.35 | 41.56 | 98.73 | 15 | +7 | 40.78 | 36.92 | 92.42 | 80 | +20 |
-| WOCKPHARMA | Pharmaceuticals: Major | 2233.70 | 136.74 | 2 | 4 | 2.14 | 2.16 | 84.60 | 177 | +8 | 16.74 | 9.70 | 90.33 | 111 | +159 | 18.58 | 23.12 | 93.90 | 68 | +134 | 7.71 | 4.75 | 65.26 | 363 | +27 |
-| ZENSARTECH | Packaged Software | 554.50 | 68.53 | 2 | 4 | 7.54 | 7.57 | 97.55 | 29 | +273 | 11.57 | 4.84 | 81.81 | 208 | +232 | 20.45 | 25.06 | 94.63 | 60 | +48 | 8.78 | 5.80 | 66.51 | 350 | +83 |
+| AARTIPHARM | Pharmaceuticals: Major | 1015.15 | 57.86 | 2 | 4 | 2.47 | 2.67 | 81.26 | 215 | +181 | 9.43 | 3.44 | 74.85 | 287 | -166 | 17.33 | 20.60 | 92.81 | 80 | -23 | 57.69 | 53.81 | 96.16 | 41 | -9 |
+| ABSLAMC | Internet Software/Services | 982.70 | 19.81 | 2 | 4 | 5.05 | 5.25 | 90.81 | 106 | -57 | 16.31 | 9.94 | 90.59 | 108 | +35 | -4.51 | -1.85 | 56.56 | 478 | -7 | -4.98 | -7.32 | 46.35 | 560 | -13 |
+| ACUTAAS | Pharmaceuticals: Major | 4075.00 | 278.67 | 2 | 4 | 6.30 | 6.51 | 93.96 | 70 | +83 | 2.47 | -3.14 | 52.07 | 546 | -282 | 28.37 | 31.95 | 96.72 | 37 | -7 | 28.76 | 25.60 | 85.80 | 149 | -15 |
+| AEGISLOG | Wholesale Distributors | 1297.90 | 152.98 | 2 | 4 | 9.55 | 9.76 | 97.64 | 28 | +82 | 10.11 | 4.09 | 76.61 | 267 | +289 | 6.45 | 9.41 | 81.69 | 202 | +230 | 71.73 | 67.50 | 97.60 | 26 | +17 |
+| AEGISVOPAK | Air Freight/Couriers | 284.47 | 18.66 | 2 | 4 | -2.02 | -1.83 | 30.39 | 796 | -81 | 20.44 | 13.84 | 95.43 | 53 | +14 | 5.32 | 8.25 | 80.05 | 220 | +34 | 48.52 | 44.86 | 94.53 | 58 | +11 |
+| AETHER | Chemicals: Major Diversified | 1761.40 | 53.87 | 2 | 4 | 8.71 | 8.92 | 96.94 | 36 | +296 | 11.41 | 5.31 | 80.65 | 221 | +142 | 4.61 | 7.53 | 79.05 | 231 | +86 | 54.08 | 50.28 | 95.39 | 49 | +5 |
+| AKUMS | Biotechnology | 756.75 | 20.59 | 2 | 4 | 8.70 | 8.91 | 96.85 | 37 | +135 | 2.12 | -3.47 | 50.40 | 565 | +67 | -2.86 | -0.16 | 61.11 | 428 | +60 | 36.23 | 32.88 | 90.50 | 100 | +7 |
+| ASAHIINDIA | Home Furnishings | 1158.20 | 21.42 | 2 | 4 | -0.46 | -0.27 | 50.88 | 562 | -174 | 27.04 | 20.09 | 98.07 | 23 | -4 | 21.76 | 25.15 | 94.99 | 56 | -14 | 29.93 | 26.73 | 86.76 | 139 | -13 |
+| BALAJITELE | Movies/Entertainment | 103.55 | 1.93 | 2 | 4 | 7.42 | 7.63 | 95.53 | 52 | +81 | 18.55 | 12.06 | 93.49 | 75 | +0 | 12.24 | 15.36 | 88.62 | 126 | +8 | 17.70 | 14.80 | 76.97 | 241 | +51 |
+| BLUSPRING | Miscellaneous Commercial Services | 140.56 | 5.20 | 2 | 4 | -10.74 | -10.56 | 0.79 | 1134 | -5 | -8.27 | -13.30 | 11.61 | 1006 | -40 | 15.72 | 18.94 | 91.44 | 95 | +20 | 67.73 | 63.60 | 97.22 | 30 | -12 |
+| BRIGADE | Real Estate Development | 617.85 | 32.46 | 2 | 4 | 6.83 | 7.04 | 94.75 | 61 | -49 | 16.14 | 9.78 | 90.15 | 113 | -3 | -4.22 | -1.56 | 57.47 | 468 | -39 | -4.85 | -7.19 | 46.64 | 557 | -11 |
+| CHEMPLASTS | Chemicals: Major Diversified | 253.62 | 20.57 | 2 | 4 | 1.42 | 1.62 | 73.03 | 309 | -39 | 25.94 | 19.05 | 97.71 | 27 | -7 | 48.88 | 53.03 | 99.45 | 7 | +2 | 23.08 | 20.05 | 81.67 | 192 | +15 |
+| COMSYN | Containers/Packaging | 271.93 | 15.95 | 2 | 3 | 5.61 | 5.81 | 92.38 | 88 | -60 | 28.94 | 21.88 | 98.50 | 18 | -4 | -10.65 | -8.17 | 38.52 | 676 | -161 | N/A | N/A | N/A | N/A | N/A |
+| CPPLUS | Electronics/Appliances | 4307.20 | 93.28 | 2 | 4 | 6.98 | 7.19 | 94.92 | 59 | +5 | 9.00 | 3.03 | 74.05 | 296 | +84 | 15.57 | 18.79 | 91.35 | 96 | -29 | 21.75 | 18.76 | 80.81 | 201 | -26 |
+| DALMIASUG | Agricultural Commodities/Milling | 486.05 | 19.03 | 2 | 4 | 8.60 | 8.82 | 96.76 | 38 | +627 | 15.51 | 9.18 | 89.45 | 121 | +109 | 3.89 | 6.78 | 77.50 | 248 | +261 | 46.78 | 43.16 | 94.34 | 60 | +38 |
+| DHAMPURSUG | Agricultural Commodities/Milling | 195.46 | 44.52 | 2 | 4 | 20.45 | 20.68 | 99.91 | 2 | +18 | 15.36 | 9.05 | 89.09 | 125 | +173 | 13.10 | 16.25 | 89.16 | 120 | +203 | 40.08 | 36.64 | 92.90 | 75 | +57 |
+| DOMS | Office Equipment/Supplies | 2282.90 | 11.35 | 2 | 4 | 6.09 | 6.30 | 93.52 | 75 | -58 | 24.60 | 17.78 | 97.54 | 29 | +7 | 2.42 | 5.27 | 74.23 | 284 | -32 | 7.57 | 4.93 | 64.49 | 371 | +8 |
+| EMCURE | Pharmaceuticals: Major | 2308.60 | 49.89 | 2 | 4 | -1.25 | -1.06 | 40.46 | 681 | -241 | 23.79 | 17.01 | 97.19 | 33 | +1 | 25.07 | 28.55 | 95.63 | 49 | -9 | 32.28 | 29.03 | 88.58 | 120 | -27 |
+| ENTERO | Medical Distributors | 1823.40 | 43.08 | 2 | 4 | -4.12 | -3.93 | 11.38 | 1013 | +53 | 16.94 | 10.54 | 91.73 | 95 | +46 | 1.02 | 3.83 | 71.04 | 319 | -18 | 60.02 | 56.08 | 96.45 | 38 | -3 |
+| GATEWAY | Railroads | 51.71 | 8.15 | 2 | 4 | 10.02 | 10.24 | 97.99 | 24 | N/A | 17.95 | 11.50 | 92.79 | 83 | N/A | -2.18 | 0.55 | 63.39 | 403 | N/A | -7.53 | -9.80 | 40.98 | 616 | N/A |
+| GEOJITFSL | Investment Banks/Brokers | 78.27 | 12.93 | 2 | 4 | 10.29 | 10.50 | 98.07 | 23 | +825 | 16.58 | 10.20 | 91.20 | 101 | +465 | -5.95 | -3.33 | 53.28 | 514 | +338 | 4.47 | 1.90 | 60.94 | 408 | +156 |
+| GLAND | Pharmaceuticals: Major | 3362.00 | 123.26 | 2 | 4 | 0.90 | 1.10 | 68.56 | 360 | -199 | 9.35 | 3.37 | 74.67 | 289 | -45 | 16.94 | 20.19 | 92.35 | 85 | -5 | 51.48 | 47.75 | 94.72 | 56 | -4 |
+| GOKEX | Apparel/Footwear | 793.65 | 40.60 | 2 | 4 | 4.76 | 4.96 | 90.19 | 113 | +277 | 22.83 | 16.10 | 96.83 | 37 | +123 | 1.68 | 4.51 | 72.77 | 300 | +167 | 13.94 | 11.14 | 72.65 | 286 | +127 |
+| HEGAM | Electronic Components | 285.79 | 105.38 | 2 | 2 | 11.03 | 11.25 | 98.42 | 19 | +28 | 17.43 | 11.00 | 92.17 | 90 | -52 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| HINDOILEXP | Integrated Oil | 218.15 | 41.08 | 2 | 4 | 0.61 | 0.81 | 65.24 | 398 | +49 | 42.27 | 34.48 | 99.74 | 4 | +1 | 29.08 | 32.68 | 96.99 | 34 | -11 | 30.29 | 27.08 | 87.52 | 131 | +45 |
+| HITECH | Steel | 82.96 | 14.44 | 2 | 4 | 9.97 | 10.18 | 97.90 | 25 | -1 | 22.45 | 15.75 | 96.75 | 38 | -17 | 4.13 | 7.03 | 78.05 | 242 | -20 | -7.52 | -9.80 | 41.07 | 615 | -30 |
+| IDEAFORGE | Aerospace & Defense | 789.20 | 23.77 | 2 | 3 | 13.90 | 14.12 | 99.39 | 8 | +26 | 16.68 | 10.29 | 91.56 | 97 | +247 | 0.71 | 3.52 | 70.49 | 325 | +223 | N/A | N/A | N/A | N/A | N/A |
+| J&KBANK | Regional Banks | 166.39 | 59.82 | 2 | 4 | 11.13 | 11.34 | 98.51 | 18 | -8 | 36.11 | 28.66 | 99.56 | 6 | +2 | 12.90 | 16.04 | 88.89 | 123 | +12 | 12.67 | 9.90 | 71.59 | 297 | +48 |
+| JWL | Trucks/Construction/Farm Machinery | 224.84 | 188.12 | 2 | 4 | 17.58 | 17.81 | 99.65 | 5 | -2 | 16.43 | 10.06 | 91.03 | 103 | -92 | -7.23 | -4.65 | 49.54 | 555 | -206 | -19.66 | -21.63 | 17.66 | 859 | -81 |
+| KALAMANDIR | Apparel/Footwear Retail | 94.93 | 19.04 | 2 | 4 | 7.48 | 7.69 | 95.71 | 50 | -18 | 44.56 | 36.64 | 99.91 | 2 | +1 | 10.87 | 13.96 | 87.43 | 139 | -34 | -9.99 | -12.21 | 36.18 | 666 | -21 |
+| KRISHNADEF | Aerospace & Defense | 1284.60 | 14.99 | 2 | 4 | 5.92 | 6.13 | 93.35 | 77 | +951 | 11.68 | 5.56 | 81.53 | 211 | +263 | 28.24 | 31.81 | 96.63 | 38 | +27 | 8.00 | 5.35 | 65.16 | 364 | +32 |
+| KROSS | Auto Parts: OEM | 273.75 | 64.09 | 2 | 4 | -1.63 | -1.44 | 35.64 | 736 | +160 | -9.01 | -13.99 | 10.20 | 1022 | -52 | 30.96 | 34.61 | 97.45 | 29 | +4 | 43.00 | 39.48 | 93.47 | 69 | +2 |
+| LINDEINDIA | Chemicals: Specialty | 6983.00 | 28.96 | 2 | 4 | 6.25 | 6.46 | 93.78 | 72 | +31 | 22.12 | 15.44 | 96.57 | 40 | +3 | 9.57 | 12.62 | 85.70 | 158 | -12 | -1.22 | -3.65 | 52.21 | 499 | +9 |
+| MAHABANK | Major Banks | 95.73 | 161.13 | 2 | 4 | -3.74 | -3.55 | 14.19 | 981 | -132 | 18.19 | 11.72 | 93.05 | 80 | +15 | 15.76 | 18.98 | 91.53 | 94 | +0 | 19.81 | 16.86 | 79.37 | 216 | +23 |
+| MARINE | Wholesale Distributors | 439.45 | 46.56 | 2 | 4 | 8.51 | 8.72 | 96.58 | 40 | +499 | 4.43 | -1.28 | 59.98 | 456 | +198 | 1.58 | 4.41 | 72.31 | 305 | -86 | 75.67 | 71.35 | 98.08 | 21 | +8 |
+| MASTERTR | Investment Banks/Brokers | 91.45 | 3.10 | 2 | 4 | 5.47 | 5.67 | 91.86 | 94 | -42 | 17.79 | 11.34 | 92.52 | 86 | +4 | 12.10 | 15.22 | 88.52 | 127 | +20 | 12.08 | 9.33 | 70.92 | 304 | +20 |
+| MMFL | Metal Fabrication | 631.65 | 21.26 | 2 | 4 | -2.53 | -2.34 | 24.43 | 864 | +188 | 27.85 | 20.85 | 98.24 | 21 | +11 | -3.92 | -1.25 | 58.38 | 458 | +67 | 38.79 | 35.38 | 92.13 | 83 | +9 |
+| NINSYS | Packaged Software | 1005.15 | 0.93 | 2 | 3 | 5.85 | 6.06 | 93.17 | 79 | -18 | 11.31 | 5.22 | 80.30 | 225 | -73 | 41.50 | 45.44 | 98.91 | 13 | +1 | N/A | N/A | N/A | N/A | N/A |
+| ONEPOINT | Miscellaneous Commercial Services | 74.60 | 17.52 | 2 | 4 | 5.49 | 5.69 | 91.94 | 93 | +816 | -0.19 | -5.65 | 38.17 | 704 | +178 | 36.28 | 40.07 | 98.00 | 23 | +16 | 29.13 | 25.95 | 86.18 | 145 | +88 |
+| OPTIEMUS | Electronics Distributors | 746.00 | 26.58 | 2 | 4 | -5.83 | -5.65 | 5.78 | 1077 | -3 | -9.21 | -14.18 | 9.76 | 1027 | -488 | 28.00 | 31.57 | 96.45 | 40 | -18 | 64.21 | 60.17 | 96.93 | 33 | -17 |
+| ORIENTHOT | Hotels/Resorts/Cruise lines | 174.88 | 11.46 | 2 | 4 | -2.83 | -2.64 | 21.45 | 898 | -592 | 9.18 | 3.21 | 74.49 | 291 | -79 | 26.13 | 29.64 | 95.99 | 45 | -10 | 77.13 | 72.77 | 98.37 | 18 | +3 |
+| PARAGMILK | Food: Meat/Fish/Dairy | 321.63 | 78.71 | 2 | 4 | -4.54 | -4.36 | 9.63 | 1033 | +61 | 31.30 | 24.12 | 98.94 | 13 | -3 | 24.13 | 27.59 | 95.45 | 51 | -2 | 35.49 | 32.16 | 89.83 | 107 | +37 |
+| PDSL | Apparel/Footwear | 419.95 | 27.31 | 2 | 4 | 2.85 | 3.05 | 83.98 | 184 | +253 | 21.29 | 14.65 | 96.13 | 45 | -5 | 16.70 | 19.95 | 92.17 | 87 | +26 | 31.19 | 27.96 | 88.29 | 123 | -22 |
+| POLICYBZR | Internet Software/Services | 1186.50 | 374.63 | 2 | 4 | 16.01 | 16.23 | 99.56 | 6 | +2 | 16.53 | 10.15 | 91.12 | 102 | -21 | -35.14 | -33.33 | 1.46 | 1083 | +7 | -22.77 | -24.67 | 13.63 | 901 | +36 |
+| PTCIL | Metal Fabrication | 25460.00 | 44.78 | 2 | 4 | 5.56 | 5.76 | 92.12 | 91 | -8 | 3.08 | -2.57 | 54.79 | 515 | -17 | 11.89 | 15.00 | 88.34 | 129 | -22 | 36.24 | 32.88 | 90.60 | 99 | +29 |
+| PVRINOX | Movies/Entertainment | 1679.10 | 126.63 | 2 | 4 | 1.63 | 1.83 | 74.78 | 289 | +525 | 12.67 | 6.50 | 84.34 | 179 | -10 | 36.71 | 40.52 | 98.27 | 20 | -3 | 71.98 | 67.74 | 97.70 | 25 | +2 |
+| RACLGEAR | Auto Parts: OEM | 1649.10 | 4.14 | 2 | 4 | 7.45 | 7.66 | 95.62 | 51 | +142 | 17.84 | 11.39 | 92.70 | 84 | +31 | 7.23 | 10.22 | 83.06 | 187 | +31 | 31.02 | 27.79 | 88.10 | 125 | +47 |
+| ROSSTECH | Telecommunications Equipment | 1468.80 | 16.20 | 2 | 4 | -3.91 | -3.72 | 12.70 | 998 | +45 | 3.52 | -2.15 | 56.64 | 494 | +57 | 29.27 | 32.87 | 97.09 | 33 | -8 | 39.20 | 35.77 | 92.42 | 80 | +22 |
+| RUBICON | Biotechnology | 1869.30 | 32.07 | 2 | 3 | 8.76 | 8.98 | 97.02 | 35 | -5 | 19.88 | 13.32 | 94.81 | 60 | +22 | 2.58 | 5.44 | 74.68 | 279 | +8 | N/A | N/A | N/A | N/A | N/A |
+| SAFARI | Other Consumer Specialties | 1556.50 | 13.12 | 2 | 4 | 8.41 | 8.62 | 96.41 | 42 | -33 | 29.92 | 22.81 | 98.68 | 16 | +6 | 1.67 | 4.50 | 72.68 | 301 | -60 | -1.74 | -4.16 | 51.34 | 508 | -13 |
+| SANATHAN | Textiles | 564.35 | 6.28 | 2 | 4 | -1.32 | -1.13 | 38.97 | 698 | +334 | 12.01 | 5.88 | 82.94 | 195 | +47 | 28.19 | 31.76 | 96.54 | 39 | +17 | 42.62 | 39.11 | 93.38 | 70 | +38 |
+| SANSERA | Auto Parts: OEM | 4742.20 | 83.32 | 2 | 4 | -1.17 | -0.98 | 41.42 | 670 | -218 | 11.05 | 4.97 | 79.51 | 234 | +77 | 21.50 | 24.88 | 94.90 | 57 | +24 | 62.08 | 58.09 | 96.64 | 36 | +4 |
+| SAREGAMA | Movies/Entertainment | 618.35 | 104.32 | 2 | 4 | -7.25 | -7.07 | 2.19 | 1118 | -39 | 15.36 | 9.05 | 89.18 | 124 | -45 | 25.24 | 28.72 | 95.72 | 48 | -19 | 36.62 | 33.26 | 90.79 | 97 | +12 |
+| SBC | Wholesale Distributors | 68.10 | 76.83 | 2 | 4 | -0.73 | -0.53 | 47.29 | 603 | -210 | 2.38 | -3.23 | 51.63 | 551 | -86 | 61.99 | 66.50 | 99.82 | 3 | +0 | 81.60 | 77.13 | 98.56 | 16 | -1 |
+| SBCL | Other Metals/Minerals | 1006.50 | 23.78 | 2 | 4 | 7.26 | 7.47 | 95.36 | 54 | +55 | -2.85 | -8.17 | 27.00 | 831 | +15 | -3.95 | -1.28 | 58.01 | 462 | +32 | 38.29 | 34.89 | 91.65 | 88 | +1 |
+| SHREEJISPG | Other Transportation | 923.70 | 75.10 | 2 | 4 | 1.08 | 1.28 | 70.23 | 341 | -33 | 10.94 | 4.87 | 79.16 | 238 | +84 | 44.99 | 49.02 | 99.27 | 9 | +1 | 101.95 | 96.98 | 99.14 | 10 | +1 |
+| SHRINGARMS | Other Consumer Specialties | 253.00 | 29.45 | 2 | 3 | 7.09 | 7.30 | 95.18 | 56 | +510 | -10.71 | -15.60 | 7.30 | 1055 | +37 | 17.15 | 20.41 | 92.62 | 82 | +56 | N/A | N/A | N/A | N/A | N/A |
+| SMSPHARMA | Pharmaceuticals: Major | 480.50 | 26.59 | 2 | 4 | 1.53 | 1.73 | 73.73 | 301 | -43 | -1.09 | -6.50 | 34.30 | 748 | -180 | 30.48 | 34.11 | 97.27 | 31 | -4 | 35.87 | 32.53 | 90.31 | 102 | -5 |
+| SPORTKING | Textiles | 249.03 | 17.50 | 2 | 4 | 12.54 | 12.76 | 99.04 | 12 | +101 | 15.91 | 9.56 | 89.80 | 117 | +142 | 8.32 | 11.33 | 84.15 | 175 | +109 | 38.14 | 34.74 | 91.55 | 89 | +76 |
+| SSWL | Auto Parts: OEM | 488.75 | 143.19 | 2 | 4 | -6.87 | -6.69 | 3.06 | 1108 | +26 | -7.05 | -12.13 | 13.98 | 979 | +54 | 36.81 | 40.62 | 98.36 | 19 | -15 | 114.29 | 109.02 | 99.33 | 8 | -1 |
+| STYLEBAAZA | Apparel/Footwear Retail | 511.70 | 80.34 | 2 | 3 | 2.31 | 2.51 | 80.04 | 229 | +366 | 40.08 | 32.41 | 99.65 | 5 | -1 | 28.52 | 32.10 | 96.81 | 36 | -4 | N/A | N/A | N/A | N/A | N/A |
+| SUNTECK | Real Estate Development | 332.40 | 26.75 | 2 | 4 | 4.87 | 5.08 | 90.46 | 110 | -37 | 19.33 | 12.80 | 94.28 | 66 | -11 | 9.61 | 12.66 | 85.79 | 157 | +7 | 19.53 | 16.58 | 78.89 | 221 | +32 |
+| SWSOLAR | Engineering & Construction | 167.53 | 22.63 | 2 | 4 | 8.42 | 8.63 | 96.50 | 41 | -20 | 16.16 | 9.80 | 90.24 | 112 | -27 | -10.61 | -8.12 | 38.71 | 674 | -51 | -16.46 | -18.51 | 22.07 | 813 | -90 |
+| TEXRAIL | Trucks/Construction/Farm Machinery | 124.85 | 27.72 | 2 | 4 | 12.10 | 12.32 | 98.77 | 15 | +29 | 19.86 | 13.30 | 94.72 | 61 | +43 | 10.42 | 13.49 | 86.61 | 148 | +21 | 19.03 | 16.10 | 78.31 | 227 | +54 |
+| TFCILTD | Finance/Rental/Leasing | 173.97 | 165.23 | 2 | 4 | 1.23 | 1.43 | 71.37 | 328 | -187 | 8.96 | 3.00 | 73.97 | 297 | -84 | 23.32 | 26.75 | 95.26 | 53 | -12 | 130.15 | 124.49 | 99.52 | 6 | -2 |
+| THELEELA | Hotels/Resorts/Cruise lines | 690.00 | 34.70 | 2 | 4 | -1.16 | -0.97 | 41.51 | 669 | -135 | 7.83 | 1.93 | 70.27 | 339 | -169 | 19.93 | 23.26 | 93.90 | 68 | -7 | 65.11 | 61.05 | 97.02 | 32 | +7 |
+| UNIMECH | Industrial Machinery | 1848.90 | 35.41 | 2 | 4 | 3.74 | 3.95 | 86.95 | 150 | +810 | 11.51 | 5.41 | 81.09 | 216 | +137 | 25.34 | 28.83 | 95.81 | 47 | +24 | 68.86 | 64.71 | 97.50 | 27 | -1 |
+| WAAREERTL | Alternative Power Generation | 825.70 | 74.92 | 2 | 4 | 19.09 | 19.32 | 99.74 | 4 | +626 | 19.30 | 12.77 | 94.20 | 67 | +494 | -4.41 | -1.75 | 56.83 | 475 | +479 | -15.33 | -17.41 | 23.80 | 795 | +173 |
+| WELCORP | Industrial Machinery | 2301.90 | 227.84 | 2 | 4 | 5.35 | 5.56 | 91.68 | 96 | +224 | -7.89 | -12.93 | 12.05 | 1001 | +74 | -9.86 | -7.35 | 41.07 | 648 | -144 | 64.10 | 60.07 | 96.83 | 34 | +10 |
+| WHEELS | Auto Parts: OEM | 2153.50 | 22.29 | 2 | 4 | -0.36 | -0.17 | 52.45 | 544 | +414 | -1.97 | -7.34 | 31.22 | 783 | +164 | 39.67 | 43.56 | 98.72 | 15 | +0 | 40.87 | 37.40 | 92.99 | 74 | +6 |
+| WOCKPHARMA | Pharmaceuticals: Major | 2244.40 | 140.14 | 2 | 4 | 2.75 | 2.95 | 83.27 | 192 | -15 | 16.72 | 10.33 | 91.64 | 96 | +15 | 21.28 | 24.66 | 94.81 | 58 | +10 | 8.27 | 5.61 | 65.64 | 359 | +4 |
 
-## 1/4 leadership (185)
+## 1/4 leadership (173)
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1 OF 4,NSE:360ONE,NSE:63MOONS,NSE:AARTIDRUGS,NSE:ABBOTINDIA,NSE:ABLBL,NSE:ABSLAMC,NSE:ACUTAAS,NSE:AETHER,NSE:AGIIL,NSE:ALEMBICLTD,NSE:ALIVUS,NSE:ANANDRATHI,NSE:ANUP,NSE:ARFIN,NSE:ASHOKA,NSE:ASKAUTOLTD,NSE:ASTERDM,NSE:ATHERENERG,NSE:AVTNPL,NSE:BAJAJHCARE,NSE:BALAJITELE,NSE:BALUFORGE,NSE:BBOX,NSE:BIKAJI,NSE:BLUESTARCO,NSE:BLUSPRING,NSE:BRIGHOTEL,NSE:CAMS,NSE:CANHLIFE,NSE:CARRARO,NSE:CDSL,NSE:CELLO,NSE:CERA,NSE:CHALET,NSE:CHOICEIN,NSE:COFORGE,NSE:COHANCE,NSE:CREDITACC,NSE:CYIENTDLM,NSE:DABUR,NSE:DALMIASUG,NSE:DCBBANK,NSE:DEEPAKFERT,NSE:DELHIVERY,NSE:DELTACORP,NSE:DHAMPURSUG,NSE:DOLATALGO,NSE:DOLPHIN,NSE:EFCIL,NSE:ELLEN,NSE:EMAMILTD,NSE:ENTERO,NSE:EUREKAFORB,NSE:FIEMIND,NSE:FSL,NSE:FUSION,NSE:GABRIEL,NSE:GANDHAR,NSE:GCSL,NSE:GESHIP,NSE:GNA,NSE:GRANULES,NSE:GRAPHITE,NSE:GUJENERGY,NSE:HBLENGINE,NSE:HEXT,NSE:HIKAL,NSE:HLEGLAS,NSE:HONASA,NSE:IDEAFORGE,NSE:IDFCFIRSTB,NSE:IGIL,NSE:IIFLCAPS,NSE:INDSWFTLAB,NSE:INDUSINDBK,NSE:INOXINDIA,NSE:INTELLECT,NSE:IREDA,NSE:ISGEC,NSE:ITCHOTELS,NSE:IXIGO,NSE:JKTYRE,NSE:JLHL,NSE:JYOTICNC,NSE:KAPSTON,NSE:KCP,NSE:KFINTECH,NSE:KRBL,NSE:KRISHANA,NSE:KRISHNADEF,NSE:LALPATHLAB,NSE:LEMONTREE,NSE:LICHSGFIN,NSE:LUMAXTECH,NSE:MACPOWER,NSE:MAHSCOOTER,NSE:MANINDS,NSE:MARATHON,NSE:MARINE,NSE:MBAPL,NSE:MEDANTA,NSE:METROPOLIS,NSE:MMP,NSE:MPHASIS,NSE:MSTCLTD,NSE:MUTHOOTMF,NSE:NAUKRI,NSE:NAZARA,NSE:NELCAST,NSE:NH,NSE:NILKAMAL,NSE:NPST,NSE:NRAIL,NSE:NUVOCO,NSE:ONEPOINT,NSE:PAISALO,NSE:PARAS,NSE:PATANJALI,NSE:PGHH,NSE:PGIL,NSE:PNBGILTS,NSE:POONAWALLA,NSE:PPLPHARMA,NSE:PROTEAN,NSE:PWL,NSE:QUESS,NSE:RAMCOSYS,NSE:RAMKY,NSE:RAYMONDREL,NSE:REDINGTON,NSE:REGAAL,NSE:REPCOHOME,NSE:RGL,NSE:RISHABH,NSE:ROLEXRINGS,NSE:RPEL,NSE:RUBYMILLS,NSE:RUSTOMJEE,NSE:SAATVIKGL,NSE:SAKAR,NSE:SANATHAN,NSE:SANGAMIND,NSE:SANGHVIMOV,NSE:SATIN,NSE:SETL,NSE:SHAILY,NSE:SHALBY,NSE:SHARDAMOTR,NSE:SHILPAMED,NSE:SHREEPUSHK,NSE:SHYAMMETL,NSE:SIGNATURE,NSE:SIMPLEXINF,NSE:SKIPPER,NSE:SKYGOLD,NSE:SONACOMS,NSE:SOUTHBANK,NSE:SPORTKING,NSE:STEL,NSE:SUNTV,NSE:TANLA,NSE:TARSONS,NSE:TATAELXSI,NSE:TCPLPACK,NSE:TEAMLEASE,NSE:TIPSMUSIC,NSE:UGROCAP,NSE:UNITEDPOLY,NSE:UNOMINDA,NSE:URBANCO,NSE:VIJAYA,NSE:VIMTALABS,NSE:VMM,NSE:VOLTAS,NSE:VRLLOG,NSE:VSSL,NSE:WELCORP,NSE:WESTLIFE,NSE:XPROINDIA,NSE:YASHO,NSE:YATRA,NSE:YUKEN,NSE:ZAGGLE,NSE:ZENTEC,NSE:ZOTA
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1 OF 4,NSE:360ONE,NSE:63MOONS,NSE:ABREL,NSE:ACMESOLAR,NSE:AFFLE,NSE:AGIIL,NSE:ALIVUS,NSE:ANANDRATHI,NSE:ANDHRSUGAR,NSE:ANTHEM,NSE:ANUP,NSE:APOLLO,NSE:ARKADE,NSE:ASIANHOTNR,NSE:ASKAUTOLTD,NSE:ATHERENERG,NSE:AVALON,NSE:AVTNPL,NSE:AXISCADES,NSE:BAJAJHCARE,NSE:BALRAMCHIN,NSE:BALUFORGE,NSE:BANCOINDIA,NSE:BANKINDIA,NSE:BBOX,NSE:BECTORFOOD,NSE:BLUESTARCO,NSE:CARRARO,NSE:CENTUM,NSE:CERA,NSE:CHOICEIN,NSE:CNL,NSE:COFORGE,NSE:COHANCE,NSE:CYIENTDLM,NSE:DABUR,NSE:DEEPAKFERT,NSE:DELTACORP,NSE:DODLA,NSE:DOLATALGO,NSE:DOLPHIN,NSE:DYNAMATECH,NSE:E2E,NSE:EBGNG,NSE:ECLERX,NSE:EFCIL,NSE:EIHOTEL,NSE:EUREKAFORB,NSE:FAZE3Q,NSE:FIEMIND,NSE:FORCEMOT,NSE:FUSION,NSE:GABRIEL,NSE:GALAPREC,NSE:GANDHAR,NSE:GCSL,NSE:GESHIP,NSE:GNA,NSE:GODIGIT,NSE:GODREJPROP,NSE:GOODLUCK,NSE:GUJENERGY,NSE:HBLENGINE,NSE:HIKAL,NSE:HLEGLAS,NSE:HUHTAMAKI,NSE:IDFCFIRSTB,NSE:IGIL,NSE:IIFLCAPS,NSE:INDORAMA,NSE:INDSWFTLAB,NSE:INOXINDIA,NSE:INSECTICID,NSE:INTELLECT,NSE:IREDA,NSE:ISGEC,NSE:ITCHOTELS,NSE:IXIGO,NSE:JAGRAN,NSE:JKTYRE,NSE:JNKINDIA,NSE:JSLL,NSE:JUSTDIAL,NSE:JYOTICNC,NSE:KAPSTON,NSE:KCP,NSE:KFINTECH,NSE:KOPRAN,NSE:KRBL,NSE:KRISHANA,NSE:LEMONTREE,NSE:LTTS,NSE:LUMAXTECH,NSE:MACPOWER,NSE:MANINDS,NSE:MANINFRA,NSE:MARATHON,NSE:MBAPL,NSE:MENONBE,NSE:MFSL,NSE:MMP,NSE:MOLDTKPAC,NSE:NAZARA,NSE:NELCAST,NSE:NILKAMAL,NSE:NITCO,NSE:OAL,NSE:PACEDIGITK,NSE:PANACEABIO,NSE:PANAMAPET,NSE:PARAS,NSE:PATANJALI,NSE:PAUSHAKLTD,NSE:PGIL,NSE:PHOENIXLTD,NSE:POLYPLEX,NSE:PPLPHARMA,NSE:PRAJIND,NSE:PROTEAN,NSE:QUESS,NSE:RAMCOSYS,NSE:RAMKY,NSE:REDINGTON,NSE:REPCOHOME,NSE:RGL,NSE:ROLEXRINGS,NSE:ROTO,NSE:RPEL,NSE:RUBYMILLS,NSE:RUSTOMJEE,NSE:SAATVIKGL,NSE:SANGAMIND,NSE:SANGHVIMOV,NSE:SATIN,NSE:SESHAPAPER,NSE:SETL,NSE:SHAILY,NSE:SHALBY,NSE:SHARDAMOTR,NSE:SHILPAMED,NSE:SHREEPUSHK,NSE:SHYAMMETL,NSE:SIGNATURE,NSE:SIMPLEXINF,NSE:SIYSIL,NSE:SKYGOLD,NSE:SMCGLOBAL,NSE:SONACOMS,NSE:SOUTHBANK,NSE:STEL,NSE:SUDEEPPHRM,NSE:SUNTV,NSE:SUPRIYA,NSE:TARSONS,NSE:TCPLPACK,NSE:TIMETECHNO,NSE:TIPSMUSIC,NSE:TSFINV,NSE:UFLEX,NSE:UNITEDPOLY,NSE:UNOMINDA,NSE:URBANCO,NSE:VIMTALABS,NSE:VRLLOG,NSE:WESTLIFE,NSE:XPROINDIA,NSE:YASHO,NSE:YATHARTH,NSE:YATRA,NSE:YUKEN,NSE:ZAGGLE,NSE:ZENTEC,NSE:ZOTA
 
 ```
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 360ONE | Investment Managers | 1210.00 | 102.76 | 1 | 4 | 1.01 | 1.04 | 77.87 | 254 | +580 | 22.10 | 14.74 | 96.13 | 45 | +28 | 2.98 | 6.92 | 77.07 | 253 | +127 | 12.82 | 9.73 | 71.50 | 298 | +75 |
-| 63MOONS | Packaged Software | 864.00 | 34.10 | 1 | 4 | -9.29 | -9.26 | 2.80 | 1112 | -120 | -7.35 | -12.93 | 15.38 | 964 | -112 | 10.93 | 15.18 | 88.99 | 122 | -7 | 39.72 | 35.89 | 91.94 | 85 | -8 |
-| AARTIDRUGS | Pharmaceuticals: Major | 491.85 | 80.25 | 1 | 4 | -1.41 | -1.39 | 53.28 | 535 | +276 | 9.81 | 3.19 | 76.36 | 270 | -218 | 19.47 | 24.04 | 94.27 | 64 | +12 | 29.98 | 26.42 | 86.95 | 137 | +10 |
-| ABBOTINDIA | Pharmaceuticals: Major | 27300.00 | 20.30 | 1 | 4 | 6.25 | 6.28 | 95.89 | 48 | +39 | 3.90 | -2.36 | 57.64 | 483 | -39 | 5.61 | 9.65 | 81.62 | 203 | +52 | 3.84 | 1.00 | 59.21 | 426 | +24 |
-| ABLBL | Apparel/Footwear Retail | 79.30 | 8.84 | 1 | 4 | 4.01 | 4.04 | 92.21 | 90 | -12 | 10.23 | 3.58 | 78.03 | 251 | +124 | -8.55 | -5.05 | 48.59 | 566 | -113 | -19.26 | -21.48 | 18.62 | 849 | -9 |
-| ABSLAMC | Internet Software/Services | 992.15 | 19.53 | 1 | 4 | 6.22 | 6.25 | 95.80 | 49 | +91 | 14.47 | 7.56 | 87.52 | 143 | +163 | -5.67 | -2.06 | 57.23 | 471 | +80 | -3.98 | -6.61 | 47.60 | 547 | +42 |
-| ACUTAAS | Pharmaceuticals: Major | 4079.90 | 277.52 | 1 | 4 | 2.58 | 2.61 | 86.70 | 153 | +244 | 9.97 | 3.34 | 76.89 | 264 | +165 | 29.09 | 34.02 | 97.36 | 30 | +25 | 30.11 | 26.55 | 87.24 | 134 | -15 |
-| AETHER | Chemicals: Major Diversified | 1700.80 | 53.77 | 1 | 4 | 0.25 | 0.28 | 71.04 | 332 | -104 | 7.08 | 0.62 | 68.19 | 363 | -55 | 0.56 | 4.41 | 71.25 | 317 | +21 | 49.27 | 45.18 | 94.91 | 54 | -5 |
-| AGIIL | Real Estate Development | 307.40 | 61.94 | 1 | 4 | 0.80 | 0.83 | 75.68 | 279 | +284 | 37.39 | 29.10 | 99.47 | 7 | +6 | 7.86 | 11.99 | 84.35 | 173 | +10 | -20.59 | -22.76 | 16.89 | 867 | -18 |
-| ALEMBICLTD | Pharmaceuticals: Major | 105.58 | 21.19 | 1 | 4 | -5.29 | -5.27 | 15.75 | 964 | +100 | 20.54 | 13.27 | 94.90 | 59 | +23 | 6.93 | 11.02 | 83.53 | 182 | +47 | 22.77 | 19.40 | 81.57 | 193 | +35 |
-| ALIVUS | Pharmaceuticals: Major | 1418.10 | 52.30 | 1 | 4 | -2.19 | -2.17 | 43.39 | 648 | -164 | 1.34 | -4.77 | 46.57 | 609 | -240 | 0.88 | 4.74 | 71.88 | 310 | -130 | 36.61 | 32.86 | 90.98 | 95 | -4 |
-| ANANDRATHI | Investment Managers | 2410.00 | 67.39 | 1 | 4 | 1.70 | 1.73 | 82.33 | 203 | +176 | 6.42 | 0.00 | 66.52 | 382 | +42 | 9.34 | 13.52 | 86.53 | 149 | +17 | 35.00 | 31.30 | 90.02 | 105 | +887 |
-| ANUP | Industrial Machinery | 1612.00 | 14.82 | 1 | 4 | -9.82 | -9.80 | 2.45 | 1116 | -29 | 19.05 | 11.87 | 93.85 | 71 | -11 | -10.12 | -6.68 | 43.04 | 627 | -49 | -16.68 | -18.96 | 22.46 | 809 | -86 |
-| ARFIN | Aluminum | 95.34 | 15.97 | 1 | 4 | 4.04 | 4.07 | 92.30 | 89 | +8 | 9.15 | 2.57 | 74.17 | 295 | +93 | 9.30 | 13.48 | 86.44 | 150 | -15 | 6.00 | 3.10 | 62.96 | 387 | +18 |
-| ASHOKA | Engineering & Construction | 113.40 | 52.15 | 1 | 4 | 0.13 | 0.16 | 70.08 | 343 | +122 | 17.85 | 10.75 | 91.83 | 94 | +6 | -5.73 | -2.12 | 57.05 | 473 | -206 | -8.47 | -10.98 | 38.48 | 642 | -30 |
-| ASKAUTOLTD | Auto Parts: OEM | 634.85 | 12.18 | 1 | 4 | -0.94 | -0.92 | 59.32 | 466 | -161 | 8.12 | 1.60 | 71.09 | 330 | -76 | -3.80 | -0.12 | 62.06 | 418 | -125 | 45.13 | 41.15 | 93.86 | 65 | -3 |
-| ASTERDM | Hospital/Nursing Management | 768.30 | 74.12 | 1 | 4 | 3.92 | 3.95 | 91.60 | 97 | -34 | 14.77 | 7.84 | 87.87 | 139 | -25 | 1.63 | 5.51 | 73.52 | 292 | -65 | 5.17 | 2.29 | 61.32 | 404 | -24 |
-| ATHERENERG | Motor Vehicles | 1906.00 | 507.78 | 1 | 4 | -0.98 | -0.95 | 58.88 | 471 | +139 | 15.52 | 8.55 | 89.10 | 125 | +99 | 10.96 | 15.21 | 89.08 | 121 | -43 | 86.49 | 81.38 | 98.75 | 14 | -2 |
-| AVTNPL | Food: Specialty/Candy | 96.59 | 7.77 | 1 | 4 | -6.33 | -6.31 | 10.41 | 1025 | +3 | 5.26 | -1.08 | 62.57 | 427 | -60 | 4.92 | 8.93 | 80.71 | 213 | -108 | 37.55 | 33.78 | 91.36 | 91 | +7 |
-| BAJAJHCARE | Pharmaceuticals: Major | 347.25 | 4.34 | 1 | 4 | 9.03 | 9.06 | 98.43 | 19 | +14 | 10.43 | 3.77 | 78.38 | 247 | +3 | 4.06 | 8.04 | 79.25 | 229 | -58 | 16.25 | 13.07 | 75.14 | 260 | +8 |
-| BALAJITELE | Movies/Entertainment | 101.41 | 1.84 | 1 | 4 | 2.99 | 3.01 | 88.45 | 133 | +31 | 18.86 | 11.69 | 93.50 | 75 | +61 | 10.35 | 14.57 | 87.90 | 134 | +74 | 13.51 | 10.40 | 72.07 | 292 | +61 |
-| BALUFORGE | Trucks/Construction/Farm Machinery | 528.90 | 39.57 | 1 | 4 | 0.46 | 0.48 | 72.97 | 310 | +668 | 18.31 | 11.17 | 92.71 | 84 | +68 | -16.13 | -12.92 | 24.75 | 828 | +104 | 9.48 | 6.48 | 66.89 | 346 | +4 |
-| BBOX | Information Technology Services | 853.50 | 75.88 | 1 | 4 | -5.94 | -5.91 | 12.95 | 996 | -276 | 5.16 | -1.19 | 62.21 | 431 | -25 | 14.16 | 18.52 | 91.45 | 95 | -8 | -19.20 | -21.41 | 18.91 | 846 | -35 |
-| BIKAJI | Food: Specialty/Candy | 523.80 | 10.66 | 1 | 4 | 5.02 | 5.05 | 93.79 | 72 | -54 | 13.65 | 6.79 | 85.94 | 161 | +18 | -16.29 | -13.08 | 24.20 | 834 | -58 | -19.33 | -21.54 | 18.43 | 851 | +19 |
-| BLUESTARCO | Industrial Machinery | 1780.20 | 85.23 | 1 | 4 | 0.92 | 0.95 | 77.43 | 259 | -249 | 11.40 | 4.68 | 81.20 | 215 | -137 | 21.61 | 26.27 | 95.09 | 55 | -7 | 12.61 | 9.53 | 71.40 | 299 | -38 |
-| BLUSPRING | Miscellaneous Commercial Services | 140.84 | 5.31 | 1 | 4 | -11.77 | -11.74 | 1.31 | 1129 | +1 | -7.43 | -13.02 | 15.20 | 966 | +5 | 11.42 | 15.69 | 89.63 | 115 | +5 | 78.75 | 73.86 | 98.37 | 18 | +4 |
-| BRIGHOTEL | Hotels/Resorts/Cruise lines | 57.56 | 2.52 | 1 | 4 | 6.38 | 6.41 | 96.15 | 45 | +24 | 10.69 | 4.02 | 79.00 | 240 | +70 | -2.06 | 1.69 | 65.70 | 378 | +20 | -6.38 | -8.94 | 43.57 | 589 | -7 |
-| CAMS | Information Technology Services | 745.90 | 121.13 | 1 | 4 | 4.50 | 4.53 | 93.26 | 78 | +300 | 10.11 | 3.47 | 77.68 | 255 | +152 | -4.62 | -0.97 | 60.05 | 440 | +30 | -0.86 | -3.58 | 52.11 | 500 | +101 |
-| CANHLIFE | Life/Health Insurance | 133.10 | 10.97 | 1 | 3 | 4.08 | 4.11 | 92.39 | 88 | +11 | 7.63 | 1.14 | 69.42 | 349 | -47 | -14.76 | -11.50 | 28.03 | 792 | -43 | N/A | N/A | N/A | N/A | N/A |
-| CARRARO | Auto Parts: OEM | 490.05 | 4.09 | 1 | 4 | 6.43 | 6.46 | 96.50 | 41 | +91 | -2.00 | -7.91 | 31.11 | 785 | +32 | -12.40 | -9.05 | 35.76 | 707 | +10 | -7.37 | -9.91 | 41.27 | 613 | -52 |
-| CDSL | Investment Banks/Brokers | 1441.00 | 199.89 | 1 | 4 | 1.24 | 1.26 | 79.09 | 240 | +191 | 16.96 | 9.91 | 90.86 | 105 | +38 | 2.75 | 6.68 | 76.71 | 257 | +53 | 18.29 | 15.05 | 77.35 | 237 | +29 |
-| CELLO | Home Furnishings | 378.20 | 10.30 | 1 | 4 | 3.93 | 3.96 | 91.69 | 96 | -1 | 13.51 | 6.66 | 85.41 | 167 | +21 | 7.35 | 11.46 | 83.80 | 179 | -19 | -0.49 | -3.21 | 52.78 | 493 | +11 |
-| CERA | Home Furnishings | 5219.10 | 8.55 | 1 | 4 | 2.63 | 2.66 | 86.88 | 151 | -43 | 17.31 | 10.24 | 91.12 | 102 | +61 | -8.92 | -5.44 | 46.86 | 585 | -16 | -6.42 | -8.98 | 43.47 | 590 | +34 |
-| CHALET | Hotels/Resorts/Cruise lines | 865.10 | 9.48 | 1 | 4 | 5.56 | 5.59 | 94.93 | 59 | -16 | 7.80 | 1.30 | 70.04 | 342 | +4 | -4.30 | -0.64 | 60.60 | 434 | -53 | 11.89 | 8.82 | 70.35 | 310 | -4 |
-| CHOICEIN | Miscellaneous Commercial Services | 760.70 | 37.63 | 1 | 4 | 5.61 | 5.64 | 95.10 | 57 | +41 | 3.86 | -2.40 | 57.47 | 485 | +6 | -2.56 | 1.17 | 64.42 | 392 | +42 | 11.97 | 8.90 | 70.54 | 308 | -13 |
-| COFORGE | Information Technology Services | 2000.00 | 566.07 | 1 | 4 | -2.01 | -1.98 | 45.58 | 623 | -283 | 1.94 | -4.21 | 49.38 | 577 | -52 | 0.74 | 4.59 | 71.52 | 314 | -58 | 40.76 | 36.90 | 92.32 | 81 | +25 |
-| COHANCE | Pharmaceuticals: Major | 502.60 | 50.20 | 1 | 4 | 9.39 | 9.42 | 98.69 | 16 | +19 | 5.58 | -0.79 | 63.80 | 413 | +149 | 10.23 | 14.45 | 87.72 | 136 | +14 | 18.31 | 15.07 | 77.45 | 236 | +42 |
-| CREDITACC | Finance/Rental/Leasing | 1018.10 | 55.76 | 1 | 4 | 4.89 | 4.92 | 93.61 | 74 | +634 | -0.40 | -6.41 | 37.70 | 710 | -91 | -25.33 | -22.48 | 7.83 | 1014 | +10 | -19.78 | -21.98 | 17.56 | 860 | +28 |
-| CYIENTDLM | Electronic Production Equipment | 769.00 | 43.80 | 1 | 4 | -7.14 | -7.12 | 6.74 | 1067 | +18 | 0.75 | -5.33 | 44.11 | 637 | +86 | -8.78 | -5.29 | 47.59 | 577 | -24 | 71.10 | 66.41 | 97.79 | 24 | +12 |
-| DABUR | Household/Personal Care | 418.50 | 90.30 | 1 | 4 | 7.13 | 7.16 | 97.03 | 35 | -27 | 16.25 | 9.24 | 89.81 | 117 | -49 | 9.84 | 14.04 | 87.26 | 141 | -14 | 0.16 | -2.59 | 54.03 | 480 | -17 |
-| DALMIASUG | Agricultural Commodities/Milling | 451.15 | 18.35 | 1 | 4 | -2.34 | -2.31 | 41.91 | 665 | +154 | 10.98 | 4.29 | 79.88 | 230 | +127 | -6.82 | -3.25 | 53.78 | 509 | +14 | 36.24 | 32.50 | 90.69 | 98 | +29 |
-| DCBBANK | Regional Banks | 227.17 | 26.01 | 1 | 4 | -3.41 | -3.38 | 30.88 | 791 | -733 | 18.48 | 11.34 | 93.06 | 80 | -45 | 4.11 | 8.09 | 79.44 | 227 | -124 | 30.10 | 26.54 | 87.14 | 135 | -56 |
-| DEEPAKFERT | Chemicals: Agricultural | 1442.30 | 65.99 | 1 | 4 | -0.52 | -0.50 | 62.99 | 424 | +588 | 24.16 | 16.68 | 97.01 | 35 | +71 | 2.51 | 6.43 | 76.07 | 264 | +127 | 2.52 | -0.29 | 57.49 | 444 | +51 |
-| DELHIVERY | Air Freight/Couriers | 460.50 | 128.55 | 1 | 4 | 0.83 | 0.86 | 76.03 | 275 | -98 | 19.61 | 12.40 | 94.38 | 65 | -8 | 0.94 | 4.80 | 71.97 | 309 | +40 | 5.16 | 2.28 | 61.23 | 405 | -13 |
-| DELTACORP | Movies/Entertainment | 71.95 | 28.61 | 1 | 4 | -7.58 | -7.55 | 5.34 | 1083 | +45 | 2.10 | -4.06 | 49.82 | 572 | +34 | 23.05 | 27.76 | 95.45 | 51 | +6 | 3.35 | 0.51 | 58.35 | 435 | -139 |
-| DHAMPURSUG | Agricultural Commodities/Milling | 180.01 | 34.70 | 1 | 4 | 8.83 | 8.86 | 98.34 | 20 | +489 | 9.01 | 2.44 | 73.90 | 298 | +532 | 0.46 | 4.30 | 70.70 | 323 | +251 | 30.39 | 26.82 | 87.43 | 132 | +142 |
-| DOLATALGO | Investment Banks/Brokers | 66.79 | 0.68 | 1 | 4 | 4.52 | 4.55 | 93.44 | 76 | -60 | 10.65 | 3.98 | 78.91 | 241 | -107 | -7.26 | -3.71 | 52.59 | 522 | -38 | -10.61 | -13.06 | 35.03 | 678 | -51 |
-| DOLPHIN | Oilfield Services/Equipment | 608.75 | 1.06 | 1 | 4 | -5.59 | -5.56 | 14.17 | 982 | -93 | 2.33 | -3.84 | 50.88 | 560 | -67 | 4.37 | 8.36 | 79.98 | 221 | +91 | 52.40 | 48.22 | 95.39 | 49 | +2 |
-| EFCIL | Wholesale Distributors | 164.96 | 3.80 | 1 | 4 | 4.22 | 4.25 | 92.56 | 86 | +250 | -4.33 | -10.10 | 23.99 | 866 | -55 | -19.45 | -16.37 | 16.56 | 918 | +7 | -7.32 | -9.86 | 41.65 | 609 | +44 |
-| ELLEN | Chemicals: Specialty | 282.75 | 11.45 | 1 | 4 | 4.24 | 4.27 | 92.65 | 85 | +345 | -11.24 | -16.59 | 7.29 | 1056 | +10 | -12.26 | -8.90 | 36.12 | 703 | +22 | 12.40 | 9.32 | 71.31 | 300 | +2 |
-| EMAMILTD | Household/Personal Care | 421.70 | 25.52 | 1 | 4 | -0.80 | -0.77 | 60.19 | 456 | -320 | 13.12 | 6.30 | 84.71 | 175 | -43 | 15.85 | 20.28 | 91.72 | 92 | +20 | 7.92 | 4.96 | 65.64 | 359 | -13 |
-| ENTERO | Medical Distributors | 1832.10 | 42.24 | 1 | 4 | -7.14 | -7.12 | 6.82 | 1066 | -163 | 14.58 | 7.67 | 87.70 | 141 | -75 | 1.23 | 5.10 | 72.70 | 301 | -96 | 62.51 | 58.05 | 96.74 | 35 | -4 |
-| EUREKAFORB | Industrial Machinery | 374.15 | 12.51 | 1 | 4 | -6.04 | -6.01 | 11.99 | 1007 | +92 | 16.43 | 9.41 | 90.16 | 113 | +38 | -12.87 | -9.53 | 34.12 | 725 | +57 | -15.56 | -17.87 | 24.38 | 789 | +52 |
-| FIEMIND | Auto Parts: OEM | 2013.00 | 21.56 | 1 | 4 | -7.44 | -7.42 | 5.77 | 1078 | -449 | 20.94 | 13.65 | 95.52 | 52 | -5 | -1.14 | 2.64 | 67.79 | 355 | -33 | -14.23 | -16.58 | 26.97 | 762 | -125 |
-| FSL | Miscellaneous Commercial Services | 289.15 | 40.63 | 1 | 4 | 5.57 | 5.60 | 95.01 | 58 | +12 | -6.10 | -11.77 | 17.93 | 935 | -114 | 9.20 | 13.37 | 85.81 | 157 | +11 | 8.11 | 5.15 | 65.83 | 357 | +20 |
-| FUSION | Finance/Rental/Leasing | 159.00 | 16.24 | 1 | 4 | 0.89 | 0.92 | 76.99 | 264 | +691 | 17.61 | 10.52 | 91.39 | 99 | +112 | -20.63 | -17.59 | 14.29 | 943 | +46 | -7.74 | -10.26 | 40.12 | 625 | +99 |
-| GABRIEL | Auto Parts: OEM | 1537.30 | 93.55 | 1 | 4 | -3.02 | -2.99 | 35.00 | 744 | -412 | 6.09 | -0.30 | 65.55 | 393 | +105 | 6.91 | 11.00 | 83.35 | 184 | -43 | 45.52 | 41.53 | 94.05 | 63 | +17 |
-| GANDHAR | Industrial Specialties | 243.26 | 26.78 | 1 | 4 | -5.25 | -5.22 | 16.36 | 957 | +89 | -6.67 | -12.30 | 16.61 | 950 | +180 | -5.61 | -2.00 | 57.51 | 468 | -2 | 54.77 | 50.52 | 95.68 | 46 | -3 |
-| GCSL | Investment Banks/Brokers | 850.55 | 23.54 | 1 | 3 | 1.04 | 1.07 | 78.22 | 250 | -9 | 13.20 | 6.38 | 84.97 | 172 | -3 | 52.83 | 58.67 | 99.64 | 5 | +0 | N/A | N/A | N/A | N/A | N/A |
-| GESHIP | Marine Shipping | 1531.20 | 101.60 | 1 | 4 | -1.54 | -1.51 | 51.71 | 553 | -258 | -1.84 | -7.76 | 31.99 | 775 | -102 | 17.62 | 22.12 | 93.08 | 77 | +2 | 3.45 | 0.61 | 58.54 | 433 | +11 |
-| GNA | Auto Parts: OEM | 519.05 | 14.23 | 1 | 4 | -6.30 | -6.27 | 10.76 | 1021 | -21 | -8.81 | -14.31 | 11.78 | 1005 | +20 | -3.85 | -0.18 | 61.78 | 421 | -22 | 40.09 | 36.26 | 92.03 | 84 | -16 |
-| GRANULES | Pharmaceuticals: Other | 833.15 | 116.34 | 1 | 4 | 3.99 | 4.02 | 92.13 | 91 | -15 | -0.87 | -6.85 | 35.41 | 736 | -129 | 0.56 | 4.41 | 71.16 | 318 | -20 | 4.96 | 2.08 | 60.94 | 408 | -52 |
-| GRAPHITE | Industrial Specialties | 791.75 | 50.33 | 1 | 4 | 0.83 | 0.86 | 75.94 | 276 | -28 | 7.70 | 1.20 | 69.68 | 346 | +67 | 12.70 | 17.01 | 90.72 | 103 | -8 | 8.45 | 5.48 | 66.22 | 353 | -19 |
-| GUJENERGY | Gas Distributors | 238.30 | 28.01 | 1 | 3 | 5.67 | 5.70 | 95.19 | 56 | +17 | 12.30 | 5.53 | 83.04 | 194 | +64 | -3.79 | -0.11 | 62.15 | 417 | +109 | N/A | N/A | N/A | N/A | N/A |
-| HBLENGINE | Electrical Products | 764.25 | 208.34 | 1 | 4 | -1.07 | -1.05 | 57.57 | 486 | +358 | -5.64 | -11.33 | 19.60 | 916 | -68 | 16.26 | 20.71 | 92.27 | 86 | +30 | -2.80 | -5.46 | 49.42 | 528 | +40 |
-| HEXT | Packaged Software | 502.15 | 30.08 | 1 | 4 | 3.72 | 3.75 | 90.81 | 106 | +239 | -12.25 | -17.54 | 6.15 | 1069 | +9 | -9.48 | -6.02 | 45.04 | 605 | +75 | -6.58 | -9.14 | 43.09 | 594 | +88 |
-| HIKAL | Pharmaceuticals: Major | 228.33 | 9.35 | 1 | 4 | 2.82 | 2.85 | 87.93 | 139 | +149 | 12.98 | 6.17 | 84.27 | 180 | +41 | 13.37 | 17.70 | 91.17 | 98 | +39 | 21.47 | 18.14 | 80.13 | 208 | +26 |
-| HLEGLAS | Industrial Machinery | 388.30 | 5.15 | 1 | 4 | -7.04 | -7.01 | 7.17 | 1062 | +40 | -6.42 | -12.07 | 17.14 | 944 | +26 | 23.43 | 28.15 | 95.54 | 50 | +8 | -0.84 | -3.56 | 52.30 | 498 | -98 |
-| HONASA | Specialty Stores | 533.25 | 66.66 | 1 | 4 | 0.68 | 0.71 | 74.54 | 292 | -91 | 18.21 | 11.08 | 92.36 | 88 | -5 | 10.89 | 15.13 | 88.90 | 123 | -27 | 32.62 | 28.98 | 88.58 | 120 | -4 |
-| IDEAFORGE | Aerospace & Defense | 731.15 | 20.80 | 1 | 3 | 7.26 | 7.29 | 97.11 | 34 | +68 | 7.71 | 1.22 | 69.86 | 344 | +385 | -8.06 | -4.54 | 50.23 | 548 | +159 | N/A | N/A | N/A | N/A | N/A |
-| IDFCFIRSTB | Regional Banks | 86.71 | 162.81 | 1 | 4 | 0.77 | 0.80 | 75.33 | 283 | -222 | 17.92 | 10.81 | 91.92 | 93 | -48 | 0.86 | 4.72 | 71.79 | 311 | -112 | 20.80 | 17.49 | 79.65 | 213 | -17 |
-| IGIL | Miscellaneous Commercial Services | 423.20 | 85.30 | 1 | 4 | -3.22 | -3.20 | 32.63 | 771 | -48 | 6.21 | -0.19 | 65.73 | 391 | -120 | 24.12 | 28.87 | 95.72 | 48 | -17 | 17.52 | 14.30 | 76.39 | 247 | -25 |
-| IIFLCAPS | Investment Banks/Brokers | 346.15 | 78.79 | 1 | 4 | 3.81 | 3.84 | 91.25 | 101 | +862 | -0.01 | -6.04 | 39.98 | 684 | +90 | 2.73 | 6.66 | 76.62 | 258 | +43 | 2.23 | -0.57 | 57.01 | 449 | +45 |
-| INDSWFTLAB | Pharmaceuticals: Major | 311.95 | 23.16 | 1 | 4 | -5.53 | -5.50 | 14.61 | 977 | +14 | -17.68 | -22.64 | 2.72 | 1108 | -33 | -14.50 | -11.23 | 28.75 | 784 | -82 | 98.56 | 93.11 | 99.14 | 10 | +0 |
-| INDUSINDBK | Major Banks | 966.10 | 294.08 | 1 | 4 | 4.60 | 4.62 | 93.53 | 75 | -31 | 13.53 | 6.68 | 85.50 | 166 | -51 | -4.97 | -1.33 | 59.14 | 450 | -94 | 7.35 | 4.41 | 64.59 | 370 | +6 |
-| INOXINDIA | Industrial Machinery | 2162.80 | 58.69 | 1 | 4 | 1.65 | 1.68 | 82.06 | 206 | +127 | 13.24 | 6.41 | 85.06 | 171 | +60 | 1.34 | 5.22 | 73.07 | 297 | +0 | 46.47 | 42.46 | 94.43 | 59 | -2 |
-| INTELLECT | Packaged Software | 577.60 | 44.12 | 1 | 4 | 7.12 | 7.15 | 96.94 | 36 | -29 | -2.79 | -8.65 | 27.59 | 825 | -151 | -15.18 | -11.93 | 26.84 | 805 | -139 | -22.46 | -24.59 | 14.68 | 890 | -38 |
-| IREDA | Finance/Rental/Leasing | 127.00 | 163.22 | 1 | 4 | -2.16 | -2.13 | 43.74 | 644 | -531 | 26.26 | 18.64 | 97.80 | 26 | +5 | 9.01 | 13.18 | 85.62 | 159 | +16 | 3.39 | 0.56 | 58.45 | 434 | +47 |
-| ISGEC | Engineering & Construction | 1028.30 | 4.27 | 1 | 4 | 3.10 | 3.13 | 89.06 | 126 | +28 | 14.10 | 7.22 | 86.82 | 151 | +76 | 30.06 | 35.03 | 97.54 | 28 | +2 | 12.05 | 8.98 | 70.73 | 306 | -17 |
-| ITCHOTELS | Hotels/Resorts/Cruise lines | 186.10 | 82.95 | 1 | 4 | 1.33 | 1.36 | 79.70 | 233 | -153 | 12.72 | 5.92 | 83.66 | 187 | +22 | 16.25 | 20.69 | 92.17 | 87 | +2 | 22.11 | 18.77 | 80.71 | 202 | -7 |
-| IXIGO | Internet Software/Services | 171.04 | 77.49 | 1 | 4 | -3.41 | -3.38 | 30.97 | 790 | -303 | 22.28 | 14.90 | 96.40 | 42 | -5 | 4.92 | 8.93 | 80.62 | 214 | -51 | 11.52 | 8.47 | 69.67 | 317 | +14 |
-| JKTYRE | Automotive Aftermarket | 360.10 | 19.69 | 1 | 4 | -1.71 | -1.68 | 49.43 | 579 | -384 | 18.24 | 11.11 | 92.44 | 87 | -25 | -4.95 | -1.31 | 59.33 | 448 | -47 | -6.71 | -9.27 | 42.61 | 599 | -33 |
-| JLHL | Hospital/Nursing Management | 298.00 | 40.48 | 1 | 4 | 5.97 | 6.00 | 95.45 | 53 | +2 | 16.07 | 9.07 | 89.63 | 119 | -49 | 0.81 | 4.67 | 71.61 | 313 | -54 | -77.41 | -78.03 | 0.29 | 1040 | +1 |
-| JYOTICNC | Metal Fabrication | 1050.35 | 73.00 | 1 | 4 | -2.00 | -1.97 | 45.76 | 621 | +137 | 13.04 | 6.22 | 84.45 | 178 | +99 | 5.57 | 9.61 | 81.53 | 204 | +149 | 77.21 | 72.36 | 98.18 | 20 | +4 |
-| KAPSTON | Miscellaneous Commercial Services | 534.85 | 2.14 | 1 | 4 | -0.38 | -0.35 | 64.57 | 406 | +111 | 5.26 | -1.08 | 62.65 | 426 | -9 | -8.85 | -5.37 | 47.22 | 581 | -151 | 60.50 | 56.10 | 96.16 | 41 | -1 |
-| KCP | Industrial Conglomerates | 149.26 | 1.47 | 1 | 4 | 3.83 | 3.85 | 91.34 | 100 | +221 | 3.91 | -2.36 | 57.73 | 482 | +163 | -10.57 | -7.15 | 41.58 | 643 | +95 | -7.69 | -10.22 | 40.21 | 624 | +50 |
-| KFINTECH | Packaged Software | 995.00 | 98.59 | 1 | 4 | 6.30 | 6.33 | 96.06 | 46 | +341 | 16.37 | 9.36 | 89.89 | 116 | +239 | 2.58 | 6.50 | 76.25 | 262 | +86 | 18.83 | 15.57 | 78.02 | 230 | +121 |
-| KRBL | Agricultural Commodities/Milling | 417.30 | 33.12 | 1 | 4 | -1.01 | -0.98 | 58.53 | 475 | -288 | 19.01 | 11.83 | 93.76 | 72 | +27 | -1.17 | 2.61 | 67.61 | 357 | +64 | 19.18 | 15.91 | 78.60 | 224 | -13 |
-| KRISHANA | Chemicals: Agricultural | 243.04 | 22.27 | 1 | 4 | 0.38 | 0.41 | 72.18 | 319 | -64 | 11.76 | 5.02 | 82.34 | 202 | -58 | 27.23 | 32.09 | 96.82 | 36 | -3 | -64.40 | -65.37 | 0.58 | 1037 | +2 |
-| KRISHNADEF | Aerospace & Defense | 1198.80 | 14.63 | 1 | 4 | -6.38 | -6.35 | 10.15 | 1028 | +40 | 4.12 | -2.16 | 58.44 | 474 | +207 | 19.31 | 23.87 | 94.18 | 65 | +27 | 5.66 | 2.76 | 62.09 | 396 | +56 |
-| LALPATHLAB | Medical/Nursing Services | 2037.90 | 52.76 | 1 | 4 | 3.81 | 3.83 | 91.16 | 102 | +53 | 6.01 | -0.38 | 65.29 | 396 | -18 | 5.34 | 9.37 | 81.07 | 209 | -5 | 29.84 | 26.28 | 86.66 | 140 | -6 |
-| LEMONTREE | Hotels/Resorts/Cruise lines | 123.35 | 49.92 | 1 | 4 | -1.19 | -1.16 | 56.17 | 502 | -193 | 15.12 | 8.18 | 88.49 | 132 | -23 | 16.09 | 20.54 | 91.90 | 90 | -5 | 11.57 | 8.51 | 69.77 | 316 | -16 |
-| LICHSGFIN | Finance/Rental/Leasing | 596.25 | 141.42 | 1 | 4 | -2.25 | -2.23 | 42.43 | 659 | -6 | 16.88 | 9.83 | 90.77 | 106 | -1 | 10.74 | 14.98 | 88.63 | 126 | -3 | 10.16 | 7.14 | 68.04 | 334 | -24 |
-| LUMAXTECH | Auto Parts: OEM | 2336.20 | 42.03 | 1 | 4 | -0.04 | -0.01 | 67.80 | 369 | -209 | 14.35 | 7.45 | 87.08 | 148 | -114 | 12.40 | 16.70 | 90.08 | 110 | -51 | 31.85 | 28.23 | 88.20 | 124 | -30 |
-| MACPOWER | Industrial Machinery | 2023.90 | 10.96 | 1 | 4 | -5.02 | -4.99 | 17.76 | 941 | +53 | 4.39 | -1.90 | 59.31 | 464 | -105 | 1.74 | 5.63 | 73.79 | 289 | -23 | 113.42 | 107.58 | 99.33 | 8 | +0 |
-| MAHSCOOTER | Financial Conglomerates | 12615.00 | 3.20 | 1 | 1 | 4.26 | 4.29 | 92.74 | 84 | -2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| MANINDS | Industrial Machinery | 701.40 | 45.46 | 1 | 4 | -8.25 | -8.22 | 4.20 | 1096 | -26 | -9.79 | -15.23 | 9.75 | 1028 | +28 | -6.85 | -3.28 | 53.59 | 511 | +35 | 41.37 | 37.49 | 92.80 | 76 | -2 |
-| MARATHON | Real Estate Development | 437.90 | 5.70 | 1 | 4 | 0.17 | 0.20 | 70.43 | 339 | +12 | 18.62 | 11.47 | 93.23 | 78 | -30 | 6.02 | 10.07 | 82.26 | 196 | +19 | 3.90 | 1.06 | 59.31 | 425 | +35 |
-| MARINE | Wholesale Distributors | 419.15 | 45.97 | 1 | 4 | -1.47 | -1.44 | 52.93 | 539 | +254 | 0.44 | -5.61 | 42.62 | 654 | +258 | 4.57 | 8.57 | 80.16 | 219 | +125 | 66.03 | 61.48 | 97.31 | 29 | +13 |
-| MBAPL | Chemicals: Agricultural | 191.97 | 18.55 | 1 | 4 | -0.18 | -0.15 | 66.23 | 387 | -97 | 13.68 | 6.82 | 86.12 | 159 | -41 | 18.90 | 23.45 | 94.09 | 66 | -6 | -64.43 | -65.41 | 0.48 | 1038 | +0 |
-| MEDANTA | Hospital/Nursing Management | 1511.50 | 35.87 | 1 | 4 | 2.25 | 2.27 | 85.21 | 170 | -118 | 17.81 | 10.71 | 91.65 | 96 | -43 | 2.15 | 6.06 | 75.25 | 273 | -57 | 25.82 | 22.37 | 83.40 | 174 | -22 |
-| METROPOLIS | Medical/Nursing Services | 580.30 | 13.24 | 1 | 4 | 3.87 | 3.89 | 91.43 | 99 | +258 | 5.28 | -1.07 | 62.74 | 425 | +110 | -0.35 | 3.46 | 69.34 | 338 | +65 | 8.23 | 5.27 | 65.93 | 356 | +46 |
-| MMP | Other Metals/Minerals | 449.00 | 2.22 | 1 | 3 | -1.00 | -0.98 | 58.62 | 474 | -62 | -0.28 | -6.29 | 38.66 | 699 | -65 | 14.12 | 18.48 | 91.36 | 96 | +38 | N/A | N/A | N/A | N/A | N/A |
-| MPHASIS | Packaged Software | 2510.00 | 181.42 | 1 | 4 | 6.54 | 6.57 | 96.59 | 40 | +31 | -0.32 | -6.33 | 38.40 | 702 | +117 | 3.40 | 7.36 | 77.89 | 244 | -9 | 9.68 | 6.67 | 67.18 | 343 | +41 |
-| MSTCLTD | Internet Retail | 628.00 | 37.17 | 1 | 4 | -7.19 | -7.16 | 6.65 | 1068 | +46 | 13.55 | 6.70 | 85.59 | 165 | +68 | -16.39 | -13.19 | 24.02 | 836 | -61 | 40.67 | 36.81 | 92.23 | 82 | +7 |
-| MUTHOOTMF | Finance/Rental/Leasing | 164.45 | 5.95 | 1 | 4 | -3.15 | -3.12 | 33.42 | 762 | +77 | 16.67 | 9.64 | 90.25 | 112 | +125 | -19.32 | -16.24 | 16.83 | 915 | +75 | -8.69 | -11.19 | 38.00 | 647 | +48 |
-| NAUKRI | Internet Software/Services | 1229.00 | 144.21 | 1 | 4 | 6.16 | 6.19 | 95.63 | 51 | +21 | 3.28 | -2.95 | 54.66 | 517 | +134 | -6.40 | -2.82 | 54.87 | 497 | +102 | 22.16 | 18.81 | 80.90 | 200 | +15 |
-| NAZARA | Packaged Software | 381.25 | 50.44 | 1 | 4 | -10.41 | -10.39 | 2.19 | 1119 | -25 | -4.69 | -10.44 | 22.50 | 883 | +32 | 2.29 | 6.21 | 75.71 | 268 | +20 | 40.29 | 36.45 | 92.13 | 83 | +7 |
-| NELCAST | Steel | 144.04 | 12.72 | 1 | 4 | 1.58 | 1.61 | 81.19 | 216 | -1 | 8.63 | 2.08 | 72.67 | 312 | -186 | 21.90 | 26.57 | 95.18 | 54 | -3 | 5.04 | 2.16 | 61.04 | 407 | -6 |
-| NH | Hospital/Nursing Management | 1982.20 | 34.15 | 1 | 4 | 5.82 | 5.85 | 95.28 | 55 | +10 | 15.04 | 8.10 | 88.40 | 133 | -20 | 3.93 | 7.91 | 79.07 | 231 | -10 | 0.08 | -2.66 | 53.93 | 481 | -63 |
-| NILKAMAL | Home Furnishings | 1946.40 | 11.01 | 1 | 4 | -10.29 | -10.26 | 2.36 | 1117 | +8 | 10.37 | 3.71 | 78.30 | 248 | -124 | -2.98 | 0.73 | 63.33 | 404 | +76 | 54.82 | 50.58 | 95.78 | 45 | +8 |
-| NPST | Packaged Software | 1766.10 | 3.77 | 1 | 4 | 4.37 | 4.40 | 92.91 | 82 | +45 | 7.27 | 0.80 | 68.72 | 357 | +131 | 5.72 | 9.76 | 81.71 | 202 | +38 | 27.08 | 23.59 | 84.93 | 158 | -40 |
-| NRAIL | Containers/Packaging | 574.70 | 1.29 | 1 | 3 | -11.30 | -11.28 | 1.49 | 1127 | -571 | -15.14 | -20.25 | 4.22 | 1091 | -78 | 12.69 | 17.00 | 90.63 | 104 | -55 | N/A | N/A | N/A | N/A | N/A |
-| NUVOCO | Construction Materials | 359.50 | 20.24 | 1 | 4 | 3.25 | 3.27 | 89.33 | 123 | -2 | 7.62 | 1.13 | 69.33 | 350 | +16 | 12.73 | 17.04 | 90.81 | 102 | +19 | 9.39 | 6.39 | 66.79 | 347 | +10 |
-| ONEPOINT | Miscellaneous Commercial Services | 68.77 | 16.61 | 1 | 4 | -4.62 | -4.59 | 20.56 | 909 | +125 | -4.59 | -10.35 | 22.58 | 882 | +76 | 25.54 | 30.34 | 96.54 | 39 | +6 | 18.63 | 15.38 | 77.74 | 233 | +23 |
-| PAISALO | Finance/Rental/Leasing | 74.34 | 35.66 | 1 | 4 | 0.15 | 0.18 | 70.17 | 342 | +177 | -5.86 | -11.54 | 18.45 | 929 | -69 | 10.44 | 14.67 | 88.26 | 130 | +2 | 37.87 | 34.09 | 91.46 | 90 | -23 |
-| PARAS | Aerospace & Defense | 1240.10 | 77.59 | 1 | 4 | -2.79 | -2.76 | 37.36 | 717 | -299 | -4.80 | -10.54 | 22.06 | 888 | -50 | -13.46 | -10.14 | 32.12 | 747 | -2 | 47.75 | 43.70 | 94.72 | 56 | +4 |
-| PATANJALI | Agricultural Commodities/Milling | 405.40 | 156.95 | 1 | 4 | 0.85 | 0.87 | 76.20 | 273 | -22 | 9.69 | 3.07 | 75.92 | 275 | -163 | 17.51 | 22.00 | 92.99 | 78 | -4 | -8.21 | -10.72 | 39.25 | 634 | +26 |
-| PGHH | Household/Personal Care | 7233.50 | 9.35 | 1 | 4 | 4.50 | 4.53 | 93.18 | 79 | +39 | 5.15 | -1.19 | 62.13 | 432 | +11 | -9.35 | -5.88 | 45.59 | 599 | +95 | -22.21 | -24.34 | 15.07 | 886 | +29 |
-| PGIL | Apparel/Footwear | 1424.70 | 23.10 | 1 | 4 | 1.47 | 1.50 | 80.40 | 225 | -8 | 18.83 | 11.67 | 93.41 | 76 | -12 | -42.17 | -39.96 | 0.55 | 1094 | -5 | -12.88 | -15.27 | 29.56 | 735 | -21 |
-| PNBGILTS | Investment Banks/Brokers | 82.30 | 4.65 | 1 | 4 | 3.59 | 3.62 | 90.38 | 111 | +365 | 10.89 | 4.20 | 79.70 | 232 | -7 | 6.94 | 11.03 | 83.62 | 181 | +90 | -4.32 | -6.95 | 46.74 | 556 | -90 |
-| POONAWALLA | Finance/Rental/Leasing | 508.60 | 128.77 | 1 | 4 | 0.76 | 0.79 | 75.24 | 284 | -95 | 26.13 | 18.52 | 97.72 | 27 | -7 | 9.66 | 13.85 | 86.99 | 144 | +25 | 27.37 | 23.88 | 85.12 | 156 | -16 |
-| PPLPHARMA | Pharmaceuticals: Major | 235.60 | 227.51 | 1 | 4 | -1.69 | -1.66 | 49.96 | 573 | +156 | 1.20 | -4.90 | 46.31 | 612 | -501 | 9.89 | 14.09 | 87.35 | 140 | +42 | 41.07 | 37.20 | 92.71 | 77 | +5 |
-| PROTEAN | Information Technology Services | 693.25 | 26.41 | 1 | 4 | -2.65 | -2.62 | 38.41 | 705 | -448 | 15.86 | 8.87 | 89.37 | 122 | +74 | 33.10 | 38.19 | 98.45 | 18 | +18 | 17.34 | 14.13 | 76.20 | 249 | +38 |
-| PWL | Miscellaneous Commercial Services | 136.38 | 116.65 | 1 | 3 | 0.12 | 0.15 | 69.90 | 345 | -277 | 3.79 | -2.47 | 56.94 | 491 | -29 | 16.97 | 21.45 | 92.90 | 79 | +21 | N/A | N/A | N/A | N/A | N/A |
-| QUESS | Personnel Services | 326.35 | 7.59 | 1 | 4 | -6.01 | -5.98 | 12.34 | 1003 | -563 | 0.26 | -5.79 | 41.65 | 665 | -43 | -14.51 | -11.24 | 28.66 | 785 | -89 | 54.58 | 50.34 | 95.59 | 47 | +0 |
-| RAMCOSYS | Information Technology Services | 575.15 | 3.54 | 1 | 4 | 7.93 | 7.96 | 97.81 | 26 | +393 | 10.25 | 3.60 | 78.21 | 249 | +103 | -0.02 | 3.81 | 69.61 | 335 | +152 | 28.37 | 24.85 | 85.60 | 151 | +87 |
-| RAMKY | Engineering & Construction | 373.40 | 17.61 | 1 | 4 | -2.40 | -2.38 | 41.03 | 675 | -38 | 24.38 | 16.88 | 97.19 | 33 | -30 | 6.26 | 10.33 | 82.53 | 193 | -8 | -14.19 | -16.54 | 27.06 | 761 | -18 |
-| RAYMONDREL | Real Estate Development | 619.05 | 30.33 | 1 | 4 | -2.19 | -2.16 | 43.57 | 646 | +234 | 12.93 | 6.12 | 84.01 | 183 | +407 | 16.32 | 20.77 | 92.45 | 84 | +62 | 4.17 | 1.32 | 60.08 | 417 | -10 |
-| REDINGTON | Electronics Distributors | 330.00 | 137.55 | 1 | 4 | -3.31 | -3.28 | 31.93 | 779 | +68 | -6.09 | -11.75 | 18.01 | 934 | +80 | -7.76 | -4.23 | 51.41 | 535 | +118 | 36.22 | 32.49 | 90.60 | 99 | -2 |
-| REGAAL | Agricultural Commodities/Milling | 98.52 | 4.10 | 1 | 3 | 4.52 | 4.55 | 93.35 | 77 | +23 | 11.56 | 4.83 | 81.72 | 209 | -39 | 10.67 | 14.91 | 88.54 | 127 | +21 | N/A | N/A | N/A | N/A | N/A |
-| REPCOHOME | Finance/Rental/Leasing | 374.85 | 12.78 | 1 | 4 | -1.28 | -1.25 | 55.03 | 515 | +409 | 22.64 | 15.24 | 96.66 | 39 | +35 | 3.26 | 7.21 | 77.71 | 246 | +74 | 1.56 | -1.23 | 56.43 | 455 | +68 |
-| RGL | Other Consumer Specialties | 143.63 | 8.43 | 1 | 4 | -0.55 | -0.52 | 62.64 | 428 | +623 | 1.79 | -4.35 | 48.77 | 584 | +127 | 6.22 | 10.28 | 82.44 | 194 | +145 | 39.27 | 35.45 | 91.84 | 86 | +28 |
-| RISHABH | Electrical Products | 604.55 | 10.47 | 1 | 4 | 3.79 | 3.82 | 90.99 | 104 | +318 | -7.63 | -13.20 | 14.24 | 977 | +40 | -14.30 | -11.02 | 29.48 | 776 | +2 | 15.74 | 12.57 | 74.76 | 264 | +24 |
-| ROLEXRINGS | Metal Fabrication | 191.02 | 48.67 | 1 | 4 | -4.65 | -4.63 | 20.12 | 914 | +59 | 14.44 | 7.54 | 87.35 | 145 | -50 | 5.78 | 9.82 | 81.89 | 200 | -19 | 38.65 | 34.85 | 91.65 | 88 | +7 |
-| RPEL | Chemicals: Major Diversified | 1903.80 | 18.34 | 1 | 4 | 0.12 | 0.15 | 69.82 | 346 | +99 | 7.92 | 1.41 | 70.21 | 340 | -45 | 7.49 | 11.60 | 83.89 | 178 | -33 | 91.78 | 86.52 | 98.85 | 13 | +1 |
-| RUBYMILLS | Textiles | 446.60 | 0.64 | 1 | 3 | -1.38 | -1.35 | 53.81 | 529 | +52 | -8.01 | -13.56 | 13.18 | 989 | -96 | 16.20 | 20.64 | 92.08 | 88 | +21 | N/A | N/A | N/A | N/A | N/A |
-| RUSTOMJEE | Real Estate Development | 387.45 | 2.19 | 1 | 4 | 5.93 | 5.96 | 95.36 | 54 | +162 | 15.28 | 8.33 | 88.84 | 128 | +147 | 2.24 | 6.15 | 75.61 | 269 | +101 | -1.02 | -3.73 | 51.73 | 504 | +74 |
-| SAATVIKGL | Industrial Machinery | 365.35 | 1.49 | 1 | 3 | 6.21 | 6.24 | 95.71 | 50 | -24 | 4.61 | -1.70 | 60.02 | 456 | -67 | -12.59 | -9.24 | 35.12 | 714 | -33 | N/A | N/A | N/A | N/A | N/A |
-| SAKAR | Pharmaceuticals: Major | 971.10 | 11.37 | 1 | 4 | -0.52 | -0.49 | 63.08 | 423 | +523 | -1.81 | -7.73 | 32.07 | 774 | -240 | 12.48 | 16.78 | 90.26 | 108 | +35 | 19.47 | 16.19 | 78.79 | 222 | +48 |
-| SANATHAN | Textiles | 547.80 | 6.22 | 1 | 4 | -6.45 | -6.42 | 9.80 | 1032 | -67 | 10.62 | 3.95 | 78.82 | 242 | -39 | 21.13 | 25.76 | 95.00 | 56 | -13 | 34.53 | 30.84 | 89.73 | 108 | -16 |
-| SANGAMIND | Textiles | 676.05 | 5.76 | 1 | 4 | -0.13 | -0.11 | 66.67 | 382 | -109 | 12.54 | 5.76 | 83.30 | 191 | -98 | 12.64 | 16.95 | 90.45 | 106 | -16 | 27.07 | 23.58 | 84.84 | 159 | -37 |
-| SANGHVIMOV | Finance/Rental/Leasing | 396.65 | 22.67 | 1 | 4 | 7.98 | 8.01 | 98.08 | 23 | +269 | 14.11 | 7.23 | 86.91 | 150 | +5 | -13.25 | -9.93 | 32.67 | 741 | +42 | 10.40 | 7.37 | 68.43 | 330 | +64 |
-| SATIN | Finance/Rental/Leasing | 255.19 | 13.62 | 1 | 4 | 0.25 | 0.28 | 70.95 | 333 | +217 | 11.88 | 5.13 | 82.60 | 199 | -7 | 13.91 | 18.27 | 91.26 | 97 | +2 | 8.48 | 5.50 | 66.31 | 352 | -10 |
-| SETL | Medical Specialties | 342.05 | 21.28 | 1 | 4 | -5.55 | -5.52 | 14.35 | 980 | +0 | -11.53 | -16.87 | 7.03 | 1059 | -137 | -7.43 | -3.89 | 52.23 | 526 | -88 | 147.38 | 140.60 | 99.90 | 2 | +0 |
-| SHAILY | Chemicals: Specialty | 3379.60 | 57.56 | 1 | 4 | 7.93 | 7.96 | 97.90 | 25 | +992 | 10.85 | 4.17 | 79.53 | 234 | +673 | 3.28 | 7.23 | 77.80 | 245 | +407 | 10.06 | 7.04 | 67.75 | 337 | +210 |
-| SHALBY | Hospital/Nursing Management | 128.52 | 1.31 | 1 | 4 | 5.44 | 5.47 | 94.84 | 60 | -14 | 4.73 | -1.58 | 60.81 | 447 | -82 | -17.23 | -14.06 | 21.84 | 860 | -4 | -27.06 | -29.06 | 9.21 | 947 | +9 |
-| SHARDAMOTR | Auto Parts: OEM | 974.45 | 25.30 | 1 | 4 | 0.52 | 0.54 | 73.40 | 305 | -260 | 18.27 | 11.14 | 92.53 | 86 | -48 | 10.37 | 14.59 | 88.08 | 132 | -34 | 17.64 | 14.42 | 76.58 | 245 | -15 |
-| SHILPAMED | Pharmaceuticals: Major | 835.65 | 72.76 | 1 | 4 | -7.22 | -7.20 | 6.56 | 1069 | -36 | -10.34 | -15.74 | 8.61 | 1041 | -133 | -11.97 | -8.60 | 37.03 | 693 | -231 | 62.14 | 57.69 | 96.55 | 37 | -7 |
-| SHREEPUSHK | Chemicals: Specialty | 516.00 | 6.61 | 1 | 4 | 0.40 | 0.43 | 72.35 | 317 | +106 | -4.92 | -10.65 | 21.70 | 892 | -342 | 9.67 | 13.87 | 87.08 | 143 | -50 | 41.49 | 37.61 | 92.90 | 75 | -4 |
-| SHYAMMETL | Metal Fabrication | 1293.00 | 49.08 | 1 | 4 | -0.08 | -0.05 | 67.28 | 375 | +272 | 12.96 | 6.14 | 84.09 | 182 | +34 | 18.24 | 22.77 | 93.72 | 70 | -2 | 31.95 | 28.33 | 88.29 | 123 | -2 |
-| SIGNATURE | Real Estate Development | 856.30 | 35.65 | 1 | 4 | 0.84 | 0.87 | 76.12 | 274 | +74 | 22.02 | 14.66 | 96.05 | 46 | +19 | 11.22 | 15.48 | 89.44 | 117 | +35 | 4.59 | 1.72 | 60.36 | 414 | +23 |
-| SIMPLEXINF | Engineering & Construction | 296.70 | 8.00 | 1 | 4 | -1.82 | -1.79 | 47.68 | 599 | -50 | 17.69 | 10.59 | 91.48 | 98 | +27 | 10.37 | 14.59 | 87.99 | 133 | +45 | 25.08 | 21.66 | 83.11 | 177 | +2 |
-| SKIPPER | Metal Fabrication | 505.20 | 26.19 | 1 | 4 | 3.51 | 3.54 | 90.03 | 115 | +106 | 0.01 | -6.02 | 40.16 | 682 | +153 | -6.65 | -3.08 | 54.14 | 505 | +106 | -11.45 | -13.87 | 33.11 | 698 | +63 |
-| SKYGOLD | Other Consumer Specialties | 808.90 | 156.89 | 1 | 4 | -12.67 | -12.65 | 1.22 | 1130 | +4 | -5.76 | -11.44 | 18.89 | 924 | +157 | 0.22 | 4.06 | 70.06 | 330 | +7 | 43.61 | 39.68 | 93.57 | 68 | -3 |
-| SONACOMS | Auto Parts: OEM | 881.50 | 229.31 | 1 | 4 | -2.28 | -2.26 | 42.17 | 662 | -169 | 0.23 | -5.81 | 41.30 | 669 | -174 | 8.42 | 12.57 | 84.90 | 167 | -13 | 46.08 | 42.07 | 94.34 | 60 | +3 |
-| SOUTHBANK | Major Banks | 57.59 | 99.69 | 1 | 4 | -3.44 | -3.41 | 30.62 | 794 | +31 | 5.40 | -0.96 | 63.36 | 418 | -87 | 26.13 | 30.95 | 96.72 | 37 | -8 | 32.09 | 28.47 | 88.39 | 122 | -44 |
-| SPORTKING | Textiles | 230.78 | 15.62 | 1 | 4 | 3.52 | 3.55 | 90.20 | 113 | -86 | 10.07 | 3.43 | 77.33 | 259 | -73 | 1.80 | 5.69 | 74.25 | 284 | -93 | 26.50 | 23.04 | 84.26 | 165 | +21 |
-| STEL | Financial Conglomerates | 620.25 | 0.34 | 1 | 4 | 3.02 | 3.05 | 88.63 | 131 | -9 | 17.76 | 10.66 | 91.56 | 97 | -73 | -6.19 | -2.60 | 55.51 | 490 | -190 | 26.47 | 23.00 | 84.07 | 167 | -50 |
-| SUNTV | Broadcasting | 651.10 | 53.43 | 1 | 4 | -6.40 | -6.37 | 10.06 | 1029 | +93 | 3.21 | -3.01 | 54.57 | 518 | +285 | 39.68 | 45.02 | 99.00 | 12 | +15 | 26.37 | 22.90 | 83.97 | 168 | +58 |
-| TANLA | Information Technology Services | 624.70 | 78.00 | 1 | 4 | -6.76 | -6.74 | 8.14 | 1051 | -15 | 4.34 | -1.95 | 58.88 | 469 | -261 | 17.83 | 22.34 | 93.36 | 74 | -13 | 18.25 | 15.01 | 77.26 | 238 | -19 |
-| TARSONS | Containers/Packaging | 294.85 | 1.97 | 1 | 4 | -2.91 | -2.89 | 36.31 | 729 | -154 | -3.20 | -9.04 | 26.36 | 839 | -63 | -11.10 | -7.70 | 40.13 | 659 | -3 | 42.80 | 38.89 | 93.19 | 72 | +0 |
-| TATAELXSI | Information Technology Services | 3860.70 | 102.96 | 1 | 4 | 3.64 | 3.67 | 90.73 | 107 | +8 | 2.81 | -3.39 | 53.08 | 535 | +11 | 7.88 | 12.01 | 84.44 | 172 | +51 | -11.19 | -13.62 | 33.97 | 689 | +100 |
-| TCPLPACK | Commercial Printing/Forms | 4333.20 | 4.56 | 1 | 4 | -4.24 | -4.21 | 23.36 | 877 | +110 | 5.65 | -0.72 | 63.97 | 411 | -2 | 10.88 | 15.12 | 88.81 | 124 | +2 | 71.63 | 66.92 | 97.98 | 22 | +7 |
-| TEAMLEASE | Personnel Services | 1027.90 | 7.03 | 1 | 4 | 3.51 | 3.54 | 90.11 | 114 | -58 | -1.90 | -7.82 | 31.90 | 776 | -50 | -19.91 | -16.85 | 16.01 | 924 | -52 | -25.37 | -27.41 | 11.04 | 928 | -6 |
-| TIPSMUSIC | Movies/Entertainment | 777.75 | 51.69 | 1 | 4 | -4.33 | -4.30 | 22.92 | 882 | +107 | -2.03 | -7.94 | 30.67 | 790 | -263 | 20.80 | 25.42 | 94.81 | 58 | +7 | 17.87 | 14.64 | 76.87 | 242 | +44 |
-| UGROCAP | Finance/Rental/Leasing | 77.55 | 40.07 | 1 | 4 | 5.30 | 5.32 | 94.66 | 62 | -43 | 3.29 | -2.94 | 55.01 | 513 | -111 | -10.92 | -7.52 | 40.58 | 654 | -62 | -16.63 | -18.92 | 22.55 | 808 | +9 |
-| UNITEDPOLY | Textiles | 52.75 | 3.13 | 1 | 3 | -5.60 | -5.58 | 14.09 | 983 | -805 | -4.32 | -10.09 | 24.08 | 865 | -272 | 40.33 | 45.70 | 99.09 | 11 | +1 | N/A | N/A | N/A | N/A | N/A |
-| UNOMINDA | Auto Parts: OEM | 1390.00 | 137.27 | 1 | 4 | 0.36 | 0.39 | 71.83 | 323 | +43 | 26.38 | 18.75 | 97.98 | 24 | +1 | 8.93 | 13.10 | 85.53 | 160 | +2 | 28.38 | 24.86 | 85.70 | 150 | +11 |
-| URBANCO | Packaged Software | 170.72 | 142.09 | 1 | 3 | -3.03 | -3.00 | 34.91 | 745 | +167 | 18.00 | 10.88 | 92.09 | 91 | +65 | 2.16 | 6.07 | 75.34 | 272 | +86 | N/A | N/A | N/A | N/A | N/A |
-| VIJAYA | Medical/Nursing Services | 1587.10 | 31.40 | 1 | 4 | 5.06 | 5.09 | 93.96 | 70 | -10 | 10.00 | 3.37 | 76.98 | 263 | -68 | 4.52 | 8.52 | 80.07 | 220 | -103 | 24.05 | 20.65 | 82.44 | 184 | +3 |
-| VIMTALABS | Miscellaneous Commercial Services | 490.75 | 4.35 | 1 | 4 | 3.98 | 4.01 | 92.04 | 92 | +49 | -4.41 | -10.18 | 23.46 | 872 | +17 | -23.73 | -20.81 | 9.92 | 991 | -40 | -4.38 | -7.00 | 46.64 | 557 | -127 |
-| VMM | Apparel/Footwear Retail | 96.05 | 77.28 | 1 | 4 | 4.41 | 4.44 | 93.00 | 81 | +7 | 9.21 | 2.62 | 74.34 | 293 | +52 | -13.19 | -9.87 | 32.76 | 740 | -82 | -20.15 | -22.34 | 17.18 | 864 | +2 |
-| VOLTAS | Industrial Machinery | 1215.50 | 126.16 | 1 | 4 | -1.74 | -1.71 | 49.08 | 583 | -560 | 20.12 | 12.88 | 94.73 | 61 | -45 | 1.77 | 5.66 | 74.07 | 286 | -40 | -1.58 | -4.28 | 51.25 | 509 | -20 |
-| VRLLOG | Trucking | 314.90 | 46.64 | 1 | 4 | -7.74 | -7.71 | 4.90 | 1088 | -308 | 16.80 | 9.76 | 90.60 | 108 | -64 | 3.88 | 7.85 | 78.89 | 233 | -100 | 33.80 | 30.13 | 89.44 | 111 | -9 |
-| VSSL | Steel | 370.10 | 5.53 | 1 | 4 | -2.59 | -2.57 | 38.85 | 700 | +60 | 12.60 | 5.81 | 83.48 | 189 | +411 | 3.92 | 7.89 | 78.98 | 232 | -46 | 36.37 | 32.63 | 90.88 | 96 | -3 |
-| WELCORP | Industrial Machinery | 2232.80 | 229.82 | 1 | 4 | 0.37 | 0.40 | 72.09 | 320 | +609 | -12.93 | -18.18 | 5.62 | 1075 | +9 | -6.62 | -3.04 | 54.23 | 504 | +129 | 57.95 | 53.62 | 95.87 | 44 | +4 |
-| WESTLIFE | Restaurants | 623.85 | 32.65 | 1 | 4 | -8.82 | -8.80 | 3.41 | 1105 | -273 | 4.72 | -1.60 | 60.63 | 449 | -116 | 9.22 | 13.40 | 85.99 | 155 | -82 | 45.37 | 41.39 | 93.95 | 64 | -19 |
-| XPROINDIA | Industrial Specialties | 1184.80 | 9.43 | 1 | 4 | -5.79 | -5.76 | 13.56 | 989 | +46 | 18.36 | 11.22 | 92.79 | 83 | +8 | 3.19 | 7.13 | 77.62 | 247 | -11 | 2.79 | -0.02 | 57.97 | 439 | +6 |
-| YASHO | Food: Specialty/Candy | 3410.40 | 16.52 | 1 | 4 | -5.72 | -5.69 | 13.65 | 988 | +115 | 3.20 | -3.02 | 54.48 | 519 | +535 | -18.96 | -15.86 | 17.83 | 904 | +54 | 52.18 | 48.01 | 95.20 | 51 | -10 |
-| YATRA | Other Consumer Services | 87.86 | 71.80 | 1 | 4 | -2.32 | -2.30 | 41.99 | 664 | -92 | 18.15 | 11.03 | 92.27 | 89 | +8 | -17.44 | -14.28 | 21.11 | 868 | -5 | -8.81 | -11.31 | 37.72 | 650 | -37 |
-| YUKEN | Industrial Machinery | 1019.50 | 1.37 | 1 | 4 | 1.72 | 1.74 | 82.50 | 201 | +138 | -8.29 | -13.82 | 12.74 | 994 | +48 | 3.07 | 7.02 | 77.34 | 250 | +22 | 46.85 | 42.83 | 94.53 | 58 | -3 |
-| ZAGGLE | Packaged Software | 162.51 | 19.54 | 1 | 4 | 5.21 | 5.24 | 94.23 | 67 | +875 | 0.73 | -5.35 | 43.94 | 639 | +383 | -11.92 | -8.55 | 37.22 | 691 | +255 | -20.00 | -22.20 | 17.27 | 863 | +64 |
-| ZENTEC | Information Technology Services | 1768.10 | 68.30 | 1 | 4 | 3.64 | 3.67 | 90.64 | 108 | +365 | 12.70 | 5.91 | 83.57 | 188 | +97 | -0.62 | 3.18 | 68.79 | 344 | +124 | 4.74 | 1.87 | 60.65 | 411 | +21 |
-| ZOTA | Pharmaceuticals: Major | 1314.50 | 5.94 | 1 | 4 | 0.65 | 0.68 | 74.19 | 296 | +51 | 3.41 | -2.82 | 55.54 | 507 | +13 | 24.74 | 29.51 | 95.91 | 46 | +7 | 7.25 | 4.31 | 64.49 | 371 | -113 |
+| 360ONE | Investment Managers | 1230.00 | 100.05 | 1 | 4 | 1.81 | 2.01 | 76.53 | 269 | -15 | 20.27 | 13.69 | 95.34 | 54 | -9 | 5.53 | 8.46 | 80.42 | 216 | +37 | 14.76 | 11.94 | 73.90 | 273 | +25 |
+| 63MOONS | Packaged Software | 859.20 | 32.98 | 1 | 4 | -7.18 | -7.00 | 2.36 | 1116 | -4 | -8.23 | -13.26 | 11.70 | 1005 | -41 | 10.79 | 13.87 | 87.16 | 142 | -20 | 38.47 | 35.06 | 91.94 | 85 | +0 |
+| ABREL | Textiles | 1271.70 | 35.60 | 1 | 4 | 4.62 | 4.82 | 89.84 | 117 | -48 | 21.96 | 15.29 | 96.48 | 41 | +3 | -6.29 | -3.68 | 52.46 | 523 | -74 | 1.65 | -0.85 | 56.14 | 458 | -16 |
+| ACMESOLAR | Engineering & Construction | 426.35 | 36.77 | 1 | 4 | 5.17 | 5.37 | 91.42 | 99 | +111 | 2.54 | -3.08 | 52.42 | 542 | +73 | 5.61 | 8.55 | 80.60 | 214 | +28 | 23.28 | 20.24 | 81.96 | 189 | -20 |
+| AFFLE | Packaged Software | 1644.20 | 46.71 | 1 | 4 | 2.80 | 3.00 | 83.45 | 190 | -26 | 19.03 | 12.52 | 93.93 | 70 | +57 | 5.05 | 7.98 | 79.69 | 224 | +58 | 10.94 | 8.21 | 69.19 | 322 | +4 |
+| AGIIL | Real Estate Development | 317.15 | 65.87 | 1 | 4 | 3.72 | 3.92 | 86.78 | 152 | +127 | 32.15 | 24.91 | 99.21 | 10 | -3 | 10.85 | 13.94 | 87.25 | 141 | +32 | -17.80 | -19.83 | 19.96 | 835 | +32 |
+| ALIVUS | Pharmaceuticals: Major | 1413.00 | 52.79 | 1 | 4 | -1.66 | -1.47 | 35.38 | 739 | -91 | 1.12 | -4.42 | 45.82 | 617 | -8 | -2.13 | 0.60 | 63.66 | 400 | -90 | 36.42 | 33.06 | 90.69 | 98 | -3 |
+| ANANDRATHI | Investment Managers | 2412.20 | 66.88 | 1 | 4 | 1.53 | 1.73 | 73.82 | 300 | -97 | 6.26 | 0.45 | 65.88 | 389 | -7 | 9.80 | 12.85 | 86.07 | 154 | -5 | 37.79 | 34.40 | 91.27 | 92 | +13 |
+| ANDHRSUGAR | Chemicals: Specialty | 79.99 | 2.15 | 1 | 4 | 5.13 | 5.33 | 91.33 | 100 | +44 | -3.68 | -8.96 | 24.54 | 859 | -73 | -17.10 | -14.79 | 19.58 | 884 | +52 | 0.62 | -1.86 | 54.80 | 472 | +5 |
+| ANTHEM | Biotechnology | 984.15 | 35.43 | 1 | 4 | 3.48 | 3.68 | 86.08 | 160 | -73 | 18.55 | 12.06 | 93.58 | 74 | +29 | 6.45 | 9.41 | 81.79 | 201 | -47 | 32.01 | 28.76 | 88.48 | 121 | +15 |
+| ANUP | Industrial Machinery | 1721.70 | 16.66 | 1 | 4 | -2.55 | -2.36 | 24.17 | 867 | +249 | 26.36 | 19.45 | 97.80 | 26 | +45 | -4.89 | -2.24 | 55.74 | 487 | +140 | -9.91 | -12.12 | 36.47 | 663 | +146 |
+| APOLLO | Electronic Production Equipment | 435.50 | 502.34 | 1 | 4 | 1.82 | 2.02 | 76.80 | 266 | +639 | 3.31 | -2.35 | 55.94 | 502 | +6 | 14.76 | 17.95 | 90.80 | 102 | +17 | 3.89 | 1.33 | 59.79 | 420 | -17 |
+| ARKADE | Homebuilding | 117.47 | 2.16 | 1 | 4 | 5.09 | 5.30 | 91.16 | 102 | +685 | 8.75 | 2.80 | 73.35 | 304 | +222 | -2.69 | 0.02 | 61.29 | 426 | +220 | 3.75 | 1.20 | 59.60 | 422 | +112 |
+| ASIANHOTNR | Hotels/Resorts/Cruise lines | 330.50 | 0.55 | 1 | 4 | 5.24 | 5.44 | 91.59 | 97 | +24 | 7.27 | 1.40 | 69.39 | 349 | +56 | -10.48 | -7.99 | 39.44 | 666 | +67 | 9.31 | 6.62 | 66.79 | 347 | +48 |
+| ASKAUTOLTD | Auto Parts: OEM | 625.55 | 12.10 | 1 | 4 | -0.84 | -0.65 | 45.45 | 624 | -158 | 7.65 | 1.76 | 70.01 | 342 | -12 | -1.59 | 1.15 | 65.21 | 383 | +35 | 43.61 | 40.07 | 93.57 | 68 | -3 |
+| ATHERENERG | Motor Vehicles | 1888.40 | 507.73 | 1 | 4 | -2.43 | -2.24 | 25.04 | 857 | -386 | 13.55 | 7.34 | 86.28 | 157 | -32 | 9.43 | 12.48 | 85.52 | 160 | -39 | 91.10 | 86.40 | 98.85 | 13 | +1 |
+| AVALON | Electronic Production Equipment | 1838.00 | 70.23 | 1 | 4 | 6.35 | 6.56 | 94.05 | 69 | +129 | -10.89 | -15.77 | 7.04 | 1058 | -1 | -20.73 | -18.52 | 11.75 | 970 | +17 | 12.23 | 9.47 | 71.02 | 303 | -82 |
+| AVTNPL | Food: Specialty/Candy | 100.25 | 7.12 | 1 | 4 | -1.68 | -1.48 | 34.94 | 744 | +281 | 11.92 | 5.80 | 82.59 | 199 | +228 | 13.39 | 16.55 | 89.34 | 118 | +95 | 45.08 | 41.51 | 93.86 | 65 | +26 |
+| AXISCADES | Miscellaneous Commercial Services | 1899.00 | 24.87 | 1 | 4 | 1.37 | 1.57 | 72.42 | 316 | +731 | -5.00 | -10.20 | 19.61 | 915 | +127 | 15.50 | 18.71 | 91.26 | 97 | +74 | 7.49 | 4.84 | 64.30 | 373 | -1 |
+| BAJAJHCARE | Pharmaceuticals: Major | 350.35 | 4.30 | 1 | 4 | 9.43 | 9.65 | 97.55 | 29 | -10 | 11.99 | 5.86 | 82.76 | 197 | +50 | 6.49 | 9.45 | 81.88 | 200 | +29 | 18.94 | 16.02 | 78.12 | 229 | +31 |
+| BALRAMCHIN | Agricultural Commodities/Milling | 675.45 | 63.00 | 1 | 4 | 9.19 | 9.40 | 97.37 | 31 | +178 | 6.34 | 0.52 | 65.96 | 388 | +154 | 0.99 | 3.80 | 70.95 | 320 | +173 | 26.92 | 23.79 | 84.36 | 164 | +31 |
+| BALUFORGE | Trucks/Construction/Farm Machinery | 529.95 | 39.92 | 1 | 4 | 2.76 | 2.96 | 83.36 | 191 | +119 | 17.03 | 10.62 | 91.82 | 94 | -10 | -14.79 | -12.41 | 25.41 | 820 | +8 | 11.33 | 8.59 | 70.06 | 313 | +33 |
+| BANCOINDIA | Industrial Machinery | 687.55 | 29.46 | 1 | 4 | -2.61 | -2.42 | 23.38 | 876 | -35 | 17.82 | 11.37 | 92.61 | 85 | +46 | 10.87 | 13.95 | 87.34 | 140 | +26 | 4.35 | 1.78 | 60.65 | 411 | +9 |
+| BANKINDIA | Major Banks | 162.50 | 162.33 | 1 | 4 | -1.34 | -1.14 | 38.79 | 700 | -228 | 19.75 | 13.19 | 94.64 | 62 | -5 | 14.16 | 17.33 | 89.89 | 112 | -13 | 16.33 | 13.47 | 75.53 | 256 | +29 |
+| BBOX | Information Technology Services | 860.70 | 74.14 | 1 | 4 | -3.98 | -3.79 | 12.35 | 1002 | -6 | 4.82 | -0.92 | 61.39 | 440 | -9 | 19.55 | 22.88 | 93.81 | 69 | +26 | -20.17 | -22.14 | 17.18 | 864 | -18 |
+| BECTORFOOD | Food: Specialty/Candy | 228.76 | 22.83 | 1 | 4 | 3.28 | 3.48 | 85.20 | 170 | -90 | 23.06 | 16.32 | 97.01 | 35 | -5 | 0.44 | 3.24 | 69.85 | 332 | +0 | 32.80 | 29.53 | 88.96 | 116 | +3 |
+| BLUESTARCO | Industrial Machinery | 1735.00 | 87.75 | 1 | 4 | -3.13 | -2.94 | 18.48 | 932 | -673 | 3.71 | -1.97 | 57.26 | 487 | -272 | 16.37 | 19.61 | 91.89 | 90 | -35 | 7.92 | 5.27 | 64.97 | 366 | -67 |
+| CARRARO | Auto Parts: OEM | 492.70 | 4.19 | 1 | 4 | 7.75 | 7.96 | 96.06 | 46 | -5 | 1.12 | -4.42 | 45.91 | 616 | +169 | -9.14 | -6.61 | 43.90 | 617 | +90 | -6.22 | -8.53 | 43.47 | 590 | +23 |
+| CENTUM | Electronic Components | 3991.50 | 27.47 | 1 | 4 | -8.76 | -8.58 | 1.14 | 1130 | +5 | -0.28 | -5.74 | 37.55 | 711 | +151 | 16.71 | 19.96 | 92.26 | 86 | +30 | 14.61 | 11.79 | 73.51 | 277 | +101 |
+| CERA | Home Furnishings | 5164.40 | 8.61 | 1 | 4 | 2.18 | 2.38 | 79.07 | 240 | -89 | 16.34 | 9.97 | 90.68 | 107 | -5 | -9.67 | -7.16 | 42.08 | 637 | -52 | -6.69 | -8.98 | 42.71 | 598 | -8 |
+| CHOICEIN | Miscellaneous Commercial Services | 770.45 | 40.56 | 1 | 4 | 5.80 | 6.01 | 92.99 | 81 | -24 | 5.66 | -0.13 | 64.12 | 409 | +76 | -0.55 | 2.22 | 67.67 | 356 | +36 | 14.76 | 11.94 | 73.99 | 272 | +36 |
+| CNL | Electronics Distributors | 1304.90 | 4.89 | 1 | 4 | -3.20 | -3.01 | 18.13 | 936 | +112 | 8.52 | 2.58 | 72.65 | 312 | -249 | 4.77 | 7.69 | 79.33 | 228 | +71 | 105.97 | 100.90 | 99.23 | 9 | +0 |
+| COFORGE | Information Technology Services | 2071.00 | 585.57 | 1 | 4 | -0.75 | -0.56 | 46.85 | 608 | +15 | 5.56 | -0.22 | 63.50 | 416 | +161 | 4.13 | 7.03 | 77.96 | 243 | +71 | 44.17 | 40.62 | 93.67 | 67 | +14 |
+| COHANCE | Pharmaceuticals: Major | 497.55 | 51.69 | 1 | 4 | 7.62 | 7.84 | 95.97 | 47 | -31 | 3.37 | -2.29 | 56.29 | 498 | -85 | 8.16 | 11.17 | 83.97 | 177 | -41 | 16.99 | 14.11 | 76.49 | 246 | -10 |
+| CYIENTDLM | Electronic Production Equipment | 787.50 | 32.86 | 1 | 4 | -3.76 | -3.57 | 14.01 | 983 | +84 | -0.56 | -6.00 | 36.06 | 728 | -91 | -8.13 | -5.57 | 47.54 | 577 | +0 | 72.02 | 67.79 | 97.89 | 23 | +1 |
+| DABUR | Household/Personal Care | 412.75 | 91.13 | 1 | 4 | 5.00 | 5.20 | 90.54 | 109 | -74 | 11.55 | 5.45 | 81.18 | 215 | -98 | 7.49 | 10.48 | 83.42 | 183 | -42 | -2.80 | -5.19 | 48.85 | 534 | -54 |
+| DEEPAKFERT | Chemicals: Agricultural | 1446.90 | 65.74 | 1 | 4 | 0.67 | 0.87 | 65.76 | 392 | +32 | 22.38 | 15.68 | 96.66 | 39 | -4 | 1.36 | 4.18 | 71.86 | 310 | -46 | 1.85 | -0.66 | 56.53 | 454 | -10 |
+| DELTACORP | Movies/Entertainment | 71.34 | 27.77 | 1 | 4 | -6.99 | -6.81 | 2.80 | 1111 | -28 | -5.98 | -11.13 | 17.33 | 941 | -369 | 24.26 | 27.72 | 95.54 | 50 | +1 | 7.88 | 5.22 | 64.88 | 367 | +68 |
+| DODLA | Food: Meat/Fish/Dairy | 1033.80 | 19.74 | 1 | 4 | 5.06 | 5.26 | 90.98 | 104 | +500 | 7.05 | 1.19 | 68.60 | 358 | +440 | -3.04 | -0.34 | 60.84 | 431 | +200 | -5.64 | -7.96 | 44.53 | 579 | +133 |
+| DOLATALGO | Investment Banks/Brokers | 68.17 | 0.68 | 1 | 4 | 6.55 | 6.76 | 94.48 | 64 | +12 | 15.09 | 8.79 | 88.74 | 129 | +112 | -3.89 | -1.22 | 58.56 | 456 | +66 | -6.91 | -9.20 | 42.42 | 601 | +77 |
+| DOLPHIN | Oilfield Services/Equipment | 606.70 | 1.03 | 1 | 4 | -3.08 | -2.89 | 18.83 | 928 | +54 | -1.99 | -7.36 | 31.05 | 785 | -225 | 4.01 | 6.91 | 77.60 | 247 | -26 | 53.01 | 49.25 | 95.20 | 51 | -2 |
+| DYNAMATECH | Industrial Machinery | 13877.00 | 18.40 | 1 | 4 | 2.60 | 2.80 | 82.14 | 205 | +468 | 13.90 | 7.66 | 86.63 | 153 | +171 | 18.83 | 22.14 | 93.44 | 73 | +55 | 32.79 | 29.53 | 88.87 | 117 | +53 |
+| E2E | Information Technology Services | 498.75 | 77.95 | 1 | 2 | 4.72 | 4.93 | 90.11 | 114 | +817 | -8.95 | -13.93 | 10.38 | 1020 | +41 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| EBGNG | Information Technology Services | 521.35 | 69.40 | 1 | 4 | 10.84 | 11.06 | 98.34 | 20 | +788 | -24.45 | -28.59 | 0.70 | 1130 | +6 | -19.85 | -17.62 | 13.39 | 952 | -51 | 16.54 | 13.67 | 75.91 | 252 | +45 |
+| ECLERX | Miscellaneous Commercial Services | 1548.30 | 41.18 | 1 | 4 | 6.48 | 6.69 | 94.31 | 66 | +118 | -6.76 | -11.87 | 14.60 | 972 | +150 | -21.56 | -19.37 | 10.84 | 980 | +21 | 10.00 | 7.29 | 67.66 | 338 | +86 |
+| EFCIL | Wholesale Distributors | 170.90 | 3.76 | 1 | 4 | 10.49 | 10.70 | 98.25 | 21 | +65 | 1.06 | -4.47 | 45.21 | 624 | +242 | -15.12 | -12.76 | 24.41 | 831 | +87 | -1.95 | -4.36 | 50.77 | 514 | +95 |
+| EIHOTEL | Hotels/Resorts/Cruise lines | 337.75 | 15.01 | 1 | 4 | 1.08 | 1.28 | 70.14 | 342 | -309 | 14.61 | 8.33 | 88.13 | 136 | +20 | 14.71 | 17.90 | 90.62 | 104 | -31 | 15.79 | 12.94 | 74.95 | 262 | +21 |
+| EUREKAFORB | Industrial Machinery | 375.50 | 12.49 | 1 | 4 | -3.22 | -3.03 | 17.95 | 938 | +69 | 16.29 | 9.92 | 90.50 | 109 | +4 | -12.23 | -9.78 | 33.15 | 735 | -10 | -14.67 | -16.77 | 24.95 | 783 | +6 |
+| FAZE3Q | Textiles | 559.25 | 16.01 | 1 | 4 | -4.83 | -4.65 | 8.84 | 1042 | -25 | 33.23 | 25.94 | 99.38 | 8 | +1 | 14.00 | 17.18 | 89.71 | 114 | -14 | 2.25 | -0.27 | 57.20 | 447 | -7 |
+| FIEMIND | Auto Parts: OEM | 2062.60 | 21.54 | 1 | 4 | -3.49 | -3.30 | 16.02 | 960 | +118 | 20.16 | 13.58 | 95.16 | 56 | -4 | -1.11 | 1.64 | 66.03 | 374 | -19 | -11.62 | -13.80 | 32.63 | 703 | +59 |
+| FORCEMOT | Motor Vehicles | 20179.00 | 142.88 | 1 | 4 | -0.52 | -0.33 | 50.09 | 571 | -162 | 19.71 | 13.16 | 94.55 | 63 | +7 | 13.86 | 17.03 | 89.62 | 115 | -26 | 8.54 | 5.86 | 65.93 | 356 | -98 |
+| FUSION | Finance/Rental/Leasing | 157.14 | 16.16 | 1 | 4 | 2.11 | 2.31 | 78.46 | 247 | +17 | 16.25 | 9.88 | 90.41 | 110 | -11 | -19.27 | -17.02 | 14.21 | 943 | +0 | -8.29 | -10.55 | 38.68 | 640 | -15 |
+| GABRIEL | Auto Parts: OEM | 1546.80 | 93.93 | 1 | 4 | -0.83 | -0.64 | 45.71 | 621 | +123 | 7.00 | 1.14 | 68.07 | 364 | +29 | 8.45 | 11.47 | 84.43 | 172 | +12 | 52.39 | 48.64 | 94.91 | 54 | +9 |
+| GALAPREC | Metal Fabrication | 1164.10 | 5.31 | 1 | 4 | -0.40 | -0.21 | 51.49 | 555 | +387 | 11.80 | 5.68 | 82.15 | 204 | +151 | 15.30 | 18.51 | 91.17 | 98 | +39 | 27.30 | 24.17 | 84.74 | 160 | -18 |
+| GANDHAR | Industrial Specialties | 251.90 | 26.70 | 1 | 4 | 0.41 | 0.61 | 62.61 | 428 | +529 | 1.53 | -4.03 | 47.85 | 594 | +356 | -3.78 | -1.10 | 58.83 | 453 | +15 | 55.64 | 51.81 | 95.68 | 46 | +0 |
+| GCSL | Investment Banks/Brokers | 851.55 | 23.56 | 1 | 3 | 0.38 | 0.58 | 62.26 | 432 | -182 | 11.79 | 5.67 | 81.88 | 207 | -35 | 51.28 | 55.49 | 99.54 | 6 | -1 | N/A | N/A | N/A | N/A | N/A |
+| GESHIP | Marine Shipping | 1550.60 | 98.75 | 1 | 4 | 1.24 | 1.44 | 71.45 | 327 | +226 | -4.21 | -9.46 | 22.34 | 884 | -109 | 16.97 | 20.23 | 92.44 | 84 | -7 | 3.93 | 1.37 | 59.98 | 418 | +15 |
+| GNA | Auto Parts: OEM | 522.05 | 14.05 | 1 | 4 | -1.93 | -1.73 | 32.05 | 777 | +244 | -6.70 | -11.81 | 14.95 | 968 | +37 | -1.95 | 0.78 | 64.30 | 393 | +28 | 39.44 | 36.00 | 92.51 | 79 | +5 |
+| GODIGIT | Multi-Line Insurance | 252.85 | 9.24 | 1 | 4 | 5.79 | 6.00 | 92.91 | 82 | +77 | -4.37 | -9.60 | 21.64 | 892 | +21 | -3.03 | -0.33 | 60.93 | 430 | -15 | -16.50 | -18.55 | 21.98 | 814 | +19 |
+| GODREJPROP | Real Estate Development | 1943.00 | 124.48 | 1 | 4 | 0.66 | 0.86 | 65.41 | 396 | -357 | 21.44 | 14.79 | 96.22 | 44 | -19 | -1.77 | 0.96 | 64.75 | 388 | -47 | 14.68 | 11.86 | 73.61 | 276 | -30 |
+| GOODLUCK | Steel | 518.10 | 20.19 | 1 | 4 | -2.00 | -1.81 | 30.74 | 792 | +246 | 1.89 | -3.69 | 49.69 | 573 | +405 | 14.40 | 17.58 | 90.35 | 107 | +38 | -61.47 | -62.41 | 0.77 | 1035 | +1 |
+| GUJENERGY | Gas Distributors | 240.51 | 28.17 | 1 | 3 | 6.26 | 6.46 | 93.87 | 71 | -15 | 14.05 | 7.81 | 87.07 | 148 | +46 | -5.42 | -2.79 | 54.55 | 500 | -83 | N/A | N/A | N/A | N/A | N/A |
+| HBLENGINE | Electrical Products | 757.95 | 100.71 | 1 | 4 | -0.37 | -0.18 | 52.01 | 549 | -63 | -7.09 | -12.17 | 13.90 | 980 | -64 | 14.98 | 18.18 | 90.89 | 101 | -15 | -4.86 | -7.20 | 46.45 | 559 | -31 |
+| HIKAL | Pharmaceuticals: Major | 230.86 | 9.46 | 1 | 4 | 4.58 | 4.78 | 89.67 | 119 | +20 | 12.95 | 6.76 | 85.05 | 171 | +9 | 16.28 | 19.52 | 91.80 | 91 | +7 | 20.30 | 17.34 | 79.94 | 210 | -2 |
+| HLEGLAS | Industrial Machinery | 392.00 | 5.11 | 1 | 4 | -4.46 | -4.27 | 10.07 | 1028 | +34 | -7.50 | -12.57 | 12.84 | 992 | -48 | 23.76 | 27.20 | 95.36 | 52 | -2 | 1.29 | -1.20 | 55.47 | 465 | +33 |
+| HUHTAMAKI | Containers/Packaging | 223.68 | 9.55 | 1 | 4 | 4.61 | 4.82 | 89.75 | 118 | +11 | -6.55 | -11.66 | 15.30 | 964 | -107 | -13.62 | -11.22 | 29.14 | 779 | +52 | 35.81 | 32.47 | 90.12 | 104 | +14 |
+| IDFCFIRSTB | Regional Banks | 86.80 | 167.14 | 1 | 4 | -0.53 | -0.33 | 49.82 | 574 | -291 | 18.29 | 11.81 | 93.14 | 79 | +14 | 2.24 | 5.08 | 73.77 | 289 | +22 | 20.29 | 17.33 | 79.85 | 211 | +2 |
+| IGIL | Miscellaneous Commercial Services | 429.65 | 88.29 | 1 | 4 | 1.76 | 1.96 | 76.18 | 273 | +498 | 5.62 | -0.16 | 63.68 | 414 | -23 | 26.46 | 29.98 | 96.08 | 44 | +4 | 18.69 | 15.77 | 77.64 | 234 | +13 |
+| IIFLCAPS | Investment Banks/Brokers | 346.80 | 79.63 | 1 | 4 | 11.35 | 11.57 | 98.69 | 16 | +85 | -0.27 | -5.73 | 37.64 | 710 | -26 | 1.96 | 4.79 | 73.41 | 293 | -35 | 2.50 | -0.03 | 57.39 | 445 | +4 |
+| INDORAMA | Textiles | 76.47 | 3.13 | 1 | 4 | 2.01 | 2.21 | 78.11 | 251 | +547 | 3.07 | -2.57 | 54.71 | 516 | +165 | 12.44 | 15.57 | 88.71 | 125 | -16 | 72.00 | 67.76 | 97.79 | 24 | +1 |
+| INDSWFTLAB | Pharmaceuticals: Major | 312.75 | 22.99 | 1 | 4 | -1.36 | -1.16 | 38.70 | 701 | +276 | -23.68 | -27.86 | 0.88 | 1128 | -20 | -15.05 | -12.68 | 24.86 | 826 | -42 | 99.60 | 94.69 | 99.04 | 11 | -1 |
+| INOXINDIA | Industrial Machinery | 2139.30 | 58.78 | 1 | 4 | 0.88 | 1.07 | 68.39 | 362 | -156 | 12.67 | 6.50 | 84.26 | 180 | -9 | -1.23 | 1.52 | 65.85 | 376 | -79 | 42.15 | 38.65 | 93.28 | 71 | -12 |
+| INSECTICID | Chemicals: Agricultural | 566.65 | 1.56 | 1 | 4 | 5.60 | 5.81 | 92.29 | 89 | +49 | 10.58 | 4.52 | 77.92 | 252 | +123 | -5.30 | -2.66 | 54.92 | 496 | +104 | -20.72 | -22.67 | 16.31 | 873 | +35 |
+| INTELLECT | Packaged Software | 583.90 | 45.70 | 1 | 4 | 6.36 | 6.57 | 94.13 | 68 | -32 | -3.14 | -8.44 | 26.21 | 840 | -15 | -15.95 | -13.61 | 21.77 | 860 | -55 | -20.33 | -22.29 | 16.99 | 866 | +24 |
+| IREDA | Finance/Rental/Leasing | 125.59 | 164.15 | 1 | 4 | -4.64 | -4.45 | 9.46 | 1035 | -391 | 24.10 | 17.31 | 97.36 | 31 | -5 | 9.97 | 13.03 | 86.25 | 152 | +7 | 1.91 | -0.60 | 56.62 | 453 | -19 |
+| ISGEC | Engineering & Construction | 1016.35 | 4.27 | 1 | 4 | 2.10 | 2.30 | 78.37 | 248 | -122 | 10.70 | 4.64 | 78.45 | 246 | -95 | 30.59 | 34.23 | 97.36 | 30 | -2 | 10.53 | 7.81 | 68.43 | 330 | -24 |
+| ITCHOTELS | Hotels/Resorts/Cruise lines | 184.66 | 83.71 | 1 | 4 | 0.22 | 0.42 | 59.98 | 458 | -225 | 9.06 | 3.09 | 74.14 | 295 | -108 | 14.28 | 17.46 | 90.26 | 108 | -21 | 18.88 | 15.96 | 78.02 | 230 | -28 |
+| IXIGO | Internet Software/Services | 169.83 | 76.15 | 1 | 4 | -0.22 | -0.02 | 53.94 | 527 | +263 | 19.56 | 13.01 | 94.37 | 65 | -23 | 7.10 | 10.08 | 82.88 | 189 | +25 | 11.07 | 8.33 | 69.48 | 319 | -2 |
+| JAGRAN | Publishing: Newspapers | 68.26 | 16.39 | 1 | 4 | 7.85 | 8.06 | 96.23 | 44 | +729 | 10.26 | 4.22 | 77.22 | 260 | +374 | 11.59 | 14.70 | 88.16 | 131 | +145 | -12.71 | -14.86 | 29.94 | 731 | +126 |
+| JKTYRE | Automotive Aftermarket | 365.30 | 19.93 | 1 | 4 | -0.85 | -0.66 | 44.83 | 631 | -52 | 17.57 | 11.14 | 92.35 | 88 | -1 | -2.31 | 0.41 | 63.02 | 407 | +41 | -5.25 | -7.58 | 45.87 | 565 | +34 |
+| JNKINDIA | Building Products | 348.45 | 4.09 | 1 | 4 | 5.40 | 5.61 | 91.77 | 95 | +182 | -10.22 | -15.13 | 8.00 | 1047 | +32 | -19.11 | -16.85 | 14.85 | 936 | +8 | -17.35 | -19.38 | 20.63 | 828 | -157 |
+| JSLL | Medical/Nursing Services | 326.60 | 56.76 | 1 | 4 | 8.79 | 9.01 | 97.20 | 33 | +194 | -6.08 | -11.22 | 16.80 | 947 | +106 | -35.13 | -33.32 | 1.55 | 1082 | +10 | -49.90 | -51.13 | 1.34 | 1029 | +3 |
+| JUSTDIAL | Internet Software/Services | 688.05 | 76.24 | 1 | 4 | 5.66 | 5.87 | 92.64 | 85 | +491 | 1.43 | -4.12 | 47.41 | 599 | +285 | -2.49 | 0.22 | 62.30 | 415 | +144 | 30.86 | 27.64 | 87.91 | 127 | +65 |
+| JYOTICNC | Metal Fabrication | 1058.65 | 72.73 | 1 | 4 | 0.59 | 0.79 | 65.06 | 400 | +221 | 10.66 | 4.60 | 78.19 | 249 | -71 | 7.03 | 10.01 | 82.70 | 191 | +13 | 77.03 | 72.68 | 98.27 | 19 | +1 |
+| KAPSTON | Miscellaneous Commercial Services | 531.25 | 2.12 | 1 | 4 | -1.84 | -1.65 | 33.01 | 766 | -360 | 6.53 | 0.70 | 67.02 | 376 | +50 | -7.17 | -4.59 | 49.91 | 551 | +30 | 57.73 | 53.85 | 96.26 | 40 | +1 |
+| KCP | Industrial Conglomerates | 149.56 | 1.51 | 1 | 4 | 5.12 | 5.33 | 91.24 | 101 | -1 | 3.27 | -2.39 | 55.58 | 506 | -24 | -10.92 | -8.44 | 37.70 | 685 | -42 | -6.51 | -8.81 | 42.80 | 597 | +27 |
+| KFINTECH | Packaged Software | 989.00 | 101.20 | 1 | 4 | 5.79 | 5.99 | 92.82 | 83 | -37 | 15.03 | 8.73 | 88.48 | 132 | -16 | 5.49 | 8.43 | 80.33 | 217 | +45 | 15.90 | 13.04 | 75.14 | 260 | -30 |
+| KOPRAN | Pharmaceuticals: Major | 268.16 | 25.29 | 1 | 3 | 1.90 | 2.10 | 77.32 | 260 | -197 | 6.41 | 0.59 | 66.58 | 381 | -162 | 23.25 | 26.68 | 95.08 | 55 | -24 | N/A | N/A | N/A | N/A | N/A |
+| KRBL | Agricultural Commodities/Milling | 414.60 | 33.26 | 1 | 4 | -3.81 | -3.62 | 13.57 | 988 | -513 | 16.43 | 10.06 | 90.94 | 104 | -32 | -2.24 | 0.48 | 63.30 | 404 | -47 | 18.10 | 15.20 | 77.26 | 238 | -14 |
+| KRISHANA | Chemicals: Agricultural | 250.40 | 22.58 | 1 | 4 | 1.72 | 1.92 | 75.66 | 279 | +40 | 12.47 | 6.32 | 84.08 | 182 | +20 | 30.26 | 33.89 | 97.18 | 32 | +4 | -63.42 | -64.32 | 0.67 | 1036 | +1 |
+| LEMONTREE | Hotels/Resorts/Cruise lines | 123.56 | 49.92 | 1 | 4 | -3.12 | -2.93 | 18.56 | 931 | -429 | 10.98 | 4.90 | 79.24 | 237 | -105 | 16.40 | 19.64 | 91.99 | 89 | +1 | 11.26 | 8.52 | 69.77 | 316 | +0 |
+| LTTS | Miscellaneous Commercial Services | 4227.20 | 187.34 | 1 | 4 | 3.54 | 3.75 | 86.34 | 157 | -89 | 1.07 | -4.47 | 45.29 | 623 | -136 | 17.82 | 21.10 | 93.17 | 76 | +0 | 29.19 | 26.01 | 86.28 | 144 | +3 |
+| LUMAXTECH | Auto Parts: OEM | 2327.80 | 41.59 | 1 | 4 | -0.11 | 0.09 | 55.87 | 505 | -136 | 13.08 | 6.89 | 85.66 | 164 | -16 | 13.00 | 16.15 | 89.07 | 121 | -11 | 37.58 | 34.20 | 91.17 | 93 | +31 |
+| MACPOWER | Industrial Machinery | 2082.20 | 11.10 | 1 | 4 | 0.11 | 0.30 | 58.23 | 478 | +463 | 6.82 | 0.97 | 67.55 | 370 | +94 | 8.94 | 11.97 | 85.15 | 164 | +125 | 119.27 | 113.88 | 99.42 | 7 | +1 |
+| MANINDS | Industrial Machinery | 691.45 | 45.52 | 1 | 4 | -4.64 | -4.45 | 9.37 | 1036 | +60 | -13.83 | -18.55 | 4.40 | 1088 | -60 | -9.35 | -6.82 | 42.99 | 627 | -116 | 41.39 | 37.91 | 93.09 | 73 | +3 |
+| MANINFRA | Real Estate Development | 111.06 | 7.03 | 1 | 4 | 5.78 | 5.99 | 92.73 | 84 | +82 | 0.36 | -5.13 | 41.25 | 669 | +159 | -10.84 | -8.36 | 37.80 | 684 | -16 | -0.27 | -2.72 | 53.17 | 489 | +83 |
+| MARATHON | Real Estate Development | 441.70 | 5.46 | 1 | 4 | -0.44 | -0.24 | 51.05 | 560 | -221 | 18.55 | 12.06 | 93.40 | 76 | +2 | 1.66 | 4.49 | 72.59 | 302 | -106 | 5.58 | 2.98 | 62.48 | 392 | +33 |
+| MBAPL | Chemicals: Agricultural | 198.24 | 18.80 | 1 | 4 | 1.59 | 1.79 | 74.43 | 293 | +94 | 13.93 | 7.69 | 86.81 | 151 | +8 | 23.30 | 26.73 | 95.17 | 54 | +12 | -64.32 | -65.20 | 0.48 | 1038 | +0 |
+| MENONBE | Metal Fabrication | 302.80 | 15.67 | 1 | 2 | -1.42 | -1.22 | 38.00 | 709 | +315 | 19.99 | 13.42 | 94.90 | 59 | +142 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| MFSL | Life/Health Insurance | 1425.00 | 132.19 | 1 | 4 | -0.70 | -0.51 | 47.90 | 596 | -498 | 17.57 | 11.14 | 92.44 | 87 | -10 | -7.15 | -4.56 | 50.00 | 550 | -18 | -9.90 | -12.11 | 36.56 | 662 | -61 |
+| MMP | Other Metals/Minerals | 449.25 | 2.21 | 1 | 3 | -2.42 | -2.23 | 25.13 | 856 | -382 | -2.22 | -7.57 | 29.82 | 799 | -100 | 17.22 | 20.48 | 92.71 | 81 | +15 | N/A | N/A | N/A | N/A | N/A |
+| MOLDTKPAC | Miscellaneous Manufacturing | 330.30 | 10.31 | 1 | 4 | -5.96 | -5.78 | 5.17 | 1084 | -119 | 18.37 | 11.89 | 93.23 | 78 | +107 | -52.81 | -51.50 | 0.46 | 1094 | +1 | -53.20 | -54.35 | 1.15 | 1031 | -1 |
+| NAZARA | Packaged Software | 377.10 | 48.59 | 1 | 4 | -9.03 | -8.86 | 1.05 | 1131 | -12 | -6.98 | -12.07 | 14.34 | 975 | -92 | 2.57 | 5.43 | 74.50 | 281 | -13 | 39.90 | 36.46 | 92.71 | 77 | +6 |
+| NELCAST | Steel | 147.85 | 12.57 | 1 | 4 | 1.06 | 1.26 | 69.96 | 344 | -128 | 12.61 | 6.45 | 84.17 | 181 | +131 | 27.03 | 30.57 | 96.36 | 41 | +13 | 5.27 | 2.68 | 62.09 | 396 | +11 |
+| NILKAMAL | Home Furnishings | 1953.30 | 11.06 | 1 | 4 | -7.11 | -6.92 | 2.54 | 1114 | +3 | -2.53 | -7.86 | 28.58 | 813 | -565 | -3.97 | -1.29 | 57.83 | 464 | -60 | 54.51 | 50.71 | 95.49 | 48 | -3 |
+| NITCO | Building Products | 81.80 | 3.32 | 1 | 4 | 1.38 | 1.57 | 72.50 | 315 | +470 | 19.16 | 12.63 | 94.02 | 69 | +73 | -12.45 | -10.01 | 32.70 | 740 | +80 | -11.94 | -14.11 | 31.57 | 714 | +106 |
+| OAL | Chemicals: Specialty | 487.65 | 14.43 | 1 | 4 | -5.62 | -5.44 | 6.39 | 1070 | -1063 | -19.67 | -24.07 | 1.50 | 1121 | -3 | 9.27 | 12.31 | 85.34 | 162 | -1 | 56.73 | 52.87 | 96.07 | 42 | -6 |
+| PACEDIGITK | Electric Utilities | 168.22 | 24.91 | 1 | 3 | 1.73 | 1.93 | 75.83 | 277 | +620 | 17.53 | 11.10 | 92.26 | 89 | +45 | 1.11 | 3.93 | 71.22 | 317 | +125 | N/A | N/A | N/A | N/A | N/A |
+| PANACEABIO | Pharmaceuticals: Major | 352.75 | 3.17 | 1 | 4 | 5.00 | 5.21 | 90.63 | 108 | +333 | 8.24 | 2.31 | 71.68 | 323 | +56 | -9.76 | -7.25 | 41.53 | 643 | -39 | -32.20 | -33.87 | 5.09 | 990 | -146 |
+| PANAMAPET | Industrial Specialties | 439.00 | 7.60 | 1 | 4 | 7.85 | 8.06 | 96.15 | 45 | +462 | -3.71 | -8.98 | 24.36 | 861 | +163 | -9.87 | -7.36 | 40.98 | 649 | +8 | 25.57 | 22.48 | 83.69 | 171 | +10 |
+| PARAS | Aerospace & Defense | 1302.60 | 80.45 | 1 | 4 | 4.25 | 4.45 | 88.62 | 131 | +586 | -2.04 | -7.40 | 30.52 | 791 | +97 | -5.62 | -2.99 | 54.01 | 506 | +241 | 45.74 | 42.15 | 93.95 | 64 | -8 |
+| PATANJALI | Agricultural Commodities/Milling | 400.35 | 156.86 | 1 | 4 | -0.95 | -0.76 | 43.78 | 643 | -370 | 5.69 | -0.10 | 64.20 | 408 | -133 | 15.78 | 19.00 | 91.62 | 93 | -15 | -6.30 | -8.60 | 43.28 | 592 | +42 |
+| PAUSHAKLTD | Chemicals: Major Diversified | 588.50 | 2.75 | 1 | 2 | 5.60 | 5.81 | 92.21 | 90 | +110 | -5.20 | -10.39 | 18.91 | 923 | -64 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| PGIL | Apparel/Footwear | 1440.60 | 23.84 | 1 | 4 | 0.36 | 0.55 | 62.00 | 435 | -210 | 20.98 | 14.36 | 95.87 | 48 | +28 | -38.65 | -36.94 | 0.73 | 1091 | +3 | -14.18 | -16.30 | 26.10 | 771 | -36 |
+| PHOENIXLTD | Real Estate Development | 2229.70 | 101.77 | 1 | 4 | -2.43 | -2.24 | 24.96 | 858 | -700 | 13.19 | 6.99 | 85.84 | 162 | -106 | 17.81 | 21.09 | 93.08 | 77 | -18 | 28.94 | 25.77 | 86.08 | 146 | -36 |
+| POLYPLEX | Chemicals: Specialty | 1048.70 | 8.95 | 1 | 4 | 6.40 | 6.61 | 94.22 | 67 | +127 | 14.10 | 7.86 | 87.16 | 147 | +144 | -11.70 | -9.25 | 34.88 | 716 | +77 | 14.18 | 11.37 | 72.94 | 283 | +68 |
+| PPLPHARMA | Pharmaceuticals: Major | 231.00 | 229.93 | 1 | 4 | -3.47 | -3.28 | 16.11 | 959 | -386 | 0.10 | -5.38 | 39.75 | 686 | -74 | 8.35 | 11.36 | 84.24 | 174 | -34 | 36.22 | 32.87 | 90.40 | 101 | -24 |
+| PRAJIND | Engineering & Construction | 255.64 | 50.14 | 1 | 4 | 9.29 | 9.51 | 97.46 | 30 | +946 | 0.57 | -4.94 | 42.48 | 655 | +392 | -24.88 | -22.79 | 7.38 | 1018 | +58 | -26.94 | -28.74 | 9.02 | 949 | +55 |
+| PROTEAN | Information Technology Services | 693.75 | 26.26 | 1 | 4 | -1.68 | -1.49 | 34.85 | 745 | -40 | 9.75 | 3.75 | 75.64 | 278 | -156 | 36.06 | 39.84 | 97.91 | 24 | -6 | 10.65 | 7.92 | 68.71 | 327 | -78 |
+| QUESS | Personnel Services | 327.15 | 7.54 | 1 | 4 | -2.37 | -2.18 | 25.66 | 850 | +153 | 0.80 | -4.72 | 43.89 | 639 | +26 | -13.79 | -11.40 | 28.05 | 791 | -6 | 52.13 | 48.39 | 94.82 | 55 | -8 |
+| RAMCOSYS | Information Technology Services | 587.40 | 4.00 | 1 | 4 | 9.66 | 9.88 | 97.72 | 27 | -1 | 10.53 | 4.48 | 77.75 | 254 | -5 | -0.60 | 2.17 | 67.30 | 360 | -25 | 23.24 | 20.20 | 81.86 | 190 | -39 |
+| RAMKY | Engineering & Construction | 371.40 | 17.61 | 1 | 4 | -3.44 | -3.26 | 16.37 | 956 | -281 | 20.02 | 13.45 | 94.99 | 58 | -25 | 8.01 | 11.02 | 83.79 | 179 | +14 | -14.47 | -16.58 | 25.43 | 778 | -17 |
+| REDINGTON | Electronics Distributors | 335.25 | 132.70 | 1 | 4 | 1.19 | 1.39 | 70.93 | 333 | +446 | -6.13 | -11.27 | 16.53 | 950 | -16 | -4.10 | -1.44 | 57.65 | 466 | +69 | 35.70 | 32.36 | 90.02 | 105 | -6 |
+| REPCOHOME | Finance/Rental/Leasing | 373.55 | 12.69 | 1 | 4 | -0.99 | -0.80 | 43.52 | 646 | -131 | 19.19 | 12.67 | 94.11 | 68 | -29 | 2.96 | 5.83 | 75.59 | 269 | -23 | 1.78 | -0.72 | 56.43 | 455 | +0 |
+| RGL | Other Consumer Specialties | 141.51 | 8.39 | 1 | 4 | 0.54 | 0.74 | 64.45 | 407 | +21 | 0.49 | -5.01 | 42.04 | 660 | -76 | 3.32 | 6.20 | 76.32 | 261 | -67 | 38.31 | 34.91 | 91.75 | 87 | -1 |
+| ROLEXRINGS | Metal Fabrication | 188.90 | 48.52 | 1 | 4 | -2.53 | -2.34 | 24.34 | 865 | +49 | 11.72 | 5.60 | 81.79 | 208 | -63 | 5.72 | 8.66 | 80.69 | 213 | -13 | 38.75 | 35.34 | 92.03 | 84 | +4 |
+| ROTO | Industrial Machinery | 69.98 | 9.69 | 1 | 4 | -2.22 | -2.03 | 27.41 | 830 | +32 | 17.26 | 10.84 | 92.00 | 92 | +55 | 6.08 | 9.03 | 80.97 | 210 | -58 | 18.69 | 15.77 | 77.74 | 233 | -5 |
+| RPEL | Chemicals: Major Diversified | 1903.70 | 17.83 | 1 | 4 | 2.66 | 2.87 | 82.84 | 197 | +149 | 10.67 | 4.61 | 78.28 | 248 | +92 | 10.23 | 13.29 | 86.43 | 150 | +28 | 88.45 | 83.81 | 98.75 | 14 | -1 |
+| RUBYMILLS | Textiles | 447.30 | 0.58 | 1 | 3 | -0.91 | -0.71 | 44.13 | 639 | -110 | -7.00 | -12.09 | 14.16 | 977 | +12 | 15.94 | 19.17 | 91.71 | 92 | -4 | N/A | N/A | N/A | N/A | N/A |
+| RUSTOMJEE | Real Estate Development | 386.20 | 2.27 | 1 | 4 | 5.91 | 6.12 | 93.26 | 78 | -24 | 15.46 | 9.14 | 89.36 | 122 | +6 | 2.70 | 5.56 | 74.86 | 277 | -8 | -1.57 | -3.99 | 51.73 | 504 | +0 |
+| SAATVIKGL | Industrial Machinery | 393.60 | 1.71 | 1 | 3 | 12.67 | 12.89 | 99.12 | 11 | +39 | 12.97 | 6.79 | 85.22 | 169 | +287 | -6.40 | -3.79 | 51.73 | 531 | +183 | N/A | N/A | N/A | N/A | N/A |
+| SANGAMIND | Textiles | 687.05 | 5.79 | 1 | 4 | 1.97 | 2.17 | 77.85 | 254 | +128 | 14.69 | 8.41 | 88.39 | 133 | +58 | 17.11 | 20.37 | 92.53 | 83 | +23 | 30.28 | 27.08 | 87.33 | 133 | +26 |
+| SANGHVIMOV | Finance/Rental/Leasing | 397.90 | 22.51 | 1 | 4 | 7.16 | 7.37 | 95.27 | 55 | -32 | 15.32 | 9.00 | 89.01 | 126 | +24 | -13.13 | -10.71 | 30.51 | 764 | -23 | 8.49 | 5.82 | 65.83 | 357 | -27 |
+| SATIN | Finance/Rental/Leasing | 255.72 | 13.69 | 1 | 4 | -0.17 | 0.02 | 54.73 | 518 | -185 | 1.81 | -3.77 | 48.90 | 582 | -383 | 17.75 | 21.02 | 92.90 | 79 | +18 | 5.70 | 3.10 | 62.57 | 391 | -39 |
+| SESHAPAPER | Pulp & Paper | 217.73 | 2.96 | 1 | 4 | 4.83 | 5.03 | 90.37 | 111 | +29 | 8.14 | 2.22 | 71.42 | 326 | +28 | -6.36 | -3.75 | 52.00 | 528 | -65 | -4.25 | -6.60 | 47.12 | 552 | +25 |
+| SETL | Medical Specialties | 359.15 | 20.98 | 1 | 4 | 0.46 | 0.66 | 63.49 | 418 | +562 | -11.40 | -16.25 | 6.60 | 1063 | -4 | -7.21 | -4.63 | 49.73 | 553 | -27 | 161.41 | 154.98 | 99.90 | 2 | +0 |
+| SHAILY | Chemicals: Specialty | 3350.50 | 60.43 | 1 | 4 | 7.35 | 7.56 | 95.45 | 53 | -28 | 9.63 | 3.63 | 75.20 | 283 | -49 | 2.58 | 5.43 | 74.59 | 280 | -35 | 9.23 | 6.54 | 66.51 | 350 | -13 |
+| SHALBY | Hospital/Nursing Management | 129.26 | 1.31 | 1 | 4 | 5.82 | 6.03 | 93.08 | 80 | -20 | 5.99 | 0.18 | 65.08 | 398 | +49 | -15.87 | -13.53 | 22.13 | 856 | +4 | -26.11 | -27.93 | 9.69 | 942 | +5 |
+| SHARDAMOTR | Auto Parts: OEM | 1000.90 | 25.55 | 1 | 4 | 2.62 | 2.82 | 82.40 | 202 | +103 | 20.74 | 14.13 | 95.60 | 51 | +35 | 13.19 | 16.34 | 89.25 | 119 | +13 | 21.79 | 18.80 | 80.90 | 200 | +45 |
+| SHILPAMED | Pharmaceuticals: Major | 846.25 | 72.71 | 1 | 4 | -0.34 | -0.15 | 52.54 | 543 | +526 | -9.55 | -14.50 | 9.32 | 1032 | +9 | -4.88 | -2.24 | 55.83 | 486 | +207 | 60.95 | 56.98 | 96.55 | 37 | +0 |
+| SHREEPUSHK | Chemicals: Specialty | 513.15 | 6.67 | 1 | 4 | 0.81 | 1.00 | 67.25 | 375 | -58 | -11.07 | -15.93 | 6.95 | 1059 | -167 | 10.49 | 13.56 | 86.79 | 146 | -3 | 38.11 | 34.71 | 91.46 | 90 | -15 |
+| SHYAMMETL | Metal Fabrication | 1305.40 | 46.01 | 1 | 4 | -0.68 | -0.48 | 48.51 | 589 | -214 | 14.35 | 8.09 | 87.25 | 146 | +36 | 21.09 | 24.46 | 94.63 | 60 | +10 | 30.28 | 27.07 | 87.14 | 135 | -12 |
+| SIGNATURE | Real Estate Development | 846.25 | 35.94 | 1 | 4 | -1.53 | -1.34 | 37.13 | 719 | -445 | 18.08 | 11.61 | 92.96 | 81 | -35 | 8.88 | 11.91 | 85.06 | 165 | -48 | 4.19 | 1.62 | 60.36 | 414 | +0 |
+| SIMPLEXINF | Engineering & Construction | 293.10 | 7.73 | 1 | 4 | -2.22 | -2.03 | 27.50 | 829 | -230 | 15.97 | 9.63 | 89.97 | 115 | -17 | 14.22 | 17.40 | 90.07 | 110 | +23 | 16.96 | 14.08 | 76.30 | 248 | -71 |
+| SIYSIL | Textiles | 532.55 | 2.19 | 1 | 4 | 4.51 | 4.72 | 89.23 | 124 | +117 | 16.65 | 10.26 | 91.38 | 99 | +37 | -3.95 | -1.28 | 58.11 | 461 | +88 | -14.29 | -16.40 | 25.91 | 773 | -48 |
+| SKYGOLD | Other Consumer Specialties | 838.50 | 150.50 | 1 | 4 | -4.16 | -3.97 | 11.30 | 1014 | +116 | -4.33 | -9.57 | 21.99 | 888 | +36 | 7.74 | 10.74 | 83.70 | 180 | +150 | 46.74 | 43.13 | 94.24 | 61 | +7 |
+| SMCGLOBAL | Investment Banks/Brokers | 81.23 | 17.49 | 1 | 4 | -5.08 | -4.90 | 8.14 | 1050 | -75 | -12.34 | -17.13 | 5.72 | 1073 | -19 | 1.98 | 4.82 | 73.50 | 292 | +10 | 37.17 | 33.79 | 90.98 | 95 | +17 |
+| SONACOMS | Auto Parts: OEM | 879.00 | 230.89 | 1 | 4 | -1.51 | -1.32 | 37.30 | 717 | -55 | 0.62 | -4.89 | 42.92 | 650 | +19 | 8.59 | 11.61 | 84.70 | 169 | -2 | 46.22 | 42.62 | 94.05 | 63 | -3 |
+| SOUTHBANK | Major Banks | 58.12 | 94.92 | 1 | 4 | -0.85 | -0.66 | 44.92 | 630 | +164 | 2.74 | -2.88 | 53.65 | 528 | -110 | 26.60 | 30.12 | 96.17 | 43 | -6 | 30.28 | 27.08 | 87.43 | 132 | -10 |
+| STEL | Financial Conglomerates | 624.05 | 0.34 | 1 | 4 | 1.27 | 1.47 | 71.63 | 325 | -194 | 23.40 | 16.65 | 97.10 | 34 | +63 | 0.15 | 2.94 | 69.40 | 337 | +153 | 25.37 | 22.29 | 83.49 | 173 | -6 |
+| SUDEEPPHRM | Pharmaceuticals: Other | 1293.40 | 30.10 | 1 | 2 | 8.55 | 8.76 | 96.67 | 39 | -8 | 14.45 | 8.19 | 87.51 | 143 | -29 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SUNTV | Broadcasting | 640.75 | 52.87 | 1 | 4 | -7.70 | -7.52 | 1.66 | 1124 | -95 | 3.36 | -2.29 | 56.20 | 499 | +19 | 38.65 | 42.50 | 98.54 | 17 | -5 | 25.17 | 22.09 | 83.30 | 175 | -7 |
+| SUPRIYA | Pharmaceuticals: Major | 651.20 | 30.04 | 1 | 4 | 5.01 | 5.21 | 90.72 | 107 | +639 | -25.09 | -29.19 | 0.53 | 1132 | +2 | -18.92 | -16.66 | 15.21 | 932 | +65 | -31.60 | -33.29 | 5.76 | 983 | +11 |
+| TARSONS | Containers/Packaging | 292.70 | 1.97 | 1 | 4 | -3.53 | -3.34 | 15.59 | 965 | -236 | -3.70 | -8.97 | 24.45 | 860 | -21 | -14.94 | -12.57 | 25.14 | 823 | -164 | 38.92 | 35.51 | 92.32 | 81 | -9 |
+| TCPLPACK | Commercial Printing/Forms | 4356.00 | 4.49 | 1 | 4 | -0.72 | -0.52 | 47.72 | 598 | +279 | -1.05 | -6.47 | 34.48 | 746 | -335 | 12.84 | 15.98 | 88.80 | 124 | +0 | 66.90 | 62.79 | 97.12 | 31 | -9 |
+| TIMETECHNO | Containers/Packaging | 200.17 | 50.97 | 1 | 4 | 4.22 | 4.42 | 88.44 | 133 | -39 | 23.01 | 16.28 | 96.92 | 36 | +1 | 5.06 | 7.98 | 79.78 | 223 | -37 | 16.53 | 13.66 | 75.82 | 253 | +3 |
+| TIPSMUSIC | Movies/Entertainment | 777.50 | 41.18 | 1 | 4 | -3.78 | -3.59 | 13.84 | 985 | -103 | -1.75 | -7.13 | 31.40 | 781 | +9 | 20.82 | 24.19 | 94.35 | 63 | -5 | 15.68 | 12.84 | 74.66 | 265 | -23 |
+| TSFINV | Financial Conglomerates | 449.30 | 2.61 | 1 | 4 | 5.63 | 5.84 | 92.47 | 87 | +193 | 10.46 | 4.41 | 77.48 | 257 | +164 | 11.46 | 14.56 | 88.07 | 132 | +51 | 12.34 | 9.57 | 71.31 | 300 | +76 |
+| UFLEX | Containers/Packaging | 587.40 | 8.73 | 1 | 4 | -4.65 | -4.46 | 9.28 | 1037 | +12 | 0.72 | -4.79 | 43.36 | 645 | -3 | -8.94 | -6.40 | 44.72 | 608 | +12 | 35.82 | 32.47 | 90.21 | 103 | +12 |
+| UNITEDPOLY | Textiles | 54.22 | 3.05 | 1 | 3 | -0.82 | -0.63 | 45.88 | 619 | +364 | -2.15 | -7.50 | 29.99 | 797 | +68 | 46.90 | 50.99 | 99.36 | 8 | +3 | N/A | N/A | N/A | N/A | N/A |
+| UNOMINDA | Auto Parts: OEM | 1354.00 | 139.64 | 1 | 4 | -1.88 | -1.69 | 32.40 | 773 | -450 | 24.52 | 17.70 | 97.45 | 30 | -6 | 6.25 | 9.20 | 81.33 | 206 | -46 | 25.05 | 21.97 | 83.21 | 176 | -26 |
+| URBANCO | Packaged Software | 174.92 | 147.02 | 1 | 3 | 3.53 | 3.74 | 86.25 | 158 | +587 | 19.64 | 13.09 | 94.46 | 64 | +27 | 4.35 | 7.25 | 78.32 | 239 | +33 | N/A | N/A | N/A | N/A | N/A |
+| VIMTALABS | Miscellaneous Commercial Services | 496.60 | 4.43 | 1 | 4 | 6.19 | 6.40 | 93.61 | 74 | +18 | -4.46 | -9.69 | 21.02 | 899 | -27 | -24.96 | -22.87 | 7.29 | 1019 | -28 | -3.24 | -5.63 | 48.46 | 538 | +19 |
+| VRLLOG | Trucking | 314.75 | 47.05 | 1 | 4 | -7.58 | -7.39 | 1.75 | 1123 | -35 | 16.42 | 10.05 | 90.85 | 105 | +3 | 4.97 | 7.89 | 79.51 | 226 | +7 | 35.67 | 32.34 | 89.92 | 106 | +5 |
+| WESTLIFE | Restaurants | 612.30 | 32.72 | 1 | 4 | -6.99 | -6.81 | 2.89 | 1110 | -5 | 0.32 | -5.17 | 40.90 | 673 | -224 | 10.54 | 13.62 | 86.98 | 144 | +11 | 39.64 | 36.20 | 92.61 | 78 | -14 |
+| XPROINDIA | Industrial Specialties | 1239.30 | 9.24 | 1 | 4 | 1.55 | 1.75 | 73.91 | 299 | +690 | 21.80 | 15.13 | 96.39 | 42 | +41 | 9.11 | 12.15 | 85.25 | 163 | +84 | 4.50 | 1.93 | 61.23 | 405 | +34 |
+| YASHO | Food: Specialty/Candy | 3386.80 | 16.04 | 1 | 4 | -3.32 | -3.13 | 17.16 | 947 | +41 | -1.48 | -6.87 | 32.89 | 764 | -245 | -20.68 | -18.47 | 11.93 | 968 | -64 | 36.83 | 33.46 | 90.88 | 96 | -45 |
+| YATHARTH | Hospital/Nursing Management | 1076.85 | 28.16 | 1 | 4 | -1.50 | -1.31 | 37.39 | 716 | -360 | 16.63 | 10.25 | 91.29 | 100 | +49 | 10.47 | 13.54 | 86.70 | 147 | +28 | 33.32 | 30.04 | 89.06 | 115 | +2 |
+| YATRA | Other Consumer Services | 87.87 | 71.99 | 1 | 4 | -1.29 | -1.10 | 39.67 | 690 | -26 | 18.55 | 12.06 | 93.67 | 73 | +16 | -22.85 | -20.70 | 9.47 | 995 | -127 | -9.23 | -11.46 | 37.33 | 654 | -4 |
+| YUKEN | Industrial Machinery | 1024.50 | 1.41 | 1 | 4 | 2.41 | 2.61 | 80.74 | 221 | -20 | -9.98 | -14.91 | 8.53 | 1041 | -47 | 5.40 | 8.33 | 80.15 | 219 | +31 | 49.57 | 45.89 | 94.63 | 57 | +1 |
+| ZAGGLE | Packaged Software | 162.37 | 22.08 | 1 | 4 | 6.04 | 6.25 | 93.43 | 76 | -9 | 0.51 | -4.99 | 42.13 | 659 | -20 | -11.96 | -9.51 | 33.79 | 728 | -37 | -19.40 | -21.38 | 17.95 | 856 | +7 |
+| ZENTEC | Information Technology Services | 1793.20 | 70.03 | 1 | 4 | 6.68 | 6.89 | 94.66 | 62 | +46 | 10.58 | 4.53 | 78.01 | 251 | -63 | 0.70 | 3.50 | 70.40 | 326 | +18 | -0.92 | -3.36 | 52.69 | 494 | -83 |
+| ZOTA | Pharmaceuticals: Major | 1304.70 | 5.80 | 1 | 4 | 1.30 | 1.50 | 71.98 | 321 | -25 | -1.43 | -6.82 | 33.16 | 761 | -254 | 26.90 | 30.44 | 96.27 | 42 | +4 | 9.96 | 7.26 | 67.47 | 340 | +31 |
 
-## 1W leaders (115); eligible 1144
+## 1W leaders (115); eligible 1143
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1W,NSE:GREAVESCOT,NSE:AJMERA,NSE:JWL,NSE:HUBTOWN,NSE:THOMASCOOK,NSE:ARIS,NSE:OAL,NSE:POLICYBZR,NSE:SAFARI,NSE:J&KBANK,NSE:WEL,NSE:BRIGADE,NSE:WELSPUNLIV,NSE:PRESTIGE,NSE:RATNAVEER,NSE:COHANCE,NSE:DOMS,NSE:ACE,NSE:BAJAJHCARE,NSE:DHAMPURSUG,NSE:SWSOLAR,NSE:JSWINFRA,NSE:SANGHVIMOV,NSE:HITECH,NSE:SHAILY,NSE:RAMCOSYS,NSE:SAMBHV,NSE:COMSYN,NSE:ZENSARTECH,NSE:RUBICON,NSE:SUDEEPPHRM,NSE:KALAMANDIR,NSE:EIHOTEL,NSE:IDEAFORGE,NSE:DABUR,NSE:INTELLECT,NSE:GMMPFAUDLR,NSE:ARMANFIN,NSE:GODREJPROP,NSE:MPHASIS,NSE:CARRARO,NSE:ANGELONE,NSE:MAXESTATES,NSE:TEXRAIL,NSE:BRIGHOTEL,NSE:KFINTECH,NSE:HEGAM,NSE:ABBOTINDIA,NSE:ABSLAMC,NSE:SAATVIKGL,NSE:NAUKRI,NSE:MASTERTR,NSE:JLHL,NSE:RUSTOMJEE,NSE:NH,NSE:GUJENERGY,NSE:CHOICEIN,NSE:FSL,NSE:CHALET,NSE:SHALBY,NSE:NINSYS,NSE:UGROCAP,NSE:KOPRAN,NSE:CPPLUS,NSE:OBEROIRLTY,NSE:MCX,NSE:ZAGGLE,NSE:LTTS,NSE:ABREL,NSE:VIJAYA,NSE:GLENMARK,NSE:BIKAJI,NSE:SUNTECK,NSE:CREDITACC,NSE:INDUSINDBK,NSE:DOLATALGO,NSE:REGAAL,NSE:CAMS,NSE:PGHH,NSE:BECTORFOOD,NSE:VMM,NSE:NPST,NSE:PTCIL,NSE:MAHSCOOTER,NSE:ELLEN,NSE:EFCIL,NSE:ANTHEM,NSE:CANHLIFE,NSE:ARFIN,NSE:ABLBL,NSE:GRANULES,NSE:VIMTALABS,NSE:ENDURANCE,NSE:TIMETECHNO,NSE:JKLAKSHMI,NSE:CELLO,NSE:ASTERDM,NSE:MFSL,NSE:METROPOLIS,NSE:KCP,NSE:IIFLCAPS,NSE:LALPATHLAB,NSE:LINDEINDIA,NSE:RISHABH,NSE:UTTAMSUGAR,NSE:HEXT,NSE:TATAELXSI,NSE:ZENTEC,NSE:SBCL,NSE:AEGISLOG,NSE:PNBGILTS,NSE:AGARWALEYE,NSE:SPORTKING,NSE:TEAMLEASE,NSE:SKIPPER
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1W,NSE:HUBTOWN,NSE:DHAMPURSUG,NSE:GREAVESCOT,NSE:WAAREERTL,NSE:JWL,NSE:POLICYBZR,NSE:BEML,NSE:IDEAFORGE,NSE:ARIS,NSE:ACE,NSE:SAATVIKGL,NSE:SPORTKING,NSE:WEL,NSE:SAMBHV,NSE:TEXRAIL,NSE:IIFLCAPS,NSE:THOMASCOOK,NSE:J&KBANK,NSE:HEGAM,NSE:EBGNG,NSE:EFCIL,NSE:MCX,NSE:GEOJITFSL,NSE:GATEWAY,NSE:HITECH,NSE:UTTAMSUGAR,NSE:RAMCOSYS,NSE:AEGISLOG,NSE:BAJAJHCARE,NSE:PRAJIND,NSE:BALRAMCHIN,NSE:BIL,NSE:JSLL,NSE:JLHL,NSE:RUBICON,NSE:AETHER,NSE:AKUMS,NSE:DALMIASUG,NSE:SUDEEPPHRM,NSE:MARINE,NSE:SWSOLAR,NSE:SAFARI,NSE:ANGELONE,NSE:JAGRAN,NSE:PANAMAPET,NSE:CARRARO,NSE:COHANCE,NSE:RATNAVEER,NSE:AJMERA,NSE:KALAMANDIR,NSE:RACLGEAR,NSE:BALAJITELE,NSE:SHAILY,NSE:SBCL,NSE:SANGHVIMOV,NSE:SHRINGARMS,NSE:GLENMARK,NSE:EIMCOELECO,NSE:CPPLUS,NSE:PRESTIGE,NSE:BRIGADE,NSE:ZENTEC,NSE:RAYMOND,NSE:DOLATALGO,NSE:CUPID,NSE:ECLERX,NSE:POLYPLEX,NSE:INTELLECT,NSE:AVALON,NSE:ACUTAAS,NSE:GUJENERGY,NSE:LINDEINDIA,NSE:WELSPUNLIV,NSE:VIMTALABS,NSE:DOMS,NSE:ZAGGLE,NSE:KRISHNADEF,NSE:RUSTOMJEE,NSE:NINSYS,NSE:SHALBY,NSE:CHOICEIN,NSE:GODIGIT,NSE:KFINTECH,NSE:MANINFRA,NSE:JUSTDIAL,NSE:GMMPFAUDLR,NSE:TSFINV,NSE:COMSYN,NSE:INSECTICID,NSE:PAUSHAKLTD,NSE:PTCIL,NSE:ABDL,NSE:ONEPOINT,NSE:MASTERTR,NSE:JNKINDIA,NSE:WELCORP,NSE:ASIANHOTNR,NSE:MANAKCOAT,NSE:ACMESOLAR,NSE:ANDHRSUGAR,NSE:KCP,NSE:ARKADE,NSE:GHCLTEXTIL,NSE:DODLA,NSE:AGARWALEYE,NSE:ABSLAMC,NSE:SUPRIYA,NSE:PANACEABIO,NSE:DABUR,NSE:SUNTECK,NSE:SESHAPAPER,NSE:RKFORGE,NSE:GOKEX,NSE:E2E,NSE:RAYMONDREL
 
 ```
 
@@ -356,37 +345,37 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| AJMERA | Real Estate Development | 163.20 | 27.56 | 4 | 4 | 22.27 | 22.30 | 99.91 | 2 | +2 | 21.97 | 14.62 | 95.96 | 47 | -18 | 39.61 | 44.95 | 98.91 | 13 | +4 | 45.55 | 41.56 | 94.15 | 62 | +19 |
-| JWL | Trucks/Construction/Farm Machinery | 238.69 | 169.75 | 2 | 4 | 22.10 | 22.14 | 99.83 | 3 | +9 | 31.84 | 23.89 | 99.12 | 11 | +17 | -0.77 | 3.02 | 68.33 | 349 | +223 | -14.86 | -17.19 | 25.43 | 778 | +105 |
-| HUBTOWN | Real Estate Development | 215.04 | 69.32 | 3 | 4 | 22.06 | 22.09 | 99.74 | 4 | +2 | 24.78 | 17.25 | 97.36 | 31 | -14 | 17.96 | 22.47 | 93.54 | 72 | +139 | 4.66 | 1.79 | 60.56 | 412 | +167 |
-| THOMASCOOK | Other Consumer Services | 134.64 | 94.52 | 4 | 4 | 18.72 | 18.75 | 99.65 | 5 | -4 | 49.78 | 40.75 | 99.91 | 2 | +0 | 24.76 | 29.53 | 96.00 | 45 | -31 | 47.24 | 43.21 | 94.63 | 57 | -23 |
-| ARIS | Packaged Software | 185.94 | 37.07 | 4 | 4 | 17.70 | 17.73 | 99.56 | 6 | -4 | 31.45 | 23.53 | 98.95 | 13 | -4 | 30.70 | 35.69 | 97.73 | 26 | +12 | 62.79 | 58.33 | 96.93 | 33 | -1 |
-| OAL | Chemicals: Specialty | 504.45 | 16.69 | 2 | 4 | 17.15 | 17.18 | 99.48 | 7 | -4 | -18.99 | -23.88 | 1.85 | 1118 | -23 | 8.74 | 12.90 | 85.44 | 161 | -2 | 62.25 | 57.81 | 96.64 | 36 | -10 |
-| POLICYBZR | Internet Software/Services | 1170.00 | 359.03 | 2 | 4 | 15.27 | 15.30 | 99.39 | 8 | +16 | 18.42 | 11.28 | 92.97 | 81 | +161 | -37.60 | -35.21 | 0.91 | 1090 | +1 | -25.88 | -27.91 | 10.17 | 937 | +46 |
-| SAFARI | Other Consumer Specialties | 1563.70 | 12.94 | 2 | 4 | 11.30 | 11.33 | 99.30 | 9 | +2 | 27.54 | 19.85 | 98.15 | 22 | +11 | 3.49 | 7.45 | 78.16 | 241 | +23 | -0.64 | -3.36 | 52.59 | 495 | +69 |
-| J&KBANK | Regional Banks | 162.82 | 55.49 | 2 | 4 | 11.12 | 11.15 | 99.21 | 10 | +5 | 33.65 | 25.59 | 99.38 | 8 | +22 | 10.25 | 14.47 | 87.81 | 135 | +91 | 9.53 | 6.53 | 66.99 | 345 | -4 |
-| WEL | Electronic Equipment/Instruments | 91.47 | 1.52 | 2 | 4 | 11.06 | 11.09 | 99.13 | 11 | +3 | 29.80 | 21.97 | 98.51 | 18 | +9 | 1.84 | 5.73 | 74.34 | 283 | +427 | -1.40 | -4.10 | 51.54 | 506 | +91 |
-| BRIGADE | Real Estate Development | 628.50 | 31.46 | 2 | 4 | 11.00 | 11.03 | 99.04 | 12 | +100 | 16.75 | 9.71 | 90.42 | 110 | +263 | -4.17 | -0.50 | 61.06 | 429 | +115 | -3.93 | -6.56 | 47.70 | 546 | +101 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
-| PRESTIGE | Real Estate Development | 1832.10 | 113.60 | 3 | 4 | 10.70 | 10.73 | 98.86 | 14 | +224 | 31.60 | 23.66 | 99.03 | 12 | +75 | 12.19 | 16.48 | 89.99 | 111 | +73 | 36.15 | 32.42 | 90.50 | 100 | +110 |
-| RATNAVEER | Steel | 405.00 | 115.01 | 4 | 4 | 10.32 | 10.35 | 98.78 | 15 | +5 | 17.36 | 10.28 | 91.30 | 100 | +22 | 32.34 | 37.41 | 98.27 | 20 | -5 | 141.55 | 134.93 | 99.81 | 3 | +1 |
-| COHANCE | Pharmaceuticals: Major | 502.60 | 50.20 | 1 | 4 | 9.39 | 9.42 | 98.69 | 16 | +19 | 5.58 | -0.79 | 63.80 | 413 | +149 | 10.23 | 14.45 | 87.72 | 136 | +14 | 18.31 | 15.07 | 77.45 | 236 | +42 |
-| DOMS | Office Equipment/Supplies | 2299.50 | 11.10 | 2 | 4 | 9.28 | 9.31 | 98.60 | 17 | +5 | 23.73 | 16.27 | 96.92 | 36 | +44 | 3.00 | 6.94 | 77.16 | 252 | +35 | 6.72 | 3.80 | 63.72 | 379 | +75 |
-| ACE | Trucks/Construction/Farm Machinery | 1295.00 | 46.36 | 4 | 4 | 9.20 | 9.23 | 98.51 | 18 | +371 | 26.61 | 18.98 | 98.07 | 23 | +130 | 16.61 | 21.07 | 92.63 | 82 | +128 | 49.35 | 45.26 | 95.01 | 53 | +48 |
-| BAJAJHCARE | Pharmaceuticals: Major | 347.25 | 4.34 | 1 | 4 | 9.03 | 9.06 | 98.43 | 19 | +14 | 10.43 | 3.77 | 78.38 | 247 | +3 | 4.06 | 8.04 | 79.25 | 229 | -58 | 16.25 | 13.07 | 75.14 | 260 | +8 |
-| DHAMPURSUG | Agricultural Commodities/Milling | 180.01 | 34.70 | 1 | 4 | 8.83 | 8.86 | 98.34 | 20 | +489 | 9.01 | 2.44 | 73.90 | 298 | +532 | 0.46 | 4.30 | 70.70 | 323 | +251 | 30.39 | 26.82 | 87.43 | 132 | +142 |
-| SWSOLAR | Engineering & Construction | 170.50 | 23.29 | 2 | 4 | 8.81 | 8.84 | 98.25 | 21 | +33 | 18.30 | 11.16 | 92.62 | 85 | +4 | -9.95 | -6.50 | 43.40 | 623 | +125 | -12.45 | -14.85 | 30.71 | 723 | -16 |
-| JSWINFRA | Engineering & Construction | 365.65 | 63.53 | 2 | 4 | 8.45 | 8.48 | 98.16 | 22 | +52 | 16.15 | 9.15 | 89.72 | 118 | +79 | 7.54 | 11.66 | 84.08 | 176 | +36 | 35.28 | 31.57 | 90.12 | 104 | +32 |
-| SANGHVIMOV | Finance/Rental/Leasing | 396.65 | 22.67 | 1 | 4 | 7.98 | 8.01 | 98.08 | 23 | +269 | 14.11 | 7.23 | 86.91 | 150 | +5 | -13.25 | -9.93 | 32.67 | 741 | +42 | 10.40 | 7.37 | 68.43 | 330 | +64 |
-| HITECH | Steel | 82.39 | 14.40 | 2 | 4 | 7.97 | 8.00 | 97.99 | 24 | -7 | 27.95 | 20.24 | 98.24 | 21 | +1 | 4.36 | 8.35 | 79.89 | 222 | +77 | -6.07 | -8.64 | 43.95 | 585 | -34 |
-| SHAILY | Chemicals: Specialty | 3379.60 | 57.56 | 1 | 4 | 7.93 | 7.96 | 97.90 | 25 | +992 | 10.85 | 4.17 | 79.53 | 234 | +673 | 3.28 | 7.23 | 77.80 | 245 | +407 | 10.06 | 7.04 | 67.75 | 337 | +210 |
+| HUBTOWN | Real Estate Development | 214.54 | 79.16 | 3 | 4 | 25.69 | 25.94 | 100.00 | 1 | +3 | 16.67 | 10.28 | 91.47 | 98 | -67 | 18.97 | 22.28 | 93.53 | 72 | +0 | 5.90 | 3.29 | 62.96 | 387 | +25 |
+| DHAMPURSUG | Agricultural Commodities/Milling | 195.46 | 44.52 | 2 | 4 | 20.45 | 20.68 | 99.91 | 2 | +18 | 15.36 | 9.05 | 89.09 | 125 | +173 | 13.10 | 16.25 | 89.16 | 120 | +203 | 40.08 | 36.64 | 92.90 | 75 | +57 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| WAAREERTL | Alternative Power Generation | 825.70 | 74.92 | 2 | 4 | 19.09 | 19.32 | 99.74 | 4 | +626 | 19.30 | 12.77 | 94.20 | 67 | +494 | -4.41 | -1.75 | 56.83 | 475 | +479 | -15.33 | -17.41 | 23.80 | 795 | +173 |
+| JWL | Trucks/Construction/Farm Machinery | 224.84 | 188.12 | 2 | 4 | 17.58 | 17.81 | 99.65 | 5 | -2 | 16.43 | 10.06 | 91.03 | 103 | -92 | -7.23 | -4.65 | 49.54 | 555 | -206 | -19.66 | -21.63 | 17.66 | 859 | -81 |
+| POLICYBZR | Internet Software/Services | 1186.50 | 374.63 | 2 | 4 | 16.01 | 16.23 | 99.56 | 6 | +2 | 16.53 | 10.15 | 91.12 | 102 | -21 | -35.14 | -33.33 | 1.46 | 1083 | +7 | -22.77 | -24.67 | 13.63 | 901 | +36 |
+| BEML | Trucks/Construction/Farm Machinery | 2346.10 | 151.69 | 3 | 4 | 14.31 | 14.53 | 99.47 | 7 | +324 | 18.74 | 12.24 | 93.76 | 72 | +414 | 19.08 | 22.39 | 93.72 | 70 | +137 | 35.06 | 31.73 | 89.64 | 109 | +152 |
+| IDEAFORGE | Aerospace & Defense | 789.20 | 23.77 | 2 | 3 | 13.90 | 14.12 | 99.39 | 8 | +26 | 16.68 | 10.29 | 91.56 | 97 | +247 | 0.71 | 3.52 | 70.49 | 325 | +223 | N/A | N/A | N/A | N/A | N/A |
+| ARIS | Packaged Software | 187.36 | 37.05 | 4 | 4 | 13.57 | 13.79 | 99.30 | 9 | -3 | 30.88 | 23.72 | 98.86 | 14 | -1 | 42.28 | 46.24 | 99.09 | 11 | +15 | 62.92 | 58.91 | 96.74 | 35 | -2 |
+| ACE | Trucks/Construction/Farm Machinery | 1325.70 | 49.56 | 4 | 4 | 13.27 | 13.50 | 99.21 | 10 | +8 | 29.08 | 22.02 | 98.59 | 17 | +6 | 21.20 | 24.57 | 94.72 | 59 | +23 | 52.55 | 48.79 | 95.11 | 52 | +1 |
+| SAATVIKGL | Industrial Machinery | 393.60 | 1.71 | 1 | 3 | 12.67 | 12.89 | 99.12 | 11 | +39 | 12.97 | 6.79 | 85.22 | 169 | +287 | -6.40 | -3.79 | 51.73 | 531 | +183 | N/A | N/A | N/A | N/A | N/A |
+| SPORTKING | Textiles | 249.03 | 17.50 | 2 | 4 | 12.54 | 12.76 | 99.04 | 12 | +101 | 15.91 | 9.56 | 89.80 | 117 | +142 | 8.32 | 11.33 | 84.15 | 175 | +109 | 38.14 | 34.74 | 91.55 | 89 | +76 |
+| WEL | Electronic Equipment/Instruments | 93.14 | 1.68 | 3 | 4 | 12.37 | 12.59 | 98.95 | 13 | -2 | 31.96 | 24.74 | 99.12 | 11 | +7 | 15.22 | 18.42 | 91.07 | 99 | +184 | 0.20 | -2.26 | 54.03 | 480 | +26 |
+| SAMBHV | Steel | 177.30 | 42.79 | 3 | 4 | 12.17 | 12.39 | 98.86 | 14 | +13 | 11.28 | 5.19 | 80.04 | 228 | +202 | 39.68 | 43.57 | 98.82 | 14 | +2 | 67.96 | 63.83 | 97.31 | 29 | +2 |
+| TEXRAIL | Trucks/Construction/Farm Machinery | 124.85 | 27.72 | 2 | 4 | 12.10 | 12.32 | 98.77 | 15 | +29 | 19.86 | 13.30 | 94.72 | 61 | +43 | 10.42 | 13.49 | 86.61 | 148 | +21 | 19.03 | 16.10 | 78.31 | 227 | +54 |
+| IIFLCAPS | Investment Banks/Brokers | 346.80 | 79.63 | 1 | 4 | 11.35 | 11.57 | 98.69 | 16 | +85 | -0.27 | -5.73 | 37.64 | 710 | -26 | 1.96 | 4.79 | 73.41 | 293 | -35 | 2.50 | -0.03 | 57.39 | 445 | +4 |
+| THOMASCOOK | Other Consumer Services | 127.51 | 96.94 | 4 | 4 | 11.21 | 11.42 | 98.60 | 17 | -12 | 44.31 | 36.41 | 99.82 | 3 | -1 | 20.62 | 23.98 | 94.17 | 65 | -20 | 38.34 | 34.94 | 91.84 | 86 | -29 |
+| J&KBANK | Regional Banks | 166.39 | 59.82 | 2 | 4 | 11.13 | 11.34 | 98.51 | 18 | -8 | 36.11 | 28.66 | 99.56 | 6 | +2 | 12.90 | 16.04 | 88.89 | 123 | +12 | 12.67 | 9.90 | 71.59 | 297 | +48 |
+| HEGAM | Electronic Components | 285.79 | 105.38 | 2 | 2 | 11.03 | 11.25 | 98.42 | 19 | +28 | 17.43 | 11.00 | 92.17 | 90 | -52 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| EBGNG | Information Technology Services | 521.35 | 69.40 | 1 | 4 | 10.84 | 11.06 | 98.34 | 20 | +788 | -24.45 | -28.59 | 0.70 | 1130 | +6 | -19.85 | -17.62 | 13.39 | 952 | -51 | 16.54 | 13.67 | 75.91 | 252 | +45 |
+| EFCIL | Wholesale Distributors | 170.90 | 3.76 | 1 | 4 | 10.49 | 10.70 | 98.25 | 21 | +65 | 1.06 | -4.47 | 45.21 | 624 | +242 | -15.12 | -12.76 | 24.41 | 831 | +87 | -1.95 | -4.36 | 50.77 | 514 | +95 |
+| MCX | Investment Banks/Brokers | 3900.00 | 769.31 | 3 | 4 | 10.33 | 10.54 | 98.16 | 22 | +44 | 20.71 | 14.10 | 95.51 | 52 | +6 | 18.07 | 21.36 | 93.26 | 75 | +26 | 34.78 | 31.47 | 89.44 | 111 | -8 |
+| GEOJITFSL | Investment Banks/Brokers | 78.27 | 12.93 | 2 | 4 | 10.29 | 10.50 | 98.07 | 23 | +825 | 16.58 | 10.20 | 91.20 | 101 | +465 | -5.95 | -3.33 | 53.28 | 514 | +338 | 4.47 | 1.90 | 60.94 | 408 | +156 |
+| GATEWAY | Railroads | 51.71 | 8.15 | 2 | 4 | 10.02 | 10.24 | 97.99 | 24 | N/A | 17.95 | 11.50 | 92.79 | 83 | N/A | -2.18 | 0.55 | 63.39 | 403 | N/A | -7.53 | -9.80 | 40.98 | 616 | N/A |
+| HITECH | Steel | 82.96 | 14.44 | 2 | 4 | 9.97 | 10.18 | 97.90 | 25 | -1 | 22.45 | 15.75 | 96.75 | 38 | -17 | 4.13 | 7.03 | 78.05 | 242 | -20 | -7.52 | -9.80 | 41.07 | 615 | -30 |
 
-## 1M leaders (114); eligible 1139
+## 1M leaders (114); eligible 1138
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1M,NSE:GREAVESCOT,NSE:THOMASCOOK,NSE:KALAMANDIR,NSE:STYLEBAAZA,NSE:HINDOILEXP,NSE:ICIL,NSE:AGIIL,NSE:J&KBANK,NSE:FAZE3Q,NSE:PARAGMILK,NSE:JWL,NSE:PRESTIGE,NSE:ARIS,NSE:COMSYN,NSE:BOROLTD,NSE:APLLTD,NSE:WELSPUNLIV,NSE:WEL,NSE:ASAHIINDIA,NSE:CHEMPLASTS,NSE:HITECH,NSE:SAFARI,NSE:ACE,NSE:UNOMINDA,NSE:GODREJPROP,NSE:IREDA,NSE:POONAWALLA,NSE:MOTILALOFS,NSE:KALYANKJIL,NSE:BECTORFOOD,NSE:HUBTOWN,NSE:MMFL,NSE:RAMKY,NSE:EMCURE,NSE:DEEPAKFERT,NSE:DOMS,NSE:TIMETECHNO,NSE:HEGAM,NSE:REPCOHOME,NSE:PDSL,NSE:ANGELONE,NSE:IXIGO,NSE:LINDEINDIA,NSE:ABREL,NSE:360ONE,NSE:SIGNATURE,NSE:AJMERA,NSE:SAILIFE,NSE:RKFORGE,NSE:NEOGEN,NSE:MANAKCOAT,NSE:FIEMIND,NSE:UTTAMSUGAR,NSE:NAVINFLUOR,NSE:SUNTECK,NSE:PHOENIXLTD,NSE:BANKINDIA,NSE:MCX,NSE:ALEMBICLTD,NSE:AGARWALEYE,NSE:VOLTAS,NSE:ARMANFIN,NSE:CNL,NSE:KDDL,NSE:DELHIVERY,NSE:MAXESTATES,NSE:AEGISVOPAK,NSE:GHCLTEXTIL,NSE:GLENMARK,NSE:FORCEMOT,NSE:ANUP,NSE:KRBL,NSE:OBEROIRLTY,NSE:EIMCOELECO,NSE:BALAJITELE,NSE:PGIL,NSE:MFSL,NSE:MARATHON,NSE:SAREGAMA,NSE:DCBBANK,NSE:POLICYBZR,NSE:RUBICON,NSE:XPROINDIA,NSE:BALUFORGE,NSE:SWSOLAR,NSE:SHARDAMOTR,NSE:JKTYRE,NSE:HONASA,NSE:YATRA,NSE:MASTERTR,NSE:URBANCO,NSE:CUPID,NSE:IDFCFIRSTB,NSE:ASHOKA,NSE:MAHABANK,NSE:MEDANTA,NSE:STEL,NSE:SIMPLEXINF,NSE:FUSION,NSE:RATNAVEER,NSE:ENDURANCE,NSE:CERA,NSE:ANTHEM,NSE:TEXRAIL,NSE:CDSL,NSE:LICHSGFIN,NSE:ABDL,NSE:VRLLOG,NSE:JKLAKSHMI,NSE:BRIGADE,NSE:WOCKPHARMA,NSE:MUTHOOTMF,NSE:EUREKAFORB,NSE:SUDEEPPHRM
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 1M,NSE:GREAVESCOT,NSE:KALAMANDIR,NSE:THOMASCOOK,NSE:HINDOILEXP,NSE:STYLEBAAZA,NSE:J&KBANK,NSE:WELSPUNLIV,NSE:FAZE3Q,NSE:JLHL,NSE:AGIIL,NSE:WEL,NSE:ICIL,NSE:PARAGMILK,NSE:ARIS,NSE:BOROLTD,NSE:SAFARI,NSE:ACE,NSE:COMSYN,NSE:KALYANKJIL,NSE:ANGELONE,NSE:MMFL,NSE:APLLTD,NSE:ASAHIINDIA,NSE:NEOGEN,NSE:NAVINFLUOR,NSE:ANUP,NSE:CHEMPLASTS,NSE:PRESTIGE,NSE:DOMS,NSE:UNOMINDA,NSE:IREDA,NSE:MOTILALOFS,NSE:EMCURE,NSE:STEL,NSE:BECTORFOOD,NSE:TIMETECHNO,NSE:GOKEX,NSE:HITECH,NSE:DEEPAKFERT,NSE:LINDEINDIA,NSE:ABREL,NSE:XPROINDIA,NSE:CUPID,NSE:GODREJPROP,NSE:PDSL,NSE:GLENMARK,NSE:GHCLTEXTIL,NSE:PGIL,NSE:EIMCOELECO,NSE:SAILIFE,NSE:SHARDAMOTR,NSE:MCX,NSE:AEGISVOPAK,NSE:360ONE,NSE:RAYMONDREL,NSE:FIEMIND,NSE:FILATEX,NSE:RAMKY,NSE:MENONBE,NSE:RUBICON,NSE:TEXRAIL,NSE:BANKINDIA,NSE:FORCEMOT,NSE:URBANCO,NSE:IXIGO,NSE:SUNTECK,NSE:WAAREERTL,NSE:REPCOHOME,NSE:NITCO,NSE:AFFLE,NSE:AGARWALEYE,NSE:BEML,NSE:YATRA,NSE:ANTHEM,NSE:BALAJITELE,NSE:MARATHON,NSE:ALICON,NSE:MOLDTKPAC,NSE:IDFCFIRSTB,NSE:MAHABANK,NSE:SIGNATURE,NSE:ABDL,NSE:GATEWAY,NSE:RACLGEAR,NSE:BANCOINDIA,NSE:MASTERTR,NSE:MFSL,NSE:JKTYRE,NSE:PACEDIGITK,NSE:HEGAM,NSE:MAXESTATES,NSE:ROTO,NSE:KDDL,NSE:BALUFORGE,NSE:ENTERO,NSE:WOCKPHARMA,NSE:IDEAFORGE,NSE:HUBTOWN,NSE:SIYSIL,NSE:YATHARTH,NSE:GEOJITFSL,NSE:POLICYBZR,NSE:JWL,NSE:KRBL,NSE:VRLLOG,NSE:AJMERA,NSE:CERA,NSE:ABSLAMC,NSE:EUREKAFORB,NSE:FUSION,NSE:RKFORGE,NSE:SWSOLAR,NSE:BRIGADE,NSE:RAYMOND
 
 ```
 
@@ -394,37 +383,37 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| THOMASCOOK | Other Consumer Services | 134.64 | 94.52 | 4 | 4 | 18.72 | 18.75 | 99.65 | 5 | -4 | 49.78 | 40.75 | 99.91 | 2 | +0 | 24.76 | 29.53 | 96.00 | 45 | -31 | 47.24 | 43.21 | 94.63 | 57 | -23 |
-| KALAMANDIR | Apparel/Footwear Retail | 96.72 | 18.96 | 3 | 4 | 7.43 | 7.46 | 97.29 | 32 | -23 | 46.26 | 37.44 | 99.82 | 3 | +1 | 12.67 | 16.98 | 90.54 | 105 | +2 | -8.64 | -11.15 | 38.20 | 645 | -26 |
-| STYLEBAAZA | Apparel/Footwear Retail | 514.80 | 83.74 | 2 | 3 | -1.80 | -1.78 | 48.03 | 595 | +309 | 44.18 | 35.49 | 99.74 | 4 | +1 | 28.43 | 33.34 | 97.18 | 32 | +7 | N/A | N/A | N/A | N/A | N/A |
-| HINDOILEXP | Integrated Oil | 213.01 | 40.91 | 2 | 4 | -0.69 | -0.67 | 60.98 | 447 | +340 | 39.16 | 30.77 | 99.65 | 5 | +1 | 31.44 | 36.47 | 98.00 | 23 | -5 | 25.51 | 22.07 | 83.21 | 176 | -32 |
-| ICIL | Textiles | 590.05 | 44.96 | 3 | 4 | 2.44 | 2.47 | 86.35 | 157 | +174 | 37.83 | 29.52 | 99.56 | 6 | +1 | 25.69 | 30.50 | 96.63 | 38 | -17 | 71.20 | 66.51 | 97.89 | 23 | +2 |
-| AGIIL | Real Estate Development | 307.40 | 61.94 | 1 | 4 | 0.80 | 0.83 | 75.68 | 279 | +284 | 37.39 | 29.10 | 99.47 | 7 | +6 | 7.86 | 11.99 | 84.35 | 173 | +10 | -20.59 | -22.76 | 16.89 | 867 | -18 |
-| J&KBANK | Regional Banks | 162.82 | 55.49 | 2 | 4 | 11.12 | 11.15 | 99.21 | 10 | +5 | 33.65 | 25.59 | 99.38 | 8 | +22 | 10.25 | 14.47 | 87.81 | 135 | +91 | 9.53 | 6.53 | 66.99 | 345 | -4 |
-| FAZE3Q | Textiles | 550.85 | 15.95 | 2 | 4 | -6.19 | -6.16 | 11.11 | 1017 | +74 | 33.33 | 25.29 | 99.30 | 9 | +1 | 12.99 | 17.32 | 90.99 | 100 | +4 | 2.75 | -0.06 | 57.87 | 440 | +18 |
-| PARAGMILK | Food: Meat/Fish/Dairy | 315.44 | 80.19 | 2 | 4 | -8.17 | -8.14 | 4.37 | 1094 | -910 | 31.87 | 23.92 | 99.21 | 10 | -2 | 23.98 | 28.73 | 95.63 | 49 | -40 | 29.29 | 25.75 | 86.28 | 144 | -69 |
-| JWL | Trucks/Construction/Farm Machinery | 238.69 | 169.75 | 2 | 4 | 22.10 | 22.14 | 99.83 | 3 | +9 | 31.84 | 23.89 | 99.12 | 11 | +17 | -0.77 | 3.02 | 68.33 | 349 | +223 | -14.86 | -17.19 | 25.43 | 778 | +105 |
-| PRESTIGE | Real Estate Development | 1832.10 | 113.60 | 3 | 4 | 10.70 | 10.73 | 98.86 | 14 | +224 | 31.60 | 23.66 | 99.03 | 12 | +75 | 12.19 | 16.48 | 89.99 | 111 | +73 | 36.15 | 32.42 | 90.50 | 100 | +110 |
-| ARIS | Packaged Software | 185.94 | 37.07 | 4 | 4 | 17.70 | 17.73 | 99.56 | 6 | -4 | 31.45 | 23.53 | 98.95 | 13 | -4 | 30.70 | 35.69 | 97.73 | 26 | +12 | 62.79 | 58.33 | 96.93 | 33 | -1 |
-| COMSYN | Containers/Packaging | 276.35 | 16.24 | 2 | 3 | 7.68 | 7.71 | 97.64 | 28 | +13 | 31.35 | 23.42 | 98.86 | 14 | +4 | -6.98 | -3.43 | 53.23 | 515 | -172 | N/A | N/A | N/A | N/A | N/A |
-| BOROLTD | Miscellaneous Manufacturing | 314.80 | 37.20 | 3 | 4 | -6.24 | -6.21 | 10.94 | 1019 | -313 | 30.60 | 22.72 | 98.77 | 15 | -1 | 28.04 | 32.94 | 97.00 | 34 | -9 | 40.95 | 37.09 | 92.61 | 78 | -14 |
-| APLLTD | Pharmaceuticals: Major | 1018.80 | 46.37 | 3 | 4 | -2.93 | -2.91 | 35.87 | 734 | -149 | 30.15 | 22.30 | 98.68 | 16 | -5 | 22.03 | 26.69 | 95.27 | 53 | -18 | 40.81 | 36.95 | 92.51 | 79 | -9 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
-| WEL | Electronic Equipment/Instruments | 91.47 | 1.52 | 2 | 4 | 11.06 | 11.09 | 99.13 | 11 | +3 | 29.80 | 21.97 | 98.51 | 18 | +9 | 1.84 | 5.73 | 74.34 | 283 | +427 | -1.40 | -4.10 | 51.54 | 506 | +91 |
-| ASAHIINDIA | Home Furnishings | 1189.85 | 21.41 | 2 | 4 | -0.18 | -0.16 | 66.14 | 388 | -243 | 29.46 | 21.65 | 98.42 | 19 | -4 | 24.98 | 29.76 | 96.27 | 42 | -2 | 31.69 | 28.08 | 88.00 | 126 | -13 |
-| CHEMPLASTS | Chemicals: Major Diversified | 252.20 | 20.73 | 2 | 4 | 0.87 | 0.90 | 76.47 | 270 | +53 | 28.41 | 20.67 | 98.33 | 20 | -8 | 42.87 | 48.34 | 99.27 | 9 | +7 | 21.57 | 18.23 | 80.23 | 207 | +38 |
-| HITECH | Steel | 82.39 | 14.40 | 2 | 4 | 7.97 | 8.00 | 97.99 | 24 | -7 | 27.95 | 20.24 | 98.24 | 21 | +1 | 4.36 | 8.35 | 79.89 | 222 | +77 | -6.07 | -8.64 | 43.95 | 585 | -34 |
-| SAFARI | Other Consumer Specialties | 1563.70 | 12.94 | 2 | 4 | 11.30 | 11.33 | 99.30 | 9 | +2 | 27.54 | 19.85 | 98.15 | 22 | +11 | 3.49 | 7.45 | 78.16 | 241 | +23 | -0.64 | -3.36 | 52.59 | 495 | +69 |
-| ACE | Trucks/Construction/Farm Machinery | 1295.00 | 46.36 | 4 | 4 | 9.20 | 9.23 | 98.51 | 18 | +371 | 26.61 | 18.98 | 98.07 | 23 | +130 | 16.61 | 21.07 | 92.63 | 82 | +128 | 49.35 | 45.26 | 95.01 | 53 | +48 |
-| UNOMINDA | Auto Parts: OEM | 1390.00 | 137.27 | 1 | 4 | 0.36 | 0.39 | 71.83 | 323 | +43 | 26.38 | 18.75 | 97.98 | 24 | +1 | 8.93 | 13.10 | 85.53 | 160 | +2 | 28.38 | 24.86 | 85.70 | 150 | +11 |
-| GODREJPROP | Real Estate Development | 2004.30 | 119.52 | 2 | 4 | 6.56 | 6.58 | 96.68 | 39 | +163 | 26.29 | 18.68 | 97.89 | 25 | +30 | -0.52 | 3.29 | 69.06 | 341 | +110 | 17.57 | 14.35 | 76.49 | 246 | +69 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| KALAMANDIR | Apparel/Footwear Retail | 94.93 | 19.04 | 2 | 4 | 7.48 | 7.69 | 95.71 | 50 | -18 | 44.56 | 36.64 | 99.91 | 2 | +1 | 10.87 | 13.96 | 87.43 | 139 | -34 | -9.99 | -12.21 | 36.18 | 666 | -21 |
+| THOMASCOOK | Other Consumer Services | 127.51 | 96.94 | 4 | 4 | 11.21 | 11.42 | 98.60 | 17 | -12 | 44.31 | 36.41 | 99.82 | 3 | -1 | 20.62 | 23.98 | 94.17 | 65 | -20 | 38.34 | 34.94 | 91.84 | 86 | -29 |
+| HINDOILEXP | Integrated Oil | 218.15 | 41.08 | 2 | 4 | 0.61 | 0.81 | 65.24 | 398 | +49 | 42.27 | 34.48 | 99.74 | 4 | +1 | 29.08 | 32.68 | 96.99 | 34 | -11 | 30.29 | 27.08 | 87.52 | 131 | +45 |
+| STYLEBAAZA | Apparel/Footwear Retail | 511.70 | 80.34 | 2 | 3 | 2.31 | 2.51 | 80.04 | 229 | +366 | 40.08 | 32.41 | 99.65 | 5 | -1 | 28.52 | 32.10 | 96.81 | 36 | -4 | N/A | N/A | N/A | N/A | N/A |
+| J&KBANK | Regional Banks | 166.39 | 59.82 | 2 | 4 | 11.13 | 11.34 | 98.51 | 18 | -8 | 36.11 | 28.66 | 99.56 | 6 | +2 | 12.90 | 16.04 | 88.89 | 123 | +12 | 12.67 | 9.90 | 71.59 | 297 | +48 |
+| WELSPUNLIV | Consumer Sundries | 285.52 | 234.64 | 4 | 4 | 6.23 | 6.44 | 93.70 | 73 | -60 | 34.57 | 27.21 | 99.47 | 7 | +10 | 43.90 | 47.91 | 99.18 | 10 | -2 | 97.89 | 93.02 | 98.94 | 12 | +0 |
+| FAZE3Q | Textiles | 559.25 | 16.01 | 1 | 4 | -4.83 | -4.65 | 8.84 | 1042 | -25 | 33.23 | 25.94 | 99.38 | 8 | +1 | 14.00 | 17.18 | 89.71 | 114 | -14 | 2.25 | -0.27 | 57.20 | 447 | -7 |
+| JLHL | Hospital/Nursing Management | 345.30 | 48.18 | 3 | 4 | 8.79 | 9.00 | 97.11 | 34 | +19 | 32.76 | 25.49 | 99.30 | 9 | +110 | 17.79 | 21.07 | 92.99 | 78 | +235 | -73.75 | -74.39 | 0.29 | 1040 | +0 |
+| AGIIL | Real Estate Development | 317.15 | 65.87 | 1 | 4 | 3.72 | 3.92 | 86.78 | 152 | +127 | 32.15 | 24.91 | 99.21 | 10 | -3 | 10.85 | 13.94 | 87.25 | 141 | +32 | -17.80 | -19.83 | 19.96 | 835 | +32 |
+| WEL | Electronic Equipment/Instruments | 93.14 | 1.68 | 3 | 4 | 12.37 | 12.59 | 98.95 | 13 | -2 | 31.96 | 24.74 | 99.12 | 11 | +7 | 15.22 | 18.42 | 91.07 | 99 | +184 | 0.20 | -2.26 | 54.03 | 480 | +26 |
+| ICIL | Textiles | 591.60 | 45.31 | 3 | 4 | 1.96 | 2.16 | 77.50 | 258 | -101 | 31.67 | 24.46 | 99.03 | 12 | -6 | 36.49 | 40.29 | 98.09 | 22 | +16 | 77.60 | 73.23 | 98.46 | 17 | +6 |
+| PARAGMILK | Food: Meat/Fish/Dairy | 321.63 | 78.71 | 2 | 4 | -4.54 | -4.36 | 9.63 | 1033 | +61 | 31.30 | 24.12 | 98.94 | 13 | -3 | 24.13 | 27.59 | 95.45 | 51 | -2 | 35.49 | 32.16 | 89.83 | 107 | +37 |
+| ARIS | Packaged Software | 187.36 | 37.05 | 4 | 4 | 13.57 | 13.79 | 99.30 | 9 | -3 | 30.88 | 23.72 | 98.86 | 14 | -1 | 42.28 | 46.24 | 99.09 | 11 | +15 | 62.92 | 58.91 | 96.74 | 35 | -2 |
+| BOROLTD | Miscellaneous Manufacturing | 310.90 | 37.32 | 3 | 4 | -4.95 | -4.77 | 8.58 | 1045 | -26 | 30.25 | 23.12 | 98.77 | 15 | +0 | 28.55 | 32.13 | 96.90 | 35 | -1 | 40.06 | 36.62 | 92.80 | 76 | +2 |
+| SAFARI | Other Consumer Specialties | 1556.50 | 13.12 | 2 | 4 | 8.41 | 8.62 | 96.41 | 42 | -33 | 29.92 | 22.81 | 98.68 | 16 | +6 | 1.67 | 4.50 | 72.68 | 301 | -60 | -1.74 | -4.16 | 51.34 | 508 | -13 |
+| ACE | Trucks/Construction/Farm Machinery | 1325.70 | 49.56 | 4 | 4 | 13.27 | 13.50 | 99.21 | 10 | +8 | 29.08 | 22.02 | 98.59 | 17 | +6 | 21.20 | 24.57 | 94.72 | 59 | +23 | 52.55 | 48.79 | 95.11 | 52 | +1 |
+| COMSYN | Containers/Packaging | 271.93 | 15.95 | 2 | 3 | 5.61 | 5.81 | 92.38 | 88 | -60 | 28.94 | 21.88 | 98.50 | 18 | -4 | -10.65 | -8.17 | 38.52 | 676 | -161 | N/A | N/A | N/A | N/A | N/A |
+| KALYANKJIL | Specialty Stores | 659.50 | 796.61 | 3 | 4 | 3.26 | 3.46 | 84.94 | 173 | +596 | 28.06 | 21.05 | 98.42 | 19 | +10 | 15.10 | 18.30 | 90.98 | 100 | +88 | 82.13 | 77.65 | 98.66 | 15 | +2 |
+| ANGELONE | Investment Banks/Brokers | 376.00 | 324.28 | 3 | 4 | 7.95 | 8.16 | 96.32 | 43 | -1 | 28.04 | 21.03 | 98.33 | 20 | +21 | 33.55 | 37.26 | 97.72 | 26 | +18 | 11.34 | 8.60 | 70.15 | 312 | +63 |
+| MMFL | Metal Fabrication | 631.65 | 21.26 | 2 | 4 | -2.53 | -2.34 | 24.43 | 864 | +188 | 27.85 | 20.85 | 98.24 | 21 | +11 | -3.92 | -1.25 | 58.38 | 458 | +67 | 38.79 | 35.38 | 92.13 | 83 | +9 |
+| APLLTD | Pharmaceuticals: Major | 1013.40 | 46.70 | 3 | 4 | -2.65 | -2.46 | 23.03 | 880 | -146 | 27.50 | 20.52 | 98.15 | 22 | -6 | 20.09 | 23.43 | 93.99 | 67 | -14 | 37.40 | 34.02 | 91.07 | 94 | -15 |
+| ASAHIINDIA | Home Furnishings | 1158.20 | 21.42 | 2 | 4 | -0.46 | -0.27 | 50.88 | 562 | -174 | 27.04 | 20.09 | 98.07 | 23 | -4 | 21.76 | 25.15 | 94.99 | 56 | -14 | 29.93 | 26.73 | 86.76 | 139 | -13 |
+| NEOGEN | Chemicals: Specialty | 2870.90 | 40.33 | 3 | 4 | -1.69 | -1.50 | 34.68 | 747 | +177 | 26.94 | 19.99 | 97.98 | 24 | +26 | 33.29 | 37.00 | 97.63 | 27 | +16 | 52.47 | 48.72 | 95.01 | 53 | +13 |
+| NAVINFLUOR | Chemicals: Specialty | 10456.50 | 200.37 | 3 | 4 | 3.77 | 3.97 | 87.04 | 149 | +146 | 26.58 | 19.66 | 97.89 | 25 | +29 | 21.08 | 24.45 | 94.54 | 61 | +8 | 47.47 | 43.84 | 94.43 | 59 | +2 |
 
-## 3M leaders (110); eligible 1100
+## 3M leaders (110); eligible 1099
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 3M,NSE:RAYMOND,NSE:GREAVESCOT,NSE:SBC,NSE:SSWL,NSE:GCSL,NSE:ALICON,NSE:FILATEX,NSE:WELSPUNLIV,NSE:CHEMPLASTS,NSE:SHREEJISPG,NSE:UNITEDPOLY,NSE:SUNTV,NSE:AJMERA,NSE:NINSYS,NSE:WHEELS,NSE:SAMBHV,NSE:PVRINOX,NSE:PROTEAN,NSE:ABDL,NSE:RATNAVEER,NSE:CUPID,NSE:OPTIEMUS,NSE:HINDOILEXP,NSE:MANAKCOAT,NSE:ROSSTECH,NSE:ARIS,NSE:SMSPHARMA,NSE:ISGEC,NSE:SAREGAMA,NSE:ACUTAAS,NSE:KOPRAN,NSE:STYLEBAAZA,NSE:KROSS,NSE:BOROLTD,NSE:ORIENTHOT,NSE:KRISHANA,NSE:SOUTHBANK,NSE:ICIL,NSE:ONEPOINT,NSE:EMCURE,NSE:TFCILTD,NSE:ASAHIINDIA,NSE:NEOGEN,NSE:ANGELONE,NSE:THOMASCOOK,NSE:ZOTA,NSE:SAILIFE,NSE:IGIL,NSE:PARAGMILK,NSE:HLEGLAS,NSE:DELTACORP,NSE:UTTAMSUGAR,NSE:APLLTD,NSE:NELCAST,NSE:BLUESTARCO,NSE:SANATHAN,NSE:AARTIPHARM,NSE:TIPSMUSIC,NSE:PHOENIXLTD,NSE:ZENSARTECH,NSE:THELEELA,NSE:MAXESTATES,NSE:GMMPFAUDLR,NSE:AARTIDRUGS,NSE:KRISHNADEF,NSE:MBAPL,NSE:CPPLUS,NSE:WOCKPHARMA,NSE:NAVINFLUOR,NSE:SHYAMMETL,NSE:UNIMECH,NSE:HUBTOWN,NSE:EIHOTEL,NSE:TANLA,NSE:BIL,NSE:LTTS,NSE:GESHIP,NSE:PATANJALI,NSE:PWL,NSE:GLAND,NSE:SANSERA,NSE:ACE,NSE:MOTILALOFS,NSE:RAYMONDREL,NSE:CEMPRO,NSE:HBLENGINE,NSE:ITCHOTELS,NSE:RUBYMILLS,NSE:FORCEMOT,NSE:LEMONTREE,NSE:EIMCOELECO,NSE:EMAMILTD,NSE:KDDL,NSE:MAHABANK,NSE:BBOX,NSE:MMP,NSE:SATIN,NSE:HIKAL,NSE:BANKINDIA,NSE:FAZE3Q,NSE:MCX,NSE:NUVOCO,NSE:GRAPHITE,NSE:NRAIL,NSE:KALAMANDIR,NSE:SANGAMIND,NSE:PTCIL,NSE:SAKAR,NSE:INDORAMA,NSE:LUMAXTECH
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 3M,NSE:RAYMOND,NSE:GREAVESCOT,NSE:SBC,NSE:ALICON,NSE:FILATEX,NSE:GCSL,NSE:CHEMPLASTS,NSE:UNITEDPOLY,NSE:SHREEJISPG,NSE:WELSPUNLIV,NSE:ARIS,NSE:CUPID,NSE:NINSYS,NSE:SAMBHV,NSE:WHEELS,NSE:AJMERA,NSE:SUNTV,NSE:MANAKCOAT,NSE:SSWL,NSE:PVRINOX,NSE:RATNAVEER,NSE:ICIL,NSE:ONEPOINT,NSE:PROTEAN,NSE:ABDL,NSE:ANGELONE,NSE:NEOGEN,NSE:UTTAMSUGAR,NSE:KROSS,NSE:ISGEC,NSE:SMSPHARMA,NSE:KRISHANA,NSE:ROSSTECH,NSE:HINDOILEXP,NSE:BOROLTD,NSE:STYLEBAAZA,NSE:ACUTAAS,NSE:KRISHNADEF,NSE:SANATHAN,NSE:OPTIEMUS,NSE:NELCAST,NSE:ZOTA,NSE:SOUTHBANK,NSE:IGIL,NSE:ORIENTHOT,NSE:RAYMONDREL,NSE:UNIMECH,NSE:SAREGAMA,NSE:EMCURE,NSE:DELTACORP,NSE:PARAGMILK,NSE:HLEGLAS,NSE:TFCILTD,NSE:MBAPL,NSE:KOPRAN,NSE:ASAHIINDIA,NSE:SANSERA,NSE:WOCKPHARMA,NSE:ACE,NSE:SHYAMMETL,NSE:NAVINFLUOR,NSE:MAXESTATES,NSE:TIPSMUSIC,NSE:EIMCOELECO,NSE:THOMASCOOK,NSE:MOTILALOFS,NSE:APLLTD,NSE:THELEELA,NSE:BBOX,NSE:BEML,NSE:SAILIFE,NSE:HUBTOWN,NSE:DYNAMATECH,NSE:BIL,NSE:MCX,NSE:LTTS,NSE:PHOENIXLTD,NSE:JLHL,NSE:SATIN,NSE:AARTIPHARM,NSE:MMP,NSE:SHRINGARMS,NSE:SANGAMIND,NSE:GESHIP,NSE:GLAND,NSE:CENTUM,NSE:PDSL,NSE:KDDL,NSE:LEMONTREE,NSE:BLUESTARCO,NSE:HIKAL,NSE:RUBYMILLS,NSE:PATANJALI,NSE:MAHABANK,NSE:BLUSPRING,NSE:CPPLUS,NSE:AXISCADES,NSE:GALAPREC,NSE:WEL,NSE:KALYANKJIL,NSE:HBLENGINE,NSE:APOLLO,NSE:GLENMARK,NSE:EIHOTEL,NSE:GMMPFAUDLR,NSE:PRESTIGE,NSE:GOODLUCK,NSE:ITCHOTELS,NSE:AGARWALEYE,NSE:SIMPLEXINF
 
 ```
 
@@ -432,37 +421,37 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| RAYMOND | Textiles | 1183.20 | 67.18 | 2 | 4 | -1.01 | -0.98 | 58.44 | 476 | +155 | 11.61 | 4.88 | 81.99 | 206 | +70 | 87.26 | 94.42 | 100.00 | 1 | +0 | 129.77 | 123.47 | 99.62 | 5 | +2 |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| SBC | Wholesale Distributors | 68.35 | 77.37 | 2 | 4 | -0.20 | -0.18 | 65.70 | 393 | -23 | 4.38 | -1.91 | 59.23 | 465 | +58 | 62.16 | 68.36 | 99.82 | 3 | +0 | 86.04 | 80.94 | 98.66 | 15 | +0 |
-| SSWL | Auto Parts: OEM | 474.25 | 143.46 | 2 | 4 | -13.52 | -13.50 | 0.87 | 1134 | -33 | -9.94 | -15.37 | 9.31 | 1033 | -97 | 55.16 | 61.10 | 99.73 | 4 | -2 | 118.35 | 112.36 | 99.42 | 7 | -2 |
-| GCSL | Investment Banks/Brokers | 850.55 | 23.54 | 1 | 3 | 1.04 | 1.07 | 78.22 | 250 | -9 | 13.20 | 6.38 | 84.97 | 172 | -3 | 52.83 | 58.67 | 99.64 | 5 | +0 | N/A | N/A | N/A | N/A | N/A |
-| ALICON | Auto Parts: OEM | 983.90 | 18.60 | 2 | 4 | -3.40 | -3.37 | 31.15 | 788 | -511 | 13.05 | 6.23 | 84.53 | 177 | -70 | 47.87 | 53.52 | 99.55 | 6 | +0 | 49.27 | 45.18 | 94.82 | 55 | -5 |
-| FILATEX | Textiles | 110.05 | 23.96 | 2 | 4 | -1.14 | -1.11 | 56.78 | 495 | -224 | 16.03 | 9.03 | 89.54 | 120 | +0 | 46.40 | 52.00 | 99.45 | 7 | +3 | 127.89 | 121.65 | 99.52 | 6 | -3 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
-| CHEMPLASTS | Chemicals: Major Diversified | 252.20 | 20.73 | 2 | 4 | 0.87 | 0.90 | 76.47 | 270 | +53 | 28.41 | 20.67 | 98.33 | 20 | -8 | 42.87 | 48.34 | 99.27 | 9 | +7 | 21.57 | 18.23 | 80.23 | 207 | +38 |
-| SHREEJISPG | Other Transportation | 910.65 | 74.85 | 2 | 4 | 0.48 | 0.51 | 73.14 | 308 | +19 | 8.37 | 1.84 | 71.79 | 322 | +7 | 41.27 | 46.68 | 99.18 | 10 | +3 | 96.81 | 91.42 | 99.04 | 11 | +0 |
-| UNITEDPOLY | Textiles | 52.75 | 3.13 | 1 | 3 | -5.60 | -5.58 | 14.09 | 983 | -805 | -4.32 | -10.09 | 24.08 | 865 | -272 | 40.33 | 45.70 | 99.09 | 11 | +1 | N/A | N/A | N/A | N/A | N/A |
-| SUNTV | Broadcasting | 651.10 | 53.43 | 1 | 4 | -6.40 | -6.37 | 10.06 | 1029 | +93 | 3.21 | -3.01 | 54.57 | 518 | +285 | 39.68 | 45.02 | 99.00 | 12 | +15 | 26.37 | 22.90 | 83.97 | 168 | +58 |
-| AJMERA | Real Estate Development | 163.20 | 27.56 | 4 | 4 | 22.27 | 22.30 | 99.91 | 2 | +2 | 21.97 | 14.62 | 95.96 | 47 | -18 | 39.61 | 44.95 | 98.91 | 13 | +4 | 45.55 | 41.56 | 94.15 | 62 | +19 |
-| NINSYS | Packaged Software | 984.80 | 0.93 | 2 | 3 | 5.34 | 5.37 | 94.75 | 61 | +25 | 14.05 | 7.17 | 86.73 | 152 | +86 | 37.93 | 43.20 | 98.82 | 14 | +5 | N/A | N/A | N/A | N/A | N/A |
-| WHEELS | Auto Parts: OEM | 2108.50 | 22.58 | 2 | 4 | -5.25 | -5.23 | 16.27 | 958 | +153 | -6.52 | -12.16 | 16.87 | 947 | +46 | 36.35 | 41.56 | 98.73 | 15 | +7 | 40.78 | 36.92 | 92.42 | 80 | +20 |
-| SAMBHV | Steel | 174.04 | 45.95 | 3 | 4 | 7.78 | 7.81 | 97.73 | 27 | +24 | 5.20 | -1.14 | 62.30 | 430 | +154 | 36.06 | 41.27 | 98.64 | 16 | +4 | 64.76 | 60.25 | 97.12 | 31 | +2 |
-| PVRINOX | Movies/Entertainment | 1638.20 | 126.84 | 2 | 4 | -3.57 | -3.54 | 28.87 | 814 | -375 | 13.35 | 6.51 | 85.24 | 169 | -52 | 35.65 | 40.84 | 98.54 | 17 | -6 | 67.35 | 62.77 | 97.50 | 27 | -6 |
-| PROTEAN | Information Technology Services | 693.25 | 26.41 | 1 | 4 | -2.65 | -2.62 | 38.41 | 705 | -448 | 15.86 | 8.87 | 89.37 | 122 | +74 | 33.10 | 38.19 | 98.45 | 18 | +18 | 17.34 | 14.13 | 76.20 | 249 | +38 |
-| ABDL | Beverages: Alcoholic | 820.30 | 40.81 | 3 | 4 | 1.50 | 1.53 | 80.66 | 222 | +72 | 16.82 | 9.77 | 90.69 | 107 | +16 | 32.65 | 37.72 | 98.36 | 19 | +5 | 43.36 | 39.43 | 93.38 | 70 | -14 |
-| RATNAVEER | Steel | 405.00 | 115.01 | 4 | 4 | 10.32 | 10.35 | 98.78 | 15 | +5 | 17.36 | 10.28 | 91.30 | 100 | +22 | 32.34 | 37.41 | 98.27 | 20 | -5 | 141.55 | 134.93 | 99.81 | 3 | +1 |
-| CUPID | Household/Personal Care | 371.10 | 421.26 | 3 | 4 | 1.41 | 1.44 | 80.05 | 229 | +88 | 17.98 | 10.86 | 92.00 | 92 | +49 | 32.32 | 37.38 | 98.18 | 21 | +7 | 185.90 | 178.07 | 100.00 | 1 | +0 |
-| OPTIEMUS | Electronics Distributors | 755.35 | 27.77 | 2 | 4 | -7.34 | -7.31 | 6.12 | 1074 | +46 | 2.68 | -3.51 | 52.72 | 539 | +107 | 31.56 | 36.59 | 98.09 | 22 | +12 | 82.45 | 77.45 | 98.56 | 16 | +2 |
-| HINDOILEXP | Integrated Oil | 213.01 | 40.91 | 2 | 4 | -0.69 | -0.67 | 60.98 | 447 | +340 | 39.16 | 30.77 | 99.65 | 5 | +1 | 31.44 | 36.47 | 98.00 | 23 | -5 | 25.51 | 22.07 | 83.21 | 176 | -32 |
-| MANAKCOAT | Steel | 160.46 | 21.70 | 3 | 4 | 0.08 | 0.11 | 68.85 | 357 | +601 | 21.06 | 13.76 | 95.61 | 51 | +25 | 31.06 | 36.08 | 97.91 | 24 | +18 | 53.10 | 48.90 | 95.49 | 48 | +11 |
-| ROSSTECH | Telecommunications Equipment | 1454.40 | 16.18 | 2 | 4 | -6.64 | -6.61 | 8.84 | 1043 | +30 | 2.49 | -3.69 | 51.67 | 551 | +196 | 31.03 | 36.05 | 97.82 | 25 | +7 | 35.44 | 31.73 | 90.31 | 102 | +29 |
+| RAYMOND | Textiles | 1278.60 | 71.53 | 4 | 4 | 6.67 | 6.87 | 94.57 | 63 | +413 | 16.04 | 9.68 | 90.06 | 114 | +92 | 101.26 | 106.86 | 100.00 | 1 | +0 | 145.06 | 139.03 | 99.81 | 3 | +2 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| SBC | Wholesale Distributors | 68.10 | 76.83 | 2 | 4 | -0.73 | -0.53 | 47.29 | 603 | -210 | 2.38 | -3.23 | 51.63 | 551 | -86 | 61.99 | 66.50 | 99.82 | 3 | +0 | 81.60 | 77.13 | 98.56 | 16 | -1 |
+| ALICON | Auto Parts: OEM | 1018.15 | 18.79 | 3 | 4 | -5.35 | -5.17 | 7.09 | 1062 | -274 | 18.42 | 11.94 | 93.32 | 77 | +100 | 54.35 | 58.64 | 99.73 | 4 | +2 | 54.93 | 51.12 | 95.59 | 47 | +8 |
+| FILATEX | Textiles | 112.57 | 24.63 | 3 | 4 | 1.57 | 1.77 | 74.26 | 295 | +200 | 20.06 | 13.49 | 95.07 | 57 | +63 | 52.66 | 56.91 | 99.64 | 5 | +2 | 133.35 | 127.61 | 99.62 | 5 | +1 |
+| GCSL | Investment Banks/Brokers | 851.55 | 23.56 | 1 | 3 | 0.38 | 0.58 | 62.26 | 432 | -182 | 11.79 | 5.67 | 81.88 | 207 | -35 | 51.28 | 55.49 | 99.54 | 6 | -1 | N/A | N/A | N/A | N/A | N/A |
+| CHEMPLASTS | Chemicals: Major Diversified | 253.62 | 20.57 | 2 | 4 | 1.42 | 1.62 | 73.03 | 309 | -39 | 25.94 | 19.05 | 97.71 | 27 | -7 | 48.88 | 53.03 | 99.45 | 7 | +2 | 23.08 | 20.05 | 81.67 | 192 | +15 |
+| UNITEDPOLY | Textiles | 54.22 | 3.05 | 1 | 3 | -0.82 | -0.63 | 45.88 | 619 | +364 | -2.15 | -7.50 | 29.99 | 797 | +68 | 46.90 | 50.99 | 99.36 | 8 | +3 | N/A | N/A | N/A | N/A | N/A |
+| SHREEJISPG | Other Transportation | 923.70 | 75.10 | 2 | 4 | 1.08 | 1.28 | 70.23 | 341 | -33 | 10.94 | 4.87 | 79.16 | 238 | +84 | 44.99 | 49.02 | 99.27 | 9 | +1 | 101.95 | 96.98 | 99.14 | 10 | +1 |
+| WELSPUNLIV | Consumer Sundries | 285.52 | 234.64 | 4 | 4 | 6.23 | 6.44 | 93.70 | 73 | -60 | 34.57 | 27.21 | 99.47 | 7 | +10 | 43.90 | 47.91 | 99.18 | 10 | -2 | 97.89 | 93.02 | 98.94 | 12 | +0 |
+| ARIS | Packaged Software | 187.36 | 37.05 | 4 | 4 | 13.57 | 13.79 | 99.30 | 9 | -3 | 30.88 | 23.72 | 98.86 | 14 | -1 | 42.28 | 46.24 | 99.09 | 11 | +15 | 62.92 | 58.91 | 96.74 | 35 | -2 |
+| CUPID | Household/Personal Care | 389.50 | 428.72 | 4 | 4 | 6.52 | 6.73 | 94.40 | 65 | +164 | 21.66 | 15.00 | 96.31 | 43 | +49 | 41.61 | 45.55 | 99.00 | 12 | +9 | 192.66 | 185.46 | 100.00 | 1 | +0 |
+| NINSYS | Packaged Software | 1005.15 | 0.93 | 2 | 3 | 5.85 | 6.06 | 93.17 | 79 | -18 | 11.31 | 5.22 | 80.30 | 225 | -73 | 41.50 | 45.44 | 98.91 | 13 | +1 | N/A | N/A | N/A | N/A | N/A |
+| SAMBHV | Steel | 177.30 | 42.79 | 3 | 4 | 12.17 | 12.39 | 98.86 | 14 | +13 | 11.28 | 5.19 | 80.04 | 228 | +202 | 39.68 | 43.57 | 98.82 | 14 | +2 | 67.96 | 63.83 | 97.31 | 29 | +2 |
+| WHEELS | Auto Parts: OEM | 2153.50 | 22.29 | 2 | 4 | -0.36 | -0.17 | 52.45 | 544 | +414 | -1.97 | -7.34 | 31.22 | 783 | +164 | 39.67 | 43.56 | 98.72 | 15 | +0 | 40.87 | 37.40 | 92.99 | 74 | +6 |
+| AJMERA | Real Estate Development | 160.48 | 27.29 | 3 | 4 | 7.50 | 7.71 | 95.80 | 49 | -47 | 16.41 | 10.04 | 90.77 | 106 | -59 | 38.74 | 42.60 | 98.63 | 16 | -3 | 35.24 | 31.92 | 89.73 | 108 | -46 |
+| SUNTV | Broadcasting | 640.75 | 52.87 | 1 | 4 | -7.70 | -7.52 | 1.66 | 1124 | -95 | 3.36 | -2.29 | 56.20 | 499 | +19 | 38.65 | 42.50 | 98.54 | 17 | -5 | 25.17 | 22.09 | 83.30 | 175 | -7 |
+| MANAKCOAT | Steel | 165.68 | 23.79 | 3 | 4 | 5.18 | 5.39 | 91.51 | 98 | +259 | 12.07 | 5.93 | 83.20 | 192 | -141 | 37.54 | 41.37 | 98.45 | 18 | +6 | 56.51 | 52.66 | 95.97 | 43 | +5 |
+| SSWL | Auto Parts: OEM | 488.75 | 143.19 | 2 | 4 | -6.87 | -6.69 | 3.06 | 1108 | +26 | -7.05 | -12.13 | 13.98 | 979 | +54 | 36.81 | 40.62 | 98.36 | 19 | -15 | 114.29 | 109.02 | 99.33 | 8 | -1 |
+| PVRINOX | Movies/Entertainment | 1679.10 | 126.63 | 2 | 4 | 1.63 | 1.83 | 74.78 | 289 | +525 | 12.67 | 6.50 | 84.34 | 179 | -10 | 36.71 | 40.52 | 98.27 | 20 | -3 | 71.98 | 67.74 | 97.70 | 25 | +2 |
+| RATNAVEER | Steel | 398.30 | 123.42 | 3 | 4 | 7.58 | 7.79 | 95.88 | 48 | -33 | 12.88 | 6.70 | 84.87 | 173 | -73 | 36.71 | 40.51 | 98.18 | 21 | -1 | 133.58 | 127.83 | 99.71 | 4 | -1 |
+| ICIL | Textiles | 591.60 | 45.31 | 3 | 4 | 1.96 | 2.16 | 77.50 | 258 | -101 | 31.67 | 24.46 | 99.03 | 12 | -6 | 36.49 | 40.29 | 98.09 | 22 | +16 | 77.60 | 73.23 | 98.46 | 17 | +6 |
+| ONEPOINT | Miscellaneous Commercial Services | 74.60 | 17.52 | 2 | 4 | 5.49 | 5.69 | 91.94 | 93 | +816 | -0.19 | -5.65 | 38.17 | 704 | +178 | 36.28 | 40.07 | 98.00 | 23 | +16 | 29.13 | 25.95 | 86.18 | 145 | +88 |
+| PROTEAN | Information Technology Services | 693.75 | 26.26 | 1 | 4 | -1.68 | -1.49 | 34.85 | 745 | -40 | 9.75 | 3.75 | 75.64 | 278 | -156 | 36.06 | 39.84 | 97.91 | 24 | -6 | 10.65 | 7.92 | 68.71 | 327 | -78 |
+| ABDL | Beverages: Alcoholic | 838.00 | 41.83 | 4 | 4 | 5.50 | 5.71 | 92.03 | 92 | +130 | 17.99 | 11.54 | 92.88 | 82 | +25 | 35.77 | 39.55 | 97.81 | 25 | -6 | 46.54 | 42.94 | 94.15 | 62 | +8 |
 
 ## 6M leaders (105); eligible 1043
 
 ```text
 
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 6M,NSE:CUPID,NSE:SETL,NSE:RATNAVEER,NSE:TFCILTD,NSE:RAYMOND,NSE:FILATEX,NSE:SSWL,NSE:MACPOWER,NSE:CNL,NSE:INDSWFTLAB,NSE:SHREEJISPG,NSE:WELSPUNLIV,NSE:RPEL,NSE:ATHERENERG,NSE:SBC,NSE:OPTIEMUS,NSE:KALYANKJIL,NSE:BLUSPRING,NSE:GREAVESCOT,NSE:JYOTICNC,NSE:ORIENTHOT,NSE:TCPLPACK,NSE:ICIL,NSE:CYIENTDLM,NSE:INDORAMA,NSE:UNIMECH,NSE:PVRINOX,NSE:EIMCOELECO,NSE:MARINE,NSE:UTTAMSUGAR,NSE:SAMBHV,NSE:AARTIPHARM,NSE:ARIS,NSE:GMMPFAUDLR,NSE:ENTERO,NSE:OAL,NSE:SHILPAMED,NSE:KDDL,NSE:THELEELA,NSE:SANSERA,NSE:KAPSTON,NSE:SAILIFE,NSE:AEGISLOG,NSE:WELCORP,NSE:NILKAMAL,NSE:GANDHAR,NSE:QUESS,NSE:MANAKCOAT,NSE:DOLPHIN,NSE:GHCLTEXTIL,NSE:YASHO,NSE:GLAND,NSE:ACE,NSE:AETHER,NSE:ALICON,NSE:PARAS,NSE:THOMASCOOK,NSE:YUKEN,NSE:INOXINDIA,NSE:SONACOMS,NSE:NAVINFLUOR,NSE:AJMERA,NSE:GABRIEL,NSE:WESTLIFE,NSE:ASKAUTOLTD,NSE:NEOGEN,NSE:BIL,NSE:SKYGOLD,NSE:AEGISVOPAK,NSE:ABDL,NSE:KROSS,NSE:TARSONS,NSE:MOTILALOFS,NSE:RKFORGE,NSE:SHREEPUSHK,NSE:MANINDS,NSE:PPLPHARMA,NSE:BOROLTD,NSE:APLLTD,NSE:WHEELS,NSE:COFORGE,NSE:MSTCLTD,NSE:NAZARA,NSE:GNA,NSE:63MOONS,NSE:RGL,NSE:CEMPRO,NSE:ROLEXRINGS,NSE:SBCL,NSE:PAISALO,NSE:AVTNPL,NSE:MMFL,NSE:EMCURE,NSE:MAXESTATES,NSE:ALIVUS,NSE:VSSL,NSE:SMSPHARMA,NSE:DALMIASUG,NSE:REDINGTON,NSE:PRESTIGE,NSE:PDSL,NSE:ROSSTECH,NSE:MCX,NSE:JSWINFRA,NSE:ANANDRATHI
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###RS 6M,NSE:CUPID,NSE:SETL,NSE:RAYMOND,NSE:RATNAVEER,NSE:FILATEX,NSE:TFCILTD,NSE:MACPOWER,NSE:SSWL,NSE:CNL,NSE:SHREEJISPG,NSE:INDSWFTLAB,NSE:WELSPUNLIV,NSE:ATHERENERG,NSE:RPEL,NSE:KALYANKJIL,NSE:SBC,NSE:ICIL,NSE:ORIENTHOT,NSE:JYOTICNC,NSE:GREAVESCOT,NSE:MARINE,NSE:EIMCOELECO,NSE:CYIENTDLM,NSE:INDORAMA,NSE:PVRINOX,NSE:AEGISLOG,NSE:UNIMECH,NSE:UTTAMSUGAR,NSE:SAMBHV,NSE:BLUSPRING,NSE:TCPLPACK,NSE:THELEELA,NSE:OPTIEMUS,NSE:WELCORP,NSE:ARIS,NSE:SANSERA,NSE:SHILPAMED,NSE:ENTERO,NSE:GMMPFAUDLR,NSE:KAPSTON,NSE:AARTIPHARM,NSE:OAL,NSE:MANAKCOAT,NSE:GHCLTEXTIL,NSE:SAILIFE,NSE:GANDHAR,NSE:ALICON,NSE:NILKAMAL,NSE:AETHER,NSE:KDDL,NSE:DOLPHIN,NSE:ACE,NSE:NEOGEN,NSE:GABRIEL,NSE:QUESS,NSE:GLAND,NSE:YUKEN,NSE:AEGISVOPAK,NSE:NAVINFLUOR,NSE:DALMIASUG,NSE:SKYGOLD,NSE:ABDL,NSE:SONACOMS,NSE:PARAS,NSE:AVTNPL,NSE:BIL,NSE:COFORGE,NSE:ASKAUTOLTD,NSE:KROSS,NSE:SANATHAN,NSE:INOXINDIA,NSE:MOTILALOFS,NSE:MANINDS,NSE:WHEELS,NSE:DHAMPURSUG,NSE:BOROLTD,NSE:NAZARA,NSE:WESTLIFE,NSE:GNA,NSE:ROSSTECH,NSE:TARSONS,NSE:RKFORGE,NSE:MMFL,NSE:ROLEXRINGS,NSE:63MOONS,NSE:THOMASCOOK,NSE:RGL,NSE:SBCL,NSE:SPORTKING,NSE:SHREEPUSHK,NSE:MAXESTATES,NSE:ANANDRATHI,NSE:LUMAXTECH,NSE:APLLTD,NSE:SMCGLOBAL,NSE:YASHO,NSE:SAREGAMA,NSE:ALIVUS,NSE:PTCIL,NSE:AKUMS,NSE:PPLPHARMA,NSE:SMSPHARMA,NSE:UFLEX,NSE:HUHTAMAKI,NSE:REDINGTON
 
 ```
 
@@ -470,1223 +459,1221 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| CUPID | Household/Personal Care | 371.10 | 421.26 | 3 | 4 | 1.41 | 1.44 | 80.05 | 229 | +88 | 17.98 | 10.86 | 92.00 | 92 | +49 | 32.32 | 37.38 | 98.18 | 21 | +7 | 185.90 | 178.07 | 100.00 | 1 | +0 |
-| SETL | Medical Specialties | 342.05 | 21.28 | 1 | 4 | -5.55 | -5.52 | 14.35 | 980 | +0 | -11.53 | -16.87 | 7.03 | 1059 | -137 | -7.43 | -3.89 | 52.23 | 526 | -88 | 147.38 | 140.60 | 99.90 | 2 | +0 |
-| RATNAVEER | Steel | 405.00 | 115.01 | 4 | 4 | 10.32 | 10.35 | 98.78 | 15 | +5 | 17.36 | 10.28 | 91.30 | 100 | +22 | 32.34 | 37.41 | 98.27 | 20 | -5 | 141.55 | 134.93 | 99.81 | 3 | +1 |
-| TFCILTD | Finance/Rental/Leasing | 174.94 | 161.68 | 2 | 4 | 2.80 | 2.83 | 87.75 | 141 | +52 | 11.47 | 4.75 | 81.37 | 213 | +2 | 25.03 | 29.81 | 96.36 | 41 | +5 | 130.46 | 124.14 | 99.71 | 4 | +2 |
-| RAYMOND | Textiles | 1183.20 | 67.18 | 2 | 4 | -1.01 | -0.98 | 58.44 | 476 | +155 | 11.61 | 4.88 | 81.99 | 206 | +70 | 87.26 | 94.42 | 100.00 | 1 | +0 | 129.77 | 123.47 | 99.62 | 5 | +2 |
-| FILATEX | Textiles | 110.05 | 23.96 | 2 | 4 | -1.14 | -1.11 | 56.78 | 495 | -224 | 16.03 | 9.03 | 89.54 | 120 | +0 | 46.40 | 52.00 | 99.45 | 7 | +3 | 127.89 | 121.65 | 99.52 | 6 | -3 |
-| SSWL | Auto Parts: OEM | 474.25 | 143.46 | 2 | 4 | -13.52 | -13.50 | 0.87 | 1134 | -33 | -9.94 | -15.37 | 9.31 | 1033 | -97 | 55.16 | 61.10 | 99.73 | 4 | -2 | 118.35 | 112.36 | 99.42 | 7 | -2 |
-| MACPOWER | Industrial Machinery | 2023.90 | 10.96 | 1 | 4 | -5.02 | -4.99 | 17.76 | 941 | +53 | 4.39 | -1.90 | 59.31 | 464 | -105 | 1.74 | 5.63 | 73.79 | 289 | -23 | 113.42 | 107.58 | 99.33 | 8 | +0 |
-| CNL | Electronics Distributors | 1295.60 | 4.95 | 2 | 4 | -6.72 | -6.70 | 8.40 | 1048 | -370 | 19.76 | 12.54 | 94.55 | 63 | -27 | 1.25 | 5.12 | 72.88 | 299 | -150 | 105.67 | 100.03 | 99.23 | 9 | +0 |
-| INDSWFTLAB | Pharmaceuticals: Major | 311.95 | 23.16 | 1 | 4 | -5.53 | -5.50 | 14.61 | 977 | +14 | -17.68 | -22.64 | 2.72 | 1108 | -33 | -14.50 | -11.23 | 28.75 | 784 | -82 | 98.56 | 93.11 | 99.14 | 10 | +0 |
-| SHREEJISPG | Other Transportation | 910.65 | 74.85 | 2 | 4 | 0.48 | 0.51 | 73.14 | 308 | +19 | 8.37 | 1.84 | 71.79 | 322 | +7 | 41.27 | 46.68 | 99.18 | 10 | +3 | 96.81 | 91.42 | 99.04 | 11 | +0 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
-| RPEL | Chemicals: Major Diversified | 1903.80 | 18.34 | 1 | 4 | 0.12 | 0.15 | 69.82 | 346 | +99 | 7.92 | 1.41 | 70.21 | 340 | -45 | 7.49 | 11.60 | 83.89 | 178 | -33 | 91.78 | 86.52 | 98.85 | 13 | +1 |
-| ATHERENERG | Motor Vehicles | 1906.00 | 507.78 | 1 | 4 | -0.98 | -0.95 | 58.88 | 471 | +139 | 15.52 | 8.55 | 89.10 | 125 | +99 | 10.96 | 15.21 | 89.08 | 121 | -43 | 86.49 | 81.38 | 98.75 | 14 | -2 |
-| SBC | Wholesale Distributors | 68.35 | 77.37 | 2 | 4 | -0.20 | -0.18 | 65.70 | 393 | -23 | 4.38 | -1.91 | 59.23 | 465 | +58 | 62.16 | 68.36 | 99.82 | 3 | +0 | 86.04 | 80.94 | 98.66 | 15 | +0 |
-| OPTIEMUS | Electronics Distributors | 755.35 | 27.77 | 2 | 4 | -7.34 | -7.31 | 6.12 | 1074 | +46 | 2.68 | -3.51 | 52.72 | 539 | +107 | 31.56 | 36.59 | 98.09 | 22 | +12 | 82.45 | 77.45 | 98.56 | 16 | +2 |
-| KALYANKJIL | Specialty Stores | 639.80 | 778.23 | 2 | 4 | -3.21 | -3.18 | 32.81 | 769 | -103 | 25.45 | 17.89 | 97.54 | 29 | -8 | 6.46 | 10.53 | 82.98 | 188 | +45 | 81.25 | 76.28 | 98.46 | 17 | -1 |
-| BLUSPRING | Miscellaneous Commercial Services | 140.84 | 5.31 | 1 | 4 | -11.77 | -11.74 | 1.31 | 1129 | +1 | -7.43 | -13.02 | 15.20 | 966 | +5 | 11.42 | 15.69 | 89.63 | 115 | +5 | 78.75 | 73.86 | 98.37 | 18 | +4 |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| JYOTICNC | Metal Fabrication | 1050.35 | 73.00 | 1 | 4 | -2.00 | -1.97 | 45.76 | 621 | +137 | 13.04 | 6.22 | 84.45 | 178 | +99 | 5.57 | 9.61 | 81.53 | 204 | +149 | 77.21 | 72.36 | 98.18 | 20 | +4 |
-| ORIENTHOT | Hotels/Resorts/Cruise lines | 177.85 | 13.19 | 2 | 4 | 0.49 | 0.51 | 73.32 | 306 | -154 | 11.49 | 4.77 | 81.46 | 212 | -36 | 27.93 | 32.82 | 96.91 | 35 | -9 | 75.95 | 71.13 | 98.08 | 21 | -4 |
-| TCPLPACK | Commercial Printing/Forms | 4333.20 | 4.56 | 1 | 4 | -4.24 | -4.21 | 23.36 | 877 | +110 | 5.65 | -0.72 | 63.97 | 411 | -2 | 10.88 | 15.12 | 88.81 | 124 | +2 | 71.63 | 66.92 | 97.98 | 22 | +7 |
-| ICIL | Textiles | 590.05 | 44.96 | 3 | 4 | 2.44 | 2.47 | 86.35 | 157 | +174 | 37.83 | 29.52 | 99.56 | 6 | +1 | 25.69 | 30.50 | 96.63 | 38 | -17 | 71.20 | 66.51 | 97.89 | 23 | +2 |
-| CYIENTDLM | Electronic Production Equipment | 769.00 | 43.80 | 1 | 4 | -7.14 | -7.12 | 6.74 | 1067 | +18 | 0.75 | -5.33 | 44.11 | 637 | +86 | -8.78 | -5.29 | 47.59 | 577 | -24 | 71.10 | 66.41 | 97.79 | 24 | +12 |
-| INDORAMA | Textiles | 74.14 | 3.73 | 2 | 4 | -3.46 | -3.44 | 30.27 | 798 | -254 | 0.01 | -6.02 | 40.25 | 681 | +141 | 12.47 | 16.77 | 90.17 | 109 | -38 | 69.35 | 64.71 | 97.70 | 25 | -6 |
+| CUPID | Household/Personal Care | 389.50 | 428.72 | 4 | 4 | 6.52 | 6.73 | 94.40 | 65 | +164 | 21.66 | 15.00 | 96.31 | 43 | +49 | 41.61 | 45.55 | 99.00 | 12 | +9 | 192.66 | 185.46 | 100.00 | 1 | +0 |
+| SETL | Medical Specialties | 359.15 | 20.98 | 1 | 4 | 0.46 | 0.66 | 63.49 | 418 | +562 | -11.40 | -16.25 | 6.60 | 1063 | -4 | -7.21 | -4.63 | 49.73 | 553 | -27 | 161.41 | 154.98 | 99.90 | 2 | +0 |
+| RAYMOND | Textiles | 1278.60 | 71.53 | 4 | 4 | 6.67 | 6.87 | 94.57 | 63 | +413 | 16.04 | 9.68 | 90.06 | 114 | +92 | 101.26 | 106.86 | 100.00 | 1 | +0 | 145.06 | 139.03 | 99.81 | 3 | +2 |
+| RATNAVEER | Steel | 398.30 | 123.42 | 3 | 4 | 7.58 | 7.79 | 95.88 | 48 | -33 | 12.88 | 6.70 | 84.87 | 173 | -73 | 36.71 | 40.51 | 98.18 | 21 | -1 | 133.58 | 127.83 | 99.71 | 4 | -1 |
+| FILATEX | Textiles | 112.57 | 24.63 | 3 | 4 | 1.57 | 1.77 | 74.26 | 295 | +200 | 20.06 | 13.49 | 95.07 | 57 | +63 | 52.66 | 56.91 | 99.64 | 5 | +2 | 133.35 | 127.61 | 99.62 | 5 | +1 |
+| TFCILTD | Finance/Rental/Leasing | 173.97 | 165.23 | 2 | 4 | 1.23 | 1.43 | 71.37 | 328 | -187 | 8.96 | 3.00 | 73.97 | 297 | -84 | 23.32 | 26.75 | 95.26 | 53 | -12 | 130.15 | 124.49 | 99.52 | 6 | -2 |
+| MACPOWER | Industrial Machinery | 2082.20 | 11.10 | 1 | 4 | 0.11 | 0.30 | 58.23 | 478 | +463 | 6.82 | 0.97 | 67.55 | 370 | +94 | 8.94 | 11.97 | 85.15 | 164 | +125 | 119.27 | 113.88 | 99.42 | 7 | +1 |
+| SSWL | Auto Parts: OEM | 488.75 | 143.19 | 2 | 4 | -6.87 | -6.69 | 3.06 | 1108 | +26 | -7.05 | -12.13 | 13.98 | 979 | +54 | 36.81 | 40.62 | 98.36 | 19 | -15 | 114.29 | 109.02 | 99.33 | 8 | -1 |
+| CNL | Electronics Distributors | 1304.90 | 4.89 | 1 | 4 | -3.20 | -3.01 | 18.13 | 936 | +112 | 8.52 | 2.58 | 72.65 | 312 | -249 | 4.77 | 7.69 | 79.33 | 228 | +71 | 105.97 | 100.90 | 99.23 | 9 | +0 |
+| SHREEJISPG | Other Transportation | 923.70 | 75.10 | 2 | 4 | 1.08 | 1.28 | 70.23 | 341 | -33 | 10.94 | 4.87 | 79.16 | 238 | +84 | 44.99 | 49.02 | 99.27 | 9 | +1 | 101.95 | 96.98 | 99.14 | 10 | +1 |
+| INDSWFTLAB | Pharmaceuticals: Major | 312.75 | 22.99 | 1 | 4 | -1.36 | -1.16 | 38.70 | 701 | +276 | -23.68 | -27.86 | 0.88 | 1128 | -20 | -15.05 | -12.68 | 24.86 | 826 | -42 | 99.60 | 94.69 | 99.04 | 11 | -1 |
+| WELSPUNLIV | Consumer Sundries | 285.52 | 234.64 | 4 | 4 | 6.23 | 6.44 | 93.70 | 73 | -60 | 34.57 | 27.21 | 99.47 | 7 | +10 | 43.90 | 47.91 | 99.18 | 10 | -2 | 97.89 | 93.02 | 98.94 | 12 | +0 |
+| ATHERENERG | Motor Vehicles | 1888.40 | 507.73 | 1 | 4 | -2.43 | -2.24 | 25.04 | 857 | -386 | 13.55 | 7.34 | 86.28 | 157 | -32 | 9.43 | 12.48 | 85.52 | 160 | -39 | 91.10 | 86.40 | 98.85 | 13 | +1 |
+| RPEL | Chemicals: Major Diversified | 1903.70 | 17.83 | 1 | 4 | 2.66 | 2.87 | 82.84 | 197 | +149 | 10.67 | 4.61 | 78.28 | 248 | +92 | 10.23 | 13.29 | 86.43 | 150 | +28 | 88.45 | 83.81 | 98.75 | 14 | -1 |
+| KALYANKJIL | Specialty Stores | 659.50 | 796.61 | 3 | 4 | 3.26 | 3.46 | 84.94 | 173 | +596 | 28.06 | 21.05 | 98.42 | 19 | +10 | 15.10 | 18.30 | 90.98 | 100 | +88 | 82.13 | 77.65 | 98.66 | 15 | +2 |
+| SBC | Wholesale Distributors | 68.10 | 76.83 | 2 | 4 | -0.73 | -0.53 | 47.29 | 603 | -210 | 2.38 | -3.23 | 51.63 | 551 | -86 | 61.99 | 66.50 | 99.82 | 3 | +0 | 81.60 | 77.13 | 98.56 | 16 | -1 |
+| ICIL | Textiles | 591.60 | 45.31 | 3 | 4 | 1.96 | 2.16 | 77.50 | 258 | -101 | 31.67 | 24.46 | 99.03 | 12 | -6 | 36.49 | 40.29 | 98.09 | 22 | +16 | 77.60 | 73.23 | 98.46 | 17 | +6 |
+| ORIENTHOT | Hotels/Resorts/Cruise lines | 174.88 | 11.46 | 2 | 4 | -2.83 | -2.64 | 21.45 | 898 | -592 | 9.18 | 3.21 | 74.49 | 291 | -79 | 26.13 | 29.64 | 95.99 | 45 | -10 | 77.13 | 72.77 | 98.37 | 18 | +3 |
+| JYOTICNC | Metal Fabrication | 1058.65 | 72.73 | 1 | 4 | 0.59 | 0.79 | 65.06 | 400 | +221 | 10.66 | 4.60 | 78.19 | 249 | -71 | 7.03 | 10.01 | 82.70 | 191 | +13 | 77.03 | 72.68 | 98.27 | 19 | +1 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| MARINE | Wholesale Distributors | 439.45 | 46.56 | 2 | 4 | 8.51 | 8.72 | 96.58 | 40 | +499 | 4.43 | -1.28 | 59.98 | 456 | +198 | 1.58 | 4.41 | 72.31 | 305 | -86 | 75.67 | 71.35 | 98.08 | 21 | +8 |
+| EIMCOELECO | Trucks/Construction/Farm Machinery | 2647.50 | 6.02 | 4 | 4 | 7.00 | 7.21 | 95.01 | 58 | +353 | 20.78 | 14.17 | 95.78 | 49 | +25 | 20.70 | 24.06 | 94.26 | 64 | +27 | 72.18 | 67.95 | 97.98 | 22 | +6 |
+| CYIENTDLM | Electronic Production Equipment | 787.50 | 32.86 | 1 | 4 | -3.76 | -3.57 | 14.01 | 983 | +84 | -0.56 | -6.00 | 36.06 | 728 | -91 | -8.13 | -5.57 | 47.54 | 577 | +0 | 72.02 | 67.79 | 97.89 | 23 | +1 |
+| INDORAMA | Textiles | 76.47 | 3.13 | 1 | 4 | 2.01 | 2.21 | 78.11 | 251 | +547 | 3.07 | -2.57 | 54.71 | 516 | +165 | 12.44 | 15.57 | 88.71 | 125 | -16 | 72.00 | 67.76 | 97.79 | 24 | +1 |
+| PVRINOX | Movies/Entertainment | 1679.10 | 126.63 | 2 | 4 | 1.63 | 1.83 | 74.78 | 289 | +525 | 12.67 | 6.50 | 84.34 | 179 | -10 | 36.71 | 40.52 | 98.27 | 20 | -3 | 71.98 | 67.74 | 97.70 | 25 | +2 |
 
 ## Full rankings
 
 | Symbol | Industry | Close | Turnover30 Cr | Leaders | Available | 1W Return% | 1W RS% | 1W Percentile | 1W Rank | 1W Change | 1M Return% | 1M RS% | 1M Percentile | 1M Rank | 1M Change | 3M Return% | 3M RS% | 3M Percentile | 3M Rank | 3M Change | 6M Return% | 6M RS% | 6M Percentile | 6M Rank | 6M Change |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| ACE | Trucks/Construction/Farm Machinery | 1295.00 | 46.36 | 4 | 4 | 9.20 | 9.23 | 98.51 | 18 | +371 | 26.61 | 18.98 | 98.07 | 23 | +130 | 16.61 | 21.07 | 92.63 | 82 | +128 | 49.35 | 45.26 | 95.01 | 53 | +48 |
-| AJMERA | Real Estate Development | 163.20 | 27.56 | 4 | 4 | 22.27 | 22.30 | 99.91 | 2 | +2 | 21.97 | 14.62 | 95.96 | 47 | -18 | 39.61 | 44.95 | 98.91 | 13 | +4 | 45.55 | 41.56 | 94.15 | 62 | +19 |
-| ARIS | Packaged Software | 185.94 | 37.07 | 4 | 4 | 17.70 | 17.73 | 99.56 | 6 | -4 | 31.45 | 23.53 | 98.95 | 13 | -4 | 30.70 | 35.69 | 97.73 | 26 | +12 | 62.79 | 58.33 | 96.93 | 33 | -1 |
-| GREAVESCOT | Trucks/Construction/Farm Machinery | 325.79 | 181.13 | 4 | 4 | 23.64 | 23.67 | 100.00 | 1 | +4 | 79.89 | 69.04 | 100.00 | 1 | +0 | 64.71 | 71.01 | 99.91 | 2 | +2 | 77.32 | 72.46 | 98.27 | 19 | +4 |
-| MAXESTATES | Real Estate Development | 615.65 | 5.25 | 4 | 4 | 6.39 | 6.42 | 96.33 | 43 | -3 | 19.40 | 12.20 | 94.29 | 66 | +1 | 20.13 | 24.72 | 94.45 | 62 | +35 | 36.78 | 33.03 | 91.07 | 94 | -7 |
-| MCX | Investment Banks/Brokers | 3835.00 | 753.14 | 4 | 4 | 5.21 | 5.24 | 94.31 | 66 | +540 | 20.57 | 13.30 | 94.99 | 58 | +164 | 12.79 | 17.11 | 90.90 | 101 | +72 | 35.34 | 31.63 | 90.21 | 103 | +81 |
-| RATNAVEER | Steel | 405.00 | 115.01 | 4 | 4 | 10.32 | 10.35 | 98.78 | 15 | +5 | 17.36 | 10.28 | 91.30 | 100 | +22 | 32.34 | 37.41 | 98.27 | 20 | -5 | 141.55 | 134.93 | 99.81 | 3 | +1 |
-| THOMASCOOK | Other Consumer Services | 134.64 | 94.52 | 4 | 4 | 18.72 | 18.75 | 99.65 | 5 | -4 | 49.78 | 40.75 | 99.91 | 2 | +0 | 24.76 | 29.53 | 96.00 | 45 | -31 | 47.24 | 43.21 | 94.63 | 57 | -23 |
-| UTTAMSUGAR | Agricultural Commodities/Milling | 381.80 | 15.56 | 4 | 4 | 3.79 | 3.82 | 90.90 | 105 | +613 | 20.92 | 13.63 | 95.43 | 53 | +362 | 22.34 | 27.02 | 95.36 | 52 | +28 | 65.49 | 60.95 | 97.22 | 30 | +24 |
-| WELSPUNLIV | Consumer Sundries | 280.35 | 232.88 | 4 | 4 | 10.75 | 10.78 | 98.95 | 13 | +17 | 30.09 | 22.24 | 98.59 | 17 | +2 | 42.88 | 48.35 | 99.36 | 8 | -1 | 92.59 | 87.31 | 98.94 | 12 | +1 |
-| ABDL | Beverages: Alcoholic | 820.30 | 40.81 | 3 | 4 | 1.50 | 1.53 | 80.66 | 222 | +72 | 16.82 | 9.77 | 90.69 | 107 | +16 | 32.65 | 37.72 | 98.36 | 19 | +5 | 43.36 | 39.43 | 93.38 | 70 | -14 |
-| ANGELONE | Investment Banks/Brokers | 358.00 | 300.12 | 3 | 4 | 6.41 | 6.43 | 96.41 | 42 | +111 | 22.41 | 15.03 | 96.49 | 41 | +20 | 24.78 | 29.56 | 96.09 | 44 | +19 | 6.95 | 4.01 | 64.11 | 375 | +71 |
-| APLLTD | Pharmaceuticals: Major | 1018.80 | 46.37 | 3 | 4 | -2.93 | -2.91 | 35.87 | 734 | -149 | 30.15 | 22.30 | 98.68 | 16 | -5 | 22.03 | 26.69 | 95.27 | 53 | -18 | 40.81 | 36.95 | 92.51 | 79 | -9 |
-| BOROLTD | Miscellaneous Manufacturing | 314.80 | 37.20 | 3 | 4 | -6.24 | -6.21 | 10.94 | 1019 | -313 | 30.60 | 22.72 | 98.77 | 15 | -1 | 28.04 | 32.94 | 97.00 | 34 | -9 | 40.95 | 37.09 | 92.61 | 78 | -14 |
-| CUPID | Household/Personal Care | 371.10 | 421.26 | 3 | 4 | 1.41 | 1.44 | 80.05 | 229 | +88 | 17.98 | 10.86 | 92.00 | 92 | +49 | 32.32 | 37.38 | 98.18 | 21 | +7 | 185.90 | 178.07 | 100.00 | 1 | +0 |
-| EIMCOELECO | Trucks/Construction/Farm Machinery | 2547.60 | 5.94 | 3 | 4 | -0.41 | -0.38 | 64.13 | 411 | -1 | 18.92 | 11.75 | 93.59 | 74 | +29 | 16.04 | 20.48 | 91.81 | 91 | -7 | 67.02 | 62.45 | 97.41 | 28 | +0 |
-| EMCURE | Pharmaceuticals: Major | 2329.10 | 49.63 | 3 | 4 | -0.67 | -0.64 | 61.59 | 440 | +83 | 24.22 | 16.73 | 97.10 | 34 | +6 | 25.54 | 30.34 | 96.45 | 40 | +4 | 36.95 | 33.20 | 91.17 | 93 | +11 |
-| GMMPFAUDLR | Industrial Machinery | 1249.10 | 21.57 | 3 | 4 | 6.97 | 7.00 | 96.85 | 37 | +304 | -0.34 | -6.35 | 38.05 | 706 | +171 | 19.82 | 24.41 | 94.36 | 63 | +12 | 62.74 | 58.28 | 96.83 | 34 | +12 |
-| HUBTOWN | Real Estate Development | 215.04 | 69.32 | 3 | 4 | 22.06 | 22.09 | 99.74 | 4 | +2 | 24.78 | 17.25 | 97.36 | 31 | -14 | 17.96 | 22.47 | 93.54 | 72 | +139 | 4.66 | 1.79 | 60.56 | 412 | +167 |
-| ICIL | Textiles | 590.05 | 44.96 | 3 | 4 | 2.44 | 2.47 | 86.35 | 157 | +174 | 37.83 | 29.52 | 99.56 | 6 | +1 | 25.69 | 30.50 | 96.63 | 38 | -17 | 71.20 | 66.51 | 97.89 | 23 | +2 |
-| KALAMANDIR | Apparel/Footwear Retail | 96.72 | 18.96 | 3 | 4 | 7.43 | 7.46 | 97.29 | 32 | -23 | 46.26 | 37.44 | 99.82 | 3 | +1 | 12.67 | 16.98 | 90.54 | 105 | +2 | -8.64 | -11.15 | 38.20 | 645 | -26 |
-| KDDL | Other Consumer Specialties | 4511.10 | 43.25 | 3 | 4 | -3.60 | -3.58 | 28.70 | 816 | +221 | 19.76 | 12.53 | 94.46 | 64 | +13 | 14.80 | 19.19 | 91.63 | 93 | -10 | 62.12 | 57.68 | 96.45 | 38 | -1 |
-| MANAKCOAT | Steel | 160.46 | 21.70 | 3 | 4 | 0.08 | 0.11 | 68.85 | 357 | +601 | 21.06 | 13.76 | 95.61 | 51 | +25 | 31.06 | 36.08 | 97.91 | 24 | +18 | 53.10 | 48.90 | 95.49 | 48 | +11 |
-| MOTILALOFS | Investment Managers | 1215.25 | 156.92 | 3 | 4 | 0.40 | 0.43 | 72.44 | 316 | +74 | 25.54 | 17.97 | 97.63 | 28 | -5 | 16.53 | 20.98 | 92.54 | 83 | -19 | 42.04 | 38.15 | 93.09 | 73 | -4 |
-| NAVINFLUOR | Chemicals: Specialty | 10270.00 | 194.67 | 3 | 4 | 0.66 | 0.68 | 74.28 | 295 | +482 | 20.81 | 13.52 | 95.34 | 54 | +9 | 18.38 | 22.91 | 93.81 | 69 | +3 | 45.97 | 41.97 | 94.24 | 61 | +12 |
-| NEOGEN | Chemicals: Specialty | 2750.50 | 41.26 | 3 | 4 | -4.78 | -4.75 | 19.25 | 924 | -286 | 21.12 | 13.82 | 95.69 | 50 | -18 | 24.95 | 29.73 | 96.18 | 43 | +4 | 44.67 | 40.71 | 93.76 | 66 | -5 |
-| PRESTIGE | Real Estate Development | 1832.10 | 113.60 | 3 | 4 | 10.70 | 10.73 | 98.86 | 14 | +224 | 31.60 | 23.66 | 99.03 | 12 | +75 | 12.19 | 16.48 | 89.99 | 111 | +73 | 36.15 | 32.42 | 90.50 | 100 | +110 |
-| SAILIFE | Miscellaneous Commercial Services | 1812.60 | 251.42 | 3 | 4 | 1.35 | 1.38 | 79.79 | 232 | +103 | 21.88 | 14.53 | 95.87 | 48 | +8 | 24.18 | 28.93 | 95.81 | 47 | +9 | 59.32 | 54.96 | 96.07 | 42 | -4 |
-| SAMBHV | Steel | 174.04 | 45.95 | 3 | 4 | 7.78 | 7.81 | 97.73 | 27 | +24 | 5.20 | -1.14 | 62.30 | 430 | +154 | 36.06 | 41.27 | 98.64 | 16 | +4 | 64.76 | 60.25 | 97.12 | 31 | +2 |
-| AARTIPHARM | Pharmaceuticals: Major | 1022.15 | 57.44 | 2 | 4 | -0.24 | -0.21 | 65.44 | 396 | -110 | 15.90 | 8.91 | 89.46 | 121 | +16 | 20.91 | 25.53 | 94.90 | 57 | -3 | 64.37 | 59.87 | 97.02 | 32 | +3 |
-| ABREL | Textiles | 1288.30 | 35.37 | 2 | 4 | 5.10 | 5.13 | 94.05 | 69 | +82 | 22.25 | 14.88 | 96.22 | 44 | +37 | -4.96 | -1.32 | 59.24 | 449 | +70 | 2.67 | -0.14 | 57.68 | 442 | -33 |
-| AEGISLOG | Wholesale Distributors | 1211.20 | 149.56 | 2 | 4 | 3.59 | 3.62 | 90.46 | 110 | +198 | 2.39 | -3.78 | 51.23 | 556 | +151 | -4.22 | -0.56 | 60.78 | 432 | +99 | 59.26 | 54.90 | 95.97 | 43 | +1 |
-| AEGISVOPAK | Air Freight/Couriers | 276.71 | 18.88 | 2 | 4 | -2.79 | -2.76 | 37.53 | 715 | -213 | 19.37 | 12.18 | 94.20 | 67 | +23 | 2.96 | 6.90 | 76.98 | 254 | -17 | 43.37 | 39.44 | 93.47 | 69 | -3 |
-| AGARWALEYE | Medical/Nursing Services | 572.60 | 11.16 | 2 | 4 | 3.53 | 3.55 | 90.29 | 112 | -16 | 20.51 | 13.24 | 94.82 | 60 | -2 | 11.57 | 15.84 | 89.72 | 114 | -12 | 23.34 | 19.96 | 81.86 | 190 | +18 |
-| ALICON | Auto Parts: OEM | 983.90 | 18.60 | 2 | 4 | -3.40 | -3.37 | 31.15 | 788 | -511 | 13.05 | 6.23 | 84.53 | 177 | -70 | 47.87 | 53.52 | 99.55 | 6 | +0 | 49.27 | 45.18 | 94.82 | 55 | -5 |
-| ANTHEM | Biotechnology | 975.50 | 35.74 | 2 | 4 | 4.13 | 4.16 | 92.48 | 87 | -21 | 17.23 | 10.16 | 91.04 | 103 | +39 | 9.23 | 13.41 | 86.08 | 154 | +11 | 30.01 | 26.45 | 87.04 | 136 | +10 |
-| ARMANFIN | Finance/Rental/Leasing | 1658.60 | 6.59 | 2 | 4 | 6.57 | 6.60 | 96.76 | 38 | +135 | 20.12 | 12.88 | 94.64 | 62 | +84 | -16.26 | -13.06 | 24.39 | 832 | +109 | 5.51 | 2.62 | 61.71 | 400 | +67 |
-| ASAHIINDIA | Home Furnishings | 1189.85 | 21.41 | 2 | 4 | -0.18 | -0.16 | 66.14 | 388 | -243 | 29.46 | 21.65 | 98.42 | 19 | -4 | 24.98 | 29.76 | 96.27 | 42 | -2 | 31.69 | 28.08 | 88.00 | 126 | -13 |
-| BANKINDIA | Major Banks | 160.29 | 150.38 | 2 | 4 | -0.99 | -0.97 | 58.79 | 472 | -187 | 20.61 | 13.34 | 95.08 | 57 | -3 | 13.21 | 17.54 | 91.08 | 99 | +31 | 14.56 | 11.42 | 72.74 | 285 | -35 |
-| BECTORFOOD | Food: Specialty/Candy | 227.02 | 22.85 | 2 | 4 | 4.44 | 4.47 | 93.09 | 80 | +182 | 24.85 | 17.32 | 97.45 | 30 | +56 | 0.05 | 3.88 | 69.88 | 332 | +125 | 32.80 | 29.16 | 88.68 | 119 | +31 |
-| BIL | Consumer Sundries | 1002.90 | 1.40 | 2 | 4 | -0.58 | -0.56 | 62.03 | 435 | +110 | -1.47 | -7.42 | 33.30 | 760 | +96 | 17.68 | 22.19 | 93.27 | 75 | +16 | 43.81 | 39.87 | 93.67 | 67 | +42 |
-| BRIGADE | Real Estate Development | 628.50 | 31.46 | 2 | 4 | 11.00 | 11.03 | 99.04 | 12 | +100 | 16.75 | 9.71 | 90.42 | 110 | +263 | -4.17 | -0.50 | 61.06 | 429 | +115 | -3.93 | -6.56 | 47.70 | 546 | +101 |
-| CEMPRO | Engineering & Construction | 1425.00 | 52.25 | 2 | 4 | 3.37 | 3.40 | 89.76 | 118 | -11 | 15.83 | 8.85 | 89.28 | 123 | -22 | 16.27 | 20.72 | 92.36 | 85 | +40 | 39.04 | 35.23 | 91.75 | 87 | +12 |
-| CHEMPLASTS | Chemicals: Major Diversified | 252.20 | 20.73 | 2 | 4 | 0.87 | 0.90 | 76.47 | 270 | +53 | 28.41 | 20.67 | 98.33 | 20 | -8 | 42.87 | 48.34 | 99.27 | 9 | +7 | 21.57 | 18.23 | 80.23 | 207 | +38 |
-| CNL | Electronics Distributors | 1295.60 | 4.95 | 2 | 4 | -6.72 | -6.70 | 8.40 | 1048 | -370 | 19.76 | 12.54 | 94.55 | 63 | -27 | 1.25 | 5.12 | 72.88 | 299 | -150 | 105.67 | 100.03 | 99.23 | 9 | +0 |
-| COMSYN | Containers/Packaging | 276.35 | 16.24 | 2 | 3 | 7.68 | 7.71 | 97.64 | 28 | +13 | 31.35 | 23.42 | 98.86 | 14 | +4 | -6.98 | -3.43 | 53.23 | 515 | -172 | N/A | N/A | N/A | N/A | N/A |
-| CPPLUS | Electronics/Appliances | 4235.00 | 95.27 | 2 | 4 | 5.26 | 5.29 | 94.49 | 64 | -16 | 6.43 | 0.02 | 66.70 | 380 | +24 | 18.76 | 23.30 | 93.99 | 67 | +0 | 25.70 | 22.25 | 83.30 | 175 | -50 |
-| DOMS | Office Equipment/Supplies | 2299.50 | 11.10 | 2 | 4 | 9.28 | 9.31 | 98.60 | 17 | +5 | 23.73 | 16.27 | 96.92 | 36 | +44 | 3.00 | 6.94 | 77.16 | 252 | +35 | 6.72 | 3.80 | 63.72 | 379 | +75 |
-| EIHOTEL | Hotels/Resorts/Cruise lines | 332.70 | 15.02 | 2 | 4 | 7.32 | 7.35 | 97.20 | 33 | -8 | 13.84 | 6.98 | 86.38 | 156 | -40 | 17.85 | 22.36 | 93.45 | 73 | +21 | 14.61 | 11.47 | 72.94 | 283 | -44 |
-| ENDURANCE | Metal Fabrication | 2696.80 | 24.37 | 2 | 4 | 3.97 | 4.00 | 91.95 | 93 | -56 | 17.32 | 10.25 | 91.21 | 101 | +29 | -6.07 | -2.48 | 55.78 | 487 | +109 | 2.33 | -0.47 | 57.29 | 446 | +54 |
-| FAZE3Q | Textiles | 550.85 | 15.95 | 2 | 4 | -6.19 | -6.16 | 11.11 | 1017 | +74 | 33.33 | 25.29 | 99.30 | 9 | +1 | 12.99 | 17.32 | 90.99 | 100 | +4 | 2.75 | -0.06 | 57.87 | 440 | +18 |
-| FILATEX | Textiles | 110.05 | 23.96 | 2 | 4 | -1.14 | -1.11 | 56.78 | 495 | -224 | 16.03 | 9.03 | 89.54 | 120 | +0 | 46.40 | 52.00 | 99.45 | 7 | +3 | 127.89 | 121.65 | 99.52 | 6 | -3 |
-| FORCEMOT | Motor Vehicles | 20362.00 | 142.23 | 2 | 4 | -0.40 | -0.37 | 64.30 | 409 | -159 | 19.12 | 11.93 | 93.94 | 70 | +32 | 16.18 | 20.63 | 91.99 | 89 | -20 | 16.34 | 13.15 | 75.34 | 258 | +18 |
-| GHCLTEXTIL | Textiles | 146.08 | 10.02 | 2 | 4 | 2.89 | 2.92 | 88.28 | 135 | -93 | 19.18 | 11.99 | 94.11 | 68 | -17 | 8.39 | 12.54 | 84.80 | 168 | -46 | 52.25 | 48.07 | 95.30 | 50 | +2 |
-| GLAND | Pharmaceuticals: Major | 3370.80 | 121.84 | 2 | 4 | 2.37 | 2.39 | 86.00 | 161 | -28 | 10.55 | 3.89 | 78.65 | 244 | -55 | 16.81 | 21.27 | 92.81 | 80 | -3 | 51.00 | 46.86 | 95.11 | 52 | +6 |
-| GLENMARK | Pharmaceuticals: Major | 2740.20 | 192.45 | 2 | 4 | 5.05 | 5.08 | 93.88 | 71 | +110 | 19.14 | 11.95 | 94.02 | 69 | +2 | 10.49 | 14.72 | 88.35 | 129 | +29 | 26.04 | 22.59 | 83.69 | 171 | +5 |
-| GODREJPROP | Real Estate Development | 2004.30 | 119.52 | 2 | 4 | 6.56 | 6.58 | 96.68 | 39 | +163 | 26.29 | 18.68 | 97.89 | 25 | +30 | -0.52 | 3.29 | 69.06 | 341 | +110 | 17.57 | 14.35 | 76.49 | 246 | +69 |
-| HEGAM | Electronic Components | 280.99 | 98.35 | 2 | 2 | 6.25 | 6.28 | 95.98 | 47 | +743 | 22.84 | 15.43 | 96.75 | 38 | +31 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| HINDOILEXP | Integrated Oil | 213.01 | 40.91 | 2 | 4 | -0.69 | -0.67 | 60.98 | 447 | +340 | 39.16 | 30.77 | 99.65 | 5 | +1 | 31.44 | 36.47 | 98.00 | 23 | -5 | 25.51 | 22.07 | 83.21 | 176 | -32 |
-| HITECH | Steel | 82.39 | 14.40 | 2 | 4 | 7.97 | 8.00 | 97.99 | 24 | -7 | 27.95 | 20.24 | 98.24 | 21 | +1 | 4.36 | 8.35 | 79.89 | 222 | +77 | -6.07 | -8.64 | 43.95 | 585 | -34 |
-| INDORAMA | Textiles | 74.14 | 3.73 | 2 | 4 | -3.46 | -3.44 | 30.27 | 798 | -254 | 0.01 | -6.02 | 40.25 | 681 | +141 | 12.47 | 16.77 | 90.17 | 109 | -38 | 69.35 | 64.71 | 97.70 | 25 | -6 |
-| J&KBANK | Regional Banks | 162.82 | 55.49 | 2 | 4 | 11.12 | 11.15 | 99.21 | 10 | +5 | 33.65 | 25.59 | 99.38 | 8 | +22 | 10.25 | 14.47 | 87.81 | 135 | +91 | 9.53 | 6.53 | 66.99 | 345 | -4 |
-| JKLAKSHMI | Construction Materials | 536.45 | 7.65 | 2 | 4 | 3.94 | 3.97 | 91.78 | 95 | -48 | 16.75 | 9.71 | 90.51 | 109 | +29 | 1.05 | 4.91 | 72.25 | 306 | +28 | -11.65 | -14.07 | 32.25 | 707 | -19 |
-| JSWINFRA | Engineering & Construction | 365.65 | 63.53 | 2 | 4 | 8.45 | 8.48 | 98.16 | 22 | +52 | 16.15 | 9.15 | 89.72 | 118 | +79 | 7.54 | 11.66 | 84.08 | 176 | +36 | 35.28 | 31.57 | 90.12 | 104 | +32 |
-| JWL | Trucks/Construction/Farm Machinery | 238.69 | 169.75 | 2 | 4 | 22.10 | 22.14 | 99.83 | 3 | +9 | 31.84 | 23.89 | 99.12 | 11 | +17 | -0.77 | 3.02 | 68.33 | 349 | +223 | -14.86 | -17.19 | 25.43 | 778 | +105 |
-| KALYANKJIL | Specialty Stores | 639.80 | 778.23 | 2 | 4 | -3.21 | -3.18 | 32.81 | 769 | -103 | 25.45 | 17.89 | 97.54 | 29 | -8 | 6.46 | 10.53 | 82.98 | 188 | +45 | 81.25 | 76.28 | 98.46 | 17 | -1 |
-| KOPRAN | Pharmaceuticals: Major | 281.16 | 24.98 | 2 | 3 | 5.28 | 5.31 | 94.58 | 63 | -42 | 11.37 | 4.66 | 80.84 | 219 | -90 | 29.07 | 34.01 | 97.27 | 31 | -23 | N/A | N/A | N/A | N/A | N/A |
-| KROSS | Auto Parts: OEM | 272.60 | 65.32 | 2 | 4 | -4.50 | -4.48 | 21.70 | 896 | +119 | -7.50 | -13.08 | 14.85 | 970 | +21 | 28.16 | 33.06 | 97.09 | 33 | +8 | 43.00 | 39.08 | 93.28 | 71 | +12 |
-| LINDEINDIA | Chemicals: Specialty | 6998.50 | 29.04 | 2 | 4 | 3.80 | 3.83 | 91.08 | 103 | +176 | 22.26 | 14.88 | 96.31 | 43 | -1 | 9.60 | 13.79 | 86.81 | 146 | +28 | -1.58 | -4.27 | 51.34 | 508 | -33 |
-| LTTS | Miscellaneous Commercial Services | 4245.20 | 187.74 | 2 | 4 | 5.18 | 5.21 | 94.14 | 68 | +145 | 3.84 | -2.42 | 57.29 | 487 | +172 | 17.65 | 22.15 | 93.18 | 76 | -6 | 28.67 | 25.15 | 85.99 | 147 | +78 |
-| MAHABANK | Major Banks | 94.20 | 158.47 | 2 | 4 | -3.86 | -3.83 | 25.81 | 849 | -675 | 17.82 | 10.72 | 91.74 | 95 | -56 | 14.78 | 19.17 | 91.54 | 94 | -28 | 18.19 | 14.95 | 77.16 | 239 | -66 |
-| MASTERTR | Investment Banks/Brokers | 90.06 | 2.89 | 2 | 4 | 6.07 | 6.09 | 95.54 | 52 | -2 | 18.08 | 10.96 | 92.18 | 90 | +18 | 9.47 | 13.66 | 86.72 | 147 | +32 | 11.01 | 7.97 | 69.00 | 324 | +31 |
-| MFSL | Life/Health Insurance | 1453.70 | 135.74 | 2 | 4 | 3.91 | 3.94 | 91.51 | 98 | +144 | 18.71 | 11.55 | 93.32 | 77 | +27 | -7.59 | -4.06 | 51.68 | 532 | -5 | -6.79 | -9.34 | 42.42 | 601 | +51 |
-| MMFL | Metal Fabrication | 602.10 | 21.05 | 2 | 4 | -6.77 | -6.74 | 8.05 | 1052 | +27 | 24.72 | 17.20 | 97.28 | 32 | +11 | -7.38 | -3.84 | 52.32 | 525 | -52 | 37.01 | 33.26 | 91.27 | 92 | +4 |
-| NINSYS | Packaged Software | 984.80 | 0.93 | 2 | 3 | 5.34 | 5.37 | 94.75 | 61 | +25 | 14.05 | 7.17 | 86.73 | 152 | +86 | 37.93 | 43.20 | 98.82 | 14 | +5 | N/A | N/A | N/A | N/A | N/A |
-| OAL | Chemicals: Specialty | 504.45 | 16.69 | 2 | 4 | 17.15 | 17.18 | 99.48 | 7 | -4 | -18.99 | -23.88 | 1.85 | 1118 | -23 | 8.74 | 12.90 | 85.44 | 161 | -2 | 62.25 | 57.81 | 96.64 | 36 | -10 |
-| OBEROIRLTY | Real Estate Development | 1905.20 | 64.22 | 2 | 4 | 5.26 | 5.29 | 94.40 | 65 | +58 | 19.00 | 11.82 | 93.67 | 73 | +74 | 1.99 | 5.89 | 74.89 | 277 | +31 | 16.36 | 13.17 | 75.43 | 257 | +59 |
-| OPTIEMUS | Electronics Distributors | 755.35 | 27.77 | 2 | 4 | -7.34 | -7.31 | 6.12 | 1074 | +46 | 2.68 | -3.51 | 52.72 | 539 | +107 | 31.56 | 36.59 | 98.09 | 22 | +12 | 82.45 | 77.45 | 98.56 | 16 | +2 |
-| ORIENTHOT | Hotels/Resorts/Cruise lines | 177.85 | 13.19 | 2 | 4 | 0.49 | 0.51 | 73.32 | 306 | -154 | 11.49 | 4.77 | 81.46 | 212 | -36 | 27.93 | 32.82 | 96.91 | 35 | -9 | 75.95 | 71.13 | 98.08 | 21 | -4 |
-| PARAGMILK | Food: Meat/Fish/Dairy | 315.44 | 80.19 | 2 | 4 | -8.17 | -8.14 | 4.37 | 1094 | -910 | 31.87 | 23.92 | 99.21 | 10 | -2 | 23.98 | 28.73 | 95.63 | 49 | -40 | 29.29 | 25.75 | 86.28 | 144 | -69 |
-| PDSL | Apparel/Footwear | 411.05 | 26.96 | 2 | 4 | -0.62 | -0.59 | 61.85 | 437 | -298 | 22.46 | 15.08 | 96.57 | 40 | -14 | 11.67 | 15.94 | 89.81 | 113 | -7 | 35.53 | 31.81 | 90.40 | 101 | -17 |
-| PHOENIXLTD | Real Estate Development | 2291.00 | 99.89 | 2 | 4 | 2.39 | 2.42 | 86.26 | 158 | -29 | 20.62 | 13.35 | 95.17 | 56 | +16 | 20.58 | 25.19 | 94.72 | 59 | +3 | 33.95 | 30.27 | 89.54 | 110 | +0 |
-| POLICYBZR | Internet Software/Services | 1170.00 | 359.03 | 2 | 4 | 15.27 | 15.30 | 99.39 | 8 | +16 | 18.42 | 11.28 | 92.97 | 81 | +161 | -37.60 | -35.21 | 0.91 | 1090 | +1 | -25.88 | -27.91 | 10.17 | 937 | +46 |
-| PTCIL | Metal Fabrication | 24875.00 | 43.54 | 2 | 4 | 4.32 | 4.35 | 92.83 | 83 | +96 | 3.62 | -2.62 | 56.33 | 498 | +103 | 12.49 | 16.79 | 90.35 | 107 | +31 | 31.48 | 27.88 | 87.81 | 128 | +37 |
-| PVRINOX | Movies/Entertainment | 1638.20 | 126.84 | 2 | 4 | -3.57 | -3.54 | 28.87 | 814 | -375 | 13.35 | 6.51 | 85.24 | 169 | -52 | 35.65 | 40.84 | 98.54 | 17 | -6 | 67.35 | 62.77 | 97.50 | 27 | -6 |
-| RAYMOND | Textiles | 1183.20 | 67.18 | 2 | 4 | -1.01 | -0.98 | 58.44 | 476 | +155 | 11.61 | 4.88 | 81.99 | 206 | +70 | 87.26 | 94.42 | 100.00 | 1 | +0 | 129.77 | 123.47 | 99.62 | 5 | +2 |
-| RKFORGE | Metal Fabrication | 787.85 | 78.27 | 2 | 4 | 2.65 | 2.68 | 86.96 | 150 | +480 | 21.26 | 13.95 | 95.78 | 49 | +26 | 5.95 | 10.00 | 82.17 | 197 | +129 | 41.98 | 38.09 | 92.99 | 74 | +50 |
-| ROSSTECH | Telecommunications Equipment | 1454.40 | 16.18 | 2 | 4 | -6.64 | -6.61 | 8.84 | 1043 | +30 | 2.49 | -3.69 | 51.67 | 551 | +196 | 31.03 | 36.05 | 97.82 | 25 | +7 | 35.44 | 31.73 | 90.31 | 102 | +29 |
-| RUBICON | Biotechnology | 1851.70 | 31.69 | 2 | 3 | 7.51 | 7.54 | 97.46 | 30 | +120 | 18.40 | 11.26 | 92.88 | 82 | +98 | 1.76 | 5.66 | 73.98 | 287 | +157 | N/A | N/A | N/A | N/A | N/A |
-| SAFARI | Other Consumer Specialties | 1563.70 | 12.94 | 2 | 4 | 11.30 | 11.33 | 99.30 | 9 | +2 | 27.54 | 19.85 | 98.15 | 22 | +11 | 3.49 | 7.45 | 78.16 | 241 | +23 | -0.64 | -3.36 | 52.59 | 495 | +69 |
-| SANSERA | Auto Parts: OEM | 4685.80 | 84.40 | 2 | 4 | -0.74 | -0.72 | 60.54 | 452 | -351 | 8.72 | 2.16 | 72.76 | 311 | -25 | 16.62 | 21.08 | 92.72 | 81 | -29 | 60.76 | 56.35 | 96.26 | 40 | -1 |
-| SAREGAMA | Movies/Entertainment | 620.95 | 104.15 | 2 | 4 | -7.49 | -7.47 | 5.69 | 1079 | -3 | 18.51 | 11.37 | 93.15 | 79 | -30 | 29.39 | 34.34 | 97.45 | 29 | +8 | 34.32 | 30.64 | 89.64 | 109 | -4 |
-| SBC | Wholesale Distributors | 68.35 | 77.37 | 2 | 4 | -0.20 | -0.18 | 65.70 | 393 | -23 | 4.38 | -1.91 | 59.23 | 465 | +58 | 62.16 | 68.36 | 99.82 | 3 | +0 | 86.04 | 80.94 | 98.66 | 15 | +0 |
-| SBCL | Other Metals/Minerals | 1002.50 | 23.99 | 2 | 4 | 3.61 | 3.64 | 90.55 | 109 | +595 | -3.52 | -9.34 | 25.75 | 846 | +110 | -6.31 | -2.72 | 55.14 | 494 | +137 | 38.49 | 34.69 | 91.55 | 89 | +62 |
-| SHREEJISPG | Other Transportation | 910.65 | 74.85 | 2 | 4 | 0.48 | 0.51 | 73.14 | 308 | +19 | 8.37 | 1.84 | 71.79 | 322 | +7 | 41.27 | 46.68 | 99.18 | 10 | +3 | 96.81 | 91.42 | 99.04 | 11 | +0 |
-| SMSPHARMA | Pharmaceuticals: Major | 485.85 | 27.51 | 2 | 4 | 0.93 | 0.96 | 77.52 | 258 | +248 | 2.19 | -3.97 | 50.18 | 568 | -198 | 30.66 | 35.66 | 97.63 | 27 | -4 | 36.28 | 32.55 | 90.79 | 97 | +35 |
-| SSWL | Auto Parts: OEM | 474.25 | 143.46 | 2 | 4 | -13.52 | -13.50 | 0.87 | 1134 | -33 | -9.94 | -15.37 | 9.31 | 1033 | -97 | 55.16 | 61.10 | 99.73 | 4 | -2 | 118.35 | 112.36 | 99.42 | 7 | -2 |
-| STYLEBAAZA | Apparel/Footwear Retail | 514.80 | 83.74 | 2 | 3 | -1.80 | -1.78 | 48.03 | 595 | +309 | 44.18 | 35.49 | 99.74 | 4 | +1 | 28.43 | 33.34 | 97.18 | 32 | +7 | N/A | N/A | N/A | N/A | N/A |
-| SUDEEPPHRM | Pharmaceuticals: Other | 1302.60 | 29.94 | 2 | 2 | 7.47 | 7.50 | 97.38 | 31 | +89 | 16.41 | 9.39 | 90.07 | 114 | -68 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SUNTECK | Real Estate Development | 328.80 | 26.11 | 2 | 4 | 4.95 | 4.98 | 93.70 | 73 | +159 | 20.79 | 13.51 | 95.25 | 55 | +128 | 8.60 | 12.76 | 85.17 | 164 | +64 | 16.84 | 13.64 | 75.82 | 253 | +83 |
-| SWSOLAR | Engineering & Construction | 170.50 | 23.29 | 2 | 4 | 8.81 | 8.84 | 98.25 | 21 | +33 | 18.30 | 11.16 | 92.62 | 85 | +4 | -9.95 | -6.50 | 43.40 | 623 | +125 | -12.45 | -14.85 | 30.71 | 723 | -16 |
-| TEXRAIL | Trucks/Construction/Farm Machinery | 118.05 | 23.98 | 2 | 4 | 6.39 | 6.42 | 96.24 | 44 | +94 | 17.11 | 10.05 | 90.95 | 104 | +113 | 8.35 | 12.50 | 84.71 | 169 | +73 | 14.78 | 11.63 | 73.13 | 281 | +77 |
-| TFCILTD | Finance/Rental/Leasing | 174.94 | 161.68 | 2 | 4 | 2.80 | 2.83 | 87.75 | 141 | +52 | 11.47 | 4.75 | 81.37 | 213 | +2 | 25.03 | 29.81 | 96.36 | 41 | +5 | 130.46 | 124.14 | 99.71 | 4 | +2 |
-| THELEELA | Hotels/Resorts/Cruise lines | 685.85 | 35.40 | 2 | 4 | -1.41 | -1.38 | 53.37 | 534 | +43 | 13.33 | 6.49 | 85.15 | 170 | -12 | 20.24 | 24.84 | 94.54 | 61 | -11 | 61.68 | 57.25 | 96.35 | 39 | -12 |
-| TIMETECHNO | Containers/Packaging | 199.46 | 49.80 | 2 | 4 | 3.94 | 3.97 | 91.86 | 94 | +50 | 23.19 | 15.76 | 96.84 | 37 | +42 | 6.55 | 10.63 | 83.17 | 186 | +11 | 16.46 | 13.27 | 75.53 | 256 | +28 |
-| UNIMECH | Industrial Machinery | 1759.40 | 34.76 | 2 | 4 | -5.26 | -5.23 | 16.10 | 960 | -95 | 7.40 | 0.93 | 69.07 | 353 | +229 | 18.08 | 22.60 | 93.63 | 71 | +17 | 68.72 | 64.10 | 97.60 | 26 | -6 |
-| WEL | Electronic Equipment/Instruments | 91.47 | 1.52 | 2 | 4 | 11.06 | 11.09 | 99.13 | 11 | +3 | 29.80 | 21.97 | 98.51 | 18 | +9 | 1.84 | 5.73 | 74.34 | 283 | +427 | -1.40 | -4.10 | 51.54 | 506 | +91 |
-| WHEELS | Auto Parts: OEM | 2108.50 | 22.58 | 2 | 4 | -5.25 | -5.23 | 16.27 | 958 | +153 | -6.52 | -12.16 | 16.87 | 947 | +46 | 36.35 | 41.56 | 98.73 | 15 | +7 | 40.78 | 36.92 | 92.42 | 80 | +20 |
-| WOCKPHARMA | Pharmaceuticals: Major | 2233.70 | 136.74 | 2 | 4 | 2.14 | 2.16 | 84.60 | 177 | +8 | 16.74 | 9.70 | 90.33 | 111 | +159 | 18.58 | 23.12 | 93.90 | 68 | +134 | 7.71 | 4.75 | 65.26 | 363 | +27 |
-| ZENSARTECH | Packaged Software | 554.50 | 68.53 | 2 | 4 | 7.54 | 7.57 | 97.55 | 29 | +273 | 11.57 | 4.84 | 81.81 | 208 | +232 | 20.45 | 25.06 | 94.63 | 60 | +48 | 8.78 | 5.80 | 66.51 | 350 | +83 |
-| 360ONE | Investment Managers | 1210.00 | 102.76 | 1 | 4 | 1.01 | 1.04 | 77.87 | 254 | +580 | 22.10 | 14.74 | 96.13 | 45 | +28 | 2.98 | 6.92 | 77.07 | 253 | +127 | 12.82 | 9.73 | 71.50 | 298 | +75 |
-| 63MOONS | Packaged Software | 864.00 | 34.10 | 1 | 4 | -9.29 | -9.26 | 2.80 | 1112 | -120 | -7.35 | -12.93 | 15.38 | 964 | -112 | 10.93 | 15.18 | 88.99 | 122 | -7 | 39.72 | 35.89 | 91.94 | 85 | -8 |
-| AARTIDRUGS | Pharmaceuticals: Major | 491.85 | 80.25 | 1 | 4 | -1.41 | -1.39 | 53.28 | 535 | +276 | 9.81 | 3.19 | 76.36 | 270 | -218 | 19.47 | 24.04 | 94.27 | 64 | +12 | 29.98 | 26.42 | 86.95 | 137 | +10 |
-| ABBOTINDIA | Pharmaceuticals: Major | 27300.00 | 20.30 | 1 | 4 | 6.25 | 6.28 | 95.89 | 48 | +39 | 3.90 | -2.36 | 57.64 | 483 | -39 | 5.61 | 9.65 | 81.62 | 203 | +52 | 3.84 | 1.00 | 59.21 | 426 | +24 |
-| ABLBL | Apparel/Footwear Retail | 79.30 | 8.84 | 1 | 4 | 4.01 | 4.04 | 92.21 | 90 | -12 | 10.23 | 3.58 | 78.03 | 251 | +124 | -8.55 | -5.05 | 48.59 | 566 | -113 | -19.26 | -21.48 | 18.62 | 849 | -9 |
-| ABSLAMC | Internet Software/Services | 992.15 | 19.53 | 1 | 4 | 6.22 | 6.25 | 95.80 | 49 | +91 | 14.47 | 7.56 | 87.52 | 143 | +163 | -5.67 | -2.06 | 57.23 | 471 | +80 | -3.98 | -6.61 | 47.60 | 547 | +42 |
-| ACUTAAS | Pharmaceuticals: Major | 4079.90 | 277.52 | 1 | 4 | 2.58 | 2.61 | 86.70 | 153 | +244 | 9.97 | 3.34 | 76.89 | 264 | +165 | 29.09 | 34.02 | 97.36 | 30 | +25 | 30.11 | 26.55 | 87.24 | 134 | -15 |
-| AETHER | Chemicals: Major Diversified | 1700.80 | 53.77 | 1 | 4 | 0.25 | 0.28 | 71.04 | 332 | -104 | 7.08 | 0.62 | 68.19 | 363 | -55 | 0.56 | 4.41 | 71.25 | 317 | +21 | 49.27 | 45.18 | 94.91 | 54 | -5 |
-| AGIIL | Real Estate Development | 307.40 | 61.94 | 1 | 4 | 0.80 | 0.83 | 75.68 | 279 | +284 | 37.39 | 29.10 | 99.47 | 7 | +6 | 7.86 | 11.99 | 84.35 | 173 | +10 | -20.59 | -22.76 | 16.89 | 867 | -18 |
-| ALEMBICLTD | Pharmaceuticals: Major | 105.58 | 21.19 | 1 | 4 | -5.29 | -5.27 | 15.75 | 964 | +100 | 20.54 | 13.27 | 94.90 | 59 | +23 | 6.93 | 11.02 | 83.53 | 182 | +47 | 22.77 | 19.40 | 81.57 | 193 | +35 |
-| ALIVUS | Pharmaceuticals: Major | 1418.10 | 52.30 | 1 | 4 | -2.19 | -2.17 | 43.39 | 648 | -164 | 1.34 | -4.77 | 46.57 | 609 | -240 | 0.88 | 4.74 | 71.88 | 310 | -130 | 36.61 | 32.86 | 90.98 | 95 | -4 |
-| ANANDRATHI | Investment Managers | 2410.00 | 67.39 | 1 | 4 | 1.70 | 1.73 | 82.33 | 203 | +176 | 6.42 | 0.00 | 66.52 | 382 | +42 | 9.34 | 13.52 | 86.53 | 149 | +17 | 35.00 | 31.30 | 90.02 | 105 | +887 |
-| ANUP | Industrial Machinery | 1612.00 | 14.82 | 1 | 4 | -9.82 | -9.80 | 2.45 | 1116 | -29 | 19.05 | 11.87 | 93.85 | 71 | -11 | -10.12 | -6.68 | 43.04 | 627 | -49 | -16.68 | -18.96 | 22.46 | 809 | -86 |
-| ARFIN | Aluminum | 95.34 | 15.97 | 1 | 4 | 4.04 | 4.07 | 92.30 | 89 | +8 | 9.15 | 2.57 | 74.17 | 295 | +93 | 9.30 | 13.48 | 86.44 | 150 | -15 | 6.00 | 3.10 | 62.96 | 387 | +18 |
-| ASHOKA | Engineering & Construction | 113.40 | 52.15 | 1 | 4 | 0.13 | 0.16 | 70.08 | 343 | +122 | 17.85 | 10.75 | 91.83 | 94 | +6 | -5.73 | -2.12 | 57.05 | 473 | -206 | -8.47 | -10.98 | 38.48 | 642 | -30 |
-| ASKAUTOLTD | Auto Parts: OEM | 634.85 | 12.18 | 1 | 4 | -0.94 | -0.92 | 59.32 | 466 | -161 | 8.12 | 1.60 | 71.09 | 330 | -76 | -3.80 | -0.12 | 62.06 | 418 | -125 | 45.13 | 41.15 | 93.86 | 65 | -3 |
-| ASTERDM | Hospital/Nursing Management | 768.30 | 74.12 | 1 | 4 | 3.92 | 3.95 | 91.60 | 97 | -34 | 14.77 | 7.84 | 87.87 | 139 | -25 | 1.63 | 5.51 | 73.52 | 292 | -65 | 5.17 | 2.29 | 61.32 | 404 | -24 |
-| ATHERENERG | Motor Vehicles | 1906.00 | 507.78 | 1 | 4 | -0.98 | -0.95 | 58.88 | 471 | +139 | 15.52 | 8.55 | 89.10 | 125 | +99 | 10.96 | 15.21 | 89.08 | 121 | -43 | 86.49 | 81.38 | 98.75 | 14 | -2 |
-| AVTNPL | Food: Specialty/Candy | 96.59 | 7.77 | 1 | 4 | -6.33 | -6.31 | 10.41 | 1025 | +3 | 5.26 | -1.08 | 62.57 | 427 | -60 | 4.92 | 8.93 | 80.71 | 213 | -108 | 37.55 | 33.78 | 91.36 | 91 | +7 |
-| BAJAJHCARE | Pharmaceuticals: Major | 347.25 | 4.34 | 1 | 4 | 9.03 | 9.06 | 98.43 | 19 | +14 | 10.43 | 3.77 | 78.38 | 247 | +3 | 4.06 | 8.04 | 79.25 | 229 | -58 | 16.25 | 13.07 | 75.14 | 260 | +8 |
-| BALAJITELE | Movies/Entertainment | 101.41 | 1.84 | 1 | 4 | 2.99 | 3.01 | 88.45 | 133 | +31 | 18.86 | 11.69 | 93.50 | 75 | +61 | 10.35 | 14.57 | 87.90 | 134 | +74 | 13.51 | 10.40 | 72.07 | 292 | +61 |
-| BALUFORGE | Trucks/Construction/Farm Machinery | 528.90 | 39.57 | 1 | 4 | 0.46 | 0.48 | 72.97 | 310 | +668 | 18.31 | 11.17 | 92.71 | 84 | +68 | -16.13 | -12.92 | 24.75 | 828 | +104 | 9.48 | 6.48 | 66.89 | 346 | +4 |
-| BBOX | Information Technology Services | 853.50 | 75.88 | 1 | 4 | -5.94 | -5.91 | 12.95 | 996 | -276 | 5.16 | -1.19 | 62.21 | 431 | -25 | 14.16 | 18.52 | 91.45 | 95 | -8 | -19.20 | -21.41 | 18.91 | 846 | -35 |
-| BIKAJI | Food: Specialty/Candy | 523.80 | 10.66 | 1 | 4 | 5.02 | 5.05 | 93.79 | 72 | -54 | 13.65 | 6.79 | 85.94 | 161 | +18 | -16.29 | -13.08 | 24.20 | 834 | -58 | -19.33 | -21.54 | 18.43 | 851 | +19 |
-| BLUESTARCO | Industrial Machinery | 1780.20 | 85.23 | 1 | 4 | 0.92 | 0.95 | 77.43 | 259 | -249 | 11.40 | 4.68 | 81.20 | 215 | -137 | 21.61 | 26.27 | 95.09 | 55 | -7 | 12.61 | 9.53 | 71.40 | 299 | -38 |
-| BLUSPRING | Miscellaneous Commercial Services | 140.84 | 5.31 | 1 | 4 | -11.77 | -11.74 | 1.31 | 1129 | +1 | -7.43 | -13.02 | 15.20 | 966 | +5 | 11.42 | 15.69 | 89.63 | 115 | +5 | 78.75 | 73.86 | 98.37 | 18 | +4 |
-| BRIGHOTEL | Hotels/Resorts/Cruise lines | 57.56 | 2.52 | 1 | 4 | 6.38 | 6.41 | 96.15 | 45 | +24 | 10.69 | 4.02 | 79.00 | 240 | +70 | -2.06 | 1.69 | 65.70 | 378 | +20 | -6.38 | -8.94 | 43.57 | 589 | -7 |
-| CAMS | Information Technology Services | 745.90 | 121.13 | 1 | 4 | 4.50 | 4.53 | 93.26 | 78 | +300 | 10.11 | 3.47 | 77.68 | 255 | +152 | -4.62 | -0.97 | 60.05 | 440 | +30 | -0.86 | -3.58 | 52.11 | 500 | +101 |
-| CANHLIFE | Life/Health Insurance | 133.10 | 10.97 | 1 | 3 | 4.08 | 4.11 | 92.39 | 88 | +11 | 7.63 | 1.14 | 69.42 | 349 | -47 | -14.76 | -11.50 | 28.03 | 792 | -43 | N/A | N/A | N/A | N/A | N/A |
-| CARRARO | Auto Parts: OEM | 490.05 | 4.09 | 1 | 4 | 6.43 | 6.46 | 96.50 | 41 | +91 | -2.00 | -7.91 | 31.11 | 785 | +32 | -12.40 | -9.05 | 35.76 | 707 | +10 | -7.37 | -9.91 | 41.27 | 613 | -52 |
-| CDSL | Investment Banks/Brokers | 1441.00 | 199.89 | 1 | 4 | 1.24 | 1.26 | 79.09 | 240 | +191 | 16.96 | 9.91 | 90.86 | 105 | +38 | 2.75 | 6.68 | 76.71 | 257 | +53 | 18.29 | 15.05 | 77.35 | 237 | +29 |
-| CELLO | Home Furnishings | 378.20 | 10.30 | 1 | 4 | 3.93 | 3.96 | 91.69 | 96 | -1 | 13.51 | 6.66 | 85.41 | 167 | +21 | 7.35 | 11.46 | 83.80 | 179 | -19 | -0.49 | -3.21 | 52.78 | 493 | +11 |
-| CERA | Home Furnishings | 5219.10 | 8.55 | 1 | 4 | 2.63 | 2.66 | 86.88 | 151 | -43 | 17.31 | 10.24 | 91.12 | 102 | +61 | -8.92 | -5.44 | 46.86 | 585 | -16 | -6.42 | -8.98 | 43.47 | 590 | +34 |
-| CHALET | Hotels/Resorts/Cruise lines | 865.10 | 9.48 | 1 | 4 | 5.56 | 5.59 | 94.93 | 59 | -16 | 7.80 | 1.30 | 70.04 | 342 | +4 | -4.30 | -0.64 | 60.60 | 434 | -53 | 11.89 | 8.82 | 70.35 | 310 | -4 |
-| CHOICEIN | Miscellaneous Commercial Services | 760.70 | 37.63 | 1 | 4 | 5.61 | 5.64 | 95.10 | 57 | +41 | 3.86 | -2.40 | 57.47 | 485 | +6 | -2.56 | 1.17 | 64.42 | 392 | +42 | 11.97 | 8.90 | 70.54 | 308 | -13 |
-| COFORGE | Information Technology Services | 2000.00 | 566.07 | 1 | 4 | -2.01 | -1.98 | 45.58 | 623 | -283 | 1.94 | -4.21 | 49.38 | 577 | -52 | 0.74 | 4.59 | 71.52 | 314 | -58 | 40.76 | 36.90 | 92.32 | 81 | +25 |
-| COHANCE | Pharmaceuticals: Major | 502.60 | 50.20 | 1 | 4 | 9.39 | 9.42 | 98.69 | 16 | +19 | 5.58 | -0.79 | 63.80 | 413 | +149 | 10.23 | 14.45 | 87.72 | 136 | +14 | 18.31 | 15.07 | 77.45 | 236 | +42 |
-| CREDITACC | Finance/Rental/Leasing | 1018.10 | 55.76 | 1 | 4 | 4.89 | 4.92 | 93.61 | 74 | +634 | -0.40 | -6.41 | 37.70 | 710 | -91 | -25.33 | -22.48 | 7.83 | 1014 | +10 | -19.78 | -21.98 | 17.56 | 860 | +28 |
-| CYIENTDLM | Electronic Production Equipment | 769.00 | 43.80 | 1 | 4 | -7.14 | -7.12 | 6.74 | 1067 | +18 | 0.75 | -5.33 | 44.11 | 637 | +86 | -8.78 | -5.29 | 47.59 | 577 | -24 | 71.10 | 66.41 | 97.79 | 24 | +12 |
-| DABUR | Household/Personal Care | 418.50 | 90.30 | 1 | 4 | 7.13 | 7.16 | 97.03 | 35 | -27 | 16.25 | 9.24 | 89.81 | 117 | -49 | 9.84 | 14.04 | 87.26 | 141 | -14 | 0.16 | -2.59 | 54.03 | 480 | -17 |
-| DALMIASUG | Agricultural Commodities/Milling | 451.15 | 18.35 | 1 | 4 | -2.34 | -2.31 | 41.91 | 665 | +154 | 10.98 | 4.29 | 79.88 | 230 | +127 | -6.82 | -3.25 | 53.78 | 509 | +14 | 36.24 | 32.50 | 90.69 | 98 | +29 |
-| DCBBANK | Regional Banks | 227.17 | 26.01 | 1 | 4 | -3.41 | -3.38 | 30.88 | 791 | -733 | 18.48 | 11.34 | 93.06 | 80 | -45 | 4.11 | 8.09 | 79.44 | 227 | -124 | 30.10 | 26.54 | 87.14 | 135 | -56 |
-| DEEPAKFERT | Chemicals: Agricultural | 1442.30 | 65.99 | 1 | 4 | -0.52 | -0.50 | 62.99 | 424 | +588 | 24.16 | 16.68 | 97.01 | 35 | +71 | 2.51 | 6.43 | 76.07 | 264 | +127 | 2.52 | -0.29 | 57.49 | 444 | +51 |
-| DELHIVERY | Air Freight/Couriers | 460.50 | 128.55 | 1 | 4 | 0.83 | 0.86 | 76.03 | 275 | -98 | 19.61 | 12.40 | 94.38 | 65 | -8 | 0.94 | 4.80 | 71.97 | 309 | +40 | 5.16 | 2.28 | 61.23 | 405 | -13 |
-| DELTACORP | Movies/Entertainment | 71.95 | 28.61 | 1 | 4 | -7.58 | -7.55 | 5.34 | 1083 | +45 | 2.10 | -4.06 | 49.82 | 572 | +34 | 23.05 | 27.76 | 95.45 | 51 | +6 | 3.35 | 0.51 | 58.35 | 435 | -139 |
-| DHAMPURSUG | Agricultural Commodities/Milling | 180.01 | 34.70 | 1 | 4 | 8.83 | 8.86 | 98.34 | 20 | +489 | 9.01 | 2.44 | 73.90 | 298 | +532 | 0.46 | 4.30 | 70.70 | 323 | +251 | 30.39 | 26.82 | 87.43 | 132 | +142 |
-| DOLATALGO | Investment Banks/Brokers | 66.79 | 0.68 | 1 | 4 | 4.52 | 4.55 | 93.44 | 76 | -60 | 10.65 | 3.98 | 78.91 | 241 | -107 | -7.26 | -3.71 | 52.59 | 522 | -38 | -10.61 | -13.06 | 35.03 | 678 | -51 |
-| DOLPHIN | Oilfield Services/Equipment | 608.75 | 1.06 | 1 | 4 | -5.59 | -5.56 | 14.17 | 982 | -93 | 2.33 | -3.84 | 50.88 | 560 | -67 | 4.37 | 8.36 | 79.98 | 221 | +91 | 52.40 | 48.22 | 95.39 | 49 | +2 |
-| EFCIL | Wholesale Distributors | 164.96 | 3.80 | 1 | 4 | 4.22 | 4.25 | 92.56 | 86 | +250 | -4.33 | -10.10 | 23.99 | 866 | -55 | -19.45 | -16.37 | 16.56 | 918 | +7 | -7.32 | -9.86 | 41.65 | 609 | +44 |
-| ELLEN | Chemicals: Specialty | 282.75 | 11.45 | 1 | 4 | 4.24 | 4.27 | 92.65 | 85 | +345 | -11.24 | -16.59 | 7.29 | 1056 | +10 | -12.26 | -8.90 | 36.12 | 703 | +22 | 12.40 | 9.32 | 71.31 | 300 | +2 |
-| EMAMILTD | Household/Personal Care | 421.70 | 25.52 | 1 | 4 | -0.80 | -0.77 | 60.19 | 456 | -320 | 13.12 | 6.30 | 84.71 | 175 | -43 | 15.85 | 20.28 | 91.72 | 92 | +20 | 7.92 | 4.96 | 65.64 | 359 | -13 |
-| ENTERO | Medical Distributors | 1832.10 | 42.24 | 1 | 4 | -7.14 | -7.12 | 6.82 | 1066 | -163 | 14.58 | 7.67 | 87.70 | 141 | -75 | 1.23 | 5.10 | 72.70 | 301 | -96 | 62.51 | 58.05 | 96.74 | 35 | -4 |
-| EUREKAFORB | Industrial Machinery | 374.15 | 12.51 | 1 | 4 | -6.04 | -6.01 | 11.99 | 1007 | +92 | 16.43 | 9.41 | 90.16 | 113 | +38 | -12.87 | -9.53 | 34.12 | 725 | +57 | -15.56 | -17.87 | 24.38 | 789 | +52 |
-| FIEMIND | Auto Parts: OEM | 2013.00 | 21.56 | 1 | 4 | -7.44 | -7.42 | 5.77 | 1078 | -449 | 20.94 | 13.65 | 95.52 | 52 | -5 | -1.14 | 2.64 | 67.79 | 355 | -33 | -14.23 | -16.58 | 26.97 | 762 | -125 |
-| FSL | Miscellaneous Commercial Services | 289.15 | 40.63 | 1 | 4 | 5.57 | 5.60 | 95.01 | 58 | +12 | -6.10 | -11.77 | 17.93 | 935 | -114 | 9.20 | 13.37 | 85.81 | 157 | +11 | 8.11 | 5.15 | 65.83 | 357 | +20 |
-| FUSION | Finance/Rental/Leasing | 159.00 | 16.24 | 1 | 4 | 0.89 | 0.92 | 76.99 | 264 | +691 | 17.61 | 10.52 | 91.39 | 99 | +112 | -20.63 | -17.59 | 14.29 | 943 | +46 | -7.74 | -10.26 | 40.12 | 625 | +99 |
-| GABRIEL | Auto Parts: OEM | 1537.30 | 93.55 | 1 | 4 | -3.02 | -2.99 | 35.00 | 744 | -412 | 6.09 | -0.30 | 65.55 | 393 | +105 | 6.91 | 11.00 | 83.35 | 184 | -43 | 45.52 | 41.53 | 94.05 | 63 | +17 |
-| GANDHAR | Industrial Specialties | 243.26 | 26.78 | 1 | 4 | -5.25 | -5.22 | 16.36 | 957 | +89 | -6.67 | -12.30 | 16.61 | 950 | +180 | -5.61 | -2.00 | 57.51 | 468 | -2 | 54.77 | 50.52 | 95.68 | 46 | -3 |
-| GCSL | Investment Banks/Brokers | 850.55 | 23.54 | 1 | 3 | 1.04 | 1.07 | 78.22 | 250 | -9 | 13.20 | 6.38 | 84.97 | 172 | -3 | 52.83 | 58.67 | 99.64 | 5 | +0 | N/A | N/A | N/A | N/A | N/A |
-| GESHIP | Marine Shipping | 1531.20 | 101.60 | 1 | 4 | -1.54 | -1.51 | 51.71 | 553 | -258 | -1.84 | -7.76 | 31.99 | 775 | -102 | 17.62 | 22.12 | 93.08 | 77 | +2 | 3.45 | 0.61 | 58.54 | 433 | +11 |
-| GNA | Auto Parts: OEM | 519.05 | 14.23 | 1 | 4 | -6.30 | -6.27 | 10.76 | 1021 | -21 | -8.81 | -14.31 | 11.78 | 1005 | +20 | -3.85 | -0.18 | 61.78 | 421 | -22 | 40.09 | 36.26 | 92.03 | 84 | -16 |
-| GRANULES | Pharmaceuticals: Other | 833.15 | 116.34 | 1 | 4 | 3.99 | 4.02 | 92.13 | 91 | -15 | -0.87 | -6.85 | 35.41 | 736 | -129 | 0.56 | 4.41 | 71.16 | 318 | -20 | 4.96 | 2.08 | 60.94 | 408 | -52 |
-| GRAPHITE | Industrial Specialties | 791.75 | 50.33 | 1 | 4 | 0.83 | 0.86 | 75.94 | 276 | -28 | 7.70 | 1.20 | 69.68 | 346 | +67 | 12.70 | 17.01 | 90.72 | 103 | -8 | 8.45 | 5.48 | 66.22 | 353 | -19 |
-| GUJENERGY | Gas Distributors | 238.30 | 28.01 | 1 | 3 | 5.67 | 5.70 | 95.19 | 56 | +17 | 12.30 | 5.53 | 83.04 | 194 | +64 | -3.79 | -0.11 | 62.15 | 417 | +109 | N/A | N/A | N/A | N/A | N/A |
-| HBLENGINE | Electrical Products | 764.25 | 208.34 | 1 | 4 | -1.07 | -1.05 | 57.57 | 486 | +358 | -5.64 | -11.33 | 19.60 | 916 | -68 | 16.26 | 20.71 | 92.27 | 86 | +30 | -2.80 | -5.46 | 49.42 | 528 | +40 |
-| HEXT | Packaged Software | 502.15 | 30.08 | 1 | 4 | 3.72 | 3.75 | 90.81 | 106 | +239 | -12.25 | -17.54 | 6.15 | 1069 | +9 | -9.48 | -6.02 | 45.04 | 605 | +75 | -6.58 | -9.14 | 43.09 | 594 | +88 |
-| HIKAL | Pharmaceuticals: Major | 228.33 | 9.35 | 1 | 4 | 2.82 | 2.85 | 87.93 | 139 | +149 | 12.98 | 6.17 | 84.27 | 180 | +41 | 13.37 | 17.70 | 91.17 | 98 | +39 | 21.47 | 18.14 | 80.13 | 208 | +26 |
-| HLEGLAS | Industrial Machinery | 388.30 | 5.15 | 1 | 4 | -7.04 | -7.01 | 7.17 | 1062 | +40 | -6.42 | -12.07 | 17.14 | 944 | +26 | 23.43 | 28.15 | 95.54 | 50 | +8 | -0.84 | -3.56 | 52.30 | 498 | -98 |
-| HONASA | Specialty Stores | 533.25 | 66.66 | 1 | 4 | 0.68 | 0.71 | 74.54 | 292 | -91 | 18.21 | 11.08 | 92.36 | 88 | -5 | 10.89 | 15.13 | 88.90 | 123 | -27 | 32.62 | 28.98 | 88.58 | 120 | -4 |
-| IDEAFORGE | Aerospace & Defense | 731.15 | 20.80 | 1 | 3 | 7.26 | 7.29 | 97.11 | 34 | +68 | 7.71 | 1.22 | 69.86 | 344 | +385 | -8.06 | -4.54 | 50.23 | 548 | +159 | N/A | N/A | N/A | N/A | N/A |
-| IDFCFIRSTB | Regional Banks | 86.71 | 162.81 | 1 | 4 | 0.77 | 0.80 | 75.33 | 283 | -222 | 17.92 | 10.81 | 91.92 | 93 | -48 | 0.86 | 4.72 | 71.79 | 311 | -112 | 20.80 | 17.49 | 79.65 | 213 | -17 |
-| IGIL | Miscellaneous Commercial Services | 423.20 | 85.30 | 1 | 4 | -3.22 | -3.20 | 32.63 | 771 | -48 | 6.21 | -0.19 | 65.73 | 391 | -120 | 24.12 | 28.87 | 95.72 | 48 | -17 | 17.52 | 14.30 | 76.39 | 247 | -25 |
-| IIFLCAPS | Investment Banks/Brokers | 346.15 | 78.79 | 1 | 4 | 3.81 | 3.84 | 91.25 | 101 | +862 | -0.01 | -6.04 | 39.98 | 684 | +90 | 2.73 | 6.66 | 76.62 | 258 | +43 | 2.23 | -0.57 | 57.01 | 449 | +45 |
-| INDSWFTLAB | Pharmaceuticals: Major | 311.95 | 23.16 | 1 | 4 | -5.53 | -5.50 | 14.61 | 977 | +14 | -17.68 | -22.64 | 2.72 | 1108 | -33 | -14.50 | -11.23 | 28.75 | 784 | -82 | 98.56 | 93.11 | 99.14 | 10 | +0 |
-| INDUSINDBK | Major Banks | 966.10 | 294.08 | 1 | 4 | 4.60 | 4.62 | 93.53 | 75 | -31 | 13.53 | 6.68 | 85.50 | 166 | -51 | -4.97 | -1.33 | 59.14 | 450 | -94 | 7.35 | 4.41 | 64.59 | 370 | +6 |
-| INOXINDIA | Industrial Machinery | 2162.80 | 58.69 | 1 | 4 | 1.65 | 1.68 | 82.06 | 206 | +127 | 13.24 | 6.41 | 85.06 | 171 | +60 | 1.34 | 5.22 | 73.07 | 297 | +0 | 46.47 | 42.46 | 94.43 | 59 | -2 |
-| INTELLECT | Packaged Software | 577.60 | 44.12 | 1 | 4 | 7.12 | 7.15 | 96.94 | 36 | -29 | -2.79 | -8.65 | 27.59 | 825 | -151 | -15.18 | -11.93 | 26.84 | 805 | -139 | -22.46 | -24.59 | 14.68 | 890 | -38 |
-| IREDA | Finance/Rental/Leasing | 127.00 | 163.22 | 1 | 4 | -2.16 | -2.13 | 43.74 | 644 | -531 | 26.26 | 18.64 | 97.80 | 26 | +5 | 9.01 | 13.18 | 85.62 | 159 | +16 | 3.39 | 0.56 | 58.45 | 434 | +47 |
-| ISGEC | Engineering & Construction | 1028.30 | 4.27 | 1 | 4 | 3.10 | 3.13 | 89.06 | 126 | +28 | 14.10 | 7.22 | 86.82 | 151 | +76 | 30.06 | 35.03 | 97.54 | 28 | +2 | 12.05 | 8.98 | 70.73 | 306 | -17 |
-| ITCHOTELS | Hotels/Resorts/Cruise lines | 186.10 | 82.95 | 1 | 4 | 1.33 | 1.36 | 79.70 | 233 | -153 | 12.72 | 5.92 | 83.66 | 187 | +22 | 16.25 | 20.69 | 92.17 | 87 | +2 | 22.11 | 18.77 | 80.71 | 202 | -7 |
-| IXIGO | Internet Software/Services | 171.04 | 77.49 | 1 | 4 | -3.41 | -3.38 | 30.97 | 790 | -303 | 22.28 | 14.90 | 96.40 | 42 | -5 | 4.92 | 8.93 | 80.62 | 214 | -51 | 11.52 | 8.47 | 69.67 | 317 | +14 |
-| JKTYRE | Automotive Aftermarket | 360.10 | 19.69 | 1 | 4 | -1.71 | -1.68 | 49.43 | 579 | -384 | 18.24 | 11.11 | 92.44 | 87 | -25 | -4.95 | -1.31 | 59.33 | 448 | -47 | -6.71 | -9.27 | 42.61 | 599 | -33 |
-| JLHL | Hospital/Nursing Management | 298.00 | 40.48 | 1 | 4 | 5.97 | 6.00 | 95.45 | 53 | +2 | 16.07 | 9.07 | 89.63 | 119 | -49 | 0.81 | 4.67 | 71.61 | 313 | -54 | -77.41 | -78.03 | 0.29 | 1040 | +1 |
-| JYOTICNC | Metal Fabrication | 1050.35 | 73.00 | 1 | 4 | -2.00 | -1.97 | 45.76 | 621 | +137 | 13.04 | 6.22 | 84.45 | 178 | +99 | 5.57 | 9.61 | 81.53 | 204 | +149 | 77.21 | 72.36 | 98.18 | 20 | +4 |
-| KAPSTON | Miscellaneous Commercial Services | 534.85 | 2.14 | 1 | 4 | -0.38 | -0.35 | 64.57 | 406 | +111 | 5.26 | -1.08 | 62.65 | 426 | -9 | -8.85 | -5.37 | 47.22 | 581 | -151 | 60.50 | 56.10 | 96.16 | 41 | -1 |
-| KCP | Industrial Conglomerates | 149.26 | 1.47 | 1 | 4 | 3.83 | 3.85 | 91.34 | 100 | +221 | 3.91 | -2.36 | 57.73 | 482 | +163 | -10.57 | -7.15 | 41.58 | 643 | +95 | -7.69 | -10.22 | 40.21 | 624 | +50 |
-| KFINTECH | Packaged Software | 995.00 | 98.59 | 1 | 4 | 6.30 | 6.33 | 96.06 | 46 | +341 | 16.37 | 9.36 | 89.89 | 116 | +239 | 2.58 | 6.50 | 76.25 | 262 | +86 | 18.83 | 15.57 | 78.02 | 230 | +121 |
-| KRBL | Agricultural Commodities/Milling | 417.30 | 33.12 | 1 | 4 | -1.01 | -0.98 | 58.53 | 475 | -288 | 19.01 | 11.83 | 93.76 | 72 | +27 | -1.17 | 2.61 | 67.61 | 357 | +64 | 19.18 | 15.91 | 78.60 | 224 | -13 |
-| KRISHANA | Chemicals: Agricultural | 243.04 | 22.27 | 1 | 4 | 0.38 | 0.41 | 72.18 | 319 | -64 | 11.76 | 5.02 | 82.34 | 202 | -58 | 27.23 | 32.09 | 96.82 | 36 | -3 | -64.40 | -65.37 | 0.58 | 1037 | +2 |
-| KRISHNADEF | Aerospace & Defense | 1198.80 | 14.63 | 1 | 4 | -6.38 | -6.35 | 10.15 | 1028 | +40 | 4.12 | -2.16 | 58.44 | 474 | +207 | 19.31 | 23.87 | 94.18 | 65 | +27 | 5.66 | 2.76 | 62.09 | 396 | +56 |
-| LALPATHLAB | Medical/Nursing Services | 2037.90 | 52.76 | 1 | 4 | 3.81 | 3.83 | 91.16 | 102 | +53 | 6.01 | -0.38 | 65.29 | 396 | -18 | 5.34 | 9.37 | 81.07 | 209 | -5 | 29.84 | 26.28 | 86.66 | 140 | -6 |
-| LEMONTREE | Hotels/Resorts/Cruise lines | 123.35 | 49.92 | 1 | 4 | -1.19 | -1.16 | 56.17 | 502 | -193 | 15.12 | 8.18 | 88.49 | 132 | -23 | 16.09 | 20.54 | 91.90 | 90 | -5 | 11.57 | 8.51 | 69.77 | 316 | -16 |
-| LICHSGFIN | Finance/Rental/Leasing | 596.25 | 141.42 | 1 | 4 | -2.25 | -2.23 | 42.43 | 659 | -6 | 16.88 | 9.83 | 90.77 | 106 | -1 | 10.74 | 14.98 | 88.63 | 126 | -3 | 10.16 | 7.14 | 68.04 | 334 | -24 |
-| LUMAXTECH | Auto Parts: OEM | 2336.20 | 42.03 | 1 | 4 | -0.04 | -0.01 | 67.80 | 369 | -209 | 14.35 | 7.45 | 87.08 | 148 | -114 | 12.40 | 16.70 | 90.08 | 110 | -51 | 31.85 | 28.23 | 88.20 | 124 | -30 |
-| MACPOWER | Industrial Machinery | 2023.90 | 10.96 | 1 | 4 | -5.02 | -4.99 | 17.76 | 941 | +53 | 4.39 | -1.90 | 59.31 | 464 | -105 | 1.74 | 5.63 | 73.79 | 289 | -23 | 113.42 | 107.58 | 99.33 | 8 | +0 |
-| MAHSCOOTER | Financial Conglomerates | 12615.00 | 3.20 | 1 | 1 | 4.26 | 4.29 | 92.74 | 84 | -2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| MANINDS | Industrial Machinery | 701.40 | 45.46 | 1 | 4 | -8.25 | -8.22 | 4.20 | 1096 | -26 | -9.79 | -15.23 | 9.75 | 1028 | +28 | -6.85 | -3.28 | 53.59 | 511 | +35 | 41.37 | 37.49 | 92.80 | 76 | -2 |
-| MARATHON | Real Estate Development | 437.90 | 5.70 | 1 | 4 | 0.17 | 0.20 | 70.43 | 339 | +12 | 18.62 | 11.47 | 93.23 | 78 | -30 | 6.02 | 10.07 | 82.26 | 196 | +19 | 3.90 | 1.06 | 59.31 | 425 | +35 |
-| MARINE | Wholesale Distributors | 419.15 | 45.97 | 1 | 4 | -1.47 | -1.44 | 52.93 | 539 | +254 | 0.44 | -5.61 | 42.62 | 654 | +258 | 4.57 | 8.57 | 80.16 | 219 | +125 | 66.03 | 61.48 | 97.31 | 29 | +13 |
-| MBAPL | Chemicals: Agricultural | 191.97 | 18.55 | 1 | 4 | -0.18 | -0.15 | 66.23 | 387 | -97 | 13.68 | 6.82 | 86.12 | 159 | -41 | 18.90 | 23.45 | 94.09 | 66 | -6 | -64.43 | -65.41 | 0.48 | 1038 | +0 |
-| MEDANTA | Hospital/Nursing Management | 1511.50 | 35.87 | 1 | 4 | 2.25 | 2.27 | 85.21 | 170 | -118 | 17.81 | 10.71 | 91.65 | 96 | -43 | 2.15 | 6.06 | 75.25 | 273 | -57 | 25.82 | 22.37 | 83.40 | 174 | -22 |
-| METROPOLIS | Medical/Nursing Services | 580.30 | 13.24 | 1 | 4 | 3.87 | 3.89 | 91.43 | 99 | +258 | 5.28 | -1.07 | 62.74 | 425 | +110 | -0.35 | 3.46 | 69.34 | 338 | +65 | 8.23 | 5.27 | 65.93 | 356 | +46 |
-| MMP | Other Metals/Minerals | 449.00 | 2.22 | 1 | 3 | -1.00 | -0.98 | 58.62 | 474 | -62 | -0.28 | -6.29 | 38.66 | 699 | -65 | 14.12 | 18.48 | 91.36 | 96 | +38 | N/A | N/A | N/A | N/A | N/A |
-| MPHASIS | Packaged Software | 2510.00 | 181.42 | 1 | 4 | 6.54 | 6.57 | 96.59 | 40 | +31 | -0.32 | -6.33 | 38.40 | 702 | +117 | 3.40 | 7.36 | 77.89 | 244 | -9 | 9.68 | 6.67 | 67.18 | 343 | +41 |
-| MSTCLTD | Internet Retail | 628.00 | 37.17 | 1 | 4 | -7.19 | -7.16 | 6.65 | 1068 | +46 | 13.55 | 6.70 | 85.59 | 165 | +68 | -16.39 | -13.19 | 24.02 | 836 | -61 | 40.67 | 36.81 | 92.23 | 82 | +7 |
-| MUTHOOTMF | Finance/Rental/Leasing | 164.45 | 5.95 | 1 | 4 | -3.15 | -3.12 | 33.42 | 762 | +77 | 16.67 | 9.64 | 90.25 | 112 | +125 | -19.32 | -16.24 | 16.83 | 915 | +75 | -8.69 | -11.19 | 38.00 | 647 | +48 |
-| NAUKRI | Internet Software/Services | 1229.00 | 144.21 | 1 | 4 | 6.16 | 6.19 | 95.63 | 51 | +21 | 3.28 | -2.95 | 54.66 | 517 | +134 | -6.40 | -2.82 | 54.87 | 497 | +102 | 22.16 | 18.81 | 80.90 | 200 | +15 |
-| NAZARA | Packaged Software | 381.25 | 50.44 | 1 | 4 | -10.41 | -10.39 | 2.19 | 1119 | -25 | -4.69 | -10.44 | 22.50 | 883 | +32 | 2.29 | 6.21 | 75.71 | 268 | +20 | 40.29 | 36.45 | 92.13 | 83 | +7 |
-| NELCAST | Steel | 144.04 | 12.72 | 1 | 4 | 1.58 | 1.61 | 81.19 | 216 | -1 | 8.63 | 2.08 | 72.67 | 312 | -186 | 21.90 | 26.57 | 95.18 | 54 | -3 | 5.04 | 2.16 | 61.04 | 407 | -6 |
-| NH | Hospital/Nursing Management | 1982.20 | 34.15 | 1 | 4 | 5.82 | 5.85 | 95.28 | 55 | +10 | 15.04 | 8.10 | 88.40 | 133 | -20 | 3.93 | 7.91 | 79.07 | 231 | -10 | 0.08 | -2.66 | 53.93 | 481 | -63 |
-| NILKAMAL | Home Furnishings | 1946.40 | 11.01 | 1 | 4 | -10.29 | -10.26 | 2.36 | 1117 | +8 | 10.37 | 3.71 | 78.30 | 248 | -124 | -2.98 | 0.73 | 63.33 | 404 | +76 | 54.82 | 50.58 | 95.78 | 45 | +8 |
-| NPST | Packaged Software | 1766.10 | 3.77 | 1 | 4 | 4.37 | 4.40 | 92.91 | 82 | +45 | 7.27 | 0.80 | 68.72 | 357 | +131 | 5.72 | 9.76 | 81.71 | 202 | +38 | 27.08 | 23.59 | 84.93 | 158 | -40 |
-| NRAIL | Containers/Packaging | 574.70 | 1.29 | 1 | 3 | -11.30 | -11.28 | 1.49 | 1127 | -571 | -15.14 | -20.25 | 4.22 | 1091 | -78 | 12.69 | 17.00 | 90.63 | 104 | -55 | N/A | N/A | N/A | N/A | N/A |
-| NUVOCO | Construction Materials | 359.50 | 20.24 | 1 | 4 | 3.25 | 3.27 | 89.33 | 123 | -2 | 7.62 | 1.13 | 69.33 | 350 | +16 | 12.73 | 17.04 | 90.81 | 102 | +19 | 9.39 | 6.39 | 66.79 | 347 | +10 |
-| ONEPOINT | Miscellaneous Commercial Services | 68.77 | 16.61 | 1 | 4 | -4.62 | -4.59 | 20.56 | 909 | +125 | -4.59 | -10.35 | 22.58 | 882 | +76 | 25.54 | 30.34 | 96.54 | 39 | +6 | 18.63 | 15.38 | 77.74 | 233 | +23 |
-| PAISALO | Finance/Rental/Leasing | 74.34 | 35.66 | 1 | 4 | 0.15 | 0.18 | 70.17 | 342 | +177 | -5.86 | -11.54 | 18.45 | 929 | -69 | 10.44 | 14.67 | 88.26 | 130 | +2 | 37.87 | 34.09 | 91.46 | 90 | -23 |
-| PARAS | Aerospace & Defense | 1240.10 | 77.59 | 1 | 4 | -2.79 | -2.76 | 37.36 | 717 | -299 | -4.80 | -10.54 | 22.06 | 888 | -50 | -13.46 | -10.14 | 32.12 | 747 | -2 | 47.75 | 43.70 | 94.72 | 56 | +4 |
-| PATANJALI | Agricultural Commodities/Milling | 405.40 | 156.95 | 1 | 4 | 0.85 | 0.87 | 76.20 | 273 | -22 | 9.69 | 3.07 | 75.92 | 275 | -163 | 17.51 | 22.00 | 92.99 | 78 | -4 | -8.21 | -10.72 | 39.25 | 634 | +26 |
-| PGHH | Household/Personal Care | 7233.50 | 9.35 | 1 | 4 | 4.50 | 4.53 | 93.18 | 79 | +39 | 5.15 | -1.19 | 62.13 | 432 | +11 | -9.35 | -5.88 | 45.59 | 599 | +95 | -22.21 | -24.34 | 15.07 | 886 | +29 |
-| PGIL | Apparel/Footwear | 1424.70 | 23.10 | 1 | 4 | 1.47 | 1.50 | 80.40 | 225 | -8 | 18.83 | 11.67 | 93.41 | 76 | -12 | -42.17 | -39.96 | 0.55 | 1094 | -5 | -12.88 | -15.27 | 29.56 | 735 | -21 |
-| PNBGILTS | Investment Banks/Brokers | 82.30 | 4.65 | 1 | 4 | 3.59 | 3.62 | 90.38 | 111 | +365 | 10.89 | 4.20 | 79.70 | 232 | -7 | 6.94 | 11.03 | 83.62 | 181 | +90 | -4.32 | -6.95 | 46.74 | 556 | -90 |
-| POONAWALLA | Finance/Rental/Leasing | 508.60 | 128.77 | 1 | 4 | 0.76 | 0.79 | 75.24 | 284 | -95 | 26.13 | 18.52 | 97.72 | 27 | -7 | 9.66 | 13.85 | 86.99 | 144 | +25 | 27.37 | 23.88 | 85.12 | 156 | -16 |
-| PPLPHARMA | Pharmaceuticals: Major | 235.60 | 227.51 | 1 | 4 | -1.69 | -1.66 | 49.96 | 573 | +156 | 1.20 | -4.90 | 46.31 | 612 | -501 | 9.89 | 14.09 | 87.35 | 140 | +42 | 41.07 | 37.20 | 92.71 | 77 | +5 |
-| PROTEAN | Information Technology Services | 693.25 | 26.41 | 1 | 4 | -2.65 | -2.62 | 38.41 | 705 | -448 | 15.86 | 8.87 | 89.37 | 122 | +74 | 33.10 | 38.19 | 98.45 | 18 | +18 | 17.34 | 14.13 | 76.20 | 249 | +38 |
-| PWL | Miscellaneous Commercial Services | 136.38 | 116.65 | 1 | 3 | 0.12 | 0.15 | 69.90 | 345 | -277 | 3.79 | -2.47 | 56.94 | 491 | -29 | 16.97 | 21.45 | 92.90 | 79 | +21 | N/A | N/A | N/A | N/A | N/A |
-| QUESS | Personnel Services | 326.35 | 7.59 | 1 | 4 | -6.01 | -5.98 | 12.34 | 1003 | -563 | 0.26 | -5.79 | 41.65 | 665 | -43 | -14.51 | -11.24 | 28.66 | 785 | -89 | 54.58 | 50.34 | 95.59 | 47 | +0 |
-| RAMCOSYS | Information Technology Services | 575.15 | 3.54 | 1 | 4 | 7.93 | 7.96 | 97.81 | 26 | +393 | 10.25 | 3.60 | 78.21 | 249 | +103 | -0.02 | 3.81 | 69.61 | 335 | +152 | 28.37 | 24.85 | 85.60 | 151 | +87 |
-| RAMKY | Engineering & Construction | 373.40 | 17.61 | 1 | 4 | -2.40 | -2.38 | 41.03 | 675 | -38 | 24.38 | 16.88 | 97.19 | 33 | -30 | 6.26 | 10.33 | 82.53 | 193 | -8 | -14.19 | -16.54 | 27.06 | 761 | -18 |
-| RAYMONDREL | Real Estate Development | 619.05 | 30.33 | 1 | 4 | -2.19 | -2.16 | 43.57 | 646 | +234 | 12.93 | 6.12 | 84.01 | 183 | +407 | 16.32 | 20.77 | 92.45 | 84 | +62 | 4.17 | 1.32 | 60.08 | 417 | -10 |
-| REDINGTON | Electronics Distributors | 330.00 | 137.55 | 1 | 4 | -3.31 | -3.28 | 31.93 | 779 | +68 | -6.09 | -11.75 | 18.01 | 934 | +80 | -7.76 | -4.23 | 51.41 | 535 | +118 | 36.22 | 32.49 | 90.60 | 99 | -2 |
-| REGAAL | Agricultural Commodities/Milling | 98.52 | 4.10 | 1 | 3 | 4.52 | 4.55 | 93.35 | 77 | +23 | 11.56 | 4.83 | 81.72 | 209 | -39 | 10.67 | 14.91 | 88.54 | 127 | +21 | N/A | N/A | N/A | N/A | N/A |
-| REPCOHOME | Finance/Rental/Leasing | 374.85 | 12.78 | 1 | 4 | -1.28 | -1.25 | 55.03 | 515 | +409 | 22.64 | 15.24 | 96.66 | 39 | +35 | 3.26 | 7.21 | 77.71 | 246 | +74 | 1.56 | -1.23 | 56.43 | 455 | +68 |
-| RGL | Other Consumer Specialties | 143.63 | 8.43 | 1 | 4 | -0.55 | -0.52 | 62.64 | 428 | +623 | 1.79 | -4.35 | 48.77 | 584 | +127 | 6.22 | 10.28 | 82.44 | 194 | +145 | 39.27 | 35.45 | 91.84 | 86 | +28 |
-| RISHABH | Electrical Products | 604.55 | 10.47 | 1 | 4 | 3.79 | 3.82 | 90.99 | 104 | +318 | -7.63 | -13.20 | 14.24 | 977 | +40 | -14.30 | -11.02 | 29.48 | 776 | +2 | 15.74 | 12.57 | 74.76 | 264 | +24 |
-| ROLEXRINGS | Metal Fabrication | 191.02 | 48.67 | 1 | 4 | -4.65 | -4.63 | 20.12 | 914 | +59 | 14.44 | 7.54 | 87.35 | 145 | -50 | 5.78 | 9.82 | 81.89 | 200 | -19 | 38.65 | 34.85 | 91.65 | 88 | +7 |
-| RPEL | Chemicals: Major Diversified | 1903.80 | 18.34 | 1 | 4 | 0.12 | 0.15 | 69.82 | 346 | +99 | 7.92 | 1.41 | 70.21 | 340 | -45 | 7.49 | 11.60 | 83.89 | 178 | -33 | 91.78 | 86.52 | 98.85 | 13 | +1 |
-| RUBYMILLS | Textiles | 446.60 | 0.64 | 1 | 3 | -1.38 | -1.35 | 53.81 | 529 | +52 | -8.01 | -13.56 | 13.18 | 989 | -96 | 16.20 | 20.64 | 92.08 | 88 | +21 | N/A | N/A | N/A | N/A | N/A |
-| RUSTOMJEE | Real Estate Development | 387.45 | 2.19 | 1 | 4 | 5.93 | 5.96 | 95.36 | 54 | +162 | 15.28 | 8.33 | 88.84 | 128 | +147 | 2.24 | 6.15 | 75.61 | 269 | +101 | -1.02 | -3.73 | 51.73 | 504 | +74 |
-| SAATVIKGL | Industrial Machinery | 365.35 | 1.49 | 1 | 3 | 6.21 | 6.24 | 95.71 | 50 | -24 | 4.61 | -1.70 | 60.02 | 456 | -67 | -12.59 | -9.24 | 35.12 | 714 | -33 | N/A | N/A | N/A | N/A | N/A |
-| SAKAR | Pharmaceuticals: Major | 971.10 | 11.37 | 1 | 4 | -0.52 | -0.49 | 63.08 | 423 | +523 | -1.81 | -7.73 | 32.07 | 774 | -240 | 12.48 | 16.78 | 90.26 | 108 | +35 | 19.47 | 16.19 | 78.79 | 222 | +48 |
-| SANATHAN | Textiles | 547.80 | 6.22 | 1 | 4 | -6.45 | -6.42 | 9.80 | 1032 | -67 | 10.62 | 3.95 | 78.82 | 242 | -39 | 21.13 | 25.76 | 95.00 | 56 | -13 | 34.53 | 30.84 | 89.73 | 108 | -16 |
-| SANGAMIND | Textiles | 676.05 | 5.76 | 1 | 4 | -0.13 | -0.11 | 66.67 | 382 | -109 | 12.54 | 5.76 | 83.30 | 191 | -98 | 12.64 | 16.95 | 90.45 | 106 | -16 | 27.07 | 23.58 | 84.84 | 159 | -37 |
-| SANGHVIMOV | Finance/Rental/Leasing | 396.65 | 22.67 | 1 | 4 | 7.98 | 8.01 | 98.08 | 23 | +269 | 14.11 | 7.23 | 86.91 | 150 | +5 | -13.25 | -9.93 | 32.67 | 741 | +42 | 10.40 | 7.37 | 68.43 | 330 | +64 |
-| SATIN | Finance/Rental/Leasing | 255.19 | 13.62 | 1 | 4 | 0.25 | 0.28 | 70.95 | 333 | +217 | 11.88 | 5.13 | 82.60 | 199 | -7 | 13.91 | 18.27 | 91.26 | 97 | +2 | 8.48 | 5.50 | 66.31 | 352 | -10 |
-| SETL | Medical Specialties | 342.05 | 21.28 | 1 | 4 | -5.55 | -5.52 | 14.35 | 980 | +0 | -11.53 | -16.87 | 7.03 | 1059 | -137 | -7.43 | -3.89 | 52.23 | 526 | -88 | 147.38 | 140.60 | 99.90 | 2 | +0 |
-| SHAILY | Chemicals: Specialty | 3379.60 | 57.56 | 1 | 4 | 7.93 | 7.96 | 97.90 | 25 | +992 | 10.85 | 4.17 | 79.53 | 234 | +673 | 3.28 | 7.23 | 77.80 | 245 | +407 | 10.06 | 7.04 | 67.75 | 337 | +210 |
-| SHALBY | Hospital/Nursing Management | 128.52 | 1.31 | 1 | 4 | 5.44 | 5.47 | 94.84 | 60 | -14 | 4.73 | -1.58 | 60.81 | 447 | -82 | -17.23 | -14.06 | 21.84 | 860 | -4 | -27.06 | -29.06 | 9.21 | 947 | +9 |
-| SHARDAMOTR | Auto Parts: OEM | 974.45 | 25.30 | 1 | 4 | 0.52 | 0.54 | 73.40 | 305 | -260 | 18.27 | 11.14 | 92.53 | 86 | -48 | 10.37 | 14.59 | 88.08 | 132 | -34 | 17.64 | 14.42 | 76.58 | 245 | -15 |
-| SHILPAMED | Pharmaceuticals: Major | 835.65 | 72.76 | 1 | 4 | -7.22 | -7.20 | 6.56 | 1069 | -36 | -10.34 | -15.74 | 8.61 | 1041 | -133 | -11.97 | -8.60 | 37.03 | 693 | -231 | 62.14 | 57.69 | 96.55 | 37 | -7 |
-| SHREEPUSHK | Chemicals: Specialty | 516.00 | 6.61 | 1 | 4 | 0.40 | 0.43 | 72.35 | 317 | +106 | -4.92 | -10.65 | 21.70 | 892 | -342 | 9.67 | 13.87 | 87.08 | 143 | -50 | 41.49 | 37.61 | 92.90 | 75 | -4 |
-| SHYAMMETL | Metal Fabrication | 1293.00 | 49.08 | 1 | 4 | -0.08 | -0.05 | 67.28 | 375 | +272 | 12.96 | 6.14 | 84.09 | 182 | +34 | 18.24 | 22.77 | 93.72 | 70 | -2 | 31.95 | 28.33 | 88.29 | 123 | -2 |
-| SIGNATURE | Real Estate Development | 856.30 | 35.65 | 1 | 4 | 0.84 | 0.87 | 76.12 | 274 | +74 | 22.02 | 14.66 | 96.05 | 46 | +19 | 11.22 | 15.48 | 89.44 | 117 | +35 | 4.59 | 1.72 | 60.36 | 414 | +23 |
-| SIMPLEXINF | Engineering & Construction | 296.70 | 8.00 | 1 | 4 | -1.82 | -1.79 | 47.68 | 599 | -50 | 17.69 | 10.59 | 91.48 | 98 | +27 | 10.37 | 14.59 | 87.99 | 133 | +45 | 25.08 | 21.66 | 83.11 | 177 | +2 |
-| SKIPPER | Metal Fabrication | 505.20 | 26.19 | 1 | 4 | 3.51 | 3.54 | 90.03 | 115 | +106 | 0.01 | -6.02 | 40.16 | 682 | +153 | -6.65 | -3.08 | 54.14 | 505 | +106 | -11.45 | -13.87 | 33.11 | 698 | +63 |
-| SKYGOLD | Other Consumer Specialties | 808.90 | 156.89 | 1 | 4 | -12.67 | -12.65 | 1.22 | 1130 | +4 | -5.76 | -11.44 | 18.89 | 924 | +157 | 0.22 | 4.06 | 70.06 | 330 | +7 | 43.61 | 39.68 | 93.57 | 68 | -3 |
-| SONACOMS | Auto Parts: OEM | 881.50 | 229.31 | 1 | 4 | -2.28 | -2.26 | 42.17 | 662 | -169 | 0.23 | -5.81 | 41.30 | 669 | -174 | 8.42 | 12.57 | 84.90 | 167 | -13 | 46.08 | 42.07 | 94.34 | 60 | +3 |
-| SOUTHBANK | Major Banks | 57.59 | 99.69 | 1 | 4 | -3.44 | -3.41 | 30.62 | 794 | +31 | 5.40 | -0.96 | 63.36 | 418 | -87 | 26.13 | 30.95 | 96.72 | 37 | -8 | 32.09 | 28.47 | 88.39 | 122 | -44 |
-| SPORTKING | Textiles | 230.78 | 15.62 | 1 | 4 | 3.52 | 3.55 | 90.20 | 113 | -86 | 10.07 | 3.43 | 77.33 | 259 | -73 | 1.80 | 5.69 | 74.25 | 284 | -93 | 26.50 | 23.04 | 84.26 | 165 | +21 |
-| STEL | Financial Conglomerates | 620.25 | 0.34 | 1 | 4 | 3.02 | 3.05 | 88.63 | 131 | -9 | 17.76 | 10.66 | 91.56 | 97 | -73 | -6.19 | -2.60 | 55.51 | 490 | -190 | 26.47 | 23.00 | 84.07 | 167 | -50 |
-| SUNTV | Broadcasting | 651.10 | 53.43 | 1 | 4 | -6.40 | -6.37 | 10.06 | 1029 | +93 | 3.21 | -3.01 | 54.57 | 518 | +285 | 39.68 | 45.02 | 99.00 | 12 | +15 | 26.37 | 22.90 | 83.97 | 168 | +58 |
-| TANLA | Information Technology Services | 624.70 | 78.00 | 1 | 4 | -6.76 | -6.74 | 8.14 | 1051 | -15 | 4.34 | -1.95 | 58.88 | 469 | -261 | 17.83 | 22.34 | 93.36 | 74 | -13 | 18.25 | 15.01 | 77.26 | 238 | -19 |
-| TARSONS | Containers/Packaging | 294.85 | 1.97 | 1 | 4 | -2.91 | -2.89 | 36.31 | 729 | -154 | -3.20 | -9.04 | 26.36 | 839 | -63 | -11.10 | -7.70 | 40.13 | 659 | -3 | 42.80 | 38.89 | 93.19 | 72 | +0 |
-| TATAELXSI | Information Technology Services | 3860.70 | 102.96 | 1 | 4 | 3.64 | 3.67 | 90.73 | 107 | +8 | 2.81 | -3.39 | 53.08 | 535 | +11 | 7.88 | 12.01 | 84.44 | 172 | +51 | -11.19 | -13.62 | 33.97 | 689 | +100 |
-| TCPLPACK | Commercial Printing/Forms | 4333.20 | 4.56 | 1 | 4 | -4.24 | -4.21 | 23.36 | 877 | +110 | 5.65 | -0.72 | 63.97 | 411 | -2 | 10.88 | 15.12 | 88.81 | 124 | +2 | 71.63 | 66.92 | 97.98 | 22 | +7 |
-| TEAMLEASE | Personnel Services | 1027.90 | 7.03 | 1 | 4 | 3.51 | 3.54 | 90.11 | 114 | -58 | -1.90 | -7.82 | 31.90 | 776 | -50 | -19.91 | -16.85 | 16.01 | 924 | -52 | -25.37 | -27.41 | 11.04 | 928 | -6 |
-| TIPSMUSIC | Movies/Entertainment | 777.75 | 51.69 | 1 | 4 | -4.33 | -4.30 | 22.92 | 882 | +107 | -2.03 | -7.94 | 30.67 | 790 | -263 | 20.80 | 25.42 | 94.81 | 58 | +7 | 17.87 | 14.64 | 76.87 | 242 | +44 |
-| UGROCAP | Finance/Rental/Leasing | 77.55 | 40.07 | 1 | 4 | 5.30 | 5.32 | 94.66 | 62 | -43 | 3.29 | -2.94 | 55.01 | 513 | -111 | -10.92 | -7.52 | 40.58 | 654 | -62 | -16.63 | -18.92 | 22.55 | 808 | +9 |
-| UNITEDPOLY | Textiles | 52.75 | 3.13 | 1 | 3 | -5.60 | -5.58 | 14.09 | 983 | -805 | -4.32 | -10.09 | 24.08 | 865 | -272 | 40.33 | 45.70 | 99.09 | 11 | +1 | N/A | N/A | N/A | N/A | N/A |
-| UNOMINDA | Auto Parts: OEM | 1390.00 | 137.27 | 1 | 4 | 0.36 | 0.39 | 71.83 | 323 | +43 | 26.38 | 18.75 | 97.98 | 24 | +1 | 8.93 | 13.10 | 85.53 | 160 | +2 | 28.38 | 24.86 | 85.70 | 150 | +11 |
-| URBANCO | Packaged Software | 170.72 | 142.09 | 1 | 3 | -3.03 | -3.00 | 34.91 | 745 | +167 | 18.00 | 10.88 | 92.09 | 91 | +65 | 2.16 | 6.07 | 75.34 | 272 | +86 | N/A | N/A | N/A | N/A | N/A |
-| VIJAYA | Medical/Nursing Services | 1587.10 | 31.40 | 1 | 4 | 5.06 | 5.09 | 93.96 | 70 | -10 | 10.00 | 3.37 | 76.98 | 263 | -68 | 4.52 | 8.52 | 80.07 | 220 | -103 | 24.05 | 20.65 | 82.44 | 184 | +3 |
-| VIMTALABS | Miscellaneous Commercial Services | 490.75 | 4.35 | 1 | 4 | 3.98 | 4.01 | 92.04 | 92 | +49 | -4.41 | -10.18 | 23.46 | 872 | +17 | -23.73 | -20.81 | 9.92 | 991 | -40 | -4.38 | -7.00 | 46.64 | 557 | -127 |
-| VMM | Apparel/Footwear Retail | 96.05 | 77.28 | 1 | 4 | 4.41 | 4.44 | 93.00 | 81 | +7 | 9.21 | 2.62 | 74.34 | 293 | +52 | -13.19 | -9.87 | 32.76 | 740 | -82 | -20.15 | -22.34 | 17.18 | 864 | +2 |
-| VOLTAS | Industrial Machinery | 1215.50 | 126.16 | 1 | 4 | -1.74 | -1.71 | 49.08 | 583 | -560 | 20.12 | 12.88 | 94.73 | 61 | -45 | 1.77 | 5.66 | 74.07 | 286 | -40 | -1.58 | -4.28 | 51.25 | 509 | -20 |
-| VRLLOG | Trucking | 314.90 | 46.64 | 1 | 4 | -7.74 | -7.71 | 4.90 | 1088 | -308 | 16.80 | 9.76 | 90.60 | 108 | -64 | 3.88 | 7.85 | 78.89 | 233 | -100 | 33.80 | 30.13 | 89.44 | 111 | -9 |
-| VSSL | Steel | 370.10 | 5.53 | 1 | 4 | -2.59 | -2.57 | 38.85 | 700 | +60 | 12.60 | 5.81 | 83.48 | 189 | +411 | 3.92 | 7.89 | 78.98 | 232 | -46 | 36.37 | 32.63 | 90.88 | 96 | -3 |
-| WELCORP | Industrial Machinery | 2232.80 | 229.82 | 1 | 4 | 0.37 | 0.40 | 72.09 | 320 | +609 | -12.93 | -18.18 | 5.62 | 1075 | +9 | -6.62 | -3.04 | 54.23 | 504 | +129 | 57.95 | 53.62 | 95.87 | 44 | +4 |
-| WESTLIFE | Restaurants | 623.85 | 32.65 | 1 | 4 | -8.82 | -8.80 | 3.41 | 1105 | -273 | 4.72 | -1.60 | 60.63 | 449 | -116 | 9.22 | 13.40 | 85.99 | 155 | -82 | 45.37 | 41.39 | 93.95 | 64 | -19 |
-| XPROINDIA | Industrial Specialties | 1184.80 | 9.43 | 1 | 4 | -5.79 | -5.76 | 13.56 | 989 | +46 | 18.36 | 11.22 | 92.79 | 83 | +8 | 3.19 | 7.13 | 77.62 | 247 | -11 | 2.79 | -0.02 | 57.97 | 439 | +6 |
-| YASHO | Food: Specialty/Candy | 3410.40 | 16.52 | 1 | 4 | -5.72 | -5.69 | 13.65 | 988 | +115 | 3.20 | -3.02 | 54.48 | 519 | +535 | -18.96 | -15.86 | 17.83 | 904 | +54 | 52.18 | 48.01 | 95.20 | 51 | -10 |
-| YATRA | Other Consumer Services | 87.86 | 71.80 | 1 | 4 | -2.32 | -2.30 | 41.99 | 664 | -92 | 18.15 | 11.03 | 92.27 | 89 | +8 | -17.44 | -14.28 | 21.11 | 868 | -5 | -8.81 | -11.31 | 37.72 | 650 | -37 |
-| YUKEN | Industrial Machinery | 1019.50 | 1.37 | 1 | 4 | 1.72 | 1.74 | 82.50 | 201 | +138 | -8.29 | -13.82 | 12.74 | 994 | +48 | 3.07 | 7.02 | 77.34 | 250 | +22 | 46.85 | 42.83 | 94.53 | 58 | -3 |
-| ZAGGLE | Packaged Software | 162.51 | 19.54 | 1 | 4 | 5.21 | 5.24 | 94.23 | 67 | +875 | 0.73 | -5.35 | 43.94 | 639 | +383 | -11.92 | -8.55 | 37.22 | 691 | +255 | -20.00 | -22.20 | 17.27 | 863 | +64 |
-| ZENTEC | Information Technology Services | 1768.10 | 68.30 | 1 | 4 | 3.64 | 3.67 | 90.64 | 108 | +365 | 12.70 | 5.91 | 83.57 | 188 | +97 | -0.62 | 3.18 | 68.79 | 344 | +124 | 4.74 | 1.87 | 60.65 | 411 | +21 |
-| ZOTA | Pharmaceuticals: Major | 1314.50 | 5.94 | 1 | 4 | 0.65 | 0.68 | 74.19 | 296 | +51 | 3.41 | -2.82 | 55.54 | 507 | +13 | 24.74 | 29.51 | 95.91 | 46 | +7 | 7.25 | 4.31 | 64.49 | 371 | -113 |
-| 3MINDIA | Industrial Conglomerates | 28195.00 | 13.35 | 0 | 4 | 0.70 | 0.72 | 74.72 | 290 | +82 | -2.20 | -8.10 | 30.32 | 794 | +48 | -15.38 | -12.14 | 26.48 | 809 | +84 | -13.10 | -15.48 | 28.79 | 743 | +28 |
-| 5PAISA | Investment Banks/Brokers | 342.25 | 0.99 | 0 | 4 | 0.41 | 0.44 | 72.70 | 313 | +222 | 1.77 | -4.37 | 48.68 | 585 | -132 | -4.02 | -0.35 | 61.42 | 425 | +104 | 5.29 | 2.41 | 61.61 | 401 | +3 |
-| AADHARHFC | Finance/Rental/Leasing | 426.90 | 12.77 | 0 | 4 | 2.88 | 2.91 | 88.19 | 136 | +179 | -0.84 | -6.82 | 35.59 | 734 | +49 | -8.80 | -5.31 | 47.50 | 578 | +16 | -7.69 | -10.22 | 40.31 | 623 | +10 |
-| AARTIIND | Chemicals: Major Diversified | 437.60 | 32.41 | 0 | 4 | -4.21 | -4.19 | 23.62 | 874 | +129 | 0.07 | -5.97 | 40.51 | 678 | -8 | -16.55 | -13.36 | 23.48 | 842 | +61 | -5.65 | -8.23 | 44.53 | 579 | +31 |
-| AAVAS | Finance/Rental/Leasing | 1099.50 | 22.48 | 0 | 4 | -1.80 | -1.78 | 47.94 | 596 | +224 | -1.49 | -7.43 | 33.13 | 762 | +121 | -12.82 | -9.49 | 34.30 | 723 | +67 | -16.20 | -18.49 | 23.32 | 800 | +13 |
-| ACC | Construction Materials | 1263.60 | 25.10 | 0 | 4 | -0.39 | -0.37 | 64.39 | 408 | -226 | 10.82 | 4.14 | 79.26 | 237 | +41 | -1.01 | 2.78 | 67.97 | 353 | +40 | -6.46 | -9.03 | 43.28 | 592 | +25 |
-| ACCELYA | Packaged Software | 981.85 | 2.07 | 0 | 4 | 0.73 | 0.76 | 74.98 | 287 | +89 | 3.34 | -2.89 | 55.36 | 509 | +17 | -12.95 | -9.62 | 33.67 | 730 | +13 | -14.15 | -16.50 | 27.26 | 759 | +22 |
-| ACI | Chemicals: Major Diversified | 431.10 | 17.99 | 0 | 4 | -1.35 | -1.32 | 54.24 | 524 | +92 | -6.45 | -12.09 | 17.05 | 945 | +42 | -11.20 | -7.80 | 39.49 | 666 | -6 | -19.50 | -21.70 | 17.95 | 856 | +1 |
-| ACMESOLAR | Engineering & Construction | 415.80 | 34.10 | 0 | 4 | 1.63 | 1.65 | 81.71 | 210 | +25 | 1.13 | -4.97 | 46.05 | 615 | +42 | 3.45 | 7.40 | 78.07 | 242 | -53 | 26.36 | 22.90 | 83.88 | 169 | +6 |
-| ADFFOODS | Food: Specialty/Candy | 219.84 | 3.19 | 0 | 4 | -0.11 | -0.09 | 67.02 | 378 | +92 | -8.86 | -14.35 | 11.34 | 1010 | +5 | -18.64 | -15.53 | 18.56 | 896 | +31 | -24.27 | -26.35 | 12.19 | 916 | -58 |
-| ADOR | Miscellaneous Manufacturing | 1378.50 | 3.43 | 0 | 4 | -3.36 | -3.34 | 31.50 | 784 | -301 | 0.96 | -5.13 | 45.08 | 626 | -58 | -19.16 | -16.07 | 17.38 | 909 | -143 | 20.80 | 17.49 | 79.75 | 212 | -50 |
-| ADVAIT | Electrical Products | 1825.00 | 7.24 | 0 | 2 | -1.48 | -1.45 | 52.58 | 543 | +125 | 8.12 | 1.60 | 71.00 | 331 | -17 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| ADVENZYMES | Food: Specialty/Candy | 284.00 | 5.94 | 0 | 4 | -4.14 | -4.11 | 24.15 | 868 | -397 | 9.34 | 2.74 | 75.04 | 285 | +77 | -3.43 | 0.26 | 62.88 | 409 | +93 | -25.31 | -27.36 | 11.13 | 927 | +34 |
-| AEQUS | Aerospace & Defense | 221.54 | 87.40 | 0 | 2 | -4.55 | -4.52 | 21.00 | 904 | +126 | 4.52 | -1.78 | 59.84 | 458 | +261 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| AEROENTER | Industrial Machinery | 122.14 | 8.30 | 0 | 4 | -10.92 | -10.89 | 1.75 | 1124 | +12 | -2.49 | -8.37 | 28.91 | 810 | +36 | -11.78 | -8.41 | 37.76 | 685 | +219 | 24.13 | 20.72 | 82.63 | 182 | +11 |
-| AEROFLEX | Industrial Machinery | 482.35 | 197.96 | 0 | 4 | -1.48 | -1.45 | 52.49 | 544 | +412 | -2.01 | -7.92 | 30.93 | 787 | +3 | -8.19 | -4.68 | 49.68 | 554 | +183 | 11.04 | 8.00 | 69.10 | 323 | -14 |
-| AFCONS | Engineering & Construction | 223.22 | 14.21 | 0 | 4 | 3.23 | 3.26 | 89.24 | 124 | +175 | 7.00 | 0.55 | 67.93 | 366 | +50 | -21.86 | -18.87 | 12.19 | 966 | +5 | -31.04 | -32.93 | 6.05 | 980 | +10 |
-| AFFLE | Packaged Software | 1627.70 | 47.75 | 0 | 4 | 2.32 | 2.35 | 85.74 | 164 | -18 | 15.36 | 8.40 | 88.93 | 127 | -68 | 1.86 | 5.76 | 74.43 | 282 | +2 | 10.76 | 7.72 | 68.81 | 326 | +19 |
-| AFSL | Investment Managers | 201.02 | 0.10 | 0 | 4 | -0.03 | -0.01 | 67.89 | 368 | +30 | -0.02 | -6.05 | 39.89 | 685 | -21 | -5.22 | -1.60 | 58.51 | 457 | -15 | 0.01 | -2.73 | 53.74 | 483 | -3 |
-| AGI | Containers/Packaging | 644.70 | 5.44 | 0 | 4 | -3.40 | -3.37 | 31.06 | 789 | +89 | -10.27 | -15.68 | 8.79 | 1039 | -4 | -16.93 | -13.75 | 22.84 | 849 | +2 | 5.63 | 2.73 | 61.90 | 398 | +10 |
-| AHLUCONT | Engineering & Construction | 508.35 | 6.18 | 0 | 4 | -6.80 | -6.78 | 7.79 | 1055 | +25 | -4.26 | -10.03 | 24.17 | 864 | +68 | -17.90 | -14.76 | 19.93 | 881 | +67 | -34.50 | -36.29 | 4.13 | 1000 | +9 |
-| AIAENG | Industrial Machinery | 3399.70 | 35.18 | 0 | 4 | 2.15 | 2.18 | 84.78 | 175 | +51 | -5.77 | -11.46 | 18.72 | 926 | -17 | -20.15 | -17.09 | 15.47 | 930 | -14 | -24.81 | -26.87 | 11.61 | 922 | +6 |
-| AIIL | Financial Conglomerates | 552.60 | 9.82 | 0 | 4 | 0.64 | 0.67 | 74.02 | 298 | +139 | 11.85 | 5.11 | 82.51 | 200 | -32 | -1.48 | 2.29 | 67.15 | 362 | -87 | 21.58 | 18.25 | 80.33 | 206 | -8 |
-| AJANTPHARM | Pharmaceuticals: Major | 3368.20 | 48.15 | 0 | 4 | 2.99 | 3.02 | 88.54 | 132 | +30 | -2.65 | -8.52 | 28.21 | 818 | -176 | -6.49 | -2.91 | 54.60 | 500 | -53 | 14.99 | 11.84 | 73.51 | 277 | -24 |
-| AJAXENGG | Trucks/Construction/Farm Machinery | 596.00 | 4.11 | 0 | 4 | -4.63 | -4.61 | 20.47 | 910 | -210 | 7.64 | 1.15 | 69.51 | 348 | -112 | 3.74 | 7.71 | 78.71 | 235 | -59 | -0.08 | -2.82 | 53.55 | 485 | -60 |
-| AKUMS | Biotechnology | 728.70 | 20.37 | 0 | 4 | 2.22 | 2.25 | 85.04 | 172 | +22 | 0.83 | -5.25 | 44.55 | 632 | -52 | -6.18 | -2.59 | 55.69 | 488 | -43 | 34.83 | 31.14 | 89.83 | 107 | -19 |
-| ALGOQUANT | Investment Banks/Brokers | 79.90 | 10.11 | 0 | 2 | -5.02 | -4.99 | 17.85 | 940 | +65 | 5.13 | -1.21 | 62.04 | 433 | +66 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| ALKEM | Pharmaceuticals: Major | 5156.50 | 74.04 | 0 | 4 | 0.22 | 0.25 | 70.60 | 337 | +277 | 1.71 | -4.43 | 48.07 | 592 | +16 | -3.25 | 0.46 | 63.06 | 407 | +8 | -2.23 | -4.91 | 50.19 | 520 | -14 |
-| ALKYLAMINE | Chemicals: Specialty | 1471.00 | 10.36 | 0 | 4 | -6.47 | -6.45 | 9.45 | 1036 | +13 | -10.95 | -16.32 | 7.64 | 1052 | -11 | -26.59 | -23.78 | 6.28 | 1031 | +10 | -19.92 | -22.11 | 17.37 | 862 | -46 |
-| ALLDIGI | Miscellaneous Commercial Services | 830.50 | 1.38 | 0 | 4 | 0.16 | 0.18 | 70.25 | 341 | +60 | 2.58 | -3.60 | 52.20 | 545 | -81 | 2.09 | 5.99 | 75.07 | 275 | -21 | 0.55 | -2.20 | 54.61 | 474 | -1 |
-| ALLTIME | Miscellaneous Manufacturing | 200.59 | 0.85 | 0 | 4 | 0.48 | 0.51 | 73.23 | 307 | +192 | 2.51 | -3.67 | 52.02 | 547 | +205 | 0.45 | 4.29 | 70.61 | 324 | +61 | -8.40 | -10.91 | 38.58 | 641 | +21 |
-| AMAGI | Packaged Software | 582.80 | 14.95 | 0 | 2 | 1.40 | 1.43 | 79.97 | 230 | -26 | 5.78 | -0.60 | 64.76 | 402 | +21 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| AMBER | Industrial Machinery | 6826.00 | 229.97 | 0 | 4 | 1.93 | 1.95 | 83.55 | 189 | -176 | 10.01 | 3.37 | 77.07 | 262 | -112 | -10.42 | -6.99 | 42.22 | 636 | -54 | -9.08 | -11.57 | 37.24 | 655 | -23 |
-| AMBUJACEM | Construction Materials | 390.95 | 147.95 | 0 | 3 | -1.47 | -1.45 | 52.67 | 542 | -320 | 11.32 | 4.61 | 80.76 | 220 | -18 | -2.54 | 1.19 | 64.51 | 391 | +44 | N/A | N/A | N/A | N/A | N/A |
-| AMRUTANJAN | Pharmaceuticals: Other | 515.90 | 1.26 | 0 | 4 | -0.22 | -0.19 | 65.53 | 395 | +68 | 4.65 | -1.67 | 60.28 | 453 | -15 | 1.29 | 5.16 | 72.98 | 298 | +9 | -5.61 | -8.19 | 44.63 | 578 | +33 |
-| ANANTRAJ | Homebuilding | 446.35 | 73.99 | 0 | 4 | -2.66 | -2.63 | 38.32 | 706 | -19 | -3.77 | -9.58 | 25.31 | 851 | +30 | -26.09 | -23.26 | 6.92 | 1024 | -1 | -18.55 | -20.78 | 19.39 | 841 | +10 |
-| ANDHRAPAP | Pulp & Paper | 60.87 | 1.11 | 0 | 4 | -3.41 | -3.38 | 30.80 | 792 | -4 | -7.79 | -13.35 | 13.80 | 982 | -13 | 0.30 | 4.13 | 70.34 | 327 | -2 | -2.33 | -5.00 | 50.10 | 521 | -14 |
-| ANDHRSUGAR | Chemicals: Specialty | 79.36 | 2.15 | 0 | 4 | 2.77 | 2.80 | 87.49 | 144 | +352 | -2.00 | -7.91 | 31.02 | 786 | +48 | -20.35 | -17.31 | 14.92 | 936 | +17 | 0.28 | -2.47 | 54.32 | 477 | +26 |
-| ANTELOPUS | Integrated Oil | 794.05 | 33.12 | 0 | 4 | -6.13 | -6.10 | 11.46 | 1013 | +104 | -24.76 | -29.29 | 0.70 | 1131 | +5 | 1.24 | 5.12 | 72.79 | 300 | +75 | -8.92 | -11.41 | 37.52 | 652 | +18 |
-| ANURAS | Pharmaceuticals: Major | 1324.50 | 58.09 | 0 | 4 | -0.19 | -0.16 | 66.05 | 389 | +54 | 15.03 | 8.10 | 88.22 | 135 | -14 | 4.89 | 8.90 | 80.44 | 216 | -7 | -0.20 | -2.94 | 53.36 | 487 | +0 |
-| APARINDS | Electronic Equipment/Instruments | 14200.00 | 241.84 | 0 | 4 | -1.65 | -1.62 | 50.39 | 568 | -343 | -7.91 | -13.46 | 13.44 | 986 | -68 | -19.78 | -16.71 | 16.20 | 922 | -7 | 4.89 | 2.02 | 60.84 | 409 | -41 |
-| APCOTEXIND | Chemicals: Specialty | 479.00 | 3.68 | 0 | 4 | -1.22 | -1.19 | 55.91 | 505 | -31 | -5.14 | -10.86 | 20.74 | 903 | +49 | -25.89 | -23.05 | 7.10 | 1022 | -60 | -3.90 | -6.54 | 47.89 | 544 | -36 |
-| APLAPOLLO | Steel | 1481.50 | 561.98 | 0 | 4 | -31.03 | -31.01 | 0.00 | 1144 | +2 | -31.58 | -35.71 | 0.18 | 1137 | +1 | -33.37 | -30.82 | 2.55 | 1072 | +7 | -17.94 | -20.19 | 20.73 | 827 | -23 |
-| APOLLO | Electronic Production Equipment | 428.80 | 512.36 | 0 | 4 | -4.55 | -4.53 | 20.91 | 905 | +105 | 3.35 | -2.88 | 55.45 | 508 | +212 | 11.06 | 15.31 | 89.26 | 119 | +34 | 5.21 | 2.33 | 61.42 | 403 | +138 |
-| APOLLOPIPE | Miscellaneous Manufacturing | 469.95 | 18.85 | 0 | 4 | -15.32 | -15.29 | 0.61 | 1137 | +3 | -2.46 | -8.34 | 29.09 | 808 | +65 | -25.05 | -22.19 | 7.92 | 1013 | -1 | -3.39 | -6.04 | 48.75 | 535 | -17 |
-| APOLLOTYRE | Automotive Aftermarket | 426.15 | 33.00 | 0 | 4 | 1.61 | 1.64 | 81.45 | 213 | -134 | 10.09 | 3.45 | 77.59 | 256 | -89 | -2.92 | 0.80 | 63.51 | 402 | -62 | 8.95 | 5.96 | 66.70 | 348 | -34 |
-| APTUS | Finance/Rental/Leasing | 186.91 | 87.19 | 0 | 4 | -2.60 | -2.57 | 38.76 | 701 | -241 | -5.90 | -11.57 | 18.37 | 930 | +16 | -24.89 | -22.02 | 8.28 | 1009 | +10 | -27.44 | -29.43 | 9.02 | 949 | +4 |
-| ARE&M | Electrical Products | 726.65 | 32.99 | 0 | 4 | -3.70 | -3.67 | 27.65 | 828 | -236 | 2.50 | -3.68 | 51.85 | 549 | -35 | -18.60 | -15.48 | 18.65 | 895 | +22 | -15.41 | -17.73 | 24.47 | 788 | -13 |
-| ARKADE | Homebuilding | 110.17 | 1.80 | 0 | 4 | -3.39 | -3.37 | 31.23 | 787 | +22 | 3.03 | -3.18 | 53.87 | 526 | -16 | -10.69 | -7.27 | 41.31 | 646 | +105 | -3.31 | -5.96 | 48.85 | 534 | +10 |
-| ARSSBL | Investment Banks/Brokers | 494.10 | 5.86 | 0 | 3 | -1.24 | -1.21 | 55.64 | 508 | +169 | 4.79 | -1.53 | 61.16 | 443 | -16 | -2.88 | 0.84 | 63.69 | 400 | +0 | N/A | N/A | N/A | N/A | N/A |
-| ARTEMISMED | Hospital/Nursing Management | 318.70 | 5.45 | 0 | 4 | -6.04 | -6.02 | 11.81 | 1009 | -11 | 6.75 | 0.31 | 67.31 | 373 | -17 | 0.39 | 4.23 | 70.43 | 326 | -49 | 18.76 | 15.51 | 77.83 | 232 | -8 |
-| ARVIND | Textiles | 510.45 | 31.49 | 0 | 4 | -2.72 | -2.69 | 37.80 | 712 | -453 | -0.35 | -6.36 | 37.96 | 707 | -250 | -8.13 | -4.62 | 49.95 | 551 | -146 | 5.24 | 2.35 | 61.52 | 402 | +4 |
-| ARVINDFASN | Apparel/Footwear Retail | 355.40 | 12.33 | 0 | 4 | -2.58 | -2.55 | 39.20 | 696 | -508 | -2.60 | -8.48 | 28.38 | 816 | -20 | -21.46 | -18.45 | 12.83 | 959 | -25 | -25.52 | -27.56 | 10.84 | 930 | -5 |
-| ARVSMART | Real Estate Development | 631.55 | 3.04 | 0 | 4 | -0.96 | -0.94 | 59.14 | 468 | +239 | 7.31 | 0.84 | 68.80 | 356 | +49 | -5.11 | -1.48 | 58.78 | 454 | +42 | 7.75 | 4.80 | 65.36 | 362 | +51 |
-| ASALCBR | Beverages: Alcoholic | 515.70 | 2.12 | 0 | 4 | -6.57 | -6.54 | 9.01 | 1041 | -234 | -4.37 | -10.13 | 23.73 | 869 | -24 | -26.41 | -23.60 | 6.37 | 1030 | -4 | -37.98 | -39.68 | 2.98 | 1012 | -2 |
-| ASHAPURMIN | Other Metals/Minerals | 403.50 | 13.83 | 0 | 4 | -5.36 | -5.33 | 15.22 | 970 | -718 | -5.82 | -11.50 | 18.54 | 928 | -103 | -28.51 | -25.78 | 4.82 | 1047 | +3 | -44.15 | -45.68 | 1.73 | 1025 | +1 |
-| ASHIANA | Real Estate Development | 360.10 | 1.89 | 0 | 4 | 0.13 | 0.15 | 69.99 | 344 | +388 | 4.80 | -1.52 | 61.34 | 441 | +173 | -1.85 | 1.90 | 66.24 | 372 | +78 | 1.24 | -1.54 | 55.47 | 465 | +73 |
-| ASHOKLEY | Trucks/Construction/Farm Machinery | 156.15 | 314.85 | 0 | 4 | -6.02 | -5.99 | 12.25 | 1004 | -271 | 7.80 | 1.30 | 70.12 | 341 | -95 | -11.10 | -7.70 | 40.04 | 660 | -54 | 7.07 | 4.14 | 64.20 | 374 | +12 |
-| ASIANENE | Oil & Gas Production | 347.10 | 8.08 | 0 | 4 | -7.29 | -7.27 | 6.21 | 1073 | +22 | -15.50 | -20.59 | 3.78 | 1096 | -22 | -26.38 | -23.57 | 6.46 | 1029 | +15 | -1.59 | -4.28 | 51.15 | 510 | -14 |
-| ASIANHOTNR | Hotels/Resorts/Cruise lines | 318.65 | 0.46 | 0 | 4 | 3.29 | 3.32 | 89.50 | 121 | +228 | 5.76 | -0.62 | 64.50 | 405 | +172 | -13.03 | -9.71 | 33.39 | 733 | -420 | 5.71 | 2.81 | 62.19 | 395 | +39 |
-| ASTEC | Chemicals: Agricultural | 533.35 | 3.80 | 0 | 4 | -3.46 | -3.43 | 30.36 | 797 | -115 | -11.54 | -16.88 | 6.94 | 1060 | +42 | -4.88 | -1.24 | 59.51 | 446 | +87 | -31.87 | -33.74 | 5.57 | 985 | +2 |
-| ASTRAL | Miscellaneous Manufacturing | 1258.30 | 69.07 | 0 | 4 | 0.31 | 0.34 | 71.39 | 328 | -53 | -7.52 | -13.10 | 14.67 | 972 | +47 | -17.34 | -14.17 | 21.47 | 864 | +13 | -18.13 | -20.37 | 19.96 | 835 | -6 |
-| ASTRAMICRO | Telecommunications Equipment | 1620.60 | 56.23 | 0 | 4 | -3.05 | -3.02 | 34.56 | 749 | +69 | 3.32 | -2.92 | 55.18 | 511 | +56 | -2.73 | 1.00 | 63.88 | 398 | +85 | 22.43 | 19.07 | 81.19 | 197 | +10 |
-| ASTRAZEN | Pharmaceuticals: Major | 6136.50 | 7.17 | 0 | 4 | 0.38 | 0.41 | 72.27 | 318 | -135 | -1.61 | -7.54 | 32.69 | 767 | -204 | -11.72 | -8.35 | 38.03 | 682 | +30 | -28.29 | -30.25 | 8.45 | 955 | +9 |
-| ATGL | Gas Distributors | 547.70 | 24.06 | 0 | 4 | -2.98 | -2.95 | 35.52 | 738 | +51 | 2.66 | -3.53 | 52.64 | 540 | +47 | -11.83 | -8.46 | 37.58 | 687 | +71 | -23.68 | -25.77 | 13.05 | 907 | +25 |
-| ATLANTAELE | Electrical Products | 1442.60 | 15.91 | 0 | 3 | -0.67 | -0.65 | 61.33 | 443 | +403 | -11.90 | -17.21 | 6.50 | 1065 | +25 | -21.19 | -18.17 | 13.19 | 955 | -27 | N/A | N/A | N/A | N/A | N/A |
-| ATUL | Chemicals: Agricultural | 5098.00 | 21.12 | 0 | 4 | 0.67 | 0.70 | 74.37 | 294 | -26 | -2.44 | -8.32 | 29.17 | 807 | +114 | -20.24 | -17.19 | 15.01 | 935 | +7 | -23.40 | -25.50 | 13.53 | 902 | +2 |
-| ATULAUTO | Motor Vehicles | 398.15 | 2.94 | 0 | 4 | -0.51 | -0.48 | 63.17 | 422 | +37 | -3.42 | -9.24 | 26.10 | 842 | +17 | -18.19 | -15.06 | 19.29 | 888 | +10 | -15.03 | -17.35 | 24.95 | 783 | +43 |
-| AUBANK | Regional Banks | 982.00 | 217.93 | 0 | 4 | -0.19 | -0.17 | 65.88 | 391 | -225 | 11.71 | 4.97 | 82.25 | 203 | -119 | -9.59 | -6.13 | 44.59 | 610 | -115 | 1.17 | -1.60 | 55.37 | 466 | -39 |
-| AURIONPRO | Information Technology Services | 568.00 | 11.27 | 0 | 4 | 2.27 | 2.30 | 85.48 | 167 | +120 | 5.65 | -0.72 | 64.15 | 409 | +120 | -19.91 | -16.85 | 16.11 | 923 | +6 | -29.84 | -31.76 | 6.91 | 971 | +17 |
-| AURUM | Packaged Software | 217.63 | 10.40 | 0 | 4 | -0.07 | -0.05 | 67.37 | 374 | +144 | 1.94 | -4.21 | 49.30 | 578 | +113 | -5.89 | -2.29 | 56.14 | 483 | +77 | 20.75 | 17.44 | 79.56 | 214 | +21 |
-| AUTOAXLES | Auto Parts: OEM | 1739.50 | 5.23 | 0 | 4 | -3.52 | -3.49 | 29.66 | 805 | -14 | 9.89 | 3.26 | 76.63 | 267 | -4 | 0.63 | 4.48 | 71.43 | 315 | -24 | 1.39 | -1.39 | 55.95 | 460 | +17 |
-| AVADHSUGAR | Agricultural Commodities/Milling | 869.95 | 7.62 | 0 | 3 | 2.23 | 2.26 | 85.13 | 171 | +89 | 5.50 | -0.86 | 63.71 | 414 | +209 | 1.71 | 5.60 | 73.70 | 290 | +45 | N/A | N/A | N/A | N/A | N/A |
-| AVALON | Electronic Production Equipment | 1814.70 | 69.94 | 0 | 4 | 1.80 | 1.83 | 82.76 | 198 | +778 | -11.33 | -16.67 | 7.21 | 1057 | +70 | -23.54 | -20.61 | 10.28 | 987 | +10 | 19.72 | 16.44 | 78.89 | 221 | +92 |
-| AVANTEL | Telecommunications Equipment | 149.73 | 30.71 | 0 | 4 | -6.77 | -6.75 | 7.96 | 1053 | -283 | 11.38 | 4.66 | 80.93 | 218 | +22 | -6.51 | -2.93 | 54.50 | 501 | -118 | -14.78 | -17.12 | 25.82 | 774 | -34 |
-| AVANTIFEED | Agricultural Commodities/Milling | 702.20 | 56.91 | 0 | 4 | -1.63 | -1.60 | 50.66 | 565 | +171 | 5.23 | -1.12 | 62.39 | 429 | +56 | -14.85 | -11.60 | 27.84 | 794 | +7 | -40.07 | -41.71 | 2.59 | 1016 | +2 |
-| AVL | Electronics/Appliance Stores | 530.55 | 8.21 | 0 | 4 | -1.81 | -1.79 | 47.77 | 598 | +76 | -6.42 | -12.06 | 17.22 | 943 | -12 | -11.65 | -8.27 | 38.31 | 679 | -66 | 0.87 | -1.90 | 54.89 | 471 | -61 |
-| AWFIS | Real Estate Development | 272.24 | 21.40 | 0 | 4 | -3.55 | -3.52 | 29.22 | 810 | +80 | 13.59 | 6.74 | 85.76 | 163 | -1 | 5.15 | 9.17 | 80.89 | 211 | -50 | -12.62 | -15.01 | 30.13 | 729 | +24 |
-| AWL | Agricultural Commodities/Milling | 165.48 | 33.61 | 0 | 4 | -3.34 | -3.31 | 31.76 | 781 | -28 | -0.01 | -6.04 | 40.07 | 683 | +233 | -14.06 | -10.77 | 30.03 | 770 | +27 | -12.99 | -15.37 | 29.17 | 739 | -12 |
-| AXISCADES | Miscellaneous Commercial Services | 1803.80 | 25.50 | 0 | 4 | -6.72 | -6.70 | 8.49 | 1047 | -164 | -10.46 | -15.86 | 8.52 | 1042 | -98 | 7.93 | 12.06 | 84.53 | 171 | -85 | 7.20 | 4.27 | 64.40 | 372 | -24 |
-| AYMSYNTEX | Textiles | 264.12 | 2.48 | 0 | 4 | -4.19 | -4.16 | 23.71 | 873 | -22 | 8.80 | 2.24 | 73.29 | 305 | -104 | -5.82 | -2.22 | 56.51 | 479 | -261 | 18.55 | 15.30 | 77.64 | 234 | +2 |
-| AZAD | Metal Fabrication | 2326.40 | 166.42 | 0 | 4 | -3.48 | -3.45 | 30.10 | 800 | -554 | -9.74 | -15.18 | 10.02 | 1025 | -28 | -18.71 | -15.60 | 18.38 | 898 | -57 | 11.26 | 8.21 | 69.39 | 320 | -39 |
-| BAJAJCON | Household/Personal Care | 389.55 | 21.43 | 0 | 4 | -4.38 | -4.35 | 22.66 | 885 | -192 | 2.16 | -4.00 | 50.00 | 570 | +56 | -17.83 | -14.68 | 20.38 | 876 | -11 | -29.86 | -31.78 | 6.81 | 972 | +13 |
-| BAJAJELEC | Electronics/Appliances | 276.50 | 12.34 | 0 | 4 | -2.38 | -2.36 | 41.29 | 672 | -103 | -5.52 | -11.22 | 19.68 | 915 | -130 | -14.87 | -11.61 | 27.66 | 796 | +46 | -10.45 | -12.90 | 35.51 | 673 | +39 |
-| BAJAJHFL | Finance/Rental/Leasing | 80.19 | 23.08 | 0 | 4 | -2.11 | -2.08 | 44.44 | 636 | -78 | 3.50 | -2.74 | 55.80 | 504 | +14 | -4.56 | -0.91 | 60.24 | 438 | +26 | -4.12 | -6.75 | 47.22 | 551 | -12 |
-| BAJEL | Engineering & Construction | 153.14 | 4.71 | 0 | 4 | -3.03 | -3.01 | 34.73 | 747 | -17 | -5.00 | -10.73 | 21.18 | 898 | +103 | -21.11 | -18.09 | 13.38 | 953 | -30 | -23.40 | -25.50 | 13.44 | 903 | -34 |
-| BALAMINES | Chemicals: Specialty | 1745.90 | 26.17 | 0 | 4 | -7.05 | -7.02 | 7.09 | 1063 | +21 | -6.07 | -11.74 | 18.19 | 932 | +21 | -24.86 | -21.99 | 8.37 | 1008 | +26 | -17.73 | -19.99 | 21.02 | 824 | -67 |
-| BALKRISIND | Automotive Aftermarket | 2327.80 | 43.83 | 0 | 4 | 0.02 | 0.05 | 68.33 | 363 | -205 | 10.76 | 4.08 | 79.09 | 239 | +41 | 2.13 | 6.04 | 75.16 | 274 | +16 | 5.79 | 2.89 | 62.48 | 392 | -53 |
-| BALMLAWRIE | Industrial Conglomerates | 164.94 | 17.29 | 0 | 4 | 0.17 | 0.20 | 70.34 | 340 | +101 | 6.02 | -0.37 | 65.38 | 395 | -10 | -5.62 | -2.01 | 57.42 | 469 | +52 | -9.60 | -12.07 | 36.56 | 662 | -19 |
-| BALRAMCHIN | Agricultural Commodities/Milling | 649.90 | 62.18 | 0 | 4 | 1.63 | 1.65 | 81.80 | 209 | +644 | 2.64 | -3.55 | 52.46 | 542 | +274 | -6.29 | -2.70 | 55.23 | 493 | -1 | 22.63 | 19.27 | 81.38 | 195 | +90 |
-| BANARISUG | Agricultural Commodities/Milling | 3133.20 | 0.32 | 0 | 4 | 1.06 | 1.09 | 78.39 | 248 | +155 | -0.33 | -6.34 | 38.22 | 704 | +11 | -20.19 | -17.13 | 15.29 | 932 | +6 | -12.98 | -15.37 | 29.27 | 738 | +10 |
-| BANCOINDIA | Industrial Machinery | 678.50 | 29.19 | 0 | 4 | -3.81 | -3.78 | 26.51 | 841 | -89 | 15.17 | 8.22 | 88.58 | 131 | -39 | 8.49 | 12.64 | 84.99 | 166 | -30 | 4.11 | 1.26 | 59.79 | 420 | -27 |
-| BANDHANBNK | Major Banks | 169.49 | 146.36 | 0 | 4 | -3.15 | -3.12 | 33.60 | 760 | -448 | 9.10 | 2.52 | 74.08 | 296 | -105 | 3.66 | 7.63 | 78.62 | 236 | +24 | -18.37 | -20.60 | 19.67 | 838 | -29 |
-| BANSALWIRE | Steel | 54.15 | 4.73 | 0 | 4 | -3.51 | -3.48 | 29.83 | 803 | -370 | -7.44 | -13.02 | 15.11 | 967 | -54 | -82.90 | -82.24 | 0.09 | 1099 | +1 | -82.53 | -83.01 | 0.19 | 1041 | +1 |
-| BASF | Chemicals: Specialty | 2939.90 | 8.69 | 0 | 4 | 1.31 | 1.33 | 79.53 | 235 | +62 | -5.26 | -10.98 | 20.47 | 906 | +29 | -22.39 | -19.42 | 11.46 | 974 | +17 | -11.26 | -13.69 | 33.69 | 692 | +30 |
-| BATAINDIA | Apparel/Footwear | 631.70 | 11.95 | 0 | 4 | 0.72 | 0.75 | 74.89 | 288 | -5 | -4.40 | -10.17 | 23.55 | 871 | +5 | -7.43 | -3.89 | 52.14 | 527 | -12 | -5.12 | -7.72 | 45.59 | 568 | +1 |
-| BAYERCROP | Chemicals: Agricultural | 3319.50 | 13.98 | 0 | 4 | -0.86 | -0.84 | 59.67 | 462 | -14 | 1.14 | -4.96 | 46.13 | 614 | -58 | -16.40 | -13.21 | 23.84 | 838 | +9 | -24.54 | -26.61 | 11.90 | 919 | +5 |
-| BBL | Electrical Products | 2460.00 | 14.04 | 0 | 4 | -5.03 | -5.00 | 17.59 | 943 | +77 | -1.98 | -7.89 | 31.20 | 784 | +161 | 4.08 | 8.06 | 79.34 | 228 | +24 | -11.63 | -14.05 | 32.34 | 706 | +5 |
-| BBTC | Food: Major Diversified | 1310.20 | 9.39 | 0 | 4 | -1.54 | -1.51 | 51.62 | 554 | +323 | 11.13 | 4.43 | 80.14 | 227 | +127 | -12.82 | -9.49 | 34.21 | 724 | +165 | -12.11 | -14.52 | 31.48 | 715 | +86 |
-| BDL | Aerospace & Defense | 1034.80 | 111.43 | 0 | 4 | 0.23 | 0.26 | 70.69 | 336 | -71 | 4.26 | -2.03 | 58.70 | 471 | +90 | -18.84 | -15.73 | 18.02 | 902 | +41 | -15.66 | -17.98 | 24.18 | 791 | -19 |
-| BELRISE | Auto Parts: OEM | 241.07 | 137.82 | 0 | 4 | 1.74 | 1.77 | 82.68 | 199 | -40 | 13.76 | 6.90 | 86.29 | 157 | +20 | 3.76 | 7.73 | 78.80 | 234 | -33 | 9.81 | 6.80 | 67.37 | 341 | -13 |
-| BEML | Trucks/Construction/Farm Machinery | 2040.20 | 74.30 | 0 | 4 | 0.27 | 0.29 | 71.13 | 331 | -27 | 3.85 | -2.41 | 57.38 | 486 | +78 | 5.38 | 9.41 | 81.26 | 207 | +37 | 16.10 | 12.92 | 75.05 | 261 | -28 |
-| BEPL | Industrial Specialties | 107.94 | 11.65 | 0 | 4 | -2.91 | -2.88 | 36.48 | 727 | +148 | -1.92 | -7.83 | 31.72 | 778 | +61 | -10.86 | -7.45 | 40.95 | 650 | +96 | 14.05 | 10.93 | 72.46 | 288 | +33 |
-| BERGEPAINT | Industrial Specialties | 459.65 | 13.74 | 0 | 4 | -1.38 | -1.36 | 53.72 | 530 | +53 | -0.45 | -6.46 | 37.43 | 713 | -23 | -7.65 | -4.12 | 51.59 | 533 | -30 | -7.34 | -9.88 | 41.55 | 610 | +34 |
-| BETA | Pharmaceuticals: Major | 1696.60 | 10.42 | 0 | 4 | -3.83 | -3.81 | 26.16 | 845 | +88 | -14.17 | -19.35 | 4.92 | 1083 | -33 | -24.93 | -22.05 | 8.10 | 1011 | -55 | 16.69 | 13.49 | 75.62 | 255 | -50 |
-| BFINVEST | Financial Conglomerates | 410.65 | 2.72 | 0 | 4 | -15.72 | -15.70 | 0.44 | 1139 | +3 | 4.86 | -1.46 | 61.69 | 437 | +21 | -6.96 | -3.40 | 53.41 | 513 | -2 | -6.84 | -9.39 | 42.13 | 604 | -37 |
-| BFUTILITIE | Engineering & Construction | 445.30 | 19.19 | 0 | 4 | -5.01 | -4.99 | 17.94 | 939 | +119 | 2.38 | -3.79 | 51.14 | 557 | +202 | -11.45 | -8.07 | 38.67 | 675 | +78 | -29.22 | -31.16 | 7.29 | 967 | -29 |
-| BHAGCHEM | Chemicals: Agricultural | 175.47 | 1.58 | 0 | 4 | -4.22 | -4.19 | 23.53 | 875 | -116 | -14.79 | -19.93 | 4.66 | 1086 | -16 | -37.50 | -35.11 | 1.18 | 1087 | +1 | -24.96 | -27.02 | 11.42 | 924 | +20 |
-| BHAGERIA | Chemicals: Specialty | 338.15 | 7.06 | 0 | 2 | -4.52 | -4.49 | 21.43 | 899 | +216 | 0.33 | -5.72 | 42.09 | 660 | +400 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| BHARATFORG | Metal Fabrication | 1744.00 | 212.22 | 0 | 3 | 0.86 | 0.88 | 76.29 | 272 | -111 | -0.91 | -6.88 | 35.15 | 739 | -7 | -17.15 | -13.98 | 22.20 | 856 | -84 | N/A | N/A | N/A | N/A | N/A |
-| BHARATRAS | Chemicals: Agricultural | 871.65 | 1.76 | 0 | 4 | -6.04 | -6.02 | 11.90 | 1008 | +80 | -7.69 | -13.26 | 13.97 | 980 | -47 | -30.16 | -27.48 | 3.55 | 1061 | -3 | -39.57 | -41.22 | 2.78 | 1014 | +5 |
-| BHARATSE | Auto Parts: OEM | 204.83 | 4.65 | 0 | 4 | -0.53 | -0.51 | 62.73 | 427 | +181 | 0.15 | -5.89 | 40.86 | 674 | +56 | -8.66 | -5.17 | 47.86 | 574 | +3 | 12.33 | 9.26 | 71.11 | 302 | +18 |
-| BHARTIHEXA | Wireless Telecommunications | 1536.00 | 24.10 | 0 | 4 | -6.30 | -6.28 | 10.67 | 1022 | -60 | -7.77 | -13.33 | 13.88 | 981 | -89 | -0.61 | 3.19 | 68.88 | 343 | -78 | 2.66 | -0.15 | 57.58 | 443 | -55 |
-| BIOCON | Pharmaceuticals: Major | 365.00 | 99.61 | 0 | 4 | 0.37 | 0.40 | 72.00 | 321 | -8 | 4.08 | -2.20 | 58.26 | 476 | -195 | -11.41 | -8.02 | 38.85 | 673 | -23 | -11.50 | -13.93 | 33.01 | 699 | +16 |
-| BIRLACORPN | Construction Materials | 815.10 | 4.32 | 0 | 4 | -1.58 | -1.55 | 51.44 | 556 | -238 | 4.76 | -1.56 | 60.98 | 445 | +62 | -6.60 | -3.03 | 54.32 | 503 | -28 | -16.31 | -18.61 | 23.13 | 802 | -40 |
-| BLACKBUCK | Packaged Software | 515.55 | 18.17 | 0 | 4 | -1.12 | -1.09 | 57.04 | 492 | -110 | -9.91 | -15.34 | 9.49 | 1031 | -10 | -13.18 | -9.86 | 32.85 | 739 | -49 | 1.11 | -1.66 | 55.18 | 468 | +6 |
-| BLKASHYAP | Engineering & Construction | 54.50 | 25.32 | 0 | 4 | -7.34 | -7.32 | 6.04 | 1075 | -959 | 2.48 | -3.70 | 51.49 | 553 | -74 | -2.12 | 1.62 | 65.42 | 381 | +123 | 1.85 | -0.94 | 56.62 | 453 | +18 |
-| BLS | Data Processing Services | 215.77 | 16.23 | 0 | 4 | -4.86 | -4.84 | 18.72 | 930 | +47 | -0.82 | -6.80 | 35.68 | 733 | -47 | -10.31 | -6.87 | 42.49 | 633 | -33 | -20.20 | -22.39 | 17.08 | 865 | -6 |
-| BLSE | Internet Software/Services | 145.70 | 5.54 | 0 | 4 | -1.47 | -1.45 | 52.76 | 541 | +59 | -3.19 | -9.03 | 26.45 | 838 | -69 | -55.57 | -53.87 | 0.36 | 1096 | +1 | -35.25 | -37.02 | 3.55 | 1006 | -5 |
-| BLUEDART | Air Freight/Couriers | 4529.80 | 4.23 | 0 | 4 | 1.00 | 1.03 | 77.78 | 255 | +363 | 6.04 | -0.36 | 65.47 | 394 | +90 | -8.01 | -4.49 | 50.50 | 545 | +101 | -3.45 | -6.10 | 48.56 | 537 | +40 |
-| BLUEJET | Pharmaceuticals: Major | 509.15 | 38.67 | 0 | 4 | -1.49 | -1.46 | 52.41 | 545 | -15 | -1.68 | -7.61 | 32.43 | 770 | -273 | -12.03 | -8.66 | 36.49 | 699 | -50 | 13.88 | 10.76 | 72.36 | 289 | +3 |
-| BLUESTONE | Specialty Stores | 660.25 | 40.05 | 0 | 4 | -3.44 | -3.41 | 30.71 | 793 | +267 | -9.60 | -15.05 | 10.37 | 1021 | +66 | -19.23 | -16.14 | 17.11 | 912 | -22 | 29.91 | 26.35 | 86.85 | 138 | -3 |
-| BOMDYEING | Textiles | 100.53 | 10.60 | 0 | 4 | -1.42 | -1.39 | 53.19 | 536 | +256 | 13.64 | 6.79 | 85.85 | 162 | +43 | -12.01 | -8.64 | 36.76 | 696 | +115 | -18.44 | -20.68 | 19.58 | 839 | +28 |
-| BORORENEW | Industrial Specialties | 372.00 | 17.87 | 0 | 4 | -2.16 | -2.13 | 43.83 | 643 | +183 | -5.76 | -11.45 | 18.80 | 925 | +4 | -25.98 | -23.15 | 7.01 | 1023 | -10 | -31.69 | -33.56 | 5.66 | 984 | -51 |
-| BSOFT | Packaged Software | 303.50 | 135.62 | 0 | 4 | 1.56 | 1.58 | 81.01 | 218 | +298 | -0.85 | -6.83 | 35.50 | 735 | +116 | 4.21 | 8.19 | 79.62 | 225 | +94 | -7.37 | -9.91 | 41.36 | 612 | +120 |
-| BUILDPRO | Wholesale Distributors | 167.43 | 12.77 | 0 | 2 | -10.67 | -10.64 | 2.10 | 1120 | +9 | -23.06 | -27.70 | 0.79 | 1130 | -1 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| BUTTERFLY | Electronics/Appliances | 546.25 | 0.64 | 0 | 4 | -6.36 | -6.33 | 10.24 | 1027 | -326 | -6.32 | -11.97 | 17.49 | 940 | -66 | -13.16 | -9.83 | 33.12 | 736 | -71 | -16.04 | -18.34 | 23.61 | 797 | -45 |
-| CAMLINFINE | Chemicals: Specialty | 69.88 | 6.59 | 0 | 4 | -1.73 | -1.70 | 49.17 | 582 | +329 | -16.86 | -21.87 | 2.99 | 1105 | +2 | -31.91 | -29.31 | 3.28 | 1064 | +6 | -40.32 | -41.95 | 2.40 | 1018 | +6 |
-| CAMPUS | Apparel/Footwear | 193.22 | 6.86 | 0 | 4 | -2.06 | -2.03 | 45.23 | 627 | -136 | 2.51 | -3.67 | 51.93 | 548 | -100 | -14.58 | -11.31 | 28.48 | 787 | -22 | -23.93 | -26.01 | 12.67 | 911 | -18 |
-| CANFINHOME | Finance/Rental/Leasing | 786.20 | 12.63 | 0 | 4 | 1.96 | 1.99 | 83.73 | 187 | +220 | 8.40 | 1.86 | 71.88 | 321 | +72 | -1.14 | 2.64 | 67.70 | 356 | +98 | -3.91 | -6.54 | 47.79 | 545 | +54 |
-| CANTABIL | Apparel/Footwear | 250.00 | 4.46 | 0 | 4 | -1.13 | -1.10 | 56.96 | 493 | +172 | -3.87 | -9.67 | 25.22 | 852 | -255 | 3.13 | 7.08 | 77.43 | 249 | -25 | 15.79 | 12.62 | 74.86 | 263 | -22 |
-| CAPACITE | Engineering & Construction | 159.70 | 5.13 | 0 | 4 | -6.27 | -6.24 | 10.85 | 1020 | -24 | 7.15 | 0.68 | 68.54 | 359 | -34 | -25.37 | -22.52 | 7.73 | 1015 | -9 | -28.98 | -30.93 | 7.87 | 961 | -12 |
-| CAPILLARY | Packaged Software | 502.25 | 13.91 | 0 | 3 | -0.17 | -0.14 | 66.40 | 385 | -16 | -4.89 | -10.63 | 21.88 | 890 | +183 | 1.67 | 5.56 | 73.61 | 291 | +39 | N/A | N/A | N/A | N/A | N/A |
-| CAPITALSFB | Regional Banks | 287.60 | 0.84 | 0 | 4 | 0.89 | 0.92 | 76.90 | 265 | +223 | 13.90 | 7.03 | 86.47 | 155 | +64 | 1.55 | 5.44 | 73.43 | 293 | -45 | 7.53 | 4.59 | 64.88 | 367 | +2 |
-| CAPLIPOINT | Pharmaceuticals: Major | 2003.40 | 28.11 | 0 | 4 | -3.90 | -3.87 | 25.63 | 851 | -100 | -15.21 | -20.32 | 4.04 | 1093 | -17 | -20.42 | -17.37 | 14.83 | 937 | -28 | 1.55 | -1.24 | 56.33 | 456 | -7 |
-| CARBORUNIV | Industrial Specialties | 975.00 | 23.35 | 0 | 4 | -2.68 | -2.66 | 38.15 | 708 | -63 | -10.23 | -15.64 | 8.88 | 1038 | +8 | -11.89 | -8.52 | 37.31 | 690 | +11 | -3.63 | -6.27 | 48.27 | 540 | +10 |
-| CARERATING | Financial Publishing/Services | 1501.50 | 6.06 | 0 | 4 | -5.54 | -5.51 | 14.52 | 978 | -83 | -6.83 | -12.45 | 16.34 | 953 | -57 | -13.16 | -9.84 | 33.03 | 737 | -162 | -7.46 | -10.00 | 40.88 | 617 | -23 |
-| CARTRADE | Internet Software/Services | 2597.30 | 141.98 | 0 | 4 | -1.68 | -1.65 | 50.13 | 571 | +320 | 5.39 | -0.97 | 63.27 | 419 | +625 | -13.18 | -9.86 | 32.94 | 738 | +85 | 32.40 | 28.77 | 88.48 | 121 | -45 |
-| CARYSIL | Home Furnishings | 857.65 | 6.88 | 0 | 4 | -9.20 | -9.17 | 2.97 | 1110 | -106 | -12.30 | -17.59 | 6.06 | 1070 | -78 | -24.00 | -21.09 | 9.65 | 994 | -119 | -24.64 | -26.70 | 11.71 | 921 | -86 |
-| CASTROLIND | Oil Refining/Marketing | 190.05 | 58.67 | 0 | 4 | -0.13 | -0.10 | 66.84 | 380 | +34 | 0.61 | -5.46 | 43.23 | 647 | -12 | 3.01 | 6.95 | 77.25 | 251 | -6 | 3.61 | 0.77 | 58.64 | 432 | -13 |
-| CCAVENUE | Miscellaneous Commercial Services | 115.03 | 16.80 | 0 | 2 | -1.75 | -1.72 | 48.73 | 587 | +452 | -8.44 | -13.96 | 12.30 | 999 | +35 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| CCL | Food: Specialty/Candy | 931.70 | 22.80 | 0 | 4 | -1.37 | -1.34 | 53.98 | 527 | +68 | -0.72 | -6.71 | 36.12 | 728 | -204 | -13.72 | -10.41 | 31.12 | 758 | +63 | -13.59 | -15.96 | 27.93 | 752 | -35 |
-| CEATLTD | Automotive Aftermarket | 3539.70 | 28.56 | 0 | 4 | -0.05 | -0.03 | 67.63 | 371 | -173 | 12.92 | 6.11 | 83.92 | 184 | -10 | 3.51 | 7.47 | 78.34 | 239 | +23 | 11.15 | 8.10 | 69.19 | 322 | +3 |
-| CEIGALL | Engineering & Construction | 381.50 | 9.28 | 0 | 4 | -0.12 | -0.09 | 66.93 | 379 | +403 | -0.27 | -6.29 | 38.75 | 698 | +11 | 11.76 | 16.04 | 89.90 | 112 | +28 | 5.80 | 2.90 | 62.57 | 391 | -29 |
-| CENTENKA | Chemicals: Specialty | 453.05 | 2.04 | 0 | 4 | -3.07 | -3.04 | 34.21 | 753 | N/A | -0.08 | -6.10 | 39.54 | 689 | N/A | -17.15 | -13.98 | 22.29 | 855 | N/A | -9.83 | -12.30 | 36.37 | 664 | N/A |
-| CENTUM | Electronic Components | 3833.00 | 27.39 | 0 | 4 | -14.50 | -14.48 | 0.79 | 1135 | +2 | -4.17 | -9.95 | 24.34 | 862 | +23 | 11.25 | 15.50 | 89.54 | 116 | -3 | 6.77 | 3.85 | 63.82 | 378 | -15 |
-| CENTURYPLY | Building Products | 651.55 | 6.05 | 0 | 4 | -1.96 | -1.93 | 46.54 | 612 | +7 | 1.43 | -4.68 | 47.10 | 603 | -30 | -13.96 | -10.67 | 30.57 | 764 | -61 | -13.46 | -15.83 | 28.21 | 749 | -23 |
-| CESC | Electric Utilities | 125.70 | 26.21 | 0 | 4 | -0.97 | -0.94 | 59.06 | 469 | -193 | 1.69 | -4.44 | 47.98 | 593 | -17 | -14.00 | -10.71 | 30.39 | 766 | +11 | -30.31 | -32.22 | 6.24 | 978 | -9 |
-| CGCL | Finance/Rental/Leasing | 232.64 | 186.62 | 0 | 4 | -2.94 | -2.91 | 35.78 | 735 | -180 | 0.42 | -5.63 | 42.36 | 657 | -52 | -9.29 | -5.82 | 45.86 | 596 | -57 | 15.53 | 12.37 | 74.38 | 268 | -45 |
-| CHAMBLFERT | Chemicals: Specialty | 370.95 | 14.67 | 0 | 4 | -0.42 | -0.39 | 64.04 | 412 | +190 | 3.17 | -3.05 | 54.39 | 520 | +49 | -9.42 | -5.96 | 45.31 | 602 | +125 | -19.58 | -21.78 | 17.75 | 858 | +29 |
-| CHENNPETRO | Oil Refining/Marketing | 1374.60 | 233.81 | 0 | 4 | -3.52 | -3.49 | 29.75 | 804 | +26 | -9.65 | -15.10 | 10.19 | 1023 | +46 | 0.53 | 4.37 | 71.06 | 319 | -56 | 15.53 | 12.37 | 74.28 | 269 | -51 |
-| CHOLAHLDNG | Finance/Rental/Leasing | 1389.30 | 23.52 | 0 | 4 | -1.62 | -1.59 | 50.92 | 562 | +464 | 6.53 | 0.11 | 66.87 | 378 | +23 | -6.48 | -2.90 | 54.78 | 498 | +134 | -4.62 | -7.23 | 46.45 | 559 | +95 |
-| CIEINDIA | Auto Parts: OEM | 370.30 | 7.59 | 0 | 4 | 0.41 | 0.43 | 72.62 | 314 | -30 | 1.76 | -4.38 | 48.59 | 586 | +12 | -5.31 | -1.68 | 58.14 | 461 | -25 | -18.08 | -20.32 | 20.06 | 834 | -28 |
-| CLEAN | Chemicals: Specialty | 682.90 | 15.08 | 0 | 4 | -2.02 | -1.99 | 45.49 | 624 | -77 | -7.50 | -13.08 | 14.94 | 969 | -10 | -17.01 | -13.83 | 22.75 | 850 | -12 | -13.94 | -16.30 | 27.54 | 756 | -56 |
-| CLSEL | Agricultural Commodities/Milling | 264.50 | 2.52 | 0 | 4 | -7.27 | -7.25 | 6.39 | 1071 | -688 | 1.83 | -4.31 | 48.95 | 582 | -231 | -12.02 | -8.66 | 36.58 | 698 | -267 | -5.84 | -8.42 | 44.15 | 583 | -81 |
-| CMSINFO | Investment Managers | 206.67 | 10.48 | 0 | 4 | 1.01 | 1.04 | 78.04 | 252 | +152 | -1.40 | -7.34 | 33.48 | 758 | -90 | -15.16 | -11.91 | 26.93 | 804 | -11 | -32.16 | -34.02 | 5.28 | 988 | +6 |
-| COCHINSHIP | Trucks/Construction/Farm Machinery | 1103.00 | 141.10 | 0 | 4 | -3.09 | -3.07 | 34.12 | 754 | +190 | -2.38 | -8.27 | 29.44 | 804 | +39 | -26.95 | -24.16 | 5.82 | 1036 | +15 | -24.23 | -26.31 | 12.38 | 914 | +21 |
-| COLPAL | Household/Personal Care | 1800.00 | 73.54 | 0 | 4 | 1.32 | 1.35 | 79.62 | 234 | -205 | 12.39 | 5.61 | 83.22 | 192 | -20 | -5.14 | -1.51 | 58.60 | 456 | -147 | -10.83 | -13.27 | 34.93 | 679 | -44 |
-| CONCOR | Railroads | 421.00 | 46.64 | 0 | 4 | -5.18 | -5.15 | 16.89 | 951 | -237 | 0.72 | -5.36 | 43.76 | 641 | +17 | -17.76 | -14.61 | 20.56 | 874 | -29 | -6.84 | -9.39 | 42.23 | 603 | +4 |
-| CONCORDBIO | Miscellaneous Commercial Services | 530.90 | 18.62 | 0 | 4 | -4.58 | -4.56 | 20.73 | 907 | -234 | -58.15 | -60.67 | 0.09 | 1138 | +2 | -63.29 | -61.88 | 0.27 | 1097 | +1 | -55.81 | -57.02 | 0.96 | 1033 | +0 |
-| CONFIPET | Specialty Stores | 63.61 | 16.97 | 0 | 4 | -9.26 | -9.23 | 2.89 | 1111 | -37 | -7.48 | -13.06 | 15.03 | 968 | +60 | -21.83 | -18.84 | 12.28 | 965 | -15 | -17.16 | -19.43 | 22.07 | 813 | -137 |
-| CONSOFINVT | Financial Conglomerates | 320.10 | 0.45 | 0 | 2 | -0.09 | -0.07 | 67.19 | 376 | +29 | 10.08 | 3.44 | 77.42 | 258 | -104 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| COROMANDEL | Chemicals: Specialty | 1942.30 | 39.55 | 0 | 4 | -1.51 | -1.48 | 52.14 | 548 | -20 | 14.02 | 7.14 | 86.64 | 153 | +82 | 1.91 | 5.81 | 74.70 | 279 | -5 | 11.27 | 8.22 | 69.48 | 319 | +11 |
-| CORONA | Pharmaceuticals: Major | 2309.80 | 13.61 | 0 | 2 | 3.27 | 3.30 | 89.41 | 122 | -63 | 4.96 | -1.37 | 61.86 | 435 | -190 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| COSMOFIRST | Containers/Packaging | 777.95 | 4.73 | 0 | 4 | -4.43 | -4.41 | 22.40 | 888 | +19 | 5.81 | -0.57 | 65.03 | 399 | -18 | -16.28 | -13.07 | 24.29 | 833 | -23 | 5.15 | 2.27 | 61.13 | 406 | -36 |
-| CRAFTSMAN | Trucks/Construction/Farm Machinery | 11860.00 | 52.17 | 0 | 4 | -0.59 | -0.56 | 61.94 | 436 | -310 | 7.68 | 1.19 | 69.60 | 347 | +21 | 5.91 | 9.96 | 81.98 | 199 | -11 | 33.28 | 29.63 | 89.16 | 114 | +9 |
-| CRAMC | Investment Managers | 226.43 | 5.06 | 0 | 3 | -1.24 | -1.22 | 55.56 | 509 | +43 | 8.74 | 2.18 | 72.93 | 309 | -6 | -12.68 | -9.34 | 34.67 | 719 | -3 | N/A | N/A | N/A | N/A | N/A |
-| CRISIL | Internet Software/Services | 3977.20 | 19.54 | 0 | 4 | -4.28 | -4.25 | 23.18 | 879 | +44 | -14.86 | -19.99 | 4.39 | 1089 | -1 | -17.52 | -14.36 | 20.93 | 870 | -68 | 2.29 | -0.52 | 57.20 | 447 | -32 |
-| CRIZAC | Internet Software/Services | 144.78 | 2.80 | 0 | 4 | -3.82 | -3.79 | 26.42 | 842 | +39 | -0.60 | -6.59 | 36.82 | 720 | -82 | -12.50 | -9.15 | 35.58 | 709 | +116 | -32.88 | -34.72 | 4.51 | 996 | +1 |
-| CROMPTON | Industrial Machinery | 215.60 | 96.33 | 0 | 4 | -2.00 | -1.97 | 45.67 | 622 | -555 | 5.69 | -0.69 | 64.24 | 408 | -185 | -8.61 | -5.11 | 48.13 | 571 | -102 | -20.92 | -23.09 | 16.70 | 869 | -16 |
-| CSBBANK | Major Banks | 297.90 | 12.68 | 0 | 4 | -8.76 | -8.73 | 3.67 | 1102 | -4 | -3.67 | -9.48 | 25.57 | 848 | -40 | -13.29 | -9.97 | 32.58 | 742 | -137 | -18.27 | -20.51 | 19.87 | 836 | -13 |
-| CUB | Regional Banks | 239.00 | 86.94 | 0 | 4 | 2.07 | 2.10 | 84.34 | 180 | -127 | 11.16 | 4.46 | 80.23 | 226 | -93 | 4.28 | 8.27 | 79.71 | 224 | -95 | -4.11 | -6.74 | 47.31 | 550 | -58 |
-| CYIENT | Packaged Software | 1149.10 | 135.95 | 0 | 4 | 3.43 | 3.46 | 89.85 | 117 | -53 | -0.66 | -6.65 | 36.29 | 726 | +66 | -2.19 | 1.55 | 65.33 | 382 | -168 | 26.79 | 23.32 | 84.36 | 164 | +14 |
-| DALBHARAT | Construction Materials | 1534.70 | 34.24 | 0 | 4 | -1.70 | -1.68 | 49.52 | 578 | -487 | 4.09 | -2.19 | 58.35 | 475 | -14 | -17.32 | -14.16 | 21.57 | 863 | -108 | -10.94 | -13.38 | 34.36 | 685 | -40 |
-| DAMCAPITAL | Regional Banks | 149.42 | 5.34 | 0 | 4 | 3.29 | 3.32 | 89.59 | 120 | +440 | 12.30 | 5.52 | 82.95 | 195 | +57 | 2.86 | 6.80 | 76.80 | 256 | +30 | 2.40 | -0.41 | 57.39 | 445 | +27 |
-| DATAMATICS | Packaged Software | 692.60 | 3.36 | 0 | 4 | -1.21 | -1.18 | 55.99 | 504 | +306 | -3.94 | -9.73 | 25.04 | 854 | +36 | -11.43 | -8.04 | 38.76 | 674 | +85 | -13.00 | -15.38 | 29.08 | 740 | +94 |
-| DATAPATTNS | Electronic Production Equipment | 4154.70 | 232.36 | 0 | 4 | 1.01 | 1.04 | 77.95 | 253 | +84 | 4.26 | -2.03 | 58.61 | 472 | +175 | -8.11 | -4.60 | 50.05 | 550 | +72 | 4.12 | 1.26 | 59.88 | 419 | +10 |
-| DBCORP | Publishing: Newspapers | 146.17 | 0.86 | 0 | 4 | -1.47 | -1.44 | 52.84 | 540 | -30 | -1.93 | -7.84 | 31.63 | 779 | -81 | -26.62 | -23.81 | 6.10 | 1033 | -1 | -28.80 | -30.75 | 8.16 | 958 | -1 |
-| DBL | Engineering & Construction | 387.90 | 12.31 | 0 | 4 | 0.45 | 0.48 | 72.88 | 311 | -99 | 0.52 | -5.54 | 42.97 | 650 | -6 | -4.21 | -0.55 | 60.87 | 431 | -36 | -6.81 | -9.36 | 42.32 | 602 | -18 |
-| DBREALTY | Real Estate Development | 82.82 | 6.60 | 0 | 3 | -2.94 | -2.91 | 35.70 | 736 | -72 | 3.28 | -2.95 | 54.75 | 516 | +67 | -20.19 | -17.14 | 15.20 | 933 | +45 | N/A | N/A | N/A | N/A | N/A |
-| DCAL | Pharmaceuticals: Major | 111.35 | 5.99 | 0 | 4 | -6.06 | -6.03 | 11.72 | 1010 | +35 | -25.20 | -29.71 | 0.62 | 1132 | -1 | -37.56 | -35.17 | 1.00 | 1089 | -6 | -42.94 | -44.50 | 1.92 | 1023 | +4 |
-| DCMSHRIRAM | Industrial Conglomerates | 872.55 | 4.30 | 0 | 4 | -1.81 | -1.78 | 47.86 | 597 | +6 | -4.38 | -10.14 | 23.64 | 870 | +17 | -14.18 | -10.90 | 29.75 | 773 | +18 | -15.34 | -17.66 | 24.57 | 787 | +6 |
-| DCXINDIA | Electrical Products | 140.32 | 40.51 | 0 | 4 | -5.96 | -5.94 | 12.51 | 1001 | -6 | 3.75 | -2.51 | 56.68 | 494 | +48 | -18.92 | -15.82 | 17.93 | 903 | +37 | -29.14 | -31.08 | 7.58 | 964 | +3 |
-| DDEVPLSTIK | Chemicals: Major Diversified | 233.33 | 1.65 | 0 | 4 | -4.49 | -4.47 | 21.78 | 895 | +143 | -4.91 | -10.65 | 21.79 | 891 | -23 | -15.61 | -12.39 | 26.02 | 814 | +19 | -4.54 | -7.16 | 46.55 | 558 | +4 |
-| DEEDEV | Industrial Machinery | 439.65 | 16.95 | 0 | 3 | -19.93 | -19.91 | 0.17 | 1142 | +1 | -19.65 | -24.50 | 1.58 | 1121 | -30 | -25.52 | -22.67 | 7.55 | 1017 | -29 | N/A | N/A | N/A | N/A | N/A |
-| DEEPAKNTR | Chemicals: Specialty | 1521.80 | 50.26 | 0 | 4 | -1.96 | -1.94 | 46.11 | 617 | +276 | 2.24 | -3.92 | 50.26 | 567 | -104 | -13.01 | -9.68 | 33.48 | 732 | +57 | -10.42 | -12.88 | 35.60 | 672 | +20 |
-| DEEPINDS | Oilfield Services/Equipment | 619.75 | 15.12 | 0 | 4 | -2.46 | -2.43 | 40.42 | 682 | -88 | -8.58 | -14.10 | 11.95 | 1003 | -83 | -10.16 | -6.73 | 42.95 | 628 | -115 | 20.93 | 17.61 | 79.85 | 211 | +1 |
-| DEVYANI | Restaurants | 124.88 | 18.73 | 0 | 4 | 0.91 | 0.94 | 77.34 | 260 | -64 | 2.82 | -3.38 | 53.16 | 534 | -65 | -10.01 | -6.57 | 43.31 | 624 | -14 | 10.12 | 7.11 | 67.85 | 336 | -37 |
-| DHANUKA | Chemicals: Specialty | 921.70 | 12.22 | 0 | 4 | 0.40 | 0.43 | 72.53 | 315 | +152 | 3.83 | -2.43 | 57.12 | 489 | -140 | -5.57 | -1.96 | 57.69 | 466 | -38 | -15.73 | -18.04 | 24.09 | 792 | -15 |
-| DIACABS | Electrical Products | 351.60 | 49.28 | 0 | 2 | -3.95 | -3.92 | 25.28 | 855 | +18 | 8.05 | 1.54 | 70.65 | 335 | +147 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| DIAMONDYD | Food: Specialty/Candy | 1009.60 | 2.51 | 0 | 4 | -1.08 | -1.05 | 57.48 | 487 | +176 | -4.07 | -9.85 | 24.69 | 858 | -8 | -11.99 | -8.62 | 36.94 | 694 | +34 | -14.92 | -17.25 | 25.34 | 779 | -179 |
-| DIFFNKG | Industrial Machinery | 422.95 | 3.11 | 0 | 4 | -3.15 | -3.12 | 33.51 | 761 | +229 | 4.79 | -1.53 | 61.25 | 442 | +30 | -12.88 | -9.55 | 34.03 | 726 | -485 | 28.95 | 25.41 | 86.08 | 146 | -26 |
-| DIVGIITTS | Auto Parts: OEM | 753.85 | 9.48 | 0 | 4 | -7.43 | -7.40 | 5.86 | 1077 | -142 | -21.28 | -26.02 | 1.14 | 1126 | -7 | -36.48 | -34.05 | 1.46 | 1084 | -3 | -6.07 | -8.65 | 43.86 | 586 | -46 |
-| DIXON | Electronic Production Equipment | 12718.00 | 423.77 | 0 | 4 | -2.57 | -2.55 | 39.28 | 695 | -526 | 11.56 | 4.83 | 81.63 | 210 | -65 | -14.36 | -11.08 | 29.03 | 781 | -122 | 13.28 | 10.18 | 71.98 | 293 | +14 |
-| DLINKINDIA | Telecommunications Equipment | 406.20 | 2.25 | 0 | 4 | -1.74 | -1.71 | 48.99 | 584 | -223 | -2.20 | -8.10 | 30.23 | 795 | -164 | -8.02 | -4.50 | 50.41 | 546 | +21 | -13.89 | -16.25 | 27.64 | 755 | +25 |
-| DODLA | Food: Meat/Fish/Dairy | 969.90 | 5.51 | 0 | 4 | -1.90 | -1.87 | 47.24 | 604 | -154 | -2.22 | -8.11 | 29.96 | 798 | -33 | -10.24 | -6.81 | 42.68 | 631 | +26 | -11.88 | -14.29 | 31.77 | 712 | -11 |
-| DOLLAR | Apparel/Footwear | 251.37 | 1.18 | 0 | 4 | -3.83 | -3.81 | 26.07 | 846 | -488 | -1.50 | -7.44 | 33.04 | 763 | -60 | -6.54 | -2.96 | 54.41 | 502 | -28 | -1.83 | -4.52 | 50.58 | 516 | +13 |
-| DREDGECORP | Marine Shipping | 779.20 | 8.81 | 0 | 4 | -6.33 | -6.31 | 10.32 | 1026 | -279 | -6.55 | -12.18 | 16.78 | 948 | -23 | -29.31 | -26.61 | 3.91 | 1057 | -4 | -36.78 | -38.51 | 3.07 | 1011 | -6 |
-| DSSL | Information Technology Services | 1011.25 | 6.93 | 0 | 4 | -7.28 | -7.26 | 6.30 | 1072 | -20 | 4.53 | -1.77 | 59.93 | 457 | +103 | -2.89 | 0.83 | 63.60 | 401 | +76 | -29.17 | -31.11 | 7.39 | 966 | +30 |
-| DVL | Food: Major Diversified | 296.70 | 0.59 | 0 | 4 | -6.45 | -6.42 | 9.71 | 1033 | -2 | 10.87 | 4.19 | 79.61 | 233 | -20 | 8.69 | 12.85 | 85.26 | 163 | +33 | 23.58 | 20.19 | 81.96 | 189 | -4 |
-| DYCL | Electrical Products | 329.95 | 8.84 | 0 | 4 | -5.98 | -5.96 | 12.42 | 1002 | +22 | -2.47 | -8.35 | 29.00 | 809 | -75 | -33.10 | -30.54 | 2.64 | 1071 | -8 | 0.27 | -2.47 | 54.22 | 478 | -79 |
-| DYNAMATECH | Industrial Machinery | 13224.00 | 18.47 | 0 | 4 | -2.39 | -2.36 | 41.21 | 673 | -89 | 8.28 | 1.75 | 71.62 | 324 | +63 | 10.51 | 14.74 | 88.44 | 128 | -47 | 26.28 | 22.82 | 83.78 | 170 | -21 |
-| E2E | Information Technology Services | 475.90 | 77.62 | 0 | 2 | -4.87 | -4.84 | 18.64 | 931 | +207 | -11.57 | -16.90 | 6.85 | 1061 | +57 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| EBGNG | Information Technology Services | 497.20 | 69.26 | 0 | 4 | -3.54 | -3.51 | 29.40 | 808 | +141 | -31.25 | -35.40 | 0.26 | 1136 | +1 | -18.82 | -15.72 | 18.11 | 901 | +64 | 12.91 | 9.82 | 71.59 | 297 | +26 |
-| ECLERX | Miscellaneous Commercial Services | 1498.00 | 41.25 | 0 | 4 | 1.99 | 2.02 | 83.99 | 184 | +500 | -19.73 | -24.57 | 1.49 | 1122 | +6 | -24.22 | -21.33 | 9.01 | 1001 | +1 | 4.07 | 1.22 | 59.40 | 424 | +110 |
-| EDELWEISS | Investment Banks/Brokers | 123.83 | 47.35 | 0 | 4 | -4.86 | -4.83 | 18.81 | 929 | +54 | -2.19 | -8.09 | 30.40 | 793 | -153 | -2.73 | 0.99 | 63.79 | 399 | -57 | 10.54 | 7.51 | 68.52 | 329 | +0 |
-| EIDPARRY | Chemicals: Agricultural | 661.70 | 16.01 | 0 | 4 | 3.03 | 3.06 | 88.71 | 130 | +230 | 6.61 | 0.18 | 67.05 | 376 | +76 | -17.23 | -14.06 | 21.93 | 859 | +38 | -12.57 | -14.97 | 30.33 | 727 | +28 |
-| EIEL | Environmental Services | 162.31 | 8.49 | 0 | 4 | -3.70 | -3.67 | 27.73 | 827 | -33 | -1.63 | -7.56 | 32.60 | 768 | +58 | -17.58 | -14.42 | 20.84 | 871 | +36 | -11.51 | -13.94 | 32.73 | 702 | +62 |
-| EIHAHOTELS | Hotels/Resorts/Cruise lines | 286.55 | 0.49 | 0 | 4 | -0.81 | -0.79 | 60.10 | 457 | -19 | 3.15 | -3.07 | 54.13 | 523 | -6 | -4.83 | -1.19 | 59.60 | 445 | -35 | -5.38 | -7.97 | 44.91 | 575 | -48 |
-| EKC | Industrial Machinery | 99.67 | 1.41 | 0 | 4 | -1.62 | -1.59 | 51.01 | 561 | +253 | 1.68 | -4.45 | 47.89 | 594 | +60 | -7.26 | -3.71 | 52.68 | 521 | +33 | -14.42 | -16.76 | 26.68 | 765 | +22 |
-| ELECON | Electrical Products | 439.50 | 23.74 | 0 | 4 | -2.44 | -2.41 | 40.68 | 679 | -90 | 2.35 | -3.82 | 50.97 | 559 | -14 | 6.71 | 10.80 | 83.26 | 185 | +47 | -13.03 | -15.41 | 28.89 | 742 | -1 |
-| ELECTCAST | Steel | 63.03 | 8.40 | 0 | 4 | -4.60 | -4.57 | 20.65 | 908 | -14 | -5.40 | -11.11 | 20.04 | 911 | -44 | -24.46 | -21.57 | 8.83 | 1003 | -46 | -16.54 | -18.83 | 22.65 | 807 | +1 |
-| ELGIEQUIP | Industrial Machinery | 557.85 | 18.72 | 0 | 4 | -1.16 | -1.13 | 56.52 | 498 | +306 | 8.59 | 2.05 | 72.50 | 314 | +114 | -11.08 | -7.68 | 40.22 | 658 | +47 | -7.21 | -9.75 | 41.75 | 608 | -16 |
-| EMIL | Electronics/Appliance Stores | 128.63 | 25.01 | 0 | 4 | -7.07 | -7.04 | 7.00 | 1064 | -365 | -18.12 | -23.06 | 2.37 | 1112 | -13 | -28.78 | -26.06 | 4.46 | 1051 | -50 | 15.51 | 12.34 | 74.18 | 270 | -28 |
-| EMMVEE | Semiconductors | 268.20 | 54.68 | 0 | 3 | 0.87 | 0.90 | 76.55 | 269 | +425 | 10.03 | 3.40 | 77.15 | 261 | +30 | -16.84 | -13.66 | 23.02 | 847 | +35 | N/A | N/A | N/A | N/A | N/A |
-| EMSLIMITED | Engineering & Construction | 291.25 | 3.36 | 0 | 4 | -6.80 | -6.77 | 7.87 | 1054 | -412 | 0.05 | -5.98 | 40.42 | 679 | +20 | -22.28 | -19.31 | 11.56 | 973 | +13 | -0.36 | -3.09 | 53.07 | 490 | +22 |
-| EMUDHRA | Packaged Software | 348.35 | 33.82 | 0 | 4 | -1.94 | -1.92 | 46.72 | 610 | -236 | 0.69 | -5.38 | 43.59 | 643 | -259 | -36.42 | -33.98 | 1.55 | 1083 | +1 | -25.39 | -27.44 | 10.94 | 929 | -33 |
-| ENGINERSIN | Engineering & Construction | 291.15 | 117.47 | 0 | 4 | -5.32 | -5.29 | 15.57 | 966 | -2 | 13.58 | 6.73 | 85.68 | 164 | -15 | 11.18 | 15.43 | 89.35 | 118 | -17 | 27.69 | 24.19 | 85.41 | 153 | +4 |
-| EPACK | Industrial Machinery | 148.18 | 11.48 | 0 | 4 | -7.66 | -7.64 | 5.25 | 1084 | -953 | -13.82 | -19.02 | 5.18 | 1080 | -54 | -20.91 | -17.88 | 13.65 | 950 | -3 | -34.52 | -36.31 | 4.03 | 1001 | -22 |
-| EPACKPEB | Engineering & Construction | 200.10 | 7.39 | 0 | 3 | -4.52 | -4.49 | 21.35 | 900 | -363 | -8.43 | -13.96 | 12.39 | 998 | -81 | -9.74 | -6.29 | 43.77 | 619 | -84 | N/A | N/A | N/A | N/A | N/A |
-| EPIGRAL | Chemicals: Agricultural | 912.15 | 4.34 | 0 | 4 | -3.49 | -3.46 | 30.01 | 801 | +61 | 1.08 | -5.02 | 45.69 | 619 | -2 | -24.20 | -21.30 | 9.10 | 1000 | +17 | -19.29 | -21.50 | 18.52 | 850 | +15 |
-| EPL | Containers/Packaging | 235.72 | 17.41 | 0 | 4 | -1.27 | -1.24 | 55.29 | 512 | -298 | 9.64 | 3.03 | 75.57 | 279 | +135 | -10.05 | -6.61 | 43.13 | 626 | -140 | 11.75 | 8.69 | 70.06 | 313 | -12 |
-| EQUITASBNK | Regional Banks | 54.63 | 93.76 | 0 | 4 | -2.53 | -2.51 | 39.72 | 690 | -399 | -16.12 | -21.18 | 3.34 | 1101 | -44 | -26.15 | -23.32 | 6.82 | 1025 | -53 | -22.95 | -25.06 | 14.11 | 896 | -65 |
-| ERIS | Pharmaceuticals: Major | 1302.80 | 12.91 | 0 | 4 | -1.97 | -1.94 | 45.93 | 619 | +83 | 10.84 | 4.15 | 79.44 | 235 | +81 | 0.43 | 4.27 | 70.52 | 325 | +4 | -6.75 | -9.30 | 42.51 | 600 | -57 |
-| ESABINDIA | Electrical Products | 5241.50 | 2.00 | 0 | 4 | 1.35 | 1.38 | 79.88 | 231 | +195 | -0.64 | -6.63 | 36.47 | 724 | +51 | -14.35 | -11.07 | 29.21 | 779 | +33 | -11.77 | -14.18 | 32.15 | 708 | +80 |
-| ESCORTS | Auto Parts: OEM | 2458.90 | 23.37 | 0 | 4 | 0.36 | 0.39 | 71.74 | 324 | -75 | -9.14 | -14.62 | 10.90 | 1015 | -29 | -17.90 | -14.76 | 20.02 | 880 | +11 | -11.07 | -13.51 | 34.17 | 687 | +4 |
-| ETHOSLTD | Catalog/Specialty Distribution | 2774.60 | 10.49 | 0 | 4 | -0.58 | -0.56 | 62.12 | 434 | +251 | 13.00 | 6.18 | 84.36 | 179 | +33 | -4.28 | -0.62 | 60.69 | 433 | -14 | 17.77 | 14.54 | 76.78 | 243 | +3 |
-| EUROPRATIK | Office Equipment/Supplies | 172.04 | 26.57 | 0 | 3 | -8.79 | -8.77 | 3.59 | 1103 | +6 | 1.03 | -5.06 | 45.52 | 621 | +18 | -34.76 | -32.26 | 2.00 | 1078 | -4 | N/A | N/A | N/A | N/A | N/A |
-| EVEREADY | Electrical Products | 313.05 | 2.07 | 0 | 4 | -4.31 | -4.28 | 23.10 | 880 | +89 | 2.49 | -3.69 | 51.58 | 552 | +13 | -5.08 | -1.45 | 58.87 | 453 | +94 | -1.87 | -4.55 | 50.48 | 517 | +9 |
-| EXCELINDUS | Chemicals: Agricultural | 990.80 | 0.71 | 0 | 4 | -1.86 | -1.83 | 47.51 | 601 | +114 | 11.38 | 4.67 | 81.02 | 217 | -44 | -5.29 | -1.67 | 58.33 | 459 | -36 | 6.48 | 3.56 | 63.53 | 381 | -27 |
-| EXICOM | Electrical Products | 126.11 | 6.67 | 0 | 4 | -5.32 | -5.30 | 15.49 | 967 | +39 | -4.51 | -10.27 | 22.93 | 878 | +41 | -24.03 | -21.12 | 9.55 | 995 | +19 | -17.76 | -20.02 | 20.92 | 825 | +65 |
-| EXIDEIND | Auto Parts: OEM | 387.05 | 101.73 | 0 | 4 | -3.30 | -3.27 | 32.20 | 776 | -546 | 9.38 | 2.79 | 75.22 | 283 | -173 | -12.08 | -8.72 | 36.40 | 700 | -60 | -2.98 | -5.64 | 49.23 | 530 | -15 |
-| EXPLEOSOL | Information Technology Services | 749.65 | 1.60 | 0 | 4 | -2.98 | -2.96 | 35.43 | 739 | +85 | -6.30 | -11.95 | 17.57 | 939 | +70 | -12.53 | -9.19 | 35.49 | 710 | +95 | -14.85 | -17.18 | 25.53 | 777 | +55 |
-| FACT | Chemicals: Agricultural | 783.75 | 32.78 | 0 | 4 | 1.08 | 1.10 | 78.48 | 247 | +566 | 15.39 | 8.43 | 89.02 | 126 | +167 | -4.57 | -0.92 | 60.15 | 439 | +186 | -10.06 | -12.52 | 35.99 | 668 | +100 |
-| FDC | Pharmaceuticals: Major | 368.45 | 8.76 | 0 | 4 | -2.54 | -2.51 | 39.63 | 691 | -240 | -2.15 | -8.05 | 30.49 | 792 | -361 | 9.27 | 13.45 | 86.17 | 153 | -2 | -7.61 | -10.14 | 40.60 | 620 | -61 |
-| FEDERALBNK | Major Banks | 356.85 | 280.40 | 0 | 4 | -2.10 | -2.07 | 44.79 | 632 | -70 | 3.14 | -3.08 | 54.04 | 524 | -56 | 0.04 | 3.87 | 69.79 | 333 | -103 | 18.54 | 15.29 | 77.54 | 235 | -33 |
-| FEDFINA | Finance/Rental/Leasing | 136.06 | 13.89 | 0 | 4 | -5.36 | -5.33 | 15.31 | 969 | +38 | -8.19 | -13.72 | 12.83 | 993 | -4 | -13.47 | -10.16 | 32.03 | 748 | -15 | -13.34 | -15.72 | 28.60 | 745 | -14 |
-| FINCABLES | Electrical Products | 1152.60 | 139.90 | 0 | 4 | -4.81 | -4.78 | 19.07 | 926 | -234 | 0.25 | -5.79 | 41.48 | 667 | +25 | -7.58 | -4.05 | 51.77 | 531 | +103 | 15.65 | 12.48 | 74.66 | 265 | -6 |
-| FINEORG | Chemicals: Major Diversified | 5557.50 | 10.42 | 0 | 4 | 1.84 | 1.87 | 82.94 | 196 | +97 | 8.93 | 2.36 | 73.64 | 301 | -3 | 5.20 | 9.22 | 80.98 | 210 | -18 | 19.93 | 16.65 | 79.08 | 219 | -20 |
-| FINPIPE | Miscellaneous Manufacturing | 145.46 | 6.93 | 0 | 4 | 0.23 | 0.26 | 70.78 | 335 | +159 | 2.99 | -3.22 | 53.69 | 528 | +71 | -7.77 | -4.25 | 51.32 | 536 | +91 | -17.22 | -19.48 | 21.79 | 816 | +17 |
-| FIRSTCRY | Apparel/Footwear Retail | 161.06 | 117.90 | 0 | 4 | -7.79 | -7.77 | 4.81 | 1089 | -92 | -2.94 | -8.79 | 27.15 | 830 | -181 | -11.70 | -8.33 | 38.13 | 681 | -40 | -27.47 | -29.46 | 8.93 | 950 | -19 |
-| FIVESTAR | Finance/Rental/Leasing | 413.25 | 29.38 | 0 | 4 | -5.19 | -5.16 | 16.80 | 952 | -491 | -0.11 | -6.13 | 39.37 | 691 | -117 | -22.76 | -19.81 | 11.10 | 978 | -43 | -4.95 | -7.55 | 45.87 | 565 | -33 |
-| FLAIR | Office Equipment/Supplies | 245.61 | 2.50 | 0 | 4 | 2.01 | 2.04 | 84.08 | 183 | +211 | 5.33 | -1.02 | 62.92 | 423 | +113 | -1.22 | 2.56 | 67.52 | 358 | +26 | -14.95 | -17.29 | 25.05 | 782 | +8 |
-| FLUOROCHEM | Chemicals: Specialty | 4781.20 | 47.51 | 0 | 4 | -3.96 | -3.94 | 25.11 | 857 | -217 | 12.05 | 5.29 | 82.86 | 196 | +33 | 1.87 | 5.77 | 74.61 | 280 | +52 | 31.25 | 27.65 | 87.72 | 129 | +8 |
-| FMGOETZE | Industrial Machinery | 420.45 | 3.73 | 0 | 4 | -2.24 | -2.22 | 42.78 | 655 | -44 | -2.77 | -8.64 | 27.68 | 824 | -82 | -32.71 | -30.14 | 2.91 | 1068 | -12 | -0.49 | -3.21 | 52.88 | 492 | -13 |
-| FORTIS | Hospital/Nursing Management | 825.90 | 98.13 | 0 | 4 | 1.98 | 2.01 | 83.90 | 185 | -71 | 8.74 | 2.18 | 73.02 | 308 | -101 | -8.93 | -5.45 | 46.77 | 586 | +51 | -11.22 | -13.65 | 33.88 | 690 | -5 |
-| FOSECOIND | Chemicals: Major Diversified | 5842.00 | 4.22 | 0 | 4 | -1.93 | -1.90 | 46.81 | 609 | -157 | -0.05 | -6.08 | 39.63 | 688 | -52 | -9.17 | -5.70 | 46.31 | 591 | -57 | 18.18 | 14.95 | 77.06 | 240 | +7 |
-| GAEL | Food: Specialty/Candy | 139.91 | 9.04 | 0 | 4 | -2.71 | -2.68 | 37.97 | 710 | +9 | -4.06 | -9.85 | 24.87 | 856 | -69 | -20.92 | -17.89 | 13.56 | 951 | -143 | -8.56 | -11.06 | 38.39 | 643 | +16 |
-| GALAPREC | Metal Fabrication | 1127.50 | 5.25 | 0 | 4 | -5.02 | -4.99 | 17.67 | 942 | +174 | 7.32 | 0.85 | 68.89 | 355 | +141 | 9.96 | 14.16 | 87.63 | 137 | +53 | 29.38 | 25.84 | 86.47 | 142 | +64 |
-| GALAXYSURF | Household/Personal Care | 2038.20 | 6.48 | 0 | 4 | -7.08 | -7.05 | 6.91 | 1065 | +40 | -6.06 | -11.73 | 18.28 | 931 | +74 | -9.64 | -6.18 | 44.40 | 612 | +99 | 16.76 | 13.56 | 75.72 | 254 | +37 |
-| GALLANTT | Steel | 539.25 | 85.54 | 0 | 4 | 0.06 | 0.08 | 68.59 | 360 | -213 | 0.38 | -5.67 | 42.27 | 658 | -69 | -4.94 | -1.30 | 59.42 | 447 | -15 | -16.02 | -18.33 | 23.70 | 796 | +19 |
-| GANDHITUBE | Steel | 874.40 | 0.37 | 0 | 4 | -1.35 | -1.33 | 54.16 | 525 | +103 | 0.62 | -5.45 | 43.32 | 646 | -140 | -2.95 | 0.77 | 63.42 | 403 | -38 | 3.76 | 0.91 | 59.12 | 427 | -7 |
-| GANECOS | Textiles | 879.00 | 7.28 | 0 | 4 | -0.17 | -0.14 | 66.32 | 386 | +182 | -14.82 | -19.95 | 4.57 | 1087 | +7 | -13.97 | -10.68 | 30.48 | 765 | +30 | -5.68 | -8.27 | 44.34 | 581 | +10 |
-| GANESHHOU | Homebuilding | 659.25 | 2.41 | 0 | 4 | -1.03 | -1.00 | 58.27 | 478 | -255 | -2.53 | -8.41 | 28.65 | 813 | -170 | -15.15 | -11.90 | 27.02 | 803 | +33 | -8.37 | -10.88 | 38.68 | 640 | -84 |
-| GARFIBRES | Textiles | 718.00 | 2.81 | 0 | 4 | -2.54 | -2.52 | 39.55 | 692 | +247 | -4.48 | -10.24 | 23.20 | 875 | +113 | -11.78 | -8.40 | 37.85 | 684 | -37 | 9.89 | 6.88 | 67.56 | 339 | +26 |
-| GARUDA | Engineering & Construction | 149.29 | 4.63 | 0 | 4 | -1.78 | -1.76 | 48.38 | 591 | +215 | 6.34 | -0.07 | 66.08 | 387 | +48 | -13.01 | -9.68 | 33.58 | 731 | +54 | -12.52 | -14.92 | 30.61 | 724 | +10 |
-| GENESYS | Packaged Software | 160.97 | 8.79 | 0 | 4 | -8.75 | -8.73 | 3.76 | 1101 | -1 | -14.99 | -20.11 | 4.31 | 1090 | +16 | -29.20 | -26.49 | 4.09 | 1055 | -13 | -39.79 | -41.44 | 2.69 | 1015 | +1 |
-| GENUSPOWER | Electronic Equipment/Instruments | 261.90 | 21.69 | 0 | 4 | -1.98 | -1.96 | 45.84 | 620 | -247 | -3.43 | -9.25 | 26.01 | 843 | -127 | -21.87 | -18.88 | 12.10 | 967 | +29 | -16.42 | -18.71 | 22.84 | 805 | -42 |
-| GEOJITFSL | Investment Banks/Brokers | 69.09 | 1.41 | 0 | 4 | -3.84 | -3.81 | 25.90 | 848 | +19 | 2.25 | -3.92 | 50.35 | 566 | -8 | -17.08 | -13.91 | 22.57 | 852 | -23 | -4.83 | -7.44 | 45.97 | 564 | -28 |
-| GHCL | Textiles | 425.95 | 7.31 | 0 | 4 | -5.62 | -5.59 | 13.91 | 985 | -31 | 10.21 | 3.56 | 77.86 | 253 | +47 | -2.71 | 1.02 | 64.06 | 396 | -30 | -4.66 | -7.27 | 46.35 | 560 | +3 |
-| GICRE | Specialty Insurance | 334.35 | 21.99 | 0 | 4 | -1.11 | -1.08 | 57.31 | 489 | -35 | 2.85 | -3.36 | 53.25 | 533 | -77 | -5.75 | -2.15 | 56.69 | 477 | -50 | -12.61 | -15.01 | 30.23 | 728 | -50 |
-| GILLETTE | Household/Personal Care | 7209.50 | 12.48 | 0 | 4 | 0.78 | 0.81 | 75.50 | 281 | +198 | -0.80 | -6.79 | 35.76 | 732 | -5 | -1.63 | 2.13 | 66.70 | 367 | -26 | -6.60 | -9.16 | 42.99 | 595 | -2 |
-| GIPCL | Electric Utilities | 151.24 | 4.54 | 0 | 4 | -3.99 | -3.96 | 25.02 | 858 | -237 | -6.99 | -12.60 | 15.99 | 957 | -137 | -24.14 | -21.24 | 9.19 | 999 | +11 | -12.13 | -14.54 | 31.38 | 716 | -13 |
-| GKENERGY | Engineering & Construction | 94.67 | 3.85 | 0 | 3 | -2.28 | -2.25 | 42.26 | 661 | +154 | -7.61 | -13.18 | 14.32 | 976 | +9 | -28.92 | -26.20 | 4.19 | 1054 | +11 | N/A | N/A | N/A | N/A | N/A |
-| GKSL | Hospital/Nursing Management | 144.77 | 6.73 | 0 | 2 | -3.84 | -3.81 | 25.98 | 847 | +52 | -15.59 | -20.68 | 3.69 | 1097 | +6 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| GLAXO | Pharmaceuticals: Major | 2779.80 | 24.49 | 0 | 4 | 2.45 | 2.48 | 86.44 | 156 | +14 | 11.28 | 4.57 | 80.49 | 223 | +61 | -8.86 | -5.38 | 47.04 | 583 | +123 | 27.46 | 23.96 | 85.22 | 155 | +26 |
-| GLOBUSSPR | Beverages: Alcoholic | 740.85 | 24.16 | 0 | 4 | -8.58 | -8.56 | 3.85 | 1100 | -1008 | 0.22 | -5.83 | 41.21 | 670 | -111 | -19.24 | -16.15 | 17.02 | 913 | -39 | -15.79 | -18.10 | 23.99 | 793 | -60 |
-| GMBREW | Beverages: Alcoholic | 847.25 | 1.88 | 0 | 4 | -1.76 | -1.74 | 48.56 | 589 | -234 | 5.07 | -1.26 | 61.95 | 434 | -34 | -3.42 | 0.27 | 62.97 | 408 | +9 | -5.48 | -8.07 | 44.82 | 576 | +9 |
-| GMDCLTD | Wholesale Distributors | 455.60 | 77.82 | 0 | 4 | -1.03 | -1.00 | 58.01 | 481 | -25 | 4.41 | -1.88 | 59.40 | 463 | +39 | -19.08 | -15.99 | 17.56 | 907 | +5 | -31.68 | -33.55 | 5.76 | 983 | +3 |
-| GMRP&UI | Engineering & Construction | 88.19 | 6.14 | 0 | 4 | -2.24 | -2.21 | 42.87 | 654 | -15 | -5.72 | -11.40 | 19.16 | 921 | -21 | -2.35 | 1.39 | 64.88 | 387 | +26 | -19.25 | -21.46 | 18.81 | 847 | +7 |
-| GNFC | Chemicals: Specialty | 450.25 | 21.53 | 0 | 4 | -3.55 | -3.52 | 29.31 | 809 | +116 | -12.49 | -17.77 | 5.98 | 1071 | -7 | -21.66 | -18.66 | 12.65 | 961 | +18 | -10.48 | -12.93 | 35.41 | 674 | +34 |
-| GOCLCORP | Industrial Specialties | 324.90 | 1.38 | 0 | 4 | -3.99 | -3.96 | 24.93 | 859 | +43 | 1.39 | -4.73 | 46.92 | 605 | -9 | -17.22 | -14.06 | 22.02 | 858 | -43 | -22.29 | -24.42 | 14.88 | 888 | -50 |
-| GOCOLORS | Apparel/Footwear | 268.12 | 15.83 | 0 | 4 | -4.22 | -4.20 | 23.45 | 876 | +125 | 3.82 | -2.44 | 57.03 | 490 | +47 | -18.22 | -15.09 | 19.20 | 889 | +47 | -28.82 | -30.77 | 8.06 | 959 | -83 |
-| GODAVARIB | Agricultural Commodities/Milling | 201.17 | 2.16 | 0 | 4 | 0.62 | 0.64 | 73.93 | 299 | +249 | -0.38 | -6.39 | 37.87 | 708 | +64 | -14.16 | -10.87 | 29.85 | 772 | +72 | -25.71 | -27.75 | 10.65 | 932 | +26 |
-| GODFRYPHLP | Tobacco | 1764.90 | 49.59 | 0 | 4 | -1.46 | -1.44 | 53.02 | 538 | -157 | 2.95 | -3.26 | 53.51 | 530 | +36 | -16.15 | -12.94 | 24.66 | 829 | +5 | -21.45 | -23.60 | 15.93 | 877 | +12 |
-| GODIGIT | Multi-Line Insurance | 247.80 | 9.59 | 0 | 4 | 2.38 | 2.40 | 86.18 | 159 | +99 | -5.46 | -11.16 | 19.86 | 913 | -14 | -3.73 | -0.05 | 62.33 | 415 | +91 | -18.07 | -20.31 | 20.15 | 833 | +47 |
-| GODREJAGRO | Agricultural Commodities/Milling | 579.70 | 8.13 | 0 | 4 | -0.07 | -0.04 | 67.45 | 373 | +338 | 0.04 | -5.99 | 40.33 | 680 | +56 | -5.79 | -2.18 | 56.60 | 478 | -19 | 0.55 | -2.21 | 54.51 | 475 | +22 |
-| GODREJCP | Household/Personal Care | 947.50 | 121.94 | 0 | 3 | 1.94 | 1.96 | 83.64 | 188 | -154 | 15.27 | 8.32 | 88.75 | 129 | -1 | 5.13 | 9.15 | 80.80 | 212 | -14 | N/A | N/A | N/A | N/A | N/A |
-| GODREJIND | Agricultural Commodities/Milling | 1055.30 | 58.16 | 0 | 4 | -4.08 | -4.05 | 24.50 | 864 | +52 | 11.70 | 4.96 | 82.16 | 204 | +40 | -6.98 | -3.42 | 53.32 | 514 | +89 | 0.07 | -2.68 | 53.84 | 482 | +8 |
-| GOKEX | Apparel/Footwear | 737.25 | 32.20 | 0 | 4 | -0.19 | -0.16 | 65.97 | 390 | -358 | 13.68 | 6.82 | 86.03 | 160 | -110 | -5.59 | -1.98 | 57.60 | 467 | -162 | 4.63 | 1.77 | 60.46 | 413 | -73 |
-| GOKULAGRO | Agricultural Commodities/Milling | 204.96 | 5.86 | 0 | 4 | -5.71 | -5.69 | 13.74 | 987 | +35 | -1.73 | -7.66 | 32.25 | 772 | +1 | -16.03 | -12.82 | 25.02 | 825 | -8 | -11.51 | -13.93 | 32.92 | 700 | +20 |
-| GOLDIAM | Other Consumer Specialties | 284.80 | 10.71 | 0 | 4 | -2.93 | -2.90 | 35.96 | 733 | +108 | -2.62 | -8.49 | 28.30 | 817 | +24 | -18.31 | -15.19 | 19.02 | 891 | -21 | -34.57 | -36.37 | 3.84 | 1003 | -8 |
-| GOODLUCK | Steel | 509.20 | 21.44 | 0 | 4 | -6.52 | -6.49 | 9.27 | 1038 | +10 | -7.65 | -13.22 | 14.15 | 978 | +5 | 9.65 | 13.84 | 86.90 | 145 | -35 | -62.10 | -63.14 | 0.67 | 1036 | -1 |
-| GOODYEAR | Automotive Aftermarket | 671.25 | 0.45 | 0 | 4 | -1.18 | -1.15 | 56.34 | 500 | +14 | -1.48 | -7.42 | 33.22 | 761 | -134 | -9.70 | -6.25 | 44.22 | 614 | -7 | -8.67 | -11.18 | 38.10 | 646 | -58 |
-| GOPAL | Food: Specialty/Candy | 269.51 | 3.37 | 0 | 4 | 1.59 | 1.62 | 81.28 | 215 | -40 | 9.94 | 3.31 | 76.80 | 265 | -14 | -1.91 | 1.85 | 66.06 | 374 | -15 | -7.83 | -10.35 | 39.83 | 628 | -6 |
-| GPIL | Steel | 211.10 | 26.25 | 0 | 4 | -7.57 | -7.55 | 5.42 | 1082 | -184 | 9.25 | 2.67 | 74.69 | 289 | +26 | -13.37 | -10.05 | 32.30 | 745 | -66 | -26.25 | -28.27 | 9.50 | 944 | -10 |
-| GPPL | Marine Shipping | 178.28 | 18.17 | 0 | 4 | 0.00 | 0.03 | 68.15 | 365 | +69 | 11.31 | 4.60 | 80.67 | 221 | +98 | 6.40 | 10.47 | 82.62 | 192 | +42 | 14.63 | 11.49 | 73.03 | 282 | +50 |
-| GPTHEALTH | Hospital/Nursing Management | 131.83 | 1.31 | 0 | 4 | -0.47 | -0.44 | 63.69 | 416 | +233 | -1.97 | -7.88 | 31.28 | 783 | -44 | -13.84 | -10.55 | 30.76 | 762 | -39 | -12.95 | -15.33 | 29.46 | 736 | -11 |
-| GPTINFRA | Engineering & Construction | 115.04 | 1.90 | 0 | 4 | -1.37 | -1.34 | 53.89 | 528 | +182 | 2.59 | -3.60 | 52.28 | 544 | +68 | 3.96 | 7.93 | 79.16 | 230 | +64 | -0.51 | -3.24 | 52.69 | 494 | +37 |
-| GRAUWEIL | Chemicals: Specialty | 77.51 | 2.01 | 0 | 4 | 1.65 | 1.68 | 81.98 | 207 | +559 | -1.07 | -7.04 | 34.71 | 744 | +162 | 8.21 | 12.35 | 84.62 | 170 | +77 | 9.94 | 6.93 | 67.66 | 338 | +97 |
-| GRAVITA | Other Metals/Minerals | 1447.00 | 23.00 | 0 | 4 | -0.76 | -0.73 | 60.37 | 454 | -45 | 7.70 | 1.21 | 69.77 | 345 | -80 | -19.62 | -16.55 | 16.38 | 920 | -34 | -10.93 | -13.37 | 34.45 | 684 | -44 |
-| GREENLAM | Forest Products | 219.65 | 5.75 | 0 | 4 | -4.18 | -4.15 | 23.80 | 872 | -34 | 3.01 | -3.21 | 53.78 | 527 | -86 | -11.40 | -8.01 | 38.94 | 672 | -29 | -2.43 | -5.10 | 49.90 | 523 | +22 |
-| GREENPANEL | Forest Products | 152.35 | 3.27 | 0 | 4 | -2.12 | -2.09 | 44.27 | 638 | +99 | 14.45 | 7.55 | 87.43 | 144 | +62 | -2.70 | 1.02 | 64.15 | 395 | +99 | -18.56 | -20.80 | 19.29 | 842 | +26 |
-| GREENPLY | Building Products | 269.10 | 4.83 | 0 | 4 | 0.30 | 0.33 | 71.22 | 330 | -96 | -9.09 | -14.57 | 11.16 | 1012 | -48 | -7.27 | -3.72 | 52.50 | 523 | -60 | 1.92 | -0.87 | 56.72 | 452 | -56 |
-| GRINDWELL | Industrial Specialties | 1810.20 | 7.46 | 0 | 4 | -2.25 | -2.22 | 42.61 | 657 | -44 | -2.21 | -8.11 | 30.05 | 797 | +34 | -10.52 | -7.10 | 41.86 | 640 | +91 | -3.04 | -5.70 | 49.14 | 531 | +11 |
-| GRINFRA | Engineering & Construction | 747.40 | 2.31 | 0 | 4 | -2.93 | -2.90 | 36.05 | 732 | -5 | -4.09 | -9.87 | 24.52 | 860 | -129 | -14.70 | -11.44 | 28.12 | 791 | +18 | -15.09 | -17.42 | 24.86 | 784 | +7 |
-| GRMOVER | Agricultural Commodities/Milling | 78.99 | 12.82 | 0 | 4 | -4.47 | -4.45 | 21.87 | 894 | +161 | -9.61 | -15.06 | 10.28 | 1022 | +27 | -8.65 | -5.16 | 47.95 | 573 | -10 | -48.58 | -49.99 | 1.44 | 1028 | +2 |
-| GRSE | Trucks/Construction/Farm Machinery | 2052.40 | 132.76 | 0 | 4 | -1.61 | -1.58 | 51.09 | 560 | -17 | 8.16 | 1.64 | 71.35 | 327 | +71 | -20.00 | -16.94 | 15.74 | 927 | +18 | -21.31 | -23.47 | 16.03 | 876 | +6 |
-| GRWRHITECH | Chemicals: Specialty | 7447.50 | 52.59 | 0 | 4 | -4.40 | -4.38 | 22.57 | 886 | -155 | 4.31 | -1.98 | 58.79 | 470 | -88 | 4.34 | 8.33 | 79.80 | 223 | -29 | 30.35 | 26.78 | 87.33 | 133 | +5 |
-| GSFC | Chemicals: Agricultural | 138.20 | 10.65 | 0 | 4 | -1.71 | -1.69 | 49.34 | 580 | +37 | 1.31 | -4.80 | 46.49 | 610 | +11 | -12.61 | -9.27 | 35.03 | 715 | +7 | -14.69 | -17.03 | 25.91 | 773 | +21 |
-| GUFICBIO | Pharmaceuticals: Major | 417.30 | 5.81 | 0 | 4 | -3.38 | -3.35 | 31.32 | 786 | -119 | -1.52 | -7.46 | 32.95 | 764 | -21 | 0.23 | 4.06 | 70.15 | 329 | -61 | 15.29 | 12.13 | 73.99 | 272 | -41 |
-| GUJALKALI | Chemicals: Specialty | 572.40 | 16.20 | 0 | 4 | -1.04 | -1.01 | 57.83 | 483 | +42 | 3.62 | -2.63 | 56.24 | 499 | +2 | -18.16 | -15.03 | 19.56 | 885 | -1 | -14.66 | -17.00 | 26.01 | 772 | -28 |
-| GUJTHEM | Pharmaceuticals: Major | 346.40 | 6.16 | 0 | 4 | -3.56 | -3.54 | 28.96 | 813 | -5 | -2.57 | -8.45 | 28.56 | 814 | -118 | -17.95 | -14.82 | 19.84 | 882 | -109 | -13.79 | -16.15 | 27.74 | 754 | -64 |
-| GULFOILLUB | Industrial Specialties | 1149.80 | 6.25 | 0 | 4 | -0.03 | 0.00 | 67.98 | 367 | +33 | 7.09 | 0.63 | 68.37 | 361 | -52 | 2.50 | 6.42 | 75.98 | 265 | +30 | 24.07 | 20.67 | 82.53 | 183 | -6 |
-| GVPIL | Engineering & Construction | 555.30 | 8.77 | 0 | 4 | -2.25 | -2.23 | 42.52 | 658 | +435 | -6.09 | -11.75 | 18.10 | 933 | +138 | -11.49 | -8.11 | 38.49 | 677 | +254 | -36.06 | -37.81 | 3.26 | 1009 | +8 |
-| HAPPSTMNDS | Data Processing Services | 284.95 | 12.86 | 0 | 4 | -4.68 | -4.66 | 19.77 | 918 | +4 | -6.13 | -11.79 | 17.84 | 936 | +19 | -29.98 | -27.30 | 3.64 | 1060 | -15 | -23.01 | -25.12 | 14.01 | 897 | +11 |
-| HAPPYFORGE | Metal Fabrication | 1790.10 | 47.07 | 0 | 4 | -1.30 | -1.27 | 54.86 | 517 | -129 | 0.31 | -5.74 | 41.92 | 662 | +46 | -25.78 | -22.94 | 7.19 | 1021 | -55 | 27.51 | 24.02 | 85.32 | 154 | +5 |
-| HARSHA | Metal Fabrication | 429.00 | 3.56 | 0 | 4 | -4.93 | -4.90 | 18.37 | 934 | -192 | 0.47 | -5.59 | 42.79 | 652 | -41 | -5.90 | -2.30 | 56.05 | 484 | -82 | 7.63 | 4.68 | 64.97 | 366 | +5 |
-| HATSUN | Food: Meat/Fish/Dairy | 1073.55 | 4.05 | 0 | 4 | 1.47 | 1.50 | 80.49 | 224 | -44 | 9.17 | 2.58 | 74.25 | 294 | -6 | -9.82 | -6.37 | 43.59 | 621 | -26 | 17.44 | 14.23 | 76.30 | 248 | +21 |
-| HAVELLS | Electrical Products | 1181.00 | 104.60 | 0 | 4 | -1.65 | -1.62 | 50.31 | 569 | -476 | 15.17 | 8.23 | 88.66 | 130 | -45 | -5.07 | -1.44 | 58.96 | 452 | -91 | 2.13 | -0.67 | 56.91 | 450 | -2 |
-| HCG | Hospital/Nursing Management | 632.70 | 6.52 | 0 | 4 | 2.89 | 2.92 | 88.36 | 134 | -51 | 8.04 | 1.53 | 70.47 | 337 | +27 | -13.72 | -10.42 | 31.03 | 759 | -178 | -0.32 | -3.05 | 53.17 | 489 | -7 |
-| HDBFS | Finance/Rental/Leasing | 551.70 | 48.14 | 0 | 4 | -1.95 | -1.92 | 46.63 | 611 | -175 | 9.66 | 3.05 | 75.83 | 276 | -19 | -19.15 | -16.05 | 17.47 | 908 | -53 | -14.92 | -17.25 | 25.24 | 780 | -24 |
-| HEIDELBERG | Construction Materials | 118.65 | 1.91 | 0 | 4 | 0.12 | 0.15 | 69.64 | 348 | -38 | -5.21 | -10.93 | 20.65 | 904 | -186 | -24.62 | -21.74 | 8.74 | 1004 | +5 | -21.72 | -23.86 | 15.55 | 881 | +10 |
-| HEMIPROP | Real Estate Development | 106.68 | 2.84 | 0 | 4 | -2.21 | -2.18 | 43.31 | 649 | +10 | 2.37 | -3.80 | 51.05 | 558 | -9 | -17.12 | -13.95 | 22.38 | 854 | +15 | -23.40 | -25.50 | 13.63 | 901 | +16 |
-| HERITGFOOD | Food: Meat/Fish/Dairy | 368.05 | 5.88 | 0 | 4 | -2.81 | -2.79 | 37.18 | 719 | +31 | 3.28 | -2.95 | 54.83 | 515 | +1 | 1.87 | 5.76 | 74.52 | 281 | +43 | 15.27 | 12.11 | 73.80 | 274 | +9 |
-| HESTERBIO | Pharmaceuticals: Major | 2236.20 | 1.09 | 0 | 4 | -4.93 | -4.90 | 18.46 | 933 | +35 | -0.33 | -6.34 | 38.14 | 705 | -183 | -1.00 | 2.78 | 68.06 | 352 | +45 | 14.27 | 11.14 | 72.55 | 287 | +46 |
-| HGINFRA | Engineering & Construction | 397.90 | 3.27 | 0 | 4 | -0.55 | -0.52 | 62.55 | 429 | +69 | 4.61 | -1.69 | 60.11 | 455 | +5 | -18.80 | -15.70 | 18.20 | 900 | +20 | -28.90 | -30.84 | 7.97 | 960 | +18 |
-| HGS | Miscellaneous Commercial Services | 332.20 | 0.47 | 0 | 4 | -0.48 | -0.45 | 63.60 | 417 | +125 | -0.61 | -6.61 | 36.64 | 722 | +34 | -17.06 | -13.89 | 22.66 | 851 | +2 | -17.97 | -20.21 | 20.54 | 829 | -7 |
-| HINDCOPPER | Other Metals/Minerals | 411.15 | 205.52 | 0 | 4 | -3.36 | -3.33 | 31.58 | 783 | +147 | 0.49 | -5.57 | 42.88 | 651 | +116 | -21.74 | -18.74 | 12.56 | 962 | +42 | -24.61 | -26.68 | 11.80 | 920 | +20 |
-| HINDPETRO | Oil Refining/Marketing | 385.65 | 171.23 | 0 | 4 | -1.12 | -1.09 | 57.22 | 490 | -201 | 11.09 | 4.39 | 79.96 | 229 | +33 | 5.44 | 9.47 | 81.35 | 206 | -39 | 0.40 | -2.35 | 54.41 | 476 | -29 |
-| HINDWAREAP | Building Products | 151.42 | 1.16 | 0 | 4 | -6.03 | -6.00 | 12.07 | 1006 | -127 | -11.46 | -16.80 | 7.12 | 1058 | -170 | -19.02 | -15.92 | 17.74 | 905 | -41 | -33.07 | -34.91 | 4.41 | 997 | -17 |
-| HIRECT | Electrical Products | 845.50 | 5.29 | 0 | 4 | -2.12 | -2.09 | 44.36 | 637 | +184 | -15.25 | -20.36 | 3.95 | 1094 | +4 | -30.80 | -28.16 | 3.46 | 1062 | +6 | -24.39 | -26.47 | 12.00 | 918 | +2 |
-| HNDFDS | Food: Specialty/Candy | 558.65 | 2.85 | 0 | 4 | 1.30 | 1.32 | 79.44 | 236 | -60 | 0.99 | -5.10 | 45.25 | 624 | +190 | -15.12 | -11.88 | 27.12 | 802 | -82 | 4.09 | 1.24 | 59.50 | 423 | +17 |
-| HOMEFIRST | Finance/Rental/Leasing | 1007.30 | 19.96 | 0 | 4 | -6.18 | -6.16 | 11.20 | 1016 | -88 | -0.70 | -6.69 | 36.20 | 727 | -71 | -13.51 | -10.21 | 31.94 | 749 | +30 | -5.36 | -7.96 | 45.11 | 573 | -18 |
-| HONAUT | Electronic Equipment/Instruments | 29075.00 | 12.45 | 0 | 4 | -3.10 | -3.07 | 34.03 | 755 | -105 | -4.97 | -10.70 | 21.44 | 895 | +66 | -18.17 | -15.04 | 19.47 | 886 | +35 | -16.33 | -18.62 | 23.03 | 803 | -7 |
-| HONDAPOWER | Electrical Products | 1899.20 | 0.58 | 0 | 4 | -0.49 | -0.46 | 63.34 | 420 | +33 | 7.00 | 0.55 | 68.01 | 365 | +85 | -5.89 | -2.29 | 56.23 | 482 | +82 | -15.17 | -17.50 | 24.66 | 786 | +39 |
-| HPL | Electronic Equipment/Instruments | 242.23 | 3.10 | 0 | 4 | -3.67 | -3.64 | 28.08 | 823 | +63 | 2.64 | -3.55 | 52.55 | 541 | +69 | -20.08 | -17.03 | 15.65 | 928 | +41 | -29.02 | -30.96 | 7.77 | 962 | +12 |
-| HSCL | Industrial Specialties | 545.25 | 107.27 | 0 | 4 | -1.62 | -1.60 | 50.83 | 563 | +125 | 2.77 | -3.43 | 52.81 | 538 | +112 | -17.29 | -14.12 | 21.75 | 861 | +34 | -9.43 | -11.92 | 36.85 | 659 | +13 |
-| HUDCO | Finance/Rental/Leasing | 154.81 | 49.28 | 0 | 4 | -6.56 | -6.53 | 9.19 | 1039 | -197 | 5.44 | -0.92 | 63.53 | 416 | -90 | -14.96 | -11.71 | 27.48 | 798 | -10 | -23.60 | -25.69 | 13.15 | 906 | -3 |
-| HUHTAMAKI | Containers/Packaging | 220.25 | 9.97 | 0 | 4 | 3.04 | 3.06 | 88.80 | 129 | +407 | -4.06 | -9.85 | 24.78 | 857 | -659 | -16.22 | -13.02 | 24.48 | 831 | +28 | 33.05 | 29.40 | 88.77 | 118 | +23 |
-| ICEMAKE | Industrial Machinery | 664.20 | 0.83 | 0 | 4 | -3.62 | -3.59 | 28.43 | 819 | -195 | 3.94 | -2.33 | 57.82 | 481 | +13 | -11.36 | -7.97 | 39.13 | 670 | -49 | -14.79 | -17.13 | 25.72 | 775 | -30 |
-| ICICIGI | Specialty Insurance | 1740.00 | 83.86 | 0 | 4 | 3.08 | 3.11 | 88.89 | 128 | -53 | 9.86 | 3.24 | 76.54 | 268 | +4 | 11.05 | 15.30 | 89.17 | 120 | +8 | -0.05 | -2.78 | 53.65 | 484 | +2 |
-| ICICILIFE | Life/Health Insurance | 468.50 | 79.42 | 0 | 2 | 2.74 | 2.77 | 87.40 | 145 | -96 | 13.71 | 6.86 | 86.20 | 158 | -19 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| ICRA | Financial Publishing/Services | 4339.00 | 5.04 | 0 | 4 | -2.49 | -2.47 | 40.16 | 685 | +84 | -2.79 | -8.65 | 27.50 | 826 | -3 | -11.74 | -8.37 | 37.94 | 683 | -21 | -15.58 | -17.90 | 24.28 | 790 | -5 |
-| IDBI | Major Banks | 77.83 | 44.40 | 0 | 4 | -2.21 | -2.18 | 43.13 | 651 | -118 | 0.31 | -5.74 | 42.00 | 661 | +15 | -14.36 | -11.08 | 28.94 | 782 | +22 | 6.02 | 3.12 | 63.05 | 386 | -8 |
-| IEX | Investment Banks/Brokers | 111.10 | 52.32 | 0 | 4 | -3.53 | -3.51 | 29.48 | 807 | -5 | 8.17 | 1.65 | 71.44 | 326 | +35 | -7.80 | -4.27 | 51.05 | 539 | +23 | -9.88 | -12.35 | 36.18 | 666 | +23 |
-| IFBIND | Electronics/Appliances | 1090.40 | 3.16 | 0 | 4 | -0.84 | -0.81 | 59.93 | 459 | -156 | 4.69 | -1.63 | 60.46 | 451 | +25 | -18.10 | -14.97 | 19.75 | 883 | -23 | -14.79 | -17.13 | 25.62 | 776 | +34 |
-| IFCI | Finance/Rental/Leasing | 57.35 | 84.61 | 0 | 4 | -6.57 | -6.54 | 9.10 | 1040 | -240 | -2.73 | -8.60 | 27.86 | 822 | -42 | -36.06 | -33.62 | 1.73 | 1081 | +4 | -28.69 | -30.64 | 8.35 | 956 | -108 |
-| IFGLEXPOR | Industrial Machinery | 175.12 | 0.33 | 0 | 4 | -3.20 | -3.17 | 32.98 | 767 | -55 | 0.92 | -5.17 | 44.82 | 629 | -250 | -16.76 | -13.57 | 23.11 | 846 | +25 | -11.34 | -13.77 | 33.49 | 694 | -38 |
-| IGARASHI | Auto Parts: OEM | 328.65 | 1.35 | 0 | 4 | -8.90 | -8.87 | 3.24 | 1107 | -53 | -10.85 | -16.23 | 7.91 | 1049 | -37 | -21.74 | -18.75 | 12.47 | 963 | -4 | -11.85 | -14.27 | 31.86 | 711 | +7 |
-| IGL | Gas Distributors | 148.23 | 19.68 | 0 | 4 | -2.50 | -2.47 | 39.98 | 687 | -319 | 5.38 | -0.97 | 63.18 | 420 | -60 | -1.50 | 2.27 | 67.06 | 363 | -90 | -8.21 | -10.72 | 39.35 | 633 | -38 |
-| IGPL | Chemicals: Specialty | 504.05 | 3.62 | 0 | 4 | -3.71 | -3.68 | 27.56 | 829 | +35 | -4.52 | -10.28 | 22.85 | 879 | +1 | -5.75 | -2.14 | 56.78 | 476 | -28 | 14.57 | 11.43 | 72.84 | 284 | -20 |
-| IIFL | Finance/Rental/Leasing | 593.95 | 361.01 | 0 | 4 | -7.84 | -7.81 | 4.72 | 1090 | -31 | 11.39 | 4.68 | 81.11 | 216 | -76 | -8.16 | -4.65 | 49.77 | 553 | -37 | 19.08 | 15.81 | 78.50 | 225 | -72 |
-| IKIO | Electrical Products | 189.04 | 16.90 | 0 | 4 | -4.93 | -4.91 | 18.20 | 936 | +147 | 14.00 | 7.13 | 86.56 | 154 | +66 | -12.27 | -8.91 | 36.03 | 704 | +17 | 21.87 | 18.53 | 80.52 | 204 | +9 |
-| IKS | Miscellaneous Commercial Services | 1575.40 | 19.39 | 0 | 4 | -1.91 | -1.88 | 47.07 | 606 | -399 | -6.94 | -12.55 | 16.17 | 955 | -126 | -9.16 | -5.69 | 46.41 | 590 | -91 | -7.66 | -10.19 | 40.40 | 622 | -124 |
-| IMFA | Other Metals/Minerals | 989.00 | 10.44 | 0 | 4 | -4.93 | -4.90 | 18.29 | 935 | -200 | -9.12 | -14.60 | 11.07 | 1013 | -36 | -24.94 | -22.07 | 8.01 | 1012 | +6 | -34.15 | -35.95 | 4.22 | 999 | -22 |
-| IMPAL | Wholesale Distributors | 1013.00 | 0.13 | 0 | 4 | -1.13 | -1.10 | 56.87 | 494 | -160 | -0.09 | -6.11 | 39.46 | 690 | -137 | -5.56 | -1.94 | 57.87 | 464 | +33 | -5.22 | -7.82 | 45.49 | 569 | -58 |
-| INDGN | Pharmaceuticals: Major | 657.60 | 36.78 | 0 | 4 | 1.89 | 1.92 | 83.38 | 191 | +237 | 9.79 | 3.17 | 76.10 | 273 | +38 | 7.51 | 11.63 | 83.99 | 177 | -66 | 26.47 | 23.01 | 84.17 | 166 | -3 |
-| INDIACEM | Construction Materials | 309.75 | 121.53 | 0 | 4 | -3.47 | -3.45 | 30.18 | 799 | -693 | 2.26 | -3.91 | 50.53 | 564 | -119 | -16.43 | -13.23 | 23.75 | 839 | -141 | -19.18 | -21.39 | 19.00 | 845 | -59 |
-| INDIAGLYCO | Chemicals: Specialty | 269.55 | 39.11 | 0 | 2 | -0.17 | -0.14 | 66.49 | 384 | +1 | -18.68 | -23.58 | 2.02 | 1116 | -6 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| INDIAMART | Internet Retail | 1534.60 | 11.36 | 0 | 4 | -1.15 | -1.13 | 56.61 | 497 | +146 | -2.42 | -8.31 | 29.35 | 805 | +135 | -12.58 | -9.23 | 35.21 | 713 | +21 | -22.49 | -24.62 | 14.59 | 891 | +3 |
-| INDIANHUME | Building Products | 290.75 | 1.22 | 0 | 4 | -3.76 | -3.73 | 26.77 | 838 | -475 | -4.81 | -10.55 | 21.97 | 889 | -139 | -23.67 | -20.75 | 10.01 | 990 | +4 | -4.09 | -6.72 | 47.41 | 549 | -3 |
-| INDIASHLTR | Finance/Rental/Leasing | 621.35 | 5.31 | 0 | 4 | -4.64 | -4.61 | 20.38 | 911 | +68 | -3.75 | -9.55 | 25.40 | 850 | -22 | -4.41 | -0.75 | 60.51 | 435 | -17 | -20.41 | -22.59 | 16.99 | 866 | -22 |
-| INDIGOPNTS | Industrial Specialties | 978.95 | 9.45 | 0 | 4 | -2.36 | -2.33 | 41.64 | 668 | -187 | -3.35 | -9.18 | 26.27 | 840 | +18 | -15.09 | -11.84 | 27.21 | 801 | -34 | 1.48 | -1.30 | 56.24 | 457 | +12 |
-| INDIQUBE | Real Estate Development | 173.32 | 0.61 | 0 | 4 | -5.18 | -5.15 | 16.97 | 950 | +91 | -0.05 | -6.07 | 39.72 | 687 | -148 | -9.64 | -6.18 | 44.49 | 611 | +57 | 8.30 | 5.33 | 66.12 | 354 | +7 |
-| INDNIPPON | Auto Parts: OEM | 1142.40 | 4.52 | 0 | 4 | -1.96 | -1.93 | 46.46 | 613 | +135 | -2.32 | -8.21 | 29.70 | 801 | -64 | 8.74 | 12.90 | 85.35 | 162 | +15 | 26.86 | 23.39 | 84.45 | 163 | -3 |
-| INDOBORAX | Chemicals: Specialty | 332.60 | 3.38 | 0 | 4 | -10.31 | -10.29 | 2.27 | 1118 | +15 | -18.26 | -23.19 | 2.28 | 1113 | +11 | -34.59 | -32.08 | 2.09 | 1077 | -1 | -3.90 | -6.53 | 47.98 | 543 | +40 |
-| INDOCO | Pharmaceuticals: Major | 235.62 | 26.85 | 0 | 4 | 1.09 | 1.12 | 78.57 | 246 | +608 | 10.23 | 3.58 | 78.12 | 250 | +180 | -3.17 | 0.53 | 63.24 | 405 | +95 | 13.59 | 10.48 | 72.17 | 291 | +12 |
-| INDOSTAR | Finance/Rental/Leasing | 176.27 | 3.54 | 0 | 4 | -5.80 | -5.77 | 13.30 | 992 | -8 | -8.83 | -14.33 | 11.42 | 1009 | -52 | -29.29 | -26.59 | 4.00 | 1056 | +5 | -22.19 | -24.33 | 15.16 | 885 | -13 |
-| INDOTECH | Electrical Products | 2312.60 | 5.86 | 0 | 3 | -5.82 | -5.80 | 13.21 | 993 | +54 | -18.58 | -23.49 | 2.11 | 1115 | +0 | -37.55 | -35.16 | 1.09 | 1088 | +6 | N/A | N/A | N/A | N/A | N/A |
-| INDRAMEDCO | Hospital/Nursing Management | 350.20 | 10.70 | 0 | 4 | -2.82 | -2.79 | 37.10 | 720 | +1 | 11.67 | 4.94 | 82.07 | 205 | +25 | -3.54 | 0.15 | 62.60 | 412 | +37 | -12.77 | -15.16 | 29.75 | 733 | -130 |
-| INFOBEAN | Packaged Software | 150.45 | 7.72 | 0 | 4 | -5.90 | -5.87 | 13.04 | 995 | -238 | 2.47 | -3.71 | 51.41 | 554 | -6 | -6.82 | -3.26 | 53.69 | 510 | +4 | -11.84 | -14.26 | 31.96 | 710 | +36 |
-| INGERRAND | Trucks/Construction/Farm Machinery | 3906.90 | 4.01 | 0 | 4 | 2.14 | 2.17 | 84.69 | 176 | +324 | 0.91 | -5.17 | 44.73 | 630 | +118 | -19.42 | -16.34 | 16.65 | 917 | +7 | 4.10 | 1.25 | 59.69 | 421 | -7 |
-| INNOVACAP | Pharmaceuticals: Major | 967.80 | 7.58 | 0 | 4 | -3.73 | -3.70 | 27.03 | 835 | +237 | -7.80 | -13.36 | 13.62 | 984 | +26 | -10.23 | -6.80 | 42.77 | 630 | -80 | 12.93 | 9.83 | 71.69 | 296 | +9 |
-| INOXGREEN | Alternative Power Generation | 110.91 | 26.64 | 0 | 4 | -1.70 | -1.67 | 49.61 | 577 | -493 | 4.75 | -1.57 | 60.90 | 446 | -123 | -33.54 | -30.99 | 2.46 | 1073 | -7 | -34.53 | -36.33 | 3.93 | 1002 | -21 |
-| INOXWIND | Electrical Products | 53.00 | 84.94 | 0 | 4 | -6.97 | -6.94 | 7.44 | 1059 | +31 | -10.17 | -15.59 | 9.05 | 1036 | +2 | -24.68 | -21.80 | 8.64 | 1005 | +23 | -36.15 | -37.90 | 3.17 | 1010 | +4 |
-| INSECTICID | Chemicals: Agricultural | 553.70 | 1.46 | 0 | 4 | 2.86 | 2.89 | 88.01 | 138 | +10 | 6.68 | 0.24 | 67.14 | 375 | -74 | -9.36 | -5.89 | 45.50 | 600 | -128 | -23.70 | -25.79 | 12.96 | 908 | -13 |
-| INTERARCH | Building Products | 1541.70 | 6.80 | 0 | 4 | -3.67 | -3.64 | 28.17 | 822 | +30 | 2.79 | -3.41 | 52.90 | 537 | -50 | -9.55 | -6.09 | 44.77 | 608 | -49 | -12.44 | -14.84 | 30.81 | 722 | -51 |
-| IOLCP | Chemicals: Specialty | 174.89 | 51.89 | 0 | 4 | -8.81 | -8.78 | 3.50 | 1104 | -79 | -3.17 | -9.01 | 26.54 | 837 | -123 | -9.71 | -6.25 | 44.13 | 615 | -47 | 33.53 | 29.88 | 89.25 | 113 | -6 |
-| IONEXCHANG | Industrial Machinery | 265.20 | 10.42 | 0 | 4 | -12.93 | -12.91 | 1.05 | 1132 | -20 | -22.68 | -27.34 | 0.88 | 1129 | -6 | -27.11 | -24.32 | 5.64 | 1038 | -17 | -25.03 | -27.09 | 11.32 | 925 | -11 |
-| IPCALAB | Pharmaceuticals: Major | 1800.40 | 45.87 | 0 | 4 | -3.20 | -3.18 | 32.90 | 768 | -192 | -6.74 | -12.36 | 16.43 | 952 | +22 | -8.84 | -5.35 | 47.32 | 580 | -102 | 15.80 | 12.63 | 74.95 | 262 | -59 |
-| IPL | Chemicals: Agricultural | 115.89 | 10.87 | 0 | 4 | -6.68 | -6.65 | 8.66 | 1045 | -603 | -0.49 | -6.49 | 37.17 | 716 | +48 | -15.32 | -12.08 | 26.57 | 808 | +41 | -26.34 | -28.36 | 9.40 | 945 | +1 |
-| IRCON | Engineering & Construction | 109.06 | 27.70 | 0 | 4 | -0.13 | -0.10 | 66.75 | 381 | -125 | 8.53 | 1.98 | 72.32 | 316 | -3 | -8.64 | -5.14 | 48.04 | 572 | +121 | -19.41 | -21.61 | 18.23 | 853 | +20 |
-| IRCTC | Other Consumer Services | 454.20 | 43.85 | 0 | 4 | 0.96 | 0.98 | 77.69 | 256 | +224 | 2.60 | -3.59 | 52.37 | 543 | +195 | -5.62 | -2.01 | 57.32 | 470 | +95 | -11.08 | -13.52 | 34.07 | 688 | +77 |
-| IRISDOREME | Apparel/Footwear | 54.83 | 1.42 | 0 | 3 | -3.72 | -3.70 | 27.21 | 833 | -376 | -3.02 | -8.87 | 27.07 | 831 | +5 | -6.24 | -2.65 | 55.41 | 491 | +0 | N/A | N/A | N/A | N/A | N/A |
-| IRMENERGY | Integrated Oil | 245.94 | 6.62 | 0 | 4 | -0.53 | -0.50 | 62.82 | 426 | -15 | 0.20 | -5.84 | 41.12 | 671 | -116 | -13.64 | -10.34 | 31.39 | 755 | -69 | -5.95 | -8.53 | 44.05 | 584 | +21 |
-| ITDC | Hotels/Resorts/Cruise lines | 655.30 | 10.74 | 0 | 4 | -1.77 | -1.74 | 48.47 | 590 | -213 | 8.34 | 1.81 | 71.70 | 323 | -55 | 2.36 | 6.27 | 75.89 | 266 | +36 | 22.35 | 19.00 | 81.09 | 198 | -6 |
-| ITI | Major Telecommunications | 255.44 | 117.05 | 0 | 4 | 2.69 | 2.71 | 87.14 | 148 | +8 | 15.62 | 8.65 | 89.19 | 124 | -36 | -5.72 | -2.12 | 57.14 | 472 | +18 | -14.15 | -16.50 | 27.16 | 760 | -31 |
-| IVALUE | Information Technology Services | 228.54 | 8.71 | 0 | 3 | -2.95 | -2.92 | 35.61 | 737 | -341 | 6.70 | 0.27 | 67.22 | 374 | -40 | -7.74 | -4.21 | 51.50 | 534 | +140 | N/A | N/A | N/A | N/A | N/A |
-| IZMO | Packaged Software | 718.90 | 18.44 | 0 | 4 | -7.02 | -6.99 | 7.26 | 1061 | +25 | 1.27 | -4.84 | 46.40 | 611 | +71 | -13.70 | -10.40 | 31.30 | 756 | +47 | -17.29 | -19.55 | 21.69 | 817 | -75 |
-| JAGRAN | Publishing: Newspapers | 62.34 | 1.59 | 0 | 4 | -3.29 | -3.26 | 32.46 | 773 | +0 | 0.79 | -5.29 | 44.38 | 634 | +44 | 2.06 | 5.97 | 74.98 | 276 | +57 | -19.50 | -21.70 | 17.85 | 857 | +17 |
-| JAGSNPHARM | Pharmaceuticals: Generic | 211.63 | 1.12 | 0 | 4 | 0.58 | 0.60 | 73.58 | 303 | +224 | -8.37 | -13.90 | 12.65 | 995 | -23 | -12.13 | -8.77 | 36.31 | 701 | +43 | 4.77 | 1.90 | 60.75 | 410 | +29 |
-| JAIBALAJI | Steel | 61.11 | 4.30 | 0 | 3 | -4.66 | -4.64 | 20.03 | 915 | -47 | -4.75 | -10.50 | 22.32 | 885 | -13 | -15.31 | -12.07 | 26.66 | 807 | -116 | N/A | N/A | N/A | N/A | N/A |
-| JAICORPLTD | Containers/Packaging | 87.11 | 29.76 | 0 | 4 | -1.31 | -1.29 | 54.68 | 519 | +51 | -0.62 | -6.61 | 36.56 | 723 | +28 | -11.67 | -8.29 | 38.22 | 680 | +60 | -23.48 | -25.58 | 13.34 | 904 | +15 |
-| JAINREC | Other Metals/Minerals | 279.65 | 18.88 | 0 | 3 | -4.56 | -4.53 | 20.82 | 906 | -94 | -0.32 | -6.33 | 38.31 | 703 | +19 | 1.03 | 4.89 | 72.16 | 307 | +70 | N/A | N/A | N/A | N/A | N/A |
-| JAMNAAUTO | Auto Parts: OEM | 128.82 | 25.60 | 0 | 4 | -8.44 | -8.41 | 4.02 | 1098 | -666 | 1.88 | -4.26 | 49.21 | 579 | -244 | 6.11 | 10.17 | 82.35 | 195 | -81 | 5.89 | 2.98 | 62.67 | 390 | -93 |
-| JASH | Industrial Machinery | 509.10 | 8.00 | 0 | 4 | -1.75 | -1.72 | 48.82 | 586 | +319 | 1.72 | -4.42 | 48.24 | 590 | -107 | 9.35 | 13.54 | 86.62 | 148 | +24 | 22.70 | 19.34 | 81.48 | 194 | +22 |
-| JAYBARMARU | Wholesale Distributors | 127.57 | 11.23 | 0 | 4 | 2.37 | 2.40 | 86.09 | 160 | -18 | 11.61 | 4.88 | 81.90 | 207 | -48 | 2.18 | 6.09 | 75.43 | 271 | +40 | -0.11 | -2.85 | 53.45 | 486 | -30 |
-| JAYKAY | Miscellaneous Commercial Services | 175.62 | 4.97 | 0 | 2 | -2.04 | -2.01 | 45.32 | 626 | +50 | -12.93 | -18.18 | 5.71 | 1074 | +3 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| JAYNECOIND | Steel | 87.60 | 27.35 | 0 | 4 | -0.75 | -0.72 | 60.45 | 453 | +39 | -2.02 | -7.93 | 30.76 | 789 | +51 | -10.98 | -7.58 | 40.40 | 656 | +13 | -9.78 | -12.26 | 36.47 | 663 | +42 |
-| JBMA | Auto Parts: OEM | 469.90 | 14.55 | 0 | 4 | -3.72 | -3.69 | 27.38 | 831 | -97 | -4.13 | -9.91 | 24.43 | 861 | -56 | -24.71 | -21.83 | 8.55 | 1006 | +19 | -29.79 | -31.71 | 7.10 | 969 | -22 |
-| JGCHEM | Chemicals: Specialty | 498.10 | 11.12 | 0 | 4 | -11.27 | -11.24 | 1.57 | 1126 | -37 | -10.53 | -15.93 | 8.26 | 1045 | -2 | -21.35 | -18.34 | 13.01 | 957 | +11 | 15.18 | 12.02 | 73.70 | 275 | -26 |
-| JINDALPHOT | Financial Conglomerates | 1110.10 | 0.66 | 0 | 4 | -0.58 | -0.55 | 62.20 | 433 | +13 | -1.18 | -7.13 | 34.27 | 749 | -74 | 9.14 | 13.32 | 85.71 | 158 | -3 | 10.93 | 7.89 | 68.91 | 325 | -14 |
-| JINDALPOLY | Containers/Packaging | 620.90 | 23.83 | 0 | 4 | -6.92 | -6.89 | 7.61 | 1057 | -175 | -7.54 | -13.11 | 14.59 | 973 | -8 | -1.66 | 2.11 | 66.61 | 368 | -62 | -4.68 | -7.29 | 46.07 | 563 | -35 |
-| JINDALSAW | Steel | 239.15 | 36.32 | 0 | 4 | -4.31 | -4.29 | 23.01 | 881 | -82 | -0.79 | -6.77 | 35.94 | 730 | -42 | -22.77 | -19.81 | 11.01 | 979 | -42 | -4.67 | -7.28 | 46.16 | 562 | -98 |
-| JINDRILL | Contract Drilling | 488.95 | 5.87 | 0 | 4 | -4.55 | -4.52 | 21.08 | 903 | +79 | -3.04 | -8.89 | 26.98 | 832 | +47 | -21.19 | -18.17 | 13.10 | 956 | +21 | -22.15 | -24.29 | 15.26 | 884 | -20 |
-| JKCEMENT | Construction Materials | 5463.80 | 24.83 | 0 | 4 | 2.70 | 2.72 | 87.23 | 147 | -116 | 9.58 | 2.97 | 75.48 | 280 | -102 | 6.44 | 10.52 | 82.89 | 189 | -25 | 12.03 | 8.96 | 70.63 | 307 | +31 |
-| JKIL | Engineering & Construction | 437.05 | 5.40 | 0 | 4 | -1.96 | -1.94 | 46.37 | 614 | -351 | 6.78 | 0.34 | 67.40 | 372 | -44 | -10.83 | -7.42 | 41.04 | 649 | +12 | -11.77 | -14.19 | 32.05 | 709 | -11 |
-| JKPAPER | Pulp & Paper | 351.75 | 8.66 | 0 | 4 | -4.65 | -4.62 | 20.30 | 912 | -107 | -6.23 | -11.88 | 17.66 | 938 | +92 | -11.23 | -7.83 | 39.22 | 669 | +6 | -0.93 | -3.64 | 51.92 | 502 | +51 |
-| JMFINANCIL | Investment Banks/Brokers | 111.82 | 20.25 | 0 | 4 | 0.91 | 0.94 | 77.25 | 261 | +372 | -1.25 | -7.20 | 33.92 | 753 | -98 | -12.63 | -9.29 | 34.85 | 717 | +69 | -8.84 | -11.34 | 37.62 | 651 | +127 |
-| JNKINDIA | Building Products | 343.75 | 4.12 | 0 | 4 | 0.82 | 0.85 | 75.85 | 277 | +624 | -13.81 | -19.01 | 5.27 | 1079 | +1 | -20.75 | -17.72 | 14.19 | 944 | +67 | -10.32 | -12.78 | 35.70 | 671 | -51 |
-| JSFB | Regional Banks | 418.30 | 23.75 | 0 | 4 | -1.33 | -1.31 | 54.33 | 523 | +82 | 10.44 | 3.78 | 78.47 | 246 | +86 | -22.18 | -19.20 | 11.65 | 972 | -17 | -13.53 | -15.90 | 28.02 | 751 | +7 |
-| JSL | Steel | 706.35 | 32.65 | 0 | 4 | -4.11 | -4.08 | 24.23 | 867 | -96 | 3.55 | -2.70 | 55.98 | 502 | +165 | 0.60 | 4.45 | 71.34 | 316 | -24 | 3.62 | 0.78 | 58.73 | 431 | -10 |
-| JSLL | Medical/Nursing Services | 307.20 | 52.04 | 0 | 4 | 1.44 | 1.46 | 80.23 | 227 | -30 | -11.05 | -16.41 | 7.56 | 1053 | +5 | -39.89 | -37.59 | 0.73 | 1092 | +3 | -55.63 | -56.84 | 1.06 | 1032 | -3 |
-| JSWCEMENT | Construction Materials | 125.55 | 32.70 | 0 | 4 | 1.21 | 1.24 | 78.92 | 242 | -77 | 9.00 | 2.43 | 73.81 | 299 | +18 | -0.37 | 3.44 | 69.24 | 339 | -63 | -2.52 | -5.19 | 49.81 | 524 | -2 |
-| JSWDULUX | Industrial Specialties | 272.15 | 11.29 | 0 | 4 | -0.33 | -0.30 | 64.83 | 403 | -121 | -1.57 | -7.51 | 32.78 | 766 | +31 | -91.40 | -91.07 | 0.00 | 1100 | +1 | -91.28 | -91.52 | 0.00 | 1043 | +1 |
-| JSWENERGY | Electric Utilities | 485.15 | 103.52 | 0 | 3 | -5.80 | -5.77 | 13.39 | 991 | -44 | 0.45 | -5.61 | 42.71 | 653 | -145 | -6.77 | -3.21 | 53.96 | 507 | +66 | N/A | N/A | N/A | N/A | N/A |
-| JSWHL | Investment Banks/Brokers | 10269.00 | 5.00 | 0 | 4 | -3.18 | -3.15 | 33.33 | 763 | +72 | -8.41 | -13.93 | 12.48 | 997 | +3 | -14.62 | -11.35 | 28.30 | 789 | -138 | -17.34 | -19.60 | 21.50 | 819 | +2 |
-| JTEKTINDIA | Automotive Aftermarket | 119.77 | 1.14 | 0 | 4 | -2.58 | -2.55 | 39.11 | 697 | -473 | 6.88 | 0.43 | 67.66 | 369 | -90 | -3.93 | -0.26 | 61.69 | 422 | -36 | -3.29 | -5.94 | 48.94 | 533 | -19 |
-| JTLIND | Steel | 72.66 | 24.35 | 0 | 4 | -4.33 | -4.31 | 22.83 | 883 | -309 | -1.96 | -7.87 | 31.55 | 780 | -147 | -19.20 | -16.11 | 17.29 | 910 | -71 | 10.29 | 7.27 | 68.23 | 332 | -10 |
-| JUBLCPL | Chemicals: Agricultural | 1767.70 | 1.04 | 0 | 4 | -2.10 | -2.08 | 44.62 | 634 | -33 | -9.17 | -14.65 | 10.81 | 1016 | +20 | -23.65 | -20.73 | 10.10 | 989 | -111 | 1.42 | -1.36 | 56.05 | 459 | +51 |
-| JUBLFOOD | Restaurants | 425.10 | 76.70 | 0 | 4 | 0.90 | 0.93 | 77.17 | 262 | -52 | 0.26 | -5.79 | 41.56 | 666 | -5 | -14.29 | -11.02 | 29.57 | 775 | -78 | -1.67 | -4.36 | 51.06 | 511 | -28 |
-| JUBLINGREA | Chemicals: Major Diversified | 559.50 | 24.02 | 0 | 4 | -2.48 | -2.45 | 40.24 | 684 | +315 | -5.74 | -11.43 | 18.98 | 923 | +142 | -17.10 | -13.93 | 22.47 | 853 | +39 | -11.34 | -13.77 | 33.40 | 695 | +41 |
-| JUBLPHARMA | Pharmaceuticals: Major | 939.70 | 9.83 | 0 | 4 | 0.69 | 0.72 | 74.63 | 291 | +350 | -0.44 | -6.45 | 37.61 | 711 | +159 | 6.55 | 10.63 | 83.08 | 187 | +30 | -4.00 | -6.63 | 47.50 | 548 | +28 |
-| JUNIPER | Hotels/Resorts/Cruise lines | 195.38 | 2.47 | 0 | 4 | -0.22 | -0.19 | 65.62 | 394 | -44 | -1.11 | -7.07 | 34.53 | 746 | +14 | -8.85 | -5.37 | 47.13 | 582 | -25 | 0.65 | -2.10 | 54.70 | 473 | -12 |
-| JUSTDIAL | Internet Software/Services | 650.80 | 75.60 | 0 | 4 | -1.70 | -1.67 | 49.69 | 576 | +179 | -4.71 | -10.45 | 22.41 | 884 | +26 | -8.36 | -4.86 | 49.23 | 559 | -17 | 22.77 | 19.41 | 81.67 | 192 | +2 |
-| JYOTHYLAB | Household/Personal Care | 194.50 | 9.50 | 0 | 4 | -0.46 | -0.43 | 63.87 | 414 | +89 | 11.41 | 4.69 | 81.28 | 214 | +33 | -4.41 | -0.75 | 60.42 | 436 | +71 | -2.74 | -5.41 | 49.62 | 526 | +11 |
-| KAJARIACER | Building Products | 1223.40 | 39.61 | 0 | 4 | 1.70 | 1.72 | 82.24 | 204 | +2 | 9.65 | 3.04 | 75.66 | 278 | +144 | -1.72 | 2.04 | 66.33 | 371 | -44 | 10.20 | 7.18 | 68.14 | 333 | +27 |
-| KALPATARU | Real Estate Development | 242.73 | 2.35 | 0 | 4 | -1.64 | -1.61 | 50.48 | 567 | +318 | -1.21 | -7.17 | 34.09 | 751 | +49 | -12.56 | -9.22 | 35.40 | 711 | +21 | -22.82 | -24.94 | 14.20 | 895 | +28 |
-| KANSAINER | Industrial Specialties | 195.48 | 6.31 | 0 | 4 | -0.27 | -0.24 | 65.18 | 399 | -170 | 8.16 | 1.63 | 71.27 | 328 | -59 | 1.38 | 5.26 | 73.34 | 294 | -63 | -9.02 | -11.51 | 37.33 | 654 | -84 |
-| KARURVYSYA | Regional Banks | 370.00 | 150.94 | 0 | 4 | -3.65 | -3.62 | 28.35 | 820 | -151 | 5.65 | -0.72 | 64.06 | 410 | -72 | 6.44 | 10.52 | 82.80 | 190 | -48 | 27.98 | 24.48 | 85.51 | 152 | -13 |
-| KAYNES | Electronic Production Equipment | 2703.30 | 353.20 | 0 | 4 | -6.46 | -6.43 | 9.62 | 1034 | -15 | -13.91 | -19.10 | 5.10 | 1081 | +35 | -26.64 | -23.83 | 6.01 | 1034 | +28 | -15.90 | -18.20 | 23.90 | 794 | -21 |
-| KEC | Engineering & Construction | 297.45 | 75.01 | 0 | 4 | -3.00 | -2.97 | 35.17 | 742 | +209 | -12.04 | -17.34 | 6.33 | 1067 | -36 | -28.58 | -25.85 | 4.73 | 1048 | +7 | -40.28 | -41.91 | 2.50 | 1017 | +3 |
-| KEI | Electrical Products | 3646.00 | 208.67 | 0 | 4 | -4.71 | -4.68 | 19.69 | 919 | -267 | -5.45 | -11.15 | 19.95 | 912 | -8 | -36.48 | -34.05 | 1.36 | 1085 | -10 | -30.18 | -32.09 | 6.43 | 976 | -3 |
-| KENNAMET | Metal Fabrication | 3449.50 | 19.96 | 0 | 4 | -7.71 | -7.69 | 5.07 | 1086 | -24 | -8.56 | -14.08 | 12.04 | 1002 | -24 | -21.53 | -18.53 | 12.74 | 960 | +14 | 19.07 | 15.81 | 78.41 | 226 | -22 |
-| KERNEX | Computer Communications | 1597.70 | 18.18 | 0 | 4 | -4.76 | -4.73 | 19.42 | 922 | +44 | -1.13 | -7.09 | 34.45 | 747 | -46 | -7.96 | -4.44 | 50.77 | 542 | +102 | -14.92 | -17.25 | 25.14 | 781 | -95 |
-| KICL | Financial Conglomerates | 4305.00 | 0.56 | 0 | 1 | -1.72 | -1.70 | 49.26 | 581 | -60 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| KIMS | Hospital/Nursing Management | 781.95 | 29.29 | 0 | 4 | 1.84 | 1.87 | 83.03 | 195 | -78 | 10.98 | 4.29 | 79.79 | 231 | -41 | 3.50 | 7.46 | 78.25 | 240 | +11 | 6.03 | 3.13 | 63.15 | 385 | +4 |
-| KINGFA | Chemicals: Specialty | 6206.50 | 5.84 | 0 | 4 | 0.58 | 0.61 | 73.75 | 301 | +223 | -9.42 | -14.88 | 10.46 | 1020 | +3 | 2.58 | 6.50 | 76.34 | 261 | -41 | 17.68 | 14.46 | 76.68 | 244 | +13 |
-| KIOCL | Steel | 317.80 | 1.30 | 0 | 4 | -2.28 | -2.25 | 42.34 | 660 | +79 | -5.68 | -11.37 | 19.33 | 919 | -175 | -16.63 | -13.44 | 23.29 | 844 | +8 | -17.17 | -19.44 | 21.98 | 814 | +10 |
-| KIRIINDUS | Chemicals: Specialty | 480.40 | 19.03 | 0 | 4 | -1.91 | -1.88 | 46.98 | 607 | +330 | -1.97 | -7.88 | 31.37 | 782 | +19 | -9.51 | -6.05 | 44.86 | 607 | -174 | 21.81 | 18.47 | 80.42 | 205 | +15 |
-| KIRLFER | Steel | 390.95 | 4.38 | 0 | 4 | -0.27 | -0.24 | 65.27 | 398 | -309 | -11.83 | -17.15 | 6.59 | 1064 | -35 | -13.54 | -10.24 | 31.85 | 750 | -133 | -7.36 | -9.90 | 41.46 | 611 | -24 |
-| KIRLOSBROS | Industrial Machinery | 1556.00 | 17.56 | 0 | 4 | -2.15 | -2.12 | 43.92 | 642 | -27 | -0.48 | -6.48 | 37.26 | 715 | -78 | -18.11 | -14.98 | 19.65 | 884 | -17 | -3.60 | -6.24 | 48.37 | 539 | -4 |
-| KIRLOSENG | Electrical Products | 1735.30 | 81.52 | 0 | 4 | 0.67 | 0.70 | 74.45 | 293 | -126 | -9.21 | -14.68 | 10.63 | 1018 | -2 | -17.34 | -14.18 | 21.38 | 865 | +36 | -8.16 | -10.68 | 39.44 | 632 | -14 |
-| KIRLOSIND | Steel | 3191.90 | 1.66 | 0 | 4 | -4.67 | -4.65 | 19.86 | 917 | -134 | 1.61 | -4.51 | 47.54 | 598 | -6 | -14.61 | -11.34 | 28.39 | 788 | -38 | 1.78 | -1.01 | 56.53 | 454 | -12 |
-| KIRLPNU | Industrial Machinery | 623.60 | 20.04 | 0 | 4 | 1.02 | 1.05 | 78.13 | 251 | +178 | 14.86 | 7.94 | 88.05 | 137 | +56 | -12.73 | -9.40 | 34.49 | 721 | +97 | -60.52 | -61.60 | 0.86 | 1034 | +3 |
-| KITEX | Textiles | 122.81 | 18.74 | 0 | 4 | -8.08 | -8.06 | 4.46 | 1093 | -108 | 8.96 | 2.39 | 73.73 | 300 | -40 | -3.47 | 0.23 | 62.78 | 410 | -23 | -24.25 | -26.33 | 12.28 | 915 | -23 |
-| KKCL | Apparel/Footwear | 409.75 | 1.77 | 0 | 4 | -1.80 | -1.77 | 48.12 | 594 | +89 | -2.50 | -8.38 | 28.82 | 811 | -30 | -18.67 | -15.56 | 18.47 | 897 | +9 | -5.69 | -8.27 | 44.24 | 582 | -7 |
-| KMEW | Trucks/Construction/Farm Machinery | 693.80 | 44.97 | 0 | 4 | -4.75 | -4.72 | 19.51 | 921 | +108 | -78.09 | -79.41 | 0.00 | 1139 | +2 | -76.28 | -75.37 | 0.18 | 1098 | +1 | -61.47 | -62.52 | 0.77 | 1035 | +1 |
-| KNRCON | Engineering & Construction | 101.87 | 8.12 | 0 | 4 | -1.18 | -1.16 | 56.26 | 501 | +274 | 0.65 | -5.42 | 43.41 | 645 | -51 | -15.94 | -12.73 | 25.20 | 823 | +50 | -21.84 | -23.98 | 15.45 | 882 | +18 |
-| KOLTEPATIL | Real Estate Development | 436.80 | 5.67 | 0 | 4 | -2.31 | -2.29 | 42.08 | 663 | +418 | -4.35 | -10.12 | 23.90 | 867 | +129 | -2.24 | 1.50 | 65.06 | 385 | +91 | 19.79 | 16.50 | 78.98 | 220 | +51 |
-| KOVAI | Hospital/Nursing Management | 6638.50 | 4.50 | 0 | 4 | 2.78 | 2.81 | 87.58 | 143 | +14 | 11.96 | 5.21 | 82.78 | 197 | -33 | 9.28 | 13.47 | 86.35 | 151 | -20 | 22.94 | 19.57 | 81.77 | 191 | -20 |
-| KPEL | Alternative Power Generation | 164.27 | 19.55 | 0 | 4 | -4.53 | -4.50 | 21.26 | 901 | +30 | -3.45 | -9.27 | 25.92 | 844 | -81 | -32.84 | -30.27 | 2.82 | 1069 | +4 | -53.50 | -54.77 | 1.15 | 1031 | +3 |
-| KPIGREEN | Alternative Power Generation | 307.60 | 100.23 | 0 | 4 | -6.76 | -6.73 | 8.22 | 1050 | -79 | 7.05 | 0.59 | 68.10 | 364 | -24 | 0.98 | 4.85 | 72.07 | 308 | +44 | -25.86 | -27.89 | 10.27 | 936 | +3 |
-| KPIL | Engineering & Construction | 1314.20 | 16.44 | 0 | 4 | -0.51 | -0.48 | 63.25 | 421 | +69 | -0.79 | -6.78 | 35.85 | 731 | -59 | -6.19 | -2.60 | 55.60 | 489 | -34 | 2.05 | -0.75 | 56.81 | 451 | +6 |
-| KPITTECH | Packaged Software | 522.20 | 92.68 | 0 | 4 | -0.06 | -0.03 | 67.54 | 372 | +179 | -5.48 | -11.18 | 19.77 | 914 | -105 | -10.74 | -7.32 | 41.13 | 648 | +144 | -32.55 | -34.40 | 4.80 | 993 | +15 |
-| KPRMILL | Apparel/Footwear | 1190.50 | 44.53 | 0 | 4 | 0.09 | 0.12 | 69.12 | 354 | +391 | 9.07 | 2.49 | 73.99 | 297 | -103 | 1.10 | 4.96 | 72.43 | 304 | -85 | 9.64 | 6.64 | 67.08 | 344 | -104 |
-| KRN | Industrial Machinery | 972.40 | 56.42 | 0 | 3 | -2.43 | -2.40 | 40.86 | 677 | -568 | -17.52 | -22.49 | 2.81 | 1107 | -52 | -37.39 | -34.99 | 1.27 | 1086 | +7 | N/A | N/A | N/A | N/A | N/A |
-| KRSNAA | Medical/Nursing Services | 495.90 | 4.10 | 0 | 4 | -3.83 | -3.80 | 26.25 | 844 | -265 | -0.11 | -6.13 | 39.19 | 693 | -114 | -10.43 | -7.00 | 42.13 | 637 | -18 | -8.34 | -10.85 | 38.87 | 638 | -30 |
-| KSB | Industrial Machinery | 644.75 | 11.84 | 0 | 4 | -3.36 | -3.33 | 31.67 | 782 | -228 | -1.13 | -7.10 | 34.36 | 748 | +18 | -20.13 | -17.07 | 15.56 | 929 | -49 | -16.16 | -18.45 | 23.42 | 799 | +1 |
-| KSCL | Agricultural Commodities/Milling | 691.00 | 6.94 | 0 | 4 | -5.01 | -4.98 | 18.02 | 938 | +106 | -1.34 | -7.28 | 33.74 | 755 | -152 | -9.73 | -6.28 | 43.86 | 618 | +74 | -19.47 | -21.68 | 18.04 | 855 | -9 |
-| KSHINTL | Electrical Products | 1007.25 | 25.77 | 0 | 2 | -4.14 | -4.11 | 24.06 | 869 | +119 | 8.02 | 1.50 | 70.39 | 338 | +6 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| KSL | Steel | 825.45 | 4.39 | 0 | 4 | -3.01 | -2.99 | 35.08 | 743 | +90 | -5.80 | -11.48 | 18.63 | 927 | +46 | -9.27 | -5.80 | 45.95 | 595 | -43 | -2.74 | -5.40 | 49.71 | 525 | +32 |
-| KTKBANK | Regional Banks | 339.70 | 71.59 | 0 | 4 | -1.69 | -1.67 | 49.78 | 575 | -74 | 9.23 | 2.64 | 74.43 | 292 | -110 | 1.36 | 5.23 | 73.25 | 295 | -52 | 26.94 | 23.46 | 84.64 | 161 | -19 |
-| LANDMARK | Specialty Stores | 465.45 | 5.07 | 0 | 4 | 0.59 | 0.62 | 73.84 | 300 | -166 | 6.34 | -0.07 | 66.17 | 386 | -66 | -10.05 | -6.61 | 43.22 | 625 | -132 | 18.93 | 15.68 | 78.12 | 229 | -65 |
-| LAOPALA | Home Furnishings | 159.38 | 1.89 | 0 | 4 | -0.82 | -0.79 | 60.02 | 458 | -158 | 13.05 | 6.23 | 84.62 | 176 | -15 | -8.20 | -4.68 | 49.59 | 555 | +36 | -10.11 | -12.57 | 35.80 | 670 | -36 |
-| LATENTVIEW | Miscellaneous Commercial Services | 194.34 | 13.42 | 0 | 4 | -0.32 | -0.30 | 64.92 | 402 | -27 | -11.81 | -17.13 | 6.68 | 1063 | +19 | -27.97 | -25.21 | 5.19 | 1043 | +21 | -38.12 | -39.81 | 2.88 | 1013 | +8 |
-| LAXMIDENTL | Medical/Nursing Services | 191.86 | 1.53 | 0 | 4 | -0.36 | -0.34 | 64.74 | 404 | +350 | 5.77 | -0.61 | 64.67 | 403 | +39 | -1.86 | 1.89 | 66.15 | 373 | +67 | -18.06 | -20.31 | 20.25 | 832 | +24 |
-| LGBBROSLTD | Electrical Products | 1550.20 | 2.63 | 0 | 4 | -4.76 | -4.73 | 19.34 | 923 | +29 | -7.04 | -12.65 | 15.91 | 958 | +90 | -8.40 | -4.90 | 49.04 | 561 | +22 | 0.88 | -1.89 | 54.99 | 470 | -53 |
-| LINCOLN | Pharmaceuticals: Major | 505.60 | 2.04 | 0 | 4 | -1.26 | -1.23 | 55.47 | 510 | +195 | -9.41 | -14.87 | 10.54 | 1019 | -13 | -16.67 | -13.48 | 23.20 | 845 | +23 | -14.24 | -16.59 | 26.87 | 763 | +13 |
-| LLOYDSENGG | Engineering & Construction | 79.32 | 64.07 | 0 | 4 | -8.88 | -8.85 | 3.32 | 1106 | -210 | -5.37 | -11.08 | 20.39 | 907 | -130 | -8.24 | -4.73 | 49.41 | 557 | -101 | 11.86 | 8.79 | 70.25 | 311 | -21 |
-| LLOYDSENT | Wholesale Distributors | 60.15 | 14.47 | 0 | 4 | -5.94 | -5.92 | 12.77 | 998 | -62 | -2.53 | -8.41 | 28.73 | 812 | -112 | -16.86 | -13.68 | 22.93 | 848 | -8 | -10.90 | -13.34 | 34.55 | 683 | +10 |
-| LLOYDSME | Steel | 1542.20 | 66.44 | 0 | 2 | -11.03 | -11.00 | 1.66 | 1125 | -75 | -13.11 | -18.35 | 5.45 | 1077 | -57 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| LMW | Industrial Machinery | 16998.00 | 11.61 | 0 | 4 | -3.88 | -3.86 | 25.72 | 850 | +82 | 3.71 | -2.54 | 56.59 | 495 | +18 | -10.42 | -6.99 | 42.31 | 635 | +3 | 6.91 | 3.98 | 63.92 | 377 | +5 |
-| LOTUSDEV | Real Estate Development | 219.98 | 39.83 | 0 | 2 | -5.96 | -5.93 | 12.60 | 1000 | -108 | -10.55 | -15.95 | 8.17 | 1046 | -99 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| LTF | Finance/Rental/Leasing | 283.00 | 126.02 | 0 | 4 | 2.80 | 2.83 | 87.66 | 142 | -12 | 14.81 | 7.88 | 87.96 | 138 | -44 | -11.84 | -8.47 | 37.49 | 688 | -99 | 5.66 | 2.76 | 62.00 | 397 | +1 |
-| LTFOODS | Agricultural Commodities/Milling | 423.60 | 59.72 | 0 | 4 | -3.45 | -3.43 | 30.45 | 796 | -480 | 9.80 | 3.18 | 76.27 | 271 | +65 | -5.14 | -1.51 | 58.69 | 455 | -51 | 11.20 | 8.15 | 69.29 | 321 | +38 |
-| LUMAXIND | Auto Parts: OEM | 5495.20 | 6.61 | 0 | 4 | -3.19 | -3.16 | 33.07 | 766 | +63 | 8.06 | 1.54 | 70.74 | 334 | +7 | -11.84 | -8.47 | 37.40 | 689 | -74 | 1.26 | -1.52 | 55.57 | 464 | +14 |
-| LUPIN | Pharmaceuticals: Other | 2005.00 | 129.11 | 0 | 3 | 0.31 | 0.34 | 71.30 | 329 | -86 | 1.64 | -4.49 | 47.63 | 597 | -53 | -8.38 | -4.88 | 49.14 | 560 | -32 | N/A | N/A | N/A | N/A | N/A |
-| LUXIND | Apparel/Footwear | 1145.30 | 2.47 | 0 | 4 | -0.30 | -0.28 | 65.00 | 401 | -103 | 3.83 | -2.43 | 57.21 | 488 | -49 | -5.36 | -1.74 | 58.05 | 462 | -56 | -17.58 | -19.84 | 21.21 | 822 | +23 |
-| LXCHEM | Chemicals: Specialty | 151.20 | 11.65 | 0 | 4 | -1.83 | -1.80 | 47.59 | 600 | -400 | -2.34 | -8.23 | 29.53 | 803 | -62 | -9.23 | -5.76 | 46.22 | 592 | +9 | -8.11 | -10.63 | 39.54 | 631 | -193 |
-| M&MFIN | Finance/Rental/Leasing | 285.35 | 104.28 | 0 | 4 | 0.74 | 0.77 | 75.15 | 285 | -66 | 8.50 | 1.96 | 72.06 | 319 | -109 | -23.50 | -20.57 | 10.46 | 985 | -25 | -1.79 | -4.48 | 50.67 | 515 | -27 |
-| MAHLIFE | Real Estate Development | 297.15 | 8.57 | 0 | 4 | -4.74 | -4.72 | 19.60 | 920 | +50 | -4.36 | -10.13 | 23.81 | 868 | +99 | -18.73 | -15.63 | 18.29 | 899 | +15 | -11.22 | -13.65 | 33.78 | 691 | +28 |
-| MAHLOG | Air Freight/Couriers | 364.85 | 30.77 | 0 | 4 | -2.59 | -2.56 | 38.93 | 699 | +27 | -15.42 | -20.52 | 3.87 | 1095 | -3 | -6.80 | -3.23 | 53.87 | 508 | -19 | 4.12 | 1.27 | 59.98 | 418 | -23 |
-| MAHSEAMLES | Steel | 451.35 | 18.99 | 0 | 4 | -9.67 | -9.64 | 2.54 | 1115 | -18 | -16.44 | -21.48 | 3.16 | 1103 | +2 | -31.94 | -29.34 | 3.18 | 1065 | -5 | -26.08 | -28.11 | 9.98 | 939 | -21 |
-| MAITHANALL | Other Metals/Minerals | 818.80 | 2.36 | 0 | 4 | -0.67 | -0.64 | 61.42 | 442 | +233 | 3.78 | -2.48 | 56.85 | 492 | +99 | -16.15 | -12.94 | 24.57 | 830 | +46 | -23.53 | -25.63 | 13.24 | 905 | +4 |
-| MANALIPETC | Chemicals: Specialty | 71.95 | 7.04 | 0 | 4 | -7.25 | -7.22 | 6.47 | 1070 | +40 | -1.44 | -7.38 | 33.39 | 759 | +136 | -11.99 | -8.62 | 36.85 | 695 | -286 | 12.18 | 9.10 | 70.92 | 304 | -75 |
-| MANAPPURAM | Finance/Rental/Leasing | 270.00 | 183.36 | 0 | 4 | -4.54 | -4.52 | 21.17 | 902 | +73 | -6.49 | -12.13 | 16.96 | 946 | -4 | -20.61 | -17.57 | 14.47 | 941 | +44 | -13.45 | -15.82 | 28.31 | 748 | +21 |
-| MANGLMCEM | Construction Materials | 894.45 | 6.88 | 0 | 4 | -3.15 | -3.12 | 33.77 | 758 | +103 | 0.74 | -5.33 | 44.02 | 638 | +140 | -16.54 | -13.35 | 23.57 | 841 | +5 | 6.27 | 3.36 | 63.44 | 382 | +29 |
-| MANINFRA | Real Estate Development | 108.85 | 6.81 | 0 | 4 | 2.27 | 2.30 | 85.56 | 166 | +148 | -2.91 | -8.76 | 27.33 | 828 | -100 | -11.23 | -7.83 | 39.31 | 668 | +62 | -5.36 | -7.96 | 45.20 | 572 | +91 |
-| MANORAMA | Food: Specialty/Candy | 1866.70 | 24.87 | 0 | 4 | -0.48 | -0.45 | 63.52 | 418 | +67 | 3.62 | -2.62 | 56.41 | 497 | +91 | -1.27 | 2.50 | 67.42 | 359 | -13 | 27.02 | 23.54 | 84.74 | 160 | +8 |
-| MANYAVAR | Internet Retail | 460.85 | 4.82 | 0 | 4 | -1.53 | -1.50 | 51.88 | 551 | +271 | -4.99 | -10.72 | 21.27 | 897 | +4 | -15.48 | -12.25 | 26.21 | 812 | +42 | 15.65 | 12.48 | 74.57 | 266 | +46 |
-| MAPMYINDIA | Miscellaneous Commercial Services | 818.10 | 10.63 | 0 | 4 | -2.84 | -2.82 | 36.83 | 723 | +143 | -1.56 | -7.49 | 32.86 | 765 | -7 | -19.27 | -16.18 | 16.92 | 914 | -118 | 0.27 | -2.48 | 54.13 | 479 | +14 |
-| MARKSANS | Pharmaceuticals: Major | 279.40 | 37.98 | 0 | 4 | -6.57 | -6.54 | 8.92 | 1042 | -104 | -8.45 | -13.97 | 12.21 | 1000 | -52 | -13.12 | -9.80 | 33.30 | 734 | +47 | 15.28 | 12.12 | 73.90 | 273 | -21 |
-| MASFIN | Finance/Rental/Leasing | 256.60 | 2.28 | 0 | 4 | -1.87 | -1.85 | 47.42 | 602 | -5 | -1.36 | -7.31 | 33.66 | 756 | -223 | -15.74 | -12.52 | 25.66 | 818 | -136 | -16.36 | -18.65 | 22.94 | 804 | -6 |
-| MASTEK | Information Technology Services | 1479.20 | 14.94 | 0 | 4 | 2.26 | 2.29 | 85.30 | 169 | +236 | 1.35 | -4.76 | 46.66 | 608 | +318 | -15.40 | -12.16 | 26.39 | 810 | +182 | -12.07 | -14.48 | 31.67 | 713 | +89 |
-| MATRIMONY | Internet Software/Services | 534.95 | 2.19 | 0 | 4 | 2.66 | 2.69 | 87.05 | 149 | +477 | 1.86 | -4.29 | 49.12 | 580 | +29 | 3.13 | 7.08 | 77.53 | 248 | +32 | 30.40 | 26.82 | 87.52 | 131 | +38 |
-| MAYURUNIQ | Textiles | 642.20 | 5.68 | 0 | 4 | -10.89 | -10.86 | 1.84 | 1123 | -27 | -12.18 | -17.47 | 6.24 | 1068 | -64 | -14.36 | -11.08 | 29.12 | 780 | -20 | -12.63 | -15.03 | 29.94 | 731 | -29 |
-| MAZDOCK | Trucks/Construction/Farm Machinery | 1817.00 | 152.51 | 0 | 3 | -1.78 | -1.76 | 48.29 | 592 | -12 | 4.86 | -1.46 | 61.60 | 438 | +109 | -26.73 | -23.93 | 5.91 | 1035 | +17 | N/A | N/A | N/A | N/A | N/A |
-| MBEL | Building Products | 274.30 | 32.81 | 0 | 4 | -6.17 | -6.15 | 11.29 | 1015 | +56 | 6.37 | -0.04 | 66.34 | 384 | +8 | 2.64 | 6.56 | 76.43 | 260 | +18 | -5.36 | -7.96 | 45.01 | 574 | +22 |
-| MEDIASSIST | Investment Managers | 276.25 | 15.28 | 0 | 4 | -1.27 | -1.24 | 55.38 | 511 | +312 | -6.89 | -12.51 | 16.26 | 954 | -56 | -16.08 | -12.87 | 24.84 | 827 | +31 | -24.33 | -26.40 | 12.09 | 917 | +9 |
-| MEDPLUS | Drugstore Chains | 601.90 | 10.71 | 0 | 4 | 1.51 | 1.54 | 80.84 | 220 | +105 | -1.23 | -7.19 | 34.01 | 752 | +37 | -10.46 | -7.04 | 42.04 | 638 | -18 | -32.78 | -34.62 | 4.61 | 995 | -2 |
-| MENONBE | Metal Fabrication | 300.60 | 15.48 | 0 | 2 | -6.33 | -6.30 | 10.50 | 1024 | +103 | 11.83 | 5.09 | 82.43 | 201 | +210 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| METROBRAND | Apparel/Footwear Retail | 816.70 | 3.14 | 0 | 4 | -0.72 | -0.70 | 60.80 | 449 | -130 | -1.01 | -6.98 | 34.80 | 743 | +11 | -11.19 | -7.79 | 39.67 | 664 | +9 | -21.07 | -23.23 | 16.51 | 871 | -24 |
-| MGL | Gas Distributors | 1071.00 | 19.93 | 0 | 4 | -2.93 | -2.90 | 36.13 | 731 | +112 | 1.73 | -4.41 | 48.33 | 589 | -14 | 0.16 | 3.99 | 69.97 | 331 | +20 | -0.91 | -3.62 | 52.02 | 501 | +4 |
-| MHRIL | Other Consumer Services | 196.06 | 6.64 | 0 | 4 | -0.87 | -0.84 | 59.58 | 463 | -277 | 6.99 | 0.54 | 67.84 | 367 | +32 | -6.48 | -2.90 | 54.69 | 499 | +13 | -7.51 | -10.04 | 40.69 | 619 | +12 |
-| MIDHANI | Other Metals/Minerals | 369.00 | 34.08 | 0 | 4 | -6.31 | -6.28 | 10.59 | 1023 | -207 | -0.87 | -6.85 | 35.33 | 737 | -113 | -10.90 | -7.49 | 40.67 | 653 | -8 | -11.51 | -13.94 | 32.82 | 701 | -50 |
-| MINDACORP | Auto Parts: OEM | 708.90 | 21.46 | 0 | 4 | -5.88 | -5.86 | 13.12 | 994 | -650 | 12.57 | 5.78 | 83.39 | 190 | -92 | -0.51 | 3.29 | 69.15 | 340 | -82 | 13.17 | 10.07 | 71.88 | 294 | -12 |
-| MMTC | Wholesale Distributors | 50.90 | 9.45 | 0 | 4 | -2.21 | -2.18 | 43.22 | 650 | +63 | -1.01 | -6.98 | 34.89 | 742 | -59 | -18.36 | -15.24 | 18.93 | 892 | +4 | -21.91 | -24.05 | 15.36 | 883 | -4 |
-| MOBIKWIK | Miscellaneous Commercial Services | 209.48 | 38.44 | 0 | 4 | 0.35 | 0.38 | 71.65 | 325 | +731 | -3.12 | -8.96 | 26.71 | 835 | -2 | 10.42 | 14.65 | 88.17 | 131 | +16 | 7.78 | 4.83 | 65.45 | 361 | +3 |
-| MOIL | Other Metals/Minerals | 213.76 | 10.08 | 0 | 4 | -0.05 | -0.02 | 67.72 | 370 | -6 | -2.43 | -8.32 | 29.26 | 806 | -22 | -13.74 | -10.44 | 30.94 | 760 | +97 | -27.70 | -29.68 | 8.73 | 952 | +8 |
-| MOL | Chemicals: Specialty | 51.65 | 2.95 | 0 | 4 | -3.71 | -3.68 | 27.47 | 830 | -132 | -5.00 | -10.73 | 21.09 | 899 | -15 | -19.22 | -16.13 | 17.20 | 911 | -131 | 5.93 | 3.02 | 62.86 | 388 | -45 |
-| MOLDTKPAC | Miscellaneous Manufacturing | 330.10 | 10.31 | 0 | 4 | -5.29 | -5.27 | 15.66 | 965 | -44 | 12.87 | 6.07 | 83.83 | 185 | -58 | -53.46 | -51.68 | 0.45 | 1095 | +1 | -53.27 | -54.55 | 1.25 | 1030 | +1 |
-| MONARCH | Investment Banks/Brokers | 332.35 | 2.32 | 0 | 4 | -2.36 | -2.34 | 41.47 | 670 | +97 | -4.51 | -10.27 | 23.02 | 877 | -137 | -12.68 | -9.34 | 34.58 | 720 | -44 | -1.90 | -4.59 | 50.38 | 518 | -5 |
-| MONTECARLO | Apparel/Footwear | 472.10 | 1.38 | 0 | 4 | -5.55 | -5.53 | 14.26 | 981 | -361 | -7.27 | -12.86 | 15.55 | 962 | -144 | -10.97 | -7.57 | 40.49 | 655 | -58 | -14.61 | -16.95 | 26.20 | 770 | -86 |
-| MOSCHIP | Semiconductors | 159.66 | 16.05 | 0 | 4 | -2.92 | -2.90 | 36.22 | 730 | +67 | -7.20 | -12.79 | 15.64 | 961 | +47 | -25.46 | -22.60 | 7.64 | 1016 | +22 | -25.79 | -27.82 | 10.46 | 934 | +18 |
-| MPSLTD | Publishing: Books/Magazines | 2063.40 | 3.45 | 0 | 4 | -5.12 | -5.10 | 17.06 | 949 | -36 | -11.90 | -17.22 | 6.41 | 1066 | -98 | -23.12 | -20.18 | 10.74 | 982 | +1 | 12.07 | 9.00 | 70.83 | 305 | +21 |
-| MRF | Automotive Aftermarket | 128465.00 | 45.05 | 0 | 4 | -0.56 | -0.53 | 62.47 | 430 | -15 | 8.85 | 2.29 | 73.37 | 304 | +3 | -3.95 | -0.27 | 61.51 | 424 | -56 | 2.94 | 0.12 | 58.16 | 437 | -15 |
-| MRPL | Oil Refining/Marketing | 166.91 | 202.57 | 0 | 4 | -5.26 | -5.24 | 16.01 | 961 | +60 | -3.46 | -9.29 | 25.83 | 845 | +222 | -2.03 | 1.72 | 65.79 | 377 | -13 | 8.27 | 5.30 | 66.03 | 355 | -51 |
-| MTARTECH | Aerospace & Defense | 5653.50 | 149.84 | 0 | 2 | -5.05 | -5.02 | 17.41 | 945 | -85 | -18.96 | -23.85 | 1.93 | 1117 | -17 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| MUFIN | Finance/Rental/Leasing | 133.40 | 15.13 | 0 | 4 | -3.21 | -3.19 | 32.72 | 770 | -8 | 1.75 | -4.39 | 48.51 | 587 | -78 | -2.29 | 1.45 | 64.97 | 386 | +8 | 8.92 | 5.93 | 66.60 | 349 | -2 |
-| MUKANDLTD | Steel | 137.18 | 3.46 | 0 | 4 | 0.34 | 0.37 | 71.57 | 326 | -117 | -7.57 | -13.15 | 14.50 | 974 | -12 | -0.15 | 3.67 | 69.52 | 336 | -40 | -1.76 | -4.45 | 50.86 | 513 | -4 |
-| NACLIND | Chemicals: Agricultural | 115.74 | 5.52 | 0 | 4 | -1.51 | -1.49 | 51.97 | 550 | +136 | 3.45 | -2.79 | 55.71 | 505 | +123 | -32.01 | -29.41 | 3.09 | 1066 | +5 | -24.13 | -26.21 | 12.48 | 913 | +38 |
-| NATCOPHARM | Pharmaceuticals: Major | 799.35 | 57.07 | 0 | 4 | -2.75 | -2.72 | 37.62 | 714 | -19 | 0.80 | -5.28 | 44.46 | 633 | -3 | -5.01 | -1.38 | 59.05 | 451 | +31 | -14.46 | -16.81 | 26.49 | 767 | +3 |
-| NATIONALUM | Aluminum | 294.95 | 180.46 | 0 | 4 | -3.93 | -3.90 | 25.46 | 853 | +170 | -8.83 | -14.32 | 11.51 | 1008 | -65 | -22.69 | -19.73 | 11.19 | 977 | +52 | -32.49 | -34.34 | 4.89 | 992 | +7 |
-| NAVA | Electric Utilities | 544.25 | 21.81 | 0 | 4 | 2.58 | 2.61 | 86.61 | 154 | +38 | 8.52 | 1.98 | 72.23 | 317 | -117 | -4.20 | -0.53 | 60.96 | 430 | -63 | -10.07 | -12.54 | 35.89 | 669 | -41 |
-| NAVKARCORP | Other Transportation | 78.86 | 2.92 | 0 | 4 | -1.76 | -1.73 | 48.64 | 588 | -122 | 2.30 | -3.87 | 50.70 | 562 | -113 | -17.88 | -14.74 | 20.20 | 878 | -28 | -17.98 | -20.23 | 20.44 | 830 | -23 |
-| NAVNETEDUL | Office Equipment/Supplies | 118.52 | 2.35 | 0 | 4 | -2.84 | -2.82 | 36.75 | 724 | +57 | -6.20 | -11.86 | 17.75 | 937 | -166 | -11.95 | -8.59 | 37.12 | 692 | -22 | -16.29 | -18.58 | 23.22 | 801 | -17 |
-| NBCC | Engineering & Construction | 75.50 | 60.69 | 0 | 4 | -5.03 | -5.01 | 17.50 | 944 | -309 | 8.10 | 1.59 | 70.91 | 332 | +16 | -12.41 | -9.06 | 35.67 | 708 | +21 | -26.15 | -28.18 | 9.79 | 941 | +1 |
-| NCC | Homebuilding | 128.16 | 24.60 | 0 | 4 | -4.84 | -4.81 | 18.90 | 928 | -165 | 9.90 | 3.27 | 76.71 | 266 | -48 | -13.62 | -10.32 | 31.48 | 754 | -36 | -12.96 | -15.34 | 29.37 | 737 | +22 |
-| NDRAUTO | Auto Parts: OEM | 730.80 | 6.24 | 0 | 4 | -3.29 | -3.27 | 32.28 | 775 | +227 | 8.79 | 2.23 | 73.20 | 306 | -57 | -0.65 | 3.15 | 68.70 | 345 | -95 | -6.64 | -9.20 | 42.80 | 597 | +44 |
-| NELCO | Electronic Production Equipment | 742.75 | 9.79 | 0 | 4 | -5.19 | -5.17 | 16.62 | 954 | +7 | 4.63 | -1.68 | 60.19 | 454 | -22 | -21.94 | -18.95 | 12.01 | 968 | -7 | 5.90 | 3.00 | 62.76 | 389 | -8 |
-| NEPHROPLUS | Medical/Nursing Services | 659.35 | 7.40 | 0 | 2 | 2.71 | 2.74 | 87.31 | 146 | +3 | 4.93 | -1.40 | 61.78 | 436 | -45 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| NESCO | Real Estate Development | 1052.60 | 2.90 | 0 | 4 | -0.74 | -0.71 | 60.63 | 451 | -2 | 4.73 | -1.59 | 60.72 | 448 | -45 | 1.12 | 4.99 | 72.52 | 303 | +12 | -8.99 | -11.49 | 37.43 | 653 | +34 |
-| NETWEB | Computer Peripherals | 4057.00 | 503.46 | 0 | 4 | -3.53 | -3.50 | 29.57 | 806 | -84 | -7.88 | -13.43 | 13.53 | 985 | -6 | -21.81 | -18.82 | 12.37 | 964 | +36 | -13.78 | -16.14 | 27.83 | 753 | +42 |
-| NEULANDLAB | Pharmaceuticals: Major | 21119.00 | 98.56 | 0 | 4 | 0.08 | 0.11 | 68.77 | 358 | +322 | 5.75 | -0.62 | 64.41 | 406 | -85 | -8.22 | -4.71 | 49.50 | 556 | +30 | 24.29 | 20.88 | 82.92 | 179 | +1 |
-| NEWGEN | Packaged Software | 418.45 | 30.75 | 0 | 4 | 0.88 | 0.91 | 76.82 | 266 | +118 | -8.64 | -14.15 | 11.86 | 1004 | +55 | -20.88 | -17.85 | 13.74 | 949 | +78 | -19.25 | -21.46 | 18.71 | 848 | +13 |
-| NFL | Chemicals: Agricultural | 64.42 | 4.13 | 0 | 4 | 0.94 | 0.97 | 77.60 | 257 | +365 | 8.85 | 2.29 | 73.46 | 303 | +225 | -8.46 | -4.95 | 48.68 | 565 | +124 | -14.41 | -16.76 | 26.78 | 764 | +48 |
-| NGLFINE | Pharmaceuticals: Major | 2791.40 | 2.05 | 0 | 4 | 0.52 | 0.55 | 73.49 | 304 | +494 | 6.93 | 0.48 | 67.75 | 368 | +91 | 5.36 | 9.39 | 81.16 | 208 | +155 | 5.53 | 2.64 | 61.80 | 399 | +17 |
-| NHPC | Electric Utilities | 75.90 | 95.04 | 0 | 4 | -0.52 | -0.50 | 62.90 | 425 | -180 | 1.96 | -4.19 | 49.47 | 576 | -64 | -1.07 | 2.72 | 67.88 | 354 | -72 | 1.07 | -1.70 | 55.09 | 469 | -66 |
-| NIACL | Multi-Line Insurance | 146.54 | 12.56 | 0 | 4 | -4.42 | -4.39 | 22.48 | 887 | -463 | -10.89 | -16.26 | 7.73 | 1051 | -48 | -23.37 | -20.44 | 10.56 | 984 | -71 | -0.43 | -3.16 | 52.98 | 491 | -15 |
-| NIBE | Textiles | 1048.80 | 7.23 | 0 | 4 | -6.47 | -6.44 | 9.54 | 1035 | -90 | -8.95 | -14.44 | 11.25 | 1011 | +7 | -23.53 | -20.61 | 10.37 | 986 | +17 | -30.18 | -32.09 | 6.53 | 975 | +7 |
-| NIITMTS | Miscellaneous Commercial Services | 163.32 | 2.80 | 0 | 4 | -2.81 | -2.78 | 37.27 | 718 | +77 | -16.19 | -21.25 | 3.25 | 1102 | -5 | -28.09 | -25.34 | 5.10 | 1044 | +13 | -23.10 | -25.20 | 13.82 | 899 | +30 |
-| NITCO | Building Products | 79.10 | 3.52 | 0 | 4 | -3.37 | -3.34 | 31.41 | 785 | +78 | 14.54 | 7.63 | 87.61 | 142 | +45 | -15.84 | -12.62 | 25.48 | 820 | +46 | -17.47 | -19.73 | 21.40 | 820 | +43 |
-| NITINSPIN | Textiles | 676.45 | 11.27 | 0 | 4 | -2.64 | -2.61 | 38.50 | 704 | -424 | 5.86 | -0.52 | 65.11 | 398 | -172 | 7.82 | 11.94 | 84.26 | 174 | -35 | 33.21 | 29.56 | 88.96 | 116 | -13 |
-| NIVABUPA | Life/Health Insurance | 74.27 | 9.10 | 0 | 4 | 0.36 | 0.39 | 71.92 | 322 | +0 | 2.05 | -4.11 | 49.56 | 575 | -95 | -8.60 | -5.11 | 48.23 | 570 | -4 | -11.61 | -14.04 | 32.53 | 704 | -10 |
-| NLCINDIA | Electric Utilities | 228.92 | 40.65 | 0 | 4 | -2.55 | -2.53 | 39.37 | 694 | -250 | 0.43 | -5.63 | 42.44 | 656 | +97 | -14.39 | -11.12 | 28.84 | 783 | +37 | -33.84 | -35.65 | 4.32 | 998 | +6 |
-| NMDC | Other Metals/Minerals | 67.24 | 105.54 | 0 | 4 | -1.41 | -1.38 | 53.46 | 533 | +148 | -0.39 | -6.39 | 37.79 | 709 | +115 | -23.76 | -20.85 | 9.83 | 992 | -17 | -29.99 | -31.91 | 6.72 | 973 | -3 |
-| NOCIL | Chemicals: Specialty | 135.26 | 8.44 | 0 | 4 | -2.53 | -2.50 | 39.81 | 689 | -122 | -7.80 | -13.36 | 13.71 | 983 | -34 | -21.11 | -18.09 | 13.47 | 952 | -91 | -16.93 | -19.20 | 22.26 | 811 | +8 |
-| NORTHARC | Finance/Rental/Leasing | 270.00 | 16.83 | 0 | 4 | -2.19 | -2.16 | 43.48 | 647 | +62 | 5.86 | -0.52 | 65.20 | 397 | -103 | -13.36 | -10.05 | 32.39 | 744 | -292 | -7.87 | -10.39 | 39.73 | 629 | -55 |
-| NRBBEARING | Auto Parts: OEM | 429.15 | 13.96 | 0 | 4 | -1.06 | -1.03 | 57.74 | 484 | +36 | -5.65 | -11.34 | 19.51 | 917 | +63 | -9.43 | -5.97 | 45.22 | 603 | +11 | 20.09 | 16.80 | 79.17 | 218 | +14 |
-| NRL | Other Metals/Minerals | 175.86 | 1.38 | 0 | 2 | -6.42 | -6.39 | 9.97 | 1030 | +48 | 11.30 | 4.59 | 80.58 | 222 | -65 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| NSIL | Financial Conglomerates | 4740.70 | 0.94 | 0 | 1 | -2.83 | -2.80 | 37.01 | 721 | +167 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| NTPCGREEN | Alternative Power Generation | 82.40 | 20.51 | 0 | 4 | -0.10 | -0.07 | 67.10 | 377 | +138 | -0.99 | -6.96 | 34.97 | 741 | +5 | -7.94 | -4.42 | 50.86 | 541 | +63 | -18.46 | -20.70 | 19.48 | 840 | +3 |
-| NUCLEUS | Information Technology Services | 599.85 | 0.66 | 0 | 4 | -2.88 | -2.85 | 36.57 | 726 | +14 | -9.78 | -15.22 | 9.93 | 1026 | +7 | -19.42 | -16.34 | 16.74 | 916 | -8 | -17.50 | -19.76 | 21.31 | 821 | +9 |
-| NUVAMA | Investment Managers | 1854.80 | 48.68 | 0 | 4 | 1.10 | 1.13 | 78.65 | 245 | +614 | 6.31 | -0.10 | 65.99 | 388 | +8 | 5.77 | 9.82 | 81.80 | 201 | +117 | 19.04 | 15.78 | 78.31 | 227 | +53 |
-| OFSS | Packaged Software | 9291.00 | 169.10 | 0 | 2 | -5.55 | -5.52 | 14.44 | 979 | -95 | -6.96 | -12.57 | 16.08 | 956 | -18 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| OIL | Integrated Oil | 427.10 | 82.34 | 0 | 4 | -2.47 | -2.44 | 40.33 | 683 | +14 | -4.56 | -10.31 | 22.67 | 881 | +79 | -11.60 | -8.22 | 38.40 | 678 | +5 | -13.01 | -15.39 | 28.98 | 741 | -28 |
-| OLECTRA | Motor Vehicles | 983.50 | 33.69 | 0 | 4 | -2.10 | -2.07 | 44.71 | 633 | -51 | -0.17 | -6.19 | 39.02 | 695 | -18 | -22.97 | -20.02 | 10.92 | 980 | +27 | -25.56 | -27.60 | 10.75 | 931 | -20 |
-| OMAXE | Real Estate Development | 94.24 | 3.08 | 0 | 4 | -5.11 | -5.08 | 17.24 | 947 | -107 | -4.19 | -9.97 | 24.25 | 863 | +139 | -24.92 | -22.05 | 8.19 | 1010 | +27 | 23.63 | 20.24 | 82.05 | 188 | +0 |
-| ONESOURCE | Pharmaceuticals: Major | 1545.80 | 101.11 | 0 | 4 | -3.56 | -3.54 | 29.05 | 812 | -506 | -2.02 | -7.92 | 30.84 | 788 | -159 | 1.76 | 5.65 | 73.89 | 288 | -81 | -14.62 | -16.96 | 26.10 | 771 | -55 |
-| ORCHPHARMA | Pharmaceuticals: Major | 981.15 | 8.85 | 0 | 4 | 3.43 | 3.46 | 89.94 | 116 | +359 | 13.43 | 6.59 | 85.33 | 168 | +3 | 1.06 | 4.92 | 72.34 | 305 | +64 | 17.24 | 14.03 | 76.10 | 250 | +13 |
-| ORIENTCEM | Construction Materials | 126.34 | 4.09 | 0 | 4 | -2.24 | -2.21 | 42.96 | 653 | -422 | 11.52 | 4.79 | 81.55 | 211 | -7 | -2.48 | 1.25 | 64.70 | 389 | +7 | -6.49 | -9.05 | 43.19 | 593 | +23 |
-| ORIENTELEC | Electronics/Appliances | 188.31 | 34.87 | 0 | 4 | -6.95 | -6.92 | 7.52 | 1058 | -546 | 0.56 | -5.51 | 43.06 | 649 | -213 | 4.72 | 8.72 | 80.35 | 217 | -73 | 3.71 | 0.86 | 59.02 | 428 | -61 |
-| ORISSAMINE | Steel | 3295.40 | 1.78 | 0 | 4 | -1.69 | -1.66 | 49.87 | 574 | +77 | 2.26 | -3.91 | 50.44 | 565 | +137 | -23.62 | -20.70 | 10.19 | 988 | +28 | -18.36 | -20.59 | 19.77 | 837 | +5 |
-| ORKLAINDIA | Food: Specialty/Candy | 537.70 | 3.47 | 0 | 3 | -2.36 | -2.33 | 41.56 | 669 | +237 | 5.65 | -0.72 | 63.88 | 412 | +204 | -9.57 | -6.11 | 44.68 | 609 | +33 | N/A | N/A | N/A | N/A | N/A |
-| OSWALPUMPS | Industrial Machinery | 211.78 | 10.27 | 0 | 4 | -5.22 | -5.20 | 16.45 | 956 | -82 | 1.11 | -4.99 | 45.96 | 616 | +36 | -27.55 | -24.78 | 5.46 | 1040 | +0 | -44.18 | -45.71 | 1.63 | 1026 | -3 |
-| PACEDIGITK | Electric Utilities | 163.58 | 23.60 | 0 | 3 | -4.51 | -4.48 | 21.61 | 897 | +185 | 15.04 | 8.10 | 88.31 | 134 | +1 | -4.70 | -1.05 | 59.87 | 442 | +90 | N/A | N/A | N/A | N/A | N/A |
-| PAGEIND | Apparel/Footwear | 30860.00 | 121.33 | 0 | 4 | -0.66 | -0.63 | 61.68 | 439 | -31 | -8.82 | -14.32 | 11.60 | 1007 | +40 | -13.80 | -10.50 | 30.85 | 761 | +2 | -17.85 | -20.10 | 20.83 | 826 | -8 |
-| PANACEABIO | Pharmaceuticals: Major | 350.50 | 3.08 | 0 | 4 | -0.67 | -0.64 | 61.50 | 441 | +624 | 6.52 | 0.10 | 66.78 | 379 | +159 | -9.45 | -5.99 | 45.13 | 604 | +226 | -19.17 | -21.38 | 19.10 | 844 | +63 |
-| PANAMAPET | Industrial Specialties | 419.50 | 7.60 | 0 | 4 | -1.22 | -1.20 | 55.73 | 507 | +279 | -9.70 | -15.14 | 10.11 | 1024 | +85 | -11.00 | -7.60 | 40.31 | 657 | +20 | 24.19 | 20.78 | 82.73 | 181 | -48 |
-| PARACABLES | Electrical Products | 57.25 | 34.81 | 0 | 4 | -6.44 | -6.41 | 9.89 | 1031 | +46 | -10.20 | -15.61 | 8.96 | 1037 | +42 | -12.38 | -9.03 | 35.85 | 706 | -116 | -10.89 | -13.34 | 34.64 | 682 | +84 |
-| PARADEEP | Chemicals: Agricultural | 140.56 | 33.58 | 0 | 4 | 2.01 | 2.04 | 84.16 | 182 | +430 | 1.72 | -4.42 | 48.15 | 591 | +144 | -12.17 | -8.81 | 36.21 | 702 | +146 | 11.32 | 8.27 | 69.58 | 318 | +17 |
-| PARKHOSPS | Hospital/Nursing Management | 235.46 | 14.80 | 0 | 2 | -0.68 | -0.66 | 61.07 | 446 | -29 | 3.75 | -2.51 | 56.77 | 493 | +10 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| PARKHOTELS | Hotels/Resorts/Cruise lines | 102.68 | 1.22 | 0 | 4 | -0.30 | -0.27 | 65.09 | 400 | -14 | 1.37 | -4.74 | 46.84 | 606 | -11 | -8.71 | -5.22 | 47.77 | 575 | -26 | -10.83 | -13.27 | 34.84 | 680 | +19 |
-| PAUSHAKLTD | Chemicals: Major Diversified | 588.00 | 5.08 | 0 | 2 | 1.73 | 1.76 | 82.59 | 200 | +637 | -4.09 | -9.87 | 24.60 | 859 | +186 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| PCBL | Industrial Specialties | 260.40 | 16.96 | 0 | 4 | -4.11 | -4.08 | 24.32 | 866 | -87 | -10.84 | -16.21 | 8.00 | 1048 | -50 | -17.87 | -14.73 | 20.29 | 877 | -15 | -10.48 | -12.94 | 35.32 | 675 | -20 |
-| PENIND | Steel | 164.89 | 5.65 | 0 | 4 | 2.45 | 2.48 | 86.53 | 155 | -65 | 6.26 | -0.15 | 65.82 | 390 | +99 | -0.75 | 3.05 | 68.43 | 348 | -63 | 3.63 | 0.79 | 58.83 | 430 | +11 |
-| PETRONET | Gas Distributors | 326.45 | 88.42 | 0 | 4 | -1.31 | -1.29 | 54.59 | 520 | -166 | 14.58 | 7.67 | 87.79 | 140 | +121 | 8.60 | 12.75 | 85.08 | 165 | -47 | 20.93 | 17.62 | 79.94 | 210 | -9 |
-| PFIZER | Pharmaceuticals: Major | 3791.40 | 11.57 | 0 | 4 | -1.53 | -1.50 | 51.79 | 552 | -47 | 1.53 | -4.60 | 47.28 | 601 | -60 | -19.06 | -15.97 | 17.65 | 906 | -21 | -15.10 | -17.42 | 24.76 | 785 | -2 |
-| PFOCUS | Movies/Entertainment | 236.55 | 111.60 | 0 | 3 | -11.45 | -11.43 | 1.40 | 1128 | +7 | -20.17 | -24.98 | 1.41 | 1123 | -3 | -17.66 | -14.51 | 20.75 | 872 | +7 | N/A | N/A | N/A | N/A | N/A |
-| PGEL | Electronic Production Equipment | 567.25 | 93.89 | 0 | 4 | -1.90 | -1.88 | 47.16 | 605 | -577 | 5.75 | -0.63 | 64.32 | 407 | -288 | -2.37 | 1.37 | 64.79 | 388 | -74 | 20.32 | 17.02 | 79.27 | 217 | -17 |
-| PGHL | Pharmaceuticals: Major | 5653.00 | 7.84 | 0 | 4 | 2.10 | 2.13 | 84.43 | 179 | -54 | 4.70 | -1.61 | 60.54 | 450 | +24 | -1.99 | 1.76 | 65.88 | 376 | -87 | -7.46 | -9.99 | 41.07 | 615 | -55 |
-| PICCADIL | Agricultural Commodities/Milling | 517.65 | 10.03 | 0 | 4 | -4.65 | -4.62 | 20.21 | 913 | -189 | -8.82 | -14.32 | 11.69 | 1006 | -82 | -18.49 | -15.38 | 18.74 | 894 | +11 | -10.51 | -12.96 | 35.22 | 676 | +1 |
-| PIIND | Chemicals: Specialty | 1591.20 | 156.67 | 0 | 4 | -2.38 | -2.35 | 41.38 | 671 | +90 | -22.57 | -27.24 | 0.97 | 1128 | +4 | -32.86 | -30.29 | 2.73 | 1070 | +10 | -41.89 | -43.48 | 2.11 | 1021 | +4 |
-| PILANIINVS | Financial Conglomerates | 3901.60 | 0.47 | 0 | 1 | -3.00 | -2.97 | 35.26 | 741 | -16 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| PINELABS | Packaged Software | 163.77 | 190.64 | 0 | 3 | 1.57 | 1.60 | 81.10 | 217 | +709 | 0.72 | -5.35 | 43.85 | 640 | -194 | 0.47 | 4.32 | 70.79 | 322 | +54 | N/A | N/A | N/A | N/A | N/A |
-| PIRAMALFIN | Finance/Rental/Leasing | 1971.20 | 68.75 | 0 | 3 | -2.71 | -2.69 | 37.88 | 711 | +125 | 9.28 | 2.69 | 74.87 | 287 | +93 | -14.31 | -11.03 | 29.39 | 777 | -58 | N/A | N/A | N/A | N/A | N/A |
-| PITTIENG | Industrial Machinery | 902.95 | 18.28 | 0 | 4 | 0.88 | 0.91 | 76.73 | 267 | +751 | 3.60 | -2.65 | 56.06 | 501 | +244 | -18.38 | -15.26 | 18.84 | 893 | +106 | -3.81 | -6.44 | 48.08 | 542 | +125 |
-| PIXTRANS | Miscellaneous Manufacturing | 1650.70 | 2.48 | 0 | 4 | -3.06 | -3.03 | 34.30 | 752 | +189 | -0.98 | -6.95 | 35.06 | 740 | +9 | -9.23 | -5.76 | 46.04 | 594 | +60 | 1.11 | -1.66 | 55.28 | 467 | -14 |
-| PLATIND | Chemicals: Major Diversified | 207.52 | 11.74 | 0 | 4 | -3.19 | -3.16 | 33.16 | 765 | +122 | -3.13 | -8.97 | 26.63 | 836 | +98 | -11.81 | -8.43 | 37.67 | 686 | -93 | -5.23 | -7.83 | 45.39 | 570 | -5 |
-| PNBHOUSING | Finance/Rental/Leasing | 1171.00 | 75.65 | 0 | 4 | 1.46 | 1.48 | 80.31 | 226 | -141 | 4.37 | -1.93 | 59.14 | 466 | -177 | 1.94 | 5.84 | 74.80 | 278 | +1 | 17.93 | 14.69 | 76.97 | 241 | -14 |
-| PNCINFRA | Engineering & Construction | 124.18 | 11.27 | 0 | 4 | -5.35 | -5.32 | 15.40 | 968 | -457 | -8.01 | -13.56 | 13.09 | 990 | -85 | -34.00 | -31.47 | 2.37 | 1074 | +4 | -41.44 | -43.05 | 2.21 | 1020 | -5 |
-| PNGJL | Specialty Stores | 569.35 | 27.19 | 0 | 4 | -1.27 | -1.25 | 55.12 | 514 | +403 | -0.45 | -6.46 | 37.52 | 712 | +79 | -2.49 | 1.24 | 64.60 | 390 | +111 | 3.12 | 0.30 | 58.25 | 436 | +15 |
-| POCL | Other Metals/Minerals | 353.25 | 15.19 | 0 | 4 | -4.67 | -4.64 | 19.95 | 916 | -246 | -9.93 | -15.36 | 9.40 | 1032 | -57 | -28.72 | -26.00 | 4.55 | 1050 | -3 | -73.16 | -73.89 | 0.38 | 1039 | +1 |
-| POKARNA | Building Products | 636.60 | 13.54 | 0 | 4 | -10.85 | -10.83 | 1.92 | 1122 | -3 | -4.42 | -10.19 | 23.37 | 873 | -36 | -25.53 | -22.68 | 7.46 | 1018 | -10 | -22.76 | -24.88 | 14.30 | 894 | -13 |
-| POLYMED | Medical Specialties | 1635.90 | 11.39 | 0 | 4 | -2.08 | -2.05 | 45.06 | 629 | -83 | 10.83 | 4.15 | 79.35 | 236 | +7 | -7.03 | -3.47 | 53.14 | 516 | -58 | 22.16 | 18.81 | 80.81 | 201 | -18 |
-| POLYPLEX | Chemicals: Specialty | 1007.60 | 8.27 | 0 | 4 | 1.85 | 1.88 | 83.11 | 194 | +76 | 9.25 | 2.66 | 74.52 | 291 | +52 | -14.80 | -11.54 | 27.93 | 793 | +5 | 8.69 | 5.72 | 66.41 | 351 | +23 |
-| POWERMECH | Engineering & Construction | 2416.30 | 11.07 | 0 | 4 | 2.87 | 2.90 | 88.10 | 137 | +256 | 9.58 | 2.97 | 75.40 | 281 | +2 | -4.16 | -0.49 | 61.15 | 428 | +102 | -4.30 | -6.92 | 46.83 | 555 | -7 |
-| PRABHA | Oil & Gas Production | 181.14 | 1.39 | 0 | 4 | -9.04 | -9.02 | 3.15 | 1108 | -55 | 0.30 | -5.74 | 41.83 | 663 | +94 | -11.47 | -8.08 | 38.58 | 676 | +24 | 11.70 | 8.64 | 69.96 | 314 | -49 |
-| PRAJIND | Engineering & Construction | 225.38 | 22.15 | 0 | 4 | -5.49 | -5.46 | 14.70 | 976 | +5 | -10.83 | -16.21 | 8.08 | 1047 | -40 | -34.46 | -31.96 | 2.18 | 1076 | +1 | -34.59 | -36.38 | 3.74 | 1004 | -2 |
-| PRAKASH | Steel | 107.70 | 6.05 | 0 | 4 | -3.95 | -3.92 | 25.20 | 856 | -84 | -4.00 | -9.79 | 24.96 | 855 | -42 | -15.46 | -12.23 | 26.30 | 811 | +11 | -26.11 | -28.13 | 9.88 | 940 | -4 |
-| PRECWIRE | Electrical Products | 373.15 | 14.80 | 0 | 4 | -2.43 | -2.40 | 40.77 | 678 | +272 | -7.91 | -13.46 | 13.36 | 987 | +7 | -26.20 | -23.37 | 6.73 | 1026 | +7 | -14.55 | -16.89 | 26.30 | 769 | -15 |
-| PREMEXPLN | Chemicals: Specialty | 566.35 | 19.66 | 0 | 4 | 1.29 | 1.32 | 79.35 | 237 | -127 | 0.58 | -5.49 | 43.15 | 648 | +199 | -14.55 | -11.28 | 28.57 | 786 | -16 | -13.47 | -15.85 | 28.12 | 750 | -15 |
-| PREMIERENE | Semiconductors | 803.50 | 83.81 | 0 | 4 | -3.15 | -3.12 | 33.68 | 759 | -97 | -4.93 | -10.67 | 21.53 | 894 | +3 | -22.46 | -19.50 | 11.37 | 975 | -65 | -26.22 | -28.24 | 9.60 | 943 | -31 |
-| PRICOLLTD | Auto Parts: OEM | 604.15 | 53.16 | 0 | 4 | -4.47 | -4.44 | 22.05 | 892 | -527 | -6.38 | -12.03 | 17.31 | 942 | -60 | -24.79 | -21.91 | 8.46 | 1007 | -89 | 5.78 | 2.88 | 62.38 | 393 | -44 |
-| PRIMESECU | Investment Banks/Brokers | 297.25 | 2.16 | 0 | 4 | -3.62 | -3.59 | 28.52 | 818 | -240 | 4.35 | -1.94 | 59.05 | 467 | -170 | 3.59 | 7.55 | 78.53 | 237 | -50 | 7.47 | 4.52 | 64.78 | 368 | -24 |
-| PRINCEPIPE | Industrial Machinery | 284.70 | 17.41 | 0 | 4 | -1.96 | -1.94 | 46.28 | 615 | +243 | 9.80 | 3.17 | 76.19 | 272 | -40 | -3.20 | 0.51 | 63.15 | 406 | +14 | 4.19 | 1.34 | 60.17 | 416 | +10 |
-| PRIVISCL | Chemicals: Major Diversified | 3643.90 | 42.20 | 0 | 4 | 3.08 | 3.11 | 88.98 | 127 | -70 | 4.83 | -1.49 | 61.51 | 439 | +72 | 4.89 | 8.90 | 80.53 | 215 | -22 | 11.90 | 8.83 | 70.44 | 309 | +15 |
-| PRSMJOHNSN | Construction Materials | 106.99 | 2.62 | 0 | 4 | -2.55 | -2.52 | 39.46 | 693 | -86 | 11.91 | 5.17 | 82.69 | 198 | +36 | -3.80 | -0.12 | 61.87 | 420 | -4 | -9.95 | -12.42 | 36.08 | 667 | +39 |
-| PRUDENT | Investment Managers | 2908.40 | 10.11 | 0 | 4 | -0.40 | -0.38 | 64.22 | 410 | +149 | -1.90 | -7.82 | 31.81 | 777 | -106 | -20.85 | -17.82 | 13.92 | 947 | -141 | 9.73 | 6.72 | 67.27 | 342 | +41 |
-| PSPPROJECT | Engineering & Construction | 779.15 | 6.34 | 0 | 4 | 2.33 | 2.36 | 85.83 | 163 | +305 | 9.38 | 2.78 | 75.13 | 284 | +110 | -11.13 | -7.73 | 39.85 | 662 | +80 | -4.99 | -7.59 | 45.78 | 566 | +73 |
-| PTC | Electric Utilities | 137.17 | 16.54 | 0 | 4 | -0.14 | -0.11 | 66.58 | 383 | +42 | 0.34 | -5.71 | 42.18 | 659 | +53 | -9.09 | -5.62 | 46.59 | 588 | +168 | -25.93 | -27.96 | 10.08 | 938 | +16 |
-| PUNJABCHEM | Chemicals: Agricultural | 859.60 | 0.39 | 0 | 4 | -1.63 | -1.60 | 50.74 | 564 | +59 | -10.06 | -15.49 | 9.14 | 1035 | +2 | -23.15 | -20.21 | 10.65 | 983 | -7 | -10.85 | -13.29 | 34.74 | 681 | -33 |
-| PURVA | Real Estate Development | 201.66 | 2.57 | 0 | 4 | 2.63 | 2.65 | 86.79 | 152 | +275 | 3.89 | -2.38 | 57.56 | 484 | -72 | -5.29 | -1.67 | 58.23 | 460 | +60 | -5.26 | -7.86 | 45.30 | 571 | +33 |
-| QPOWER | Electrical Products | 1472.30 | 46.55 | 0 | 3 | -9.07 | -9.04 | 3.06 | 1109 | -189 | 8.20 | 1.68 | 71.53 | 325 | -52 | 2.54 | 6.46 | 76.16 | 263 | -24 | N/A | N/A | N/A | N/A | N/A |
-| QUADFUTURE | Electrical Products | 393.10 | 7.90 | 0 | 4 | -7.72 | -7.70 | 4.99 | 1087 | +20 | -2.65 | -8.52 | 28.12 | 819 | +108 | -6.75 | -3.18 | 54.05 | 506 | +122 | 22.44 | 19.09 | 81.29 | 196 | +21 |
-| RACLGEAR | Auto Parts: OEM | 1608.20 | 4.05 | 0 | 4 | 1.86 | 1.89 | 83.20 | 193 | +108 | 16.38 | 9.37 | 89.98 | 115 | +33 | 4.71 | 8.72 | 80.25 | 218 | +4 | 26.02 | 22.57 | 83.59 | 172 | -16 |
-| RADICO | Beverages: Alcoholic | 4671.00 | 179.52 | 0 | 4 | 0.24 | 0.26 | 70.87 | 334 | -4 | 12.96 | 6.15 | 84.18 | 181 | +111 | 4.15 | 8.13 | 79.53 | 226 | +35 | 34.84 | 31.15 | 89.92 | 106 | +2 |
-| RAILTEL | Major Telecommunications | 246.42 | 16.73 | 0 | 4 | -2.12 | -2.09 | 44.18 | 639 | -218 | 7.47 | 0.99 | 69.16 | 352 | +69 | -10.69 | -7.27 | 41.40 | 645 | +79 | -22.34 | -24.47 | 14.78 | 889 | +13 |
-| RAIN | Industrial Specialties | 164.49 | 62.37 | 0 | 4 | 1.89 | 1.92 | 83.29 | 192 | +349 | -21.33 | -26.08 | 1.05 | 1127 | -5 | -15.80 | -12.58 | 25.57 | 819 | +80 | -17.95 | -20.20 | 20.63 | 828 | +8 |
-| RAINBOW | Hospital/Nursing Management | 1260.80 | 16.53 | 0 | 4 | 1.61 | 1.64 | 81.54 | 212 | +190 | 4.65 | -1.66 | 60.37 | 452 | -15 | -10.88 | -7.47 | 40.86 | 651 | +64 | -6.90 | -9.45 | 42.03 | 605 | -24 |
-| RAJRATAN | Metal Fabrication | 397.90 | 3.45 | 0 | 4 | -4.45 | -4.43 | 22.13 | 891 | -419 | -1.20 | -7.16 | 34.18 | 750 | -245 | -19.96 | -16.90 | 15.83 | 926 | -43 | -3.57 | -6.22 | 48.46 | 538 | -13 |
-| RALLIS | Chemicals: Agricultural | 187.06 | 9.54 | 0 | 4 | -1.16 | -1.13 | 56.43 | 499 | -100 | -0.88 | -6.86 | 35.24 | 738 | -53 | -9.72 | -6.26 | 43.95 | 617 | -29 | -21.12 | -23.28 | 16.22 | 874 | -12 |
-| RAMCOCEM | Construction Materials | 828.00 | 14.07 | 0 | 4 | 0.02 | 0.05 | 68.42 | 362 | -95 | 13.16 | 6.34 | 84.89 | 173 | +2 | -5.86 | -2.26 | 56.32 | 481 | +27 | -3.70 | -6.34 | 48.18 | 541 | +8 |
-| RAMCOIND | Construction Materials | 316.35 | 3.06 | 0 | 4 | 1.90 | 1.93 | 83.46 | 190 | +43 | 9.65 | 3.04 | 75.75 | 277 | -24 | -3.57 | 0.12 | 62.51 | 413 | +52 | 4.35 | 1.49 | 60.27 | 415 | -63 |
-| RAMRAT | Electrical Products | 504.05 | 5.93 | 0 | 4 | -1.27 | -1.25 | 55.21 | 513 | +91 | -7.97 | -13.52 | 13.27 | 988 | -34 | -10.58 | -7.16 | 41.49 | 644 | +130 | 25.97 | 22.51 | 83.49 | 173 | -18 |
-| RANEHOLDIN | Auto Parts: OEM | 1474.00 | 14.47 | 0 | 4 | -5.94 | -5.91 | 12.86 | 997 | -88 | 1.01 | -5.08 | 45.34 | 623 | +172 | -5.92 | -2.32 | 55.96 | 485 | +71 | -0.66 | -3.38 | 52.50 | 496 | -12 |
-| RATEGAIN | Packaged Software | 672.75 | 26.30 | 0 | 4 | 1.66 | 1.69 | 82.15 | 205 | +123 | -16.82 | -21.83 | 3.08 | 1104 | -15 | -28.26 | -25.51 | 5.00 | 1045 | -15 | -12.09 | -14.50 | 31.57 | 714 | -4 |
-| RATNAMANI | Steel | 2278.40 | 4.77 | 0 | 4 | -3.69 | -3.67 | 27.82 | 826 | -262 | -1.37 | -7.32 | 33.57 | 757 | -97 | -14.01 | -10.72 | 30.30 | 767 | -159 | -11.28 | -13.72 | 33.59 | 693 | -79 |
-| RAYMONDLSL | Apparel/Footwear | 541.70 | 9.96 | 0 | 4 | -4.14 | -4.11 | 23.97 | 870 | -457 | 8.59 | 2.04 | 72.41 | 315 | -3 | -18.26 | -15.14 | 19.11 | 890 | +43 | -26.70 | -28.71 | 9.31 | 946 | -1 |
-| RBA | Restaurants | 87.82 | 35.70 | 0 | 4 | -1.75 | -1.72 | 48.91 | 585 | +211 | -7.51 | -13.09 | 14.76 | 971 | +11 | -10.48 | -7.05 | 41.95 | 639 | +75 | 29.13 | 25.59 | 86.18 | 145 | +0 |
-| RBLBANK | Major Banks | 389.25 | 127.68 | 0 | 4 | 0.09 | 0.12 | 69.03 | 355 | -26 | 11.23 | 4.52 | 80.40 | 224 | -10 | 2.34 | 6.25 | 75.80 | 267 | -10 | 11.79 | 8.73 | 70.15 | 312 | -19 |
-| RCF | Chemicals: Agricultural | 102.97 | 10.19 | 0 | 4 | -1.41 | -1.38 | 53.54 | 532 | +55 | 7.09 | 0.63 | 68.45 | 360 | +30 | -9.29 | -5.82 | 45.77 | 597 | +165 | -19.63 | -21.83 | 17.66 | 859 | -20 |
-| RECLTD | Finance/Rental/Leasing | 297.30 | 116.36 | 0 | 4 | -0.57 | -0.54 | 62.38 | 431 | -260 | 2.52 | -3.66 | 52.11 | 546 | -81 | -8.04 | -4.52 | 50.32 | 547 | -86 | -8.71 | -11.21 | 37.91 | 648 | -27 |
-| REDTAPE | Apparel/Footwear Retail | 102.67 | 1.94 | 0 | 4 | -1.30 | -1.27 | 54.94 | 516 | +80 | -2.26 | -8.15 | 29.88 | 799 | -37 | -17.30 | -14.14 | 21.66 | 862 | +19 | -25.07 | -27.13 | 11.23 | 926 | +4 |
-| REFEX | Coal | 202.19 | 5.49 | 0 | 4 | -7.42 | -7.40 | 5.95 | 1076 | -33 | -9.19 | -14.67 | 10.72 | 1017 | +46 | -28.43 | -25.69 | 4.91 | 1046 | +0 | -35.73 | -37.49 | 3.45 | 1007 | -1 |
-| RELAXO | Apparel/Footwear | 266.45 | 3.82 | 0 | 4 | -3.44 | -3.42 | 30.53 | 795 | -548 | -4.75 | -10.50 | 22.23 | 886 | -104 | -25.54 | -22.69 | 7.37 | 1019 | -24 | -21.08 | -23.24 | 16.41 | 872 | -52 |
-| RELIGARE | Multi-Line Insurance | 227.27 | 17.46 | 0 | 4 | -1.32 | -1.29 | 54.51 | 521 | -378 | 6.10 | -0.30 | 65.64 | 392 | -55 | -6.40 | -2.82 | 54.96 | 496 | -142 | -2.37 | -5.05 | 50.00 | 522 | +8 |
-| RELTD | Alternative Power Generation | 136.42 | 1.48 | 0 | 4 | 2.16 | 2.19 | 84.86 | 174 | +355 | 3.96 | -2.31 | 58.00 | 479 | +208 | -14.29 | -11.01 | 29.66 | 774 | +53 | 10.60 | 7.57 | 68.62 | 328 | +69 |
-| RESPONIND | Forest Products | 137.12 | 5.32 | 0 | 4 | -4.36 | -4.33 | 22.75 | 884 | +34 | -7.60 | -13.17 | 14.41 | 975 | -36 | -8.00 | -4.48 | 50.59 | 544 | +65 | -28.74 | -30.69 | 8.25 | 957 | -14 |
-| RHIM | Miscellaneous Manufacturing | 346.05 | 12.32 | 0 | 4 | -1.59 | -1.57 | 51.27 | 558 | -191 | -2.34 | -8.23 | 29.61 | 802 | +63 | -6.88 | -3.31 | 53.50 | 512 | -33 | -8.32 | -10.83 | 38.96 | 637 | -167 |
-| RICOAUTO | Auto Parts: OEM | 91.58 | 9.80 | 0 | 4 | -5.95 | -5.92 | 12.69 | 999 | -390 | -11.16 | -16.51 | 7.38 | 1055 | -28 | -29.35 | -26.64 | 3.82 | 1058 | -19 | -21.26 | -23.42 | 16.12 | 875 | -38 |
-| RIIL | Oil & Gas Pipelines | 693.85 | 7.27 | 0 | 4 | 0.58 | 0.61 | 73.67 | 302 | +286 | 2.97 | -3.24 | 53.60 | 529 | +2 | -7.79 | -4.26 | 51.23 | 537 | +42 | -7.80 | -10.33 | 40.02 | 626 | -20 |
-| RITES | Miscellaneous Commercial Services | 185.99 | 12.82 | 0 | 4 | -1.58 | -1.55 | 51.36 | 557 | +159 | -5.38 | -11.09 | 20.12 | 910 | +13 | -14.86 | -11.60 | 27.75 | 795 | -27 | -6.91 | -9.46 | 41.94 | 606 | +20 |
-| RML | Auto Parts: OEM | 1104.80 | 4.16 | 0 | 4 | -7.96 | -7.93 | 4.55 | 1092 | -35 | -9.79 | -15.23 | 9.84 | 1027 | -51 | -2.20 | 1.54 | 65.24 | 383 | -67 | 21.98 | 18.63 | 80.61 | 203 | -6 |
-| ROSSARI | Chemicals: Specialty | 416.85 | 2.79 | 0 | 4 | -2.61 | -2.58 | 38.67 | 702 | +155 | 2.07 | -4.09 | 49.65 | 574 | +12 | -14.08 | -10.79 | 29.94 | 771 | +53 | -21.09 | -23.25 | 16.31 | 873 | +33 |
-| ROTO | Industrial Machinery | 68.68 | 9.62 | 0 | 4 | -4.05 | -4.02 | 24.67 | 862 | +146 | 14.35 | 7.46 | 87.17 | 147 | -51 | 9.28 | 13.46 | 86.26 | 152 | +4 | 19.03 | 15.77 | 78.21 | 228 | -54 |
-| ROUTE | Major Telecommunications | 413.10 | 7.66 | 0 | 4 | -2.66 | -2.64 | 38.23 | 707 | +78 | -5.03 | -10.76 | 21.00 | 900 | +81 | -17.38 | -14.22 | 21.29 | 866 | +21 | -21.71 | -23.85 | 15.64 | 880 | +18 |
-| RPGLIFE | Pharmaceuticals: Major | 2534.50 | 5.04 | 0 | 4 | -2.75 | -2.72 | 37.71 | 713 | -477 | -10.88 | -16.26 | 7.82 | 1050 | -18 | -3.59 | 0.09 | 62.42 | 414 | -111 | 15.30 | 12.14 | 74.09 | 271 | -20 |
-| RPSGVENT | Financial Conglomerates | 842.85 | 10.35 | 0 | 4 | -3.32 | -3.29 | 31.85 | 780 | -144 | 1.85 | -4.29 | 49.03 | 581 | -29 | -0.65 | 3.15 | 68.61 | 346 | -25 | -8.76 | -11.26 | 37.81 | 649 | -47 |
-| RPTECH | Electronics Distributors | 635.75 | 27.46 | 0 | 4 | -2.08 | -2.05 | 44.88 | 631 | -420 | -21.05 | -25.82 | 1.23 | 1125 | +0 | -22.10 | -19.12 | 11.74 | 971 | -1 | 17.24 | 14.03 | 76.01 | 251 | +11 |
-| RRKABEL | Electrical Products | 1812.60 | 118.11 | 0 | 4 | -0.38 | -0.36 | 64.48 | 407 | +154 | -17.89 | -22.84 | 2.46 | 1111 | -3 | -38.10 | -35.73 | 0.82 | 1091 | +1 | -15.92 | -18.23 | 23.80 | 795 | -112 |
-| RSYSTEMS | Information Technology Services | 240.20 | 14.76 | 0 | 4 | -0.95 | -0.92 | 59.23 | 467 | +311 | -4.76 | -10.50 | 22.14 | 887 | +50 | -2.08 | 1.67 | 65.61 | 379 | +50 | -7.47 | -10.01 | 40.79 | 618 | +120 |
-| RVNL | Engineering & Construction | 187.14 | 138.88 | 0 | 4 | -4.03 | -4.00 | 24.76 | 861 | -200 | 1.65 | -4.48 | 47.80 | 595 | -38 | -10.89 | -7.48 | 40.76 | 652 | +89 | -21.71 | -23.85 | 15.74 | 879 | +20 |
-| SAGCEM | Construction Materials | 139.87 | 0.47 | 0 | 4 | 0.09 | 0.12 | 69.20 | 353 | -218 | 12.34 | 5.56 | 83.13 | 193 | -9 | -12.37 | -9.02 | 35.94 | 705 | -33 | -22.21 | -24.34 | 14.97 | 887 | -27 |
-| SAIL | Steel | 160.96 | 228.54 | 0 | 4 | -2.11 | -2.08 | 44.53 | 635 | -1 | -0.64 | -6.63 | 36.38 | 725 | +189 | -17.46 | -14.30 | 21.02 | 869 | +33 | -21.05 | -23.21 | 16.60 | 870 | +14 |
-| SAKSOFT | Information Technology Services | 118.26 | 3.76 | 0 | 4 | -5.61 | -5.58 | 14.00 | 984 | +48 | -10.47 | -15.87 | 8.44 | 1043 | +19 | -23.88 | -20.96 | 9.74 | 993 | +42 | -18.65 | -20.88 | 19.19 | 843 | +35 |
-| SALSTEEL | Steel | 83.47 | 4.92 | 0 | 3 | -6.13 | -6.10 | 11.55 | 1012 | -256 | 9.54 | 2.93 | 75.31 | 282 | -151 | 5.93 | 9.98 | 82.07 | 198 | -116 | N/A | N/A | N/A | N/A | N/A |
-| SAMHI | Hotels/Resorts/Cruise lines | 154.34 | 11.95 | 0 | 4 | -2.14 | -2.11 | 44.09 | 640 | -371 | 1.65 | -4.48 | 47.72 | 596 | -222 | -1.29 | 2.48 | 67.33 | 360 | -107 | -8.25 | -10.77 | 39.16 | 635 | -64 |
-| SAMMAANCAP | Finance/Rental/Leasing | 123.41 | 72.84 | 0 | 4 | -4.10 | -4.08 | 24.41 | 865 | -34 | 6.35 | -0.06 | 66.26 | 385 | -63 | -15.65 | -12.43 | 25.84 | 816 | -29 | -30.64 | -32.54 | 6.14 | 979 | -4 |
-| SANDHAR | Motor Vehicles | 485.10 | 10.58 | 0 | 4 | -15.63 | -15.60 | 0.52 | 1138 | -20 | 3.29 | -2.94 | 54.92 | 514 | -104 | -25.77 | -22.94 | 7.28 | 1020 | -47 | -32.46 | -34.31 | 4.99 | 991 | -32 |
-| SANDUMA | Other Metals/Minerals | 160.70 | 15.74 | 0 | 4 | -4.16 | -4.14 | 23.88 | 871 | +138 | -5.38 | -11.08 | 20.21 | 909 | -216 | -20.60 | -17.56 | 14.65 | 939 | +0 | -29.16 | -31.10 | 7.49 | 965 | +3 |
-| SANOFI | Pharmaceuticals: Major | 3235.90 | 9.51 | 0 | 4 | 1.04 | 1.07 | 78.30 | 249 | +142 | 8.15 | 1.63 | 71.18 | 329 | +104 | 3.58 | 7.54 | 78.43 | 238 | +31 | 0.72 | -2.04 | 54.80 | 472 | -29 |
-| SANOFICONR | Pharmaceuticals: Major | 3457.10 | 10.04 | 0 | 4 | -1.07 | -1.04 | 57.66 | 485 | +318 | 4.04 | -2.23 | 58.17 | 477 | +155 | -16.50 | -13.31 | 23.66 | 840 | +48 | -27.52 | -29.51 | 8.83 | 951 | -10 |
-| SANSTAR | Food: Major Diversified | 95.35 | 1.66 | 0 | 4 | -2.58 | -2.56 | 39.02 | 698 | -27 | 2.86 | -3.34 | 53.34 | 532 | -124 | -13.60 | -10.30 | 31.57 | 753 | -117 | -19.38 | -21.59 | 18.33 | 852 | -47 |
-| SAPPHIRE | Restaurants | 200.81 | 9.31 | 0 | 4 | 0.12 | 0.15 | 69.73 | 347 | -142 | 0.29 | -5.75 | 41.74 | 664 | -83 | -14.33 | -11.06 | 29.30 | 778 | -94 | 13.85 | 10.73 | 72.26 | 290 | -47 |
-| SARDAEN | Steel | 479.95 | 10.74 | 0 | 4 | 0.81 | 0.84 | 75.77 | 278 | -175 | 5.44 | -0.92 | 63.44 | 417 | +61 | -3.80 | -0.12 | 61.97 | 419 | +62 | -7.83 | -10.35 | 39.92 | 627 | -2 |
-| SASKEN | Information Technology Services | 1915.40 | 9.40 | 0 | 4 | 3.36 | 3.39 | 89.68 | 119 | +415 | 3.68 | -2.58 | 56.50 | 496 | +316 | 0.84 | 4.69 | 71.70 | 312 | +70 | -13.21 | -15.59 | 28.69 | 744 | +131 |
-| SBFC | Finance/Rental/Leasing | 86.95 | 12.61 | 0 | 4 | 0.12 | 0.14 | 69.55 | 349 | +133 | -3.91 | -9.71 | 25.13 | 853 | -349 | -12.01 | -8.65 | 36.67 | 697 | +39 | -6.37 | -8.94 | 43.67 | 588 | +21 |
-| SBICARD | Finance/Rental/Leasing | 586.10 | 55.23 | 0 | 4 | 2.35 | 2.38 | 85.91 | 162 | -68 | 11.10 | 4.40 | 80.05 | 228 | +11 | -9.10 | -5.62 | 46.50 | 589 | -46 | -1.75 | -4.44 | 50.96 | 512 | +7 |
-| SCHAEFFLER | Metal Fabrication | 3701.70 | 28.37 | 0 | 4 | 2.26 | 2.29 | 85.39 | 168 | +110 | 1.82 | -4.32 | 48.86 | 583 | +172 | -7.80 | -4.27 | 51.14 | 538 | +91 | -8.60 | -11.10 | 38.29 | 644 | +52 |
-| SCHNEIDER | Electrical Products | 1028.40 | 19.56 | 0 | 4 | 1.97 | 2.00 | 83.81 | 186 | +32 | -10.30 | -15.71 | 8.70 | 1040 | +0 | -15.65 | -12.42 | 25.93 | 815 | -21 | -8.37 | -10.88 | 38.77 | 639 | +108 |
-| SCI | Air Freight/Couriers | 252.25 | 58.30 | 0 | 4 | 1.18 | 1.21 | 78.74 | 244 | +294 | 3.17 | -3.05 | 54.31 | 521 | -35 | -12.90 | -9.57 | 33.94 | 727 | +57 | -16.86 | -19.14 | 22.36 | 810 | -13 |
-| SDBL | Beverages: Alcoholic | 74.30 | 4.67 | 0 | 4 | -3.05 | -3.03 | 34.38 | 751 | -262 | 2.45 | -3.72 | 51.32 | 555 | -25 | 2.20 | 6.11 | 75.52 | 270 | -21 | -1.78 | -4.48 | 50.77 | 514 | +10 |
-| SEAMECLTD | Oilfield Services/Equipment | 1464.30 | 5.23 | 0 | 4 | -4.92 | -4.89 | 18.55 | 932 | -84 | -7.66 | -13.23 | 14.06 | 979 | -13 | -12.57 | -9.22 | 35.30 | 712 | -27 | -9.46 | -11.94 | 36.76 | 660 | +8 |
-| SEJALLTD | Industrial Specialties | 889.20 | 3.78 | 0 | 2 | 1.28 | 1.31 | 79.27 | 238 | +182 | 1.36 | -4.75 | 46.75 | 607 | -22 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SENCO | Other Consumer Specialties | 304.45 | 48.88 | 0 | 4 | -5.29 | -5.26 | 15.84 | 963 | -331 | -0.59 | -6.58 | 36.91 | 719 | -117 | -12.66 | -9.32 | 34.76 | 718 | -55 | -11.34 | -13.77 | 33.30 | 696 | -54 |
-| SENORES | Pharmaceuticals: Major | 1087.90 | 36.87 | 0 | 4 | -2.25 | -2.22 | 42.69 | 656 | +33 | -17.85 | -22.80 | 2.55 | 1110 | +1 | -24.07 | -21.17 | 9.46 | 996 | +40 | 4.10 | 1.24 | 59.60 | 422 | +1 |
-| SERVOTECH | Electrical Products | 62.21 | 2.40 | 0 | 4 | -3.51 | -3.48 | 29.92 | 802 | +25 | -5.12 | -10.85 | 20.83 | 902 | -96 | -22.03 | -19.05 | 11.92 | 969 | -6 | -44.57 | -46.09 | 1.54 | 1027 | -14 |
-| SESHAPAPER | Pulp & Paper | 216.79 | 2.97 | 0 | 4 | 2.82 | 2.85 | 87.84 | 140 | +180 | 7.34 | 0.86 | 68.98 | 354 | -72 | -5.47 | -1.86 | 57.96 | 463 | +61 | -5.48 | -8.07 | 44.72 | 577 | +61 |
-| SFL | Industrial Specialties | 582.05 | 11.24 | 0 | 4 | -3.93 | -3.90 | 25.37 | 854 | -376 | 4.24 | -2.04 | 58.52 | 473 | +17 | -9.30 | -5.83 | 45.68 | 598 | -73 | -2.89 | -5.55 | 49.33 | 529 | -8 |
-| SGFIN | Investment Banks/Brokers | 622.10 | 67.67 | 0 | 4 | -23.50 | -23.48 | 0.09 | 1143 | +2 | -4.49 | -10.25 | 23.11 | 876 | -49 | -9.66 | -6.21 | 44.31 | 613 | -76 | 7.64 | 4.69 | 65.07 | 365 | -38 |
-| SGMART | Electric Utilities | 881.05 | 177.21 | 0 | 3 | -12.81 | -12.79 | 1.14 | 1131 | +13 | 9.73 | 3.11 | 76.01 | 274 | +218 | 9.68 | 13.87 | 87.17 | 142 | +61 | N/A | N/A | N/A | N/A | N/A |
-| SHADOWFAX | Packaged Software | 306.75 | 113.87 | 0 | 2 | -2.18 | -2.16 | 43.66 | 645 | -517 | 5.23 | -1.11 | 62.48 | 428 | -33 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SHAKTIPUMP | Industrial Machinery | 346.10 | 34.68 | 0 | 4 | -3.65 | -3.62 | 28.26 | 821 | -53 | -5.03 | -10.76 | 20.91 | 901 | -52 | -28.84 | -26.12 | 4.28 | 1053 | -10 | -32.19 | -34.05 | 5.18 | 989 | -5 |
-| SHANTIGEAR | Auto Parts: OEM | 493.70 | 1.19 | 0 | 4 | -3.00 | -2.97 | 35.35 | 740 | -388 | 0.68 | -5.39 | 43.50 | 644 | +35 | -6.05 | -2.46 | 55.87 | 486 | -79 | 11.57 | 8.51 | 69.87 | 315 | -21 |
-| SHANTIGOLD | Other Consumer Specialties | 221.35 | 61.12 | 0 | 4 | -9.39 | -9.37 | 2.71 | 1113 | +26 | -31.08 | -35.23 | 0.35 | 1135 | +4 | -10.26 | -6.83 | 42.58 | 632 | +125 | -0.74 | -3.46 | 52.40 | 497 | +160 |
-| SHARDACROP | Wholesale Distributors | 681.10 | 10.11 | 0 | 4 | 1.50 | 1.53 | 80.75 | 221 | +806 | -0.31 | -6.32 | 38.58 | 700 | -59 | -11.19 | -7.79 | 39.76 | 663 | +165 | -25.84 | -27.87 | 10.36 | 935 | +20 |
-| SHAREINDIA | Investment Banks/Brokers | 173.57 | 24.66 | 0 | 4 | -4.47 | -4.44 | 21.96 | 893 | -300 | -1.73 | -7.65 | 32.34 | 771 | -38 | 0.50 | 4.34 | 70.97 | 320 | -95 | 26.89 | 23.41 | 84.55 | 162 | +5 |
-| SHILCTECH | Electrical Products | 3060.50 | 6.17 | 0 | 3 | -7.51 | -7.49 | 5.60 | 1080 | -69 | -19.41 | -24.27 | 1.67 | 1120 | +1 | -24.13 | -21.23 | 9.28 | 998 | -18 | N/A | N/A | N/A | N/A | N/A |
-| SHK | Chemicals: Specialty | 124.56 | 2.88 | 0 | 4 | -1.92 | -1.89 | 46.89 | 608 | -17 | -4.54 | -10.30 | 22.76 | 880 | -112 | -17.76 | -14.61 | 20.47 | 875 | -38 | -1.34 | -4.04 | 51.63 | 505 | -4 |
-| SHOPERSTOP | Department Stores | 377.40 | 10.26 | 0 | 4 | 0.08 | 0.11 | 68.68 | 359 | -48 | 6.43 | 0.01 | 66.61 | 381 | -107 | -1.68 | 2.08 | 66.52 | 369 | -24 | 2.75 | -0.07 | 57.77 | 441 | -10 |
-| SHREECEM | Construction Materials | 25335.00 | 55.84 | 0 | 4 | 0.88 | 0.90 | 76.64 | 268 | -29 | 10.06 | 3.42 | 77.24 | 260 | +67 | 9.20 | 13.38 | 85.90 | 156 | +44 | 2.26 | -0.54 | 57.10 | 448 | +17 |
-| SHRINGARMS | Other Consumer Specialties | 241.30 | 32.92 | 0 | 3 | -1.63 | -1.60 | 50.57 | 566 | +566 | -15.19 | -20.30 | 4.13 | 1092 | -6 | 9.93 | 14.13 | 87.53 | 138 | +32 | N/A | N/A | N/A | N/A | N/A |
-| SHRIPISTON | Auto Parts: OEM | 4200.20 | 20.38 | 0 | 4 | -1.32 | -1.30 | 54.42 | 522 | +0 | -6.62 | -12.25 | 16.70 | 949 | -63 | -8.87 | -5.39 | 46.95 | 584 | -75 | 21.05 | 17.73 | 80.04 | 209 | -20 |
-| SHRIRAMPPS | Real Estate Development | 68.47 | 2.28 | 0 | 4 | -1.58 | -1.55 | 51.53 | 555 | +316 | 6.80 | 0.36 | 67.49 | 371 | +76 | -11.11 | -7.71 | 39.95 | 661 | +10 | -23.73 | -25.82 | 12.86 | 909 | +4 |
-| SIGNPOST | Advertising/Marketing Services | 214.38 | 1.05 | 0 | 4 | -5.11 | -5.09 | 17.15 | 948 | -501 | -9.81 | -15.25 | 9.67 | 1029 | -118 | -15.85 | -12.63 | 25.39 | 821 | +5 | -20.72 | -22.89 | 16.79 | 868 | +9 |
-| SILVERTUC | Packaged Software | 124.12 | 3.21 | 0 | 4 | 1.24 | 1.27 | 79.18 | 239 | +332 | 1.20 | -4.90 | 46.22 | 613 | +189 | -27.95 | -25.19 | 5.28 | 1042 | +17 | -29.13 | -31.07 | 7.68 | 963 | +2 |
-| SIRCA | Industrial Specialties | 402.10 | 18.66 | 0 | 4 | -0.26 | -0.23 | 65.35 | 397 | +19 | -2.76 | -8.62 | 27.77 | 823 | -44 | -7.55 | -4.02 | 51.87 | 530 | +8 | -4.18 | -6.81 | 47.12 | 552 | +0 |
-| SIS | Miscellaneous Commercial Services | 358.60 | 2.40 | 0 | 4 | -1.31 | -1.28 | 54.77 | 518 | +47 | -6.70 | -12.33 | 16.52 | 951 | -97 | -16.34 | -13.14 | 24.11 | 835 | -28 | -14.50 | -16.84 | 26.39 | 768 | -59 |
-| SIYSIL | Textiles | 518.10 | 2.13 | 0 | 4 | 1.23 | 1.26 | 79.00 | 241 | +130 | 15.01 | 8.07 | 88.14 | 136 | +49 | -8.06 | -4.55 | 50.14 | 549 | -4 | -12.53 | -14.92 | 30.52 | 725 | -44 |
-| SJS | Auto Parts: OEM | 2089.60 | 25.69 | 0 | 4 | -7.00 | -6.97 | 7.35 | 1060 | -857 | 2.09 | -4.07 | 49.74 | 573 | -154 | -16.03 | -12.82 | 25.11 | 824 | -8 | 6.04 | 3.13 | 63.24 | 384 | +28 |
-| SJVN | Electric Utilities | 55.04 | 37.06 | 0 | 4 | -2.06 | -2.04 | 45.14 | 628 | -375 | 8.05 | 1.53 | 70.56 | 336 | -37 | -14.94 | -11.69 | 27.57 | 797 | -28 | -24.84 | -26.90 | 11.52 | 923 | -26 |
-| SKFINDIA | Metal Fabrication | 1437.50 | 4.19 | 0 | 4 | -0.62 | -0.59 | 61.77 | 438 | -100 | 1.02 | -5.07 | 45.43 | 622 | -107 | -7.49 | -3.95 | 51.96 | 529 | -12 | -10.52 | -12.97 | 35.12 | 677 | -19 |
-| SKFINDUS | Auto Parts: OEM | 2449.70 | 6.58 | 0 | 2 | -2.63 | -2.60 | 38.58 | 703 | -361 | 0.85 | -5.23 | 44.64 | 631 | +74 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SKMEGGPROD | Agricultural Commodities/Milling | 212.69 | 5.45 | 0 | 4 | -2.87 | -2.84 | 36.66 | 725 | -379 | 4.51 | -1.79 | 59.75 | 459 | -231 | -20.61 | -17.57 | 14.56 | 940 | -141 | -12.66 | -15.05 | 29.85 | 732 | -146 |
-| SMARTWORKS | Real Estate Development | 518.85 | 7.88 | 0 | 4 | 0.78 | 0.80 | 75.42 | 282 | -38 | 10.08 | 3.44 | 77.50 | 257 | +9 | -3.48 | 0.21 | 62.69 | 411 | +3 | 15.07 | 11.92 | 73.61 | 276 | -32 |
-| SMCGLOBAL | Investment Banks/Brokers | 80.23 | 20.39 | 0 | 4 | -5.46 | -5.43 | 14.79 | 975 | +133 | -11.08 | -16.44 | 7.47 | 1054 | +29 | 1.20 | 5.07 | 72.61 | 302 | +21 | 33.56 | 29.90 | 89.35 | 112 | +16 |
-| SMLMAH | Motor Vehicles | 4603.90 | 36.39 | 0 | 4 | -18.91 | -18.89 | 0.26 | 1141 | +0 | -3.39 | -9.22 | 26.19 | 841 | -47 | -9.87 | -6.42 | 43.49 | 622 | -6 | 20.73 | 17.42 | 79.46 | 215 | -43 |
-| SOBHA | Real Estate Development | 1289.80 | 23.69 | 0 | 4 | 1.61 | 1.64 | 81.36 | 214 | +442 | 11.19 | 4.48 | 80.32 | 225 | +248 | 2.70 | 6.63 | 76.52 | 259 | +96 | -6.67 | -9.23 | 42.71 | 598 | +71 |
-| SOLARA | Pharmaceuticals: Major | 619.45 | 29.17 | 0 | 4 | -3.30 | -3.27 | 32.02 | 778 | +235 | -5.25 | -10.97 | 20.56 | 905 | -44 | -2.09 | 1.66 | 65.51 | 380 | -18 | 14.96 | 11.81 | 73.42 | 278 | +20 |
-| SOMANYCERA | Building Products | 557.40 | 6.49 | 0 | 4 | 2.19 | 2.22 | 84.95 | 173 | +26 | 2.50 | -3.68 | 51.76 | 550 | +75 | 0.02 | 3.84 | 69.70 | 334 | +16 | 7.66 | 4.71 | 65.16 | 364 | +8 |
-| SONATSOFTW | Information Technology Services | 233.03 | 25.08 | 0 | 4 | 0.74 | 0.77 | 75.07 | 286 | +313 | 1.74 | -4.40 | 48.42 | 588 | +101 | -20.21 | -17.16 | 15.10 | 934 | +64 | -12.84 | -15.23 | 29.65 | 734 | +80 |
-| SOTL | Chemicals: Specialty | 553.00 | 8.80 | 0 | 4 | -8.38 | -8.36 | 4.11 | 1097 | +26 | -17.78 | -22.74 | 2.64 | 1109 | +17 | -19.68 | -16.61 | 16.29 | 921 | -2 | 7.46 | 4.52 | 64.68 | 369 | -211 |
-| SPAL | Apparel/Footwear | 910.55 | 3.56 | 0 | 4 | -2.84 | -2.81 | 36.92 | 722 | -183 | 8.72 | 2.17 | 72.85 | 310 | -43 | -13.30 | -9.99 | 32.48 | 743 | -158 | 7.90 | 4.94 | 65.55 | 360 | -85 |
-| SPANDANA | Finance/Rental/Leasing | 174.99 | 5.48 | 0 | 4 | -1.14 | -1.11 | 56.69 | 496 | +332 | -10.03 | -15.46 | 9.23 | 1034 | -202 | -27.37 | -24.60 | 5.55 | 1039 | -8 | -31.90 | -33.76 | 5.47 | 986 | -14 |
-| SPARC | Pharmaceuticals: Major | 187.91 | 36.22 | 0 | 4 | -2.42 | -2.39 | 40.94 | 676 | -51 | 2.87 | -3.33 | 53.43 | 531 | -64 | -5.73 | -2.12 | 56.96 | 474 | +128 | -9.88 | -12.34 | 36.28 | 665 | -35 |
-| SPECTRUM | Electronic Equipment/Instruments | 3878.60 | 6.08 | 0 | 2 | -14.79 | -14.76 | 0.70 | 1136 | -5 | 0.24 | -5.80 | 41.39 | 668 | -350 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| SPIC | Chemicals: Agricultural | 58.99 | 1.29 | 0 | 4 | 0.65 | 0.68 | 74.10 | 297 | +363 | 3.97 | -2.30 | 58.08 | 478 | +76 | -12.92 | -9.59 | 33.85 | 728 | +72 | -16.47 | -18.76 | 22.74 | 806 | -32 |
-| SPLPETRO | Industrial Specialties | 699.20 | 5.99 | 0 | 4 | -0.46 | -0.43 | 63.78 | 415 | +229 | -3.59 | -9.40 | 25.66 | 847 | -59 | -4.09 | -0.43 | 61.33 | 426 | -95 | -1.01 | -3.72 | 51.82 | 503 | -12 |
-| SPMLINFRA | Engineering & Construction | 137.20 | 5.72 | 0 | 4 | -0.71 | -0.68 | 60.89 | 448 | +179 | 3.32 | -2.91 | 55.27 | 510 | +30 | -24.41 | -21.52 | 8.92 | 1002 | -9 | -32.07 | -33.93 | 5.37 | 987 | +13 |
-| SRF | Industrial Specialties | 2516.40 | 70.55 | 0 | 4 | 0.10 | 0.13 | 69.38 | 351 | -183 | 7.08 | 0.62 | 68.28 | 362 | -20 | -1.72 | 2.04 | 66.42 | 370 | +8 | -7.43 | -9.97 | 41.17 | 614 | +9 |
-| STALLION | Wholesale Distributors | 170.43 | 5.67 | 0 | 2 | -5.25 | -5.23 | 16.19 | 959 | -59 | -10.49 | -15.89 | 8.35 | 1044 | -93 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| STAR | Pharmaceuticals: Major | 948.40 | 35.50 | 0 | 4 | -3.14 | -3.11 | 33.86 | 757 | -461 | -12.64 | -17.91 | 5.89 | 1072 | -21 | -7.47 | -3.93 | 52.05 | 528 | -89 | -12.28 | -14.69 | 31.09 | 719 | -58 |
-| STARCEMENT | Construction Materials | 171.26 | 3.07 | 0 | 4 | -2.22 | -2.19 | 43.04 | 652 | +94 | 5.45 | -0.91 | 63.62 | 415 | -68 | -7.31 | -3.76 | 52.41 | 524 | +56 | -18.06 | -20.30 | 20.35 | 831 | +19 |
-| STARHEALTH | Life/Health Insurance | 564.80 | 22.23 | 0 | 4 | -0.68 | -0.65 | 61.24 | 444 | -204 | 8.77 | 2.21 | 73.11 | 307 | +170 | -0.52 | 3.29 | 68.97 | 342 | -14 | 6.56 | 3.64 | 63.63 | 380 | -1 |
-| STEELCAS | Steel | 354.50 | 3.36 | 0 | 4 | -8.53 | -8.50 | 3.94 | 1099 | -707 | 2.28 | -3.89 | 50.62 | 563 | +15 | 1.34 | 5.22 | 73.16 | 296 | -83 | 27.20 | 23.71 | 85.03 | 157 | -28 |
-| STOVEKRAFT | Electronics/Appliances | 739.30 | 9.92 | 0 | 4 | -3.68 | -3.65 | 28.00 | 824 | +25 | -13.66 | -18.87 | 5.36 | 1078 | -25 | -12.94 | -9.61 | 33.76 | 729 | -231 | 19.35 | 16.08 | 78.69 | 223 | -2 |
-| STUDDS | Recreational Products | 407.60 | 1.51 | 0 | 3 | -2.03 | -2.00 | 45.41 | 625 | +33 | 3.95 | -2.32 | 57.91 | 480 | +92 | -8.40 | -4.90 | 48.95 | 562 | +50 | N/A | N/A | N/A | N/A | N/A |
-| STYL | Packaged Software | 284.70 | 2.09 | 0 | 3 | -6.50 | -6.48 | 9.36 | 1037 | +76 | -8.09 | -13.63 | 13.01 | 991 | +48 | -26.21 | -23.38 | 6.55 | 1028 | +26 | N/A | N/A | N/A | N/A | N/A |
-| STYLAMIND | Forest Products | 3298.40 | 11.28 | 0 | 4 | -0.98 | -0.95 | 58.97 | 470 | +87 | 14.36 | 7.46 | 87.26 | 146 | +458 | -4.79 | -1.15 | 59.69 | 444 | +74 | 10.32 | 7.30 | 68.33 | 331 | +6 |
-| STYRENIX | Chemicals: Specialty | 1749.50 | 6.67 | 0 | 4 | -5.38 | -5.35 | 15.14 | 971 | -61 | -2.92 | -8.77 | 27.24 | 829 | +195 | -12.62 | -9.28 | 34.94 | 716 | -12 | -21.61 | -23.75 | 15.83 | 878 | +8 |
-| SUBROS | Industrial Machinery | 641.85 | 23.17 | 0 | 4 | -1.50 | -1.47 | 52.32 | 546 | +523 | 7.74 | 1.24 | 69.95 | 343 | +157 | -10.54 | -7.12 | 41.77 | 641 | +47 | -11.00 | -13.44 | 34.26 | 686 | +11 |
-| SUDARSCHEM | Chemicals: Specialty | 1097.00 | 17.34 | 0 | 4 | -4.45 | -4.42 | 22.22 | 890 | -200 | 3.06 | -3.15 | 53.95 | 525 | -139 | -13.40 | -10.09 | 32.21 | 746 | -79 | 23.83 | 20.44 | 82.34 | 185 | -3 |
-| SULA | Agricultural Commodities/Milling | 135.21 | 2.93 | 0 | 4 | 0.42 | 0.45 | 72.79 | 312 | +50 | 6.39 | -0.03 | 66.43 | 383 | +14 | -8.15 | -4.63 | 49.86 | 552 | -12 | -13.35 | -15.72 | 28.50 | 746 | +14 |
-| SUMICHEM | Chemicals: Agricultural | 331.15 | 17.45 | 0 | 4 | -3.78 | -3.75 | 26.68 | 839 | -286 | -1.28 | -7.23 | 33.83 | 754 | +39 | -36.00 | -33.56 | 1.82 | 1080 | +6 | -31.41 | -33.29 | 5.95 | 981 | +8 |
-| SUMMITSEC | Investment Trusts/Mutual Funds | 1359.10 | 0.32 | 0 | 4 | -2.91 | -2.88 | 36.40 | 728 | -467 | 2.81 | -3.39 | 52.99 | 536 | -102 | -4.74 | -1.09 | 59.78 | 443 | -53 | -11.63 | -14.05 | 32.44 | 705 | -25 |
-| SUNCLAY | Auto Parts: OEM | 1017.30 | 0.87 | 0 | 4 | -6.89 | -6.87 | 7.70 | 1056 | -40 | -7.05 | -12.66 | 15.82 | 959 | -106 | -22.08 | -19.10 | 11.83 | 970 | -59 | -23.07 | -25.18 | 13.92 | 898 | -27 |
-| SUNDARMFIN | Finance/Rental/Leasing | 4287.20 | 20.59 | 0 | 4 | -1.68 | -1.65 | 50.04 | 572 | -229 | 9.25 | 2.66 | 74.60 | 290 | -34 | -5.57 | -1.96 | 57.78 | 465 | -5 | 2.82 | 0.01 | 58.06 | 438 | +17 |
-| SUNDRMFAST | Auto Parts: OEM | 1003.80 | 8.95 | 0 | 4 | -3.03 | -3.01 | 34.65 | 748 | -31 | -7.07 | -12.68 | 15.73 | 960 | -66 | -16.62 | -13.43 | 23.38 | 843 | -29 | 20.35 | 17.05 | 79.37 | 216 | -2 |
-| SUNDROP | Agricultural Commodities/Milling | 612.25 | 1.18 | 0 | 4 | 1.64 | 1.66 | 81.89 | 208 | +19 | -3.70 | -9.51 | 25.48 | 849 | -45 | -7.25 | -3.70 | 52.78 | 520 | -83 | -6.15 | -8.73 | 43.76 | 587 | -29 |
-| SUNFLAG | Steel | 365.15 | 6.80 | 0 | 4 | -4.07 | -4.05 | 24.58 | 863 | +198 | -7.37 | -12.96 | 15.29 | 965 | +103 | 7.30 | 11.41 | 83.71 | 180 | +90 | -4.66 | -7.27 | 46.26 | 561 | +11 |
-| SUPRAJIT | Auto Parts: OEM | 458.30 | 4.33 | 0 | 4 | 1.71 | 1.74 | 82.41 | 202 | +6 | -1.76 | -7.68 | 32.16 | 773 | +118 | -8.98 | -5.50 | 46.68 | 587 | +37 | -1.54 | -4.23 | 51.44 | 507 | -8 |
-| SUPREMEIND | Miscellaneous Manufacturing | 3160.00 | 64.11 | 0 | 4 | -1.51 | -1.48 | 52.06 | 549 | -223 | -2.14 | -8.04 | 30.58 | 791 | +53 | -11.21 | -7.81 | 39.40 | 667 | +42 | -11.56 | -13.98 | 32.63 | 703 | -28 |
-| SUPRIYA | Pharmaceuticals: Major | 606.05 | 24.68 | 0 | 4 | -3.03 | -3.01 | 34.82 | 746 | -387 | -29.71 | -33.95 | 0.44 | 1134 | +1 | -24.08 | -21.18 | 9.37 | 997 | -16 | -32.73 | -34.58 | 4.70 | 994 | -3 |
-| SURAKSHA | Medical/Nursing Services | 311.95 | 4.29 | 0 | 4 | -5.44 | -5.41 | 14.87 | 974 | +150 | 0.08 | -5.96 | 40.60 | 677 | +36 | -7.86 | -4.33 | 50.96 | 540 | +44 | 7.11 | 4.17 | 64.30 | 373 | +14 |
-| SURYAROSNI | Steel | 209.76 | 8.77 | 0 | 4 | 0.21 | 0.24 | 70.52 | 338 | -166 | -0.17 | -6.19 | 39.10 | 694 | -31 | -4.53 | -0.88 | 60.33 | 437 | -49 | -17.30 | -19.56 | 21.59 | 818 | -51 |
-| SURYODAY | Regional Banks | 145.67 | 3.68 | 0 | 4 | -4.27 | -4.24 | 23.27 | 878 | +81 | 8.90 | 2.34 | 73.55 | 302 | -43 | -5.83 | -2.23 | 56.41 | 480 | -13 | -14.15 | -16.50 | 27.35 | 758 | -7 |
-| SUVEN | Pharmaceuticals: Major | 266.55 | 10.06 | 0 | 4 | -3.74 | -3.71 | 26.95 | 836 | -512 | -0.56 | -6.56 | 37.08 | 717 | -166 | -32.01 | -29.41 | 3.00 | 1067 | -47 | -3.20 | -5.85 | 49.04 | 532 | -15 |
-| SWANCORP | Electric Utilities | 226.80 | 18.04 | 0 | 4 | -2.50 | -2.47 | 40.07 | 686 | -228 | -5.74 | -11.42 | 19.07 | 922 | -65 | -22.67 | -19.72 | 11.28 | 976 | +11 | -30.20 | -32.12 | 6.33 | 977 | -27 |
-| SWARAJENG | Auto Parts: OEM | 3434.70 | 2.56 | 0 | 4 | -0.68 | -0.65 | 61.15 | 445 | +141 | -0.11 | -6.13 | 39.28 | 692 | +2 | -3.77 | -0.09 | 62.24 | 416 | -8 | -9.09 | -11.59 | 37.14 | 656 | +10 |
-| SWIGGY | Air Freight/Couriers | 182.93 | 392.28 | 0 | 4 | -0.20 | -0.17 | 65.79 | 392 | +254 | -0.31 | -6.32 | 38.49 | 701 | +227 | -35.11 | -32.63 | 1.91 | 1079 | +8 | -27.38 | -29.37 | 9.12 | 948 | +23 |
-| SYMPHONY | Industrial Machinery | 525.60 | 4.05 | 0 | 4 | -5.19 | -5.16 | 16.71 | 953 | -305 | 4.48 | -1.82 | 59.67 | 460 | -102 | -10.38 | -6.95 | 42.40 | 634 | +5 | -23.85 | -25.93 | 12.76 | 910 | +0 |
-| SYNGENE | Miscellaneous Commercial Services | 444.00 | 84.07 | 0 | 4 | 1.52 | 1.55 | 80.93 | 219 | -100 | 8.07 | 1.55 | 70.83 | 333 | -292 | 10.79 | 15.03 | 88.72 | 125 | -6 | 1.35 | -1.43 | 55.66 | 463 | -27 |
-| SYRMA | Electronic Production Equipment | 1479.00 | 209.29 | 0 | 4 | -2.50 | -2.48 | 39.90 | 688 | +50 | -5.37 | -11.08 | 20.30 | 908 | -5 | 2.92 | 6.86 | 76.89 | 255 | +119 | 23.73 | 20.34 | 82.15 | 187 | +4 |
-| SYSTMTXC | Investment Banks/Brokers | 75.69 | 0.13 | 0 | 2 | -4.84 | -4.81 | 18.99 | 927 | -337 | 1.39 | -4.72 | 47.01 | 604 | +14 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| TAJGVK | Hotels/Resorts/Cruise lines | 306.90 | 2.65 | 0 | 4 | -1.43 | -1.40 | 53.11 | 537 | -30 | -0.58 | -6.58 | 36.99 | 718 | -98 | -8.57 | -5.07 | 48.50 | 567 | +9 | -9.52 | -12.00 | 36.66 | 661 | -11 |
-| TALBROAUTO | Industrial Machinery | 387.80 | 22.48 | 0 | 4 | -4.02 | -4.00 | 24.85 | 860 | -10 | 8.48 | 1.93 | 71.97 | 320 | -24 | -5.74 | -2.13 | 56.87 | 475 | -103 | 9.87 | 6.86 | 67.47 | 340 | -61 |
-| TARC | Real Estate Development | 120.56 | 22.20 | 0 | 4 | -2.79 | -2.76 | 37.45 | 716 | +139 | 9.84 | 3.22 | 76.45 | 269 | +202 | 1.79 | 5.68 | 74.16 | 285 | +32 | -7.46 | -10.00 | 40.98 | 616 | +57 |
-| TARIL | Electrical Products | 291.65 | 58.57 | 0 | 4 | -4.44 | -4.41 | 22.31 | 889 | +68 | -7.32 | -12.91 | 15.47 | 963 | +27 | -7.06 | -3.50 | 53.05 | 517 | -76 | -6.45 | -9.01 | 43.38 | 591 | +24 |
-| TASTYBITE | Food: Specialty/Candy | 9980.50 | 5.83 | 0 | 4 | -8.22 | -8.19 | 4.29 | 1095 | +26 | 12.77 | 5.97 | 83.74 | 186 | +104 | -1.56 | 2.20 | 66.79 | 366 | -9 | 29.34 | 25.80 | 86.37 | 143 | -13 |
-| TATACHEM | Chemicals: Agricultural | 664.95 | 111.58 | 0 | 4 | 2.29 | 2.32 | 85.65 | 165 | -60 | 10.47 | 3.80 | 78.56 | 245 | +10 | 3.41 | 7.37 | 77.98 | 243 | +38 | -7.61 | -10.15 | 40.50 | 621 | +43 |
-| TATACOMM | Major Telecommunications | 1697.20 | 51.31 | 0 | 4 | -3.11 | -3.08 | 33.95 | 756 | +18 | 0.96 | -5.12 | 45.17 | 625 | +40 | -1.52 | 2.25 | 66.97 | 364 | -81 | -12.23 | -14.64 | 31.19 | 718 | -53 |
-| TATAINVEST | Investment Banks/Brokers | 581.25 | 18.54 | 0 | 4 | -1.22 | -1.20 | 55.82 | 506 | +166 | 3.51 | -2.73 | 55.89 | 503 | -48 | -9.49 | -6.03 | 44.95 | 606 | -45 | -12.62 | -15.01 | 30.04 | 730 | +0 |
-| TATATECH | Packaged Software | 700.35 | 66.27 | 0 | 4 | -0.48 | -0.46 | 63.43 | 419 | -342 | 7.16 | 0.70 | 68.63 | 358 | +68 | -15.73 | -12.50 | 25.75 | 817 | +15 | -4.20 | -6.82 | 47.02 | 553 | +27 |
-| TATVA | Chemicals: Specialty | 1584.40 | 16.02 | 0 | 4 | -3.23 | -3.20 | 32.55 | 772 | +195 | -2.67 | -8.54 | 28.03 | 820 | -21 | -2.60 | 1.13 | 64.33 | 393 | +29 | 29.61 | 26.06 | 86.56 | 141 | +2 |
-| TBOTEK | Internet Software/Services | 1483.00 | 13.96 | 0 | 4 | -5.28 | -5.26 | 15.92 | 962 | -307 | -5.70 | -11.38 | 19.24 | 920 | -267 | -15.02 | -11.77 | 27.39 | 799 | -258 | 24.21 | 20.81 | 82.82 | 180 | -14 |
-| TCI | Trucking | 750.20 | 7.41 | 0 | 4 | -7.53 | -7.50 | 5.51 | 1081 | -212 | -12.84 | -18.09 | 5.80 | 1073 | -89 | -13.57 | -10.27 | 31.76 | 751 | -52 | -19.46 | -21.67 | 18.14 | 854 | -72 |
-| TCIEXP | Air Freight/Couriers | 396.65 | 3.40 | 0 | 4 | -17.03 | -17.00 | 0.35 | 1140 | -48 | -18.29 | -23.22 | 2.20 | 1114 | -115 | -27.56 | -24.79 | 5.37 | 1041 | -57 | -23.23 | -25.34 | 13.72 | 900 | -150 |
-| TDPOWERSYS | Electrical Products | 616.80 | 413.32 | 0 | 4 | -3.30 | -3.27 | 32.11 | 777 | +265 | -14.17 | -19.35 | 5.01 | 1082 | +3 | -20.62 | -17.58 | 14.38 | 942 | +12 | -52.05 | -53.36 | 1.34 | 1029 | +3 |
-| TECHNOE | Engineering & Construction | 899.50 | 22.06 | 0 | 4 | -3.59 | -3.56 | 28.78 | 815 | +2 | 5.79 | -0.59 | 64.85 | 401 | -97 | -8.41 | -4.90 | 48.86 | 563 | +115 | -14.10 | -16.45 | 27.45 | 757 | +22 |
-| TEGA | Trucks/Construction/Farm Machinery | 1512.80 | 36.69 | 0 | 4 | -6.20 | -6.17 | 11.02 | 1018 | -70 | -12.99 | -18.24 | 5.54 | 1076 | -4 | -4.63 | -0.99 | 59.96 | 441 | +81 | -16.93 | -19.21 | 22.17 | 812 | -20 |
-| TEJASNET | Telecommunications Equipment | 399.55 | 36.30 | 0 | 4 | -1.10 | -1.07 | 57.39 | 488 | -53 | -3.10 | -8.95 | 26.80 | 834 | -64 | -28.62 | -25.89 | 4.64 | 1049 | -27 | -29.81 | -31.73 | 7.01 | 970 | -49 |
-| TENNIND | Auto Parts: OEM | 444.95 | 37.87 | 0 | 3 | 2.05 | 2.08 | 84.25 | 181 | -44 | 1.51 | -4.62 | 47.19 | 602 | +60 | -15.89 | -12.67 | 25.30 | 822 | +13 | N/A | N/A | N/A | N/A | N/A |
-| TEXINFRA | Electric Utilities | 122.26 | 7.73 | 0 | 4 | 1.83 | 1.86 | 82.85 | 197 | +311 | 3.16 | -3.07 | 54.22 | 522 | +144 | 9.92 | 14.12 | 87.44 | 139 | +18 | 23.76 | 20.37 | 82.25 | 186 | -16 |
-| THANGAMAYL | Other Consumer Specialties | 3950.00 | 32.47 | 0 | 4 | -0.73 | -0.70 | 60.72 | 450 | +278 | -15.61 | -20.70 | 3.60 | 1098 | +16 | -27.01 | -24.22 | 5.73 | 1037 | +11 | -17.62 | -19.88 | 21.11 | 823 | -24 |
-| THEJO | Wholesale Distributors | 1990.20 | 1.01 | 0 | 4 | 0.10 | 0.12 | 69.29 | 352 | +327 | 4.83 | -1.49 | 61.42 | 440 | +26 | -4.16 | -0.49 | 61.24 | 427 | -15 | 28.50 | 24.98 | 85.89 | 148 | +6 |
-| THERMAX | Industrial Machinery | 2675.80 | 79.76 | 0 | 4 | -1.87 | -1.85 | 47.33 | 603 | -108 | -15.87 | -20.94 | 3.51 | 1099 | -6 | -31.42 | -28.79 | 3.37 | 1063 | +6 | -44.07 | -45.61 | 1.82 | 1024 | +4 |
-| THYROCARE | Medical/Nursing Services | 520.75 | 46.93 | 0 | 4 | 3.15 | 3.18 | 89.15 | 125 | -87 | 5.31 | -1.04 | 62.83 | 424 | -119 | -13.85 | -10.56 | 30.66 | 763 | -227 | -0.85 | -3.56 | 52.21 | 499 | -75 |
-| TI | Beverages: Alcoholic | 550.20 | 33.32 | 0 | 4 | 0.03 | 0.06 | 68.50 | 361 | -257 | 9.26 | 2.68 | 74.78 | 288 | -123 | -1.93 | 1.82 | 65.97 | 375 | -28 | 30.81 | 27.23 | 87.62 | 130 | -4 |
-| TIIL | Metal Fabrication | 2753.90 | 8.00 | 0 | 4 | -1.00 | -0.97 | 58.71 | 473 | -209 | 6.87 | 0.43 | 67.57 | 370 | -40 | -16.08 | -12.87 | 24.93 | 826 | -91 | 12.25 | 9.17 | 71.02 | 303 | -48 |
-| TIINDIA | Steel | 2212.20 | 99.82 | 0 | 4 | -1.59 | -1.57 | 51.18 | 559 | -206 | 3.62 | -2.63 | 56.15 | 500 | -75 | -20.42 | -17.38 | 14.74 | 938 | +14 | -27.95 | -29.92 | 8.64 | 953 | +9 |
-| TIL | Trucks/Construction/Farm Machinery | 202.36 | 1.21 | 0 | 2 | -1.36 | -1.33 | 54.07 | 526 | +488 | 0.15 | -5.89 | 40.95 | 673 | +198 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| TIMKEN | Industrial Machinery | 3064.90 | 12.47 | 0 | 4 | -1.03 | -1.01 | 57.92 | 482 | +15 | 9.33 | 2.74 | 74.96 | 286 | -38 | -2.69 | 1.03 | 64.24 | 394 | -34 | -12.23 | -14.63 | 31.29 | 717 | +4 |
-| TINNARUBR | Industrial Specialties | 883.75 | 25.40 | 0 | 4 | -10.75 | -10.73 | 2.01 | 1121 | -1085 | 8.50 | 1.96 | 72.14 | 318 | +32 | -11.37 | -7.98 | 39.04 | 671 | -23 | 6.15 | 3.24 | 63.34 | 383 | -8 |
-| TIRUMALCHM | Chemicals: Specialty | 118.12 | 3.34 | 0 | 4 | -0.03 | 0.00 | 68.07 | 366 | -85 | 1.09 | -5.01 | 45.78 | 618 | -99 | -26.20 | -23.38 | 6.64 | 1027 | -22 | -35.19 | -36.96 | 3.65 | 1005 | +2 |
-| TITAGARH | Trucks/Construction/Farm Machinery | 747.80 | 61.64 | 0 | 4 | 1.42 | 1.45 | 80.14 | 228 | +38 | 7.99 | 1.47 | 70.30 | 339 | -173 | -8.59 | -5.10 | 48.32 | 569 | +66 | -12.37 | -14.77 | 30.90 | 721 | -42 |
-| TMB | Regional Banks | 850.30 | 14.79 | 0 | 4 | -4.94 | -4.91 | 18.11 | 937 | -23 | 7.52 | 1.04 | 69.24 | 351 | +67 | -8.82 | -5.34 | 47.41 | 579 | -168 | 14.84 | 11.69 | 73.32 | 279 | -12 |
-| TMPV | Motor Vehicles | 262.00 | 276.20 | 0 | 2 | -0.57 | -0.54 | 62.29 | 432 | -308 | -0.61 | -6.60 | 36.73 | 721 | -73 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| TORNTPOWER | Electric Utilities | 1151.40 | 26.03 | 0 | 4 | -6.70 | -6.68 | 8.57 | 1046 | -190 | -0.74 | -6.73 | 36.03 | 729 | -5 | -5.24 | -1.62 | 58.42 | 458 | -33 | -19.86 | -22.05 | 17.47 | 861 | -33 |
-| TRANSRAILL | Engineering & Construction | 433.75 | 27.57 | 0 | 4 | 0.47 | 0.50 | 73.05 | 309 | +382 | 1.05 | -5.05 | 45.61 | 620 | +166 | -0.95 | 2.84 | 68.15 | 351 | +159 | -12.34 | -14.74 | 31.00 | 720 | +29 |
-| TRAVELFOOD | Restaurants | 1109.20 | 3.98 | 0 | 4 | -3.91 | -3.88 | 25.55 | 852 | -51 | -2.84 | -8.70 | 27.42 | 827 | -102 | -14.65 | -11.39 | 28.21 | 790 | -43 | -11.36 | -13.79 | 33.21 | 697 | -51 |
-| TRITURBINE | Industrial Machinery | 457.60 | 28.09 | 0 | 4 | -3.05 | -3.02 | 34.47 | 750 | +177 | 0.44 | -5.62 | 42.53 | 655 | +51 | -20.85 | -17.82 | 13.83 | 948 | +19 | -31.58 | -33.46 | 5.85 | 982 | +21 |
-| TRIVENI | Agricultural Commodities/Milling | 232.42 | 15.67 | 0 | 4 | -1.50 | -1.48 | 52.23 | 547 | -7 | 3.30 | -2.93 | 55.10 | 512 | +101 | -21.38 | -18.38 | 12.92 | 958 | -64 | -35.83 | -37.59 | 3.36 | 1008 | +3 |
-| TRUALT | Chemicals: Specialty | 315.35 | 7.42 | 0 | 3 | -5.43 | -5.40 | 14.96 | 973 | -13 | -16.07 | -21.14 | 3.43 | 1100 | +4 | -26.59 | -23.79 | 6.19 | 1032 | -17 | N/A | N/A | N/A | N/A | N/A |
-| TSFINV | Financial Conglomerates | 428.95 | 2.47 | 0 | 4 | 0.80 | 0.83 | 75.59 | 280 | -90 | 5.34 | -1.01 | 63.09 | 421 | -44 | 6.92 | 11.01 | 83.44 | 183 | +12 | 6.93 | 4.00 | 64.01 | 376 | +15 |
-| TTKHLTCARE | Pharmaceuticals: Major | 1029.90 | 7.86 | 0 | 4 | -2.15 | -2.12 | 44.01 | 641 | -421 | 0.77 | -5.30 | 44.29 | 635 | -264 | -11.19 | -7.80 | 39.58 | 665 | -194 | 12.34 | 9.26 | 71.21 | 301 | -41 |
-| TTKPRESTIG | Home Furnishings | 521.30 | 19.59 | 0 | 4 | -6.12 | -6.10 | 11.64 | 1011 | -77 | -2.21 | -8.11 | 30.14 | 796 | +2 | -10.71 | -7.29 | 41.22 | 647 | +17 | -4.22 | -6.84 | 46.93 | 554 | -38 |
-| TVSHLTD | Auto Parts: OEM | 13493.00 | 7.73 | 0 | 1 | -0.42 | -0.39 | 63.95 | 413 | -374 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| TVSSCS | Air Freight/Couriers | 126.23 | 32.86 | 0 | 4 | -5.41 | -5.38 | 15.05 | 972 | +2 | 13.16 | 6.34 | 84.80 | 174 | -14 | -0.68 | 3.12 | 68.52 | 347 | +45 | 8.06 | 5.10 | 65.74 | 358 | -41 |
-| TVSSRICHAK | Automotive Aftermarket | 4557.30 | 7.69 | 0 | 4 | -1.12 | -1.09 | 57.13 | 491 | -184 | 8.61 | 2.06 | 72.58 | 313 | -49 | -17.43 | -14.28 | 21.20 | 867 | -106 | 14.83 | 11.68 | 73.22 | 280 | -7 |
-| UBL | Beverages: Alcoholic | 1272.90 | 40.27 | 0 | 4 | 0.10 | 0.13 | 69.47 | 350 | -239 | 6.29 | -0.12 | 65.91 | 389 | -148 | -2.72 | 1.00 | 63.97 | 397 | +27 | -5.01 | -7.61 | 45.68 | 567 | -34 |
-| UDS | Miscellaneous Commercial Services | 210.64 | 10.99 | 0 | 4 | -3.74 | -3.72 | 26.86 | 837 | +238 | 0.94 | -5.14 | 44.99 | 627 | +237 | -6.27 | -2.68 | 55.32 | 492 | +95 | 16.27 | 13.08 | 75.24 | 259 | +49 |
-| UEL | Alternative Power Generation | 170.92 | 0.23 | 0 | 4 | -1.20 | -1.17 | 56.08 | 503 | -123 | -11.75 | -17.07 | 6.77 | 1062 | -67 | -14.02 | -10.73 | 30.21 | 768 | -198 | 18.79 | 15.53 | 77.93 | 231 | -41 |
-| UFLEX | Containers/Packaging | 585.70 | 8.81 | 0 | 4 | -6.74 | -6.72 | 8.31 | 1049 | -56 | 0.71 | -5.36 | 43.67 | 642 | -71 | -9.77 | -6.32 | 43.68 | 620 | -115 | 33.28 | 29.63 | 89.06 | 115 | +0 |
-| UJJIVANSFB | Regional Banks | 56.87 | 102.48 | 0 | 4 | -6.17 | -6.14 | 11.37 | 1014 | -501 | 4.35 | -1.94 | 58.96 | 468 | -181 | -17.71 | -14.56 | 20.66 | 873 | -255 | 5.73 | 2.83 | 62.28 | 394 | -117 |
-| UNICHEMLAB | Pharmaceuticals: Major | 483.40 | 2.98 | 0 | 4 | 0.87 | 0.89 | 76.38 | 271 | -190 | -1.10 | -7.07 | 34.62 | 745 | -294 | -13.14 | -9.82 | 33.21 | 735 | -109 | 29.88 | 26.32 | 86.76 | 139 | -53 |
-| UNIPARTS | Auto Parts: OEM | 715.20 | 7.12 | 0 | 4 | -1.02 | -0.99 | 58.36 | 477 | +395 | -0.47 | -6.48 | 37.35 | 714 | +93 | -19.95 | -16.89 | 15.92 | 925 | +5 | 14.31 | 11.18 | 72.65 | 286 | -32 |
-| UNIVCABLES | Electronic Components | 1080.90 | 13.18 | 0 | 4 | -3.61 | -3.58 | 28.61 | 817 | -160 | -19.03 | -23.92 | 1.76 | 1119 | -6 | -34.42 | -31.91 | 2.27 | 1075 | +7 | -9.16 | -11.65 | 37.04 | 657 | +47 |
-| UPL | Chemicals: Agricultural | 565.00 | 126.41 | 0 | 4 | -0.84 | -0.81 | 59.84 | 460 | -104 | 5.33 | -1.02 | 63.01 | 422 | -50 | 0.49 | 4.33 | 70.88 | 321 | +58 | -12.55 | -14.94 | 30.42 | 726 | +13 |
-| USHAMART | Metal Fabrication | 463.05 | 16.41 | 0 | 4 | -2.44 | -2.42 | 40.59 | 680 | +61 | -0.23 | -6.24 | 38.84 | 697 | +233 | -7.20 | -3.65 | 52.87 | 519 | +39 | -7.01 | -9.56 | 41.84 | 607 | +29 |
-| UTIAMC | Investment Managers | 851.15 | 7.01 | 0 | 4 | 0.89 | 0.92 | 77.08 | 263 | +199 | 3.42 | -2.82 | 55.62 | 506 | -25 | -2.23 | 1.51 | 65.15 | 384 | +59 | -7.95 | -10.48 | 39.64 | 630 | +19 |
-| UTLSOLAR | Semiconductors | 272.40 | 9.64 | 0 | 3 | -13.04 | -13.02 | 0.96 | 1133 | -7 | -26.56 | -30.99 | 0.53 | 1133 | +0 | -40.78 | -38.52 | 0.64 | 1093 | -3 | N/A | N/A | N/A | N/A | N/A |
-| V2RETAIL | Apparel/Footwear Retail | 142.26 | 358.43 | 0 | 4 | -9.60 | -9.57 | 2.62 | 1114 | -1052 | -8.48 | -14.00 | 12.13 | 1001 | -123 | -36.11 | -33.67 | 1.64 | 1082 | -15 | -42.09 | -43.68 | 2.02 | 1022 | -10 |
-| VADILALIND | Food: Specialty/Candy | 6927.00 | 5.17 | 0 | 4 | -1.03 | -1.00 | 58.18 | 479 | +25 | -5.65 | -11.34 | 19.42 | 918 | -49 | -9.71 | -6.26 | 44.04 | 616 | +97 | 28.42 | 24.90 | 85.80 | 149 | -1 |
-| VAIBHAVGBL | Other Consumer Specialties | 156.03 | 8.13 | 0 | 4 | -2.44 | -2.42 | 40.51 | 681 | +238 | -16.93 | -21.94 | 2.90 | 1106 | -10 | -28.79 | -26.06 | 4.37 | 1052 | -3 | -32.43 | -34.28 | 5.09 | 990 | +8 |
-| VARROC | Auto Parts: OEM | 782.45 | 14.89 | 0 | 4 | -4.52 | -4.49 | 21.52 | 898 | -114 | -3.10 | -8.95 | 26.89 | 833 | -116 | -9.23 | -5.76 | 46.13 | 593 | -204 | 31.81 | 28.20 | 88.10 | 125 | -40 |
-| VEDL | Aluminum | 238.00 | 237.36 | 0 | 2 | -2.34 | -2.31 | 41.82 | 666 | +287 | 2.12 | -4.03 | 49.91 | 571 | -50 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| VEEDOL | Oil Refining/Marketing | 1333.90 | 1.07 | 0 | 4 | -0.80 | -0.77 | 60.28 | 455 | +77 | 2.17 | -3.99 | 50.09 | 569 | -26 | -9.42 | -5.95 | 45.40 | 601 | +29 | -5.65 | -8.24 | 44.43 | 580 | -7 |
-| VENKEYS | Agricultural Commodities/Milling | 1348.70 | 10.73 | 0 | 4 | -7.89 | -7.87 | 4.64 | 1091 | -28 | -14.45 | -19.61 | 4.83 | 1084 | +17 | -20.76 | -17.73 | 14.10 | 945 | -191 | -6.63 | -9.18 | 42.90 | 596 | -6 |
-| VENTIVE | Hotels/Resorts/Cruise lines | 548.85 | 2.04 | 0 | 4 | 1.19 | 1.22 | 78.83 | 243 | +31 | -0.19 | -6.21 | 38.93 | 696 | -81 | -7.16 | -3.61 | 52.96 | 518 | -30 | -14.46 | -16.80 | 26.58 | 766 | -29 |
-| VENUSPIPES | Steel | 1734.00 | 23.52 | 0 | 4 | -1.97 | -1.94 | 46.02 | 618 | +322 | -2.30 | -8.19 | 29.79 | 800 | +63 | 5.53 | 9.57 | 81.44 | 205 | +1 | 22.16 | 18.82 | 81.00 | 199 | +10 |
-| VENUSREM | Pharmaceuticals: Major | 1466.20 | 5.33 | 0 | 2 | -2.36 | -2.33 | 41.73 | 667 | -476 | 10.22 | 3.58 | 77.94 | 252 | +111 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| VESUVIUS | Construction Materials | 372.20 | 29.74 | 0 | 4 | 0.32 | 0.35 | 71.48 | 327 | +422 | -2.58 | -8.45 | 28.47 | 815 | +51 | -8.72 | -5.23 | 47.68 | 576 | +150 | -22.64 | -24.76 | 14.49 | 892 | -8 |
-| VGUARD | Electrical Products | 292.45 | 49.46 | 0 | 4 | -3.78 | -3.76 | 26.60 | 840 | -445 | 10.78 | 4.10 | 79.17 | 238 | -39 | -15.56 | -12.33 | 26.11 | 813 | -158 | -2.74 | -5.41 | 49.52 | 527 | -7 |
-| VHL | Investment Managers | 3497.30 | 0.21 | 0 | 4 | -0.87 | -0.84 | 59.49 | 464 | +134 | 1.11 | -4.99 | 45.87 | 617 | -47 | -1.46 | 2.31 | 67.24 | 361 | -25 | 3.67 | 0.83 | 58.93 | 429 | -1 |
-| VIDHIING | Food: Specialty/Candy | 291.15 | 0.55 | 0 | 4 | -5.05 | -5.03 | 17.32 | 946 | -182 | -4.98 | -10.71 | 21.35 | 896 | -86 | -17.88 | -14.74 | 20.11 | 879 | -48 | -2.12 | -4.80 | 50.29 | 519 | -34 |
-| VIDYAWIRES | Other Metals/Minerals | 72.51 | 9.11 | 0 | 2 | -5.79 | -5.77 | 13.47 | 990 | +77 | -14.82 | -19.96 | 4.48 | 1088 | +24 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| VIKRAMSOLR | Semiconductors | 141.04 | 31.87 | 0 | 3 | 2.13 | 2.16 | 84.51 | 178 | +277 | 10.58 | 3.91 | 78.73 | 243 | +133 | -16.40 | -13.20 | 23.93 | 837 | +63 | N/A | N/A | N/A | N/A | N/A |
-| VINATIORGA | Chemicals: Specialty | 1130.00 | 6.55 | 0 | 4 | -3.68 | -3.66 | 27.91 | 825 | -339 | 4.47 | -1.83 | 59.58 | 461 | +9 | -15.03 | -11.78 | 27.30 | 800 | -48 | -13.38 | -15.75 | 28.41 | 747 | -19 |
-| VINCOFE | Wholesale Distributors | 148.34 | 19.47 | 0 | 4 | -2.69 | -2.66 | 38.06 | 709 | -136 | -2.70 | -8.57 | 27.94 | 821 | +41 | -20.15 | -17.09 | 15.38 | 931 | -112 | -0.32 | -3.05 | 53.26 | 488 | -26 |
-| VINDHYATEL | Engineering & Construction | 2435.70 | 12.21 | 0 | 4 | -3.72 | -3.69 | 27.30 | 832 | +154 | -9.82 | -15.26 | 9.58 | 1030 | +22 | -3.94 | -0.26 | 61.60 | 423 | +132 | 10.71 | 7.68 | 68.71 | 327 | -9 |
-| VIPIND | Other Consumer Specialties | 246.80 | 8.54 | 0 | 4 | -0.84 | -0.82 | 59.76 | 461 | +105 | -1.97 | -7.88 | 31.46 | 781 | +121 | -19.48 | -16.40 | 16.47 | 919 | +7 | -25.76 | -27.80 | 10.56 | 933 | -28 |
-| VISHNU | Chemicals: Specialty | 516.60 | 5.93 | 0 | 4 | -6.65 | -6.62 | 8.75 | 1044 | -4 | -9.12 | -14.60 | 10.98 | 1014 | -3 | -20.79 | -17.75 | 14.01 | 946 | -2 | -16.04 | -18.34 | 23.51 | 798 | +29 |
-| VIYASH | Pharmaceuticals: Major | 227.45 | 51.89 | 0 | 4 | -3.56 | -3.53 | 29.13 | 811 | -67 | 0.20 | -5.84 | 41.04 | 672 | -289 | -13.71 | -10.41 | 31.21 | 757 | +7 | -8.29 | -10.80 | 39.06 | 636 | -7 |
-| VMART | Specialty Stores | 774.80 | 4.94 | 0 | 4 | -0.37 | -0.35 | 64.65 | 405 | +249 | 1.61 | -4.51 | 47.45 | 599 | +70 | -8.57 | -5.08 | 48.41 | 568 | -83 | 13.12 | 10.02 | 71.79 | 295 | +24 |
-| VOLTAMP | Electrical Products | 9512.00 | 20.51 | 0 | 4 | -1.39 | -1.36 | 53.63 | 531 | -277 | -8.37 | -13.90 | 12.57 | 996 | -121 | -12.80 | -9.47 | 34.39 | 722 | -27 | 1.46 | -1.32 | 56.14 | 458 | -73 |
-| VSTIND | Tobacco | 192.37 | 2.22 | 0 | 4 | -0.89 | -0.86 | 59.41 | 465 | +66 | -0.04 | -6.07 | 39.81 | 686 | +18 | -8.28 | -4.77 | 49.32 | 558 | -10 | -24.11 | -26.19 | 12.57 | 912 | +4 |
-| VSTTILLERS | Trucks/Construction/Farm Machinery | 3353.80 | 2.94 | 0 | 4 | -6.02 | -6.00 | 12.16 | 1005 | +61 | -14.55 | -19.71 | 4.75 | 1085 | -24 | -23.04 | -20.10 | 10.83 | 981 | -17 | -28.09 | -30.06 | 8.54 | 954 | -17 |
-| VTL | Textiles | 513.55 | 13.26 | 0 | 4 | -3.83 | -3.80 | 26.33 | 843 | -100 | 1.55 | -4.57 | 47.36 | 600 | -68 | -10.23 | -6.79 | 42.86 | 629 | +110 | -17.19 | -19.46 | 21.88 | 815 | -12 |
-| WAAREEENER | Semiconductors | 2385.20 | 176.07 | 0 | 4 | -1.96 | -1.94 | 46.19 | 616 | -147 | 6.58 | 0.15 | 66.96 | 377 | +77 | -8.44 | -4.94 | 48.77 | 564 | +34 | -22.67 | -24.79 | 14.40 | 893 | +8 |
-| WAAREERTL | Alternative Power Generation | 688.10 | 15.17 | 0 | 4 | -2.08 | -2.05 | 44.97 | 630 | +278 | 2.30 | -3.86 | 50.79 | 561 | +123 | -21.13 | -18.12 | 13.28 | 954 | +28 | -29.55 | -31.48 | 7.20 | 968 | +8 |
-| WABAG | Engineering & Construction | 1821.30 | 88.50 | 0 | 4 | -3.29 | -3.27 | 32.37 | 774 | -78 | 0.75 | -5.32 | 44.20 | 636 | +61 | -7.98 | -4.46 | 50.68 | 543 | +165 | 16.91 | 13.70 | 75.91 | 252 | -15 |
-| WAKEFIT | Specialty Stores | 135.94 | 2.37 | 0 | 2 | 1.61 | 1.64 | 81.63 | 211 | +266 | 0.14 | -5.90 | 40.69 | 676 | +139 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
-| WALCHANNAG | Industrial Machinery | 175.82 | 10.89 | 0 | 4 | -3.73 | -3.70 | 27.12 | 834 | +36 | -6.35 | -12.00 | 17.40 | 941 | +22 | -18.19 | -15.06 | 19.38 | 887 | +62 | -26.20 | -28.23 | 9.69 | 942 | +6 |
-| WEBELSOLAR | Semiconductors | 63.30 | 9.46 | 0 | 4 | -3.18 | -3.15 | 33.25 | 764 | +151 | -8.11 | -13.66 | 12.92 | 992 | -42 | -17.22 | -14.06 | 22.11 | 857 | +65 | -41.02 | -42.63 | 2.30 | 1019 | +3 |
-| WELENT | Engineering & Construction | 682.90 | 18.80 | 0 | 4 | 1.47 | 1.50 | 80.58 | 223 | -60 | 5.79 | -0.59 | 64.94 | 400 | -76 | -0.35 | 3.46 | 69.43 | 337 | -99 | 31.68 | 28.07 | 87.91 | 127 | -16 |
-| WENDT | Industrial Machinery | 6927.00 | 4.99 | 0 | 4 | -1.79 | -1.76 | 48.21 | 593 | +110 | 0.94 | -5.15 | 44.90 | 628 | +82 | -15.22 | -11.98 | 26.75 | 806 | +7 | 1.39 | -1.39 | 55.85 | 461 | +7 |
-| WEWORK | Real Estate Development | 678.30 | 7.41 | 0 | 3 | -2.40 | -2.38 | 41.12 | 674 | +91 | 5.76 | -0.62 | 64.59 | 404 | +16 | -0.93 | 2.86 | 68.24 | 350 | +76 | N/A | N/A | N/A | N/A | N/A |
-| WHIRLPOOL | Electronics/Appliances | 790.60 | 26.47 | 0 | 4 | -4.78 | -4.75 | 19.16 | 925 | -149 | -4.93 | -10.66 | 21.62 | 893 | +48 | -1.56 | 2.20 | 66.88 | 365 | +8 | -3.41 | -6.06 | 48.66 | 536 | +18 |
-| WINDLAS | Pharmaceuticals: Major | 931.15 | 10.83 | 0 | 4 | -5.22 | -5.20 | 16.54 | 955 | -79 | 4.78 | -1.54 | 61.07 | 444 | -105 | -6.34 | -2.76 | 55.05 | 495 | -49 | 15.55 | 12.38 | 74.47 | 267 | -19 |
-| WINDMACHIN | Industrial Machinery | 308.25 | 6.62 | 0 | 4 | -1.66 | -1.63 | 50.22 | 570 | -333 | 10.13 | 3.49 | 77.77 | 254 | +99 | 0.26 | 4.10 | 70.25 | 328 | -24 | 10.15 | 7.13 | 67.95 | 335 | +31 |
-| WONDERLA | Movies/Entertainment | 480.55 | 3.88 | 0 | 4 | -5.65 | -5.62 | 13.82 | 986 | -89 | 0.15 | -5.89 | 40.77 | 675 | +46 | -10.55 | -7.13 | 41.67 | 642 | -19 | 1.35 | -1.43 | 55.76 | 462 | -3 |
-| WSTCSTPAPR | Office Equipment/Supplies | 651.15 | 35.08 | 0 | 4 | 0.70 | 0.73 | 74.80 | 289 | +817 | -20.21 | -25.02 | 1.32 | 1124 | +10 | 6.43 | 10.50 | 82.71 | 191 | +180 | 25.08 | 21.65 | 83.01 | 178 | +94 |
-| YATHARTH | Hospital/Nursing Management | 1079.45 | 28.72 | 0 | 4 | 0.09 | 0.12 | 68.94 | 356 | +170 | 14.17 | 7.28 | 86.99 | 149 | +32 | 7.74 | 11.86 | 84.17 | 175 | -51 | 33.18 | 29.53 | 88.87 | 117 | -5 |
-| ZEEL | Broadcasting | 66.00 | 138.31 | 0 | 4 | -7.67 | -7.64 | 5.16 | 1085 | -142 | -4.47 | -10.23 | 23.29 | 874 | -399 | -29.47 | -26.77 | 3.73 | 1059 | +13 | -30.16 | -32.07 | 6.62 | 974 | -11 |
-| ZFCVINDIA | Auto Parts: OEM | 2190.00 | 13.32 | 0 | 4 | -1.03 | -1.00 | 58.09 | 480 | +492 | 4.42 | -1.88 | 59.49 | 462 | +233 | -13.60 | -10.29 | 31.67 | 752 | +91 | -84.96 | -85.37 | 0.10 | 1042 | +1 |
-| ZYDUSWELL | Food: Major Diversified | 455.90 | 10.88 | 0 | 4 | 0.01 | 0.04 | 68.24 | 364 | -92 | -1.66 | -7.59 | 32.51 | 769 | -8 | -14.05 | -10.76 | 30.12 | 769 | -82 | -9.30 | -11.79 | 36.95 | 658 | -60 |
+| ABDL | Beverages: Alcoholic | 838.00 | 41.83 | 4 | 4 | 5.50 | 5.71 | 92.03 | 92 | +130 | 17.99 | 11.54 | 92.88 | 82 | +25 | 35.77 | 39.55 | 97.81 | 25 | -6 | 46.54 | 42.94 | 94.15 | 62 | +8 |
+| ACE | Trucks/Construction/Farm Machinery | 1325.70 | 49.56 | 4 | 4 | 13.27 | 13.50 | 99.21 | 10 | +8 | 29.08 | 22.02 | 98.59 | 17 | +6 | 21.20 | 24.57 | 94.72 | 59 | +23 | 52.55 | 48.79 | 95.11 | 52 | +1 |
+| ARIS | Packaged Software | 187.36 | 37.05 | 4 | 4 | 13.57 | 13.79 | 99.30 | 9 | -3 | 30.88 | 23.72 | 98.86 | 14 | -1 | 42.28 | 46.24 | 99.09 | 11 | +15 | 62.92 | 58.91 | 96.74 | 35 | -2 |
+| CUPID | Household/Personal Care | 389.50 | 428.72 | 4 | 4 | 6.52 | 6.73 | 94.40 | 65 | +164 | 21.66 | 15.00 | 96.31 | 43 | +49 | 41.61 | 45.55 | 99.00 | 12 | +9 | 192.66 | 185.46 | 100.00 | 1 | +0 |
+| EIMCOELECO | Trucks/Construction/Farm Machinery | 2647.50 | 6.02 | 4 | 4 | 7.00 | 7.21 | 95.01 | 58 | +353 | 20.78 | 14.17 | 95.78 | 49 | +25 | 20.70 | 24.06 | 94.26 | 64 | +27 | 72.18 | 67.95 | 97.98 | 22 | +6 |
+| GREAVESCOT | Trucks/Construction/Farm Machinery | 322.69 | 194.98 | 4 | 4 | 20.27 | 20.50 | 99.82 | 3 | -2 | 72.75 | 63.29 | 100.00 | 1 | +0 | 63.14 | 67.68 | 99.91 | 2 | +0 | 76.36 | 72.02 | 98.18 | 20 | -1 |
+| RAYMOND | Textiles | 1278.60 | 71.53 | 4 | 4 | 6.67 | 6.87 | 94.57 | 63 | +413 | 16.04 | 9.68 | 90.06 | 114 | +92 | 101.26 | 106.86 | 100.00 | 1 | +0 | 145.06 | 139.03 | 99.81 | 3 | +2 |
+| THOMASCOOK | Other Consumer Services | 127.51 | 96.94 | 4 | 4 | 11.21 | 11.42 | 98.60 | 17 | -12 | 44.31 | 36.41 | 99.82 | 3 | -1 | 20.62 | 23.98 | 94.17 | 65 | -20 | 38.34 | 34.94 | 91.84 | 86 | -29 |
+| WELSPUNLIV | Consumer Sundries | 285.52 | 234.64 | 4 | 4 | 6.23 | 6.44 | 93.70 | 73 | -60 | 34.57 | 27.21 | 99.47 | 7 | +10 | 43.90 | 47.91 | 99.18 | 10 | -2 | 97.89 | 93.02 | 98.94 | 12 | +0 |
+| AGARWALEYE | Medical/Nursing Services | 581.35 | 11.86 | 3 | 4 | 5.05 | 5.26 | 90.89 | 105 | +7 | 18.96 | 12.45 | 93.84 | 71 | -11 | 14.28 | 17.46 | 90.16 | 109 | +5 | 25.02 | 21.94 | 83.11 | 177 | +13 |
+| AJMERA | Real Estate Development | 160.48 | 27.29 | 3 | 4 | 7.50 | 7.71 | 95.80 | 49 | -47 | 16.41 | 10.04 | 90.77 | 106 | -59 | 38.74 | 42.60 | 98.63 | 16 | -3 | 35.24 | 31.92 | 89.73 | 108 | -46 |
+| ALICON | Auto Parts: OEM | 1018.15 | 18.79 | 3 | 4 | -5.35 | -5.17 | 7.09 | 1062 | -274 | 18.42 | 11.94 | 93.32 | 77 | +100 | 54.35 | 58.64 | 99.73 | 4 | +2 | 54.93 | 51.12 | 95.59 | 47 | +8 |
+| ANGELONE | Investment Banks/Brokers | 376.00 | 324.28 | 3 | 4 | 7.95 | 8.16 | 96.32 | 43 | -1 | 28.04 | 21.03 | 98.33 | 20 | +21 | 33.55 | 37.26 | 97.72 | 26 | +18 | 11.34 | 8.60 | 70.15 | 312 | +63 |
+| APLLTD | Pharmaceuticals: Major | 1013.40 | 46.70 | 3 | 4 | -2.65 | -2.46 | 23.03 | 880 | -146 | 27.50 | 20.52 | 98.15 | 22 | -6 | 20.09 | 23.43 | 93.99 | 67 | -14 | 37.40 | 34.02 | 91.07 | 94 | -15 |
+| BEML | Trucks/Construction/Farm Machinery | 2346.10 | 151.69 | 3 | 4 | 14.31 | 14.53 | 99.47 | 7 | +324 | 18.74 | 12.24 | 93.76 | 72 | +414 | 19.08 | 22.39 | 93.72 | 70 | +137 | 35.06 | 31.73 | 89.64 | 109 | +152 |
+| BIL | Consumer Sundries | 1047.20 | 1.43 | 3 | 4 | 8.80 | 9.01 | 97.29 | 32 | +403 | 2.25 | -3.35 | 50.84 | 560 | +200 | 18.27 | 21.56 | 93.35 | 74 | +1 | 44.94 | 41.37 | 93.76 | 66 | +1 |
+| BOROLTD | Miscellaneous Manufacturing | 310.90 | 37.32 | 3 | 4 | -4.95 | -4.77 | 8.58 | 1045 | -26 | 30.25 | 23.12 | 98.77 | 15 | +0 | 28.55 | 32.13 | 96.90 | 35 | -1 | 40.06 | 36.62 | 92.80 | 76 | +2 |
+| FILATEX | Textiles | 112.57 | 24.63 | 3 | 4 | 1.57 | 1.77 | 74.26 | 295 | +200 | 20.06 | 13.49 | 95.07 | 57 | +63 | 52.66 | 56.91 | 99.64 | 5 | +2 | 133.35 | 127.61 | 99.62 | 5 | +1 |
+| GHCLTEXTIL | Textiles | 150.86 | 10.47 | 3 | 4 | 5.08 | 5.28 | 91.07 | 103 | +32 | 21.09 | 14.47 | 95.95 | 47 | +21 | 7.41 | 10.40 | 83.33 | 184 | -16 | 56.49 | 52.64 | 95.87 | 44 | +6 |
+| GLENMARK | Pharmaceuticals: Major | 2834.90 | 195.92 | 3 | 4 | 7.06 | 7.27 | 95.10 | 57 | +14 | 21.20 | 14.57 | 96.04 | 46 | +23 | 14.75 | 17.95 | 90.71 | 103 | +26 | 30.01 | 26.81 | 86.95 | 137 | +34 |
+| GMMPFAUDLR | Industrial Machinery | 1242.50 | 21.60 | 3 | 4 | 5.64 | 5.84 | 92.56 | 86 | -49 | -4.14 | -9.39 | 22.60 | 881 | -175 | 14.64 | 17.83 | 90.53 | 105 | -42 | 58.95 | 55.04 | 96.35 | 39 | -5 |
+| HUBTOWN | Real Estate Development | 214.54 | 79.16 | 3 | 4 | 25.69 | 25.94 | 100.00 | 1 | +3 | 16.67 | 10.28 | 91.47 | 98 | -67 | 18.97 | 22.28 | 93.53 | 72 | +0 | 5.90 | 3.29 | 62.96 | 387 | +25 |
+| ICIL | Textiles | 591.60 | 45.31 | 3 | 4 | 1.96 | 2.16 | 77.50 | 258 | -101 | 31.67 | 24.46 | 99.03 | 12 | -6 | 36.49 | 40.29 | 98.09 | 22 | +16 | 77.60 | 73.23 | 98.46 | 17 | +6 |
+| JLHL | Hospital/Nursing Management | 345.30 | 48.18 | 3 | 4 | 8.79 | 9.00 | 97.11 | 34 | +19 | 32.76 | 25.49 | 99.30 | 9 | +110 | 17.79 | 21.07 | 92.99 | 78 | +235 | -73.75 | -74.39 | 0.29 | 1040 | +0 |
+| KALYANKJIL | Specialty Stores | 659.50 | 796.61 | 3 | 4 | 3.26 | 3.46 | 84.94 | 173 | +596 | 28.06 | 21.05 | 98.42 | 19 | +10 | 15.10 | 18.30 | 90.98 | 100 | +88 | 82.13 | 77.65 | 98.66 | 15 | +2 |
+| KDDL | Other Consumer Specialties | 4520.40 | 43.59 | 3 | 4 | -2.17 | -1.98 | 28.46 | 818 | -2 | 17.10 | 10.69 | 91.91 | 93 | -29 | 16.58 | 19.83 | 92.08 | 88 | +5 | 53.44 | 49.66 | 95.30 | 50 | -12 |
+| MANAKCOAT | Steel | 165.68 | 23.79 | 3 | 4 | 5.18 | 5.39 | 91.51 | 98 | +259 | 12.07 | 5.93 | 83.20 | 192 | -141 | 37.54 | 41.37 | 98.45 | 18 | +6 | 56.51 | 52.66 | 95.97 | 43 | +5 |
+| MAXESTATES | Real Estate Development | 608.00 | 5.43 | 3 | 4 | 0.87 | 1.07 | 68.21 | 364 | -321 | 17.35 | 10.93 | 92.08 | 91 | -25 | 20.87 | 24.24 | 94.44 | 62 | +0 | 37.90 | 34.51 | 91.36 | 91 | +3 |
+| MCX | Investment Banks/Brokers | 3900.00 | 769.31 | 3 | 4 | 10.33 | 10.54 | 98.16 | 22 | +44 | 20.71 | 14.10 | 95.51 | 52 | +6 | 18.07 | 21.36 | 93.26 | 75 | +26 | 34.78 | 31.47 | 89.44 | 111 | -8 |
+| MOTILALOFS | Investment Managers | 1222.15 | 162.32 | 3 | 4 | 1.37 | 1.57 | 72.33 | 317 | -1 | 23.94 | 17.15 | 97.27 | 32 | -4 | 20.29 | 23.64 | 94.08 | 66 | +17 | 41.91 | 38.42 | 93.19 | 72 | +1 |
+| NAVINFLUOR | Chemicals: Specialty | 10456.50 | 200.37 | 3 | 4 | 3.77 | 3.97 | 87.04 | 149 | +146 | 26.58 | 19.66 | 97.89 | 25 | +29 | 21.08 | 24.45 | 94.54 | 61 | +8 | 47.47 | 43.84 | 94.43 | 59 | +2 |
+| NEOGEN | Chemicals: Specialty | 2870.90 | 40.33 | 3 | 4 | -1.69 | -1.50 | 34.68 | 747 | +177 | 26.94 | 19.99 | 97.98 | 24 | +26 | 33.29 | 37.00 | 97.63 | 27 | +16 | 52.47 | 48.72 | 95.01 | 53 | +13 |
+| PRESTIGE | Real Estate Development | 1796.70 | 120.35 | 3 | 4 | 6.95 | 7.16 | 94.83 | 60 | -46 | 24.86 | 18.02 | 97.63 | 28 | -16 | 14.44 | 17.62 | 90.44 | 106 | +5 | 32.42 | 29.16 | 88.68 | 119 | -19 |
+| RATNAVEER | Steel | 398.30 | 123.42 | 3 | 4 | 7.58 | 7.79 | 95.88 | 48 | -33 | 12.88 | 6.70 | 84.87 | 173 | -73 | 36.71 | 40.51 | 98.18 | 21 | -1 | 133.58 | 127.83 | 99.71 | 4 | -1 |
+| RAYMONDREL | Real Estate Development | 651.60 | 31.40 | 3 | 4 | 4.70 | 4.91 | 90.02 | 115 | +531 | 20.18 | 13.60 | 95.25 | 55 | +128 | 26.10 | 29.61 | 95.90 | 46 | +38 | 7.49 | 4.84 | 64.40 | 372 | +45 |
+| RKFORGE | Metal Fabrication | 781.25 | 78.32 | 3 | 4 | 4.76 | 4.97 | 90.28 | 112 | +38 | 16.22 | 9.86 | 90.33 | 111 | -62 | 3.67 | 6.55 | 77.05 | 253 | -56 | 38.85 | 35.43 | 92.23 | 82 | -8 |
+| SAILIFE | Miscellaneous Commercial Services | 1806.10 | 250.07 | 3 | 4 | 0.30 | 0.50 | 61.47 | 441 | -209 | 20.75 | 14.14 | 95.69 | 50 | -2 | 18.97 | 22.28 | 93.62 | 71 | -24 | 55.79 | 51.96 | 95.78 | 45 | -3 |
+| SAMBHV | Steel | 177.30 | 42.79 | 3 | 4 | 12.17 | 12.39 | 98.86 | 14 | +13 | 11.28 | 5.19 | 80.04 | 228 | +202 | 39.68 | 43.57 | 98.82 | 14 | +2 | 67.96 | 63.83 | 97.31 | 29 | +2 |
+| UTTAMSUGAR | Agricultural Commodities/Milling | 390.65 | 15.97 | 3 | 4 | 9.79 | 10.01 | 97.81 | 26 | +79 | 8.30 | 2.38 | 71.86 | 321 | -268 | 31.84 | 35.51 | 97.54 | 28 | +24 | 68.28 | 64.14 | 97.41 | 28 | +2 |
+| WEL | Electronic Equipment/Instruments | 93.14 | 1.68 | 3 | 4 | 12.37 | 12.59 | 98.95 | 13 | -2 | 31.96 | 24.74 | 99.12 | 11 | +7 | 15.22 | 18.42 | 91.07 | 99 | +184 | 0.20 | -2.26 | 54.03 | 480 | +26 |
+| AARTIPHARM | Pharmaceuticals: Major | 1015.15 | 57.86 | 2 | 4 | 2.47 | 2.67 | 81.26 | 215 | +181 | 9.43 | 3.44 | 74.85 | 287 | -166 | 17.33 | 20.60 | 92.81 | 80 | -23 | 57.69 | 53.81 | 96.16 | 41 | -9 |
+| ABSLAMC | Internet Software/Services | 982.70 | 19.81 | 2 | 4 | 5.05 | 5.25 | 90.81 | 106 | -57 | 16.31 | 9.94 | 90.59 | 108 | +35 | -4.51 | -1.85 | 56.56 | 478 | -7 | -4.98 | -7.32 | 46.35 | 560 | -13 |
+| ACUTAAS | Pharmaceuticals: Major | 4075.00 | 278.67 | 2 | 4 | 6.30 | 6.51 | 93.96 | 70 | +83 | 2.47 | -3.14 | 52.07 | 546 | -282 | 28.37 | 31.95 | 96.72 | 37 | -7 | 28.76 | 25.60 | 85.80 | 149 | -15 |
+| AEGISLOG | Wholesale Distributors | 1297.90 | 152.98 | 2 | 4 | 9.55 | 9.76 | 97.64 | 28 | +82 | 10.11 | 4.09 | 76.61 | 267 | +289 | 6.45 | 9.41 | 81.69 | 202 | +230 | 71.73 | 67.50 | 97.60 | 26 | +17 |
+| AEGISVOPAK | Air Freight/Couriers | 284.47 | 18.66 | 2 | 4 | -2.02 | -1.83 | 30.39 | 796 | -81 | 20.44 | 13.84 | 95.43 | 53 | +14 | 5.32 | 8.25 | 80.05 | 220 | +34 | 48.52 | 44.86 | 94.53 | 58 | +11 |
+| AETHER | Chemicals: Major Diversified | 1761.40 | 53.87 | 2 | 4 | 8.71 | 8.92 | 96.94 | 36 | +296 | 11.41 | 5.31 | 80.65 | 221 | +142 | 4.61 | 7.53 | 79.05 | 231 | +86 | 54.08 | 50.28 | 95.39 | 49 | +5 |
+| AKUMS | Biotechnology | 756.75 | 20.59 | 2 | 4 | 8.70 | 8.91 | 96.85 | 37 | +135 | 2.12 | -3.47 | 50.40 | 565 | +67 | -2.86 | -0.16 | 61.11 | 428 | +60 | 36.23 | 32.88 | 90.50 | 100 | +7 |
+| ASAHIINDIA | Home Furnishings | 1158.20 | 21.42 | 2 | 4 | -0.46 | -0.27 | 50.88 | 562 | -174 | 27.04 | 20.09 | 98.07 | 23 | -4 | 21.76 | 25.15 | 94.99 | 56 | -14 | 29.93 | 26.73 | 86.76 | 139 | -13 |
+| BALAJITELE | Movies/Entertainment | 103.55 | 1.93 | 2 | 4 | 7.42 | 7.63 | 95.53 | 52 | +81 | 18.55 | 12.06 | 93.49 | 75 | +0 | 12.24 | 15.36 | 88.62 | 126 | +8 | 17.70 | 14.80 | 76.97 | 241 | +51 |
+| BLUSPRING | Miscellaneous Commercial Services | 140.56 | 5.20 | 2 | 4 | -10.74 | -10.56 | 0.79 | 1134 | -5 | -8.27 | -13.30 | 11.61 | 1006 | -40 | 15.72 | 18.94 | 91.44 | 95 | +20 | 67.73 | 63.60 | 97.22 | 30 | -12 |
+| BRIGADE | Real Estate Development | 617.85 | 32.46 | 2 | 4 | 6.83 | 7.04 | 94.75 | 61 | -49 | 16.14 | 9.78 | 90.15 | 113 | -3 | -4.22 | -1.56 | 57.47 | 468 | -39 | -4.85 | -7.19 | 46.64 | 557 | -11 |
+| CHEMPLASTS | Chemicals: Major Diversified | 253.62 | 20.57 | 2 | 4 | 1.42 | 1.62 | 73.03 | 309 | -39 | 25.94 | 19.05 | 97.71 | 27 | -7 | 48.88 | 53.03 | 99.45 | 7 | +2 | 23.08 | 20.05 | 81.67 | 192 | +15 |
+| COMSYN | Containers/Packaging | 271.93 | 15.95 | 2 | 3 | 5.61 | 5.81 | 92.38 | 88 | -60 | 28.94 | 21.88 | 98.50 | 18 | -4 | -10.65 | -8.17 | 38.52 | 676 | -161 | N/A | N/A | N/A | N/A | N/A |
+| CPPLUS | Electronics/Appliances | 4307.20 | 93.28 | 2 | 4 | 6.98 | 7.19 | 94.92 | 59 | +5 | 9.00 | 3.03 | 74.05 | 296 | +84 | 15.57 | 18.79 | 91.35 | 96 | -29 | 21.75 | 18.76 | 80.81 | 201 | -26 |
+| DALMIASUG | Agricultural Commodities/Milling | 486.05 | 19.03 | 2 | 4 | 8.60 | 8.82 | 96.76 | 38 | +627 | 15.51 | 9.18 | 89.45 | 121 | +109 | 3.89 | 6.78 | 77.50 | 248 | +261 | 46.78 | 43.16 | 94.34 | 60 | +38 |
+| DHAMPURSUG | Agricultural Commodities/Milling | 195.46 | 44.52 | 2 | 4 | 20.45 | 20.68 | 99.91 | 2 | +18 | 15.36 | 9.05 | 89.09 | 125 | +173 | 13.10 | 16.25 | 89.16 | 120 | +203 | 40.08 | 36.64 | 92.90 | 75 | +57 |
+| DOMS | Office Equipment/Supplies | 2282.90 | 11.35 | 2 | 4 | 6.09 | 6.30 | 93.52 | 75 | -58 | 24.60 | 17.78 | 97.54 | 29 | +7 | 2.42 | 5.27 | 74.23 | 284 | -32 | 7.57 | 4.93 | 64.49 | 371 | +8 |
+| EMCURE | Pharmaceuticals: Major | 2308.60 | 49.89 | 2 | 4 | -1.25 | -1.06 | 40.46 | 681 | -241 | 23.79 | 17.01 | 97.19 | 33 | +1 | 25.07 | 28.55 | 95.63 | 49 | -9 | 32.28 | 29.03 | 88.58 | 120 | -27 |
+| ENTERO | Medical Distributors | 1823.40 | 43.08 | 2 | 4 | -4.12 | -3.93 | 11.38 | 1013 | +53 | 16.94 | 10.54 | 91.73 | 95 | +46 | 1.02 | 3.83 | 71.04 | 319 | -18 | 60.02 | 56.08 | 96.45 | 38 | -3 |
+| GATEWAY | Railroads | 51.71 | 8.15 | 2 | 4 | 10.02 | 10.24 | 97.99 | 24 | N/A | 17.95 | 11.50 | 92.79 | 83 | N/A | -2.18 | 0.55 | 63.39 | 403 | N/A | -7.53 | -9.80 | 40.98 | 616 | N/A |
+| GEOJITFSL | Investment Banks/Brokers | 78.27 | 12.93 | 2 | 4 | 10.29 | 10.50 | 98.07 | 23 | +825 | 16.58 | 10.20 | 91.20 | 101 | +465 | -5.95 | -3.33 | 53.28 | 514 | +338 | 4.47 | 1.90 | 60.94 | 408 | +156 |
+| GLAND | Pharmaceuticals: Major | 3362.00 | 123.26 | 2 | 4 | 0.90 | 1.10 | 68.56 | 360 | -199 | 9.35 | 3.37 | 74.67 | 289 | -45 | 16.94 | 20.19 | 92.35 | 85 | -5 | 51.48 | 47.75 | 94.72 | 56 | -4 |
+| GOKEX | Apparel/Footwear | 793.65 | 40.60 | 2 | 4 | 4.76 | 4.96 | 90.19 | 113 | +277 | 22.83 | 16.10 | 96.83 | 37 | +123 | 1.68 | 4.51 | 72.77 | 300 | +167 | 13.94 | 11.14 | 72.65 | 286 | +127 |
+| HEGAM | Electronic Components | 285.79 | 105.38 | 2 | 2 | 11.03 | 11.25 | 98.42 | 19 | +28 | 17.43 | 11.00 | 92.17 | 90 | -52 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| HINDOILEXP | Integrated Oil | 218.15 | 41.08 | 2 | 4 | 0.61 | 0.81 | 65.24 | 398 | +49 | 42.27 | 34.48 | 99.74 | 4 | +1 | 29.08 | 32.68 | 96.99 | 34 | -11 | 30.29 | 27.08 | 87.52 | 131 | +45 |
+| HITECH | Steel | 82.96 | 14.44 | 2 | 4 | 9.97 | 10.18 | 97.90 | 25 | -1 | 22.45 | 15.75 | 96.75 | 38 | -17 | 4.13 | 7.03 | 78.05 | 242 | -20 | -7.52 | -9.80 | 41.07 | 615 | -30 |
+| IDEAFORGE | Aerospace & Defense | 789.20 | 23.77 | 2 | 3 | 13.90 | 14.12 | 99.39 | 8 | +26 | 16.68 | 10.29 | 91.56 | 97 | +247 | 0.71 | 3.52 | 70.49 | 325 | +223 | N/A | N/A | N/A | N/A | N/A |
+| J&KBANK | Regional Banks | 166.39 | 59.82 | 2 | 4 | 11.13 | 11.34 | 98.51 | 18 | -8 | 36.11 | 28.66 | 99.56 | 6 | +2 | 12.90 | 16.04 | 88.89 | 123 | +12 | 12.67 | 9.90 | 71.59 | 297 | +48 |
+| JWL | Trucks/Construction/Farm Machinery | 224.84 | 188.12 | 2 | 4 | 17.58 | 17.81 | 99.65 | 5 | -2 | 16.43 | 10.06 | 91.03 | 103 | -92 | -7.23 | -4.65 | 49.54 | 555 | -206 | -19.66 | -21.63 | 17.66 | 859 | -81 |
+| KALAMANDIR | Apparel/Footwear Retail | 94.93 | 19.04 | 2 | 4 | 7.48 | 7.69 | 95.71 | 50 | -18 | 44.56 | 36.64 | 99.91 | 2 | +1 | 10.87 | 13.96 | 87.43 | 139 | -34 | -9.99 | -12.21 | 36.18 | 666 | -21 |
+| KRISHNADEF | Aerospace & Defense | 1284.60 | 14.99 | 2 | 4 | 5.92 | 6.13 | 93.35 | 77 | +951 | 11.68 | 5.56 | 81.53 | 211 | +263 | 28.24 | 31.81 | 96.63 | 38 | +27 | 8.00 | 5.35 | 65.16 | 364 | +32 |
+| KROSS | Auto Parts: OEM | 273.75 | 64.09 | 2 | 4 | -1.63 | -1.44 | 35.64 | 736 | +160 | -9.01 | -13.99 | 10.20 | 1022 | -52 | 30.96 | 34.61 | 97.45 | 29 | +4 | 43.00 | 39.48 | 93.47 | 69 | +2 |
+| LINDEINDIA | Chemicals: Specialty | 6983.00 | 28.96 | 2 | 4 | 6.25 | 6.46 | 93.78 | 72 | +31 | 22.12 | 15.44 | 96.57 | 40 | +3 | 9.57 | 12.62 | 85.70 | 158 | -12 | -1.22 | -3.65 | 52.21 | 499 | +9 |
+| MAHABANK | Major Banks | 95.73 | 161.13 | 2 | 4 | -3.74 | -3.55 | 14.19 | 981 | -132 | 18.19 | 11.72 | 93.05 | 80 | +15 | 15.76 | 18.98 | 91.53 | 94 | +0 | 19.81 | 16.86 | 79.37 | 216 | +23 |
+| MARINE | Wholesale Distributors | 439.45 | 46.56 | 2 | 4 | 8.51 | 8.72 | 96.58 | 40 | +499 | 4.43 | -1.28 | 59.98 | 456 | +198 | 1.58 | 4.41 | 72.31 | 305 | -86 | 75.67 | 71.35 | 98.08 | 21 | +8 |
+| MASTERTR | Investment Banks/Brokers | 91.45 | 3.10 | 2 | 4 | 5.47 | 5.67 | 91.86 | 94 | -42 | 17.79 | 11.34 | 92.52 | 86 | +4 | 12.10 | 15.22 | 88.52 | 127 | +20 | 12.08 | 9.33 | 70.92 | 304 | +20 |
+| MMFL | Metal Fabrication | 631.65 | 21.26 | 2 | 4 | -2.53 | -2.34 | 24.43 | 864 | +188 | 27.85 | 20.85 | 98.24 | 21 | +11 | -3.92 | -1.25 | 58.38 | 458 | +67 | 38.79 | 35.38 | 92.13 | 83 | +9 |
+| NINSYS | Packaged Software | 1005.15 | 0.93 | 2 | 3 | 5.85 | 6.06 | 93.17 | 79 | -18 | 11.31 | 5.22 | 80.30 | 225 | -73 | 41.50 | 45.44 | 98.91 | 13 | +1 | N/A | N/A | N/A | N/A | N/A |
+| ONEPOINT | Miscellaneous Commercial Services | 74.60 | 17.52 | 2 | 4 | 5.49 | 5.69 | 91.94 | 93 | +816 | -0.19 | -5.65 | 38.17 | 704 | +178 | 36.28 | 40.07 | 98.00 | 23 | +16 | 29.13 | 25.95 | 86.18 | 145 | +88 |
+| OPTIEMUS | Electronics Distributors | 746.00 | 26.58 | 2 | 4 | -5.83 | -5.65 | 5.78 | 1077 | -3 | -9.21 | -14.18 | 9.76 | 1027 | -488 | 28.00 | 31.57 | 96.45 | 40 | -18 | 64.21 | 60.17 | 96.93 | 33 | -17 |
+| ORIENTHOT | Hotels/Resorts/Cruise lines | 174.88 | 11.46 | 2 | 4 | -2.83 | -2.64 | 21.45 | 898 | -592 | 9.18 | 3.21 | 74.49 | 291 | -79 | 26.13 | 29.64 | 95.99 | 45 | -10 | 77.13 | 72.77 | 98.37 | 18 | +3 |
+| PARAGMILK | Food: Meat/Fish/Dairy | 321.63 | 78.71 | 2 | 4 | -4.54 | -4.36 | 9.63 | 1033 | +61 | 31.30 | 24.12 | 98.94 | 13 | -3 | 24.13 | 27.59 | 95.45 | 51 | -2 | 35.49 | 32.16 | 89.83 | 107 | +37 |
+| PDSL | Apparel/Footwear | 419.95 | 27.31 | 2 | 4 | 2.85 | 3.05 | 83.98 | 184 | +253 | 21.29 | 14.65 | 96.13 | 45 | -5 | 16.70 | 19.95 | 92.17 | 87 | +26 | 31.19 | 27.96 | 88.29 | 123 | -22 |
+| POLICYBZR | Internet Software/Services | 1186.50 | 374.63 | 2 | 4 | 16.01 | 16.23 | 99.56 | 6 | +2 | 16.53 | 10.15 | 91.12 | 102 | -21 | -35.14 | -33.33 | 1.46 | 1083 | +7 | -22.77 | -24.67 | 13.63 | 901 | +36 |
+| PTCIL | Metal Fabrication | 25460.00 | 44.78 | 2 | 4 | 5.56 | 5.76 | 92.12 | 91 | -8 | 3.08 | -2.57 | 54.79 | 515 | -17 | 11.89 | 15.00 | 88.34 | 129 | -22 | 36.24 | 32.88 | 90.60 | 99 | +29 |
+| PVRINOX | Movies/Entertainment | 1679.10 | 126.63 | 2 | 4 | 1.63 | 1.83 | 74.78 | 289 | +525 | 12.67 | 6.50 | 84.34 | 179 | -10 | 36.71 | 40.52 | 98.27 | 20 | -3 | 71.98 | 67.74 | 97.70 | 25 | +2 |
+| RACLGEAR | Auto Parts: OEM | 1649.10 | 4.14 | 2 | 4 | 7.45 | 7.66 | 95.62 | 51 | +142 | 17.84 | 11.39 | 92.70 | 84 | +31 | 7.23 | 10.22 | 83.06 | 187 | +31 | 31.02 | 27.79 | 88.10 | 125 | +47 |
+| ROSSTECH | Telecommunications Equipment | 1468.80 | 16.20 | 2 | 4 | -3.91 | -3.72 | 12.70 | 998 | +45 | 3.52 | -2.15 | 56.64 | 494 | +57 | 29.27 | 32.87 | 97.09 | 33 | -8 | 39.20 | 35.77 | 92.42 | 80 | +22 |
+| RUBICON | Biotechnology | 1869.30 | 32.07 | 2 | 3 | 8.76 | 8.98 | 97.02 | 35 | -5 | 19.88 | 13.32 | 94.81 | 60 | +22 | 2.58 | 5.44 | 74.68 | 279 | +8 | N/A | N/A | N/A | N/A | N/A |
+| SAFARI | Other Consumer Specialties | 1556.50 | 13.12 | 2 | 4 | 8.41 | 8.62 | 96.41 | 42 | -33 | 29.92 | 22.81 | 98.68 | 16 | +6 | 1.67 | 4.50 | 72.68 | 301 | -60 | -1.74 | -4.16 | 51.34 | 508 | -13 |
+| SANATHAN | Textiles | 564.35 | 6.28 | 2 | 4 | -1.32 | -1.13 | 38.97 | 698 | +334 | 12.01 | 5.88 | 82.94 | 195 | +47 | 28.19 | 31.76 | 96.54 | 39 | +17 | 42.62 | 39.11 | 93.38 | 70 | +38 |
+| SANSERA | Auto Parts: OEM | 4742.20 | 83.32 | 2 | 4 | -1.17 | -0.98 | 41.42 | 670 | -218 | 11.05 | 4.97 | 79.51 | 234 | +77 | 21.50 | 24.88 | 94.90 | 57 | +24 | 62.08 | 58.09 | 96.64 | 36 | +4 |
+| SAREGAMA | Movies/Entertainment | 618.35 | 104.32 | 2 | 4 | -7.25 | -7.07 | 2.19 | 1118 | -39 | 15.36 | 9.05 | 89.18 | 124 | -45 | 25.24 | 28.72 | 95.72 | 48 | -19 | 36.62 | 33.26 | 90.79 | 97 | +12 |
+| SBC | Wholesale Distributors | 68.10 | 76.83 | 2 | 4 | -0.73 | -0.53 | 47.29 | 603 | -210 | 2.38 | -3.23 | 51.63 | 551 | -86 | 61.99 | 66.50 | 99.82 | 3 | +0 | 81.60 | 77.13 | 98.56 | 16 | -1 |
+| SBCL | Other Metals/Minerals | 1006.50 | 23.78 | 2 | 4 | 7.26 | 7.47 | 95.36 | 54 | +55 | -2.85 | -8.17 | 27.00 | 831 | +15 | -3.95 | -1.28 | 58.01 | 462 | +32 | 38.29 | 34.89 | 91.65 | 88 | +1 |
+| SHREEJISPG | Other Transportation | 923.70 | 75.10 | 2 | 4 | 1.08 | 1.28 | 70.23 | 341 | -33 | 10.94 | 4.87 | 79.16 | 238 | +84 | 44.99 | 49.02 | 99.27 | 9 | +1 | 101.95 | 96.98 | 99.14 | 10 | +1 |
+| SHRINGARMS | Other Consumer Specialties | 253.00 | 29.45 | 2 | 3 | 7.09 | 7.30 | 95.18 | 56 | +510 | -10.71 | -15.60 | 7.30 | 1055 | +37 | 17.15 | 20.41 | 92.62 | 82 | +56 | N/A | N/A | N/A | N/A | N/A |
+| SMSPHARMA | Pharmaceuticals: Major | 480.50 | 26.59 | 2 | 4 | 1.53 | 1.73 | 73.73 | 301 | -43 | -1.09 | -6.50 | 34.30 | 748 | -180 | 30.48 | 34.11 | 97.27 | 31 | -4 | 35.87 | 32.53 | 90.31 | 102 | -5 |
+| SPORTKING | Textiles | 249.03 | 17.50 | 2 | 4 | 12.54 | 12.76 | 99.04 | 12 | +101 | 15.91 | 9.56 | 89.80 | 117 | +142 | 8.32 | 11.33 | 84.15 | 175 | +109 | 38.14 | 34.74 | 91.55 | 89 | +76 |
+| SSWL | Auto Parts: OEM | 488.75 | 143.19 | 2 | 4 | -6.87 | -6.69 | 3.06 | 1108 | +26 | -7.05 | -12.13 | 13.98 | 979 | +54 | 36.81 | 40.62 | 98.36 | 19 | -15 | 114.29 | 109.02 | 99.33 | 8 | -1 |
+| STYLEBAAZA | Apparel/Footwear Retail | 511.70 | 80.34 | 2 | 3 | 2.31 | 2.51 | 80.04 | 229 | +366 | 40.08 | 32.41 | 99.65 | 5 | -1 | 28.52 | 32.10 | 96.81 | 36 | -4 | N/A | N/A | N/A | N/A | N/A |
+| SUNTECK | Real Estate Development | 332.40 | 26.75 | 2 | 4 | 4.87 | 5.08 | 90.46 | 110 | -37 | 19.33 | 12.80 | 94.28 | 66 | -11 | 9.61 | 12.66 | 85.79 | 157 | +7 | 19.53 | 16.58 | 78.89 | 221 | +32 |
+| SWSOLAR | Engineering & Construction | 167.53 | 22.63 | 2 | 4 | 8.42 | 8.63 | 96.50 | 41 | -20 | 16.16 | 9.80 | 90.24 | 112 | -27 | -10.61 | -8.12 | 38.71 | 674 | -51 | -16.46 | -18.51 | 22.07 | 813 | -90 |
+| TEXRAIL | Trucks/Construction/Farm Machinery | 124.85 | 27.72 | 2 | 4 | 12.10 | 12.32 | 98.77 | 15 | +29 | 19.86 | 13.30 | 94.72 | 61 | +43 | 10.42 | 13.49 | 86.61 | 148 | +21 | 19.03 | 16.10 | 78.31 | 227 | +54 |
+| TFCILTD | Finance/Rental/Leasing | 173.97 | 165.23 | 2 | 4 | 1.23 | 1.43 | 71.37 | 328 | -187 | 8.96 | 3.00 | 73.97 | 297 | -84 | 23.32 | 26.75 | 95.26 | 53 | -12 | 130.15 | 124.49 | 99.52 | 6 | -2 |
+| THELEELA | Hotels/Resorts/Cruise lines | 690.00 | 34.70 | 2 | 4 | -1.16 | -0.97 | 41.51 | 669 | -135 | 7.83 | 1.93 | 70.27 | 339 | -169 | 19.93 | 23.26 | 93.90 | 68 | -7 | 65.11 | 61.05 | 97.02 | 32 | +7 |
+| UNIMECH | Industrial Machinery | 1848.90 | 35.41 | 2 | 4 | 3.74 | 3.95 | 86.95 | 150 | +810 | 11.51 | 5.41 | 81.09 | 216 | +137 | 25.34 | 28.83 | 95.81 | 47 | +24 | 68.86 | 64.71 | 97.50 | 27 | -1 |
+| WAAREERTL | Alternative Power Generation | 825.70 | 74.92 | 2 | 4 | 19.09 | 19.32 | 99.74 | 4 | +626 | 19.30 | 12.77 | 94.20 | 67 | +494 | -4.41 | -1.75 | 56.83 | 475 | +479 | -15.33 | -17.41 | 23.80 | 795 | +173 |
+| WELCORP | Industrial Machinery | 2301.90 | 227.84 | 2 | 4 | 5.35 | 5.56 | 91.68 | 96 | +224 | -7.89 | -12.93 | 12.05 | 1001 | +74 | -9.86 | -7.35 | 41.07 | 648 | -144 | 64.10 | 60.07 | 96.83 | 34 | +10 |
+| WHEELS | Auto Parts: OEM | 2153.50 | 22.29 | 2 | 4 | -0.36 | -0.17 | 52.45 | 544 | +414 | -1.97 | -7.34 | 31.22 | 783 | +164 | 39.67 | 43.56 | 98.72 | 15 | +0 | 40.87 | 37.40 | 92.99 | 74 | +6 |
+| WOCKPHARMA | Pharmaceuticals: Major | 2244.40 | 140.14 | 2 | 4 | 2.75 | 2.95 | 83.27 | 192 | -15 | 16.72 | 10.33 | 91.64 | 96 | +15 | 21.28 | 24.66 | 94.81 | 58 | +10 | 8.27 | 5.61 | 65.64 | 359 | +4 |
+| 360ONE | Investment Managers | 1230.00 | 100.05 | 1 | 4 | 1.81 | 2.01 | 76.53 | 269 | -15 | 20.27 | 13.69 | 95.34 | 54 | -9 | 5.53 | 8.46 | 80.42 | 216 | +37 | 14.76 | 11.94 | 73.90 | 273 | +25 |
+| 63MOONS | Packaged Software | 859.20 | 32.98 | 1 | 4 | -7.18 | -7.00 | 2.36 | 1116 | -4 | -8.23 | -13.26 | 11.70 | 1005 | -41 | 10.79 | 13.87 | 87.16 | 142 | -20 | 38.47 | 35.06 | 91.94 | 85 | +0 |
+| ABREL | Textiles | 1271.70 | 35.60 | 1 | 4 | 4.62 | 4.82 | 89.84 | 117 | -48 | 21.96 | 15.29 | 96.48 | 41 | +3 | -6.29 | -3.68 | 52.46 | 523 | -74 | 1.65 | -0.85 | 56.14 | 458 | -16 |
+| ACMESOLAR | Engineering & Construction | 426.35 | 36.77 | 1 | 4 | 5.17 | 5.37 | 91.42 | 99 | +111 | 2.54 | -3.08 | 52.42 | 542 | +73 | 5.61 | 8.55 | 80.60 | 214 | +28 | 23.28 | 20.24 | 81.96 | 189 | -20 |
+| AFFLE | Packaged Software | 1644.20 | 46.71 | 1 | 4 | 2.80 | 3.00 | 83.45 | 190 | -26 | 19.03 | 12.52 | 93.93 | 70 | +57 | 5.05 | 7.98 | 79.69 | 224 | +58 | 10.94 | 8.21 | 69.19 | 322 | +4 |
+| AGIIL | Real Estate Development | 317.15 | 65.87 | 1 | 4 | 3.72 | 3.92 | 86.78 | 152 | +127 | 32.15 | 24.91 | 99.21 | 10 | -3 | 10.85 | 13.94 | 87.25 | 141 | +32 | -17.80 | -19.83 | 19.96 | 835 | +32 |
+| ALIVUS | Pharmaceuticals: Major | 1413.00 | 52.79 | 1 | 4 | -1.66 | -1.47 | 35.38 | 739 | -91 | 1.12 | -4.42 | 45.82 | 617 | -8 | -2.13 | 0.60 | 63.66 | 400 | -90 | 36.42 | 33.06 | 90.69 | 98 | -3 |
+| ANANDRATHI | Investment Managers | 2412.20 | 66.88 | 1 | 4 | 1.53 | 1.73 | 73.82 | 300 | -97 | 6.26 | 0.45 | 65.88 | 389 | -7 | 9.80 | 12.85 | 86.07 | 154 | -5 | 37.79 | 34.40 | 91.27 | 92 | +13 |
+| ANDHRSUGAR | Chemicals: Specialty | 79.99 | 2.15 | 1 | 4 | 5.13 | 5.33 | 91.33 | 100 | +44 | -3.68 | -8.96 | 24.54 | 859 | -73 | -17.10 | -14.79 | 19.58 | 884 | +52 | 0.62 | -1.86 | 54.80 | 472 | +5 |
+| ANTHEM | Biotechnology | 984.15 | 35.43 | 1 | 4 | 3.48 | 3.68 | 86.08 | 160 | -73 | 18.55 | 12.06 | 93.58 | 74 | +29 | 6.45 | 9.41 | 81.79 | 201 | -47 | 32.01 | 28.76 | 88.48 | 121 | +15 |
+| ANUP | Industrial Machinery | 1721.70 | 16.66 | 1 | 4 | -2.55 | -2.36 | 24.17 | 867 | +249 | 26.36 | 19.45 | 97.80 | 26 | +45 | -4.89 | -2.24 | 55.74 | 487 | +140 | -9.91 | -12.12 | 36.47 | 663 | +146 |
+| APOLLO | Electronic Production Equipment | 435.50 | 502.34 | 1 | 4 | 1.82 | 2.02 | 76.80 | 266 | +639 | 3.31 | -2.35 | 55.94 | 502 | +6 | 14.76 | 17.95 | 90.80 | 102 | +17 | 3.89 | 1.33 | 59.79 | 420 | -17 |
+| ARKADE | Homebuilding | 117.47 | 2.16 | 1 | 4 | 5.09 | 5.30 | 91.16 | 102 | +685 | 8.75 | 2.80 | 73.35 | 304 | +222 | -2.69 | 0.02 | 61.29 | 426 | +220 | 3.75 | 1.20 | 59.60 | 422 | +112 |
+| ASIANHOTNR | Hotels/Resorts/Cruise lines | 330.50 | 0.55 | 1 | 4 | 5.24 | 5.44 | 91.59 | 97 | +24 | 7.27 | 1.40 | 69.39 | 349 | +56 | -10.48 | -7.99 | 39.44 | 666 | +67 | 9.31 | 6.62 | 66.79 | 347 | +48 |
+| ASKAUTOLTD | Auto Parts: OEM | 625.55 | 12.10 | 1 | 4 | -0.84 | -0.65 | 45.45 | 624 | -158 | 7.65 | 1.76 | 70.01 | 342 | -12 | -1.59 | 1.15 | 65.21 | 383 | +35 | 43.61 | 40.07 | 93.57 | 68 | -3 |
+| ATHERENERG | Motor Vehicles | 1888.40 | 507.73 | 1 | 4 | -2.43 | -2.24 | 25.04 | 857 | -386 | 13.55 | 7.34 | 86.28 | 157 | -32 | 9.43 | 12.48 | 85.52 | 160 | -39 | 91.10 | 86.40 | 98.85 | 13 | +1 |
+| AVALON | Electronic Production Equipment | 1838.00 | 70.23 | 1 | 4 | 6.35 | 6.56 | 94.05 | 69 | +129 | -10.89 | -15.77 | 7.04 | 1058 | -1 | -20.73 | -18.52 | 11.75 | 970 | +17 | 12.23 | 9.47 | 71.02 | 303 | -82 |
+| AVTNPL | Food: Specialty/Candy | 100.25 | 7.12 | 1 | 4 | -1.68 | -1.48 | 34.94 | 744 | +281 | 11.92 | 5.80 | 82.59 | 199 | +228 | 13.39 | 16.55 | 89.34 | 118 | +95 | 45.08 | 41.51 | 93.86 | 65 | +26 |
+| AXISCADES | Miscellaneous Commercial Services | 1899.00 | 24.87 | 1 | 4 | 1.37 | 1.57 | 72.42 | 316 | +731 | -5.00 | -10.20 | 19.61 | 915 | +127 | 15.50 | 18.71 | 91.26 | 97 | +74 | 7.49 | 4.84 | 64.30 | 373 | -1 |
+| BAJAJHCARE | Pharmaceuticals: Major | 350.35 | 4.30 | 1 | 4 | 9.43 | 9.65 | 97.55 | 29 | -10 | 11.99 | 5.86 | 82.76 | 197 | +50 | 6.49 | 9.45 | 81.88 | 200 | +29 | 18.94 | 16.02 | 78.12 | 229 | +31 |
+| BALRAMCHIN | Agricultural Commodities/Milling | 675.45 | 63.00 | 1 | 4 | 9.19 | 9.40 | 97.37 | 31 | +178 | 6.34 | 0.52 | 65.96 | 388 | +154 | 0.99 | 3.80 | 70.95 | 320 | +173 | 26.92 | 23.79 | 84.36 | 164 | +31 |
+| BALUFORGE | Trucks/Construction/Farm Machinery | 529.95 | 39.92 | 1 | 4 | 2.76 | 2.96 | 83.36 | 191 | +119 | 17.03 | 10.62 | 91.82 | 94 | -10 | -14.79 | -12.41 | 25.41 | 820 | +8 | 11.33 | 8.59 | 70.06 | 313 | +33 |
+| BANCOINDIA | Industrial Machinery | 687.55 | 29.46 | 1 | 4 | -2.61 | -2.42 | 23.38 | 876 | -35 | 17.82 | 11.37 | 92.61 | 85 | +46 | 10.87 | 13.95 | 87.34 | 140 | +26 | 4.35 | 1.78 | 60.65 | 411 | +9 |
+| BANKINDIA | Major Banks | 162.50 | 162.33 | 1 | 4 | -1.34 | -1.14 | 38.79 | 700 | -228 | 19.75 | 13.19 | 94.64 | 62 | -5 | 14.16 | 17.33 | 89.89 | 112 | -13 | 16.33 | 13.47 | 75.53 | 256 | +29 |
+| BBOX | Information Technology Services | 860.70 | 74.14 | 1 | 4 | -3.98 | -3.79 | 12.35 | 1002 | -6 | 4.82 | -0.92 | 61.39 | 440 | -9 | 19.55 | 22.88 | 93.81 | 69 | +26 | -20.17 | -22.14 | 17.18 | 864 | -18 |
+| BECTORFOOD | Food: Specialty/Candy | 228.76 | 22.83 | 1 | 4 | 3.28 | 3.48 | 85.20 | 170 | -90 | 23.06 | 16.32 | 97.01 | 35 | -5 | 0.44 | 3.24 | 69.85 | 332 | +0 | 32.80 | 29.53 | 88.96 | 116 | +3 |
+| BLUESTARCO | Industrial Machinery | 1735.00 | 87.75 | 1 | 4 | -3.13 | -2.94 | 18.48 | 932 | -673 | 3.71 | -1.97 | 57.26 | 487 | -272 | 16.37 | 19.61 | 91.89 | 90 | -35 | 7.92 | 5.27 | 64.97 | 366 | -67 |
+| CARRARO | Auto Parts: OEM | 492.70 | 4.19 | 1 | 4 | 7.75 | 7.96 | 96.06 | 46 | -5 | 1.12 | -4.42 | 45.91 | 616 | +169 | -9.14 | -6.61 | 43.90 | 617 | +90 | -6.22 | -8.53 | 43.47 | 590 | +23 |
+| CENTUM | Electronic Components | 3991.50 | 27.47 | 1 | 4 | -8.76 | -8.58 | 1.14 | 1130 | +5 | -0.28 | -5.74 | 37.55 | 711 | +151 | 16.71 | 19.96 | 92.26 | 86 | +30 | 14.61 | 11.79 | 73.51 | 277 | +101 |
+| CERA | Home Furnishings | 5164.40 | 8.61 | 1 | 4 | 2.18 | 2.38 | 79.07 | 240 | -89 | 16.34 | 9.97 | 90.68 | 107 | -5 | -9.67 | -7.16 | 42.08 | 637 | -52 | -6.69 | -8.98 | 42.71 | 598 | -8 |
+| CHOICEIN | Miscellaneous Commercial Services | 770.45 | 40.56 | 1 | 4 | 5.80 | 6.01 | 92.99 | 81 | -24 | 5.66 | -0.13 | 64.12 | 409 | +76 | -0.55 | 2.22 | 67.67 | 356 | +36 | 14.76 | 11.94 | 73.99 | 272 | +36 |
+| CNL | Electronics Distributors | 1304.90 | 4.89 | 1 | 4 | -3.20 | -3.01 | 18.13 | 936 | +112 | 8.52 | 2.58 | 72.65 | 312 | -249 | 4.77 | 7.69 | 79.33 | 228 | +71 | 105.97 | 100.90 | 99.23 | 9 | +0 |
+| COFORGE | Information Technology Services | 2071.00 | 585.57 | 1 | 4 | -0.75 | -0.56 | 46.85 | 608 | +15 | 5.56 | -0.22 | 63.50 | 416 | +161 | 4.13 | 7.03 | 77.96 | 243 | +71 | 44.17 | 40.62 | 93.67 | 67 | +14 |
+| COHANCE | Pharmaceuticals: Major | 497.55 | 51.69 | 1 | 4 | 7.62 | 7.84 | 95.97 | 47 | -31 | 3.37 | -2.29 | 56.29 | 498 | -85 | 8.16 | 11.17 | 83.97 | 177 | -41 | 16.99 | 14.11 | 76.49 | 246 | -10 |
+| CYIENTDLM | Electronic Production Equipment | 787.50 | 32.86 | 1 | 4 | -3.76 | -3.57 | 14.01 | 983 | +84 | -0.56 | -6.00 | 36.06 | 728 | -91 | -8.13 | -5.57 | 47.54 | 577 | +0 | 72.02 | 67.79 | 97.89 | 23 | +1 |
+| DABUR | Household/Personal Care | 412.75 | 91.13 | 1 | 4 | 5.00 | 5.20 | 90.54 | 109 | -74 | 11.55 | 5.45 | 81.18 | 215 | -98 | 7.49 | 10.48 | 83.42 | 183 | -42 | -2.80 | -5.19 | 48.85 | 534 | -54 |
+| DEEPAKFERT | Chemicals: Agricultural | 1446.90 | 65.74 | 1 | 4 | 0.67 | 0.87 | 65.76 | 392 | +32 | 22.38 | 15.68 | 96.66 | 39 | -4 | 1.36 | 4.18 | 71.86 | 310 | -46 | 1.85 | -0.66 | 56.53 | 454 | -10 |
+| DELTACORP | Movies/Entertainment | 71.34 | 27.77 | 1 | 4 | -6.99 | -6.81 | 2.80 | 1111 | -28 | -5.98 | -11.13 | 17.33 | 941 | -369 | 24.26 | 27.72 | 95.54 | 50 | +1 | 7.88 | 5.22 | 64.88 | 367 | +68 |
+| DODLA | Food: Meat/Fish/Dairy | 1033.80 | 19.74 | 1 | 4 | 5.06 | 5.26 | 90.98 | 104 | +500 | 7.05 | 1.19 | 68.60 | 358 | +440 | -3.04 | -0.34 | 60.84 | 431 | +200 | -5.64 | -7.96 | 44.53 | 579 | +133 |
+| DOLATALGO | Investment Banks/Brokers | 68.17 | 0.68 | 1 | 4 | 6.55 | 6.76 | 94.48 | 64 | +12 | 15.09 | 8.79 | 88.74 | 129 | +112 | -3.89 | -1.22 | 58.56 | 456 | +66 | -6.91 | -9.20 | 42.42 | 601 | +77 |
+| DOLPHIN | Oilfield Services/Equipment | 606.70 | 1.03 | 1 | 4 | -3.08 | -2.89 | 18.83 | 928 | +54 | -1.99 | -7.36 | 31.05 | 785 | -225 | 4.01 | 6.91 | 77.60 | 247 | -26 | 53.01 | 49.25 | 95.20 | 51 | -2 |
+| DYNAMATECH | Industrial Machinery | 13877.00 | 18.40 | 1 | 4 | 2.60 | 2.80 | 82.14 | 205 | +468 | 13.90 | 7.66 | 86.63 | 153 | +171 | 18.83 | 22.14 | 93.44 | 73 | +55 | 32.79 | 29.53 | 88.87 | 117 | +53 |
+| E2E | Information Technology Services | 498.75 | 77.95 | 1 | 2 | 4.72 | 4.93 | 90.11 | 114 | +817 | -8.95 | -13.93 | 10.38 | 1020 | +41 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| EBGNG | Information Technology Services | 521.35 | 69.40 | 1 | 4 | 10.84 | 11.06 | 98.34 | 20 | +788 | -24.45 | -28.59 | 0.70 | 1130 | +6 | -19.85 | -17.62 | 13.39 | 952 | -51 | 16.54 | 13.67 | 75.91 | 252 | +45 |
+| ECLERX | Miscellaneous Commercial Services | 1548.30 | 41.18 | 1 | 4 | 6.48 | 6.69 | 94.31 | 66 | +118 | -6.76 | -11.87 | 14.60 | 972 | +150 | -21.56 | -19.37 | 10.84 | 980 | +21 | 10.00 | 7.29 | 67.66 | 338 | +86 |
+| EFCIL | Wholesale Distributors | 170.90 | 3.76 | 1 | 4 | 10.49 | 10.70 | 98.25 | 21 | +65 | 1.06 | -4.47 | 45.21 | 624 | +242 | -15.12 | -12.76 | 24.41 | 831 | +87 | -1.95 | -4.36 | 50.77 | 514 | +95 |
+| EIHOTEL | Hotels/Resorts/Cruise lines | 337.75 | 15.01 | 1 | 4 | 1.08 | 1.28 | 70.14 | 342 | -309 | 14.61 | 8.33 | 88.13 | 136 | +20 | 14.71 | 17.90 | 90.62 | 104 | -31 | 15.79 | 12.94 | 74.95 | 262 | +21 |
+| EUREKAFORB | Industrial Machinery | 375.50 | 12.49 | 1 | 4 | -3.22 | -3.03 | 17.95 | 938 | +69 | 16.29 | 9.92 | 90.50 | 109 | +4 | -12.23 | -9.78 | 33.15 | 735 | -10 | -14.67 | -16.77 | 24.95 | 783 | +6 |
+| FAZE3Q | Textiles | 559.25 | 16.01 | 1 | 4 | -4.83 | -4.65 | 8.84 | 1042 | -25 | 33.23 | 25.94 | 99.38 | 8 | +1 | 14.00 | 17.18 | 89.71 | 114 | -14 | 2.25 | -0.27 | 57.20 | 447 | -7 |
+| FIEMIND | Auto Parts: OEM | 2062.60 | 21.54 | 1 | 4 | -3.49 | -3.30 | 16.02 | 960 | +118 | 20.16 | 13.58 | 95.16 | 56 | -4 | -1.11 | 1.64 | 66.03 | 374 | -19 | -11.62 | -13.80 | 32.63 | 703 | +59 |
+| FORCEMOT | Motor Vehicles | 20179.00 | 142.88 | 1 | 4 | -0.52 | -0.33 | 50.09 | 571 | -162 | 19.71 | 13.16 | 94.55 | 63 | +7 | 13.86 | 17.03 | 89.62 | 115 | -26 | 8.54 | 5.86 | 65.93 | 356 | -98 |
+| FUSION | Finance/Rental/Leasing | 157.14 | 16.16 | 1 | 4 | 2.11 | 2.31 | 78.46 | 247 | +17 | 16.25 | 9.88 | 90.41 | 110 | -11 | -19.27 | -17.02 | 14.21 | 943 | +0 | -8.29 | -10.55 | 38.68 | 640 | -15 |
+| GABRIEL | Auto Parts: OEM | 1546.80 | 93.93 | 1 | 4 | -0.83 | -0.64 | 45.71 | 621 | +123 | 7.00 | 1.14 | 68.07 | 364 | +29 | 8.45 | 11.47 | 84.43 | 172 | +12 | 52.39 | 48.64 | 94.91 | 54 | +9 |
+| GALAPREC | Metal Fabrication | 1164.10 | 5.31 | 1 | 4 | -0.40 | -0.21 | 51.49 | 555 | +387 | 11.80 | 5.68 | 82.15 | 204 | +151 | 15.30 | 18.51 | 91.17 | 98 | +39 | 27.30 | 24.17 | 84.74 | 160 | -18 |
+| GANDHAR | Industrial Specialties | 251.90 | 26.70 | 1 | 4 | 0.41 | 0.61 | 62.61 | 428 | +529 | 1.53 | -4.03 | 47.85 | 594 | +356 | -3.78 | -1.10 | 58.83 | 453 | +15 | 55.64 | 51.81 | 95.68 | 46 | +0 |
+| GCSL | Investment Banks/Brokers | 851.55 | 23.56 | 1 | 3 | 0.38 | 0.58 | 62.26 | 432 | -182 | 11.79 | 5.67 | 81.88 | 207 | -35 | 51.28 | 55.49 | 99.54 | 6 | -1 | N/A | N/A | N/A | N/A | N/A |
+| GESHIP | Marine Shipping | 1550.60 | 98.75 | 1 | 4 | 1.24 | 1.44 | 71.45 | 327 | +226 | -4.21 | -9.46 | 22.34 | 884 | -109 | 16.97 | 20.23 | 92.44 | 84 | -7 | 3.93 | 1.37 | 59.98 | 418 | +15 |
+| GNA | Auto Parts: OEM | 522.05 | 14.05 | 1 | 4 | -1.93 | -1.73 | 32.05 | 777 | +244 | -6.70 | -11.81 | 14.95 | 968 | +37 | -1.95 | 0.78 | 64.30 | 393 | +28 | 39.44 | 36.00 | 92.51 | 79 | +5 |
+| GODIGIT | Multi-Line Insurance | 252.85 | 9.24 | 1 | 4 | 5.79 | 6.00 | 92.91 | 82 | +77 | -4.37 | -9.60 | 21.64 | 892 | +21 | -3.03 | -0.33 | 60.93 | 430 | -15 | -16.50 | -18.55 | 21.98 | 814 | +19 |
+| GODREJPROP | Real Estate Development | 1943.00 | 124.48 | 1 | 4 | 0.66 | 0.86 | 65.41 | 396 | -357 | 21.44 | 14.79 | 96.22 | 44 | -19 | -1.77 | 0.96 | 64.75 | 388 | -47 | 14.68 | 11.86 | 73.61 | 276 | -30 |
+| GOODLUCK | Steel | 518.10 | 20.19 | 1 | 4 | -2.00 | -1.81 | 30.74 | 792 | +246 | 1.89 | -3.69 | 49.69 | 573 | +405 | 14.40 | 17.58 | 90.35 | 107 | +38 | -61.47 | -62.41 | 0.77 | 1035 | +1 |
+| GUJENERGY | Gas Distributors | 240.51 | 28.17 | 1 | 3 | 6.26 | 6.46 | 93.87 | 71 | -15 | 14.05 | 7.81 | 87.07 | 148 | +46 | -5.42 | -2.79 | 54.55 | 500 | -83 | N/A | N/A | N/A | N/A | N/A |
+| HBLENGINE | Electrical Products | 757.95 | 100.71 | 1 | 4 | -0.37 | -0.18 | 52.01 | 549 | -63 | -7.09 | -12.17 | 13.90 | 980 | -64 | 14.98 | 18.18 | 90.89 | 101 | -15 | -4.86 | -7.20 | 46.45 | 559 | -31 |
+| HIKAL | Pharmaceuticals: Major | 230.86 | 9.46 | 1 | 4 | 4.58 | 4.78 | 89.67 | 119 | +20 | 12.95 | 6.76 | 85.05 | 171 | +9 | 16.28 | 19.52 | 91.80 | 91 | +7 | 20.30 | 17.34 | 79.94 | 210 | -2 |
+| HLEGLAS | Industrial Machinery | 392.00 | 5.11 | 1 | 4 | -4.46 | -4.27 | 10.07 | 1028 | +34 | -7.50 | -12.57 | 12.84 | 992 | -48 | 23.76 | 27.20 | 95.36 | 52 | -2 | 1.29 | -1.20 | 55.47 | 465 | +33 |
+| HUHTAMAKI | Containers/Packaging | 223.68 | 9.55 | 1 | 4 | 4.61 | 4.82 | 89.75 | 118 | +11 | -6.55 | -11.66 | 15.30 | 964 | -107 | -13.62 | -11.22 | 29.14 | 779 | +52 | 35.81 | 32.47 | 90.12 | 104 | +14 |
+| IDFCFIRSTB | Regional Banks | 86.80 | 167.14 | 1 | 4 | -0.53 | -0.33 | 49.82 | 574 | -291 | 18.29 | 11.81 | 93.14 | 79 | +14 | 2.24 | 5.08 | 73.77 | 289 | +22 | 20.29 | 17.33 | 79.85 | 211 | +2 |
+| IGIL | Miscellaneous Commercial Services | 429.65 | 88.29 | 1 | 4 | 1.76 | 1.96 | 76.18 | 273 | +498 | 5.62 | -0.16 | 63.68 | 414 | -23 | 26.46 | 29.98 | 96.08 | 44 | +4 | 18.69 | 15.77 | 77.64 | 234 | +13 |
+| IIFLCAPS | Investment Banks/Brokers | 346.80 | 79.63 | 1 | 4 | 11.35 | 11.57 | 98.69 | 16 | +85 | -0.27 | -5.73 | 37.64 | 710 | -26 | 1.96 | 4.79 | 73.41 | 293 | -35 | 2.50 | -0.03 | 57.39 | 445 | +4 |
+| INDORAMA | Textiles | 76.47 | 3.13 | 1 | 4 | 2.01 | 2.21 | 78.11 | 251 | +547 | 3.07 | -2.57 | 54.71 | 516 | +165 | 12.44 | 15.57 | 88.71 | 125 | -16 | 72.00 | 67.76 | 97.79 | 24 | +1 |
+| INDSWFTLAB | Pharmaceuticals: Major | 312.75 | 22.99 | 1 | 4 | -1.36 | -1.16 | 38.70 | 701 | +276 | -23.68 | -27.86 | 0.88 | 1128 | -20 | -15.05 | -12.68 | 24.86 | 826 | -42 | 99.60 | 94.69 | 99.04 | 11 | -1 |
+| INOXINDIA | Industrial Machinery | 2139.30 | 58.78 | 1 | 4 | 0.88 | 1.07 | 68.39 | 362 | -156 | 12.67 | 6.50 | 84.26 | 180 | -9 | -1.23 | 1.52 | 65.85 | 376 | -79 | 42.15 | 38.65 | 93.28 | 71 | -12 |
+| INSECTICID | Chemicals: Agricultural | 566.65 | 1.56 | 1 | 4 | 5.60 | 5.81 | 92.29 | 89 | +49 | 10.58 | 4.52 | 77.92 | 252 | +123 | -5.30 | -2.66 | 54.92 | 496 | +104 | -20.72 | -22.67 | 16.31 | 873 | +35 |
+| INTELLECT | Packaged Software | 583.90 | 45.70 | 1 | 4 | 6.36 | 6.57 | 94.13 | 68 | -32 | -3.14 | -8.44 | 26.21 | 840 | -15 | -15.95 | -13.61 | 21.77 | 860 | -55 | -20.33 | -22.29 | 16.99 | 866 | +24 |
+| IREDA | Finance/Rental/Leasing | 125.59 | 164.15 | 1 | 4 | -4.64 | -4.45 | 9.46 | 1035 | -391 | 24.10 | 17.31 | 97.36 | 31 | -5 | 9.97 | 13.03 | 86.25 | 152 | +7 | 1.91 | -0.60 | 56.62 | 453 | -19 |
+| ISGEC | Engineering & Construction | 1016.35 | 4.27 | 1 | 4 | 2.10 | 2.30 | 78.37 | 248 | -122 | 10.70 | 4.64 | 78.45 | 246 | -95 | 30.59 | 34.23 | 97.36 | 30 | -2 | 10.53 | 7.81 | 68.43 | 330 | -24 |
+| ITCHOTELS | Hotels/Resorts/Cruise lines | 184.66 | 83.71 | 1 | 4 | 0.22 | 0.42 | 59.98 | 458 | -225 | 9.06 | 3.09 | 74.14 | 295 | -108 | 14.28 | 17.46 | 90.26 | 108 | -21 | 18.88 | 15.96 | 78.02 | 230 | -28 |
+| IXIGO | Internet Software/Services | 169.83 | 76.15 | 1 | 4 | -0.22 | -0.02 | 53.94 | 527 | +263 | 19.56 | 13.01 | 94.37 | 65 | -23 | 7.10 | 10.08 | 82.88 | 189 | +25 | 11.07 | 8.33 | 69.48 | 319 | -2 |
+| JAGRAN | Publishing: Newspapers | 68.26 | 16.39 | 1 | 4 | 7.85 | 8.06 | 96.23 | 44 | +729 | 10.26 | 4.22 | 77.22 | 260 | +374 | 11.59 | 14.70 | 88.16 | 131 | +145 | -12.71 | -14.86 | 29.94 | 731 | +126 |
+| JKTYRE | Automotive Aftermarket | 365.30 | 19.93 | 1 | 4 | -0.85 | -0.66 | 44.83 | 631 | -52 | 17.57 | 11.14 | 92.35 | 88 | -1 | -2.31 | 0.41 | 63.02 | 407 | +41 | -5.25 | -7.58 | 45.87 | 565 | +34 |
+| JNKINDIA | Building Products | 348.45 | 4.09 | 1 | 4 | 5.40 | 5.61 | 91.77 | 95 | +182 | -10.22 | -15.13 | 8.00 | 1047 | +32 | -19.11 | -16.85 | 14.85 | 936 | +8 | -17.35 | -19.38 | 20.63 | 828 | -157 |
+| JSLL | Medical/Nursing Services | 326.60 | 56.76 | 1 | 4 | 8.79 | 9.01 | 97.20 | 33 | +194 | -6.08 | -11.22 | 16.80 | 947 | +106 | -35.13 | -33.32 | 1.55 | 1082 | +10 | -49.90 | -51.13 | 1.34 | 1029 | +3 |
+| JUSTDIAL | Internet Software/Services | 688.05 | 76.24 | 1 | 4 | 5.66 | 5.87 | 92.64 | 85 | +491 | 1.43 | -4.12 | 47.41 | 599 | +285 | -2.49 | 0.22 | 62.30 | 415 | +144 | 30.86 | 27.64 | 87.91 | 127 | +65 |
+| JYOTICNC | Metal Fabrication | 1058.65 | 72.73 | 1 | 4 | 0.59 | 0.79 | 65.06 | 400 | +221 | 10.66 | 4.60 | 78.19 | 249 | -71 | 7.03 | 10.01 | 82.70 | 191 | +13 | 77.03 | 72.68 | 98.27 | 19 | +1 |
+| KAPSTON | Miscellaneous Commercial Services | 531.25 | 2.12 | 1 | 4 | -1.84 | -1.65 | 33.01 | 766 | -360 | 6.53 | 0.70 | 67.02 | 376 | +50 | -7.17 | -4.59 | 49.91 | 551 | +30 | 57.73 | 53.85 | 96.26 | 40 | +1 |
+| KCP | Industrial Conglomerates | 149.56 | 1.51 | 1 | 4 | 5.12 | 5.33 | 91.24 | 101 | -1 | 3.27 | -2.39 | 55.58 | 506 | -24 | -10.92 | -8.44 | 37.70 | 685 | -42 | -6.51 | -8.81 | 42.80 | 597 | +27 |
+| KFINTECH | Packaged Software | 989.00 | 101.20 | 1 | 4 | 5.79 | 5.99 | 92.82 | 83 | -37 | 15.03 | 8.73 | 88.48 | 132 | -16 | 5.49 | 8.43 | 80.33 | 217 | +45 | 15.90 | 13.04 | 75.14 | 260 | -30 |
+| KOPRAN | Pharmaceuticals: Major | 268.16 | 25.29 | 1 | 3 | 1.90 | 2.10 | 77.32 | 260 | -197 | 6.41 | 0.59 | 66.58 | 381 | -162 | 23.25 | 26.68 | 95.08 | 55 | -24 | N/A | N/A | N/A | N/A | N/A |
+| KRBL | Agricultural Commodities/Milling | 414.60 | 33.26 | 1 | 4 | -3.81 | -3.62 | 13.57 | 988 | -513 | 16.43 | 10.06 | 90.94 | 104 | -32 | -2.24 | 0.48 | 63.30 | 404 | -47 | 18.10 | 15.20 | 77.26 | 238 | -14 |
+| KRISHANA | Chemicals: Agricultural | 250.40 | 22.58 | 1 | 4 | 1.72 | 1.92 | 75.66 | 279 | +40 | 12.47 | 6.32 | 84.08 | 182 | +20 | 30.26 | 33.89 | 97.18 | 32 | +4 | -63.42 | -64.32 | 0.67 | 1036 | +1 |
+| LEMONTREE | Hotels/Resorts/Cruise lines | 123.56 | 49.92 | 1 | 4 | -3.12 | -2.93 | 18.56 | 931 | -429 | 10.98 | 4.90 | 79.24 | 237 | -105 | 16.40 | 19.64 | 91.99 | 89 | +1 | 11.26 | 8.52 | 69.77 | 316 | +0 |
+| LTTS | Miscellaneous Commercial Services | 4227.20 | 187.34 | 1 | 4 | 3.54 | 3.75 | 86.34 | 157 | -89 | 1.07 | -4.47 | 45.29 | 623 | -136 | 17.82 | 21.10 | 93.17 | 76 | +0 | 29.19 | 26.01 | 86.28 | 144 | +3 |
+| LUMAXTECH | Auto Parts: OEM | 2327.80 | 41.59 | 1 | 4 | -0.11 | 0.09 | 55.87 | 505 | -136 | 13.08 | 6.89 | 85.66 | 164 | -16 | 13.00 | 16.15 | 89.07 | 121 | -11 | 37.58 | 34.20 | 91.17 | 93 | +31 |
+| MACPOWER | Industrial Machinery | 2082.20 | 11.10 | 1 | 4 | 0.11 | 0.30 | 58.23 | 478 | +463 | 6.82 | 0.97 | 67.55 | 370 | +94 | 8.94 | 11.97 | 85.15 | 164 | +125 | 119.27 | 113.88 | 99.42 | 7 | +1 |
+| MANINDS | Industrial Machinery | 691.45 | 45.52 | 1 | 4 | -4.64 | -4.45 | 9.37 | 1036 | +60 | -13.83 | -18.55 | 4.40 | 1088 | -60 | -9.35 | -6.82 | 42.99 | 627 | -116 | 41.39 | 37.91 | 93.09 | 73 | +3 |
+| MANINFRA | Real Estate Development | 111.06 | 7.03 | 1 | 4 | 5.78 | 5.99 | 92.73 | 84 | +82 | 0.36 | -5.13 | 41.25 | 669 | +159 | -10.84 | -8.36 | 37.80 | 684 | -16 | -0.27 | -2.72 | 53.17 | 489 | +83 |
+| MARATHON | Real Estate Development | 441.70 | 5.46 | 1 | 4 | -0.44 | -0.24 | 51.05 | 560 | -221 | 18.55 | 12.06 | 93.40 | 76 | +2 | 1.66 | 4.49 | 72.59 | 302 | -106 | 5.58 | 2.98 | 62.48 | 392 | +33 |
+| MBAPL | Chemicals: Agricultural | 198.24 | 18.80 | 1 | 4 | 1.59 | 1.79 | 74.43 | 293 | +94 | 13.93 | 7.69 | 86.81 | 151 | +8 | 23.30 | 26.73 | 95.17 | 54 | +12 | -64.32 | -65.20 | 0.48 | 1038 | +0 |
+| MENONBE | Metal Fabrication | 302.80 | 15.67 | 1 | 2 | -1.42 | -1.22 | 38.00 | 709 | +315 | 19.99 | 13.42 | 94.90 | 59 | +142 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| MFSL | Life/Health Insurance | 1425.00 | 132.19 | 1 | 4 | -0.70 | -0.51 | 47.90 | 596 | -498 | 17.57 | 11.14 | 92.44 | 87 | -10 | -7.15 | -4.56 | 50.00 | 550 | -18 | -9.90 | -12.11 | 36.56 | 662 | -61 |
+| MMP | Other Metals/Minerals | 449.25 | 2.21 | 1 | 3 | -2.42 | -2.23 | 25.13 | 856 | -382 | -2.22 | -7.57 | 29.82 | 799 | -100 | 17.22 | 20.48 | 92.71 | 81 | +15 | N/A | N/A | N/A | N/A | N/A |
+| MOLDTKPAC | Miscellaneous Manufacturing | 330.30 | 10.31 | 1 | 4 | -5.96 | -5.78 | 5.17 | 1084 | -119 | 18.37 | 11.89 | 93.23 | 78 | +107 | -52.81 | -51.50 | 0.46 | 1094 | +1 | -53.20 | -54.35 | 1.15 | 1031 | -1 |
+| NAZARA | Packaged Software | 377.10 | 48.59 | 1 | 4 | -9.03 | -8.86 | 1.05 | 1131 | -12 | -6.98 | -12.07 | 14.34 | 975 | -92 | 2.57 | 5.43 | 74.50 | 281 | -13 | 39.90 | 36.46 | 92.71 | 77 | +6 |
+| NELCAST | Steel | 147.85 | 12.57 | 1 | 4 | 1.06 | 1.26 | 69.96 | 344 | -128 | 12.61 | 6.45 | 84.17 | 181 | +131 | 27.03 | 30.57 | 96.36 | 41 | +13 | 5.27 | 2.68 | 62.09 | 396 | +11 |
+| NILKAMAL | Home Furnishings | 1953.30 | 11.06 | 1 | 4 | -7.11 | -6.92 | 2.54 | 1114 | +3 | -2.53 | -7.86 | 28.58 | 813 | -565 | -3.97 | -1.29 | 57.83 | 464 | -60 | 54.51 | 50.71 | 95.49 | 48 | -3 |
+| NITCO | Building Products | 81.80 | 3.32 | 1 | 4 | 1.38 | 1.57 | 72.50 | 315 | +470 | 19.16 | 12.63 | 94.02 | 69 | +73 | -12.45 | -10.01 | 32.70 | 740 | +80 | -11.94 | -14.11 | 31.57 | 714 | +106 |
+| OAL | Chemicals: Specialty | 487.65 | 14.43 | 1 | 4 | -5.62 | -5.44 | 6.39 | 1070 | -1063 | -19.67 | -24.07 | 1.50 | 1121 | -3 | 9.27 | 12.31 | 85.34 | 162 | -1 | 56.73 | 52.87 | 96.07 | 42 | -6 |
+| PACEDIGITK | Electric Utilities | 168.22 | 24.91 | 1 | 3 | 1.73 | 1.93 | 75.83 | 277 | +620 | 17.53 | 11.10 | 92.26 | 89 | +45 | 1.11 | 3.93 | 71.22 | 317 | +125 | N/A | N/A | N/A | N/A | N/A |
+| PANACEABIO | Pharmaceuticals: Major | 352.75 | 3.17 | 1 | 4 | 5.00 | 5.21 | 90.63 | 108 | +333 | 8.24 | 2.31 | 71.68 | 323 | +56 | -9.76 | -7.25 | 41.53 | 643 | -39 | -32.20 | -33.87 | 5.09 | 990 | -146 |
+| PANAMAPET | Industrial Specialties | 439.00 | 7.60 | 1 | 4 | 7.85 | 8.06 | 96.15 | 45 | +462 | -3.71 | -8.98 | 24.36 | 861 | +163 | -9.87 | -7.36 | 40.98 | 649 | +8 | 25.57 | 22.48 | 83.69 | 171 | +10 |
+| PARAS | Aerospace & Defense | 1302.60 | 80.45 | 1 | 4 | 4.25 | 4.45 | 88.62 | 131 | +586 | -2.04 | -7.40 | 30.52 | 791 | +97 | -5.62 | -2.99 | 54.01 | 506 | +241 | 45.74 | 42.15 | 93.95 | 64 | -8 |
+| PATANJALI | Agricultural Commodities/Milling | 400.35 | 156.86 | 1 | 4 | -0.95 | -0.76 | 43.78 | 643 | -370 | 5.69 | -0.10 | 64.20 | 408 | -133 | 15.78 | 19.00 | 91.62 | 93 | -15 | -6.30 | -8.60 | 43.28 | 592 | +42 |
+| PAUSHAKLTD | Chemicals: Major Diversified | 588.50 | 2.75 | 1 | 2 | 5.60 | 5.81 | 92.21 | 90 | +110 | -5.20 | -10.39 | 18.91 | 923 | -64 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| PGIL | Apparel/Footwear | 1440.60 | 23.84 | 1 | 4 | 0.36 | 0.55 | 62.00 | 435 | -210 | 20.98 | 14.36 | 95.87 | 48 | +28 | -38.65 | -36.94 | 0.73 | 1091 | +3 | -14.18 | -16.30 | 26.10 | 771 | -36 |
+| PHOENIXLTD | Real Estate Development | 2229.70 | 101.77 | 1 | 4 | -2.43 | -2.24 | 24.96 | 858 | -700 | 13.19 | 6.99 | 85.84 | 162 | -106 | 17.81 | 21.09 | 93.08 | 77 | -18 | 28.94 | 25.77 | 86.08 | 146 | -36 |
+| POLYPLEX | Chemicals: Specialty | 1048.70 | 8.95 | 1 | 4 | 6.40 | 6.61 | 94.22 | 67 | +127 | 14.10 | 7.86 | 87.16 | 147 | +144 | -11.70 | -9.25 | 34.88 | 716 | +77 | 14.18 | 11.37 | 72.94 | 283 | +68 |
+| PPLPHARMA | Pharmaceuticals: Major | 231.00 | 229.93 | 1 | 4 | -3.47 | -3.28 | 16.11 | 959 | -386 | 0.10 | -5.38 | 39.75 | 686 | -74 | 8.35 | 11.36 | 84.24 | 174 | -34 | 36.22 | 32.87 | 90.40 | 101 | -24 |
+| PRAJIND | Engineering & Construction | 255.64 | 50.14 | 1 | 4 | 9.29 | 9.51 | 97.46 | 30 | +946 | 0.57 | -4.94 | 42.48 | 655 | +392 | -24.88 | -22.79 | 7.38 | 1018 | +58 | -26.94 | -28.74 | 9.02 | 949 | +55 |
+| PROTEAN | Information Technology Services | 693.75 | 26.26 | 1 | 4 | -1.68 | -1.49 | 34.85 | 745 | -40 | 9.75 | 3.75 | 75.64 | 278 | -156 | 36.06 | 39.84 | 97.91 | 24 | -6 | 10.65 | 7.92 | 68.71 | 327 | -78 |
+| QUESS | Personnel Services | 327.15 | 7.54 | 1 | 4 | -2.37 | -2.18 | 25.66 | 850 | +153 | 0.80 | -4.72 | 43.89 | 639 | +26 | -13.79 | -11.40 | 28.05 | 791 | -6 | 52.13 | 48.39 | 94.82 | 55 | -8 |
+| RAMCOSYS | Information Technology Services | 587.40 | 4.00 | 1 | 4 | 9.66 | 9.88 | 97.72 | 27 | -1 | 10.53 | 4.48 | 77.75 | 254 | -5 | -0.60 | 2.17 | 67.30 | 360 | -25 | 23.24 | 20.20 | 81.86 | 190 | -39 |
+| RAMKY | Engineering & Construction | 371.40 | 17.61 | 1 | 4 | -3.44 | -3.26 | 16.37 | 956 | -281 | 20.02 | 13.45 | 94.99 | 58 | -25 | 8.01 | 11.02 | 83.79 | 179 | +14 | -14.47 | -16.58 | 25.43 | 778 | -17 |
+| REDINGTON | Electronics Distributors | 335.25 | 132.70 | 1 | 4 | 1.19 | 1.39 | 70.93 | 333 | +446 | -6.13 | -11.27 | 16.53 | 950 | -16 | -4.10 | -1.44 | 57.65 | 466 | +69 | 35.70 | 32.36 | 90.02 | 105 | -6 |
+| REPCOHOME | Finance/Rental/Leasing | 373.55 | 12.69 | 1 | 4 | -0.99 | -0.80 | 43.52 | 646 | -131 | 19.19 | 12.67 | 94.11 | 68 | -29 | 2.96 | 5.83 | 75.59 | 269 | -23 | 1.78 | -0.72 | 56.43 | 455 | +0 |
+| RGL | Other Consumer Specialties | 141.51 | 8.39 | 1 | 4 | 0.54 | 0.74 | 64.45 | 407 | +21 | 0.49 | -5.01 | 42.04 | 660 | -76 | 3.32 | 6.20 | 76.32 | 261 | -67 | 38.31 | 34.91 | 91.75 | 87 | -1 |
+| ROLEXRINGS | Metal Fabrication | 188.90 | 48.52 | 1 | 4 | -2.53 | -2.34 | 24.34 | 865 | +49 | 11.72 | 5.60 | 81.79 | 208 | -63 | 5.72 | 8.66 | 80.69 | 213 | -13 | 38.75 | 35.34 | 92.03 | 84 | +4 |
+| ROTO | Industrial Machinery | 69.98 | 9.69 | 1 | 4 | -2.22 | -2.03 | 27.41 | 830 | +32 | 17.26 | 10.84 | 92.00 | 92 | +55 | 6.08 | 9.03 | 80.97 | 210 | -58 | 18.69 | 15.77 | 77.74 | 233 | -5 |
+| RPEL | Chemicals: Major Diversified | 1903.70 | 17.83 | 1 | 4 | 2.66 | 2.87 | 82.84 | 197 | +149 | 10.67 | 4.61 | 78.28 | 248 | +92 | 10.23 | 13.29 | 86.43 | 150 | +28 | 88.45 | 83.81 | 98.75 | 14 | -1 |
+| RUBYMILLS | Textiles | 447.30 | 0.58 | 1 | 3 | -0.91 | -0.71 | 44.13 | 639 | -110 | -7.00 | -12.09 | 14.16 | 977 | +12 | 15.94 | 19.17 | 91.71 | 92 | -4 | N/A | N/A | N/A | N/A | N/A |
+| RUSTOMJEE | Real Estate Development | 386.20 | 2.27 | 1 | 4 | 5.91 | 6.12 | 93.26 | 78 | -24 | 15.46 | 9.14 | 89.36 | 122 | +6 | 2.70 | 5.56 | 74.86 | 277 | -8 | -1.57 | -3.99 | 51.73 | 504 | +0 |
+| SAATVIKGL | Industrial Machinery | 393.60 | 1.71 | 1 | 3 | 12.67 | 12.89 | 99.12 | 11 | +39 | 12.97 | 6.79 | 85.22 | 169 | +287 | -6.40 | -3.79 | 51.73 | 531 | +183 | N/A | N/A | N/A | N/A | N/A |
+| SANGAMIND | Textiles | 687.05 | 5.79 | 1 | 4 | 1.97 | 2.17 | 77.85 | 254 | +128 | 14.69 | 8.41 | 88.39 | 133 | +58 | 17.11 | 20.37 | 92.53 | 83 | +23 | 30.28 | 27.08 | 87.33 | 133 | +26 |
+| SANGHVIMOV | Finance/Rental/Leasing | 397.90 | 22.51 | 1 | 4 | 7.16 | 7.37 | 95.27 | 55 | -32 | 15.32 | 9.00 | 89.01 | 126 | +24 | -13.13 | -10.71 | 30.51 | 764 | -23 | 8.49 | 5.82 | 65.83 | 357 | -27 |
+| SATIN | Finance/Rental/Leasing | 255.72 | 13.69 | 1 | 4 | -0.17 | 0.02 | 54.73 | 518 | -185 | 1.81 | -3.77 | 48.90 | 582 | -383 | 17.75 | 21.02 | 92.90 | 79 | +18 | 5.70 | 3.10 | 62.57 | 391 | -39 |
+| SESHAPAPER | Pulp & Paper | 217.73 | 2.96 | 1 | 4 | 4.83 | 5.03 | 90.37 | 111 | +29 | 8.14 | 2.22 | 71.42 | 326 | +28 | -6.36 | -3.75 | 52.00 | 528 | -65 | -4.25 | -6.60 | 47.12 | 552 | +25 |
+| SETL | Medical Specialties | 359.15 | 20.98 | 1 | 4 | 0.46 | 0.66 | 63.49 | 418 | +562 | -11.40 | -16.25 | 6.60 | 1063 | -4 | -7.21 | -4.63 | 49.73 | 553 | -27 | 161.41 | 154.98 | 99.90 | 2 | +0 |
+| SHAILY | Chemicals: Specialty | 3350.50 | 60.43 | 1 | 4 | 7.35 | 7.56 | 95.45 | 53 | -28 | 9.63 | 3.63 | 75.20 | 283 | -49 | 2.58 | 5.43 | 74.59 | 280 | -35 | 9.23 | 6.54 | 66.51 | 350 | -13 |
+| SHALBY | Hospital/Nursing Management | 129.26 | 1.31 | 1 | 4 | 5.82 | 6.03 | 93.08 | 80 | -20 | 5.99 | 0.18 | 65.08 | 398 | +49 | -15.87 | -13.53 | 22.13 | 856 | +4 | -26.11 | -27.93 | 9.69 | 942 | +5 |
+| SHARDAMOTR | Auto Parts: OEM | 1000.90 | 25.55 | 1 | 4 | 2.62 | 2.82 | 82.40 | 202 | +103 | 20.74 | 14.13 | 95.60 | 51 | +35 | 13.19 | 16.34 | 89.25 | 119 | +13 | 21.79 | 18.80 | 80.90 | 200 | +45 |
+| SHILPAMED | Pharmaceuticals: Major | 846.25 | 72.71 | 1 | 4 | -0.34 | -0.15 | 52.54 | 543 | +526 | -9.55 | -14.50 | 9.32 | 1032 | +9 | -4.88 | -2.24 | 55.83 | 486 | +207 | 60.95 | 56.98 | 96.55 | 37 | +0 |
+| SHREEPUSHK | Chemicals: Specialty | 513.15 | 6.67 | 1 | 4 | 0.81 | 1.00 | 67.25 | 375 | -58 | -11.07 | -15.93 | 6.95 | 1059 | -167 | 10.49 | 13.56 | 86.79 | 146 | -3 | 38.11 | 34.71 | 91.46 | 90 | -15 |
+| SHYAMMETL | Metal Fabrication | 1305.40 | 46.01 | 1 | 4 | -0.68 | -0.48 | 48.51 | 589 | -214 | 14.35 | 8.09 | 87.25 | 146 | +36 | 21.09 | 24.46 | 94.63 | 60 | +10 | 30.28 | 27.07 | 87.14 | 135 | -12 |
+| SIGNATURE | Real Estate Development | 846.25 | 35.94 | 1 | 4 | -1.53 | -1.34 | 37.13 | 719 | -445 | 18.08 | 11.61 | 92.96 | 81 | -35 | 8.88 | 11.91 | 85.06 | 165 | -48 | 4.19 | 1.62 | 60.36 | 414 | +0 |
+| SIMPLEXINF | Engineering & Construction | 293.10 | 7.73 | 1 | 4 | -2.22 | -2.03 | 27.50 | 829 | -230 | 15.97 | 9.63 | 89.97 | 115 | -17 | 14.22 | 17.40 | 90.07 | 110 | +23 | 16.96 | 14.08 | 76.30 | 248 | -71 |
+| SIYSIL | Textiles | 532.55 | 2.19 | 1 | 4 | 4.51 | 4.72 | 89.23 | 124 | +117 | 16.65 | 10.26 | 91.38 | 99 | +37 | -3.95 | -1.28 | 58.11 | 461 | +88 | -14.29 | -16.40 | 25.91 | 773 | -48 |
+| SKYGOLD | Other Consumer Specialties | 838.50 | 150.50 | 1 | 4 | -4.16 | -3.97 | 11.30 | 1014 | +116 | -4.33 | -9.57 | 21.99 | 888 | +36 | 7.74 | 10.74 | 83.70 | 180 | +150 | 46.74 | 43.13 | 94.24 | 61 | +7 |
+| SMCGLOBAL | Investment Banks/Brokers | 81.23 | 17.49 | 1 | 4 | -5.08 | -4.90 | 8.14 | 1050 | -75 | -12.34 | -17.13 | 5.72 | 1073 | -19 | 1.98 | 4.82 | 73.50 | 292 | +10 | 37.17 | 33.79 | 90.98 | 95 | +17 |
+| SONACOMS | Auto Parts: OEM | 879.00 | 230.89 | 1 | 4 | -1.51 | -1.32 | 37.30 | 717 | -55 | 0.62 | -4.89 | 42.92 | 650 | +19 | 8.59 | 11.61 | 84.70 | 169 | -2 | 46.22 | 42.62 | 94.05 | 63 | -3 |
+| SOUTHBANK | Major Banks | 58.12 | 94.92 | 1 | 4 | -0.85 | -0.66 | 44.92 | 630 | +164 | 2.74 | -2.88 | 53.65 | 528 | -110 | 26.60 | 30.12 | 96.17 | 43 | -6 | 30.28 | 27.08 | 87.43 | 132 | -10 |
+| STEL | Financial Conglomerates | 624.05 | 0.34 | 1 | 4 | 1.27 | 1.47 | 71.63 | 325 | -194 | 23.40 | 16.65 | 97.10 | 34 | +63 | 0.15 | 2.94 | 69.40 | 337 | +153 | 25.37 | 22.29 | 83.49 | 173 | -6 |
+| SUDEEPPHRM | Pharmaceuticals: Other | 1293.40 | 30.10 | 1 | 2 | 8.55 | 8.76 | 96.67 | 39 | -8 | 14.45 | 8.19 | 87.51 | 143 | -29 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SUNTV | Broadcasting | 640.75 | 52.87 | 1 | 4 | -7.70 | -7.52 | 1.66 | 1124 | -95 | 3.36 | -2.29 | 56.20 | 499 | +19 | 38.65 | 42.50 | 98.54 | 17 | -5 | 25.17 | 22.09 | 83.30 | 175 | -7 |
+| SUPRIYA | Pharmaceuticals: Major | 651.20 | 30.04 | 1 | 4 | 5.01 | 5.21 | 90.72 | 107 | +639 | -25.09 | -29.19 | 0.53 | 1132 | +2 | -18.92 | -16.66 | 15.21 | 932 | +65 | -31.60 | -33.29 | 5.76 | 983 | +11 |
+| TARSONS | Containers/Packaging | 292.70 | 1.97 | 1 | 4 | -3.53 | -3.34 | 15.59 | 965 | -236 | -3.70 | -8.97 | 24.45 | 860 | -21 | -14.94 | -12.57 | 25.14 | 823 | -164 | 38.92 | 35.51 | 92.32 | 81 | -9 |
+| TCPLPACK | Commercial Printing/Forms | 4356.00 | 4.49 | 1 | 4 | -0.72 | -0.52 | 47.72 | 598 | +279 | -1.05 | -6.47 | 34.48 | 746 | -335 | 12.84 | 15.98 | 88.80 | 124 | +0 | 66.90 | 62.79 | 97.12 | 31 | -9 |
+| TIMETECHNO | Containers/Packaging | 200.17 | 50.97 | 1 | 4 | 4.22 | 4.42 | 88.44 | 133 | -39 | 23.01 | 16.28 | 96.92 | 36 | +1 | 5.06 | 7.98 | 79.78 | 223 | -37 | 16.53 | 13.66 | 75.82 | 253 | +3 |
+| TIPSMUSIC | Movies/Entertainment | 777.50 | 41.18 | 1 | 4 | -3.78 | -3.59 | 13.84 | 985 | -103 | -1.75 | -7.13 | 31.40 | 781 | +9 | 20.82 | 24.19 | 94.35 | 63 | -5 | 15.68 | 12.84 | 74.66 | 265 | -23 |
+| TSFINV | Financial Conglomerates | 449.30 | 2.61 | 1 | 4 | 5.63 | 5.84 | 92.47 | 87 | +193 | 10.46 | 4.41 | 77.48 | 257 | +164 | 11.46 | 14.56 | 88.07 | 132 | +51 | 12.34 | 9.57 | 71.31 | 300 | +76 |
+| UFLEX | Containers/Packaging | 587.40 | 8.73 | 1 | 4 | -4.65 | -4.46 | 9.28 | 1037 | +12 | 0.72 | -4.79 | 43.36 | 645 | -3 | -8.94 | -6.40 | 44.72 | 608 | +12 | 35.82 | 32.47 | 90.21 | 103 | +12 |
+| UNITEDPOLY | Textiles | 54.22 | 3.05 | 1 | 3 | -0.82 | -0.63 | 45.88 | 619 | +364 | -2.15 | -7.50 | 29.99 | 797 | +68 | 46.90 | 50.99 | 99.36 | 8 | +3 | N/A | N/A | N/A | N/A | N/A |
+| UNOMINDA | Auto Parts: OEM | 1354.00 | 139.64 | 1 | 4 | -1.88 | -1.69 | 32.40 | 773 | -450 | 24.52 | 17.70 | 97.45 | 30 | -6 | 6.25 | 9.20 | 81.33 | 206 | -46 | 25.05 | 21.97 | 83.21 | 176 | -26 |
+| URBANCO | Packaged Software | 174.92 | 147.02 | 1 | 3 | 3.53 | 3.74 | 86.25 | 158 | +587 | 19.64 | 13.09 | 94.46 | 64 | +27 | 4.35 | 7.25 | 78.32 | 239 | +33 | N/A | N/A | N/A | N/A | N/A |
+| VIMTALABS | Miscellaneous Commercial Services | 496.60 | 4.43 | 1 | 4 | 6.19 | 6.40 | 93.61 | 74 | +18 | -4.46 | -9.69 | 21.02 | 899 | -27 | -24.96 | -22.87 | 7.29 | 1019 | -28 | -3.24 | -5.63 | 48.46 | 538 | +19 |
+| VRLLOG | Trucking | 314.75 | 47.05 | 1 | 4 | -7.58 | -7.39 | 1.75 | 1123 | -35 | 16.42 | 10.05 | 90.85 | 105 | +3 | 4.97 | 7.89 | 79.51 | 226 | +7 | 35.67 | 32.34 | 89.92 | 106 | +5 |
+| WESTLIFE | Restaurants | 612.30 | 32.72 | 1 | 4 | -6.99 | -6.81 | 2.89 | 1110 | -5 | 0.32 | -5.17 | 40.90 | 673 | -224 | 10.54 | 13.62 | 86.98 | 144 | +11 | 39.64 | 36.20 | 92.61 | 78 | -14 |
+| XPROINDIA | Industrial Specialties | 1239.30 | 9.24 | 1 | 4 | 1.55 | 1.75 | 73.91 | 299 | +690 | 21.80 | 15.13 | 96.39 | 42 | +41 | 9.11 | 12.15 | 85.25 | 163 | +84 | 4.50 | 1.93 | 61.23 | 405 | +34 |
+| YASHO | Food: Specialty/Candy | 3386.80 | 16.04 | 1 | 4 | -3.32 | -3.13 | 17.16 | 947 | +41 | -1.48 | -6.87 | 32.89 | 764 | -245 | -20.68 | -18.47 | 11.93 | 968 | -64 | 36.83 | 33.46 | 90.88 | 96 | -45 |
+| YATHARTH | Hospital/Nursing Management | 1076.85 | 28.16 | 1 | 4 | -1.50 | -1.31 | 37.39 | 716 | -360 | 16.63 | 10.25 | 91.29 | 100 | +49 | 10.47 | 13.54 | 86.70 | 147 | +28 | 33.32 | 30.04 | 89.06 | 115 | +2 |
+| YATRA | Other Consumer Services | 87.87 | 71.99 | 1 | 4 | -1.29 | -1.10 | 39.67 | 690 | -26 | 18.55 | 12.06 | 93.67 | 73 | +16 | -22.85 | -20.70 | 9.47 | 995 | -127 | -9.23 | -11.46 | 37.33 | 654 | -4 |
+| YUKEN | Industrial Machinery | 1024.50 | 1.41 | 1 | 4 | 2.41 | 2.61 | 80.74 | 221 | -20 | -9.98 | -14.91 | 8.53 | 1041 | -47 | 5.40 | 8.33 | 80.15 | 219 | +31 | 49.57 | 45.89 | 94.63 | 57 | +1 |
+| ZAGGLE | Packaged Software | 162.37 | 22.08 | 1 | 4 | 6.04 | 6.25 | 93.43 | 76 | -9 | 0.51 | -4.99 | 42.13 | 659 | -20 | -11.96 | -9.51 | 33.79 | 728 | -37 | -19.40 | -21.38 | 17.95 | 856 | +7 |
+| ZENTEC | Information Technology Services | 1793.20 | 70.03 | 1 | 4 | 6.68 | 6.89 | 94.66 | 62 | +46 | 10.58 | 4.53 | 78.01 | 251 | -63 | 0.70 | 3.50 | 70.40 | 326 | +18 | -0.92 | -3.36 | 52.69 | 494 | -83 |
+| ZOTA | Pharmaceuticals: Major | 1304.70 | 5.80 | 1 | 4 | 1.30 | 1.50 | 71.98 | 321 | -25 | -1.43 | -6.82 | 33.16 | 761 | -254 | 26.90 | 30.44 | 96.27 | 42 | +4 | 9.96 | 7.26 | 67.47 | 340 | +31 |
+| 3MINDIA | Industrial Conglomerates | 28105.00 | 13.28 | 0 | 4 | -0.53 | -0.34 | 49.65 | 576 | -286 | -2.82 | -8.14 | 27.18 | 829 | -35 | -15.64 | -13.29 | 22.95 | 847 | -38 | -12.96 | -15.10 | 29.37 | 737 | +6 |
+| 5PAISA | Investment Banks/Brokers | 342.90 | 0.93 | 0 | 4 | 0.84 | 1.04 | 67.43 | 373 | -60 | 3.33 | -2.33 | 56.02 | 501 | +84 | -0.57 | 2.20 | 67.49 | 358 | +67 | 6.96 | 4.32 | 63.82 | 378 | +23 |
+| AADHARHFC | Finance/Rental/Leasing | 422.65 | 13.10 | 0 | 4 | 1.38 | 1.58 | 72.59 | 314 | -178 | -3.94 | -9.20 | 23.39 | 872 | -138 | -11.29 | -8.82 | 36.16 | 702 | -124 | -10.06 | -12.27 | 36.08 | 667 | -44 |
+| AARTIDRUGS | Pharmaceuticals: Major | 487.05 | 80.41 | 0 | 4 | 0.53 | 0.72 | 64.19 | 410 | +125 | 8.47 | 2.54 | 72.38 | 315 | -45 | 14.04 | 17.21 | 89.80 | 113 | -49 | 29.93 | 26.73 | 86.85 | 138 | -1 |
+| AARTIIND | Chemicals: Major Diversified | 438.15 | 30.61 | 0 | 4 | -2.53 | -2.33 | 24.52 | 863 | +11 | -0.88 | -6.31 | 35.00 | 740 | -62 | -16.52 | -14.20 | 20.77 | 871 | -29 | -4.77 | -7.11 | 46.83 | 555 | +24 |
+| AAVAS | Finance/Rental/Leasing | 1116.20 | 22.84 | 0 | 4 | 0.82 | 1.02 | 67.34 | 374 | +222 | 0.41 | -5.08 | 41.51 | 666 | +96 | -10.59 | -8.10 | 38.98 | 671 | +52 | -14.16 | -16.28 | 26.30 | 769 | +31 |
+| ABBOTINDIA | Pharmaceuticals: Major | 27145.00 | 20.55 | 0 | 4 | 2.34 | 2.54 | 80.21 | 227 | -179 | 3.82 | -1.86 | 57.43 | 485 | -2 | 3.86 | 6.76 | 77.41 | 249 | -46 | 5.13 | 2.54 | 61.90 | 398 | +28 |
+| ABLBL | Apparel/Footwear Retail | 78.80 | 8.88 | 0 | 4 | 4.26 | 4.46 | 88.70 | 130 | -40 | 10.92 | 4.85 | 79.07 | 239 | +12 | -7.65 | -5.08 | 48.72 | 564 | +2 | -21.83 | -23.76 | 14.68 | 890 | -41 |
+| ACC | Construction Materials | 1250.60 | 24.09 | 0 | 4 | -2.07 | -1.88 | 29.68 | 804 | -396 | 8.42 | 2.48 | 72.30 | 316 | -79 | -1.71 | 1.03 | 64.85 | 387 | -34 | -7.42 | -9.70 | 41.27 | 613 | -21 |
+| ACCELYA | Packaged Software | 979.80 | 2.02 | 0 | 4 | -0.73 | -0.53 | 47.20 | 604 | -317 | 4.33 | -1.38 | 59.45 | 462 | +47 | -13.47 | -11.06 | 29.60 | 774 | -44 | -14.50 | -16.61 | 25.34 | 779 | -20 |
+| ACI | Chemicals: Major Diversified | 449.15 | 15.84 | 0 | 4 | 3.91 | 4.11 | 87.48 | 144 | +380 | -1.16 | -6.57 | 34.04 | 751 | +194 | -8.83 | -6.29 | 44.99 | 605 | +61 | -15.52 | -17.60 | 23.13 | 802 | +54 |
+| ADFFOODS | Food: Specialty/Candy | 223.28 | 3.19 | 0 | 4 | 2.29 | 2.49 | 79.86 | 231 | +147 | -8.72 | -13.71 | 10.82 | 1015 | -5 | -15.79 | -13.45 | 22.50 | 852 | +44 | -22.69 | -24.59 | 14.01 | 897 | +19 |
+| ADOR | Miscellaneous Manufacturing | 1391.30 | 3.30 | 0 | 4 | -0.39 | -0.19 | 51.75 | 552 | +232 | 2.36 | -3.24 | 51.45 | 553 | +73 | -18.20 | -15.92 | 17.03 | 912 | -3 | 24.23 | 21.18 | 82.63 | 182 | +30 |
+| ADVAIT | Electrical Products | 1834.40 | 7.15 | 0 | 2 | 0.76 | 0.96 | 66.64 | 382 | +161 | 6.41 | 0.59 | 66.49 | 382 | -51 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| ADVENZYMES | Food: Specialty/Candy | 285.60 | 5.89 | 0 | 4 | -1.67 | -1.48 | 35.20 | 741 | +127 | 8.12 | 2.20 | 71.33 | 327 | -42 | -3.30 | -0.61 | 60.20 | 438 | -29 | -24.14 | -26.01 | 12.57 | 912 | +15 |
+| AEQUS | Aerospace & Defense | 222.65 | 88.50 | 0 | 2 | -0.60 | -0.41 | 49.21 | 581 | +323 | 2.11 | -3.48 | 50.31 | 566 | -108 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| AEROENTER | Industrial Machinery | 128.51 | 8.26 | 0 | 4 | 1.82 | 2.02 | 76.71 | 267 | +857 | 0.32 | -5.17 | 40.99 | 672 | +138 | -10.38 | -7.88 | 39.98 | 660 | +25 | 27.07 | 23.95 | 84.55 | 162 | +20 |
+| AEROFLEX | Industrial Machinery | 484.65 | 194.38 | 0 | 4 | 2.45 | 2.65 | 81.17 | 216 | +328 | -9.97 | -14.90 | 8.62 | 1040 | -253 | -12.21 | -9.77 | 33.33 | 733 | -179 | 10.30 | 7.58 | 68.14 | 333 | -10 |
+| AFCONS | Engineering & Construction | 218.56 | 14.21 | 0 | 4 | -0.11 | 0.09 | 55.78 | 506 | -382 | 3.26 | -2.39 | 55.50 | 507 | -141 | -23.38 | -21.25 | 9.11 | 999 | -33 | -33.02 | -34.67 | 4.51 | 996 | -16 |
+| AFSL | Investment Managers | 201.00 | 0.11 | 0 | 4 | 0.00 | 0.20 | 57.22 | 489 | -121 | -0.01 | -5.48 | 38.96 | 695 | -10 | -3.24 | -0.55 | 60.66 | 433 | +24 | 0.00 | -2.46 | 53.65 | 484 | -1 |
+| AGI | Containers/Packaging | 649.10 | 5.40 | 0 | 4 | -1.67 | -1.48 | 35.03 | 743 | +46 | -0.62 | -6.06 | 35.80 | 731 | +308 | -17.02 | -14.71 | 19.85 | 881 | -32 | 8.08 | 5.42 | 65.36 | 362 | +36 |
+| AHLUCONT | Engineering & Construction | 535.05 | 6.53 | 0 | 4 | 1.51 | 1.71 | 73.64 | 302 | +753 | 0.55 | -4.95 | 42.39 | 656 | +208 | -12.64 | -10.21 | 32.42 | 743 | +138 | -31.87 | -33.54 | 5.37 | 987 | +13 |
+| AIAENG | Industrial Machinery | 3386.50 | 35.15 | 0 | 4 | -1.37 | -1.18 | 38.53 | 703 | -528 | -6.90 | -12.00 | 14.51 | 973 | -47 | -20.19 | -17.97 | 12.75 | 959 | -29 | -26.32 | -28.14 | 9.50 | 944 | -22 |
+| AIIL | Financial Conglomerates | 552.80 | 8.62 | 0 | 4 | 0.14 | 0.34 | 58.84 | 471 | -173 | 10.53 | 4.48 | 77.66 | 255 | -55 | 2.50 | 5.36 | 74.41 | 282 | +80 | 22.49 | 19.48 | 81.19 | 197 | +9 |
+| AJANTPHARM | Pharmaceuticals: Major | 3360.60 | 48.21 | 0 | 4 | 1.29 | 1.49 | 71.89 | 322 | -190 | -2.86 | -8.18 | 26.91 | 832 | -14 | -4.11 | -1.45 | 57.56 | 467 | +33 | 14.01 | 11.20 | 72.74 | 285 | -8 |
+| AJAXENGG | Trucks/Construction/Farm Machinery | 593.60 | 4.06 | 0 | 4 | -2.12 | -1.93 | 28.98 | 812 | +98 | 7.58 | 1.69 | 69.74 | 345 | +3 | 3.42 | 6.30 | 76.59 | 258 | -23 | -1.21 | -3.64 | 52.30 | 498 | -13 |
+| ALEMBICLTD | Pharmaceuticals: Major | 103.23 | 21.22 | 0 | 4 | -5.22 | -5.03 | 7.44 | 1058 | -94 | 15.59 | 9.26 | 89.53 | 120 | -61 | 4.43 | 7.34 | 78.51 | 237 | -55 | 20.03 | 17.08 | 79.65 | 213 | -20 |
+| ALGOQUANT | Investment Banks/Brokers | 78.86 | 10.13 | 0 | 2 | -6.22 | -6.04 | 4.55 | 1091 | -151 | 3.18 | -2.47 | 55.15 | 511 | -78 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| ALKEM | Pharmaceuticals: Major | 5130.00 | 75.52 | 0 | 4 | -1.06 | -0.87 | 42.73 | 655 | -318 | 1.00 | -4.52 | 44.68 | 630 | -38 | -3.21 | -0.51 | 60.75 | 432 | -25 | -2.78 | -5.17 | 48.94 | 533 | -13 |
+| ALKYLAMINE | Chemicals: Specialty | 1504.50 | 10.53 | 0 | 4 | -3.51 | -3.32 | 15.67 | 964 | +72 | -9.03 | -14.01 | 10.11 | 1023 | +29 | -25.19 | -23.10 | 7.19 | 1020 | +11 | -16.45 | -18.51 | 22.17 | 812 | +50 |
+| ALLDIGI | Miscellaneous Commercial Services | 832.05 | 1.43 | 0 | 4 | 0.46 | 0.66 | 63.31 | 420 | -79 | 2.71 | -2.91 | 53.30 | 532 | +13 | 3.00 | 5.87 | 75.96 | 265 | +10 | 0.78 | -1.70 | 55.18 | 468 | +6 |
+| ALLTIME | Miscellaneous Manufacturing | 199.25 | 0.80 | 0 | 4 | 0.67 | 0.87 | 65.59 | 394 | -87 | -2.14 | -7.49 | 30.17 | 795 | -248 | -0.67 | 2.09 | 67.03 | 363 | -39 | -12.52 | -14.67 | 30.13 | 729 | -88 |
+| AMAGI | Packaged Software | 584.65 | 14.89 | 0 | 2 | 1.68 | 1.88 | 75.39 | 282 | -52 | 7.66 | 1.77 | 70.10 | 341 | +61 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| AMBER | Industrial Machinery | 6769.00 | 229.24 | 0 | 4 | 0.42 | 0.62 | 62.70 | 427 | -238 | 8.57 | 2.63 | 72.74 | 311 | -49 | -9.84 | -7.33 | 41.26 | 646 | -10 | -11.13 | -13.32 | 33.97 | 689 | -34 |
+| AMBUJACEM | Construction Materials | 385.30 | 145.36 | 0 | 3 | -3.67 | -3.49 | 14.71 | 975 | -433 | 8.63 | 2.68 | 73.09 | 307 | -87 | -4.38 | -1.72 | 57.01 | 473 | -82 | N/A | N/A | N/A | N/A | N/A |
+| AMRUTANJAN | Pharmaceuticals: Other | 514.90 | 1.25 | 0 | 4 | 0.44 | 0.64 | 63.05 | 423 | -28 | 4.40 | -1.31 | 59.72 | 459 | -6 | 3.32 | 6.20 | 76.23 | 262 | +36 | -5.13 | -7.47 | 46.07 | 563 | +15 |
+| ANANTRAJ | Homebuilding | 447.25 | 70.06 | 0 | 4 | -0.84 | -0.65 | 45.27 | 626 | +80 | -3.60 | -8.88 | 24.71 | 857 | -6 | -23.91 | -21.79 | 8.47 | 1006 | +18 | -24.11 | -25.98 | 12.67 | 911 | -70 |
+| ANDHRAPAP | Pulp & Paper | 62.32 | 1.06 | 0 | 4 | 0.32 | 0.52 | 61.56 | 440 | +352 | -8.69 | -13.69 | 11.08 | 1012 | -30 | 2.92 | 5.79 | 75.50 | 270 | +57 | 1.25 | -1.24 | 55.37 | 466 | +55 |
+| ANTELOPUS | Integrated Oil | 825.35 | 32.95 | 0 | 4 | -0.91 | -0.72 | 44.05 | 640 | +373 | -19.68 | -24.08 | 1.41 | 1122 | +9 | 4.13 | 7.02 | 77.87 | 244 | +56 | -9.83 | -12.05 | 36.66 | 661 | -9 |
+| ANURAS | Pharmaceuticals: Major | 1322.50 | 57.02 | 0 | 4 | -0.52 | -0.32 | 50.35 | 568 | -179 | 11.89 | 5.76 | 82.41 | 201 | -66 | 4.98 | 7.90 | 79.60 | 225 | -9 | -1.91 | -4.32 | 50.86 | 513 | -26 |
+| APARINDS | Electronic Equipment/Instruments | 14160.00 | 235.57 | 0 | 4 | -1.25 | -1.05 | 40.63 | 679 | -111 | -10.64 | -15.53 | 7.39 | 1054 | -68 | -18.62 | -16.36 | 15.76 | 926 | -4 | 3.29 | 0.75 | 58.93 | 429 | -20 |
+| APCOTEXIND | Chemicals: Specialty | 494.05 | 3.65 | 0 | 4 | 3.17 | 3.38 | 84.68 | 176 | +329 | 1.97 | -3.61 | 50.13 | 568 | +335 | -22.71 | -20.56 | 9.65 | 993 | +29 | -8.23 | -10.49 | 38.87 | 638 | -94 |
+| APLAPOLLO | Steel | 1509.50 | 616.70 | 0 | 4 | -28.85 | -28.71 | 0.00 | 1143 | +1 | -31.23 | -34.99 | 0.26 | 1135 | +2 | -32.43 | -30.55 | 2.46 | 1072 | +0 | -16.53 | -18.58 | 21.88 | 815 | +12 |
+| APOLLOPIPE | Miscellaneous Manufacturing | 472.75 | 19.02 | 0 | 4 | -11.64 | -11.46 | 0.61 | 1136 | +1 | -13.14 | -17.89 | 5.10 | 1080 | -272 | -22.48 | -20.32 | 10.02 | 989 | +24 | -1.51 | -3.93 | 51.82 | 503 | +32 |
+| APOLLOTYRE | Automotive Aftermarket | 426.05 | 33.04 | 0 | 4 | 1.96 | 2.16 | 77.67 | 256 | -43 | 10.28 | 4.24 | 77.31 | 259 | -3 | -3.76 | -1.08 | 58.93 | 452 | -50 | 7.66 | 5.01 | 64.68 | 369 | -21 |
+| APTUS | Finance/Rental/Leasing | 187.78 | 87.69 | 0 | 4 | -4.00 | -3.81 | 12.17 | 1004 | -303 | -6.26 | -11.39 | 15.92 | 957 | -27 | -25.88 | -23.82 | 5.46 | 1039 | -30 | -28.59 | -30.34 | 7.20 | 968 | -19 |
+| ARE&M | Electrical Products | 728.80 | 32.71 | 0 | 4 | -2.00 | -1.80 | 30.82 | 791 | +37 | 3.51 | -2.16 | 56.55 | 495 | +54 | -17.17 | -14.87 | 19.22 | 888 | +7 | -15.20 | -17.28 | 24.09 | 792 | -4 |
+| ARFIN | Aluminum | 92.82 | 15.60 | 0 | 4 | 0.56 | 0.76 | 64.71 | 404 | -315 | 1.27 | -4.28 | 46.53 | 609 | -314 | 8.56 | 11.58 | 84.61 | 170 | -20 | 4.02 | 1.46 | 60.17 | 416 | -29 |
+| ARMANFIN | Finance/Rental/Leasing | 1557.20 | 6.48 | 0 | 4 | 0.35 | 0.55 | 61.91 | 436 | -398 | 8.05 | 2.13 | 71.06 | 330 | -268 | -20.24 | -18.02 | 12.66 | 960 | -128 | -2.08 | -4.49 | 50.58 | 516 | -116 |
+| ARSSBL | Investment Banks/Brokers | 509.60 | 6.03 | 0 | 3 | 2.25 | 2.45 | 79.60 | 234 | +274 | 8.03 | 2.12 | 70.98 | 331 | +112 | 0.16 | 2.94 | 69.49 | 336 | +64 | N/A | N/A | N/A | N/A | N/A |
+| ARTEMISMED | Hospital/Nursing Management | 326.40 | 5.39 | 0 | 4 | -4.23 | -4.04 | 11.21 | 1015 | -6 | 9.55 | 3.55 | 75.02 | 285 | +88 | -0.47 | 2.30 | 67.94 | 353 | -27 | 20.40 | 17.44 | 80.04 | 209 | +23 |
+| ARVIND | Textiles | 515.00 | 31.45 | 0 | 4 | -2.09 | -1.90 | 29.07 | 811 | -99 | 1.10 | -4.43 | 45.65 | 619 | +88 | -7.56 | -4.98 | 49.00 | 561 | -10 | 2.78 | 0.25 | 58.25 | 436 | -34 |
+| ARVINDFASN | Apparel/Footwear Retail | 349.15 | 12.75 | 0 | 4 | -3.59 | -3.40 | 15.24 | 969 | -273 | -2.72 | -8.04 | 27.70 | 823 | -7 | -23.90 | -21.78 | 8.56 | 1005 | -46 | -25.89 | -27.71 | 10.08 | 938 | -8 |
+| ARVSMART | Real Estate Development | 632.40 | 2.94 | 0 | 4 | 0.00 | 0.20 | 57.22 | 489 | -21 | 7.85 | 1.95 | 70.45 | 337 | +19 | -3.60 | -0.91 | 59.38 | 447 | +7 | 8.21 | 5.55 | 65.55 | 360 | +2 |
+| ASALCBR | Beverages: Alcoholic | 516.35 | 2.12 | 0 | 4 | -2.95 | -2.76 | 20.58 | 908 | +133 | -5.49 | -10.66 | 18.56 | 927 | -58 | -25.57 | -23.49 | 6.38 | 1029 | +1 | -37.11 | -38.66 | 2.98 | 1012 | +0 |
+| ASHAPURMIN | Other Metals/Minerals | 409.45 | 14.04 | 0 | 4 | -5.86 | -5.68 | 5.60 | 1079 | -109 | -4.36 | -9.59 | 21.81 | 890 | +38 | -26.29 | -24.24 | 5.10 | 1043 | +4 | -44.71 | -46.07 | 1.63 | 1026 | -1 |
+| ASHIANA | Real Estate Development | 361.30 | 2.05 | 0 | 4 | 1.09 | 1.29 | 70.32 | 340 | +4 | 5.78 | -0.01 | 64.47 | 405 | +36 | -0.65 | 2.12 | 67.21 | 361 | +11 | 1.55 | -0.95 | 55.85 | 461 | +4 |
+| ASHOKA | Engineering & Construction | 113.48 | 52.27 | 0 | 4 | 2.29 | 2.49 | 79.77 | 232 | +111 | 14.66 | 8.38 | 88.30 | 134 | -40 | -6.79 | -4.20 | 50.82 | 541 | -68 | -7.66 | -9.93 | 40.79 | 618 | +24 |
+| ASHOKLEY | Trucks/Construction/Farm Machinery | 151.42 | 327.85 | 0 | 4 | -7.30 | -7.12 | 2.01 | 1120 | -116 | 4.43 | -1.29 | 59.89 | 457 | -116 | -11.21 | -8.73 | 37.07 | 692 | -32 | 4.83 | 2.25 | 61.61 | 401 | -27 |
+| ASIANENE | Oil & Gas Production | 349.45 | 7.91 | 0 | 4 | -3.51 | -3.32 | 15.76 | 963 | +110 | -20.66 | -25.00 | 1.32 | 1123 | -27 | -28.45 | -26.46 | 3.83 | 1057 | -28 | -5.35 | -7.68 | 45.68 | 567 | -57 |
+| ASTEC | Chemicals: Agricultural | 535.90 | 3.77 | 0 | 4 | -1.07 | -0.88 | 42.56 | 657 | +140 | -7.77 | -12.82 | 12.40 | 997 | +63 | -4.71 | -2.06 | 56.28 | 481 | -35 | -31.05 | -32.75 | 6.05 | 980 | +5 |
+| ASTERDM | Hospital/Nursing Management | 756.85 | 73.75 | 0 | 4 | -2.88 | -2.69 | 21.02 | 903 | -806 | 11.43 | 5.33 | 80.74 | 220 | -81 | -0.13 | 2.65 | 68.58 | 346 | -54 | 2.55 | 0.02 | 57.58 | 443 | -39 |
+| ASTRAL | Miscellaneous Manufacturing | 1262.50 | 68.93 | 0 | 4 | 0.79 | 0.99 | 67.16 | 376 | -48 | -7.54 | -12.60 | 12.75 | 993 | -21 | -16.22 | -13.89 | 21.04 | 868 | -4 | -18.51 | -20.52 | 19.10 | 844 | -9 |
+| ASTRAMICRO | Telecommunications Equipment | 1666.90 | 56.94 | 0 | 4 | 1.47 | 1.67 | 73.29 | 306 | +443 | 5.59 | -0.19 | 63.59 | 415 | +96 | -1.16 | 1.59 | 65.94 | 375 | +23 | 20.99 | 18.01 | 80.23 | 207 | -10 |
+| ASTRAZEN | Pharmaceuticals: Major | 6141.50 | 7.00 | 0 | 4 | -0.42 | -0.23 | 51.31 | 557 | -239 | -2.50 | -7.84 | 28.76 | 811 | -44 | -11.21 | -8.74 | 36.79 | 695 | -13 | -27.87 | -29.65 | 8.35 | 956 | -1 |
+| ATGL | Gas Distributors | 547.90 | 23.85 | 0 | 4 | -3.01 | -2.82 | 20.05 | 914 | -176 | 0.24 | -5.25 | 40.19 | 681 | -141 | -10.71 | -8.23 | 38.25 | 679 | +8 | -26.36 | -28.17 | 9.40 | 945 | -38 |
+| ATLANTAELE | Electrical Products | 1474.90 | 16.13 | 0 | 3 | 1.66 | 1.86 | 75.31 | 283 | +160 | -11.52 | -16.37 | 6.42 | 1065 | +0 | -19.12 | -16.87 | 14.75 | 937 | +18 | N/A | N/A | N/A | N/A | N/A |
+| ATUL | Chemicals: Agricultural | 5160.00 | 21.02 | 0 | 4 | 2.04 | 2.24 | 78.28 | 249 | +45 | 0.27 | -5.22 | 40.46 | 678 | +129 | -20.02 | -17.80 | 13.02 | 956 | -21 | -23.43 | -25.32 | 13.15 | 906 | -4 |
+| ATULAUTO | Motor Vehicles | 398.85 | 2.92 | 0 | 4 | 0.86 | 1.06 | 68.13 | 365 | +57 | -4.97 | -10.17 | 19.70 | 914 | -72 | -16.22 | -13.88 | 21.13 | 867 | +21 | -15.24 | -17.32 | 23.99 | 793 | -10 |
+| AUBANK | Regional Banks | 984.85 | 219.97 | 0 | 4 | -0.01 | 0.19 | 57.09 | 491 | -100 | 11.83 | 5.70 | 82.32 | 202 | +1 | -8.74 | -6.20 | 45.36 | 601 | +9 | 2.37 | -0.15 | 57.29 | 446 | +20 |
+| AURIONPRO | Information Technology Services | 564.65 | 10.49 | 0 | 4 | 2.44 | 2.64 | 81.00 | 218 | -51 | -3.09 | -8.39 | 26.39 | 838 | -429 | -18.72 | -16.46 | 15.48 | 929 | -6 | -28.53 | -30.28 | 7.39 | 966 | +5 |
+| AURUM | Packaged Software | 223.62 | 3.38 | 0 | 4 | 3.39 | 3.59 | 85.55 | 166 | +208 | 6.95 | 1.10 | 67.90 | 366 | +212 | -0.14 | 2.64 | 68.49 | 347 | +136 | 18.51 | 15.59 | 77.35 | 237 | -23 |
+| AUTOAXLES | Auto Parts: OEM | 1753.40 | 5.28 | 0 | 4 | -0.67 | -0.47 | 48.69 | 587 | +218 | 12.39 | 6.24 | 83.73 | 186 | +81 | 3.70 | 6.58 | 77.14 | 252 | +63 | 1.63 | -0.87 | 55.95 | 460 | +0 |
+| AVADHSUGAR | Agricultural Commodities/Milling | 875.30 | 7.70 | 0 | 3 | 2.84 | 3.04 | 83.71 | 187 | -16 | 1.81 | -3.76 | 48.99 | 581 | -167 | 6.32 | 9.28 | 81.60 | 203 | +87 | N/A | N/A | N/A | N/A | N/A |
+| AVANTEL | Telecommunications Equipment | 152.54 | 30.81 | 0 | 4 | -1.74 | -1.55 | 34.24 | 752 | +301 | 12.03 | 5.90 | 83.11 | 193 | +25 | -2.64 | 0.07 | 61.84 | 420 | +81 | -13.33 | -15.46 | 28.31 | 748 | +26 |
+| AVANTIFEED | Agricultural Commodities/Milling | 710.80 | 56.99 | 0 | 4 | -0.88 | -0.68 | 44.66 | 633 | -68 | 4.63 | -1.10 | 60.60 | 449 | -20 | -14.75 | -12.37 | 25.50 | 819 | -25 | -36.90 | -38.45 | 3.07 | 1011 | +5 |
+| AVL | Electronics/Appliance Stores | 531.55 | 8.33 | 0 | 4 | -0.78 | -0.59 | 46.50 | 612 | -14 | -5.67 | -10.83 | 18.12 | 932 | +11 | -12.01 | -9.56 | 33.61 | 730 | -51 | -0.97 | -3.41 | 52.59 | 495 | -24 |
+| AWFIS | Real Estate Development | 270.59 | 21.32 | 0 | 4 | -2.38 | -2.19 | 25.39 | 853 | -43 | 13.09 | 6.90 | 85.75 | 163 | +0 | 2.96 | 5.83 | 75.68 | 268 | -57 | -12.42 | -14.57 | 30.23 | 728 | +1 |
+| AWL | Agricultural Commodities/Milling | 169.27 | 33.20 | 0 | 4 | -1.58 | -1.38 | 36.25 | 729 | +52 | 3.25 | -2.40 | 55.41 | 508 | +175 | -12.92 | -10.49 | 31.24 | 756 | +14 | -10.57 | -12.77 | 34.84 | 680 | +59 |
+| AYMSYNTEX | Textiles | 262.92 | 2.47 | 0 | 4 | -2.94 | -2.75 | 20.67 | 907 | -34 | 7.03 | 1.17 | 68.34 | 361 | -56 | -10.63 | -8.14 | 38.62 | 675 | -196 | 16.82 | 13.94 | 76.10 | 250 | -16 |
+| AZAD | Metal Fabrication | 2405.60 | 163.63 | 0 | 4 | 2.75 | 2.95 | 83.19 | 193 | +607 | -5.06 | -10.26 | 19.35 | 918 | +107 | -15.42 | -13.07 | 23.59 | 840 | +58 | 9.32 | 6.63 | 66.99 | 345 | -25 |
+| BAJAJCON | Household/Personal Care | 391.75 | 20.04 | 0 | 4 | -3.21 | -3.02 | 18.04 | 937 | -52 | 0.29 | -5.20 | 40.63 | 676 | -106 | -16.99 | -14.68 | 19.95 | 880 | -4 | -29.89 | -31.62 | 6.43 | 976 | -4 |
+| BAJAJELEC | Electronics/Appliances | 280.70 | 11.99 | 0 | 4 | 0.20 | 0.39 | 59.46 | 464 | +208 | -1.09 | -6.51 | 34.21 | 749 | +166 | -13.86 | -11.46 | 27.50 | 797 | -1 | -7.59 | -9.86 | 40.88 | 617 | +56 |
+| BAJAJHFL | Finance/Rental/Leasing | 80.05 | 22.91 | 0 | 4 | -2.32 | -2.13 | 26.44 | 841 | -205 | 2.73 | -2.89 | 53.47 | 530 | -26 | -3.38 | -0.69 | 60.02 | 440 | -2 | -4.04 | -6.40 | 47.31 | 550 | +1 |
+| BAJEL | Engineering & Construction | 153.79 | 4.56 | 0 | 4 | -2.16 | -1.97 | 28.63 | 816 | -69 | -5.71 | -10.87 | 17.94 | 934 | -36 | -17.39 | -15.09 | 18.49 | 896 | +57 | -24.37 | -26.23 | 12.00 | 918 | -15 |
+| BALAMINES | Chemicals: Specialty | 1792.40 | 26.36 | 0 | 4 | -1.56 | -1.37 | 36.78 | 723 | +340 | -3.05 | -8.36 | 26.56 | 836 | +96 | -25.62 | -23.55 | 6.10 | 1032 | -24 | -14.64 | -16.74 | 25.05 | 782 | +42 |
+| BALKRISIND | Automotive Aftermarket | 2360.50 | 44.30 | 0 | 4 | -0.14 | 0.06 | 55.34 | 511 | -148 | 12.44 | 6.29 | 83.99 | 183 | +56 | 1.23 | 4.05 | 71.58 | 313 | -39 | 7.69 | 5.04 | 64.78 | 368 | +24 |
+| BALMLAWRIE | Industrial Conglomerates | 166.79 | 17.33 | 0 | 4 | 0.21 | 0.41 | 59.72 | 461 | -121 | 6.70 | 0.86 | 67.37 | 372 | +23 | -5.30 | -2.67 | 54.83 | 497 | -28 | -7.89 | -10.16 | 40.12 | 625 | +37 |
+| BANARISUG | Agricultural Commodities/Milling | 3119.80 | 0.33 | 0 | 4 | 0.17 | 0.37 | 59.28 | 466 | -218 | -0.85 | -6.28 | 35.09 | 739 | -35 | -17.16 | -14.86 | 19.31 | 887 | +45 | -13.34 | -15.47 | 28.21 | 749 | -11 |
+| BANDHANBNK | Major Banks | 166.66 | 151.25 | 0 | 4 | -4.80 | -4.62 | 8.93 | 1041 | -281 | 2.98 | -2.66 | 54.27 | 521 | -225 | 2.31 | 5.16 | 74.13 | 285 | -49 | -18.88 | -20.87 | 18.62 | 849 | -11 |
+| BANSALWIRE | Steel | 54.76 | 4.72 | 0 | 4 | -0.47 | -0.28 | 50.70 | 564 | +239 | -5.42 | -10.60 | 18.73 | 925 | +42 | -82.87 | -82.40 | 0.09 | 1098 | +1 | -82.25 | -82.69 | 0.19 | 1041 | +0 |
+| BASF | Chemicals: Specialty | 2979.60 | 8.79 | 0 | 4 | 2.50 | 2.70 | 81.44 | 213 | +22 | -5.83 | -10.99 | 17.68 | 937 | -31 | -20.77 | -18.57 | 11.57 | 972 | +2 | -13.48 | -15.61 | 28.02 | 751 | -59 |
+| BATAINDIA | Apparel/Footwear | 624.35 | 11.11 | 0 | 4 | -1.60 | -1.41 | 35.90 | 733 | -445 | -3.82 | -9.08 | 23.92 | 866 | +5 | -7.82 | -5.26 | 48.36 | 568 | -41 | -5.05 | -7.39 | 46.26 | 561 | +7 |
+| BAYERCROP | Chemicals: Agricultural | 3350.30 | 13.92 | 0 | 4 | -0.18 | 0.02 | 54.64 | 519 | -57 | 1.84 | -3.74 | 49.34 | 577 | +37 | -15.98 | -13.64 | 21.68 | 861 | -23 | -23.98 | -25.85 | 12.76 | 910 | +9 |
+| BBL | Electrical Products | 2461.70 | 13.89 | 0 | 4 | -2.33 | -2.14 | 26.09 | 845 | +98 | 0.51 | -4.99 | 42.22 | 658 | +126 | 6.14 | 9.10 | 81.15 | 208 | +20 | -12.11 | -14.27 | 31.19 | 718 | -12 |
+| BBTC | Food: Major Diversified | 1300.10 | 9.14 | 0 | 4 | -0.77 | -0.58 | 46.67 | 610 | -56 | 10.09 | 4.07 | 76.43 | 269 | -42 | -15.52 | -13.17 | 23.41 | 842 | -118 | -12.73 | -14.88 | 29.85 | 732 | -17 |
+| BDL | Aerospace & Defense | 1077.50 | 121.75 | 0 | 4 | 4.16 | 4.36 | 88.18 | 136 | +200 | 6.58 | 0.74 | 67.28 | 373 | +98 | -13.80 | -11.40 | 27.96 | 792 | +110 | -11.16 | -13.34 | 33.88 | 690 | +101 |
+| BELRISE | Auto Parts: OEM | 241.04 | 139.48 | 0 | 4 | 1.99 | 2.19 | 78.02 | 252 | -53 | 14.59 | 8.32 | 87.95 | 138 | +19 | 4.47 | 7.38 | 78.69 | 235 | -1 | 11.53 | 8.79 | 70.35 | 310 | +31 |
+| BEPL | Industrial Specialties | 108.75 | 11.41 | 0 | 4 | -1.17 | -0.98 | 41.33 | 671 | +56 | 0.20 | -5.28 | 40.02 | 683 | +95 | -14.48 | -12.10 | 26.23 | 811 | -161 | 14.28 | 11.47 | 73.13 | 281 | +7 |
+| BERGEPAINT | Industrial Specialties | 466.85 | 14.14 | 0 | 4 | 0.52 | 0.71 | 64.01 | 412 | +118 | 0.06 | -5.41 | 39.49 | 689 | +24 | -4.89 | -2.24 | 55.65 | 488 | +45 | -5.54 | -7.87 | 45.11 | 573 | +37 |
+| BETA | Pharmaceuticals: Major | 1718.30 | 10.39 | 0 | 4 | 3.80 | 4.00 | 87.22 | 147 | +698 | -7.10 | -12.19 | 13.72 | 982 | +101 | -22.14 | -19.97 | 10.29 | 986 | +25 | 16.76 | 13.88 | 76.01 | 251 | +4 |
+| BFINVEST | Financial Conglomerates | 411.15 | 2.73 | 0 | 4 | -8.01 | -7.83 | 1.49 | 1126 | +13 | 4.34 | -1.37 | 59.54 | 461 | -24 | -7.48 | -4.91 | 49.27 | 558 | -45 | -8.28 | -10.53 | 38.77 | 639 | -35 |
+| BFUTILITIE | Engineering & Construction | 455.45 | 19.20 | 0 | 4 | -0.21 | -0.01 | 54.38 | 522 | +417 | 4.62 | -1.11 | 60.42 | 451 | +106 | -9.76 | -7.25 | 41.62 | 642 | +33 | -31.05 | -32.75 | 6.14 | 979 | -12 |
+| BHAGCHEM | Chemicals: Agricultural | 178.40 | 1.48 | 0 | 4 | -1.13 | -0.93 | 42.03 | 663 | +212 | -10.62 | -15.51 | 7.56 | 1052 | +34 | -33.69 | -31.85 | 1.91 | 1078 | +9 | -28.81 | -30.56 | 6.91 | 971 | -47 |
+| BHAGERIA | Chemicals: Specialty | 343.70 | 7.08 | 0 | 2 | -0.10 | 0.09 | 55.95 | 504 | +395 | -7.30 | -12.37 | 13.28 | 987 | -327 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| BHARATFORG | Metal Fabrication | 1771.00 | 211.05 | 0 | 3 | 1.20 | 1.40 | 71.19 | 330 | -58 | 0.27 | -5.22 | 40.37 | 679 | +60 | -13.70 | -11.30 | 28.69 | 784 | +72 | N/A | N/A | N/A | N/A | N/A |
+| BHARATRAS | Chemicals: Agricultural | 851.60 | 1.85 | 0 | 4 | -7.07 | -6.89 | 2.63 | 1113 | -105 | -10.19 | -15.10 | 8.09 | 1046 | -66 | -30.93 | -29.01 | 2.64 | 1070 | -9 | -40.44 | -41.91 | 2.50 | 1017 | -3 |
+| BHARATSE | Auto Parts: OEM | 210.40 | 4.69 | 0 | 4 | 3.19 | 3.40 | 84.76 | 175 | +252 | 4.30 | -1.41 | 59.28 | 464 | +210 | -4.04 | -1.37 | 57.74 | 465 | +109 | 11.93 | 9.18 | 70.83 | 305 | -3 |
+| BHARTIHEXA | Wireless Telecommunications | 1555.20 | 24.24 | 0 | 4 | -4.67 | -4.48 | 9.11 | 1039 | -17 | -6.17 | -11.30 | 16.45 | 951 | +30 | 2.88 | 5.74 | 75.41 | 271 | +72 | 4.42 | 1.86 | 60.75 | 410 | +33 |
+| BIKAJI | Food: Specialty/Candy | 527.40 | 10.71 | 0 | 4 | 3.63 | 3.83 | 86.60 | 154 | -82 | 14.65 | 8.38 | 88.21 | 135 | +26 | -11.85 | -9.40 | 34.34 | 722 | +112 | -18.31 | -20.32 | 19.48 | 840 | +11 |
+| BIOCON | Pharmaceuticals: Major | 362.00 | 99.12 | 0 | 4 | -0.66 | -0.46 | 48.77 | 586 | -265 | 2.87 | -2.76 | 54.00 | 524 | -48 | -9.74 | -7.22 | 41.80 | 640 | +33 | -12.99 | -15.13 | 29.17 | 739 | -40 |
+| BIRLACORPN | Construction Materials | 824.15 | 4.21 | 0 | 4 | -1.25 | -1.05 | 40.72 | 678 | -122 | 4.32 | -1.39 | 59.37 | 463 | -18 | -6.30 | -3.69 | 52.37 | 524 | -21 | -14.91 | -17.00 | 24.66 | 786 | +16 |
+| BLACKBUCK | Packaged Software | 515.25 | 18.93 | 0 | 4 | 0.01 | 0.21 | 57.44 | 487 | +5 | -9.03 | -14.01 | 10.03 | 1024 | +7 | -11.21 | -8.74 | 36.98 | 693 | +46 | -0.07 | -2.53 | 53.45 | 486 | -18 |
+| BLKASHYAP | Engineering & Construction | 53.76 | 25.12 | 0 | 4 | -3.50 | -3.31 | 15.85 | 962 | +113 | 2.62 | -3.00 | 52.95 | 536 | +17 | -3.72 | -1.05 | 59.11 | 450 | -69 | 0.64 | -1.84 | 54.89 | 471 | -18 |
+| BLS | Data Processing Services | 216.85 | 15.91 | 0 | 4 | -2.66 | -2.47 | 22.68 | 884 | +46 | -1.15 | -6.56 | 34.12 | 750 | -17 | -8.96 | -6.43 | 44.54 | 610 | +23 | -17.66 | -19.68 | 20.25 | 832 | +33 |
+| BLSE | Internet Software/Services | 150.01 | 5.64 | 0 | 4 | 0.50 | 0.69 | 63.75 | 415 | +126 | 2.01 | -3.57 | 50.22 | 567 | +271 | -54.22 | -52.95 | 0.36 | 1095 | +1 | -33.38 | -35.02 | 4.13 | 1000 | +6 |
+| BLUEDART | Air Freight/Couriers | 4539.00 | 3.59 | 0 | 4 | 0.75 | 0.95 | 66.55 | 383 | -128 | 7.03 | 1.17 | 68.25 | 362 | +32 | -11.09 | -8.61 | 37.25 | 690 | -145 | -3.83 | -6.19 | 47.98 | 543 | -6 |
+| BLUEJET | Pharmaceuticals: Major | 516.80 | 38.79 | 0 | 4 | -0.15 | 0.04 | 55.08 | 514 | +31 | 2.63 | -2.99 | 53.21 | 533 | +237 | -11.86 | -9.41 | 34.24 | 723 | -24 | 8.66 | 5.99 | 66.12 | 354 | -65 |
+| BLUESTONE | Specialty Stores | 689.85 | 40.36 | 0 | 4 | 0.28 | 0.47 | 61.03 | 446 | +347 | -0.07 | -5.54 | 38.70 | 698 | +323 | -15.17 | -12.81 | 24.23 | 833 | +79 | 28.93 | 25.76 | 85.99 | 147 | -9 |
+| BOMDYEING | Textiles | 100.39 | 10.60 | 0 | 4 | -0.15 | 0.05 | 55.17 | 513 | +23 | 11.64 | 5.53 | 81.44 | 212 | -50 | -11.54 | -9.08 | 35.34 | 711 | -15 | -17.39 | -19.42 | 20.54 | 829 | +10 |
+| BORORENEW | Industrial Specialties | 370.15 | 18.26 | 0 | 4 | -0.13 | 0.06 | 55.43 | 510 | +133 | -5.95 | -11.09 | 17.41 | 940 | -15 | -25.55 | -23.47 | 6.47 | 1028 | -5 | -29.38 | -31.12 | 6.62 | 974 | +10 |
+| BRIGHOTEL | Hotels/Resorts/Cruise lines | 56.96 | 2.53 | 0 | 4 | 1.50 | 1.70 | 73.56 | 303 | -258 | 7.57 | 1.69 | 69.66 | 346 | -106 | -2.33 | 0.39 | 62.84 | 409 | -31 | -8.05 | -10.32 | 39.64 | 630 | -41 |
+| BSOFT | Packaged Software | 299.15 | 132.26 | 0 | 4 | -1.32 | -1.13 | 39.14 | 696 | -478 | -12.66 | -17.44 | 5.28 | 1078 | -343 | 1.13 | 3.95 | 71.31 | 316 | -91 | -7.98 | -10.25 | 39.92 | 627 | -15 |
+| BUILDPRO | Wholesale Distributors | 169.26 | 12.65 | 0 | 2 | -8.71 | -8.53 | 1.23 | 1129 | -9 | -22.54 | -26.78 | 0.97 | 1127 | +3 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| CAMLINFINE | Chemicals: Specialty | 71.44 | 6.23 | 0 | 4 | 1.49 | 1.69 | 73.47 | 304 | +278 | -13.22 | -17.97 | 4.93 | 1082 | +23 | -30.06 | -28.11 | 3.19 | 1064 | +0 | -40.30 | -41.77 | 2.69 | 1015 | +3 |
+| CAMPUS | Apparel/Footwear | 190.27 | 6.37 | 0 | 4 | -1.40 | -1.21 | 38.35 | 705 | -78 | -0.52 | -5.96 | 36.41 | 724 | -176 | -15.03 | -12.66 | 24.95 | 825 | -38 | -24.24 | -26.10 | 12.28 | 915 | -4 |
+| CAMS | Information Technology Services | 740.00 | 123.68 | 0 | 4 | 2.12 | 2.32 | 78.55 | 246 | -168 | 6.18 | 0.37 | 65.44 | 394 | -139 | -1.60 | 1.14 | 65.12 | 384 | +56 | -2.52 | -4.92 | 49.52 | 527 | -27 |
+| CANFINHOME | Finance/Rental/Leasing | 795.30 | 12.40 | 0 | 4 | 3.16 | 3.36 | 84.59 | 177 | +10 | 8.64 | 2.69 | 73.18 | 306 | +15 | 0.24 | 3.03 | 69.67 | 334 | +22 | -2.60 | -4.99 | 49.33 | 529 | +16 |
+| CANHLIFE | Life/Health Insurance | 128.39 | 9.74 | 0 | 3 | 0.84 | 1.04 | 67.69 | 370 | -282 | 3.09 | -2.55 | 54.88 | 514 | -165 | -16.73 | -14.41 | 20.22 | 877 | -85 | N/A | N/A | N/A | N/A | N/A |
+| CANTABIL | Apparel/Footwear | 249.15 | 4.37 | 0 | 4 | 0.77 | 0.97 | 66.81 | 380 | +113 | -2.74 | -8.07 | 27.62 | 824 | +28 | 2.99 | 5.85 | 75.77 | 267 | -18 | 14.17 | 11.36 | 72.84 | 284 | -21 |
+| CAPACITE | Engineering & Construction | 162.67 | 5.16 | 0 | 4 | -3.81 | -3.62 | 13.40 | 990 | +30 | 6.34 | 0.52 | 66.05 | 387 | -28 | -22.03 | -19.86 | 10.47 | 984 | +31 | -28.41 | -30.18 | 7.49 | 965 | -4 |
+| CAPILLARY | Packaged Software | 503.05 | 13.88 | 0 | 3 | -2.33 | -2.14 | 26.01 | 846 | -461 | -3.31 | -8.60 | 25.86 | 844 | +46 | 2.16 | 5.01 | 73.59 | 291 | +0 | N/A | N/A | N/A | N/A | N/A |
+| CAPITALSFB | Regional Banks | 282.35 | 0.84 | 0 | 4 | -1.22 | -1.03 | 40.98 | 675 | -410 | 7.15 | 1.29 | 68.87 | 355 | -200 | -0.72 | 2.04 | 66.85 | 365 | -72 | 3.48 | 0.94 | 59.31 | 425 | -58 |
+| CAPLIPOINT | Pharmaceuticals: Major | 2062.70 | 28.33 | 0 | 4 | 1.66 | 1.86 | 75.13 | 285 | +566 | -13.19 | -17.94 | 5.01 | 1081 | +12 | -23.92 | -21.80 | 8.38 | 1007 | -70 | 2.13 | -0.38 | 57.01 | 449 | +7 |
+| CARBORUNIV | Industrial Specialties | 1001.20 | 23.66 | 0 | 4 | 0.22 | 0.42 | 59.89 | 459 | +249 | -7.83 | -12.87 | 12.31 | 998 | +40 | -9.02 | -6.49 | 44.35 | 612 | +78 | -2.66 | -5.06 | 49.14 | 531 | +9 |
+| CARERATING | Financial Publishing/Services | 1516.50 | 6.05 | 0 | 4 | -2.65 | -2.46 | 22.94 | 881 | +97 | -6.40 | -11.52 | 15.74 | 959 | -6 | -11.06 | -8.58 | 37.52 | 687 | +50 | -6.31 | -8.61 | 43.19 | 593 | +24 |
+| CARTRADE | Internet Software/Services | 2583.50 | 139.44 | 0 | 4 | -2.72 | -2.53 | 22.33 | 888 | -317 | 11.12 | 5.04 | 79.68 | 232 | +187 | -13.02 | -10.60 | 30.78 | 761 | -23 | 35.03 | 31.71 | 89.54 | 110 | +11 |
+| CARYSIL | Home Furnishings | 865.15 | 6.97 | 0 | 4 | -6.99 | -6.81 | 2.71 | 1112 | -2 | -12.11 | -16.92 | 5.80 | 1072 | -2 | -22.62 | -20.46 | 9.84 | 991 | +3 | -21.01 | -22.95 | 16.12 | 875 | +46 |
+| CASTROLIND | Oil Refining/Marketing | 189.65 | 57.88 | 0 | 4 | -0.37 | -0.18 | 52.10 | 548 | -168 | 1.08 | -4.45 | 45.56 | 620 | +27 | 1.95 | 4.79 | 73.32 | 294 | -43 | 3.23 | 0.69 | 58.83 | 430 | +2 |
+| CCAVENUE | Miscellaneous Commercial Services | 119.09 | 16.38 | 0 | 2 | 3.72 | 3.92 | 86.87 | 151 | +436 | -3.53 | -8.81 | 24.98 | 854 | +145 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| CCL | Food: Specialty/Candy | 922.00 | 18.69 | 0 | 4 | -3.26 | -3.07 | 17.78 | 940 | -413 | -2.57 | -7.90 | 28.41 | 815 | -87 | -16.19 | -13.86 | 21.31 | 865 | -107 | -13.65 | -15.77 | 27.74 | 754 | -2 |
+| CDSL | Investment Banks/Brokers | 1453.00 | 212.89 | 0 | 4 | 1.61 | 1.81 | 74.61 | 291 | -51 | 13.34 | 7.13 | 86.02 | 160 | -55 | 4.46 | 7.36 | 78.60 | 236 | +21 | 19.40 | 16.46 | 78.79 | 222 | +15 |
+| CEATLTD | Automotive Aftermarket | 3552.20 | 26.66 | 0 | 4 | 0.26 | 0.46 | 60.68 | 450 | -79 | 12.95 | 6.77 | 85.14 | 170 | +14 | 4.47 | 7.38 | 78.78 | 234 | +5 | 9.97 | 7.26 | 67.56 | 339 | -17 |
+| CEIGALL | Engineering & Construction | 377.95 | 9.10 | 0 | 4 | -0.38 | -0.19 | 51.93 | 550 | -171 | -3.66 | -8.93 | 24.63 | 858 | -160 | 9.65 | 12.70 | 85.88 | 156 | -44 | 5.43 | 2.83 | 62.38 | 393 | -2 |
+| CELLO | Home Furnishings | 379.65 | 9.74 | 0 | 4 | 2.61 | 2.81 | 82.22 | 204 | -108 | 10.91 | 4.84 | 78.98 | 240 | -73 | 8.66 | 11.68 | 84.88 | 167 | +12 | -1.67 | -4.09 | 51.44 | 507 | -14 |
+| CEMPRO | Engineering & Construction | 1405.60 | 50.35 | 0 | 4 | -0.73 | -0.53 | 47.37 | 602 | -484 | 9.18 | 3.21 | 74.41 | 292 | -169 | 12.98 | 16.13 | 88.98 | 122 | -37 | 24.69 | 21.62 | 82.82 | 180 | -93 |
+| CENTURYPLY | Building Products | 649.05 | 6.19 | 0 | 4 | -1.80 | -1.61 | 33.71 | 758 | -146 | 1.18 | -4.36 | 46.17 | 613 | -10 | -14.08 | -11.69 | 27.23 | 800 | -36 | -15.06 | -17.15 | 24.28 | 790 | -41 |
+| CESC | Electric Utilities | 127.39 | 26.60 | 0 | 4 | -0.23 | -0.04 | 53.68 | 530 | -61 | -0.59 | -6.03 | 35.97 | 729 | -136 | -12.24 | -9.79 | 33.06 | 736 | +30 | -28.35 | -30.12 | 7.58 | 964 | +14 |
+| CGCL | Finance/Rental/Leasing | 227.59 | 189.52 | 0 | 4 | -3.06 | -2.87 | 19.26 | 923 | -188 | -1.74 | -7.11 | 31.49 | 780 | -123 | -9.29 | -6.77 | 43.17 | 625 | -29 | 12.37 | 9.61 | 71.50 | 298 | -30 |
+| CHALET | Hotels/Resorts/Cruise lines | 859.55 | 9.69 | 0 | 4 | 4.31 | 4.52 | 88.79 | 129 | -70 | 5.41 | -0.36 | 63.06 | 421 | -79 | -4.23 | -1.56 | 57.38 | 469 | -35 | 10.95 | 8.22 | 69.29 | 321 | -11 |
+| CHAMBLFERT | Chemicals: Specialty | 374.25 | 14.67 | 0 | 4 | 0.73 | 0.92 | 66.46 | 384 | +28 | 2.34 | -3.26 | 51.36 | 554 | -34 | -9.23 | -6.70 | 43.35 | 623 | -21 | -19.12 | -21.11 | 18.43 | 851 | +7 |
+| CHENNPETRO | Oil Refining/Marketing | 1352.50 | 229.94 | 0 | 4 | -5.16 | -4.98 | 7.79 | 1054 | -250 | -10.54 | -15.43 | 7.65 | 1051 | -28 | -2.49 | 0.23 | 62.39 | 414 | -95 | 13.60 | 10.80 | 72.36 | 289 | -20 |
+| CHOLAHLDNG | Finance/Rental/Leasing | 1368.50 | 23.73 | 0 | 4 | -2.31 | -2.11 | 26.80 | 837 | -275 | 0.26 | -5.23 | 40.28 | 680 | -302 | -7.22 | -4.64 | 49.64 | 554 | -56 | -5.46 | -7.78 | 45.39 | 570 | -11 |
+| CIEINDIA | Auto Parts: OEM | 373.25 | 7.56 | 0 | 4 | 1.30 | 1.50 | 72.15 | 319 | -5 | 5.13 | -0.63 | 62.45 | 428 | +158 | -4.50 | -1.85 | 56.65 | 477 | -16 | -18.13 | -20.14 | 19.58 | 839 | -5 |
+| CLEAN | Chemicals: Specialty | 685.15 | 15.03 | 0 | 4 | -0.73 | -0.54 | 47.11 | 605 | +19 | -7.44 | -12.50 | 13.02 | 990 | -21 | -17.16 | -14.86 | 19.40 | 886 | -36 | -13.13 | -15.27 | 28.50 | 746 | +10 |
+| CLSEL | Agricultural Commodities/Milling | 265.75 | 2.51 | 0 | 4 | -6.18 | -5.99 | 4.73 | 1089 | -18 | 1.96 | -3.62 | 50.04 | 569 | +13 | -12.12 | -9.67 | 33.52 | 731 | -33 | -5.38 | -7.71 | 45.59 | 568 | +15 |
+| CMSINFO | Investment Managers | 210.07 | 10.56 | 0 | 4 | 3.28 | 3.49 | 85.29 | 169 | +83 | 0.31 | -5.18 | 40.72 | 675 | +83 | -15.18 | -12.82 | 24.13 | 834 | -30 | -31.15 | -32.84 | 5.95 | 981 | +7 |
+| COCHINSHIP | Trucks/Construction/Farm Machinery | 1126.00 | 147.17 | 0 | 4 | 0.09 | 0.28 | 58.06 | 480 | +274 | -2.58 | -7.91 | 28.32 | 816 | -12 | -23.71 | -21.58 | 8.74 | 1003 | +33 | -23.53 | -25.41 | 12.96 | 908 | +6 |
+| COLPAL | Household/Personal Care | 1770.00 | 72.65 | 0 | 4 | 0.57 | 0.77 | 64.80 | 403 | -169 | 8.60 | 2.66 | 72.91 | 309 | -117 | -4.83 | -2.18 | 56.10 | 483 | -27 | -11.69 | -13.87 | 32.34 | 706 | -27 |
+| CONCOR | Railroads | 420.70 | 47.92 | 0 | 4 | -4.03 | -3.84 | 11.82 | 1008 | -57 | -0.08 | -5.55 | 38.52 | 700 | -59 | -18.15 | -15.87 | 17.30 | 909 | -35 | -7.41 | -9.68 | 41.46 | 611 | -8 |
+| CONCORDBIO | Miscellaneous Commercial Services | 549.40 | 18.82 | 0 | 4 | 0.22 | 0.42 | 59.81 | 460 | +447 | -55.36 | -57.80 | 0.09 | 1137 | +1 | -62.99 | -61.96 | 0.27 | 1096 | +1 | -55.63 | -56.72 | 0.96 | 1033 | +0 |
+| CONFIPET | Specialty Stores | 69.33 | 18.05 | 0 | 4 | 3.43 | 3.63 | 85.73 | 164 | +947 | 2.56 | -3.05 | 52.59 | 540 | +428 | -13.70 | -11.30 | 28.60 | 785 | +180 | -9.83 | -12.05 | 36.76 | 660 | +153 |
+| CONSOFINVT | Financial Conglomerates | 320.00 | 0.45 | 0 | 2 | -0.14 | 0.06 | 55.25 | 512 | -136 | 5.63 | -0.15 | 63.94 | 411 | -153 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| COROMANDEL | Chemicals: Specialty | 1959.80 | 38.75 | 0 | 4 | -1.81 | -1.62 | 33.19 | 764 | -216 | 13.96 | 7.72 | 86.90 | 150 | +3 | 1.92 | 4.76 | 73.22 | 295 | -16 | 11.16 | 8.43 | 69.58 | 318 | +1 |
+| CORONA | Pharmaceuticals: Major | 2283.70 | 13.09 | 0 | 2 | 0.91 | 1.10 | 68.65 | 359 | -237 | 2.99 | -2.65 | 54.35 | 520 | -85 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| COSMOFIRST | Containers/Packaging | 799.15 | 4.64 | 0 | 4 | -1.42 | -1.23 | 37.92 | 710 | +178 | 8.83 | 2.87 | 73.61 | 301 | +98 | -15.85 | -13.51 | 22.22 | 855 | -22 | 9.95 | 7.25 | 67.37 | 341 | +65 |
+| CRAFTSMAN | Trucks/Construction/Farm Machinery | 12005.00 | 52.67 | 0 | 4 | 2.41 | 2.61 | 80.65 | 222 | +214 | 10.82 | 4.75 | 78.89 | 241 | +106 | 6.68 | 9.65 | 82.15 | 197 | +2 | 30.86 | 27.64 | 88.00 | 126 | -12 |
+| CRAMC | Investment Managers | 228.55 | 5.06 | 0 | 3 | -0.03 | 0.17 | 56.83 | 494 | +15 | 9.87 | 3.86 | 76.08 | 273 | +36 | -10.50 | -8.00 | 39.34 | 667 | +52 | N/A | N/A | N/A | N/A | N/A |
+| CREDITACC | Finance/Rental/Leasing | 999.00 | 56.39 | 0 | 4 | 1.76 | 1.96 | 76.09 | 274 | -200 | -3.79 | -9.06 | 24.10 | 864 | -154 | -28.30 | -26.30 | 3.92 | 1056 | -42 | -21.57 | -23.50 | 15.26 | 884 | -24 |
+| CRISIL | Internet Software/Services | 3925.80 | 20.14 | 0 | 4 | -3.83 | -3.64 | 13.22 | 992 | -113 | -14.63 | -19.30 | 3.52 | 1098 | -9 | -18.71 | -16.45 | 15.57 | 928 | -58 | 0.56 | -1.91 | 54.41 | 476 | -29 |
+| CRIZAC | Internet Software/Services | 145.02 | 2.70 | 0 | 4 | -3.42 | -3.23 | 16.46 | 955 | -113 | 1.06 | -4.47 | 45.03 | 626 | +94 | -11.91 | -9.46 | 34.06 | 725 | -16 | -32.51 | -34.17 | 4.99 | 991 | +5 |
+| CROMPTON | Industrial Machinery | 211.00 | 84.91 | 0 | 4 | -5.55 | -5.37 | 6.57 | 1068 | -446 | 5.50 | -0.27 | 63.41 | 417 | -9 | -8.70 | -6.16 | 45.45 | 600 | -29 | -21.65 | -23.58 | 14.97 | 887 | -18 |
+| CSBBANK | Major Banks | 296.70 | 12.78 | 0 | 4 | -6.18 | -6.00 | 4.64 | 1090 | +12 | -3.54 | -8.82 | 24.89 | 855 | -7 | -12.46 | -10.03 | 32.60 | 741 | +1 | -17.97 | -19.99 | 19.77 | 837 | -1 |
+| CUB | Regional Banks | 233.10 | 90.93 | 0 | 4 | -6.31 | -6.13 | 4.20 | 1095 | -915 | 2.73 | -2.89 | 53.39 | 531 | -305 | -0.80 | 1.96 | 66.67 | 367 | -143 | -5.30 | -7.63 | 45.78 | 566 | -16 |
+| CYIENT | Packaged Software | 1156.90 | 134.30 | 0 | 4 | 0.12 | 0.32 | 58.49 | 475 | -358 | 1.07 | -4.46 | 45.47 | 621 | +105 | -0.66 | 2.10 | 67.12 | 362 | +20 | 29.63 | 26.44 | 86.66 | 140 | +24 |
+| DALBHARAT | Construction Materials | 1487.10 | 33.10 | 0 | 4 | -5.77 | -5.58 | 6.04 | 1074 | -496 | 5.63 | -0.16 | 63.85 | 412 | +63 | -17.69 | -15.39 | 18.12 | 900 | -37 | -13.81 | -15.93 | 27.45 | 757 | -72 |
+| DAMCAPITAL | Regional Banks | 150.08 | 5.40 | 0 | 4 | 3.58 | 3.78 | 86.51 | 155 | -35 | 12.32 | 6.17 | 83.47 | 189 | +6 | 6.10 | 9.05 | 81.06 | 209 | +47 | 3.47 | 0.92 | 59.21 | 426 | +19 |
+| DATAMATICS | Packaged Software | 708.75 | 3.32 | 0 | 4 | 2.35 | 2.55 | 80.39 | 225 | +279 | -1.96 | -7.33 | 31.31 | 782 | +72 | -8.08 | -5.52 | 47.63 | 576 | +98 | -11.47 | -13.65 | 33.11 | 698 | +42 |
+| DATAPATTNS | Electronic Production Equipment | 4336.90 | 255.37 | 0 | 4 | 2.89 | 3.09 | 84.06 | 183 | +70 | 7.84 | 1.94 | 70.36 | 338 | +134 | -3.95 | -1.28 | 58.20 | 460 | +90 | 3.45 | 0.90 | 59.12 | 427 | -8 |
+| DBCORP | Publishing: Newspapers | 149.82 | 0.83 | 0 | 4 | -0.40 | -0.20 | 51.58 | 554 | -14 | 1.11 | -4.43 | 45.73 | 618 | +161 | -24.24 | -22.13 | 8.01 | 1011 | +22 | -26.61 | -28.41 | 9.12 | 948 | +10 |
+| DBL | Engineering & Construction | 389.90 | 12.10 | 0 | 4 | -3.12 | -2.93 | 18.74 | 929 | -618 | 2.94 | -2.69 | 54.18 | 522 | +128 | -1.24 | 1.51 | 65.76 | 377 | +54 | -8.76 | -11.01 | 38.00 | 647 | -45 |
+| DBREALTY | Real Estate Development | 83.55 | 6.64 | 0 | 3 | 0.71 | 0.91 | 66.20 | 387 | +349 | 2.47 | -3.14 | 51.98 | 547 | -31 | -18.80 | -16.54 | 15.39 | 930 | +3 | N/A | N/A | N/A | N/A | N/A |
+| DCAL | Pharmaceuticals: Major | 111.71 | 6.07 | 0 | 4 | -3.34 | -3.15 | 16.99 | 949 | +61 | -25.24 | -29.33 | 0.44 | 1133 | -1 | -38.56 | -36.85 | 0.82 | 1090 | -1 | -41.80 | -43.23 | 2.30 | 1019 | +4 |
+| DCBBANK | Regional Banks | 223.66 | 26.25 | 0 | 4 | -4.23 | -4.04 | 11.12 | 1016 | -225 | 11.94 | 5.81 | 82.67 | 198 | -118 | -0.33 | 2.45 | 68.31 | 349 | -122 | 28.08 | 24.93 | 85.41 | 153 | -18 |
+| DCMSHRIRAM | Industrial Conglomerates | 879.90 | 4.22 | 0 | 4 | -0.24 | -0.04 | 53.50 | 532 | +65 | -3.42 | -8.71 | 25.42 | 849 | +21 | -14.61 | -12.23 | 25.87 | 815 | -42 | -13.87 | -15.99 | 27.26 | 759 | +28 |
+| DCXINDIA | Electrical Products | 146.06 | 41.26 | 0 | 4 | 0.04 | 0.24 | 57.79 | 483 | +518 | 6.40 | 0.58 | 66.40 | 383 | +111 | -15.82 | -13.48 | 22.40 | 853 | +50 | -26.08 | -27.89 | 9.79 | 941 | +23 |
+| DDEVPLSTIK | Chemicals: Major Diversified | 235.02 | 1.62 | 0 | 4 | -2.16 | -1.97 | 28.55 | 817 | +78 | -4.56 | -9.79 | 20.76 | 902 | -11 | -15.69 | -13.34 | 22.68 | 850 | -36 | -6.99 | -9.27 | 42.23 | 603 | -45 |
+| DEEDEV | Industrial Machinery | 436.75 | 17.64 | 0 | 3 | -14.98 | -14.81 | 0.44 | 1138 | +4 | -17.63 | -22.13 | 2.29 | 1112 | +9 | -29.53 | -27.57 | 3.64 | 1059 | -42 | N/A | N/A | N/A | N/A | N/A |
+| DEEPAKNTR | Chemicals: Specialty | 1539.00 | 50.56 | 0 | 4 | 0.51 | 0.71 | 63.92 | 413 | +204 | 4.24 | -1.47 | 59.19 | 465 | +102 | -13.68 | -11.27 | 28.78 | 783 | -51 | -8.21 | -10.47 | 38.96 | 637 | +35 |
+| DEEPINDS | Oilfield Services/Equipment | 618.30 | 15.07 | 0 | 4 | -2.81 | -2.62 | 21.54 | 897 | -215 | -10.80 | -15.69 | 7.12 | 1057 | -54 | -7.02 | -4.43 | 50.18 | 548 | +80 | 17.72 | 14.82 | 77.06 | 240 | -29 |
+| DELHIVERY | Air Freight/Couriers | 458.60 | 138.43 | 0 | 4 | -0.07 | 0.13 | 56.39 | 499 | -224 | 15.43 | 9.11 | 89.27 | 123 | -58 | -0.48 | 2.29 | 67.76 | 355 | -46 | 4.62 | 2.04 | 61.42 | 403 | +2 |
+| DEVYANI | Restaurants | 125.93 | 18.91 | 0 | 4 | 3.45 | 3.65 | 85.81 | 163 | +97 | 3.59 | -2.08 | 57.08 | 489 | +45 | -9.20 | -6.67 | 43.62 | 620 | +4 | 10.92 | 8.19 | 69.10 | 323 | +13 |
+| DHANUKA | Chemicals: Specialty | 911.95 | 12.32 | 0 | 4 | 0.23 | 0.42 | 60.16 | 456 | -141 | 4.23 | -1.47 | 59.10 | 466 | +23 | -7.92 | -5.35 | 48.09 | 571 | -105 | -16.96 | -19.00 | 21.02 | 824 | -32 |
+| DIACABS | Electrical Products | 362.95 | 50.22 | 0 | 2 | -0.03 | 0.17 | 56.92 | 493 | +362 | 6.23 | 0.42 | 65.79 | 390 | -55 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| DIAMONDYD | Food: Specialty/Candy | 1003.90 | 2.51 | 0 | 4 | -0.53 | -0.33 | 50.00 | 572 | -85 | -4.41 | -9.64 | 21.28 | 896 | -38 | -12.31 | -9.87 | 32.97 | 737 | -43 | -13.89 | -16.01 | 27.06 | 761 | +18 |
+| DIFFNKG | Industrial Machinery | 427.85 | 3.07 | 0 | 4 | 1.21 | 1.40 | 71.28 | 329 | +432 | 5.42 | -0.35 | 63.15 | 420 | +22 | -10.40 | -7.90 | 39.71 | 663 | +63 | 31.50 | 28.27 | 88.39 | 122 | +24 |
+| DIVGIITTS | Auto Parts: OEM | 755.65 | 8.79 | 0 | 4 | -3.71 | -3.52 | 14.54 | 977 | +100 | -19.46 | -23.87 | 1.58 | 1120 | +6 | -40.44 | -38.79 | 0.55 | 1093 | -9 | -3.90 | -6.26 | 47.70 | 546 | +40 |
+| DIXON | Electronic Production Equipment | 13138.00 | 422.19 | 0 | 4 | 0.14 | 0.33 | 58.67 | 473 | +222 | 14.36 | 8.10 | 87.34 | 145 | +65 | -9.15 | -6.62 | 43.81 | 618 | +163 | 14.36 | 11.55 | 73.22 | 280 | +13 |
+| DLINKINDIA | Telecommunications Equipment | 406.50 | 2.20 | 0 | 4 | -0.02 | 0.17 | 57.01 | 492 | +92 | -1.26 | -6.67 | 33.86 | 753 | +42 | -6.79 | -4.19 | 50.91 | 540 | +6 | -15.30 | -17.39 | 23.90 | 794 | -39 |
+| DOLLAR | Apparel/Footwear | 252.67 | 1.18 | 0 | 4 | -1.58 | -1.38 | 36.16 | 730 | +116 | 2.40 | -3.21 | 51.72 | 550 | +213 | -5.23 | -2.59 | 55.10 | 494 | +8 | 0.01 | -2.45 | 53.74 | 483 | +33 |
+| DREDGECORP | Marine Shipping | 775.80 | 8.82 | 0 | 4 | -5.21 | -5.02 | 7.62 | 1056 | -30 | -7.72 | -12.77 | 12.58 | 995 | -47 | -27.95 | -25.94 | 4.19 | 1053 | +4 | -35.54 | -37.13 | 3.45 | 1007 | +4 |
+| DSSL | Information Technology Services | 1015.10 | 6.84 | 0 | 4 | -1.80 | -1.61 | 33.45 | 761 | +311 | 4.97 | -0.77 | 62.01 | 433 | +24 | -0.56 | 2.21 | 67.58 | 357 | +44 | -25.17 | -27.01 | 10.75 | 931 | +35 |
+| DVL | Food: Major Diversified | 296.25 | 0.59 | 0 | 4 | -4.05 | -3.86 | 11.73 | 1009 | +24 | 12.92 | 6.74 | 84.96 | 172 | +61 | 4.87 | 7.79 | 79.42 | 227 | -64 | 22.44 | 19.43 | 81.09 | 198 | -9 |
+| DYCL | Electrical Products | 329.30 | 8.80 | 0 | 4 | -3.87 | -3.68 | 12.96 | 995 | +7 | -1.02 | -6.44 | 34.65 | 744 | +65 | -39.29 | -37.60 | 0.64 | 1092 | -21 | 1.51 | -0.99 | 55.76 | 462 | +16 |
+| EDELWEISS | Investment Banks/Brokers | 122.35 | 48.73 | 0 | 4 | -6.25 | -6.06 | 4.47 | 1092 | -163 | -3.58 | -8.86 | 24.80 | 856 | -63 | -5.11 | -2.47 | 55.37 | 491 | -92 | 10.16 | 7.44 | 67.85 | 336 | -7 |
+| EIDPARRY | Chemicals: Agricultural | 666.90 | 15.98 | 0 | 4 | 2.94 | 3.14 | 84.15 | 182 | -52 | 6.42 | 0.60 | 66.67 | 380 | -4 | -16.18 | -13.84 | 21.40 | 864 | -5 | -11.23 | -13.42 | 33.59 | 693 | +34 |
+| EIEL | Environmental Services | 163.20 | 8.33 | 0 | 4 | -3.06 | -2.87 | 19.18 | 924 | -97 | -2.40 | -7.75 | 29.11 | 807 | -39 | -14.47 | -12.09 | 26.32 | 810 | +61 | -12.11 | -14.27 | 31.09 | 719 | -17 |
+| EIHAHOTELS | Hotels/Resorts/Cruise lines | 287.25 | 0.47 | 0 | 4 | -2.00 | -1.80 | 31.00 | 789 | -332 | 1.74 | -3.83 | 48.64 | 585 | -62 | -2.06 | 0.66 | 63.75 | 399 | +46 | -3.17 | -5.55 | 48.56 | 537 | +38 |
+| EKC | Industrial Machinery | 100.51 | 1.41 | 0 | 4 | 0.27 | 0.47 | 60.86 | 448 | +113 | 1.90 | -3.68 | 49.78 | 572 | +22 | -4.99 | -2.35 | 55.56 | 489 | +32 | -12.13 | -14.29 | 31.00 | 720 | +45 |
+| ELECON | Electrical Products | 440.95 | 20.38 | 0 | 4 | -3.05 | -2.86 | 19.35 | 922 | -243 | 0.79 | -4.73 | 43.80 | 640 | -81 | 6.96 | 9.94 | 82.51 | 193 | -8 | -12.89 | -15.03 | 29.56 | 735 | +7 |
+| ELECTCAST | Steel | 63.35 | 8.21 | 0 | 4 | -2.87 | -2.68 | 21.10 | 902 | +6 | -5.29 | -10.48 | 18.82 | 924 | -13 | -24.43 | -22.33 | 7.65 | 1015 | -12 | -15.49 | -17.57 | 23.22 | 801 | +6 |
+| ELGIEQUIP | Industrial Machinery | 558.40 | 19.11 | 0 | 4 | 0.27 | 0.47 | 60.77 | 449 | +49 | 9.22 | 3.24 | 74.58 | 290 | +24 | -11.21 | -8.74 | 36.89 | 694 | -36 | -10.25 | -12.46 | 35.41 | 674 | -66 |
+| ELLEN | Chemicals: Specialty | 281.40 | 11.37 | 0 | 4 | 3.93 | 4.14 | 87.65 | 142 | -57 | -12.06 | -16.88 | 5.98 | 1070 | -14 | -10.78 | -8.30 | 37.89 | 683 | +20 | 1.70 | -0.80 | 56.24 | 457 | -157 |
+| EMAMILTD | Household/Personal Care | 414.35 | 25.61 | 0 | 4 | -1.86 | -1.67 | 32.66 | 770 | -314 | 11.71 | 5.60 | 81.71 | 209 | -34 | 10.01 | 13.07 | 86.34 | 151 | -59 | 6.05 | 3.44 | 63.24 | 384 | -25 |
+| EMIL | Electronics/Appliance Stores | 131.31 | 24.59 | 0 | 4 | -4.65 | -4.47 | 9.19 | 1038 | +26 | -17.65 | -22.16 | 2.20 | 1113 | -1 | -25.26 | -23.18 | 6.92 | 1023 | +28 | 19.66 | 16.71 | 79.17 | 218 | +52 |
+| EMMVEE | Semiconductors | 268.50 | 54.06 | 0 | 3 | 3.77 | 3.97 | 87.13 | 148 | +121 | 10.18 | 4.15 | 76.87 | 264 | -3 | -15.88 | -13.54 | 22.04 | 857 | -10 | N/A | N/A | N/A | N/A | N/A |
+| EMSLIMITED | Engineering & Construction | 295.15 | 3.54 | 0 | 4 | -2.32 | -2.13 | 26.53 | 840 | +214 | 1.55 | -4.01 | 48.02 | 592 | +87 | -20.74 | -18.54 | 11.66 | 971 | +2 | 0.14 | -2.33 | 53.93 | 481 | +9 |
+| EMUDHRA | Packaged Software | 351.70 | 33.52 | 0 | 4 | -1.73 | -1.54 | 34.33 | 751 | -141 | -0.50 | -5.94 | 36.68 | 721 | -78 | -34.03 | -32.19 | 1.82 | 1079 | +4 | -24.86 | -26.71 | 11.42 | 924 | +5 |
+| ENDURANCE | Metal Fabrication | 2587.40 | 26.62 | 0 | 4 | 1.03 | 1.23 | 69.70 | 347 | -254 | 11.92 | 5.80 | 82.50 | 200 | -99 | -8.95 | -6.41 | 44.63 | 609 | -122 | 0.58 | -1.89 | 54.61 | 474 | -28 |
+| ENGINERSIN | Engineering & Construction | 300.75 | 117.27 | 0 | 4 | 1.42 | 1.61 | 72.77 | 312 | +654 | 15.16 | 8.86 | 88.83 | 128 | +36 | 7.39 | 10.38 | 83.24 | 185 | -67 | 26.54 | 23.43 | 84.07 | 167 | -14 |
+| EPACK | Industrial Machinery | 145.34 | 11.63 | 0 | 4 | -12.26 | -12.08 | 0.53 | 1137 | -53 | -16.53 | -21.10 | 2.55 | 1109 | -29 | -22.58 | -20.42 | 9.93 | 990 | -40 | -34.69 | -36.30 | 3.84 | 1003 | -2 |
+| EPACKPEB | Engineering & Construction | 202.62 | 7.18 | 0 | 3 | -1.99 | -1.80 | 31.26 | 786 | +114 | -6.08 | -11.22 | 16.89 | 946 | +52 | -9.54 | -7.03 | 42.44 | 633 | -14 | N/A | N/A | N/A | N/A | N/A |
+| EPIGRAL | Chemicals: Agricultural | 923.45 | 4.34 | 0 | 4 | -0.52 | -0.33 | 50.18 | 570 | +231 | 1.78 | -3.79 | 48.81 | 583 | +36 | -25.50 | -23.42 | 6.74 | 1025 | -25 | -21.16 | -23.10 | 15.93 | 877 | -27 |
+| EPL | Containers/Packaging | 235.59 | 17.29 | 0 | 4 | 0.17 | 0.36 | 59.11 | 468 | +44 | 7.88 | 1.97 | 70.54 | 336 | -57 | -1.98 | 0.75 | 64.21 | 394 | +232 | 9.32 | 6.63 | 67.08 | 344 | -31 |
+| EQUITASBNK | Regional Banks | 54.01 | 94.20 | 0 | 4 | -6.41 | -6.23 | 3.85 | 1099 | -409 | -5.53 | -10.70 | 18.47 | 928 | +173 | -26.44 | -24.39 | 5.01 | 1044 | -19 | -25.30 | -27.14 | 10.65 | 932 | -36 |
+| ERIS | Pharmaceuticals: Major | 1300.90 | 12.72 | 0 | 4 | -1.24 | -1.04 | 40.81 | 677 | -58 | 11.80 | 5.68 | 82.06 | 205 | +30 | 0.08 | 2.86 | 69.13 | 340 | -15 | -4.86 | -7.20 | 46.55 | 558 | +42 |
+| ESABINDIA | Electrical Products | 5298.50 | 2.03 | 0 | 4 | 2.51 | 2.71 | 81.61 | 211 | +20 | -0.44 | -5.89 | 36.85 | 719 | +5 | -13.73 | -11.33 | 28.51 | 786 | -7 | -10.75 | -12.95 | 34.26 | 686 | +22 |
+| ESCORTS | Auto Parts: OEM | 2576.30 | 25.94 | 0 | 4 | 4.24 | 4.45 | 88.53 | 132 | +192 | -1.70 | -7.08 | 31.93 | 775 | +240 | -14.58 | -12.20 | 26.05 | 813 | +67 | -6.35 | -8.66 | 43.09 | 594 | +93 |
+| ETHOSLTD | Catalog/Specialty Distribution | 2785.20 | 10.06 | 0 | 4 | 2.62 | 2.82 | 82.31 | 203 | +231 | 10.81 | 4.74 | 78.80 | 242 | -63 | -3.27 | -0.58 | 60.56 | 434 | -1 | 16.99 | 14.11 | 76.39 | 247 | -4 |
+| EUROPRATIK | Office Equipment/Supplies | 173.37 | 17.39 | 0 | 3 | -5.99 | -5.80 | 4.90 | 1087 | +16 | 0.63 | -4.88 | 43.10 | 648 | -27 | -33.15 | -31.29 | 2.09 | 1076 | +2 | N/A | N/A | N/A | N/A | N/A |
+| EVEREADY | Electrical Products | 311.20 | 2.14 | 0 | 4 | -3.71 | -3.52 | 14.45 | 978 | -98 | -2.78 | -8.10 | 27.35 | 827 | -275 | -4.28 | -1.61 | 57.29 | 470 | -17 | -8.93 | -11.17 | 37.72 | 650 | -133 |
+| EXCELINDUS | Chemicals: Agricultural | 982.00 | 0.69 | 0 | 4 | -0.64 | -0.45 | 48.95 | 584 | +17 | 14.60 | 8.33 | 88.04 | 137 | +80 | -3.30 | -0.61 | 60.29 | 437 | +22 | 5.96 | 3.35 | 63.05 | 386 | -5 |
+| EXICOM | Electrical Products | 126.10 | 6.60 | 0 | 4 | -2.60 | -2.41 | 23.56 | 874 | +93 | -4.06 | -9.31 | 22.87 | 878 | +0 | -22.63 | -20.48 | 9.74 | 992 | +3 | -13.02 | -15.16 | 28.98 | 741 | +84 |
+| EXIDEIND | Auto Parts: OEM | 399.10 | 100.76 | 0 | 4 | -2.31 | -2.12 | 26.71 | 838 | -62 | 15.82 | 9.48 | 89.71 | 118 | +165 | -8.52 | -5.97 | 46.08 | 593 | +107 | -1.07 | -3.50 | 52.40 | 497 | +33 |
+| EXPLEOSOL | Information Technology Services | 760.15 | 1.48 | 0 | 4 | -2.61 | -2.42 | 23.29 | 877 | -138 | -6.99 | -12.08 | 14.25 | 976 | -37 | -11.03 | -8.55 | 37.61 | 686 | +24 | -12.35 | -14.51 | 30.33 | 727 | +50 |
+| FACT | Chemicals: Agricultural | 788.50 | 33.10 | 0 | 4 | 4.12 | 4.32 | 88.00 | 138 | +109 | 14.53 | 8.26 | 87.77 | 140 | -14 | -3.28 | -0.59 | 60.38 | 436 | +3 | -8.90 | -11.14 | 37.81 | 649 | +19 |
+| FDC | Pharmaceuticals: Major | 368.60 | 8.73 | 0 | 4 | -2.37 | -2.18 | 25.74 | 849 | -158 | -2.27 | -7.62 | 29.46 | 803 | -11 | 10.49 | 13.57 | 86.89 | 145 | +8 | -7.98 | -10.24 | 40.02 | 626 | -6 |
+| FEDERALBNK | Major Banks | 360.00 | 252.89 | 0 | 4 | -3.61 | -3.43 | 15.15 | 970 | -338 | 3.52 | -2.14 | 56.73 | 493 | +31 | 3.08 | 5.95 | 76.05 | 264 | +69 | 19.96 | 17.01 | 79.46 | 215 | +20 |
+| FEDFINA | Finance/Rental/Leasing | 138.60 | 13.60 | 0 | 4 | -2.32 | -2.13 | 26.36 | 842 | +127 | -6.24 | -11.38 | 16.09 | 955 | +38 | -11.27 | -8.80 | 36.25 | 701 | +47 | -14.47 | -16.58 | 25.53 | 777 | -32 |
+| FINCABLES | Electrical Products | 1183.50 | 142.02 | 0 | 4 | -1.38 | -1.18 | 38.44 | 704 | +222 | 1.54 | -4.01 | 47.93 | 593 | +74 | -5.19 | -2.55 | 55.28 | 492 | +39 | 16.25 | 13.39 | 75.24 | 259 | +6 |
+| FINEORG | Chemicals: Major Diversified | 5707.50 | 10.50 | 0 | 4 | 3.99 | 4.19 | 87.83 | 140 | +56 | 10.78 | 4.72 | 78.63 | 244 | +57 | 8.60 | 11.62 | 84.79 | 168 | +42 | 21.70 | 18.71 | 80.61 | 203 | +16 |
+| FINPIPE | Miscellaneous Manufacturing | 145.29 | 6.90 | 0 | 4 | 1.26 | 1.46 | 71.54 | 326 | +9 | 2.27 | -3.32 | 51.01 | 558 | -30 | -6.47 | -3.87 | 51.55 | 533 | +3 | -15.99 | -18.06 | 22.94 | 804 | +12 |
+| FIRSTCRY | Apparel/Footwear Retail | 160.17 | 119.17 | 0 | 4 | -5.89 | -5.71 | 5.34 | 1082 | +7 | -3.43 | -8.72 | 25.33 | 850 | -20 | -9.85 | -7.34 | 41.17 | 647 | +34 | -27.10 | -28.89 | 8.93 | 950 | +0 |
+| FIVESTAR | Finance/Rental/Leasing | 400.85 | 29.90 | 0 | 4 | -7.42 | -7.24 | 1.84 | 1122 | -170 | -4.30 | -9.54 | 22.16 | 886 | -195 | -25.51 | -23.43 | 6.65 | 1026 | -48 | -7.76 | -10.03 | 40.40 | 622 | -57 |
+| FLAIR | Office Equipment/Supplies | 247.49 | 3.37 | 0 | 4 | 2.94 | 3.15 | 84.24 | 181 | +2 | 6.19 | 0.38 | 65.61 | 392 | +31 | -1.00 | 1.76 | 66.21 | 372 | -14 | -13.99 | -16.11 | 26.68 | 765 | +17 |
+| FLUOROCHEM | Chemicals: Specialty | 4824.50 | 47.28 | 0 | 4 | -2.19 | -2.00 | 27.93 | 824 | +33 | 12.72 | 6.55 | 84.43 | 178 | +18 | 1.78 | 4.61 | 72.86 | 299 | -19 | 34.23 | 30.93 | 89.35 | 112 | +17 |
+| FMGOETZE | Industrial Machinery | 424.05 | 3.69 | 0 | 4 | -0.89 | -0.69 | 44.31 | 637 | +18 | -4.56 | -9.78 | 20.84 | 901 | -77 | -32.14 | -30.25 | 2.55 | 1071 | -3 | -2.19 | -4.60 | 50.19 | 520 | -28 |
+| FORTIS | Hospital/Nursing Management | 832.00 | 97.81 | 0 | 4 | 0.85 | 1.05 | 67.86 | 368 | -183 | 10.21 | 4.18 | 77.13 | 261 | +47 | -9.07 | -6.54 | 44.08 | 615 | -29 | -11.55 | -13.73 | 32.82 | 701 | -11 |
+| FOSECOIND | Chemicals: Major Diversified | 5834.00 | 4.06 | 0 | 4 | -1.33 | -1.13 | 38.88 | 699 | -90 | -1.08 | -6.49 | 34.39 | 747 | -59 | -7.52 | -4.95 | 49.18 | 559 | +32 | 19.97 | 17.02 | 79.56 | 214 | +26 |
+| FSL | Miscellaneous Commercial Services | 284.40 | 39.63 | 0 | 4 | 1.05 | 1.25 | 69.88 | 345 | -287 | -7.20 | -12.28 | 13.63 | 983 | -48 | 6.92 | 9.89 | 82.42 | 194 | -37 | 7.08 | 4.44 | 64.11 | 375 | -18 |
+| GAEL | Food: Specialty/Candy | 140.92 | 8.71 | 0 | 4 | -2.85 | -2.66 | 21.28 | 900 | -190 | -2.71 | -8.04 | 27.79 | 822 | +34 | -18.08 | -15.80 | 17.67 | 905 | +46 | -9.07 | -11.30 | 37.62 | 651 | -8 |
+| GALAXYSURF | Household/Personal Care | 2079.20 | 7.18 | 0 | 4 | -3.50 | -3.31 | 15.94 | 961 | +104 | -4.31 | -9.55 | 22.08 | 887 | +44 | -6.74 | -4.14 | 51.09 | 538 | +74 | 18.53 | 15.62 | 77.45 | 236 | +18 |
+| GALLANTT | Steel | 539.60 | 80.91 | 0 | 4 | 0.28 | 0.48 | 61.30 | 443 | -83 | -5.66 | -10.83 | 18.21 | 931 | -273 | -2.39 | 0.33 | 62.57 | 412 | +35 | -16.73 | -18.78 | 21.50 | 819 | -23 |
+| GANDHITUBE | Steel | 889.75 | 0.37 | 0 | 4 | -0.69 | -0.50 | 48.25 | 592 | -67 | 2.45 | -3.16 | 51.89 | 548 | +98 | -0.76 | 2.00 | 66.76 | 366 | +37 | 5.06 | 2.47 | 61.80 | 399 | +28 |
+| GANECOS | Textiles | 883.00 | 7.27 | 0 | 4 | 0.72 | 0.92 | 66.37 | 385 | +1 | -14.22 | -18.92 | 4.13 | 1091 | -4 | -13.82 | -11.42 | 27.87 | 793 | -28 | -3.02 | -5.41 | 48.75 | 535 | +46 |
+| GANESHHOU | Homebuilding | 652.90 | 2.43 | 0 | 4 | -1.90 | -1.71 | 32.14 | 776 | -298 | -4.00 | -9.25 | 23.04 | 876 | -63 | -15.78 | -13.43 | 22.59 | 851 | -48 | -13.89 | -16.01 | 26.97 | 762 | -122 |
+| GARFIBRES | Textiles | 734.95 | 2.91 | 0 | 4 | 1.66 | 1.86 | 75.22 | 284 | +408 | -2.23 | -7.59 | 29.73 | 800 | +75 | -12.79 | -10.36 | 31.60 | 752 | -68 | 11.49 | 8.75 | 70.25 | 311 | +28 |
+| GARUDA | Engineering & Construction | 148.26 | 4.63 | 0 | 4 | -4.03 | -3.84 | 11.91 | 1007 | -416 | 4.67 | -1.06 | 60.77 | 447 | -60 | -17.56 | -15.27 | 18.21 | 899 | -168 | -12.98 | -15.12 | 29.27 | 738 | -14 |
+| GENESYS | Packaged Software | 162.82 | 8.43 | 0 | 4 | -5.87 | -5.68 | 5.52 | 1080 | +21 | -13.81 | -18.52 | 4.57 | 1086 | +4 | -27.93 | -25.93 | 4.28 | 1052 | +3 | -42.06 | -43.48 | 2.21 | 1020 | -5 |
+| GENUSPOWER | Electronic Equipment/Instruments | 260.25 | 21.57 | 0 | 4 | -2.01 | -1.82 | 30.56 | 794 | -174 | -6.49 | -11.60 | 15.48 | 962 | -119 | -20.63 | -18.42 | 12.11 | 966 | +1 | -17.16 | -19.20 | 20.83 | 826 | -21 |
+| GHCL | Textiles | 426.15 | 7.25 | 0 | 4 | -4.27 | -4.08 | 10.86 | 1019 | -34 | 9.63 | 3.63 | 75.37 | 281 | -28 | -2.17 | 0.55 | 63.48 | 402 | -6 | -3.73 | -6.10 | 48.18 | 541 | +19 |
+| GICRE | Specialty Insurance | 335.50 | 21.50 | 0 | 4 | 0.96 | 1.16 | 69.44 | 350 | +139 | 4.10 | -1.60 | 58.49 | 473 | +60 | -5.43 | -2.79 | 54.46 | 501 | -24 | -13.56 | -15.69 | 27.93 | 752 | -24 |
+| GILLETTE | Household/Personal Care | 7243.00 | 12.26 | 0 | 4 | 2.15 | 2.35 | 78.72 | 244 | +37 | 0.96 | -4.56 | 44.33 | 634 | +98 | -2.38 | 0.34 | 62.66 | 411 | -44 | -6.01 | -8.33 | 43.86 | 586 | +9 |
+| GIPCL | Electric Utilities | 150.60 | 4.54 | 0 | 4 | -3.58 | -3.39 | 15.32 | 968 | -110 | -8.61 | -13.61 | 11.17 | 1011 | -54 | -24.25 | -22.14 | 7.92 | 1012 | -13 | -11.99 | -14.15 | 31.38 | 716 | +0 |
+| GKENERGY | Engineering & Construction | 96.19 | 3.72 | 0 | 3 | 0.78 | 0.97 | 66.99 | 378 | +283 | -1.73 | -7.11 | 31.57 | 779 | +197 | -27.17 | -25.15 | 4.83 | 1046 | +8 | N/A | N/A | N/A | N/A | N/A |
+| GKSL | Hospital/Nursing Management | 146.30 | 6.70 | 0 | 2 | -2.00 | -1.80 | 30.91 | 790 | +57 | -14.88 | -19.54 | 3.08 | 1103 | -6 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| GLAXO | Pharmaceuticals: Major | 2770.40 | 25.12 | 0 | 4 | 1.57 | 1.77 | 74.17 | 296 | -140 | 10.15 | 4.12 | 76.78 | 265 | -42 | -7.53 | -4.96 | 49.09 | 560 | +23 | 27.87 | 24.72 | 85.32 | 154 | +1 |
+| GLOBUSSPR | Beverages: Alcoholic | 739.60 | 24.28 | 0 | 4 | -5.78 | -5.60 | 5.95 | 1075 | +25 | 0.68 | -4.83 | 43.27 | 646 | +24 | -19.16 | -16.92 | 14.57 | 939 | -26 | -14.41 | -16.52 | 25.72 | 775 | +18 |
+| GMBREW | Beverages: Alcoholic | 844.35 | 1.85 | 0 | 4 | -1.43 | -1.24 | 37.83 | 711 | -122 | 4.94 | -0.80 | 61.74 | 436 | -2 | -3.64 | -0.95 | 59.20 | 449 | -41 | -4.70 | -7.05 | 46.93 | 554 | +22 |
+| GMDCLTD | Wholesale Distributors | 466.00 | 80.24 | 0 | 4 | 1.72 | 1.92 | 75.74 | 278 | +203 | 6.21 | 0.40 | 65.70 | 391 | +72 | -17.12 | -14.81 | 19.49 | 885 | +22 | -31.15 | -32.85 | 5.85 | 982 | +1 |
+| GMRP&UI | Engineering & Construction | 88.17 | 5.92 | 0 | 4 | 0.27 | 0.47 | 60.95 | 447 | +207 | -4.45 | -9.68 | 21.20 | 897 | +24 | -1.94 | 0.79 | 64.39 | 392 | -5 | -19.46 | -21.45 | 17.85 | 857 | -10 |
+| GNFC | Chemicals: Specialty | 451.75 | 21.24 | 0 | 4 | -2.90 | -2.71 | 20.84 | 905 | -96 | -12.70 | -17.48 | 5.19 | 1079 | -8 | -21.57 | -19.39 | 10.75 | 981 | -20 | -10.17 | -12.38 | 35.60 | 672 | +2 |
+| GOCLCORP | Industrial Specialties | 326.85 | 1.35 | 0 | 4 | -2.53 | -2.34 | 24.26 | 866 | -7 | 1.38 | -4.17 | 47.23 | 601 | +4 | -15.62 | -13.27 | 23.13 | 845 | +13 | -22.26 | -24.17 | 14.40 | 893 | -5 |
+| GOCOLORS | Apparel/Footwear | 269.98 | 15.77 | 0 | 4 | -2.17 | -1.98 | 28.20 | 821 | +55 | 5.09 | -0.66 | 62.36 | 429 | +61 | -16.53 | -14.21 | 20.67 | 872 | +17 | -32.78 | -34.44 | 4.70 | 994 | -35 |
+| GODAVARIB | Agricultural Commodities/Milling | 202.41 | 1.96 | 0 | 4 | 2.35 | 2.55 | 80.30 | 226 | +73 | -2.35 | -7.69 | 29.20 | 806 | -98 | -13.85 | -11.45 | 27.60 | 796 | -24 | -27.87 | -29.64 | 8.45 | 955 | -23 |
+| GODFRYPHLP | Tobacco | 1797.00 | 50.71 | 0 | 4 | 0.67 | 0.87 | 65.67 | 393 | +145 | 3.04 | -2.60 | 54.62 | 517 | +13 | -13.54 | -11.13 | 29.42 | 776 | +53 | -19.56 | -21.54 | 17.75 | 858 | +19 |
+| GODREJAGRO | Agricultural Commodities/Milling | 579.95 | 7.72 | 0 | 4 | -0.55 | -0.35 | 49.56 | 577 | -204 | -1.28 | -6.68 | 33.77 | 754 | -74 | -11.38 | -8.91 | 35.70 | 707 | -229 | 0.57 | -1.90 | 54.51 | 475 | +0 |
+| GODREJCP | Household/Personal Care | 918.90 | 123.50 | 0 | 3 | -0.07 | 0.13 | 56.48 | 498 | -310 | 9.78 | 3.78 | 75.90 | 275 | -146 | 1.54 | 4.36 | 72.04 | 308 | -96 | N/A | N/A | N/A | N/A | N/A |
+| GODREJIND | Agricultural Commodities/Milling | 1047.80 | 58.24 | 0 | 4 | -3.90 | -3.71 | 12.87 | 996 | -132 | 12.85 | 6.67 | 84.78 | 174 | +30 | -9.12 | -6.59 | 43.99 | 616 | -102 | 0.05 | -2.41 | 53.84 | 482 | +0 |
+| GOKULAGRO | Agricultural Commodities/Milling | 204.31 | 5.81 | 0 | 4 | -4.28 | -4.09 | 10.77 | 1020 | -33 | -5.64 | -10.80 | 18.29 | 930 | -158 | -13.64 | -11.24 | 28.96 | 781 | +44 | -11.86 | -14.03 | 31.67 | 713 | -13 |
+| GOLDIAM | Other Consumer Specialties | 289.85 | 10.33 | 0 | 4 | -1.76 | -1.57 | 34.06 | 754 | -21 | -2.78 | -8.11 | 27.26 | 828 | -11 | -15.35 | -12.99 | 23.77 | 838 | +53 | -32.87 | -34.52 | 4.61 | 995 | +8 |
+| GOODYEAR | Automotive Aftermarket | 675.25 | 0.45 | 0 | 4 | -0.21 | -0.02 | 54.20 | 524 | -24 | 0.81 | -4.71 | 43.98 | 638 | +123 | -8.29 | -5.73 | 47.18 | 581 | +33 | -7.81 | -10.08 | 40.31 | 623 | +23 |
+| GOPAL | Food: Specialty/Candy | 271.59 | 3.41 | 0 | 4 | 2.17 | 2.37 | 78.98 | 241 | -26 | 12.41 | 6.26 | 83.82 | 185 | +80 | 0.48 | 3.27 | 70.04 | 330 | +44 | -5.58 | -7.91 | 44.82 | 576 | +52 |
+| GPIL | Steel | 211.14 | 25.92 | 0 | 4 | -6.86 | -6.68 | 3.15 | 1107 | -25 | 8.49 | 2.56 | 72.47 | 314 | -25 | -13.26 | -10.84 | 30.24 | 767 | -22 | -26.17 | -27.99 | 9.60 | 943 | +1 |
+| GPPL | Marine Shipping | 178.50 | 18.14 | 0 | 4 | 1.69 | 1.89 | 75.48 | 281 | +84 | 9.82 | 3.81 | 75.99 | 274 | -53 | 5.61 | 8.55 | 80.51 | 215 | -23 | 15.74 | 12.89 | 74.76 | 264 | +18 |
+| GPTHEALTH | Hospital/Nursing Management | 132.29 | 1.31 | 0 | 4 | -1.26 | -1.07 | 40.11 | 685 | -269 | -3.36 | -8.65 | 25.59 | 847 | -64 | -12.75 | -10.33 | 31.97 | 748 | +14 | -13.21 | -15.35 | 28.41 | 747 | -11 |
+| GPTINFRA | Engineering & Construction | 113.89 | 1.88 | 0 | 4 | -0.37 | -0.17 | 52.36 | 545 | -17 | 0.58 | -4.92 | 42.57 | 654 | -110 | 5.73 | 8.67 | 80.78 | 212 | +18 | -2.18 | -4.59 | 50.29 | 519 | -25 |
+| GRANULES | Pharmaceuticals: Other | 825.55 | 114.98 | 0 | 4 | 0.35 | 0.55 | 61.82 | 437 | -346 | -1.41 | -6.81 | 33.25 | 760 | -24 | -1.39 | 1.35 | 65.57 | 379 | -61 | 4.32 | 1.75 | 60.56 | 412 | -4 |
+| GRAPHITE | Industrial Specialties | 792.00 | 49.91 | 0 | 4 | 3.46 | 3.66 | 85.90 | 162 | +114 | 5.96 | 0.16 | 64.91 | 400 | -54 | 8.06 | 11.07 | 83.88 | 178 | -75 | 10.69 | 7.97 | 68.81 | 326 | +27 |
+| GRAUWEIL | Chemicals: Specialty | 77.00 | 1.99 | 0 | 4 | 1.88 | 2.08 | 77.15 | 262 | -55 | -6.23 | -11.37 | 16.18 | 954 | -210 | 11.19 | 14.29 | 87.80 | 135 | +35 | 7.59 | 4.94 | 64.59 | 370 | -32 |
+| GRAVITA | Other Metals/Minerals | 1469.60 | 22.87 | 0 | 4 | -0.84 | -0.64 | 45.62 | 622 | -168 | 3.96 | -1.73 | 57.87 | 480 | -135 | -17.53 | -15.23 | 18.31 | 898 | +22 | -10.37 | -12.57 | 35.22 | 676 | +8 |
+| GREENLAM | Forest Products | 217.74 | 5.78 | 0 | 4 | -2.77 | -2.58 | 21.98 | 892 | -20 | 4.13 | -1.57 | 58.58 | 472 | +55 | -10.25 | -7.75 | 40.26 | 657 | +15 | -7.71 | -9.98 | 40.60 | 620 | -97 |
+| GREENPANEL | Forest Products | 150.85 | 3.17 | 0 | 4 | -0.70 | -0.50 | 48.16 | 593 | +45 | 8.66 | 2.71 | 73.26 | 305 | -161 | -5.77 | -3.15 | 53.55 | 511 | -116 | -20.64 | -22.60 | 16.41 | 872 | -30 |
+| GREENPLY | Building Products | 271.05 | 4.82 | 0 | 4 | 1.01 | 1.20 | 69.53 | 349 | -19 | -9.89 | -14.82 | 8.71 | 1039 | -27 | -5.29 | -2.66 | 55.01 | 495 | +28 | -1.62 | -4.04 | 51.63 | 505 | -53 |
+| GRINDWELL | Industrial Specialties | 1783.20 | 7.70 | 0 | 4 | -1.95 | -1.75 | 31.79 | 780 | -123 | -8.80 | -13.79 | 10.55 | 1018 | -221 | -10.09 | -7.59 | 40.53 | 654 | -14 | -7.19 | -9.48 | 41.94 | 606 | -75 |
+| GRINFRA | Engineering & Construction | 746.20 | 2.36 | 0 | 4 | -2.79 | -2.60 | 21.63 | 896 | -164 | -3.71 | -8.98 | 24.27 | 862 | -2 | -15.44 | -13.09 | 23.50 | 841 | -50 | -14.25 | -16.36 | 26.01 | 772 | +12 |
+| GRMOVER | Agricultural Commodities/Milling | 76.72 | 12.78 | 0 | 4 | -6.85 | -6.67 | 3.24 | 1106 | -212 | -16.83 | -21.38 | 2.37 | 1111 | -89 | -10.05 | -7.54 | 40.62 | 653 | -80 | -49.42 | -50.67 | 1.44 | 1028 | +0 |
+| GRSE | Trucks/Construction/Farm Machinery | 2144.00 | 138.06 | 0 | 4 | 3.99 | 4.20 | 87.92 | 139 | +421 | 11.48 | 5.38 | 80.83 | 219 | +108 | -15.26 | -12.91 | 23.86 | 837 | +90 | -19.90 | -21.87 | 17.56 | 860 | +16 |
+| GRWRHITECH | Chemicals: Specialty | 7580.00 | 52.46 | 0 | 4 | -2.56 | -2.37 | 24.08 | 868 | +18 | 8.02 | 2.10 | 70.89 | 332 | +138 | 5.14 | 8.07 | 79.96 | 221 | +2 | 29.27 | 26.09 | 86.37 | 143 | -10 |
+| GSFC | Chemicals: Agricultural | 138.34 | 10.48 | 0 | 4 | -1.07 | -0.87 | 42.64 | 656 | -76 | 1.07 | -4.47 | 45.38 | 622 | -12 | -12.86 | -10.43 | 31.42 | 754 | -39 | -14.01 | -16.12 | 26.58 | 766 | +7 |
+| GUFICBIO | Pharmaceuticals: Major | 422.10 | 5.83 | 0 | 4 | 0.92 | 1.12 | 68.83 | 357 | +429 | 0.79 | -4.73 | 43.71 | 641 | +123 | 0.25 | 3.04 | 69.76 | 333 | -4 | 19.12 | 16.19 | 78.41 | 226 | +46 |
+| GUJALKALI | Chemicals: Specialty | 572.75 | 16.19 | 0 | 4 | -3.41 | -3.23 | 16.55 | 954 | -471 | 3.38 | -2.28 | 56.38 | 497 | +2 | -19.70 | -17.47 | 13.66 | 949 | -64 | -13.93 | -16.05 | 26.78 | 764 | +8 |
+| GUJTHEM | Pharmaceuticals: Major | 345.60 | 6.01 | 0 | 4 | -2.01 | -1.82 | 30.65 | 793 | +20 | -8.04 | -13.07 | 11.96 | 1002 | -188 | -17.70 | -15.41 | 18.03 | 901 | -19 | -16.05 | -18.11 | 22.84 | 805 | -51 |
+| GULFOILLUB | Industrial Specialties | 1150.30 | 6.14 | 0 | 4 | 0.09 | 0.28 | 57.97 | 481 | -114 | 8.18 | 2.26 | 71.50 | 325 | +36 | 1.54 | 4.37 | 72.13 | 307 | -42 | 26.89 | 23.77 | 84.26 | 165 | +18 |
+| GVPIL | Engineering & Construction | 565.05 | 8.74 | 0 | 4 | 3.11 | 3.31 | 84.50 | 178 | +480 | -4.38 | -9.62 | 21.37 | 895 | +38 | -9.24 | -6.71 | 43.26 | 624 | +53 | -37.74 | -39.27 | 2.88 | 1013 | -4 |
+| HAPPSTMNDS | Data Processing Services | 290.50 | 14.38 | 0 | 4 | -2.06 | -1.86 | 29.95 | 801 | +117 | -4.80 | -10.01 | 20.23 | 908 | +28 | -19.91 | -17.68 | 13.11 | 955 | +105 | -20.47 | -22.42 | 16.89 | 867 | +30 |
+| HAPPYFORGE | Metal Fabrication | 1794.70 | 47.46 | 0 | 4 | -0.37 | -0.18 | 52.19 | 547 | -30 | -0.30 | -5.76 | 37.29 | 714 | -52 | -25.85 | -23.79 | 5.56 | 1038 | -17 | 29.41 | 26.23 | 86.47 | 142 | +12 |
+| HARIOMPIPE | Steel | 318.25 | 10.68 | 0 | 4 | -7.74 | -7.56 | 1.58 | 1125 | N/A | 1.21 | -4.33 | 46.26 | 612 | N/A | -7.09 | -4.51 | 50.09 | 549 | N/A | -24.96 | -26.81 | 11.04 | 928 | N/A |
+| HARSHA | Metal Fabrication | 425.75 | 3.60 | 0 | 4 | -3.81 | -3.62 | 13.49 | 989 | -55 | 0.44 | -5.06 | 41.69 | 664 | -12 | -6.16 | -3.55 | 52.64 | 521 | -37 | 8.15 | 5.49 | 65.45 | 361 | +5 |
+| HATSUN | Food: Meat/Fish/Dairy | 1065.75 | 4.00 | 0 | 4 | 1.64 | 1.84 | 74.96 | 287 | -63 | 5.81 | 0.02 | 64.56 | 404 | -110 | -9.57 | -7.05 | 42.35 | 634 | -13 | 17.66 | 14.77 | 76.87 | 242 | +6 |
+| HAVELLS | Electrical Products | 1142.40 | 104.95 | 0 | 4 | -5.66 | -5.48 | 6.22 | 1072 | -503 | 12.00 | 5.87 | 82.85 | 196 | -66 | -6.58 | -3.97 | 51.37 | 535 | -83 | -2.06 | -4.47 | 50.67 | 515 | -65 |
+| HCG | Hospital/Nursing Management | 639.40 | 6.35 | 0 | 4 | 2.31 | 2.51 | 80.12 | 228 | -94 | 8.11 | 2.19 | 71.24 | 328 | +9 | -9.23 | -6.70 | 43.44 | 622 | +137 | -0.09 | -2.54 | 53.36 | 487 | +2 |
+| HDBFS | Finance/Rental/Leasing | 550.50 | 37.89 | 0 | 4 | -3.04 | -2.85 | 19.53 | 920 | -309 | 10.19 | 4.16 | 77.04 | 262 | +14 | -18.48 | -16.21 | 16.21 | 921 | -13 | -14.58 | -16.68 | 25.24 | 780 | +0 |
+| HEIDELBERG | Construction Materials | 119.01 | 1.90 | 0 | 4 | 0.28 | 0.47 | 61.21 | 444 | -96 | -3.98 | -9.23 | 23.22 | 874 | +30 | -24.72 | -22.63 | 7.47 | 1017 | -13 | -21.35 | -23.28 | 15.64 | 880 | +1 |
+| HEMIPROP | Real Estate Development | 107.97 | 2.84 | 0 | 4 | -0.37 | -0.17 | 52.28 | 546 | +103 | 0.31 | -5.18 | 40.81 | 674 | -116 | -15.08 | -12.72 | 24.50 | 830 | +24 | -21.82 | -23.75 | 14.78 | 889 | +12 |
+| HERITGFOOD | Food: Meat/Fish/Dairy | 370.30 | 5.33 | 0 | 4 | -1.59 | -1.40 | 35.99 | 732 | -13 | 4.62 | -1.11 | 60.51 | 450 | +65 | 4.69 | 7.61 | 79.23 | 229 | +52 | 14.70 | 11.87 | 73.70 | 275 | -1 |
+| HESTERBIO | Pharmaceuticals: Major | 2269.30 | 1.07 | 0 | 4 | -2.60 | -2.41 | 23.73 | 872 | +61 | -1.66 | -7.04 | 32.10 | 773 | -68 | 3.13 | 6.00 | 76.14 | 263 | +89 | 18.05 | 15.14 | 77.16 | 239 | +48 |
+| HEXT | Packaged Software | 498.90 | 29.88 | 0 | 4 | 3.08 | 3.28 | 84.41 | 179 | -73 | -7.35 | -12.42 | 13.10 | 989 | +80 | -9.47 | -6.95 | 42.53 | 632 | -27 | -5.63 | -7.95 | 44.63 | 578 | +16 |
+| HGINFRA | Engineering & Construction | 400.05 | 3.28 | 0 | 4 | 1.07 | 1.27 | 70.05 | 343 | +86 | 3.29 | -2.36 | 55.85 | 503 | -48 | -16.98 | -14.67 | 20.04 | 879 | +21 | -27.70 | -29.48 | 8.64 | 953 | +7 |
+| HGS | Miscellaneous Commercial Services | 330.75 | 0.46 | 0 | 4 | -1.15 | -0.96 | 41.77 | 666 | -249 | -3.92 | -9.18 | 23.48 | 871 | -149 | -15.99 | -13.65 | 21.58 | 862 | -11 | -18.52 | -20.53 | 18.91 | 846 | -17 |
+| HINDCOPPER | Other Metals/Minerals | 418.50 | 206.35 | 0 | 4 | -0.13 | 0.06 | 55.52 | 509 | +274 | 1.50 | -4.05 | 47.76 | 595 | +56 | -20.54 | -18.32 | 12.20 | 965 | -3 | -22.70 | -24.60 | 13.82 | 899 | +21 |
+| HINDPETRO | Oil Refining/Marketing | 386.00 | 175.77 | 0 | 4 | -2.61 | -2.42 | 23.47 | 875 | -385 | 12.77 | 6.59 | 84.52 | 177 | +52 | 6.31 | 9.27 | 81.51 | 204 | +2 | -0.26 | -2.71 | 53.26 | 488 | -12 |
+| HINDWAREAP | Building Products | 153.08 | 1.12 | 0 | 4 | -2.09 | -1.89 | 29.16 | 810 | +196 | -10.34 | -15.25 | 7.92 | 1048 | +10 | -15.94 | -13.60 | 21.95 | 858 | +47 | -31.66 | -33.34 | 5.66 | 984 | +13 |
+| HIRECT | Electrical Products | 836.45 | 5.18 | 0 | 4 | -2.22 | -2.02 | 27.67 | 827 | -190 | -14.28 | -18.97 | 3.96 | 1093 | +1 | -32.99 | -31.12 | 2.28 | 1074 | -12 | -26.49 | -28.29 | 9.21 | 947 | -29 |
+| HNDFDS | Food: Specialty/Candy | 555.00 | 2.88 | 0 | 4 | 0.01 | 0.20 | 57.36 | 488 | -252 | 0.44 | -5.05 | 41.78 | 663 | -39 | -13.83 | -11.44 | 27.69 | 795 | +7 | 3.41 | 0.86 | 59.02 | 428 | -5 |
+| HOMEFIRST | Finance/Rental/Leasing | 999.10 | 20.86 | 0 | 4 | -4.86 | -4.67 | 8.76 | 1043 | -27 | -6.00 | -11.15 | 17.24 | 942 | -215 | -15.53 | -13.18 | 23.32 | 843 | -94 | -5.67 | -7.99 | 44.34 | 581 | -8 |
+| HONASA | Specialty Stores | 512.55 | 67.88 | 0 | 4 | -2.45 | -2.25 | 24.87 | 859 | -567 | 14.49 | 8.22 | 87.60 | 142 | -54 | 8.25 | 11.26 | 84.06 | 176 | -53 | 22.90 | 19.87 | 81.38 | 195 | -75 |
+| HONAUT | Electronic Equipment/Instruments | 29175.00 | 12.26 | 0 | 4 | -3.86 | -3.67 | 13.05 | 994 | -239 | -4.38 | -9.61 | 21.55 | 893 | +2 | -18.00 | -15.72 | 17.85 | 903 | -17 | -15.40 | -17.48 | 23.61 | 797 | +6 |
+| HONDAPOWER | Electrical Products | 1880.80 | 0.57 | 0 | 4 | -1.72 | -1.53 | 34.50 | 749 | -329 | 6.15 | 0.34 | 65.35 | 395 | -30 | -5.65 | -3.02 | 53.83 | 508 | -26 | -19.34 | -21.32 | 18.23 | 853 | -67 |
+| HPL | Electronic Equipment/Instruments | 242.39 | 3.10 | 0 | 4 | -1.70 | -1.51 | 34.59 | 748 | +75 | 3.34 | -2.31 | 56.11 | 500 | +41 | -19.15 | -16.90 | 14.66 | 938 | -10 | -32.74 | -34.40 | 4.80 | 993 | -31 |
+| HSCL | Industrial Specialties | 549.25 | 106.13 | 0 | 4 | -2.14 | -1.95 | 28.90 | 813 | -250 | 2.42 | -3.18 | 51.80 | 549 | -11 | -19.33 | -17.08 | 14.12 | 944 | -83 | -14.45 | -16.55 | 25.62 | 776 | -117 |
+| HUDCO | Finance/Rental/Leasing | 155.64 | 49.40 | 0 | 4 | -4.46 | -4.28 | 9.98 | 1029 | +10 | 5.43 | -0.34 | 63.24 | 419 | -3 | -12.85 | -10.42 | 31.51 | 753 | +45 | -23.96 | -25.83 | 12.86 | 909 | -3 |
+| ICEMAKE | Industrial Machinery | 669.05 | 0.83 | 0 | 4 | -3.04 | -2.85 | 19.61 | 919 | -100 | 1.01 | -4.52 | 44.77 | 629 | -148 | -8.78 | -6.24 | 45.17 | 603 | +67 | -12.89 | -15.03 | 29.65 | 734 | +41 |
+| ICICIGI | Specialty Insurance | 1738.50 | 77.23 | 0 | 4 | 0.14 | 0.34 | 58.76 | 472 | -344 | 10.53 | 4.48 | 77.84 | 253 | +15 | 10.95 | 14.04 | 87.52 | 138 | -18 | 0.32 | -2.15 | 54.32 | 477 | +7 |
+| ICICILIFE | Life/Health Insurance | 468.00 | 75.25 | 0 | 2 | 1.30 | 1.50 | 72.07 | 320 | -175 | 13.61 | 7.39 | 86.37 | 156 | +2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| ICRA | Financial Publishing/Services | 4362.80 | 5.05 | 0 | 4 | -0.82 | -0.63 | 45.97 | 618 | +67 | -1.69 | -7.07 | 32.01 | 774 | +52 | -12.95 | -10.53 | 31.06 | 758 | -75 | -13.80 | -15.92 | 27.54 | 756 | +34 |
+| IDBI | Major Banks | 77.34 | 38.67 | 0 | 4 | -3.30 | -3.11 | 17.43 | 944 | -293 | -3.34 | -8.63 | 25.68 | 846 | -185 | -15.99 | -13.65 | 21.49 | 863 | -81 | 6.03 | 3.42 | 63.15 | 385 | +1 |
+| IEX | Investment Banks/Brokers | 110.90 | 52.17 | 0 | 4 | -1.99 | -1.80 | 31.17 | 787 | +20 | 5.27 | -0.49 | 62.88 | 423 | -97 | -6.96 | -4.37 | 50.46 | 545 | -6 | -10.61 | -12.81 | 34.55 | 683 | -17 |
+| IFBIND | Electronics/Appliances | 1126.90 | 3.20 | 0 | 4 | 1.19 | 1.39 | 71.02 | 332 | +127 | 7.49 | 1.60 | 69.57 | 347 | +104 | -13.41 | -11.00 | 29.87 | 771 | +112 | -11.18 | -13.37 | 33.78 | 691 | +85 |
+| IFCI | Finance/Rental/Leasing | 58.52 | 84.33 | 0 | 4 | -2.17 | -1.98 | 28.37 | 819 | +221 | 0.45 | -5.05 | 41.86 | 662 | +160 | -32.94 | -31.07 | 2.37 | 1073 | +8 | -28.62 | -30.37 | 7.01 | 970 | -14 |
+| IFGLEXPOR | Industrial Machinery | 177.54 | 0.33 | 0 | 4 | -0.27 | -0.07 | 53.15 | 536 | +231 | 2.93 | -2.70 | 54.09 | 523 | +106 | -14.61 | -12.23 | 25.77 | 816 | +30 | -11.67 | -13.85 | 32.53 | 704 | -10 |
+| IGARASHI | Auto Parts: OEM | 335.55 | 1.35 | 0 | 4 | -5.81 | -5.63 | 5.87 | 1076 | +31 | -8.71 | -13.70 | 10.99 | 1013 | +36 | -20.31 | -18.09 | 12.48 | 962 | +1 | -9.32 | -11.55 | 37.24 | 655 | +56 |
+| IGL | Gas Distributors | 146.80 | 19.65 | 0 | 4 | -5.16 | -4.98 | 7.71 | 1055 | -368 | 3.64 | -2.03 | 57.17 | 488 | -68 | -2.04 | 0.69 | 64.12 | 395 | -32 | -9.41 | -11.64 | 37.14 | 656 | -23 |
+| IGPL | Chemicals: Specialty | 515.70 | 3.65 | 0 | 4 | -1.06 | -0.86 | 42.82 | 654 | +175 | -4.03 | -9.28 | 22.96 | 877 | +2 | -5.95 | -3.34 | 53.19 | 515 | -39 | 19.15 | 16.22 | 78.50 | 225 | +59 |
+| IIFL | Finance/Rental/Leasing | 598.50 | 353.94 | 0 | 4 | -2.20 | -2.01 | 27.85 | 825 | +265 | 6.46 | 0.63 | 66.93 | 377 | -161 | -6.36 | -3.75 | 52.19 | 526 | +27 | 12.86 | 10.08 | 71.88 | 294 | -69 |
+| IKIO | Electrical Products | 190.45 | 16.91 | 0 | 4 | -1.14 | -0.95 | 41.86 | 665 | +271 | 13.72 | 7.49 | 86.46 | 155 | -1 | -8.23 | -5.68 | 47.36 | 579 | +125 | 23.20 | 20.16 | 81.77 | 191 | +13 |
+| IKS | Miscellaneous Commercial Services | 1586.70 | 19.65 | 0 | 4 | -3.30 | -3.11 | 17.51 | 943 | -337 | -7.26 | -12.34 | 13.37 | 986 | -31 | -8.85 | -6.32 | 44.90 | 606 | -16 | -6.15 | -8.46 | 43.67 | 588 | +34 |
+| IMFA | Other Metals/Minerals | 999.20 | 10.30 | 0 | 4 | -2.37 | -2.18 | 25.57 | 851 | +84 | -9.70 | -14.64 | 9.06 | 1035 | -22 | -23.20 | -21.07 | 9.29 | 997 | +15 | -34.96 | -36.56 | 3.55 | 1006 | -7 |
+| IMPAL | Wholesale Distributors | 1037.60 | 0.13 | 0 | 4 | 4.50 | 4.71 | 89.05 | 126 | +368 | 1.00 | -4.53 | 44.59 | 631 | +59 | -8.29 | -5.74 | 47.09 | 582 | -118 | -4.82 | -7.17 | 46.74 | 556 | +13 |
+| INDGN | Pharmaceuticals: Major | 670.60 | 37.91 | 0 | 4 | 1.97 | 2.17 | 77.76 | 255 | -64 | 13.00 | 6.82 | 85.31 | 168 | +105 | 10.77 | 13.85 | 87.07 | 143 | +34 | 29.45 | 26.26 | 86.56 | 141 | +25 |
+| INDIACEM | Construction Materials | 312.85 | 121.87 | 0 | 4 | -4.30 | -4.11 | 10.68 | 1021 | -222 | 4.20 | -1.51 | 58.93 | 468 | +96 | -13.06 | -10.64 | 30.69 | 762 | +77 | -17.78 | -19.80 | 20.15 | 833 | +12 |
+| INDIAGLYCO | Chemicals: Specialty | 271.35 | 38.63 | 0 | 2 | 2.65 | 2.85 | 82.75 | 198 | +186 | -17.85 | -22.34 | 2.11 | 1114 | +2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| INDIAMART | Internet Retail | 1540.70 | 11.78 | 0 | 4 | 0.17 | 0.37 | 59.19 | 467 | +30 | -0.23 | -5.69 | 37.82 | 708 | +97 | -12.68 | -10.25 | 32.33 | 744 | -31 | -22.74 | -24.64 | 13.72 | 900 | -9 |
+| INDIANHUME | Building Products | 301.65 | 1.04 | 0 | 4 | 1.12 | 1.32 | 70.40 | 339 | +499 | -1.58 | -6.97 | 32.45 | 769 | +120 | -18.94 | -16.69 | 15.12 | 933 | +57 | -0.72 | -3.17 | 52.98 | 491 | +58 |
+| INDIASHLTR | Finance/Rental/Leasing | 634.10 | 5.24 | 0 | 4 | -0.92 | -0.73 | 43.96 | 641 | +270 | 1.02 | -4.51 | 44.85 | 628 | +222 | 0.83 | 3.63 | 70.77 | 322 | +113 | -16.70 | -18.75 | 21.59 | 818 | +48 |
+| INDIGOPNTS | Industrial Specialties | 979.90 | 9.37 | 0 | 4 | -1.19 | -1.00 | 41.16 | 673 | -5 | -3.15 | -8.45 | 26.12 | 841 | -1 | -16.42 | -14.09 | 20.86 | 870 | -69 | 2.52 | -0.00 | 57.49 | 444 | +13 |
+| INDIQUBE | Real Estate Development | 179.95 | 0.66 | 0 | 4 | 0.54 | 0.74 | 64.54 | 406 | +544 | 4.14 | -1.56 | 58.75 | 470 | +217 | -5.31 | -2.68 | 54.74 | 498 | +113 | 11.29 | 8.55 | 69.87 | 315 | +39 |
+| INDNIPPON | Auto Parts: OEM | 1145.00 | 4.49 | 0 | 4 | -1.96 | -1.77 | 31.61 | 782 | -169 | -1.71 | -7.09 | 31.84 | 776 | +25 | 6.80 | 9.77 | 82.33 | 195 | -33 | 25.01 | 21.93 | 83.01 | 178 | -15 |
+| INDOBORAX | Chemicals: Specialty | 333.35 | 3.12 | 0 | 4 | -7.27 | -7.09 | 2.10 | 1119 | -1 | -18.16 | -22.64 | 2.02 | 1115 | -2 | -35.40 | -33.61 | 1.37 | 1084 | -7 | -7.07 | -9.35 | 42.03 | 605 | -62 |
+| INDOCO | Pharmaceuticals: Major | 233.15 | 26.56 | 0 | 4 | 0.43 | 0.63 | 62.78 | 426 | -180 | 11.29 | 5.20 | 80.12 | 227 | +23 | -4.38 | -1.72 | 56.92 | 474 | -69 | 9.32 | 6.63 | 66.89 | 346 | -55 |
+| INDOSTAR | Finance/Rental/Leasing | 176.72 | 3.48 | 0 | 4 | -4.35 | -4.16 | 10.60 | 1022 | -30 | -4.33 | -9.57 | 21.90 | 889 | +120 | -29.90 | -27.94 | 3.37 | 1062 | -6 | -24.45 | -26.31 | 11.80 | 920 | -35 |
+| INDOTECH | Electrical Products | 2374.70 | 5.83 | 0 | 3 | 1.29 | 1.49 | 71.80 | 323 | +670 | -16.27 | -20.85 | 2.64 | 1108 | +7 | -35.86 | -34.07 | 1.18 | 1086 | +2 | N/A | N/A | N/A | N/A | N/A |
+| INDRAMEDCO | Hospital/Nursing Management | 354.50 | 10.72 | 0 | 4 | -2.23 | -2.04 | 27.32 | 831 | -111 | 11.37 | 5.28 | 80.56 | 222 | -17 | -0.92 | 1.84 | 66.39 | 370 | +42 | -11.85 | -14.02 | 31.77 | 712 | +21 |
+| INDUSINDBK | Major Banks | 958.40 | 297.34 | 0 | 4 | -4.45 | -4.26 | 10.16 | 1027 | -952 | 10.41 | 4.37 | 77.40 | 258 | -92 | -3.45 | -0.76 | 59.84 | 442 | +8 | 6.11 | 3.50 | 63.34 | 383 | -13 |
+| INFOBEAN | Packaged Software | 150.67 | 7.33 | 0 | 4 | -5.89 | -5.71 | 5.43 | 1081 | -86 | 7.62 | 1.73 | 69.92 | 343 | +211 | -4.35 | -1.69 | 57.10 | 472 | +38 | -9.69 | -11.91 | 37.04 | 657 | +53 |
+| INGERRAND | Trucks/Construction/Farm Machinery | 3910.10 | 4.10 | 0 | 4 | 4.62 | 4.83 | 89.93 | 116 | +60 | -0.66 | -6.09 | 35.71 | 732 | -102 | -18.44 | -16.17 | 16.39 | 919 | -2 | 1.42 | -1.07 | 55.66 | 463 | -42 |
+| INNOVACAP | Pharmaceuticals: Major | 986.20 | 7.49 | 0 | 4 | 0.86 | 1.06 | 68.04 | 366 | +469 | -6.17 | -11.31 | 16.36 | 952 | +32 | -7.67 | -5.10 | 48.63 | 565 | +65 | 13.03 | 10.24 | 72.07 | 292 | +4 |
+| INOXGREEN | Alternative Power Generation | 111.93 | 26.56 | 0 | 4 | 0.59 | 0.79 | 65.15 | 399 | +178 | 4.83 | -0.91 | 61.48 | 439 | +7 | -30.17 | -28.23 | 2.91 | 1067 | +6 | -33.73 | -35.36 | 4.03 | 1001 | +1 |
+| INOXWIND | Electrical Products | 53.35 | 84.51 | 0 | 4 | -3.80 | -3.62 | 13.66 | 987 | +72 | -9.85 | -14.79 | 8.80 | 1038 | -2 | -23.24 | -21.10 | 9.20 | 998 | +7 | -37.81 | -39.34 | 2.78 | 1014 | -4 |
+| INTERARCH | Building Products | 1526.50 | 7.01 | 0 | 4 | -5.44 | -5.26 | 6.83 | 1065 | -243 | 1.82 | -3.75 | 49.08 | 580 | -43 | -11.38 | -8.92 | 35.61 | 708 | -100 | -14.17 | -16.29 | 26.20 | 770 | -48 |
+| IOLCP | Chemicals: Specialty | 172.45 | 51.31 | 0 | 4 | -6.34 | -6.15 | 4.12 | 1096 | +8 | -6.75 | -11.85 | 14.69 | 971 | -134 | -9.47 | -6.95 | 42.62 | 631 | -16 | 26.65 | 23.54 | 84.17 | 166 | -53 |
+| IONEXCHANG | Industrial Machinery | 273.20 | 10.78 | 0 | 4 | -7.17 | -6.99 | 2.45 | 1115 | +17 | -21.30 | -25.61 | 1.14 | 1125 | +4 | -25.68 | -23.61 | 6.01 | 1033 | +5 | -21.66 | -23.59 | 14.88 | 888 | +37 |
+| IPCALAB | Pharmaceuticals: Major | 1782.90 | 46.85 | 0 | 4 | -3.30 | -3.11 | 17.34 | 945 | -177 | -7.44 | -12.51 | 12.93 | 991 | -39 | -10.30 | -7.80 | 40.16 | 658 | -78 | 10.46 | 7.75 | 68.33 | 331 | -69 |
+| IPL | Chemicals: Agricultural | 116.58 | 10.82 | 0 | 4 | -2.93 | -2.74 | 20.75 | 906 | +139 | -0.08 | -5.55 | 38.61 | 699 | +17 | -15.67 | -13.32 | 22.86 | 848 | -40 | -24.88 | -26.73 | 11.13 | 927 | +18 |
+| IRCON | Engineering & Construction | 110.73 | 27.95 | 0 | 4 | 1.63 | 1.83 | 74.87 | 288 | +93 | 9.76 | 3.76 | 75.81 | 276 | +40 | -7.01 | -4.42 | 50.27 | 547 | +25 | -18.51 | -20.52 | 19.00 | 845 | +8 |
+| IRCTC | Other Consumer Services | 458.65 | 43.66 | 0 | 4 | 2.37 | 2.57 | 80.47 | 224 | +32 | 3.29 | -2.37 | 55.76 | 504 | +39 | -4.72 | -2.06 | 56.19 | 482 | -12 | -13.05 | -15.19 | 28.60 | 745 | -57 |
+| IRISDOREME | Apparel/Footwear | 56.52 | 1.17 | 0 | 3 | -1.10 | -0.91 | 42.21 | 661 | +172 | 0.96 | -4.56 | 44.42 | 633 | +198 | -2.30 | 0.42 | 63.11 | 406 | +85 | N/A | N/A | N/A | N/A | N/A |
+| IRMENERGY | Integrated Oil | 247.51 | 6.61 | 0 | 4 | -0.17 | 0.03 | 54.90 | 516 | -90 | 0.51 | -4.99 | 42.30 | 657 | +14 | -11.73 | -9.27 | 34.79 | 717 | +38 | -5.15 | -7.48 | 45.97 | 564 | +20 |
+| ITDC | Hotels/Resorts/Cruise lines | 674.00 | 11.00 | 0 | 4 | 2.49 | 2.69 | 81.35 | 214 | +376 | 10.78 | 4.72 | 78.72 | 243 | +80 | 4.54 | 7.45 | 78.96 | 232 | +34 | 14.40 | 11.59 | 73.32 | 279 | -81 |
+| ITI | Major Telecommunications | 256.92 | 117.81 | 0 | 4 | 4.56 | 4.76 | 89.58 | 120 | +28 | 15.91 | 9.57 | 89.89 | 116 | +8 | -4.33 | -1.67 | 57.19 | 471 | +1 | -14.87 | -16.97 | 24.76 | 785 | -25 |
+| IVALUE | Information Technology Services | 230.11 | 8.80 | 0 | 3 | -2.30 | -2.11 | 26.88 | 836 | -99 | 10.12 | 4.09 | 76.69 | 266 | +108 | -2.64 | 0.07 | 61.75 | 421 | +113 | N/A | N/A | N/A | N/A | N/A |
+| IZMO | Packaged Software | 730.45 | 18.47 | 0 | 4 | -1.80 | -1.61 | 33.63 | 759 | +302 | 2.62 | -3.00 | 53.03 | 535 | +76 | -20.28 | -18.06 | 12.57 | 961 | -205 | -16.94 | -18.98 | 21.11 | 823 | -6 |
+| JAGSNPHARM | Pharmaceuticals: Generic | 212.63 | 1.10 | 0 | 4 | 1.61 | 1.80 | 74.52 | 292 | +11 | -4.19 | -9.44 | 22.52 | 882 | +113 | -11.27 | -8.80 | 36.34 | 700 | +1 | 4.51 | 1.94 | 61.32 | 404 | +6 |
+| JAIBALAJI | Steel | 62.91 | 4.09 | 0 | 3 | -0.82 | -0.63 | 46.06 | 617 | +298 | -1.50 | -6.89 | 32.63 | 767 | +118 | -10.69 | -8.20 | 38.34 | 678 | +129 | N/A | N/A | N/A | N/A | N/A |
+| JAICORPLTD | Containers/Packaging | 87.39 | 26.66 | 0 | 4 | -0.33 | -0.14 | 52.63 | 542 | -23 | -1.72 | -7.10 | 31.66 | 778 | -55 | -11.14 | -8.67 | 37.16 | 691 | -11 | -22.87 | -24.77 | 13.44 | 903 | +1 |
+| JAINREC | Other Metals/Minerals | 280.45 | 18.85 | 0 | 3 | -2.66 | -2.46 | 22.85 | 882 | +24 | 2.13 | -3.46 | 50.48 | 564 | +139 | -0.09 | 2.69 | 68.85 | 343 | -36 | N/A | N/A | N/A | N/A | N/A |
+| JAMNAAUTO | Auto Parts: OEM | 129.34 | 25.65 | 0 | 4 | -5.97 | -5.78 | 5.08 | 1085 | +13 | 2.37 | -3.24 | 51.54 | 552 | +27 | 7.03 | 10.00 | 82.60 | 192 | +3 | 5.22 | 2.63 | 62.00 | 397 | -7 |
+| JASH | Industrial Machinery | 511.65 | 7.87 | 0 | 4 | -4.41 | -4.22 | 10.33 | 1025 | -439 | 1.36 | -4.19 | 47.05 | 603 | -13 | 11.79 | 14.90 | 88.25 | 130 | +18 | 20.08 | 17.12 | 79.75 | 212 | -18 |
+| JAYBARMARU | Wholesale Distributors | 128.28 | 11.96 | 0 | 4 | -0.85 | -0.66 | 45.10 | 628 | -468 | 12.17 | 6.03 | 83.38 | 190 | +17 | 2.79 | 5.65 | 75.14 | 274 | -3 | 1.33 | -1.17 | 55.57 | 464 | +22 |
+| JAYKAY | Miscellaneous Commercial Services | 178.37 | 4.86 | 0 | 2 | 0.43 | 0.63 | 62.96 | 424 | +202 | -12.53 | -17.31 | 5.36 | 1077 | -3 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| JAYNECOIND | Steel | 89.29 | 22.83 | 0 | 4 | -0.07 | 0.13 | 56.30 | 500 | -47 | -0.53 | -5.98 | 36.24 | 726 | +63 | -7.83 | -5.27 | 48.18 | 570 | +86 | -8.05 | -10.32 | 39.73 | 629 | +34 |
+| JBMA | Auto Parts: OEM | 472.30 | 14.99 | 0 | 4 | -3.40 | -3.21 | 16.81 | 951 | -120 | -3.21 | -8.51 | 26.03 | 842 | +19 | -24.05 | -21.94 | 8.20 | 1009 | -3 | -31.83 | -33.51 | 5.47 | 986 | -17 |
+| JGCHEM | Chemicals: Specialty | 501.90 | 10.68 | 0 | 4 | -7.24 | -7.06 | 2.28 | 1117 | +9 | -14.23 | -18.93 | 4.05 | 1092 | -47 | -19.86 | -17.63 | 13.30 | 953 | +4 | 18.98 | 16.05 | 78.21 | 228 | +47 |
+| JINDALPHOT | Financial Conglomerates | 1111.00 | 0.66 | 0 | 4 | -0.17 | 0.02 | 54.82 | 517 | -84 | -1.72 | -7.10 | 31.75 | 777 | -28 | 9.78 | 12.84 | 85.97 | 155 | +3 | 11.70 | 8.95 | 70.73 | 306 | +19 |
+| JINDALPOLY | Containers/Packaging | 622.45 | 23.83 | 0 | 4 | -4.79 | -4.60 | 9.02 | 1040 | +17 | -7.03 | -12.12 | 14.07 | 978 | -5 | -10.37 | -7.87 | 40.07 | 659 | -291 | -5.66 | -7.98 | 44.43 | 580 | -17 |
+| JINDALSAW | Steel | 239.00 | 33.15 | 0 | 4 | -3.01 | -2.82 | 19.96 | 915 | -34 | 0.59 | -4.92 | 42.66 | 653 | +77 | -22.84 | -20.69 | 9.56 | 994 | -15 | -8.08 | -10.34 | 39.44 | 632 | -70 |
+| JINDRILL | Contract Drilling | 494.85 | 5.83 | 0 | 4 | -1.95 | -1.76 | 31.70 | 781 | +122 | -2.68 | -8.01 | 27.97 | 820 | +12 | -19.62 | -17.38 | 13.84 | 947 | +9 | -21.59 | -23.52 | 15.07 | 886 | -2 |
+| JKCEMENT | Construction Materials | 5470.30 | 25.28 | 0 | 4 | 0.58 | 0.78 | 64.97 | 401 | -254 | 11.80 | 5.68 | 81.97 | 206 | +74 | 7.71 | 10.71 | 83.52 | 182 | +7 | 11.18 | 8.45 | 69.67 | 317 | -10 |
+| JKIL | Engineering & Construction | 440.95 | 5.29 | 0 | 4 | -3.98 | -3.80 | 12.26 | 1003 | -389 | 7.27 | 1.40 | 69.48 | 348 | +24 | -9.35 | -6.83 | 42.90 | 628 | +21 | -10.33 | -12.54 | 35.32 | 675 | +34 |
+| JKLAKSHMI | Construction Materials | 528.40 | 7.85 | 0 | 4 | 0.48 | 0.68 | 63.57 | 417 | -322 | 14.56 | 8.29 | 87.86 | 139 | -30 | 0.82 | 3.63 | 70.67 | 323 | -17 | -11.83 | -14.00 | 32.05 | 709 | -2 |
+| JKPAPER | Pulp & Paper | 348.10 | 8.55 | 0 | 4 | -3.56 | -3.37 | 15.41 | 967 | -55 | -8.78 | -13.77 | 10.64 | 1017 | -79 | -13.20 | -10.79 | 30.33 | 766 | -97 | -2.22 | -4.63 | 50.10 | 521 | -19 |
+| JMFINANCIL | Investment Banks/Brokers | 112.93 | 20.02 | 0 | 4 | 1.80 | 2.00 | 76.36 | 271 | -10 | -0.95 | -6.37 | 34.83 | 742 | +11 | -11.95 | -9.49 | 33.88 | 727 | -10 | -6.82 | -9.11 | 42.51 | 600 | +51 |
+| JSFB | Regional Banks | 422.00 | 23.51 | 0 | 4 | -1.26 | -1.07 | 40.02 | 686 | -163 | 7.05 | 1.19 | 68.69 | 357 | -111 | -20.35 | -18.13 | 12.39 | 963 | +9 | -10.71 | -12.90 | 34.36 | 685 | +66 |
+| JSL | Steel | 719.00 | 32.05 | 0 | 4 | -2.40 | -2.20 | 25.31 | 854 | +13 | 5.36 | -0.41 | 62.97 | 422 | +80 | -2.04 | 0.68 | 64.03 | 396 | -80 | 3.19 | 0.65 | 58.73 | 431 | +0 |
+| JSWCEMENT | Construction Materials | 123.90 | 32.59 | 0 | 4 | -2.03 | -1.84 | 30.30 | 797 | -555 | 6.99 | 1.13 | 67.99 | 365 | -66 | -0.68 | 2.08 | 66.94 | 364 | -25 | -2.67 | -5.07 | 49.04 | 532 | -8 |
+| JSWDULUX | Industrial Specialties | 273.35 | 11.15 | 0 | 4 | 0.72 | 0.92 | 66.29 | 386 | +17 | -1.03 | -6.45 | 34.56 | 745 | +21 | -91.30 | -91.06 | 0.00 | 1099 | +1 | -91.12 | -91.34 | 0.00 | 1043 | +0 |
+| JSWENERGY | Electric Utilities | 485.00 | 103.21 | 0 | 3 | -5.53 | -5.35 | 6.65 | 1067 | -76 | -4.90 | -10.11 | 19.79 | 913 | -260 | -6.37 | -3.76 | 51.82 | 530 | -23 | N/A | N/A | N/A | N/A | N/A |
+| JSWHL | Investment Banks/Brokers | 10590.00 | 5.04 | 0 | 4 | -0.39 | -0.19 | 51.84 | 551 | +212 | -6.55 | -11.66 | 15.22 | 965 | +32 | -9.61 | -7.10 | 42.26 | 635 | +154 | -14.86 | -16.95 | 24.86 | 784 | +35 |
+| JSWINFRA | Engineering & Construction | 355.50 | 63.69 | 0 | 4 | 4.18 | 4.38 | 88.27 | 135 | -113 | 9.76 | 3.75 | 75.73 | 277 | -159 | 6.18 | 9.14 | 81.24 | 207 | -31 | 30.32 | 27.11 | 87.62 | 130 | -26 |
+| JTEKTINDIA | Automotive Aftermarket | 118.89 | 1.16 | 0 | 4 | -3.76 | -3.57 | 14.10 | 982 | -285 | 6.18 | 0.37 | 65.52 | 393 | -24 | -5.43 | -2.80 | 54.37 | 502 | -80 | -3.82 | -6.19 | 48.08 | 542 | -9 |
+| JTLIND | Steel | 73.72 | 20.12 | 0 | 4 | -1.03 | -0.84 | 43.08 | 651 | +232 | -2.42 | -7.76 | 28.94 | 809 | -29 | -16.20 | -13.87 | 21.22 | 866 | +44 | 3.85 | 1.29 | 59.69 | 421 | -89 |
+| JUBLCPL | Chemicals: Agricultural | 1762.70 | 1.03 | 0 | 4 | -1.67 | -1.48 | 35.11 | 742 | -108 | -9.11 | -14.09 | 9.85 | 1026 | -10 | -20.67 | -18.46 | 12.02 | 967 | +22 | -6.17 | -8.48 | 43.57 | 589 | -130 |
+| JUBLFOOD | Restaurants | 422.80 | 77.66 | 0 | 4 | -0.45 | -0.25 | 50.96 | 561 | -299 | 0.34 | -5.15 | 41.07 | 671 | -5 | -12.72 | -10.29 | 32.24 | 745 | +30 | -1.74 | -4.16 | 51.25 | 509 | +2 |
+| JUBLINGREA | Chemicals: Major Diversified | 566.65 | 24.00 | 0 | 4 | -0.28 | -0.09 | 52.98 | 538 | +146 | -0.21 | -5.67 | 38.08 | 705 | +218 | -18.26 | -15.99 | 16.67 | 916 | -63 | -8.88 | -11.13 | 37.91 | 648 | +47 |
+| JUBLPHARMA | Pharmaceuticals: Major | 945.70 | 9.56 | 0 | 4 | 1.14 | 1.34 | 70.58 | 337 | -46 | -0.03 | -5.50 | 38.87 | 696 | +15 | 4.20 | 7.10 | 78.23 | 240 | -53 | -2.58 | -4.97 | 49.42 | 528 | +20 |
+| JUNIPER | Hotels/Resorts/Cruise lines | 196.37 | 2.44 | 0 | 4 | 0.35 | 0.54 | 61.73 | 438 | -44 | 0.23 | -5.26 | 40.11 | 682 | +64 | -8.30 | -5.75 | 46.99 | 583 | -1 | -2.41 | -4.81 | 49.71 | 525 | -52 |
+| JYOTHYLAB | Household/Personal Care | 197.85 | 9.56 | 0 | 4 | 1.82 | 2.02 | 76.62 | 268 | +146 | 13.02 | 6.83 | 85.40 | 167 | +47 | -3.40 | -0.71 | 59.93 | 441 | -5 | -1.06 | -3.49 | 52.50 | 496 | +30 |
+| KAJARIACER | Building Products | 1205.30 | 40.03 | 0 | 4 | 0.40 | 0.60 | 62.52 | 429 | -225 | 9.36 | 3.38 | 74.76 | 288 | -10 | -1.93 | 0.80 | 64.48 | 391 | -20 | 10.05 | 7.34 | 67.75 | 337 | -4 |
+| KALPATARU | Real Estate Development | 239.74 | 2.35 | 0 | 4 | -2.15 | -1.96 | 28.72 | 815 | -248 | -3.10 | -8.40 | 26.30 | 839 | -88 | -13.79 | -11.39 | 28.14 | 790 | -79 | -24.19 | -26.06 | 12.38 | 914 | -19 |
+| KANSAINER | Industrial Specialties | 196.19 | 6.10 | 0 | 4 | -0.88 | -0.69 | 44.40 | 636 | -237 | 9.57 | 3.57 | 75.11 | 284 | +44 | 0.74 | 3.54 | 70.58 | 324 | -30 | -8.17 | -10.43 | 39.06 | 636 | +18 |
+| KARURVYSYA | Regional Banks | 371.10 | 133.29 | 0 | 4 | -1.56 | -1.37 | 36.60 | 725 | +95 | 4.68 | -1.05 | 60.95 | 445 | -35 | 6.76 | 9.73 | 82.24 | 196 | -6 | 30.69 | 27.48 | 87.81 | 128 | +24 |
+| KAYNES | Electronic Production Equipment | 2725.00 | 354.66 | 0 | 4 | -6.36 | -6.17 | 4.03 | 1097 | -63 | -14.51 | -19.19 | 3.69 | 1096 | -15 | -24.32 | -22.21 | 7.74 | 1014 | +20 | -14.59 | -16.69 | 25.14 | 781 | +13 |
+| KEC | Engineering & Construction | 292.45 | 73.88 | 0 | 4 | -2.57 | -2.37 | 23.91 | 870 | -128 | -14.95 | -19.60 | 2.90 | 1105 | -38 | -29.87 | -27.92 | 3.46 | 1061 | -13 | -42.25 | -43.67 | 2.11 | 1021 | -4 |
+| KEI | Electrical Products | 3753.90 | 213.61 | 0 | 4 | -1.94 | -1.75 | 31.87 | 779 | +140 | -2.01 | -7.37 | 30.87 | 787 | +125 | -29.81 | -27.85 | 3.55 | 1060 | +25 | -29.12 | -30.86 | 6.72 | 973 | +3 |
+| KENNAMET | Metal Fabrication | 3548.30 | 19.88 | 0 | 4 | -2.87 | -2.68 | 21.19 | 901 | +185 | -4.88 | -10.09 | 19.96 | 911 | +91 | -22.16 | -19.99 | 10.20 | 987 | -27 | 21.71 | 18.72 | 80.71 | 202 | +24 |
+| KERNEX | Computer Communications | 1599.00 | 17.25 | 0 | 4 | -2.62 | -2.43 | 23.20 | 878 | +44 | -0.83 | -6.26 | 35.18 | 738 | +9 | -2.16 | 0.56 | 63.57 | 401 | +141 | -15.40 | -17.48 | 23.51 | 798 | -17 |
+| KICL | Financial Conglomerates | 4309.60 | 0.55 | 0 | 1 | -0.58 | -0.38 | 49.39 | 579 | +2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| KIMS | Hospital/Nursing Management | 785.50 | 29.17 | 0 | 4 | -1.27 | -1.08 | 39.93 | 687 | -492 | 11.81 | 5.69 | 82.23 | 203 | +28 | 3.57 | 6.46 | 76.96 | 254 | -14 | 2.69 | 0.17 | 57.97 | 439 | -54 |
+| KINGFA | Chemicals: Specialty | 6244.00 | 5.77 | 0 | 4 | 1.13 | 1.32 | 70.49 | 338 | -37 | -9.36 | -14.32 | 9.41 | 1031 | -11 | 3.55 | 6.43 | 76.78 | 256 | +5 | 16.28 | 13.41 | 75.43 | 257 | -13 |
+| KIOCL | Steel | 314.15 | 1.31 | 0 | 4 | -2.32 | -2.13 | 26.62 | 839 | -179 | -5.69 | -10.85 | 18.03 | 933 | -14 | -18.18 | -15.90 | 17.21 | 910 | -66 | -20.53 | -22.48 | 16.70 | 869 | -55 |
+| KIRIINDUS | Chemicals: Specialty | 484.55 | 18.87 | 0 | 4 | -0.33 | -0.13 | 52.71 | 541 | +66 | -7.10 | -12.19 | 13.81 | 981 | -199 | -6.09 | -3.47 | 52.82 | 519 | +88 | 24.48 | 21.42 | 82.73 | 181 | +24 |
+| KIRLFER | Steel | 392.50 | 3.95 | 0 | 4 | -1.31 | -1.11 | 39.32 | 694 | -296 | -10.07 | -14.99 | 8.18 | 1045 | +19 | -12.74 | -10.31 | 32.06 | 747 | +3 | -7.68 | -9.95 | 40.69 | 619 | -8 |
+| KIRLOSBROS | Industrial Machinery | 1560.90 | 17.46 | 0 | 4 | -4.01 | -3.82 | 12.08 | 1005 | -363 | -3.92 | -9.17 | 23.57 | 870 | -155 | -17.25 | -14.95 | 19.03 | 890 | -6 | -3.89 | -6.26 | 47.79 | 545 | -6 |
+| KIRLOSENG | Electrical Products | 1771.10 | 80.55 | 0 | 4 | 3.80 | 4.01 | 87.30 | 146 | +147 | -6.31 | -11.43 | 15.83 | 958 | +60 | -17.17 | -14.87 | 19.13 | 889 | -24 | -9.17 | -11.41 | 37.52 | 652 | -20 |
+| KIRLOSIND | Steel | 3264.10 | 1.70 | 0 | 4 | -0.52 | -0.33 | 50.26 | 569 | +348 | 3.95 | -1.74 | 57.78 | 481 | +117 | -12.73 | -10.31 | 32.15 | 746 | +42 | 4.46 | 1.89 | 60.84 | 409 | +45 |
+| KIRLPNU | Industrial Machinery | 637.25 | 20.10 | 0 | 4 | 3.27 | 3.48 | 85.11 | 171 | +80 | 14.52 | 8.25 | 87.69 | 141 | -4 | -13.93 | -11.54 | 27.41 | 798 | -77 | -60.13 | -61.11 | 0.86 | 1034 | +0 |
+| KITEX | Textiles | 127.99 | 18.75 | 0 | 4 | -3.00 | -2.81 | 20.32 | 911 | +182 | 11.62 | 5.51 | 81.27 | 214 | +86 | 1.58 | 4.41 | 72.22 | 306 | +104 | -22.04 | -23.96 | 14.59 | 891 | +24 |
+| KKCL | Apparel/Footwear | 412.15 | 1.76 | 0 | 4 | 0.12 | 0.32 | 58.58 | 474 | +120 | -4.46 | -9.69 | 21.11 | 898 | -87 | -19.22 | -16.97 | 14.48 | 940 | -43 | -4.47 | -6.82 | 47.02 | 553 | +29 |
+| KMEW | Trucks/Construction/Farm Machinery | 690.60 | 44.38 | 0 | 4 | -3.64 | -3.45 | 14.89 | 973 | -52 | -77.64 | -78.87 | 0.00 | 1138 | +1 | -76.48 | -75.82 | 0.18 | 1097 | +1 | -63.94 | -64.82 | 0.58 | 1037 | -2 |
+| KNRCON | Engineering & Construction | 103.05 | 8.01 | 0 | 4 | -0.78 | -0.59 | 46.58 | 611 | -110 | 2.30 | -3.30 | 51.10 | 557 | +88 | -12.43 | -9.99 | 32.79 | 739 | +84 | -20.62 | -22.57 | 16.60 | 870 | +12 |
+| KOLTEPATIL | Real Estate Development | 448.05 | 5.69 | 0 | 4 | 2.22 | 2.42 | 79.51 | 235 | +428 | -3.88 | -9.14 | 23.75 | 868 | -1 | 2.72 | 5.58 | 75.05 | 275 | +110 | 22.75 | 19.73 | 81.29 | 196 | +24 |
+| KOVAI | Hospital/Nursing Management | 6566.50 | 4.63 | 0 | 4 | -0.22 | -0.02 | 53.77 | 529 | -386 | 11.37 | 5.28 | 80.47 | 223 | -26 | 8.79 | 11.82 | 84.97 | 166 | -15 | 23.31 | 20.28 | 82.05 | 188 | +3 |
+| KPEL | Alternative Power Generation | 168.93 | 19.51 | 0 | 4 | -1.86 | -1.67 | 32.75 | 769 | +132 | 1.70 | -3.86 | 48.55 | 586 | +258 | -30.12 | -28.18 | 3.01 | 1066 | +3 | -51.82 | -53.00 | 1.25 | 1030 | +1 |
+| KPIGREEN | Alternative Power Generation | 316.15 | 100.91 | 0 | 4 | -3.14 | -2.95 | 18.30 | 934 | +116 | 8.96 | 3.00 | 73.88 | 298 | +66 | 2.71 | 5.57 | 74.95 | 276 | +32 | -22.18 | -24.09 | 14.49 | 892 | +44 |
+| KPIL | Engineering & Construction | 1324.30 | 15.83 | 0 | 4 | -0.10 | 0.10 | 56.13 | 502 | -81 | -2.42 | -7.76 | 29.02 | 808 | -77 | -5.97 | -3.35 | 53.10 | 516 | -27 | 2.56 | 0.04 | 57.68 | 442 | +9 |
+| KPITTECH | Packaged Software | 520.00 | 84.39 | 0 | 4 | 0.19 | 0.39 | 59.37 | 465 | -93 | -4.36 | -9.59 | 21.72 | 891 | +23 | -11.86 | -9.41 | 34.15 | 724 | -76 | -32.73 | -34.39 | 4.89 | 992 | +1 |
+| KPRMILL | Apparel/Footwear | 1217.30 | 45.74 | 0 | 4 | 2.18 | 2.38 | 79.16 | 239 | +115 | 12.43 | 6.28 | 83.91 | 184 | +113 | 5.08 | 8.00 | 79.87 | 222 | +82 | 10.34 | 7.63 | 68.23 | 332 | +12 |
+| KRN | Industrial Machinery | 979.30 | 51.36 | 0 | 3 | 0.95 | 1.15 | 69.18 | 353 | +324 | -18.90 | -23.34 | 1.76 | 1118 | -11 | -35.88 | -34.10 | 1.09 | 1087 | -1 | N/A | N/A | N/A | N/A | N/A |
+| KRSNAA | Medical/Nursing Services | 513.05 | 4.16 | 0 | 4 | -1.16 | -0.96 | 41.59 | 668 | +176 | 3.03 | -2.61 | 54.44 | 519 | +174 | -8.38 | -5.83 | 46.72 | 586 | +51 | -5.47 | -7.80 | 45.30 | 571 | +67 |
+| KSB | Industrial Machinery | 642.75 | 11.90 | 0 | 4 | -2.78 | -2.59 | 21.72 | 895 | -113 | -2.93 | -8.24 | 26.82 | 833 | -85 | -22.39 | -20.23 | 10.11 | 988 | -59 | -19.21 | -21.20 | 18.33 | 852 | -53 |
+| KSCL | Agricultural Commodities/Milling | 695.50 | 6.71 | 0 | 4 | -2.07 | -1.88 | 29.60 | 805 | +133 | 1.87 | -3.70 | 49.52 | 575 | +180 | -8.68 | -6.14 | 45.54 | 599 | +19 | -18.93 | -20.93 | 18.52 | 850 | +5 |
+| KSHINTL | Electrical Products | 1018.60 | 25.36 | 0 | 2 | 0.92 | 1.11 | 68.74 | 358 | +511 | 7.74 | 1.85 | 70.18 | 340 | -2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| KSL | Steel | 822.95 | 4.35 | 0 | 4 | -2.08 | -1.89 | 29.33 | 808 | -65 | -3.37 | -8.66 | 25.51 | 848 | +79 | -8.56 | -6.02 | 45.72 | 597 | -2 | -1.34 | -3.76 | 52.02 | 501 | +24 |
+| KTKBANK | Regional Banks | 335.25 | 70.61 | 0 | 4 | -2.17 | -1.98 | 28.28 | 820 | -245 | 9.63 | 3.63 | 75.29 | 282 | +10 | 1.31 | 4.13 | 71.77 | 311 | -16 | 27.52 | 24.38 | 85.03 | 157 | +4 |
+| LALPATHLAB | Medical/Nursing Services | 1983.30 | 52.11 | 0 | 4 | -1.13 | -0.94 | 41.94 | 664 | -562 | 3.75 | -1.93 | 57.34 | 486 | -90 | 4.14 | 7.04 | 78.14 | 241 | -32 | 27.04 | 23.91 | 84.45 | 163 | -23 |
+| LANDMARK | Specialty Stores | 450.00 | 5.01 | 0 | 4 | -4.05 | -3.86 | 11.65 | 1010 | -710 | 0.45 | -5.05 | 41.95 | 661 | -275 | -11.06 | -8.58 | 37.43 | 688 | -63 | 8.99 | 6.30 | 66.31 | 352 | -123 |
+| LAOPALA | Home Furnishings | 158.76 | 1.88 | 0 | 4 | 1.14 | 1.34 | 70.67 | 336 | +122 | 12.82 | 6.64 | 84.70 | 175 | +1 | -8.39 | -5.84 | 46.63 | 587 | -32 | -10.11 | -12.32 | 35.89 | 669 | +1 |
+| LATENTVIEW | Miscellaneous Commercial Services | 195.45 | 12.94 | 0 | 4 | 1.28 | 1.48 | 71.72 | 324 | +78 | -11.26 | -16.11 | 6.77 | 1061 | +2 | -28.29 | -26.29 | 4.01 | 1055 | -12 | -36.15 | -37.72 | 3.17 | 1010 | +3 |
+| LAXMIDENTL | Medical/Nursing Services | 192.91 | 1.39 | 0 | 4 | 2.85 | 3.05 | 83.89 | 185 | +219 | 8.76 | 2.81 | 73.44 | 303 | +100 | -0.02 | 2.76 | 69.03 | 341 | +32 | -15.70 | -17.78 | 23.03 | 803 | +29 |
+| LGBBROSLTD | Electrical Products | 1644.00 | 2.74 | 0 | 4 | 1.39 | 1.59 | 72.68 | 313 | +610 | -2.11 | -7.47 | 30.34 | 793 | +165 | -3.46 | -0.77 | 59.74 | 443 | +118 | 6.62 | 4.00 | 63.53 | 381 | +89 |
+| LICHSGFIN | Finance/Rental/Leasing | 594.65 | 141.84 | 0 | 4 | -3.29 | -3.10 | 17.60 | 942 | -283 | 15.69 | 9.36 | 89.62 | 119 | -13 | 11.17 | 14.26 | 87.70 | 136 | -10 | 9.00 | 6.32 | 66.41 | 351 | -17 |
+| LINCOLN | Pharmaceuticals: Major | 508.45 | 1.97 | 0 | 4 | -0.67 | -0.48 | 48.60 | 588 | -78 | -0.28 | -5.74 | 37.38 | 713 | +306 | -16.60 | -14.28 | 20.58 | 873 | -28 | -17.93 | -19.95 | 19.87 | 836 | -73 |
+| LLOYDSENGG | Engineering & Construction | 79.29 | 56.27 | 0 | 4 | -5.27 | -5.08 | 7.36 | 1059 | +47 | -8.44 | -13.45 | 11.52 | 1007 | -100 | -5.91 | -3.29 | 53.37 | 513 | +44 | 10.88 | 8.15 | 69.00 | 324 | -13 |
+| LLOYDSENT | Wholesale Distributors | 60.35 | 12.57 | 0 | 4 | -1.05 | -0.86 | 42.91 | 653 | +345 | -3.84 | -9.10 | 23.83 | 867 | -55 | -15.41 | -13.05 | 23.68 | 839 | +9 | -10.10 | -12.31 | 35.99 | 668 | +15 |
+| LLOYDSME | Steel | 1556.80 | 67.78 | 0 | 2 | -9.69 | -9.51 | 0.96 | 1132 | -7 | -14.78 | -19.45 | 3.25 | 1101 | -24 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| LMW | Industrial Machinery | 16974.00 | 11.75 | 0 | 4 | -3.00 | -2.81 | 20.40 | 910 | -60 | 1.85 | -3.72 | 49.43 | 576 | -81 | -10.71 | -8.23 | 38.16 | 680 | -45 | 7.44 | 4.79 | 64.20 | 374 | +3 |
+| LOTUSDEV | Real Estate Development | 220.11 | 39.95 | 0 | 2 | -6.53 | -6.34 | 3.68 | 1101 | -101 | -9.30 | -14.26 | 9.50 | 1030 | +16 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| LTF | Finance/Rental/Leasing | 276.40 | 109.70 | 0 | 4 | 1.58 | 1.78 | 74.34 | 294 | -152 | 10.10 | 4.07 | 76.52 | 268 | -130 | -10.56 | -8.08 | 39.07 | 670 | +18 | 3.64 | 1.09 | 59.40 | 424 | -27 |
+| LTFOODS | Agricultural Commodities/Milling | 421.15 | 59.67 | 0 | 4 | -2.60 | -2.41 | 23.64 | 873 | -77 | 10.51 | 4.46 | 77.57 | 256 | +15 | -3.63 | -0.94 | 59.29 | 448 | +7 | 9.29 | 6.60 | 66.70 | 348 | -27 |
+| LUMAXIND | Auto Parts: OEM | 5550.00 | 6.51 | 0 | 4 | -0.58 | -0.39 | 49.30 | 580 | +186 | 9.13 | 3.16 | 74.23 | 294 | +40 | -13.59 | -11.18 | 29.23 | 778 | -89 | 4.81 | 2.23 | 61.52 | 402 | +62 |
+| LUPIN | Pharmaceuticals: Other | 2016.00 | 131.21 | 0 | 3 | 0.10 | 0.30 | 58.14 | 479 | -150 | 1.31 | -4.23 | 46.88 | 605 | -8 | -6.36 | -3.76 | 51.91 | 529 | +31 | N/A | N/A | N/A | N/A | N/A |
+| LUXIND | Apparel/Footwear | 1134.90 | 2.54 | 0 | 4 | -0.84 | -0.64 | 45.53 | 623 | -222 | -0.60 | -6.04 | 35.88 | 730 | -242 | -4.85 | -2.21 | 55.92 | 485 | -23 | -18.05 | -20.06 | 19.67 | 838 | -16 |
+| LXCHEM | Chemicals: Specialty | 151.05 | 10.99 | 0 | 4 | 0.05 | 0.25 | 57.88 | 482 | +118 | -5.58 | -10.74 | 18.38 | 929 | -126 | -8.40 | -5.85 | 46.54 | 588 | +4 | -6.24 | -8.55 | 43.38 | 591 | +40 |
+| M&MFIN | Finance/Rental/Leasing | 283.80 | 103.77 | 0 | 4 | -1.56 | -1.37 | 36.69 | 724 | -439 | 7.18 | 1.31 | 68.95 | 354 | -35 | -22.12 | -19.95 | 10.38 | 985 | +0 | -1.82 | -4.23 | 51.06 | 511 | +4 |
+| MAHLIFE | Real Estate Development | 302.80 | 8.66 | 0 | 4 | -1.85 | -1.66 | 32.84 | 768 | +152 | -4.55 | -9.78 | 20.93 | 900 | -32 | -15.17 | -12.81 | 24.32 | 832 | +67 | -9.99 | -12.20 | 36.28 | 665 | +26 |
+| MAHLOG | Air Freight/Couriers | 356.35 | 30.82 | 0 | 4 | -6.53 | -6.35 | 3.59 | 1102 | -403 | -16.57 | -21.14 | 2.46 | 1110 | -15 | -7.97 | -5.41 | 48.00 | 572 | -64 | 2.69 | 0.17 | 58.06 | 438 | -20 |
+| MAHSCOOTER | Financial Conglomerates | 12549.00 | 3.10 | 0 | 1 | 0.84 | 1.04 | 67.78 | 369 | -285 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| MAHSEAMLES | Steel | 471.65 | 19.64 | 0 | 4 | -4.07 | -3.88 | 11.56 | 1011 | +104 | -13.43 | -18.17 | 4.84 | 1083 | +20 | -27.39 | -25.37 | 4.55 | 1049 | +16 | -23.29 | -25.18 | 13.24 | 905 | +34 |
+| MAITHANALL | Other Metals/Minerals | 829.65 | 2.30 | 0 | 4 | 2.03 | 2.23 | 78.20 | 250 | +192 | 4.35 | -1.36 | 59.63 | 460 | +32 | -14.71 | -12.34 | 25.59 | 818 | +12 | -19.90 | -21.87 | 17.47 | 861 | +44 |
+| MANALIPETC | Chemicals: Specialty | 72.42 | 6.80 | 0 | 4 | -4.37 | -4.18 | 10.51 | 1023 | +47 | 1.06 | -4.47 | 45.12 | 625 | +134 | -13.83 | -11.43 | 27.78 | 794 | -99 | 12.24 | 9.48 | 71.11 | 302 | +2 |
+| MANAPPURAM | Finance/Rental/Leasing | 278.40 | 188.05 | 0 | 4 | -0.75 | -0.55 | 47.02 | 606 | +296 | -7.85 | -12.89 | 12.23 | 999 | -53 | -17.39 | -15.09 | 18.58 | 895 | +46 | -10.45 | -12.66 | 34.93 | 679 | +69 |
+| MANGLMCEM | Construction Materials | 883.25 | 6.89 | 0 | 4 | -0.81 | -0.61 | 46.23 | 615 | +143 | -1.65 | -7.03 | 32.19 | 772 | -134 | -18.52 | -16.25 | 16.12 | 922 | -81 | 4.50 | 1.93 | 61.13 | 406 | -24 |
+| MANORAMA | Food: Specialty/Candy | 1864.00 | 24.34 | 0 | 4 | -0.46 | -0.27 | 50.79 | 563 | -145 | 1.77 | -3.80 | 48.72 | 584 | -87 | 1.64 | 4.46 | 72.50 | 303 | +56 | 27.63 | 24.49 | 85.12 | 156 | +4 |
+| MANYAVAR | Internet Retail | 455.40 | 4.89 | 0 | 4 | -1.84 | -1.65 | 32.92 | 767 | -216 | -6.50 | -11.62 | 15.39 | 963 | -66 | -16.72 | -14.41 | 20.31 | 876 | -64 | 13.81 | 11.01 | 72.55 | 287 | -21 |
+| MAPMYINDIA | Miscellaneous Commercial Services | 813.95 | 10.53 | 0 | 4 | -2.22 | -2.02 | 27.58 | 828 | -105 | -1.98 | -7.35 | 31.13 | 784 | -19 | -18.57 | -16.31 | 15.85 | 925 | -11 | -2.15 | -4.55 | 50.38 | 518 | -39 |
+| MARKSANS | Pharmaceuticals: Major | 276.30 | 37.65 | 0 | 4 | -5.10 | -4.91 | 8.06 | 1051 | -9 | -12.38 | -17.18 | 5.63 | 1074 | -74 | -14.30 | -11.91 | 26.87 | 804 | -70 | 15.54 | 12.70 | 74.57 | 266 | +7 |
+| MASFIN | Finance/Rental/Leasing | 254.54 | 2.25 | 0 | 4 | -0.71 | -0.51 | 47.81 | 597 | +5 | 0.81 | -4.71 | 44.15 | 636 | +120 | -16.41 | -14.08 | 20.95 | 869 | -51 | -16.78 | -18.82 | 21.31 | 821 | -17 |
+| MASTEK | Information Technology Services | 1475.10 | 14.22 | 0 | 4 | 2.43 | 2.63 | 80.91 | 219 | -50 | 0.07 | -5.40 | 39.58 | 688 | -80 | -18.14 | -15.86 | 17.40 | 908 | -98 | -11.83 | -14.00 | 31.96 | 710 | +3 |
+| MATRIMONY | Internet Software/Services | 527.45 | 2.23 | 0 | 4 | 2.59 | 2.79 | 81.96 | 207 | -58 | -1.61 | -7.00 | 32.37 | 770 | -190 | 1.63 | 4.46 | 72.40 | 304 | -56 | 26.15 | 23.05 | 83.88 | 169 | -38 |
+| MAYURUNIQ | Textiles | 647.40 | 5.65 | 0 | 4 | -8.39 | -8.21 | 1.40 | 1127 | -4 | -10.44 | -15.34 | 7.83 | 1049 | +19 | -12.77 | -10.35 | 31.79 | 750 | +30 | -11.85 | -14.02 | 31.86 | 711 | +20 |
+| MAZDOCK | Trucks/Construction/Farm Machinery | 1890.00 | 165.29 | 0 | 3 | 2.63 | 2.83 | 82.57 | 200 | +392 | 7.22 | 1.35 | 69.13 | 352 | +86 | -23.64 | -21.52 | 8.83 | 1002 | +33 | N/A | N/A | N/A | N/A | N/A |
+| MBEL | Building Products | 272.60 | 11.79 | 0 | 4 | -6.31 | -6.12 | 4.29 | 1094 | -79 | 4.75 | -0.98 | 61.13 | 443 | -59 | 2.64 | 5.49 | 74.77 | 278 | -18 | -3.95 | -6.31 | 47.60 | 547 | +27 |
+| MEDANTA | Hospital/Nursing Management | 1473.70 | 35.54 | 0 | 4 | -0.44 | -0.24 | 51.14 | 559 | -389 | 13.39 | 7.18 | 86.10 | 159 | -63 | 1.07 | 3.88 | 71.13 | 318 | -45 | 19.64 | 16.69 | 79.08 | 219 | -45 |
+| MEDIASSIST | Investment Managers | 276.40 | 15.27 | 0 | 4 | 2.85 | 3.05 | 83.80 | 186 | +325 | -7.22 | -12.30 | 13.46 | 985 | -31 | -18.24 | -15.96 | 16.85 | 914 | -87 | -23.00 | -24.89 | 13.34 | 904 | +13 |
+| MEDPLUS | Drugstore Chains | 613.40 | 11.04 | 0 | 4 | 1.56 | 1.76 | 74.08 | 297 | -77 | 2.57 | -3.05 | 52.68 | 539 | +213 | -8.86 | -6.33 | 44.81 | 607 | +31 | -28.59 | -30.34 | 7.10 | 969 | +26 |
+| METROBRAND | Apparel/Footwear Retail | 816.30 | 2.49 | 0 | 4 | -2.08 | -1.88 | 29.51 | 806 | -357 | -0.69 | -6.13 | 35.44 | 735 | +8 | -11.07 | -8.60 | 37.34 | 689 | -25 | -20.90 | -22.85 | 16.22 | 874 | -3 |
+| METROPOLIS | Medical/Nursing Services | 580.90 | 13.19 | 0 | 4 | 2.63 | 2.83 | 82.49 | 201 | -102 | 4.88 | -0.86 | 61.65 | 437 | -12 | -0.23 | 2.54 | 68.40 | 348 | -10 | 6.75 | 4.13 | 63.63 | 380 | -24 |
+| MGL | Gas Distributors | 1077.30 | 19.84 | 0 | 4 | -3.41 | -3.22 | 16.73 | 952 | -221 | 2.31 | -3.29 | 51.28 | 555 | +34 | -0.04 | 2.75 | 68.94 | 342 | -11 | 0.27 | -2.20 | 54.13 | 479 | +22 |
+| MHRIL | Other Consumer Services | 195.06 | 6.79 | 0 | 4 | -0.80 | -0.61 | 46.32 | 614 | -151 | 5.74 | -0.05 | 64.38 | 406 | -39 | -6.36 | -3.75 | 52.09 | 527 | -28 | -10.14 | -12.36 | 35.80 | 670 | -51 |
+| MIDHANI | Other Metals/Minerals | 376.85 | 34.35 | 0 | 4 | -2.67 | -2.48 | 22.50 | 886 | +137 | -0.44 | -5.89 | 36.94 | 718 | +19 | -9.73 | -7.21 | 41.99 | 638 | +15 | -14.98 | -17.07 | 24.38 | 789 | -88 |
+| MINDACORP | Auto Parts: OEM | 711.55 | 21.44 | 0 | 4 | -5.04 | -4.85 | 8.32 | 1048 | -54 | 11.05 | 4.97 | 79.42 | 235 | -45 | -0.12 | 2.66 | 68.76 | 344 | -4 | 10.27 | 7.55 | 68.04 | 334 | -40 |
+| MMTC | Wholesale Distributors | 50.98 | 9.83 | 0 | 4 | -0.70 | -0.51 | 47.99 | 595 | +55 | -2.13 | -7.49 | 30.26 | 794 | -52 | -18.20 | -15.92 | 17.12 | 911 | -19 | -25.37 | -27.21 | 10.46 | 934 | -51 |
+| MOBIKWIK | Miscellaneous Commercial Services | 210.38 | 38.07 | 0 | 4 | -0.68 | -0.49 | 48.42 | 590 | -265 | -3.80 | -9.07 | 24.01 | 865 | -30 | 12.04 | 15.15 | 88.43 | 128 | +3 | 8.00 | 5.34 | 65.07 | 365 | -4 |
+| MOIL | Other Metals/Minerals | 224.22 | 10.74 | 0 | 4 | 4.52 | 4.72 | 89.32 | 123 | +247 | 2.60 | -3.01 | 52.86 | 537 | +269 | -10.47 | -7.97 | 39.53 | 665 | +95 | -24.28 | -26.14 | 12.19 | 916 | +36 |
+| MOL | Chemicals: Specialty | 51.60 | 2.84 | 0 | 4 | -2.48 | -2.28 | 24.69 | 861 | -31 | -6.25 | -11.38 | 16.01 | 956 | -57 | -20.43 | -18.22 | 12.30 | 964 | -53 | 5.85 | 3.24 | 62.86 | 388 | +0 |
+| MONARCH | Investment Banks/Brokers | 334.90 | 2.34 | 0 | 4 | -1.51 | -1.32 | 37.22 | 718 | -48 | -5.18 | -10.37 | 19.09 | 921 | -44 | -10.60 | -8.11 | 38.89 | 672 | +48 | -1.25 | -3.68 | 52.11 | 500 | +18 |
+| MOSCHIP | Semiconductors | 160.16 | 15.91 | 0 | 4 | -0.72 | -0.52 | 47.46 | 601 | +129 | 1.39 | -4.16 | 47.32 | 600 | +361 | -25.60 | -23.53 | 6.28 | 1030 | -14 | -28.35 | -30.11 | 7.68 | 963 | -29 |
+| MPHASIS | Packaged Software | 2441.20 | 177.26 | 0 | 4 | 0.88 | 1.07 | 68.30 | 363 | -323 | -4.69 | -9.91 | 20.49 | 905 | -203 | -2.57 | 0.15 | 62.11 | 417 | -173 | 5.41 | 2.82 | 62.28 | 394 | -51 |
+| MPSLTD | Publishing: Books/Magazines | 2097.50 | 3.46 | 0 | 4 | -2.18 | -1.99 | 28.02 | 823 | +126 | -10.80 | -15.68 | 7.21 | 1056 | +10 | -20.93 | -18.73 | 11.29 | 975 | +7 | 16.85 | 13.98 | 76.20 | 249 | +56 |
+| MRF | Automotive Aftermarket | 128000.00 | 45.11 | 0 | 4 | -2.20 | -2.01 | 27.76 | 826 | -396 | 8.41 | 2.48 | 72.21 | 317 | -13 | -3.28 | -0.58 | 60.47 | 435 | -11 | 2.63 | 0.11 | 57.77 | 441 | -4 |
+| MRPL | Oil Refining/Marketing | 165.65 | 196.09 | 0 | 4 | -5.62 | -5.44 | 6.30 | 1071 | -110 | -4.38 | -9.62 | 21.46 | 894 | -49 | -3.37 | -0.68 | 60.11 | 439 | -62 | 5.79 | 3.18 | 62.67 | 390 | -35 |
+| MSTCLTD | Internet Retail | 658.25 | 38.35 | 0 | 4 | 0.26 | 0.46 | 60.60 | 451 | +617 | 15.09 | 8.79 | 88.65 | 130 | +35 | -9.77 | -7.26 | 41.35 | 645 | +191 | 23.77 | 20.72 | 82.34 | 185 | -103 |
+| MTARTECH | Aerospace & Defense | 5800.50 | 148.45 | 0 | 2 | 3.31 | 3.52 | 85.38 | 168 | +777 | -18.97 | -23.41 | 1.67 | 1119 | -2 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| MUFIN | Finance/Rental/Leasing | 133.38 | 15.13 | 0 | 4 | -2.56 | -2.37 | 23.99 | 869 | -99 | -0.48 | -5.93 | 36.76 | 720 | -133 | -0.94 | 1.81 | 66.30 | 371 | +15 | 9.28 | 6.59 | 66.60 | 349 | +0 |
+| MUKANDLTD | Steel | 134.58 | 3.47 | 0 | 4 | -0.27 | -0.07 | 53.24 | 535 | -209 | -10.06 | -14.98 | 8.27 | 1044 | -70 | -1.07 | 1.69 | 66.12 | 373 | -37 | -3.64 | -6.02 | 48.27 | 540 | -27 |
+| MUTHOOTMF | Finance/Rental/Leasing | 162.10 | 5.95 | 0 | 4 | -2.00 | -1.80 | 31.09 | 788 | -26 | 13.29 | 7.08 | 85.93 | 161 | -49 | -17.38 | -15.09 | 18.67 | 894 | +21 | -10.42 | -12.62 | 35.12 | 677 | -30 |
+| NACLIND | Chemicals: Agricultural | 117.92 | 5.50 | 0 | 4 | 0.49 | 0.69 | 63.66 | 416 | +134 | 1.92 | -3.66 | 49.87 | 571 | -66 | -30.06 | -28.12 | 3.10 | 1065 | +1 | -22.69 | -24.59 | 13.92 | 898 | +15 |
+| NATCOPHARM | Pharmaceuticals: Major | 799.75 | 56.46 | 0 | 4 | -1.79 | -1.59 | 33.89 | 756 | -42 | 1.55 | -4.01 | 48.11 | 591 | +42 | -5.82 | -3.20 | 53.46 | 512 | -61 | -12.95 | -15.09 | 29.46 | 736 | +31 |
+| NATIONALUM | Aluminum | 304.55 | 184.24 | 0 | 4 | 0.45 | 0.64 | 63.22 | 421 | +432 | -5.86 | -11.01 | 17.50 | 939 | +69 | -18.13 | -15.85 | 17.58 | 906 | +71 | -26.44 | -28.25 | 9.31 | 946 | +46 |
+| NAUKRI | Internet Software/Services | 1203.80 | 141.59 | 0 | 4 | 2.22 | 2.42 | 79.42 | 236 | -185 | 2.63 | -2.99 | 53.12 | 534 | -17 | -11.22 | -8.75 | 36.61 | 697 | -200 | 19.32 | 16.39 | 78.69 | 223 | -23 |
+| NAVA | Electric Utilities | 538.60 | 21.82 | 0 | 4 | -4.50 | -4.31 | 9.89 | 1030 | -876 | 3.55 | -2.12 | 56.90 | 491 | -174 | -4.44 | -1.78 | 56.74 | 476 | -46 | -10.69 | -12.89 | 34.45 | 684 | -15 |
+| NAVKARCORP | Other Transportation | 79.70 | 2.91 | 0 | 4 | 0.68 | 0.88 | 65.85 | 391 | +197 | 3.24 | -2.41 | 55.32 | 509 | +53 | -16.68 | -14.36 | 20.49 | 874 | +4 | -18.47 | -20.47 | 19.19 | 843 | -13 |
+| NAVNETEDUL | Office Equipment/Supplies | 118.48 | 2.35 | 0 | 4 | -1.57 | -1.38 | 36.43 | 727 | -3 | -7.31 | -12.39 | 13.19 | 988 | -51 | -11.55 | -9.09 | 35.25 | 712 | -20 | -16.75 | -18.79 | 21.40 | 820 | -19 |
+| NBCC | Engineering & Construction | 75.51 | 61.15 | 0 | 4 | -5.14 | -4.95 | 7.97 | 1052 | -108 | 4.95 | -0.80 | 61.83 | 435 | -103 | -11.37 | -8.91 | 35.79 | 706 | +2 | -27.45 | -29.24 | 8.83 | 951 | -10 |
+| NCC | Homebuilding | 130.00 | 25.11 | 0 | 4 | -1.28 | -1.09 | 39.75 | 689 | +239 | 10.07 | 4.04 | 76.34 | 270 | -4 | -11.24 | -8.77 | 36.43 | 699 | +55 | -11.52 | -13.70 | 32.92 | 700 | +37 |
+| NDRAUTO | Auto Parts: OEM | 738.65 | 6.24 | 0 | 4 | -0.82 | -0.62 | 46.15 | 616 | +159 | 11.49 | 5.39 | 81.00 | 217 | +89 | 2.25 | 5.10 | 73.86 | 288 | +57 | -8.49 | -10.74 | 38.20 | 645 | -48 |
+| NELCO | Electronic Production Equipment | 737.95 | 9.68 | 0 | 4 | -4.88 | -4.70 | 8.67 | 1044 | -90 | 4.68 | -1.05 | 60.86 | 446 | +8 | -20.17 | -17.94 | 12.93 | 957 | +11 | 5.33 | 2.74 | 62.19 | 395 | -6 |
+| NEPHROPLUS | Medical/Nursing Services | 668.65 | 7.26 | 0 | 2 | 1.96 | 2.16 | 77.58 | 257 | -111 | 6.38 | 0.56 | 66.31 | 384 | +52 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| NESCO | Real Estate Development | 1059.90 | 2.97 | 0 | 4 | -0.43 | -0.23 | 51.23 | 558 | -107 | 5.86 | 0.07 | 64.64 | 403 | +45 | 1.52 | 4.35 | 71.95 | 309 | -6 | -6.45 | -8.75 | 42.99 | 595 | +58 |
+| NETWEB | Computer Peripherals | 4131.60 | 497.23 | 0 | 4 | 0.88 | 1.08 | 68.48 | 361 | +445 | -5.82 | -10.98 | 17.77 | 936 | +49 | -19.56 | -17.33 | 13.93 | 946 | +18 | -16.27 | -18.33 | 22.65 | 807 | -54 |
+| NEULANDLAB | Pharmaceuticals: Major | 21435.00 | 98.88 | 0 | 4 | 3.84 | 4.05 | 87.39 | 145 | +213 | 11.18 | 5.09 | 79.86 | 230 | +176 | -6.91 | -4.31 | 50.64 | 543 | +13 | 27.14 | 24.01 | 84.64 | 161 | +18 |
+| NEWGEN | Packaged Software | 419.65 | 29.41 | 0 | 4 | 1.48 | 1.67 | 73.38 | 305 | -39 | -7.86 | -12.90 | 12.14 | 1000 | +4 | -21.13 | -18.93 | 11.20 | 976 | -27 | -15.49 | -17.57 | 23.32 | 800 | +48 |
+| NFL | Chemicals: Agricultural | 64.16 | 4.11 | 0 | 4 | -0.87 | -0.67 | 44.75 | 632 | -375 | 6.95 | 1.10 | 67.81 | 367 | -64 | -9.03 | -6.50 | 44.26 | 613 | -48 | -13.88 | -16.00 | 27.16 | 760 | +4 |
+| NGLFINE | Pharmaceuticals: Major | 2802.10 | 2.05 | 0 | 4 | 1.98 | 2.18 | 77.93 | 253 | +51 | 7.25 | 1.37 | 69.31 | 350 | +18 | 5.44 | 8.37 | 80.24 | 218 | -10 | 8.54 | 5.87 | 66.03 | 355 | +44 |
+| NH | Hospital/Nursing Management | 1962.20 | 34.71 | 0 | 4 | 0.95 | 1.15 | 69.35 | 351 | -296 | 14.45 | 8.18 | 87.42 | 144 | -11 | 1.21 | 4.03 | 71.49 | 314 | -83 | 0.67 | -1.81 | 54.99 | 470 | +11 |
+| NHPC | Electric Utilities | 75.65 | 91.44 | 0 | 4 | -1.25 | -1.06 | 40.37 | 682 | -257 | -2.01 | -7.37 | 30.78 | 788 | -212 | -0.85 | 1.91 | 66.58 | 368 | -14 | -0.62 | -3.06 | 53.07 | 490 | -21 |
+| NIACL | Multi-Line Insurance | 148.94 | 11.98 | 0 | 4 | -2.42 | -2.23 | 25.22 | 855 | +32 | -10.62 | -15.51 | 7.48 | 1053 | -2 | -19.83 | -17.59 | 13.48 | 951 | +33 | -1.81 | -4.23 | 51.15 | 510 | -19 |
+| NIBE | Textiles | 1112.40 | 7.17 | 0 | 4 | 0.93 | 1.13 | 69.09 | 354 | +681 | -5.14 | -10.33 | 19.17 | 920 | +91 | -17.96 | -15.68 | 17.94 | 902 | +84 | -25.92 | -27.74 | 9.98 | 939 | +36 |
+| NIITMTS | Miscellaneous Commercial Services | 165.98 | 2.79 | 0 | 4 | -1.45 | -1.26 | 37.65 | 713 | +5 | -11.81 | -16.64 | 6.07 | 1069 | +33 | -27.88 | -25.88 | 4.37 | 1051 | -7 | -24.31 | -26.17 | 12.09 | 917 | -18 |
+| NITINSPIN | Textiles | 693.65 | 10.24 | 0 | 4 | -1.57 | -1.38 | 36.51 | 726 | -22 | 7.04 | 1.18 | 68.43 | 360 | +38 | 9.97 | 13.03 | 86.16 | 153 | +21 | 28.09 | 24.93 | 85.51 | 152 | -36 |
+| NIVABUPA | Life/Health Insurance | 75.66 | 9.90 | 0 | 4 | 1.75 | 1.95 | 76.01 | 275 | +47 | 3.90 | -1.79 | 57.61 | 483 | +92 | -8.07 | -5.51 | 47.81 | 574 | -4 | -7.45 | -9.73 | 41.17 | 614 | +90 |
+| NLCINDIA | Electric Utilities | 236.51 | 47.33 | 0 | 4 | 1.16 | 1.36 | 70.75 | 335 | +359 | -0.52 | -5.97 | 36.32 | 725 | -69 | -13.78 | -11.38 | 28.23 | 789 | -6 | -30.15 | -31.87 | 6.33 | 977 | +21 |
+| NMDC | Other Metals/Minerals | 67.96 | 103.79 | 0 | 4 | -1.36 | -1.17 | 38.62 | 702 | -169 | 0.62 | -4.89 | 43.01 | 649 | +60 | -20.69 | -18.48 | 11.84 | 969 | +23 | -28.24 | -30.00 | 7.87 | 961 | +12 |
+| NOCIL | Chemicals: Specialty | 137.45 | 8.09 | 0 | 4 | 0.66 | 0.86 | 65.32 | 397 | +292 | -5.44 | -10.61 | 18.65 | 926 | +57 | -18.97 | -16.71 | 15.03 | 934 | +18 | -17.20 | -19.24 | 20.73 | 827 | -16 |
+| NORTHARC | Finance/Rental/Leasing | 274.60 | 16.95 | 0 | 4 | -1.54 | -1.35 | 36.87 | 722 | -75 | 3.12 | -2.53 | 54.97 | 513 | -116 | -8.31 | -5.76 | 46.90 | 584 | +160 | -5.41 | -7.74 | 45.49 | 569 | +60 |
+| NPST | Packaged Software | 1772.50 | 3.73 | 0 | 4 | 2.42 | 2.62 | 80.82 | 220 | -138 | 7.24 | 1.37 | 69.22 | 351 | +6 | 7.06 | 10.04 | 82.79 | 190 | +12 | 24.07 | 21.02 | 82.53 | 183 | -25 |
+| NRBBEARING | Auto Parts: OEM | 436.70 | 13.69 | 0 | 4 | 2.16 | 2.36 | 78.90 | 242 | +242 | -4.14 | -9.38 | 22.69 | 880 | +37 | -4.70 | -2.05 | 56.38 | 480 | +123 | 17.52 | 14.63 | 76.78 | 243 | -25 |
+| NRL | Other Metals/Minerals | 172.07 | 1.41 | 0 | 2 | -6.67 | -6.48 | 3.42 | 1104 | -74 | 8.22 | 2.30 | 71.59 | 324 | -102 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| NSIL | Financial Conglomerates | 4756.60 | 0.93 | 0 | 1 | -1.10 | -0.90 | 42.29 | 660 | +61 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| NTPCGREEN | Alternative Power Generation | 82.23 | 18.84 | 0 | 4 | -1.25 | -1.06 | 40.54 | 680 | -303 | -2.03 | -7.39 | 30.61 | 790 | -49 | -7.82 | -5.26 | 48.45 | 567 | -26 | -18.45 | -20.46 | 19.29 | 842 | -2 |
+| NUCLEUS | Information Technology Services | 616.70 | 0.62 | 0 | 4 | 0.86 | 1.06 | 67.95 | 367 | +359 | -6.71 | -11.82 | 14.86 | 969 | +57 | -16.74 | -14.42 | 20.13 | 878 | +38 | -14.38 | -16.49 | 25.82 | 774 | +47 |
+| NUVAMA | Investment Managers | 1835.00 | 48.24 | 0 | 4 | 0.78 | 0.98 | 67.08 | 377 | -132 | 2.86 | -2.77 | 53.91 | 525 | -137 | 2.80 | 5.66 | 75.23 | 273 | -72 | 17.13 | 14.25 | 76.68 | 244 | -17 |
+| NUVOCO | Construction Materials | 359.80 | 20.20 | 0 | 4 | 0.36 | 0.56 | 62.08 | 434 | -311 | 8.34 | 2.41 | 71.94 | 320 | +30 | 11.44 | 14.55 | 87.98 | 133 | -31 | 11.58 | 8.84 | 70.54 | 308 | +39 |
+| OBEROIRLTY | Real Estate Development | 1889.20 | 67.77 | 0 | 4 | 2.51 | 2.71 | 81.70 | 210 | -145 | 15.20 | 8.89 | 88.92 | 127 | -54 | 0.45 | 3.25 | 69.95 | 331 | -54 | 15.77 | 12.92 | 74.86 | 263 | -6 |
+| OFSS | Packaged Software | 9250.00 | 166.57 | 0 | 2 | -5.28 | -5.10 | 7.27 | 1060 | -81 | -6.93 | -12.03 | 14.42 | 974 | -18 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| OIL | Integrated Oil | 433.45 | 82.89 | 0 | 4 | 0.34 | 0.53 | 61.65 | 439 | +244 | -4.63 | -9.85 | 20.58 | 904 | -23 | -11.54 | -9.08 | 35.43 | 710 | -32 | -11.34 | -13.52 | 33.30 | 696 | +45 |
+| OLECTRA | Motor Vehicles | 1019.60 | 34.90 | 0 | 4 | 2.15 | 2.35 | 78.81 | 243 | +390 | 4.41 | -1.30 | 59.81 | 458 | +237 | -18.26 | -15.98 | 16.76 | 915 | +65 | -22.83 | -24.73 | 13.53 | 902 | +29 |
+| OMAXE | Real Estate Development | 94.32 | 2.52 | 0 | 4 | -2.77 | -2.58 | 21.89 | 893 | +54 | -1.28 | -6.68 | 33.69 | 755 | +108 | -25.60 | -23.53 | 6.19 | 1031 | -21 | 24.76 | 21.69 | 82.92 | 179 | +9 |
+| ONESOURCE | Pharmaceuticals: Major | 1538.00 | 101.29 | 0 | 4 | -4.43 | -4.24 | 10.25 | 1026 | -214 | -2.01 | -7.38 | 30.69 | 789 | -1 | 0.66 | 3.46 | 70.31 | 327 | -39 | -16.32 | -18.38 | 22.55 | 808 | -37 |
+| ORCHPHARMA | Pharmaceuticals: Major | 992.35 | 8.75 | 0 | 4 | 3.33 | 3.53 | 85.46 | 167 | -51 | 11.08 | 5.00 | 79.60 | 233 | -65 | 4.69 | 7.60 | 79.14 | 230 | +75 | 18.87 | 15.94 | 77.93 | 231 | +19 |
+| ORIENTCEM | Construction Materials | 125.12 | 3.94 | 0 | 4 | -2.83 | -2.64 | 21.37 | 899 | -246 | 8.88 | 2.92 | 73.79 | 299 | -88 | -2.37 | 0.35 | 62.75 | 410 | -21 | -6.98 | -9.27 | 42.32 | 602 | -9 |
+| ORIENTELEC | Electronics/Appliances | 189.52 | 7.95 | 0 | 4 | -5.67 | -5.48 | 6.13 | 1073 | -15 | 3.28 | -2.37 | 55.67 | 505 | +144 | 6.68 | 9.64 | 82.06 | 198 | +19 | 5.79 | 3.19 | 62.76 | 389 | +39 |
+| ORISSAMINE | Steel | 3292.00 | 1.76 | 0 | 4 | -1.41 | -1.22 | 38.09 | 708 | -134 | 2.74 | -2.88 | 53.74 | 527 | +38 | -23.88 | -21.77 | 8.65 | 1004 | -16 | -20.19 | -22.15 | 17.08 | 865 | -28 |
+| ORKLAINDIA | Food: Specialty/Candy | 533.35 | 3.46 | 0 | 3 | -2.18 | -1.99 | 28.11 | 822 | -153 | 1.37 | -4.18 | 47.14 | 602 | -190 | -8.75 | -6.21 | 45.26 | 602 | +7 | N/A | N/A | N/A | N/A | N/A |
+| OSWALPUMPS | Industrial Machinery | 216.50 | 10.06 | 0 | 4 | -0.88 | -0.68 | 44.57 | 634 | +322 | 3.17 | -2.48 | 55.06 | 512 | +104 | -25.69 | -23.62 | 5.92 | 1034 | +6 | -45.65 | -46.99 | 1.54 | 1027 | -1 |
+| PAGEIND | Apparel/Footwear | 30870.00 | 120.34 | 0 | 4 | -0.48 | -0.29 | 50.61 | 565 | -126 | -9.60 | -14.55 | 9.23 | 1033 | -26 | -13.47 | -11.06 | 29.51 | 775 | -14 | -20.51 | -22.47 | 16.79 | 868 | -42 |
+| PAISALO | Finance/Rental/Leasing | 72.25 | 34.46 | 0 | 4 | -1.65 | -1.45 | 35.46 | 738 | -396 | -9.01 | -13.99 | 10.29 | 1021 | -92 | 7.72 | 10.72 | 83.61 | 181 | -51 | 30.49 | 27.27 | 87.72 | 129 | -39 |
+| PARACABLES | Electrical Products | 57.12 | 31.11 | 0 | 4 | -3.82 | -3.63 | 13.31 | 991 | +40 | -13.49 | -18.23 | 4.66 | 1085 | -48 | -9.98 | -7.47 | 40.80 | 651 | +55 | -17.65 | -19.67 | 20.35 | 831 | -149 |
+| PARADEEP | Chemicals: Agricultural | 141.50 | 33.62 | 0 | 4 | -0.41 | -0.21 | 51.40 | 556 | -374 | 1.22 | -4.32 | 46.44 | 610 | -19 | -10.16 | -7.66 | 40.35 | 656 | +46 | 12.27 | 9.50 | 71.21 | 301 | +17 |
+| PARKHOSPS | Hospital/Nursing Management | 236.34 | 14.65 | 0 | 2 | -0.72 | -0.52 | 47.55 | 600 | -154 | 6.82 | 0.97 | 67.63 | 369 | +124 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| PARKHOTELS | Hotels/Resorts/Cruise lines | 102.34 | 1.22 | 0 | 4 | 0.24 | 0.44 | 60.51 | 452 | -52 | 1.49 | -4.07 | 47.67 | 596 | +10 | -8.56 | -6.01 | 45.81 | 596 | -21 | -11.42 | -13.60 | 33.21 | 697 | -17 |
+| PCBL | Industrial Specialties | 262.50 | 16.89 | 0 | 4 | -3.06 | -2.88 | 19.00 | 926 | -60 | -8.47 | -13.48 | 11.43 | 1008 | +40 | -17.32 | -15.02 | 18.94 | 891 | -14 | -10.42 | -12.63 | 35.03 | 678 | -3 |
+| PENIND | Steel | 165.85 | 5.68 | 0 | 4 | 0.38 | 0.57 | 62.17 | 433 | -278 | 4.81 | -0.93 | 61.30 | 441 | -51 | 0.11 | 2.90 | 69.22 | 339 | +9 | 3.67 | 1.12 | 59.50 | 423 | +7 |
+| PETRONET | Gas Distributors | 322.35 | 88.53 | 0 | 4 | -2.07 | -1.87 | 29.77 | 803 | -283 | 11.48 | 5.38 | 80.91 | 218 | -78 | 10.28 | 13.35 | 86.52 | 149 | +16 | 19.81 | 16.86 | 79.27 | 217 | -7 |
+| PFIZER | Pharmaceuticals: Major | 3807.40 | 11.16 | 0 | 4 | -1.26 | -1.07 | 40.19 | 684 | -132 | 1.27 | -4.28 | 46.61 | 608 | -7 | -18.40 | -16.13 | 16.48 | 918 | -12 | -13.91 | -16.03 | 26.87 | 763 | +22 |
+| PFOCUS | Movies/Entertainment | 237.65 | 109.15 | 0 | 3 | -5.96 | -5.77 | 5.25 | 1083 | +45 | -18.79 | -23.24 | 1.85 | 1117 | +6 | -17.05 | -14.74 | 19.67 | 883 | -11 | N/A | N/A | N/A | N/A | N/A |
+| PGEL | Electronic Production Equipment | 571.00 | 94.79 | 0 | 4 | -3.01 | -2.82 | 20.14 | 913 | -308 | 6.10 | 0.30 | 65.26 | 396 | +11 | 0.19 | 2.98 | 69.58 | 335 | +53 | 15.84 | 12.99 | 75.05 | 261 | -44 |
+| PGHH | Household/Personal Care | 7147.00 | 9.26 | 0 | 4 | 1.81 | 2.01 | 76.44 | 270 | -191 | 3.23 | -2.42 | 55.23 | 510 | -78 | -9.32 | -6.80 | 43.08 | 626 | -27 | -24.37 | -26.24 | 11.90 | 919 | -33 |
+| PGHL | Pharmaceuticals: Major | 5742.00 | 7.83 | 0 | 4 | 2.73 | 2.93 | 83.10 | 194 | -15 | 4.14 | -1.56 | 58.84 | 469 | -19 | -0.59 | 2.18 | 67.40 | 359 | +17 | -7.40 | -9.68 | 41.55 | 610 | +5 |
+| PICCADIL | Agricultural Commodities/Milling | 518.00 | 10.01 | 0 | 4 | -3.69 | -3.50 | 14.62 | 976 | -63 | -9.66 | -14.61 | 9.15 | 1034 | -28 | -18.30 | -16.02 | 16.58 | 917 | -23 | -9.94 | -12.16 | 36.37 | 664 | +12 |
+| PIIND | Chemicals: Specialty | 1606.00 | 157.49 | 0 | 4 | 0.54 | 0.74 | 64.36 | 408 | +263 | -23.89 | -28.05 | 0.79 | 1129 | -1 | -33.00 | -31.14 | 2.19 | 1075 | -5 | -40.68 | -42.14 | 2.40 | 1018 | +3 |
+| PILANIINVS | Financial Conglomerates | 3900.60 | 0.47 | 0 | 1 | -1.69 | -1.49 | 34.76 | 746 | -5 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| PINELABS | Packaged Software | 164.06 | 189.28 | 0 | 3 | 2.70 | 2.90 | 82.92 | 196 | +21 | -0.09 | -5.56 | 38.43 | 701 | -61 | 2.28 | 5.13 | 73.95 | 287 | +35 | N/A | N/A | N/A | N/A | N/A |
+| PIRAMALFIN | Finance/Rental/Leasing | 1937.60 | 69.00 | 0 | 3 | -3.97 | -3.79 | 12.52 | 1000 | -289 | 3.90 | -1.78 | 57.70 | 482 | -195 | -12.96 | -10.54 | 30.87 | 760 | +17 | N/A | N/A | N/A | N/A | N/A |
+| PITTIENG | Industrial Machinery | 886.55 | 18.44 | 0 | 4 | 0.77 | 0.96 | 66.73 | 381 | -114 | 0.36 | -5.14 | 41.16 | 670 | -169 | -17.51 | -15.21 | 18.40 | 897 | -4 | -5.12 | -7.45 | 46.16 | 562 | -20 |
+| PIXTRANS | Miscellaneous Manufacturing | 1653.10 | 2.39 | 0 | 4 | -2.68 | -2.49 | 22.42 | 887 | -135 | -0.70 | -6.13 | 35.36 | 736 | +4 | -7.39 | -4.82 | 49.36 | 557 | +37 | 2.89 | 0.36 | 58.45 | 434 | +33 |
+| PLATIND | Chemicals: Major Diversified | 207.73 | 11.73 | 0 | 4 | -2.32 | -2.13 | 26.18 | 844 | -79 | -1.64 | -7.02 | 32.28 | 771 | +65 | -8.81 | -6.27 | 45.08 | 604 | +82 | -3.85 | -6.21 | 47.89 | 544 | +26 |
+| PNBGILTS | Investment Banks/Brokers | 81.03 | 4.72 | 0 | 4 | -2.29 | -2.10 | 27.06 | 834 | -723 | 6.77 | 0.93 | 67.46 | 371 | -139 | 6.00 | 8.96 | 80.87 | 211 | -30 | -10.22 | -12.43 | 35.51 | 673 | -117 |
+| PNBHOUSING | Finance/Rental/Leasing | 1162.00 | 75.40 | 0 | 4 | -2.46 | -2.27 | 24.78 | 860 | -634 | 4.68 | -1.05 | 61.04 | 444 | +22 | 0.87 | 3.68 | 70.86 | 321 | -43 | 16.27 | 13.41 | 75.34 | 258 | -17 |
+| PNCINFRA | Engineering & Construction | 125.32 | 10.95 | 0 | 4 | -3.64 | -3.45 | 14.97 | 972 | -4 | -6.46 | -11.58 | 15.66 | 960 | +30 | -33.61 | -31.76 | 2.00 | 1077 | -3 | -40.40 | -41.87 | 2.59 | 1016 | +4 |
+| PNGJL | Specialty Stores | 571.15 | 25.73 | 0 | 4 | 0.15 | 0.35 | 58.93 | 470 | +44 | -2.15 | -7.51 | 29.90 | 798 | -86 | -2.64 | 0.07 | 61.66 | 422 | -32 | 3.96 | 1.40 | 60.08 | 417 | +19 |
+| POCL | Other Metals/Minerals | 372.65 | 16.84 | 0 | 4 | 0.30 | 0.49 | 61.38 | 442 | +474 | -1.31 | -6.71 | 33.60 | 756 | +276 | -23.13 | -20.99 | 9.38 | 996 | +54 | -71.45 | -72.15 | 0.38 | 1039 | +0 |
+| POKARNA | Building Products | 643.30 | 13.41 | 0 | 4 | -8.63 | -8.45 | 1.31 | 1128 | -6 | -4.72 | -9.93 | 20.40 | 906 | -33 | -23.59 | -21.47 | 8.93 | 1001 | +17 | -23.52 | -25.40 | 13.05 | 907 | -13 |
+| POLYMED | Medical Specialties | 1618.80 | 11.36 | 0 | 4 | -1.03 | -0.84 | 43.17 | 650 | -21 | 10.73 | 4.67 | 78.54 | 245 | -9 | -7.83 | -5.27 | 48.27 | 569 | -53 | 15.22 | 12.38 | 74.38 | 268 | -67 |
+| POONAWALLA | Finance/Rental/Leasing | 494.90 | 127.69 | 0 | 4 | -4.53 | -4.35 | 9.81 | 1031 | -747 | 12.10 | 5.96 | 83.29 | 191 | -164 | 7.37 | 10.35 | 83.15 | 186 | -42 | 25.82 | 22.72 | 83.78 | 170 | -14 |
+| POWERMECH | Engineering & Construction | 2414.60 | 11.07 | 0 | 4 | -0.26 | -0.07 | 53.33 | 534 | -397 | 10.18 | 4.15 | 76.96 | 263 | +18 | -2.68 | 0.03 | 61.38 | 425 | +3 | -8.07 | -10.33 | 39.54 | 631 | -76 |
+| PRABHA | Oil & Gas Production | 180.69 | 1.37 | 0 | 4 | -6.51 | -6.33 | 3.77 | 1100 | +8 | -3.02 | -8.33 | 26.65 | 835 | -172 | -14.99 | -12.63 | 25.05 | 824 | -148 | 13.14 | 10.36 | 72.17 | 291 | +23 |
+| PRAKASH | Steel | 108.33 | 5.15 | 0 | 4 | -1.97 | -1.78 | 31.52 | 783 | +73 | -6.59 | -11.70 | 15.13 | 966 | -111 | -14.17 | -11.78 | 27.05 | 802 | +9 | -26.00 | -27.82 | 9.88 | 940 | +0 |
+| PRECWIRE | Electrical Products | 396.90 | 15.32 | 0 | 4 | 4.21 | 4.42 | 88.35 | 134 | +544 | -3.99 | -9.25 | 23.13 | 875 | +112 | -20.19 | -17.97 | 12.84 | 958 | +68 | -8.00 | -10.26 | 39.83 | 628 | +141 |
+| PREMEXPLN | Chemicals: Specialty | 572.65 | 19.40 | 0 | 4 | 4.38 | 4.59 | 88.97 | 127 | +110 | 0.42 | -5.08 | 41.60 | 665 | -17 | -13.75 | -11.35 | 28.32 | 788 | -2 | -16.33 | -18.39 | 22.46 | 809 | -59 |
+| PREMIERENE | Semiconductors | 811.50 | 88.22 | 0 | 4 | -2.76 | -2.57 | 22.15 | 890 | -131 | -6.20 | -11.33 | 16.27 | 953 | -59 | -19.88 | -17.65 | 13.21 | 954 | +21 | -24.71 | -26.56 | 11.61 | 922 | +21 |
+| PRICOLLTD | Auto Parts: OEM | 603.35 | 53.40 | 0 | 4 | -5.04 | -4.85 | 8.41 | 1047 | -155 | -6.09 | -11.23 | 16.71 | 948 | -6 | -24.30 | -22.19 | 7.83 | 1013 | -6 | 6.14 | 3.53 | 63.44 | 382 | +11 |
+| PRIMESECU | Investment Banks/Brokers | 292.60 | 2.15 | 0 | 4 | -3.72 | -3.53 | 14.36 | 979 | -161 | -0.22 | -5.68 | 37.91 | 707 | -240 | 3.50 | 6.38 | 76.68 | 257 | -20 | 3.92 | 1.37 | 59.88 | 419 | -51 |
+| PRINCEPIPE | Industrial Machinery | 291.40 | 17.43 | 0 | 4 | 2.21 | 2.41 | 79.33 | 237 | +378 | 12.38 | 6.23 | 83.64 | 187 | +85 | -0.12 | 2.66 | 68.67 | 345 | +61 | 6.76 | 4.13 | 63.72 | 379 | +37 |
+| PRIVISCL | Chemicals: Major Diversified | 3666.00 | 42.73 | 0 | 4 | 2.82 | 3.02 | 83.54 | 189 | -62 | 11.22 | 5.13 | 79.95 | 229 | +210 | 9.57 | 12.62 | 85.61 | 159 | +56 | 12.37 | 9.61 | 71.40 | 299 | +10 |
+| PRSMJOHNSN | Construction Materials | 106.97 | 2.59 | 0 | 4 | -1.45 | -1.25 | 37.74 | 712 | -19 | 10.61 | 4.55 | 78.10 | 250 | -52 | -3.80 | -1.13 | 58.74 | 454 | -34 | -9.76 | -11.98 | 36.85 | 659 | +8 |
+| PRUDENT | Investment Managers | 2895.60 | 9.85 | 0 | 4 | -0.30 | -0.11 | 52.80 | 540 | -130 | 0.16 | -5.32 | 39.93 | 684 | +93 | -13.62 | -11.22 | 29.05 | 780 | +167 | 10.53 | 7.81 | 68.52 | 329 | +13 |
+| PSPPROJECT | Engineering & Construction | 775.30 | 6.36 | 0 | 4 | -0.72 | -0.52 | 47.64 | 599 | -436 | 5.16 | -0.60 | 62.53 | 427 | -143 | -11.34 | -8.88 | 35.97 | 704 | -42 | -13.73 | -15.85 | 27.64 | 755 | -189 |
+| PTC | Electric Utilities | 137.49 | 16.73 | 0 | 4 | 0.20 | 0.39 | 59.54 | 463 | -80 | -2.50 | -7.84 | 28.67 | 812 | -153 | -11.41 | -8.95 | 35.52 | 709 | -121 | -24.86 | -26.71 | 11.32 | 925 | +13 |
+| PUNJABCHEM | Chemicals: Agricultural | 871.15 | 0.38 | 0 | 4 | -2.35 | -2.16 | 25.92 | 847 | -283 | -9.73 | -14.68 | 8.97 | 1036 | -1 | -21.47 | -19.28 | 10.93 | 979 | +4 | -8.50 | -10.75 | 38.10 | 646 | +35 |
+| PURVA | Real Estate Development | 199.39 | 2.51 | 0 | 4 | 0.24 | 0.44 | 60.33 | 454 | -302 | 0.75 | -4.77 | 43.45 | 644 | -160 | -6.12 | -3.50 | 52.73 | 520 | -60 | -5.58 | -7.91 | 44.91 | 575 | -4 |
+| PWL | Miscellaneous Commercial Services | 131.43 | 119.15 | 0 | 3 | -3.78 | -3.60 | 13.75 | 986 | -641 | -0.82 | -6.24 | 35.27 | 737 | -246 | 14.17 | 17.35 | 89.98 | 111 | -32 | N/A | N/A | N/A | N/A | N/A |
+| QPOWER | Electrical Products | 1496.80 | 47.10 | 0 | 3 | -2.78 | -2.59 | 21.80 | 894 | +215 | 4.61 | -1.11 | 60.33 | 452 | -127 | 0.59 | 3.39 | 70.22 | 328 | -65 | N/A | N/A | N/A | N/A | N/A |
+| QUADFUTURE | Electrical Products | 402.55 | 7.59 | 0 | 4 | 2.30 | 2.50 | 79.95 | 230 | +857 | 0.04 | -5.44 | 39.23 | 692 | +127 | -3.96 | -1.29 | 57.92 | 463 | +43 | 24.07 | 21.02 | 82.44 | 184 | +12 |
+| RADICO | Beverages: Alcoholic | 4646.60 | 180.05 | 0 | 4 | -0.39 | -0.20 | 51.66 | 553 | -219 | 9.72 | 3.71 | 75.55 | 279 | -98 | 3.85 | 6.74 | 77.32 | 250 | -24 | 32.67 | 29.40 | 88.77 | 118 | -12 |
+| RAILTEL | Major Telecommunications | 246.74 | 16.83 | 0 | 4 | -1.03 | -0.84 | 42.99 | 652 | -13 | 7.19 | 1.32 | 69.04 | 353 | -1 | -11.21 | -8.74 | 36.70 | 696 | -51 | -21.51 | -23.44 | 15.36 | 883 | +6 |
+| RAIN | Industrial Specialties | 163.43 | 61.59 | 0 | 4 | 0.52 | 0.72 | 64.10 | 411 | -219 | -20.75 | -25.09 | 1.23 | 1124 | +3 | -20.88 | -18.67 | 11.38 | 974 | -155 | -16.41 | -18.47 | 22.36 | 810 | +18 |
+| RAINBOW | Hospital/Nursing Management | 1272.80 | 15.73 | 0 | 4 | 1.04 | 1.24 | 69.79 | 346 | -134 | 6.35 | 0.53 | 66.23 | 385 | +67 | -12.00 | -9.55 | 33.70 | 729 | -78 | -5.51 | -7.83 | 45.20 | 572 | +33 |
+| RAJRATAN | Metal Fabrication | 410.50 | 3.32 | 0 | 4 | -1.07 | -0.88 | 42.47 | 658 | +233 | -2.49 | -7.83 | 28.85 | 810 | -60 | -17.35 | -15.05 | 18.76 | 893 | +33 | -4.12 | -6.48 | 47.22 | 551 | -13 |
+| RALLIS | Chemicals: Agricultural | 187.77 | 9.43 | 0 | 4 | 0.43 | 0.63 | 62.87 | 425 | +74 | -0.93 | -6.36 | 34.92 | 741 | -3 | -9.36 | -6.84 | 42.81 | 629 | -12 | -18.41 | -20.42 | 19.39 | 841 | +33 |
+| RAMCOCEM | Construction Materials | 824.90 | 14.68 | 0 | 4 | -1.40 | -1.21 | 38.27 | 706 | -344 | 13.05 | 6.86 | 85.58 | 165 | +8 | -5.76 | -3.14 | 53.64 | 510 | -29 | -5.98 | -8.30 | 43.95 | 585 | -44 |
+| RAMCOIND | Construction Materials | 316.30 | 3.02 | 0 | 4 | 2.58 | 2.78 | 81.87 | 208 | -18 | 11.71 | 5.59 | 81.62 | 210 | +67 | -2.29 | 0.43 | 63.21 | 405 | +8 | 4.49 | 1.92 | 61.04 | 407 | +8 |
+| RAMRAT | Electrical Products | 504.05 | 5.76 | 0 | 4 | -2.05 | -1.86 | 30.04 | 800 | -287 | -9.23 | -14.20 | 9.67 | 1028 | -40 | -11.60 | -9.14 | 35.15 | 713 | -69 | 25.39 | 22.30 | 83.59 | 172 | +1 |
+| RANEHOLDIN | Auto Parts: OEM | 1505.50 | 14.45 | 0 | 4 | -0.84 | -0.65 | 45.18 | 627 | +370 | 3.98 | -1.71 | 57.96 | 479 | +144 | -3.54 | -0.85 | 59.47 | 446 | +39 | 3.16 | 0.62 | 58.64 | 432 | +64 |
+| RATEGAIN | Packaged Software | 681.70 | 26.40 | 0 | 4 | 0.39 | 0.59 | 62.43 | 430 | -225 | -15.93 | -20.53 | 2.73 | 1107 | -3 | -25.19 | -23.11 | 7.10 | 1021 | +24 | -11.58 | -13.76 | 32.73 | 702 | +12 |
+| RATNAMANI | Steel | 2296.40 | 4.78 | 0 | 4 | -2.67 | -2.48 | 22.59 | 885 | -59 | -1.36 | -6.76 | 33.42 | 758 | -1 | -11.85 | -9.40 | 34.43 | 721 | +46 | -13.03 | -15.17 | 28.89 | 742 | -49 |
+| RAYMONDLSL | Apparel/Footwear | 558.25 | 9.82 | 0 | 4 | 0.84 | 1.04 | 67.60 | 371 | +499 | 11.62 | 5.51 | 81.35 | 213 | +102 | -12.38 | -9.94 | 32.88 | 738 | +152 | -25.01 | -26.85 | 10.94 | 929 | +17 |
+| RBA | Restaurants | 88.29 | 35.53 | 0 | 4 | -1.73 | -1.53 | 34.41 | 750 | -165 | -4.27 | -9.51 | 22.25 | 885 | +86 | -11.67 | -9.22 | 34.97 | 715 | -76 | 28.85 | 25.68 | 85.89 | 148 | -3 |
+| RBLBANK | Major Banks | 390.00 | 126.03 | 0 | 4 | -2.08 | -1.89 | 29.25 | 809 | -454 | 8.06 | 2.15 | 71.15 | 329 | -105 | 2.50 | 5.35 | 74.32 | 283 | -16 | 10.25 | 7.53 | 67.95 | 335 | -23 |
+| RCF | Chemicals: Agricultural | 102.62 | 10.22 | 0 | 4 | -1.27 | -1.08 | 39.84 | 688 | -156 | 5.95 | 0.15 | 64.82 | 401 | -41 | -10.38 | -7.89 | 39.80 | 662 | -65 | -18.68 | -20.69 | 18.81 | 847 | +12 |
+| RECLTD | Finance/Rental/Leasing | 295.05 | 112.51 | 0 | 4 | -1.02 | -0.83 | 43.26 | 649 | -218 | -0.37 | -5.82 | 37.03 | 717 | -171 | -6.05 | -3.44 | 52.91 | 518 | +29 | -11.98 | -14.14 | 31.48 | 715 | -67 |
+| REDTAPE | Apparel/Footwear Retail | 102.84 | 1.91 | 0 | 4 | -0.97 | -0.78 | 43.70 | 644 | -128 | -2.25 | -7.60 | 29.64 | 801 | -2 | -15.84 | -13.49 | 22.31 | 854 | +8 | -24.87 | -26.72 | 11.23 | 926 | +0 |
+| REFEX | Coal | 206.27 | 6.04 | 0 | 4 | -2.99 | -2.80 | 20.49 | 909 | +167 | -7.21 | -12.29 | 13.54 | 984 | +33 | -25.70 | -23.63 | 5.83 | 1035 | +11 | -34.82 | -36.42 | 3.74 | 1004 | +3 |
+| REGAAL | Agricultural Commodities/Milling | 95.25 | 4.18 | 0 | 3 | -3.53 | -3.35 | 15.50 | 966 | -889 | 6.54 | 0.71 | 67.19 | 374 | -165 | 8.36 | 11.38 | 84.34 | 173 | -46 | N/A | N/A | N/A | N/A | N/A |
+| RELAXO | Apparel/Footwear | 267.65 | 3.82 | 0 | 4 | -3.98 | -3.79 | 12.43 | 1001 | -206 | -5.04 | -10.24 | 19.53 | 916 | -30 | -25.52 | -23.45 | 6.56 | 1027 | -8 | -20.63 | -22.58 | 16.51 | 871 | +1 |
+| RELIGARE | Multi-Line Insurance | 226.88 | 17.49 | 0 | 4 | -1.11 | -0.92 | 42.12 | 662 | -141 | 4.97 | -0.78 | 61.92 | 434 | -42 | -9.17 | -6.64 | 43.72 | 619 | -123 | -1.50 | -3.93 | 51.92 | 502 | +20 |
+| RELTD | Alternative Power Generation | 135.84 | 1.43 | 0 | 4 | 2.19 | 2.39 | 79.25 | 238 | -64 | -2.63 | -7.96 | 28.14 | 818 | -339 | -11.73 | -9.28 | 34.70 | 718 | +56 | -2.23 | -4.64 | 50.00 | 522 | -194 |
+| RESPONIND | Forest Products | 135.55 | 4.66 | 0 | 4 | -1.30 | -1.11 | 39.40 | 693 | +191 | -8.54 | -13.55 | 11.26 | 1010 | -35 | -9.74 | -7.22 | 41.89 | 639 | -95 | -27.95 | -29.72 | 8.25 | 957 | +0 |
+| RHIM | Miscellaneous Manufacturing | 344.85 | 12.32 | 0 | 4 | -1.82 | -1.63 | 33.10 | 765 | -207 | -1.47 | -6.86 | 32.98 | 763 | +39 | -6.34 | -3.73 | 52.28 | 525 | -13 | -14.03 | -16.15 | 26.39 | 768 | -131 |
+| RICOAUTO | Auto Parts: OEM | 94.40 | 9.90 | 0 | 4 | -1.58 | -1.39 | 36.08 | 731 | +268 | -8.82 | -13.81 | 10.47 | 1019 | +36 | -25.90 | -23.83 | 5.37 | 1040 | +18 | -28.14 | -29.91 | 7.97 | 960 | -85 |
+| RIIL | Oil & Gas Pipelines | 692.65 | 7.03 | 0 | 4 | 0.93 | 1.12 | 68.91 | 356 | -54 | 2.48 | -3.13 | 52.15 | 545 | -16 | -7.61 | -5.04 | 48.82 | 563 | -26 | -8.42 | -10.67 | 38.39 | 643 | -17 |
+| RISHABH | Electrical Products | 598.15 | 10.01 | 0 | 4 | -1.98 | -1.79 | 31.44 | 784 | -680 | -8.71 | -13.70 | 10.91 | 1014 | -37 | -14.02 | -11.63 | 27.32 | 799 | -23 | 16.36 | 13.50 | 75.62 | 255 | +9 |
+| RITES | Miscellaneous Commercial Services | 188.35 | 11.80 | 0 | 4 | 0.71 | 0.91 | 66.11 | 388 | +169 | -3.32 | -8.61 | 25.77 | 845 | +65 | -12.95 | -10.53 | 30.97 | 759 | +36 | -5.93 | -8.24 | 44.05 | 584 | +22 |
+| RML | Auto Parts: OEM | 1112.90 | 4.16 | 0 | 4 | -4.25 | -4.06 | 11.03 | 1017 | +75 | -6.61 | -11.72 | 15.04 | 967 | +60 | -0.38 | 2.39 | 68.21 | 350 | +33 | 21.85 | 18.85 | 81.00 | 199 | +4 |
+| ROSSARI | Chemicals: Specialty | 413.05 | 2.68 | 0 | 4 | -1.87 | -1.67 | 32.57 | 771 | -69 | 1.34 | -4.21 | 46.97 | 604 | -30 | -13.32 | -10.91 | 30.05 | 769 | +2 | -21.58 | -23.51 | 15.16 | 885 | -12 |
+| ROUTE | Major Telecommunications | 434.00 | 8.20 | 0 | 4 | 3.98 | 4.18 | 87.74 | 141 | +566 | -4.11 | -9.36 | 22.78 | 879 | +21 | -13.54 | -11.13 | 29.33 | 777 | +89 | -17.59 | -19.62 | 20.44 | 830 | +50 |
+| RPGLIFE | Pharmaceuticals: Major | 2527.50 | 4.58 | 0 | 4 | -0.53 | -0.33 | 49.74 | 575 | +138 | -15.86 | -20.46 | 2.81 | 1106 | -56 | -2.43 | 0.28 | 62.48 | 413 | +1 | 17.06 | 14.18 | 76.58 | 245 | +26 |
+| RPSGVENT | Financial Conglomerates | 861.75 | 10.39 | 0 | 4 | 1.42 | 1.62 | 72.85 | 311 | +469 | 4.09 | -1.61 | 58.31 | 475 | +106 | 2.30 | 5.15 | 74.04 | 286 | +60 | -7.21 | -9.50 | 41.84 | 607 | +42 |
+| RPTECH | Electronics Distributors | 652.70 | 27.18 | 0 | 4 | 0.38 | 0.58 | 62.35 | 431 | +200 | -22.22 | -26.48 | 1.06 | 1126 | -1 | -19.33 | -17.08 | 14.03 | 945 | +26 | 21.04 | 18.06 | 80.33 | 206 | +45 |
+| RRKABEL | Electrical Products | 1827.40 | 112.17 | 0 | 4 | 0.95 | 1.15 | 69.26 | 352 | +55 | -13.92 | -18.63 | 4.31 | 1089 | +22 | -36.32 | -34.55 | 0.91 | 1089 | +2 | -17.80 | -19.82 | 20.06 | 834 | -39 |
+| RSYSTEMS | Information Technology Services | 239.30 | 14.46 | 0 | 4 | -0.83 | -0.63 | 45.80 | 620 | -153 | -5.19 | -10.38 | 19.00 | 922 | -35 | -6.43 | -3.82 | 51.64 | 532 | -153 | -5.81 | -8.12 | 44.15 | 583 | +35 |
+| RVNL | Engineering & Construction | 190.70 | 141.72 | 0 | 4 | -0.16 | 0.04 | 54.99 | 515 | +346 | 2.53 | -3.09 | 52.33 | 543 | +52 | -8.48 | -5.94 | 46.45 | 589 | +63 | -19.35 | -21.34 | 18.04 | 855 | +24 |
+| SAGCEM | Construction Materials | 140.13 | 0.43 | 0 | 4 | -2.04 | -1.85 | 30.12 | 799 | -446 | 12.01 | 5.88 | 83.03 | 194 | -1 | -10.76 | -8.28 | 37.98 | 682 | +23 | -21.32 | -23.26 | 15.74 | 879 | +8 |
+| SAIL | Steel | 163.95 | 231.16 | 0 | 4 | -0.10 | 0.10 | 56.22 | 501 | +134 | 1.83 | -3.74 | 49.25 | 578 | +147 | -15.05 | -12.69 | 24.77 | 827 | +42 | -16.91 | -18.95 | 21.21 | 822 | +48 |
+| SAKAR | Pharmaceuticals: Major | 967.00 | 11.30 | 0 | 4 | -5.51 | -5.33 | 6.74 | 1066 | -643 | 2.17 | -3.43 | 50.57 | 563 | +211 | 0.13 | 2.92 | 69.31 | 338 | -230 | 18.67 | 15.75 | 77.54 | 235 | -13 |
+| SAKSOFT | Information Technology Services | 117.95 | 3.55 | 0 | 4 | -5.43 | -5.24 | 6.92 | 1064 | -80 | -11.42 | -16.27 | 6.51 | 1064 | -21 | -23.52 | -21.39 | 9.02 | 1000 | -7 | -17.02 | -19.07 | 20.92 | 825 | +18 |
+| SALSTEEL | Steel | 85.81 | 4.89 | 0 | 3 | -5.21 | -5.03 | 7.53 | 1057 | -45 | 11.12 | 5.04 | 79.77 | 231 | +51 | 4.10 | 7.00 | 77.78 | 245 | -47 | N/A | N/A | N/A | N/A | N/A |
+| SAMHI | Hotels/Resorts/Cruise lines | 156.43 | 12.02 | 0 | 4 | 0.12 | 0.31 | 58.32 | 477 | +163 | 0.62 | -4.89 | 42.83 | 651 | -55 | 2.21 | 5.05 | 73.68 | 290 | +70 | -6.48 | -8.78 | 42.90 | 596 | +39 |
+| SAMMAANCAP | Finance/Rental/Leasing | 122.07 | 71.02 | 0 | 4 | -2.29 | -2.10 | 27.15 | 833 | +32 | 0.78 | -4.74 | 43.62 | 642 | -257 | -17.04 | -14.73 | 19.76 | 882 | -66 | -33.34 | -34.98 | 4.22 | 999 | -20 |
+| SANDHAR | Motor Vehicles | 496.35 | 10.67 | 0 | 4 | -10.86 | -10.68 | 0.70 | 1135 | +3 | 5.89 | 0.09 | 64.73 | 402 | +112 | -24.01 | -21.89 | 8.29 | 1008 | +12 | -30.26 | -31.98 | 6.24 | 978 | +13 |
+| SANDUMA | Other Metals/Minerals | 161.86 | 16.06 | 0 | 4 | -3.32 | -3.13 | 17.08 | 948 | -77 | -3.71 | -8.98 | 24.19 | 863 | +46 | -19.23 | -16.98 | 14.39 | 941 | -2 | -28.11 | -29.88 | 8.06 | 959 | +6 |
+| SANOFI | Pharmaceuticals: Major | 3249.60 | 9.50 | 0 | 4 | 1.36 | 1.56 | 72.24 | 318 | -69 | 1.88 | -3.69 | 49.60 | 574 | -245 | 3.00 | 5.87 | 75.87 | 266 | -28 | 2.20 | -0.31 | 57.10 | 448 | +24 |
+| SANOFICONR | Pharmaceuticals: Major | 3508.20 | 11.05 | 0 | 4 | 1.91 | 2.11 | 77.41 | 259 | +226 | 1.16 | -4.38 | 46.00 | 615 | -138 | -15.22 | -12.86 | 23.95 | 836 | +4 | -25.40 | -27.23 | 10.36 | 935 | +16 |
+| SANSTAR | Food: Major Diversified | 95.89 | 1.65 | 0 | 4 | -0.93 | -0.74 | 43.87 | 642 | +56 | 4.67 | -1.06 | 60.69 | 448 | +84 | -10.68 | -8.20 | 38.43 | 677 | +76 | -16.44 | -18.50 | 22.26 | 811 | +41 |
+| SAPPHIRE | Restaurants | 203.96 | 9.31 | 0 | 4 | 4.14 | 4.34 | 88.09 | 137 | +210 | 1.46 | -4.10 | 47.49 | 598 | +66 | -11.31 | -8.84 | 36.07 | 703 | +75 | 12.76 | 9.98 | 71.69 | 296 | -6 |
+| SARDAEN | Steel | 469.85 | 10.86 | 0 | 4 | 0.22 | 0.42 | 60.07 | 457 | -179 | 2.59 | -3.03 | 52.77 | 538 | -121 | -5.47 | -2.84 | 54.28 | 503 | -84 | -11.72 | -13.89 | 32.15 | 708 | -81 |
+| SASKEN | Information Technology Services | 1896.40 | 9.21 | 0 | 4 | 2.84 | 3.04 | 83.63 | 188 | -69 | -0.51 | -5.95 | 36.59 | 722 | -226 | -0.41 | 2.36 | 68.12 | 351 | -39 | -12.24 | -14.40 | 30.52 | 725 | +19 |
+| SBFC | Finance/Rental/Leasing | 85.71 | 12.63 | 0 | 4 | -0.21 | -0.01 | 54.29 | 523 | -174 | -1.54 | -6.93 | 32.54 | 768 | +85 | -14.25 | -11.86 | 26.96 | 803 | -106 | -8.16 | -10.42 | 39.16 | 635 | -47 |
+| SBICARD | Finance/Rental/Leasing | 565.80 | 58.64 | 0 | 4 | -2.32 | -2.13 | 26.27 | 843 | -681 | 4.78 | -0.96 | 61.21 | 442 | -214 | -10.53 | -8.04 | 39.25 | 668 | -79 | -4.02 | -6.38 | 47.41 | 549 | -37 |
+| SCHAEFFLER | Metal Fabrication | 3658.90 | 29.62 | 0 | 4 | 1.55 | 1.75 | 73.99 | 298 | -130 | 3.41 | -2.25 | 56.46 | 496 | +87 | -8.53 | -5.99 | 45.99 | 594 | -56 | -8.47 | -10.72 | 38.29 | 644 | +0 |
+| SCHNEIDER | Electrical Products | 1032.00 | 19.07 | 0 | 4 | -1.00 | -0.80 | 43.43 | 647 | -461 | -8.73 | -13.72 | 10.73 | 1016 | +24 | -13.15 | -10.74 | 30.42 | 765 | +50 | -7.01 | -9.30 | 42.13 | 604 | +35 |
+| SCI | Air Freight/Couriers | 254.87 | 58.44 | 0 | 4 | -0.84 | -0.65 | 45.36 | 625 | -381 | 0.38 | -5.11 | 41.42 | 667 | -146 | -11.35 | -8.88 | 35.88 | 705 | +22 | -16.23 | -18.29 | 22.74 | 806 | +4 |
+| SDBL | Beverages: Alcoholic | 73.98 | 4.55 | 0 | 4 | -1.64 | -1.44 | 35.55 | 737 | +14 | 2.75 | -2.87 | 53.83 | 526 | +29 | 4.05 | 6.95 | 77.69 | 246 | +24 | -2.36 | -4.77 | 49.81 | 524 | -10 |
+| SEAMECLTD | Oilfield Services/Equipment | 1434.20 | 5.31 | 0 | 4 | -6.72 | -6.54 | 3.33 | 1105 | -173 | -11.61 | -16.45 | 6.33 | 1066 | -87 | -14.57 | -12.19 | 26.14 | 812 | -100 | -12.24 | -14.40 | 30.61 | 724 | -64 |
+| SEJALLTD | Industrial Specialties | 934.00 | 3.50 | 0 | 2 | 1.20 | 1.40 | 71.10 | 331 | -93 | 13.80 | 7.57 | 86.54 | 154 | +453 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SENCO | Other Consumer Specialties | 299.65 | 44.00 | 0 | 4 | -6.39 | -6.21 | 3.94 | 1098 | -135 | -1.19 | -6.60 | 33.95 | 752 | -33 | -15.05 | -12.69 | 24.68 | 828 | -110 | -13.02 | -15.16 | 29.08 | 740 | -44 |
+| SENORES | Pharmaceuticals: Major | 1097.00 | 36.07 | 0 | 4 | 0.57 | 0.77 | 64.89 | 402 | +254 | -10.02 | -14.95 | 8.36 | 1043 | +67 | -24.59 | -22.49 | 7.56 | 1016 | -20 | 5.04 | 2.45 | 61.71 | 400 | +22 |
+| SERVOTECH | Electrical Products | 63.03 | 2.41 | 0 | 4 | -1.30 | -1.11 | 39.49 | 692 | +110 | -2.75 | -8.07 | 27.53 | 825 | +77 | -19.79 | -17.56 | 13.57 | 950 | +19 | -43.24 | -44.64 | 1.92 | 1023 | +4 |
+| SFL | Industrial Specialties | 577.35 | 11.19 | 0 | 4 | -3.76 | -3.57 | 13.92 | 984 | -130 | 3.54 | -2.13 | 56.82 | 492 | -19 | -10.45 | -7.96 | 39.62 | 664 | -66 | -7.35 | -9.63 | 41.65 | 609 | -80 |
+| SGFIN | Investment Banks/Brokers | 633.30 | 66.30 | 0 | 4 | -22.87 | -22.72 | 0.09 | 1142 | +1 | -13.83 | -18.55 | 4.49 | 1087 | -211 | -7.18 | -4.60 | 49.82 | 552 | +61 | 9.42 | 6.72 | 67.18 | 343 | +22 |
+| SGMART | Electric Utilities | 913.15 | 209.73 | 0 | 3 | -16.76 | -16.60 | 0.35 | 1139 | -8 | 5.62 | -0.16 | 63.76 | 413 | -139 | 9.35 | 12.40 | 85.43 | 161 | -19 | N/A | N/A | N/A | N/A | N/A |
+| SHADOWFAX | Packaged Software | 312.95 | 116.03 | 0 | 2 | 1.86 | 2.05 | 76.88 | 265 | +380 | 6.45 | 0.62 | 66.84 | 378 | +50 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SHAKTIPUMP | Industrial Machinery | 346.90 | 34.79 | 0 | 4 | -3.14 | -2.95 | 18.21 | 935 | -114 | -5.85 | -11.00 | 17.59 | 938 | -37 | -27.42 | -25.40 | 4.46 | 1050 | +3 | -34.82 | -36.42 | 3.65 | 1005 | -16 |
+| SHANTIGEAR | Auto Parts: OEM | 487.85 | 1.15 | 0 | 4 | -2.08 | -1.89 | 29.42 | 807 | -67 | -0.68 | -6.12 | 35.62 | 733 | -89 | -8.07 | -5.51 | 47.91 | 573 | -87 | 10.62 | 7.90 | 68.62 | 328 | -13 |
+| SHANTIGOLD | Other Consumer Specialties | 218.45 | 53.76 | 0 | 4 | -3.85 | -3.66 | 13.13 | 993 | +120 | -34.17 | -37.78 | 0.18 | 1136 | -1 | -6.96 | -4.37 | 50.55 | 544 | +88 | -1.82 | -4.24 | 50.96 | 512 | -15 |
+| SHARDACROP | Wholesale Distributors | 683.30 | 10.21 | 0 | 4 | 3.42 | 3.62 | 85.64 | 165 | +56 | 0.15 | -5.34 | 39.84 | 685 | +15 | -13.32 | -10.91 | 30.15 | 768 | -105 | -24.48 | -26.33 | 11.71 | 921 | +14 |
+| SHAREINDIA | Investment Banks/Brokers | 173.92 | 24.61 | 0 | 4 | -3.01 | -2.82 | 19.88 | 916 | -23 | -2.25 | -7.60 | 29.55 | 802 | -31 | 1.83 | 4.66 | 73.13 | 296 | +24 | 27.64 | 24.50 | 85.22 | 155 | +7 |
+| SHILCTECH | Electrical Products | 3126.40 | 6.03 | 0 | 3 | -0.56 | -0.37 | 49.47 | 578 | +502 | -14.37 | -19.05 | 3.87 | 1094 | +26 | -21.68 | -19.50 | 10.66 | 982 | +16 | N/A | N/A | N/A | N/A | N/A |
+| SHK | Chemicals: Specialty | 127.28 | 2.92 | 0 | 4 | 0.02 | 0.21 | 57.53 | 486 | +122 | -2.56 | -7.90 | 28.50 | 814 | +66 | -14.39 | -12.00 | 26.41 | 809 | +66 | 1.64 | -0.86 | 56.05 | 459 | +46 |
+| SHOPERSTOP | Department Stores | 376.35 | 3.74 | 0 | 4 | -0.97 | -0.78 | 43.61 | 645 | -286 | 5.45 | -0.32 | 63.32 | 418 | -37 | -2.59 | 0.12 | 62.02 | 418 | -49 | 4.14 | 1.57 | 60.27 | 415 | +26 |
+| SHREECEM | Construction Materials | 25160.00 | 54.96 | 0 | 4 | -1.24 | -1.04 | 40.89 | 676 | -408 | 8.82 | 2.87 | 73.53 | 302 | -42 | 7.11 | 10.09 | 82.97 | 188 | -32 | 2.76 | 0.23 | 58.16 | 437 | +11 |
+| SHRIPISTON | Auto Parts: OEM | 4064.10 | 18.40 | 0 | 4 | -3.74 | -3.55 | 14.27 | 980 | -458 | -9.29 | -14.25 | 9.59 | 1029 | -80 | -11.62 | -9.16 | 35.06 | 714 | -130 | 19.56 | 16.61 | 78.98 | 220 | -11 |
+| SHRIRAMPPS | Real Estate Development | 69.84 | 2.39 | 0 | 4 | 1.62 | 1.81 | 74.69 | 290 | +265 | 5.21 | -0.55 | 62.62 | 426 | -55 | -8.26 | -5.71 | 47.27 | 580 | +81 | -21.06 | -23.00 | 16.03 | 876 | +33 |
+| SIGNPOST | Advertising/Marketing Services | 215.43 | 1.01 | 0 | 4 | -3.32 | -3.13 | 17.25 | 946 | +2 | -7.74 | -12.79 | 12.49 | 996 | +33 | -14.61 | -12.24 | 25.68 | 817 | +4 | -21.29 | -23.23 | 15.83 | 878 | -10 |
+| SILVERTUC | Packaged Software | 125.08 | 3.18 | 0 | 4 | -1.29 | -1.10 | 39.58 | 691 | -452 | 1.82 | -3.75 | 49.16 | 579 | +34 | -26.91 | -24.87 | 4.92 | 1045 | -3 | -27.73 | -29.51 | 8.54 | 954 | +9 |
+| SIRCA | Industrial Specialties | 404.30 | 18.84 | 0 | 4 | 0.50 | 0.69 | 63.84 | 414 | -17 | -2.77 | -8.09 | 27.44 | 826 | -3 | -6.19 | -3.58 | 52.55 | 522 | +8 | -3.45 | -5.83 | 48.37 | 539 | +13 |
+| SIS | Miscellaneous Commercial Services | 360.75 | 2.56 | 0 | 4 | 0.28 | 0.47 | 61.12 | 445 | +73 | -6.13 | -11.27 | 16.62 | 949 | +2 | -15.62 | -13.28 | 23.04 | 846 | -11 | -14.92 | -17.01 | 24.57 | 787 | -19 |
+| SJS | Auto Parts: OEM | 2075.20 | 25.76 | 0 | 4 | -6.91 | -6.73 | 2.98 | 1109 | -49 | 1.22 | -4.32 | 46.35 | 611 | -38 | -15.68 | -13.34 | 22.77 | 849 | -25 | 4.29 | 1.73 | 60.46 | 413 | -29 |
+| SJVN | Electric Utilities | 55.05 | 33.89 | 0 | 4 | -1.31 | -1.12 | 39.23 | 695 | -67 | 5.06 | -0.69 | 62.18 | 431 | -95 | -15.20 | -12.84 | 24.04 | 835 | -38 | -25.34 | -27.17 | 10.56 | 933 | -10 |
+| SKFINDIA | Metal Fabrication | 1443.50 | 4.09 | 0 | 4 | -0.21 | -0.02 | 54.12 | 525 | -87 | 1.16 | -4.37 | 46.09 | 614 | +8 | -5.75 | -3.13 | 53.73 | 509 | +20 | -10.81 | -13.00 | 34.17 | 687 | -10 |
+| SKFINDUS | Auto Parts: OEM | 2474.30 | 6.52 | 0 | 2 | -0.05 | 0.15 | 56.65 | 496 | +207 | 1.30 | -4.25 | 46.70 | 607 | +24 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SKIPPER | Metal Fabrication | 510.20 | 26.20 | 0 | 4 | 4.32 | 4.53 | 88.88 | 128 | -13 | 0.04 | -5.44 | 39.31 | 691 | -9 | -4.56 | -1.90 | 56.47 | 479 | +26 | -11.22 | -13.40 | 33.69 | 692 | +6 |
+| SKMEGGPROD | Agricultural Commodities/Milling | 213.20 | 5.49 | 0 | 4 | -0.76 | -0.57 | 46.76 | 609 | +116 | 5.00 | -0.74 | 62.09 | 432 | +27 | -18.69 | -16.42 | 15.66 | 927 | +13 | -10.91 | -13.10 | 34.07 | 688 | +44 |
+| SMARTWORKS | Real Estate Development | 511.85 | 8.29 | 0 | 4 | -1.62 | -1.43 | 35.73 | 735 | -453 | 5.64 | -0.14 | 64.03 | 410 | -153 | -2.67 | 0.04 | 61.48 | 424 | -13 | 13.69 | 10.90 | 72.46 | 288 | -12 |
+| SMLMAH | Motor Vehicles | 4776.80 | 36.27 | 0 | 4 | -4.26 | -4.07 | 10.95 | 1018 | +123 | -1.47 | -6.86 | 33.07 | 762 | +79 | -11.75 | -9.29 | 34.61 | 719 | -97 | 27.32 | 24.19 | 84.84 | 159 | +56 |
+| SOBHA | Real Estate Development | 1286.30 | 23.55 | 0 | 4 | 1.89 | 2.09 | 77.23 | 261 | -47 | 11.31 | 5.22 | 80.21 | 226 | -1 | 3.33 | 6.20 | 76.41 | 260 | -1 | -3.99 | -6.36 | 47.50 | 548 | +50 |
+| SOLARA | Pharmaceuticals: Major | 632.65 | 16.31 | 0 | 4 | 0.70 | 0.90 | 65.94 | 390 | +388 | -3.45 | -8.73 | 25.15 | 852 | +53 | -1.68 | 1.06 | 64.94 | 386 | -6 | 16.46 | 13.59 | 75.72 | 254 | +24 |
+| SOMANYCERA | Building Products | 553.15 | 6.73 | 0 | 4 | 0.24 | 0.44 | 60.42 | 453 | -280 | -1.32 | -6.72 | 33.51 | 757 | -207 | -1.78 | 0.96 | 64.66 | 389 | -55 | 8.98 | 6.30 | 66.22 | 353 | +11 |
+| SONATSOFTW | Information Technology Services | 233.84 | 20.79 | 0 | 4 | 1.42 | 1.62 | 72.94 | 310 | -24 | 1.69 | -3.87 | 48.28 | 589 | -1 | -19.09 | -16.83 | 14.94 | 935 | -1 | -11.69 | -13.87 | 32.44 | 705 | +29 |
+| SOTL | Chemicals: Specialty | 570.55 | 8.92 | 0 | 4 | -3.28 | -3.09 | 17.69 | 941 | +156 | -13.47 | -18.21 | 4.75 | 1084 | +25 | -26.04 | -23.98 | 5.19 | 1042 | -121 | 1.11 | -1.38 | 55.28 | 467 | -98 |
+| SPAL | Apparel/Footwear | 921.85 | 3.77 | 0 | 4 | -0.69 | -0.49 | 48.34 | 591 | +131 | 9.14 | 3.17 | 74.32 | 293 | +17 | -9.74 | -7.23 | 41.71 | 641 | +102 | 10.95 | 8.22 | 69.39 | 320 | +40 |
+| SPANDANA | Finance/Rental/Leasing | 174.93 | 5.58 | 0 | 4 | -1.77 | -1.58 | 33.98 | 755 | -259 | -12.10 | -16.92 | 5.89 | 1071 | -37 | -26.02 | -23.96 | 5.28 | 1041 | -2 | -31.99 | -33.66 | 5.18 | 989 | -3 |
+| SPARC | Pharmaceuticals: Major | 186.99 | 36.09 | 0 | 4 | -1.67 | -1.47 | 35.29 | 740 | -64 | 2.19 | -3.40 | 50.66 | 562 | -31 | -5.07 | -2.43 | 55.46 | 490 | -16 | -12.20 | -14.36 | 30.71 | 723 | -58 |
+| SPECTRUM | Electronic Equipment/Instruments | 3684.70 | 6.25 | 0 | 2 | -17.54 | -17.37 | 0.26 | 1140 | -4 | -8.20 | -13.22 | 11.79 | 1004 | -336 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| SPIC | Chemicals: Agricultural | 60.65 | 1.28 | 0 | 4 | 2.52 | 2.72 | 81.79 | 209 | +88 | 6.35 | 0.53 | 66.14 | 386 | +92 | -11.92 | -9.47 | 33.97 | 726 | +2 | -12.33 | -14.49 | 30.42 | 726 | +80 |
+| SPLPETRO | Industrial Specialties | 697.20 | 5.83 | 0 | 4 | -0.19 | 0.01 | 54.55 | 520 | -105 | -2.28 | -7.63 | 29.38 | 804 | +43 | -2.96 | -0.26 | 61.02 | 429 | -3 | -0.90 | -3.33 | 52.78 | 493 | +10 |
+| SPMLINFRA | Engineering & Construction | 136.42 | 5.75 | 0 | 4 | -0.88 | -0.68 | 44.48 | 635 | -187 | 4.01 | -1.68 | 58.22 | 476 | +34 | -24.06 | -21.95 | 8.11 | 1010 | -8 | -31.92 | -33.59 | 5.28 | 988 | -1 |
+| SRF | Industrial Specialties | 2559.50 | 71.96 | 0 | 4 | 1.78 | 1.98 | 76.27 | 272 | +79 | 8.52 | 2.58 | 72.56 | 313 | +49 | -1.25 | 1.49 | 65.66 | 378 | -8 | -6.13 | -8.44 | 43.76 | 587 | +27 |
+| SRM | Engineering & Construction | 438.15 | 3.28 | 0 | 4 | 3.26 | 3.47 | 85.03 | 172 | N/A | 4.21 | -1.49 | 59.01 | 467 | N/A | -2.05 | 0.68 | 63.93 | 397 | N/A | -10.61 | -12.81 | 34.64 | 682 | N/A |
+| STALLION | Wholesale Distributors | 174.23 | 5.78 | 0 | 2 | -4.12 | -3.93 | 11.47 | 1012 | -53 | -6.71 | -11.82 | 14.78 | 970 | +74 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| STAR | Pharmaceuticals: Major | 969.60 | 35.33 | 0 | 4 | 0.24 | 0.43 | 60.25 | 455 | +302 | -11.65 | -16.49 | 6.24 | 1067 | +5 | -5.33 | -2.70 | 54.64 | 499 | +29 | -5.61 | -7.93 | 44.72 | 577 | +142 |
+| STARCEMENT | Construction Materials | 176.63 | 3.28 | 0 | 4 | 0.44 | 0.64 | 63.13 | 422 | +230 | 8.36 | 2.42 | 72.03 | 319 | +96 | -4.85 | -2.20 | 56.01 | 484 | +40 | -15.48 | -17.56 | 23.42 | 799 | +32 |
+| STARHEALTH | Life/Health Insurance | 570.45 | 22.33 | 0 | 4 | 2.59 | 2.79 | 82.05 | 206 | +238 | 7.15 | 1.28 | 68.78 | 356 | -49 | 1.79 | 4.63 | 72.95 | 298 | +44 | 8.40 | 5.73 | 65.74 | 358 | +22 |
+| STEELCAS | Steel | 351.40 | 3.32 | 0 | 4 | -5.05 | -4.87 | 8.23 | 1049 | +50 | -2.69 | -8.01 | 27.88 | 821 | -258 | 3.40 | 6.28 | 76.50 | 259 | +37 | 23.47 | 20.43 | 82.25 | 186 | -29 |
+| STOVEKRAFT | Electronics/Appliances | 737.85 | 9.76 | 0 | 4 | -2.66 | -2.47 | 22.77 | 883 | -59 | -10.54 | -15.43 | 7.74 | 1050 | +28 | -12.90 | -10.47 | 31.33 | 755 | -26 | 12.94 | 10.16 | 71.98 | 293 | -70 |
+| STUDDS | Recreational Products | 403.80 | 1.48 | 0 | 3 | -1.80 | -1.61 | 33.80 | 757 | -132 | 1.65 | -3.92 | 48.20 | 590 | -110 | -8.50 | -5.95 | 46.36 | 590 | -28 | N/A | N/A | N/A | N/A | N/A |
+| STYL | Packaged Software | 280.85 | 2.09 | 0 | 3 | -3.00 | -2.81 | 20.23 | 912 | +125 | -14.88 | -19.54 | 2.99 | 1104 | -113 | -27.39 | -25.37 | 4.64 | 1048 | -20 | N/A | N/A | N/A | N/A | N/A |
+| STYLAMIND | Forest Products | 3248.80 | 11.11 | 0 | 4 | -0.11 | 0.09 | 55.69 | 507 | -37 | 15.08 | 8.78 | 88.57 | 131 | +15 | -2.86 | -0.15 | 61.20 | 427 | +17 | 6.97 | 4.34 | 63.92 | 377 | -46 |
+| STYRENIX | Chemicals: Specialty | 1735.50 | 6.67 | 0 | 4 | -5.42 | -5.24 | 7.01 | 1063 | -92 | -4.21 | -9.45 | 22.43 | 883 | -54 | -13.73 | -11.33 | 28.42 | 787 | -71 | -21.51 | -23.44 | 15.45 | 882 | -4 |
+| SUBROS | Industrial Machinery | 644.20 | 23.18 | 0 | 4 | 0.46 | 0.66 | 63.40 | 419 | +127 | 9.91 | 3.90 | 76.17 | 272 | +71 | -10.10 | -7.60 | 40.44 | 655 | -14 | -11.30 | -13.48 | 33.40 | 695 | -9 |
+| SUDARSCHEM | Chemicals: Specialty | 1075.05 | 17.52 | 0 | 4 | -7.36 | -7.17 | 1.93 | 1121 | -231 | -0.55 | -5.99 | 36.15 | 727 | -202 | -13.35 | -10.94 | 29.96 | 770 | -24 | 21.08 | 18.10 | 80.42 | 205 | -20 |
+| SULA | Agricultural Commodities/Milling | 134.72 | 2.94 | 0 | 4 | -3.25 | -3.06 | 17.86 | 939 | -627 | 4.59 | -1.14 | 60.25 | 453 | -70 | -9.37 | -6.85 | 42.71 | 630 | -78 | -13.34 | -15.47 | 28.12 | 750 | -4 |
+| SUMICHEM | Chemicals: Agricultural | 331.75 | 17.43 | 0 | 4 | -2.63 | -2.44 | 23.12 | 879 | -40 | -0.05 | -5.52 | 38.79 | 697 | +57 | -35.48 | -33.69 | 1.28 | 1085 | -5 | -29.88 | -31.60 | 6.53 | 975 | +6 |
+| SUMMITSEC | Investment Trusts/Mutual Funds | 1335.20 | 0.32 | 0 | 4 | -1.87 | -1.67 | 32.49 | 772 | -44 | -2.00 | -7.37 | 30.96 | 786 | -250 | -5.55 | -2.92 | 54.10 | 505 | -62 | -12.13 | -14.30 | 30.90 | 721 | -16 |
+| SUNCLAY | Auto Parts: OEM | 1026.10 | 0.87 | 0 | 4 | -4.54 | -4.35 | 9.72 | 1032 | +24 | -4.85 | -10.06 | 20.14 | 909 | +50 | -20.87 | -18.67 | 11.48 | 973 | -3 | -22.54 | -24.45 | 14.20 | 895 | +3 |
+| SUNDARMFIN | Finance/Rental/Leasing | 4173.40 | 20.91 | 0 | 4 | -3.45 | -3.26 | 16.29 | 957 | -385 | 5.70 | -0.09 | 64.29 | 407 | -117 | -8.08 | -5.52 | 47.72 | 575 | -110 | 1.71 | -0.79 | 56.33 | 456 | -18 |
+| SUNDRMFAST | Auto Parts: OEM | 1017.30 | 8.93 | 0 | 4 | 0.04 | 0.24 | 57.71 | 484 | +264 | -5.07 | -10.26 | 19.26 | 919 | +41 | -15.56 | -13.21 | 23.22 | 844 | -1 | 23.03 | 20.00 | 81.57 | 193 | +23 |
+| SUNDROP | Agricultural Commodities/Milling | 621.30 | 0.89 | 0 | 4 | 2.70 | 2.90 | 83.01 | 195 | +13 | -1.50 | -6.89 | 32.81 | 765 | +84 | -5.22 | -2.59 | 55.19 | 493 | +27 | -3.16 | -5.55 | 48.66 | 536 | +51 |
+| SUNFLAG | Steel | 361.00 | 6.74 | 0 | 4 | -2.06 | -1.87 | 29.86 | 802 | +61 | -11.16 | -16.02 | 6.86 | 1060 | -95 | 6.29 | 9.24 | 81.42 | 205 | -25 | -11.27 | -13.45 | 33.49 | 694 | -133 |
+| SUPRAJIT | Auto Parts: OEM | 460.70 | 4.24 | 0 | 4 | 2.26 | 2.46 | 79.68 | 233 | -31 | -0.69 | -6.13 | 35.53 | 734 | +39 | -9.03 | -6.50 | 44.17 | 614 | -27 | -2.12 | -4.53 | 50.48 | 517 | -10 |
+| SUPREMEIND | Miscellaneous Manufacturing | 3200.00 | 62.91 | 0 | 4 | -0.19 | 0.01 | 54.47 | 521 | +28 | -0.31 | -5.77 | 37.12 | 716 | +75 | -11.23 | -8.76 | 36.52 | 698 | -31 | -12.16 | -14.32 | 30.81 | 722 | -19 |
+| SURAKSHA | Medical/Nursing Services | 311.30 | 4.30 | 0 | 4 | -0.06 | 0.13 | 56.57 | 497 | +477 | -2.58 | -7.91 | 28.23 | 817 | -140 | -8.66 | -6.11 | 45.63 | 598 | -58 | 11.58 | 8.83 | 70.44 | 309 | +64 |
+| SURYAROSNI | Steel | 213.01 | 8.90 | 0 | 4 | -0.10 | 0.10 | 56.04 | 503 | -165 | 2.73 | -2.89 | 53.56 | 529 | +165 | -2.66 | 0.05 | 61.57 | 423 | +14 | -16.64 | -18.69 | 21.69 | 817 | +1 |
+| SURYODAY | Regional Banks | 145.82 | 3.69 | 0 | 4 | -3.04 | -2.85 | 19.44 | 921 | -43 | 9.54 | 3.54 | 74.93 | 286 | +16 | -3.47 | -0.78 | 59.65 | 444 | +36 | -14.92 | -17.01 | 24.47 | 788 | -30 |
+| SUVEN | Pharmaceuticals: Major | 264.20 | 9.73 | 0 | 4 | -1.93 | -1.74 | 31.96 | 778 | +58 | 0.00 | -5.47 | 39.05 | 694 | +23 | -30.77 | -28.84 | 2.73 | 1069 | -2 | -0.81 | -3.25 | 52.88 | 492 | +40 |
+| SWANCORP | Electric Utilities | 227.66 | 18.05 | 0 | 4 | -1.41 | -1.21 | 38.18 | 707 | -21 | -4.88 | -10.09 | 19.88 | 912 | +10 | -21.33 | -19.14 | 11.02 | 978 | -2 | -27.99 | -29.76 | 8.16 | 958 | +19 |
+| SWARAJENG | Auto Parts: OEM | 3455.30 | 2.44 | 0 | 4 | 0.20 | 0.40 | 59.63 | 462 | -17 | -0.18 | -5.64 | 38.26 | 703 | -11 | -2.33 | 0.39 | 62.93 | 408 | +8 | -8.37 | -10.63 | 38.48 | 642 | +14 |
+| SWIGGY | Air Freight/Couriers | 180.00 | 392.71 | 0 | 4 | 1.01 | 1.21 | 69.61 | 348 | +44 | -2.83 | -8.15 | 27.09 | 830 | -129 | -34.55 | -32.72 | 1.64 | 1081 | -2 | -29.04 | -30.78 | 6.81 | 972 | -24 |
+| SYMPHONY | Industrial Machinery | 536.35 | 4.09 | 0 | 4 | -1.80 | -1.61 | 33.54 | 760 | +193 | 4.84 | -0.90 | 61.57 | 438 | +22 | -6.62 | -4.03 | 51.28 | 536 | +98 | -22.35 | -24.26 | 14.30 | 894 | +16 |
+| SYNGENE | Miscellaneous Commercial Services | 447.85 | 84.54 | 0 | 4 | -0.85 | -0.66 | 45.01 | 629 | -410 | 12.36 | 6.21 | 83.55 | 188 | +145 | 11.39 | 14.49 | 87.89 | 134 | -9 | 2.82 | 0.29 | 58.35 | 435 | +28 |
+| SYRMA | Electronic Production Equipment | 1502.00 | 209.18 | 0 | 4 | -0.90 | -0.70 | 44.22 | 638 | +50 | -10.01 | -14.93 | 8.44 | 1042 | -134 | 3.74 | 6.62 | 77.23 | 251 | +4 | 22.95 | 19.93 | 81.48 | 194 | -7 |
+| SYSTMTXC | Investment Banks/Brokers | 76.61 | 0.14 | 0 | 2 | -0.75 | -0.56 | 46.94 | 607 | +320 | -0.25 | -5.71 | 37.73 | 709 | -105 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| TAJGVK | Hotels/Resorts/Cruise lines | 309.15 | 2.63 | 0 | 4 | -1.21 | -1.02 | 41.07 | 674 | -137 | 0.02 | -5.46 | 39.14 | 693 | +25 | -6.02 | -3.40 | 53.01 | 517 | +50 | -9.18 | -11.42 | 37.43 | 653 | +8 |
+| TALBROAUTO | Industrial Machinery | 379.15 | 22.53 | 0 | 4 | -5.84 | -5.65 | 5.69 | 1078 | -218 | 6.53 | 0.70 | 67.11 | 375 | -55 | -7.70 | -5.14 | 48.54 | 566 | -91 | 7.01 | 4.38 | 64.01 | 376 | -36 |
+| TANLA | Information Technology Services | 617.05 | 77.58 | 0 | 4 | -6.59 | -6.41 | 3.50 | 1103 | -52 | -0.22 | -5.68 | 37.99 | 706 | -237 | 13.61 | 16.77 | 89.44 | 117 | -43 | 19.18 | 16.25 | 78.60 | 224 | +14 |
+| TARC | Real Estate Development | 121.94 | 22.25 | 0 | 4 | -0.29 | -0.09 | 52.89 | 539 | +177 | 10.67 | 4.62 | 78.36 | 247 | +22 | -0.45 | 2.32 | 68.03 | 352 | -67 | -6.69 | -8.98 | 42.61 | 599 | +17 |
+| TARIL | Electrical Products | 291.50 | 53.11 | 0 | 4 | -1.88 | -1.69 | 32.31 | 774 | +115 | -7.69 | -12.75 | 12.66 | 994 | -31 | -5.63 | -3.01 | 53.92 | 507 | +10 | -8.16 | -10.42 | 39.25 | 634 | -43 |
+| TASTYBITE | Food: Specialty/Candy | 10127.50 | 5.90 | 0 | 4 | -2.73 | -2.54 | 22.24 | 889 | +206 | 8.61 | 2.67 | 73.00 | 308 | -122 | 1.82 | 4.66 | 73.04 | 297 | +69 | 31.18 | 27.95 | 88.20 | 124 | +19 |
+| TATACHEM | Chemicals: Agricultural | 662.05 | 110.16 | 0 | 4 | 3.56 | 3.76 | 86.43 | 156 | +9 | 9.71 | 3.71 | 75.46 | 280 | -35 | 4.49 | 7.40 | 78.87 | 233 | +10 | -8.11 | -10.37 | 39.35 | 633 | -12 |
+| TATACOMM | Major Telecommunications | 1707.30 | 45.26 | 0 | 4 | -2.50 | -2.30 | 24.61 | 862 | -106 | -0.12 | -5.59 | 38.35 | 702 | -77 | -1.53 | 1.21 | 65.30 | 382 | -18 | -14.03 | -16.14 | 26.49 | 767 | -49 |
+| TATAELXSI | Information Technology Services | 3877.30 | 89.99 | 0 | 4 | 0.71 | 0.91 | 66.02 | 389 | -282 | 1.93 | -3.65 | 49.96 | 570 | -35 | 6.58 | 9.54 | 81.97 | 199 | -27 | -9.73 | -11.95 | 36.95 | 658 | +31 |
+| TATAINVEST | Investment Banks/Brokers | 579.75 | 18.37 | 0 | 4 | -0.50 | -0.30 | 50.44 | 567 | -61 | 1.05 | -4.48 | 44.94 | 627 | -124 | -8.51 | -5.96 | 46.27 | 591 | +15 | -13.04 | -15.18 | 28.79 | 743 | -13 |
+| TATATECH | Packaged Software | 705.20 | 65.86 | 0 | 4 | -3.12 | -2.93 | 18.65 | 930 | -511 | 7.02 | 1.16 | 68.16 | 363 | -5 | -13.47 | -11.06 | 29.69 | 773 | +44 | -5.77 | -8.09 | 44.24 | 582 | -29 |
+| TATVA | Chemicals: Specialty | 1590.60 | 15.58 | 0 | 4 | -0.70 | -0.50 | 48.07 | 594 | +178 | -1.50 | -6.89 | 32.72 | 766 | +54 | -0.90 | 1.86 | 66.48 | 369 | +24 | 33.54 | 30.25 | 89.16 | 114 | +27 |
+| TBOTEK | Internet Software/Services | 1475.80 | 14.21 | 0 | 4 | -4.63 | -4.44 | 9.54 | 1034 | -72 | -4.77 | -9.99 | 20.32 | 907 | +13 | -14.32 | -11.93 | 26.68 | 806 | -7 | 20.81 | 17.84 | 80.13 | 208 | -28 |
+| TCI | Trucking | 750.05 | 8.02 | 0 | 4 | -6.26 | -6.08 | 4.38 | 1093 | -12 | -14.57 | -19.24 | 3.61 | 1097 | -24 | -15.08 | -12.72 | 24.59 | 829 | -78 | -20.07 | -22.03 | 17.27 | 863 | -9 |
+| TCIEXP | Air Freight/Couriers | 387.15 | 3.76 | 0 | 4 | -18.36 | -18.20 | 0.18 | 1141 | -1 | -18.50 | -22.96 | 1.93 | 1116 | -2 | -28.56 | -26.58 | 3.73 | 1058 | -17 | -28.29 | -30.06 | 7.77 | 962 | -62 |
+| TDPOWERSYS | Electrical Products | 617.65 | 412.32 | 0 | 4 | -0.22 | -0.02 | 53.85 | 528 | +249 | -14.15 | -18.85 | 4.22 | 1090 | -8 | -18.52 | -16.25 | 16.03 | 923 | +19 | -53.40 | -54.55 | 1.06 | 1032 | -3 |
+| TEAMLEASE | Personnel Services | 1036.70 | 6.55 | 0 | 4 | 1.70 | 1.90 | 75.57 | 280 | -166 | -0.28 | -5.74 | 37.47 | 712 | +64 | -18.02 | -15.73 | 17.76 | 904 | +20 | -25.14 | -26.98 | 10.84 | 930 | -2 |
+| TECHNOE | Engineering & Construction | 894.60 | 22.08 | 0 | 4 | -3.01 | -2.82 | 19.79 | 917 | -102 | 5.25 | -0.51 | 62.80 | 424 | -23 | -8.37 | -5.82 | 46.81 | 585 | -22 | -11.51 | -13.69 | 33.01 | 699 | +58 |
+| TEGA | Trucks/Construction/Farm Machinery | 1510.00 | 36.00 | 0 | 4 | -4.38 | -4.19 | 10.42 | 1024 | -6 | -14.48 | -19.16 | 3.78 | 1095 | -19 | -3.85 | -1.18 | 58.65 | 455 | -14 | -19.35 | -21.33 | 18.14 | 854 | -42 |
+| TEJASNET | Telecommunications Equipment | 402.50 | 34.85 | 0 | 4 | 0.56 | 0.76 | 64.62 | 405 | +83 | -3.43 | -8.72 | 25.24 | 851 | -17 | -25.72 | -23.66 | 5.65 | 1037 | +12 | -33.13 | -34.78 | 4.41 | 997 | -27 |
+| TENNIND | Auto Parts: OEM | 449.70 | 36.99 | 0 | 3 | -1.15 | -0.96 | 41.68 | 667 | -486 | 5.06 | -0.69 | 62.27 | 430 | +172 | -14.34 | -11.96 | 26.59 | 807 | +15 | N/A | N/A | N/A | N/A | N/A |
+| TEXINFRA | Electric Utilities | 125.86 | 7.56 | 0 | 4 | 4.51 | 4.71 | 89.14 | 125 | +72 | 6.43 | 0.60 | 66.75 | 379 | +143 | 11.06 | 14.15 | 87.61 | 137 | +2 | 25.17 | 22.09 | 83.40 | 174 | +12 |
+| THANGAMAYL | Other Consumer Specialties | 3945.30 | 29.60 | 0 | 4 | 3.47 | 3.67 | 85.99 | 161 | +289 | -14.80 | -19.46 | 3.17 | 1102 | -4 | -25.72 | -23.65 | 5.74 | 1036 | +1 | -28.53 | -30.29 | 7.29 | 967 | -144 |
+| THEJO | Wholesale Distributors | 1993.70 | 1.02 | 0 | 4 | -2.02 | -1.82 | 30.47 | 795 | -443 | 5.23 | -0.53 | 62.71 | 425 | +15 | -3.94 | -1.26 | 58.29 | 459 | -32 | 27.34 | 24.21 | 84.93 | 158 | -10 |
+| THERMAX | Industrial Machinery | 2722.30 | 79.27 | 0 | 4 | 0.15 | 0.35 | 59.02 | 469 | +134 | -14.74 | -19.41 | 3.43 | 1099 | +0 | -30.43 | -28.50 | 2.82 | 1068 | -5 | -44.17 | -45.54 | 1.82 | 1024 | +0 |
+| THYROCARE | Medical/Nursing Services | 520.60 | 46.95 | 0 | 4 | -1.49 | -1.29 | 37.48 | 715 | -590 | 0.99 | -4.54 | 44.50 | 632 | -208 | -11.84 | -9.39 | 34.52 | 720 | +43 | -0.03 | -2.49 | 53.55 | 485 | +14 |
+| TI | Beverages: Alcoholic | 536.85 | 33.20 | 0 | 4 | -1.09 | -0.89 | 42.38 | 659 | -298 | 7.96 | 2.05 | 70.71 | 334 | -46 | -1.62 | 1.12 | 65.03 | 385 | -10 | 28.68 | 25.51 | 85.70 | 150 | -20 |
+| TIIL | Metal Fabrication | 2790.60 | 8.18 | 0 | 4 | -1.54 | -1.35 | 36.95 | 721 | -248 | 8.85 | 2.89 | 73.70 | 300 | +70 | -14.60 | -12.22 | 25.96 | 814 | +12 | 11.29 | 8.56 | 69.96 | 314 | -11 |
+| TIINDIA | Steel | 2243.20 | 95.96 | 0 | 4 | 0.67 | 0.87 | 65.50 | 395 | +164 | 3.04 | -2.60 | 54.53 | 518 | -18 | -18.82 | -16.56 | 15.30 | 931 | +7 | -27.60 | -29.38 | 8.73 | 952 | +1 |
+| TIL | Trucks/Construction/Farm Machinery | 212.47 | 1.26 | 0 | 2 | 3.64 | 3.85 | 86.69 | 153 | +373 | 3.57 | -2.10 | 56.99 | 490 | +183 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| TIMKEN | Industrial Machinery | 3084.50 | 11.52 | 0 | 4 | -0.53 | -0.33 | 49.91 | 573 | -91 | 8.01 | 2.10 | 70.80 | 333 | -47 | -3.90 | -1.22 | 58.47 | 457 | -63 | -13.63 | -15.76 | 27.83 | 753 | -36 |
+| TINNARUBR | Industrial Specialties | 896.55 | 25.39 | 0 | 4 | -4.97 | -4.78 | 8.49 | 1046 | +75 | 8.57 | 2.63 | 72.82 | 310 | +8 | -12.12 | -9.67 | 33.42 | 732 | -61 | 0.59 | -1.88 | 54.70 | 473 | -90 |
+| TIRUMALCHM | Chemicals: Specialty | 119.21 | 3.43 | 0 | 4 | -1.01 | -0.82 | 43.35 | 648 | -282 | -0.51 | -5.95 | 36.50 | 723 | -105 | -25.20 | -23.12 | 7.01 | 1022 | +5 | -33.33 | -34.97 | 4.32 | 998 | +7 |
+| TITAGARH | Trucks/Construction/Farm Machinery | 751.35 | 63.13 | 0 | 4 | 3.24 | 3.45 | 84.85 | 174 | +54 | 13.02 | 6.83 | 85.49 | 166 | +173 | -9.90 | -7.40 | 40.89 | 650 | -81 | -13.04 | -15.18 | 28.69 | 744 | -23 |
+| TMB | Regional Banks | 848.40 | 14.66 | 0 | 4 | -3.63 | -3.44 | 15.06 | 971 | -34 | 4.50 | -1.22 | 60.07 | 455 | -104 | -6.57 | -3.97 | 51.46 | 534 | +45 | 13.41 | 10.62 | 72.26 | 290 | -11 |
+| TMPV | Motor Vehicles | 258.00 | 274.60 | 0 | 2 | -3.13 | -2.95 | 18.39 | 933 | -501 | -3.01 | -8.32 | 26.74 | 834 | -113 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| TORNTPOWER | Electric Utilities | 1152.20 | 26.20 | 0 | 4 | -5.97 | -5.79 | 4.99 | 1086 | -40 | -2.14 | -7.50 | 30.08 | 796 | -67 | -5.50 | -2.87 | 54.19 | 504 | -46 | -19.99 | -21.96 | 17.37 | 862 | -1 |
+| TRANSRAILL | Engineering & Construction | 435.95 | 27.39 | 0 | 4 | 1.87 | 2.07 | 76.97 | 264 | +45 | 0.05 | -5.43 | 39.40 | 690 | -70 | 0.58 | 3.38 | 70.13 | 329 | +22 | -12.68 | -14.83 | 30.04 | 730 | -10 |
+| TRAVELFOOD | Restaurants | 1108.10 | 3.94 | 0 | 4 | -2.76 | -2.57 | 22.07 | 891 | -39 | -3.52 | -8.80 | 25.07 | 853 | -26 | -12.78 | -10.35 | 31.69 | 751 | +39 | -13.84 | -15.96 | 27.35 | 758 | -61 |
+| TRITURBINE | Industrial Machinery | 455.20 | 28.39 | 0 | 4 | -2.37 | -2.18 | 25.83 | 848 | -98 | -3.07 | -8.37 | 26.47 | 837 | -182 | -21.31 | -19.12 | 11.11 | 977 | -29 | -34.35 | -35.97 | 3.93 | 1002 | -20 |
+| TRIVENI | Agricultural Commodities/Milling | 238.18 | 15.98 | 0 | 4 | 2.38 | 2.58 | 80.56 | 223 | +324 | 1.70 | -3.87 | 48.37 | 588 | -76 | -14.31 | -11.92 | 26.78 | 805 | +153 | -35.99 | -37.57 | 3.26 | 1009 | -1 |
+| TRUALT | Chemicals: Specialty | 319.65 | 7.35 | 0 | 3 | -2.04 | -1.85 | 30.21 | 798 | +175 | -14.78 | -19.45 | 3.34 | 1100 | +0 | -25.34 | -23.26 | 6.83 | 1024 | +8 | N/A | N/A | N/A | N/A | N/A |
+| TTKHLTCARE | Pharmaceuticals: Major | 1052.95 | 7.96 | 0 | 4 | -5.15 | -4.97 | 7.88 | 1053 | -412 | 0.37 | -5.13 | 41.34 | 668 | -33 | -6.71 | -4.11 | 51.18 | 537 | +128 | 14.53 | 11.71 | 73.42 | 278 | +23 |
+| TTKPRESTIG | Home Furnishings | 530.40 | 19.74 | 0 | 4 | -1.76 | -1.57 | 34.15 | 753 | +258 | 0.81 | -4.71 | 44.06 | 637 | +159 | -8.51 | -5.97 | 46.17 | 592 | +55 | -2.61 | -5.00 | 49.23 | 530 | +24 |
+| TVSHLTD | Auto Parts: OEM | 13332.00 | 7.42 | 0 | 1 | -1.18 | -0.98 | 41.24 | 672 | -259 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| TVSSCS | Air Freight/Couriers | 126.42 | 33.08 | 0 | 4 | -5.57 | -5.39 | 6.48 | 1069 | -97 | 13.49 | 7.28 | 86.19 | 158 | +16 | 1.14 | 3.96 | 71.40 | 315 | +32 | 3.07 | 0.54 | 58.54 | 433 | -75 |
+| TVSSRICHAK | Automotive Aftermarket | 4504.40 | 7.85 | 0 | 4 | -2.90 | -2.70 | 20.93 | 904 | -413 | 7.90 | 1.99 | 70.62 | 335 | -22 | -18.48 | -16.21 | 16.30 | 920 | -53 | 10.76 | 8.03 | 68.91 | 325 | -45 |
+| UBL | Beverages: Alcoholic | 1275.60 | 40.37 | 0 | 4 | 2.50 | 2.70 | 81.52 | 212 | +138 | 7.04 | 1.18 | 68.51 | 359 | +30 | -2.54 | 0.17 | 62.20 | 416 | -19 | -5.56 | -7.88 | 45.01 | 574 | -7 |
+| UDS | Miscellaneous Commercial Services | 210.57 | 10.79 | 0 | 4 | -1.61 | -1.42 | 35.81 | 734 | +103 | 2.49 | -3.12 | 52.24 | 544 | +83 | -7.29 | -4.71 | 49.45 | 556 | -64 | 15.00 | 12.17 | 74.18 | 270 | -11 |
+| UEL | Alternative Power Generation | 168.55 | 0.22 | 0 | 4 | -1.81 | -1.61 | 33.36 | 762 | -259 | -11.30 | -16.15 | 6.68 | 1062 | +0 | -19.25 | -17.00 | 14.30 | 942 | -174 | 21.25 | 18.27 | 80.52 | 204 | +27 |
+| UGROCAP | Finance/Rental/Leasing | 79.19 | 40.40 | 0 | 4 | -1.90 | -1.70 | 32.22 | 775 | -713 | 6.94 | 1.09 | 67.72 | 368 | +145 | -6.75 | -4.15 | 51.00 | 539 | +115 | -15.37 | -17.45 | 23.70 | 796 | +12 |
+| UJJIVANSFB | Regional Banks | 57.37 | 96.19 | 0 | 4 | -3.97 | -3.78 | 12.61 | 999 | +15 | 2.21 | -3.39 | 50.75 | 561 | -93 | -12.22 | -9.78 | 33.24 | 734 | +139 | 8.06 | 5.40 | 65.26 | 363 | +31 |
+| UNICHEMLAB | Pharmaceuticals: Major | 485.30 | 2.92 | 0 | 4 | 3.49 | 3.69 | 86.16 | 159 | +112 | -3.89 | -9.15 | 23.66 | 869 | -124 | -12.77 | -10.34 | 31.88 | 749 | -14 | 30.28 | 27.08 | 87.24 | 134 | +5 |
+| UNIPARTS | Auto Parts: OEM | 705.35 | 7.05 | 0 | 4 | 0.12 | 0.32 | 58.41 | 476 | +1 | -2.06 | -7.42 | 30.43 | 792 | -78 | -21.73 | -19.55 | 10.56 | 983 | -58 | 12.82 | 10.04 | 71.79 | 295 | -9 |
+| UNIVCABLES | Electronic Components | 1151.40 | 13.42 | 0 | 4 | 4.54 | 4.74 | 89.49 | 121 | +696 | -12.39 | -17.18 | 5.54 | 1075 | +44 | -29.99 | -28.04 | 3.28 | 1063 | +12 | -7.35 | -9.63 | 41.75 | 608 | +49 |
+| UPL | Chemicals: Agricultural | 564.40 | 125.84 | 0 | 4 | -1.32 | -1.13 | 39.05 | 697 | -237 | 4.14 | -1.56 | 58.66 | 471 | -49 | -0.48 | 2.29 | 67.85 | 354 | -33 | -11.70 | -13.87 | 32.25 | 707 | +19 |
+| USHAMART | Metal Fabrication | 464.70 | 15.81 | 0 | 4 | 0.77 | 0.97 | 66.90 | 379 | +301 | 0.61 | -4.90 | 42.74 | 652 | +45 | -6.99 | -4.40 | 50.36 | 546 | -27 | -10.60 | -12.80 | 34.74 | 681 | -74 |
+| UTIAMC | Investment Managers | 856.55 | 7.01 | 0 | 4 | 2.45 | 2.65 | 81.09 | 217 | +46 | 3.88 | -1.81 | 57.52 | 484 | +22 | -2.61 | 0.10 | 61.93 | 419 | -35 | -7.83 | -10.10 | 40.21 | 624 | +6 |
+| UTLSOLAR | Semiconductors | 282.75 | 10.91 | 0 | 3 | -5.31 | -5.12 | 7.18 | 1061 | +72 | -25.77 | -29.83 | 0.35 | 1134 | -1 | -36.03 | -34.25 | 1.00 | 1088 | +5 | N/A | N/A | N/A | N/A | N/A |
+| V2RETAIL | Apparel/Footwear Retail | 145.72 | 363.99 | 0 | 4 | -10.08 | -9.91 | 0.88 | 1133 | -19 | -5.81 | -10.97 | 17.85 | 935 | +66 | -34.14 | -32.30 | 1.73 | 1080 | +2 | -43.17 | -44.57 | 2.02 | 1022 | +0 |
+| VADILALIND | Food: Specialty/Candy | 6934.00 | 5.14 | 0 | 4 | -0.63 | -0.44 | 49.12 | 582 | -103 | -8.52 | -13.53 | 11.35 | 1009 | -91 | -10.61 | -8.12 | 38.80 | 673 | -57 | 26.23 | 23.13 | 83.97 | 168 | -19 |
+| VAIBHAVGBL | Other Consumer Specialties | 158.75 | 7.24 | 0 | 4 | -0.63 | -0.44 | 49.04 | 583 | +98 | 0.28 | -5.20 | 40.55 | 677 | +429 | -27.33 | -25.31 | 4.74 | 1047 | +5 | -31.74 | -33.42 | 5.57 | 985 | +5 |
+| VARROC | Auto Parts: OEM | 783.00 | 14.86 | 0 | 4 | -1.98 | -1.79 | 31.35 | 785 | +113 | -2.66 | -7.99 | 28.06 | 819 | +14 | -10.72 | -8.23 | 38.07 | 681 | -88 | 30.15 | 26.95 | 87.04 | 136 | -11 |
+| VEDL | Aluminum | 245.31 | 241.40 | 0 | 2 | 3.05 | 3.26 | 84.33 | 180 | +486 | 4.59 | -1.14 | 60.16 | 454 | +117 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| VEEDOL | Oil Refining/Marketing | 1352.40 | 1.06 | 0 | 4 | 1.18 | 1.38 | 70.84 | 334 | +121 | 1.30 | -4.24 | 46.79 | 606 | -37 | -9.22 | -6.70 | 43.53 | 621 | -20 | -7.41 | -9.69 | 41.36 | 612 | -32 |
+| VENKEYS | Agricultural Commodities/Milling | 1374.00 | 10.53 | 0 | 4 | -1.53 | -1.34 | 37.04 | 720 | +371 | -9.09 | -14.07 | 9.94 | 1025 | +59 | -16.68 | -14.36 | 20.40 | 875 | +70 | -2.42 | -4.82 | 49.62 | 526 | +70 |
+| VENTIVE | Hotels/Resorts/Cruise lines | 542.55 | 2.03 | 0 | 4 | -0.25 | -0.05 | 53.42 | 533 | -290 | 0.75 | -4.76 | 43.54 | 643 | +53 | -8.55 | -6.01 | 45.90 | 595 | -77 | -15.17 | -17.26 | 24.18 | 791 | -25 |
+| VENUSPIPES | Steel | 1743.80 | 23.52 | 0 | 4 | 1.88 | 2.07 | 77.06 | 263 | +355 | -4.61 | -9.83 | 20.67 | 903 | -103 | 8.53 | 11.55 | 84.52 | 171 | +34 | 18.80 | 15.88 | 77.83 | 232 | -33 |
+| VENUSREM | Pharmaceuticals: Major | 1468.90 | 5.25 | 0 | 2 | -1.48 | -1.29 | 37.57 | 714 | -47 | 13.93 | 7.69 | 86.72 | 152 | +100 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| VESUVIUS | Construction Materials | 374.40 | 29.78 | 0 | 4 | -2.30 | -2.11 | 26.97 | 835 | -508 | -0.97 | -6.39 | 34.74 | 743 | +72 | -10.01 | -7.51 | 40.71 | 652 | -76 | -21.39 | -23.33 | 15.55 | 881 | +11 |
+| VGUARD | Electrical Products | 296.25 | 49.43 | 0 | 4 | -2.28 | -2.08 | 27.23 | 832 | +8 | 4.00 | -1.69 | 58.14 | 477 | -239 | -13.64 | -11.24 | 28.87 | 782 | +31 | -1.64 | -4.06 | 51.54 | 506 | +21 |
+| VHL | Investment Managers | 3495.10 | 0.20 | 0 | 4 | -1.81 | -1.62 | 33.27 | 763 | -299 | 0.67 | -4.84 | 43.18 | 647 | -30 | -2.05 | 0.67 | 63.84 | 398 | -37 | 2.67 | 0.14 | 57.87 | 440 | -11 |
+| VIDHIING | Food: Specialty/Candy | 292.95 | 0.55 | 0 | 4 | -4.01 | -3.83 | 12.00 | 1006 | -60 | -6.06 | -11.20 | 16.97 | 945 | -49 | -17.33 | -15.03 | 18.85 | 892 | -13 | 0.27 | -2.19 | 54.22 | 478 | +41 |
+| VIDYAWIRES | Other Metals/Minerals | 73.82 | 8.82 | 0 | 2 | 0.03 | 0.22 | 57.62 | 485 | +505 | -12.50 | -17.29 | 5.45 | 1076 | +12 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| VIJAYA | Medical/Nursing Services | 1552.50 | 30.02 | 0 | 4 | -1.26 | -1.07 | 40.28 | 683 | -613 | 6.03 | 0.23 | 65.17 | 397 | -134 | 3.57 | 6.45 | 76.87 | 255 | -35 | 14.20 | 11.39 | 73.03 | 282 | -98 |
+| VIKRAMSOLR | Semiconductors | 138.75 | 34.09 | 0 | 3 | 1.46 | 1.66 | 73.12 | 308 | -130 | 8.40 | 2.47 | 72.12 | 318 | -75 | -18.22 | -15.95 | 16.94 | 913 | -76 | N/A | N/A | N/A | N/A | N/A |
+| VINATIORGA | Chemicals: Specialty | 1142.80 | 6.59 | 0 | 4 | -0.80 | -0.61 | 46.41 | 613 | +212 | 10.03 | 4.01 | 76.25 | 271 | +190 | -13.12 | -10.70 | 30.60 | 763 | +37 | -12.09 | -14.26 | 31.29 | 717 | +30 |
+| VINCOFE | Wholesale Distributors | 151.41 | 19.51 | 0 | 4 | 0.84 | 1.04 | 67.51 | 372 | +337 | -1.38 | -6.78 | 33.33 | 759 | +62 | -14.39 | -12.00 | 26.50 | 808 | +123 | 0.72 | -1.76 | 55.09 | 469 | +19 |
+| VINDHYATEL | Engineering & Construction | 2480.70 | 11.94 | 0 | 4 | -0.24 | -0.04 | 53.59 | 531 | +301 | -9.84 | -14.77 | 8.88 | 1037 | -7 | -3.73 | -1.05 | 59.02 | 451 | -28 | 14.74 | 11.91 | 73.80 | 274 | +53 |
+| VIPIND | Other Consumer Specialties | 248.65 | 8.65 | 0 | 4 | -0.04 | 0.16 | 56.74 | 495 | -34 | -2.32 | -7.66 | 29.29 | 805 | -24 | -18.14 | -15.86 | 17.49 | 907 | +12 | -24.83 | -26.68 | 11.52 | 923 | +10 |
+| VISHNU | Chemicals: Specialty | 531.40 | 6.13 | 0 | 4 | 3.92 | 4.12 | 87.57 | 143 | +901 | -8.04 | -13.07 | 11.87 | 1003 | +11 | -19.70 | -17.46 | 13.75 | 948 | -2 | -12.81 | -14.95 | 29.75 | 733 | +65 |
+| VIYASH | Pharmaceuticals: Major | 228.37 | 51.52 | 0 | 4 | -2.14 | -1.95 | 28.81 | 814 | -3 | 1.70 | -3.87 | 48.46 | 587 | +85 | -12.94 | -10.51 | 31.15 | 757 | +0 | -8.34 | -10.60 | 38.58 | 641 | -5 |
+| VMART | Specialty Stores | 773.80 | 4.82 | 0 | 4 | 1.74 | 1.94 | 75.92 | 276 | +129 | 4.09 | -1.61 | 58.40 | 474 | +125 | -9.00 | -6.46 | 44.44 | 611 | -43 | 15.09 | 12.26 | 74.28 | 269 | +26 |
+| VMM | Apparel/Footwear Retail | 96.15 | 76.43 | 0 | 4 | 4.53 | 4.74 | 89.40 | 122 | -41 | 11.03 | 4.95 | 79.33 | 236 | +57 | -9.76 | -7.25 | 41.44 | 644 | +96 | -18.70 | -20.70 | 18.71 | 848 | +16 |
+| VOLTAMP | Electrical Products | 9663.00 | 19.87 | 0 | 4 | -0.65 | -0.45 | 48.86 | 585 | -54 | -5.04 | -10.24 | 19.44 | 917 | +79 | -10.38 | -7.88 | 39.89 | 661 | +61 | 2.05 | -0.46 | 56.81 | 451 | +7 |
+| VOLTAS | Industrial Machinery | 1186.80 | 133.07 | 0 | 4 | -3.90 | -3.71 | 12.78 | 997 | -414 | 14.01 | 7.77 | 86.98 | 149 | -88 | -1.51 | 1.23 | 65.39 | 381 | -95 | -7.75 | -10.02 | 40.50 | 621 | -112 |
+| VSSL | Steel | 370.55 | 5.38 | 0 | 4 | -2.58 | -2.39 | 23.82 | 871 | -171 | 12.78 | 6.61 | 84.61 | 176 | +13 | 4.42 | 7.33 | 78.42 | 238 | -6 | 33.72 | 30.43 | 89.25 | 113 | -17 |
+| VSTIND | Tobacco | 193.70 | 2.22 | 0 | 4 | -0.12 | 0.08 | 55.60 | 508 | -43 | 2.26 | -3.33 | 50.92 | 559 | +127 | -6.88 | -4.28 | 50.73 | 542 | +16 | -24.16 | -26.02 | 12.48 | 913 | -1 |
+| VSTTILLERS | Trucks/Construction/Farm Machinery | 3429.00 | 3.15 | 0 | 4 | -3.38 | -3.19 | 16.90 | 950 | +55 | -11.78 | -16.61 | 6.16 | 1068 | +17 | -18.52 | -16.25 | 15.94 | 924 | +57 | -25.40 | -27.24 | 10.27 | 936 | +18 |
+| VTL | Textiles | 526.90 | 13.26 | 0 | 4 | -0.27 | -0.08 | 53.06 | 537 | +306 | 5.98 | 0.18 | 65.00 | 399 | +201 | -12.52 | -10.08 | 32.51 | 742 | -113 | -16.58 | -18.63 | 21.79 | 816 | -1 |
+| WAAREEENER | Semiconductors | 2377.00 | 170.58 | 0 | 4 | -3.41 | -3.22 | 16.64 | 953 | -337 | 2.55 | -3.07 | 52.51 | 541 | -164 | -8.15 | -5.60 | 47.45 | 578 | -14 | -22.61 | -24.52 | 14.11 | 896 | -3 |
+| WABAG | Engineering & Construction | 1801.50 | 88.83 | 0 | 4 | -3.46 | -3.27 | 16.20 | 958 | -184 | -3.29 | -8.58 | 25.95 | 843 | -207 | -10.55 | -8.06 | 39.16 | 669 | -126 | 15.44 | 12.60 | 74.47 | 267 | -15 |
+| WAKEFIT | Specialty Stores | 138.14 | 2.17 | 0 | 2 | 2.64 | 2.84 | 82.66 | 199 | +12 | 1.48 | -4.07 | 47.58 | 597 | +79 | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A | N/A |
+| WALCHANNAG | Industrial Machinery | 178.75 | 10.82 | 0 | 4 | -2.38 | -2.18 | 25.48 | 852 | -18 | -6.04 | -11.18 | 17.15 | 943 | -2 | -14.89 | -12.52 | 25.23 | 822 | +65 | -25.74 | -27.57 | 10.17 | 937 | +5 |
+| WEBELSOLAR | Semiconductors | 62.62 | 9.56 | 0 | 4 | -1.57 | -1.38 | 36.34 | 728 | +36 | -6.48 | -11.60 | 15.57 | 961 | +31 | -15.95 | -13.61 | 21.86 | 859 | -2 | -44.41 | -45.78 | 1.73 | 1025 | -6 |
+| WELENT | Engineering & Construction | 692.75 | 18.83 | 0 | 4 | 0.93 | 1.13 | 69.00 | 355 | -132 | 7.60 | 1.71 | 69.83 | 344 | +56 | -1.81 | 0.92 | 64.57 | 390 | -53 | 28.11 | 24.96 | 85.60 | 151 | -24 |
+| WENDT | Industrial Machinery | 7014.50 | 4.92 | 0 | 4 | -0.49 | -0.29 | 50.53 | 566 | +27 | 2.30 | -3.30 | 51.19 | 556 | +72 | -13.45 | -11.05 | 29.78 | 772 | +34 | 2.00 | -0.51 | 56.72 | 452 | +9 |
+| WEWORK | Real Estate Development | 695.00 | 7.50 | 0 | 3 | 1.47 | 1.67 | 73.20 | 307 | +367 | 8.27 | 2.35 | 71.77 | 322 | +82 | 2.86 | 5.73 | 75.32 | 272 | +78 | N/A | N/A | N/A | N/A | N/A |
+| WHIRLPOOL | Electronics/Appliances | 789.55 | 24.95 | 0 | 4 | -3.65 | -3.47 | 14.80 | 974 | -49 | -3.97 | -9.23 | 23.31 | 873 | +20 | -1.45 | 1.30 | 65.48 | 380 | -15 | -2.36 | -4.76 | 49.90 | 523 | +13 |
+| WINDLAS | Pharmaceuticals: Major | 931.70 | 10.62 | 0 | 4 | -3.07 | -2.88 | 18.91 | 927 | +28 | 0.90 | -4.62 | 44.24 | 635 | -191 | -7.60 | -5.03 | 48.91 | 562 | -67 | 14.86 | 12.03 | 74.09 | 271 | -4 |
+| WINDMACHIN | Industrial Machinery | 311.45 | 6.71 | 0 | 4 | -3.04 | -2.85 | 19.70 | 918 | -348 | 11.37 | 5.28 | 80.39 | 224 | +30 | 1.28 | 4.10 | 71.68 | 312 | +16 | 9.80 | 7.10 | 67.27 | 342 | -7 |
+| WONDERLA | Movies/Entertainment | 484.70 | 3.89 | 0 | 4 | -3.06 | -2.87 | 19.09 | 925 | +61 | -0.31 | -5.77 | 37.20 | 715 | -40 | -9.61 | -7.10 | 42.17 | 636 | +6 | 2.11 | -0.41 | 56.91 | 450 | +12 |
+| WSTCSTPAPR | Office Equipment/Supplies | 630.85 | 28.24 | 0 | 4 | 2.13 | 2.33 | 78.63 | 245 | +44 | -24.89 | -29.00 | 0.62 | 1131 | -7 | -3.48 | -0.79 | 59.56 | 445 | -254 | 23.38 | 20.35 | 82.15 | 187 | -9 |
+| ZEEL | Broadcasting | 67.08 | 138.35 | 0 | 4 | -6.04 | -5.85 | 4.82 | 1088 | -3 | -4.86 | -10.07 | 20.05 | 910 | -36 | -28.19 | -26.19 | 4.10 | 1054 | +5 | -35.76 | -37.34 | 3.36 | 1008 | -34 |
+| ZENSARTECH | Packaged Software | 537.80 | 66.83 | 0 | 4 | 1.65 | 1.85 | 75.04 | 286 | -257 | 0.09 | -5.39 | 39.67 | 687 | -479 | 13.71 | 16.88 | 89.53 | 116 | -56 | 11.68 | 8.93 | 70.63 | 307 | +43 |
+| ZFCVINDIA | Auto Parts: OEM | 2187.10 | 13.64 | 0 | 4 | -0.21 | -0.02 | 54.03 | 526 | -46 | 3.98 | -1.71 | 58.05 | 478 | -16 | -14.16 | -11.77 | 27.14 | 801 | -49 | -85.01 | -85.37 | 0.10 | 1042 | +0 |
+| ZYDUSWELL | Food: Major Diversified | 450.45 | 11.26 | 0 | 4 | 0.54 | 0.73 | 64.27 | 409 | -45 | -6.06 | -11.20 | 17.06 | 944 | -175 | -14.82 | -12.45 | 25.32 | 821 | -52 | -10.17 | -12.38 | 35.70 | 671 | -13 |
 
 ## Excluded symbols
 
 - 3BBLACKBIO: insufficient aligned history for every period
-- ABB: missing latest benchmark session
-- ABCAPITAL: missing latest benchmark session
+- ABB: insufficient aligned history for every period
+- ABCAPITAL: insufficient aligned history for every period
 - ACCENTMIC: missing price history
 - ACGL: insufficient aligned history for every period
-- ADANIENSOL: missing latest benchmark session
-- ADANIENT: missing latest benchmark session
-- ADANIGREEN: missing latest benchmark session
-- ADANIPORTS: missing latest benchmark session
-- ADANIPOWER: missing latest benchmark session
+- ADANIENSOL: insufficient aligned history for every period
+- ADANIENT: insufficient aligned history for every period
+- ADANIGREEN: insufficient aligned history for every period
+- ADANIPORTS: insufficient aligned history for every period
+- ADANIPOWER: insufficient aligned history for every period
 - AEROPLANE: insufficient aligned history for every period
 - AIMTRON: missing price history
 - AKCAPIT: insufficient aligned history for every period
 - ALPEXSOLAR: missing price history
 - ANANTAM: missing price history
-- ANAWIL: missing price history
 - ANONDITA: missing price history
 - ANZEN: missing price history
 - AONESTEELS: insufficient aligned history for every period
-- APOLLOHOSP: missing latest benchmark session
+- APOLLOHOSP: insufficient aligned history for every period
 - ARCIL: insufficient aligned history for every period
 - ARYAMAN: insufficient aligned history for every period
 - ASHIKAG: insufficient aligned history for every period
-- ASIANPAINT: missing latest benchmark session
+- ASIANPAINT: insufficient aligned history for every period
 - AUGMONT: insufficient aligned history for every period
-- AUROPHARMA: missing latest benchmark session
-- AXISBANK: missing latest benchmark session
+- AUROPHARMA: insufficient aligned history for every period
+- AXISBANK: insufficient aligned history for every period
 - AYE: insufficient aligned history for every period
 - BAFNAPH: missing price history
 - BAGMANE.RR: missing price history
-- BAJAJFINSV: missing latest benchmark session
-- BAJAJHLDNG: missing latest benchmark session
+- BAJAJFINSV: insufficient aligned history for every period
+- BAJAJHLDNG: insufficient aligned history for every period
 - BAJAJ_AUTO: missing price history
-- BANKBARODA: missing latest benchmark session
-- BEL: missing latest benchmark session
+- BANKBARODA: insufficient aligned history for every period
+- BEL: insufficient aligned history for every period
 - BELDING: insufficient aligned history for every period
 - BENARAS: insufficient aligned history for every period
 - BENGALASM: insufficient aligned history for every period
 - BGRENERGY: missing price history
-- BHEL: missing latest benchmark session
+- BHEL: insufficient aligned history for every period
 - BIRET.RR: missing price history
 - BLEL: insufficient aligned history for every period
 - BLIL: insufficient aligned history for every period
@@ -1695,47 +1682,48 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - BODALCHEM: missing latest benchmark session
 - BONDADA: insufficient aligned history for every period
 - BONFIG: insufficient aligned history for every period
-- BOSCHLTD: missing latest benchmark session
+- BOSCHLTD: insufficient aligned history for every period
 - BOSCH_HCIL: missing price history
-- BPCL: missing latest benchmark session
+- BPCL: insufficient aligned history for every period
 - BPLPHARMA: insufficient aligned history for every period
-- BRITANNIA: missing latest benchmark session
-- BSE: missing latest benchmark session
-- CANBK: missing latest benchmark session
+- BRITANNIA: insufficient aligned history for every period
+- BSE: insufficient aligned history for every period
+- CANBK: insufficient aligned history for every period
 - CAPINVIT: missing price history
 - CEINSYS: insufficient aligned history for every period
-- CGPOWER: missing latest benchmark session
-- CHOLAFIN: missing latest benchmark session
-- CIPLA: missing latest benchmark session
+- CGPOWER: insufficient aligned history for every period
+- CHOLAFIN: insufficient aligned history for every period
+- CIPLA: insufficient aligned history for every period
 - CLEANMAX: insufficient aligned history for every period
 - CMLL: insufficient aligned history for every period
 - CMPDI: insufficient aligned history for every period
 - CMRGREEN: insufficient aligned history for every period
-- COALINDIA: missing latest benchmark session
+- COALINDIA: insufficient aligned history for every period
 - COCKERILL: insufficient aligned history for every period
 - CORDELIA: insufficient aligned history for every period
+- CRYSTALCP: insufficient aligned history for every period
 - CUBEINVIT: missing price history
-- CUMMINSIND: missing latest benchmark session
+- CUMMINSIND: insufficient aligned history for every period
 - DANISH: missing price history
 - DECNGOLD: insufficient aligned history for every period
 - DEEPA: insufficient aligned history for every period
 - DHOOTTRANS: insufficient aligned history for every period
 - DISAQ: insufficient aligned history for every period
-- DIVISLAB: missing latest benchmark session
-- DLF: missing latest benchmark session
-- DMART: missing latest benchmark session
+- DIVISLAB: insufficient aligned history for every period
+- DLF: insufficient aligned history for every period
+- DMART: insufficient aligned history for every period
 - DPABHUSHAN: missing latest benchmark session
 - DPEL: missing price history
 - DRAGARWQ: missing latest benchmark session
-- DRREDDY: missing latest benchmark session
+- DRREDDY: insufficient aligned history for every period
 - EDELALTS: insufficient aligned history for every period
-- EICHERMOT: missing latest benchmark session
+- EICHERMOT: insufficient aligned history for every period
 - ELANTAS: insufficient aligned history for every period
 - ELEVATE: insufficient aligned history for every period
 - EMBASSY.RR: missing price history
-- ENRIN: missing latest benchmark session
+- ENRIN: insufficient aligned history for every period
 - ESDS: insufficient aligned history for every period
-- ETERNAL: missing latest benchmark session
+- ETERNAL: insufficient aligned history for every period
 - EVONILE: insufficient aligned history for every period
 - FEDDERSHOL: insufficient aligned history for every period
 - FERMENTA: insufficient aligned history for every period
@@ -1743,51 +1731,51 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - FREDUN: insufficient aligned history for every period
 - FRONTSP: insufficient aligned history for every period
 - FUSIONCX: insufficient aligned history for every period
-- GAIL: missing latest benchmark session
+- GAIL: insufficient aligned history for every period
 - GAJA: insufficient aligned history for every period
 - GLASSWALL: insufficient aligned history for every period
-- GMRAIRPORT: missing latest benchmark session
-- GRASIM: missing latest benchmark session
-- GROWW: missing latest benchmark session
+- GMRAIRPORT: insufficient aligned history for every period
+- GRASIM: insufficient aligned history for every period
+- GROWW: insufficient aligned history for every period
 - GSPCROP: insufficient aligned history for every period
 - GSPLTRANS: insufficient aligned history for every period
-- GVT&D: missing latest benchmark session
+- GVT&D: insufficient aligned history for every period
 - GYFTR: insufficient aligned history for every period
-- HAL: missing latest benchmark session
+- HAL: insufficient aligned history for every period
 - HAWKINCOOK: insufficient aligned history for every period
-- HCLTECH: missing latest benchmark session
-- HDFCAMC: missing latest benchmark session
-- HDFCLIFE: missing latest benchmark session
+- HCLTECH: insufficient aligned history for every period
+- HDFCAMC: insufficient aligned history for every period
+- HDFCLIFE: insufficient aligned history for every period
 - HDFIRE: insufficient aligned history for every period
-- HEROMOTOCO: missing latest benchmark session
+- HEROMOTOCO: insufficient aligned history for every period
 - HEROMOTORS: insufficient aligned history for every period
 - HFCL: missing latest benchmark session
-- HINDALCO: missing latest benchmark session
-- HINDZINC: missing latest benchmark session
+- HINDALCO: insufficient aligned history for every period
+- HINDZINC: insufficient aligned history for every period
 - HMT: missing price history
-- HYUNDAI: missing latest benchmark session
-- ICICIAMC: missing latest benchmark session
+- HYUNDAI: insufficient aligned history for every period
+- ICICIAMC: insufficient aligned history for every period
 - INA: insufficient aligned history for every period
-- INDHOTEL: missing latest benchmark session
-- INDIANB: missing latest benchmark session
-- INDIGO: missing latest benchmark session
+- INDHOTEL: insufficient aligned history for every period
+- INDIANB: insufficient aligned history for every period
+- INDIGO: insufficient aligned history for every period
 - INDIGRID: missing price history
 - INDOKEM: insufficient aligned history for every period
 - INDOMIM: insufficient aligned history for every period
 - INDPRUD: insufficient aligned history for every period
 - INDUSINVIT: missing price history
-- INDUSTOWER: missing latest benchmark session
-- INFY: missing latest benchmark session
+- INDUSTOWER: insufficient aligned history for every period
+- INFY: insufficient aligned history for every period
 - INVPRECQ: insufficient aligned history for every period
-- IOC: missing latest benchmark session
-- IRFC: missing latest benchmark session
-- ITC: missing latest benchmark session
+- IOC: insufficient aligned history for every period
+- IRFC: insufficient aligned history for every period
+- ITC: insufficient aligned history for every period
 - JAYKAYPP.E1: missing price history
-- JINDALSTEL: missing latest benchmark session
-- JIOFIN: missing latest benchmark session
+- JINDALSTEL: insufficient aligned history for every period
+- JIOFIN: insufficient aligned history for every period
 - JKSHAH: missing price history
 - JNPR: insufficient aligned history for every period
-- JSWSTEEL: missing latest benchmark session
+- JSWSTEEL: insufficient aligned history for every period
 - JYOTIRES: insufficient aligned history for every period
 - KABRAEXTRU: missing latest benchmark session
 - KAMAHOLD: insufficient aligned history for every period
@@ -1805,25 +1793,25 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - KUSUMGAR: insufficient aligned history for every period
 - LALITHAA: insufficient aligned history for every period
 - LASERPOWER: insufficient aligned history for every period
-- LAURUSLABS: missing latest benchmark session
+- LAURUSLABS: insufficient aligned history for every period
 - LCCPROJECT: insufficient aligned history for every period
 - LCL: insufficient aligned history for every period
 - LEAPIND: insufficient aligned history for every period
-- LENSKART: missing latest benchmark session
-- LGEINDIA: missing latest benchmark session
+- LENSKART: insufficient aligned history for every period
+- LGEINDIA: insufficient aligned history for every period
 - LGHL: missing latest benchmark session
-- LODHA: missing latest benchmark session
-- LTM: missing latest benchmark session
+- LODHA: insufficient aligned history for every period
+- LTM: insufficient aligned history for every period
 - LUMINO: insufficient aligned history for every period
-- M&M: missing latest benchmark session
+- M&M: insufficient aligned history for every period
 - MAHASTEEL: missing latest benchmark session
 - MANIPALHOS: insufficient aligned history for every period
-- MANKIND: missing latest benchmark session
-- MARICO: missing latest benchmark session
+- MANKIND: insufficient aligned history for every period
+- MARICO: insufficient aligned history for every period
 - MARSONS: insufficient aligned history for every period
-- MARUTI: missing latest benchmark session
-- MAXHEALTH: missing latest benchmark session
-- MEESHO: missing latest benchmark session
+- MARUTI: insufficient aligned history for every period
+- MAXHEALTH: insufficient aligned history for every period
+- MEESHO: insufficient aligned history for every period
 - MIDWESTLTD: missing latest benchmark session
 - MIIL: insufficient aligned history for every period
 - MILKYMIST: insufficient aligned history for every period
@@ -1833,37 +1821,38 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - MONEYVIEW: insufficient aligned history for every period
 - MONOLITH: missing price history
 - MOREPENLAB: missing latest benchmark session
-- MOTHERSON: missing latest benchmark session
+- MOTHERSON: insufficient aligned history for every period
 - MPIMANIPAL: insufficient aligned history for every period
-- MUTHOOTFIN: missing latest benchmark session
+- MUTHOOTFIN: insufficient aligned history for every period
 - MVELECTRO: insufficient aligned history for every period
 - NAM_INDIA: missing price history
-- NESTLEIND: missing latest benchmark session
+- NESTLEIND: insufficient aligned history for every period
 - NHIT: missing price history
 - NIRLON: insufficient aligned history for every period
 - NITTAGELA: insufficient aligned history for every period
-- NTPC: missing latest benchmark session
+- NTPC: insufficient aligned history for every period
 - NXST.RR: missing price history
-- NYKAA: missing latest benchmark session
+- NYKAA: insufficient aligned history for every period
 - OBSCP: missing price history
 - OMNI: missing latest benchmark session
-- ONGC: missing latest benchmark session
+- ONGC: insufficient aligned history for every period
+- ONIXSOLAR: insufficient aligned history for every period
 - ORIANA: missing price history
 - ORIENTCABL: insufficient aligned history for every period
 - PANORAMA: insufficient aligned history for every period
 - PARASHLTH: insufficient aligned history for every period
-- PAYTM: missing latest benchmark session
+- PAYTM: insufficient aligned history for every period
 - PERMAGN: insufficient aligned history for every period
 - PERNIASPOP: insufficient aligned history for every period
-- PERSISTENT: missing latest benchmark session
-- PFC: missing latest benchmark session
-- PIDILITIND: missing latest benchmark session
-- PNB: missing latest benchmark session
+- PERSISTENT: insufficient aligned history for every period
+- PFC: insufficient aligned history for every period
+- PIDILITIND: insufficient aligned history for every period
+- PNB: insufficient aligned history for every period
 - PNGSREVA: insufficient aligned history for every period
-- POLYCAB: missing latest benchmark session
-- POWERGRID: missing latest benchmark session
+- POLYCAB: insufficient aligned history for every period
+- POWERGRID: insufficient aligned history for every period
 - POWERICA: insufficient aligned history for every period
-- POWERINDIA: missing latest benchmark session
+- POWERINDIA: insufficient aligned history for every period
 - PRADPME: insufficient aligned history for every period
 - PRASOLCHEM: insufficient aligned history for every period
 - PRIZOR: missing price history
@@ -1875,8 +1864,8 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - RUNWALENTR: insufficient aligned history for every period
 - SAHANA: missing price history
 - SAIPARENT: insufficient aligned history for every period
-- SBIFUNDS: missing latest benchmark session
-- SBILIFE: missing latest benchmark session
+- SBIFUNDS: insufficient aligned history for every period
+- SBILIFE: insufficient aligned history for every period
 - SEDEMAC: insufficient aligned history for every period
 - SEIL: insufficient aligned history for every period
 - SEITINVIT: missing price history
@@ -1884,61 +1873,62 @@ Price data: 2026-11-26. Universe: 1436; ranked: 1144; excluded: 292. NSE common 
 - SHANKESH: insufficient aligned history for every period
 - SHIPROCKET: insufficient aligned history for every period
 - SHREMINVIT: missing price history
-- SHRIRAMFIN: missing latest benchmark session
+- SHRIRAMFIN: insufficient aligned history for every period
 - SHUKRAMED: insufficient aligned history for every period
-- SIEMENS: missing latest benchmark session
+- SIEMENS: insufficient aligned history for every period
 - SIGMAADV: missing latest benchmark session
 - SIKA: insufficient aligned history for every period
 - SKYWAYS: insufficient aligned history for every period
 - SMT: insufficient aligned history for every period
-- SOLARINDS: missing latest benchmark session
+- SOLARINDS: insufficient aligned history for every period
 - SSRETAIL: insufficient aligned history for every period
 - STEAMHOUSE: insufficient aligned history for every period
 - STLTECH: missing latest benchmark session
-- SUNPHARMA: missing latest benchmark session
+- SUNPHARMA: insufficient aligned history for every period
 - SUNRAKSHAK: insufficient aligned history for every period
 - SUNSHINE: insufficient aligned history for every period
 - SWANDEF: missing price history
+- SWARAJ: missing latest benchmark session
 - SYMBIOTEC: insufficient aligned history for every period
 - TAALTECH: insufficient aligned history for every period
-- TATACAP: missing latest benchmark session
-- TATACONSUM: missing latest benchmark session
-- TATAPOWER: missing latest benchmark session
-- TATASTEEL: missing latest benchmark session
+- TATACAP: insufficient aligned history for every period
+- TATACONSUM: insufficient aligned history for every period
+- TATAPOWER: insufficient aligned history for every period
+- TATASTEEL: insufficient aligned history for every period
 - TBZ: missing latest benchmark session
-- TECHM: missing latest benchmark session
+- TECHM: insufficient aligned history for every period
 - TECHNOCRAF: insufficient aligned history for every period
 - TECHNVISN: insufficient aligned history for every period
 - TEMPSENS: insufficient aligned history for every period
 - TGVSL: insufficient aligned history for every period
 - TIMEX: insufficient aligned history for every period
-- TITAN: missing latest benchmark session
-- TMCV: missing latest benchmark session
+- TITAN: insufficient aligned history for every period
+- TMCV: insufficient aligned history for every period
 - TONBO: insufficient aligned history for every period
-- TORNTPHARM: missing latest benchmark session
-- TRENT: missing latest benchmark session
+- TORNTPHARM: insufficient aligned history for every period
+- TRENT: insufficient aligned history for every period
 - TURTLEMINT: insufficient aligned history for every period
-- TVSMOTOR: missing latest benchmark session
+- TVSMOTOR: insufficient aligned history for every period
 - UFBL: missing latest benchmark session
-- ULTRACEMCO: missing latest benchmark session
+- ULTRACEMCO: insufficient aligned history for every period
 - ULTRAMAR: insufficient aligned history for every period
-- UNIONBANK: missing latest benchmark session
-- UNITDSPR: missing latest benchmark session
+- UNIONBANK: insufficient aligned history for every period
+- UNITDSPR: insufficient aligned history for every period
 - UTSSAV: missing price history
-- VAML: missing latest benchmark session
+- VAML: insufficient aligned history for every period
 - VARMORA: insufficient aligned history for every period
-- VBL: missing latest benchmark session
+- VBL: insufficient aligned history for every period
 - VERTIS: missing price history
 - VHLTD: missing price history
 - VINYAS: missing price history
 - VMARCIND: missing price history
 - VOEPL: insufficient aligned history for every period
-- WIPRO: missing latest benchmark session
+- WIPRO: insufficient aligned history for every period
 - WPIL: insufficient aligned history for every period
 - XTRANET: insufficient aligned history for every period
 - ZETWERK: insufficient aligned history for every period
 - ZSARACOM: insufficient aligned history for every period
-- ZYDUSLIFE: missing latest benchmark session
+- ZYDUSLIFE: insufficient aligned history for every period
 
 
 ---
