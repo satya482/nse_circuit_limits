@@ -1,8 +1,8 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
 
-# US Weekly Near-52W-High - 2026-11-26
+# US Weekly Near-52W-High - 2026-11-27
 
-Weekly candles (unfinished week included) | US prices through 2026-11-25 | Generated 2026-11-26 | RS vs SPY | Close > weekly EMA40; within 30% of 52-week high. Indicators use available history; EMA200 needs 200 weeks.
+Weekly candles (unfinished week included) | US prices through 2026-11-25 | Generated 2026-11-27 | RS vs SPY | Close > weekly EMA40; within 30% of 52-week high. Indicators use available history; EMA200 needs 200 weeks.
 
 Universe: 1440 | Charted: 561
 
