@@ -1,8 +1,8 @@
 {
-  "discovered_at": "2026-11-26T11:12:18.808429+00:00",
+  "discovered_at": "2026-11-27T10:05:10.700913+00:00",
   "groups_updated": "2026-11-26",
-  "price_date": "2026-11-26",
-  "eligible": 1477,
+  "price_date": "2026-11-27",
+  "eligible": 1478,
   "ready": 333,
   "pending": [
     {
@@ -284,11 +284,6 @@
       "symbol": "ANANTAM",
       "name": "Anantam Highways Trust",
       "reason": "Missing price history"
-    },
-    {
-      "symbol": "ANAWIL",
-      "name": "Anawil Wire & Engineering Ltd.",
-      "reason": "No suitable peer group (minimum 3 members)"
     },
     {
       "symbol": "ANDHRAPAP",
@@ -931,11 +926,6 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
-      "symbol": "BUTTERFLY",
-      "name": "Butterfly Gandhimathi Appliances Limited",
-      "reason": "No suitable peer group (minimum 3 members)"
-    },
-    {
       "symbol": "CAMLINFINE",
       "name": "Camlin Fine Sciences Limited",
       "reason": "No suitable peer group (minimum 3 members)"
@@ -1038,11 +1028,6 @@
     {
       "symbol": "CELLO",
       "name": "Cello World Limited",
-      "reason": "No suitable peer group (minimum 3 members)"
-    },
-    {
-      "symbol": "CENTENKA",
-      "name": "Century Enka Limited",
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
@@ -1194,6 +1179,11 @@
       "symbol": "CROMPTON",
       "name": "Crompton Greaves Consumer Electricals Ltd.",
       "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "CRYSTALCP",
+      "name": "Crystal Crop Protection Limited",
+      "reason": "Awaiting company description"
     },
     {
       "symbol": "CUB",
@@ -1716,6 +1706,11 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
+      "symbol": "FISCHER",
+      "name": "Fischer Medical Ventures Ltd",
+      "reason": "Awaiting company description"
+    },
+    {
       "symbol": "FIVESTAR",
       "name": "Five-Star Business Finance Limited",
       "reason": "No suitable peer group (minimum 3 members)"
@@ -2074,6 +2069,11 @@
       "symbol": "HAPPSTMNDS",
       "name": "Happiest Minds Technologies Ltd.",
       "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "HARIOMPIPE",
+      "name": "Hariom Pipe Industries Ltd.",
+      "reason": "Awaiting weekly group assignment"
     },
     {
       "symbol": "HARSHA",
@@ -3361,11 +3361,6 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
-      "symbol": "MONTECARLO",
-      "name": "Monte Carlo Fashions Ltd.",
-      "reason": "No suitable peer group (minimum 3 members)"
-    },
-    {
       "symbol": "MOREPENLAB",
       "name": "Morepen Laboratories Limited",
       "reason": "Stale price history"
@@ -3601,11 +3596,6 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
-      "symbol": "NRAIL",
-      "name": "NR Agarwal Industries Ltd.",
-      "reason": "No suitable peer group (minimum 3 members)"
-    },
-    {
       "symbol": "NRBBEARING",
       "name": "NRB Bearings Ltd.",
       "reason": "No suitable peer group (minimum 3 members)"
@@ -3679,6 +3669,11 @@
       "symbol": "ONESOURCE",
       "name": "OneSource Specialty Pharma Limited",
       "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "ONIXSOLAR",
+      "name": "Onix Solar Energy Ltd.",
+      "reason": "Awaiting weekly group assignment"
     },
     {
       "symbol": "OPTIEMUS",
@@ -3774,6 +3769,11 @@
       "symbol": "PASHUPATI",
       "name": "Pashupati Cotspin Ltd.",
       "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "PATELENG",
+      "name": "Patel Engineering Limited",
+      "reason": "Awaiting company description"
     },
     {
       "symbol": "PAUSHAKLTD",
@@ -4331,11 +4331,6 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
-      "symbol": "RTNINDIA",
-      "name": "RattanIndia Enterprises Limited",
-      "reason": "No suitable peer group (minimum 3 members)"
-    },
-    {
       "symbol": "RUBICON",
       "name": "Rubicon Research Limited",
       "reason": "No suitable peer group (minimum 3 members)"
@@ -4831,6 +4826,11 @@
       "reason": "No suitable peer group (minimum 3 members)"
     },
     {
+      "symbol": "SRM",
+      "name": "SRM Contractors Ltd.",
+      "reason": "Awaiting weekly group assignment"
+    },
+    {
       "symbol": "SSRETAIL",
       "name": "SS Retail Limited",
       "reason": "No suitable peer group (minimum 3 members)"
@@ -4999,6 +4999,11 @@
       "symbol": "SWANDEF",
       "name": "Swan Defence and Heavy Industries Ltd",
       "reason": "No suitable peer group (minimum 3 members)"
+    },
+    {
+      "symbol": "SWARAJ",
+      "name": "Swaraj Suiting Limited",
+      "reason": "Awaiting weekly group assignment"
     },
     {
       "symbol": "SWARAJENG",
@@ -6860,22 +6865,22 @@
       "pct": 24.0
     },
     "group_0032": {
-      "above": 2,
+      "above": 4,
       "evaluated": 19,
       "unavailable": 1,
-      "pct": 10.526315789473685
+      "pct": 21.05263157894737
     },
     "group_0010": {
-      "above": 5,
+      "above": 4,
       "evaluated": 15,
       "unavailable": 3,
-      "pct": 33.333333333333336
+      "pct": 26.666666666666668
     },
     "group_0027": {
-      "above": 9,
+      "above": 10,
       "evaluated": 15,
       "unavailable": 3,
-      "pct": 60.0
+      "pct": 66.66666666666667
     },
     "group_0094": {
       "above": 6,
@@ -6884,16 +6889,16 @@
       "pct": 50.0
     },
     "group_0028": {
-      "above": 9,
+      "above": 7,
       "evaluated": 16,
       "unavailable": 1,
-      "pct": 56.25
+      "pct": 43.75
     },
     "group_0041": {
-      "above": 1,
+      "above": 3,
       "evaluated": 12,
       "unavailable": 3,
-      "pct": 8.333333333333334
+      "pct": 25.0
     },
     "group_0007": {
       "above": 2,
@@ -6950,10 +6955,10 @@
       "pct": 66.66666666666667
     },
     "group_0009": {
-      "above": 2,
+      "above": 3,
       "evaluated": 5,
       "unavailable": 0,
-      "pct": 40.0
+      "pct": 60.0
     },
     "group_0136": {
       "above": 2,
@@ -6998,10 +7003,10 @@
       "pct": 0.0
     },
     "group_0000": {
-      "above": 3,
+      "above": 4,
       "evaluated": 4,
       "unavailable": 0,
-      "pct": 75.0
+      "pct": 100.0
     },
     "group_0005": {
       "above": 2,
@@ -7070,10 +7075,10 @@
       "pct": 100.0
     },
     "group_0035": {
-      "above": 2,
+      "above": 3,
       "evaluated": 3,
       "unavailable": 0,
-      "pct": 66.66666666666667
+      "pct": 100.0
     },
     "group_0037": {
       "above": 1,
@@ -7082,16 +7087,16 @@
       "pct": 33.333333333333336
     },
     "group_0029": {
-      "above": 1,
+      "above": 0,
       "evaluated": 2,
       "unavailable": 1,
-      "pct": 50.0
+      "pct": 0.0
     },
     "group_0048": {
-      "above": 1,
+      "above": 0,
       "evaluated": 3,
       "unavailable": 0,
-      "pct": 33.333333333333336
+      "pct": 0.0
     },
     "group_0127": {
       "above": 0,
@@ -7154,10 +7159,10 @@
       "pct": 50.0
     },
     "group_0128": {
-      "above": 1,
+      "above": 2,
       "evaluated": 3,
       "unavailable": 0,
-      "pct": 33.333333333333336
+      "pct": 66.66666666666667
     },
     "group_0090": {
       "above": 0,
