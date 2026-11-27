@@ -7,7 +7,7 @@ Watchlist filters (TradingView, reused from ema25_zl_scanner.py):
   - NSE common equity, price > 50 INR, market cap 1,000 Cr - 5 Lakh Cr
 
 Signal (single combined gate, no union confluence):
-  - close within 30% below the rolling 260-day high (52w high, computed off
+  - close within 40% below the rolling 260-day high (52w high, computed off
     the `high` column -- matches pine_scripts/52w_full_history.pine's
     ta.highest(high,260)), AND close > EMA200
   - rows sitting at/above that 52w high (pct_from_high ~ 0, within
@@ -39,11 +39,11 @@ MD_FILE = os.path.join(SCANS_DIR, "near_52w_high_scans.md")
 
 HIGH52W_PERIOD = 260  # daily bars, matches pine's auto-bars daily=260
 EMA_PERIOD = 200
-BAND_PCT = -30.0  # gate: pct_from_high in [BAND_PCT, 0]
+BAND_PCT = -40.0  # gate: pct_from_high in [BAND_PCT, 0]
 NEW_HIGH_EPS = 0.01
 MIN_BARS = 260
 
-_PCT_BUCKETS_ORDER = ["AT/NEW HIGH", "0-10%", "10-20%", "20-30%"]
+_PCT_BUCKETS_ORDER = ["AT/NEW HIGH", "0-10%", "10-20%", "20-30%", "30-40%"]
 
 NEW_LISTING_LABEL = "NEW LISTING"
 NEW_LISTINGS_FILE = os.path.join(REPO_DIR, "new_listings.txt")
@@ -74,7 +74,9 @@ def bucket_for(pct_from_high: float) -> str:
         return "0-10%"
     if pct_from_high >= -20.0:
         return "10-20%"
-    return "20-30%"
+    if pct_from_high >= -30.0:
+        return "20-30%"
+    return "30-40%"
 
 
 def analyse(symbol: str, float_shares: float = 0) -> dict | None:

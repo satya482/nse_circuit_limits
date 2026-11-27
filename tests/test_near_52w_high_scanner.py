@@ -51,7 +51,7 @@ def test_passes_gate_true_within_band_and_above_ema200():
 
 
 def test_passes_gate_false_outside_band():
-    assert passes_gate(pct_from_high=-31.0, close=100.0, ema200=90.0) is False
+    assert passes_gate(pct_from_high=-40.01, close=100.0, ema200=90.0) is False
 
 
 def test_passes_gate_false_below_ema200():
@@ -176,3 +176,17 @@ def test_build_markdown_includes_new_listings_section():
 def test_build_markdown_new_listings_empty_writes_placeholder():
     md = build_markdown([], {}, new_listings=[])
     assert "*No new listings tracked.*" in md
+
+
+def test_forty_percent_band_and_report_bucket():
+    assert BAND_PCT == -40.0
+    for pct in (-30.01, -35.0, -40.0):
+        assert passes_gate(pct, 100.0, 90.0)
+        assert bucket_for(pct) == "30-40%"
+    assert bucket_for(-30.0) == "20-30%"
+    assert not passes_gate(-35.0, 100.0, 100.0)
+    md = build_markdown([_finding("DEEP", -35.0, bucket="30-40%")], {})
+    assert "-40% to 0%" in md
+    assert "###30-40%" in md
+    assert "NSE:DEEP" in md
+    assert "**30-40%** (1)" in md
