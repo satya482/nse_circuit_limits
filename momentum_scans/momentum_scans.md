@@ -1,32 +1,39 @@
 > ⚠️ **Disclaimer:** I am not a SEBI registered investment advisor. All content is for educational and informational purposes only and does not constitute investment advice. Please consult a SEBI registered investment advisor before making any investment decisions. Investments in securities market are subject to market risks, read all related documents carefully before investing.
-# NSE Momentum Scan — 2026-11-26
-*Generated 2026-11-26 15:41 IST*
+# NSE Momentum Scan — 2026-11-27
+*Generated 2026-11-27 15:40 IST*
 
-**Entry Opportunities: 12**
+**Entry Opportunities: 16**
 *(Price > ₹50 · 1W change > 5% · Price > EMA25 · RS filter)*
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PRESTIGE,NSE:ACE,NSE:ANGELONE,NSE:WELSPUNLIV,NSE:CRAFTSMAN,NSE:RUBICON,NSE:SUDEEPPHRM,NSE:CPPLUS,NSE:SAMBHV,NSE:ARFIN,NSE:NINSYS,NSE:NAUKRI
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CUPID,NSE:RATNAVEER,NSE:DHAMPURSUG,NSE:GLENMARK,NSE:JLHL,NSE:AETHER,NSE:PTCIL,NSE:ANTHEM,NSE:UTTAMSUGAR,NSE:NPST,NSE:MAXESTATES,NSE:NEPHROPLUS,NSE:NINSYS,NSE:POLYPLEX,NSE:AIMTRON,NSE:SANGHVIMOV
 ```
 
 | Symbol | ZL Days | ZL Chg% | Label | Day Chg | Signal | Circuit |
 |--------|--------:|--------:|-------|--------:|--------|:-------:|
-| [PRESTIGE](https://in.tradingview.com/chart/?symbol=NSE:PRESTIGE) | 18d | +31.6% | Real estate developer residential commercial retail hospitality warehouses | +8.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ACE](https://in.tradingview.com/chart/?symbol=NSE:ACE) | 14d | +23.3% | Mobile cranes, material handling equipment for construction sector | +8.79% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ANGELONE](https://in.tradingview.com/chart/?symbol=NSE:ANGELONE) | 15d | +23.4% | Retail brokerage app offering stocks commodities currencies | +2.53% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [WELSPUNLIV](https://in.tradingview.com/chart/?symbol=NSE:WELSPUNLIV) | 17d | +32.1% | Home textiles manufacturer, flooring, global export focus | +1.37% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [CRAFTSMAN](https://in.tradingview.com/chart/?symbol=NSE:CRAFTSMAN) | 10d | +13.0% | Precision auto parts manufacturing for powertrains and aluminum | +0.77% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [RUBICON](https://in.tradingview.com/chart/?symbol=NSE:RUBICON) | 19d | +22.7% | Complex generics and specialty formulations for global pharma | +8.19% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [SUDEEPPHRM](https://in.tradingview.com/chart/?symbol=NSE:SUDEEPPHRM) | 19d | +27.4% | Calcium phosphate excipients pharma food nutrition | +4.30% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
-| [CPPLUS](https://in.tradingview.com/chart/?symbol=NSE:CPPLUS) | 2d | +5.2% | CCTV cameras surveillance systems IP networks security | +0.72% | **STRONG** — ZLEMA25 touch + EMA20 rising | 10% 🟩 |
-| [SAMBHV](https://in.tradingview.com/chart/?symbol=NSE:SAMBHV) | 2d | +10.1% | ERW steel pipes, tubes, structural hollow sections manufacturer | +1.39% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [ARFIN](https://in.tradingview.com/chart/?symbol=NSE:ARFIN) | 1d | +4.4% | Aluminium ferroalloys manufacturing trading steel auto sector | +0.43% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 5d | +7.7% |  | +0.89% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
-| [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI) | 2d | +4.4% | Online classifieds: recruitment, real estate, matrimony, education | +0.74% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
-| [NAUKRI](https://in.tradingview.com/chart/?symbol=NSE:NAUKRI) | 2d | +4.4% | Online classifieds: recruitment, real estate, matrimony, education | +0.74% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [CUPID](https://in.tradingview.com/chart/?symbol=NSE:CUPID) | 17d | +20.0% | Condoms lubricants IVD kits sexual wellness global | +4.96% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [RATNAVEER](https://in.tradingview.com/chart/?symbol=NSE:RATNAVEER) | 6d | +10.9% | Stainless steel washers tubes pipes solar mounting components | -1.65% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG) | 1d | +22.9% | Sugarcane processing: sugar, ethanol, chemicals, power generation | +8.58% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [DHAMPURSUG](https://in.tradingview.com/chart/?symbol=NSE:DHAMPURSUG) | 1d | +22.9% | Sugarcane processing: sugar, ethanol, chemicals, power generation | +8.58% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [GLENMARK](https://in.tradingview.com/chart/?symbol=NSE:GLENMARK) | 21d | +27.4% | Generics, specialty drugs, OTC pharma, global markets | +3.46% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [JLHL](https://in.tradingview.com/chart/?symbol=NSE:JLHL) | 22d | +41.5% | Tertiary hospital chain Mumbai west India multi-specialty care | +15.87% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [AETHER](https://in.tradingview.com/chart/?symbol=NSE:AETHER) | 2d | +10.3% | Specialty chemicals for pharma, agro, materials | +3.56% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [PTCIL](https://in.tradingview.com/chart/?symbol=NSE:PTCIL) | 3d | +5.6% | Precision metal components aerospace defense oil-gas marine | +2.35% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [ANTHEM](https://in.tradingview.com/chart/?symbol=NSE:ANTHEM) | 16d | +17.8% | Contract research development manufacturing biotech pharma | +0.89% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [UTTAMSUGAR](https://in.tradingview.com/chart/?symbol=NSE:UTTAMSUGAR) | 1d | +12.9% | Sugar manufacturer ethanol producer cogeneration power generation | +2.32% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NPST](https://in.tradingview.com/chart/?symbol=NSE:NPST) | 2d | +4.3% | UPI payments software provider fintech digital banking | +0.36% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [MAXESTATES](https://in.tradingview.com/chart/?symbol=NSE:MAXESTATES) | 12d | +21.0% | Premium residential commercial property developer Delhi NCR | -1.24% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NEPHROPLUS](https://in.tradingview.com/chart/?symbol=NSE:NEPHROPLUS) | 12d | +11.1% | Dialysis clinics network serving kidney failure patients India | +1.41% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [NEPHROPLUS](https://in.tradingview.com/chart/?symbol=NSE:NEPHROPLUS) | 12d | +11.1% | Dialysis clinics network serving kidney failure patients India | +1.41% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [NEPHROPLUS](https://in.tradingview.com/chart/?symbol=NSE:NEPHROPLUS) | 12d | +11.1% | Dialysis clinics network serving kidney failure patients India | +1.41% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [NINSYS](https://in.tradingview.com/chart/?symbol=NSE:NINSYS) | 6d | +9.9% |  | +2.07% | **STRONG** — ZLEMA25 touch + EMA20 rising | 20%  |
+| [POLYPLEX](https://in.tradingview.com/chart/?symbol=NSE:POLYPLEX) | 11d | +15.7% | BOPET and BOPP films for flexible packaging | +4.08% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [POLYPLEX](https://in.tradingview.com/chart/?symbol=NSE:POLYPLEX) | 11d | +15.7% | BOPET and BOPP films for flexible packaging | +4.08% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
+| [AIMTRON](https://in.tradingview.com/chart/?symbol=NSE:AIMTRON) | 0d | +5.9% | PCBA manufacturing and electronics contract assembly services | +5.90% | **DEEP PULLBACK** — Bounce from EMA50 | 20%  |
+| [SANGHVIMOV](https://in.tradingview.com/chart/?symbol=NSE:SANGHVIMOV) | 14d | +15.4% | Heavy crane rentals for industrial construction projects | +0.32% | **DEEP PULLBACK** — Bounce from EMA100 | 20%  |
 
 ```
-###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:PRESTIGE,NSE:ACE,NSE:ANGELONE,NSE:WELSPUNLIV,NSE:CRAFTSMAN,NSE:RUBICON,NSE:SUDEEPPHRM,NSE:CPPLUS,NSE:SAMBHV,NSE:ARFIN,NSE:NINSYS,NSE:NAUKRI
+###INDICES,NSE:NIFTYSMLCAP250,NSE:NIFTYMIDSML400,###COMMODITIES,MCX:GOLDM1!,MCX:SILVERM1!,MCX:COPPER1!,MCX:ALUMINIUM1!,###WATCHLIST,NSE:CUPID,NSE:RATNAVEER,NSE:DHAMPURSUG,NSE:GLENMARK,NSE:JLHL,NSE:AETHER,NSE:PTCIL,NSE:ANTHEM,NSE:UTTAMSUGAR,NSE:NPST,NSE:MAXESTATES,NSE:NEPHROPLUS,NSE:NINSYS,NSE:POLYPLEX,NSE:AIMTRON,NSE:SANGHVIMOV
 ```
 ---
 
